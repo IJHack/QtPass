@@ -989,422 +989,438 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('pass_8cpp_sour
 <div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>  <span class="comment">// not it exists; the backend runs it in the store (ImitatePass with</span></div>
 <div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>  <span class="comment">// `-C &lt;store&gt;`, RealPass through `pass git`). The markers, paired with the</span></div>
 <div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>  <span class="comment">// operation each one means, in the order git prints them back.</span></div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>  <span class="keyword">const</span> std::array&lt;std::pair&lt;QLatin1String, QString&gt;, 6&gt; markers{{</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>      {QLatin1String(<span class="stringliteral">&quot;rebase-merge&quot;</span>), tr(<span class="stringliteral">&quot;rebase&quot;</span>)},</div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>      {QLatin1String(<span class="stringliteral">&quot;rebase-apply&quot;</span>), tr(<span class="stringliteral">&quot;rebase&quot;</span>)},</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>      {QLatin1String(<span class="stringliteral">&quot;MERGE_HEAD&quot;</span>), tr(<span class="stringliteral">&quot;merge&quot;</span>)},</div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>      {QLatin1String(<span class="stringliteral">&quot;CHERRY_PICK_HEAD&quot;</span>), tr(<span class="stringliteral">&quot;cherry-pick&quot;</span>)},</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>      {QLatin1String(<span class="stringliteral">&quot;REVERT_HEAD&quot;</span>), tr(<span class="stringliteral">&quot;revert&quot;</span>)},</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>      <span class="comment">// A multi-commit cherry-pick or revert keeps its sequencer state after a</span></div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>      <span class="comment">// conflict resolution is committed, when CHERRY_PICK_HEAD/REVERT_HEAD is</span></div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>      <span class="comment">// already gone but `--continue` has more commits to apply. Checked last,</span></div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>      <span class="comment">// so the specific head above names the operation when it is still there.</span></div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>      {QLatin1String(<span class="stringliteral">&quot;sequencer&quot;</span>), tr(<span class="stringliteral">&quot;cherry-pick or revert&quot;</span>)},</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>  }};</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>  QStringList args{QStringLiteral(<span class="stringliteral">&quot;rev-parse&quot;</span>)};</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;marker : markers) {</div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>    args &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;--git-path&quot;</span>) &lt;&lt; marker.first;</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>  }</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>  QString out;</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">storeGit</a>(args, &amp;out)) {</div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>    <span class="comment">// Git is off, the store is not a repository, or git could not be asked:</span></div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    <span class="comment">// nothing is refused, as the operation would run anyway.</span></div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>  }</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>  <span class="keyword">const</span> QStringList paths = out.split(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>), Qt::SkipEmptyParts);</div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; paths.size() &amp;&amp; i &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(markers.size());</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>       ++i) {</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>    <span class="keyword">const</span> QString path = paths.at(i).trimmed();</div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>    <span class="keyword">const</span> QString full = QDir::isAbsolutePath(path)</div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>                             ? path</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>                             : QDir(<a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.passStore).filePath(path);</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    <span class="keywordflow">if</span> (!QFileInfo::exists(full)) {</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    }</div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>    <span class="keywordflow">return</span> tr(<span class="stringliteral">&quot;The store&#39;s Git repository is in the middle of a %1. Finish or &quot;</span></div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>              <span class="stringliteral">&quot;abort it with git before changing the store, or what you change &quot;</span></div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>              <span class="stringliteral">&quot;may be lost.&quot;</span>)</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>        .arg(markers.at(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(i)).second);</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>  }</div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>}</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>  <span class="comment">// The names are Git&#39;s own commands, which the user then runs with --abort or</span></div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>  <span class="comment">// --continue; the translator comments say so.</span></div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>  <span class="keyword">const</span> std::array&lt;std::pair&lt;QLatin1String, QString&gt;, 6&gt; markers{{</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>      <span class="comment">//: The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;.</span></div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>      <span class="comment">//: Best kept as Git&#39;s command name.</span></div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>      {QLatin1String(<span class="stringliteral">&quot;rebase-merge&quot;</span>), tr(<span class="stringliteral">&quot;rebase&quot;</span>)},</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>      <span class="comment">//: The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;.</span></div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>      <span class="comment">//: Best kept as Git&#39;s command name.</span></div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>      {QLatin1String(<span class="stringliteral">&quot;rebase-apply&quot;</span>), tr(<span class="stringliteral">&quot;rebase&quot;</span>)},</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>      <span class="comment">//: The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;.</span></div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>      <span class="comment">//: Best kept as Git&#39;s command name.</span></div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>      {QLatin1String(<span class="stringliteral">&quot;MERGE_HEAD&quot;</span>), tr(<span class="stringliteral">&quot;merge&quot;</span>)},</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>      <span class="comment">//: The Git command `git cherry-pick`, inserted into &quot;in the middle of a</span></div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>      <span class="comment">//: %1&quot;. Best kept as Git&#39;s command name.</span></div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>      {QLatin1String(<span class="stringliteral">&quot;CHERRY_PICK_HEAD&quot;</span>), tr(<span class="stringliteral">&quot;cherry-pick&quot;</span>)},</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>      <span class="comment">//: The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;.</span></div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>      <span class="comment">//: Best kept as Git&#39;s command name.</span></div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>      {QLatin1String(<span class="stringliteral">&quot;REVERT_HEAD&quot;</span>), tr(<span class="stringliteral">&quot;revert&quot;</span>)},</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>      <span class="comment">// A multi-commit cherry-pick or revert keeps its sequencer state after a</span></div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>      <span class="comment">// conflict resolution is committed, when CHERRY_PICK_HEAD/REVERT_HEAD is</span></div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>      <span class="comment">// already gone but `--continue` has more commits to apply. Checked last,</span></div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>      <span class="comment">// so the specific head above names the operation when it is still there.</span></div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>      <span class="comment">//: The Git commands `git cherry-pick` and `git revert`, inserted into</span></div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>      <span class="comment">//: &quot;in the middle of a %1&quot;. Best kept as Git&#39;s command names.</span></div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>      {QLatin1String(<span class="stringliteral">&quot;sequencer&quot;</span>), tr(<span class="stringliteral">&quot;cherry-pick or revert&quot;</span>)},</div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>  }};</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>  QStringList args{QStringLiteral(<span class="stringliteral">&quot;rev-parse&quot;</span>)};</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;marker : markers) {</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>    args &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;--git-path&quot;</span>) &lt;&lt; marker.first;</div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>  }</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>  QString out;</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">storeGit</a>(args, &amp;out)) {</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>    <span class="comment">// Git is off, the store is not a repository, or git could not be asked:</span></div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    <span class="comment">// nothing is refused, as the operation would run anyway.</span></div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>  }</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>  <span class="keyword">const</span> QStringList paths = out.split(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>), Qt::SkipEmptyParts);</div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; paths.size() &amp;&amp; i &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(markers.size());</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>       ++i) {</div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>    <span class="keyword">const</span> QString path = paths.at(i).trimmed();</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>    <span class="keyword">const</span> QString full = QDir::isAbsolutePath(path)</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>                             ? path</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>                             : QDir(<a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.passStore).filePath(path);</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>    <span class="keywordflow">if</span> (!QFileInfo::exists(full)) {</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>    }</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>    <span class="comment">//: %1 is a Git command name: rebase, merge, cherry-pick, revert, or</span></div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>    <span class="comment">//: &quot;cherry-pick or revert&quot;.</span></div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>    <span class="keywordflow">return</span> tr(<span class="stringliteral">&quot;The password store&#39;s Git repository is in the middle of a %1. &quot;</span></div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>              <span class="stringliteral">&quot;Finish or abort it with Git before changing the password store, &quot;</span></div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>              <span class="stringliteral">&quot;or what you change may be lost.&quot;</span>)</div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>        .arg(markers.at(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(i)).second);</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>  }</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>}</div>
 </div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span> </div>
-<div class="foldopen" id="foldopen00883" data-start="{" data-end="}">
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno"><a class="line" href="class_pass.html#a273c43add4c728d419585f642bce24d4">  883</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a273c43add4c728d419585f642bce24d4">Pass::refusePendingPull</a>() -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.useGit || !<a class="code hl_variable" href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">exec</a>.hasQueued(<a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">Enums::GIT_PULL</a>)) {</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>  }</div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>  <span class="keyword">const</span> QString why =</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>      tr(<span class="stringliteral">&quot;The password store is being updated (a Git pull is in progress). &quot;</span></div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>         <span class="stringliteral">&quot;Wait until it has finished, then try again.&quot;</span>);</div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>  <span class="comment">// Like refuseAsNotPartOfStore(): the interface arms when an operation starts</span></div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>  <span class="comment">// and is released by processErrorExit(); a refusal starts nothing.</span></div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>  emit <a class="code hl_signal" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a>();</div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>  emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(tr(<span class="stringliteral">&quot;Update in progress&quot;</span>), why);</div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>  emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(1, why);</div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>}</div>
-</div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span> </div>
-<div class="foldopen" id="foldopen00898" data-start="{" data-end="}">
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno"><a class="line" href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">  898</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">Pass::refuseUnfinishedGitOperation</a>() -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>  <span class="keyword">const</span> QString why = <a class="code hl_function" href="class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b">unfinishedGitOperationReason</a>();</div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>  <span class="keywordflow">if</span> (why.isEmpty()) {</div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span> </div>
+<div class="foldopen" id="foldopen00899" data-start="{" data-end="}">
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno"><a class="line" href="class_pass.html#a273c43add4c728d419585f642bce24d4">  899</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a273c43add4c728d419585f642bce24d4">Pass::refusePendingPull</a>() -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.useGit || !<a class="code hl_variable" href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">exec</a>.hasQueued(<a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">Enums::GIT_PULL</a>)) {</div>
 <div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>  }</div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>  <span class="comment">// Like refuseAsNotPartOfStore(): the interface arms when an operation starts</span></div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>  <span class="comment">// and is released by finished()/processErrorExit(); a refusal starts</span></div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  <span class="comment">// nothing, so it emits both ends.</span></div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>  emit <a class="code hl_signal" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a>();</div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>  emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(tr(<span class="stringliteral">&quot;Unfinished Git operation&quot;</span>), why);</div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>  emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(1, why);</div>
-<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>}</div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>  <span class="keyword">const</span> QString why =</div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>      tr(<span class="stringliteral">&quot;The password store is being updated (a Git pull is in progress). &quot;</span></div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>         <span class="stringliteral">&quot;Wait until it has finished, then try again.&quot;</span>);</div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>  <span class="comment">// Like refuseAsNotPartOfStore(): the interface arms when an operation starts</span></div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>  <span class="comment">// and is released by processErrorExit(); a refusal starts nothing.</span></div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>  emit <a class="code hl_signal" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a>();</div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>  emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(tr(<span class="stringliteral">&quot;Update in progress&quot;</span>), why);</div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>  emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(1, why);</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>}</div>
 </div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span> </div>
-<div class="foldopen" id="foldopen00912" data-start="{" data-end="}">
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno"><a class="line" href="class_pass.html#a587c7c2f547746e11e668cdb769f0f69">  912</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_pass.html#a587c7c2f547746e11e668cdb769f0f69">Pass::refuseAsNotPartOfStore</a>(<span class="keyword">const</span> QString &amp;why) {</div>
-<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>  <span class="comment">// The interface arms itself when an operation starts and is released by</span></div>
-<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>  <span class="comment">// finished or processErrorExit; a refusal starts nothing, so emits both.</span></div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>  emit <a class="code hl_signal" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a>();</div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>  emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(tr(<span class="stringliteral">&quot;Not part of the store&quot;</span>), why);</div>
-<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>  emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(1, why);</div>
-<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>}</div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span> </div>
+<div class="foldopen" id="foldopen00914" data-start="{" data-end="}">
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno"><a class="line" href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">  914</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">Pass::refuseUnfinishedGitOperation</a>() -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>  <span class="keyword">const</span> QString why = <a class="code hl_function" href="class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b">unfinishedGitOperationReason</a>();</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>  <span class="keywordflow">if</span> (why.isEmpty()) {</div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>  }</div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>  <span class="comment">// Like refuseAsNotPartOfStore(): the interface arms when an operation starts</span></div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>  <span class="comment">// and is released by finished()/processErrorExit(); a refusal starts</span></div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>  <span class="comment">// nothing, so it emits both ends.</span></div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>  emit <a class="code hl_signal" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a>();</div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>  emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(tr(<span class="stringliteral">&quot;Unfinished Git operation&quot;</span>), why);</div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>  emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(1, why);</div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>}</div>
 </div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span> </div>
-<div class="foldopen" id="foldopen00920" data-start="{" data-end="}">
-<div class="line"><a id="l00920" name="l00920"></a><span class="lineno"><a class="line" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">  920</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">Pass::getGpgIdPath</a>(<span class="keyword">const</span> QString &amp;for_file, <span class="keyword">const</span> QString &amp;passStore)</div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>    -&gt; QString {</div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>  <span class="keywordflow">return</span> nearestGpgId(gpgIdLookup(for_file, passStore))</div>
-<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>      .value_or(</div>
-<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>          QDir(QDir::fromNativeSeparators(passStore)).filePath(<span class="stringliteral">&quot;.gpg-id&quot;</span>));</div>
-<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>}</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span> </div>
+<div class="foldopen" id="foldopen00928" data-start="{" data-end="}">
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno"><a class="line" href="class_pass.html#a587c7c2f547746e11e668cdb769f0f69">  928</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_pass.html#a587c7c2f547746e11e668cdb769f0f69">Pass::refuseAsNotPartOfStore</a>(<span class="keyword">const</span> QString &amp;why) {</div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>  <span class="comment">// The interface arms itself when an operation starts and is released by</span></div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>  <span class="comment">// finished or processErrorExit; a refusal starts nothing, so emits both.</span></div>
+<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>  emit <a class="code hl_signal" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a>();</div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>  emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(tr(<span class="stringliteral">&quot;Not part of the store&quot;</span>), why);</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>  emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(1, why);</div>
+<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>}</div>
 </div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span> </div>
-<div class="foldopen" id="foldopen00927" data-start="{" data-end="}">
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno"><a class="line" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">  927</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">Pass::refuseSkippedGpgId</a>(<span class="keyword">const</span> QString &amp;file, <span class="keywordtype">bool</span> signing,</div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>                              <span class="keyword">const</span> QString &amp;except) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>  <span class="comment">// Without a signing key the parent&#39;s list applies, as it does for pass.</span></div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>  <span class="keywordflow">if</span> (!signing) {</div>
-<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>  }</div>
-<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>  QString recordError;</div>
-<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>  <span class="keyword">const</span> std::optional&lt;QString&gt; skipped =</div>
-<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>      <a class="code hl_function" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">skippedGpgId</a>(file, <a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.passStore, &amp;recordError);</div>
-<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>  <span class="keywordflow">if</span> (!skipped || (!except.isEmpty() &amp;&amp;</div>
-<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>                   QDir::cleanPath(*skipped) == QDir::cleanPath(except))) {</div>
-<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>  }</div>
-<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>  <span class="comment">// The strings keep the context they were translated in.</span></div>
-<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>  <span class="keywordflow">if</span> (!recordError.isEmpty()) {</div>
-<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>    emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(QCoreApplication::translate(</div>
-<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>                      <span class="stringliteral">&quot;ImitatePass&quot;</span>, <span class="stringliteral">&quot;Cannot check the recipient list&quot;</span>),</div>
-<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>                  QCoreApplication::translate(</div>
-<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>                      <span class="stringliteral">&quot;ImitatePass&quot;</span>, <span class="stringliteral">&quot;%1 Whether %2 was removed cannot be &quot;</span></div>
-<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>                                     <span class="stringliteral">&quot;told, so nothing was encrypted.&quot;</span>)</div>
-<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>                      .arg(recordError, QDir::toNativeSeparators(*skipped)));</div>
-<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>  }</div>
-<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>  emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(</div>
-<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>      QCoreApplication::translate(<span class="stringliteral">&quot;ImitatePass&quot;</span>, <span class="stringliteral">&quot;Recipient list missing&quot;</span>),</div>
-<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>      QCoreApplication::translate(</div>
-<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>          <span class="stringliteral">&quot;ImitatePass&quot;</span>,</div>
-<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>          <span class="stringliteral">&quot;The signed recipient list %1 is missing or is not a regular file. &quot;</span></div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>          <span class="stringliteral">&quot;QtPass does not fall back to a parent folder&#39;s list for it: that &quot;</span></div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>          <span class="stringliteral">&quot;list was not signed for this folder. If a link is under that name, &quot;</span></div>
-<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>          <span class="stringliteral">&quot;remove it. Then open Users for that folder and save its &quot;</span></div>
-<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>          <span class="stringliteral">&quot;recipients, which writes and signs a fresh list.&quot;</span>)</div>
-<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>          .arg(QDir::toNativeSeparators(*skipped)));</div>
-<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>}</div>
+<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span> </div>
+<div class="foldopen" id="foldopen00936" data-start="{" data-end="}">
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno"><a class="line" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">  936</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">Pass::getGpgIdPath</a>(<span class="keyword">const</span> QString &amp;for_file, <span class="keyword">const</span> QString &amp;passStore)</div>
+<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>    -&gt; QString {</div>
+<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>  <span class="keywordflow">return</span> nearestGpgId(gpgIdLookup(for_file, passStore))</div>
+<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>      .value_or(</div>
+<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>          QDir(QDir::fromNativeSeparators(passStore)).filePath(<span class="stringliteral">&quot;.gpg-id&quot;</span>));</div>
+<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>}</div>
 </div>
-<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span> </div>
-<div class="foldopen" id="foldopen00963" data-start="{" data-end="}">
-<div class="line"><a id="l00963" name="l00963"></a><span class="lineno"><a class="line" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">  963</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">Pass::verifySignedList</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, <span class="keyword">const</span> QString &amp;gpgIdFile,</div>
-<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span>                            QByteArray *contents, QString *why) <span class="keyword">const</span> -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>  <span class="keywordflow">if</span> (!signer.verifyFile(gpgIdFile, contents)) {</div>
-<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>  }</div>
-<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>  <span class="comment">// Authentic and unmodified is not the same as current: an older signed</span></div>
-<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>  <span class="comment">// list put back into the store is refused once this device has seen a</span></div>
-<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>  <span class="comment">// newer one, and one signed for another folder is refused here.</span></div>
-<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>  QString reason;</div>
-<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387">GpgIdGeneration::accept</a>(gpgIdFile, *contents, <a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.passStore,</div>
-<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>                              &amp;reason) != <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678">GpgIdGeneration::Verdict::Accepted</a>) {</div>
-<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>    <span class="keywordflow">if</span> (why != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span>      *why = reason;</div>
-<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span>    }</div>
-<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>  }</div>
-<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span>}</div>
+<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span> </div>
+<div class="foldopen" id="foldopen00943" data-start="{" data-end="}">
+<div class="line"><a id="l00943" name="l00943"></a><span class="lineno"><a class="line" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">  943</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">Pass::refuseSkippedGpgId</a>(<span class="keyword">const</span> QString &amp;file, <span class="keywordtype">bool</span> signing,</div>
+<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>                              <span class="keyword">const</span> QString &amp;except) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>  <span class="comment">// Without a signing key the parent&#39;s list applies, as it does for pass.</span></div>
+<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>  <span class="keywordflow">if</span> (!signing) {</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>  }</div>
+<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>  QString recordError;</div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>  <span class="keyword">const</span> std::optional&lt;QString&gt; skipped =</div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>      <a class="code hl_function" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">skippedGpgId</a>(file, <a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.passStore, &amp;recordError);</div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>  <span class="keywordflow">if</span> (!skipped || (!except.isEmpty() &amp;&amp;</div>
+<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>                   QDir::cleanPath(*skipped) == QDir::cleanPath(except))) {</div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>  }</div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>  <span class="comment">// The strings keep the context they were translated in.</span></div>
+<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>  <span class="keywordflow">if</span> (!recordError.isEmpty()) {</div>
+<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>    emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(QCoreApplication::translate(</div>
+<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>                      <span class="stringliteral">&quot;ImitatePass&quot;</span>, <span class="stringliteral">&quot;Cannot check the recipient list&quot;</span>),</div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>                  QCoreApplication::translate(</div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>                      <span class="stringliteral">&quot;ImitatePass&quot;</span>, <span class="stringliteral">&quot;%1 Whether %2 was removed cannot be &quot;</span></div>
+<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span>                                     <span class="stringliteral">&quot;told, so nothing was encrypted.&quot;</span>)</div>
+<div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span>                      .arg(recordError, QDir::toNativeSeparators(*skipped)));</div>
+<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>  }</div>
+<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>  emit <a class="code hl_signal" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(</div>
+<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>      QCoreApplication::translate(<span class="stringliteral">&quot;ImitatePass&quot;</span>, <span class="stringliteral">&quot;Recipient list missing&quot;</span>),</div>
+<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>      QCoreApplication::translate(</div>
+<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>          <span class="stringliteral">&quot;ImitatePass&quot;</span>,</div>
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>          <span class="stringliteral">&quot;The signed recipient list %1 is missing or is not a regular file. &quot;</span></div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>          <span class="stringliteral">&quot;QtPass does not fall back to a parent folder&#39;s list for it: that &quot;</span></div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>          <span class="stringliteral">&quot;list was not signed for this folder. If a link is under that name, &quot;</span></div>
+<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>          <span class="stringliteral">&quot;remove it. Then open Users for that folder and save its &quot;</span></div>
+<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>          <span class="stringliteral">&quot;recipients, which writes and signs a fresh list.&quot;</span>)</div>
+<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span>          .arg(QDir::toNativeSeparators(*skipped)));</div>
+<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>}</div>
 </div>
-<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span> </div>
-<div class="foldopen" id="foldopen00982" data-start="{" data-end="}">
-<div class="line"><a id="l00982" name="l00982"></a><span class="lineno"><a class="line" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">  982</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">Pass::skippedGpgId</a>(<span class="keyword">const</span> QString &amp;forFile, <span class="keyword">const</span> QString &amp;passStore,</div>
-<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>                        QString *recordError) -&gt; std::optional&lt;QString&gt; {</div>
-<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span>  <span class="keyword">const</span> GpgIdLookup lookup = gpgIdLookup(forFile, passStore);</div>
-<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>  QDir dir = lookup.start;</div>
-<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>  <span class="comment">// The same walk as nearestGpgId(), stopping at the list it finds, and</span></div>
-<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>  <span class="comment">// short of the store root: the root&#39;s own list has no parent to fall</span></div>
-<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>  <span class="comment">// back to, and the signature check refuses it when it is missing.</span></div>
-<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>  <span class="keywordflow">while</span> (dir.exists() &amp;&amp; QDir::cleanPath(dir.absolutePath())</div>
-<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>                             .startsWith(lookup.storePrefix, kPathCase)) {</div>
-<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>    <span class="keyword">const</span> QFileInfo candidate(dir.absoluteFilePath(<span class="stringliteral">&quot;.gpg-id&quot;</span>));</div>
-<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>    <span class="keywordflow">if</span> (isOwnGpgId(candidate)) {</div>
-<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>    }</div>
-<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>    <span class="comment">// A link under the name (dangling or not), or nothing under it where</span></div>
-<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>    <span class="comment">// this device accepted a list before: both are the folder&#39;s list gone,</span></div>
-<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>    <span class="comment">// not a folder that never had one.</span></div>
-<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>    <span class="keywordflow">if</span> (candidate.isSymLink() || candidate.isJunction()) {</div>
-<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>      <span class="keywordflow">return</span> candidate.absoluteFilePath();</div>
-<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span>    }</div>
-<div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span>    <span class="comment">// An unreadable record is not &quot;never seen&quot;: whether a list was accepted</span></div>
-<div class="line"><a id="l01002" name="l01002"></a><span class="lineno"> 1002</span>    <span class="comment">// here cannot be told, so this folder is refused too (fail closed), with</span></div>
-<div class="line"><a id="l01003" name="l01003"></a><span class="lineno"> 1003</span>    <span class="comment">// the record&#39;s own reason for the caller to show.</span></div>
-<div class="line"><a id="l01004" name="l01004"></a><span class="lineno"> 1004</span>    QString why;</div>
-<div class="line"><a id="l01005" name="l01005"></a><span class="lineno"> 1005</span>    <span class="keyword">const</span> std::optional&lt;qint64&gt; seen =</div>
-<div class="line"><a id="l01006" name="l01006"></a><span class="lineno"> 1006</span>        <a class="code hl_function" href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02">GpgIdGeneration::remembered</a>(candidate.absoluteFilePath(), &amp;why);</div>
-<div class="line"><a id="l01007" name="l01007"></a><span class="lineno"> 1007</span>    <span class="keywordflow">if</span> (!seen) {</div>
-<div class="line"><a id="l01008" name="l01008"></a><span class="lineno"> 1008</span>      <span class="keywordflow">if</span> (recordError != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l01009" name="l01009"></a><span class="lineno"> 1009</span>        *recordError =</div>
-<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span>            why.isEmpty()</div>
-<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span>                ? tr(<span class="stringliteral">&quot;The generation record of the recipient lists cannot &quot;</span></div>
-<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span>                     <span class="stringliteral">&quot;be read.&quot;</span>)</div>
-<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span>                : why;</div>
-<div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span>      }</div>
+<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span> </div>
+<div class="foldopen" id="foldopen00979" data-start="{" data-end="}">
+<div class="line"><a id="l00979" name="l00979"></a><span class="lineno"><a class="line" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">  979</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">Pass::verifySignedList</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, <span class="keyword">const</span> QString &amp;gpgIdFile,</div>
+<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span>                            QByteArray *contents, QString *why) <span class="keyword">const</span> -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>  <span class="keywordflow">if</span> (!signer.verifyFile(gpgIdFile, contents)) {</div>
+<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>  }</div>
+<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span>  <span class="comment">// Authentic and unmodified is not the same as current: an older signed</span></div>
+<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>  <span class="comment">// list put back into the store is refused once this device has seen a</span></div>
+<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>  <span class="comment">// newer one, and one signed for another folder is refused here.</span></div>
+<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>  QString reason;</div>
+<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387">GpgIdGeneration::accept</a>(gpgIdFile, *contents, <a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.passStore,</div>
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>                              &amp;reason) != <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678">GpgIdGeneration::Verdict::Accepted</a>) {</div>
+<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>    <span class="keywordflow">if</span> (why != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>      *why = reason;</div>
+<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>    }</div>
+<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>  }</div>
+<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>}</div>
+</div>
+<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span> </div>
+<div class="foldopen" id="foldopen00998" data-start="{" data-end="}">
+<div class="line"><a id="l00998" name="l00998"></a><span class="lineno"><a class="line" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">  998</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">Pass::skippedGpgId</a>(<span class="keyword">const</span> QString &amp;forFile, <span class="keyword">const</span> QString &amp;passStore,</div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>                        QString *recordError) -&gt; std::optional&lt;QString&gt; {</div>
+<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span>  <span class="keyword">const</span> GpgIdLookup lookup = gpgIdLookup(forFile, passStore);</div>
+<div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span>  QDir dir = lookup.start;</div>
+<div class="line"><a id="l01002" name="l01002"></a><span class="lineno"> 1002</span>  <span class="comment">// The same walk as nearestGpgId(), stopping at the list it finds, and</span></div>
+<div class="line"><a id="l01003" name="l01003"></a><span class="lineno"> 1003</span>  <span class="comment">// short of the store root: the root&#39;s own list has no parent to fall</span></div>
+<div class="line"><a id="l01004" name="l01004"></a><span class="lineno"> 1004</span>  <span class="comment">// back to, and the signature check refuses it when it is missing.</span></div>
+<div class="line"><a id="l01005" name="l01005"></a><span class="lineno"> 1005</span>  <span class="keywordflow">while</span> (dir.exists() &amp;&amp; QDir::cleanPath(dir.absolutePath())</div>
+<div class="line"><a id="l01006" name="l01006"></a><span class="lineno"> 1006</span>                             .startsWith(lookup.storePrefix, kPathCase)) {</div>
+<div class="line"><a id="l01007" name="l01007"></a><span class="lineno"> 1007</span>    <span class="keyword">const</span> QFileInfo candidate(dir.absoluteFilePath(<span class="stringliteral">&quot;.gpg-id&quot;</span>));</div>
+<div class="line"><a id="l01008" name="l01008"></a><span class="lineno"> 1008</span>    <span class="keywordflow">if</span> (isOwnGpgId(candidate)) {</div>
+<div class="line"><a id="l01009" name="l01009"></a><span class="lineno"> 1009</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span>    }</div>
+<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span>    <span class="comment">// A link under the name (dangling or not), or nothing under it where</span></div>
+<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span>    <span class="comment">// this device accepted a list before: both are the folder&#39;s list gone,</span></div>
+<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span>    <span class="comment">// not a folder that never had one.</span></div>
+<div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span>    <span class="keywordflow">if</span> (candidate.isSymLink() || candidate.isJunction()) {</div>
 <div class="line"><a id="l01015" name="l01015"></a><span class="lineno"> 1015</span>      <span class="keywordflow">return</span> candidate.absoluteFilePath();</div>
 <div class="line"><a id="l01016" name="l01016"></a><span class="lineno"> 1016</span>    }</div>
-<div class="line"><a id="l01017" name="l01017"></a><span class="lineno"> 1017</span>    <span class="keywordflow">if</span> (*seen &gt; 0) {</div>
-<div class="line"><a id="l01018" name="l01018"></a><span class="lineno"> 1018</span>      <span class="keywordflow">return</span> candidate.absoluteFilePath();</div>
-<div class="line"><a id="l01019" name="l01019"></a><span class="lineno"> 1019</span>    }</div>
-<div class="line"><a id="l01020" name="l01020"></a><span class="lineno"> 1020</span>    <span class="keywordflow">if</span> (!dir.cdUp()) {</div>
-<div class="line"><a id="l01021" name="l01021"></a><span class="lineno"> 1021</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01022" name="l01022"></a><span class="lineno"> 1022</span>    }</div>
-<div class="line"><a id="l01023" name="l01023"></a><span class="lineno"> 1023</span>  }</div>
-<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>  <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>}</div>
+<div class="line"><a id="l01017" name="l01017"></a><span class="lineno"> 1017</span>    <span class="comment">// An unreadable record is not &quot;never seen&quot;: whether a list was accepted</span></div>
+<div class="line"><a id="l01018" name="l01018"></a><span class="lineno"> 1018</span>    <span class="comment">// here cannot be told, so this folder is refused too (fail closed), with</span></div>
+<div class="line"><a id="l01019" name="l01019"></a><span class="lineno"> 1019</span>    <span class="comment">// the record&#39;s own reason for the caller to show.</span></div>
+<div class="line"><a id="l01020" name="l01020"></a><span class="lineno"> 1020</span>    QString why;</div>
+<div class="line"><a id="l01021" name="l01021"></a><span class="lineno"> 1021</span>    <span class="keyword">const</span> std::optional&lt;qint64&gt; seen =</div>
+<div class="line"><a id="l01022" name="l01022"></a><span class="lineno"> 1022</span>        <a class="code hl_function" href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02">GpgIdGeneration::remembered</a>(candidate.absoluteFilePath(), &amp;why);</div>
+<div class="line"><a id="l01023" name="l01023"></a><span class="lineno"> 1023</span>    <span class="keywordflow">if</span> (!seen) {</div>
+<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>      <span class="keywordflow">if</span> (recordError != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>        *recordError =</div>
+<div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span>            why.isEmpty()</div>
+<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span>                ? tr(<span class="stringliteral">&quot;The generation record of the recipient lists cannot &quot;</span></div>
+<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span>                     <span class="stringliteral">&quot;be read.&quot;</span>)</div>
+<div class="line"><a id="l01029" name="l01029"></a><span class="lineno"> 1029</span>                : why;</div>
+<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span>      }</div>
+<div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span>      <span class="keywordflow">return</span> candidate.absoluteFilePath();</div>
+<div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span>    }</div>
+<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span>    <span class="keywordflow">if</span> (*seen &gt; 0) {</div>
+<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>      <span class="keywordflow">return</span> candidate.absoluteFilePath();</div>
+<div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>    }</div>
+<div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>    <span class="keywordflow">if</span> (!dir.cdUp()) {</div>
+<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>    }</div>
+<div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span>  }</div>
+<div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span>  <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span>}</div>
 </div>
-<div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span> </div>
-<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span></div>
-<div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span><span class="keyword">auto</span> judgedRecipients(<a class="code hl_enumeration" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9">GpgIdGeneration::Verdict</a> verdict,</div>
-<div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span>                      <span class="keyword">const</span> QByteArray &amp;contents, <span class="keyword">const</span> QString &amp;gpgIdPath,</div>
-<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span>                      <span class="keyword">const</span> QString &amp;why) -&gt; <a class="code hl_struct" href="struct_pass_1_1_recipients_for_editing.html">Pass::RecipientsForEditing</a> {</div>
-<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>  <span class="keyword">using </span>RecipientsForEditing = <a class="code hl_struct" href="struct_pass_1_1_recipients_for_editing.html">Pass::RecipientsForEditing</a>;</div>
-<div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>  RecipientsForEditing result;</div>
-<div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>  <span class="keywordflow">switch</span> (verdict) {</div>
-<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678">GpgIdGeneration::Verdict::Accepted</a>:</div>
-<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>    result.state = RecipientsForEditing::State::Verified;</div>
-<div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span>    result.recipients = <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">Pass::parseRecipients</a>(contents, gpgIdPath);</div>
-<div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61">GpgIdGeneration::Verdict::Rollback</a>:</div>
-<div class="line"><a id="l01042" name="l01042"></a><span class="lineno"> 1042</span>    <span class="comment">// Authentic and this folder&#39;s, only older: the recovery goes through</span></div>
-<div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span>    <span class="comment">// this dialog, so it is preselected, with the reason in view.</span></div>
-<div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span>    result.state = RecipientsForEditing::State::VerifiedRollback;</div>
-<div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>    result.recipients = <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">Pass::parseRecipients</a>(contents, gpgIdPath);</div>
-<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>    result.warning = why;</div>
-<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32">GpgIdGeneration::Verdict::Unbound</a>:</div>
-<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9af1d4ac54357cc0932f385d56814ba7e4">GpgIdGeneration::Verdict::Conflict</a>:</div>
-<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9">GpgIdGeneration::Verdict::WrongFolder</a>:</div>
-<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ae037bb4b2fc6b1868bafa9f762c26365">GpgIdGeneration::Verdict::WrongStore</a>:</div>
-<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5">GpgIdGeneration::Verdict::Malformed</a>:</div>
-<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a390ae4f038021219bbd1af349d76b737">GpgIdGeneration::Verdict::RecordUnavailable</a>:</div>
-<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>    <span class="comment">// Signed, but not shown to be this folder&#39;s list, not a list to trust,</span></div>
-<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>    <span class="comment">// or nothing to judge it by: preselecting it would sign it in.</span></div>
-<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>    result.state = RecipientsForEditing::State::Rejected;</div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>    result.warning =</div>
-<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>        Pass::tr(<span class="stringliteral">&quot;%1 Nothing is preselected: saving would sign whatever is &quot;</span></div>
-<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>                 <span class="stringliteral">&quot;in it. Select the recipients yourself.&quot;</span>)</div>
-<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>            .arg(why);</div>
-<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>  }</div>
-<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>}</div>
-<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span> </div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>} <span class="comment">// namespace</span></div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span> </div>
-<div class="foldopen" id="foldopen01068" data-start="{" data-end="}">
-<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"><a class="line" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c"> 1068</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c">Pass::recipientsForEditing</a>(<span class="keyword">const</span> QString &amp;dir, <span class="keyword">const</span> QString &amp;passStore)</div>
-<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>    -&gt; <a class="code hl_struct" href="struct_pass_1_1_recipients_for_editing.html">RecipientsForEditing</a> {</div>
-<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>  <a class="code hl_struct" href="struct_pass_1_1_recipients_for_editing.html">RecipientsForEditing</a> result;</div>
-<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>  <span class="keyword">const</span> QString folder = dir.isEmpty() ? QString() : dir;</div>
-<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>  <span class="keyword">const</span> QString gpgIdPath = <a class="code hl_function" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">getGpgIdPath</a>(folder, passStore);</div>
-<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>  <span class="keyword">const</span> <a class="code hl_class" href="class_gpg_id_signer.html">GpgIdSigner</a> signer(</div>
-<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>      <a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.gpgExecutable,</div>
-<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>      <a class="code hl_function" href="class_gpg_id_signer.html#ad3a52326de6aaea36bbb4394576708b6">GpgIdSigner::keysFromSetting</a>(<a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.passSigningKey));</div>
-<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>  <span class="keywordflow">if</span> (!signer.<a class="code hl_function" href="class_gpg_id_signer.html#a2157ca742c6ae1d1971a01f0dc7f86f0">enabled</a>()) {</div>
-<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>    <span class="comment">// A list that is there but cannot be read as one (too large, not a</span></div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>    <span class="comment">// regular file, unreadable) is not an empty list: preselecting nothing</span></div>
-<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>    <span class="comment">// without a word would let OK write a new list over it, and later</span></div>
-<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>    <span class="comment">// re-encryptions drop whoever it named.</span></div>
-<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>    <span class="comment">// Read once and parsed from those bytes: a second read could find</span></div>
-<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>    <span class="comment">// something else under the name. A link counts as there, dangling too.</span></div>
-<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span>    <span class="keyword">const</span> QFileInfo info(gpgIdPath);</div>
-<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>    <span class="keywordflow">if</span> (!info.exists() &amp;&amp; !info.isSymLink()) {</div>
-<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>      result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a">RecipientsForEditing::State::Unsigned</a>;</div>
-<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>    }</div>
-<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>    <span class="keyword">const</span> std::optional&lt;QByteArray&gt; bytes =</div>
-<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>        <a class="code hl_function" href="class_util.html#a8e427903937505b5e19ebbea7050494e">Util::readRegularFile</a>(gpgIdPath, <a class="code hl_variable" href="class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a">Util::kMaxGpgIdBytes</a>);</div>
-<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>    <span class="keywordflow">if</span> (!bytes) {</div>
-<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>      result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699">RecipientsForEditing::State::Rejected</a>;</div>
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>      result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc">warning</a> =</div>
-<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>          tr(<span class="stringliteral">&quot;%1 cannot be read as a recipient list (a regular file of at &quot;</span></div>
-<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>             <span class="stringliteral">&quot;most %2), so nothing is preselected. Check it before choosing &quot;</span></div>
-<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>             <span class="stringliteral">&quot;recipients here: OK writes a new list over it.&quot;</span>)</div>
-<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>              .arg(gpgIdPath,</div>
-<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>                   QLocale().formattedDataSize(<a class="code hl_variable" href="class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a">Util::kMaxGpgIdBytes</a>));</div>
-<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>    }</div>
-<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a">RecipientsForEditing::State::Unsigned</a>;</div>
-<div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a1d5f75f32ae50b5189f5f9579e4ea2e5">recipients</a> = <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">parseRecipients</a>(*bytes, gpgIdPath);</div>
-<div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span>  }</div>
-<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span>  QString recordError;</div>
-<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span>  <span class="keywordflow">if</span> (<span class="keyword">const</span> std::optional&lt;QString&gt; skipped =</div>
-<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span>          <a class="code hl_function" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">skippedGpgId</a>(folder, passStore, &amp;recordError)) {</div>
-<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span>    <span class="comment">// The folder&#39;s own list was removed or replaced by a link (or the record</span></div>
-<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span>    <span class="comment">// that would tell cannot be read): the list the walk found further up</span></div>
-<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span>    <span class="comment">// was not signed for this folder, so preselecting it would sign it in</span></div>
-<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>    <span class="comment">// here with one click.</span></div>
-<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699">RecipientsForEditing::State::Rejected</a>;</div>
-<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc">warning</a> =</div>
-<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>        recordError.isEmpty()</div>
-<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>            ? tr(<span class="stringliteral">&quot;The recipient list %1 is missing or is not a regular file, &quot;</span></div>
-<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>                 <span class="stringliteral">&quot;so nothing is preselected: the list of a parent folder was &quot;</span></div>
-<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>                 <span class="stringliteral">&quot;not signed for this one. Select this folder&#39;s recipients &quot;</span></div>
-<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>                 <span class="stringliteral">&quot;yourself; OK writes and signs a fresh list.&quot;</span>)</div>
-<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>                  .arg(*skipped)</div>
-<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>            : tr(<span class="stringliteral">&quot;%1 Nothing is preselected: whether %2 was removed cannot &quot;</span></div>
-<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>                 <span class="stringliteral">&quot;be told.&quot;</span>)</div>
-<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>                  .arg(recordError, *skipped);</div>
-<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>  }</div>
-<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span>  <span class="keywordflow">if</span> (!QFileInfo::exists(gpgIdPath)) {</div>
-<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span>    <span class="comment">// A folder without a list yet (new store, new profile): nothing to</span></div>
-<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>    <span class="comment">// verify and nothing to preselect.</span></div>
-<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a3f68e67dc6c397aaa9d1c24c356f754f">RecipientsForEditing::State::Verified</a>;</div>
-<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span>  }</div>
-<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span>  QByteArray contents;</div>
-<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span>  <span class="keywordflow">if</span> (!signer.<a class="code hl_function" href="class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f">verifyFile</a>(gpgIdPath, &amp;contents)) {</div>
-<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699">RecipientsForEditing::State::Rejected</a>;</div>
-<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc">warning</a> =</div>
-<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span>        tr(<span class="stringliteral">&quot;The recipient list %1 does not verify against the signing key, &quot;</span></div>
-<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>           <span class="stringliteral">&quot;so nothing is preselected: saving would sign whatever is in it. &quot;</span></div>
-<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>           <span class="stringliteral">&quot;Select the recipients yourself; OK writes and signs a fresh list.&quot;</span>)</div>
-<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>            .arg(gpgIdPath);</div>
+<div class="line"><a id="l01042" name="l01042"></a><span class="lineno"> 1042</span> </div>
+<div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span></div>
+<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span><span class="keyword">auto</span> judgedRecipients(<a class="code hl_enumeration" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9">GpgIdGeneration::Verdict</a> verdict,</div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>                      <span class="keyword">const</span> QByteArray &amp;contents, <span class="keyword">const</span> QString &amp;gpgIdPath,</div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>                      <span class="keyword">const</span> QString &amp;why) -&gt; <a class="code hl_struct" href="struct_pass_1_1_recipients_for_editing.html">Pass::RecipientsForEditing</a> {</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>  <span class="keyword">using </span>RecipientsForEditing = <a class="code hl_struct" href="struct_pass_1_1_recipients_for_editing.html">Pass::RecipientsForEditing</a>;</div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>  RecipientsForEditing result;</div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>  <span class="keywordflow">switch</span> (verdict) {</div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678">GpgIdGeneration::Verdict::Accepted</a>:</div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>    result.state = RecipientsForEditing::State::Verified;</div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>    result.recipients = <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">Pass::parseRecipients</a>(contents, gpgIdPath);</div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61">GpgIdGeneration::Verdict::Rollback</a>:</div>
+<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>    <span class="comment">// Authentic and this folder&#39;s, only older: the recovery goes through</span></div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>    <span class="comment">// this dialog, so it is preselected, with the reason in view.</span></div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>    result.state = RecipientsForEditing::State::VerifiedRollback;</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>    result.recipients = <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">Pass::parseRecipients</a>(contents, gpgIdPath);</div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>    result.warning = why;</div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32">GpgIdGeneration::Verdict::Unbound</a>:</div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9af1d4ac54357cc0932f385d56814ba7e4">GpgIdGeneration::Verdict::Conflict</a>:</div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9">GpgIdGeneration::Verdict::WrongFolder</a>:</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ae037bb4b2fc6b1868bafa9f762c26365">GpgIdGeneration::Verdict::WrongStore</a>:</div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5">GpgIdGeneration::Verdict::Malformed</a>:</div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a390ae4f038021219bbd1af349d76b737">GpgIdGeneration::Verdict::RecordUnavailable</a>:</div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>    <span class="comment">// Signed, but not shown to be this folder&#39;s list, not a list to trust,</span></div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>    <span class="comment">// or nothing to judge it by: preselecting it would sign it in.</span></div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>    result.state = RecipientsForEditing::State::Rejected;</div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>    result.warning =</div>
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>        Pass::tr(<span class="stringliteral">&quot;%1 Nothing is preselected: saving would sign whatever is &quot;</span></div>
+<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>                 <span class="stringliteral">&quot;in it. Select the recipients yourself.&quot;</span>)</div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>            .arg(why);</div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>  }</div>
+<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>}</div>
+<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span> </div>
+<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>} <span class="comment">// namespace</span></div>
+<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span> </div>
+<div class="foldopen" id="foldopen01084" data-start="{" data-end="}">
+<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"><a class="line" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c"> 1084</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c">Pass::recipientsForEditing</a>(<span class="keyword">const</span> QString &amp;dir, <span class="keyword">const</span> QString &amp;passStore)</div>
+<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>    -&gt; <a class="code hl_struct" href="struct_pass_1_1_recipients_for_editing.html">RecipientsForEditing</a> {</div>
+<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>  <a class="code hl_struct" href="struct_pass_1_1_recipients_for_editing.html">RecipientsForEditing</a> result;</div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>  <span class="keyword">const</span> QString folder = dir.isEmpty() ? QString() : dir;</div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>  <span class="keyword">const</span> QString gpgIdPath = <a class="code hl_function" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">getGpgIdPath</a>(folder, passStore);</div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>  <span class="keyword">const</span> <a class="code hl_class" href="class_gpg_id_signer.html">GpgIdSigner</a> signer(</div>
+<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>      <a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.gpgExecutable,</div>
+<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>      <a class="code hl_function" href="class_gpg_id_signer.html#ad3a52326de6aaea36bbb4394576708b6">GpgIdSigner::keysFromSetting</a>(<a class="code hl_variable" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a>.passSigningKey));</div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>  <span class="keywordflow">if</span> (!signer.<a class="code hl_function" href="class_gpg_id_signer.html#a2157ca742c6ae1d1971a01f0dc7f86f0">enabled</a>()) {</div>
+<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>    <span class="comment">// A list that is there but cannot be read as one (too large, not a</span></div>
+<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>    <span class="comment">// regular file, unreadable) is not an empty list: preselecting nothing</span></div>
+<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>    <span class="comment">// without a word would let OK write a new list over it, and later</span></div>
+<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>    <span class="comment">// re-encryptions drop whoever it named.</span></div>
+<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>    <span class="comment">// Read once and parsed from those bytes: a second read could find</span></div>
+<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>    <span class="comment">// something else under the name. A link counts as there, dangling too.</span></div>
+<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>    <span class="keyword">const</span> QFileInfo info(gpgIdPath);</div>
+<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>    <span class="keywordflow">if</span> (!info.exists() &amp;&amp; !info.isSymLink()) {</div>
+<div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span>      result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a">RecipientsForEditing::State::Unsigned</a>;</div>
+<div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span>    }</div>
+<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span>    <span class="keyword">const</span> std::optional&lt;QByteArray&gt; bytes =</div>
+<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span>        <a class="code hl_function" href="class_util.html#a8e427903937505b5e19ebbea7050494e">Util::readRegularFile</a>(gpgIdPath, <a class="code hl_variable" href="class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a">Util::kMaxGpgIdBytes</a>);</div>
+<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span>    <span class="keywordflow">if</span> (!bytes) {</div>
+<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span>      result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699">RecipientsForEditing::State::Rejected</a>;</div>
+<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span>      result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc">warning</a> =</div>
+<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span>          tr(<span class="stringliteral">&quot;%1 cannot be read as a recipient list (a regular file of at &quot;</span></div>
+<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>             <span class="stringliteral">&quot;most %2), so nothing is preselected. Check it before choosing &quot;</span></div>
+<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>             <span class="stringliteral">&quot;recipients here: OK writes a new list over it.&quot;</span>)</div>
+<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span>              .arg(gpgIdPath,</div>
+<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>                   QLocale().formattedDataSize(<a class="code hl_variable" href="class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a">Util::kMaxGpgIdBytes</a>));</div>
+<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>    }</div>
+<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a">RecipientsForEditing::State::Unsigned</a>;</div>
+<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a1d5f75f32ae50b5189f5f9579e4ea2e5">recipients</a> = <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">parseRecipients</a>(*bytes, gpgIdPath);</div>
+<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>  }</div>
+<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>  QString recordError;</div>
+<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>  <span class="keywordflow">if</span> (<span class="keyword">const</span> std::optional&lt;QString&gt; skipped =</div>
+<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>          <a class="code hl_function" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">skippedGpgId</a>(folder, passStore, &amp;recordError)) {</div>
+<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>    <span class="comment">// The folder&#39;s own list was removed or replaced by a link (or the record</span></div>
+<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span>    <span class="comment">// that would tell cannot be read): the list the walk found further up</span></div>
+<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span>    <span class="comment">// was not signed for this folder, so preselecting it would sign it in</span></div>
+<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>    <span class="comment">// here with one click.</span></div>
+<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699">RecipientsForEditing::State::Rejected</a>;</div>
+<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc">warning</a> =</div>
+<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span>        recordError.isEmpty()</div>
+<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span>            ? tr(<span class="stringliteral">&quot;The recipient list %1 is missing or is not a regular file, &quot;</span></div>
+<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span>                 <span class="stringliteral">&quot;so nothing is preselected: the list of a parent folder was &quot;</span></div>
+<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span>                 <span class="stringliteral">&quot;not signed for this one. Select this folder&#39;s recipients &quot;</span></div>
+<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>                 <span class="stringliteral">&quot;yourself; OK writes and signs a fresh list.&quot;</span>)</div>
+<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span>                  .arg(*skipped)</div>
+<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>            : tr(<span class="stringliteral">&quot;%1 Nothing is preselected: whether %2 was removed cannot &quot;</span></div>
+<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>                 <span class="stringliteral">&quot;be told.&quot;</span>)</div>
+<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>                  .arg(recordError, *skipped);</div>
 <div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>  }</div>
-<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span>  QString why;</div>
-<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>  <span class="keyword">const</span> <a class="code hl_enumeration" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9">GpgIdGeneration::Verdict</a> verdict =</div>
-<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>      <a class="code hl_function" href="class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387">GpgIdGeneration::accept</a>(gpgIdPath, contents, passStore, &amp;why);</div>
-<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>  <span class="keywordflow">return</span> judgedRecipients(verdict, contents, gpgIdPath, why);</div>
-<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>}</div>
+<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span>  <span class="keywordflow">if</span> (!QFileInfo::exists(gpgIdPath)) {</div>
+<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>    <span class="comment">// A folder without a list yet (new store, new profile): nothing to</span></div>
+<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>    <span class="comment">// verify and nothing to preselect.</span></div>
+<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a3f68e67dc6c397aaa9d1c24c356f754f">RecipientsForEditing::State::Verified</a>;</div>
+<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>  }</div>
+<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span>  QByteArray contents;</div>
+<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>  <span class="keywordflow">if</span> (!signer.<a class="code hl_function" href="class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f">verifyFile</a>(gpgIdPath, &amp;contents)) {</div>
+<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3">state</a> = <a class="code hl_enumvalue" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699">RecipientsForEditing::State::Rejected</a>;</div>
+<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>    result.<a class="code hl_variable" href="struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc">warning</a> =</div>
+<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>        tr(<span class="stringliteral">&quot;The recipient list %1 does not verify against the signing key, &quot;</span></div>
+<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>           <span class="stringliteral">&quot;so nothing is preselected: saving would sign whatever is in it. &quot;</span></div>
+<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>           <span class="stringliteral">&quot;Select the recipients yourself; OK writes and signs a fresh list.&quot;</span>)</div>
+<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span>            .arg(gpgIdPath);</div>
+<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span>  }</div>
+<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span>  QString why;</div>
+<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>  <span class="keyword">const</span> <a class="code hl_enumeration" href="class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9">GpgIdGeneration::Verdict</a> verdict =</div>
+<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>      <a class="code hl_function" href="class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387">GpgIdGeneration::accept</a>(gpgIdPath, contents, passStore, &amp;why);</div>
+<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>  <span class="keywordflow">return</span> judgedRecipients(verdict, contents, gpgIdPath, why);</div>
+<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>}</div>
 </div>
-<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span> </div>
-<div class="foldopen" id="foldopen01146" data-start="{" data-end="}">
-<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"><a class="line" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703"> 1146</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">Pass::getRecipientList</a>(<span class="keyword">const</span> QString &amp;for_file, <span class="keyword">const</span> QString &amp;passStore)</div>
-<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>    -&gt; QStringList {</div>
-<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>  <span class="keyword">const</span> QString gpgIdPath = <a class="code hl_function" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">getGpgIdPath</a>(for_file, passStore);</div>
-<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>  <span class="comment">// The root .gpg-id comes back whatever it is; a link is not a list.</span></div>
-<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d">Util::isLinkedFolder</a>(gpgIdPath)) {</div>
-<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>  }</div>
-<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span>  <span class="keyword">const</span> std::optional&lt;QByteArray&gt; bytes =</div>
-<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>      <a class="code hl_function" href="class_util.html#a8e427903937505b5e19ebbea7050494e">Util::readRegularFile</a>(gpgIdPath, <a class="code hl_variable" href="class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a">Util::kMaxGpgIdBytes</a>);</div>
-<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span>  <span class="keywordflow">if</span> (!bytes) {</div>
-<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>  }</div>
-<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">parseRecipients</a>(*bytes, gpgIdPath);</div>
-<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>}</div>
+<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span> </div>
+<div class="foldopen" id="foldopen01162" data-start="{" data-end="}">
+<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"><a class="line" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703"> 1162</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">Pass::getRecipientList</a>(<span class="keyword">const</span> QString &amp;for_file, <span class="keyword">const</span> QString &amp;passStore)</div>
+<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span>    -&gt; QStringList {</div>
+<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>  <span class="keyword">const</span> QString gpgIdPath = <a class="code hl_function" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">getGpgIdPath</a>(for_file, passStore);</div>
+<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>  <span class="comment">// The root .gpg-id comes back whatever it is; a link is not a list.</span></div>
+<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d">Util::isLinkedFolder</a>(gpgIdPath)) {</div>
+<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>  }</div>
+<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>  <span class="keyword">const</span> std::optional&lt;QByteArray&gt; bytes =</div>
+<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>      <a class="code hl_function" href="class_util.html#a8e427903937505b5e19ebbea7050494e">Util::readRegularFile</a>(gpgIdPath, <a class="code hl_variable" href="class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a">Util::kMaxGpgIdBytes</a>);</div>
+<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>  <span class="keywordflow">if</span> (!bytes) {</div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>  }</div>
+<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">parseRecipients</a>(*bytes, gpgIdPath);</div>
+<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>}</div>
 </div>
-<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span> </div>
-<div class="foldopen" id="foldopen01161" data-start="{" data-end="}">
-<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"><a class="line" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f"> 1161</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">Pass::parseRecipients</a>(<span class="keyword">const</span> QByteArray &amp;contents,</div>
-<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span>                           <span class="keyword">const</span> QString &amp;sourceName) -&gt; QStringList {</div>
-<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span>  QStringList recipients;</div>
-<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>  <span class="keyword">const</span> QString text = QString::fromUtf8(contents);</div>
-<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;line : text.split(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>))) {</div>
-<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>    QString recipient = line.split(QLatin1Char(<span class="charliteral">&#39;#&#39;</span>)).first().trimmed();</div>
-<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>    <span class="keywordflow">if</span> (recipient.isEmpty()) {</div>
-<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>    }</div>
-<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5">Util::isValidKeyId</a>(recipient)) {</div>
-<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>      <span class="comment">// Never drop a recipient silently: the list is written back verbatim</span></div>
-<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>      <span class="comment">// by UsersDialog, so a skipped line disappears from .gpg-id.</span></div>
-<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>      qCWarning(lcQtPass) &lt;&lt; <span class="stringliteral">&quot;Skipping unusable recipient in&quot;</span> &lt;&lt; sourceName</div>
-<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>                          &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; recipient;</div>
-<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>    }</div>
-<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>    recipients += recipient;</div>
-<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>  }</div>
-<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>  <span class="keywordflow">return</span> recipients;</div>
-<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>}</div>
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span> </div>
+<div class="foldopen" id="foldopen01177" data-start="{" data-end="}">
+<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"><a class="line" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f"> 1177</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">Pass::parseRecipients</a>(<span class="keyword">const</span> QByteArray &amp;contents,</div>
+<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>                           <span class="keyword">const</span> QString &amp;sourceName) -&gt; QStringList {</div>
+<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>  QStringList recipients;</div>
+<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>  <span class="keyword">const</span> QString text = QString::fromUtf8(contents);</div>
+<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;line : text.split(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>))) {</div>
+<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>    QString recipient = line.split(QLatin1Char(<span class="charliteral">&#39;#&#39;</span>)).first().trimmed();</div>
+<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>    <span class="keywordflow">if</span> (recipient.isEmpty()) {</div>
+<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>    }</div>
+<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5">Util::isValidKeyId</a>(recipient)) {</div>
+<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>      <span class="comment">// Never drop a recipient silently: the list is written back verbatim</span></div>
+<div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>      <span class="comment">// by UsersDialog, so a skipped line disappears from .gpg-id.</span></div>
+<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>      qCWarning(lcQtPass) &lt;&lt; <span class="stringliteral">&quot;Skipping unusable recipient in&quot;</span> &lt;&lt; sourceName</div>
+<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>                          &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; recipient;</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>    }</div>
+<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>    recipients += recipient;</div>
+<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>  }</div>
+<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>  <span class="keywordflow">return</span> recipients;</div>
+<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>}</div>
 </div>
-<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span> </div>
-<div class="foldopen" id="foldopen01182" data-start="{" data-end="}">
-<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"><a class="line" href="class_pass.html#a5a10957e491f2f8e19d95a07e1221675"> 1182</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a5a10957e491f2f8e19d95a07e1221675">Pass::seedGpgIdFile</a>(<span class="keyword">const</span> QString &amp;newDir, <span class="keyword">const</span> QString &amp;passStore)</div>
-<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>    -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>  <span class="keyword">const</span> QString gpgIdFile = QDir(newDir).absoluteFilePath(<span class="stringliteral">&quot;.gpg-id&quot;</span>);</div>
-<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>  <span class="keywordflow">if</span> (QFileInfo::exists(gpgIdFile)) {</div>
-<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>  }</div>
-<div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>  <span class="comment">// Resolving from the file to be created finds the parent&#39;s .gpg-id whether</span></div>
-<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>  <span class="comment">// or not newDir has a trailing separator.</span></div>
-<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>  <span class="keyword">const</span> QStringList recipients = <a class="code hl_function" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">getRecipientList</a>(gpgIdFile, passStore);</div>
-<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>  <span class="keywordflow">if</span> (recipients.isEmpty()) {</div>
-<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>  }</div>
-<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>  <span class="comment">// Only reached without a signing key, so no generation header: a plain</span></div>
-<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>  <span class="comment">// list stays readable for clients that take a comment for a recipient.</span></div>
-<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>  <span class="comment">// Staged and replacing nothing: a link planted after the exists() above</span></div>
-<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>  <span class="comment">// (a dangling one passes it) fails the seed instead of being written through.</span></div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c">Util::writeFileReplacing</a>(</div>
-<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>      gpgIdFile,</div>
-<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>      (recipients.join(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>)) + QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>)).toUtf8(), <span class="keyword">false</span>);</div>
-<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>}</div>
-</div>
-<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span> </div>
-<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span><span class="comment">/* Copyright (C) 2017 Jason A. Donenfeld &lt;Jason@zx2c4.com&gt;. All Rights Reserved.</span></div>
-<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span><span class="comment"> */</span></div>
-<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span> </div>
-<div class="foldopen" id="foldopen01206" data-start="{" data-end="}">
-<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"><a class="line" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b"> 1206</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">Pass::boundedRandom</a>(quint32 bound) -&gt; quint32 {</div>
-<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>  <span class="keywordflow">if</span> (bound &lt; 2) {</div>
-<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span> </div>
+<div class="foldopen" id="foldopen01198" data-start="{" data-end="}">
+<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"><a class="line" href="class_pass.html#a5a10957e491f2f8e19d95a07e1221675"> 1198</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a5a10957e491f2f8e19d95a07e1221675">Pass::seedGpgIdFile</a>(<span class="keyword">const</span> QString &amp;newDir, <span class="keyword">const</span> QString &amp;passStore)</div>
+<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>    -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>  <span class="keyword">const</span> QString gpgIdFile = QDir(newDir).absoluteFilePath(<span class="stringliteral">&quot;.gpg-id&quot;</span>);</div>
+<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>  <span class="keywordflow">if</span> (QFileInfo::exists(gpgIdFile)) {</div>
+<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>  }</div>
+<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>  <span class="comment">// Resolving from the file to be created finds the parent&#39;s .gpg-id whether</span></div>
+<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>  <span class="comment">// or not newDir has a trailing separator.</span></div>
+<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>  <span class="keyword">const</span> QStringList recipients = <a class="code hl_function" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">getRecipientList</a>(gpgIdFile, passStore);</div>
+<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>  <span class="keywordflow">if</span> (recipients.isEmpty()) {</div>
+<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>  }</div>
-<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span> </div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>  quint32 randval;</div>
-<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>  <span class="comment">// arc4random_uniform-style rejection against modulo bias: drop values</span></div>
-<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>  <span class="comment">// below 2^32 % bound, which (1 + ~bound) % bound computes in quint32.</span></div>
-<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>  <span class="keyword">const</span> quint32 rejectionThreshold = (1 + ~bound) % bound;</div>
-<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span> </div>
-<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>  <span class="keywordflow">do</span> {</div>
-<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>    randval = QRandomGenerator::system()-&gt;generate();</div>
-<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>  } <span class="keywordflow">while</span> (randval &lt; rejectionThreshold);</div>
-<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span> </div>
-<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>  <span class="keywordflow">return</span> randval % bound;</div>
-<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>}</div>
+<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span>  <span class="comment">// Only reached without a signing key, so no generation header: a plain</span></div>
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>  <span class="comment">// list stays readable for clients that take a comment for a recipient.</span></div>
+<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>  <span class="comment">// Staged and replacing nothing: a link planted after the exists() above</span></div>
+<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>  <span class="comment">// (a dangling one passes it) fails the seed instead of being written through.</span></div>
+<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c">Util::writeFileReplacing</a>(</div>
+<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>      gpgIdFile,</div>
+<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>      (recipients.join(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>)) + QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>)).toUtf8(), <span class="keyword">false</span>);</div>
+<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>}</div>
 </div>
-<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span> </div>
-<div class="foldopen" id="foldopen01223" data-start="{" data-end="}">
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"><a class="line" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0"> 1223</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">Pass::generateRandomPassword</a>(<span class="keyword">const</span> QString &amp;charset, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length)</div>
-<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>    -&gt; QString {</div>
-<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>  <span class="keywordflow">if</span> (charset.isEmpty() || length == 0U) {</div>
-<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>  }</div>
-<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>  QString out;</div>
-<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; length; ++i) {</div>
-<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>    out.append(charset.at(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(</div>
-<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>        <a class="code hl_function" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">boundedRandom</a>(<span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(charset.length())))));</div>
-<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>  }</div>
-<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>  <span class="keywordflow">return</span> out;</div>
-<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>}</div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span> </div>
+<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span><span class="comment">/* Copyright (C) 2017 Jason A. Donenfeld &lt;Jason@zx2c4.com&gt;. All Rights Reserved.</span></div>
+<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span><span class="comment"> */</span></div>
+<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span> </div>
+<div class="foldopen" id="foldopen01222" data-start="{" data-end="}">
+<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"><a class="line" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b"> 1222</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">Pass::boundedRandom</a>(quint32 bound) -&gt; quint32 {</div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>  <span class="keywordflow">if</span> (bound &lt; 2) {</div>
+<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>  }</div>
+<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span> </div>
+<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>  quint32 randval;</div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>  <span class="comment">// arc4random_uniform-style rejection against modulo bias: drop values</span></div>
+<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>  <span class="comment">// below 2^32 % bound, which (1 + ~bound) % bound computes in quint32.</span></div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>  <span class="keyword">const</span> quint32 rejectionThreshold = (1 + ~bound) % bound;</div>
+<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span> </div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>  <span class="keywordflow">do</span> {</div>
+<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>    randval = QRandomGenerator::system()-&gt;generate();</div>
+<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>  } <span class="keywordflow">while</span> (randval &lt; rejectionThreshold);</div>
+<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span> </div>
+<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span>  <span class="keywordflow">return</span> randval % bound;</div>
+<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span>}</div>
+</div>
+<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span> </div>
+<div class="foldopen" id="foldopen01239" data-start="{" data-end="}">
+<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"><a class="line" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0"> 1239</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">Pass::generateRandomPassword</a>(<span class="keyword">const</span> QString &amp;charset, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length)</div>
+<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span>    -&gt; QString {</div>
+<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span>  <span class="keywordflow">if</span> (charset.isEmpty() || length == 0U) {</div>
+<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>  }</div>
+<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span>  QString out;</div>
+<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; length; ++i) {</div>
+<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>    out.append(charset.at(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(</div>
+<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span>        <a class="code hl_function" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">boundedRandom</a>(<span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(charset.length())))));</div>
+<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>  }</div>
+<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>  <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>}</div>
 </div>
 <div class="ttc" id="aclass_executor_html_a22b5633f6b06f7f15be77370b5bd2871"><div class="ttname"><a href="class_executor.html#a22b5633f6b06f7f15be77370b5bd2871">Executor::dequeuing</a></div><div class="ttdeci">void dequeuing(int id, bool completes)</div><div class="ttdoc">Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,...</div></div>
 <div class="ttc" id="aclass_executor_html_a4e210af42a76029683ded3210cf7bce2"><div class="ttname"><a href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Run a command synchronously and return its exit code.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00422">executor.cpp:422</a></div></div>
@@ -1437,27 +1453,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('pass_8cpp_sour
 <div class="ttc" id="aclass_pass_html_a13859dd31b009e6d362546d1c96dc303"><div class="ttname"><a href="class_pass.html#a13859dd31b009e6d362546d1c96dc303">Pass::finishedAnyWithPid</a></div><div class="ttdeci">void finishedAnyWithPid(const QString &amp;out, const QString &amp;err, Enums::PROCESS pid)</div><div class="ttdoc">A process of any kind finished successfully and its output cannot contain a secret.</div></div>
 <div class="ttc" id="aclass_pass_html_a14d258f93b689ff92cea0d11b136eb83"><div class="ttname"><a href="class_pass.html#a14d258f93b689ff92cea0d11b136eb83">Pass::finishedInsert</a></div><div class="ttdeci">void finishedInsert(const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">An Insert() succeeded: the entry is in the store and, with Git in use, committed.</div></div>
 <div class="ttc" id="aclass_pass_html_a21a21503b387384833ebd2271bd18592"><div class="ttname"><a href="class_pass.html#a21a21503b387384833ebd2271bd18592">Pass::m_settings</a></div><div class="ttdeci">AppSettings m_settings</div><div class="ttdoc">Application settings snapshot injected at init() time.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00117">pass.h:117</a></div></div>
-<div class="ttc" id="aclass_pass_html_a229cc680077f9ad2cfa0484a8aa20efe"><div class="ttname"><a href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">Pass::getGpgIdPath</a></div><div class="ttdeci">static auto getGpgIdPath(const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</div><div class="ttdoc">Get .gpg-id file path for a password file.</div><div class="ttdef"><b>Definition</b> <a href="#l00920">pass.cpp:920</a></div></div>
+<div class="ttc" id="aclass_pass_html_a229cc680077f9ad2cfa0484a8aa20efe"><div class="ttname"><a href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">Pass::getGpgIdPath</a></div><div class="ttdeci">static auto getGpgIdPath(const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</div><div class="ttdoc">Get .gpg-id file path for a password file.</div><div class="ttdef"><b>Definition</b> <a href="#l00936">pass.cpp:936</a></div></div>
 <div class="ttc" id="aclass_pass_html_a23d86a80c0e1772771f097062dc0ab7c"><div class="ttname"><a href="class_pass.html#a23d86a80c0e1772771f097062dc0ab7c">Pass::handleProcessError</a></div><div class="ttdeci">void handleProcessError(PROCESS pid, int exitCode, const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">Report a process that exited non-zero; called by finished().</div><div class="ttdef"><b>Definition</b> <a href="#l00552">pass.cpp:552</a></div></div>
-<div class="ttc" id="aclass_pass_html_a273c43add4c728d419585f642bce24d4"><div class="ttname"><a href="class_pass.html#a273c43add4c728d419585f642bce24d4">Pass::refusePendingPull</a></div><div class="ttdeci">auto refusePendingPull() -&gt; bool</div><div class="ttdoc">Refuse a store change while a Git pull is still queued or running.</div><div class="ttdef"><b>Definition</b> <a href="#l00883">pass.cpp:883</a></div></div>
+<div class="ttc" id="aclass_pass_html_a273c43add4c728d419585f642bce24d4"><div class="ttname"><a href="class_pass.html#a273c43add4c728d419585f642bce24d4">Pass::refusePendingPull</a></div><div class="ttdeci">auto refusePendingPull() -&gt; bool</div><div class="ttdoc">Refuse a store change while a Git pull is still queued or running.</div><div class="ttdef"><b>Definition</b> <a href="#l00899">pass.cpp:899</a></div></div>
 <div class="ttc" id="aclass_pass_html_a296dba6b2dc144cdd95af8da86d2170a"><div class="ttname"><a href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a">Pass::finishedGenerateGPGKeys</a></div><div class="ttdeci">void finishedGenerateGPGKeys(const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">GenerateGPGKeys() succeeded; the new key pair is in the keyring.</div></div>
 <div class="ttc" id="aclass_pass_html_a2e71b5174b4ef25a1e91d8c56177b772"><div class="ttname"><a href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">Pass::PROCESS</a></div><div class="ttdeci">Enums::PROCESS PROCESS</div><div class="ttdoc">Alias for Enums::PROCESS used throughout this class.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00126">pass.h:126</a></div></div>
 <div class="ttc" id="aclass_pass_html_a35b3cba623a22f41173670ec34ebb67c"><div class="ttname"><a href="class_pass.html#a35b3cba623a22f41173670ec34ebb67c">Pass::generatePassword</a></div><div class="ttdeci">virtual auto generatePassword(unsigned int length, const QString &amp;charset) -&gt; QString</div><div class="ttdoc">Generate random password.</div><div class="ttdef"><b>Definition</b> <a href="#l00218">pass.cpp:218</a></div></div>
 <div class="ttc" id="aclass_pass_html_a3a1a065e12909518f3898b3557ed714c"><div class="ttname"><a href="class_pass.html#a3a1a065e12909518f3898b3557ed714c">Pass::finishedShow</a></div><div class="ttdeci">void finishedShow(const QString &amp;out, const QString &amp;file)</div><div class="ttdoc">Emitted when a Show() succeeds.</div></div>
 <div class="ttc" id="aclass_pass_html_a3a8bd6ab55ed8b2338955f01573bc2fb"><div class="ttname"><a href="class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb">Pass::statusMsg</a></div><div class="ttdeci">void statusMsg(const QString &amp;msg, int timeout)</div><div class="ttdoc">Progress or a non-fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,...</div></div>
 <div class="ttc" id="aclass_pass_html_a3aadcc1218b87ee1c457953feaaaafbc"><div class="ttname"><a href="class_pass.html#a3aadcc1218b87ee1c457953feaaaafbc">Pass::env</a></div><div class="ttdeci">QProcessEnvironment env</div><div class="ttdoc">The environment the store&#39;s processes run in: the system environment plus what updateEnv() sets (PASS...</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00085">pass.h:85</a></div></div>
-<div class="ttc" id="aclass_pass_html_a3aea03014a99498ace9df6c5edaa1dfb"><div class="ttname"><a href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">Pass::refuseSkippedGpgId</a></div><div class="ttdeci">auto refuseSkippedGpgId(const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</div><div class="ttdoc">With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg...</div><div class="ttdef"><b>Definition</b> <a href="#l00927">pass.cpp:927</a></div></div>
+<div class="ttc" id="aclass_pass_html_a3aea03014a99498ace9df6c5edaa1dfb"><div class="ttname"><a href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">Pass::refuseSkippedGpgId</a></div><div class="ttdeci">auto refuseSkippedGpgId(const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</div><div class="ttdoc">With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg...</div><div class="ttdef"><b>Definition</b> <a href="#l00943">pass.cpp:943</a></div></div>
 <div class="ttc" id="aclass_pass_html_a433f0bf99f1a4fdd8e56944ff234eb2b"><div class="ttname"><a href="class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b">Pass::unfinishedGitOperationReason</a></div><div class="ttdeci">auto unfinishedGitOperationReason() -&gt; QString</div><div class="ttdoc">The unfinished git operation in progress in the store, if any.</div><div class="ttdef"><b>Definition</b> <a href="#l00835">pass.cpp:835</a></div></div>
 <div class="ttc" id="aclass_pass_html_a4a2fc7833af61945b684295de61894cd"><div class="ttname"><a href="class_pass.html#a4a2fc7833af61945b684295de61894cd">Pass::PathSpelling</a></div><div class="ttdeci">PathSpelling</div><div class="ttdoc">How a path handed to refuseLinkedPath() is spelled.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00496">pass.h:496</a></div></div>
 <div class="ttc" id="aclass_pass_html_a4a2fc7833af61945b684295de61894cda61aa63eb3ac1c3408640463ee5fe8aa3"><div class="ttname"><a href="class_pass.html#a4a2fc7833af61945b684295de61894cda61aa63eb3ac1c3408640463ee5fe8aa3">Pass::PathSpelling::Configured</a></div><div class="ttdeci">@ Configured</div><div class="ttdoc">As the store is configured or relative to it, the class&#39;s path rule. A path spelled through the targe...</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00502">pass.h:502</a></div></div>
-<div class="ttc" id="aclass_pass_html_a4e4099a6ae5113a926fca1a68d8b6c6c"><div class="ttname"><a href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">Pass::skippedGpgId</a></div><div class="ttdeci">static auto skippedGpgId(const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr) -&gt; std::optional&lt; QString &gt;</div><div class="ttdoc">The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...</div><div class="ttdef"><b>Definition</b> <a href="#l00982">pass.cpp:982</a></div></div>
-<div class="ttc" id="aclass_pass_html_a4f63e4e86c7ffec6df333e466fb38c3b"><div class="ttname"><a href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">Pass::boundedRandom</a></div><div class="ttdeci">auto boundedRandom(quint32 bound) -&gt; quint32</div><div class="ttdoc">Generate random number in range.</div><div class="ttdef"><b>Definition</b> <a href="#l01206">pass.cpp:1206</a></div></div>
+<div class="ttc" id="aclass_pass_html_a4e4099a6ae5113a926fca1a68d8b6c6c"><div class="ttname"><a href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">Pass::skippedGpgId</a></div><div class="ttdeci">static auto skippedGpgId(const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr) -&gt; std::optional&lt; QString &gt;</div><div class="ttdoc">The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...</div><div class="ttdef"><b>Definition</b> <a href="#l00998">pass.cpp:998</a></div></div>
+<div class="ttc" id="aclass_pass_html_a4f63e4e86c7ffec6df333e466fb38c3b"><div class="ttname"><a href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">Pass::boundedRandom</a></div><div class="ttdeci">auto boundedRandom(quint32 bound) -&gt; quint32</div><div class="ttdoc">Generate random number in range.</div><div class="ttdef"><b>Definition</b> <a href="#l01222">pass.cpp:1222</a></div></div>
 <div class="ttc" id="aclass_pass_html_a4f8a565d9693da516f7b10e3d7652ae8"><div class="ttname"><a href="class_pass.html#a4f8a565d9693da516f7b10e3d7652ae8">Pass::insertFailed</a></div><div class="ttdeci">void insertFailed(const QString &amp;err, bool written)</div><div class="ttdoc">Emitted when an Insert() fails through a queued command, before the generic processErrorExit(): the p...</div></div>
 <div class="ttc" id="aclass_pass_html_a57b61261a84b79bb73b209b3511a87ff"><div class="ttname"><a href="class_pass.html#a57b61261a84b79bb73b209b3511a87ff">Pass::emitProcessFinishedSignal</a></div><div class="ttdeci">void emitProcessFinishedSignal(PROCESS pid, const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">Emit the signals for a process that exited with 0; called by finished() for everything but PASS_SHOW.</div><div class="ttdef"><b>Definition</b> <a href="#l00595">pass.cpp:595</a></div></div>
 <div class="ttc" id="aclass_pass_html_a57cc7915c4d3f4a795b0ec8ad4056482"><div class="ttname"><a href="class_pass.html#a57cc7915c4d3f4a795b0ec8ad4056482">Pass::gpgSupportsEd25519</a></div><div class="ttdeci">static bool gpgSupportsEd25519(const QString &amp;gpgExecutable={})</div><div class="ttdoc">Check if GPG supports Ed25519 encryption.</div><div class="ttdef"><b>Definition</b> <a href="#l00273">pass.cpp:273</a></div></div>
-<div class="ttc" id="aclass_pass_html_a587c7c2f547746e11e668cdb769f0f69"><div class="ttname"><a href="class_pass.html#a587c7c2f547746e11e668cdb769f0f69">Pass::refuseAsNotPartOfStore</a></div><div class="ttdeci">void refuseAsNotPartOfStore(const QString &amp;why)</div><div class="ttdoc">Refuse an operation on something that is not part of the store.</div><div class="ttdef"><b>Definition</b> <a href="#l00912">pass.cpp:912</a></div></div>
+<div class="ttc" id="aclass_pass_html_a587c7c2f547746e11e668cdb769f0f69"><div class="ttname"><a href="class_pass.html#a587c7c2f547746e11e668cdb769f0f69">Pass::refuseAsNotPartOfStore</a></div><div class="ttdeci">void refuseAsNotPartOfStore(const QString &amp;why)</div><div class="ttdoc">Refuse an operation on something that is not part of the store.</div><div class="ttdef"><b>Definition</b> <a href="#l00928">pass.cpp:928</a></div></div>
 <div class="ttc" id="aclass_pass_html_a5a0b433814c3701da1bdb0b7bd87052a"><div class="ttname"><a href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">Pass::maxOutputArgs</a></div><div class="ttdeci">static auto maxOutputArgs() -&gt; QStringList</div><div class="ttdoc">The gpg options that enforce kMaxPlaintextBytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00701">pass.cpp:701</a></div></div>
-<div class="ttc" id="aclass_pass_html_a5a10957e491f2f8e19d95a07e1221675"><div class="ttname"><a href="class_pass.html#a5a10957e491f2f8e19d95a07e1221675">Pass::seedGpgIdFile</a></div><div class="ttdeci">static auto seedGpgIdFile(const QString &amp;newDir, const QString &amp;passStore) -&gt; bool</div><div class="ttdoc">Seed a new folder&#39;s .gpg-id from the recipients it inherits.</div><div class="ttdef"><b>Definition</b> <a href="#l01182">pass.cpp:1182</a></div></div>
+<div class="ttc" id="aclass_pass_html_a5a10957e491f2f8e19d95a07e1221675"><div class="ttname"><a href="class_pass.html#a5a10957e491f2f8e19d95a07e1221675">Pass::seedGpgIdFile</a></div><div class="ttdeci">static auto seedGpgIdFile(const QString &amp;newDir, const QString &amp;passStore) -&gt; bool</div><div class="ttdoc">Seed a new folder&#39;s .gpg-id from the recipients it inherits.</div><div class="ttdef"><b>Definition</b> <a href="#l01198">pass.cpp:1198</a></div></div>
 <div class="ttc" id="aclass_pass_html_a5cb7bb449be8c12124b3c3be6d94e3a7"><div class="ttname"><a href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">Pass::storeGit</a></div><div class="ttdeci">virtual auto storeGit(const QStringList &amp;args, QString *out) -&gt; bool</div><div class="ttdoc">Run a git command in the store&#39;s repository, blocking.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00560">pass.h:560</a></div></div>
 <div class="ttc" id="aclass_pass_html_a5d0cea4019f5c123fb4a4417de8d95b9"><div class="ttname"><a href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9">Pass::Pass</a></div><div class="ttdeci">Pass()</div><div class="ttdoc">Construct a Pass instance.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">pass.cpp:61</a></div></div>
 <div class="ttc" id="aclass_pass_html_a6097de48d30068d8a73f7dc80ff01de0"><div class="ttname"><a href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass::insertWritten</a></div><div class="ttdeci">virtual auto insertWritten(const QString &amp;err) const -&gt; bool</div><div class="ttdoc">Whether the insert that just failed had put its entry in the store before a later step failed....</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00461">pass.h:461</a></div></div>
@@ -1469,10 +1485,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('pass_8cpp_sour
 <div class="ttc" id="aclass_pass_html_a6ed6c10b07137f62e127b290ebd428a2"><div class="ttname"><a href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2">Pass::listKeys</a></div><div class="ttdeci">auto listKeys(QStringList keystrings, bool secret=false) -&gt; QList&lt; UserInfo &gt;</div><div class="ttdoc">List GPG keys matching patterns.</div><div class="ttdef"><b>Definition</b> <a href="#l00426">pass.cpp:426</a></div></div>
 <div class="ttc" id="aclass_pass_html_a7a6b3a9abf7c6c1a58d1e1b6f3c72b82"><div class="ttname"><a href="class_pass.html#a7a6b3a9abf7c6c1a58d1e1b6f3c72b82">Pass::finishedGitPull</a></div><div class="ttdeci">void finishedGitPull(const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">git pull succeeded; entries may have changed on disk.</div></div>
 <div class="ttc" id="aclass_pass_html_a835378925ada56acd922899f64e85933"><div class="ttname"><a href="class_pass.html#a835378925ada56acd922899f64e85933">Pass::finishedGitPush</a></div><div class="ttdeci">void finishedGitPush(const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">git push succeeded.</div></div>
-<div class="ttc" id="aclass_pass_html_a849c5089c91fa9599653d9dad6e4c28c"><div class="ttname"><a href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c">Pass::recipientsForEditing</a></div><div class="ttdeci">auto recipientsForEditing(const QString &amp;dir, const QString &amp;passStore) -&gt; RecipientsForEditing</div><div class="ttdoc">The recipients a dialog may preselect for editing the list of dir.</div><div class="ttdef"><b>Definition</b> <a href="#l01068">pass.cpp:1068</a></div></div>
+<div class="ttc" id="aclass_pass_html_a849c5089c91fa9599653d9dad6e4c28c"><div class="ttname"><a href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c">Pass::recipientsForEditing</a></div><div class="ttdeci">auto recipientsForEditing(const QString &amp;dir, const QString &amp;passStore) -&gt; RecipientsForEditing</div><div class="ttdoc">The recipients a dialog may preselect for editing the list of dir.</div><div class="ttdef"><b>Definition</b> <a href="#l01084">pass.cpp:1084</a></div></div>
 <div class="ttc" id="aclass_pass_html_a903a833ade1109f9cb75e3bbeab8d0af"><div class="ttname"><a href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">Pass::exec</a></div><div class="ttdeci">Executor exec</div><div class="ttdoc">Internal command executor for queuing and running subprocesses.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00121">pass.h:121</a></div></div>
 <div class="ttc" id="aclass_pass_html_a9bb040e1a33322a27cd85d8a367ef24f"><div class="ttname"><a href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">Pass::processErrorExit</a></div><div class="ttdeci">void processErrorExit(int exitCode, const QString &amp;err)</div><div class="ttdoc">An operation ended in failure: its process exited non-zero, could not be started or crashed,...</div></div>
-<div class="ttc" id="aclass_pass_html_aa048c50cd2e6fa95033b4c69910e04bb"><div class="ttname"><a href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">Pass::verifySignedList</a></div><div class="ttdeci">auto verifySignedList(const GpgIdSigner &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</div><div class="ttdoc">Whether gpgIdFile is a signed list QtPass accepts: its signature verifies (GpgIdSigner::verifyFile())...</div><div class="ttdef"><b>Definition</b> <a href="#l00963">pass.cpp:963</a></div></div>
+<div class="ttc" id="aclass_pass_html_aa048c50cd2e6fa95033b4c69910e04bb"><div class="ttname"><a href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">Pass::verifySignedList</a></div><div class="ttdeci">auto verifySignedList(const GpgIdSigner &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</div><div class="ttdoc">Whether gpgIdFile is a signed list QtPass accepts: its signature verifies (GpgIdSigner::verifyFile())...</div><div class="ttdef"><b>Definition</b> <a href="#l00979">pass.cpp:979</a></div></div>
 <div class="ttc" id="aclass_pass_html_aa0971162be08e9090e278b9f0a0aae09"><div class="ttname"><a href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09">Pass::init</a></div><div class="ttdeci">void init(const AppSettings &amp;settings)</div><div class="ttdoc">Initialize the Pass instance with a settings snapshot.</div><div class="ttdef"><b>Definition</b> <a href="#l00158">pass.cpp:158</a></div></div>
 <div class="ttc" id="aclass_pass_html_aa7deb8fc813c6652b169d11bb687f613"><div class="ttname"><a href="class_pass.html#aa7deb8fc813c6652b169d11bb687f613">Pass::formatInsertError</a></div><div class="ttdeci">auto formatInsertError(const QString &amp;friendly, const QString &amp;err) -&gt; QString</div><div class="ttdoc">Put the translated reason for a failed insert above what gpg itself printed, leaving out the machine-...</div><div class="ttdef"><b>Definition</b> <a href="#l00582">pass.cpp:582</a></div></div>
 <div class="ttc" id="aclass_pass_html_ab484c95a5b7b79e34fc6aef127f23ba8"><div class="ttname"><a href="class_pass.html#ab484c95a5b7b79e34fc6aef127f23ba8">Pass::finishedGitInit</a></div><div class="ttdeci">void finishedGitInit(const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">git init in the store succeeded; the store is a repository now and the tree is re-read.</div></div>
@@ -1487,15 +1503,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('pass_8cpp_sour
 <div class="ttc" id="aclass_pass_html_ae2ce1c54d65a0d00db42a0ffc139c393"><div class="ttname"><a href="class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393">Pass::generateGPGKeysFailed</a></div><div class="ttdeci">void generateGPGKeysFailed(const QString &amp;err)</div><div class="ttdoc">Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial...</div></div>
 <div class="ttc" id="aclass_pass_html_ae6e6a7bafd0f0753db6bae3205c22c72"><div class="ttname"><a href="class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72">Pass::kMaxPlaintextBytes</a></div><div class="ttdeci">static constexpr qint64 kMaxPlaintextBytes</div><div class="ttdoc">Most bytes of plaintext a gpg decryption may produce.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00277">pass.h:277</a></div></div>
 <div class="ttc" id="aclass_pass_html_ae90247bfa03db35b4e4d4449b0a0065e"><div class="ttname"><a href="class_pass.html#ae90247bfa03db35b4e4d4449b0a0065e">Pass::m_insertsPending</a></div><div class="ttdeci">int m_insertsPending</div><div class="ttdoc">Inserts that have started queueing but not yet reported; see queueInsert.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00681">pass.h:681</a></div></div>
-<div class="ttc" id="aclass_pass_html_ae97e7a760b71609933dd3fe3a4629703"><div class="ttname"><a href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">Pass::getRecipientList</a></div><div class="ttdeci">static auto getRecipientList(const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</div><div class="ttdoc">Get list of recipients for a password file.</div><div class="ttdef"><b>Definition</b> <a href="#l01146">pass.cpp:1146</a></div></div>
+<div class="ttc" id="aclass_pass_html_ae97e7a760b71609933dd3fe3a4629703"><div class="ttname"><a href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">Pass::getRecipientList</a></div><div class="ttdeci">static auto getRecipientList(const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</div><div class="ttdoc">Get list of recipients for a password file.</div><div class="ttdef"><b>Definition</b> <a href="#l01162">pass.cpp:1162</a></div></div>
 <div class="ttc" id="aclass_pass_html_aef20faec56cbdf08fa1530f7bb7ba106"><div class="ttname"><a href="class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106">Pass::LinkScope</a></div><div class="ttdeci">LinkScope</div><div class="ttdoc">What refuseLinkedPath() judges.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00486">pass.h:486</a></div></div>
 <div class="ttc" id="aclass_pass_html_aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d"><div class="ttname"><a href="class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d">Pass::LinkScope::EntryAndParents</a></div><div class="ttdeci">@ EntryAndParents</div><div class="ttdoc">The entry itself and every folder above it in the store.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00488">pass.h:488</a></div></div>
 <div class="ttc" id="aclass_pass_html_af08e80e76ffd6581f35e701e6c8b533e"><div class="ttname"><a href="class_pass.html#af08e80e76ffd6581f35e701e6c8b533e">Pass::finishedRemove</a></div><div class="ttdeci">void finishedRemove(const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">A Remove() succeeded; the entry or folder is gone from the store.</div></div>
-<div class="ttc" id="aclass_pass_html_af1859cdb9fb7f506d92740f3370acd0b"><div class="ttname"><a href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">Pass::refuseUnfinishedGitOperation</a></div><div class="ttdeci">auto refuseUnfinishedGitOperation() -&gt; bool</div><div class="ttdoc">Refuse to change the store while git is mid-rebase, -merge, -cherry-pick or -revert.</div><div class="ttdef"><b>Definition</b> <a href="#l00898">pass.cpp:898</a></div></div>
+<div class="ttc" id="aclass_pass_html_af1859cdb9fb7f506d92740f3370acd0b"><div class="ttname"><a href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">Pass::refuseUnfinishedGitOperation</a></div><div class="ttdeci">auto refuseUnfinishedGitOperation() -&gt; bool</div><div class="ttdoc">Refuse to change the store while git is mid-rebase, -merge, -cherry-pick or -revert.</div><div class="ttdef"><b>Definition</b> <a href="#l00914">pass.cpp:914</a></div></div>
 <div class="ttc" id="aclass_pass_html_af310a136a6d9ec695c490215eef4d937"><div class="ttname"><a href="class_pass.html#af310a136a6d9ec695c490215eef4d937">Pass::m_pendingShows</a></div><div class="ttdeci">QQueue&lt; QString &gt; m_pendingShows</div><div class="ttdoc">Files of the Show() calls still in flight, oldest first.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00679">pass.h:679</a></div></div>
-<div class="ttc" id="aclass_pass_html_af96d0b4d081c5e1801e84f568ccb8d0f"><div class="ttname"><a href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">Pass::parseRecipients</a></div><div class="ttdeci">static auto parseRecipients(const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</div><div class="ttdoc">Parse the contents of a .gpg-id: one recipient per line, # starts a comment, unusable lines are logge...</div><div class="ttdef"><b>Definition</b> <a href="#l01161">pass.cpp:1161</a></div></div>
+<div class="ttc" id="aclass_pass_html_af96d0b4d081c5e1801e84f568ccb8d0f"><div class="ttname"><a href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">Pass::parseRecipients</a></div><div class="ttdeci">static auto parseRecipients(const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</div><div class="ttdoc">Parse the contents of a .gpg-id: one recipient per line, # starts a comment, unusable lines are logge...</div><div class="ttdef"><b>Definition</b> <a href="#l01177">pass.cpp:1177</a></div></div>
 <div class="ttc" id="aclass_pass_html_afea04fa657d65846e2772b0b25c96276"><div class="ttname"><a href="class_pass.html#afea04fa657d65846e2772b0b25c96276">Pass::refuseFolderOutsideStore</a></div><div class="ttdeci">auto refuseFolderOutsideStore(const QString &amp;folder, QString *relative=nullptr) -&gt; bool</div><div class="ttdoc">Refuse recipients for a folder outside the store, as pass refuses a path with .. in it.</div><div class="ttdef"><b>Definition</b> <a href="#l00819">pass.cpp:819</a></div></div>
-<div class="ttc" id="aclass_pass_html_aff660edce34d33f5a2adfa8c130470f0"><div class="ttname"><a href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">Pass::generateRandomPassword</a></div><div class="ttdeci">auto generateRandomPassword(const QString &amp;charset, unsigned int length) -&gt; QString</div><div class="ttdoc">Generate random password from charset.</div><div class="ttdef"><b>Definition</b> <a href="#l01223">pass.cpp:1223</a></div></div>
+<div class="ttc" id="aclass_pass_html_aff660edce34d33f5a2adfa8c130470f0"><div class="ttname"><a href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">Pass::generateRandomPassword</a></div><div class="ttdeci">auto generateRandomPassword(const QString &amp;charset, unsigned int length) -&gt; QString</div><div class="ttdoc">Generate random password from charset.</div><div class="ttdef"><b>Definition</b> <a href="#l01239">pass.cpp:1239</a></div></div>
 <div class="ttc" id="aclass_path_validator_html_a3e074708091e613100680afe2e7d4eb7"><div class="ttname"><a href="class_path_validator.html#a3e074708091e613100680afe2e7d4eb7">PathValidator::storeRelativePath</a></div><div class="ttdeci">static auto storeRelativePath(const QString &amp;storeRoot, const QString &amp;candidate) -&gt; std::optional&lt; QString &gt;</div><div class="ttdoc">Where candidate lies in the store, judged as isPathInStore() judges it.</div><div class="ttdef"><b>Definition</b> <a href="pathvalidator_8cpp_source.html#l00018">pathvalidator.cpp:18</a></div></div>
 <div class="ttc" id="aclass_path_validator_html_aef01daad215a9c0ffb7b0bbaaada4fa7"><div class="ttname"><a href="class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7">PathValidator::isTargetSpelled</a></div><div class="ttdeci">static auto isTargetSpelled(const QString &amp;storeRoot, const QString &amp;path) -&gt; bool</div><div class="ttdoc">Whether path is spelled through the target of a store root that is itself a link, rather than from th...</div><div class="ttdef"><b>Definition</b> <a href="pathvalidator_8cpp_source.html#l00069">pathvalidator.cpp:69</a></div></div>
 <div class="ttc" id="aclass_util_html_a303cdce7f33f076823a0581defb52ca4"><div class="ttname"><a href="class_util.html#a303cdce7f33f076823a0581defb52ca4">Util::isUnderLink</a></div><div class="ttdeci">static auto isUnderLink(const QString &amp;path, const QString &amp;storeRoot, bool includeSelf=true) -&gt; bool</div><div class="ttdoc">Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its...</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00765">util.cpp:765</a></div></div>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 13:19:18</td>
+            <td class="headerValue">2026-11-14 15:08:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryMed">81.8&nbsp;%</td>
@@ -103,8 +103,8 @@
 <span id="L30"><span class="lineNum">      30</span>              : </span>
 <span id="L31"><span class="lineNum">      31</span> <span class="tlaUNC">           0 : auto MenuBarPeek::isPeeking() const -&gt; bool { return m_peeking; }</span></span>
 <span id="L32"><span class="lineNum">      32</span>              : </span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">      110112 : auto MenuBarPeek::eventFilter(QObject *watched, QEvent *event) -&gt; bool {</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">      110112 :   switch (event-&gt;type()) {</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">      110114 : auto MenuBarPeek::eventFilter(QObject *watched, QEvent *event) -&gt; bool {</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">      110114 :   switch (event-&gt;type()) {</span></span>
 <span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          20 :   case QEvent::KeyPress:</span></span>
 <span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          20 :     onKeyPress(watched, static_cast&lt;QKeyEvent *&gt;(event));</span></span>
 <span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">          20 :     break;</span></span>
@@ -116,8 +116,8 @@
 <span id="L43"><span class="lineNum">      43</span> <span class="tlaUNC">           0 :       hideWhenNoMenuIsOpen();</span></span>
 <span id="L44"><span class="lineNum">      44</span>              :     }</span>
 <span id="L45"><span class="lineNum">      45</span>              :     break;</span>
-<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">        1112 :   case QEvent::WindowDeactivate:</span></span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">        1112 :     if (watched == m_window) {</span></span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">        1109 :   case QEvent::WindowDeactivate:</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">        1109 :     if (watched == m_window) {</span></span>
 <span id="L48"><span class="lineNum">      48</span>              :       // Alt+Tab: the release goes to another application.</span>
 <span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          25 :       m_altDown = false;</span></span>
 <span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          25 :       hideWhenNoMenuIsOpen();</span></span>
@@ -126,7 +126,7 @@
 <span id="L53"><span class="lineNum">      53</span>              :   default:</span>
 <span id="L54"><span class="lineNum">      54</span>              :     break;</span>
 <span id="L55"><span class="lineNum">      55</span>              :   }</span>
-<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">      110112 :   return false;</span></span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">      110114 :   return false;</span></span>
 <span id="L57"><span class="lineNum">      57</span>              : }</span>
 <span id="L58"><span class="lineNum">      58</span>              : </span>
 <span id="L59"><span class="lineNum">      59</span>              : // A key event reaches the filter once for every widget it propagates to, and</span>

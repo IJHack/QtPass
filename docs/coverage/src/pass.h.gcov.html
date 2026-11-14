@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 13:19:18</td>
+            <td class="headerValue">2026-11-14 15:08:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
@@ -146,7 +146,7 @@
 <span id="L73"><span class="lineNum">      73</span>              :  * not the link.</span>
 <span id="L74"><span class="lineNum">      74</span>              :  */</span>
 <span id="L75"><span class="lineNum">      75</span>              : class Pass : public QObject {</span>
-<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">         232 :   Q_OBJECT</span></span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">         235 :   Q_OBJECT</span></span>
 <span id="L77"><span class="lineNum">      77</span>              : </span>
 <span id="L78"><span class="lineNum">      78</span>              :   /** @brief Unused; kept from the time Pass tracked the running wrapper. */</span>
 <span id="L79"><span class="lineNum">      79</span>              :   bool wrapperRunning{false};</span>
@@ -166,8 +166,8 @@
 <span id="L93"><span class="lineNum">      93</span>              :    * their own process.</span>
 <span id="L94"><span class="lineNum">      94</span>              :    * @return A copy of the environment.</span>
 <span id="L95"><span class="lineNum">      95</span>              :    */</span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         318 :   [[nodiscard]] auto storeEnvironment() const -&gt; QProcessEnvironment {</span></span>
-<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">         318 :     return withCurrentGitPin(env);</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         321 :   [[nodiscard]] auto storeEnvironment() const -&gt; QProcessEnvironment {</span></span>
+<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">         321 :     return withCurrentGitPin(env);</span></span>
 <span id="L98"><span class="lineNum">      98</span>              :   }</span>
 <span id="L99"><span class="lineNum">      99</span>              : </span>
 <span id="L100"><span class="lineNum">     100</span>              :   /**</span>
@@ -221,7 +221,7 @@
 <span id="L148"><span class="lineNum">     148</span>              :    */</span>
 <span id="L149"><span class="lineNum">     149</span>              :   static QString getDefaultKeyTemplate(const QString &amp;gpgExecutable = {});</span>
 <span id="L150"><span class="lineNum">     150</span>              : </span>
-<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         222 :   ~Pass() override = default;</span></span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         223 :   ~Pass() override = default;</span></span>
 <span id="L152"><span class="lineNum">     152</span>              : </span>
 <span id="L153"><span class="lineNum">     153</span>              :   // Git operations</span>
 <span id="L154"><span class="lineNum">     154</span>              :   /**</span>
