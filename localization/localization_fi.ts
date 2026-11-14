@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Kun leikepöydä tyhjennetään, palauta siihen sen sisältö ennen kopiointia, aivan kuten pass -c tekee, ellei muuta ole kopioitu samalla. Teksti vain: muotoilua ei palauteta. Tämä teksti pysyy muistissa siihen asti. Siinä tapauksessa, että leikepöytä ei ole luettavissa ilman keskitystä (jotkin Wayland-työpöydät), se tyhjennetään sen sijaan.</translation>
+        <translation type="unfinished">Kun leikepöytä tyhjennetään, palauta siihen se, mitä siinä oli ennen kopiointia, aivan kuten pass -c tekee, ellei sillä välin ole kopioitu jotain muuta. Vain teksti: muotoilua ei palauteta. Tämä teksti pysyy muistissa siihen asti. Jos leikepöytää ei voi lukea ilman kohdistusta (jotkin Wayland-työpöydät), se tyhjennetään sen sijaan.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Piilota kentät, jotka sisältävät myös salaisuuksia, ei vain salasanaa: kenttä, jonka nimi sisältää jonkin seuraavista sanoista. Pois käytöstä: vain salasana piilotetaan.</translation>
+        <translation type="unfinished">Piilota myös kentät, jotka sisältävät salaisuuden, ei vain salasanaa: kenttä, jonka nimi sisältää jonkin seuraavista sanoista. Pois käytöstä: vain salasana piilotetaan.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -579,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Aseta oletusarvot takaisin: PIN-koodit, korttien koodit, avaimet, tokenit ja muut.</translation>
+        <translation type="unfinished">Palauta oletussanat: PIN, korttien koodit, avaimet, tokenit, palautuskoodit ja vastaavat.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1154,7 +1154,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="81"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">QtPass on graafinen käyttöliittymä &lt;i&gt;pass&lt;/i&gt;-ohjelmalle, Unixin vakiosalasanojen hallintaohjelmalle: jokainen salasana on GnuPG:llä salattu tiedosto kansiossa, jonka voit ottaa Gitin hallintaan.&lt;br&gt;&lt;br&gt;Seuraavilla sivuilla etsitään GnuPG, varmistetaan, että sinulla on avain, jolle salata, ja valitaan kansio, jossa salasanasi sijaitsevat. Mitään ei kirjoiteta, ennen kuin painat Valmis.</translation>
+        <translation type="unfinished">QtPass on graafinen käyttöliittymä &lt;i&gt;pass&lt;/i&gt;-ohjelmalle, Unixin standardille salasanojen hallintaohjelmalle: jokainen salasana on GnuPG:llä salattu tiedosto kansiossa, jonka voit ottaa Gitin hallintaan.&lt;br&gt;&lt;br&gt;Seuraavilla sivuilla etsitään GnuPG, varmistetaan, että sinulla on avain, jolle salata, ja valitaan kansio, jossa salasanasi sijaitsevat. Mitään ei kirjoiteta, ennen kuin painat Valmis.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="133"/>
@@ -2316,8 +2316,8 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass on GUI ohjelmalle &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, joka on Unixin oletus salasanojen hallintaohjelma.&lt;/p&gt;
-&lt;p&gt;Ilmoitathan &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;ongelmat&lt;/a&gt; joita mahdollisesti kohtat käyttäessäsi tätä ohjelmaa.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass on GUI ohjelmalle &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, joka on Unixin standardi salasanojen hallintaohjelma.&lt;/p&gt;
+&lt;p&gt;Ilmoitathan &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;ongelmat&lt;/a&gt; joita mahdollisesti kohtaat käyttäessäsi tätä ohjelmaa.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentaatio&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Lähdekoodi&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
@@ -2781,7 +2781,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… lisää vastaavia löydettäessä</translation>
+        <translation type="unfinished">… lisää osumia tässä kohteessa</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -3107,7 +3107,7 @@ Jatketaanko?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Tiedot on tallennettu, mutta sen tallentaminen Git-repositorioon epäonnistui. Seuraavat tiedot ovat raportoitu:
+        <translation type="unfinished">Merkintä on tallennettu varastoon, mutta sen kirjaaminen gitiin epäonnistui. Raportoitiin seuraavaa:
 
 %1</translation>
     </message>
@@ -3119,7 +3119,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ei ole salasanarekisterissä. Vastaanottajat on määritetty rekisterille tai sen sisällä olevalle kansiolle.</translation>
+        <translation type="unfinished">%1 ei ole salasanavaraston sisällä. Vastaanottajat määritetään varastolle tai sen sisällä olevalle kansiolle.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3186,7 +3186,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1:ta ei voida lukea vastaanottajaluettelona (normaalikokoinen tiedosto, jonka koko on enintään %2), joten mitään ei ole valittu automaattisesti. Tarkista se ennen vastaanottajien valitsemista tässä: &quot;OK&quot; korvaa sen uudella luettelolla.</translation>
+        <translation type="unfinished">%1:ta ei voida lukea vastaanottajaluettelona (tavallinen tiedosto, jonka koko on enintään %2), joten mitään ei ole valittu automaattisesti. Tarkista se ennen vastaanottajien valitsemista tässä: &quot;OK&quot; korvaa sen uudella luettelolla.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3892,7 +3892,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Huomautus: Kun painat OK, kaikki tämän kansion ja sen alikansioiden salasanat salataan uudelleen valituille käyttäjille; tämä voi kestää hetken.
 Lihavoiduilla merkinnöillä on salainen avain käytettävissä. Valitse yksi näistä, jotta voit itse purkaa salauksen.
 Tavallisilla merkinnöillä on luotettu salausavain. Valitse näitä, jotta muut voivat purkaa salauksen.
-[INVALID]- ja [EXPIRED]-merkinnöille ei voi salata; [PARTIAL]-merkinnöillä on avain, johon ei luoteta täysin.</translation>
+[EPÄKELPO]- ja [VANHENTUNUT]-merkinnöille ei voi salata; [OSITTAINEN]-merkinnöillä on avain, johon ei luoteta täysin.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>

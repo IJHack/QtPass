@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Ketika clipboard dibersihkan, kembalikan apa yang ada di sana sebelumnya, seperti yang dilakukan oleh fitur &quot;pass -c&quot;, kecuali jika ada hal lain yang disalin di antaranya. Hanya teks: format tidak dipulihkan. Teks tersebut tetap berada dalam memori hingga saat itu. Di mana clipboard tidak dapat dibaca tanpa fokus (beberapa desktop Wayland), maka clipboard tersebut dibersihkan sebagai gantinya.</translation>
+        <translation type="unfinished">Ketika clipboard dibersihkan, kembalikan apa yang ada di sana sebelum penyalinan, seperti yang dilakukan oleh &quot;pass -c&quot;, kecuali jika ada hal lain yang disalin sementara itu. Hanya teks: format tidak dipulihkan. Teks tersebut tetap berada dalam memori hingga saat itu. Jika clipboard tidak dapat dibaca tanpa fokus (beberapa desktop Wayland), clipboard akan dibersihkan sebagai gantinya.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Sembunyikan bidang yang juga menyimpan rahasia, bukan hanya kata sandi: sebuah bidang yang namanya mengandung salah satu dari kata-kata ini. Matikan: hanya kata sandi yang disembunyikan.</translation>
+        <translation type="unfinished">Sembunyikan juga kolom yang menyimpan rahasia, bukan hanya kata sandi: kolom yang namanya mengandung salah satu dari kata-kata ini. Nonaktif: hanya kata sandi yang disembunyikan.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -1495,7 +1495,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 tidak berada di dalam penyimpanan kata sandi, atau nama folder yang berisi karakter baris baru atau karakter kontrol lainnya, yang tidak dapat direkam oleh daftar yang ditandatangani.</translation>
+        <translation type="unfinished">%1 tidak berada di dalam penyimpanan kata sandi, atau ada nama folder di jalurnya yang memuat baris baru atau karakter kontrol lain, yang tidak dapat dicatat oleh daftar yang ditandatangani.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1505,7 +1505,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 tidak dapat dibaca sebagai daftar penerima (file biasa dengan maksimal %2).</translation>
+        <translation type="unfinished">%1 tidak dapat dibaca sebagai daftar penerima (berkas biasa dengan ukuran maksimal %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1660,7 +1660,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 adalah, atau terletak di balik, sebuah tautan simbolis atau persimpangan setelah ditarik. Apa yang ditunjuk olehnya bukanlah bagian dari penyimpanan kata sandi dan dibiarkan begitu saja.</translation>
+        <translation type="unfinished">%1 adalah, atau berada di balik, tautan simbolik atau junction setelah pull. Tujuan yang ditunjuknya bukan bagian dari penyimpanan kata sandi dan dibiarkan apa adanya.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1866,7 +1866,7 @@ Enkripsi ulang tidak selesai, sehingga sebagian atau semua entri masih dienkrips
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">Ukuran %1 terlalu besar untuk disimpan sebagai file kunci.</translation>
+        <translation type="unfinished">%1 lebih besar daripada ukuran yang mungkin untuk berkas kunci.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2545,7 +2545,7 @@ Enkripsi ulang tidak selesai, sehingga sebagian atau semua entri masih dienkrips
         <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Menampilkan hasil pencarian pertama %n; untuk melihat hasil lainnya, lakukan pencarian dengan kriteria yang lebih spesifik.</numerusform>
+            <numerusform>Menampilkan %n hasil pertama; untuk melihat hasil lainnya, lakukan pencarian dengan kriteria yang lebih spesifik.</numerusform>
         </translation>
     </message>
     <message>
@@ -2873,7 +2873,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 tidak berada di dalam penyimpanan kata sandi. Penerima telah ditetapkan untuk penyimpanan atau folder di dalamnya.</translation>
+        <translation type="unfinished">%1 tidak berada di dalam penyimpanan kata sandi. Penerima ditetapkan untuk penyimpanan atau folder di dalamnya.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -2940,7 +2940,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 tidak dapat dibaca sebagai daftar penerima (file biasa dengan maksimal %2), jadi tidak ada yang dipilih secara otomatis. Periksa dulu sebelum memilih penerima di sini: &quot;OK&quot; akan menulis ulang daftar tersebut.</translation>
+        <translation type="unfinished">%1 tidak dapat dibaca sebagai daftar penerima (berkas biasa dengan ukuran maksimal %2), jadi tidak ada yang dipilih secara otomatis. Periksa dulu sebelum memilih penerima di sini: &quot;OK&quot; akan menulis ulang daftar tersebut.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3078,7 +3078,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">Entri masih disimpan. Tetap tutup dialog? Jika penyimpanan kemudian gagal, apa yang Anda ketik akan hilang.</translation>
+        <translation type="unfinished">Entri masih dalam proses penyimpanan. Tetap tutup dialog? Jika penyimpanan kemudian gagal, apa yang Anda ketik akan hilang.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
@@ -3211,7 +3211,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfigurasi GPG home %1 tidak ditemukan.</translation>
+        <translation type="unfinished">Direktori home GPG yang dikonfigurasi %1 tidak ada.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3235,7 +3235,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">GnuPG yang melakukan enkripsi. pass dan Git bersifat opsional; QtPass dapat mengerjakan tugasnya sendiri.</translation>
+        <translation type="unfinished">GnuPG yang melakukan enkripsi. pass dan Git bersifat opsional; QtPass dapat mengerjakan tugas keduanya sendiri.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="214"/>
@@ -3639,7 +3639,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Catatan: Saat OK ditekan, setiap kata sandi di folder ini dan subfoldernya dienkripsi ulang untuk pengguna yang dipilih; ini bisa memakan waktu.
 Entri tebal memiliki kunci rahasia yang tersedia, pilih salah satu agar Anda sendiri dapat mendekripsi.
 Entri biasa memiliki kunci enkripsi yang dipercaya, pilih entri ini agar orang lain dapat mendekripsi.
-Enkripsi tidak dapat dilakukan ke entri [INVALID] dan [EXPIRED]; entri [PARTIAL] memiliki kunci yang tidak sepenuhnya dipercaya.</translation>
+Enkripsi tidak dapat dilakukan ke entri [TIDAK VALID] dan [KEDALUWARSA]; entri [PARSIAL] memiliki kunci yang tidak sepenuhnya dipercaya.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>

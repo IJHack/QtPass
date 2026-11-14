@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Slėpti laukus, kuriuose saugoma ir kita privati informacija, o ne tik slaptažodis: laukas, pavadinimas kurio yra vienas iš šių žodžių. IŠJUNGTA: tik slaptažodis bus slėptas.</translation>
+        <translation type="unfinished">Slėpti ne tik slaptažodį, bet ir laukus, kuriuose yra paslaptis: laukus, kurių pavadinime yra vienas iš šių žodžių. Išjungta: slepiamas tik slaptažodis.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Vykdyti pradinį sąranką: įterti standartinius žodžius, kortelių kodus, raktus, žetonus, atkūrimo kodus ir pan.</translation>
+        <translation type="unfinished">Grąžinti numatytuosius žodžius: pin, kortelių kodai, raktai, žetonai, atkūrimo kodai ir pan.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -576,7 +576,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Pasirinktinis kelias SSH_AUTH_SOCK perrašymui. Palikite tuščią, kad būtų automatiškai aptikta per gpgconf.</translation>
+        <translation type="unfinished">Pasirinktinis kelias, kuris naudojamas vietoj SSH_AUTH_SOCK. Palikite tuščią, kad būtų automatiškai aptiktas per gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1392"/>
@@ -1106,7 +1106,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <location filename="../src/firstrunwizard.cpp" line="72"/>
         <location filename="../src/firstrunwizard.cpp" line="78"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Sveiki atvykę, QtPass</translation>
+        <translation type="unfinished">Sveiki atvykę į QtPass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="81"/>
@@ -1137,7 +1137,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 jau yra užšifruotų failų; jie nebuvo iš naujo užšifruoti pažymėtiems raktams. Norėdami tai padaryti, po paleidimo atverkite „Vartotojai“.</translation>
+        <translation type="unfinished">Aplanke %1 jau yra užšifruotų failų; jie nebuvo iš naujo užšifruoti pažymėtiems raktams. Norėdami tai padaryti, po paleidimo atverkite „Vartotojai“.</translation>
     </message>
 </context>
 <context>
@@ -1853,7 +1853,7 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/importkeydialog.cpp" line="101"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 neatrodo kaip ASCII šarvuotas GPG raktas. Pirmiausia konvertuokite jį naudodami &lt;code&gt;gpg --armor --export&lt;/code&gt;, arba įklijuokite šarvuotą bloką per &lt;b&gt;Iš iškarpinės&lt;/b&gt;.</translation>
+        <translation type="unfinished">%1 neatrodo kaip ASCII-armored formato GPG raktas. Pirmiausia konvertuokite jį naudodami &lt;code&gt;gpg --armor --export&lt;/code&gt;, arba įklijuokite ASCII-armored bloką per &lt;b&gt;Iš iškarpinės&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2003,12 +2003,12 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Vardas ir slaptafrazė negali turėti nutraukimų.</translation>
+        <translation type="unfinished">Varde ir slaptafrazėje negali būti eilučių lūžių.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Invalid name</source>
-        <translation>Nelegalus vardas</translation>
+        <translation type="unfinished">Netinkamas vardas</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="197"/>
@@ -2111,7 +2111,7 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/mainwindow.ui" line="266"/>
         <source>Welcome to QtPass</source>
-        <translation>Sveiki atvykę, QtPass</translation>
+        <translation type="unfinished">Sveiki atvykę į QtPass</translation>
     </message>
     <message>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
@@ -2399,7 +2399,7 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
         <location filename="../src/mainwindow.cpp" line="724"/>
         <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Nėra OTP kodų šio slaptažodžio įrašyje</translation>
+        <translation type="unfinished">Šiame slaptažodžio įraše nerastas OTP kodas</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -2465,12 +2465,12 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/mainwindow.cpp" line="1196"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Nelegalus vardas</translation>
+        <translation type="unfinished">Netinkamas pavadinimas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Šis vardas rodytų už slaptažodžių saugyklos ribų. Pasirinkite kitą vardą.</translation>
+        <translation type="unfinished">Šis pavadinimas rodytų už slaptažodžių saugyklos ribų. Pasirinkite kitą pavadinimą.</translation>
     </message>
     <message>
         <source>New file</source>
@@ -2553,7 +2553,7 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… daugiau atitikčių šioje įraše</translation>
+        <translation type="unfinished">… daugiau atitikčių šiame įraše</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -2870,7 +2870,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Išsaugota, bet ne patvirtinta</translation>
+        <translation type="unfinished">Išsaugota, bet neužfiksuota</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -2956,7 +2956,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">&quot;%1 negalima interpretuoti kaip gavėjų sąrašo (tiesioginis failas, turintis didžiausiai %2 elementų), todėl niekas nėra iš anksto pasirinktas. Patikrinkite jį prieš renkant gavėjus čia: &quot;OK&quot; užrašys naują sąrašą vietoj esančio.</translation>
+        <translation type="unfinished">%1 nepavyksta perskaityti kaip gavėjų sąrašo (įprasto failo, ne didesnio nei %2), todėl nieko iš anksto nepažymėta. Patikrinkite jį prieš pasirinkdami gavėjus čia: „OK“ įrašo naują sąrašą vietoj esamo.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3231,7 +3231,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfigūruotas GPG namas %1 neegzistuoja.</translation>
+        <translation type="unfinished">Sukonfigūruotas GPG namų katalogas %1 neegzistuoja.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3332,7 +3332,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Nėra OTP kodų šio slaptažodžio įrašyje</translation>
+        <translation type="unfinished">Šiame slaptažodžio įraše nerastas OTP kodas</translation>
     </message>
 </context>
 <context>
@@ -3460,7 +3460,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="189"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode užstrigo</translation>
+        <translation type="unfinished">qrencode nulūžo</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="190"/>
@@ -3473,7 +3473,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Patikėtinių sąraus patikrinimas pagal %1…</translation>
+        <translation type="unfinished">Tikrinami gavėjų sąrašai aplanke %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3499,7 +3499,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Nuoroda %1 buvo pašalinta, o „git“ jau nebesugeba ją stebėti, tačiau komitavimas nepavyko: %2</translation>
+        <translation type="unfinished">Nuoroda %1 pašalinta ir git jos nebeseka, bet įrašo (commit) sukurti nepavyko: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>
@@ -3561,7 +3561,7 @@ ir po to įjunkite Git nustatymuose.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="407"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">Kiekvienas pakeitimas tampa Git įrašu (commit); aplanke, kuris dar nėra saugykla, ji sukuriama</translation>
+        <translation type="unfinished">Kiekvienas pakeitimas tampa Git įrašu (commit); aplanke, kuris dar nėra repozitorija, ji sukuriama</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="431"/>
@@ -3661,7 +3661,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Pastaba: paspaudus OK, visi šio aplanko ir jo poaplankių slaptažodžiai iš naujo užšifruojami pasirinktiems vartotojams; tai gali užtrukti.
 Paryškinti įrašai turi prieinamą slaptąjį raktą – pasirinkite vieną iš jų, kad galėtumėte iššifruoti patys.
 Paprasti įrašai turi patikimą šifravimo raktą – pasirinkite juos, kad leistumėte iššifruoti kitiems.
-[INVALID] ir [EXPIRED] įrašams užšifruoti negalima; [PARTIAL] įrašų raktas nėra visiškai patikimas.</translation>
+[NEGALIOJA] ir [NEBEGALIOJA] įrašams užšifruoti negalima; [DALINIS] įrašų raktas nėra visiškai patikimas.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -3716,7 +3716,7 @@ Paprasti įrašai turi patikimą šifravimo raktą – pasirinkite juos, kad lei
     <message>
         <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
-        <translation>[GALIOJIMAS NEBEGALIOJA] </translation>
+        <translation type="unfinished">[NEBEGALIOJA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="399"/>

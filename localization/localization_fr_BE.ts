@@ -275,7 +275,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restaurer les mots par défaut : PIN, codes de carte, clés, jetons et autres.</translation>
+        <translation type="unfinished">Restaurer les mots par défaut : PIN, codes de carte, clés, jetons, codes de récupération et autres.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -309,7 +309,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Utilisez un dépôt Git situé dans un dossier au-dessus du magasin</translation>
+        <translation type="unfinished">Utiliser un dépôt Git situé dans un dossier au-dessus du magasin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -703,7 +703,7 @@ La valeur sera néanmoins enregistrée telle quelle.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="85"/>
         <source>System tray is not available</source>
-        <translation>Le plateau système n&apos;est pas disponible</translation>
+        <translation type="unfinished">La zone de notification n&apos;est pas disponible</translation>
     </message>
     <message>
         <source>Pass OTP extension needs to be installed</source>
@@ -971,7 +971,7 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="472"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">Afficher une icône dans la barre des tâches</translation>
+        <translation type="unfinished">Afficher une icône dans la zone de notification</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="473"/>
@@ -1581,7 +1581,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="703"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 est manquant et sa sauvegarde %2 n&apos;a pas pu être renommée. Renommez-la à la main, puis relancez le re-chiffrement.</translation>
+        <translation type="unfinished">%1 est manquant et sa sauvegarde %2 n&apos;a pas pu reprendre son nom d&apos;origine. Renommez-la à la main, puis relancez le re-chiffrement.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="945"/>
@@ -1919,7 +1919,7 @@ Le re-chiffrement ne s&apos;est pas terminé : certaines entrées, voire toutes,
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">La taille de %1 est supérieure à celle d&apos;un fichier clé.</translation>
+        <translation type="unfinished">%1 est plus volumineux qu&apos;un fichier de clé ne peut l&apos;être.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2536,7 +2536,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="545"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Fermer la fenêtre ; avec « Cacher à la fermeture », QtPass reste dans la barre des tâches</translation>
+        <translation type="unfinished">Fermer la fenêtre ; avec « Cacher à la fermeture », QtPass reste dans la zone de notification</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="548"/>
@@ -2609,7 +2609,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="221"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">La connexion a expiré ; réactivation de l&apos;interface.</translation>
+        <translation type="unfinished">L&apos;opération a expiré ; réactivation de l&apos;interface.</translation>
     </message>
     <message>
         <source>Process Output</source>
@@ -3079,7 +3079,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 n&apos;est pas enregistré dans le gestionnaire de mots de passe. Les destinataires sont définis pour le magasin ou un dossier à l&apos;intérieur.</translation>
+        <translation type="unfinished">%1 n&apos;est pas dans le magasin de mots de passe. Les destinataires sont définis pour le magasin ou un dossier à l&apos;intérieur.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3146,7 +3146,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">Le %1 ne peut pas être lu comme une liste de destinataires (un fichier normal de moins de %2), donc aucun destinataire n&apos;est présélectionné. Vérifiez-le avant de choisir les destinataires ici : OK écrira une nouvelle liste à la place.</translation>
+        <translation type="unfinished">%1 ne peut pas être lu comme une liste de destinataires (un fichier normal d&apos;au plus %2), donc aucun destinataire n&apos;est présélectionné. Vérifiez-le avant de choisir les destinataires ici : OK écrira une nouvelle liste à la place.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>

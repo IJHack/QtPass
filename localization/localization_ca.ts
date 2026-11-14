@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Oculta camps que contenen un secret, no només la contrasenya: un camp el nom del qual conté una d&apos;aquestes paraules. Desactivat: només es oculta la contrasenya.</translation>
+        <translation type="unfinished">Oculta també els camps que contenen un secret, no només la contrasenya: un camp el nom del qual conté una d&apos;aquestes paraules. Desactivat: només s&apos;oculta la contrasenya.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -579,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Reestableix les paraules per defecte: PIN, codis de targeta, claus, tokens, codis de recuperació i similar.</translation>
+        <translation type="unfinished">Restableix les paraules per defecte: PIN, codis de targeta, claus, tokens, codis de recuperació i similars.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1170,7 +1170,7 @@ e-mail</translation>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">El magatzem de claus no està inicialitzat</translation>
+        <translation type="unfinished">El magatzem de contrasenyes no està inicialitzat</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -2785,7 +2785,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Aquest nom es resoldria fora de l&apos;emmagatzematge de contrasenyes. Si us plau, trieu un nom diferent.</translation>
+        <translation type="unfinished">Aquest nom es resoldria fora del magatzem de contrasenyes. Si us plau, trieu un nom diferent.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1256"/>
@@ -3111,7 +3111,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Guardat, però no commitat</translation>
+        <translation type="unfinished">S&apos;ha desat, però no s&apos;ha fet commit</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3197,7 +3197,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">No es pot interpretar %1 com a llista de destinataris (un fitxer normal amb un màxim de %2), per tant, no s&apos;ha seleccionat res prèviament. Comproveu-ho abans d&apos;escollir els destinataris aquí: OK escriu una nova llista sobre la existent.</translation>
+        <translation type="unfinished">No es pot interpretar %1 com a llista de destinataris (un fitxer normal amb un màxim de %2), per tant, no s&apos;ha seleccionat res prèviament. Comproveu-ho abans d&apos;escollir els destinataris aquí: OK escriu una llista nova sobre l&apos;existent.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3712,7 +3712,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Revisant les llistes de destinatari sota %1…</translation>
+        <translation type="unfinished">S&apos;estan comprovant les llistes de destinataris a %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3738,7 +3738,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">El enllaç %1 s&apos;ha eliminat i Git ja no el segueix, però la commit ha fallat: %2</translation>
+        <translation type="unfinished">S&apos;ha eliminat l&apos;enllaç %1 i git ja no el segueix, però el commit ha fallat: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>
@@ -3796,7 +3796,7 @@ Voleu continuar?</translation>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished">Git encara no té cap nom ni adreça electrònica per fer comissions. Executeu
+        <translation type="unfinished">Git encara no té cap nom ni adreça electrònica per fer commits. Executeu
 git config --global user.name &quot;El vostre nom&quot;
 git config --global user.email vos@example.org
 i després activeu Git a Paràmetres.</translation>
@@ -3804,7 +3804,7 @@ i després activeu Git a Paràmetres.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="407"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">Cada canvi esdevé una comissió; una carpeta que encara no és un repositori en rep un</translation>
+        <translation type="unfinished">Cada canvi esdevé un commit; una carpeta que encara no és un repositori en rep un</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="431"/>

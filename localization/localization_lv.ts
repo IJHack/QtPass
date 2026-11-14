@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Kad kopēšanas vilnī ir notriekta, atgrieziet to, kas bija tajā pirms kopēšanas, tāpat kā &quot;pass -c&quot;, ja vien starp tam nav noticis ko citu. Vienīgi teksta: formātējums netiek atjaunots. Šis teksts paliek atmiņā līdz tad. Tur, kur kopēšanas vilnī nevar piekļūt (dažas Wayland skaitlēm), tā tiek notriekta.</translation>
+        <translation type="unfinished">Kad starpliktuve tiek notīrīta, atjaunot tajā to, kas tur bija pirms kopēšanas, kā to dara pass -c, ja vien pa to laiku nav nokopēts kas cits. Tikai teksts: formatējums netiek atjaunots. Līdz tam šis teksts paliek atmiņā. Ja starpliktuvi nevar nolasīt bez fokusa (dažās Wayland darbvirsmās), tā tiek notīrīta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Slēpt laukus, kas glabā arī citus noslēpumus, ne tikai parole: lauks, kura vārds satur kādu no šiem vārdiem. Izslēgt: tikai parole ir slēpta.</translation>
+        <translation type="unfinished">Slēpt ne tikai paroli, bet arī laukus, kuros glabājas noslēpums: laukus, kuru nosaukumā ir kāds no šiem vārdiem. Izslēgts: tiek slēpta tikai parole.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Ievietojiet atbildes, kas tika ievadītas noklusējuma režīmā: PIN, kartes kodi, atslēgas, tokeni, atkārsošanas kodi un tā vēl.</translation>
+        <translation type="unfinished">Atjaunot noklusējuma vārdus: pin, kartes kodi, atslēgas, tokeni, atkopšanas kodi un tamlīdzīgi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -576,7 +576,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Neobligāts ceļš, lai pārrakstītu SSH_AUTH_SOCK. Atstājiet tukšu, lai tas tiktu automātiski noteikts, izmantojot gpgconf.</translation>
+        <translation type="unfinished">Neobligāts ceļš, kas aizstāj SSH_AUTH_SOCK. Atstājiet tukšu, lai tas tiktu automātiski noteikts, izmantojot gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1392"/>
@@ -1998,7 +1998,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Neies</translation>
+        <translation type="unfinished">Nederīga ievade</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
@@ -2399,7 +2399,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <location filename="../src/mainwindow.cpp" line="724"/>
         <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Nav atrasts OTP kods šajā paroles ievades virzienā</translation>
+        <translation type="unfinished">Šajā paroles ierakstā nav atrasts OTP kods</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -2553,7 +2553,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… vairāk atbilstu šajā ierakstā</translation>
+        <translation type="unfinished">… vēl atbilstības šajā ierakstā</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -2870,7 +2870,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Saglabāts, bet ne pievienots</translation>
+        <translation type="unfinished">Saglabāts, bet nav iesūtīts</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -2889,7 +2889,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 nav iekļauts paroles glabātnē. Saņēmēji ir norādīti vai tie ir atvērtā faila/mapes gadījumā.</translation>
+        <translation type="unfinished">%1 neatrodas paroļu glabātuvē. Saņēmēji tiek iestatīti glabātuvei vai tajā esošai mapei.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -2956,7 +2956,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 nevar interpretēt kā saņēmēju saraksts (parastais fails, kas satur līdz %2 elementus), tāpēc neviena nav iepriekš izvēlēta. Pārbaudiet to pirms saņēmēju izvēles šeit: &quot;OK&quot; aizstāj esošo sarakstu ar jaunu.</translation>
+        <translation type="unfinished">%1 nevar nolasīt kā saņēmēju sarakstu (parastu failu, ne lielāku par %2), tāpēc nekas nav iepriekš atzīmēts. Pārbaudiet to, pirms šeit izvēlaties saņēmējus: OK tā vietā ieraksta jaunu sarakstu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3190,7 +3190,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="32"/>
         <source>Clear output</source>
-        <translation type="unfinished">Izdzēst izvadu</translation>
+        <translation type="unfinished">Notīrīt izvadi</translation>
     </message>
 </context>
 <context>
@@ -3231,7 +3231,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfigurētā GPG mājupvieta %1 nav atrasta.</translation>
+        <translation type="unfinished">Konfigurētā GPG mājas mape %1 neeksistē.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3332,7 +3332,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Nav atrasts OTP kods šajā paroles ievades virzienā</translation>
+        <translation type="unfinished">Šajā paroles ierakstā nav atrasts OTP kods</translation>
     </message>
 </context>
 <context>
@@ -3473,7 +3473,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Pārbauda saņēmēju sarakstus vietā %1…</translation>
+        <translation type="unfinished">Pārbauda saņēmēju sarakstus mapē %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3499,7 +3499,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Saite %1 tika noņemtā, un &quot;Git&quot; vairs to neizseko, bet pievienojums izdevās: %2</translation>
+        <translation type="unfinished">Saite %1 tika noņemta, un git to vairs neizseko, bet iesūtījums neizdevās: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

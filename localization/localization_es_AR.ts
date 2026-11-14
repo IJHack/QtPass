@@ -229,7 +229,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Ruta opcional para suplantar SSH_AUTH_SOCK. Dejar en blanco para detección automática vía gpgconf.</translation>
+        <translation type="unfinished">Ruta opcional para reemplazar SSH_AUTH_SOCK. Dejar en blanco para detección automática vía gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
@@ -1404,7 +1404,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 no está dentro del almacén de contraseñas, o el nombre de una carpeta contiene un salto de línea u otro carácter de control, que una lista firmada no puede registrar.</translation>
+        <translation type="unfinished">%1 no está dentro del almacén de contraseñas, o el nombre de una carpeta de la ruta contiene un salto de línea u otro carácter de control, que una lista firmada no puede registrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -2854,7 +2854,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;QtPass es una interfaz para &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor de contraseñas estándar de Unix.&lt;/p&gt;
-&lt;p&gt;Informe de cualquier &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; que pudiera experimentar con este programa.&lt;/p&gt;
+&lt;p&gt;Por favor, informá cualquier &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; que tengas con este programa.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentación&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Código fuente&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
@@ -3062,7 +3062,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Guardado, no commitado</translation>
+        <translation type="unfinished">Guardado, pero no confirmado en Git</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3421,7 +3421,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">La configuración de GPG en la carpeta %1 no existe.</translation>
+        <translation type="unfinished">El directorio GPG configurado %1 no existe.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3854,7 +3854,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Nota: Al presionar OK, todas las contraseñas de esta carpeta y sus subcarpetas se vuelven a cifrar para los usuarios seleccionados; esto puede demorar un rato.
 Las entradas en negrita tienen una clave secreta disponible; seleccioná una de ellas para que vos también puedas descifrar.
 Las entradas normales tienen una clave de cifrado de confianza; seleccionalas para permitir que otras personas descifren.
-No se puede cifrar para las entradas [INVÁLIDA] y [VENCIÓ]; las entradas [PARCIAL] tienen una clave que no es totalmente de confianza.</translation>
+No se puede cifrar para las entradas [INVÁLIDA] y [VENCIDA]; las entradas [PARCIAL] tienen una clave que no es totalmente de confianza.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
@@ -3937,7 +3937,7 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
     <message>
         <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
-        <translation>[VENCIÓ] </translation>
+        <translation type="unfinished">[VENCIDA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="399"/>

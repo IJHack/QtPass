@@ -765,7 +765,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 firma utilizando la misma clave para otro almacén. Una lista de destinatarios firmada para uno de estos almacenes es aceptada en el otro: utilice una clave de firma separada para cada almacén cuyo destinatario difiera.</translation>
+        <translation type="unfinished">%1 firma utilizando la misma clave para otro almacén. Una lista de destinatarios firmada para uno de estos almacenes es aceptada en el otro: utilice una clave de firma separada para cada almacén cuyos destinatarios sean distintos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1404,7 +1404,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 no está dentro del almacén de contraseñas, o el nombre de una carpeta contiene un salto de línea u otro carácter de control, que una lista firmada no puede registrar.</translation>
+        <translation type="unfinished">%1 no está dentro del almacén de contraseñas, o el nombre de una carpeta de la ruta contiene un salto de línea u otro carácter de control, que una lista firmada no puede registrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -3049,7 +3049,7 @@ Esto puede sobrescribir muchos ficheros y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Guardado, no commitado</translation>
+        <translation type="unfinished">Guardado, pero no confirmado en Git</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3273,7 +3273,7 @@ Esto puede sobrescribir muchos ficheros y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">La entrada aún se está guardando. ¿Cerrar el diálogo de todos modos? Si después falla el guardado, se perderá lo que escribiste.</translation>
+        <translation type="unfinished">La entrada aún se está guardando. ¿Cerrar el diálogo de todos modos? Si después falla el guardado, se perderá lo que ha escrito.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
@@ -3837,11 +3837,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation>Seleccione qué usuarios podrán descifrar las contraseñas almacenadas en esta carpeta.
+        <translation type="unfinished">Seleccione qué usuarios podrán descifrar las contraseñas almacenadas en esta carpeta.
 Nota: Al pulsar OK, todas las contraseñas de esta carpeta y sus subcarpetas se vuelven a cifrar para los usuarios seleccionados; esto puede tardar un rato.
 Las entradas en negrita tienen una clave secreta disponible; seleccione una de ellas para poder descifrar usted mismo.
 Las entradas normales tienen una clave de cifrado de confianza; selecciónelas para permitir que otras personas descifren.
-No se puede cifrar para las entradas [INVÁLIDA] y [VENCIÓ]; las entradas [PARCIAL] tienen una clave que no es de plena confianza.</translation>
+No se puede cifrar para las entradas [INVÁLIDA] y [VENCIDA]; las entradas [PARCIAL] tienen una clave que no es de plena confianza.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
@@ -3924,7 +3924,7 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
     <message>
         <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
-        <translation>[VENCIÓ] </translation>
+        <translation type="unfinished">[VENCIDA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="399"/>

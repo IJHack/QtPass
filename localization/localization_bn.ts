@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">ডিফল্ট শব্দগুলো পুনরুদ্ধার করুন: পিন, কার্ড কোড, কী, টোকেন এবং অন্যান্য।</translation>
+        <translation type="unfinished">ডিফল্ট শব্দগুলো পুনরুদ্ধার করুন: পিন, কার্ড কোড, কী, টোকেন, রিকভারি কোড এবং এ জাতীয় অন্যান্য।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">একটি স্টোর ফোল্ডারের উপরে থাকা কোনো ফোল্ডারে একটি গিট রিপোজিটরি ব্যবহার করুন।</translation>
+        <translation type="unfinished">স্টোরের উপরের কোনো ফোল্ডারে থাকা একটি গিট রিপোজিটরি ব্যবহার করুন</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1428"/>
         <source>Delete</source>
-        <translation>এন্ট্রি মুছে ফেল</translation>
+        <translation type="unfinished">মুছে ফেলুন</translation>
     </message>
     <message>
         <source>Current path</source>
@@ -767,7 +767,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 অন্য স্টোরের জন্য একই কী ব্যবহার করে সাইন করে। একটি স্টোরের সাইন করা তালিকা অন্যটিতে গ্রহণ করা হয়: প্রতিটি স্টোরের প্রাপকদের ভিন্ন হলে, আলাদা সাইনিং কী ব্যবহার করুন।</translation>
+        <translation type="unfinished">%1 অন্য একটি স্টোরের জন্যও একই কী দিয়ে সাইন করে। এই স্টোরগুলোর একটির জন্য সাইন করা প্রাপক তালিকা অন্যটিতেও গ্রহণ করা হয়: যেসব স্টোরের প্রাপক ভিন্ন, তাদের প্রতিটির জন্য আলাদা সাইনিং কী ব্যবহার করুন।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1506,7 +1506,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 কে প্রাপক তালিকা হিসেবে পড়া সম্ভব নয় (এটি একটি সাধারণ ফাইল, যার আকার সর্বোচ্চ %2)।</translation>
+        <translation type="unfinished">%1 কে প্রাপক তালিকা হিসেবে পড়া সম্ভব নয় (প্রাপক তালিকা হতে হবে সর্বোচ্চ %2 আকারের একটি সাধারণ ফাইল)।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1624,7 +1624,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">pull-এর পরে স্টোরে অমার্জ করা ফাইল আছে কিনা পরীক্ষা করা যায়নি। পুনরায় এনক্রিপ্ট করার আগে git দিয়ে এটি পরীক্ষা করুন।</translation>
+        <translation type="unfinished">পুলের পরে স্টোরে অমার্জ করা ফাইল আছে কিনা পরীক্ষা করা যায়নি। পুনরায় এনক্রিপ্ট করার আগে git দিয়ে এটি পরীক্ষা করুন।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -1871,7 +1871,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">একটি কী ফাইলের আকারের থেকে %1 এর আকার অনেক বড়।</translation>
+        <translation type="unfinished">%1 একটি কী ফাইলের সর্বোচ্চ সম্ভাব্য আকারের চেয়ে বড়।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -1998,7 +1998,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">নাম এবং পাসফ্রাজ-এ কোনো লাইন ভাঙা থাকা উচিত না।</translation>
+        <translation type="unfinished">নাম এবং পাসফ্রাজ-এ কোনো লাইন ব্রেক থাকতে পারবে না।</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2129,7 +2129,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass হলো &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;-এর একটি গ্রাফিক্যাল ইউজার ইন্টারফেস (GUI), যা স্ট্যান্ডার্ড ইউনিক্স পাসওয়ার্ড ম্যানেজার।&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass হলো স্ট্যান্ডার্ড ইউনিক্স পাসওয়ার্ড ম্যানেজার &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;-এর একটি গ্রাফিক্যাল ইউজার ইন্টারফেস (GUI)।&lt;/p&gt;
 &lt;p&gt;এই সফটওয়্যারটি নিয়ে আপনার কোনো &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;সমস্যা&lt;/a&gt; হলে অনুগ্রহ করে জানান।&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;ডকুমেন্টেশন&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;সোর্সকোড&lt;/a&gt;&lt;/p&gt;</translation>
@@ -2394,7 +2394,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="724"/>
         <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
-        <translation>এই পাসওয়ার্ড ইনট্রির মধ্যে কোনো OTP কোড পাওয়া গেল না</translation>
+        <translation type="unfinished">এই পাসওয়ার্ড এন্ট্রির মধ্যে কোনো OTP কোড পাওয়া গেল না</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -2487,7 +2487,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1279"/>
         <source>Delete link?</source>
-        <translation type="unfinished">লিংকটি মুছে ফেলতে হবে?</translation>
+        <translation type="unfinished">লিংকটি মুছে ফেলবেন?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1280"/>
@@ -2861,7 +2861,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">এনক্রিপশন ব্যর্থ: একজন প্রাপকের GPG কী ব্যবহার করা যাচ্ছে না। এটির মেয়াদ শেষ হয়ে থাকতে পারে বা বাতিল করা হয়ে থাকতে পারে, এতে কোনো এনক্রিপশন সাবকী নেই, অথবা এটি বিশ্বস্ত নয়; নিচের gpg বার্তাটি বলে দেবে কোনটি।</translation>
+        <translation type="unfinished">এনক্রিপশন ব্যর্থ: একজন প্রাপকের GPG কী ব্যবহার করা যাচ্ছে না। এটির মেয়াদ শেষ হয়ে থাকতে পারে বা এটি বাতিল করা হয়ে থাকতে পারে, এতে কোনো এনক্রিপশন সাবকী না-ও থাকতে পারে, অথবা এটি বিশ্বস্ত না-ও হতে পারে; নিচের gpg বার্তাটি বলে দেবে কোনটি।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
@@ -2873,7 +2873,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">এই তথ্যটি সংরক্ষণ করা হয়েছে, কিন্তু এটিকে গিট-এ যুক্ত করতে ব্যর্থ। যে সমস্যাটি রিপোর্ট করা হয়েছে:
+        <translation type="unfinished">এন্ট্রিটি স্টোরে সংরক্ষণ করা হয়েছে, কিন্তু গিটে এটি রেকর্ড করা ব্যর্থ হয়েছে। যা রিপোর্ট করা হয়েছে:
 
 %1</translation>
     </message>
@@ -2885,7 +2885,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">পাসওয়ার্ড সংরক্ষণের মধ্যে %1 অন্তর্ভুক্ত নয়। প্রাপকদের জন্য স্টোর অথবা এর মধ্যে থাকা ফোল্ডার সেট করা আছে।</translation>
+        <translation type="unfinished">%1 পাসওয়ার্ড স্টোরের ভেতরে নেই। প্রাপক সেট করা হয় স্টোরের জন্য বা এর ভেতরের কোনো ফোল্ডারের জন্য।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -2952,7 +2952,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 কে প্রাপক তালিকা হিসেবে পড়া সম্ভব নয় (এটি একটি সাধারণ ফাইল, যার আকার %2 এর বেশি নয়), তাই এখানে কোনো তালিকা আগে থেকে নির্বাচিত করা হয়নি। এখানে প্রাপকদের নির্বাচন করার আগে এটি পরীক্ষা করুন: &quot;ঠিক আছে&quot; এই অপশনটি একটি নতুন তালিকা তৈরি করে সেটি প্রতিস্থাপন করবে।</translation>
+        <translation type="unfinished">%1 কে প্রাপক তালিকা হিসেবে পড়া সম্ভব নয় (প্রাপক তালিকা হতে হবে সর্বোচ্চ %2 আকারের একটি সাধারণ ফাইল), তাই আগে থেকে কিছুই নির্বাচিত নেই। এখানে প্রাপক নির্বাচন করার আগে এটি পরীক্ষা করুন: OK চাপলে এর ওপরে একটি নতুন তালিকা লেখা হবে।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3326,7 +3326,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">এই পাসওয়ার্ড ইনট্রির মধ্যে কোনো OTP কোড পাওয়া গেল না</translation>
+        <translation type="unfinished">এই পাসওয়ার্ড এন্ট্রিতে কোনো OTP কোড পাওয়া যায়নি</translation>
     </message>
 </context>
 <context>
@@ -3493,7 +3493,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">লিঙ্ক %1টি সরানো হয়েছে এবং গিট এখন আর এটি ট্র্যাক করে না, কিন্তু কমিট ব্যর্থ হয়েছে: %2</translation>
+        <translation type="unfinished">লিংক %1 সরানো হয়েছে এবং গিট আর এটি ট্র্যাক করে না, কিন্তু কমিট ব্যর্থ হয়েছে: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">कॉपी-पेस्ट इतिहास पुन्हा तयार केला आहे</translation>
+        <translation type="unfinished">क्लिपबोर्ड पुनर्संचयित केला</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">स्टोअर असलेल्या फोल्डरच्या वरच्या भागात &apos;Git&apos; रिपॉजिटरी वापरा</translation>
+        <translation type="unfinished">स्टोअरच्या वरील फोल्डरमधील Git रिपॉजिटरी वापरा</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -1464,7 +1464,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="435"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">%1 स्वाक्षरी करण्यात अयशस्वी: %2</translation>
+        <translation type="unfinished">%1 वर स्वाक्षरी करण्यात अयशस्वी: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="574"/>
@@ -1496,7 +1496,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">पासवर्ड साठ्यात %1 सापडत नाही, किंवा मार्गावरील फोल्डरचे नाव ओळ तोड किंवा इतर नियंत्रण वर्ण समाविष्ट करते, जे स्वाक्षरी केलेले सूची रेकॉर्ड करू शकत नाही.</translation>
+        <translation type="unfinished">%1 पासवर्ड स्टोअरमध्ये नाही, किंवा मार्गावरील एखाद्या फोल्डरच्या नावात ओळ खंड किंवा इतर नियंत्रण वर्ण आहे, जो स्वाक्षरीकृत सूची नोंदवू शकत नाही.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1506,7 +1506,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 हे प्राप्तकर्त्यांची यादी म्हणून वाचता येत नाही (जी नियमितपणे %2 पर्यंत मोठी फाईल असते).</translation>
+        <translation type="unfinished">%1 प्राप्तकर्ता सूची म्हणून वाचता येत नाही (कमाल %2 आकाराची नियमित फाइल).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1624,7 +1624,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">pull नंतर स्टोअरमध्ये विलीन न केलेल्या फायली आहेत का ते तपासता आले नाही. पुन्हा एन्क्रिप्ट करण्यापूर्वी git ने ते तपासा.</translation>
+        <translation type="unfinished">पुलनंतर स्टोअरमध्ये विलीन न केलेल्या फायली आहेत का ते तपासता आले नाही. पुन्हा एन्क्रिप्ट करण्यापूर्वी git ने ते तपासा.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -1662,7 +1662,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 हे, किंवा त्यानंतर तयार झालेले, एक सांकेतिक दुवा (symbolic link) किंवा जंक्शन आहे. हे कशाकडे निर्देशित करते ते पासवर्ड साठ्यात समाविष्ट नाही आणि ते तसेच सोडले जाते.</translation>
+        <translation type="unfinished">पुल केल्यानंतर %1 ही एक सिम्बॉलिक लिंक किंवा जंक्शन आहे, किंवा अशा लिंकच्या मागे आहे. ती ज्याकडे निर्देश करते ते पासवर्ड स्टोअरचा भाग नाही आणि ते तसेच राहील.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1871,7 +1871,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 ही फाइल एका की फाइलपेक्षा मोठी आहे.</translation>
+        <translation type="unfinished">%1 ही फाइल की फाइलच्या कमाल शक्य आकारापेक्षा मोठी आहे.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2563,7 +2563,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… या नोंदीमध्ये आणखी जुळणारे नोंदी</translation>
+        <translation type="unfinished">… या एंट्रीमध्ये आणखी जुळण्या</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -2799,12 +2799,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="200"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished">कॉन्फिगर केलेले जीपीजी होम %1 अस्तित्वात नाही, डीफॉल्ट कीरिंग वापरत आहे</translation>
+        <translation type="unfinished">कॉन्फिगर केलेले GPG होम %1 अस्तित्वात नाही, डीफॉल्ट कीरिंग वापरत आहे</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="208"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished">कॉन्फिगर केलेले जीपीजी होम %1 अस्तित्वात नाही, एन्व्हायर्नमेंटमधील GNUPGHOME %2 वापरत आहे</translation>
+        <translation type="unfinished">कॉन्फिगर केलेले GPG होम %1 अस्तित्वात नाही, एन्व्हायर्नमेंटमधील GNUPGHOME %2 वापरत आहे</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="221"/>
@@ -2893,7 +2893,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 हे पासवर्ड साठ्यात नाही. साठ्यात किंवा त्याच्यातील फोल्डरसाठी प्राप्तकर्ते सेट केले आहेत.</translation>
+        <translation type="unfinished">%1 हे पासवर्ड स्टोअरमध्ये नाही. प्राप्तकर्ते स्टोअरसाठी किंवा त्यातील एखाद्या फोल्डरसाठी सेट केले जातात.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -2960,7 +2960,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 हे प्राप्तकर्त्यांची यादी म्हणून वाचता येत नाही (जी साधारणपणे %2 पर्यंत मोठी फाईल असते), त्यामुळे कोणतीही माहिती पूर्वनियमित केलेली नाही. येथे प्राप्तकर्ते निवडण्यापूर्वी, कृपया तपासा: &apos;ओके&apos; हे त्याऐवजी नवीन यादी तयार करेल.</translation>
+        <translation type="unfinished">%1 प्राप्तकर्ता सूची म्हणून वाचता येत नाही (कमाल %2 आकाराची नियमित फाइल), त्यामुळे काहीही आधीच निवडलेले नाही. येथे प्राप्तकर्ते निवडण्यापूर्वी ती तपासा: OK तिच्यावर नवी सूची लिहिते.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3219,7 +3219,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="242"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">%2 सह %1 स्वाक्षरी करता आले नाही.</translation>
+        <translation type="unfinished">%2 ने %1 वर स्वाक्षरी करता आली नाही.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3228,7 +3228,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="244"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">%2 सह %1 स्वाक्षरी करता आले नाही: %3</translation>
+        <translation type="unfinished">%2 ने %1 वर स्वाक्षरी करता आली नाही: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
@@ -3257,7 +3257,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">एन्क्रिप्शन GnuPG करते. पास आणि गिट ऐच्छिक आहेत; QtPass त्यांचे काम स्वतः करू शकते.</translation>
+        <translation type="unfinished">एन्क्रिप्शन GnuPG करते. pass आणि गिट ऐच्छिक आहेत; QtPass त्यांचे काम स्वतः करू शकते.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="214"/>
@@ -3475,7 +3475,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">%1 मध्ये नमूद केलेल्या प्राप्तकर्त्यांच्या याद्या तपासत आहे…</translation>
+        <translation type="unfinished">%1 अंतर्गत प्राप्तकर्ता सूच्या तपासत आहे…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3506,7 +3506,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">शोधासाठी जीपीजी एक्झिक्युटेबल कॉन्फिगर केलेले असणे आवश्यक आहे.</translation>
+        <translation type="unfinished">शोधासाठी GPG एक्झिक्युटेबल कॉन्फिगर केलेले असणे आवश्यक आहे.</translation>
     </message>
 </context>
 <context>
@@ -3662,7 +3662,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 टीप: OK वर या फोल्डरमधील आणि त्याच्या उपफोल्डरमधील प्रत्येक पासवर्ड निवडलेल्या वापरकर्त्यांसाठी पुन्हा-एन्क्रिप्ट केला जातो; याला काही वेळ लागू शकतो.
 ठळक एंट्रींकडे गुप्त की उपलब्ध आहे, स्वतः डिक्रिप्ट करू शकण्यासाठी यापैकी एक निवडा.
 साध्या एंट्रींकडे विश्वसनीय एन्क्रिप्शन की आहे, इतर लोकांना डिक्रिप्ट करण्यास अनुमती देण्यासाठी या निवडा.
-[INVALID] आणि [EXPIRED] एंट्रींसाठी एन्क्रिप्ट करता येत नाही; [PARTIAL] एंट्रींकडे पूर्णपणे विश्वसनीय नसलेली की आहे.</translation>
+[अवैध] आणि [कालबाह्य] एंट्रींसाठी एन्क्रिप्ट करता येत नाही; [आंशिक] एंट्रींकडे पूर्णपणे विश्वसनीय नसलेली की आहे.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>

@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Međuspremnik vraćen u stanje</translation>
+        <translation type="unfinished">Međuspremnik vraćen</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Koristite repozitor Git u mapi iznad spremišta</translation>
+        <translation type="unfinished">Koristi Git repozitorij u mapi iznad spremišta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Sakrij polja koja sadrže tajne, a ne samo lozinku: polje čije ime sadrži jedno od ovih riječi. Isključeno: samo je lozinka sakrivena.</translation>
+        <translation type="unfinished">Sakrij i polja koja sadrže tajnu, ne samo lozinku: polje čiji naziv sadrži jednu od ovih riječi. Isključeno: skrivena je samo lozinka.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -1551,7 +1551,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ne može se čitati kao lista primatelja (obična datoteka veličine do %2).</translation>
+        <translation type="unfinished">%1 se ne može pročitati kao popis primatelja (obična datoteka veličine najviše %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -2820,7 +2820,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… više uspješnih pretraga u ovom zapisu</translation>
+        <translation type="unfinished">… još podudaranja u ovom zapisu</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -3226,7 +3226,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 ne može se čitati kao lista primatelja (obična datoteka veličine do %2), stoga ništa nije unaprijed odabrano. Provjerite to prije nego što odaberete primatelje ovdje: &quot;OK&quot; piše novu listu nad njom.</translation>
+        <translation type="unfinished">%1 se ne može pročitati kao popis primatelja (obična datoteka veličine najviše %2), stoga ništa nije unaprijed odabrano. Provjerite ga prije nego što ovdje odaberete primatelje: OK preko njega zapisuje novi popis.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3501,7 +3501,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfigurisana GPG domaća direktorija %1 ne postoji.</translation>
+        <translation type="unfinished">Konfigurirani početni direktorij GPG-a %1 ne postoji.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3743,7 +3743,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Provjeravanje liste primatelja pod %1…</translation>
+        <translation type="unfinished">Provjera popisa primatelja u %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3769,7 +3769,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Veza %1 je uklonjena, a Git više ne prati nju, ali je komit ipak propao: %2</translation>
+        <translation type="unfinished">Veza %1 je uklonjena i Git je više ne prati, ali commit nije uspio: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

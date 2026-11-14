@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Quando a área de transferência é limpa, coloque de volta o que estava nela antes da cópia, como faz o &quot;pass&quot; -c, a menos que algo mais tenha sido copiado nesse meio tempo. Apenas texto: a formatação não é restaurada. Esse texto permanece na memória até então. Onde a área de transferência não pode ser lida sem foco (alguns desktops Wayland), ela é limpa em vez disso.</translation>
+        <translation type="unfinished">Quando a área de transferência é limpa, repor o que estava nela antes da cópia, como faz o pass -c, a menos que entretanto tenha sido copiada outra coisa. Apenas texto: a formatação não é restaurada. Esse texto permanece na memória até lá. Onde a área de transferência não pode ser lida sem foco (alguns ambientes Wayland), ela é limpa em vez disso.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -538,7 +538,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restaure as palavras predefinidas: PIN, códigos de cartão, chaves, tokens e outros.</translation>
+        <translation type="unfinished">Restaurar as palavras predefinidas: PIN, códigos de cartão, chaves, tokens, códigos de recuperação e afins.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -3047,7 +3047,7 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Guardado, mas não confirmado</translation>
+        <translation type="unfinished">Guardado, mas sem commit</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3133,7 +3133,7 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 não pode ser lido como uma lista de destinatários (um ficheiro regular com no máximo %2), portanto, nada é pré-selecionado. Verifique antes de escolher os destinatários aqui: OK escreve uma nova lista sobre ela.</translation>
+        <translation type="unfinished">%1 não pode ser lido como uma lista de destinatários (um ficheiro regular com no máximo %2), portanto, nada é pré-selecionado. Verifique-o antes de escolher os destinatários aqui: OK escreve uma nova lista por cima dele.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3648,7 +3648,7 @@ Continua?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Verificando as listas de destinatários sob %1…</translation>
+        <translation type="unfinished">A verificar as listas de destinatários em %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3663,7 +3663,7 @@ Continua?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="320"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">A ligação %1 foi removida, mas o git não conseguiu registá-lo: %2</translation>
+        <translation type="unfinished">A ligação %1 foi removida, mas o git não conseguiu registá-la: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="322"/>
@@ -3674,7 +3674,7 @@ Continua?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">O link %1 foi removido e o git já não o acompanha, mas a operação de commit falhou: %2</translation>
+        <translation type="unfinished">A ligação %1 foi removida e o git já não a acompanha, mas o commit falhou: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

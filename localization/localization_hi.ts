@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">कॉपी-पेस्ट इतिहास पुनर्स्थापित किया गया।</translation>
+        <translation type="unfinished">क्लिपबोर्ड पुनर्स्थापित किया गया</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">जब क्लिपबोर्ड साफ़ किया जाता है, तो pass -c करता है जैसे कि पहले वहां क्या था उसे वापस रखें, जब तक कि बीच में कुछ और कॉपी न की गई हो। केवल पाठ: फ़ॉर्मेटिंग बहाल नहीं की जाती। वह पाठ तब तक स्मृति में रहता है। जहां क्लिपबोर्ड को ध्यान दिए बिना पढ़ा नहीं जा सकता (कुछ वेलैंड डेस्कटॉप), वहां इसे साफ़ कर दिया जाता है।</translation>
+        <translation type="unfinished">जब क्लिपबोर्ड साफ़ किया जाता है, तो कॉपी से पहले उस पर जो था उसे वापस रखें, जैसा pass -c करता है, जब तक कि इस बीच कुछ और कॉपी न किया गया हो। केवल पाठ: फ़ॉर्मेटिंग बहाल नहीं की जाती। वह पाठ तब तक स्मृति में रहता है। जहां फ़ोकस के बिना क्लिपबोर्ड पढ़ा नहीं जा सकता (कुछ वेलैंड डेस्कटॉप), वहां इसके बजाय उसे साफ़ कर दिया जाता है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">पासवर्ड के अलावा, गुप्त जानकारी वाले अन्य फ़ील्ड को छिपाएं: एक ऐसा फ़ील्ड जिसका नाम इनमें से कोई शब्द हो। बंद: केवल पासवर्ड ही छिपा है।</translation>
+        <translation type="unfinished">पासवर्ड के अलावा, गुप्त जानकारी वाले अन्य फ़ील्ड को छिपाएं: एक ऐसा फ़ील्ड जिसके नाम में इनमें से कोई शब्द हो। बंद: केवल पासवर्ड ही छिपा है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -767,7 +767,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 एक अन्य स्टोर के लिए समान कुंजी से हस्ताक्षर करता है। इन स्टोरों में से किसी एक के लिए हस्ताक्षरित प्राप्तकर्ताओं की सूची दूसरे में स्वीकार की जाती है: प्रत्येक स्टोर के अलग-अलग प्राप्तकर्ताओं वाले प्रत्येक स्टोर के लिए अलग-अलग हस्ताक्षर कुंजी का उपयोग करें।</translation>
+        <translation type="unfinished">%1 एक अन्य स्टोर के लिए समान कुंजी से हस्ताक्षर करता है। इन स्टोरों में से किसी एक के लिए हस्ताक्षरित प्राप्तकर्ताओं की सूची दूसरे में स्वीकार की जाती है: जिन स्टोरों के प्राप्तकर्ता अलग-अलग हैं, उनमें से प्रत्येक के लिए अलग हस्ताक्षर कुंजी का उपयोग करें।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1496,7 +1496,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 पासवर्ड स्टोर में मौजूद नहीं है, या रास्ते में एक फ़ोल्डर का नाम ब्रेक या कोई अन्य नियंत्रण वर्ण रखता है, जिसे हस्ताक्षरित सूची रिकॉर्ड नहीं कर सकती।</translation>
+        <translation type="unfinished">%1 पासवर्ड स्टोर में मौजूद नहीं है, या रास्ते के किसी फ़ोल्डर के नाम में लाइन ब्रेक या कोई अन्य नियंत्रण वर्ण है, जिसे हस्ताक्षरित सूची रिकॉर्ड नहीं कर सकती।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1506,7 +1506,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 को प्राप्तियों की सूची के रूप में नहीं पढ़ा जा सकता (एक नियमित फ़ाइल जिसकी अधिकतम लंबाई %2 है)।</translation>
+        <translation type="unfinished">%1 को प्राप्तकर्ताओं की सूची के रूप में नहीं पढ़ा जा सकता (एक नियमित फ़ाइल जिसकी अधिकतम लंबाई %2 है)।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1624,7 +1624,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">pull के बाद यह जाँचा नहीं जा सका कि स्टोर में अनमर्ज फ़ाइलें हैं या नहीं। दोबारा एन्क्रिप्ट करने से पहले git से इसकी जाँच करें।</translation>
+        <translation type="unfinished">पुल के बाद यह जाँचा नहीं जा सका कि स्टोर में अनमर्ज फ़ाइलें हैं या नहीं। दोबारा एन्क्रिप्ट करने से पहले git से इसकी जाँच करें।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -1662,7 +1662,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1, एक प्रतीकात्मक लिंक या जंक्शन है, जिसे निकालने के बाद पता चलता है। यह किस ओर इशारा करता है, वह पासवर्ड स्टोर का हिस्सा नहीं है और अकेला छोड़ दिया जाता है।</translation>
+        <translation type="unfinished">पुल करने के बाद %1 एक सिंबॉलिक लिंक या जंक्शन है, या उसके पीछे स्थित है। वह जिस ओर इंगित करता है, वह पासवर्ड स्टोर का हिस्सा नहीं है और अछूता रहेगा।</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1871,7 +1871,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1, एक की फाइल से बड़ी है।</translation>
+        <translation type="unfinished">%1 किसी कुंजी फ़ाइल के अधिकतम संभव आकार से बड़ी है।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2893,7 +2893,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1, पासवर्ड स्टोर में मौजूद नहीं है। स्टोर या इसके अंदर के किसी फ़ोल्डर के लिए प्राप्तकर्ता निर्धारित किए गए हैं।</translation>
+        <translation type="unfinished">%1, पासवर्ड स्टोर में मौजूद नहीं है। प्राप्तकर्ता स्टोर या उसके अंदर के किसी फ़ोल्डर के लिए निर्धारित किए जाते हैं।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3475,7 +3475,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">प्राप्तकर्ता की सूचियों की जांच %1 के अंतर्गत…</translation>
+        <translation type="unfinished">%1 के अंतर्गत प्राप्तकर्ता सूचियों की जांच की जा रही है…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>

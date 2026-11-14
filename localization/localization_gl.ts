@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1528"/>
         <source>Signing key</source>
-        <translation>Clave de sinatura</translation>
+        <translation type="unfinished">Chave de sinatura</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1199"/>
         <source>Generate GPG key pair</source>
-        <translation>Crear par de claves GPG</translation>
+        <translation type="unfinished">Crear par de chaves GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1232"/>
@@ -451,7 +451,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Cando se borra o portapapeis, restaure o que había antes de copiar, tal como fai &quot;pass -c&quot;, a menos que entre entón se copie algo diferente. Só texto: non se restaura a formatación. Ese texto permanece na memoria ata ese momento. Nese caso, onde o portapapeis non pode ser lido sen foco (alguns escritorios Wayland), este é borrado en cambio.</translation>
+        <translation type="unfinished">Cando se borre o portapapeis, restaurar o que había nel antes de copiar, tal como fai &quot;pass -c&quot;, a menos que mentres tanto se copiase outra cousa. Só texto: non se restaura a formatación. Ese texto permanece na memoria ata ese momento. Onde o portapapeis non se pode ler sen foco (algúns escritorios Wayland), bórrase no seu lugar.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -487,7 +487,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restabele os termos predefinidos: PIN, códigos de tarxeta, chaves, tokens, códigos de recuperación e similares.</translation>
+        <translation type="unfinished">Restablece as palabras predefinidas: PIN, códigos de tarxeta, chaves, tokens, códigos de recuperación e similares.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -610,7 +610,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1538"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Optativo: clave GPG para asinar ficheiros .gpg-id para a verificación de integridade. Deixar baleiro a non ser que precises protexer a lista de usuarios das manipulacións.</translation>
+        <translation type="unfinished">Optativo: chave GPG para asinar ficheiros .gpg-id para a verificación de integridade. Deixar baleiro a non ser que precises protexer a lista de usuarios das manipulacións.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1410"/>
@@ -1446,7 +1446,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="582"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Non está dispoñible ningunha das claves secretas para sinatura.
+        <translation type="unfinished">Non está dispoñible ningunha das chaves secretas para sinatura.
 Non poderás cambiar a lista de usuarias!</translation>
     </message>
     <message>
@@ -1461,7 +1461,7 @@ Non poderás cambiar a lista de usuarias!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="136"/>
         <source>Git pull failed: %1</source>
-        <translation>Fallou a obtención con git: %1</translation>
+        <translation type="unfinished">Fallou o Git pull: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="218"/>
@@ -1552,7 +1552,7 @@ Non poderás cambiar a lista de usuarias!</translation>
         <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Ningunha das claves elexidas ten unha clave secreta dispoñible.
+        <translation type="unfinished">Ningunha das chaves elexidas ten unha chave secreta dispoñible.
 Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     </message>
     <message>
@@ -1600,7 +1600,7 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="695"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 existe xunto a %2. Ambos son copias cifradas da entrada; comproba cal queres conservar e elimina a outra, e despois volve re-cifrar.</translation>
+        <translation type="unfinished">%1 existe xunto a %2. Ambas son copias cifradas da entrada; comproba cal queres conservar e elimina a outra, e despois volve re-cifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
@@ -1690,7 +1690,7 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
         <location filename="../src/imitatepass.cpp" line="1175"/>
         <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Fallou a obtención con git</translation>
+        <translation type="unfinished">Fallou o Git pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
@@ -1700,12 +1700,12 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">A obtención deixou o almacén con ficheiros sen fusionar. Resolve o conflito antes de re-cifrar.</translation>
+        <translation type="unfinished">O pull deixou o almacén con ficheiros sen fusionar. Resolve o conflito antes de re-cifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1186"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation>Fallou a obtención con git, re-cifrando a almacenaxe tal como está</translation>
+        <translation type="unfinished">Fallou o Git pull, re-cifrando o almacén tal como está</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1197"/>
@@ -2004,12 +2004,12 @@ A re-cifraxe non rematou, así que algunhas ou todas as entradas seguen cifradas
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Crear par de claves GnuPG</translation>
+        <translation type="unfinished">Crear par de chaves GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Crear novo par de claves</translation>
+        <translation type="unfinished">Crear novo par de chaves</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -2133,7 +2133,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">O nome e a frase de paso non poden conter separacións de liña.</translation>
+        <translation type="unfinished">O nome e a frase de paso non poden conter saltos de liña.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -3002,12 +3002,12 @@ Continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="200"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation>Non existe o almacén GPG %1 configurado, utilizando o anel de claves predeterminado</translation>
+        <translation type="unfinished">Non existe o directorio GPG %1 configurado, utilizando o chaveiro predeterminado</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="208"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation>Non existe o almacén GPG %1 configurado, usando GNUPGHOME %2 desde as variable de entorno</translation>
+        <translation type="unfinished">Non existe o directorio GPG %1 configurado, usando GNUPGHOME %2 do contorno</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="221"/>
@@ -3642,7 +3642,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="138"/>
         <source>GPG key pair generated successfully</source>
-        <translation>Creouse correctamente o par de claves GPG</translation>
+        <translation type="unfinished">Creouse correctamente o par de chaves GPG</translation>
     </message>
     <message>
         <source>Clipboard not cleared</source>
@@ -3875,11 +3875,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation>Seleccionar as usuarias do ordenador que van poder descifrar os contrasinais gardados neste cartafol.
+        <translation type="unfinished">Seleccionar as usuarias do ordenador que van poder descifrar os contrasinais gardados neste cartafol.
 Nota: Ao premer OK todos os contrasinais deste cartafol e subcartafoles vanse volver a cifrar para as usuarias seleccionadas; podería demorarse.
-As entradas con letra grosa teñen unha clave secreta dispoñible, selecciona unha delas para poder ti descifrar.
-As entradas con letra normal teñen unha clave de cifraxe de confianza, selecciona estas para permitir que outras persoas descifren.
-As entradas con [NON VÁLIDA] ou [CADUCADA] non se poden cifrar; as entradas [PARCIAL] teñen unha clave sen confianza completa.</translation>
+As entradas con letra grosa teñen unha chave secreta dispoñible, selecciona unha delas para poder ti descifrar.
+As entradas con letra normal teñen unha chave de cifraxe de confianza, selecciona estas para permitir que outras persoas descifren.
+As entradas con [NON VÁLIDA] ou [CADUCADA] non se poden cifrar; as entradas [PARCIAL] teñen unha chave sen confianza completa.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -3889,7 +3889,7 @@ As entradas con [NON VÁLIDA] ou [CADUCADA] non se poden cifrar; as entradas [PA
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Mostrar claves non válidas</translation>
+        <translation type="unfinished">Mostrar chaves non válidas</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
@@ -3904,17 +3904,17 @@ As entradas con [NON VÁLIDA] ou [CADUCADA] non se poden cifrar; as entradas [PA
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
-        <translation>Non hai lista de claves</translation>
+        <translation type="unfinished">Non hai lista de chaves</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Non se puido obter a lista de claves GPG dispoñibles</translation>
+        <translation type="unfinished">Non se puido obter a lista de chaves GPG dispoñibles</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>
         <source>Key not found in keyring</source>
-        <translation>Non se atopan claves no anel de claves</translation>
+        <translation type="unfinished">Non se atopou a chave no chaveiro</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="368"/>

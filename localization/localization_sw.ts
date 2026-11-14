@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Fichia masanduku ambazo zina siri, sio tu nenosiri: sanduku ambalo jina lake linahifadhi moja ya maneno haya. Imefungwa: Nenosiri pekee limefichwa.</translation>
+        <translation type="unfinished">Ficha pia sehemu zinazoshikilia siri, si nenosiri pekee: sehemu ambayo jina lake lina mojawapo ya maneno haya. Imezimwa: nenosiri pekee ndilo linalofichwa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -987,7 +987,7 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     <message>
         <location filename="../src/executor.cpp" line="492"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished">%1 imeanguka au imeuawa</translation>
+        <translation type="unfinished">%1 imeanguka au imesimamishwa kwa nguvu</translation>
     </message>
 </context>
 <context>
@@ -1492,7 +1492,7 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 sijiko kwenye kuhifadhia nenosiri, au jina la folda linalo ndani lilikuwa na tukio la kukata au ishara nyingine, ambayo orodha iliyoainishwa haiwezi kusajili.</translation>
+        <translation type="unfinished">%1 haimo ndani ya hifadhi ya nenosiri, au jina la folda njiani lina mvunjo wa mstari au herufi nyingine ya udhibiti, ambayo orodha iliyosainiwa haiwezi kurekodi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1502,7 +1502,7 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 halingwi kama orodha ya mpokeaji (faili rahisi la hadi %2).</translation>
+        <translation type="unfinished">%1 haiwezi kusomwa kama orodha ya wapokeaji (faili ya kawaida ya hadi %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1658,7 +1658,7 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 ni, au iko nyuma ya, kiungo cha ishara au junction baada ya kuvuta. Kile inachoelekeza si sehemu ya hifadhi ya nenosiri na hakitaguswa.</translation>
+        <translation type="unfinished">%1 ni, au iko nyuma ya, kiungo cha ishara au junction baada ya pull. Kile inachoelekeza si sehemu ya hifadhi ya nenosiri na hakitaguswa.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2554,7 +2554,7 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… mechi zaidi katika ingizo hili</translation>
+        <translation type="unfinished">… matokeo zaidi katika ingizo hili</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -2889,7 +2889,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 sijapatikana kwenye kuhifadhia nenosiri. Mshaji umewekwa kwa kuhifadhia au mapaka ndani yake.</translation>
+        <translation type="unfinished">%1 haimo ndani ya hifadhi ya nenosiri. Wapokeaji huwekwa kwa hifadhi au kwa folda iliyo ndani yake.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -2956,7 +2956,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 halingwiwe kama orodha ya mshiriki (faili la kawaida la hadi %2), kwa hivyo hakuna chochote ambacho kinachaguliwa. Angalia kabla ya kuchagua washiriki hapa: &quot;OK&quot; hukugawa orodha mpya.</translation>
+        <translation type="unfinished">%1 haiwezi kusomwa kama orodha ya wapokeaji (faili ya kawaida ya hadi %2), kwa hivyo hakuna kilichoteuliwa awali. Iangalie kabla ya kuchagua wapokeaji hapa: OK huandika orodha mpya juu yake.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3229,7 +3229,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">GPG nyumbani lililoundwa %1 haliwe.</translation>
+        <translation type="unfinished">Saraka ya nyumbani ya GPG iliyosanidiwa %1 haipo.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3471,7 +3471,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Tunaangalia orodha za waliopewa huduma chini ya %1…</translation>
+        <translation type="unfinished">Inaangalia orodha za wapokeaji chini ya %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3658,7 +3658,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Kumbuka: Ukibofya OK, kila nenosiri katika folda hii na folda zake ndogo husimbwa fiche tena kwa watumiaji waliochaguliwa; hii inaweza kuchukua muda.
 Maingizo yaliyokozwa yana funguo ya siri inayopatikana, chagua moja ya hizi ili uweze kusimbua mwenyewe.
 Maingizo ya kawaida yana funguo ya usimbaji fiche inayoaminiwa, chagua hizi ili kuruhusu watu wengine kusimbua.
-Maingizo ya [INVALID] na [EXPIRED] hayawezi kusimbwa fiche kwayo; maingizo ya [PARTIAL] yana funguo isiyoaminiwa kikamilifu.</translation>
+Maingizo ya [SI SAHIHI] na [IMEISHA MUDA] hayawezi kusimbwa fiche kwayo; maingizo ya [YA SEHEMU] yana funguo isiyoaminiwa kikamilifu.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>

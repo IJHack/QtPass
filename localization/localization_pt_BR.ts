@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Quando a área de transferência é limpa, restaure o conteúdo que estava nela antes da cópia, como faz o &quot;pass&quot; -c, a menos que algo mais tenha sido copiado nesse meio tempo. Apenas texto: a formatação não é restaurada. Esse texto permanece na memória até então. Onde a área de transferência não pode ser lida sem foco (alguns desktops Wayland), ela é limpa em vez disso.</translation>
+        <translation type="unfinished">Quando a área de transferência é limpa, restaurar o conteúdo que estava nela antes da cópia, como faz o pass -c, a menos que algo mais tenha sido copiado nesse meio tempo. Apenas texto: a formatação não é restaurada. Esse texto permanece na memória até então. Onde a área de transferência não pode ser lida sem foco (alguns desktops Wayland), ela é limpa em vez disso.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -538,7 +538,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restaurar as palavras padrão: PIN, códigos de cartão, chaves, tokens e os demais.</translation>
+        <translation type="unfinished">Restaurar as palavras padrão: PIN, códigos de cartão, chaves, tokens, códigos de recuperação e afins.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>

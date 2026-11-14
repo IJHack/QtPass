@@ -580,7 +580,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Riportare le parole predefinite: PIN, codici di accesso alla carta, chiavi, token e simili.</translation>
+        <translation type="unfinished">Ripristinare le parole predefinite: PIN, codici della carta, chiavi, token, codici di recupero e simili.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -723,7 +723,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 firma con la stessa chiave per un altro archivio. Un elenco di destinatari firmato per uno di questi archivi viene accettato nell&apos;altro: utilizzare una chiave di firma separata per ogni archivio, i cui destinatari sono diversi.</translation>
+        <translation type="unfinished">%1 firma con la stessa chiave per un altro archivio. Un elenco di destinatari firmato per uno di questi archivi viene accettato nell&apos;altro: utilizzare una chiave di firma separata per ogni archivio i cui destinatari sono diversi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -3229,7 +3229,7 @@ Continuare?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 non può essere interpretato come una lista di destinatari (un file normale di al massimo %2), quindi nessun destinatario è pre-selezionato. Verificate la lista prima di scegliere i destinatari qui: &quot;OK&quot; sovrascriverà la lista esistente con una nuova.</translation>
+        <translation type="unfinished">%1 non può essere interpretato come un elenco di destinatari (un file normale di al massimo %2), quindi nulla è preselezionato. Controllalo prima di scegliere qui i destinatari: OK scrive un nuovo elenco al suo posto.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3770,7 +3770,7 @@ Continuare?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Il link %1 è stato rimosso e Git non lo traccia più, ma l&apos;commit è fallito: %2</translation>
+        <translation type="unfinished">Il collegamento %1 è stato rimosso e git non lo traccia più, ma il commit è fallito: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

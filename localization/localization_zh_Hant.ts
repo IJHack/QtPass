@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="75"/>
         <source>Copied to clipboard</source>
-        <translation>複製到剪貼板</translation>
+        <translation type="unfinished">已複製到剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
         <source>Clipboard cleared</source>
-        <translation>剪貼板清空</translation>
+        <translation type="unfinished">剪貼簿已清除</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="185"/>
         <source>Clipboard not cleared</source>
-        <translation>剪貼板尚未清空</translation>
+        <translation type="unfinished">剪貼簿尚未清除</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>配置</translation>
+        <translation type="unfinished">設定</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -119,7 +119,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="729"/>
         <source>Select character set for password generation</source>
-        <translation>選擇字元配置來產生密碼</translation>
+        <translation type="unfinished">選擇用於產生密碼的字元集</translation>
     </message>
     <message>
         <source>All Characters</source>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">使用位於儲存資料夾上方的一個 Git 倉庫</translation>
+        <translation type="unfinished">使用位於密碼儲存庫上層資料夾中的 Git 儲存庫</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -352,7 +352,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1538"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>可選：用於完整性驗證的GPG金鑰，以簽署.gpg-id文件。除非需要保護用戶列表免受篡改，請留空。</translation>
+        <translation type="unfinished">選用：用於簽署 .gpg-id 檔案以驗證完整性的 GPG 金鑰。除非需要保護使用者清單免遭竄改，否則請留空。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -469,7 +469,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
         <source>Native</source>
-        <translation>本地</translation>
+        <translation type="unfinished">原生</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>
@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">當剪貼板被清除時，恢復之前剪貼板上的內容，就像 pass -c 這樣執行，除非在那期間還複製了其他東西。僅顯示文字：格式沒有恢復。這段文字會一直儲存在記憶體中，直到那時才消失。在無法透過焦點來讀取剪貼板的地方（有些 Wayland 桌面的情況），則會直接清除它。</translation>
+        <translation type="unfinished">清除剪貼簿時，恢復複製前剪貼簿上的內容（與 pass -c 的做法相同），除非在此期間又複製了其他內容。僅限文字：不會恢復格式。在此之前，該段文字會一直保留在記憶體中。在沒有焦點就無法讀取剪貼簿的環境中（某些 Wayland 桌面），則改為直接清除剪貼簿。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">隱藏儲存秘密的欄位，不僅僅是密碼：一個欄位，其名稱包含以下任何單字。 關閉：僅隱藏密碼。</translation>
+        <translation type="unfinished">除密碼外，也隱藏含有機密的欄位：即名稱中含有下列任一字詞的欄位。關閉時：僅隱藏密碼。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -614,7 +614,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">覆寫 SSH_AUTH_SOCK 的可選路徑。留空透過 gpgconf 自動偵測。</translation>
+        <translation type="unfinished">覆寫 SSH_AUTH_SOCK 的可選路徑。留空則透過 gpgconf 自動偵測。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
@@ -656,7 +656,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="871"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>顯示所有以單詞後跟冒號開頭的行作為密碼字段中的字段，而不僅僅是列出的那些</translation>
+        <translation type="unfinished">將所有以單字後接冒號開頭的行都顯示為密碼中的欄位，而不僅限於列出的欄位</translation>
     </message>
     <message>
         <source>Show all fields templated</source>
@@ -687,7 +687,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="155"/>
         <source>Always copy to clipboard</source>
-        <translation>總是拷貝到剪貼板</translation>
+        <translation type="unfinished">總是複製到剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="156"/>
@@ -698,7 +698,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="350"/>
         <location filename="../src/configdialog.cpp" line="355"/>
         <source>This field is required</source>
-        <translation>此字段是必需的</translation>
+        <translation type="unfinished">此欄位為必填</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="352"/>
@@ -868,7 +868,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="85"/>
         <source>System tray is not available</source>
-        <translation>系統托盤不可用</translation>
+        <translation type="unfinished">系統匣無法使用</translation>
     </message>
     <message>
         <source>Pass OTP extension needs to be installed</source>
@@ -945,7 +945,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.ui" line="852"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>範本可在密碼產生對話框與密碼檢視中加入額外欄位。</translation>
+        <translation type="unfinished">範本可在密碼產生對話方塊與密碼檢視中加入額外欄位。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="901"/>
@@ -967,7 +967,7 @@ e-mail</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="472"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">在系統托盤中顯示圖示</translation>
+        <translation type="unfinished">在系統匣中顯示圖示</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="473"/>
@@ -1396,7 +1396,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <location filename="../src/imitatepass.cpp" line="905"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>無法讀取加密鑰匙，gpg-id 檔案消失或無效。</translation>
+        <translation type="unfinished">無法讀取要使用的加密金鑰，.gpg-id 檔案遺失或無效。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="958"/>
@@ -1462,7 +1462,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="582"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>所有密鑰均不可用。
+        <translation type="unfinished">沒有任何可用的簽名私鑰。
 您將無法更改使用者清單！</translation>
     </message>
     <message>
@@ -1522,14 +1522,14 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="419"/>
         <source>Check selected users!</source>
-        <translation>檢查所選用戶！</translation>
+        <translation type="unfinished">請檢查所選的使用者！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>所選密鑰均無私有私鑰。
-您將無法解密任何新新增的密碼！</translation>
+        <translation type="unfinished">所選金鑰均沒有可用的私鑰。
+您將無法解密任何新增的密碼！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="435"/>
@@ -1608,7 +1608,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="982"/>
         <source>Creating backup commit</source>
-        <translation>創建備份提交</translation>
+        <translation type="unfinished">建立備份提交</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
@@ -1630,7 +1630,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1021"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>由於無法創建git備份，重新加密被中止。</translation>
+        <translation type="unfinished">由於無法建立git備份，重新加密被中止。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1063"/>
@@ -1910,7 +1910,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 的大小超過了鍵檔案的限制。</translation>
+        <translation type="unfinished">%1 的大小超過了金鑰檔案可能的上限。</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2140,7 +2140,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="465"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>產生 OTP 並拷貝到剪貼版</translation>
+        <translation type="unfinished">產生 OTP 並複製到剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="468"/>
@@ -2706,7 +2706,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">該名稱會指向密碼庫之外。請選擇其他名稱。</translation>
+        <translation type="unfinished">該名稱會指向密碼儲存庫之外。請選擇其他名稱。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1279"/>
@@ -2913,12 +2913,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Failed to create folder: %1</source>
-        <translation>無法創建文件夾：%1</translation>
+        <translation type="unfinished">無法建立資料夾：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1724"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>無法在：%1 創建 .gpg-id 檔案</translation>
+        <translation type="unfinished">無法在 %1 中建立 .gpg-id 檔案</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1774"/>
@@ -2953,11 +2953,11 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>是否重新加密 %1 中的所有密碼？
+        <translation type="unfinished">是否重新加密 %1 中的所有密碼？
 
-這將使用當前定義在 .gpg-id 檔案中的收件人重新加密此文件夾中所有密碼檔案。
+這將使用 .gpg-id 中目前定義的接收者，重新加密此資料夾中的所有密碼檔案。
 
-這可能會重寫許多檔案，並且無法輕鬆撤銷。
+這可能會重寫許多檔案，且無法輕易復原。
 
 繼續？</translation>
     </message>
@@ -3020,7 +3020,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="266"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>在配置中未設置可供選擇的字元，因此無法產生密碼！</translation>
+        <translation type="unfinished">無法產生密碼，設定中沒有可供選擇的字元！</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="404"/>
@@ -3055,19 +3055,19 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">加密失敗：無法使用某位收件者的 GPG 金鑰。它可能已過期或被撤銷、沒有加密子金鑰，或未受信任；下方的 gpg 訊息會說明是哪一種。</translation>
+        <translation type="unfinished">加密失敗：無法使用某位接收者的 GPG 金鑰。它可能已過期或被撤銷、沒有加密子金鑰，或未受信任；下方的 gpg 訊息會說明是哪一種。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">儲存，但未提交</translation>
+        <translation type="unfinished">已儲存，但未提交</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">儲存成功，但將其記錄到 Git 失敗。 報告內容：
+        <translation type="unfinished">此項目已儲存到密碼儲存庫，但將其記錄到 Git 時失敗。報告內容：
 
 %1</translation>
     </message>
@@ -3355,7 +3355,7 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>這筆資料有 %n 條行，太多了，無法在這裡編輯。</numerusform>
+            <numerusform>此項目有 %n 行，行數過多，無法在此編輯。</numerusform>
         </translation>
     </message>
 </context>
@@ -3707,7 +3707,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="296"/>
         <source>overwrite %1 with %2?</source>
-        <translation>用 %2 覆蓋 %1？</translation>
+        <translation type="unfinished">用 %2 覆寫 %1？</translation>
     </message>
 </context>
 <context>
@@ -3824,7 +3824,7 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>具有讀取訪問權限的用戶</translation>
+        <translation type="unfinished">具有讀取權限的使用者</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -3896,12 +3896,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
-        <translation>密鑰列表缺失</translation>
+        <translation type="unfinished">金鑰清單遺失</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>無法取得可用的 GPG 密鑰列表</translation>
+        <translation type="unfinished">無法取得可用的 GPG 金鑰清單</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>

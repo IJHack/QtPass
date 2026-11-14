@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Скрий полета, които съдържат и други тайни, а не само паролата: поле, чието име съдържа едно от тези думи. Изключено: само паролата е скрита.</translation>
+        <translation type="unfinished">Скриване и на полетата, които съдържат тайна, а не само на паролата: поле, чието име съдържа една от тези думи. Изключено: скрита е само паролата.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -579,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Върнете стандартните пароли: PIN, кодове за карти, ключове, токени и други.</translation>
+        <translation type="unfinished">Връщане на стандартните думи: pin, кодове на карти, ключове, токени, кодове за възстановяване и други подобни.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -614,7 +614,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Незадължителен път за презаписване на SSH_AUTH_SOCK. Оставете празно за автоматично откриване чрез gpgconf.</translation>
+        <translation type="unfinished">Незадължителен път, който замества SSH_AUTH_SOCK. Оставете празно за автоматично откриване чрез gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
@@ -1154,7 +1154,7 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="81"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">QtPass е графичен интерфейс за &lt;i&gt;pass&lt;/i&gt;, стандартния мениджър на пароли за Unix: всяка парола е файл, криптиран с GnuPG и съхраняван в папка, която можете да поставите под Git.&lt;br&gt;&lt;br&gt;Следващите страници намират GnuPG, уверяват се, че имате ключ, с който да криптирате, и избират папката, в която се намират паролите ви. Нищо не се записва, докато не натиснете „Готово“.</translation>
+        <translation type="unfinished">QtPass е графичен интерфейс за &lt;i&gt;pass&lt;/i&gt;, стандартния мениджър на пароли за Unix: всяка парола е файл, криптиран с GnuPG и съхраняван в папка, която можете да поставите под Git.&lt;br&gt;&lt;br&gt;Следващите страници намират GnuPG, уверяват се, че имате ключ, с който да криптирате, и избират папката, в която се намират паролите ви. Нищо не се записва, докато не натиснете „Край“.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="133"/>
@@ -2634,7 +2634,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="221"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Операцията изтече; интерфейсът се активира отново.</translation>
+        <translation type="unfinished">Времето за операцията изтече; интерфейсът се активира отново.</translation>
     </message>
     <message>
         <source>Process Output</source>
@@ -2759,7 +2759,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… повече съвпадения в тази секция</translation>
+        <translation type="unfinished">… още съвпадения в този запис</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -3072,7 +3072,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Запазено, но не коммитнато</translation>
+        <translation type="unfinished">Запазено, но не е записано в къмит</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3158,7 +3158,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 не може да бъде разчет като списък с получатели (обикновен файл, който съдържа най-много %2 елемента), така че нищо не е предварително избрано. Проверете го преди да изберете получателите тук: &quot;OK&quot; ще напише нов списък, заменяйки стария.</translation>
+        <translation type="unfinished">%1 не може да бъде прочетен като списък с получатели (обикновен файл с размер най-много %2), така че нищо не е предварително избрано. Проверете го, преди да изберете получателите тук: OK записва нов списък върху него.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3431,7 +3431,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Конфигурираният дом на GPG %1 не съществува.</translation>
+        <translation type="unfinished">Настроената домашна директория на GPG %1 не съществува.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3699,7 +3699,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Линкът %1 беше премахнат и Git вече не го проследява, но коммитът се провали: %2</translation>
+        <translation type="unfinished">Връзката %1 беше премахната и git вече не я проследява, но къмитът не успя: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

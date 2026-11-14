@@ -506,7 +506,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Gizle, sadece parolayı değil, aynı zamanda sırları da saklayan alanları: bir alanın adı bu kelimelerden birini içeriyor. Devre dışı: sadece parola gizlenir.</translation>
+        <translation type="unfinished">Sadece parolayı değil, sır içeren alanları da gizle: adı bu kelimelerden birini içeren bir alan. Devre dışı: sadece parola gizlenir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -516,7 +516,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Varsayılan parolaları geri yükle: PIN, kart kodları, anahtarlar, jetonlar ve benzerleri.</translation>
+        <translation type="unfinished">Varsayılan kelimeleri geri yükle: PIN, kart kodları, anahtarlar, belirteçler, kurtarma kodları ve benzerleri.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -555,7 +555,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Depo&apos;nun üstündeki bir klasörde, bir Git deposu kullanın</translation>
+        <translation type="unfinished">Deponun üstündeki bir klasörde bulunan Git deposunu kullan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -1093,7 +1093,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
         <location filename="../src/filecontent.cpp" line="126"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... %n satır daha görüntülenmedi</numerusform>
+            <numerusform>… %n satır daha görüntülenmedi</numerusform>
         </translation>
     </message>
 </context>
@@ -1664,7 +1664,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1, bir sembolik bağlantı veya geçiş noktasıdır, ya da bunların arkasında gizlidir. Bu, parola deposunun dışında bir yere işaret eder ve orada bırakılır.</translation>
+        <translation type="unfinished">%1, pull sonrasında bir sembolik bağlantı ya da birleşim noktasıdır veya böyle bir bağlantının arkasında bulunuyor. Bağlantının işaret ettiği hedef parola deposunun parçası değildir ve olduğu gibi bırakılır.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1870,7 +1870,7 @@ Yeniden şifreleme tamamlanmadı, bu nedenle girdilerin bir kısmı ya da tümü
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1, bir anahtar dosyasının boyutundan daha büyük.</translation>
+        <translation type="unfinished">%1, bir anahtar dosyasının olabileceğinden daha büyük.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2621,7 +2621,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">... bu girişte daha fazla eşleşme</translation>
+        <translation type="unfinished">… bu girdide daha fazla eşleşme</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -2975,7 +2975,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 parol deposu içerisinde bulunmamaktadır. Alıcılar, depo veya depodaki bir klasör için ayarlanmıştır.</translation>
+        <translation type="unfinished">%1 parola deposunun içinde değil. Alıcılar depo ya da depodaki bir klasör için ayarlanır.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3251,7 +3251,7 @@ Devam edilsin mi?</translation>
         <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Bu giriş, %n satıra sahip ve burada düzenlemek için çok uzun.</numerusform>
+            <numerusform>Bu girdi %n satır içeriyor; burada düzenlenemeyecek kadar çok.</numerusform>
         </translation>
     </message>
 </context>
@@ -3313,7 +3313,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Yapılan GPG ana dizini %1 mevcut değil.</translation>
+        <translation type="unfinished">Yapılandırılan GPG ana dizini %1 mevcut değil.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3555,7 +3555,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">%1 altında, alıcı listelerini kontrol ediyorum…</translation>
+        <translation type="unfinished">%1 altındaki alıcı listeleri denetleniyor…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3581,7 +3581,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Bağlantı %1 kaldırılmış ve artık Git tarafından takip edilmiyor, ancak işlem başarısız oldu: %2</translation>
+        <translation type="unfinished">%1 bağlantısı kaldırıldı ve git artık onu izlemiyor, ancak commit başarısız oldu: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">دیکشنری پیش‌فرض را بازگردانید: رمز عبور، کد کارت، کلیدها، توکن‌ها و غیره.</translation>
+        <translation type="unfinished">واژه‌های پیش‌فرض را بازگردانید: پین، کدهای کارت، کلیدها، توکن‌ها، کدهای بازیابی و مانند آن‌ها.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1495,7 +1495,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 در مخزن رمز عبور ذخیره نشده است، یا نام یک پوشه حاوی خط جداکننده یا کاراکتر کنترلی دیگر است که لیست امضا شده نمی‌تواند ثبت کند.</translation>
+        <translation type="unfinished">%1 درون مخزن رمز عبور نیست، یا نام یکی از پوشه‌های مسیر آن حاوی شکست خط یا کاراکتر کنترلی دیگری است که لیست امضاشده نمی‌تواند آن را ثبت کند.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1527,7 +1527,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">%1 از پشتیبانی که یک رمزنگاری مجدد ناتمام به جا گذاشته بود بازیابی شد.</translation>
+        <translation type="unfinished">%1 از نسخه پشتیبانی که یک رمزنگاری مجدد ناتمام به جا گذاشته بود بازیابی شد.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="703"/>
@@ -1993,7 +1993,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">نام و عبارت عبور نباید شامل خطوط جداکننده باشند.</translation>
+        <translation type="unfinished">نام و عبارت عبور نمی‌توانند شامل شکست خط باشند.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2427,7 +2427,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">این نام خارج از مخزن رمز عبور حل می‌شود. لطفاً نام دیگری انتخاب کنید.</translation>
+        <translation type="unfinished">این نام به مسیری خارج از مخزن رمز عبور اشاره می‌کند. لطفاً نام دیگری انتخاب کنید.</translation>
     </message>
     <message>
         <source>New file</source>
@@ -2551,13 +2551,13 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">... تطابق‌های بیشتر در این بخش</translation>
+        <translation type="unfinished">… تطابق‌های بیشتر در این مدخل</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>نمایش اولین %n نتیجه؛ برای مشاهده نتایج بیشتر، جستجوی محدودی‌تر انجام دهید.</numerusform>
+            <numerusform>نمایش اولین %n نتیجه؛ برای مشاهده نتایج بیشتر، جستجوی محدودتری انجام دهید.</numerusform>
         </translation>
     </message>
     <message>
@@ -2873,7 +2873,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">این اطلاعات در مخزن ذخیره شده، اما ثبت آن در Git با موفقیت انجام نشد. گزارش شده:
+        <translation type="unfinished">مدخل در مخزن ذخیره شده، اما ثبت آن در Git با موفقیت انجام نشد. گزارش شده:
 
 %1</translation>
     </message>
@@ -2885,7 +2885,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 در مخزن رمز عبور قرار ندارد. گیرندگان برای مخزن یا پوشه ای که در آن قرار دارد، تعیین شده اند.</translation>
+        <translation type="unfinished">%1 درون مخزن رمز عبور نیست. گیرندگان برای مخزن یا پوشه‌ای درون آن تعیین می‌شوند.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3161,7 +3161,7 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>این بخش %n خط دارد، که ویرایش آن در اینجا امکان‌پذیر نیست.</numerusform>
+            <numerusform>این مدخل %n خط دارد که برای ویرایش در اینجا بیش از حد است.</numerusform>
         </translation>
     </message>
 </context>
@@ -3491,7 +3491,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">لینک %1 حذف شد و گیت دیگر آن را ردیابی نمی‌کند، اما عملیات کمیت با موفقیت انجام نشد: %2</translation>
+        <translation type="unfinished">پیوند %1 حذف شد و git دیگر آن را ردیابی نمی‌کند، اما کامیت ناموفق بود: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

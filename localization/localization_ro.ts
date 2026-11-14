@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="75"/>
         <source>Copied to clipboard</source>
-        <translation>copiat în clipboard</translation>
+        <translation type="unfinished">Copiat în clipboard</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
         <source>Clipboard cleared</source>
-        <translation>clipboard șters</translation>
+        <translation type="unfinished">Clipboard șters</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="185"/>
         <source>Clipboard not cleared</source>
-        <translation>clipboard intact</translation>
+        <translation type="unfinished">Clipboard intact</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>configurare</translation>
+        <translation type="unfinished">Configurare</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Utilizați un depozit Git într-un folder situat deasupra locației de stocare</translation>
+        <translation type="unfinished">Utilizați un depozit Git într-un folder situat deasupra depozitului de parole</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -267,12 +267,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1196"/>
         <source>Generate</source>
-        <translation>generează</translation>
+        <translation type="unfinished">Generează</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1199"/>
         <source>Generate GPG key pair</source>
-        <translation>generați un nou set de chei GPG</translation>
+        <translation type="unfinished">Generați un nou set de chei GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1232"/>
@@ -402,19 +402,19 @@
     <message>
         <location filename="../src/configdialog.ui" line="993"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>adăugați automat fișiere .gpg-id</translation>
+        <translation type="unfinished">Adăugați automat fișiere .gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1000"/>
         <location filename="../src/configdialog.ui" line="1558"/>
         <source>Automatically push</source>
-        <translation>push automat</translation>
+        <translation type="unfinished">Push automat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1007"/>
         <location filename="../src/configdialog.ui" line="1565"/>
         <source>Automatically pull</source>
-        <translation>pull automat</translation>
+        <translation type="unfinished">Pull automat</translation>
     </message>
     <message>
         <source>Extensions:</source>
@@ -435,27 +435,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="162"/>
         <source>Start minimized</source>
-        <translation>start minimizat</translation>
+        <translation type="unfinished">Start minimizat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="169"/>
         <source>Hide on close</source>
-        <translation>ascundeți la închidere</translation>
+        <translation type="unfinished">Ascundeți la închidere</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="178"/>
         <source>Always on top</source>
-        <translation>mereu deasupra</translation>
+        <translation type="unfinished">Mereu deasupra</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="85"/>
         <source>Programs</source>
-        <translation>programe</translation>
+        <translation type="unfinished">Programe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
         <source>Select password storage program:</source>
-        <translation>selectați programul de stocare a parolelor:</translation>
+        <translation type="unfinished">Selectați programul de stocare a parolelor:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -464,12 +464,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1121"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;utilizați pass</translation>
+        <translation type="unfinished">&amp;Utilizați pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
         <source>Native</source>
-        <translation>nativ</translation>
+        <translation type="unfinished">Nativ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>
@@ -624,17 +624,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="1494"/>
         <source>Path</source>
-        <translation>ruta</translation>
+        <translation type="unfinished">Cale</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1410"/>
         <source>Add</source>
-        <translation>adăuga</translation>
+        <translation type="unfinished">Adaugă</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1428"/>
         <source>Delete</source>
-        <translation>șterge</translation>
+        <translation type="unfinished">Șterge</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -643,7 +643,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
         <source>Template</source>
-        <translation>șablon</translation>
+        <translation type="unfinished">Șablon</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
@@ -656,7 +656,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="871"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>afișați toate liniile care încep cu un cuvânt urmat de &quot;două puncte&quot; ca fiind câmpuri în câmpurile de parolă, nu numai cele listate</translation>
+        <translation type="unfinished">Afișați toate liniile care încep cu un cuvânt urmat de &quot;două puncte&quot; ca fiind câmpuri în câmpurile de parolă, nu numai cele listate</translation>
     </message>
     <message>
         <source>Show all fields templated</source>
@@ -687,12 +687,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="155"/>
         <source>Always copy to clipboard</source>
-        <translation>copiați întotdeauna în clipboard</translation>
+        <translation type="unfinished">Copiați întotdeauna în clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="156"/>
         <source>On-demand copy to clipboard</source>
-        <translation>copiere la cerere în clipboard</translation>
+        <translation type="unfinished">Copiere la cerere în clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="350"/>
@@ -795,12 +795,12 @@ Valoarea va fi în continuare salvată așa cum a fost introdusă.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="915"/>
         <source>No profile selected</source>
-        <translation>niciun profil selectat</translation>
+        <translation type="unfinished">Niciun profil selectat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="916"/>
         <source>No profile selected to delete</source>
-        <translation>niciun profil selectat pentru ștergere</translation>
+        <translation type="unfinished">Niciun profil selectat pentru ștergere</translation>
     </message>
     <message>
         <source>GnuPG not found</source>
@@ -863,12 +863,12 @@ Valoarea va fi în continuare salvată așa cum a fost introdusă.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1103"/>
         <source>Autodetect</source>
-        <translation>autodetecție</translation>
+        <translation type="unfinished">Autodetecție</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="85"/>
         <source>System tray is not available</source>
-        <translation>bara de sistem nu este disponibilă</translation>
+        <translation type="unfinished">Bara de sistem nu este disponibilă</translation>
     </message>
     <message>
         <source>Pass OTP extension needs to be installed</source>
@@ -895,7 +895,7 @@ Valoarea va fi în continuare salvată așa cum a fost introdusă.</translation>
         <location filename="../src/configdialog.ui" line="979"/>
         <location filename="../src/configdialog.ui" line="1551"/>
         <source>Use Git</source>
-        <translation>utilizați Git</translation>
+        <translation type="unfinished">Utilizați Git</translation>
     </message>
     <message>
         <source>Use QRencode</source>
@@ -1382,7 +1382,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="193"/>
         <location filename="../src/imitatepass.cpp" line="904"/>
         <source>Can not edit</source>
-        <translation>nu pot edita</translation>
+        <translation type="unfinished">Nu pot edita</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="218"/>
@@ -1398,7 +1398,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="194"/>
         <location filename="../src/imitatepass.cpp" line="905"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>nu pot citi cheia de criptare de utilizat, fișierul .gpg-id lipsește sau nu este valid.</translation>
+        <translation type="unfinished">Nu pot citi cheia de criptare de utilizat, fișierul .gpg-id lipsește sau nu este valid.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="958"/>
@@ -1474,7 +1474,7 @@ Nu veți putea modifica lista de utilizatori!</translation>
         <location filename="../src/imitatepass.cpp" line="399"/>
         <location filename="../src/imitatepass.cpp" line="533"/>
         <source>Cannot update</source>
-        <translation>nu pot actualiza</translation>
+        <translation type="unfinished">Nu pot actualiza</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="136"/>
@@ -1658,7 +1658,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>actualizeazăm depozitul de parole</translation>
+        <translation type="unfinished">Se actualizează depozitul de parole</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -1920,7 +1920,7 @@ Recriptarea nu s-a încheiat, așa că unele sau toate intrările sunt încă cr
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">Dimensiunea %1 este mai mare decât cea a unui fișier de cheie.</translation>
+        <translation type="unfinished">%1 este mai mare decât poate fi un fișier de cheie.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -1982,17 +1982,17 @@ Recriptarea nu s-a încheiat, așa că unele sau toate intrările sunt încă cr
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>generăm un set de chei GnuPG</translation>
+        <translation type="unfinished">Generăm un set de chei GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>generați un nou set de chei</translation>
+        <translation type="unfinished">Generați un nou set de chei</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>parola</translation>
+        <translation type="unfinished">Parola</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -2027,7 +2027,7 @@ Recriptarea nu s-a încheiat, așa că unele sau toate intrările sunt încă cr
     <message>
         <location filename="../src/keygendialog.ui" line="237"/>
         <source>Expert</source>
-        <translation>expert</translation>
+        <translation type="unfinished">Expert</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="256"/>
@@ -2074,17 +2074,17 @@ data-expirării: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Introducere nevalida</translation>
+        <translation type="unfinished">Introducere nevalidă</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Numele și parola nu pot conține caractere de linie.</translation>
+        <translation type="unfinished">Numele și parola nu pot conține întreruperi de rând.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Invalid name</source>
-        <translation>nume nevalid</translation>
+        <translation type="unfinished">Nume nevalid</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="197"/>
@@ -2133,14 +2133,14 @@ data-expirării: 0
         <location filename="../src/mainwindow.ui" line="449"/>
         <location filename="../src/mainwindow.cpp" line="1631"/>
         <source>Edit</source>
-        <translation>editați</translation>
+        <translation type="unfinished">Editați</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
         <location filename="../src/mainwindow.cpp" line="1643"/>
         <source>Delete</source>
-        <translation>șterge</translation>
+        <translation type="unfinished">Șterge</translation>
     </message>
     <message>
         <source>git push</source>
@@ -2182,7 +2182,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="465"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>generați OTP și copiați în clipboard</translation>
+        <translation type="unfinished">Generați OTP și copiați în clipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="468"/>
@@ -2197,7 +2197,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="484"/>
         <source>Git pull</source>
-        <translation>git pull</translation>
+        <translation type="unfinished">Git pull</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -2206,7 +2206,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="481"/>
         <source>Update</source>
-        <translation>actualizează</translation>
+        <translation type="unfinished">Actualizează</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2222,13 +2222,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="492"/>
         <source>Manage who can read password in folder</source>
-        <translation>gestionați cine poate citi parola în dosar</translation>
+        <translation type="unfinished">Gestionați cine poate citi parola în dosar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
         <location filename="../src/mainwindow.cpp" line="1625"/>
         <source>Users</source>
-        <translation>utilizatori</translation>
+        <translation type="unfinished">Utilizatori</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2399,7 +2399,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="545"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Închide fereastra; cu &quot;ascundeți la închidere&quot; QtPass rămâne în bara de sistem</translation>
+        <translation type="unfinished">Închide fereastra; cu &quot;Ascundeți la închidere&quot; QtPass rămâne în bara de sistem</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="548"/>
@@ -2500,7 +2500,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="553"/>
         <location filename="../src/mainwindow.cpp" line="563"/>
         <source>Updating password-store</source>
-        <translation>actualizeazăm depozitul de parole</translation>
+        <translation type="unfinished">Se actualizează depozitul de parole</translation>
     </message>
     <message>
         <source>Can not edit</source>
@@ -2518,7 +2518,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="663"/>
         <location filename="../src/mainwindow.cpp" line="986"/>
         <source>Content hidden</source>
-        <translation>conținut ascuns</translation>
+        <translation type="unfinished">Conținut ascuns</translation>
     </message>
     <message>
         <source>Password</source>
@@ -2567,7 +2567,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="833"/>
         <source>Looking for: %1</source>
-        <translation>căutăm: %1</translation>
+        <translation type="unfinished">Căutăm: %1</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1004"/>
@@ -2603,7 +2603,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete password?</source>
-        <translation>stergeți parola?</translation>
+        <translation type="unfinished">Ștergeți parola?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1249"/>
@@ -2613,7 +2613,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Delete folder?</source>
-        <translation>ștergeți dosarul?</translation>
+        <translation type="unfinished">Ștergeți dosarul?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -2638,26 +2638,26 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1464"/>
         <source>Profile changed to %1</source>
-        <translation>profilul a fost schimbat în %1</translation>
+        <translation type="unfinished">Profilul a fost schimbat în %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1622"/>
         <source>Open folder with file manager</source>
-        <translation>deschideți dosarul cu managerul de fișiere</translation>
+        <translation type="unfinished">Deschideți dosarul cu managerul de fișiere</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1623"/>
         <source>Add folder</source>
-        <translation>adaugă dosar</translation>
+        <translation type="unfinished">Adaugă dosar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
         <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Add password</source>
-        <translation>adăugați parola</translation>
+        <translation type="unfinished">Adăugați parola</translation>
     </message>
     <message>
         <source>New Folder: 
@@ -2694,12 +2694,12 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="724"/>
         <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Nu s-a găsit niciun cod OTP în această introducere de parolă</translation>
+        <translation type="unfinished">Nu s-a găsit niciun cod OTP în această intrare de parolă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="748"/>
         <source>Password and content hidden</source>
-        <translation>parola și conținutul ascunse</translation>
+        <translation type="unfinished">Parola și conținutul ascunse</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="815"/>
@@ -2747,7 +2747,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1196"/>
         <source>Invalid name</source>
-        <translation type="unfinished">nume nevalid</translation>
+        <translation type="unfinished">Nume nevalid</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1197"/>
@@ -3063,7 +3063,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
         <source>No characters chosen</source>
-        <translation>nu s-au ales caractere</translation>
+        <translation type="unfinished">Nu s-au ales caractere</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="266"/>
@@ -3224,7 +3224,7 @@ Continuați?</translation>
         <location filename="../src/passworddialog.ui" line="120"/>
         <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
-        <translation>parolă</translation>
+        <translation type="unfinished">Parolă</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
@@ -3254,22 +3254,22 @@ Continuați?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
         <source>Generate</source>
-        <translation>generează</translation>
+        <translation type="unfinished">Generează</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
-        <translation>arată parola</translation>
+        <translation type="unfinished">Arată parola</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
         <source>Character set:</source>
-        <translation>set de caractere:</translation>
+        <translation type="unfinished">Set de caractere:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
         <source>All characters</source>
-        <translation>toate caracterele</translation>
+        <translation type="unfinished">Toate caracterele</translation>
     </message>
     <message>
         <source>Character Set:</source>
@@ -3282,22 +3282,22 @@ Continuați?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
         <source>Alphabetical</source>
-        <translation>alfabetic</translation>
+        <translation type="unfinished">Alfabetic</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="179"/>
         <source>Alphanumerical</source>
-        <translation>alfanumeric</translation>
+        <translation type="unfinished">Alfanumeric</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="184"/>
         <source>Custom</source>
-        <translation>personalizat</translation>
+        <translation type="unfinished">Personalizat</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="198"/>
         <source>Length:</source>
-        <translation>lungime:</translation>
+        <translation type="unfinished">Lungime:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
@@ -3488,7 +3488,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Programs</source>
-        <translation type="unfinished">programe</translation>
+        <translation type="unfinished">Programe</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
@@ -3561,7 +3561,7 @@ Continuați?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="383"/>
         <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
-        <translation>cod OTP</translation>
+        <translation type="unfinished">Cod OTP</translation>
     </message>
     <message>
         <source>OTP Code</source>
@@ -3570,7 +3570,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Nu s-a găsit niciun cod OTP în această introducere de parolă</translation>
+        <translation type="unfinished">Nu s-a găsit niciun cod OTP în această intrare de parolă</translation>
     </message>
 </context>
 <context>
@@ -3590,7 +3590,7 @@ Continuați?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
-        <translation type="unfinished">arată parola</translation>
+        <translation type="unfinished">Arată parola</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
@@ -3698,7 +3698,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="189"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode s-a blocat</translation>
+        <translation type="unfinished">qrencode s-a închis neașteptat</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="190"/>
@@ -3855,17 +3855,17 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/trayicon.cpp" line="46"/>
         <source>Mi&amp;nimize</source>
-        <translation>mi&amp;nimizați</translation>
+        <translation type="unfinished">Mi&amp;nimizați</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="49"/>
         <source>Ma&amp;ximize</source>
-        <translation>na&amp;ximizați</translation>
+        <translation type="unfinished">Ma&amp;ximizați</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="52"/>
         <source>&amp;Restore</source>
-        <translation>&amp;restaurați</translation>
+        <translation type="unfinished">&amp;Restaurați</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="55"/>
@@ -3878,7 +3878,7 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>utilizatori cu acces citire</translation>
+        <translation type="unfinished">Utilizatori cu acces citire</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -3928,7 +3928,7 @@ Intrările roșii nu sunt valide, nu veți putea cripta la acestea.</translation
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation>căutați utilizatori</translation>
+        <translation type="unfinished">Căutați utilizatori</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -3947,7 +3947,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>afișați cheile neutilizabile</translation>
+        <translation type="unfinished">Afișați cheile neutilizabile</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -3960,12 +3960,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
-        <translation>lista de chei lipsește</translation>
+        <translation type="unfinished">Lista de chei lipsește</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>nu s-a putut prelua lista cheilor GPG disponibile</translation>
+        <translation type="unfinished">Nu s-a putut prelua lista cheilor GPG disponibile</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>

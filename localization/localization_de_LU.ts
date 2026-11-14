@@ -356,7 +356,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Wenn die Zwischenablage gelöscht wird, stellen Sie den Inhalt wieder her, wie es &quot;pass -c&quot; tut, es sei denn, währenddessen wurde etwas anderes kopiert. Nur Text: Formatierung wird nicht wiederhergestellt. Dieser Text bleibt bis dahin im Speicher. Wo die Zwischenablage ohne Fokus nicht gelesen werden kann (einige Wayland-Desktops), wird sie stattdessen gelöscht.</translation>
+        <translation type="unfinished">Beim Leeren der Zwischenablage den Inhalt von vor dem Kopieren wiederherstellen, wie es &quot;pass -c&quot; tut, es sei denn, währenddessen wurde etwas anderes kopiert. Nur Text: Formatierung wird nicht wiederhergestellt. Dieser Text bleibt bis dahin im Speicher. Wo die Zwischenablage ohne Fokus nicht gelesen werden kann (einige Wayland-Desktops), wird sie stattdessen gelöscht.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -382,7 +382,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Verstecken Sie Felder, die auch Geheimnisse enthalten, nicht nur das Passwort: ein Feld, dessen Name eines dieser Wörter enthält. Aus: Nur das Passwort wird versteckt.</translation>
+        <translation type="unfinished">Felder verstecken, die auch Geheimnisse enthalten, nicht nur das Passwort: ein Feld, dessen Name eines dieser Wörter enthält. Aus: Nur das Passwort wird versteckt.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -426,7 +426,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Verwenden Sie ein Git-Repository in einem Ordner oberhalb des Passwortspeichers</translation>
+        <translation type="unfinished">Ein Git-Repository in einem Ordner oberhalb des Passwortspeichers verwenden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -595,7 +595,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 verwendet denselben Schlüssel für einen anderen Passwortspeicher. Eine Liste der Empfänger, die für einen dieser Speicherung signiert wurde, wird im anderen akzeptiert: Verwenden Sie für jeden Speicherungsspeicher einen separaten Signaturschlüssel, dessen Empfänger unterschiedlich sind.</translation>
+        <translation type="unfinished">%1 signiert mit demselben Schlüssel für einen anderen Passwortspeicher. Eine Empfängerliste, die für einen dieser Passwortspeicher signiert wurde, wird im anderen akzeptiert: Verwenden Sie für jeden Passwortspeicher, dessen Empfänger sich unterscheiden, einen eigenen Signaturschlüssel.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1432,7 +1432,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 befindet sich nicht im Passwortspeicher oder ein Ordnername enthält einen Zeilenumbruch oder ein anderes Steuerzeichen, das eine signierte Liste nicht aufzeichnen kann.</translation>
+        <translation type="unfinished">%1 befindet sich nicht im Passwortspeicher oder ein Ordnername auf dem Weg dorthin enthält einen Zeilenumbruch oder ein anderes Steuerzeichen, das eine signierte Liste nicht aufzeichnen kann.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1550,7 +1550,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 kann nicht als Adressliste gelesen werden (eine normale Datei von höchstens %2).</translation>
+        <translation type="unfinished">%1 kann nicht als Empfängerliste gelesen werden (eine normale Datei von höchstens %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1706,7 +1706,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 ist ein symbolischer Link oder eine Verknüpfung, die nach dem Ziehen erstellt wurde. Was dieser verweist, gehört nicht zum Passwortspeicher und wird unverändert gelassen.</translation>
+        <translation type="unfinished">%1 ist nach dem Pull eine symbolische Verknüpfung oder Junction oder liegt hinter einer solchen. Das Ziel der Verknüpfung gehört nicht zum Passwortspeicher und bleibt unberührt.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2012,7 +2012,7 @@ Die Wiederverschlüsselung wurde nicht abgeschlossen, daher sind einige oder all
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head /&gt;&lt;body&gt;&lt;p&gt;Es gibt keine Begrenzung für die Länge eines Passworts, und es sollte sorgfältig ausgewählt werden. Aus der Sicht der Sicherheit, um das Passwort des privaten Schlüssels entsperren ist einer der schwächsten Punkte in GnuPG (und andere Public-Key-Verschlüsselungssysteme als auch), da es der einzige Schutz, den Sie haben, wenn eine andere Person Ihren privaten Schlüssel bekommt. &lt;br/&gt; Idealerweise sollte das Passwort nicht Wörter aus einem Wörterbuch verwenden und sollte den Fall von Buchstaben mischen sowie die Verwendung nicht-alphabetische Zeichen. &lt;br/&gt; Ein gutes Passwort ist entscheidend für die sichere Nutzung von GnuPG. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Die Länge eines Passworts ist nicht begrenzt, und es sollte sorgfältig gewählt werden. Aus Sicht der Sicherheit ist das Passwort zum Entsperren des privaten Schlüssels einer der schwächsten Punkte in GnuPG (und auch in anderen Public-Key-Verschlüsselungssystemen), da es der einzige Schutz ist, den Sie haben, wenn eine andere Person Ihren privaten Schlüssel erhält. &lt;br/&gt;Idealerweise sollte das Passwort keine Wörter aus einem Wörterbuch enthalten, Groß- und Kleinbuchstaben mischen und auch nicht-alphabetische Zeichen verwenden.&lt;br/&gt;Ein gutes Passwort ist entscheidend für die sichere Nutzung von GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
@@ -3039,7 +3039,7 @@ Fortfahren?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Eintrag wurde gespeichert, aber das Aufzeichnen in Git ist fehlgeschlagen. Folgendes wurde gemeldet:
+        <translation type="unfinished">Der Eintrag wurde im Passwortspeicher gespeichert, aber das Aufzeichnen in Git ist fehlgeschlagen. Folgendes wurde gemeldet:
 
 %1</translation>
     </message>
@@ -3051,7 +3051,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 befindet sich nicht im Passwortspeicher. Empfänger sind für den Speichereinheit oder einen Ordner darin festgelegt.</translation>
+        <translation type="unfinished">%1 befindet sich nicht im Passwortspeicher. Empfänger werden für den Passwortspeicher oder einen Ordner darin festgelegt.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3391,7 +3391,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Die konfigurierte GPG-Home-Verzeichnis %1 existiert nicht.</translation>
+        <translation type="unfinished">Das konfigurierte GPG-Home-Verzeichnis %1 existiert nicht.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
