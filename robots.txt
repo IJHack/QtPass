@@ -1,6 +1,8 @@
 User-Agent: *
 Allow: /
-# The Doxygen API reference: hundreds of generated pages about C++ classes
-# that would compete with the pages about the program.
-Disallow: /docs/
+# The developer documentation under /docs/ has its own sitemap, written by
+# Doxygen. Its search pages and the test coverage report are not content.
+Disallow: /docs/search/
+Disallow: /docs/coverage/
 Sitemap: https://qtpass.org/sitemap.xml
+Sitemap: https://qtpass.org/docs/sitemap.xml

@@ -3,8 +3,8 @@
 #
 # - URLs are the canonical extension-less form (/downloads, not /downloads.html)
 # - lastmod comes from the last git commit that touched the file
-# - Doxygen output under docs/ is left out: robots.txt disallows it, and
-#   submitting a blocked URL is reported as an error in Search Console
+# - Doxygen output under docs/ is left out: Doxygen writes its own
+#   docs/sitemap.xml (SITEMAP_URL in the Doxyfile), and robots.txt lists both
 #
 # Usage: ./scripts/update-sitemap.sh   (writes sitemap.xml in place)
 set -euo pipefail
