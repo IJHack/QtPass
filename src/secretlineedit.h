@@ -116,6 +116,17 @@ private:
    * release, where QLineEdit would have copied plain text.
    */
   void publishSelection();
+  /**
+   * @brief Pastes the clipboard or the primary selection with its line
+   * breaks removed, as one undoable edit. Does nothing when read-only.
+   *
+   * The validator would remove them too, but a correction it makes resets
+   * QLineEdit's undo history; removing them before the insert keeps Undo
+   * for Ctrl+V, Paste and a middle click. Drops and input methods still go
+   * through the validator alone.
+   * @param mode Clipboard for Ctrl+V and Paste, Selection for a middle click.
+   */
+  void pasteOneLine(QClipboard::Mode mode);
 };
 
 #endif // SRC_SECRETLINEEDIT_H_

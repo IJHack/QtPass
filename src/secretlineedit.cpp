@@ -64,6 +64,10 @@ auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
     } else if (action->objectName() == QLatin1String("edit-cut")) {
       disconnect(action, &QAction::triggered, this, nullptr);
       connect(action, &QAction::triggered, this, [this] { cutSelection(); });
+    } else if (action->objectName() == QLatin1String("edit-paste")) {
+      disconnect(action, &QAction::triggered, this, nullptr);
+      connect(action, &QAction::triggered, this,
+              [this] { pasteOneLine(QClipboard::Clipboard); });
     }
   }
   return menu;
@@ -77,6 +81,11 @@ void SecretLineEdit::keyPressEvent(QKeyEvent *event) {
   }
   if (event->matches(QKeySequence::Cut)) {
     cutSelection();
+    event->accept();
+    return;
+  }
+  if (event->matches(QKeySequence::Paste)) {
+    pasteOneLine(QClipboard::Clipboard);
     event->accept();
     return;
   }
@@ -101,6 +110,14 @@ void SecretLineEdit::keyPressEvent(QKeyEvent *event) {
 }
 
 void SecretLineEdit::mouseReleaseEvent(QMouseEvent *event) {
+  // QLineEdit pastes the primary selection here on a middle click.
+  if (event->button() == Qt::MiddleButton && !isReadOnly() &&
+      QApplication::clipboard()->supportsSelection()) {
+    deselect();
+    pasteOneLine(QClipboard::Selection);
+    event->accept();
+    return;
+  }
   withoutPlainSelectionCopy(
       [this, event] { QLineEdit::mouseReleaseEvent(event); });
   if (event->button() == Qt::LeftButton) {
@@ -156,4 +173,15 @@ void SecretLineEdit::publishSelection() {
   if (QApplication::clipboard()->supportsSelection()) {
     copySelection(QClipboard::Selection);
   }
+}
+
+void SecretLineEdit::pasteOneLine(QClipboard::Mode mode) {
+  if (isReadOnly()) {
+    return;
+  }
+  QString text = QApplication::clipboard()->text(mode);
+  text.remove(u'\n').remove(u'\r');
+  // insert() replaces the selection and records the edit for Undo; with no
+  // line break left the validator changes nothing, so the history stays.
+  insert(text);
 }

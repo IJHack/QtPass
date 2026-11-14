@@ -41,6 +41,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/secretlineedit.h"
 #include "../testpass.h"
 #include "../testsettings.h"
 
@@ -145,6 +146,7 @@ private Q_SLOTS:
   void fieldLabelRefusesADuplicateName();
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
   void pastedLineBreaksStayOutOfTheEntry();
+  void pasteWithLineBreaksKeepsUndo();
   void fieldNameDropsLineBreaks();
   void templateFieldsKeepPlainLabels();
   void fieldLabelDoubleClickStartsTheEdit();
@@ -427,6 +429,49 @@ void tst_passworddialog::pastedLineBreaksStayOutOfTheEntry() {
            qPrintable(written));
   QVERIFY2(written.contains(QStringLiteral("login: bob-admin\n")),
            qPrintable(written));
+}
+
+/**
+ * @brief Removing a paste's line breaks keeps Undo. Left to the validator,
+ *        the correction resets QLineEdit's undo history, so a paste of
+ *        "bob\n" over "alice" could not be undone.
+ */
+void tst_passworddialog::pasteWithLineBreaksKeepsUndo() {
+  FakePass pass;
+  AppSettings s = allFieldsSettings();
+  s.passTemplate = QStringLiteral("login");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("old\nlogin: alice\n"));
+  auto *login = d.findChild<SecretLineEdit *>(QStringLiteral("login"));
+  QVERIFY(login != nullptr);
+  QCOMPARE(login->text(), QStringLiteral("alice"));
+  QApplication::clipboard()->setText(QStringLiteral("bob\n"));
+
+  // Ctrl+V over a selection.
+  login->setFocus();
+  login->selectAll();
+  QTest::keySequence(login, QKeySequence(QKeySequence::Paste));
+  QCOMPARE(login->text(), QStringLiteral("bob"));
+  login->undo();
+  QCOMPARE(login->text(), QStringLiteral("alice"));
+
+  // Paste from the context menu.
+  login->selectAll();
+  QMenu *menu = login->createSecretContextMenu();
+  const auto deleteMenu = qScopeGuard([menu] { delete menu; });
+  QAction *paste = nullptr;
+  for (QAction *action : menu->actions()) {
+    if (action->objectName() == QLatin1String("edit-paste")) {
+      paste = action;
+    }
+  }
+  QVERIFY(paste != nullptr);
+  paste->trigger();
+  QCOMPARE(login->text(), QStringLiteral("bob"));
+  login->undo();
+  QCOMPARE(login->text(), QStringLiteral("alice"));
 }
 
 /**
