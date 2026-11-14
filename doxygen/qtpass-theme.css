@@ -129,6 +129,17 @@ body {
   letter-spacing: -0.01em;
 }
 
+/*
+ * The sidebar layout gives the title area a fixed height (--top-height), so a
+ * wrapped line would slide the search box under the navigation tree. Keep the
+ * name and the brief on one line each; when the sidebar is dragged narrower,
+ * its edge cuts the line off instead.
+ */
+#projectname,
+#projectbrief {
+  white-space: nowrap;
+}
+
 #projectbrief {
   color: var(--page-secondary-foreground-color);
 }
