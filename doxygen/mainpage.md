@@ -45,6 +45,7 @@ operation is reported once, when its last process ends.
 Nothing in the interface waits for a process. A call on Pass queues work and
 returns; the result arrives later as a signal.
 
+<div class="interactive_dotgraph">
 @dot
 digraph flow {
 rankdir=LR;
@@ -62,6 +63,7 @@ exec -> pass [label="finished() / error()"];
 pass -> ui [label="finishedShow(), ...\nprocessErrorExit()"];
 }
 @enddot
+</div>
 
 Showing an entry, step by step:
 

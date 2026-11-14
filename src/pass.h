@@ -757,9 +757,13 @@ signals:
    *
    * The counterpart of the `finished...` signals; exactly one of the two
    * ends each operation. The main window releases the busy state and shows
-   * @p err in the password pane. insertFailed() and generateGPGKeysFailed()
-   * are emitted before it for those two operations, so their dialogs need
-   * not guess whose failure this is.
+   * @p err in the password pane.
+   *
+   * When an insert or a key generation started a process and that process
+   * failed, insertFailed() or generateGPGKeysFailed() is emitted before
+   * this signal, so their dialogs need not guess whose failure it is. An
+   * operation refused before anything started (a path outside the store,
+   * say) emits this signal without either of the two.
    * @param exitCode Exit code of the process; -1 when it did not exit
    *        normally, 1 for a refusal.
    * @param err What to show the user: stderr, or a translated message.

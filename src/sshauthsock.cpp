@@ -104,7 +104,8 @@ auto SshAuthSock::overrideStatus(const QString &path) -> OverrideStatus {
 }
 
 // The rules are in the header. All probes go through
-// Executor::executeBlocking with short, bounded subprocess executions; any
+// Executor::executeBlocking with no timeout or cancel flag, so each one
+// waits for its child (gpgconf, ssh-add -l) however long that takes. Any
 // failure is silently absorbed (the user just doesn't get the auto-fix).
 void SshAuthSock::initialise(const QString &override) {
   // Honour any value already in the environment — terminal launches,
