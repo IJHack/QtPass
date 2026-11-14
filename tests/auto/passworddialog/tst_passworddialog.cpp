@@ -115,6 +115,7 @@ private Q_SLOTS:
   void newEntryStartsEditable();
   void okKeepsNoBreakSpacesInUntouchedNotes();
   void okWritesUntouchedFieldLinesVerbatim();
+  void pastedLineBreaksStayOutOfTheEntry();
 };
 
 void tst_passworddialog::existingEntryLocksEditorUntilContentLoads() {
@@ -410,6 +411,34 @@ void tst_passworddialog::okWritesUntouchedFieldLinesVerbatim() {
   QVERIFY2(written.contains(QStringLiteral("\nrecovery:\n")),
            qPrintable("an untouched field stays verbatim after an edit:\n" +
                       written));
+}
+
+void tst_passworddialog::pastedLineBreaksStayOutOfTheEntry() {
+  // A QLineEdit keeps the line breaks of a paste, and each field is written
+  // as one line. A password pasted as "\nhunter2" (a selection that began at
+  // the end of the line above) was saved as an empty first line with the
+  // password below it, so Ctrl+C later copied nothing.
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate.clear();
+  s.templateAllFields = true;
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  pass.deliverShow(QStringLiteral("old\nlogin: alice\n"));
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *login = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(password != nullptr && login != nullptr);
+
+  password->clear();
+  password->insert(QStringLiteral("\nhunter2"));
+  login->clear();
+  login->insert(QStringLiteral("bob\r\nadmin\r\n"));
+
+  const QString written = d.getPassword();
+  QVERIFY2(written.startsWith(QStringLiteral("hunter2\n")),
+           qPrintable(written));
+  QVERIFY2(written.contains(QStringLiteral("\nlogin: bobadmin\n")),
+           qPrintable(written));
 }
 
 QTEST_MAIN(tst_passworddialog)

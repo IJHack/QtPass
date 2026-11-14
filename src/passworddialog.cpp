@@ -31,6 +31,20 @@ namespace {
 /// Dynamic property holding a field row's verbatim source line, so
 /// getPassword() can write an untouched field back exactly as it was read.
 const char kOriginalLineProperty[] = "qtpassOriginalLine";
+
+/**
+ * @brief A one-line field's text without the CR and LF a paste or a drop can
+ * put into a QLineEdit. Each field is written as one line of the entry, so a
+ * break of its own would end that line early: a password pasted as
+ * "\nhunter2" was saved as an empty first line.
+ * @param text The field's text.
+ * @return The text with every CR and LF removed.
+ */
+auto oneLine(QString text) -> QString {
+  text.remove(QLatin1Char('\n'));
+  text.remove(QLatin1Char('\r'));
+  return text;
+}
 } // namespace
 
 /**
@@ -430,11 +444,11 @@ void PasswordDialog::normalizeOtpField() {
  * @return collapsed password.
  */
 auto PasswordDialog::getPassword() -> QString {
-  QString passFile = ui->lineEditPassword->text() + "\n";
+  QString passFile = oneLine(ui->lineEditPassword->text()) + "\n";
   QList<QLineEdit *> allLines(m_templateLines);
   allLines.append(m_otherLines);
   for (QLineEdit *line : std::as_const(allLines)) {
-    const QString text = line->text();
+    const QString text = oneLine(line->text());
     const QString name = line->objectName();
     const QString original = line->property(kOriginalLineProperty).toString();
     // A field whose name and value are still exactly what was parsed keeps its
