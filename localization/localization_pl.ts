@@ -1528,7 +1528,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Magazyn haseł posiada pliki, które nie zostały połączone. Rozwiąż konflikt za pomocą Git przed ponownym szyfrowaniem.</translation>
+        <translation>Repozytorium Git przechowujące hasła zawiera niescalone pliki. Przed ponownym zaszyfrowaniem należy rozwiązać konflikt w systemie Git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1567,7 +1567,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
         <location filename="../src/imitatepass.cpp" line="1008"/>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished">Nieukończone działanie Git</translation>
+        <translation>Niedokończona operacja Git</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1021"/>
@@ -2877,12 +2877,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Nie udało się wygenerować hasła</translation>
+        <translation>Generowanie hasła nie powiodło się</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">Nie można uruchomić programu pwgen (&quot;%1&quot;). Sprawdź program pwgen w ustawieniach albo wyłącz &quot;Użyj pwgen&quot;.</translation>
+        <translation>Nie udało się uruchomić programu pwgen („%1”). Sprawdź ustawienia dotyczące programu pwgen lub wyłącz opcję „Użyj pwgen”.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -2958,52 +2958,52 @@ Kontynuować?</translation>
         <location filename="../src/pass.cpp" line="851"/>
         <source>rebase</source>
         <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>zmień</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="854"/>
         <source>merge</source>
         <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>scal</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>cherry-pick</source>
         <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>wybierz</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="860"/>
         <source>revert</source>
         <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>cofnij</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="867"/>
         <source>cherry-pick or revert</source>
         <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>wybierz lub cofnij</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Magazyn haseł posiada repozytorium Git, które znajduje się w trakcie %1. Zakończ lub zrezygnuj z tego procesu za pomocą Git przed zmianą ustawień magazynu haseł, ponieważ zmiany wprowadzone wcześniej mogą zostać utracone.</translation>
+        <translation>Repozytorium Git przechowujące hasła znajduje się w trakcie operacji %1. Przed wprowadzeniem zmian w bazie haseł należy zakończyć tę operację lub ją przerwać za pomocą narzędzia Git; w przeciwnym razie wprowadzone zmiany mogą zostać utracone.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Magazyn haseł jest aktualizowany (w trakcie pobierania z Git). Poczekaj, aż proces się zakończy, a następnie spróbuj ponownie.</translation>
+        <translation>Magazyn haseł jest aktualizowany (trwa operacja „git pull”). Poczekaj na jej zakończenie, a następnie spróbuj ponownie.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished">Aktualizacja w toku</translation>
+        <translation>Trwa aktualizacja</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished">Nieukończone działanie Git</translation>
+        <translation>Niedokończona operacja Git</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="932"/>
