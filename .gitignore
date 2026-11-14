@@ -13,9 +13,11 @@ compile_commands.json
 latex
 linter-output.log
 rtf
-src
-main
-tests
+# A build of main's sources, if checked out here. Anchored to the top: the
+# coverage report under docs/coverage/ has a src/ folder of its own.
+/src
+/main
+/tests
 
 # gzip twins written by scripts/precompress.sh before deploy
 *.gz
