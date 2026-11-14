@@ -464,6 +464,7 @@ private Q_SLOTS:
   void newSearchTextCancelsAWaitingOpen();
   void acceptedSettingsCancelAWaitingOpen();
   void backslashSearchFindsTheEntryOnWindows();
+  void exactMatchFollowsACaseInsensitiveFileSystem();
   void configDialogAcceptedReappliesTheSettings();
   void configDialogCancelledChangesNothing();
   void aboutBoxNamesTheProgramAndLicence();
@@ -910,40 +911,49 @@ auto addEntry(MainWindow *window, const QString &storeDir, const QString &name)
   return true;
 }
 
-/// The file system model behind the tree.
-auto storeFileSystem(MainWindow *window) -> QFileSystemModel * {
+/// The proxy the tree shows, over its file system model.
+auto storeProxy(MainWindow *window) -> QSortFilterProxyModel * {
   auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
-  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
-  return qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  return qobject_cast<QSortFilterProxyModel *>(tree->model());
 }
 
-/// Hide every entry but @p keep from the tree's model, as a folder still
-/// loading would: an open of @p path then has to wait. False, without
-/// failing, where the model keeps the hidden entry indexable (macOS CI).
-auto hideAllBut(QFileSystemModel *fs, const QString &path, const QString &keep)
-    -> bool {
-  fs->setNameFilters({keep});
+/// Whether the tree shows @p path, looked up as exactMatch() does: through
+/// the proxy. The source model alone kept a hidden entry indexable on macOS.
+auto inTree(QSortFilterProxyModel *proxy, const QString &path) -> bool {
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  const QModelIndex src = fs->index(path);
+  return src.isValid() && proxy->mapFromSource(src).isValid();
+}
+
+/// Hide every entry but @p keep from the tree, as a folder still loading
+/// would: an open of @p path then has to wait. False, without failing,
+/// where the tree still shows the hidden entry.
+auto hideAllBut(QSortFilterProxyModel *proxy, const QString &path,
+                const QString &keep) -> bool {
+  qobject_cast<QFileSystemModel *>(proxy->sourceModel())
+      ->setNameFilters({keep});
   // Polled as QTRY_VERIFY_WITH_TIMEOUT_RETURN does: QTest::qWaitFor() did
   // not let the model's delayed re-sort run.
   QElapsedTimer timer;
   timer.start();
-  while (fs->index(path).isValid() && timer.elapsed() < 5000) {
+  while (inTree(proxy, path) && timer.elapsed() < 5000) {
     QTest::qWait(20);
   }
-  return !fs->index(path).isValid();
+  return !inTree(proxy, path);
 }
 
 /// Why a test that needs hideAllBut() is skipped where it cannot hide.
 constexpr const char *kCannotHide =
-    "the file system model keeps a name-filtered entry indexable here, so "
-    "an open that waits for the tree cannot be staged";
+    "the tree keeps showing a name-filtered entry here, so an open that "
+    "waits for the tree cannot be staged";
 
 /// Show every entry again and report the store folder loaded, as the model
 /// does when a folder finishes loading.
-auto showLoaded(QFileSystemModel *fs, const QString &path,
+auto showLoaded(QSortFilterProxyModel *proxy, const QString &path,
                 const QString &storeDir) -> bool {
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
   fs->setNameFilters({QStringLiteral("*.gpg")});
-  QTRY_VERIFY_WITH_TIMEOUT_RETURN(fs->index(path).isValid(), 5000, false);
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN(inTree(proxy, path), 5000, false);
   emit fs->directoryLoaded(storeDir);
   return true;
 }
@@ -3417,10 +3427,11 @@ void tst_mainwindow::newSearchTextCancelsAWaitingOpen() {
   QVERIFY(
       addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("waited")));
   const QString path = QDir(m_storeDir.path()).filePath("waited.gpg");
-  QFileSystemModel *fs = storeFileSystem(m_window.data());
+  QSortFilterProxyModel *tree = storeProxy(m_window.data());
 
-  if (!hideAllBut(fs, path, QStringLiteral("aaa.gpg"))) {
-    fs->setNameFilters({QStringLiteral("*.gpg")});
+  if (!hideAllBut(tree, path, QStringLiteral("aaa.gpg"))) {
+    qobject_cast<QFileSystemModel *>(tree->sourceModel())
+        ->setNameFilters({QStringLiteral("*.gpg")});
     QSKIP(kCannotHide);
   }
   passwordName()->clear();
@@ -3428,16 +3439,16 @@ void tst_mainwindow::newSearchTextCancelsAWaitingOpen() {
   QVERIFY2(passwordName()->text().isEmpty(), "hidden: the open waits");
   searchBox()->setText(QStringLiteral("other"));
   searchBox()->setText(QStringLiteral("waited"));
-  QVERIFY(showLoaded(fs, path, m_storeDir.path()));
+  QVERIFY(showLoaded(tree, path, m_storeDir.path()));
   QVERIFY2(passwordName()->text().isEmpty(),
            qPrintable(QStringLiteral("typing only highlights, opened: ") +
                       passwordName()->text()));
 
   // Control: unchallenged, the waiting open does land.
-  QVERIFY(hideAllBut(fs, path, QStringLiteral("aaa.gpg")));
+  QVERIFY(hideAllBut(tree, path, QStringLiteral("aaa.gpg")));
   m_window->messageAvailable(QStringLiteral("waited"));
   QVERIFY2(passwordName()->text().isEmpty(), "hidden again: the open waits");
-  QVERIFY(showLoaded(fs, path, m_storeDir.path()));
+  QVERIFY(showLoaded(tree, path, m_storeDir.path()));
   QCOMPARE(passwordName()->text(), QStringLiteral("waited"));
 #endif
 }
@@ -3457,10 +3468,11 @@ void tst_mainwindow::acceptedSettingsCancelAWaitingOpen() {
   QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
                    QStringLiteral("re-rooted")));
   const QString path = QDir(m_storeDir.path()).filePath("re-rooted.gpg");
-  QFileSystemModel *fs = storeFileSystem(m_window.data());
+  QSortFilterProxyModel *tree = storeProxy(m_window.data());
 
-  if (!hideAllBut(fs, path, QStringLiteral("aaa.gpg"))) {
-    fs->setNameFilters({QStringLiteral("*.gpg")});
+  if (!hideAllBut(tree, path, QStringLiteral("aaa.gpg"))) {
+    qobject_cast<QFileSystemModel *>(tree->sourceModel())
+        ->setNameFilters({QStringLiteral("*.gpg")});
     QSKIP(kCannotHide);
   }
   passwordName()->clear();
@@ -3474,7 +3486,7 @@ void tst_mainwindow::acceptedSettingsCancelAWaitingOpen() {
     answerBox(QMessageBox::Ok)(w);
   });
   QVERIFY(m_window->config());
-  QVERIFY(showLoaded(fs, path, m_storeDir.path()));
+  QVERIFY(showLoaded(tree, path, m_storeDir.path()));
   QVERIFY2(passwordName()->text().isEmpty(),
            qPrintable(QStringLiteral("nothing opened, opened: ") +
                       passwordName()->text()));
@@ -3505,6 +3517,33 @@ void tst_mainwindow::backslashSearchFindsTheEntryOnWindows() {
   QVERIFY2(current.endsWith(QStringLiteral("team/bank.gpg")),
            qPrintable(current));
 #endif
+}
+
+/**
+ * @brief Where the file system ignores case, "Bank" names bank.gpg, and the
+ *        exact match finds it in the tree: it used to miss and fall back to
+ *        the first match, team/bank.
+ */
+void tst_mainwindow::exactMatchFollowsACaseInsensitiveFileSystem() {
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
+                   QStringLiteral("team/bank")));
+  if (!QFileInfo::exists(
+          QDir(m_storeDir.path()).filePath(QStringLiteral("BANK.gpg")))) {
+    QSKIP("the file system tells Bank from bank: they are two names");
+  }
+  treeView()->setCurrentIndex(QModelIndex());
+
+  searchBox()->setText(QStringLiteral("Bank"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QSortFilterProxyModel *tree = storeProxy(m_window.data());
+  auto *fs = qobject_cast<QFileSystemModel *>(tree->sourceModel());
+  const QString current =
+      fs->filePath(tree->mapToSource(treeView()->currentIndex()));
+  QVERIFY2(current.endsWith(QStringLiteral("/bank.gpg")) &&
+               !current.endsWith(QStringLiteral("team/bank.gpg")),
+           qPrintable(current));
 }
 
 /**
