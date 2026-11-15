@@ -802,9 +802,11 @@ void tst_imitatepass::reencryptFailsForAFolderItCannotRead() {
     f.write("not really encrypted");
   }
   const QString finance = store.filePath(QStringLiteral("finance"));
-  QVERIFY(::chmod(QFile::encodeName(finance).constData(), 0300) == 0);
-  const auto restore = qScopeGuard(
-      [&finance] { ::chmod(QFile::encodeName(finance).constData(), 0700); });
+  QVERIFY(QFile::setPermissions(finance, QFile::WriteOwner | QFile::ExeOwner));
+  const auto restore = qScopeGuard([&finance] {
+    QFile::setPermissions(finance, QFile::ReadOwner | QFile::WriteOwner |
+                                       QFile::ExeOwner);
+  });
   Recorder rec;
   int encrypts = 0;
   bool aborted = false;

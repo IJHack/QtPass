@@ -5185,7 +5185,9 @@ void tst_util::regularFilesUnderReportsFoldersItCannotRead() {
     QSKIP("root reads anywhere");
   // Search but no read: the listing fails. Read but no search: the names
   // come, but nothing in the folder can be looked at.
-  for (const mode_t mode : {mode_t{0300}, mode_t{0600}}) {
+  const QFile::Permissions noRead = QFile::WriteOwner | QFile::ExeOwner;
+  const QFile::Permissions noSearch = QFile::ReadOwner | QFile::WriteOwner;
+  for (const QFile::Permissions mode : {noRead, noSearch}) {
     QTemporaryDir tmp;
     QVERIFY(tmp.isValid());
     const QDir store(tmp.path());
@@ -5199,9 +5201,11 @@ void tst_util::regularFilesUnderReportsFoldersItCannotRead() {
       f.write("x");
     }
     const QString finance = store.filePath(QStringLiteral("finance"));
-    QVERIFY(::chmod(QFile::encodeName(finance).constData(), mode) == 0);
-    const auto restore = qScopeGuard(
-        [&finance] { ::chmod(QFile::encodeName(finance).constData(), 0700); });
+    QVERIFY(QFile::setPermissions(finance, mode));
+    const auto restore = qScopeGuard([&finance] {
+      QFile::setPermissions(finance, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner);
+    });
     QStringList skipped;
     QStringList unlisted;
     const QStringList files = Util::regularFilesUnder(
