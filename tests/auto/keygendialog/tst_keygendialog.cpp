@@ -57,6 +57,7 @@ private Q_SLOTS:
   void applyPassphraseReplacesNoProtection();
   void applyPassphraseSeesNoProtectionBeforeANul();
   void batchValuesHoldNoLineBreaks();
+  void batchPassphraseHasNoOuterBlanks();
   void pastedLineBreakNeverReachesTheTemplate();
   void applyPassphraseEmptyKeepsNoProtection();
   void applyPassphraseReplacesExistingPassphraseLine();
@@ -73,6 +74,7 @@ private Q_SLOTS:
   void generationFailureReenablesTheForm();
   void generationFailureKeepsThePassphraseGate();
   void acceptingWithoutAPassphraseChoiceStartsNothing();
+  void passphraseWithOuterBlanksStartsNothing();
   void cancelWhileGeneratingDetachesFromTheBackend();
   void unrelatedProcessErrorsDoNotTouchTheDialog();
 };
@@ -384,6 +386,27 @@ void tst_keygendialog::batchValuesHoldNoLineBreaks() {
   QString nul = QStringLiteral("x");
   nul += QChar::Null;
   QVERIFY(!KeygenDialog::isBatchValue(nul));
+}
+
+/**
+ * @brief gpg skips white space after "Passphrase:" and cuts spaces and tabs
+ *        off the end of the value, so a passphrase with a blank at either end
+ *        protects the key without it. Inner blanks and a no-break space are
+ *        kept by gpg and accepted here.
+ */
+void tst_keygendialog::batchPassphraseHasNoOuterBlanks() {
+  for (const QString &kept : {QStringLiteral("correct horse battery"),
+                              QStringLiteral("correct  horse\tbattery"),
+                              QString(), QStringLiteral("\u00a0nbsp\u00a0")}) {
+    QVERIFY2(KeygenDialog::isBatchPassphrase(kept), qPrintable(kept));
+  }
+  for (const QString &cut :
+       {QStringLiteral("correct horse battery "), QStringLiteral(" leading"),
+        QStringLiteral("\ttab"), QStringLiteral("tab\t"),
+        QStringLiteral("\vvertical"), QStringLiteral("\fform feed"),
+        QStringLiteral("   ")}) {
+    QVERIFY2(!KeygenDialog::isBatchPassphrase(cut), qPrintable(cut));
+  }
 }
 
 /**
@@ -733,6 +756,56 @@ void tst_keygendialog::acceptingWithoutAPassphraseChoiceStartsNothing() {
   spinner = d.findChild<QProgressIndicator *>();
   QVERIFY2(spinner != nullptr && spinner->isVisible(),
            "with the waiver, generation is attempted");
+}
+
+/**
+ * @brief OK on a passphrase that ends in a space says why and generates
+ *        nothing: gpg would protect the key with the passphrase without the
+ *        space and refuse the one typed twice. Without the space it goes
+ *        ahead.
+ */
+void tst_keygendialog::passphraseWithOuterBlanksStartsNothing() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d, false);
+  auto *first = d.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *second = d.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  QVERIFY(first != nullptr && second != nullptr);
+  first->setText(QStringLiteral("correct horse battery "));
+  second->setText(QStringLiteral("correct horse battery "));
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+
+  QStringList refusals;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&refusals] {
+    if (auto *box =
+            qobject_cast<QMessageBox *>(QApplication::activeModalWidget())) {
+      refusals << box->text();
+      box->accept();
+    }
+  });
+  poker.start();
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QCOMPARE(refusals.size(), 1);
+  QVERIFY2(refusals.first().contains(QStringLiteral("space")),
+           qPrintable(refusals.first()));
+  QVERIFY2(d.isVisible(), "the dialog stays open");
+  auto *spinner = d.findChild<QProgressIndicator *>();
+  QVERIFY2(spinner == nullptr || !spinner->isVisible(),
+           "no generation may have started");
+  QVERIFY2(first->isEnabled(), "the form must remain enabled");
+
+  first->setText(QStringLiteral("correct horse battery"));
+  second->setText(QStringLiteral("correct horse battery"));
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QCOMPARE(refusals.size(), 1);
+  spinner = d.findChild<QProgressIndicator *>();
+  QVERIFY2(spinner != nullptr && spinner->isVisible(),
+           "without the space, generation is attempted");
 }
 
 /**
