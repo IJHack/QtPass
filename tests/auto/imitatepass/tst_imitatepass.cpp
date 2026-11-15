@@ -34,6 +34,7 @@
 #include <QMap>
 #include <QProcess>
 #include <QRegularExpression>
+#include <QScopeGuard>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -602,6 +603,7 @@ private Q_SLOTS:
   void initTestCase();
   void reencryptPathEmitsStartSynchronouslyAndEndLater();
   void reencryptPathAggregatesFailuresIntoOneCritical();
+  void reencryptFailsForAFolderItCannotRead();
   void reencryptPathCancelStopsBetweenFiles();
   void reencryptPathCancelInterruptsActiveProcess();
   void reencryptPathCancelKillsProcessIgnoringTerminate();
@@ -776,6 +778,62 @@ void tst_imitatepass::reencryptPathAggregatesFailuresIntoOneCritical() {
   QVERIFY2(!rec.statusMessages.isEmpty(), "a summary status must be shown");
   QVERIFY2(rec.statusMessages.last().contains(QStringLiteral("3 failed")),
            qPrintable(rec.statusMessages.last()));
+}
+
+/**
+ * @brief A folder the run cannot read fails the run: it looked empty, and the
+ *        run reported "Re-encryption completed" with its entries still
+ *        encrypted to the old recipients, a key just removed among them.
+ */
+void tst_imitatepass::reencryptFailsForAFolderItCannotRead() {
+#ifdef Q_OS_WIN
+  QSKIP("relies on Unix directory permissions");
+#else
+  if (::geteuid() == 0)
+    QSKIP("root reads anywhere");
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral("finance")));
+  {
+    QFile f(store.filePath(QStringLiteral("finance/bank.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("not really encrypted");
+  }
+  const QString finance = store.filePath(QStringLiteral("finance"));
+  QVERIFY(QFile::setPermissions(finance, QFile::WriteOwner | QFile::ExeOwner));
+  const auto restore = qScopeGuard([&finance] {
+    QFile::setPermissions(finance, QFile::ReadOwner | QFile::WriteOwner |
+                                       QFile::ExeOwner);
+  });
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = false;
+  QVERIFY(runReencrypt(storeDir.path(), rec, &encrypts, &aborted));
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(
+      rec.criticals.first().contains(QStringLiteral("finance")) &&
+          rec.criticals.first().contains(QStringLiteral("could not be read")),
+      qPrintable(rec.criticals.first()));
+  QVERIFY2(!rec.statusMessages.isEmpty() &&
+               rec.statusMessages.last().contains(QStringLiteral("1 failed")),
+           qPrintable(rec.statusMessages.join(" | ")));
+  // The readable entry is re-encrypted all the same.
+  QCOMPARE(encrypts, 1);
+
+  // With Git and automatic pushing on, nothing is pushed: the remote would
+  // get a store still readable by the key just removed.
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder withGit;
+  QList<QStringList> gitCalls;
+  QVERIFY(runReencryptWithGit(storeDir.path(), fakeGit, withGit, &gitCalls,
+                              &encrypts));
+  QVERIFY2(!withGit.criticals.isEmpty(), "the run must fail");
+  QVERIFY2(!hasPush(gitCalls), "a failed run must not push");
+#endif
 }
 
 /**

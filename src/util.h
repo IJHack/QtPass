@@ -305,13 +305,17 @@ public:
    *        device) whose name matches @p nameFilters. Null to not care.
    * @param hiddenFiles List hidden files too (`.gpg-id`); hidden directories
    *        stay closed regardless.
+   * @param unlisted Receives every directory the walk could not read (no
+   *        read permission): what is in it is missing from the result, not
+   *        absent. Null to not care.
    * @return Absolute paths, sorted by name within each directory, a
    *         directory's files before its subdirectories.
    */
   static auto regularFilesUnder(const QString &dir,
                                 const QStringList &nameFilters,
                                 QStringList *skipped = nullptr,
-                                bool hiddenFiles = false) -> QStringList;
+                                bool hiddenFiles = false,
+                                QStringList *unlisted = nullptr) -> QStringList;
   /**
    * @brief Every real, visible directory under @p dir, walked by the same
    * rules as regularFilesUnder(): links, junctions and hidden directories

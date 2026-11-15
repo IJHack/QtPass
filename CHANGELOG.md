@@ -1048,6 +1048,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   to clipboard" and cleared the selection; only the context menu's Copy
   took the selection. With nothing selected, Ctrl+C copies the password as
   before
+- Re-encrypting with the native backend fails, naming the folder, when a
+  folder in the store cannot be read (no read permission). It looked empty,
+  so its entries kept their old recipients, a key just removed among them,
+  while QtPass reported "Re-encryption completed" (and pushed, with
+  automatic pushing on)
 
 ### Code Quality
 
