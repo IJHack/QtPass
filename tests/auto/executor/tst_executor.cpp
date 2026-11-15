@@ -1381,6 +1381,17 @@ void tst_executor::translatePathForWslUsesTheConfiguredDistribution() {
   QCOMPARE(Executor::translatePathForWsl(QStringLiteral("C:/store//x.gpg"),
                                          QStringLiteral("gpg")),
            QStringLiteral("C:/store/x.gpg"));
+  // White space ending the name is the name's: only wslpath's line end goes.
+  // Trimmed, "team " became its neighbour "team" and " " the store itself.
+  for (const QString &name :
+       {QStringLiteral("team "), QStringLiteral("team\u00a0"),
+        QStringLiteral(" ")}) {
+    const QString path = QStringLiteral("C:/store/") + name;
+    const QString out =
+        Executor::translatePathForWsl(path, QStringLiteral("wsl git"));
+    QVERIFY2(out.endsWith(QLatin1Char('\n') + path),
+             qPrintable(QStringLiteral("[%1]").arg(out)));
+  }
   QCOMPARE(Executor::translatePathForWsl(QStringLiteral("C:/store/x.gpg"),
                                          QStringLiteral("wsl sh -c gpg")),
            QStringLiteral("C:/store/x.gpg"));
