@@ -224,6 +224,18 @@ public:
   [[nodiscard]] static auto isOtpUriValue(const QString &value) -> bool;
 
   /**
+   * @brief The password of an entry: its first line, without the carriage
+   * return of a CRLF line end.
+   *
+   * The one rule for every path that takes the password from decrypted text
+   * (parse(), the Ctrl+C copy), so they agree with the password row: a "\r"
+   * before the line feed is the line end, not part of the secret.
+   * @param text Decrypted entry text, or just its first line.
+   * @return Its first line, a trailing "\r" dropped.
+   */
+  [[nodiscard]] static auto passwordLine(QStringView text) -> QString;
+
+  /**
    * @brief The entry's raw one-time password configuration, if it has one.
    *
    * Looked up in this order:

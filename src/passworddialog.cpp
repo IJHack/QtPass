@@ -397,8 +397,14 @@ void PasswordDialog::setPassword(const QString &password) {
       FileContent::parse(password, m_templating ? m_fields : QStringList(),
                          m_templating && m_allFields);
   // As stored, past the line-break filter for input: an unedited save must
-  // write the entry back exactly.
+  // write the entry back exactly. The "\r" of a CRLF line end is not part of
+  // the password: it stays out of the field and is written back after it.
   ui->lineEditPassword->setStoredText(fileContent.getPassword());
+  m_passwordLineEnd = QStringView(password)
+                              .left(password.indexOf(QLatin1Char('\n')))
+                              .endsWith(u'\r')
+                          ? QStringLiteral("\r")
+                          : QString();
 
   QWidget *previous = ui->checkBoxShow;
   NamedValues namedValues = fileContent.getNamedValues();
@@ -599,7 +605,7 @@ void PasswordDialog::normalizeOtpField() {
 }
 
 auto PasswordDialog::getPassword() -> QString {
-  QString passFile = ui->lineEditPassword->text() + "\n";
+  QString passFile = ui->lineEditPassword->text() + m_passwordLineEnd + "\n";
   QList<QLineEdit *> allLines(m_templateLines);
   allLines.append(m_otherLines);
   for (QLineEdit *line : std::as_const(allLines)) {

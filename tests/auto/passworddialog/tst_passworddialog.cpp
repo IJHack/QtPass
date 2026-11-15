@@ -162,6 +162,7 @@ private Q_SLOTS:
   void okWritesTheEntryBackWithATrailingNewline();
   void okKeepsNoBreakSpacesInUntouchedNotes();
   void okWritesUntouchedFieldLinesVerbatim();
+  void crlfLineEndStaysOutOfThePasswordField();
   void failedInsertKeepsWhatWasTyped();
   void refusedInsertKeepsWhatWasTyped();
   void savingLocksTheDialogUntilTheResult();
@@ -1295,6 +1296,29 @@ void tst_passworddialog::okKeepsNoBreakSpacesInUntouchedNotes() {
   QVERIFY2(!pass.insertedContent.contains(QChar(QChar::ParagraphSeparator)) &&
                !pass.insertedContent.contains(QChar(QChar::LineSeparator)),
            "the notes' lines must be separated by '\n', not U+2028/U+2029");
+}
+
+/**
+ * @brief The "\r" of a CRLF line end is not part of the password. It stays
+ *        out of the password field, so a character typed at the end is not
+ *        saved behind it ("hunter2\r!"), and it is written back after the
+ *        field, so an unedited save keeps the entry as it was.
+ */
+void tst_passworddialog::crlfLineEndStaysOutOfThePasswordField() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  const QString entry = QStringLiteral("hunter2\r\nlogin: alice\r\n");
+  pass.deliverShow(entry);
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY(password != nullptr);
+  QCOMPARE(password->text(), QStringLiteral("hunter2"));
+  QCOMPARE(d.getPassword(), entry);
+
+  password->setCursorPosition(static_cast<int>(password->text().size()));
+  QTest::keyClicks(password, QStringLiteral("!"));
+  QCOMPARE(password->text(), QStringLiteral("hunter2!"));
+  QCOMPARE(d.getPassword(), QStringLiteral("hunter2!\r\nlogin: alice\r\n"));
 }
 
 void tst_passworddialog::okWritesUntouchedFieldLinesVerbatim() {

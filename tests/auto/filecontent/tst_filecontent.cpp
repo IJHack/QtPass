@@ -39,6 +39,7 @@ private Q_SLOTS:
   void parseAllFieldsModeIncludesExtraFields();
   void parseAllFieldsModeExcludesUrlLines();
   void parseCrlfNamedValuesAreTrimmed();
+  void crlfPasswordHasNoLineEnd();
   void parseMultipleOtpauthLinesAllHidden();
   void parseOtpauthCaseInsensitiveHidden();
   void namedValuesDefaultConstructorIsEmpty();
@@ -472,6 +473,28 @@ void tst_filecontent::parseCrlfNamedValuesAreTrimmed() {
   QVERIFY2(nv.size() == 1, "CRLF file should yield one named value");
   QVERIFY2(nv[0].value == "john",
            "value.trimmed() must strip trailing \\r from CRLF lines");
+}
+
+/**
+ * @brief The password of a CRLF entry is its first line without the "\r":
+ *        Ctrl+C, "Always copy" and the edit dialog had "hunter2\r", while the
+ *        password row showed and copied "hunter2". Only the line end goes; a
+ *        "\r" inside the password stays.
+ */
+void tst_filecontent::crlfPasswordHasNoLineEnd() {
+  const FileContent fc = FileContent::parse(
+      QStringLiteral("hunter2\r\nlogin: alice\r\n"), {}, false);
+  QCOMPARE(fc.getPassword(), QStringLiteral("hunter2"));
+  QCOMPARE(fc.getPasswordForDisplay(), QStringLiteral("hunter2"));
+
+  QCOMPARE(FileContent::passwordLine(u"hunter2\r\nlogin: alice"),
+           QStringLiteral("hunter2"));
+  QCOMPARE(FileContent::passwordLine(u"hunter2\r"), QStringLiteral("hunter2"));
+  QCOMPARE(FileContent::passwordLine(u"hunter2\nnotes"),
+           QStringLiteral("hunter2"));
+  QCOMPARE(FileContent::passwordLine(u"hun\rter2\n"),
+           QStringLiteral("hun\rter2"));
+  QCOMPARE(FileContent::passwordLine(u""), QString());
 }
 
 void tst_filecontent::parseMultipleOtpauthLinesAllHidden() {

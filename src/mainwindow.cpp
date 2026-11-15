@@ -1877,8 +1877,9 @@ void MainWindow::passwordFromFileToClipboard(const QString &text,
   }
   m_copyRequestFile.clear();
   // The first line, without a list of every line (an entry can expand into
-  // millions of them); left(-1) is the whole text when there is no newline.
-  const QString first = text.left(text.indexOf(QLatin1Char('\n')));
+  // millions of them), and without the "\r" of a CRLF line end, as the
+  // password row and "Always copy" have it.
+  const QString first = FileContent::passwordLine(text);
   // A `pass otp insert` entry's first line is the otpauth:// URI carrying the
   // TOTP seed; copying it would leak 2FA material. Matches the display path
   // (FileContent::getPasswordForDisplay / PasswordDisplayPanel).
