@@ -550,6 +550,14 @@ auto MainWindow::config() -> bool {
   // re-rooted, it would find that name in the new store. A profile switch
   // ends it by clearing the search text.
   delete m_pendingOpen;
+  // A content search still running searched the old store, and its matches
+  // would be listed for this one: onGrepFinished() cannot tell. Cancelled,
+  // and content-search results on screen go with it (clearPanel()).
+  cancelContentSearch();
+  if (m_grep.cancelSearch()) {
+    QApplication::restoreOverrideCursor();
+  }
+  clearPanel(false);
   m_tree->setStore(s.passStore);
   deselect();
   ui->treeView->setCurrentIndex(QModelIndex());
@@ -986,6 +994,14 @@ void MainWindow::on_grepButton_toggled(bool checked) {
 
 void MainWindow::onGrepFinished(
     const QList<QPair<QString, QStringList>> &results) {
+  // Both backends stay connected, each with its own search: a search the
+  // other backend was still running when Settings switched backends is not
+  // this one, whatever the controller's state, and searched another store.
+  // Dropped before it can end (or be taken for) the current search.
+  if (const QObject *from = sender();
+      from != nullptr && from != QtPassSettings::getPass()) {
+    return;
+  }
   const GrepSearchController::FinishOutcome outcome = m_grep.finishSearch();
   if (outcome.restoreCursor) {
     QApplication::restoreOverrideCursor();
