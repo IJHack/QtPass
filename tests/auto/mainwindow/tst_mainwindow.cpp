@@ -398,6 +398,7 @@ private Q_SLOTS:
   void onProcessOutputAppendsToPanel();
   void onProcessOutputSkippedWhenPanelHidden();
   void passwordFromFileToClipboardCopiesFirstLine();
+  void crlfEntryCopiesThePasswordWithoutItsLineEnd();
   void passwordFromFileToClipboardSkipsOtpSecret();
   void copyRequestAnswersOnlyItsOwnEntry();
   void templateMarkedSecretsAreHidden();
@@ -1361,6 +1362,48 @@ void tst_mainwindow::passwordFromFileToClipboardCopiesFirstLine() {
   m_window->passwordFromFileToClipboard(QStringLiteral("hunter2\nlogin: alice"),
                                         QStringLiteral("copyme"));
   QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+}
+
+/**
+ * @brief For an entry with CRLF line ends, Ctrl+C and "Always copy" put
+ *        the password on the clipboard without the "\r", as the password
+ *        row's copy button always did.
+ */
+void tst_mainwindow::crlfEntryCopiesThePasswordWithoutItsLineEnd() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  s.clipBoardType = Enums::CLIPBOARD_ALWAYS;
+  QtPassSettings::save(s);
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.clipBoardType = Enums::CLIPBOARD_NEVER;
+    QtPassSettings::save(s);
+  });
+  const QString entry = QStringLiteral("hunter2\r\nlogin: alice\r\n");
+  QClipboard *clip = QApplication::clipboard();
+
+  clip->setText(QStringLiteral("sentinel"));
+  QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                         QStringLiteral("crlf")));
+  m_window->passwordFromFileToClipboard(entry, QStringLiteral("crlf"));
+  QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+
+  clip->setText(QStringLiteral("sentinel"));
+  m_window->passShowHandler(entry);
+  QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+
+  // Only the line end goes: a "\r" before it is part of the password, and
+  // every copy path hands it over alike.
+  const QString extra = QStringLiteral("hunter2\r\r\nlogin: alice\r\n");
+  clip->setText(QStringLiteral("sentinel"));
+  QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                         QStringLiteral("crlf")));
+  m_window->passwordFromFileToClipboard(extra, QStringLiteral("crlf"));
+  QCOMPARE(clip->text(), QStringLiteral("hunter2\r"));
+  clip->setText(QStringLiteral("sentinel"));
+  m_window->passShowHandler(extra);
+  QCOMPARE(clip->text(), QStringLiteral("hunter2\r"));
 }
 
 /**

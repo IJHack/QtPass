@@ -385,6 +385,11 @@ private:
   /// save() can refuse to overwrite it with empty fields before the
   /// asynchronous Show completes.
   bool m_contentLoaded{};
+  /// "\r" when the entry's password line ended in a CRLF line end, else
+  /// empty. The password field never holds it (a character typed at the end
+  /// would land behind it); getPassword() writes it back, so a save keeps
+  /// the entry's line end.
+  QString m_passwordLineEnd;
   /// True from accept() starting an insert until the backend reports back.
   bool m_saving{};
   /// Inserts already pending when save() ran, whose reports must pass before

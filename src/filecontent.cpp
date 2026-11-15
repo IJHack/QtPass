@@ -140,7 +140,7 @@ auto FileContent::parse(const QString &fileContent,
   auto it = tokens.begin();
   QString password;
   if (it != tokens.end()) {
-    password = it->toString();
+    password = passwordLine(*it);
     ++it;
   }
   QString remainingData;
@@ -264,6 +264,15 @@ auto FileContent::isSecretFieldName(const QString &name,
 auto FileContent::isOtpUriValue(const QString &value) -> bool {
   return value.trimmed().startsWith(QStringLiteral("otpauth://"),
                                     Qt::CaseInsensitive);
+}
+
+auto FileContent::passwordLine(QStringView text) -> QString {
+  // left(-1) is the whole text when there is no line feed.
+  QStringView line = text.left(text.indexOf(u'\n'));
+  if (line.endsWith(u'\r')) {
+    line.chop(1);
+  }
+  return line.toString();
 }
 
 auto FileContent::getPassword() const -> QString { return this->password; }

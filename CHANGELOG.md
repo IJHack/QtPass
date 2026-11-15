@@ -798,6 +798,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the store with `gpg`, unseen, and drop the result at the end; an entry
   slow to decrypt, or one with a passphrase, kept `gpg` or the passphrase
   prompts going long after.
+- For an entry saved with Windows (CRLF) line ends, Ctrl+C and "Always copy"
+  put the password on the clipboard without the carriage return, as the
+  copy button next to it did, and the edit dialog no longer keeps it in the
+  password field, where a character typed at the end landed behind it and
+  was saved inside the password. The entry keeps its line ends on save.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
