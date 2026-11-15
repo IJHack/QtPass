@@ -27,23 +27,27 @@ static auto isOtpUri(const QString &value) -> bool {
 }
 
 /**
- * @brief Whether a body line carries a TOTP shared secret and must stay out
- * of the parsed display: a bare `otpauth://` line, an `OTP:`/`TOTP:` field,
- * or any field whose value is an otpauth URI. "Display the file's content
- * as-is" bypasses this filter and shows the entry raw.
+ * @brief Whether a body line must stay out of the parsed display because it
+ * carries a TOTP shared secret (FileContent::isOtpLine()). "Display the
+ * file's content as-is" bypasses this filter and shows the entry raw.
  * @param line One line of the entry body.
  * @return true when the line is kept out of getRemainingDataForDisplay().
  */
 static auto isLineHidden(const QString &line) -> bool {
+  return FileContent::isOtpLine(line);
+}
+
+/**
+ * @brief The OTP configuration an OTP line holds: the line itself for a bare
+ * `otpauth://` line, the value for a field.
+ * @param line A line for which FileContent::isOtpLine() is true.
+ * @return The configuration, trimmed.
+ */
+static auto otpConfigOf(const QString &line) -> QString {
   if (isOtpUri(line)) {
-    return true;
+    return line.trimmed();
   }
-  const qsizetype colon = line.indexOf(':');
-  if (colon < 0) {
-    return false;
-  }
-  return FileContent::isOtpFieldName(line.left(colon)) ||
-         isOtpUri(line.right(line.length() - colon - 1));
+  return line.mid(line.indexOf(u':') + 1).trimmed();
 }
 
 namespace {
@@ -154,9 +158,10 @@ auto FileContent::parse(const QString &fileContent,
   NamedValues namedValues;
   OtpCandidates otp;
   // An entry from `pass otp insert` has the URI as its only (password) line,
-  // which the loop below never sees.
-  if (isOtpUri(password)) {
-    otp.bareLine = password.trimmed();
+  // which the loop below never sees; an `OTP:`/`TOTP:` field written there by
+  // hand is the same secret, and yields a code as it does further down.
+  if (isOtpLine(password)) {
+    otp.bareLine = otpConfigOf(password);
   }
   for (; it != tokens.end(); ++it) {
     const QString line = it->toString();
@@ -275,10 +280,22 @@ auto FileContent::passwordLine(QStringView text) -> QString {
   return line.toString();
 }
 
+auto FileContent::isOtpLine(const QString &line) -> bool {
+  if (isOtpUri(line)) {
+    return true;
+  }
+  const qsizetype colon = line.indexOf(u':');
+  if (colon < 0) {
+    return false;
+  }
+  return isOtpFieldName(line.left(colon)) ||
+         isOtpUri(line.right(line.length() - colon - 1));
+}
+
 auto FileContent::getPassword() const -> QString { return this->password; }
 
 auto FileContent::getPasswordForDisplay() const -> QString {
-  return isOtpUri(this->password) ? QString() : this->password;
+  return isOtpLine(this->password) ? QString() : this->password;
 }
 
 auto FileContent::getNamedValues() const -> NamedValues {

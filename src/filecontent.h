@@ -152,19 +152,22 @@ public:
       -> FileContent;
 
   /**
+   * @brief The password: the first line, without the "\r" of a CRLF line end
+   * (passwordLine()).
    * @return the password from the parsed file.
    */
   [[nodiscard]] auto getPassword() const -> QString;
 
   /**
-   * @brief Like getPassword but empty when the password line is itself an
-   * otpauth URI.
+   * @brief Like getPassword but empty when the password line holds a TOTP
+   * shared secret (isOtpLine()).
    *
    * `pass otp insert` writes the URI as the entry's only line, so it lands in
-   * the password position. It is a shared secret, not a password: it must never
-   * be rendered or placed on the clipboard. getPassword() still returns it so
-   * the edit dialog round-trips the file unchanged.
-   * @return The password, or an empty string when it is an otpauth URI.
+   * the password position, and an `OTP:`/`TOTP:` field written there by hand
+   * is the same secret. It is not a password: it must never be rendered or
+   * placed on the clipboard. getPassword() still returns it so the edit dialog
+   * round-trips the file unchanged.
+   * @return The password, or an empty string when it is an OTP line.
    */
   [[nodiscard]] auto getPasswordForDisplay() const -> QString;
 
@@ -224,6 +227,17 @@ public:
   [[nodiscard]] static auto isOtpUriValue(const QString &value) -> bool;
 
   /**
+   * @brief Whether @p line carries a TOTP shared secret: a bare `otpauth://`
+   * line, an `OTP:`/`TOTP:` field, or any field whose value is an otpauth URI.
+   *
+   * The one rule for every line, the password line included: such a line is
+   * never shown or copied, only the code it yields is.
+   * @param line One line of the entry.
+   * @return true when the line holds a shared secret.
+   */
+  [[nodiscard]] static auto isOtpLine(const QString &line) -> bool;
+
+  /**
    * @brief The password of an entry: its first line, without the carriage
    * return of a CRLF line end.
    *
@@ -268,7 +282,8 @@ private:
               QString remainingDataDisplay, QString otpUri,
               qsizetype remainingLines);
 
-  /** @brief The first line of the entry, verbatim. */
+  /** @brief The first line of the entry, without the "\r" of a CRLF line
+   *  end (passwordLine()). */
   QString password;
   /** @brief Fields in order of appearance, template fields first. */
   NamedValues namedValues;

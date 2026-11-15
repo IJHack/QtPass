@@ -803,6 +803,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   copy button next to it did, and the edit dialog no longer keeps it in the
   password field, where a character typed at the end landed behind it and
   was saved inside the password. The entry keeps its line ends on save.
+- An `OTP:` or `TOTP:` field written as an entry's first line is a TOTP
+  secret there too: it was shown as the password, copied by Ctrl+C and
+  "Always copy", and the entry showed no code. It is now kept off the screen
+  and the clipboard, and gives the code, as the same field further down
+  always did.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

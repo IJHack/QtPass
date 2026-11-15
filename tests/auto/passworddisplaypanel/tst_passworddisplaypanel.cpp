@@ -601,6 +601,14 @@ void tst_passworddisplaypanel::otpUriAsPasswordIsNeverRendered() {
   QCOMPARE(m_grid->count(), 2);
   QVERIFY2(otpWidgetAt(0) != nullptr,
            "the entry still has a usable OTP configuration, flush at the top");
+
+  // An OTP field reaching the panel as the password is refused the same way.
+  m_panel->clear();
+  m_panel->displayFields(QStringLiteral("TOTP: ") + kOtpSecret, NamedValues{},
+                         s, kOtpSecret);
+  QVERIFY2(!renderedText(m_grid).contains(kOtpSecret),
+           "a TOTP field's seed must never be shown as the password");
+  QVERIFY(otpWidgetAt(0) != nullptr);
 }
 
 /**
