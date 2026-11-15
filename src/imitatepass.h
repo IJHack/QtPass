@@ -322,6 +322,14 @@ public:
    * @param caseInsensitive true for case-insensitive search.
    */
   void Grep(QString pattern, bool caseInsensitive) override;
+  /**
+   * @brief Stop a running Grep() before it decrypts another entry.
+   *
+   * The gpg decrypting the current entry still finishes; then the walk ends
+   * and finishedGrep() delivers an empty result. Does nothing when no search
+   * runs.
+   */
+  void CancelGrep();
 
 private:
   int m_grepSeq = 0;

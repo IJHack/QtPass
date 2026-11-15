@@ -77,6 +77,7 @@ private Q_SLOTS:
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
   void entryTextKeepsItsWhiteSpace();
+  void cancellingAContentSearchStopsIt();
   void showStatusMessageAppearsInStatusBar();
   void deselectDoesNotCrash();
   void onProcessOutputAppendsToPanel();
@@ -754,6 +755,88 @@ auto tst_mainwindow::runFirstRunFlow(
   poker.stop();
   *initSucceeded = w.initSucceeded();
   return configDialogsSeen;
+}
+
+/**
+ * @brief Giving up on a content search stops it: emptying the box and
+ *        pressing Return, releasing the content search button, or the panel
+ *        autoclear leaving content search. Each only reset the window's
+ *        flags, while the native backend's search went on decrypting the rest
+ *        of the store, one unseen gpg at a time, and its result was dropped at
+ *        the end.
+ */
+void tst_mainwindow::cancellingAContentSearchStopsIt() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  // Ten entries that take a second each to decrypt: a search left running
+  // takes ten seconds, a stopped one ends after the entry it is on.
+  const QString store = QDir(scratch.path()).filePath(QStringLiteral("store"));
+  QVERIFY(QDir().mkpath(store));
+  for (int i = 0; i < 10; ++i) {
+    QFile entry(QDir(store).filePath(QStringLiteral("entry%1.gpg").arg(i)));
+    QVERIFY(entry.open(QIODevice::WriteOnly));
+    QVERIFY(entry.write("not really encrypted") > 0);
+  }
+  const QString gpg = QDir(scratch.path()).filePath(QStringLiteral("gpg"));
+  {
+    QFile script(gpg);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write("#!/bin/sh\n"
+                 "case \" $* \" in *\" -d \"*) exec sleep 1 ;; esac\n"
+                 "exit 0\n");
+    script.close();
+    QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner));
+  }
+  ImitatePass *pass = QtPassSettings::getImitatePass();
+  QVERIFY(QtPassSettings::getPass() == pass);
+  AppSettings s = QtPassSettings::load();
+  s.passStore = QDir::cleanPath(store) + QLatin1Char('/');
+  s.gpgExecutable = gpg;
+  pass->init(s);
+  const auto restore =
+      qScopeGuard([pass] { pass->init(QtPassSettings::load()); });
+
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *box = m_window->findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && box != nullptr && results != nullptr);
+  QSignalSpy finished(pass, &Pass::finishedGrep);
+  const auto search = [&] {
+    finished.clear();
+    grep->setChecked(true);
+    box->setText(QStringLiteral("login"));
+    QVERIFY(QMetaObject::invokeMethod(
+        m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+    QTest::qWait(300);
+    QVERIFY2(finished.isEmpty(), "the search is still decrypting");
+  };
+
+  search();
+  box->clear();
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QVERIFY2(finished.count() == 1 || finished.wait(5000),
+           "an emptied search box stops the search");
+
+  search();
+  grep->setChecked(false);
+  QVERIFY2(finished.count() == 1 || finished.wait(5000),
+           "releasing the button stops the search");
+
+  search();
+  results->setVisible(true); // an earlier search's results on screen
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "clearPanel",
+                                    Qt::DirectConnection, Q_ARG(bool, false)));
+  QVERIFY2(finished.count() == 1 || finished.wait(5000),
+           "the panel autoclear leaving content search stops the search");
+#endif
 }
 
 /**

@@ -406,6 +406,10 @@ private:
 
   void updateText();
   void selectFirstFile();
+  /// Stop a running content search of the native backend. It runs outside
+  /// the process queue, so only this ends its walk; the result it still
+  /// delivers is discarded by onGrepFinished().
+  void cancelContentSearch();
   auto firstFile(QModelIndex parentIndex) -> QModelIndex;
   auto getFile(const QModelIndex &, bool) -> QString;
   void setPassword(const QString &, bool isNew = true);

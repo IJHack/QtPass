@@ -832,7 +832,13 @@ void MainWindow::clearPanel(bool notify) {
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
     if (m_grep.inGrepMode()) {
-      m_grep.clearGrepMode();
+      // Left as the button leaves it: a search still running would otherwise
+      // count as busy, keeping the wait cursor, and hand its result to a
+      // content search entered meanwhile.
+      cancelContentSearch();
+      if (m_grep.leaveGrepMode()) {
+        QApplication::restoreOverrideCursor();
+      }
       ui->grepButton->blockSignals(true);
       ui->grepButton->setChecked(false);
       ui->grepButton->blockSignals(false);
@@ -990,6 +996,7 @@ void MainWindow::on_lineEdit_returnPressed() {
       }
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
     } else {
+      cancelContentSearch();
       if (m_grep.cancelSearch()) {
         QApplication::restoreOverrideCursor();
       }
@@ -1029,6 +1036,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->grepResultsList->setVisible(false);
     // Keep treeView visible until results arrive
   } else {
+    cancelContentSearch();
     if (m_grep.leaveGrepMode()) {
       QApplication::restoreOverrideCursor();
     }
@@ -1121,6 +1129,16 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
   ui->treeView->setVisible(true);
   ui->treeView->scrollTo(proxyIndex);
   ui->treeView->setFocus();
+}
+
+/**
+ * @brief Stop a running content search of the native backend.
+ *
+ * The `pass` backend's `pass grep` runs in the process queue and is not
+ * stopped here.
+ */
+void MainWindow::cancelContentSearch() {
+  QtPassSettings::getImitatePass()->CancelGrep();
 }
 
 /**

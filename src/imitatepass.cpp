@@ -1303,6 +1303,15 @@ auto ImitatePass::grepScanStore(const QProcessEnvironment &env,
 }
 
 /**
+ * @brief Ask every running search thread to stop at its next entry.
+ */
+void ImitatePass::CancelGrep() {
+  for (QThread *t : std::as_const(m_grepThreads))
+    if (t && t->isRunning())
+      t->requestInterruption();
+}
+
+/**
  * @brief Search all password content by GPG-decrypting each .gpg file.
  *
  * The pattern is evaluated with `QRegularExpression` (**PCRE**), which differs
@@ -1314,9 +1323,7 @@ auto ImitatePass::grepScanStore(const QProcessEnvironment &env,
  * results from superseded searches.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
-  for (QThread *t : std::as_const(m_grepThreads))
-    if (t && t->isRunning())
-      t->requestInterruption();
+  CancelGrep();
   // No wait() — blocking the UI thread while GPG decrypts would freeze the
   // interface. Stale results are discarded via the sequence counter.
 
