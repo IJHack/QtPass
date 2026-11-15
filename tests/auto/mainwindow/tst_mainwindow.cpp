@@ -910,6 +910,8 @@ void tst_mainwindow::returnInTheSearchBoxEndsThere() {
     QApplication::sendEvent(box, &ret);
   };
 
+  // Qt 5 needs the signal's argument type registered for QSignalSpy.
+  qRegisterMetaType<QList<QPair<QString, QStringList>>>();
   QSignalSpy searched(QtPassSettings::getPass(), &Pass::finishedGrep);
   box->setText(QStringLiteral("ssid"));
   pressReturn();
@@ -971,10 +973,15 @@ void tst_mainwindow::returnOnAContentSearchResultOpensIt() {
   results->setFocus();
   QTRY_VERIFY(results->hasFocus());
 
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  QSignalSpy failed(QtPassSettings::getPass(), &Pass::processErrorExit);
   QKeyEvent ret(QEvent::KeyPress, Qt::Key_Return, Qt::NoModifier);
   QApplication::sendEvent(results, &ret);
   QCOMPARE(name->text(), QStringLiteral("guest-wifi"));
   QVERIFY(!tree->isHidden());
+  // The backend outlives the window: its decrypt must be answered before the
+  // test ends, or the gpg still running is torn down at exit.
+  QTRY_VERIFY_WITH_TIMEOUT(shown.count() + failed.count() >= 1, 10000);
 }
 
 QTEST_MAIN(tst_mainwindow)
