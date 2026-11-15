@@ -1053,6 +1053,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   so its entries kept their old recipients, a key just removed among them,
   while QtPass reported "Re-encryption completed" (and pushed, with
   automatic pushing on)
+- With the `pass` backend, a change of recipients (Users ▸ OK), a move or a
+  copy that could not re-encrypt every entry is reported as failed and not
+  pushed. `pass` carries on past an entry gpg cannot re-encrypt (a
+  recipient without a usable key, a decrypt that failed) and exits 0, so
+  QtPass reported success and pushed, with the entries still encrypted to
+  the previous recipients, a key just removed among them. QtPass now reads
+  gpg's status lines for these commands (`--status-fd 2`), in any
+  language
 
 ### Code Quality
 

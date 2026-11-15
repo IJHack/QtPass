@@ -46,6 +46,9 @@ private slots:
   void genericOutputSignalIsAnAllowList();
   void moveAndCopyUseStoreRelativeNamesWithoutGpg();
   void moveBetweenExistingFilesNeedsForce();
+  void reencryptFailedJudgesTheStatusLines_data();
+  void reencryptFailedJudgesTheStatusLines();
+  void reencryptFailureIsReportedNotFinished();
   void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
   void gitPullBlockingReturnsAfterPassRanWhateverItsExitCode();
   void linkedFolderThatCannotBeUnlinkedReportsDeleteFailed();
@@ -987,6 +990,148 @@ void tst_realpass::moveAndCopyUseStoreRelativeNamesWithoutGpg() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("cp"), QStringLiteral("folder"),
                         QStringLiteral("copy")}));
+}
+
+void tst_realpass::reencryptFailedJudgesTheStatusLines_data() {
+  QTest::addColumn<QString>("out");
+  QTest::addColumn<QString>("err");
+  QTest::addColumn<bool>("failed");
+  const QString two =
+      QStringLiteral("a: reencrypting to AAAA\nb: reencrypting to AAAA\n");
+  QTest::newRow("all encrypted")
+      << two
+      << QStringLiteral("[GNUPG:] END_ENCRYPTION\n[GNUPG:] END_ENCRYPTION\n")
+      << false;
+  QTest::newRow("unusable recipient")
+      << two
+      << QStringLiteral(
+             "gpg: CCCC: Ungeeigneter öffentlicher Schlüssel\n"
+             "[GNUPG:] INV_RECP 0 CCCC\n"
+             "[GNUPG:] FAILURE encrypt 53\n[GNUPG:] END_ENCRYPTION\n")
+      << true;
+  QTest::newRow("decrypt failed, pinentry cancelled")
+      << two
+      << QStringLiteral("[GNUPG:] DECRYPTION_FAILED\n"
+                        "[GNUPG:] FAILURE decrypt 33554531\n")
+      << true;
+  QTest::newRow("one of two encrypted")
+      << two << QStringLiteral("[GNUPG:] END_ENCRYPTION\r\n") << true;
+  QTest::newRow("expired key, still encrypted")
+      << QStringLiteral("a: reencrypting to AAAA\n")
+      << QStringLiteral("[GNUPG:] KEYEXPIRED 1700000000\n"
+                        "[GNUPG:] NO_SECKEY 1234\n[GNUPG:] END_ENCRYPTION\n")
+      << false;
+  // A pass that does not hand PASSWORD_STORE_GPG_OPTS on: nothing to go by.
+  QTest::newRow("no status lines")
+      << two << QStringLiteral("gpg: oops\n") << false;
+  QTest::newRow("nothing re-encrypted") << QString() << QString() << false;
+  QTest::newRow("an entry named like the line")
+      << QStringLiteral("a: reencrypting to b: reencrypting to AAAA\n")
+      << QStringLiteral("[GNUPG:] END_ENCRYPTION\n") << false;
+}
+
+/**
+ * @brief pass exits 0 when it could not re-encrypt an entry; gpg's status
+ *        lines say so in every locale.
+ */
+void tst_realpass::reencryptFailedJudgesTheStatusLines() {
+  QFETCH(QString, out);
+  QFETCH(QString, err);
+  QFETCH(bool, failed);
+  QCOMPARE(RealPass::reencryptFailed(out, err), failed);
+}
+
+/**
+ * @brief A `pass init` (Users ▸ OK), `mv` or `cp` that exits 0 having left
+ *        an entry encrypted to the previous recipients is a failure: a
+ *        critical message and processErrorExit, not finishedInit/Move, which
+ *        pushed the store as it was. Only those commands get `--status-fd 2`.
+ */
+void tst_realpass::reencryptFailureIsReportedNotFinished() {
+  const QString mode = QDir(m_dir.path()).filePath(QStringLiteral("mode"));
+  const QString opts = QDir(m_dir.path()).filePath(QStringLiteral("opts"));
+  const QString script =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-reencrypt"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write(
+        QStringLiteral(
+            "#!/bin/sh\n"
+            "printf '%s %s\\n' \"$1\" \"$PASSWORD_STORE_GPG_OPTS\" >> '%1'\n"
+            "echo 'folder/a: reencrypting to AAAA'\n"
+            "case \"$(cat '%2')\" in\n"
+            "fail) echo 'gpg: CCCC: unusable public key' >&2\n"
+            "  echo '[GNUPG:] INV_RECP 0 CCCC' >&2\n"
+            "  echo '[GNUPG:] FAILURE encrypt 53' >&2 ;;\n"
+            "*) echo '[GNUPG:] END_ENCRYPTION' >&2 ;;\n"
+            "esac\nexit 0\n")
+            .arg(opts, mode)
+            .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto setMode = [&mode](const char *value) {
+    QFile f(mode);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write(value);
+  };
+  AppSettings s = m_settings;
+  s.passExecutable = script;
+  RealPass pass;
+  pass.init(s);
+  pass.updateEnv();
+  QSignalSpy inited(&pass, &Pass::finishedInit);
+  QSignalSpy moved(&pass, &Pass::finishedMove);
+  QSignalSpy critical(&pass, &Pass::critical);
+  QSignalSpy errors(&pass, &Pass::processErrorExit);
+  QSignalSpy output(&pass, &Pass::finishedAnyWithPid);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("AAAA");
+  alice.enabled = true;
+
+  setMode("fail");
+  pass.Init(m_store + QStringLiteral("folder/"), {alice});
+  QTRY_COMPARE_WITH_TIMEOUT(errors.size(), 1, 5000);
+  QCOMPARE(inited.size(), 0);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains(
+               QStringLiteral("still encrypted to the previous recipients")),
+           qPrintable(critical.first().at(1).toString()));
+  QVERIFY(!output.isEmpty());
+  QVERIFY2(!output.last().at(1).toString().contains(QStringLiteral("[GNUPG:]")),
+           qPrintable(output.last().at(1).toString()));
+
+  QFile a(m_store + QStringLiteral("folder/a.gpg"));
+  QVERIFY(a.open(QIODevice::WriteOnly));
+  a.close();
+  pass.Move(m_store + QStringLiteral("folder/a.gpg"),
+            m_store + QStringLiteral("b.gpg"), true);
+  QTRY_COMPARE_WITH_TIMEOUT(errors.size(), 2, 5000);
+  QCOMPARE(moved.size(), 0);
+
+  setMode("ok");
+  pass.Init(m_store + QStringLiteral("folder/"), {alice});
+  QTRY_COMPARE_WITH_TIMEOUT(inited.size(), 1, 5000);
+  QCOMPARE(critical.size(), 2);
+  QVERIFY2(!output.last().at(1).toString().contains(QStringLiteral("[GNUPG:]")),
+           "status lines stay out of the output panel");
+  QSignalSpy shown(&pass, &Pass::finishedShow);
+  pass.Show(m_store + QStringLiteral("folder/a"));
+  QTRY_COMPARE_WITH_TIMEOUT(shown.size(), 1, 5000);
+
+  QFile log(opts);
+  QVERIFY(log.open(QIODevice::ReadOnly | QIODevice::Text));
+  const QStringList calls =
+      QString::fromUtf8(log.readAll()).split('\n', Qt::SkipEmptyParts);
+  QVERIFY2(calls.size() >= 4, qPrintable(calls.join(" | ")));
+  for (const QString &call : calls) {
+    const bool reencrypts = call.startsWith(QStringLiteral("init ")) ||
+                            call.startsWith(QStringLiteral("mv "));
+    QVERIFY2(call.endsWith(QStringLiteral("--status-fd 2")) == reencrypts,
+             qPrintable(call));
+  }
 }
 
 void tst_realpass::moveBetweenExistingFilesNeedsForce() {

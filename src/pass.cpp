@@ -579,8 +579,7 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
   emit processErrorExit(exitCode, err);
 }
 
-auto Pass::formatInsertError(const QString &friendly, const QString &err)
-    -> QString {
+auto Pass::withoutStatusLines(const QString &err) -> QString {
   QStringList humanLines;
   for (const QString &line : err.split('\n')) {
     QString cleanedLine = line;
@@ -588,7 +587,12 @@ auto Pass::formatInsertError(const QString &friendly, const QString &err)
     if (!cleanedLine.startsWith(QLatin1String("[GNUPG:]")))
       humanLines.append(cleanedLine);
   }
-  const QString humanErr = humanLines.join('\n').trimmed();
+  return humanLines.join('\n');
+}
+
+auto Pass::formatInsertError(const QString &friendly, const QString &err)
+    -> QString {
+  const QString humanErr = withoutStatusLines(err).trimmed();
   return humanErr.isEmpty() ? friendly : friendly + "\n\n" + humanErr;
 }
 

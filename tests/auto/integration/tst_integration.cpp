@@ -379,6 +379,7 @@ private Q_SLOTS:
 
   // RealPass backend (skipped if `pass` not installed)
   void realPass_insertAndShow();
+  void realPass_initThatCannotReencryptIsReported();
   void realPass_insertAndGrep();
 
   // pass-otp (skipped if extension not installed)
@@ -1403,6 +1404,101 @@ void tst_integration::imitatePass_insertIgnoresGpgConfEncryptTo() {
   QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
   QVERIFY2(showSpy[0][0].toString().contains(QStringLiteral("secret")),
            "entry must still decrypt to the inserted content");
+}
+
+/**
+ * @brief Real `pass` exits 0 when gpg cannot re-encrypt an entry for the new
+ *        recipients (here, one has no key in the keyring): QtPass reports a
+ *        failure instead of finishedInit, which pushed the store as it was,
+ *        also with gpg's messages in another language. A list it can encrypt
+ *        to still finishes.
+ */
+void tst_integration::realPass_initThatCannotReencryptIsReported() {
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert("GNUPGHOME", m_gnupgHome.path());
+  env.insert("PASSWORD_STORE_DIR", storeDir.path());
+  {
+    QProcess init;
+    init.setProcessEnvironment(env);
+    init.start(passExe, {"init", m_keyFingerprint, m_keyFingerprint2});
+    QVERIFY(init.waitForFinished(15000) && init.exitCode() == 0);
+    QProcess insert;
+    insert.setProcessEnvironment(env);
+    insert.start(passExe, {"insert", "-m", "entry"});
+    QVERIFY(insert.waitForStarted());
+    insert.write("secret\n");
+    insert.closeWriteChannel();
+    QVERIFY(insert.waitForFinished(15000) && insert.exitCode() == 0);
+  }
+  const QString gpgFile = QDir(storeDir.path()).filePath("entry.gpg");
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(recipientKeyIds(m_gnupgHome.path(), gpgFile).contains(sub2));
+
+  RealPass pass;
+  setupPass(pass);
+  UserInfo kept;
+  kept.key_id = m_keyFingerprint;
+  kept.enabled = true;
+  UserInfo absent;
+  absent.key_id = QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
+  absent.enabled = true;
+  QSignalSpy inited(&pass, &Pass::finishedInit);
+  QSignalSpy errors(&pass, &Pass::processErrorExit);
+  QSignalSpy critical(&pass, &Pass::critical);
+  pass.Init(storeDir.path(), {kept, absent});
+  QVERIFY2(waitForSignal(errors, 30000), "the failure must be reported");
+  QCOMPARE(inited.size(), 0);
+  QCOMPARE(critical.size(), 1);
+  // pass left the entry as it was: the removed key can still read it.
+  QVERIFY(recipientKeyIds(m_gnupgHome.path(), gpgFile).contains(sub2));
+
+  pass.Init(storeDir.path(), {kept});
+  QVERIFY2(waitForSignal(inited, 30000), "a usable list still finishes");
+  QCOMPARE(critical.size(), 1);
+  QVERIFY(!recipientKeyIds(m_gnupgHome.path(), gpgFile).contains(sub2));
+
+  // With a signing key pass verifies each .gpg-id with its own
+  // --status-fd=1, after the --status-fd 2 QtPass adds: that must still
+  // work, or every init would fail on a signed store.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = m_keyFingerprint;
+    QtPassSettings::save(s);
+  }
+  const auto unsign = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey.clear();
+    QtPassSettings::save(s);
+  });
+  RealPass signing;
+  setupPass(signing);
+  QSignalSpy signedInit(&signing, &Pass::finishedInit);
+  QSignalSpy signedErrors(&signing, &Pass::processErrorExit);
+  UserInfo both = kept;
+  UserInfo second;
+  second.key_id = m_keyFingerprint2;
+  second.enabled = true;
+  signing.Init(storeDir.path(), {both, second});
+  QVERIFY2(waitForSignal(signedInit, 30000),
+           qPrintable(signedErrors.isEmpty()
+                          ? QStringLiteral("no finishedInit")
+                          : signedErrors.first().at(1).toString()));
+  QVERIFY(QFile::exists(QDir(storeDir.path()).filePath(".gpg-id.sig")));
+  QVERIFY(recipientKeyIds(m_gnupgHome.path(), gpgFile).contains(sub2));
 }
 
 /**

@@ -47,6 +47,17 @@ class RealPass : public Pass {
   QQueue<LinkCommit> m_linkCommits;
 
   /**
+   * @brief Report a `pass init`, `mv` or `cp` that exited 0 having left
+   * entries encrypted to the previous recipients: a critical message and
+   * processErrorExit() instead of the completion signal, so the store is
+   * not pushed as it now is (a later push still sends what pass committed).
+   * @param pid PASS_INIT, PASS_MOVE or PASS_COPY.
+   * @param out pass's standard output.
+   * @param err pass's and gpg's standard error, status lines included.
+   */
+  void reportReencryptFailure(Enums::PROCESS pid, const QString &out,
+                              const QString &err);
+  /**
    * @brief Judge a queued linked-folder removal commit by what is left
    * staged in the store it ran in: `pass git` exits 0 whatever git did.
    * @param commit The folder and the store it was queued for.
@@ -164,6 +175,9 @@ class RealPass : public Pass {
    * insert, take its entry from m_insertQueue and fingerprint it now, not
    * when it was queued, so an earlier queued save of the same entry counts
    * as "before". Kept in m_insertPending for that insert's own completion.
+   * For `pass init`, `mv` and `cp`, add `--status-fd 2` to that one
+   * process's PASSWORD_STORE_GPG_OPTS, so finished() can tell whether every
+   * entry was re-encrypted (reencryptFailed()).
    * @param id The item's process id.
    * @param completes Whether a completion follows (not for a dropped one).
    */
@@ -197,6 +211,21 @@ public:
    * @brief Construct a RealPass instance.
    */
   RealPass();
+  /**
+   * @brief Whether a `pass init`, `mv` or `cp` that exited 0 left entries
+   * as they were: pass carries on past an entry gpg could not re-encrypt.
+   *
+   * Judged by gpg's status lines (onDequeuing() adds `--status-fd 2`),
+   * which no locale changes: an INV_RECP, FAILURE or DECRYPTION_FAILED
+   * line, or fewer END_ENCRYPTION lines than the entries pass said it was
+   * re-encrypting ("name: reencrypting to ..." on stdout). KEYEXPIRED and
+   * NO_SECKEY alone are not failures.
+   * @param out pass's standard output.
+   * @param err pass's and gpg's standard error.
+   * @return true on a failure; false without any status line, since then
+   *         the option did not reach gpg and there is nothing to judge by.
+   */
+  static auto reencryptFailed(const QString &out, const QString &err) -> bool;
   /**
    * @brief Destructor; lets the search workers wind down.
    */
