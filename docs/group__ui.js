@@ -297,6 +297,8 @@ var group__ui =
       [ "m_qtPass", "class_main_window.html#ae772473e8fa0047f5db5bcb410dc88a1", null ],
       [ "m_reencryptProgress", "class_main_window.html#a42a13a21710984a7ba71158b5651c0ee", null ],
       [ "m_reencryptRunning", "class_main_window.html#afe4566e631ef61e85d4f22c675de3fe2", null ],
+      [ "m_refreshAfterPush", "class_main_window.html#a928b1974ed88173cf93c164f0a613795", null ],
+      [ "m_refreshAfterPushOwner", "class_main_window.html#a1a503a37be4b655f1696008b225d9491", null ],
       [ "m_shownFile", "class_main_window.html#aaba13f61c81edb811a593818518cf831", null ],
       [ "m_themeSwitched", "class_main_window.html#a6e89bee83cd89b0e4e08ca966ee6c898", null ],
       [ "m_tray", "class_main_window.html#ae70281ce55cf133f26b92d2f066f038a", null ],

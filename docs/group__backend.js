@@ -194,6 +194,7 @@ var group__backend =
       [ "insertsPending", "class_pass.html#aa4e8d6d0d817903ae20ddadc3c34657e", null ],
       [ "insertWritten", "class_pass.html#a6097de48d30068d8a73f7dc80ff01de0", null ],
       [ "isIdle", "class_pass.html#a66d554f693ae3069381483cb229bb193", null ],
+      [ "isPushing", "class_pass.html#a1b7d6acd239491873c670576d4891fa3", null ],
       [ "listKeys", "class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6", null ],
       [ "listKeys", "class_pass.html#a6ed6c10b07137f62e127b290ebd428a2", null ],
       [ "loggableArgs", "class_pass.html#abaa0009c06b9b53f6c5963763532c7d9", null ],

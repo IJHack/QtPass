@@ -1,0 +1,5 @@
+<map id="Pass::isPushing" name="Pass::isPushing">
+<area shape="rect" id="Node000001" title="Whether a Git push of this backend is queued or running." alt="" coords="5,5,126,33"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a77fc56acc6ba0d9efd0e50fbbd71b002" title="Whether a command with process id id is queued or running." alt="" coords="174,5,332,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,17,161,19,155,19,126,22"/>
+</map>

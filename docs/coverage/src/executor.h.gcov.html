@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 11:29:55</td>
+            <td class="headerValue">2026-11-15 11:56:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -495,7 +495,7 @@
 <span id="L422"><span class="lineNum">     422</span>              :    * @brief Whether no command is running and nothing is queued.</span>
 <span id="L423"><span class="lineNum">     423</span>              :    * @return true when the executor has nothing in flight.</span>
 <span id="L424"><span class="lineNum">     424</span>              :    */</span>
-<span id="L425"><span class="lineNum">     425</span> <span class="tlaGNC">         644 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L425"><span class="lineNum">     425</span> <span class="tlaGNC">         666 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
 <span id="L426"><span class="lineNum">     426</span>              : </span>
 <span id="L427"><span class="lineNum">     427</span>              :   /**</span>
 <span id="L428"><span class="lineNum">     428</span>              :    * @brief Whether a command with process id @p id is queued or running.</span>
@@ -508,8 +508,8 @@
 <span id="L435"><span class="lineNum">     435</span>              :    * @return true when the queue holds a command with that id.</span>
 <span id="L436"><span class="lineNum">     436</span>              :    */</span>
 <span id="L437"><span class="lineNum">     437</span>              :   auto hasQueued(int id) const -&gt; bool {</span>
-<span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">          16 :     for (const ExecQueueItem &amp;item : m_execQueue) {</span></span>
-<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">           2 :       if (item.id == id) {</span></span>
+<span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">          35 :     for (const ExecQueueItem &amp;item : m_execQueue) {</span></span>
+<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">          13 :       if (item.id == id) {</span></span>
 <span id="L440"><span class="lineNum">     440</span>              :         return true;</span>
 <span id="L441"><span class="lineNum">     441</span>              :       }</span>
 <span id="L442"><span class="lineNum">     442</span>              :     }</span>
