@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 10:01:44</td>
+            <td class="headerValue">2026-11-15 11:29:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -361,14 +361,14 @@
 <span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">         798 : }</span></span>
 <span id="L289"><span class="lineNum">     289</span>              : </span>
 <span id="L290"><span class="lineNum">     290</span>              : // UTF-8 first; on a decoding error fall back to the system encoding.</span>
-<span id="L291"><span class="lineNum">     291</span> <span class="tlaGNC">        1779 : static auto decodeAssumingUtf8(const QByteArray &amp;in) -&gt; QString {</span></span>
+<span id="L291"><span class="lineNum">     291</span> <span class="tlaGNC">        1781 : static auto decodeAssumingUtf8(const QByteArray &amp;in) -&gt; QString {</span></span>
 <span id="L292"><span class="lineNum">     292</span>              :   // Stateless: a truncated trailing byte becomes a replacement character</span>
 <span id="L293"><span class="lineNum">     293</span>              :   // instead of being held back for a continuation that never comes.</span>
-<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">        1779 :   auto converter =</span></span>
+<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">        1781 :   auto converter =</span></span>
 <span id="L295"><span class="lineNum">     295</span>              :       QStringDecoder(QStringDecoder::Utf8, QStringDecoder::Flag::Stateless);</span>
-<span id="L296"><span class="lineNum">     296</span> <span class="tlaGNC">        1779 :   QString out = converter(in);</span></span>
-<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">        1779 :   if (!converter.hasError()) {</span></span>
-<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">        1778 :     return out;</span></span>
+<span id="L296"><span class="lineNum">     296</span> <span class="tlaGNC">        1781 :   QString out = converter(in);</span></span>
+<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">        1781 :   if (!converter.hasError()) {</span></span>
+<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">        1780 :     return out;</span></span>
 <span id="L299"><span class="lineNum">     299</span>              :   }</span>
 <span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">           1 :   auto fallback =</span></span>
 <span id="L301"><span class="lineNum">     301</span>              :       QStringDecoder(QStringDecoder::System, QStringDecoder::Flag::Stateless);</span>
@@ -487,25 +487,25 @@
 <span id="L414"><span class="lineNum">     414</span> <span class="tlaGNC">        2410 :     *process_out = decodeAssumingUtf8(process.readAllStandardOutput());</span></span>
 <span id="L415"><span class="lineNum">     415</span>              :   }</span>
 <span id="L416"><span class="lineNum">     416</span> <span class="tlaGNC">        1353 :   if (process_err != nullptr) {</span></span>
-<span id="L417"><span class="lineNum">     417</span> <span class="tlaGNC">         384 :     *process_err = decodeAssumingUtf8(process.readAllStandardError());</span></span>
+<span id="L417"><span class="lineNum">     417</span> <span class="tlaGNC">         388 :     *process_err = decodeAssumingUtf8(process.readAllStandardError());</span></span>
 <span id="L418"><span class="lineNum">     418</span>              :   }</span>
 <span id="L419"><span class="lineNum">     419</span> <span class="tlaGNC">        1353 :   return process.exitStatus() == QProcess::NormalExit ? process.exitCode() : -1;</span></span>
 <span id="L420"><span class="lineNum">     420</span>              : }</span>
 <span id="L421"><span class="lineNum">     421</span>              : </span>
-<span id="L422"><span class="lineNum">     422</span> <span class="tlaGNC">         243 : auto Executor::executeBlocking(const QString &amp;app, const QStringList &amp;args,</span></span>
+<span id="L422"><span class="lineNum">     422</span> <span class="tlaGNC">         241 : auto Executor::executeBlocking(const QString &amp;app, const QStringList &amp;args,</span></span>
 <span id="L423"><span class="lineNum">     423</span>              :                                const QString &amp;input, QString *process_out,</span>
 <span id="L424"><span class="lineNum">     424</span>              :                                QString *process_err) -&gt; int {</span>
-<span id="L425"><span class="lineNum">     425</span> <span class="tlaGNC">         243 :   QProcess internal;</span></span>
-<span id="L426"><span class="lineNum">     426</span> <span class="tlaGNC">         486 :   return runBlocking(internal, app, args, input, process_out, process_err);</span></span>
-<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">         243 : }</span></span>
+<span id="L425"><span class="lineNum">     425</span> <span class="tlaGNC">         241 :   QProcess internal;</span></span>
+<span id="L426"><span class="lineNum">     426</span> <span class="tlaGNC">         482 :   return runBlocking(internal, app, args, input, process_out, process_err);</span></span>
+<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">         241 : }</span></span>
 <span id="L428"><span class="lineNum">     428</span>              : </span>
-<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">        1148 : auto Executor::executeBlocking(QProcess &amp;process, const QString &amp;app,</span></span>
+<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">        1150 : auto Executor::executeBlocking(QProcess &amp;process, const QString &amp;app,</span></span>
 <span id="L430"><span class="lineNum">     430</span>              :                                const QStringList &amp;args, const QString &amp;input,</span>
 <span id="L431"><span class="lineNum">     431</span>              :                                QString *process_out, QString *process_err,</span>
 <span id="L432"><span class="lineNum">     432</span>              :                                const std::atomic_bool *cancel, int timeoutMs)</span>
 <span id="L433"><span class="lineNum">     433</span>              :     -&gt; int {</span>
-<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">        1148 :   return runBlocking(process, app, args, input, process_out, process_err,</span></span>
-<span id="L435"><span class="lineNum">     435</span> <span class="tlaGNC">        1148 :                      cancel, timeoutMs);</span></span>
+<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">        1150 :   return runBlocking(process, app, args, input, process_out, process_err,</span></span>
+<span id="L435"><span class="lineNum">     435</span> <span class="tlaGNC">        1150 :                      cancel, timeoutMs);</span></span>
 <span id="L436"><span class="lineNum">     436</span>              : }</span>
 <span id="L437"><span class="lineNum">     437</span>              : </span>
 <span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">         206 : auto Executor::executeBlocking(const QString &amp;app, const QStringList &amp;args,</span></span>
