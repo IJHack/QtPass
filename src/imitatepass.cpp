@@ -312,12 +312,25 @@ void ImitatePass::Remove(QString file, bool isDir) {
     executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), "--", pgit(file)});
     gitCommit(file, "Remove for " + path + " using QtPass.");
   } else {
+    // Without Git nothing else reports a failure: git rm would print its own.
     if (isDir) {
       // Never QDir::removeRecursively(): it follows a junction inside the
       // folder and empties whatever that points to.
-      Util::removeTree(file);
+      if (!Util::removeTree(file)) {
+        // As rm -rf, it went on past what it could not remove: the folder
+        // is still there, without the entries that could go.
+        emit critical(tr("Delete failed"),
+                      tr("Could not remove all of %1. What could be removed "
+                         "is gone; check what is left in it.")
+                          .arg(file));
+      }
     } else {
-      QFile(file).remove();
+      QFile entry(file);
+      if (!entry.remove()) {
+        emit critical(
+            tr("Delete failed"),
+            tr("Could not remove %1: %2").arg(file, entry.errorString()));
+      }
     }
   }
 }
@@ -1500,11 +1513,17 @@ void ImitatePass::Move(const QString src, const QString dest,
   if (gitReady()) {
     executeMoveGit(src, destFile, force);
   } else {
-    QDir qDir;
-    if (force) {
-      qDir.remove(destFile);
+    // A forced move replaces the destination entry in the one rename, as
+    // git mv -f does: removing it first lost it when the rename then failed
+    // (and lost the entry itself, moved onto its own name). A folder is never
+    // replaced, forced or not. Without Git nothing else reports a failure.
+    const bool moved = force && QFileInfo(src).isFile()
+                           ? Util::replaceFile(src, destFile, true)
+                           : QDir().rename(src, destFile);
+    if (!moved) {
+      emit critical(tr("Move failed"),
+                    tr("Could not move %1 to %2.").arg(src, destFile));
     }
-    qDir.rename(src, destFile);
   }
 }
 

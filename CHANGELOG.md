@@ -780,6 +780,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   while it was only committed locally. The refresh now waits for the push
   and runs once it went through. With the `pass` backend a rejected push
   still looks like a success: `pass git push` exits 0 then.
+- Without Git (the default), a delete, rename or move that fails on disk
+  says so, as `git rm` and `git mv` do with Git on. A folder delete that met
+  something it could not remove deleted what it could and left the rest
+  without a word; renaming an entry to a name its folder already had did
+  nothing, silently. A forced move now replaces the destination in one step:
+  when it failed, the destination entry used to be gone already, and a
+  forced move of an entry onto its own name deleted it.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
