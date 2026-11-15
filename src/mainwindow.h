@@ -465,6 +465,17 @@ private slots:
    */
   void copyPasswordFromTreeview();
   /**
+   * @brief Ctrl+C anywhere in the window: the selected text when the focus
+   *        is in a text view or a selectable label with a selection (the
+   *        shown entry, its field values, the OTP code, the process output),
+   *        otherwise the password (copyPasswordFromTreeview()).
+   *
+   * The shortcut is window-wide, and read-only text views and labels do not
+   * take Ctrl+C for themselves (line edits, the hidden password included,
+   * do), so a selected login or note was answered with the password.
+   */
+  void copySelectionOrPassword();
+  /**
    * @brief searchTimer fired: filter the tree on the typed words (matched
    *        literally, in order, case-insensitively) and select the first
    *        match; an empty query collapses the tree and deselects.

@@ -79,6 +79,7 @@
 #include "../../../src/passworddialog.h"
 #include "../../../src/passworddisplaypanel.h"
 #include "../../../src/processoutputpanel.h"
+#include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/trayicon.h"
 #include "../../../src/usersdialog.h"
@@ -403,6 +404,7 @@ private Q_SLOTS:
   void copyRequestAnswersOnlyItsOwnEntry();
   void templateMarkedSecretsAreHidden();
   void secretsAreHiddenWithTemplatesOff();
+  void ctrlCCopiesTheSelectedText();
   void otpRequestAnswersOnlyItsOwnEntry();
   void otpRequestKeepsThePasswordOffTheClipboard();
   void otpFastPathCopiesTheVisibleCodeWithoutDecrypting();
@@ -1020,6 +1022,58 @@ auto looksLikeOtpCode(const QString &s) -> bool {
  * @brief Ctrl+G on an entry with no code on screen decrypts it; only that
  *        entry's decrypt yields a code, and only once.
  */
+/**
+ * @brief Ctrl+C with text selected in the shown entry copies that text: the
+ *        window-wide shortcut put the entry's password on the clipboard
+ *        instead, with "Copied to clipboard", and cleared the selection.
+ */
+void tst_mainwindow::ctrlCCopiesTheSelectedText() {
+  const AppSettings before = QtPassSettings::load();
+  const auto restore = qScopeGuard([&before] { QtPassSettings::save(before); });
+  AppSettings s = before;
+  s.hidePassword = false;
+  s.hideContent = false;
+  s.displayAsIs = false;
+  s.useTemplate = false;
+  s.useSelection = false;
+  s.useAutoclear = false;
+  QtPassSettings::save(s);
+
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(m_window.data()));
+  m_window->passShowHandler(
+      QStringLiteral("correct-horse-battery\nlogin: alice\n"));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  QVERIFY(browser->find(QStringLiteral("alice")));
+  browser->setFocus();
+  QCOMPARE(QApplication::focusWidget(), browser);
+
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+  QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
+  QCOMPARE(clip->text(), QStringLiteral("alice"));
+  QVERIFY2(browser->textCursor().hasSelection(), "the selection stays");
+
+  // A selectable label (the entry name, the OTP code) the same way, through
+  // the clipboard manager, which tracks it for the autoclear.
+  auto *label =
+      new QLabel(QStringLiteral("code 123456"), browser->parentWidget());
+  label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+  label->show();
+  label->setFocus();
+  label->setSelection(5, 6);
+  QCOMPARE(QApplication::focusWidget(), label);
+  QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
+  QCOMPARE(clip->text(), QStringLiteral("123456"));
+  QCOMPARE(m_window->findChild<QtPass *>()->clipboard().trackedText(),
+           QStringLiteral("123456"));
+  delete label;
+}
+
 /**
  * @brief "Also hide other secrets" works in the default setup, templates
  *        off: a line named by the word list becomes a hidden row instead of
