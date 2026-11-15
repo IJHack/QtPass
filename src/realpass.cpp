@@ -43,10 +43,20 @@ RealPass::~RealPass() { m_grep.cancel(); }
 void RealPass::GitInit() { executePass(GIT_INIT, {"git", "init"}); }
 
 void RealPass::GitPull_b() {
-  int result =
-      Executor::executeBlocking(m_settings.passExecutable, {"git", "pull"});
+  // In the store's environment, as every queued pass call: pass picks its
+  // store from PASSWORD_STORE_DIR alone, so without it the pull before an
+  // edit went to ~/.password-store instead of the configured store.
+  QProcess process;
+  process.setProcessEnvironment(storeEnvironment());
+  QString err;
+  const int result =
+      Executor::executeBlocking(process, m_settings.passExecutable,
+                                {"git", "pull"}, QString(), nullptr, &err);
   if (result != 0) {
     qCDebug(lcQtPass) << "Git pull failed with code:" << result;
+    // As the native backend does: the entry about to be edited is not up to
+    // date with the remote.
+    emit statusMsg(tr("Git pull failed: %1").arg(err.trimmed()), 5000);
   }
 }
 
