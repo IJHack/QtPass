@@ -36,6 +36,7 @@
 #include "util.h"
 #include "windowstatestore.h"
 #include <QApplication>
+#include <QClipboard>
 #include <QCloseEvent>
 #include <QDate>
 #include <QDesktopServices>
@@ -54,6 +55,7 @@
 #include <QPushButton>
 #include <QShortcut>
 #include <QTextCharFormat>
+#include <QTextEdit>
 #include <QTextStream>
 #include <QTimer>
 #include <QTreeWidget>
@@ -76,7 +78,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   connectBackends();
 
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
-                &MainWindow::copyPasswordFromTreeview);
+                &MainWindow::copySelectionOrPassword);
 
   m_tree = new StoreTree(ui->treeView, this);
   m_tree->setStore(QtPassSettings::getPassStore(Util::findPasswordStore()));
@@ -1854,6 +1856,23 @@ void MainWindow::renamePassword() {
     return;
   }
   QtPassSettings::getPass()->Move(file, newFile, false);
+}
+
+void MainWindow::copySelectionOrPassword() {
+  QWidget *focus = QApplication::focusWidget();
+  // The widget's own copy: a SecretTextBrowser marks what it copies as
+  // secret for clipboard managers, as the context menu's Copy does.
+  if (auto *text = qobject_cast<QTextEdit *>(focus);
+      text != nullptr && text->textCursor().hasSelection()) {
+    text->copy();
+    return;
+  }
+  if (auto *label = qobject_cast<QLabel *>(focus);
+      label != nullptr && label->hasSelectedText()) {
+    QGuiApplication::clipboard()->setText(label->selectedText());
+    return;
+  }
+  copyPasswordFromTreeview();
 }
 
 void MainWindow::copyPasswordFromTreeview() {

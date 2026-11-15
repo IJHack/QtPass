@@ -1043,6 +1043,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   `otpauth` in the template. Only a bare line and the value after the first
   colon were caught, so these showed `secret=` in the main window, also
   with "Hide password" on, and as a field with copy and QR buttons
+- Ctrl+C with text selected in the shown entry (a login, a URL, a note)
+  copies that text. It copied the entry's password instead, said "Copied
+  to clipboard" and cleared the selection; only the context menu's Copy
+  took the selection. With nothing selected, Ctrl+C copies the password as
+  before
 
 ### Code Quality
 
