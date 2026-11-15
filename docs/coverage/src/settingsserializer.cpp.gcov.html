@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 18:01:07</td>
+            <td class="headerValue">2026-11-15 18:20:02</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -162,15 +162,15 @@
 <span id="L89"><span class="lineNum">      89</span>              :   // Never saved (a new settings file, or one from 1.8): the default set.</span>
 <span id="L90"><span class="lineNum">      90</span>              :   // Saved, it is what the user left, an empty list included.</span>
 <span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">        3096 :   if (qs.contains(SettingsConstants::secretFieldNames)) {</span></span>
-<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">        2870 :     s.secretFieldNames.clear();</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">        2868 :     s.secretFieldNames.clear();</span></span>
 <span id="L93"><span class="lineNum">      93</span>              :     for (const QString &amp;name :</span>
-<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">       44234 :          qs.value(SettingsConstants::secretFieldNames).toStringList()) {</span></span>
-<span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">       38494 :       if (!name.trimmed().isEmpty()) {</span></span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">       38493 :         s.secretFieldNames &lt;&lt; name.trimmed();</span></span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">       44202 :          qs.value(SettingsConstants::secretFieldNames).toStringList()) {</span></span>
+<span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">       38466 :       if (!name.trimmed().isEmpty()) {</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">       38465 :         s.secretFieldNames &lt;&lt; name.trimmed();</span></span>
 <span id="L97"><span class="lineNum">      97</span>              :       }</span>
 <span id="L98"><span class="lineNum">      98</span>              :     }</span>
 <span id="L99"><span class="lineNum">      99</span>              :   } else {</span>
-<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">         452 :     s.secretFieldNames = AppSettings::defaultSecretFieldNames();</span></span>
+<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">         456 :     s.secretFieldNames = AppSettings::defaultSecretFieldNames();</span></span>
 <span id="L101"><span class="lineNum">     101</span>              :   }</span>
 <span id="L102"><span class="lineNum">     102</span> <span class="tlaGNC">        3096 :   s.hideContent = qs.value(SettingsConstants::hideContent, false).toBool();</span></span>
 <span id="L103"><span class="lineNum">     103</span> <span class="tlaGNC">        3096 :   s.useMonospace = qs.value(SettingsConstants::useMonospace, false).toBool();</span></span>

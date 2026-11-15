@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 18:01:07</td>
+            <td class="headerValue">2026-11-15 18:20:02</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -99,10 +99,10 @@
 <span id="L26"><span class="lineNum">      26</span>              : constexpr int kBlockingKillGraceMs = 1000;</span>
 <span id="L27"><span class="lineNum">      27</span>              : } // namespace</span>
 <span id="L28"><span class="lineNum">      28</span>              : </span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         391 : Executor::Executor(QObject *parent) : QObject(parent) {</span></span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         391 :   connect(&amp;m_process, &amp;QProcess::finished, this, &amp;Executor::onProcessFinished);</span></span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         391 :   connect(&amp;m_process, &amp;QProcess::started, this, &amp;Executor::starting);</span></span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         391 : }</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         392 : Executor::Executor(QObject *parent) : QObject(parent) {</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         392 :   connect(&amp;m_process, &amp;QProcess::finished, this, &amp;Executor::onProcessFinished);</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         392 :   connect(&amp;m_process, &amp;QProcess::started, this, &amp;Executor::starting);</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         392 : }</span></span>
 <span id="L33"><span class="lineNum">      33</span>              : </span>
 <span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">        1704 : void Executor::detachFromTerminal(QProcess &amp;process) {</span></span>
 <span id="L35"><span class="lineNum">      35</span>              : #if defined(Q_OS_UNIX) &amp;&amp; QT_VERSION &gt;= QT_VERSION_CHECK(6, 7, 0)</span>
@@ -589,7 +589,7 @@
 <span id="L516"><span class="lineNum">     516</span> <span class="tlaGNC">         277 :   auto [output, err] = collectOutput(i, exitCode);</span></span>
 <span id="L517"><span class="lineNum">     517</span> <span class="tlaGNC">         277 :   if (exitStatus == QProcess::NormalExit) {</span></span>
 <span id="L518"><span class="lineNum">     518</span> <span class="tlaGNC">         274 :     if (exitCode != 0) {</span></span>
-<span id="L519"><span class="lineNum">     519</span> <span class="tlaGNC">          42 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
+<span id="L519"><span class="lineNum">     519</span> <span class="tlaGNC">          40 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
 <span id="L520"><span class="lineNum">     520</span>              :     }</span>
 <span id="L521"><span class="lineNum">     521</span> <span class="tlaGNC">         274 :     emit finished(i.id, exitCode, output, err);</span></span>
 <span id="L522"><span class="lineNum">     522</span> <span class="tlaGNC">         274 :     m_outputLossless = true;</span></span>
