@@ -397,6 +397,7 @@ private Q_SLOTS:
   void regularFilesUnderLeavesJunctionsOut();
   void regularFilesUnderReportsSpecialFilesUnderAWantedName();
   void regularFilesUnderReportsFoldersItCannotRead();
+  void stagedWriteCatchesAFileSwappedUnderTheTemporary();
   void directoriesUnderListsRealVisibleFoldersOnly();
   void isLinkedFolderSeesThroughATrailingSeparator();
   void isUnderLinkChecksEveryFolderOnTheWay();
@@ -5170,6 +5171,40 @@ void tst_util::regularFilesUnderLeavesJunctionsOut() {
   QVERIFY(QDir().rmdir(root.filePath(QStringLiteral("dir-junction.gpg"))));
   QVERIFY(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))));
 #endif
+}
+
+/**
+ * @brief A file swapped in under the temporary's name before the rename is
+ *        reported, not taken for what was written. The temporary is kept
+ *        open until the check: closed and unlinked, its inode number is
+ *        free, ext4 hands it to the next file made, and the swapped-in file
+ *        passed (the dialog reported "saved" with another account's file).
+ */
+void tst_util::stagedWriteCatchesAFileSwappedUnderTheTemporary() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString entry = QDir(tmp.path()).filePath(QStringLiteral("bank.gpg"));
+  const auto unhook = qScopeGuard([] { Util::setBeforePlacingForTests({}); });
+  Util::setBeforePlacingForTests([](const QString &temporary) {
+    // A co-writer replaces the temporary: unlink, then a file of its own.
+    QFile::remove(temporary);
+    QFile other(temporary);
+    if (other.open(QIODevice::WriteOnly)) {
+      other.write("someone else's");
+    }
+  });
+  QString why;
+  QVERIFY(
+      !Util::writeFileReplacing(entry, QByteArrayLiteral("mine"), false, &why));
+  QVERIFY2(why.contains(QStringLiteral("swapped")), qPrintable(why));
+
+  // Untouched, the write stands.
+  Util::setBeforePlacingForTests({});
+  QVERIFY(
+      Util::writeFileReplacing(entry, QByteArrayLiteral("mine"), true, &why));
+  QFile written(entry);
+  QVERIFY(written.open(QIODevice::ReadOnly));
+  QCOMPARE(written.readAll(), QByteArrayLiteral("mine"));
 }
 
 /**

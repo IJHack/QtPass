@@ -1076,6 +1076,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   Settings cancels it, and matches the other backend reports are dropped.
   The old store's entries and decrypted lines were shown, and clicking one
   opened the entry of that name in the new store
+- A file another account swaps in under the temporary name while QtPass
+  saves an entry is reported, also on ext4: the temporary now stays open
+  until the check, so its inode number cannot be given to the swapped-in
+  file, which then passed for the entry and the save was reported as done
 
 ### Code Quality
 

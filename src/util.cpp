@@ -22,6 +22,7 @@
 #include <QTemporaryFile>
 #include <QUrl>
 
+#include <memory>
 #include <optional>
 
 #ifdef Q_OS_WIN
@@ -283,6 +284,13 @@ std::optional<uint> s_gitOwnerForTests;
 
 void Util::setGitOwnerForTests(std::optional<uint> user) {
   s_gitOwnerForTests = user;
+}
+
+/// setBeforePlacingForTests(): called between staging and the rename.
+std::function<void(const QString &)> s_beforePlacingForTests;
+
+void Util::setBeforePlacingForTests(std::function<void(const QString &)> hook) {
+  s_beforePlacingForTests = std::move(hook);
 }
 
 #ifdef Q_OS_UNIX
@@ -1121,6 +1129,9 @@ auto fail(QString *error, const QString &text) -> bool {
 struct Staged {
   QString path;
   FileIdentity identity;
+  /// POSIX: a descriptor kept open on the temporary until the identity
+  /// check, so the inode, and with it the number, stays the temporary's.
+  std::shared_ptr<void> pin;
 };
 
 /**
@@ -1153,6 +1164,16 @@ auto stageNextTo(const QString &path, const Util::Filler &fill, QString *why)
                  .arg(path, file.errorString());
     }
     staged.identity = identityOf(file);
+#ifndef Q_OS_WIN
+    // Closed and unlinked by a co-writer before the rename, the temporary's
+    // inode number would be free, and ext4 hands it to the next file made:
+    // the very file swapped in would then pass the check below. Windows
+    // cannot rename an open file, and NTFS does not reuse a file index so.
+    if (const int fd = ::dup(file.handle()); fd >= 0) {
+      staged.pin =
+          std::shared_ptr<void>(nullptr, [fd](void *) { ::close(fd); });
+    }
+#endif
   }
   if (!why->isEmpty()) {
     QFile::remove(staged.path);
@@ -1205,6 +1226,9 @@ auto Util::stageFileReplacing(const QString &path, bool replace,
   const std::optional<Staged> staged = stageNextTo(path, fill, &why);
   if (!staged) {
     return fail(error, why);
+  }
+  if (s_beforePlacingForTests) {
+    s_beforePlacingForTests(staged->path);
   }
   if (!replaceFile(staged->path, path, replace)) {
     QFile::remove(staged->path);
