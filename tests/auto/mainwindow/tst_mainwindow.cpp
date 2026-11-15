@@ -617,8 +617,14 @@ void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
 void tst_mainwindow::closeWithoutATrayIconDoesNotHide() {
   if (QSystemTrayIcon::isSystemTrayAvailable())
     QSKIP("needs a session without a system tray");
-  // QApplication::quit() does nothing without a running event loop; should
-  // a Qt send its Quit event all the same, it must not end this run.
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  // The close goes on to QApplication::quit(), which on Qt 5 is exit(0): it
+  // marks the thread to quit, and every later event loop of this run (modal
+  // dialogs, QSignalSpy::wait()) would return at once.
+  QSKIP("Qt 5's QApplication::quit() would end the event loops of later tests");
+#endif
+  // QApplication::quit() does nothing without a running event loop on Qt 6;
+  // should a Qt send its Quit event all the same, it must not end this run.
   struct SwallowQuit : QObject {
     auto eventFilter(QObject *watched, QEvent *event) -> bool override {
       return watched == qApp && event->type() == QEvent::Quit;
