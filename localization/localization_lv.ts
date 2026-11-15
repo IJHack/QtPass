@@ -749,53 +749,58 @@ e-pasts</translation>
         <translation>Pēc pieprasījuma kopēt uz starpliktuvi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="350"/>
-        <location filename="../src/configdialog.cpp" line="355"/>
+        <location filename="../src/configdialog.cpp" line="353"/>
+        <location filename="../src/configdialog.cpp" line="361"/>
         <source>This field is required</source>
         <translation>Šis lauks ir nepieciešams</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="352"/>
+        <location filename="../src/configdialog.cpp" line="356"/>
+        <source>A profile name cannot contain / or \</source>
+        <translation type="unfinished">Profila vārds nedrīkst saturēt / vai \</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="358"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Citam profilam jau ir šāds nosaukums</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="361"/>
+        <location filename="../src/configdialog.cpp" line="367"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">Tikai pilni atslēgu pirkstu nospiedumi (40 vai 64 heksadecimālas rakstzīmes), atdalīti ar atstarpēm</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="508"/>
+        <location filename="../src/configdialog.cpp" line="514"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 paraksta ar to pašu atslēgu citai glabātuvei. Saņēmēju saraksts, kas parakstīts vienai no šīm glabātuvēm, tiek pieņemts arī otrā: izmantojiet atsevišķu parakstīšanas atslēgu katrai glabātuvei, kurai ir atšķirīgi saņēmēji.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="536"/>
+        <location filename="../src/configdialog.cpp" line="542"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation type="unfinished">pass ieraksta %1 izmaiņas Git repozitorijā, kas atrodas %2: ja paroļu glabātuves ceļā ir kols, pass nevar ierobežot Git ar glabātuvi. Glabātuvē izpildiet &quot;git init&quot; vai izmantojiet vietējo Git/GPG.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="559"/>
+        <location filename="../src/configdialog.cpp" line="565"/>
         <source>The path does not exist.</source>
         <translation>Ceļš neeksistē.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="562"/>
+        <location filename="../src/configdialog.cpp" line="568"/>
         <source>The path is not readable.</source>
         <translation>Ceļš nav nolasāms.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="571"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Ceļš nav Unix domēna ligzda.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="569"/>
+        <location filename="../src/configdialog.cpp" line="575"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Iespējams nederīga SSH_AUTH_SOCK pārrakstīšana</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="570"/>
+        <location filename="../src/configdialog.cpp" line="576"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -808,42 +813,42 @@ The value will still be saved as entered.</source>
 Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="827"/>
+        <location filename="../src/configdialog.cpp" line="833"/>
         <source>Create profile directory?</source>
         <translation>Izveidot profila direktoriju?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="828"/>
+        <location filename="../src/configdialog.cpp" line="834"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Vai vēlaties izveidot paroļu glabātuvi vietā %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="834"/>
+        <location filename="../src/configdialog.cpp" line="840"/>
         <source>Error</source>
         <translation>Kļūda</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="835"/>
+        <location filename="../src/configdialog.cpp" line="841"/>
         <source>Could not create profile directory: %1</source>
         <translation>Nevarēja izveidot profila katalogu: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="859"/>
+        <location filename="../src/configdialog.cpp" line="865"/>
         <source>Select recipients for %1</source>
         <translation>Izvēlieties saņēmējus mapei %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="868"/>
+        <location filename="../src/configdialog.cpp" line="874"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Nevarēja inicializēt profilu %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="871"/>
+        <location filename="../src/configdialog.cpp" line="877"/>
         <source>Profile %1</source>
         <translation type="unfinished">Profils %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="894"/>
+        <location filename="../src/configdialog.cpp" line="900"/>
         <source>New profile</source>
         <translation>Jauns Profils</translation>
     </message>
@@ -852,12 +857,12 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation type="vanished">Jauns Profils</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="915"/>
+        <location filename="../src/configdialog.cpp" line="921"/>
         <source>No profile selected</source>
         <translation>Nav izvēlēts profilis</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="916"/>
+        <location filename="../src/configdialog.cpp" line="922"/>
         <source>No profile selected to delete</source>
         <translation>Nav atlasīts profils dzēšanai</translation>
     </message>
@@ -898,17 +903,17 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation type="vanished">Mape %1 neizskatās paroles glabātuve vai arī tā vēl nav inicializēta.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1135"/>
+        <location filename="../src/configdialog.cpp" line="1141"/>
         <source>New profile: %1 at %2</source>
         <translation>Jaunais profils: %1 uz %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1137"/>
+        <location filename="../src/configdialog.cpp" line="1143"/>
         <source>Profile: %1 at %2</source>
         <translation>Profils: %1 uz %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1140"/>
+        <location filename="../src/configdialog.cpp" line="1146"/>
         <source>Fill in all required fields</source>
         <translation>Ievadi visus nepieciešamos laukus</translation>
     </message>
@@ -979,17 +984,17 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="215"/>
+        <location filename="../src/executor.cpp" line="224"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">Šai komandai nav konfigurēts izpildāmais fails</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="245"/>
+        <location filename="../src/executor.cpp" line="254"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">Neizdevās palaist %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="492"/>
+        <location filename="../src/executor.cpp" line="536"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 avarēja vai tika piespiedu kārtā pārtraukts</translation>
     </message>
@@ -1086,7 +1091,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
 <context>
     <name>FileContent</name>
     <message numerus="yes">
-        <location filename="../src/filecontent.cpp" line="126"/>
+        <location filename="../src/filecontent.cpp" line="196"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
             <numerusform>… vēl %n rinda nav parādīta</numerusform>
@@ -1328,93 +1333,95 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="136"/>
+        <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git saņemšana neizdevās: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="189"/>
-        <location filename="../src/imitatepass.cpp" line="440"/>
-        <location filename="../src/imitatepass.cpp" line="784"/>
-        <location filename="../src/realpass.cpp" line="97"/>
+        <location filename="../src/imitatepass.cpp" line="212"/>
+        <location filename="../src/imitatepass.cpp" line="476"/>
+        <location filename="../src/imitatepass.cpp" line="820"/>
+        <location filename="../src/realpass.cpp" line="108"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Pārbaudīt .gpg-id faila parakstu!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="441"/>
-        <location filename="../src/imitatepass.cpp" line="629"/>
-        <location filename="../src/realpass.cpp" line="93"/>
+        <location filename="../src/imitatepass.cpp" line="477"/>
+        <location filename="../src/imitatepass.cpp" line="665"/>
+        <location filename="../src/realpass.cpp" line="104"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Paraksts par %1 ir nederīgs.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="904"/>
+        <location filename="../src/imitatepass.cpp" line="216"/>
+        <location filename="../src/imitatepass.cpp" line="944"/>
         <source>Can not edit</source>
         <translation>Nevar rediģēt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="218"/>
+        <location filename="../src/imitatepass.cpp" line="241"/>
         <source>Cannot add</source>
         <translation type="unfinished">Nevar pievienot</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="218"/>
+        <location filename="../src/imitatepass.cpp" line="241"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 jau eksistē.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="194"/>
-        <location filename="../src/imitatepass.cpp" line="905"/>
+        <location filename="../src/imitatepass.cpp" line="217"/>
+        <location filename="../src/imitatepass.cpp" line="945"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nevarēja nolasīt šifrēšanas atslēgu izmantošanai, .gpg-id fails trūkst vai ir nederīgs.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="958"/>
+        <location filename="../src/pass.cpp" line="962"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">Nevar pārbaudīt saņēmēju sarakstu</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="960"/>
+        <location filename="../src/pass.cpp" line="964"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Nevar noteikt, vai %2 tika noņemts, tāpēc nekas netika šifrēts.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="967"/>
+        <location filename="../src/pass.cpp" line="971"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Trūkst saņēmēju saraksta</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="968"/>
+        <location filename="../src/pass.cpp" line="972"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">Parakstītā saņēmēju saraksta %1 nav vai tas nav parasts fails. QtPass tā vietā neizmanto vecākmapes sarakstu: tas saraksts netika parakstīts šai mapei. Ja ar šo nosaukumu ir saite, noņemiet to. Pēc tam atveriet sadaļu Lietotāji šai mapei un saglabājiet tās saņēmējus, kas ieraksta un paraksta jaunu sarakstu.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="230"/>
+        <location filename="../src/imitatepass.cpp" line="253"/>
         <source>Cannot write</source>
         <translation type="unfinished">Nevar ierakstīt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="231"/>
+        <location filename="../src/imitatepass.cpp" line="254"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">Nevar izveidot pagaidu katalogu: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="298"/>
+        <location filename="../src/imitatepass.cpp" line="321"/>
+        <location filename="../src/imitatepass.cpp" line="345"/>
+        <location filename="../src/imitatepass.cpp" line="354"/>
         <source>Delete failed</source>
         <translation type="unfinished">Dzēšana neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="299"/>
+        <location filename="../src/imitatepass.cpp" line="322"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Nevarēja noņemt saiti %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="340"/>
-        <location filename="../src/imitatepass.cpp" line="365"/>
-        <location filename="../src/imitatepass.cpp" line="371"/>
-        <location filename="../src/imitatepass.cpp" line="399"/>
-        <location filename="../src/imitatepass.cpp" line="533"/>
+        <location filename="../src/imitatepass.cpp" line="376"/>
+        <location filename="../src/imitatepass.cpp" line="401"/>
+        <location filename="../src/imitatepass.cpp" line="407"/>
+        <location filename="../src/imitatepass.cpp" line="435"/>
+        <location filename="../src/imitatepass.cpp" line="569"/>
         <source>Cannot update</source>
         <translation>Nevar atjaunināt</translation>
     </message>
@@ -1431,123 +1438,134 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation type="obsolete">Neizdevās ierakstīt %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="413"/>
+        <location filename="../src/imitatepass.cpp" line="449"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Saņēmēju saraksts ierakstīts, bet nav reģistrēts</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="414"/>
+        <location filename="../src/imitatepass.cpp" line="450"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Vēlreiz saglabājiet saņēmējus, lai to atrisinātu.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="419"/>
+        <location filename="../src/imitatepass.cpp" line="455"/>
         <source>Check selected users!</source>
         <translation>Pārbaudiet izvēlētus lietotājus!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="420"/>
+        <location filename="../src/imitatepass.cpp" line="456"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nevienai no izvēlētajām atslēgām nav pieejama slepenā atslēga.
 Jūs nevarēsiet atšifrēt nevienu no jaunpievienotajām parolēm!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="432"/>
+        <location filename="../src/imitatepass.cpp" line="468"/>
         <source>GPG signing failed!</source>
         <translation>GPG parakstīšana neizdevās!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="434"/>
+        <location filename="../src/imitatepass.cpp" line="470"/>
         <source>Failed to sign %1.</source>
         <translation>Neizdevās parakstīt %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="435"/>
+        <location filename="../src/imitatepass.cpp" line="471"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">Neizdevās parakstīt %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="574"/>
+        <location filename="../src/imitatepass.cpp" line="610"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Saņēmēji nav mainīti</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="575"/>
+        <location filename="../src/imitatepass.cpp" line="611"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Pāršifrēšana vēl notiek. Pagaidiet, līdz tā beidzas, pēc tam saglabājiet saņēmējus vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="581"/>
+        <location filename="../src/imitatepass.cpp" line="617"/>
         <source>No signing key!</source>
         <translation>Nav parakstīšanas atslēgas!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="582"/>
+        <location filename="../src/imitatepass.cpp" line="618"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Neviena no slepenajām parakstīšanas atslēgām nav pieejama.
 Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="534"/>
+        <location filename="../src/imitatepass.cpp" line="570"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Neizdevās noņemt veco parakstu %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="341"/>
+        <location filename="../src/imitatepass.cpp" line="346"/>
+        <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
+        <translation type="unfinished">Nevarēja pilnībā noņemt %1. Tas, ko varēja noņemt, ir noņemts; pārbaudiet, kas tajā ir palicis.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="355"/>
+        <source>Could not remove %1: %2</source>
+        <translation type="unfinished">Nevarēja noņemt %1: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="377"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation type="unfinished">%1 neatrodas paroļu glabātuvē, vai arī kādas ceļā esošas mapes nosaukumā ir rindas pārtraukums vai cita vadības rakstzīme, ko parakstīts saraksts nevar ierakstīt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="649"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git beidza darbu ar kodu %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="652"/>
+        <location filename="../src/imitatepass.cpp" line="688"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 nevar nolasīt kā saņēmēju sarakstu (parasts fails, kura izmērs nepārsniedz %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="666"/>
-        <location filename="../src/imitatepass.cpp" line="694"/>
         <location filename="../src/imitatepass.cpp" line="702"/>
+        <location filename="../src/imitatepass.cpp" line="730"/>
+        <location filename="../src/imitatepass.cpp" line="738"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Atlikums no agrākas pāršifrēšanas</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="667"/>
+        <location filename="../src/imitatepass.cpp" line="703"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 nav parasts fails un netika atjaunots. Apskatiet to un noņemiet, pēc tam pāršifrējiet vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="695"/>
+        <location filename="../src/imitatepass.cpp" line="731"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 atrodas līdzās %2. Abi ir ieraksta šifrētas kopijas; pārbaudiet, kuru vēlaties paturēt, izdzēsiet otru un pēc tam pāršifrējiet vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="709"/>
+        <location filename="../src/imitatepass.cpp" line="745"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 atjaunots no dublējuma, ko atstāja pārtraukta pāršifrēšana.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="703"/>
+        <location filename="../src/imitatepass.cpp" line="739"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 trūkst, un tā dublējumu %2 neizdevās pārdēvēt atpakaļ. Pārdēvējiet to manuāli un pēc tam pāršifrējiet vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="945"/>
+        <location filename="../src/imitatepass.cpp" line="985"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 neizdevās pāršifrēt: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <location filename="../src/imitatepass.cpp" line="1049"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
         <translation type="unfinished">Paroļu glabātuves Git repozitorijā ir neapvienoti faili. Pirms pāršifrēšanas atrisiniet konfliktu ar Git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1324"/>
+        <location filename="../src/imitatepass.cpp" line="1374"/>
+        <location filename="../src/realpass.cpp" line="449"/>
         <source>Re-encryption failed</source>
         <translation>Atkārtota šifrēšana neizdevās</translation>
     </message>
@@ -1564,81 +1582,86 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <translation type="obsolete">Pēc pāršifrēšanas neizdevās noņemt dublējumu %1; to var droši dzēst.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="982"/>
+        <location filename="../src/imitatepass.cpp" line="1022"/>
         <source>Creating backup commit</source>
         <translation>Izveidojam dublējuma komitu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="996"/>
-        <location filename="../src/imitatepass.cpp" line="1020"/>
+        <location filename="../src/imitatepass.cpp" line="1036"/>
+        <location filename="../src/imitatepass.cpp" line="1060"/>
         <source>Backup commit failed</source>
         <translation>Dublējuma komita izveide neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="997"/>
+        <location filename="../src/imitatepass.cpp" line="1037"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Nevarēja pārbaudīt Git stāvokli. Pārešifrēšana tika atcelta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1008"/>
-        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <location filename="../src/imitatepass.cpp" line="1048"/>
+        <location filename="../src/imitatepass.cpp" line="1293"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Nepabeigta Git operācija</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1021"/>
+        <location filename="../src/imitatepass.cpp" line="1061"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Atjauninājums tika atcelts, jo neizdevās izveidot Git rezervēto kopiju.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1063"/>
+        <location filename="../src/imitatepass.cpp" line="1103"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Pāršifrēšana jau notiek</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <location filename="../src/imitatepass.cpp" line="1110"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nav glabātuves mape</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1071"/>
+        <location filename="../src/imitatepass.cpp" line="1111"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 ir simboliska saite vai savienojuma punkts, vai arī atrodas aiz tādas saites. Tas, uz ko tā norāda, nav paroļu glabātuves daļa un netika pāršifrēts.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1086"/>
+        <location filename="../src/imitatepass.cpp" line="1126"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Pāršifrēšana no paroles kataloga %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1162"/>
-        <location filename="../src/imitatepass.cpp" line="1351"/>
+        <location filename="../src/imitatepass.cpp" line="1202"/>
+        <location filename="../src/imitatepass.cpp" line="1401"/>
         <source>Updating password-store</source>
         <translation>Paroļu glabātuves atjaunināšana</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1175"/>
-        <location filename="../src/imitatepass.cpp" line="1181"/>
+        <location filename="../src/imitatepass.cpp" line="1215"/>
+        <location filename="../src/imitatepass.cpp" line="1221"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git saņemšana neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1176"/>
+        <location filename="../src/imitatepass.cpp" line="1216"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Pēc pull neizdevās pārbaudīt, vai glabātuvē ir nesapludināti faili. Pirms atkārtotas šifrēšanas pārbaudiet to ar git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1182"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pēc saņemšanas glabātuvē palika nesapludināti faili. Pirms pāršifrēšanas atrisiniet konfliktu.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1186"/>
+        <location filename="../src/imitatepass.cpp" line="1226"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git saņemšana neizdevās, glabātuve tiek pāršifrēta tāda, kāda tā ir</translation>
     </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <source>%1 could not be read: its entries were not re-encrypted</source>
+        <translation type="unfinished">Mapi %1 nevarēja nolasīt: tās ieraksti netika pāršifrēti</translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1197"/>
+        <location filename="../src/imitatepass.cpp" line="1247"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>Izlaists %n ieraksts: simboliska saite, savienojuma punkts vai speciāls fails nav glabātuves daļa.</numerusform>
@@ -1647,27 +1670,27 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1218"/>
+        <location filename="../src/imitatepass.cpp" line="1268"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID pārbaude neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1219"/>
+        <location filename="../src/imitatepass.cpp" line="1269"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Nevarēja pārbaudīt .gpg-id failu katalogā.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <location filename="../src/imitatepass.cpp" line="1302"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nav glabātuves daļa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1253"/>
+        <location filename="../src/imitatepass.cpp" line="1303"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 pēc saņemšanas (pull) ir simboliska saite vai savienojuma punkts, vai arī atrodas aiz tādas saites. Tas, uz ko tā norāda, nav paroļu glabātuves daļa un tiek atstāts neskarts.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1322"/>
+        <location filename="../src/imitatepass.cpp" line="1372"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... un vēl %n fails</numerusform>
@@ -1676,7 +1699,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1325"/>
+        <location filename="../src/imitatepass.cpp" line="1375"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>Neizdevās pāršifrēt %n failu:</numerusform>
@@ -1685,18 +1708,18 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1331"/>
+        <location filename="../src/imitatepass.cpp" line="1381"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Pāršifrēšana atcelta: pārbaudīti %1 no %2 failiem, %3 pāršifrēti, %4 neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1398"/>
-        <location filename="../src/imitatepass.cpp" line="1407"/>
+        <location filename="../src/imitatepass.cpp" line="1451"/>
+        <location filename="../src/imitatepass.cpp" line="1460"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Saņēmēju izmaiņas nav iesūtītas</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1399"/>
+        <location filename="../src/imitatepass.cpp" line="1452"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1709,7 +1732,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Izmaiņas vēl nav iesūtītas vai nosūtītas. Novērsiet Git problēmu, pēc tam iesūtiet izmaiņas vai saglabājiet saņēmējus vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1408"/>
+        <location filename="../src/imitatepass.cpp" line="1461"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1722,12 +1745,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir šifrēti iepriekšējiem saņēmējiem, kuri tos joprojām var izlasīt. Nekas netika iesūtīts vai nosūtīts. Novērsiet Git problēmu, pēc tam saglabājiet saņēmējus vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1595"/>
+        <location filename="../src/imitatepass.cpp" line="1572"/>
+        <source>Move failed</source>
+        <translation type="unfinished">Pārvietošana neizdevās</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1573"/>
+        <source>Could not move %1 to %2.</source>
+        <translation type="unfinished">Nevarēja pārvietot %1 uz %2.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1662"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git izpildāmais fails nav konfigurēts, git tiek izlaists</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1672"/>
+        <location filename="../src/imitatepass.cpp" line="1739"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg neizvadīja šifrētu tekstu failam %1.</translation>
     </message>
@@ -1756,17 +1789,17 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Neizdevās atkārtoti šifrēt %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1340"/>
+        <location filename="../src/imitatepass.cpp" line="1390"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Atšifrēšana pabeigta: %1 veiksmīgi, %2 neveiksmīgi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1345"/>
+        <location filename="../src/imitatepass.cpp" line="1395"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Atšifrēšana pabeigta: %1 faili atšifrēti</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1354"/>
+        <location filename="../src/imitatepass.cpp" line="1406"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Nosūtīšana netiek veikta: neizdevās pāršifrēt %n failu</numerusform>
@@ -1775,14 +1808,14 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1514"/>
-        <location filename="../src/imitatepass.cpp" line="1561"/>
+        <location filename="../src/imitatepass.cpp" line="1581"/>
+        <location filename="../src/imitatepass.cpp" line="1628"/>
         <source>Copy failed</source>
         <translation type="unfinished">Kopēšana neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1515"/>
-        <location filename="../src/imitatepass.cpp" line="1562"/>
+        <location filename="../src/imitatepass.cpp" line="1582"/>
+        <location filename="../src/imitatepass.cpp" line="1629"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Neizdevās nokopēt %1 uz %2.</translation>
     </message>
@@ -1996,47 +2029,53 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation>Eksperta opcijām skatiet &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG rokasgrāmatu&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="190"/>
+        <location filename="../src/keygendialog.cpp" line="202"/>
+        <location filename="../src/keygendialog.cpp" line="211"/>
         <source>Invalid input</source>
         <translation type="unfinished">Nederīga ievade</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="191"/>
+        <location filename="../src/keygendialog.cpp" line="203"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
         <translation type="unfinished">Vārds un parole nevar saturēt rindu pārtraukumus.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="212"/>
+        <source>The passphrase cannot start or end with a space or a tab.</source>
+        <translation type="unfinished">Parole nedrīkst sākties vai beigties ar atstarpi vai tabulāciju.</translation>
+    </message>
+    <message>
+        <location filename="../src/keygendialog.cpp" line="216"/>
         <source>Invalid name</source>
         <translation>Nederīgs nosaukums</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="197"/>
+        <location filename="../src/keygendialog.cpp" line="217"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Nosaukumam jābūt vismaz 5 rakstzīmes garam.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="207"/>
+        <location filename="../src/keygendialog.cpp" line="227"/>
         <source>Invalid email</source>
         <translation>Nederīga e-pasta adrese</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="208"/>
+        <location filename="../src/keygendialog.cpp" line="228"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Ievadīta e-pasta adrese nav derīga e-pasta adrese.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="230"/>
+        <location filename="../src/keygendialog.cpp" line="250"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Šī darbība var aizņemt dažas minūtes.&lt;br /&gt;Mums jāģenerē daudz nejaušu baitu. Pirmskaitļu ģenerēšanas laikā ieteicams veikt kādas citas darbības (rakstīt ar tastatūru, kustināt peli, izmantot diskus); tas dod nejaušo skaitļu ģeneratoram lielāku iespēju iegūt pietiekamu entropiju.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="251"/>
+        <location filename="../src/keygendialog.cpp" line="271"/>
         <source>No password store backend available</source>
         <translation type="unfinished">Nav pieejama paroļu glabātuves aizmugursistēma</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="285"/>
+        <location filename="../src/keygendialog.cpp" line="305"/>
         <source>Key generation failed: %1</source>
         <translation type="unfinished">Atslēgas ģenerēšana neizdevās: %1</translation>
     </message>
@@ -2059,8 +2098,8 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="744"/>
-        <location filename="../src/mainwindow.cpp" line="935"/>
+        <location filename="../src/mainwindow.cpp" line="791"/>
+        <location filename="../src/mainwindow.cpp" line="986"/>
         <source>Search password</source>
         <translation>Meklēt paroli</translation>
     </message>
@@ -2162,7 +2201,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1624"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Add password</source>
         <translation>Pievienot paroli</translation>
     </message>
@@ -2174,21 +2213,21 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1623"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Add folder</source>
         <translation>Pievienot katalogu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1631"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Edit</source>
         <translation>Rediģēt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1643"/>
+        <location filename="../src/mainwindow.cpp" line="1733"/>
         <source>Delete</source>
         <translation>Dzēst</translation>
     </message>
@@ -2229,7 +2268,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1625"/>
+        <location filename="../src/mainwindow.cpp" line="1715"/>
         <source>Users</source>
         <translation>Lietotāji</translation>
     </message>
@@ -2342,7 +2381,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="unfinished">Par &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="421"/>
+        <location filename="../src/mainwindow.cpp" line="455"/>
         <source>Welcome to QtPass %1</source>
         <translation>Laipni lūdzam QtPass %1</translation>
     </message>
@@ -2359,14 +2398,14 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Procesa izvade</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="553"/>
-        <location filename="../src/mainwindow.cpp" line="563"/>
+        <location filename="../src/mainwindow.cpp" line="595"/>
+        <location filename="../src/mainwindow.cpp" line="605"/>
         <source>Updating password-store</source>
         <translation>Paroļu glabātuves atjaunināšana</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="663"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="705"/>
+        <location filename="../src/mainwindow.cpp" line="1045"/>
         <source>Content hidden</source>
         <translation>Saturs paslēpts</translation>
     </message>
@@ -2375,7 +2414,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Parole</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="221"/>
+        <location filename="../src/mainwindow.cpp" line="237"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Darbībai iestājās noildze; saskarne tiek iespējota no jauna.</translation>
     </message>
@@ -2384,20 +2423,20 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">OTP kods</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="735"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Neizdevās atšifrēt šo paroles ierakstu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="704"/>
-        <location filename="../src/mainwindow.cpp" line="722"/>
-        <location filename="../src/mainwindow.cpp" line="1346"/>
+        <location filename="../src/mainwindow.cpp" line="746"/>
+        <location filename="../src/mainwindow.cpp" line="764"/>
+        <location filename="../src/mainwindow.cpp" line="1414"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP kods kopēts starpliktuvē</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="724"/>
-        <location filename="../src/mainwindow.cpp" line="1334"/>
+        <location filename="../src/mainwindow.cpp" line="766"/>
+        <location filename="../src/mainwindow.cpp" line="1402"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Šajā paroles ierakstā nav atrasts OTP kods</translation>
     </message>
@@ -2406,27 +2445,27 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Parole un saturs paslēpts</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="815"/>
+        <location filename="../src/mainwindow.cpp" line="864"/>
         <source>About QtPass</source>
         <translation type="unfinished">Par QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="816"/>
+        <location filename="../src/mainwindow.cpp" line="865"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Daudzplatformu grafiskā saskarne programmai &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standarta Unix paroļu pārvaldniekam.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Pirmkods un problēmu ziņojumi&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Autortiesības &amp;copy; 2014&amp;ndash;%2 IJhack. Licencēts saskaņā ar &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL 3. versiju&lt;/a&gt; vai jaunāku.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
+        <location filename="../src/mainwindow.cpp" line="882"/>
         <source>Looking for: %1</source>
         <translation>Mēs meklējam: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="885"/>
+        <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Searching…</source>
         <translation>Meklē…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="917"/>
+        <location filename="../src/mainwindow.cpp" line="967"/>
         <source>Search content (regex)</source>
         <translation>Meklēt saturu (regex)</translation>
     </message>
@@ -2435,17 +2474,17 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="obsolete">Satura meklēšana izmanto POSIX pamata regulārās izteiksmes (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="921"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Satura meklēšana izmanto ar Perl saderīgas regulārās izteiksmes (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="960"/>
+        <location filename="../src/mainwindow.cpp" line="1019"/>
         <source>No matches found.</source>
         <translation>Nav atrastu atbilstošus rezultātus.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1004"/>
+        <location filename="../src/mainwindow.cpp" line="1063"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Atrasts %n atbilstošs vienums</numerusform>
@@ -2454,7 +2493,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1006"/>
+        <location filename="../src/mainwindow.cpp" line="1065"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>no %n ieraksta.</numerusform>
@@ -2463,12 +2502,12 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1196"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Invalid name</source>
         <translation type="unfinished">Nederīgs nosaukums</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1197"/>
+        <location filename="../src/mainwindow.cpp" line="1261"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Šis nosaukums norādītu ārpus paroļu glabātuves. Lūdzu, izvēlieties citu nosaukumu.</translation>
     </message>
@@ -2483,7 +2522,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
 (Tiks ievietots %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="748"/>
+        <location filename="../src/mainwindow.cpp" line="795"/>
         <source>Password and content hidden</source>
         <translation>Parole un saturs paslēpts</translation>
     </message>
@@ -2492,12 +2531,12 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished"> Un visu saturu?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1279"/>
+        <location filename="../src/mainwindow.cpp" line="1343"/>
         <source>Delete link?</source>
         <translation type="unfinished">Vai dzēst saiti?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1280"/>
+        <location filename="../src/mainwindow.cpp" line="1344"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 ir simboliska saite vai savienojuma punkts. Vai noņemt saiti? Tas, uz ko tā norāda, tiks atstāts neskarts.</translation>
     </message>
@@ -2506,12 +2545,12 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished"> un visu saturu? &lt;br&gt;&lt;strong&gt;Uzmanību: norādītajā mapē ir neparedzēti faili, pārbaudiet tos pirms turpināt.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1272"/>
+        <location filename="../src/mainwindow.cpp" line="1336"/>
         <source>Delete folder?</source>
         <translation>Vai dzēst katalogu?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1248"/>
+        <location filename="../src/mainwindow.cpp" line="1312"/>
         <source>Delete password?</source>
         <translation>Vai dzēst paroli?</translation>
     </message>
@@ -2520,43 +2559,43 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Jūs patiešām vēlaties dzēst %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1329"/>
+        <location filename="../src/mainwindow.cpp" line="1397"/>
         <source>No password selected for OTP generation</source>
         <translation>Nav paroles izvēlēts OTP generācijai</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1464"/>
+        <location filename="../src/mainwindow.cpp" line="1532"/>
         <source>Profile changed to %1</source>
         <translation>Profils mainīts uz %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1622"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Open folder with file manager</source>
         <translation>Atvērt mapi failu pārvaldniekā</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1637"/>
-        <location filename="../src/mainwindow.cpp" line="1735"/>
+        <location filename="../src/mainwindow.cpp" line="1727"/>
+        <location filename="../src/mainwindow.cpp" line="1825"/>
         <source>Rename folder</source>
         <translation>Pārdēvēt mapi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1640"/>
+        <location filename="../src/mainwindow.cpp" line="1730"/>
         <source>Rename password</source>
         <translation>Pārveidot paroli</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1577"/>
+        <location filename="../src/mainwindow.cpp" line="1667"/>
         <source>Share</source>
         <translation>Kopīgot</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="984"/>
+        <location filename="../src/mainwindow.cpp" line="1043"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… vēl atbilstības šajā ierakstā</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="999"/>
+        <location filename="../src/mainwindow.cpp" line="1058"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Rāda pirmo %n atbilstību; meklējiet ko konkrētāku, lai redzētu pārējās.</numerusform>
@@ -2565,95 +2604,95 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1249"/>
+        <location filename="../src/mainwindow.cpp" line="1313"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Vai tiešām vēlaties dzēst %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1320"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Vai tiešām vēlaties dzēst %1 un visu tā saturu?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1269"/>
+        <location filename="../src/mainwindow.cpp" line="1333"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Uzmanību: norādītajā mapē ir neparedzēti faili, pārbaudiet tos pirms turpināt.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1587"/>
+        <location filename="../src/mainwindow.cpp" line="1677"/>
         <source>Re-encrypt all passwords</source>
         <translation>Pāršifrēt visas paroles</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1592"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Export my public key...</source>
         <translation>Eksportēt manu publisko atslēgu...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1596"/>
+        <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Add recipient...</source>
         <translation>Pievienojiet saņēmēju...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1601"/>
+        <location filename="../src/mainwindow.cpp" line="1691"/>
         <source>What is this?</source>
         <translation>Kāds ir šis?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow.cpp" line="1765"/>
         <source>New folder</source>
         <translation type="unfinished">Jauna mape</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1676"/>
+        <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Jauna mape:
 (Tiks ievietota mapē %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1700"/>
+        <location filename="../src/mainwindow.cpp" line="1790"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Slēpta mape</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1701"/>
+        <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">Mape, kas sākas ar punktu, sarakstā būtu paslēpta: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1774"/>
+        <location filename="../src/mainwindow.cpp" line="1864"/>
         <source>Rename file to: </source>
         <translation>Pārveidot failu uz: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1907"/>
-        <location filename="../src/mainwindow.cpp" line="1926"/>
+        <location filename="../src/mainwindow.cpp" line="2018"/>
+        <location filename="../src/mainwindow.cpp" line="2037"/>
         <source>Export public key</source>
         <translation>Eksportēt publisko atslēgu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1908"/>
+        <location filename="../src/mainwindow.cpp" line="2019"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksportējiet Jūsu Publisko Atslēgu&lt;/h3&gt;&lt;p&gt;Nav konfigurēta parakstīšanas atslēga. Iestatiet to QtPass iestatījumos &amp;gt; GPG atslēgas vai izpildiet šo terminālī:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsu-atslēgas-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tad nosūtiet failu savai komandai.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1955"/>
+        <location filename="../src/mainwindow.cpp" line="2066"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nav glabātuves mape</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1956"/>
+        <location filename="../src/mainwindow.cpp" line="2067"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ir simboliska saite vai savienojuma punkts, vai arī atrodas aiz tādas saites. Tas, uz ko tā norāda, nav paroļu glabātuves daļa un tiks atstāts neskarts.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1964"/>
+        <location filename="../src/mainwindow.cpp" line="2075"/>
         <source>Sharing passwords with GPG</source>
         <translation>Paroļu kopīgums ar GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1965"/>
+        <location filename="../src/mainwindow.cpp" line="2076"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Paroļu kopīgošana ar GPG&lt;/h3&gt;&lt;p&gt;Lai kopīgotu paroles ar citiem lietotājiem:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportējiet savu publisko atslēgu&lt;/b&gt; un nosūtiet to komandas biedriem&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importējiet komandas biedru publiskās atslēgas&lt;/b&gt; savā GPG atslēgu saišķī&lt;/li&gt;&lt;li&gt;&lt;b&gt;Pāršifrējiet paroles&lt;/b&gt;, lai visi saņēmēji varētu tās atšifrēt&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Paroles var atšifrēt tikai tie, kuriem ir atbilstoša slepenā atslēga.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Padoms:&lt;/b&gt; Izmantojiet vienu un to pašu GPG atslēgu visām koplietotajām mapēm.&lt;/p&gt;&lt;p&gt;Plašāku informāciju skatiet BUJ.&lt;/p&gt;</translation>
     </message>
@@ -2664,29 +2703,29 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
 (Tiks ievietota mapē %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1708"/>
-        <location filename="../src/mainwindow.cpp" line="1723"/>
-        <location filename="../src/mainwindow.cpp" line="1826"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
+        <location filename="../src/mainwindow.cpp" line="1813"/>
+        <location filename="../src/mainwindow.cpp" line="1937"/>
         <source>Error</source>
         <translation>Kļūda</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1709"/>
+        <location filename="../src/mainwindow.cpp" line="1799"/>
         <source>Failed to create folder: %1</source>
         <translation>Neizdevās izveidot mapi: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1724"/>
+        <location filename="../src/mainwindow.cpp" line="1814"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Neizdevās izveidot .gpg-id failu: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1735"/>
+        <location filename="../src/mainwindow.cpp" line="1825"/>
         <source>Rename folder to: </source>
         <translation>Pārveidot mapi uz: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1774"/>
+        <location filename="../src/mainwindow.cpp" line="1864"/>
         <source>Rename file</source>
         <translation>Pārveidot failu</translation>
     </message>
@@ -2699,23 +2738,23 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Pārveidot failu uz: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1813"/>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Šajā ierakstā ir OTP noslēpums, nevis parole</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1827"/>
+        <location filename="../src/mainwindow.cpp" line="1938"/>
         <source>Directory does not exist: %1</source>
         <translation>Katalogs neeksistē: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1835"/>
-        <location filename="../src/mainwindow.cpp" line="1868"/>
+        <location filename="../src/mainwindow.cpp" line="1946"/>
+        <location filename="../src/mainwindow.cpp" line="1979"/>
         <source>Re-encrypt passwords</source>
         <translation>Atšifrēt paroli</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1836"/>
+        <location filename="../src/mainwindow.cpp" line="1947"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2732,22 +2771,22 @@ Tas var pārrakstīt daudzus failus, un šo darbību nevar viegli atsaukt.
 Turpināt?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1866"/>
+        <location filename="../src/mainwindow.cpp" line="1977"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Notiek paroļu pāršifrēšana...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1867"/>
+        <location filename="../src/mainwindow.cpp" line="1978"/>
         <source>Cancel</source>
         <translation type="unfinished">Atcelt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1875"/>
+        <location filename="../src/mainwindow.cpp" line="1986"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Pāršifrēšana tiek atcelta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1886"/>
+        <location filename="../src/mainwindow.cpp" line="1997"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Notiek paroļu pāršifrēšana: %1 no %2</translation>
     </message>
@@ -2760,7 +2799,7 @@ Turpināt?</translation>
         <translation type="vanished">&lt;h3&gt;Eksportējiet Jūsu Publisko Atslēgu&lt;/h3&gt;&lt;p&gt;Nav konfigurēta parakstīšanas atslēga. Iestatiet to QtPass iestatījumos &amp;gt; GPG atslēgas vai izpildiet šo terminālī:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsu-atslēgas-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tad nosūtiet failu savai komandai.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1927"/>
+        <location filename="../src/mainwindow.cpp" line="2038"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2769,7 +2808,7 @@ Turpināt?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <location filename="../src/mainwindow.cpp" line="2040"/>
         <source>No output from gpg.</source>
         <translation>Nav gpg izvades.</translation>
     </message>
@@ -2882,99 +2921,99 @@ Turpināt?</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="812"/>
+        <location filename="../src/pass.cpp" line="816"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ir simboliska saite vai savienojuma punkts, vai arī atrodas aiz tādas saites. Tas, uz ko tā norāda, nav paroļu glabātuves daļa un tiks atstāts neskarts.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="829"/>
+        <location filename="../src/pass.cpp" line="833"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">%1 neatrodas paroļu glabātuvē. Saņēmēji tiek iestatīti glabātuvei vai tajā esošai mapei.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="848"/>
-        <location filename="../src/pass.cpp" line="851"/>
+        <location filename="../src/pass.cpp" line="852"/>
+        <location filename="../src/pass.cpp" line="855"/>
         <source>rebase</source>
         <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="854"/>
+        <location filename="../src/pass.cpp" line="858"/>
         <source>merge</source>
         <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="857"/>
+        <location filename="../src/pass.cpp" line="861"/>
         <source>cherry-pick</source>
         <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="860"/>
+        <location filename="../src/pass.cpp" line="864"/>
         <source>revert</source>
         <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="867"/>
+        <location filename="../src/pass.cpp" line="871"/>
         <source>cherry-pick or revert</source>
         <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="891"/>
+        <location filename="../src/pass.cpp" line="895"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
         <translation type="unfinished">Paroļu glabātuves Git repozitorijā ir nepabeigta operācija %1. Pabeidziet vai pārtrauciet to ar Git, pirms maināt paroļu glabātuvi, citādi jūsu izmaiņas var tikt zaudētas.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="904"/>
+        <location filename="../src/pass.cpp" line="908"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
         <translation type="unfinished">Paroļu glabātuve tiek atjaunināta (notiek Git saņemšana). Uzgaidiet, līdz tā beigsies, un tad mēģiniet vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="909"/>
+        <location filename="../src/pass.cpp" line="913"/>
         <source>Update in progress</source>
         <translation type="unfinished">Notiek atjaunināšana</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="923"/>
+        <location filename="../src/pass.cpp" line="927"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Nepabeigta Git operācija</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="932"/>
+        <location filename="../src/pass.cpp" line="936"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nav glabātuves daļa</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1027"/>
+        <location filename="../src/pass.cpp" line="1031"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">Saņēmēju sarakstu paaudžu reģistru nevar nolasīt.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1109"/>
+        <location filename="../src/pass.cpp" line="1113"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1 nevar nolasīt kā saņēmēju sarakstu (parastu failu, ne lielāku par %2), tāpēc nekas nav iepriekš atzīmēts. Pārbaudiet to, pirms šeit izvēlaties saņēmējus: OK tā vietā ieraksta jaunu sarakstu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1130"/>
+        <location filename="../src/pass.cpp" line="1134"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Saņēmēju saraksta %1 nav vai tas nav parasts fails, tāpēc nekas nav iepriekš atzīmēts: vecākmapes saraksts netika parakstīts šai mapei. Izvēlieties šīs mapes saņēmējus paši; OK ieraksta un paraksta jaunu sarakstu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1135"/>
+        <location filename="../src/pass.cpp" line="1139"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Nekas nav iepriekš atzīmēts: nevar noteikt, vai %2 tika noņemts.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1150"/>
+        <location filename="../src/pass.cpp" line="1154"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Saņēmēju saraksts %1 neiztur pārbaudi ar parakstīšanas atslēgu, tāpēc nekas nav iepriekš atzīmēts: saglabājot tiktu parakstīts viss, kas tajā ir. Izvēlieties saņēmējus paši; OK ieraksta un paraksta jaunu sarakstu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1074"/>
+        <location filename="../src/pass.cpp" line="1078"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Nekas nav iepriekš atzīmēts: saglabājot tiktu parakstīts viss, kas tajā ir. Izvēlieties saņēmējus paši.</translation>
     </message>
@@ -3142,27 +3181,32 @@ Turpināt?</translation>
         <translation type="unfinished">Nevarēja izveidot mapi %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="741"/>
+        <location filename="../src/passworddialog.cpp" line="751"/>
         <source>Remove field</source>
         <translation type="unfinished">Noņemt lauku</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="441"/>
+        <location filename="../src/passworddialog.cpp" line="447"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Lauks ar nosaukumu %1 jau pastāv.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="527"/>
+        <location filename="../src/passworddialog.cpp" line="533"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI vai base32 noslēpums</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="564"/>
+        <location filename="../src/passworddialog.cpp" line="570"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Nederīgs OTP noslēpums</translation>
     </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="875"/>
+        <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
+        <translation type="unfinished">Šis ieraksts satur baitus, kurus QtPass nevar saglabāt nemainītus, tāpēc to šeit nevar rediģēt.</translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="864"/>
+        <location filename="../src/passworddialog.cpp" line="894"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Šajā ierakstā ir %n rinda, pārāk daudz, lai rediģētu šeit.</numerusform>
@@ -3307,15 +3351,15 @@ Turpināt?</translation>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="95"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="201"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="96"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="207"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="247"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="290"/>
         <source>Password</source>
         <translation type="unfinished">Parole</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="180"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="186"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">Atvērt %1 pārlūkā</translation>
     </message>
@@ -3448,22 +3492,22 @@ Turpināt?</translation>
         <translation type="vanished">Kopēts starpliktuvē</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="169"/>
+        <location filename="../src/qtpass.cpp" line="180"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">Neizdevās palaist qrencode: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="177"/>
+        <location filename="../src/qtpass.cpp" line="188"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode nepabeidza darbu laikā</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="189"/>
+        <location filename="../src/qtpass.cpp" line="200"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode avarēja</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="190"/>
+        <location filename="../src/qtpass.cpp" line="201"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode beidza darbu ar kodu %1</translation>
     </message>
@@ -3471,38 +3515,48 @@ Turpināt?</translation>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="149"/>
+        <location filename="../src/realpass.cpp" line="60"/>
+        <source>Git pull failed: %1</source>
+        <translation type="unfinished">Git saņemšana neizdevās: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="160"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">Pārbauda saņēmēju sarakstus mapē %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="269"/>
+        <location filename="../src/realpass.cpp" line="296"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Nevarēja noņemt saiti %1.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="270"/>
+        <location filename="../src/realpass.cpp" line="297"/>
         <source>Delete failed</source>
         <translation type="unfinished">Dzēšana neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="320"/>
+        <location filename="../src/realpass.cpp" line="347"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">Saite %1 tika noņemta, bet git to nevarēja reģistrēt: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="322"/>
-        <location filename="../src/realpass.cpp" line="372"/>
+        <location filename="../src/realpass.cpp" line="349"/>
+        <location filename="../src/realpass.cpp" line="476"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">Dzēšana nav pabeigta</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="369"/>
+        <location filename="../src/realpass.cpp" line="437"/>
+        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
+        <translation type="unfinished">Saņēmēji tika mainīti, bet dažus ierakstus nevarēja pāršifrēt jaunajiem saņēmējiem: tie joprojām ir šifrēti iepriekšējiem saņēmējiem, kuri tos joprojām var lasīt. Ar Git izmaiņas ir iesūtītas lokāli, bet šoreiz netika nosūtītas; nākamā nosūtīšana tās nosūtīs.</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="473"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">Saite %1 tika noņemta, un git to vairs neizseko, bet iesūtījums neizdevās: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="502"/>
+        <location filename="../src/realpass.cpp" line="606"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">Meklēšanai nepieciešams konfigurēts GPG izpildāmais fails.</translation>
     </message>
@@ -3727,34 +3781,34 @@ Parastajiem ierakstiem ir uzticama šifrēšanas atslēga; atlasiet tos, lai ļa
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1080"/>
+        <location filename="../src/util.cpp" line="1151"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Nevar izveidot pagaidu failu līdzās %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1092"/>
-        <location filename="../src/util.cpp" line="1171"/>
-        <location filename="../src/util.cpp" line="1201"/>
+        <location filename="../src/util.cpp" line="1163"/>
+        <location filename="../src/util.cpp" line="1255"/>
+        <location filename="../src/util.cpp" line="1285"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">Nevar ierakstīt %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1107"/>
+        <location filename="../src/util.cpp" line="1188"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Neizdevās aizstāt %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1112"/>
+        <location filename="../src/util.cpp" line="1193"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 jau eksistē.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1114"/>
+        <location filename="../src/util.cpp" line="1195"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Neizdevās ierakstīt %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1158"/>
+        <location filename="../src/util.cpp" line="1242"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 rakstīšanas laikā tika aizstāts ar citu failu.</translation>
     </message>
@@ -3763,12 +3817,12 @@ Parastajiem ierakstiem ir uzticama šifrēšanas atslēga; atlasiet tos, lai ļa
         <translation type="obsolete">%1 rakstīšanas laikā tika aizstāts ar saiti.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1184"/>
+        <location filename="../src/util.cpp" line="1268"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">Nevar nolasīt %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1194"/>
+        <location filename="../src/util.cpp" line="1278"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">Nevar nolasīt %1: %2</translation>
     </message>
