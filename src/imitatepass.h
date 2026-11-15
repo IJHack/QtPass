@@ -56,6 +56,15 @@ protected:
   auto signGpgIdFile(const QString &gpgIdFile, const QStringList &signingKeys)
       -> bool;
   /**
+   * @brief How a commit message names a file of the store: relative to the
+   * store, without `.gpg` ("work/bank", "work/.gpg-id"), never the local
+   * path, which the shared history would carry to everyone.
+   * @param path Absolute path, normally inside the store.
+   * @return The store-relative name; for a path outside the store, its
+   *         file name alone.
+   */
+  [[nodiscard]] auto commitName(const QString &path) const -> QString;
+  /**
    * @brief Stage and commit .gpg-id (and optionally its signature) in git.
    *
    * Runs git synchronously so that the blocking re-encryption that follows

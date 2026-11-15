@@ -6,6 +6,7 @@
 #include <QDirIterator>
 #include <QElapsedTimer>
 #include <QFile>
+#include <QFileInfo>
 #include <QPointer>
 #include <QRegularExpression>
 #include <QSaveFile>
@@ -72,8 +73,30 @@ auto ImitatePass::translatePathForWsl(const QString &path,
       QStringLiteral("wsl"),
       Executor::wslExecArgs(QStringLiteral("wslpath"), {normalizedPath}),
       &wslPath);
-  const QString translated = wslPath.trimmed();
+  // Only the line end wslpath prints: white space at the end of the path is
+  // the name's own ("team " beside "team", a folder named " "), and trimmed
+  // it made git remove or move the neighbour, or the whole store.
+  QString translated = wslPath;
+  if (translated.endsWith(QLatin1Char('\n'))) {
+    translated.chop(1);
+  }
+  if (translated.endsWith(QLatin1Char('\r'))) {
+    translated.chop(1);
+  }
   return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
+}
+
+auto ImitatePass::commitName(const QString &path) const -> QString {
+  QString name = QDir(m_settings.passStore).relativeFilePath(path);
+  // Not under the store as spelled (a copy from elsewhere, the store's
+  // other spelling through a link, another drive): "../.." or an absolute
+  // path would carry the local layout too, so the file name alone.
+  if (name == QLatin1String("..") || name.startsWith(QLatin1String("../")) ||
+      QDir::isAbsolutePath(name)) {
+    name = QFileInfo(path).fileName();
+  }
+  name.replace(Util::endsWithGpg(), "");
+  return name;
 }
 
 auto ImitatePass::pgit(const QString &path) const -> QString {
@@ -412,10 +435,8 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
       return rc;
     }
   }
-  QString commitPath = gpgIdFile;
-  commitPath.replace(Util::endsWithGpg(), "");
-  rc = run({"commit", "-m", "Added " + commitPath + " using QtPass.", "--",
-            pgit(gpgIdFile)});
+  rc = run({"commit", "-m", "Added " + commitName(gpgIdFile) + " using QtPass.",
+            "--", pgit(gpgIdFile)});
   if (rc != 0 || !addSigFile) {
     return rc;
   }
@@ -423,9 +444,8 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
   if (rc != 0) {
     return rc;
   }
-  commitPath = gpgIdSigFile;
-  commitPath.replace(QRegularExpression("\\.gpg$"), "");
-  return run({"commit", "-m", "Added " + commitPath + " using QtPass.", "--",
+  return run({"commit", "-m",
+              "Added " + commitName(gpgIdSigFile) + " using QtPass.", "--",
               pgit(gpgIdSigFile)});
 }
 
@@ -828,6 +848,35 @@ void ImitatePass::reencryptPath(const QString &dir) {
     return;
   }
 
+  // A folder the walk cannot read looks empty to QDirIterator: its entries
+  // kept the old recipients, a key just removed among them, while the run
+  // reported success and pushed. Each is a failure, named, and nothing is
+  // pushed.
+  QStringList unreadable;
+  const auto checkReadable = [&unreadable](const QString &folder) {
+    const QFileInfo info(folder);
+#ifdef Q_OS_WIN
+#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+    // Qt answers from the attributes alone unless told to read the ACL.
+    QNtfsPermissionCheckGuard aclCheck;
+#endif
+    const bool listable = info.isReadable();
+#else
+    // Read to list it, search to see what it holds.
+    const bool listable = info.isReadable() && info.isExecutable();
+#endif
+    if (!listable) {
+      unreadable << folder;
+    }
+  };
+  checkReadable(dir);
+  QDirIterator folders(dir,
+                       QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks,
+                       QDirIterator::Subdirectories);
+  while (folders.hasNext()) {
+    checkReadable(folders.next());
+  }
+
   QDir currentDir;
   QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files,
                         QDirIterator::Subdirectories);
@@ -835,6 +884,11 @@ void ImitatePass::reencryptPath(const QString &dir) {
   QStringList gpgId;
   int successCount = 0;
   int failCount = 0;
+  for (const QString &folder : std::as_const(unreadable)) {
+    failCount++;
+    emit critical(tr("Re-encryption failed"),
+                  tr("Failed to re-encrypt %1").arg(folder));
+  }
   while (gpgFiles.hasNext()) {
     QString fileName = gpgFiles.next();
     if (gpgFiles.fileInfo().path() != currentDir.path()) {
@@ -873,7 +927,9 @@ void ImitatePass::reencryptPath(const QString &dir) {
         3000);
   }
 
-  if (m_settings.autoPush && gitConfigured()) {
+  // Not after a failure: the remote would get a store whose entries are
+  // still readable by a recipient just removed.
+  if (m_settings.autoPush && gitConfigured() && failCount == 0) {
     emit statusMsg(tr("Updating password-store"), 2000);
     GitPush();
   }
@@ -963,13 +1019,8 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
   args << pgit(destFile);
   executeGit(GIT_MOVE, args);
 
-  QString relSrc = QDir(m_settings.passStore).relativeFilePath(src);
-  relSrc.replace(Util::endsWithGpg(), "");
-  QString relDest = QDir(m_settings.passStore).relativeFilePath(destFile);
-  relDest.replace(Util::endsWithGpg(), "");
-  QString message = QString("Moved for %1 to %2 using QtPass.");
-  message = message.arg(relSrc, relDest);
-  gitCommit("", message);
+  gitCommit("", QString("Moved for %1 to %2 using QtPass.")
+                    .arg(commitName(src), commitName(destFile)));
 }
 
 /**
@@ -1125,9 +1176,8 @@ void ImitatePass::Copy(const QString src, const QString dest,
   destFileInfo.refresh();
   if (gitReady()) {
     executeGit(GIT_COPY, {"add", pgit(destFile)});
-    QString message = QString("Copied from %1 to %2 using QtPass.");
-    message = message.arg(src, destFile);
-    gitCommit("", message);
+    gitCommit("", QString("Copied from %1 to %2 using QtPass.")
+                      .arg(commitName(src), commitName(destFile)));
   }
   // reecrypt all files under the new folder
   if (destFileInfo.isDir()) {

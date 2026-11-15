@@ -272,6 +272,8 @@ private Q_SLOTS:
   void grepMatchFileFailedDecryptReturnsEmpty();
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepImitatePassEmptyStoreEmitsEmpty();
+  void wslPathKeepsWhitespaceEndingTheName();
+  void reencryptFailsForAFolderItCannotRead();
   void grepImitatePassInvalidRegexEmitsEmpty();
   // SSH_AUTH_SOCK auto-probe (issue #543)
   void sshAuthSockOverrideRoundtrip();
@@ -2510,6 +2512,83 @@ void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
   QVERIFY(results.isEmpty());
 }
 
+/**
+ * @brief A folder re-encryption cannot read fails the run, named: it looked
+ *        empty, and the run reported "Re-encryption completed" (and pushed)
+ *        with its entries still encrypted to the old recipients.
+ */
+void tst_util::reencryptFailsForAFolderItCannotRead() {
+#ifdef Q_OS_WIN
+  QSKIP("relies on Unix directory permissions");
+#else
+  if (::geteuid() == 0)
+    QSKIP("root reads anywhere");
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QDir store(tmp.path());
+  QVERIFY(store.mkpath(QStringLiteral("finance")));
+  {
+    QFile id(store.filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(id.open(QIODevice::WriteOnly));
+    id.write("0123456789ABCDEF\n");
+    QFile entry(store.filePath(QStringLiteral("finance/bank.gpg")));
+    QVERIFY(entry.open(QIODevice::WriteOnly));
+    entry.write("x");
+  }
+  const QString finance = store.filePath(QStringLiteral("finance"));
+  QVERIFY(QFile::setPermissions(finance, QFile::WriteOwner | QFile::ExeOwner));
+  const auto restore = qScopeGuard([&finance] {
+    QFile::setPermissions(finance, QFile::ReadOwner | QFile::WriteOwner |
+                                       QFile::ExeOwner);
+  });
+  TestPass pass;
+  AppSettings s;
+  s.passStore = tmp.path();
+  s.useGit = false;
+  pass.init(s);
+  QSignalSpy critical(&pass, &Pass::critical);
+  pass.reencryptPath(tmp.path());
+  QVERIFY2(std::any_of(critical.cbegin(), critical.cend(),
+                       [&finance](const QList<QVariant> &args) {
+                         return args.at(1).toString().contains(finance);
+                       }),
+           "the unreadable folder must be reported");
+#endif
+}
+
+/**
+ * @brief White space ending a name is the name's: only wslpath's line end is
+ *        dropped. Trimmed, "team " became its neighbour "team" and " " the
+ *        store itself for git run through WSL.
+ */
+void tst_util::wslPathKeepsWhitespaceEndingTheName() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the wsl stand-in");
+#else
+  QTemporaryDir bin;
+  QVERIFY(bin.isValid());
+  {
+    QFile script(bin.filePath(QStringLiteral("wsl")));
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write("#!/bin/sh\nfor last; do :; done\nprintf '%s\\n' \"$last\"\n");
+    script.close();
+    QVERIFY(script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                                  QFile::ExeOwner));
+  }
+  const QByteArray oldPath = qgetenv("PATH");
+  qputenv("PATH",
+          (bin.path() + ':' + QString::fromLocal8Bit(oldPath)).toLocal8Bit());
+  const auto restore = qScopeGuard([&oldPath] { qputenv("PATH", oldPath); });
+  TestPass pass;
+  for (const QString &name :
+       {QStringLiteral("team "), QStringLiteral("team\u00a0"),
+        QStringLiteral(" ")}) {
+    const QString path = QStringLiteral("/store/") + name;
+    QCOMPARE(pass.translatePathForWsl(path, QStringLiteral("wsl git")), path);
+  }
+#endif
+}
+
 void tst_util::grepImitatePassEmptyStoreEmitsEmpty() {
   QTemporaryDir tmp;
   QVERIFY(tmp.isValid());
@@ -3408,10 +3487,9 @@ void tst_util::initStagesUntrackedGpgId() {
   const QStringList subjects = log.split('\n', Qt::SkipEmptyParts);
   QCOMPARE(subjects.size(), 2);
   QCOMPARE(subjects.last(), QStringLiteral("initial"));
-  QVERIFY2(subjects.first().startsWith(QStringLiteral("Added ")) &&
-               subjects.first().endsWith(
-                   QStringLiteral("work/.gpg-id using QtPass.")),
-           qPrintable(subjects.first()));
+  // Relative to the store: the local path would be pushed with the commit.
+  QCOMPARE(subjects.first(),
+           QStringLiteral("Added work/.gpg-id using QtPass."));
 
   QString committed;
   QVERIFY(runGit(gitExe, tmp.path(),

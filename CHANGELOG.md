@@ -102,6 +102,27 @@
   line above was saved as an empty first line, so Ctrl+C copied nothing and
   the password showed among the notes
   ([#2165](https://github.com/IJHack/QtPass/pull/2165))
+- With the native backend and Git, the commit for a changed recipient list
+  names `.gpg-id` relative to the store ("Added work/.gpg-id using
+  QtPass."), as the other commits name their entry. It gave the local path,
+  so the account name and folder layout went into the shared history with
+  the push; a copied entry's commit too (ported from
+  [#2196](https://github.com/IJHack/QtPass/pull/2196))
+- Re-encrypting with the native backend fails, naming the folder, when a
+  folder in the store cannot be read. It looked empty, so its entries kept
+  their old recipients, a key just removed among them, while QtPass
+  reported "Re-encryption completed"; and a run with failures no longer
+  pushes, also with automatic pushing on (ported from
+  [#2201](https://github.com/IJHack/QtPass/pull/2201))
+- With Git run through WSL (`wsl git`), deleting or renaming a folder whose
+  name ends in whitespace acts on that folder. The path from `wslpath` was
+  trimmed, so "team" followed by a space became its neighbour `team`, and a
+  folder named with a single blank became the whole store (ported from
+  [#2204](https://github.com/IJHack/QtPass/pull/2204))
+- A content search still running when Settings change the store or the
+  backend no longer lists its matches for the store now open: accepting
+  Settings cancels it, and matches the other backend reports are dropped
+  (ported from [#2205](https://github.com/IJHack/QtPass/pull/2205))
 
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 
