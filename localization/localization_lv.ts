@@ -757,7 +757,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profila vārds nedrīkst saturēt / vai \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1504,12 +1504,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nevarēja pilnībā noņemt %1. Tas, ko varēja noņemt, ir noņemts; pārbaudiet, kas tajā ir palicis.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nevarēja noņemt %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1658,7 +1658,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapi %1 nevarēja nolasīt: tās ieraksti netika pāršifrēti</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1747,12 +1747,12 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pārvietošana neizdevās</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nevarēja pārvietot %1 uz %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2042,7 +2042,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parole nedrīkst sākties vai beigties ar atstarpi vai tabulāciju.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3203,7 +3203,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Šis ieraksts satur baitus, kurus QtPass nevar saglabāt nemainītus, tāpēc to šeit nevar rediģēt.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3548,7 +3548,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saņēmēji tika mainīti, bet dažus ierakstus nevarēja pāršifrēt jaunajiem saņēmējiem: tie joprojām ir šifrēti iepriekšējiem saņēmējiem, kuri tos joprojām var lasīt. Ar Git izmaiņas ir iesūtītas lokāli, bet šoreiz netika nosūtītas; nākamā nosūtīšana tās nosūtīs.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

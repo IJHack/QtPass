@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Il nome di un profilo non può contenere / o \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1438,12 +1438,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossibile rimuovere completamente %1. Ciò che si poteva rimuovere è stato rimosso; controlla cosa vi è rimasto.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossibile rimuovere %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1702,7 +1702,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossibile leggere %1: le sue voci non sono state ricifrate</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1788,12 +1788,12 @@ La ricifratura non è stata completata, quindi alcune o tutte le voci sono ancor
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spostamento fallito</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossibile spostare %1 in %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2146,7 +2146,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La frase segreta non può iniziare o terminare con uno spazio o una tabulazione.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3476,7 +3476,7 @@ Continuare?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Questa voce contiene byte che QtPass non può salvare senza modificarli, quindi non può essere modificata qui.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3819,7 +3819,7 @@ Continuare?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I destinatari sono stati modificati, ma non è stato possibile ricifrare per loro alcune voci: queste restano cifrate per i destinatari precedenti, che possono ancora leggerle. Con Git la modifica è stata sottoposta a commit in locale ma non a push per ora; il prossimo push la invierà.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

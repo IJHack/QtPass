@@ -703,7 +703,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Името на профил не може да съдържа / или \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1437,12 +1437,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не можа да се премахне цялото съдържание на %1. Каквото можеше да бъде премахнато, вече го няма; проверете какво е останало в папката.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не може да се премахне %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1701,7 +1701,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Папката %1 не можа да бъде прочетена: записите в нея не бяха повторно криптирани</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1787,12 +1787,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Преместването не бе успешно</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не може да се премести %1 в %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2081,7 +2081,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Фразата за достъп не може да започва или завършва с интервал или табулация.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3405,7 +3405,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Този запис съдържа байтове, които QtPass не може да запази непроменени, затова не може да бъде редактиран тук.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3748,7 +3748,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Получателите бяха променени, но някои записи не можаха да бъдат повторно криптирани за тях: те все още са криптирани за предишните получатели, които все още могат да ги четат. С Git промяната е записана в локален къмит и сега не беше изпратена с push; следващият push ще я изпрати.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

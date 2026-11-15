@@ -703,7 +703,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profiili nimi ei tohi sisaldada märke / ega \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1437,12 +1437,12 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kogu %1 sisu ei õnnestunud eemaldada. Mida sai eemaldada, on kadunud; vaata, mis sinna alles jäi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ei õnnestunud eemaldada: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1701,7 +1701,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kausta %1 ei õnnestunud lugeda: selle kirjeid ei krüptitud uuesti</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1787,12 +1787,12 @@ Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endi
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Teisaldamine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ei õnnestunud teisaldada asukohta %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2145,7 +2145,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Salafraas ei tohi alata ega lõppeda tühiku või tabeldusmärgiga.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3469,7 +3469,7 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">See kirje sisaldab baite, mida QtPass ei saa muutmata kujul salvestada, seega ei saa seda siin muuta.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3812,7 +3812,7 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saajaid muudeti, kuid osa kirjeid ei õnnestunud neile uuesti krüptida: need on endiselt krüptitud eelmistele saajatele, kes saavad neid ikka lugeda. Giti puhul kanti muudatus kohalikult sisse, kuid seda ei lükatud praegu üles; järgmine üleslükkamine saadab selle.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

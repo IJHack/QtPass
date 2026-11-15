@@ -686,7 +686,7 @@ email</source>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">配置文件名称不能包含 / 或 \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1440,12 +1440,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法完全删除 %1。能删除的部分已删除；请检查其中还剩下什么。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法删除 %1：%2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1704,7 +1704,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法读取 %1：其中的条目未重新加密</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1787,12 +1787,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">移动失败</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法将 %1 移动到 %2。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2144,7 +2144,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">口令不能以空格或制表符开头或结尾。</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3431,7 +3431,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此条目包含 QtPass 无法原样保存的字节，因此不能在此编辑。</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3772,7 +3772,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">接收者已更改，但部分条目无法为其重新加密：这些条目仍为之前的接收者加密，他们仍然可以读取。使用 Git 时，此更改已在本地提交，但此次未推送；下次推送时会将其发送。</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

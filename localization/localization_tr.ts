@@ -756,7 +756,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profil adı / veya \ içeremez</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1396,12 +1396,12 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 tamamen kaldırılamadı. Kaldırılabilenler kaldırıldı; içinde nelerin kaldığını kontrol edin.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 kaldırılamadı: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1660,7 +1660,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 okunamadı: içindeki girdiler yeniden şifrelenmedi</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1743,12 +1743,12 @@ Yeniden şifreleme tamamlanmadı, bu nedenle girdilerin bir kısmı ya da tümü
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Taşıma başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1, %2 konumuna taşınamadı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2100,7 +2100,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parola boşluk veya sekme karakteriyle başlayamaz ya da bitemez.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3289,7 +3289,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu girdi, QtPass&apos;in değiştirmeden kaydedemeyeceği baytlar içeriyor; bu yüzden burada düzenlenemez.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3630,7 +3630,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alıcılar değiştirildi, ancak bazı girdiler onlar için yeniden şifrelenemedi: bunlar hâlâ önceki alıcılar için şifreli ve bu alıcılar onları hâlâ okuyabilir. Git ile değişiklik yerel olarak commit edildi ve şimdi gönderilmedi (push); bir sonraki push onu gönderecek.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

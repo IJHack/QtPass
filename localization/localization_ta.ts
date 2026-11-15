@@ -703,7 +703,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரப் பெயரில் / அல்லது \ இருக்கக்கூடாது</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1437,12 +1437,12 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 இல் உள்ள அனைத்தையும் நீக்க முடியவில்லை. நீக்க முடிந்தவை நீக்கப்பட்டன; அதில் என்ன மீதமுள்ளது என்பதைச் சரிபார்க்கவும்.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ஐ நீக்க முடியவில்லை: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1701,7 +1701,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ஐப் படிக்க முடியவில்லை: அதன் பதிவுகள் மீண்டும் குறியாக்கம் செய்யப்படவில்லை</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1787,12 +1787,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நகர்த்துதல் தோல்வியடைந்தது</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ஐ %2 க்கு நகர்த்த முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2145,7 +2145,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொற்றொடர் இடைவெளி அல்லது தாவலுடன் தொடங்கவோ முடியவோ கூடாது.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3465,7 +3465,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தப் பதிவில் QtPass மாற்றமின்றிச் சேமிக்க முடியாத பைட்டுகள் உள்ளன, எனவே இதை இங்கே திருத்த முடியாது.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3808,7 +3808,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பெறுநர்கள் மாற்றப்பட்டனர், ஆனால் சில பதிவுகளை அவர்களுக்காக மீண்டும் குறியாக்கம் செய்ய முடியவில்லை: அவை இன்னும் முந்தைய பெறுநர்களுக்குக் குறியாக்கம் செய்யப்பட்டுள்ளன, அவர்களால் இன்னும் அவற்றைப் படிக்க முடியும். Git உடன், மாற்றம் உள்ளூரில் கமிட் செய்யப்பட்டுள்ளது, இப்போது புஷ் செய்யப்படவில்லை; அடுத்த புஷ் அதை அனுப்பும்.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

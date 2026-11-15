@@ -703,7 +703,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&apos;n Profielnaam mag nie / of \ bevat nie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1437,12 +1437,12 @@ e-pos</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kon nie alles in %1 verwyder nie. Wat verwyder kon word, is weg; kyk wat daarin oorbly.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kon nie %1 verwyder nie: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1701,7 +1701,7 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 kon nie gelees word nie: sy inskrywings is nie herenkripteer nie</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1787,12 +1787,12 @@ Die herenkripsie is nie voltooi nie, dus is sommige of alle inskrywings nog na d
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skuif het misluk</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kon nie %1 na %2 skuif nie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2113,7 +2113,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die wagwoordfrase mag nie met &apos;n spasie of &apos;n oortjie begin of eindig nie.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3444,7 +3444,7 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hierdie inskrywing bevat grepe wat QtPass nie onveranderd kan stoor nie, dus kan dit nie hier gewysig word nie.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3787,7 +3787,7 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die ontvangers is verander, maar sommige inskrywings kon nie vir hulle herenkripteer word nie: dié is nog na die vorige ontvangers geënkripteer, wat hulle steeds kan lees. Met Git is die verandering plaaslik gecommit en nie nou gepush nie; die volgende push stuur dit.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

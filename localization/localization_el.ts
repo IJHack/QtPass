@@ -695,7 +695,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ένα όνομα προφίλ δεν μπορεί να περιέχει / ή \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1397,12 +1397,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση όλου του περιεχομένου του %1. Ό,τι μπορούσε να αφαιρεθεί έχει αφαιρεθεί· ελέγξτε τι έχει απομείνει σε αυτό.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση του %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1661,7 +1661,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η ανάγνωση του %1: οι καταχωρίσεις του δεν επανακρυπτογραφήθηκαν</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1747,12 +1747,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η μετακίνηση απέτυχε</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η μετακίνηση του %1 στο %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2073,7 +2073,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η κωδική φράση δεν μπορεί να αρχίζει ή να τελειώνει με κενό διάστημα ή στηλοθέτη.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3258,7 +3258,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτή η καταχώριση περιέχει δεδομένα που το QtPass δεν μπορεί να αποθηκεύσει αμετάβλητα, επομένως δεν μπορεί να επεξεργαστεί εδώ.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3601,7 +3601,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι παραλήπτες άλλαξαν, αλλά ορισμένες καταχωρίσεις δεν ήταν δυνατό να επανακρυπτογραφηθούν για αυτούς: αυτές είναι ακόμα κρυπτογραφημένες για τους προηγούμενους παραλήπτες, οι οποίοι μπορούν ακόμα να τις διαβάσουν. Με το Git, η αλλαγή υποβλήθηκε τοπικά και δεν προωθήθηκε τώρα· η επόμενη προώθηση (push) θα τη στείλει.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

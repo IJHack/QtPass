@@ -703,7 +703,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Naziv profila ne može da sadrži / ili \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1438,12 +1438,12 @@ e-pošta</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nije moguće ukloniti celokupan sadržaj %1. Ono što je moglo da se ukloni je uklonjeno; proverite šta je u njoj ostalo.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nije moguće ukloniti %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1702,7 +1702,7 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nije moguće pročitati: njeni unosi nisu ponovo šifrovani</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1791,12 +1791,12 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Premeštanje nije uspelo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nije moguće premestiti %1 u %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2118,7 +2118,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lozinka ne sme da počinje niti da se završava razmakom ili tabulatorom.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3441,7 +3441,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ovaj unos sadrži bajtove koje QtPass ne može da sačuva nepromenjene, pa ga ovde nije moguće uređivati.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3786,7 +3786,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Primaoci su promenjeni, ali neke unose nije bilo moguće ponovo šifrovati za njih: oni su i dalje šifrovani za prethodne primaoce, koji i dalje mogu da ih čitaju. Uz Git, promena je lokalno komitovana i sada nije poslata (push); poslaće je sledeći push.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

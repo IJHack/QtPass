@@ -753,7 +753,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ชื่อโปรไฟล์ต้องไม่มี / หรือ \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1498,12 +1498,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ไม่สามารถลบทุกอย่างใน %1 ได้ ส่วนที่ลบได้ถูกลบไปแล้ว โปรดตรวจสอบสิ่งที่ยังเหลืออยู่ในนั้น</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ไม่สามารถลบ %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1652,7 +1652,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ไม่สามารถอ่าน %1: รายการในนั้นไม่ได้ถูกเข้ารหัสใหม่</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1735,12 +1735,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ย้ายไม่สำเร็จ</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ไม่สามารถย้าย %1 ไปยัง %2 ได้</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2028,7 +2028,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">วลีรหัสผ่านต้องไม่ขึ้นต้นหรือลงท้ายด้วยช่องว่างหรือแท็บ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3195,7 +3195,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รายการนี้มีไบต์ที่ QtPass ไม่สามารถบันทึกโดยไม่เปลี่ยนแปลงได้ จึงไม่สามารถแก้ไขที่นี่ได้</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3536,7 +3536,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ผู้รับถูกเปลี่ยนแล้ว แต่บางรายการไม่สามารถเข้ารหัสใหม่ให้กับผู้รับเหล่านั้นได้ รายการเหล่านั้นยังคงเข้ารหัสไว้ให้กับผู้รับเดิม ซึ่งยังคงอ่านได้ เมื่อใช้ Git การเปลี่ยนแปลงจะถูกคอมมิตไว้ในเครื่องและยังไม่ได้ push ในตอนนี้ การ push ครั้งถัดไปจะส่งการเปลี่ยนแปลงนี้</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

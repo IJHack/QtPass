@@ -378,7 +378,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Název profilu nesmí obsahovat / ani \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1434,12 +1434,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Obsah %1 se nepodařilo odstranit celý. Co šlo odstranit, je pryč; zkontrolujte, co v něm zůstalo.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepodařilo se odstranit %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1698,7 +1698,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Složku %1 se nepodařilo přečíst: její položky nebyly znovu zašifrovány</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1787,12 +1787,12 @@ Opětovné šifrování nebylo dokončeno, takže některé nebo všechny polož
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Přesun se nezdařil</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepodařilo se přesunout %1 do %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2124,7 +2124,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bezpečnostní heslo nesmí začínat ani končit mezerou nebo tabulátorem.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="217"/>
@@ -3405,7 +3405,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tato položka obsahuje bajty, které QtPass nedokáže uložit beze změny, proto ji zde nelze upravit.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3750,7 +3750,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Příjemci byli změněni, ale některé položky se pro ně nepodařilo znovu zašifrovat: ty jsou stále zašifrovány pro předchozí příjemce, kteří je stále mohou číst. Při použití Gitu byla změna commitnuta lokálně a teď nebyla odeslána; odešle ji příští odeslání (push).</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

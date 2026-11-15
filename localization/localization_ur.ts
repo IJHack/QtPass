@@ -757,7 +757,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پروفائل کے نام میں / یا \ نہیں ہو سکتے</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1503,12 +1503,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 کا سب کچھ نہیں ہٹایا جا سکا۔ جو ہٹایا جا سکتا تھا وہ ہٹا دیا گیا ہے؛ دیکھیں کہ اس میں کیا باقی رہ گیا ہے۔</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 نہیں ہٹایا جا سکا: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1657,7 +1657,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 کو پڑھا نہیں جا سکا: اس کے اندراجات دوبارہ خفیہ نہیں کیے گئے</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1743,12 +1743,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">منتقلی ناکام ہو گئی</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 کو %2 میں منتقل نہیں کیا جا سکا۔</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2037,7 +2037,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پاس فریز اسپیس یا ٹیب سے شروع یا ختم نہیں ہو سکتا۔</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3207,7 +3207,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اس اندراج میں ایسے بائٹس ہیں جنہیں QtPass بغیر تبدیلی کے محفوظ نہیں کر سکتا، اس لیے اس میں یہاں ترمیم نہیں کی جا سکتی۔</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3550,7 +3550,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">وصول کنندگان تبدیل کر دیے گئے، لیکن کچھ اندراجات کو ان کے لیے دوبارہ خفیہ نہیں کیا جا سکا: وہ اب بھی پچھلے وصول کنندگان کے لیے خفیہ ہیں، جو انہیں اب بھی پڑھ سکتے ہیں۔ Git کے ساتھ تبدیلی مقامی طور پر کمٹ ہو گئی ہے اور ابھی پش نہیں کی گئی؛ اگلا پش اسے بھیج دے گا۔</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

@@ -757,7 +757,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="356"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nama profil tidak boleh mengandung / atau \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="358"/>
@@ -1502,12 +1502,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat menghapus seluruh %1. Apa yang dapat dihapus sudah hilang; periksa apa yang tersisa di dalamnya.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat menghapus %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="377"/>
@@ -1656,7 +1656,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 tidak dapat dibaca: entrinya tidak dienkripsi ulang</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1247"/>
@@ -1739,12 +1739,12 @@ Enkripsi ulang tidak selesai, sehingga sebagian atau semua entri masih dienkrips
     <message>
         <location filename="../src/imitatepass.cpp" line="1572"/>
         <source>Move failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pemindahan gagal</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1573"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat memindahkan %1 ke %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1662"/>
@@ -2032,7 +2032,7 @@ Enkripsi ulang tidak selesai, sehingga sebagian atau semua entri masih dienkrips
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Frasa sandi tidak boleh diawali atau diakhiri dengan spasi atau tab.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -3187,7 +3187,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="875"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Entri ini berisi byte yang tidak dapat disimpan QtPass tanpa perubahan, sehingga tidak dapat diedit di sini.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="894"/>
@@ -3528,7 +3528,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="437"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Penerima telah diubah, tetapi beberapa entri tidak dapat dienkripsi ulang untuk mereka: entri tersebut masih terenkripsi untuk penerima sebelumnya, yang masih dapat membacanya. Dengan Git, perubahan tersebut di-commit secara lokal dan belum di-push sekarang; push berikutnya akan mengirimkannya.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
