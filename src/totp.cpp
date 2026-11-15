@@ -24,6 +24,8 @@
 #include <QtEndian>
 #include <QtGlobal>
 
+#include <algorithm>
+
 namespace {
 
 /// Steam Guard's alphabet: no A, E, I, L, O, S, U, Z, 0 or 1.
@@ -215,7 +217,24 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     // decodable base32 — producing a confidently wrong code. Refuse instead.
     return std::nullopt;
   } else {
-    // Not a URI: treat the whole string as a bare base32 secret.
+    // Not an otpauth URI: a bare base32 secret. Base32::sanitizeInput()
+    // drops what is not base32, so a URI of another scheme (a Google
+    // Authenticator export, otpauth-migration://...?data=..., steam://),
+    // zbarimg output with its "QR-Code:" prefix, or a secret with a remark
+    // in brackets would become a secret made of its leftover letters, with
+    // a confident, wrong code. Only what a secret is written with passes:
+    // letters, the digits sanitizeInput() reads (0, 1 and 8 as O, L and B),
+    // white space, dashes and "=" padding.
+    const bool written =
+        std::all_of(trimmed.cbegin(), trimmed.cend(), [](QChar c) {
+          const char16_t u = c.unicode();
+          return c.isSpace() || u == u'-' || u == u'=' ||
+                 (u >= u'A' && u <= u'Z') || (u >= u'a' && u <= u'z') ||
+                 (u >= u'0' && u <= u'8');
+        });
+    if (!written) {
+      return std::nullopt;
+    }
     rawSecret = trimmed;
   }
 

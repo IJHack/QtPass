@@ -831,6 +831,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   put back from the service's QR code or from Git history. Other spellings
   of the supported ones (`SHA-256`, `HmacSHA256`, `HMACSHA512`) now give
   the right code.
+- A URI of another scheme typed or pasted into the OTP field (a Google
+  Authenticator export, `otpauth-migration://offline?data=…`, a `steam://`
+  value, `zbarimg` output with its `QR-Code:` prefix) is marked as invalid
+  and kept as typed. It was taken for a base32 secret made of its leftover
+  letters: no warning, a running code that was not the account's, and the
+  export saved as that secret, which could not be undone. So is a bare
+  secret with other characters than letters, digits, spaces, dashes and
+  `=` (a remark after it, say), which also gave a wrong code.
 - An entry whose content is not UTF-8 text (a password typed on a Latin-1
   terminal, a key file stored with `pass insert -m`) keeps its bytes. With
   the native backend, re-encrypting a folder (changing its recipients,
