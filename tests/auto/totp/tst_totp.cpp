@@ -255,6 +255,8 @@ void tst_totp::parseRefusesOtherUriSchemes_data() {
   // What a bare secret is written with still passes.
   QTest::newRow("spaced") << QStringLiteral("JBSW Y3DP EHPK 3PXP") << true;
   QTest::newRow("dashed") << QStringLiteral("JBSW-Y3DP-EHPK-3PXP") << true;
+  QTest::newRow("dotted") << QStringLiteral("JBSW.Y3DP.EHPK.3PXP") << true;
+  QTest::newRow("underscored") << QStringLiteral("JBSW_Y3DP_EHPK_3PXP") << true;
   QTest::newRow("padded") << QStringLiteral("JBSWY3DPEHPK3PXP====") << true;
   QTest::newRow("lower case") << QStringLiteral("jbswy3dpehpk3pxp") << true;
   QTest::newRow("tabbed") << QStringLiteral("JBSW\tY3DP EHPK\t3PXP") << true;

@@ -224,13 +224,14 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     // in brackets would become a secret made of its leftover letters, with
     // a confident, wrong code. Only what a secret is written with passes:
     // letters, the digits sanitizeInput() reads (0, 1 and 8 as O, L and B),
-    // white space, dashes and "=" padding.
+    // white space, "=" padding, and dashes, dots or underscores between
+    // groups (JBSW.Y3DP..., as some services show it), which it drops.
     const bool written =
         std::all_of(trimmed.cbegin(), trimmed.cend(), [](QChar c) {
           const char16_t u = c.unicode();
-          return c.isSpace() || u == u'-' || u == u'=' ||
-                 (u >= u'A' && u <= u'Z') || (u >= u'a' && u <= u'z') ||
-                 (u >= u'0' && u <= u'8');
+          return c.isSpace() || u == u'-' || u == u'=' || u == u'.' ||
+                 u == u'_' || (u >= u'A' && u <= u'Z') ||
+                 (u >= u'a' && u <= u'z') || (u >= u'0' && u <= u'8');
         });
     if (!written) {
       return std::nullopt;
