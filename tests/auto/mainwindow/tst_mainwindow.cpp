@@ -95,6 +95,7 @@ private Q_SLOTS:
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilValid();
   void returnInTheSearchBoxEndsThere();
   void returnOnAContentSearchResultOpensIt();
+  void staleContentSearchResultsAreNotListed();
 
 private:
   void rebuildWithGrepSearch();
@@ -1025,6 +1026,54 @@ void tst_mainwindow::returnInTheSearchBoxEndsThere() {
   QTRY_VERIFY_WITH_TIMEOUT(shown.count() + failed.count() >= 1, 10000);
   QTest::qWait(300);
   QCOMPARE(shown.count() + failed.count(), 1);
+}
+
+/**
+ * @brief A content search's matches from the store open before are not
+ *        listed: what the other backend reports (a search it was running when
+ *        Settings switched backends) is dropped, and accepting Settings
+ *        cancels a search still running, so its late matches are dropped too.
+ */
+void tst_mainwindow::staleContentSearchResultsAreNotListed() {
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGrepSearch = false;
+    QtPassSettings::save(s);
+  });
+  rebuildWithGrepSearch();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && results != nullptr);
+  grep->setChecked(true);
+  Pass *current = QtPassSettings::getPass();
+  Pass *other = current == QtPassSettings::getRealPass()
+                    ? static_cast<Pass *>(QtPassSettings::getImitatePass())
+                    : static_cast<Pass *>(QtPassSettings::getRealPass());
+  emit other->finishedGrep(
+      {{QStringLiteral("old-store/bank"), {QStringLiteral("login: mallory")}}});
+  QCoreApplication::processEvents();
+  QVERIFY(!results->isVisible());
+  QCOMPARE(results->topLevelItemCount(), 0);
+
+  // Settings accepted while a first search runs (nothing listed yet).
+  QTimer accept;
+  QObject::connect(&accept, &QTimer::timeout, [] {
+    if (auto *dialog =
+            qobject_cast<ConfigDialog *>(QApplication::activeModalWidget())) {
+      dialog->accept();
+    }
+  });
+  accept.start(50);
+  QVERIFY(m_window->config());
+  accept.stop();
+  emit current->finishedGrep(
+      {{QStringLiteral("old-store/bank"), {QStringLiteral("login: mallory")}}});
+  QCoreApplication::processEvents();
+  QVERIFY(!results->isVisible());
+  QCOMPARE(results->topLevelItemCount(), 0);
+  grep->setChecked(false);
 }
 
 /**
