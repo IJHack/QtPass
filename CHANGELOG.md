@@ -743,7 +743,7 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   so, as qtpass(1) says; at first start it opened nothing, and from a second
   instance it opened whatever entry came first.
 - The text of an entry below its fields is shown, and so selected and
-  copied, with its white space as stored, as `pass show` prints it. Two
+  copied, with its whitespace as stored, as `pass show` prints it. Two
   spaces in a row became one and indentation was dropped
   ([#210](https://github.com/IJHack/QtPass/issues/210), broken again since
   1.4.0), and a tab became a space, so a recovery phrase or an indented
