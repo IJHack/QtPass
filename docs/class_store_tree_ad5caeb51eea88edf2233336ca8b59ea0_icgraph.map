@@ -1,5 +1,7 @@
 <map id="StoreTree::indexFor" name="StoreTree::indexFor">
-<area shape="rect" id="Node000001" title="The view index for an absolute path, or invalid when the file system model does not (yet) know it." alt="" coords="266,14,412,42"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#a7cb8cceb6798c42b16f050462c37650f" title="A content&#45;search result was clicked: select the entry in the tree, show it, and go back to the tree (..." alt="" coords="5,5,218,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,28,218,30,218,25,253,28"/>
+<area shape="rect" id="Node000001" title="The view index for an absolute path, or invalid when the file system model does not (yet) know it." alt="" coords="521,14,667,42"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a7cb8cceb6798c42b16f050462c37650f" title="A content&#45;search result was clicked: select the entry in the tree, show it, and go back to the tree (..." alt="" coords="261,5,473,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,28,474,30,473,25,508,28"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="5,14,213,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,28,213,30,213,25,248,27"/>
 </map>

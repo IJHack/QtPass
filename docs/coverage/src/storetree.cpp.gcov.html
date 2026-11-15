@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 09:18:39</td>
+            <td class="headerValue">2026-11-15 10:01:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">91.7&nbsp;%</td>
@@ -84,46 +84,46 @@
 <span id="L11"><span class="lineNum">      11</span>              : #include &lt;QHeaderView&gt;</span>
 <span id="L12"><span class="lineNum">      12</span>              : #include &lt;QTreeView&gt;</span>
 <span id="L13"><span class="lineNum">      13</span>              : </span>
-<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">         155 : StoreTree::StoreTree(QTreeView *view, QObject *parent)</span></span>
-<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">         155 :     : QObject(parent), m_view(view) {</span></span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         310 :   m_fs.setNameFilters(QStringList() &lt;&lt; QStringLiteral(&quot;*.gpg&quot;));</span></span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         155 :   m_fs.setNameFilterDisables(false);</span></span>
+<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">         159 : StoreTree::StoreTree(QTreeView *view, QObject *parent)</span></span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">         159 :     : QObject(parent), m_view(view) {</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         318 :   m_fs.setNameFilters(QStringList() &lt;&lt; QStringLiteral(&quot;*.gpg&quot;));</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         159 :   m_fs.setNameFilterDisables(false);</span></span>
 <span id="L18"><span class="lineNum">      18</span>              : </span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         155 :   m_view-&gt;setModel(&amp;m_proxy);</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         155 :   m_view-&gt;setHeaderHidden(true);</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         155 :   m_view-&gt;setIndentation(15);</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         155 :   m_view-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         155 :   m_view-&gt;setContextMenuPolicy(Qt::CustomContextMenu);</span></span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         155 : }</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         159 :   m_view-&gt;setModel(&amp;m_proxy);</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         159 :   m_view-&gt;setHeaderHidden(true);</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         159 :   m_view-&gt;setIndentation(15);</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         159 :   m_view-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         159 :   m_view-&gt;setContextMenuPolicy(Qt::CustomContextMenu);</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         159 : }</span></span>
 <span id="L25"><span class="lineNum">      25</span>              : </span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         165 : void StoreTree::setStore(const QString &amp;path) {</span></span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         165 :   m_store = path;</span></span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         165 :   const QModelIndex rootDir = m_fs.setRootPath(path);</span></span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         165 :   m_fs.fetchMore(rootDir);</span></span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         165 :   if (m_proxy.sourceModel() == nullptr) {</span></span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         155 :     m_proxy.setModelAndStore(&amp;m_fs, path);</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         169 : void StoreTree::setStore(const QString &amp;path) {</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         169 :   m_store = path;</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         169 :   const QModelIndex rootDir = m_fs.setRootPath(path);</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         169 :   m_fs.fetchMore(rootDir);</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         169 :   if (m_proxy.sourceModel() == nullptr) {</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         159 :     m_proxy.setModelAndStore(&amp;m_fs, path);</span></span>
 <span id="L32"><span class="lineNum">      32</span>              :     // Columns exist only once a source model is attached: hiding the size,</span>
 <span id="L33"><span class="lineNum">      33</span>              :     // type and date ones is a no-op before that point, and addressing header</span>
 <span id="L34"><span class="lineNum">      34</span>              :     // section 0 without any sections crashes on Qt 6.8.</span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         155 :     m_view-&gt;setColumnHidden(1, true);</span></span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">         155 :     m_view-&gt;setColumnHidden(2, true);</span></span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">         155 :     m_view-&gt;setColumnHidden(3, true);</span></span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         155 :     m_view-&gt;header()-&gt;setSectionResizeMode(0, QHeaderView::Stretch);</span></span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">         155 :     m_view-&gt;sortByColumn(0, Qt::AscendingOrder);</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         159 :     m_view-&gt;setColumnHidden(1, true);</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">         159 :     m_view-&gt;setColumnHidden(2, true);</span></span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">         159 :     m_view-&gt;setColumnHidden(3, true);</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         159 :     m_view-&gt;header()-&gt;setSectionResizeMode(0, QHeaderView::Stretch);</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">         159 :     m_view-&gt;sortByColumn(0, Qt::AscendingOrder);</span></span>
 <span id="L40"><span class="lineNum">      40</span>              :   } else {</span>
 <span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">          10 :     m_proxy.setStore(path);</span></span>
 <span id="L42"><span class="lineNum">      42</span>              :   }</span>
-<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">         165 :   m_proxy.setFilterRegularExpression(QRegularExpression());</span></span>
-<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">         165 :   m_view-&gt;setRootIndex(m_proxy.rootIndexFor(path));</span></span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         165 : }</span></span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">         169 :   m_proxy.setFilterRegularExpression(QRegularExpression());</span></span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">         169 :   m_view-&gt;setRootIndex(m_proxy.rootIndexFor(path));</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         169 : }</span></span>
 <span id="L46"><span class="lineNum">      46</span>              : </span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">         153 : void StoreTree::setPass(Pass *pass) { m_proxy.setPass(pass); }</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">         157 : void StoreTree::setPass(Pass *pass) { m_proxy.setPass(pass); }</span></span>
 <span id="L48"><span class="lineNum">      48</span>              : </span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          52 : void StoreTree::setFilter(const QRegularExpression &amp;pattern) {</span></span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          52 :   m_proxy.setFilterRegularExpression(pattern);</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          56 : void StoreTree::setFilter(const QRegularExpression &amp;pattern) {</span></span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          56 :   m_proxy.setFilterRegularExpression(pattern);</span></span>
 <span id="L51"><span class="lineNum">      51</span>              :   // Filtering re-derives the mapping; the root must be looked up again.</span>
-<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          52 :   m_view-&gt;setRootIndex(m_proxy.rootIndexFor(m_store));</span></span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          52 : }</span></span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          56 :   m_view-&gt;setRootIndex(m_proxy.rootIndexFor(m_store));</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          56 : }</span></span>
 <span id="L54"><span class="lineNum">      54</span>              : </span>
 <span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">          43 : auto StoreTree::dirFor(const QModelIndex &amp;index, bool forPass) const</span></span>
 <span id="L56"><span class="lineNum">      56</span>              :     -&gt; QString {</span>
@@ -145,15 +145,15 @@
 <span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">          36 :   return dirFor(m_view-&gt;currentIndex(), forPass);</span></span>
 <span id="L73"><span class="lineNum">      73</span>              : }</span>
 <span id="L74"><span class="lineNum">      74</span>              : </span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          50 : auto StoreTree::fileFor(const QModelIndex &amp;index, bool forPass) const</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          52 : auto StoreTree::fileFor(const QModelIndex &amp;index, bool forPass) const</span></span>
 <span id="L76"><span class="lineNum">      76</span>              :     -&gt; QString {</span>
-<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">          96 :   if (!index.isValid() || !m_fs.fileInfo(m_proxy.mapToSource(index)).isFile()) {</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         100 :   if (!index.isValid() || !m_fs.fileInfo(m_proxy.mapToSource(index)).isFile()) {</span></span>
 <span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">           4 :     return {};</span></span>
 <span id="L79"><span class="lineNum">      79</span>              :   }</span>
-<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">          46 :   QString filePath = m_fs.filePath(m_proxy.mapToSource(index));</span></span>
-<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">          46 :   if (forPass) {</span></span>
-<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">          86 :     filePath = QDir(m_store).relativeFilePath(filePath);</span></span>
-<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">          86 :     filePath.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">          48 :   QString filePath = m_fs.filePath(m_proxy.mapToSource(index));</span></span>
+<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">          48 :   if (forPass) {</span></span>
+<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">          90 :     filePath = QDir(m_store).relativeFilePath(filePath);</span></span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">          90 :     filePath.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
 <span id="L84"><span class="lineNum">      84</span>              :   }</span>
 <span id="L85"><span class="lineNum">      85</span>              :   return filePath;</span>
 <span id="L86"><span class="lineNum">      86</span>              : }</span>
@@ -162,13 +162,13 @@
 <span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">           1 :   return fileFor(m_view-&gt;currentIndex(), forPass);</span></span>
 <span id="L90"><span class="lineNum">      90</span>              : }</span>
 <span id="L91"><span class="lineNum">      91</span>              : </span>
-<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          67 : auto StoreTree::fileInfo(const QModelIndex &amp;index) const -&gt; QFileInfo {</span></span>
-<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          67 :   return m_fs.fileInfo(m_proxy.mapToSource(index));</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          69 : auto StoreTree::fileInfo(const QModelIndex &amp;index) const -&gt; QFileInfo {</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          69 :   return m_fs.fileInfo(m_proxy.mapToSource(index));</span></span>
 <span id="L94"><span class="lineNum">      94</span>              : }</span>
 <span id="L95"><span class="lineNum">      95</span>              : </span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          51 : auto StoreTree::indexFor(const QString &amp;path) const -&gt; QModelIndex {</span></span>
-<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">          51 :   const QModelIndex src = m_fs.index(path);</span></span>
-<span id="L98"><span class="lineNum">      98</span> <span class="tlaGNC">          51 :   return src.isValid() ? m_proxy.mapFromSource(src) : QModelIndex();</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          54 : auto StoreTree::indexFor(const QString &amp;path) const -&gt; QModelIndex {</span></span>
+<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">          54 :   const QModelIndex src = m_fs.index(path);</span></span>
+<span id="L98"><span class="lineNum">      98</span> <span class="tlaGNC">          54 :   return src.isValid() ? m_proxy.mapFromSource(src) : QModelIndex();</span></span>
 <span id="L99"><span class="lineNum">      99</span>              : }</span>
 <span id="L100"><span class="lineNum">     100</span>              : </span>
 <span id="L101"><span class="lineNum">     101</span> <span class="tlaGNC">          18 : auto StoreTree::rootIndex() -&gt; QModelIndex {</span></span>

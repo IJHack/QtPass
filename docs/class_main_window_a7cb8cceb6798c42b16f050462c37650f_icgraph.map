@@ -1,0 +1,5 @@
+<map id="MainWindow::on_grepResultsList_itemClicked" name="MainWindow::on_grepResultsList_itemClicked">
+<area shape="rect" id="Node000001" title="A content&#45;search result was clicked: select the entry in the tree, show it, and go back to the tree (..." alt="" coords="261,5,473,50"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="5,14,213,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,28,213,30,213,25,248,27"/>
+</map>
