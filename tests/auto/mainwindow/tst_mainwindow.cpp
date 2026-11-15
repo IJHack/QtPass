@@ -4686,6 +4686,25 @@ void tst_mainwindow::cancellingAContentSearchStopsIt() {
   QTest::qWait(50);
   QCOMPARE(results->topLevelItemCount(), 0);
   QVERIFY(!results->isVisible());
+
+  // Settings accepted while the search runs: it searched the store open
+  // before, so it is stopped and its partial match is not listed.
+  search();
+  {
+    ModalDriver driver([](QWidget *w) {
+      if (auto *dialog = qobject_cast<ConfigDialog *>(w)) {
+        dialog->accept();
+        return;
+      }
+      answerBox(QMessageBox::Ok)(w);
+    });
+    QVERIFY(m_window->config());
+  }
+  QVERIFY2(finished.count() == 1 || finished.wait(5000),
+           "accepting Settings stops the search");
+  QTest::qWait(50);
+  QCOMPARE(results->topLevelItemCount(), 0);
+  QVERIFY(!results->isVisible());
 #endif
 }
 
