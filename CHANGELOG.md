@@ -1071,6 +1071,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   re-encryption started, so a run that then failed or was cancelled left
   the remote with the new recipients and entries still encrypted to the
   previous ones; a clean run was pushed twice
+- A content search still running when Settings change the store or the
+  backend no longer lists its matches for the store now open: accepting
+  Settings cancels it, and matches the other backend reports are dropped.
+  The old store's entries and decrypted lines were shown, and clicking one
+  opened the entry of that name in the new store
 
 ### Code Quality
 

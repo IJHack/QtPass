@@ -462,6 +462,8 @@ private Q_SLOTS:
   void grepModeChangesTheSearchBox();
   void grepFindsContentAndNavigatesToTheEntry();
   void deselectLeavesGrepModeWhenResultsAreShown();
+  void grepResultsOfTheOtherBackendAreDropped();
+  void settingsCancelARunningContentSearch();
   void searchForAFolderWithoutFilesSelectsNothing();
   void enterInTheSearchBoxOpensTheFirstMatch();
   void enterInTheSearchBoxPrefersTheEntryNamedAsTyped();
@@ -3584,6 +3586,69 @@ void tst_mainwindow::grepFindsContentAndNavigatesToTheEntry() {
   QVERIFY2(!results->isVisible() && results->topLevelItemCount() == 0,
            "and shows nothing outside grep mode");
 #endif
+}
+
+/**
+ * @brief Both backends stay connected, each with its own search: matches the
+ *        other backend reports (a search it was running when Settings
+ *        switched backends) searched another store and are not listed.
+ */
+void tst_mainwindow::grepResultsOfTheOtherBackendAreDropped() {
+  rebuildWindow([](AppSettings &s) { s.useGrepSearch = true; });
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && results != nullptr);
+  grep->setChecked(true);
+  Pass *current = QtPassSettings::getPass();
+  Pass *other = current == QtPassSettings::getRealPass()
+                    ? static_cast<Pass *>(QtPassSettings::getImitatePass())
+                    : static_cast<Pass *>(QtPassSettings::getRealPass());
+  emit other->finishedGrep(
+      {{QStringLiteral("old-store/bank"), {QStringLiteral("login: mallory")}}});
+  QCoreApplication::processEvents();
+  QVERIFY(!results->isVisible());
+  QCOMPARE(results->topLevelItemCount(), 0);
+  emit current->finishedGrep(
+      {{QStringLiteral("work/vpn"), {QStringLiteral("login: alice")}}});
+  QTRY_VERIFY(results->isVisible());
+  QCOMPARE(results->topLevelItem(0)->text(0), QStringLiteral("work/vpn"));
+  grep->setChecked(false);
+}
+
+/**
+ * @brief A content search still running when Settings is accepted searched
+ *        the old store: it is cancelled, and its matches are never listed
+ *        for the store now open.
+ */
+void tst_mainwindow::settingsCancelARunningContentSearch() {
+  rebuildWindow([](AppSettings &s) { s.useGrepSearch = true; });
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && results != nullptr);
+  // A first search under way: content-search mode, nothing listed yet.
+  grep->setChecked(true);
+  QVERIFY(!results->isVisible());
+  ModalDriver driver([](QWidget *w) {
+    if (auto *dialog = qobject_cast<ConfigDialog *>(w)) {
+      dialog->accept();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  QVERIFY(m_window->config());
+  // Its matches, from the store open before, arrive after the switch.
+  emit QtPassSettings::getPass() -> finishedGrep(
+      {{QStringLiteral("old-store/bank"), {QStringLiteral("login: mallory")}}});
+  QCoreApplication::processEvents();
+  QVERIFY(!results->isVisible());
+  QCOMPARE(results->topLevelItemCount(), 0);
+  grep->setChecked(false);
 }
 
 /**
