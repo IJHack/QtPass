@@ -43,17 +43,17 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntryHi">93.3&nbsp;%</td>
-            <td class="headerCovTableEntry">860</td>
-            <td class="headerCovTableEntry">802</td>
+            <td class="headerCovTableEntry">862</td>
+            <td class="headerCovTableEntry">804</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 16:32:03</td>
+            <td class="headerValue">2026-11-15 17:17:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">72</td>
-            <td class="headerCovTableEntry">72</td>
+            <td class="headerCovTableEntry">73</td>
+            <td class="headerCovTableEntry">73</td>
           </tr>
                   <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -119,20 +119,20 @@
 <span id="L46"><span class="lineNum">      46</span>              : using Enums::PASS_SHOW;</span>
 <span id="L47"><span class="lineNum">      47</span>              : using Enums::PROCESS_COUNT;</span>
 <span id="L48"><span class="lineNum">      48</span>              : </span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">         194 : ImitatePass::ImitatePass() : m_grep(this) {</span></span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">         194 :   connect(&amp;m_grep, &amp;NativeGrep::finished, this, &amp;ImitatePass::finishedGrep);</span></span>
-<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">         194 : }</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">         195 : ImitatePass::ImitatePass() : m_grep(this) {</span></span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">         195 :   connect(&amp;m_grep, &amp;NativeGrep::finished, this, &amp;ImitatePass::finishedGrep);</span></span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">         195 : }</span></span>
 <span id="L52"><span class="lineNum">      52</span>              : </span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">         201 : ImitatePass::~ImitatePass() {</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">         202 : ImitatePass::~ImitatePass() {</span></span>
 <span id="L54"><span class="lineNum">      54</span>              :   // Grep workers wind down meanwhile; m_grep's destructor waits for them.</span>
-<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">         194 :   m_grep.cancel();</span></span>
+<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">         195 :   m_grep.cancel();</span></span>
 <span id="L56"><span class="lineNum">      56</span>              :   // The re-encryption worker calls members, so join it with no timeout; it</span>
 <span id="L57"><span class="lineNum">      57</span>              :   // ends its own blocked process on the flag (see execBlocking()).</span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         194 :   if (m_reencryptThread &amp;&amp; m_reencryptThread-&gt;isRunning()) {</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         195 :   if (m_reencryptThread &amp;&amp; m_reencryptThread-&gt;isRunning()) {</span></span>
 <span id="L59"><span class="lineNum">      59</span>              :     m_reencryptCancel.store(true);</span>
 <span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">           3 :     m_reencryptThread-&gt;wait();</span></span>
 <span id="L61"><span class="lineNum">      61</span>              :   }</span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">         395 : }</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">         397 : }</span></span>
 <span id="L63"><span class="lineNum">      63</span>              : </span>
 <span id="L64"><span class="lineNum">      64</span>              : // The helpers are shared by the owning thread and the worker; thread affinity</span>
 <span id="L65"><span class="lineNum">      65</span>              : // tells them apart. Only the worker touches its QProcess, so a cancel can</span>
@@ -570,10 +570,10 @@
 <span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">           6 :   if (rc != 1) {</span></span>
 <span id="L498"><span class="lineNum">     498</span>              :     return rc;</span>
 <span id="L499"><span class="lineNum">     499</span>              :   }</span>
-<span id="L500"><span class="lineNum">     500</span>              :   QString commitPath = gpgIdFile;</span>
-<span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">           6 :   commitPath.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
-<span id="L502"><span class="lineNum">     502</span> <span class="tlaGNC">          18 :   return run(commitArgs() +</span></span>
-<span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">          48 :              QStringList{&quot;-m&quot;, &quot;Added &quot; + commitPath + &quot; using QtPass.&quot;, &quot;--&quot;} +</span></span>
+<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">          18 :   return run(commitArgs() +</span></span>
+<span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">           6 :              QStringList{&quot;-m&quot;,</span></span>
+<span id="L502"><span class="lineNum">     502</span> <span class="tlaGNC">           6 :                          &quot;Added &quot; + commitName(gpgIdFile) + &quot; using QtPass.&quot;,</span></span>
+<span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">          42 :                          &quot;--&quot;} +</span></span>
 <span id="L504"><span class="lineNum">     504</span> <span class="tlaGNC">           6 :              paths);</span></span>
 <span id="L505"><span class="lineNum">     505</span> <span class="tlaGNC">          19 : }</span></span>
 <span id="L506"><span class="lineNum">     506</span>              : </span>
@@ -1554,231 +1554,239 @@
 <span id="L1481"><span class="lineNum">    1481</span> <span class="tlaGNC">           8 :   args &lt;&lt; &quot;--&quot; &lt;&lt; pgit(src) &lt;&lt; pgit(destFile);</span></span>
 <span id="L1482"><span class="lineNum">    1482</span> <span class="tlaGNC">           2 :   executeGit(GIT_MOVE, args);</span></span>
 <span id="L1483"><span class="lineNum">    1483</span>              : </span>
-<span id="L1484"><span class="lineNum">    1484</span> <span class="tlaGNC">           2 :   QString relSrc = QDir(m_settings.passStore).relativeFilePath(src);</span></span>
-<span id="L1485"><span class="lineNum">    1485</span> <span class="tlaGNC">           2 :   relSrc.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
-<span id="L1486"><span class="lineNum">    1486</span> <span class="tlaGNC">           2 :   QString relDest = QDir(m_settings.passStore).relativeFilePath(destFile);</span></span>
-<span id="L1487"><span class="lineNum">    1487</span> <span class="tlaGNC">           2 :   relDest.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
-<span id="L1488"><span class="lineNum">    1488</span> <span class="tlaGNC">           2 :   QString message = QString(&quot;Moved for %1 to %2 using QtPass.&quot;);</span></span>
-<span id="L1489"><span class="lineNum">    1489</span> <span class="tlaGNC">           2 :   message = message.arg(relSrc, relDest);</span></span>
-<span id="L1490"><span class="lineNum">    1490</span> <span class="tlaGNC">           4 :   gitCommit(&quot;&quot;, message);</span></span>
-<span id="L1491"><span class="lineNum">    1491</span> <span class="tlaGNC">           2 : }</span></span>
-<span id="L1492"><span class="lineNum">    1492</span>              : </span>
-<span id="L1493"><span class="lineNum">    1493</span> <span class="tlaGNC">          16 : void ImitatePass::Move(const QString src, const QString dest,</span></span>
-<span id="L1494"><span class="lineNum">    1494</span>              :                        const bool force) {</span>
-<span id="L1495"><span class="lineNum">    1495</span> <span class="tlaGNC">          16 :   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {</span></span>
-<span id="L1496"><span class="lineNum">    1496</span> <span class="tlaGNC">           4 :     return;</span></span>
-<span id="L1497"><span class="lineNum">    1497</span>              :   }</span>
-<span id="L1498"><span class="lineNum">    1498</span> <span class="tlaGNC">          14 :   if (refuseUnfinishedGitOperation() || refusePendingPull()) {</span></span>
-<span id="L1499"><span class="lineNum">    1499</span> <span class="tlaUNC">           0 :     return;</span></span>
-<span id="L1500"><span class="lineNum">    1500</span>              :   }</span>
-<span id="L1501"><span class="lineNum">    1501</span> <span class="tlaGNC">          14 :   TransactionHelper trans(&amp;m_transaction, PASS_MOVE);</span></span>
-<span id="L1502"><span class="lineNum">    1502</span> <span class="tlaGNC">          14 :   QString destFile = resolveMoveDestination(src, dest, force);</span></span>
-<span id="L1503"><span class="lineNum">    1503</span> <span class="tlaGNC">          14 :   if (destFile.isEmpty()) {</span></span>
-<span id="L1504"><span class="lineNum">    1504</span>              :     return;</span>
+<span id="L1484"><span class="lineNum">    1484</span> <span class="tlaGNC">           6 :   gitCommit(&quot;&quot;, QString(&quot;Moved for %1 to %2 using QtPass.&quot;)</span></span>
+<span id="L1485"><span class="lineNum">    1485</span> <span class="tlaGNC">           4 :                     .arg(commitName(src), commitName(destFile)));</span></span>
+<span id="L1486"><span class="lineNum">    1486</span> <span class="tlaGNC">           2 : }</span></span>
+<span id="L1487"><span class="lineNum">    1487</span>              : </span>
+<span id="L1488"><span class="lineNum">    1488</span> <span class="tlaGNC">          16 : auto ImitatePass::commitName(const QString &amp;path) const -&gt; QString {</span></span>
+<span id="L1489"><span class="lineNum">    1489</span> <span class="tlaGNC">          16 :   QString name = QDir(m_settings.passStore).relativeFilePath(path);</span></span>
+<span id="L1490"><span class="lineNum">    1490</span>              :   // Not under the store as spelled (a copy from elsewhere, the store's</span>
+<span id="L1491"><span class="lineNum">    1491</span>              :   // other spelling through a link, another drive): &quot;../..&quot; or an absolute</span>
+<span id="L1492"><span class="lineNum">    1492</span>              :   // path would carry the local layout too, so the file name alone.</span>
+<span id="L1493"><span class="lineNum">    1493</span> <span class="tlaGNC">          31 :   if (name == QLatin1String(&quot;..&quot;) || name.startsWith(QLatin1String(&quot;../&quot;)) ||</span></span>
+<span id="L1494"><span class="lineNum">    1494</span>              :       QDir::isAbsolutePath(name)) {</span>
+<span id="L1495"><span class="lineNum">    1495</span> <span class="tlaGNC">           2 :     name = QFileInfo(path).fileName();</span></span>
+<span id="L1496"><span class="lineNum">    1496</span>              :   }</span>
+<span id="L1497"><span class="lineNum">    1497</span> <span class="tlaGNC">          16 :   name.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
+<span id="L1498"><span class="lineNum">    1498</span> <span class="tlaGNC">          16 :   return name;</span></span>
+<span id="L1499"><span class="lineNum">    1499</span>              : }</span>
+<span id="L1500"><span class="lineNum">    1500</span>              : </span>
+<span id="L1501"><span class="lineNum">    1501</span> <span class="tlaGNC">          16 : void ImitatePass::Move(const QString src, const QString dest,</span></span>
+<span id="L1502"><span class="lineNum">    1502</span>              :                        const bool force) {</span>
+<span id="L1503"><span class="lineNum">    1503</span> <span class="tlaGNC">          16 :   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {</span></span>
+<span id="L1504"><span class="lineNum">    1504</span> <span class="tlaGNC">           4 :     return;</span></span>
 <span id="L1505"><span class="lineNum">    1505</span>              :   }</span>
-<span id="L1506"><span class="lineNum">    1506</span> <span class="tlaGNC">          12 :   if (refuseLinkedPath(destFile)) {</span></span>
-<span id="L1507"><span class="lineNum">    1507</span>              :     return;</span>
+<span id="L1506"><span class="lineNum">    1506</span> <span class="tlaGNC">          14 :   if (refuseUnfinishedGitOperation() || refusePendingPull()) {</span></span>
+<span id="L1507"><span class="lineNum">    1507</span> <span class="tlaUNC">           0 :     return;</span></span>
 <span id="L1508"><span class="lineNum">    1508</span>              :   }</span>
-<span id="L1509"><span class="lineNum">    1509</span>              : </span>
-<span id="L1510"><span class="lineNum">    1510</span> <span class="tlaGNC">          12 :   qCDebug(lcQtPass) &lt;&lt; &quot;Move Source: &quot; &lt;&lt; src;</span></span>
-<span id="L1511"><span class="lineNum">    1511</span> <span class="tlaGNC">          12 :   qCDebug(lcQtPass) &lt;&lt; &quot;Move Destination: &quot; &lt;&lt; destFile;</span></span>
-<span id="L1512"><span class="lineNum">    1512</span>              : </span>
-<span id="L1513"><span class="lineNum">    1513</span> <span class="tlaGNC">          12 :   if (gitReady()) {</span></span>
-<span id="L1514"><span class="lineNum">    1514</span> <span class="tlaGNC">           2 :     executeMoveGit(src, destFile, force);</span></span>
-<span id="L1515"><span class="lineNum">    1515</span>              :   } else {</span>
-<span id="L1516"><span class="lineNum">    1516</span>              :     // A forced move replaces the destination entry in the one rename, as</span>
-<span id="L1517"><span class="lineNum">    1517</span>              :     // git mv -f does: removing it first lost it when the rename then failed</span>
-<span id="L1518"><span class="lineNum">    1518</span>              :     // (and lost the entry itself, moved onto its own name). A folder is never</span>
-<span id="L1519"><span class="lineNum">    1519</span>              :     // replaced, forced or not. Without Git nothing else reports a failure.</span>
-<span id="L1520"><span class="lineNum">    1520</span> <span class="tlaGNC">           6 :     const bool moved = force &amp;&amp; QFileInfo(src).isFile()</span></span>
-<span id="L1521"><span class="lineNum">    1521</span> <span class="tlaGNC">          13 :                            ? Util::replaceFile(src, destFile, true)</span></span>
-<span id="L1522"><span class="lineNum">    1522</span> <span class="tlaGNC">          17 :                            : QDir().rename(src, destFile);</span></span>
-<span id="L1523"><span class="lineNum">    1523</span> <span class="tlaGNC">          10 :     if (!moved) {</span></span>
-<span id="L1524"><span class="lineNum">    1524</span> <span class="tlaGNC">           4 :       emit critical(tr(&quot;Move failed&quot;),</span></span>
-<span id="L1525"><span class="lineNum">    1525</span> <span class="tlaGNC">           4 :                     tr(&quot;Could not move %1 to %2.&quot;).arg(src, destFile));</span></span>
-<span id="L1526"><span class="lineNum">    1526</span>              :     }</span>
-<span id="L1527"><span class="lineNum">    1527</span>              :   }</span>
-<span id="L1528"><span class="lineNum">    1528</span>              : }</span>
-<span id="L1529"><span class="lineNum">    1529</span>              : </span>
-<span id="L1530"><span class="lineNum">    1530</span> <span class="tlaGNC">          13 : auto ImitatePass::copyDestination(const QString &amp;src, const QString &amp;dest,</span></span>
-<span id="L1531"><span class="lineNum">    1531</span>              :                                   bool force) -&gt; QString {</span>
-<span id="L1532"><span class="lineNum">    1532</span> <span class="tlaGNC">           4 :   const auto refuse = [this, &amp;src](const QString &amp;to) {</span></span>
-<span id="L1533"><span class="lineNum">    1533</span> <span class="tlaGNC">          12 :     emit critical(tr(&quot;Copy failed&quot;),</span></span>
-<span id="L1534"><span class="lineNum">    1534</span> <span class="tlaGNC">           4 :                   tr(&quot;Could not copy %1 to %2.&quot;).arg(src, to));</span></span>
-<span id="L1535"><span class="lineNum">    1535</span> <span class="tlaGNC">           4 :     return QString();</span></span>
-<span id="L1536"><span class="lineNum">    1536</span> <span class="tlaGNC">          13 :   };</span></span>
-<span id="L1537"><span class="lineNum">    1537</span>              :   // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands</span>
-<span id="L1538"><span class="lineNum">    1538</span>              :   // over the folder, not the new file name). Resolve the real target the same</span>
-<span id="L1539"><span class="lineNum">    1539</span>              :   // way Move does: into the folder, .gpg appended, no clobbering without force.</span>
-<span id="L1540"><span class="lineNum">    1540</span> <span class="tlaGNC">          13 :   const QString destFile = resolveMoveDestination(src, dest, force);</span></span>
-<span id="L1541"><span class="lineNum">    1541</span> <span class="tlaGNC">          13 :   if (destFile.isEmpty()) {</span></span>
-<span id="L1542"><span class="lineNum">    1542</span> <span class="tlaGNC">           2 :     return refuse(dest);</span></span>
-<span id="L1543"><span class="lineNum">    1543</span>              :   }</span>
-<span id="L1544"><span class="lineNum">    1544</span>              :   // A link planted under that name (dangling ones pass exists()) is not an</span>
-<span id="L1545"><span class="lineNum">    1545</span>              :   // entry to write.</span>
-<span id="L1546"><span class="lineNum">    1546</span> <span class="tlaGNC">          11 :   if (refuseLinkedPath(destFile)) {</span></span>
-<span id="L1547"><span class="lineNum">    1547</span> <span class="tlaGNC">           1 :     return {};</span></span>
-<span id="L1548"><span class="lineNum">    1548</span>              :   }</span>
-<span id="L1549"><span class="lineNum">    1549</span> <span class="tlaGNC">          10 :   const QFileInfo destFileInfo(destFile);</span></span>
-<span id="L1550"><span class="lineNum">    1550</span>              :   // A folder destination that is the source's own folder resolves to the</span>
-<span id="L1551"><span class="lineNum">    1551</span>              :   // source itself; with force that would replace the only copy with itself.</span>
-<span id="L1552"><span class="lineNum">    1552</span>              :   // And resolveMoveDestination only sees a clash when dest names the file.</span>
-<span id="L1553"><span class="lineNum">    1553</span> <span class="tlaGNC">          30 :   if (QFileInfo(src) == destFileInfo || (!force &amp;&amp; destFileInfo.exists())) {</span></span>
-<span id="L1554"><span class="lineNum">    1554</span> <span class="tlaGNC">           2 :     return refuse(destFile);</span></span>
-<span id="L1555"><span class="lineNum">    1555</span>              :   }</span>
-<span id="L1556"><span class="lineNum">    1556</span>              :   return destFile;</span>
-<span id="L1557"><span class="lineNum">    1557</span> <span class="tlaGNC">          10 : }</span></span>
-<span id="L1558"><span class="lineNum">    1558</span>              : </span>
-<span id="L1559"><span class="lineNum">    1559</span> <span class="tlaGNC">          15 : void ImitatePass::Copy(const QString src, const QString dest,</span></span>
-<span id="L1560"><span class="lineNum">    1560</span>              :                        const bool force) {</span>
-<span id="L1561"><span class="lineNum">    1561</span>              :   // QFile::copy reads through a link: the target's bytes would become an</span>
-<span id="L1562"><span class="lineNum">    1562</span>              :   // entry of the store.</span>
-<span id="L1563"><span class="lineNum">    1563</span> <span class="tlaGNC">          15 :   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {</span></span>
-<span id="L1564"><span class="lineNum">    1564</span> <span class="tlaGNC">           8 :     return;</span></span>
-<span id="L1565"><span class="lineNum">    1565</span>              :   }</span>
-<span id="L1566"><span class="lineNum">    1566</span> <span class="tlaGNC">          13 :   if (refuseUnfinishedGitOperation() || refusePendingPull()) {</span></span>
-<span id="L1567"><span class="lineNum">    1567</span> <span class="tlaUNC">           0 :     return;</span></span>
-<span id="L1568"><span class="lineNum">    1568</span>              :   }</span>
-<span id="L1569"><span class="lineNum">    1569</span> <span class="tlaGNC">          13 :   TransactionHelper trans(&amp;m_transaction, PASS_COPY);</span></span>
-<span id="L1570"><span class="lineNum">    1570</span> <span class="tlaGNC">          13 :   const QString destFile = copyDestination(src, dest, force);</span></span>
-<span id="L1571"><span class="lineNum">    1571</span> <span class="tlaGNC">          13 :   if (destFile.isEmpty()) {</span></span>
-<span id="L1572"><span class="lineNum">    1572</span>              :     return;</span>
+<span id="L1509"><span class="lineNum">    1509</span> <span class="tlaGNC">          14 :   TransactionHelper trans(&amp;m_transaction, PASS_MOVE);</span></span>
+<span id="L1510"><span class="lineNum">    1510</span> <span class="tlaGNC">          14 :   QString destFile = resolveMoveDestination(src, dest, force);</span></span>
+<span id="L1511"><span class="lineNum">    1511</span> <span class="tlaGNC">          14 :   if (destFile.isEmpty()) {</span></span>
+<span id="L1512"><span class="lineNum">    1512</span>              :     return;</span>
+<span id="L1513"><span class="lineNum">    1513</span>              :   }</span>
+<span id="L1514"><span class="lineNum">    1514</span> <span class="tlaGNC">          12 :   if (refuseLinkedPath(destFile)) {</span></span>
+<span id="L1515"><span class="lineNum">    1515</span>              :     return;</span>
+<span id="L1516"><span class="lineNum">    1516</span>              :   }</span>
+<span id="L1517"><span class="lineNum">    1517</span>              : </span>
+<span id="L1518"><span class="lineNum">    1518</span> <span class="tlaGNC">          12 :   qCDebug(lcQtPass) &lt;&lt; &quot;Move Source: &quot; &lt;&lt; src;</span></span>
+<span id="L1519"><span class="lineNum">    1519</span> <span class="tlaGNC">          12 :   qCDebug(lcQtPass) &lt;&lt; &quot;Move Destination: &quot; &lt;&lt; destFile;</span></span>
+<span id="L1520"><span class="lineNum">    1520</span>              : </span>
+<span id="L1521"><span class="lineNum">    1521</span> <span class="tlaGNC">          12 :   if (gitReady()) {</span></span>
+<span id="L1522"><span class="lineNum">    1522</span> <span class="tlaGNC">           2 :     executeMoveGit(src, destFile, force);</span></span>
+<span id="L1523"><span class="lineNum">    1523</span>              :   } else {</span>
+<span id="L1524"><span class="lineNum">    1524</span>              :     // A forced move replaces the destination entry in the one rename, as</span>
+<span id="L1525"><span class="lineNum">    1525</span>              :     // git mv -f does: removing it first lost it when the rename then failed</span>
+<span id="L1526"><span class="lineNum">    1526</span>              :     // (and lost the entry itself, moved onto its own name). A folder is never</span>
+<span id="L1527"><span class="lineNum">    1527</span>              :     // replaced, forced or not. Without Git nothing else reports a failure.</span>
+<span id="L1528"><span class="lineNum">    1528</span> <span class="tlaGNC">           6 :     const bool moved = force &amp;&amp; QFileInfo(src).isFile()</span></span>
+<span id="L1529"><span class="lineNum">    1529</span> <span class="tlaGNC">          13 :                            ? Util::replaceFile(src, destFile, true)</span></span>
+<span id="L1530"><span class="lineNum">    1530</span> <span class="tlaGNC">          17 :                            : QDir().rename(src, destFile);</span></span>
+<span id="L1531"><span class="lineNum">    1531</span> <span class="tlaGNC">          10 :     if (!moved) {</span></span>
+<span id="L1532"><span class="lineNum">    1532</span> <span class="tlaGNC">           4 :       emit critical(tr(&quot;Move failed&quot;),</span></span>
+<span id="L1533"><span class="lineNum">    1533</span> <span class="tlaGNC">           4 :                     tr(&quot;Could not move %1 to %2.&quot;).arg(src, destFile));</span></span>
+<span id="L1534"><span class="lineNum">    1534</span>              :     }</span>
+<span id="L1535"><span class="lineNum">    1535</span>              :   }</span>
+<span id="L1536"><span class="lineNum">    1536</span>              : }</span>
+<span id="L1537"><span class="lineNum">    1537</span>              : </span>
+<span id="L1538"><span class="lineNum">    1538</span> <span class="tlaGNC">          13 : auto ImitatePass::copyDestination(const QString &amp;src, const QString &amp;dest,</span></span>
+<span id="L1539"><span class="lineNum">    1539</span>              :                                   bool force) -&gt; QString {</span>
+<span id="L1540"><span class="lineNum">    1540</span> <span class="tlaGNC">           4 :   const auto refuse = [this, &amp;src](const QString &amp;to) {</span></span>
+<span id="L1541"><span class="lineNum">    1541</span> <span class="tlaGNC">          12 :     emit critical(tr(&quot;Copy failed&quot;),</span></span>
+<span id="L1542"><span class="lineNum">    1542</span> <span class="tlaGNC">           4 :                   tr(&quot;Could not copy %1 to %2.&quot;).arg(src, to));</span></span>
+<span id="L1543"><span class="lineNum">    1543</span> <span class="tlaGNC">           4 :     return QString();</span></span>
+<span id="L1544"><span class="lineNum">    1544</span> <span class="tlaGNC">          13 :   };</span></span>
+<span id="L1545"><span class="lineNum">    1545</span>              :   // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands</span>
+<span id="L1546"><span class="lineNum">    1546</span>              :   // over the folder, not the new file name). Resolve the real target the same</span>
+<span id="L1547"><span class="lineNum">    1547</span>              :   // way Move does: into the folder, .gpg appended, no clobbering without force.</span>
+<span id="L1548"><span class="lineNum">    1548</span> <span class="tlaGNC">          13 :   const QString destFile = resolveMoveDestination(src, dest, force);</span></span>
+<span id="L1549"><span class="lineNum">    1549</span> <span class="tlaGNC">          13 :   if (destFile.isEmpty()) {</span></span>
+<span id="L1550"><span class="lineNum">    1550</span> <span class="tlaGNC">           2 :     return refuse(dest);</span></span>
+<span id="L1551"><span class="lineNum">    1551</span>              :   }</span>
+<span id="L1552"><span class="lineNum">    1552</span>              :   // A link planted under that name (dangling ones pass exists()) is not an</span>
+<span id="L1553"><span class="lineNum">    1553</span>              :   // entry to write.</span>
+<span id="L1554"><span class="lineNum">    1554</span> <span class="tlaGNC">          11 :   if (refuseLinkedPath(destFile)) {</span></span>
+<span id="L1555"><span class="lineNum">    1555</span> <span class="tlaGNC">           1 :     return {};</span></span>
+<span id="L1556"><span class="lineNum">    1556</span>              :   }</span>
+<span id="L1557"><span class="lineNum">    1557</span> <span class="tlaGNC">          10 :   const QFileInfo destFileInfo(destFile);</span></span>
+<span id="L1558"><span class="lineNum">    1558</span>              :   // A folder destination that is the source's own folder resolves to the</span>
+<span id="L1559"><span class="lineNum">    1559</span>              :   // source itself; with force that would replace the only copy with itself.</span>
+<span id="L1560"><span class="lineNum">    1560</span>              :   // And resolveMoveDestination only sees a clash when dest names the file.</span>
+<span id="L1561"><span class="lineNum">    1561</span> <span class="tlaGNC">          30 :   if (QFileInfo(src) == destFileInfo || (!force &amp;&amp; destFileInfo.exists())) {</span></span>
+<span id="L1562"><span class="lineNum">    1562</span> <span class="tlaGNC">           2 :     return refuse(destFile);</span></span>
+<span id="L1563"><span class="lineNum">    1563</span>              :   }</span>
+<span id="L1564"><span class="lineNum">    1564</span>              :   return destFile;</span>
+<span id="L1565"><span class="lineNum">    1565</span> <span class="tlaGNC">          10 : }</span></span>
+<span id="L1566"><span class="lineNum">    1566</span>              : </span>
+<span id="L1567"><span class="lineNum">    1567</span> <span class="tlaGNC">          15 : void ImitatePass::Copy(const QString src, const QString dest,</span></span>
+<span id="L1568"><span class="lineNum">    1568</span>              :                        const bool force) {</span>
+<span id="L1569"><span class="lineNum">    1569</span>              :   // QFile::copy reads through a link: the target's bytes would become an</span>
+<span id="L1570"><span class="lineNum">    1570</span>              :   // entry of the store.</span>
+<span id="L1571"><span class="lineNum">    1571</span> <span class="tlaGNC">          15 :   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {</span></span>
+<span id="L1572"><span class="lineNum">    1572</span> <span class="tlaGNC">           8 :     return;</span></span>
 <span id="L1573"><span class="lineNum">    1573</span>              :   }</span>
-<span id="L1574"><span class="lineNum">    1574</span>              :   // git has no &quot;cp&quot;: copy on disk in both modes, then stage. Synchronous and</span>
-<span id="L1575"><span class="lineNum">    1575</span>              :   // atomic (Util::copyFileReplacing follows no link), so it exists before the</span>
-<span id="L1576"><span class="lineNum">    1576</span>              :   // re-encryption below and a forced overwrite survives a half-way failure;</span>
-<span id="L1577"><span class="lineNum">    1577</span>              :   // without force nothing is replaced, not even what appeared since the check.</span>
-<span id="L1578"><span class="lineNum">    1578</span> <span class="tlaGNC">           8 :   QString why;</span></span>
-<span id="L1579"><span class="lineNum">    1579</span> <span class="tlaGNC">           8 :   if (!Util::copyFileReplacing(src, destFile, force, &amp;why)) {</span></span>
-<span id="L1580"><span class="lineNum">    1580</span> <span class="tlaGNC">           2 :     emit critical(tr(&quot;Copy failed&quot;),</span></span>
-<span id="L1581"><span class="lineNum">    1581</span> <span class="tlaGNC">           2 :                   tr(&quot;Could not copy %1 to %2.&quot;).arg(src, destFile) + &quot;\n&quot; +</span></span>
-<span id="L1582"><span class="lineNum">    1582</span> <span class="tlaGNC">           1 :                       why);</span></span>
-<span id="L1583"><span class="lineNum">    1583</span>              :     return;</span>
-<span id="L1584"><span class="lineNum">    1584</span>              :   }</span>
-<span id="L1585"><span class="lineNum">    1585</span> <span class="tlaGNC">           7 :   if (gitReady()) {</span></span>
-<span id="L1586"><span class="lineNum">    1586</span> <span class="tlaGNC">           5 :     executeGit(GIT_COPY, {&quot;add&quot;, &quot;--&quot;, pgit(destFile)});</span></span>
-<span id="L1587"><span class="lineNum">    1587</span> <span class="tlaGNC">           2 :     gitCommit(&quot;&quot;,</span></span>
-<span id="L1588"><span class="lineNum">    1588</span> <span class="tlaGNC">           2 :               QString(&quot;Copied from %1 to %2 using QtPass.&quot;).arg(src, destFile));</span></span>
-<span id="L1589"><span class="lineNum">    1589</span>              :   }</span>
-<span id="L1590"><span class="lineNum">    1590</span> <span class="tlaGNC">           7 :   const QFileInfo written(destFile);</span></span>
-<span id="L1591"><span class="lineNum">    1591</span> <span class="tlaGNC">           7 :   if (written.isDir()) {</span></span>
-<span id="L1592"><span class="lineNum">    1592</span> <span class="tlaUNC">           0 :     reencryptPath(written.absoluteFilePath());</span></span>
-<span id="L1593"><span class="lineNum">    1593</span> <span class="tlaGNC">           7 :   } else if (written.isFile()) {</span></span>
-<span id="L1594"><span class="lineNum">    1594</span> <span class="tlaGNC">          14 :     reencryptPath(written.dir().path());</span></span>
-<span id="L1595"><span class="lineNum">    1595</span>              :   }</span>
-<span id="L1596"><span class="lineNum">    1596</span> <span class="tlaGNC">           8 : }</span></span>
-<span id="L1597"><span class="lineNum">    1597</span>              : </span>
-<span id="L1598"><span class="lineNum">    1598</span> <span class="tlaGNC">         130 : void ImitatePass::executeGpg(PROCESS id, const QStringList &amp;args, QString input,</span></span>
-<span id="L1599"><span class="lineNum">    1599</span>              :                              bool readStdout, bool readStderr) {</span>
-<span id="L1600"><span class="lineNum">    1600</span> <span class="tlaGNC">         130 :   executeWrapper(id, m_settings.gpgExecutable, args, std::move(input),</span></span>
-<span id="L1601"><span class="lineNum">    1601</span>              :                  readStdout, readStderr);</span>
-<span id="L1602"><span class="lineNum">    1602</span> <span class="tlaGNC">         130 : }</span></span>
-<span id="L1603"><span class="lineNum">    1603</span>              : </span>
-<span id="L1604"><span class="lineNum">    1604</span>              : // useGit can be on with no gitExecutable (fresh setup, git removed later);</span>
-<span id="L1605"><span class="lineNum">    1605</span>              : // handing that to the Executor used to wedge the queue (#1682).</span>
-<span id="L1606"><span class="lineNum">    1606</span> <span class="tlaGNC">         134 : auto ImitatePass::gitConfigured() const -&gt; bool {</span></span>
-<span id="L1607"><span class="lineNum">    1607</span> <span class="tlaGNC">         134 :   return m_settings.useGit &amp;&amp; !m_settings.gitExecutable.isEmpty();</span></span>
-<span id="L1608"><span class="lineNum">    1608</span>              : }</span>
-<span id="L1609"><span class="lineNum">    1609</span>              : </span>
-<span id="L1610"><span class="lineNum">    1610</span>              : // Tells the user once per operation why git was skipped, so the store</span>
-<span id="L1611"><span class="lineNum">    1611</span>              : // silently drifting from git does not go unnoticed.</span>
-<span id="L1612"><span class="lineNum">    1612</span> <span class="tlaGNC">         152 : auto ImitatePass::gitReady() -&gt; bool {</span></span>
-<span id="L1613"><span class="lineNum">    1613</span> <span class="tlaGNC">         152 :   if (m_settings.useGit &amp;&amp; m_settings.gitExecutable.isEmpty()) {</span></span>
-<span id="L1614"><span class="lineNum">    1614</span> <span class="tlaGNC">           8 :     emit statusMsg(tr(&quot;Git executable not configured, skipping git&quot;), 3000);</span></span>
-<span id="L1615"><span class="lineNum">    1615</span> <span class="tlaGNC">           8 :     return false;</span></span>
-<span id="L1616"><span class="lineNum">    1616</span>              :   }</span>
-<span id="L1617"><span class="lineNum">    1617</span>              :   return m_settings.useGit;</span>
-<span id="L1618"><span class="lineNum">    1618</span>              : }</span>
-<span id="L1619"><span class="lineNum">    1619</span>              : </span>
-<span id="L1620"><span class="lineNum">    1620</span> <span class="tlaGNC">          41 : void ImitatePass::executeGit(PROCESS id, const QStringList &amp;args, QString input,</span></span>
-<span id="L1621"><span class="lineNum">    1621</span>              :                              bool readStdout, bool readStderr) {</span>
-<span id="L1622"><span class="lineNum">    1622</span>              :   // Callers check gitReady() first; an empty executable that still gets here</span>
-<span id="L1623"><span class="lineNum">    1623</span>              :   // is reported by the Executor instead of wedging the queue (#1682).</span>
-<span id="L1624"><span class="lineNum">    1624</span> <span class="tlaGNC">          41 :   executeWrapper(id, m_settings.gitExecutable, args, std::move(input),</span></span>
-<span id="L1625"><span class="lineNum">    1625</span>              :                  readStdout, readStderr);</span>
-<span id="L1626"><span class="lineNum">    1626</span> <span class="tlaGNC">          41 : }</span></span>
+<span id="L1574"><span class="lineNum">    1574</span> <span class="tlaGNC">          13 :   if (refuseUnfinishedGitOperation() || refusePendingPull()) {</span></span>
+<span id="L1575"><span class="lineNum">    1575</span> <span class="tlaUNC">           0 :     return;</span></span>
+<span id="L1576"><span class="lineNum">    1576</span>              :   }</span>
+<span id="L1577"><span class="lineNum">    1577</span> <span class="tlaGNC">          13 :   TransactionHelper trans(&amp;m_transaction, PASS_COPY);</span></span>
+<span id="L1578"><span class="lineNum">    1578</span> <span class="tlaGNC">          13 :   const QString destFile = copyDestination(src, dest, force);</span></span>
+<span id="L1579"><span class="lineNum">    1579</span> <span class="tlaGNC">          13 :   if (destFile.isEmpty()) {</span></span>
+<span id="L1580"><span class="lineNum">    1580</span>              :     return;</span>
+<span id="L1581"><span class="lineNum">    1581</span>              :   }</span>
+<span id="L1582"><span class="lineNum">    1582</span>              :   // git has no &quot;cp&quot;: copy on disk in both modes, then stage. Synchronous and</span>
+<span id="L1583"><span class="lineNum">    1583</span>              :   // atomic (Util::copyFileReplacing follows no link), so it exists before the</span>
+<span id="L1584"><span class="lineNum">    1584</span>              :   // re-encryption below and a forced overwrite survives a half-way failure;</span>
+<span id="L1585"><span class="lineNum">    1585</span>              :   // without force nothing is replaced, not even what appeared since the check.</span>
+<span id="L1586"><span class="lineNum">    1586</span> <span class="tlaGNC">           8 :   QString why;</span></span>
+<span id="L1587"><span class="lineNum">    1587</span> <span class="tlaGNC">           8 :   if (!Util::copyFileReplacing(src, destFile, force, &amp;why)) {</span></span>
+<span id="L1588"><span class="lineNum">    1588</span> <span class="tlaGNC">           2 :     emit critical(tr(&quot;Copy failed&quot;),</span></span>
+<span id="L1589"><span class="lineNum">    1589</span> <span class="tlaGNC">           2 :                   tr(&quot;Could not copy %1 to %2.&quot;).arg(src, destFile) + &quot;\n&quot; +</span></span>
+<span id="L1590"><span class="lineNum">    1590</span> <span class="tlaGNC">           1 :                       why);</span></span>
+<span id="L1591"><span class="lineNum">    1591</span>              :     return;</span>
+<span id="L1592"><span class="lineNum">    1592</span>              :   }</span>
+<span id="L1593"><span class="lineNum">    1593</span> <span class="tlaGNC">           7 :   if (gitReady()) {</span></span>
+<span id="L1594"><span class="lineNum">    1594</span> <span class="tlaGNC">           5 :     executeGit(GIT_COPY, {&quot;add&quot;, &quot;--&quot;, pgit(destFile)});</span></span>
+<span id="L1595"><span class="lineNum">    1595</span> <span class="tlaGNC">           3 :     gitCommit(&quot;&quot;, QString(&quot;Copied from %1 to %2 using QtPass.&quot;)</span></span>
+<span id="L1596"><span class="lineNum">    1596</span> <span class="tlaGNC">           2 :                       .arg(commitName(src), commitName(destFile)));</span></span>
+<span id="L1597"><span class="lineNum">    1597</span>              :   }</span>
+<span id="L1598"><span class="lineNum">    1598</span> <span class="tlaGNC">           7 :   const QFileInfo written(destFile);</span></span>
+<span id="L1599"><span class="lineNum">    1599</span> <span class="tlaGNC">           7 :   if (written.isDir()) {</span></span>
+<span id="L1600"><span class="lineNum">    1600</span> <span class="tlaUNC">           0 :     reencryptPath(written.absoluteFilePath());</span></span>
+<span id="L1601"><span class="lineNum">    1601</span> <span class="tlaGNC">           7 :   } else if (written.isFile()) {</span></span>
+<span id="L1602"><span class="lineNum">    1602</span> <span class="tlaGNC">          14 :     reencryptPath(written.dir().path());</span></span>
+<span id="L1603"><span class="lineNum">    1603</span>              :   }</span>
+<span id="L1604"><span class="lineNum">    1604</span> <span class="tlaGNC">           8 : }</span></span>
+<span id="L1605"><span class="lineNum">    1605</span>              : </span>
+<span id="L1606"><span class="lineNum">    1606</span> <span class="tlaGNC">         130 : void ImitatePass::executeGpg(PROCESS id, const QStringList &amp;args, QString input,</span></span>
+<span id="L1607"><span class="lineNum">    1607</span>              :                              bool readStdout, bool readStderr) {</span>
+<span id="L1608"><span class="lineNum">    1608</span> <span class="tlaGNC">         130 :   executeWrapper(id, m_settings.gpgExecutable, args, std::move(input),</span></span>
+<span id="L1609"><span class="lineNum">    1609</span>              :                  readStdout, readStderr);</span>
+<span id="L1610"><span class="lineNum">    1610</span> <span class="tlaGNC">         130 : }</span></span>
+<span id="L1611"><span class="lineNum">    1611</span>              : </span>
+<span id="L1612"><span class="lineNum">    1612</span>              : // useGit can be on with no gitExecutable (fresh setup, git removed later);</span>
+<span id="L1613"><span class="lineNum">    1613</span>              : // handing that to the Executor used to wedge the queue (#1682).</span>
+<span id="L1614"><span class="lineNum">    1614</span> <span class="tlaGNC">         134 : auto ImitatePass::gitConfigured() const -&gt; bool {</span></span>
+<span id="L1615"><span class="lineNum">    1615</span> <span class="tlaGNC">         134 :   return m_settings.useGit &amp;&amp; !m_settings.gitExecutable.isEmpty();</span></span>
+<span id="L1616"><span class="lineNum">    1616</span>              : }</span>
+<span id="L1617"><span class="lineNum">    1617</span>              : </span>
+<span id="L1618"><span class="lineNum">    1618</span>              : // Tells the user once per operation why git was skipped, so the store</span>
+<span id="L1619"><span class="lineNum">    1619</span>              : // silently drifting from git does not go unnoticed.</span>
+<span id="L1620"><span class="lineNum">    1620</span> <span class="tlaGNC">         152 : auto ImitatePass::gitReady() -&gt; bool {</span></span>
+<span id="L1621"><span class="lineNum">    1621</span> <span class="tlaGNC">         152 :   if (m_settings.useGit &amp;&amp; m_settings.gitExecutable.isEmpty()) {</span></span>
+<span id="L1622"><span class="lineNum">    1622</span> <span class="tlaGNC">           8 :     emit statusMsg(tr(&quot;Git executable not configured, skipping git&quot;), 3000);</span></span>
+<span id="L1623"><span class="lineNum">    1623</span> <span class="tlaGNC">           8 :     return false;</span></span>
+<span id="L1624"><span class="lineNum">    1624</span>              :   }</span>
+<span id="L1625"><span class="lineNum">    1625</span>              :   return m_settings.useGit;</span>
+<span id="L1626"><span class="lineNum">    1626</span>              : }</span>
 <span id="L1627"><span class="lineNum">    1627</span>              : </span>
-<span id="L1628"><span class="lineNum">    1628</span>              : // Only PASS_* processes reach Pass::finished, so to the interface this looks</span>
-<span id="L1629"><span class="lineNum">    1629</span>              : // the same as RealPass.</span>
-<span id="L1630"><span class="lineNum">    1630</span> <span class="tlaGNC">         168 : void ImitatePass::finished(int id, int exitCode, const QString &amp;out,</span></span>
-<span id="L1631"><span class="lineNum">    1631</span>              :                            const QString &amp;err) {</span>
-<span id="L1632"><span class="lineNum">    1632</span> <span class="tlaGNC">         168 :   qCDebug(lcQtPass) &lt;&lt; &quot;Imitate Pass&quot;;</span></span>
-<span id="L1633"><span class="lineNum">    1633</span>              :   QString error = err;</span>
-<span id="L1634"><span class="lineNum">    1634</span> <span class="tlaGNC">         168 :   if (id == PASS_INSERT &amp;&amp; !m_pendingInserts.isEmpty()) {</span></span>
-<span id="L1635"><span class="lineNum">    1635</span>              :     // Insert()'s gpg step: place the ciphertext before the queued git steps</span>
-<span id="L1636"><span class="lineNum">    1636</span>              :     // run (the executor starts the next item only after this returns). On</span>
-<span id="L1637"><span class="lineNum">    1637</span>              :     // failure it fails like a gpg error: git steps cancelled below.</span>
-<span id="L1638"><span class="lineNum">    1638</span>              :     // No dialog here: it would spin the event loop and run git steps first.</span>
-<span id="L1639"><span class="lineNum">    1639</span>              :     const PendingInsert pending = m_pendingInserts.dequeue();</span>
-<span id="L1640"><span class="lineNum">    1640</span>              :     // The flag answers for this insert, the one whose gpg step just ended, not</span>
-<span id="L1641"><span class="lineNum">    1641</span>              :     // for whichever Insert() was called last: with two inserts queued, a gpg</span>
-<span id="L1642"><span class="lineNum">    1642</span>              :     // failure of the second must report written=false even though the first</span>
-<span id="L1643"><span class="lineNum">    1643</span>              :     // was placed. Cleared here, before placement, and set only on success.</span>
-<span id="L1644"><span class="lineNum">    1644</span> <span class="tlaGNC">          64 :     m_insertPlaced = false;</span></span>
-<span id="L1645"><span class="lineNum">    1645</span> <span class="tlaGNC">          64 :     if (exitCode == 0) {</span></span>
-<span id="L1646"><span class="lineNum">    1646</span>              :       // Insert() checked the repository when the save was requested, but a</span>
-<span id="L1647"><span class="lineNum">    1647</span>              :       // pull queued before it (the asynchronous Update button) may have run</span>
-<span id="L1648"><span class="lineNum">    1648</span>              :       // and stopped in a conflict while this gpg step encrypted. Placing the</span>
-<span id="L1649"><span class="lineNum">    1649</span>              :       // entry and committing it now would land it in the unfinished operation,</span>
-<span id="L1650"><span class="lineNum">    1650</span>              :       // where `git rebase --abort` would drop it. Re-check and, if so, fail the</span>
-<span id="L1651"><span class="lineNum">    1651</span>              :       // save instead of placing it; the queued git steps are cancelled below.</span>
-<span id="L1652"><span class="lineNum">    1652</span> <span class="tlaGNC">          62 :       const QString midOp = unfinishedGitOperationReason();</span></span>
-<span id="L1653"><span class="lineNum">    1653</span> <span class="tlaGNC">          62 :       if (!midOp.isEmpty()) {</span></span>
-<span id="L1654"><span class="lineNum">    1654</span> <span class="tlaGNC">           1 :         error = midOp;</span></span>
-<span id="L1655"><span class="lineNum">    1655</span>              :         exitCode = 1;</span>
-<span id="L1656"><span class="lineNum">    1656</span>              :       } else {</span>
-<span id="L1657"><span class="lineNum">    1657</span> <span class="tlaGNC">         122 :         m_insertPlaced = placeEncryptedFile(pending.output, pending.file,</span></span>
-<span id="L1658"><span class="lineNum">    1658</span> <span class="tlaGNC">          61 :                                             pending.overwrite, &amp;error);</span></span>
-<span id="L1659"><span class="lineNum">    1659</span> <span class="tlaGNC">          61 :         if (!m_insertPlaced) {</span></span>
-<span id="L1660"><span class="lineNum">    1660</span>              :           exitCode = 1;</span>
-<span id="L1661"><span class="lineNum">    1661</span>              :         }</span>
-<span id="L1662"><span class="lineNum">    1662</span>              :       }</span>
-<span id="L1663"><span class="lineNum">    1663</span>              :     }</span>
-<span id="L1664"><span class="lineNum">    1664</span> <span class="tlaGNC">          64 :   }</span></span>
-<span id="L1665"><span class="lineNum">    1665</span> <span class="tlaGNC">         168 :   PROCESS pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
-<span id="L1666"><span class="lineNum">    1666</span> <span class="tlaGNC">         168 :   m_transactionOutput.append(out);</span></span>
-<span id="L1667"><span class="lineNum">    1667</span>              : </span>
-<span id="L1668"><span class="lineNum">    1668</span> <span class="tlaGNC">         168 :   if (exitCode == 0) {</span></span>
-<span id="L1669"><span class="lineNum">    1669</span> <span class="tlaGNC">         131 :     if (pid == INVALID) {</span></span>
-<span id="L1670"><span class="lineNum">    1670</span>              :       return;</span>
+<span id="L1628"><span class="lineNum">    1628</span> <span class="tlaGNC">          41 : void ImitatePass::executeGit(PROCESS id, const QStringList &amp;args, QString input,</span></span>
+<span id="L1629"><span class="lineNum">    1629</span>              :                              bool readStdout, bool readStderr) {</span>
+<span id="L1630"><span class="lineNum">    1630</span>              :   // Callers check gitReady() first; an empty executable that still gets here</span>
+<span id="L1631"><span class="lineNum">    1631</span>              :   // is reported by the Executor instead of wedging the queue (#1682).</span>
+<span id="L1632"><span class="lineNum">    1632</span> <span class="tlaGNC">          41 :   executeWrapper(id, m_settings.gitExecutable, args, std::move(input),</span></span>
+<span id="L1633"><span class="lineNum">    1633</span>              :                  readStdout, readStderr);</span>
+<span id="L1634"><span class="lineNum">    1634</span> <span class="tlaGNC">          41 : }</span></span>
+<span id="L1635"><span class="lineNum">    1635</span>              : </span>
+<span id="L1636"><span class="lineNum">    1636</span>              : // Only PASS_* processes reach Pass::finished, so to the interface this looks</span>
+<span id="L1637"><span class="lineNum">    1637</span>              : // the same as RealPass.</span>
+<span id="L1638"><span class="lineNum">    1638</span> <span class="tlaGNC">         168 : void ImitatePass::finished(int id, int exitCode, const QString &amp;out,</span></span>
+<span id="L1639"><span class="lineNum">    1639</span>              :                            const QString &amp;err) {</span>
+<span id="L1640"><span class="lineNum">    1640</span> <span class="tlaGNC">         168 :   qCDebug(lcQtPass) &lt;&lt; &quot;Imitate Pass&quot;;</span></span>
+<span id="L1641"><span class="lineNum">    1641</span>              :   QString error = err;</span>
+<span id="L1642"><span class="lineNum">    1642</span> <span class="tlaGNC">         168 :   if (id == PASS_INSERT &amp;&amp; !m_pendingInserts.isEmpty()) {</span></span>
+<span id="L1643"><span class="lineNum">    1643</span>              :     // Insert()'s gpg step: place the ciphertext before the queued git steps</span>
+<span id="L1644"><span class="lineNum">    1644</span>              :     // run (the executor starts the next item only after this returns). On</span>
+<span id="L1645"><span class="lineNum">    1645</span>              :     // failure it fails like a gpg error: git steps cancelled below.</span>
+<span id="L1646"><span class="lineNum">    1646</span>              :     // No dialog here: it would spin the event loop and run git steps first.</span>
+<span id="L1647"><span class="lineNum">    1647</span>              :     const PendingInsert pending = m_pendingInserts.dequeue();</span>
+<span id="L1648"><span class="lineNum">    1648</span>              :     // The flag answers for this insert, the one whose gpg step just ended, not</span>
+<span id="L1649"><span class="lineNum">    1649</span>              :     // for whichever Insert() was called last: with two inserts queued, a gpg</span>
+<span id="L1650"><span class="lineNum">    1650</span>              :     // failure of the second must report written=false even though the first</span>
+<span id="L1651"><span class="lineNum">    1651</span>              :     // was placed. Cleared here, before placement, and set only on success.</span>
+<span id="L1652"><span class="lineNum">    1652</span> <span class="tlaGNC">          64 :     m_insertPlaced = false;</span></span>
+<span id="L1653"><span class="lineNum">    1653</span> <span class="tlaGNC">          64 :     if (exitCode == 0) {</span></span>
+<span id="L1654"><span class="lineNum">    1654</span>              :       // Insert() checked the repository when the save was requested, but a</span>
+<span id="L1655"><span class="lineNum">    1655</span>              :       // pull queued before it (the asynchronous Update button) may have run</span>
+<span id="L1656"><span class="lineNum">    1656</span>              :       // and stopped in a conflict while this gpg step encrypted. Placing the</span>
+<span id="L1657"><span class="lineNum">    1657</span>              :       // entry and committing it now would land it in the unfinished operation,</span>
+<span id="L1658"><span class="lineNum">    1658</span>              :       // where `git rebase --abort` would drop it. Re-check and, if so, fail the</span>
+<span id="L1659"><span class="lineNum">    1659</span>              :       // save instead of placing it; the queued git steps are cancelled below.</span>
+<span id="L1660"><span class="lineNum">    1660</span> <span class="tlaGNC">          62 :       const QString midOp = unfinishedGitOperationReason();</span></span>
+<span id="L1661"><span class="lineNum">    1661</span> <span class="tlaGNC">          62 :       if (!midOp.isEmpty()) {</span></span>
+<span id="L1662"><span class="lineNum">    1662</span> <span class="tlaGNC">           1 :         error = midOp;</span></span>
+<span id="L1663"><span class="lineNum">    1663</span>              :         exitCode = 1;</span>
+<span id="L1664"><span class="lineNum">    1664</span>              :       } else {</span>
+<span id="L1665"><span class="lineNum">    1665</span> <span class="tlaGNC">         122 :         m_insertPlaced = placeEncryptedFile(pending.output, pending.file,</span></span>
+<span id="L1666"><span class="lineNum">    1666</span> <span class="tlaGNC">          61 :                                             pending.overwrite, &amp;error);</span></span>
+<span id="L1667"><span class="lineNum">    1667</span> <span class="tlaGNC">          61 :         if (!m_insertPlaced) {</span></span>
+<span id="L1668"><span class="lineNum">    1668</span>              :           exitCode = 1;</span>
+<span id="L1669"><span class="lineNum">    1669</span>              :         }</span>
+<span id="L1670"><span class="lineNum">    1670</span>              :       }</span>
 <span id="L1671"><span class="lineNum">    1671</span>              :     }</span>
-<span id="L1672"><span class="lineNum">    1672</span>              :   } else {</span>
-<span id="L1673"><span class="lineNum">    1673</span> <span class="tlaGNC">          42 :     while (pid == INVALID) {</span></span>
-<span id="L1674"><span class="lineNum">    1674</span> <span class="tlaGNC">           5 :       id = exec.cancelNext();</span></span>
-<span id="L1675"><span class="lineNum">    1675</span> <span class="tlaGNC">           5 :       if (id == -1) {</span></span>
-<span id="L1676"><span class="lineNum">    1676</span>              :         //  this is probably irrecoverable and shall not happen</span>
-<span id="L1677"><span class="lineNum">    1677</span> <span class="tlaUNC">           0 :         qCDebug(lcQtPass) &lt;&lt; &quot;No such transaction!&quot;;</span></span>
-<span id="L1678"><span class="lineNum">    1678</span> <span class="tlaUNC">           0 :         return;</span></span>
-<span id="L1679"><span class="lineNum">    1679</span>              :       }</span>
-<span id="L1680"><span class="lineNum">    1680</span> <span class="tlaGNC">           5 :       pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
-<span id="L1681"><span class="lineNum">    1681</span>              :     }</span>
-<span id="L1682"><span class="lineNum">    1682</span>              :   }</span>
-<span id="L1683"><span class="lineNum">    1683</span> <span class="tlaGNC">         158 :   Pass::finished(pid, exitCode, m_transactionOutput, error);</span></span>
-<span id="L1684"><span class="lineNum">    1684</span> <span class="tlaGNC">         158 :   m_transactionOutput.clear();</span></span>
-<span id="L1685"><span class="lineNum">    1685</span>              : }</span>
-<span id="L1686"><span class="lineNum">    1686</span>              : </span>
-<span id="L1687"><span class="lineNum">    1687</span> <span class="tlaGNC">         106 : auto ImitatePass::placeEncryptedFile(const QString &amp;output, const QString &amp;file,</span></span>
-<span id="L1688"><span class="lineNum">    1688</span>              :                                      bool overwrite, QString *error) -&gt; bool {</span>
-<span id="L1689"><span class="lineNum">    1689</span> <span class="tlaGNC">         106 :   if (QFileInfo(output).size() &lt;= 0) {</span></span>
-<span id="L1690"><span class="lineNum">    1690</span>              :     // gpg reported success and wrote nothing: not an entry.</span>
-<span id="L1691"><span class="lineNum">    1691</span> <span class="tlaGNC">           4 :     *error = tr(&quot;gpg wrote no ciphertext for %1.&quot;).arg(file);</span></span>
-<span id="L1692"><span class="lineNum">    1692</span> <span class="tlaGNC">           2 :     return false;</span></span>
-<span id="L1693"><span class="lineNum">    1693</span>              :   }</span>
-<span id="L1694"><span class="lineNum">    1694</span>              :   // A link planted since the check is replaced as an entry; without</span>
-<span id="L1695"><span class="lineNum">    1695</span>              :   // overwrite, anything new under the name fails the add.</span>
-<span id="L1696"><span class="lineNum">    1696</span> <span class="tlaGNC">         104 :   return Util::copyFileReplacing(output, file, overwrite, error);</span></span>
-<span id="L1697"><span class="lineNum">    1697</span>              : }</span>
-<span id="L1698"><span class="lineNum">    1698</span>              : </span>
-<span id="L1699"><span class="lineNum">    1699</span> <span class="tlaGNC">         175 : void ImitatePass::beforeExecute(PROCESS id) {</span></span>
-<span id="L1700"><span class="lineNum">    1700</span> <span class="tlaGNC">         175 :   m_transaction.transactionAdd(id);</span></span>
-<span id="L1701"><span class="lineNum">    1701</span> <span class="tlaGNC">         175 : }</span></span>
-<span id="L1702"><span class="lineNum">    1702</span>              : </span>
-<span id="L1703"><span class="lineNum">    1703</span>              : // PCRE, as for RealPass (see Pass::Grep). Runs on a NativeGrep thread; the</span>
-<span id="L1704"><span class="lineNum">    1704</span>              : // result arrives on this thread as finishedGrep.</span>
-<span id="L1705"><span class="lineNum">    1705</span> <span class="tlaGNC">          13 : void ImitatePass::Grep(QString pattern, bool caseInsensitive) {</span></span>
-<span id="L1706"><span class="lineNum">    1706</span> <span class="tlaGNC">          26 :   m_grep.search(pattern, caseInsensitive, m_settings.gpgExecutable,</span></span>
-<span id="L1707"><span class="lineNum">    1707</span> <span class="tlaGNC">          13 :                 m_settings.passStore, exec.environment());</span></span>
-<span id="L1708"><span class="lineNum">    1708</span> <span class="tlaGNC">          13 : }</span></span>
+<span id="L1672"><span class="lineNum">    1672</span> <span class="tlaGNC">          64 :   }</span></span>
+<span id="L1673"><span class="lineNum">    1673</span> <span class="tlaGNC">         168 :   PROCESS pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
+<span id="L1674"><span class="lineNum">    1674</span> <span class="tlaGNC">         168 :   m_transactionOutput.append(out);</span></span>
+<span id="L1675"><span class="lineNum">    1675</span>              : </span>
+<span id="L1676"><span class="lineNum">    1676</span> <span class="tlaGNC">         168 :   if (exitCode == 0) {</span></span>
+<span id="L1677"><span class="lineNum">    1677</span> <span class="tlaGNC">         128 :     if (pid == INVALID) {</span></span>
+<span id="L1678"><span class="lineNum">    1678</span>              :       return;</span>
+<span id="L1679"><span class="lineNum">    1679</span>              :     }</span>
+<span id="L1680"><span class="lineNum">    1680</span>              :   } else {</span>
+<span id="L1681"><span class="lineNum">    1681</span> <span class="tlaGNC">          45 :     while (pid == INVALID) {</span></span>
+<span id="L1682"><span class="lineNum">    1682</span> <span class="tlaGNC">           5 :       id = exec.cancelNext();</span></span>
+<span id="L1683"><span class="lineNum">    1683</span> <span class="tlaGNC">           5 :       if (id == -1) {</span></span>
+<span id="L1684"><span class="lineNum">    1684</span>              :         //  this is probably irrecoverable and shall not happen</span>
+<span id="L1685"><span class="lineNum">    1685</span> <span class="tlaUNC">           0 :         qCDebug(lcQtPass) &lt;&lt; &quot;No such transaction!&quot;;</span></span>
+<span id="L1686"><span class="lineNum">    1686</span> <span class="tlaUNC">           0 :         return;</span></span>
+<span id="L1687"><span class="lineNum">    1687</span>              :       }</span>
+<span id="L1688"><span class="lineNum">    1688</span> <span class="tlaGNC">           5 :       pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
+<span id="L1689"><span class="lineNum">    1689</span>              :     }</span>
+<span id="L1690"><span class="lineNum">    1690</span>              :   }</span>
+<span id="L1691"><span class="lineNum">    1691</span> <span class="tlaGNC">         158 :   Pass::finished(pid, exitCode, m_transactionOutput, error);</span></span>
+<span id="L1692"><span class="lineNum">    1692</span> <span class="tlaGNC">         158 :   m_transactionOutput.clear();</span></span>
+<span id="L1693"><span class="lineNum">    1693</span>              : }</span>
+<span id="L1694"><span class="lineNum">    1694</span>              : </span>
+<span id="L1695"><span class="lineNum">    1695</span> <span class="tlaGNC">         106 : auto ImitatePass::placeEncryptedFile(const QString &amp;output, const QString &amp;file,</span></span>
+<span id="L1696"><span class="lineNum">    1696</span>              :                                      bool overwrite, QString *error) -&gt; bool {</span>
+<span id="L1697"><span class="lineNum">    1697</span> <span class="tlaGNC">         106 :   if (QFileInfo(output).size() &lt;= 0) {</span></span>
+<span id="L1698"><span class="lineNum">    1698</span>              :     // gpg reported success and wrote nothing: not an entry.</span>
+<span id="L1699"><span class="lineNum">    1699</span> <span class="tlaGNC">           4 :     *error = tr(&quot;gpg wrote no ciphertext for %1.&quot;).arg(file);</span></span>
+<span id="L1700"><span class="lineNum">    1700</span> <span class="tlaGNC">           2 :     return false;</span></span>
+<span id="L1701"><span class="lineNum">    1701</span>              :   }</span>
+<span id="L1702"><span class="lineNum">    1702</span>              :   // A link planted since the check is replaced as an entry; without</span>
+<span id="L1703"><span class="lineNum">    1703</span>              :   // overwrite, anything new under the name fails the add.</span>
+<span id="L1704"><span class="lineNum">    1704</span> <span class="tlaGNC">         104 :   return Util::copyFileReplacing(output, file, overwrite, error);</span></span>
+<span id="L1705"><span class="lineNum">    1705</span>              : }</span>
+<span id="L1706"><span class="lineNum">    1706</span>              : </span>
+<span id="L1707"><span class="lineNum">    1707</span> <span class="tlaGNC">         175 : void ImitatePass::beforeExecute(PROCESS id) {</span></span>
+<span id="L1708"><span class="lineNum">    1708</span> <span class="tlaGNC">         175 :   m_transaction.transactionAdd(id);</span></span>
+<span id="L1709"><span class="lineNum">    1709</span> <span class="tlaGNC">         175 : }</span></span>
+<span id="L1710"><span class="lineNum">    1710</span>              : </span>
+<span id="L1711"><span class="lineNum">    1711</span>              : // PCRE, as for RealPass (see Pass::Grep). Runs on a NativeGrep thread; the</span>
+<span id="L1712"><span class="lineNum">    1712</span>              : // result arrives on this thread as finishedGrep.</span>
+<span id="L1713"><span class="lineNum">    1713</span> <span class="tlaGNC">          13 : void ImitatePass::Grep(QString pattern, bool caseInsensitive) {</span></span>
+<span id="L1714"><span class="lineNum">    1714</span> <span class="tlaGNC">          26 :   m_grep.search(pattern, caseInsensitive, m_settings.gpgExecutable,</span></span>
+<span id="L1715"><span class="lineNum">    1715</span> <span class="tlaGNC">          13 :                 m_settings.passStore, exec.environment());</span></span>
+<span id="L1716"><span class="lineNum">    1716</span> <span class="tlaGNC">          13 : }</span></span>
         </pre>
               </td>
             </tr>

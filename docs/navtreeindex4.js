@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238":[1,7,2,6],
 "class_single_application.html#a4893f9017498cae49ff2bb6db7f777f7":[1,7,2,10],
 "class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5":[1,7,2,0],
 "class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543":[1,7,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "filecontent_8h.html#a009ac2ea0587e59974fc7801567deccc":[4,0,1,16,0],
 "filecontent_8h_source.html":[4,0,1,16],
 "files.html":[4,0],
-"firstrunwizard_8cpp.html":[4,0,1,17],
-"firstrunwizard_8cpp_source.html":[4,0,1,17]
+"firstrunwizard_8cpp.html":[4,0,1,17]
 };

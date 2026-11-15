@@ -33,6 +33,7 @@ var group__backend =
       [ "cancelReencryptPath", "class_imitate_pass.html#a5cbd9d68f47d53b994ec25cecbb27436", null ],
       [ "ciphertextHolds", "class_imitate_pass.html#a305a2851e3a8c3c815cc561b48a450ab", null ],
       [ "commitArgs", "class_imitate_pass.html#a4b215c41496b7ab0479878e357bc4dac", null ],
+      [ "commitName", "class_imitate_pass.html#af0024af11e40884d3f25047475140908", null ],
       [ "commitReencrypted", "class_imitate_pass.html#a0057a214bb3597b3da7b56acdaaacb3a", null ],
       [ "Copy", "class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a", null ],
       [ "copyDestination", "class_imitate_pass.html#a3d49034415dcced209f0294b631c1ddc", null ],

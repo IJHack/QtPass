@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"qpushbuttonwithclipboard_8cpp_source.html":[4,0,1,65],
 "qpushbuttonwithclipboard_8h.html":[4,0,1,66],
 "qpushbuttonwithclipboard_8h_source.html":[4,0,1,66],
 "qtpass_8cpp.html":[4,0,1,67],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_totp_1_1_settings.html#af134b340ca954282b2a8713ebed58684":[1,3,10,0,3],
 "struct_user_info.html":[1,2,7],
 "struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99":[1,2,7,7],
-"struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f":[1,2,7,5],
-"struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd":[1,2,7,3]
+"struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f":[1,2,7,5]
 };

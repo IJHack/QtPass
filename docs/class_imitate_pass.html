@@ -288,6 +288,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a86a50ad28d84a9c08a43b1de2621bb55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bring the signature in line with the list just written: a new one when signing is on, the old one removed when it is off (pass and other clients would reject the new list under it).  <br /></td></tr>
 <tr class="memitem:aae90cebd2128422bd41e32fc292a49a0" id="r_aae90cebd2128422bd41e32fc292a49a0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aae90cebd2128422bd41e32fc292a49a0">gitAddGpgId</a> (const QString &amp;gpgIdFile, const QString &amp;gpgIdSigFile, QString *out, QString *err) -&gt; int</td></tr>
 <tr class="memdesc:aae90cebd2128422bd41e32fc292a49a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage a <span class="tt">.gpg-id</span> and, when given, its <span class="tt">.sig</span>, and commit both in one commit, so no commit in the history has a recipient list without the signature that covers it. Nothing is committed when neither file changed.  <br /></td></tr>
+<tr class="memitem:af0024af11e40884d3f25047475140908" id="r_af0024af11e40884d3f25047475140908"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af0024af11e40884d3f25047475140908">commitName</a> (const QString &amp;path) const -&gt; QString</td></tr>
+<tr class="memdesc:af0024af11e40884d3f25047475140908"><td class="mdescLeft">&#160;</td><td class="mdescRight">How a commit message names a file of the store: relative to the store, without <span class="tt">.gpg</span> ("work/bank", "work/.gpg-id"), never the local path, which the shared history would carry to everyone.  <br /></td></tr>
 <tr class="memitem:a568cee878638fa0cbc4c862060ea35b3" id="r_a568cee878638fa0cbc4c862060ea35b3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a568cee878638fa0cbc4c862060ea35b3">gitTracks</a> (const QString &amp;file) -&gt; bool</td></tr>
 <tr class="memdesc:a568cee878638fa0cbc4c862060ea35b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether git already tracks a file in the store.  <br /></td></tr>
 <tr class="memitem:a4b215c41496b7ab0479878e357bc4dac" id="r_a4b215c41496b7ab0479878e357bc4dac"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4b215c41496b7ab0479878e357bc4dac">commitArgs</a> () -&gt; QStringList</td></tr>
@@ -636,7 +638,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a0a580982bcc672c58aad1289d05c4951">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01699">1699</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01707">1707</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -673,7 +675,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a109a1abbd06afe20ed85c2fc9b46427c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00559">559</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00568">568</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -800,6 +802,54 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="af0024af11e40884d3f25047475140908" name="af0024af11e40884d3f25047475140908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0024af11e40884d3f25047475140908">&#9670;&#160;</a></span>commitName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::commitName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> const -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How a commit message names a file of the store: relative to the store, without <span class="tt">.gpg</span> ("work/bank", "work/.gpg-id"), never the local path, which the shared history would carry to everyone. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Absolute path, normally inside the store. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The store-relative name; for a path outside the store, its file name alone. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01488">1488</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af0024af11e40884d3f25047475140908_cgraph.svg" width="392" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af0024af11e40884d3f25047475140908_icgraph.svg" width="100%" height="470"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a0057a214bb3597b3da7b56acdaaacb3a" name="a0057a214bb3597b3da7b56acdaaacb3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0057a214bb3597b3da7b56acdaaacb3a">&#9670;&#160;</a></span>commitReencrypted()</h2>
 
@@ -833,16 +883,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether the repository is up to date with the file; false makes the run count the file as failed, so a partial store is not pushed. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00883">883</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a0057a214bb3597b3da7b56acdaaacb3a_cgraph.svg" width="100%" height="487"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a0057a214bb3597b3da7b56acdaaacb3a_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -892,17 +942,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01559">1559</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01567">1567</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
 </div>
-<div id="dynsection-15-content" class="dyncontent hidden">
+<div id="dynsection-17-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a7748aba981f125a9d663cb9b40358d4a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary">
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
 </div>
-<div id="dynsection-16-content" class="dyncontent hidden">
+<div id="dynsection-18-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a7748aba981f125a9d663cb9b40358d4a_icgraph.svg" width="100%" height="471"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -951,17 +1001,17 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The file, or an empty string when refused. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01530">1530</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01538">1538</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
 </div>
-<div id="dynsection-17-content" class="dyncontent hidden">
+<div id="dynsection-19-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a3d49034415dcced209f0294b631c1ddc_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary">
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
 </div>
-<div id="dynsection-18-content" class="dyncontent hidden">
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a3d49034415dcced209f0294b631c1ddc_icgraph.svg" width="100%" height="471"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -994,16 +1044,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if backup created or not needed, false if backup failed. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00991">991</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary">
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
 </div>
-<div id="dynsection-19-content" class="dyncontent hidden">
+<div id="dynsection-21-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a086365ec85674590afbd883df0b27a80_cgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary">
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
 </div>
-<div id="dynsection-20-content" class="dyncontent hidden">
+<div id="dynsection-22-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a086365ec85674590afbd883df0b27a80_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1047,16 +1097,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether gpg decrypted it to something. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00835">835</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary">
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
 </div>
-<div id="dynsection-21-content" class="dyncontent hidden">
+<div id="dynsection-23-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aee1afe18c4bbce2d16e4fe90c6d160c9_cgraph.svg" width="100%" height="431"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary">
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
 </div>
-<div id="dynsection-22-content" class="dyncontent hidden">
+<div id="dynsection-24-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aee1afe18c4bbce2d16e4fe90c6d160c9_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1094,10 +1144,10 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00685">685</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary">
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
 </div>
-<div id="dynsection-23-content" class="dyncontent hidden">
+<div id="dynsection-25-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae9a418566f8f18e20fe4552d0b88e46c_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1147,16 +1197,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether gpg wrote the ciphertext. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00852">852</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary">
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
 </div>
-<div id="dynsection-24-content" class="dyncontent hidden">
+<div id="dynsection-26-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a085631a1431ac8d965028540fca2efea_cgraph.svg" width="100%" height="433"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary">
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
 </div>
-<div id="dynsection-25-content" class="dyncontent hidden">
+<div id="dynsection-27-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a085631a1431ac8d965028540fca2efea_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1187,10 +1237,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>A <a class="el" href="#af331446d163c31f1fca714646c0f6244" title="Re-encrypt entire directory.">reencryptPath()</a> run is over, whether it finished, failed, was cancelled or was refused; the main window releases the interface. </p>
 <p>Also emitted without a preceding <a class="el" href="#aecffecc95bd1c0281849dbfe11231e36" title="A reencryptPath() run is about to start its worker thread.">startReencryptPath()</a> when the folder is refused before anything starts. </p>
-<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary">
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
 </div>
-<div id="dynsection-26-content" class="dyncontent hidden">
+<div id="dynsection-28-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a9df2c7246a8686cf92c442c00dc55af7_icgraph.svg" width="100%" height="494"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1229,16 +1279,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The <span class="tt">.gpg</span> files, links and special files left out. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01203">1203</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary">
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
 </div>
-<div id="dynsection-27-content" class="dyncontent hidden">
+<div id="dynsection-29-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a475db6f5d1e02b81a558943a9882058d_cgraph.svg" width="456" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary">
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
 </div>
-<div id="dynsection-28-content" class="dyncontent hidden">
+<div id="dynsection-30-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a475db6f5d1e02b81a558943a9882058d_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1300,16 +1350,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Exit code, or -1 when refused, failed to start or interrupted. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00067">67</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary">
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
 </div>
-<div id="dynsection-29-content" class="dyncontent hidden">
+<div id="dynsection-31-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a24c6c475f51730a9e784ce3117e49ee0_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary">
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
 </div>
-<div id="dynsection-30-content" class="dyncontent hidden">
+<div id="dynsection-32-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a24c6c475f51730a9e784ce3117e49ee0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1365,10 +1415,10 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>As the overload above. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00083">83</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary">
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
 </div>
-<div id="dynsection-31-content" class="dyncontent hidden">
+<div id="dynsection-33-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af5d95620396e55814ba9dbf9a6e93fba_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1420,17 +1470,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01620">1620</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01628">1628</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
 </div>
-<div id="dynsection-32-content" class="dyncontent hidden">
+<div id="dynsection-34-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a6f9682c6103b112a9aa844df7ef6a273_cgraph.svg" width="399" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary">
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary">
 </div>
-<div id="dynsection-33-content" class="dyncontent hidden">
+<div id="dynsection-35-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a6f9682c6103b112a9aa844df7ef6a273_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1482,17 +1532,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01598">1598</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01606">1606</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary">
 </div>
-<div id="dynsection-34-content" class="dyncontent hidden">
+<div id="dynsection-36-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a2ff555a9fdb035a15b0ea55ce2cb887a_cgraph.svg" width="406" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary">
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
 </div>
-<div id="dynsection-35-content" class="dyncontent hidden">
+<div id="dynsection-37-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a2ff555a9fdb035a15b0ea55ce2cb887a_icgraph.svg" width="384" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1533,16 +1583,16 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01474">1474</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary">
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
 </div>
-<div id="dynsection-36-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a94389a15db6c782715520aa6fbb13098_cgraph.svg" width="100%" height="473"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-38-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a94389a15db6c782715520aa6fbb13098_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary">
+<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary">
 </div>
-<div id="dynsection-37-content" class="dyncontent hidden">
+<div id="dynsection-39-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a94389a15db6c782715520aa6fbb13098_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1598,11 +1648,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01630">1630</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01638">1638</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary">
 </div>
-<div id="dynsection-38-content" class="dyncontent hidden">
+<div id="dynsection-40-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aa0b75b53b2a2d62b0fbffbb5d2d7efe4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1640,16 +1690,16 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01330">1330</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary">
+<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary">
 </div>
-<div id="dynsection-39-content" class="dyncontent hidden">
+<div id="dynsection-41-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a172222519125f9e053e09a505743d15b_cgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-40-summary" class="dynsummary">
+<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary">
 </div>
-<div id="dynsection-40-content" class="dyncontent hidden">
+<div id="dynsection-42-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a172222519125f9e053e09a505743d15b_icgraph.svg" width="100%" height="456"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1688,16 +1738,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>List of key IDs. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00806">806</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary">
+<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary">
 </div>
-<div id="dynsection-41-content" class="dyncontent hidden">
+<div id="dynsection-43-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aef532636a761beee3ecdd5dcedbfc834_cgraph.svg" width="100%" height="431"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-42-summary" class="dynsummary">
+<div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary">
 </div>
-<div id="dynsection-42-content" class="dyncontent hidden">
+<div id="dynsection-44-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aef532636a761beee3ecdd5dcedbfc834_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1753,16 +1803,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Exit code of the first failing git command, 0 on success. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00463">463</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-43-summary" class="dynsummary">
+<div id="dynsection-45" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary">
 </div>
-<div id="dynsection-43-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aae90cebd2128422bd41e32fc292a49a0_cgraph.svg" width="100%" height="450"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-45-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aae90cebd2128422bd41e32fc292a49a0_cgraph.svg" width="100%" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-44-summary" class="dynsummary">
+<div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary">
 </div>
-<div id="dynsection-44-content" class="dyncontent hidden">
+<div id="dynsection-46-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aae90cebd2128422bd41e32fc292a49a0_icgraph.svg" width="371" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1797,16 +1847,16 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00268">268</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-45" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-45-summary" class="dynsummary">
+<div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary">
 </div>
-<div id="dynsection-45-content" class="dyncontent hidden">
+<div id="dynsection-47-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_afcfd84525f2dfd41b131f76c988010fb_cgraph.svg" width="100%" height="445"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-46-summary" class="dynsummary">
+<div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary">
 </div>
-<div id="dynsection-46-content" class="dyncontent hidden">
+<div id="dynsection-48-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_afcfd84525f2dfd41b131f76c988010fb_icgraph.svg" width="100%" height="525"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1830,11 +1880,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Git is enabled and an executable is configured. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when git commands can actually run. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01606">1606</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-47-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01614">1614</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-49" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-49-summary" class="dynsummary">
 </div>
-<div id="dynsection-47-content" class="dyncontent hidden">
+<div id="dynsection-49-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af1e911c908f7848aa229190053cf6e87_icgraph.svg" width="100%" height="503"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1868,10 +1918,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00114">114</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-48-summary" class="dynsummary">
+<div id="dynsection-50" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary">
 </div>
-<div id="dynsection-48-content" class="dyncontent hidden">
+<div id="dynsection-50-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a2bb2e83ad96efa7c111df54230e237bb_cgraph.svg" width="100%" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1905,10 +1955,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00118">118</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-49" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-49-summary" class="dynsummary">
+<div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary">
 </div>
-<div id="dynsection-49-content" class="dyncontent hidden">
+<div id="dynsection-51-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ab9f0103079ee01a263b70b95cd4aeced_cgraph.svg" width="595" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1942,10 +1992,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a7a109d5c0a7f565398b7238c32bb6328">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00125">125</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-50" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-50-summary" class="dynsummary">
+<div id="dynsection-52" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-52-summary" class="dynsummary">
 </div>
-<div id="dynsection-50-content" class="dyncontent hidden">
+<div id="dynsection-52-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a5713b5c223fd522d0790debaa33cfbc2_cgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1979,16 +2029,16 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00140">140</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-51-summary" class="dynsummary">
+<div id="dynsection-53" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-53-summary" class="dynsummary">
 </div>
-<div id="dynsection-51-content" class="dyncontent hidden">
+<div id="dynsection-53-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae61b400e69fcc32c4a80b94fb52107b9_cgraph.svg" width="602" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-52" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-52-summary" class="dynsummary">
+<div id="dynsection-54" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-54-summary" class="dynsummary">
 </div>
-<div id="dynsection-52-content" class="dyncontent hidden">
+<div id="dynsection-54-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae61b400e69fcc32c4a80b94fb52107b9_icgraph.svg" width="100%" height="456"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2012,17 +2062,17 @@ Additional Inherited Members</h2></td></tr>
 <p><a class="el" href="#af1e911c908f7848aa229190053cf6e87" title="Git is enabled and an executable is configured.">gitConfigured()</a> plus a status message when git is enabled but no executable is configured. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when git commands can actually run. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01612">1612</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-53" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-53-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01620">1620</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-55" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-55-summary" class="dynsummary">
 </div>
-<div id="dynsection-53-content" class="dyncontent hidden">
+<div id="dynsection-55-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a667dcc58337f142307a3f98aaaed8219_cgraph.svg" width="348" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-54" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-54-summary" class="dynsummary">
+<div id="dynsection-56" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-56-summary" class="dynsummary">
 </div>
-<div id="dynsection-54-content" class="dyncontent hidden">
+<div id="dynsection-56-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a667dcc58337f142307a3f98aaaed8219_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2061,16 +2111,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true when the file is in the git index. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00507">507</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-55" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-55-summary" class="dynsummary">
+<div id="dynsection-57" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-57-summary" class="dynsummary">
 </div>
-<div id="dynsection-55-content" class="dyncontent hidden">
+<div id="dynsection-57-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a568cee878638fa0cbc4c862060ea35b3_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-56" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-56-summary" class="dynsummary">
+<div id="dynsection-58" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-58-summary" class="dynsummary">
 </div>
-<div id="dynsection-56-content" class="dyncontent hidden">
+<div id="dynsection-58-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a568cee878638fa0cbc4c862060ea35b3_icgraph.svg" width="602" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2103,16 +2153,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A signer; cheap to build, valid while m_settings is. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00338">338</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-57" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-57-summary" class="dynsummary">
+<div id="dynsection-59" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-59-summary" class="dynsummary">
 </div>
-<div id="dynsection-57-content" class="dyncontent hidden">
+<div id="dynsection-59-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aff483e62ab4ceede87aa3007c8f55588_cgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-58" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-58-summary" class="dynsummary">
+<div id="dynsection-60" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-60-summary" class="dynsummary">
 </div>
-<div id="dynsection-58-content" class="dyncontent hidden">
+<div id="dynsection-60-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aff483e62ab4ceede87aa3007c8f55588_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2157,17 +2207,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01705">1705</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-59" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-59-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01713">1713</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-61" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-61-summary" class="dynsummary">
 </div>
-<div id="dynsection-59-content" class="dyncontent hidden">
+<div id="dynsection-61-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a4c18253700bd6127c546325448f14829_cgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-60" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-60-summary" class="dynsummary">
+<div id="dynsection-62" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-62-summary" class="dynsummary">
 </div>
-<div id="dynsection-60-content" class="dyncontent hidden">
+<div id="dynsection-62-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a4c18253700bd6127c546325448f14829_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2212,10 +2262,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00556">556</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-61" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-61-summary" class="dynsummary">
+<div id="dynsection-63" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-63-summary" class="dynsummary">
 </div>
-<div id="dynsection-61-content" class="dyncontent hidden">
+<div id="dynsection-63-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a6fe6b48df3fb04071c8c2c1d5c1d1206_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2266,10 +2316,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00201">201</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-62" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-62-summary" class="dynsummary">
+<div id="dynsection-64" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-64-summary" class="dynsummary">
 </div>
-<div id="dynsection-62-content" class="dyncontent hidden">
+<div id="dynsection-64-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a4c62fe3ae4f151582f6360599a610dd6_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2309,7 +2359,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00389">389</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00398">398</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -2357,16 +2407,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>false when the file cannot be read, the signature is bad or the list is a rollback (with a signing key configured). true otherwise, also for an empty list; the caller decides what an empty list means. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00637">637</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-63" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-63-summary" class="dynsummary">
+<div id="dynsection-65" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-65-summary" class="dynsummary">
 </div>
-<div id="dynsection-63-content" class="dyncontent hidden">
+<div id="dynsection-65-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a70e0a1c01484ea4d62aa659bd444e89e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-64" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-64-summary" class="dynsummary">
+<div id="dynsection-66" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-66-summary" class="dynsummary">
 </div>
-<div id="dynsection-64-content" class="dyncontent hidden">
+<div id="dynsection-66-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a70e0a1c01484ea4d62aa659bd444e89e_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2416,17 +2466,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01493">1493</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-65" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-65-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01501">1501</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-67" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-67-summary" class="dynsummary">
 </div>
-<div id="dynsection-65-content" class="dyncontent hidden">
+<div id="dynsection-67-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae647ee1e408862bb6d66ee4d6324f0b1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-66" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-66-summary" class="dynsummary">
+<div id="dynsection-68" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-68-summary" class="dynsummary">
 </div>
-<div id="dynsection-66-content" class="dyncontent hidden">
+<div id="dynsection-68-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae647ee1e408862bb6d66ee4d6324f0b1_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2465,16 +2515,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Path suitable for the configured git executable. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00106">106</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-67" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-67-summary" class="dynsummary">
+<div id="dynsection-69" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-69-summary" class="dynsummary">
 </div>
-<div id="dynsection-67-content" class="dyncontent hidden">
+<div id="dynsection-69-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af337264de66506f7f949169654aa267d_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-68" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-68-summary" class="dynsummary">
+<div id="dynsection-70" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-70-summary" class="dynsummary">
 </div>
-<div id="dynsection-68-content" class="dyncontent hidden">
+<div id="dynsection-70-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af337264de66506f7f949169654aa267d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2513,16 +2563,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Path suitable for the configured gpg executable. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00110">110</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-69" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-69-summary" class="dynsummary">
+<div id="dynsection-71" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-71-summary" class="dynsummary">
 </div>
-<div id="dynsection-69-content" class="dyncontent hidden">
+<div id="dynsection-71-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ad1536a8c72d90824d55e4f02a2fbd3d9_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-70" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-70-summary" class="dynsummary">
+<div id="dynsection-72" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-72-summary" class="dynsummary">
 </div>
-<div id="dynsection-70-content" class="dyncontent hidden">
+<div id="dynsection-72-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ad1536a8c72d90824d55e4f02a2fbd3d9_icgraph.svg" width="100%" height="559"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2577,17 +2627,17 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">file</code> now holds the new ciphertext. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01687">1687</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-71" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-71-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01695">1695</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<div id="dynsection-73" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-73-summary" class="dynsummary">
 </div>
-<div id="dynsection-71-content" class="dyncontent hidden">
+<div id="dynsection-73-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a832612d1570d30b723025069fe26325c_cgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-72" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-72-summary" class="dynsummary">
+<div id="dynsection-74" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-74-summary" class="dynsummary">
 </div>
-<div id="dynsection-72-content" class="dyncontent hidden">
+<div id="dynsection-74-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a832612d1570d30b723025069fe26325c_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2623,16 +2673,16 @@ Additional Inherited Members</h2></td></tr>
 true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerged files; false if unmerged files remain or their check fails. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01171">1171</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-73" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-73-summary" class="dynsummary">
+<div id="dynsection-75" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-75-summary" class="dynsummary">
 </div>
-<div id="dynsection-73-content" class="dyncontent hidden">
+<div id="dynsection-75-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af8271fc09ec9d95b3c47f386087893e7_cgraph.svg" width="100%" height="504"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-74" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-74-summary" class="dynsummary">
+<div id="dynsection-76" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-76-summary" class="dynsummary">
 </div>
-<div id="dynsection-74-content" class="dyncontent hidden">
+<div id="dynsection-76-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af8271fc09ec9d95b3c47f386087893e7_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2688,16 +2738,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>Whether the run may go on with this folder. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01218">1218</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-75" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-75-summary" class="dynsummary">
+<div id="dynsection-77" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-77-summary" class="dynsummary">
 </div>
-<div id="dynsection-75-content" class="dyncontent hidden">
+<div id="dynsection-77-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a55e5e5b17e7f57d387944c22921ede3e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-76" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-76-summary" class="dynsummary">
+<div id="dynsection-78" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-78-summary" class="dynsummary">
 </div>
-<div id="dynsection-76-content" class="dyncontent hidden">
+<div id="dynsection-78-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a55e5e5b17e7f57d387944c22921ede3e_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2741,16 +2791,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>false when there are none to use (the user was told why). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00180">180</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-77" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-77-summary" class="dynsummary">
+<div id="dynsection-79" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-79-summary" class="dynsummary">
 </div>
-<div id="dynsection-77-content" class="dyncontent hidden">
+<div id="dynsection-79-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a2cd108bdff679ad6d03daf0c7dfd1aa3_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-78" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-78-summary" class="dynsummary">
+<div id="dynsection-80" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-80-summary" class="dynsummary">
 </div>
-<div id="dynsection-78-content" class="dyncontent hidden">
+<div id="dynsection-80-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a2cd108bdff679ad6d03daf0c7dfd1aa3_icgraph.svg" width="391" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2789,16 +2839,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>false when something was reported that needs a human first. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00729">729</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-79" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-79-summary" class="dynsummary">
+<div id="dynsection-81" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-81-summary" class="dynsummary">
 </div>
-<div id="dynsection-79-content" class="dyncontent hidden">
+<div id="dynsection-81-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae12b9655fdad620c3f6810aed04191ed_cgraph.svg" width="100%" height="482"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-80" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-80-summary" class="dynsummary">
+<div id="dynsection-82" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-82-summary" class="dynsummary">
 </div>
-<div id="dynsection-80-content" class="dyncontent hidden">
+<div id="dynsection-82-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae12b9655fdad620c3f6810aed04191ed_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2837,16 +2887,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>Counts and the list of files that could not be re-encrypted. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01242">1242</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-81" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-81-summary" class="dynsummary">
+<div id="dynsection-83" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-83-summary" class="dynsummary">
 </div>
-<div id="dynsection-81-content" class="dyncontent hidden">
+<div id="dynsection-83-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a8117ed7e6ccc1916801d88883ea2819a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-82" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-82-summary" class="dynsummary">
+<div id="dynsection-84" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-84-summary" class="dynsummary">
 </div>
-<div id="dynsection-82-content" class="dyncontent hidden">
+<div id="dynsection-84-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a8117ed7e6ccc1916801d88883ea2819a_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2876,16 +2926,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01074">1074</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-83" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-83-summary" class="dynsummary">
+<div id="dynsection-85" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-85-summary" class="dynsummary">
 </div>
-<div id="dynsection-83-content" class="dyncontent hidden">
+<div id="dynsection-85-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af331446d163c31f1fca714646c0f6244_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-84" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-84-summary" class="dynsummary">
+<div id="dynsection-86" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-86-summary" class="dynsummary">
 </div>
-<div id="dynsection-84-content" class="dyncontent hidden">
+<div id="dynsection-86-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af331446d163c31f1fca714646c0f6244_icgraph.svg" width="100%" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2920,10 +2970,10 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01065">1065</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-85" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-85-summary" class="dynsummary">
+<div id="dynsection-87" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-87-summary" class="dynsummary">
 </div>
-<div id="dynsection-85-content" class="dyncontent hidden">
+<div id="dynsection-87-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_abf14214692366809c82ad29e8d18c77b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2964,16 +3014,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
   </table>
   </dd>
 </dl>
-<div id="dynsection-86" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-86-summary" class="dynsummary">
+<div id="dynsection-88" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-88-summary" class="dynsummary">
 </div>
-<div id="dynsection-86-content" class="dyncontent hidden">
+<div id="dynsection-88-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a9332f01d3ce1447fb9eba7ec8f0172af_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-87" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-87-summary" class="dynsummary">
+<div id="dynsection-89" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-89-summary" class="dynsummary">
 </div>
-<div id="dynsection-87-content" class="dyncontent hidden">
+<div id="dynsection-89-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a9332f01d3ce1447fb9eba7ec8f0172af_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3023,16 +3073,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00911">911</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-88" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-88-summary" class="dynsummary">
+<div id="dynsection-90" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-90-summary" class="dynsummary">
 </div>
-<div id="dynsection-88-content" class="dyncontent hidden">
+<div id="dynsection-90-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a331fdf170bbd5de247d1e5ee7f6bb65c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-89" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-89-summary" class="dynsummary">
+<div id="dynsection-91" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-91-summary" class="dynsummary">
 </div>
-<div id="dynsection-89-content" class="dyncontent hidden">
+<div id="dynsection-91-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a331fdf170bbd5de247d1e5ee7f6bb65c_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3065,16 +3115,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>Whether the re-encryption run may call Git. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01384">1384</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-90" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-90-summary" class="dynsummary">
+<div id="dynsection-92" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-92-summary" class="dynsummary">
 </div>
-<div id="dynsection-90-content" class="dyncontent hidden">
+<div id="dynsection-92-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af0e30ba675e011cd63447466afc04bed_cgraph.svg" width="470" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-91" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-91-summary" class="dynsummary">
+<div id="dynsection-93" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-93-summary" class="dynsummary">
 </div>
-<div id="dynsection-91-content" class="dyncontent hidden">
+<div id="dynsection-93-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af0e30ba675e011cd63447466afc04bed_icgraph.svg" width="100%" height="503"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3117,16 +3167,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01388">1388</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-92" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-92-summary" class="dynsummary">
+<div id="dynsection-94" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-94-summary" class="dynsummary">
 </div>
-<div id="dynsection-92-content" class="dyncontent hidden">
+<div id="dynsection-94-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aa30ada0a871c60297f6bde37cec9df2e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-93" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-93-summary" class="dynsummary">
+<div id="dynsection-95" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-95-summary" class="dynsummary">
 </div>
-<div id="dynsection-93-content" class="dyncontent hidden">
+<div id="dynsection-95-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aa30ada0a871c60297f6bde37cec9df2e_icgraph.svg" width="423" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -3165,16 +3215,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00513">513</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-94" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-94-summary" class="dynsummary">
+<div id="dynsection-96" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-96-summary" class="dynsummary">
 </div>
-<div id="dynsection-94-content" class="dyncontent hidden">
+<div id="dynsection-96-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_abe06761236eb789f13dd4e8814ce7f15_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-95" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-95-summary" class="dynsummary">
+<div id="dynsection-97" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-97-summary" class="dynsummary">
 </div>
-<div id="dynsection-95-content" class="dyncontent hidden">
+<div id="dynsection-97-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_abe06761236eb789f13dd4e8814ce7f15_icgraph.svg" width="374" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -3219,10 +3269,10 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <p>Implements <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00277">277</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-96" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-96-summary" class="dynsummary">
+<div id="dynsection-98" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-98-summary" class="dynsummary">
 </div>
-<div id="dynsection-96-content" class="dyncontent hidden">
+<div id="dynsection-98-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a181e512eff4b82f5078af432c369d4ee_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3271,16 +3321,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01405">1405</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-97" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-97-summary" class="dynsummary">
+<div id="dynsection-99" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-99-summary" class="dynsummary">
 </div>
-<div id="dynsection-97-content" class="dyncontent hidden">
+<div id="dynsection-99-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a3362c8cb99993b5c1acf9fdefb2bf960_cgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-98" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-98-summary" class="dynsummary">
+<div id="dynsection-100" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-100-summary" class="dynsummary">
 </div>
-<div id="dynsection-98-content" class="dyncontent hidden">
+<div id="dynsection-100-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a3362c8cb99993b5c1acf9fdefb2bf960_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3318,16 +3368,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00678">678</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-99" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-99-summary" class="dynsummary">
+<div id="dynsection-101" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-101-summary" class="dynsummary">
 </div>
-<div id="dynsection-99-content" class="dyncontent hidden">
+<div id="dynsection-101-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af6b661f1ea422063e61dd438534a1452_cgraph.svg" width="390" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-100" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-100-summary" class="dynsummary">
+<div id="dynsection-102" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-102-summary" class="dynsummary">
 </div>
-<div id="dynsection-100-content" class="dyncontent hidden">
+<div id="dynsection-102-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_af6b661f1ea422063e61dd438534a1452_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3377,10 +3427,10 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>Resolved destination path. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01429">1429</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-101" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-101-summary" class="dynsummary">
+<div id="dynsection-103" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-103-summary" class="dynsummary">
 </div>
-<div id="dynsection-101-content" class="dyncontent hidden">
+<div id="dynsection-103-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_adfd24194a7787a48b6eddbe8d31fc563_icgraph.svg" width="100%" height="449"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3419,16 +3469,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>Whether nothing needs a human first. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00697">697</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-102" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-102-summary" class="dynsummary">
+<div id="dynsection-104" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-104-summary" class="dynsummary">
 </div>
-<div id="dynsection-102-content" class="dyncontent hidden">
+<div id="dynsection-104-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae8b869923a6a4ab96b47c0c42d83fca0_cgraph.svg" width="636" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-103" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-103-summary" class="dynsummary">
+<div id="dynsection-105" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-105-summary" class="dynsummary">
 </div>
-<div id="dynsection-103-content" class="dyncontent hidden">
+<div id="dynsection-105-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ae8b869923a6a4ab96b47c0c42d83fca0_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3490,16 +3540,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>false when signing or removing failed (the user was told). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00527">527</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-104" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-104-summary" class="dynsummary">
+<div id="dynsection-106" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-106-summary" class="dynsummary">
 </div>
-<div id="dynsection-104-content" class="dyncontent hidden">
+<div id="dynsection-106-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a86a50ad28d84a9c08a43b1de2621bb55_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-105" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-105-summary" class="dynsummary">
+<div id="dynsection-107" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-107-summary" class="dynsummary">
 </div>
-<div id="dynsection-105-content" class="dyncontent hidden">
+<div id="dynsection-107-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a86a50ad28d84a9c08a43b1de2621bb55_icgraph.svg" width="390" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -3539,10 +3589,10 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <p>Implements <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00146">146</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-106" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-106-summary" class="dynsummary">
+<div id="dynsection-108" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-108-summary" class="dynsummary">
 </div>
-<div id="dynsection-106-content" class="dyncontent hidden">
+<div id="dynsection-108-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_acfffcbf097c9d4615c01e064e335d65d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3586,16 +3636,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00439">439</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-107" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-107-summary" class="dynsummary">
+<div id="dynsection-109" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-109-summary" class="dynsummary">
 </div>
-<div id="dynsection-107-content" class="dyncontent hidden">
+<div id="dynsection-109-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a9055e77fb0300ace61fde6386b50705f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-108" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-108-summary" class="dynsummary">
+<div id="dynsection-110" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-110-summary" class="dynsummary">
 </div>
-<div id="dynsection-108-content" class="dyncontent hidden">
+<div id="dynsection-110-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a9055e77fb0300ace61fde6386b50705f_icgraph.svg" width="631" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -3626,10 +3676,10 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 
 <p>A <a class="el" href="#af331446d163c31f1fca714646c0f6244" title="Re-encrypt entire directory.">reencryptPath()</a> run is about to start its worker thread. </p>
 <p>The main window disables the interface and shows a progress dialog with a Cancel button on it. Always followed by <a class="el" href="#a9df2c7246a8686cf92c442c00dc55af7" title="A reencryptPath() run is over, whether it finished, failed, was cancelled or was refused; the main wi...">endReencryptPath()</a>. </p>
-<div id="dynsection-109" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-109-summary" class="dynsummary">
+<div id="dynsection-111" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-111-summary" class="dynsummary">
 </div>
-<div id="dynsection-109-content" class="dyncontent hidden">
+<div id="dynsection-111-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_aecffecc95bd1c0281849dbfe11231e36_icgraph.svg" width="100%" height="523"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3667,16 +3717,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01115">1115</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-110" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-110-summary" class="dynsummary">
+<div id="dynsection-112" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-112-summary" class="dynsummary">
 </div>
-<div id="dynsection-110-content" class="dyncontent hidden">
+<div id="dynsection-112-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a44b84cc53695ae8e242ca182546234d4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-111" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-111-summary" class="dynsummary">
+<div id="dynsection-113" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-113-summary" class="dynsummary">
 </div>
-<div id="dynsection-111-content" class="dyncontent hidden">
+<div id="dynsection-113-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a44b84cc53695ae8e242ca182546234d4_icgraph.svg" width="100%" height="456"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3722,10 +3772,10 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <p>Reimplemented from <a class="el" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00094">94</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-112" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-112-summary" class="dynsummary">
+<div id="dynsection-114" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-114-summary" class="dynsummary">
 </div>
-<div id="dynsection-112-content" class="dyncontent hidden">
+<div id="dynsection-114-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_ad2f55fd94626cc4a10b69e9dc76e1b32_cgraph.svg" width="100%" height="433"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3769,16 +3819,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>Path suitable for the given executable. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00089">89</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-113" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-113-summary" class="dynsummary">
+<div id="dynsection-115" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-115-summary" class="dynsummary">
 </div>
-<div id="dynsection-113-content" class="dyncontent hidden">
+<div id="dynsection-115-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a9e2ce295e8353748e93fcc7f4776a7b8_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-114" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-114-summary" class="dynsummary">
+<div id="dynsection-116" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-116-summary" class="dynsummary">
 </div>
-<div id="dynsection-114-content" class="dyncontent hidden">
+<div id="dynsection-116-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a9e2ce295e8353748e93fcc7f4776a7b8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3828,16 +3878,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>true on success, false when the file is unreadable or its signature is bad (reported through <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">critical()</a>). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00776">776</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-115" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-115-summary" class="dynsummary">
+<div id="dynsection-117" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-117-summary" class="dynsummary">
 </div>
-<div id="dynsection-115-content" class="dyncontent hidden">
+<div id="dynsection-117-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a4b2388a7e250b886534e79c7ca131dbf_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-116" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-116-summary" class="dynsummary">
+<div id="dynsection-118" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-118-summary" class="dynsummary">
 </div>
-<div id="dynsection-116-content" class="dyncontent hidden">
+<div id="dynsection-118-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a4b2388a7e250b886534e79c7ca131dbf_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3887,16 +3937,16 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <dl class="section return"><dt>Returns</dt><dd>true when the file was written; false after reporting through <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">critical()</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00392">392</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
-<div id="dynsection-117" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-117-summary" class="dynsummary">
+<div id="dynsection-119" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-119-summary" class="dynsummary">
 </div>
-<div id="dynsection-117-content" class="dyncontent hidden">
+<div id="dynsection-119-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a4819b3c68c49968658849aa8535e1f40_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-118" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-118-summary" class="dynsummary">
+<div id="dynsection-120" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-120-summary" class="dynsummary">
 </div>
-<div id="dynsection-118-content" class="dyncontent hidden">
+<div id="dynsection-120-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a4819b3c68c49968658849aa8535e1f40_icgraph.svg" width="384" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -3974,7 +4024,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 
 <p>Background search over the decrypted store; relays to finishedGrep. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00566">566</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00575">575</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -3999,7 +4049,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </div><div class="memdoc">
 <p>The insert whose gpg step ended last placed its entry in the store; its git steps may still fail. Set per gpg completion in <a class="el" href="#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion.">finished()</a>, not per <a class="el" href="#a4c62fe3ae4f151582f6360599a610dd6" title="Insert new password.">Insert()</a> call, so a second queued insert's failure is not reported with an earlier insert's answer. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00593">593</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00602">602</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4025,7 +4075,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 
 <p>The inserts whose gpg step has not ended yet, oldest first. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00588">588</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00597">597</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4051,7 +4101,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 
 <p>Set while a re-encryption run is pending or on the worker thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00619">619</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00628">628</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4076,7 +4126,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </div><div class="memdoc">
 <p>Set by <a class="el" href="#a5cbd9d68f47d53b994ec25cecbb27436" title="Ask a running reencryptPath() to stop.">cancelReencryptPath()</a> and the destructor; read by the worker between files and polled by <a class="el" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">Executor::executeBlocking()</a> while the worker waits on a process, which the worker then ends itself. The flag is the only thing shared with the worker: its QProcess is not thread-safe and is never touched from another thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00625">625</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00634">634</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4101,7 +4151,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </div><div class="memdoc">
 <p><a class="el" href="class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2" title="The environment QtPass runs the store&#39;s processes in.">storeEnvironment()</a> as it was when the worker started; the worker's processes run in it. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00332">332</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00341">341</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4127,7 +4177,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 
 <p>The re-encryption worker while it runs, null otherwise. The destructor sets m_reencryptCancel and joins it. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00630">630</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00639">639</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4152,7 +4202,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </div><div class="memdoc">
 <p>Groups the git/gpg processes of one operation (Insert, Remove, Move, Copy) into a single completion; see <a class="el" href="#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion.">finished()</a> and <a class="el" href="class_imitate_pass_1_1_transaction_helper.html" title="RAII helper for wrapping operations in transactions.">TransactionHelper</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00564">564</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00573">573</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4178,7 +4228,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 
 <p>stdout of the steps of the transaction in flight, collected by <a class="el" href="#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion.">finished()</a> and handed on, then cleared, when its last step ends. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00571">571</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00580">580</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4203,7 +4253,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </div><div class="memdoc">
 <p>Set by <a class="el" href="#aa30ada0a871c60297f6bde37cec9df2e" title="Re-encrypt dir to the .gpg-id Init() wrote although its commit failed, without any Git step (they wou...">reencryptWithoutGit()</a> for the run it starts and cleared by <a class="el" href="#a172222519125f9e053e09a505743d15b" title="Report the outcome of a run and emit endReencryptPath().">finishReencrypt()</a>: that run does no Git at all (no pull, backup commit, per-entry commit or push) and ends with <a class="el" href="#a3362c8cb99993b5c1acf9fdefb2bf960" title="Tell the user that the recipients of dir changed on disk but the change is not committed,...">reportUncommittedGpgId()</a>. Written only on the owning thread while no worker runs; the worker only reads it, through <a class="el" href="#af0e30ba675e011cd63447466afc04bed" title="gitConfigured(), unless the current run is one reencryptWithoutGit() started.">reencryptUsesGit()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00718">718</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00727">727</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
