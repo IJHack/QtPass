@@ -13,10 +13,15 @@
 
 #include <QDir>
 #include <QFile>
+#include <QFileInfo>
+#include <QScopeGuard>
 #include <QSignalSpy>
 #include <QTemporaryDir>
 #include <QTextStream>
 #include <QtTest>
+#ifndef Q_OS_WIN
+#include <unistd.h>
+#endif
 
 #include "../../../src/imitatepass.h"
 #include "../testsettings.h"
@@ -97,6 +102,14 @@ class tst_imitatepass : public QObject {
     return calls;
   }
 
+  /// The bytes of @p path, or an empty array when it cannot be read.
+  static QByteArray contentsOf(const QString &path) {
+    QFile f(path);
+    if (!f.open(QIODevice::ReadOnly))
+      return {};
+    return f.readAll();
+  }
+
   /// Only the encrypt (-eq) calls out of @p calls.
   static QList<QStringList> encryptCalls(const QList<QStringList> &calls) {
     QList<QStringList> out;
@@ -111,6 +124,9 @@ private Q_SLOTS:
   void insertEncryptArgvCarriesNoEncryptTo();
   void reencryptEncryptArgvCarriesNoEncryptTo();
   void everyDecryptionCapsItsOutput();
+  void removeWithoutGitReportsWhatItCannotRemove();
+  void moveWithoutGitReportsAFailedMove();
+  void aFailedForcedMoveWithoutGitKeepsTheDestination();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -260,6 +276,139 @@ void tst_imitatepass::reencryptEncryptArgvCarriesNoEncryptTo() {
     const int r = argv.indexOf(QStringLiteral("-r"));
     QCOMPARE(argv.value(r + 1), QStringLiteral("0123456789ABCDEF"));
   }
+#endif
+}
+
+/**
+ * @brief Without Git, Remove() deletes on its own, and a failure was said
+ *        nowhere: a folder delete that met something it could not remove
+ *        went on, as rm -rf does, and left the rest without a word; a single
+ *        entry stayed without one. Both are reported now, as git rm's error
+ *        is with Git on.
+ */
+void tst_imitatepass::removeWithoutGitReportsWhatItCannotRemove() {
+#ifdef Q_OS_WIN
+  QSKIP("uses directory permissions");
+#else
+  if (::geteuid() == 0)
+    QSKIP("root ignores directory permissions");
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("work/archive")));
+  QVERIFY(root.mkpath(QStringLiteral("locked")));
+  for (const char *name : {"work/db.gpg", "work/vpn.gpg",
+                           "work/archive/old-vpn.gpg", "locked/entry.gpg"}) {
+    QFile f(root.filePath(QString::fromLatin1(name)));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const QStringList readOnly{root.filePath(QStringLiteral("work/archive")),
+                             root.filePath(QStringLiteral("locked"))};
+  const auto writable = qScopeGuard([&readOnly] {
+    for (const QString &dir : readOnly) {
+      QFile::setPermissions(dir, QFile::ReadOwner | QFile::WriteOwner |
+                                     QFile::ExeOwner);
+    }
+  });
+  for (const QString &dir : readOnly) {
+    QVERIFY(QFile::setPermissions(dir, QFile::ReadOwner | QFile::ExeOwner));
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), QStringLiteral("/nonexistent/gpg")));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+
+  pass.Remove(QStringLiteral("work"), true);
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("work/db.gpg"))));
+  QVERIFY(QFileInfo::exists(
+      root.filePath(QStringLiteral("work/archive/old-vpn.gpg"))));
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.at(0).at(0).toString(), QStringLiteral("Delete failed"));
+  QVERIFY2(criticalSpy.at(0).at(1).toString().contains(
+               QStringLiteral("Could not remove all of")),
+           qPrintable(criticalSpy.at(0).at(1).toString()));
+
+  pass.Remove(QStringLiteral("locked/entry"), false);
+  QVERIFY(QFileInfo::exists(root.filePath(QStringLiteral("locked/entry.gpg"))));
+  QCOMPARE(criticalSpy.count(), 2);
+  QCOMPARE(criticalSpy.at(1).at(0).toString(), QStringLiteral("Delete failed"));
+#endif
+}
+
+/**
+ * @brief Without Git, a move that does not happen says so: renaming an entry
+ *        to a name its folder already has did nothing, without a word.
+ */
+void tst_imitatepass::moveWithoutGitReportsAFailedMove() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 2));
+  const QDir root(storeDir.path());
+  const QString src = root.filePath(QStringLiteral("entry0.gpg"));
+  const QString taken = root.filePath(QStringLiteral("entry1.gpg"));
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), QStringLiteral("/nonexistent/gpg")));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+
+  // As "Rename password" hands it over: the new name without ".gpg".
+  pass.Move(src, root.filePath(QStringLiteral("entry1")), false);
+  QVERIFY(QFileInfo::exists(src));
+  QCOMPARE(contentsOf(taken), QByteArrayLiteral("not really encrypted"));
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(), QStringLiteral("Move failed"));
+
+  // A forced move still replaces the destination, and says nothing.
+  QFile moving(src);
+  QVERIFY(moving.open(QIODevice::WriteOnly));
+  moving.write("moved bytes");
+  moving.close();
+  pass.Move(src, taken, true);
+  QVERIFY(!QFileInfo::exists(src));
+  QCOMPARE(contentsOf(taken), QByteArrayLiteral("moved bytes"));
+  QVERIFY(!QFileInfo::exists(taken + QStringLiteral(".move.bak")));
+  QCOMPARE(criticalSpy.count(), 1);
+}
+
+/**
+ * @brief A forced move without Git removed the destination entry and then
+ *        renamed: when the rename failed, the destination was gone and the
+ *        source not moved, and a forced move of an entry onto its own name
+ *        deleted it. The destination is now set aside and put back.
+ */
+void tst_imitatepass::aFailedForcedMoveWithoutGitKeepsTheDestination() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QString own = root.filePath(QStringLiteral("entry0.gpg"));
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), QStringLiteral("/nonexistent/gpg")));
+  pass.Move(own, own, true);
+  QCOMPARE(contentsOf(own), QByteArrayLiteral("not really encrypted"));
+#ifndef Q_OS_WIN
+  if (::geteuid() == 0)
+    QSKIP("root ignores directory permissions");
+  QVERIFY(root.mkpath(QStringLiteral("locked")));
+  const QString locked = root.filePath(QStringLiteral("locked"));
+  const QString src = root.filePath(QStringLiteral("locked/moving.gpg"));
+  {
+    QFile f(src);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("moving bytes");
+  }
+  const auto writable = qScopeGuard([&locked] {
+    QFile::setPermissions(locked, QFile::ReadOwner | QFile::WriteOwner |
+                                      QFile::ExeOwner);
+  });
+  QVERIFY(QFile::setPermissions(locked, QFile::ReadOwner | QFile::ExeOwner));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  pass.Move(src, own, true);
+  QCOMPARE(contentsOf(own), QByteArrayLiteral("not really encrypted"));
+  QCOMPARE(contentsOf(src), QByteArrayLiteral("moving bytes"));
+  QVERIFY(!QFileInfo::exists(own + QStringLiteral(".move.bak")));
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(), QStringLiteral("Move failed"));
 #endif
 }
 

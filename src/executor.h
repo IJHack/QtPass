@@ -224,6 +224,29 @@ public:
    * @return The id of the cancelled command, or -1 if the queue was empty.
    */
   auto cancelNext() -> int;
+
+  /**
+   * @brief Whether nothing is queued or running.
+   * @return true when the executor has nothing in flight.
+   */
+  auto isIdle() const -> bool { return !running && m_execQueue.isEmpty(); }
+
+  /**
+   * @brief Whether a command with process id @p id is queued or running.
+   *
+   * The running command stays at the head of the queue until it finishes, so
+   * one scan covers both the queued and the running one.
+   * @param id The process id to look for (an Enums::PROCESS value).
+   * @return true when the queue holds a command with that id.
+   */
+  auto hasQueued(int id) const -> bool {
+    for (const execQueueItem &item : m_execQueue) {
+      if (item.id == id) {
+        return true;
+      }
+    }
+    return false;
+  }
 private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:

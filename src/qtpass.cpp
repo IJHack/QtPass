@@ -191,6 +191,10 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   // otherwise stay pending for the rest of the session.
   connect(pass, &Pass::processErrorExit, m_mainWindow,
           &MainWindow::cancelOtpRequest);
+  // A save's refresh waiting for its push would clear the push's error (or
+  // whatever failed before it) from the browser.
+  connect(pass, &Pass::processErrorExit, m_mainWindow,
+          &MainWindow::dropRefreshAfterPush);
   connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
   connect(pass, &Pass::startingExecuteWrapper, m_mainWindow,
           &MainWindow::executeWrapperStarted);
@@ -204,6 +208,12 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedGitInit, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGitPull, this, &QtPass::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &QtPass::processFinished);
+  // After processFinished(): a save's refresh left waiting for this push
+  // runs now (MainWindow::refreshAfterInsert()).
+  connect(pass, &Pass::finishedGitPush, m_mainWindow,
+          [mainWindow = m_mainWindow, pass]() {
+            mainWindow->gitPushFinished(pass);
+          });
   connect(pass, &Pass::finishedInsert, this, &QtPass::finishedInsert);
   connect(pass, &Pass::finishedRemove, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedInit, this, &QtPass::passStoreChanged);
@@ -385,7 +395,7 @@ void QtPass::passStoreChanged(const QString &p_out, const QString &p_err) {
 void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
   processFinished(p_output, p_errout);
   doGitPush();
-  m_mainWindow->on_treeView_clicked(m_mainWindow->getCurrentTreeViewIndex());
+  m_mainWindow->refreshAfterInsert();
 }
 
 /**

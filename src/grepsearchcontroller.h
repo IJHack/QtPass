@@ -54,13 +54,6 @@ public:
   }
 
   /**
-   * @brief Drop the mode flag only, without touching busy/cancelled state.
-   *
-   * Used when the panel is cleared and the search UI is reset in place.
-   */
-  void clearGrepMode() { m_mode = false; }
-
-  /**
    * @brief Begin a search for a non-empty query.
    * @return true if a wait cursor should now be shown (search newly busy).
    */
