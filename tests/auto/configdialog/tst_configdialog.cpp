@@ -2,7 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QApplication>
 #include <QCheckBox>
+#include <QDialogButtonBox>
 #include <QLineEdit>
+#include <QPushButton>
 #include <QSpinBox>
 #include <QSystemTrayIcon>
 #include <QTableWidget>
@@ -54,6 +56,8 @@ private Q_SLOTS:
   void customCharsetPreservedWhenBuiltinSelected();
   void addProfileSelectsNewRowAfterSort();
   void acceptSavesTheGlobalAutoPushAndAutoPull();
+  void profileNameWithASlashIsRefused_data();
+  void profileNameWithASlashIsRefused();
 };
 
 /**
@@ -392,6 +396,59 @@ void tst_configdialog::acceptSavesTheGlobalAutoPushAndAutoPull() {
   QVERIFY2(s.autoPush, "auto push must reach the global setting");
   QVERIFY2(s.autoPull, "auto pull must reach the global setting");
   QVERIFY(QtPassSettings::isAutoPush());
+}
+
+void tst_configdialog::profileNameWithASlashIsRefused_data() {
+  QTest::addColumn<QString>("typed");
+  QTest::newRow("inside") << QStringLiteral("Work/Client");
+  QTest::newRow("leading") << QStringLiteral("/Work");
+  QTest::newRow("trailing") << QStringLiteral("Work/");
+  QTest::newRow("alone") << QStringLiteral("/");
+  QTest::newRow("backslash") << QStringLiteral("Work\\Client");
+}
+
+/**
+ * @brief The settings key profiles by name, and QSettings reads a slash in a
+ * key as a group separator (a backslash too, on Windows): "Work/Client" came
+ * back as a profile "Work" without folder or signing key. OK stays off and the
+ * name cell says why; without the slash it is fine.
+ */
+void tst_configdialog::profileNameWithASlashIsRefused() {
+  QFETCH(QString, typed);
+  struct ProfileRestorer {
+    QHash<QString, QHash<QString, QString>> saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+  QHash<QString, QHash<QString, QString>> profiles;
+  QHash<QString, QString> one;
+  one.insert("path", "/store/one");
+  profiles.insert(QStringLiteral("one"), one);
+  QtPassSettings::setProfiles(profiles);
+
+  ConfigDialog dialog(nullptr);
+  auto *table =
+      dialog.findChild<QTableWidget *>(QStringLiteral("profileTable"));
+  auto *buttons =
+      dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY(table != nullptr && buttons != nullptr);
+  QPushButton *ok = buttons->button(QDialogButtonBox::Ok);
+  QVERIFY(ok != nullptr);
+  QCOMPARE(table->rowCount(), 1);
+  QTableWidgetItem *name = table->item(0, 0);
+  QVERIFY(name != nullptr);
+  QVERIFY(ok->isEnabled());
+
+  name->setText(typed);
+  QVERIFY2(!ok->isEnabled(), qPrintable(typed));
+  QVERIFY2(name->toolTip().contains(QStringLiteral("cannot contain")),
+           qPrintable(name->toolTip()));
+  QVERIFY(name->background().color() == Qt::red);
+
+  name->setText(QStringLiteral("Work-Client"));
+  QVERIFY(ok->isEnabled());
+  QVERIFY(name->toolTip().isEmpty());
+  QCOMPARE(dialog.getProfiles().keys(),
+           QStringList{QStringLiteral("Work-Client")});
 }
 
 QTEST_MAIN(tst_configdialog)
