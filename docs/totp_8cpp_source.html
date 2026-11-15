@@ -305,177 +305,178 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('totp_8cpp_sour
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">// in brackets would become a secret made of its leftover letters, with</span></div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="comment">// a confident, wrong code. Only what a secret is written with passes:</span></div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="comment">// letters, the digits sanitizeInput() reads (0, 1 and 8 as O, L and B),</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="comment">// white space, dashes and &quot;=&quot; padding.</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> written =</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        std::all_of(trimmed.cbegin(), trimmed.cend(), [](QChar c) {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>          const char16_t u = c.unicode();</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>          return c.isSpace() || u == u<span class="stringliteral">&#39;-&#39;</span> || u == u<span class="stringliteral">&#39;=&#39;</span> ||</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                 (u &gt;= u<span class="stringliteral">&#39;A&#39;</span> &amp;&amp; u &lt;= u<span class="stringliteral">&#39;Z&#39;</span>) || (u &gt;= u<span class="stringliteral">&#39;a&#39;</span> &amp;&amp; u &lt;= u<span class="stringliteral">&#39;z&#39;</span>) ||</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                 (u &gt;= u<span class="stringliteral">&#39;0&#39;</span> &amp;&amp; u &lt;= u<span class="stringliteral">&#39;8&#39;</span>);</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        });</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">if</span> (!written) {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    rawSecret = trimmed;</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  }</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keyword">const</span> QByteArray sanitized = <a class="code hl_function" href="class_base32.html#a251fbe9bbf3a490d0660690182de2fcb">Base32::sanitizeInput</a>(rawSecret.toLatin1());</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a42aef6325578fb7392f98685cdb8324d">key</a> = <a class="code hl_function" href="class_base32.html#aab3feed3644b481794685b42410cf1e1">Base32::decode</a>(sanitized);</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="keywordflow">if</span> (settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a42aef6325578fb7392f98685cdb8324d">key</a>.isEmpty()) {</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  }</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a5a2bda8d658947dc4e10dec3d21d8ca5">base32Key</a> = QString::fromLatin1(sanitized);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="keywordflow">if</span> (settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#af134b340ca954282b2a8713ebed58684">encoder</a> == <a class="code hl_enumvalue" href="class_totp.html#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b">Encoder::Steam</a>) {</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d">digits</a> = <a class="code hl_variable" href="class_totp.html#a81979cc4e9b6933626ef5c62277649f0">STEAM_DIGITS</a>;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  }</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="comment">// Clamp on every path: an out-of-range `digits` would otherwise overflow the</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="comment">// modulus, and a zero `step` would divide by zero.</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d">digits</a> = qBound(<a class="code hl_variable" href="class_totp.html#a28370b47bc9f3c92a981a6fcdb543368">MIN_DIGITS</a>, settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d">digits</a>, <a class="code hl_variable" href="class_totp.html#ae890b9f9d1440b99756ba7c74bd03ae0">MAX_DIGITS</a>);</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28">step</a> = qBound(1U, settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28">step</a>, <a class="code hl_variable" href="class_totp.html#a1ff6b1d22ea9f2cf5da5fedd1e116505">MAX_STEP</a>);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <span class="keywordflow">return</span> settings;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>}</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="comment">// white space, &quot;=&quot; padding, and dashes, dots or underscores between</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="comment">// groups (JBSW.Y3DP..., as some services show it), which it drops.</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> written =</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        std::all_of(trimmed.cbegin(), trimmed.cend(), [](QChar c) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>          const char16_t u = c.unicode();</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>          return c.isSpace() || u == u<span class="stringliteral">&#39;-&#39;</span> || u == u<span class="stringliteral">&#39;=&#39;</span> || u == u<span class="stringliteral">&#39;.&#39;</span> ||</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                 u == u<span class="stringliteral">&#39;_&#39;</span> || (u &gt;= u<span class="stringliteral">&#39;A&#39;</span> &amp;&amp; u &lt;= u<span class="stringliteral">&#39;Z&#39;</span>) ||</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                 (u &gt;= u<span class="stringliteral">&#39;a&#39;</span> &amp;&amp; u &lt;= u<span class="stringliteral">&#39;z&#39;</span>) || (u &gt;= u<span class="stringliteral">&#39;0&#39;</span> &amp;&amp; u &lt;= u<span class="stringliteral">&#39;8&#39;</span>);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        });</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordflow">if</span> (!written) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    rawSecret = trimmed;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keyword">const</span> QByteArray sanitized = <a class="code hl_function" href="class_base32.html#a251fbe9bbf3a490d0660690182de2fcb">Base32::sanitizeInput</a>(rawSecret.toLatin1());</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a42aef6325578fb7392f98685cdb8324d">key</a> = <a class="code hl_function" href="class_base32.html#aab3feed3644b481794685b42410cf1e1">Base32::decode</a>(sanitized);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keywordflow">if</span> (settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a42aef6325578fb7392f98685cdb8324d">key</a>.isEmpty()) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  }</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a5a2bda8d658947dc4e10dec3d21d8ca5">base32Key</a> = QString::fromLatin1(sanitized);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  <span class="keywordflow">if</span> (settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#af134b340ca954282b2a8713ebed58684">encoder</a> == <a class="code hl_enumvalue" href="class_totp.html#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b">Encoder::Steam</a>) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d">digits</a> = <a class="code hl_variable" href="class_totp.html#a81979cc4e9b6933626ef5c62277649f0">STEAM_DIGITS</a>;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="comment">// Clamp on every path: an out-of-range `digits` would otherwise overflow the</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  <span class="comment">// modulus, and a zero `step` would divide by zero.</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d">digits</a> = qBound(<a class="code hl_variable" href="class_totp.html#a28370b47bc9f3c92a981a6fcdb543368">MIN_DIGITS</a>, settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d">digits</a>, <a class="code hl_variable" href="class_totp.html#ae890b9f9d1440b99756ba7c74bd03ae0">MAX_DIGITS</a>);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28">step</a> = qBound(1U, settings.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28">step</a>, <a class="code hl_variable" href="class_totp.html#a1ff6b1d22ea9f2cf5da5fedd1e116505">MAX_STEP</a>);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keywordflow">return</span> settings;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
 </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
-<div class="foldopen" id="foldopen00259" data-start="{" data-end="}">
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">  259</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">Totp::isValid</a>(<span class="keyword">const</span> QString &amp;config) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b">parse</a>(config).has_value();</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>}</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="foldopen" id="foldopen00260" data-start="{" data-end="}">
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">  260</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">Totp::isValid</a>(<span class="keyword">const</span> QString &amp;config) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b">parse</a>(config).has_value();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>}</div>
 </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="foldopen" id="foldopen00263" data-start="{" data-end="}">
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="class_totp.html#a47445f93d87ea47de27ab8045914686d">  263</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#a47445f93d87ea47de27ab8045914686d">Totp::counter</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings, quint64 unixTime) -&gt; quint64 {</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  <span class="keywordflow">return</span> unixTime / settings.step;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>}</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="class_totp.html#a47445f93d87ea47de27ab8045914686d">  264</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#a47445f93d87ea47de27ab8045914686d">Totp::counter</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings, quint64 unixTime) -&gt; quint64 {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  <span class="keywordflow">return</span> unixTime / settings.step;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
 </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="foldopen" id="foldopen00267" data-start="{" data-end="}">
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="class_totp.html#af449a258178c0fdc0f744be9bf2d6103">  267</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#af449a258178c0fdc0f744be9bf2d6103">Totp::secondsRemaining</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings, quint64 unixTime)</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    -&gt; uint {</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <span class="keywordflow">return</span> settings.step - <span class="keyword">static_cast&lt;</span>uint<span class="keyword">&gt;</span>(unixTime % settings.step);</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>}</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="foldopen" id="foldopen00268" data-start="{" data-end="}">
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="class_totp.html#af449a258178c0fdc0f744be9bf2d6103">  268</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#af449a258178c0fdc0f744be9bf2d6103">Totp::secondsRemaining</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings, quint64 unixTime)</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    -&gt; uint {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  <span class="keywordflow">return</span> settings.step - <span class="keyword">static_cast&lt;</span>uint<span class="keyword">&gt;</span>(unixTime % settings.step);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}</div>
 </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="foldopen" id="foldopen00272" data-start="{" data-end="}">
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">  272</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">Totp::generate</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings, quint64 unixTime) -&gt; QString {</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keyword">const</span> quint64 bigEndianCounter = qToBigEndian(<a class="code hl_function" href="class_totp.html#a47445f93d87ea47de27ab8045914686d">counter</a>(settings, unixTime));</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <span class="keyword">const</span> QByteArray message(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;bigEndianCounter),</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                           <span class="keyword">sizeof</span>(bigEndianCounter));</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keyword">const</span> QByteArray hmac = QMessageAuthenticationCode::hash(</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      message, settings.key, cryptoHash(settings.algorithm));</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordflow">if</span> (hmac.size() &lt; kMinHmacSize) {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  }</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <span class="comment">// RFC 4226 dynamic truncation. QByteArray elements are signed char, so every</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  <span class="comment">// byte is widened through quint8: without that, any byte &gt;= 0x80</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="comment">// sign-extends and corrupts the assembled 31-bit value.</span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> offset =</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>      <span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(hmac.size() - 1)) &amp; 0x0F; <span class="comment">// NOLINT</span></div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keyword">const</span> quint32 binary =</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      (<span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(offset)) &amp; 0x7F)</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>       &lt;&lt; 24) |</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>      (<span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(offset + 1))) &lt;&lt; 16) |</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      (<span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(offset + 2))) &lt;&lt; 8) |</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>      <span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(offset + 3)));</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keywordflow">if</span> (settings.encoder == <a class="code hl_enumvalue" href="class_totp.html#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b">Encoder::Steam</a>) {</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="comment">// Steam emits the least significant symbol first.</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    quint64 value = binary;</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    QString code;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    code.reserve(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_totp.html#a81979cc4e9b6933626ef5c62277649f0">STEAM_DIGITS</a>));</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keywordflow">for</span> (uint i = 0; i &lt; <a class="code hl_variable" href="class_totp.html#a81979cc4e9b6933626ef5c62277649f0">STEAM_DIGITS</a>; ++i) {</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>      code.append(QLatin1Char(kSteamAlphabet[value % kSteamAlphabetSize]));</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      value /= kSteamAlphabetSize;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    }</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordflow">return</span> code;</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  }</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="comment">// Integer exponentiation into a quint64: pow() into a quint32 (as KeePassXC</span></div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  <span class="comment">// did) overflows at ten digits.</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  quint64 modulus = 1;</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  <span class="keywordflow">for</span> (uint i = 0; i &lt; settings.digits; ++i) {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    modulus *= 10;</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  }</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  <span class="keywordflow">return</span> QString::number(binary % modulus)</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      .rightJustified(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(settings.digits), QLatin1Char(<span class="charliteral">&#39;0&#39;</span>));</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="foldopen" id="foldopen00273" data-start="{" data-end="}">
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">  273</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">Totp::generate</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings, quint64 unixTime) -&gt; QString {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <span class="keyword">const</span> quint64 bigEndianCounter = qToBigEndian(<a class="code hl_function" href="class_totp.html#a47445f93d87ea47de27ab8045914686d">counter</a>(settings, unixTime));</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <span class="keyword">const</span> QByteArray message(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;bigEndianCounter),</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                           <span class="keyword">sizeof</span>(bigEndianCounter));</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keyword">const</span> QByteArray hmac = QMessageAuthenticationCode::hash(</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      message, settings.key, cryptoHash(settings.algorithm));</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="keywordflow">if</span> (hmac.size() &lt; kMinHmacSize) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  }</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  <span class="comment">// RFC 4226 dynamic truncation. QByteArray elements are signed char, so every</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="comment">// byte is widened through quint8: without that, any byte &gt;= 0x80</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="comment">// sign-extends and corrupts the assembled 31-bit value.</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> offset =</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>      <span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(hmac.size() - 1)) &amp; 0x0F; <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keyword">const</span> quint32 binary =</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      (<span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(offset)) &amp; 0x7F)</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>       &lt;&lt; 24) |</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      (<span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(offset + 1))) &lt;&lt; 16) |</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>      (<span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(offset + 2))) &lt;&lt; 8) |</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      <span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>quint8<span class="keyword">&gt;</span>(hmac.at(offset + 3)));</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keywordflow">if</span> (settings.encoder == <a class="code hl_enumvalue" href="class_totp.html#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b">Encoder::Steam</a>) {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="comment">// Steam emits the least significant symbol first.</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    quint64 value = binary;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    QString code;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    code.reserve(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_totp.html#a81979cc4e9b6933626ef5c62277649f0">STEAM_DIGITS</a>));</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keywordflow">for</span> (uint i = 0; i &lt; <a class="code hl_variable" href="class_totp.html#a81979cc4e9b6933626ef5c62277649f0">STEAM_DIGITS</a>; ++i) {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      code.append(QLatin1Char(kSteamAlphabet[value % kSteamAlphabetSize]));</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      value /= kSteamAlphabetSize;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    }</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">return</span> code;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  <span class="comment">// Integer exponentiation into a quint64: pow() into a quint32 (as KeePassXC</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <span class="comment">// did) overflows at ten digits.</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  quint64 modulus = 1;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  <span class="keywordflow">for</span> (uint i = 0; i &lt; settings.digits; ++i) {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    modulus *= 10;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  }</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  <span class="keywordflow">return</span> QString::number(binary % modulus)</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>      .rightJustified(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(settings.digits), QLatin1Char(<span class="charliteral">&#39;0&#39;</span>));</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>}</div>
 </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="foldopen" id="foldopen00317" data-start="{" data-end="}">
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="class_totp.html#a48931c8c589844c1b5c6334287931594">  317</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#a48931c8c589844c1b5c6334287931594">Totp::generateNow</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings) -&gt; QString {</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">generate</a>(settings, <a class="code hl_function" href="class_totp.html#a84866e76305152267035b917e7d84bdb">currentUnixTime</a>());</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>}</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="foldopen" id="foldopen00318" data-start="{" data-end="}">
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno"><a class="line" href="class_totp.html#a48931c8c589844c1b5c6334287931594">  318</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#a48931c8c589844c1b5c6334287931594">Totp::generateNow</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings) -&gt; QString {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">generate</a>(settings, <a class="code hl_function" href="class_totp.html#a84866e76305152267035b917e7d84bdb">currentUnixTime</a>());</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>}</div>
 </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
-<div class="foldopen" id="foldopen00321" data-start="{" data-end="}">
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">  321</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">Totp::toUri</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings) -&gt; QString {</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  <span class="keyword">const</span> QString label =</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>      settings.label.isEmpty() ? QStringLiteral(<span class="stringliteral">&quot;QtPass&quot;</span>) : settings.label;</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>  <span class="comment">// The Key-Uri-Format spec says the secret&#39;s base32 padding is omitted, and</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  <span class="comment">// third-party importers reject or truncate `secret=...======`.</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="comment">// sanitizeInput() re-adds padding when reading, so this round-trips.</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="keyword">const</span> QString secret =</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>      QString::fromLatin1(<a class="code hl_function" href="class_base32.html#ad4506c7fc1411529d9b188e7ef9ee90c">Base32::removePadding</a>(settings.base32Key.toLatin1()));</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  QString uri = QStringLiteral(<span class="stringliteral">&quot;otpauth://totp/%1?secret=%2&quot;</span>)</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                    .arg(encodeLabel(label), secret);</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keywordflow">if</span> (!settings.issuer.isEmpty()) {</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    uri += QStringLiteral(<span class="stringliteral">&quot;&amp;issuer=%1&quot;</span>).arg(encodeLabel(settings.issuer));</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  }</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  <span class="keywordflow">if</span> (settings.algorithm != <a class="code hl_enumvalue" href="class_totp.html#a01da8b4d496beba96c8836d273ec11c2a89305d971a8d86cf8aeee61cc1a85d4b">Algorithm::Sha1</a>) {</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    uri +=</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        QStringLiteral(<span class="stringliteral">&quot;&amp;algorithm=%1&quot;</span>).arg(algorithmName(settings.algorithm));</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  }</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  uri += QStringLiteral(<span class="stringliteral">&quot;&amp;digits=%1&amp;period=%2&quot;</span>)</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>             .arg(settings.digits)</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>             .arg(settings.step);</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  <span class="keywordflow">if</span> (settings.encoder == <a class="code hl_enumvalue" href="class_totp.html#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b">Encoder::Steam</a>) {</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    uri += QStringLiteral(<span class="stringliteral">&quot;&amp;encoder=steam&quot;</span>);</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  }</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  <span class="comment">// Re-emit anything the parser did not model, so canonicalising an existing</span></div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  <span class="comment">// URI does not quietly discard parameters other authenticators honour.</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QPair&lt;QString, QString&gt; &amp;item : settings.extraParams) {</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    uri += QStringLiteral(<span class="stringliteral">&quot;&amp;%1=%2&quot;</span>).arg(</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        QString::fromLatin1(QUrl::toPercentEncoding(item.first)),</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        QString::fromLatin1(QUrl::toPercentEncoding(item.second)));</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  }</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <span class="keywordflow">if</span> (!settings.fragment.isEmpty()) {</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    uri += QLatin1Char(<span class="charliteral">&#39;#&#39;</span>) + settings.fragment;</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  }</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <span class="keywordflow">return</span> uri;</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>}</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="foldopen" id="foldopen00322" data-start="{" data-end="}">
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">  322</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">Totp::toUri</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings) -&gt; QString {</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <span class="keyword">const</span> QString label =</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>      settings.label.isEmpty() ? QStringLiteral(<span class="stringliteral">&quot;QtPass&quot;</span>) : settings.label;</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  <span class="comment">// The Key-Uri-Format spec says the secret&#39;s base32 padding is omitted, and</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="comment">// third-party importers reject or truncate `secret=...======`.</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="comment">// sanitizeInput() re-adds padding when reading, so this round-trips.</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keyword">const</span> QString secret =</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>      QString::fromLatin1(<a class="code hl_function" href="class_base32.html#ad4506c7fc1411529d9b188e7ef9ee90c">Base32::removePadding</a>(settings.base32Key.toLatin1()));</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  QString uri = QStringLiteral(<span class="stringliteral">&quot;otpauth://totp/%1?secret=%2&quot;</span>)</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                    .arg(encodeLabel(label), secret);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <span class="keywordflow">if</span> (!settings.issuer.isEmpty()) {</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    uri += QStringLiteral(<span class="stringliteral">&quot;&amp;issuer=%1&quot;</span>).arg(encodeLabel(settings.issuer));</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  }</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keywordflow">if</span> (settings.algorithm != <a class="code hl_enumvalue" href="class_totp.html#a01da8b4d496beba96c8836d273ec11c2a89305d971a8d86cf8aeee61cc1a85d4b">Algorithm::Sha1</a>) {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    uri +=</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        QStringLiteral(<span class="stringliteral">&quot;&amp;algorithm=%1&quot;</span>).arg(algorithmName(settings.algorithm));</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  }</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  uri += QStringLiteral(<span class="stringliteral">&quot;&amp;digits=%1&amp;period=%2&quot;</span>)</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>             .arg(settings.digits)</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>             .arg(settings.step);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  <span class="keywordflow">if</span> (settings.encoder == <a class="code hl_enumvalue" href="class_totp.html#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b">Encoder::Steam</a>) {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    uri += QStringLiteral(<span class="stringliteral">&quot;&amp;encoder=steam&quot;</span>);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  }</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  <span class="comment">// Re-emit anything the parser did not model, so canonicalising an existing</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="comment">// URI does not quietly discard parameters other authenticators honour.</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QPair&lt;QString, QString&gt; &amp;item : settings.extraParams) {</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    uri += QStringLiteral(<span class="stringliteral">&quot;&amp;%1=%2&quot;</span>).arg(</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        QString::fromLatin1(QUrl::toPercentEncoding(item.first)),</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        QString::fromLatin1(QUrl::toPercentEncoding(item.second)));</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  <span class="keywordflow">if</span> (!settings.fragment.isEmpty()) {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    uri += QLatin1Char(<span class="charliteral">&#39;#&#39;</span>) + settings.fragment;</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  }</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <span class="keywordflow">return</span> uri;</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>}</div>
 </div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
-<div class="foldopen" id="foldopen00357" data-start="{" data-end="}">
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno"><a class="line" href="class_totp.html#aaad8df6ff63cde2ee3d13c79a24abdb7">  357</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#aaad8df6ff63cde2ee3d13c79a24abdb7">Totp::normalize</a>(<span class="keyword">const</span> QString &amp;config, <span class="keyword">const</span> QString &amp;label,</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                     <span class="keyword">const</span> QString &amp;issuer) -&gt; QString {</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="keyword">const</span> std::optional&lt;Settings&gt; settings = <a class="code hl_function" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b">parse</a>(config);</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <span class="keywordflow">if</span> (!settings.has_value()) {</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  }</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> canonical = *settings;</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keywordflow">if</span> (canonical.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf">label</a>.isEmpty()) {</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    canonical.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf">label</a> = label;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>  }</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  <span class="keywordflow">if</span> (canonical.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f">issuer</a>.isEmpty()) {</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    canonical.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f">issuer</a> = issuer;</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  }</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  <span class="comment">// Percent-encoding and the added fields can take a value near the length</span></div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  <span class="comment">// cap past it; a URI parse() refuses would store an OTP that makes no code.</span></div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>  <span class="keyword">const</span> QString uri = <a class="code hl_function" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">toUri</a>(canonical);</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keywordflow">if</span> (uri.size() &gt; <a class="code hl_variable" href="class_totp.html#a79b5e8d618fa81604df1699b2d4b2e9a">MAX_CONFIG_LENGTH</a>) {</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  }</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="keywordflow">return</span> uri;</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>}</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
+<div class="foldopen" id="foldopen00358" data-start="{" data-end="}">
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno"><a class="line" href="class_totp.html#aaad8df6ff63cde2ee3d13c79a24abdb7">  358</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#aaad8df6ff63cde2ee3d13c79a24abdb7">Totp::normalize</a>(<span class="keyword">const</span> QString &amp;config, <span class="keyword">const</span> QString &amp;label,</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                     <span class="keyword">const</span> QString &amp;issuer) -&gt; QString {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <span class="keyword">const</span> std::optional&lt;Settings&gt; settings = <a class="code hl_function" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b">parse</a>(config);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  <span class="keywordflow">if</span> (!settings.has_value()) {</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  }</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <a class="code hl_struct" href="struct_totp_1_1_settings.html">Settings</a> canonical = *settings;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>  <span class="keywordflow">if</span> (canonical.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf">label</a>.isEmpty()) {</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    canonical.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf">label</a> = label;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  }</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  <span class="keywordflow">if</span> (canonical.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f">issuer</a>.isEmpty()) {</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    canonical.<a class="code hl_variable" href="struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f">issuer</a> = issuer;</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  }</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  <span class="comment">// Percent-encoding and the added fields can take a value near the length</span></div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>  <span class="comment">// cap past it; a URI parse() refuses would store an OTP that makes no code.</span></div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keyword">const</span> QString uri = <a class="code hl_function" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">toUri</a>(canonical);</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  <span class="keywordflow">if</span> (uri.size() &gt; <a class="code hl_variable" href="class_totp.html#a79b5e8d618fa81604df1699b2d4b2e9a">MAX_CONFIG_LENGTH</a>) {</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  }</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  <span class="keywordflow">return</span> uri;</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>}</div>
 </div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
-<div class="foldopen" id="foldopen00379" data-start="{" data-end="}">
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno"><a class="line" href="class_totp.html#a84866e76305152267035b917e7d84bdb">  379</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#a84866e76305152267035b917e7d84bdb">Totp::currentUnixTime</a>() -&gt; quint64 {</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(QDateTime::currentSecsSinceEpoch());</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>}</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="foldopen" id="foldopen00380" data-start="{" data-end="}">
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno"><a class="line" href="class_totp.html#a84866e76305152267035b917e7d84bdb">  380</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_totp.html#a84866e76305152267035b917e7d84bdb">Totp::currentUnixTime</a>() -&gt; quint64 {</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(QDateTime::currentSecsSinceEpoch());</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>}</div>
 </div>
 <div class="ttc" id="abase32_8h_html"><div class="ttname"><a href="base32_8h.html">base32.h</a></div><div class="ttdoc">Strict RFC 4648 base32 codec plus the input sanitizer that makes human-typed TOTP secrets decodable.</div></div>
 <div class="ttc" id="aclass_base32_html_a251fbe9bbf3a490d0660690182de2fcb"><div class="ttname"><a href="class_base32.html#a251fbe9bbf3a490d0660690182de2fcb">Base32::sanitizeInput</a></div><div class="ttdeci">static auto sanitizeInput(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Make human-entered base32 text decodable.</div><div class="ttdef"><b>Definition</b> <a href="base32_8cpp_source.html#l00305">base32.cpp:305</a></div></div>
@@ -488,20 +489,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('totp_8cpp_sour
 <div class="ttc" id="aclass_totp_html_a1ff6b1d22ea9f2cf5da5fedd1e116505"><div class="ttname"><a href="class_totp.html#a1ff6b1d22ea9f2cf5da5fedd1e116505">Totp::MAX_STEP</a></div><div class="ttdeci">static constexpr uint MAX_STEP</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00082">totp.h:82</a></div></div>
 <div class="ttc" id="aclass_totp_html_a28370b47bc9f3c92a981a6fcdb543368"><div class="ttname"><a href="class_totp.html#a28370b47bc9f3c92a981a6fcdb543368">Totp::MIN_DIGITS</a></div><div class="ttdeci">static constexpr uint MIN_DIGITS</div><div class="ttdoc">Lower clamp for digits.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00080">totp.h:80</a></div></div>
 <div class="ttc" id="aclass_totp_html_a2ec915c153fab17c59ca29232cba1ea5"><div class="ttname"><a href="class_totp.html#a2ec915c153fab17c59ca29232cba1ea5">Totp::DEFAULT_STEP</a></div><div class="ttdeci">static constexpr uint DEFAULT_STEP</div><div class="ttdoc">RFC 6238 default period.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00078">totp.h:78</a></div></div>
-<div class="ttc" id="aclass_totp_html_a47445f93d87ea47de27ab8045914686d"><div class="ttname"><a href="class_totp.html#a47445f93d87ea47de27ab8045914686d">Totp::counter</a></div><div class="ttdeci">static auto counter(const Settings &amp;settings, quint64 unixTime) -&gt; quint64</div><div class="ttdoc">Time-step counter for a point in time.</div><div class="ttdef"><b>Definition</b> <a href="#l00263">totp.cpp:263</a></div></div>
-<div class="ttc" id="aclass_totp_html_a48931c8c589844c1b5c6334287931594"><div class="ttname"><a href="class_totp.html#a48931c8c589844c1b5c6334287931594">Totp::generateNow</a></div><div class="ttdeci">static auto generateNow(const Settings &amp;settings) -&gt; QString</div><div class="ttdoc">Generate the code for the current wall-clock time.</div><div class="ttdef"><b>Definition</b> <a href="#l00317">totp.cpp:317</a></div></div>
+<div class="ttc" id="aclass_totp_html_a47445f93d87ea47de27ab8045914686d"><div class="ttname"><a href="class_totp.html#a47445f93d87ea47de27ab8045914686d">Totp::counter</a></div><div class="ttdeci">static auto counter(const Settings &amp;settings, quint64 unixTime) -&gt; quint64</div><div class="ttdoc">Time-step counter for a point in time.</div><div class="ttdef"><b>Definition</b> <a href="#l00264">totp.cpp:264</a></div></div>
+<div class="ttc" id="aclass_totp_html_a48931c8c589844c1b5c6334287931594"><div class="ttname"><a href="class_totp.html#a48931c8c589844c1b5c6334287931594">Totp::generateNow</a></div><div class="ttdeci">static auto generateNow(const Settings &amp;settings) -&gt; QString</div><div class="ttdoc">Generate the code for the current wall-clock time.</div><div class="ttdef"><b>Definition</b> <a href="#l00318">totp.cpp:318</a></div></div>
 <div class="ttc" id="aclass_totp_html_a728431b3cc5983fc47d3a1355ced80f1"><div class="ttname"><a href="class_totp.html#a728431b3cc5983fc47d3a1355ced80f1">Totp::DEFAULT_DIGITS</a></div><div class="ttdeci">static constexpr uint DEFAULT_DIGITS</div><div class="ttdoc">RFC 6238 default code length.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00077">totp.h:77</a></div></div>
 <div class="ttc" id="aclass_totp_html_a79b5e8d618fa81604df1699b2d4b2e9a"><div class="ttname"><a href="class_totp.html#a79b5e8d618fa81604df1699b2d4b2e9a">Totp::MAX_CONFIG_LENGTH</a></div><div class="ttdeci">static constexpr qsizetype MAX_CONFIG_LENGTH</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00086">totp.h:86</a></div></div>
 <div class="ttc" id="aclass_totp_html_a81979cc4e9b6933626ef5c62277649f0"><div class="ttname"><a href="class_totp.html#a81979cc4e9b6933626ef5c62277649f0">Totp::STEAM_DIGITS</a></div><div class="ttdeci">static constexpr uint STEAM_DIGITS</div><div class="ttdoc">Steam codes are always 5 chars.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00079">totp.h:79</a></div></div>
-<div class="ttc" id="aclass_totp_html_a84866e76305152267035b917e7d84bdb"><div class="ttname"><a href="class_totp.html#a84866e76305152267035b917e7d84bdb">Totp::currentUnixTime</a></div><div class="ttdeci">static auto currentUnixTime() -&gt; quint64</div><div class="ttdoc">Current wall-clock time.</div><div class="ttdef"><b>Definition</b> <a href="#l00379">totp.cpp:379</a></div></div>
-<div class="ttc" id="aclass_totp_html_a9cae7b2213a242c4bb6fb6dfb5f42351"><div class="ttname"><a href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">Totp::toUri</a></div><div class="ttdeci">static auto toUri(const Settings &amp;settings) -&gt; QString</div><div class="ttdoc">Serialise settings as a canonical otpauth URI.</div><div class="ttdef"><b>Definition</b> <a href="#l00321">totp.cpp:321</a></div></div>
-<div class="ttc" id="aclass_totp_html_aaad8df6ff63cde2ee3d13c79a24abdb7"><div class="ttname"><a href="class_totp.html#aaad8df6ff63cde2ee3d13c79a24abdb7">Totp::normalize</a></div><div class="ttdeci">static auto normalize(const QString &amp;config, const QString &amp;label={}, const QString &amp;issuer={}) -&gt; QString</div><div class="ttdoc">Normalise a user-entered value to a canonical otpauth URI.</div><div class="ttdef"><b>Definition</b> <a href="#l00357">totp.cpp:357</a></div></div>
-<div class="ttc" id="aclass_totp_html_ab8caa914c714a205c21919b3ac09cf08"><div class="ttname"><a href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">Totp::generate</a></div><div class="ttdeci">static auto generate(const Settings &amp;settings, quint64 unixTime) -&gt; QString</div><div class="ttdoc">Generate the code for a given point in time.</div><div class="ttdef"><b>Definition</b> <a href="#l00272">totp.cpp:272</a></div></div>
+<div class="ttc" id="aclass_totp_html_a84866e76305152267035b917e7d84bdb"><div class="ttname"><a href="class_totp.html#a84866e76305152267035b917e7d84bdb">Totp::currentUnixTime</a></div><div class="ttdeci">static auto currentUnixTime() -&gt; quint64</div><div class="ttdoc">Current wall-clock time.</div><div class="ttdef"><b>Definition</b> <a href="#l00380">totp.cpp:380</a></div></div>
+<div class="ttc" id="aclass_totp_html_a9cae7b2213a242c4bb6fb6dfb5f42351"><div class="ttname"><a href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">Totp::toUri</a></div><div class="ttdeci">static auto toUri(const Settings &amp;settings) -&gt; QString</div><div class="ttdoc">Serialise settings as a canonical otpauth URI.</div><div class="ttdef"><b>Definition</b> <a href="#l00322">totp.cpp:322</a></div></div>
+<div class="ttc" id="aclass_totp_html_aaad8df6ff63cde2ee3d13c79a24abdb7"><div class="ttname"><a href="class_totp.html#aaad8df6ff63cde2ee3d13c79a24abdb7">Totp::normalize</a></div><div class="ttdeci">static auto normalize(const QString &amp;config, const QString &amp;label={}, const QString &amp;issuer={}) -&gt; QString</div><div class="ttdoc">Normalise a user-entered value to a canonical otpauth URI.</div><div class="ttdef"><b>Definition</b> <a href="#l00358">totp.cpp:358</a></div></div>
+<div class="ttc" id="aclass_totp_html_ab8caa914c714a205c21919b3ac09cf08"><div class="ttname"><a href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">Totp::generate</a></div><div class="ttdeci">static auto generate(const Settings &amp;settings, quint64 unixTime) -&gt; QString</div><div class="ttdoc">Generate the code for a given point in time.</div><div class="ttdef"><b>Definition</b> <a href="#l00273">totp.cpp:273</a></div></div>
 <div class="ttc" id="aclass_totp_html_acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b"><div class="ttname"><a href="class_totp.html#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b">Totp::Encoder::Steam</a></div><div class="ttdeci">@ Steam</div><div class="ttdoc">Steam Guard&#39;s five-character alphabet.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00052">totp.h:52</a></div></div>
 <div class="ttc" id="aclass_totp_html_ae6ad2f9cfb9cb54108b8138d660c803b"><div class="ttname"><a href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b">Totp::parse</a></div><div class="ttdeci">static auto parse(const QString &amp;config) -&gt; std::optional&lt; Settings &gt;</div><div class="ttdoc">Parse an OTP configuration string.</div><div class="ttdef"><b>Definition</b> <a href="#l00122">totp.cpp:122</a></div></div>
 <div class="ttc" id="aclass_totp_html_ae890b9f9d1440b99756ba7c74bd03ae0"><div class="ttname"><a href="class_totp.html#ae890b9f9d1440b99756ba7c74bd03ae0">Totp::MAX_DIGITS</a></div><div class="ttdeci">static constexpr uint MAX_DIGITS</div><div class="ttdoc">Upper clamp for digits.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00081">totp.h:81</a></div></div>
-<div class="ttc" id="aclass_totp_html_af023ce3487d15c2e290419ddd1ea0699"><div class="ttname"><a href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">Totp::isValid</a></div><div class="ttdeci">static auto isValid(const QString &amp;config) -&gt; bool</div><div class="ttdoc">Convenience validity test, for UI feedback.</div><div class="ttdef"><b>Definition</b> <a href="#l00259">totp.cpp:259</a></div></div>
-<div class="ttc" id="aclass_totp_html_af449a258178c0fdc0f744be9bf2d6103"><div class="ttname"><a href="class_totp.html#af449a258178c0fdc0f744be9bf2d6103">Totp::secondsRemaining</a></div><div class="ttdeci">static auto secondsRemaining(const Settings &amp;settings, quint64 unixTime) -&gt; uint</div><div class="ttdoc">Seconds until the code for unixTime expires.</div><div class="ttdef"><b>Definition</b> <a href="#l00267">totp.cpp:267</a></div></div>
+<div class="ttc" id="aclass_totp_html_af023ce3487d15c2e290419ddd1ea0699"><div class="ttname"><a href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">Totp::isValid</a></div><div class="ttdeci">static auto isValid(const QString &amp;config) -&gt; bool</div><div class="ttdoc">Convenience validity test, for UI feedback.</div><div class="ttdef"><b>Definition</b> <a href="#l00260">totp.cpp:260</a></div></div>
+<div class="ttc" id="aclass_totp_html_af449a258178c0fdc0f744be9bf2d6103"><div class="ttname"><a href="class_totp.html#af449a258178c0fdc0f744be9bf2d6103">Totp::secondsRemaining</a></div><div class="ttdeci">static auto secondsRemaining(const Settings &amp;settings, quint64 unixTime) -&gt; uint</div><div class="ttdoc">Seconds until the code for unixTime expires.</div><div class="ttdef"><b>Definition</b> <a href="#l00268">totp.cpp:268</a></div></div>
 <div class="ttc" id="astruct_totp_1_1_settings_html"><div class="ttname"><a href="struct_totp_1_1_settings.html">Totp::Settings</a></div><div class="ttdoc">Validated TOTP parameters. Only Totp::parse() produces one.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00059">totp.h:59</a></div></div>
 <div class="ttc" id="astruct_totp_1_1_settings_html_a3278972d462fe94dfbc0c52cd51285cf"><div class="ttname"><a href="struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf">Totp::Settings::label</a></div><div class="ttdeci">QString label</div><div class="ttdoc">otpauth label; may be empty.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00066">totp.h:66</a></div></div>
 <div class="ttc" id="astruct_totp_1_1_settings_html_a386ac12f560e143771320223c395dd9f"><div class="ttname"><a href="struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f">Totp::Settings::issuer</a></div><div class="ttdeci">QString issuer</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00067">totp.h:67</a></div></div>
