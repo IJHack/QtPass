@@ -43,6 +43,19 @@ public:
   static QString applyPassphrase(const QString &batch,
                                  const QString &passphrase);
 
+  /**
+   * @brief Whether gpg reads @p passphrase back as typed from a batch
+   * `Passphrase:` line.
+   *
+   * gpg skips white space after the colon and cuts spaces and tabs off the
+   * end of a value, so a passphrase with a blank at either end would protect
+   * the key without it, and the passphrase typed twice is then refused. Only
+   * ASCII white space counts: gpg keeps a no-break space.
+   * @param passphrase The passphrase typed; empty means none.
+   * @return False when it starts or ends with ASCII white space.
+   */
+  static bool isBatchPassphrase(const QString &passphrase);
+
 protected:
   /**
    * @brief Handle dialog close, emitting appropriate signals.

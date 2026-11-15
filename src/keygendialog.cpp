@@ -202,6 +202,18 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
   return clear.join("\n");
 }
 
+// What gpg's batch reader takes off a value: C isspace() after the colon,
+// spaces and tabs at the end. A trailing \v or \f is refused too, though gpg
+// keeps it; nobody types one.
+bool KeygenDialog::isBatchPassphrase(const QString &passphrase) {
+  const auto blank = [](QChar c) {
+    return c == QLatin1Char(' ') ||
+           (c >= QLatin1Char('\t') && c <= QLatin1Char('\r'));
+  };
+  return passphrase.isEmpty() ||
+         (!blank(passphrase.front()) && !blank(passphrase.back()));
+}
+
 /**
  * @brief KeygenDialog::done we are going to create a key pair and show the
  * QProgressIndicator and some text since the generation will take some time.
@@ -209,7 +221,16 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
  */
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) { //  ok was pressed
-                                // check name
+    // gpg would protect the key without the blanks, and then refuse the
+    // passphrase as typed.
+    if (!isBatchPassphrase(ui->passphrase1->text())) {
+      QMessageBox::critical(
+          this, tr("Invalid input"),
+          tr("The passphrase cannot start or end with a space or a tab."));
+      return;
+    }
+
+    // check name
     if (ui->name->text().length() < 5) {
       QMessageBox::critical(this, tr("Invalid name"),
                             tr("Name must be at least 5 characters long."));
