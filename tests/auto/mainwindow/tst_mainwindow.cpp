@@ -435,6 +435,7 @@ private Q_SLOTS:
   void quitIsAnActionNotAStrayShortcut();
   void quitIsWiredToTheApplication();
   void closeWindowHonoursHideOnClose();
+  void closeWithoutATrayIconDoesNotHide();
   void closeEventSavesGeometryAlsoWhenHidingToTray();
 
   void constructorAppliesMonospaceAndNoWrap();
@@ -2199,7 +2200,9 @@ void tst_mainwindow::quitIsWiredToTheApplication() {
 
 /**
  * @brief File > Close window is what the old bare Ctrl+Q did: close(),
- *        which the configurable "hide on close" turns into a hide.
+ *        which the configurable "hide on close" turns into a hide when a
+ *        tray icon can bring the window back (offscreen there is none, so
+ *        here the window closes; closeWithoutATrayIconDoesNotHide).
  */
 void tst_mainwindow::closeWindowHonoursHideOnClose() {
   auto *closeAction =
@@ -2214,7 +2217,52 @@ void tst_mainwindow::closeWindowHonoursHideOnClose() {
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
   closeAction->trigger();
-  QVERIFY2(!m_window->isVisible(), "the window must hide, not quit");
+  QVERIFY2(!m_window->isVisible(), "Close window must close the window");
+}
+
+/**
+ * @brief "Hide on close" hides the window only when a tray icon can bring it
+ *        back. Without one (none asked for, or no system tray in this
+ *        session) a close hid the window while QtPass ran on invisibly, with
+ *        the last entry in it and the password on the clipboard; the only way
+ *        back was to start qtpass again. Now the close goes ahead.
+ */
+void tst_mainwindow::closeWithoutATrayIconDoesNotHide() {
+  if (QSystemTrayIcon::isSystemTrayAvailable())
+    QSKIP("needs a session without a system tray");
+  // QApplication::quit() does nothing without a running event loop; should
+  // a Qt send its Quit event all the same, it must not end this run.
+  struct SwallowQuit : QObject {
+    auto eventFilter(QObject *watched, QEvent *event) -> bool override {
+      return watched == qApp && event->type() == QEvent::Quit;
+    }
+  } swallowQuit;
+  qApp->installEventFilter(&swallowQuit);
+  const auto restore = qScopeGuard([&swallowQuit] {
+    qApp->removeEventFilter(&swallowQuit);
+    AppSettings s = QtPassSettings::load();
+    s.useTrayIcon = false;
+    s.hideOnClose = false;
+    QtPassSettings::save(s);
+  });
+  // Asked for a tray icon, but the session has none; then not asked for,
+  // as the settings dialog saves it when "Show tray icon" is unticked.
+  for (const bool useTrayIcon : {true, false}) {
+    {
+      AppSettings s = QtPassSettings::load();
+      s.useTrayIcon = useTrayIcon;
+      s.hideOnClose = true;
+      QtPassSettings::save(s);
+    }
+    m_window->restoreWindow();
+    QCOMPARE(m_window->findChild<TrayIcon *>(), nullptr);
+    m_window->show();
+    QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+    QCloseEvent close;
+    QApplication::sendEvent(m_window.data(), &close);
+    QVERIFY2(close.isAccepted(),
+             "without a tray icon, a close must not turn into a hide");
+  }
 }
 
 /**
@@ -2246,7 +2294,9 @@ void tst_mainwindow::restoreWindowCentresWhenNothingSaved() {
 
 /**
  * @brief A tray user closes the window only ever to hide it; that path used
- *        to save nothing, so their geometry was lost on every quit.
+ *        to save nothing, so their geometry was lost on every quit. The
+ *        geometry is saved before either branch; offscreen, without a tray
+ *        icon, it is the closing one that runs here.
  */
 void tst_mainwindow::closeEventSavesGeometryAlsoWhenHidingToTray() {
   m_window->show();
@@ -2261,7 +2311,7 @@ void tst_mainwindow::closeEventSavesGeometryAlsoWhenHidingToTray() {
     QtPassSettings::save(s);
   }
 
-  m_window->close(); // hide branch: event ignored, window hidden
+  m_window->close();
   QTRY_VERIFY(!m_window->isVisible());
   const QByteArray saved = QtPassSettings::getGeometry();
   QVERIFY2(!saved.isEmpty(), "hide-on-close must still save the geometry");
@@ -4141,7 +4191,7 @@ void tst_mainwindow::profileBoxIsDisabledWhileAnOperationRuns() {
  * @brief restoreWindow() creates the tray icon when the setting asks for
  *        one and drops it again when it does not; where no system tray is
  *        available the icon is released straight away. "Start minimized"
- *        hides the window a moment later.
+ *        hides the window a moment later, but only into a tray icon.
  */
 void tst_mainwindow::trayIconFollowsTheSetting() {
   const bool trayAvailable = QSystemTrayIcon::isSystemTrayAvailable();
@@ -4163,8 +4213,15 @@ void tst_mainwindow::trayIconFollowsTheSetting() {
   m_window->restoreWindow();
   auto *tray = m_window->findChild<TrayIcon *>();
   QCOMPARE(tray != nullptr, trayAvailable);
-  QTRY_VERIFY2_WITH_TIMEOUT(!m_window->isVisible(), "start minimized hides",
-                            2000);
+  if (trayAvailable) {
+    QTRY_VERIFY2_WITH_TIMEOUT(!m_window->isVisible(), "start minimized hides",
+                              2000);
+  } else {
+    // Nothing would bring a hidden window back.
+    QTest::qWait(100);
+    QVERIFY2(m_window->isVisible(),
+             "without a system tray, start minimized must not hide");
+  }
 
   {
     AppSettings s = QtPassSettings::load();
