@@ -1012,6 +1012,14 @@ void tst_mainwindow::returnInTheSearchBoxEndsThere() {
   QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
   QSignalSpy failed(QtPassSettings::getPass(), &Pass::processErrorExit);
   box->setText(QStringLiteral("bank"));
+  auto *tree = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  QVERIFY(tree != nullptr);
+  // 1.8 filters once the search delay has run (main also runs a pending
+  // search on Return, #2170): wait for it, so Return acts on the filtered
+  // tree and not on whatever the store lists first.
+  QTRY_VERIFY_WITH_TIMEOUT(
+      tree->currentIndex().data().toString().startsWith(QStringLiteral("bank")),
+      5000);
   pressReturn();
   QCOMPARE(name->text(), QStringLiteral("bank"));
   QTRY_VERIFY_WITH_TIMEOUT(shown.count() + failed.count() >= 1, 10000);
