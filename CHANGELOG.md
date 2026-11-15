@@ -76,6 +76,15 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   `org.qtpass.QtPass.metainfo.xml` (was `qtpass.appdata.xml`); `main/main.pro`
   installs the desktop file, metainfo, icons and man page; the RPM spec
   follows; the Flatpak manifest drops `rename-appdata-file` with the 2.0 tag.
+- **Some OTP entries give no code instead of a wrong one.** An
+  `otpauth://` URI naming a hash function QtPass does not have
+  (`algorithm=SHA384`, `MD5`) is refused, where 2.0-rc3 and earlier gave the
+  SHA-1 code; that code was only right where the service really uses SHA-1
+  under the wrong label. A bare secret with characters a secret is not
+  written with (anything but letters, digits 0 to 8, spaces, `-`, `.`, `_`
+  and `=`) is refused too. Such an entry shows "Invalid OTP secret" in the
+  edit dialog: correct the `algorithm`, or write the secret without the
+  extra characters.
 - Still true from 1.8: the macOS `.dmg` is not signed or notarized (see the
   [macOS page](https://qtpass.org/macos), [#1542](https://github.com/IJHack/QtPass/issues/1542))
   and the Windows installer is not code-signed ([#1643](https://github.com/IJHack/QtPass/issues/1643)).
@@ -837,8 +846,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   and kept as typed. It was taken for a base32 secret made of its leftover
   letters: no warning, a running code that was not the account's, and the
   export saved as that secret, which could not be undone. So is a bare
-  secret with other characters than letters, digits, spaces, dashes and
-  `=` (a remark after it, say), which also gave a wrong code.
+  secret with other characters than letters, digits, spaces, `-`, `.`, `_`
+  and `=` padding (a remark in brackets after it, say), whose code was made
+  from the remark's letters too.
 - An entry whose content is not UTF-8 text (a password typed on a Latin-1
   terminal, a key file stored with `pass insert -m`) keeps its bytes. With
   the native backend, re-encrypting a folder (changing its recipients,

@@ -95,7 +95,8 @@ public:
    * TOTP code for it would be silently wrong. So is an `algorithm` other than
    * SHA-1, SHA-256 or SHA-512 (case, an `HMAC` prefix and `-`/`_` ignored).
    * A bare secret with characters a secret is not written with (anything
-   * but letters, the digits 0 to 8, white space, `-` and `=`) is refused
+   * but letters, the digits 0 to 8, white space, `-`, `.`, `_` and `=`) is
+   * refused
    * too: it is something else, such as a URI of another scheme
    * (`otpauth-migration://`), not base32 text.
    *
