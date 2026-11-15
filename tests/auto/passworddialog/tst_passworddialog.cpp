@@ -186,6 +186,7 @@ private Q_SLOTS:
   void otpWarningSurvivesAReloadOnlyOnce();
   void otpUriIsNormalisedOnLeavingTheField();
   void otpUntouchedValueIsWrittenBackVerbatim();
+  void otpCapitalisedParametersSurviveAnUneditedSave();
   void otpPopulatedFieldWinsOverTheEmptyTemplateOne();
   void renamingTheOtpFieldAwayDropsItsValidation();
   void typingInARenamedAwayOtpFieldLeavesTheCurrentOneAlone();
@@ -2043,6 +2044,30 @@ void tst_passworddialog::otpUntouchedValueIsWrittenBackVerbatim() {
           "OTP: otpauth://totp/x?secret=jbswy3dpehpk3pxp&digits=6")),
       qPrintable("a URI must be canonicalised:\n" + uriPass.insertedContent));
   QVERIFY(uriPass.insertedContent.contains(QStringLiteral("period=30")));
+}
+
+/**
+ * @brief An untouched OTP URI is canonicalised on OK, and that must keep its
+ *        settings: with capitalised parameter names it was saved as a 6-digit,
+ *        30-second, SHA-1 account.
+ */
+void tst_passworddialog::otpCapitalisedParametersSurviveAnUneditedSave() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  pass.deliverShow(QStringLiteral(
+      "secret\nOTP: otpauth://totp/ACME:bob?secret=JBSWY3DPEHPK3PXP&"
+      "Issuer=ACME&Algorithm=SHA256&Digits=8&Period=60\n"));
+  okButton(d)->click();
+  const QString saved = pass.insertedContent;
+  for (const QString &kept :
+       {QStringLiteral("digits=8"), QStringLiteral("period=60"),
+        QStringLiteral("algorithm=SHA256"), QStringLiteral("issuer=ACME")}) {
+    QVERIFY2(saved.contains(kept, Qt::CaseInsensitive), qPrintable(saved));
+  }
+  QVERIFY2(!saved.contains(QStringLiteral("digits=6")), qPrintable(saved));
 }
 
 /**

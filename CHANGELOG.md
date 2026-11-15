@@ -809,6 +809,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   screen and the clipboard, and gives the code, as the same field further
   down always did. A first line that only starts like one, such as
   `totp:Secr3t!`, is still the password.
+- An `otpauth://` URI whose parameter names are written with capitals
+  (`Digits=8`, `Period=60`, `Algorithm=SHA256`, `Encoder=steam`) gives the
+  code those parameters ask for, and keeps them when the entry is saved. They
+  were ignored, so the code used 6 digits, 30 seconds and SHA-1, and an OK
+  in the edit dialog wrote those defaults into the entry.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
