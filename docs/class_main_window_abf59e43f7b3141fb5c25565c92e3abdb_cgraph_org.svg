@@ -36,51 +36,13 @@
 </a>
 </g>
 </g>
-<!-- Node21 -->
-<g id="Node000021" class="node">
-<title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" target="_top" xlink:title="Remove all field rows and collapse the container spacing.">
-<polygon fill="white" stroke="#666666" points="309.88,-137.5 185.12,-137.5 185.12,-104 309.88,-104 309.88,-137.5"/>
-<text xml:space="preserve" text-anchor="start" x="193.12" y="-124" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDisplayPanel</text>
-<text xml:space="preserve" text-anchor="middle" x="247.5" y="-111.25" font-family="Helvetica,sans-Serif" font-size="10.00">::clear</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node21 -->
-<g id="edge22_Node000001_Node000021" class="edge">
-<title>Node1&#45;&gt;Node21</title>
-<g id="a_edge22_Node000001_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M134.88,-104.47C147.5,-106.31 160.76,-108.24 173.56,-110.11"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="172.77,-113.53 183.17,-111.51 173.78,-106.61 172.77,-113.53"/>
-</a>
-</g>
-</g>
-<!-- Node22 -->
-<g id="Node000022" class="node">
-<title>Node22</title>
-<g id="a_Node000022"><a xlink:href="class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" target="_top" xlink:title="Whether content&#45;search mode is currently active.">
-<polygon fill="white" stroke="#666666" points="307.62,-85.5 187.38,-85.5 187.38,-52 307.62,-52 307.62,-85.5"/>
-<text xml:space="preserve" text-anchor="start" x="195.38" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">GrepSearchController</text>
-<text xml:space="preserve" text-anchor="middle" x="247.5" y="-59.25" font-family="Helvetica,sans-Serif" font-size="10.00">::inGrepMode</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node22 -->
-<g id="edge23_Node000001_Node000022" class="edge">
-<title>Node1&#45;&gt;Node22</title>
-<g id="a_edge23_Node000001_Node000022"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M134.88,-85.03C148.24,-83.08 162.33,-81.03 175.83,-79.06"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="176.11,-82.55 185.5,-77.65 175.1,-75.63 176.11,-82.55"/>
-</a>
-</g>
-</g>
 <!-- Node23 -->
 <g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_Node000023"><a xlink:href="class_grep_search_controller.html#a6432377a14814db264769dd7b4b7a237" target="_top" xlink:title="Leave content&#45;search mode (search button toggled off).">
-<polygon fill="white" stroke="#666666" points="307.62,-33.5 187.38,-33.5 187.38,0 307.62,0 307.62,-33.5"/>
-<text xml:space="preserve" text-anchor="start" x="195.38" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">GrepSearchController</text>
-<text xml:space="preserve" text-anchor="middle" x="247.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">::leaveGrepMode</text>
+<g id="a_Node000023"><a xlink:href="class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" target="_top" xlink:title="Remove all field rows and collapse the container spacing.">
+<polygon fill="white" stroke="#666666" points="309.88,-137.5 185.12,-137.5 185.12,-104 309.88,-104 309.88,-137.5"/>
+<text xml:space="preserve" text-anchor="start" x="193.12" y="-124" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDisplayPanel</text>
+<text xml:space="preserve" text-anchor="middle" x="247.5" y="-111.25" font-family="Helvetica,sans-Serif" font-size="10.00">::clear</text>
 </a>
 </g>
 </g>
@@ -88,6 +50,44 @@
 <g id="edge24_Node000001_Node000023" class="edge">
 <title>Node1&#45;&gt;Node23</title>
 <g id="a_edge24_Node000001_Node000023"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M134.88,-104.47C147.5,-106.31 160.76,-108.24 173.56,-110.11"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="172.77,-113.53 183.17,-111.51 173.78,-106.61 172.77,-113.53"/>
+</a>
+</g>
+</g>
+<!-- Node24 -->
+<g id="Node000024" class="node">
+<title>Node24</title>
+<g id="a_Node000024"><a xlink:href="class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" target="_top" xlink:title="Whether content&#45;search mode is currently active.">
+<polygon fill="white" stroke="#666666" points="307.62,-85.5 187.38,-85.5 187.38,-52 307.62,-52 307.62,-85.5"/>
+<text xml:space="preserve" text-anchor="start" x="195.38" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">GrepSearchController</text>
+<text xml:space="preserve" text-anchor="middle" x="247.5" y="-59.25" font-family="Helvetica,sans-Serif" font-size="10.00">::inGrepMode</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node24 -->
+<g id="edge25_Node000001_Node000024" class="edge">
+<title>Node1&#45;&gt;Node24</title>
+<g id="a_edge25_Node000001_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M134.88,-85.03C148.24,-83.08 162.33,-81.03 175.83,-79.06"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="176.11,-82.55 185.5,-77.65 175.1,-75.63 176.11,-82.55"/>
+</a>
+</g>
+</g>
+<!-- Node25 -->
+<g id="Node000025" class="node">
+<title>Node25</title>
+<g id="a_Node000025"><a xlink:href="class_grep_search_controller.html#a6432377a14814db264769dd7b4b7a237" target="_top" xlink:title="Leave content&#45;search mode (search button toggled off).">
+<polygon fill="white" stroke="#666666" points="307.62,-33.5 187.38,-33.5 187.38,0 307.62,0 307.62,-33.5"/>
+<text xml:space="preserve" text-anchor="start" x="195.38" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">GrepSearchController</text>
+<text xml:space="preserve" text-anchor="middle" x="247.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">::leaveGrepMode</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node25 -->
+<g id="edge26_Node000001_Node000025" class="edge">
+<title>Node1&#45;&gt;Node25</title>
+<g id="a_edge26_Node000001_Node000025"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M87.46,-83.95C107.73,-72.8 140.78,-55.32 170.5,-42.75 174.32,-41.13 178.28,-39.54 182.29,-37.99"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="183.43,-41.3 191.57,-34.52 180.98,-34.75 183.43,-41.3"/>
 </a>
@@ -408,8 +408,8 @@
 <g id="Node000019" class="node">
 <title>Node19</title>
 <g id="a_Node000019"><a xlink:href="class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" target="_top" xlink:title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO).">
-<polygon fill="white" stroke="#666666" points="1229.5,-84.12 1086,-84.12 1086,-63.38 1229.5,-63.38 1229.5,-84.12"/>
-<text xml:space="preserve" text-anchor="middle" x="1157.75" y="-70.62" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::entryFingerprint</text>
+<polygon fill="white" stroke="#666666" points="1229.5,-123.12 1086,-123.12 1086,-102.38 1229.5,-102.38 1229.5,-123.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1157.75" y="-109.62" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::entryFingerprint</text>
 </a>
 </g>
 </g>
@@ -417,8 +417,44 @@
 <g id="edge20_Node000018_Node000019" class="edge">
 <title>Node18&#45;&gt;Node19</title>
 <g id="a_edge20_Node000018_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1027.6,-73.75C1042.56,-73.75 1058.68,-73.75 1074.3,-73.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1074.04,-77.25 1084.04,-73.75 1074.04,-70.25 1074.04,-77.25"/>
+<path fill="none" stroke="#63b8ff" d="M1017.06,-84.61C1040.15,-89.26 1067.31,-94.74 1091.52,-99.61"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1090.79,-103.03 1101.28,-101.58 1092.17,-96.17 1090.79,-103.03"/>
+</a>
+</g>
+</g>
+<!-- Node21 -->
+<g id="Node000021" class="node">
+<title>Node21</title>
+<g id="a_Node000021"><a xlink:href="class_executor.html#a554cab50d6449b456ad4e8309ee11a90" target="_top" xlink:title="Return the environment passed to child processes.">
+<polygon fill="white" stroke="#666666" points="1220.88,-84.12 1094.62,-84.12 1094.62,-63.38 1220.88,-63.38 1220.88,-84.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1157.75" y="-70.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::environment</text>
+</a>
+</g>
+</g>
+<!-- Node18&#45;&gt;Node21 -->
+<g id="edge22_Node000018_Node000021" class="edge">
+<title>Node18&#45;&gt;Node21</title>
+<g id="a_edge22_Node000018_Node000021"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1027.6,-73.75C1045.28,-73.75 1064.59,-73.75 1082.76,-73.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1082.69,-77.25 1092.69,-73.75 1082.69,-70.25 1082.69,-77.25"/>
+</a>
+</g>
+</g>
+<!-- Node22 -->
+<g id="Node000022" class="node">
+<title>Node22</title>
+<g id="a_Node000022"><a xlink:href="class_executor.html#ae542d7fba49e96e26fb93c52a9860b22" target="_top" xlink:title="Set the environment passed to all child processes.">
+<polygon fill="white" stroke="#666666" points="1228.38,-45.12 1087.12,-45.12 1087.12,-24.38 1228.38,-24.38 1228.38,-45.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1157.75" y="-31.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::setEnvironment</text>
+</a>
+</g>
+</g>
+<!-- Node18&#45;&gt;Node22 -->
+<g id="edge23_Node000018_Node000022" class="edge">
+<title>Node18&#45;&gt;Node22</title>
+<g id="a_edge23_Node000018_Node000022"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1017.06,-62.89C1040.15,-58.24 1067.31,-52.76 1091.52,-47.89"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1092.17,-51.33 1101.28,-45.92 1090.79,-44.47 1092.17,-51.33"/>
 </a>
 </g>
 </g>
@@ -426,8 +462,8 @@
 <g id="Node000020" class="node">
 <title>Node20</title>
 <g id="a_Node000020"><a xlink:href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" target="_top" xlink:title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">
-<polygon fill="white" stroke="#666666" points="1395.5,-84.12 1277.5,-84.12 1277.5,-63.38 1395.5,-63.38 1395.5,-84.12"/>
-<text xml:space="preserve" text-anchor="middle" x="1336.5" y="-70.62" font-family="Helvetica,sans-Serif" font-size="10.00">Util::openRegularFile</text>
+<polygon fill="white" stroke="#666666" points="1395.5,-123.12 1277.5,-123.12 1277.5,-102.38 1395.5,-102.38 1395.5,-123.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1336.5" y="-109.62" font-family="Helvetica,sans-Serif" font-size="10.00">Util::openRegularFile</text>
 </a>
 </g>
 </g>
@@ -435,8 +471,8 @@
 <g id="edge21_Node000019_Node000020" class="edge">
 <title>Node19&#45;&gt;Node20</title>
 <g id="a_edge21_Node000019_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1229.88,-73.75C1241.8,-73.75 1254.16,-73.75 1266.04,-73.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1265.74,-77.25 1275.74,-73.75 1265.73,-70.25 1265.74,-77.25"/>
+<path fill="none" stroke="#63b8ff" d="M1229.88,-112.75C1241.8,-112.75 1254.16,-112.75 1266.04,-112.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1265.74,-116.25 1275.74,-112.75 1265.73,-109.25 1265.74,-116.25"/>
 </a>
 </g>
 </g>

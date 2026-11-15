@@ -86,6 +86,7 @@ var class_pass =
     [ "updateEnv", "class_pass.html#ac679a086b289cdb9245906948ba0458a", null ],
     [ "verifySignedList", "class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb", null ],
     [ "withCurrentGitPin", "class_pass.html#ab81d7dbed9e18a9368c2be06876c4630", null ],
+    [ "withoutStatusLines", "class_pass.html#ab637f5baaa9cba439f61e4936e437e6f", null ],
     [ "env", "class_pass.html#a3aadcc1218b87ee1c457953feaaaafbc", null ],
     [ "exec", "class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af", null ],
     [ "kMaxPlaintextBytes", "class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72", null ],

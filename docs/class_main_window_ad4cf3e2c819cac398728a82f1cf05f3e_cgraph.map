@@ -4,16 +4,16 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,250,254,231,250,234,159,255"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#abf59e43f7b3141fb5c25565c92e3abdb" title="Empty the display panel and the text browser, and leave content search if its results were showing...." alt="" coords="246,253,426,281"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,265,233,266,228,268,174,270"/>
-<area shape="rect" id="Node000026" href="$class_qt_pass.html#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance." alt="" coords="269,305,402,333"/>
-<area shape="poly" id="edge27_Node000001_Node000026" title=" " alt="" coords="158,279,256,301,251,303,158,284"/>
+<area shape="rect" id="Node000028" href="$class_qt_pass.html#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance." alt="" coords="269,305,402,333"/>
+<area shape="poly" id="edge29_Node000001_Node000028" title=" " alt="" coords="158,279,256,301,251,303,158,284"/>
 <area shape="rect" id="Node000004" href="$class_main_window.html#acea360ee08a3087d30db0c94ae8306ad" title=" " alt="" coords="499,141,704,186"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="419,250,450,238,464,228,473,218,483,207,498,196,507,193,512,191,500,200,486,211,477,221,467,232,452,243,421,255"/>
-<area shape="rect" id="Node000023" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="518,210,685,255"/>
-<area shape="poly" id="edge24_Node000003_Node000023" title=" " alt="" coords="425,253,506,245,501,246,426,258"/>
-<area shape="rect" id="Node000024" href="$class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" title="Whether content&#45;search mode is currently active." alt="" coords="522,280,682,324"/>
-<area shape="poly" id="edge25_Node000003_Node000024" title=" " alt="" coords="426,276,509,289,504,290,426,282"/>
-<area shape="rect" id="Node000025" href="$class_grep_search_controller.html#a6432377a14814db264769dd7b4b7a237" title="Leave content&#45;search mode (search button toggled off)." alt="" coords="522,349,682,394"/>
-<area shape="poly" id="edge26_Node000003_Node000025" title=" " alt="" coords="421,279,452,291,467,302,477,313,486,324,500,334,512,343,507,342,498,339,483,328,473,316,464,306,450,296,420,284"/>
+<area shape="rect" id="Node000025" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="518,210,685,255"/>
+<area shape="poly" id="edge26_Node000003_Node000025" title=" " alt="" coords="425,253,506,245,501,246,426,258"/>
+<area shape="rect" id="Node000026" href="$class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" title="Whether content&#45;search mode is currently active." alt="" coords="522,280,682,324"/>
+<area shape="poly" id="edge27_Node000003_Node000026" title=" " alt="" coords="426,276,509,289,504,290,426,282"/>
+<area shape="rect" id="Node000027" href="$class_grep_search_controller.html#a6432377a14814db264769dd7b4b7a237" title="Leave content&#45;search mode (search button toggled off)." alt="" coords="522,349,682,394"/>
+<area shape="poly" id="edge28_Node000003_Node000027" title=" " alt="" coords="421,279,452,291,467,302,477,313,486,324,500,334,512,343,507,342,498,339,483,328,473,316,464,306,450,296,420,284"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" title="Get imitate pass backend instance." alt="" coords="752,121,976,149"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="704,150,740,148,734,149,705,155"/>
 <area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" title="Get real pass backend instance." alt="" coords="761,177,967,205"/>
@@ -48,8 +48,12 @@
 <area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="1388,210,1465,226,1460,226,1388,215"/>
 <area shape="rect" id="Node000020" href="$class_real_pass.html#a6d7163b691663d92f31ca20886f9979f" title="The executor is about to run (or drop) its next item: for an insert, take its entry from m_insertQueu..." alt="" coords="1468,281,1641,309"/>
 <area shape="poly" id="edge21_Node000018_Node000020" title=" " alt="" coords="1341,211,1393,239,1454,266,1480,277,1474,276,1452,271,1391,243,1340,216"/>
-<area shape="rect" id="Node000021" href="$class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO)." alt="" coords="1720,281,1911,309"/>
-<area shape="poly" id="edge22_Node000020_Node000021" title=" " alt="" coords="1642,293,1707,295,1701,295,1642,298"/>
-<area shape="rect" id="Node000022" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="1975,281,2132,309"/>
-<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="1911,293,1962,295,1957,295,1912,298"/>
+<area shape="rect" id="Node000021" href="$class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO)." alt="" coords="1720,229,1911,257"/>
+<area shape="poly" id="edge22_Node000020_Node000021" title=" " alt="" coords="1627,278,1724,261,1730,260,1628,283"/>
+<area shape="rect" id="Node000023" href="$class_executor.html#a554cab50d6449b456ad4e8309ee11a90" title="Return the environment passed to child processes." alt="" coords="1731,281,1900,309"/>
+<area shape="poly" id="edge24_Node000020_Node000023" title=" " alt="" coords="1642,293,1718,295,1713,295,1642,298"/>
+<area shape="rect" id="Node000024" href="$class_executor.html#ae542d7fba49e96e26fb93c52a9860b22" title="Set the environment passed to all child processes." alt="" coords="1721,333,1910,361"/>
+<area shape="poly" id="edge25_Node000020_Node000024" title=" " alt="" coords="1628,307,1730,330,1724,329,1628,312"/>
+<area shape="rect" id="Node000022" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="1975,229,2132,257"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="1911,241,1962,243,1957,243,1912,246"/>
 </map>

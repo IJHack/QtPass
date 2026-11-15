@@ -1,0 +1,5 @@
+<map id="Pass::formatInsertError" name="Pass::formatInsertError">
+<area shape="rect" id="Node000001" title="Put the translated reason for a failed insert above what gpg itself printed, leaving out the machine&#45;..." alt="" coords="5,5,176,33"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ab637f5baaa9cba439f61e4936e437e6f" title="gpg&#39;s stderr without its machine&#45;readable [GNUPG:] lines (and without carriage returns),..." alt="" coords="224,5,406,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,17,210,19,205,19,176,22"/>
+</map>

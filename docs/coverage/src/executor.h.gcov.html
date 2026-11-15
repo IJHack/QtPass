@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 20:00:27</td>
+            <td class="headerValue">2026-11-15 20:42:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -543,7 +543,7 @@
 <span id="L470"><span class="lineNum">     470</span>              :    * @brief Whether no command is running and nothing is queued.</span>
 <span id="L471"><span class="lineNum">     471</span>              :    * @return true when the executor has nothing in flight.</span>
 <span id="L472"><span class="lineNum">     472</span>              :    */</span>
-<span id="L473"><span class="lineNum">     473</span> <span class="tlaGNC">         698 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L473"><span class="lineNum">     473</span> <span class="tlaGNC">         702 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
 <span id="L474"><span class="lineNum">     474</span>              :   /**</span>
 <span id="L475"><span class="lineNum">     475</span>              :    * @brief Whether the stdout of the item whose finished() or error() is</span>
 <span id="L476"><span class="lineNum">     476</span>              :    * being emitted encodes back (toUtf8(), as every writer here does) to</span>
@@ -556,7 +556,7 @@
 <span id="L483"><span class="lineNum">     483</span>              :    *         mark.</span>
 <span id="L484"><span class="lineNum">     484</span>              :    */</span>
 <span id="L485"><span class="lineNum">     485</span>              :   [[nodiscard]] auto lastOutputLossless() const -&gt; bool {</span>
-<span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">          41 :     return m_outputLossless;</span></span>
+<span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">          44 :     return m_outputLossless;</span></span>
 <span id="L487"><span class="lineNum">     487</span>              :   }</span>
 <span id="L488"><span class="lineNum">     488</span>              : </span>
 <span id="L489"><span class="lineNum">     489</span>              :   /**</span>

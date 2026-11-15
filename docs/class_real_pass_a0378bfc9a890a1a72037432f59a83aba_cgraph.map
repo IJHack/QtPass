@@ -1,0 +1,14 @@
+<map id="RealPass::reportReencryptFailure" name="RealPass::reportReencryptFailure">
+<area shape="rect" id="Node000001" title="Report a pass init, mv or cp that exited 0 having left entries encrypted to the previous recipients: ..." alt="" coords="5,125,198,170"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="287,5,389,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,122,180,82,244,43,274,34,270,37,247,48,183,87,131,127"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a13859dd31b009e6d362546d1c96dc303" title="A process of any kind finished successfully and its output cannot contain a secret." alt="" coords="246,57,430,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,122,245,95,274,89,269,91,246,100,168,127"/>
+<area shape="rect" id="Node000004" href="$pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc" title="Maps GPG stderr (which may include –status&#45;fd 2 tokens) to a translated user&#45;friendly encryption erro..." alt="" coords="271,133,405,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="198,145,257,146,252,148,199,150"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="256,185,420,213"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="198,166,259,181,254,182,198,171"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#ab637f5baaa9cba439f61e4936e437e6f" title="gpg&#39;s stderr without its machine&#45;readable [GNUPG:] lines (and without carriage returns),..." alt="" coords="247,237,429,265"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="140,167,191,195,247,222,269,232,264,232,245,227,188,200,140,173"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="297,132,291,124,296,115,312,109,338,107,366,109,382,118,377,118,364,114,338,112,313,114,300,119,296,124,302,133"/>
+</map>
