@@ -5,6 +5,7 @@ var struct_totp_1_1_settings =
     [ "digits", "struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d", null ],
     [ "encoder", "struct_totp_1_1_settings.html#af134b340ca954282b2a8713ebed58684", null ],
     [ "extraParams", "struct_totp_1_1_settings.html#aa5883b90af9312b768b7c3afbeb5c69a", null ],
+    [ "fragment", "struct_totp_1_1_settings.html#af01d2100389e8356c2fd71d974fa4275", null ],
     [ "issuer", "struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f", null ],
     [ "key", "struct_totp_1_1_settings.html#a42aef6325578fb7392f98685cdb8324d", null ],
     [ "label", "struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf", null ],

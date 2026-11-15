@@ -71,7 +71,7 @@ var NAVTREEINDEX =
 "class_single_application.html#a4893f9017498cae49ff2bb6db7f777f7",
 "firstrunwizard_8h.html",
 "qpushbuttonwithclipboard_8h.html",
-"struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5"
+"struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

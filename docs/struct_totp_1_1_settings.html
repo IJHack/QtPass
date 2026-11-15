@@ -142,6 +142,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a3278972d462fe94dfbc0c52cd51285cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">otpauth label; may be empty.  <br /></td></tr>
 <tr class="memitem:a386ac12f560e143771320223c395dd9f" id="r_a386ac12f560e143771320223c395dd9f"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a386ac12f560e143771320223c395dd9f">issuer</a></td></tr>
 <tr class="memitem:aa5883b90af9312b768b7c3afbeb5c69a" id="r_aa5883b90af9312b768b7c3afbeb5c69a"><td class="memItemLeft">QList&lt; QPair&lt; QString, QString &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa5883b90af9312b768b7c3afbeb5c69a">extraParams</a></td></tr>
+<tr class="memitem:af01d2100389e8356c2fd71d974fa4275" id="r_af01d2100389e8356c2fd71d974fa4275"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#af01d2100389e8356c2fd71d974fa4275">fragment</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> produces one. </p>
@@ -234,6 +235,23 @@ Public Attributes</h2></td></tr>
 <p>Query parameters the parser does not model, kept verbatim so <a class="el" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351" title="Serialise settings as a canonical otpauth URI.">toUri()</a> can put them back instead of silently dropping them. </p>
 
 <p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00070">70</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+
+</div>
+</div>
+<a id="af01d2100389e8356c2fd71d974fa4275" name="af01d2100389e8356c2fd71d974fa4275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af01d2100389e8356c2fd71d974fa4275">&#9670;&#160;</a></span>fragment</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Totp::Settings::fragment</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>What followed a <span class="tt">#</span> in the URI, as written: recovery codes or a remark noted behind it. Kept so <a class="el" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351" title="Serialise settings as a canonical otpauth URI.">toUri()</a> puts it back; a canonicalised URI used to lose it on every save. </p>
+
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00074">74</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>

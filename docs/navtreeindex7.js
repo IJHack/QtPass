@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6":[1,2,7,8],
 "struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5":[1,2,7,1],
 "struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a":[1,2,7,2],
 "struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6":[1,2,7,4],
