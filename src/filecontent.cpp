@@ -281,11 +281,10 @@ auto FileContent::isSecretFieldName(const QString &name,
       // A word that starts or ends with a digit is not part of a longer
       // number either ("tan1" not in "tan12").
       const QString letters = QStringLiteral("\\p{L}\\p{M}");
-      const QString before = word.front().isDigit()
-                                 ? letters + QStringLiteral("\\p{Nd}")
-                                 : letters;
+      const QString before =
+          word.front().isDigit() ? letters + QStringLiteral("\\d") : letters;
       const QString after =
-          word.back().isDigit() ? letters + QStringLiteral("\\p{Nd}") : letters;
+          word.back().isDigit() ? letters + QStringLiteral("\\d") : letters;
       cachedWords << QStringLiteral("(?<![%1])%2s?(?![%3])")
                          .arg(before, QRegularExpression::escape(word), after);
     }
@@ -305,7 +304,7 @@ auto FileContent::isSecretFieldName(const QString &name,
   // Ns"), so a split at lower-to-upper starts alone is tried too ("card
   // PINs", "sim PINcode"), and the name as written ("PINcode").
   static const QRegularExpression lowerThenUpper(
-      QStringLiteral("(?<=[\\p{Ll}\\p{Nd}])(?=\\p{Lu})"),
+      QStringLiteral("(?<=[\\p{Ll}\\d])(?=\\p{Lu})"),
       QRegularExpression::UseUnicodePropertiesOption);
   static const QRegularExpression acronymThenWord(
       QStringLiteral("(?<=\\p{Lu})(?=\\p{Lu}\\p{Ll})"),
