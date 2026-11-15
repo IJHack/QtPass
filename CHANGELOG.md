@@ -1009,6 +1009,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   Plasma re-stamps the old header before the window hears of the switch,
   which left both bars and their icons in the old theme, window shown or
   hidden in the tray
+- With the native backend and Git, the commit for a changed recipient list
+  names `.gpg-id` relative to the store ("Added work/.gpg-id using
+  QtPass."), as every other commit names its entry. It gave the local path,
+  so the account name and folder layout went into the shared history with
+  the push. A copied entry's commit had the same problem
+  ([#169](https://github.com/IJHack/QtPass/pull/169) fixed it for the
+  other messages)
 
 ### Code Quality
 

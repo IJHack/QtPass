@@ -161,6 +161,15 @@ protected:
   auto gitAddGpgId(const QString &gpgIdFile, const QString &gpgIdSigFile,
                    QString *out, QString *err) -> int;
   /**
+   * @brief How a commit message names a file of the store: relative to the
+   * store, without `.gpg` ("work/bank", "work/.gpg-id"), never the local
+   * path, which the shared history would carry to everyone.
+   * @param path Absolute path, normally inside the store.
+   * @return The store-relative name; for a path outside the store, its
+   *         file name alone.
+   */
+  [[nodiscard]] auto commitName(const QString &path) const -> QString;
+  /**
    * @brief Check whether git already tracks a file in the store.
    * @param file Absolute path inside the password store.
    * @return true when the file is in the git index.

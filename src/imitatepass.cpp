@@ -497,10 +497,10 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
   if (rc != 1) {
     return rc;
   }
-  QString commitPath = gpgIdFile;
-  commitPath.replace(Util::endsWithGpg(), "");
   return run(commitArgs() +
-             QStringList{"-m", "Added " + commitPath + " using QtPass.", "--"} +
+             QStringList{"-m",
+                         "Added " + commitName(gpgIdFile) + " using QtPass.",
+                         "--"} +
              paths);
 }
 
@@ -1481,13 +1481,21 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
   args << "--" << pgit(src) << pgit(destFile);
   executeGit(GIT_MOVE, args);
 
-  QString relSrc = QDir(m_settings.passStore).relativeFilePath(src);
-  relSrc.replace(Util::endsWithGpg(), "");
-  QString relDest = QDir(m_settings.passStore).relativeFilePath(destFile);
-  relDest.replace(Util::endsWithGpg(), "");
-  QString message = QString("Moved for %1 to %2 using QtPass.");
-  message = message.arg(relSrc, relDest);
-  gitCommit("", message);
+  gitCommit("", QString("Moved for %1 to %2 using QtPass.")
+                    .arg(commitName(src), commitName(destFile)));
+}
+
+auto ImitatePass::commitName(const QString &path) const -> QString {
+  QString name = QDir(m_settings.passStore).relativeFilePath(path);
+  // Not under the store as spelled (a copy from elsewhere, the store's
+  // other spelling through a link, another drive): "../.." or an absolute
+  // path would carry the local layout too, so the file name alone.
+  if (name == QLatin1String("..") || name.startsWith(QLatin1String("../")) ||
+      QDir::isAbsolutePath(name)) {
+    name = QFileInfo(path).fileName();
+  }
+  name.replace(Util::endsWithGpg(), "");
+  return name;
 }
 
 void ImitatePass::Move(const QString src, const QString dest,
@@ -1584,8 +1592,8 @@ void ImitatePass::Copy(const QString src, const QString dest,
   }
   if (gitReady()) {
     executeGit(GIT_COPY, {"add", "--", pgit(destFile)});
-    gitCommit("",
-              QString("Copied from %1 to %2 using QtPass.").arg(src, destFile));
+    gitCommit("", QString("Copied from %1 to %2 using QtPass.")
+                      .arg(commitName(src), commitName(destFile)));
   }
   const QFileInfo written(destFile);
   if (written.isDir()) {
