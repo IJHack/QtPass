@@ -137,8 +137,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a95e639ef2ee1e402d8045d44fe3f54ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enter content-search mode (search button toggled on).  <br /></td></tr>
 <tr class="memitem:a6432377a14814db264769dd7b4b7a237" id="r_a6432377a14814db264769dd7b4b7a237"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6432377a14814db264769dd7b4b7a237">leaveGrepMode</a> () -&gt; bool</td></tr>
 <tr class="memdesc:a6432377a14814db264769dd7b4b7a237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leave content-search mode (search button toggled off).  <br /></td></tr>
-<tr class="memitem:a17428e45f4ca498d7663327dfb41be0e" id="r_a17428e45f4ca498d7663327dfb41be0e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a17428e45f4ca498d7663327dfb41be0e">clearGrepMode</a> ()</td></tr>
-<tr class="memdesc:a17428e45f4ca498d7663327dfb41be0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop the mode flag only, without touching busy/cancelled state.  <br /></td></tr>
 <tr class="memitem:a29e521fc2b0158dcac3c7cbdb00696fb" id="r_a29e521fc2b0158dcac3c7cbdb00696fb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a29e521fc2b0158dcac3c7cbdb00696fb">beginSearch</a> () -&gt; bool</td></tr>
 <tr class="memdesc:a29e521fc2b0158dcac3c7cbdb00696fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begin a search for a non-empty query.  <br /></td></tr>
 <tr class="memitem:a9b4bcb634eeca28f64afbd8232417ae7" id="r_a9b4bcb634eeca28f64afbd8232417ae7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9b4bcb634eeca28f64afbd8232417ae7">cancelSearch</a> () -&gt; bool</td></tr>
@@ -187,7 +185,7 @@ Private Attributes</h2></td></tr>
 <p>Begin a search for a non-empty query. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if a wait cursor should now be shown (search newly busy). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00073">73</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00066">66</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
 <div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
@@ -223,48 +221,12 @@ Private Attributes</h2></td></tr>
 <p>Cancel the current search (e.g. query cleared). </p>
 <dl class="section return"><dt>Returns</dt><dd>true if a wait cursor should be restored (a search was busy). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00086">86</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00079">79</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_grep_search_controller_a9b4bcb634eeca28f64afbd8232417ae7_icgraph.svg" width="404" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a17428e45f4ca498d7663327dfb41be0e" name="a17428e45f4ca498d7663327dfb41be0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17428e45f4ca498d7663327dfb41be0e">&#9670;&#160;</a></span>clearGrepMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GrepSearchController::clearGrepMode </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Drop the mode flag only, without touching busy/cancelled state. </p>
-<p>Used when the panel is cleared and the search UI is reset in place. </p>
-
-<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00067">67</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary">
-</div>
-<div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_grep_search_controller_a17428e45f4ca498d7663327dfb41be0e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -295,10 +257,10 @@ Private Attributes</h2></td></tr>
 <p>Enter content-search mode (search button toggled on). </p>
 
 <p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00043">43</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
 </div>
-<div id="dynsection-3-content" class="dyncontent hidden">
+<div id="dynsection-2-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_grep_search_controller_a95e639ef2ee1e402d8045d44fe3f54ad_icgraph.svg" width="427" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -330,11 +292,11 @@ Private Attributes</h2></td></tr>
 <p>Record that a search finished and report required side effects. </p>
 <dl class="section return"><dt>Returns</dt><dd>Whether to restore the wait cursor and whether to discard the results (because the search was cancelled). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00100">100</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00093">93</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
 </div>
-<div id="dynsection-4-content" class="dyncontent hidden">
+<div id="dynsection-3-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_grep_search_controller_a7ba10cf18a8566d0bb3ff1312bfd5c5c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -367,10 +329,10 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if in grep mode. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00038">38</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
 </div>
-<div id="dynsection-5-content" class="dyncontent hidden">
+<div id="dynsection-4-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_grep_search_controller_accee285866ae612f56f572a7687d8ca7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -403,11 +365,11 @@ Private Attributes</h2></td></tr>
 <p>If a search was in flight it is marked cancelled so its pending results are discarded when they arrive. </p><dl class="section return"><dt>Returns</dt><dd>true if a busy search was interrupted (restore the wait cursor). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00052">52</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
 </div>
-<div id="dynsection-6-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_grep_search_controller_a6432377a14814db264769dd7b4b7a237_icgraph.svg" width="427" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_grep_search_controller_a6432377a14814db264769dd7b4b7a237_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -435,7 +397,7 @@ Private Attributes</h2></td></tr>
 
 <p>A grep subprocess is in flight. </p>
 
-<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00109">109</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00102">102</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
 
 </div>
 </div>
@@ -461,7 +423,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pending results should be discarded. </p>
 
-<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00110">110</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00103">103</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
 
 </div>
 </div>
@@ -487,7 +449,7 @@ Private Attributes</h2></td></tr>
 
 <p>Content-search mode active. </p>
 
-<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00108">108</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="grepsearchcontroller_8h_source.html#l00101">101</a> of file <a class="el" href="grepsearchcontroller_8h_source.html">grepsearchcontroller.h</a>.</p>
 
 </div>
 </div>

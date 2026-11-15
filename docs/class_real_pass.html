@@ -169,6 +169,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a18b236aa64e27f35289a7c51a46abb0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy password file or directory.  <br /></td></tr>
 <tr class="memitem:af2aa9ea3311b5a9470392759e20516b3" id="r_af2aa9ea3311b5a9470392759e20516b3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af2aa9ea3311b5a9470392759e20516b3">Grep</a> (QString pattern, bool caseInsensitive) override</td></tr>
 <tr class="memdesc:af2aa9ea3311b5a9470392759e20516b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search all password content by GPG-decrypting each real <span class="tt">.gpg</span> file, as <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> does.  <br /></td></tr>
+<tr class="memitem:ae0ccd39e17991ddfc3029dde0be8f8ee" id="r_ae0ccd39e17991ddfc3029dde0be8f8ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae0ccd39e17991ddfc3029dde0be8f8ee">CancelGrep</a> () override</td></tr>
+<tr class="memdesc:ae0ccd39e17991ddfc3029dde0be8f8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the running search (<a class="el" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6" title="Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ...">NativeGrep::cancel()</a>).  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:a5d0cea4019f5c123fb4a4417de8d95b9 inherit pub_methods_class_pass" id="r_a5d0cea4019f5c123fb4a4417de8d95b9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9">Pass</a> ()</td></tr>
 <tr class="memdesc:a5d0cea4019f5c123fb4a4417de8d95b9 inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance.  <br /></td></tr>
@@ -436,6 +438,43 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ae0ccd39e17991ddfc3029dde0be8f8ee" name="ae0ccd39e17991ddfc3029dde0be8f8ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ccd39e17991ddfc3029dde0be8f8ee">&#9670;&#160;</a></span>CancelGrep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RealPass::CancelGrep </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stop the running search (<a class="el" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6" title="Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ...">NativeGrep::cancel()</a>). </p>
+
+<p>Reimplemented from <a class="el" href="class_pass.html#a109a1abbd06afe20ed85c2fc9b46427c">Pass</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00297">297</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae0ccd39e17991ddfc3029dde0be8f8ee_cgraph.svg" width="367" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a18b236aa64e27f35289a7c51a46abb0e" name="a18b236aa64e27f35289a7c51a46abb0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18b236aa64e27f35289a7c51a46abb0e">&#9670;&#160;</a></span>Copy()</h2>
 
@@ -481,10 +520,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00440">440</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
 </div>
-<div id="dynsection-5-content" class="dyncontent hidden">
+<div id="dynsection-6-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a18b236aa64e27f35289a7c51a46abb0e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -523,16 +562,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The hash; empty when <code class="param">path</code> is no readable regular file. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00253">253</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
-</div>
-<div id="dynsection-6-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aab2302e8117d96d1a1bfefb6e0bc099b_cgraph.svg" width="408" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
 <div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aab2302e8117d96d1a1bfefb6e0bc099b_cgraph.svg" width="408" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aab2302e8117d96d1a1bfefb6e0bc099b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -593,16 +632,16 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00521">521</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
-</div>
-<div id="dynsection-8-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae210a8e9148b9ea58e229e770b88f19b_cgraph.svg" width="391" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
 <div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae210a8e9148b9ea58e229e770b88f19b_cgraph.svg" width="391" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae210a8e9148b9ea58e229e770b88f19b_icgraph.svg" width="599" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -659,10 +698,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00344">344</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
 </div>
-<div id="dynsection-10-content" class="dyncontent hidden">
+<div id="dynsection-11-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_acd99293fa04b5b21721a75f3afe0fe2b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -711,16 +750,16 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00360">360</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
-</div>
-<div id="dynsection-11-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a014fcc263c7f47c2ee0163d84b7a3dd7_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary">
 </div>
 <div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a014fcc263c7f47c2ee0163d84b7a3dd7_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a014fcc263c7f47c2ee0163d84b7a3dd7_icgraph.svg" width="399" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -754,10 +793,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00043">43</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aacaf85a65fc1398c356dd44370e5e22f_cgraph.svg" width="566" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -791,10 +830,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00063">63</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ac3206e85bc586214e6cc75186cff65c3_cgraph.svg" width="570" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -828,10 +867,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a7a109d5c0a7f565398b7238c32bb6328">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00045">45</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-15-content" class="dyncontent hidden">
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a6a959408a305cc8dd7cc6c7bd9c17210_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -865,10 +904,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00065">65</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary">
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
 </div>
-<div id="dynsection-16-content" class="dyncontent hidden">
+<div id="dynsection-17-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae32fd82fe5e57b2c45df05bfe2991b5b_cgraph.svg" width="576" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -913,10 +952,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00510">510</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary">
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
 </div>
-<div id="dynsection-17-content" class="dyncontent hidden">
+<div id="dynsection-18-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af2aa9ea3311b5a9470392759e20516b3_cgraph.svg" width="100%" height="523"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -961,10 +1000,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00387">387</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary">
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
 </div>
-<div id="dynsection-18-content" class="dyncontent hidden">
+<div id="dynsection-19-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a12a7e631a5040eee70da06585fe047ba_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1015,10 +1054,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00200">200</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary">
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
 </div>
-<div id="dynsection-19-content" class="dyncontent hidden">
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a5b057992bb1c2a55d9febbca4535f830_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1059,10 +1098,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00235">235</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary">
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
 </div>
-<div id="dynsection-20-content" class="dyncontent hidden">
+<div id="dynsection-21-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae83239077615fed7e3cd5fccfad9336a_cgraph.svg" width="628" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1095,16 +1134,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_gpg_id_signer.html" title="The detached signature on a store&#39;s .gpg-id: whether the configured signing key is usable,...">GpgIdSigner</a> with the configured signing keys. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00076">76</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary">
-</div>
-<div id="dynsection-21-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af4b087c502643f89c605c2c80e172cda_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary">
 </div>
 <div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af4b087c502643f89c605c2c80e172cda_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
+</div>
+<div id="dynsection-23-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af4b087c502643f89c605c2c80e172cda_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1155,10 +1194,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00436">436</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary">
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
 </div>
-<div id="dynsection-23-content" class="dyncontent hidden">
+<div id="dynsection-24-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_acbbb510bd58cdceae53d34985453fc83_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1201,16 +1240,16 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00225">225</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary">
-</div>
-<div id="dynsection-24-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a6d7163b691663d92f31ca20886f9979f_cgraph.svg" width="630" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary">
 </div>
 <div id="dynsection-25-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a6d7163b691663d92f31ca20886f9979f_cgraph.svg" width="630" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
+</div>
+<div id="dynsection-26-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a6d7163b691663d92f31ca20886f9979f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1271,16 +1310,16 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00454">454</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary">
-</div>
-<div id="dynsection-26-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7dc41cbf604316f975dfb6dc2786a794_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary">
 </div>
 <div id="dynsection-27-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7dc41cbf604316f975dfb6dc2786a794_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
+</div>
+<div id="dynsection-28-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7dc41cbf604316f975dfb6dc2786a794_icgraph.svg" width="384" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1324,16 +1363,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The store-relative name. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00444">444</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary">
-</div>
-<div id="dynsection-28-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7f4e533ac300c1a6acbecf7c54642719_cgraph.svg" width="355" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-29-summary" class="dynsummary">
 </div>
 <div id="dynsection-29-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7f4e533ac300c1a6acbecf7c54642719_cgraph.svg" width="355" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
+</div>
+<div id="dynsection-30-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7f4e533ac300c1a6acbecf7c54642719_icgraph.svg" width="588" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1395,16 +1434,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00087">87</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary">
-</div>
-<div id="dynsection-30-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a465da341035daa9bbdd1c4eb9fc78eb7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary">
 </div>
 <div id="dynsection-31-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a465da341035daa9bbdd1c4eb9fc78eb7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
+</div>
+<div id="dynsection-32-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a465da341035daa9bbdd1c4eb9fc78eb7_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1443,16 +1482,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00116">116</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary">
-</div>
-<div id="dynsection-32-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a9bab556e0fa41d6cd8d5f9564760e629_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
 <div id="dynsection-33-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a9bab556e0fa41d6cd8d5f9564760e629_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
+</div>
+<div id="dynsection-34-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a9bab556e0fa41d6cd8d5f9564760e629_icgraph.svg" width="650" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1502,16 +1541,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00151">151</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary">
-</div>
-<div id="dynsection-34-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af496429ebd2607ddb2c7c1f6c897d3fa_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-35-summary" class="dynsummary">
 </div>
 <div id="dynsection-35-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af496429ebd2607ddb2c7c1f6c897d3fa_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary">
+</div>
+<div id="dynsection-36-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af496429ebd2607ddb2c7c1f6c897d3fa_icgraph.svg" width="654" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1556,10 +1595,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00265">265</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary">
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
 </div>
-<div id="dynsection-36-content" class="dyncontent hidden">
+<div id="dynsection-37-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a0fcac7c5005e6d1a0d09373b5476ca9c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1599,10 +1638,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00067">67</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary">
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
 </div>
-<div id="dynsection-37-content" class="dyncontent hidden">
+<div id="dynsection-38-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a63da21db00da709ae5aa8f7a992e16e1_cgraph.svg" width="100%" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1648,10 +1687,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">Pass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00188">188</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary">
+<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary">
 </div>
-<div id="dynsection-38-content" class="dyncontent hidden">
+<div id="dynsection-39-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a23317f24cad6782794cfc83a355af4fa_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 

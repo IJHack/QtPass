@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"functions_c.html":[3,3,0,3],
+"functions_d.html":[3,3,0,4],
+"functions_e.html":[3,3,0,5],
 "functions_enum.html":[3,3,4],
 "functions_eval.html":[3,3,5],
 "functions_f.html":[3,3,0,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "qtpass_8cpp.html":[4,0,1,67],
 "qtpass_8cpp_source.html":[4,0,1,67],
 "qtpass_8h.html":[4,0,1,68],
-"qtpass_8h_source.html":[4,0,1,68],
-"qtpasslogging_8cpp.html":[4,0,1,69],
-"qtpasslogging_8cpp_source.html":[4,0,1,69],
-"qtpasslogging_8h.html":[1,7,0]
+"qtpass_8h_source.html":[4,0,1,68]
 };

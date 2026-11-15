@@ -67,11 +67,11 @@ var NAVTREEINDEX =
 "annotated.html",
 "class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4",
 "class_main_window.html#aa967da10448f6f65b2d573f5063f5b1e",
-"class_password_display_panel.html#a064002137dbd9f257e05d5571f0b9ada",
-"class_single_application.html#ab893aad585d0cc3ee82659709a6a069b",
-"functions_enum.html",
-"qtpasssettings_8cpp.html",
-"templateio_8h.html"
+"class_password_display_panel.html",
+"class_single_application.html#a7fe3d993e578290d1ecd2033d7d5e0d9",
+"functions_c.html",
+"qtpasslogging_8cpp.html",
+"struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

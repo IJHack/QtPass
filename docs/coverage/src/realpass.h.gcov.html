@@ -30,7 +30,7 @@
                 <table cellpadding=1 border=0 width="100%">
           <tr>
             <td width="10%" class="headerItem">Current view:</td>
-            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - src/realpass.h</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - src/realpass.h<span style="font-size: 80%;"> (source / <a href="realpass.h.func-c.html" title="Click to go to function table">functions</a>)</span></td>
             <td width="5%"></td>
             <td width="5%"></td>
             <td width="5%" class="headerCovTableHead">Coverage</td>
@@ -43,17 +43,17 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 12:38:50</td>
+            <td class="headerValue">2026-11-15 13:06:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntryHi">-</td>
-            <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
           </tr>
                   <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -364,9 +364,13 @@
 <span id="L291"><span class="lineNum">     291</span>              :    * @param caseInsensitive true for case-insensitive search.</span>
 <span id="L292"><span class="lineNum">     292</span>              :    */</span>
 <span id="L293"><span class="lineNum">     293</span>              :   void Grep(QString pattern, bool caseInsensitive) override;</span>
-<span id="L294"><span class="lineNum">     294</span>              : };</span>
-<span id="L295"><span class="lineNum">     295</span>              : </span>
-<span id="L296"><span class="lineNum">     296</span>              : #endif // SRC_REALPASS_H_</span>
+<span id="L294"><span class="lineNum">     294</span>              :   /**</span>
+<span id="L295"><span class="lineNum">     295</span>              :    * @brief Stop the running search (NativeGrep::cancel()).</span>
+<span id="L296"><span class="lineNum">     296</span>              :    */</span>
+<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">          15 :   void CancelGrep() override { m_grep.cancel(); }</span></span>
+<span id="L298"><span class="lineNum">     298</span>              : };</span>
+<span id="L299"><span class="lineNum">     299</span>              : </span>
+<span id="L300"><span class="lineNum">     300</span>              : #endif // SRC_REALPASS_H_</span>
         </pre>
               </td>
             </tr>

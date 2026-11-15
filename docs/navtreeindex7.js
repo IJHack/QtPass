@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa":[1,2,7,6],
+"templateio_8cpp.html":[4,0,1,95],
+"templateio_8cpp_source.html":[4,0,1,95],
 "templateio_8h.html":[4,0,1,96],
 "templateio_8h_source.html":[4,0,1,96],
 "topics.html":[1],

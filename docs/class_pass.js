@@ -13,6 +13,7 @@ var class_pass =
     [ "Pass", "class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9", null ],
     [ "beforeExecute", "class_pass.html#a0a580982bcc672c58aad1289d05c4951", null ],
     [ "boundedRandom", "class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b", null ],
+    [ "CancelGrep", "class_pass.html#a109a1abbd06afe20ed85c2fc9b46427c", null ],
     [ "Copy", "class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1", null ],
     [ "critical", "class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9", null ],
     [ "emitProcessFinishedSignal", "class_pass.html#a57b61261a84b79bb73b209b3511a87ff", null ],

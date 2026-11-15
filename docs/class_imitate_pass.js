@@ -8,6 +8,7 @@ var class_imitate_pass =
     [ "~ImitatePass", "class_imitate_pass.html#a59c774bacec45aa06d10e22bc71f596e", null ],
     [ "addGenerationHeader", "class_imitate_pass.html#aa327d0b0f45abfb88d10da0c5fdebd41", null ],
     [ "beforeExecute", "class_imitate_pass.html#afea4899feebac58489e710f4f8eba501", null ],
+    [ "CancelGrep", "class_imitate_pass.html#a5938fafb40e80ab43db44d7e9a200867", null ],
     [ "cancelReencryptPath", "class_imitate_pass.html#a5cbd9d68f47d53b994ec25cecbb27436", null ],
     [ "ciphertextHolds", "class_imitate_pass.html#a305a2851e3a8c3c815cc561b48a450ab", null ],
     [ "commitArgs", "class_imitate_pass.html#a4b215c41496b7ab0479878e357bc4dac", null ],

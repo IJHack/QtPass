@@ -4,6 +4,7 @@ var class_real_pass =
     [ "InsertRecord", "struct_real_pass_1_1_insert_record.html", "struct_real_pass_1_1_insert_record" ],
     [ "RealPass", "class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6", null ],
     [ "~RealPass", "class_real_pass.html#a629d63af70047e502c91d7a3da7c5809", null ],
+    [ "CancelGrep", "class_real_pass.html#ae0ccd39e17991ddfc3029dde0be8f8ee", null ],
     [ "Copy", "class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e", null ],
     [ "entryFingerprint", "class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b", null ],
     [ "executePass", "class_real_pass.html#ae210a8e9148b9ea58e229e770b88f19b", null ],
