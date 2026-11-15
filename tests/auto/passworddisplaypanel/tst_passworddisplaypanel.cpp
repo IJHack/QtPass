@@ -22,6 +22,7 @@
 #include "../../../src/qpushbuttonshowpassword.h"
 #include "../../../src/qpushbuttonwithclipboard.h"
 #include "../../../src/secrettextbrowser.h"
+#include "../../../src/util.h"
 
 class tst_passworddisplaypanel : public QObject {
   Q_OBJECT
@@ -64,6 +65,8 @@ private Q_SLOTS:
   void visiblePasswordRendersHtmlSpecialsVerbatim();
   void passwordRowKeepsSurroundingWhitespace();
   void fieldValueWithUrlStillLinksAndEscapes();
+  void fieldValueWithUrlKeepsItsWhiteSpace();
+  void longRunsOfSpacesAreCutForDisplayOnly();
   void fieldValueWithNonWebUrlGetsNoAnchor_data();
   void fieldValueWithNonWebUrlGetsNoAnchor();
   void fieldValueLinksOnlyTheLaunchableUrl();
@@ -726,6 +729,52 @@ void tst_passworddisplaypanel::fieldValueWithUrlStillLinksAndEscapes() {
       html.contains(
           QStringLiteral("<a href=\"https://example.org/?a=1&amp;b=2\"")),
       qPrintable(QStringLiteral("URL must be wrapped in an anchor: ") + html));
+}
+
+/**
+ * @brief A value with a link in it is set as rich text, which collapses white
+ * space unless told otherwise: "a  b" after the URL was shown, and copied, as
+ * "a b", while a value without a link kept both spaces.
+ */
+void tst_passworddisplaypanel::fieldValueWithUrlKeepsItsWhiteSpace() {
+  const QString value =
+      QStringLiteral("https://example.org/a  b\tc, code  12  34");
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"), NamedValues{{"url", value}},
+                         s);
+  QTextBrowser *browser = browserAt(1);
+  QVERIFY(browser != nullptr);
+  QCOMPARE(browser->toPlainText(), value);
+  QVERIFY2(browser->toHtml().contains(
+               QStringLiteral("<a href=\"https://example.org/a\"")),
+           qPrintable(browser->toHtml()));
+}
+
+/**
+ * @brief Both kinds of value row keep white space, so both cut a long run of
+ * spaces before Qt lays it out (65536 in a row never finish); the copy button
+ * still hands over the value as stored.
+ */
+void tst_passworddisplaypanel::longRunsOfSpacesAreCutForDisplayOnly() {
+  const QString run(Util::kMaxSpaceRun + 500, QLatin1Char(' '));
+  const QString cut(Util::kMaxSpaceRun, QLatin1Char(' '));
+  AppSettings s;
+  s.hidePassword = false;
+  s.clipBoardType = Enums::CLIPBOARD_ALWAYS;
+  const QString password = QStringLiteral("a") + run + QStringLiteral("b");
+  m_panel->displayFields(
+      password,
+      NamedValues{{"url", QStringLiteral("https://example.org/") + run + "x"}},
+      s);
+  QTextBrowser *plain = browserAt(0);
+  QTextBrowser *linked = browserAt(1);
+  QVERIFY(plain != nullptr && linked != nullptr);
+  QCOMPARE(plain->toPlainText(), QStringLiteral("a") + cut + "b");
+  QCOMPARE(linked->toPlainText(),
+           QStringLiteral("https://example.org/") + cut + "x");
+  auto *copy = m_parent->findChild<QPushButtonWithClipboard *>();
+  QVERIFY2(copy != nullptr, "the password row renders a copy button");
+  QCOMPARE(copy->getTextToCopy(), password);
 }
 
 /**

@@ -148,16 +148,21 @@ auto valueBrowser(const QString &field, const QString &value,
   browser->setSizePolicy(
       QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
   browser->setObjectName(field);
+  // Both branches keep white space, which can hang Qt's layout on a run of
+  // 65536 spaces; the copy button still gets the value itself.
+  const QString shown = Util::boundSpaceRuns(value);
   bool linked = false;
-  const QString linkedText = Util::linkifyUrls(value, &linked);
+  const QString linkedText = Util::linkifyUrls(shown, &linked);
   if (linked) {
     // Always HTML here: the text is escaped and carries anchor tags, so do
-    // not leave the interpretation to setText()'s auto-detection.
-    browser->setHtml(linkedText);
+    // not leave the interpretation to setText()'s auto-detection. With its
+    // white space kept, as setPlainText() below keeps it.
+    browser->setHtml(QStringLiteral("<span style=\"white-space: pre-wrap;\">") +
+                     linkedText + QStringLiteral("</span>"));
   } else {
     // Plain text: escaping plus setText() showed `a&b` as `a&amp;b` unless
     // the value happened to contain a '<'.
-    browser->setPlainText(value);
+    browser->setPlainText(shown);
   }
   browser->setReadOnly(true);
   browser->setStyleSheet(lineStyle);

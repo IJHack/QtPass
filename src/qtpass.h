@@ -56,7 +56,8 @@ public:
   /**
    * @brief Turn a process' plain-text output into the HTML the text browser
    * shows: http(s) URLs become links, everything else is escaped, line breaks
-   * become `<br />`.
+   * become `<br />` and all other white space is kept as it is (a lone
+   * carriage return becomes a space).
    * @param output Plain text from a process.
    * @param prefix HTML placed before the converted output.
    * @param postfix HTML placed after it.
