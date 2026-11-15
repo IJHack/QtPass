@@ -149,8 +149,7 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     // names kept below is: read exactly, `Digits=8` was neither read nor
     // kept, and toUri() wrote the defaults in its place. The first of a name
     // wins, as QUrlQuery::queryItemValue() has it.
-    const auto param =
-        [&items](QLatin1String name) -> std::optional<QString> {
+    const auto param = [&items](QLatin1String name) -> std::optional<QString> {
       for (const QPair<QString, QString> &item : items) {
         if (item.first.compare(name, Qt::CaseInsensitive) == 0) {
           return item.second;
