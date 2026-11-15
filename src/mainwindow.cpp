@@ -1881,10 +1881,10 @@ void MainWindow::passwordFromFileToClipboard(const QString &text,
   // password row and "Always copy" have it.
   const QString first = FileContent::passwordLine(text);
   // A `pass otp insert` entry's first line is the otpauth:// URI carrying the
-  // TOTP seed, and an OTP field written there holds it too; copying it would
-  // leak 2FA material. Matches the display path
+  // TOTP seed, and an OTP field holding a seed there is the same; copying it
+  // would leak 2FA material. Matches the display path
   // (FileContent::getPasswordForDisplay / PasswordDisplayPanel).
-  if (FileContent::isOtpLine(first)) {
+  if (FileContent::isOtpPasswordLine(first)) {
     flashText(tr("This entry holds an OTP secret, not a password"), true);
     return;
   }

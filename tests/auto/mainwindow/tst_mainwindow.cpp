@@ -1513,6 +1513,12 @@ void tst_mainwindow::passwordFromFileToClipboardSkipsOtpSecret() {
     m_window->passwordFromFileToClipboard(entry, QStringLiteral("otpentry"));
     QVERIFY2(clip->text() == QStringLiteral("sentinel"), qPrintable(entry));
   }
+  // A password that only starts like one is copied as the password.
+  QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                         QStringLiteral("otpentry")));
+  m_window->passwordFromFileToClipboard(
+      QStringLiteral("totp:Secr3t!\nlogin: alice"), QStringLiteral("otpentry"));
+  QCOMPARE(clip->text(), QStringLiteral("totp:Secr3t!"));
 }
 
 /**

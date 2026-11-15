@@ -90,8 +90,8 @@ void PasswordDisplayPanel::displayFields(const QString &password,
   int position = 0;
   // Defence in depth: getPasswordForDisplay() already blanks a password line
   // that holds a shared secret (an otpauth URI from `pass otp insert`, or an
-  // OTP field); refuse one here too.
-  if (!password.isEmpty() && !FileContent::isOtpLine(password)) {
+  // OTP field holding a seed); refuse one here too.
+  if (!password.isEmpty() && !FileContent::isOtpPasswordLine(password)) {
     // The password is hidden in addField when needed.
     addField(position, QObject::tr("Password"), password, s);
     ++position;

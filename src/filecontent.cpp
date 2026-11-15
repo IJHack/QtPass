@@ -7,6 +7,7 @@
  * search, plus the cached secret-field-name matcher.
  */
 #include "filecontent.h"
+#include "totp.h"
 #include <QRegularExpression>
 
 #include <QCoreApplication>
@@ -35,6 +36,37 @@ static auto isOtpUri(const QString &value) -> bool {
  */
 static auto isLineHidden(const QString &line) -> bool {
   return FileContent::isOtpLine(line);
+}
+
+/**
+ * @brief Whether @p value is written as a TOTP seed: base32 letters and the
+ * digits 2 to 7 only (either case; white space or dashes between groups and
+ * "=" padding allowed), at least 16 of them (80 bits, the shortest seed in
+ * common use), that Totp::isValid() takes.
+ *
+ * Strict where Totp::parse() is lenient (it drops punctuation and reads 0, 1
+ * and 8 as letters, which almost any password survives): this decides
+ * whether a first line is a seed or the password.
+ * @param value The value of an `OTP:`/`TOTP:` field.
+ * @return true when it can only be read as a seed.
+ */
+static auto isBase32Seed(const QString &value) -> bool {
+  qsizetype letters = 0;
+  for (const QChar c : value) {
+    const char16_t u = c.unicode();
+    // Grouping and padding, as seeds are written and pasted: spaces, tabs, a
+    // no-break space, dashes, "=". Base32::sanitizeInput() drops them too.
+    if (c.isSpace() || u == u'-' || u == u'=') {
+      continue;
+    }
+    if (!((u >= u'A' && u <= u'Z') || (u >= u'a' && u <= u'z') ||
+          (u >= u'2' && u <= u'7'))) {
+      return false;
+    }
+    ++letters;
+  }
+  constexpr qsizetype kMinSeedLetters = 16;
+  return letters >= kMinSeedLetters && Totp::isValid(value);
 }
 
 /**
@@ -159,8 +191,9 @@ auto FileContent::parse(const QString &fileContent,
   OtpCandidates otp;
   // An entry from `pass otp insert` has the URI as its only (password) line,
   // which the loop below never sees; an `OTP:`/`TOTP:` field written there by
-  // hand is the same secret, and yields a code as it does further down.
-  if (isOtpLine(password)) {
+  // hand holding a usable secret is the same, and yields a code as it does
+  // further down (isOtpPasswordLine()).
+  if (isOtpPasswordLine(password)) {
     otp.bareLine = otpConfigOf(password);
   }
   for (; it != tokens.end(); ++it) {
@@ -292,10 +325,26 @@ auto FileContent::isOtpLine(const QString &line) -> bool {
          isOtpUri(line.right(line.length() - colon - 1));
 }
 
+auto FileContent::isOtpPasswordLine(const QString &line) -> bool {
+  if (isOtpUri(line)) {
+    return true;
+  }
+  const qsizetype colon = line.indexOf(u':');
+  if (colon < 0) {
+    return false;
+  }
+  const QString value = line.mid(colon + 1);
+  // Any field holding an otpauth URI is a shared secret; an OTP-named field
+  // only when what it holds would give a code: the line is the password
+  // otherwise, as the pass format has it.
+  return isOtpUri(value) ||
+         (isOtpFieldName(line.left(colon)) && isBase32Seed(value));
+}
+
 auto FileContent::getPassword() const -> QString { return this->password; }
 
 auto FileContent::getPasswordForDisplay() const -> QString {
-  return isOtpLine(this->password) ? QString() : this->password;
+  return isOtpPasswordLine(this->password) ? QString() : this->password;
 }
 
 auto FileContent::getNamedValues() const -> NamedValues {
