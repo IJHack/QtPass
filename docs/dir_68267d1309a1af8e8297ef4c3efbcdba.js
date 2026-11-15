@@ -104,7 +104,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "userinfo.h", "userinfo_8h.html", null ],
     [ "usersdialog.cpp", "usersdialog_8cpp.html", null ],
     [ "usersdialog.h", "usersdialog_8h.html", null ],
-    [ "util.cpp", "util_8cpp.html", null ],
+    [ "util.cpp", "util_8cpp.html", "util_8cpp" ],
     [ "util.h", "util_8h.html", "util_8h" ],
     [ "windowstatestore.cpp", "windowstatestore_8cpp.html", "windowstatestore_8cpp" ],
     [ "windowstatestore.h", "windowstatestore_8h.html", "windowstatestore_8h" ]

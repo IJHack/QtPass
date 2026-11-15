@@ -30,6 +30,7 @@ var class_util =
     [ "removeTree", "class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c", null ],
     [ "replaceFile", "class_util.html#ab0e1c40d3ccc706e0d74d246361a2640", null ],
     [ "repositoryPassClimbsTo", "class_util.html#a158b1927cee3cffacaec8d583fbf72ad", null ],
+    [ "setBeforePlacingForTests", "class_util.html#a7725c5ead1f6ecd7af1c4d85707e35b6", null ],
     [ "setGitOwnerForTests", "class_util.html#a44056a3fca6102be2a1a4f896d6a2208", null ],
     [ "stageFileReplacing", "class_util.html#add1e4f70c6d7630ace5e350b30f78907", null ],
     [ "syncToDisk", "class_util.html#aa000e615528288c62c3388bfbad759ee", null ],

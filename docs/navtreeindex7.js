@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4ae73cda510e8bb947f7e61089e5581494":[1,3,6,0,1],
 "struct_store_drag_item.html#aa143fe18023b8dba5836cc930cfb3904":[1,3,6,1],
 "struct_totp_1_1_settings.html":[1,3,10,0],
 "struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf":[1,3,10,0,8],
@@ -44,6 +45,7 @@ var NAVTREEINDEX7 =
 "usersdialog_8h.html":[4,0,1,103],
 "usersdialog_8h_source.html":[4,0,1,103],
 "util_8cpp.html":[4,0,1,104],
+"util_8cpp.html#aad0da0cf823d706ca735e7b968c93eeb":[4,0,1,104,0],
 "util_8cpp_source.html":[4,0,1,104],
 "util_8h.html":[4,0,1,105],
 "util_8h.html#a6e21cb4edfdc8220e9e3916caaff71f8":[4,0,1,105,0],
