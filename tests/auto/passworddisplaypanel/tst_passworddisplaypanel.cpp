@@ -631,6 +631,18 @@ void tst_passworddisplaypanel::otpUriInDifferentlyNamedFieldIsNeverRendered() {
   QVERIFY2(!text.contains(kOtpSecret), "the shared secret must never be shown");
   QVERIFY2(!text.contains(QStringLiteral("otpauth")),
            "the otpauth URI must never be shown");
+
+  // Nor when the URI is not the start of the value: a second colon, a list
+  // dash, the split form.
+  for (const QString &value :
+       {QStringLiteral("backup phone: ") + kOtpUri,
+        QStringLiteral("- ") + kOtpUri,
+        QString(kOtpUri).replace(QStringLiteral("otpauth://"),
+                                 QStringLiteral("otpauth: //"))}) {
+    m_panel->displayFields(QStringLiteral("secret"),
+                           NamedValues{{"AWS", value}}, s, kOtpUri);
+    QVERIFY2(!renderedText(m_grid).contains(kOtpSecret), qPrintable(value));
+  }
 }
 
 auto tst_passworddisplaypanel::browserAt(int row) const -> QTextBrowser * {

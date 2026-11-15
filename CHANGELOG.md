@@ -1036,6 +1036,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the push. A copied entry's commit had the same problem
   ([#169](https://github.com/IJHack/QtPass/pull/169) fixed it for the
   other messages)
+- The TOTP seed stays off the screen wherever its `otpauth://` URI sits in
+  a line: after a list dash, in quotes, behind other text, after a second
+  colon (`AWS: backup phone: otpauth://…`), or split at its colon as
+  `otpauth: //…`, as the edit dialog of 1.8 to 2.0-rc2 saved it with
+  `otpauth` in the template. Only a bare line and the value after the first
+  colon were caught, so these showed `secret=` in the main window, also
+  with "Hide password" on, and as a field with copy and QR buttons
 
 ### Code Quality
 
