@@ -28,6 +28,8 @@ private Q_SLOTS:
   void parseAlgorithmNames();
   void parseRefusesUnknownAlgorithms_data();
   void parseRefusesUnknownAlgorithms();
+  void parseRefusesOtherUriSchemes_data();
+  void parseRefusesOtherUriSchemes();
   void parseClampsDigitsAndPeriod();
   void parseNonNumericParametersFallBackToDefaults_data();
   void parseNonNumericParametersFallBackToDefaults();
@@ -230,6 +232,45 @@ void tst_totp::parseRefusesUnknownAlgorithms() {
   QVERIFY(!Totp::isValid(uri));
   // Nothing to canonicalise into: the dialog keeps the value as typed.
   QVERIFY(Totp::normalize(uri, QStringLiteral("x")).isEmpty());
+}
+
+void tst_totp::parseRefusesOtherUriSchemes_data() {
+  QTest::addColumn<QString>("config");
+  QTest::addColumn<bool>("valid");
+  QTest::newRow("Google Authenticator export")
+      << QStringLiteral(
+             "otpauth-migration://offline?data=CjUKCkhlbGxvId6tvu8SG"
+             "EV4YW1wbGU6YWxpY2VAZ29vZ2xlLmNvbRoHRXhhbXBsZSABKAEwAhAB"
+             "GAEgAA%3D%3D")
+      << false;
+  QTest::newRow("steam") << QStringLiteral("steam://JBSWY3DPEHPK3PXP") << false;
+  QTest::newRow("zbarimg output")
+      << QStringLiteral("QR-Code:otpauth-migration://offline?data=CjUKCkhl")
+      << false;
+  QTest::newRow("a web address")
+      << QStringLiteral("https://example.com/2fa#JBSWY3DPEHPK3PXP") << false;
+  QTest::newRow("a remark in brackets")
+      << QStringLiteral("JBSWY3DPEHPK3PXP (main)") << false;
+  QTest::newRow("a nine") << QStringLiteral("JBSWY3DPEHPK3PX9") << false;
+  // What a bare secret is written with still passes.
+  QTest::newRow("spaced") << QStringLiteral("JBSW Y3DP EHPK 3PXP") << true;
+  QTest::newRow("dashed") << QStringLiteral("JBSW-Y3DP-EHPK-3PXP") << true;
+  QTest::newRow("padded") << QStringLiteral("JBSWY3DPEHPK3PXP====") << true;
+  QTest::newRow("lower case") << QStringLiteral("jbswy3dpehpk3pxp") << true;
+  QTest::newRow("tabbed") << QStringLiteral("JBSW\tY3DP EHPK\t3PXP") << true;
+}
+
+/**
+ * @brief A URI of another scheme is not a bare base32 secret: its leftover
+ *        letters made one, with a running code that was not the account's,
+ *        and the dialog saved that in place of what was typed.
+ */
+void tst_totp::parseRefusesOtherUriSchemes() {
+  QFETCH(QString, config);
+  QFETCH(bool, valid);
+  QCOMPARE(Totp::parse(config).has_value(), valid);
+  QCOMPARE(Totp::isValid(config), valid);
+  QCOMPARE(Totp::normalize(config, QStringLiteral("x")).isEmpty(), !valid);
 }
 
 void tst_totp::parseAlgorithmNames() {

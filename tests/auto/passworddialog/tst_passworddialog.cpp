@@ -192,6 +192,7 @@ private Q_SLOTS:
   void otpCapitalisedParametersSurviveAnUneditedSave();
   void otpTextAfterAHashSurvivesASave();
   void otpUnknownAlgorithmIsKeptAsTyped();
+  void otpOtherUriSchemeIsKeptAsTyped();
   void otpPopulatedFieldWinsOverTheEmptyTemplateOne();
   void renamingTheOtpFieldAwayDropsItsValidation();
   void typingInARenamedAwayOtpFieldLeavesTheCurrentOneAlone();
@@ -2229,6 +2230,32 @@ void tst_passworddialog::otpUnknownAlgorithmIsKeptAsTyped() {
            qPrintable(spelled.insertedContent));
   QVERIFY2(!spelled.insertedContent.contains(QStringLiteral("HmacSHA256")),
            qPrintable(spelled.insertedContent));
+}
+
+/**
+ * @brief A pasted Google Authenticator export is kept as typed, with the
+ *        field warning: it was saved as otpauth://totp/...?secret= made of
+ *        the letters left over from its base64 payload.
+ */
+void tst_passworddialog::otpOtherUriSchemeIsKeptAsTyped() {
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  const QString exported = QStringLiteral(
+      "otpauth-migration://offline?data=CjUKCkhlbGxvId6tvu8SGEV4YW1wbGU6YWxp"
+      "Y2VAZ29vZ2xlLmNvbRoHRXhhbXBsZSABKAEwAhABGAEgAA%3D%3D");
+  FakePass pass;
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), true);
+  pass.deliverShow(QString());
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  otp->setFocus();
+  QTest::keyClicks(otp, exported);
+  QCOMPARE(otp->toolTip(), QStringLiteral("Invalid OTP secret"));
+  okButton(d)->click();
+  QVERIFY2(pass.insertedContent.contains(QStringLiteral("\nOTP: ") + exported +
+                                         QStringLiteral("\n")),
+           qPrintable(pass.insertedContent));
 }
 
 /**
