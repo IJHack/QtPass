@@ -702,12 +702,15 @@ void tst_passworddisplaypanel::passwordRowKeepsSurroundingWhitespace() {
   QVERIFY(edit != nullptr);
   QCOMPARE(edit->text(), QStringLiteral("pa\u2028ss"));
 
-  // A trailing CR from a CRLF-stored entry is a line ending, not part of the
-  // secret, and is the one thing dropped.
+  // The carriage return of a CRLF line end never reaches the panel
+  // (FileContent::passwordLine()); a "\r" that does is part of the password
+  // and is copied as Ctrl+C copies it, not dropped a second time.
   m_panel->clear();
   s.hidePassword = false;
   m_panel->displayFields(QStringLiteral("hunter2\r"), NamedValues{}, s);
-  QCOMPARE(browserAt(0)->toPlainText(), QStringLiteral("hunter2"));
+  copy = m_parent->findChild<QPushButtonWithClipboard *>();
+  QVERIFY(copy != nullptr);
+  QCOMPARE(copy->getTextToCopy(), QStringLiteral("hunter2\r"));
 }
 
 /**

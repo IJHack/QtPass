@@ -280,19 +280,13 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   const QString trimmedField = field.trimmed();
   // The password row keeps its value exactly: a leading or trailing space is
   // part of the password, so the copy button, QR code and revealed text must
-  // return what is stored, as Ctrl+C on the tree and the edit dialog do. Only
-  // a trailing CR from a CRLF-stored entry is dropped — it is a line ending,
-  // not part of the secret. Every other row is `name: value`, where the
+  // return what is stored, as Ctrl+C on the tree and the edit dialog do. The
+  // carriage return of a CRLF line end is gone already
+  // (FileContent::passwordLine()), and dropping another here would make this
+  // row disagree with Ctrl+C. Every other row is `name: value`, where the
   // whitespace around the value is layout and is trimmed.
-  QString displayValue;
-  if (trimmedField == QObject::tr("Password")) {
-    displayValue = value;
-    if (displayValue.endsWith(QLatin1Char('\r'))) {
-      displayValue.chop(1);
-    }
-  } else {
-    displayValue = value.trimmed();
-  }
+  const QString displayValue =
+      trimmedField == QObject::tr("Password") ? value : value.trimmed();
   QFrame *frame = createFieldFrame();
   addActionButtons(frame->layout(), trimmedField, displayValue, s);
   const QString lineStyle =

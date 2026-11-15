@@ -1392,6 +1392,18 @@ void tst_mainwindow::crlfEntryCopiesThePasswordWithoutItsLineEnd() {
   clip->setText(QStringLiteral("sentinel"));
   m_window->passShowHandler(entry);
   QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+
+  // Only the line end goes: a "\r" before it is part of the password, and
+  // every copy path hands it over alike.
+  const QString extra = QStringLiteral("hunter2\r\r\nlogin: alice\r\n");
+  clip->setText(QStringLiteral("sentinel"));
+  QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                         QStringLiteral("crlf")));
+  m_window->passwordFromFileToClipboard(extra, QStringLiteral("crlf"));
+  QCOMPARE(clip->text(), QStringLiteral("hunter2\r"));
+  clip->setText(QStringLiteral("sentinel"));
+  m_window->passShowHandler(extra);
+  QCOMPARE(clip->text(), QStringLiteral("hunter2\r"));
 }
 
 /**
