@@ -1062,9 +1062,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   gpg's status lines for these commands (`--status-fd 2`), in any
   language
 - With Git run through WSL (`wsl git`), deleting or renaming a folder whose
-  name ends in white space acts on that folder. The path from `wslpath`
-  was trimmed, so `team ` became its neighbour `team`, and a folder named
-  with a single blank became the whole store
+  name ends in whitespace acts on that folder. The path from `wslpath` was
+  trimmed, so "team" followed by a space became its neighbour `team`, and a
+  folder named with a single blank became the whole store
 
 ### Code Quality
 
