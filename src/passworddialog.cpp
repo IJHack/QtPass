@@ -849,10 +849,23 @@ void PasswordDialog::cycleTemplate() {
   applyTemplate(names.at(nextIdx));
 }
 
-void PasswordDialog::setPass(const QString &output, const QString &file) {
+void PasswordDialog::setPass(const QString &output, const QString &file,
+                             bool lossless) {
   // finishedShow names its file: a decrypt of any other entry (a tree click
   // that was still queued when the dialog opened) is not ours.
   if (!file.isEmpty() && file != m_file) {
+    return;
+  }
+  // Bytes that are not UTF-8 (a password typed on a Latin-1 terminal, a key
+  // file stored with `pass insert -m`) reach here as U+FFFD (on Windows as
+  // characters of the code page), a leading byte order mark not at all, and
+  // OK writes the whole entry back from this text: those bytes were changed
+  // for good, with the save reported as done. Not loaded, as below, so nothing
+  // is saved over the entry; showing and copying it are unaffected.
+  if (!lossless) {
+    ui->statusLabel->setText(
+        tr("This entry contains bytes QtPass cannot save unchanged, so it "
+           "cannot be edited here."));
     return;
   }
   // An editor block per line: an entry of millions of lines (a small,

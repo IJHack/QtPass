@@ -64,20 +64,34 @@ ImitatePass::~ImitatePass() {
 // The helpers are shared by the owning thread and the worker; thread affinity
 // tells them apart. Only the worker touches its QProcess, so a cancel can
 // never hit an exited process or a reused pid.
+auto ImitatePass::prepareBlocking(QProcess &process)
+    -> const std::atomic_bool * {
+  // In the store's environment: the git ceiling QtPass's own does not
+  // carry.
+  if (QThread::currentThread() == thread()) {
+    process.setProcessEnvironment(storeEnvironment());
+    return nullptr;
+  }
+  process.setProcessEnvironment(withCurrentGitPin(m_reencryptEnv));
+  return &m_reencryptCancel;
+}
+
 auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
                                const QString &input, QString *process_out,
                                QString *process_err) -> int {
-  // In the store's environment: the git ceiling QtPass's own does not
-  // carry.
   QProcess process;
-  if (QThread::currentThread() == thread()) {
-    process.setProcessEnvironment(storeEnvironment());
-    return Executor::executeBlocking(process, app, args, input, process_out,
-                                     process_err);
-  }
-  process.setProcessEnvironment(withCurrentGitPin(m_reencryptEnv));
+  const std::atomic_bool *cancel = prepareBlocking(process);
   return Executor::executeBlocking(process, app, args, input, process_out,
-                                   process_err, &m_reencryptCancel);
+                                   process_err, cancel);
+}
+
+auto ImitatePass::execBlockingRaw(const QString &app, const QStringList &args,
+                                  const QByteArray &input,
+                                  QByteArray *process_out) -> int {
+  QProcess process;
+  const std::atomic_bool *cancel = prepareBlocking(process);
+  return Executor::executeBlockingRaw(process, app, args, input, process_out,
+                                      nullptr, cancel);
 }
 
 auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
@@ -162,12 +176,14 @@ namespace {
  * to exactly @p recipients from stdin into @p output. --no-encrypt-to keeps
  * an `encrypt-to` line in the user's gpg.conf from adding a recipient the
  * (possibly signed) .gpg-id does not list; --compress-algo=none mirrors
- * pass(1).
+ * pass(1). --no-textmode keeps a `textmode` line from storing the entry as
+ * text, which a decrypt hands back without its carriage returns: the entry
+ * is stored as the bytes given.
  */
 auto encryptArgs(QStringList leading, const QString &output,
                  const QStringList &recipients) -> QStringList {
-  leading << "-eq" << "--compress-algo=none" << "--no-encrypt-to" << "--output"
-          << output;
+  leading << "-eq" << "--compress-algo=none" << "--no-encrypt-to"
+          << "--no-textmode" << "--output" << output;
   for (const QString &recipient : recipients) {
     leading << "-r" << recipient;
   }
@@ -832,29 +848,30 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   return actualKeys;
 }
 
-auto ImitatePass::decryptEntry(const QString &fileName, QString *plaintext)
+auto ImitatePass::decryptEntry(const QString &fileName, QByteArray *plaintext)
     -> bool {
   const QStringList args =
       QStringList{"-d",      "--quiet",    "--yes", "--no-encrypt-to",
                   "--batch", "--use-agent"} +
       maxOutputArgs() + QStringList{QStringLiteral("--"), pgpg(fileName)};
-  if (execBlocking(m_settings.gpgExecutable, args, plaintext) != 0 ||
+  if (execBlockingRaw(m_settings.gpgExecutable, args, QByteArray(),
+                      plaintext) != 0 ||
       plaintext->isEmpty()) {
     qCDebug(lcQtPass) << "Decrypt error on re-encrypt for:" << fileName;
     return false;
   }
-  if (!plaintext->endsWith(u'\n')) {
-    plaintext->append(u'\n');
-  }
+  // No newline added: an entry is re-encrypted as it was, as pass(1) does
+  // (gpg -d | gpg -e); a binary key without one would have grown a byte.
   return true;
 }
 
 auto ImitatePass::encryptFor(const QString &output,
                              const QStringList &recipients,
-                             const QString &plaintext) -> bool {
+                             const QByteArray &plaintext) -> bool {
   const QStringList args =
       encryptArgs({"--yes", "--batch"}, pgpg(output), recipients);
-  if (execBlocking(m_settings.gpgExecutable, args, plaintext) != 0) {
+  if (execBlockingRaw(m_settings.gpgExecutable, args, plaintext, nullptr) !=
+      0) {
     qCDebug(lcQtPass) << "Encrypt error on re-encrypt, output:" << output;
     return false;
   }
@@ -862,18 +879,21 @@ auto ImitatePass::encryptFor(const QString &output,
 }
 
 auto ImitatePass::ciphertextHolds(const QString &ciphertext,
-                                  const QString &plaintext) -> bool {
-  QString decrypted;
+                                  const QByteArray &plaintext) -> bool {
+  QByteArray decrypted;
   const QStringList args =
       QStringList{"-d", "--quiet", "--batch", "--use-agent"} + maxOutputArgs() +
       QStringList{QStringLiteral("--"), pgpg(ciphertext)};
-  if (execBlocking(m_settings.gpgExecutable, args, &decrypted) != 0 ||
+  if (execBlockingRaw(m_settings.gpgExecutable, args, QByteArray(),
+                      &decrypted) != 0 ||
       decrypted.isEmpty()) {
     qCDebug(lcQtPass) << "Verification failed for:" << ciphertext;
     return false;
   }
   // Defence in depth: gpg said it encrypted, and this is what comes back.
-  if (decrypted.trimmed() != plaintext.trimmed()) {
+  // Exact: gpg returns the bytes it was given. Compared as text, the check
+  // passed for an entry that had lost bytes, as both sides lost the same.
+  if (decrypted != plaintext) {
     qCDebug(lcQtPass) << "Verification content mismatch for:" << ciphertext;
     return false;
   }
@@ -919,7 +939,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
                      "file missing or invalid."));
     return false;
   }
-  QString plaintext;
+  QByteArray plaintext;
   if (!decryptEntry(fileName, &plaintext)) {
     return false;
   }

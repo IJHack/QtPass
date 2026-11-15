@@ -218,28 +218,33 @@ protected:
                            const QStringList &recipients, QString *why) -> bool;
   /**
    * @brief Decrypt @p fileName for re-encryption.
+   *
+   * Bytes, not text: an entry that is not UTF-8 (a Latin-1 password, a
+   * binary key) went through QString before, and every such byte came back
+   * as U+FFFD in the re-encrypted entry.
    * @param fileName The entry to read.
-   * @param plaintext Receives what gpg printed, with a trailing newline.
+   * @param plaintext Receives exactly what gpg printed.
    * @return Whether gpg decrypted it to something.
    */
-  auto decryptEntry(const QString &fileName, QString *plaintext) -> bool;
+  auto decryptEntry(const QString &fileName, QByteArray *plaintext) -> bool;
   /**
    * @brief Encrypt @p plaintext to @p recipients, into @p output.
    * @param output Where gpg writes the ciphertext; outside the store.
    * @param recipients The keys to encrypt to; gpg.conf adds none.
-   * @param plaintext What to encrypt, fed on stdin.
+   * @param plaintext The bytes to encrypt, fed on stdin.
    * @return Whether gpg wrote the ciphertext.
    */
   auto encryptFor(const QString &output, const QStringList &recipients,
-                  const QString &plaintext) -> bool;
+                  const QByteArray &plaintext) -> bool;
   /**
-   * @brief Decrypt @p ciphertext again and compare it with @p plaintext, so
-   * nothing replaces an entry until it is known to hold what it held.
+   * @brief Decrypt @p ciphertext again and compare it with @p plaintext,
+   * byte for byte, so nothing replaces an entry until it is known to hold
+   * what it held.
    * @param ciphertext The file gpg just wrote.
    * @param plaintext What it must decrypt to.
    * @return Whether it does.
    */
-  auto ciphertextHolds(const QString &ciphertext, const QString &plaintext)
+  auto ciphertextHolds(const QString &ciphertext, const QByteArray &plaintext)
       -> bool;
   /**
    * @brief Stage and commit a re-encrypted entry, when the store is a Git
@@ -372,6 +377,27 @@ protected:
   [[nodiscard]] auto execBlocking(const QString &app, const QStringList &args,
                                   QString *process_out,
                                   QString *process_err = nullptr) -> int;
+  /**
+   * @brief execBlocking() on bytes (Executor::executeBlockingRaw()), for an
+   * entry's plaintext, which need not be UTF-8.
+   * @param app The program.
+   * @param args Its arguments.
+   * @param input Bytes to write to its stdin (empty = none).
+   * @param process_out Receives stdout as written, if not null.
+   * @return As execBlocking().
+   */
+  [[nodiscard]] auto execBlockingRaw(const QString &app,
+                                     const QStringList &args,
+                                     const QByteArray &input,
+                                     QByteArray *process_out) -> int;
+  /**
+   * @brief Give @p process the environment for the calling thread: the
+   * store's on the owning thread, the re-encryption run's on its worker.
+   * @param process The process to set up.
+   * @return The cancel flag to pass on: null on the owning thread, the
+   *         re-encryption run's on the worker.
+   */
+  auto prepareBlocking(QProcess &process) -> const std::atomic_bool *;
   /**
    * @brief Run git with `-C <store>` in the store, blocking.
    * @param args The git arguments (without the executable or `-C`).

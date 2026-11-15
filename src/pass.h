@@ -854,10 +854,15 @@ signals:
    * argument of the Show() this result belongs to. Every receiver checks it
    * against what it asked for; a failed decrypt emits processErrorExit()
    * instead and never finishedShow().
-   * @param out Decrypted password file content.
+   * @param out Decrypted password file content, as text: fine to show or
+   *        copy, but only to write back when @p lossless.
    * @param file The Show() argument this content is for.
+   * @param lossless false when @p out does not encode back to the entry's
+   *        bytes (they are not UTF-8, or begin with a byte order mark), so
+   *        saving it would change the entry (Executor::lastOutputLossless()).
    */
-  void finishedShow(const QString &out, const QString &file);
+  void finishedShow(const QString &out, const QString &file,
+                    bool lossless = true);
   /**
    * @brief An Insert() succeeded: the entry is in the store and, with Git
    * in use, committed.

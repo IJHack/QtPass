@@ -671,6 +671,7 @@ private Q_SLOTS:
   void reencryptDiscardsACiphertextThatDoesNotDecrypt();
   void reencryptDiscardsACiphertextWhoseContentDiffers();
   void commitMessagesNameFilesRelativeToTheStore();
+  void reencryptComparesTheBytesNotTheirText();
   void reencryptFailsWhenTheOriginalVanishesBeforeTheSwap();
   void reencryptLeavesTheOriginalWhenTheCiphertextVanishes();
   void reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry();
@@ -4820,6 +4821,37 @@ void tst_imitatepass::commitMessagesNameFilesRelativeToTheStore() {
 }
 
 /**
+ * @brief The check after encrypting compares bytes: two plaintexts that are
+ *        not UTF-8 and differ only there decode to the same text (each odd
+ *        byte a U+FFFD), so compared as text a wrong ciphertext passed.
+ */
+void tst_imitatepass::reencryptComparesTheBytesNotTheirText() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("decrypt"),
+        QStringLiteral("case \"$last\" in *.tmp) printf 'pl\\350in\\n';; *) "
+                       "printf 'pl\\351in\\n';; esac")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  if (QTest::currentTestFailed())
+    return;
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+#endif
+}
+
+/**
  * @brief The entry disappears while gpg encrypts (another client deleted
  *        it): the new ciphertext is dropped and the file counted as failed;
  *        nothing is invented under its name.
@@ -4866,13 +4898,12 @@ void tst_imitatepass::reencryptLeavesTheOriginalWhenTheCiphertextVanishes() {
   QVERIFY(populateStore(storeDir.path(), 1));
   const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
   // The test-decrypt of the scratch file answers correctly, then the file
-  // is gone before it is placed; the entry's own decrypt has no trailing
-  // newline.
+  // is gone before it is placed.
   const QString fakeGpg = writeCustomGpg(
       storeDir.path(), logPath,
       {{QStringLiteral("decrypt"),
         QStringLiteral("case \"$last\" in *.tmp) printf 'plaintext\\n'; rm -f "
-                       "\"$last\";; *) printf 'plaintext';; esac")}});
+                       "\"$last\";; *) printf 'plaintext\\n';; esac")}});
   QVERIFY(!fakeGpg.isEmpty());
   QStringList criticals;
   QStringList status;
