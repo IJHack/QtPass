@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 21:26:28</td>
+            <td class="headerValue">2026-11-15 21:46:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryMed">81.8&nbsp;%</td>
@@ -87,24 +87,24 @@
 <span id="L14"><span class="lineNum">      14</span>              : #include &lt;QMenuBar&gt;</span>
 <span id="L15"><span class="lineNum">      15</span>              : #include &lt;QTimer&gt;</span>
 <span id="L16"><span class="lineNum">      16</span>              : </span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         165 : MenuBarPeek::MenuBarPeek(QMainWindow *window, QAction *toggle)</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         165 :     : QObject(window), m_window(window), m_toggle(toggle) {</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         169 : MenuBarPeek::MenuBarPeek(QMainWindow *window, QAction *toggle)</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         169 :     : QObject(window), m_window(window), m_toggle(toggle) {</span></span>
 <span id="L19"><span class="lineNum">      19</span>              :   // Key events go to the focus widget, and an open menu is a window of its</span>
 <span id="L20"><span class="lineNum">      20</span>              :   // own, so the filter has to sit on the application.</span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         165 :   qApp-&gt;installEventFilter(this);</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         170 :   connect(m_toggle, &amp;QAction::toggled, this, [this] { m_peeking = false; });</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">        1155 :   for (QAction *entry : m_window-&gt;menuBar()-&gt;actions()) {</span></span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         660 :     if (QMenu *menu = entry-&gt;menu()) {</span></span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         660 :       connect(menu, &amp;QMenu::aboutToHide, this,</span></span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">        1320 :               &amp;MenuBarPeek::hideWhenNoMenuIsOpen);</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         169 :   qApp-&gt;installEventFilter(this);</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         174 :   connect(m_toggle, &amp;QAction::toggled, this, [this] { m_peeking = false; });</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">        1183 :   for (QAction *entry : m_window-&gt;menuBar()-&gt;actions()) {</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         676 :     if (QMenu *menu = entry-&gt;menu()) {</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         676 :       connect(menu, &amp;QMenu::aboutToHide, this,</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">        1352 :               &amp;MenuBarPeek::hideWhenNoMenuIsOpen);</span></span>
 <span id="L27"><span class="lineNum">      27</span>              :     }</span>
 <span id="L28"><span class="lineNum">      28</span>              :   }</span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         165 : }</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         169 : }</span></span>
 <span id="L30"><span class="lineNum">      30</span>              : </span>
 <span id="L31"><span class="lineNum">      31</span> <span class="tlaUNC">           0 : auto MenuBarPeek::isPeeking() const -&gt; bool { return m_peeking; }</span></span>
 <span id="L32"><span class="lineNum">      32</span>              : </span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">      138714 : auto MenuBarPeek::eventFilter(QObject *watched, QEvent *event) -&gt; bool {</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">      138714 :   switch (event-&gt;type()) {</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">      147005 : auto MenuBarPeek::eventFilter(QObject *watched, QEvent *event) -&gt; bool {</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">      147005 :   switch (event-&gt;type()) {</span></span>
 <span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          28 :   case QEvent::KeyPress:</span></span>
 <span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          28 :     onKeyPress(watched, static_cast&lt;QKeyEvent *&gt;(event));</span></span>
 <span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">          28 :     break;</span></span>
@@ -116,17 +116,17 @@
 <span id="L43"><span class="lineNum">      43</span> <span class="tlaUNC">           0 :       hideWhenNoMenuIsOpen();</span></span>
 <span id="L44"><span class="lineNum">      44</span>              :     }</span>
 <span id="L45"><span class="lineNum">      45</span>              :     break;</span>
-<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">        1475 :   case QEvent::WindowDeactivate:</span></span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">        1475 :     if (watched == m_window) {</span></span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">        1579 :   case QEvent::WindowDeactivate:</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">        1579 :     if (watched == m_window) {</span></span>
 <span id="L48"><span class="lineNum">      48</span>              :       // Alt+Tab: the release goes to another application.</span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          35 :       m_altDown = false;</span></span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          35 :       hideWhenNoMenuIsOpen();</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          37 :       m_altDown = false;</span></span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          37 :       hideWhenNoMenuIsOpen();</span></span>
 <span id="L51"><span class="lineNum">      51</span>              :     }</span>
 <span id="L52"><span class="lineNum">      52</span>              :     break;</span>
 <span id="L53"><span class="lineNum">      53</span>              :   default:</span>
 <span id="L54"><span class="lineNum">      54</span>              :     break;</span>
 <span id="L55"><span class="lineNum">      55</span>              :   }</span>
-<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">      138714 :   return false;</span></span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">      147005 :   return false;</span></span>
 <span id="L57"><span class="lineNum">      57</span>              : }</span>
 <span id="L58"><span class="lineNum">      58</span>              : </span>
 <span id="L59"><span class="lineNum">      59</span>              : // A key event reaches the filter once for every widget it propagates to, and</span>
@@ -191,14 +191,14 @@
 <span id="L118"><span class="lineNum">     118</span>              : </span>
 <span id="L119"><span class="lineNum">     119</span>              : // Deferred: a menu's aboutToHide also fires when the pointer moves on to the</span>
 <span id="L120"><span class="lineNum">     120</span>              : // next menu, and Escape is seen here before the bar leaves keyboard mode.</span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">          38 : void MenuBarPeek::hideWhenNoMenuIsOpen() {</span></span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          38 :   QTimer::singleShot(0, this, [this] {</span></span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          11 :     if (m_peeking &amp;&amp; QApplication::activePopupWidget() == nullptr &amp;&amp;</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">          40 : void MenuBarPeek::hideWhenNoMenuIsOpen() {</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          40 :   QTimer::singleShot(0, this, [this] {</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          13 :     if (m_peeking &amp;&amp; QApplication::activePopupWidget() == nullptr &amp;&amp;</span></span>
 <span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">           3 :         m_window-&gt;menuBar()-&gt;activeAction() == nullptr) {</span></span>
 <span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">           3 :       hide();</span></span>
 <span id="L126"><span class="lineNum">     126</span>              :     }</span>
-<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">           8 :   });</span></span>
-<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">          38 : }</span></span>
+<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">          10 :   });</span></span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">          40 : }</span></span>
         </pre>
               </td>
             </tr>

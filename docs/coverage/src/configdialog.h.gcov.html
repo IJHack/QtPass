@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 21:26:28</td>
+            <td class="headerValue">2026-11-15 21:46:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -110,7 +110,7 @@
 <span id="L37"><span class="lineNum">      37</span>              :  * autoclear options, and exposes methods to read and update those settings.</span>
 <span id="L38"><span class="lineNum">      38</span>              :  */</span>
 <span id="L39"><span class="lineNum">      39</span>              : class ConfigDialog : public QDialog {</span>
-<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         504 :   Q_OBJECT</span></span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         514 :   Q_OBJECT</span></span>
 <span id="L41"><span class="lineNum">      41</span>              : </span>
 <span id="L42"><span class="lineNum">      42</span>              : public:</span>
 <span id="L43"><span class="lineNum">      43</span>              :   /**</span>
@@ -497,7 +497,7 @@
 <span id="L424"><span class="lineNum">     424</span>              :   void showProblems(int row, const ProfileProblems &amp;problems);</span>
 <span id="L425"><span class="lineNum">     425</span>              :   /// Per profile row: its store as the file system resolves it, and its</span>
 <span id="L426"><span class="lineNum">     426</span>              :   /// signing-key fingerprints (upper case).</span>
-<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">         223 :   struct SigningStores {</span></span>
+<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">         227 :   struct SigningStores {</span></span>
 <span id="L428"><span class="lineNum">     428</span>              :     QStringList stores;        ///&lt; Canonical (or cleaned) store path.</span>
 <span id="L429"><span class="lineNum">     429</span>              :     QList&lt;QSet&lt;QString&gt;&gt; keys; ///&lt; Fingerprints of the signing key.</span>
 <span id="L430"><span class="lineNum">     430</span>              :   };</span>

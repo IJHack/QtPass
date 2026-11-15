@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 21:26:28</td>
+            <td class="headerValue">2026-11-15 21:46:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -1787,11 +1787,11 @@
 <span id="L1714"><span class="lineNum">    1714</span> <span class="tlaGNC">         172 :   m_transactionOutput.append(out);</span></span>
 <span id="L1715"><span class="lineNum">    1715</span>              : </span>
 <span id="L1716"><span class="lineNum">    1716</span> <span class="tlaGNC">         172 :   if (exitCode == 0) {</span></span>
-<span id="L1717"><span class="lineNum">    1717</span> <span class="tlaGNC">         134 :     if (pid == INVALID) {</span></span>
+<span id="L1717"><span class="lineNum">    1717</span> <span class="tlaGNC">         135 :     if (pid == INVALID) {</span></span>
 <span id="L1718"><span class="lineNum">    1718</span>              :       return;</span>
 <span id="L1719"><span class="lineNum">    1719</span>              :     }</span>
 <span id="L1720"><span class="lineNum">    1720</span>              :   } else {</span>
-<span id="L1721"><span class="lineNum">    1721</span> <span class="tlaGNC">          43 :     while (pid == INVALID) {</span></span>
+<span id="L1721"><span class="lineNum">    1721</span> <span class="tlaGNC">          42 :     while (pid == INVALID) {</span></span>
 <span id="L1722"><span class="lineNum">    1722</span> <span class="tlaGNC">           5 :       id = exec.cancelNext();</span></span>
 <span id="L1723"><span class="lineNum">    1723</span> <span class="tlaGNC">           5 :       if (id == -1) {</span></span>
 <span id="L1724"><span class="lineNum">    1724</span>              :         //  this is probably irrecoverable and shall not happen</span>
@@ -1823,10 +1823,10 @@
 <span id="L1750"><span class="lineNum">    1750</span>              : </span>
 <span id="L1751"><span class="lineNum">    1751</span>              : // PCRE, as for RealPass (see Pass::Grep). Runs on a NativeGrep thread; the</span>
 <span id="L1752"><span class="lineNum">    1752</span>              : // result arrives on this thread as finishedGrep.</span>
-<span id="L1753"><span class="lineNum">    1753</span> <span class="tlaGNC">          13 : void ImitatePass::Grep(QString pattern, bool caseInsensitive) {</span></span>
-<span id="L1754"><span class="lineNum">    1754</span> <span class="tlaGNC">          26 :   m_grep.search(pattern, caseInsensitive, m_settings.gpgExecutable,</span></span>
-<span id="L1755"><span class="lineNum">    1755</span> <span class="tlaGNC">          13 :                 m_settings.passStore, exec.environment());</span></span>
-<span id="L1756"><span class="lineNum">    1756</span> <span class="tlaGNC">          13 : }</span></span>
+<span id="L1753"><span class="lineNum">    1753</span> <span class="tlaGNC">          14 : void ImitatePass::Grep(QString pattern, bool caseInsensitive) {</span></span>
+<span id="L1754"><span class="lineNum">    1754</span> <span class="tlaGNC">          28 :   m_grep.search(pattern, caseInsensitive, m_settings.gpgExecutable,</span></span>
+<span id="L1755"><span class="lineNum">    1755</span> <span class="tlaGNC">          14 :                 m_settings.passStore, exec.environment());</span></span>
+<span id="L1756"><span class="lineNum">    1756</span> <span class="tlaGNC">          14 : }</span></span>
         </pre>
               </td>
             </tr>

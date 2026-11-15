@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 21:26:28</td>
+            <td class="headerValue">2026-11-15 21:46:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -85,18 +85,18 @@
 <span id="L12"><span class="lineNum">      12</span>              : #include &lt;QClipboard&gt;</span>
 <span id="L13"><span class="lineNum">      13</span>              : #include &lt;utility&gt;</span>
 <span id="L14"><span class="lineNum">      14</span>              : </span>
-<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">         190 : ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {</span></span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         190 :   setAutoclearTimer();</span></span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         190 :   m_clearTimer.setSingleShot(true);</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         190 :   connect(&amp;m_clearTimer, &amp;QTimer::timeout, this, &amp;ClipboardManager::clear);</span></span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         190 :   connect(QApplication::instance(), &amp;QApplication::aboutToQuit, this,</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         190 :           &amp;ClipboardManager::clear);</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         190 : }</span></span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">         194 : ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         194 :   setAutoclearTimer();</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         194 :   m_clearTimer.setSingleShot(true);</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         194 :   connect(&amp;m_clearTimer, &amp;QTimer::timeout, this, &amp;ClipboardManager::clear);</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         194 :   connect(QApplication::instance(), &amp;QApplication::aboutToQuit, this,</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         194 :           &amp;ClipboardManager::clear);</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         194 : }</span></span>
 <span id="L22"><span class="lineNum">      22</span>              : </span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         195 : void ClipboardManager::setAutoclearTimer() {</span></span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         390 :   m_clearTimer.setInterval(MS_PER_SECOND *</span></span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         390 :                            QtPassSettings::getAutoclearSeconds());</span></span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         195 : }</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         201 : void ClipboardManager::setAutoclearTimer() {</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         402 :   m_clearTimer.setInterval(MS_PER_SECOND *</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         402 :                            QtPassSettings::getAutoclearSeconds());</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         201 : }</span></span>
 <span id="L27"><span class="lineNum">      27</span>              : </span>
 <span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">          29 : void ClipboardManager::copyIfAlways(const QString &amp;text,</span></span>
 <span id="L29"><span class="lineNum">      29</span>              :                                     const QString &amp;p_output) {</span>
@@ -207,14 +207,14 @@
 <span id="L134"><span class="lineNum">     134</span>              :   }</span>
 <span id="L135"><span class="lineNum">     135</span>              : }</span>
 <span id="L136"><span class="lineNum">     136</span>              : </span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          40 : void ClipboardManager::clear() {</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          42 : void ClipboardManager::clear() {</span></span>
 <span id="L138"><span class="lineNum">     138</span>              :   // Whatever happens below, the saved text is forgotten: it is the user's,</span>
 <span id="L139"><span class="lineNum">     139</span>              :   // and no later autoclear may put it back.</span>
 <span id="L140"><span class="lineNum">     140</span>              :   const std::optional&lt;QString&gt; previousClipboard =</span>
-<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          40 :       std::exchange(m_previousClipboard, std::nullopt);</span></span>
+<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          42 :       std::exchange(m_previousClipboard, std::nullopt);</span></span>
 <span id="L142"><span class="lineNum">     142</span>              :   const std::optional&lt;QString&gt; previousSelection =</span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          40 :       std::exchange(m_previousSelection, std::nullopt);</span></span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          40 :   if (m_clippedText.isEmpty() &amp;&amp; m_otherCopies.isEmpty()) {</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          42 :       std::exchange(m_previousSelection, std::nullopt);</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          42 :   if (m_clippedText.isEmpty() &amp;&amp; m_otherCopies.isEmpty()) {</span></span>
 <span id="L145"><span class="lineNum">     145</span>              :     // Nothing of ours is out there. The old code compared the empty tracker</span>
 <span id="L146"><span class="lineNum">     146</span>              :     // with an empty selection, &quot;cleared&quot; that and said so on every deselect.</span>
 <span id="L147"><span class="lineNum">     147</span>              :     return;</span>
