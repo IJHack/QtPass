@@ -460,7 +460,10 @@ public:
    */
   void GitPull_b() override;
   /**
-   * @brief Push to remote.
+   * @brief Push to remote. While a re-encryption runs the push is held
+   * (Users ▸ OK and a copy ask for it as soon as their commit is made, before
+   * the worker is done) and made when the run ends with every file
+   * re-encrypted; after a failed or cancelled run nothing is pushed.
    */
   void GitPush() override;
 
@@ -652,6 +655,11 @@ private:
   struct ReencryptResult;
   /// Set while a re-encryption run is pending or on the worker thread.
   bool m_reencryptActive = false;
+  /// A push was asked for while a run was active (GitPush()); the run makes
+  /// it at its end, when every file went through.
+  bool m_pushAfterReencrypt = false;
+  /// Set while finishReencrypt() pushes, so GitPush() does not hold it.
+  bool m_reencryptPushing = false;
   /// Set by cancelReencryptPath() and the destructor; read by the worker
   /// between files and polled by Executor::executeBlocking() while the worker
   /// waits on a process, which the worker then ends itself. The flag is the
