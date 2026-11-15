@@ -188,6 +188,7 @@ private Q_SLOTS:
   void otpUntouchedValueIsWrittenBackVerbatim();
   void otpCapitalisedParametersSurviveAnUneditedSave();
   void otpTextAfterAHashSurvivesASave();
+  void otpUnknownAlgorithmIsKeptAsTyped();
   void otpPopulatedFieldWinsOverTheEmptyTemplateOne();
   void renamingTheOtpFieldAwayDropsItsValidation();
   void typingInARenamedAwayOtpFieldLeavesTheCurrentOneAlone();
@@ -2128,6 +2129,50 @@ void tst_passworddialog::otpTextAfterAHashSurvivesASave() {
   QVERIFY2(typed.insertedContent.contains(
                QStringLiteral("#7f3a9-1c2d4 8b6e0-5a9f1\n")),
            qPrintable(typed.insertedContent));
+}
+
+/**
+ * @brief A URI naming a hash function QtPass does not have is kept as typed,
+ *        with the field warning: it was canonicalised as SHA-1, so the saved
+ *        line lost `algorithm=` and gave every client the wrong code. Another
+ *        spelling of a supported one is canonicalised to that one.
+ */
+void tst_passworddialog::otpUnknownAlgorithmIsKeptAsTyped() {
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  const QString unknown =
+      QStringLiteral("otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&"
+                     "issuer=Example&algorithm=SHA384&digits=6&period=30");
+
+  FakePass pass;
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), true);
+  pass.deliverShow(QString());
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  otp->setFocus();
+  QTest::keyClicks(otp, unknown);
+  QCOMPARE(otp->toolTip(), QStringLiteral("Invalid OTP secret"));
+  okButton(d)->click();
+  QVERIFY2(pass.insertedContent.contains(QStringLiteral("\nOTP: ") + unknown +
+                                         QStringLiteral("\n")),
+           qPrintable(pass.insertedContent));
+
+  FakePass spelled;
+  PasswordDialog e(&spelled, s, QStringLiteral("entry.gpg"), true);
+  spelled.deliverShow(QString());
+  auto *field = e.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(field != nullptr);
+  field->setFocus();
+  QTest::keyClicks(field,
+                   QStringLiteral("otpauth://totp/x?secret="
+                                  "JBSWY3DPEHPK3PXP&algorithm=HmacSHA256"));
+  QVERIFY(field->toolTip().isEmpty());
+  okButton(e)->click();
+  QVERIFY2(spelled.insertedContent.contains(QStringLiteral("algorithm=SHA256")),
+           qPrintable(spelled.insertedContent));
+  QVERIFY2(!spelled.insertedContent.contains(QStringLiteral("HmacSHA256")),
+           qPrintable(spelled.insertedContent));
 }
 
 /**

@@ -820,6 +820,15 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   a `#` (recovery codes, a remark). A value typed or pasted into the field
   is still written as a URI, and what follows its `#` is now kept as
   written.
+- An `otpauth://` URI naming a hash function QtPass does not have (such as
+  `algorithm=SHA384` or `MD5`) gives no OTP code and marks the field as
+  invalid, as an HOTP URI does. It gave the SHA-1 code without a warning,
+  and saving the entry wrote it back without its `algorithm`, in 1.8 and the
+  2.0 release candidates also when the OTP field was not touched, so other
+  clients made SHA-1 codes from it too. Such an entry needs its `algorithm`
+  put back from the service's QR code or from Git history. Other spellings
+  of the supported ones (`SHA-256`, `HmacSHA256`, `HMACSHA512`) now give
+  the right code.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
