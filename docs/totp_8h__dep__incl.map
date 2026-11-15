@@ -10,7 +10,7 @@
 <area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="496,44,514,80,536,158,532,155,509,82,494,49"/>
 <area shape="rect" id="Node000007" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="574,81,748,109"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="526,37,631,81,626,81,526,42"/>
-<area shape="rect" id="Node000008" href="$totp_8cpp.html" title="Implements Totp: otpauth URI parsing with its length cap and HOTP refusal, RFC 4226 dynamic truncatio..." alt="" coords="772,81,870,109"/>
+<area shape="rect" id="Node000008" href="$totp_8cpp.html" title="Implements Totp: otpauth URI parsing with its length cap and HOTP and unknown&#45;algorithm refusal,..." alt="" coords="772,81,870,109"/>
 <area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="536,30,775,83,769,84,536,35"/>
 <area shape="rect" id="Node000005" href="$otpcodewidget_8cpp.html" title="Implements OtpCodeWidget: builds the code label, copy button and countdown bar, and owns the one&#45;seco..." alt="" coords="237,157,404,184"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="395,117,340,159,338,154,390,119"/>

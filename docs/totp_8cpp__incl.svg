@@ -53,7 +53,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Implements Totp: otpauth URI parsing with its length cap and HOTP refusal, RFC 4226 dynamic truncatio...">
+<g id="a_Node000001"><a xlink:title="Implements Totp: otpauth URI parsing with its length cap and HOTP and unknown&#45;algorithm refusal,...">
 <polygon fill="#999999" stroke="#666666" points="617.62,-134.25 544.62,-134.25 544.62,-113.5 617.62,-113.5 617.62,-134.25"/>
 <text xml:space="preserve" text-anchor="middle" x="581.12" y="-120.75" font-family="Helvetica,sans-Serif" font-size="10.00">src/totp.cpp</text>
 </a>
