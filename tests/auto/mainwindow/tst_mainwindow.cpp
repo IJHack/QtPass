@@ -1018,8 +1018,11 @@ void tst_mainwindow::returnInTheSearchBoxEndsThere() {
   // 1.8 filters once the search delay has run (main also runs a pending
   // search on Return, #2170): wait for it, so Return acts on the filtered
   // tree and not on whatever the store lists first.
-  QTRY_VERIFY_WITH_TIMEOUT(
+  QTRY_VERIFY2_WITH_TIMEOUT(
       tree->currentIndex().data().toString().startsWith(QStringLiteral("bank")),
+      qPrintable(QStringLiteral("current: '%1', rows under root: %2")
+                     .arg(tree->currentIndex().data().toString())
+                     .arg(tree->model()->rowCount(tree->rootIndex()))),
       5000);
   pressReturn();
   QCOMPARE(name->text(), QStringLiteral("bank"));
