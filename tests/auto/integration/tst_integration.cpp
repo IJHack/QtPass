@@ -14,6 +14,7 @@
  */
 
 #include <algorithm>
+#include <functional>
 
 #include <QAbstractItemModel>
 #include <QCoreApplication>
@@ -21,6 +22,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QPlainTextEdit>
@@ -330,6 +332,7 @@ private Q_SLOTS:
   void imitatePass_reencryptPreservesPerFolderRecipients();
   void mainWindow_selectingEntryShowsDecryptedContent();
   void mainWindow_editEntryThroughModalDialogUpdatesContent();
+  void mainWindow_failedAutoPushAfterSaveStaysOnScreen();
 
   // UTF-8 and unicode handling
   void imitatePass_utf8Characters();
@@ -1664,6 +1667,157 @@ void tst_integration::mainWindow_editEntryThroughModalDialogUpdatesContent() {
            "edited entry must contain the new password");
   QVERIFY2(!shown.contains("oldpass"),
            "edited entry must not contain the old password");
+}
+
+void tst_integration::mainWindow_failedAutoPushAfterSaveStaysOnScreen() {
+  // With "Automatically push", a save starts the push and then shows the
+  // entry again. Queued behind the push, that decrypt started the moment the
+  // push failed and emptied the browser before git's error was painted, so
+  // the save looked pushed. The refresh now waits for the push: a failed push
+  // leaves its error on screen, one that goes through shows the entry again.
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  {
+    QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+    QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+    pass.Insert(QStringLiteral("pushme"),
+                QStringLiteral("topsecret\nurl: push.example.com\n"), false);
+    QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(errSpy));
+  }
+
+  // A git stand-in that rejects every push, or accepts them and fails a pull,
+  // as on a conflict.
+  QTemporaryDir binDir;
+  QVERIFY(binDir.isValid());
+  const QString fakeGit = binDir.filePath(QStringLiteral("git"));
+  const auto writeFakeGit = [&fakeGit](bool acceptPush) -> bool {
+    QFile script(fakeGit);
+    if (!script.open(QIODevice::WriteOnly | QIODevice::Truncate))
+      return false;
+    script.write(acceptPush
+                     ? "#!/bin/sh\ncase \"$*\" in *push*) exit 0 ;; esac\n"
+                       "echo 'fake pull conflict' >&2\nexit 1\n"
+                     : "#!/bin/sh\necho 'fake push rejected' >&2\nexit 1\n");
+    script.close();
+    return QFile::setPermissions(fakeGit, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner);
+  };
+  QVERIFY(writeFakeGit(false));
+
+  const AppSettings savedSettings = QtPassSettings::load();
+  struct SettingsRestorer {
+    AppSettings s;
+    ~SettingsRestorer() {
+      QtPassSettings::save(s);
+      PassBackendFactory::invalidate();
+    }
+  } restorer{savedSettings};
+
+  QtPassSettings::setPassStore(storeDir.path());
+  QtPassSettings::setUsePass(false);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgExe;
+    s.hideContent = false;
+    s.hidePassword = false;
+    s.useGit = true;
+    s.autoPush = true;
+    s.gitExecutable = fakeGit;
+    QtPassSettings::save(s);
+  }
+  PassBackendFactory::invalidate();
+  // The backend outlives each test: let a decrypt an earlier one left queued
+  // finish first.
+  QTRY_VERIFY_WITH_TIMEOUT(QtPassSettings::getPass()->isIdle(), 15000);
+
+  MainWindow w;
+  w.show();
+  QVERIFY2(QTest::qWaitForWindowExposed(&w), "MainWindow should be exposed");
+
+  auto *tree = w.findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *browser = w.findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  auto *heading = w.findChild<QLabel *>(QStringLiteral("passwordName"));
+  QVERIFY(tree != nullptr && browser != nullptr && heading != nullptr);
+
+  QModelIndex entryIdx;
+  auto findEntry = [&]() -> bool {
+    QAbstractItemModel *m = tree->model();
+    const QModelIndex root = tree->rootIndex();
+    for (int r = 0; r < m->rowCount(root); ++r) {
+      const QModelIndex idx = m->index(r, 0, root);
+      if (m->data(idx).toString() == QStringLiteral("pushme")) {
+        entryIdx = idx;
+        return true;
+      }
+    }
+    return false;
+  };
+  QTRY_VERIFY_WITH_TIMEOUT(findEntry(), 10000);
+  tree->setCurrentIndex(entryIdx);
+
+  // What a save ends with (QtPass::finishedInsert()): the push, then the
+  // refresh of the entry.
+  Pass *backend = QtPassSettings::getPass();
+  QSignalSpy shown(backend, &Pass::finishedShow);
+  QSignalSpy failed(backend, &Pass::processErrorExit);
+  emit backend->finishedInsert(QString(), QString());
+  QVERIFY2(backend->isPushing(), "the save should have queued a push");
+  // An earlier push ending meanwhile does not start the refresh: the save's
+  // own push is still running.
+  emit backend->finishedGitPush(QString(), QString());
+  QVERIFY2(waitForSignal(failed), "the push should fail");
+  QTRY_VERIFY_WITH_TIMEOUT(backend->isIdle(), 15000);
+  QTest::qWait(200);
+  QCOMPARE(shown.count(), 0);
+  QVERIFY2(
+      browser->toPlainText().contains(QStringLiteral("fake push rejected")),
+      qPrintable(browser->toPlainText()));
+
+  // The failure dropped the refresh: a later push that goes through (the
+  // Push button) does not bring it back.
+  QVERIFY(writeFakeGit(true));
+  backend->GitPush();
+  QTRY_VERIFY_WITH_TIMEOUT(backend->isIdle(), 15000);
+  QTest::qWait(200);
+  QCOMPARE(shown.count(), 0);
+
+  // Saves whose push goes through: the decrypts that follow, once all is
+  // done.
+  const auto saveThen = [&](const std::function<void()> &meanwhile) {
+    QSignalSpy after(backend, &Pass::finishedShow);
+    emit backend->finishedInsert(QString(), QString());
+    meanwhile(); // the push is still running
+    QTest::qWait(100);
+    if (!QTest::qWaitFor([backend]() { return backend->isIdle(); }, 15000))
+      return QStringList{QStringLiteral("(timed out)")};
+    QTest::qWait(200);
+    QStringList decrypted;
+    for (const QList<QVariant> &answer : std::as_const(after))
+      decrypted << answer.at(0).toString();
+    return decrypted;
+  };
+  // The entry is shown again after the last push queued: a second one behind
+  // it does not lose the refresh.
+  QStringList decrypted = saveThen([backend]() { backend->GitPush(); });
+  QCOMPARE(decrypted.size(), 1);
+  QVERIFY(decrypted.at(0).contains(QStringLiteral("topsecret")));
+  QCOMPARE(heading->text(), QStringLiteral("pushme"));
+  // Deselected meanwhile: nothing is shown.
+  QCOMPARE(saveThen([&w]() {
+             QVERIFY(QMetaObject::invokeMethod(&w, "deselect",
+                                               Qt::DirectConnection));
+           }),
+           QStringList());
+  // Look the row up again: the tree may have reloaded since.
+  QTRY_VERIFY_WITH_TIMEOUT(findEntry(), 10000);
+  tree->setCurrentIndex(entryIdx);
+  // Other work queued behind the push runs first; the refresh would wipe its
+  // outcome, here the pull's error, so it is dropped.
+  QCOMPARE(saveThen([backend]() { backend->GitPull(); }), QStringList());
+  QVERIFY2(
+      browser->toPlainText().contains(QStringLiteral("fake pull conflict")),
+      qPrintable(browser->toPlainText()));
 }
 
 // ---------------------------------------------------------------------------

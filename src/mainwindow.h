@@ -35,6 +35,7 @@ class QTextEdit;
 class QToolButton;
 class QTreeWidgetItem;
 class QtPass;
+class Pass;
 class PasswordDisplayPanel;
 class TrayIcon;
 
@@ -112,6 +113,28 @@ public:
    * @return Current QModelIndex.
    */
   auto getCurrentTreeViewIndex() -> QModelIndex;
+
+  /**
+   * @brief Show the current entry again after a save.
+   *
+   * With a Git push queued by the save (automatic push), the refresh waits
+   * for that push (see gitPushFinished()): started behind it, it emptied the
+   * browser before a failed push's error was painted.
+   */
+  void refreshAfterInsert();
+
+  /**
+   * @brief Run the refresh a save left waiting, once the last push of
+   *        @p pass went through and nothing else is queued.
+   * @param pass The backend whose push finished.
+   */
+  void gitPushFinished(Pass *pass);
+
+  /**
+   * @brief Drop the refresh a save left waiting for its push: after an error
+   *        it would clear that error from the browser.
+   */
+  void dropRefreshAfterPush();
 
   /**
    * @brief Return the active key generation dialog, if any.
@@ -329,6 +352,12 @@ private:
   /// QTreeView::clicked), so onOtp() must not assume the visible code belongs
   /// to the selected entry.
   QString m_shownFile;
+  /// Entry a save's refresh will show once the push queued with it is done;
+  /// empty when none waits.
+  QString m_refreshAfterPush;
+  /// The backend whose push m_refreshAfterPush waits for: only its pushes
+  /// end the wait, and the refresh runs on it.
+  QPointer<Pass> m_refreshAfterPushOwner;
   /// Entry the in-flight OTP request asked for, so a decrypt triggered by
   /// something else cannot be mistaken for its answer.
   QString m_otpRequestFile;

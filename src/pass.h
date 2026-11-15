@@ -288,6 +288,20 @@ public:
   static auto seedGpgIdFile(const QString &newDir, const QString &passStore)
       -> bool;
 
+  /**
+   * @brief Whether this backend has nothing queued or running.
+   * @return true when no command waits or runs.
+   */
+  [[nodiscard]] auto isIdle() const -> bool { return exec.isIdle(); }
+
+  /**
+   * @brief Whether a Git push of this backend is queued or running.
+   * @return true while one waits or runs.
+   */
+  [[nodiscard]] auto isPushing() const -> bool {
+    return exec.hasQueued(Enums::GIT_PUSH);
+  }
+
 protected:
   /**
    * @brief Whether the insert that just failed had put its entry in the

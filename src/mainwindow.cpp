@@ -621,6 +621,46 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   }
 }
 
+// With automatic push, the push is queued first and the refresh would start as
+// soon as it ends, emptying the browser before a failed push's error was
+// painted. So the refresh waits for the push. It claims the panel now, as its
+// decrypt would: deselecting meanwhile drops it.
+void MainWindow::refreshAfterInsert() {
+  const QModelIndex index = getCurrentTreeViewIndex();
+  const QString file = getFile(index, true);
+  Pass *pass = QtPassSettings::getPass();
+  if (!file.isEmpty() && pass->isPushing()) {
+    m_refreshAfterPush = file;
+    m_refreshAfterPushOwner = pass;
+    m_shownFile = file;
+    return;
+  }
+  on_treeView_clicked(index);
+}
+
+// Runs once the last push went through, by name (the save's rewrite of the
+// file may have replaced its row in the tree), and only while the entry still
+// holds the panel and nothing else is queued: queued work would run first, and
+// the refresh would empty the browser of its outcome. A failed push dropped it
+// (dropRefreshAfterPush()).
+void MainWindow::gitPushFinished(Pass *pass) {
+  if (m_refreshAfterPush.isEmpty() || m_refreshAfterPushOwner != pass ||
+      pass->isPushing()) {
+    return;
+  }
+  const QString file = m_refreshAfterPush;
+  dropRefreshAfterPush();
+  if (file == m_shownFile && pass->isIdle()) {
+    ui->passwordName->setText(file);
+    pass->Show(file);
+  }
+}
+
+void MainWindow::dropRefreshAfterPush() {
+  m_refreshAfterPush.clear();
+  m_refreshAfterPushOwner = nullptr;
+}
+
 /**
  * @brief MainWindow::on_treeView_doubleClicked when doubleclicked on
  * TreeViewItem, open the edit Window
