@@ -762,6 +762,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   copy"), also on an empty search box; in the name search it decrypted the
   first hit twice. Return on a content search result opens that result, not
   the entry hidden behind the list.
+- A profile name cannot contain `/` or `\`: Settings keeps OK off and says
+  why. A name such as "Work/Client" was saved a level too deep in the
+  settings and came back as a profile "Work" without folder or signing key;
+  QtPass switched to it, showed the root of the disk, and at the next start
+  took the folder it was started from as the store. A profile whose name
+  already holds a `\` needs a new name before Settings can be saved.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
