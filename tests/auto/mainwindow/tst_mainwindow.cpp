@@ -1041,13 +1041,13 @@ void tst_mainwindow::secretsAreHiddenWithTemplatesOff() {
 
   m_window->passShowHandler(
       QStringLiteral("correct horse battery staple\nlogin: alice\nPIN: 4821\n"
-                     "Recovery key: RK-7Q2M-XXPL-90AD\n"));
+                     "Recovery key: write-it-down\n"));
   auto *browser =
       m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
   QVERIFY(browser != nullptr);
   const QString text = browser->toPlainText();
   QVERIFY2(!text.contains(QStringLiteral("4821")), qPrintable(text));
-  QVERIFY2(!text.contains(QStringLiteral("RK-7Q2M")), qPrintable(text));
+  QVERIFY2(!text.contains(QStringLiteral("write-it-down")), qPrintable(text));
   QVERIFY2(text.contains(QStringLiteral("alice")),
            "an ordinary line stays in the text");
   for (const QString &name :
