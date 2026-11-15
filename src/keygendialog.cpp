@@ -173,6 +173,18 @@ auto KeygenDialog::isBatchValue(const QString &value) -> bool {
          !value.contains(QLatin1Char('\r')) && !value.contains(QChar::Null);
 }
 
+// What gpg's batch reader takes off a value: C isspace() after the colon,
+// spaces and tabs at the end. A trailing \v or \f is refused too, though gpg
+// keeps it; nobody types one.
+auto KeygenDialog::isBatchPassphrase(const QString &passphrase) -> bool {
+  const auto blank = [](QChar c) {
+    return c == QLatin1Char(' ') ||
+           (c >= QLatin1Char('\t') && c <= QLatin1Char('\r'));
+  };
+  return passphrase.isEmpty() ||
+         (!blank(passphrase.front()) && !blank(passphrase.back()));
+}
+
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) {
     // The button is disabled without a passphrase choice, but done() can be
@@ -190,6 +202,14 @@ void KeygenDialog::done(int r) {
       QMessageBox::critical(this, tr("Invalid input"),
                             tr("The name and the passphrase cannot contain "
                                "line breaks."));
+      return;
+    }
+    // gpg would protect the key without the blanks, and then refuse the
+    // passphrase as typed.
+    if (!isBatchPassphrase(ui->passphrase1->text())) {
+      QMessageBox::critical(
+          this, tr("Invalid input"),
+          tr("The passphrase cannot start or end with a space or a tab."));
       return;
     }
     if (ui->name->text().length() < 5) {

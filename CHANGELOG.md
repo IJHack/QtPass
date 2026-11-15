@@ -752,6 +752,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   its spacing when it had a link in it. The `git` and `gpg` output shown in
   the same place keeps its columns now as well. Only a run of more than 1000
   spaces is shown shorter.
+- Generating a key refuses a passphrase that starts or ends with a space or
+  a tab, and says so. `gpg` cuts those off the passphrase it is given, so
+  the new key was protected without them and then refused the passphrase as
+  typed twice, as if it were wrong.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
