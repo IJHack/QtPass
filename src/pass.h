@@ -422,6 +422,14 @@ public:
    */
   [[nodiscard]] auto isIdle() const -> bool { return exec.isIdle(); }
 
+  /**
+   * @brief Whether a Git push of this backend is queued or running.
+   * @return true while one waits or runs.
+   */
+  [[nodiscard]] auto isPushing() const -> bool {
+    return exec.hasQueued(Enums::GIT_PUSH);
+  }
+
 protected:
   /**
    * @brief With signing on, refuse to encrypt @p file when the lookup passed
