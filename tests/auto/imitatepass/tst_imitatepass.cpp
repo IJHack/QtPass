@@ -613,6 +613,7 @@ private Q_SLOTS:
   void everyDecryptionCapsItsOutput();
   void reencryptPathPushesWhenAllFilesSucceed();
   void reencryptPathDoesNotPushAfterFailures();
+  void pushAskedForDuringAReencryptionWaitsForIt();
   void insertRunsNoGitWhenGitIsDisabled();
   void insertEncryptsToTheRecipientsWhoseSignatureWasChecked();
   void insertEncryptsIntoATemporaryAndMovesItIntoPlace();
@@ -1285,6 +1286,61 @@ void tst_imitatepass::insertRunsNoGitWhenGitIsDisabled() {
 
   QVERIFY2(!QFile::exists(gitLog),
            "Insert must not run git when Use Git is off");
+#endif
+}
+
+/**
+ * @brief A push asked for while a re-encryption runs (Users ▸ OK and a copy
+ *        ask for it right after their commit, before the worker is done) is
+ *        made once the run ends with every file re-encrypted, and not after a
+ *        failed run: the new .gpg-id reached the remote with entries still on
+ *        the previous recipients, and a clean run was pushed twice.
+ */
+void tst_imitatepass::pushAskedForDuringAReencryptionWaitsForIt() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  for (const bool fails : {false, true}) {
+    QTemporaryDir storeDir;
+    QVERIFY(storeDir.isValid());
+    QVERIFY(populateStore(storeDir.path(), 1));
+    const QString gpgLog = QDir(storeDir.path()).filePath("gpg-argv.log");
+    const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+    const QString fakeGpg =
+        fails ? writeCustomGpg(storeDir.path(), gpgLog,
+                               {{QStringLiteral("encrypt"),
+                                 QStringLiteral("cat >/dev/null; exit 2")}})
+              : writeRecordingGpg(storeDir.path(), gpgLog);
+    const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+    QVERIFY(!fakeGpg.isEmpty() && !fakeGit.isEmpty());
+    ImitatePass pass;
+    AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+    s.useGit = true;
+    s.gitExecutable = fakeGit;
+    s.autoPush = false;
+    pass.init(s);
+    QObject ctx;
+    Recorder rec;
+    record(pass, ctx, rec);
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    QSignalSpy pushSpy(&pass, &Pass::finishedGitPush);
+    pass.reencryptPath(storeDir.path());
+    // As QtPass::passStoreChanged() would, before the worker is done.
+    pass.GitPush();
+    QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+    if (fails) {
+      QTest::qWait(300);
+      QCoreApplication::processEvents();
+      QVERIFY2(!hasPush(loggedCalls(gitLog)), "a failed run pushes nothing");
+    } else {
+      QVERIFY(pushSpy.count() > 0 || pushSpy.wait(5000));
+      int pushes = 0;
+      for (const QStringList &call : loggedCalls(gitLog)) {
+        pushes += call.contains(QStringLiteral("push")) ? 1 : 0;
+      }
+      QCOMPARE(pushes, 1);
+    }
+  }
 #endif
 }
 

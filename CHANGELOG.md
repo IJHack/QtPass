@@ -1065,6 +1065,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   name ends in whitespace acts on that folder. The path from `wslpath` was
   trimmed, so "team" followed by a space became its neighbour `team`, and a
   folder named with a single blank became the whole store
+- With the native backend and automatic pushing on, Users ▸ OK and a copy
+  into a folder push once the re-encryption is done, and only when every
+  entry was re-encrypted. They pushed the new `.gpg-id` before the
+  re-encryption started, so a run that then failed or was cancelled left
+  the remote with the new recipients and entries still encrypted to the
+  previous ones; a clean run was pushed twice
 
 ### Code Quality
 

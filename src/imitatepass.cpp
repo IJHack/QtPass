@@ -152,6 +152,13 @@ void ImitatePass::GitPull_b() {
 }
 
 void ImitatePass::GitPush() {
+  // Now it would send the new .gpg-id with entries still encrypted to the
+  // previous recipients, a key just removed among them, also when the run
+  // then fails, and push a clean run twice.
+  if (m_reencryptActive && !m_reencryptPushing) {
+    m_pushAfterReencrypt = true;
+    return;
+  }
   if (gitReady()) {
     executeGit(GIT_PUSH, {"push"});
   }
@@ -1389,10 +1396,12 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                          .arg(result.reencrypted),
                      3000);
     }
-    if (m_settings.autoPush && reencryptUsesGit()) {
+    if ((m_settings.autoPush || m_pushAfterReencrypt) && reencryptUsesGit()) {
       if (result.failed.isEmpty()) {
         emit statusMsg(tr("Updating password-store"), 2000);
+        m_reencryptPushing = true;
         GitPush();
+        m_reencryptPushing = false;
       } else {
         emit statusMsg(tr("Not pushing: %n file(s) failed to re-encrypt",
                           nullptr, result.failed.size()),
@@ -1407,6 +1416,7 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                            !result.cancelled && !result.aborted &&
                                result.failed.isEmpty());
   }
+  m_pushAfterReencrypt = false;
   m_reencryptActive = false;
   emit endReencryptPath();
 }
