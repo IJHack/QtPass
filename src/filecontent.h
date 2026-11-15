@@ -230,8 +230,21 @@ public:
   [[nodiscard]] static auto isOtpUriValue(const QString &value) -> bool;
 
   /**
+   * @brief Whether @p text holds an otpauth URI anywhere: after a list dash,
+   * in quotes, behind other text or a second colon, or split at its colon
+   * as `otpauth: //` (as 1.8 to 2.0-rc2 saved it). What keeps a line off
+   * the screen and the clipboard goes by this; what is read as the OTP
+   * configuration goes by isOtpUriValue().
+   * @param text A line or a field value.
+   * @return true when "otpauth:" followed by "//" (blanks between allowed)
+   *         occurs in it, compared case-insensitively.
+   */
+  [[nodiscard]] static auto carriesOtpUri(const QString &text) -> bool;
+
+  /**
    * @brief Whether @p line carries a TOTP shared secret: a bare `otpauth://`
-   * line, an `OTP:`/`TOTP:` field, or any field whose value is an otpauth URI.
+   * line, an `OTP:`/`TOTP:` field, or any line with an otpauth URI in it
+   * (carriesOtpUri()).
    *
    * The rule for the lines below the password: such a line is never shown or
    * copied, only the code it yields is. The first line goes by
@@ -246,8 +259,8 @@ public:
    * than a password.
    *
    * Stricter than isOtpLine(), because the first line is the password in the
-   * pass format: a bare `otpauth://` line, a field whose value is an otpauth
-   * URI, or an `OTP:`/`TOTP:` field whose value is written as a base32 seed
+   * pass format: a line with an otpauth URI in it (carriesOtpUri()), or an
+   * `OTP:`/`TOTP:` field whose value is written as a base32 seed
    * (base32 characters only, at least 16, and usable by Totp). A password
    * that merely starts with "otp:" or "totp:" (`totp:Secr3t!`) stays the
    * password; a long one of letters and the digits 2 to 7 only reads as a

@@ -70,9 +70,42 @@ static auto isBase32Seed(const QString &value) -> bool {
 }
 
 /**
+ * @brief What follows a line's first colon; empty without one.
+ * @param line One line of the entry.
+ * @return The text after the first ':', or an empty string.
+ */
+static auto afterFirstColon(const QString &line) -> QString {
+  const qsizetype colon = line.indexOf(u':');
+  return colon < 0 ? QString() : line.mid(colon + 1);
+}
+
+/**
+ * @brief Whether a first line is written as an OTP configuration that
+ * otpConfigOf() can read: a bare otpauth URI, a field whose value is one, or
+ * an `OTP:`/`TOTP:` field whose value is written as a base32 seed.
+ * @param line The entry's first line.
+ * @return true when the line is read as the OTP configuration.
+ */
+static auto holdsOtpConfig(const QString &line) -> bool {
+  if (isOtpUri(line)) {
+    return true;
+  }
+  const qsizetype colon = line.indexOf(u':');
+  if (colon < 0) {
+    return false;
+  }
+  const QString value = line.mid(colon + 1);
+  // Any field holding an otpauth URI is a shared secret; an OTP-named field
+  // only when what it holds would give a code: the line is the password
+  // otherwise, as the pass format has it.
+  return isOtpUri(value) ||
+         (FileContent::isOtpFieldName(line.left(colon)) && isBase32Seed(value));
+}
+
+/**
  * @brief The OTP configuration an OTP line holds: the line itself for a bare
  * `otpauth://` line, the value for a field.
- * @param line A line for which FileContent::isOtpLine() is true.
+ * @param line A line for which holdsOtpConfig() is true.
  * @return The configuration, trimmed.
  */
 static auto otpConfigOf(const QString &line) -> QString {
@@ -192,18 +225,22 @@ auto FileContent::parse(const QString &fileContent,
   // An entry from `pass otp insert` has the URI as its only (password) line,
   // which the loop below never sees; an `OTP:`/`TOTP:` field written there by
   // hand holding a usable secret is the same, and yields a code as it does
-  // further down (isOtpPasswordLine()).
-  if (isOtpPasswordLine(password)) {
+  // further down. Read only from what is written as a configuration
+  // (holdsOtpConfig()); a first line with a URI elsewhere in it is kept off
+  // the screen all the same (isOtpPasswordLine()).
+  if (holdsOtpConfig(password)) {
     otp.bareLine = otpConfigOf(password);
   }
   for (; it != tokens.end(); ++it) {
     const QString line = it->toString();
     bool secretPastTheCap = false;
-    // A bare otpauth:// line is never a field, also not when the template
-    // lists "otpauth": split at its colon, the value would lose the scheme
-    // that marks it as a shared secret and be shown seed and all. Past
-    // kMaxNamedFields, lines stay text.
-    if (!isOtpUri(line)) {
+    // A line with an otpauth URI in it is never a field unless the URI is
+    // its value ("2fa: otpauth://..."), also not when the template lists
+    // "otpauth": split at a colon, the value would lose the scheme that
+    // marks it as a shared secret and be shown seed and all ("otpauth://...",
+    // "AWS: backup phone: otpauth://..."). Past kMaxNamedFields, lines stay
+    // text.
+    if (!carriesOtpUri(line) || isOtpUri(afterFirstColon(line))) {
       if (namedValues.size() < kMaxNamedFields) {
         if (takeNamedValue(line, templateFields, allFields, alsoField,
                            namedValues, otp)) {
@@ -334,6 +371,26 @@ auto FileContent::isOtpUriValue(const QString &value) -> bool {
                                     Qt::CaseInsensitive);
 }
 
+auto FileContent::carriesOtpUri(const QString &text) -> bool {
+  // Not only at the start: "- otpauth://", "\"otpauth://...\"", "old token
+  // otpauth://", "AWS: backup phone: otpauth://" and the split "otpauth:
+  // //totp/" all showed the seed, being neither a bare line nor the value
+  // after the first colon. By hand, not a regular expression: parse() asks
+  // this for every line of an entry, up to 64 MiB of them.
+  static const QString scheme = QStringLiteral("otpauth:");
+  for (qsizetype at = text.indexOf(scheme, 0, Qt::CaseInsensitive); at >= 0;
+       at = text.indexOf(scheme, at + 1, Qt::CaseInsensitive)) {
+    qsizetype i = at + scheme.size();
+    while (i < text.size() && text.at(i).isSpace()) {
+      ++i;
+    }
+    if (text.mid(i, 2) == QLatin1String("//")) {
+      return true;
+    }
+  }
+  return false;
+}
+
 auto FileContent::passwordLine(QStringView text) -> QString {
   // left(-1) is the whole text when there is no line feed.
   QStringView line = text.left(text.indexOf(u'\n'));
@@ -344,31 +401,15 @@ auto FileContent::passwordLine(QStringView text) -> QString {
 }
 
 auto FileContent::isOtpLine(const QString &line) -> bool {
-  if (isOtpUri(line)) {
+  if (carriesOtpUri(line)) {
     return true;
   }
   const qsizetype colon = line.indexOf(u':');
-  if (colon < 0) {
-    return false;
-  }
-  return isOtpFieldName(line.left(colon)) ||
-         isOtpUri(line.right(line.length() - colon - 1));
+  return colon >= 0 && isOtpFieldName(line.left(colon));
 }
 
 auto FileContent::isOtpPasswordLine(const QString &line) -> bool {
-  if (isOtpUri(line)) {
-    return true;
-  }
-  const qsizetype colon = line.indexOf(u':');
-  if (colon < 0) {
-    return false;
-  }
-  const QString value = line.mid(colon + 1);
-  // Any field holding an otpauth URI is a shared secret; an OTP-named field
-  // only when what it holds would give a code: the line is the password
-  // otherwise, as the pass format has it.
-  return isOtpUri(value) ||
-         (isOtpFieldName(line.left(colon)) && isBase32Seed(value));
+  return carriesOtpUri(line) || holdsOtpConfig(line);
 }
 
 auto FileContent::getPassword() const -> QString { return this->password; }

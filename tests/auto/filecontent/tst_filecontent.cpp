@@ -69,6 +69,10 @@ private Q_SLOTS:
   void getOtpUriFromUriAsOnlyLine();
   void passwordForDisplayBlanksOtpUri();
   void getOtpUriFromDifferentlyNamedField();
+  void otpUriAnywhereInALineIsHidden_data();
+  void otpUriAnywhereInALineIsHidden();
+  void textNamingTheSchemeIsNotAUri_data();
+  void textNamingTheSchemeIsNotAUri();
   void isOtpUriValueMatchesScheme_data();
   void isOtpUriValueMatchesScheme();
 };
@@ -896,6 +900,80 @@ void tst_filecontent::getOtpUriFromDifferentlyNamedField() {
   QCOMPARE(fc.getOtpUri(), kOtpUri);
   QVERIFY2(!fc.getRemainingDataForDisplay().contains("otpauth"),
            "the URI must be hidden from the text browser too");
+}
+
+void tst_filecontent::otpUriAnywhereInALineIsHidden_data() {
+  QTest::addColumn<QString>("line");
+  const QString uri =
+      QStringLiteral("otpauth://totp/AWS:root?secret=JBSWY3DPEHPK3PXC");
+  QTest::newRow("list dash") << QStringLiteral("- ") + uri;
+  QTest::newRow("quoted") << QStringLiteral("\"") + uri + QStringLiteral("\"");
+  QTest::newRow("text before") << QStringLiteral("old token ") + uri;
+  QTest::newRow("second colon") << QStringLiteral("AWS: backup phone: ") + uri;
+  // As the edit dialog of 1.8 to 2.0-rc2 saved it, with "otpauth" in the
+  // template.
+  QTest::newRow("split at its colon")
+      << QStringLiteral("otpauth: //totp/AWS:root?secret=JBSWY3DPEHPK3PXC");
+}
+
+/**
+ * @brief The seed stays off the screen however the URI sits in its line:
+ *        only a bare line and the value after the first colon were caught,
+ *        so a list dash, quotes, text before it, a second colon or the
+ *        split form showed `secret=` in the text browser and, as a field,
+ *        with copy and QR buttons. Also on the first line.
+ */
+void tst_filecontent::otpUriAnywhereInALineIsHidden() {
+  QFETCH(QString, line);
+  QVERIFY(FileContent::carriesOtpUri(line));
+  QVERIFY(FileContent::isOtpLine(line));
+  QVERIFY(FileContent::isOtpPasswordLine(line));
+  for (const bool allFields : {false, true}) {
+    const FileContent fc = FileContent::parse(
+        QStringLiteral("hunter2\n") + line + QStringLiteral("\nlogin: alice\n"),
+        {QStringLiteral("login"), QStringLiteral("otpauth")}, allFields);
+    QVERIFY2(
+        !fc.getRemainingDataForDisplay().contains(QStringLiteral("secret=")),
+        qPrintable(fc.getRemainingDataForDisplay()));
+    for (const NamedValue &nv : fc.getNamedValues()) {
+      QVERIFY2(!nv.value.contains(QStringLiteral("JBSWY3DPEHPK3PXC")),
+               qPrintable(nv.name + ": " + nv.value));
+    }
+    // The edit dialog still gets the whole entry, to write it back.
+    QVERIFY(fc.getRemainingData().contains(line));
+  }
+  const FileContent first = FileContent::parse(line, {}, false);
+  QVERIFY2(first.getPasswordForDisplay().isEmpty(), qPrintable(line));
+  QCOMPARE(first.getPassword(), line);
+  // Hidden, but not read as a configuration it is not: no half a URI as the
+  // OTP configuration.
+  QVERIFY2(first.getOtpUri().isEmpty() ||
+               FileContent::isOtpUriValue(first.getOtpUri()),
+           qPrintable(first.getOtpUri()));
+}
+
+void tst_filecontent::textNamingTheSchemeIsNotAUri_data() {
+  QTest::addColumn<QString>("line");
+  QTest::newRow("the word") << QStringLiteral("export as otpauth later");
+  QTest::newRow("a field named so")
+      << QStringLiteral("otpauth: see https://wiki.example/2fa");
+  QTest::newRow("a single slash") << QStringLiteral("otpauth:/totp/x");
+  QTest::newRow("another scheme") << QStringLiteral("https://example.com");
+}
+
+/**
+ * @brief Only an otpauth URI hides a line: "otpauth:" followed by "//",
+ *        blanks between allowed. The word on its own, or a colon and other
+ *        text, stays on screen.
+ */
+void tst_filecontent::textNamingTheSchemeIsNotAUri() {
+  QFETCH(QString, line);
+  QVERIFY(!FileContent::carriesOtpUri(line));
+  QVERIFY(!FileContent::isOtpLine(line));
+  QVERIFY(!FileContent::isOtpPasswordLine(line));
+  const FileContent fc =
+      FileContent::parse(QStringLiteral("hunter2\n") + line, {}, false);
+  QVERIFY(fc.getRemainingDataForDisplay().contains(line));
 }
 
 void tst_filecontent::isOtpUriValueMatchesScheme_data() {

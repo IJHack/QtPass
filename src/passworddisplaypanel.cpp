@@ -102,7 +102,7 @@ void PasswordDisplayPanel::displayFields(const QString &password,
     // URI is still a shared secret, and isLineHidden() hides it from the text
     // browser, so suppressing only OTP/TOTP names leaked `2fa:` and friends.
     if (FileContent::isOtpFieldName(nv.name) ||
-        FileContent::isOtpUriValue(nv.value)) {
+        FileContent::carriesOtpUri(nv.value)) {
       // Never render an OTP field verbatim: addField() would display the
       // shared secret and hand it to a copy button. Unconditional, so it stays
       // hidden when OTP support is off and otpConfig is empty.
