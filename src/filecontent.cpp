@@ -40,9 +40,9 @@ static auto isLineHidden(const QString &line) -> bool {
 
 /**
  * @brief Whether @p value is written as a TOTP seed: base32 letters and the
- * digits 2 to 7 only (either case; white space or dashes between groups and
- * "=" padding allowed), at least 16 of them (80 bits, the shortest seed in
- * common use), that Totp::isValid() takes.
+ * digits 2 to 7 only (either case; white space, dashes, dots or underscores
+ * between groups and "=" padding allowed), at least 16 of them (80 bits, the
+ * shortest seed in common use), that Totp::isValid() takes.
  *
  * Strict where Totp::parse() is lenient (it drops punctuation and reads 0, 1
  * and 8 as letters, which almost any password survives): this decides
@@ -55,8 +55,9 @@ static auto isBase32Seed(const QString &value) -> bool {
   for (const QChar c : value) {
     const char16_t u = c.unicode();
     // Grouping and padding, as seeds are written and pasted: spaces, tabs, a
-    // no-break space, dashes, "=". Base32::sanitizeInput() drops them too.
-    if (c.isSpace() || u == u'-' || u == u'=') {
+    // no-break space, dashes, dots, underscores, "=". Base32::sanitizeInput()
+    // drops them too, and Totp::parse() accepts them.
+    if (c.isSpace() || u == u'-' || u == u'.' || u == u'_' || u == u'=') {
       continue;
     }
     if (!((u >= u'A' && u <= u'Z') || (u >= u'a' && u <= u'z') ||
