@@ -268,35 +268,66 @@ auto FileContent::isSecretFieldName(const QString &name,
   thread_local bool cachedYet = false;
   constexpr auto options = QRegularExpression::CaseInsensitiveOption |
                            QRegularExpression::UseUnicodePropertiesOption;
-  const auto whole = [](const QString &alternatives) {
-    return QStringLiteral("(?<!\\w)(?:%1)(?!\\w)").arg(alternatives);
-  };
   if (!cachedYet || secrets != cachedSecrets) {
     cachedWords.clear();
     for (const QString &secret : secrets) {
       const QString word = secret.trimmed();
-      if (!word.isEmpty()) {
-        cachedWords << QRegularExpression::escape(word);
+      if (word.isEmpty()) {
+        continue;
       }
+      // A word counts when no letter touches it: digits and `_` end a word
+      // as a blank does ("PIN2", "api_key"), and a plural "s" may follow
+      // ("tokens", "Security answers"); "key" is still not in "keyboard".
+      // A word that starts or ends with a digit is not part of a longer
+      // number either ("tan1" not in "tan12").
+      const QString letters = QStringLiteral("\\p{L}\\p{M}");
+      const QString before = word.front().isDigit()
+                                 ? letters + QStringLiteral("\\p{Nd}")
+                                 : letters;
+      const QString after =
+          word.back().isDigit() ? letters + QStringLiteral("\\p{Nd}") : letters;
+      cachedWords << QStringLiteral("(?<![%1])%2s?(?![%3])")
+                         .arg(before, QRegularExpression::escape(word), after);
     }
     cachedSecrets = secrets;
     cachedYet = true;
-    cachedPattern =
-        QRegularExpression(whole(cachedWords.join(QLatin1Char('|'))), options);
+    cachedPattern = QRegularExpression(
+        QStringLiteral("(?:%1)").arg(cachedWords.join(QLatin1Char('|'))),
+        options);
   }
   if (cachedWords.isEmpty()) {
     return false;
   }
+  // camelCase names its words with capitals, which a case-insensitive match
+  // does not see, so the name is also tried with a blank at each word start:
+  // "apiKey" as "api Key", "APIKey" as "API Key". The acronym rule cuts a
+  // capitals word that a lower-case letter follows ("cardPINs" as "card PI
+  // Ns"), so a split at lower-to-upper starts alone is tried too ("card
+  // PINs", "sim PINcode"), and the name as written ("PINcode").
+  static const QRegularExpression lowerThenUpper(
+      QStringLiteral("(?<=[\\p{Ll}\\p{Nd}])(?=\\p{Lu})"),
+      QRegularExpression::UseUnicodePropertiesOption);
+  static const QRegularExpression acronymThenWord(
+      QStringLiteral("(?<=\\p{Lu})(?=\\p{Lu}\\p{Ll})"),
+      QRegularExpression::UseUnicodePropertiesOption);
+  QString camel = name;
+  camel.replace(lowerThenUpper, QStringLiteral(" "));
+  QString words = camel;
+  words.replace(acronymThenWord, QStringLiteral(" "));
+  const auto matches = [&](const QRegularExpression &pattern) {
+    return pattern.match(name).hasMatch() ||
+           (camel != name && pattern.match(camel).hasMatch()) ||
+           (words != camel && pattern.match(words).hasMatch());
+  };
   if (cachedPattern.isValid()) {
-    return cachedPattern.match(name).hasMatch();
+    return matches(cachedPattern);
   }
   // Too many words for one pattern (PCRE2's size limit): word by word,
   // rather than every secret field shown in plain view.
-  return std::any_of(
-      cachedWords.cbegin(), cachedWords.cend(),
-      [&name, &whole, options](const QString &word) {
-        return QRegularExpression(whole(word), options).match(name).hasMatch();
-      });
+  return std::any_of(cachedWords.cbegin(), cachedWords.cend(),
+                     [&matches, options](const QString &word) {
+                       return matches(QRegularExpression(word, options));
+                     });
 }
 
 auto FileContent::isOtpUriValue(const QString &value) -> bool {

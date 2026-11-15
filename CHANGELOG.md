@@ -86,8 +86,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   field whose name holds one of a configurable set of words (a PIN, a CVV,
   an API key, a recovery code) gets the eye button, and no link button, as
   the password does. Matched as whole words in any case, so "key" hides
-  "API key" but not "keyboard layout". "Also hide other secrets" switches
-  it off
+  "API key" but not "keyboard layout"; also as names are written in APIs
+  and configuration files (`apiKey`, `api_key`, `PIN2`) and in the plural
+  ("Backup tokens"), which 2.0-rc3 showed in clear. "Also hide other
+  secrets" switches it off
   ([#2054](https://github.com/IJHack/QtPass/issues/2054)).
 - Templates can mark secret fields: a comment line `# secret: pin, tan` in
   a section of the store's `.templates` file, or in the template in the

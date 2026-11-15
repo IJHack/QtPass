@@ -660,6 +660,34 @@ void tst_filecontent::isSecretFieldNameMatchesWholeWords_data() {
   QTest::newRow("no secret") << QStringLiteral("username") << false;
   QTest::newRow("after punctuation")
       << QStringLiteral("security-answer") << true;
+  // How APIs and configuration files spell them.
+  QTest::newRow("camelCase") << QStringLiteral("apiKey") << true;
+  QTest::newRow("camelCase secret") << QStringLiteral("clientSecret") << true;
+  QTest::newRow("camelCase token") << QStringLiteral("accessToken") << true;
+  QTest::newRow("acronym then word") << QStringLiteral("APIKey") << true;
+  QTest::newRow("two listed words") << QStringLiteral("secretKey") << true;
+  QTest::newRow("snake_case") << QStringLiteral("api_key") << true;
+  QTest::newRow("SCREAMING_SNAKE") << QStringLiteral("CLIENT_SECRET") << true;
+  QTest::newRow("numbered") << QStringLiteral("PIN2") << true;
+  QTest::newRow("numbered PUK") << QStringLiteral("PUK2") << true;
+  QTest::newRow("plural") << QStringLiteral("Backup tokens") << true;
+  QTest::newRow("plural answer") << QStringLiteral("Security answers") << true;
+  QTest::newRow("plural camelCase") << QStringLiteral("APIKeys") << true;
+  QTest::newRow("capitalised own entry") << QStringLiteral("PINcode") << true;
+  QTest::newRow("camelCase acronym, plural")
+      << QStringLiteral("cardPINs") << true;
+  QTest::newRow("camelCase acronym, joined")
+      << QStringLiteral("simPINcode") << true;
+  QTest::newRow("camelCase capitals, plural")
+      << QStringLiteral("apiKEYs") << true;
+  // Still not inside a longer word, however it is written.
+  QTest::newRow("camelCase, not a word")
+      << QStringLiteral("keyboardLayout") << false;
+  QTest::newRow("inside a camelCase word")
+      << QStringLiteral("monkeyName") << false;
+  QTest::newRow("not a plural") << QStringLiteral("pinyin") << false;
+  QTest::newRow("snake_case, no secret")
+      << QStringLiteral("user_name") << false;
 }
 
 /**
@@ -689,6 +717,10 @@ void tst_filecontent::isSecretFieldNameFollowsTheList() {
   QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("PIN"), {}));
   QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("PIN"),
                                           {QStringLiteral("  ")}));
+  // A word ending in a digit is not found in a longer number.
+  const QStringList numbered{QStringLiteral("tan1")};
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("TAN1"), numbered));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("tan12"), numbered));
   const QStringList special{QStringLiteral("a.b")};
   QVERIFY(FileContent::isSecretFieldName(QStringLiteral("my a.b"), special));
   QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("axb"), special));
@@ -709,6 +741,10 @@ void tst_filecontent::isSecretFieldNameFollowsTheList() {
   }
   QVERIFY(FileContent::isSecretFieldName(QStringLiteral("my word39999"), many));
   QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("keyboard"), many));
+  // The same rules on that path: camelCase, and a word ending in a digit is
+  // not found in a longer number.
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("myWord123"), many));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("word400000"), many));
 }
 
 void tst_filecontent::isOtpFieldNameMatchesOtpAndTotp_data() {

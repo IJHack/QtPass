@@ -160,7 +160,8 @@ password is then behind an eye button, and so is:
 
 - **Also hide other secrets**: every field whose name holds one of the words
   next to it (PIN, CVV, key, token, recovery and the like), as whole words in
-  any case. On by default; "Default" puts the words back.
+  any case, also in the plural and as APIs write them (`apiKey`, `api_key`,
+  `PIN2`). On by default; "Default" puts the words back.
 - **Hide every field**: all fields, for shared screens and presenting. The
   notes below the fields and the OTP code stay visible; **Hide content** hides
   everything.
