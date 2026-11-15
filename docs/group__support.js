@@ -69,7 +69,7 @@ var group__support =
       [ "passUmask", "class_util.html#a11eb90b4a067feefd84769d336d79b10", null ],
       [ "protocolRegex", "class_util.html#a133c5da0c8a3f106c09977679bc615c3", null ],
       [ "readRegularFile", "class_util.html#a8e427903937505b5e19ebbea7050494e", null ],
-      [ "regularFilesUnder", "class_util.html#a01aa652eefff30de7eabdf90c7737974", null ],
+      [ "regularFilesUnder", "class_util.html#a6416bfebddfbc3dbfee2d66d5204964b", null ],
       [ "removeTree", "class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c", null ],
       [ "replaceFile", "class_util.html#ab0e1c40d3ccc706e0d74d246361a2640", null ],
       [ "repositoryPassClimbsTo", "class_util.html#a158b1927cee3cffacaec8d583fbf72ad", null ],

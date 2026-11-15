@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Put an existing store under Git: git init, stage the .gpg entries and the .gpg&#45;id files (nothing else..." alt="" coords="5,84,137,112"/>
 <area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="185,57,377,85"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,87,171,85,166,86,138,92"/>
-<area shape="rect" id="Node000009" href="$class_util.html#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="197,109,364,137"/>
+<area shape="rect" id="Node000009" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="197,109,364,137"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="137,103,184,111,179,112,137,108"/>
 <area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="425,57,587,85"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="377,69,412,71,406,71,377,74"/>

@@ -139,7 +139,7 @@
 <area shape="poly" id="edge198_Node000053_Node000043" title=" " alt="" coords="910,1522,1783,1530,1779,1533,911,1528"/>
 <area shape="rect" id="Node000054" href="$class_imitate_pass.html#a086365ec85674590afbd883df0b27a80" title="Create git backup commit before re&#45;encryption." alt="" coords="1804,1289,1998,1333"/>
 <area shape="poly" id="edge73_Node000053_Node000054" title=" " alt="" coords="878,1508,957,1491,1791,1330,1787,1334,958,1496,881,1512"/>
-<area shape="rect" id="Node000055" href="$class_imitate_pass.html#a475db6f5d1e02b81a558943a9882058d" title="The entries under dir a run considers, telling the user about anything skipped for not being a regula..." alt="" coords="1786,1458,2016,1486"/>
+<area shape="rect" id="Node000055" href="$class_imitate_pass.html#ad1c00346251a8ed6ea08bf7a27401660" title="The entries under dir a run considers, telling the user about anything skipped for not being a regula..." alt="" coords="1786,1458,2016,1486"/>
 <area shape="poly" id="edge81_Node000053_Node000055" title=" " alt="" coords="910,1517,1772,1477,1768,1480,911,1522"/>
 <area shape="rect" id="Node000057" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="1794,1237,2008,1265"/>
 <area shape="poly" id="edge84_Node000053_Node000057" title=" " alt="" coords="836,1508,890,1479,957,1451,1067,1416,1181,1384,1407,1331,1614,1291,1781,1266,1776,1269,1615,1297,1408,1336,1182,1389,1069,1421,959,1456,893,1484,839,1512"/>
@@ -160,7 +160,7 @@
 <area shape="poly" id="edge79_Node000054_Node000039" title=" " alt="" coords="1998,1326,2022,1344,2041,1372,2049,1400,2049,1428,2046,1456,2043,1483,2043,1510,2051,1536,2070,1562,2084,1573,2103,1583,2097,1584,2081,1578,2066,1566,2046,1539,2038,1511,2038,1483,2041,1455,2044,1428,2044,1401,2036,1374,2018,1347,1998,1332"/>
 <area shape="poly" id="edge78_Node000054_Node000049" title=" " alt="" coords="1998,1327,2022,1344,2038,1365,2045,1387,2046,1429,2047,1471,2055,1491,2070,1510,2076,1517,2070,1516,2066,1514,2050,1493,2042,1472,2041,1429,2040,1388,2033,1368,2018,1348,1998,1332"/>
 <area shape="poly" id="edge83_Node000055_Node000039" title=" " alt="" coords="1998,1484,2022,1495,2038,1512,2047,1530,2054,1547,2070,1562,2103,1579,2098,1580,2066,1566,2050,1550,2042,1532,2034,1515,2018,1500,1999,1489"/>
-<area shape="rect" id="Node000056" href="$class_util.html#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="2094,1473,2261,1501"/>
+<area shape="rect" id="Node000056" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="2094,1473,2261,1501"/>
 <area shape="poly" id="edge82_Node000055_Node000056" title=" " alt="" coords="2016,1476,2081,1481,2076,1482,2017,1481"/>
 <area shape="poly" id="edge85_Node000057_Node000022" title=" " alt="" coords="2001,1263,2022,1274,2033,1285,2039,1296,2046,1319,2052,1340,2059,1350,2069,1358,2109,1376,2151,1387,2194,1392,2238,1392,2321,1381,2393,1366,2388,1368,2322,1387,2238,1397,2194,1397,2150,1392,2107,1381,2067,1363,2055,1353,2047,1343,2041,1320,2034,1298,2028,1288,2018,1278,2001,1268"/>
 <area shape="rect" id="Node000058" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="2100,1321,2255,1349"/>

@@ -6,7 +6,7 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,83,208,81,203,82,174,88"/>
 <area shape="rect" id="Node000004" href="$class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="233,107,400,134"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="173,102,220,109,215,110,173,107"/>
-<area shape="rect" id="Node000014" href="$class_util.html#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="233,159,400,186"/>
+<area shape="rect" id="Node000014" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="233,159,400,186"/>
 <area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="125,107,222,143,249,154,244,154,220,148,124,112"/>
 <area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="384,103,412,92,426,81,435,71,445,60,460,49,486,39,491,38,462,53,448,64,439,74,429,85,414,96,385,109"/>
 <area shape="rect" id="Node000005" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="724,107,917,134"/>

@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Deal with what a crashed or failed earlier run left under dir before touching anything: stale tempora..." alt="" coords="5,74,226,119"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#ae9a418566f8f18e20fe4552d0b88e46c" title="Remove a stale temporary a crashed run left, unless it was modified within the hour: on a shared stor..." alt="" coords="274,5,510,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,71,273,43,311,36,306,38,274,48,184,76"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="308,57,476,85"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="308,57,476,85"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,84,296,79,291,81,227,89"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#af6b661f1ea422063e61dd438534a1452" title="Tell the user a leftover is not a regular file and was left." alt="" coords="558,108,786,136"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="226,99,544,114,541,118,226,104"/>

@@ -90,7 +90,7 @@
 <area shape="poly" id="edge49_Node000032_Node000017" title=" " alt="" coords="1138,877,1177,908,1216,948,1231,973,1239,995,1247,1016,1264,1038,1283,1054,1305,1070,1300,1069,1279,1058,1260,1042,1243,1018,1234,997,1227,975,1212,951,1173,912,1137,882"/>
 <area shape="rect" id="Node000033" href="$class_profile_init.html#a5588f9cb4ba9610c1f1899c10628dffb" title="git init in dir, stage the .gpg&#45;id and its signature, and commit them (signed when pass...." alt="" coords="1262,901,1441,928"/>
 <area shape="poly" id="edge41_Node000032_Node000033" title=" " alt="" coords="1185,877,1270,897,1265,897,1185,882"/>
-<area shape="rect" id="Node000041" href="$class_util.html#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="1268,773,1435,800"/>
+<area shape="rect" id="Node000041" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="1268,773,1435,800"/>
 <area shape="poly" id="edge50_Node000032_Node000041" title=" " alt="" coords="1154,848,1261,811,1289,805,1284,806,1263,816,1156,853"/>
 <area shape="rect" id="Node000042" href="$class_profile_init.html#afe19dd50dc653f56630443479959eb9e" title="Sign the list just written as gpgIdFile, over the bytes contents that were written." alt="" coords="1274,825,1430,852"/>
 <area shape="poly" id="edge51_Node000032_Node000042" title=" " alt="" coords="1189,854,1261,849,1255,850,1190,860"/>

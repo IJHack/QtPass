@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="2456,235,2624,263"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#a769fe025472b4faa73f4846b92b552ed" title="Ask before deleting an entry or a folder, naming what goes and warning when the folder holds anything..." alt="" coords="1367,34,1583,61"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2521,221,2502,194,2476,161,2444,130,2407,106,2352,82,2295,62,2177,33,2056,16,1937,9,1823,10,1719,16,1556,36,1555,30,1719,11,1823,4,1937,4,2056,11,2178,28,2297,57,2354,77,2410,101,2447,126,2480,158,2506,191,2526,223"/>
-<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a475db6f5d1e02b81a558943a9882058d" title="The entries under dir a run considers, telling the user about anything skipped for not being a regula..." alt="" coords="2178,235,2408,263"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#ad1c00346251a8ed6ea08bf7a27401660" title="The entries under dir a run considers, telling the user about anything skipped for not being a regula..." alt="" coords="2178,235,2408,263"/>
 <area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="2438,249,2409,252,2409,246,2443,249"/>
 <area shape="rect" id="Node000018" href="$class_profile_init.html#a52111b898d794f14ec9d7dbe668dc5a2" title="Put an existing store under Git: git init, stage the .gpg entries and the .gpg&#45;id files (nothing else..." alt="" coords="2228,287,2359,315"/>
 <area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="2459,266,2360,290,2359,284,2453,267"/>

@@ -1320,7 +1320,7 @@
 <!-- Node55 -->
 <g id="Node000055" class="node">
 <title>Node55</title>
-<g id="a_Node000055"><a xlink:href="class_imitate_pass.html#a475db6f5d1e02b81a558943a9882058d" target="_top" xlink:title="The entries under dir a run considers, telling the user about anything skipped for not being a regula...">
+<g id="a_Node000055"><a xlink:href="class_imitate_pass.html#ad1c00346251a8ed6ea08bf7a27401660" target="_top" xlink:title="The entries under dir a run considers, telling the user about anything skipped for not being a regula...">
 <polygon fill="white" stroke="#666666" points="1508,-960.75 1335.25,-960.75 1335.25,-940 1508,-940 1508,-960.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1421.62" y="-947.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::entriesToReencrypt</text>
 </a>
@@ -1510,7 +1510,7 @@
 <!-- Node56 -->
 <g id="Node000056" class="node">
 <title>Node56</title>
-<g id="a_Node000056"><a xlink:href="class_util.html#a01aa652eefff30de7eabdf90c7737974" target="_top" xlink:title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">
+<g id="a_Node000056"><a xlink:href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" target="_top" xlink:title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">
 <polygon fill="white" stroke="#666666" points="1692,-949.75 1566.5,-949.75 1566.5,-929 1692,-929 1692,-949.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1629.25" y="-936.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::regularFilesUnder</text>
 </a>
