@@ -6,6 +6,7 @@
 #include <QDirIterator>
 #include <QElapsedTimer>
 #include <QFile>
+#include <QFileInfo>
 #include <QPointer>
 #include <QRegularExpression>
 #include <QSaveFile>
@@ -847,6 +848,35 @@ void ImitatePass::reencryptPath(const QString &dir) {
     return;
   }
 
+  // A folder the walk cannot read looks empty to QDirIterator: its entries
+  // kept the old recipients, a key just removed among them, while the run
+  // reported success and pushed. Each is a failure, named, and nothing is
+  // pushed.
+  QStringList unreadable;
+  const auto checkReadable = [&unreadable](const QString &folder) {
+    const QFileInfo info(folder);
+#ifdef Q_OS_WIN
+#if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
+    // Qt answers from the attributes alone unless told to read the ACL.
+    QNtfsPermissionCheckGuard aclCheck;
+#endif
+    const bool listable = info.isReadable();
+#else
+    // Read to list it, search to see what it holds.
+    const bool listable = info.isReadable() && info.isExecutable();
+#endif
+    if (!listable) {
+      unreadable << folder;
+    }
+  };
+  checkReadable(dir);
+  QDirIterator folders(dir,
+                       QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks,
+                       QDirIterator::Subdirectories);
+  while (folders.hasNext()) {
+    checkReadable(folders.next());
+  }
+
   QDir currentDir;
   QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files,
                         QDirIterator::Subdirectories);
@@ -854,6 +884,11 @@ void ImitatePass::reencryptPath(const QString &dir) {
   QStringList gpgId;
   int successCount = 0;
   int failCount = 0;
+  for (const QString &folder : std::as_const(unreadable)) {
+    failCount++;
+    emit critical(tr("Re-encryption failed"),
+                  tr("Failed to re-encrypt %1").arg(folder));
+  }
   while (gpgFiles.hasNext()) {
     QString fileName = gpgFiles.next();
     if (gpgFiles.fileInfo().path() != currentDir.path()) {
@@ -892,7 +927,9 @@ void ImitatePass::reencryptPath(const QString &dir) {
         3000);
   }
 
-  if (m_settings.autoPush && gitConfigured()) {
+  // Not after a failure: the remote would get a store whose entries are
+  // still readable by a recipient just removed.
+  if (m_settings.autoPush && gitConfigured() && failCount == 0) {
     emit statusMsg(tr("Updating password-store"), 2000);
     GitPush();
   }

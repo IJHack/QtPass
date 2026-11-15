@@ -273,6 +273,7 @@ private Q_SLOTS:
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepImitatePassEmptyStoreEmitsEmpty();
   void wslPathKeepsWhitespaceEndingTheName();
+  void reencryptFailsForAFolderItCannotRead();
   void grepImitatePassInvalidRegexEmitsEmpty();
   // SSH_AUTH_SOCK auto-probe (issue #543)
   void sshAuthSockOverrideRoundtrip();
@@ -2509,6 +2510,50 @@ void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
   const auto results = ImitatePass::grepScanStore(
       env, QStringLiteral("/nonexistent/gpg"), tmp.path(), rx);
   QVERIFY(results.isEmpty());
+}
+
+/**
+ * @brief A folder re-encryption cannot read fails the run, named: it looked
+ *        empty, and the run reported "Re-encryption completed" (and pushed)
+ *        with its entries still encrypted to the old recipients.
+ */
+void tst_util::reencryptFailsForAFolderItCannotRead() {
+#ifdef Q_OS_WIN
+  QSKIP("relies on Unix directory permissions");
+#else
+  if (::geteuid() == 0)
+    QSKIP("root reads anywhere");
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QDir store(tmp.path());
+  QVERIFY(store.mkpath(QStringLiteral("finance")));
+  {
+    QFile id(store.filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(id.open(QIODevice::WriteOnly));
+    id.write("0123456789ABCDEF\n");
+    QFile entry(store.filePath(QStringLiteral("finance/bank.gpg")));
+    QVERIFY(entry.open(QIODevice::WriteOnly));
+    entry.write("x");
+  }
+  const QString finance = store.filePath(QStringLiteral("finance"));
+  QVERIFY(QFile::setPermissions(finance, QFile::WriteOwner | QFile::ExeOwner));
+  const auto restore = qScopeGuard([&finance] {
+    QFile::setPermissions(finance, QFile::ReadOwner | QFile::WriteOwner |
+                                       QFile::ExeOwner);
+  });
+  TestPass pass;
+  AppSettings s;
+  s.passStore = tmp.path();
+  s.useGit = false;
+  pass.init(s);
+  QSignalSpy critical(&pass, &Pass::critical);
+  pass.reencryptPath(tmp.path());
+  QVERIFY2(std::any_of(critical.cbegin(), critical.cend(),
+                       [&finance](const QList<QVariant> &args) {
+                         return args.at(1).toString().contains(finance);
+                       }),
+           "the unreadable folder must be reported");
+#endif
 }
 
 /**
