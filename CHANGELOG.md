@@ -64,6 +64,44 @@
   icon. Without one, closing the window left QtPass running invisibly, with
   the last entry in it and the password on the clipboard (ported from
   [#2185](https://github.com/IJHack/QtPass/pull/2185))
+- With "Automatically push", a push that fails after a save stays on screen
+  in red, as one from the Push button does. The refresh of the entry
+  emptied the output before git's error was shown, so the save looked
+  pushed while it was only committed locally (ported from
+  [#2182](https://github.com/IJHack/QtPass/pull/2182))
+- With the `pass` backend, the pull before an edit ("Automatically pull")
+  pulls the configured store; it pulled `~/.password-store`, and the edit
+  dialog opened on the old copy of the entry. A failed pull is now said in
+  the status bar (ported from
+  [#2183](https://github.com/IJHack/QtPass/pull/2183))
+- Without Git (the default), a delete, rename or move that fails on disk
+  says so. A folder delete left what it could not remove without a word,
+  renaming an entry to a name its folder already had did nothing, and a
+  forced move that failed had already deleted the destination entry
+  (ported from [#2184](https://github.com/IJHack/QtPass/pull/2184))
+- Giving up on a content search stops it with the native backend: it used
+  to go on decrypting the rest of the store, unseen, after the search box
+  was emptied, the content search button released or the panel autoclear
+  ran (ported from [#2186](https://github.com/IJHack/QtPass/pull/2186))
+- Saving in the edit dialog keeps no-break spaces in notes the user did not
+  touch: every one became a plain space, which changed passphrases and
+  recovery codes written with them (ported from
+  [#2134](https://github.com/IJHack/QtPass/pull/2134) in
+  [#2137](https://github.com/IJHack/QtPass/pull/2137))
+- Saving in the edit dialog writes field lines the user did not touch back
+  as they were: a field with an empty value (`recovery:`) was dropped, a
+  value lost its own surrounding spaces, and `key:value` became
+  `key: value` ([#2148](https://github.com/IJHack/QtPass/pull/2148))
+- The password keeps a leading or trailing space when shown, copied, put in
+  a QR code or revealed with the eye button: the panel trimmed it, a
+  different password than the stored one (ported from
+  [#2149](https://github.com/IJHack/QtPass/pull/2149) in
+  [#2150](https://github.com/IJHack/QtPass/pull/2150))
+- A line break pasted into the password or a field of the edit dialog no
+  longer ends its line: a password pasted as a selection that began on the
+  line above was saved as an empty first line, so Ctrl+C copied nothing and
+  the password showed among the notes
+  ([#2165](https://github.com/IJHack/QtPass/pull/2165))
 
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 
