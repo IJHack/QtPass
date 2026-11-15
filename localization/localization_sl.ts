@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Skrij polja, ki hranijo tudi skrivosti, ne le geslo: polje, kjer je ena od teh besed. Izklopljeno: samo geslo je skrito.</translation>
+        <translation type="unfinished">Skrij tudi polja, ki hranijo skrivnost, ne le gesla: polje, katerega ime vsebuje eno od teh besed. Izklopljeno: skrito je samo geslo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Vrnite privzete vrednosti: PIN, kode za kartice, ključe, tokene, kode za obnovo in podobno.</translation>
+        <translation type="unfinished">Vrni privzete besede: PIN, kode kartic, ključi, žetoni, obnovitvene kode in podobno.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1881,7 +1881,7 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 je večji, kot lahko velikost datoteke s ključem doseže.</translation>
+        <translation type="unfinished">%1 je večja, kot je lahko datoteka s ključem.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2003,12 +2003,12 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
     <message>
         <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Neveljavna vnos</translation>
+        <translation type="unfinished">Neveljaven vnos</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Ime in geslo ne moreta vsebovati vrstnih znakov.</translation>
+        <translation type="unfinished">Ime in geslo ne smeta vsebovati prelomov vrstic.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2181,7 +2181,7 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1623"/>
         <source>Add folder</source>
-        <translation>Dodaj mesto</translation>
+        <translation type="unfinished">Dodaj mapo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
@@ -2382,7 +2382,7 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
     <message>
         <location filename="../src/mainwindow.cpp" line="221"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Operacija je potekla; vmesnik se znova omogoča.</translation>
+        <translation type="unfinished">Časovna omejitev operacije je potekla; vmesnik se znova omogoča.</translation>
     </message>
     <message>
         <source>OTP Code</source>
@@ -2545,12 +2545,12 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
         <location filename="../src/mainwindow.cpp" line="1637"/>
         <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder</source>
-        <translation>Preimenuj mesto</translation>
+        <translation type="unfinished">Preimenuj mapo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1640"/>
         <source>Rename password</source>
-        <translation>Preimenovaj geslo</translation>
+        <translation type="unfinished">Preimenuj geslo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1577"/>
@@ -2560,7 +2560,7 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… več ujemstev v tej vrstici</translation>
+        <translation type="unfinished">… več ujemanj v tem vnosu</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -2878,7 +2878,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Shranjeno, vendar še ni bilo potrdilo</translation>
+        <translation type="unfinished">Shranjeno, ne potrjeno (commit)</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -2964,7 +2964,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 ne more biti brana kot seznam prejemnikov (običajni datoteka, ki je daljša od %2), zato ni nič izbranega. Prosim, preverite to, preden izberete prejemnike tukaj: &quot;OK&quot; ustvari nov seznam nad njim.</translation>
+        <translation type="unfinished">%1 ni mogoče prebrati kot seznam prejemnikov (navadna datoteka velikosti največ %2), zato ni vnaprej izbrano nič. Preverite jo, preden tukaj izberete prejemnike: OK jo prepiše z novim seznamom.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3241,7 +3241,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfigurirana GPG domača direktorija %1 ne obstaja.</translation>
+        <translation type="unfinished">Nastavljena domača mapa GPG %1 ne obstaja.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3509,7 +3509,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Povezava %1 je bila izbrisana, in zdaj Git ne spremlja več, vendar je operacija neuspešna: %2</translation>
+        <translation type="unfinished">Povezava %1 je bila odstranjena in Git je ne spremlja več, vendar potrditev (commit) ni uspela: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

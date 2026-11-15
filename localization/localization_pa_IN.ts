@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="85"/>
         <source>Programs</source>
-        <translation>ਪ੍ਰੋਗਰਾਮਾਂ</translation>
+        <translation type="unfinished">ਪ੍ਰੋਗਰਾਮ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
@@ -763,7 +763,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 ਇੱਕ ਹੋਰ ਸਟੋਰ ਲਈ ਉਸੇ ਕੀ ਨਾਲ ਸਾਈਨ ਕਰਦਾ ਹੈ। ਇੱਕ ਪ੍ਰਾਪਤਕਰਤਾ ਦੀ ਸੂਚੀ ਜੋ ਕਿ ਇੱਕ ਇਸਤੇਮਾਲ ਲਈ ਦਸਤਖ਼ਤ ਕੀਤੀ ਗਈ ਹੈ, ਦੂਜੀ ਵਿੱਚ ਮਿਲਦੀ ਹੈ: ਹਰੇਕ ਸਟੋਰ ਲਈ ਇੱਕ ਵੱਖਰੀ ਸਾਈਨਿੰਗ ਕੀ ਵਰਤੋ ਜਿਸਦੇ ਪ੍ਰਾਪਤਕਰਤਾ ਵੱਖ-ਵੱਖ ਹਨ।</translation>
+        <translation type="unfinished">%1 ਕਿਸੇ ਹੋਰ ਸਟੋਰ ਲਈ ਵੀ ਉਸੇ ਕੁੰਜੀ ਨਾਲ ਸਾਈਨ ਕਰਦਾ ਹੈ। ਇਹਨਾਂ ਵਿੱਚੋਂ ਇੱਕ ਸਟੋਰ ਲਈ ਸਾਈਨ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ ਦੂਜੇ ਵਿੱਚ ਵੀ ਸਵੀਕਾਰ ਕੀਤੀ ਜਾਂਦੀ ਹੈ: ਜਿਨ੍ਹਾਂ ਸਟੋਰਾਂ ਦੇ ਪ੍ਰਾਪਤਕਰਤਾ ਵੱਖਰੇ ਹਨ, ਉਹਨਾਂ ਵਿੱਚੋਂ ਹਰੇਕ ਲਈ ਵੱਖਰੀ ਸਾਈਨਿੰਗ ਕੁੰਜੀ ਵਰਤੋ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1116,13 +1116,13 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">ਪੈਸਵਰਡ ਸਟੋਰ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ:%1</translation>
+        <translation type="unfinished">ਇੱਥੇ ਪਾਸਵਰਡ ਸਟੋਰ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲ: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">ਪੈਸਵਰਡ ਸਟੋਰ ਇਕੱਠਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ</translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਟੋਰ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1246,7 +1246,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨੂੰ ਨਵੇਂ ਤੋਂ ਚੁਣਨਾ ਅਤੇ ਸੰਭਾਲਣਾ</translation>
+        <translation type="unfinished">ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨੂੰ ਨਵੇਂ ਸਿਰਿਓਂ ਚੁਣਨਾ ਅਤੇ ਸੰਭਾਲਣਾ</translation>
     </message>
     <message>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
@@ -1325,7 +1325,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="136"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Git pull ਅਸਫਲ ਰਿਹਾ: %1</translation>
+        <translation type="unfinished">ਗਿਟ ਪੁੱਲ ਅਸਫਲ ਰਿਹਾ: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="189"/>
@@ -1615,22 +1615,22 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="1175"/>
         <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Git pull ਅਸਫਲ ਰਿਹਾ</translation>
+        <translation type="unfinished">ਗਿਟ ਪੁੱਲ ਅਸਫਲ ਰਿਹਾ</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">pull ਤੋਂ ਬਾਅਦ ਇਹ ਜਾਂਚਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ ਕਿ ਸਟੋਰ ਵਿੱਚ ਅਣਮਿਲਾਈਆਂ ਫ਼ਾਈਲਾਂ ਹਨ ਜਾਂ ਨਹੀਂ। ਮੁੜ ਇਨਕ੍ਰਿਪਟ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ git ਨਾਲ ਇਸ ਦੀ ਜਾਂਚ ਕਰੋ।</translation>
+        <translation type="unfinished">ਪੁੱਲ ਤੋਂ ਬਾਅਦ ਇਹ ਜਾਂਚਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ ਕਿ ਸਟੋਰ ਵਿੱਚ ਅਣਮਿਲਾਈਆਂ ਫ਼ਾਈਲਾਂ ਹਨ ਜਾਂ ਨਹੀਂ। ਮੁੜ ਇਨਕ੍ਰਿਪਟ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ git ਨਾਲ ਇਸ ਦੀ ਜਾਂਚ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">Pull ਤੋਂ ਬਾਅਦ ਸਟੋਰ ਵਿੱਚ ਅਣ-ਮਰਜ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਰਹਿ ਗਈਆਂ ਹਨ। ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਟਕਰਾਅ ਹੱਲ ਕਰੋ।</translation>
+        <translation type="unfinished">ਪੁੱਲ ਤੋਂ ਬਾਅਦ ਸਟੋਰ ਵਿੱਚ ਅਣ-ਮਰਜ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਰਹਿ ਗਈਆਂ ਹਨ। ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਟਕਰਾਅ ਹੱਲ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1186"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">Git pull ਅਸਫਲ ਰਿਹਾ, ਸਟੋਰ ਨੂੰ ਜਿਵੇਂ ਹੈ ਉਵੇਂ ਹੀ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</translation>
+        <translation type="unfinished">ਗਿਟ ਪੁੱਲ ਅਸਫਲ ਰਿਹਾ, ਸਟੋਰ ਨੂੰ ਜਿਵੇਂ ਹੈ ਉਵੇਂ ਹੀ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1197"/>
@@ -1999,7 +1999,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Invalid name</source>
-        <translation>ਅਜਿਹਾ ਨਾਮ ਵਿਅਰਥ ਹੈ</translation>
+        <translation type="unfinished">ਅਵੈਧ ਨਾਮ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="197"/>
@@ -2125,7 +2125,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; ਲਈ ਇੱਕ GUI ਹੈ, ਸਟੈਂਡਰਡ Unix ਪਾਸਵਰਡ ਮੈਨੇਜਰ।&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass ਸਟੈਂਡਰਡ Unix ਪਾਸਵਰਡ ਮੈਨੇਜਰ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; ਲਈ ਇੱਕ GUI ਹੈ।&lt;/p&gt;
 &lt;p&gt;ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਸਾਫਟਵੇਅਰ ਨਾਲ ਤੁਹਾਡੀਆਂ ਕੋਈ ਵੀ &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;ਸਮੱਸਿਆਵਾਂ&lt;/a&gt; ਰਿਪੋਰਟ ਕਰੋ।&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;ਦਸਤਾਵੇਜ਼ੀਕਰਨ&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;ਸਰੋਤ ਕੋਡ&lt;/a&gt;&lt;/p&gt;</translation>
@@ -2380,7 +2380,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="724"/>
         <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
-        <translation>ਇਸ ਪਾਸਵਰਡ ਵਿੱਚ ਆਟੀਓ ਕੋਡ ਨਹੀਂ ਮਿਲਦਾ</translation>
+        <translation type="unfinished">ਇਸ ਪਾਸਵਰਡ ਐਂਟਰੀ ਵਿੱਚ ਕੋਈ OTP ਕੋਡ ਨਹੀਂ ਮਿਲਿਆ</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -2425,7 +2425,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1196"/>
         <source>Invalid name</source>
-        <translation type="unfinished">ਅਜਿਹਾ ਨਾਮ ਵਿਅਰਥ ਹੈ</translation>
+        <translation type="unfinished">ਅਵੈਧ ਨਾਮ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1197"/>
@@ -2883,7 +2883,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ਪਾਸਵਰਡ ਸਟੋਰ ਵਿੱਚ ਨਹੀਂ ਹੈ। ਸਟੋਰ ਜਾਂ ਇਸਦੇ ਅੰਦਰ ਇੱਕ ਫੋਲਡਰ ਲਈ ਪ੍ਰਾਪਤਕਰਤਾ ਨਿਰਧਾਰਤ ਕੀਤੇ ਗਏ ਹਨ।</translation>
+        <translation type="unfinished">%1 ਪਾਸਵਰਡ ਸਟੋਰ ਵਿੱਚ ਨਹੀਂ ਹੈ। ਪ੍ਰਾਪਤਕਰਤਾ ਸਟੋਰ ਲਈ ਜਾਂ ਇਸਦੇ ਅੰਦਰਲੇ ਕਿਸੇ ਫੋਲਡਰ ਲਈ ਨਿਰਧਾਰਤ ਕੀਤੇ ਜਾਂਦੇ ਹਨ।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3183,7 +3183,7 @@ Continue?</source>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="32"/>
         <source>Clear output</source>
-        <translation type="unfinished">ਸੁਧਾਰ ਕੀਤੇ ਦਿਖਾਓ</translation>
+        <translation type="unfinished">ਆਉਟਪੁੱਟ ਸਾਫ਼ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -3242,7 +3242,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Programs</source>
-        <translation type="unfinished">ਪ੍ਰੋਗਰਾਮਾਂ</translation>
+        <translation type="unfinished">ਪ੍ਰੋਗਰਾਮ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
@@ -3324,7 +3324,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">ਇਸ ਪਾਸਵਰਡ ਵਿੱਚ ਆਟੀਓ ਕੋਡ ਨਹੀਂ ਮਿਲਦਾ</translation>
+        <translation type="unfinished">ਇਸ ਪਾਸਵਰਡ ਐਂਟਰੀ ਵਿੱਚ ਕੋਈ OTP ਕੋਡ ਨਹੀਂ ਮਿਲਿਆ</translation>
     </message>
 </context>
 <context>

@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Khi clipboard bị xóa, hãy đưa lại nội dung đã có trước khi sao chép, tương tự như lệnh &quot;pass -c&quot;, trừ khi có nội dung khác được sao chép trong lúc đó. Chỉ hiển thị văn bản: định dạng không được khôi phục. Văn bản này sẽ lưu trong bộ nhớ cho đến thời điểm đó. Trong trường hợp clipboard không thể đọc khi không có sự tập trung (một số desktop Wayland), nó sẽ bị xóa thay thế.</translation>
+        <translation type="unfinished">Khi clipboard được xóa, đưa lại nội dung đã có trên đó trước khi sao chép, tương tự như lệnh &quot;pass -c&quot;, trừ khi có nội dung khác được sao chép trong lúc đó. Chỉ văn bản: định dạng không được khôi phục. Văn bản này sẽ lưu trong bộ nhớ cho đến thời điểm đó. Ở những nơi không thể đọc clipboard khi cửa sổ không có tiêu điểm (một số desktop Wayland), clipboard sẽ bị xóa thay vào đó.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -1495,7 +1495,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 không nằm trong kho mật khẩu, hoặc tên một thư mục chứa dấu xuống dòng hoặc các ký tự điều khiển khác, mà danh sách đã được ký không thể ghi lại.</translation>
+        <translation type="unfinished">%1 không nằm trong kho mật khẩu, hoặc tên một thư mục trên đường dẫn chứa dấu xuống dòng hoặc một ký tự điều khiển khác, điều mà danh sách đã ký không thể ghi lại.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1660,7 +1660,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 là, hoặc nằm sau, một liên kết tượng trưng hoặc nút nối sau khi được kéo. Cái đó không phải là phần lưu trữ mật khẩu và sẽ không được tác động.</translation>
+        <translation type="unfinished">%1 là, hoặc nằm sau, một liên kết tượng trưng hoặc junction sau khi pull. Nơi liên kết đó trỏ tới không thuộc kho mật khẩu và sẽ được giữ nguyên.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2557,7 +2557,7 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
         <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Hiển thị kết quả tìm kiếm đầu tiên %n; để xem các kết quả còn lại, hãy tìm kiếm với tiêu chí cụ thể hơn.</numerusform>
+            <numerusform>Đang hiển thị %n kết quả đầu tiên; để xem các kết quả còn lại, hãy tìm kiếm với tiêu chí cụ thể hơn.</numerusform>
         </translation>
     </message>
     <message>
@@ -2873,7 +2873,7 @@ Tiếp tục?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Dữ liệu đã được lưu, nhưng việc ghi lại vào Git không thành công. Thông tin báo cáo:
+        <translation type="unfinished">Mục đã được lưu trong kho, nhưng việc ghi nhận nó vào git thất bại. Thông tin được báo cáo:
 
 %1</translation>
     </message>
@@ -2885,7 +2885,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 không nằm trong kho mật khẩu. Người nhận đã được thiết lập cho kho hoặc một thư mục bên trong.</translation>
+        <translation type="unfinished">%1 không nằm trong kho mật khẩu. Người nhận được thiết lập cho kho hoặc một thư mục bên trong kho.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3161,7 +3161,7 @@ Tiếp tục?</translation>
         <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Cột này có %n dòng, quá nhiều để chỉnh sửa ở đây.</numerusform>
+            <numerusform>Mục này có %n dòng, quá nhiều để chỉnh sửa ở đây.</numerusform>
         </translation>
     </message>
 </context>
@@ -3223,7 +3223,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Hệ thống GPG đã cấu hình ở %1 không tồn tại.</translation>
+        <translation type="unfinished">Thư mục GPG home đã cấu hình %1 không tồn tại.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3465,7 +3465,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Kiểm tra danh sách người nhận dưới %1…</translation>
+        <translation type="unfinished">Đang kiểm tra các danh sách người nhận trong %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>

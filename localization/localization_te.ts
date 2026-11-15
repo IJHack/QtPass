@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">డిఫాల్ట్ పదాలను తిరిగి సెట్ చేయండి: పిన్, కార్డ్ కోడ్‌లు, కీలు, టోకెన్‌లు మరియు ఇలాంటివి.</translation>
+        <translation type="unfinished">డిఫాల్ట్ పదాలను తిరిగి సెట్ చేయండి: పిన్, కార్డ్ కోడ్‌లు, కీలు, టోకెన్‌లు, రికవరీ కోడ్‌లు మరియు ఇలాంటివి.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">స్టోర్ ఉన్న ఫోల్డర్‌కు పైన ఉన్న గిట్ రిపోజిటరీని ఉపయోగించండి</translation>
+        <translation type="unfinished">స్టోర్ పైన ఉన్న ఫోల్డర్‌లోని గిట్ రిపోజిటరీని ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -767,7 +767,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 వేరే స్టోర్ కోసం అదే కీతో సంతకం చేస్తుంది. ఈ స్టోర్లలో ఒకదానికి సంతకం చేసిన జాబితా మరొకదానికి ఆమోదించబడుతుంది: వేర్వేరు గ్రహీతల ఉన్న ప్రతి స్టోర్ కోసం, ప్రత్యేక సంతకం కీని ఉపయోగించండి.</translation>
+        <translation type="unfinished">%1 వేరే స్టోర్ కోసం అదే కీతో సంతకం చేస్తుంది. ఈ స్టోర్లలో ఒకదాని కోసం సంతకం చేసిన గ్రహీతల జాబితా మరొకదానిలో కూడా ఆమోదించబడుతుంది: గ్రహీతలు వేరుగా ఉన్న ప్రతి స్టోర్ కోసం ప్రత్యేక సంతకం కీని ఉపయోగించండి.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1496,7 +1496,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 పాస్‌వర్డ్ నిల్వలో లేదు, లేదా మార్గంలో ఉన్న ఫోల్డర్ పేరులో ఒక లైన్ బ్రేక్ లేదా మరొక కంట్రోల్ క్యారెక్టర్ ఉంది, దీనిని సంతకం చేసిన జాబితా రికార్డ్ చేయలేదు.</translation>
+        <translation type="unfinished">%1 పాస్‌వర్డ్ స్టోర్‌లో లేదు, లేదా మార్గంలో ఉన్న ఫోల్డర్ పేరులో ఒక లైన్ బ్రేక్ లేదా మరొక కంట్రోల్ క్యారెక్టర్ ఉంది, దీనిని సంతకం చేసిన జాబితా రికార్డ్ చేయలేదు.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1506,7 +1506,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ను గ్రహీతల జాబితాగా చదవలేము (ఇది సాధారణంగా %2 కంటే ఎక్కువ లేని ఫైల్).</translation>
+        <translation type="unfinished">%1 ను గ్రహీతల జాబితాగా చదవలేము (గ్రహీతల జాబితా గరిష్ఠంగా %2 పరిమాణం గల సాధారణ ఫైల్ అయి ఉండాలి).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1958,7 +1958,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">ప్రైవేట్ కీ ఫైల్ ఎవరి చేతికి చిక్కినా, వారు ఏమీ అడగకుండానే ప్రతి పాస్‌వర్డ్‌ను చదవగలరు.</translation>
+        <translation type="unfinished">ప్రైవేట్ కీ ఫైల్ ఎవరి చేతికి చిక్కినా, వారిని ఏమీ అడగకుండానే వారు ప్రతి పాస్‌వర్డ్‌ను చదవగలరు.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
@@ -2563,7 +2563,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">... ఈ ఎంట్రీలో మరిన్ని సరిపోలే</translation>
+        <translation type="unfinished">… ఈ ఎంట్రీలో మరిన్ని సరిపోలికలు ఉన్నాయి</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -2869,7 +2869,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">ఎన్‌క్రిప్షన్ విఫలమైంది: ఒక గ్రహీత యొక్క GPG కీని ఉపయోగించలేము. దాని గడువు ముగిసి ఉండవచ్చు లేదా అది రద్దు చేయబడి ఉండవచ్చు, దానికి ఎన్‌క్రిప్షన్ ఉపకీ లేకపోవచ్చు, లేదా అది విశ్వసనీయం కాకపోవచ్చు; కింద ఉన్న gpg సందేశం ఏదో చెబుతుంది.</translation>
+        <translation type="unfinished">ఎన్‌క్రిప్షన్ విఫలమైంది: ఒక గ్రహీత యొక్క GPG కీని ఉపయోగించలేము. దాని గడువు ముగిసి ఉండవచ్చు లేదా అది రద్దు చేయబడి ఉండవచ్చు, దానికి ఎన్‌క్రిప్షన్ ఉపకీ లేకపోవచ్చు, లేదా అది విశ్వసనీయం కాకపోవచ్చు; వీటిలో ఏది కారణమో కింద ఉన్న gpg సందేశం చెబుతుంది.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
@@ -2881,7 +2881,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">డేటా నిల్వ చేయబడింది, కానీ గిట్‌లో నమోదు చేయడం విఫలమైంది. ఇది నివేదించబడింది:
+        <translation type="unfinished">ఎంట్రీ స్టోర్‌లో సేవ్ చేయబడింది, కానీ దాన్ని గిట్‌లో నమోదు చేయడం విఫలమైంది. నివేదించబడినది:
 
 %1</translation>
     </message>
@@ -2893,7 +2893,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">పాస్‌వర్డ్ నిల్వలో %1 లేదు. ఈ నిల్వ లేదా దానిలోని ఫోల్డర్ కోసం గ్రహీతలు సెట్ చేయబడ్డారు.</translation>
+        <translation type="unfinished">%1 పాస్‌వర్డ్ స్టోర్ లోపల లేదు. గ్రహీతలు స్టోర్ కోసం లేదా దానిలోని ఫోల్డర్ కోసం సెట్ చేయబడతారు.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -2960,7 +2960,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 ను గ్రహీతల జాబితాగా చదవలేము (ఇది సాధారణంగా %2 వరకు ఉండే ఫైల్), కాబట్టి ఏదీ ముందే ఎంపిక చేయబడలేదు. ఇక్కడ గ్రహీతలను ఎంచుకునే ముందు, దాన్ని తనిఖీ చేయండి: &quot;సరే&quot; అనేది దానిపై కొత్త జాబితాను సృష్టిస్తుంది.</translation>
+        <translation type="unfinished">%1 ను గ్రహీతల జాబితాగా చదవలేము (గ్రహీతల జాబితా గరిష్ఠంగా %2 పరిమాణం గల సాధారణ ఫైల్ అయి ఉండాలి), కాబట్టి ఏదీ ముందే ఎంపిక చేయబడలేదు. ఇక్కడ గ్రహీతలను ఎంచుకునే ముందు దాన్ని తనిఖీ చేయండి: &quot;సరే&quot; దానిపై కొత్త జాబితాను వ్రాస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3475,7 +3475,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">రిసీవర్ల జాబితాలను %1 కింద తనిఖీ చేయడం…</translation>
+        <translation type="unfinished">%1 కింద గ్రహీతల జాబితాలను తనిఖీ చేస్తోంది…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>

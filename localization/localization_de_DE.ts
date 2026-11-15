@@ -275,7 +275,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines dieser Wörter als vollständiges Wort enthält: &quot;key&quot; versteckt &quot;API key&quot;, nicht &quot;keyboard layout&quot;. Im Zweifel wird also verborgen: &quot;Public key&quot; und &quot;Password hint&quot; sind ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
+        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines dieser Wörter als vollständiges Wort enthält, unabhängig von Groß- und Kleinschreibung: &quot;key&quot; versteckt &quot;API key&quot;, nicht &quot;keyboard layout&quot;. Im Zweifel wird also eher zu viel verborgen: &quot;Public key&quot; und &quot;Password hint&quot; sind ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -608,7 +608,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 verwendet denselben Schlüssel für einen anderen Speicher. Eine Liste der Empfänger, die für einen dieser Speicher signiert wurde, wird im anderen akzeptiert: Verwenden Sie für jeden Speicher, dessen Empfänger unterschiedlich sind, einen separaten Signierschlüssel.</translation>
+        <translation type="unfinished">%1 signiert mit demselben Schlüssel für einen anderen Speicher. Eine Liste der Empfänger, die für einen dieser Speicher signiert wurde, wird im anderen akzeptiert: Verwenden Sie für jeden Speicher, dessen Empfänger unterschiedlich sind, einen separaten Signierschlüssel.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1437,7 +1437,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 befindet sich nicht im Kennwortspeicher oder ein Ordnername enthält einen Zeilenumbruch oder ein anderes Steuerzeichen, das eine signierte Liste nicht aufzeichnen kann.</translation>
+        <translation type="unfinished">%1 befindet sich nicht im Kennwortspeicher oder ein Ordnername auf dem Weg dorthin enthält einen Zeilenumbruch oder ein anderes Steuerzeichen, das eine signierte Liste nicht aufzeichnen kann.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -3081,7 +3081,7 @@ Fortfahren?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Eintrag wurde gespeichert, aber das Aufzeichnen in Git ist fehlgeschlagen. Folgendes wurde gemeldet:
+        <translation type="unfinished">Der Eintrag wurde im Kennwortspeicher gespeichert, aber das Aufzeichnen in Git ist fehlgeschlagen. Folgendes wurde gemeldet:
 
 %1</translation>
     </message>
@@ -3093,7 +3093,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 befindet sich nicht im Kennwortspeicher. Empfänger sind für den Kennwortspeicher oder einen Ordner darin festgelegt.</translation>
+        <translation type="unfinished">%1 befindet sich nicht im Kennwortspeicher. Empfänger werden für den Kennwortspeicher oder einen Ordner darin festgelegt.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>

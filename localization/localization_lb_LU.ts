@@ -2029,7 +2029,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Entrée invalide</translation>
+        <translation type="unfinished">Ongëlteg Agab</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
@@ -2852,7 +2852,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="221"/>
         <source>Invalid password length</source>
-        <translation>Ongülteg Passwuertlängt</translation>
+        <translation type="unfinished">Ongëlteg Passwuertlängt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="222"/>
@@ -2924,7 +2924,7 @@ Weider?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Dës Eingang ass am Späicher gespäichert, awer seng Rekordierung am Git huet net gengo. Wat gemellt ass:
+        <translation type="unfinished">D&apos;Androung ass am Späicher gespäichert, mä se am Git anzedroen ass feelgeschloen. Wat gemellt gouf:
 
 %1</translation>
     </message>

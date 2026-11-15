@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Keď je schránka vypráznená, vráťte späť to, čo bolo na nej predtým, ako ste skopírovali, rovnako ako robí funkcia &quot;pass&quot; -c, pokiaľ niečo iné nebolo skopírované. Len text: formátovanie sa nezachováva. Tento text zostane v pamäti do takej doby. Tam, kde je schránka nedostupná bez zamerania (niektoré prostredia Wayland), je namiesto toho vypráznená.</translation>
+        <translation type="unfinished">Pri vymazaní schránky vrátiť späť to, čo v nej bolo pred kopírovaním, ako to robí pass -c, pokiaľ sa medzitým neskopírovalo niečo iné. Iba text: formátovanie sa neobnoví. Tento text zostane dovtedy v pamäti. Tam, kde schránku nemožno prečítať bez aktívneho okna (niektoré prostredia Wayland), sa namiesto toho vymaže.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Skryť polia, ktoré obsahujú aj tajomstvo, a nie len heslo: polie, ktorého meno obsahuje jedno z týchto slov. Vypnuté: iba je skryté heslo.</translation>
+        <translation type="unfinished">Skryť aj polia, ktoré obsahujú tajomstvo, nielen heslo: pole, ktorého názov obsahuje jedno z týchto slov. Vypnuté: skryje sa iba heslo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -579,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Nasať pôvodné hesla: PIN, kódy kariet, kľúče, tokeny a podobne.</translation>
+        <translation type="unfinished">Obnoviť predvolené slová: PIN, kódy kariet, kľúče, tokeny, kódy na obnovenie a podobne.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1551,7 +1551,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 sa nedá čítať ako zoznam príjemcov (jednoduchý súbor s maximálnou dĺžkou %2 znakov).</translation>
+        <translation type="unfinished">%1 sa nedá prečítať ako zoznam príjemcov (bežný súbor s veľkosťou najviac %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1563,12 +1563,12 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 nie je bežný súbor a nebol obnovený. Skontrolujte ho, odstráňte ho a potom znovu spustite šifrovanie.</translation>
+        <translation type="unfinished">%1 nie je bežný súbor a nebol obnovený. Skontrolujte ho, odstráňte ho a potom znovu spustite prešifrovanie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="695"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 existuje popri %2. Obe sú zašifrované kópie záznamu; skontrolujte, ktorú chcete, druhú zmažte a potom znovu spustite šifrovanie.</translation>
+        <translation type="unfinished">%1 existuje popri %2. Obe sú zašifrované kópie záznamu; skontrolujte, ktorú chcete, druhú zmažte a potom znovu spustite prešifrovanie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
@@ -1578,7 +1578,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="703"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 chýba a jeho zálohu %2 sa nepodarilo premenovať späť. Premenujte ju ručne a potom znovu spustite šifrovanie.</translation>
+        <translation type="unfinished">%1 chýba a jeho zálohu %2 sa nepodarilo premenovať späť. Premenujte ju ručne a potom znovu spustite prešifrovanie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="945"/>
@@ -2017,7 +2017,7 @@ Prešifrovanie sa nedokončilo, preto sú niektoré alebo všetky položky stál
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dĺžka bezpečnostného hesla nie je nijako obmedzená a malo by byť zvolené s rozvahou. Z bezpečnostného pohľadu je heslo odomykajúce privátny kľúč jedným z najslabších bodov v GnuPG (a iných šifrovacích systémov na podobnom princípe) pretože je jedinou ochranou v prípade, že se dalšia osoba zmocní privátneho kľúča. &lt;br/&gt;Ideálne by bezpečnostné heslo nemalo obsahovať slovníkové heslá a naopak malo používať mix veľkých a malých znakov abecedy a dalšie špeciálne znaky.&lt;br/&gt;Dobré heslo je zásadné pre bezpečné používanie GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dĺžka bezpečnostného hesla nie je nijako obmedzená a malo by byť zvolené s rozvahou. Z bezpečnostného pohľadu je heslo odomykajúce privátny kľúč jedným z najslabších bodov v GnuPG (a v iných šifrovacích systémoch na podobnom princípe), pretože je jedinou ochranou v prípade, že sa ďalšia osoba zmocní privátneho kľúča. &lt;br/&gt;Ideálne by bezpečnostné heslo nemalo obsahovať slová zo slovníka a naopak by malo používať mix veľkých a malých znakov abecedy a ďalšie špeciálne znaky.&lt;br/&gt;Dobré heslo je zásadné pre bezpečné používanie GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
@@ -2111,7 +2111,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Meno a Bezpečnostné heslo nemôžu obsahovať znaky prechodu na nový riadok.</translation>
+        <translation type="unfinished">Meno a bezpečnostné heslo nemôžu obsahovať znaky prechodu na nový riadok.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2820,7 +2820,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… viac zadaní v tomto zázname</translation>
+        <translation type="unfinished">… ďalšie zhody v tomto zázname</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -3140,7 +3140,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Uložené, nie potvrdené</translation>
+        <translation type="unfinished">Uložené, nezapísané do commitu</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3226,7 +3226,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 sa nedá prečítať ako zoznam prijímateľov (obvyklý súbor s maximálnou dĺžkou %2), takže nič nie je prednastavené. Skontrolujte to, než si vyberiete prijímateľov tu: &quot;OK&quot; zapíše nový zoznam nad stávajúcim.</translation>
+        <translation type="unfinished">%1 sa nedá prečítať ako zoznam príjemcov (bežný súbor s veľkosťou najviac %2), preto nie je predvolene vybraný nikto. Pred výberom príjemcov ho tu skontrolujte: OK ho prepíše novým zoznamom.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3501,7 +3501,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfigurované GPG domovské adresár %1 neexistuje.</translation>
+        <translation type="unfinished">Nastavený domovský adresár GPG %1 neexistuje.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3743,7 +3743,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Kontrolujeme zoznamy príjemníkov pod %1…</translation>
+        <translation type="unfinished">Kontrolujú sa zoznamy príjemcov v %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3769,7 +3769,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Odkaz %1 bol odstránený a systém Git už nerieši, ale commit nebol úspešný: %2</translation>
+        <translation type="unfinished">Odkaz %1 bol odstránený a Git ho už nesleduje, ale commit zlyhal: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>
@@ -3935,7 +3935,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Poznámka: Po stlačení OK sa každé heslo v tomto adresári a jeho podadresároch prešifruje pre vybraných používateľov; môže to chvíľu trvať.
 Tučné položky majú k dispozícii tajný kľúč, vyberte jednu z nich, aby ste mohli dešifrovať aj vy.
 Obyčajné položky majú dôveryhodný šifrovací kľúč, vyberte ich, aby mohli dešifrovať aj ostatní.
-Pre položky [NEPLATNÉ] a [EXPIROVANÉ] nie je možné šifrovať; položky [ČÁSTOVÝ] majú kľúč, ktorý nie je úplne dôveryhodný.</translation>
+Pre položky [NEPLATNÉ] a [EXPIROVANÉ] nie je možné šifrovať; položky [ČIASTOČNÝ] majú kľúč, ktorý nie je úplne dôveryhodný.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>

@@ -575,7 +575,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Elrejt olyan mezőket, amelyek titkos információt is tartalmaznak, nem csak a jelszó: egy olyan mező, amelynek neve ezekből az értékekből áll. Ki: Csak a jelszó van elrejtve.</translation>
+        <translation type="unfinished">A jelszón kívül a titkot tartalmazó mezők elrejtése is: azoké a mezőké, amelyek nevében szerepel e szavak valamelyike. Ki: csak a jelszó van elrejtve.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -585,7 +585,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Helyezz vissza a alapértékű szavakat: PIN-kód, kártyakódok, kulcsok, tokenek, helyreállítási kódonak és hasonló.</translation>
+        <translation type="unfinished">Az alapértelmezett szavak visszaállítása: PIN, kártyakódok, kulcsok, tokenek, helyreállítási kódok és hasonlók.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1393,7 +1393,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">A jelszó tárolóban nem található a megadott %1, vagy egy mappan belül lévő név, ami szakaszra osztja a tartalmat, vagy más irányító karaktert tartalmaz, amit aláírt lista nem tud rögzíteni.</translation>
+        <translation type="unfinished">A(z) %1 nincs a jelszótárolón belül, vagy az útvonal egyik mappájának neve sortörést vagy más vezérlőkaraktert tartalmaz, amelyet egy aláírt lista nem tud rögzíteni.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1551,7 +1551,7 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">A %1-t nem lehet címzett listának értelmezni (ez egy átlagos fájl, amely maximum %2 karakterből áll).</translation>
+        <translation type="unfinished">A(z) %1 nem olvasható címzettlistaként (legfeljebb %2 méretű szabályos fájl).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -2065,7 +2065,7 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">A név és a jelszó nem tartalmazhat szakaszváltást.</translation>
+        <translation type="unfinished">A név és a jelszó nem tartalmazhat sortörést.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2651,13 +2651,13 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… több találat ebben az bejegyzésben</translation>
+        <translation type="unfinished">… további találatok ebben a bejegyzésben</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Az első %n találatot jeleníti meg; szűkítve a keresést, hogy többet lásson.</numerusform>
+            <numerusform>Az első %n találat látható; a többi megtekintéséhez szűkítse a keresést.</numerusform>
         </translation>
     </message>
     <message>
@@ -2999,7 +2999,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">A %1 nem található a jelszó tárolón. A foglalat vagy a tároló/tartalomhoz tartozó mapp beállított, hogy ki kapja az információt.</translation>
+        <translation type="unfinished">A(z) %1 nincs a jelszótárolón belül. Címzetteket a tárolóhoz vagy egy benne lévő mappához lehet beállítani.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3275,7 +3275,7 @@ Folytatja?</translation>
         <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Ez az bejegyzés %n sorból áll, ami túl sok ahhoz, hogy ide szerkeszd.</numerusform>
+            <numerusform>Ez a bejegyzés %n sorból áll, ez túl sok az itteni szerkesztéshez.</numerusform>
         </translation>
     </message>
 </context>
@@ -3579,7 +3579,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">A fogadó listák ellenőrzése a %1-en…</translation>
+        <translation type="unfinished">A(z) %1 alatti címzettlisták ellenőrzése…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3605,7 +3605,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">A %1 hivatkozás eltávolítva lett, és a git többé nem nyomon követi, de a commit sikertelen: %2</translation>
+        <translation type="unfinished">A(z) %1 hivatkozás eltávolítva, és a git már nem követi nyomon, de a commit sikertelen: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

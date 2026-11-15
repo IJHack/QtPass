@@ -268,12 +268,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1196"/>
         <source>Generate</source>
-        <translation>Генерирај</translation>
+        <translation type="unfinished">Генериши</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1199"/>
         <source>Generate GPG key pair</source>
-        <translation>Генерирај пар кључева GPG</translation>
+        <translation type="unfinished">Генериши пар кључева GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1232"/>
@@ -2062,7 +2062,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Невалиан улаз</translation>
+        <translation type="unfinished">Неисправан унос</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
@@ -2185,7 +2185,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="484"/>
         <source>Git pull</source>
-        <translation>Гит извуче</translation>
+        <translation type="unfinished">Гит повуци</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -2645,7 +2645,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="430"/>
         <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Add password</source>
-        <translation>Додај парол</translation>
+        <translation type="unfinished">Додај лозинку</translation>
     </message>
     <message>
         <source>New Folder: 
@@ -2776,7 +2776,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… још резултата у овој записи</translation>
+        <translation type="unfinished">… још резултата у овом запису</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -3096,7 +3096,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Зачувано, али није коммитовано</translation>
+        <translation type="unfinished">Сачувано, али није комитовано</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3182,7 +3182,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 не може бити прочитан као листа прималаца (обична датотека дуга највише %2), тако да ништа није аутоматски изабрано. Проверите га пре него што изаберете примаоце овде: &quot;OK&quot; пише нову листу над њим.</translation>
+        <translation type="unfinished">%1 не може бити прочитан као листа прималаца (обична датотека од највише %2), тако да ништа није унапред изабрано. Проверите га пре него што овде изаберете примаоце: OK преко њега записује нову листу.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3242,7 +3242,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
         <source>Generate</source>
-        <translation>Генерирај</translation>
+        <translation type="unfinished">Генериши</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
@@ -3457,7 +3457,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Конфигурисан GPG дом %1 не постоји.</translation>
+        <translation type="unfinished">Подешени почетни директоријум GPG-а %1 не постоји.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3699,7 +3699,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Проверавање листе прималаца под %1…</translation>
+        <translation type="unfinished">Провера листа прималаца у %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3725,7 +3725,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Линк %1 је уклоњен и Git више не прати, али се комјт није одвио: %2</translation>
+        <translation type="unfinished">Веза %1 је уклоњена и Git је више не прати, али комит није успео: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

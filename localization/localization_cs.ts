@@ -614,7 +614,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Když je schránka vyprázdněna, vraťte zpět to, co bylo na ní před kopováním, stejně jako funkce &quot;pass -c&quot;, pokud mezitím nebyla zkopírována jiná data. Pouze text: formátování není obnoveno. Tento text zůstává v paměti do té doby. Pokud se schránka nemůže přečíst bez aktivního okna (některé Waylandové desktopy), je místo ní vyprázdněna.</translation>
+        <translation type="unfinished">Při vymazání schránky vrátit zpět to, co v ní bylo před kopírováním, stejně jako pass -c, pokud mezitím nebylo zkopírováno něco jiného. Pouze text: formátování se neobnoví. Tento text zůstane do té doby v paměti. Tam, kde schránku nelze přečíst bez aktivního okna (některá prostředí Wayland), se místo toho vymaže.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -640,7 +640,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Skrýt pole, která obsahují tajemství, nejen heslo: pole, jehož jméno obsahuje jedno z těchto slov. Vypnuto: pouze je skrývá heslo.</translation>
+        <translation type="unfinished">Skrýt pole, která obsahují tajemství, nejen heslo: pole, jehož jméno obsahuje jedno z těchto slov. Vypnuto: skryje se pouze heslo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -650,7 +650,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Nasaďte výchozí hesla: PIN, kódy karet, klíče, tokeny a podobné.</translation>
+        <translation type="unfinished">Obnovit výchozí slova: PIN, kódy karet, klíče, tokeny, kódy pro obnovení a podobně.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1177,7 +1177,7 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 už obsahuje zašifrované soubory; nebyly znovu zašifrovány pro zaškrtnuté klíče. Po spuštění to provedete otevřením Uživatelé.</translation>
+        <translation type="unfinished">%1 už obsahuje zašifrované soubory; nebyly znovu zašifrovány pro zaškrtnuté klíče. Po spuštění to provedete otevřením dialogu Uživatelé.</translation>
     </message>
 </context>
 <context>
@@ -1916,7 +1916,7 @@ Opětovné šifrování nebylo dokončeno, takže některé nebo všechny polož
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">Velikost souboru %1 je příliš velká.</translation>
+        <translation type="unfinished">Soubor %1 je větší, než může být soubor s klíčem.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2476,7 +2476,7 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass je uživatelské rozhraní pro &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardní správce unixových hesel.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass je grafické rozhraní pro &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardní unixový správce hesel.&lt;/p&gt;
 &lt;p&gt;Nahlaste prosím všechny &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problémy&lt;/a&gt;, které byste mohli mít s tímto softwarem.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentace&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Zdrojový kód&lt;/a&gt;&lt;/p&gt;</translation>
@@ -2689,7 +2689,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="221"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Operace vypršela; rozhraní se znovu aktivuje.</translation>
+        <translation type="unfinished">Časový limit operace vypršel; rozhraní se znovu aktivuje.</translation>
     </message>
     <message>
         <source>Process Output</source>
@@ -3079,7 +3079,7 @@ Pokračovat?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Záznam byl uložen do úložiště, ale jeho zaznamenání v systému Git selhalo. Zaznamenáno bylo:
+        <translation type="unfinished">Záznam byl uložen do úložiště, ale jeho zaznamenání v systému Git selhalo. Hlášená chyba:
 
 %1</translation>
     </message>
@@ -3158,7 +3158,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 nelze interpretovat jako seznam příjemců (běžný soubor o maximální délce %2), takže žádní příjemci nejsou předvybráni. Zkontrolujte to, než si vyberete příjemce zde: &quot;OK&quot; přepiše stávající seznam.</translation>
+        <translation type="unfinished">%1 nelze interpretovat jako seznam příjemců (běžný soubor o maximální délce %2), takže žádní příjemci nejsou předvybráni. Zkontrolujte to, než si vyberete příjemce zde: &quot;OK&quot; přepíše stávající seznam.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3433,7 +3433,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfigurované GPG domovské adresáře %1 neexistují.</translation>
+        <translation type="unfinished">Nastavený domovský adresář GPG %1 neexistuje.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3701,7 +3701,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Odkaz %1 byl smazán a Git už ho ne sleduje, ale commit selhal: %2</translation>
+        <translation type="unfinished">Odkaz %1 byl smazán a Git ho už nesleduje, ale commit selhal: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>
@@ -3867,7 +3867,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Poznámka: Po stisknutí OK se každé heslo v této složce a jejích podsložkách znovu zašifruje pro vybrané uživatele; může to chvíli trvat.
 Tučné položky mají k dispozici tajný klíč; vyberte jednu z nich, abyste mohli dešifrovat sami.
 Obyčejné položky mají důvěryhodný šifrovací klíč; vyberte je, chcete-li povolit dešifrování ostatním.
-Pro položky [INVALID] a [EXPIRED] nelze šifrovat; položky [PARTIAL] mají klíč, který není plně důvěryhodný.</translation>
+Pro položky [NEPLATNÝ] a [PLATNOST VYPRŠELA] nelze šifrovat; položky [ČÁSTEČNÝ] mají klíč, který není plně důvěryhodný.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>

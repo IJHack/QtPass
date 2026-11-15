@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Når udklipspuddet er blevet ryddet, så indsæt det, der var der før kopieringen, som pass -c gør, medmindre andet er kopieret i mellemtiden. Kun tekst: formateringen bliver ikke gendannet. Den tekst forbliver i hukommelsen indtil da. Hvis udklipspuddet ikke kan læses uden fokus (nogle Wayland-skriveborde), så ryddes det i stedet.</translation>
+        <translation type="unfinished">Når udklipsholderen er blevet ryddet, så indsæt det, der var der før kopieringen, som pass -c gør, medmindre andet er kopieret i mellemtiden. Kun tekst: formateringen bliver ikke gendannet. Den tekst forbliver i hukommelsen indtil da. Hvis udklipsholderen ikke kan læses uden fokus (nogle Wayland-skriveborde), så ryddes den i stedet.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -1164,7 +1164,7 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Kunne ikke oprette adgangskodelager på: %1</translation>
+        <translation type="unfinished">Kunne ikke oprette kodeordslager på: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
@@ -1668,7 +1668,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Kunne ikke kontrollere, om lageret har ufletede filer efter pull. Tjek det med git, før du genkrypterer.</translation>
+        <translation type="unfinished">Kunne ikke kontrollere, om lageret har ikke-sammenflettede filer efter pull. Tjek det med git, før du genkrypterer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -2775,7 +2775,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation>Det navn peger uden for adgangskodelageret. Vælg venligst et andet navn.</translation>
+        <translation type="unfinished">Det navn ville pege uden for kodeordslageret. Vælg venligst et andet navn.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1256"/>
@@ -3106,7 +3106,7 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Kryptering mislykkedes: en modtagers GPG-nøgle kan ikke bruges. Den kan være udløbet eller tilbagekaldt, mangle en krypteringsundernøgle eller ikke være betroet; gpg&apos;s meddelelse nedenfor siger hvilken.</translation>
+        <translation type="unfinished">Kryptering mislykkedes: en modtagers GPG-nøgle kan ikke bruges. Den kan være udløbet eller tilbagekaldt, mangle en krypteringsundernøgle eller ikke være betroet; gpg&apos;s meddelelse nedenfor siger, hvilket det er.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
@@ -3118,7 +3118,7 @@ Fortsætte?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Indholdet er gemt, men registreringen i Git mislykkedes. Det rapporterede:
+        <translation type="unfinished">Posten er gemt i lageret, men registreringen i git mislykkedes. Det, der blev rapporteret:
 
 %1</translation>
     </message>
@@ -3470,7 +3470,7 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Den konfigurerede GPG-hjemmappe %1 findes ikke.</translation>
+        <translation type="unfinished">Den konfigurerede GPG-hjemmemappe %1 findes ikke.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3738,7 +3738,7 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Linket %1 er fjernet, og Git følger ikke længere det, men commit-processen mislykkedes: %2</translation>
+        <translation type="unfinished">Linket %1 er fjernet, og git følger det ikke længere, men commit mislykkedes: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>
@@ -3903,7 +3903,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Bemærk: Ved OK genkrypteres alle kodeord i denne mappe og dens undermapper til de valgte brugere; det kan tage et stykke tid.
 Poster i fed har en hemmelig nøgle tilgængelig; vælg en af disse for selv at kunne dekryptere.
 Almindelige poster har en betroet krypteringsnøgle; vælg disse for at tillade andre at dekryptere.
-Der kan ikke krypteres til [INVALID]- og [EXPIRED]-poster; [PARTIAL]-poster har en nøgle, der ikke er fuldt betroet.</translation>
+Der kan ikke krypteres til [UGYLDIG]- og [UDLØBET]-poster; [DELVIS]-poster har en nøgle, der ikke er fuldt betroet.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>

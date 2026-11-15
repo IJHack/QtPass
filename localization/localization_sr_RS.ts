@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Sakrij polja koja drže i tajne, a ne samo lozinku: polje čije ime sadrži jedno od ovih reči. Isključeno: samo je lozinka sakrivena.</translation>
+        <translation type="unfinished">Sakrij polja koja drže i tajne, a ne samo lozinku: polje čije ime sadrži jednu od ovih reči. Isključeno: samo je lozinka sakrivena.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -2149,7 +2149,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="473"/>
         <source>Push</source>
-        <translation>Pusni</translation>
+        <translation type="unfinished">Pošalji</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2192,12 +2192,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="476"/>
         <source>Git push</source>
-        <translation>Git pusni</translation>
+        <translation type="unfinished">Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="484"/>
         <source>Git pull</source>
-        <translation>Git uzmi</translation>
+        <translation type="unfinished">Git pull</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -2650,7 +2650,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1623"/>
         <source>Add folder</source>
-        <translation>Dodaj mapu</translation>
+        <translation type="unfinished">Dodaj fasciklu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
@@ -2788,7 +2788,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… još više potvrda u ovom zapisu</translation>
+        <translation type="unfinished">… još podudaranja u ovom zapisu</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -3469,7 +3469,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfigurisana GPG lokacija %1 ne postoji.</translation>
+        <translation type="unfinished">Konfigurisani GPG direktorijum %1 ne postoji.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>

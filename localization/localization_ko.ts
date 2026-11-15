@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1은 다른 저장소를 위해 동일한 키로 서명합니다. 이 중 하나에 대한 수신자 목록이 다른 곳에서 승인됩니다: 각 저장소의 수신자가 다르면 별도의 서명 키를 사용하십시오.</translation>
+        <translation type="unfinished">%1은(는) 다른 저장소와 같은 키로 서명합니다. 이 저장소 중 하나에 대해 서명된 수신자 목록은 다른 저장소에서도 승인됩니다. 수신자가 다른 저장소마다 별도의 서명 키를 사용하십시오.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1910,7 +1910,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1은 키 파일의 크기보다 큽니다.</translation>
+        <translation type="unfinished">%1은(는) 키 파일이 가질 수 있는 크기보다 큽니다.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -3111,7 +3111,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1은 비밀번호 저장소 내부에 있지 않습니다. 수신자는 저장소 또는 그 안의 폴더로 설정되어 있습니다.</translation>
+        <translation type="unfinished">%1은(는) 비밀번호 저장소 안에 있지 않습니다. 수신자는 저장소 또는 그 안의 폴더에 대해 설정합니다.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3449,7 +3449,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">설정된 GPG 홈 디렉토리 %1 은 존재하지 않습니다.</translation>
+        <translation type="unfinished">설정된 GPG 홈 디렉터리 %1이(가) 존재하지 않습니다.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3691,7 +3691,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">수신자 목록을 %1…에서 확인 중…</translation>
+        <translation type="unfinished">%1 아래의 수신자 목록을 확인하는 중…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>

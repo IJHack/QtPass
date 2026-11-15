@@ -236,7 +236,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">使用位于密码库上方文件夹中的Git仓库</translation>
+        <translation type="unfinished">使用位于密码库上级文件夹中的 Git 仓库</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">当剪贴板被清除时，恢复之前的内容，就像 pass -c 这样的操作一样，除非在复制之间又复制了其他内容。仅文本：格式没有恢复。这段文字会一直保存在内存中，直到那时。对于无法通过焦点读取剪贴板的某些 Wayland 桌面，则会被清除。</translation>
+        <translation type="unfinished">清除剪贴板时，恢复复制前剪贴板上的内容（与 pass -c 的做法相同），除非在此期间又复制了其他内容。仅限文本：不会恢复格式。在此之前，该文本会一直保存在内存中。在没有焦点就无法读取剪贴板的环境中（某些 Wayland 桌面），则改为直接清除剪贴板。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -552,7 +552,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">隐藏包含秘密的字段，不仅仅是密码：一个字段，其名称包含以下任何一个词。 关闭：仅隐藏密码。</translation>
+        <translation type="unfinished">除密码外，也隐藏包含机密的字段：即名称中含有下列任一词语的字段。关闭时：仅隐藏密码。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -597,7 +597,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">覆盖 SSH_AUTH_SOCK 的可选路径。留空通过 gpgconf 自动探测。</translation>
+        <translation type="unfinished">覆盖 SSH_AUTH_SOCK 的可选路径。留空则通过 gpgconf 自动探测。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
@@ -696,7 +696,7 @@ email</source>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 使用相同的密钥，用于另一个密码库。 针对其中一个密码库的收件人列表被接受到另一个：为每个收件人列表使用不同的签名密钥。</translation>
+        <translation type="unfinished">%1 使用相同的签名密钥为另一个密码库签名。为其中一个密码库签名的接收者列表在另一个密码库中也会被接受：请为接收者不同的每个密码库分别使用单独的签名密钥。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1435,7 +1435,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 不在密码存储中，或者路径上的文件夹名称包含换行符或其他控制字符，这无法被数字签名列表记录。</translation>
+        <translation type="unfinished">%1 不在密码库中，或者路径上的某个文件夹名称包含换行符或其他控制字符，而已签名列表无法记录这些字符。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1671,7 +1671,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">pull 之后无法检查存储中是否有未合并的文件。请在重新加密之前用 git 检查。</translation>
+        <translation type="unfinished">拉取之后无法检查密码库中是否有未合并的文件。请在重新加密之前用 git 检查。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -1708,7 +1708,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 是，或者隐藏在，一个符号链接或连接点之后。它指向的内容不在密码库中，因此保持不变。</translation>
+        <translation type="unfinished">拉取后，%1 是符号链接或目录联接，或者位于其后。它所指向的内容不属于密码库，不会被改动。</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2757,7 +2757,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>显示的前 %n 个匹配结果；为了查看其他结果，请缩小搜索范围。</numerusform>
+            <numerusform>仅显示前 %n 个匹配项；请缩小搜索范围以查看其余匹配项。</numerusform>
         </translation>
     </message>
     <message>
@@ -3093,7 +3093,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">加密失败：无法使用某个收件人的 GPG 密钥。它可能已过期或被吊销、没有加密子密钥，或未被信任；下方的 gpg 消息会说明是哪一种。</translation>
+        <translation type="unfinished">加密失败：无法使用某个接收者的 GPG 密钥。它可能已过期或被吊销、没有加密子密钥，或未被信任；下方的 gpg 消息会说明是哪一种。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
@@ -3105,7 +3105,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">该条目已保存到密码库，但将其记录到Git时失败。 报告的内容：
+        <translation type="unfinished">该条目已保存到密码库，但将其记录到 Git 时失败。报告的内容：
 
 %1</translation>
     </message>
@@ -3117,7 +3117,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 不在密码库中。收件人已设置为密码库或其中的一个文件夹。</translation>
+        <translation type="unfinished">%1 不在密码库中。接收者只能为密码库或其中的文件夹设置。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3455,7 +3455,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">配置的 GPG 根目录 %1 不存在。</translation>
+        <translation type="unfinished">配置的 GPG 主目录 %1 不存在。</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3773,7 +3773,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="378"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">选择密码存储文件夹</translation>
+        <translation type="unfinished">选择密码库文件夹</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="403"/>

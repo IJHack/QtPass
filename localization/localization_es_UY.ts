@@ -1404,7 +1404,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 no está dentro del almacén de contraseñas, o el nombre de una carpeta contiene un salto de línea u otro carácter de control, que una lista firmada no puede registrar.</translation>
+        <translation type="unfinished">%1 no está dentro del almacén de contraseñas, o el nombre de una carpeta de la ruta contiene un salto de línea u otro carácter de control, que una lista firmada no puede registrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -2854,7 +2854,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;QtPass es una interfaz para &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor de contraseñas estándar de Unix.&lt;/p&gt;
-&lt;p&gt;Informe de cualquier &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; que pudiera experimentar con este programa.&lt;/p&gt;
+&lt;p&gt;Por favor, informá cualquier &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; que tengas con este programa.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentación&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Código fuente&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
@@ -3854,7 +3854,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Nota: Al pulsar OK, todas las contraseñas de esta carpeta y sus subcarpetas se recifran para los usuarios seleccionados; esto puede demorar un rato.
 Las entradas en negrita tienen una clave secreta disponible; seleccioná una de ellas para poder descifrar vos mismo.
 Las entradas normales tienen una clave de cifrado de confianza; seleccionalas para permitir que otras personas descifren.
-No se puede cifrar para las entradas [INVÁLIDA] y [VENCIÓ]; las entradas [PARCIAL] tienen una clave que no es de plena confianza.</translation>
+No se puede cifrar para las entradas [INVÁLIDA] y [VENCIDA]; las entradas [PARCIAL] tienen una clave que no es de plena confianza.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
@@ -3937,7 +3937,7 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
     <message>
         <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
-        <translation>[VENCIÓ] </translation>
+        <translation type="unfinished">[VENCIDA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="399"/>

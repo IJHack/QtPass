@@ -447,7 +447,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">عندما يتم مسح الحافظة، يجب استعادة ما كان عليها قبل النسخ، كما تفعل وظيفة &quot;pass -c&quot;، إلا إذا تم نسخ شيء آخر في ذلك الوقت. النص فقط: لا يتم استعادة التنسيق. يبقى هذا النص في الذاكرة حتى ذلك الوقت. حيث لا يمكن قراءة الحافظة بدون التركيز (في بعض سطح المكتبات Wayland)، يتم مسحها بدلاً من ذلك.</translation>
+        <translation type="unfinished">عند مسح الحافظة، استعادة ما كان عليها قبل النسخ، كما يفعل pass -c، ما لم يُنسخ شيء آخر في الأثناء. النص فقط: لا يُستعاد التنسيق. يبقى هذا النص في الذاكرة حتى ذلك الحين. حيث لا يمكن قراءة الحافظة دون تركيز (بعض أسطح مكتب Wayland)، تُمسح بدلًا من ذلك.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -473,7 +473,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">إخفاء الحقول التي تحتوي على أسرار، وليس فقط كلمة السر: حقل إسم يحتوي على أحد هذه الكلمات. الوضع: يتم إخفاء كلمة السر فقط.</translation>
+        <translation type="unfinished">إخفاء الحقول التي تحتوي على سر أيضًا، وليس كلمة المرور فقط: أي حقل يحتوي اسمه على إحدى هذه الكلمات. عند الإيقاف: تُخفى كلمة المرور فقط.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">استخدم مستودع Git في مجلد يقع فوق المخزن</translation>
+        <translation type="unfinished">استخدام مستودع Git في مجلد يقع فوق المخزن</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -701,7 +701,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 يستخدم نفس المفتاح لتوقيع بيانات من مخزن آخر. يتم قبول قائمة المستلمين الموقعة لمخزن واحد في المخزن الآخر: استخدم مفتاح توقيع منفصلاً لكل مخزن، حيث تختلف قائمة المستلمين.</translation>
+        <translation type="unfinished">%1 يوقّع بالمفتاح نفسه لمخزن آخر. قائمة المستلمين الموقَّعة لأحد هذين المخزنين تُقبل في الآخر: استخدم مفتاح توقيع منفصلًا لكل مخزن يختلف مستلموه.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1392,7 +1392,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 ليس موجودًا داخل مخزن كلمات المرور، أو اسم مجلد يحتوي على سطر جديد أو حرف تحكم آخر، والذي لا يمكن لقائمة موقعة تسجيله.</translation>
+        <translation type="unfinished">%1 ليس موجودًا داخل مخزن كلمات المرور، أو أن اسم مجلد في المسار إليه يحتوي على فاصل أسطر أو حرف تحكم آخر، لا يمكن لقائمة موقَّعة تسجيله.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1891,7 +1891,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 أكبر من حجم ملف المفتاح.</translation>
+        <translation type="unfinished">%1 أكبر من أن يكون ملف مفتاح.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2913,7 +2913,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">تم حفظه، ولكن لم يتم الالتزام به</translation>
+        <translation type="unfinished">تم الحفظ، دون إيداع</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -2932,7 +2932,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ليس موجودًا داخل مخزن كلمات المرور. تم تحديد المستلمين للمخزن أو مجلد معين بداخله.</translation>
+        <translation type="unfinished">%1 ليس موجودًا داخل مخزن كلمات المرور. يُحدَّد المستلمون للمخزن أو لمجلد بداخله.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3280,7 +3280,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">الموقع المخصص لـ GPG %1 غير موجود.</translation>
+        <translation type="unfinished">مجلد GPG الرئيسي المضبوط %1 غير موجود.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3549,7 +3549,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">تمت إزالة الرابط %1، ولم يعد نظام Git يراقبه، ولكن عملية الالتزام فشلت: %2</translation>
+        <translation type="unfinished">تمت إزالة الرابط %1، ولم يعد Git يتتبعه، لكن الإيداع فشل: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

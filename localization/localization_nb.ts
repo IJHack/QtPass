@@ -451,7 +451,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Når utklippsbufferen er tømt, sett tilbake det som var der før kopieringen, slik pass -c gjør, med mindre noe annet ble kopiert i mellomtiden. Kun tekst: formatering er ikke gjenopprettet. Den teksten forblir i minnet til da. Der utklippsbufferen ikke kan leses uten fokus (noen Wayland-skrivebord), blir den tømt istedenfor.</translation>
+        <translation type="unfinished">Når utklippstavlen er tømt, sett tilbake det som var der før kopieringen, slik pass -c gjør, med mindre noe annet ble kopiert i mellomtiden. Kun tekst: formatering er ikke gjenopprettet. Den teksten forblir i minnet til da. Der utklippstavlen ikke kan leses uten fokus (noen Wayland-skrivebord), blir den tømt istedenfor.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -1130,7 +1130,7 @@ e-post</translation>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Passordlageret er ikke i gang</translation>
+        <translation type="unfinished">Passordlageret er ikke initialisert</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1392,7 +1392,7 @@ e-post</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 er ikke lagret i passordbeholderen, eller et mappens navn inneholder en linjeskift eller et annet kontrolltegn, som en signert liste ikke kan registrere.</translation>
+        <translation type="unfinished">%1 er ikke inne i passordlageret, eller et mappenavn underveis inneholder et linjeskift eller et annet kontrolltegn, som en signert liste ikke kan registrere.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1628,7 +1628,7 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Kunne ikke sjekke om lageret har ufusjonerte filer etter pull. Sjekk det med git før du krypterer på nytt.</translation>
+        <translation type="unfinished">Kunne ikke sjekke om lageret har filer som ikke er slått sammen etter pull. Sjekk det med git før du rekrypterer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -2909,7 +2909,7 @@ Fortsette?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Oppføringen er lagret, men registreringen i Git mislyktes. Det som ble rapportert:
+        <translation type="unfinished">Oppføringen er lagret i passordlageret, men registreringen i git mislyktes. Det som ble rapportert:
 
 %1</translation>
     </message>
@@ -2921,7 +2921,7 @@ Fortsette?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 er ikke lagret i passordlageret. Mottakerne er satt for lageret eller en mappe inni.</translation>
+        <translation type="unfinished">%1 er ikke inne i passordlageret. Mottakere angis for lageret eller en mappe i det.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3529,7 +3529,7 @@ Fortsette?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Lenken %1 ble fjernet, og Git følger ikke lenger den, men commit-operasjonen mislyktes: %2</translation>
+        <translation type="unfinished">Lenken %1 ble fjernet, og git følger den ikke lenger, men commit mislyktes: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

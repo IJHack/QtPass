@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">ซ่อนช่องเก็บข้อมูลที่เป็นความลับ, ไม่เพียงแค่รหัสผ่าน: ช่องที่มีชื่อที่ประกอบด้วยคำเหล่านี้ ช่องเปิด: จะซ่อนเฉพาะรหัสผ่าน</translation>
+        <translation type="unfinished">ซ่อนฟิลด์ที่เก็บความลับด้วย ไม่ใช่แค่รหัสผ่าน: คือฟิลด์ที่ชื่อมีคำใดคำหนึ่งต่อไปนี้ ปิด: จะซ่อนเฉพาะรหัสผ่าน</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -572,7 +572,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">เส้นทางเลือกสำหรับแทนที่ SSH_AUTH_SOCK เว้นว่างไว้เพื่อตรวจจับอัตโนมัติผ่าน gpgconf</translation>
+        <translation type="unfinished">เส้นทาง (ไม่บังคับ) สำหรับแทนที่ SSH_AUTH_SOCK เว้นว่างไว้เพื่อตรวจจับอัตโนมัติผ่าน gpgconf</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1392"/>
@@ -1491,7 +1491,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">เนื่องจาก %1 ไม่ได้อยู่ในที่เก็บรหัสผ่าน หรือชื่อโฟลเดอร์ใดๆ ที่มีบรรทัดใหม่หรือตัวควบคุมอื่นๆ ซึ่งไม่สามารถบันทึกได้</translation>
+        <translation type="unfinished">%1 ไม่ได้อยู่ในที่เก็บรหัสผ่าน หรือชื่อโฟลเดอร์ใดโฟลเดอร์หนึ่งในเส้นทางมีการขึ้นบรรทัดใหม่หรืออักขระควบคุมอื่น ซึ่งรายชื่อที่ลงนามไม่สามารถบันทึกได้</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1501,7 +1501,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ไม่สามารถอ่านเป็นรายชื่อผู้รับได้ (ซึ่งเป็นไฟล์ปกติที่มีขนาดไม่เกิน %2)</translation>
+        <translation type="unfinished">%1 ไม่สามารถอ่านเป็นรายชื่อผู้รับได้ (ต้องเป็นไฟล์ปกติที่มีขนาดไม่เกิน %2)</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1619,7 +1619,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">ไม่สามารถตรวจสอบได้ว่าคลังมีไฟล์ที่ยังไม่ได้รวมหลังการ pull หรือไม่ ตรวจสอบด้วย git ก่อนเข้ารหัสใหม่</translation>
+        <translation type="unfinished">ไม่สามารถตรวจสอบได้ว่าที่เก็บรหัสผ่านมีไฟล์ที่ยังไม่ได้ผสานรวมหลังการ pull หรือไม่ โปรดตรวจสอบด้วย git ก่อนเข้ารหัสใหม่</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -1656,7 +1656,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 คือ หรือซ่อนอยู่ภายใต้ ลิงก์เชิงสัญลักษณ์ หรือจุดเชื่อมต่อ หลังจากดึงข้อมูลออกมา สิ่งที่ลิงก์นั้นชี้ไปไม่ได้เป็นส่วนหนึ่งของฐานข้อมูลรหัสผ่าน และจะถูกปล่อยทิ้งไว้ตามเดิม</translation>
+        <translation type="unfinished">หลังการ pull %1 เป็นลิงก์สัญลักษณ์หรือจังก์ชัน หรืออยู่ภายใต้ลิงก์ดังกล่าว สิ่งที่ลิงก์ชี้ไปไม่ใช่ส่วนหนึ่งของที่เก็บรหัสผ่านและจะไม่ถูกแตะต้อง</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1862,7 +1862,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">ขนาดไฟล์ที่ %1 นั้นใหญ่เกินไปสำหรับใช้เป็นคีย์</translation>
+        <translation type="unfinished">%1 มีขนาดใหญ่เกินกว่าที่ไฟล์กุญแจจะเป็นได้</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -1989,7 +1989,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">ชื่อ และวลีรหัสผ่านไม่สามารถมีเครื่องหมายใหม่ได้</translation>
+        <translation type="unfinished">ชื่อและวลีรหัสผ่านต้องไม่มีการขึ้นบรรทัดใหม่</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2857,12 +2857,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">การเข้ารหัสล้มเหลว: ไม่สามารถใช้คีย์ GPG ของผู้รับรายหนึ่งได้ คีย์อาจหมดอายุหรือถูกเพิกถอน ไม่มีคีย์ย่อยสำหรับเข้ารหัส หรือไม่ได้รับความเชื่อถือ ข้อความของ gpg ด้านล่างบอกว่าเป็นกรณีใด</translation>
+        <translation type="unfinished">การเข้ารหัสล้มเหลว: ไม่สามารถใช้กุญแจ GPG ของผู้รับรายหนึ่งได้ กุญแจอาจหมดอายุหรือถูกเพิกถอน ไม่มีกุญแจย่อยสำหรับเข้ารหัส หรือไม่ได้รับความเชื่อถือ ข้อความของ gpg ด้านล่างบอกว่าเป็นกรณีใด</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">บันทึกแล้ว, แต่ยังไม่ได้ยืนยัน</translation>
+        <translation type="unfinished">บันทึกแล้ว แต่ยังไม่ได้คอมมิต</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -2948,7 +2948,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">เนื่องจาก %1 ไม่สามารถอ่านเป็นรายชื่อผู้รับ (ซึ่งเป็นไฟล์ปกติที่มีขนาดไม่เกิน %2) ดังนั้นจึงไม่มีการเลือกผู้รับใดๆ ล่วงหน้า ตรวจสอบและยืนยันรายชื่อผู้รับก่อนที่จะเลือกที่นี่: OK จะเขียนรายการใหม่แทนรายการเดิม</translation>
+        <translation type="unfinished">%1 ไม่สามารถอ่านเป็นรายชื่อผู้รับได้ (ต้องเป็นไฟล์ปกติที่มีขนาดไม่เกิน %2) จึงไม่มีการเลือกผู้รับใดๆ ไว้ล่วงหน้า โปรดตรวจสอบไฟล์นี้ก่อนเลือกผู้รับที่นี่: การกด OK จะเขียนรายชื่อใหม่ทับไฟล์เดิม</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3157,7 +3157,7 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>รายการนี้มี %n แถว ซึ่งมากกว่าที่จะแก้ไขได้ที่นี่</numerusform>
+            <numerusform>รายการนี้มี %n บรรทัด มากเกินกว่าจะแก้ไขที่นี่ได้</numerusform>
         </translation>
     </message>
 </context>
@@ -3219,7 +3219,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">ที่ตั้ง GPG ที่มีการกำหนดค่า %1 ไม่พบ</translation>
+        <translation type="unfinished">ไดเรกทอรีโฮม GPG ที่กำหนดค่าไว้ %1 ไม่มีอยู่</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3461,7 +3461,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">ตรวจสอบรายชื่อผู้รับภายใต้ %1…</translation>
+        <translation type="unfinished">กำลังตรวจสอบรายชื่อผู้รับภายใต้ %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>

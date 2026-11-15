@@ -477,7 +477,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Fsheh fushat që ruajnë edhe një sekret, jo vetëm fjalëkalimin: një fushe, emri e cila përmban ndonjë nga këto terme. Izgjyr: vetëm fjalëkalimi është i fshehur.</translation>
+        <translation type="unfinished">Fshih edhe fushat që mbajnë një sekret, jo vetëm fjalëkalimin: një fushë, emri i së cilës përmban një nga këto fjalë. Joaktiv: fshihet vetëm fjalëkalimi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Duke përdorur një repo Git në dosjen e vendosur mbi depo</translation>
+        <translation type="unfinished">Përdorni një repo Git në një dosje mbi depon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -705,7 +705,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 përdor të njëjtin çelësi për t&apos;i nënshkruar të tjera depo. Lista e marrësve që janë nënshkruar për një nga këto depo, pranohet në tjetrin: përdhosni një çelësi të ndryshëm për të gjitha depot, ku marrësit janë të ndryshuar.</translation>
+        <translation type="unfinished">%1 nënshkruan me të njëjtin çelës për një depo tjetër. Një listë marrësish e nënshkruar për njërën nga këto depo pranohet në tjetrën: përdorni një çelës nënshkrimi të veçantë për çdo depo me marrës të ndryshëm.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1392,7 +1392,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nuk është brenda depojës së fjalëkalimeve, ose emri i një dosje në rrugë përmban një linjë ndarje ose një karakter të kontrollit tjetër, që një listë me firmë nuk mund ta regjistroj.</translation>
+        <translation type="unfinished">%1 nuk është brenda depos së fjalëkalimeve, ose një emër dosjeje përgjatë shtegut përmban një ndërprerje rreshti ose një karakter tjetër kontrolli, të cilin një listë e nënshkruar nuk mund ta regjistrojë.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1510,7 +1510,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 nuk mund të lexohet si një listë adresash (një skedar që është në maksimum %2).</translation>
+        <translation type="unfinished">%1 nuk mund të lexohet si listë marrësish (një skedar i zakonshëm prej jo më shumë se %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1875,7 +1875,7 @@ Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 është më i madh se sa një skedar.</translation>
+        <translation type="unfinished">%1 është më i madh se sa mund të jetë një skedar çelësi.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2587,7 +2587,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">... më shumë përshtatje në këtë fletë</translation>
+        <translation type="unfinished">… më shumë përputhje në këtë zë</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -2917,14 +2917,14 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Ruajtur, nuk është përfunduar</translation>
+        <translation type="unfinished">U ruajt, por nuk u bë commit</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Ky element është ruajtur në depozit, por regjistrimi i tij në Git u dështua. Ç&apos;u raportua:
+        <translation type="unfinished">Zëri është ruajtur në depo, por regjistrimi i tij në git dështoi. Ç&apos;u raportua:
 
 %1</translation>
     </message>
@@ -2936,7 +2936,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 nuk është brenda depojës së fjalëkalimeve. Recipjentët janë vendosur për deponin ose një dosje brenda saj.</translation>
+        <translation type="unfinished">%1 nuk është brenda depos së fjalëkalimeve. Marrësit caktohen për depon ose për një dosje brenda saj.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3003,7 +3003,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 nuk mund të lexohet si një listë me adresat (një skedar i cili është në përgjithësi deri në %2), kështu që asgjë nuk është zgjedhur automatikisht. Kontrolloni atë para se të zgjidhni adresat këtu: OK shkruan një listë të re mbi të.</translation>
+        <translation type="unfinished">%1 nuk mund të lexohet si listë marrësish (një skedar i zakonshëm prej jo më shumë se %2), prandaj asgjë nuk është e parazgjedhur. Kontrollojeni para se të zgjidhni marrësit këtu: OK shkruan një listë të re mbi të.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3276,7 +3276,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">GPG shtëpia e konfiguruar %1 nuk ekziston.</translation>
+        <translation type="unfinished">Dosja bazë e konfiguruar e GPG %1 nuk ekziston.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3519,7 +3519,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Kontrollojm listat e adresuarit në %1…</translation>
+        <translation type="unfinished">Po kontrollohen listat e marrësve nën %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3545,7 +3545,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Linku %1 është fshirë dhe Git nuk e monitoron më, por commit-i ka dështuar: %2</translation>
+        <translation type="unfinished">Lidhja %1 u hoq dhe git nuk e ndjek më, por commit-i dështoi: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

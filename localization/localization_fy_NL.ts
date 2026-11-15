@@ -579,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Plak de standaardwoorden werom: PIN, kaartkodes, sleutel, tokens, herstelkodes en dergelike.</translation>
+        <translation type="unfinished">Set de standertwurden werom: pin, kaartkoades, kaaien, tokens, herstelkoades en sa mear.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1432,7 +1432,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 is net yn &apos;t wachtwurdopslach, of in map namme hat in regelbrek of noch ien kontrole karaktere, dy&apos;t in gesigne list net kin opsjitten.</translation>
+        <translation type="unfinished">%1 stiet net yn de wachtwurdopslach, of in mapnamme ûnderweis befettet in rigeleinde of in oar stjoerteken, dat in ûndertekene list net fêstlizze kin.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1550,7 +1550,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 kin net lêse wurde as in list fan ontvangers (in gewoane bestan mei maksimal %2).</translation>
+        <translation type="unfinished">%1 kin net lêzen wurde as ûntfangerslist (in gewoan bestân fan op syn heechst %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1706,7 +1706,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 is, of leit achter, in symbolysk link of knooppunt netten. Wat dat pointet, is net part fan it wachtwurdopslach en bliuwt los.</translation>
+        <translation type="unfinished">%1 is nei it pullen in symbolyske keppeling of junction, of leit dêrefter. Wêr&apos;t dy nei ferwiist, heart net by de wachtwurdopslach en wurdt net oanrekke.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1915,7 +1915,7 @@ De opnij fersifering is net foltôge, dus guon of alle yngongen binne noch fersi
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 is groter dan in keybestand kin wêze.</translation>
+        <translation type="unfinished">%1 is grutter as in kaaibestân wêze kin.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2012,7 +2012,7 @@ De opnij fersifering is net foltôge, dus guon of alle yngongen binne noch fersi
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Der is gjin limyt oan &apos;e lingte fan in wachtwurd, en it moat soarchfâldich keazen wurde. Fanút it eachpunt fan feiligens is it wachtwurd om de priveekaai te ûntsluten ien fan &apos;e swakste punten yn GnuPG (en ek oare iepenbiere-kaai-fersiferingssystemen), om&apos;t it de ienige beskerming is dy&apos;t jo hawwe as in oar yndividu jo priveekaai krijt. &lt;br/&gt;Ideaallik soe it wachtwurd gjin wurden út in wurdboek brûke moatte en sawol lytse as lytse letters brûke moatte.&lt;br/&gt;In goed wachtwurd is krúsjaal foar it feilige gebrûk fan GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Der is gjin limyt oan &apos;e lingte fan in wachtwurd, en it moat soarchfâldich keazen wurde. Fanút it eachpunt fan feiligens is it wachtwurd om de priveekaai te ûntsluten ien fan &apos;e swakste punten yn GnuPG (en ek oare iepenbiere-kaai-fersiferingssystemen), om&apos;t it de ienige beskerming is dy&apos;t jo hawwe as in oar yndividu jo priveekaai krijt. &lt;br/&gt;Ideaallik soe it wachtwurd gjin wurden út in wurdboek brûke moatte en sawol grutte as lytse letters brûke moatte, en ek net-alfabetyske tekens.&lt;br/&gt;In goed wachtwurd is krúsjaal foar it feilige gebrûk fan GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
@@ -2101,12 +2101,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Ongeldige ynvoer</translation>
+        <translation type="unfinished">Unjildige ynfier</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">De namme en de wachtwurdfrase kinne net yn linebrekken komme.</translation>
+        <translation type="unfinished">De namme en de wachtwurdfrase meie gjin rigeleinen befetsje.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2789,7 +2789,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… mear match yn dit entry</translation>
+        <translation type="unfinished">… mear oerienkomsten yn dizze yngong</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="999"/>
@@ -3139,14 +3139,14 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Bewaarje, net commit</translation>
+        <translation type="unfinished">Bewarre, net commit</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">De oerset is yn opslach, mar it yn te jaan yn Git wie mislukke. Wat rapporteare waard:
+        <translation type="unfinished">De yngong is yn de opslach bewarre, mar it fêstlizzen yn git is mislearre. Wat rapportearre waard:
 
 %1</translation>
     </message>
@@ -3158,7 +3158,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 is net yn &apos;e wachtwurdopslach. De ontvangers binne set foar de opslag of in map dêryn.</translation>
+        <translation type="unfinished">%1 stiet net yn de wachtwurdopslach. Untfangers wurde ynsteld foar de opslach of in map dêryn.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3740,7 +3740,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Kontrolearje de lyst fan destinatysjes ûnder %1…</translation>
+        <translation type="unfinished">Untfangerslisten ûnder %1 wurde kontrolearre…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3766,7 +3766,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">De link %1 waard ferheve en git folget der net mear, mar de commit misle: %2</translation>
+        <translation type="unfinished">De keppeling %1 is fuorthelle en git folget dy net mear, mar de commit is mislearre: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

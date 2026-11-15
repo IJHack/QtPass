@@ -451,7 +451,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Όταν το πρόχειρο κοπύ είναι κενό, επαναφέρετε το περιεχόμενο που ήταν εκεί πριν την αντιγραφή, όπως κάνει το pass -c, εκτός αν κάτι άλλο αντιγραφεί στην ενδιάμεση φάση. Μόνο κείμενο: η μορφοποίηση δεν ανακτάται. Το κείμενο παραμένει στη μνήμη μέχρι τότε. Όπου το πρόχειρο κοπύ δεν μπορεί να διαβαστεί χωρίς εστίαση (σε ορισμένα Wayland desktops), αντί αυτού, γίνεται κενό.</translation>
+        <translation type="unfinished">Όταν το πρόχειρο καθαρίζεται, επαναφορά του περιεχομένου που είχε πριν από την αντιγραφή, όπως κάνει το pass -c, εκτός αν αντιγράφηκε κάτι άλλο στο μεταξύ. Μόνο κείμενο: η μορφοποίηση δεν επαναφέρεται. Αυτό το κείμενο παραμένει στη μνήμη μέχρι τότε. Όπου το πρόχειρο δεν μπορεί να διαβαστεί χωρίς εστίαση (ορισμένα περιβάλλοντα εργασίας Wayland), αντί γι&apos; αυτό καθαρίζεται.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -477,7 +477,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Απόκρυψη πεδίων που περιέχουν ένα μυστικό, όχι μόνο του κωδικού πρόσβασης: ενός πεδίου όπου το όνομα περιέχει μία από αυτές τις λέξεις. Σβήσιμο: μόνο ο κωδικός πρόσβασης είναι κρυπτογραφημένος.</translation>
+        <translation type="unfinished">Απόκρυψη και των πεδίων που περιέχουν μυστικό, όχι μόνο του κωδικού πρόσβασης: πεδίων των οποίων το όνομα περιέχει μία από αυτές τις λέξεις. Ανενεργό: κρύβεται μόνο ο κωδικός πρόσβασης.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -487,7 +487,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Επαναφέρετε τις προεπιλεγμένες λέξεις: κωδικούς PIN, κωδικούς καρτών, κλειδιά, tokens και τα λοιπά.</translation>
+        <translation type="unfinished">Επαναφέρετε τις προεπιλεγμένες λέξεις: PIN, κωδικούς καρτών, κλειδιά, tokens, κωδικούς ανάκτησης και τα παρόμοια.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Χρησιμοποιήστε ένα αποθετήριο Git σε έναν φάκελο πάνω από το σημείο αποθήκευσης</translation>
+        <translation type="unfinished">Χρησιμοποιήστε ένα αποθετήριο Git σε έναν φάκελο πάνω από τον χώρο αποθήκευσης</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -1130,7 +1130,7 @@ e-mail</translation>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Η αποθήκευση του κωδικού πρόσβασης δεν έχει αρχικοποιηθεί</translation>
+        <translation type="unfinished">Ο χώρος αποθήκευσης κωδικών πρόσβασης δεν έχει αρχικοποιηθεί</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -2034,7 +2034,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Το όνομα και η κωδική φράση δεν πρέπει να περιέχουν διακοπές γραμμών.</translation>
+        <translation type="unfinished">Το όνομα και η κωδική φράση δεν μπορούν να περιέχουν αλλαγές γραμμής.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2343,12 +2343,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="476"/>
         <source>Git push</source>
-        <translation>Git ώθηση</translation>
+        <translation type="unfinished">Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="484"/>
         <source>Git pull</source>
-        <translation>Git έλξη</translation>
+        <translation type="unfinished">Git pull</translation>
     </message>
     <message>
         <source>git push</source>
@@ -2422,7 +2422,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="724"/>
         <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Κανένας κωδικός OTP που βρέθηκε σε αυτόν τον κωδικό πρόσβασης</translation>
+        <translation type="unfinished">Δεν βρέθηκε κωδικός OTP σε αυτή την καταχώρηση κωδικού πρόσβασης</translation>
     </message>
     <message>
         <source>Password and Content hidden</source>
@@ -2925,7 +2925,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Αποθηκευμένο, όχι σταθεροποιημένο</translation>
+        <translation type="unfinished">Αποθηκεύτηκε, χωρίς υποβολή (commit)</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3011,7 +3011,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα αποστολέων (ένα απλό αρχείο με μέγιστο μέγεθος %2), επομένως κανένας δεν έχει επιλεγεί προκαταρκτικά. Ελέγξτε το πριν επιλέξετε αποστολείς εδώ: Το &quot;OK&quot; θα αντικαταστήσει το υπάρχον αρχείο με μια νέα λίστα.</translation>
+        <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα παραληπτών (κανονικό αρχείο με μέγεθος έως %2), οπότε δεν προεπιλέγεται τίποτα. Ελέγξτε το πριν επιλέξετε παραλήπτες εδώ: το OK γράφει μια νέα λίστα στη θέση του.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3284,7 +3284,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Το ρυθμισμένο αρχείο GPG στο %1 δεν υπάρχει.</translation>
+        <translation type="unfinished">Ο ρυθμισμένος αρχικός κατάλογος GPG %1 δεν υπάρχει.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3385,7 +3385,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Κανένας κωδικός OTP που βρέθηκε σε αυτόν τον κωδικό πρόσβασης</translation>
+        <translation type="unfinished">Δεν βρέθηκε κωδικός OTP σε αυτή την καταχώρηση κωδικού πρόσβασης</translation>
     </message>
 </context>
 <context>
@@ -3526,7 +3526,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Έλεγχος των λιστών αποστολής υπό %1…</translation>
+        <translation type="unfinished">Έλεγχος των λιστών παραληπτών στο %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>

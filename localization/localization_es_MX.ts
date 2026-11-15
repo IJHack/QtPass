@@ -194,7 +194,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restaurar las palabras predeterminadas: PIN, códigos de tarjeta, llaves, tokens y similares.</translation>
+        <translation type="unfinished">Restaurar las palabras predeterminadas: PIN, códigos de tarjeta, llaves, tokens, códigos de recuperación y similares.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -2854,7 +2854,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;QtPass es una interfaz para &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor de contraseñas estándar de Unix.&lt;/p&gt;
-&lt;p&gt;Informe de cualquier &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; que pudiera experimentar con este programa.&lt;/p&gt;
+&lt;p&gt;Por favor, informa cualquier &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; que tengas con este programa.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentación&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Código fuente&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
@@ -3062,7 +3062,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Guardado, no commitado</translation>
+        <translation type="unfinished">Guardado, pero no confirmado en Git</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3854,7 +3854,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
 Nota: al hacer clic en OK, todas las contraseñas de esta carpeta y sus subcarpetas se vuelven a cifrar para los usuarios seleccionados; esto puede tardar un poco.
 Las entradas en negrita tienen una clave secreta disponible; selecciona una de ellas para poder descifrar por tu cuenta.
 Las entradas normales tienen una clave de cifrado de confianza; selecciónalas para permitir que otras personas descifren.
-No se puede cifrar para las entradas [INVÁLIDA] y [VENCIÓ]; las entradas [PARCIAL] tienen una clave que no es de plena confianza.</translation>
+No se puede cifrar para las entradas [INVÁLIDA] y [VENCIDA]; las entradas [PARCIAL] tienen una clave que no es de plena confianza.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
@@ -3937,7 +3937,7 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
     <message>
         <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
-        <translation>[VENCIÓ] </translation>
+        <translation type="unfinished">[VENCIDA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="399"/>
