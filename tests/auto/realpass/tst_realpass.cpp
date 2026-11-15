@@ -14,6 +14,7 @@
 #include <QFile>
 #include <QScopeGuard>
 #include <QScopedPointer>
+#include <QSignalSpy>
 #include <QTemporaryDir>
 #include <QtTest>
 
@@ -26,6 +27,7 @@ class tst_realpass : public QObject {
 private Q_SLOTS:
   void initTestCase();
   void gitPullBlockingRunsInTheConfiguredStore();
+  void gitPullBlockingSaysWhenItFails();
 
 private:
   QTemporaryDir m_dir;
@@ -107,6 +109,42 @@ void tst_realpass::gitPullBlockingRunsInTheConfiguredStore() {
   QCOMPARE(args, (QStringList{QStringLiteral("git"), QStringLiteral("pull")}));
   QVERIFY2(!storeEnv.isEmpty(), "pass ran without PASSWORD_STORE_DIR");
   QCOMPARE(QDir(storeEnv).canonicalPath(), QDir(m_store).canonicalPath());
+#endif
+}
+
+/**
+ * @brief A pull before an edit that fails is said in the status bar, as the
+ *        native backend says it: the entry about to be edited is not up to
+ *        date with the remote. It went to the debug log only.
+ */
+void tst_realpass::gitPullBlockingSaysWhenItFails() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in pass is a shell script");
+#else
+  const QString failing = QDir(m_dir.path()).filePath(QStringLiteral("fail"));
+  {
+    QFile f(failing);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\necho 'fatal: unable to access the remote' >&2\n"
+            "exit 1\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  AppSettings s;
+  s.passExecutable = failing;
+  s.passStore = m_store;
+  s.usePass = true;
+  QScopedPointer<RealPass> pass(new RealPass);
+  pass->init(s);
+  pass->updateEnv();
+  QSignalSpy status(pass.data(), &Pass::statusMsg);
+  pass->GitPull_b();
+  QCOMPARE(status.count(), 1);
+  const QString message = status.first().first().toString();
+  QVERIFY2(message.contains(QStringLiteral("Git pull failed")) &&
+               message.contains(QStringLiteral("unable to access")),
+           qPrintable(message));
 #endif
 }
 
