@@ -818,8 +818,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   is a TOTP secret there too: it was shown as the password, copied by Ctrl+C
   and "Always copy", and the entry showed no code. It is now kept off the
   screen and the clipboard, and gives the code, as the same field further
-  down always did. A first line that only starts like one, such as
-  `totp:Secr3t!`, is still the password.
+  down always did, also when the seed is grouped with dots or underscores.
+  A first line that only starts like one, such as `totp:Secr3t!`, is still
+  the password.
 - An `otpauth://` URI whose parameter names are written with capitals
   (`Digits=8`, `Period=60`, `Algorithm=SHA256`, `Encoder=steam`) gives the
   code those parameters ask for, and keeps them when the entry is saved. They
