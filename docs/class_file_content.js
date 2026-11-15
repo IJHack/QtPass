@@ -11,6 +11,7 @@ var class_file_content =
     [ "getRemainingLineCount", "class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee", null ],
     [ "isOtpFieldName", "class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f", null ],
     [ "isOtpLine", "class_file_content.html#a722f8a24e019518e36039dc423edeffc", null ],
+    [ "isOtpPasswordLine", "class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7", null ],
     [ "isOtpUriValue", "class_file_content.html#af99e299f227bbdd4714c429004152742", null ],
     [ "isSecretFieldName", "class_file_content.html#a91dfee0a7472e06dad305a66d8025460", null ],
     [ "parse", "class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e", null ],

@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('filecontent_8c
 <p>Implements <a class="el" href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">FileContent::parse()</a> as a single streaming pass over the entry, with the field cap, the display-line cap and the OTP candidate search, plus the cached secret-field-name matcher.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="filecontent_8h_source.html">filecontent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="totp_8h_source.html">totp.h</a>&quot;</code><br />
 <code>#include &lt;QRegularExpression&gt;</code><br />
 <code>#include &lt;QCoreApplication&gt;</code><br />
 <code>#include &lt;QStringTokenizer&gt;</code><br />
@@ -144,6 +145,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a675927185d9a8c3fb4d0310af8c2198a" id="r_a675927185d9a8c3fb4d0310af8c2198a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a675927185d9a8c3fb4d0310af8c2198a">isLineHidden</a> (const QString &amp;line) -&gt; bool</td></tr>
 <tr class="memdesc:a675927185d9a8c3fb4d0310af8c2198a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (<a class="el" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">FileContent::isOtpLine()</a>). "Display the
 file's content as-is" bypasses this filter and shows the entry raw.  <br /></td></tr>
+<tr class="memitem:a6159791af25b399e08098b04e888f7f0" id="r_a6159791af25b399e08098b04e888f7f0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6159791af25b399e08098b04e888f7f0">isBase32Seed</a> (const QString &amp;value) -&gt; bool</td></tr>
+<tr class="memdesc:a6159791af25b399e08098b04e888f7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">value</code> is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; white space or dashes between groups and "=" padding allowed), at least 16 of them (80 bits, the shortest seed in common use), that <a class="el" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699" title="Convenience validity test, for UI feedback.">Totp::isValid()</a> takes.  <br /></td></tr>
 <tr class="memitem:a0d86769788e23564914f8cff635df3da" id="r_a0d86769788e23564914f8cff635df3da"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0d86769788e23564914f8cff635df3da">otpConfigOf</a> (const QString &amp;line) -&gt; QString</td></tr>
 <tr class="memdesc:a0d86769788e23564914f8cff635df3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">The OTP configuration an OTP line holds: the line itself for a bare <span class="tt">otpauth://</span> line, the value for a field.  <br /></td></tr>
 </table>
@@ -152,6 +155,54 @@ file's content as-is" bypasses this filter and shows the entry raw.  <br /></td>
 
 <p class="definition">Definition in file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a6159791af25b399e08098b04e888f7f0" name="a6159791af25b399e08098b04e888f7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6159791af25b399e08098b04e888f7f0">&#9670;&#160;</a></span>isBase32Seed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto isBase32Seed </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">value</code> is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; white space or dashes between groups and "=" padding allowed), at least 16 of them (80 bits, the shortest seed in common use), that <a class="el" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699" title="Convenience validity test, for UI feedback.">Totp::isValid()</a> takes. </p>
+<p>Strict where <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> is lenient (it drops punctuation and reads 0, 1 and 8 as letters, which almost any password survives): this decides whether a first line is a seed or the password. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value of an <span class="tt">OTP:</span>/<span class="tt">TOTP:</span> field. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when it can only be read as a seed. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00053">53</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a6159791af25b399e08098b04e888f7f0_cgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a6159791af25b399e08098b04e888f7f0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a675927185d9a8c3fb4d0310af8c2198a" name="a675927185d9a8c3fb4d0310af8c2198a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a675927185d9a8c3fb4d0310af8c2198a">&#9670;&#160;</a></span>isLineHidden()</h2>
 
@@ -185,17 +236,17 @@ file's content as-is" bypasses this filter and shows the entry raw. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the line is kept out of getRemainingDataForDisplay(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00036">36</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00037">37</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
 </div>
-<div id="dynsection-1-content" class="dyncontent hidden">
+<div id="dynsection-3-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a675927185d9a8c3fb4d0310af8c2198a_cgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary">
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
 </div>
-<div id="dynsection-2-content" class="dyncontent hidden">
+<div id="dynsection-4-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a675927185d9a8c3fb4d0310af8c2198a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -233,17 +284,17 @@ file's content as-is" bypasses this filter and shows the entry raw. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when it is an <span class="tt">otpauth://</span> URI. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00025">25</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00026">26</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
 </div>
-<div id="dynsection-3-content" class="dyncontent hidden">
+<div id="dynsection-5-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a7986f3a7df9713a52e8ba0227e179230_cgraph.svg" width="326" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
 </div>
-<div id="dynsection-4-content" class="dyncontent hidden">
+<div id="dynsection-6-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a7986f3a7df9713a52e8ba0227e179230_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -281,17 +332,17 @@ file's content as-is" bypasses this filter and shows the entry raw. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The configuration, trimmed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00046">46</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00078">78</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
 </div>
-<div id="dynsection-5-content" class="dyncontent hidden">
+<div id="dynsection-7-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a0d86769788e23564914f8cff635df3da_cgraph.svg" width="472" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
 </div>
-<div id="dynsection-6-content" class="dyncontent hidden">
+<div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a0d86769788e23564914f8cff635df3da_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 

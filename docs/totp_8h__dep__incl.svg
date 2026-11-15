@@ -47,24 +47,24 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="533" data-view-height="142" data-section-id="dynsection-1">
+<svg id="graph" class="graph" data-view-width="656" data-view-height="142" data-section-id="dynsection-1">
 <g id="viewport">
 <title>src/totp.h</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="RFC 6238 TOTP: otpauth URI parsing, code generation and canonical re&#45;serialisation.">
-<polygon fill="#999999" stroke="#666666" points="306.38,-134.25 244.62,-134.25 244.62,-113.5 306.38,-113.5 306.38,-134.25"/>
-<text xml:space="preserve" text-anchor="middle" x="275.5" y="-120.75" font-family="Helvetica,sans-Serif" font-size="10.00">src/totp.h</text>
+<polygon fill="#999999" stroke="#666666" points="386.5,-134.25 324.75,-134.25 324.75,-113.5 386.5,-113.5 386.5,-134.25"/>
+<text xml:space="preserve" text-anchor="middle" x="355.62" y="-120.75" font-family="Helvetica,sans-Serif" font-size="10.00">src/totp.h</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),...">
-<polygon fill="white" stroke="#666666" points="115,-77.5 0,-77.5 0,-56.75 115,-56.75 115,-77.5"/>
-<text xml:space="preserve" text-anchor="middle" x="57.5" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/mainwindow.cpp</text>
+<g id="a_Node000002"><a xlink:href="filecontent_8cpp.html" target="_top" xlink:title="Implements FileContent::parse() as a single streaming pass over the entry, with the field cap,...">
+<polygon fill="white" stroke="#666666" points="105.25,-77.5 0,-77.5 0,-56.75 105.25,-56.75 105.25,-77.5"/>
+<text xml:space="preserve" text-anchor="middle" x="52.62" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/filecontent.cpp</text>
 </a>
 </g>
 </g>
@@ -72,17 +72,17 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M233.17,-112.24C193.69,-102.33 135.26,-87.65 96.79,-77.99"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="232.25,-115.62 242.8,-114.66 233.95,-108.83 232.25,-115.62"/>
+<path fill="none" stroke="#63b8ff" d="M313.03,-115.18C258.62,-105.35 164.44,-88.33 105.5,-77.68"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="312.39,-118.62 322.85,-116.95 313.63,-111.73 312.39,-118.62"/>
 </a>
 </g>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="otpcodewidget_8h.html" target="_top" xlink:title="Self&#45;refreshing widget showing an entry&#39;s current TOTP code with a countdown bar and optional copy bu...">
-<polygon fill="white" stroke="#666666" points="247.62,-77.5 133.38,-77.5 133.38,-56.75 247.62,-56.75 247.62,-77.5"/>
-<text xml:space="preserve" text-anchor="middle" x="190.5" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/otpcodewidget.h</text>
+<g id="a_Node000003"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),...">
+<polygon fill="white" stroke="#666666" points="238.12,-77.5 123.12,-77.5 123.12,-56.75 238.12,-56.75 238.12,-77.5"/>
+<text xml:space="preserve" text-anchor="middle" x="180.62" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/mainwindow.cpp</text>
 </a>
 </g>
 </g>
@@ -90,89 +90,107 @@
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M250.83,-106.98C236.19,-97.55 218.1,-85.9 205.56,-77.83"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="248.73,-109.79 259.03,-112.27 252.52,-103.91 248.73,-109.79"/>
-</a>
-</g>
-</g>
-<!-- Node5 -->
-<g id="Node000005" class="node">
-<title>Node5</title>
-<g id="a_Node000005"><a xlink:href="passworddisplaypanel_8cpp.html" target="_top" xlink:title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local...">
-<polygon fill="white" stroke="#666666" points="356.62,-20.75 194.38,-20.75 194.38,0 356.62,0 356.62,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="275.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/passworddisplaypanel.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge6_Node000001_Node000005" class="edge">
-<title>Node1&#45;&gt;Node5</title>
-<g id="a_edge6_Node000001_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M275.5,-101.97C275.5,-77.84 275.5,-39.17 275.5,-21.18"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="272,-101.85 275.5,-111.86 279,-101.86 272,-101.85"/>
-</a>
-</g>
-</g>
-<!-- Node6 -->
-<g id="Node000006" class="node">
-<title>Node6</title>
-<g id="a_Node000006"><a xlink:href="passworddialog_8cpp.html" target="_top" xlink:title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali...">
-<polygon fill="white" stroke="#666666" points="433.5,-77.5 303.5,-77.5 303.5,-56.75 433.5,-56.75 433.5,-77.5"/>
-<text xml:space="preserve" text-anchor="middle" x="368.5" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/passworddialog.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node6 -->
-<g id="edge5_Node000001_Node000006" class="edge">
-<title>Node1&#45;&gt;Node6</title>
-<g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M302.03,-107.26C318.13,-97.78 338.17,-85.98 352.02,-77.83"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="300.27,-104.23 293.43,-112.32 303.82,-110.26 300.27,-104.23"/>
-</a>
-</g>
-</g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:href="totp_8cpp.html" target="_top" xlink:title="Implements Totp: otpauth URI parsing with its length cap and HOTP refusal, RFC 4226 dynamic truncatio...">
-<polygon fill="white" stroke="#666666" points="525,-77.5 452,-77.5 452,-56.75 525,-56.75 525,-77.5"/>
-<text xml:space="preserve" text-anchor="middle" x="488.5" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/totp.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge7_Node000001_Node000007" class="edge">
-<title>Node1&#45;&gt;Node7</title>
-<g id="a_edge7_Node000001_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M317.48,-112.08C356.62,-102.02 414.42,-87.17 451.77,-77.57"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="316.75,-108.66 307.94,-114.54 318.49,-115.44 316.75,-108.66"/>
+<path fill="none" stroke="#63b8ff" d="M313.76,-109.78C282.46,-99.99 240.35,-86.81 211.94,-77.92"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="312.31,-112.99 322.89,-112.63 314.4,-106.31 312.31,-112.99"/>
 </a>
 </g>
 </g>
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="otpcodewidget_8cpp.html" target="_top" xlink:title="Implements OtpCodeWidget: builds the code label, copy button and countdown bar, and owns the one&#45;seco...">
-<polygon fill="white" stroke="#666666" points="176.25,-20.75 50.75,-20.75 50.75,0 176.25,0 176.25,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="113.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/otpcodewidget.cpp</text>
+<g id="a_Node000004"><a xlink:href="otpcodewidget_8h.html" target="_top" xlink:title="Self&#45;refreshing widget showing an entry&#39;s current TOTP code with a countdown bar and optional copy bu...">
+<polygon fill="white" stroke="#666666" points="370.75,-77.5 256.5,-77.5 256.5,-56.75 370.75,-56.75 370.75,-77.5"/>
+<text xml:space="preserve" text-anchor="middle" x="313.62" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/otpcodewidget.h</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge3_Node000003_Node000004" class="edge">
-<title>Node3&#45;&gt;Node4</title>
-<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M167.38,-49.69C154.26,-40.36 138.28,-29 127.15,-21.08"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="165.32,-52.52 175.5,-55.46 169.38,-46.81 165.32,-52.52"/>
+<!-- Node1&#45;&gt;Node4 -->
+<g id="edge3_Node000001_Node000004" class="edge">
+<title>Node1&#45;&gt;Node4</title>
+<g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M341.3,-104.21C334.51,-95.34 326.67,-85.12 321.07,-77.83"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="338.33,-106.08 347.2,-111.89 343.89,-101.82 338.33,-106.08"/>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node5 -->
-<g id="edge4_Node000003_Node000005" class="edge">
-<title>Node3&#45;&gt;Node5</title>
-<g id="a_edge4_Node000003_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M215.17,-50.23C229.81,-40.8 247.9,-29.15 260.44,-21.08"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="213.48,-47.16 206.97,-55.52 217.27,-53.04 213.48,-47.16"/>
+<!-- Node6 -->
+<g id="Node000006" class="node">
+<title>Node6</title>
+<g id="a_Node000006"><a xlink:href="passworddisplaypanel_8cpp.html" target="_top" xlink:title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local...">
+<polygon fill="white" stroke="#666666" points="479.75,-20.75 317.5,-20.75 317.5,0 479.75,0 479.75,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="398.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/passworddisplaypanel.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node6 -->
+<g id="edge7_Node000001_Node000006" class="edge">
+<title>Node1&#45;&gt;Node6</title>
+<g id="a_edge7_Node000001_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M367.21,-103.12C371.49,-95.31 376.14,-86.15 379.62,-77.5 387.48,-58 393.52,-34.06 396.52,-21"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="364.21,-101.33 362.32,-111.75 370.3,-104.78 364.21,-101.33"/>
+</a>
+</g>
+</g>
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:href="passworddialog_8cpp.html" target="_top" xlink:title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali...">
+<polygon fill="white" stroke="#666666" points="556.62,-77.5 426.62,-77.5 426.62,-56.75 556.62,-56.75 556.62,-77.5"/>
+<text xml:space="preserve" text-anchor="middle" x="491.62" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/passworddialog.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node7 -->
+<g id="edge6_Node000001_Node000007" class="edge">
+<title>Node1&#45;&gt;Node7</title>
+<g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M390.45,-108.86C414.59,-99.14 446.12,-86.44 467.52,-77.83"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="389.31,-105.54 381.34,-112.52 391.93,-112.03 389.31,-105.54"/>
+</a>
+</g>
+</g>
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:href="totp_8cpp.html" target="_top" xlink:title="Implements Totp: otpauth URI parsing with its length cap and HOTP refusal, RFC 4226 dynamic truncatio...">
+<polygon fill="white" stroke="#666666" points="648.12,-77.5 575.12,-77.5 575.12,-56.75 648.12,-56.75 648.12,-77.5"/>
+<text xml:space="preserve" text-anchor="middle" x="611.62" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/totp.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node8 -->
+<g id="edge8_Node000001_Node000008" class="edge">
+<title>Node1&#45;&gt;Node8</title>
+<g id="a_edge8_Node000001_Node000008"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M397.99,-113.81C447.37,-103.25 528.13,-85.98 574.93,-75.97"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="397.29,-110.39 388.24,-115.9 398.75,-117.23 397.29,-110.39"/>
+</a>
+</g>
+</g>
+<!-- Node5 -->
+<g id="Node000005" class="node">
+<title>Node5</title>
+<g id="a_Node000005"><a xlink:href="otpcodewidget_8cpp.html" target="_top" xlink:title="Implements OtpCodeWidget: builds the code label, copy button and countdown bar, and owns the one&#45;seco...">
+<polygon fill="white" stroke="#666666" points="299.38,-20.75 173.88,-20.75 173.88,0 299.38,0 299.38,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="236.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/otpcodewidget.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4_Node000004_Node000005" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M290.51,-49.69C277.38,-40.36 261.41,-29 250.27,-21.08"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="288.45,-52.52 298.63,-55.46 292.5,-46.81 288.45,-52.52"/>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node6 -->
+<g id="edge5_Node000004_Node000006" class="edge">
+<title>Node4&#45;&gt;Node6</title>
+<g id="a_edge5_Node000004_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M338.3,-50.23C352.94,-40.8 371.03,-29.15 383.56,-21.08"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="336.61,-47.16 330.09,-55.52 340.4,-53.04 336.61,-47.16"/>
 </a>
 </g>
 </g>

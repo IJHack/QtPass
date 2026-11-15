@@ -1,12 +1,25 @@
 <map id="FileContent::getPasswordForDisplay" name="FileContent::getPasswordForDisplay">
-<area shape="rect" id="Node000001" title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpLine())." alt="" coords="5,36,191,80"/>
-<area shape="rect" id="Node000002" href="$class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="239,44,403,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,55,226,57,221,58,191,60"/>
-<area shape="rect" id="Node000003" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="451,5,658,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="403,42,449,37,455,36,403,47"/>
-<area shape="rect" id="Node000004" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="518,81,592,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="403,68,505,87,499,87,403,74"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="515,80,508,72,513,63,529,57,555,55,582,57,598,66,593,66,581,62,555,60,530,62,517,67,514,72,519,82"/>
-<area shape="rect" id="Node000005" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="706,81,899,109"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="592,93,694,95,688,95,592,98"/>
+<area shape="rect" id="Node000001" title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpPasswordLine())." alt="" coords="5,76,191,120"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password." alt="" coords="239,84,464,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,95,226,97,220,99,192,100"/>
+<area shape="rect" id="Node000003" href="$filecontent_8cpp.html#a6159791af25b399e08098b04e888f7f0" title="Whether value is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; whit..." alt="" coords="560,32,672,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="425,81,547,59,542,60,426,86"/>
+<area shape="rect" id="Node000009" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="512,84,719,112"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="464,95,499,98,494,98,465,100"/>
+<area shape="rect" id="Node000010" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="578,160,653,188"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="403,110,567,159,561,159,402,115"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="573,31,567,23,572,13,589,7,616,5,645,8,662,17,657,17,643,13,616,11,590,13,575,17,572,23,578,32"/>
+<area shape="rect" id="Node000004" href="$class_totp.html#af023ce3487d15c2e290419ddd1ea0699" title="Convenience validity test, for UI feedback." alt="" coords="814,32,913,60"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="672,43,801,45,796,46,672,48"/>
+<area shape="rect" id="Node000005" href="$class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string." alt="" coords="1008,32,1100,60"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="913,43,995,46,989,46,914,48"/>
+<area shape="rect" id="Node000006" href="$class_base32.html#aab3feed3644b481794685b42410cf1e1" title="Decode strict RFC 4648 base32 data." alt="" coords="1166,5,1291,33"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="1100,36,1149,31,1154,31,1101,41"/>
+<area shape="rect" id="Node000007" href="$class_base32.html#a251fbe9bbf3a490d0660690182de2fcb" title="Make human&#45;entered base32 text decodable." alt="" coords="1148,57,1309,85"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="1100,50,1135,57,1130,57,1100,55"/>
+<area shape="rect" id="Node000008" href="$class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters." alt="" coords="1357,57,1510,85"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1310,69,1344,71,1339,71,1310,74"/>
+<area shape="poly" id="edge11_Node000010_Node000010" title=" " alt="" coords="576,160,567,153,571,142,588,136,616,133,650,137,664,149,659,148,648,142,616,139,589,141,575,146,572,152,581,162"/>
+<area shape="rect" id="Node000011" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="767,160,960,188"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="653,171,755,174,749,174,653,176"/>
 </map>

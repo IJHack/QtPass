@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"firstrunwizard_8h.html":[4,0,1,18],
+"firstrunwizard_8h_source.html":[4,0,1,18],
 "functions.html":[3,3,0],
 "functions.html":[3,3,0,0],
 "functions_a.html":[3,3,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "qpushbuttonshowpassword_8h.html":[4,0,1,64],
 "qpushbuttonshowpassword_8h_source.html":[4,0,1,64],
 "qpushbuttonwithclipboard_8cpp.html":[4,0,1,65],
-"qpushbuttonwithclipboard_8cpp_source.html":[4,0,1,65],
-"qpushbuttonwithclipboard_8h.html":[4,0,1,66],
-"qpushbuttonwithclipboard_8h_source.html":[4,0,1,66]
+"qpushbuttonwithclipboard_8cpp_source.html":[4,0,1,65]
 };
