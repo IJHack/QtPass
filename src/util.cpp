@@ -653,6 +653,36 @@ auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
   return html;
 }
 
+// One pass, no regex: a pattern such as \s{1001,} retries from every
+// character of a shorter run, which is quadratic on an entry made of them.
+// A tab or a line feed ends a run in Qt's layout as well, so it ends one
+// here; \v and U+0085 do not, so they count.
+auto Util::boundSpaceRuns(const QString &text) -> QString {
+  QString bounded;
+  // Text before this index is in bounded already, or dropped.
+  qsizetype from = 0;
+  qsizetype run = 0;
+  for (qsizetype i = 0; i < text.size(); ++i) {
+    const QChar ch = text.at(i);
+    if (!ch.isSpace() || ch == QLatin1Char('\t') || ch == QLatin1Char('\n')) {
+      run = 0;
+      continue;
+    }
+    if (++run <= kMaxSpaceRun) {
+      continue;
+    }
+    if (run == kMaxSpaceRun + 1) {
+      bounded += QStringView(text).sliced(from, i - from);
+    }
+    from = i + 1;
+  }
+  if (from == 0) {
+    return text;
+  }
+  bounded += QStringView(text).sliced(from);
+  return bounded;
+}
+
 auto Util::newLinesRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{"[\r\n]"};
   return regex;

@@ -742,6 +742,16 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   running QtPass, is filtered at once and opens only an entry named exactly
   so, as qtpass(1) says; at first start it opened nothing, and from a second
   instance it opened whatever entry came first.
+- The text of an entry below its fields is shown, and so selected and
+  copied, with its whitespace as stored, as `pass show` prints it. Two
+  spaces in a row became one and indentation was dropped
+  ([#210](https://github.com/IJHack/QtPass/issues/210), broken again since
+  1.4.0), and a tab became a space, so a recovery phrase or an indented
+  block copied out of QtPass was not the one stored. With "Show the file
+  content as-is" that went for the password line too, and a field value lost
+  its spacing when it had a link in it. The `git` and `gpg` output shown in
+  the same place keeps its columns now as well. Only a run of more than 1000
+  spaces is shown shorter.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

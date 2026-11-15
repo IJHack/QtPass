@@ -1,13 +1,16 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QAbstractTextDocumentLayout>
 #include <QApplication>
 #include <QSignalSpy>
+#include <QTextDocument>
 #include <QtTest>
 
 #include "../../../src/pass.h"
 #include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/settingsconstants.h"
+#include "../../../src/util.h"
 #include "../testsettings.h"
 
 /**
@@ -24,6 +27,9 @@ private slots:
   void init();
 
   void formatOutputEscapesLinksAndBreaksLines();
+  void formatOutputKeepsWhiteSpace();
+  void formatOutputFoldsCarriageReturns();
+  void formatOutputCutsRunsOfSpacesQtCannotLayOut();
   void failedProcessShowsRedErrorAndFinishes();
   void successfulProcessShowsGreyChatterOnce();
   void silentFailureOnlyFinishes();
@@ -52,6 +58,64 @@ void tst_qtpass::formatOutputEscapesLinksAndBreaksLines() {
   QVERIFY2(html.contains(QStringLiteral("&lt;b&gt;")), qPrintable(html));
   QVERIFY2(html.contains(QStringLiteral("<br />next")), qPrintable(html));
   QVERIFY(!html.contains('\n'));
+}
+
+/**
+ * @brief Rich text collapses white space: "a  b" was shown, and Select All +
+ *        Copy handed back, "a b", indentation was dropped and a tab became a
+ *        space (#210). What formatOutput() returns reads back as the text it
+ *        was given, also after more output is appended through toHtml(), as
+ *        MainWindow::flashText() appends it.
+ */
+void tst_qtpass::formatOutputKeepsWhiteSpace() {
+  const QString text =
+      QStringLiteral("ridge  velvet harbor\n    indented\ntab\there\n"
+                     "trailing   \nsee https://qtpass.org/a  b");
+  QTextDocument document;
+  document.setHtml(QtPass::formatOutput(text));
+  QCOMPARE(document.toPlainText(), text);
+
+  const QString chatter =
+      QtPass::formatOutput(QStringLiteral(" 2 files changed,  3 insertions"),
+                           QStringLiteral("<span style=\"color: darkgray;\">"),
+                           QStringLiteral("</span><br />"));
+  document.setHtml(document.toHtml() + chatter);
+  QCOMPARE(document.toPlainText(),
+           text + QStringLiteral("\n 2 files changed,  3 insertions\n"));
+}
+
+/**
+ * @brief With white space kept, a "\r\n" is still one line end, and a lone
+ *        "\r" stays a space inside its line: as a block of its own, an entry
+ *        of carriage returns would slip past the display cap, which counts
+ *        "\n" only.
+ */
+void tst_qtpass::formatOutputFoldsCarriageReturns() {
+  QTextDocument document;
+  document.setHtml(QtPass::formatOutput(QStringLiteral("one  1\r\ntwo\r\n")));
+  QCOMPARE(document.toPlainText(), QStringLiteral("one  1\ntwo\n"));
+
+  document.setHtml(QtPass::formatOutput(QStringLiteral("a\rb").repeated(1000)));
+  QCOMPARE(document.blockCount(), 1);
+  QCOMPARE(document.toPlainText(), QStringLiteral("a b").repeated(1000));
+}
+
+/**
+ * @brief With white space kept, Qt's line layout never finishes a wrapped
+ *        line with 65536 spaces in a row: one crafted entry froze the window
+ *        for good. The run is cut first, so the text lays out.
+ */
+void tst_qtpass::formatOutputCutsRunsOfSpacesQtCannotLayOut() {
+  QTextDocument document;
+  document.setHtml(QtPass::formatOutput(QStringLiteral("a") +
+                                        QString(65536, QLatin1Char(' ')) +
+                                        QStringLiteral("b")));
+  // Compared before the layout runs, so a regression fails here, not hangs.
+  QCOMPARE(document.toPlainText(),
+           QStringLiteral("a") + QString(Util::kMaxSpaceRun, QLatin1Char(' ')) +
+               QStringLiteral("b"));
+  document.setTextWidth(600);
+  QVERIFY(document.documentLayout()->documentSize().height() > 0);
 }
 
 void tst_qtpass::failedProcessShowsRedErrorAndFinishes() {
@@ -109,9 +173,13 @@ void tst_qtpass::finishedProcessShowsOutputAndChatter() {
                              QStringLiteral("From origin"));
 
   QCOMPARE(output.count(), 2);
-  QCOMPARE(output.at(0).first().toString(), QStringLiteral("Updating 1..2"));
-  QVERIFY(output.at(1).first().toString().contains(
-      QStringLiteral("darkgray;\">From origin")));
+  QCOMPARE(output.at(0).first().toString(),
+           QtPass::formatOutput(QStringLiteral("Updating 1..2")));
+  QCOMPARE(
+      output.at(1).first().toString(),
+      QtPass::formatOutput(QStringLiteral("From origin"),
+                           QStringLiteral("<span style=\"color: darkgray;\">"),
+                           QStringLiteral("</span><br />")));
   // One operation, one re-enable, however many pieces of output it had.
   QCOMPARE(finished.count(), 1);
 }

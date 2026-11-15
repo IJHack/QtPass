@@ -1223,19 +1223,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Lista zawiera więcej niż jedną linię identyfikatora magazynu.</translation>
+        <translation>Lista zawiera więcej niż jedną linię identyfikatora magazynu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Linia identyfikatora magazynu ma nieprawidłowy format: %1</translation>
+        <translation>Linia identyfikatora magazynu ma nieprawidłowy format: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Lista zawiera linię identyfikatora magazynu, ale nie zawiera linii generacji.</translation>
+        <translation>Lista zawiera linię identyfikatora magazynu, ale nie zawiera linii generacji.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1303,7 +1303,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Podpisana lista odbiorców %1 nie zawiera linii identyfikatora magazynu, choć to urządzenie zna ten magazyn po jego identyfikatorze %2: lista mogła zostać zapisana dla innego magazynu i skopiowana tutaj albo przez starszą wersję QtPass. Posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy, ponownie wybierając odbiorców i zapisując, co powoduje zapis linii identyfikatora magazynu.</translation>
+        <translation>Podpisana lista odbiorców %1 nie zawiera linii identyfikatora magazynu, choć to urządzenie zna ten magazyn po jego identyfikatorze %2: lista mogła zostać zapisana dla innego magazynu i skopiowana tutaj albo przez starszą wersję QtPass. Posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy, ponownie wybierając odbiorców i zapisując, co powoduje zapis linii identyfikatora magazynu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1668,7 +1668,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">Po pobraniu zmian (pull) %1 jest dowiązaniem symbolicznym lub punktem połączenia (junction) albo znajduje się za takim dowiązaniem. To, na co wskazuje, nie należy do magazynu haseł i&#xa0;pozostaje nietknięte.</translation>
+        <translation>Po pobraniu zmian (pull) %1 jest dowiązaniem symbolicznym lub punktem połączenia (junction) albo znajduje się za takim dowiązaniem. To, na co wskazuje, nie należy do magazynu haseł i&#xa0;pozostaje nietknięte.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2679,12 +2679,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1700"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Ukryty folder</translation>
+        <translation>Ukryty folder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1701"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Folder, którego nazwa zaczyna się od kropki, byłby ukryty na liście: %1</translation>
+        <translation>Folder, którego nazwa zaczyna się od kropki, byłby ukryty na liście: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1735"/>
@@ -2988,31 +2988,31 @@ Kontynuować?</translation>
         <location filename="../src/pass.cpp" line="851"/>
         <source>rebase</source>
         <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>zmień</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="854"/>
         <source>merge</source>
         <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>scal</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>cherry-pick</source>
         <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>wybierz</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="860"/>
         <source>revert</source>
         <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>cofnij</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="867"/>
         <source>cherry-pick or revert</source>
         <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>wybierz lub cofnij</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="891"/>
@@ -3211,12 +3211,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Nazwa lub folder zaczynające się od kropki byłyby ukryte na liście.</translation>
+        <translation>Nazwa lub folder zaczynające się od kropki byłyby ukryte na liście.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 znajduje się za dowiązaniem symbolicznym lub punktem połączenia (junction), poza magazynem haseł.</translation>
+        <translation>%1 znajduje się za dowiązaniem symbolicznym lub punktem połączenia (junction), poza magazynem haseł.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
