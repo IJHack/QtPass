@@ -1050,9 +1050,12 @@ void tst_mainwindow::secretsAreHiddenWithTemplatesOff() {
   QVERIFY2(!text.contains(QStringLiteral("RK-7Q2M")), qPrintable(text));
   QVERIFY2(text.contains(QStringLiteral("alice")),
            "an ordinary line stays in the text");
-  const auto *pin = m_window->findChild<QLineEdit *>(QStringLiteral("PIN"));
-  QVERIFY2(pin != nullptr && pin->echoMode() == QLineEdit::Password,
-           "the PIN is a hidden row");
+  for (const QString &name :
+       {QStringLiteral("PIN"), QStringLiteral("Recovery key")}) {
+    const auto *row = m_window->findChild<QLineEdit *>(name);
+    QVERIFY2(row != nullptr && row->echoMode() == QLineEdit::Password,
+             qPrintable(name + " must be a hidden row"));
+  }
 }
 
 /**
