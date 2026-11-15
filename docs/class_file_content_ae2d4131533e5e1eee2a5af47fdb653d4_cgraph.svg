@@ -47,16 +47,16 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="1136" data-view-height="145" data-section-id="dynsection-6">
+<svg id="graph" class="graph" data-view-width="1314" data-view-height="145" data-section-id="dynsection-7">
 <g id="viewport">
 <title>FileContent::getPasswordForDisplay</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpPasswordLine()).">
-<polygon fill="#999999" stroke="#666666" points="139,-84.12 0,-84.12 0,-50.62 139,-50.62 139,-84.12"/>
-<text xml:space="preserve" text-anchor="start" x="8" y="-70.62" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::getPassword</text>
-<text xml:space="preserve" text-anchor="middle" x="69.5" y="-57.88" font-family="Helvetica,sans-Serif" font-size="10.00">ForDisplay</text>
+<polygon fill="#999999" stroke="#666666" points="139,-112.12 0,-112.12 0,-78.62 139,-78.62 139,-112.12"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-98.62" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::getPassword</text>
+<text xml:space="preserve" text-anchor="middle" x="69.5" y="-85.88" font-family="Helvetica,sans-Serif" font-size="10.00">ForDisplay</text>
 </a>
 </g>
 </g>
@@ -64,8 +64,8 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" target="_top" xlink:title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password.">
-<polygon fill="white" stroke="#666666" points="344,-77.75 175,-77.75 175,-57 344,-57 344,-77.75"/>
-<text xml:space="preserve" text-anchor="middle" x="259.5" y="-64.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpPasswordLine</text>
+<polygon fill="white" stroke="#666666" points="344,-105.75 175,-105.75 175,-85 344,-85 344,-105.75"/>
+<text xml:space="preserve" text-anchor="middle" x="259.5" y="-92.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpPasswordLine</text>
 </a>
 </g>
 </g>
@@ -73,17 +73,17 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M139.44,-67.38C147.2,-67.38 155.21,-67.38 163.23,-67.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="163.04,-70.88 173.04,-67.38 163.04,-63.88 163.04,-70.88"/>
+<path fill="none" stroke="#63b8ff" d="M139.44,-95.38C147.2,-95.38 155.21,-95.38 163.23,-95.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="163.04,-98.88 173.04,-95.38 163.04,-91.88 163.04,-98.88"/>
 </a>
 </g>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="filecontent_8cpp.html#a6159791af25b399e08098b04e888f7f0" target="_top" xlink:title="Whether value is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; whit...">
-<polygon fill="white" stroke="#666666" points="499.88,-116.75 415.62,-116.75 415.62,-96 499.88,-96 499.88,-116.75"/>
-<text xml:space="preserve" text-anchor="middle" x="457.75" y="-103.25" font-family="Helvetica,sans-Serif" font-size="10.00">isBase32Seed</text>
+<g id="a_Node000003"><a xlink:href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b" target="_top" xlink:title="Whether text holds an otpauth URI anywhere: after a list dash, in quotes, behind other text or a seco...">
+<polygon fill="white" stroke="#666666" points="522,-134.75 380,-134.75 380,-114 522,-114 522,-134.75"/>
+<text xml:space="preserve" text-anchor="middle" x="451" y="-121.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::carriesOtpUri</text>
 </a>
 </g>
 </g>
@@ -91,80 +91,44 @@
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M315.17,-78.24C342.98,-83.77 376.63,-90.45 404.14,-95.92"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="403.16,-99.29 413.65,-97.81 404.52,-92.43 403.16,-99.29"/>
-</a>
-</g>
-</g>
-<!-- Node9 -->
-<g id="Node000009" class="node">
-<title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" target="_top" xlink:title="Whether a field name designates the one&#45;time password field.">
-<polygon fill="white" stroke="#666666" points="535.5,-77.75 380,-77.75 380,-57 535.5,-57 535.5,-77.75"/>
-<text xml:space="preserve" text-anchor="middle" x="457.75" y="-64.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpFieldName</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node9 -->
-<g id="edge9_Node000002_Node000009" class="edge">
-<title>Node2&#45;&gt;Node9</title>
-<g id="a_edge9_Node000002_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M344.3,-67.38C352.3,-67.38 360.43,-67.38 368.47,-67.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="368.25,-70.88 378.25,-67.38 368.25,-63.88 368.25,-70.88"/>
-</a>
-</g>
-</g>
-<!-- Node10 -->
-<g id="Node000010" class="node">
-<title>Node10</title>
-<g id="a_Node000010"><a xlink:href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" target="_top" xlink:title="Shorthand for the public FileContent::isOtpUriValue.">
-<polygon fill="white" stroke="#666666" points="485.62,-20.75 429.88,-20.75 429.88,0 485.62,0 485.62,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="457.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">isOtpUri</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node10 -->
-<g id="edge10_Node000002_Node000010" class="edge">
-<title>Node2&#45;&gt;Node10</title>
-<g id="a_edge10_Node000002_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M297.88,-56.52C332.6,-46.43 384.05,-31.49 418.92,-21.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="419.53,-24.83 428.16,-18.68 417.58,-18.11 419.53,-24.83"/>
-</a>
-</g>
-</g>
-<!-- Node3&#45;&gt;Node3 -->
-<g id="edge3_Node000003_Node000003" class="edge">
-<title>Node3&#45;&gt;Node3</title>
-<g id="a_edge3_Node000003_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M427.8,-117.15C415.82,-125.81 425.8,-134.75 457.75,-134.75 475.22,-134.75 486.12,-132.08 490.46,-128.24"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="493.87,-127.48 488.07,-118.62 487.08,-129.17 493.87,-127.48"/>
+<path fill="none" stroke="#63b8ff" d="M331.33,-106.21C343.41,-108.06 356.03,-109.99 368.36,-111.88"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="367.66,-115.31 378.07,-113.37 368.72,-108.4 367.66,-115.31"/>
 </a>
 </g>
 </g>
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699" target="_top" xlink:title="Convenience validity test, for UI feedback.">
-<polygon fill="white" stroke="#666666" points="680.88,-116.75 606.38,-116.75 606.38,-96 680.88,-96 680.88,-116.75"/>
-<text xml:space="preserve" text-anchor="middle" x="643.62" y="-103.25" font-family="Helvetica,sans-Serif" font-size="10.00">Totp::isValid</text>
+<g id="a_Node000004"><a xlink:href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9" target="_top" xlink:title="Whether a first line is written as an OTP configuration that otpConfigOf() can read: a bare otpauth U...">
+<polygon fill="white" stroke="#666666" points="496.12,-77.75 405.88,-77.75 405.88,-57 496.12,-57 496.12,-77.75"/>
+<text xml:space="preserve" text-anchor="middle" x="451" y="-64.25" font-family="Helvetica,sans-Serif" font-size="10.00">holdsOtpConfig</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge4_Node000003_Node000004" class="edge">
-<title>Node3&#45;&gt;Node4</title>
-<g id="a_edge4_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M500.02,-106.38C528.15,-106.38 565.5,-106.38 594.91,-106.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="594.65,-109.88 604.65,-106.38 594.65,-102.88 594.65,-109.88"/>
+<!-- Node2&#45;&gt;Node4 -->
+<g id="edge3_Node000002_Node000004" class="edge">
+<title>Node2&#45;&gt;Node4</title>
+<g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M334.04,-84.51C354.03,-81.56 375.34,-78.41 394.17,-75.62"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="394.67,-79.09 404.05,-74.16 393.64,-72.16 394.67,-79.09"/>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node4 -->
+<g id="edge4_Node000004_Node000004" class="edge">
+<title>Node4&#45;&gt;Node4</title>
+<g id="a_edge4_Node000004_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M421.23,-78.15C409.32,-86.81 419.25,-95.75 451,-95.75 468.37,-95.75 479.2,-93.08 483.51,-89.24"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="486.93,-88.49 481.13,-79.62 480.13,-90.16 486.93,-88.49"/>
 </a>
 </g>
 </g>
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" target="_top" xlink:title="Parse an OTP configuration string.">
-<polygon fill="white" stroke="#666666" points="821,-116.75 751.75,-116.75 751.75,-96 821,-96 821,-116.75"/>
-<text xml:space="preserve" text-anchor="middle" x="786.38" y="-103.25" font-family="Helvetica,sans-Serif" font-size="10.00">Totp::parse</text>
+<g id="a_Node000005"><a xlink:href="filecontent_8cpp.html#a6159791af25b399e08098b04e888f7f0" target="_top" xlink:title="Whether value is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; whit...">
+<polygon fill="white" stroke="#666666" points="677.88,-116.75 593.62,-116.75 593.62,-96 677.88,-96 677.88,-116.75"/>
+<text xml:space="preserve" text-anchor="middle" x="635.75" y="-103.25" font-family="Helvetica,sans-Serif" font-size="10.00">isBase32Seed</text>
 </a>
 </g>
 </g>
@@ -172,89 +136,170 @@
 <g id="edge5_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
 <g id="a_edge5_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M681.24,-106.38C699.18,-106.38 720.96,-106.38 739.95,-106.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="739.85,-109.88 749.85,-106.38 739.85,-102.88 739.85,-109.88"/>
-</a>
-</g>
-</g>
-<!-- Node6 -->
-<g id="Node000006" class="node">
-<title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_base32.html#aab3feed3644b481794685b42410cf1e1" target="_top" xlink:title="Decode strict RFC 4648 base32 data.">
-<polygon fill="white" stroke="#666666" points="964.12,-136.75 870.88,-136.75 870.88,-116 964.12,-116 964.12,-136.75"/>
-<text xml:space="preserve" text-anchor="middle" x="917.5" y="-123.25" font-family="Helvetica,sans-Serif" font-size="10.00">Base32::decode</text>
-</a>
-</g>
-</g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge6_Node000005_Node000006" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<g id="a_edge6_Node000005_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M821.3,-111.63C832.98,-113.44 846.39,-115.52 859.39,-117.53"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="858.75,-120.97 869.17,-119.04 859.82,-114.05 858.75,-120.97"/>
-</a>
-</g>
-</g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_base32.html#a251fbe9bbf3a490d0660690182de2fcb" target="_top" xlink:title="Make human&#45;entered base32 text decodable.">
-<polygon fill="white" stroke="#666666" points="978,-97.75 857,-97.75 857,-77 978,-77 978,-97.75"/>
-<text xml:space="preserve" text-anchor="middle" x="917.5" y="-84.25" font-family="Helvetica,sans-Serif" font-size="10.00">Base32::sanitizeInput</text>
-</a>
-</g>
-</g>
-<!-- Node5&#45;&gt;Node7 -->
-<g id="edge7_Node000005_Node000007" class="edge">
-<title>Node5&#45;&gt;Node7</title>
-<g id="a_edge7_Node000005_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M821.3,-101.38C828.75,-100.29 836.91,-99.09 845.21,-97.86"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="845.7,-101.33 855.09,-96.41 844.68,-94.4 845.7,-101.33"/>
-</a>
-</g>
-</g>
-<!-- Node8 -->
-<g id="Node000008" class="node">
-<title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" target="_top" xlink:title="Append &#39;=&#39; padding up to a multiple of 8 characters.">
-<polygon fill="white" stroke="#666666" points="1128.25,-97.75 1014,-97.75 1014,-77 1128.25,-77 1128.25,-97.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1071.12" y="-84.25" font-family="Helvetica,sans-Serif" font-size="10.00">Base32::addPadding</text>
-</a>
-</g>
-</g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge8_Node000007_Node000008" class="edge">
-<title>Node7&#45;&gt;Node8</title>
-<g id="a_edge8_Node000007_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M978.43,-87.38C986.21,-87.38 994.23,-87.38 1002.14,-87.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1002.08,-90.88 1012.08,-87.38 1002.08,-83.88 1002.08,-90.88"/>
-</a>
-</g>
-</g>
-<!-- Node10&#45;&gt;Node10 -->
-<g id="edge11_Node000010_Node000010" class="edge">
-<title>Node10&#45;&gt;Node10</title>
-<g id="a_edge11_Node000010_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M429.57,-19.97C414.96,-28.98 424.35,-38.75 457.75,-38.75 479.15,-38.75 490.69,-34.74 492.38,-29.49"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="495.29,-27.54 486.78,-21.22 489.49,-31.46 495.29,-27.54"/>
+<path fill="none" stroke="#63b8ff" d="M496.24,-76.82C522.23,-82.36 555.24,-89.41 582.51,-95.23"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="581.43,-98.58 591.94,-97.24 582.89,-91.73 581.43,-98.58"/>
 </a>
 </g>
 </g>
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_file_content.html#af99e299f227bbdd4714c429004152742" target="_top" xlink:title="Whether a field value is an otpauth URI, and therefore a secret.">
-<polygon fill="white" stroke="#666666" points="715.75,-20.75 571.5,-20.75 571.5,0 715.75,0 715.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="643.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpUriValue</text>
+<g id="a_Node000011"><a xlink:href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" target="_top" xlink:title="Whether a field name designates the one&#45;time password field.">
+<polygon fill="white" stroke="#666666" points="713.5,-77.75 558,-77.75 558,-57 713.5,-57 713.5,-77.75"/>
+<text xml:space="preserve" text-anchor="middle" x="635.75" y="-64.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpFieldName</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node11 -->
-<g id="edge12_Node000010_Node000011" class="edge">
-<title>Node10&#45;&gt;Node11</title>
-<g id="a_edge12_Node000010_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M485.88,-10.38C505.55,-10.38 533.27,-10.38 559.94,-10.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="559.76,-13.88 569.76,-10.38 559.76,-6.88 559.76,-13.88"/>
+<!-- Node4&#45;&gt;Node11 -->
+<g id="edge12_Node000004_Node000011" class="edge">
+<title>Node4&#45;&gt;Node11</title>
+<g id="a_edge12_Node000004_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M496.24,-67.38C511.4,-67.38 528.95,-67.38 546.36,-67.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="546.23,-70.88 556.23,-67.38 546.23,-63.88 546.23,-70.88"/>
+</a>
+</g>
+</g>
+<!-- Node12 -->
+<g id="Node000012" class="node">
+<title>Node12</title>
+<g id="a_Node000012"><a xlink:href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" target="_top" xlink:title="Shorthand for the public FileContent::isOtpUriValue.">
+<polygon fill="white" stroke="#666666" points="663.62,-20.75 607.88,-20.75 607.88,0 663.62,0 663.62,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="635.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">isOtpUri</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node12 -->
+<g id="edge13_Node000004_Node000012" class="edge">
+<title>Node4&#45;&gt;Node12</title>
+<g id="a_edge13_Node000004_Node000012"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M486.8,-56.52C518.21,-46.72 564.31,-32.35 596.68,-22.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="597.57,-25.64 606.07,-19.32 595.48,-18.96 597.57,-25.64"/>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node5 -->
+<g id="edge6_Node000005_Node000005" class="edge">
+<title>Node5&#45;&gt;Node5</title>
+<g id="a_edge6_Node000005_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M605.98,-117.15C594.07,-125.81 604,-134.75 635.75,-134.75 653.12,-134.75 663.95,-132.08 668.26,-128.24"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="671.68,-127.49 665.88,-118.62 664.88,-129.16 671.68,-127.49"/>
+</a>
+</g>
+</g>
+<!-- Node6 -->
+<g id="Node000006" class="node">
+<title>Node6</title>
+<g id="a_Node000006"><a xlink:href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699" target="_top" xlink:title="Convenience validity test, for UI feedback.">
+<polygon fill="white" stroke="#666666" points="858.88,-116.75 784.38,-116.75 784.38,-96 858.88,-96 858.88,-116.75"/>
+<text xml:space="preserve" text-anchor="middle" x="821.62" y="-103.25" font-family="Helvetica,sans-Serif" font-size="10.00">Totp::isValid</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge7_Node000005_Node000006" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<g id="a_edge7_Node000005_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M678.02,-106.38C706.15,-106.38 743.5,-106.38 772.91,-106.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="772.65,-109.88 782.65,-106.38 772.65,-102.88 772.65,-109.88"/>
+</a>
+</g>
+</g>
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" target="_top" xlink:title="Parse an OTP configuration string.">
+<polygon fill="white" stroke="#666666" points="999,-116.75 929.75,-116.75 929.75,-96 999,-96 999,-116.75"/>
+<text xml:space="preserve" text-anchor="middle" x="964.38" y="-103.25" font-family="Helvetica,sans-Serif" font-size="10.00">Totp::parse</text>
+</a>
+</g>
+</g>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge8_Node000006_Node000007" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<g id="a_edge8_Node000006_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M859.24,-106.38C877.18,-106.38 898.96,-106.38 917.95,-106.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="917.85,-109.88 927.85,-106.38 917.85,-102.88 917.85,-109.88"/>
+</a>
+</g>
+</g>
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:href="class_base32.html#aab3feed3644b481794685b42410cf1e1" target="_top" xlink:title="Decode strict RFC 4648 base32 data.">
+<polygon fill="white" stroke="#666666" points="1142.12,-136.75 1048.88,-136.75 1048.88,-116 1142.12,-116 1142.12,-136.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1095.5" y="-123.25" font-family="Helvetica,sans-Serif" font-size="10.00">Base32::decode</text>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node8 -->
+<g id="edge9_Node000007_Node000008" class="edge">
+<title>Node7&#45;&gt;Node8</title>
+<g id="a_edge9_Node000007_Node000008"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M999.3,-111.63C1010.98,-113.44 1024.39,-115.52 1037.39,-117.53"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1036.75,-120.97 1047.17,-119.04 1037.82,-114.05 1036.75,-120.97"/>
+</a>
+</g>
+</g>
+<!-- Node9 -->
+<g id="Node000009" class="node">
+<title>Node9</title>
+<g id="a_Node000009"><a xlink:href="class_base32.html#a251fbe9bbf3a490d0660690182de2fcb" target="_top" xlink:title="Make human&#45;entered base32 text decodable.">
+<polygon fill="white" stroke="#666666" points="1156,-97.75 1035,-97.75 1035,-77 1156,-77 1156,-97.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1095.5" y="-84.25" font-family="Helvetica,sans-Serif" font-size="10.00">Base32::sanitizeInput</text>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node9 -->
+<g id="edge10_Node000007_Node000009" class="edge">
+<title>Node7&#45;&gt;Node9</title>
+<g id="a_edge10_Node000007_Node000009"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M999.3,-101.38C1006.75,-100.29 1014.91,-99.09 1023.21,-97.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1023.7,-101.33 1033.09,-96.41 1022.68,-94.4 1023.7,-101.33"/>
+</a>
+</g>
+</g>
+<!-- Node10 -->
+<g id="Node000010" class="node">
+<title>Node10</title>
+<g id="a_Node000010"><a xlink:href="class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" target="_top" xlink:title="Append &#39;=&#39; padding up to a multiple of 8 characters.">
+<polygon fill="white" stroke="#666666" points="1306.25,-97.75 1192,-97.75 1192,-77 1306.25,-77 1306.25,-97.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1249.12" y="-84.25" font-family="Helvetica,sans-Serif" font-size="10.00">Base32::addPadding</text>
+</a>
+</g>
+</g>
+<!-- Node9&#45;&gt;Node10 -->
+<g id="edge11_Node000009_Node000010" class="edge">
+<title>Node9&#45;&gt;Node10</title>
+<g id="a_edge11_Node000009_Node000010"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1156.43,-87.38C1164.21,-87.38 1172.23,-87.38 1180.14,-87.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1180.08,-90.88 1190.08,-87.38 1180.08,-83.88 1180.08,-90.88"/>
+</a>
+</g>
+</g>
+<!-- Node12&#45;&gt;Node12 -->
+<g id="edge14_Node000012_Node000012" class="edge">
+<title>Node12&#45;&gt;Node12</title>
+<g id="a_edge14_Node000012_Node000012"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M607.74,-19.97C593.22,-28.98 602.55,-38.75 635.75,-38.75 657.02,-38.75 668.49,-34.74 670.17,-29.49"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="673.1,-27.56 664.61,-21.22 667.29,-31.47 673.1,-27.56"/>
+</a>
+</g>
+</g>
+<!-- Node13 -->
+<g id="Node000013" class="node">
+<title>Node13</title>
+<g id="a_Node000013"><a xlink:href="class_file_content.html#af99e299f227bbdd4714c429004152742" target="_top" xlink:title="Whether a field value is an otpauth URI, and therefore a secret.">
+<polygon fill="white" stroke="#666666" points="893.75,-20.75 749.5,-20.75 749.5,0 893.75,0 893.75,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="821.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpUriValue</text>
+</a>
+</g>
+</g>
+<!-- Node12&#45;&gt;Node13 -->
+<g id="edge15_Node000012_Node000013" class="edge">
+<title>Node12&#45;&gt;Node13</title>
+<g id="a_edge15_Node000012_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M663.88,-10.38C683.55,-10.38 711.27,-10.38 737.94,-10.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="737.76,-13.88 747.76,-10.38 737.76,-6.88 737.76,-13.88"/>
 </a>
 </g>
 </g>

@@ -22,6 +22,7 @@ var group__store =
     [ "FileContent", "class_file_content.html", [
       [ "FileContent", "class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19", null ],
       [ "boundedForDisplay", "class_file_content.html#a2afdde46ca2b092bbd613219f37fd400", null ],
+      [ "carriesOtpUri", "class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b", null ],
       [ "getNamedValues", "class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1", null ],
       [ "getOtpUri", "class_file_content.html#ad196088dd0d816ee3c1311a4448940d2", null ],
       [ "getPassword", "class_file_content.html#ac88e8096551d24a41fc0625a4d903139", null ],

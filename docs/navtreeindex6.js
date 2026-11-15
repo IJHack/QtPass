@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"qpushbuttonasqrcode_8cpp.html":[4,0,1,61],
+"qpushbuttonasqrcode_8cpp_source.html":[4,0,1,61],
+"qpushbuttonasqrcode_8h.html":[4,0,1,62],
 "qpushbuttonasqrcode_8h_source.html":[4,0,1,62],
 "qpushbuttonshowpassword_8cpp.html":[4,0,1,63],
 "qpushbuttonshowpassword_8cpp_source.html":[4,0,1,63],
@@ -246,8 +249,5 @@ var NAVTREEINDEX6 =
 "struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf":[1,3,10,0,8],
 "struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f":[1,3,10,0,6],
 "struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d":[1,3,10,0,2],
-"struct_totp_1_1_settings.html#a42aef6325578fb7392f98685cdb8324d":[1,3,10,0,7],
-"struct_totp_1_1_settings.html#a5a2bda8d658947dc4e10dec3d21d8ca5":[1,3,10,0,1],
-"struct_totp_1_1_settings.html#a8c8529f1946b9c46f48567ef78ffa386":[1,3,10,0,0],
-"struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28":[1,3,10,0,9]
+"struct_totp_1_1_settings.html#a42aef6325578fb7392f98685cdb8324d":[1,3,10,0,7]
 };

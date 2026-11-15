@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"class_password_dialog.html#ac720352c9c25b6b05d48ab29d553dc78":[1,5,11,23],
 "class_password_dialog.html#aca8083fc7b1db34e610b59781cfa008b":[1,5,11,44],
 "class_password_dialog.html#acb8f5a8a5f192eab7557143b6e816ceb":[1,5,11,9],
 "class_password_dialog.html#acd29a018a14978015d932a052da966cf":[1,5,11,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1":[1,0,7,3],
 "class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24":[1,0,7,4],
 "class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f":[1,0,7,2],
-"class_simple_transaction.html#a87e287a8dc66e1e4de83e78b18e15fc8":[1,0,7,6],
-"class_simple_transaction.html#ac96bc56467b17eda41fbeb76ad25692f":[1,0,7,7]
+"class_simple_transaction.html#a87e287a8dc66e1e4de83e78b18e15fc8":[1,0,7,6]
 };

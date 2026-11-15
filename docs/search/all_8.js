@@ -21,5 +21,6 @@ var searchData=
   ['hides_18',['hides',['../class_password_display_panel.html#af0b6c619d59cff43692b8087999fe3a5',1,'PasswordDisplayPanel']]],
   ['hidesecretfields_19',['hideSecretFields',['../struct_app_settings.html#a610eb03686814827c70c12e01489ac77',1,'AppSettings']]],
   ['hidewhennomenuisopen_20',['hideWhenNoMenuIsOpen',['../class_menu_bar_peek.html#a5b64a884de1b4b23d3ce8a04e3ccc7af',1,'MenuBarPeek']]],
-  ['hookotpfield_21',['hookOtpField',['../class_password_dialog.html#a0fbd5f4e410c2fadd96b44ad563fdea9',1,'PasswordDialog']]]
+  ['holdsotpconfig_21',['holdsOtpConfig',['../filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9',1,'filecontent.cpp']]],
+  ['hookotpfield_22',['hookOtpField',['../class_password_dialog.html#a0fbd5f4e410c2fadd96b44ad563fdea9',1,'PasswordDialog']]]
 ];
