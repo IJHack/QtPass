@@ -591,6 +591,12 @@ private:
   /// Make the entry named exactly as searched current, or else the first
   /// entry (depth first) under the store root.
   void selectFirstFile();
+
+  /// Stop a running content search on both backends (the active one may have
+  /// changed since it started). It runs outside the process queue, so only
+  /// this ends its walk and the gpg it is running; the result it still
+  /// delivers is discarded by onGrepFinished().
+  void cancelContentSearch();
   /**
    * @brief The entry whose name is exactly the search text, if the filtered
    * tree shows it: `team/bank` for "team/bank", not a folder of that name.

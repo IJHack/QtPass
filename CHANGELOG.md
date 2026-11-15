@@ -792,6 +792,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   nothing, silently. A forced move now replaces the destination in one step:
   when it failed, the destination entry used to be gone already, and a
   forced move of an entry onto its own name deleted it.
+- Giving up on a content search stops it: emptying the search box and
+  pressing Return, releasing the content search button, switching profile
+  or the panel autoclear. The search used to go on decrypting the rest of
+  the store with `gpg`, unseen, and drop the result at the end; an entry
+  slow to decrypt, or one with a passphrase, kept `gpg` or the passphrase
+  prompts going long after.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

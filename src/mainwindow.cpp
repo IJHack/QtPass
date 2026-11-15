@@ -767,6 +767,7 @@ void MainWindow::clearPanel(bool notify) {
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
     if (m_grep.inGrepMode()) {
+      cancelContentSearch();
       m_grep.clearGrepMode();
       ui->grepButton->blockSignals(true);
       ui->grepButton->setChecked(false);
@@ -923,6 +924,7 @@ void MainWindow::on_lineEdit_returnPressed() {
       }
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
     } else {
+      cancelContentSearch();
       if (m_grep.cancelSearch()) {
         QApplication::restoreOverrideCursor();
       }
@@ -960,6 +962,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->grepResultsList->setVisible(false);
     // Keep treeView visible until results arrive
   } else {
+    cancelContentSearch();
     if (m_grep.leaveGrepMode()) {
       QApplication::restoreOverrideCursor();
     }
@@ -1064,6 +1067,11 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
   ui->treeView->setVisible(true);
   ui->treeView->scrollTo(proxyIndex);
   ui->treeView->setFocus();
+}
+
+void MainWindow::cancelContentSearch() {
+  QtPassSettings::getRealPass()->CancelGrep();
+  QtPassSettings::getImitatePass()->CancelGrep();
 }
 
 void MainWindow::selectFirstFile() {
