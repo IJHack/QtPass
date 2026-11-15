@@ -396,6 +396,7 @@ private Q_SLOTS:
   void regularFilesUnderLeavesSymlinksOut();
   void regularFilesUnderLeavesJunctionsOut();
   void regularFilesUnderReportsSpecialFilesUnderAWantedName();
+  void regularFilesUnderReportsFoldersItCannotRead();
   void directoriesUnderListsRealVisibleFoldersOnly();
   void isLinkedFolderSeesThroughATrailingSeparator();
   void isUnderLinkChecksEveryFolderOnTheWay();
@@ -5168,6 +5169,50 @@ void tst_util::regularFilesUnderLeavesJunctionsOut() {
   QVERIFY(QDir().rmdir(root.filePath(QStringLiteral("dir-junction"))));
   QVERIFY(QDir().rmdir(root.filePath(QStringLiteral("dir-junction.gpg"))));
   QVERIFY(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))));
+#endif
+}
+
+/**
+ * @brief A folder the walk cannot read is reported, not taken for an empty
+ *        one: re-encryption left its entries encrypted to a removed key and
+ *        reported success. A readable empty folder is not reported.
+ */
+void tst_util::regularFilesUnderReportsFoldersItCannotRead() {
+#ifdef Q_OS_WIN
+  QSKIP("relies on Unix directory permissions");
+#else
+  if (::geteuid() == 0)
+    QSKIP("root reads anywhere");
+  // Search but no read: the listing fails. Read but no search: the names
+  // come, but nothing in the folder can be looked at.
+  for (const mode_t mode : {mode_t{0300}, mode_t{0600}}) {
+    QTemporaryDir tmp;
+    QVERIFY(tmp.isValid());
+    const QDir store(tmp.path());
+    QVERIFY(store.mkpath(QStringLiteral("finance/sub")));
+    QVERIFY(store.mkpath(QStringLiteral("empty")));
+    for (const QString &name :
+         {QStringLiteral("mail.gpg"), QStringLiteral("finance/bank.gpg"),
+          QStringLiteral("finance/sub/card.gpg")}) {
+      QFile f(store.filePath(name));
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("x");
+    }
+    const QString finance = store.filePath(QStringLiteral("finance"));
+    QVERIFY(::chmod(QFile::encodeName(finance).constData(), mode) == 0);
+    const auto restore = qScopeGuard(
+        [&finance] { ::chmod(QFile::encodeName(finance).constData(), 0700); });
+    QStringList skipped;
+    QStringList unlisted;
+    const QStringList files = Util::regularFilesUnder(
+        tmp.path(), {QStringLiteral("*.gpg")}, &skipped, false, &unlisted);
+    QCOMPARE(files, QStringList{store.filePath(QStringLiteral("mail.gpg"))});
+    QCOMPARE(unlisted, QStringList{finance});
+    QVERIFY2(skipped.isEmpty(), qPrintable(skipped.join(' ')));
+    // Without the out-parameter the walk is as it was for other callers.
+    QVERIFY(Util::regularFilesUnder(tmp.path(), {QStringLiteral("*.gpg")})
+                .contains(store.filePath(QStringLiteral("mail.gpg"))));
+  }
 #endif
 }
 

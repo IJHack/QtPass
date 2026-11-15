@@ -685,9 +685,13 @@ private:
    * @brief The entries under @p dir a run considers, telling the user about
    * anything skipped for not being a regular file.
    * @param dir Directory to walk, recursively.
+   * @param unlisted Receives the folders that could not be read: their
+   *        entries are not in the result, and the run must not pass for
+   *        complete.
    * @return The `.gpg` files, links and special files left out.
    */
-  auto entriesToReencrypt(const QString &dir) -> QStringList;
+  auto entriesToReencrypt(const QString &dir, QStringList *unlisted)
+      -> QStringList;
   /**
    * @brief The verified recipients for the folder @p fileName sits in.
    * @param fileName An entry in the folder.

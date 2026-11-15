@@ -697,16 +697,43 @@ auto Util::isValidKeyId(const QString &keyId) -> bool {
 
 namespace {
 /**
+ * @brief Whether the walk can see what is in @p dir: read permission to list
+ * it and, on Unix, search permission to look at what it holds (without it the
+ * names come, but no entry reads as a file or a folder).
+ * @param dir An existing directory.
+ * @return false when the walk would miss what is in it.
+ */
+auto canList(const QString &dir) -> bool {
+#ifdef Q_OS_WIN
+  // Qt answers from the attributes alone unless told to read the ACL.
+  QNtfsPermissionCheckGuard aclCheck;
+  return QFileInfo(dir).isReadable();
+#else
+  const QFileInfo info(dir);
+  return info.isReadable() && info.isExecutable();
+#endif
+}
+
+/**
  * @brief Walk @p dir's real, visible directories in sorted pre-order and hand
  * every entry to @p visit before any recursion; a directory is entered only
- * when @p visit returns true for it.
+ * when @p visit returns true for it. A directory that cannot be read goes to
+ * @p unlisted, when given: its listing would come back empty, as an empty
+ * folder's does, and what is in it would be left out without a sign.
  */
-template <typename Visit> void walkStore(const QString &dir, Visit visit) {
+template <typename Visit>
+void walkStore(const QString &dir, Visit visit,
+               QStringList *unlisted = nullptr) {
   // Absolute, so the results are whatever the caller's cwd; not canonical,
   // so a linked root keeps the name it was configured under.
   QStringList pending{QDir(QDir::cleanPath(dir)).absolutePath()};
   while (!pending.isEmpty()) {
     const QDir current(pending.takeLast());
+    if (unlisted != nullptr && current.exists() && !canList(current.path())) {
+      qCWarning(lcQtPass) << "Cannot list" << current.path();
+      *unlisted << current.path();
+      continue;
+    }
     // Every entry once, links and hidden entries included, so the decision
     // what to do with each is taken here, before any recursion. QDir::System
     // keeps dangling links in the listing.
@@ -749,30 +776,33 @@ auto isStoreDirectory(const QFileInfo &entry) -> bool {
 } // namespace
 
 auto Util::regularFilesUnder(const QString &dir, const QStringList &nameFilters,
-                             QStringList *skipped, bool hiddenFiles)
-    -> QStringList {
+                             QStringList *skipped, bool hiddenFiles,
+                             QStringList *unlisted) -> QStringList {
   QStringList files;
-  walkStore(dir, [&](const QFileInfo &entry) {
-    if (isStoreDirectory(entry)) {
-      return true;
-    }
-    const bool named = QDir::match(nameFilters, entry.fileName());
-    if (isLink(entry) || (!entry.isDir() && !entry.isFile())) {
-      // A linked directory hides everything behind it; a linked file, or a
-      // FIFO, socket or device, is only of interest under a name the caller
-      // asked for.
-      if (skipped != nullptr && (entry.isDir() || named)) {
-        qCWarning(lcQtPass) << "Skipping" << entry.filePath()
-                            << ": not a regular file or directory";
-        *skipped << entry.filePath();
-      }
-      return false;
-    }
-    if (entry.isFile() && named && (hiddenFiles || !isHiddenEntry(entry))) {
-      files << entry.filePath();
-    }
-    return false;
-  });
+  walkStore(
+      dir,
+      [&](const QFileInfo &entry) {
+        if (isStoreDirectory(entry)) {
+          return true;
+        }
+        const bool named = QDir::match(nameFilters, entry.fileName());
+        if (isLink(entry) || (!entry.isDir() && !entry.isFile())) {
+          // A linked directory hides everything behind it; a linked file, or a
+          // FIFO, socket or device, is only of interest under a name the caller
+          // asked for.
+          if (skipped != nullptr && (entry.isDir() || named)) {
+            qCWarning(lcQtPass) << "Skipping" << entry.filePath()
+                                << ": not a regular file or directory";
+            *skipped << entry.filePath();
+          }
+          return false;
+        }
+        if (entry.isFile() && named && (hiddenFiles || !isHiddenEntry(entry))) {
+          files << entry.filePath();
+        }
+        return false;
+      },
+      unlisted);
   return files;
 }
 

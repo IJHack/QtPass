@@ -1220,12 +1220,13 @@ auto ImitatePass::pullBeforeReencrypt() -> bool {
   return true;
 }
 
-auto ImitatePass::entriesToReencrypt(const QString &dir) -> QStringList {
+auto ImitatePass::entriesToReencrypt(const QString &dir, QStringList *unlisted)
+    -> QStringList {
   // Regular files only: a symlink or junction is not a password entry, and
   // following one would decrypt and rewrite something outside the store.
   QStringList skipped;
-  const QStringList files =
-      Util::regularFilesUnder(dir, QStringList() << "*.gpg", &skipped);
+  const QStringList files = Util::regularFilesUnder(
+      dir, QStringList() << "*.gpg", &skipped, false, unlisted);
   if (!skipped.isEmpty()) {
     emit statusMsg(tr("%n entr(y/ies) skipped: a symlink, junction or special "
                       "file is not part of the store.",
@@ -1307,8 +1308,18 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     return result;
   }
 
-  const QStringList files = entriesToReencrypt(dir);
+  QStringList unlisted;
+  const QStringList files = entriesToReencrypt(dir, &unlisted);
   result.total = files.size();
+  // A folder that cannot be read looked empty, and the run reported success
+  // over it with its entries still encrypted to the old recipients (a key
+  // just removed among them). Each is a failure: the dialog names it and
+  // nothing is pushed.
+  for (const QString &folder : std::as_const(unlisted)) {
+    result.failed << tr("%1 could not be read: its entries were not "
+                        "re-encrypted")
+                         .arg(QDir::toNativeSeparators(folder));
+  }
   emit reencryptProgress(0, result.total);
 
   QString currentDir;
