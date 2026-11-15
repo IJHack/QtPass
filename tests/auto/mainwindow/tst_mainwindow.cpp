@@ -480,6 +480,7 @@ private Q_SLOTS:
   void downArrowInTheSearchBoxMovesToTheTree();
   void returnInTheSearchBoxEndsThere();
   void returnOnAContentSearchResultOpensIt();
+  void cancellingAContentSearchStopsIt();
   void browserContextMenuBelongsToTheWindow();
   void contextMenuOnEmptySpaceOffersFolderActions();
   void contextMenuOnAPasswordOffersEditRenameDelete();
@@ -4371,6 +4372,104 @@ void tst_mainwindow::returnOnAContentSearchResultOpensIt() {
   QApplication::sendEvent(results, &ret);
   QCOMPARE(passwordName()->text(), QStringLiteral("guest-wifi"));
   QVERIFY(!treeView()->isHidden());
+}
+
+/**
+ * @brief Giving up on a content search stops it: emptying the box and
+ *        pressing Return, releasing the content search button, or the panel
+ *        autoclear leaving content search. Each only reset the window's
+ *        flags, while the search went on decrypting the rest of the store,
+ *        one unseen gpg at a time, and its result was dropped at the end.
+ */
+void tst_mainwindow::cancellingAContentSearchStopsIt() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  // The first decrypt of a search matches at once; every later one takes
+  // half a minute, as a slow entry can.
+  const QString gpg = scratch.filePath(QStringLiteral("gpg"));
+  const QString answered = scratch.filePath(QStringLiteral("answered"));
+  {
+    QFile script(gpg);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write(QStringLiteral("#!/bin/sh\n"
+                                "case \" $* \" in *\" -d \"*)\n"
+                                "  [ -e '%1' ] && exec sleep 30\n"
+                                "  : > '%1'; echo 'login: yes' ;;\n"
+                                "esac\n"
+                                "exit 0\n")
+                     .arg(answered)
+                     .toUtf8());
+    script.close();
+    QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner));
+  }
+  rebuildWindow([&gpg](AppSettings &s) {
+    s.gpgExecutable = gpg;
+    s.useGit = false;
+    s.useGrepSearch = true;
+  });
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGrepSearch = false;
+    QtPassSettings::save(s);
+  });
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  // Two entries at least: one answered at once, one the search waits on.
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("slow")));
+  QVERIFY(
+      addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("quick")));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && results != nullptr);
+  QSignalSpy finished(QtPassSettings::getPass(), &Pass::finishedGrep);
+  const auto search = [&] {
+    QFile::remove(answered);
+    finished.clear();
+    grep->setChecked(true);
+    searchBox()->setText(QStringLiteral("login"));
+    QVERIFY(QMetaObject::invokeMethod(
+        m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+    QTest::qWait(300);
+    QVERIFY2(finished.isEmpty(), "the search is still decrypting");
+  };
+
+  search();
+  searchBox()->clear();
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QVERIFY2(finished.count() == 1 || finished.wait(5000),
+           "an emptied search box stops the search");
+
+  search();
+  grep->setChecked(false);
+  QVERIFY2(finished.count() == 1 || finished.wait(5000),
+           "releasing the button stops the search");
+
+  search();
+  results->setVisible(true); // an earlier search's results on screen
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "clearPanel",
+                                    Qt::DirectConnection, Q_ARG(bool, false)));
+  QVERIFY2(finished.count() == 1 || finished.wait(5000),
+           "the panel autoclear leaving content search stops the search");
+
+  // Content search entered again before the stopped search reports: its
+  // partial match must not appear under the empty search box.
+  search();
+  results->setVisible(true);
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "clearPanel",
+                                    Qt::DirectConnection, Q_ARG(bool, false)));
+  grep->setChecked(true);
+  QVERIFY2(finished.count() == 1 || finished.wait(5000),
+           "the search was stopped");
+  QTest::qWait(50);
+  QCOMPARE(results->topLevelItemCount(), 0);
+  QVERIFY(!results->isVisible());
+#endif
 }
 
 /**

@@ -233,6 +233,13 @@ public:
   virtual void Grep(QString pattern, bool caseInsensitive) = 0;
 
   /**
+   * @brief Stop a running Grep(): the walk ends at the next entry and the gpg
+   * decrypting one is terminated. Its (partial) result still arrives through
+   * finishedGrep(). Does nothing when no search runs.
+   */
+  virtual void CancelGrep() {}
+
+  /**
    * @brief Generate random password.
    * @param length Password length.
    * @param charset Character set to use.

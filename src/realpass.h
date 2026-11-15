@@ -291,6 +291,10 @@ public:
    * @param caseInsensitive true for case-insensitive search.
    */
   void Grep(QString pattern, bool caseInsensitive) override;
+  /**
+   * @brief Stop the running search (NativeGrep::cancel()).
+   */
+  void CancelGrep() override { m_grep.cancel(); }
 };
 
 #endif // SRC_REALPASS_H_

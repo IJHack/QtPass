@@ -553,6 +553,10 @@ public:
    * @param caseInsensitive true for case-insensitive search.
    */
   void Grep(QString pattern, bool caseInsensitive) override;
+  /**
+   * @brief Stop the running search (NativeGrep::cancel()).
+   */
+  void CancelGrep() override { m_grep.cancel(); }
 
 private:
   /// Groups the git/gpg processes of one operation (Insert, Remove, Move,
