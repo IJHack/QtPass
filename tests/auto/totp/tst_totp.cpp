@@ -21,6 +21,7 @@ private Q_SLOTS:
   void parseCanonicalUri();
   void parseUriWithoutOptionalParameters();
   void parseReadsParameterNamesInAnyCase();
+  void normalizeKeepsTheTextAfterAHash();
   void parseBareSecret();
   void parseSpacedSecret();
   void parseAlgorithmNames_data();
@@ -112,6 +113,45 @@ void tst_totp::parseReadsParameterNamesInAnyCase() {
   QVERIFY(steam.has_value());
   QCOMPARE(steam->encoder, Totp::Encoder::Steam);
   QCOMPARE(steam->digits, Totp::STEAM_DIGITS);
+}
+
+/**
+ * @brief Text after a `#` in the URI (recovery codes, a remark) is not part
+ *        of the OTP configuration but is the user's: normalize() rebuilt the
+ *        URI from the settings alone and dropped it on every save.
+ */
+void tst_totp::normalizeKeepsTheTextAfterAHash() {
+  const QString uri = QStringLiteral(
+      "otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&issuer=Example"
+      "&digits=8#7f3a9-1c2d4 8b6e0-5a9f1");
+  const std::optional<Totp::Settings> s = Totp::parse(uri);
+  QVERIFY(s.has_value());
+  QCOMPARE(s->fragment, QStringLiteral("7f3a9-1c2d4 8b6e0-5a9f1"));
+  QCOMPARE(s->digits, 8U);
+  const QString canonical = Totp::normalize(uri, QStringLiteral("alice"));
+  QVERIFY2(canonical.endsWith(QStringLiteral("#7f3a9-1c2d4 8b6e0-5a9f1")),
+           qPrintable(canonical));
+  // Saving again changes nothing more, and the code is the same.
+  QCOMPARE(Totp::normalize(canonical, QStringLiteral("alice")), canonical);
+  const std::optional<Totp::Settings> again = Totp::parse(canonical);
+  QVERIFY(again.has_value());
+  QCOMPARE(Totp::generate(*again, 59), Totp::generate(*s, 59));
+
+  // As found in an entry: spaces around the "#".
+  const QString spaced = Totp::normalize(
+      QStringLiteral("otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&"
+                     "issuer=Example # 7f3a9-1c2d4 8b6e0-5a9f1"),
+      QStringLiteral("alice"));
+  QVERIFY2(spaced.contains(QStringLiteral("7f3a9-1c2d4 8b6e0-5a9f1")),
+           qPrintable(spaced));
+
+  // Byte for byte, also characters a URL would encode or decode.
+  const QString remark = QStringLiteral("50% off, `codes` a%20b #2");
+  const QString kept = Totp::normalize(
+      QStringLiteral("otpauth://totp/x?secret=JBSWY3DPEHPK3PXP#") + remark,
+      QStringLiteral("x"));
+  QVERIFY2(kept.endsWith(QLatin1Char('#') + remark), qPrintable(kept));
+  QCOMPARE(Totp::normalize(kept, QStringLiteral("x")), kept);
 }
 
 void tst_totp::parseBareSecret() {

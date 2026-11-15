@@ -147,6 +147,12 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     };
     rawSecret = param(QLatin1StringView("secret")).value_or(QString());
     settings.issuer = param(QLatin1StringView("issuer")).value_or(QString());
+    // Not part of the OTP configuration, but the user's text: kept as written,
+    // from the input itself (QUrl splits at the first '#' as well, but its
+    // view would re-encode '%' and '`' and decode escapes).
+    if (url.hasFragment()) {
+      settings.fragment = trimmed.mid(trimmed.indexOf(QLatin1Char('#')) + 1);
+    }
     // The label is everything after the host, e.g. "/Example:alice".
     settings.label = url.path();
     if (settings.label.startsWith(QLatin1Char('/'))) {
@@ -301,6 +307,9 @@ auto Totp::toUri(const Settings &settings) -> QString {
     uri += QStringLiteral("&%1=%2").arg(
         QString::fromLatin1(QUrl::toPercentEncoding(item.first)),
         QString::fromLatin1(QUrl::toPercentEncoding(item.second)));
+  }
+  if (!settings.fragment.isEmpty()) {
+    uri += QLatin1Char('#') + settings.fragment;
   }
   return uri;
 }
