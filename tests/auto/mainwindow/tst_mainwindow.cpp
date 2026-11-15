@@ -22,11 +22,16 @@
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
+#include <QFileSystemModel>
 #include <QFrame>
+#include <QKeyEvent>
+#include <QLabel>
+#include <QLineEdit>
 #include <QMessageBox>
 #include <QPalette>
 #include <QPushButton>
 #include <QScopedPointer>
+#include <QSortFilterProxyModel>
 #include <QStatusBar>
 #include <QTemporaryDir>
 #include <QTextBrowser>
@@ -34,7 +39,9 @@
 #include <QTextEdit>
 #include <QTimer>
 #include <QToolBar>
+#include <QToolButton>
 #include <QTreeView>
+#include <QTreeWidget>
 #include <QtTest>
 
 #include <functional>
@@ -85,8 +92,11 @@ private Q_SLOTS:
   void startMinimizedWithoutATrayIconStaysShown();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilCancelled();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilValid();
+  void returnInTheSearchBoxEndsThere();
+  void returnOnAContentSearchResultOpensIt();
 
 private:
+  void rebuildWithGrepSearch();
   auto runFirstRunFlow(
       const std::function<bool(ConfigDialog *, int)> &onConfigDialog,
       bool *initSucceeded) -> int;
@@ -811,6 +821,154 @@ void tst_mainwindow::firstRunAcceptedWithInvalidStoreAsksAgainUntilValid() {
   QVERIFY2(storeCreated, "the store must have been initialised on the retry");
   QVERIFY2(initSucceeded,
            "startup must succeed once the retried configuration is valid");
+}
+
+// ---------------------------------------------------------------------------
+// Return in the search box and on content search results
+
+namespace {
+/**
+ * Create <name>.gpg in the store and wait until the tree's model has it. Its
+ * decrypt fails later on the event loop; the tests below only count it.
+ */
+auto addEntry(MainWindow *window, const QString &storeDir, const QString &name)
+    -> QModelIndex {
+  const QString path = QDir(storeDir).filePath(name + QStringLiteral(".gpg"));
+  QFile f(path);
+  if (!f.open(QIODevice::WriteOnly)) {
+    return {};
+  }
+  f.write("not really encrypted");
+  f.close();
+  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  if (!QTest::qWaitFor([&] { return fs->index(path).isValid(); }, 5000)) {
+    return {};
+  }
+  return proxy->mapFromSource(fs->index(path));
+}
+
+/// Create <name>.gpg in the store and make it the tree's current entry.
+auto selectEntry(MainWindow *window, const QString &storeDir,
+                 const QString &name) -> bool {
+  const QModelIndex index = addEntry(window, storeDir, name);
+  if (!index.isValid()) {
+    return false;
+  }
+  window->findChild<QTreeView *>(QStringLiteral("treeView"))
+      ->setCurrentIndex(index);
+  return true;
+}
+} // namespace
+
+/**
+ * @brief Build the window again with content search enabled, and shown.
+ */
+void tst_mainwindow::rebuildWithGrepSearch() {
+  m_window.reset();
+  AppSettings s = QtPassSettings::load();
+  s.useGrepSearch = true;
+  QtPassSettings::save(s);
+  m_window.reset(new MainWindow);
+  m_window->show();
+}
+
+/**
+ * @brief Return in the search box ends there. QLineEdit leaves the key
+ *        unaccepted, so the window's own Return opened the tree's current
+ *        entry as well: in content search an entry nobody asked for (back in
+ *        clear after the panel autoclear), on an empty box too, and by name
+ *        the first hit a second time.
+ */
+void tst_mainwindow::returnInTheSearchBoxEndsThere() {
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGrepSearch = false;
+    QtPassSettings::save(s);
+  });
+  rebuildWithGrepSearch();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  auto *name = m_window->findChild<QLabel *>(QStringLiteral("passwordName"));
+  auto *box = m_window->findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  QVERIFY(name != nullptr && box != nullptr && grep != nullptr);
+  // The label as nothing opened it; no Return below may change it.
+  const QString unopened = name->text();
+  QVERIFY(unopened != QStringLiteral("bank"));
+  grep->setChecked(true);
+  const auto pressReturn = [box] {
+    QKeyEvent ret(QEvent::KeyPress, Qt::Key_Return, Qt::NoModifier);
+    QApplication::sendEvent(box, &ret);
+  };
+
+  QSignalSpy searched(QtPassSettings::getPass(), &Pass::finishedGrep);
+  box->setText(QStringLiteral("ssid"));
+  pressReturn();
+  QVERIFY2(searched.count() == 1 || searched.wait(10000),
+           "Return runs the content search");
+  QCOMPARE(name->text(), unopened);
+
+  // An empty box ends the content search, and opens nothing either.
+  box->clear();
+  pressReturn();
+  QCOMPARE(name->text(), unopened);
+
+  // By name, Return opens the first hit, and decrypts it once.
+  grep->setChecked(false);
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  QSignalSpy failed(QtPassSettings::getPass(), &Pass::processErrorExit);
+  box->setText(QStringLiteral("bank"));
+  pressReturn();
+  QCOMPARE(name->text(), QStringLiteral("bank"));
+  QTRY_VERIFY_WITH_TIMEOUT(shown.count() + failed.count() >= 1, 10000);
+  QTest::qWait(300);
+  QCOMPARE(shown.count() + failed.count(), 1);
+}
+
+/**
+ * @brief While content search results hide the tree, Return on a result
+ *        opens that result. It opened the hidden tree's current entry.
+ */
+void tst_mainwindow::returnOnAContentSearchResultOpensIt() {
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGrepSearch = false;
+    QtPassSettings::save(s);
+  });
+  rebuildWithGrepSearch();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(m_window.data()));
+  QVERIFY(
+      addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("guest-wifi"))
+          .isValid());
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  auto *name = m_window->findChild<QLabel *>(QStringLiteral("passwordName"));
+  auto *tree = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(name != nullptr && tree != nullptr && grep != nullptr &&
+          results != nullptr);
+  grep->setChecked(true);
+  // What a finished content search leaves: the results list over the tree.
+  auto *result = new QTreeWidgetItem(results);
+  result->setText(0, QStringLiteral("guest-wifi"));
+  result->setData(0, Qt::UserRole, QStringLiteral("guest-wifi"));
+  results->setVisible(true);
+  tree->setVisible(false);
+  results->setCurrentItem(result);
+  results->setFocus();
+  QTRY_VERIFY(results->hasFocus());
+
+  QKeyEvent ret(QEvent::KeyPress, Qt::Key_Return, Qt::NoModifier);
+  QApplication::sendEvent(results, &ret);
+  QCOMPARE(name->text(), QStringLiteral("guest-wifi"));
+  QVERIFY(!tree->isHidden());
 }
 
 QTEST_MAIN(tst_mainwindow)

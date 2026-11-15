@@ -1546,6 +1546,16 @@ auto MainWindow::eventFilter(QObject *obj, QEvent *event) -> bool {
     if (key != nullptr && key->key() == Qt::Key_Down) {
       ui->treeView->setFocus();
     }
+    // Return ends at the search box: QLineEdit emits returnPressed() and
+    // leaves the key unaccepted, so keyPressEvent() would open the tree's
+    // current entry as well. In content search that is an entry nobody
+    // asked for; by name, the first hit a second time.
+    if (key != nullptr &&
+        (key->key() == Qt::Key_Return || key->key() == Qt::Key_Enter)) {
+      ui->lineEdit->event(event);
+      event->accept();
+      return true;
+    }
   }
   return QObject::eventFilter(obj, event);
 }
@@ -1586,6 +1596,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     break;
   case Qt::Key_Return:
   case Qt::Key_Enter:
+    // While content search results hide the tree, its current entry is not
+    // what the user looks at: Return on a result opens that result.
+    if (ui->treeView->isHidden()) {
+      QTreeWidgetItem *result = ui->grepResultsList->currentItem();
+      if (result != nullptr && ui->grepResultsList->hasFocus()) {
+        on_grepResultsList_itemClicked(result, 0);
+      }
+      break;
+    }
     if (proxyModel.rowCount() > 0) {
       on_treeView_clicked(ui->treeView->currentIndex());
     }
