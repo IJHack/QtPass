@@ -57,6 +57,7 @@
 #include <QTextBrowser>
 #include <QTextCharFormat>
 #include <QTextDocument>
+#include <QTextDocumentFragment>
 #include <QTextEdit>
 #include <QTimer>
 #include <QToolBar>
@@ -441,6 +442,7 @@ private Q_SLOTS:
   void faqOpensTheWebsite();
   void clickingNothingClearsThePanel();
   void staleDecryptDoesNotRepaintThePanel();
+  void entryTextKeepsItsWhiteSpace();
   void hiddenContentIsClearedFromThePanelOnTheTimer();
   void otpAnswerWithoutContentReportsTheFailedDecrypt();
   void otpAnswerWithoutACodeSaysSo();
@@ -2668,6 +2670,49 @@ void tst_mainwindow::staleDecryptDoesNotRepaintThePanel() {
            qPrintable(browser()->toPlainText()));
   QVERIFY2(treeView()->isEnabled(), "a dropped decrypt releases the interface");
   QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
+}
+
+/**
+ * @brief The text of an entry is shown, and so selected and copied, with the
+ *        white space it is stored with. As rich text, "ridge  velvet" in a
+ *        recovery phrase came out as "ridge velvet", indentation was dropped
+ *        and a tab became a space (#210); with "Show the file content as-is"
+ *        that went for the password line too.
+ */
+void tst_mainwindow::entryTextKeepsItsWhiteSpace() {
+  const QString text = QStringLiteral("backup phrase: ridge  velvet harbor\n"
+                                      "    indented\n"
+                                      "tab\there\n"
+                                      "trailing   \n"
+                                      "see https://example.org/a  b");
+  // What Select All and Copy in the browser's menu hand to the clipboard.
+  const auto copied = [this] {
+    browser()->selectAll();
+    return browser()->textCursor().selection().toPlainText();
+  };
+  // A click on an entry empties the browser before its decrypt comes back.
+  browser()->clear();
+  m_window->passShowHandler(QStringLiteral("hunter2\n") + text);
+  QCOMPARE(browser()->toPlainText(), text);
+  QCOMPARE(copied(), text);
+
+  // Output arriving later is appended through toHtml(): the entry's text
+  // stays as it was, and the output keeps its own columns.
+  emit QtPassSettings::getPass() -> finishedGitPull(
+      QStringLiteral(" 2 files changed,  3 insertions"), QString());
+  QCOMPARE(copied(),
+           text + QStringLiteral("\n 2 files changed,  3 insertions"));
+
+  rebuildWindow([](AppSettings &s) { s.displayAsIs = true; });
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.displayAsIs = false;
+    QtPassSettings::save(s);
+  });
+  const QString entry = QStringLiteral("pass  word\n") + text;
+  browser()->clear();
+  m_window->passShowHandler(entry);
+  QCOMPARE(copied(), entry);
 }
 
 /**
