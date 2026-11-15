@@ -4935,10 +4935,9 @@ void tst_util::initStagesUntrackedGpgId() {
   const QStringList subjects = log.split('\n', Qt::SkipEmptyParts);
   QCOMPARE(subjects.size(), 2);
   QCOMPARE(subjects.last(), QStringLiteral("initial"));
-  QVERIFY2(subjects.first().startsWith(QStringLiteral("Added ")) &&
-               subjects.first().endsWith(
-                   QStringLiteral("work/.gpg-id using QtPass.")),
-           qPrintable(subjects.first()));
+  // Relative to the store: the local path would be pushed with the commit.
+  QCOMPARE(subjects.first(),
+           QStringLiteral("Added work/.gpg-id using QtPass."));
 
   QString committed;
   QVERIFY(runGit(gitExe, tmp.path(),

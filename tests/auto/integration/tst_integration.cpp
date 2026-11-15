@@ -1025,10 +1025,8 @@ void tst_integration::imitatePass_gitCopyAndShow() {
            "decrypted git-mode copy should contain the original content");
 
   // Confirm the copy was staged/committed into the repository, not just written
-  // to disk — a git command run in the wrong directory would leave it
-  // untracked. (The copy's re-encryption commit is synchronous, so by now the
-  // file is in the repo; the async "Copied" commit message may not have landed
-  // yet, hence checking tracked state rather than a specific commit subject.)
+  // to disk: a git command run in the wrong directory would leave it
+  // untracked.
   QProcess gitLs;
   gitLs.setWorkingDirectory(storeDir.path());
   gitLs.start(gitExe, {"ls-files"});
@@ -1038,6 +1036,17 @@ void tst_integration::imitatePass_gitCopyAndShow() {
       tracked.contains("copy.gpg"),
       qPrintable(
           QString("copied entry should be tracked in git: %1").arg(tracked)));
+
+  // The Show above was queued after the copy's commit, so it has landed. Its
+  // message names the entries relative to the store, not by local path.
+  QProcess gitLog;
+  gitLog.setWorkingDirectory(storeDir.path());
+  gitLog.start(gitExe, {"log", "--format=%s"});
+  QVERIFY2(gitLog.waitForFinished(), "git log should complete");
+  const QString subjects = QString::fromUtf8(gitLog.readAll());
+  QVERIFY2(subjects.contains(
+               QStringLiteral("Copied from original to copy using QtPass.")),
+           qPrintable(subjects));
 }
 
 void tst_integration::imitatePass_insertCompletesWhenGitNotConfigured() {

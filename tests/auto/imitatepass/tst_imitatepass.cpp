@@ -670,6 +670,7 @@ private Q_SLOTS:
   void reencryptRemovesItsTemporaryWhenEncryptionFails();
   void reencryptDiscardsACiphertextThatDoesNotDecrypt();
   void reencryptDiscardsACiphertextWhoseContentDiffers();
+  void commitMessagesNameFilesRelativeToTheStore();
   void reencryptFailsWhenTheOriginalVanishesBeforeTheSwap();
   void reencryptLeavesTheOriginalWhenTheCiphertextVanishes();
   void reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry();
@@ -4792,6 +4793,30 @@ void tst_imitatepass::reencryptDiscardsACiphertextWhoseContentDiffers() {
                        }),
            "the new ciphertext must have been test-decrypted and compared");
 #endif
+}
+
+/**
+ * @brief Commit messages name a file relative to the store, never by its
+ *        local path, which a push carries into the shared history; a path
+ *        outside the store gives its file name alone.
+ */
+void tst_imitatepass::commitMessagesNameFilesRelativeToTheStore() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), QString()));
+  const QDir store(storeDir.path());
+  QCOMPARE(pass.commitName(store.filePath(QStringLiteral("work/bank.gpg"))),
+           QStringLiteral("work/bank"));
+  QCOMPARE(pass.commitName(store.filePath(QStringLiteral("work/.gpg-id"))),
+           QStringLiteral("work/.gpg-id"));
+  QCOMPARE(pass.commitName(store.filePath(QStringLiteral(".gpg-id"))),
+           QStringLiteral(".gpg-id"));
+  QTemporaryDir elsewhere;
+  QVERIFY(elsewhere.isValid());
+  QCOMPARE(
+      pass.commitName(QDir(elsewhere.path()).filePath(QStringLiteral("x.gpg"))),
+      QStringLiteral("x"));
 }
 
 /**
