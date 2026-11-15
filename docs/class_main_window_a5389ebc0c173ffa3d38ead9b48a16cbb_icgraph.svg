@@ -47,25 +47,26 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="556" data-view-height="53" data-section-id="dynsection-39">
+<svg id="graph" class="graph" data-view-width="744" data-view-height="53" data-section-id="dynsection-39">
 <g id="viewport">
 <title>MainWindow::copyPasswordFromTreeview</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Ctrl+C on the tree: decrypt the current entry and let passwordFromFileToClipboard() copy its first li...">
-<polygon fill="#999999" stroke="#666666" points="547.5,-33.5 394.25,-33.5 394.25,0 547.5,0 547.5,-33.5"/>
-<text xml:space="preserve" text-anchor="start" x="402.25" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::copyPassword</text>
-<text xml:space="preserve" text-anchor="middle" x="470.88" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">FromTreeview</text>
+<polygon fill="#999999" stroke="#666666" points="736,-33.5 582.75,-33.5 582.75,0 736,0 736,-33.5"/>
+<text xml:space="preserve" text-anchor="start" x="590.75" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::copyPassword</text>
+<text xml:space="preserve" text-anchor="middle" x="659.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">FromTreeview</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="Construct the main window.">
-<polygon fill="white" stroke="#666666" points="358.25,-27.12 211,-27.12 211,-6.38 358.25,-6.38 358.25,-27.12"/>
-<text xml:space="preserve" text-anchor="middle" x="284.62" y="-13.62" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
+<g id="a_Node000002"><a xlink:href="class_main_window.html#afb8364ca4b73cb30260bd720b52f6f51" target="_top" xlink:title="Ctrl+C anywhere in the window: the selected text when the focus is in a text view or a selectable lab...">
+<polygon fill="white" stroke="#666666" points="546.75,-33.5 394.25,-33.5 394.25,0 546.75,0 546.75,-33.5"/>
+<text xml:space="preserve" text-anchor="start" x="402.25" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::copySelection</text>
+<text xml:space="preserve" text-anchor="middle" x="470.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">OrPassword</text>
 </a>
 </g>
 </g>
@@ -73,42 +74,60 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M382.55,-16.75C374.49,-16.75 366.39,-16.75 358.49,-16.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="382.36,-20.25 392.36,-16.75 382.36,-13.25 382.36,-20.25"/>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node2 -->
-<g id="edge2_Node000002_Node000002" class="edge">
-<title>Node2&#45;&gt;Node2</title>
-<g id="a_edge2_Node000002_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M317.4,-38.61C313.06,-42.45 302.13,-45.12 284.62,-45.12 252.61,-45.12 242.61,-36.18 254.61,-27.52"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="320.82,-37.85 315,-28.99 314.02,-39.54 320.82,-37.85"/>
+<path fill="none" stroke="#63b8ff" d="M571.11,-16.75C563.1,-16.75 555.03,-16.75 547.14,-16.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="570.85,-20.25 580.85,-16.75 570.85,-13.25 570.85,-20.25"/>
 </a>
 </g>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" target="_top" xlink:title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,...">
+<g id="a_Node000003"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="Construct the main window.">
+<polygon fill="white" stroke="#666666" points="358.25,-27.12 211,-27.12 211,-6.38 358.25,-6.38 358.25,-27.12"/>
+<text xml:space="preserve" text-anchor="middle" x="284.62" y="-13.62" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node3 -->
+<g id="edge2_Node000002_Node000003" class="edge">
+<title>Node2&#45;&gt;Node3</title>
+<g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M382.6,-16.75C374.55,-16.75 366.45,-16.75 358.55,-16.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="382.4,-20.25 392.4,-16.75 382.4,-13.25 382.4,-20.25"/>
+</a>
+</g>
+</g>
+<!-- Node3&#45;&gt;Node3 -->
+<g id="edge3_Node000003_Node000003" class="edge">
+<title>Node3&#45;&gt;Node3</title>
+<g id="a_edge3_Node000003_Node000003"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M317.33,-38.61C313,-42.45 302.1,-45.12 284.62,-45.12 252.68,-45.12 242.69,-36.18 254.67,-27.52"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="320.75,-37.85 314.94,-28.99 313.96,-39.54 320.75,-37.85"/>
+</a>
+</g>
+</g>
+<!-- Node4 -->
+<g id="Node000004" class="node">
+<title>Node4</title>
+<g id="a_Node000004"><a xlink:href="class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" target="_top" xlink:title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,...">
 <polygon fill="white" stroke="#666666" points="175,-27.12 0,-27.12 0,-6.38 175,-6.38 175,-27.12"/>
 <text xml:space="preserve" text-anchor="middle" x="87.5" y="-13.62" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::showContextMenu</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node3 -->
-<g id="edge3_Node000002_Node000003" class="edge">
-<title>Node2&#45;&gt;Node3</title>
-<g id="a_edge3_Node000002_Node000003"><a xlink:title=" ">
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge4_Node000003_Node000004" class="edge">
+<title>Node3&#45;&gt;Node4</title>
+<g id="a_edge4_Node000003_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M199.43,-10.06C191.39,-9.99 183.23,-9.98 175.17,-10.04"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="199.13,-13.55 209.18,-10.18 199.22,-6.55 199.13,-13.55"/>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge4_Node000003_Node000002" class="edge">
-<title>Node3&#45;&gt;Node2</title>
-<g id="a_edge4_Node000003_Node000002"><a xlink:title=" ">
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge5_Node000004_Node000003" class="edge">
+<title>Node4&#45;&gt;Node3</title>
+<g id="a_edge5_Node000004_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M186.61,-23.5C194.72,-23.5 202.82,-23.43 210.69,-23.31"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="186.69,-20 176.68,-23.47 186.67,-27 186.69,-20"/>
 </a>

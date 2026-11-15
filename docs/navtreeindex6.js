@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"profileinit_8h_source.html":[4,0,1,60],
 "qpushbuttonasqrcode_8cpp.html":[4,0,1,61],
 "qpushbuttonasqrcode_8cpp_source.html":[4,0,1,61],
 "qpushbuttonasqrcode_8h.html":[4,0,1,62],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_totp_1_1_settings.html":[1,3,10,0],
 "struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf":[1,3,10,0,8],
 "struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f":[1,3,10,0,6],
-"struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d":[1,3,10,0,2],
-"struct_totp_1_1_settings.html#a42aef6325578fb7392f98685cdb8324d":[1,3,10,0,7]
+"struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d":[1,3,10,0,2]
 };

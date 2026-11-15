@@ -21,6 +21,7 @@ var class_main_window =
     [ "connectBackends", "class_main_window.html#aaeb359b178b860a18c188edaf996ed4c", null ],
     [ "connectPassSignals", "class_main_window.html#a53a99014ce1d19698aadd735b6af0284", null ],
     [ "copyPasswordFromTreeview", "class_main_window.html#a5389ebc0c173ffa3d38ead9b48a16cbb", null ],
+    [ "copySelectionOrPassword", "class_main_window.html#afb8364ca4b73cb30260bd720b52f6f51", null ],
     [ "critical", "class_main_window.html#a8719b3a133e95915dd72b244db1e49bf", null ],
     [ "deselect", "class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e", null ],
     [ "destroyTrayIcon", "class_main_window.html#ae6cd4b4efa51da309090b9c394ae5a57", null ],
