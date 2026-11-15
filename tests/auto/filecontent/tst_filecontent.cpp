@@ -510,6 +510,13 @@ void tst_filecontent::otpFieldOnTheFirstLineIsNotThePassword() {
       QStringLiteral("otpauth://totp/Shop:team?secret=KRUGS43JONQXGZLD");
   const QList<QPair<QString, QString>> cases = {
       {QStringLiteral("TOTP: ") + seed, seed},
+      {QStringLiteral("TOTP: KRUG S43J ONQX GZLD"),
+       QStringLiteral("KRUG S43J ONQX GZLD")},
+      {QStringLiteral("otp: KRUG-S43J-ONQX-GZLD"),
+       QStringLiteral("KRUG-S43J-ONQX-GZLD")},
+      {QStringLiteral("TOTP:\t") + seed, seed},
+      {QStringLiteral("TOTP: KRUGS43J\u00a0ONQXGZLD\u00a0"),
+       QStringLiteral("KRUGS43J\u00a0ONQXGZLD")},
       {QStringLiteral("OTP: ") + uri, uri},
       {QStringLiteral("totp:") + seed, seed},
       {QStringLiteral("2fa: ") + uri, uri},
@@ -523,7 +530,7 @@ void tst_filecontent::otpFieldOnTheFirstLineIsNotThePassword() {
     QCOMPARE(fc.getOtpUri(), config);
     // The edit dialog still gets the line, to write the entry back.
     QCOMPARE(fc.getPassword(), firstLine);
-    QVERIFY(FileContent::isOtpLine(firstLine));
+    QVERIFY(FileContent::isOtpPasswordLine(firstLine));
   }
   for (const QString &password :
        {QStringLiteral("hunter2"), QStringLiteral("PIN: 1234"),
@@ -531,6 +538,18 @@ void tst_filecontent::otpFieldOnTheFirstLineIsNotThePassword() {
     QVERIFY2(!FileContent::isOtpLine(password), qPrintable(password));
     QCOMPARE(FileContent::parse(password, {}, false).getPasswordForDisplay(),
              password);
+  }
+  // A password that only starts like an OTP field, its value no usable
+  // secret, stays the password: it is shown, copied and gives no code.
+  for (const QString &password :
+       {QStringLiteral("totp:Secr3t!"), QStringLiteral("OTP: hunter2!"),
+        QStringLiteral("totp: 1800-flowers"), QStringLiteral("otp:"),
+        QStringLiteral("TOTP: hunter"), QStringLiteral("TOTP: ABCDEFGH"),
+        QStringLiteral("OTP: KRUGS43JONQXGZL0")}) {
+    QVERIFY2(!FileContent::isOtpPasswordLine(password), qPrintable(password));
+    const FileContent fc = FileContent::parse(password, {}, false);
+    QCOMPARE(fc.getPasswordForDisplay(), password);
+    QVERIFY2(fc.getOtpUri().isEmpty(), qPrintable(password));
   }
 }
 

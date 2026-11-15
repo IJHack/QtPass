@@ -609,6 +609,12 @@ void tst_passworddisplaypanel::otpUriAsPasswordIsNeverRendered() {
   QVERIFY2(!renderedText(m_grid).contains(kOtpSecret),
            "a TOTP field's seed must never be shown as the password");
   QVERIFY(otpWidgetAt(0) != nullptr);
+
+  // A password that only starts like an OTP field is shown as the password.
+  m_panel->clear();
+  m_panel->displayFields(QStringLiteral("totp:Secr3t!"), NamedValues{}, s);
+  QVERIFY2(renderedText(m_grid).contains(QStringLiteral("totp:Secr3t!")),
+           qPrintable(renderedText(m_grid)));
 }
 
 /**
