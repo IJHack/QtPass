@@ -26,6 +26,8 @@ private Q_SLOTS:
   void parseSpacedSecret();
   void parseAlgorithmNames_data();
   void parseAlgorithmNames();
+  void parseRefusesUnknownAlgorithms_data();
+  void parseRefusesUnknownAlgorithms();
   void parseClampsDigitsAndPeriod();
   void parseNonNumericParametersFallBackToDefaults_data();
   void parseNonNumericParametersFallBackToDefaults();
@@ -186,8 +188,48 @@ void tst_totp::parseAlgorithmNames_data() {
                                 << static_cast<int>(Totp::Algorithm::Sha256);
   QTest::newRow("HMAC-SHA-512") << QStringLiteral("HMAC-SHA-512")
                                 << static_cast<int>(Totp::Algorithm::Sha512);
-  QTest::newRow("unknown falls back to SHA1")
-      << QStringLiteral("MD5") << static_cast<int>(Totp::Algorithm::Sha1);
+  QTest::newRow("SHA-256") << QStringLiteral("SHA-256")
+                           << static_cast<int>(Totp::Algorithm::Sha256);
+  QTest::newRow("HmacSHA256") << QStringLiteral("HmacSHA256")
+                              << static_cast<int>(Totp::Algorithm::Sha256);
+  QTest::newRow("HMACSHA512") << QStringLiteral("HMACSHA512")
+                              << static_cast<int>(Totp::Algorithm::Sha512);
+  QTest::newRow("sha_1") << QStringLiteral("sha_1")
+                         << static_cast<int>(Totp::Algorithm::Sha1);
+  QTest::newRow("empty is the default")
+      << QString() << static_cast<int>(Totp::Algorithm::Sha1);
+  // Whitespace inside the URI reaches the value: it was read as SHA-1 before.
+  QTest::newRow("SHA1 with a space")
+      << QStringLiteral("SHA1%20") << static_cast<int>(Totp::Algorithm::Sha1);
+  QTest::newRow("spaced sha256") << QStringLiteral("%20sha256")
+                                 << static_cast<int>(Totp::Algorithm::Sha256);
+  QTest::newRow("blank is the default")
+      << QStringLiteral("%20") << static_cast<int>(Totp::Algorithm::Sha1);
+}
+
+void tst_totp::parseRefusesUnknownAlgorithms_data() {
+  QTest::addColumn<QString>("name");
+  QTest::newRow("SHA384") << QStringLiteral("SHA384");
+  QTest::newRow("MD5") << QStringLiteral("MD5");
+  QTest::newRow("SHA3-256") << QStringLiteral("SHA3-256");
+  QTest::newRow("HMAC alone") << QStringLiteral("HMAC");
+  QTest::newRow("SHA") << QStringLiteral("SHA");
+}
+
+/**
+ * @brief An algorithm QtPass has no HMAC for gives no code at all, as HOTP
+ * does: it showed the SHA-1 code without a warning, and toUri() then left the
+ * parameter out, which a canonicalised value saved as SHA-1 for every client.
+ */
+void tst_totp::parseRefusesUnknownAlgorithms() {
+  QFETCH(QString, name);
+  const QString uri =
+      QStringLiteral("otpauth://totp/x?secret=JBSWY3DPEHPK3PXP&algorithm=%1")
+          .arg(name);
+  QVERIFY(!Totp::parse(uri).has_value());
+  QVERIFY(!Totp::isValid(uri));
+  // Nothing to canonicalise into: the dialog keeps the value as typed.
+  QVERIFY(Totp::normalize(uri, QStringLiteral("x")).isEmpty());
 }
 
 void tst_totp::parseAlgorithmNames() {

@@ -82,12 +82,14 @@ public:
    * `digits`, `period`, `algorithm`, `encoder` and `issuer` parameters, or a
    * bare base32 secret. `otpauth://hotp/...` is rejected: a counter-based HOTP
    * value cannot be derived from a clock, and returning a plausible-looking
-   * TOTP code for it would be silently wrong.
+   * TOTP code for it would be silently wrong. So is an `algorithm` other than
+   * SHA-1, SHA-256 or SHA-512 (case, an `HMAC` prefix and `-`/`_` ignored).
    *
    * `digits` is clamped to MIN_DIGITS..MAX_DIGITS and `period` to 1..MAX_STEP.
    * @param config URI or bare base32 secret; surrounding whitespace is ignored.
    * @return Validated settings, or std::nullopt when the secret is missing or
-   *         is not decodable base32.
+   *         is not decodable base32, or the URI is HOTP or names an unknown
+   *         algorithm.
    */
   [[nodiscard]] static auto parse(const QString &config)
       -> std::optional<Settings>;

@@ -33,20 +33,33 @@ constexpr int kMinHmacSize = 20;
 
 /**
  * @brief Map an `algorithm` URI value onto a hash function.
+ *
+ * Surrounding whitespace, case, an `HMAC` prefix and `-`/`_` separators are
+ * ignored, so `SHA-256`,
+ * `HmacSHA256` and `HMAC-SHA-256` all name SHA-256. Anything else is not a
+ * hash function QtPass has: no result, rather than a SHA-1 code that looks
+ * right and an algorithm that toUri() would then leave out.
+ *
  * @param name Value of the `algorithm` parameter.
- * @return The matching algorithm, defaulting to SHA-1.
+ * @return The matching algorithm, or std::nullopt for an unknown one.
  */
-auto algorithmByName(const QString &name) -> Totp::Algorithm {
-  const QString upper = name.toUpper();
-  if (upper == QStringLiteral("SHA512") ||
-      upper == QStringLiteral("HMAC-SHA-512")) {
-    return Totp::Algorithm::Sha512;
+auto algorithmByName(const QString &name) -> std::optional<Totp::Algorithm> {
+  QString compact = name.trimmed().toUpper();
+  compact.remove(QLatin1Char('-'));
+  compact.remove(QLatin1Char('_'));
+  if (compact.startsWith(QStringLiteral("HMAC"))) {
+    compact.remove(0, 4);
   }
-  if (upper == QStringLiteral("SHA256") ||
-      upper == QStringLiteral("HMAC-SHA-256")) {
+  if (compact == QStringLiteral("SHA1")) {
+    return Totp::Algorithm::Sha1;
+  }
+  if (compact == QStringLiteral("SHA256")) {
     return Totp::Algorithm::Sha256;
   }
-  return Totp::Algorithm::Sha1;
+  if (compact == QStringLiteral("SHA512")) {
+    return Totp::Algorithm::Sha512;
+  }
+  return std::nullopt;
 }
 
 /**
@@ -164,9 +177,16 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
         param(QLatin1String("digits")).value_or(QString()), DEFAULT_DIGITS);
     settings.step = parsePositiveUInt(
         param(QLatin1String("period")).value_or(QString()), DEFAULT_STEP);
+    // An empty value is the default, as an absent one is. An unknown hash
+    // function is refused, as HOTP is: its code cannot be made here.
     if (const std::optional<QString> algorithm =
-            param(QLatin1String("algorithm"))) {
-      settings.algorithm = algorithmByName(*algorithm);
+            param(QLatin1String("algorithm"));
+        algorithm.has_value() && !algorithm->trimmed().isEmpty()) {
+      const std::optional<Algorithm> known = algorithmByName(*algorithm);
+      if (!known.has_value()) {
+        return std::nullopt;
+      }
+      settings.algorithm = *known;
     }
     if (param(QLatin1String("encoder"))
             .value_or(QString())
