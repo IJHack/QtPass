@@ -187,6 +187,7 @@ private Q_SLOTS:
   void otpUriIsNormalisedOnLeavingTheField();
   void otpUntouchedValueIsWrittenBackVerbatim();
   void otpCapitalisedParametersSurviveAnUneditedSave();
+  void otpTextAfterAHashSurvivesASave();
   void otpPopulatedFieldWinsOverTheEmptyTemplateOne();
   void renamingTheOtpFieldAwayDropsItsValidation();
   void typingInARenamedAwayOtpFieldLeavesTheCurrentOneAlone();
@@ -2019,8 +2020,9 @@ void tst_passworddialog::otpUriIsNormalisedOnLeavingTheField() {
 
 /**
  * @brief A value that came from the entry and was not touched is written
- *        back byte-for-byte (a backup code like 12345678 looks like base32),
- *        while an otpauth:// URI is canonicalised on save.
+ *        back byte-for-byte: a backup code like 12345678 (which looks like
+ *        base32), and an otpauth:// URI too. Only a value typed or pasted
+ *        into the field is canonicalised on save.
  */
 void tst_passworddialog::otpUntouchedValueIsWrittenBackVerbatim() {
   FakePass pass;
@@ -2039,35 +2041,93 @@ void tst_passworddialog::otpUntouchedValueIsWrittenBackVerbatim() {
   uriPass.deliverShow(QStringLiteral(
       "secret\nOTP: otpauth://totp/x?secret=jbswy3dpehpk3pxp\n"));
   okButton(e)->click();
-  QVERIFY2(
-      uriPass.insertedContent.contains(QStringLiteral(
-          "OTP: otpauth://totp/x?secret=jbswy3dpehpk3pxp&digits=6")),
-      qPrintable("a URI must be canonicalised:\n" + uriPass.insertedContent));
-  QVERIFY(uriPass.insertedContent.contains(QStringLiteral("period=30")));
+  QVERIFY2(uriPass.insertedContent.contains(QStringLiteral(
+               "\nOTP: otpauth://totp/x?secret=jbswy3dpehpk3pxp\n")),
+           qPrintable("an untouched URI must be kept as written:\n" +
+                      uriPass.insertedContent));
 }
 
 /**
- * @brief An untouched OTP URI is canonicalised on OK, and that must keep its
- *        settings: with capitalised parameter names it was saved as a 6-digit,
- *        30-second, SHA-1 account.
+ * @brief OTP settings with capitalised parameter names survive a save. An
+ *        untouched line is written back as it was read; one typed in is
+ *        canonicalised and keeps its values: it used to come out as a
+ *        6-digit, 30-second, SHA-1 account.
  */
 void tst_passworddialog::otpCapitalisedParametersSurviveAnUneditedSave() {
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  const QString line =
+      QStringLiteral("OTP: otpauth://totp/ACME:bob?secret=JBSWY3DPEHPK3PXP&"
+                     "Issuer=ACME&Algorithm=SHA256&Digits=8&Period=60\n");
+
+  FakePass untouched;
+  PasswordDialog d(&untouched, s, QStringLiteral("entry.gpg"), false);
+  untouched.deliverShow(QStringLiteral("secret\n") + line);
+  okButton(d)->click();
+  QVERIFY2(untouched.insertedContent.contains(line),
+           qPrintable(untouched.insertedContent));
+
+  FakePass typed;
+  PasswordDialog e(&typed, s, QStringLiteral("entry.gpg"), false);
+  typed.deliverShow(QStringLiteral("secret\n") + line);
+  auto *otp = e.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  otp->setCursorPosition(static_cast<int>(otp->text().size()));
+  QTest::keyClicks(otp, QStringLiteral("x"));
+  QTest::keyClick(otp, Qt::Key_Backspace);
+  okButton(e)->click();
+  const QString saved = typed.insertedContent;
+  QVERIFY2(saved.contains(QStringLiteral("digits=8")), qPrintable(saved));
+  for (const QString &kept :
+       {QStringLiteral("period=60"), QStringLiteral("algorithm=SHA256"),
+        QStringLiteral("issuer=ACME")}) {
+    QVERIFY2(saved.contains(kept), qPrintable(saved));
+  }
+  QVERIFY2(!saved.contains(QStringLiteral("Digits=8")),
+           qPrintable("a typed-in URI is canonicalised:\n" + saved));
+}
+
+/**
+ * @brief Recovery codes noted after a `#` behind the OTP URI survive a save
+ *        that changes another field: the canonicalised URI dropped them.
+ */
+void tst_passworddialog::otpTextAfterAHashSurvivesASave() {
   FakePass pass;
   AppSettings s = QtPassSettings::load();
   s.useTemplate = true;
   s.passTemplate = QStringLiteral("OTP");
   PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
   pass.deliverShow(QStringLiteral(
-      "secret\nOTP: otpauth://totp/ACME:bob?secret=JBSWY3DPEHPK3PXP&"
-      "Issuer=ACME&Algorithm=SHA256&Digits=8&Period=60\n"));
+      "old password\nOTP: otpauth://totp/Example:alice?secret="
+      "JBSWY3DPEHPK3PXP&issuer=Example#7f3a9-1c2d4 8b6e0-5a9f1\n"));
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY(password != nullptr);
+  password->setText(QStringLiteral("new password"));
   okButton(d)->click();
-  const QString saved = pass.insertedContent;
-  for (const QString &kept :
-       {QStringLiteral("digits=8"), QStringLiteral("period=60"),
-        QStringLiteral("algorithm=SHA256"), QStringLiteral("issuer=ACME")}) {
-    QVERIFY2(saved.contains(kept, Qt::CaseInsensitive), qPrintable(saved));
-  }
-  QVERIFY2(!saved.contains(QStringLiteral("digits=6")), qPrintable(saved));
+  QVERIFY2(pass.insertedContent.contains(
+               QStringLiteral("#7f3a9-1c2d4 8b6e0-5a9f1\n")),
+           qPrintable(pass.insertedContent));
+
+  // Typed in, the field is canonicalised, and the text after "#" still
+  // comes along.
+  FakePass typed;
+  PasswordDialog e(&typed, s, QStringLiteral("entry.gpg"), false);
+  typed.deliverShow(QStringLiteral(
+      "old password\nOTP: otpauth://totp/Example:alice?secret="
+      "JBSWY3DPEHPK3PXP&issuer=Example#7f3a9-1c2d4 8b6e0-5a9f1\n"));
+  auto *otp = e.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  otp->setCursorPosition(static_cast<int>(otp->text().size()));
+  QTest::keyClicks(otp, QStringLiteral("x"));
+  QTest::keyClick(otp, Qt::Key_Backspace);
+  okButton(e)->click();
+  QVERIFY2(
+      typed.insertedContent.contains(QStringLiteral("digits=6")),
+      qPrintable("a typed-in URI is canonicalised:\n" + typed.insertedContent));
+  QVERIFY2(typed.insertedContent.contains(
+               QStringLiteral("#7f3a9-1c2d4 8b6e0-5a9f1\n")),
+           qPrintable(typed.insertedContent));
 }
 
 /**

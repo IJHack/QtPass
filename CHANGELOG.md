@@ -814,6 +814,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   code those parameters ask for, and keeps them when the entry is saved. They
   were ignored, so the code used 6 digits, 30 seconds and SHA-1, and an OK
   in the edit dialog wrote those defaults into the entry.
+- An OK in the edit dialog writes an untouched `OTP:` line back as it was
+  read, as every other untouched line is. An `otpauth://` URI there was
+  rewritten into QtPass's own form on each save, which lost the text after
+  a `#` (recovery codes, a remark). A value typed or pasted into the field
+  is still written as a URI, and what follows its `#` is now kept as
+  written.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

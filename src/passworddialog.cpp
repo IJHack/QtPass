@@ -578,10 +578,11 @@ void PasswordDialog::validateOtpField() {
   }
 }
 
-// Only an otpauth:// URI or a value typed into this field is rewritten.
-// Base32::sanitizeInput() maps 1 to L and 8 to B, so a backup code like
-// `12345678` passes as base32 and was silently rewritten on any OK. A bare
-// secret left alone still works: Totp::parse() accepts one.
+// Only a value typed or pasted into this field is rewritten; an untouched
+// one, otpauth:// URI or not, is written back as read. Base32::sanitizeInput()
+// maps 1 to L and 8 to B, so a backup code like `12345678` passes as base32
+// and was silently rewritten on any OK. A bare secret left alone still works:
+// Totp::parse() accepts one.
 void PasswordDialog::normalizeOtpField() {
   QLineEdit *otp = m_otpLine;
   if (otp == nullptr) {
@@ -591,8 +592,11 @@ void PasswordDialog::normalizeOtpField() {
   if (text.isEmpty()) {
     return;
   }
-  if (!otp->property(kOtpEditedProperty).toBool() &&
-      !FileContent::isOtpUriValue(text)) {
+  // Only what the user typed or pasted here: an untouched line is written
+  // back as it was read, as every other untouched line is (#2147).
+  // Canonicalising it on every OK lost parameters with capitalised names, the
+  // text after a "#", and turned backup codes into secrets.
+  if (!otp->property(kOtpEditedProperty).toBool()) {
     return;
   }
   // fileName(), not completeBaseName(): the latter truncates at the last dot,
