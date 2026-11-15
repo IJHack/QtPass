@@ -50,7 +50,7 @@ class RealPass : public Pass {
    * @brief Report a `pass init`, `mv` or `cp` that exited 0 having left
    * entries encrypted to the previous recipients: a critical message and
    * processErrorExit() instead of the completion signal, so the store is
-   * not pushed as it now is.
+   * not pushed as it now is (a later push still sends what pass committed).
    * @param pid PASS_INIT, PASS_MOVE or PASS_COPY.
    * @param out pass's standard output.
    * @param err pass's and gpg's standard error, status lines included.

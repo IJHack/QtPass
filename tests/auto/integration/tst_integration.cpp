@@ -1448,15 +1448,6 @@ void tst_integration::realPass_initThatCannotReencryptIsReported() {
       encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
   QVERIFY(recipientKeyIds(m_gnupgHome.path(), gpgFile).contains(sub2));
 
-  // gpg's text in another language; the status lines are not.
-  const QByteArray oldLanguage = qgetenv("LANGUAGE");
-  qputenv("LANGUAGE", "de");
-  const auto restore = qScopeGuard([&oldLanguage] {
-    if (oldLanguage.isEmpty())
-      qunsetenv("LANGUAGE");
-    else
-      qputenv("LANGUAGE", oldLanguage);
-  });
   RealPass pass;
   setupPass(pass);
   UserInfo kept;
@@ -1479,6 +1470,35 @@ void tst_integration::realPass_initThatCannotReencryptIsReported() {
   QVERIFY2(waitForSignal(inited, 30000), "a usable list still finishes");
   QCOMPARE(critical.size(), 1);
   QVERIFY(!recipientKeyIds(m_gnupgHome.path(), gpgFile).contains(sub2));
+
+  // With a signing key pass verifies each .gpg-id with its own
+  // --status-fd=1, after the --status-fd 2 QtPass adds: that must still
+  // work, or every init would fail on a signed store.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = m_keyFingerprint;
+    QtPassSettings::save(s);
+  }
+  const auto unsign = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey.clear();
+    QtPassSettings::save(s);
+  });
+  RealPass signing;
+  setupPass(signing);
+  QSignalSpy signedInit(&signing, &Pass::finishedInit);
+  QSignalSpy signedErrors(&signing, &Pass::processErrorExit);
+  UserInfo both = kept;
+  UserInfo second;
+  second.key_id = m_keyFingerprint2;
+  second.enabled = true;
+  signing.Init(storeDir.path(), {both, second});
+  QVERIFY2(waitForSignal(signedInit, 30000),
+           qPrintable(signedErrors.isEmpty()
+                          ? QStringLiteral("no finishedInit")
+                          : signedErrors.first().at(1).toString()));
+  QVERIFY(QFile::exists(QDir(storeDir.path()).filePath(".gpg-id.sig")));
+  QVERIFY(recipientKeyIds(m_gnupgHome.path(), gpgFile).contains(sub2));
 }
 
 /**

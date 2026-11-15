@@ -229,7 +229,9 @@ void RealPass::onDequeuing(int id, bool completes) {
     // gpg's status lines do, in every locale: on stderr (fd 1 is the
     // `gpg -d | gpg -e` pipe), for this one process (Pass resets the
     // environment before each start), the last --status-fd winning over a
-    // user's own. WSLENV already forwards PASSWORD_STORE_GPG_OPTS.
+    // user's own; pass's own `--status-fd=1` for verifying a signed
+    // .gpg-id comes later on its command line and still wins. WSLENV
+    // already forwards PASSWORD_STORE_GPG_OPTS.
     QProcessEnvironment environment = exec.environment();
     const QString key = QStringLiteral("PASSWORD_STORE_GPG_OPTS");
     environment.insert(
@@ -415,8 +417,11 @@ void RealPass::reportReencryptFailure(PROCESS pid, const QString &out,
   QStringList failures;
   for (QString line : err.split(QLatin1Char('\n'))) {
     line.remove(QLatin1Char('\r'));
+    // Encrypt-side only: gpgErrorMessage() reads any FAILURE as a key that
+    // cannot encrypt, wrong advice for a decrypt that failed (no secret
+    // key, pinentry cancelled), whose reason gpg's own text gives.
     if (line.startsWith(QLatin1String("[GNUPG:] INV_RECP ")) ||
-        line.startsWith(QLatin1String("[GNUPG:] FAILURE "))) {
+        line.startsWith(QLatin1String("[GNUPG:] FAILURE encrypt"))) {
       failures << line;
     }
   }
@@ -426,7 +431,7 @@ void RealPass::reportReencryptFailure(PROCESS pid, const QString &out,
       tr("The recipients were changed, but some entries could not be "
          "re-encrypted for them: those are still encrypted to the previous "
          "recipients, who can still read them. With Git the change is "
-         "committed locally, and QtPass did not push it.");
+         "committed locally and was not pushed now; the next push sends it.");
   for (const QString &part : {reason, human}) {
     if (!part.isEmpty()) {
       body += QStringLiteral("\n\n") + part;
