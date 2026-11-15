@@ -1,8 +1,8 @@
 <map id="Pass::maxOutputArgs" name="Pass::maxOutputArgs">
 <area shape="rect" id="Node000001" title="The gpg options that enforce kMaxPlaintextBytes." alt="" coords="2640,188,2800,216"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a305a2851e3a8c3c815cc561b48a450ab" title="Decrypt ciphertext again and compare it with plaintext, so nothing replaces an entry until it is know..." alt="" coords="2383,136,2592,164"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#ade46d444b618d7d45549265b60462662" title="Decrypt ciphertext again and compare it with plaintext, byte for byte, so nothing replaces an entry u..." alt="" coords="2383,136,2592,164"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2637,184,2553,167,2553,162,2642,184"/>
-<area shape="rect" id="Node000015" href="$class_imitate_pass.html#aee1afe18c4bbce2d16e4fe90c6d160c9" title="Decrypt fileName for re&#45;encryption." alt="" coords="2393,188,2582,216"/>
+<area shape="rect" id="Node000015" href="$class_imitate_pass.html#a8739cd853cfd41e1dcf4637f43f0ae66" title="Decrypt fileName for re&#45;encryption." alt="" coords="2393,188,2582,216"/>
 <area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="2622,202,2582,204,2582,199,2627,202"/>
 <area shape="rect" id="Node000016" href="$class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="2404,60,2571,88"/>
 <area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="2681,179,2590,127,2519,91,2520,86,2593,122,2686,180"/>

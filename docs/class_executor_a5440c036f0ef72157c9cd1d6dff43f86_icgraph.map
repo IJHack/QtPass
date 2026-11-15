@@ -101,11 +101,11 @@
 <area shape="poly" id="edge51_Node000037_Node000038" title=" " alt="" coords="2154,713,1951,600,1952,595,2159,714"/>
 <area shape="poly" id="edge52_Node000037_Node000039" title=" " alt="" coords="2101,718,2003,702,2003,696,2106,718"/>
 <area shape="poly" id="edge66_Node000042_Node000038" title=" " alt="" coords="2163,426,1949,571,1946,566,2158,428"/>
-<area shape="rect" id="Node000043" href="$class_imitate_pass.html#a305a2851e3a8c3c815cc561b48a450ab" title="Decrypt ciphertext again and compare it with plaintext, so nothing replaces an entry until it is know..." alt="" coords="1820,365,2028,393"/>
+<area shape="rect" id="Node000043" href="$class_imitate_pass.html#ade46d444b618d7d45549265b60462662" title="Decrypt ciphertext again and compare it with plaintext, byte for byte, so nothing replaces an entry u..." alt="" coords="1820,365,2028,393"/>
 <area shape="poly" id="edge58_Node000042_Node000043" title=" " alt="" coords="2110,397,2029,392,2029,386,2115,396"/>
-<area shape="rect" id="Node000044" href="$class_imitate_pass.html#aee1afe18c4bbce2d16e4fe90c6d160c9" title="Decrypt fileName for re&#45;encryption." alt="" coords="1830,261,2018,289"/>
+<area shape="rect" id="Node000044" href="$class_imitate_pass.html#a8739cd853cfd41e1dcf4637f43f0ae66" title="Decrypt fileName for re&#45;encryption." alt="" coords="1830,261,2018,289"/>
 <area shape="poly" id="edge60_Node000042_Node000044" title=" " alt="" coords="2162,381,2103,343,2029,304,1995,292,1995,287,2031,299,2105,339,2167,382"/>
-<area shape="rect" id="Node000045" href="$class_imitate_pass.html#a085631a1431ac8d965028540fca2efea" title="Encrypt plaintext to recipients, into output." alt="" coords="1837,313,2012,341"/>
+<area shape="rect" id="Node000045" href="$class_imitate_pass.html#a82d39a641bb54cc1b8cb9b7168d699e8" title="Encrypt plaintext to recipients, into output." alt="" coords="1837,313,2012,341"/>
 <area shape="poly" id="edge62_Node000042_Node000045" title=" " alt="" coords="2133,386,2029,356,1984,344,1984,339,2031,351,2139,385"/>
 <area shape="rect" id="Node000046" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="1274,513,1487,541"/>
 <area shape="poly" id="edge64_Node000042_Node000046" title=" " alt="" coords="2145,423,2089,444,2031,459,1884,485,1737,504,1488,525,1487,519,1736,499,1884,480,2029,454,2088,439,2140,425"/>

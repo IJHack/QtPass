@@ -88,6 +88,7 @@ var searchData=
   ['rootindexfor_85',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]],
   ['run_86',['run',['../class_gpg_id_signer.html#a291af0865f896e7b0f7c2595de6dc3ea',1,'GpgIdSigner']]],
   ['runblocking_87',['runBlocking',['../class_executor.html#ae60746042ffc5c3eb343a2911a6bb896',1,'Executor']]],
-  ['running_88',['running',['../class_executor.html#abd923dfe9e21c7914d3973ef3d4ebefc',1,'Executor']]],
-  ['running_20external_20programs_89',['Running external programs',['../group__process.html',1,'']]]
+  ['runblockingraw_88',['runBlockingRaw',['../class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2',1,'Executor']]],
+  ['running_89',['running',['../class_executor.html#abd923dfe9e21c7914d3973ef3d4ebefc',1,'Executor']]],
+  ['running_20external_20programs_90',['Running external programs',['../group__process.html',1,'']]]
 ];

@@ -30,7 +30,7 @@ var class_password_dialog =
     [ "setEditorEnabled", "class_password_dialog.html#a7f5de73194ff8f448c8f5efc1fa624c5", null ],
     [ "setLength", "class_password_dialog.html#a6dabd26913d6885e270545b85d477b0d", null ],
     [ "setNewEntryLocation", "class_password_dialog.html#aa33e69ece1d6591cd3507b79bf6ee686", null ],
-    [ "setPass", "class_password_dialog.html#a9f195fa828f16aca14d26f5a3ca7f965", null ],
+    [ "setPass", "class_password_dialog.html#aa3ae11c8655a48bfa12621d81b2b6571", null ],
     [ "setPassword", "class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172", null ],
     [ "setPasswordCharTemplate", "class_password_dialog.html#abf3ff0128bdd1931b1c332789c1e1931", null ],
     [ "setPasswordVisible", "class_password_dialog.html#a74e166fdf362010a7a4b000ee5d760bc", null ],

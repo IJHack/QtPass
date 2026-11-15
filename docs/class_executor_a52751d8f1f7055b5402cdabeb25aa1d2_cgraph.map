@@ -1,0 +1,11 @@
+<map id="Executor::runBlockingRaw" name="Executor::runBlockingRaw">
+<area shape="rect" id="Node000001" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="5,57,196,85"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="244,57,409,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,69,231,71,226,72,196,74"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="457,5,675,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="393,54,481,38,486,36,394,59"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="460,57,672,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="409,69,447,71,442,71,409,74"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="464,109,668,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="394,83,486,105,481,105,393,88"/>
+</map>

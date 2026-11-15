@@ -1,10 +1,10 @@
 <map id="ImitatePass::pgpg" name="ImitatePass::pgpg">
 <area shape="rect" id="Node000001" title="Translate path for gpg when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="2634,184,2771,212"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a305a2851e3a8c3c815cc561b48a450ab" title="Decrypt ciphertext again and compare it with plaintext, so nothing replaces an entry until it is know..." alt="" coords="2377,55,2586,82"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#ade46d444b618d7d45549265b60462662" title="Decrypt ciphertext again and compare it with plaintext, byte for byte, so nothing replaces an entry u..." alt="" coords="2377,55,2586,82"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2677,172,2637,134,2584,98,2556,86,2557,80,2587,93,2640,130,2682,173"/>
-<area shape="rect" id="Node000015" href="$class_imitate_pass.html#aee1afe18c4bbce2d16e4fe90c6d160c9" title="Decrypt fileName for re&#45;encryption." alt="" coords="2387,107,2576,134"/>
+<area shape="rect" id="Node000015" href="$class_imitate_pass.html#a8739cd853cfd41e1dcf4637f43f0ae66" title="Decrypt fileName for re&#45;encryption." alt="" coords="2387,107,2576,134"/>
 <area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="2656,177,2585,150,2545,138,2546,132,2587,145,2661,178"/>
-<area shape="rect" id="Node000016" href="$class_imitate_pass.html#a085631a1431ac8d965028540fca2efea" title="Encrypt plaintext to recipients, into output." alt="" coords="2394,159,2569,186"/>
+<area shape="rect" id="Node000016" href="$class_imitate_pass.html#a82d39a641bb54cc1b8cb9b7168d699e8" title="Encrypt plaintext to recipients, into output." alt="" coords="2394,159,2569,186"/>
 <area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="2615,188,2569,185,2569,180,2621,188"/>
 <area shape="rect" id="Node000017" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="2108,184,2321,212"/>
 <area shape="poly" id="edge23_Node000001_Node000017" title=" " alt="" coords="2616,198,2321,200,2321,195,2621,198"/>

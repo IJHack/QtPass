@@ -1,5 +1,11 @@
 var NAVTREEINDEX7 =
 {
+"struct_totp_1_1_settings.html#aa5883b90af9312b768b7c3afbeb5c69a":[1,3,10,0,4],
+"struct_totp_1_1_settings.html#af01d2100389e8356c2fd71d974fa4275":[1,3,10,0,5],
+"struct_totp_1_1_settings.html#af134b340ca954282b2a8713ebed58684":[1,3,10,0,3],
+"struct_user_info.html":[1,2,7],
+"struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99":[1,2,7,7],
+"struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f":[1,2,7,5],
 "struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd":[1,2,7,3],
 "struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6":[1,2,7,8],
 "struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5":[1,2,7,1],

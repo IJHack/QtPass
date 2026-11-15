@@ -56,7 +56,7 @@ var searchData=
   ['setmodelandstore_53',['setModelAndStore',['../class_store_model.html#a71787f93027b50575cfbdcbb1d8de071',1,'StoreModel']]],
   ['setnewentrylocation_54',['setNewEntryLocation',['../class_password_dialog.html#aa33e69ece1d6591cd3507b79bf6ee686',1,'PasswordDialog']]],
   ['setnopassphrase_55',['setNoPassphrase',['../class_keygen_dialog.html#a5a56db2294c6d4a0a2e7c665ad2a54a1',1,'KeygenDialog']]],
-  ['setpass_56',['setPass',['../class_password_dialog.html#a9f195fa828f16aca14d26f5a3ca7f965',1,'PasswordDialog::setPass()'],['../class_store_model.html#a90d7f788202bdb64c4722ee897a01363',1,'StoreModel::setPass()'],['../class_store_tree.html#aecea7d8a011161850841f9e3e3a36bee',1,'StoreTree::setPass()']]],
+  ['setpass_56',['setPass',['../class_password_dialog.html#aa3ae11c8655a48bfa12621d81b2b6571',1,'PasswordDialog::setPass()'],['../class_store_model.html#a90d7f788202bdb64c4722ee897a01363',1,'StoreModel::setPass()'],['../class_store_tree.html#aecea7d8a011161850841f9e3e3a36bee',1,'StoreTree::setPass()']]],
   ['setpassphraseprovider_57',['setPassphraseProvider',['../class_rnp_crypto.html#a34d4b3fba554ee557ae749a3455992bf',1,'RnpCrypto']]],
   ['setpassstore_58',['setPassStore',['../class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e',1,'QtPassSettings']]],
   ['setpassword_59',['setPassword',['../class_main_window.html#a2b0351f339c894215610f1b3557c8630',1,'MainWindow::setPassword()'],['../class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172',1,'PasswordDialog::setPassword(const QString &amp;password)']]],

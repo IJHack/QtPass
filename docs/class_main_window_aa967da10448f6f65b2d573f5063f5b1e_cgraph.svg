@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="945" data-view-height="210" data-section-id="dynsection-60">
+<svg id="graph" class="graph" data-view-width="1105" data-view-height="210" data-section-id="dynsection-60">
 <g id="viewport">
 <title>MainWindow::exportPublicKey</title>
 <!-- Node1 -->
@@ -77,37 +77,37 @@
 </a>
 </g>
 </g>
-<!-- Node8 -->
-<g id="Node000008" class="node">
-<title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" target="_top" xlink:title="Load all flat settings into an AppSettings value object.">
+<!-- Node9 -->
+<g id="Node000009" class="node">
+<title>Node9</title>
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" target="_top" xlink:title="Load all flat settings into an AppSettings value object.">
 <polygon fill="white" stroke="#666666" points="330.5,-90.12 214.75,-90.12 214.75,-69.38 330.5,-69.38 330.5,-90.12"/>
 <text xml:space="preserve" text-anchor="middle" x="272.62" y="-76.62" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::load</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node8 -->
-<g id="edge7_Node000001_Node000008" class="edge">
-<title>Node1&#45;&gt;Node8</title>
-<g id="a_edge7_Node000001_Node000008"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node9 -->
+<g id="edge8_Node000001_Node000009" class="edge">
+<title>Node1&#45;&gt;Node9</title>
+<g id="a_edge8_Node000001_Node000009"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M163.25,-79.75C176.53,-79.75 190.18,-79.75 203.13,-79.75"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="202.78,-83.25 212.78,-79.75 202.78,-76.25 202.78,-83.25"/>
 </a>
 </g>
 </g>
-<!-- Node14 -->
-<g id="Node000014" class="node">
-<title>Node14</title>
-<g id="a_Node000014"><a xlink:href="namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" target="_top" xlink:title="Show a warning in plain text.">
+<!-- Node15 -->
+<g id="Node000015" class="node">
+<title>Node15</title>
+<g id="a_Node000015"><a xlink:href="namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" target="_top" xlink:title="Show a warning in plain text.">
 <polygon fill="white" stroke="#666666" points="346.25,-48.12 199,-48.12 199,-27.38 346.25,-27.38 346.25,-48.12"/>
 <text xml:space="preserve" text-anchor="middle" x="272.62" y="-34.62" font-family="Helvetica,sans-Serif" font-size="10.00">PlainMessageBox::warning</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node14 -->
-<g id="edge13_Node000001_Node000014" class="edge">
-<title>Node1&#45;&gt;Node14</title>
-<g id="a_edge13_Node000001_Node000014"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node15 -->
+<g id="edge14_Node000001_Node000015" class="edge">
+<title>Node1&#45;&gt;Node15</title>
+<g id="a_edge14_Node000001_Node000015"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M131.2,-68.93C155.71,-63.49 185.63,-56.85 211.55,-51.09"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="212.28,-54.52 221.28,-48.93 210.76,-47.68 212.28,-54.52"/>
 </a>
@@ -134,9 +134,9 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" target="_top" xlink:title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path.">
-<polygon fill="white" stroke="#666666" points="715.75,-163.12 591.75,-163.12 591.75,-142.38 715.75,-142.38 715.75,-163.12"/>
-<text xml:space="preserve" text-anchor="middle" x="653.75" y="-149.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::startProcess</text>
+<g id="a_Node000004"><a xlink:href="class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" target="_top" xlink:title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en...">
+<polygon fill="white" stroke="#666666" points="725.12,-163.12 582.38,-163.12 582.38,-142.38 725.12,-142.38 725.12,-163.12"/>
+<text xml:space="preserve" text-anchor="middle" x="653.75" y="-149.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlockingRaw</text>
 </a>
 </g>
 </g>
@@ -144,17 +144,17 @@
 <g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M519.33,-152.75C538.63,-152.75 560.2,-152.75 580.28,-152.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="580.07,-156.25 590.07,-152.75 580.07,-149.25 580.07,-156.25"/>
+<path fill="none" stroke="#63b8ff" d="M519.33,-152.75C535.63,-152.75 553.55,-152.75 570.83,-152.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="570.55,-156.25 580.55,-152.75 570.55,-149.25 570.55,-156.25"/>
 </a>
 </g>
 </g>
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
-<polygon fill="white" stroke="#666666" points="937.25,-202.12 773.5,-202.12 773.5,-181.38 937.25,-181.38 937.25,-202.12"/>
-<text xml:space="preserve" text-anchor="middle" x="855.38" y="-188.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
+<g id="a_Node000005"><a xlink:href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" target="_top" xlink:title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path.">
+<polygon fill="white" stroke="#666666" points="897.5,-163.12 773.5,-163.12 773.5,-142.38 897.5,-142.38 897.5,-163.12"/>
+<text xml:space="preserve" text-anchor="middle" x="835.5" y="-149.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::startProcess</text>
 </a>
 </g>
 </g>
@@ -162,90 +162,71 @@
 <g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
 <g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M710.36,-163.61C734.27,-168.28 762.42,-173.78 787.46,-178.68"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="786.75,-182.1 797.24,-180.59 788.09,-175.23 786.75,-182.1"/>
+<path fill="none" stroke="#63b8ff" d="M725.53,-152.75C737.45,-152.75 749.83,-152.75 761.79,-152.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="761.58,-156.25 771.58,-152.75 761.58,-149.25 761.58,-156.25"/>
 </a>
 </g>
 </g>
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" target="_top" xlink:title="Parse a configured executable as a WSL command.">
-<polygon fill="white" stroke="#666666" points="935,-163.12 775.75,-163.12 775.75,-142.38 935,-142.38 935,-163.12"/>
-<text xml:space="preserve" text-anchor="middle" x="855.38" y="-149.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::parseWslCommand</text>
+<g id="a_Node000006"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
+<polygon fill="white" stroke="#666666" points="1097.25,-202.12 933.5,-202.12 933.5,-181.38 1097.25,-181.38 1097.25,-202.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1015.38" y="-188.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node6 -->
-<g id="edge5_Node000004_Node000006" class="edge">
-<title>Node4&#45;&gt;Node6</title>
-<g id="a_edge5_Node000004_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M716,-152.75C731.27,-152.75 747.97,-152.75 764.31,-152.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="764.03,-156.25 774.03,-152.75 764.03,-149.25 764.03,-156.25"/>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge5_Node000005_Node000006" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M886.05,-163.61C906.97,-168.2 931.54,-173.59 953.54,-178.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="952.79,-181.83 963.31,-180.55 954.29,-174.99 952.79,-181.83"/>
 </a>
 </g>
 </g>
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
-<polygon fill="white" stroke="#666666" points="932,-124.12 778.75,-124.12 778.75,-103.38 932,-103.38 932,-124.12"/>
-<text xml:space="preserve" text-anchor="middle" x="855.38" y="-110.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
+<g id="a_Node000007"><a xlink:href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" target="_top" xlink:title="Parse a configured executable as a WSL command.">
+<polygon fill="white" stroke="#666666" points="1095,-163.12 935.75,-163.12 935.75,-142.38 1095,-142.38 1095,-163.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1015.38" y="-149.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::parseWslCommand</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node7 -->
-<g id="edge6_Node000004_Node000007" class="edge">
-<title>Node4&#45;&gt;Node7</title>
-<g id="a_edge6_Node000004_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M710.36,-141.89C734.27,-137.22 762.42,-131.72 787.46,-126.82"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="788.09,-130.27 797.24,-124.91 786.75,-123.4 788.09,-130.27"/>
+<!-- Node5&#45;&gt;Node7 -->
+<g id="edge6_Node000005_Node000007" class="edge">
+<title>Node5&#45;&gt;Node7</title>
+<g id="a_edge6_Node000005_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M897.71,-152.75C906.26,-152.75 915.19,-152.75 924.14,-152.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="923.94,-156.25 933.94,-152.75 923.94,-149.25 923.94,-156.25"/>
 </a>
 </g>
 </g>
-<!-- Node9 -->
-<g id="Node000009" class="node">
-<title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title="Get the singleton instance.">
-<polygon fill="white" stroke="#666666" points="534,-124.12 382.25,-124.12 382.25,-103.38 534,-103.38 534,-124.12"/>
-<text xml:space="preserve" text-anchor="middle" x="458.12" y="-110.62" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
+<polygon fill="white" stroke="#666666" points="1092,-124.12 938.75,-124.12 938.75,-103.38 1092,-103.38 1092,-124.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1015.38" y="-110.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node9 -->
-<g id="edge8_Node000008_Node000009" class="edge">
-<title>Node8&#45;&gt;Node9</title>
-<g id="a_edge8_Node000008_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M330.93,-90.37C348.87,-93.69 368.86,-97.4 387.54,-100.86"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="386.72,-104.26 397.19,-102.64 387.99,-97.38 386.72,-104.26"/>
-</a>
-</g>
-</g>
-<!-- Node11 -->
-<g id="Node000011" class="node">
-<title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" target="_top" xlink:title="Read all flat settings from a QSettings store.">
-<polygon fill="white" stroke="#666666" points="508.88,-85.5 407.38,-85.5 407.38,-52 508.88,-52 508.88,-85.5"/>
-<text xml:space="preserve" text-anchor="start" x="415.38" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">SettingsSerializer</text>
-<text xml:space="preserve" text-anchor="middle" x="458.12" y="-59.25" font-family="Helvetica,sans-Serif" font-size="10.00">::load</text>
-</a>
-</g>
-</g>
-<!-- Node8&#45;&gt;Node11 -->
-<g id="edge10_Node000008_Node000011" class="edge">
-<title>Node8&#45;&gt;Node11</title>
-<g id="a_edge10_Node000008_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M330.93,-76.31C351.52,-75.08 374.81,-73.68 395.72,-72.43"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="395.79,-75.93 405.56,-71.84 395.37,-68.95 395.79,-75.93"/>
+<!-- Node5&#45;&gt;Node8 -->
+<g id="edge7_Node000005_Node000008" class="edge">
+<title>Node5&#45;&gt;Node8</title>
+<g id="a_edge7_Node000005_Node000008"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M886.05,-141.89C906.97,-137.3 931.54,-131.91 953.54,-127.09"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="954.29,-130.51 963.31,-124.95 952.79,-123.67 954.29,-130.51"/>
 </a>
 </g>
 </g>
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" target="_top" xlink:title="Private default constructor to enforce singleton usage and prevent direct instantiation.">
-<polygon fill="white" stroke="#666666" points="737.5,-124.12 570,-124.12 570,-103.38 737.5,-103.38 737.5,-124.12"/>
-<text xml:space="preserve" text-anchor="middle" x="653.75" y="-110.62" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::QtPassSettings</text>
+<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title="Get the singleton instance.">
+<polygon fill="white" stroke="#666666" points="534,-124.12 382.25,-124.12 382.25,-103.38 534,-103.38 534,-124.12"/>
+<text xml:space="preserve" text-anchor="middle" x="458.12" y="-110.62" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
@@ -253,62 +234,99 @@
 <g id="edge9_Node000009_Node000010" class="edge">
 <title>Node9&#45;&gt;Node10</title>
 <g id="a_edge9_Node000009_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M534.26,-113.75C542.14,-113.75 550.22,-113.75 558.27,-113.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="558.11,-117.25 568.11,-113.75 558.11,-110.25 558.11,-117.25"/>
+<path fill="none" stroke="#63b8ff" d="M330.93,-90.37C348.87,-93.69 368.86,-97.4 387.54,-100.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="386.72,-104.26 397.19,-102.64 387.99,-97.38 386.72,-104.26"/>
 </a>
 </g>
 </g>
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" target="_top" xlink:title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its...">
-<polygon fill="white" stroke="#666666" points="726.62,-85.5 580.88,-85.5 580.88,-52 726.62,-52 726.62,-85.5"/>
-<text xml:space="preserve" text-anchor="start" x="588.88" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">AppSettings::defaultSecret</text>
-<text xml:space="preserve" text-anchor="middle" x="653.75" y="-59.25" font-family="Helvetica,sans-Serif" font-size="10.00">FieldNames</text>
+<g id="a_Node000012"><a xlink:href="class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" target="_top" xlink:title="Read all flat settings from a QSettings store.">
+<polygon fill="white" stroke="#666666" points="508.88,-85.5 407.38,-85.5 407.38,-52 508.88,-52 508.88,-85.5"/>
+<text xml:space="preserve" text-anchor="start" x="415.38" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">SettingsSerializer</text>
+<text xml:space="preserve" text-anchor="middle" x="458.12" y="-59.25" font-family="Helvetica,sans-Serif" font-size="10.00">::load</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node12 -->
-<g id="edge11_Node000011_Node000012" class="edge">
-<title>Node11&#45;&gt;Node12</title>
-<g id="a_edge11_Node000011_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M509.24,-68.75C527.58,-68.75 548.86,-68.75 569.33,-68.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="569.08,-72.25 579.08,-68.75 569.08,-65.25 569.08,-72.25"/>
+<!-- Node9&#45;&gt;Node12 -->
+<g id="edge11_Node000009_Node000012" class="edge">
+<title>Node9&#45;&gt;Node12</title>
+<g id="a_edge11_Node000009_Node000012"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M330.93,-76.31C351.52,-75.08 374.81,-73.68 395.72,-72.43"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="395.79,-75.93 405.56,-71.84 395.37,-68.95 395.79,-75.93"/>
+</a>
+</g>
+</g>
+<!-- Node11 -->
+<g id="Node000011" class="node">
+<title>Node11</title>
+<g id="a_Node000011"><a xlink:href="class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" target="_top" xlink:title="Private default constructor to enforce singleton usage and prevent direct instantiation.">
+<polygon fill="white" stroke="#666666" points="737.5,-124.12 570,-124.12 570,-103.38 737.5,-103.38 737.5,-124.12"/>
+<text xml:space="preserve" text-anchor="middle" x="653.75" y="-110.62" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::QtPassSettings</text>
+</a>
+</g>
+</g>
+<!-- Node10&#45;&gt;Node11 -->
+<g id="edge10_Node000010_Node000011" class="edge">
+<title>Node10&#45;&gt;Node11</title>
+<g id="a_edge10_Node000010_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M534.26,-113.75C542.14,-113.75 550.22,-113.75 558.27,-113.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="558.11,-117.25 568.11,-113.75 558.11,-110.25 558.11,-117.25"/>
 </a>
 </g>
 </g>
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" target="_top" xlink:title="Read only the password generation settings from a QSettings store.">
+<g id="a_Node000013"><a xlink:href="struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" target="_top" xlink:title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its...">
+<polygon fill="white" stroke="#666666" points="726.62,-85.5 580.88,-85.5 580.88,-52 726.62,-52 726.62,-85.5"/>
+<text xml:space="preserve" text-anchor="start" x="588.88" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">AppSettings::defaultSecret</text>
+<text xml:space="preserve" text-anchor="middle" x="653.75" y="-59.25" font-family="Helvetica,sans-Serif" font-size="10.00">FieldNames</text>
+</a>
+</g>
+</g>
+<!-- Node12&#45;&gt;Node13 -->
+<g id="edge12_Node000012_Node000013" class="edge">
+<title>Node12&#45;&gt;Node13</title>
+<g id="a_edge12_Node000012_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M509.24,-68.75C527.58,-68.75 548.86,-68.75 569.33,-68.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="569.08,-72.25 579.08,-68.75 569.08,-65.25 569.08,-72.25"/>
+</a>
+</g>
+</g>
+<!-- Node14 -->
+<g id="Node000014" class="node">
+<title>Node14</title>
+<g id="a_Node000014"><a xlink:href="class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" target="_top" xlink:title="Read only the password generation settings from a QSettings store.">
 <polygon fill="white" stroke="#666666" points="730.75,-33.5 576.75,-33.5 576.75,0 730.75,0 730.75,-33.5"/>
 <text xml:space="preserve" text-anchor="start" x="584.75" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">SettingsSerializer</text>
 <text xml:space="preserve" text-anchor="middle" x="653.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">::loadPasswordConfiguration</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node13 -->
-<g id="edge12_Node000011_Node000013" class="edge">
-<title>Node11&#45;&gt;Node13</title>
-<g id="a_edge12_Node000011_Node000013"><a xlink:title=" ">
+<!-- Node12&#45;&gt;Node14 -->
+<g id="edge13_Node000012_Node000014" class="edge">
+<title>Node12&#45;&gt;Node14</title>
+<g id="a_edge13_Node000012_Node000014"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M509.24,-55.29C530.04,-49.71 554.62,-43.1 577.51,-36.96"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="578.37,-40.35 587.12,-34.38 576.56,-33.59 578.37,-40.35"/>
 </a>
 </g>
 </g>
-<!-- Node15 -->
-<g id="Node000015" class="node">
-<title>Node15</title>
-<g id="a_Node000015"><a xlink:href="namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" target="_top" xlink:title="Show a modal message box with plain text and wait for it.">
+<!-- Node16 -->
+<g id="Node000016" class="node">
+<title>Node16</title>
+<g id="a_Node000016"><a xlink:href="namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" target="_top" xlink:title="Show a modal message box with plain text and wait for it.">
 <polygon fill="white" stroke="#666666" points="525,-34.12 391.25,-34.12 391.25,-13.38 525,-13.38 525,-34.12"/>
 <text xml:space="preserve" text-anchor="middle" x="458.12" y="-20.62" font-family="Helvetica,sans-Serif" font-size="10.00">PlainMessageBox::show</text>
 </a>
 </g>
 </g>
-<!-- Node14&#45;&gt;Node15 -->
-<g id="edge14_Node000014_Node000015" class="edge">
-<title>Node14&#45;&gt;Node15</title>
-<g id="a_edge14_Node000014_Node000015"><a xlink:title=" ">
+<!-- Node15&#45;&gt;Node16 -->
+<g id="edge15_Node000015_Node000016" class="edge">
+<title>Node15&#45;&gt;Node16</title>
+<g id="a_edge15_Node000015_Node000016"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M346.68,-32.18C357.51,-31.35 368.7,-30.5 379.62,-29.66"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="379.65,-33.17 389.36,-28.92 379.12,-26.19 379.65,-33.17"/>
 </a>

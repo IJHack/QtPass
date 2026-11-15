@@ -161,8 +161,8 @@ Signals</h2></td></tr>
 <tr class="memdesc:a7a6b3a9abf7c6c1a58d1e1b6f3c72b82"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">git pull</span> succeeded; entries may have changed on disk.  <br /></td></tr>
 <tr class="memitem:a835378925ada56acd922899f64e85933" id="r_a835378925ada56acd922899f64e85933"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a835378925ada56acd922899f64e85933">finishedGitPush</a> (const QString &amp;out, const QString &amp;err)</td></tr>
 <tr class="memdesc:a835378925ada56acd922899f64e85933"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">git push</span> succeeded.  <br /></td></tr>
-<tr class="memitem:a3a1a065e12909518f3898b3557ed714c" id="r_a3a1a065e12909518f3898b3557ed714c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3a1a065e12909518f3898b3557ed714c">finishedShow</a> (const QString &amp;out, const QString &amp;file)</td></tr>
-<tr class="memdesc:a3a1a065e12909518f3898b3557ed714c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> succeeds.  <br /></td></tr>
+<tr class="memitem:a67ebaa52485abc26494f0866aadcedeb" id="r_a67ebaa52485abc26494f0866aadcedeb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a67ebaa52485abc26494f0866aadcedeb">finishedShow</a> (const QString &amp;out, const QString &amp;file, bool lossless=true)</td></tr>
+<tr class="memdesc:a67ebaa52485abc26494f0866aadcedeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> succeeds.  <br /></td></tr>
 <tr class="memitem:a14d258f93b689ff92cea0d11b136eb83" id="r_a14d258f93b689ff92cea0d11b136eb83"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a14d258f93b689ff92cea0d11b136eb83">finishedInsert</a> (const QString &amp;out, const QString &amp;err)</td></tr>
 <tr class="memdesc:a14d258f93b689ff92cea0d11b136eb83"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> succeeded: the entry is in the store and, with Git in use, committed.  <br /></td></tr>
 <tr class="memitem:af08e80e76ffd6581f35e701e6c8b533e" id="r_af08e80e76ffd6581f35e701e6c8b533e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af08e80e76ffd6581f35e701e6c8b533e">finishedRemove</a> (const QString &amp;out, const QString &amp;err)</td></tr>
@@ -1441,8 +1441,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3a1a065e12909518f3898b3557ed714c" name="a3a1a065e12909518f3898b3557ed714c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a1a065e12909518f3898b3557ed714c">&#9670;&#160;</a></span>finishedShow</h2>
+<a id="a67ebaa52485abc26494f0866aadcedeb" name="a67ebaa52485abc26494f0866aadcedeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ebaa52485abc26494f0866aadcedeb">&#9670;&#160;</a></span>finishedShow</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1458,7 +1458,12 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>&#160;)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>lossless</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1469,10 +1474,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> succeeds. </p>
-<p>Requests complete in the order they were queued, so <code class="param">file</code> is the argument of the <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> this result belongs to. Every receiver checks it against what it asked for; a failed decrypt emits <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a> instead and never <a class="el" href="#a3a1a065e12909518f3898b3557ed714c" title="Emitted when a Show() succeeds.">finishedShow()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Requests complete in the order they were queued, so <code class="param">file</code> is the argument of the <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> this result belongs to. Every receiver checks it against what it asked for; a failed decrypt emits <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a> instead and never <a class="el" href="#a67ebaa52485abc26494f0866aadcedeb" title="Emitted when a Show() succeeds.">finishedShow()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>Decrypted password file content. </td></tr>
+    <tr><td class="paramname">out</td><td>Decrypted password file content, as text: fine to show or copy, but only to write back when <code class="param">lossless</code>. </td></tr>
     <tr><td class="paramname">file</td><td>The <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> argument this content is for. </td></tr>
+    <tr><td class="paramname">lossless</td><td>false when <code class="param">out</code> does not encode back to the entry's bytes (they are not UTF-8, or begin with a byte order mark), so saving it would change the entry (<a class="el" href="class_executor.html#a157a5a1a3a64e3feed5d7a33da53f0c2" title="Whether the stdout of the item whose finished() or error() is being emitted encodes back (toUtf8(),...">Executor::lastOutputLossless()</a>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1480,7 +1486,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-25-summary" class="dynsummary">
 </div>
 <div id="dynsection-25-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a3a1a065e12909518f3898b3557ed714c_icgraph.svg" width="100%" height="592"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a67ebaa52485abc26494f0866aadcedeb_icgraph.svg" width="100%" height="592"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

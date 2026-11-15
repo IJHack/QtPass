@@ -935,7 +935,7 @@
 <!-- Node43 -->
 <g id="Node000043" class="node">
 <title>Node43</title>
-<g id="a_Node000043"><a xlink:href="class_imitate_pass.html#a305a2851e3a8c3c815cc561b48a450ab" target="_top" xlink:title="Decrypt ciphertext again and compare it with plaintext, so nothing replaces an entry until it is know...">
+<g id="a_Node000043"><a xlink:href="class_imitate_pass.html#ade46d444b618d7d45549265b60462662" target="_top" xlink:title="Decrypt ciphertext again and compare it with plaintext, byte for byte, so nothing replaces an entry u...">
 <polygon fill="white" stroke="#666666" points="1517.38,-554.75 1361.12,-554.75 1361.12,-534 1517.38,-534 1517.38,-554.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1439.25" y="-541.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::ciphertextHolds</text>
 </a>
@@ -953,7 +953,7 @@
 <!-- Node44 -->
 <g id="Node000044" class="node">
 <title>Node44</title>
-<g id="a_Node000044"><a xlink:href="class_imitate_pass.html#aee1afe18c4bbce2d16e4fe90c6d160c9" target="_top" xlink:title="Decrypt fileName for re&#45;encryption.">
+<g id="a_Node000044"><a xlink:href="class_imitate_pass.html#a8739cd853cfd41e1dcf4637f43f0ae66" target="_top" xlink:title="Decrypt fileName for re&#45;encryption.">
 <polygon fill="white" stroke="#666666" points="1509.88,-632.75 1368.62,-632.75 1368.62,-612 1509.88,-612 1509.88,-632.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1439.25" y="-619.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::decryptEntry</text>
 </a>
@@ -971,7 +971,7 @@
 <!-- Node45 -->
 <g id="Node000045" class="node">
 <title>Node45</title>
-<g id="a_Node000045"><a xlink:href="class_imitate_pass.html#a085631a1431ac8d965028540fca2efea" target="_top" xlink:title="Encrypt plaintext to recipients, into output.">
+<g id="a_Node000045"><a xlink:href="class_imitate_pass.html#a82d39a641bb54cc1b8cb9b7168d699e8" target="_top" xlink:title="Encrypt plaintext to recipients, into output.">
 <polygon fill="white" stroke="#666666" points="1504.62,-593.75 1373.88,-593.75 1373.88,-573 1504.62,-573 1504.62,-593.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1439.25" y="-580.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::encryptFor</text>
 </a>

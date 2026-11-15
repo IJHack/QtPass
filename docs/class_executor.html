@@ -176,6 +176,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aee160ee2ec954bdb58a3a38555536090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel the next queued command without executing it.  <br /></td></tr>
 <tr class="memitem:a3c5acbcdb1b3be56c5ef7082678698af" id="r_a3c5acbcdb1b3be56c5ef7082678698af"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3c5acbcdb1b3be56c5ef7082678698af">isIdle</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:a3c5acbcdb1b3be56c5ef7082678698af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether no command is running and nothing is queued.  <br /></td></tr>
+<tr class="memitem:a157a5a1a3a64e3feed5d7a33da53f0c2" id="r_a157a5a1a3a64e3feed5d7a33da53f0c2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a157a5a1a3a64e3feed5d7a33da53f0c2">lastOutputLossless</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a157a5a1a3a64e3feed5d7a33da53f0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the stdout of the item whose <a class="el" href="#ace810a6d93c74dec7188038210c5a731" title="Emitted when a queued process exits normally, whatever its exit code; a non-zero code is the receiver...">finished()</a> or <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">error()</a> is being emitted encodes back (toUtf8(), as every writer here does) to exactly the bytes the process wrote. When false, writing that text back changes the bytes whatever else happens to it.  <br /></td></tr>
 <tr class="memitem:a77fc56acc6ba0d9efd0e50fbbd71b002" id="r_a77fc56acc6ba0d9efd0e50fbbd71b002"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a77fc56acc6ba0d9efd0e50fbbd71b002">hasQueued</a> (int id) const -&gt; bool</td></tr>
 <tr class="memdesc:a77fc56acc6ba0d9efd0e50fbbd71b002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a command with process id <code class="param">id</code> is queued or running.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -185,6 +187,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4e210af42a76029683ded3210cf7bce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously and return its exit code.  <br /></td></tr>
 <tr class="memitem:a15bdb2a88cfa90134bbf8601eef4055e" id="r_a15bdb2a88cfa90134bbf8601eef4055e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a15bdb2a88cfa90134bbf8601eef4055e">executeBlocking</a> (QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</td></tr>
 <tr class="memdesc:a15bdb2a88cfa90134bbf8601eef4055e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously on a caller-supplied QProcess, with optional cancellation.  <br /></td></tr>
+<tr class="memitem:aa85fd530f22dc8d60b4fa696c33da5f1" id="r_aa85fd530f22dc8d60b4fa696c33da5f1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa85fd530f22dc8d60b4fa696c33da5f1">executeBlockingRaw</a> (QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QByteArray &amp;input, QByteArray *process_out, QString *process_err=nullptr, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</td></tr>
+<tr class="memdesc:aa85fd530f22dc8d60b4fa696c33da5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">executeBlocking()</a> on bytes, for an entry's plaintext: <code class="param">input</code> is written to stdin and stdout returned exactly as they are, so content that is not UTF-8 (a Latin-1 password, a binary key) passes through unchanged. stderr is decoded as in <a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">executeBlocking()</a>. A name of its own, not an overload: a string literal or nullptr would be ambiguous.  <br /></td></tr>
 <tr class="memitem:a9c01e6e31745874177b21982ce2cd4d1" id="r_a9c01e6e31745874177b21982ce2cd4d1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c01e6e31745874177b21982ce2cd4d1">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</td></tr>
 <tr class="memdesc:a9c01e6e31745874177b21982ce2cd4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously capturing stdout and stderr.  <br /></td></tr>
 <tr class="memitem:a061f1202d96a7145f9bc19abef923fe3" id="r_a061f1202d96a7145f9bc19abef923fe3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a061f1202d96a7145f9bc19abef923fe3">executeBlocking</a> (const QProcessEnvironment &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
@@ -223,6 +227,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memdesc:a79e2b04e8eb852c4ddcbf3e3f1928f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start <code class="param">process</code> running <code class="param">app</code>, handling the "wsl " prefix once for both the queued and the blocking path.  <br /></td></tr>
 <tr class="memitem:ae60746042ffc5c3eb343a2911a6bb896" id="r_ae60746042ffc5c3eb343a2911a6bb896"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae60746042ffc5c3eb343a2911a6bb896">runBlocking</a> (QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QString &amp;input, QString *process_out, QString *process_err, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</td></tr>
 <tr class="memdesc:ae60746042ffc5c3eb343a2911a6bb896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared blocking run: start <code class="param">process</code>, optionally feed <code class="param">input</code> on stdin, wait, and capture stdout/stderr. Backs the executeBlocking overloads. The caller configures <code class="param">process</code> (e.g. environment) first.  <br /></td></tr>
+<tr class="memitem:a52751d8f1f7055b5402cdabeb25aa1d2" id="r_a52751d8f1f7055b5402cdabeb25aa1d2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a52751d8f1f7055b5402cdabeb25aa1d2">runBlockingRaw</a> (QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QByteArray &amp;input, QByteArray *process_out, QString *process_err, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</td></tr>
+<tr class="memdesc:a52751d8f1f7055b5402cdabeb25aa1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr....">runBlocking()</a> on bytes: <code class="param">input</code> is written and stdout returned as they are, with no text decoding or encoding. stderr is still decoded.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -236,6 +242,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a5c333622022bd27ab87b0c581496f66f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">error()</a>s of failed starts posted but not delivered yet.  <br /></td></tr>
 <tr class="memitem:a68704b9a35398e88fa70ae00600d70a5" id="r_a68704b9a35398e88fa70ae00600d70a5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a68704b9a35398e88fa70ae00600d70a5">m_drainCheckPosted</a> = false</td></tr>
 <tr class="memdesc:a68704b9a35398e88fa70ae00600d70a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="#a987e7227ac1932bbb59cea5cbc82d483" title="Emitted once the last queued item is done and nothing runs or waits any more (isIdle()),...">drained()</a> check is posted and not run yet.  <br /></td></tr>
+<tr class="memitem:a8fb276cf46b2059d31040b29eeac9ddc" id="r_a8fb276cf46b2059d31040b29eeac9ddc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8fb276cf46b2059d31040b29eeac9ddc">m_outputLossless</a> = true</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Runs non-interactive external commands in FIFO order using a single QProcess. </p>
@@ -303,7 +310,7 @@ Private Attributes</h2></td></tr>
 <p>Cancel the next queued command without executing it. </p>
 <dl class="section return"><dt>Returns</dt><dd>The id of the cancelled command, or -1 if the queue was empty. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00462">462</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00496">496</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -392,7 +399,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>stdout and stderr, each empty when not read. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00522">522</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00558">558</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
@@ -539,7 +546,7 @@ Private Attributes</h2></td></tr>
 <p>Return the environment passed to child processes. </p>
 <dl class="section return"><dt>Returns</dt><dd>Process environment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00457">457</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00491">491</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
@@ -914,7 +921,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00444">444</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00478">478</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary">
 </div>
@@ -979,7 +986,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00422">422</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00456">456</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary">
 </div>
@@ -1044,7 +1051,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00438">438</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00472">472</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -1127,12 +1134,101 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 if it failed to start, crashed, was cancelled or ran out of time. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00429">429</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00463">463</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
 <div id="dynsection-21-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a15bdb2a88cfa90134bbf8601eef4055e_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa85fd530f22dc8d60b4fa696c33da5f1" name="aa85fd530f22dc8d60b4fa696c33da5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa85fd530f22dc8d60b4fa696c33da5f1">&#9670;&#160;</a></span>executeBlockingRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::executeBlockingRaw </td>
+          <td>(</td>
+          <td class="paramtype">QProcess &amp;</td>          <td class="paramname"><span class="paramname"><em>process</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>app</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray *</td>          <td class="paramname"><span class="paramname"><em>process_out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;) -&gt; int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">executeBlocking()</a> on bytes, for an entry's plaintext: <code class="param">input</code> is written to stdin and stdout returned exactly as they are, so content that is not UTF-8 (a Latin-1 password, a binary key) passes through unchanged. stderr is decoded as in <a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">executeBlocking()</a>. A name of its own, not an overload: a string literal or nullptr would be ambiguous. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>Process object to run the command on. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">input</td><td>Bytes to write to stdin (empty = none). </td></tr>
+    <tr><td class="paramname">process_out</td><td>If non-null, receives stdout. </td></tr>
+    <tr><td class="paramname">process_err</td><td>If non-null, receives stderr. </td></tr>
+    <tr><td class="paramname">cancel</td><td>If non-null, a flag that ends the run when set. </td></tr>
+    <tr><td class="paramname">timeoutMs</td><td>Time for the whole run, start included; negative (the default) for none. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 if it failed to start, crashed, was cancelled or ran out of time. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00446">446</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aa85fd530f22dc8d60b4fa696c33da5f1_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
+</div>
+<div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aa85fd530f22dc8d60b4fa696c33da5f1_icgraph.svg" width="100%" height="483"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1164,16 +1260,16 @@ Private Attributes</h2></td></tr>
 <p>Marks the executor running and emits <a class="el" href="#a22b5633f6b06f7f15be77370b5bd2871" title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,...">dequeuing()</a> before touching the item, so a slot there cannot invalidate it. An item with no executable is failed with a queued <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">error()</a> (an empty command used to wedge the queue, #1682) and the next one is tried at once. Called after each <a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Queue a command without stdin input.">execute()</a> and from <a class="el" href="#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits.">onProcessFinished()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00192">192</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary">
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
 </div>
-<div id="dynsection-22-content" class="dyncontent hidden">
+<div id="dynsection-24-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_ae71c92047b8337f770294e84211d850f_cgraph.svg" width="100%" height="524"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary">
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
 </div>
-<div id="dynsection-23-content" class="dyncontent hidden">
+<div id="dynsection-25-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_ae71c92047b8337f770294e84211d850f_icgraph.svg" width="622" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1226,10 +1322,10 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary">
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
 </div>
-<div id="dynsection-24-content" class="dyncontent hidden">
+<div id="dynsection-26-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_ace810a6d93c74dec7188038210c5a731_icgraph.svg" width="100%" height="436"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1267,11 +1363,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the queue holds a command with that id. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00437">437</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
-<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00499">499</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
 </div>
-<div id="dynsection-25-content" class="dyncontent hidden">
+<div id="dynsection-27-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a77fc56acc6ba0d9efd0e50fbbd71b002_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1303,18 +1399,54 @@ Private Attributes</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00425">425</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
-<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00473">473</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
 </div>
-<div id="dynsection-26-content" class="dyncontent hidden">
+<div id="dynsection-28-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a3c5acbcdb1b3be56c5ef7082678698af_cgraph.svg" width="131" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary">
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
 </div>
-<div id="dynsection-27-content" class="dyncontent hidden">
+<div id="dynsection-29-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a3c5acbcdb1b3be56c5ef7082678698af_icgraph.svg" width="100%" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a157a5a1a3a64e3feed5d7a33da53f0c2" name="a157a5a1a3a64e3feed5d7a33da53f0c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a157a5a1a3a64e3feed5d7a33da53f0c2">&#9670;&#160;</a></span>lastOutputLossless()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::lastOutputLossless </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the stdout of the item whose <a class="el" href="#ace810a6d93c74dec7188038210c5a731" title="Emitted when a queued process exits normally, whatever its exit code; a non-zero code is the receiver...">finished()</a> or <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">error()</a> is being emitted encodes back (toUtf8(), as every writer here does) to exactly the bytes the process wrote. When false, writing that text back changes the bytes whatever else happens to it. </p>
+<p>Valid only in a slot directly connected to those signals, while the emission runs; at any other time, and when stdout was not read, true. </p><dl class="section return"><dt>Returns</dt><dd>false when the output was not UTF-8 or began with a byte order mark. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00485">485</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
+</div>
+<div id="dynsection-30-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a157a5a1a3a64e3feed5d7a33da53f0c2_icgraph.svg" width="100%" height="471"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1355,17 +1487,17 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00478">478</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00512">512</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
 </div>
-<div id="dynsection-28-content" class="dyncontent hidden">
+<div id="dynsection-31-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a5bb1a5d03be735f01c38aebd04b5c36c_cgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary">
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
 </div>
-<div id="dynsection-29-content" class="dyncontent hidden">
+<div id="dynsection-32-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a5bb1a5d03be735f01c38aebd04b5c36c_icgraph.svg" width="406" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1406,10 +1538,10 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The parsed command, or nothing when <code class="param">app</code> is not one. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00114">114</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary">
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
 </div>
-<div id="dynsection-30-content" class="dyncontent hidden">
+<div id="dynsection-33-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aec74cb83e3072dbf74a5f09681f4716c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1439,17 +1571,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Post one check for <a class="el" href="#a987e7227ac1932bbb59cea5cbc82d483" title="Emitted once the last queued item is done and nothing runs or waits any more (isIdle()),...">drained()</a>, coalesced: it comes after what is being emitted now, and fires only when the executor is idle and no <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">error()</a> of a failed start is still on its way. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00503">503</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00539">539</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
 </div>
-<div id="dynsection-31-content" class="dyncontent hidden">
+<div id="dynsection-34-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a0dc059529757ca423bde0b74fe0129c2_cgraph.svg" width="391" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary">
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary">
 </div>
-<div id="dynsection-32-content" class="dyncontent hidden">
+<div id="dynsection-35-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a0dc059529757ca423bde0b74fe0129c2_icgraph.svg" width="100%" height="385"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1488,10 +1620,10 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>What to hand to QProcess::start(). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00086">86</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary">
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary">
 </div>
-<div id="dynsection-33-content" class="dyncontent hidden">
+<div id="dynsection-36-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a96a40ee14be47ac090dea92e621d7be7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1570,18 +1702,107 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 on start/crash failure, cancel or timeout. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00382">382</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00392">392</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
 </div>
-<div id="dynsection-34-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_ae60746042ffc5c3eb343a2911a6bb896_cgraph.svg" width="654" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-37-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_ae60746042ffc5c3eb343a2911a6bb896_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary">
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
 </div>
-<div id="dynsection-35-content" class="dyncontent hidden">
+<div id="dynsection-38-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_ae60746042ffc5c3eb343a2911a6bb896_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a52751d8f1f7055b5402cdabeb25aa1d2" name="a52751d8f1f7055b5402cdabeb25aa1d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52751d8f1f7055b5402cdabeb25aa1d2">&#9670;&#160;</a></span>runBlockingRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::runBlockingRaw </td>
+          <td>(</td>
+          <td class="paramtype">QProcess &amp;</td>          <td class="paramname"><span class="paramname"><em>process</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>app</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray *</td>          <td class="paramname"><span class="paramname"><em>process_out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;) -&gt; int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr....">runBlocking()</a> on bytes: <code class="param">input</code> is written and stdout returned as they are, with no text decoding or encoding. stderr is still decoded. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>Pre-configured QProcess to run. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">input</td><td>Bytes to write to stdin (empty = none). </td></tr>
+    <tr><td class="paramname">process_out</td><td>If non-null, receives stdout. </td></tr>
+    <tr><td class="paramname">process_err</td><td>If non-null, receives stderr. </td></tr>
+    <tr><td class="paramname">cancel</td><td>Optional flag another thread may set to end the run. </td></tr>
+    <tr><td class="paramname">timeoutMs</td><td>Time for the whole run, start included; negative for none. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 on start/crash failure, cancel or timeout. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00407">407</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary">
+</div>
+<div id="dynsection-39-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a52751d8f1f7055b5402cdabeb25aa1d2_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary">
+</div>
+<div id="dynsection-40-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a52751d8f1f7055b5402cdabeb25aa1d2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1618,10 +1839,10 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00065">65</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary">
+<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary">
 </div>
-<div id="dynsection-36-content" class="dyncontent hidden">
+<div id="dynsection-41-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a9f717e2a6f4b5ed7a0ef6f833a80d880_icgraph.svg" width="576" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1650,11 +1871,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00453">453</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00487">487</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary">
 </div>
-<div id="dynsection-37-content" class="dyncontent hidden">
+<div id="dynsection-42-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_ae542d7fba49e96e26fb93c52a9860b22_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1684,10 +1905,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted just before a queued process is started; the main window shows the busy indicator on it. </p>
-<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary">
+<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary">
 </div>
-<div id="dynsection-38-content" class="dyncontent hidden">
+<div id="dynsection-43-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_acfcfc18b0b973791530302eb8179e038_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1736,16 +1957,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00069">69</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary">
+<div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary">
 </div>
-<div id="dynsection-39-content" class="dyncontent hidden">
+<div id="dynsection-44-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a79e2b04e8eb852c4ddcbf3e3f1928f10_cgraph.svg" width="443" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-40-summary" class="dynsummary">
+<div id="dynsection-45" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary">
 </div>
-<div id="dynsection-40-content" class="dyncontent hidden">
+<div id="dynsection-45-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a79e2b04e8eb852c4ddcbf3e3f1928f10_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1789,16 +2010,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Path suitable for <code class="param">exe</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00177">177</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary">
+<div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary">
 </div>
-<div id="dynsection-41-content" class="dyncontent hidden">
+<div id="dynsection-46-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a5440c036f0ef72157c9cd1d6dff43f86_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-42-summary" class="dynsummary">
+<div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary">
 </div>
-<div id="dynsection-42-content" class="dyncontent hidden">
+<div id="dynsection-47-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a5440c036f0ef72157c9cd1d6dff43f86_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1843,10 +2064,10 @@ Private Attributes</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b" title="Arguments for launcher that run command with args.">WslCommand::argv</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00172">172</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-43-summary" class="dynsummary">
+<div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary">
 </div>
-<div id="dynsection-43-content" class="dyncontent hidden">
+<div id="dynsection-48-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a9eb4d0403edeab54a94cba4ba3cc3dfd_cgraph.svg" width="402" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1902,6 +2123,31 @@ Private Attributes</h2></td></tr>
 <p>Commands waiting to run, head first. The head stays queued while it runs and is dequeued in <a class="el" href="#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits.">onProcessFinished()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00062">62</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+
+</div>
+</div>
+<a id="a8fb276cf46b2059d31040b29eeac9ddc" name="a8fb276cf46b2059d31040b29eeac9ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb276cf46b2059d31040b29eeac9ddc">&#9670;&#160;</a></span>m_outputLossless</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Executor::m_outputLossless = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="#a157a5a1a3a64e3feed5d7a33da53f0c2" title="Whether the stdout of the item whose finished() or error() is being emitted encodes back (toUtf8(),...">lastOutputLossless()</a>: set by <a class="el" href="#a676362a1d54d7bce3bced4abd3e65944" title="Read what a finished process produced, according to the queue item&#39;s readStdout/readStderr flags; std...">collectOutput()</a>, true again after the emit, so a receiver that runs later never reads a stale value. </p>
+
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00091">91</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
