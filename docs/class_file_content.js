@@ -13,6 +13,7 @@ var class_file_content =
     [ "isOtpUriValue", "class_file_content.html#af99e299f227bbdd4714c429004152742", null ],
     [ "isSecretFieldName", "class_file_content.html#a91dfee0a7472e06dad305a66d8025460", null ],
     [ "parse", "class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e", null ],
+    [ "passwordLine", "class_file_content.html#a41f00506abcd1629b156219f4acb0f1a", null ],
     [ "kMaxDisplayLines", "class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365", null ],
     [ "kMaxNamedFields", "class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8", null ],
     [ "namedValues", "class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518", null ],

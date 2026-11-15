@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"qtpass_8h.html":[4,0,1,68],
+"qtpass_8h_source.html":[4,0,1,68],
 "qtpasslogging_8cpp.html":[4,0,1,69],
 "qtpasslogging_8cpp_source.html":[4,0,1,69],
 "qtpasslogging_8h.html":[1,7,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5":[1,2,7,1],
 "struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a":[1,2,7,2],
 "struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6":[1,2,7,4],
-"struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb":[1,2,7,9],
-"struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa":[1,2,7,0],
-"struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766":[1,2,7,10]
+"struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb":[1,2,7,9]
 };

@@ -56,6 +56,7 @@ var class_password_dialog =
     [ "m_otpWarning", "class_password_dialog.html#afa36e913c806c82e962d75daf75b2953", null ],
     [ "m_pass", "class_password_dialog.html#a3acaf78f140cb84e22fcdb74b34c94c6", null ],
     [ "m_passConfig", "class_password_dialog.html#aab7118867180538bae7a84bcdb25c13e", null ],
+    [ "m_passwordLineEnd", "class_password_dialog.html#ac0240637caed3fa64c72944ea376b34d", null ],
     [ "m_saving", "class_password_dialog.html#a77f54fa5d5517a2a9e452ecca0ec00f5", null ],
     [ "m_storeRoot", "class_password_dialog.html#a9de844765b306cb192ff837677d1c9f0", null ],
     [ "m_templateLines", "class_password_dialog.html#ad8d89451f12b86a6733e17b781f52a25", null ],
