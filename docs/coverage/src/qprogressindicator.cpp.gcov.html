@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 08:54:15</td>
+            <td class="headerValue">2026-11-15 09:18:39</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -81,12 +81,12 @@
 <span id="L8"><span class="lineNum">       8</span>              :  * @brief QProgressIndicator::QProgressIndicator constructor.</span>
 <span id="L9"><span class="lineNum">       9</span>              :  * @param parent widget the indicator is placed in.</span>
 <span id="L10"><span class="lineNum">      10</span>              :  */</span>
-<span id="L11"><span class="lineNum">      11</span> <span class="tlaGNC">          29 : QProgressIndicator::QProgressIndicator(QWidget *parent)</span></span>
-<span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC">          29 :     : QWidget(parent), m_angle(0), m_timerId(-1), m_delay(40),</span></span>
-<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">          29 :       m_displayedWhenStopped(false), m_color() {</span></span>
-<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">          29 :   setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);</span></span>
-<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">          29 :   setFocusPolicy(Qt::NoFocus);</span></span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          29 : }</span></span>
+<span id="L11"><span class="lineNum">      11</span> <span class="tlaGNC">          30 : QProgressIndicator::QProgressIndicator(QWidget *parent)</span></span>
+<span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC">          30 :     : QWidget(parent), m_angle(0), m_timerId(-1), m_delay(40),</span></span>
+<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">          30 :       m_displayedWhenStopped(false), m_color() {</span></span>
+<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">          30 :   setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);</span></span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">          30 :   setFocusPolicy(Qt::NoFocus);</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          30 : }</span></span>
 <span id="L17"><span class="lineNum">      17</span>              : </span>
 <span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">          33 : auto QProgressIndicator::isAnimated() const -&gt; bool { return m_timerId != -1; }</span></span>
 <span id="L19"><span class="lineNum">      19</span>              : </span>
@@ -100,13 +100,13 @@
 <span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           5 :   return m_displayedWhenStopped;</span></span>
 <span id="L28"><span class="lineNum">      28</span>              : }</span>
 <span id="L29"><span class="lineNum">      29</span>              : </span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">          17 : void QProgressIndicator::startAnimation() {</span></span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">          17 :   m_angle = 0;</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">          18 : void QProgressIndicator::startAnimation() {</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">          18 :   m_angle = 0;</span></span>
 <span id="L32"><span class="lineNum">      32</span>              : </span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">          17 :   if (m_timerId == -1) {</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">          16 :     m_timerId = startTimer(m_delay);</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">          18 :   if (m_timerId == -1) {</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">          17 :     m_timerId = startTimer(m_delay);</span></span>
 <span id="L35"><span class="lineNum">      35</span>              :   }</span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          17 : }</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          18 : }</span></span>
 <span id="L37"><span class="lineNum">      37</span>              : </span>
 <span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          11 : void QProgressIndicator::stopAnimation() {</span></span>
 <span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          11 :   if (m_timerId != -1) {</span></span>
@@ -140,7 +140,7 @@
 <span id="L67"><span class="lineNum">      67</span>              :  * @brief QProgressIndicator::sizeHint default minimum size.</span>
 <span id="L68"><span class="lineNum">      68</span>              :  * @return QSize(20, 20)</span>
 <span id="L69"><span class="lineNum">      69</span>              :  */</span>
-<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">           9 : auto QProgressIndicator::sizeHint() const -&gt; QSize { return {20, 20}; }</span></span>
+<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">          10 : auto QProgressIndicator::sizeHint() const -&gt; QSize { return {20, 20}; }</span></span>
 <span id="L71"><span class="lineNum">      71</span>              : </span>
 <span id="L72"><span class="lineNum">      72</span>              : /**</span>
 <span id="L73"><span class="lineNum">      73</span>              :  * @brief QProgressIndicator::heightForWidth square ratio.</span>

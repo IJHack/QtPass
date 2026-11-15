@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"qtpasssettings_8h_source.html":[4,0,1,72],
 "realpass_8cpp.html":[4,0,1,73],
 "realpass_8cpp_source.html":[4,0,1,73],
 "realpass_8h.html":[4,0,1,74],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "templateio_8cpp_source.html":[4,0,1,95],
 "templateio_8h.html":[4,0,1,96],
 "templateio_8h_source.html":[4,0,1,96],
-"topics.html":[1],
-"totp_8cpp.html":[4,0,1,97]
+"topics.html":[1]
 };

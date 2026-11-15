@@ -66,12 +66,12 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4",
-"class_main_window.html#aac6a34d508898a862807dc2512e6b659",
-"class_password_display_panel.html#a4654eec1dc8a91f02d20a63247bfb840",
-"class_single_application.html#aefdefa8280cdb7a65b3447c675b2f0c8",
+"class_main_window.html#aaba13f61c81edb811a593818518cf831",
+"class_password_display_panel.html#a3be383ffb43c6be89ce0d45f040cc27c",
+"class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a",
 "functions_func.html",
-"realpass_8cpp.html",
-"totp_8cpp_source.html"
+"qtpasssettings_8h_source.html",
+"totp_8cpp.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -89,6 +89,7 @@ var group__keys =
       [ "applyPassphrase", "class_keygen_dialog.html#a1286e8e44dcb894081e3e41c9cea21d1", null ],
       [ "done", "class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a", null ],
       [ "generationFailed", "class_keygen_dialog.html#a7bb268b96119127b0051d1adffe42630", null ],
+      [ "isBatchPassphrase", "class_keygen_dialog.html#a085a87e910e15156b8cc113af5cd5d82", null ],
       [ "isBatchValue", "class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83", null ],
       [ "on_email_textChanged", "class_keygen_dialog.html#aa28f8db828f60edd4195bcc9f9e8cb6e", null ],
       [ "on_name_textChanged", "class_keygen_dialog.html#ac0ebf04c899e95033f560ae4aae5b2f3", null ],

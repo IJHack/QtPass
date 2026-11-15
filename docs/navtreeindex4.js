@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a":[1,7,2,5],
 "class_single_application.html#aefdefa8280cdb7a65b3447c675b2f0c8":[1,7,2,13],
 "class_ssh_auth_sock.html":[1,4,6],
 "class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2":[1,4,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "functions_e.html":[3,3,0,5],
 "functions_enum.html":[3,3,4],
 "functions_eval.html":[3,3,5],
-"functions_f.html":[3,3,0,6],
-"functions_func.html":[3,3,1]
+"functions_f.html":[3,3,0,6]
 };
