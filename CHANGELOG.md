@@ -38,6 +38,33 @@
   moment (ported from [#2051](https://github.com/IJHack/QtPass/pull/2051)
   and [#2053](https://github.com/IJHack/QtPass/pull/2053))
 
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
+
+- The text of an entry below its fields is shown, and so selected and
+  copied, with its whitespace as stored: two spaces in a row became one and
+  indentation was dropped
+  ([#210](https://github.com/IJHack/QtPass/issues/210), broken again since
+  1.4.0), and a tab became a space; also in a field value with a link in it.
+  Only a run of more than 1000 spaces is shown shorter (ported from
+  [#2178](https://github.com/IJHack/QtPass/pull/2178))
+- Generating a key refuses a passphrase that starts or ends with a space or
+  a tab, and says so: `gpg` cut those off, so the new key was protected
+  without them and then refused the passphrase as typed twice (ported from
+  [#2179](https://github.com/IJHack/QtPass/pull/2179))
+- Return in the search box only searches. In content search it also opened
+  the entry current in the tree, one the user had not asked for, also on an
+  empty search box; in the name search it decrypted the first hit twice.
+  Return on a content search result opens that result (ported from
+  [#2180](https://github.com/IJHack/QtPass/pull/2180))
+- A profile name cannot contain `/` or `\`: a name such as "Work/Client"
+  was saved a level too deep in the settings and came back as a profile
+  "Work" without folder or signing key (ported from
+  [#2181](https://github.com/IJHack/QtPass/pull/2181))
+- "Hide on close" and "Start minimized" hide the window only into a tray
+  icon. Without one, closing the window left QtPass running invisibly, with
+  the last entry in it and the password on the clipboard (ported from
+  [#2185](https://github.com/IJHack/QtPass/pull/2185))
+
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 
 ### Security <!-- markdownlint-disable-line MD024 -->
