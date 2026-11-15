@@ -2988,9 +2988,15 @@ void tst_mainwindow::failedPushAfterASaveStaysOnScreen() {
   QSignalSpy failed(QtPassSettings::getPass(), &Pass::processErrorExit);
   emit QtPassSettings::getPass() -> finishedInsert(QString(), QString());
   // An earlier push ending meanwhile does not start the refresh: the save's
-  // own push is still queued.
+  // own push is still queued. Nor does a push of the other backend.
   emit QtPassSettings::getPass() -> finishedGitPush(QString(), QString());
+  Pass *other = QtPassSettings::getRealPass();
+  QSignalSpy otherShown(other, &Pass::finishedShow);
+  QSignalSpy otherFailed(other, &Pass::processErrorExit);
+  emit other->finishedGitPush(QString(), QString());
   QTRY_VERIFY_WITH_TIMEOUT(QtPassSettings::getPass()->isIdle(), 10000);
+  QTRY_VERIFY_WITH_TIMEOUT(other->isIdle(), 10000);
+  QCOMPARE(otherShown.count() + otherFailed.count(), 0);
   QCOMPARE(failed.count(), 1);
   QCOMPARE(shown.count(), 0);
   QVERIFY2(
@@ -3059,9 +3065,11 @@ void tst_mainwindow::refreshAfterPushGivesWayToTheUser() {
            }).isEmpty());
   Pass *pass = QtPassSettings::getPass();
   const auto saveThen = [&](const std::function<void()> &meanwhile) {
+    // The entries decrypted after the save, by name.
+    QStringList decrypted;
     if (!selectListed(m_window.data(), m_storeDir.path(),
                       QStringLiteral("bank"))) {
-      return -1;
+      return QStringList{QStringLiteral("(not selected)")};
     }
     QSignalSpy shown(pass, &Pass::finishedShow);
     emit pass->finishedInsert(QString(), QString());
@@ -3072,31 +3080,35 @@ void tst_mainwindow::refreshAfterPushGivesWayToTheUser() {
       QTest::qWait(20);
     }
     QTest::qWait(100);
-    return static_cast<int>(shown.count());
+    for (const QList<QVariant> &answer : std::as_const(shown)) {
+      decrypted << answer.at(1).toString();
+    }
+    return decrypted;
   };
+  const QStringList bank{QStringLiteral("bank")};
 
-  QCOMPARE(saveThen([] {}), 1);
+  QCOMPARE(saveThen([] {}), bank);
   // A second push queued behind it: the refresh follows the last one.
-  QCOMPARE(saveThen([pass] { pass->GitPush(); }), 1);
-  QCOMPARE(saveThen([pass] { pass->GitPull(); }), 0);
+  QCOMPARE(saveThen([pass] { pass->GitPush(); }), bank);
+  QCOMPARE(saveThen([pass] { pass->GitPull(); }), QStringList());
   QVERIFY2(
       browser()->toPlainText().contains(QStringLiteral("fake pull conflict")),
       qPrintable(browser()->toPlainText()));
-  QCOMPARE(saveThen([this] { searchBox()->setText(QStringLiteral("zz")); }), 0);
+  QCOMPARE(saveThen([this] { searchBox()->setText(QStringLiteral("zz")); }),
+           QStringList());
   searchBox()->clear();
   QCOMPARE(saveThen([this] {
              QVERIFY(QMetaObject::invokeMethod(m_window.data(), "deselect",
                                                Qt::DirectConnection));
            }),
-           0);
+           QStringList());
   // The arrow keys move the current entry without opening it: the saved
   // entry is still the one shown again.
   QCOMPARE(saveThen([this] {
              QVERIFY(selectListed(m_window.data(), m_storeDir.path(),
                                   QStringLiteral("mail")));
            }),
-           1);
-  QCOMPARE(passwordName()->text(), QStringLiteral("bank"));
+           bank);
 #endif
 }
 

@@ -157,8 +157,10 @@ void MainWindow::connectBackends() {
   connect(m_qtPass, &QtPass::entryInserted, this, [this]() {
     const QModelIndex index = getCurrentTreeViewIndex();
     const QString file = getFile(index, true);
-    if (!file.isEmpty() && QtPassSettings::getPass()->isPushing()) {
+    Pass *pass = QtPassSettings::getPass();
+    if (!file.isEmpty() && pass->isPushing()) {
       m_refreshAfterPush = file;
+      m_refreshAfterPushOwner = pass;
       m_shownFile = file;
       return;
     }
@@ -312,13 +314,15 @@ void MainWindow::connectPassSignals(Pass *pass) {
   // refresh would empty the browser of its error. A failed push dropped it
   // (onOperationError()).
   connect(pass, &Pass::finishedGitPush, this, [this, pass]() {
-    if (m_refreshAfterPush.isEmpty() || pass->isPushing()) {
+    if (m_refreshAfterPush.isEmpty() || m_refreshAfterPushOwner != pass ||
+        pass->isPushing()) {
       return;
     }
     const QString file = std::exchange(m_refreshAfterPush, QString());
+    m_refreshAfterPushOwner = nullptr;
     if (file == m_shownFile && pass->isIdle()) {
       ui->passwordName->setText(file);
-      QtPassSettings::getPass()->Show(file);
+      pass->Show(file);
     }
   });
 }
@@ -1351,6 +1355,7 @@ void MainWindow::onOperationError() {
   // A save's refresh waiting for its push is dropped: it would clear the
   // push's error (or whatever failed before it) from the browser.
   m_refreshAfterPush.clear();
+  m_refreshAfterPushOwner = nullptr;
 }
 
 // Derives the code in-process from one decrypt, so it works with either
