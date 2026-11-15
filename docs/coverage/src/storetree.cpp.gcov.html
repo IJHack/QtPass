@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 14:18:40</td>
+            <td class="headerValue">2026-11-15 14:40:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">91.7&nbsp;%</td>
@@ -145,15 +145,15 @@
 <span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">          36 :   return dirFor(m_view-&gt;currentIndex(), forPass);</span></span>
 <span id="L73"><span class="lineNum">      73</span>              : }</span>
 <span id="L74"><span class="lineNum">      74</span>              : </span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          64 : auto StoreTree::fileFor(const QModelIndex &amp;index, bool forPass) const</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          66 : auto StoreTree::fileFor(const QModelIndex &amp;index, bool forPass) const</span></span>
 <span id="L76"><span class="lineNum">      76</span>              :     -&gt; QString {</span>
-<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         124 :   if (!index.isValid() || !m_fs.fileInfo(m_proxy.mapToSource(index)).isFile()) {</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         128 :   if (!index.isValid() || !m_fs.fileInfo(m_proxy.mapToSource(index)).isFile()) {</span></span>
 <span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">           4 :     return {};</span></span>
 <span id="L79"><span class="lineNum">      79</span>              :   }</span>
-<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">          60 :   QString filePath = m_fs.filePath(m_proxy.mapToSource(index));</span></span>
-<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">          60 :   if (forPass) {</span></span>
-<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">         114 :     filePath = QDir(m_store).relativeFilePath(filePath);</span></span>
-<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">         114 :     filePath.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">          62 :   QString filePath = m_fs.filePath(m_proxy.mapToSource(index));</span></span>
+<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">          62 :   if (forPass) {</span></span>
+<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">         118 :     filePath = QDir(m_store).relativeFilePath(filePath);</span></span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">         118 :     filePath.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
 <span id="L84"><span class="lineNum">      84</span>              :   }</span>
 <span id="L85"><span class="lineNum">      85</span>              :   return filePath;</span>
 <span id="L86"><span class="lineNum">      86</span>              : }</span>
@@ -162,8 +162,8 @@
 <span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">           1 :   return fileFor(m_view-&gt;currentIndex(), forPass);</span></span>
 <span id="L90"><span class="lineNum">      90</span>              : }</span>
 <span id="L91"><span class="lineNum">      91</span>              : </span>
-<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          71 : auto StoreTree::fileInfo(const QModelIndex &amp;index) const -&gt; QFileInfo {</span></span>
-<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          71 :   return m_fs.fileInfo(m_proxy.mapToSource(index));</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          73 : auto StoreTree::fileInfo(const QModelIndex &amp;index) const -&gt; QFileInfo {</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          73 :   return m_fs.fileInfo(m_proxy.mapToSource(index));</span></span>
 <span id="L94"><span class="lineNum">      94</span>              : }</span>
 <span id="L95"><span class="lineNum">      95</span>              : </span>
 <span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          54 : auto StoreTree::indexFor(const QString &amp;path) const -&gt; QModelIndex {</span></span>

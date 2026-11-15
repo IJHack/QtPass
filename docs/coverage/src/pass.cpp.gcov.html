@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 14:18:40</td>
+            <td class="headerValue">2026-11-15 14:40:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -145,17 +145,17 @@
 <span id="L72"><span class="lineNum">      72</span>              :     // later dialog would take its own report for an earlier one and wait for</span>
 <span id="L73"><span class="lineNum">      73</span>              :     // ever. Idle cannot fall between a dialog's insertsPending() read and its</span>
 <span id="L74"><span class="lineNum">      74</span>              :     // own report, since that insert keeps the executor busy.</span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          87 :     m_insertsPending = 0;</span></span>
-<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">          87 :     emit idle();</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          86 :     m_insertsPending = 0;</span></span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">          86 :     emit idle();</span></span>
 <span id="L77"><span class="lineNum">      77</span>              :   });</span>
 <span id="L78"><span class="lineNum">      78</span>              :   // Each queued process starts in the environment as the store is then:</span>
 <span id="L79"><span class="lineNum">      79</span>              :   // the Git pin is judged at that moment (dequeuing() comes just before the</span>
 <span id="L80"><span class="lineNum">      80</span>              :   // start, on this thread).</span>
 <span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">         346 :   connect(&amp;exec, &amp;Executor::dequeuing, this, [this](int, bool completes) {</span></span>
-<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">         204 :     if (completes) {</span></span>
-<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">         199 :       exec.setEnvironment(withCurrentGitPin(env));</span></span>
+<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">         206 :     if (completes) {</span></span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">         201 :       exec.setEnvironment(withCurrentGitPin(env));</span></span>
 <span id="L84"><span class="lineNum">      84</span>              :     }</span>
-<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         204 :   });</span></span>
+<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         206 :   });</span></span>
 <span id="L86"><span class="lineNum">      86</span>              :   // Merge our vars into WSLENV rather than blindly appending a duplicate</span>
 <span id="L87"><span class="lineNum">      87</span>              :   // entry. WSLENV flags: /p translates the path, /u forwards from Windows</span>
 <span id="L88"><span class="lineNum">      88</span>              :   // into WSL only; /w would be the other direction, from WSL out, and leaves</span>
@@ -189,14 +189,14 @@
 <span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">           2 :   executeWrapper(id, app, args, QString(), readStdout, readStderr);</span></span>
 <span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L118"><span class="lineNum">     118</span>              : </span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">         204 : void Pass::executeWrapper(PROCESS id, const QString &amp;app,</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">         206 : void Pass::executeWrapper(PROCESS id, const QString &amp;app,</span></span>
 <span id="L120"><span class="lineNum">     120</span>              :                           const QStringList &amp;args, QString input,</span>
 <span id="L121"><span class="lineNum">     121</span>              :                           bool readStdout, bool readStderr) {</span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         204 :   beforeExecute(id);</span></span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">         204 :   qCDebug(lcQtPass) &lt;&lt; app &lt;&lt; loggableArgs(args);</span></span>
-<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">         204 :   exec.execute(id, m_settings.passStore, app, args, std::move(input),</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         206 :   beforeExecute(id);</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">         206 :   qCDebug(lcQtPass) &lt;&lt; app &lt;&lt; loggableArgs(args);</span></span>
+<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">         206 :   exec.execute(id, m_settings.passStore, app, args, std::move(input),</span></span>
 <span id="L125"><span class="lineNum">     125</span>              :                readStdout, readStderr);</span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">         204 : }</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">         206 : }</span></span>
 <span id="L127"><span class="lineNum">     127</span>              : </span>
 <span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">           4 : auto Pass::loggableArgs(const QStringList &amp;args) -&gt; QStringList {</span></span>
 <span id="L129"><span class="lineNum">     129</span>              :   // Secrets travel on stdin (Insert's content, KeygenDialog's batch file),</span>
@@ -593,25 +593,25 @@
 <span id="L520"><span class="lineNum">     520</span> <span class="tlaGNC">          13 :   return {};</span></span>
 <span id="L521"><span class="lineNum">     521</span> <span class="tlaUNC">           0 : }</span></span>
 <span id="L522"><span class="lineNum">     522</span>              : </span>
-<span id="L523"><span class="lineNum">     523</span> <span class="tlaGNC">         210 : void Pass::finished(int id, int exitCode, const QString &amp;out,</span></span>
+<span id="L523"><span class="lineNum">     523</span> <span class="tlaGNC">         212 : void Pass::finished(int id, int exitCode, const QString &amp;out,</span></span>
 <span id="L524"><span class="lineNum">     524</span>              :                     const QString &amp;err) {</span>
-<span id="L525"><span class="lineNum">     525</span> <span class="tlaGNC">         210 :   auto pid = static_cast&lt;PROCESS&gt;(id);</span></span>
+<span id="L525"><span class="lineNum">     525</span> <span class="tlaGNC">         212 :   auto pid = static_cast&lt;PROCESS&gt;(id);</span></span>
 <span id="L526"><span class="lineNum">     526</span>              : </span>
 <span id="L527"><span class="lineNum">     527</span>              :   // Pop the Show() this completion belongs to whether it worked or not, or</span>
 <span id="L528"><span class="lineNum">     528</span>              :   // the next result would be attributed to the wrong file.</span>
-<span id="L529"><span class="lineNum">     529</span> <span class="tlaGNC">         210 :   QString shownFile;</span></span>
-<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">         210 :   if (pid == PASS_SHOW &amp;&amp; !m_pendingShows.isEmpty()) {</span></span>
-<span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">          65 :     shownFile = m_pendingShows.dequeue();</span></span>
+<span id="L529"><span class="lineNum">     529</span> <span class="tlaGNC">         212 :   QString shownFile;</span></span>
+<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">         212 :   if (pid == PASS_SHOW &amp;&amp; !m_pendingShows.isEmpty()) {</span></span>
+<span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">          67 :     shownFile = m_pendingShows.dequeue();</span></span>
 <span id="L532"><span class="lineNum">     532</span>              :   }</span>
 <span id="L533"><span class="lineNum">     533</span>              :   // Count this insert off, success or failure, before its result goes out, so</span>
 <span id="L534"><span class="lineNum">     534</span>              :   // insertsPending() tracks the inserts still awaiting a report. Each insert</span>
 <span id="L535"><span class="lineNum">     535</span>              :   // reaches here once as PASS_INSERT.</span>
-<span id="L536"><span class="lineNum">     536</span> <span class="tlaGNC">         210 :   if (pid == PASS_INSERT &amp;&amp; m_insertsPending &gt; 0) {</span></span>
+<span id="L536"><span class="lineNum">     536</span> <span class="tlaGNC">         212 :   if (pid == PASS_INSERT &amp;&amp; m_insertsPending &gt; 0) {</span></span>
 <span id="L537"><span class="lineNum">     537</span> <span class="tlaGNC">          77 :     --m_insertsPending;</span></span>
 <span id="L538"><span class="lineNum">     538</span>              :   }</span>
 <span id="L539"><span class="lineNum">     539</span>              : </span>
-<span id="L540"><span class="lineNum">     540</span> <span class="tlaGNC">         210 :   if (exitCode != 0) {</span></span>
-<span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">          52 :     handleProcessError(pid, exitCode, out, err);</span></span>
+<span id="L540"><span class="lineNum">     540</span> <span class="tlaGNC">         212 :   if (exitCode != 0) {</span></span>
+<span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">          54 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L542"><span class="lineNum">     542</span>              :     return;</span>
 <span id="L543"><span class="lineNum">     543</span>              :   }</span>
 <span id="L544"><span class="lineNum">     544</span>              : </span>
@@ -622,11 +622,11 @@
 <span id="L549"><span class="lineNum">     549</span> <span class="tlaGNC">         118 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L550"><span class="lineNum">     550</span>              : }</span>
 <span id="L551"><span class="lineNum">     551</span>              : </span>
-<span id="L552"><span class="lineNum">     552</span> <span class="tlaGNC">          52 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
+<span id="L552"><span class="lineNum">     552</span> <span class="tlaGNC">          54 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
 <span id="L553"><span class="lineNum">     553</span>              :                               const QString &amp;err) {</span>
 <span id="L554"><span class="lineNum">     554</span>              :   Q_UNUSED(out);</span>
 <span id="L555"><span class="lineNum">     555</span>              : </span>
-<span id="L556"><span class="lineNum">     556</span> <span class="tlaGNC">          52 :   if (pid == PASS_INSERT) {</span></span>
+<span id="L556"><span class="lineNum">     556</span> <span class="tlaGNC">          54 :   if (pid == PASS_INSERT) {</span></span>
 <span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          18 :     const QString friendly = gpgErrorMessage(err);</span></span>
 <span id="L558"><span class="lineNum">     558</span>              :     const QString why =</span>
 <span id="L559"><span class="lineNum">     559</span> <span class="tlaGNC">          18 :         friendly.isEmpty() ? err : formatInsertError(friendly, err);</span></span>
@@ -646,10 +646,10 @@
 <span id="L573"><span class="lineNum">     573</span>              :     return;</span>
 <span id="L574"><span class="lineNum">     574</span>              :   }</span>
 <span id="L575"><span class="lineNum">     575</span>              : </span>
-<span id="L576"><span class="lineNum">     576</span> <span class="tlaGNC">          34 :   if (pid == GPG_GENKEYS) {</span></span>
+<span id="L576"><span class="lineNum">     576</span> <span class="tlaGNC">          36 :   if (pid == GPG_GENKEYS) {</span></span>
 <span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">           1 :     emit generateGPGKeysFailed(err);</span></span>
 <span id="L578"><span class="lineNum">     578</span>              :   }</span>
-<span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">          34 :   emit processErrorExit(exitCode, err);</span></span>
+<span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">          36 :   emit processErrorExit(exitCode, err);</span></span>
 <span id="L580"><span class="lineNum">     580</span>              : }</span>
 <span id="L581"><span class="lineNum">     581</span>              : </span>
 <span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">           6 : auto Pass::formatInsertError(const QString &amp;friendly, const QString &amp;err)</span></span>
@@ -757,23 +757,23 @@
 <span id="L684"><span class="lineNum">     684</span> <span class="tlaGNC">         347 :   exec.setEnvironment(env);</span></span>
 <span id="L685"><span class="lineNum">     685</span> <span class="tlaGNC">         347 : }</span></span>
 <span id="L686"><span class="lineNum">     686</span>              : </span>
-<span id="L687"><span class="lineNum">     687</span> <span class="tlaGNC">         869 : auto Pass::withCurrentGitPin(QProcessEnvironment base) const</span></span>
+<span id="L687"><span class="lineNum">     687</span> <span class="tlaGNC">         871 : auto Pass::withCurrentGitPin(QProcessEnvironment base) const</span></span>
 <span id="L688"><span class="lineNum">     688</span>              :     -&gt; QProcessEnvironment {</span>
-<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">         869 :   if (m_settings.gitUseParentRepository || m_settings.passStore.isEmpty()) {</span></span>
+<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">         871 :   if (m_settings.gitUseParentRepository || m_settings.passStore.isEmpty()) {</span></span>
 <span id="L690"><span class="lineNum">     690</span> <span class="tlaUNC">           0 :     return base;</span></span>
 <span id="L691"><span class="lineNum">     691</span>              :   }</span>
-<span id="L692"><span class="lineNum">     692</span> <span class="tlaGNC">        1738 :   base.remove(QStringLiteral(&quot;GIT_DIR&quot;));</span></span>
-<span id="L693"><span class="lineNum">     693</span> <span class="tlaGNC">        1738 :   base.remove(QStringLiteral(&quot;GIT_WORK_TREE&quot;));</span></span>
+<span id="L692"><span class="lineNum">     692</span> <span class="tlaGNC">        1742 :   base.remove(QStringLiteral(&quot;GIT_DIR&quot;));</span></span>
+<span id="L693"><span class="lineNum">     693</span> <span class="tlaGNC">        1742 :   base.remove(QStringLiteral(&quot;GIT_WORK_TREE&quot;));</span></span>
 <span id="L694"><span class="lineNum">     694</span>              :   for (const auto &amp;[name, value] : Util::gitStoreVariables(</span>
-<span id="L695"><span class="lineNum">     695</span> <span class="tlaGNC">        2617 :            m_settings.passStore, m_settings.gitExecutable)) {</span></span>
-<span id="L696"><span class="lineNum">     696</span> <span class="tlaGNC">         879 :     base.insert(name, value);</span></span>
+<span id="L695"><span class="lineNum">     695</span> <span class="tlaGNC">        2623 :            m_settings.passStore, m_settings.gitExecutable)) {</span></span>
+<span id="L696"><span class="lineNum">     696</span> <span class="tlaGNC">         881 :     base.insert(name, value);</span></span>
 <span id="L697"><span class="lineNum">     697</span>              :   }</span>
-<span id="L698"><span class="lineNum">     698</span> <span class="tlaGNC">         869 :   return base;</span></span>
+<span id="L698"><span class="lineNum">     698</span> <span class="tlaGNC">         871 :   return base;</span></span>
 <span id="L699"><span class="lineNum">     699</span>              : }</span>
 <span id="L700"><span class="lineNum">     700</span>              : </span>
-<span id="L701"><span class="lineNum">     701</span> <span class="tlaGNC">         961 : auto Pass::maxOutputArgs() -&gt; QStringList {</span></span>
-<span id="L702"><span class="lineNum">     702</span> <span class="tlaGNC">        2883 :   return {QStringLiteral(&quot;--max-output&quot;), QString::number(kMaxPlaintextBytes)};</span></span>
-<span id="L703"><span class="lineNum">     703</span> <span class="tlaGNC">         961 : }</span></span>
+<span id="L701"><span class="lineNum">     701</span> <span class="tlaGNC">         963 : auto Pass::maxOutputArgs() -&gt; QStringList {</span></span>
+<span id="L702"><span class="lineNum">     702</span> <span class="tlaGNC">        2889 :   return {QStringLiteral(&quot;--max-output&quot;), QString::number(kMaxPlaintextBytes)};</span></span>
+<span id="L703"><span class="lineNum">     703</span> <span class="tlaGNC">         963 : }</span></span>
 <span id="L704"><span class="lineNum">     704</span>              : </span>
 <span id="L705"><span class="lineNum">     705</span>              : namespace {</span>
 <span id="L706"><span class="lineNum">     706</span>              : /// File names compare the way the platform's file system compares them:</span>
@@ -861,23 +861,23 @@
 <span id="L788"><span class="lineNum">     788</span>              : </span>
 <span id="L789"><span class="lineNum">     789</span>              : } // namespace</span>
 <span id="L790"><span class="lineNum">     790</span>              : </span>
-<span id="L791"><span class="lineNum">     791</span> <span class="tlaGNC">         465 : auto Pass::refuseLinkedPath(const QString &amp;path, LinkScope scope,</span></span>
+<span id="L791"><span class="lineNum">     791</span> <span class="tlaGNC">         467 : auto Pass::refuseLinkedPath(const QString &amp;path, LinkScope scope,</span></span>
 <span id="L792"><span class="lineNum">     792</span>              :                             PathSpelling spelling) -&gt; bool {</span>
 <span id="L793"><span class="lineNum">     793</span>              :   const QString full = QDir::isAbsolutePath(path)</span>
-<span id="L794"><span class="lineNum">     794</span> <span class="tlaGNC">         465 :                            ? path</span></span>
-<span id="L795"><span class="lineNum">     795</span> <span class="tlaGNC">         100 :                            : QDir(m_settings.passStore).filePath(path);</span></span>
+<span id="L794"><span class="lineNum">     794</span> <span class="tlaGNC">         467 :                            ? path</span></span>
+<span id="L795"><span class="lineNum">     795</span> <span class="tlaGNC">         102 :                            : QDir(m_settings.passStore).filePath(path);</span></span>
 <span id="L796"><span class="lineNum">     796</span>              :   // The link check below walks only under the store as configured: a path</span>
 <span id="L797"><span class="lineNum">     797</span>              :   // spelled through the root's link target would get no more than the</span>
 <span id="L798"><span class="lineNum">     798</span>              :   // entry itself judged. No caller makes one; say so if one starts to.</span>
-<span id="L799"><span class="lineNum">     799</span> <span class="tlaGNC">         785 :   if (spelling == PathSpelling::Configured &amp;&amp;</span></span>
-<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">         320 :       PathValidator::isTargetSpelled(m_settings.passStore, full)) {</span></span>
+<span id="L799"><span class="lineNum">     799</span> <span class="tlaGNC">         789 :   if (spelling == PathSpelling::Configured &amp;&amp;</span></span>
+<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">         322 :       PathValidator::isTargetSpelled(m_settings.passStore, full)) {</span></span>
 <span id="L801"><span class="lineNum">     801</span> <span class="tlaGNC">           4 :     qCWarning(lcQtPass)</span></span>
 <span id="L802"><span class="lineNum">     802</span>              :         &lt;&lt; &quot;Path spelled through the store root's link target, not as the &quot;</span>
 <span id="L803"><span class="lineNum">     803</span>              :            &quot;store is configured; Pass operations expect the configured &quot;</span>
 <span id="L804"><span class="lineNum">     804</span> <span class="tlaGNC">           2 :            &quot;spelling:&quot;</span></span>
 <span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">           2 :         &lt;&lt; full;</span></span>
 <span id="L806"><span class="lineNum">     806</span>              :   }</span>
-<span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">         465 :   if (!Util::isUnderLink(full, m_settings.passStore,</span></span>
+<span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">         467 :   if (!Util::isUnderLink(full, m_settings.passStore,</span></span>
 <span id="L808"><span class="lineNum">     808</span>              :                          scope == LinkScope::EntryAndParents)) {</span>
 <span id="L809"><span class="lineNum">     809</span>              :     return false;</span>
 <span id="L810"><span class="lineNum">     810</span>              :   }</span>

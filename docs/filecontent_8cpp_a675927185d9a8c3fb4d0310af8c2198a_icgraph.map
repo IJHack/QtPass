@@ -1,5 +1,5 @@
 <map id="isLineHidden" name="isLineHidden">
-<area shape="rect" id="Node000001" title="Whether a body line carries a TOTP shared secret and must stay out of the parsed display: a bare otpa..." alt="" coords="4126,120,4231,148"/>
+<area shape="rect" id="Node000001" title="Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (File..." alt="" coords="4126,120,4231,148"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="4206,104,4197,101,4178,99,4161,101,4151,105,4149,111,4153,121,4149,118,4144,111,4148,102,4159,95,4178,93,4199,96,4211,105"/>
 <area shape="rect" id="Node000002" href="$class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="3938,120,4078,148"/>
 <area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="4107,134,4078,136,4078,131,4113,134"/>

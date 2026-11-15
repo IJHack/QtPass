@@ -1,0 +1,10 @@
+<map id="FileContent::isOtpLine" name="FileContent::isOtpLine">
+<area shape="rect" id="Node000001" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="5,44,170,72"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="218,5,425,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,42,221,35,216,37,170,47"/>
+<area shape="rect" id="Node000003" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="284,81,358,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,68,271,86,266,88,169,74"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="281,80,275,72,280,63,296,57,321,55,349,57,365,66,360,66,347,62,321,60,297,62,283,67,280,72,286,82"/>
+<area shape="rect" id="Node000004" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="473,81,665,109"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="359,93,460,95,455,95,359,98"/>
+</map>

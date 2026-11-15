@@ -53,7 +53,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="The password: the first line, without the &quot;\r&quot; of a CRLF line end (passwordLine()).">
 <polygon fill="#999999" stroke="#666666" points="3026.5,-72.12 2887.5,-72.12 2887.5,-51.38 3026.5,-51.38 3026.5,-72.12"/>
 <text xml:space="preserve" text-anchor="middle" x="2957" y="-58.62" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::getPassword</text>
 </a>

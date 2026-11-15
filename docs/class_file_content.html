@@ -133,8 +133,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_file_con
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac88e8096551d24a41fc0625a4d903139" id="r_ac88e8096551d24a41fc0625a4d903139"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac88e8096551d24a41fc0625a4d903139">getPassword</a> () const -&gt; QString</td></tr>
+<tr class="memdesc:ac88e8096551d24a41fc0625a4d903139"><td class="mdescLeft">&#160;</td><td class="mdescRight">The password: the first line, without the "\r" of a CRLF line end (<a class="el" href="#a41f00506abcd1629b156219f4acb0f1a" title="The password of an entry: its first line, without the carriage return of a CRLF line end.">passwordLine()</a>).  <br /></td></tr>
 <tr class="memitem:ae2d4131533e5e1eee2a5af47fdb653d4" id="r_ae2d4131533e5e1eee2a5af47fdb653d4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae2d4131533e5e1eee2a5af47fdb653d4">getPasswordForDisplay</a> () const -&gt; QString</td></tr>
-<tr class="memdesc:ae2d4131533e5e1eee2a5af47fdb653d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like getPassword but empty when the password line is itself an otpauth URI.  <br /></td></tr>
+<tr class="memdesc:ae2d4131533e5e1eee2a5af47fdb653d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like getPassword but empty when the password line holds a TOTP shared secret (<a class="el" href="#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">isOtpLine()</a>).  <br /></td></tr>
 <tr class="memitem:a89393e371a598cb3e0d7d149dbc431b1" id="r_a89393e371a598cb3e0d7d149dbc431b1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a> () const -&gt; <a class="el" href="class_named_values.html">NamedValues</a></td></tr>
 <tr class="memitem:a845c61a8c0f52e5aa73953c9162dd47d" id="r_a845c61a8c0f52e5aa73953c9162dd47d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData</a> () const -&gt; QString</td></tr>
 <tr class="memitem:ac38b9c211d6f62eb7420eecc66f935e8" id="r_ac38b9c211d6f62eb7420eecc66f935e8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8">getRemainingDataForDisplay</a> () const -&gt; QString</td></tr>
@@ -156,6 +157,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a91dfee0a7472e06dad305a66d8025460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field name names a secret: one of <code class="param">secrets</code> occurs in it as whole words, compared case-insensitively ("key" matches "API key" and "Recovery key", not "keyboard layout").  <br /></td></tr>
 <tr class="memitem:af99e299f227bbdd4714c429004152742" id="r_af99e299f227bbdd4714c429004152742"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af99e299f227bbdd4714c429004152742">isOtpUriValue</a> (const QString &amp;value) -&gt; bool</td></tr>
 <tr class="memdesc:af99e299f227bbdd4714c429004152742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field value is an otpauth URI, and therefore a secret.  <br /></td></tr>
+<tr class="memitem:a722f8a24e019518e36039dc423edeffc" id="r_a722f8a24e019518e36039dc423edeffc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a722f8a24e019518e36039dc423edeffc">isOtpLine</a> (const QString &amp;line) -&gt; bool</td></tr>
+<tr class="memdesc:a722f8a24e019518e36039dc423edeffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">line</code> carries a TOTP shared secret: a bare <span class="tt">otpauth://</span> line, an <span class="tt">OTP:</span>/<span class="tt">TOTP:</span> field, or any field whose value is an otpauth URI.  <br /></td></tr>
 <tr class="memitem:a41f00506abcd1629b156219f4acb0f1a" id="r_a41f00506abcd1629b156219f4acb0f1a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a41f00506abcd1629b156219f4acb0f1a">passwordLine</a> (QStringView text) -&gt; QString</td></tr>
 <tr class="memdesc:a41f00506abcd1629b156219f4acb0f1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The password of an entry: its first line, without the carriage return of a CRLF line end.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -174,7 +177,7 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a5c5035cd2054014d2ff2fdfbb7bb7dac" id="r_a5c5035cd2054014d2ff2fdfbb7bb7dac"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a></td></tr>
-<tr class="memdesc:a5c5035cd2054014d2ff2fdfbb7bb7dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The first line of the entry, verbatim.  <br /></td></tr>
+<tr class="memdesc:a5c5035cd2054014d2ff2fdfbb7bb7dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The first line of the entry, without the "\r" of a CRLF line end (<a class="el" href="#a41f00506abcd1629b156219f4acb0f1a" title="The password of an entry: its first line, without the carriage return of a CRLF line end.">passwordLine()</a>).  <br /></td></tr>
 <tr class="memitem:aabce3daaa0ff8a8af022128b3eb4f518" id="r_aabce3daaa0ff8a8af022128b3eb4f518"><td class="memItemLeft"><a class="el" href="class_named_values.html">NamedValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a></td></tr>
 <tr class="memdesc:aabce3daaa0ff8a8af022128b3eb4f518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fields in order of appearance, template fields first.  <br /></td></tr>
 <tr class="memitem:a4a28534f84dee950888b5ff68a5a0cc2" id="r_a4a28534f84dee950888b5ff68a5a0cc2"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a></td></tr>
@@ -251,7 +254,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00298">298</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00315">315</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
@@ -294,7 +297,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code class="param">text</code> when it is short enough, else its first kMaxDisplayLines lines and one saying how many more there are. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00306">306</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00323">323</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -328,7 +331,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the named values in the file in the order of appearance, with template values first. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00284">284</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00301">301</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -369,7 +372,7 @@ Private Attributes</h2></td></tr>
 </ol>
 <p>The string is returned verbatim and is not validated here: it may be an <span class="tt">otpauth://</span> URI or a bare base32 secret. <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> does the validation. </p><dl class="section return"><dt>Returns</dt><dd>The OTP configuration string, or an empty string when the entry has none. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00296">296</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00313">313</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -401,9 +404,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The password: the first line, without the "\r" of a CRLF line end (<a class="el" href="#a41f00506abcd1629b156219f4acb0f1a" title="The password of an entry: its first line, without the carriage return of a CRLF line end.">passwordLine()</a>). </p>
 <dl class="section return"><dt>Returns</dt><dd>the password from the parsed file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00278">278</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00295">295</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -436,15 +441,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Like getPassword but empty when the password line is itself an otpauth URI. </p>
-<p><span class="tt">pass otp insert</span> writes the URI as the entry's only line, so it lands in the password position. It is a shared secret, not a password: it must never be rendered or placed on the clipboard. <a class="el" href="#ac88e8096551d24a41fc0625a4d903139">getPassword()</a> still returns it so the edit dialog round-trips the file unchanged. </p><dl class="section return"><dt>Returns</dt><dd>The password, or an empty string when it is an otpauth URI. </dd></dl>
+<p>Like getPassword but empty when the password line holds a TOTP shared secret (<a class="el" href="#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">isOtpLine()</a>). </p>
+<p><span class="tt">pass otp insert</span> writes the URI as the entry's only line, so it lands in the password position, and an <span class="tt">OTP:</span>/<span class="tt">TOTP:</span> field written there by hand is the same secret. It is not a password: it must never be rendered or placed on the clipboard. <a class="el" href="#ac88e8096551d24a41fc0625a4d903139" title="The password: the first line, without the &quot;\r&quot; of a CRLF line end (passwordLine()).">getPassword()</a> still returns it so the edit dialog round-trips the file unchanged. </p><dl class="section return"><dt>Returns</dt><dd>The password, or an empty string when it is an OTP line. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00280">280</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00297">297</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
 <div id="dynsection-6-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ae2d4131533e5e1eee2a5af47fdb653d4_cgraph.svg" width="559" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ae2d4131533e5e1eee2a5af47fdb653d4_cgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
@@ -479,7 +484,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the data that is not the password and not in getNamedValues. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00288">288</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00305">305</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -515,7 +520,7 @@ Private Attributes</h2></td></tr>
 <p>Like getRemainingData but without data that should not be displayed (like a TOTP secret). </p>
 <dl class="section return"><dt>Returns</dt><dd>Remaining data string safe for display. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00292">292</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00309">309</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -551,7 +556,7 @@ Private Attributes</h2></td></tr>
 <p>How many lines <a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData()</a> holds. </p>
 <dl class="section return"><dt>Returns</dt><dd>The line count; 0 when there is no remaining text. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00320">320</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00337">337</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 
 </div>
 </div>
@@ -587,12 +592,60 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true for "OTP" or "TOTP", compared case-insensitively. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00217">217</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00222">222</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
 <div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a5f014b99069094d17a41fce67a3a9b8f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a722f8a24e019518e36039dc423edeffc" name="a722f8a24e019518e36039dc423edeffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a722f8a24e019518e36039dc423edeffc">&#9670;&#160;</a></span>isOtpLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FileContent::isOtpLine </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>line</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">line</code> carries a TOTP shared secret: a bare <span class="tt">otpauth://</span> line, an <span class="tt">OTP:</span>/<span class="tt">TOTP:</span> field, or any field whose value is an otpauth URI. </p>
+<p>The one rule for every line, the password line included: such a line is never shown or copied, only the code it yields is. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>One line of the entry. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the line holds a shared secret. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00283">283</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a722f8a24e019518e36039dc423edeffc_cgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a722f8a24e019518e36039dc423edeffc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -629,11 +682,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when it starts with "otpauth://", compared case-insensitively. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00264">264</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00269">269</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_af99e299f227bbdd4714c429004152742_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -676,11 +729,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when one of them occurs in <code class="param">name</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00223">223</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00228">228</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a91dfee0a7472e06dad305a66d8025460_icgraph.svg" width="100%" height="495"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -735,17 +788,17 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> instance with password, named values, and remaining data populated from the parsed input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00132">132</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00136">136</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a91861b1faa5ba9da9f27202262bfd94e_cgraph.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a91861b1faa5ba9da9f27202262bfd94e_cgraph.svg" width="100%" height="538"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a91861b1faa5ba9da9f27202262bfd94e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -783,11 +836,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Its first line, a trailing "\r" dropped. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00269">269</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00274">274</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
 </div>
-<div id="dynsection-15-content" class="dyncontent hidden">
+<div id="dynsection-17-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a41f00506abcd1629b156219f4acb0f1a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -870,7 +923,7 @@ Private Attributes</h2></td></tr>
 
 <p>Fields in order of appearance, template fields first. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00274">274</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00289">289</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>
@@ -896,7 +949,7 @@ Private Attributes</h2></td></tr>
 
 <p>Raw OTP configuration (URI or bare base32), or empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00280">280</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00295">295</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>
@@ -920,9 +973,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The first line of the entry, verbatim. </p>
+<p>The first line of the entry, without the "\r" of a CRLF line end (<a class="el" href="#a41f00506abcd1629b156219f4acb0f1a" title="The password of an entry: its first line, without the carriage return of a CRLF line end.">passwordLine()</a>). </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00272">272</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00287">287</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>
@@ -948,7 +1001,7 @@ Private Attributes</h2></td></tr>
 
 <p>Body lines that are not fields, joined with newlines; complete. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00276">276</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00291">291</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>
@@ -973,7 +1026,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>remainingData for the panel: OTP-bearing lines and hidden secrets left out, at most kMaxDisplayLines lines plus a "more" line. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00276">276</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00291">291</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>
@@ -999,7 +1052,7 @@ Private Attributes</h2></td></tr>
 
 <p>Number of lines in remainingData. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00282">282</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00297">297</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>

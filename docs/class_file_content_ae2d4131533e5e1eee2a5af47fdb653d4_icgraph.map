@@ -1,5 +1,5 @@
 <map id="FileContent::getPasswordForDisplay" name="FileContent::getPasswordForDisplay">
-<area shape="rect" id="Node000001" title="Like getPassword but empty when the password line is itself an otpauth URI." alt="" coords="1368,21,1553,66"/>
+<area shape="rect" id="Node000001" title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpLine())." alt="" coords="1368,21,1553,66"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="1092,29,1320,57"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1350,43,1320,46,1320,41,1355,43"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="804,29,1044,57"/>

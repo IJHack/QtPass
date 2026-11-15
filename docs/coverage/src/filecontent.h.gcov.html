@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 14:18:40</td>
+            <td class="headerValue">2026-11-15 14:40:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -128,7 +128,7 @@
 <span id="L55"><span class="lineNum">      55</span>              :  * @brief The NamedValues class is mostly a list of NamedValue</span>
 <span id="L56"><span class="lineNum">      56</span>              :  * but also has a method to take a specific NamedValue pair out of the list.</span>
 <span id="L57"><span class="lineNum">      57</span>              :  */</span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         529 : class NamedValues : public QList&lt;NamedValue&gt; {</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         545 : class NamedValues : public QList&lt;NamedValue&gt; {</span></span>
 <span id="L59"><span class="lineNum">      59</span>              : public:</span>
 <span id="L60"><span class="lineNum">      60</span>              :   /** @brief Construct an empty list. */</span>
 <span id="L61"><span class="lineNum">      61</span>              :   NamedValues();</span>
@@ -225,137 +225,152 @@
 <span id="L152"><span class="lineNum">     152</span>              :       -&gt; FileContent;</span>
 <span id="L153"><span class="lineNum">     153</span>              : </span>
 <span id="L154"><span class="lineNum">     154</span>              :   /**</span>
-<span id="L155"><span class="lineNum">     155</span>              :    * @return the password from the parsed file.</span>
-<span id="L156"><span class="lineNum">     156</span>              :    */</span>
-<span id="L157"><span class="lineNum">     157</span>              :   [[nodiscard]] auto getPassword() const -&gt; QString;</span>
-<span id="L158"><span class="lineNum">     158</span>              : </span>
-<span id="L159"><span class="lineNum">     159</span>              :   /**</span>
-<span id="L160"><span class="lineNum">     160</span>              :    * @brief Like getPassword but empty when the password line is itself an</span>
-<span id="L161"><span class="lineNum">     161</span>              :    * otpauth URI.</span>
-<span id="L162"><span class="lineNum">     162</span>              :    *</span>
-<span id="L163"><span class="lineNum">     163</span>              :    * `pass otp insert` writes the URI as the entry's only line, so it lands in</span>
-<span id="L164"><span class="lineNum">     164</span>              :    * the password position. It is a shared secret, not a password: it must never</span>
-<span id="L165"><span class="lineNum">     165</span>              :    * be rendered or placed on the clipboard. getPassword() still returns it so</span>
-<span id="L166"><span class="lineNum">     166</span>              :    * the edit dialog round-trips the file unchanged.</span>
-<span id="L167"><span class="lineNum">     167</span>              :    * @return The password, or an empty string when it is an otpauth URI.</span>
-<span id="L168"><span class="lineNum">     168</span>              :    */</span>
-<span id="L169"><span class="lineNum">     169</span>              :   [[nodiscard]] auto getPasswordForDisplay() const -&gt; QString;</span>
-<span id="L170"><span class="lineNum">     170</span>              : </span>
-<span id="L171"><span class="lineNum">     171</span>              :   /**</span>
-<span id="L172"><span class="lineNum">     172</span>              :    * @return the named values in the file in the order of appearance, with</span>
-<span id="L173"><span class="lineNum">     173</span>              :    * template values first.</span>
-<span id="L174"><span class="lineNum">     174</span>              :    */</span>
-<span id="L175"><span class="lineNum">     175</span>              :   [[nodiscard]] auto getNamedValues() const -&gt; NamedValues;</span>
-<span id="L176"><span class="lineNum">     176</span>              : </span>
-<span id="L177"><span class="lineNum">     177</span>              :   /**</span>
-<span id="L178"><span class="lineNum">     178</span>              :    * @return the data that is not the password and not in getNamedValues.</span>
-<span id="L179"><span class="lineNum">     179</span>              :    */</span>
-<span id="L180"><span class="lineNum">     180</span>              :   [[nodiscard]] auto getRemainingData() const -&gt; QString;</span>
-<span id="L181"><span class="lineNum">     181</span>              : </span>
-<span id="L182"><span class="lineNum">     182</span>              :   /**</span>
-<span id="L183"><span class="lineNum">     183</span>              :    * @brief Like getRemainingData but without data that should not be displayed</span>
-<span id="L184"><span class="lineNum">     184</span>              :    * (like a TOTP secret).</span>
-<span id="L185"><span class="lineNum">     185</span>              :    * @return Remaining data string safe for display.</span>
-<span id="L186"><span class="lineNum">     186</span>              :    */</span>
-<span id="L187"><span class="lineNum">     187</span>              :   [[nodiscard]] auto getRemainingDataForDisplay() const -&gt; QString;</span>
-<span id="L188"><span class="lineNum">     188</span>              : </span>
-<span id="L189"><span class="lineNum">     189</span>              :   /**</span>
-<span id="L190"><span class="lineNum">     190</span>              :    * @brief How many lines getRemainingData() holds.</span>
-<span id="L191"><span class="lineNum">     191</span>              :    * @return The line count; 0 when there is no remaining text.</span>
-<span id="L192"><span class="lineNum">     192</span>              :    */</span>
-<span id="L193"><span class="lineNum">     193</span>              :   [[nodiscard]] auto getRemainingLineCount() const -&gt; qsizetype;</span>
-<span id="L194"><span class="lineNum">     194</span>              : </span>
-<span id="L195"><span class="lineNum">     195</span>              :   /**</span>
-<span id="L196"><span class="lineNum">     196</span>              :    * @brief Whether a field name designates the one-time password field.</span>
-<span id="L197"><span class="lineNum">     197</span>              :    * @param name Field name as written in the file; surrounding whitespace is</span>
-<span id="L198"><span class="lineNum">     198</span>              :    *        ignored.</span>
-<span id="L199"><span class="lineNum">     199</span>              :    * @return true for &quot;OTP&quot; or &quot;TOTP&quot;, compared case-insensitively.</span>
-<span id="L200"><span class="lineNum">     200</span>              :    */</span>
-<span id="L201"><span class="lineNum">     201</span>              :   [[nodiscard]] static auto isOtpFieldName(const QString &amp;name) -&gt; bool;</span>
-<span id="L202"><span class="lineNum">     202</span>              : </span>
-<span id="L203"><span class="lineNum">     203</span>              :   /**</span>
-<span id="L204"><span class="lineNum">     204</span>              :    * @brief Whether a field name names a secret: one of @p secrets occurs in</span>
-<span id="L205"><span class="lineNum">     205</span>              :    * it as whole words, compared case-insensitively (&quot;key&quot; matches &quot;API key&quot;</span>
-<span id="L206"><span class="lineNum">     206</span>              :    * and &quot;Recovery key&quot;, not &quot;keyboard layout&quot;).</span>
-<span id="L207"><span class="lineNum">     207</span>              :    * @param name Field name as written in the file.</span>
-<span id="L208"><span class="lineNum">     208</span>              :    * @param secrets The secret field names (AppSettings::secretFieldNames).</span>
-<span id="L209"><span class="lineNum">     209</span>              :    * @return true when one of them occurs in @p name.</span>
-<span id="L210"><span class="lineNum">     210</span>              :    */</span>
-<span id="L211"><span class="lineNum">     211</span>              :   [[nodiscard]] static auto isSecretFieldName(const QString &amp;name,</span>
-<span id="L212"><span class="lineNum">     212</span>              :                                               const QStringList &amp;secrets)</span>
-<span id="L213"><span class="lineNum">     213</span>              :       -&gt; bool;</span>
-<span id="L214"><span class="lineNum">     214</span>              : </span>
-<span id="L215"><span class="lineNum">     215</span>              :   /**</span>
-<span id="L216"><span class="lineNum">     216</span>              :    * @brief Whether a field value is an otpauth URI, and therefore a secret.</span>
-<span id="L217"><span class="lineNum">     217</span>              :    *</span>
-<span id="L218"><span class="lineNum">     218</span>              :    * A URI is a shared secret whatever the field is called, so both the</span>
-<span id="L219"><span class="lineNum">     219</span>              :    * display-suppression and the OTP lookup key off the value as well as the</span>
-<span id="L220"><span class="lineNum">     220</span>              :    * name; suppressing only `OTP:`/`TOTP:` leaked `2fa:` and friends.</span>
-<span id="L221"><span class="lineNum">     221</span>              :    * @param value Field value; surrounding whitespace is ignored.</span>
-<span id="L222"><span class="lineNum">     222</span>              :    * @return true when it starts with &quot;otpauth://&quot;, compared case-insensitively.</span>
-<span id="L223"><span class="lineNum">     223</span>              :    */</span>
-<span id="L224"><span class="lineNum">     224</span>              :   [[nodiscard]] static auto isOtpUriValue(const QString &amp;value) -&gt; bool;</span>
-<span id="L225"><span class="lineNum">     225</span>              : </span>
-<span id="L226"><span class="lineNum">     226</span>              :   /**</span>
-<span id="L227"><span class="lineNum">     227</span>              :    * @brief The password of an entry: its first line, without the carriage</span>
-<span id="L228"><span class="lineNum">     228</span>              :    * return of a CRLF line end.</span>
-<span id="L229"><span class="lineNum">     229</span>              :    *</span>
-<span id="L230"><span class="lineNum">     230</span>              :    * The one rule for every path that takes the password from decrypted text</span>
-<span id="L231"><span class="lineNum">     231</span>              :    * (parse(), the Ctrl+C copy), so they agree with the password row: a &quot;\r&quot;</span>
-<span id="L232"><span class="lineNum">     232</span>              :    * before the line feed is the line end, not part of the secret.</span>
-<span id="L233"><span class="lineNum">     233</span>              :    * @param text Decrypted entry text, or just its first line.</span>
-<span id="L234"><span class="lineNum">     234</span>              :    * @return Its first line, a trailing &quot;\r&quot; dropped.</span>
-<span id="L235"><span class="lineNum">     235</span>              :    */</span>
-<span id="L236"><span class="lineNum">     236</span>              :   [[nodiscard]] static auto passwordLine(QStringView text) -&gt; QString;</span>
-<span id="L237"><span class="lineNum">     237</span>              : </span>
-<span id="L238"><span class="lineNum">     238</span>              :   /**</span>
-<span id="L239"><span class="lineNum">     239</span>              :    * @brief The entry's raw one-time password configuration, if it has one.</span>
-<span id="L240"><span class="lineNum">     240</span>              :    *</span>
-<span id="L241"><span class="lineNum">     241</span>              :    * Looked up in this order:</span>
-<span id="L242"><span class="lineNum">     242</span>              :    *   1. the value of the first field whose name satisfies isOtpFieldName();</span>
-<span id="L243"><span class="lineNum">     243</span>              :    *   2. the first bare `otpauth://` line in the body, which is how the</span>
-<span id="L244"><span class="lineNum">     244</span>              :    *      `pass-otp` extension stores it;</span>
-<span id="L245"><span class="lineNum">     245</span>              :    *   3. the value of the first `OTP:` line that was not promoted to a named</span>
-<span id="L246"><span class="lineNum">     246</span>              :    *      value, which is what happens when the template does not list `OTP`.</span>
-<span id="L247"><span class="lineNum">     247</span>              :    *</span>
-<span id="L248"><span class="lineNum">     248</span>              :    * The string is returned verbatim and is not validated here: it may be an</span>
-<span id="L249"><span class="lineNum">     249</span>              :    * `otpauth://` URI or a bare base32 secret. Totp::parse() does the</span>
-<span id="L250"><span class="lineNum">     250</span>              :    * validation.</span>
-<span id="L251"><span class="lineNum">     251</span>              :    * @return The OTP configuration string, or an empty string when the entry</span>
-<span id="L252"><span class="lineNum">     252</span>              :    *         has none.</span>
-<span id="L253"><span class="lineNum">     253</span>              :    */</span>
-<span id="L254"><span class="lineNum">     254</span>              :   [[nodiscard]] auto getOtpUri() const -&gt; QString;</span>
-<span id="L255"><span class="lineNum">     255</span>              : </span>
-<span id="L256"><span class="lineNum">     256</span>              : private:</span>
-<span id="L257"><span class="lineNum">     257</span>              :   /**</span>
-<span id="L258"><span class="lineNum">     258</span>              :    * @brief Assemble a parsed entry; only parse() calls this.</span>
-<span id="L259"><span class="lineNum">     259</span>              :    * @param password The first line.</span>
-<span id="L260"><span class="lineNum">     260</span>              :    * @param namedValues The fields promoted out of the body.</span>
-<span id="L261"><span class="lineNum">     261</span>              :    * @param remainingData The body lines that did not become fields.</span>
-<span id="L262"><span class="lineNum">     262</span>              :    * @param remainingDataDisplay @p remainingData without secret-bearing</span>
-<span id="L263"><span class="lineNum">     263</span>              :    *        lines, cut at kMaxDisplayLines.</span>
-<span id="L264"><span class="lineNum">     264</span>              :    * @param otpUri The OTP configuration found, or empty.</span>
-<span id="L265"><span class="lineNum">     265</span>              :    * @param remainingLines Line count of @p remainingData.</span>
-<span id="L266"><span class="lineNum">     266</span>              :    */</span>
-<span id="L267"><span class="lineNum">     267</span>              :   FileContent(QString password, NamedValues namedValues, QString remainingData,</span>
-<span id="L268"><span class="lineNum">     268</span>              :               QString remainingDataDisplay, QString otpUri,</span>
-<span id="L269"><span class="lineNum">     269</span>              :               qsizetype remainingLines);</span>
-<span id="L270"><span class="lineNum">     270</span>              : </span>
-<span id="L271"><span class="lineNum">     271</span>              :   /** @brief The first line of the entry, verbatim. */</span>
-<span id="L272"><span class="lineNum">     272</span>              :   QString password;</span>
-<span id="L273"><span class="lineNum">     273</span>              :   /** @brief Fields in order of appearance, template fields first. */</span>
-<span id="L274"><span class="lineNum">     274</span>              :   NamedValues namedValues;</span>
-<span id="L275"><span class="lineNum">     275</span>              :   /** @brief Body lines that are not fields, joined with newlines; complete. */</span>
-<span id="L276"><span class="lineNum">     276</span>              :   QString remainingData, remainingDataDisplay; /**&lt; remainingData for the</span>
-<span id="L277"><span class="lineNum">     277</span>              :       panel: OTP-bearing lines and hidden secrets left out, at most</span>
-<span id="L278"><span class="lineNum">     278</span>              :       kMaxDisplayLines lines plus a &quot;more&quot; line. */</span>
-<span id="L279"><span class="lineNum">     279</span>              :   /** @brief Raw OTP configuration (URI or bare base32), or empty. */</span>
-<span id="L280"><span class="lineNum">     280</span>              :   QString otpUri;</span>
-<span id="L281"><span class="lineNum">     281</span>              :   /** @brief Number of lines in remainingData. */</span>
-<span id="L282"><span class="lineNum">     282</span>              :   qsizetype remainingLines = 0;</span>
-<span id="L283"><span class="lineNum">     283</span>              : };</span>
+<span id="L155"><span class="lineNum">     155</span>              :    * @brief The password: the first line, without the &quot;\r&quot; of a CRLF line end</span>
+<span id="L156"><span class="lineNum">     156</span>              :    * (passwordLine()).</span>
+<span id="L157"><span class="lineNum">     157</span>              :    * @return the password from the parsed file.</span>
+<span id="L158"><span class="lineNum">     158</span>              :    */</span>
+<span id="L159"><span class="lineNum">     159</span>              :   [[nodiscard]] auto getPassword() const -&gt; QString;</span>
+<span id="L160"><span class="lineNum">     160</span>              : </span>
+<span id="L161"><span class="lineNum">     161</span>              :   /**</span>
+<span id="L162"><span class="lineNum">     162</span>              :    * @brief Like getPassword but empty when the password line holds a TOTP</span>
+<span id="L163"><span class="lineNum">     163</span>              :    * shared secret (isOtpLine()).</span>
+<span id="L164"><span class="lineNum">     164</span>              :    *</span>
+<span id="L165"><span class="lineNum">     165</span>              :    * `pass otp insert` writes the URI as the entry's only line, so it lands in</span>
+<span id="L166"><span class="lineNum">     166</span>              :    * the password position, and an `OTP:`/`TOTP:` field written there by hand</span>
+<span id="L167"><span class="lineNum">     167</span>              :    * is the same secret. It is not a password: it must never be rendered or</span>
+<span id="L168"><span class="lineNum">     168</span>              :    * placed on the clipboard. getPassword() still returns it so the edit dialog</span>
+<span id="L169"><span class="lineNum">     169</span>              :    * round-trips the file unchanged.</span>
+<span id="L170"><span class="lineNum">     170</span>              :    * @return The password, or an empty string when it is an OTP line.</span>
+<span id="L171"><span class="lineNum">     171</span>              :    */</span>
+<span id="L172"><span class="lineNum">     172</span>              :   [[nodiscard]] auto getPasswordForDisplay() const -&gt; QString;</span>
+<span id="L173"><span class="lineNum">     173</span>              : </span>
+<span id="L174"><span class="lineNum">     174</span>              :   /**</span>
+<span id="L175"><span class="lineNum">     175</span>              :    * @return the named values in the file in the order of appearance, with</span>
+<span id="L176"><span class="lineNum">     176</span>              :    * template values first.</span>
+<span id="L177"><span class="lineNum">     177</span>              :    */</span>
+<span id="L178"><span class="lineNum">     178</span>              :   [[nodiscard]] auto getNamedValues() const -&gt; NamedValues;</span>
+<span id="L179"><span class="lineNum">     179</span>              : </span>
+<span id="L180"><span class="lineNum">     180</span>              :   /**</span>
+<span id="L181"><span class="lineNum">     181</span>              :    * @return the data that is not the password and not in getNamedValues.</span>
+<span id="L182"><span class="lineNum">     182</span>              :    */</span>
+<span id="L183"><span class="lineNum">     183</span>              :   [[nodiscard]] auto getRemainingData() const -&gt; QString;</span>
+<span id="L184"><span class="lineNum">     184</span>              : </span>
+<span id="L185"><span class="lineNum">     185</span>              :   /**</span>
+<span id="L186"><span class="lineNum">     186</span>              :    * @brief Like getRemainingData but without data that should not be displayed</span>
+<span id="L187"><span class="lineNum">     187</span>              :    * (like a TOTP secret).</span>
+<span id="L188"><span class="lineNum">     188</span>              :    * @return Remaining data string safe for display.</span>
+<span id="L189"><span class="lineNum">     189</span>              :    */</span>
+<span id="L190"><span class="lineNum">     190</span>              :   [[nodiscard]] auto getRemainingDataForDisplay() const -&gt; QString;</span>
+<span id="L191"><span class="lineNum">     191</span>              : </span>
+<span id="L192"><span class="lineNum">     192</span>              :   /**</span>
+<span id="L193"><span class="lineNum">     193</span>              :    * @brief How many lines getRemainingData() holds.</span>
+<span id="L194"><span class="lineNum">     194</span>              :    * @return The line count; 0 when there is no remaining text.</span>
+<span id="L195"><span class="lineNum">     195</span>              :    */</span>
+<span id="L196"><span class="lineNum">     196</span>              :   [[nodiscard]] auto getRemainingLineCount() const -&gt; qsizetype;</span>
+<span id="L197"><span class="lineNum">     197</span>              : </span>
+<span id="L198"><span class="lineNum">     198</span>              :   /**</span>
+<span id="L199"><span class="lineNum">     199</span>              :    * @brief Whether a field name designates the one-time password field.</span>
+<span id="L200"><span class="lineNum">     200</span>              :    * @param name Field name as written in the file; surrounding whitespace is</span>
+<span id="L201"><span class="lineNum">     201</span>              :    *        ignored.</span>
+<span id="L202"><span class="lineNum">     202</span>              :    * @return true for &quot;OTP&quot; or &quot;TOTP&quot;, compared case-insensitively.</span>
+<span id="L203"><span class="lineNum">     203</span>              :    */</span>
+<span id="L204"><span class="lineNum">     204</span>              :   [[nodiscard]] static auto isOtpFieldName(const QString &amp;name) -&gt; bool;</span>
+<span id="L205"><span class="lineNum">     205</span>              : </span>
+<span id="L206"><span class="lineNum">     206</span>              :   /**</span>
+<span id="L207"><span class="lineNum">     207</span>              :    * @brief Whether a field name names a secret: one of @p secrets occurs in</span>
+<span id="L208"><span class="lineNum">     208</span>              :    * it as whole words, compared case-insensitively (&quot;key&quot; matches &quot;API key&quot;</span>
+<span id="L209"><span class="lineNum">     209</span>              :    * and &quot;Recovery key&quot;, not &quot;keyboard layout&quot;).</span>
+<span id="L210"><span class="lineNum">     210</span>              :    * @param name Field name as written in the file.</span>
+<span id="L211"><span class="lineNum">     211</span>              :    * @param secrets The secret field names (AppSettings::secretFieldNames).</span>
+<span id="L212"><span class="lineNum">     212</span>              :    * @return true when one of them occurs in @p name.</span>
+<span id="L213"><span class="lineNum">     213</span>              :    */</span>
+<span id="L214"><span class="lineNum">     214</span>              :   [[nodiscard]] static auto isSecretFieldName(const QString &amp;name,</span>
+<span id="L215"><span class="lineNum">     215</span>              :                                               const QStringList &amp;secrets)</span>
+<span id="L216"><span class="lineNum">     216</span>              :       -&gt; bool;</span>
+<span id="L217"><span class="lineNum">     217</span>              : </span>
+<span id="L218"><span class="lineNum">     218</span>              :   /**</span>
+<span id="L219"><span class="lineNum">     219</span>              :    * @brief Whether a field value is an otpauth URI, and therefore a secret.</span>
+<span id="L220"><span class="lineNum">     220</span>              :    *</span>
+<span id="L221"><span class="lineNum">     221</span>              :    * A URI is a shared secret whatever the field is called, so both the</span>
+<span id="L222"><span class="lineNum">     222</span>              :    * display-suppression and the OTP lookup key off the value as well as the</span>
+<span id="L223"><span class="lineNum">     223</span>              :    * name; suppressing only `OTP:`/`TOTP:` leaked `2fa:` and friends.</span>
+<span id="L224"><span class="lineNum">     224</span>              :    * @param value Field value; surrounding whitespace is ignored.</span>
+<span id="L225"><span class="lineNum">     225</span>              :    * @return true when it starts with &quot;otpauth://&quot;, compared case-insensitively.</span>
+<span id="L226"><span class="lineNum">     226</span>              :    */</span>
+<span id="L227"><span class="lineNum">     227</span>              :   [[nodiscard]] static auto isOtpUriValue(const QString &amp;value) -&gt; bool;</span>
+<span id="L228"><span class="lineNum">     228</span>              : </span>
+<span id="L229"><span class="lineNum">     229</span>              :   /**</span>
+<span id="L230"><span class="lineNum">     230</span>              :    * @brief Whether @p line carries a TOTP shared secret: a bare `otpauth://`</span>
+<span id="L231"><span class="lineNum">     231</span>              :    * line, an `OTP:`/`TOTP:` field, or any field whose value is an otpauth URI.</span>
+<span id="L232"><span class="lineNum">     232</span>              :    *</span>
+<span id="L233"><span class="lineNum">     233</span>              :    * The one rule for every line, the password line included: such a line is</span>
+<span id="L234"><span class="lineNum">     234</span>              :    * never shown or copied, only the code it yields is.</span>
+<span id="L235"><span class="lineNum">     235</span>              :    * @param line One line of the entry.</span>
+<span id="L236"><span class="lineNum">     236</span>              :    * @return true when the line holds a shared secret.</span>
+<span id="L237"><span class="lineNum">     237</span>              :    */</span>
+<span id="L238"><span class="lineNum">     238</span>              :   [[nodiscard]] static auto isOtpLine(const QString &amp;line) -&gt; bool;</span>
+<span id="L239"><span class="lineNum">     239</span>              : </span>
+<span id="L240"><span class="lineNum">     240</span>              :   /**</span>
+<span id="L241"><span class="lineNum">     241</span>              :    * @brief The password of an entry: its first line, without the carriage</span>
+<span id="L242"><span class="lineNum">     242</span>              :    * return of a CRLF line end.</span>
+<span id="L243"><span class="lineNum">     243</span>              :    *</span>
+<span id="L244"><span class="lineNum">     244</span>              :    * The one rule for every path that takes the password from decrypted text</span>
+<span id="L245"><span class="lineNum">     245</span>              :    * (parse(), the Ctrl+C copy), so they agree with the password row: a &quot;\r&quot;</span>
+<span id="L246"><span class="lineNum">     246</span>              :    * before the line feed is the line end, not part of the secret.</span>
+<span id="L247"><span class="lineNum">     247</span>              :    * @param text Decrypted entry text, or just its first line.</span>
+<span id="L248"><span class="lineNum">     248</span>              :    * @return Its first line, a trailing &quot;\r&quot; dropped.</span>
+<span id="L249"><span class="lineNum">     249</span>              :    */</span>
+<span id="L250"><span class="lineNum">     250</span>              :   [[nodiscard]] static auto passwordLine(QStringView text) -&gt; QString;</span>
+<span id="L251"><span class="lineNum">     251</span>              : </span>
+<span id="L252"><span class="lineNum">     252</span>              :   /**</span>
+<span id="L253"><span class="lineNum">     253</span>              :    * @brief The entry's raw one-time password configuration, if it has one.</span>
+<span id="L254"><span class="lineNum">     254</span>              :    *</span>
+<span id="L255"><span class="lineNum">     255</span>              :    * Looked up in this order:</span>
+<span id="L256"><span class="lineNum">     256</span>              :    *   1. the value of the first field whose name satisfies isOtpFieldName();</span>
+<span id="L257"><span class="lineNum">     257</span>              :    *   2. the first bare `otpauth://` line in the body, which is how the</span>
+<span id="L258"><span class="lineNum">     258</span>              :    *      `pass-otp` extension stores it;</span>
+<span id="L259"><span class="lineNum">     259</span>              :    *   3. the value of the first `OTP:` line that was not promoted to a named</span>
+<span id="L260"><span class="lineNum">     260</span>              :    *      value, which is what happens when the template does not list `OTP`.</span>
+<span id="L261"><span class="lineNum">     261</span>              :    *</span>
+<span id="L262"><span class="lineNum">     262</span>              :    * The string is returned verbatim and is not validated here: it may be an</span>
+<span id="L263"><span class="lineNum">     263</span>              :    * `otpauth://` URI or a bare base32 secret. Totp::parse() does the</span>
+<span id="L264"><span class="lineNum">     264</span>              :    * validation.</span>
+<span id="L265"><span class="lineNum">     265</span>              :    * @return The OTP configuration string, or an empty string when the entry</span>
+<span id="L266"><span class="lineNum">     266</span>              :    *         has none.</span>
+<span id="L267"><span class="lineNum">     267</span>              :    */</span>
+<span id="L268"><span class="lineNum">     268</span>              :   [[nodiscard]] auto getOtpUri() const -&gt; QString;</span>
+<span id="L269"><span class="lineNum">     269</span>              : </span>
+<span id="L270"><span class="lineNum">     270</span>              : private:</span>
+<span id="L271"><span class="lineNum">     271</span>              :   /**</span>
+<span id="L272"><span class="lineNum">     272</span>              :    * @brief Assemble a parsed entry; only parse() calls this.</span>
+<span id="L273"><span class="lineNum">     273</span>              :    * @param password The first line.</span>
+<span id="L274"><span class="lineNum">     274</span>              :    * @param namedValues The fields promoted out of the body.</span>
+<span id="L275"><span class="lineNum">     275</span>              :    * @param remainingData The body lines that did not become fields.</span>
+<span id="L276"><span class="lineNum">     276</span>              :    * @param remainingDataDisplay @p remainingData without secret-bearing</span>
+<span id="L277"><span class="lineNum">     277</span>              :    *        lines, cut at kMaxDisplayLines.</span>
+<span id="L278"><span class="lineNum">     278</span>              :    * @param otpUri The OTP configuration found, or empty.</span>
+<span id="L279"><span class="lineNum">     279</span>              :    * @param remainingLines Line count of @p remainingData.</span>
+<span id="L280"><span class="lineNum">     280</span>              :    */</span>
+<span id="L281"><span class="lineNum">     281</span>              :   FileContent(QString password, NamedValues namedValues, QString remainingData,</span>
+<span id="L282"><span class="lineNum">     282</span>              :               QString remainingDataDisplay, QString otpUri,</span>
+<span id="L283"><span class="lineNum">     283</span>              :               qsizetype remainingLines);</span>
 <span id="L284"><span class="lineNum">     284</span>              : </span>
-<span id="L285"><span class="lineNum">     285</span>              : #endif // SRC_FILECONTENT_H_</span>
+<span id="L285"><span class="lineNum">     285</span>              :   /** @brief The first line of the entry, without the &quot;\r&quot; of a CRLF line</span>
+<span id="L286"><span class="lineNum">     286</span>              :    *  end (passwordLine()). */</span>
+<span id="L287"><span class="lineNum">     287</span>              :   QString password;</span>
+<span id="L288"><span class="lineNum">     288</span>              :   /** @brief Fields in order of appearance, template fields first. */</span>
+<span id="L289"><span class="lineNum">     289</span>              :   NamedValues namedValues;</span>
+<span id="L290"><span class="lineNum">     290</span>              :   /** @brief Body lines that are not fields, joined with newlines; complete. */</span>
+<span id="L291"><span class="lineNum">     291</span>              :   QString remainingData, remainingDataDisplay; /**&lt; remainingData for the</span>
+<span id="L292"><span class="lineNum">     292</span>              :       panel: OTP-bearing lines and hidden secrets left out, at most</span>
+<span id="L293"><span class="lineNum">     293</span>              :       kMaxDisplayLines lines plus a &quot;more&quot; line. */</span>
+<span id="L294"><span class="lineNum">     294</span>              :   /** @brief Raw OTP configuration (URI or bare base32), or empty. */</span>
+<span id="L295"><span class="lineNum">     295</span>              :   QString otpUri;</span>
+<span id="L296"><span class="lineNum">     296</span>              :   /** @brief Number of lines in remainingData. */</span>
+<span id="L297"><span class="lineNum">     297</span>              :   qsizetype remainingLines = 0;</span>
+<span id="L298"><span class="lineNum">     298</span>              : };</span>
+<span id="L299"><span class="lineNum">     299</span>              : </span>
+<span id="L300"><span class="lineNum">     300</span>              : #endif // SRC_FILECONTENT_H_</span>
         </pre>
               </td>
             </tr>

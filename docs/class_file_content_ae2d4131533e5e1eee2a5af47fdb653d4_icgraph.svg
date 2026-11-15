@@ -53,7 +53,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Like getPassword but empty when the password line is itself an otpauth URI.">
+<g id="a_Node000001"><a xlink:title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpLine()).">
 <polygon fill="#999999" stroke="#666666" points="1161,-33.5 1022,-33.5 1022,0 1161,0 1161,-33.5"/>
 <text xml:space="preserve" text-anchor="start" x="1030" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::getPassword</text>
 <text xml:space="preserve" text-anchor="middle" x="1091.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">ForDisplay</text>

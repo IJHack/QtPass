@@ -1,5 +1,5 @@
 <map id="FileContent::getPassword" name="FileContent::getPassword">
-<area shape="rect" id="Node000001" title=" " alt="" coords="3855,307,4041,334"/>
+<area shape="rect" id="Node000001" title="The password: the first line, without the &quot;\r&quot; of a CRLF line end (passwordLine())." alt="" coords="3855,307,4041,334"/>
 <area shape="rect" id="Node000002" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Populate the dialog&#39;s password field with the given text." alt="" coords="3594,307,3807,334"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3837,320,3808,323,3808,318,3842,320"/>
 <area shape="rect" id="Node000003" href="$class_password_dialog.html#acddd50947c80336ac71442d186e7c6ff" title="Connected to QDialog::rejected: blanks the password and field widgets so the decrypted secret does no..." alt="" coords="3381,298,3530,343"/>

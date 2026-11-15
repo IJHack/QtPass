@@ -142,8 +142,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a7986f3a7df9713a52e8ba0227e179230" id="r_a7986f3a7df9713a52e8ba0227e179230"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a> (const QString &amp;value) -&gt; bool</td></tr>
 <tr class="memdesc:a7986f3a7df9713a52e8ba0227e179230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shorthand for the public <a class="el" href="class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret.">FileContent::isOtpUriValue</a>.  <br /></td></tr>
 <tr class="memitem:a675927185d9a8c3fb4d0310af8c2198a" id="r_a675927185d9a8c3fb4d0310af8c2198a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a675927185d9a8c3fb4d0310af8c2198a">isLineHidden</a> (const QString &amp;line) -&gt; bool</td></tr>
-<tr class="memdesc:a675927185d9a8c3fb4d0310af8c2198a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a body line carries a TOTP shared secret and must stay out of the parsed display: a bare <span class="tt">otpauth://</span> line, an <span class="tt">OTP:</span>/<span class="tt">TOTP:</span> field, or any field whose value is an otpauth URI. "Display the file's content
-as-is" bypasses this filter and shows the entry raw.  <br /></td></tr>
+<tr class="memdesc:a675927185d9a8c3fb4d0310af8c2198a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (<a class="el" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">FileContent::isOtpLine()</a>). "Display the
+file's content as-is" bypasses this filter and shows the entry raw.  <br /></td></tr>
+<tr class="memitem:a0d86769788e23564914f8cff635df3da" id="r_a0d86769788e23564914f8cff635df3da"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0d86769788e23564914f8cff635df3da">otpConfigOf</a> (const QString &amp;line) -&gt; QString</td></tr>
+<tr class="memdesc:a0d86769788e23564914f8cff635df3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">The OTP configuration an OTP line holds: the line itself for a bare <span class="tt">otpauth://</span> line, the value for a field.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements <a class="el" href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">FileContent::parse()</a> as a single streaming pass over the entry, with the field cap, the display-line cap and the OTP candidate search, plus the cached secret-field-name matcher. </p>
@@ -173,8 +175,8 @@ as-is" bypasses this filter and shows the entry raw.  <br /></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Whether a body line carries a TOTP shared secret and must stay out of the parsed display: a bare <span class="tt">otpauth://</span> line, an <span class="tt">OTP:</span>/<span class="tt">TOTP:</span> field, or any field whose value is an otpauth URI. "Display the file's content
-as-is" bypasses this filter and shows the entry raw. </p>
+<p>Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (<a class="el" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">FileContent::isOtpLine()</a>). "Display the
+file's content as-is" bypasses this filter and shows the entry raw. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>One line of the entry body. </td></tr>
@@ -183,12 +185,12 @@ as-is" bypasses this filter and shows the entry raw. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the line is kept out of getRemainingDataForDisplay(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00037">37</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00036">36</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a675927185d9a8c3fb4d0310af8c2198a_cgraph.svg" width="612" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a675927185d9a8c3fb4d0310af8c2198a_cgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
@@ -243,6 +245,54 @@ as-is" bypasses this filter and shows the entry raw. </p>
 </div>
 <div id="dynsection-4-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a7986f3a7df9713a52e8ba0227e179230_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a0d86769788e23564914f8cff635df3da" name="a0d86769788e23564914f8cff635df3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d86769788e23564914f8cff635df3da">&#9670;&#160;</a></span>otpConfigOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto otpConfigOf </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>line</em></span></td><td>)</td>
+          <td> -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The OTP configuration an OTP line holds: the line itself for a bare <span class="tt">otpauth://</span> line, the value for a field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A line for which <a class="el" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">FileContent::isOtpLine()</a> is true. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The configuration, trimmed. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00046">46</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a0d86769788e23564914f8cff635df3da_cgraph.svg" width="472" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="filecontent_8cpp_a0d86769788e23564914f8cff635df3da_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
