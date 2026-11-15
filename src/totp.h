@@ -62,6 +62,10 @@ public:
     /// Query parameters the parser does not model, kept verbatim so toUri()
     /// can put them back instead of silently dropping them.
     QList<QPair<QString, QString>> extraParams;
+    /// What followed a `#` in the URI, as written: recovery codes or a remark
+    /// noted behind it. Kept so toUri() puts it back; a canonicalised URI
+    /// used to lose it on every save.
+    QString fragment;
   };
 
   static constexpr uint DEFAULT_DIGITS = 6U; ///< RFC 6238 default code length.
