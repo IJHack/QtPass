@@ -206,7 +206,10 @@ public:
   /**
    * @brief Whether a field name names a secret: one of @p secrets occurs in
    * it as whole words, compared case-insensitively ("key" matches "API key"
-   * and "Recovery key", not "keyboard layout").
+   * and "Recovery key", not "keyboard layout"). A word ends where a letter
+   * does not follow, so digits and `_` separate too ("PIN2", "api_key"); a
+   * plural "s" may follow ("tokens"); and camelCase words count ("apiKey",
+   * "clientSecret", "APIKey").
    * @param name Field name as written in the file.
    * @param secrets The secret field names (AppSettings::secretFieldNames).
    * @return true when one of them occurs in @p name.
