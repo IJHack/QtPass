@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 15:17:48</td>
+            <td class="headerValue">2026-11-15 15:52:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -652,9 +652,9 @@
 <span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">         172 :   return QFile(executable).exists();</span></span>
 <span id="L580"><span class="lineNum">     580</span>              : }</span>
 <span id="L581"><span class="lineNum">     581</span>              : </span>
-<span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">       13506 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
-<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">       13513 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
-<span id="L584"><span class="lineNum">     584</span> <span class="tlaGNC">       13506 :   return expr;</span></span>
+<span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">       13474 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">       13481 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
+<span id="L584"><span class="lineNum">     584</span> <span class="tlaGNC">       13474 :   return expr;</span></span>
 <span id="L585"><span class="lineNum">     585</span>              : }</span>
 <span id="L586"><span class="lineNum">     586</span>              : </span>
 <span id="L587"><span class="lineNum">     587</span>              : // Stops at whitespace, quotes and brackets so a URL on its own line keeps no</span>
@@ -735,14 +735,14 @@
 <span id="L662"><span class="lineNum">     662</span>              :   // Text before this index is in bounded already, or dropped.</span>
 <span id="L663"><span class="lineNum">     663</span>              :   qsizetype from = 0;</span>
 <span id="L664"><span class="lineNum">     664</span>              :   qsizetype run = 0;</span>
-<span id="L665"><span class="lineNum">     665</span> <span class="tlaGNC">      153719 :   for (qsizetype i = 0; i &lt; text.size(); ++i) {</span></span>
+<span id="L665"><span class="lineNum">     665</span> <span class="tlaGNC">      153753 :   for (qsizetype i = 0; i &lt; text.size(); ++i) {</span></span>
 <span id="L666"><span class="lineNum">     666</span>              :     const QChar ch = text.at(i);</span>
-<span id="L667"><span class="lineNum">     667</span> <span class="tlaGNC">      153520 :     if (!ch.isSpace() || ch == QLatin1Char('\t') || ch == QLatin1Char('\n')) {</span></span>
+<span id="L667"><span class="lineNum">     667</span> <span class="tlaGNC">      153554 :     if (!ch.isSpace() || ch == QLatin1Char('\t') || ch == QLatin1Char('\n')) {</span></span>
 <span id="L668"><span class="lineNum">     668</span>              :       run = 0;</span>
-<span id="L669"><span class="lineNum">     669</span> <span class="tlaGNC">        6515 :       continue;</span></span>
+<span id="L669"><span class="lineNum">     669</span> <span class="tlaGNC">        6544 :       continue;</span></span>
 <span id="L670"><span class="lineNum">     670</span>              :     }</span>
-<span id="L671"><span class="lineNum">     671</span> <span class="tlaGNC">      147005 :     if (++run &lt;= kMaxSpaceRun) {</span></span>
-<span id="L672"><span class="lineNum">     672</span> <span class="tlaGNC">       11468 :       continue;</span></span>
+<span id="L671"><span class="lineNum">     671</span> <span class="tlaGNC">      147010 :     if (++run &lt;= kMaxSpaceRun) {</span></span>
+<span id="L672"><span class="lineNum">     672</span> <span class="tlaGNC">       11473 :       continue;</span></span>
 <span id="L673"><span class="lineNum">     673</span>              :     }</span>
 <span id="L674"><span class="lineNum">     674</span> <span class="tlaGNC">      135537 :     if (run == kMaxSpaceRun + 1) {</span></span>
 <span id="L675"><span class="lineNum">     675</span> <span class="tlaGNC">           6 :       bounded += QStringView(text).sliced(from, i - from);</span></span>
