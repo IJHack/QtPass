@@ -449,6 +449,8 @@ private Q_SLOTS:
   void otpNeedsASelectionAndTheSetting();
   void editRequestIsIgnoredWhileEditIsDisabled();
   void editPullsFirstWhenAutoPullIsOn();
+  void failedPushAfterASaveStaysOnScreen();
+  void refreshAfterPushGivesWayToTheUser();
   void doubleClickEditsAnEntryButNotAFolder();
   void aCopyOutOfTheEditorIsAutocleared();
   void pullAndPushRunGitInTheStore();
@@ -935,6 +937,23 @@ auto inTree(QSortFilterProxyModel *proxy, const QString &storeDir,
     }
   }
   return false;
+}
+
+/// Write the entry @p name (see selectEntry()) and make it current once the
+/// tree lists it: made current while its folder still loads, it is no longer
+/// current once the folder has.
+auto selectListed(MainWindow *window, const QString &storeDir,
+                  const QString &name) -> bool {
+  const QString path = QDir(storeDir).filePath(name + QStringLiteral(".gpg"));
+  if (!selectEntry(window, storeDir, name)) {
+    return false;
+  }
+  auto *proxy = storeProxy(window);
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN(inTree(proxy, storeDir, path), 5000, false);
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  tree->setCurrentIndex(proxy->mapFromSource(fs->index(path)));
+  return tree->currentIndex().isValid();
 }
 
 /// Hide every entry but @p keep from the tree, as a folder still loading
@@ -2929,6 +2948,167 @@ void tst_mainwindow::editPullsFirstWhenAutoPullIsOn() {
            qPrintable(status));
   QVERIFY2(shown.count() == 1 || shown.wait(3000),
            "the dialog's decrypt must have been asked for");
+#endif
+}
+
+/**
+ * @brief With automatic push, a save's refresh of the shown entry waits for
+ *        the push. Queued behind it, the refresh started the moment a push
+ *        failed and emptied the browser before git's error was painted, so
+ *        the save looked pushed. After a push that goes through, the entry
+ *        is shown again as before.
+ */
+void tst_mainwindow::failedPushAfterASaveStaysOnScreen() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as the gpg and git stand-ins");
+#else
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    s.autoPush = false;
+    QtPassSettings::save(s);
+  });
+  const auto saveWithPushExitingWith = [this](QTemporaryDir &scratch,
+                                              int exitCode) {
+    const QString git = writeFakeGit(
+        scratch.path(), scratch.filePath(QStringLiteral("git.log")), exitCode);
+    return !git.isEmpty() &&
+           !rebuildWithFakeGpg(scratch, [&git](AppSettings &s) {
+              s.useGit = true;
+              s.autoPush = true;
+              s.gitExecutable = git;
+            }).isEmpty();
+  };
+
+  QTemporaryDir rejecting;
+  QVERIFY(rejecting.isValid() && saveWithPushExitingWith(rejecting, 1));
+  QVERIFY(
+      selectListed(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  QSignalSpy failed(QtPassSettings::getPass(), &Pass::processErrorExit);
+  emit QtPassSettings::getPass() -> finishedInsert(QString(), QString());
+  // An earlier push ending meanwhile does not start the refresh: the save's
+  // own push is still queued. Nor does a push of the other backend.
+  emit QtPassSettings::getPass() -> finishedGitPush(QString(), QString());
+  Pass *other = QtPassSettings::getRealPass();
+  QSignalSpy otherShown(other, &Pass::finishedShow);
+  QSignalSpy otherFailed(other, &Pass::processErrorExit);
+  emit other->finishedGitPush(QString(), QString());
+  QTRY_VERIFY_WITH_TIMEOUT(QtPassSettings::getPass()->isIdle(), 10000);
+  QTRY_VERIFY_WITH_TIMEOUT(other->isIdle(), 10000);
+  QCOMPARE(otherShown.count() + otherFailed.count(), 0);
+  QCOMPARE(failed.count(), 1);
+  QCOMPARE(shown.count(), 0);
+  QVERIFY2(
+      browser()->toPlainText().contains(QStringLiteral("fake git says no")),
+      qPrintable(browser()->toPlainText()));
+  // The failure dropped the refresh: once the user opens the entry, a later
+  // push does not bring it back for another decrypt.
+  QVERIFY(
+      selectListed(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QVERIFY2(shown.count() == 1 || shown.wait(10000), "the click's decrypt");
+  emit QtPassSettings::getPass() -> finishedGitPush(QString(), QString());
+  QTest::qWait(100);
+  QCOMPARE(shown.count(), 1);
+
+  QTemporaryDir accepting;
+  QVERIFY(accepting.isValid() && saveWithPushExitingWith(accepting, 0));
+  QVERIFY(
+      selectListed(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  QSignalSpy shownAgain(QtPassSettings::getPass(), &Pass::finishedShow);
+  emit QtPassSettings::getPass() -> finishedInsert(QString(), QString());
+  QVERIFY2(shownAgain.count() == 1 || shownAgain.wait(10000),
+           "after the push, the entry is shown again");
+  QCOMPARE(passwordName()->text(), QStringLiteral("bank"));
+#endif
+}
+
+/**
+ * @brief The refresh a save leaves waiting for its push is dropped when the
+ *        user moves on meanwhile, as a pending decrypt is: a search typed or
+ *        Escape left it to decrypt, and with "Always copy" copy, whatever
+ *        entry was current when the push ended. It is dropped too when other
+ *        work was queued behind the push, whose error it would wipe.
+ */
+void tst_mainwindow::refreshAfterPushGivesWayToTheUser() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as the gpg and git stand-ins");
+#else
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    s.autoPush = false;
+    QtPassSettings::save(s);
+  });
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  // Pushes go through; a pull fails, as on a conflict.
+  const QString git = scratch.filePath(QStringLiteral("git"));
+  {
+    QFile script(git);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write("#!/bin/sh\n"
+                 "case \"$*\" in *push*) exit 0 ;; esac\n"
+                 "echo 'fake pull conflict' >&2\n"
+                 "exit 1\n");
+    script.close();
+    QVERIFY(QFile::setPermissions(git, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner));
+  }
+  QVERIFY(!rebuildWithFakeGpg(scratch, [&git](AppSettings &s) {
+             s.useGit = true;
+             s.autoPush = true;
+             s.gitExecutable = git;
+           }).isEmpty());
+  Pass *pass = QtPassSettings::getPass();
+  const auto saveThen = [&](const std::function<void()> &meanwhile) {
+    // The entries decrypted after the save, by name.
+    QStringList decrypted;
+    if (!selectListed(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("bank"))) {
+      return QStringList{QStringLiteral("(not selected)")};
+    }
+    QSignalSpy shown(pass, &Pass::finishedShow);
+    emit pass->finishedInsert(QString(), QString());
+    meanwhile(); // the push is still running
+    QElapsedTimer timer;
+    timer.start();
+    while (!pass->isIdle() && timer.elapsed() < 10000) {
+      QTest::qWait(20);
+    }
+    QTest::qWait(100);
+    for (const QList<QVariant> &answer : std::as_const(shown)) {
+      decrypted << answer.at(1).toString();
+    }
+    return decrypted;
+  };
+  const QStringList bank{QStringLiteral("bank")};
+
+  QCOMPARE(saveThen([] {}), bank);
+  // A second push queued behind it: the refresh follows the last one.
+  QCOMPARE(saveThen([pass] { pass->GitPush(); }), bank);
+  QCOMPARE(saveThen([pass] { pass->GitPull(); }), QStringList());
+  QVERIFY2(
+      browser()->toPlainText().contains(QStringLiteral("fake pull conflict")),
+      qPrintable(browser()->toPlainText()));
+  QCOMPARE(saveThen([this] { searchBox()->setText(QStringLiteral("zz")); }),
+           QStringList());
+  searchBox()->clear();
+  QCOMPARE(saveThen([this] {
+             QVERIFY(QMetaObject::invokeMethod(m_window.data(), "deselect",
+                                               Qt::DirectConnection));
+           }),
+           QStringList());
+  // The arrow keys move the current entry without opening it: the saved
+  // entry is still the one shown again.
+  QCOMPARE(saveThen([this] {
+             QVERIFY(selectListed(m_window.data(), m_storeDir.path(),
+                                  QStringLiteral("mail")));
+           }),
+           bank);
 #endif
 }
 

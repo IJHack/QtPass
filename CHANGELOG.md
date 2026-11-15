@@ -773,6 +773,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   pulled `~/.password-store` instead, and the edit dialog opened on the old
   copy of the entry. A failed pull is now said in the status bar, as with
   the native backend.
+- With "Automatically push", a push that fails after a save stays on screen
+  in red, as one from the Push button does. The refresh of the entry was
+  queued behind the push and emptied the output before git's error was
+  shown, so the dialog closed as if the save had reached the shared store,
+  while it was only committed locally. The refresh now waits for the push
+  and runs once it went through. With the `pass` backend a rejected push
+  still looks like a success: `pass git push` exits 0 then.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

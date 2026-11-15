@@ -501,6 +501,13 @@ private:
   /// QTreeView::clicked), so onOtp() must not assume the visible code belongs
   /// to the selected entry.
   QString m_shownFile;
+  /// Entry a save's refresh will show once the push queued with it is done;
+  /// empty when none waits. Started behind the push, the refresh would empty
+  /// the browser before a failed push's error was painted.
+  QString m_refreshAfterPush;
+  /// The backend whose push m_refreshAfterPush waits for: only its pushes
+  /// end the wait, and the refresh runs on it.
+  QPointer<Pass> m_refreshAfterPushOwner;
   /// Entry the in-flight OTP request asked for; empty when none. finishedShow
   /// names its file, so otpFromFileToClipboard() simply ignores everything
   /// else and passShowHandler() skips the password copy for this one.

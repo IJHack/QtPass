@@ -149,8 +149,23 @@ void MainWindow::connectBackends() {
   connect(m_qtPass, &QtPass::statusMessage, this,
           &MainWindow::showStatusMessage);
   connect(m_qtPass, &QtPass::pushRequested, this, &MainWindow::onPush);
-  connect(m_qtPass, &QtPass::entryInserted, this,
-          [this]() { on_treeView_clicked(getCurrentTreeViewIndex()); });
+  // With automatic push, the push is queued first and the refresh would start
+  // as soon as it ends, emptying the browser before a failed push's error was
+  // painted. So the refresh waits for the push (see connectPassSignals()). It
+  // claims the panel now, as its decrypt would: whatever drops a pending
+  // decrypt (another entry, a search, Escape, Edit, an error) drops it too.
+  connect(m_qtPass, &QtPass::entryInserted, this, [this]() {
+    const QModelIndex index = getCurrentTreeViewIndex();
+    const QString file = getFile(index, true);
+    Pass *pass = QtPassSettings::getPass();
+    if (!file.isEmpty() && pass->isPushing()) {
+      m_refreshAfterPush = file;
+      m_refreshAfterPushOwner = pass;
+      m_shownFile = file;
+      return;
+    }
+    on_treeView_clicked(index);
+  });
   connect(&m_qtPass->clipboard(), &ClipboardManager::statusMessage, this,
           [this](const QString &message) { showStatusMessage(message); });
   // Both backends: the active one can change through the configuration
@@ -292,6 +307,24 @@ void MainWindow::connectPassSignals(Pass *pass) {
   connect(pass, &Pass::finishedShow, this,
           &MainWindow::passwordFromFileToClipboard);
   connect(pass, &Pass::finishedGrep, this, &MainWindow::onGrepFinished);
+  // The refresh a save left waiting runs once the last push went through,
+  // by name as it was queued before (the save's rewrite of the file may have
+  // replaced its row in the tree), and only while the entry still holds the
+  // panel and nothing else is queued: queued work would run first, and the
+  // refresh would empty the browser of its error. A failed push dropped it
+  // (onOperationError()).
+  connect(pass, &Pass::finishedGitPush, this, [this, pass]() {
+    if (m_refreshAfterPush.isEmpty() || m_refreshAfterPushOwner != pass ||
+        pass->isPushing()) {
+      return;
+    }
+    const QString file = std::exchange(m_refreshAfterPush, QString());
+    m_refreshAfterPushOwner = nullptr;
+    if (file == m_shownFile && pass->isIdle()) {
+      ui->passwordName->setText(file);
+      pass->Show(file);
+    }
+  });
 }
 
 // Idempotent; called from closeEvent() and the destructor.
@@ -1319,6 +1352,10 @@ void MainWindow::onOperationError() {
   // operation started (a refusal says so too); what is left to forget is
   // which entry the panel was about to show.
   m_shownFile.clear();
+  // A save's refresh waiting for its push is dropped: it would clear the
+  // push's error (or whatever failed before it) from the browser.
+  m_refreshAfterPush.clear();
+  m_refreshAfterPushOwner = nullptr;
 }
 
 // Derives the code in-process from one decrypt, so it works with either
