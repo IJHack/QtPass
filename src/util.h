@@ -122,6 +122,15 @@ public:
   static void setGitOwnerForTests(std::optional<uint> user);
 
   /**
+   * @brief For tests: called by stageFileReplacing() with the temporary's
+   * path after it is filled and before it is renamed into place, where a
+   * co-writer could swap another file in under that name.
+   * @param hook The callback, or an empty one to remove it.
+   */
+  static void
+  setBeforePlacingForTests(std::function<void(const QString &)> hook);
+
+  /**
    * @brief Create @p path and any missing parents as pass would.
    *
    * What pass's mkdir -p does under its umask, for the folders QtPass makes
@@ -439,6 +448,9 @@ public:
    * writer's file that landed there since). Where the system cannot give
    * both identities the write stands: on FAT and exFAT a rename moves the
    * file ID, and those filesystems have no hard links to swap in either.
+   * On POSIX the temporary stays open until the comparison, so its inode
+   * number cannot be given to a file swapped in meanwhile (ext4 reuses the
+   * number of an unlinked, closed file at once).
    * @param path The file to write.
    * @param replace Whether an existing entry under the name may go.
    * @param fill Writes the contents.
