@@ -227,11 +227,24 @@ void ImitatePass::Remove(QString file, bool isDir) {
     path.replace(Util::endsWithGpg(), "");
     gitCommit(file, "Remove for " + path + " using QtPass.");
   } else {
+    // Without Git nothing else reports a failure: git rm would print its own.
     if (isDir) {
       QDir dir(file);
-      dir.removeRecursively();
+      if (!dir.removeRecursively()) {
+        // As rm -rf, it went on past what it could not remove: the folder
+        // is still there, without the entries that could go.
+        emit critical(tr("Delete failed"),
+                      tr("Could not remove all of %1. What could be removed "
+                         "is gone; check what is left in it.")
+                          .arg(file));
+      }
     } else {
-      QFile(file).remove();
+      QFile entry(file);
+      if (!entry.remove()) {
+        emit critical(
+            tr("Delete failed"),
+            tr("Could not remove %1: %2").arg(file, entry.errorString()));
+      }
     }
   }
 }
@@ -960,6 +973,36 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
 }
 
 /**
+ * @brief Gives src the name destFile on disk, as git mv does with Git on.
+ *
+ * A forced move of an entry replaces the entry at destFile, which is set
+ * aside first and only removed once src has its name: removing it up front
+ * lost it when the rename then failed, and lost the entry itself when it was
+ * moved onto its own name. A folder is never replaced, forced or not.
+ * @return true when src now has the name destFile; on failure nothing moved.
+ */
+static auto moveWithoutGit(const QString &src, const QString &destFile,
+                           bool force) -> bool {
+  QDir qDir;
+  if (!force || !QFileInfo(src).isFile() || !QFileInfo::exists(destFile)) {
+    return qDir.rename(src, destFile);
+  }
+  if (QFileInfo(src) == QFileInfo(destFile)) {
+    return true; // moved onto its own name: nothing to do
+  }
+  const QString aside = destFile + ".move.bak";
+  if (!qDir.rename(destFile, aside)) {
+    return false;
+  }
+  if (!qDir.rename(src, destFile)) {
+    qDir.rename(aside, destFile);
+    return false;
+  }
+  QFile::remove(aside);
+  return true;
+}
+
+/**
  * @brief Moves a password entry from the source path to the destination path.
  * @example
  * ImitatePass::Move(src, dest, true);
@@ -985,12 +1028,10 @@ void ImitatePass::Move(const QString src, const QString dest,
 
   if (gitReady()) {
     executeMoveGit(src, destFile, force);
-  } else {
-    QDir qDir;
-    if (force) {
-      qDir.remove(destFile);
-    }
-    qDir.rename(src, destFile);
+  } else if (!moveWithoutGit(src, destFile, force)) {
+    // Without Git nothing else reports a failure: git mv would print its own.
+    emit critical(tr("Move failed"),
+                  tr("Could not move %1 to %2.").arg(src, destFile));
   }
 }
 
