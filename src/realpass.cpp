@@ -223,6 +223,20 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
 }
 
 void RealPass::onDequeuing(int id, bool completes) {
+  if (completes && (id == PASS_INIT || id == PASS_MOVE || id == PASS_COPY)) {
+    // pass exits 0 when it could not re-encrypt an entry (reencrypt_path
+    // drops the temporary and carries on), so its exit code says nothing.
+    // gpg's status lines do, in every locale: on stderr (fd 1 is the
+    // `gpg -d | gpg -e` pipe), for this one process (Pass resets the
+    // environment before each start), the last --status-fd winning over a
+    // user's own. WSLENV already forwards PASSWORD_STORE_GPG_OPTS.
+    QProcessEnvironment environment = exec.environment();
+    const QString key = QStringLiteral("PASSWORD_STORE_GPG_OPTS");
+    environment.insert(
+        key,
+        (environment.value(key) + QStringLiteral(" --status-fd 2")).trimmed());
+    exec.setEnvironment(environment);
+  }
   if (id != PASS_INSERT || m_insertQueue.isEmpty()) {
     return;
   }
@@ -354,7 +368,76 @@ void RealPass::finished(int id, int exitCode, const QString &out,
     m_insertDone =
         m_insertPending.isEmpty() ? InsertRecord{} : m_insertPending.dequeue();
   }
+  const auto pid = static_cast<PROCESS>(id);
+  if (pid == PASS_INIT || pid == PASS_MOVE || pid == PASS_COPY) {
+    if (exitCode == 0 && reencryptFailed(out, err)) {
+      reportReencryptFailure(pid, out, err);
+      return;
+    }
+    // The status lines are for this check, not for the output panel.
+    Pass::finished(id, exitCode, out, withoutStatusLines(err));
+    return;
+  }
   Pass::finished(id, exitCode, out, err);
+}
+
+auto RealPass::reencryptFailed(const QString &out, const QString &err) -> bool {
+  // pass's own line for each entry it re-encrypts ("name: reencrypting to
+  // KEY..."), which it does not translate.
+  const qsizetype attempts = out.count(QLatin1String(": reencrypting to "));
+  qsizetype encrypted = 0;
+  bool status = false;
+  for (QString line : err.split(QLatin1Char('\n'))) {
+    line.remove(QLatin1Char('\r'));
+    if (!line.startsWith(QLatin1String("[GNUPG:] "))) {
+      continue;
+    }
+    status = true;
+    // A recipient gpg cannot encrypt to, or a decrypt that failed (no
+    // secret key, pinentry cancelled, no smartcard): that entry was left
+    // as it was. KEYEXPIRED and NO_SECKEY alone are not failures.
+    if (line.startsWith(QLatin1String("[GNUPG:] INV_RECP ")) ||
+        line.startsWith(QLatin1String("[GNUPG:] FAILURE ")) ||
+        line.startsWith(QLatin1String("[GNUPG:] DECRYPTION_FAILED"))) {
+      return true;
+    }
+    if (line.startsWith(QLatin1String("[GNUPG:] END_ENCRYPTION"))) {
+      ++encrypted;
+    }
+  }
+  // Without any status line the option did not reach gpg (a pass that does
+  // not pass PASSWORD_STORE_GPG_OPTS on): nothing to judge by.
+  return status && encrypted < attempts;
+}
+
+void RealPass::reportReencryptFailure(PROCESS pid, const QString &out,
+                                      const QString &err) {
+  QStringList failures;
+  for (QString line : err.split(QLatin1Char('\n'))) {
+    line.remove(QLatin1Char('\r'));
+    if (line.startsWith(QLatin1String("[GNUPG:] INV_RECP ")) ||
+        line.startsWith(QLatin1String("[GNUPG:] FAILURE "))) {
+      failures << line;
+    }
+  }
+  const QString human = withoutStatusLines(err).trimmed();
+  const QString reason = gpgErrorMessage(failures.join(QLatin1Char('\n')));
+  QString body =
+      tr("The recipients were changed, but some entries could not be "
+         "re-encrypted for them: those are still encrypted to the previous "
+         "recipients, who can still read them. With Git the change is "
+         "committed locally, and QtPass did not push it.");
+  for (const QString &part : {reason, human}) {
+    if (!part.isEmpty()) {
+      body += QStringLiteral("\n\n") + part;
+    }
+  }
+  // pass's "reencrypting to" lines and gpg's own text, for the output panel.
+  emit finishedAnyWithPid(out, human, pid);
+  emit critical(
+      QCoreApplication::translate("ImitatePass", "Re-encryption failed"), body);
+  // Not finishedInit/Move/Copy: that would push the store as it now is.
+  emit processErrorExit(1, body);
 }
 
 void RealPass::finishLinkCommit(const LinkCommit &commit, const QString &out,

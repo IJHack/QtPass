@@ -86,6 +86,13 @@ class Pass : public QObject {
 
 protected:
   /**
+   * @brief gpg's stderr without its machine-readable `[GNUPG:]` lines (and
+   * without carriage returns), as a person reads it.
+   * @param err gpg's (or pass's) standard error.
+   * @return The remaining lines, joined with "\n".
+   */
+  static auto withoutStatusLines(const QString &err) -> QString;
+  /**
    * @brief The environment QtPass runs the store's processes in.
    *
    * What updateEnv() made: the git ceiling and the PASSWORD_STORE_ variables
