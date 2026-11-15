@@ -246,18 +246,24 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
       // open-in-browser button); ssh://, ftp:// or user:pass@ URLs stay plain
       // text, because setOpenExternalLinks() would hand them straight to the
       // OS URL handler on click.
+      // Both branches keep white space, which can hang Qt's layout on a run
+      // of 65536 spaces; the copy button still gets the value itself.
+      const QString shown = Util::boundSpaceRuns(displayValue);
       bool linked = false;
-      const QString linkedText = Util::linkifyUrls(displayValue, &linked);
+      const QString linkedText = Util::linkifyUrls(shown, &linked);
       if (!linked) {
         // Nothing to link, so show the value as-is. Escaping it and calling
         // setText() only rendered as rich text when the value happened to
         // contain a '<'; otherwise "&", '"' and ">" came out as HTML entities
         // and a password such as `a&b` read `a&amp;b` on screen.
-        contentTextBrowser->setPlainText(displayValue);
+        contentTextBrowser->setPlainText(shown);
       } else {
         // Always HTML here: the text is escaped and carries anchor tags, so
         // do not leave the interpretation to setText()'s auto-detection.
-        contentTextBrowser->setHtml(linkedText);
+        // With its white space kept, as setPlainText() above keeps it.
+        contentTextBrowser->setHtml(
+            QStringLiteral("<span style=\"white-space: pre-wrap;\">") +
+            linkedText + QStringLiteral("</span>"));
       }
     }
     contentTextBrowser->setReadOnly(true);

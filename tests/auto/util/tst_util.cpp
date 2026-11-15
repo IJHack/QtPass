@@ -191,6 +191,7 @@ private Q_SLOTS:
   void isLaunchableWebUrlRejects();
   void linkifyUrlsLinksLaunchableWebUrls();
   void linkifyUrlsLeavesNonWebUrlsAsText();
+  void boundSpaceRunsCutsOnlyLongRuns();
   void utilRegexNewLines();
   void reencryptPathNormalization();
   void reencryptPathAbsolutePath();
@@ -1916,6 +1917,38 @@ void tst_util::linkifyUrlsLeavesNonWebUrlsAsText() {
            QStringLiteral("web <a href=\"https://example.org/\">"
                           "https://example.org/</a> shell ssh://user:pass@host "
                           "end"));
+}
+
+/**
+ * @brief Qt's layout never finishes a wrapped line with 65536 spaces in a
+ * row, so text shown with its white space kept has each run cut to
+ * Util::kMaxSpaceRun. Every white space Qt counts in such a run counts here;
+ * a tab or a line feed ends one; shorter runs and the text around are kept.
+ */
+void tst_util::boundSpaceRunsCutsOnlyLongRuns() {
+  const qsizetype max = Util::kMaxSpaceRun;
+  const QString keep = QStringLiteral("a") + QString(max, QLatin1Char(' ')) +
+                       QStringLiteral("b\t") + QString(max, QLatin1Char(' ')) +
+                       QStringLiteral("\t") + QString(max, QLatin1Char(' ')) +
+                       QStringLiteral("\n") + QString(max, QLatin1Char(' '));
+  QCOMPARE(Util::boundSpaceRuns(keep), keep);
+  QCOMPARE(Util::boundSpaceRuns(QString()), QString());
+
+  QCOMPARE(Util::boundSpaceRuns(
+               QStringLiteral("a") + QString(70000, QLatin1Char(' ')) +
+               QStringLiteral("b") + QString(max + 1, QLatin1Char(' '))),
+           QStringLiteral("a") + QString(max, QLatin1Char(' ')) +
+               QStringLiteral("b") + QString(max, QLatin1Char(' ')));
+
+  // Ideographic and em spaces, \v and U+0085 make one run with spaces.
+  QString mixed;
+  const QList<QChar> spaces = {QChar(0x20), QChar(0x3000), QChar(0x2003),
+                               QChar(0x0B), QChar(0x85)};
+  for (qsizetype i = 0; i < 2 * max; ++i) {
+    mixed += spaces.at(i % spaces.size());
+  }
+  QCOMPARE(Util::boundSpaceRuns(QStringLiteral("x") + mixed),
+           QStringLiteral("x") + mixed.left(max));
 }
 
 void tst_util::utilRegexNewLines() {

@@ -29,6 +29,7 @@
 #include <QStatusBar>
 #include <QTemporaryDir>
 #include <QTextBrowser>
+#include <QTextDocumentFragment>
 #include <QTextEdit>
 #include <QTimer>
 #include <QToolBar>
@@ -66,6 +67,7 @@ private Q_SLOTS:
   void flashTextSetsContent();
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
+  void entryTextKeepsItsWhiteSpace();
   void showStatusMessageAppearsInStatusBar();
   void deselectDoesNotCrash();
   void onProcessOutputAppendsToPanel();
@@ -241,6 +243,74 @@ void tst_mainwindow::flashTextHtmlRenderedInBrowser() {
   QVERIFY2(
       !browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
       "flashText with isHtml=true must not escape HTML tags");
+}
+
+/**
+ * @brief The text of an entry is shown, and so selected and copied, with the
+ *        white space it is stored with. As rich text, "ridge  velvet" in a
+ *        recovery phrase came out as "ridge velvet", indentation was dropped
+ *        and a tab became a space (#210); with "Show the file content as-is"
+ *        that went for the password line too.
+ */
+void tst_mainwindow::entryTextKeepsItsWhiteSpace() {
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY2(browser != nullptr, "textBrowser must exist");
+  const QString text = QStringLiteral("backup phrase: ridge  velvet harbor\n"
+                                      "    indented\n"
+                                      "tab\there\n"
+                                      "trailing   \n"
+                                      "see https://example.org/a  b");
+  // What Select All and Copy in the browser's menu hand to the clipboard.
+  const auto copied = [browser] {
+    browser->selectAll();
+    return browser->textCursor().selection().toPlainText();
+  };
+  // A click on an entry empties the browser before its decrypt comes back.
+  browser->clear();
+  m_window->passShowHandler(QStringLiteral("hunter2\n") + text);
+  QCOMPARE(browser->toPlainText(), text);
+  QCOMPARE(copied(), text);
+
+  // Output arriving later is appended through toHtml(): the entry's text
+  // stays as it was, and the output keeps its own columns.
+  emit QtPassSettings::getPass() -> finishedGitPull(
+      QStringLiteral(" 2 files changed,  3 insertions"), QString());
+  QCOMPARE(copied(),
+           text + QStringLiteral("\n 2 files changed,  3 insertions"));
+
+  // A "\r\n" is still one line end, and a lone "\r" stays a space.
+  browser->clear();
+  emit QtPassSettings::getPass()
+      -> finishedGitPull(QStringLiteral("one  1\r\ntwo\rthree"), QString());
+  QCOMPARE(copied(), QStringLiteral("one  1\ntwo three"));
+
+  // Kept white space hangs Qt's layout on 65536 spaces in a row, so a long
+  // run is cut before it is shown.
+  browser->clear();
+  emit QtPassSettings::getPass() -> finishedGitPull(
+      QStringLiteral("a") +
+          QString(Util::kMaxSpaceRun + 500, QLatin1Char(' ')) +
+          QStringLiteral("b"),
+      QString());
+  QCOMPARE(browser->toPlainText(),
+           QStringLiteral("a") + QString(Util::kMaxSpaceRun, QLatin1Char(' ')) +
+               QStringLiteral("b"));
+
+  {
+    AppSettings s = QtPassSettings::load();
+    s.displayAsIs = true;
+    QtPassSettings::save(s);
+  }
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.displayAsIs = false;
+    QtPassSettings::save(s);
+  });
+  const QString entry = QStringLiteral("pass  word\n") + text;
+  browser->clear();
+  m_window->passShowHandler(entry);
+  QCOMPARE(copied(), entry);
 }
 
 /**
