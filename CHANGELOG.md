@@ -123,6 +123,33 @@
   backend no longer lists its matches for the store now open: accepting
   Settings cancels it, and matches the other backend reports are dropped
   (ported from [#2205](https://github.com/IJHack/QtPass/pull/2205))
+- An `otpauth://` URI whose parameter names are written with capitals
+  (`Digits=8`, `Period=60`, `Algorithm=SHA256`) gives the code those
+  parameters ask for; they were ignored, so the code used 6 digits, 30
+  seconds and SHA-1 (ported from
+  [#2192](https://github.com/IJHack/QtPass/pull/2192))
+- An OK in the edit dialog writes an untouched `OTP:` line back as it was
+  read. It was rewritten into QtPass's own form on every save, which wrote
+  the defaults over capitalised parameters and lost the text after a `#`
+  (recovery codes, a remark). A value typed into the field is still written
+  as a URI, and keeps what follows its `#` (ported from
+  [#2193](https://github.com/IJHack/QtPass/pull/2193))
+- An `otpauth://` URI naming a hash function QtPass does not have
+  (`algorithm=SHA384`, `MD5`) gives no OTP code and marks the field as
+  invalid, as an HOTP URI does; it gave the SHA-1 code without a warning,
+  and saving the entry wrote it back without its `algorithm`. Other
+  spellings of the supported ones (`SHA-256`, `HmacSHA256`) now give the
+  right code (ported from
+  [#2194](https://github.com/IJHack/QtPass/pull/2194))
+- A URI of another scheme typed or pasted into the OTP field (a Google
+  Authenticator export, `otpauth-migration://offline?data=…`, `steam://`,
+  `zbarimg` output with its `QR-Code:` prefix) is marked as invalid and
+  kept as typed. It was taken for a base32 secret made of its leftover
+  letters, with a running code that was not the account's, and the export
+  was saved as that secret. A bare secret may hold letters, digits, spaces,
+  `-`, `.`, `_` and `=` padding (ported from
+  [#2198](https://github.com/IJHack/QtPass/pull/2198) and
+  [#2207](https://github.com/IJHack/QtPass/pull/2207))
 
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 
