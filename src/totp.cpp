@@ -128,10 +128,25 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     }
 
     const QUrlQuery query(url);
-    rawSecret =
-        query.queryItemValue(QStringLiteral("secret"), QUrl::FullyDecoded);
-    settings.issuer =
-        query.queryItemValue(QStringLiteral("issuer"), QUrl::FullyDecoded);
+    // FullyDecoded, because toUri() percent-encodes these again: the default
+    // PrettyDecoded leaves escapes in place and the round trip double-encodes.
+    const QList<QPair<QString, QString>> items =
+        query.queryItems(QUrl::FullyDecoded);
+    // Parameter names are matched without regard to case, as the list of
+    // names kept below is: read exactly, `Digits=8` was neither read nor
+    // kept, and toUri() wrote the defaults in its place. The first of a name
+    // wins, as QUrlQuery::queryItemValue() has it.
+    const auto param =
+        [&items](QLatin1StringView name) -> std::optional<QString> {
+      for (const QPair<QString, QString> &item : items) {
+        if (item.first.compare(name, Qt::CaseInsensitive) == 0) {
+          return item.second;
+        }
+      }
+      return std::nullopt;
+    };
+    rawSecret = param(QLatin1StringView("secret")).value_or(QString());
+    settings.issuer = param(QLatin1StringView("issuer")).value_or(QString());
     // The label is everything after the host, e.g. "/Example:alice".
     settings.label = url.path();
     if (settings.label.startsWith(QLatin1Char('/'))) {
@@ -142,14 +157,15 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     // rotating every second, which normalize() would then persist. Keep the RFC
     // default unless the value really is a usable number.
     settings.digits = parsePositiveUInt(
-        query.queryItemValue(QStringLiteral("digits")), DEFAULT_DIGITS);
+        param(QLatin1StringView("digits")).value_or(QString()), DEFAULT_DIGITS);
     settings.step = parsePositiveUInt(
-        query.queryItemValue(QStringLiteral("period")), DEFAULT_STEP);
-    if (query.hasQueryItem(QStringLiteral("algorithm"))) {
-      settings.algorithm =
-          algorithmByName(query.queryItemValue(QStringLiteral("algorithm")));
+        param(QLatin1StringView("period")).value_or(QString()), DEFAULT_STEP);
+    if (const std::optional<QString> algorithm =
+            param(QLatin1StringView("algorithm"))) {
+      settings.algorithm = algorithmByName(*algorithm);
     }
-    if (query.queryItemValue(QStringLiteral("encoder"))
+    if (param(QLatin1StringView("encoder"))
+            .value_or(QString())
             .compare(QStringLiteral("steam"), Qt::CaseInsensitive) == 0) {
       settings.encoder = Encoder::Steam;
     }
@@ -159,10 +175,6 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
         QStringLiteral("secret"),    QStringLiteral("issuer"),
         QStringLiteral("digits"),    QStringLiteral("period"),
         QStringLiteral("algorithm"), QStringLiteral("encoder")};
-    // FullyDecoded, because toUri() percent-encodes these again: the default
-    // PrettyDecoded leaves escapes in place and the round trip double-encodes.
-    const QList<QPair<QString, QString>> items =
-        query.queryItems(QUrl::FullyDecoded);
     for (const QPair<QString, QString> &item : items) {
       if (!known.contains(item.first, Qt::CaseInsensitive)) {
         settings.extraParams.append(item);
