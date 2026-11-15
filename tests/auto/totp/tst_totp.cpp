@@ -20,6 +20,7 @@ class tst_totp : public QObject {
 private Q_SLOTS:
   void parseCanonicalUri();
   void parseUriWithoutOptionalParameters();
+  void parseReadsParameterNamesInAnyCase();
   void parseBareSecret();
   void parseSpacedSecret();
   void parseAlgorithmNames_data();
@@ -75,6 +76,42 @@ void tst_totp::parseUriWithoutOptionalParameters() {
   QVERIFY(settings->algorithm == Totp::Algorithm::Sha1);
   QCOMPARE(settings->label, QStringLiteral("Example"));
   QVERIFY(settings->issuer.isEmpty());
+}
+
+/**
+ * @brief Parameter names are matched without regard to case. Read exactly,
+ *        `Digits=8` was neither read (the code used 6 digits, 30 s, SHA-1) nor
+ *        kept as an unknown parameter, and normalize() wrote the defaults in
+ *        its place, so an edit dialog OK reset the account's settings.
+ */
+void tst_totp::parseReadsParameterNamesInAnyCase() {
+  const QString uri = QStringLiteral(
+      "otpauth://totp/ACME:bob?Secret=JBSWY3DPEHPK3PXP&Issuer=ACME&"
+      "Algorithm=SHA256&DIGITS=8&Period=60&Image=x.png");
+  const std::optional<Totp::Settings> s = Totp::parse(uri);
+  QVERIFY(s.has_value());
+  QCOMPARE(s->digits, 8U);
+  QCOMPARE(s->step, 60U);
+  QCOMPARE(s->algorithm, Totp::Algorithm::Sha256);
+  QCOMPARE(s->issuer, QStringLiteral("ACME"));
+  QCOMPARE(s->base32Key, QStringLiteral("JBSWY3DPEHPK3PXP"));
+  // Known names are not carried over a second time; unknown ones are.
+  QCOMPARE(s->extraParams.size(), 1);
+  QCOMPARE(s->extraParams.first().first, QStringLiteral("Image"));
+
+  const QString canonical = Totp::normalize(uri, QStringLiteral("bob"));
+  for (const QString &kept :
+       {QStringLiteral("digits=8"), QStringLiteral("period=60"),
+        QStringLiteral("algorithm=SHA256"), QStringLiteral("issuer=ACME")}) {
+    QVERIFY2(canonical.contains(kept, Qt::CaseInsensitive),
+             qPrintable(canonical));
+  }
+
+  const std::optional<Totp::Settings> steam = Totp::parse(QStringLiteral(
+      "otpauth://totp/Steam:bob?secret=JBSWY3DPEHPK3PXP&Encoder=steam"));
+  QVERIFY(steam.has_value());
+  QCOMPARE(steam->encoder, Totp::Encoder::Steam);
+  QCOMPARE(steam->digits, Totp::STEAM_DIGITS);
 }
 
 void tst_totp::parseBareSecret() {
