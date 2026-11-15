@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 12:15:11</td>
+            <td class="headerValue">2026-11-15 12:38:50</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -86,10 +86,10 @@
 <span id="L13"><span class="lineNum">      13</span>              : </span>
 <span id="L14"><span class="lineNum">      14</span>              : #include &quot;qtpasslogging.h&quot;</span>
 <span id="L15"><span class="lineNum">      15</span>              : </span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          18 : TrayIcon::TrayIcon(QMainWindow *parent) : QObject(parent) {</span></span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">          18 :   parentwin = parent;</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          19 : TrayIcon::TrayIcon(QMainWindow *parent) : QObject(parent) {</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">          19 :   parentwin = parent;</span></span>
 <span id="L18"><span class="lineNum">      18</span>              : </span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">          18 :   if (QSystemTrayIcon::isSystemTrayAvailable()) {</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">          19 :   if (QSystemTrayIcon::isSystemTrayAvailable()) {</span></span>
 <span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">           6 :     createActions();</span></span>
 <span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">           6 :     createTrayIcon();</span></span>
 <span id="L22"><span class="lineNum">      22</span>              : </span>
@@ -103,12 +103,12 @@
 <span id="L30"><span class="lineNum">      30</span>              : </span>
 <span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           6 :     isAllocated = true;</span></span>
 <span id="L32"><span class="lineNum">      32</span>              :   } else {</span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">          13 :     qCDebug(lcQtPass)</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">          14 :     qCDebug(lcQtPass)</span></span>
 <span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           1 :         &lt;&lt; &quot;No tray icon for this OS possibly also not show options?&quot;;</span></span>
 <span id="L35"><span class="lineNum">      35</span>              :   }</span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          18 : }</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          19 : }</span></span>
 <span id="L37"><span class="lineNum">      37</span>              : </span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           6 : auto TrayIcon::getIsAllocated() -&gt; bool { return isAllocated; }</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           7 : auto TrayIcon::getIsAllocated() -&gt; bool { return isAllocated; }</span></span>
 <span id="L39"><span class="lineNum">      39</span>              : </span>
 <span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">           6 : void TrayIcon::createActions() {</span></span>
 <span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">           6 :   showAction = new QAction(tr(&quot;&amp;Show&quot;), this);</span></span>
