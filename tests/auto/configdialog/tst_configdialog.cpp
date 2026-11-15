@@ -175,6 +175,8 @@ private Q_SLOTS:
   void addProfileSelectsTheNewOne();
   void profileFormEditsTheSelectedProfile();
   void okWaitsForValidProfiles();
+  void profileNameWithASlashIsRefused_data();
+  void profileNameWithASlashIsRefused();
   void sharedSigningKeyWarnsWithoutBlocking();
   void signerLookupSeesAKeyImportedMeanwhile();
   void passBackendWarnsOfARepositoryAboveTheStore();
@@ -1063,6 +1065,60 @@ void tst_configdialog::passBackendWarnsOfARepositoryAboveTheStore() {
   QVERIFY2(!profileWarning->text().contains(QDir::toNativeSeparators(plain)),
            qPrintable(profileWarning->text()));
 #endif
+}
+
+void tst_configdialog::profileNameWithASlashIsRefused_data() {
+  QTest::addColumn<QString>("typed");
+  QTest::newRow("inside") << QStringLiteral("Work/Client");
+  QTest::newRow("leading") << QStringLiteral("/Work");
+  QTest::newRow("trailing") << QStringLiteral("Work/");
+  QTest::newRow("alone") << QStringLiteral("/");
+  QTest::newRow("backslash") << QStringLiteral("Work\\Client");
+}
+
+/**
+ * @brief The settings key profiles by name, and QSettings reads a slash in a
+ * key as a group separator (a backslash too, on Windows): "Work/Client" came
+ * back as a profile "Work" without folder or signing key, and QtPass switched
+ * to it. OK stays off and the name says why; without the slash it is fine.
+ */
+void tst_configdialog::profileNameWithASlashIsRefused() {
+  QFETCH(QString, typed);
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+  Profiles profiles;
+  Profile one;
+  one.path = QStringLiteral("/store/one");
+  profiles.insert(QStringLiteral("one"), one);
+  QtPassSettings::setProfiles(profiles);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("one");
+    QtPassSettings::save(s);
+  }
+
+  ConfigDialog dialog(nullptr);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("profileList"));
+  auto *name = child<QLineEdit>(dialog, "profileName");
+  auto *ok = dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"))
+                 ->button(QDialogButtonBox::Ok);
+  QVERIFY(list != nullptr && ok != nullptr);
+  QVERIFY(ok->isEnabled());
+
+  name->setText(typed);
+  emit name->textEdited(name->text());
+  QVERIFY2(!ok->isEnabled(), qPrintable(typed));
+  QVERIFY2(name->toolTip().contains(QStringLiteral("cannot contain")),
+           qPrintable(name->toolTip()));
+  QVERIFY(list->currentItem()->background().color() == Qt::red);
+
+  name->setText(QStringLiteral("Work-Client"));
+  emit name->textEdited(name->text());
+  QVERIFY(ok->isEnabled());
+  QCOMPARE(dialog.getProfiles().keys(),
+           QStringList{QStringLiteral("Work-Client")});
 }
 
 /**

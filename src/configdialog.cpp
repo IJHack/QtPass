@@ -341,13 +341,19 @@ auto ConfigDialog::isFingerprintList(const QString &setting) -> bool {
 }
 
 // Profile names must be unique: the settings key profiles by name, so a
-// duplicate would silently overwrite the other.
+// duplicate would silently overwrite the other. For the same reason a name
+// holds no slash: QSettings reads "/" as a group separator, and "\" as one on
+// Windows, so "Work/Client" was stored a group too deep and read back as a
+// profile "Work" without folder or signing key.
 auto ConfigDialog::problemsOf(const ProfileEntry &entry,
                               const QHash<QString, int> &names) const
     -> ProfileProblems {
   ProfileProblems problems;
   if (entry.name.isEmpty()) {
     problems.name = tr("This field is required");
+  } else if (entry.name.contains(QLatin1Char('/')) ||
+             entry.name.contains(QLatin1Char('\\'))) {
+    problems.name = tr("A profile name cannot contain / or \\");
   } else if (names.value(entry.name) > 1) {
     problems.name = tr("Another profile already has this name");
   }
