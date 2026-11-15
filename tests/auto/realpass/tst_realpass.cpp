@@ -1099,19 +1099,25 @@ void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
 
 /**
  * @brief GitPull_b blocks: when it returns, the stand-in has already run
- *        `git pull` (the log exists without waiting), and a non-zero exit
- *        is explained in the debug log only, never turned into a signal or
- *        a second attempt.
+ *        `git pull` (the log exists without waiting), in the store's
+ *        environment: without PASSWORD_STORE_DIR, pass pulled
+ *        ~/.password-store instead of the configured store. A non-zero exit
+ *        is said in the status bar and the debug log, never turned into an
+ *        error signal or a second attempt.
  */
 void tst_realpass::gitPullBlockingReturnsAfterPassRanWhateverItsExitCode() {
   QScopedPointer<RealPass> pass(makePass());
   QSignalSpy criticalSpy(pass.data(), &Pass::critical);
   QSignalSpy errorSpy(pass.data(), &Pass::processErrorExit);
+  QSignalSpy statusSpy(pass.data(), &Pass::statusMsg);
   pass->GitPull_b();
   QVERIFY2(QFile::exists(m_log),
            "GitPull_b must not return before the stand-in pass finished");
-  QCOMPARE(waitForCall().args,
+  Call call = waitForCall();
+  QCOMPARE(call.args,
            (QStringList{QStringLiteral("git"), QStringLiteral("pull")}));
+  QCOMPARE(QDir(call.storeEnv).canonicalPath(), QDir(m_store).canonicalPath());
+  QCOMPARE(statusSpy.count(), 0);
 
   // A pass that fails: counts its run, then the same stand-in, then exit 3.
   QFile::remove(m_log);
@@ -1145,8 +1151,14 @@ void tst_realpass::gitPullBlockingReturnsAfterPassRanWhateverItsExitCode() {
   pass->GitPull_b();
   QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=false"));
   QVERIFY2(QFile::exists(m_log), "the failing pass must still have run");
-  QCOMPARE(waitForCall().args,
+  call = waitForCall();
+  QCOMPARE(call.args,
            (QStringList{QStringLiteral("git"), QStringLiteral("pull")}));
+  QCOMPARE(QDir(call.storeEnv).canonicalPath(), QDir(m_store).canonicalPath());
+  QCOMPARE(statusSpy.count(), 1);
+  QVERIFY2(statusSpy.first().first().toString().contains(
+               QStringLiteral("Git pull failed")),
+           qPrintable(statusSpy.first().first().toString()));
   QFile runs(attempts);
   QVERIFY2(runs.open(QIODevice::ReadOnly | QIODevice::Text),
            "the failing pass must have counted its run");
