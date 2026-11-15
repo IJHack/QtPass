@@ -1025,6 +1025,9 @@ void tst_realpass::reencryptFailedJudgesTheStatusLines_data() {
   QTest::newRow("no status lines")
       << two << QStringLiteral("gpg: oops\n") << false;
   QTest::newRow("nothing re-encrypted") << QString() << QString() << false;
+  QTest::newRow("an entry named like the line")
+      << QStringLiteral("a: reencrypting to b: reencrypting to AAAA\n")
+      << QStringLiteral("[GNUPG:] END_ENCRYPTION\n") << false;
 }
 
 /**
@@ -1114,9 +1117,9 @@ void tst_realpass::reencryptFailureIsReportedNotFinished() {
   QCOMPARE(critical.size(), 2);
   QVERIFY2(!output.last().at(1).toString().contains(QStringLiteral("[GNUPG:]")),
            "status lines stay out of the output panel");
+  QSignalSpy shown(&pass, &Pass::finishedShow);
   pass.Show(m_store + QStringLiteral("folder/a"));
-  QTRY_VERIFY_WITH_TIMEOUT(QFile(opts).size() > 0, 5000);
-  QTest::qWait(200);
+  QTRY_COMPARE_WITH_TIMEOUT(shown.size(), 1, 5000);
 
   QFile log(opts);
   QVERIFY(log.open(QIODevice::ReadOnly | QIODevice::Text));

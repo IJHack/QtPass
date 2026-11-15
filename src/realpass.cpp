@@ -20,6 +20,7 @@
 #include <QFileInfo>
 #include <QProcess>
 #include <QRegularExpression>
+#include <algorithm>
 #include <utility>
 
 using Enums::GIT_COMMIT;
@@ -385,8 +386,13 @@ void RealPass::finished(int id, int exitCode, const QString &out,
 
 auto RealPass::reencryptFailed(const QString &out, const QString &err) -> bool {
   // pass's own line for each entry it re-encrypts ("name: reencrypting to
-  // KEY..."), which it does not translate.
-  const qsizetype attempts = out.count(QLatin1String(": reencrypting to "));
+  // KEY..."), which it does not translate; one per line, counted once
+  // even when the entry's own name holds the words.
+  const QStringList outLines = out.split(QLatin1Char('\n'));
+  const auto attempts = std::count_if(
+      outLines.cbegin(), outLines.cend(), [](const QString &line) {
+        return line.contains(QLatin1String(": reencrypting to "));
+      });
   qsizetype encrypted = 0;
   bool status = false;
   for (QString line : err.split(QLatin1Char('\n'))) {
