@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 22:29:18</td>
+            <td class="headerValue">2026-11-15 22:51:42</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -192,23 +192,23 @@
 <span id="L119"><span class="lineNum">     119</span>              : </span>
 <span id="L120"><span class="lineNum">     120</span>              : } // namespace</span>
 <span id="L121"><span class="lineNum">     121</span>              : </span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         679 : auto Totp::parse(const QString &amp;config) -&gt; std::optional&lt;Settings&gt; {</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         685 : auto Totp::parse(const QString &amp;config) -&gt; std::optional&lt;Settings&gt; {</span></span>
 <span id="L123"><span class="lineNum">     123</span>              :   // Checked before anything else sees it (trimmed() copies it, QUrl and</span>
 <span id="L124"><span class="lineNum">     124</span>              :   // QUrlQuery would make a crafted URI of tens of MiB tens of millions of</span>
 <span id="L125"><span class="lineNum">     125</span>              :   // query items on the GUI thread); padding counts too.</span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">         679 :   if (config.size() &gt; MAX_CONFIG_LENGTH) {</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">         685 :   if (config.size() &gt; MAX_CONFIG_LENGTH) {</span></span>
 <span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">           4 :     return std::nullopt;</span></span>
 <span id="L128"><span class="lineNum">     128</span>              :   }</span>
 <span id="L129"><span class="lineNum">     129</span>              :   const QString trimmed = config.trimmed();</span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         675 :   if (trimmed.isEmpty()) {</span></span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         681 :   if (trimmed.isEmpty()) {</span></span>
 <span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">           7 :     return std::nullopt;</span></span>
 <span id="L132"><span class="lineNum">     132</span>              :   }</span>
 <span id="L133"><span class="lineNum">     133</span>              : </span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">         668 :   Settings settings;</span></span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         668 :   QString rawSecret;</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">         674 :   Settings settings;</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         674 :   QString rawSecret;</span></span>
 <span id="L136"><span class="lineNum">     136</span>              : </span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">         668 :   const QUrl url(trimmed);</span></span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">        1994 :   if (url.isValid() &amp;&amp; url.scheme().compare(QStringLiteral(&quot;otpauth&quot;),</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">         674 :   const QUrl url(trimmed);</span></span>
+<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">        2012 :   if (url.isValid() &amp;&amp; url.scheme().compare(QStringLiteral(&quot;otpauth&quot;),</span></span>
 <span id="L139"><span class="lineNum">     139</span>              :                                             Qt::CaseInsensitive) == 0) {</span>
 <span id="L140"><span class="lineNum">     140</span>              :     // Counter-based HOTP cannot be generated from a clock; refuse rather than</span>
 <span id="L141"><span class="lineNum">     141</span>              :     // return a wrong code that looks right.</span>
@@ -282,7 +282,7 @@
 <span id="L209"><span class="lineNum">     209</span>              :         settings.extraParams.append(item);</span>
 <span id="L210"><span class="lineNum">     210</span>              :       }</span>
 <span id="L211"><span class="lineNum">     211</span>              :     }</span>
-<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">         938 :   } else if (trimmed.startsWith(QStringLiteral(&quot;otpauth:&quot;),</span></span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">         950 :   } else if (trimmed.startsWith(QStringLiteral(&quot;otpauth:&quot;),</span></span>
 <span id="L213"><span class="lineNum">     213</span>              :                                 Qt::CaseInsensitive)) {</span>
 <span id="L214"><span class="lineNum">     214</span>              :     // Claims to be an otpauth URI but QUrl could not parse it. Falling through</span>
 <span id="L215"><span class="lineNum">     215</span>              :     // to the bare-secret branch would hand the whole string to</span>
@@ -300,38 +300,38 @@
 <span id="L227"><span class="lineNum">     227</span>              :     // white space, &quot;=&quot; padding, and dashes, dots or underscores between</span>
 <span id="L228"><span class="lineNum">     228</span>              :     // groups (JBSW.Y3DP..., as some services show it), which it drops.</span>
 <span id="L229"><span class="lineNum">     229</span>              :     const bool written =</span>
-<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">       13449 :         std::all_of(trimmed.cbegin(), trimmed.cend(), [](QChar c) {</span></span>
+<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">       13563 :         std::all_of(trimmed.cbegin(), trimmed.cend(), [](QChar c) {</span></span>
 <span id="L231"><span class="lineNum">     231</span>              :           const char16_t u = c.unicode();</span>
-<span id="L232"><span class="lineNum">     232</span> <span class="tlaGNC">       13405 :           return c.isSpace() || u == u'-' || u == u'=' || u == u'.' ||</span></span>
+<span id="L232"><span class="lineNum">     232</span> <span class="tlaGNC">       13519 :           return c.isSpace() || u == u'-' || u == u'=' || u == u'.' ||</span></span>
 <span id="L233"><span class="lineNum">     233</span>              :                  u == u'_' || (u &gt;= u'A' &amp;&amp; u &lt;= u'Z') ||</span>
-<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">       13449 :                  (u &gt;= u'a' &amp;&amp; u &lt;= u'z') || (u &gt;= u'0' &amp;&amp; u &lt;= u'8');</span></span>
+<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">       13563 :                  (u &gt;= u'a' &amp;&amp; u &lt;= u'z') || (u &gt;= u'0' &amp;&amp; u &lt;= u'8');</span></span>
 <span id="L235"><span class="lineNum">     235</span>              :         });</span>
-<span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">         307 :     if (!written) {</span></span>
+<span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">         313 :     if (!written) {</span></span>
 <span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">         129 :       return std::nullopt;</span></span>
 <span id="L238"><span class="lineNum">     238</span>              :     }</span>
-<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">         178 :     rawSecret = trimmed;</span></span>
+<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">         184 :     rawSecret = trimmed;</span></span>
 <span id="L240"><span class="lineNum">     240</span>              :   }</span>
 <span id="L241"><span class="lineNum">     241</span>              : </span>
-<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">         442 :   const QByteArray sanitized = Base32::sanitizeInput(rawSecret.toLatin1());</span></span>
-<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">         884 :   settings.key = Base32::decode(sanitized);</span></span>
-<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">         442 :   if (settings.key.isEmpty()) {</span></span>
+<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">         448 :   const QByteArray sanitized = Base32::sanitizeInput(rawSecret.toLatin1());</span></span>
+<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">         896 :   settings.key = Base32::decode(sanitized);</span></span>
+<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">         448 :   if (settings.key.isEmpty()) {</span></span>
 <span id="L245"><span class="lineNum">     245</span> <span class="tlaGNC">         109 :     return std::nullopt;</span></span>
 <span id="L246"><span class="lineNum">     246</span>              :   }</span>
 <span id="L247"><span class="lineNum">     247</span> <span class="tlaUNC">           0 :   settings.base32Key = QString::fromLatin1(sanitized);</span></span>
 <span id="L248"><span class="lineNum">     248</span>              : </span>
-<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">         333 :   if (settings.encoder == Encoder::Steam) {</span></span>
+<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">         339 :   if (settings.encoder == Encoder::Steam) {</span></span>
 <span id="L250"><span class="lineNum">     250</span> <span class="tlaGNC">           9 :     settings.digits = STEAM_DIGITS;</span></span>
 <span id="L251"><span class="lineNum">     251</span>              :   }</span>
 <span id="L252"><span class="lineNum">     252</span>              :   // Clamp on every path: an out-of-range `digits` would otherwise overflow the</span>
 <span id="L253"><span class="lineNum">     253</span>              :   // modulus, and a zero `step` would divide by zero.</span>
-<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">         333 :   settings.digits = qBound(MIN_DIGITS, settings.digits, MAX_DIGITS);</span></span>
-<span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">         333 :   settings.step = qBound(1U, settings.step, MAX_STEP);</span></span>
+<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">         339 :   settings.digits = qBound(MIN_DIGITS, settings.digits, MAX_DIGITS);</span></span>
+<span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">         339 :   settings.step = qBound(1U, settings.step, MAX_STEP);</span></span>
 <span id="L256"><span class="lineNum">     256</span>              : </span>
 <span id="L257"><span class="lineNum">     257</span>              :   return settings;</span>
-<span id="L258"><span class="lineNum">     258</span> <span class="tlaGNC">        1336 : }</span></span>
+<span id="L258"><span class="lineNum">     258</span> <span class="tlaGNC">        1348 : }</span></span>
 <span id="L259"><span class="lineNum">     259</span>              : </span>
-<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">         492 : auto Totp::isValid(const QString &amp;config) -&gt; bool {</span></span>
-<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">         492 :   return parse(config).has_value();</span></span>
+<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">         498 : auto Totp::isValid(const QString &amp;config) -&gt; bool {</span></span>
+<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">         498 :   return parse(config).has_value();</span></span>
 <span id="L262"><span class="lineNum">     262</span>              : }</span>
 <span id="L263"><span class="lineNum">     263</span>              : </span>
 <span id="L264"><span class="lineNum">     264</span> <span class="tlaGNC">          81 : auto Totp::counter(const Settings &amp;settings, quint64 unixTime) -&gt; quint64 {</span></span>

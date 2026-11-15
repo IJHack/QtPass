@@ -150,461 +150,462 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('filecontent_8c
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QChar c : value) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">const</span> <span class="keywordtype">char16_t</span> u = c.unicode();</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// Grouping and padding, as seeds are written and pasted: spaces, tabs, a</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// no-break space, dashes, &quot;=&quot;. Base32::sanitizeInput() drops them too.</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (c.isSpace() || u == u<span class="charliteral">&#39;-&#39;</span> || u == u<span class="charliteral">&#39;=&#39;</span>) {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (!((u &gt;= u<span class="charliteral">&#39;A&#39;</span> &amp;&amp; u &lt;= u<span class="charliteral">&#39;Z&#39;</span>) || (u &gt;= u<span class="charliteral">&#39;a&#39;</span> &amp;&amp; u &lt;= u<span class="charliteral">&#39;z&#39;</span>) ||</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          (u &gt;= u<span class="charliteral">&#39;2&#39;</span> &amp;&amp; u &lt;= u<span class="charliteral">&#39;7&#39;</span>))) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    ++letters;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">constexpr</span> qsizetype kMinSeedLetters = 16;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordflow">return</span> letters &gt;= kMinSeedLetters &amp;&amp; <a class="code hl_function" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">Totp::isValid</a>(value);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// no-break space, dashes, dots, underscores, &quot;=&quot;. Base32::sanitizeInput()</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// drops them too, and Totp::parse() accepts them.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (c.isSpace() || u == u<span class="charliteral">&#39;-&#39;</span> || u == u<span class="charliteral">&#39;.&#39;</span> || u == u<span class="charliteral">&#39;_&#39;</span> || u == u<span class="charliteral">&#39;=&#39;</span>) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (!((u &gt;= u<span class="charliteral">&#39;A&#39;</span> &amp;&amp; u &lt;= u<span class="charliteral">&#39;Z&#39;</span>) || (u &gt;= u<span class="charliteral">&#39;a&#39;</span> &amp;&amp; u &lt;= u<span class="charliteral">&#39;z&#39;</span>) ||</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          (u &gt;= u<span class="charliteral">&#39;2&#39;</span> &amp;&amp; u &lt;= u<span class="charliteral">&#39;7&#39;</span>))) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    ++letters;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">constexpr</span> qsizetype kMinSeedLetters = 16;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">return</span> letters &gt;= kMinSeedLetters &amp;&amp; <a class="code hl_function" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">Totp::isValid</a>(value);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06">   77</a></span><span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06">afterFirstColon</a>(<span class="keyword">const</span> QString &amp;line) -&gt; QString {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">const</span> qsizetype colon = line.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">return</span> colon &lt; 0 ? QString() : line.mid(colon + 1);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06">   78</a></span><span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06">afterFirstColon</a>(<span class="keyword">const</span> QString &amp;line) -&gt; QString {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">const</span> qsizetype colon = line.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">return</span> colon &lt; 0 ? QString() : line.mid(colon + 1);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">   89</a></span><span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">holdsOtpConfig</a>(<span class="keyword">const</span> QString &amp;line) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(line)) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">const</span> qsizetype colon = line.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">if</span> (colon &lt; 0) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keyword">const</span> QString value = line.mid(colon + 1);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="comment">// Any field holding an otpauth URI is a shared secret; an OTP-named field</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="comment">// only when what it holds would give a code: the line is the password</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="comment">// otherwise, as the pass format has it.</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(value) ||</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>         (<a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a>(line.left(colon)) &amp;&amp; <a class="code hl_function" href="filecontent_8cpp.html#a6159791af25b399e08098b04e888f7f0">isBase32Seed</a>(value));</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">   90</a></span><span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">holdsOtpConfig</a>(<span class="keyword">const</span> QString &amp;line) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(line)) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">const</span> qsizetype colon = line.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordflow">if</span> (colon &lt; 0) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">const</span> QString value = line.mid(colon + 1);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="comment">// Any field holding an otpauth URI is a shared secret; an OTP-named field</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="comment">// only when what it holds would give a code: the line is the password</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="comment">// otherwise, as the pass format has it.</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(value) ||</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>         (<a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a>(line.left(colon)) &amp;&amp; <a class="code hl_function" href="filecontent_8cpp.html#a6159791af25b399e08098b04e888f7f0">isBase32Seed</a>(value));</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
-<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da">  111</a></span><span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da">otpConfigOf</a>(<span class="keyword">const</span> QString &amp;line) -&gt; QString {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(line)) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">return</span> line.trimmed();</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordflow">return</span> line.mid(line.indexOf(u<span class="charliteral">&#39;:&#39;</span>) + 1).trimmed();</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da">  112</a></span><span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da">otpConfigOf</a>(<span class="keyword">const</span> QString &amp;line) -&gt; QString {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(line)) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> line.trimmed();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordflow">return</span> line.mid(line.indexOf(u<span class="charliteral">&#39;:&#39;</span>) + 1).trimmed();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
 </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">struct </span>OtpCandidates {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  QString field;          </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  QString bareLine;       </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  QString remainingField; </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keyword">auto</span> pick() const -&gt; QString {</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span> (!field.isEmpty()) {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keywordflow">return</span> field;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> bareLine.isEmpty() ? remainingField : bareLine;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  }</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>};</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">auto</span> takeNamedValue(<span class="keyword">const</span> QString &amp;line, <span class="keyword">const</span> QStringList &amp;templateFields,</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                    <span class="keywordtype">bool</span> allFields,</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                    <span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> QString &amp;)&gt; &amp;alsoField,</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                    <a class="code hl_class" href="class_named_values.html">NamedValues</a> &amp;namedValues, OtpCandidates &amp;otp) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keyword">const</span> qsizetype colon = line.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keywordflow">if</span> (colon &lt; 0) {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  }</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keyword">const</span> QString name = line.left(colon);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="keyword">const</span> QString value = line.right(line.length() - colon - 1);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="comment">// A value starting with // means the colon is probably from a URL.</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordflow">if</span> (!templateFields.contains(name) &amp;&amp;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      !(allFields &amp;&amp; !value.startsWith(QStringLiteral(<span class="stringliteral">&quot;//&quot;</span>))) &amp;&amp;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      !(alsoField &amp;&amp; alsoField(name.trimmed()))) {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// An `OTP:` line the template did not promote to a field.</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">if</span> (otp.remainingField.isEmpty() &amp;&amp; <a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a>(name)) {</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      otp.remainingField = value.trimmed();</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  }</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  namedValues.append({name.trimmed(), value.trimmed(), line});</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="comment">// Keyed on the value as well as the name: a field called anything at all</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="comment">// whose value is an otpauth URI is still a shared secret.</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keywordflow">if</span> (otp.field.isEmpty() &amp;&amp; (<a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a>(name) ||</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                              <a class="code hl_function" href="class_file_content.html#af99e299f227bbdd4714c429004152742">FileContent::isOtpUriValue</a>(value))) {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    otp.field = value.trimmed();</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  }</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>}</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="keyword">auto</span> moreLinesNotShown(qsizetype count) -&gt; QString {</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="comment">// The count in a variable of its own: lupdate up to 6.8 loses a</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="comment">// translate() call with template arguments among its arguments and would</span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="comment">// mark the string vanished.</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> n = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      std::min&lt;qsizetype&gt;(count, std::numeric_limits&lt;int&gt;::max()));</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;FileContent&quot;</span>,</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                                     <span class="stringliteral">&quot;… %n more line(s) not shown&quot;</span>, <span class="keyword">nullptr</span>, n);</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>} <span class="comment">// namespace</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
-<div class="foldopen" id="foldopen00201" data-start="{" data-end="}">
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e">  201</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e">FileContent::parse</a>(<span class="keyword">const</span> QString &amp;fileContent,</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                        <span class="keyword">const</span> QStringList &amp;templateFields, <span class="keywordtype">bool</span> allFields,</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                        <span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> QString &amp;)&gt; &amp;alsoField)</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    -&gt; <a class="code hl_function" href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">FileContent</a> {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="comment">// Line by line over the text, never a list of every line: a compressed</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="comment">// entry can expand into tens of millions of lines within the plaintext</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="comment">// limit, and a QString each (empty ones too) would take gigabytes.</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  QStringTokenizer tokens = QStringView(fileContent).tokenize(u<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keyword">auto</span> it = tokens.begin();</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  QString <a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keywordflow">if</span> (it != tokens.end()) {</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a> = <a class="code hl_function" href="class_file_content.html#a41f00506abcd1629b156219f4acb0f1a">passwordLine</a>(*it);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    ++it;</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  }</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  QString <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  QString <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  qsizetype <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a> = 0;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  qsizetype displayedLines = 0;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  qsizetype notShown = 0;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="comment">// Past kMaxNamedFields a line is still offered to takeNamedValue(), into</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="comment">// this throwaway list, for what it notes about OTP: the line stays text.</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> pastTheCap;</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  OtpCandidates otp;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="comment">// An entry from `pass otp insert` has the URI as its only (password) line,</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="comment">// which the loop below never sees; an `OTP:`/`TOTP:` field written there by</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="comment">// hand holding a usable secret is the same, and yields a code as it does</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <span class="comment">// further down. Read only from what is written as a configuration</span></div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="comment">// (holdsOtpConfig()); a first line with a URI elsewhere in it is kept off</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="comment">// the screen all the same (isOtpPasswordLine()).</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">holdsOtpConfig</a>(<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>)) {</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    otp.bareLine = <a class="code hl_function" href="filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da">otpConfigOf</a>(<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>);</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  }</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="keywordflow">for</span> (; it != tokens.end(); ++it) {</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keyword">const</span> QString line = it-&gt;toString();</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordtype">bool</span> secretPastTheCap = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="comment">// A line with an otpauth URI in it is never a field unless the URI is</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">// its value (&quot;2fa: otpauth://...&quot;), also not when the template lists</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="comment">// &quot;otpauth&quot;: split at a colon, the value would lose the scheme that</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment">// marks it as a shared secret and be shown seed and all (&quot;otpauth://...&quot;,</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="comment">// &quot;AWS: backup phone: otpauth://...&quot;). Past kMaxNamedFields, lines stay</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="comment">// text.</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">carriesOtpUri</a>(line) || <a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(<a class="code hl_function" href="filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06">afterFirstColon</a>(line))) {</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>.size() &lt; <a class="code hl_variable" href="class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8">kMaxNamedFields</a>) {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">if</span> (takeNamedValue(line, templateFields, allFields, alsoField,</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                           <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>, otp)) {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>          <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        }</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        takeNamedValue(line, templateFields, allFields, alsoField, pastTheCap,</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                       otp);</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="comment">// A secret past the cap stays text, but not on screen: the panel</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="comment">// would have hidden it.</span></div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        secretPastTheCap = !pastTheCap.isEmpty() &amp;&amp; alsoField &amp;&amp;</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                           alsoField(pastTheCap.first().name);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        pastTheCap.clear();</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>      }</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    }</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="comment">// Joined with &quot;\n&quot; as they go, as split() and join() did.</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a> &gt; 0) {</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>      <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a> += QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a> += line;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    ++<a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(line) &amp;&amp; otp.bareLine.isEmpty()) {</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      <span class="comment">// A bare otpauth:// line, the convention the pass-otp extension uses.</span></div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      otp.bareLine = line.trimmed();</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="filecontent_8cpp.html#a675927185d9a8c3fb4d0310af8c2198a">isLineHidden</a>(line) &amp;&amp; !secretPastTheCap) {</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>      <span class="keywordflow">if</span> (displayedLines == <a class="code hl_variable" href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a>) {</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        ++notShown;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>      }</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>      <span class="keywordflow">if</span> (displayedLines &gt; 0) {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a> += QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>      }</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a> += line;</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      ++displayedLines;</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  }</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordflow">if</span> (notShown &gt; 0) {</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a> += QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>) + moreLinesNotShown(notShown);</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  }</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  <span class="comment">// The OTP value stays in namedValues/remainingData: the edit dialog reads it</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="comment">// from there and PasswordDialog::getPassword() drops empty fields, so</span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="comment">// stripping it here would delete the secret on the next save. Suppression</span></div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="comment">// happens in getRemainingDataForDisplay() and PasswordDisplayPanel.</span></div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keywordflow">return</span> {<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>,   <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>,   <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>, <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>,</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>          otp.pick(), <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>};</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">struct </span>OtpCandidates {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  QString field;          </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  QString bareLine;       </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  QString remainingField; </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">auto</span> pick() const -&gt; QString {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (!field.isEmpty()) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="keywordflow">return</span> field;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">return</span> bareLine.isEmpty() ? remainingField : bareLine;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>};</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">auto</span> takeNamedValue(<span class="keyword">const</span> QString &amp;line, <span class="keyword">const</span> QStringList &amp;templateFields,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                    <span class="keywordtype">bool</span> allFields,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                    <span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> QString &amp;)&gt; &amp;alsoField,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                    <a class="code hl_class" href="class_named_values.html">NamedValues</a> &amp;namedValues, OtpCandidates &amp;otp) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keyword">const</span> qsizetype colon = line.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordflow">if</span> (colon &lt; 0) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="keyword">const</span> QString name = line.left(colon);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="keyword">const</span> QString value = line.right(line.length() - colon - 1);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="comment">// A value starting with // means the colon is probably from a URL.</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keywordflow">if</span> (!templateFields.contains(name) &amp;&amp;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      !(allFields &amp;&amp; !value.startsWith(QStringLiteral(<span class="stringliteral">&quot;//&quot;</span>))) &amp;&amp;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      !(alsoField &amp;&amp; alsoField(name.trimmed()))) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="comment">// An `OTP:` line the template did not promote to a field.</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (otp.remainingField.isEmpty() &amp;&amp; <a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a>(name)) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      otp.remainingField = value.trimmed();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  namedValues.append({name.trimmed(), value.trimmed(), line});</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="comment">// Keyed on the value as well as the name: a field called anything at all</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="comment">// whose value is an otpauth URI is still a shared secret.</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="keywordflow">if</span> (otp.field.isEmpty() &amp;&amp; (<a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a>(name) ||</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                              <a class="code hl_function" href="class_file_content.html#af99e299f227bbdd4714c429004152742">FileContent::isOtpUriValue</a>(value))) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    otp.field = value.trimmed();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keyword">auto</span> moreLinesNotShown(qsizetype count) -&gt; QString {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="comment">// The count in a variable of its own: lupdate up to 6.8 loses a</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="comment">// translate() call with template arguments among its arguments and would</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="comment">// mark the string vanished.</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> n = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      std::min&lt;qsizetype&gt;(count, std::numeric_limits&lt;int&gt;::max()));</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;FileContent&quot;</span>,</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                                     <span class="stringliteral">&quot;… %n more line(s) not shown&quot;</span>, <span class="keyword">nullptr</span>, n);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>} <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e">  202</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e">FileContent::parse</a>(<span class="keyword">const</span> QString &amp;fileContent,</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                        <span class="keyword">const</span> QStringList &amp;templateFields, <span class="keywordtype">bool</span> allFields,</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                        <span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> QString &amp;)&gt; &amp;alsoField)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    -&gt; <a class="code hl_function" href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">FileContent</a> {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="comment">// Line by line over the text, never a list of every line: a compressed</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="comment">// entry can expand into tens of millions of lines within the plaintext</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="comment">// limit, and a QString each (empty ones too) would take gigabytes.</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  QStringTokenizer tokens = QStringView(fileContent).tokenize(u<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="keyword">auto</span> it = tokens.begin();</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  QString <a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keywordflow">if</span> (it != tokens.end()) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a> = <a class="code hl_function" href="class_file_content.html#a41f00506abcd1629b156219f4acb0f1a">passwordLine</a>(*it);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    ++it;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  QString <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  QString <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  qsizetype <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a> = 0;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  qsizetype displayedLines = 0;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  qsizetype notShown = 0;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="comment">// Past kMaxNamedFields a line is still offered to takeNamedValue(), into</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="comment">// this throwaway list, for what it notes about OTP: the line stays text.</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> pastTheCap;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  OtpCandidates otp;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="comment">// An entry from `pass otp insert` has the URI as its only (password) line,</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="comment">// which the loop below never sees; an `OTP:`/`TOTP:` field written there by</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <span class="comment">// hand holding a usable secret is the same, and yields a code as it does</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="comment">// further down. Read only from what is written as a configuration</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="comment">// (holdsOtpConfig()); a first line with a URI elsewhere in it is kept off</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <span class="comment">// the screen all the same (isOtpPasswordLine()).</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">holdsOtpConfig</a>(<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>)) {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    otp.bareLine = <a class="code hl_function" href="filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da">otpConfigOf</a>(<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordflow">for</span> (; it != tokens.end(); ++it) {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keyword">const</span> QString line = it-&gt;toString();</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordtype">bool</span> secretPastTheCap = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">// A line with an otpauth URI in it is never a field unless the URI is</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="comment">// its value (&quot;2fa: otpauth://...&quot;), also not when the template lists</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment">// &quot;otpauth&quot;: split at a colon, the value would lose the scheme that</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="comment">// marks it as a shared secret and be shown seed and all (&quot;otpauth://...&quot;,</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="comment">// &quot;AWS: backup phone: otpauth://...&quot;). Past kMaxNamedFields, lines stay</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="comment">// text.</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">carriesOtpUri</a>(line) || <a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(<a class="code hl_function" href="filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06">afterFirstColon</a>(line))) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>.size() &lt; <a class="code hl_variable" href="class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8">kMaxNamedFields</a>) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">if</span> (takeNamedValue(line, templateFields, allFields, alsoField,</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                           <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>, otp)) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>          <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        }</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        takeNamedValue(line, templateFields, allFields, alsoField, pastTheCap,</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                       otp);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="comment">// A secret past the cap stays text, but not on screen: the panel</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="comment">// would have hidden it.</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        secretPastTheCap = !pastTheCap.isEmpty() &amp;&amp; alsoField &amp;&amp;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                           alsoField(pastTheCap.first().name);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        pastTheCap.clear();</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="comment">// Joined with &quot;\n&quot; as they go, as split() and join() did.</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a> &gt; 0) {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>      <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a> += QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a> += line;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    ++<a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a>(line) &amp;&amp; otp.bareLine.isEmpty()) {</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      <span class="comment">// A bare otpauth:// line, the convention the pass-otp extension uses.</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>      otp.bareLine = line.trimmed();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="filecontent_8cpp.html#a675927185d9a8c3fb4d0310af8c2198a">isLineHidden</a>(line) &amp;&amp; !secretPastTheCap) {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      <span class="keywordflow">if</span> (displayedLines == <a class="code hl_variable" href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a>) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        ++notShown;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>      }</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      <span class="keywordflow">if</span> (displayedLines &gt; 0) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a> += QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a> += line;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      ++displayedLines;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  <span class="keywordflow">if</span> (notShown &gt; 0) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a> += QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>) + moreLinesNotShown(notShown);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="comment">// The OTP value stays in namedValues/remainingData: the edit dialog reads it</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="comment">// from there and PasswordDialog::getPassword() drops empty fields, so</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="comment">// stripping it here would delete the secret on the next save. Suppression</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="comment">// happens in getRemainingDataForDisplay() and PasswordDisplayPanel.</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keywordflow">return</span> {<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>,   <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>,   <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>, <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>,</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>          otp.pick(), <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>};</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>}</div>
 </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="foldopen" id="foldopen00292" data-start="{" data-end="}">
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">  292</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a>(<span class="keyword">const</span> QString &amp;name) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keyword">const</span> QString trimmed = name.trimmed();</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keywordflow">return</span> trimmed.compare(QStringLiteral(<span class="stringliteral">&quot;OTP&quot;</span>), Qt::CaseInsensitive) == 0 ||</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>         trimmed.compare(QStringLiteral(<span class="stringliteral">&quot;TOTP&quot;</span>), Qt::CaseInsensitive) == 0;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="foldopen" id="foldopen00293" data-start="{" data-end="}">
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">  293</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a>(<span class="keyword">const</span> QString &amp;name) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keyword">const</span> QString trimmed = name.trimmed();</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keywordflow">return</span> trimmed.compare(QStringLiteral(<span class="stringliteral">&quot;OTP&quot;</span>), Qt::CaseInsensitive) == 0 ||</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>         trimmed.compare(QStringLiteral(<span class="stringliteral">&quot;TOTP&quot;</span>), Qt::CaseInsensitive) == 0;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>}</div>
 </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="foldopen" id="foldopen00298" data-start="{" data-end="}">
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="class_file_content.html#a91dfee0a7472e06dad305a66d8025460">  298</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a91dfee0a7472e06dad305a66d8025460">FileContent::isSecretFieldName</a>(<span class="keyword">const</span> QString &amp;name,</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                                    <span class="keyword">const</span> QStringList &amp;secrets) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  <span class="comment">// One pattern for the whole list, compiled once per list: the panel asks</span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="comment">// for every field of every entry shown, and the list rarely changes.</span></div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <span class="keyword">thread_local</span> QStringList cachedSecrets;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  <span class="keyword">thread_local</span> QStringList cachedWords;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  <span class="keyword">thread_local</span> QRegularExpression cachedPattern;</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <span class="keyword">thread_local</span> <span class="keywordtype">bool</span> cachedYet = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> options = QRegularExpression::CaseInsensitiveOption |</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                           QRegularExpression::UseUnicodePropertiesOption;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  <span class="keywordflow">if</span> (!cachedYet || secrets != cachedSecrets) {</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    cachedWords.clear();</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;secret : secrets) {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      <span class="keyword">const</span> QString word = secret.trimmed();</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>      <span class="keywordflow">if</span> (word.isEmpty()) {</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      }</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>      <span class="comment">// A word counts when no letter touches it: digits and `_` end a word</span></div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>      <span class="comment">// as a blank does (&quot;PIN2&quot;, &quot;api_key&quot;), and a plural &quot;s&quot; may follow</span></div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>      <span class="comment">// (&quot;tokens&quot;, &quot;Security answers&quot;); &quot;key&quot; is still not in &quot;keyboard&quot;.</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>      <span class="comment">// A word that starts or ends with a digit is not part of a longer</span></div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>      <span class="comment">// number either (&quot;tan1&quot; not in &quot;tan12&quot;).</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>      <span class="keyword">const</span> QString letters = QStringLiteral(<span class="stringliteral">&quot;\\p{L}\\p{M}&quot;</span>);</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>      <span class="keyword">const</span> QString before =</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>          word.front().isDigit() ? letters + QStringLiteral(<span class="stringliteral">&quot;\\d&quot;</span>) : letters;</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>      <span class="keyword">const</span> QString after =</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>          word.back().isDigit() ? letters + QStringLiteral(<span class="stringliteral">&quot;\\d&quot;</span>) : letters;</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>      cachedWords &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;(?&lt;![%1])%2s?(?![%3])&quot;</span>)</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                         .arg(before, QRegularExpression::escape(word), after);</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    }</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    cachedSecrets = secrets;</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    cachedYet = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    cachedPattern = QRegularExpression(</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        QStringLiteral(<span class="stringliteral">&quot;(?:%1)&quot;</span>).arg(cachedWords.join(QLatin1Char(<span class="charliteral">&#39;|&#39;</span>))),</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        options);</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  }</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  <span class="keywordflow">if</span> (cachedWords.isEmpty()) {</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  }</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  <span class="comment">// camelCase names its words with capitals, which a case-insensitive match</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="comment">// does not see, so the name is also tried with a blank at each word start:</span></div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  <span class="comment">// &quot;apiKey&quot; as &quot;api Key&quot;, &quot;APIKey&quot; as &quot;API Key&quot;. The acronym rule cuts a</span></div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  <span class="comment">// capitals word that a lower-case letter follows (&quot;cardPINs&quot; as &quot;card PI</span></div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  <span class="comment">// Ns&quot;), so a split at lower-to-upper starts alone is tried too (&quot;card</span></div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  <span class="comment">// PINs&quot;, &quot;sim PINcode&quot;), and the name as written (&quot;PINcode&quot;).</span></div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression lowerThenUpper(</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      QStringLiteral(<span class="stringliteral">&quot;(?&lt;=[\\p{Ll}\\d])(?=\\p{Lu})&quot;</span>),</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>      QRegularExpression::UseUnicodePropertiesOption);</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression acronymThenWord(</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>      QStringLiteral(<span class="stringliteral">&quot;(?&lt;=\\p{Lu})(?=\\p{Lu}\\p{Ll})&quot;</span>),</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>      QRegularExpression::UseUnicodePropertiesOption);</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  QString camel = name;</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  camel.replace(lowerThenUpper, QStringLiteral(<span class="stringliteral">&quot; &quot;</span>));</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  QString words = camel;</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  words.replace(acronymThenWord, QStringLiteral(<span class="stringliteral">&quot; &quot;</span>));</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="keyword">const</span> <span class="keyword">auto</span> matches = [&amp;](<span class="keyword">const</span> QRegularExpression &amp;pattern) {</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    <span class="keywordflow">return</span> pattern.match(name).hasMatch() ||</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>           (camel != name &amp;&amp; pattern.match(camel).hasMatch()) ||</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>           (words != camel &amp;&amp; pattern.match(words).hasMatch());</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  };</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  <span class="keywordflow">if</span> (cachedPattern.isValid()) {</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keywordflow">return</span> matches(cachedPattern);</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  }</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  <span class="comment">// Too many words for one pattern (PCRE2&#39;s size limit): word by word,</span></div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  <span class="comment">// rather than every secret field shown in plain view.</span></div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <span class="keywordflow">return</span> std::any_of(cachedWords.cbegin(), cachedWords.cend(),</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                     [&amp;matches, options](<span class="keyword">const</span> QString &amp;word) {</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                       return matches(QRegularExpression(word, options));</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                     });</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>}</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="foldopen" id="foldopen00299" data-start="{" data-end="}">
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno"><a class="line" href="class_file_content.html#a91dfee0a7472e06dad305a66d8025460">  299</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a91dfee0a7472e06dad305a66d8025460">FileContent::isSecretFieldName</a>(<span class="keyword">const</span> QString &amp;name,</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                                    <span class="keyword">const</span> QStringList &amp;secrets) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="comment">// One pattern for the whole list, compiled once per list: the panel asks</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <span class="comment">// for every field of every entry shown, and the list rarely changes.</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  <span class="keyword">thread_local</span> QStringList cachedSecrets;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  <span class="keyword">thread_local</span> QStringList cachedWords;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <span class="keyword">thread_local</span> QRegularExpression cachedPattern;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="keyword">thread_local</span> <span class="keywordtype">bool</span> cachedYet = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> options = QRegularExpression::CaseInsensitiveOption |</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                           QRegularExpression::UseUnicodePropertiesOption;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <span class="keywordflow">if</span> (!cachedYet || secrets != cachedSecrets) {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    cachedWords.clear();</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;secret : secrets) {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>      <span class="keyword">const</span> QString word = secret.trimmed();</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      <span class="keywordflow">if</span> (word.isEmpty()) {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>      }</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>      <span class="comment">// A word counts when no letter touches it: digits and `_` end a word</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>      <span class="comment">// as a blank does (&quot;PIN2&quot;, &quot;api_key&quot;), and a plural &quot;s&quot; may follow</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>      <span class="comment">// (&quot;tokens&quot;, &quot;Security answers&quot;); &quot;key&quot; is still not in &quot;keyboard&quot;.</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>      <span class="comment">// A word that starts or ends with a digit is not part of a longer</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>      <span class="comment">// number either (&quot;tan1&quot; not in &quot;tan12&quot;).</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>      <span class="keyword">const</span> QString letters = QStringLiteral(<span class="stringliteral">&quot;\\p{L}\\p{M}&quot;</span>);</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>      <span class="keyword">const</span> QString before =</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>          word.front().isDigit() ? letters + QStringLiteral(<span class="stringliteral">&quot;\\d&quot;</span>) : letters;</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>      <span class="keyword">const</span> QString after =</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>          word.back().isDigit() ? letters + QStringLiteral(<span class="stringliteral">&quot;\\d&quot;</span>) : letters;</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>      cachedWords &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;(?&lt;![%1])%2s?(?![%3])&quot;</span>)</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                         .arg(before, QRegularExpression::escape(word), after);</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    }</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    cachedSecrets = secrets;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    cachedYet = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    cachedPattern = QRegularExpression(</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        QStringLiteral(<span class="stringliteral">&quot;(?:%1)&quot;</span>).arg(cachedWords.join(QLatin1Char(<span class="charliteral">&#39;|&#39;</span>))),</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        options);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  }</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keywordflow">if</span> (cachedWords.isEmpty()) {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  }</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="comment">// camelCase names its words with capitals, which a case-insensitive match</span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  <span class="comment">// does not see, so the name is also tried with a blank at each word start:</span></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  <span class="comment">// &quot;apiKey&quot; as &quot;api Key&quot;, &quot;APIKey&quot; as &quot;API Key&quot;. The acronym rule cuts a</span></div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  <span class="comment">// capitals word that a lower-case letter follows (&quot;cardPINs&quot; as &quot;card PI</span></div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  <span class="comment">// Ns&quot;), so a split at lower-to-upper starts alone is tried too (&quot;card</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  <span class="comment">// PINs&quot;, &quot;sim PINcode&quot;), and the name as written (&quot;PINcode&quot;).</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression lowerThenUpper(</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>      QStringLiteral(<span class="stringliteral">&quot;(?&lt;=[\\p{Ll}\\d])(?=\\p{Lu})&quot;</span>),</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>      QRegularExpression::UseUnicodePropertiesOption);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression acronymThenWord(</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>      QStringLiteral(<span class="stringliteral">&quot;(?&lt;=\\p{Lu})(?=\\p{Lu}\\p{Ll})&quot;</span>),</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>      QRegularExpression::UseUnicodePropertiesOption);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  QString camel = name;</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  camel.replace(lowerThenUpper, QStringLiteral(<span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  QString words = camel;</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  words.replace(acronymThenWord, QStringLiteral(<span class="stringliteral">&quot; &quot;</span>));</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <span class="keyword">const</span> <span class="keyword">auto</span> matches = [&amp;](<span class="keyword">const</span> QRegularExpression &amp;pattern) {</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    <span class="keywordflow">return</span> pattern.match(name).hasMatch() ||</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>           (camel != name &amp;&amp; pattern.match(camel).hasMatch()) ||</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>           (words != camel &amp;&amp; pattern.match(words).hasMatch());</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  };</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="keywordflow">if</span> (cachedPattern.isValid()) {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="keywordflow">return</span> matches(cachedPattern);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  }</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  <span class="comment">// Too many words for one pattern (PCRE2&#39;s size limit): word by word,</span></div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <span class="comment">// rather than every secret field shown in plain view.</span></div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keywordflow">return</span> std::any_of(cachedWords.cbegin(), cachedWords.cend(),</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                     [&amp;matches, options](<span class="keyword">const</span> QString &amp;word) {</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                       return matches(QRegularExpression(word, options));</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                     });</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>}</div>
 </div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span> </div>
-<div class="foldopen" id="foldopen00369" data-start="{" data-end="}">
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno"><a class="line" href="class_file_content.html#af99e299f227bbdd4714c429004152742">  369</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#af99e299f227bbdd4714c429004152742">FileContent::isOtpUriValue</a>(<span class="keyword">const</span> QString &amp;value) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  <span class="keywordflow">return</span> value.trimmed().startsWith(QStringLiteral(<span class="stringliteral">&quot;otpauth://&quot;</span>),</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                                    Qt::CaseInsensitive);</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>}</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
+<div class="foldopen" id="foldopen00370" data-start="{" data-end="}">
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno"><a class="line" href="class_file_content.html#af99e299f227bbdd4714c429004152742">  370</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#af99e299f227bbdd4714c429004152742">FileContent::isOtpUriValue</a>(<span class="keyword">const</span> QString &amp;value) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  <span class="keywordflow">return</span> value.trimmed().startsWith(QStringLiteral(<span class="stringliteral">&quot;otpauth://&quot;</span>),</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                                    Qt::CaseInsensitive);</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>}</div>
 </div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
-<div class="foldopen" id="foldopen00374" data-start="{" data-end="}">
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno"><a class="line" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">  374</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">FileContent::carriesOtpUri</a>(<span class="keyword">const</span> QString &amp;text) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="comment">// Not only at the start: &quot;- otpauth://&quot;, &quot;\&quot;otpauth://...\&quot;&quot;, &quot;old token</span></div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="comment">// otpauth://&quot;, &quot;AWS: backup phone: otpauth://&quot; and the split &quot;otpauth:</span></div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  <span class="comment">// //totp/&quot; all showed the seed, being neither a bare line nor the value</span></div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  <span class="comment">// after the first colon. By hand, not a regular expression: parse() asks</span></div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  <span class="comment">// this for every line of an entry, up to 64 MiB of them.</span></div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  <span class="keyword">static</span> <span class="keyword">const</span> QString scheme = QStringLiteral(<span class="stringliteral">&quot;otpauth:&quot;</span>);</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  <span class="keywordflow">for</span> (qsizetype at = text.indexOf(scheme, 0, Qt::CaseInsensitive); at &gt;= 0;</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>       at = text.indexOf(scheme, at + 1, Qt::CaseInsensitive)) {</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    qsizetype i = at + scheme.size();</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    <span class="keywordflow">while</span> (i &lt; text.size() &amp;&amp; text.at(i).isSpace()) {</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>      ++i;</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>    }</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    <span class="keywordflow">if</span> (text.mid(i, 2) == QLatin1String(<span class="stringliteral">&quot;//&quot;</span>)) {</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    }</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  }</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>}</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="foldopen" id="foldopen00375" data-start="{" data-end="}">
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno"><a class="line" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">  375</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">FileContent::carriesOtpUri</a>(<span class="keyword">const</span> QString &amp;text) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="comment">// Not only at the start: &quot;- otpauth://&quot;, &quot;\&quot;otpauth://...\&quot;&quot;, &quot;old token</span></div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  <span class="comment">// otpauth://&quot;, &quot;AWS: backup phone: otpauth://&quot; and the split &quot;otpauth:</span></div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  <span class="comment">// //totp/&quot; all showed the seed, being neither a bare line nor the value</span></div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  <span class="comment">// after the first colon. By hand, not a regular expression: parse() asks</span></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  <span class="comment">// this for every line of an entry, up to 64 MiB of them.</span></div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  <span class="keyword">static</span> <span class="keyword">const</span> QString scheme = QStringLiteral(<span class="stringliteral">&quot;otpauth:&quot;</span>);</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  <span class="keywordflow">for</span> (qsizetype at = text.indexOf(scheme, 0, Qt::CaseInsensitive); at &gt;= 0;</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>       at = text.indexOf(scheme, at + 1, Qt::CaseInsensitive)) {</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    qsizetype i = at + scheme.size();</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    <span class="keywordflow">while</span> (i &lt; text.size() &amp;&amp; text.at(i).isSpace()) {</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>      ++i;</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    }</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    <span class="keywordflow">if</span> (text.mid(i, 2) == QLatin1String(<span class="stringliteral">&quot;//&quot;</span>)) {</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    }</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  }</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>}</div>
 </div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span> </div>
-<div class="foldopen" id="foldopen00394" data-start="{" data-end="}">
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno"><a class="line" href="class_file_content.html#a41f00506abcd1629b156219f4acb0f1a">  394</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a41f00506abcd1629b156219f4acb0f1a">FileContent::passwordLine</a>(QStringView text) -&gt; QString {</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>  <span class="comment">// left(-1) is the whole text when there is no line feed.</span></div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  QStringView line = text.left(text.indexOf(u<span class="charliteral">&#39;\n&#39;</span>));</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>  <span class="keywordflow">if</span> (line.endsWith(u<span class="charliteral">&#39;\r&#39;</span>)) {</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    line.chop(1);</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  }</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  <span class="keywordflow">return</span> line.toString();</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>}</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span> </div>
+<div class="foldopen" id="foldopen00395" data-start="{" data-end="}">
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno"><a class="line" href="class_file_content.html#a41f00506abcd1629b156219f4acb0f1a">  395</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a41f00506abcd1629b156219f4acb0f1a">FileContent::passwordLine</a>(QStringView text) -&gt; QString {</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  <span class="comment">// left(-1) is the whole text when there is no line feed.</span></div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>  QStringView line = text.left(text.indexOf(u<span class="charliteral">&#39;\n&#39;</span>));</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  <span class="keywordflow">if</span> (line.endsWith(u<span class="charliteral">&#39;\r&#39;</span>)) {</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>    line.chop(1);</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  }</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  <span class="keywordflow">return</span> line.toString();</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>}</div>
 </div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
-<div class="foldopen" id="foldopen00403" data-start="{" data-end="}">
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">  403</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">FileContent::isOtpLine</a>(<span class="keyword">const</span> QString &amp;line) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">carriesOtpUri</a>(line)) {</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  }</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  <span class="keyword">const</span> qsizetype colon = line.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  <span class="keywordflow">return</span> colon &gt;= 0 &amp;&amp; <a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">isOtpFieldName</a>(line.left(colon));</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>}</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
+<div class="foldopen" id="foldopen00404" data-start="{" data-end="}">
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno"><a class="line" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">  404</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">FileContent::isOtpLine</a>(<span class="keyword">const</span> QString &amp;line) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">carriesOtpUri</a>(line)) {</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  }</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  <span class="keyword">const</span> qsizetype colon = line.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  <span class="keywordflow">return</span> colon &gt;= 0 &amp;&amp; <a class="code hl_function" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">isOtpFieldName</a>(line.left(colon));</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>}</div>
 </div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
-<div class="foldopen" id="foldopen00411" data-start="{" data-end="}">
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno"><a class="line" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">  411</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">FileContent::isOtpPasswordLine</a>(<span class="keyword">const</span> QString &amp;line) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">carriesOtpUri</a>(line) || <a class="code hl_function" href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">holdsOtpConfig</a>(line);</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>}</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span> </div>
+<div class="foldopen" id="foldopen00412" data-start="{" data-end="}">
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno"><a class="line" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">  412</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">FileContent::isOtpPasswordLine</a>(<span class="keyword">const</span> QString &amp;line) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">carriesOtpUri</a>(line) || <a class="code hl_function" href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">holdsOtpConfig</a>(line);</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>}</div>
 </div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span> </div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno"><a class="line" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">  415</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">FileContent::getPassword</a>() const -&gt; QString { <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>; }</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
-<div class="foldopen" id="foldopen00417" data-start="{" data-end="}">
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno"><a class="line" href="class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4">  417</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4">FileContent::getPasswordForDisplay</a>() const -&gt; QString {</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">isOtpPasswordLine</a>(this-&gt;<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>) ? QString() : this-&gt;<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>;</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>}</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span> </div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno"><a class="line" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">  416</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">FileContent::getPassword</a>() const -&gt; QString { <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>; }</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
+<div class="foldopen" id="foldopen00418" data-start="{" data-end="}">
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno"><a class="line" href="class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4">  418</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4">FileContent::getPasswordForDisplay</a>() const -&gt; QString {</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">isOtpPasswordLine</a>(this-&gt;<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>) ? QString() : this-&gt;<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>;</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>}</div>
 </div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
-<div class="foldopen" id="foldopen00421" data-start="{" data-end="}">
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno"><a class="line" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">  421</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">FileContent::getNamedValues</a>() const -&gt; <a class="code hl_class" href="class_named_values.html">NamedValues</a> {</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>;</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>}</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
+<div class="foldopen" id="foldopen00422" data-start="{" data-end="}">
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno"><a class="line" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">  422</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">FileContent::getNamedValues</a>() const -&gt; <a class="code hl_class" href="class_named_values.html">NamedValues</a> {</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>;</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>}</div>
 </div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
-<div class="foldopen" id="foldopen00425" data-start="{" data-end="}">
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno"><a class="line" href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">  425</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">FileContent::getRemainingData</a>() const -&gt; QString {</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>;</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>}</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
+<div class="foldopen" id="foldopen00426" data-start="{" data-end="}">
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno"><a class="line" href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">  426</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">FileContent::getRemainingData</a>() const -&gt; QString {</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>;</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>}</div>
 </div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
-<div class="foldopen" id="foldopen00429" data-start="{" data-end="}">
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno"><a class="line" href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">  429</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">FileContent::getRemainingDataForDisplay</a>() const -&gt; QString {</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>;</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>}</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span> </div>
+<div class="foldopen" id="foldopen00430" data-start="{" data-end="}">
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno"><a class="line" href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">  430</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">FileContent::getRemainingDataForDisplay</a>() const -&gt; QString {</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>;</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>}</div>
 </div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno"><a class="line" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">  433</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">FileContent::getOtpUri</a>() const -&gt; QString { <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a>; }</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span> </div>
-<div class="foldopen" id="foldopen00435" data-start="{" data-end="}">
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno"><a class="line" href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">  435</a></span><a class="code hl_function" href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">FileContent::FileContent</a>(QString <a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>, <a class="code hl_class" href="class_named_values.html">NamedValues</a> <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>,</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>                         QString <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>, QString <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>,</div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>                         QString <a class="code hl_variable" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a>, qsizetype <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>)</div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    : <a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>(std::move(<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>)), <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>(std::move(<a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>)),</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>      <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>(std::move(<a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>)),</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>      <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>(std::move(<a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>)),</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>      <a class="code hl_variable" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a>(std::move(<a class="code hl_variable" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a>)), <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>(<a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>) {}</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno"><a class="line" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">  434</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">FileContent::getOtpUri</a>() const -&gt; QString { <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a>; }</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span> </div>
+<div class="foldopen" id="foldopen00436" data-start="{" data-end="}">
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno"><a class="line" href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">  436</a></span><a class="code hl_function" href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">FileContent::FileContent</a>(QString <a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>, <a class="code hl_class" href="class_named_values.html">NamedValues</a> <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>,</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>                         QString <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>, QString <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>,</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>                         QString <a class="code hl_variable" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a>, qsizetype <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>)</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    : <a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>(std::move(<a class="code hl_variable" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a>)), <a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>(std::move(<a class="code hl_variable" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a>)),</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>      <a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>(std::move(<a class="code hl_variable" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a>)),</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>      <a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>(std::move(<a class="code hl_variable" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a>)),</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>      <a class="code hl_variable" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a>(std::move(<a class="code hl_variable" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a>)), <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>(<a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>) {}</div>
 </div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
-<div class="foldopen" id="foldopen00443" data-start="{" data-end="}">
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno"><a class="line" href="class_file_content.html#a2afdde46ca2b092bbd613219f37fd400">  443</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a2afdde46ca2b092bbd613219f37fd400">FileContent::boundedForDisplay</a>(<span class="keyword">const</span> QString &amp;text) -&gt; QString {</div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>  <span class="comment">// Where the line after the last one shown starts, if there is one.</span></div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  qsizetype end = -1;</div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> line = 0; line &lt; <a class="code hl_variable" href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a>; ++line) {</div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>    end = text.indexOf(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>), end + 1);</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    <span class="keywordflow">if</span> (end &lt; 0) {</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>      <span class="keywordflow">return</span> text;</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    }</div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>  }</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>  <span class="keyword">const</span> qsizetype more =</div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>      text.count(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>), Qt::CaseSensitive) - (<a class="code hl_variable" href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a> - 1);</div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>  <span class="keywordflow">return</span> text.left(end) + QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>) + moreLinesNotShown(more);</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>}</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span> </div>
+<div class="foldopen" id="foldopen00444" data-start="{" data-end="}">
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno"><a class="line" href="class_file_content.html#a2afdde46ca2b092bbd613219f37fd400">  444</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a2afdde46ca2b092bbd613219f37fd400">FileContent::boundedForDisplay</a>(<span class="keyword">const</span> QString &amp;text) -&gt; QString {</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  <span class="comment">// Where the line after the last one shown starts, if there is one.</span></div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>  qsizetype end = -1;</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> line = 0; line &lt; <a class="code hl_variable" href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a>; ++line) {</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    end = text.indexOf(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>), end + 1);</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    <span class="keywordflow">if</span> (end &lt; 0) {</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>      <span class="keywordflow">return</span> text;</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    }</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>  }</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>  <span class="keyword">const</span> qsizetype more =</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>      text.count(QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>), Qt::CaseSensitive) - (<a class="code hl_variable" href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a> - 1);</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>  <span class="keywordflow">return</span> text.left(end) + QLatin1Char(<span class="charliteral">&#39;\n&#39;</span>) + moreLinesNotShown(more);</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>}</div>
 </div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span> </div>
-<div class="foldopen" id="foldopen00457" data-start="{" data-end="}">
-<div class="line"><a id="l00457" name="l00457"></a><span class="lineno"><a class="line" href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">  457</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">FileContent::getRemainingLineCount</a>() const -&gt; qsizetype {</div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>;</div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>}</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span> </div>
+<div class="foldopen" id="foldopen00458" data-start="{" data-end="}">
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno"><a class="line" href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">  458</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">FileContent::getRemainingLineCount</a>() const -&gt; qsizetype {</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a>;</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>}</div>
 </div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span> </div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span><a class="code hl_function" href="class_named_values.html#abe1c3dc2619efbc91cfd2d19c98a6dc6">NamedValues::NamedValues</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span> </div>
-<div class="foldopen" id="foldopen00463" data-start="{" data-end="}">
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno"><a class="line" href="class_named_values.html#ae05206d5b3c53ee4545089e8f7997b4f">  463</a></span><a class="code hl_function" href="class_named_values.html#abe1c3dc2619efbc91cfd2d19c98a6dc6">NamedValues::NamedValues</a>(std::initializer_list&lt;NamedValue&gt; values)</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>    : QList(values) {}</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span> </div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span><a class="code hl_function" href="class_named_values.html#abe1c3dc2619efbc91cfd2d19c98a6dc6">NamedValues::NamedValues</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span> </div>
+<div class="foldopen" id="foldopen00464" data-start="{" data-end="}">
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno"><a class="line" href="class_named_values.html#ae05206d5b3c53ee4545089e8f7997b4f">  464</a></span><a class="code hl_function" href="class_named_values.html#abe1c3dc2619efbc91cfd2d19c98a6dc6">NamedValues::NamedValues</a>(std::initializer_list&lt;NamedValue&gt; values)</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>    : QList(values) {}</div>
 </div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span> </div>
-<div class="foldopen" id="foldopen00466" data-start="{" data-end="}">
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno"><a class="line" href="class_named_values.html#a427d280bd24b10d9a5b627b1fa4b5f4b">  466</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_named_values.html#a427d280bd24b10d9a5b627b1fa4b5f4b">NamedValues::takeValue</a>(<span class="keyword">const</span> QString &amp;name) -&gt; QString {</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_named_values.html#a937ebcae4118431af19990a4a1e0bef7">takeNamedValue</a>(name).value;</div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>}</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
+<div class="foldopen" id="foldopen00467" data-start="{" data-end="}">
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno"><a class="line" href="class_named_values.html#a427d280bd24b10d9a5b627b1fa4b5f4b">  467</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_named_values.html#a427d280bd24b10d9a5b627b1fa4b5f4b">NamedValues::takeValue</a>(<span class="keyword">const</span> QString &amp;name) -&gt; QString {</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_named_values.html#a937ebcae4118431af19990a4a1e0bef7">takeNamedValue</a>(name).value;</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>}</div>
 </div>
-<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span> </div>
-<div class="foldopen" id="foldopen00470" data-start="{" data-end="}">
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno"><a class="line" href="class_named_values.html#a937ebcae4118431af19990a4a1e0bef7">  470</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_named_values.html#a937ebcae4118431af19990a4a1e0bef7">NamedValues::takeNamedValue</a>(<span class="keyword">const</span> QString &amp;name) -&gt; <a class="code hl_struct" href="struct_named_value.html">NamedValue</a> {</div>
-<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; length(); ++i) {</div>
-<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>    <span class="keywordflow">if</span> (at(i).name == name) {</div>
-<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>      <span class="keywordflow">return</span> takeAt(i);</div>
-<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>    }</div>
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>  }</div>
-<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>}</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span> </div>
+<div class="foldopen" id="foldopen00471" data-start="{" data-end="}">
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno"><a class="line" href="class_named_values.html#a937ebcae4118431af19990a4a1e0bef7">  471</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_named_values.html#a937ebcae4118431af19990a4a1e0bef7">NamedValues::takeNamedValue</a>(<span class="keyword">const</span> QString &amp;name) -&gt; <a class="code hl_struct" href="struct_named_value.html">NamedValue</a> {</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; length(); ++i) {</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>    <span class="keywordflow">if</span> (at(i).name == name) {</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>      <span class="keywordflow">return</span> takeAt(i);</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>    }</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  }</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>  <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>}</div>
 </div>
-<div class="ttc" id="aclass_file_content_html_a2afdde46ca2b092bbd613219f37fd400"><div class="ttname"><a href="class_file_content.html#a2afdde46ca2b092bbd613219f37fd400">FileContent::boundedForDisplay</a></div><div class="ttdeci">static auto boundedForDisplay(const QString &amp;text) -&gt; QString</div><div class="ttdoc">text cut to kMaxDisplayLines lines, as getRemainingDataForDisplay() is: for showing an entry as it is...</div><div class="ttdef"><b>Definition</b> <a href="#l00443">filecontent.cpp:443</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a2deda004001faf4729b45cbc1aa5ca19"><div class="ttname"><a href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">FileContent::FileContent</a></div><div class="ttdeci">FileContent(QString password, NamedValues namedValues, QString remainingData, QString remainingDataDisplay, QString otpUri, qsizetype remainingLines)</div><div class="ttdoc">Assemble a parsed entry; only parse() calls this.</div><div class="ttdef"><b>Definition</b> <a href="#l00435">filecontent.cpp:435</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a2afdde46ca2b092bbd613219f37fd400"><div class="ttname"><a href="class_file_content.html#a2afdde46ca2b092bbd613219f37fd400">FileContent::boundedForDisplay</a></div><div class="ttdeci">static auto boundedForDisplay(const QString &amp;text) -&gt; QString</div><div class="ttdoc">text cut to kMaxDisplayLines lines, as getRemainingDataForDisplay() is: for showing an entry as it is...</div><div class="ttdef"><b>Definition</b> <a href="#l00444">filecontent.cpp:444</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a2deda004001faf4729b45cbc1aa5ca19"><div class="ttname"><a href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">FileContent::FileContent</a></div><div class="ttdeci">FileContent(QString password, NamedValues namedValues, QString remainingData, QString remainingDataDisplay, QString otpUri, qsizetype remainingLines)</div><div class="ttdoc">Assemble a parsed entry; only parse() calls this.</div><div class="ttdef"><b>Definition</b> <a href="#l00436">filecontent.cpp:436</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a3bcd691a41d619d5525cc594cb6939db"><div class="ttname"><a href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">FileContent::remainingLines</a></div><div class="ttdeci">qsizetype remainingLines</div><div class="ttdoc">Number of lines in remainingData.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00330">filecontent.h:330</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a41f00506abcd1629b156219f4acb0f1a"><div class="ttname"><a href="class_file_content.html#a41f00506abcd1629b156219f4acb0f1a">FileContent::passwordLine</a></div><div class="ttdeci">static auto passwordLine(QStringView text) -&gt; QString</div><div class="ttdoc">The password of an entry: its first line, without the carriage return of a CRLF line end.</div><div class="ttdef"><b>Definition</b> <a href="#l00394">filecontent.cpp:394</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a41f00506abcd1629b156219f4acb0f1a"><div class="ttname"><a href="class_file_content.html#a41f00506abcd1629b156219f4acb0f1a">FileContent::passwordLine</a></div><div class="ttdeci">static auto passwordLine(QStringView text) -&gt; QString</div><div class="ttdoc">The password of an entry: its first line, without the carriage return of a CRLF line end.</div><div class="ttdef"><b>Definition</b> <a href="#l00395">filecontent.cpp:395</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a4a28534f84dee950888b5ff68a5a0cc2"><div class="ttname"><a href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">FileContent::remainingData</a></div><div class="ttdeci">QString remainingData</div><div class="ttdoc">Body lines that are not fields, joined with newlines; complete.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00324">filecontent.h:324</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a58c11b05ff5987b86b38ef63098a53ee"><div class="ttname"><a href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">FileContent::getRemainingLineCount</a></div><div class="ttdeci">auto getRemainingLineCount() const -&gt; qsizetype</div><div class="ttdoc">How many lines getRemainingData() holds.</div><div class="ttdef"><b>Definition</b> <a href="#l00457">filecontent.cpp:457</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a58c11b05ff5987b86b38ef63098a53ee"><div class="ttname"><a href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">FileContent::getRemainingLineCount</a></div><div class="ttdeci">auto getRemainingLineCount() const -&gt; qsizetype</div><div class="ttdoc">How many lines getRemainingData() holds.</div><div class="ttdef"><b>Definition</b> <a href="#l00458">filecontent.cpp:458</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a5c5035cd2054014d2ff2fdfbb7bb7dac"><div class="ttname"><a href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">FileContent::password</a></div><div class="ttdeci">QString password</div><div class="ttdoc">The first line of the entry, without the &quot;\r&quot; of a CRLF line end (passwordLine()).</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00320">filecontent.h:320</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a5f014b99069094d17a41fce67a3a9b8f"><div class="ttname"><a href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a></div><div class="ttdeci">static auto isOtpFieldName(const QString &amp;name) -&gt; bool</div><div class="ttdoc">Whether a field name designates the one-time password field.</div><div class="ttdef"><b>Definition</b> <a href="#l00292">filecontent.cpp:292</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a5f014b99069094d17a41fce67a3a9b8f"><div class="ttname"><a href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent::isOtpFieldName</a></div><div class="ttdeci">static auto isOtpFieldName(const QString &amp;name) -&gt; bool</div><div class="ttdoc">Whether a field name designates the one-time password field.</div><div class="ttdef"><b>Definition</b> <a href="#l00293">filecontent.cpp:293</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a6bf8570034e51a7d4bcee4bac22378b2"><div class="ttname"><a href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">FileContent::otpUri</a></div><div class="ttdeci">QString otpUri</div><div class="ttdoc">Raw OTP configuration (URI or bare base32), or empty.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00328">filecontent.h:328</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a722f8a24e019518e36039dc423edeffc"><div class="ttname"><a href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">FileContent::isOtpLine</a></div><div class="ttdeci">static auto isOtpLine(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...</div><div class="ttdef"><b>Definition</b> <a href="#l00403">filecontent.cpp:403</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a722f8a24e019518e36039dc423edeffc"><div class="ttname"><a href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">FileContent::isOtpLine</a></div><div class="ttdeci">static auto isOtpLine(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...</div><div class="ttdef"><b>Definition</b> <a href="#l00404">filecontent.cpp:404</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a803a9d95b4a7575124f3ed141c7d6365"><div class="ttname"><a href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">FileContent::kMaxDisplayLines</a></div><div class="ttdeci">static constexpr int kMaxDisplayLines</div><div class="ttdoc">Most lines of remaining text getRemainingDataForDisplay() gives.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00114">filecontent.h:114</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a845c61a8c0f52e5aa73953c9162dd47d"><div class="ttname"><a href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">FileContent::getRemainingData</a></div><div class="ttdeci">auto getRemainingData() const -&gt; QString</div><div class="ttdef"><b>Definition</b> <a href="#l00425">filecontent.cpp:425</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a89393e371a598cb3e0d7d149dbc431b1"><div class="ttname"><a href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">FileContent::getNamedValues</a></div><div class="ttdeci">auto getNamedValues() const -&gt; NamedValues</div><div class="ttdef"><b>Definition</b> <a href="#l00421">filecontent.cpp:421</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a845c61a8c0f52e5aa73953c9162dd47d"><div class="ttname"><a href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">FileContent::getRemainingData</a></div><div class="ttdeci">auto getRemainingData() const -&gt; QString</div><div class="ttdef"><b>Definition</b> <a href="#l00426">filecontent.cpp:426</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a89393e371a598cb3e0d7d149dbc431b1"><div class="ttname"><a href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">FileContent::getNamedValues</a></div><div class="ttdeci">auto getNamedValues() const -&gt; NamedValues</div><div class="ttdef"><b>Definition</b> <a href="#l00422">filecontent.cpp:422</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a8f40336c23a584d3429013f4e16fe1b8"><div class="ttname"><a href="class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8">FileContent::kMaxNamedFields</a></div><div class="ttdeci">static constexpr int kMaxNamedFields</div><div class="ttdoc">Most named fields parse() takes from one entry.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00103">filecontent.h:103</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a91861b1faa5ba9da9f27202262bfd94e"><div class="ttname"><a href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e">FileContent::parse</a></div><div class="ttdeci">static auto parse(const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields, const std::function&lt; bool(const QString &amp;)&gt; &amp;alsoField={}) -&gt; FileContent</div><div class="ttdoc">parse parses the given fileContent in a FileContent object. The password is accessible through getPas...</div><div class="ttdef"><b>Definition</b> <a href="#l00201">filecontent.cpp:201</a></div></div>
-<div class="ttc" id="aclass_file_content_html_a91dfee0a7472e06dad305a66d8025460"><div class="ttname"><a href="class_file_content.html#a91dfee0a7472e06dad305a66d8025460">FileContent::isSecretFieldName</a></div><div class="ttdeci">static auto isSecretFieldName(const QString &amp;name, const QStringList &amp;secrets) -&gt; bool</div><div class="ttdoc">Whether a field name names a secret: one of secrets occurs in it as whole words, compared case-insens...</div><div class="ttdef"><b>Definition</b> <a href="#l00298">filecontent.cpp:298</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a91861b1faa5ba9da9f27202262bfd94e"><div class="ttname"><a href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e">FileContent::parse</a></div><div class="ttdeci">static auto parse(const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields, const std::function&lt; bool(const QString &amp;)&gt; &amp;alsoField={}) -&gt; FileContent</div><div class="ttdoc">parse parses the given fileContent in a FileContent object. The password is accessible through getPas...</div><div class="ttdef"><b>Definition</b> <a href="#l00202">filecontent.cpp:202</a></div></div>
+<div class="ttc" id="aclass_file_content_html_a91dfee0a7472e06dad305a66d8025460"><div class="ttname"><a href="class_file_content.html#a91dfee0a7472e06dad305a66d8025460">FileContent::isSecretFieldName</a></div><div class="ttdeci">static auto isSecretFieldName(const QString &amp;name, const QStringList &amp;secrets) -&gt; bool</div><div class="ttdoc">Whether a field name names a secret: one of secrets occurs in it as whole words, compared case-insens...</div><div class="ttdef"><b>Definition</b> <a href="#l00299">filecontent.cpp:299</a></div></div>
 <div class="ttc" id="aclass_file_content_html_aabce3daaa0ff8a8af022128b3eb4f518"><div class="ttname"><a href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">FileContent::namedValues</a></div><div class="ttdeci">NamedValues namedValues</div><div class="ttdoc">Fields in order of appearance, template fields first.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00322">filecontent.h:322</a></div></div>
-<div class="ttc" id="aclass_file_content_html_ac38b9c211d6f62eb7420eecc66f935e8"><div class="ttname"><a href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">FileContent::getRemainingDataForDisplay</a></div><div class="ttdeci">auto getRemainingDataForDisplay() const -&gt; QString</div><div class="ttdoc">Like getRemainingData but without data that should not be displayed (like a TOTP secret).</div><div class="ttdef"><b>Definition</b> <a href="#l00429">filecontent.cpp:429</a></div></div>
-<div class="ttc" id="aclass_file_content_html_ac88e8096551d24a41fc0625a4d903139"><div class="ttname"><a href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">FileContent::getPassword</a></div><div class="ttdeci">auto getPassword() const -&gt; QString</div><div class="ttdoc">The password: the first line, without the &quot;\r&quot; of a CRLF line end (passwordLine()).</div><div class="ttdef"><b>Definition</b> <a href="#l00415">filecontent.cpp:415</a></div></div>
-<div class="ttc" id="aclass_file_content_html_ad196088dd0d816ee3c1311a4448940d2"><div class="ttname"><a href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">FileContent::getOtpUri</a></div><div class="ttdeci">auto getOtpUri() const -&gt; QString</div><div class="ttdoc">The entry&#39;s raw one-time password configuration, if it has one.</div><div class="ttdef"><b>Definition</b> <a href="#l00433">filecontent.cpp:433</a></div></div>
-<div class="ttc" id="aclass_file_content_html_ad4c28b38d683a03cff0dd83ab23afee7"><div class="ttname"><a href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">FileContent::isOtpPasswordLine</a></div><div class="ttdeci">static auto isOtpPasswordLine(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether an entry&#39;s first line holds a TOTP shared secret rather than a password.</div><div class="ttdef"><b>Definition</b> <a href="#l00411">filecontent.cpp:411</a></div></div>
+<div class="ttc" id="aclass_file_content_html_ac38b9c211d6f62eb7420eecc66f935e8"><div class="ttname"><a href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">FileContent::getRemainingDataForDisplay</a></div><div class="ttdeci">auto getRemainingDataForDisplay() const -&gt; QString</div><div class="ttdoc">Like getRemainingData but without data that should not be displayed (like a TOTP secret).</div><div class="ttdef"><b>Definition</b> <a href="#l00430">filecontent.cpp:430</a></div></div>
+<div class="ttc" id="aclass_file_content_html_ac88e8096551d24a41fc0625a4d903139"><div class="ttname"><a href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">FileContent::getPassword</a></div><div class="ttdeci">auto getPassword() const -&gt; QString</div><div class="ttdoc">The password: the first line, without the &quot;\r&quot; of a CRLF line end (passwordLine()).</div><div class="ttdef"><b>Definition</b> <a href="#l00416">filecontent.cpp:416</a></div></div>
+<div class="ttc" id="aclass_file_content_html_ad196088dd0d816ee3c1311a4448940d2"><div class="ttname"><a href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">FileContent::getOtpUri</a></div><div class="ttdeci">auto getOtpUri() const -&gt; QString</div><div class="ttdoc">The entry&#39;s raw one-time password configuration, if it has one.</div><div class="ttdef"><b>Definition</b> <a href="#l00434">filecontent.cpp:434</a></div></div>
+<div class="ttc" id="aclass_file_content_html_ad4c28b38d683a03cff0dd83ab23afee7"><div class="ttname"><a href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">FileContent::isOtpPasswordLine</a></div><div class="ttdeci">static auto isOtpPasswordLine(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether an entry&#39;s first line holds a TOTP shared secret rather than a password.</div><div class="ttdef"><b>Definition</b> <a href="#l00412">filecontent.cpp:412</a></div></div>
 <div class="ttc" id="aclass_file_content_html_ad581a32699afdbc00f52fe97e8585eef"><div class="ttname"><a href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">FileContent::remainingDataDisplay</a></div><div class="ttdeci">QString remainingDataDisplay</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00324">filecontent.h:324</a></div></div>
-<div class="ttc" id="aclass_file_content_html_ae2d4131533e5e1eee2a5af47fdb653d4"><div class="ttname"><a href="class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4">FileContent::getPasswordForDisplay</a></div><div class="ttdeci">auto getPasswordForDisplay() const -&gt; QString</div><div class="ttdoc">Like getPassword but empty when the password line holds a TOTP shared secret (isOtpPasswordLine()).</div><div class="ttdef"><b>Definition</b> <a href="#l00417">filecontent.cpp:417</a></div></div>
-<div class="ttc" id="aclass_file_content_html_ae7b71f0b3d4b07a54068afe8699abb9b"><div class="ttname"><a href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">FileContent::carriesOtpUri</a></div><div class="ttdeci">static auto carriesOtpUri(const QString &amp;text) -&gt; bool</div><div class="ttdoc">Whether text holds an otpauth URI anywhere: after a list dash, in quotes, behind other text or a seco...</div><div class="ttdef"><b>Definition</b> <a href="#l00374">filecontent.cpp:374</a></div></div>
-<div class="ttc" id="aclass_file_content_html_af99e299f227bbdd4714c429004152742"><div class="ttname"><a href="class_file_content.html#af99e299f227bbdd4714c429004152742">FileContent::isOtpUriValue</a></div><div class="ttdeci">static auto isOtpUriValue(const QString &amp;value) -&gt; bool</div><div class="ttdoc">Whether a field value is an otpauth URI, and therefore a secret.</div><div class="ttdef"><b>Definition</b> <a href="#l00369">filecontent.cpp:369</a></div></div>
+<div class="ttc" id="aclass_file_content_html_ae2d4131533e5e1eee2a5af47fdb653d4"><div class="ttname"><a href="class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4">FileContent::getPasswordForDisplay</a></div><div class="ttdeci">auto getPasswordForDisplay() const -&gt; QString</div><div class="ttdoc">Like getPassword but empty when the password line holds a TOTP shared secret (isOtpPasswordLine()).</div><div class="ttdef"><b>Definition</b> <a href="#l00418">filecontent.cpp:418</a></div></div>
+<div class="ttc" id="aclass_file_content_html_ae7b71f0b3d4b07a54068afe8699abb9b"><div class="ttname"><a href="class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b">FileContent::carriesOtpUri</a></div><div class="ttdeci">static auto carriesOtpUri(const QString &amp;text) -&gt; bool</div><div class="ttdoc">Whether text holds an otpauth URI anywhere: after a list dash, in quotes, behind other text or a seco...</div><div class="ttdef"><b>Definition</b> <a href="#l00375">filecontent.cpp:375</a></div></div>
+<div class="ttc" id="aclass_file_content_html_af99e299f227bbdd4714c429004152742"><div class="ttname"><a href="class_file_content.html#af99e299f227bbdd4714c429004152742">FileContent::isOtpUriValue</a></div><div class="ttdeci">static auto isOtpUriValue(const QString &amp;value) -&gt; bool</div><div class="ttdoc">Whether a field value is an otpauth URI, and therefore a secret.</div><div class="ttdef"><b>Definition</b> <a href="#l00370">filecontent.cpp:370</a></div></div>
 <div class="ttc" id="aclass_named_values_html"><div class="ttname"><a href="class_named_values.html">NamedValues</a></div><div class="ttdoc">The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00058">filecontent.h:58</a></div></div>
-<div class="ttc" id="aclass_named_values_html_a427d280bd24b10d9a5b627b1fa4b5f4b"><div class="ttname"><a href="class_named_values.html#a427d280bd24b10d9a5b627b1fa4b5f4b">NamedValues::takeValue</a></div><div class="ttdeci">auto takeValue(const QString &amp;name) -&gt; QString</div><div class="ttdoc">Remove and return the value for the named field.</div><div class="ttdef"><b>Definition</b> <a href="#l00466">filecontent.cpp:466</a></div></div>
-<div class="ttc" id="aclass_named_values_html_a937ebcae4118431af19990a4a1e0bef7"><div class="ttname"><a href="class_named_values.html#a937ebcae4118431af19990a4a1e0bef7">NamedValues::takeNamedValue</a></div><div class="ttdeci">auto takeNamedValue(const QString &amp;name) -&gt; NamedValue</div><div class="ttdoc">Remove and return the named field, its original line included.</div><div class="ttdef"><b>Definition</b> <a href="#l00470">filecontent.cpp:470</a></div></div>
+<div class="ttc" id="aclass_named_values_html_a427d280bd24b10d9a5b627b1fa4b5f4b"><div class="ttname"><a href="class_named_values.html#a427d280bd24b10d9a5b627b1fa4b5f4b">NamedValues::takeValue</a></div><div class="ttdeci">auto takeValue(const QString &amp;name) -&gt; QString</div><div class="ttdoc">Remove and return the value for the named field.</div><div class="ttdef"><b>Definition</b> <a href="#l00467">filecontent.cpp:467</a></div></div>
+<div class="ttc" id="aclass_named_values_html_a937ebcae4118431af19990a4a1e0bef7"><div class="ttname"><a href="class_named_values.html#a937ebcae4118431af19990a4a1e0bef7">NamedValues::takeNamedValue</a></div><div class="ttdeci">auto takeNamedValue(const QString &amp;name) -&gt; NamedValue</div><div class="ttdoc">Remove and return the named field, its original line included.</div><div class="ttdef"><b>Definition</b> <a href="#l00471">filecontent.cpp:471</a></div></div>
 <div class="ttc" id="aclass_named_values_html_abe1c3dc2619efbc91cfd2d19c98a6dc6"><div class="ttname"><a href="class_named_values.html#abe1c3dc2619efbc91cfd2d19c98a6dc6">NamedValues::NamedValues</a></div><div class="ttdeci">NamedValues()</div><div class="ttdoc">Construct an empty list.</div></div>
 <div class="ttc" id="aclass_totp_html_af023ce3487d15c2e290419ddd1ea0699"><div class="ttname"><a href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">Totp::isValid</a></div><div class="ttdeci">static auto isValid(const QString &amp;config) -&gt; bool</div><div class="ttdoc">Convenience validity test, for UI feedback.</div><div class="ttdef"><b>Definition</b> <a href="totp_8cpp_source.html#l00260">totp.cpp:260</a></div></div>
-<div class="ttc" id="afilecontent_8cpp_html_a0d86769788e23564914f8cff635df3da"><div class="ttname"><a href="filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da">otpConfigOf</a></div><div class="ttdeci">static auto otpConfigOf(const QString &amp;line) -&gt; QString</div><div class="ttdoc">The OTP configuration an OTP line holds: the line itself for a bare otpauth:// line,...</div><div class="ttdef"><b>Definition</b> <a href="#l00111">filecontent.cpp:111</a></div></div>
+<div class="ttc" id="afilecontent_8cpp_html_a0d86769788e23564914f8cff635df3da"><div class="ttname"><a href="filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da">otpConfigOf</a></div><div class="ttdeci">static auto otpConfigOf(const QString &amp;line) -&gt; QString</div><div class="ttdoc">The OTP configuration an OTP line holds: the line itself for a bare otpauth:// line,...</div><div class="ttdef"><b>Definition</b> <a href="#l00112">filecontent.cpp:112</a></div></div>
 <div class="ttc" id="afilecontent_8cpp_html_a6159791af25b399e08098b04e888f7f0"><div class="ttname"><a href="filecontent_8cpp.html#a6159791af25b399e08098b04e888f7f0">isBase32Seed</a></div><div class="ttdeci">static auto isBase32Seed(const QString &amp;value) -&gt; bool</div><div class="ttdoc">Whether value is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; whit...</div><div class="ttdef"><b>Definition</b> <a href="#l00053">filecontent.cpp:53</a></div></div>
 <div class="ttc" id="afilecontent_8cpp_html_a675927185d9a8c3fb4d0310af8c2198a"><div class="ttname"><a href="filecontent_8cpp.html#a675927185d9a8c3fb4d0310af8c2198a">isLineHidden</a></div><div class="ttdeci">static auto isLineHidden(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (File...</div><div class="ttdef"><b>Definition</b> <a href="#l00037">filecontent.cpp:37</a></div></div>
-<div class="ttc" id="afilecontent_8cpp_html_a722ae6894d3573e5dcec1f2568e8cf06"><div class="ttname"><a href="filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06">afterFirstColon</a></div><div class="ttdeci">static auto afterFirstColon(const QString &amp;line) -&gt; QString</div><div class="ttdoc">What follows a line&#39;s first colon; empty without one.</div><div class="ttdef"><b>Definition</b> <a href="#l00077">filecontent.cpp:77</a></div></div>
+<div class="ttc" id="afilecontent_8cpp_html_a722ae6894d3573e5dcec1f2568e8cf06"><div class="ttname"><a href="filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06">afterFirstColon</a></div><div class="ttdeci">static auto afterFirstColon(const QString &amp;line) -&gt; QString</div><div class="ttdoc">What follows a line&#39;s first colon; empty without one.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">filecontent.cpp:78</a></div></div>
 <div class="ttc" id="afilecontent_8cpp_html_a7986f3a7df9713a52e8ba0227e179230"><div class="ttname"><a href="filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230">isOtpUri</a></div><div class="ttdeci">static auto isOtpUri(const QString &amp;value) -&gt; bool</div><div class="ttdoc">Shorthand for the public FileContent::isOtpUriValue.</div><div class="ttdef"><b>Definition</b> <a href="#l00026">filecontent.cpp:26</a></div></div>
-<div class="ttc" id="afilecontent_8cpp_html_aa1b9dc5b765ebd673293842640c22ac9"><div class="ttname"><a href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">holdsOtpConfig</a></div><div class="ttdeci">static auto holdsOtpConfig(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether a first line is written as an OTP configuration that otpConfigOf() can read: a bare otpauth U...</div><div class="ttdef"><b>Definition</b> <a href="#l00089">filecontent.cpp:89</a></div></div>
+<div class="ttc" id="afilecontent_8cpp_html_aa1b9dc5b765ebd673293842640c22ac9"><div class="ttname"><a href="filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9">holdsOtpConfig</a></div><div class="ttdeci">static auto holdsOtpConfig(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether a first line is written as an OTP configuration that otpConfigOf() can read: a bare otpauth U...</div><div class="ttdef"><b>Definition</b> <a href="#l00090">filecontent.cpp:90</a></div></div>
 <div class="ttc" id="afilecontent_8h_html"><div class="ttname"><a href="filecontent_8h.html">filecontent.h</a></div><div class="ttdoc">Parser for a decrypted password entry: password line, key: value fields, remaining text and the OTP c...</div></div>
 <div class="ttc" id="astruct_named_value_html"><div class="ttname"><a href="struct_named_value.html">NamedValue</a></div><div class="ttdoc">A name/value pair parsed from a password file field.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00021">filecontent.h:21</a></div></div>
 <div class="ttc" id="atotp_8h_html"><div class="ttname"><a href="totp_8h.html">totp.h</a></div><div class="ttdoc">RFC 6238 TOTP: otpauth URI parsing, code generation and canonical re-serialisation.</div></div>
