@@ -15,7 +15,6 @@ private Q_SLOTS:
   void finishRestoresCursorAndKeepsResults();
   void finishDiscardsWhenCancelled();
   void leaveWhileBusyInterruptsAndDiscards();
-  void clearGrepModeLeavesBusyUntouched();
 };
 
 void tst_grepsearchcontroller::defaultsToTreeMode() {
@@ -86,19 +85,6 @@ void tst_grepsearchcontroller::leaveWhileBusyInterruptsAndDiscards() {
   QVERIFY2(!c.inGrepMode(), "leaveGrepMode must deactivate grep mode");
   // ...and the in-flight results are discarded when they arrive.
   QCOMPARE(c.finishSearch().discard, true);
-}
-
-void tst_grepsearchcontroller::clearGrepModeLeavesBusyUntouched() {
-  GrepSearchController c;
-  c.enterGrepMode();
-  QVERIFY2(c.beginSearch(), "First search must report newly busy");
-  c.clearGrepMode();
-  QVERIFY2(!c.inGrepMode(), "clearGrepMode must deactivate grep mode");
-  // clearGrepMode does not cancel: the busy search still restores the cursor
-  // and keeps its results on completion.
-  const GrepSearchController::FinishOutcome outcome = c.finishSearch();
-  QCOMPARE(outcome.restoreCursor, true);
-  QCOMPARE(outcome.discard, false);
 }
 
 QTEST_MAIN(tst_grepsearchcontroller)

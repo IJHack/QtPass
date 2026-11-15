@@ -767,8 +767,12 @@ void MainWindow::clearPanel(bool notify) {
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
     if (m_grep.inGrepMode()) {
+      // Left as the button leaves it: a search still running would otherwise
+      // hand its partial matches to a content search entered meanwhile.
       cancelContentSearch();
-      m_grep.clearGrepMode();
+      if (m_grep.leaveGrepMode()) {
+        QApplication::restoreOverrideCursor();
+      }
       ui->grepButton->blockSignals(true);
       ui->grepButton->setChecked(false);
       ui->grepButton->blockSignals(false);
