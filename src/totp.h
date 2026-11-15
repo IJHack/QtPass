@@ -84,12 +84,16 @@ public:
    * value cannot be derived from a clock, and returning a plausible-looking
    * TOTP code for it would be silently wrong. So is an `algorithm` other than
    * SHA-1, SHA-256 or SHA-512 (case, an `HMAC` prefix and `-`/`_` ignored).
+   * A bare secret with characters a secret is not written with (anything
+   * but letters, the digits 0 to 8, white space, `-` and `=`) is refused
+   * too: it is something else, such as a URI of another scheme
+   * (`otpauth-migration://`), not base32 text.
    *
    * `digits` is clamped to MIN_DIGITS..MAX_DIGITS and `period` to 1..MAX_STEP.
    * @param config URI or bare base32 secret; surrounding whitespace is ignored.
    * @return Validated settings, or std::nullopt when the secret is missing or
-   *         is not decodable base32, or the URI is HOTP or names an unknown
-   *         algorithm.
+   *         is not decodable base32, the URI is HOTP or names an unknown
+   *         algorithm, or a bare secret holds other characters.
    */
   [[nodiscard]] static auto parse(const QString &config)
       -> std::optional<Settings>;
