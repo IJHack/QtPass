@@ -36,7 +36,6 @@
 #include "util.h"
 #include "windowstatestore.h"
 #include <QApplication>
-#include <QClipboard>
 #include <QCloseEvent>
 #include <QDate>
 #include <QDesktopServices>
@@ -1867,9 +1866,11 @@ void MainWindow::copySelectionOrPassword() {
     text->copy();
     return;
   }
+  // Through the clipboard manager, as a copy button would: the label may be
+  // the OTP code, which gets the secret hint and the autoclear.
   if (auto *label = qobject_cast<QLabel *>(focus);
       label != nullptr && label->hasSelectedText()) {
-    QGuiApplication::clipboard()->setText(label->selectedText());
+    m_qtPass->clipboard().copyText(label->selectedText());
     return;
   }
   copyPasswordFromTreeview();

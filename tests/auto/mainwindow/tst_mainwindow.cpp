@@ -79,6 +79,7 @@
 #include "../../../src/passworddialog.h"
 #include "../../../src/passworddisplaypanel.h"
 #include "../../../src/processoutputpanel.h"
+#include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/trayicon.h"
 #include "../../../src/usersdialog.h"
@@ -1056,6 +1057,21 @@ void tst_mainwindow::ctrlCCopiesTheSelectedText() {
   QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
   QCOMPARE(clip->text(), QStringLiteral("alice"));
   QVERIFY2(browser->textCursor().hasSelection(), "the selection stays");
+
+  // A selectable label (the entry name, the OTP code) the same way, through
+  // the clipboard manager, which tracks it for the autoclear.
+  auto *label =
+      new QLabel(QStringLiteral("code 123456"), browser->parentWidget());
+  label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+  label->show();
+  label->setFocus();
+  label->setSelection(5, 6);
+  QCOMPARE(QApplication::focusWidget(), label);
+  QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
+  QCOMPARE(clip->text(), QStringLiteral("123456"));
+  QCOMPARE(m_window->findChild<QtPass *>()->clipboard().trackedText(),
+           QStringLiteral("123456"));
+  delete label;
 }
 
 /**
