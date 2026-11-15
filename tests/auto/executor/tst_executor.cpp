@@ -1021,9 +1021,9 @@ void tst_executor::lastOutputLosslessSaysWhetherTheTextSavesBack_data() {
   QTest::addColumn<bool>("readStdout");
   QTest::addColumn<bool>("lossless");
   QTest::newRow("ascii") << QStringLiteral("abc\\n") << true << true;
-  QTest::newRow("utf8") << QStringLiteral("caf\\303\\251\\n") << true << true;
-  QTest::newRow("latin1") << QStringLiteral("caf\\351\\n") << true << false;
-  QTest::newRow("truncated") << QStringLiteral("caf\\303") << true << false;
+  QTest::newRow("utf8") << QStringLiteral("abc\\303\\251\\n") << true << true;
+  QTest::newRow("latin1") << QStringLiteral("abc\\351\\n") << true << false;
+  QTest::newRow("truncated") << QStringLiteral("abc\\303") << true << false;
   // As older QtPass versions left such entries: valid UTF-8 for U+FFFD.
   QTest::newRow("replacement character")
       << QStringLiteral("x\\357\\277\\275y\\n") << true << true;
@@ -1031,7 +1031,7 @@ void tst_executor::lastOutputLosslessSaysWhetherTheTextSavesBack_data() {
   QTest::newRow("byte order mark")
       << QStringLiteral("\\357\\273\\277pw\\n") << true << false;
   QTest::newRow("stdout not read")
-      << QStringLiteral("caf\\351\\n") << false << true;
+      << QStringLiteral("abc\\351\\n") << false << true;
 }
 
 /**
@@ -1067,7 +1067,7 @@ void tst_executor::executeBlockingRawPassesBytesThrough() {
   const QString cat = QStandardPaths::findExecutable("cat");
   if (cat.isEmpty())
     QSKIP("cat not found in PATH");
-  const QByteArray bytes("caf\xe9\n\x00\x80\xff\xef\xbb\xbfx\n", 13);
+  const QByteArray bytes("abc\xe9\n\x00\x80\xff\xef\xbb\xbfx\n", 13);
   QProcess process;
   QByteArray out;
   QCOMPARE(Executor::executeBlockingRaw(process, cat, {}, bytes, &out), 0);
@@ -1076,9 +1076,9 @@ void tst_executor::executeBlockingRawPassesBytesThrough() {
   // The text path still decodes as before.
   QString text;
   QCOMPARE(
-      Executor::executeBlocking(cat, {}, QStringLiteral("caf\u00e9\n"), &text),
+      Executor::executeBlocking(cat, {}, QStringLiteral("abc\u00e9\n"), &text),
       0);
-  QCOMPARE(text, QStringLiteral("caf\u00e9\n"));
+  QCOMPARE(text, QStringLiteral("abc\u00e9\n"));
 }
 
 /**
