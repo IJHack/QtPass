@@ -756,6 +756,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   a tab, and says so. `gpg` cuts those off the passphrase it is given, so
   the new key was protected without them and then refused the passphrase as
   typed twice, as if it were wrong.
+- Return in the search box only searches. In content search it also opened
+  the entry current in the tree, one the user had not asked for (back in
+  clear after the panel autoclear hid it, and copied again with "Always
+  copy"), also on an empty search box; in the name search it decrypted the
+  first hit twice. Return on a content search result opens that result, not
+  the entry hidden behind the list.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
