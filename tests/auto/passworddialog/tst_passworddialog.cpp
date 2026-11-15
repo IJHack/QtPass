@@ -747,6 +747,19 @@ void tst_passworddialog::entryThatWouldNotSaveUnchangedIsNotLoaded() {
            qPrintable(status->text()));
   d.accept();
   QVERIFY2(pass.inserted.isEmpty(), "nothing may be saved over the entry");
+
+  // A later answer for the same entry that is refused takes back what an
+  // earlier one loaded: OK must not write that over the entry.
+  FakePass again;
+  PasswordDialog e(&again, s, QStringLiteral("entry.gpg"), false);
+  again.deliverShow(QStringLiteral("old\n"));
+  QVERIFY(okButton(e)->isEnabled());
+  again.deliverShow(QStringLiteral("Gr\uFFFD\n"), QString(), false);
+  QVERIFY2(!okButton(e)->isEnabled(), "Ok must be disabled again");
+  auto *pw2 = e.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY2(!pw2->isEnabled(), "the editor must be locked again");
+  e.accept();
+  QVERIFY2(again.inserted.isEmpty(), "the earlier load must not be saved");
 }
 
 /**

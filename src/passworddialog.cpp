@@ -856,6 +856,15 @@ void PasswordDialog::setPass(const QString &output, const QString &file,
   if (!file.isEmpty() && file != m_file) {
     return;
   }
+  // A refusal also takes back an earlier load of this entry: a later answer
+  // for it says the entry is not one this dialog can save, so OK must not
+  // write what was loaded before.
+  const auto refuse = [this](const QString &why) {
+    m_contentLoaded = false;
+    setEditorEnabled(false);
+    ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+    ui->statusLabel->setText(why);
+  };
   // Bytes that are not UTF-8 (a password typed on a Latin-1 terminal, a key
   // file stored with `pass insert -m`) reach here as U+FFFD (on Windows as
   // characters of the code page), a leading byte order mark not at all, and
@@ -863,9 +872,8 @@ void PasswordDialog::setPass(const QString &output, const QString &file,
   // for good, with the save reported as done. Not loaded, as below, so nothing
   // is saved over the entry; showing and copying it are unaffected.
   if (!lossless) {
-    ui->statusLabel->setText(
-        tr("This entry contains bytes QtPass cannot save unchanged, so it "
-           "cannot be edited here."));
+    refuse(tr("This entry contains bytes QtPass cannot save unchanged, so it "
+              "cannot be edited here."));
     return;
   }
   // An editor block per line: an entry of millions of lines (a small,
@@ -883,8 +891,7 @@ void PasswordDialog::setPass(const QString &output, const QString &file,
     // versions lose a tr() with template arguments among its arguments.
     const int n = static_cast<int>(
         std::min<qsizetype>(lines, std::numeric_limits<int>::max()));
-    ui->statusLabel->setText(
-        tr("This entry has %n line(s), too many to edit here.", nullptr, n));
+    refuse(tr("This entry has %n line(s), too many to edit here.", nullptr, n));
     return;
   }
   setPassword(output);
