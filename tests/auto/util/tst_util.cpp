@@ -272,6 +272,7 @@ private Q_SLOTS:
   void grepMatchFileFailedDecryptReturnsEmpty();
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepImitatePassEmptyStoreEmitsEmpty();
+  void wslPathKeepsWhitespaceEndingTheName();
   void grepImitatePassInvalidRegexEmitsEmpty();
   // SSH_AUTH_SOCK auto-probe (issue #543)
   void sshAuthSockOverrideRoundtrip();
@@ -2508,6 +2509,39 @@ void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
   const auto results = ImitatePass::grepScanStore(
       env, QStringLiteral("/nonexistent/gpg"), tmp.path(), rx);
   QVERIFY(results.isEmpty());
+}
+
+/**
+ * @brief White space ending a name is the name's: only wslpath's line end is
+ *        dropped. Trimmed, "team " became its neighbour "team" and " " the
+ *        store itself for git run through WSL.
+ */
+void tst_util::wslPathKeepsWhitespaceEndingTheName() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the wsl stand-in");
+#else
+  QTemporaryDir bin;
+  QVERIFY(bin.isValid());
+  {
+    QFile script(bin.filePath(QStringLiteral("wsl")));
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write("#!/bin/sh\nfor last; do :; done\nprintf '%s\\n' \"$last\"\n");
+    script.close();
+    QVERIFY(script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                                  QFile::ExeOwner));
+  }
+  const QByteArray oldPath = qgetenv("PATH");
+  qputenv("PATH",
+          (bin.path() + ':' + QString::fromLocal8Bit(oldPath)).toLocal8Bit());
+  const auto restore = qScopeGuard([&oldPath] { qputenv("PATH", oldPath); });
+  TestPass pass;
+  for (const QString &name :
+       {QStringLiteral("team "), QStringLiteral("team\u00a0"),
+        QStringLiteral(" ")}) {
+    const QString path = QStringLiteral("/store/") + name;
+    QCOMPARE(pass.translatePathForWsl(path, QStringLiteral("wsl git")), path);
+  }
+#endif
 }
 
 void tst_util::grepImitatePassEmptyStoreEmitsEmpty() {

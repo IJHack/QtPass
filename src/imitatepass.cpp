@@ -72,7 +72,16 @@ auto ImitatePass::translatePathForWsl(const QString &path,
       QStringLiteral("wsl"),
       Executor::wslExecArgs(QStringLiteral("wslpath"), {normalizedPath}),
       &wslPath);
-  const QString translated = wslPath.trimmed();
+  // Only the line end wslpath prints: white space at the end of the path is
+  // the name's own ("team " beside "team", a folder named " "), and trimmed
+  // it made git remove or move the neighbour, or the whole store.
+  QString translated = wslPath;
+  if (translated.endsWith(QLatin1Char('\n'))) {
+    translated.chop(1);
+  }
+  if (translated.endsWith(QLatin1Char('\r'))) {
+    translated.chop(1);
+  }
   return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
 }
 
