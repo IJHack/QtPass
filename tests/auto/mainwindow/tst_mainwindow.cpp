@@ -402,6 +402,7 @@ private Q_SLOTS:
   void passwordFromFileToClipboardSkipsOtpSecret();
   void copyRequestAnswersOnlyItsOwnEntry();
   void templateMarkedSecretsAreHidden();
+  void secretsAreHiddenWithTemplatesOff();
   void otpRequestAnswersOnlyItsOwnEntry();
   void otpRequestKeepsThePasswordOffTheClipboard();
   void otpFastPathCopiesTheVisibleCodeWithoutDecrypting();
@@ -1019,6 +1020,44 @@ auto looksLikeOtpCode(const QString &s) -> bool {
  * @brief Ctrl+G on an entry with no code on screen decrypts it; only that
  *        entry's decrypt yields a code, and only once.
  */
+/**
+ * @brief "Also hide other secrets" works in the default setup, templates
+ *        off: a line named by the word list becomes a hidden row instead of
+ *        staying in the text below the fields. 2.0-rc2 showed `PIN: 4821`
+ *        and a recovery key there, the switch ticked and doing nothing.
+ */
+void tst_mainwindow::secretsAreHiddenWithTemplatesOff() {
+  const AppSettings before = QtPassSettings::load();
+  const auto restore = qScopeGuard([&before] { QtPassSettings::save(before); });
+  AppSettings s = before;
+  s.hidePassword = true;
+  s.hideSecretFields = true;
+  s.secretFieldNames = AppSettings::defaultSecretFieldNames();
+  s.hideAllFields = false;
+  s.hideContent = false;
+  s.displayAsIs = false;
+  s.useTemplate = false;
+  QtPassSettings::save(s);
+
+  m_window->passShowHandler(
+      QStringLiteral("correct horse battery staple\nlogin: alice\nPIN: 4821\n"
+                     "Recovery key: write-it-down\n"));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  const QString text = browser->toPlainText();
+  QVERIFY2(!text.contains(QStringLiteral("4821")), qPrintable(text));
+  QVERIFY2(!text.contains(QStringLiteral("write-it-down")), qPrintable(text));
+  QVERIFY2(text.contains(QStringLiteral("alice")),
+           "an ordinary line stays in the text");
+  for (const QString &name :
+       {QStringLiteral("PIN"), QStringLiteral("Recovery key")}) {
+    const auto *row = m_window->findChild<QLineEdit *>(name);
+    QVERIFY2(row != nullptr && row->echoMode() == QLineEdit::Password,
+             qPrintable(name + " must be a hidden row"));
+  }
+}
+
 /**
  * @brief The marks reach the panel: a field marked secret in the template in
  *        the settings or in the store's .templates is hidden like the
