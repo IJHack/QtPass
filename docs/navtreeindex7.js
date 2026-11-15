@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"totp_8cpp_source.html":[4,0,1,97],
+"totp_8h.html":[4,0,1,98],
 "totp_8h_source.html":[4,0,1,98],
 "trayicon_8cpp.html":[4,0,1,99],
 "trayicon_8cpp_source.html":[4,0,1,99],

@@ -69,9 +69,9 @@ var NAVTREEINDEX =
 "class_main_window.html#aac6a34d508898a862807dc2512e6b659",
 "class_password_display_panel.html#a4654eec1dc8a91f02d20a63247bfb840",
 "class_single_application.html#aefdefa8280cdb7a65b3447c675b2f0c8",
-"functions_func_c.html",
-"realpass_8h.html",
-"totp_8h_source.html"
+"functions_func.html",
+"realpass_8cpp.html",
+"totp_8cpp_source.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

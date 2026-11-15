@@ -78,37 +78,37 @@
 </a>
 </g>
 </g>
-<!-- Node32 -->
-<g id="Node000032" class="node">
-<title>Node32</title>
-<g id="a_Node000032"><a xlink:href="class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" target="_top" xlink:title="Get imitate pass backend instance.">
+<!-- Node33 -->
+<g id="Node000033" class="node">
+<title>Node33</title>
+<g id="a_Node000033"><a xlink:href="class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" target="_top" xlink:title="Get imitate pass backend instance.">
 <polygon fill="white" stroke="#666666" points="291.5,-173.75 124,-173.75 124,-153 291.5,-153 291.5,-173.75"/>
 <text xml:space="preserve" text-anchor="middle" x="207.75" y="-160.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getImitatePass</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node32 -->
-<g id="edge39_Node000001_Node000032" class="edge">
-<title>Node1&#45;&gt;Node32</title>
-<g id="a_edge39_Node000001_Node000032"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node33 -->
+<g id="edge40_Node000001_Node000033" class="edge">
+<title>Node1&#45;&gt;Node33</title>
+<g id="a_edge40_Node000001_Node000033"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M88.35,-163.38C95.87,-163.38 103.96,-163.38 112.24,-163.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="112.11,-166.88 122.11,-163.38 112.11,-159.88 112.11,-166.88"/>
 </a>
 </g>
 </g>
-<!-- Node41 -->
-<g id="Node000041" class="node">
-<title>Node41</title>
-<g id="a_Node000041"><a xlink:href="class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" target="_top" xlink:title="Get real pass backend instance.">
+<!-- Node42 -->
+<g id="Node000042" class="node">
+<title>Node42</title>
+<g id="a_Node000042"><a xlink:href="class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" target="_top" xlink:title="Get real pass backend instance.">
 <polygon fill="white" stroke="#666666" points="284.75,-128.75 130.75,-128.75 130.75,-108 284.75,-108 284.75,-128.75"/>
 <text xml:space="preserve" text-anchor="middle" x="207.75" y="-115.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getRealPass</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node41 -->
-<g id="edge49_Node000001_Node000041" class="edge">
-<title>Node1&#45;&gt;Node41</title>
-<g id="a_edge49_Node000001_Node000041"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node42 -->
+<g id="edge50_Node000001_Node000042" class="edge">
+<title>Node1&#45;&gt;Node42</title>
+<g id="a_edge50_Node000001_Node000042"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M83.74,-152.6C105.69,-146.49 133.38,-138.79 156.93,-132.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="157.61,-135.68 166.3,-129.63 155.73,-128.94 157.61,-135.68"/>
 </a>
@@ -268,38 +268,20 @@
 </g>
 </g>
 <!-- Node2&#45;&gt;Node17 -->
-<g id="edge38_Node000002_Node000017" class="edge">
+<g id="edge39_Node000002_Node000017" class="edge">
 <title>Node2&#45;&gt;Node17</title>
-<g id="a_edge38_Node000002_Node000017"><a xlink:title=" ">
+<g id="a_edge39_Node000002_Node000017"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M228.14,-486.47C250.42,-505.01 288.88,-533.77 327.5,-547.38 396.45,-571.68 480.03,-577.44 539.57,-577.86"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="539.26,-581.36 549.26,-577.88 539.27,-574.36 539.26,-581.36"/>
-</a>
-</g>
-</g>
-<!-- Node25 -->
-<g id="Node000025" class="node">
-<title>Node25</title>
-<g id="a_Node000025"><a xlink:href="class_pass.html#a662000feacb2400a1b5f6133cce44542" target="_top" xlink:title="A Move() succeeded; the entry or folder is under its new name.">
-<polygon fill="white" stroke="#666666" points="475.12,-768.75 366.12,-768.75 366.12,-748 475.12,-748 475.12,-768.75"/>
-<text xml:space="preserve" text-anchor="middle" x="420.62" y="-755.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedMove</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node25 -->
-<g id="edge26_Node000002_Node000025" class="edge">
-<title>Node2&#45;&gt;Node25</title>
-<g id="a_edge26_Node000002_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M210.93,-486.43C218,-534.31 244.84,-670.92 327.5,-738.38 335.42,-744.83 344.95,-749.33 354.84,-752.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="353.63,-755.74 364.19,-754.91 355.41,-748.97 353.63,-755.74"/>
 </a>
 </g>
 </g>
 <!-- Node26 -->
 <g id="Node000026" class="node">
 <title>Node26</title>
-<g id="a_Node000026"><a xlink:href="class_pass.html#af08e80e76ffd6581f35e701e6c8b533e" target="_top" xlink:title="A Remove() succeeded; the entry or folder is gone from the store.">
-<polygon fill="white" stroke="#666666" points="481.88,-729.75 359.38,-729.75 359.38,-709 481.88,-709 481.88,-729.75"/>
-<text xml:space="preserve" text-anchor="middle" x="420.62" y="-716.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedRemove</text>
+<g id="a_Node000026"><a xlink:href="class_pass.html#a662000feacb2400a1b5f6133cce44542" target="_top" xlink:title="A Move() succeeded; the entry or folder is under its new name.">
+<polygon fill="white" stroke="#666666" points="475.12,-768.75 366.12,-768.75 366.12,-748 475.12,-748 475.12,-768.75"/>
+<text xml:space="preserve" text-anchor="middle" x="420.62" y="-755.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedMove</text>
 </a>
 </g>
 </g>
@@ -307,17 +289,17 @@
 <g id="edge27_Node000002_Node000026" class="edge">
 <title>Node2&#45;&gt;Node26</title>
 <g id="a_edge27_Node000002_Node000026"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M212.69,-486.6C223.32,-529.03 256.68,-639.16 327.5,-695.38 333.75,-700.33 340.91,-704.28 348.43,-707.41"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="347.21,-710.69 357.8,-710.8 349.59,-704.11 347.21,-710.69"/>
+<path fill="none" stroke="#63b8ff" d="M210.93,-486.43C218,-534.31 244.84,-670.92 327.5,-738.38 335.42,-744.83 344.95,-749.33 354.84,-752.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="353.63,-755.74 364.19,-754.91 355.41,-748.97 353.63,-755.74"/>
 </a>
 </g>
 </g>
 <!-- Node27 -->
 <g id="Node000027" class="node">
 <title>Node27</title>
-<g id="a_Node000027"><a xlink:href="class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243" target="_top" xlink:title="Slot for Pass::finishedGenerateGPGKeys: a status message followed by processFinished()....">
-<polygon fill="white" stroke="#666666" points="513.75,-653.75 327.5,-653.75 327.5,-633 513.75,-633 513.75,-653.75"/>
-<text xml:space="preserve" text-anchor="middle" x="420.62" y="-640.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::onKeyGenerationComplete</text>
+<g id="a_Node000027"><a xlink:href="class_pass.html#af08e80e76ffd6581f35e701e6c8b533e" target="_top" xlink:title="A Remove() succeeded; the entry or folder is gone from the store.">
+<polygon fill="white" stroke="#666666" points="481.88,-729.75 359.38,-729.75 359.38,-709 481.88,-709 481.88,-729.75"/>
+<text xml:space="preserve" text-anchor="middle" x="420.62" y="-716.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedRemove</text>
 </a>
 </g>
 </g>
@@ -325,53 +307,53 @@
 <g id="edge28_Node000002_Node000027" class="edge">
 <title>Node2&#45;&gt;Node27</title>
 <g id="a_edge28_Node000002_Node000027"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M212.69,-486.6C223.32,-529.03 256.68,-639.16 327.5,-695.38 333.75,-700.33 340.91,-704.28 348.43,-707.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="347.21,-710.69 357.8,-710.8 349.59,-704.11 347.21,-710.69"/>
+</a>
+</g>
+</g>
+<!-- Node28 -->
+<g id="Node000028" class="node">
+<title>Node28</title>
+<g id="a_Node000028"><a xlink:href="class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243" target="_top" xlink:title="Slot for Pass::finishedGenerateGPGKeys: a status message followed by processFinished()....">
+<polygon fill="white" stroke="#666666" points="513.75,-653.75 327.5,-653.75 327.5,-633 513.75,-633 513.75,-653.75"/>
+<text xml:space="preserve" text-anchor="middle" x="420.62" y="-640.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::onKeyGenerationComplete</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node28 -->
+<g id="edge29_Node000002_Node000028" class="edge">
+<title>Node2&#45;&gt;Node28</title>
+<g id="a_edge29_Node000002_Node000028"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M216.78,-486.44C232.9,-518.71 272.43,-588.55 327.5,-623.38 330.22,-625.1 333.07,-626.67 336.01,-628.11"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="334.34,-631.21 344.91,-631.92 337.09,-624.77 334.34,-631.21"/>
-</a>
-</g>
-</g>
-<!-- Node29 -->
-<g id="Node000029" class="node">
-<title>Node29</title>
-<g id="a_Node000029"><a xlink:href="class_qt_pass.html#aa1153ea591126774caa31920020d188e" target="_top" xlink:title="Slot for the backend signals that change the store on disk (git init, remove, init,...">
-<polygon fill="white" stroke="#666666" points="493.5,-265.75 347.75,-265.75 347.75,-245 493.5,-245 493.5,-265.75"/>
-<text xml:space="preserve" text-anchor="middle" x="420.62" y="-252.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::passStoreChanged</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node29 -->
-<g id="edge31_Node000002_Node000029" class="edge">
-<title>Node2&#45;&gt;Node29</title>
-<g id="a_edge31_Node000002_Node000029"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M214.07,-452.15C226.85,-413.79 263.11,-321.11 327.5,-275.38 330.5,-273.24 333.69,-271.33 337,-269.62"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="338.18,-272.92 345.89,-265.66 335.33,-266.53 338.18,-272.92"/>
 </a>
 </g>
 </g>
 <!-- Node30 -->
 <g id="Node000030" class="node">
 <title>Node30</title>
-<g id="a_Node000030"><a xlink:href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" target="_top" xlink:title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,...">
-<polygon fill="white" stroke="#666666" points="482.25,-614.75 359,-614.75 359,-594 482.25,-594 482.25,-614.75"/>
-<text xml:space="preserve" text-anchor="middle" x="420.62" y="-601.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::processErrorExit</text>
+<g id="a_Node000030"><a xlink:href="class_qt_pass.html#aa1153ea591126774caa31920020d188e" target="_top" xlink:title="Slot for the backend signals that change the store on disk (git init, remove, init,...">
+<polygon fill="white" stroke="#666666" points="493.5,-265.75 347.75,-265.75 347.75,-245 493.5,-245 493.5,-265.75"/>
+<text xml:space="preserve" text-anchor="middle" x="420.62" y="-252.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::passStoreChanged</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node30 -->
-<g id="edge34_Node000002_Node000030" class="edge">
+<g id="edge32_Node000002_Node000030" class="edge">
 <title>Node2&#45;&gt;Node30</title>
-<g id="a_edge34_Node000002_Node000030"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M222.17,-486.44C242.37,-510.95 283,-555.88 327.5,-580.38 334.39,-584.17 341.9,-587.38 349.56,-590.1"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="348.42,-593.4 359.01,-593.15 350.57,-586.74 348.42,-593.4"/>
+<g id="a_edge32_Node000002_Node000030"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M214.07,-452.15C226.85,-413.79 263.11,-321.11 327.5,-275.38 330.5,-273.24 333.69,-271.33 337,-269.62"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="338.18,-272.92 345.89,-265.66 335.33,-266.53 338.18,-272.92"/>
 </a>
 </g>
 </g>
 <!-- Node31 -->
 <g id="Node000031" class="node">
 <title>Node31</title>
-<g id="a_Node000031"><a xlink:href="class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04" target="_top" xlink:title="Slot for Pass::processErrorExit: report the error in red and emit operationFinished().">
-<polygon fill="white" stroke="#666666" points="685,-681.75 550.5,-681.75 550.5,-661 685,-661 685,-681.75"/>
-<text xml:space="preserve" text-anchor="middle" x="617.75" y="-668.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::processErrorExit</text>
+<g id="a_Node000031"><a xlink:href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" target="_top" xlink:title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,...">
+<polygon fill="white" stroke="#666666" points="482.25,-614.75 359,-614.75 359,-594 482.25,-594 482.25,-614.75"/>
+<text xml:space="preserve" text-anchor="middle" x="420.62" y="-601.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::processErrorExit</text>
 </a>
 </g>
 </g>
@@ -379,6 +361,24 @@
 <g id="edge35_Node000002_Node000031" class="edge">
 <title>Node2&#45;&gt;Node31</title>
 <g id="a_edge35_Node000002_Node000031"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M222.17,-486.44C242.37,-510.95 283,-555.88 327.5,-580.38 334.39,-584.17 341.9,-587.38 349.56,-590.1"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="348.42,-593.4 359.01,-593.15 350.57,-586.74 348.42,-593.4"/>
+</a>
+</g>
+</g>
+<!-- Node32 -->
+<g id="Node000032" class="node">
+<title>Node32</title>
+<g id="a_Node000032"><a xlink:href="class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04" target="_top" xlink:title="Slot for Pass::processErrorExit: report the error in red and emit operationFinished().">
+<polygon fill="white" stroke="#666666" points="685,-681.75 550.5,-681.75 550.5,-661 685,-661 685,-681.75"/>
+<text xml:space="preserve" text-anchor="middle" x="617.75" y="-668.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::processErrorExit</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node32 -->
+<g id="edge36_Node000002_Node000032" class="edge">
+<title>Node2&#45;&gt;Node32</title>
+<g id="a_edge36_Node000002_Node000032"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M213.28,-486.49C224.72,-525.88 258.91,-622.63 327.5,-662.38 399.63,-704.17 499.77,-695.57 561.31,-684.34"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="561.69,-687.83 570.85,-682.51 560.37,-680.96 561.69,-687.83"/>
 </a>
@@ -469,8 +469,8 @@
 <g id="Node000013" class="node">
 <title>Node13</title>
 <g id="a_Node000013"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title="Get the singleton instance.">
-<polygon fill="white" stroke="#666666" points="1059.38,-246.75 907.62,-246.75 907.62,-226 1059.38,-226 1059.38,-246.75"/>
-<text xml:space="preserve" text-anchor="middle" x="983.5" y="-233.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
+<polygon fill="white" stroke="#666666" points="1059.38,-256.75 907.62,-256.75 907.62,-236 1059.38,-236 1059.38,-256.75"/>
+<text xml:space="preserve" text-anchor="middle" x="983.5" y="-243.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
 </a>
 </g>
 </g>
@@ -478,8 +478,8 @@
 <g id="edge12_Node000012_Node000013" class="edge">
 <title>Node12&#45;&gt;Node13</title>
 <g id="a_edge12_Node000012_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M870.92,-247.81C879.11,-246.97 887.51,-246.11 895.84,-245.26"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="896.04,-248.76 905.63,-244.25 895.33,-241.79 896.04,-248.76"/>
+<path fill="none" stroke="#63b8ff" d="M870.92,-251.79C879.11,-251.39 887.51,-250.99 895.84,-250.58"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="895.81,-254.09 905.62,-250.11 895.47,-247.1 895.81,-254.09"/>
 </a>
 </g>
 </g>
@@ -487,8 +487,8 @@
 <g id="Node000014" class="node">
 <title>Node14</title>
 <g id="a_Node000014"><a xlink:href="class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" target="_top" xlink:title="Private default constructor to enforce singleton usage and prevent direct instantiation.">
-<polygon fill="white" stroke="#666666" points="1264,-246.75 1096.5,-246.75 1096.5,-226 1264,-226 1264,-246.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1180.25" y="-233.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::QtPassSettings</text>
+<polygon fill="white" stroke="#666666" points="1264,-256.75 1096.5,-256.75 1096.5,-236 1264,-236 1264,-256.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1180.25" y="-243.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::QtPassSettings</text>
 </a>
 </g>
 </g>
@@ -496,8 +496,8 @@
 <g id="edge13_Node000013_Node000014" class="edge">
 <title>Node13&#45;&gt;Node14</title>
 <g id="a_edge13_Node000013_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1059.8,-236.38C1067.96,-236.38 1076.35,-236.38 1084.71,-236.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1084.55,-239.88 1094.55,-236.38 1084.55,-232.88 1084.55,-239.88"/>
+<path fill="none" stroke="#63b8ff" d="M1059.8,-246.38C1067.96,-246.38 1076.35,-246.38 1084.71,-246.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1084.55,-249.88 1094.55,-246.38 1084.55,-242.88 1084.55,-249.88"/>
 </a>
 </g>
 </g>
@@ -505,8 +505,8 @@
 <g id="Node000018" class="node">
 <title>Node18</title>
 <g id="a_Node000018"><a xlink:href="class_qt_pass.html#a32860d084409d781977736d6fb40d629" target="_top" xlink:title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,...">
-<polygon fill="white" stroke="#666666" points="1044,-652.75 923,-652.75 923,-632 1044,-632 1044,-652.75"/>
-<text xml:space="preserve" text-anchor="middle" x="983.5" y="-639.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::formatOutput</text>
+<polygon fill="white" stroke="#666666" points="1044,-653.75 923,-653.75 923,-633 1044,-633 1044,-653.75"/>
+<text xml:space="preserve" text-anchor="middle" x="983.5" y="-640.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::formatOutput</text>
 </a>
 </g>
 </g>
@@ -514,35 +514,17 @@
 <g id="edge17_Node000017_Node000018" class="edge">
 <title>Node17&#45;&gt;Node18</title>
 <g id="a_edge17_Node000017_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M684.62,-578.65C735.81,-582.17 808.31,-589.28 870.5,-603.38 896.32,-609.23 924.46,-619.04 946.07,-627.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="944.74,-630.59 955.32,-630.99 947.3,-624.08 944.74,-630.59"/>
-</a>
-</g>
-</g>
-<!-- Node22 -->
-<g id="Node000022" class="node">
-<title>Node22</title>
-<g id="a_Node000022"><a xlink:href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb" target="_top" xlink:title="A backend operation is over, successfully or not; the interface can be enabled again.">
-<polygon fill="white" stroke="#666666" points="867.12,-632.75 725.12,-632.75 725.12,-612 867.12,-612 867.12,-632.75"/>
-<text xml:space="preserve" text-anchor="middle" x="796.12" y="-619.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::operationFinished</text>
-</a>
-</g>
-</g>
-<!-- Node17&#45;&gt;Node22 -->
-<g id="edge21_Node000017_Node000022" class="edge">
-<title>Node17&#45;&gt;Node22</title>
-<g id="a_edge21_Node000017_Node000022"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M659.21,-586.16C684.33,-592.85 716.84,-601.51 743.77,-608.69"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="742.52,-611.98 753.08,-611.17 744.32,-605.21 742.52,-611.98"/>
+<path fill="none" stroke="#63b8ff" d="M684.62,-578.98C735.81,-582.74 808.31,-590.15 870.5,-604.38 896.31,-610.28 924.45,-620.09 946.06,-628.4"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="944.73,-631.63 955.32,-632.02 947.28,-625.11 944.73,-631.63"/>
 </a>
 </g>
 </g>
 <!-- Node23 -->
 <g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_Node000023"><a xlink:href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6" target="_top" xlink:title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser.">
-<polygon fill="white" stroke="#666666" points="1042.12,-575.75 924.88,-575.75 924.88,-555 1042.12,-555 1042.12,-575.75"/>
-<text xml:space="preserve" text-anchor="middle" x="983.5" y="-562.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::outputReady</text>
+<g id="a_Node000023"><a xlink:href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb" target="_top" xlink:title="A backend operation is over, successfully or not; the interface can be enabled again.">
+<polygon fill="white" stroke="#666666" points="867.12,-633.75 725.12,-633.75 725.12,-613 867.12,-613 867.12,-633.75"/>
+<text xml:space="preserve" text-anchor="middle" x="796.12" y="-620.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::operationFinished</text>
 </a>
 </g>
 </g>
@@ -550,17 +532,17 @@
 <g id="edge22_Node000017_Node000023" class="edge">
 <title>Node17&#45;&gt;Node23</title>
 <g id="a_edge22_Node000017_Node000023"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M684.67,-571.89C696.99,-571.32 709.76,-570.78 721.75,-570.38 786.67,-568.18 860.73,-566.87 913.28,-566.15"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="913.03,-569.65 922.98,-566.02 912.93,-562.65 913.03,-569.65"/>
+<path fill="none" stroke="#63b8ff" d="M658.33,-586.15C683.77,-593.07 717.06,-602.13 744.43,-609.58"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="743.34,-612.91 753.91,-612.16 745.18,-606.16 743.34,-612.91"/>
 </a>
 </g>
 </g>
 <!-- Node24 -->
 <g id="Node000024" class="node">
 <title>Node24</title>
-<g id="a_Node000024"><a xlink:href="class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" target="_top" xlink:title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ...">
-<polygon fill="white" stroke="#666666" points="849.88,-671.75 742.38,-671.75 742.38,-651 849.88,-651 849.88,-671.75"/>
-<text xml:space="preserve" text-anchor="middle" x="796.12" y="-658.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::reportError</text>
+<g id="a_Node000024"><a xlink:href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6" target="_top" xlink:title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser.">
+<polygon fill="white" stroke="#666666" points="1042.12,-576.75 924.88,-576.75 924.88,-556 1042.12,-556 1042.12,-576.75"/>
+<text xml:space="preserve" text-anchor="middle" x="983.5" y="-563.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::outputReady</text>
 </a>
 </g>
 </g>
@@ -568,17 +550,35 @@
 <g id="edge23_Node000017_Node000024" class="edge">
 <title>Node17&#45;&gt;Node24</title>
 <g id="a_edge23_Node000017_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M639.44,-586.1C652.92,-593.33 670.73,-603.35 685.75,-613.38 702.61,-624.63 703.62,-632.31 721.75,-641.38 725.69,-643.34 729.85,-645.14 734.1,-646.77"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="732.78,-650.02 743.37,-650.01 735.09,-643.41 732.78,-650.02"/>
+<path fill="none" stroke="#63b8ff" d="M684.68,-572.62C697,-572.16 709.77,-571.72 721.75,-571.38 786.68,-569.49 860.73,-568.15 913.29,-567.33"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="913.04,-570.84 922.98,-567.18 912.93,-563.84 913.04,-570.84"/>
+</a>
+</g>
+</g>
+<!-- Node25 -->
+<g id="Node000025" class="node">
+<title>Node25</title>
+<g id="a_Node000025"><a xlink:href="class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" target="_top" xlink:title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ...">
+<polygon fill="white" stroke="#666666" points="849.88,-672.75 742.38,-672.75 742.38,-652 849.88,-652 849.88,-672.75"/>
+<text xml:space="preserve" text-anchor="middle" x="796.12" y="-659.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::reportError</text>
+</a>
+</g>
+</g>
+<!-- Node17&#45;&gt;Node25 -->
+<g id="edge24_Node000017_Node000025" class="edge">
+<title>Node17&#45;&gt;Node25</title>
+<g id="a_edge24_Node000017_Node000025"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M639.8,-586.18C653.27,-593.36 670.93,-603.3 685.75,-613.38 702.74,-624.93 703.45,-633.03 721.75,-642.38 725.67,-644.38 729.82,-646.2 734.06,-647.85"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="732.73,-651.09 743.32,-651.11 735.05,-644.49 732.73,-651.09"/>
 </a>
 </g>
 </g>
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_util.html#ada742504985a1e8b2c6adb5e14b24794" target="_top" xlink:title="Turn plain text into HTML with clickable links for safe web URLs.">
-<polygon fill="white" stroke="#666666" points="1224.62,-652.75 1135.88,-652.75 1135.88,-632 1224.62,-632 1224.62,-652.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1180.25" y="-639.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::linkifyUrls</text>
+<g id="a_Node000019"><a xlink:href="class_util.html#a57fa6e612f022589f609d8b463111a48" target="_top" xlink:title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,...">
+<polygon fill="white" stroke="#666666" points="1241.5,-672.75 1119,-672.75 1119,-652 1241.5,-652 1241.5,-672.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1180.25" y="-659.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::boundSpaceRuns</text>
 </a>
 </g>
 </g>
@@ -586,153 +586,153 @@
 <g id="edge18_Node000018_Node000019" class="edge">
 <title>Node18&#45;&gt;Node19</title>
 <g id="a_edge18_Node000018_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1044.25,-642.38C1069.64,-642.38 1099.06,-642.38 1123.94,-642.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1123.87,-645.88 1133.87,-642.38 1123.87,-638.88 1123.87,-645.88"/>
+<path fill="none" stroke="#63b8ff" d="M1044.25,-649.2C1064.16,-651.15 1086.55,-653.33 1107.28,-655.35"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1106.8,-658.82 1117.09,-656.31 1107.48,-651.86 1106.8,-658.82"/>
 </a>
 </g>
 </g>
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="class_util.html#a86864a9430f6903425908e76ba6079b5" target="_top" xlink:title="Check whether a value is a safe, launchable web URL.">
-<polygon fill="white" stroke="#666666" points="1438.25,-671.75 1300,-671.75 1300,-651 1438.25,-651 1438.25,-671.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1369.12" y="-658.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::isLaunchableWebUrl</text>
+<g id="a_Node000020"><a xlink:href="class_util.html#ada742504985a1e8b2c6adb5e14b24794" target="_top" xlink:title="Turn plain text into HTML with clickable links for safe web URLs.">
+<polygon fill="white" stroke="#666666" points="1224.62,-633.75 1135.88,-633.75 1135.88,-613 1224.62,-613 1224.62,-633.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1180.25" y="-620.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::linkifyUrls</text>
 </a>
 </g>
 </g>
-<!-- Node19&#45;&gt;Node20 -->
-<g id="edge19_Node000019_Node000020" class="edge">
-<title>Node19&#45;&gt;Node20</title>
-<g id="a_edge19_Node000019_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1225.06,-646.83C1243.99,-648.75 1266.74,-651.07 1288.47,-653.28"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1287.91,-656.74 1298.21,-654.27 1288.62,-649.77 1287.91,-656.74"/>
+<!-- Node18&#45;&gt;Node20 -->
+<g id="edge19_Node000018_Node000020" class="edge">
+<title>Node18&#45;&gt;Node20</title>
+<g id="a_edge19_Node000018_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1044.25,-637.24C1069.64,-634.63 1099.06,-631.61 1123.94,-629.06"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1124.29,-632.54 1133.88,-628.03 1123.57,-625.57 1124.29,-632.54"/>
 </a>
 </g>
 </g>
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_util.html#a133c5da0c8a3f106c09977679bc615c3" target="_top" xlink:title="Returns a regex to match URL protocols.">
-<polygon fill="white" stroke="#666666" points="1424,-632.75 1314.25,-632.75 1314.25,-612 1424,-612 1424,-632.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1369.12" y="-619.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::protocolRegex</text>
+<g id="a_Node000021"><a xlink:href="class_util.html#a86864a9430f6903425908e76ba6079b5" target="_top" xlink:title="Check whether a value is a safe, launchable web URL.">
+<polygon fill="white" stroke="#666666" points="1438.25,-652.75 1300,-652.75 1300,-632 1438.25,-632 1438.25,-652.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1369.12" y="-639.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::isLaunchableWebUrl</text>
 </a>
 </g>
 </g>
-<!-- Node19&#45;&gt;Node21 -->
-<g id="edge20_Node000019_Node000021" class="edge">
-<title>Node19&#45;&gt;Node21</title>
-<g id="a_edge20_Node000019_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1225.06,-637.69C1248.18,-635.21 1277.01,-632.13 1302.72,-629.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1302.82,-632.88 1312.39,-628.34 1302.07,-625.92 1302.82,-632.88"/>
+<!-- Node20&#45;&gt;Node21 -->
+<g id="edge20_Node000020_Node000021" class="edge">
+<title>Node20&#45;&gt;Node21</title>
+<g id="a_edge20_Node000020_Node000021"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1225.06,-627.83C1243.99,-629.75 1266.74,-632.07 1288.47,-634.28"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1287.91,-637.74 1298.21,-635.27 1288.62,-630.77 1287.91,-637.74"/>
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node18 -->
-<g id="edge24_Node000024_Node000018" class="edge">
-<title>Node24&#45;&gt;Node18</title>
-<g id="a_edge24_Node000024_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M850.25,-655.93C869.21,-653.99 890.88,-651.77 911.13,-649.69"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="911.43,-653.18 921.02,-648.68 910.71,-646.21 911.43,-653.18"/>
+<!-- Node22 -->
+<g id="Node000022" class="node">
+<title>Node22</title>
+<g id="a_Node000022"><a xlink:href="class_util.html#a133c5da0c8a3f106c09977679bc615c3" target="_top" xlink:title="Returns a regex to match URL protocols.">
+<polygon fill="white" stroke="#666666" points="1424,-613.75 1314.25,-613.75 1314.25,-593 1424,-593 1424,-613.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1369.12" y="-600.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::protocolRegex</text>
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node23 -->
-<g id="edge25_Node000024_Node000023" class="edge">
-<title>Node24&#45;&gt;Node23</title>
-<g id="a_edge25_Node000024_Node000023"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M845.69,-650.58C854.14,-648.02 862.7,-644.96 870.5,-641.38 904.38,-625.79 939.29,-600.32 960.94,-583.21"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="963.12,-585.95 968.72,-576.95 958.74,-580.49 963.12,-585.95"/>
+<!-- Node20&#45;&gt;Node22 -->
+<g id="edge21_Node000020_Node000022" class="edge">
+<title>Node20&#45;&gt;Node22</title>
+<g id="a_edge21_Node000020_Node000022"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1225.06,-618.69C1248.18,-616.21 1277.01,-613.13 1302.72,-610.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1302.82,-613.88 1312.39,-609.34 1302.07,-606.92 1302.82,-613.88"/>
 </a>
 </g>
 </g>
-<!-- Node27&#45;&gt;Node17 -->
-<g id="edge29_Node000027_Node000017" class="edge">
-<title>Node27&#45;&gt;Node17</title>
-<g id="a_edge29_Node000027_Node000017"><a xlink:title=" ">
+<!-- Node25&#45;&gt;Node18 -->
+<g id="edge25_Node000025_Node000018" class="edge">
+<title>Node25&#45;&gt;Node18</title>
+<g id="a_edge25_Node000025_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M850.25,-656.93C869.21,-654.99 890.88,-652.77 911.13,-650.69"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="911.43,-654.18 921.02,-649.68 910.71,-647.21 911.43,-654.18"/>
+</a>
+</g>
+</g>
+<!-- Node25&#45;&gt;Node24 -->
+<g id="edge26_Node000025_Node000024" class="edge">
+<title>Node25&#45;&gt;Node24</title>
+<g id="a_edge26_Node000025_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M845.69,-651.58C854.14,-649.02 862.7,-645.96 870.5,-642.38 904.38,-626.79 939.29,-601.32 960.94,-584.21"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="963.12,-586.95 968.72,-577.95 958.74,-581.49 963.12,-586.95"/>
+</a>
+</g>
+</g>
+<!-- Node28&#45;&gt;Node17 -->
+<g id="edge30_Node000028_Node000017" class="edge">
+<title>Node28&#45;&gt;Node17</title>
+<g id="a_edge30_Node000028_Node000017"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M480.64,-632.61C491.76,-630 503.2,-626.93 513.75,-623.38 539.26,-614.78 566.85,-601.71 587.04,-591.37"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="588.56,-594.53 595.82,-586.81 585.33,-588.32 588.56,-594.53"/>
 </a>
 </g>
 </g>
-<!-- Node28 -->
-<g id="Node000028" class="node">
-<title>Node28</title>
-<g id="a_Node000028"><a xlink:href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a" target="_top" xlink:title="A short message for the status bar.">
+<!-- Node29 -->
+<g id="Node000029" class="node">
+<title>Node29</title>
+<g id="a_Node000029"><a xlink:href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a" target="_top" xlink:title="A short message for the status bar.">
 <polygon fill="white" stroke="#666666" points="682,-642.75 553.5,-642.75 553.5,-622 682,-622 682,-642.75"/>
 <text xml:space="preserve" text-anchor="middle" x="617.75" y="-629.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::statusMessage</text>
 </a>
 </g>
 </g>
-<!-- Node27&#45;&gt;Node28 -->
-<g id="edge30_Node000027_Node000028" class="edge">
-<title>Node27&#45;&gt;Node28</title>
-<g id="a_edge30_Node000027_Node000028"><a xlink:title=" ">
+<!-- Node28&#45;&gt;Node29 -->
+<g id="edge31_Node000028_Node000029" class="edge">
+<title>Node28&#45;&gt;Node29</title>
+<g id="a_edge31_Node000028_Node000029"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M514.04,-638.16C523.33,-637.64 532.67,-637.12 541.74,-636.6"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="541.75,-640.11 551.54,-636.05 541.36,-633.12 541.75,-640.11"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node11 -->
-<g id="edge32_Node000029_Node000011" class="edge">
-<title>Node29&#45;&gt;Node11</title>
-<g id="a_edge32_Node000029_Node000011"><a xlink:title=" ">
+<!-- Node30&#45;&gt;Node11 -->
+<g id="edge33_Node000030_Node000011" class="edge">
+<title>Node30&#45;&gt;Node11</title>
+<g id="a_edge33_Node000030_Node000011"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M493.73,-255.38C513.42,-255.38 534.6,-255.38 553.74,-255.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="553.54,-258.88 563.54,-255.38 553.54,-251.88 553.54,-258.88"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node17 -->
-<g id="edge33_Node000029_Node000017" class="edge">
-<title>Node29&#45;&gt;Node17</title>
-<g id="a_edge33_Node000029_Node000017"><a xlink:title=" ">
+<!-- Node30&#45;&gt;Node17 -->
+<g id="edge34_Node000030_Node000017" class="edge">
+<title>Node30&#45;&gt;Node17</title>
+<g id="a_edge34_Node000030_Node000017"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M493.62,-263.19C500.97,-266.19 507.88,-270.15 513.75,-275.38 598.11,-350.41 613.41,-497.68 616.16,-553.36"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="612.65,-553.25 616.54,-563.11 619.65,-552.98 612.65,-553.25"/>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node22 -->
-<g id="edge36_Node000031_Node000022" class="edge">
-<title>Node31&#45;&gt;Node22</title>
-<g id="a_edge36_Node000031_Node000022"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M656.88,-660.56C676.29,-655.07 700.27,-648.33 721.75,-642.38 729.02,-640.36 736.69,-638.25 744.23,-636.19"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="744.94,-639.62 753.66,-633.61 743.09,-632.87 744.94,-639.62"/>
+<!-- Node32&#45;&gt;Node23 -->
+<g id="edge37_Node000032_Node000023" class="edge">
+<title>Node32&#45;&gt;Node23</title>
+<g id="a_edge37_Node000032_Node000023"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M658.33,-660.6C683.77,-653.68 717.06,-644.62 744.43,-637.17"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="745.18,-640.59 753.91,-634.59 743.34,-633.84 745.18,-640.59"/>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node24 -->
-<g id="edge37_Node000031_Node000024" class="edge">
-<title>Node31&#45;&gt;Node24</title>
-<g id="a_edge37_Node000031_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M685.43,-667.59C700.36,-666.75 716.16,-665.85 730.98,-665.01"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="730.79,-668.53 740.58,-664.47 730.39,-661.54 730.79,-668.53"/>
-</a>
-</g>
-</g>
-<!-- Node33 -->
-<g id="Node000033" class="node">
-<title>Node33</title>
-<g id="a_Node000033"><a xlink:href="class_pass_backend_factory.html#ab2ef5455daf9d9d09008ca95254da91a" target="_top" xlink:title="Get the lazily&#45;constructed ImitatePass backend.">
-<polygon fill="white" stroke="#666666" points="477.75,-180.12 363.5,-180.12 363.5,-146.62 477.75,-146.62 477.75,-180.12"/>
-<text xml:space="preserve" text-anchor="start" x="371.5" y="-166.62" font-family="Helvetica,sans-Serif" font-size="10.00">PassBackendFactory</text>
-<text xml:space="preserve" text-anchor="middle" x="420.62" y="-153.88" font-family="Helvetica,sans-Serif" font-size="10.00">::getImitatePass</text>
-</a>
-</g>
-</g>
-<!-- Node32&#45;&gt;Node33 -->
-<g id="edge40_Node000032_Node000033" class="edge">
-<title>Node32&#45;&gt;Node33</title>
-<g id="a_edge40_Node000032_Node000033"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M291.79,-163.38C311.74,-163.38 332.8,-163.38 351.96,-163.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="351.78,-166.88 361.78,-163.38 351.78,-159.88 351.78,-166.88"/>
+<!-- Node32&#45;&gt;Node25 -->
+<g id="edge38_Node000032_Node000025" class="edge">
+<title>Node32&#45;&gt;Node25</title>
+<g id="a_edge38_Node000032_Node000025"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M685.43,-667.97C700.36,-667.21 716.16,-666.4 730.98,-665.65"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="730.77,-669.16 740.58,-665.16 730.41,-662.17 730.77,-669.16"/>
 </a>
 </g>
 </g>
 <!-- Node34 -->
 <g id="Node000034" class="node">
 <title>Node34</title>
-<g id="a_Node000034"><a xlink:href="class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6" target="_top" xlink:title="Construct the backend and connect its content search.">
-<polygon fill="white" stroke="#666666" points="685.75,-137.75 549.75,-137.75 549.75,-117 685.75,-117 685.75,-137.75"/>
-<text xml:space="preserve" text-anchor="middle" x="617.75" y="-124.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::ImitatePass</text>
+<g id="a_Node000034"><a xlink:href="class_pass_backend_factory.html#ab2ef5455daf9d9d09008ca95254da91a" target="_top" xlink:title="Get the lazily&#45;constructed ImitatePass backend.">
+<polygon fill="white" stroke="#666666" points="477.75,-180.12 363.5,-180.12 363.5,-146.62 477.75,-146.62 477.75,-180.12"/>
+<text xml:space="preserve" text-anchor="start" x="371.5" y="-166.62" font-family="Helvetica,sans-Serif" font-size="10.00">PassBackendFactory</text>
+<text xml:space="preserve" text-anchor="middle" x="420.62" y="-153.88" font-family="Helvetica,sans-Serif" font-size="10.00">::getImitatePass</text>
 </a>
 </g>
 </g>
@@ -740,35 +740,17 @@
 <g id="edge41_Node000033_Node000034" class="edge">
 <title>Node33&#45;&gt;Node34</title>
 <g id="a_edge41_Node000033_Node000034"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M478.06,-152.96C499.54,-149 524.26,-144.44 546.83,-140.27"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="547.38,-143.73 556.58,-138.48 546.11,-136.85 547.38,-143.73"/>
-</a>
-</g>
-</g>
-<!-- Node37 -->
-<g id="Node000037" class="node">
-<title>Node37</title>
-<g id="a_Node000037"><a xlink:href="class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" target="_top" xlink:title="Load all flat settings into an AppSettings value object.">
-<polygon fill="white" stroke="#666666" points="675.62,-182.75 559.88,-182.75 559.88,-162 675.62,-162 675.62,-182.75"/>
-<text xml:space="preserve" text-anchor="middle" x="617.75" y="-169.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::load</text>
-</a>
-</g>
-</g>
-<!-- Node33&#45;&gt;Node37 -->
-<g id="edge44_Node000033_Node000037" class="edge">
-<title>Node33&#45;&gt;Node37</title>
-<g id="a_edge44_Node000033_Node000037"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M478.06,-165.98C499.92,-166.99 525.15,-168.15 548.05,-169.21"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="547.76,-172.7 557.91,-169.66 548.08,-165.7 547.76,-172.7"/>
+<path fill="none" stroke="#63b8ff" d="M291.79,-163.38C311.74,-163.38 332.8,-163.38 351.96,-163.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="351.78,-166.88 361.78,-163.38 351.78,-159.88 351.78,-166.88"/>
 </a>
 </g>
 </g>
 <!-- Node35 -->
 <g id="Node000035" class="node">
 <title>Node35</title>
-<g id="a_Node000035"><a xlink:href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" target="_top" xlink:title="The newest search is over.">
-<polygon fill="white" stroke="#666666" points="854,-98.75 738.25,-98.75 738.25,-78 854,-78 854,-98.75"/>
-<text xml:space="preserve" text-anchor="middle" x="796.12" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::finished</text>
+<g id="a_Node000035"><a xlink:href="class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6" target="_top" xlink:title="Construct the backend and connect its content search.">
+<polygon fill="white" stroke="#666666" points="685.75,-137.75 549.75,-137.75 549.75,-117 685.75,-117 685.75,-137.75"/>
+<text xml:space="preserve" text-anchor="middle" x="617.75" y="-124.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::ImitatePass</text>
 </a>
 </g>
 </g>
@@ -776,64 +758,81 @@
 <g id="edge42_Node000034_Node000035" class="edge">
 <title>Node34&#45;&gt;Node35</title>
 <g id="a_edge42_Node000034_Node000035"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M667.88,-116.51C688.63,-111.92 712.98,-106.54 734.81,-101.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="735.47,-105.15 744.47,-99.57 733.95,-98.32 735.47,-105.15"/>
-</a>
-</g>
-</g>
-<!-- Node36 -->
-<g id="Node000036" class="node">
-<title>Node36</title>
-<g id="a_Node000036"><a xlink:href="class_pass.html#a74344f203b81f87b4d42a6281a176db4" target="_top" xlink:title="The newest Grep() is over; an empty list means no entry matched.">
-<polygon fill="white" stroke="#666666" points="848.75,-137.75 743.5,-137.75 743.5,-117 848.75,-117 848.75,-137.75"/>
-<text xml:space="preserve" text-anchor="middle" x="796.12" y="-124.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedGrep</text>
-</a>
-</g>
-</g>
-<!-- Node34&#45;&gt;Node36 -->
-<g id="edge43_Node000034_Node000036" class="edge">
-<title>Node34&#45;&gt;Node36</title>
-<g id="a_edge43_Node000034_Node000036"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M686.18,-127.38C701.22,-127.38 717.11,-127.38 731.96,-127.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="731.57,-130.88 741.57,-127.38 731.57,-123.88 731.57,-130.88"/>
-</a>
-</g>
-</g>
-<!-- Node37&#45;&gt;Node13 -->
-<g id="edge45_Node000037_Node000013" class="edge">
-<title>Node37&#45;&gt;Node13</title>
-<g id="a_edge45_Node000037_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M657.66,-183.2C676.85,-188.28 700.4,-194.14 721.75,-198.38 779.53,-209.85 845.15,-219.39 896.11,-226.05"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="895.54,-229.5 905.91,-227.31 896.44,-222.56 895.54,-229.5"/>
+<path fill="none" stroke="#63b8ff" d="M478.06,-152.96C499.54,-149 524.26,-144.44 546.83,-140.27"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="547.38,-143.73 556.58,-138.48 546.11,-136.85 547.38,-143.73"/>
 </a>
 </g>
 </g>
 <!-- Node38 -->
 <g id="Node000038" class="node">
 <title>Node38</title>
-<g id="a_Node000038"><a xlink:href="class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" target="_top" xlink:title="Read all flat settings from a QSettings store.">
-<polygon fill="white" stroke="#666666" points="846.88,-189.12 745.38,-189.12 745.38,-155.62 846.88,-155.62 846.88,-189.12"/>
-<text xml:space="preserve" text-anchor="start" x="753.38" y="-175.62" font-family="Helvetica,sans-Serif" font-size="10.00">SettingsSerializer</text>
-<text xml:space="preserve" text-anchor="middle" x="796.12" y="-162.88" font-family="Helvetica,sans-Serif" font-size="10.00">::load</text>
+<g id="a_Node000038"><a xlink:href="class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" target="_top" xlink:title="Load all flat settings into an AppSettings value object.">
+<polygon fill="white" stroke="#666666" points="675.62,-182.75 559.88,-182.75 559.88,-162 675.62,-162 675.62,-182.75"/>
+<text xml:space="preserve" text-anchor="middle" x="617.75" y="-169.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::load</text>
 </a>
 </g>
 </g>
-<!-- Node37&#45;&gt;Node38 -->
-<g id="edge46_Node000037_Node000038" class="edge">
-<title>Node37&#45;&gt;Node38</title>
-<g id="a_edge46_Node000037_Node000038"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M676.01,-172.38C694.42,-172.38 714.89,-172.38 733.59,-172.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="733.46,-175.88 743.46,-172.38 733.46,-168.88 733.46,-175.88"/>
+<!-- Node34&#45;&gt;Node38 -->
+<g id="edge45_Node000034_Node000038" class="edge">
+<title>Node34&#45;&gt;Node38</title>
+<g id="a_edge45_Node000034_Node000038"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M478.06,-165.98C499.92,-166.99 525.15,-168.15 548.05,-169.21"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="547.76,-172.7 557.91,-169.66 548.08,-165.7 547.76,-172.7"/>
+</a>
+</g>
+</g>
+<!-- Node36 -->
+<g id="Node000036" class="node">
+<title>Node36</title>
+<g id="a_Node000036"><a xlink:href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" target="_top" xlink:title="The newest search is over.">
+<polygon fill="white" stroke="#666666" points="854,-98.75 738.25,-98.75 738.25,-78 854,-78 854,-98.75"/>
+<text xml:space="preserve" text-anchor="middle" x="796.12" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::finished</text>
+</a>
+</g>
+</g>
+<!-- Node35&#45;&gt;Node36 -->
+<g id="edge43_Node000035_Node000036" class="edge">
+<title>Node35&#45;&gt;Node36</title>
+<g id="a_edge43_Node000035_Node000036"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M667.88,-116.51C688.63,-111.92 712.98,-106.54 734.81,-101.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="735.47,-105.15 744.47,-99.57 733.95,-98.32 735.47,-105.15"/>
+</a>
+</g>
+</g>
+<!-- Node37 -->
+<g id="Node000037" class="node">
+<title>Node37</title>
+<g id="a_Node000037"><a xlink:href="class_pass.html#a74344f203b81f87b4d42a6281a176db4" target="_top" xlink:title="The newest Grep() is over; an empty list means no entry matched.">
+<polygon fill="white" stroke="#666666" points="848.75,-137.75 743.5,-137.75 743.5,-117 848.75,-117 848.75,-137.75"/>
+<text xml:space="preserve" text-anchor="middle" x="796.12" y="-124.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedGrep</text>
+</a>
+</g>
+</g>
+<!-- Node35&#45;&gt;Node37 -->
+<g id="edge44_Node000035_Node000037" class="edge">
+<title>Node35&#45;&gt;Node37</title>
+<g id="a_edge44_Node000035_Node000037"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M686.18,-127.38C701.22,-127.38 717.11,-127.38 731.96,-127.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="731.57,-130.88 741.57,-127.38 731.57,-123.88 731.57,-130.88"/>
+</a>
+</g>
+</g>
+<!-- Node38&#45;&gt;Node13 -->
+<g id="edge46_Node000038_Node000013" class="edge">
+<title>Node38&#45;&gt;Node13</title>
+<g id="a_edge46_Node000038_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M659.21,-183.24C678.14,-188.15 701.03,-193.86 721.75,-198.38 783.34,-211.8 853.66,-224.6 905.74,-233.6"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="904.96,-237.02 915.4,-235.26 906.14,-230.12 904.96,-237.02"/>
 </a>
 </g>
 </g>
 <!-- Node39 -->
 <g id="Node000039" class="node">
 <title>Node39</title>
-<g id="a_Node000039"><a xlink:href="struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" target="_top" xlink:title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its...">
-<polygon fill="white" stroke="#666666" points="1056.38,-208.12 910.62,-208.12 910.62,-174.62 1056.38,-174.62 1056.38,-208.12"/>
-<text xml:space="preserve" text-anchor="start" x="918.62" y="-194.62" font-family="Helvetica,sans-Serif" font-size="10.00">AppSettings::defaultSecret</text>
-<text xml:space="preserve" text-anchor="middle" x="983.5" y="-181.88" font-family="Helvetica,sans-Serif" font-size="10.00">FieldNames</text>
+<g id="a_Node000039"><a xlink:href="class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" target="_top" xlink:title="Read all flat settings from a QSettings store.">
+<polygon fill="white" stroke="#666666" points="846.88,-189.12 745.38,-189.12 745.38,-155.62 846.88,-155.62 846.88,-189.12"/>
+<text xml:space="preserve" text-anchor="start" x="753.38" y="-175.62" font-family="Helvetica,sans-Serif" font-size="10.00">SettingsSerializer</text>
+<text xml:space="preserve" text-anchor="middle" x="796.12" y="-162.88" font-family="Helvetica,sans-Serif" font-size="10.00">::load</text>
 </a>
 </g>
 </g>
@@ -841,55 +840,56 @@
 <g id="edge47_Node000038_Node000039" class="edge">
 <title>Node38&#45;&gt;Node39</title>
 <g id="a_edge47_Node000038_Node000039"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M847.29,-177.52C863.29,-179.16 881.44,-181.02 899.14,-182.83"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="898.56,-186.29 908.86,-183.83 899.27,-179.33 898.56,-186.29"/>
+<path fill="none" stroke="#63b8ff" d="M676.01,-172.38C694.42,-172.38 714.89,-172.38 733.59,-172.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="733.46,-175.88 743.46,-172.38 733.46,-168.88 733.46,-175.88"/>
 </a>
 </g>
 </g>
 <!-- Node40 -->
 <g id="Node000040" class="node">
 <title>Node40</title>
-<g id="a_Node000040"><a xlink:href="class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" target="_top" xlink:title="Read only the password generation settings from a QSettings store.">
-<polygon fill="white" stroke="#666666" points="1060.5,-156.12 906.5,-156.12 906.5,-122.62 1060.5,-122.62 1060.5,-156.12"/>
-<text xml:space="preserve" text-anchor="start" x="914.5" y="-142.62" font-family="Helvetica,sans-Serif" font-size="10.00">SettingsSerializer</text>
-<text xml:space="preserve" text-anchor="middle" x="983.5" y="-129.88" font-family="Helvetica,sans-Serif" font-size="10.00">::loadPasswordConfiguration</text>
+<g id="a_Node000040"><a xlink:href="struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" target="_top" xlink:title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its...">
+<polygon fill="white" stroke="#666666" points="1056.38,-199.12 910.62,-199.12 910.62,-165.62 1056.38,-165.62 1056.38,-199.12"/>
+<text xml:space="preserve" text-anchor="start" x="918.62" y="-185.62" font-family="Helvetica,sans-Serif" font-size="10.00">AppSettings::defaultSecret</text>
+<text xml:space="preserve" text-anchor="middle" x="983.5" y="-172.88" font-family="Helvetica,sans-Serif" font-size="10.00">FieldNames</text>
 </a>
 </g>
 </g>
-<!-- Node38&#45;&gt;Node40 -->
-<g id="edge48_Node000038_Node000040" class="edge">
-<title>Node38&#45;&gt;Node40</title>
-<g id="a_edge48_Node000038_Node000040"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M847.29,-163.44C862.01,-160.82 878.56,-157.88 894.9,-154.97"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="895.44,-158.43 904.67,-153.23 894.21,-151.54 895.44,-158.43"/>
+<!-- Node39&#45;&gt;Node40 -->
+<g id="edge48_Node000039_Node000040" class="edge">
+<title>Node39&#45;&gt;Node40</title>
+<g id="a_edge48_Node000039_Node000040"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M847.29,-175.08C863.21,-175.94 881.27,-176.91 898.88,-177.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="898.68,-181.36 908.86,-178.4 899.06,-174.37 898.68,-181.36"/>
 </a>
 </g>
 </g>
-<!-- Node42 -->
-<g id="Node000042" class="node">
-<title>Node42</title>
-<g id="a_Node000042"><a xlink:href="class_pass_backend_factory.html#a736cc5bb20a13171ce8537f9b4570bb8" target="_top" xlink:title="Get the lazily&#45;constructed RealPass backend.">
-<polygon fill="white" stroke="#666666" points="477.75,-113.12 363.5,-113.12 363.5,-79.62 477.75,-79.62 477.75,-113.12"/>
-<text xml:space="preserve" text-anchor="start" x="371.5" y="-99.62" font-family="Helvetica,sans-Serif" font-size="10.00">PassBackendFactory</text>
-<text xml:space="preserve" text-anchor="middle" x="420.62" y="-86.88" font-family="Helvetica,sans-Serif" font-size="10.00">::getRealPass</text>
+<!-- Node41 -->
+<g id="Node000041" class="node">
+<title>Node41</title>
+<g id="a_Node000041"><a xlink:href="class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" target="_top" xlink:title="Read only the password generation settings from a QSettings store.">
+<polygon fill="white" stroke="#666666" points="1060.5,-147.12 906.5,-147.12 906.5,-113.62 1060.5,-113.62 1060.5,-147.12"/>
+<text xml:space="preserve" text-anchor="start" x="914.5" y="-133.62" font-family="Helvetica,sans-Serif" font-size="10.00">SettingsSerializer</text>
+<text xml:space="preserve" text-anchor="middle" x="983.5" y="-120.88" font-family="Helvetica,sans-Serif" font-size="10.00">::loadPasswordConfiguration</text>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node42 -->
-<g id="edge50_Node000041_Node000042" class="edge">
-<title>Node41&#45;&gt;Node42</title>
-<g id="a_edge50_Node000041_Node000042"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M285.18,-110.4C307.06,-108.12 330.75,-105.65 352.06,-103.42"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="352.2,-106.93 361.78,-102.41 351.48,-99.97 352.2,-106.93"/>
+<!-- Node39&#45;&gt;Node41 -->
+<g id="edge49_Node000039_Node000041" class="edge">
+<title>Node39&#45;&gt;Node41</title>
+<g id="a_edge49_Node000039_Node000041"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M847.29,-161.01C862.24,-157.62 879.08,-153.81 895.67,-150.05"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="896.05,-153.55 905.03,-147.93 894.51,-146.72 896.05,-153.55"/>
 </a>
 </g>
 </g>
 <!-- Node43 -->
 <g id="Node000043" class="node">
 <title>Node43</title>
-<g id="a_Node000043"><a xlink:href="class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6" target="_top" xlink:title="Construct a RealPass instance.">
-<polygon fill="white" stroke="#666666" points="672.25,-98.75 563.25,-98.75 563.25,-78 672.25,-78 672.25,-98.75"/>
-<text xml:space="preserve" text-anchor="middle" x="617.75" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::RealPass</text>
+<g id="a_Node000043"><a xlink:href="class_pass_backend_factory.html#a736cc5bb20a13171ce8537f9b4570bb8" target="_top" xlink:title="Get the lazily&#45;constructed RealPass backend.">
+<polygon fill="white" stroke="#666666" points="477.75,-113.12 363.5,-113.12 363.5,-79.62 477.75,-79.62 477.75,-113.12"/>
+<text xml:space="preserve" text-anchor="start" x="371.5" y="-99.62" font-family="Helvetica,sans-Serif" font-size="10.00">PassBackendFactory</text>
+<text xml:space="preserve" text-anchor="middle" x="420.62" y="-86.88" font-family="Helvetica,sans-Serif" font-size="10.00">::getRealPass</text>
 </a>
 </g>
 </g>
@@ -897,35 +897,17 @@
 <g id="edge51_Node000042_Node000043" class="edge">
 <title>Node42&#45;&gt;Node43</title>
 <g id="a_edge51_Node000042_Node000043"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M478.06,-94.06C500.99,-93.12 527.62,-92.03 551.38,-91.06"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="551.43,-94.56 561.28,-90.65 551.14,-87.56 551.43,-94.56"/>
-</a>
-</g>
-</g>
-<!-- Node43&#45;&gt;Node35 -->
-<g id="edge53_Node000043_Node000035" class="edge">
-<title>Node43&#45;&gt;Node35</title>
-<g id="a_edge53_Node000043_Node000035"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M672.63,-88.38C689.66,-88.38 708.72,-88.38 726.63,-88.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="726.39,-91.88 736.39,-88.38 726.39,-84.88 726.39,-91.88"/>
-</a>
-</g>
-</g>
-<!-- Node43&#45;&gt;Node36 -->
-<g id="edge54_Node000043_Node000036" class="edge">
-<title>Node43&#45;&gt;Node36</title>
-<g id="a_edge54_Node000043_Node000036"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M667.88,-99.24C688.63,-103.83 712.98,-109.21 734.81,-114.04"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="733.95,-117.43 744.47,-116.18 735.47,-110.6 733.95,-117.43"/>
+<path fill="none" stroke="#63b8ff" d="M285.18,-110.4C307.06,-108.12 330.75,-105.65 352.06,-103.42"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="352.2,-106.93 361.78,-102.41 351.48,-99.97 352.2,-106.93"/>
 </a>
 </g>
 </g>
 <!-- Node44 -->
 <g id="Node000044" class="node">
 <title>Node44</title>
-<g id="a_Node000044"><a xlink:href="class_executor.html#a22b5633f6b06f7f15be77370b5bd2871" target="_top" xlink:title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,...">
-<polygon fill="white" stroke="#666666" points="853.62,-59.75 738.62,-59.75 738.62,-39 853.62,-39 853.62,-59.75"/>
-<text xml:space="preserve" text-anchor="middle" x="796.12" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::dequeuing</text>
+<g id="a_Node000044"><a xlink:href="class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6" target="_top" xlink:title="Construct a RealPass instance.">
+<polygon fill="white" stroke="#666666" points="672.25,-98.75 563.25,-98.75 563.25,-78 672.25,-78 672.25,-98.75"/>
+<text xml:space="preserve" text-anchor="middle" x="617.75" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::RealPass</text>
 </a>
 </g>
 </g>
@@ -933,53 +915,71 @@
 <g id="edge52_Node000043_Node000044" class="edge">
 <title>Node43&#45;&gt;Node44</title>
 <g id="a_edge52_Node000043_Node000044"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M667.88,-77.51C688.63,-72.92 712.98,-67.54 734.81,-62.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="735.47,-66.15 744.47,-60.57 733.95,-59.32 735.47,-66.15"/>
+<path fill="none" stroke="#63b8ff" d="M478.06,-94.06C500.99,-93.12 527.62,-92.03 551.38,-91.06"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="551.43,-94.56 561.28,-90.65 551.14,-87.56 551.43,-94.56"/>
+</a>
+</g>
+</g>
+<!-- Node44&#45;&gt;Node36 -->
+<g id="edge54_Node000044_Node000036" class="edge">
+<title>Node44&#45;&gt;Node36</title>
+<g id="a_edge54_Node000044_Node000036"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M672.63,-88.38C689.66,-88.38 708.72,-88.38 726.63,-88.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="726.39,-91.88 736.39,-88.38 726.39,-84.88 726.39,-91.88"/>
+</a>
+</g>
+</g>
+<!-- Node44&#45;&gt;Node37 -->
+<g id="edge55_Node000044_Node000037" class="edge">
+<title>Node44&#45;&gt;Node37</title>
+<g id="a_edge55_Node000044_Node000037"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M667.88,-99.24C688.63,-103.83 712.98,-109.21 734.81,-114.04"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="733.95,-117.43 744.47,-116.18 735.47,-110.6 733.95,-117.43"/>
 </a>
 </g>
 </g>
 <!-- Node45 -->
 <g id="Node000045" class="node">
 <title>Node45</title>
-<g id="a_Node000045"><a xlink:href="class_real_pass.html#a6d7163b691663d92f31ca20886f9979f" target="_top" xlink:title="The executor is about to run (or drop) its next item: for an insert, take its entry from m_insertQueu...">
-<polygon fill="white" stroke="#666666" points="861.12,-20.75 731.12,-20.75 731.12,0 861.12,0 861.12,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="796.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::onDequeuing</text>
+<g id="a_Node000045"><a xlink:href="class_executor.html#a22b5633f6b06f7f15be77370b5bd2871" target="_top" xlink:title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,...">
+<polygon fill="white" stroke="#666666" points="853.62,-59.75 738.62,-59.75 738.62,-39 853.62,-39 853.62,-59.75"/>
+<text xml:space="preserve" text-anchor="middle" x="796.12" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::dequeuing</text>
 </a>
 </g>
 </g>
-<!-- Node43&#45;&gt;Node45 -->
-<g id="edge55_Node000043_Node000045" class="edge">
-<title>Node43&#45;&gt;Node45</title>
-<g id="a_edge55_Node000043_Node000045"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M634.89,-77.62C654.64,-64.85 689.48,-43.62 721.75,-30.38 726.96,-28.24 732.47,-26.26 738.04,-24.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="738.77,-27.88 747.3,-21.59 736.72,-21.18 738.77,-27.88"/>
+<!-- Node44&#45;&gt;Node45 -->
+<g id="edge53_Node000044_Node000045" class="edge">
+<title>Node44&#45;&gt;Node45</title>
+<g id="a_edge53_Node000044_Node000045"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M667.88,-77.51C688.63,-72.92 712.98,-67.54 734.81,-62.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="735.47,-66.15 744.47,-60.57 733.95,-59.32 735.47,-66.15"/>
 </a>
 </g>
 </g>
 <!-- Node46 -->
 <g id="Node000046" class="node">
 <title>Node46</title>
-<g id="a_Node000046"><a xlink:href="class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" target="_top" xlink:title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO).">
-<polygon fill="white" stroke="#666666" points="1055.25,-20.75 911.75,-20.75 911.75,0 1055.25,0 1055.25,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="983.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::entryFingerprint</text>
+<g id="a_Node000046"><a xlink:href="class_real_pass.html#a6d7163b691663d92f31ca20886f9979f" target="_top" xlink:title="The executor is about to run (or drop) its next item: for an insert, take its entry from m_insertQueu...">
+<polygon fill="white" stroke="#666666" points="861.12,-20.75 731.12,-20.75 731.12,0 861.12,0 861.12,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="796.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::onDequeuing</text>
 </a>
 </g>
 </g>
-<!-- Node45&#45;&gt;Node46 -->
-<g id="edge56_Node000045_Node000046" class="edge">
-<title>Node45&#45;&gt;Node46</title>
-<g id="a_edge56_Node000045_Node000046"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M861.44,-10.38C873.9,-10.38 887.11,-10.38 900.05,-10.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="899.81,-13.88 909.81,-10.38 899.81,-6.88 899.81,-13.88"/>
+<!-- Node44&#45;&gt;Node46 -->
+<g id="edge56_Node000044_Node000046" class="edge">
+<title>Node44&#45;&gt;Node46</title>
+<g id="a_edge56_Node000044_Node000046"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M634.89,-77.62C654.64,-64.85 689.48,-43.62 721.75,-30.38 726.96,-28.24 732.47,-26.26 738.04,-24.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="738.77,-27.88 747.3,-21.59 736.72,-21.18 738.77,-27.88"/>
 </a>
 </g>
 </g>
 <!-- Node47 -->
 <g id="Node000047" class="node">
 <title>Node47</title>
-<g id="a_Node000047"><a xlink:href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" target="_top" xlink:title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">
-<polygon fill="white" stroke="#666666" points="1239.25,-20.75 1121.25,-20.75 1121.25,0 1239.25,0 1239.25,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1180.25" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::openRegularFile</text>
+<g id="a_Node000047"><a xlink:href="class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" target="_top" xlink:title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO).">
+<polygon fill="white" stroke="#666666" points="1055.25,-20.75 911.75,-20.75 911.75,0 1055.25,0 1055.25,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="983.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::entryFingerprint</text>
 </a>
 </g>
 </g>
@@ -987,6 +987,24 @@
 <g id="edge57_Node000046_Node000047" class="edge">
 <title>Node46&#45;&gt;Node47</title>
 <g id="a_edge57_Node000046_Node000047"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M861.44,-10.38C873.9,-10.38 887.11,-10.38 900.05,-10.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="899.81,-13.88 909.81,-10.38 899.81,-6.88 899.81,-13.88"/>
+</a>
+</g>
+</g>
+<!-- Node48 -->
+<g id="Node000048" class="node">
+<title>Node48</title>
+<g id="a_Node000048"><a xlink:href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" target="_top" xlink:title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">
+<polygon fill="white" stroke="#666666" points="1239.25,-20.75 1121.25,-20.75 1121.25,0 1239.25,0 1239.25,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1180.25" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::openRegularFile</text>
+</a>
+</g>
+</g>
+<!-- Node47&#45;&gt;Node48 -->
+<g id="edge58_Node000047_Node000048" class="edge">
+<title>Node47&#45;&gt;Node48</title>
+<g id="a_edge58_Node000047_Node000048"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1055.64,-10.38C1073.2,-10.38 1091.98,-10.38 1109.48,-10.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1109.25,-13.88 1119.25,-10.38 1109.25,-6.88 1109.25,-13.88"/>
 </a>

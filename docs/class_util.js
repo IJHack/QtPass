@@ -2,6 +2,7 @@ var class_util =
 [
     [ "Filler", "class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76", null ],
     [ "applyPassProcessDefaults", "class_util.html#ab16f1ac58307067ced38315c49f6fcba", null ],
+    [ "boundSpaceRuns", "class_util.html#a57fa6e612f022589f609d8b463111a48", null ],
     [ "configIsValid", "class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc", null ],
     [ "copyFileReplacing", "class_util.html#ac134662c3a71ca1cd0ec04642e9a6255", null ],
     [ "directoriesUnder", "class_util.html#aea1468816a5747a7b3421d9966689202", null ],
@@ -35,5 +36,6 @@ var class_util =
     [ "writeFileReplacing", "class_util.html#a5d33d7a093ab7e104320384f4ec3213c", null ],
     [ "_env", "class_util.html#a6f14f16322c96b174b357bbad4b66b67", null ],
     [ "_envInitialised", "class_util.html#aeccb471a23085461c3c79f24f7f82e2c", null ],
-    [ "kMaxGpgIdBytes", "class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a", null ]
+    [ "kMaxGpgIdBytes", "class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a", null ],
+    [ "kMaxSpaceRun", "class_util.html#acfef9dbc0925b6f3631f19b381a3cabb", null ]
 ];

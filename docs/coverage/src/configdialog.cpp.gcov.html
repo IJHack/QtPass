@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 20:36:09</td>
+            <td class="headerValue">2026-11-15 08:54:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">98.6&nbsp;%</td>
@@ -524,21 +524,21 @@
 <span id="L451"><span class="lineNum">     451</span> <span class="tlaGNC">         132 :   return keys;</span></span>
 <span id="L452"><span class="lineNum">     452</span>              : }</span>
 <span id="L453"><span class="lineNum">     453</span>              : </span>
-<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">          84 : void ConfigDialog::changeEvent(QEvent *event) {</span></span>
-<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">          84 :   QDialog::changeEvent(event);</span></span>
-<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">          84 :   if (event-&gt;type() != QEvent::ActivationChange) {</span></span>
+<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">          83 : void ConfigDialog::changeEvent(QEvent *event) {</span></span>
+<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">          83 :   QDialog::changeEvent(event);</span></span>
+<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">          83 :   if (event-&gt;type() != QEvent::ActivationChange) {</span></span>
 <span id="L457"><span class="lineNum">     457</span>              :     return;</span>
 <span id="L458"><span class="lineNum">     458</span>              :   }</span>
 <span id="L459"><span class="lineNum">     459</span>              :   // A key is imported somewhere else: a terminal, a key manager, or the</span>
 <span id="L460"><span class="lineNum">     460</span>              :   // key generator this dialog opens. Whatever keyring gpg uses, the dialog</span>
 <span id="L461"><span class="lineNum">     461</span>              :   // is in the background meanwhile, so a key gpg did not know is asked</span>
 <span id="L462"><span class="lineNum">     462</span>              :   // about again on return.</span>
-<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">          11 :   if (!isActiveWindow()) {</span></span>
-<span id="L464"><span class="lineNum">     464</span> <span class="tlaGNC">           4 :     const auto forgotten = m_primaryOf.removeIf(</span></span>
+<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">          10 :   if (!isActiveWindow()) {</span></span>
+<span id="L464"><span class="lineNum">     464</span> <span class="tlaGNC">           3 :     const auto forgotten = m_primaryOf.removeIf(</span></span>
 <span id="L465"><span class="lineNum">     465</span>              :         [](const std::pair&lt;const QString &amp;, QString &amp;&gt; &amp;lookup) {</span>
 <span id="L466"><span class="lineNum">     466</span>              :           return lookup.second.isEmpty();</span>
 <span id="L467"><span class="lineNum">     467</span>              :         });</span>
-<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">           5 :     m_recheckSigners = m_recheckSigners || forgotten &gt; 0;</span></span>
+<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">           4 :     m_recheckSigners = m_recheckSigners || forgotten &gt; 0;</span></span>
 <span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">           7 :   } else if (m_recheckSigners) {</span></span>
 <span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">           1 :     m_recheckSigners = false;</span></span>
 <span id="L471"><span class="lineNum">     471</span> <span class="tlaGNC">           1 :     validate();</span></span>
