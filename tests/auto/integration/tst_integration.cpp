@@ -91,6 +91,40 @@ static QByteArray readFileBytes(const QString &path) {
   return f.readAll();
 }
 
+// Encrypt @p bytes as they are (not through QString) to @p recipients into
+// @p gpgFile, as another tool (pass insert -m from a Latin-1 terminal, a
+// key file) would have stored them. Returns gpg's exit code.
+static int encryptBytesTo(const QString &gnupgHome, const QByteArray &bytes,
+                          const QStringList &recipients,
+                          const QString &gpgFile) {
+  QStringList args = {"--batch", "--yes", "--trust-model", "always",
+                      "-e",      "-o",    gpgFile};
+  for (const QString &r : recipients) {
+    args << "-r" << r;
+  }
+  QProcess p;
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert("GNUPGHOME", gnupgHome);
+  p.setProcessEnvironment(env);
+  p.start(findGpg(), args);
+  p.write(bytes);
+  p.closeWriteChannel();
+  p.waitForFinished(30000);
+  return p.exitStatus() == QProcess::NormalExit ? p.exitCode() : -1;
+}
+
+// Decrypt @p gpgFile to its exact bytes; empty on failure.
+static QByteArray decryptBytes(const QString &gnupgHome,
+                               const QString &gpgFile) {
+  QProcess p;
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert("GNUPGHOME", gnupgHome);
+  p.setProcessEnvironment(env);
+  p.start(findGpg(), {"--batch", "--quiet", "-d", gpgFile});
+  p.waitForFinished(30000);
+  return p.exitCode() == 0 ? p.readAllStandardOutput() : QByteArray();
+}
+
 // Run gpg synchronously with the given GNUPGHOME, return exit code.
 static int runGpg(const QString &gnupgHome, const QStringList &args,
                   const QString &input = QString(), QString *out = nullptr,
@@ -336,6 +370,8 @@ private Q_SLOTS:
 
   // UTF-8 and unicode handling
   void imitatePass_utf8Characters();
+  void imitatePass_showFlagsAnEntryThatIsNotUtf8();
+  void imitatePass_reencryptKeepsBytesThatAreNotUtf8();
 
   // Edge cases
   void imitatePass_longPassword();
@@ -2117,6 +2153,120 @@ void tst_integration::imitatePass_emptyPassword() {
       decrypted == "\n",
       qPrintable(QString("empty password should be preserved as '\\n', got: %1")
                      .arg(decrypted)));
+}
+
+/**
+ * @brief Showing an entry says whether its text saves back as its bytes: not
+ *        for a Latin-1 one, which the edit dialog then refuses to load (an OK
+ *        replaced each such byte with U+FFFD); yes for one that holds a
+ *        literal U+FFFD, as older QtPass versions left behind, so that one
+ *        stays editable.
+ */
+void tst_integration::imitatePass_showFlagsAnEntryThatIsNotUtf8() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  const struct {
+    const char *name;
+    QByteArray bytes;
+    bool lossless;
+  } cases[] = {
+      {"latin1",
+       QByteArray("Gr\xfc\xdf"
+                  "e-4711\nlogin: alice\n"),
+       false},
+      {"replaced",
+       QByteArray("Gr\xef\xbf\xbd"
+                  "e-4711\n"),
+       true},
+      {"utf8",
+       QByteArray("Gr\xc3\xbc\xc3\x9f"
+                  "e-4711\n"),
+       true},
+  };
+  for (const auto &c : cases) {
+    const QString gpgFile =
+        storeDir.path() + "/" + QLatin1String(c.name) + ".gpg";
+    QCOMPARE(encryptBytesTo(m_gnupgHome.path(), c.bytes, {m_keyFingerprint},
+                            gpgFile),
+             0);
+    QSignalSpy showSpy(&pass, &Pass::finishedShow);
+    pass.Show(QLatin1String(c.name));
+    QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+    QCOMPARE(showSpy.size(), 1);
+    QVERIFY2(showSpy[0][2].toBool() == c.lossless,
+             qPrintable(QStringLiteral("%1: lossless should be %2")
+                            .arg(QLatin1String(c.name))
+                            .arg(c.lossless)));
+  }
+}
+
+/**
+ * @brief Re-encrypting a folder keeps every byte of an entry that is not
+ *        UTF-8: the plaintext went through QString, so a Latin-1 password and
+ *        a binary key came back with U+FFFD in place of those bytes, and the
+ *        check after encrypting compared two strings damaged the same way.
+ */
+void tst_integration::imitatePass_reencryptKeepsBytesThatAreNotUtf8() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  const auto writeGpgId = [&storeDir](const QString &content) {
+    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(gpgId.write(content.toUtf8()) == content.toUtf8().size());
+  };
+  writeGpgId(m_keyFingerprint + "\n" + m_keyFingerprint2 + "\n");
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  const QByteArray latin1("Gr\xfc\xdf"
+                          "e-4711\nlogin: alice\n");
+  // No final newline: re-encryption added one.
+  const QByteArray keyFile("\x8a\x00\xfe\xc3k", 5);
+  // gpg drops the CRs of an entry it stored as text (textmode, below).
+  const QByteArray crlf("pw\r\nnote\r\n");
+  const QByteArray binary("key\n\x00\x80\xff\xfe\xc3\n", 10);
+  const QString latin1File = storeDir.path() + "/latin1.gpg";
+  const QString binaryFile = storeDir.path() + "/binary.gpg";
+  const QString keyFileFile = storeDir.path() + "/keyfile.gpg";
+  const QString crlfFile = storeDir.path() + "/crlf.gpg";
+  const QStringList both = {m_keyFingerprint, m_keyFingerprint2};
+  QCOMPARE(encryptBytesTo(m_gnupgHome.path(), latin1, both, latin1File), 0);
+  QCOMPARE(encryptBytesTo(m_gnupgHome.path(), binary, both, binaryFile), 0);
+  QCOMPARE(encryptBytesTo(m_gnupgHome.path(), keyFile, both, keyFileFile), 0);
+  QCOMPARE(encryptBytesTo(m_gnupgHome.path(), crlf, both, crlfFile), 0);
+
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub2.isEmpty());
+  QVERIFY(recipientKeyIds(m_gnupgHome.path(), latin1File).contains(sub2));
+
+  writeGpgId(m_keyFingerprint + "\n");
+  {
+    // A user's gpg.conf asking for text mode must not cost the CRs.
+    GpgConfLine textmode(m_gnupgHome.path(), QStringLiteral("textmode"));
+    QVERIFY(textmode.ok());
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  }
+
+  // Re-encrypted (the removed key is gone), and byte for byte the same.
+  for (const QString &file : {latin1File, binaryFile, keyFileFile, crlfFile}) {
+    QVERIFY2(!recipientKeyIds(m_gnupgHome.path(), file).contains(sub2),
+             qPrintable(file + " was not re-encrypted"));
+  }
+  QCOMPARE(decryptBytes(m_gnupgHome.path(), latin1File), latin1);
+  QCOMPARE(decryptBytes(m_gnupgHome.path(), binaryFile), binary);
+  QCOMPARE(decryptBytes(m_gnupgHome.path(), keyFileFile), keyFile);
+  QCOMPARE(decryptBytes(m_gnupgHome.path(), crlfFile), crlf);
 }
 
 void tst_integration::imitatePass_utf8Characters() {

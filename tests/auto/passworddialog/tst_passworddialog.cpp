@@ -103,8 +103,9 @@ public:
 
   /// Answer the last Show() with @p out, or another entry's decrypt when
   /// @p file is given.
-  void deliverShow(const QString &out, const QString &file = QString()) {
-    emit finishedShow(out, file.isEmpty() ? shown : file);
+  void deliverShow(const QString &out, const QString &file = QString(),
+                   bool lossless = true) {
+    emit finishedShow(out, file.isEmpty() ? shown : file, lossless);
   }
   QString shown;
   void deliverError(int exitCode, const QString &err) {
@@ -127,6 +128,8 @@ private Q_SLOTS:
 
   void existingEntryLocksEditorUntilContentLoads();
   void contentLoadUnlocksEditorAndOk();
+  void entryThatWouldNotSaveUnchangedIsNotLoaded();
+  void entryWithAReplacementCharacterStaysEditable();
   void anotherEntrysDecryptIsIgnored();
   void decryptErrorKeepsDialogOpenWithReason();
   void lateErrorAfterContentLoadIsIgnored();
@@ -719,6 +722,59 @@ void tst_passworddialog::contentLoadUnlocksEditorAndOk() {
   auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
   QVERIFY2(status->text().isEmpty(),
            "the status label must be cleared once the content has loaded");
+}
+
+/**
+ * @brief An entry whose text does not save back as its bytes (not UTF-8)
+ *        is not loaded: OK wrote the whole entry back from text in which
+ *        every such byte was U+FFFD, and reported the save as done.
+ */
+void tst_passworddialog::entryThatWouldNotSaveUnchangedIsNotLoaded() {
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  pass.deliverShow(QStringLiteral("Gr\uFFFD\uFFFDe-4711\nlogin: alice\n"),
+                   QString(), false);
+
+  QVERIFY2(!okButton(d)->isEnabled(), "Ok must stay disabled");
+  auto *pw = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY(pw != nullptr);
+  QVERIFY2(!pw->isEnabled(), "the editor must stay locked");
+  QVERIFY2(pw->text().isEmpty(), "nothing of the entry is loaded");
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  QVERIFY(status != nullptr);
+  QVERIFY2(status->text().contains(QStringLiteral("cannot save unchanged")),
+           qPrintable(status->text()));
+  d.accept();
+  QVERIFY2(pass.inserted.isEmpty(), "nothing may be saved over the entry");
+
+  // A later answer for the same entry that is refused takes back what an
+  // earlier one loaded: OK must not write that over the entry.
+  FakePass again;
+  PasswordDialog e(&again, s, QStringLiteral("entry.gpg"), false);
+  again.deliverShow(QStringLiteral("old\n"));
+  QVERIFY(okButton(e)->isEnabled());
+  again.deliverShow(QStringLiteral("Gr\uFFFD\n"), QString(), false);
+  QVERIFY2(!okButton(e)->isEnabled(), "Ok must be disabled again");
+  auto *pw2 = e.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY2(!pw2->isEnabled(), "the editor must be locked again");
+  e.accept();
+  QVERIFY2(again.inserted.isEmpty(), "the earlier load must not be saved");
+}
+
+/**
+ * @brief A literal U+FFFD is text like any other: an entry holding one (as
+ *        older QtPass versions left behind) still opens and saves as it was.
+ */
+void tst_passworddialog::entryWithAReplacementCharacterStaysEditable() {
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  const QString content = QStringLiteral("Gr\uFFFD\uFFFDe-4711\n");
+  pass.deliverShow(content);
+  QVERIFY(okButton(d)->isEnabled());
+  okButton(d)->click();
+  QCOMPARE(pass.insertedContent, content);
 }
 
 /**

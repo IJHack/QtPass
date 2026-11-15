@@ -86,6 +86,9 @@ class Executor : public QObject {
   int m_pendingErrors = 0;
   /// A drained() check is posted and not run yet.
   bool m_drainCheckPosted = false;
+  /// lastOutputLossless(): set by collectOutput(), true again after the
+  /// emit, so a receiver that runs later never reads a stale value.
+  bool m_outputLossless = true;
   /**
    * @brief Start @p process running @p app, handling the "wsl " prefix once
    * for both the queued and the blocking path.
@@ -136,6 +139,26 @@ class Executor : public QObject {
                           QString *process_out, QString *process_err,
                           const std::atomic_bool *cancel = nullptr,
                           int timeoutMs = -1) -> int;
+  /**
+   * @brief runBlocking() on bytes: @p input is written and stdout returned
+   * as they are, with no text decoding or encoding. stderr is still decoded.
+   * @param process Pre-configured QProcess to run.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Bytes to write to stdin (empty = none).
+   * @param process_out If non-null, receives stdout.
+   * @param process_err If non-null, receives stderr.
+   * @param cancel Optional flag another thread may set to end the run.
+   * @param timeoutMs Time for the whole run, start included; negative for
+   *        none.
+   * @return Process exit code, or -1 on start/crash failure, cancel or
+   *         timeout.
+   */
+  static auto runBlockingRaw(QProcess &process, const QString &app,
+                             const QStringList &args, const QByteArray &input,
+                             QByteArray *process_out, QString *process_err,
+                             const std::atomic_bool *cancel = nullptr,
+                             int timeoutMs = -1) -> int;
 
 public:
   /**
@@ -248,6 +271,31 @@ public:
       const QString &input = QString(), QString *process_out = nullptr,
       QString *process_err = nullptr, const std::atomic_bool *cancel = nullptr,
       int timeoutMs = -1) -> int;
+
+  /**
+   * @brief executeBlocking() on bytes, for an entry's plaintext: @p input is
+   * written to stdin and stdout returned exactly as they are, so content
+   * that is not UTF-8 (a Latin-1 password, a binary key) passes through
+   * unchanged. stderr is decoded as in executeBlocking(). A name of its own,
+   * not an overload: a string literal or nullptr would be ambiguous.
+   * @param process Process object to run the command on.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Bytes to write to stdin (empty = none).
+   * @param process_out If non-null, receives stdout.
+   * @param process_err If non-null, receives stderr.
+   * @param cancel If non-null, a flag that ends the run when set.
+   * @param timeoutMs Time for the whole run, start included; negative (the
+   *        default) for none.
+   * @return Process exit code, or -1 if it failed to start, crashed, was
+   * cancelled or ran out of time.
+   */
+  [[nodiscard]] static auto
+  executeBlockingRaw(QProcess &process, const QString &app,
+                     const QStringList &args, const QByteArray &input,
+                     QByteArray *process_out, QString *process_err = nullptr,
+                     const std::atomic_bool *cancel = nullptr,
+                     int timeoutMs = -1) -> int;
 
   /**
    * @brief Run a command synchronously capturing stdout and stderr.
@@ -423,6 +471,20 @@ public:
    * @return true when the executor has nothing in flight.
    */
   auto isIdle() const -> bool { return !running && m_execQueue.isEmpty(); }
+  /**
+   * @brief Whether the stdout of the item whose finished() or error() is
+   * being emitted encodes back (toUtf8(), as every writer here does) to
+   * exactly the bytes the process wrote. When false, writing that text back
+   * changes the bytes whatever else happens to it.
+   *
+   * Valid only in a slot directly connected to those signals, while the
+   * emission runs; at any other time, and when stdout was not read, true.
+   * @return false when the output was not UTF-8 or began with a byte order
+   *         mark.
+   */
+  [[nodiscard]] auto lastOutputLossless() const -> bool {
+    return m_outputLossless;
+  }
 
   /**
    * @brief Whether a command with process id @p id is queued or running.

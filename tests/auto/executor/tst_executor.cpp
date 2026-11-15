@@ -58,6 +58,9 @@ private Q_SLOTS:
   void dequeuingOfADroppedItemMayCallBackIntoTheExecutor();
   void executeAsyncWorkDirDoesNotCarryOver();
   void executeAsyncNonUtf8OutputIsNotDropped();
+  void lastOutputLosslessSaysWhetherTheTextSavesBack_data();
+  void lastOutputLosslessSaysWhetherTheTextSavesBack();
+  void executeBlockingRawPassesBytesThrough();
   void bareNameRunsFromPathOnBothPaths();
   void bundledBinaryNextToTheApplicationWins();
   void nonExecutableFileNextToTheApplicationDoesNotMaskPath();
@@ -1011,6 +1014,71 @@ void tst_executor::executeAsyncNonUtf8OutputIsNotDropped() {
   QVERIFY2(out.startsWith(QStringLiteral("abc")),
            qPrintable("the valid prefix must survive: " + out));
   QCOMPARE(out.size(), 4); // one character for the odd byte, not nothing
+}
+
+void tst_executor::lastOutputLosslessSaysWhetherTheTextSavesBack_data() {
+  QTest::addColumn<QString>("printf");
+  QTest::addColumn<bool>("readStdout");
+  QTest::addColumn<bool>("lossless");
+  QTest::newRow("ascii") << QStringLiteral("abc\\n") << true << true;
+  QTest::newRow("utf8") << QStringLiteral("abc\\303\\251\\n") << true << true;
+  QTest::newRow("latin1") << QStringLiteral("abc\\351\\n") << true << false;
+  QTest::newRow("truncated") << QStringLiteral("abc\\303") << true << false;
+  // As older QtPass versions left such entries: valid UTF-8 for U+FFFD.
+  QTest::newRow("replacement character")
+      << QStringLiteral("x\\357\\277\\275y\\n") << true << true;
+  // The decoder drops a leading byte order mark without an error.
+  QTest::newRow("byte order mark")
+      << QStringLiteral("\\357\\273\\277pw\\n") << true << false;
+  QTest::newRow("stdout not read")
+      << QStringLiteral("abc\\351\\n") << false << true;
+}
+
+/**
+ * @brief The edit dialog loads an entry only when its text writes back as the
+ *        same bytes; Executor says so for the output being emitted, and is
+ *        back to true once the emission is over.
+ */
+void tst_executor::lastOutputLosslessSaysWhetherTheTextSavesBack() {
+  QFETCH(QString, printf);
+  QFETCH(bool, readStdout);
+  QFETCH(bool, lossless);
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  std::optional<bool> seen;
+  connect(&exec, &Executor::finished, this,
+          [&exec, &seen](int, int, const QString &, const QString &) {
+            seen = exec.lastOutputLossless();
+          });
+  exec.execute(1, sh, {"-c", "printf '" + printf + "'"}, readStdout, false);
+  QTRY_VERIFY_WITH_TIMEOUT(seen.has_value(), 5000);
+  QCOMPARE(*seen, lossless);
+  QVERIFY2(exec.lastOutputLossless(), "true again after the emission");
+}
+
+/**
+ * @brief The byte path writes stdin and returns stdout exactly, NUL and
+ *        bytes that are not UTF-8 included: re-encryption carries an entry's
+ *        plaintext through it.
+ */
+void tst_executor::executeBlockingRawPassesBytesThrough() {
+  const QString cat = QStandardPaths::findExecutable("cat");
+  if (cat.isEmpty())
+    QSKIP("cat not found in PATH");
+  const QByteArray bytes("abc\xe9\n\x00\x80\xff\xef\xbb\xbfx\n", 13);
+  QProcess process;
+  QByteArray out;
+  QCOMPARE(Executor::executeBlockingRaw(process, cat, {}, bytes, &out), 0);
+  QCOMPARE(out, bytes);
+
+  // The text path still decodes as before.
+  QString text;
+  QCOMPARE(
+      Executor::executeBlocking(cat, {}, QStringLiteral("abc\u00e9\n"), &text),
+      0);
+  QCOMPARE(text, QStringLiteral("abc\u00e9\n"));
 }
 
 /**

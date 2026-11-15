@@ -543,7 +543,7 @@ void Pass::finished(int id, int exitCode, const QString &out,
   }
 
   if (pid == PASS_SHOW) {
-    emit finishedShow(out, shownFile);
+    emit finishedShow(out, shownFile, exec.lastOutputLossless());
     return;
   }
   emitProcessFinishedSignal(pid, out, err);

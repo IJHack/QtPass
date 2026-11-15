@@ -288,18 +288,28 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
 }
 
 // UTF-8 first; on a decoding error fall back to the system encoding.
-static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
+// lossless, when given, says whether the text encodes back to exactly these
+// bytes: what writing it to gpg or pass (toUtf8(), as every writer here
+// does) would store. Not for bytes that are not UTF-8 (each became U+FFFD,
+// or on Windows a code-page character), nor for a leading byte order mark,
+// which the decoder drops without an error. A literal U+FFFD, as older
+// QtPass versions left in such entries, does encode back.
+static auto decodeAssumingUtf8(const QByteArray &in, bool *lossless = nullptr)
+    -> QString {
   // Stateless: a truncated trailing byte becomes a replacement character
   // instead of being held back for a continuation that never comes.
   auto converter =
       QStringDecoder(QStringDecoder::Utf8, QStringDecoder::Flag::Stateless);
   QString out = converter(in);
-  if (!converter.hasError()) {
-    return out;
+  if (converter.hasError()) {
+    auto fallback =
+        QStringDecoder(QStringDecoder::System, QStringDecoder::Flag::Stateless);
+    out = fallback(in);
   }
-  auto fallback =
-      QStringDecoder(QStringDecoder::System, QStringDecoder::Flag::Stateless);
-  return fallback(in);
+  if (lossless != nullptr) {
+    *lossless = out.toUtf8() == in;
+  }
+  return out;
 }
 
 // Returns an error code rather than throwing, matching QtPass's error
@@ -384,6 +394,21 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
                            QString *process_out, QString *process_err,
                            const std::atomic_bool *cancel, int timeoutMs)
     -> int {
+  QByteArray out;
+  const int rc = runBlockingRaw(process, app, args, input.toUtf8(),
+                                process_out != nullptr ? &out : nullptr,
+                                process_err, cancel, timeoutMs);
+  if (process_out != nullptr) {
+    *process_out = decodeAssumingUtf8(out);
+  }
+  return rc;
+}
+
+auto Executor::runBlockingRaw(QProcess &process, const QString &app,
+                              const QStringList &args, const QByteArray &input,
+                              QByteArray *process_out, QString *process_err,
+                              const std::atomic_bool *cancel, int timeoutMs)
+    -> int {
   if (cancel != nullptr && cancel->load())
     return -1;
   const QDeadlineTimer deadline = timeoutMs < 0
@@ -398,8 +423,7 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
     return -1;
   }
   if (!input.isEmpty()) {
-    QByteArray data = input.toUtf8();
-    if (process.write(data) != data.length()) {
+    if (process.write(input) != input.length()) {
       qCDebug(lcQtPass) << "Not all input written:" << app;
     }
   }
@@ -411,12 +435,22 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
   // Read before judging the exit: a process that crashed may have said why,
   // as the queued path (onProcessFinished) keeps it too.
   if (process_out != nullptr) {
-    *process_out = decodeAssumingUtf8(process.readAllStandardOutput());
+    *process_out = process.readAllStandardOutput();
   }
   if (process_err != nullptr) {
     *process_err = decodeAssumingUtf8(process.readAllStandardError());
   }
   return process.exitStatus() == QProcess::NormalExit ? process.exitCode() : -1;
+}
+
+auto Executor::executeBlockingRaw(QProcess &process, const QString &app,
+                                  const QStringList &args,
+                                  const QByteArray &input,
+                                  QByteArray *process_out, QString *process_err,
+                                  const std::atomic_bool *cancel, int timeoutMs)
+    -> int {
+  return runBlockingRaw(process, app, args, input, process_out, process_err,
+                        cancel, timeoutMs);
 }
 
 auto Executor::executeBlocking(const QString &app, const QStringList &args,
@@ -485,6 +519,7 @@ void Executor::onProcessFinished(int exitCode,
       qCDebug(lcQtPass) << i.app << "exited with" << exitCode << err;
     }
     emit finished(i.id, exitCode, output, err);
+    m_outputLossless = true;
   } else {
     // A signal-killed process usually leaves stderr empty; without this the
     // password pane would show nothing at all for the failure.
@@ -495,6 +530,7 @@ void Executor::onProcessFinished(int exitCode,
     // Unix), and Pass::finished gates on it: 0 would pass as success and 1
     // as grep's "no matches". Report -1, like the failed-to-start path.
     emit error(i.id, -1, output, err);
+    m_outputLossless = true;
   }
   executeNext();
   postDrainedIfIdle();
@@ -523,8 +559,10 @@ auto Executor::collectOutput(const ExecQueueItem &item, int exitCode)
     -> std::pair<QString, QString> {
   QString output;
   QString err;
+  m_outputLossless = true;
   if (item.readStdout) {
-    output = decodeAssumingUtf8(m_process.readAllStandardOutput());
+    output = decodeAssumingUtf8(m_process.readAllStandardOutput(),
+                                &m_outputLossless);
   }
   if (item.readStderr || exitCode != 0) {
     err = decodeAssumingUtf8(m_process.readAllStandardError());

@@ -829,6 +829,16 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   put back from the service's QR code or from Git history. Other spellings
   of the supported ones (`SHA-256`, `HmacSHA256`, `HMACSHA512`) now give
   the right code.
+- An entry whose content is not UTF-8 text (a password typed on a Latin-1
+  terminal, a key file stored with `pass insert -m`) keeps its bytes. With
+  the native backend, re-encrypting a folder (changing its recipients,
+  "Re-encrypt all passwords", copying an entry into it) replaced each such
+  byte with U+FFFD in the entries it rewrote, and reported success; on
+  either backend an OK in the edit dialog did the same, even with nothing
+  changed. Re-encryption now carries the bytes through unchanged, also for
+  an entry without a final newline (it gained one) and with `textmode` in
+  `gpg.conf`, and the edit dialog does not open such an entry for editing;
+  showing and copying it work as before.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
