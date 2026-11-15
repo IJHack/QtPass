@@ -869,7 +869,9 @@ void MainWindow::restoreWindow() {
 
   if (s.useTrayIcon && m_tray == nullptr) {
     initTrayIcon();
-    if (s.startMinimized) {
+    // Minimized to the tray only when there is one: without a system tray
+    // initTrayIcon() gave up, and a hidden window could not be brought back.
+    if (s.startMinimized && m_tray != nullptr) {
       // since we are still in constructor, can't directly hide
       QTimer::singleShot(10, this, SLOT(hide()));
     }
@@ -1495,7 +1497,10 @@ void MainWindow::destroyTrayIcon() {
  * @param event
  */
 void MainWindow::closeEvent(QCloseEvent *event) {
-  if (QtPassSettings::isHideOnClose()) {
+  // Only with a tray icon to come back from: without one (none asked for, or
+  // no system tray in this session) a hidden QtPass ran on invisibly, with the
+  // last entry in its window and the password on the clipboard.
+  if (QtPassSettings::isHideOnClose() && m_tray != nullptr) {
     this->hide();
     event->ignore();
   } else {

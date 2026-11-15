@@ -17,6 +17,7 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QCloseEvent>
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QDir>
@@ -43,6 +44,7 @@
 #include "../../../src/mainwindow.h"
 #include "../../../src/passworddisplaypanel.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/trayicon.h"
 #include "../../../src/util.h"
 #include "../testsettings.h"
 
@@ -79,6 +81,8 @@ private Q_SLOTS:
   void fieldFrameBorderFollowsRuntimePaletteChange();
   void toolBarDropsStaleStylePaletteAfterThemeSwitch();
   void toolBarKeepsHeaderTintInSameTheme();
+  void closeWithoutATrayIconDoesNotHide();
+  void startMinimizedWithoutATrayIconStaysShown();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilCancelled();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilValid();
 
@@ -591,6 +595,73 @@ void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
   QVERIFY2(bar->testAttribute(Qt::WA_SetPalette),
            "a same-theme header tint must be kept");
   QCOMPARE(bar->palette().color(QPalette::Window), QColor(0xe3, 0xe5, 0xe7));
+}
+
+/**
+ * @brief "Hide on close" hides the window only when a tray icon can bring it
+ *        back. Without one (none asked for, or no system tray in this
+ *        session) a close hid the window while QtPass ran on invisibly, with
+ *        the last entry in it and the password on the clipboard; the only way
+ *        back was to start qtpass again. Now the close goes ahead.
+ */
+void tst_mainwindow::closeWithoutATrayIconDoesNotHide() {
+  if (QSystemTrayIcon::isSystemTrayAvailable())
+    QSKIP("needs a session without a system tray");
+  // QApplication::quit() does nothing without a running event loop; should
+  // a Qt send its Quit event all the same, it must not end this run.
+  struct SwallowQuit : QObject {
+    auto eventFilter(QObject *watched, QEvent *event) -> bool override {
+      return watched == qApp && event->type() == QEvent::Quit;
+    }
+  } swallowQuit;
+  qApp->installEventFilter(&swallowQuit);
+  const AppSettings saved = QtPassSettings::load();
+  auto restore = qScopeGuard([&swallowQuit, &saved] {
+    qApp->removeEventFilter(&swallowQuit);
+    QtPassSettings::save(saved);
+  });
+  // Asked for a tray icon, but the session has none; then not asked for,
+  // as the settings dialog saves it when "Show tray icon" is unticked.
+  for (const bool useTrayIcon : {true, false}) {
+    {
+      AppSettings s = QtPassSettings::load();
+      s.useTrayIcon = useTrayIcon;
+      s.hideOnClose = true;
+      QtPassSettings::save(s);
+    }
+    m_window->restoreWindow();
+    QCOMPARE(m_window->findChild<TrayIcon *>(), nullptr);
+    m_window->show();
+    QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+    QCloseEvent close;
+    QApplication::sendEvent(m_window.data(), &close);
+    QVERIFY2(close.isAccepted(),
+             "without a tray icon, a close must not turn into a hide");
+  }
+}
+
+/**
+ * @brief "Start minimized" hides the window only into a tray icon: without a
+ *        system tray nothing would bring the hidden window back.
+ */
+void tst_mainwindow::startMinimizedWithoutATrayIconStaysShown() {
+  if (QSystemTrayIcon::isSystemTrayAvailable())
+    QSKIP("needs a session without a system tray");
+  const AppSettings saved = QtPassSettings::load();
+  auto restore = qScopeGuard([&saved] { QtPassSettings::save(saved); });
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useTrayIcon = true;
+    s.startMinimized = true;
+    QtPassSettings::save(s);
+  }
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->restoreWindow();
+  QCOMPARE(m_window->findChild<TrayIcon *>(), nullptr);
+  QTest::qWait(100); // the deferred hide would have run by now
+  QVERIFY2(m_window->isVisible(),
+           "without a system tray, start minimized must not hide");
 }
 
 // ---------------------------------------------------------------------------
