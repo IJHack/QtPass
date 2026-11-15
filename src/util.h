@@ -118,6 +118,21 @@ public:
    */
   static auto linkifyUrls(const QString &text, bool *linked = nullptr)
       -> QString;
+  /** @brief Longest run of white space boundSpaceRuns() leaves. */
+  static constexpr qsizetype kMaxSpaceRun = 1000;
+  /**
+   * @brief @p text with every run of white space other than tabs and line
+   * feeds cut to kMaxSpaceRun characters, for showing it with its white
+   * space kept.
+   *
+   * Qt's line layout never finishes a wrapped line with 65536 or more spaces
+   * in a row (seen on Qt 6.11 and 6.12), so one crafted entry would freeze
+   * the window. No text needs a longer run to read right.
+   *
+   * @param text Plain text to show.
+   * @return @p text, with each longer run cut.
+   */
+  [[nodiscard]] static auto boundSpaceRuns(const QString &text) -> QString;
   /**
    * @brief Returns a regex to match newline characters.
    * @return Reference to static regex

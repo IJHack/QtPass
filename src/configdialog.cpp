@@ -261,6 +261,28 @@ void ConfigDialog::usePass(bool usePass) {
  * @return void - This function does not return a value.
  */
 void ConfigDialog::validate(QTableWidgetItem *item) {
+  // A required cell must not be empty, and a name holds no slash: the settings
+  // key profiles by name ("<name>/path"), and QSettings reads "/" as a group
+  // separator, and "\" as one on Windows, so "Work/Client" was stored a group
+  // too deep and read back as a profile "Work" without folder or signing key.
+  const auto problemOf = [](const QTableWidgetItem *cell,
+                            int column) -> QString {
+    const QString text = cell->text();
+    if (text.isEmpty() && column != 2) {
+      return tr("This field is required");
+    }
+    if (column == 0 &&
+        (text.contains(QLatin1Char('/')) || text.contains(QLatin1Char('\\')))) {
+      return tr("A profile name cannot contain / or \\");
+    }
+    return QString();
+  };
+  const auto mark = [&problemOf](QTableWidgetItem *cell, int column) {
+    const QString problem = problemOf(cell, column);
+    cell->setBackground(problem.isEmpty() ? QBrush() : QBrush(Qt::red));
+    cell->setToolTip(problem);
+  };
+
   // Update the required-field marker(s): all cells when no specific item is
   // given, otherwise just the one that changed.
   if (item == nullptr) {
@@ -270,34 +292,23 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
 
         if (!_item)
           continue;
-        if (_item->text().isEmpty() && j != 2) {
-          _item->setBackground(Qt::red);
-          _item->setToolTip(tr("This field is required"));
-        } else {
-          _item->setBackground(QBrush());
-          _item->setToolTip(QString());
-        }
+        mark(_item, j);
       }
     }
   } else {
-    if (item->text().isEmpty() && item->column() != 2) {
-      item->setBackground(Qt::red);
-      item->setToolTip(tr("This field is required"));
-    } else {
-      item->setBackground(QBrush());
-      item->setToolTip(QString());
-    }
+    mark(item, item->column());
   }
 
-  // Enable OK only when every required cell across all rows is filled. Deriving
-  // this from a single changed item would re-enable OK while another row still
-  // has an empty required field, letting an empty-named profile be saved (and
-  // then silently dropped, losing that profile's path and signing key).
+  // Enable OK only when every required cell across all rows is filled and
+  // every name is valid. Deriving this from a single changed item would
+  // re-enable OK while another row still has an empty required field, letting
+  // an empty-named profile be saved (and then silently dropped, losing that
+  // profile's path and signing key).
   bool status = true;
   for (int i = 0; i < ui->profileTable->rowCount() && status; i++) {
     for (int j = 0; j < ui->profileTable->columnCount(); j++) {
       QTableWidgetItem *_item = ui->profileTable->item(i, j);
-      if (_item && _item->text().isEmpty() && j != 2) {
+      if (_item && !problemOf(_item, j).isEmpty()) {
         status = false;
         break;
       }

@@ -17,22 +17,31 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QCloseEvent>
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
+#include <QFileSystemModel>
 #include <QFrame>
+#include <QKeyEvent>
+#include <QLabel>
+#include <QLineEdit>
 #include <QMessageBox>
 #include <QPalette>
 #include <QPushButton>
 #include <QScopedPointer>
+#include <QSortFilterProxyModel>
 #include <QStatusBar>
 #include <QTemporaryDir>
 #include <QTextBrowser>
+#include <QTextDocumentFragment>
 #include <QTextEdit>
 #include <QTimer>
 #include <QToolBar>
+#include <QToolButton>
 #include <QTreeView>
+#include <QTreeWidget>
 #include <QtTest>
 
 #include <functional>
@@ -42,6 +51,7 @@
 #include "../../../src/mainwindow.h"
 #include "../../../src/passworddisplaypanel.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/trayicon.h"
 #include "../../../src/util.h"
 #include "../testsettings.h"
 
@@ -66,6 +76,7 @@ private Q_SLOTS:
   void flashTextSetsContent();
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
+  void entryTextKeepsItsWhiteSpace();
   void showStatusMessageAppearsInStatusBar();
   void deselectDoesNotCrash();
   void onProcessOutputAppendsToPanel();
@@ -77,10 +88,15 @@ private Q_SLOTS:
   void fieldFrameBorderFollowsRuntimePaletteChange();
   void toolBarDropsStaleStylePaletteAfterThemeSwitch();
   void toolBarKeepsHeaderTintInSameTheme();
+  void closeWithoutATrayIconDoesNotHide();
+  void startMinimizedWithoutATrayIconStaysShown();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilCancelled();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilValid();
+  void returnInTheSearchBoxEndsThere();
+  void returnOnAContentSearchResultOpensIt();
 
 private:
+  void rebuildWithGrepSearch();
   auto runFirstRunFlow(
       const std::function<bool(ConfigDialog *, int)> &onConfigDialog,
       bool *initSucceeded) -> int;
@@ -241,6 +257,74 @@ void tst_mainwindow::flashTextHtmlRenderedInBrowser() {
   QVERIFY2(
       !browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
       "flashText with isHtml=true must not escape HTML tags");
+}
+
+/**
+ * @brief The text of an entry is shown, and so selected and copied, with the
+ *        white space it is stored with. As rich text, "ridge  velvet" in a
+ *        recovery phrase came out as "ridge velvet", indentation was dropped
+ *        and a tab became a space (#210); with "Show the file content as-is"
+ *        that went for the password line too.
+ */
+void tst_mainwindow::entryTextKeepsItsWhiteSpace() {
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY2(browser != nullptr, "textBrowser must exist");
+  const QString text = QStringLiteral("backup phrase: ridge  velvet harbor\n"
+                                      "    indented\n"
+                                      "tab\there\n"
+                                      "trailing   \n"
+                                      "see https://example.org/a  b");
+  // What Select All and Copy in the browser's menu hand to the clipboard.
+  const auto copied = [browser] {
+    browser->selectAll();
+    return browser->textCursor().selection().toPlainText();
+  };
+  // A click on an entry empties the browser before its decrypt comes back.
+  browser->clear();
+  m_window->passShowHandler(QStringLiteral("hunter2\n") + text);
+  QCOMPARE(browser->toPlainText(), text);
+  QCOMPARE(copied(), text);
+
+  // Output arriving later is appended through toHtml(): the entry's text
+  // stays as it was, and the output keeps its own columns.
+  emit QtPassSettings::getPass() -> finishedGitPull(
+      QStringLiteral(" 2 files changed,  3 insertions"), QString());
+  QCOMPARE(copied(),
+           text + QStringLiteral("\n 2 files changed,  3 insertions"));
+
+  // A "\r\n" is still one line end, and a lone "\r" stays a space.
+  browser->clear();
+  emit QtPassSettings::getPass()
+      -> finishedGitPull(QStringLiteral("one  1\r\ntwo\rthree"), QString());
+  QCOMPARE(copied(), QStringLiteral("one  1\ntwo three"));
+
+  // Kept white space hangs Qt's layout on 65536 spaces in a row, so a long
+  // run is cut before it is shown.
+  browser->clear();
+  emit QtPassSettings::getPass() -> finishedGitPull(
+      QStringLiteral("a") +
+          QString(Util::kMaxSpaceRun + 500, QLatin1Char(' ')) +
+          QStringLiteral("b"),
+      QString());
+  QCOMPARE(browser->toPlainText(),
+           QStringLiteral("a") + QString(Util::kMaxSpaceRun, QLatin1Char(' ')) +
+               QStringLiteral("b"));
+
+  {
+    AppSettings s = QtPassSettings::load();
+    s.displayAsIs = true;
+    QtPassSettings::save(s);
+  }
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.displayAsIs = false;
+    QtPassSettings::save(s);
+  });
+  const QString entry = QStringLiteral("pass  word\n") + text;
+  browser->clear();
+  m_window->passShowHandler(entry);
+  QCOMPARE(copied(), entry);
 }
 
 /**
@@ -523,6 +607,79 @@ void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
   QCOMPARE(bar->palette().color(QPalette::Window), QColor(0xe3, 0xe5, 0xe7));
 }
 
+/**
+ * @brief "Hide on close" hides the window only when a tray icon can bring it
+ *        back. Without one (none asked for, or no system tray in this
+ *        session) a close hid the window while QtPass ran on invisibly, with
+ *        the last entry in it and the password on the clipboard; the only way
+ *        back was to start qtpass again. Now the close goes ahead.
+ */
+void tst_mainwindow::closeWithoutATrayIconDoesNotHide() {
+  if (QSystemTrayIcon::isSystemTrayAvailable())
+    QSKIP("needs a session without a system tray");
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  // The close goes on to QApplication::quit(), which on Qt 5 is exit(0): it
+  // marks the thread to quit, and every later event loop of this run (modal
+  // dialogs, QSignalSpy::wait()) would return at once.
+  QSKIP("Qt 5's QApplication::quit() would end the event loops of later tests");
+#endif
+  // QApplication::quit() does nothing without a running event loop on Qt 6;
+  // should a Qt send its Quit event all the same, it must not end this run.
+  struct SwallowQuit : QObject {
+    auto eventFilter(QObject *watched, QEvent *event) -> bool override {
+      return watched == qApp && event->type() == QEvent::Quit;
+    }
+  } swallowQuit;
+  qApp->installEventFilter(&swallowQuit);
+  const AppSettings saved = QtPassSettings::load();
+  auto restore = qScopeGuard([&swallowQuit, &saved] {
+    qApp->removeEventFilter(&swallowQuit);
+    QtPassSettings::save(saved);
+  });
+  // Asked for a tray icon, but the session has none; then not asked for,
+  // as the settings dialog saves it when "Show tray icon" is unticked.
+  for (const bool useTrayIcon : {true, false}) {
+    {
+      AppSettings s = QtPassSettings::load();
+      s.useTrayIcon = useTrayIcon;
+      s.hideOnClose = true;
+      QtPassSettings::save(s);
+    }
+    m_window->restoreWindow();
+    QCOMPARE(m_window->findChild<TrayIcon *>(), nullptr);
+    m_window->show();
+    QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+    QCloseEvent close;
+    QApplication::sendEvent(m_window.data(), &close);
+    QVERIFY2(close.isAccepted(),
+             "without a tray icon, a close must not turn into a hide");
+  }
+}
+
+/**
+ * @brief "Start minimized" hides the window only into a tray icon: without a
+ *        system tray nothing would bring the hidden window back.
+ */
+void tst_mainwindow::startMinimizedWithoutATrayIconStaysShown() {
+  if (QSystemTrayIcon::isSystemTrayAvailable())
+    QSKIP("needs a session without a system tray");
+  const AppSettings saved = QtPassSettings::load();
+  auto restore = qScopeGuard([&saved] { QtPassSettings::save(saved); });
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useTrayIcon = true;
+    s.startMinimized = true;
+    QtPassSettings::save(s);
+  }
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->restoreWindow();
+  QCOMPARE(m_window->findChild<TrayIcon *>(), nullptr);
+  QTest::qWait(100); // the deferred hide would have run by now
+  QVERIFY2(m_window->isVisible(),
+           "without a system tray, start minimized must not hide");
+}
+
 // ---------------------------------------------------------------------------
 // First-run configuration loop (QtPass::init() -> MainWindow::config())
 
@@ -670,6 +827,161 @@ void tst_mainwindow::firstRunAcceptedWithInvalidStoreAsksAgainUntilValid() {
   QVERIFY2(storeCreated, "the store must have been initialised on the retry");
   QVERIFY2(initSucceeded,
            "startup must succeed once the retried configuration is valid");
+}
+
+// ---------------------------------------------------------------------------
+// Return in the search box and on content search results
+
+namespace {
+/**
+ * Create <name>.gpg in the store and wait until the tree's model has it. Its
+ * decrypt fails later on the event loop; the tests below only count it.
+ */
+auto addEntry(MainWindow *window, const QString &storeDir, const QString &name)
+    -> QModelIndex {
+  const QString path = QDir(storeDir).filePath(name + QStringLiteral(".gpg"));
+  QFile f(path);
+  if (!f.open(QIODevice::WriteOnly)) {
+    return {};
+  }
+  f.write("not really encrypted");
+  f.close();
+  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  if (!QTest::qWaitFor([&] { return fs->index(path).isValid(); }, 5000)) {
+    return {};
+  }
+  return proxy->mapFromSource(fs->index(path));
+}
+
+/// Create <name>.gpg in the store and make it the tree's current entry.
+auto selectEntry(MainWindow *window, const QString &storeDir,
+                 const QString &name) -> bool {
+  const QModelIndex index = addEntry(window, storeDir, name);
+  if (!index.isValid()) {
+    return false;
+  }
+  window->findChild<QTreeView *>(QStringLiteral("treeView"))
+      ->setCurrentIndex(index);
+  return true;
+}
+} // namespace
+
+/**
+ * @brief Build the window again with content search enabled, and shown.
+ */
+void tst_mainwindow::rebuildWithGrepSearch() {
+  m_window.reset();
+  AppSettings s = QtPassSettings::load();
+  s.useGrepSearch = true;
+  QtPassSettings::save(s);
+  m_window.reset(new MainWindow);
+  m_window->show();
+}
+
+/**
+ * @brief Return in the search box ends there. QLineEdit leaves the key
+ *        unaccepted, so the window's own Return opened the tree's current
+ *        entry as well: in content search an entry nobody asked for (back in
+ *        clear after the panel autoclear), on an empty box too, and by name
+ *        the first hit a second time.
+ */
+void tst_mainwindow::returnInTheSearchBoxEndsThere() {
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGrepSearch = false;
+    QtPassSettings::save(s);
+  });
+  rebuildWithGrepSearch();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  auto *name = m_window->findChild<QLabel *>(QStringLiteral("passwordName"));
+  auto *box = m_window->findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  QVERIFY(name != nullptr && box != nullptr && grep != nullptr);
+  // The label as nothing opened it; no Return below may change it.
+  const QString unopened = name->text();
+  QVERIFY(unopened != QStringLiteral("bank"));
+  grep->setChecked(true);
+  const auto pressReturn = [box] {
+    QKeyEvent ret(QEvent::KeyPress, Qt::Key_Return, Qt::NoModifier);
+    QApplication::sendEvent(box, &ret);
+  };
+
+  // Qt 5 needs the signal's argument type registered for QSignalSpy.
+  qRegisterMetaType<QList<QPair<QString, QStringList>>>();
+  QSignalSpy searched(QtPassSettings::getPass(), &Pass::finishedGrep);
+  box->setText(QStringLiteral("ssid"));
+  pressReturn();
+  QVERIFY2(searched.count() == 1 || searched.wait(10000),
+           "Return runs the content search");
+  QCOMPARE(name->text(), unopened);
+
+  // An empty box ends the content search, and opens nothing either.
+  box->clear();
+  pressReturn();
+  QCOMPARE(name->text(), unopened);
+
+  // By name, Return opens the first hit, and decrypts it once.
+  grep->setChecked(false);
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  QSignalSpy failed(QtPassSettings::getPass(), &Pass::processErrorExit);
+  box->setText(QStringLiteral("bank"));
+  pressReturn();
+  QCOMPARE(name->text(), QStringLiteral("bank"));
+  QTRY_VERIFY_WITH_TIMEOUT(shown.count() + failed.count() >= 1, 10000);
+  QTest::qWait(300);
+  QCOMPARE(shown.count() + failed.count(), 1);
+}
+
+/**
+ * @brief While content search results hide the tree, Return on a result
+ *        opens that result. It opened the hidden tree's current entry.
+ */
+void tst_mainwindow::returnOnAContentSearchResultOpensIt() {
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGrepSearch = false;
+    QtPassSettings::save(s);
+  });
+  rebuildWithGrepSearch();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(m_window.data()));
+  QVERIFY(
+      addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("guest-wifi"))
+          .isValid());
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  auto *name = m_window->findChild<QLabel *>(QStringLiteral("passwordName"));
+  auto *tree = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(name != nullptr && tree != nullptr && grep != nullptr &&
+          results != nullptr);
+  grep->setChecked(true);
+  // What a finished content search leaves: the results list over the tree.
+  auto *result = new QTreeWidgetItem(results);
+  result->setText(0, QStringLiteral("guest-wifi"));
+  result->setData(0, Qt::UserRole, QStringLiteral("guest-wifi"));
+  results->setVisible(true);
+  tree->setVisible(false);
+  results->setCurrentItem(result);
+  results->setFocus();
+  QTRY_VERIFY(results->hasFocus());
+
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  QSignalSpy failed(QtPassSettings::getPass(), &Pass::processErrorExit);
+  QKeyEvent ret(QEvent::KeyPress, Qt::Key_Return, Qt::NoModifier);
+  QApplication::sendEvent(results, &ret);
+  QCOMPARE(name->text(), QStringLiteral("guest-wifi"));
+  QVERIFY(!tree->isHidden());
+  // The backend outlives the window: its decrypt must be answered before the
+  // test ends, or the gpg still running is torn down at exit.
+  QTRY_VERIFY_WITH_TIMEOUT(shown.count() + failed.count() >= 1, 10000);
 }
 
 QTEST_MAIN(tst_mainwindow)

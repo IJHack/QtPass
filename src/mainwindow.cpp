@@ -869,7 +869,9 @@ void MainWindow::restoreWindow() {
 
   if (s.useTrayIcon && m_tray == nullptr) {
     initTrayIcon();
-    if (s.startMinimized) {
+    // Minimized to the tray only when there is one: without a system tray
+    // initTrayIcon() gave up, and a hidden window could not be brought back.
+    if (s.startMinimized && m_tray != nullptr) {
       // since we are still in constructor, can't directly hide
       QTimer::singleShot(10, this, SLOT(hide()));
     }
@@ -1495,7 +1497,10 @@ void MainWindow::destroyTrayIcon() {
  * @param event
  */
 void MainWindow::closeEvent(QCloseEvent *event) {
-  if (QtPassSettings::isHideOnClose()) {
+  // Only with a tray icon to come back from: without one (none asked for, or
+  // no system tray in this session) a hidden QtPass ran on invisibly, with the
+  // last entry in its window and the password on the clipboard.
+  if (QtPassSettings::isHideOnClose() && m_tray != nullptr) {
     this->hide();
     event->ignore();
   } else {
@@ -1541,6 +1546,16 @@ auto MainWindow::eventFilter(QObject *obj, QEvent *event) -> bool {
     if (key != nullptr && key->key() == Qt::Key_Down) {
       ui->treeView->setFocus();
     }
+    // Return ends at the search box: QLineEdit emits returnPressed() and
+    // leaves the key unaccepted, so keyPressEvent() would open the tree's
+    // current entry as well. In content search that is an entry nobody
+    // asked for; by name, the first hit a second time.
+    if (key != nullptr &&
+        (key->key() == Qt::Key_Return || key->key() == Qt::Key_Enter)) {
+      ui->lineEdit->event(event);
+      event->accept();
+      return true;
+    }
   }
   return QObject::eventFilter(obj, event);
 }
@@ -1581,6 +1596,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     break;
   case Qt::Key_Return:
   case Qt::Key_Enter:
+    // While content search results hide the tree, its current entry is not
+    // what the user looks at: Return on a result opens that result.
+    if (ui->treeView->isHidden()) {
+      QTreeWidgetItem *result = ui->grepResultsList->currentItem();
+      if (result != nullptr && ui->grepResultsList->hasFocus()) {
+        on_grepResultsList_itemClicked(result, 0);
+      }
+      break;
+    }
     if (proxyModel.rowCount() > 0) {
       on_treeView_clicked(ui->treeView->currentIndex());
     }

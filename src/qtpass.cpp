@@ -417,18 +417,29 @@ void QtPass::passShowHandlerFinished(QString output) {
 }
 
 /**
- * @brief Displays output text in the main window's text browser.
+ * @brief Displays output text in the main window's text browser, with its
+ * white space kept as it is (a lone carriage return becomes a space).
  * @param output The text to display
  * @param prefix Optional prefix to prepend to the output
  * @param postfix Optional postfix to append to the output
  */
 void QtPass::showInTextBrowser(QString output, const QString &prefix,
                                const QString &postfix) {
+  // White space is kept below, so a "\r\n" must be one line end, and a lone
+  // "\r" stays a space inside its line, as before.
+  output.replace(QStringLiteral("\r\n"), QStringLiteral("\n"));
+  output.replace(QLatin1Char('\r'), QLatin1Char(' '));
+  // Kept white space can hang Qt's layout on a run of 65536 spaces.
+  output = Util::boundSpaceRuns(output);
   // Escapes and links only launchable http(s) URLs; anything else stays
   // plain text (the text browser opens external links on click).
   output = Util::linkifyUrls(output);
   output.replace(QStringLiteral("\n"), "<br />");
-  output = prefix + output + postfix;
+  // As stored: rich text otherwise shows, and Select All + Copy hand back,
+  // "a  b" as "a b", drops indentation and turns a tab into a space (#210).
+  // Long lines still wrap.
+  output = prefix + QStringLiteral("<span style=\"white-space: pre-wrap;\">") +
+           output + QStringLiteral("</span>") + postfix;
 
   m_mainWindow->flashText(output, false, true);
 }
