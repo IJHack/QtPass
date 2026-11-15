@@ -115,6 +115,7 @@ private Q_SLOTS:
   void newEntryStartsEditable();
   void okKeepsNoBreakSpacesInUntouchedNotes();
   void okWritesUntouchedFieldLinesVerbatim();
+  void okWritesAnUntouchedOtpUriVerbatim();
   void pastedLineBreaksStayOutOfTheEntry();
 };
 
@@ -411,6 +412,24 @@ void tst_passworddialog::okWritesUntouchedFieldLinesVerbatim() {
   QVERIFY2(written.contains(QStringLiteral("\nrecovery:\n")),
            qPrintable("an untouched field stays verbatim after an edit:\n" +
                       written));
+}
+
+void tst_passworddialog::okWritesAnUntouchedOtpUriVerbatim() {
+  // An OK writes an untouched OTP line back as it was read: it was
+  // canonicalised on every save, which lowered parameter names (Digits=8)
+  // and dropped the text after a "#" (recovery codes, a remark).
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  const QString line =
+      QStringLiteral("OTP: otpauth://totp/ACME:bob?secret=JBSWY3DPEHPK3PXP&"
+                     "Issuer=ACME&Digits=8#7f3a9-1c2d4 8b6e0-5a9f1\n");
+  pass.deliverShow(QStringLiteral("secret\n") + line);
+  okButton(d)->click();
+  QVERIFY2(pass.insertedContent.contains(line),
+           qPrintable(pass.insertedContent));
 }
 
 void tst_passworddialog::pastedLineBreaksStayOutOfTheEntry() {
