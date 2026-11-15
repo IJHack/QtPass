@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_simple_transaction.html":[1,0,7],
+"class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9":[1,0,7,1],
 "class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1":[1,0,7,3],
 "class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24":[1,0,7,4],
 "class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f":[1,0,7,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "exportpublickeydialog_8h.html":[4,0,1,12],
 "exportpublickeydialog_8h_source.html":[4,0,1,12],
 "fieldlabel_8cpp.html":[4,0,1,13],
-"fieldlabel_8cpp_source.html":[4,0,1,13],
-"fieldlabel_8h.html":[4,0,1,14],
-"fieldlabel_8h_source.html":[4,0,1,14]
+"fieldlabel_8cpp_source.html":[4,0,1,13]
 };

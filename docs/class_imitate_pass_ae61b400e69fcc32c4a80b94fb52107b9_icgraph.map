@@ -1,5 +1,5 @@
 <map id="ImitatePass::GitPush" name="ImitatePass::GitPush">
-<area shape="rect" id="Node000001" title="Push to remote." alt="" coords="2108,159,2263,186"/>
+<area shape="rect" id="Node000001" title="Push to remote. While a re&#45;encryption runs the push is held (Users ▸ OK and a copy ask for it as soon..." alt="" coords="2108,159,2263,186"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#a172222519125f9e053e09a505743d15b" title="Report the outcome of a run and emit endReencryptPath()." alt="" coords="1854,159,2060,186"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2090,173,2060,175,2060,170,2095,172"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#a44b84cc53695ae8e242ca182546234d4" title="Start the worker thread once the Executor queue is idle." alt="" coords="1604,150,1806,195"/>

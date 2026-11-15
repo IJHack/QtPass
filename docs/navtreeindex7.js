@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"struct_store_drag_item.html#aa143fe18023b8dba5836cc930cfb3904":[1,3,6,1],
+"struct_totp_1_1_settings.html":[1,3,10,0],
 "struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf":[1,3,10,0,8],
 "struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f":[1,3,10,0,6],
 "struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d":[1,3,10,0,2],

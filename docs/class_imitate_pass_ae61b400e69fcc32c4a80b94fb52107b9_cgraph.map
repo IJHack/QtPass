@@ -1,5 +1,5 @@
 <map id="ImitatePass::GitPush" name="ImitatePass::GitPush">
-<area shape="rect" id="Node000001" title="Push to remote." alt="" coords="5,56,161,84"/>
+<area shape="rect" id="Node000001" title="Push to remote. While a re&#45;encryption runs the push is held (Users ▸ OK and a copy ask for it as soon..." alt="" coords="5,56,161,84"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="209,29,384,57"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,58,196,55,190,57,161,63"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="215,81,378,109"/>

@@ -227,7 +227,7 @@
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" target="_top" xlink:title="Push to remote.">
+<g id="a_Node000021"><a xlink:href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" target="_top" xlink:title="Push to remote. While a re&#45;encryption runs the push is held (Users ▸ OK and a copy ask for it as soon...">
 <polygon fill="white" stroke="#666666" points="1629,-715.75 1512.5,-715.75 1512.5,-695 1629,-695 1629,-715.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1570.75" y="-702.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPush</text>
 </a>

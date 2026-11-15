@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"profile_8h.html#acc376c3fd7f5d385732533f298b9007b":[4,0,1,58,0],
+"profile_8h_source.html":[4,0,1,58],
 "profileinit_8cpp.html":[4,0,1,59],
 "profileinit_8cpp_source.html":[4,0,1,59],
 "profileinit_8h.html":[4,0,1,60],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4":[1,3,6,0],
 "struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4a0b27918290ff5323bea1e3b78a9cf04e":[1,3,6,0,2],
 "struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4a88183b946cc5f0e8c96b2e66e1c74a7e":[1,3,6,0,0],
-"struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4ae73cda510e8bb947f7e61089e5581494":[1,3,6,0,1],
-"struct_store_drag_item.html#aa143fe18023b8dba5836cc930cfb3904":[1,3,6,1],
-"struct_totp_1_1_settings.html":[1,3,10,0]
+"struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4ae73cda510e8bb947f7e61089e5581494":[1,3,6,0,1]
 };
