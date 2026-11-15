@@ -39,6 +39,7 @@ private Q_SLOTS:
   void parseAllFieldsModeIncludesExtraFields();
   void parseAllFieldsModeExcludesUrlLines();
   void parseCrlfNamedValuesAreTrimmed();
+  void otpFieldOnTheFirstLineIsNotThePassword();
   void crlfPasswordHasNoLineEnd();
   void parseMultipleOtpauthLinesAllHidden();
   void parseOtpauthCaseInsensitiveHidden();
@@ -495,6 +496,42 @@ void tst_filecontent::crlfPasswordHasNoLineEnd() {
   QCOMPARE(FileContent::passwordLine(u"hun\rter2\n"),
            QStringLiteral("hun\rter2"));
   QCOMPARE(FileContent::passwordLine(u""), QString());
+}
+
+/**
+ * @brief An `OTP:`/`TOTP:` field written as the first line holds the TOTP
+ *        seed as much as one further down: it was shown and copied as the
+ *        password, and the entry got no code. Only a bare otpauth line was
+ *        recognised there.
+ */
+void tst_filecontent::otpFieldOnTheFirstLineIsNotThePassword() {
+  const QString seed = QStringLiteral("KRUGS43JONQXGZLD");
+  const QString uri =
+      QStringLiteral("otpauth://totp/Shop:team?secret=KRUGS43JONQXGZLD");
+  const QList<QPair<QString, QString>> cases = {
+      {QStringLiteral("TOTP: ") + seed, seed},
+      {QStringLiteral("OTP: ") + uri, uri},
+      {QStringLiteral("totp:") + seed, seed},
+      {QStringLiteral("2fa: ") + uri, uri},
+      {uri, uri},
+  };
+  for (const auto &[firstLine, config] : cases) {
+    const FileContent fc =
+        FileContent::parse(firstLine + QStringLiteral("\nlogin: alice\n"),
+                           {QStringLiteral("login")}, false);
+    QVERIFY2(fc.getPasswordForDisplay().isEmpty(), qPrintable(firstLine));
+    QCOMPARE(fc.getOtpUri(), config);
+    // The edit dialog still gets the line, to write the entry back.
+    QCOMPARE(fc.getPassword(), firstLine);
+    QVERIFY(FileContent::isOtpLine(firstLine));
+  }
+  for (const QString &password :
+       {QStringLiteral("hunter2"), QStringLiteral("PIN: 1234"),
+        QStringLiteral("totp-like but not a field")}) {
+    QVERIFY2(!FileContent::isOtpLine(password), qPrintable(password));
+    QCOMPARE(FileContent::parse(password, {}, false).getPasswordForDisplay(),
+             password);
+  }
 }
 
 void tst_filecontent::parseMultipleOtpauthLinesAllHidden() {

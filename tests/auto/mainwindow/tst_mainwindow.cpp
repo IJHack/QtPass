@@ -1503,6 +1503,16 @@ void tst_mainwindow::passwordFromFileToClipboardSkipsOtpSecret() {
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
   QVERIFY2(!clip->text().contains(QStringLiteral("JBSWY3DPEHPK3PXP")),
            "otpauth secret must never reach the clipboard");
+
+  // An OTP field written as the first line holds the seed just the same.
+  for (const QString &entry :
+       {QStringLiteral("TOTP: JBSWY3DPEHPK3PXP\nlogin: alice"),
+        QStringLiteral("OTP: ") + otpUri}) {
+    QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                           QStringLiteral("otpentry")));
+    m_window->passwordFromFileToClipboard(entry, QStringLiteral("otpentry"));
+    QVERIFY2(clip->text() == QStringLiteral("sentinel"), qPrintable(entry));
+  }
 }
 
 /**
