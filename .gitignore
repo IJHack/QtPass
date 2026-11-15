@@ -37,6 +37,7 @@ tests/auto/filecontent/tst_filecontent
 tests/auto/gpgkeystate/tst_gpgkeystate
 tests/auto/integration/tst_integration
 tests/auto/imitatepass/tst_imitatepass
+tests/auto/realpass/tst_realpass
 tests/auto/exportpublickeydialog/tst_exportpublickeydialog
 tests/auto/importkeydialog/tst_importkeydialog
 tests/auto/keygendialog/tst_keygendialog

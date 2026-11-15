@@ -33,8 +33,11 @@ void RealPass::GitInit() { executePass(GIT_INIT, {"git", "init"}); }
  *                          finishes
  */
 void RealPass::GitPull_b() {
-  int result =
-      Executor::executeBlocking(m_settings.passExecutable, {"git", "pull"});
+  // In the store's environment, as every queued pass call: pass picks its
+  // store from PASSWORD_STORE_DIR alone, so without it the pull before an
+  // edit went to ~/.password-store instead of the configured store.
+  int result = Executor::executeBlocking(
+      exec.environment(), m_settings.passExecutable, {"git", "pull"});
   if (result != 0) {
 #ifdef QT_DEBUG
     dbg() << "Git pull failed with code:" << result;
