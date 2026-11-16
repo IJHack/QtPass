@@ -195,6 +195,7 @@ private Q_SLOTS:
   void qrencodeConfiguredExecutableEnablesTheCheckbox();
   void qrencodeOnPathIsStored();
   void trayIconCheckboxGatesItsCompanions();
+  void trayIconOffSavesItsCompanionsOff();
   void autodetectFindsTheProgramsOnPath();
   void backendRadioButtonsToggleTheGroupBoxes();
   void charsetSelectorFollowsTheSavedSets();
@@ -1761,6 +1762,41 @@ void tst_configdialog::trayIconCheckboxGatesItsCompanions() {
            "no tray icon, nowhere to hide to on close");
   QVERIFY2(!startMinimized->isEnabled(),
            "no tray icon, nowhere to start minimized into");
+}
+
+/**
+ * @brief Switching the tray icon off saves "hide on close" and "start
+ *        minimized" off as well. Their boxes are disabled then and were not
+ *        saved, so a stored "on" came back whenever the tray was turned on
+ *        again outside this dialog (the first-run wizard), and closing the
+ *        window hid it. As above, the test enables the tray box offscreen.
+ */
+void tst_configdialog::trayIconOffSavesItsCompanionsOff() {
+  SettingsRestorer restorer;
+  AppSettings seed = QtPassSettings::load();
+  seed.useTrayIcon = true;
+  seed.hideOnClose = true;
+  seed.startMinimized = true;
+  QtPassSettings::save(seed);
+
+  ConfigDialog dialog(nullptr);
+  auto *tray = child<QCheckBox>(dialog, "checkBoxUseTrayIcon");
+  auto *hideOnClose = child<QCheckBox>(dialog, "checkBoxHideOnClose");
+  auto *startMinimized = child<QCheckBox>(dialog, "checkBoxStartMinimized");
+  tray->setEnabled(true);
+  tray->setChecked(true);
+  for (QCheckBox *box : {hideOnClose, startMinimized}) {
+    box->setEnabled(true);
+    box->setChecked(true);
+  }
+  tray->click();
+  QVERIFY(!tray->isChecked() && !hideOnClose->isEnabled());
+  dialog.accept();
+
+  const AppSettings saved = QtPassSettings::load();
+  QVERIFY(!saved.useTrayIcon);
+  QVERIFY2(!saved.hideOnClose, "no tray, nothing to hide into on close");
+  QVERIFY2(!saved.startMinimized, "no tray, nothing to start minimized in");
 }
 
 /**

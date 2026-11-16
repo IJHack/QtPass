@@ -280,6 +280,14 @@ auto ConfigDialog::readSettings() -> AppSettings {
   // instead of clobbering it to false.
   if (ui->checkBoxUseTrayIcon->isEnabled()) {
     settings.useTrayIcon = ui->checkBoxUseTrayIcon->isChecked();
+    // Switched off here, hide-on-close and start-minimized go off with it.
+    // Their boxes are disabled now and skipped below, so a stored "on"
+    // would come back the next time anything turns the tray on (the
+    // first-run wizard sets useTrayIcon only), and closing would hide.
+    if (!settings.useTrayIcon) {
+      settings.hideOnClose = false;
+      settings.startMinimized = false;
+    }
   }
   if (ui->checkBoxHideOnClose->isEnabled()) {
     settings.hideOnClose = ui->checkBoxHideOnClose->isChecked();
