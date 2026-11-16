@@ -764,13 +764,18 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output,
   const FileContent fileContent =
       FileContent::parse(p_output, templ, allFields);
 
+  Totp::Refusal why = Totp::Refusal::None;
   const std::optional<Totp::Settings> settings =
-      Totp::parse(fileContent.getOtpUri());
+      Totp::parse(fileContent.getOtpUri(), &why);
   if (settings.has_value()) {
     m_qtPass->clipboard().copyText(Totp::generateNow(*settings));
     showStatusMessage(tr("OTP code copied to clipboard"));
   } else {
-    flashText(tr("No OTP code found in this password entry"), true);
+    // Why, when there is a configuration that gives no code.
+    const QString reason = Totp::describe(why);
+    flashText(reason.isEmpty() ? tr("No OTP code found in this password entry")
+                               : reason,
+              true);
   }
   setUiElementsEnabled(true);
 }

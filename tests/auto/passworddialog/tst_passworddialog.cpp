@@ -1975,7 +1975,8 @@ void tst_passworddialog::otpFieldFlagsAnInvalidSecret() {
 
   otp->setText(QStringLiteral("otpauth://broken"));
   QCOMPARE(otp->actions().size(), plainActions + 1);
-  QCOMPARE(otp->toolTip(), QStringLiteral("Invalid OTP secret"));
+  QCOMPARE(otp->toolTip(),
+           QStringLiteral("This otpauth:// link cannot be read."));
 
   otp->setText(QStringLiteral("otpauth://still broken"));
   QVERIFY2(otp->actions().size() == plainActions + 1,
@@ -2011,7 +2012,8 @@ void tst_passworddialog::otpWarningSurvivesAReloadOnlyOnce() {
   pass.deliverShow(QStringLiteral("secret\nOTP: otpauth://also broken\n"));
   QCOMPARE(otp->text(), QStringLiteral("otpauth://also broken"));
   QCOMPARE(otp->actions().size(), plainActions + 1);
-  QCOMPARE(otp->toolTip(), QStringLiteral("Invalid OTP secret"));
+  QCOMPARE(otp->toolTip(),
+           QStringLiteral("This otpauth:// link cannot be read."));
 
   pass.deliverShow(QStringLiteral("secret\n"));
   QVERIFY(otp->text().isEmpty());
@@ -2209,7 +2211,10 @@ void tst_passworddialog::otpUnknownAlgorithmIsKeptAsTyped() {
   QVERIFY(otp != nullptr);
   otp->setFocus();
   QTest::keyClicks(otp, unknown);
-  QCOMPARE(otp->toolTip(), QStringLiteral("Invalid OTP secret"));
+  QCOMPARE(
+      otp->toolTip(),
+      QStringLiteral("The algorithm in this otpauth:// link is not supported. "
+                     "QtPass supports SHA1, SHA256 and SHA512."));
   okButton(d)->click();
   QVERIFY2(pass.insertedContent.contains(QStringLiteral("\nOTP: ") + unknown +
                                          QStringLiteral("\n")),
@@ -2251,7 +2256,9 @@ void tst_passworddialog::otpOtherUriSchemeIsKeptAsTyped() {
   QVERIFY(otp != nullptr);
   otp->setFocus();
   QTest::keyClicks(otp, exported);
-  QCOMPARE(otp->toolTip(), QStringLiteral("Invalid OTP secret"));
+  QCOMPARE(
+      otp->toolTip(),
+      QStringLiteral("This is not a TOTP secret or an otpauth://totp/ link."));
   okButton(d)->click();
   QVERIFY2(pass.insertedContent.contains(QStringLiteral("\nOTP: ") + exported +
                                          QStringLiteral("\n")),
@@ -2275,7 +2282,8 @@ void tst_passworddialog::otpPopulatedFieldWinsOverTheEmptyTemplateOne() {
 
   QVERIFY2(!stored->placeholderText().isEmpty(),
            "the populated field must be the hooked one");
-  QCOMPARE(stored->toolTip(), QStringLiteral("Invalid OTP secret"));
+  QCOMPARE(stored->toolTip(),
+           QStringLiteral("This otpauth:// link cannot be read."));
   QVERIFY2(templ->toolTip().isEmpty(),
            "the empty template widget must not carry the warning");
 }
@@ -2295,7 +2303,8 @@ void tst_passworddialog::renamingTheOtpFieldAwayDropsItsValidation() {
   pass.deliverShow(QStringLiteral("secret\ntotp: otpauth://broken\n"));
   auto *line = d.findChild<QLineEdit *>(QStringLiteral("totp"));
   QVERIFY(line != nullptr);
-  QCOMPARE(line->toolTip(), QStringLiteral("Invalid OTP secret"));
+  QCOMPARE(line->toolTip(),
+           QStringLiteral("This otpauth:// link cannot be read."));
   const int flagged = line->actions().size();
 
   FieldLabel *label = fieldLabel(d, QStringLiteral("totp"));

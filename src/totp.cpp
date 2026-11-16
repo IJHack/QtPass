@@ -14,6 +14,7 @@
 #include "totp.h"
 #include "base32.h"
 
+#include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QDateTime>
 #include <QLatin1Char>
@@ -119,16 +120,26 @@ auto parsePositiveUInt(const QString &value, uint fallback) -> uint {
 
 } // namespace
 
-auto Totp::parse(const QString &config) -> std::optional<Settings> {
+auto Totp::parse(const QString &config, Refusal *why)
+    -> std::optional<Settings> {
+  const auto refuse = [why](Refusal reason) -> std::optional<Settings> {
+    if (why != nullptr) {
+      *why = reason;
+    }
+    return std::nullopt;
+  };
+  if (why != nullptr) {
+    *why = Refusal::None;
+  }
   // Checked before anything else sees it (trimmed() copies it, QUrl and
   // QUrlQuery would make a crafted URI of tens of MiB tens of millions of
   // query items on the GUI thread); padding counts too.
   if (config.size() > MAX_CONFIG_LENGTH) {
-    return std::nullopt;
+    return refuse(Refusal::TooLong);
   }
   const QString trimmed = config.trimmed();
   if (trimmed.isEmpty()) {
-    return std::nullopt;
+    return refuse(Refusal::Empty);
   }
 
   Settings settings;
@@ -140,7 +151,10 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     // Counter-based HOTP cannot be generated from a clock; refuse rather than
     // return a wrong code that looks right.
     if (url.host().compare(QStringLiteral("totp"), Qt::CaseInsensitive) != 0) {
-      return std::nullopt;
+      return refuse(
+          url.host().compare(QStringLiteral("hotp"), Qt::CaseInsensitive) == 0
+              ? Refusal::Hotp
+              : Refusal::UnreadableUri);
     }
 
     const QUrlQuery query(url);
@@ -189,7 +203,7 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
         algorithm.has_value() && !algorithm->trimmed().isEmpty()) {
       const std::optional<Algorithm> known = algorithmByName(*algorithm);
       if (!known.has_value()) {
-        return std::nullopt;
+        return refuse(Refusal::UnknownAlgorithm);
       }
       settings.algorithm = *known;
     }
@@ -215,7 +229,7 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     // to the bare-secret branch would hand the whole string to
     // Base32::sanitizeInput(), which strips the punctuation and leaves
     // decodable base32 — producing a confidently wrong code. Refuse instead.
-    return std::nullopt;
+    return refuse(Refusal::UnreadableUri);
   } else {
     // Not an otpauth URI: a bare base32 secret. Base32::sanitizeInput()
     // drops what is not base32, so a URI of another scheme (a Google
@@ -234,7 +248,7 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
                  (u >= u'a' && u <= u'z') || (u >= u'0' && u <= u'8');
         });
     if (!written) {
-      return std::nullopt;
+      return refuse(Refusal::NotASecret);
     }
     rawSecret = trimmed;
   }
@@ -242,7 +256,7 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
   const QByteArray sanitized = Base32::sanitizeInput(rawSecret.toLatin1());
   settings.key = Base32::decode(sanitized);
   if (settings.key.isEmpty()) {
-    return std::nullopt;
+    return refuse(Refusal::NoSecret);
   }
   settings.base32Key = QString::fromLatin1(sanitized);
 
@@ -255,6 +269,35 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
   settings.step = qBound(1U, settings.step, MAX_STEP);
 
   return settings;
+}
+
+auto Totp::describe(Refusal why) -> QString {
+  switch (why) {
+  case Refusal::TooLong:
+    return QCoreApplication::translate("Totp",
+                                       "The OTP configuration is too long.");
+  case Refusal::Hotp:
+    return QCoreApplication::translate(
+        "Totp", "This is a counter-based (HOTP) configuration. QtPass makes "
+                "time-based (TOTP) codes only.");
+  case Refusal::UnknownAlgorithm:
+    return QCoreApplication::translate(
+        "Totp", "The algorithm in this otpauth:// link is not supported. "
+                "QtPass supports SHA1, SHA256 and SHA512.");
+  case Refusal::UnreadableUri:
+    return QCoreApplication::translate("Totp",
+                                       "This otpauth:// link cannot be read.");
+  case Refusal::NotASecret:
+    return QCoreApplication::translate(
+        "Totp", "This is not a TOTP secret or an otpauth://totp/ link.");
+  case Refusal::NoSecret:
+    return QCoreApplication::translate(
+        "Totp", "The secret is missing or is not valid base32.");
+  case Refusal::None:
+  case Refusal::Empty:
+    break;
+  }
+  return {};
 }
 
 auto Totp::isValid(const QString &config) -> bool {

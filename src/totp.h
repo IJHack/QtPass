@@ -53,6 +53,21 @@ public:
   };
 
   /**
+   * @brief Why parse() gave no settings, so the user can be told more than
+   * "invalid".
+   */
+  enum class Refusal {
+    None,             ///< Parsed: there was nothing to refuse.
+    Empty,            ///< Nothing but white space.
+    TooLong,          ///< Longer than MAX_CONFIG_LENGTH.
+    Hotp,             ///< An `otpauth://hotp/` URI: counter-based.
+    UnknownAlgorithm, ///< An `algorithm` other than SHA-1, -256 or -512.
+    UnreadableUri,    ///< `otpauth:` but no URI QUrl reads, or no `totp`.
+    NotASecret,       ///< Neither an otpauth URI nor written as a secret.
+    NoSecret,         ///< No secret, or one that is not valid base32.
+  };
+
+  /**
    * @struct Settings
    * @brief Validated TOTP parameters. Only Totp::parse() produces one.
    */
@@ -102,14 +117,24 @@ public:
    *
    * `digits` is clamped to MIN_DIGITS..MAX_DIGITS and `period` to 1..MAX_STEP.
    * @param config URI or bare base32 secret; surrounding whitespace is ignored.
+   * @param why Receives why the configuration was refused, or
+   *        Refusal::None; may be null.
    * @return Validated settings, or std::nullopt when the secret is missing or
    *         is not decodable base32, the URI is HOTP or names an unknown
    *         algorithm, a bare secret holds other characters, or the
    *         configuration (its surrounding whitespace included) is longer
    *         than MAX_CONFIG_LENGTH.
    */
-  [[nodiscard]] static auto parse(const QString &config)
+  [[nodiscard]] static auto parse(const QString &config, Refusal *why = nullptr)
       -> std::optional<Settings>;
+
+  /**
+   * @brief One sentence for the user on why a configuration gives no code.
+   * @param why What parse() reported.
+   * @return The translated sentence; empty for Refusal::None and
+   *         Refusal::Empty, which callers word themselves.
+   */
+  [[nodiscard]] static auto describe(Refusal why) -> QString;
 
   /**
    * @brief Convenience validity test, for UI feedback.

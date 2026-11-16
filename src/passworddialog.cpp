@@ -559,7 +559,8 @@ void PasswordDialog::validateOtpField() {
   }
 
   const QString text = otp->text().trimmed();
-  const bool bad = !text.isEmpty() && !Totp::isValid(text);
+  Totp::Refusal why = Totp::Refusal::None;
+  const bool bad = !text.isEmpty() && !Totp::parse(text, &why).has_value();
   if (bad) {
     if (m_otpWarning.isNull()) {
       // Theme-aware indicator: no hardcoded colours and no extra layout row.
@@ -567,7 +568,10 @@ void PasswordDialog::validateOtpField() {
           otp->addAction(QIcon::fromTheme(QStringLiteral("dialog-warning")),
                          QLineEdit::TrailingPosition);
     }
-    otp->setToolTip(tr("Invalid OTP secret"));
+    // The reason, where parse() names one: "invalid" alone left the user
+    // guessing whether the secret, the algorithm or the kind was wrong.
+    const QString reason = Totp::describe(why);
+    otp->setToolTip(reason.isEmpty() ? tr("Invalid OTP secret") : reason);
   } else {
     if (!m_otpWarning.isNull()) {
       otp->removeAction(m_otpWarning);

@@ -692,6 +692,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   QtPass…"); "Hide content" and "Hide password" say why they are off without
   a clipboard mode; wording fixes ("Show tray icon", "Show QR codes
   (qrencode)", "Source code", lower-case program names)
+- An OTP configuration that gives no code says why, in the OTP row, in the
+  edit dialog's warning and when copying a code: a counter-based (HOTP)
+  link, an algorithm QtPass does not support, an `otpauth://` link it
+  cannot read, something that is not a TOTP secret (such as an
+  `otpauth-migration://` export), or a missing secret. It said only "No OTP
+  code found in this password entry" or "Invalid OTP secret"
 - The API docs no longer load Mermaid from a CDN (`MERMAID_RENDER_MODE = CLI`,
   nothing used it and the site's Content Security Policy blocked it), the docs
   job builds with Doxygen 1.18.0 and replaces `docs/` on `gh-pages` instead of

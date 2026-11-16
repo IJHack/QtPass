@@ -3003,8 +3003,9 @@ void tst_mainwindow::otpAnswerWithoutContentReportsTheFailedDecrypt() {
 
 /**
  * @brief When the panel shows no code (content hidden) the answer is parsed
- *        afresh; an entry without an otpauth line yields a clear message and
- *        leaves the clipboard alone.
+ *        afresh; an entry without an otpauth line yields a clear message, one
+ *        whose OTP line gives no code says why, and both leave the clipboard
+ *        alone.
  */
 void tst_mainwindow::otpAnswerWithoutACodeSaysSo() {
   rebuildWindow([](AppSettings &s) {
@@ -3034,13 +3035,24 @@ void tst_mainwindow::otpAnswerWithoutACodeSaysSo() {
            qPrintable(browser()->toPlainText()));
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
 
+  // An OTP line that gives no code says why.
+  const QString hotp = QStringLiteral(
+      "hunter2\notpauth://hotp/X?secret=JBSWY3DPEHPK3PXP&counter=1\n");
+  QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
+                        QStringLiteral("otp-hotp")));
+  m_window->otpFromFileToClipboard(hotp, QStringLiteral("otp-hotp"));
+  QVERIFY2(
+      browser()->toPlainText().contains(QStringLiteral("counter-based (HOTP)")),
+      qPrintable(browser()->toPlainText()));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+
   // The same, with an otpauth line: parsed and copied without a visible row.
   QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
                         QStringLiteral("otp-hidden")));
   m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("otp-hidden"));
   QVERIFY2(looksLikeOtpCode(clip->text()),
            qPrintable("expected a six-digit code, got: " + clip->text()));
-  QVERIFY2(answers.waitFor(2), "both Ctrl+G decrypts must come back");
+  QVERIFY2(answers.waitFor(3), "every Ctrl+G decrypt must come back");
 }
 
 /**
