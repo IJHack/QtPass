@@ -46,6 +46,12 @@
   eye button, whose selection never goes out as plain text, not even for a
   moment (ported from [#2051](https://github.com/IJHack/QtPass/pull/2051)
   and [#2053](https://github.com/IJHack/QtPass/pull/2053))
+- Emptying the search box leaves no entry current in the tree. The search
+  made its first hit current and clearing it kept that, out of sight, so
+  Users, Add password and Add folder acted on the hit's folder instead of
+  the store: removing a colleague changed a subfolder's recipients and left
+  them on the store's own list (ported from
+  [#2236](https://github.com/IJHack/QtPass/pull/2236))
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
