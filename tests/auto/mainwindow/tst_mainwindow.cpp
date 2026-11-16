@@ -5589,8 +5589,8 @@ void tst_mainwindow::deletePasswordAsksFirst() {
 
 /**
  * @brief A folder inside that cannot be read hides what is in it, so the
- *        question warns as for stray files: the walk took it for empty and
- *        asked plainly, though the user could not know what would go.
+ *        question names it as unknown: the walk took it for empty and asked
+ *        plainly, though the user could not know what would go.
  */
 void tst_mainwindow::deleteFolderWarnsAboutAFolderItCannotRead() {
 #ifdef Q_OS_WIN
@@ -5620,10 +5620,32 @@ void tst_mainwindow::deleteFolderWarnsAboutAFolderItCannotRead() {
                                     Qt::DirectConnection));
   COMPARE_BOX_TITLES(driver.boxTitles,
                      QStringList{QStringLiteral("Delete folder?")});
-  QVERIFY2(
-      driver.boxTexts.value(0).contains(QStringLiteral("unexpected files")),
-      qPrintable(driver.boxTexts.value(0)));
+  const QString text = driver.boxTexts.value(0);
+  // Named, and not sent looking for stray files there are none of.
+  QVERIFY2(text.contains(QDir::separator() +
+                         QStringLiteral("doomed-dir/locked") +
+                         QStringLiteral(" could not be read")),
+           qPrintable(text));
+  QVERIFY2(!text.contains(QStringLiteral("unexpected files")),
+           qPrintable(text));
   QVERIFY(QFileInfo(store.filePath(QStringLiteral("doomed-dir"))).isDir());
+
+  // Two of them: counted, not listed.
+  QVERIFY(store.mkpath(QStringLiteral("doomed-dir/locked-too")));
+  const QString lockedToo =
+      store.filePath(QStringLiteral("doomed-dir/locked-too"));
+  QVERIFY(
+      QFile::setPermissions(lockedToo, QFile::WriteOwner | QFile::ExeOwner));
+  const auto unlockToo = qScopeGuard([&lockedToo] {
+    QFile::setPermissions(lockedToo, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner);
+  });
+  QVERIFY(selectPath(store.filePath(QStringLiteral("doomed-dir"))));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                    Qt::DirectConnection));
+  QVERIFY2(driver.boxTexts.value(1).contains(
+               QStringLiteral("2 folder(s) in it could not be read")),
+           qPrintable(driver.boxTexts.value(1)));
 #endif
 }
 
