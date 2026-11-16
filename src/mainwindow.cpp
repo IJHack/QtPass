@@ -71,7 +71,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, SLOT(close()));
   // register shortcut ctrl/cmd + C to copy the currently selected password
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
-                SLOT(copyPasswordFromTreeview()));
+                SLOT(copySelectionOrPassword()));
 
   model.setNameFilters(QStringList() << "*.gpg");
   model.setNameFilterDisables(false);
@@ -1930,6 +1930,32 @@ void MainWindow::renamePassword() {
  *
  * @return void - This function does not return a value.
  */
+/**
+ * @brief MainWindow::copySelectionOrPassword Ctrl+C anywhere in the window.
+ *
+ * The selected text when the focus is in a text view or a selectable label
+ * with a selection, otherwise the password. The shortcut is window-wide, and
+ * read-only text views and labels do not take Ctrl+C for themselves, so a
+ * selected login or note was answered with the password.
+ */
+void MainWindow::copySelectionOrPassword() {
+  QWidget *focus = QApplication::focusWidget();
+  // The widget's own copy: a SecretTextBrowser marks what it copies as
+  // secret for clipboard managers, as the context menu's Copy does.
+  if (auto *text = qobject_cast<QTextEdit *>(focus);
+      text != nullptr && text->textCursor().hasSelection()) {
+    text->copy();
+    return;
+  }
+  // As a copy button would: the label may be the OTP code.
+  if (auto *label = qobject_cast<QLabel *>(focus);
+      label != nullptr && label->hasSelectedText()) {
+    m_qtPass->copyTextToClipboard(label->selectedText());
+    return;
+  }
+  copyPasswordFromTreeview();
+}
+
 void MainWindow::copyPasswordFromTreeview() {
   QFileInfo fileOrFolder =
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));

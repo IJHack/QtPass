@@ -150,6 +150,11 @@
   `-`, `.`, `_` and `=` padding (ported from
   [#2198](https://github.com/IJHack/QtPass/pull/2198) and
   [#2207](https://github.com/IJHack/QtPass/pull/2207))
+- Ctrl+C with text selected in the shown entry (a login, a URL, a note)
+  copies that text. It copied the entry's password instead and cleared the
+  selection; only the context menu's Copy took the selection. With nothing
+  selected, Ctrl+C copies the password as before (ported from
+  [#2202](https://github.com/IJHack/QtPass/pull/2202))
 
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 
