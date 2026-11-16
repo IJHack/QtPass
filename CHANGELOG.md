@@ -164,6 +164,10 @@
   selection; only the context menu's Copy took the selection. With nothing
   selected, Ctrl+C copies the password as before (ported from
   [#2202](https://github.com/IJHack/QtPass/pull/2202))
+- For an entry saved with CRLF line ends, Ctrl+C and "Always copy" copy
+  the password without the carriage return, as the password row's copy
+  button already did (ported from
+  [#2189](https://github.com/IJHack/QtPass/pull/2189))
 
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 

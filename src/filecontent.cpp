@@ -43,7 +43,7 @@ auto FileContent::parse(const QString &fileContent,
   QStringList lines = fileContent.split("\n");
   QString password;
   if (!lines.isEmpty()) {
-    password = lines.takeFirst();
+    password = passwordLine(lines.takeFirst());
   }
   QStringList remainingData;
   QStringList remainingDataDisplay;
@@ -111,6 +111,20 @@ auto FileContent::parse(const QString &fileContent,
   // getRemainingDataForDisplay() and PasswordDisplayPanel.
   return {password, namedValues, remainingData.join("\n"),
           remainingDataDisplay.join("\n"), otpUri};
+}
+
+/**
+ * The one rule for every path that takes the password from decrypted text:
+ * parse() (so the password row and "Always copy") and the Ctrl+C copy. A
+ * "\r" before the line feed is the line end, not part of the secret.
+ */
+auto FileContent::passwordLine(const QString &text) -> QString {
+  // left(-1) is the whole text when there is no line feed.
+  QString line = text.left(text.indexOf(QLatin1Char('\n')));
+  if (line.endsWith(QLatin1Char('\r'))) {
+    line.chop(1);
+  }
+  return line;
 }
 
 /**

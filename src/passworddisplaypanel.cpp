@@ -122,15 +122,12 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   QString trimmedField = field.trimmed();
   // The password keeps its surrounding whitespace: a space or tab is a valid
   // part of a secret, and trimming it would copy and save a different password
-  // than the one stored. A trailing carriage return is dropped, so a file
-  // saved with CRLF line endings does not show or copy a stray `\r`. Every
-  // other field is still trimmed for display.
+  // than the one stored. The "\r" of a CRLF line end is already gone
+  // (FileContent::passwordLine()). Every other field is still trimmed for
+  // display.
   QString displayValue;
   if (trimmedField == QObject::tr("Password")) {
     displayValue = value;
-    if (displayValue.endsWith(QLatin1Char('\r'))) {
-      displayValue.chop(1);
-    }
   } else {
     displayValue = value.trimmed();
   }

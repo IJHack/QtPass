@@ -1991,11 +1991,14 @@ void MainWindow::passwordFromFileToClipboard(const QString &text) {
   // line. That URI carries the shared TOTP secret (the seed, not a code), so
   // copying it to the clipboard would leak 2FA material. Skip it, matching the
   // display path (FileContent::getPasswordForDisplay / PasswordDisplayPanel).
-  if (FileContent::isOtpUriValue(tokens[0])) {
+  // Without the "\r" of a CRLF line end, as the password row and "Always
+  // copy" have it.
+  const QString first = FileContent::passwordLine(tokens[0]);
+  if (FileContent::isOtpUriValue(first)) {
     flashText(tr("This entry holds an OTP secret, not a password"), true);
     return;
   }
-  m_qtPass->copyTextToClipboard(tokens[0]);
+  m_qtPass->copyTextToClipboard(first);
 }
 
 /**
