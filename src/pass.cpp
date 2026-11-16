@@ -520,6 +520,21 @@ auto gpgErrorMessage(const QString &err) -> QString {
   return {};
 }
 
+auto Pass::autoPushHeld() const -> bool {
+  return !m_autoPushHeldFor.isEmpty() &&
+         m_autoPushHeldFor == QDir::cleanPath(m_settings.passStore);
+}
+
+void Pass::holdAutoPush() {
+  m_autoPushHeldFor = QDir::cleanPath(m_settings.passStore);
+}
+
+void Pass::releaseAutoPush() {
+  if (autoPushHeld()) {
+    m_autoPushHeldFor.clear();
+  }
+}
+
 void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   auto pid = static_cast<PROCESS>(id);

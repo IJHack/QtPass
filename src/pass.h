@@ -444,7 +444,32 @@ public:
     return exec.hasQueued(Enums::GIT_PUSH);
   }
 
+  /**
+   * @brief Whether automatic pushes of the current store are held because
+   *        its last re-encryption did not finish cleanly.
+   *
+   * The recipients change is committed locally first, so after a failed or
+   * cancelled re-encryption the next automatic push (after any later edit)
+   * would publish a .gpg-id whose entries are partly still encrypted to the
+   * previous recipients. Held until a re-encryption of that store succeeds;
+   * a push the user asks for is not held. Kept for this session only.
+   * @return true when an automatic push should not run now.
+   */
+  [[nodiscard]] auto autoPushHeld() const -> bool;
+
 protected:
+  /**
+   * @brief Hold automatic pushes of the current store (autoPushHeld()):
+   *        its re-encryption did not finish cleanly.
+   */
+  void holdAutoPush();
+
+  /**
+   * @brief Release the hold on automatic pushes of the current store: a
+   *        re-encryption of it succeeded.
+   */
+  void releaseAutoPush();
+
   /**
    * @brief With signing on, refuse to encrypt @p file when the lookup passed
    * over its folder's own list (skippedGpgId()): the parent's list is not
@@ -697,6 +722,8 @@ protected slots:
                         const QString &err);
 
 private:
+  /// The store (cleaned path) whose automatic pushes are held, or empty.
+  QString m_autoPushHeldFor;
   /// Files of the Show() calls still in flight, oldest first.
   QQueue<QString> m_pendingShows;
   /// Inserts that have started queueing but not yet reported; see queueInsert.

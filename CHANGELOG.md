@@ -1072,6 +1072,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the previous recipients, a key just removed among them. QtPass now reads
   gpg's status lines for these commands (`--status-fd 2`), in any
   language
+- After a re-encryption that did not finish (an entry that could not be
+  re-encrypted, a cancelled or aborted run, both backends), QtPass holds
+  automatic pushes of that store until a re-encryption of it succeeds.
+  The recipients change is committed locally first, so the next automatic
+  push, after any later edit, published it with entries still encrypted to
+  the previous recipients. A push by hand still goes; the status bar says
+  why an automatic one did not. The hold lasts for the session
 - With Git run through WSL (`wsl git`), deleting or renaming a folder whose
   name ends in whitespace acts on that folder. The path from `wslpath` was
   trimmed, so "team" followed by a space became its neighbour `team`, and a

@@ -1332,7 +1332,19 @@ void tst_imitatepass::pushAskedForDuringAReencryptionWaitsForIt() {
       QTest::qWait(300);
       QCoreApplication::processEvents();
       QVERIFY2(!hasPush(loggedCalls(gitLog)), "a failed run pushes nothing");
+      // Nor does the next automatic push, after any later edit: the
+      // recipients change is committed already.
+      QVERIFY2(pass.autoPushHeld(), "a failed run holds automatic pushes");
+      // A clean run of the store releases the hold.
+      s.gpgExecutable = writeRecordingGpg(storeDir.path(), gpgLog);
+      pass.init(s);
+      QVERIFY(pass.autoPushHeld());
+      endSpy.clear();
+      pass.reencryptPath(storeDir.path());
+      QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+      QVERIFY2(!pass.autoPushHeld(), "a clean run releases the hold");
     } else {
+      QVERIFY(!pass.autoPushHeld());
       QVERIFY(pushSpy.count() > 0 || pushSpy.wait(5000));
       int pushes = 0;
       for (const QStringList &call : loggedCalls(gitLog)) {

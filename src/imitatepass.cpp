@@ -1409,6 +1409,16 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
       }
     }
   }
+  // The recipients change is committed already: a run that did not finish
+  // leaves entries for the previous recipients, which the next automatic
+  // push (after any edit) would publish with it.
+  if (reencryptUsesGit()) {
+    if (result.cancelled || result.aborted || !result.failed.isEmpty()) {
+      holdAutoPush();
+    } else {
+      releaseAutoPush();
+    }
+  }
   if (m_uncommittedGpgId) {
     const UncommittedGpgId uncommitted = *m_uncommittedGpgId;
     m_uncommittedGpgId.reset();

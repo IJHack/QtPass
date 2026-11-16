@@ -374,8 +374,14 @@ void RealPass::finished(int id, int exitCode, const QString &out,
   const auto pid = static_cast<PROCESS>(id);
   if (pid == PASS_INIT || pid == PASS_MOVE || pid == PASS_COPY) {
     if (exitCode == 0 && reencryptFailed(out, err)) {
+      holdAutoPush();
       reportReencryptFailure(pid, out, err);
       return;
+    }
+    // pass re-encrypts the whole folder on init: a clean run of it ends a
+    // hold an earlier failure set (a move or copy covers only its entries).
+    if (pid == PASS_INIT && exitCode == 0) {
+      releaseAutoPush();
     }
     // The status lines are for this check, not for the output panel.
     Pass::finished(id, exitCode, out, withoutStatusLines(err));
@@ -437,7 +443,9 @@ void RealPass::reportReencryptFailure(PROCESS pid, const QString &out,
       tr("The recipients were changed, but some entries could not be "
          "re-encrypted for them: those are still encrypted to the previous "
          "recipients, who can still read them. With Git the change is "
-         "committed locally and was not pushed now; the next push sends it.");
+         "committed locally and not pushed: QtPass does not push this store "
+         "automatically until a re-encryption succeeds, and a push by hand "
+         "sends it.");
   for (const QString &part : {reason, human}) {
     if (!part.isEmpty()) {
       body += QStringLiteral("\n\n") + part;

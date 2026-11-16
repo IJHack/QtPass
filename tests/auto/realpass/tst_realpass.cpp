@@ -48,6 +48,7 @@ private slots:
   void moveBetweenExistingFilesNeedsForce();
   void reencryptFailedJudgesTheStatusLines_data();
   void reencryptFailedJudgesTheStatusLines();
+  void failedReencryptionHoldsAutomaticPushes();
   void reencryptFailureIsReportedNotFinished();
   void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
   void gitPullBlockingReturnsAfterPassRanWhateverItsExitCode();
@@ -1028,6 +1029,51 @@ void tst_realpass::reencryptFailedJudgesTheStatusLines_data() {
   QTest::newRow("an entry named like the line")
       << QStringLiteral("a: reencrypting to b: reencrypting to AAAA\n")
       << QStringLiteral("[GNUPG:] END_ENCRYPTION\n") << false;
+}
+
+namespace {
+/// RealPass with its completion handler callable, to feed it a finished
+/// pass run without a process.
+class FinishingRealPass : public RealPass {
+public:
+  using RealPass::finished;
+};
+} // namespace
+
+/**
+ * @brief After pass init reported entries it could not re-encrypt, the
+ *        recipients change is committed locally: automatic pushes of that
+ *        store are held, so a later edit's push does not publish it, until a
+ *        clean init of the store. A move or copy does not release it, and
+ *        another store is not held.
+ */
+void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
+  QTemporaryDir store;
+  QTemporaryDir other;
+  QVERIFY(store.isValid() && other.isValid());
+  FinishingRealPass pass;
+  AppSettings s = QtPassSettings::load();
+  s.passStore = store.path() + QStringLiteral("/");
+  pass.init(s);
+  const QString out = QStringLiteral("a: reencrypting to AAAA\n");
+  const QString failed =
+      QStringLiteral("[GNUPG:] INV_RECP 0 CCCC\n[GNUPG:] FAILURE encrypt 53\n");
+  const QString clean = QStringLiteral("[GNUPG:] END_ENCRYPTION\n");
+  QVERIFY(!pass.autoPushHeld());
+  pass.finished(Enums::PASS_INIT, 0, out, failed);
+  QVERIFY(pass.autoPushHeld());
+  pass.finished(Enums::PASS_COPY, 0, out, clean);
+  QVERIFY2(pass.autoPushHeld(), "a copy re-encrypts only its own entries");
+  s.passStore = other.path();
+  pass.init(s);
+  QVERIFY2(!pass.autoPushHeld(), "another store is not held");
+  s.passStore = store.path();
+  pass.init(s);
+  QVERIFY(pass.autoPushHeld());
+  pass.finished(Enums::PASS_INIT, 0, out, clean);
+  QVERIFY2(!pass.autoPushHeld(), "a clean init releases the hold");
+  pass.finished(Enums::PASS_MOVE, 0, out, failed);
+  QVERIFY(pass.autoPushHeld());
 }
 
 /**

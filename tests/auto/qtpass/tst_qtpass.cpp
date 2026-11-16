@@ -2,13 +2,16 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QAbstractTextDocumentLayout>
 #include <QApplication>
+#include <QScopeGuard>
 #include <QSignalSpy>
+#include <QTemporaryDir>
 #include <QTextDocument>
 #include <QtTest>
 
 #include "../../../src/pass.h"
 #include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/realpass.h"
 #include "../../../src/settingsconstants.h"
 #include "../../../src/util.h"
 #include "../testsettings.h"
@@ -35,6 +38,7 @@ private slots:
   void silentFailureOnlyFinishes();
   void finishedProcessShowsOutputAndChatter();
   void storeChangePushesOnlyWhenAutoPushIsOn();
+  void heldStoreIsNotPushedAutomatically();
   void insertReselectsTheEntry();
   void keyGenerationReportsSuccess();
   void bothBackendsAreListenedTo();
@@ -203,6 +207,53 @@ void tst_qtpass::storeChangePushesOnlyWhenAutoPushIsOn() {
   emit real->finishedInit(QString(), QString());
   QCOMPARE(push.count(), 4);
   QCOMPARE(finished.count(), 5);
+}
+
+namespace {
+/// Reaches Pass's protected hold controls on any backend object (named
+/// through a derived class, a member pointer applies to the base).
+struct HoldOpener : RealPass {
+  static void hold(Pass *pass) { (pass->*(&HoldOpener::holdAutoPush))(); }
+  static void release(Pass *pass) { (pass->*(&HoldOpener::releaseAutoPush))(); }
+};
+} // namespace
+
+/**
+ * @brief While the store's automatic pushes are held (a re-encryption did
+ *        not finish), an operation's automatic push is not requested and
+ *        the user is told why; released, it is requested again.
+ */
+void tst_qtpass::heldStoreIsNotPushedAutomatically() {
+  QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
+  QSignalSpy push(&qtPass, &QtPass::pushRequested);
+  QSignalSpy status(&qtPass, &QtPass::statusMessage);
+  const AppSettings saved = QtPassSettings::load();
+  const auto restore = qScopeGuard([&saved] { QtPassSettings::save(saved); });
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  AppSettings s = saved;
+  s.passStore = store.path();
+  s.autoPush = true;
+  s.usePass = true;
+  QtPassSettings::save(s);
+  QCOMPARE(QtPassSettings::getPass(), real);
+  real->init(QtPassSettings::load());
+  HoldOpener::hold(real);
+  const auto release = qScopeGuard([real] { HoldOpener::release(real); });
+  QVERIFY(real->autoPushHeld());
+
+  emit real->finishedInsert(QString(), QString());
+  emit real->finishedRemove(QString(), QString());
+  QCOMPARE(push.count(), 0);
+  QVERIFY(!status.isEmpty());
+  QVERIFY2(status.last().at(0).toString().contains(
+               QStringLiteral("Not pushing automatically")),
+           qPrintable(status.last().at(0).toString()));
+
+  HoldOpener::release(real);
+  emit real->finishedRemove(QString(), QString());
+  QCOMPARE(push.count(), 1);
 }
 
 void tst_qtpass::insertReselectsTheEntry() {
