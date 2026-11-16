@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-16 19:29:57</td>
+            <td class="headerValue">2026-11-16 19:46:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -98,16 +98,16 @@
 <span id="L25"><span class="lineNum">      25</span>              : /// stays. The new store's .gpg-id is signed, and a signed commit made, with</span>
 <span id="L26"><span class="lineNum">      26</span>              : /// the keyring QtPass uses everywhere else, where the signing key may be</span>
 <span id="L27"><span class="lineNum">      27</span>              : /// the only place it is.</span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         263 : auto withGpgHome(QProcessEnvironment env, const AppSettings &amp;s)</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         265 : auto withGpgHome(QProcessEnvironment env, const AppSettings &amp;s)</span></span>
 <span id="L29"><span class="lineNum">      29</span>              :     -&gt; QProcessEnvironment {</span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         263 :   if (!s.gpgHome.isEmpty()) {</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         265 :   if (!s.gpgHome.isEmpty()) {</span></span>
 <span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">          11 :     QDir home(s.gpgHome);</span></span>
 <span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          11 :     home.makeAbsolute();</span></span>
 <span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">          11 :     if (home.exists()) {</span></span>
 <span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">          16 :       env.insert(QStringLiteral(&quot;GNUPGHOME&quot;), home.path());</span></span>
 <span id="L35"><span class="lineNum">      35</span>              :     }</span>
 <span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          11 :   }</span></span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">         263 :   return env;</span></span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">         265 :   return env;</span></span>
 <span id="L38"><span class="lineNum">      38</span>              : }</span>
 <span id="L39"><span class="lineNum">      39</span>              : </span>
 <span id="L40"><span class="lineNum">      40</span>              : /// As Pass::updateEnv() sets it for the active store: git in @p dir does not</span>
@@ -147,8 +147,8 @@
 <span id="L74"><span class="lineNum">      74</span>              : }</span>
 <span id="L75"><span class="lineNum">      75</span>              : } // namespace</span>
 <span id="L76"><span class="lineNum">      76</span>              : </span>
-<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         228 : auto ProfileInit::gpgEnvironment(const AppSettings &amp;s) -&gt; QProcessEnvironment {</span></span>
-<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">         228 :   return withGpgHome(QProcessEnvironment::systemEnvironment(), s);</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         230 : auto ProfileInit::gpgEnvironment(const AppSettings &amp;s) -&gt; QProcessEnvironment {</span></span>
+<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">         230 :   return withGpgHome(QProcessEnvironment::systemEnvironment(), s);</span></span>
 <span id="L79"><span class="lineNum">      79</span>              : }</span>
 <span id="L80"><span class="lineNum">      80</span>              : </span>
 <span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">          11 : auto ProfileInit::needsInit(const QString &amp;path) -&gt; bool {</span></span>
