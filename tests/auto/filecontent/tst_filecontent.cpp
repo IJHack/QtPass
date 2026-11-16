@@ -5,6 +5,7 @@
 
 #include "../../../src/appsettings.h"
 #include "../../../src/filecontent.h"
+#include "../../../src/totp.h"
 
 class tst_filecontent : public QObject {
   Q_OBJECT
@@ -65,6 +66,8 @@ private Q_SLOTS:
   void getOtpUriPrefersFieldOverBareLine();
   void getOtpUriSkipsAnUnusableCandidate_data();
   void getOtpUriSkipsAnUnusableCandidate();
+  void getOtpUriReadsTheSplitScheme_data();
+  void getOtpUriReadsTheSplitScheme();
   void getOtpUriEmptyWhenAbsent();
   void otpFieldHiddenFromDisplay();
   void otpFieldRoundTripsInNamedValues();
@@ -867,6 +870,49 @@ void tst_filecontent::getOtpUriSkipsAnUnusableCandidate() {
   QFETCH(QString, expected);
   const FileContent fc = FileContent::parse(content, templ, false);
   QCOMPARE(fc.getOtpUri(), expected);
+}
+
+void tst_filecontent::getOtpUriReadsTheSplitScheme_data() {
+  QTest::addColumn<QString>("content");
+  QTest::addColumn<QStringList>("templ");
+  QTest::addColumn<QString>("expected");
+  const QString rest = kOtpUri.mid(QStringLiteral("otpauth:").size());
+  QTest::newRow("body line, one space")
+      << "secret\notpauth: " + rest << QStringList{} << kOtpUri;
+  QTest::newRow("body line, template lists otpauth")
+      << "secret\notpauth: " + rest << QStringList{"otpauth"} << kOtpUri;
+  QTest::newRow("body line, tab and spaces, indented")
+      << "secret\n  otpauth:\t  " + rest << QStringList{} << kOtpUri;
+  QTest::newRow("upper-case scheme")
+      << "secret\nOTPAUTH: " + rest << QStringList{}
+      << QStringLiteral("OTPAUTH:") + rest;
+  QTest::newRow("first line") << "otpauth: " + rest + "\nlogin: alice"
+                              << QStringList{"login"} << kOtpUri;
+  QTest::newRow("not a URI after the scheme")
+      << QStringLiteral("secret\notpauth: see the phone") << QStringList{}
+      << QString();
+  QTest::newRow("text before the scheme")
+      << "secret\nold otpauth: " + rest << QStringList{} << QString();
+}
+
+/**
+ * @brief The split `otpauth: //...` that 1.8 to 2.0-rc2 saved for a
+ * template field "otpauth" is read as the URI it was, its blanks dropped,
+ * so the entry gives a code again; it was hidden but gave none. Text that
+ * only mentions the scheme is not.
+ */
+void tst_filecontent::getOtpUriReadsTheSplitScheme() {
+  QFETCH(QString, content);
+  QFETCH(QStringList, templ);
+  QFETCH(QString, expected);
+  const FileContent fc = FileContent::parse(content, templ, false);
+  QCOMPARE(fc.getOtpUri(), expected);
+  if (!expected.isEmpty()) {
+    QVERIFY2(Totp::isValid(fc.getOtpUri()), qPrintable(fc.getOtpUri()));
+  }
+  QVERIFY2(!fc.getRemainingDataForDisplay().contains(
+               QStringLiteral("JBSWY3DPEHPK3PXP")),
+           "the secret stays off the screen");
 }
 
 void tst_filecontent::getOtpUriEmptyWhenAbsent() {
