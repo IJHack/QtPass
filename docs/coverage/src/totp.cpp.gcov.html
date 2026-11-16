@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-16 20:31:50</td>
+            <td class="headerValue">2026-11-16 20:57:42</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -347,155 +347,161 @@
 <span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">         287 : auto Totp::describe(Refusal why) -&gt; QString {</span></span>
 <span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">         287 :   switch (why) {</span></span>
 <span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">           1 :   case Refusal::TooLong:</span></span>
-<span id="L277"><span class="lineNum">     277</span>              :     return QCoreApplication::translate(&quot;Totp&quot;,</span>
-<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">           1 :                                        &quot;The OTP configuration is too long.&quot;);</span></span>
-<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">           2 :   case Refusal::Hotp:</span></span>
-<span id="L280"><span class="lineNum">     280</span>              :     return QCoreApplication::translate(</span>
-<span id="L281"><span class="lineNum">     281</span>              :         &quot;Totp&quot;, &quot;This is a counter-based (HOTP) configuration. QtPass makes &quot;</span>
-<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">           2 :                 &quot;time-based (TOTP) codes only.&quot;);</span></span>
-<span id="L283"><span class="lineNum">     283</span> <span class="tlaGNC">          35 :   case Refusal::UnknownAlgorithm:</span></span>
-<span id="L284"><span class="lineNum">     284</span>              :     return QCoreApplication::translate(</span>
-<span id="L285"><span class="lineNum">     285</span>              :         &quot;Totp&quot;, &quot;The algorithm in this otpauth:// link is not supported. &quot;</span>
-<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">          35 :                 &quot;QtPass supports SHA1, SHA256 and SHA512.&quot;);</span></span>
-<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">          36 :   case Refusal::UnreadableUri:</span></span>
-<span id="L288"><span class="lineNum">     288</span>              :     return QCoreApplication::translate(&quot;Totp&quot;,</span>
-<span id="L289"><span class="lineNum">     289</span> <span class="tlaGNC">          36 :                                        &quot;This otpauth:// link cannot be read.&quot;);</span></span>
-<span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">         108 :   case Refusal::NotASecret:</span></span>
-<span id="L291"><span class="lineNum">     291</span>              :     return QCoreApplication::translate(</span>
-<span id="L292"><span class="lineNum">     292</span> <span class="tlaGNC">         108 :         &quot;Totp&quot;, &quot;This is not a TOTP secret or an otpauth://totp/ link.&quot;);</span></span>
-<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">         102 :   case Refusal::NoSecret:</span></span>
-<span id="L294"><span class="lineNum">     294</span>              :     return QCoreApplication::translate(</span>
-<span id="L295"><span class="lineNum">     295</span> <span class="tlaGNC">         102 :         &quot;Totp&quot;, &quot;The secret is missing or is not valid base32.&quot;);</span></span>
-<span id="L296"><span class="lineNum">     296</span>              :   case Refusal::None:</span>
-<span id="L297"><span class="lineNum">     297</span>              :   case Refusal::Empty:</span>
-<span id="L298"><span class="lineNum">     298</span>              :     break;</span>
-<span id="L299"><span class="lineNum">     299</span>              :   }</span>
-<span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">           3 :   return {};</span></span>
-<span id="L301"><span class="lineNum">     301</span>              : }</span>
-<span id="L302"><span class="lineNum">     302</span>              : </span>
-<span id="L303"><span class="lineNum">     303</span> <span class="tlaGNC">         143 : auto Totp::isValid(const QString &amp;config) -&gt; bool {</span></span>
-<span id="L304"><span class="lineNum">     304</span> <span class="tlaGNC">         143 :   return parse(config).has_value();</span></span>
-<span id="L305"><span class="lineNum">     305</span>              : }</span>
-<span id="L306"><span class="lineNum">     306</span>              : </span>
-<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">          81 : auto Totp::counter(const Settings &amp;settings, quint64 unixTime) -&gt; quint64 {</span></span>
-<span id="L308"><span class="lineNum">     308</span> <span class="tlaGNC">          81 :   return unixTime / settings.step;</span></span>
-<span id="L309"><span class="lineNum">     309</span>              : }</span>
-<span id="L310"><span class="lineNum">     310</span>              : </span>
-<span id="L311"><span class="lineNum">     311</span> <span class="tlaGNC">          28 : auto Totp::secondsRemaining(const Settings &amp;settings, quint64 unixTime)</span></span>
-<span id="L312"><span class="lineNum">     312</span>              :     -&gt; uint {</span>
-<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">          28 :   return settings.step - static_cast&lt;uint&gt;(unixTime % settings.step);</span></span>
-<span id="L314"><span class="lineNum">     314</span>              : }</span>
-<span id="L315"><span class="lineNum">     315</span>              : </span>
-<span id="L316"><span class="lineNum">     316</span> <span class="tlaGNC">          53 : auto Totp::generate(const Settings &amp;settings, quint64 unixTime) -&gt; QString {</span></span>
-<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">          53 :   const quint64 bigEndianCounter = qToBigEndian(counter(settings, unixTime));</span></span>
-<span id="L318"><span class="lineNum">     318</span>              :   const QByteArray message(reinterpret_cast&lt;const char *&gt;(&amp;bigEndianCounter),</span>
-<span id="L319"><span class="lineNum">     319</span> <span class="tlaGNC">          53 :                            sizeof(bigEndianCounter));</span></span>
-<span id="L320"><span class="lineNum">     320</span>              : </span>
-<span id="L321"><span class="lineNum">     321</span>              :   const QByteArray hmac = QMessageAuthenticationCode::hash(</span>
-<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">         100 :       message, settings.key, cryptoHash(settings.algorithm));</span></span>
-<span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">          53 :   if (hmac.size() &lt; kMinHmacSize) {</span></span>
-<span id="L324"><span class="lineNum">     324</span> <span class="tlaUNC">           0 :     return {};</span></span>
-<span id="L325"><span class="lineNum">     325</span>              :   }</span>
+<span id="L277"><span class="lineNum">     277</span>              :     //: OTP is a one-time password (a two-factor code).</span>
+<span id="L278"><span class="lineNum">     278</span>              :     return QCoreApplication::translate(&quot;Totp&quot;,</span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">           1 :                                        &quot;The OTP configuration is too long.&quot;);</span></span>
+<span id="L280"><span class="lineNum">     280</span> <span class="tlaGNC">           2 :   case Refusal::Hotp:</span></span>
+<span id="L281"><span class="lineNum">     281</span>              :     //: Keep HOTP and TOTP as written: they are the names of the two kinds.</span>
+<span id="L282"><span class="lineNum">     282</span>              :     return QCoreApplication::translate(</span>
+<span id="L283"><span class="lineNum">     283</span>              :         &quot;Totp&quot;, &quot;This is a counter-based (HOTP) configuration. QtPass makes &quot;</span>
+<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">           2 :                 &quot;time-based (TOTP) codes only.&quot;);</span></span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">          35 :   case Refusal::UnknownAlgorithm:</span></span>
+<span id="L286"><span class="lineNum">     286</span>              :     //: Keep otpauth://, SHA1, SHA256 and SHA512 as written.</span>
+<span id="L287"><span class="lineNum">     287</span>              :     return QCoreApplication::translate(</span>
+<span id="L288"><span class="lineNum">     288</span>              :         &quot;Totp&quot;, &quot;The algorithm in this otpauth:// link is not supported. &quot;</span>
+<span id="L289"><span class="lineNum">     289</span> <span class="tlaGNC">          35 :                 &quot;QtPass supports SHA1, SHA256 and SHA512.&quot;);</span></span>
+<span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">          36 :   case Refusal::UnreadableUri:</span></span>
+<span id="L291"><span class="lineNum">     291</span>              :     //: Keep otpauth:// as written: it is the name of the link format.</span>
+<span id="L292"><span class="lineNum">     292</span>              :     return QCoreApplication::translate(&quot;Totp&quot;,</span>
+<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">          36 :                                        &quot;This otpauth:// link cannot be read.&quot;);</span></span>
+<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">         108 :   case Refusal::NotASecret:</span></span>
+<span id="L295"><span class="lineNum">     295</span>              :     //: Keep TOTP and otpauth://totp/ as written.</span>
+<span id="L296"><span class="lineNum">     296</span>              :     return QCoreApplication::translate(</span>
+<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">         108 :         &quot;Totp&quot;, &quot;This is not a TOTP secret or an otpauth://totp/ link.&quot;);</span></span>
+<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">         102 :   case Refusal::NoSecret:</span></span>
+<span id="L299"><span class="lineNum">     299</span>              :     //: The secret is the shared key of the one-time password; keep base32.</span>
+<span id="L300"><span class="lineNum">     300</span>              :     return QCoreApplication::translate(</span>
+<span id="L301"><span class="lineNum">     301</span> <span class="tlaGNC">         102 :         &quot;Totp&quot;, &quot;The secret is missing or is not valid base32.&quot;);</span></span>
+<span id="L302"><span class="lineNum">     302</span>              :   case Refusal::None:</span>
+<span id="L303"><span class="lineNum">     303</span>              :   case Refusal::Empty:</span>
+<span id="L304"><span class="lineNum">     304</span>              :     break;</span>
+<span id="L305"><span class="lineNum">     305</span>              :   }</span>
+<span id="L306"><span class="lineNum">     306</span> <span class="tlaGNC">           3 :   return {};</span></span>
+<span id="L307"><span class="lineNum">     307</span>              : }</span>
+<span id="L308"><span class="lineNum">     308</span>              : </span>
+<span id="L309"><span class="lineNum">     309</span> <span class="tlaGNC">         143 : auto Totp::isValid(const QString &amp;config) -&gt; bool {</span></span>
+<span id="L310"><span class="lineNum">     310</span> <span class="tlaGNC">         143 :   return parse(config).has_value();</span></span>
+<span id="L311"><span class="lineNum">     311</span>              : }</span>
+<span id="L312"><span class="lineNum">     312</span>              : </span>
+<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">          81 : auto Totp::counter(const Settings &amp;settings, quint64 unixTime) -&gt; quint64 {</span></span>
+<span id="L314"><span class="lineNum">     314</span> <span class="tlaGNC">          81 :   return unixTime / settings.step;</span></span>
+<span id="L315"><span class="lineNum">     315</span>              : }</span>
+<span id="L316"><span class="lineNum">     316</span>              : </span>
+<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">          28 : auto Totp::secondsRemaining(const Settings &amp;settings, quint64 unixTime)</span></span>
+<span id="L318"><span class="lineNum">     318</span>              :     -&gt; uint {</span>
+<span id="L319"><span class="lineNum">     319</span> <span class="tlaGNC">          28 :   return settings.step - static_cast&lt;uint&gt;(unixTime % settings.step);</span></span>
+<span id="L320"><span class="lineNum">     320</span>              : }</span>
+<span id="L321"><span class="lineNum">     321</span>              : </span>
+<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">          53 : auto Totp::generate(const Settings &amp;settings, quint64 unixTime) -&gt; QString {</span></span>
+<span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">          53 :   const quint64 bigEndianCounter = qToBigEndian(counter(settings, unixTime));</span></span>
+<span id="L324"><span class="lineNum">     324</span>              :   const QByteArray message(reinterpret_cast&lt;const char *&gt;(&amp;bigEndianCounter),</span>
+<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">          53 :                            sizeof(bigEndianCounter));</span></span>
 <span id="L326"><span class="lineNum">     326</span>              : </span>
-<span id="L327"><span class="lineNum">     327</span>              :   // RFC 4226 dynamic truncation. QByteArray elements are signed char, so every</span>
-<span id="L328"><span class="lineNum">     328</span>              :   // byte is widened through quint8: without that, any byte &gt;= 0x80</span>
-<span id="L329"><span class="lineNum">     329</span>              :   // sign-extends and corrupts the assembled 31-bit value.</span>
-<span id="L330"><span class="lineNum">     330</span>              :   const int offset =</span>
-<span id="L331"><span class="lineNum">     331</span> <span class="tlaGNC">          53 :       static_cast&lt;quint8&gt;(hmac.at(hmac.size() - 1)) &amp; 0x0F; // NOLINT</span></span>
-<span id="L332"><span class="lineNum">     332</span>              :   const quint32 binary =</span>
-<span id="L333"><span class="lineNum">     333</span> <span class="tlaGNC">          53 :       (static_cast&lt;quint32&gt;(static_cast&lt;quint8&gt;(hmac.at(offset)) &amp; 0x7F)</span></span>
-<span id="L334"><span class="lineNum">     334</span> <span class="tlaGNC">          53 :        &lt;&lt; 24) |</span></span>
-<span id="L335"><span class="lineNum">     335</span> <span class="tlaGNC">          53 :       (static_cast&lt;quint32&gt;(static_cast&lt;quint8&gt;(hmac.at(offset + 1))) &lt;&lt; 16) |</span></span>
-<span id="L336"><span class="lineNum">     336</span> <span class="tlaGNC">          53 :       (static_cast&lt;quint32&gt;(static_cast&lt;quint8&gt;(hmac.at(offset + 2))) &lt;&lt; 8) |</span></span>
-<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">          53 :       static_cast&lt;quint32&gt;(static_cast&lt;quint8&gt;(hmac.at(offset + 3)));</span></span>
-<span id="L338"><span class="lineNum">     338</span>              : </span>
-<span id="L339"><span class="lineNum">     339</span> <span class="tlaGNC">          53 :   if (settings.encoder == Encoder::Steam) {</span></span>
-<span id="L340"><span class="lineNum">     340</span>              :     // Steam emits the least significant symbol first.</span>
-<span id="L341"><span class="lineNum">     341</span> <span class="tlaGNC">           3 :     quint64 value = binary;</span></span>
-<span id="L342"><span class="lineNum">     342</span> <span class="tlaGNC">           3 :     QString code;</span></span>
-<span id="L343"><span class="lineNum">     343</span> <span class="tlaGNC">           3 :     code.reserve(static_cast&lt;int&gt;(STEAM_DIGITS));</span></span>
-<span id="L344"><span class="lineNum">     344</span> <span class="tlaGNC">          18 :     for (uint i = 0; i &lt; STEAM_DIGITS; ++i) {</span></span>
-<span id="L345"><span class="lineNum">     345</span> <span class="tlaGNC">          15 :       code.append(QLatin1Char(kSteamAlphabet[value % kSteamAlphabetSize]));</span></span>
-<span id="L346"><span class="lineNum">     346</span> <span class="tlaGNC">          15 :       value /= kSteamAlphabetSize;</span></span>
-<span id="L347"><span class="lineNum">     347</span>              :     }</span>
-<span id="L348"><span class="lineNum">     348</span>              :     return code;</span>
-<span id="L349"><span class="lineNum">     349</span>              :   }</span>
-<span id="L350"><span class="lineNum">     350</span>              : </span>
-<span id="L351"><span class="lineNum">     351</span>              :   // Integer exponentiation into a quint64: pow() into a quint32 (as KeePassXC</span>
-<span id="L352"><span class="lineNum">     352</span>              :   // did) overflows at ten digits.</span>
-<span id="L353"><span class="lineNum">     353</span>              :   quint64 modulus = 1;</span>
-<span id="L354"><span class="lineNum">     354</span> <span class="tlaGNC">         394 :   for (uint i = 0; i &lt; settings.digits; ++i) {</span></span>
-<span id="L355"><span class="lineNum">     355</span> <span class="tlaGNC">         344 :     modulus *= 10;</span></span>
-<span id="L356"><span class="lineNum">     356</span>              :   }</span>
-<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">         100 :   return QString::number(binary % modulus)</span></span>
-<span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">          50 :       .rightJustified(static_cast&lt;int&gt;(settings.digits), QLatin1Char('0'));</span></span>
-<span id="L359"><span class="lineNum">     359</span>              : }</span>
-<span id="L360"><span class="lineNum">     360</span>              : </span>
-<span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">           2 : auto Totp::generateNow(const Settings &amp;settings) -&gt; QString {</span></span>
-<span id="L362"><span class="lineNum">     362</span> <span class="tlaGNC">           2 :   return generate(settings, currentUnixTime());</span></span>
-<span id="L363"><span class="lineNum">     363</span>              : }</span>
-<span id="L364"><span class="lineNum">     364</span>              : </span>
-<span id="L365"><span class="lineNum">     365</span> <span class="tlaGNC">          43 : auto Totp::toUri(const Settings &amp;settings) -&gt; QString {</span></span>
-<span id="L366"><span class="lineNum">     366</span>              :   const QString label =</span>
-<span id="L367"><span class="lineNum">     367</span> <span class="tlaGNC">          43 :       settings.label.isEmpty() ? QStringLiteral(&quot;QtPass&quot;) : settings.label;</span></span>
-<span id="L368"><span class="lineNum">     368</span>              :   // The Key-Uri-Format spec says the secret's base32 padding is omitted, and</span>
-<span id="L369"><span class="lineNum">     369</span>              :   // third-party importers reject or truncate `secret=...======`.</span>
-<span id="L370"><span class="lineNum">     370</span>              :   // sanitizeInput() re-adds padding when reading, so this round-trips.</span>
-<span id="L371"><span class="lineNum">     371</span>              :   const QString secret =</span>
-<span id="L372"><span class="lineNum">     372</span> <span class="tlaGNC">          86 :       QString::fromLatin1(Base32::removePadding(settings.base32Key.toLatin1()));</span></span>
-<span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">          43 :   QString uri = QStringLiteral(&quot;otpauth://totp/%1?secret=%2&quot;)</span></span>
-<span id="L374"><span class="lineNum">     374</span> <span class="tlaGNC">          86 :                     .arg(encodeLabel(label), secret);</span></span>
-<span id="L375"><span class="lineNum">     375</span> <span class="tlaGNC">          43 :   if (!settings.issuer.isEmpty()) {</span></span>
-<span id="L376"><span class="lineNum">     376</span> <span class="tlaGNC">          22 :     uri += QStringLiteral(&quot;&amp;issuer=%1&quot;).arg(encodeLabel(settings.issuer));</span></span>
-<span id="L377"><span class="lineNum">     377</span>              :   }</span>
-<span id="L378"><span class="lineNum">     378</span> <span class="tlaGNC">          43 :   if (settings.algorithm != Algorithm::Sha1) {</span></span>
-<span id="L379"><span class="lineNum">     379</span>              :     uri +=</span>
-<span id="L380"><span class="lineNum">     380</span> <span class="tlaGNC">          12 :         QStringLiteral(&quot;&amp;algorithm=%1&quot;).arg(algorithmName(settings.algorithm));</span></span>
-<span id="L381"><span class="lineNum">     381</span>              :   }</span>
-<span id="L382"><span class="lineNum">     382</span> <span class="tlaGNC">          43 :   uri += QStringLiteral(&quot;&amp;digits=%1&amp;period=%2&quot;)</span></span>
-<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">          43 :              .arg(settings.digits)</span></span>
-<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">          43 :              .arg(settings.step);</span></span>
-<span id="L385"><span class="lineNum">     385</span> <span class="tlaGNC">          43 :   if (settings.encoder == Encoder::Steam) {</span></span>
-<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">           2 :     uri += QStringLiteral(&quot;&amp;encoder=steam&quot;);</span></span>
+<span id="L327"><span class="lineNum">     327</span>              :   const QByteArray hmac = QMessageAuthenticationCode::hash(</span>
+<span id="L328"><span class="lineNum">     328</span> <span class="tlaGNC">         100 :       message, settings.key, cryptoHash(settings.algorithm));</span></span>
+<span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">          53 :   if (hmac.size() &lt; kMinHmacSize) {</span></span>
+<span id="L330"><span class="lineNum">     330</span> <span class="tlaUNC">           0 :     return {};</span></span>
+<span id="L331"><span class="lineNum">     331</span>              :   }</span>
+<span id="L332"><span class="lineNum">     332</span>              : </span>
+<span id="L333"><span class="lineNum">     333</span>              :   // RFC 4226 dynamic truncation. QByteArray elements are signed char, so every</span>
+<span id="L334"><span class="lineNum">     334</span>              :   // byte is widened through quint8: without that, any byte &gt;= 0x80</span>
+<span id="L335"><span class="lineNum">     335</span>              :   // sign-extends and corrupts the assembled 31-bit value.</span>
+<span id="L336"><span class="lineNum">     336</span>              :   const int offset =</span>
+<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">          53 :       static_cast&lt;quint8&gt;(hmac.at(hmac.size() - 1)) &amp; 0x0F; // NOLINT</span></span>
+<span id="L338"><span class="lineNum">     338</span>              :   const quint32 binary =</span>
+<span id="L339"><span class="lineNum">     339</span> <span class="tlaGNC">          53 :       (static_cast&lt;quint32&gt;(static_cast&lt;quint8&gt;(hmac.at(offset)) &amp; 0x7F)</span></span>
+<span id="L340"><span class="lineNum">     340</span> <span class="tlaGNC">          53 :        &lt;&lt; 24) |</span></span>
+<span id="L341"><span class="lineNum">     341</span> <span class="tlaGNC">          53 :       (static_cast&lt;quint32&gt;(static_cast&lt;quint8&gt;(hmac.at(offset + 1))) &lt;&lt; 16) |</span></span>
+<span id="L342"><span class="lineNum">     342</span> <span class="tlaGNC">          53 :       (static_cast&lt;quint32&gt;(static_cast&lt;quint8&gt;(hmac.at(offset + 2))) &lt;&lt; 8) |</span></span>
+<span id="L343"><span class="lineNum">     343</span> <span class="tlaGNC">          53 :       static_cast&lt;quint32&gt;(static_cast&lt;quint8&gt;(hmac.at(offset + 3)));</span></span>
+<span id="L344"><span class="lineNum">     344</span>              : </span>
+<span id="L345"><span class="lineNum">     345</span> <span class="tlaGNC">          53 :   if (settings.encoder == Encoder::Steam) {</span></span>
+<span id="L346"><span class="lineNum">     346</span>              :     // Steam emits the least significant symbol first.</span>
+<span id="L347"><span class="lineNum">     347</span> <span class="tlaGNC">           3 :     quint64 value = binary;</span></span>
+<span id="L348"><span class="lineNum">     348</span> <span class="tlaGNC">           3 :     QString code;</span></span>
+<span id="L349"><span class="lineNum">     349</span> <span class="tlaGNC">           3 :     code.reserve(static_cast&lt;int&gt;(STEAM_DIGITS));</span></span>
+<span id="L350"><span class="lineNum">     350</span> <span class="tlaGNC">          18 :     for (uint i = 0; i &lt; STEAM_DIGITS; ++i) {</span></span>
+<span id="L351"><span class="lineNum">     351</span> <span class="tlaGNC">          15 :       code.append(QLatin1Char(kSteamAlphabet[value % kSteamAlphabetSize]));</span></span>
+<span id="L352"><span class="lineNum">     352</span> <span class="tlaGNC">          15 :       value /= kSteamAlphabetSize;</span></span>
+<span id="L353"><span class="lineNum">     353</span>              :     }</span>
+<span id="L354"><span class="lineNum">     354</span>              :     return code;</span>
+<span id="L355"><span class="lineNum">     355</span>              :   }</span>
+<span id="L356"><span class="lineNum">     356</span>              : </span>
+<span id="L357"><span class="lineNum">     357</span>              :   // Integer exponentiation into a quint64: pow() into a quint32 (as KeePassXC</span>
+<span id="L358"><span class="lineNum">     358</span>              :   // did) overflows at ten digits.</span>
+<span id="L359"><span class="lineNum">     359</span>              :   quint64 modulus = 1;</span>
+<span id="L360"><span class="lineNum">     360</span> <span class="tlaGNC">         394 :   for (uint i = 0; i &lt; settings.digits; ++i) {</span></span>
+<span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">         344 :     modulus *= 10;</span></span>
+<span id="L362"><span class="lineNum">     362</span>              :   }</span>
+<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">         100 :   return QString::number(binary % modulus)</span></span>
+<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">          50 :       .rightJustified(static_cast&lt;int&gt;(settings.digits), QLatin1Char('0'));</span></span>
+<span id="L365"><span class="lineNum">     365</span>              : }</span>
+<span id="L366"><span class="lineNum">     366</span>              : </span>
+<span id="L367"><span class="lineNum">     367</span> <span class="tlaGNC">           2 : auto Totp::generateNow(const Settings &amp;settings) -&gt; QString {</span></span>
+<span id="L368"><span class="lineNum">     368</span> <span class="tlaGNC">           2 :   return generate(settings, currentUnixTime());</span></span>
+<span id="L369"><span class="lineNum">     369</span>              : }</span>
+<span id="L370"><span class="lineNum">     370</span>              : </span>
+<span id="L371"><span class="lineNum">     371</span> <span class="tlaGNC">          43 : auto Totp::toUri(const Settings &amp;settings) -&gt; QString {</span></span>
+<span id="L372"><span class="lineNum">     372</span>              :   const QString label =</span>
+<span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">          43 :       settings.label.isEmpty() ? QStringLiteral(&quot;QtPass&quot;) : settings.label;</span></span>
+<span id="L374"><span class="lineNum">     374</span>              :   // The Key-Uri-Format spec says the secret's base32 padding is omitted, and</span>
+<span id="L375"><span class="lineNum">     375</span>              :   // third-party importers reject or truncate `secret=...======`.</span>
+<span id="L376"><span class="lineNum">     376</span>              :   // sanitizeInput() re-adds padding when reading, so this round-trips.</span>
+<span id="L377"><span class="lineNum">     377</span>              :   const QString secret =</span>
+<span id="L378"><span class="lineNum">     378</span> <span class="tlaGNC">          86 :       QString::fromLatin1(Base32::removePadding(settings.base32Key.toLatin1()));</span></span>
+<span id="L379"><span class="lineNum">     379</span> <span class="tlaGNC">          43 :   QString uri = QStringLiteral(&quot;otpauth://totp/%1?secret=%2&quot;)</span></span>
+<span id="L380"><span class="lineNum">     380</span> <span class="tlaGNC">          86 :                     .arg(encodeLabel(label), secret);</span></span>
+<span id="L381"><span class="lineNum">     381</span> <span class="tlaGNC">          43 :   if (!settings.issuer.isEmpty()) {</span></span>
+<span id="L382"><span class="lineNum">     382</span> <span class="tlaGNC">          22 :     uri += QStringLiteral(&quot;&amp;issuer=%1&quot;).arg(encodeLabel(settings.issuer));</span></span>
+<span id="L383"><span class="lineNum">     383</span>              :   }</span>
+<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">          43 :   if (settings.algorithm != Algorithm::Sha1) {</span></span>
+<span id="L385"><span class="lineNum">     385</span>              :     uri +=</span>
+<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">          12 :         QStringLiteral(&quot;&amp;algorithm=%1&quot;).arg(algorithmName(settings.algorithm));</span></span>
 <span id="L387"><span class="lineNum">     387</span>              :   }</span>
-<span id="L388"><span class="lineNum">     388</span>              :   // Re-emit anything the parser did not model, so canonicalising an existing</span>
-<span id="L389"><span class="lineNum">     389</span>              :   // URI does not quietly discard parameters other authenticators honour.</span>
-<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">          46 :   for (const QPair&lt;QString, QString&gt; &amp;item : settings.extraParams) {</span></span>
-<span id="L391"><span class="lineNum">     391</span> <span class="tlaGNC">           6 :     uri += QStringLiteral(&quot;&amp;%1=%2&quot;).arg(</span></span>
-<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">           6 :         QString::fromLatin1(QUrl::toPercentEncoding(item.first)),</span></span>
-<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">           6 :         QString::fromLatin1(QUrl::toPercentEncoding(item.second)));</span></span>
-<span id="L394"><span class="lineNum">     394</span>              :   }</span>
-<span id="L395"><span class="lineNum">     395</span> <span class="tlaGNC">          43 :   if (!settings.fragment.isEmpty()) {</span></span>
-<span id="L396"><span class="lineNum">     396</span> <span class="tlaGNC">          12 :     uri += QLatin1Char('#') + settings.fragment;</span></span>
-<span id="L397"><span class="lineNum">     397</span>              :   }</span>
-<span id="L398"><span class="lineNum">     398</span> <span class="tlaGNC">          43 :   return uri;</span></span>
-<span id="L399"><span class="lineNum">     399</span>              : }</span>
-<span id="L400"><span class="lineNum">     400</span>              : </span>
-<span id="L401"><span class="lineNum">     401</span> <span class="tlaGNC">          56 : auto Totp::normalize(const QString &amp;config, const QString &amp;label,</span></span>
-<span id="L402"><span class="lineNum">     402</span>              :                      const QString &amp;issuer) -&gt; QString {</span>
-<span id="L403"><span class="lineNum">     403</span> <span class="tlaGNC">          56 :   const std::optional&lt;Settings&gt; settings = parse(config);</span></span>
-<span id="L404"><span class="lineNum">     404</span> <span class="tlaGNC">          56 :   if (!settings.has_value()) {</span></span>
-<span id="L405"><span class="lineNum">     405</span> <span class="tlaGNC">          18 :     return {};</span></span>
-<span id="L406"><span class="lineNum">     406</span>              :   }</span>
-<span id="L407"><span class="lineNum">     407</span> <span class="tlaGNC">          38 :   Settings canonical = *settings;</span></span>
-<span id="L408"><span class="lineNum">     408</span> <span class="tlaGNC">          38 :   if (canonical.label.isEmpty()) {</span></span>
-<span id="L409"><span class="lineNum">     409</span> <span class="tlaGNC">          16 :     canonical.label = label;</span></span>
-<span id="L410"><span class="lineNum">     410</span>              :   }</span>
-<span id="L411"><span class="lineNum">     411</span> <span class="tlaGNC">          38 :   if (canonical.issuer.isEmpty()) {</span></span>
-<span id="L412"><span class="lineNum">     412</span> <span class="tlaGNC">          30 :     canonical.issuer = issuer;</span></span>
-<span id="L413"><span class="lineNum">     413</span>              :   }</span>
-<span id="L414"><span class="lineNum">     414</span>              :   // Percent-encoding and the added fields can take a value near the length</span>
-<span id="L415"><span class="lineNum">     415</span>              :   // cap past it; a URI parse() refuses would store an OTP that makes no code.</span>
-<span id="L416"><span class="lineNum">     416</span> <span class="tlaGNC">          38 :   const QString uri = toUri(canonical);</span></span>
-<span id="L417"><span class="lineNum">     417</span> <span class="tlaGNC">          38 :   if (uri.size() &gt; MAX_CONFIG_LENGTH) {</span></span>
-<span id="L418"><span class="lineNum">     418</span> <span class="tlaGNC">           1 :     return {};</span></span>
+<span id="L388"><span class="lineNum">     388</span> <span class="tlaGNC">          43 :   uri += QStringLiteral(&quot;&amp;digits=%1&amp;period=%2&quot;)</span></span>
+<span id="L389"><span class="lineNum">     389</span> <span class="tlaGNC">          43 :              .arg(settings.digits)</span></span>
+<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">          43 :              .arg(settings.step);</span></span>
+<span id="L391"><span class="lineNum">     391</span> <span class="tlaGNC">          43 :   if (settings.encoder == Encoder::Steam) {</span></span>
+<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">           2 :     uri += QStringLiteral(&quot;&amp;encoder=steam&quot;);</span></span>
+<span id="L393"><span class="lineNum">     393</span>              :   }</span>
+<span id="L394"><span class="lineNum">     394</span>              :   // Re-emit anything the parser did not model, so canonicalising an existing</span>
+<span id="L395"><span class="lineNum">     395</span>              :   // URI does not quietly discard parameters other authenticators honour.</span>
+<span id="L396"><span class="lineNum">     396</span> <span class="tlaGNC">          46 :   for (const QPair&lt;QString, QString&gt; &amp;item : settings.extraParams) {</span></span>
+<span id="L397"><span class="lineNum">     397</span> <span class="tlaGNC">           6 :     uri += QStringLiteral(&quot;&amp;%1=%2&quot;).arg(</span></span>
+<span id="L398"><span class="lineNum">     398</span> <span class="tlaGNC">           6 :         QString::fromLatin1(QUrl::toPercentEncoding(item.first)),</span></span>
+<span id="L399"><span class="lineNum">     399</span> <span class="tlaGNC">           6 :         QString::fromLatin1(QUrl::toPercentEncoding(item.second)));</span></span>
+<span id="L400"><span class="lineNum">     400</span>              :   }</span>
+<span id="L401"><span class="lineNum">     401</span> <span class="tlaGNC">          43 :   if (!settings.fragment.isEmpty()) {</span></span>
+<span id="L402"><span class="lineNum">     402</span> <span class="tlaGNC">          12 :     uri += QLatin1Char('#') + settings.fragment;</span></span>
+<span id="L403"><span class="lineNum">     403</span>              :   }</span>
+<span id="L404"><span class="lineNum">     404</span> <span class="tlaGNC">          43 :   return uri;</span></span>
+<span id="L405"><span class="lineNum">     405</span>              : }</span>
+<span id="L406"><span class="lineNum">     406</span>              : </span>
+<span id="L407"><span class="lineNum">     407</span> <span class="tlaGNC">          56 : auto Totp::normalize(const QString &amp;config, const QString &amp;label,</span></span>
+<span id="L408"><span class="lineNum">     408</span>              :                      const QString &amp;issuer) -&gt; QString {</span>
+<span id="L409"><span class="lineNum">     409</span> <span class="tlaGNC">          56 :   const std::optional&lt;Settings&gt; settings = parse(config);</span></span>
+<span id="L410"><span class="lineNum">     410</span> <span class="tlaGNC">          56 :   if (!settings.has_value()) {</span></span>
+<span id="L411"><span class="lineNum">     411</span> <span class="tlaGNC">          18 :     return {};</span></span>
+<span id="L412"><span class="lineNum">     412</span>              :   }</span>
+<span id="L413"><span class="lineNum">     413</span> <span class="tlaGNC">          38 :   Settings canonical = *settings;</span></span>
+<span id="L414"><span class="lineNum">     414</span> <span class="tlaGNC">          38 :   if (canonical.label.isEmpty()) {</span></span>
+<span id="L415"><span class="lineNum">     415</span> <span class="tlaGNC">          16 :     canonical.label = label;</span></span>
+<span id="L416"><span class="lineNum">     416</span>              :   }</span>
+<span id="L417"><span class="lineNum">     417</span> <span class="tlaGNC">          38 :   if (canonical.issuer.isEmpty()) {</span></span>
+<span id="L418"><span class="lineNum">     418</span> <span class="tlaGNC">          30 :     canonical.issuer = issuer;</span></span>
 <span id="L419"><span class="lineNum">     419</span>              :   }</span>
-<span id="L420"><span class="lineNum">     420</span>              :   return uri;</span>
-<span id="L421"><span class="lineNum">     421</span> <span class="tlaGNC">          38 : }</span></span>
-<span id="L422"><span class="lineNum">     422</span>              : </span>
-<span id="L423"><span class="lineNum">     423</span> <span class="tlaGNC">          21 : auto Totp::currentUnixTime() -&gt; quint64 {</span></span>
-<span id="L424"><span class="lineNum">     424</span> <span class="tlaGNC">          21 :   return static_cast&lt;quint64&gt;(QDateTime::currentSecsSinceEpoch());</span></span>
-<span id="L425"><span class="lineNum">     425</span>              : }</span>
+<span id="L420"><span class="lineNum">     420</span>              :   // Percent-encoding and the added fields can take a value near the length</span>
+<span id="L421"><span class="lineNum">     421</span>              :   // cap past it; a URI parse() refuses would store an OTP that makes no code.</span>
+<span id="L422"><span class="lineNum">     422</span> <span class="tlaGNC">          38 :   const QString uri = toUri(canonical);</span></span>
+<span id="L423"><span class="lineNum">     423</span> <span class="tlaGNC">          38 :   if (uri.size() &gt; MAX_CONFIG_LENGTH) {</span></span>
+<span id="L424"><span class="lineNum">     424</span> <span class="tlaGNC">           1 :     return {};</span></span>
+<span id="L425"><span class="lineNum">     425</span>              :   }</span>
+<span id="L426"><span class="lineNum">     426</span>              :   return uri;</span>
+<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">          38 : }</span></span>
+<span id="L428"><span class="lineNum">     428</span>              : </span>
+<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">          21 : auto Totp::currentUnixTime() -&gt; quint64 {</span></span>
+<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">          21 :   return static_cast&lt;quint64&gt;(QDateTime::currentSecsSinceEpoch());</span></span>
+<span id="L431"><span class="lineNum">     431</span>              : }</span>
         </pre>
               </td>
             </tr>
