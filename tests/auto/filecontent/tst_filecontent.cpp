@@ -63,6 +63,8 @@ private Q_SLOTS:
   void getOtpUriFromBareOtpauthLine();
   void getOtpUriFromBareBase32Secret();
   void getOtpUriPrefersFieldOverBareLine();
+  void getOtpUriSkipsAnUnusableCandidate_data();
+  void getOtpUriSkipsAnUnusableCandidate();
   void getOtpUriEmptyWhenAbsent();
   void otpFieldHiddenFromDisplay();
   void otpFieldRoundTripsInNamedValues();
@@ -822,6 +824,49 @@ void tst_filecontent::getOtpUriPrefersFieldOverBareLine() {
   const QString content = "secret\n" + bare + "\nOTP: " + kOtpUri;
   FileContent fc = FileContent::parse(content, {"OTP"}, false);
   QCOMPARE(fc.getOtpUri(), kOtpUri);
+}
+
+void tst_filecontent::getOtpUriSkipsAnUnusableCandidate_data() {
+  QTest::addColumn<QString>("content");
+  QTest::addColumn<QStringList>("templ");
+  QTest::addColumn<QString>("expected");
+  const QString hotpA =
+      QStringLiteral("otpauth://hotp/A?secret=JBSWY3DPEHPK3PXP&counter=1");
+  const QString hotpB =
+      QStringLiteral("otpauth://hotp/B?secret=GEZDGNBVGY3TQOJQ&counter=1");
+  QTest::newRow("migration field, then a bare line")
+      << "secret\nOTP: otpauth-migration://offline?data=CjEKCkhlbGxv\n" +
+             kOtpUri
+      << QStringList{"OTP"} << kOtpUri;
+  QTest::newRow("HOTP field, then a TOTP field")
+      << "secret\nOTP: " + hotpA + "\nTOTP: " + kOtpUri
+      << QStringList{"OTP", "TOTP"} << kOtpUri;
+  QTest::newRow("HOTP password line, then a bare line")
+      << hotpA + "\n" + kOtpUri << QStringList{} << kOtpUri;
+  QTest::newRow("two unpromoted lines, the first unusable")
+      << QStringLiteral("secret\nOTP: not-a-seed!\nOTP: JBSWY3DPEHPK3PXP")
+      << QStringList{"login"} << QStringLiteral("JBSWY3DPEHPK3PXP");
+  QTest::newRow("two usable fields: the first")
+      << "secret\nOTP: " + kOtpUri +
+             "\nTOTP: otpauth://totp/Other?secret=GEZDGNBVGY3TQOJQ"
+      << QStringList{"OTP", "TOTP"} << kOtpUri;
+  QTest::newRow("none usable: the first found")
+      << "secret\nOTP: " + hotpA + "\nOTP: " + hotpB << QStringList{"OTP"}
+      << hotpA;
+}
+
+/**
+ * @brief An OTP configuration that gives no code (an `otpauth-migration://`
+ * export, HOTP, a value that is not a seed) does not hide a later one that
+ * does, of the same kind or a later one. With none usable, the first found
+ * is still returned, so the panel can say the secret is invalid.
+ */
+void tst_filecontent::getOtpUriSkipsAnUnusableCandidate() {
+  QFETCH(QString, content);
+  QFETCH(QStringList, templ);
+  QFETCH(QString, expected);
+  const FileContent fc = FileContent::parse(content, templ, false);
+  QCOMPARE(fc.getOtpUri(), expected);
 }
 
 void tst_filecontent::getOtpUriEmptyWhenAbsent() {
