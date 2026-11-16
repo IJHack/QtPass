@@ -692,6 +692,10 @@ void MainWindow::deselect() {
   cancelOtpRequest();
   m_qtPass->clearClipboard();
   ui->treeView->clearSelection();
+  // The current index too: clearSelection() keeps it, and onUsers() (also
+  // Add password and Add folder) took the hidden entry it was left on, such
+  // as the first hit of a search just emptied.
+  ui->treeView->setCurrentIndex(QModelIndex());
   ui->actionEdit->setEnabled(false);
   ui->actionDelete->setEnabled(false);
   ui->passwordName->setText("");

@@ -98,6 +98,7 @@ private Q_SLOTS:
   void ctrlCCopiesTheSelectedText();
   void returnOnAContentSearchResultOpensIt();
   void staleContentSearchResultsAreNotListed();
+  void emptyingTheSearchLeavesNothingCurrent();
 
 private:
   void rebuildWithGrepSearch();
@@ -1243,6 +1244,35 @@ void tst_mainwindow::returnOnAContentSearchResultOpensIt() {
   // The backend outlives the window: its decrypt must be answered before the
   // test ends, or the gpg still running is torn down at exit.
   QTRY_VERIFY_WITH_TIMEOUT(shown.count() + failed.count() >= 1, 10000);
+}
+
+/**
+ * @brief Emptying the search box leaves no hidden current entry behind. The
+ *        search made its first hit current; deselect() cleared only the
+ *        selection, so the Users dialog (and Add password, Add folder) still
+ *        took that hit's folder: removing a colleague "from the store" changed
+ *        a subfolder's .gpg-id and left them on the root list.
+ */
+void tst_mainwindow::emptyingTheSearchLeavesNothingCurrent() {
+  QVERIFY(QDir(m_storeDir.path()).mkpath(QStringLiteral("team")));
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
+                   QStringLiteral("team/colleague"))
+              .isValid());
+  auto *box = m_window->findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  auto *tree = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  QVERIFY(box != nullptr && tree != nullptr);
+  box->setText(QStringLiteral("colleague"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QTRY_VERIFY2(tree->currentIndex().isValid(),
+               "the search makes its first hit current");
+
+  box->clear();
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QVERIFY2(!tree->currentIndex().isValid(),
+           "no hidden entry left for Users, Add password or Add folder");
+  QVERIFY(!tree->selectionModel()->hasSelection());
 }
 
 QTEST_MAIN(tst_mainwindow)
