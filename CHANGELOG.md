@@ -167,7 +167,20 @@
 - For an entry saved with CRLF line ends, Ctrl+C and "Always copy" copy
   the password without the carriage return, as the password row's copy
   button already did (ported from
-  [#2189](https://github.com/IJHack/QtPass/pull/2189))
+  [#2189](https://github.com/IJHack/QtPass/pull/2189)). Saving such an
+  entry in the edit dialog still writes it with LF line ends in 1.8; 2.0
+  keeps them
+- A TOTP seed stays off the screen and the clipboard wherever it sits. An
+  `OTP:`/`TOTP:` field holding a seed, written as the entry's first line,
+  was shown and copied as the password and gave no code; a password that
+  only starts like one (`totp:Secr3t!`) is still the password. An
+  `otpauth://` URI after a list dash, in quotes, behind other text or a
+  second colon, or split as `otpauth: //`, showed `secret=` in the main
+  window, also with "Hide password" on (ported from
+  [#2190](https://github.com/IJHack/QtPass/pull/2190),
+  [#2191](https://github.com/IJHack/QtPass/pull/2191),
+  [#2199](https://github.com/IJHack/QtPass/pull/2199) and
+  [#2209](https://github.com/IJHack/QtPass/pull/2209))
 
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 
