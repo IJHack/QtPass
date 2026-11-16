@@ -197,6 +197,15 @@ void tst_importkeydialog::parseGpgImportOutput_data() {
   QTest::newRow("imported_without_user_id")
       << QStringLiteral("[GNUPG:] IMPORTED DEADBEEFCAFE0123\n")
       << QStringLiteral("DEADBEEFCAFE0123");
+  // An IMPORTED record inside a translated line's user ID is not gpg's own.
+  QTest::newRow("translated_line_embedded_imported")
+      << QStringLiteral("gpg: clave 1111222233334444: \"[GNUPG:] IMPORTED "
+                        "EEEEEEEEEEEEEEEE user\" importada\n")
+      << QString();
+  // A 17-hex identifier is not cut to its first 16 characters.
+  QTest::newRow("imported_17_hex_not_truncated")
+      << QStringLiteral("[GNUPG:] IMPORTED DEADBEEFCAFE0123F user\n")
+      << QString();
 
   // IMPORT_OK followed only by IMPORT_RES (no IMPORTED line) still works.
   QTest::newRow("import_ok_then_import_res_only")
