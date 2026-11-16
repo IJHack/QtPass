@@ -22,6 +22,8 @@
 #include <QtEndian>
 #include <QtGlobal>
 
+#include <algorithm>
+
 namespace {
 
 /// Steam Guard's alphabet: no A, E, I, L, O, S, U, Z, 0 or 1.
@@ -33,20 +35,33 @@ constexpr int kMinHmacSize = 20;
 
 /**
  * @brief Map an `algorithm` URI value onto a hash function.
+ *
+ * Surrounding whitespace, case, an `HMAC` prefix and `-`/`_` separators are
+ * ignored, so `SHA-256`,
+ * `HmacSHA256` and `HMAC-SHA-256` all name SHA-256. Anything else is not a
+ * hash function QtPass has: no result, rather than a SHA-1 code that looks
+ * right and an algorithm that toUri() would then leave out.
+ *
  * @param name Value of the `algorithm` parameter.
- * @return The matching algorithm, defaulting to SHA-1.
+ * @return The matching algorithm, or std::nullopt for an unknown one.
  */
-auto algorithmByName(const QString &name) -> Totp::Algorithm {
-  const QString upper = name.toUpper();
-  if (upper == QStringLiteral("SHA512") ||
-      upper == QStringLiteral("HMAC-SHA-512")) {
-    return Totp::Algorithm::Sha512;
+auto algorithmByName(const QString &name) -> std::optional<Totp::Algorithm> {
+  QString compact = name.trimmed().toUpper();
+  compact.remove(QLatin1Char('-'));
+  compact.remove(QLatin1Char('_'));
+  if (compact.startsWith(QStringLiteral("HMAC"))) {
+    compact.remove(0, 4);
   }
-  if (upper == QStringLiteral("SHA256") ||
-      upper == QStringLiteral("HMAC-SHA-256")) {
+  if (compact == QStringLiteral("SHA1")) {
+    return Totp::Algorithm::Sha1;
+  }
+  if (compact == QStringLiteral("SHA256")) {
     return Totp::Algorithm::Sha256;
   }
-  return Totp::Algorithm::Sha1;
+  if (compact == QStringLiteral("SHA512")) {
+    return Totp::Algorithm::Sha512;
+  }
+  return std::nullopt;
 }
 
 /**
@@ -126,10 +141,30 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     }
 
     const QUrlQuery query(url);
-    rawSecret =
-        query.queryItemValue(QStringLiteral("secret"), QUrl::FullyDecoded);
-    settings.issuer =
-        query.queryItemValue(QStringLiteral("issuer"), QUrl::FullyDecoded);
+    // FullyDecoded, because toUri() percent-encodes these again: the default
+    // PrettyDecoded leaves escapes in place and the round trip double-encodes.
+    const QList<QPair<QString, QString>> items =
+        query.queryItems(QUrl::FullyDecoded);
+    // Parameter names are matched without regard to case, as the list of
+    // names kept below is: read exactly, `Digits=8` was neither read nor
+    // kept, and toUri() wrote the defaults in its place. The first of a name
+    // wins, as QUrlQuery::queryItemValue() has it.
+    const auto param = [&items](QLatin1String name) -> std::optional<QString> {
+      for (const QPair<QString, QString> &item : items) {
+        if (item.first.compare(name, Qt::CaseInsensitive) == 0) {
+          return item.second;
+        }
+      }
+      return std::nullopt;
+    };
+    rawSecret = param(QLatin1String("secret")).value_or(QString());
+    settings.issuer = param(QLatin1String("issuer")).value_or(QString());
+    // Not part of the OTP configuration, but the user's text: kept as written,
+    // from the input itself (QUrl splits at the first '#' as well, but its
+    // view would re-encode '%' and '`' and decode escapes).
+    if (url.hasFragment()) {
+      settings.fragment = trimmed.mid(trimmed.indexOf(QLatin1Char('#')) + 1);
+    }
     // The label is everything after the host, e.g. "/Example:alice".
     settings.label = url.path();
     if (settings.label.startsWith(QLatin1Char('/'))) {
@@ -140,14 +175,22 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     // rotating every second, which normalize() would then persist. Keep the RFC
     // default unless the value really is a usable number.
     settings.digits = parsePositiveUInt(
-        query.queryItemValue(QStringLiteral("digits")), DEFAULT_DIGITS);
+        param(QLatin1String("digits")).value_or(QString()), DEFAULT_DIGITS);
     settings.step = parsePositiveUInt(
-        query.queryItemValue(QStringLiteral("period")), DEFAULT_STEP);
-    if (query.hasQueryItem(QStringLiteral("algorithm"))) {
-      settings.algorithm =
-          algorithmByName(query.queryItemValue(QStringLiteral("algorithm")));
+        param(QLatin1String("period")).value_or(QString()), DEFAULT_STEP);
+    // An empty value is the default, as an absent one is. An unknown hash
+    // function is refused, as HOTP is: its code cannot be made here.
+    if (const std::optional<QString> algorithm =
+            param(QLatin1String("algorithm"));
+        algorithm.has_value() && !algorithm->trimmed().isEmpty()) {
+      const std::optional<Algorithm> known = algorithmByName(*algorithm);
+      if (!known.has_value()) {
+        return std::nullopt;
+      }
+      settings.algorithm = *known;
     }
-    if (query.queryItemValue(QStringLiteral("encoder"))
+    if (param(QLatin1String("encoder"))
+            .value_or(QString())
             .compare(QStringLiteral("steam"), Qt::CaseInsensitive) == 0) {
       settings.encoder = Encoder::Steam;
     }
@@ -157,10 +200,6 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
         QStringLiteral("secret"),    QStringLiteral("issuer"),
         QStringLiteral("digits"),    QStringLiteral("period"),
         QStringLiteral("algorithm"), QStringLiteral("encoder")};
-    // FullyDecoded, because toUri() percent-encodes these again: the default
-    // PrettyDecoded leaves escapes in place and the round trip double-encodes.
-    const QList<QPair<QString, QString>> items =
-        query.queryItems(QUrl::FullyDecoded);
     for (const QPair<QString, QString> &item : items) {
       if (!known.contains(item.first, Qt::CaseInsensitive)) {
         settings.extraParams.append(item);
@@ -174,7 +213,25 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     // decodable base32 — producing a confidently wrong code. Refuse instead.
     return std::nullopt;
   } else {
-    // Not a URI: treat the whole string as a bare base32 secret.
+    // Not an otpauth URI: a bare base32 secret. Base32::sanitizeInput()
+    // drops what is not base32, so a URI of another scheme (a Google
+    // Authenticator export, otpauth-migration://...?data=..., steam://),
+    // zbarimg output with its "QR-Code:" prefix, or a secret with a remark
+    // in brackets would become a secret made of its leftover letters, with
+    // a confident, wrong code. Only what a secret is written with passes:
+    // letters, the digits sanitizeInput() reads (0, 1 and 8 as O, L and B),
+    // white space, "=" padding, and dashes, dots or underscores between
+    // groups (JBSW.Y3DP..., as some services show it), which it drops.
+    const bool written =
+        std::all_of(trimmed.cbegin(), trimmed.cend(), [](QChar c) {
+          const char16_t u = c.unicode();
+          return c.isSpace() || u == u'-' || u == u'=' || u == u'.' ||
+                 u == u'_' || (u >= u'A' && u <= u'Z') ||
+                 (u >= u'a' && u <= u'z') || (u >= u'0' && u <= u'8');
+        });
+    if (!written) {
+      return std::nullopt;
+    }
     rawSecret = trimmed;
   }
 
@@ -320,6 +377,9 @@ auto Totp::toUri(const Settings &settings) -> QString {
     uri += QStringLiteral("&%1=%2").arg(
         QString::fromLatin1(QUrl::toPercentEncoding(item.first)),
         QString::fromLatin1(QUrl::toPercentEncoding(item.second)));
+  }
+  if (!settings.fragment.isEmpty()) {
+    uri += QLatin1Char('#') + settings.fragment;
   }
   return uri;
 }

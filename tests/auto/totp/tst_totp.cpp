@@ -20,10 +20,16 @@ class tst_totp : public QObject {
 private Q_SLOTS:
   void parseCanonicalUri();
   void parseUriWithoutOptionalParameters();
+  void parseReadsParameterNamesInAnyCase();
+  void normalizeKeepsTheTextAfterAHash();
   void parseBareSecret();
   void parseSpacedSecret();
   void parseAlgorithmNames_data();
   void parseAlgorithmNames();
+  void parseRefusesUnknownAlgorithms_data();
+  void parseRefusesUnknownAlgorithms();
+  void parseRefusesOtherUriSchemes_data();
+  void parseRefusesOtherUriSchemes();
   void parseClampsDigitsAndPeriod();
   void parseNonNumericParametersFallBackToDefaults_data();
   void parseNonNumericParametersFallBackToDefaults();
@@ -77,6 +83,81 @@ void tst_totp::parseUriWithoutOptionalParameters() {
   QVERIFY(settings->issuer.isEmpty());
 }
 
+/**
+ * @brief Parameter names are matched without regard to case. Read exactly,
+ *        `Digits=8` was neither read (the code used 6 digits, 30 s, SHA-1) nor
+ *        kept as an unknown parameter, and normalize() wrote the defaults in
+ *        its place, so an edit dialog OK reset the account's settings.
+ */
+void tst_totp::parseReadsParameterNamesInAnyCase() {
+  const QString uri = QStringLiteral(
+      "otpauth://totp/ACME:bob?Secret=JBSWY3DPEHPK3PXP&Issuer=ACME&"
+      "Algorithm=SHA256&DIGITS=8&Period=60&Image=x.png");
+  const std::optional<Totp::Settings> s = Totp::parse(uri);
+  QVERIFY(s.has_value());
+  QCOMPARE(s->digits, 8U);
+  QCOMPARE(s->step, 60U);
+  QCOMPARE(s->algorithm, Totp::Algorithm::Sha256);
+  QCOMPARE(s->issuer, QStringLiteral("ACME"));
+  QCOMPARE(s->base32Key, QStringLiteral("JBSWY3DPEHPK3PXP"));
+  // Known names are not carried over a second time; unknown ones are.
+  QCOMPARE(s->extraParams.size(), 1);
+  QCOMPARE(s->extraParams.first().first, QStringLiteral("Image"));
+
+  const QString canonical = Totp::normalize(uri, QStringLiteral("bob"));
+  for (const QString &kept :
+       {QStringLiteral("digits=8"), QStringLiteral("period=60"),
+        QStringLiteral("algorithm=SHA256"), QStringLiteral("issuer=ACME")}) {
+    QVERIFY2(canonical.contains(kept, Qt::CaseInsensitive),
+             qPrintable(canonical));
+  }
+
+  const std::optional<Totp::Settings> steam = Totp::parse(QStringLiteral(
+      "otpauth://totp/Steam:bob?secret=JBSWY3DPEHPK3PXP&Encoder=steam"));
+  QVERIFY(steam.has_value());
+  QCOMPARE(steam->encoder, Totp::Encoder::Steam);
+  QCOMPARE(steam->digits, Totp::STEAM_DIGITS);
+}
+
+/**
+ * @brief Text after a `#` in the URI (recovery codes, a remark) is not part
+ *        of the OTP configuration but is the user's: normalize() rebuilt the
+ *        URI from the settings alone and dropped it on every save.
+ */
+void tst_totp::normalizeKeepsTheTextAfterAHash() {
+  const QString uri = QStringLiteral(
+      "otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&issuer=Example"
+      "&digits=8#7f3a9-1c2d4 8b6e0-5a9f1");
+  const std::optional<Totp::Settings> s = Totp::parse(uri);
+  QVERIFY(s.has_value());
+  QCOMPARE(s->fragment, QStringLiteral("7f3a9-1c2d4 8b6e0-5a9f1"));
+  QCOMPARE(s->digits, 8U);
+  const QString canonical = Totp::normalize(uri, QStringLiteral("alice"));
+  QVERIFY2(canonical.endsWith(QStringLiteral("#7f3a9-1c2d4 8b6e0-5a9f1")),
+           qPrintable(canonical));
+  // Saving again changes nothing more, and the code is the same.
+  QCOMPARE(Totp::normalize(canonical, QStringLiteral("alice")), canonical);
+  const std::optional<Totp::Settings> again = Totp::parse(canonical);
+  QVERIFY(again.has_value());
+  QCOMPARE(Totp::generate(*again, 59), Totp::generate(*s, 59));
+
+  // As found in an entry: spaces around the "#".
+  const QString spaced = Totp::normalize(
+      QStringLiteral("otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&"
+                     "issuer=Example # 7f3a9-1c2d4 8b6e0-5a9f1"),
+      QStringLiteral("alice"));
+  QVERIFY2(spaced.contains(QStringLiteral("7f3a9-1c2d4 8b6e0-5a9f1")),
+           qPrintable(spaced));
+
+  // Byte for byte, also characters a URL would encode or decode.
+  const QString remark = QStringLiteral("50% off, `codes` a%20b #2");
+  const QString kept = Totp::normalize(
+      QStringLiteral("otpauth://totp/x?secret=JBSWY3DPEHPK3PXP#") + remark,
+      QStringLiteral("x"));
+  QVERIFY2(kept.endsWith(QLatin1Char('#') + remark), qPrintable(kept));
+  QCOMPARE(Totp::normalize(kept, QStringLiteral("x")), kept);
+}
+
 void tst_totp::parseBareSecret() {
   const auto settings = Totp::parse(QStringLiteral("JBSWY3DPEHPK3PXP"));
   QVERIFY(settings.has_value());
@@ -109,8 +190,89 @@ void tst_totp::parseAlgorithmNames_data() {
                                 << static_cast<int>(Totp::Algorithm::Sha256);
   QTest::newRow("HMAC-SHA-512") << QStringLiteral("HMAC-SHA-512")
                                 << static_cast<int>(Totp::Algorithm::Sha512);
-  QTest::newRow("unknown falls back to SHA1")
-      << QStringLiteral("MD5") << static_cast<int>(Totp::Algorithm::Sha1);
+  QTest::newRow("SHA-256") << QStringLiteral("SHA-256")
+                           << static_cast<int>(Totp::Algorithm::Sha256);
+  QTest::newRow("HmacSHA256") << QStringLiteral("HmacSHA256")
+                              << static_cast<int>(Totp::Algorithm::Sha256);
+  QTest::newRow("HMACSHA512") << QStringLiteral("HMACSHA512")
+                              << static_cast<int>(Totp::Algorithm::Sha512);
+  QTest::newRow("sha_1") << QStringLiteral("sha_1")
+                         << static_cast<int>(Totp::Algorithm::Sha1);
+  QTest::newRow("empty is the default")
+      << QString() << static_cast<int>(Totp::Algorithm::Sha1);
+  // Whitespace inside the URI reaches the value: it was read as SHA-1 before.
+  QTest::newRow("SHA1 with a space")
+      << QStringLiteral("SHA1%20") << static_cast<int>(Totp::Algorithm::Sha1);
+  QTest::newRow("spaced sha256") << QStringLiteral("%20sha256")
+                                 << static_cast<int>(Totp::Algorithm::Sha256);
+  QTest::newRow("blank is the default")
+      << QStringLiteral("%20") << static_cast<int>(Totp::Algorithm::Sha1);
+}
+
+void tst_totp::parseRefusesUnknownAlgorithms_data() {
+  QTest::addColumn<QString>("name");
+  QTest::newRow("SHA384") << QStringLiteral("SHA384");
+  QTest::newRow("MD5") << QStringLiteral("MD5");
+  QTest::newRow("SHA3-256") << QStringLiteral("SHA3-256");
+  QTest::newRow("HMAC alone") << QStringLiteral("HMAC");
+  QTest::newRow("SHA") << QStringLiteral("SHA");
+}
+
+/**
+ * @brief An algorithm QtPass has no HMAC for gives no code at all, as HOTP
+ * does: it showed the SHA-1 code without a warning, and toUri() then left the
+ * parameter out, which a canonicalised value saved as SHA-1 for every client.
+ */
+void tst_totp::parseRefusesUnknownAlgorithms() {
+  QFETCH(QString, name);
+  const QString uri =
+      QStringLiteral("otpauth://totp/x?secret=JBSWY3DPEHPK3PXP&algorithm=%1")
+          .arg(name);
+  QVERIFY(!Totp::parse(uri).has_value());
+  QVERIFY(!Totp::isValid(uri));
+  // Nothing to canonicalise into: the dialog keeps the value as typed.
+  QVERIFY(Totp::normalize(uri, QStringLiteral("x")).isEmpty());
+}
+
+void tst_totp::parseRefusesOtherUriSchemes_data() {
+  QTest::addColumn<QString>("config");
+  QTest::addColumn<bool>("valid");
+  QTest::newRow("Google Authenticator export")
+      << QStringLiteral(
+             "otpauth-migration://offline?data=CjUKCkhlbGxvId6tvu8SG"
+             "EV4YW1wbGU6YWxpY2VAZ29vZ2xlLmNvbRoHRXhhbXBsZSABKAEwAhAB"
+             "GAEgAA%3D%3D")
+      << false;
+  QTest::newRow("steam") << QStringLiteral("steam://JBSWY3DPEHPK3PXP") << false;
+  QTest::newRow("zbarimg output")
+      << QStringLiteral("QR-Code:otpauth-migration://offline?data=CjUKCkhl")
+      << false;
+  QTest::newRow("a web address")
+      << QStringLiteral("https://example.com/2fa#JBSWY3DPEHPK3PXP") << false;
+  QTest::newRow("a remark in brackets")
+      << QStringLiteral("JBSWY3DPEHPK3PXP (main)") << false;
+  QTest::newRow("a nine") << QStringLiteral("JBSWY3DPEHPK3PX9") << false;
+  // What a bare secret is written with still passes.
+  QTest::newRow("spaced") << QStringLiteral("JBSW Y3DP EHPK 3PXP") << true;
+  QTest::newRow("dashed") << QStringLiteral("JBSW-Y3DP-EHPK-3PXP") << true;
+  QTest::newRow("dotted") << QStringLiteral("JBSW.Y3DP.EHPK.3PXP") << true;
+  QTest::newRow("underscored") << QStringLiteral("JBSW_Y3DP_EHPK_3PXP") << true;
+  QTest::newRow("padded") << QStringLiteral("JBSWY3DPEHPK3PXP====") << true;
+  QTest::newRow("lower case") << QStringLiteral("jbswy3dpehpk3pxp") << true;
+  QTest::newRow("tabbed") << QStringLiteral("JBSW\tY3DP EHPK\t3PXP") << true;
+}
+
+/**
+ * @brief A URI of another scheme is not a bare base32 secret: its leftover
+ *        letters made one, with a running code that was not the account's,
+ *        and the dialog saved that in place of what was typed.
+ */
+void tst_totp::parseRefusesOtherUriSchemes() {
+  QFETCH(QString, config);
+  QFETCH(bool, valid);
+  QCOMPARE(Totp::parse(config).has_value(), valid);
+  QCOMPARE(Totp::isValid(config), valid);
+  QCOMPARE(Totp::normalize(config, QStringLiteral("x")).isEmpty(), !valid);
 }
 
 void tst_totp::parseAlgorithmNames() {

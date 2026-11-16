@@ -62,6 +62,10 @@ public:
     /// Query parameters the parser does not model, kept verbatim so toUri()
     /// can put them back instead of silently dropping them.
     QList<QPair<QString, QString>> extraParams;
+    /// What followed a `#` in the URI, as written: recovery codes or a remark
+    /// noted behind it. Kept so toUri() puts it back; a canonicalised URI
+    /// used to lose it on every save.
+    QString fragment;
   };
 
   static constexpr uint DEFAULT_DIGITS = 6U; ///< RFC 6238 default code length.
@@ -78,12 +82,19 @@ public:
    * `digits`, `period`, `algorithm`, `encoder` and `issuer` parameters, or a
    * bare base32 secret. `otpauth://hotp/...` is rejected: a counter-based HOTP
    * value cannot be derived from a clock, and returning a plausible-looking
-   * TOTP code for it would be silently wrong.
+   * TOTP code for it would be silently wrong. So is an `algorithm` other than
+   * SHA-1, SHA-256 or SHA-512 (case, an `HMAC` prefix and `-`/`_` ignored).
+   * A bare secret with characters a secret is not written with (anything
+   * but letters, the digits 0 to 8, white space, `-`, `.`, `_` and `=`) is
+   * refused
+   * too: it is something else, such as a URI of another scheme
+   * (`otpauth-migration://`), not base32 text.
    *
    * `digits` is clamped to MIN_DIGITS..MAX_DIGITS and `period` to 1..MAX_STEP.
    * @param config URI or bare base32 secret; surrounding whitespace is ignored.
    * @return Validated settings, or std::nullopt when the secret is missing or
-   *         is not decodable base32.
+   *         is not decodable base32, the URI is HOTP or names an unknown
+   *         algorithm, or a bare secret holds other characters.
    */
   [[nodiscard]] static auto parse(const QString &config)
       -> std::optional<Settings>;
