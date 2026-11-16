@@ -102,14 +102,15 @@ public:
   [[nodiscard]] auto getPassword() const -> QString;
 
   /**
-   * @brief Like getPassword but empty when the password line is itself an
-   * otpauth URI.
+   * @brief Like getPassword but empty when the password line holds a TOTP
+   * shared secret (isOtpPasswordLine()).
    *
    * `pass otp insert` writes the URI as the entry's only line, so it lands in
-   * the password position. It is a shared secret, not a password: it must never
-   * be rendered or placed on the clipboard. getPassword() still returns it so
-   * the edit dialog round-trips the file unchanged.
-   * @return The password, or an empty string when it is an otpauth URI.
+   * the password position, and an `OTP:`/`TOTP:` field holding a seed written
+   * there by hand is the same secret. It is not a password: it must never be
+   * rendered or placed on the clipboard. getPassword() still returns it so the
+   * edit dialog round-trips the file unchanged.
+   * @return The password, or an empty string when it is an OTP line.
    */
   [[nodiscard]] auto getPasswordForDisplay() const -> QString;
 
@@ -146,6 +147,47 @@ public:
    * @return Its first line, a trailing "\r" dropped.
    */
   [[nodiscard]] static auto passwordLine(const QString &text) -> QString;
+
+  /**
+   * @brief Whether @p text holds an otpauth URI anywhere: after a list dash,
+   *        in quotes, behind other text or a second colon, or split at its
+   *        colon as `otpauth: //` (as the edit dialog saved it with otpauth
+   *        in the template). What keeps a line off the screen and the
+   *        clipboard goes by this; what is read as the OTP configuration
+   *        goes by isOtpUriValue().
+   * @param text A line or a field value.
+   * @return true when "otpauth:" followed by "//" (blanks between allowed)
+   *         occurs in it, compared case-insensitively.
+   */
+  [[nodiscard]] static auto carriesOtpUri(const QString &text) -> bool;
+
+  /**
+   * @brief Whether @p line carries a TOTP shared secret: an `OTP:`/`TOTP:`
+   *        field, or any line with an otpauth URI in it (carriesOtpUri()).
+   *
+   * The rule for the lines below the password: such a line is never shown
+   * or copied, only the code it yields is. The first line goes by
+   * isOtpPasswordLine().
+   * @param line One line of the entry.
+   * @return true when the line holds a shared secret.
+   */
+  [[nodiscard]] static auto isOtpLine(const QString &line) -> bool;
+
+  /**
+   * @brief Whether an entry's first line holds a TOTP shared secret rather
+   *        than a password.
+   *
+   * Stricter than isOtpLine(), because the first line is the password in the
+   * pass format: a line with an otpauth URI in it (carriesOtpUri()), or an
+   * `OTP:`/`TOTP:` field whose value is written as a base32 seed (base32
+   * characters only, at least 16, and usable by Totp). A password that
+   * merely starts with "otp:" or "totp:" (`totp:Secr3t!`) stays the
+   * password; a long one of letters and the digits 2 to 7 only reads as a
+   * seed and cannot be told apart.
+   * @param line The entry's first line.
+   * @return true when the line is an OTP secret and not the password.
+   */
+  [[nodiscard]] static auto isOtpPasswordLine(const QString &line) -> bool;
 
   /**
    * @brief Whether a field value is an otpauth URI, and therefore a secret.

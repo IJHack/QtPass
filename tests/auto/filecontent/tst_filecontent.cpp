@@ -32,6 +32,11 @@ private Q_SLOTS:
   void parseAllFieldsModeExcludesUrlLines();
   void parseCrlfNamedValuesAreTrimmed();
   void crlfPasswordHasNoLineEnd();
+  void otpFieldOnTheFirstLineIsNotThePassword();
+  void otpUriAnywhereInALineIsHidden_data();
+  void otpUriAnywhereInALineIsHidden();
+  void textNamingTheSchemeIsNotAUri_data();
+  void textNamingTheSchemeIsNotAUri();
   void parseMultipleOtpauthLinesAllHidden();
   void parseOtpauthCaseInsensitiveHidden();
   void namedValuesDefaultConstructorIsEmpty();
@@ -598,6 +603,145 @@ void tst_filecontent::isOtpUriValueMatchesScheme() {
   QFETCH(QString, value);
   QFETCH(bool, expected);
   QCOMPARE(FileContent::isOtpUriValue(value), expected);
+}
+
+/**
+ * @brief An `OTP:`/`TOTP:` field written as the first line holds the TOTP
+ *        seed as much as one further down: it was shown and copied as the
+ *        password, and the entry got no code. Only a bare otpauth line was
+ *        recognised there.
+ */
+void tst_filecontent::otpFieldOnTheFirstLineIsNotThePassword() {
+  const QString seed = QStringLiteral("KRUGS43JONQXGZLD");
+  const QString uri =
+      QStringLiteral("otpauth://totp/Shop:team?secret=KRUGS43JONQXGZLD");
+  const QList<QPair<QString, QString>> cases = {
+      {QStringLiteral("TOTP: ") + seed, seed},
+      {QStringLiteral("TOTP: KRUG S43J ONQX GZLD"),
+       QStringLiteral("KRUG S43J ONQX GZLD")},
+      {QStringLiteral("otp: KRUG-S43J-ONQX-GZLD"),
+       QStringLiteral("KRUG-S43J-ONQX-GZLD")},
+      {QStringLiteral("TOTP: KRUG.S43J.ONQX.GZLD"),
+       QStringLiteral("KRUG.S43J.ONQX.GZLD")},
+      {QStringLiteral("otp: krug_s43j_onqx_gzld"),
+       QStringLiteral("krug_s43j_onqx_gzld")},
+      {QStringLiteral("TOTP:\t") + seed, seed},
+      {QStringLiteral("TOTP: KRUGS43J\u00a0ONQXGZLD\u00a0"),
+       QStringLiteral("KRUGS43J\u00a0ONQXGZLD")},
+      {QStringLiteral("OTP: ") + uri, uri},
+      {QStringLiteral("totp:") + seed, seed},
+      {QStringLiteral("2fa: ") + uri, uri},
+      {uri, uri},
+  };
+  for (const auto &[firstLine, config] : cases) {
+    const FileContent fc =
+        FileContent::parse(firstLine + QStringLiteral("\nlogin: alice\n"),
+                           {QStringLiteral("login")}, false);
+    QVERIFY2(fc.getPasswordForDisplay().isEmpty(), qPrintable(firstLine));
+    QCOMPARE(fc.getOtpUri(), config);
+    // The edit dialog still gets the line, to write the entry back.
+    QCOMPARE(fc.getPassword(), firstLine);
+    QVERIFY(FileContent::isOtpPasswordLine(firstLine));
+  }
+  for (const QString &password :
+       {QStringLiteral("hunter2"), QStringLiteral("PIN: 1234"),
+        QStringLiteral("totp-like but not a field")}) {
+    QVERIFY2(!FileContent::isOtpLine(password), qPrintable(password));
+    QCOMPARE(FileContent::parse(password, {}, false).getPasswordForDisplay(),
+             password);
+  }
+  // A password that only starts like an OTP field, its value no usable
+  // secret, stays the password: it is shown, copied and gives no code.
+  for (const QString &password :
+       {QStringLiteral("totp:Secr3t!"), QStringLiteral("OTP: hunter2!"),
+        QStringLiteral("totp: 1800-flowers"), QStringLiteral("otp:"),
+        QStringLiteral("TOTP: hunter"), QStringLiteral("TOTP: ABCDEFGH"),
+        QStringLiteral("OTP: KRUGS43JONQXGZL0")}) {
+    QVERIFY2(!FileContent::isOtpPasswordLine(password), qPrintable(password));
+    const FileContent fc = FileContent::parse(password, {}, false);
+    QCOMPARE(fc.getPasswordForDisplay(), password);
+    QVERIFY2(fc.getOtpUri().isEmpty(), qPrintable(password));
+  }
+}
+
+/**
+ * @brief Rows for otpUriAnywhereInALineIsHidden().
+ */
+void tst_filecontent::otpUriAnywhereInALineIsHidden_data() {
+  QTest::addColumn<QString>("line");
+  const QString uri =
+      QStringLiteral("otpauth://totp/AWS:root?secret=JBSWY3DPEHPK3PXC");
+  QTest::newRow("list dash") << QStringLiteral("- ") + uri;
+  QTest::newRow("quoted") << QStringLiteral("\"") + uri + QStringLiteral("\"");
+  QTest::newRow("text before") << QStringLiteral("old token ") + uri;
+  QTest::newRow("second colon") << QStringLiteral("AWS: backup phone: ") + uri;
+  // As the edit dialog of 1.8 to 2.0-rc2 saved it, with "otpauth" in the
+  // template.
+  QTest::newRow("split at its colon")
+      << QStringLiteral("otpauth: //totp/AWS:root?secret=JBSWY3DPEHPK3PXC");
+}
+
+/**
+ * @brief The seed stays off the screen however the URI sits in its line:
+ *        only a bare line and the value after the first colon were caught,
+ *        so a list dash, quotes, text before it, a second colon or the
+ *        split form showed `secret=` in the text browser and, as a field,
+ *        with copy and QR buttons. Also on the first line.
+ */
+void tst_filecontent::otpUriAnywhereInALineIsHidden() {
+  QFETCH(QString, line);
+  QVERIFY(FileContent::carriesOtpUri(line));
+  QVERIFY(FileContent::isOtpLine(line));
+  QVERIFY(FileContent::isOtpPasswordLine(line));
+  for (const bool allFields : {false, true}) {
+    const FileContent fc = FileContent::parse(
+        QStringLiteral("hunter2\n") + line + QStringLiteral("\nlogin: alice\n"),
+        {QStringLiteral("login"), QStringLiteral("otpauth")}, allFields);
+    QVERIFY2(
+        !fc.getRemainingDataForDisplay().contains(QStringLiteral("secret=")),
+        qPrintable(fc.getRemainingDataForDisplay()));
+    for (const NamedValue &nv : fc.getNamedValues()) {
+      QVERIFY2(!nv.value.contains(QStringLiteral("JBSWY3DPEHPK3PXC")),
+               qPrintable(nv.name + ": " + nv.value));
+    }
+    // The edit dialog still gets the whole entry, to write it back.
+    QVERIFY(fc.getRemainingData().contains(line));
+  }
+  const FileContent first = FileContent::parse(line, {}, false);
+  QVERIFY2(first.getPasswordForDisplay().isEmpty(), qPrintable(line));
+  QCOMPARE(first.getPassword(), line);
+  // Hidden, but not read as a configuration it is not: no half a URI as the
+  // OTP configuration.
+  QVERIFY2(first.getOtpUri().isEmpty() ||
+               FileContent::isOtpUriValue(first.getOtpUri()),
+           qPrintable(first.getOtpUri()));
+}
+
+/**
+ * @brief Rows for textNamingTheSchemeIsNotAUri().
+ */
+void tst_filecontent::textNamingTheSchemeIsNotAUri_data() {
+  QTest::addColumn<QString>("line");
+  QTest::newRow("the word") << QStringLiteral("export as otpauth later");
+  QTest::newRow("a field named so")
+      << QStringLiteral("otpauth: see https://wiki.example/2fa");
+  QTest::newRow("a single slash") << QStringLiteral("otpauth:/totp/x");
+  QTest::newRow("another scheme") << QStringLiteral("https://example.com");
+}
+
+/**
+ * @brief Only an otpauth URI hides a line: "otpauth:" followed by "//",
+ *        blanks between allowed. The word on its own, or a colon and other
+ *        text, stays on screen.
+ */
+void tst_filecontent::textNamingTheSchemeIsNotAUri() {
+  QFETCH(QString, line);
+  QVERIFY(!FileContent::carriesOtpUri(line));
+  QVERIFY(!FileContent::isOtpLine(line));
+  QVERIFY(!FileContent::isOtpPasswordLine(line));
+  const FileContent fc =
+      FileContent::parse(QStringLiteral("hunter2\n") + line, {}, false);
+  QVERIFY(fc.getRemainingDataForDisplay().contains(line));
 }
 
 QTEST_MAIN(tst_filecontent)

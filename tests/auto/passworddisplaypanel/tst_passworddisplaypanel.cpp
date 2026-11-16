@@ -382,6 +382,20 @@ void tst_passworddisplaypanel::otpUriAsPasswordIsNeverRendered() {
   QCOMPARE(m_grid->count(), 2);
   QVERIFY2(otpWidgetAt(0) != nullptr,
            "the entry still has a usable OTP configuration, flush at the top");
+
+  // An OTP field reaching the panel as the password is refused the same way.
+  m_panel->clear();
+  m_panel->displayFields(QStringLiteral("TOTP: ") + kOtpSecret, NamedValues{},
+                         s, kOtpSecret);
+  QVERIFY2(!renderedText(m_grid).contains(kOtpSecret),
+           "a TOTP field's seed must never be shown as the password");
+  QVERIFY(otpWidgetAt(0) != nullptr);
+
+  // A password that only starts like an OTP field is shown as the password.
+  m_panel->clear();
+  m_panel->displayFields(QStringLiteral("totp:Secr3t!"), NamedValues{}, s);
+  QVERIFY2(renderedText(m_grid).contains(QStringLiteral("totp:Secr3t!")),
+           qPrintable(renderedText(m_grid)));
 }
 
 /**
@@ -398,6 +412,18 @@ void tst_passworddisplaypanel::otpUriInDifferentlyNamedFieldIsNeverRendered() {
   QVERIFY2(!text.contains(kOtpSecret), "the shared secret must never be shown");
   QVERIFY2(!text.contains(QStringLiteral("otpauth")),
            "the otpauth URI must never be shown");
+
+  // Nor when the URI is not the start of the value: a second colon, a list
+  // dash, the split form.
+  for (const QString &value :
+       {QStringLiteral("backup phone: ") + kOtpUri,
+        QStringLiteral("- ") + kOtpUri,
+        QString(kOtpUri).replace(QStringLiteral("otpauth://"),
+                                 QStringLiteral("otpauth: //"))}) {
+    m_panel->displayFields(QStringLiteral("secret"),
+                           NamedValues{{"AWS", value}}, s, kOtpUri);
+    QVERIFY2(!renderedText(m_grid).contains(kOtpSecret), qPrintable(value));
+  }
 }
 
 auto tst_passworddisplaypanel::browserAt(int row) const -> QTextBrowser * {

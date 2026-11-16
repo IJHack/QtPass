@@ -471,6 +471,23 @@ void tst_mainwindow::passwordFromFileToClipboardSkipsOtpSecret() {
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
   QVERIFY2(!clip->text().contains(QStringLiteral("JBSWY3DPEHPK3PXP")),
            "otpauth secret must never reach the clipboard");
+
+  const auto ctrlC = [this](const QString &entry) {
+    return QMetaObject::invokeMethod(
+        m_window.data(), "passwordFromFileToClipboard", Qt::DirectConnection,
+        Q_ARG(QString, entry));
+  };
+  // An OTP field written as the first line holds the seed just the same, and
+  // so does a URI anywhere in it.
+  for (const QString &entry :
+       {QStringLiteral("TOTP: JBSWY3DPEHPK3PXP\nlogin: alice"),
+        QStringLiteral("OTP: ") + otpUri, QStringLiteral("- ") + otpUri}) {
+    QVERIFY(ctrlC(entry));
+    QVERIFY2(clip->text() == QStringLiteral("sentinel"), qPrintable(entry));
+  }
+  // A password that only starts like one is copied as the password.
+  QVERIFY(ctrlC(QStringLiteral("totp:Secr3t!\nlogin: alice")));
+  QCOMPARE(clip->text(), QStringLiteral("totp:Secr3t!"));
 }
 
 /**

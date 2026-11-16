@@ -1994,7 +1994,8 @@ void MainWindow::passwordFromFileToClipboard(const QString &text) {
   // Without the "\r" of a CRLF line end, as the password row and "Always
   // copy" have it.
   const QString first = FileContent::passwordLine(tokens[0]);
-  if (FileContent::isOtpUriValue(first)) {
+  // An OTP field holding a seed there is the same secret.
+  if (FileContent::isOtpPasswordLine(first)) {
     flashText(tr("This entry holds an OTP secret, not a password"), true);
     return;
   }
