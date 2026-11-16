@@ -58,6 +58,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   choice, and "Show menu bar" / "Show process output" are toggles in the
   Settings menu instead of the settings dialog. Existing configuration files
   are read and written with the same keys.
+- **Profile names ignore case.** "Work" and "work" are now the same name on
+  every system. If two of your profiles have names that differ only in case,
+  Settings does not save until you rename one; see the
+  [FAQ](FAQ.md#settings-wont-save-another-profile-already-has-this-name).
+  On Windows they were already one profile, and one replaced the other.
 - **Generating a GPG key asks for a passphrase.** Leaving the fields empty
   used to produce an unprotected private key silently; now OK waits until a
   passphrase is typed twice or "No passphrase" is ticked on purpose.
@@ -788,7 +793,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - Two profile names that differ only in case, such as "Work" and "work",
   count as the same name: Settings keeps OK off. On Windows the settings
   read them as one, so one profile silently replaced the other. Profiles
-  saved that way elsewhere need a new name before Settings can be saved.
+  saved that way elsewhere need a new name before Settings can be saved
+  (see the
+  [FAQ](FAQ.md#settings-wont-save-another-profile-already-has-this-name)).
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

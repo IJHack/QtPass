@@ -216,6 +216,33 @@ There are some things to take care of when trying to sync on some systems (espec
 
 More information: <https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes>
 
+### Settings won't save: "Another profile already has this name"
+
+Each profile needs a name of its own. Since 2.0, QtPass ignores upper and
+lower case when it compares names: "Work" and "work" are the same name. Settings
+marks both profiles in red and keeps OK off until one of them has another name.
+
+Why: QtPass stores each profile under its name in the configuration (see
+[Where is the configuration stored?](#where-is-the-configuration-stored)). On
+Windows the registry and `qtpass.ini` ignore case, so two such profiles were
+one, and one silently replaced the other
+([#2222](https://github.com/IJHack/QtPass/pull/2222)). A portable or synced
+configuration can move between systems, so the rule is the same on all of
+them.
+
+To fix it:
+
+1. Open Settings and select one of the two profiles marked in red.
+2. Type another name, such as "Work (laptop)".
+3. Click OK.
+
+A new name changes only the label. The store folder, signing key and Git
+settings of the profile stay as they are, and the active profile stays active
+under its new name.
+
+A profile name also cannot contain `/` or `\`: the configuration reads `/` as
+a group separator, and `\` too on Windows.
+
 ### What happened to WebDAV support?
 
 It was removed in QtPass 2.0. The feature mounted your password store from a
