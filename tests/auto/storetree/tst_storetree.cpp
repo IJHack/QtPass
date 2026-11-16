@@ -26,6 +26,7 @@ private slots:
   void fileForEntryFolderAndInvalidIndex();
   void filterHidesNonMatchesAndSetStoreClearsIt();
   void switchingStoresMovesTheRoot();
+  void searchNeverMatchesAnEarlierStore();
 
 private:
   auto makeEntry(const QString &relative) -> QString;
@@ -166,6 +167,56 @@ void tst_storetree::switchingStoresMovesTheRoot() {
   QCOMPARE(view.rootIndex(), tree.rootIndex());
   QCOMPARE(tree.dirFor(QModelIndex(), false),
            QDir(other).absolutePath() + QDir::separator());
+}
+
+/**
+ * @brief After a switch, a search matches only the current store. The file
+ *        system model keeps the rows of the store shown before, and a search
+ *        matched those: with nothing matching in the current store the view
+ *        fell back to the file system's top and listed the earlier store's
+ *        entry, which Return then opened and a save re-encrypted to the
+ *        current store's recipients.
+ */
+void tst_storetree::searchNeverMatchesAnEarlierStore() {
+  const QString other = QDir(m_dir.path()).filePath(QStringLiteral("other"));
+  QVERIFY(QDir().mkpath(other));
+  {
+    QFile f(QDir(other).filePath(QStringLiteral("work.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QTreeView view;
+  StoreTree tree(&view);
+  tree.setStore(m_store);
+  QVERIFY(waitFor(tree, m_store + QStringLiteral("/top.gpg")).isValid());
+  QVERIFY(
+      waitFor(tree, m_store + QStringLiteral("/folder/inner.gpg")).isValid());
+
+  tree.setStore(other);
+  QVERIFY(waitFor(tree, other + QStringLiteral("/work.gpg")).isValid());
+
+  // Nothing in the current store matches: nothing at all is listed.
+  tree.setFilter(QRegularExpression(QStringLiteral("inner")));
+  QVERIFY2(
+      !tree.indexFor(m_store + QStringLiteral("/folder/inner.gpg")).isValid(),
+      "the earlier store's entry must not match");
+  const QModelIndex top = view.rootIndex();
+  QStringList listed;
+  std::function<void(const QModelIndex &)> walk =
+      [&](const QModelIndex &parent) {
+        for (int row = 0; row < tree.proxy().rowCount(parent); ++row) {
+          const QModelIndex child = tree.proxy().index(row, 0, parent);
+          listed << tree.fileSystem().filePath(tree.proxy().mapToSource(child));
+          walk(child);
+        }
+      };
+  walk(top);
+  QVERIFY2(listed.filter(m_store).isEmpty(), qPrintable(listed.join(", ")));
+
+  // A match in the current store still shows, the earlier store's does not.
+  tree.setFilter(QRegularExpression(QStringLiteral("work|top")));
+  QVERIFY(tree.indexFor(other + QStringLiteral("/work.gpg")).isValid());
+  QVERIFY(!tree.indexFor(m_store + QStringLiteral("/top.gpg")).isValid());
 }
 
 QTEST_MAIN(tst_storetree)
