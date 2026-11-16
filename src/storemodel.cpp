@@ -93,6 +93,14 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
     QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
     QString path = fs->filePath(useIndex);
     path = QDir(store).relativeFilePath(path);
+    // Only what lies in the current store. The file system model keeps the
+    // rows of a store shown earlier (a profile switch only re-roots it), and
+    // a search would otherwise match those, open one and save it encrypted
+    // to this store's recipients.
+    if (path == QLatin1String("..") || path.startsWith(QLatin1String("../")) ||
+        QDir::isAbsolutePath(path)) {
+      return false;
+    }
     if (path.startsWith(".git")) {
       return false;
     }
