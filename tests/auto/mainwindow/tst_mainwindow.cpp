@@ -3716,8 +3716,8 @@ void tst_mainwindow::deselectLeavesGrepModeWhenResultsAreShown() {
 /**
  * @brief While content search results hide the tree, its current entry is
  *        not what the user looks at. Delete (key and button), Edit and OTP
- *        stay off and do nothing until the tree is back. Down in the search
- *        box goes into the results.
+ *        stay off and do nothing until the tree is back, and Ctrl+C copies
+ *        nothing. Down in the search box goes into the results.
  */
 void tst_mainwindow::entryActionsWaitWhileContentResultsHideTheTree() {
   rebuildWindow([](AppSettings &s) {
@@ -3783,6 +3783,14 @@ void tst_mainwindow::entryActionsWaitWhileContentResultsHideTheTree() {
   QApplication::sendEvent(searchBox(), &down);
   QTRY_VERIFY(results->hasFocus());
   QCOMPARE(results->currentItem(), results->topLevelItem(0));
+
+  // Ctrl+C there does not decrypt the hidden tree's entry either.
+  m_window->activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(m_window.data()));
+  QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
+  QTest::qWait(100);
+  QVERIFY2(started.isEmpty() && treeView()->isEnabled(),
+           "Ctrl+C decrypted the out-of-sight entry");
 
   // With the tree back, they act on its entry again.
   grep->setChecked(false);

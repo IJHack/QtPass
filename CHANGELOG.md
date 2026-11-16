@@ -777,7 +777,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   until the tree is back. They acted on the entry current in the hidden
   tree: Edit and OTP decrypted an entry the user was not looking at, and the
   Delete key asked to delete it. Down in the search box now goes into the
-  results, not into the hidden tree.
+  results, not into the hidden tree. Ctrl+C in the results no longer
+  decrypts and copies the password of the hidden entry.
 - A profile name cannot contain `/` or `\`: Settings keeps OK off and says
   why. A name such as "Work/Client" was saved a level too deep in the
   settings and came back as a profile "Work" without folder or signing key;

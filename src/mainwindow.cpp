@@ -1924,6 +1924,11 @@ void MainWindow::copySelectionOrPassword() {
 }
 
 void MainWindow::copyPasswordFromTreeview() {
+  // While content search results hide the tree, its current entry is not
+  // what the user looks at: no decrypt, as for Edit and OTP.
+  if (ui->treeView->isHidden()) {
+    return;
+  }
   QFileInfo fileOrFolder = m_tree->fileInfo(ui->treeView->currentIndex());
 
   if (fileOrFolder.isFile()) {

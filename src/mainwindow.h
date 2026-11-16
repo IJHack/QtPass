@@ -466,7 +466,8 @@ private slots:
   /**
    * @brief Ctrl+C on the tree: decrypt the current entry and let
    *        passwordFromFileToClipboard() copy its first line. The newest
-   *        request wins (m_copyRequestFile).
+   *        request wins (m_copyRequestFile). Does nothing while content
+   *        search results hide the tree.
    */
   void copyPasswordFromTreeview();
   /**
