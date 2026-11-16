@@ -341,7 +341,10 @@ auto ConfigDialog::isFingerprintList(const QString &setting) -> bool {
 }
 
 // Profile names must be unique: the settings key profiles by name, so a
-// duplicate would silently overwrite the other. For the same reason a name
+// duplicate would silently overwrite the other. Unique ignoring case:
+// QSettings keys are case-insensitive on Windows (the registry, and INI
+// files there), so "Work" and "work" were one profile, and a settings file
+// can move between systems. For the same reason a name
 // holds no slash: QSettings reads "/" as a group separator, and "\" as one on
 // Windows, so "Work/Client" was stored a group too deep and read back as a
 // profile "Work" without folder or signing key.
@@ -354,7 +357,7 @@ auto ConfigDialog::problemsOf(const ProfileEntry &entry,
   } else if (entry.name.contains(QLatin1Char('/')) ||
              entry.name.contains(QLatin1Char('\\'))) {
     problems.name = tr("A profile name cannot contain / or \\");
-  } else if (names.value(entry.name) > 1) {
+  } else if (names.value(entry.name.toCaseFolded()) > 1) {
     problems.name = tr("Another profile already has this name");
   }
   if (entry.profile.path.isEmpty()) {
@@ -502,7 +505,7 @@ auto ConfigDialog::sharingTheKey(int row, const SigningStores &resolved) const
 void ConfigDialog::validate() {
   QHash<QString, int> names;
   for (const ProfileEntry &entry : std::as_const(m_entries)) {
-    names[entry.name]++;
+    names[entry.name.toCaseFolded()]++;
   }
   bool status = true;
   const SigningStores resolved = signingStores();

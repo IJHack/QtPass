@@ -1123,7 +1123,8 @@ void tst_configdialog::profileNameWithASlashIsRefused() {
 
 /**
  * @brief OK stays off while a profile has no name, no path or a name another
- * profile already uses, and comes back once the problem is typed away.
+ * profile already uses (in any case), and comes back once the problem is
+ * typed away.
  */
 void tst_configdialog::okWaitsForValidProfiles() {
   struct ProfileRestorer {
@@ -1157,6 +1158,13 @@ void tst_configdialog::okWaitsForValidProfiles() {
   QVERIFY2(!ok->isEnabled(), "duplicate name");
   QVERIFY(name->toolTip().contains(QStringLiteral("already")));
   QVERIFY(list->currentItem()->background().color() == Qt::red);
+
+  // Case does not tell names apart: Windows reads QSettings keys
+  // case-insensitively, so "ONE" would overwrite "one".
+  name->setText(QStringLiteral("ONE"));
+  emit name->textEdited(name->text());
+  QVERIFY2(!ok->isEnabled(), "duplicate name in another case");
+  QVERIFY(name->toolTip().contains(QStringLiteral("already")));
 
   name->setText(QString());
   emit name->textEdited(name->text());
