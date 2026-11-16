@@ -4556,6 +4556,8 @@ void tst_imitatepass::initReportsAFailedSignature() {
   QCOMPARE(startSpy.count(), 0);
   QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
            "nothing may be encrypted to an unsigned list");
+  // The new list is written: a later backup commit would take it along.
+  QVERIFY2(pass.autoPushHeld(), "the written list holds automatic pushes");
 
   // Without a word from gpg the message still names the file.
   const QString silentGpg =

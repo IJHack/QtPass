@@ -624,8 +624,14 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   const QString gpgIdFile = path + ".gpg-id";
   QByteArray written;
   QString sigToCommit;
-  if (!writeGpgIdFile(gpgIdFile, users, &written) ||
-      !settleSignature(gpgIdFile, written, signer, useGit, &sigToCommit)) {
+  if (!writeGpgIdFile(gpgIdFile, users, &written)) {
+    return;
+  }
+  // The new list is on disk: held from here, so a stop before the run (a
+  // signature that fails, a refused start) leaves it out of a later backup
+  // commit's push; a clean run of this folder releases it.
+  holdAutoPush(path);
+  if (!settleSignature(gpgIdFile, written, signer, useGit, &sigToCommit)) {
     return;
   }
 
