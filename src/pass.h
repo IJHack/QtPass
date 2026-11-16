@@ -460,7 +460,21 @@ public:
    */
   [[nodiscard]] auto autoPushHeld() const -> bool;
 
+  /**
+   * @brief GitPush() for an automatic push, the one after a change. A
+   *        backend that has to make the push later drops it then if the
+   *        store is held by that time (autoPushHeld()); a push by hand
+   *        (GitPush()) still goes.
+   */
+  void GitPushAutomatic();
+
 protected:
+  /**
+   * @brief Whether the GitPush() running now is an automatic one.
+   * @return true inside GitPushAutomatic().
+   */
+  [[nodiscard]] auto pushIsAutomatic() const -> bool;
+
   /**
    * @brief Hold automatic pushes of the store that holds @p scope
    *        (autoPushHeld()): its re-encryption did not finish cleanly.
@@ -743,6 +757,8 @@ private:
    * @return The cleaned absolute path.
    */
   [[nodiscard]] auto scopePath(const QString &path) const -> QString;
+  /// Set while GitPushAutomatic() runs GitPush().
+  bool m_pushIsAutomatic = false;
   /// Files of the Show() calls still in flight, oldest first.
   QQueue<QString> m_pendingShows;
   /// Inserts that have started queueing but not yet reported; see queueInsert.

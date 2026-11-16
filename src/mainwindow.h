@@ -263,6 +263,11 @@ public slots:
    * @brief Trigger a git push operation.
    */
   void onPush();
+  /**
+   * @brief Trigger the automatic git push after a change
+   *        (QtPass::pushRequested()); see Pass::GitPushAutomatic().
+   */
+  void onAutoPush();
 
   /**
    * @brief Handle a click on an item in the tree view.

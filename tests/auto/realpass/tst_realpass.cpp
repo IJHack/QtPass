@@ -1233,6 +1233,62 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
     QVERIFY2(!dropping.autoPushHeld(),
              "the hold was on ab, not on the dropped init's a");
   }
+
+  // A push asked for while an init is queued or running waits for its
+  // outcome: queued behind it, it went out before the hold was set. After
+  // a failure an automatic one is dropped and the status line says why;
+  // one asked for by hand goes. After a clean run either goes.
+  {
+    QSignalSpy pushed(&pass, &Pass::finishedGitPush);
+    QSignalSpy status(&pass, &Pass::statusMsg);
+    const auto ended = [&](qsizetype ends) {
+      return QTest::qWaitFor(
+          [&] { return done.count() + errorExit.count() > ends; }, 10000);
+    };
+    QVERIFY(failFolders({QStringLiteral("a")}));
+    qsizetype ends = done.count() + errorExit.count();
+    pass.Init(QStringLiteral("a"), {alice});
+    pass.GitPushAutomatic();
+    QVERIFY(ended(ends));
+    QTest::qWait(300);
+    QVERIFY2(pushed.isEmpty(), "held: the waiting automatic push is dropped");
+    QVERIFY(pass.autoPushHeld());
+    bool said = false;
+    for (const QList<QVariant> &args : std::as_const(status)) {
+      said = said || args.at(0).toString().startsWith(
+                         QStringLiteral("Not pushing: an earlier"));
+    }
+    QVERIFY2(said, "the status line says why");
+    // By hand, waiting behind a failing init: it goes all the same.
+    ends = done.count() + errorExit.count();
+    pass.Init(QStringLiteral("a"), {alice});
+    pass.GitPush();
+    QVERIFY(pushed.isEmpty());
+    QVERIFY(ended(ends));
+    QVERIFY2(pushed.count() == 1 || pushed.wait(10000),
+             "a push by hand goes despite the hold");
+    // Behind two inits, it waits for the second: here the one that fails.
+    QVERIFY(failFolders({QStringLiteral("c")}));
+    ends = done.count() + errorExit.count();
+    pass.Init(QStringLiteral("a"), {alice});
+    pass.Init(QStringLiteral("c"), {alice});
+    pass.GitPushAutomatic();
+    QVERIFY(QTest::qWaitFor(
+        [&] { return done.count() + errorExit.count() > ends + 1; }, 10000));
+    QTest::qWait(300);
+    QCOMPARE(pushed.count(), 1);
+    QVERIFY(pass.autoPushHeld());
+    // Clean: the waiting automatic push goes.
+    QVERIFY(failFolders({QStringLiteral("none")}));
+    ends = done.count() + errorExit.count();
+    pass.Init(QStringLiteral("c"), {alice});
+    pass.GitPushAutomatic();
+    QCOMPARE(pushed.count(), 1);
+    QVERIFY(ended(ends));
+    QVERIFY2(pushed.count() == 2 || pushed.wait(10000),
+             "after a clean run the waiting push goes");
+    QVERIFY(!pass.autoPushHeld());
+  }
 #endif
 }
 

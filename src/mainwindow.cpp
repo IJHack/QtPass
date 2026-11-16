@@ -149,7 +149,7 @@ void MainWindow::connectBackends() {
           [this]() { setUiElementsEnabled(true); });
   connect(m_qtPass, &QtPass::statusMessage, this,
           &MainWindow::showStatusMessage);
-  connect(m_qtPass, &QtPass::pushRequested, this, &MainWindow::onPush);
+  connect(m_qtPass, &QtPass::pushRequested, this, &MainWindow::onAutoPush);
   // With automatic push, the push is queued first and the refresh would start
   // as soon as it ends, emptying the browser before a failed push's error was
   // painted. So the refresh waits for the push (see connectPassSignals()). It
@@ -604,6 +604,13 @@ void MainWindow::onPush() {
   if (QtPassSettings::isUseGit()) {
     ui->statusBar->showMessage(tr("Updating password-store"), 2000);
     QtPassSettings::getPass()->GitPush();
+  }
+}
+
+void MainWindow::onAutoPush() {
+  if (QtPassSettings::isUseGit()) {
+    ui->statusBar->showMessage(tr("Updating password-store"), 2000);
+    QtPassSettings::getPass()->GitPushAutomatic();
   }
 }
 

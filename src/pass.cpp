@@ -811,6 +811,14 @@ auto Pass::autoPushHeld() const -> bool {
                      });
 }
 
+void Pass::GitPushAutomatic() {
+  m_pushIsAutomatic = true;
+  GitPush();
+  m_pushIsAutomatic = false;
+}
+
+auto Pass::pushIsAutomatic() const -> bool { return m_pushIsAutomatic; }
+
 void Pass::holdAutoPush(const QString &scope) {
   heldScopes().insert(scopePath(scope));
 }

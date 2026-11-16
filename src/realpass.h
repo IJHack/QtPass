@@ -58,6 +58,13 @@ class RealPass : public Pass {
   void reportReencryptFailure(Enums::PROCESS pid, const QString &out,
                               const QString &err);
   /**
+   * @brief Once the last queued init, move or copy has completed, make the
+   * push asked for meanwhile (GitPush()). An automatic one is dropped while
+   * a re-encryption in this store is held, and the status line says why; one
+   * asked for by hand goes.
+   */
+  void sendDeferredPush();
+  /**
    * @brief Judge a queued linked-folder removal commit by what is left
    * staged in the store it ran in: `pass git` exits 0 whatever git did.
    * @param commit The folder and the store it was queued for.
@@ -214,6 +221,11 @@ class RealPass : public Pass {
   /// yet to complete, in completion order; one the executor drops never
   /// gets here, so it cannot pair with a later command's completion.
   QQueue<QString> m_reencryptPending;
+  /// A push was asked for while an init, move or copy was queued or
+  /// running: sendDeferredPush() makes it once they have completed.
+  bool m_pushAfterReencrypt = false;
+  /// One of those pushes was asked for by hand: it goes despite a hold.
+  bool m_deferredPushByHand = false;
 
 public:
   /**

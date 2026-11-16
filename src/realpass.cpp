@@ -63,7 +63,34 @@ void RealPass::GitPull_b() {
 
 void RealPass::GitPull() { executePass(GIT_PULL, {"git", "pull"}); }
 
-void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
+void RealPass::GitPush() {
+  // Queued behind an init, move or copy, the push would run before its
+  // outcome is known and send its commit even when the re-encryption then
+  // fails (the hold is set only then): it waits for them.
+  if (!m_reencryptScopes.isEmpty() || !m_reencryptPending.isEmpty()) {
+    m_pushAfterReencrypt = true;
+    m_deferredPushByHand = m_deferredPushByHand || !pushIsAutomatic();
+    return;
+  }
+  executePass(GIT_PUSH, {"git", "push"});
+}
+
+void RealPass::sendDeferredPush() {
+  if (!m_pushAfterReencrypt || !m_reencryptScopes.isEmpty() ||
+      !m_reencryptPending.isEmpty()) {
+    return;
+  }
+  const bool byHand = m_deferredPushByHand;
+  m_pushAfterReencrypt = false;
+  m_deferredPushByHand = false;
+  if (!byHand && autoPushHeld()) {
+    emit statusMsg(tr("Not pushing: an earlier re-encryption in this "
+                      "store did not finish"),
+                   5000);
+    return;
+  }
+  executePass(GIT_PUSH, {"git", "push"});
+}
 
 void RealPass::Show(QString file) {
   // pass follows links as readily as gpg does.
@@ -388,6 +415,7 @@ void RealPass::finished(int id, int exitCode, const QString &out,
         m_reencryptPending.isEmpty() ? QString() : m_reencryptPending.dequeue();
     if (exitCode == 0 && reencryptFailed(out, err)) {
       holdAutoPush(scope);
+      sendDeferredPush();
       reportReencryptFailure(pid, out, err);
       return;
     }
@@ -405,6 +433,7 @@ void RealPass::finished(int id, int exitCode, const QString &out,
     if (pid == PASS_INIT && exitCode == 0 && !scope.isEmpty()) {
       releaseAutoPush(scope);
     }
+    sendDeferredPush();
     // The status lines are for this check, not for the output panel.
     Pass::finished(id, exitCode, out, withoutStatusLines(err));
     return;
