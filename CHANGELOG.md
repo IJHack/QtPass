@@ -57,6 +57,12 @@
   user ID containing `[GNUPG:] IMPORT_OK 1 <hex>` named that fingerprint
   instead of the key's own (ported from
   [#2238](https://github.com/IJHack/QtPass/pull/2238))
+- The search lists only entries of the current store. After a profile
+  switch it still matched the previous store's entries, which the tree
+  keeps loaded, and showed them when nothing in the current store matched;
+  Return opened one, and saving it re-encrypted it to the current store's
+  recipients (ported from
+  [#2239](https://github.com/IJHack/QtPass/pull/2239))
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 

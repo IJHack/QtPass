@@ -41,6 +41,7 @@ private Q_SLOTS:
   void filterAcceptsRowHidden();
   void filterExcludesGitDirectory();
   void filterAcceptsRowVisible();
+  void filterRejectsAnEarlierStore();
   void setModelAndStore();
   void showThisWithNullFs();
   void getStoreBasic();
@@ -179,6 +180,41 @@ void tst_storemodel::filterExcludesGitDirectory() {
   QModelIndex gitIndex = fsm.index(tempDir.path() + "/.git");
   bool result = sm.filterAcceptsRow(gitIndex.row(), gitIndex.parent());
   QVERIFY2(!result, ".git directory should be hidden");
+}
+
+/**
+ * @brief Only entries of the current store pass the filter. The file system
+ *        model keeps the rows of a store shown earlier (a profile switch only
+ *        re-roots it); a search matched those, and Return opened one that a
+ *        save then re-encrypted to the current store's recipients.
+ */
+void tst_storemodel::filterRejectsAnEarlierStore() {
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QDir parent(tempDir.path());
+  QVERIFY(parent.mkdir(QStringLiteral("private")));
+  QVERIFY(parent.mkdir(QStringLiteral("team")));
+  const QString earlier = parent.filePath(QStringLiteral("private/bank.gpg"));
+  const QString current = parent.filePath(QStringLiteral("team/bank.gpg"));
+  for (const QString &path : {earlier, current}) {
+    QFile f(path);
+    QVERIFY(f.open(QFile::WriteOnly));
+  }
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(parent.filePath(QStringLiteral("private")));
+  QTRY_VERIFY(fsm.index(earlier).isValid());
+  fsm.setRootPath(parent.filePath(QStringLiteral("team")));
+  QTRY_VERIFY(fsm.index(current).isValid());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, parent.filePath(QStringLiteral("team")));
+  sm.setFilterRegularExpression(QStringLiteral("bank"));
+  const QModelIndex old = fsm.index(earlier);
+  QVERIFY2(!sm.filterAcceptsRow(old.row(), old.parent()),
+           "an entry of the earlier store must not match");
+  const QModelIndex here = fsm.index(current);
+  QVERIFY(sm.filterAcceptsRow(here.row(), here.parent()));
 }
 
 void tst_storemodel::filterAcceptsRowVisible() {
