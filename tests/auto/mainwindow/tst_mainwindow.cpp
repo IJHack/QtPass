@@ -94,6 +94,7 @@ private Q_SLOTS:
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilCancelled();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilValid();
   void returnInTheSearchBoxEndsThere();
+  void ctrlCCopiesTheSelectedText();
   void returnOnAContentSearchResultOpensIt();
   void staleContentSearchResultsAreNotListed();
 
@@ -962,6 +963,43 @@ void tst_mainwindow::rebuildWithGrepSearch() {
   QtPassSettings::save(s);
   m_window.reset(new MainWindow);
   m_window->show();
+}
+
+/**
+ * @brief Ctrl+C with text selected in the shown entry copies that text: the
+ *        window-wide shortcut put the entry's password on the clipboard
+ *        instead, with "Copied to clipboard", and cleared the selection.
+ */
+void tst_mainwindow::ctrlCCopiesTheSelectedText() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(m_window.data()));
+  m_window->passShowHandler(
+      QStringLiteral("correct-horse-battery\nlogin: alice\n"));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  QVERIFY(browser->find(QStringLiteral("alice")));
+  browser->setFocus();
+  QCOMPARE(QApplication::focusWidget(), browser);
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+  QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
+  QCOMPARE(clip->text(), QStringLiteral("alice"));
+  QVERIFY2(browser->textCursor().hasSelection(), "the selection stays");
+
+  // A selectable label (the entry name, the OTP code) the same way.
+  auto *label =
+      new QLabel(QStringLiteral("code 123456"), browser->parentWidget());
+  label->setTextInteractionFlags(Qt::TextSelectableByMouse);
+  label->show();
+  label->setFocus();
+  label->setSelection(5, 6);
+  QCOMPARE(QApplication::focusWidget(), label);
+  QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
+  QCOMPARE(clip->text(), QStringLiteral("123456"));
+  delete label;
 }
 
 /**

@@ -333,6 +333,7 @@ private slots:
   void renamePassword();
   void focusInput();
   void copyPasswordFromTreeview();
+  void copySelectionOrPassword();
   void passwordFromFileToClipboard(const QString &text);
   void onTimeoutSearch();
 
