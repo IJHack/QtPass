@@ -468,6 +468,7 @@ private Q_SLOTS:
   void entryActionsWaitWhileContentResultsHideTheTree();
   void grepResultsOfTheOtherBackendAreDropped();
   void settingsCancelARunningContentSearch();
+  void emptyingTheSearchLeavesNothingCurrent();
   void searchForAFolderWithoutFilesSelectsNothing();
   void enterInTheSearchBoxOpensTheFirstMatch();
   void enterInTheSearchBoxPrefersTheEntryNamedAsTyped();
@@ -3836,16 +3837,40 @@ void tst_mainwindow::entryActionsWaitWhileContentResultsHideTheTree() {
                           .arg(treeView()->currentIndex().isValid())));
 
   // Deselecting while results show brings the tree back with nothing
-  // selected (the current index stays): they stay off.
+  // selected and nothing current: they stay off.
   grep->setChecked(true);
   m_window->onGrepFinished(
       {{QStringLiteral("work/acme/vpn"), {QStringLiteral("login: alice")}}});
   QTRY_VERIFY(results->isVisible());
   m_window->deselect();
   QVERIFY(!treeView()->isHidden());
-  QVERIFY(treeView()->currentIndex().isValid());
+  QVERIFY(!treeView()->currentIndex().isValid());
   QVERIFY2(!edit->isEnabled() && !del->isEnabled() && !otp->isEnabled(),
            "nothing selected after deselect()");
+}
+
+/**
+ * @brief Emptying the search box leaves no hidden current entry behind. The
+ *        search made its first hit current; deselect() cleared only the
+ *        selection, so the Users dialog (and Add password, Add folder) still
+ *        took that hit's folder: removing a colleague "from the store" changed
+ *        a subfolder's .gpg-id and left them on the root list.
+ */
+void tst_mainwindow::emptyingTheSearchLeavesNothingCurrent() {
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
+                   QStringLiteral("team/colleague")));
+  searchBox()->setText(QStringLiteral("colleague"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QTRY_VERIFY2(treeView()->currentIndex().isValid(),
+               "the search makes its first hit current");
+
+  searchBox()->clear();
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QVERIFY2(!treeView()->currentIndex().isValid(),
+           "no hidden entry left for Users, Add password or Add folder");
+  QVERIFY(!treeView()->selectionModel()->hasSelection());
 }
 
 /**
