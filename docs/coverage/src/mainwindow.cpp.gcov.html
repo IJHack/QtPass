@@ -42,13 +42,13 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">97.2&nbsp;%</td>
+            <td class="headerCovTableEntryHi">97.7&nbsp;%</td>
             <td class="headerCovTableEntry">1209</td>
-            <td class="headerCovTableEntry">1175</td>
+            <td class="headerCovTableEntry">1181</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-16 17:50:52</td>
+            <td class="headerValue">2026-11-16 18:41:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -217,9 +217,9 @@
 <span id="L144"><span class="lineNum">     144</span>              : </span>
 <span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">         171 : void MainWindow::connectBackends() {</span></span>
 <span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">         171 :   connect(m_qtPass, &amp;QtPass::outputReady, this,</span></span>
-<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">         212 :           [this](const QString &amp;html) { flashText(html, false, true); });</span></span>
+<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">         211 :           [this](const QString &amp;html) { flashText(html, false, true); });</span></span>
 <span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">         171 :   connect(m_qtPass, &amp;QtPass::operationFinished, this,</span></span>
-<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">         231 :           [this]() { setUiElementsEnabled(true); });</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">         230 :           [this]() { setUiElementsEnabled(true); });</span></span>
 <span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">         171 :   connect(m_qtPass, &amp;QtPass::statusMessage, this,</span></span>
 <span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         171 :           &amp;MainWindow::showStatusMessage);</span></span>
 <span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">         171 :   connect(m_qtPass, &amp;QtPass::pushRequested, this, &amp;MainWindow::onAutoPush);</span></span>
@@ -241,7 +241,7 @@
 <span id="L168"><span class="lineNum">     168</span> <span class="tlaGNC">           1 :     on_treeView_clicked(index);</span></span>
 <span id="L169"><span class="lineNum">     169</span>              :   });</span>
 <span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">         171 :   connect(&amp;m_qtPass-&gt;clipboard(), &amp;ClipboardManager::statusMessage, this,</span></span>
-<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">         187 :           [this](const QString &amp;message) { showStatusMessage(message); });</span></span>
+<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">         188 :           [this](const QString &amp;message) { showStatusMessage(message); });</span></span>
 <span id="L172"><span class="lineNum">     172</span>              :   // Both backends: the active one can change through the configuration</span>
 <span id="L173"><span class="lineNum">     173</span>              :   // dialog without a restart.</span>
 <span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">         171 :   connectPassSignals(QtPassSettings::getRealPass());</span></span>
@@ -426,14 +426,14 @@
 <span id="L353"><span class="lineNum">     353</span> <span class="tlaGNC">          67 :   m_firstShowCompleted = true;</span></span>
 <span id="L354"><span class="lineNum">     354</span>              : }</span>
 <span id="L355"><span class="lineNum">     355</span>              : </span>
-<span id="L356"><span class="lineNum">     356</span> <span class="tlaGNC">        7672 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">        7672 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L356"><span class="lineNum">     356</span> <span class="tlaGNC">        7696 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">        7696 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L359"><span class="lineNum">     359</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L360"><span class="lineNum">     360</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L362"><span class="lineNum">     362</span>              :   }</span>
-<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        7672 :   return QMainWindow::event(event);</span></span>
+<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        7696 :   return QMainWindow::event(event);</span></span>
 <span id="L364"><span class="lineNum">     364</span>              : }</span>
 <span id="L365"><span class="lineNum">     365</span>              : </span>
 <span id="L366"><span class="lineNum">     366</span> <span class="tlaGNC">         230 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -538,29 +538,29 @@
 <span id="L465"><span class="lineNum">     465</span> <span class="tlaGNC">           9 :   return ui-&gt;treeView-&gt;currentIndex();</span></span>
 <span id="L466"><span class="lineNum">     466</span>              : }</span>
 <span id="L467"><span class="lineNum">     467</span>              : </span>
-<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">          80 : void MainWindow::flashText(const QString &amp;text, const bool isError,</span></span>
+<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">          79 : void MainWindow::flashText(const QString &amp;text, const bool isError,</span></span>
 <span id="L469"><span class="lineNum">     469</span>              :                            const bool isHtml) {</span>
-<span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">          80 :   if (isError) {</span></span>
+<span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">          79 :   if (isError) {</span></span>
 <span id="L471"><span class="lineNum">     471</span> <span class="tlaGNC">           9 :     ui-&gt;textBrowser-&gt;setTextColor(Qt::red);</span></span>
 <span id="L472"><span class="lineNum">     472</span>              :   } else {</span>
 <span id="L473"><span class="lineNum">     473</span>              :     // setText() re-applies the current char format, red after an error, to</span>
 <span id="L474"><span class="lineNum">     474</span>              :     // the whole document. Clear the foreground rather than pin a palette</span>
 <span id="L475"><span class="lineNum">     475</span>              :     // colour, so text follows runtime light/dark switches (#946).</span>
-<span id="L476"><span class="lineNum">     476</span> <span class="tlaGNC">          71 :     QTextCharFormat format = ui-&gt;textBrowser-&gt;currentCharFormat();</span></span>
+<span id="L476"><span class="lineNum">     476</span> <span class="tlaGNC">          70 :     QTextCharFormat format = ui-&gt;textBrowser-&gt;currentCharFormat();</span></span>
 <span id="L477"><span class="lineNum">     477</span>              :     format.clearForeground();</span>
-<span id="L478"><span class="lineNum">     478</span> <span class="tlaGNC">          71 :     ui-&gt;textBrowser-&gt;setCurrentCharFormat(format);</span></span>
+<span id="L478"><span class="lineNum">     478</span> <span class="tlaGNC">          70 :     ui-&gt;textBrowser-&gt;setCurrentCharFormat(format);</span></span>
 <span id="L479"><span class="lineNum">     479</span>              :   }</span>
 <span id="L480"><span class="lineNum">     480</span>              : </span>
-<span id="L481"><span class="lineNum">     481</span> <span class="tlaGNC">          80 :   if (isHtml) {</span></span>
+<span id="L481"><span class="lineNum">     481</span> <span class="tlaGNC">          79 :   if (isHtml) {</span></span>
 <span id="L482"><span class="lineNum">     482</span>              :     QString _text = text;</span>
-<span id="L483"><span class="lineNum">     483</span> <span class="tlaGNC">         138 :     if (!ui-&gt;textBrowser-&gt;toPlainText().isEmpty()) {</span></span>
-<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">          38 :       _text = ui-&gt;textBrowser-&gt;toHtml() + _text;</span></span>
+<span id="L483"><span class="lineNum">     483</span> <span class="tlaGNC">         136 :     if (!ui-&gt;textBrowser-&gt;toPlainText().isEmpty()) {</span></span>
+<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">          36 :       _text = ui-&gt;textBrowser-&gt;toHtml() + _text;</span></span>
 <span id="L485"><span class="lineNum">     485</span>              :     }</span>
-<span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">          69 :     ui-&gt;textBrowser-&gt;setHtml(_text);</span></span>
+<span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">          68 :     ui-&gt;textBrowser-&gt;setHtml(_text);</span></span>
 <span id="L487"><span class="lineNum">     487</span>              :   } else {</span>
 <span id="L488"><span class="lineNum">     488</span> <span class="tlaGNC">          11 :     ui-&gt;textBrowser-&gt;setText(text);</span></span>
 <span id="L489"><span class="lineNum">     489</span>              :   }</span>
-<span id="L490"><span class="lineNum">     490</span> <span class="tlaGNC">          80 : }</span></span>
+<span id="L490"><span class="lineNum">     490</span> <span class="tlaGNC">          79 : }</span></span>
 <span id="L491"><span class="lineNum">     491</span>              : </span>
 <span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">           5 : void MainWindow::applyTextBrowserSettings() {</span></span>
 <span id="L493"><span class="lineNum">     493</span> <span class="tlaGNC">           5 :   const AppSettings s = QtPassSettings::load();</span></span>
@@ -737,19 +737,19 @@
 <span id="L664"><span class="lineNum">     664</span>              :   }</span>
 <span id="L665"><span class="lineNum">     665</span> <span class="tlaGNC">          62 : }</span></span>
 <span id="L666"><span class="lineNum">     666</span>              : </span>
-<span id="L667"><span class="lineNum">     667</span> <span class="tlaGNC">          36 : void MainWindow::passShowHandler(const QString &amp;p_output, const QString &amp;file) {</span></span>
+<span id="L667"><span class="lineNum">     667</span> <span class="tlaGNC">          37 : void MainWindow::passShowHandler(const QString &amp;p_output, const QString &amp;file) {</span></span>
 <span id="L668"><span class="lineNum">     668</span>              :   // Only the entry we most recently asked to show may repaint the panel; a</span>
 <span id="L669"><span class="lineNum">     669</span>              :   // slower decrypt of an entry the user has since left is dropped, and so is</span>
 <span id="L670"><span class="lineNum">     670</span>              :   // one that arrives after the selection was cleared (deselect, a profile</span>
 <span id="L671"><span class="lineNum">     671</span>              :   // switch): nothing is asked to be shown then.</span>
-<span id="L672"><span class="lineNum">     672</span> <span class="tlaGNC">          36 :   if (!file.isEmpty() &amp;&amp; file != m_shownFile) {</span></span>
+<span id="L672"><span class="lineNum">     672</span> <span class="tlaGNC">          37 :   if (!file.isEmpty() &amp;&amp; file != m_shownFile) {</span></span>
 <span id="L673"><span class="lineNum">     673</span>              :     // A newer show is pending and releases the interface when it lands;</span>
 <span id="L674"><span class="lineNum">     674</span>              :     // with none (the selection was cleared) nothing else would until the</span>
 <span id="L675"><span class="lineNum">     675</span>              :     // watchdog. setUiElementsEnabled() keeps a re-encryption's lock.</span>
-<span id="L676"><span class="lineNum">     676</span> <span class="tlaGNC">           9 :     if (m_shownFile.isEmpty()) {</span></span>
+<span id="L676"><span class="lineNum">     676</span> <span class="tlaGNC">          10 :     if (m_shownFile.isEmpty()) {</span></span>
 <span id="L677"><span class="lineNum">     677</span> <span class="tlaGNC">           7 :       setUiElementsEnabled(true);</span></span>
 <span id="L678"><span class="lineNum">     678</span>              :     }</span>
-<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">           9 :     return;</span></span>
+<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">          10 :     return;</span></span>
 <span id="L680"><span class="lineNum">     680</span>              :   }</span>
 <span id="L681"><span class="lineNum">     681</span> <span class="tlaGNC">          27 :   const AppSettings s = QtPassSettings::load();</span></span>
 <span id="L682"><span class="lineNum">     682</span>              :   // What a template marks secret, in the settings or the store's</span>
@@ -801,12 +801,12 @@
 <span id="L728"><span class="lineNum">     728</span> <span class="tlaGNC">          27 :   setUiElementsEnabled(true);</span></span>
 <span id="L729"><span class="lineNum">     729</span> <span class="tlaGNC">          54 : }</span></span>
 <span id="L730"><span class="lineNum">     730</span>              : </span>
-<span id="L731"><span class="lineNum">     731</span> <span class="tlaGNC">          26 : void MainWindow::otpFromFileToClipboard(const QString &amp;p_output,</span></span>
+<span id="L731"><span class="lineNum">     731</span> <span class="tlaGNC">          27 : void MainWindow::otpFromFileToClipboard(const QString &amp;p_output,</span></span>
 <span id="L732"><span class="lineNum">     732</span>              :                                         const QString &amp;file) {</span>
 <span id="L733"><span class="lineNum">     733</span>              :   // Permanently connected: only the decrypt of the entry onOtp() asked for</span>
 <span id="L734"><span class="lineNum">     734</span>              :   // is ours, everything else belongs to a tree click or a Ctrl+C.</span>
-<span id="L735"><span class="lineNum">     735</span> <span class="tlaGNC">          26 :   if (m_otpRequestFile.isEmpty() || file != m_otpRequestFile) {</span></span>
-<span id="L736"><span class="lineNum">     736</span> <span class="tlaGNC">          23 :     return;</span></span>
+<span id="L735"><span class="lineNum">     735</span> <span class="tlaGNC">          27 :   if (m_otpRequestFile.isEmpty() || file != m_otpRequestFile) {</span></span>
+<span id="L736"><span class="lineNum">     736</span> <span class="tlaGNC">          24 :     return;</span></span>
 <span id="L737"><span class="lineNum">     737</span>              :   }</span>
 <span id="L738"><span class="lineNum">     738</span> <span class="tlaGNC">           5 :   m_otpRequestFile.clear();</span></span>
 <span id="L739"><span class="lineNum">     739</span>              : </span>
@@ -848,11 +848,11 @@
 <span id="L775"><span class="lineNum">     775</span> <span class="tlaGNC">           3 :   setUiElementsEnabled(true);</span></span>
 <span id="L776"><span class="lineNum">     776</span> <span class="tlaGNC">           6 : }</span></span>
 <span id="L777"><span class="lineNum">     777</span>              : </span>
-<span id="L778"><span class="lineNum">     778</span> <span class="tlaGNC">          60 : void MainWindow::clearPanel(bool notify) {</span></span>
-<span id="L779"><span class="lineNum">     779</span> <span class="tlaGNC">          60 :   m_displayPanel-&gt;clear();</span></span>
-<span id="L780"><span class="lineNum">     780</span> <span class="tlaGNC">          60 :   const bool grepWasVisible = ui-&gt;grepResultsList-&gt;isVisible();</span></span>
-<span id="L781"><span class="lineNum">     781</span> <span class="tlaGNC">          60 :   ui-&gt;grepResultsList-&gt;clear();</span></span>
-<span id="L782"><span class="lineNum">     782</span> <span class="tlaGNC">          60 :   if (grepWasVisible) {</span></span>
+<span id="L778"><span class="lineNum">     778</span> <span class="tlaGNC">          62 : void MainWindow::clearPanel(bool notify) {</span></span>
+<span id="L779"><span class="lineNum">     779</span> <span class="tlaGNC">          62 :   m_displayPanel-&gt;clear();</span></span>
+<span id="L780"><span class="lineNum">     780</span> <span class="tlaGNC">          62 :   const bool grepWasVisible = ui-&gt;grepResultsList-&gt;isVisible();</span></span>
+<span id="L781"><span class="lineNum">     781</span> <span class="tlaGNC">          62 :   ui-&gt;grepResultsList-&gt;clear();</span></span>
+<span id="L782"><span class="lineNum">     782</span> <span class="tlaGNC">          62 :   if (grepWasVisible) {</span></span>
 <span id="L783"><span class="lineNum">     783</span> <span class="tlaGNC">           5 :     showContentResults(false);</span></span>
 <span id="L784"><span class="lineNum">     784</span> <span class="tlaGNC">           5 :     if (m_grep.inGrepMode()) {</span></span>
 <span id="L785"><span class="lineNum">     785</span>              :       // Left as the button leaves it: a search still running would otherwise</span>
@@ -870,45 +870,45 @@
 <span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">          10 :       ui-&gt;lineEdit-&gt;setPlaceholderText(tr(&quot;Search password&quot;));</span></span>
 <span id="L798"><span class="lineNum">     798</span>              :     }</span>
 <span id="L799"><span class="lineNum">     799</span>              :   }</span>
-<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">          60 :   if (notify) {</span></span>
+<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">          62 :   if (notify) {</span></span>
 <span id="L801"><span class="lineNum">     801</span> <span class="tlaGNC">           4 :     QString output = &quot;***&quot; + tr(&quot;Password and content hidden&quot;) + &quot;***&quot;;</span></span>
 <span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">           2 :     ui-&gt;textBrowser-&gt;setHtml(output);</span></span>
 <span id="L803"><span class="lineNum">     803</span>              :   } else {</span>
-<span id="L804"><span class="lineNum">     804</span> <span class="tlaGNC">         116 :     ui-&gt;textBrowser-&gt;setHtml(&quot;&quot;);</span></span>
+<span id="L804"><span class="lineNum">     804</span> <span class="tlaGNC">         120 :     ui-&gt;textBrowser-&gt;setHtml(&quot;&quot;);</span></span>
 <span id="L805"><span class="lineNum">     805</span>              :   }</span>
-<span id="L806"><span class="lineNum">     806</span> <span class="tlaGNC">          60 : }</span></span>
+<span id="L806"><span class="lineNum">     806</span> <span class="tlaGNC">          62 : }</span></span>
 <span id="L807"><span class="lineNum">     807</span>              : </span>
-<span id="L808"><span class="lineNum">     808</span> <span class="tlaGNC">         392 : void MainWindow::setUiElementsEnabled(bool state) {</span></span>
+<span id="L808"><span class="lineNum">     808</span> <span class="tlaGNC">         391 : void MainWindow::setUiElementsEnabled(bool state) {</span></span>
 <span id="L809"><span class="lineNum">     809</span>              :   // A running re-encryption owns the UI state: the progress dialog's Cancel is</span>
 <span id="L810"><span class="lineNum">     810</span>              :   // the user's escape hatch and endReencryptPath() releases the interface, so</span>
 <span id="L811"><span class="lineNum">     811</span>              :   // neither an unrelated completion nor the watchdog may re-enable it early.</span>
-<span id="L812"><span class="lineNum">     812</span> <span class="tlaGNC">         392 :   if (state &amp;&amp; m_reencryptRunning) {</span></span>
+<span id="L812"><span class="lineNum">     812</span> <span class="tlaGNC">         391 :   if (state &amp;&amp; m_reencryptRunning) {</span></span>
 <span id="L813"><span class="lineNum">     813</span> <span class="tlaGNC">           1 :     m_uiWatchdog.stop();</span></span>
 <span id="L814"><span class="lineNum">     814</span> <span class="tlaGNC">           1 :     return;</span></span>
 <span id="L815"><span class="lineNum">     815</span>              :   }</span>
 <span id="L816"><span class="lineNum">     816</span>              :   // Arm the watchdog while the UI is disabled; disarm once re-enabled.</span>
 <span id="L817"><span class="lineNum">     817</span>              :   if (state) {</span>
-<span id="L818"><span class="lineNum">     818</span> <span class="tlaGNC">         307 :     m_uiWatchdog.stop();</span></span>
+<span id="L818"><span class="lineNum">     818</span> <span class="tlaGNC">         306 :     m_uiWatchdog.stop();</span></span>
 <span id="L819"><span class="lineNum">     819</span>              :   } else {</span>
 <span id="L820"><span class="lineNum">     820</span> <span class="tlaGNC">          84 :     m_uiWatchdog.start();</span></span>
 <span id="L821"><span class="lineNum">     821</span>              :   }</span>
-<span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">         391 :   ui-&gt;treeView-&gt;setEnabled(state);</span></span>
-<span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">         391 :   ui-&gt;lineEdit-&gt;setEnabled(state);</span></span>
-<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">         391 :   ui-&gt;actionAddPassword-&gt;setEnabled(state);</span></span>
-<span id="L825"><span class="lineNum">     825</span> <span class="tlaGNC">         391 :   ui-&gt;actionAddFolder-&gt;setEnabled(state);</span></span>
-<span id="L826"><span class="lineNum">     826</span> <span class="tlaGNC">         391 :   ui-&gt;actionUsers-&gt;setEnabled(state);</span></span>
-<span id="L827"><span class="lineNum">     827</span> <span class="tlaGNC">         391 :   ui-&gt;actionConfig-&gt;setEnabled(state);</span></span>
-<span id="L828"><span class="lineNum">     828</span> <span class="tlaGNC">         391 :   m_uiEnabled = state;</span></span>
-<span id="L829"><span class="lineNum">     829</span> <span class="tlaGNC">         391 :   updateProfileBoxEnabled();</span></span>
+<span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">         390 :   ui-&gt;treeView-&gt;setEnabled(state);</span></span>
+<span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">         390 :   ui-&gt;lineEdit-&gt;setEnabled(state);</span></span>
+<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">         390 :   ui-&gt;actionAddPassword-&gt;setEnabled(state);</span></span>
+<span id="L825"><span class="lineNum">     825</span> <span class="tlaGNC">         390 :   ui-&gt;actionAddFolder-&gt;setEnabled(state);</span></span>
+<span id="L826"><span class="lineNum">     826</span> <span class="tlaGNC">         390 :   ui-&gt;actionUsers-&gt;setEnabled(state);</span></span>
+<span id="L827"><span class="lineNum">     827</span> <span class="tlaGNC">         390 :   ui-&gt;actionConfig-&gt;setEnabled(state);</span></span>
+<span id="L828"><span class="lineNum">     828</span> <span class="tlaGNC">         390 :   m_uiEnabled = state;</span></span>
+<span id="L829"><span class="lineNum">     829</span> <span class="tlaGNC">         390 :   updateProfileBoxEnabled();</span></span>
 <span id="L830"><span class="lineNum">     830</span>              :   const bool uiEnabled = state;</span>
 <span id="L831"><span class="lineNum">     831</span>              :   // is a file selected, and in sight (content search results hide the tree)?</span>
-<span id="L832"><span class="lineNum">     832</span> <span class="tlaGNC">         785 :   state &amp;= ui-&gt;treeView-&gt;currentIndex().isValid() &amp;&amp; !ui-&gt;treeView-&gt;isHidden();</span></span>
-<span id="L833"><span class="lineNum">     833</span> <span class="tlaGNC">         391 :   ui-&gt;actionDelete-&gt;setEnabled(state);</span></span>
-<span id="L834"><span class="lineNum">     834</span> <span class="tlaGNC">         391 :   ui-&gt;actionEdit-&gt;setEnabled(state);</span></span>
-<span id="L835"><span class="lineNum">     835</span> <span class="tlaGNC">         391 :   updateGitButtonVisibility(uiEnabled);</span></span>
+<span id="L832"><span class="lineNum">     832</span> <span class="tlaGNC">         783 :   state &amp;= ui-&gt;treeView-&gt;currentIndex().isValid() &amp;&amp; !ui-&gt;treeView-&gt;isHidden();</span></span>
+<span id="L833"><span class="lineNum">     833</span> <span class="tlaGNC">         390 :   ui-&gt;actionDelete-&gt;setEnabled(state);</span></span>
+<span id="L834"><span class="lineNum">     834</span> <span class="tlaGNC">         390 :   ui-&gt;actionEdit-&gt;setEnabled(state);</span></span>
+<span id="L835"><span class="lineNum">     835</span> <span class="tlaGNC">         390 :   updateGitButtonVisibility(uiEnabled);</span></span>
 <span id="L836"><span class="lineNum">     836</span>              :   // `state` is now &quot;UI enabled AND a file is selected&quot;, which is exactly when</span>
 <span id="L837"><span class="lineNum">     837</span>              :   // generating an OTP makes sense.</span>
-<span id="L838"><span class="lineNum">     838</span> <span class="tlaGNC">         391 :   updateOtpButtonVisibility(state);</span></span>
+<span id="L838"><span class="lineNum">     838</span> <span class="tlaGNC">         390 :   updateOtpButtonVisibility(state);</span></span>
 <span id="L839"><span class="lineNum">     839</span>              : }</span>
 <span id="L840"><span class="lineNum">     840</span>              : </span>
 <span id="L841"><span class="lineNum">     841</span> <span class="tlaGNC">         182 : void MainWindow::restoreWindow() {</span></span>
@@ -955,29 +955,29 @@
 <span id="L882"><span class="lineNum">     882</span> <span class="tlaGNC">           2 :                QString::number(QDate::currentDate().year())));</span></span>
 <span id="L883"><span class="lineNum">     883</span> <span class="tlaGNC">           1 : }</span></span>
 <span id="L884"><span class="lineNum">     884</span>              : </span>
-<span id="L885"><span class="lineNum">     885</span> <span class="tlaGNC">          45 : void MainWindow::on_lineEdit_textChanged(const QString &amp;arg1) {</span></span>
-<span id="L886"><span class="lineNum">     886</span> <span class="tlaGNC">          45 :   if (m_grep.inGrepMode())</span></span>
+<span id="L885"><span class="lineNum">     885</span> <span class="tlaGNC">          47 : void MainWindow::on_lineEdit_textChanged(const QString &amp;arg1) {</span></span>
+<span id="L886"><span class="lineNum">     886</span> <span class="tlaGNC">          47 :   if (m_grep.inGrepMode())</span></span>
 <span id="L887"><span class="lineNum">     887</span>              :     return;</span>
-<span id="L888"><span class="lineNum">     888</span> <span class="tlaGNC">          64 :   ui-&gt;statusBar-&gt;showMessage(tr(&quot;Looking for: %1&quot;).arg(arg1), 1000);</span></span>
-<span id="L889"><span class="lineNum">     889</span> <span class="tlaGNC">          32 :   ui-&gt;treeView-&gt;expandAll();</span></span>
+<span id="L888"><span class="lineNum">     888</span> <span class="tlaGNC">          68 :   ui-&gt;statusBar-&gt;showMessage(tr(&quot;Looking for: %1&quot;).arg(arg1), 1000);</span></span>
+<span id="L889"><span class="lineNum">     889</span> <span class="tlaGNC">          34 :   ui-&gt;treeView-&gt;expandAll();</span></span>
 <span id="L890"><span class="lineNum">     890</span>              :   // Drop any decrypt still pending for the entry that was shown: otherwise it</span>
 <span id="L891"><span class="lineNum">     891</span>              :   // keeps its right to the panel and, with &quot;Always copy&quot;, the clipboard, and</span>
 <span id="L892"><span class="lineNum">     892</span>              :   // when it lands late it shows that entry's password under the new heading.</span>
-<span id="L893"><span class="lineNum">     893</span> <span class="tlaGNC">          32 :   m_shownFile.clear();</span></span>
-<span id="L894"><span class="lineNum">     894</span> <span class="tlaGNC">          32 :   cancelOtpRequest();</span></span>
-<span id="L895"><span class="lineNum">     895</span> <span class="tlaGNC">          32 :   clearPanel(false);</span></span>
-<span id="L896"><span class="lineNum">     896</span> <span class="tlaGNC">          64 :   ui-&gt;passwordName-&gt;setText(&quot;&quot;);</span></span>
-<span id="L897"><span class="lineNum">     897</span> <span class="tlaGNC">          32 :   ui-&gt;actionEdit-&gt;setEnabled(false);</span></span>
-<span id="L898"><span class="lineNum">     898</span> <span class="tlaGNC">          32 :   ui-&gt;actionDelete-&gt;setEnabled(false);</span></span>
-<span id="L899"><span class="lineNum">     899</span> <span class="tlaGNC">          32 :   searchTimer.start();</span></span>
+<span id="L893"><span class="lineNum">     893</span> <span class="tlaGNC">          34 :   m_shownFile.clear();</span></span>
+<span id="L894"><span class="lineNum">     894</span> <span class="tlaGNC">          34 :   cancelOtpRequest();</span></span>
+<span id="L895"><span class="lineNum">     895</span> <span class="tlaGNC">          34 :   clearPanel(false);</span></span>
+<span id="L896"><span class="lineNum">     896</span> <span class="tlaGNC">          68 :   ui-&gt;passwordName-&gt;setText(&quot;&quot;);</span></span>
+<span id="L897"><span class="lineNum">     897</span> <span class="tlaGNC">          34 :   ui-&gt;actionEdit-&gt;setEnabled(false);</span></span>
+<span id="L898"><span class="lineNum">     898</span> <span class="tlaGNC">          34 :   ui-&gt;actionDelete-&gt;setEnabled(false);</span></span>
+<span id="L899"><span class="lineNum">     899</span> <span class="tlaGNC">          34 :   searchTimer.start();</span></span>
 <span id="L900"><span class="lineNum">     900</span>              : }</span>
 <span id="L901"><span class="lineNum">     901</span>              : </span>
-<span id="L902"><span class="lineNum">     902</span> <span class="tlaGNC">          36 : void MainWindow::onTimeoutSearch() {</span></span>
+<span id="L902"><span class="lineNum">     902</span> <span class="tlaGNC">          38 : void MainWindow::onTimeoutSearch() {</span></span>
 <span id="L903"><span class="lineNum">     903</span>              :   // The tree matches slash-separated paths: on Windows, team\bank typed is</span>
 <span id="L904"><span class="lineNum">     904</span>              :   // team/bank, as exactMatchPath() reads it too.</span>
-<span id="L905"><span class="lineNum">     905</span> <span class="tlaGNC">          72 :   QString query = QDir::fromNativeSeparators(ui-&gt;lineEdit-&gt;text());</span></span>
+<span id="L905"><span class="lineNum">     905</span> <span class="tlaGNC">          76 :   QString query = QDir::fromNativeSeparators(ui-&gt;lineEdit-&gt;text());</span></span>
 <span id="L906"><span class="lineNum">     906</span>              : </span>
-<span id="L907"><span class="lineNum">     907</span> <span class="tlaGNC">          36 :   if (query.isEmpty()) {</span></span>
+<span id="L907"><span class="lineNum">     907</span> <span class="tlaGNC">          38 :   if (query.isEmpty()) {</span></span>
 <span id="L908"><span class="lineNum">     908</span> <span class="tlaGNC">           1 :     ui-&gt;treeView-&gt;collapseAll();</span></span>
 <span id="L909"><span class="lineNum">     909</span> <span class="tlaGNC">           1 :     deselect();</span></span>
 <span id="L910"><span class="lineNum">     910</span>              :   }</span>
@@ -985,22 +985,22 @@
 <span id="L912"><span class="lineNum">     912</span>              :   // The words are matched literally, in order, with anything in between:</span>
 <span id="L913"><span class="lineNum">     913</span>              :   // &quot;work vpn&quot; finds work/acme/vpn. Regular expressions belong to the</span>
 <span id="L914"><span class="lineNum">     914</span>              :   // content search; here a typed &quot;[&quot; or &quot;(&quot; must not switch filtering off.</span>
-<span id="L915"><span class="lineNum">     915</span> <span class="tlaGNC">          36 :   QStringList words;</span></span>
+<span id="L915"><span class="lineNum">     915</span> <span class="tlaGNC">          38 :   QStringList words;</span></span>
 <span id="L916"><span class="lineNum">     916</span>              :   for (const QString &amp;word :</span>
-<span id="L917"><span class="lineNum">     917</span> <span class="tlaGNC">         108 :        query.split(QLatin1Char(' '), Qt::SkipEmptyParts)) {</span></span>
-<span id="L918"><span class="lineNum">     918</span> <span class="tlaGNC">          36 :     words &lt;&lt; QRegularExpression::escape(word);</span></span>
+<span id="L917"><span class="lineNum">     917</span> <span class="tlaGNC">         114 :        query.split(QLatin1Char(' '), Qt::SkipEmptyParts)) {</span></span>
+<span id="L918"><span class="lineNum">     918</span> <span class="tlaGNC">          38 :     words &lt;&lt; QRegularExpression::escape(word);</span></span>
 <span id="L919"><span class="lineNum">     919</span>              :   }</span>
-<span id="L920"><span class="lineNum">     920</span> <span class="tlaGNC">          72 :   QRegularExpression regExp(words.join(QStringLiteral(&quot;.*&quot;)),</span></span>
-<span id="L921"><span class="lineNum">     921</span> <span class="tlaGNC">          36 :                             QRegularExpression::CaseInsensitiveOption);</span></span>
-<span id="L922"><span class="lineNum">     922</span> <span class="tlaGNC">          36 :   m_tree-&gt;setFilter(regExp);</span></span>
+<span id="L920"><span class="lineNum">     920</span> <span class="tlaGNC">          76 :   QRegularExpression regExp(words.join(QStringLiteral(&quot;.*&quot;)),</span></span>
+<span id="L921"><span class="lineNum">     921</span> <span class="tlaGNC">          38 :                             QRegularExpression::CaseInsensitiveOption);</span></span>
+<span id="L922"><span class="lineNum">     922</span> <span class="tlaGNC">          38 :   m_tree-&gt;setFilter(regExp);</span></span>
 <span id="L923"><span class="lineNum">     923</span>              : </span>
-<span id="L924"><span class="lineNum">     924</span> <span class="tlaGNC">          36 :   if (m_tree-&gt;proxy().rowCount() &gt; 0 &amp;&amp; !query.isEmpty()) {</span></span>
-<span id="L925"><span class="lineNum">     925</span> <span class="tlaGNC">          26 :     selectFirstFile();</span></span>
+<span id="L924"><span class="lineNum">     924</span> <span class="tlaGNC">          38 :   if (m_tree-&gt;proxy().rowCount() &gt; 0 &amp;&amp; !query.isEmpty()) {</span></span>
+<span id="L925"><span class="lineNum">     925</span> <span class="tlaGNC">          27 :     selectFirstFile();</span></span>
 <span id="L926"><span class="lineNum">     926</span>              :   } else {</span>
-<span id="L927"><span class="lineNum">     927</span> <span class="tlaGNC">          10 :     ui-&gt;actionEdit-&gt;setEnabled(false);</span></span>
-<span id="L928"><span class="lineNum">     928</span> <span class="tlaGNC">          10 :     ui-&gt;actionDelete-&gt;setEnabled(false);</span></span>
+<span id="L927"><span class="lineNum">     927</span> <span class="tlaGNC">          11 :     ui-&gt;actionEdit-&gt;setEnabled(false);</span></span>
+<span id="L928"><span class="lineNum">     928</span> <span class="tlaGNC">          11 :     ui-&gt;actionDelete-&gt;setEnabled(false);</span></span>
 <span id="L929"><span class="lineNum">     929</span>              :   }</span>
-<span id="L930"><span class="lineNum">     930</span> <span class="tlaGNC">          72 : }</span></span>
+<span id="L930"><span class="lineNum">     930</span> <span class="tlaGNC">          76 : }</span></span>
 <span id="L931"><span class="lineNum">     931</span>              : </span>
 <span id="L932"><span class="lineNum">     932</span> <span class="tlaGNC">          17 : void MainWindow::on_lineEdit_returnPressed() {</span></span>
 <span id="L933"><span class="lineNum">     933</span> <span class="tlaGNC">          17 :   qCDebug(lcQtPass) &lt;&lt; &quot;on_lineEdit_returnPressed&quot;</span></span>
@@ -1185,15 +1185,15 @@
 <span id="L1112"><span class="lineNum">    1112</span> <span class="tlaGNC">          24 :   QtPassSettings::getImitatePass()-&gt;CancelGrep();</span></span>
 <span id="L1113"><span class="lineNum">    1113</span> <span class="tlaGNC">          24 : }</span></span>
 <span id="L1114"><span class="lineNum">    1114</span>              : </span>
-<span id="L1115"><span class="lineNum">    1115</span> <span class="tlaGNC">          31 : void MainWindow::selectFirstFile() {</span></span>
+<span id="L1115"><span class="lineNum">    1115</span> <span class="tlaGNC">          32 : void MainWindow::selectFirstFile() {</span></span>
 <span id="L1116"><span class="lineNum">    1116</span>              :   // The entry named exactly as typed wins: with folders sorted first, the</span>
 <span id="L1117"><span class="lineNum">    1117</span>              :   // depth-first walk found team/bank before bank.</span>
-<span id="L1118"><span class="lineNum">    1118</span> <span class="tlaGNC">          31 :   QModelIndex index = exactMatch();</span></span>
+<span id="L1118"><span class="lineNum">    1118</span> <span class="tlaGNC">          32 :   QModelIndex index = exactMatch();</span></span>
 <span id="L1119"><span class="lineNum">    1119</span>              :   if (!index.isValid()) {</span>
 <span id="L1120"><span class="lineNum">    1120</span> <span class="tlaGNC">          15 :     index = firstFile(m_tree-&gt;rootIndex());</span></span>
 <span id="L1121"><span class="lineNum">    1121</span>              :   }</span>
-<span id="L1122"><span class="lineNum">    1122</span> <span class="tlaGNC">          31 :   ui-&gt;treeView-&gt;setCurrentIndex(index);</span></span>
-<span id="L1123"><span class="lineNum">    1123</span> <span class="tlaGNC">          31 : }</span></span>
+<span id="L1122"><span class="lineNum">    1122</span> <span class="tlaGNC">          32 :   ui-&gt;treeView-&gt;setCurrentIndex(index);</span></span>
+<span id="L1123"><span class="lineNum">    1123</span> <span class="tlaGNC">          32 : }</span></span>
 <span id="L1124"><span class="lineNum">    1124</span>              : </span>
 <span id="L1125"><span class="lineNum">    1125</span>              : namespace {</span>
 <span id="L1126"><span class="lineNum">    1126</span>              : /**</span>
@@ -1206,18 +1206,18 @@
 <span id="L1133"><span class="lineNum">    1133</span>              :  * @return @p path itself when every part is spelled as stored, otherwise</span>
 <span id="L1134"><span class="lineNum">    1134</span>              :  *         the path with the stored spelling.</span>
 <span id="L1135"><span class="lineNum">    1135</span>              :  */</span>
-<span id="L1136"><span class="lineNum">    1136</span> <span class="tlaGNC">          28 : auto spelledAsStored(const QString &amp;store, const QString &amp;path) -&gt; QString {</span></span>
-<span id="L1137"><span class="lineNum">    1137</span> <span class="tlaGNC">          56 :   const QStringList parts = QDir(store).relativeFilePath(path).split(</span></span>
-<span id="L1138"><span class="lineNum">    1138</span> <span class="tlaGNC">          28 :       QLatin1Char('/'), Qt::SkipEmptyParts);</span></span>
-<span id="L1139"><span class="lineNum">    1139</span> <span class="tlaGNC">          28 :   QDir dir(store);</span></span>
+<span id="L1136"><span class="lineNum">    1136</span> <span class="tlaGNC">          33 : auto spelledAsStored(const QString &amp;store, const QString &amp;path) -&gt; QString {</span></span>
+<span id="L1137"><span class="lineNum">    1137</span> <span class="tlaGNC">          66 :   const QStringList parts = QDir(store).relativeFilePath(path).split(</span></span>
+<span id="L1138"><span class="lineNum">    1138</span> <span class="tlaGNC">          33 :       QLatin1Char('/'), Qt::SkipEmptyParts);</span></span>
+<span id="L1139"><span class="lineNum">    1139</span> <span class="tlaGNC">          33 :   QDir dir(store);</span></span>
 <span id="L1140"><span class="lineNum">    1140</span>              :   bool respelled = false;</span>
-<span id="L1141"><span class="lineNum">    1141</span> <span class="tlaGNC">          31 :   for (int i = 0; i &lt; parts.size(); ++i) {</span></span>
-<span id="L1142"><span class="lineNum">    1142</span> <span class="tlaGNC">          31 :     const bool leaf = i == parts.size() - 1;</span></span>
+<span id="L1141"><span class="lineNum">    1141</span> <span class="tlaGNC">          36 :   for (int i = 0; i &lt; parts.size(); ++i) {</span></span>
+<span id="L1142"><span class="lineNum">    1142</span> <span class="tlaGNC">          36 :     const bool leaf = i == parts.size() - 1;</span></span>
 <span id="L1143"><span class="lineNum">    1143</span>              :     const QStringList names =</span>
-<span id="L1144"><span class="lineNum">    1144</span> <span class="tlaGNC">          31 :         dir.entryList((leaf ? QDir::Files : QDir::Dirs) | QDir::Hidden |</span></span>
-<span id="L1145"><span class="lineNum">    1145</span> <span class="tlaGNC">          34 :                       QDir::NoDotAndDotDot);</span></span>
+<span id="L1144"><span class="lineNum">    1144</span> <span class="tlaGNC">          36 :         dir.entryList((leaf ? QDir::Files : QDir::Dirs) | QDir::Hidden |</span></span>
+<span id="L1145"><span class="lineNum">    1145</span> <span class="tlaGNC">          39 :                       QDir::NoDotAndDotDot);</span></span>
 <span id="L1146"><span class="lineNum">    1146</span>              :     QString name = parts.at(i);</span>
-<span id="L1147"><span class="lineNum">    1147</span> <span class="tlaGNC">          31 :     if (!names.contains(name)) {</span></span>
+<span id="L1147"><span class="lineNum">    1147</span> <span class="tlaGNC">          36 :     if (!names.contains(name)) {</span></span>
 <span id="L1148"><span class="lineNum">    1148</span> <span class="tlaUNC">           0 :       const auto stored = std::find_if(</span></span>
 <span id="L1149"><span class="lineNum">    1149</span>              :           names.cbegin(), names.cend(), [&amp;name](const QString &amp;candidate) {</span>
 <span id="L1150"><span class="lineNum">    1150</span> <span class="tlaUNC">           0 :             return candidate.compare(name, Qt::CaseInsensitive) == 0;</span></span>
@@ -1228,92 +1228,92 @@
 <span id="L1155"><span class="lineNum">    1155</span> <span class="tlaUNC">           0 :       name = *stored;</span></span>
 <span id="L1156"><span class="lineNum">    1156</span>              :       respelled = true;</span>
 <span id="L1157"><span class="lineNum">    1157</span>              :     }</span>
-<span id="L1158"><span class="lineNum">    1158</span> <span class="tlaGNC">          31 :     if (leaf) {</span></span>
-<span id="L1159"><span class="lineNum">    1159</span> <span class="tlaGNC">          56 :       return respelled ? QDir::cleanPath(dir.filePath(name)) : path;</span></span>
+<span id="L1158"><span class="lineNum">    1158</span> <span class="tlaGNC">          36 :     if (leaf) {</span></span>
+<span id="L1159"><span class="lineNum">    1159</span> <span class="tlaGNC">          66 :       return respelled ? QDir::cleanPath(dir.filePath(name)) : path;</span></span>
 <span id="L1160"><span class="lineNum">    1160</span>              :     }</span>
 <span id="L1161"><span class="lineNum">    1161</span> <span class="tlaGNC">           3 :     if (!dir.cd(name)) {</span></span>
 <span id="L1162"><span class="lineNum">    1162</span>              :       return path;</span>
 <span id="L1163"><span class="lineNum">    1163</span>              :     }</span>
 <span id="L1164"><span class="lineNum">    1164</span>              :   }</span>
 <span id="L1165"><span class="lineNum">    1165</span>              :   return path;</span>
-<span id="L1166"><span class="lineNum">    1166</span> <span class="tlaGNC">          28 : }</span></span>
+<span id="L1166"><span class="lineNum">    1166</span> <span class="tlaGNC">          33 : }</span></span>
 <span id="L1167"><span class="lineNum">    1167</span>              : } // namespace</span>
 <span id="L1168"><span class="lineNum">    1168</span>              : </span>
-<span id="L1169"><span class="lineNum">    1169</span> <span class="tlaGNC">          45 : auto MainWindow::exactMatchPath() -&gt; QString {</span></span>
-<span id="L1170"><span class="lineNum">    1170</span> <span class="tlaGNC">          90 :   const QString text = QDir::fromNativeSeparators(ui-&gt;lineEdit-&gt;text());</span></span>
-<span id="L1171"><span class="lineNum">    1171</span> <span class="tlaGNC">          90 :   const QString store = QtPassSettings::getPassStore();</span></span>
+<span id="L1169"><span class="lineNum">    1169</span> <span class="tlaGNC">          50 : auto MainWindow::exactMatchPath() -&gt; QString {</span></span>
+<span id="L1170"><span class="lineNum">    1170</span> <span class="tlaGNC">         100 :   const QString text = QDir::fromNativeSeparators(ui-&gt;lineEdit-&gt;text());</span></span>
+<span id="L1171"><span class="lineNum">    1171</span> <span class="tlaGNC">         100 :   const QString store = QtPassSettings::getPassStore();</span></span>
 <span id="L1172"><span class="lineNum">    1172</span>              :   // A name may begin or end with a space: &quot; bank&quot; is that entry, not bank.</span>
 <span id="L1173"><span class="lineNum">    1173</span>              :   // Only when no entry is named so are spaces around the text dropped.</span>
-<span id="L1174"><span class="lineNum">    1174</span> <span class="tlaGNC">         171 :   for (const QString &amp;typed : {text, text.trimmed()}) {</span></span>
-<span id="L1175"><span class="lineNum">    1175</span> <span class="tlaGNC">          64 :     if (typed.isEmpty()) {</span></span>
+<span id="L1174"><span class="lineNum">    1174</span> <span class="tlaGNC">         186 :   for (const QString &amp;typed : {text, text.trimmed()}) {</span></span>
+<span id="L1175"><span class="lineNum">    1175</span> <span class="tlaGNC">          69 :     if (typed.isEmpty()) {</span></span>
 <span id="L1176"><span class="lineNum">    1176</span> <span class="tlaUNC">           0 :       continue;</span></span>
 <span id="L1177"><span class="lineNum">    1177</span>              :     }</span>
 <span id="L1178"><span class="lineNum">    1178</span>              :     const QString path =</span>
-<span id="L1179"><span class="lineNum">    1179</span> <span class="tlaGNC">         128 :         QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(&quot;.gpg&quot;)));</span></span>
-<span id="L1180"><span class="lineNum">    1180</span> <span class="tlaGNC">          64 :     if (PathValidator::isPathInStore(store, path) &amp;&amp; QFileInfo(path).isFile()) {</span></span>
-<span id="L1181"><span class="lineNum">    1181</span> <span class="tlaGNC">          28 :       return spelledAsStored(store, path);</span></span>
+<span id="L1179"><span class="lineNum">    1179</span> <span class="tlaGNC">         138 :         QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(&quot;.gpg&quot;)));</span></span>
+<span id="L1180"><span class="lineNum">    1180</span> <span class="tlaGNC">          69 :     if (PathValidator::isPathInStore(store, path) &amp;&amp; QFileInfo(path).isFile()) {</span></span>
+<span id="L1181"><span class="lineNum">    1181</span> <span class="tlaGNC">          33 :       return spelledAsStored(store, path);</span></span>
 <span id="L1182"><span class="lineNum">    1182</span>              :     }</span>
-<span id="L1183"><span class="lineNum">    1183</span> <span class="tlaGNC">         135 :   }</span></span>
+<span id="L1183"><span class="lineNum">    1183</span> <span class="tlaGNC">         150 :   }</span></span>
 <span id="L1184"><span class="lineNum">    1184</span> <span class="tlaGNC">          17 :   return {};</span></span>
 <span id="L1185"><span class="lineNum">    1185</span>              : }</span>
 <span id="L1186"><span class="lineNum">    1186</span>              : </span>
-<span id="L1187"><span class="lineNum">    1187</span> <span class="tlaGNC">          43 : auto MainWindow::exactMatch() -&gt; QModelIndex {</span></span>
-<span id="L1188"><span class="lineNum">    1188</span> <span class="tlaGNC">          43 :   const QString path = exactMatchPath();</span></span>
-<span id="L1189"><span class="lineNum">    1189</span> <span class="tlaGNC">          43 :   if (path.isEmpty()) {</span></span>
+<span id="L1187"><span class="lineNum">    1187</span> <span class="tlaGNC">          46 : auto MainWindow::exactMatch() -&gt; QModelIndex {</span></span>
+<span id="L1188"><span class="lineNum">    1188</span> <span class="tlaGNC">          46 :   const QString path = exactMatchPath();</span></span>
+<span id="L1189"><span class="lineNum">    1189</span> <span class="tlaGNC">          46 :   if (path.isEmpty()) {</span></span>
 <span id="L1190"><span class="lineNum">    1190</span> <span class="tlaGNC">          16 :     return {};</span></span>
 <span id="L1191"><span class="lineNum">    1191</span>              :   }</span>
 <span id="L1192"><span class="lineNum">    1192</span>              :   // indexFor() maps through the filter: a row the filter hides is no match.</span>
-<span id="L1193"><span class="lineNum">    1193</span> <span class="tlaGNC">          27 :   const QModelIndex index = m_tree-&gt;indexFor(path);</span></span>
-<span id="L1194"><span class="lineNum">    1194</span> <span class="tlaGNC">          49 :   if (!index.isValid() || !m_tree-&gt;fileInfo(index).isFile()) {</span></span>
-<span id="L1195"><span class="lineNum">    1195</span> <span class="tlaGNC">           5 :     return {};</span></span>
+<span id="L1193"><span class="lineNum">    1193</span> <span class="tlaGNC">          30 :   const QModelIndex index = m_tree-&gt;indexFor(path);</span></span>
+<span id="L1194"><span class="lineNum">    1194</span> <span class="tlaGNC">          53 :   if (!index.isValid() || !m_tree-&gt;fileInfo(index).isFile()) {</span></span>
+<span id="L1195"><span class="lineNum">    1195</span> <span class="tlaGNC">           7 :     return {};</span></span>
 <span id="L1196"><span class="lineNum">    1196</span>              :   }</span>
-<span id="L1197"><span class="lineNum">    1197</span> <span class="tlaGNC">          22 :   return index;</span></span>
+<span id="L1197"><span class="lineNum">    1197</span> <span class="tlaGNC">          23 :   return index;</span></span>
 <span id="L1198"><span class="lineNum">    1198</span>              : }</span>
 <span id="L1199"><span class="lineNum">    1199</span>              : </span>
-<span id="L1200"><span class="lineNum">    1200</span> <span class="tlaGNC">           8 : void MainWindow::applySearchText(const QString &amp;text) {</span></span>
+<span id="L1200"><span class="lineNum">    1200</span> <span class="tlaGNC">           9 : void MainWindow::applySearchText(const QString &amp;text) {</span></span>
 <span id="L1201"><span class="lineNum">    1201</span>              :   // A name search: content search, left on, kept its results over the tree</span>
 <span id="L1202"><span class="lineNum">    1202</span>              :   // and ignored the text.</span>
-<span id="L1203"><span class="lineNum">    1203</span> <span class="tlaGNC">           8 :   if (ui-&gt;grepButton-&gt;isChecked()) {</span></span>
+<span id="L1203"><span class="lineNum">    1203</span> <span class="tlaGNC">           9 :   if (ui-&gt;grepButton-&gt;isChecked()) {</span></span>
 <span id="L1204"><span class="lineNum">    1204</span> <span class="tlaGNC">           1 :     ui-&gt;grepButton-&gt;setChecked(false);</span></span>
 <span id="L1205"><span class="lineNum">    1205</span>              :   }</span>
-<span id="L1206"><span class="lineNum">    1206</span> <span class="tlaGNC">           8 :   delete m_pendingOpen;</span></span>
-<span id="L1207"><span class="lineNum">    1207</span> <span class="tlaGNC">           8 :   ui-&gt;lineEdit-&gt;setText(text);</span></span>
+<span id="L1206"><span class="lineNum">    1206</span> <span class="tlaGNC">           9 :   delete m_pendingOpen;</span></span>
+<span id="L1207"><span class="lineNum">    1207</span> <span class="tlaGNC">           9 :   ui-&gt;lineEdit-&gt;setText(text);</span></span>
 <span id="L1208"><span class="lineNum">    1208</span>              :   // Filter now, not after the search delay: the timer would leave the tree</span>
 <span id="L1209"><span class="lineNum">    1209</span>              :   // as the previous text filtered it.</span>
-<span id="L1210"><span class="lineNum">    1210</span> <span class="tlaGNC">           8 :   searchTimer.stop();</span></span>
-<span id="L1211"><span class="lineNum">    1211</span> <span class="tlaGNC">           8 :   onTimeoutSearch();</span></span>
-<span id="L1212"><span class="lineNum">    1212</span> <span class="tlaGNC">           8 :   if (const QModelIndex exact = exactMatch(); exact.isValid()) {</span></span>
-<span id="L1213"><span class="lineNum">    1213</span> <span class="tlaGNC">           6 :     openExactMatch(exact);</span></span>
-<span id="L1214"><span class="lineNum">    1214</span> <span class="tlaGNC">           6 :     return;</span></span>
+<span id="L1210"><span class="lineNum">    1210</span> <span class="tlaGNC">           9 :   searchTimer.stop();</span></span>
+<span id="L1211"><span class="lineNum">    1211</span> <span class="tlaGNC">           9 :   onTimeoutSearch();</span></span>
+<span id="L1212"><span class="lineNum">    1212</span> <span class="tlaGNC">           9 :   if (const QModelIndex exact = exactMatch(); exact.isValid()) {</span></span>
+<span id="L1213"><span class="lineNum">    1213</span> <span class="tlaGNC">           5 :     openExactMatch(exact);</span></span>
+<span id="L1214"><span class="lineNum">    1214</span> <span class="tlaGNC">           5 :     return;</span></span>
 <span id="L1215"><span class="lineNum">    1215</span>              :   }</span>
 <span id="L1216"><span class="lineNum">    1216</span>              :   // The tree loads folders in the background: at start, or right after the</span>
 <span id="L1217"><span class="lineNum">    1217</span>              :   // window is shown again, an entry that exists may not be in it yet. Try</span>
 <span id="L1218"><span class="lineNum">    1218</span>              :   // again as folders finish loading, for a few seconds, unless the search</span>
 <span id="L1219"><span class="lineNum">    1219</span>              :   // text changes meanwhile: any change ends the wait, even one typed back to</span>
 <span id="L1220"><span class="lineNum">    1220</span>              :   // this text, which is a new search that has not asked to open anything.</span>
-<span id="L1221"><span class="lineNum">    1221</span> <span class="tlaGNC">           4 :   if (exactMatchPath().isEmpty()) {</span></span>
+<span id="L1221"><span class="lineNum">    1221</span> <span class="tlaGNC">           8 :   if (exactMatchPath().isEmpty()) {</span></span>
 <span id="L1222"><span class="lineNum">    1222</span>              :     return;</span>
 <span id="L1223"><span class="lineNum">    1223</span>              :   }</span>
-<span id="L1224"><span class="lineNum">    1224</span> <span class="tlaGNC">           1 :   auto *pending = new QObject(this);</span></span>
+<span id="L1224"><span class="lineNum">    1224</span> <span class="tlaGNC">           3 :   auto *pending = new QObject(this);</span></span>
 <span id="L1225"><span class="lineNum">    1225</span>              :   m_pendingOpen = pending;</span>
-<span id="L1226"><span class="lineNum">    1226</span> <span class="tlaGNC">           1 :   QTimer::singleShot(5000, pending, &amp;QObject::deleteLater);</span></span>
+<span id="L1226"><span class="lineNum">    1226</span> <span class="tlaGNC">           3 :   QTimer::singleShot(5000, pending, &amp;QObject::deleteLater);</span></span>
 <span id="L1227"><span class="lineNum">    1227</span>              :   // Disconnected at once: with deleteLater() alone, a folder that finished</span>
 <span id="L1228"><span class="lineNum">    1228</span>              :   // loading before the deletion still ran the open, or ran it twice.</span>
-<span id="L1229"><span class="lineNum">    1229</span> <span class="tlaUNC">           0 :   const auto stop = [this, pending] {</span></span>
-<span id="L1230"><span class="lineNum">    1230</span> <span class="tlaUNC">           0 :     disconnect(&amp;m_tree-&gt;fileSystem(), nullptr, pending, nullptr);</span></span>
-<span id="L1231"><span class="lineNum">    1231</span> <span class="tlaUNC">           0 :     disconnect(ui-&gt;lineEdit, nullptr, pending, nullptr);</span></span>
-<span id="L1232"><span class="lineNum">    1232</span> <span class="tlaUNC">           0 :     pending-&gt;deleteLater();</span></span>
-<span id="L1233"><span class="lineNum">    1233</span> <span class="tlaGNC">           1 :   };</span></span>
-<span id="L1234"><span class="lineNum">    1234</span> <span class="tlaGNC">           1 :   connect(ui-&gt;lineEdit, &amp;QLineEdit::textChanged, pending, stop);</span></span>
-<span id="L1235"><span class="lineNum">    1235</span> <span class="tlaGNC">           1 :   connect(&amp;m_tree-&gt;fileSystem(), &amp;QFileSystemModel::directoryLoaded, pending,</span></span>
-<span id="L1236"><span class="lineNum">    1236</span> <span class="tlaGNC">           2 :           [this, stop](const QString &amp;) {</span></span>
-<span id="L1237"><span class="lineNum">    1237</span> <span class="tlaGNC">           4 :             searchTimer.stop();</span></span>
-<span id="L1238"><span class="lineNum">    1238</span> <span class="tlaGNC">           4 :             onTimeoutSearch();</span></span>
-<span id="L1239"><span class="lineNum">    1239</span> <span class="tlaGNC">           4 :             if (const QModelIndex exact = exactMatch(); exact.isValid()) {</span></span>
-<span id="L1240"><span class="lineNum">    1240</span> <span class="tlaUNC">           0 :               stop();</span></span>
-<span id="L1241"><span class="lineNum">    1241</span> <span class="tlaUNC">           0 :               openExactMatch(exact);</span></span>
+<span id="L1229"><span class="lineNum">    1229</span> <span class="tlaGNC">           2 :   const auto stop = [this, pending] {</span></span>
+<span id="L1230"><span class="lineNum">    1230</span> <span class="tlaGNC">           2 :     disconnect(&amp;m_tree-&gt;fileSystem(), nullptr, pending, nullptr);</span></span>
+<span id="L1231"><span class="lineNum">    1231</span> <span class="tlaGNC">           2 :     disconnect(ui-&gt;lineEdit, nullptr, pending, nullptr);</span></span>
+<span id="L1232"><span class="lineNum">    1232</span> <span class="tlaGNC">           2 :     pending-&gt;deleteLater();</span></span>
+<span id="L1233"><span class="lineNum">    1233</span> <span class="tlaGNC">           5 :   };</span></span>
+<span id="L1234"><span class="lineNum">    1234</span> <span class="tlaGNC">           3 :   connect(ui-&gt;lineEdit, &amp;QLineEdit::textChanged, pending, stop);</span></span>
+<span id="L1235"><span class="lineNum">    1235</span> <span class="tlaGNC">           3 :   connect(&amp;m_tree-&gt;fileSystem(), &amp;QFileSystemModel::directoryLoaded, pending,</span></span>
+<span id="L1236"><span class="lineNum">    1236</span> <span class="tlaGNC">           6 :           [this, stop](const QString &amp;) {</span></span>
+<span id="L1237"><span class="lineNum">    1237</span> <span class="tlaGNC">           5 :             searchTimer.stop();</span></span>
+<span id="L1238"><span class="lineNum">    1238</span> <span class="tlaGNC">           5 :             onTimeoutSearch();</span></span>
+<span id="L1239"><span class="lineNum">    1239</span> <span class="tlaGNC">           5 :             if (const QModelIndex exact = exactMatch(); exact.isValid()) {</span></span>
+<span id="L1240"><span class="lineNum">    1240</span> <span class="tlaGNC">           1 :               stop();</span></span>
+<span id="L1241"><span class="lineNum">    1241</span> <span class="tlaGNC">           1 :               openExactMatch(exact);</span></span>
 <span id="L1242"><span class="lineNum">    1242</span>              :             }</span>
-<span id="L1243"><span class="lineNum">    1243</span> <span class="tlaGNC">           4 :           });</span></span>
+<span id="L1243"><span class="lineNum">    1243</span> <span class="tlaGNC">           5 :           });</span></span>
 <span id="L1244"><span class="lineNum">    1244</span>              : }</span>
 <span id="L1245"><span class="lineNum">    1245</span>              : </span>
 <span id="L1246"><span class="lineNum">    1246</span> <span class="tlaGNC">           6 : void MainWindow::openExactMatch(const QModelIndex &amp;index) {</span></span>
@@ -1464,22 +1464,22 @@
 <span id="L1391"><span class="lineNum">    1391</span> <span class="tlaGNC">           6 :   QtPassSettings::getPass()-&gt;Remove(file, isDir);</span></span>
 <span id="L1392"><span class="lineNum">    1392</span>              : }</span>
 <span id="L1393"><span class="lineNum">    1393</span>              : </span>
-<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">          85 : void MainWindow::cancelOtpRequest() {</span></span>
-<span id="L1395"><span class="lineNum">    1395</span> <span class="tlaGNC">          85 :   m_otpRequestFile.clear();</span></span>
-<span id="L1396"><span class="lineNum">    1396</span> <span class="tlaGNC">          85 :   m_copyRequestFile.clear();</span></span>
-<span id="L1397"><span class="lineNum">    1397</span> <span class="tlaGNC">          85 : }</span></span>
+<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">          86 : void MainWindow::cancelOtpRequest() {</span></span>
+<span id="L1395"><span class="lineNum">    1395</span> <span class="tlaGNC">          86 :   m_otpRequestFile.clear();</span></span>
+<span id="L1396"><span class="lineNum">    1396</span> <span class="tlaGNC">          86 :   m_copyRequestFile.clear();</span></span>
+<span id="L1397"><span class="lineNum">    1397</span> <span class="tlaGNC">          86 : }</span></span>
 <span id="L1398"><span class="lineNum">    1398</span>              : </span>
-<span id="L1399"><span class="lineNum">    1399</span> <span class="tlaGNC">          34 : void MainWindow::onOperationError() {</span></span>
-<span id="L1400"><span class="lineNum">    1400</span> <span class="tlaGNC">          34 :   cancelOtpRequest();</span></span>
+<span id="L1399"><span class="lineNum">    1399</span> <span class="tlaGNC">          33 : void MainWindow::onOperationError() {</span></span>
+<span id="L1400"><span class="lineNum">    1400</span> <span class="tlaGNC">          33 :   cancelOtpRequest();</span></span>
 <span id="L1401"><span class="lineNum">    1401</span>              :   // executeWrapperStarted() emptied the panel and the browser when the</span>
 <span id="L1402"><span class="lineNum">    1402</span>              :   // operation started (a refusal says so too); what is left to forget is</span>
 <span id="L1403"><span class="lineNum">    1403</span>              :   // which entry the panel was about to show.</span>
-<span id="L1404"><span class="lineNum">    1404</span> <span class="tlaGNC">          34 :   m_shownFile.clear();</span></span>
+<span id="L1404"><span class="lineNum">    1404</span> <span class="tlaGNC">          33 :   m_shownFile.clear();</span></span>
 <span id="L1405"><span class="lineNum">    1405</span>              :   // A save's refresh waiting for its push is dropped: it would clear the</span>
 <span id="L1406"><span class="lineNum">    1406</span>              :   // push's error (or whatever failed before it) from the browser.</span>
-<span id="L1407"><span class="lineNum">    1407</span> <span class="tlaGNC">          34 :   m_refreshAfterPush.clear();</span></span>
+<span id="L1407"><span class="lineNum">    1407</span> <span class="tlaGNC">          33 :   m_refreshAfterPush.clear();</span></span>
 <span id="L1408"><span class="lineNum">    1408</span>              :   m_refreshAfterPushOwner = nullptr;</span>
-<span id="L1409"><span class="lineNum">    1409</span> <span class="tlaGNC">          34 : }</span></span>
+<span id="L1409"><span class="lineNum">    1409</span> <span class="tlaGNC">          33 : }</span></span>
 <span id="L1410"><span class="lineNum">    1410</span>              : </span>
 <span id="L1411"><span class="lineNum">    1411</span>              : // Derives the code in-process from one decrypt, so it works with either</span>
 <span id="L1412"><span class="lineNum">    1412</span>              : // backend on every platform; otpFromFileToClipboard() finishes the job.</span>
@@ -1540,16 +1540,16 @@
 <span id="L1467"><span class="lineNum">    1467</span>              :   }</span>
 <span id="L1468"><span class="lineNum">    1468</span> <span class="tlaGNC">           1 : }</span></span>
 <span id="L1469"><span class="lineNum">    1469</span>              : </span>
-<span id="L1470"><span class="lineNum">    1470</span> <span class="tlaGNC">           9 : void MainWindow::messageAvailable(const QString &amp;message) {</span></span>
-<span id="L1471"><span class="lineNum">    1471</span> <span class="tlaGNC">           9 :   show();</span></span>
-<span id="L1472"><span class="lineNum">    1472</span> <span class="tlaGNC">           9 :   raise();</span></span>
-<span id="L1473"><span class="lineNum">    1473</span> <span class="tlaGNC">           9 :   if (message.isEmpty()) {</span></span>
+<span id="L1470"><span class="lineNum">    1470</span> <span class="tlaGNC">          10 : void MainWindow::messageAvailable(const QString &amp;message) {</span></span>
+<span id="L1471"><span class="lineNum">    1471</span> <span class="tlaGNC">          10 :   show();</span></span>
+<span id="L1472"><span class="lineNum">    1472</span> <span class="tlaGNC">          10 :   raise();</span></span>
+<span id="L1473"><span class="lineNum">    1473</span> <span class="tlaGNC">          10 :   if (message.isEmpty()) {</span></span>
 <span id="L1474"><span class="lineNum">    1474</span> <span class="tlaGNC">           1 :     focusInput();</span></span>
 <span id="L1475"><span class="lineNum">    1475</span>              :   } else {</span>
-<span id="L1476"><span class="lineNum">    1476</span> <span class="tlaGNC">           8 :     ui-&gt;treeView-&gt;expandAll();</span></span>
-<span id="L1477"><span class="lineNum">    1477</span> <span class="tlaGNC">           8 :     applySearchText(message);</span></span>
+<span id="L1476"><span class="lineNum">    1476</span> <span class="tlaGNC">           9 :     ui-&gt;treeView-&gt;expandAll();</span></span>
+<span id="L1477"><span class="lineNum">    1477</span> <span class="tlaGNC">           9 :     applySearchText(message);</span></span>
 <span id="L1478"><span class="lineNum">    1478</span>              :   }</span>
-<span id="L1479"><span class="lineNum">    1479</span> <span class="tlaGNC">           9 : }</span></span>
+<span id="L1479"><span class="lineNum">    1479</span> <span class="tlaGNC">          10 : }</span></span>
 <span id="L1480"><span class="lineNum">    1480</span>              : </span>
 <span id="L1481"><span class="lineNum">    1481</span> <span class="tlaGNC">         180 : void MainWindow::updateProfileBox() {</span></span>
 <span id="L1482"><span class="lineNum">    1482</span> <span class="tlaGNC">         180 :   const Profiles profiles = QtPassSettings::getProfiles();</span></span>
@@ -1586,7 +1586,7 @@
 <span id="L1513"><span class="lineNum">    1513</span> <span class="tlaGNC">         180 :   updateProfileBoxEnabled();</span></span>
 <span id="L1514"><span class="lineNum">    1514</span> <span class="tlaGNC">         180 : }</span></span>
 <span id="L1515"><span class="lineNum">    1515</span>              : </span>
-<span id="L1516"><span class="lineNum">    1516</span> <span class="tlaGNC">         611 : void MainWindow::updateProfileBoxEnabled() {</span></span>
+<span id="L1516"><span class="lineNum">    1516</span> <span class="tlaGNC">         609 : void MainWindow::updateProfileBoxEnabled() {</span></span>
 <span id="L1517"><span class="lineNum">    1517</span>              :   // No profile switch while anything of the store runs or waits: the</span>
 <span id="L1518"><span class="lineNum">    1518</span>              :   // backend's store and environment would change under it, and what is</span>
 <span id="L1519"><span class="lineNum">    1519</span>              :   // still queued (a push after a save, say) would finish for the other</span>
@@ -1594,9 +1594,9 @@
 <span id="L1521"><span class="lineNum">    1521</span>              :   // watchdog releases the interface while a slow gpg or git still runs.</span>
 <span id="L1522"><span class="lineNum">    1522</span>              :   // Every backend: one kept from before a switch of backend may still</span>
 <span id="L1523"><span class="lineNum">    1523</span>              :   // run what was queued on it.</span>
-<span id="L1524"><span class="lineNum">    1524</span> <span class="tlaGNC">        1223 :   ui-&gt;profileBox-&gt;setEnabled(m_uiEnabled &amp;&amp; ui-&gt;profileBox-&gt;count() &gt; 1 &amp;&amp;</span></span>
+<span id="L1524"><span class="lineNum">    1524</span> <span class="tlaGNC">        1219 :   ui-&gt;profileBox-&gt;setEnabled(m_uiEnabled &amp;&amp; ui-&gt;profileBox-&gt;count() &gt; 1 &amp;&amp;</span></span>
 <span id="L1525"><span class="lineNum">    1525</span> <span class="tlaGNC">          11 :                              QtPassSettings::backendsIdle());</span></span>
-<span id="L1526"><span class="lineNum">    1526</span> <span class="tlaGNC">         611 : }</span></span>
+<span id="L1526"><span class="lineNum">    1526</span> <span class="tlaGNC">         609 : }</span></span>
 <span id="L1527"><span class="lineNum">    1527</span>              : </span>
 <span id="L1528"><span class="lineNum">    1528</span> <span class="tlaGNC">           6 : void MainWindow::on_profileBox_currentTextChanged(const QString &amp;name) {</span></span>
 <span id="L1529"><span class="lineNum">    1529</span> <span class="tlaGNC">          18 :   if (m_freshStart || name == QtPassSettings::getProfile()) {</span></span>
@@ -1671,8 +1671,8 @@
 <span id="L1598"><span class="lineNum">    1598</span>              :   }</span>
 <span id="L1599"><span class="lineNum">    1599</span> <span class="tlaGNC">           4 : }</span></span>
 <span id="L1600"><span class="lineNum">    1600</span>              : </span>
-<span id="L1601"><span class="lineNum">    1601</span> <span class="tlaGNC">        7230 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
-<span id="L1602"><span class="lineNum">    1602</span> <span class="tlaGNC">        7230 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
+<span id="L1601"><span class="lineNum">    1601</span> <span class="tlaGNC">        7247 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
+<span id="L1602"><span class="lineNum">    1602</span> <span class="tlaGNC">        7247 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
 <span id="L1603"><span class="lineNum">    1603</span>              :       event-&gt;type() == QEvent::PaletteChange) {</span>
 <span id="L1604"><span class="lineNum">    1604</span>              :     // Breeze gives these bars a &quot;header&quot; palette and, after a runtime</span>
 <span id="L1605"><span class="lineNum">    1605</span>              :     // light/dark switch, stamps the previous theme's colours back from a</span>
@@ -1680,7 +1680,7 @@
 <span id="L1607"><span class="lineNum">    1607</span>              :     // re-enter the style while it is still applying its palette.</span>
 <span id="L1608"><span class="lineNum">    1608</span> <span class="tlaGNC">          36 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L1609"><span class="lineNum">    1609</span>              :   }</span>
-<span id="L1610"><span class="lineNum">    1610</span> <span class="tlaGNC">        7230 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
+<span id="L1610"><span class="lineNum">    1610</span> <span class="tlaGNC">        7247 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
 <span id="L1611"><span class="lineNum">    1611</span> <span class="tlaGNC">           5 :     auto *key = dynamic_cast&lt;QKeyEvent *&gt;(event);</span></span>
 <span id="L1612"><span class="lineNum">    1612</span> <span class="tlaGNC">           5 :     if (key != nullptr &amp;&amp; key-&gt;key() == Qt::Key_Down) {</span></span>
 <span id="L1613"><span class="lineNum">    1613</span>              :       // Into whichever list is in sight: the tree, or content search results.</span>
@@ -1702,7 +1702,7 @@
 <span id="L1629"><span class="lineNum">    1629</span> <span class="tlaGNC">           3 :       return true;</span></span>
 <span id="L1630"><span class="lineNum">    1630</span>              :     }</span>
 <span id="L1631"><span class="lineNum">    1631</span>              :   }</span>
-<span id="L1632"><span class="lineNum">    1632</span> <span class="tlaGNC">        7227 :   return QObject::eventFilter(obj, event);</span></span>
+<span id="L1632"><span class="lineNum">    1632</span> <span class="tlaGNC">        7244 :   return QObject::eventFilter(obj, event);</span></span>
 <span id="L1633"><span class="lineNum">    1633</span>              : }</span>
 <span id="L1634"><span class="lineNum">    1634</span>              : </span>
 <span id="L1635"><span class="lineNum">    1635</span>              : // Only once the application palette changed (see m_themeSwitched): a bar</span>
@@ -2015,10 +2015,10 @@
 <span id="L1942"><span class="lineNum">    1942</span>              :   }</span>
 <span id="L1943"><span class="lineNum">    1943</span> <span class="tlaGNC">           9 : }</span></span>
 <span id="L1944"><span class="lineNum">    1944</span>              : </span>
-<span id="L1945"><span class="lineNum">    1945</span> <span class="tlaGNC">          28 : void MainWindow::passwordFromFileToClipboard(const QString &amp;text,</span></span>
+<span id="L1945"><span class="lineNum">    1945</span> <span class="tlaGNC">          29 : void MainWindow::passwordFromFileToClipboard(const QString &amp;text,</span></span>
 <span id="L1946"><span class="lineNum">    1946</span>              :                                              const QString &amp;file) {</span>
-<span id="L1947"><span class="lineNum">    1947</span> <span class="tlaGNC">          28 :   if (m_copyRequestFile.isEmpty() || file != m_copyRequestFile) {</span></span>
-<span id="L1948"><span class="lineNum">    1948</span> <span class="tlaGNC">          23 :     return;</span></span>
+<span id="L1947"><span class="lineNum">    1947</span> <span class="tlaGNC">          29 :   if (m_copyRequestFile.isEmpty() || file != m_copyRequestFile) {</span></span>
+<span id="L1948"><span class="lineNum">    1948</span> <span class="tlaGNC">          24 :     return;</span></span>
 <span id="L1949"><span class="lineNum">    1949</span>              :   }</span>
 <span id="L1950"><span class="lineNum">    1950</span> <span class="tlaGNC">           8 :   m_copyRequestFile.clear();</span></span>
 <span id="L1951"><span class="lineNum">    1951</span>              :   // The first line, without a list of every line (an entry can expand into</span>
@@ -2036,9 +2036,9 @@
 <span id="L1963"><span class="lineNum">    1963</span> <span class="tlaGNC">           5 :   m_qtPass-&gt;clipboard().copyText(first);</span></span>
 <span id="L1964"><span class="lineNum">    1964</span>              : }</span>
 <span id="L1965"><span class="lineNum">    1965</span>              : </span>
-<span id="L1966"><span class="lineNum">    1966</span> <span class="tlaGNC">          27 : void MainWindow::showStatusMessage(const QString &amp;msg, int timeout) {</span></span>
-<span id="L1967"><span class="lineNum">    1967</span> <span class="tlaGNC">          27 :   ui-&gt;statusBar-&gt;showMessage(msg, timeout);</span></span>
-<span id="L1968"><span class="lineNum">    1968</span> <span class="tlaGNC">          27 : }</span></span>
+<span id="L1966"><span class="lineNum">    1966</span> <span class="tlaGNC">          28 : void MainWindow::showStatusMessage(const QString &amp;msg, int timeout) {</span></span>
+<span id="L1967"><span class="lineNum">    1967</span> <span class="tlaGNC">          28 :   ui-&gt;statusBar-&gt;showMessage(msg, timeout);</span></span>
+<span id="L1968"><span class="lineNum">    1968</span> <span class="tlaGNC">          28 : }</span></span>
 <span id="L1969"><span class="lineNum">    1969</span>              : </span>
 <span id="L1970"><span class="lineNum">    1970</span> <span class="tlaGNC">           3 : void MainWindow::reencryptPath(const QString &amp;dir) {</span></span>
 <span id="L1971"><span class="lineNum">    1971</span> <span class="tlaGNC">           3 :   QDir checkDir(dir);</span></span>
@@ -2196,31 +2196,31 @@
 <span id="L2123"><span class="lineNum">    2123</span>              :          &quot;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;&quot;));</span>
 <span id="L2124"><span class="lineNum">    2124</span> <span class="tlaGNC">           1 : }</span></span>
 <span id="L2125"><span class="lineNum">    2125</span>              : </span>
-<span id="L2126"><span class="lineNum">    2126</span> <span class="tlaGNC">         396 : void MainWindow::updateGitButtonVisibility(bool uiEnabled) {</span></span>
-<span id="L2127"><span class="lineNum">    2127</span> <span class="tlaGNC">         396 :   const AppSettings s = QtPassSettings::load();</span></span>
+<span id="L2126"><span class="lineNum">    2126</span> <span class="tlaGNC">         395 : void MainWindow::updateGitButtonVisibility(bool uiEnabled) {</span></span>
+<span id="L2127"><span class="lineNum">    2127</span> <span class="tlaGNC">         395 :   const AppSettings s = QtPassSettings::load();</span></span>
 <span id="L2128"><span class="lineNum">    2128</span>              :   // Without Git there is nothing to push or pull, ever: the buttons go, not</span>
 <span id="L2129"><span class="lineNum">    2129</span>              :   // grey out. While an operation runs they stay and are disabled.</span>
 <span id="L2130"><span class="lineNum">    2130</span>              :   const bool usable =</span>
-<span id="L2131"><span class="lineNum">    2131</span> <span class="tlaGNC">         396 :       s.useGit &amp;&amp; !(s.gitExecutable.isEmpty() &amp;&amp; s.passExecutable.isEmpty());</span></span>
-<span id="L2132"><span class="lineNum">    2132</span> <span class="tlaGNC">         396 :   ui-&gt;actionPush-&gt;setVisible(usable);</span></span>
-<span id="L2133"><span class="lineNum">    2133</span> <span class="tlaGNC">         396 :   ui-&gt;actionUpdate-&gt;setVisible(usable);</span></span>
+<span id="L2131"><span class="lineNum">    2131</span> <span class="tlaGNC">         395 :       s.useGit &amp;&amp; !(s.gitExecutable.isEmpty() &amp;&amp; s.passExecutable.isEmpty());</span></span>
+<span id="L2132"><span class="lineNum">    2132</span> <span class="tlaGNC">         395 :   ui-&gt;actionPush-&gt;setVisible(usable);</span></span>
+<span id="L2133"><span class="lineNum">    2133</span> <span class="tlaGNC">         395 :   ui-&gt;actionUpdate-&gt;setVisible(usable);</span></span>
 <span id="L2134"><span class="lineNum">    2134</span>              :   // The separator in front of them would otherwise sit next to the next one.</span>
-<span id="L2135"><span class="lineNum">    2135</span> <span class="tlaGNC">         396 :   const QList&lt;QAction *&gt; actions = ui-&gt;toolBar-&gt;actions();</span></span>
-<span id="L2136"><span class="lineNum">    2136</span> <span class="tlaGNC">         396 :   const qsizetype at = actions.indexOf(ui-&gt;actionPush);</span></span>
-<span id="L2137"><span class="lineNum">    2137</span> <span class="tlaGNC">         396 :   if (at &gt; 0 &amp;&amp; actions.at(at - 1)-&gt;isSeparator()) {</span></span>
-<span id="L2138"><span class="lineNum">    2138</span> <span class="tlaGNC">         396 :     actions.at(at - 1)-&gt;setVisible(usable);</span></span>
+<span id="L2135"><span class="lineNum">    2135</span> <span class="tlaGNC">         395 :   const QList&lt;QAction *&gt; actions = ui-&gt;toolBar-&gt;actions();</span></span>
+<span id="L2136"><span class="lineNum">    2136</span> <span class="tlaGNC">         395 :   const qsizetype at = actions.indexOf(ui-&gt;actionPush);</span></span>
+<span id="L2137"><span class="lineNum">    2137</span> <span class="tlaGNC">         395 :   if (at &gt; 0 &amp;&amp; actions.at(at - 1)-&gt;isSeparator()) {</span></span>
+<span id="L2138"><span class="lineNum">    2138</span> <span class="tlaGNC">         395 :     actions.at(at - 1)-&gt;setVisible(usable);</span></span>
 <span id="L2139"><span class="lineNum">    2139</span>              :   }</span>
-<span id="L2140"><span class="lineNum">    2140</span> <span class="tlaGNC">         396 :   enableGitButtons(usable &amp;&amp; uiEnabled);</span></span>
-<span id="L2141"><span class="lineNum">    2141</span> <span class="tlaGNC">         396 : }</span></span>
+<span id="L2140"><span class="lineNum">    2140</span> <span class="tlaGNC">         395 :   enableGitButtons(usable &amp;&amp; uiEnabled);</span></span>
+<span id="L2141"><span class="lineNum">    2141</span> <span class="tlaGNC">         395 : }</span></span>
 <span id="L2142"><span class="lineNum">    2142</span>              : </span>
-<span id="L2143"><span class="lineNum">    2143</span> <span class="tlaGNC">         402 : void MainWindow::updateOtpButtonVisibility(bool uiEnabled) {</span></span>
+<span id="L2143"><span class="lineNum">    2143</span> <span class="tlaGNC">         401 : void MainWindow::updateOtpButtonVisibility(bool uiEnabled) {</span></span>
 <span id="L2144"><span class="lineNum">    2144</span>              :   // No platform gating: codes are generated in-process. Visible but disabled</span>
 <span id="L2145"><span class="lineNum">    2145</span>              :   // when OTP is off: the panel never shows an OTP field (a secret), so hiding</span>
 <span id="L2146"><span class="lineNum">    2146</span>              :   // this too would leave no trace of the feature. Honour uiEnabled, or the</span>
 <span id="L2147"><span class="lineNum">    2147</span>              :   // user can stack Show calls while a decrypt is in flight.</span>
-<span id="L2148"><span class="lineNum">    2148</span> <span class="tlaGNC">         402 :   ui-&gt;actionOtp-&gt;setVisible(true);</span></span>
-<span id="L2149"><span class="lineNum">    2149</span> <span class="tlaGNC">         415 :   ui-&gt;actionOtp-&gt;setEnabled(QtPassSettings::isUseOtp() &amp;&amp; uiEnabled);</span></span>
-<span id="L2150"><span class="lineNum">    2150</span> <span class="tlaGNC">         402 : }</span></span>
+<span id="L2148"><span class="lineNum">    2148</span> <span class="tlaGNC">         401 :   ui-&gt;actionOtp-&gt;setVisible(true);</span></span>
+<span id="L2149"><span class="lineNum">    2149</span> <span class="tlaGNC">         414 :   ui-&gt;actionOtp-&gt;setEnabled(QtPassSettings::isUseOtp() &amp;&amp; uiEnabled);</span></span>
+<span id="L2150"><span class="lineNum">    2150</span> <span class="tlaGNC">         401 : }</span></span>
 <span id="L2151"><span class="lineNum">    2151</span>              : </span>
 <span id="L2152"><span class="lineNum">    2152</span> <span class="tlaGNC">         176 : void MainWindow::updateGrepButtonVisibility() {</span></span>
 <span id="L2153"><span class="lineNum">    2153</span> <span class="tlaGNC">         176 :   const bool enabled = QtPassSettings::isUseGrepSearch();</span></span>
@@ -2231,10 +2231,10 @@
 <span id="L2158"><span class="lineNum">    2158</span>              :   }</span>
 <span id="L2159"><span class="lineNum">    2159</span> <span class="tlaGNC">         176 : }</span></span>
 <span id="L2160"><span class="lineNum">    2160</span>              : </span>
-<span id="L2161"><span class="lineNum">    2161</span> <span class="tlaGNC">         396 : void MainWindow::enableGitButtons(const bool &amp;state) {</span></span>
-<span id="L2162"><span class="lineNum">    2162</span> <span class="tlaGNC">         396 :   ui-&gt;actionPush-&gt;setEnabled(state);</span></span>
-<span id="L2163"><span class="lineNum">    2163</span> <span class="tlaGNC">         396 :   ui-&gt;actionUpdate-&gt;setEnabled(state);</span></span>
-<span id="L2164"><span class="lineNum">    2164</span> <span class="tlaGNC">         396 : }</span></span>
+<span id="L2161"><span class="lineNum">    2161</span> <span class="tlaGNC">         395 : void MainWindow::enableGitButtons(const bool &amp;state) {</span></span>
+<span id="L2162"><span class="lineNum">    2162</span> <span class="tlaGNC">         395 :   ui-&gt;actionPush-&gt;setEnabled(state);</span></span>
+<span id="L2163"><span class="lineNum">    2163</span> <span class="tlaGNC">         395 :   ui-&gt;actionUpdate-&gt;setEnabled(state);</span></span>
+<span id="L2164"><span class="lineNum">    2164</span> <span class="tlaGNC">         395 : }</span></span>
 <span id="L2165"><span class="lineNum">    2165</span>              : </span>
 <span id="L2166"><span class="lineNum">    2166</span> <span class="tlaGNC">           3 : void MainWindow::critical(const QString &amp;title, const QString &amp;msg) {</span></span>
 <span id="L2167"><span class="lineNum">    2167</span>              :   // Pass's messages quote store paths; see PlainMessageBox.</span>

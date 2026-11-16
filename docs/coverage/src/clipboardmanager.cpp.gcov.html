@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-16 17:50:52</td>
+            <td class="headerValue">2026-11-16 18:41:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -207,26 +207,26 @@
 <span id="L134"><span class="lineNum">     134</span>              :   }</span>
 <span id="L135"><span class="lineNum">     135</span>              : }</span>
 <span id="L136"><span class="lineNum">     136</span>              : </span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          43 : void ClipboardManager::clear() {</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          44 : void ClipboardManager::clear() {</span></span>
 <span id="L138"><span class="lineNum">     138</span>              :   // Whatever happens below, the saved text is forgotten: it is the user's,</span>
 <span id="L139"><span class="lineNum">     139</span>              :   // and no later autoclear may put it back.</span>
 <span id="L140"><span class="lineNum">     140</span>              :   const std::optional&lt;QString&gt; previousClipboard =</span>
-<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          43 :       std::exchange(m_previousClipboard, std::nullopt);</span></span>
+<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          44 :       std::exchange(m_previousClipboard, std::nullopt);</span></span>
 <span id="L142"><span class="lineNum">     142</span>              :   const std::optional&lt;QString&gt; previousSelection =</span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          43 :       std::exchange(m_previousSelection, std::nullopt);</span></span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          43 :   if (m_clippedText.isEmpty() &amp;&amp; m_otherCopies.isEmpty()) {</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          44 :       std::exchange(m_previousSelection, std::nullopt);</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          44 :   if (m_clippedText.isEmpty() &amp;&amp; m_otherCopies.isEmpty()) {</span></span>
 <span id="L145"><span class="lineNum">     145</span>              :     // Nothing of ours is out there. The old code compared the empty tracker</span>
 <span id="L146"><span class="lineNum">     146</span>              :     // with an empty selection, &quot;cleared&quot; that and said so on every deselect.</span>
 <span id="L147"><span class="lineNum">     147</span>              :     return;</span>
 <span id="L148"><span class="lineNum">     148</span>              :   }</span>
-<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">          38 :   const auto ours = [this](const QString &amp;text) {</span></span>
-<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">          38 :     return !text.isEmpty() &amp;&amp;</span></span>
-<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">          19 :            (text == m_clippedText || m_otherCopies.contains(text));</span></span>
-<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          19 :   };</span></span>
-<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">          19 :   QClipboard *clipboard = QApplication::clipboard();</span></span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">          19 :   const bool restore = QtPassSettings::load().restoreClipboard;</span></span>
-<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">          19 :   bool cleared = false;</span></span>
-<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">          19 :   bool restored = false;</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">          40 :   const auto ours = [this](const QString &amp;text) {</span></span>
+<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">          40 :     return !text.isEmpty() &amp;&amp;</span></span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">          20 :            (text == m_clippedText || m_otherCopies.contains(text));</span></span>
+<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          20 :   };</span></span>
+<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">          20 :   QClipboard *clipboard = QApplication::clipboard();</span></span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">          20 :   const bool restore = QtPassSettings::load().restoreClipboard;</span></span>
+<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">          20 :   bool cleared = false;</span></span>
+<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">          20 :   bool restored = false;</span></span>
 <span id="L157"><span class="lineNum">     157</span>              :   // Ours still there: the text from before comes back if there was one and</span>
 <span id="L158"><span class="lineNum">     158</span>              :   // what is there is copyText()'s own copy, otherwise it is cleared. A copy</span>
 <span id="L159"><span class="lineNum">     159</span>              :   // from a shown field (trackCopied()) is cleared on purpose, not restored</span>
@@ -234,30 +234,30 @@
 <span id="L161"><span class="lineNum">     161</span>              :   // user chose that copy themselves. Something else copied meanwhile is left</span>
 <span id="L162"><span class="lineNum">     162</span>              :   // alone. The setting is read now: switched off during the window, the</span>
 <span id="L163"><span class="lineNum">     163</span>              :   // saved text was still held until here, and is dropped unused.</span>
-<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">          38 :   const auto putBack = [&amp;](QClipboard::Mode mode,</span></span>
+<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">          40 :   const auto putBack = [&amp;](QClipboard::Mode mode,</span></span>
 <span id="L165"><span class="lineNum">     165</span>              :                            const std::optional&lt;QString&gt; &amp;previous) {</span>
-<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">          38 :     const QString now = clipboard-&gt;text(mode);</span></span>
-<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">          38 :     if (!ours(now)) {</span></span>
+<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">          40 :     const QString now = clipboard-&gt;text(mode);</span></span>
+<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">          40 :     if (!ours(now)) {</span></span>
 <span id="L168"><span class="lineNum">     168</span>              :       return;</span>
 <span id="L169"><span class="lineNum">     169</span>              :     }</span>
-<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          16 :     if (restore &amp;&amp; previous &amp;&amp; !previous-&gt;isEmpty() &amp;&amp; now == m_clippedText) {</span></span>
+<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          17 :     if (restore &amp;&amp; previous &amp;&amp; !previous-&gt;isEmpty() &amp;&amp; now == m_clippedText) {</span></span>
 <span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">           3 :       clipboard-&gt;setText(*previous, mode);</span></span>
 <span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">           3 :       restored = true;</span></span>
 <span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">           3 :       return;</span></span>
 <span id="L174"><span class="lineNum">     174</span>              :     }</span>
-<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">          13 :     clipboard-&gt;clear(mode);</span></span>
-<span id="L176"><span class="lineNum">     176</span> <span class="tlaGNC">          13 :     if (mode == QClipboard::Selection) {</span></span>
+<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">          14 :     clipboard-&gt;clear(mode);</span></span>
+<span id="L176"><span class="lineNum">     176</span> <span class="tlaGNC">          14 :     if (mode == QClipboard::Selection) {</span></span>
 <span id="L177"><span class="lineNum">     177</span> <span class="tlaUNC">           0 :       clipboard-&gt;setText(QString(&quot;&quot;), QClipboard::Selection);</span></span>
 <span id="L178"><span class="lineNum">     178</span>              :     }</span>
-<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">          13 :     cleared = true;</span></span>
-<span id="L180"><span class="lineNum">     180</span> <span class="tlaGNC">          19 :   };</span></span>
-<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">          19 :   putBack(QClipboard::Selection, previousSelection);</span></span>
-<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">          19 :   putBack(QClipboard::Clipboard, previousClipboard);</span></span>
-<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">          38 :   emit statusMessage(restored  ? tr(&quot;Clipboard restored&quot;)</span></span>
-<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">          16 :                      : cleared ? tr(&quot;Clipboard cleared&quot;)</span></span>
+<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">          14 :     cleared = true;</span></span>
+<span id="L180"><span class="lineNum">     180</span> <span class="tlaGNC">          20 :   };</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">          20 :   putBack(QClipboard::Selection, previousSelection);</span></span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">          20 :   putBack(QClipboard::Clipboard, previousClipboard);</span></span>
+<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">          40 :   emit statusMessage(restored  ? tr(&quot;Clipboard restored&quot;)</span></span>
+<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">          17 :                      : cleared ? tr(&quot;Clipboard cleared&quot;)</span></span>
 <span id="L185"><span class="lineNum">     185</span>              :                                : tr(&quot;Clipboard not cleared&quot;));</span>
-<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">          19 :   m_clippedText.clear();</span></span>
-<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">          19 :   m_otherCopies.clear();</span></span>
+<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">          20 :   m_clippedText.clear();</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">          20 :   m_otherCopies.clear();</span></span>
 <span id="L188"><span class="lineNum">     188</span>              : }</span>
 <span id="L189"><span class="lineNum">     189</span>              : </span>
 <span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">          58 : auto buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData * {</span></span>
