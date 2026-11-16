@@ -1336,15 +1336,14 @@ auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
   QString question =
       tr("Are you sure you want to delete %1 and the whole content?").arg(path);
   // A link, junction or special file inside is as unexpected as a stray
-  // plain file: the walker leaves them out of content and reports them. So
-  // is a folder it cannot read: what is in it is unknown, not absent.
+  // plain file: the walker leaves them out of content and reports them.
   QStringList skipped;
   QStringList unlisted;
+  const QString root = m_tree->fileSystem().rootPath();
   const QStringList content = Util::regularFilesUnder(
-      m_tree->fileSystem().rootPath() + path, {QStringLiteral("*")}, &skipped,
-      false, &unlisted);
+      root + path, {QStringLiteral("*")}, &skipped, false, &unlisted);
   const bool unexpected =
-      !skipped.isEmpty() || !unlisted.isEmpty() ||
+      !skipped.isEmpty() ||
       std::any_of(content.cbegin(), content.cend(), [](const QString &entry) {
         return QFileInfo(entry).suffix() != QLatin1String("gpg");
       });
@@ -1352,6 +1351,19 @@ auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
     question += QStringLiteral("\n\n") +
                 tr("Attention: there are unexpected files in the given "
                    "folder, check them before continuing.");
+  }
+  // A folder the walk cannot read is not empty but unknown: whatever it
+  // holds goes too, or stays behind when the removal cannot list it.
+  if (unlisted.size() == 1) {
+    question += QStringLiteral("\n\n") +
+                tr("%1 could not be read, so what it holds is unknown.")
+                    .arg(QDir::separator() +
+                         QDir(root).relativeFilePath(unlisted.first()));
+  } else if (unlisted.size() > 1) {
+    question += QStringLiteral("\n\n") +
+                tr("%n folder(s) in it could not be read, so what they hold "
+                   "is unknown.",
+                   nullptr, static_cast<int>(unlisted.size()));
   }
   return PlainMessageBox::askYes(this, tr("Delete folder?"), question);
 }
