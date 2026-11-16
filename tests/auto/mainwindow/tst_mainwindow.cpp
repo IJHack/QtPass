@@ -462,6 +462,7 @@ private Q_SLOTS:
   void grepModeChangesTheSearchBox();
   void grepFindsContentAndNavigatesToTheEntry();
   void deselectLeavesGrepModeWhenResultsAreShown();
+  void entryActionsWaitWhileContentResultsHideTheTree();
   void grepResultsOfTheOtherBackendAreDropped();
   void settingsCancelARunningContentSearch();
   void searchForAFolderWithoutFilesSelectsNothing();
@@ -3710,6 +3711,84 @@ void tst_mainwindow::deselectLeavesGrepModeWhenResultsAreShown() {
                QStringLiteral("Password and content hidden")),
            qPrintable(browser()->toPlainText()));
   QVERIFY2(!grep->isChecked(), "the timer's clear leaves grep mode too");
+}
+
+/**
+ * @brief While content search results hide the tree, its current entry is
+ *        not what the user looks at. Delete (key and button), Edit and OTP
+ *        stay off and do nothing until the tree is back. Down in the search
+ *        box goes into the results.
+ */
+void tst_mainwindow::entryActionsWaitWhileContentResultsHideTheTree() {
+  rebuildWindow([](AppSettings &s) {
+    s.useGrepSearch = true;
+    s.useOtp = true;
+    s.useAutoclearPanel = false;
+  });
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("out-of-sight")));
+  const QString file =
+      QDir(m_storeDir.path()).filePath(QStringLiteral("out-of-sight.gpg"));
+  m_window->setUiElementsEnabled(true);
+  auto *edit = m_window->findChild<QAction *>(QStringLiteral("actionEdit"));
+  auto *del = m_window->findChild<QAction *>(QStringLiteral("actionDelete"));
+  auto *otp = m_window->findChild<QAction *>(QStringLiteral("actionOtp"));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(edit != nullptr && del != nullptr && otp != nullptr);
+  QVERIFY(grep != nullptr && results != nullptr);
+  QVERIFY2(edit->isEnabled() && del->isEnabled() && otp->isEnabled(),
+           "a selected entry in the tree enables them");
+
+  grep->setChecked(true);
+  m_window->onGrepFinished(
+      {{QStringLiteral("work/acme/vpn"), {QStringLiteral("login: alice")}}});
+  QTRY_VERIFY(results->isVisible());
+  QVERIFY(treeView()->isHidden());
+  QVERIFY2(treeView()->currentIndex().isValid(),
+           "the tree still has its current entry, out of sight");
+  QVERIFY2(!edit->isEnabled() && !del->isEnabled() && !otp->isEnabled(),
+           "off while the results hide the tree");
+  // An operation ending re-enables the window: still off.
+  m_window->setUiElementsEnabled(true);
+  QVERIFY(!edit->isEnabled() && !del->isEnabled() && !otp->isEnabled());
+
+  // The Delete key and the handlers themselves do nothing: no confirm, no
+  // edit dialog, no decrypt (which would disable the window).
+  QSignalSpy started(QtPassSettings::getPass(), &Pass::startingExecuteWrapper);
+  {
+    ModalDriver driver([](QWidget *widget) { widget->close(); });
+    QKeyEvent press(QEvent::KeyPress, Qt::Key_Delete, Qt::NoModifier);
+    QApplication::sendEvent(m_window.data(), &press);
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                      Qt::DirectConnection));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onEdit",
+                                      Qt::DirectConnection));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onOtp",
+                                      Qt::DirectConnection));
+    QTest::qWait(200);
+    QVERIFY2(driver.seen == 0, qPrintable(driver.seenClasses.join(", ")));
+  }
+  QVERIFY(QFile::exists(file));
+  QVERIFY2(started.isEmpty() && treeView()->isEnabled(),
+           "nothing was decrypted");
+
+  // Down in the search box goes into the results, on their first item.
+  searchBox()->setFocus();
+  QTRY_VERIFY(searchBox()->hasFocus());
+  QKeyEvent down(QEvent::KeyPress, Qt::Key_Down, Qt::NoModifier);
+  QApplication::sendEvent(searchBox(), &down);
+  QTRY_VERIFY(results->hasFocus());
+  QCOMPARE(results->currentItem(), results->topLevelItem(0));
+
+  // With the tree back, they act on its entry again.
+  grep->setChecked(false);
+  QVERIFY(!treeView()->isHidden());
+  QVERIFY2(edit->isEnabled() && del->isEnabled() && otp->isEnabled(),
+           "back with the tree and its selection");
 }
 
 /**

@@ -608,6 +608,15 @@ private:
   /// entry (depth first) under the store root.
   void selectFirstFile();
 
+  /**
+   * @brief Show the content search results in place of the tree, or the tree
+   *        again.
+   * @param shown True to show the results. Delete, Edit and OTP are off while
+   *        they hide the tree; showing the tree enables them as the selection
+   *        allows.
+   */
+  void showContentResults(bool shown);
+
   /// Stop a running content search on both backends (the active one may have
   /// changed since it started). It runs outside the process queue, so only
   /// this ends its walk and the gpg it is running; the result it still
