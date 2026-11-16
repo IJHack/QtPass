@@ -23,6 +23,8 @@ private Q_SLOTS:
   void parseReadsParameterNamesInAnyCase();
   void normalizeKeepsTheTextAfterAHash();
   void parseBareSecret();
+  void parseSaysWhyItRefuses_data();
+  void parseSaysWhyItRefuses();
   void parseSpacedSecret();
   void parseAlgorithmNames_data();
   void parseAlgorithmNames();
@@ -156,6 +158,48 @@ void tst_totp::normalizeKeepsTheTextAfterAHash() {
       QStringLiteral("x"));
   QVERIFY2(kept.endsWith(QLatin1Char('#') + remark), qPrintable(kept));
   QCOMPARE(Totp::normalize(kept, QStringLiteral("x")), kept);
+}
+
+void tst_totp::parseSaysWhyItRefuses_data() {
+  QTest::addColumn<QString>("config");
+  QTest::addColumn<Totp::Refusal>("why");
+  QTest::newRow("usable") << QStringLiteral("JBSWY3DPEHPK3PXP")
+                          << Totp::Refusal::None;
+  QTest::newRow("blank") << QStringLiteral("   ") << Totp::Refusal::Empty;
+  QTest::newRow("too long")
+      << QString(Totp::MAX_CONFIG_LENGTH + 1, QLatin1Char('A'))
+      << Totp::Refusal::TooLong;
+  QTest::newRow("hotp")
+      << QStringLiteral("otpauth://hotp/X?secret=JBSWY3DPEHPK3PXP&counter=1")
+      << Totp::Refusal::Hotp;
+  QTest::newRow("other host")
+      << QStringLiteral("otpauth://broken") << Totp::Refusal::UnreadableUri;
+  QTest::newRow("unknown algorithm")
+      << QStringLiteral(
+             "otpauth://totp/X?secret=JBSWY3DPEHPK3PXP&algorithm=MD5")
+      << Totp::Refusal::UnknownAlgorithm;
+  QTest::newRow("migration export")
+      << QStringLiteral("otpauth-migration://offline?data=CjEKCkhlbGxv")
+      << Totp::Refusal::NotASecret;
+  QTest::newRow("no secret")
+      << QStringLiteral("otpauth://totp/X?issuer=Example")
+      << Totp::Refusal::NoSecret;
+}
+
+/**
+ * @brief parse() says why it gives no settings, and describe() has a
+ *        sentence for every reason the user can act on: "invalid" alone left
+ *        them guessing whether the kind, the algorithm or the secret was
+ *        wrong.
+ */
+void tst_totp::parseSaysWhyItRefuses() {
+  QFETCH(QString, config);
+  QFETCH(Totp::Refusal, why);
+  Totp::Refusal got = Totp::Refusal::NoSecret;
+  QCOMPARE(Totp::parse(config, &got).has_value(), why == Totp::Refusal::None);
+  QCOMPARE(got, why);
+  const bool worded = why != Totp::Refusal::None && why != Totp::Refusal::Empty;
+  QCOMPARE(!Totp::describe(why).isEmpty(), worded);
 }
 
 void tst_totp::parseBareSecret() {

@@ -372,16 +372,23 @@ auto PasswordDisplayPanel::createFieldFrame() -> QFrame * {
 // button: a QR of the configuration would show the shared secret.
 void PasswordDisplayPanel::addOtpField(int position, const QString &otpConfig,
                                        const AppSettings &s) {
-  const std::optional<Totp::Settings> settings = Totp::parse(otpConfig);
+  Totp::Refusal why = Totp::Refusal::None;
+  const std::optional<Totp::Settings> settings = Totp::parse(otpConfig, &why);
   if (!settings.has_value()) {
     // Report the problem without echoing what the user stored: the value is
     // still a would-be secret, so it gets neither a copy nor a QR button.
+    // Why it gives no code (HOTP, an export, an unknown algorithm), where
+    // parse() can say.
     AppSettings inert = s;
     inert.clipBoardType = Enums::CLIPBOARD_NEVER;
     inert.useQrencode = false;
     inert.hidePassword = false; // a message, never behind the eye button
+    const QString reason = Totp::describe(why);
     addField(position, QObject::tr("OTP code"),
-             QObject::tr("No OTP code found in this password entry"), inert);
+             reason.isEmpty()
+                 ? QObject::tr("No OTP code found in this password entry")
+                 : reason,
+             inert);
     return;
   }
 

@@ -22,6 +22,7 @@
 #include "../../../src/qpushbuttonshowpassword.h"
 #include "../../../src/qpushbuttonwithclipboard.h"
 #include "../../../src/secrettextbrowser.h"
+#include "../../../src/totp.h"
 #include "../../../src/util.h"
 
 class tst_passworddisplaypanel : public QObject {
@@ -450,6 +451,17 @@ void tst_passworddisplaypanel::invalidOtpConfigRendersPlaceholder() {
   QVERIFY(value != nullptr);
   QVERIFY2(value->findChild<QPushButtonWithClipboard *>() == nullptr,
            "the placeholder must not be offered as clipboard content");
+  // It says why: "!" is not written in a secret.
+  const QString expected = Totp::describe(Totp::Refusal::NotASecret);
+  QStringList shown;
+  for (const QTextBrowser *browser : value->findChildren<QTextBrowser *>()) {
+    shown << browser->toPlainText();
+  }
+  if (const auto *browser = qobject_cast<QTextBrowser *>(value)) {
+    shown << browser->toPlainText();
+  }
+  QVERIFY2(shown.join(QLatin1Char('\n')).contains(expected),
+           qPrintable(shown.join(QLatin1Char('\n'))));
 }
 
 /**
