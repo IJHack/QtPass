@@ -269,10 +269,8 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   if (!overwrite) {
     executeGit(GIT_ADD, {"add", "--", pgit(file)});
   }
-  QString path = QDir(m_settings.passStore).relativeFilePath(file);
-  path.replace(Util::endsWithGpg(), "");
-  gitCommit(file, QString(overwrite ? "Edit" : "Add") + " for " + path +
-                      " using QtPass.");
+  gitCommit(file, QString(overwrite ? "Edit" : "Add") + " for " +
+                      commitName(file) + " using QtPass.");
 }
 
 auto ImitatePass::commitArgs() -> QStringList {
@@ -312,8 +310,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_REMOVE);
-  QString path = QDir(m_settings.passStore).relativeFilePath(file);
-  path.replace(Util::endsWithGpg(), "");
+  const QString path = commitName(file);
   if (Util::isLinkedFolder(file)) {
     // Unlink it here, never through a recursive rm: the link goes, what it
     // points to stays. Git then only has to forget it, if it knew it.
@@ -928,8 +925,7 @@ auto ImitatePass::commitReencrypted(const QString &fileName) -> bool {
     qCDebug(lcQtPass) << "git add failed after re-encrypting:" << fileName;
     return false;
   }
-  QString path = QDir(m_settings.passStore).relativeFilePath(fileName);
-  path.replace(Util::endsWithGpg(), "");
+  const QString path = commitName(fileName);
   if (execBlocking(m_settings.gitExecutable,
                    QStringList{"-C", store} + commitArgs() +
                        QStringList{"-m",

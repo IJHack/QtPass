@@ -1067,7 +1067,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   so the account name and folder layout went into the shared history with
   the push. A copied entry's commit had the same problem
   ([#169](https://github.com/IJHack/QtPass/pull/169) fixed it for the
-  other messages)
+  other messages). Commits already pushed keep their message: rewriting
+  shared history is not worth it for most stores
 - The TOTP seed stays off the screen wherever its `otpauth://` URI sits in
   a line: after a list dash, in quotes, behind other text, after a second
   colon (`AWS: backup phone: otpauth://…`), or split at its colon as

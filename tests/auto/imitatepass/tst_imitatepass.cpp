@@ -3293,6 +3293,11 @@ void tst_imitatepass::initWithAWorkingGitCommitsTheListAndTheEntries() {
            qPrintable("the list is committed before the entries: " + log));
   QVERIFY2(log.indexOf(QStringLiteral(".gpg-id.sig"), added) < reencrypted,
            qPrintable("the signature goes with the list: " + log));
+  // Each entry by its name in the store, without .gpg (commitName()).
+  for (const QString entry :
+       {QStringLiteral("entry0"), QStringLiteral("entry1")})
+    QVERIFY2(log.contains("\nRe-encrypt for " + entry + " using QtPass.\n"),
+             qPrintable(log));
   QString status;
   QCOMPARE(runRealGit(git, storeDir.path(),
                       {QStringLiteral("status"), QStringLiteral("--porcelain"),
