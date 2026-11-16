@@ -805,7 +805,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   icon. Without one (the tray icon switched off, or a desktop without a
   system tray) closing the window left QtPass running invisibly, with the
   last entry in it and the password on the clipboard, until `qtpass` was
-  started again; now the window closes, or starts shown.
+  started again; now the window closes, or starts shown. Switching the
+  tray icon off in Settings now also switches both off: they stayed on in
+  the settings and came back when the tray icon was turned on elsewhere
+  (the first-run wizard).
 - With "Automatically push", a push that fails after a save stays on screen
   in red, as one from the Push button does. The refresh of the entry was
   queued behind the push and emptied the output before git's error was
