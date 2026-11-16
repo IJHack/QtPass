@@ -140,6 +140,14 @@ public:
   [[nodiscard]] static auto isOtpFieldName(const QString &name) -> bool;
 
   /**
+   * @brief The password of an entry: its first line, without the carriage
+   *        return of a CRLF line end.
+   * @param text Decrypted entry text, or just its first line.
+   * @return Its first line, a trailing "\r" dropped.
+   */
+  [[nodiscard]] static auto passwordLine(const QString &text) -> QString;
+
+  /**
    * @brief Whether a field value is an otpauth URI, and therefore a secret.
    *
    * A URI is a shared secret whatever the field is called, so both the

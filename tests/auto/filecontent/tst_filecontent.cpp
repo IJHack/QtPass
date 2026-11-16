@@ -31,6 +31,7 @@ private Q_SLOTS:
   void parseAllFieldsModeIncludesExtraFields();
   void parseAllFieldsModeExcludesUrlLines();
   void parseCrlfNamedValuesAreTrimmed();
+  void crlfPasswordHasNoLineEnd();
   void parseMultipleOtpauthLinesAllHidden();
   void parseOtpauthCaseInsensitiveHidden();
   void namedValuesDefaultConstructorIsEmpty();
@@ -306,6 +307,25 @@ void tst_filecontent::parseAllFieldsModeExcludesUrlLines() {
            "non-url field should be parsed");
   QVERIFY2(fc.getRemainingData().contains("http://example.com"),
            "URL line should stay in remaining data");
+}
+
+/**
+ * @brief The password of a CRLF entry is its first line without the "\r";
+ *        only the line end goes.
+ */
+void tst_filecontent::crlfPasswordHasNoLineEnd() {
+  QCOMPARE(FileContent::parse(QStringLiteral("hunter2\r\nlogin: alice\r\n"), {},
+                              false)
+               .getPassword(),
+           QStringLiteral("hunter2"));
+  QCOMPARE(
+      FileContent::parse(QStringLiteral("hunter2\r"), {}, false).getPassword(),
+      QStringLiteral("hunter2"));
+  QCOMPARE(FileContent::passwordLine(QStringLiteral("hunter2\r\r\nx")),
+           QStringLiteral("hunter2\r"));
+  QCOMPARE(FileContent::passwordLine(QStringLiteral(" pw \nx")),
+           QStringLiteral(" pw "));
+  QCOMPARE(FileContent::passwordLine(QString()), QString());
 }
 
 void tst_filecontent::parseCrlfNamedValuesAreTrimmed() {
