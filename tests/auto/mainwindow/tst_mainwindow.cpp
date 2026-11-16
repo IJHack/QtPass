@@ -1029,6 +1029,7 @@ auto looksLikeOtpCode(const QString &s) -> bool {
  * @brief Ctrl+C with text selected in the shown entry copies that text: the
  *        window-wide shortcut put the entry's password on the clipboard
  *        instead, with "Copied to clipboard", and cleared the selection.
+ *        The copy is tracked, so the autoclear takes it off the clipboard.
  */
 void tst_mainwindow::ctrlCCopiesTheSelectedText() {
   const AppSettings before = QtPassSettings::load();
@@ -1060,6 +1061,10 @@ void tst_mainwindow::ctrlCCopiesTheSelectedText() {
   QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
   QCOMPARE(clip->text(), QStringLiteral("alice"));
   QVERIFY2(browser->textCursor().hasSelection(), "the selection stays");
+  // Tracked for the autoclear like any copy QtPass makes: what the timer
+  // runs takes it off the clipboard again.
+  m_window->findChild<QtPass *>()->clipboard().clear();
+  QVERIFY2(clip->text().isEmpty(), qPrintable(clip->text()));
 
   // A selectable label (the entry name, the OTP code) the same way, through
   // the clipboard manager, which tracks it for the autoclear.
