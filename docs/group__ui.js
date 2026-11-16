@@ -275,6 +275,7 @@ var group__ui =
       [ "setUiElementsEnabled", "class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3", null ],
       [ "showAbout", "class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197", null ],
       [ "showBrowserContextMenu", "class_main_window.html#a98a902aa097483416e0bebf9fd5ce860", null ],
+      [ "showContentResults", "class_main_window.html#a097538a4ac04120ab0995cdfdf657e58", null ],
       [ "showContextMenu", "class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742", null ],
       [ "showEvent", "class_main_window.html#a3febb9ef08a8e0f7fc00848ea540a899", null ],
       [ "showShareHelp", "class_main_window.html#a5df5d7d9bd8aa54bda11a2be08ee9370", null ],

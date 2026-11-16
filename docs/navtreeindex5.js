@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"configdialog_8h.html":[4,0,1,6],
 "configdialog_8h_source.html":[4,0,1,6],
 "deselectabletreeview_8h.html":[4,0,1,7],
 "deselectabletreeview_8h_source.html":[4,0,1,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "passworddisplaypanel_8cpp.html":[4,0,1,48],
 "passworddisplaypanel_8cpp_source.html":[4,0,1,48],
 "passworddisplaypanel_8h.html":[4,0,1,49],
-"passworddisplaypanel_8h_source.html":[4,0,1,49],
-"pathvalidator_8cpp.html":[4,0,1,50]
+"passworddisplaypanel_8h_source.html":[4,0,1,49]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"class_secret_line_edit.html#aba684a353cbd69ebd8608ef056b058c6":[1,6,6,8],
 "class_secret_line_edit.html#ad39e7fa39594b1b6e99e28844943f274":[1,6,6,10],
 "class_secret_line_edit.html#ae2aa8733d9f5647aa7d9af0ed481e393":[1,6,6,3],
 "class_secret_line_edit.html#af663c468b888e7e1c81f116cba75fab5":[1,6,6,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "clipboardmanager_8h.html#ad02159f3c84f6ec8d7535395bdb55d99":[4,0,1,4,0],
 "clipboardmanager_8h_source.html":[4,0,1,4],
 "configdialog_8cpp.html":[4,0,1,5],
-"configdialog_8cpp_source.html":[4,0,1,5],
-"configdialog_8h.html":[4,0,1,6]
+"configdialog_8cpp_source.html":[4,0,1,5]
 };
