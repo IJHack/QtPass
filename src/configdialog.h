@@ -410,7 +410,8 @@ private:
   /**
    * @brief What is wrong with @p entry's name, store path and signing keys.
    * @param entry The profile to check.
-   * @param names How many profiles carry each name, for duplicates.
+   * @param names How many profiles carry each case-folded name, for
+   *        duplicates.
    * @return The complaints, empty where a field is fine.
    */
   auto problemsOf(const ProfileEntry &entry,

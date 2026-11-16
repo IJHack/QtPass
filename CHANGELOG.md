@@ -785,6 +785,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   QtPass switched to it, showed the root of the disk, and at the next start
   took the folder it was started from as the store. A profile whose name
   already holds a `\` needs a new name before Settings can be saved.
+- Two profile names that differ only in case, such as "Work" and "work",
+  count as the same name: Settings keeps OK off. On Windows the settings
+  read them as one, so one profile silently replaced the other. Profiles
+  saved that way elsewhere need a new name before Settings can be saved.
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old
