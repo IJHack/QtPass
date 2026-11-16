@@ -1087,7 +1087,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   folder in the store cannot be read (no read permission). It looked empty,
   so its entries kept their old recipients, a key just removed among them,
   while QtPass reported "Re-encryption completed" (and pushed, with
-  automatic pushing on)
+  automatic pushing on). Deleting a folder that holds such a folder now
+  asks with the "unexpected files" warning, as for stray files: what is in
+  it is unknown
 - With the `pass` backend, a change of recipients (Users ▸ OK), a move or a
   copy that could not re-encrypt every entry is reported as failed and not
   pushed. `pass` carries on past an entry gpg cannot re-encrypt (a

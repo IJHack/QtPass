@@ -86,6 +86,9 @@
 #include "../../../src/util.h"
 #include "../testpass.h"
 #include "../testsettings.h"
+#ifndef Q_OS_WIN
+#include <unistd.h>
+#endif
 
 // QMessageBox::setWindowTitle() is a no-op on macOS ("Message boxes on the
 // mac do not have a title", qmessagebox.cpp), so the titles the driver
@@ -503,6 +506,7 @@ private Q_SLOTS:
   void deletePasswordAsksFirst();
   void backendErrorsArePlainText();
   void deleteFolderWarnsAboutStrayFiles();
+  void deleteFolderWarnsAboutAFolderItCannotRead();
   void deleteLinkedFolderRemovesOnlyTheLink();
   void usersDialogOpensForTheStoreButNotForALink();
   void addPasswordOffersTheStoreFolders();
@@ -5581,6 +5585,46 @@ void tst_mainwindow::deletePasswordAsksFirst() {
                                     Qt::DirectConnection));
   QCOMPARE(driver.seen, 1);
   QTRY_VERIFY2(!QFileInfo::exists(file), "Yes removes the entry");
+}
+
+/**
+ * @brief A folder inside that cannot be read hides what is in it, so the
+ *        question warns as for stray files: the walk took it for empty and
+ *        asked plainly, though the user could not know what would go.
+ */
+void tst_mainwindow::deleteFolderWarnsAboutAFolderItCannotRead() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX permission bits");
+#else
+  if (::geteuid() == 0) {
+    QSKIP("root reads any folder");
+  }
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  }
+  const QDir store(m_storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral("doomed-dir/locked")));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("doomed-dir/entry")));
+  const QString locked = store.filePath(QStringLiteral("doomed-dir/locked"));
+  QVERIFY(QFile::setPermissions(locked, QFile::WriteOwner | QFile::ExeOwner));
+  const auto unlock = qScopeGuard([&locked] {
+    QFile::setPermissions(locked, QFile::ReadOwner | QFile::WriteOwner |
+                                      QFile::ExeOwner);
+  });
+  QVERIFY(selectPath(store.filePath(QStringLiteral("doomed-dir"))));
+  ModalDriver driver(answerBox(QMessageBox::No));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                    Qt::DirectConnection));
+  COMPARE_BOX_TITLES(driver.boxTitles,
+                     QStringList{QStringLiteral("Delete folder?")});
+  QVERIFY2(
+      driver.boxTexts.value(0).contains(QStringLiteral("unexpected files")),
+      qPrintable(driver.boxTexts.value(0)));
+  QVERIFY(QFileInfo(store.filePath(QStringLiteral("doomed-dir"))).isDir());
+#endif
 }
 
 /**

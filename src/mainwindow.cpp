@@ -1336,12 +1336,15 @@ auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
   QString question =
       tr("Are you sure you want to delete %1 and the whole content?").arg(path);
   // A link, junction or special file inside is as unexpected as a stray
-  // plain file: the walker leaves them out of content and reports them.
+  // plain file: the walker leaves them out of content and reports them. So
+  // is a folder it cannot read: what is in it is unknown, not absent.
   QStringList skipped;
+  QStringList unlisted;
   const QStringList content = Util::regularFilesUnder(
-      m_tree->fileSystem().rootPath() + path, {QStringLiteral("*")}, &skipped);
+      m_tree->fileSystem().rootPath() + path, {QStringLiteral("*")}, &skipped,
+      false, &unlisted);
   const bool unexpected =
-      !skipped.isEmpty() ||
+      !skipped.isEmpty() || !unlisted.isEmpty() ||
       std::any_of(content.cbegin(), content.cend(), [](const QString &entry) {
         return QFileInfo(entry).suffix() != QLatin1String("gpg");
       });
