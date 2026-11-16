@@ -1,5 +1,6 @@
 <map id="Pass::insertWritten" name="Pass::insertWritten">
 <area shape="rect" id="Node000001" title="Whether the insert that just failed had put its entry in the store before a later step failed...." alt="" coords="839,109,982,137"/>
+<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="945,94,934,90,910,88,888,90,876,95,873,100,879,110,874,108,868,100,873,91,887,85,910,83,935,85,950,94"/>
 <area shape="rect" id="Node000002" href="$class_pass.html#a23d86a80c0e1772771f097062dc0ab7c" title="Report a process that exited non&#45;zero; called by finished()." alt="" coords="607,109,791,137"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="821,123,791,126,791,121,826,123"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="450,109,559,137"/>

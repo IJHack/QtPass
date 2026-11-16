@@ -47,24 +47,24 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="903" data-view-height="68" data-section-id="dynsection-43">
+<svg id="graph" class="graph" data-view-width="926" data-view-height="68" data-section-id="dynsection-43">
 <g id="viewport">
 <title>QtPassSettings::isUseGit</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Check whether Git integration is enabled.">
-<polygon fill="#999999" stroke="#666666" points="895.25,-39.75 759.25,-39.75 759.25,-19 895.25,-19 895.25,-39.75"/>
-<text xml:space="preserve" text-anchor="middle" x="827.25" y="-26.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseGit</text>
+<polygon fill="#999999" stroke="#666666" points="917.75,-39.75 781.75,-39.75 781.75,-19 917.75,-19 917.75,-39.75"/>
+<text xml:space="preserve" text-anchor="middle" x="849.75" y="-26.25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseGit</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" target="_top" xlink:title="Trigger a git push operation.">
-<polygon fill="white" stroke="#666666" points="723.25,-39.75 603.75,-39.75 603.75,-19 723.25,-19 723.25,-39.75"/>
-<text xml:space="preserve" text-anchor="middle" x="663.5" y="-26.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onPush</text>
+<g id="a_Node000002"><a xlink:href="class_main_window.html#a8018af4fb8358cb60db3421842bdaeed" target="_top" xlink:title="Trigger the automatic git push after a change (QtPass::pushRequested()); see Pass::GitPushAutomatic()...">
+<polygon fill="white" stroke="#666666" points="745.75,-59.75 603.75,-59.75 603.75,-39 745.75,-39 745.75,-59.75"/>
+<text xml:space="preserve" text-anchor="middle" x="674.75" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onAutoPush</text>
 </a>
 </g>
 </g>
@@ -72,8 +72,26 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M747.71,-29.38C739.65,-29.38 731.55,-29.38 723.74,-29.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="747.55,-32.88 757.55,-29.38 747.55,-25.88 747.55,-32.88"/>
+<path fill="none" stroke="#63b8ff" d="M770.13,-38.46C762.11,-39.39 754.01,-40.33 746.09,-41.24"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="770.33,-41.96 779.86,-37.34 769.53,-35.01 770.33,-41.96"/>
+</a>
+</g>
+</g>
+<!-- Node6 -->
+<g id="Node000006" class="node">
+<title>Node6</title>
+<g id="a_Node000006"><a xlink:href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" target="_top" xlink:title="Trigger a git push operation.">
+<polygon fill="white" stroke="#666666" points="734.5,-20.75 615,-20.75 615,0 734.5,0 734.5,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="674.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onPush</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node6 -->
+<g id="edge7_Node000001_Node000006" class="edge">
+<title>Node1&#45;&gt;Node6</title>
+<g id="a_edge7_Node000001_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M770.08,-20.74C758.22,-19.43 746.15,-18.11 734.79,-16.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="769.54,-24.2 779.86,-21.81 770.31,-17.24 769.54,-24.2"/>
 </a>
 </g>
 </g>
@@ -90,26 +108,8 @@
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M592.2,-37.16C583.54,-38.12 574.63,-39.11 565.8,-40.09"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="592.34,-40.67 601.89,-36.09 591.57,-33.71 592.34,-40.67"/>
-</a>
-</g>
-</g>
-<!-- Node6 -->
-<g id="Node000006" class="node">
-<title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="567.75,-20.75 394.25,-20.75 394.25,0 567.75,0 567.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="481" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::initToolBarButtons</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node6 -->
-<g id="edge7_Node000002_Node000006" class="edge">
-<title>Node2&#45;&gt;Node6</title>
-<g id="a_edge7_Node000002_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M592.05,-21.96C584.19,-21.13 576.11,-20.28 568.08,-19.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="591.58,-25.43 601.89,-23 592.31,-18.47 591.58,-25.43"/>
+<path fill="none" stroke="#63b8ff" d="M592.16,-49.38C583.49,-49.38 574.66,-49.38 565.97,-49.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="591.92,-52.88 601.92,-49.38 591.92,-45.88 591.92,-52.88"/>
 </a>
 </g>
 </g>
@@ -167,10 +167,28 @@
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node4 -->
-<g id="edge8_Node000006_Node000004" class="edge">
-<title>Node6&#45;&gt;Node4</title>
-<g id="a_edge8_Node000006_Node000004"><a xlink:title=" ">
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:href="class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="567.75,-20.75 394.25,-20.75 394.25,0 567.75,0 567.75,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="481" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::initToolBarButtons</text>
+</a>
+</g>
+</g>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge8_Node000006_Node000007" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<g id="a_edge8_Node000006_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M603.37,-10.38C591.87,-10.38 579.86,-10.38 568.04,-10.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="603.14,-13.88 613.14,-10.38 603.14,-6.88 603.14,-13.88"/>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node4 -->
+<g id="edge9_Node000007_Node000004" class="edge">
+<title>Node7&#45;&gt;Node4</title>
+<g id="a_edge9_Node000007_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M382.53,-19.9C374.48,-20.69 366.43,-21.48 358.6,-22.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="382.78,-23.4 392.39,-18.94 382.1,-16.43 382.78,-23.4"/>
 </a>

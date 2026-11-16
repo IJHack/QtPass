@@ -1,0 +1,7 @@
+<map id="Pass::autoPushHeld" name="Pass::autoPushHeld">
+<area shape="rect" id="Node000001" title="Whether automatic pushes of the current store are held because its last re&#45;encryption did not finish ..." alt="" coords="5,32,154,60"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ab7bebb6dc42ed85ccdf7de9e7cdd528c" title="The folders (cleaned absolute paths) whose re&#45;encryption did not finish, for every store and both bac..." alt="" coords="202,5,334,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,33,189,30,184,31,155,38"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a2651a5f937fe963d78263f8e93458210" title="path as an absolute, cleaned path, relative ones taken from the current store." alt="" coords="206,57,330,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,53,192,60,187,61,154,59"/>
+</map>

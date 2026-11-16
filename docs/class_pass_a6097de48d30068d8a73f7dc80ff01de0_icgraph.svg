@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="741" data-view-height="171" data-section-id="dynsection-51">
+<svg id="graph" class="graph" data-view-width="741" data-view-height="171" data-section-id="dynsection-59">
 <g id="viewport">
 <title>Pass::insertWritten</title>
 <!-- Node1 -->
@@ -56,6 +56,15 @@
 <g id="a_Node000001"><a xlink:title="Whether the insert that just failed had put its entry in the store before a later step failed....">
 <polygon fill="#999999" stroke="#666666" points="732.5,-85.12 625,-85.12 625,-64.38 732.5,-64.38 732.5,-85.12"/>
 <text xml:space="preserve" text-anchor="middle" x="678.75" y="-71.62" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::insertWritten</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node1 -->
+<g id="edge9_Node000001_Node000001" class="edge">
+<title>Node1&#45;&gt;Node1</title>
+<g id="a_edge9_Node000001_Node000001"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M706.64,-96.61C702.94,-100.45 693.65,-103.12 678.75,-103.12 651.51,-103.12 642.99,-94.18 653.21,-85.52"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="710.1,-96.06 704.6,-87 703.25,-97.51 710.1,-96.06"/>
 </a>
 </g>
 </g>

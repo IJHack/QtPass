@@ -66,12 +66,12 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02",
-"class_main_window.html#a93f01ed6916dd3114676309ab386fe46",
-"class_password_dialog.html#abf3ff0128bdd1931b1c332789c1e1931",
-"class_simple_transaction.html",
-"fieldlabel_8cpp_source.html",
-"profile_8h.html",
-"struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4ae73cda510e8bb947f7e61089e5581494"
+"class_main_window.html#a928b1974ed88173cf93c164f0a613795",
+"class_password_dialog.html#aa09071e9cbd91dddfdaa865ec1b54687",
+"class_secret_line_edit.html#ad39e7fa39594b1b6e99e28844943f274",
+"configdialog_8h_source.html",
+"pathvalidator_8cpp_source.html",
+"struct_rnp_crypto_1_1_key_info.html#a388d722ce4728061bbfb075667caba63"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

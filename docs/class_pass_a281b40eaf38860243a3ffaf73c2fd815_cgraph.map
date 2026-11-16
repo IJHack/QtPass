@@ -1,0 +1,7 @@
+<map id="Pass::releaseAutoPush" name="Pass::releaseAutoPush">
+<area shape="rect" id="Node000001" title="Release the holds a clean re&#45;encryption of folder covers: those for folder itself and everything unde..." alt="" coords="5,32,173,60"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ab7bebb6dc42ed85ccdf7de9e7cdd528c" title="The folders (cleaned absolute paths) whose re&#45;encryption did not finish, for every store and both bac..." alt="" coords="221,5,353,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,32,208,29,203,31,174,37"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a2651a5f937fe963d78263f8e93458210" title="path as an absolute, cleaned path, relative ones taken from the current store." alt="" coords="225,57,349,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,54,212,61,207,61,173,59"/>
+</map>

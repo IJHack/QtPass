@@ -85,6 +85,7 @@ var class_imitate_pass =
     [ "m_reencryptCancel", "class_imitate_pass.html#ab880f27383b3786e10782d30df512a17", null ],
     [ "m_reencryptEnv", "class_imitate_pass.html#a918e7256c5c1a934a29f311e55205b71", null ],
     [ "m_reencryptPushing", "class_imitate_pass.html#a6b8a67f49441e5c0ff1b0f675135dbc5", null ],
+    [ "m_reencryptScope", "class_imitate_pass.html#a87a4ffc08a27147e4e7cab892cc1ad90", null ],
     [ "m_reencryptThread", "class_imitate_pass.html#a783c34e41f2f2d3903d9c7d5cfe4935c", null ],
     [ "m_transaction", "class_imitate_pass.html#a8900e1dace8bc434e07b57d88901dc3d", null ],
     [ "m_transactionOutput", "class_imitate_pass.html#a1fb9d35f19a5a7b0ff56c3e1e4b398ee", null ],

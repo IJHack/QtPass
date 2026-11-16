@@ -47,13 +47,14 @@ var searchData=
   ['gitpull_44',['GitPull',['../class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced',1,'ImitatePass::GitPull()'],['../class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8',1,'Pass::GitPull()'],['../class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3',1,'RealPass::GitPull()']]],
   ['gitpull_5fb_45',['GitPull_b',['../class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2',1,'ImitatePass::GitPull_b()'],['../class_pass.html#a7a109d5c0a7f565398b7238c32bb6328',1,'Pass::GitPull_b()'],['../class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210',1,'RealPass::GitPull_b()']]],
   ['gitpush_46',['GitPush',['../class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9',1,'ImitatePass::GitPush()'],['../class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09',1,'Pass::GitPush()'],['../class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b',1,'RealPass::GitPush()']]],
-  ['gitready_47',['gitReady',['../class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219',1,'ImitatePass']]],
-  ['gitstorevariables_48',['gitStoreVariables',['../class_util.html#a98271dbaefe09960e1eaded52fed2694',1,'Util']]],
-  ['gittracks_49',['gitTracks',['../class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3',1,'ImitatePass']]],
-  ['gpgenvironment_50',['gpgEnvironment',['../class_profile_init.html#aa5826d5206206e64edd2fce29d06b2af',1,'ProfileInit']]],
-  ['gpgerrormessage_51',['gpgErrorMessage',['../pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc',1,'gpgErrorMessage(const QString &amp;err) -&gt; QString:&#160;pass.cpp'],['../pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa',1,'gpgErrorMessage(const QString &amp;err):&#160;pass.cpp']]],
-  ['gpgidsigner_52',['GpgIdSigner',['../class_gpg_id_signer.html#a4861ba0784a1a7644ca697e3a72cd5b5',1,'GpgIdSigner']]],
-  ['gpgidsigner_53',['gpgIdSigner',['../class_imitate_pass.html#aff483e62ab4ceede87aa3007c8f55588',1,'ImitatePass']]],
-  ['gpgsupportsed25519_54',['gpgSupportsEd25519',['../class_pass.html#a57cc7915c4d3f4a795b0ec8ad4056482',1,'Pass']]],
-  ['grep_55',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]]
+  ['gitpushautomatic_47',['GitPushAutomatic',['../class_pass.html#a45818547e0b844bd6f111a67b3e9b249',1,'Pass']]],
+  ['gitready_48',['gitReady',['../class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219',1,'ImitatePass']]],
+  ['gitstorevariables_49',['gitStoreVariables',['../class_util.html#a98271dbaefe09960e1eaded52fed2694',1,'Util']]],
+  ['gittracks_50',['gitTracks',['../class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3',1,'ImitatePass']]],
+  ['gpgenvironment_51',['gpgEnvironment',['../class_profile_init.html#aa5826d5206206e64edd2fce29d06b2af',1,'ProfileInit']]],
+  ['gpgerrormessage_52',['gpgErrorMessage',['../pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc',1,'gpgErrorMessage(const QString &amp;err) -&gt; QString:&#160;pass.cpp'],['../pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa',1,'gpgErrorMessage(const QString &amp;err):&#160;pass.cpp']]],
+  ['gpgidsigner_53',['GpgIdSigner',['../class_gpg_id_signer.html#a4861ba0784a1a7644ca697e3a72cd5b5',1,'GpgIdSigner']]],
+  ['gpgidsigner_54',['gpgIdSigner',['../class_imitate_pass.html#aff483e62ab4ceede87aa3007c8f55588',1,'ImitatePass']]],
+  ['gpgsupportsed25519_55',['gpgSupportsEd25519',['../class_pass.html#a57cc7915c4d3f4a795b0ec8ad4056482',1,'Pass']]],
+  ['grep_56',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]]
 ];

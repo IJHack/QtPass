@@ -53,7 +53,8 @@ var searchData=
   ['autoclearseconds_50',['autoclearSeconds',['../struct_app_settings.html#a92b8e71fe0eb104d6f8f91a53db04f6d',1,'AppSettings']]],
   ['autopull_51',['autoPull',['../struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f',1,'AppSettings::autoPull'],['../struct_profile.html#a3365fc692edf8aa98fc48afa850a792c',1,'Profile::autoPull']]],
   ['autopush_52',['autoPush',['../struct_app_settings.html#aaf958d6fdb0d9d28ddf10872e9be0238',1,'AppSettings::autoPush'],['../struct_profile.html#a02fe0d44538b9aac07fc7e684237fefb',1,'Profile::autoPush']]],
-  ['autoscroll_53',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]],
-  ['avoidcapitals_54',['avoidCapitals',['../struct_app_settings.html#a8cc6fc41d08e175473fa5b004c5a2178',1,'AppSettings']]],
-  ['avoidnumbers_55',['avoidNumbers',['../struct_app_settings.html#ac69e7514bfb4ab78d83383ab8feb5049',1,'AppSettings']]]
+  ['autopushheld_53',['autoPushHeld',['../class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1',1,'Pass']]],
+  ['autoscroll_54',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]],
+  ['avoidcapitals_55',['avoidCapitals',['../struct_app_settings.html#a8cc6fc41d08e175473fa5b004c5a2178',1,'AppSettings']]],
+  ['avoidnumbers_56',['avoidNumbers',['../struct_app_settings.html#ac69e7514bfb4ab78d83383ab8feb5049',1,'AppSettings']]]
 ];

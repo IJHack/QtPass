@@ -1,0 +1,5 @@
+<map id="Pass::GitPush" name="Pass::GitPush">
+<area shape="rect" id="Node000001" title="Push changes to remote Git repository." alt="" coords="229,5,337,33"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a45818547e0b844bd6f111a67b3e9b249" title="GitPush() for an automatic push, the one after a change. A backend that has to make the push later dr..." alt="" coords="5,5,181,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,19,181,22,181,17,216,19"/>
+</map>

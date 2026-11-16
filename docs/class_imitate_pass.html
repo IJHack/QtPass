@@ -265,6 +265,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a66d554f693ae3069381483cb229bb193 inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether no gpg, git or pass of this backend runs or waits.  <br /></td></tr>
 <tr class="memitem:a1b7d6acd239491873c670576d4891fa3 inherit pub_methods_class_pass" id="r_a1b7d6acd239491873c670576d4891fa3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a1b7d6acd239491873c670576d4891fa3">isPushing</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:a1b7d6acd239491873c670576d4891fa3 inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a Git push of this backend is queued or running.  <br /></td></tr>
+<tr class="memitem:ac41904b0c2ba9f6bca6ef08b4bdb63e1 inherit pub_methods_class_pass" id="r_ac41904b0c2ba9f6bca6ef08b4bdb63e1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1">autoPushHeld</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:ac41904b0c2ba9f6bca6ef08b4bdb63e1 inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether automatic pushes of the current store are held because its last re-encryption did not finish cleanly.  <br /></td></tr>
+<tr class="memitem:a45818547e0b844bd6f111a67b3e9b249 inherit pub_methods_class_pass" id="r_a45818547e0b844bd6f111a67b3e9b249"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a45818547e0b844bd6f111a67b3e9b249">GitPushAutomatic</a> ()</td></tr>
+<tr class="memdesc:a45818547e0b844bd6f111a67b3e9b249 inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Push changes to remote Git repository.">GitPush()</a> for an automatic push, the one after a change. A backend that has to make the push later drops it then if the store is held by that time (<a class="el" href="class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1" title="Whether automatic pushes of the current store are held because its last re-encryption did not finish ...">autoPushHeld()</a>); a push by hand (<a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Push changes to remote Git repository.">GitPush()</a>) still goes.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -333,6 +337,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a0037d3169c1c0fc270270cde4b8d25d2 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The environment <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs the store's processes in.  <br /></td></tr>
 <tr class="memitem:ab81d7dbed9e18a9368c2be06876c4630 inherit pro_methods_class_pass" id="r_ab81d7dbed9e18a9368c2be06876c4630"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ab81d7dbed9e18a9368c2be06876c4630">withCurrentGitPin</a> (QProcessEnvironment base) const -&gt; QProcessEnvironment</td></tr>
 <tr class="memdesc:ab81d7dbed9e18a9368c2be06876c4630 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">base</code> with GIT_DIR and GIT_WORK_TREE as the store is now (<a class="el" href="class_util.html#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">Util::gitStoreVariables()</a>), not as it was at <a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">updateEnv()</a>: a <span class="tt">.git</span> that appeared or changed hands since then is judged when Git runs.  <br /></td></tr>
+<tr class="memitem:a507057c5ae685ca61469c4dae27fd2e6 inherit pro_methods_class_pass" id="r_a507057c5ae685ca61469c4dae27fd2e6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a507057c5ae685ca61469c4dae27fd2e6">pushIsAutomatic</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a507057c5ae685ca61469c4dae27fd2e6 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the <a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Push changes to remote Git repository.">GitPush()</a> running now is an automatic one.  <br /></td></tr>
+<tr class="memitem:a63823c10dde60d0694b377699169a5ca inherit pro_methods_class_pass" id="r_a63823c10dde60d0694b377699169a5ca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a63823c10dde60d0694b377699169a5ca">holdAutoPush</a> (const QString &amp;scope)</td></tr>
+<tr class="memdesc:a63823c10dde60d0694b377699169a5ca inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hold automatic pushes of the store that holds <code class="param">scope</code> (<a class="el" href="class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1" title="Whether automatic pushes of the current store are held because its last re-encryption did not finish ...">autoPushHeld()</a>): its re-encryption did not finish cleanly.  <br /></td></tr>
+<tr class="memitem:a281b40eaf38860243a3ffaf73c2fd815 inherit pro_methods_class_pass" id="r_a281b40eaf38860243a3ffaf73c2fd815"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a281b40eaf38860243a3ffaf73c2fd815">releaseAutoPush</a> (const QString &amp;folder)</td></tr>
+<tr class="memdesc:a281b40eaf38860243a3ffaf73c2fd815 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the holds a clean re-encryption of <code class="param">folder</code> covers: those for <code class="param">folder</code> itself and everything under it. Holds for other folders stay.  <br /></td></tr>
 <tr class="memitem:a3aea03014a99498ace9df6c5edaa1dfb inherit pro_methods_class_pass" id="r_a3aea03014a99498ace9df6c5edaa1dfb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">refuseSkippedGpgId</a> (const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</td></tr>
 <tr class="memdesc:a3aea03014a99498ace9df6c5edaa1dfb inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">With signing on, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>): the parent's list is not what was signed for it.  <br /></td></tr>
 <tr class="memitem:aa048c50cd2e6fa95033b4c69910e04bb inherit pro_methods_class_pass" id="r_aa048c50cd2e6fa95033b4c69910e04bb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">verifySignedList</a> (const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</td></tr>
@@ -421,6 +431,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a41666e690d1fce6474bed3a5f6485314" id="r_a41666e690d1fce6474bed3a5f6485314"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a41666e690d1fce6474bed3a5f6485314">m_reencryptActive</a> = false</td></tr>
 <tr class="memdesc:a41666e690d1fce6474bed3a5f6485314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set while a re-encryption run is pending or on the worker thread.  <br /></td></tr>
 <tr class="memitem:a90dccd5f756bcd0f65226f1afde5b2b3" id="r_a90dccd5f756bcd0f65226f1afde5b2b3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a90dccd5f756bcd0f65226f1afde5b2b3">m_pushAfterReencrypt</a> = false</td></tr>
+<tr class="memitem:a87a4ffc08a27147e4e7cab892cc1ad90" id="r_a87a4ffc08a27147e4e7cab892cc1ad90"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a87a4ffc08a27147e4e7cab892cc1ad90">m_reencryptScope</a></td></tr>
+<tr class="memdesc:a87a4ffc08a27147e4e7cab892cc1ad90"><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder the re-encryption in flight covers, for the push hold.  <br /></td></tr>
 <tr class="memitem:a6b8a67f49441e5c0ff1b0f675135dbc5" id="r_a6b8a67f49441e5c0ff1b0f675135dbc5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6b8a67f49441e5c0ff1b0f675135dbc5">m_reencryptPushing</a> = false</td></tr>
 <tr class="memdesc:a6b8a67f49441e5c0ff1b0f675135dbc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set while <a class="el" href="#a172222519125f9e053e09a505743d15b" title="Report the outcome of a run and emit endReencryptPath().">finishReencrypt()</a> pushes, so <a class="el" href="#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote. While a re-encryption runs the push is held (Users ▸ OK and a copy ask for it as soon...">GitPush()</a> does not hold it.  <br /></td></tr>
 <tr class="memitem:ab880f27383b3786e10782d30df512a17" id="r_ab880f27383b3786e10782d30df512a17"><td class="memItemLeft">std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab880f27383b3786e10782d30df512a17">m_reencryptCancel</a> {false}</td></tr>
@@ -648,7 +660,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a0a580982bcc672c58aad1289d05c4951">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01747">1747</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01771">1771</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -713,7 +725,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Ask a running <a class="el" href="#af331446d163c31f1fca714646c0f6244" title="Re-encrypt entire directory.">reencryptPath()</a> to stop. </p>
 <p>Only sets a flag. The worker starts no further gpg or git process, and the one it is blocked on (gpg waiting on pinentry, say) is terminated by the worker itself, and killed if it is still running after a short grace period, so the cancel takes effect promptly rather than after the current file. The store stays consistent: <a class="el" href="#a331fdf170bbd5de247d1e5ee7f6bb65c" title="Re-encrypt single file with new recipients.">reencryptSingleFile()</a> only replaces a file once the new ciphertext is verified, so an interrupted file is left untouched, or already re-encrypted but not yet committed when git was the process that was interrupted. The remaining files are left untouched and the interrupted file is not reported as a failure. <a class="el" href="#a9df2c7246a8686cf92c442c00dc55af7" title="A reencryptPath() run is over, whether it finished, failed, was cancelled or was refused; the main wi...">endReencryptPath()</a> is still emitted when the worker has stopped. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01133">1133</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01140">1140</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 
 </div>
 </div>
@@ -754,7 +766,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it does. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00888">888</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00894">894</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -844,7 +856,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The store-relative name; for a path outside the store, its file name alone. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01528">1528</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01552">1552</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -892,7 +904,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the repository is up to date with the file; false makes the run count the file as failed, so a partial store is not pushed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00910">910</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00916">916</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary">
 </div>
@@ -952,7 +964,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01607">1607</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01631">1631</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary">
 </div>
@@ -1011,7 +1023,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The file, or an empty string when refused. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01578">1578</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01602">1602</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary">
 </div>
@@ -1053,7 +1065,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Create git backup commit before re-encryption. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if backup created or not needed, false if backup failed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01018">1018</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01024">1024</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
@@ -1106,7 +1118,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether gpg decrypted it to something. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00858">858</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00864">864</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
@@ -1153,7 +1165,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00708">708</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00714">714</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary">
 </div>
@@ -1206,7 +1218,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether gpg wrote the ciphertext. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00875">875</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00881">881</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
@@ -1293,7 +1305,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <span class="tt">.gpg</span> files, links and special files left out. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01230">1230</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01237">1237</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-29-summary" class="dynsummary">
 </div>
@@ -1550,7 +1562,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01668">1668</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01692">1692</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-36-summary" class="dynsummary">
 </div>
@@ -1612,7 +1624,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01646">1646</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01670">1670</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-38-summary" class="dynsummary">
 </div>
@@ -1662,7 +1674,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01514">1514</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01538">1538</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-40-summary" class="dynsummary">
 </div>
@@ -1728,7 +1740,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01678">1678</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01702">1702</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-42-summary" class="dynsummary">
 </div>
@@ -1769,12 +1781,12 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01367">1367</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01374">1374</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-43-summary" class="dynsummary">
 </div>
 <div id="dynsection-43-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a172222519125f9e053e09a505743d15b_cgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_imitate_pass_a172222519125f9e053e09a505743d15b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-44-summary" class="dynsummary">
@@ -1817,7 +1829,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>List of key IDs. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00829">829</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00835">835</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-45" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-45-summary" class="dynsummary">
 </div>
@@ -1960,7 +1972,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Git is enabled and an executable is configured. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when git commands can actually run. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01654">1654</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01678">1678</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-51-summary" class="dynsummary">
 </div>
@@ -2142,7 +2154,7 @@ Additional Inherited Members</h2></td></tr>
 <p><a class="el" href="#af1e911c908f7848aa229190053cf6e87" title="Git is enabled and an executable is configured.">gitConfigured()</a> plus a status message when git is enabled but no executable is configured. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when git commands can actually run. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01660">1660</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01684">1684</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-57" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-57-summary" class="dynsummary">
 </div>
@@ -2287,7 +2299,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01753">1753</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01777">1777</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-63" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-63-summary" class="dynsummary">
 </div>
@@ -2486,7 +2498,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false when the file cannot be read, the signature is bad or the list is a rollback (with a signing key configured). true otherwise, also for an empty list; the caller decides what an empty list means. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00660">660</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00666">666</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-67" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-67-summary" class="dynsummary">
 </div>
@@ -2546,7 +2558,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01541">1541</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01565">1565</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-69" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-69-summary" class="dynsummary">
 </div>
@@ -2707,7 +2719,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">file</code> now holds the new ciphertext. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01735">1735</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01759">1759</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-75" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-75-summary" class="dynsummary">
 </div>
@@ -2800,7 +2812,7 @@ Additional Inherited Members</h2></td></tr>
 <dd>
 true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerged files; false if unmerged files remain or their check fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01198">1198</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01205">1205</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-79" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-79-summary" class="dynsummary">
 </div>
@@ -2865,7 +2877,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the run may go on with this folder. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01255">1255</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01262">1262</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-81" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-81-summary" class="dynsummary">
 </div>
@@ -2966,7 +2978,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false when something was reported that needs a human first. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00752">752</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00758">758</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-85" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-85-summary" class="dynsummary">
 </div>
@@ -3014,7 +3026,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Counts and the list of files that could not be re-encrypted. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01279">1279</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01286">1286</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-87" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-87-summary" class="dynsummary">
 </div>
@@ -3053,7 +3065,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01101">1101</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01107">1107</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-89" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-89-summary" class="dynsummary">
 </div>
@@ -3097,7 +3109,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01092">1092</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01098">1098</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-91" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-91-summary" class="dynsummary">
 </div>
@@ -3200,7 +3212,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00938">938</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00944">944</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-94" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-94-summary" class="dynsummary">
 </div>
@@ -3242,7 +3254,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 <p><a class="el" href="#af1e911c908f7848aa229190053cf6e87" title="Git is enabled and an executable is configured.">gitConfigured()</a>, unless the current run is one <a class="el" href="#aa30ada0a871c60297f6bde37cec9df2e" title="Re-encrypt dir to the .gpg-id Init() wrote although its commit failed, without any Git step (they wou...">reencryptWithoutGit()</a> started. </p>
 <dl class="section return"><dt>Returns</dt><dd>Whether the re-encryption run may call Git. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01424">1424</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01448">1448</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-96" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-96-summary" class="dynsummary">
 </div>
@@ -3294,7 +3306,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01428">1428</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01452">1452</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-98" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-98-summary" class="dynsummary">
 </div>
@@ -3448,7 +3460,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01445">1445</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01469">1469</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-103" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-103-summary" class="dynsummary">
 </div>
@@ -3495,7 +3507,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00701">701</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00707">707</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-105" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-105-summary" class="dynsummary">
 </div>
@@ -3554,7 +3566,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Resolved destination path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01469">1469</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01493">1493</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-107" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-107-summary" class="dynsummary">
 </div>
@@ -3596,7 +3608,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether nothing needs a human first. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00720">720</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00726">726</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-108" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-108-summary" class="dynsummary">
 </div>
@@ -3844,7 +3856,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01142">1142</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01149">1149</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-116" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-116-summary" class="dynsummary">
 </div>
@@ -4005,7 +4017,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false when the file is unreadable or its signature is bad (reported through <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">critical()</a>). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00799">799</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l00805">805</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 <div id="dynsection-121" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-121-summary" class="dynsummary">
 </div>
@@ -4279,7 +4291,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </div><div class="memdoc">
 <p>Set by <a class="el" href="#a5cbd9d68f47d53b994ec25cecbb27436" title="Ask a running reencryptPath() to stop.">cancelReencryptPath()</a> and the destructor; read by the worker between files and polled by <a class="el" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">Executor::executeBlocking()</a> while the worker waits on a process, which the worker then ends itself. The flag is the only thing shared with the worker: its QProcess is not thread-safe and is never touched from another thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00668">668</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00670">670</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4330,6 +4342,32 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 
 <p>Set while <a class="el" href="#a172222519125f9e053e09a505743d15b" title="Report the outcome of a run and emit endReencryptPath().">finishReencrypt()</a> pushes, so <a class="el" href="#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote. While a re-encryption runs the push is held (Users ▸ OK and a copy ask for it as soon...">GitPush()</a> does not hold it. </p>
 
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00664">664</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+
+</div>
+</div>
+<a id="a87a4ffc08a27147e4e7cab892cc1ad90" name="a87a4ffc08a27147e4e7cab892cc1ad90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a4ffc08a27147e4e7cab892cc1ad90">&#9670;&#160;</a></span>m_reencryptScope</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ImitatePass::m_reencryptScope</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The folder the re-encryption in flight covers, for the push hold. </p>
+
 <p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00662">662</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
@@ -4356,7 +4394,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 
 <p>The re-encryption worker while it runs, null otherwise. The destructor sets m_reencryptCancel and joins it. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00673">673</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00675">675</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -4432,7 +4470,7 @@ true if no pull is needed, the pull succeeds, or a failed pull leaves no unmerge
 </div><div class="memdoc">
 <p>Set by <a class="el" href="#aa30ada0a871c60297f6bde37cec9df2e" title="Re-encrypt dir to the .gpg-id Init() wrote although its commit failed, without any Git step (they wou...">reencryptWithoutGit()</a> for the run it starts and cleared by <a class="el" href="#a172222519125f9e053e09a505743d15b" title="Report the outcome of a run and emit endReencryptPath().">finishReencrypt()</a>: that run does no Git at all (no pull, backup commit, per-entry commit or push) and ends with <a class="el" href="#a3362c8cb99993b5c1acf9fdefb2bf960" title="Tell the user that the recipients of dir changed on disk but the change is not committed,...">reportUncommittedGpgId()</a>. Written only on the owning thread while no worker runs; the worker only reads it, through <a class="el" href="#af0e30ba675e011cd63447466afc04bed" title="gitConfigured(), unless the current run is one reencryptWithoutGit() started.">reencryptUsesGit()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00765">765</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00767">767</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>

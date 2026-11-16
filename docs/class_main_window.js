@@ -57,6 +57,7 @@ var class_main_window =
     [ "on_profileBox_currentTextChanged", "class_main_window.html#a434f0bb3f122a0d8bb614f8f097a4136", null ],
     [ "on_treeView_clicked", "class_main_window.html#adc7d4b2b210efab401f0b14641f80464", null ],
     [ "on_treeView_doubleClicked", "class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439", null ],
+    [ "onAutoPush", "class_main_window.html#a8018af4fb8358cb60db3421842bdaeed", null ],
     [ "onConfig", "class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44", null ],
     [ "onDelete", "class_main_window.html#a3f29a7235acf922406190b6477167a80", null ],
     [ "onEdit", "class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe", null ],

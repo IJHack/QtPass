@@ -29,5 +29,6 @@ var searchData=
   ['argv_26',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
   ['askyes_27',['askYes',['../namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d',1,'PlainMessageBox']]],
   ['attach_28',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
-  ['autoscroll_29',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
+  ['autopushheld_29',['autoPushHeld',['../class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1',1,'Pass']]],
+  ['autoscroll_30',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
 ];

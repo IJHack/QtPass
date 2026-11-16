@@ -29,11 +29,16 @@ var class_real_pass =
     [ "refuseUnverifiedTree", "class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa", null ],
     [ "Remove", "class_real_pass.html#a0fcac7c5005e6d1a0d09373b5476ca9c", null ],
     [ "reportReencryptFailure", "class_real_pass.html#a0378bfc9a890a1a72037432f59a83aba", null ],
+    [ "sendDeferredPush", "class_real_pass.html#aaaf6e02c8547397a5b1da80e45cebea2", null ],
     [ "Show", "class_real_pass.html#a63da21db00da709ae5aa8f7a992e16e1", null ],
     [ "storeGit", "class_real_pass.html#a23317f24cad6782794cfc83a355af4fa", null ],
+    [ "m_deferredPushByHand", "class_real_pass.html#ac7ab6d4da6791ca6ead581498ec492a0", null ],
     [ "m_grep", "class_real_pass.html#a0016113b00ad8de4b36b33c4b3b1f0cc", null ],
     [ "m_insertDone", "class_real_pass.html#a65ad5fa1183824c29a219aeca72ae112", null ],
     [ "m_insertPending", "class_real_pass.html#a257df61a55c93d151c12a8269dae3504", null ],
     [ "m_insertQueue", "class_real_pass.html#af4c87fe10cd48503c70e7e78ed135fab", null ],
-    [ "m_linkCommits", "class_real_pass.html#ac7c17226af0d3366f2e9388a08475839", null ]
+    [ "m_linkCommits", "class_real_pass.html#ac7c17226af0d3366f2e9388a08475839", null ],
+    [ "m_pushAfterReencrypt", "class_real_pass.html#a23beacc4b226d2e34d192f1b04757d56", null ],
+    [ "m_reencryptPending", "class_real_pass.html#a04781cd3743d356fc5a7b4bd3a3802b4", null ],
+    [ "m_reencryptScopes", "class_real_pass.html#ab7083af5f4d95bc272544b55f2414b24", null ]
 ];

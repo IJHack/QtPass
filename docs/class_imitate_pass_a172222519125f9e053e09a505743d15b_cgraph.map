@@ -1,26 +1,40 @@
 <map id="ImitatePass::finishReencrypt" name="ImitatePass::finishReencrypt">
-<area shape="rect" id="Node000001" title="Report the outcome of a run and emit endReencryptPath()." alt="" coords="5,130,212,158"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="586,22,688,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,128,176,74,215,46,259,25,299,14,341,7,426,3,505,9,573,21,568,22,504,14,426,9,342,12,300,19,261,30,218,51,179,79,124,131"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7" title="A reencryptPath() run is over, whether it finished, failed, was cancelled or was refused; the main wi..." alt="" coords="265,39,488,67"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,127,193,101,259,76,287,70,283,72,261,81,195,106,140,132"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote. While a re&#45;encryption runs the push is held (Users ▸ OK and a copy ask for it as soon..." alt="" coords="299,159,454,187"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,153,286,162,281,164,212,158"/>
-<area shape="rect" id="Node000008" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="801,185,926,212"/>
-<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="139,155,195,178,260,196,331,206,404,213,549,217,681,212,788,207,783,207,681,218,549,222,404,218,331,211,259,201,194,183,139,161"/>
-<area shape="rect" id="Node000009" href="$class_imitate_pass.html#af0e30ba675e011cd63447466afc04bed" title="gitConfigured(), unless the current run is one reencryptWithoutGit() started." alt="" coords="267,261,486,288"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="128,156,186,197,261,240,297,256,292,256,259,245,183,202,127,161"/>
-<area shape="rect" id="Node000011" href="$class_imitate_pass.html#a3362c8cb99993b5c1acf9fdefb2bf960" title="Tell the user that the recipients of dir changed on disk but the change is not committed,..." alt="" coords="260,91,493,136"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="211,130,246,127,242,129,213,135"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="550,107,725,135"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="449,156,551,138,546,139,450,161"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="556,159,719,187"/>
-<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="454,171,542,173,537,174,455,176"/>
-<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="781,107,946,135"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="725,119,768,121,763,122,725,124"/>
-<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="825,106,818,98,823,89,839,83,864,81,890,83,906,92,901,92,889,88,863,86,840,88,827,93,824,98,830,108"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="719,180,788,190,783,190,719,185"/>
-<area shape="rect" id="Node000010" href="$class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87" title="Git is enabled and an executable is configured." alt="" coords="541,261,733,288"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="486,272,528,274,523,275,486,277"/>
-<area shape="poly" id="edge12_Node000011_Node000002" title=" " alt="" coords="454,88,576,54,571,56,455,93"/>
+<area shape="rect" id="Node000001" title="Report the outcome of a run and emit endReencryptPath()." alt="" coords="5,229,212,257"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1" title="Whether automatic pushes of the current store are held because its last re&#45;encryption did not finish ..." alt="" coords="302,5,450,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,228,133,190,164,140,206,88,231,64,258,44,289,31,285,34,261,48,235,68,210,91,169,143,138,193,119,230"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="586,199,688,226"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="211,235,572,214,569,219,212,240"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7" title="A reencryptPath() run is over, whether it finished, failed, was cancelled or was refused; the main wi..." alt="" coords="265,280,488,308"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="185,255,287,275,282,278,186,260"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote. While a re&#45;encryption runs the push is held (Users ▸ OK and a copy ask for it as soon..." alt="" coords="299,332,454,360"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="133,255,191,286,261,317,289,327,284,328,259,322,189,291,133,260"/>
+<area shape="rect" id="Node000011" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="801,357,926,385"/>
+<area shape="poly" id="edge22_Node000001_Node000011" title=" " alt="" coords="121,255,145,282,177,314,216,345,261,369,329,389,401,402,474,408,546,410,679,401,783,388,788,387,679,406,546,415,474,414,400,407,328,394,259,374,213,350,173,318,141,286,120,260"/>
+<area shape="rect" id="Node000012" href="$class_pass.html#a63823c10dde60d0694b377699169a5ca" title="Hold automatic pushes of the store that holds scope (autoPushHeld()): its re&#45;encryption did not finis..." alt="" coords="303,57,450,85"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="118,227,173,163,213,127,258,95,289,84,285,88,261,100,216,131,177,167,122,231"/>
+<area shape="rect" id="Node000013" href="$class_imitate_pass.html#af0e30ba675e011cd63447466afc04bed" title="gitConfigured(), unless the current run is one reencryptWithoutGit() started." alt="" coords="267,433,486,461"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="118,255,141,288,173,331,214,375,261,413,287,428,282,427,258,417,210,379,169,334,137,291,118,260"/>
+<area shape="rect" id="Node000015" href="$class_pass.html#a281b40eaf38860243a3ffaf73c2fd815" title="Release the holds a clean re&#45;encryption of folder covers: those for folder itself and everything unde..." alt="" coords="293,109,460,137"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="126,227,183,187,220,165,259,146,280,140,276,143,261,151,222,169,186,191,129,231"/>
+<area shape="rect" id="Node000016" href="$class_imitate_pass.html#a3362c8cb99993b5c1acf9fdefb2bf960" title="Tell the user that the recipients of dir changed on disk but the change is not committed,..." alt="" coords="260,161,493,206"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="173,226,261,208,257,211,175,231"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#ab7bebb6dc42ed85ccdf7de9e7cdd528c" title="The folders (cleaned absolute paths) whose re&#45;encryption did not finish, for every store and both bac..." alt="" coords="571,32,703,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,24,558,37,553,39,452,29"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a2651a5f937fe963d78263f8e93458210" title="path as an absolute, cleaned path, relative ones taken from the current store." alt="" coords="575,84,699,112"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="451,31,494,43,518,56,542,69,565,79,560,79,540,74,516,61,492,48,452,36"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="550,280,725,308"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="449,329,551,311,546,312,450,334"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="556,332,719,360"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="454,343,542,345,537,346,455,348"/>
+<area shape="rect" id="Node000009" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="781,280,946,308"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="725,291,768,294,763,294,725,296"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="825,279,818,271,823,261,839,255,864,253,890,256,906,265,901,264,889,261,863,259,840,261,827,265,824,271,830,280"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="719,352,788,362,783,363,719,358"/>
+<area shape="poly" id="edge13_Node000012_Node000003" title=" " alt="" coords="450,61,558,52,553,55,451,67"/>
+<area shape="poly" id="edge14_Node000012_Node000004" title=" " alt="" coords="450,76,562,89,557,91,451,81"/>
+<area shape="rect" id="Node000014" href="$class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87" title="Git is enabled and an executable is configured." alt="" coords="541,433,733,461"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="486,445,528,447,523,447,486,450"/>
+<area shape="poly" id="edge18_Node000015_Node000003" title=" " alt="" coords="450,106,492,94,516,82,540,70,565,63,561,66,542,75,518,87,494,99,453,111"/>
+<area shape="poly" id="edge19_Node000015_Node000004" title=" " alt="" coords="460,113,562,104,557,106,461,118"/>
+<area shape="poly" id="edge21_Node000016_Node000005" title=" " alt="" coords="493,194,573,204,568,206,494,199"/>
 </map>

@@ -43,5 +43,6 @@ var searchData=
   ['proxy_40',['proxy',['../class_store_tree.html#ae66c7d3a2c5f172035cdeb1808ce7593',1,'StoreTree']]],
   ['publishselection_41',['publishSelection',['../class_secret_line_edit.html#a5f82bf213b8d3162b9593ea02bed0646',1,'SecretLineEdit']]],
   ['pullbeforereencrypt_42',['pullBeforeReencrypt',['../class_imitate_pass.html#af8271fc09ec9d95b3c47f386087893e7',1,'ImitatePass']]],
-  ['pushrequested_43',['pushRequested',['../class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a',1,'QtPass']]]
+  ['pushisautomatic_43',['pushIsAutomatic',['../class_pass.html#a507057c5ae685ca61469c4dae27fd2e6',1,'Pass']]],
+  ['pushrequested_44',['pushRequested',['../class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a',1,'QtPass']]]
 ];
