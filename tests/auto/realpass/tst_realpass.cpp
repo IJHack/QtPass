@@ -1072,7 +1072,7 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
     QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
                              QFile::ExeOwner));
   }
-  const auto failIn = [&failList](const QStringList &folders) {
+  const auto failFolders = [&failList](const QStringList &folders) {
     QFile f(failList);
     return f.open(QIODevice::WriteOnly) &&
            f.write((folders.join('\n') + '\n').toUtf8()) > 0;
@@ -1098,16 +1098,16 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
         [&] { return done.count() + errorExit.count() > ends; }, 10000);
   };
   const auto release = qScopeGuard([&] {
-    QVERIFY(failIn({QStringLiteral("none")}));
+    QVERIFY(failFolders({QStringLiteral("none")}));
     init(store);
   });
 
-  QVERIFY(failIn({QStringLiteral("a"), QStringLiteral("ab")}));
+  QVERIFY(failFolders({QStringLiteral("a"), QStringLiteral("ab")}));
   QVERIFY(!pass.autoPushHeld());
   QVERIFY(init(QStringLiteral("a")));
   QVERIFY2(pass.autoPushHeld(), "a failed init holds the store");
   QVERIFY(init(QStringLiteral("ab")));
-  QVERIFY(failIn({QStringLiteral("none")}));
+  QVERIFY(failFolders({QStringLiteral("none")}));
   QVERIFY(init(QStringLiteral("c")));
   QVERIFY2(pass.autoPushHeld(), "a clean init elsewhere releases nothing");
   QVERIFY(init(QStringLiteral("ab")));
@@ -1133,18 +1133,18 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
     QVERIFY(!third.autoPushHeld());
   }
   // A clean init of a covers a, not its neighbour ab.
-  QVERIFY(failIn({QStringLiteral("ab")}));
+  QVERIFY(failFolders({QStringLiteral("ab")}));
   QVERIFY(init(QStringLiteral("ab")));
-  QVERIFY(failIn({QStringLiteral("none")}));
+  QVERIFY(failFolders({QStringLiteral("none")}));
   QVERIFY(init(QStringLiteral("a")));
   QVERIFY2(pass.autoPushHeld(), "folder ab is not under folder a");
   QVERIFY(init(QStringLiteral("ab")));
   QVERIFY2(!pass.autoPushHeld(), "every failed folder covered again");
   // A failure, then a clean init of the whole store.
-  QVERIFY(failIn({QStringLiteral("c")}));
+  QVERIFY(failFolders({QStringLiteral("c")}));
   QVERIFY(init(QStringLiteral("c")));
   QVERIFY(pass.autoPushHeld());
-  QVERIFY(failIn({QStringLiteral("none")}));
+  QVERIFY(failFolders({QStringLiteral("none")}));
   QVERIFY(init(store));
   QVERIFY2(!pass.autoPushHeld(), "the whole store covers every folder");
 #endif
