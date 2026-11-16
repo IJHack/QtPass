@@ -270,7 +270,7 @@ Private Slots</h2></td></tr>
 <tr class="memitem:a6ba35e7bf11ebd5236990a00daa079d7" id="r_a6ba35e7bf11ebd5236990a00daa079d7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6ba35e7bf11ebd5236990a00daa079d7">focusInput</a> ()</td></tr>
 <tr class="memdesc:a6ba35e7bf11ebd5236990a00daa079d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select-all and focus the search box once the window is visible; sets m_firstShowCompleted only on success so <a class="el" href="#a3febb9ef08a8e0f7fc00848ea540a899" title="First-show hook used to focus the search input once the window is actually mapped (avoids races with ...">showEvent()</a> retries. Looks the widget up by name because setWindowFlags() can rebuild it under <span class="tt">ui-&gt;lineEdit</span> (Qt 6.11).  <br /></td></tr>
 <tr class="memitem:a5389ebc0c173ffa3d38ead9b48a16cbb" id="r_a5389ebc0c173ffa3d38ead9b48a16cbb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5389ebc0c173ffa3d38ead9b48a16cbb">copyPasswordFromTreeview</a> ()</td></tr>
-<tr class="memdesc:a5389ebc0c173ffa3d38ead9b48a16cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctrl+C on the tree: decrypt the current entry and let <a class="el" href="#a7d0d5451438004ab31c4d9d48a869378" title="Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPas...">passwordFromFileToClipboard()</a> copy its first line. The newest request wins (m_copyRequestFile).  <br /></td></tr>
+<tr class="memdesc:a5389ebc0c173ffa3d38ead9b48a16cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctrl+C on the tree: decrypt the current entry and let <a class="el" href="#a7d0d5451438004ab31c4d9d48a869378" title="Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPas...">passwordFromFileToClipboard()</a> copy its first line. The newest request wins (m_copyRequestFile). Does nothing while content search results hide the tree.  <br /></td></tr>
 <tr class="memitem:afb8364ca4b73cb30260bd720b52f6f51" id="r_afb8364ca4b73cb30260bd720b52f6f51"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afb8364ca4b73cb30260bd720b52f6f51">copySelectionOrPassword</a> ()</td></tr>
 <tr class="memdesc:afb8364ca4b73cb30260bd720b52f6f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctrl+C anywhere in the window: the selected text when the focus is in a text view or a selectable label with a selection (the shown entry, its field values, the OTP code, the process output), otherwise the password (<a class="el" href="#a5389ebc0c173ffa3d38ead9b48a16cbb" title="Ctrl+C on the tree: decrypt the current entry and let passwordFromFileToClipboard() copy its first li...">copyPasswordFromTreeview()</a>).  <br /></td></tr>
 <tr class="memitem:a661b52ed29bc2ff2b16d973c8306fdca" id="r_a661b52ed29bc2ff2b16d973c8306fdca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a661b52ed29bc2ff2b16d973c8306fdca">onTimeoutSearch</a> ()</td></tr>
@@ -580,7 +580,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02081">2081</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02086">2086</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -1273,7 +1273,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Ctrl+C on the tree: decrypt the current entry and let <a class="el" href="#a7d0d5451438004ab31c4d9d48a869378" title="Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPas...">passwordFromFileToClipboard()</a> copy its first line. The newest request wins (m_copyRequestFile). </p>
+<p>Ctrl+C on the tree: decrypt the current entry and let <a class="el" href="#a7d0d5451438004ab31c4d9d48a869378" title="Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPas...">passwordFromFileToClipboard()</a> copy its first line. The newest request wins (m_copyRequestFile). Does nothing while content search results hide the tree. </p>
 
 <p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01926">1926</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
@@ -1369,7 +1369,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02161">2161</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02166">2166</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-42-summary" class="dynsummary">
 </div>
@@ -1574,7 +1574,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02156">2156</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02161">2161</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-50" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-50-summary" class="dynsummary">
 </div>
@@ -1609,7 +1609,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Finish a re-encryption pass on the current path. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02034">2034</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02039">2039</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-51-summary" class="dynsummary">
 </div>
@@ -1870,7 +1870,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Share menu "Export my public key": run <span class="tt">gpg --armor --export</span> for the configured signing key and show the result in <a class="el" href="class_export_public_key_dialog.html" title="Dialog showing an ASCII-armored public GPG key for sharing.">ExportPublicKeyDialog</a>; explains what to do when no key is set. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02044">2044</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02049">2049</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-62" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-62-summary" class="dynsummary">
 </div>
@@ -3130,7 +3130,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02166">2166</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02171">2171</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-111" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-111-summary" class="dynsummary">
 </div>
@@ -3538,7 +3538,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01940">1940</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01945">1945</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-128" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-128-summary" class="dynsummary">
 </div>
@@ -3585,7 +3585,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01965">1965</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01970">1970</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-130" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-130-summary" class="dynsummary">
 </div>
@@ -3637,7 +3637,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02023">2023</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02028">2028</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-132" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-132-summary" class="dynsummary">
 </div>
@@ -3679,7 +3679,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the folder was refused and the caller must stop. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02092">2092</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02097">2097</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-133" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-133-summary" class="dynsummary">
 </div>
@@ -4217,7 +4217,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Share menu "What is this?": the explanation of sharing with GPG. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02104">2104</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02109">2109</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-156" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-156-summary" class="dynsummary">
 </div>
@@ -4263,7 +4263,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01961">1961</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01966">1966</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-157" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-157-summary" class="dynsummary">
 </div>
@@ -4299,7 +4299,7 @@ Static Private Attributes</h2></td></tr>
 <p>Begin a re-encryption pass on the current path. </p>
 <p>Disables the UI, shows a cancellable progress dialog and keeps both in place until <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a>: while the worker runs, unrelated completions must not re-enable the interface (see setUiElementsEnabled). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01999">1999</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02004">2004</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-158" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-158-summary" class="dynsummary">
 </div>
@@ -4346,7 +4346,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02121">2121</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02126">2126</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-160" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-160-summary" class="dynsummary">
 </div>
@@ -4386,7 +4386,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Show the content-search buttons only when the setting is on; turning it off while in content-search mode leaves that mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02147">2147</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02152">2152</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-162" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-162-summary" class="dynsummary">
 </div>
@@ -4433,7 +4433,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02138">2138</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02143">2143</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-164" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-164-summary" class="dynsummary">
 </div>
@@ -4473,7 +4473,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Sync the Process Output dock and its menu toggle with the setting after the configuration dialog. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02175">2175</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02180">2180</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-166" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-166-summary" class="dynsummary">
 </div>
@@ -4593,7 +4593,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Single-shot timer that runs <a class="el" href="#abf59e43f7b3141fb5c25565c92e3abdb" title="Empty the display panel and the text browser, and leave content search if its results were showing....">clearPanel()</a> "Autoclear panel" seconds after an entry was shown. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00546">546</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00547">547</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4618,7 +4618,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Entry the in-flight Ctrl+C request asked for; empty when none. Each finishedShow is matched to it by file, so a second Ctrl+C on another entry just replaces the request instead of racing it. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00534">534</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00535">535</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4644,7 +4644,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Renders decrypted fields into the grid; created in <a class="el" href="#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for.">initDisplayPanel()</a>, parented to this window. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00504">504</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00505">505</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4670,7 +4670,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Set once <a class="el" href="#a6ba35e7bf11ebd5236990a00daa079d7" title="Select-all and focus the search box once the window is visible; sets m_firstShowCompleted only on suc...">focusInput()</a> has actually focused the search box, so later show events leave the focus alone. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00509">509</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00510">510</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4695,7 +4695,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>No usable configuration has been accepted yet: <a class="el" href="#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog.">config()</a> runs the first-run wizard and defaults to pass when it is installed. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00579">579</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00580">580</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4721,7 +4721,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Mode/busy/cancelled state of the content search. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00499">499</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00500">500</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4746,7 +4746,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Whether the constructor ended with a usable configuration; <a class="el" href="main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window.">main()</a> consults it via <a class="el" href="#ac4f5f3a524aa6bf13c16b348c48074b6" title="Return whether startup configuration succeeded.">initSucceeded()</a> to decide whether the application should start at all. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00576">576</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00577">577</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4771,7 +4771,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Entry the in-flight OTP request asked for; empty when none. finishedShow names its file, so <a class="el" href="#ab7a805923a61f2441932d8d358fb040e" title="Generate a one-time password from decrypted content and copy it. Ignores decrypts of anything but the...">otpFromFileToClipboard()</a> simply ignores everything else and <a class="el" href="#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,...">passShowHandler()</a> skips the password copy for this one. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00530">530</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00531">531</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4796,7 +4796,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The open <a class="el" href="#a2a80222ef73eb5c6d9350db559787488" title="Searches for text as qtpass(1) promises for the command line and for text handed over by another qtpa...">applySearchText()</a> waits to make until the tree has loaded the entry; QPointer so an ended or cancelled wait reads back as null. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00560">560</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00561">561</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4821,7 +4821,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The process output console, a QDockWidget at the bottom dock area created in <a class="el" href="#adf84569020b01d026bd88ff43d07e16d">initProcessOutput()</a>. It isn't part of the .ui because uic places its QMainWindow children in centralWidget / statusBar / menuBar / toolBars / dock-widget slots only — a sibling widget at the QMainWindow level isn't laid out and ends up obscuring the centralWidget. See #1192 for the symptom. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00541">541</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00542">542</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4847,7 +4847,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>The UI-neutral glue to the backends (output, status, clipboard, QR codes); created in the constructor, deleted in the destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00495">495</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00496">496</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4872,7 +4872,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Progress/cancel dialog shown between <a class="el" href="#a02ec9927bda826675653c0af916c8f33" title="Begin a re-encryption pass on the current path.">startReencryptPath()</a> and <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a>; QPointer so a closed dialog reads back as null. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00557">557</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00558">558</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4897,7 +4897,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>True between <a class="el" href="#a02ec9927bda826675653c0af916c8f33" title="Begin a re-encryption pass on the current path.">startReencryptPath()</a> and <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a>. While set, setUiElementsEnabled(true) is ignored so the git completions queued by Init/Move/Copy (or the UI watchdog) cannot re-enable the interface while the re-encryption worker is still rewriting files. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00565">565</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00566">566</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4922,7 +4922,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Entry a save's refresh will show once the push queued with it is done; empty when none waits. Started behind the push, the refresh would empty the browser before a failed push's error was painted. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00523">523</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00524">524</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4947,7 +4947,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The backend whose push m_refreshAfterPush waits for: only its pushes end the wait, and the refresh runs on it. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00526">526</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00527">527</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4972,7 +4972,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Entry the display panel is currently rendering. The tree's currentIndex can move without a repaint (arrow keys and right-click do not emit QTreeView::clicked), so <a class="el" href="#a974b178baf718f5f5fe81d391aa666d7" title="Toolbar &quot;OTP&quot;: copy the current entry&#39;s one-time code. Uses the code the panel already shows for this...">onOtp()</a> must not assume the visible code belongs to the selected entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00519">519</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00520">520</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4997,7 +4997,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Whether the application palette changed in this window's lifetime. A header palette a style stamps on the bars is only suspect after that: at startup the style's colours are fresh, however far from the window colour a scheme puts its header. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00514">514</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00515">515</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5022,7 +5022,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The system tray icon; null until <a class="el" href="#aac6a34d508898a862807dc2512e6b659" title="Create m_tray and add the menu bar toggle to its menu; gives up (m_tray stays null) when no system tr...">initTrayIcon()</a> creates it when the setting is on, deleted again by <a class="el" href="#ae6cd4b4efa51da309090b9c394ae5a57" title="Delete m_tray and reset it to null.">destroyTrayIcon()</a> when it is turned off or no tray is available. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00572">572</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00573">573</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5048,7 +5048,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>The store as shown in the tree: models, view setup, path mapping. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00543">543</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00544">544</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5073,7 +5073,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>What <a class="el" href="#ac240119ea67a770e5d997a5aa0fe47a3" title="Enable or disable the main UI elements.">setUiElementsEnabled()</a> last set: <a class="el" href="#a91bfea12c6549f4eb243b4d41a1e3895" title="Fill the profile box from the settings, the active profile selected, without switching profiles while...">updateProfileBox()</a> keeps the profile box disabled while an operation runs. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00568">568</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00569">569</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5098,7 +5098,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Re-enables the UI if a backend operation disables it but never reports completion (see setUiElementsEnabled); armed whenever the UI is disabled, stopped when it is enabled again. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00552">552</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00553">553</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5123,7 +5123,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>searchTimer: single-shot 350 ms debounce between typing in the search box and <a class="el" href="#a661b52ed29bc2ff2b16d973c8306fdca" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,...">onTimeoutSearch()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00546">546</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00547">547</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5149,7 +5149,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>The widgets generated from mainwindow.ui. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00497">497</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00498">498</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5175,7 +5175,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Interval of m_uiWatchdog in milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00554">554</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00555">555</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
