@@ -780,8 +780,7 @@ void MainWindow::clearPanel(bool notify) {
   const bool grepWasVisible = ui->grepResultsList->isVisible();
   ui->grepResultsList->clear();
   if (grepWasVisible) {
-    ui->grepResultsList->setVisible(false);
-    ui->treeView->setVisible(true);
+    showContentResults(false);
     if (m_grep.inGrepMode()) {
       // Left as the button leaves it: a search still running would otherwise
       // hand its partial matches to a content search entered meanwhile.
@@ -829,8 +828,8 @@ void MainWindow::setUiElementsEnabled(bool state) {
   m_uiEnabled = state;
   updateProfileBoxEnabled();
   const bool uiEnabled = state;
-  // is a file selected?
-  state &= ui->treeView->currentIndex().isValid();
+  // is a file selected, and in sight (content search results hide the tree)?
+  state &= ui->treeView->currentIndex().isValid() && !ui->treeView->isHidden();
   ui->actionDelete->setEnabled(state);
   ui->actionEdit->setEnabled(state);
   updateGitButtonVisibility(uiEnabled);
@@ -949,8 +948,7 @@ void MainWindow::on_lineEdit_returnPressed() {
         QApplication::restoreOverrideCursor();
       }
       ui->grepResultsList->clear();
-      ui->grepResultsList->setVisible(false);
-      ui->treeView->setVisible(true);
+      showContentResults(false);
     }
     return;
   }
@@ -993,8 +991,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->lineEdit->setPlaceholderText(tr("Search password"));
     ui->lineEdit->setToolTip(QString());
     ui->grepResultsList->clear();
-    ui->grepResultsList->setVisible(false);
-    ui->treeView->setVisible(true);
+    showContentResults(false);
     m_tree->setFilter(QRegularExpression());
   }
 }
@@ -1024,8 +1021,7 @@ void MainWindow::onGrepFinished(
   ui->grepResultsList->clear();
   if (results.isEmpty()) {
     ui->statusBar->showMessage(tr("No matches found."), 3000);
-    ui->grepResultsList->setVisible(false);
-    ui->treeView->setVisible(true);
+    showContentResults(false);
     return;
   }
   const AppSettings s = QtPassSettings::load();
@@ -1057,8 +1053,7 @@ void MainWindow::onGrepFinished(
     }
   }
   ui->grepResultsList->expandAll();
-  ui->treeView->setVisible(false);
-  ui->grepResultsList->setVisible(true);
+  showContentResults(true);
   if (stopped) {
     // The search stopped there; more entries may match.
     ui->statusBar->showMessage(
@@ -1091,10 +1086,25 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
   on_treeView_clicked(proxyIndex);
   if (s.hideContent || s.useAutoclearPanel)
     ui->grepResultsList->clear();
-  ui->grepResultsList->setVisible(false);
-  ui->treeView->setVisible(true);
+  showContentResults(false);
   ui->treeView->scrollTo(proxyIndex);
   ui->treeView->setFocus();
+}
+
+void MainWindow::showContentResults(bool shown) {
+  ui->grepResultsList->setVisible(shown);
+  ui->treeView->setVisible(!shown);
+  if (shown) {
+    // The tree's current entry is out of sight: Delete, Edit and OTP would
+    // act on it, not on a result. Opening a result shows the tree again.
+    ui->actionDelete->setEnabled(false);
+    ui->actionEdit->setEnabled(false);
+    updateOtpButtonVisibility(false);
+  } else if (ui->treeView->selectionModel()->hasSelection()) {
+    // Only for an entry still selected: deselect() clears the selection but
+    // keeps the current index, which would turn Edit and Delete back on.
+    setUiElementsEnabled(m_uiEnabled);
+  }
 }
 
 void MainWindow::cancelContentSearch() {
@@ -1355,7 +1365,9 @@ auto MainWindow::confirmLinkRemoval(const QString &file) -> bool {
 
 void MainWindow::onDelete() {
   const QModelIndex currentIndex = ui->treeView->currentIndex();
-  if (!currentIndex.isValid()) {
+  // While content search results hide the tree, its current entry is not
+  // what the user looks at (the Delete key comes here directly).
+  if (!currentIndex.isValid() || ui->treeView->isHidden()) {
     // Otherwise the whole password directory would be deleted (#556).
     return;
   }
@@ -1399,6 +1411,9 @@ void MainWindow::onOperationError() {
 // Derives the code in-process from one decrypt, so it works with either
 // backend on every platform; otpFromFileToClipboard() finishes the job.
 void MainWindow::onOtp() {
+  if (ui->treeView->isHidden()) {
+    return;
+  }
   QString file = getFile(ui->treeView->currentIndex(), true);
   if (file.isEmpty()) {
     flashText(tr("No password selected for OTP generation"), true);
@@ -1433,6 +1448,9 @@ void MainWindow::onOtp() {
 }
 
 void MainWindow::onEdit() {
+  if (ui->treeView->isHidden()) {
+    return;
+  }
   QString file = getFile(ui->treeView->currentIndex(), true);
   editPassword(file);
 }
@@ -1592,7 +1610,13 @@ auto MainWindow::eventFilter(QObject *obj, QEvent *event) -> bool {
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
     auto *key = dynamic_cast<QKeyEvent *>(event);
     if (key != nullptr && key->key() == Qt::Key_Down) {
-      ui->treeView->setFocus();
+      // Into whichever list is in sight: the tree, or content search results.
+      // Focus makes the list's first item current.
+      if (ui->treeView->isHidden()) {
+        ui->grepResultsList->setFocus();
+      } else {
+        ui->treeView->setFocus();
+      }
     }
     // Return ends at the search box: QLineEdit emits returnPressed() and
     // leaves the key unaccepted, so keyPressEvent() would open the tree's
