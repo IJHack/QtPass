@@ -1,9 +1,12 @@
 <map id="otpConfigOf" name="otpConfigOf">
-<area shape="rect" id="Node000001" title="The OTP configuration an OTP line holds: the line itself for a bare otpauth:// line,..." alt="" coords="5,29,104,57"/>
-<area shape="poly" id="edge4_Node000001_Node000001" title=" " alt="" coords="30,29,27,20,30,11,39,5,55,3,71,5,81,13,75,14,69,10,54,8,41,10,34,14,32,20,36,29"/>
-<area shape="rect" id="Node000002" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="152,29,226,57"/>
+<area shape="rect" id="Node000001" title="The OTP configuration an OTP line holds: the URI for a bare otpauth:// line (bareOtpUriOf()),..." alt="" coords="5,29,104,57"/>
+<area shape="poly" id="edge6_Node000001_Node000001" title=" " alt="" coords="28,29,24,20,27,11,38,5,55,3,72,5,83,13,78,14,70,10,54,8,39,10,31,14,29,20,33,29"/>
+<area shape="rect" id="Node000002" href="$filecontent_8cpp.html#a5bdca692129830dd78bdf3b23c6a6909" title="The otpauth URI a line is written as: a bare otpauth:// line, or the split otpauth: //...." alt="" coords="152,29,259,57"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,41,139,43,133,43,104,46"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="165,28,161,20,164,11,174,5,189,3,205,5,215,14,210,13,203,10,189,8,175,10,168,14,166,20,170,30"/>
-<area shape="rect" id="Node000003" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="274,29,466,57"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="226,41,261,43,256,43,226,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="181,28,177,20,180,11,190,5,205,3,222,5,232,14,227,13,220,10,205,8,191,10,184,14,182,20,185,30"/>
+<area shape="rect" id="Node000003" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="307,29,381,57"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="259,41,294,43,288,43,259,46"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="319,27,315,20,319,11,328,5,344,3,361,5,371,14,366,13,359,10,344,8,330,10,323,14,321,20,324,30"/>
+<area shape="rect" id="Node000004" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="429,29,622,57"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="382,41,416,43,411,43,382,46"/>
 </map>

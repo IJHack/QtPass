@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-16 17:31:03</td>
+            <td class="headerValue">2026-11-16 17:50:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -184,91 +184,91 @@
 <span id="L111"><span class="lineNum">     111</span>              :  * @param fallback Returned when @p value is absent, non-numeric or zero.</span>
 <span id="L112"><span class="lineNum">     112</span>              :  * @return The parsed value, or @p fallback.</span>
 <span id="L113"><span class="lineNum">     113</span>              :  */</span>
-<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">         704 : auto parsePositiveUInt(const QString &amp;value, uint fallback) -&gt; uint {</span></span>
-<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">         704 :   bool ok = false;</span></span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">         730 : auto parsePositiveUInt(const QString &amp;value, uint fallback) -&gt; uint {</span></span>
+<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">         730 :   bool ok = false;</span></span>
 <span id="L116"><span class="lineNum">     116</span>              :   const uint parsed = value.toUInt(&amp;ok);</span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         704 :   return (ok &amp;&amp; parsed &gt; 0) ? parsed : fallback;</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         730 :   return (ok &amp;&amp; parsed &gt; 0) ? parsed : fallback;</span></span>
 <span id="L118"><span class="lineNum">     118</span>              : }</span>
 <span id="L119"><span class="lineNum">     119</span>              : </span>
 <span id="L120"><span class="lineNum">     120</span>              : } // namespace</span>
 <span id="L121"><span class="lineNum">     121</span>              : </span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         752 : auto Totp::parse(const QString &amp;config) -&gt; std::optional&lt;Settings&gt; {</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         765 : auto Totp::parse(const QString &amp;config) -&gt; std::optional&lt;Settings&gt; {</span></span>
 <span id="L123"><span class="lineNum">     123</span>              :   // Checked before anything else sees it (trimmed() copies it, QUrl and</span>
 <span id="L124"><span class="lineNum">     124</span>              :   // QUrlQuery would make a crafted URI of tens of MiB tens of millions of</span>
 <span id="L125"><span class="lineNum">     125</span>              :   // query items on the GUI thread); padding counts too.</span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">         752 :   if (config.size() &gt; MAX_CONFIG_LENGTH) {</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">         765 :   if (config.size() &gt; MAX_CONFIG_LENGTH) {</span></span>
 <span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">           4 :     return std::nullopt;</span></span>
 <span id="L128"><span class="lineNum">     128</span>              :   }</span>
 <span id="L129"><span class="lineNum">     129</span>              :   const QString trimmed = config.trimmed();</span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         748 :   if (trimmed.isEmpty()) {</span></span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         761 :   if (trimmed.isEmpty()) {</span></span>
 <span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">           7 :     return std::nullopt;</span></span>
 <span id="L132"><span class="lineNum">     132</span>              :   }</span>
 <span id="L133"><span class="lineNum">     133</span>              : </span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">         741 :   Settings settings;</span></span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         741 :   QString rawSecret;</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">         754 :   Settings settings;</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         754 :   QString rawSecret;</span></span>
 <span id="L136"><span class="lineNum">     136</span>              : </span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">         741 :   const QUrl url(trimmed);</span></span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">        2211 :   if (url.isValid() &amp;&amp; url.scheme().compare(QStringLiteral(&quot;otpauth&quot;),</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">         754 :   const QUrl url(trimmed);</span></span>
+<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">        2250 :   if (url.isValid() &amp;&amp; url.scheme().compare(QStringLiteral(&quot;otpauth&quot;),</span></span>
 <span id="L139"><span class="lineNum">     139</span>              :                                             Qt::CaseInsensitive) == 0) {</span>
 <span id="L140"><span class="lineNum">     140</span>              :     // Counter-based HOTP cannot be generated from a clock; refuse rather than</span>
 <span id="L141"><span class="lineNum">     141</span>              :     // return a wrong code that looks right.</span>
-<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">         800 :     if (url.host().compare(QStringLiteral(&quot;totp&quot;), Qt::CaseInsensitive) != 0) {</span></span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">         826 :     if (url.host().compare(QStringLiteral(&quot;totp&quot;), Qt::CaseInsensitive) != 0) {</span></span>
 <span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          98 :       return std::nullopt;</span></span>
 <span id="L144"><span class="lineNum">     144</span>              :     }</span>
 <span id="L145"><span class="lineNum">     145</span>              : </span>
-<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">         352 :     const QUrlQuery query(url);</span></span>
+<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">         365 :     const QUrlQuery query(url);</span></span>
 <span id="L147"><span class="lineNum">     147</span>              :     // FullyDecoded, because toUri() percent-encodes these again: the default</span>
 <span id="L148"><span class="lineNum">     148</span>              :     // PrettyDecoded leaves escapes in place and the round trip double-encodes.</span>
 <span id="L149"><span class="lineNum">     149</span>              :     const QList&lt;QPair&lt;QString, QString&gt;&gt; items =</span>
-<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">         352 :         query.queryItems(QUrl::FullyDecoded);</span></span>
+<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">         365 :         query.queryItems(QUrl::FullyDecoded);</span></span>
 <span id="L151"><span class="lineNum">     151</span>              :     // Parameter names are matched without regard to case, as the list of</span>
 <span id="L152"><span class="lineNum">     152</span>              :     // names kept below is: read exactly, `Digits=8` was neither read nor</span>
 <span id="L153"><span class="lineNum">     153</span>              :     // kept, and toUri() wrote the defaults in its place. The first of a name</span>
 <span id="L154"><span class="lineNum">     154</span>              :     // wins, as QUrlQuery::queryItemValue() has it.</span>
 <span id="L155"><span class="lineNum">     155</span>              :     const auto param =</span>
-<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">        2062 :         [&amp;items](QLatin1StringView name) -&gt; std::optional&lt;QString&gt; {</span></span>
-<span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">        5173 :       for (const QPair&lt;QString, QString&gt; &amp;item : items) {</span></span>
-<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">        3890 :         if (item.first.compare(name, Qt::CaseInsensitive) == 0) {</span></span>
+<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">        2140 :         [&amp;items](QLatin1StringView name) -&gt; std::optional&lt;QString&gt; {</span></span>
+<span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">        5406 :       for (const QPair&lt;QString, QString&gt; &amp;item : items) {</span></span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">        4088 :         if (item.first.compare(name, Qt::CaseInsensitive) == 0) {</span></span>
 <span id="L159"><span class="lineNum">     159</span>              :           return item.second;</span>
 <span id="L160"><span class="lineNum">     160</span>              :         }</span>
 <span id="L161"><span class="lineNum">     161</span>              :       }</span>
-<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">        1283 :       return std::nullopt;</span></span>
-<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">         352 :     };</span></span>
-<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">         704 :     rawSecret = param(QLatin1StringView(&quot;secret&quot;)).value_or(QString());</span></span>
-<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">         704 :     settings.issuer = param(QLatin1StringView(&quot;issuer&quot;)).value_or(QString());</span></span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">        1318 :       return std::nullopt;</span></span>
+<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">         365 :     };</span></span>
+<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">         730 :     rawSecret = param(QLatin1StringView(&quot;secret&quot;)).value_or(QString());</span></span>
+<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">         730 :     settings.issuer = param(QLatin1StringView(&quot;issuer&quot;)).value_or(QString());</span></span>
 <span id="L166"><span class="lineNum">     166</span>              :     // Not part of the OTP configuration, but the user's text: kept as written,</span>
 <span id="L167"><span class="lineNum">     167</span>              :     // from the input itself (QUrl splits at the first '#' as well, but its</span>
 <span id="L168"><span class="lineNum">     168</span>              :     // view would re-encode '%' and '`' and decode escapes).</span>
-<span id="L169"><span class="lineNum">     169</span> <span class="tlaGNC">         352 :     if (url.hasFragment()) {</span></span>
+<span id="L169"><span class="lineNum">     169</span> <span class="tlaGNC">         365 :     if (url.hasFragment()) {</span></span>
 <span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          34 :       settings.fragment = trimmed.mid(trimmed.indexOf(QLatin1Char('#')) + 1);</span></span>
 <span id="L171"><span class="lineNum">     171</span>              :     }</span>
 <span id="L172"><span class="lineNum">     172</span>              :     // The label is everything after the host, e.g. &quot;/Example:alice&quot;.</span>
-<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">         352 :     settings.label = url.path();</span></span>
-<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">         352 :     if (settings.label.startsWith(QLatin1Char('/'))) {</span></span>
-<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">         349 :       settings.label.remove(0, 1);</span></span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">         365 :     settings.label = url.path();</span></span>
+<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">         365 :     if (settings.label.startsWith(QLatin1Char('/'))) {</span></span>
+<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">         362 :       settings.label.remove(0, 1);</span></span>
 <span id="L176"><span class="lineNum">     176</span>              :     }</span>
 <span id="L177"><span class="lineNum">     177</span>              :     // toUInt() returns 0 with no error signal for anything non-numeric, and the</span>
 <span id="L178"><span class="lineNum">     178</span>              :     // clamp below would turn that into digits=1 / step=1 — a one-character code</span>
 <span id="L179"><span class="lineNum">     179</span>              :     // rotating every second, which normalize() would then persist. Keep the RFC</span>
 <span id="L180"><span class="lineNum">     180</span>              :     // default unless the value really is a usable number.</span>
-<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">         352 :     settings.digits = parsePositiveUInt(</span></span>
-<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">         704 :         param(QLatin1StringView(&quot;digits&quot;)).value_or(QString()), DEFAULT_DIGITS);</span></span>
-<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">         352 :     settings.step = parsePositiveUInt(</span></span>
-<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">         704 :         param(QLatin1StringView(&quot;period&quot;)).value_or(QString()), DEFAULT_STEP);</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">         365 :     settings.digits = parsePositiveUInt(</span></span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">         730 :         param(QLatin1StringView(&quot;digits&quot;)).value_or(QString()), DEFAULT_DIGITS);</span></span>
+<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">         365 :     settings.step = parsePositiveUInt(</span></span>
+<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">         730 :         param(QLatin1StringView(&quot;period&quot;)).value_or(QString()), DEFAULT_STEP);</span></span>
 <span id="L185"><span class="lineNum">     185</span>              :     // An empty value is the default, as an absent one is. An unknown hash</span>
 <span id="L186"><span class="lineNum">     186</span>              :     // function is refused, as HOTP is: its code cannot be made here.</span>
-<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">         352 :     if (const std::optional&lt;QString&gt; algorithm =</span></span>
-<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">         352 :             param(QLatin1StringView(&quot;algorithm&quot;));</span></span>
-<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">         568 :         algorithm.has_value() &amp;&amp; !algorithm-&gt;trimmed().isEmpty()) {</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">         365 :     if (const std::optional&lt;QString&gt; algorithm =</span></span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">         365 :             param(QLatin1StringView(&quot;algorithm&quot;));</span></span>
+<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">         581 :         algorithm.has_value() &amp;&amp; !algorithm-&gt;trimmed().isEmpty()) {</span></span>
 <span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">         102 :       const std::optional&lt;Algorithm&gt; known = algorithmByName(*algorithm);</span></span>
 <span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         102 :       if (!known.has_value()) {</span></span>
 <span id="L192"><span class="lineNum">     192</span> <span class="tlaGNC">          50 :         return std::nullopt;</span></span>
 <span id="L193"><span class="lineNum">     193</span>              :       }</span>
 <span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">          52 :       settings.algorithm = *known;</span></span>
 <span id="L195"><span class="lineNum">     195</span>              :     }</span>
-<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">         302 :     if (param(QLatin1StringView(&quot;encoder&quot;))</span></span>
-<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">         604 :             .value_or(QString())</span></span>
-<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">         604 :             .compare(QStringLiteral(&quot;steam&quot;), Qt::CaseInsensitive) == 0) {</span></span>
+<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">         315 :     if (param(QLatin1StringView(&quot;encoder&quot;))</span></span>
+<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">         630 :             .value_or(QString())</span></span>
+<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">         630 :             .compare(QStringLiteral(&quot;steam&quot;), Qt::CaseInsensitive) == 0) {</span></span>
 <span id="L199"><span class="lineNum">     199</span> <span class="tlaGNC">           9 :       settings.encoder = Encoder::Steam;</span></span>
 <span id="L200"><span class="lineNum">     200</span>              :     }</span>
 <span id="L201"><span class="lineNum">     201</span>              :     // Anything we do not model is kept verbatim so toUri() can put it back;</span>
@@ -276,13 +276,13 @@
 <span id="L203"><span class="lineNum">     203</span>              :     static const QStringList known = {</span>
 <span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">           6 :         QStringLiteral(&quot;secret&quot;),    QStringLiteral(&quot;issuer&quot;),</span></span>
 <span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">           6 :         QStringLiteral(&quot;digits&quot;),    QStringLiteral(&quot;period&quot;),</span></span>
-<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         344 :         QStringLiteral(&quot;algorithm&quot;), QStringLiteral(&quot;encoder&quot;)};</span></span>
-<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">         978 :     for (const QPair&lt;QString, QString&gt; &amp;item : items) {</span></span>
-<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">         676 :       if (!known.contains(item.first, Qt::CaseInsensitive)) {</span></span>
+<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         357 :         QStringLiteral(&quot;algorithm&quot;), QStringLiteral(&quot;encoder&quot;)};</span></span>
+<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">        1034 :     for (const QPair&lt;QString, QString&gt; &amp;item : items) {</span></span>
+<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">         719 :       if (!known.contains(item.first, Qt::CaseInsensitive)) {</span></span>
 <span id="L209"><span class="lineNum">     209</span>              :         settings.extraParams.append(item);</span>
 <span id="L210"><span class="lineNum">     210</span>              :       }</span>
 <span id="L211"><span class="lineNum">     211</span>              :     }</span>
-<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">        1034 :   } else if (trimmed.startsWith(QStringLiteral(&quot;otpauth:&quot;),</span></span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">        1047 :   } else if (trimmed.startsWith(QStringLiteral(&quot;otpauth:&quot;),</span></span>
 <span id="L213"><span class="lineNum">     213</span>              :                                 Qt::CaseInsensitive)) {</span>
 <span id="L214"><span class="lineNum">     214</span>              :     // Claims to be an otpauth URI but QUrl could not parse it. Falling through</span>
 <span id="L215"><span class="lineNum">     215</span>              :     // to the bare-secret branch would hand the whole string to</span>
@@ -312,26 +312,26 @@
 <span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">         204 :     rawSecret = trimmed;</span></span>
 <span id="L240"><span class="lineNum">     240</span>              :   }</span>
 <span id="L241"><span class="lineNum">     241</span>              : </span>
-<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">         506 :   const QByteArray sanitized = Base32::sanitizeInput(rawSecret.toLatin1());</span></span>
-<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">        1012 :   settings.key = Base32::decode(sanitized);</span></span>
-<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">         506 :   if (settings.key.isEmpty()) {</span></span>
+<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">         519 :   const QByteArray sanitized = Base32::sanitizeInput(rawSecret.toLatin1());</span></span>
+<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">        1038 :   settings.key = Base32::decode(sanitized);</span></span>
+<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">         519 :   if (settings.key.isEmpty()) {</span></span>
 <span id="L245"><span class="lineNum">     245</span> <span class="tlaGNC">         114 :     return std::nullopt;</span></span>
 <span id="L246"><span class="lineNum">     246</span>              :   }</span>
 <span id="L247"><span class="lineNum">     247</span> <span class="tlaUNC">           0 :   settings.base32Key = QString::fromLatin1(sanitized);</span></span>
 <span id="L248"><span class="lineNum">     248</span>              : </span>
-<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">         392 :   if (settings.encoder == Encoder::Steam) {</span></span>
+<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">         405 :   if (settings.encoder == Encoder::Steam) {</span></span>
 <span id="L250"><span class="lineNum">     250</span> <span class="tlaGNC">           9 :     settings.digits = STEAM_DIGITS;</span></span>
 <span id="L251"><span class="lineNum">     251</span>              :   }</span>
 <span id="L252"><span class="lineNum">     252</span>              :   // Clamp on every path: an out-of-range `digits` would otherwise overflow the</span>
 <span id="L253"><span class="lineNum">     253</span>              :   // modulus, and a zero `step` would divide by zero.</span>
-<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">         392 :   settings.digits = qBound(MIN_DIGITS, settings.digits, MAX_DIGITS);</span></span>
-<span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">         392 :   settings.step = qBound(1U, settings.step, MAX_STEP);</span></span>
+<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">         405 :   settings.digits = qBound(MIN_DIGITS, settings.digits, MAX_DIGITS);</span></span>
+<span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">         405 :   settings.step = qBound(1U, settings.step, MAX_STEP);</span></span>
 <span id="L256"><span class="lineNum">     256</span>              : </span>
 <span id="L257"><span class="lineNum">     257</span>              :   return settings;</span>
-<span id="L258"><span class="lineNum">     258</span> <span class="tlaGNC">        1482 : }</span></span>
+<span id="L258"><span class="lineNum">     258</span> <span class="tlaGNC">        1508 : }</span></span>
 <span id="L259"><span class="lineNum">     259</span>              : </span>
-<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">         565 : auto Totp::isValid(const QString &amp;config) -&gt; bool {</span></span>
-<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">         565 :   return parse(config).has_value();</span></span>
+<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">         578 : auto Totp::isValid(const QString &amp;config) -&gt; bool {</span></span>
+<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">         578 :   return parse(config).has_value();</span></span>
 <span id="L262"><span class="lineNum">     262</span>              : }</span>
 <span id="L263"><span class="lineNum">     263</span>              : </span>
 <span id="L264"><span class="lineNum">     264</span> <span class="tlaGNC">          81 : auto Totp::counter(const Settings &amp;settings, quint64 unixTime) -&gt; quint64 {</span></span>

@@ -1,5 +1,5 @@
 <map id="otpConfigOf" name="otpConfigOf">
-<area shape="rect" id="Node000001" title="The OTP configuration an OTP line holds: the line itself for a bare otpauth:// line,..." alt="" coords="4126,120,4224,148"/>
+<area shape="rect" id="Node000001" title="The OTP configuration an OTP line holds: the URI for a bare otpauth:// line (bareOtpUriOf()),..." alt="" coords="4126,120,4224,148"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="4202,104,4193,101,4175,99,4158,101,4149,105,4146,111,4150,121,4146,118,4141,111,4145,102,4156,95,4175,93,4195,96,4207,105"/>
 <area shape="rect" id="Node000002" href="$class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="3938,120,4078,148"/>
 <area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="4107,134,4078,136,4078,131,4113,134"/>

@@ -47,13 +47,13 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="3172" data-view-height="395" data-section-id="dynsection-12">
+<svg id="graph" class="graph" data-view-width="3172" data-view-height="395" data-section-id="dynsection-14">
 <g id="viewport">
 <title>otpConfigOf</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="The OTP configuration an OTP line holds: the line itself for a bare otpauth:// line,...">
+<g id="a_Node000001"><a xlink:title="The OTP configuration an OTP line holds: the URI for a bare otpauth:// line (bareOtpUriOf()),...">
 <polygon fill="#999999" stroke="#666666" points="3164,-301.38 3090.25,-301.38 3090.25,-280.62 3164,-280.62 3164,-301.38"/>
 <text xml:space="preserve" text-anchor="middle" x="3127.12" y="-287.88" font-family="Helvetica,sans-Serif" font-size="10.00">otpConfigOf</text>
 </a>

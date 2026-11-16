@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"struct_rnp_crypto_1_1_key_info.html":[1,0,6,0],
 "struct_rnp_crypto_1_1_key_info.html#a2cef07cc019ce6b9097c31dd2d3b2c32":[1,0,6,0,10],
 "struct_rnp_crypto_1_1_key_info.html#a388d722ce4728061bbfb075667caba63":[1,0,6,0,4],
 "struct_rnp_crypto_1_1_key_info.html#a4385215e8fe04c72597970bd64b4c864":[1,0,6,0,1],
