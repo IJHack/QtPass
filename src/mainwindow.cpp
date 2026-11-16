@@ -648,6 +648,10 @@ void MainWindow::deselect() {
   cancelOtpRequest();
   m_qtPass->clipboard().clear();
   ui->treeView->clearSelection();
+  // The current index too: clearSelection() keeps it, and whatever asks for
+  // the "current" folder (Users, Add password, Add folder) took the hidden
+  // entry it was left on, such as the first hit of a search just emptied.
+  ui->treeView->setCurrentIndex(QModelIndex());
   ui->actionEdit->setEnabled(false);
   ui->actionDelete->setEnabled(false);
   ui->passwordName->setText("");
@@ -1106,8 +1110,8 @@ void MainWindow::showContentResults(bool shown) {
     ui->actionEdit->setEnabled(false);
     updateOtpButtonVisibility(false);
   } else if (ui->treeView->selectionModel()->hasSelection()) {
-    // Only for an entry still selected: deselect() clears the selection but
-    // keeps the current index, which would turn Edit and Delete back on.
+    // Only for an entry still selected: with nothing selected there is no
+    // entry for Edit and Delete to act on.
     setUiElementsEnabled(m_uiEnabled);
   }
 }

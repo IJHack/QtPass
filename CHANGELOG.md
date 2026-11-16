@@ -802,6 +802,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   saved that way elsewhere need a new name before Settings can be saved
   (see the
   [FAQ](FAQ.md#settings-wont-save-another-profile-already-has-this-name)).
+- Emptying the search box leaves no entry current in the tree. The search
+  made its first hit current and clearing it kept that, out of sight, so
+  Users, Add password and Add folder acted on the hit's folder instead of
+  the store: removing a colleague changed a subfolder's recipients and left
+  them on the store's own list (scan finding ANT-2026-O7OZF35D)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old
