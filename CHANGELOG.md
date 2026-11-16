@@ -10,6 +10,15 @@
   the store needs a signed `.gpg-id`, and WSL's own GnuPG needs that key
   imported, or `pass` refuses to save and re-encrypt. The password length
   and character set did not reach WSL either; they do now.
+- **Some OTP entries give no code instead of a wrong one.** An
+  `otpauth://` URI naming a hash function QtPass does not have
+  (`algorithm=SHA384`, `MD5`) is refused, where 1.8.4 and earlier gave the
+  SHA-1 code; that code was only right where the service really uses SHA-1
+  under the wrong label. A bare secret with characters a secret is not
+  written with (anything but letters, digits 0 to 8, spaces, `-`, `.`, `_`
+  and `=`) is refused too, also in an entry saved before. Such an entry
+  shows "Invalid OTP secret" in the edit dialog: correct the `algorithm`,
+  or write the secret without the extra characters.
 
 ### Security
 
