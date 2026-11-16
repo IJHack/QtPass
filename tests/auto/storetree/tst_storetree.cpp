@@ -27,6 +27,7 @@ private slots:
   void filterHidesNonMatchesAndSetStoreClearsIt();
   void switchingStoresMovesTheRoot();
   void searchNeverMatchesAnEarlierStore();
+  void aStoreReachedThroughALinkStillLists();
 
 private:
   auto makeEntry(const QString &relative) -> QString;
@@ -217,6 +218,30 @@ void tst_storetree::searchNeverMatchesAnEarlierStore() {
   tree.setFilter(QRegularExpression(QStringLiteral("work|top")));
   QVERIFY(tree.indexFor(other + QStringLiteral("/work.gpg")).isValid());
   QVERIFY(!tree.indexFor(m_store + QStringLiteral("/top.gpg")).isValid());
+}
+
+/**
+ * @brief A store configured through a link lists its entries, filtered or
+ *        not: the boundary check compares the model's paths with the store
+ *        as configured, so the model must spell them the same way, or every
+ *        entry would count as outside the store and the tree go empty.
+ */
+void tst_storetree::aStoreReachedThroughALinkStillLists() {
+#ifdef Q_OS_WIN
+  QSKIP("symbolic links need privileges on Windows");
+#else
+  const QString link = QDir(m_dir.path()).filePath(QStringLiteral("via-link"));
+  QVERIFY(QFile::link(m_store, link));
+  QTreeView view;
+  StoreTree tree(&view);
+  tree.setStore(link);
+  QVERIFY(waitFor(tree, link + QStringLiteral("/top.gpg")).isValid());
+  QVERIFY(waitFor(tree, link + QStringLiteral("/folder/inner.gpg")).isValid());
+  tree.setFilter(QRegularExpression(QStringLiteral("inner")));
+  QVERIFY2(tree.indexFor(link + QStringLiteral("/folder/inner.gpg")).isValid(),
+           "a match in a store reached through a link is listed");
+  QVERIFY(!tree.indexFor(link + QStringLiteral("/top.gpg")).isValid());
+#endif
 }
 
 QTEST_MAIN(tst_storetree)
