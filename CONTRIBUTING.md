@@ -62,7 +62,7 @@ Agents working on this repository should read [AGENTS.md](AGENTS.md) and the ski
 
 ## Translations
 
-QtPass uses [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/) for translations.
+QtPass uses [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/) for translations. The old Transifex project is no longer synced: translate on Weblate.
 
 To add a new language:
 
