@@ -687,58 +687,58 @@
         <translation>Αντίγραφο κατ &apos; απαίτηση στο Πρόχειρο</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="353"/>
-        <location filename="../src/configdialog.cpp" line="361"/>
+        <location filename="../src/configdialog.cpp" line="364"/>
+        <location filename="../src/configdialog.cpp" line="372"/>
         <source>This field is required</source>
         <translation>Αυτό το πεδίο απαιτείται</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="356"/>
+        <location filename="../src/configdialog.cpp" line="367"/>
         <source>A profile name cannot contain / or \</source>
         <translation type="unfinished">Ένα όνομα προφίλ δεν μπορεί να περιέχει / ή \</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="358"/>
+        <location filename="../src/configdialog.cpp" line="369"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Ένα άλλο προφίλ έχει ήδη αυτό το όνομα</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="367"/>
+        <location filename="../src/configdialog.cpp" line="378"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">Μόνο πλήρη αποτυπώματα κλειδιών (40 ή 64 δεκαεξαδικοί χαρακτήρες), χωρισμένα με κενά</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="514"/>
+        <location filename="../src/configdialog.cpp" line="525"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">Το %1 υπογράφει με το ίδιο κλειδί για άλλον χώρο αποθήκευσης. Μια λίστα παραληπτών υπογεγραμμένη για έναν από αυτούς τους χώρους αποθήκευσης γίνεται δεκτή και στον άλλο: χρησιμοποιήστε ξεχωριστό κλειδί υπογραφής για κάθε χώρο αποθήκευσης με διαφορετικούς παραλήπτες.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="542"/>
+        <location filename="../src/configdialog.cpp" line="553"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation type="unfinished">Το pass καταχωρίζει τις αλλαγές του %1 στο αποθετήριο Git στο %2: με άνω και κάτω τελεία στη διαδρομή του χώρου αποθήκευσης, το pass δεν μπορεί να περιορίσει το Git στον χώρο αποθήκευσης. Εκτελέστε &quot;git init&quot; στον χώρο αποθήκευσης ή χρησιμοποιήστε το εγγενές Git/GPG.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="576"/>
         <source>The path does not exist.</source>
         <translation>Η διαδρομή δεν υπάρχει.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="568"/>
+        <location filename="../src/configdialog.cpp" line="579"/>
         <source>The path is not readable.</source>
         <translation>Η διαδρομή δεν είναι αναγνώσιμη.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="571"/>
+        <location filename="../src/configdialog.cpp" line="582"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Η διαδρομή δεν είναι Unix domain socket.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="575"/>
+        <location filename="../src/configdialog.cpp" line="586"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Πιθανώς μη έγκυρη παράκαμψη SSH_AUTH_SOCK</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="576"/>
+        <location filename="../src/configdialog.cpp" line="587"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -751,37 +751,37 @@ The value will still be saved as entered.</source>
 Η τιμή θα αποθηκευτεί όπως εισήχθη.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="833"/>
+        <location filename="../src/configdialog.cpp" line="844"/>
         <source>Create profile directory?</source>
         <translation>Δημιουργία καταλόγου προφίλ;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="834"/>
+        <location filename="../src/configdialog.cpp" line="845"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Θέλετε να δημιουργήσετε ένα αποθετήριο κωδικών στο %1;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="841"/>
+        <location filename="../src/configdialog.cpp" line="852"/>
         <source>Could not create profile directory: %1</source>
         <translation>Αδυναμία δημιουργίας καταλόγου προφίλ: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="865"/>
+        <location filename="../src/configdialog.cpp" line="876"/>
         <source>Select recipients for %1</source>
         <translation>Επιλέξτε παραλήπτες για %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="874"/>
+        <location filename="../src/configdialog.cpp" line="885"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Αδυναμία αρχικοποίησης του προφίλ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="877"/>
+        <location filename="../src/configdialog.cpp" line="888"/>
         <source>Profile %1</source>
         <translation type="unfinished">Προφίλ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="900"/>
+        <location filename="../src/configdialog.cpp" line="911"/>
         <source>New profile</source>
         <translation>Νέο Προφίλ</translation>
     </message>
@@ -790,12 +790,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Νέο Προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="921"/>
+        <location filename="../src/configdialog.cpp" line="932"/>
         <source>No profile selected</source>
         <translation>Δεν έχει επιλεγεί προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="922"/>
+        <location filename="../src/configdialog.cpp" line="933"/>
         <source>No profile selected to delete</source>
         <translation>Δεν έχει επιλεγεί προφίλ για διαγραφή</translation>
     </message>
@@ -824,7 +824,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Θέλετε να δημιουργήσετε ένα χώρο αποθήκευσης κωδικών πρόσβασης στο %1;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="840"/>
+        <location filename="../src/configdialog.cpp" line="851"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
@@ -846,17 +846,17 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Ο φάκελος %1 δεν φαίνεται να είναι χώρος αποθήκευσης κωδικών πρόσβασης ή δεν έχει προετοιμαστεί ακόμα.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1141"/>
+        <location filename="../src/configdialog.cpp" line="1152"/>
         <source>New profile: %1 at %2</source>
         <translation>Νέο προφίλ: %1 στο %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1143"/>
+        <location filename="../src/configdialog.cpp" line="1154"/>
         <source>Profile: %1 at %2</source>
         <translation>Προφίλ: %1 στο %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1146"/>
+        <location filename="../src/configdialog.cpp" line="1157"/>
         <source>Fill in all required fields</source>
         <translation>Συμπληρώστε όλα τα απαιτούμενα πεδία</translation>
     </message>
@@ -1095,7 +1095,7 @@ e-mail</translation>
 <context>
     <name>FileContent</name>
     <message numerus="yes">
-        <location filename="../src/filecontent.cpp" line="196"/>
+        <location filename="../src/filecontent.cpp" line="257"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
             <numerusform>… %n ακόμη γραμμή δεν εμφανίζεται</numerusform>
@@ -1336,15 +1336,15 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="477"/>
-        <location filename="../src/imitatepass.cpp" line="665"/>
-        <location filename="../src/realpass.cpp" line="104"/>
+        <location filename="../src/imitatepass.cpp" line="474"/>
+        <location filename="../src/imitatepass.cpp" line="668"/>
+        <location filename="../src/realpass.cpp" line="131"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Η υπογραφή για %1 είναι άκυρη.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
-        <location filename="../src/imitatepass.cpp" line="944"/>
+        <location filename="../src/imitatepass.cpp" line="946"/>
         <source>Can not edit</source>
         <translation>Δεν είναι δυνατή η επεξεργασία</translation>
     </message>
@@ -1360,27 +1360,27 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
-        <location filename="../src/imitatepass.cpp" line="945"/>
+        <location filename="../src/imitatepass.cpp" line="947"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Δεν ήταν δυνατή η ανάγνωση του κλειδιού κρυπτογράφησης για τη χρήση του αρχείου .gpg-id που λείπει ή είναι άκυρο.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="962"/>
+        <location filename="../src/pass.cpp" line="1002"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">Δεν είναι δυνατός ο έλεγχος της λίστας παραληπτών</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="964"/>
+        <location filename="../src/pass.cpp" line="1004"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Δεν είναι δυνατό να διαπιστωθεί αν το %2 αφαιρέθηκε, οπότε δεν κρυπτογραφήθηκε τίποτα.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="971"/>
+        <location filename="../src/pass.cpp" line="1011"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Η λίστα παραληπτών λείπει</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="972"/>
+        <location filename="../src/pass.cpp" line="1012"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 λείπει ή δεν είναι κανονικό αρχείο. Το QtPass δεν καταφεύγει για αυτήν στη λίστα ενός γονικού φακέλου: εκείνη η λίστα δεν υπογράφηκε για αυτόν τον φάκελο. Αν υπάρχει σύνδεσμος με αυτό το όνομα, αφαιρέστε τον. Έπειτα ανοίξτε τους «Χρήστες» για εκείνον τον φάκελο και αποθηκεύστε τους παραλήπτες του, κάτι που γράφει και υπογράφει μια νέα λίστα.</translation>
     </message>
@@ -1395,58 +1395,58 @@ e-mail</translation>
         <translation type="unfinished">Αδυναμία δημιουργίας προσωρινού καταλόγου: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="346"/>
+        <location filename="../src/imitatepass.cpp" line="343"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
         <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση όλου του περιεχομένου του %1. Ό,τι μπορούσε να αφαιρεθεί έχει αφαιρεθεί· ελέγξτε τι έχει απομείνει σε αυτό.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="355"/>
+        <location filename="../src/imitatepass.cpp" line="352"/>
         <source>Could not remove %1: %2</source>
         <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση του %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="374"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation type="unfinished">Το %1 δεν βρίσκεται μέσα στον χώρο αποθήκευσης κωδικών πρόσβασης, ή ένα όνομα φακέλου στη διαδρομή περιέχει αλλαγή γραμμής ή άλλο χαρακτήρα ελέγχου, τον οποίο μια υπογεγραμμένη λίστα δεν μπορεί να καταγράψει.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="468"/>
+        <location filename="../src/imitatepass.cpp" line="465"/>
         <source>GPG signing failed!</source>
         <translation>Η υπογραφή GPG απέτυχε!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="470"/>
+        <location filename="../src/imitatepass.cpp" line="467"/>
         <source>Failed to sign %1.</source>
         <translation>Απέτυχε να υπογράψει το %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="610"/>
+        <location filename="../src/imitatepass.cpp" line="607"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Οι παραλήπτες δεν άλλαξαν</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="611"/>
+        <location filename="../src/imitatepass.cpp" line="608"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Μια επανακρυπτογράφηση εκτελείται ακόμα. Περιμένετε να ολοκληρωθεί και έπειτα αποθηκεύστε ξανά τους παραλήπτες.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="617"/>
+        <location filename="../src/imitatepass.cpp" line="614"/>
         <source>No signing key!</source>
         <translation>Κανένα κλειδί υπογραφής!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="618"/>
+        <location filename="../src/imitatepass.cpp" line="615"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Κανένα από τα μυστικά κλειδιά υπογραφής δεν είναι διαθέσιμο.
 Δεν θα μπορείτε να αλλάξετε τη λίστα χρήστη!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="376"/>
-        <location filename="../src/imitatepass.cpp" line="401"/>
-        <location filename="../src/imitatepass.cpp" line="407"/>
-        <location filename="../src/imitatepass.cpp" line="435"/>
-        <location filename="../src/imitatepass.cpp" line="569"/>
+        <location filename="../src/imitatepass.cpp" line="373"/>
+        <location filename="../src/imitatepass.cpp" line="398"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
+        <location filename="../src/imitatepass.cpp" line="432"/>
+        <location filename="../src/imitatepass.cpp" line="566"/>
         <source>Cannot update</source>
         <translation>Δεν είναι δυνατή η ενημέρωση</translation>
     </message>
@@ -1457,21 +1457,21 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="212"/>
-        <location filename="../src/imitatepass.cpp" line="476"/>
-        <location filename="../src/imitatepass.cpp" line="820"/>
-        <location filename="../src/realpass.cpp" line="108"/>
+        <location filename="../src/imitatepass.cpp" line="473"/>
+        <location filename="../src/imitatepass.cpp" line="823"/>
+        <location filename="../src/realpass.cpp" line="135"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Ελέγξτε την υπογραφή αρχείου .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="321"/>
-        <location filename="../src/imitatepass.cpp" line="345"/>
-        <location filename="../src/imitatepass.cpp" line="354"/>
+        <location filename="../src/imitatepass.cpp" line="318"/>
+        <location filename="../src/imitatepass.cpp" line="342"/>
+        <location filename="../src/imitatepass.cpp" line="351"/>
         <source>Delete failed</source>
         <translation type="unfinished">Η διαγραφή απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="322"/>
+        <location filename="../src/imitatepass.cpp" line="319"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση του συνδέσμου %1.</translation>
     </message>
@@ -1488,87 +1488,87 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">Αποτυχία εγγραφής του %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="446"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Η λίστα παραληπτών γράφτηκε, αλλά δεν καταγράφηκε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="450"/>
+        <location filename="../src/imitatepass.cpp" line="447"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Αποθηκεύστε τους παραλήπτες άλλη μία φορά για να το ξεπεράσετε.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="455"/>
+        <location filename="../src/imitatepass.cpp" line="452"/>
         <source>Check selected users!</source>
         <translation>Ελέγξτε τους επιλεγμένους χρήστες!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="456"/>
+        <location filename="../src/imitatepass.cpp" line="453"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Κανένα από τα επιλεγμένα κλειδιά δεν έχει διαθέσιμο μυστικό κλειδί.
 Δεν θα είναι σε θέση να αποκρυπτογραφήσει τυχόν πρόσφατα προστεθεί κωδικοί πρόσβασης!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="471"/>
+        <location filename="../src/imitatepass.cpp" line="468"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">Αποτυχία υπογραφής του %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="570"/>
+        <location filename="../src/imitatepass.cpp" line="567"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Αποτυχία αφαίρεσης της παλιάς υπογραφής %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="649"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Το Git τερματίστηκε με κωδικό %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="688"/>
+        <location filename="../src/imitatepass.cpp" line="691"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα παραληπτών (ένα κανονικό αρχείο με μέγιστο μέγεθος %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="702"/>
-        <location filename="../src/imitatepass.cpp" line="730"/>
-        <location filename="../src/imitatepass.cpp" line="738"/>
+        <location filename="../src/imitatepass.cpp" line="705"/>
+        <location filename="../src/imitatepass.cpp" line="733"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Υπόλειμμα από προηγούμενη επανακρυπτογράφηση</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="703"/>
+        <location filename="../src/imitatepass.cpp" line="706"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">Το %1 δεν είναι κανονικό αρχείο και δεν αποκαταστάθηκε. Ελέγξτε το και αφαιρέστε το, και έπειτα επανακρυπτογραφήστε ξανά.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="731"/>
+        <location filename="../src/imitatepass.cpp" line="734"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">Το %1 υπάρχει δίπλα στο %2. Και τα δύο είναι κρυπτογραφημένα αντίγραφα της καταχώρισης· ελέγξτε ποιο θέλετε και διαγράψτε το άλλο, και έπειτα επανακρυπτογραφήστε ξανά.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="745"/>
+        <location filename="../src/imitatepass.cpp" line="748"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">Το %1 αποκαταστάθηκε από το αντίγραφο ασφαλείας που άφησε πίσω μια διακοπείσα επανακρυπτογράφηση.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="739"/>
+        <location filename="../src/imitatepass.cpp" line="742"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">Το %1 λείπει και το αντίγραφο ασφαλείας του %2 δεν ήταν δυνατό να μετονομαστεί πίσω. Μετονομάστε το χειροκίνητα και έπειτα επανακρυπτογραφήστε ξανά.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="985"/>
+        <location filename="../src/imitatepass.cpp" line="987"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">Δεν ήταν δυνατή η επανακρυπτογράφηση του %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1049"/>
+        <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
         <translation type="unfinished">Το αποθετήριο Git του χώρου αποθήκευσης κωδικών πρόσβασης περιέχει αρχεία που δεν έχουν συγχωνευτεί. Επιλύστε τη σύγκρουση με το Git πριν από την επανακρυπτογράφηση.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1374"/>
-        <location filename="../src/realpass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="1377"/>
+        <location filename="../src/realpass.cpp" line="508"/>
         <source>Re-encryption failed</source>
         <translation>Η κρυπτογράφηση απέτυχε</translation>
     </message>
@@ -1585,86 +1585,86 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="obsolete">Δεν ήταν δυνατή η αφαίρεση του αντιγράφου ασφαλείας %1 μετά την επανακρυπτογράφηση· μπορείτε να το διαγράψετε με ασφάλεια.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1022"/>
+        <location filename="../src/imitatepass.cpp" line="1024"/>
         <source>Creating backup commit</source>
         <translation>Δημιουργία αντιγράφων ασφαλείας</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1036"/>
-        <location filename="../src/imitatepass.cpp" line="1060"/>
+        <location filename="../src/imitatepass.cpp" line="1038"/>
+        <location filename="../src/imitatepass.cpp" line="1062"/>
         <source>Backup commit failed</source>
         <translation>Backup δε δεσμευμένο</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1037"/>
+        <location filename="../src/imitatepass.cpp" line="1039"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Δεν θα μπορούσε να επιθεωρήσει την κατάσταση git. Η κρυπτογράφηση απορρίφθηκε.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1048"/>
-        <location filename="../src/imitatepass.cpp" line="1293"/>
+        <location filename="../src/imitatepass.cpp" line="1050"/>
+        <location filename="../src/imitatepass.cpp" line="1296"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Μη ολοκληρωμένη λειτουργία Git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
+        <location filename="../src/imitatepass.cpp" line="1063"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Η κρυπτογράφηση απορρίφθηκε επειδή δεν μπορούσε να δημιουργηθεί ένα αντίγραφο ασφαλείας.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1103"/>
+        <location filename="../src/imitatepass.cpp" line="1105"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Μια επανακρυπτογράφηση εκτελείται ήδη</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1110"/>
+        <location filename="../src/imitatepass.cpp" line="1112"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Δεν είναι φάκελος του χώρου αποθήκευσης</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1111"/>
+        <location filename="../src/imitatepass.cpp" line="1113"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">Το %1 είναι συμβολικός σύνδεσμος ή junction, ή βρίσκεται πίσω από έναν τέτοιο σύνδεσμο. Ο προορισμός του δεν αποτελεί μέρος του χώρου αποθήκευσης κωδικών πρόσβασης και δεν επανακρυπτογραφήθηκε.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1126"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Επανακρυπτογράφηση από το φάκελο %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1202"/>
-        <location filename="../src/imitatepass.cpp" line="1401"/>
+        <location filename="../src/imitatepass.cpp" line="1205"/>
+        <location filename="../src/imitatepass.cpp" line="1421"/>
         <source>Updating password-store</source>
         <translation type="unfinished">Ενημέρωση χώρου αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1215"/>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
+        <location filename="../src/imitatepass.cpp" line="1224"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Το Git pull απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1216"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Δεν ήταν δυνατός ο έλεγχος του χώρου αποθήκευσης για μη συγχωνευμένα αρχεία μετά το pull. Ελέγξτε τον με το git πριν από την επανακρυπτογράφηση.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1225"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Το pull άφησε τον χώρο αποθήκευσης με μη συγχωνευμένα αρχεία. Επιλύστε τη σύγκρουση πριν την επανακρυπτογράφηση.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1226"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Το Git pull απέτυχε, επανακρυπτογράφηση του χώρου αποθήκευσης ως έχει</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <location filename="../src/imitatepass.cpp" line="1246"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
         <translation type="unfinished">Δεν ήταν δυνατή η ανάγνωση του %1: οι καταχωρίσεις του δεν επανακρυπτογραφήθηκαν</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1247"/>
+        <location filename="../src/imitatepass.cpp" line="1250"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n καταχώριση παραλείφθηκε: οι συμβολικοί σύνδεσμοι, τα junction και τα ειδικά αρχεία δεν αποτελούν μέρος του χώρου αποθήκευσης.</numerusform>
@@ -1672,27 +1672,27 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1271"/>
         <source>GPG ID verification failed</source>
         <translation>Η επαλήθευση ταυτότητας GPG απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1269"/>
+        <location filename="../src/imitatepass.cpp" line="1272"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Δεν θα μπορούσε να επαληθεύσει το .gpg-id για τον κατάλογο.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1302"/>
+        <location filename="../src/imitatepass.cpp" line="1305"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Δεν αποτελεί μέρος του χώρου αποθήκευσης</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1303"/>
+        <location filename="../src/imitatepass.cpp" line="1306"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">Μετά το pull, το %1 είναι συμβολικός σύνδεσμος ή junction, ή βρίσκεται πίσω από έναν τέτοιο σύνδεσμο. Ο προορισμός του δεν αποτελεί μέρος του χώρου αποθήκευσης κωδικών πρόσβασης και παραμένει ανέπαφος.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1372"/>
+        <location filename="../src/imitatepass.cpp" line="1375"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... και %n ακόμη</numerusform>
@@ -1700,7 +1700,7 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1375"/>
+        <location filename="../src/imitatepass.cpp" line="1378"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n αρχείο δεν ήταν δυνατό να επανακρυπτογραφηθεί:</numerusform>
@@ -1708,18 +1708,23 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1381"/>
+        <location filename="../src/imitatepass.cpp" line="1396"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Η επανακρυπτογράφηση ακυρώθηκε: ελέγχθηκαν %1 από %2 αρχεία, %3 επανακρυπτογραφήθηκαν, %4 απέτυχαν</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1451"/>
-        <location filename="../src/imitatepass.cpp" line="1460"/>
+        <location filename="../src/imitatepass.cpp" line="1417"/>
+        <source>Not pushing: an earlier re-encryption in this store did not finish</source>
+        <translation type="unfinished">Δεν γίνεται push: μια προηγούμενη επανακρυπτογράφηση σε αυτόν τον χώρο αποθήκευσης δεν ολοκληρώθηκε</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1471"/>
+        <location filename="../src/imitatepass.cpp" line="1480"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Οι παραλήπτες δεν υποβλήθηκαν στο Git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1452"/>
+        <location filename="../src/imitatepass.cpp" line="1472"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1732,7 +1737,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Η αλλαγή δεν έχει ακόμα υποβληθεί ούτε προωθηθεί. Διορθώστε το πρόβλημα του Git και έπειτα υποβάλετε τις αλλαγές ή αποθηκεύστε ξανά τους παραλήπτες.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1461"/>
+        <location filename="../src/imitatepass.cpp" line="1481"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1745,22 +1750,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Η επανακρυπτογράφηση δεν ολοκληρώθηκε, οπότε ορισμένες ή όλες οι καταχωρίσεις είναι ακόμα κρυπτογραφημένες για τους προηγούμενους παραλήπτες, οι οποίοι μπορούν ακόμα να τις διαβάσουν. Τίποτα δεν υποβλήθηκε ούτε προωθήθηκε. Διορθώστε το πρόβλημα του Git και έπειτα αποθηκεύστε ξανά τους παραλήπτες.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1572"/>
+        <location filename="../src/imitatepass.cpp" line="1592"/>
         <source>Move failed</source>
         <translation type="unfinished">Η μετακίνηση απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1573"/>
+        <location filename="../src/imitatepass.cpp" line="1593"/>
         <source>Could not move %1 to %2.</source>
         <translation type="unfinished">Δεν ήταν δυνατή η μετακίνηση του %1 στο %2.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1662"/>
+        <location filename="../src/imitatepass.cpp" line="1682"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Δεν έχει ρυθμιστεί εκτελέσιμο Git, παράλειψη του git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1739"/>
+        <location filename="../src/imitatepass.cpp" line="1759"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">Το gpg δεν έγραψε κρυπτοκείμενο για το %1.</translation>
     </message>
@@ -1789,17 +1794,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">Αποτυχία επανακρυπτογράφησης του %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1390"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Η κρυπτογράφηση ολοκληρώθηκε: %1 πέτυχε, %2 απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1395"/>
+        <location filename="../src/imitatepass.cpp" line="1410"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Re-encryption ολοκληρώθηκε: %1 αρχεία επανα κρυπτογράφησης</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1406"/>
+        <location filename="../src/imitatepass.cpp" line="1426"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Δεν γίνεται push: %n αρχείο απέτυχε να επανακρυπτογραφηθεί</numerusform>
@@ -1807,14 +1812,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1581"/>
-        <location filename="../src/imitatepass.cpp" line="1628"/>
+        <location filename="../src/imitatepass.cpp" line="1601"/>
+        <location filename="../src/imitatepass.cpp" line="1648"/>
         <source>Copy failed</source>
         <translation type="unfinished">Η αντιγραφή απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1582"/>
-        <location filename="../src/imitatepass.cpp" line="1629"/>
+        <location filename="../src/imitatepass.cpp" line="1602"/>
+        <location filename="../src/imitatepass.cpp" line="1649"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Αδυναμία αντιγραφής του %1 στο %2.</translation>
     </message>
@@ -2133,8 +2138,8 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="791"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="996"/>
         <source>Search password</source>
         <translation>Αναζήτηση κωδικού πρόσβασης</translation>
     </message>
@@ -2329,7 +2334,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Add password</source>
         <translation>Προσθήκη κωδικού πρόσβασης</translation>
     </message>
@@ -2341,21 +2346,21 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <location filename="../src/mainwindow.cpp" line="1771"/>
         <source>Add folder</source>
         <translation>Προσθέστε φάκελο</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1721"/>
+        <location filename="../src/mainwindow.cpp" line="1779"/>
         <source>Edit</source>
         <translation>Επεξεργασία</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1733"/>
+        <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Delete</source>
         <translation>Διαγραφή</translation>
     </message>
@@ -2404,7 +2409,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Users</source>
         <translation>Χρήστες</translation>
     </message>
@@ -2433,12 +2438,13 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="595"/>
         <location filename="../src/mainwindow.cpp" line="605"/>
+        <location filename="../src/mainwindow.cpp" line="612"/>
         <source>Updating password-store</source>
         <translation type="unfinished">Ενημέρωση χώρου αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="705"/>
-        <location filename="../src/mainwindow.cpp" line="1045"/>
+        <location filename="../src/mainwindow.cpp" line="712"/>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
         <source>Content hidden</source>
         <translation>Το περιεχόμενο είναι κρυφό</translation>
     </message>
@@ -2451,15 +2457,15 @@ Expire-Date: 0
         <translation type="vanished">Κωδικός OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="746"/>
-        <location filename="../src/mainwindow.cpp" line="764"/>
-        <location filename="../src/mainwindow.cpp" line="1414"/>
+        <location filename="../src/mainwindow.cpp" line="753"/>
+        <location filename="../src/mainwindow.cpp" line="772"/>
+        <location filename="../src/mainwindow.cpp" line="1463"/>
         <source>OTP code copied to clipboard</source>
         <translation>Ο κωδικός OTP αντιγράφηκε στο πρόχειρο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="766"/>
-        <location filename="../src/mainwindow.cpp" line="1402"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <location filename="../src/mainwindow.cpp" line="1451"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Δεν βρέθηκε κωδικός OTP σε αυτή την καταχώρηση κωδικού πρόσβασης</translation>
     </message>
@@ -2468,22 +2474,22 @@ Expire-Date: 0
         <translation type="vanished">Απόκρυψη κωδικού πρόσβασης και περιεχομένου</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="882"/>
+        <location filename="../src/mainwindow.cpp" line="893"/>
         <source>Looking for: %1</source>
         <translation>Ψάχνετε για: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="934"/>
+        <location filename="../src/mainwindow.cpp" line="945"/>
         <source>Searching…</source>
         <translation>Αναζήτηση…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="977"/>
         <source>Search content (regex)</source>
         <translation>Αναζήτηση περιεχομένου (κανονική έκφραση)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1019"/>
+        <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>No matches found.</source>
         <translation>Δεν βρέθηκαν αντιστοιχίσεις.</translation>
     </message>
@@ -2500,22 +2506,22 @@ Expire-Date: 0
         <translation type="unfinished">Λήξη χρονικού ορίου· επανενεργοποίηση διεπαφής.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="742"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Αδυναμία αποκρυπτογράφησης αυτής της καταχώρησης κωδικού πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="795"/>
+        <location filename="../src/mainwindow.cpp" line="806"/>
         <source>Password and content hidden</source>
         <translation>Απόκρυψη κωδικού πρόσβασης και περιεχομένου</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="864"/>
+        <location filename="../src/mainwindow.cpp" line="875"/>
         <source>About QtPass</source>
         <translation type="unfinished">Περί QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="865"/>
+        <location filename="../src/mainwindow.cpp" line="876"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Ένα γραφικό περιβάλλον πολλαπλών πλατφορμών για το &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, τον καθιερωμένο διαχειριστή κωδικών πρόσβασης του Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Πηγαίος κώδικας και ζητήματα&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Διατίθεται υπό την &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL έκδοση 3&lt;/a&gt; ή νεότερη.&lt;/p&gt;</translation>
     </message>
@@ -2524,12 +2530,12 @@ Expire-Date: 0
         <translation type="obsolete">Η αναζήτηση περιεχομένου χρησιμοποιεί βασικές κανονικές εκφράσεις POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="971"/>
+        <location filename="../src/mainwindow.cpp" line="981"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Η αναζήτηση περιεχομένου χρησιμοποιεί κανονικές εκφράσεις συμβατές με Perl (PCRE).</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1063"/>
+        <location filename="../src/mainwindow.cpp" line="1070"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Βρέθηκε %n αντιστοιχία</numerusform>
@@ -2537,7 +2543,7 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1065"/>
+        <location filename="../src/mainwindow.cpp" line="1072"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>σε %n καταχώρηση.</numerusform>
@@ -2545,12 +2551,12 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1260"/>
+        <location filename="../src/mainwindow.cpp" line="1282"/>
         <source>Invalid name</source>
         <translation type="unfinished">Μη έγκυρο όνομα</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1261"/>
+        <location filename="../src/mainwindow.cpp" line="1283"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Αυτό το όνομα θα οδηγούσε έξω από τον χώρο αποθήκευσης κωδικών πρόσβασης. Επιλέξτε διαφορετικό όνομα.</translation>
     </message>
@@ -2569,12 +2575,12 @@ Expire-Date: 0
         <translation type="vanished"> και το σύνολο του περιεχομένου;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1343"/>
+        <location filename="../src/mainwindow.cpp" line="1387"/>
         <source>Delete link?</source>
         <translation type="unfinished">Διαγραφή συνδέσμου;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1344"/>
+        <location filename="../src/mainwindow.cpp" line="1388"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">Το %1 είναι συμβολικός σύνδεσμος ή junction. Να αφαιρεθεί ο σύνδεσμος; Ο προορισμός του παραμένει ανέπαφος.</translation>
     </message>
@@ -2583,12 +2589,12 @@ Expire-Date: 0
         <translation type="vanished"> και το σύνολο του περιεχομένου; &lt;br&gt; &lt;strong&gt; Προσοχή: υπάρχουν μη αναμενόμενα αρχεία στον συγκεκριμένο φάκελο, ελέγξτε τα πριν συνεχίσετε. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1336"/>
+        <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Delete folder?</source>
         <translation>Διαγραφή φακέλου;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1312"/>
+        <location filename="../src/mainwindow.cpp" line="1336"/>
         <source>Delete password?</source>
         <translation>Διαγραφή κωδικού πρόσβασης;</translation>
     </message>
@@ -2597,43 +2603,43 @@ Expire-Date: 0
         <translation type="vanished">Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1%2;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1397"/>
+        <location filename="../src/mainwindow.cpp" line="1446"/>
         <source>No password selected for OTP generation</source>
         <translation>Κανένας κωδικός πρόσβασης που έχει επιλεγεί για την παραγωγή OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1532"/>
+        <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Profile changed to %1</source>
         <translation>Το προφίλ άλλαξε σε %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1712"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>Open folder with file manager</source>
         <translation>Άνοιγμα φακέλου με τη διαχείριση αρχείων</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1727"/>
-        <location filename="../src/mainwindow.cpp" line="1825"/>
+        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1883"/>
         <source>Rename folder</source>
         <translation>Μετονομασία φακέλου</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1730"/>
+        <location filename="../src/mainwindow.cpp" line="1788"/>
         <source>Rename password</source>
         <translation>Μετονομασία κωδικού πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1667"/>
+        <location filename="../src/mainwindow.cpp" line="1725"/>
         <source>Share</source>
         <translation>Κοινή χρήση</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1043"/>
+        <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… περισσότερες αντιστοιχίες σε αυτή την καταχώρηση</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1058"/>
+        <location filename="../src/mainwindow.cpp" line="1065"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Εμφανίζεται το πρώτο %n αποτέλεσμα· αναζητήστε κάτι πιο συγκεκριμένο για να δείτε τα υπόλοιπα.</numerusform>
@@ -2641,115 +2647,130 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1313"/>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1320"/>
+        <location filename="../src/mainwindow.cpp" line="1344"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1 και όλο το περιεχόμενό του;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1333"/>
+        <location filename="../src/mainwindow.cpp" line="1360"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Προσοχή: υπάρχουν μη αναμενόμενα αρχεία στον συγκεκριμένο φάκελο· ελέγξτε τα πριν συνεχίσετε.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1677"/>
+        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <source>%1 could not be read, so what it holds is unknown.</source>
+        <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
+        <translation type="unfinished">Δεν ήταν δυνατή η ανάγνωση του φακέλου %1, οπότε το περιεχόμενό του είναι άγνωστο.</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="1375"/>
+        <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
+        <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
+        <translation type="unfinished">
+            <numerusform>Δεν ήταν δυνατή η ανάγνωση %n υποφακέλου, οπότε το περιεχόμενό του είναι άγνωστο.</numerusform>
+            <numerusform>Δεν ήταν δυνατή η ανάγνωση %n υποφακέλων, οπότε το περιεχόμενό τους είναι άγνωστο.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Re-encrypt all passwords</source>
         <translation>Επανακρυπτογράφηση όλων των κωδικών</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1740"/>
         <source>Export my public key...</source>
         <translation>Εξαγωγή του δημόσιου κλειδιού μου…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1686"/>
+        <location filename="../src/mainwindow.cpp" line="1744"/>
         <source>Add recipient...</source>
         <translation>Προσθήκη παραλήπτη…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1691"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>What is this?</source>
         <translation>Τι είναι αυτό;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1824"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Νέος φάκελος:
 (Θα τοποθετηθεί στο %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1790"/>
+        <location filename="../src/mainwindow.cpp" line="1848"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Κρυφός φάκελος</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1791"/>
+        <location filename="../src/mainwindow.cpp" line="1849"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">Ένας φάκελος που ξεκινά με τελεία θα ήταν κρυμμένος από τη λίστα: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1825"/>
+        <location filename="../src/mainwindow.cpp" line="1883"/>
         <source>Rename folder to: </source>
         <translation>Μετονομασία φακέλου σε: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1864"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>Rename file to: </source>
         <translation>Μετονομασία αρχείου σε: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1977"/>
+        <location filename="../src/mainwindow.cpp" line="2040"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Επανακρυπτογράφηση κωδικών πρόσβασης...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1978"/>
+        <location filename="../src/mainwindow.cpp" line="2041"/>
         <source>Cancel</source>
         <translation type="unfinished">Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1986"/>
+        <location filename="../src/mainwindow.cpp" line="2049"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Ακύρωση επανακρυπτογράφησης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1997"/>
+        <location filename="../src/mainwindow.cpp" line="2060"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Επανακρυπτογράφηση κωδικών πρόσβασης: %1 από %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2018"/>
-        <location filename="../src/mainwindow.cpp" line="2037"/>
+        <location filename="../src/mainwindow.cpp" line="2081"/>
+        <location filename="../src/mainwindow.cpp" line="2100"/>
         <source>Export public key</source>
         <translation>Εξαγωγή δημόσιου κλειδιού</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2019"/>
+        <location filename="../src/mainwindow.cpp" line="2082"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Εξαγωγή του δημόσιου κλειδιού σας&lt;/h3&gt;&lt;p&gt;Δεν έχει διαμορφωθεί κλειδί υπογραφής. Ορίστε ένα στις Ρυθμίσεις QtPass &amp;gt; Κλειδιά GPG, ή εκτελέστε σε τερματικό:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Στη συνέχεια στείλτε το αρχείο στα μέλη της ομάδας σας.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2066"/>
+        <location filename="../src/mainwindow.cpp" line="2129"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Δεν είναι φάκελος του χώρου αποθήκευσης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
+        <location filename="../src/mainwindow.cpp" line="2130"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">Το %1 είναι συμβολικός σύνδεσμος ή junction, ή βρίσκεται πίσω από έναν τέτοιο σύνδεσμο. Ο προορισμός του δεν αποτελεί μέρος του χώρου αποθήκευσης κωδικών πρόσβασης και παραμένει ανέπαφος.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2075"/>
+        <location filename="../src/mainwindow.cpp" line="2138"/>
         <source>Sharing passwords with GPG</source>
         <translation>Κοινή χρήση κωδικών με GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2076"/>
+        <location filename="../src/mainwindow.cpp" line="2139"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Κοινή χρήση κωδικών με GPG&lt;/h3&gt;&lt;p&gt;Για να μοιραστείτε κωδικούς με άλλους χρήστες:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Εξαγάγετε το δημόσιο κλειδί σας&lt;/b&gt; και στείλτε το στα μέλη της ομάδας σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Εισαγάγετε τα δημόσια κλειδιά των μελών της ομάδας&lt;/b&gt; στην κλειδοθήκη GPG σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Επανακρυπτογραφήστε τους κωδικούς&lt;/b&gt; ώστε όλοι οι παραλήπτες να μπορούν να τους αποκρυπτογραφήσουν&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Μόνο τα άτομα με αντίστοιχο μυστικό κλειδί μπορούν να αποκρυπτογραφήσουν τους κωδικούς.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Συμβουλή:&lt;/b&gt; Χρησιμοποιήστε το ίδιο κλειδί GPG για όλους τους κοινόχρηστους φακέλους.&lt;/p&gt;&lt;p&gt;Δείτε τις Συχνές Ερωτήσεις για περισσότερες λεπτομέρειες.&lt;/p&gt;</translation>
     </message>
@@ -2766,7 +2787,7 @@ Expire-Date: 0
         <translation type="vanished">&lt;h3&gt;Εξαγωγή του δημόσιου κλειδιού σας&lt;/h3&gt;&lt;p&gt;Δεν έχει διαμορφωθεί κλειδί υπογραφής. Ορίστε ένα στις Ρυθμίσεις QtPass &amp;gt; Κλειδιά GPG, ή εκτελέστε σε τερματικό:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Στη συνέχεια στείλτε το αρχείο στα μέλη της ομάδας σας.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2038"/>
+        <location filename="../src/mainwindow.cpp" line="2101"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2775,7 +2796,7 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2040"/>
+        <location filename="../src/mainwindow.cpp" line="2103"/>
         <source>No output from gpg.</source>
         <translation>Καμία έξοδος από το gpg.</translation>
     </message>
@@ -2798,24 +2819,24 @@ Expire-Date: 0
 (Θα τοποθετηθεί στο %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1798"/>
-        <location filename="../src/mainwindow.cpp" line="1813"/>
-        <location filename="../src/mainwindow.cpp" line="1937"/>
+        <location filename="../src/mainwindow.cpp" line="1856"/>
+        <location filename="../src/mainwindow.cpp" line="1871"/>
+        <location filename="../src/mainwindow.cpp" line="2000"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1799"/>
+        <location filename="../src/mainwindow.cpp" line="1857"/>
         <source>Failed to create folder: %1</source>
         <translation>Αποτυχία δημιουργίας φακέλου: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1814"/>
+        <location filename="../src/mainwindow.cpp" line="1872"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Αποτυχία δημιουργίας αρχείου .gpg-id στο: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1864"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>Rename file</source>
         <translation>Μετονομασία αρχείου</translation>
     </message>
@@ -2824,7 +2845,7 @@ Expire-Date: 0
         <translation type="vanished">Μετονομασία φακέλου σε: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1765"/>
+        <location filename="../src/mainwindow.cpp" line="1823"/>
         <source>New folder</source>
         <translation type="unfinished">Νέος φάκελος</translation>
     </message>
@@ -2833,23 +2854,23 @@ Expire-Date: 0
         <translation type="vanished">Μετονομασία αρχείου σε: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1987"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Αυτή η καταχώρηση περιέχει μυστικό OTP, όχι κωδικό πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1938"/>
+        <location filename="../src/mainwindow.cpp" line="2001"/>
         <source>Directory does not exist: %1</source>
         <translation>Ο φάκελος δεν υπάρχει: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1946"/>
-        <location filename="../src/mainwindow.cpp" line="1979"/>
+        <location filename="../src/mainwindow.cpp" line="2009"/>
+        <location filename="../src/mainwindow.cpp" line="2042"/>
         <source>Re-encrypt passwords</source>
         <translation>Επανακρυπτογράφηση κωδικών πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1947"/>
+        <location filename="../src/mainwindow.cpp" line="2010"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2887,87 +2908,87 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="200"/>
+        <location filename="../src/pass.cpp" line="201"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">Ο ρυθμισμένος αρχικός κατάλογος GPG %1 δεν υπάρχει, χρησιμοποιείται η προεπιλεγμένη κλειδοθήκη</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="208"/>
+        <location filename="../src/pass.cpp" line="209"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">Ο ρυθμισμένος αρχικός κατάλογος GPG %1 δεν υπάρχει, χρησιμοποιείται το GNUPGHOME %2 από το περιβάλλον</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="221"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Invalid password length</source>
         <translation>Μη έγκυρο μήκος κωδικού πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="222"/>
+        <location filename="../src/pass.cpp" line="223"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Δεν είναι δυνατή η δημιουργία κωδικού πρόσβασης με μηδενικό μήκος.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="250"/>
+        <location filename="../src/pass.cpp" line="251"/>
         <source>Password generation failed</source>
         <translation type="unfinished">Αποτυχία δημιουργίας κωδικού πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="251"/>
+        <location filename="../src/pass.cpp" line="252"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
         <translation type="unfinished">Δεν ήταν δυνατή η εκτέλεση του pwgen (&quot;%1&quot;). Ελέγξτε το πρόγραμμα pwgen στις ρυθμίσεις ή απενεργοποιήστε το &quot;Χρησιμοποιήστε pwgen&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="265"/>
+        <location filename="../src/pass.cpp" line="266"/>
         <source>No characters chosen</source>
         <translation>Δεν έχουν επιλεγεί χαρακτήρες</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="266"/>
+        <location filename="../src/pass.cpp" line="267"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Δεν είναι δυνατή η δημιουργία κωδικού πρόσβασης, δεν έχουν οριστεί χαρακτήρες για επιλογή στη διαμόρφωση!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="404"/>
         <location filename="../src/pass.cpp" line="405"/>
+        <location filename="../src/pass.cpp" line="406"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">Δεν έχει ρυθμιστεί εκτελέσιμο GPG</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="475"/>
-        <location filename="../src/pass.cpp" line="494"/>
+        <location filename="../src/pass.cpp" line="476"/>
+        <location filename="../src/pass.cpp" line="495"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Η κρυπτογράφηση απέτυχε: Το κλειδί GPG έχει λήξει. Ανανεώστε το ή αντικαταστήστε το.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="480"/>
-        <location filename="../src/pass.cpp" line="499"/>
+        <location filename="../src/pass.cpp" line="481"/>
+        <location filename="../src/pass.cpp" line="500"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Η κρυπτογράφηση απέτυχε: Το κλειδί GPG έχει ανακληθεί.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="484"/>
-        <location filename="../src/pass.cpp" line="513"/>
+        <location filename="../src/pass.cpp" line="485"/>
+        <location filename="../src/pass.cpp" line="514"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Η κρυπτογράφηση απέτυχε: το κλειδί GPG του παραλήπτη δεν βρέθηκε ή είναι μη έγκυρο. Ελέγξτε ότι το αναγνωριστικό κλειδιού στο αρχείο .gpg-id είναι σωστό και έχει εισαχθεί.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="488"/>
-        <location filename="../src/pass.cpp" line="517"/>
+        <location filename="../src/pass.cpp" line="489"/>
+        <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Η κρυπτογράφηση απέτυχε. Ελέγξτε ότι το κλειδί GPG είναι έγκυρο.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="507"/>
+        <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation type="unfinished">Η κρυπτογράφηση απέτυχε: το κλειδί GPG ενός παραλήπτη δεν μπορεί να χρησιμοποιηθεί. Μπορεί να έχει λήξει ή ανακληθεί, να μην έχει υποκλειδί κρυπτογράφησης ή να μην είναι έμπιστο· το μήνυμα του gpg παρακάτω λέει ποιο ισχύει.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="567"/>
+        <location filename="../src/pass.cpp" line="568"/>
         <source>Saved, not committed</source>
         <translation type="unfinished">Αποθηκεύτηκε, χωρίς υποβολή (commit)</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="568"/>
+        <location filename="../src/pass.cpp" line="569"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
@@ -2976,99 +2997,99 @@ Continue?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="816"/>
+        <location filename="../src/pass.cpp" line="856"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">Το %1 είναι συμβολικός σύνδεσμος ή junction, ή βρίσκεται πίσω από έναν τέτοιο σύνδεσμο. Ο προορισμός του δεν αποτελεί μέρος του χώρου αποθήκευσης κωδικών πρόσβασης και παραμένει ανέπαφος.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="833"/>
+        <location filename="../src/pass.cpp" line="873"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">Το %1 δεν βρίσκεται μέσα στον χώρο αποθήκευσης κωδικών πρόσβασης. Οι παραλήπτες ορίζονται για τον χώρο αποθήκευσης ή για έναν φάκελο μέσα σε αυτόν.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="852"/>
-        <location filename="../src/pass.cpp" line="855"/>
+        <location filename="../src/pass.cpp" line="892"/>
+        <location filename="../src/pass.cpp" line="895"/>
         <source>rebase</source>
         <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="858"/>
+        <location filename="../src/pass.cpp" line="898"/>
         <source>merge</source>
         <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="861"/>
+        <location filename="../src/pass.cpp" line="901"/>
         <source>cherry-pick</source>
         <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="864"/>
+        <location filename="../src/pass.cpp" line="904"/>
         <source>revert</source>
         <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="871"/>
+        <location filename="../src/pass.cpp" line="911"/>
         <source>cherry-pick or revert</source>
         <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="895"/>
+        <location filename="../src/pass.cpp" line="935"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
         <translation type="unfinished">Το αποθετήριο Git του χώρου αποθήκευσης κωδικών πρόσβασης βρίσκεται στη μέση ενός %1. Ολοκληρώστε ή ακυρώστε το με το Git πριν αλλάξετε τον χώρο αποθήκευσης κωδικών πρόσβασης, αλλιώς όσα αλλάξετε μπορεί να χαθούν.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="908"/>
+        <location filename="../src/pass.cpp" line="948"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
         <translation type="unfinished">Ο χώρος αποθήκευσης κωδικών πρόσβασης ενημερώνεται (εκτελείται Git pull). Περιμένετε μέχρι να ολοκληρωθεί και μετά δοκιμάστε ξανά.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="913"/>
+        <location filename="../src/pass.cpp" line="953"/>
         <source>Update in progress</source>
         <translation type="unfinished">Ενημέρωση σε εξέλιξη</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="927"/>
+        <location filename="../src/pass.cpp" line="967"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Μη ολοκληρωμένη λειτουργία Git</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="936"/>
+        <location filename="../src/pass.cpp" line="976"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Δεν αποτελεί μέρος του χώρου αποθήκευσης</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1031"/>
+        <location filename="../src/pass.cpp" line="1071"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">Το μητρώο γενιών των λιστών παραληπτών δεν μπορεί να διαβαστεί.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1113"/>
+        <location filename="../src/pass.cpp" line="1153"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα παραληπτών (κανονικό αρχείο με μέγεθος έως %2), οπότε δεν προεπιλέγεται τίποτα. Ελέγξτε το πριν επιλέξετε παραλήπτες εδώ: το OK γράφει μια νέα λίστα στη θέση του.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1134"/>
+        <location filename="../src/pass.cpp" line="1174"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Η λίστα παραληπτών %1 λείπει ή δεν είναι κανονικό αρχείο, οπότε δεν προεπιλέγεται τίποτα: η λίστα ενός γονικού φακέλου δεν υπογράφηκε για αυτόν. Επιλέξτε οι ίδιοι τους παραλήπτες αυτού του φακέλου· το OK γράφει και υπογράφει μια νέα λίστα.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1139"/>
+        <location filename="../src/pass.cpp" line="1179"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Δεν προεπιλέγεται τίποτα: δεν είναι δυνατό να διαπιστωθεί αν το %2 αφαιρέθηκε.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1154"/>
+        <location filename="../src/pass.cpp" line="1194"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Η λίστα παραληπτών %1 δεν επαληθεύεται με το κλειδί υπογραφής, οπότε δεν προεπιλέγεται τίποτα: η αποθήκευση θα υπέγραφε ό,τι περιέχει. Επιλέξτε οι ίδιοι τους παραλήπτες· το OK γράφει και υπογράφει μια νέα λίστα.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1078"/>
+        <location filename="../src/pass.cpp" line="1118"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Δεν προεπιλέγεται τίποτα: η αποθήκευση θα υπέγραφε ό,τι περιέχει. Επιλέξτε οι ίδιοι τους παραλήπτες.</translation>
     </message>
@@ -3236,7 +3257,7 @@ Continue?</source>
         <translation type="unfinished">Δεν ήταν δυνατή η δημιουργία του φακέλου %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="751"/>
+        <location filename="../src/passworddialog.cpp" line="755"/>
         <source>Remove field</source>
         <translation type="unfinished">Αφαίρεση πεδίου</translation>
     </message>
@@ -3251,17 +3272,17 @@ Continue?</source>
         <translation type="unfinished">URI otpauth:// ή μυστικό base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="570"/>
+        <location filename="../src/passworddialog.cpp" line="574"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Μη έγκυρο μυστικό OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="875"/>
+        <location filename="../src/passworddialog.cpp" line="879"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
         <translation type="unfinished">Αυτή η καταχώριση περιέχει δεδομένα που το QtPass δεν μπορεί να αποθηκεύσει αμετάβλητα, επομένως δεν μπορεί να επεξεργαστεί εδώ.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="894"/>
+        <location filename="../src/passworddialog.cpp" line="898"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Αυτή η καταχώριση έχει %n γραμμή, πάρα πολλές για επεξεργασία εδώ.</numerusform>
@@ -3417,8 +3438,8 @@ Continue?</source>
         <translation type="unfinished">Άνοιγμα %1 στο πρόγραμμα περιήγησης</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="387"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="403"/>
         <source>OTP code</source>
         <translation>Κωδικός OTP</translation>
     </message>
@@ -3427,7 +3448,7 @@ Continue?</source>
         <translation type="obsolete">Κωδικός OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="389"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Δεν βρέθηκε κωδικός OTP σε αυτή την καταχώρηση κωδικού πρόσβασης</translation>
     </message>
@@ -3545,22 +3566,27 @@ Continue?</source>
         <translation type="vanished">Το πρόχειρο δεν διαγράφηκε</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="180"/>
+        <location filename="../src/qtpass.cpp" line="170"/>
+        <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
+        <translation type="unfinished">Δεν γίνεται αυτόματο push: η τελευταία επανακρυπτογράφηση δεν ολοκληρώθηκε. Επανακρυπτογραφήστε ξανά ή κάντε push χειροκίνητα.</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="191"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">Αδυναμία εκκίνησης του qrencode: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="188"/>
+        <location filename="../src/qtpass.cpp" line="199"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">Το qrencode δεν ολοκληρώθηκε εγκαίρως</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="200"/>
+        <location filename="../src/qtpass.cpp" line="211"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">Το qrencode κατέρρευσε</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="201"/>
+        <location filename="../src/qtpass.cpp" line="212"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">Το qrencode τερματίστηκε με κωδικό %1</translation>
     </message>
@@ -3573,43 +3599,52 @@ Continue?</source>
         <translation type="unfinished">Το Git pull απέτυχε: %1</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="160"/>
+        <location filename="../src/realpass.cpp" line="87"/>
+        <source>Not pushing: an earlier re-encryption in this store did not finish</source>
+        <translation type="unfinished">Δεν γίνεται push: μια προηγούμενη επανακρυπτογράφηση σε αυτόν τον χώρο αποθήκευσης δεν ολοκληρώθηκε</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="187"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">Έλεγχος των λιστών παραληπτών στο %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="296"/>
+        <location filename="../src/realpass.cpp" line="332"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση του συνδέσμου %1.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="297"/>
+        <location filename="../src/realpass.cpp" line="333"/>
         <source>Delete failed</source>
         <translation type="unfinished">Η διαγραφή απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="347"/>
+        <location filename="../src/realpass.cpp" line="383"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">Ο σύνδεσμος %1 αφαιρέθηκε, αλλά το git δεν μπόρεσε να το καταγράψει: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="349"/>
-        <location filename="../src/realpass.cpp" line="476"/>
+        <location filename="../src/realpass.cpp" line="385"/>
+        <location filename="../src/realpass.cpp" line="535"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">Η διαγραφή δεν ολοκληρώθηκε</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="437"/>
-        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished">Οι παραλήπτες άλλαξαν, αλλά ορισμένες καταχωρίσεις δεν ήταν δυνατό να επανακρυπτογραφηθούν για αυτούς: αυτές είναι ακόμα κρυπτογραφημένες για τους προηγούμενους παραλήπτες, οι οποίοι μπορούν ακόμα να τις διαβάσουν. Με το Git, η αλλαγή υποβλήθηκε τοπικά και δεν προωθήθηκε τώρα· η επόμενη προώθηση (push) θα τη στείλει.</translation>
+        <location filename="../src/realpass.cpp" line="494"/>
+        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
+        <translation type="unfinished">Οι παραλήπτες άλλαξαν, αλλά ορισμένες καταχωρίσεις δεν ήταν δυνατό να επανακρυπτογραφηθούν για αυτούς: αυτές είναι ακόμα κρυπτογραφημένες για τους προηγούμενους παραλήπτες, οι οποίοι μπορούν ακόμα να τις διαβάσουν. Με το Git, η αλλαγή υποβλήθηκε τοπικά και δεν προωθήθηκε: το QtPass δεν κάνει αυτόματα push αυτού του χώρου αποθήκευσης μέχρι να πετύχει μια επανακρυπτογράφηση, και ένα χειροκίνητο push τη στέλνει.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="473"/>
+        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
+        <translation type="obsolete">Οι παραλήπτες άλλαξαν, αλλά ορισμένες καταχωρίσεις δεν ήταν δυνατό να επανακρυπτογραφηθούν για αυτούς: αυτές είναι ακόμα κρυπτογραφημένες για τους προηγούμενους παραλήπτες, οι οποίοι μπορούν ακόμα να τις διαβάσουν. Με το Git, η αλλαγή υποβλήθηκε τοπικά και δεν προωθήθηκε τώρα· η επόμενη προώθηση (push) θα τη στείλει.</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="532"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">Ο σύνδεσμος %1 αφαιρέθηκε και το git δεν τον παρακολουθεί πλέον, αλλά η πραγματοποίηση του commit απέτυχε: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="606"/>
+        <location filename="../src/realpass.cpp" line="667"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">Η αναζήτηση απαιτεί να έχει ρυθμιστεί το εκτελέσιμο GPG.</translation>
     </message>
@@ -3706,6 +3741,45 @@ git config --global user.email you@example.org
         <location filename="../src/firstrunwizard.cpp" line="446"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation type="unfinished">Επιστρέψτε και επιλέξτε τουλάχιστον ένα κλειδί για το οποίο θα κρυπτογραφηθεί.</translation>
+    </message>
+</context>
+<context>
+    <name>Totp</name>
+    <message>
+        <location filename="../src/totp.cpp" line="278"/>
+        <source>The OTP configuration is too long.</source>
+        <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
+        <translation type="unfinished">Η διαμόρφωση OTP είναι πολύ μεγάλη.</translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="282"/>
+        <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
+        <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
+        <translation type="unfinished">Αυτή είναι διαμόρφωση βασισμένη σε μετρητή (HOTP). Το QtPass δημιουργεί μόνο κωδικούς βασισμένους στον χρόνο (TOTP).</translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="287"/>
+        <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
+        <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
+        <translation type="unfinished">Ο αλγόριθμος σε αυτόν τον σύνδεσμο otpauth:// δεν υποστηρίζεται. Το QtPass υποστηρίζει SHA1, SHA256 και SHA512.</translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="292"/>
+        <source>This otpauth:// link cannot be read.</source>
+        <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
+        <translation type="unfinished">Δεν είναι δυνατή η ανάγνωση αυτού του συνδέσμου otpauth://.</translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="296"/>
+        <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
+        <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
+        <translation type="unfinished">Αυτό δεν είναι μυστικό TOTP ούτε σύνδεσμος otpauth://totp/.</translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="300"/>
+        <source>The secret is missing or is not valid base32.</source>
+        <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
+        <translation type="unfinished">Το μυστικό λείπει ή δεν είναι έγκυρο base32.</translation>
     </message>
 </context>
 <context>

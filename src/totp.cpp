@@ -274,23 +274,29 @@ auto Totp::parse(const QString &config, Refusal *why)
 auto Totp::describe(Refusal why) -> QString {
   switch (why) {
   case Refusal::TooLong:
+    //: OTP is a one-time password (a two-factor code).
     return QCoreApplication::translate("Totp",
                                        "The OTP configuration is too long.");
   case Refusal::Hotp:
+    //: Keep HOTP and TOTP as written: they are the names of the two kinds.
     return QCoreApplication::translate(
         "Totp", "This is a counter-based (HOTP) configuration. QtPass makes "
                 "time-based (TOTP) codes only.");
   case Refusal::UnknownAlgorithm:
+    //: Keep otpauth://, SHA1, SHA256 and SHA512 as written.
     return QCoreApplication::translate(
         "Totp", "The algorithm in this otpauth:// link is not supported. "
                 "QtPass supports SHA1, SHA256 and SHA512.");
   case Refusal::UnreadableUri:
+    //: Keep otpauth:// as written: it is the name of the link format.
     return QCoreApplication::translate("Totp",
                                        "This otpauth:// link cannot be read.");
   case Refusal::NotASecret:
+    //: Keep TOTP and otpauth://totp/ as written.
     return QCoreApplication::translate(
         "Totp", "This is not a TOTP secret or an otpauth://totp/ link.");
   case Refusal::NoSecret:
+    //: The secret is the shared key of the one-time password; keep base32.
     return QCoreApplication::translate(
         "Totp", "The secret is missing or is not valid base32.");
   case Refusal::None:

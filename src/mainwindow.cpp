@@ -1329,17 +1329,20 @@ void MainWindow::addPassword() { setPassword(QString()); }
 
 auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
   const QString path = QDir::separator() + file;
+  // As the platform writes paths: backslashes only on Windows, never a mix.
+  const QString shown = QDir::toNativeSeparators(path);
   if (!isDir) {
     return PlainMessageBox::askYes(
         this, tr("Delete password?"),
-        tr("Are you sure you want to delete %1?").arg(path));
+        tr("Are you sure you want to delete %1?").arg(shown));
   }
   // Whole sentences, not a question stitched from pieces: a verb-final
   // language cannot put the rest of the question after the path.
   // Plain text, as every box quoting the store: the path is a name other
   // writers control, and as rich text "a  b" would also show as "a b".
   QString question =
-      tr("Are you sure you want to delete %1 and the whole content?").arg(path);
+      tr("Are you sure you want to delete %1 and the whole content?")
+          .arg(shown);
   // A link, junction or special file inside is as unexpected as a stray
   // plain file: the walker leaves them out of content and reports them.
   QStringList skipped;
@@ -1360,15 +1363,19 @@ auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
   // A folder the walk cannot read is not empty but unknown: whatever it
   // holds goes too, or stays behind when the removal cannot list it.
   if (unlisted.size() == 1) {
-    question += QStringLiteral("\n\n") +
-                tr("%1 could not be read, so what it holds is unknown.")
-                    .arg(QDir::separator() +
-                         QDir(root).relativeFilePath(unlisted.first()));
+    //: %1 is a folder in the password store, such as /Work/bank.
+    const QString one = tr("%1 could not be read, so what it holds is unknown.")
+                            .arg(QDir::toNativeSeparators(
+                                QDir::separator() +
+                                QDir(root).relativeFilePath(unlisted.first())));
+    question += QStringLiteral("\n\n") + one;
   } else if (unlisted.size() > 1) {
-    question += QStringLiteral("\n\n") +
-                tr("%n folder(s) in it could not be read, so what they hold "
-                   "is unknown.",
-                   nullptr, static_cast<int>(unlisted.size()));
+    //: Only shown for two or more folders; one folder is named instead.
+    const QString many =
+        tr("%n folder(s) in it could not be read, so what they hold "
+           "is unknown.",
+           nullptr, static_cast<int>(unlisted.size()));
+    question += QStringLiteral("\n\n") + many;
   }
   return PlainMessageBox::askYes(this, tr("Delete folder?"), question);
 }
