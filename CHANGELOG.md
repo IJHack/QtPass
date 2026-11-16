@@ -52,6 +52,11 @@
   the store: removing a colleague changed a subfolder's recipients and left
   them on the store's own list (ported from
   [#2236](https://github.com/IJHack/QtPass/pull/2236))
+- Import key reads only gpg's own status lines for the fingerprint it asks
+  you to verify. gpg repeats the key's user ID on an earlier line, and a
+  user ID containing `[GNUPG:] IMPORT_OK 1 <hex>` named that fingerprint
+  instead of the key's own (ported from
+  [#2238](https://github.com/IJHack/QtPass/pull/2238))
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
