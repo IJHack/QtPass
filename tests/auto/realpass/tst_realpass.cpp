@@ -19,6 +19,15 @@
 #include "../testpass.h"
 #include "../testsettings.h"
 
+namespace {
+/// A RealPass whose executor the test can reach, to drop a queued command.
+class ExposedRealPass : public RealPass {
+public:
+  /// @return The backend's executor.
+  auto executor() -> Executor & { return exec; }
+};
+} // namespace
+
 /**
  * @brief The argv RealPass hands to `pass`, checked against a stand-in pass
  *        script that records its arguments, stdin, working directory and
@@ -1053,8 +1062,9 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
     QVERIFY(QDir().mkpath(QDir(store).filePath(folder)));
   }
   // Fails to re-encrypt in any folder named in FAIL (a file next to the
-  // script, read at each run), exits 1 for one named with a "!" before it,
-  // and reports a clean run elsewhere.
+  // script, read at each run), exits 1 for one named with a "!" before it
+  // (after re-encrypting) or a "?" (before), and reports a clean run
+  // elsewhere.
   const QString failList = dir.filePath(QStringLiteral("FAIL"));
   const QString script = dir.filePath(QStringLiteral("pass"));
   {
@@ -1062,6 +1072,9 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
     QVERIFY(f.open(QIODevice::WriteOnly));
     f.write("#!/bin/sh\nfor a in \"$@\"; do case \"$a\" in --path=*) "
             "p=\"${a#--path=}\";; esac; last=\"$a\"; done\n"
+            "if grep -qx \"?${p:-$last}\" \"");
+    f.write(QFile::encodeName(failList));
+    f.write("\" 2>/dev/null; then exit 1; fi\n"
             "echo \"x: reencrypting to AAAA\"\n"
             "if grep -qx \"!${p:-$last}\" \"");
     f.write(QFile::encodeName(failList));
@@ -1144,10 +1157,36 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
   QVERIFY2(pass.autoPushHeld(), "folder ab is not under folder a");
   QVERIFY(init(QStringLiteral("ab")));
   QVERIFY2(!pass.autoPushHeld(), "every failed folder covered again");
+  // A copy that failed before re-encrypting anything (the destination
+  // exists, a mistyped name) changed no recipients: not held. One that
+  // failed while re-encrypting is.
+  const auto copy = [&]() {
+    const qsizetype ends = copied.count() + errorExit.count();
+    pass.Copy(QDir(store).filePath(QStringLiteral("c")),
+              QDir(store).filePath(QStringLiteral("a")), false);
+    return QTest::qWaitFor(
+        [&] { return copied.count() + errorExit.count() > ends; }, 10000);
+  };
+  QVERIFY(failFolders({QStringLiteral("?a")}));
+  QVERIFY(copy());
+  QVERIFY2(!pass.autoPushHeld(), "nothing was re-encrypted");
+  QVERIFY(failFolders({QStringLiteral("!a")}));
+  QVERIFY(copy());
+  QVERIFY2(pass.autoPushHeld(), "it stopped while re-encrypting");
+  QVERIFY(failFolders({QStringLiteral("none")}));
+  QVERIFY(init(QStringLiteral("a")));
+  QVERIFY(!pass.autoPushHeld());
   // An init that exits non-zero may have stopped after its commit.
   QVERIFY(failFolders({QStringLiteral("!c")}));
   QVERIFY(init(QStringLiteral("c")));
   QVERIFY2(pass.autoPushHeld(), "a failed init holds its folder");
+  QVERIFY(failFolders({QStringLiteral("none")}));
+  QVERIFY(init(QStringLiteral("c")));
+  QVERIFY(!pass.autoPushHeld());
+  // Also before any re-encryption: the new list may already be written.
+  QVERIFY(failFolders({QStringLiteral("?c")}));
+  QVERIFY(init(QStringLiteral("c")));
+  QVERIFY2(pass.autoPushHeld(), "an init that failed early holds too");
   QVERIFY(failFolders({QStringLiteral("none")}));
   QVERIFY(init(QStringLiteral("c")));
   QVERIFY(!pass.autoPushHeld());
@@ -1158,6 +1197,42 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
   QVERIFY(failFolders({QStringLiteral("none")}));
   QVERIFY(init(store));
   QVERIFY2(!pass.autoPushHeld(), "the whole store covers every folder");
+
+  // A queued init the executor drops takes its folder along: the next
+  // completion is not paired with it. Here init a is dropped once init c
+  // has finished; the failing init ab must hold ab, and its clean rerun
+  // release it again.
+  {
+    ExposedRealPass dropping;
+    dropping.init(s);
+    dropping.updateEnv();
+    QSignalSpy initDone(&dropping, &Pass::finishedInit);
+    QSignalSpy initError(&dropping, &Pass::processErrorExit);
+    bool dropOnce = true;
+    QObject::connect(&dropping.executor(), &Executor::finished, &dropping, [&] {
+      if (dropOnce) {
+        dropOnce = false;
+        QVERIFY(dropping.executor().cancelNext() >= 0);
+      }
+    });
+    const auto ended = [&](qsizetype ends) {
+      return QTest::qWaitFor(
+          [&] { return initDone.count() + initError.count() > ends; }, 10000);
+    };
+    QVERIFY(failFolders({QStringLiteral("ab")}));
+    dropping.Init(QStringLiteral("c"), {alice});
+    dropping.Init(QStringLiteral("a"), {alice});
+    QVERIFY(ended(0));
+    QVERIFY(!dropOnce);
+    dropping.Init(QStringLiteral("ab"), {alice});
+    QVERIFY(ended(1));
+    QVERIFY2(dropping.autoPushHeld(), "the failing init ab holds");
+    QVERIFY(failFolders({QStringLiteral("none")}));
+    dropping.Init(QStringLiteral("ab"), {alice});
+    QVERIFY(ended(2));
+    QVERIFY2(!dropping.autoPushHeld(),
+             "the hold was on ab, not on the dropped init's a");
+  }
 #endif
 }
 

@@ -177,7 +177,9 @@ class RealPass : public Pass {
    * as "before". Kept in m_insertPending for that insert's own completion.
    * For `pass init`, `mv` and `cp`, add `--status-fd 2` to that one
    * process's PASSWORD_STORE_GPG_OPTS, so finished() can tell whether every
-   * entry was re-encrypted (reencryptFailed()).
+   * entry was re-encrypted (reencryptFailed()), and move its scope from
+   * m_reencryptScopes to m_reencryptPending (dropped when it does not
+   * complete).
    * @param id The item's process id.
    * @param completes Whether a completion follows (not for a dropped one).
    */
@@ -206,9 +208,12 @@ class RealPass : public Pass {
   /// The insert whose completion is being handled.
   InsertRecord m_insertDone;
   /// What each queued init, move or copy re-encrypts (its folder, or the
-  /// destination), oldest first, for the push hold; the executor completes
-  /// them in this order.
+  /// destination), oldest first, for the push hold.
   QQueue<QString> m_reencryptScopes;
+  /// The scopes of the inits, moves and copies that left the queue and have
+  /// yet to complete, in completion order; one the executor drops never
+  /// gets here, so it cannot pair with a later command's completion.
+  QQueue<QString> m_reencryptPending;
 
 public:
   /**

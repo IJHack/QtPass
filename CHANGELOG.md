@@ -1079,7 +1079,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   change is committed locally first, so the next automatic push, after any
   later edit, published it with entries still encrypted to the previous
   recipients. A push by hand still goes; the status bar says why an
-  automatic one did not. The hold lasts for the session
+  automatic one did not. The hold is not saved: after a restart, the next
+  automatic push sends the commit
 - With Git run through WSL (`wsl git`), deleting or renaming a folder whose
   name ends in whitespace acts on that folder. The path from `wslpath` was
   trimmed, so "team" followed by a space became its neighbour `team`, and a

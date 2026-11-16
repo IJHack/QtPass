@@ -224,7 +224,15 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
 }
 
 void RealPass::onDequeuing(int id, bool completes) {
-  if (completes && (id == PASS_INIT || id == PASS_MOVE || id == PASS_COPY)) {
+  if (id == PASS_INIT || id == PASS_MOVE || id == PASS_COPY) {
+    // Leaves the queue with its command: a dropped one's scope must not
+    // pair with the next completion.
+    const QString scope =
+        m_reencryptScopes.isEmpty() ? QString() : m_reencryptScopes.dequeue();
+    if (!completes) {
+      return;
+    }
+    m_reencryptPending.enqueue(scope);
     // pass exits 0 when it could not re-encrypt an entry (reencrypt_path
     // drops the temporary and carries on), so its exit code says nothing.
     // gpg's status lines do, in every locale: on stderr (fd 1 is the
@@ -239,6 +247,7 @@ void RealPass::onDequeuing(int id, bool completes) {
         key,
         (environment.value(key) + QStringLiteral(" --status-fd 2")).trimmed());
     exec.setEnvironment(environment);
+    return;
   }
   if (id != PASS_INSERT || m_insertQueue.isEmpty()) {
     return;
@@ -376,7 +385,7 @@ void RealPass::finished(int id, int exitCode, const QString &out,
     // Without a recorded scope (not queued through Init/Move/Copy), the
     // whole store: held as a whole, released by nothing short of it.
     const QString scope =
-        m_reencryptScopes.isEmpty() ? QString() : m_reencryptScopes.dequeue();
+        m_reencryptPending.isEmpty() ? QString() : m_reencryptPending.dequeue();
     if (exitCode == 0 && reencryptFailed(out, err)) {
       holdAutoPush(scope);
       reportReencryptFailure(pid, out, err);
@@ -384,8 +393,11 @@ void RealPass::finished(int id, int exitCode, const QString &out,
     }
     // A run that failed may have stopped after its commit (pass init commits
     // the new .gpg-id before re-encrypting; signing it may fail, the process
-    // may be killed): held as well, until a clean init covers it.
-    if (exitCode != 0) {
+    // may be killed): held as well, until a clean init covers it. A move or
+    // copy that failed before re-encrypting anything (the destination
+    // exists, a mistyped name) changed no recipients: not held.
+    if (exitCode != 0 && (pid == PASS_INIT ||
+                          out.contains(QLatin1String(": reencrypting to ")))) {
       holdAutoPush(scope);
     }
     // pass init re-encrypts everything under its folder: a clean run
