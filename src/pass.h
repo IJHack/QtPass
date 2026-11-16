@@ -18,6 +18,7 @@
 #include <QProcess>
 #include <QProcessEnvironment>
 #include <QQueue>
+#include <QSet>
 #include <QString>
 #include <QStringList>
 
@@ -451,24 +452,31 @@ public:
    * The recipients change is committed locally first, so after a failed or
    * cancelled re-encryption the next automatic push (after any later edit)
    * would publish a .gpg-id whose entries are partly still encrypted to the
-   * previous recipients. Held until a re-encryption of that store succeeds;
-   * a push the user asks for is not held. Kept for this session only.
-   * @return true when an automatic push should not run now.
+   * previous recipients. Held while any folder of the store has such a run
+   * outstanding, until a clean re-encryption covers it; a push the user asks
+   * for is not held. Shared by both backends, so switching between them
+   * keeps it; kept for this session only.
+   * @return true when an automatic push of the current store should not run.
    */
   [[nodiscard]] auto autoPushHeld() const -> bool;
 
 protected:
   /**
-   * @brief Hold automatic pushes of the current store (autoPushHeld()):
-   *        its re-encryption did not finish cleanly.
+   * @brief Hold automatic pushes of the store that holds @p scope
+   *        (autoPushHeld()): its re-encryption did not finish cleanly.
+   * @param scope The folder (or entry) the run re-encrypted, absolute or
+   *        relative to the current store.
    */
-  void holdAutoPush();
+  void holdAutoPush(const QString &scope);
 
   /**
-   * @brief Release the hold on automatic pushes of the current store: a
-   *        re-encryption of it succeeded.
+   * @brief Release the holds a clean re-encryption of @p folder covers:
+   *        those for @p folder itself and everything under it. Holds for
+   *        other folders stay.
+   * @param folder The folder the clean run re-encrypted, absolute or
+   *        relative to the current store.
    */
-  void releaseAutoPush();
+  void releaseAutoPush(const QString &folder);
 
   /**
    * @brief With signing on, refuse to encrypt @p file when the lookup passed
@@ -722,8 +730,19 @@ protected slots:
                         const QString &err);
 
 private:
-  /// The store (cleaned path) whose automatic pushes are held, or empty.
-  QString m_autoPushHeldFor;
+  /**
+   * @brief The folders (cleaned absolute paths) whose re-encryption did not
+   *        finish, for every store and both backends.
+   * @return The shared set, for this session.
+   */
+  static auto heldScopes() -> QSet<QString> &;
+  /**
+   * @brief @p path as an absolute, cleaned path, relative ones taken from
+   *        the current store.
+   * @param path A folder or entry.
+   * @return The cleaned absolute path.
+   */
+  [[nodiscard]] auto scopePath(const QString &path) const -> QString;
   /// Files of the Show() calls still in flight, oldest first.
   QQueue<QString> m_pendingShows;
   /// Inserts that have started queueing but not yet reported; see queueInsert.

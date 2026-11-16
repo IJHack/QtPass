@@ -205,6 +205,10 @@ class RealPass : public Pass {
   QQueue<InsertRecord> m_insertPending;
   /// The insert whose completion is being handled.
   InsertRecord m_insertDone;
+  /// What each queued init, move or copy re-encrypts (its folder, or the
+  /// destination), oldest first, for the push hold; the executor completes
+  /// them in this order.
+  QQueue<QString> m_reencryptScopes;
 
 public:
   /**

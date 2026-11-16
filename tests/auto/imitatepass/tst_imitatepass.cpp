@@ -1335,10 +1335,23 @@ void tst_imitatepass::pushAskedForDuringAReencryptionWaitsForIt() {
       // Nor does the next automatic push, after any later edit: the
       // recipients change is committed already.
       QVERIFY2(pass.autoPushHeld(), "a failed run holds automatic pushes");
-      // A clean run of the store releases the hold.
+      // A clean run of another folder releases nothing, and its own
+      // automatic push waits too: it would publish the store as it is.
       s.gpgExecutable = writeRecordingGpg(storeDir.path(), gpgLog);
+      s.autoPush = true;
       pass.init(s);
       QVERIFY(pass.autoPushHeld());
+      const QString other = QDir(storeDir.path()).filePath("other");
+      QVERIFY(QDir().mkpath(other));
+      endSpy.clear();
+      pass.reencryptPath(other);
+      QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+      QTest::qWait(300);
+      QCoreApplication::processEvents();
+      QVERIFY2(pass.autoPushHeld(), "a clean run elsewhere releases nothing");
+      QVERIFY2(!hasPush(loggedCalls(gitLog)),
+               "nor does its own automatic push go");
+      // A clean run of the store releases the hold.
       endSpy.clear();
       pass.reencryptPath(storeDir.path());
       QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));

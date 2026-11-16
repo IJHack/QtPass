@@ -213,8 +213,12 @@ namespace {
 /// Reaches Pass's protected hold controls on any backend object (named
 /// through a derived class, a member pointer applies to the base).
 struct HoldOpener : RealPass {
-  static void hold(Pass *pass) { (pass->*(&HoldOpener::holdAutoPush))(); }
-  static void release(Pass *pass) { (pass->*(&HoldOpener::releaseAutoPush))(); }
+  static void hold(Pass *pass) {
+    (pass->*(&HoldOpener::holdAutoPush))(QString());
+  }
+  static void release(Pass *pass) {
+    (pass->*(&HoldOpener::releaseAutoPush))(QString());
+  }
 };
 } // namespace
 

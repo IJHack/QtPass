@@ -1122,6 +1122,7 @@ void ImitatePass::reencryptPath(const QString &dir) {
     return;
   }
   m_reencryptActive = true;
+  m_reencryptScope = dir;
   m_reencryptCancel.store(false);
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
   emit startReencryptPath();
@@ -1377,6 +1378,18 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                       "\n\n" + listed.join('\n'));
   }
 
+  // The recipients change is committed already: a run that did not finish
+  // leaves entries for the previous recipients, which the next automatic
+  // push (after any edit) would publish with it. A clean run releases only
+  // the holds of what it covered.
+  if (reencryptUsesGit()) {
+    if (result.cancelled || result.aborted || !result.failed.isEmpty()) {
+      holdAutoPush(m_reencryptScope);
+    } else {
+      releaseAutoPush(m_reencryptScope);
+    }
+  }
+
   if (result.cancelled) {
     emit statusMsg(tr("Re-encryption cancelled: %1 of %2 files checked, "
                       "%3 re-encrypted, %4 failed")
@@ -1397,7 +1410,12 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                      3000);
     }
     if ((m_settings.autoPush || m_pushAfterReencrypt) && reencryptUsesGit()) {
-      if (result.failed.isEmpty()) {
+      if (result.failed.isEmpty() && autoPushHeld()) {
+        // Clean here, but another folder's run did not finish.
+        emit statusMsg(tr("Not pushing: an earlier re-encryption in this "
+                          "store did not finish"),
+                       5000);
+      } else if (result.failed.isEmpty()) {
         emit statusMsg(tr("Updating password-store"), 2000);
         m_reencryptPushing = true;
         GitPush();
@@ -1407,16 +1425,6 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                           nullptr, result.failed.size()),
                        5000);
       }
-    }
-  }
-  // The recipients change is committed already: a run that did not finish
-  // leaves entries for the previous recipients, which the next automatic
-  // push (after any edit) would publish with it.
-  if (reencryptUsesGit()) {
-    if (result.cancelled || result.aborted || !result.failed.isEmpty()) {
-      holdAutoPush();
-    } else {
-      releaseAutoPush();
     }
   }
   if (m_uncommittedGpgId) {

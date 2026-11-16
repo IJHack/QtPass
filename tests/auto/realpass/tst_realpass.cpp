@@ -12,6 +12,7 @@
 
 #include "../../../src/appsettings.h"
 #include "../../../src/gpgidgeneration.h"
+#include "../../../src/imitatepass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
 #include "../../../src/userinfo.h"
@@ -1031,49 +1032,122 @@ void tst_realpass::reencryptFailedJudgesTheStatusLines_data() {
       << QStringLiteral("[GNUPG:] END_ENCRYPTION\n") << false;
 }
 
-namespace {
-/// RealPass with its completion handler callable, to feed it a finished
-/// pass run without a process.
-class FinishingRealPass : public RealPass {
-public:
-  using RealPass::finished;
-};
-} // namespace
-
 /**
  * @brief After pass init reported entries it could not re-encrypt, the
- *        recipients change is committed locally: automatic pushes of that
+ *        recipients change is committed locally: automatic pushes of the
  *        store are held, so a later edit's push does not publish it, until a
- *        clean init of the store. A move or copy does not release it, and
- *        another store is not held.
+ *        clean init covers that folder. A clean init of another folder
+ *        (a neighbour with the same prefix included) and a clean copy do
+ *        not release it; holds of two folders are kept apart; the hold is
+ *        shared by both backends.
  */
 void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
-  QTemporaryDir store;
-  QTemporaryDir other;
-  QVERIFY(store.isValid() && other.isValid());
-  FinishingRealPass pass;
-  AppSettings s = QtPassSettings::load();
-  s.passStore = store.path() + QStringLiteral("/");
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the fake pass");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString store = dir.path() + QStringLiteral("/store");
+  for (const QString &folder :
+       {QStringLiteral("a"), QStringLiteral("ab"), QStringLiteral("c")}) {
+    QVERIFY(QDir().mkpath(QDir(store).filePath(folder)));
+  }
+  // Fails to re-encrypt in any folder named in FAIL (a file next to the
+  // script, read at each run), reports a clean run elsewhere.
+  const QString failList = dir.filePath(QStringLiteral("FAIL"));
+  const QString script = dir.filePath(QStringLiteral("pass"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("#!/bin/sh\nfor a in \"$@\"; do case \"$a\" in --path=*) "
+            "p=\"${a#--path=}\";; esac; last=\"$a\"; done\n"
+            "echo \"x: reencrypting to AAAA\"\n"
+            "if grep -qx \"${p:-$last}\" \"");
+    f.write(QFile::encodeName(failList));
+    f.write("\" 2>/dev/null; then\n"
+            "  echo '[GNUPG:] INV_RECP 0 CCCC' >&2\n"
+            "  echo '[GNUPG:] FAILURE encrypt 53' >&2\n"
+            "else echo '[GNUPG:] END_ENCRYPTION' >&2; fi\nexit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto failIn = [&failList](const QStringList &folders) {
+    QFile f(failList);
+    return f.open(QIODevice::WriteOnly) &&
+           f.write((folders.join('\n') + '\n').toUtf8()) > 0;
+  };
+  AppSettings s = m_settings;
+  s.passExecutable = script;
+  s.passStore = store + QStringLiteral("/");
+  s.useGit = false;
+  RealPass pass;
   pass.init(s);
-  const QString out = QStringLiteral("a: reencrypting to AAAA\n");
-  const QString failed =
-      QStringLiteral("[GNUPG:] INV_RECP 0 CCCC\n[GNUPG:] FAILURE encrypt 53\n");
-  const QString clean = QStringLiteral("[GNUPG:] END_ENCRYPTION\n");
+  pass.updateEnv();
+  QSignalSpy done(&pass, &Pass::finishedInit);
+  QSignalSpy copied(&pass, &Pass::finishedCopy);
+  QSignalSpy errorExit(&pass, &Pass::processErrorExit);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("AAAA");
+  alice.enabled = true;
+  // One init; true when it ran to an end, clean or reported failed.
+  const auto init = [&](const QString &folder) {
+    const qsizetype ends = done.count() + errorExit.count();
+    pass.Init(folder, {alice});
+    return QTest::qWaitFor(
+        [&] { return done.count() + errorExit.count() > ends; }, 10000);
+  };
+  const auto release = qScopeGuard([&] {
+    QVERIFY(failIn({QStringLiteral("none")}));
+    init(store);
+  });
+
+  QVERIFY(failIn({QStringLiteral("a"), QStringLiteral("ab")}));
   QVERIFY(!pass.autoPushHeld());
-  pass.finished(Enums::PASS_INIT, 0, out, failed);
-  QVERIFY(pass.autoPushHeld());
-  pass.finished(Enums::PASS_COPY, 0, out, clean);
+  QVERIFY(init(QStringLiteral("a")));
+  QVERIFY2(pass.autoPushHeld(), "a failed init holds the store");
+  QVERIFY(init(QStringLiteral("ab")));
+  QVERIFY(failIn({QStringLiteral("none")}));
+  QVERIFY(init(QStringLiteral("c")));
+  QVERIFY2(pass.autoPushHeld(), "a clean init elsewhere releases nothing");
+  QVERIFY(init(QStringLiteral("ab")));
+  QVERIFY2(pass.autoPushHeld(), "folder a's failure is still outstanding");
+  // Into folder a, the one still held: a copy is not taken as covering it.
+  const qsizetype copies = copied.count();
+  pass.Copy(QDir(store).filePath(QStringLiteral("c")),
+            QDir(store).filePath(QStringLiteral("a")), false);
+  QVERIFY(QTest::qWaitFor([&] { return copied.count() > copies; }, 10000));
   QVERIFY2(pass.autoPushHeld(), "a copy re-encrypts only its own entries");
-  s.passStore = other.path();
-  pass.init(s);
-  QVERIFY2(!pass.autoPushHeld(), "another store is not held");
-  s.passStore = store.path();
-  pass.init(s);
+  // Shared with the other backend: switching keeps the hold.
+  {
+    ImitatePass other;
+    other.init(s);
+    QVERIFY(other.autoPushHeld());
+  }
+  // Another store is not held.
+  {
+    AppSettings elsewhere = s;
+    elsewhere.passStore = dir.filePath(QStringLiteral("other"));
+    RealPass third;
+    third.init(elsewhere);
+    QVERIFY(!third.autoPushHeld());
+  }
+  // A clean init of a covers a, not its neighbour ab.
+  QVERIFY(failIn({QStringLiteral("ab")}));
+  QVERIFY(init(QStringLiteral("ab")));
+  QVERIFY(failIn({QStringLiteral("none")}));
+  QVERIFY(init(QStringLiteral("a")));
+  QVERIFY2(pass.autoPushHeld(), "folder ab is not under folder a");
+  QVERIFY(init(QStringLiteral("ab")));
+  QVERIFY2(!pass.autoPushHeld(), "every failed folder covered again");
+  // A failure, then a clean init of the whole store.
+  QVERIFY(failIn({QStringLiteral("c")}));
+  QVERIFY(init(QStringLiteral("c")));
   QVERIFY(pass.autoPushHeld());
-  pass.finished(Enums::PASS_INIT, 0, out, clean);
-  QVERIFY2(!pass.autoPushHeld(), "a clean init releases the hold");
-  pass.finished(Enums::PASS_MOVE, 0, out, failed);
-  QVERIFY(pass.autoPushHeld());
+  QVERIFY(failIn({QStringLiteral("none")}));
+  QVERIFY(init(store));
+  QVERIFY2(!pass.autoPushHeld(), "the whole store covers every folder");
+#endif
 }
 
 /**

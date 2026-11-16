@@ -373,15 +373,19 @@ void RealPass::finished(int id, int exitCode, const QString &out,
   }
   const auto pid = static_cast<PROCESS>(id);
   if (pid == PASS_INIT || pid == PASS_MOVE || pid == PASS_COPY) {
+    // Without a recorded scope (not queued through Init/Move/Copy), the
+    // whole store: held as a whole, released by nothing short of it.
+    const QString scope =
+        m_reencryptScopes.isEmpty() ? QString() : m_reencryptScopes.dequeue();
     if (exitCode == 0 && reencryptFailed(out, err)) {
-      holdAutoPush();
+      holdAutoPush(scope);
       reportReencryptFailure(pid, out, err);
       return;
     }
-    // pass re-encrypts the whole folder on init: a clean run of it ends a
-    // hold an earlier failure set (a move or copy covers only its entries).
-    if (pid == PASS_INIT && exitCode == 0) {
-      releaseAutoPush();
+    // pass init re-encrypts everything under its folder: a clean run
+    // releases the holds there. A move or copy covers only its entries.
+    if (pid == PASS_INIT && exitCode == 0 && !scope.isEmpty()) {
+      releaseAutoPush(scope);
     }
     // The status lines are for this check, not for the output panel.
     Pass::finished(id, exitCode, out, withoutStatusLines(err));
@@ -532,6 +536,7 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
       args.append(user.key_id);
     }
   }
+  m_reencryptScopes.enqueue(inStore);
   executePass(PASS_INIT, args);
 }
 
@@ -604,6 +609,7 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   }
   args << passSrc;
   args << passDest;
+  m_reencryptScopes.enqueue(QDir::cleanPath(QDir(dest).absolutePath()));
   executePass(id, args);
 }
 
