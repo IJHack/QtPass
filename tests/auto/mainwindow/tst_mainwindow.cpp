@@ -3784,10 +3784,12 @@ void tst_mainwindow::entryActionsWaitWhileContentResultsHideTheTree() {
   QTRY_VERIFY(results->hasFocus());
   QCOMPARE(results->currentItem(), results->topLevelItem(0));
 
-  // Ctrl+C there does not decrypt the hidden tree's entry either.
-  m_window->activateWindow();
-  QVERIFY(QTest::qWaitForWindowActive(m_window.data()));
-  QTest::keyClick(m_window.get(), Qt::Key_C, Qt::ControlModifier);
+  // Ctrl+C there does not decrypt the hidden tree's entry either. The
+  // shortcut's slot is called directly: activating the window (on macOS)
+  // queues focusInput(), which moves the focus to the search box.
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "copySelectionOrPassword",
+                                    Qt::DirectConnection));
+  QVERIFY(results->hasFocus());
   QTest::qWait(100);
   QVERIFY2(started.isEmpty() && treeView()->isEnabled(),
            "Ctrl+C decrypted the out-of-sight entry");
