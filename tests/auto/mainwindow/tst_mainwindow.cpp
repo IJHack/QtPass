@@ -3789,6 +3789,18 @@ void tst_mainwindow::entryActionsWaitWhileContentResultsHideTheTree() {
   QVERIFY(!treeView()->isHidden());
   QVERIFY2(edit->isEnabled() && del->isEnabled() && otp->isEnabled(),
            "back with the tree and its selection");
+
+  // Deselecting while results show brings the tree back with nothing
+  // selected (the current index stays): they stay off.
+  grep->setChecked(true);
+  m_window->onGrepFinished(
+      {{QStringLiteral("work/acme/vpn"), {QStringLiteral("login: alice")}}});
+  QTRY_VERIFY(results->isVisible());
+  m_window->deselect();
+  QVERIFY(!treeView()->isHidden());
+  QVERIFY(treeView()->currentIndex().isValid());
+  QVERIFY2(!edit->isEnabled() && !del->isEnabled() && !otp->isEnabled(),
+           "nothing selected after deselect()");
 }
 
 /**

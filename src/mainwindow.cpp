@@ -1100,7 +1100,9 @@ void MainWindow::showContentResults(bool shown) {
     ui->actionDelete->setEnabled(false);
     ui->actionEdit->setEnabled(false);
     updateOtpButtonVisibility(false);
-  } else {
+  } else if (ui->treeView->selectionModel()->hasSelection()) {
+    // Only for an entry still selected: deselect() clears the selection but
+    // keeps the current index, which would turn Edit and Delete back on.
     setUiElementsEnabled(m_uiEnabled);
   }
 }

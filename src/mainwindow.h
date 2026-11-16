@@ -612,8 +612,8 @@ private:
    * @brief Show the content search results in place of the tree, or the tree
    *        again.
    * @param shown True to show the results. Delete, Edit and OTP are off while
-   *        they hide the tree; showing the tree enables them as the selection
-   *        allows.
+   *        they hide the tree; showing the tree enables them again only for
+   *        a selected entry.
    */
   void showContentResults(bool shown);
 
