@@ -1755,7 +1755,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No es fa push: un rexifratge anterior d&apos;aquest magatzem no s&apos;ha acabat</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2846,15 +2846,15 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No s&apos;ha pogut llegir %1, així que se&apos;n desconeix el contingut.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>No s&apos;ha pogut llegir %n carpeta que conté, així que se&apos;n desconeix el contingut.</numerusform>
+            <numerusform>No s&apos;han pogut llegir %n carpetes que conté, així que se&apos;n desconeix el contingut.</numerusform>
         </translation>
     </message>
     <message>
@@ -3754,7 +3754,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No es fa push automàticament: l&apos;últim rexifratge no s&apos;ha acabat. Torneu a xifrar o feu el push a mà.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3787,7 +3787,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No es fa push: un rexifratge anterior d&apos;aquest magatzem no s&apos;ha acabat</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3818,7 +3818,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">S&apos;han canviat els destinataris, però algunes entrades no s&apos;han pogut tornar a xifrar per a ells: aquestes encara estan xifrades per als destinataris anteriors, que encara les poden llegir. Amb Git, es fa commit del canvi localment, però no se&apos;n fa push: QtPass no fa push d&apos;aquest magatzem automàticament fins que un rexifratge acabi bé, i un push fet a mà l&apos;envia.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3935,37 +3935,37 @@ i després activeu Git a Paràmetres.</translation>
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La configuració OTP és massa llarga.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aquesta és una configuració basada en un comptador (HOTP). QtPass només genera codis basats en el temps (TOTP).</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L&apos;algorisme d&apos;aquest enllaç otpauth:// no és compatible. QtPass admet SHA1, SHA256 i SHA512.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No es pot llegir aquest enllaç otpauth://.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Això no és un secret TOTP ni un enllaç otpauth://totp/.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falta el secret o no és base32 vàlid.</translation>
     </message>
 </context>
 <context>

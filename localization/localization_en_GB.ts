@@ -1759,7 +1759,7 @@ You will not be able to decrypt any newly added passwords!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Not pushing: an earlier re-encryption in this store did not finish</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2882,15 +2882,15 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 could not be read, so what it holds is unknown.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n folder in it could not be read, so what it holds is unknown.</numerusform>
+            <numerusform>%n folders in it could not be read, so what they hold is unknown.</numerusform>
         </translation>
     </message>
     <message>
@@ -3790,7 +3790,7 @@ Continue?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3823,7 +3823,7 @@ Continue?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Not pushing: an earlier re-encryption in this store did not finish</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3854,7 +3854,7 @@ Continue?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3971,37 +3971,37 @@ and turn Git on in Settings afterwards.</translation>
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The OTP configuration is too long.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This otpauth:// link cannot be read.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">This is not a TOTP secret or an otpauth://totp/ link.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The secret is missing or is not valid base32.</translation>
     </message>
 </context>
 <context>

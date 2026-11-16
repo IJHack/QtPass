@@ -1711,7 +1711,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পুশ করা হচ্ছে না: এই স্টোরে আগের একটি পুনরায় এনক্রিপশন শেষ হয়নি</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2620,15 +2620,15 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 পড়া যায়নি, তাই এতে কী আছে তা অজানা।</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>এর ভেতরের %nটি ফোল্ডার পড়া যায়নি, তাই সেটিতে কী আছে তা অজানা।</numerusform>
+            <numerusform>এর ভেতরের %nটি ফোল্ডার পড়া যায়নি, তাই সেগুলোতে কী আছে তা অজানা।</numerusform>
         </translation>
     </message>
     <message>
@@ -3509,7 +3509,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে পুশ করা হচ্ছে না: শেষ পুনরায় এনক্রিপশন শেষ হয়নি। আবার পুনরায় এনক্রিপ্ট করুন, অথবা নিজ হাতে পুশ করুন।</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3542,7 +3542,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পুশ করা হচ্ছে না: এই স্টোরে আগের একটি পুনরায় এনক্রিপশন শেষ হয়নি</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3573,7 +3573,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রাপকদের পরিবর্তন করা হয়েছে, কিন্তু কিছু এন্ট্রি তাদের জন্য পুনরায় এনক্রিপ্ট করা যায়নি: সেগুলো এখনও আগের প্রাপকদের জন্য এনক্রিপ্ট করা আছে, যারা এখনও সেগুলো পড়তে পারে। Git ব্যবহার করলে পরিবর্তনটি স্থানীয়ভাবে কমিট করা হয়েছে এবং পুশ করা হয়নি: কোনো পুনরায় এনক্রিপশন সফল না হওয়া পর্যন্ত QtPass এই স্টোরটি স্বয়ংক্রিয়ভাবে পুশ করে না, এবং নিজ হাতে পুশ করলে এটি পাঠানো হয়।</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3686,37 +3686,37 @@ git config --global user.email you@example.org
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP কনফিগারেশনটি খুব দীর্ঘ।</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এটি একটি কাউন্টার-ভিত্তিক (HOTP) কনফিগারেশন। QtPass শুধুমাত্র সময়-ভিত্তিক (TOTP) কোড তৈরি করে।</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই otpauth:// লিংকের অ্যালগরিদম সমর্থিত নয়। QtPass SHA1, SHA256 এবং SHA512 সমর্থন করে।</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই otpauth:// লিংকটি পড়া যায় না।</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এটি কোনো TOTP সিক্রেট বা otpauth://totp/ লিংক নয়।</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সিক্রেটটি অনুপস্থিত অথবা বৈধ base32 নয়।</translation>
     </message>
 </context>
 <context>

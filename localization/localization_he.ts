@@ -1526,7 +1526,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">לא מתבצעת דחיפה: הצפנה מחדש קודמת במאגר זה לא הסתיימה</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2305,15 +2305,15 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">לא ניתן היה לקרוא את %1, ולכן לא ידוע מה יש בו.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>לא ניתן היה לקרוא %n תיקייה שבתוכו, ולכן לא ידוע מה יש בה.</numerusform>
+            <numerusform>לא ניתן היה לקרוא %n תיקיות שבתוכו, ולכן לא ידוע מה יש בהן.</numerusform>
         </translation>
     </message>
     <message>
@@ -3074,7 +3074,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">לא מתבצעת דחיפה אוטומטית: ההצפנה מחדש האחרונה לא הסתיימה. הצפינו מחדש שוב, או דחפו ידנית.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3107,7 +3107,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">לא מתבצעת דחיפה: הצפנה מחדש קודמת במאגר זה לא הסתיימה</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3138,7 +3138,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הנמענים שונו, אך חלק מהרשומות לא ניתן היה להצפין מחדש עבורם: הן עדיין מוצפנות עבור הנמענים הקודמים, שעדיין יכולים לקרוא אותן. עם Git, השינוי נשמר מקומית ולא נדחף: QtPass אינו דוחף מאגר זה אוטומטית עד שהצפנה מחדש תצליח, ודחיפה ידנית שולחת אותו.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3248,37 +3248,37 @@ and turn Git on in Settings afterwards.</source>
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הגדרות ה-OTP ארוכות מדי.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">אלה הגדרות מבוססות מונה (HOTP). QtPass מפיק קודים מבוססי זמן (TOTP) בלבד.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">האלגוריתם בקישור otpauth:// זה אינו נתמך. QtPass תומך ב-SHA1, SHA256 ו-SHA512.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">לא ניתן לקרוא את קישור otpauth:// זה.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">זה אינו סוד TOTP ואינו קישור otpauth://totp/.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הסוד חסר או שאינו base32 תקין.</translation>
     </message>
 </context>
 <context>

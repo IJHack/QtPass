@@ -1759,7 +1759,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neodosiela sa: predchádzajúce prešifrovanie v tomto úložisku sa nedokončilo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2890,16 +2890,16 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adresár %1 sa nepodarilo prečítať, preto jeho obsah nie je známy.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n podadresár sa nepodarilo prečítať, preto jeho obsah nie je známy.</numerusform>
+            <numerusform>%n podadresáre sa nepodarilo prečítať, preto ich obsah nie je známy.</numerusform>
+            <numerusform>%n podadresárov sa nepodarilo prečítať, preto ich obsah nie je známy.</numerusform>
         </translation>
     </message>
     <message>
@@ -3786,7 +3786,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automaticky sa neodosiela: posledné prešifrovanie sa nedokončilo. Spustite prešifrovanie znova alebo zmeny odošlite (push) ručne.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3819,7 +3819,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neodosiela sa: predchádzajúce prešifrovanie v tomto úložisku sa nedokončilo</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3850,7 +3850,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Príjemcovia boli zmenení, ale niektoré záznamy sa pre nich nepodarilo znovu zašifrovať: tie sú stále zašifrované pre predchádzajúcich príjemcov, ktorí ich stále môžu čítať. S Gitom je zmena zapísaná do lokálneho commitu a nie je odoslaná: QtPass toto úložisko automaticky neodošle, kým prešifrovanie neuspeje, a ručné odoslanie (push) ju odošle.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3968,37 +3968,37 @@ a potom zapnite Git v Nastaveniach.</translation>
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konfigurácia OTP je príliš dlhá.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toto je konfigurácia založená na počítadle (HOTP). QtPass vytvára iba kódy založené na čase (TOTP).</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Algoritmus v tomto odkaze otpauth:// nie je podporovaný. QtPass podporuje SHA1, SHA256 a SHA512.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tento odkaz otpauth:// sa nedá prečítať.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toto nie je tajný kľúč TOTP ani odkaz otpauth://totp/.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tajný kľúč chýba alebo nie je v platnom formáte base32.</translation>
     </message>
 </context>
 <context>

@@ -1747,7 +1747,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git push се прескаче: раније поновно шифровање у овом складишту није довршено</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2846,16 +2846,16 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Фасциклу %1 није било могуће прочитати, па је њен садржај непознат.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n фасциклу у њој није било могуће прочитати, па је њихов садржај непознат.</numerusform>
+            <numerusform>%n фасцикле у њој није било могуће прочитати, па је њихов садржај непознат.</numerusform>
+            <numerusform>%n фасцикли у њој није било могуће прочитати, па је њихов садржај непознат.</numerusform>
         </translation>
     </message>
     <message>
@@ -3742,7 +3742,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Аутоматски Git push се прескаче: последње поновно шифровање није довршено. Поново покрените шифровање или ручно пошаљите измене (push).</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3775,7 +3775,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git push се прескаче: раније поновно шифровање у овом складишту није довршено</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3806,7 +3806,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Примаоци су промењени, али неке уносе није било могуће поново шифровати за њих: они су и даље шифровани за претходне примаоце, који и даље могу да их читају. Уз Git, промена је локално комитована и није послата (push): QtPass не шаље ово складиште аутоматски док поновно шифровање не успе, а ручни push ће је послати.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3924,37 +3924,37 @@ git config --global user.email vi@example.org
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Конфигурација ОТП-а је предугачка.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ово је конфигурација заснована на бројачу (HOTP). QtPass прави само кодове засноване на времену (TOTP).</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Алгоритам у овој otpauth:// вези није подржан. QtPass подржава SHA1, SHA256 и SHA512.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ову otpauth:// везу није могуће прочитати.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ово није TOTP тајна нити otpauth://totp/ веза.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Тајна недостаје или није исправан base32.</translation>
     </message>
 </context>
 <context>

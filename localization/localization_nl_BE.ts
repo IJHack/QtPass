@@ -1759,7 +1759,7 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Er wordt niet gepusht: een eerdere herversleuteling in deze opslag is niet voltooid</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2889,15 +2889,15 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 kon niet worden gelezen, dus de inhoud ervan is onbekend.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n map hierin kon niet worden gelezen, dus de inhoud ervan is onbekend.</numerusform>
+            <numerusform>%n mappen hierin konden niet worden gelezen, dus de inhoud ervan is onbekend.</numerusform>
         </translation>
     </message>
     <message>
@@ -3797,7 +3797,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Er wordt niet automatisch gepusht: de laatste herversleuteling is niet voltooid. Herversleutel nogmaals, of push handmatig.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3830,7 +3830,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Er wordt niet gepusht: een eerdere herversleuteling in deze opslag is niet voltooid</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3861,7 +3861,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De ontvangers zijn gewijzigd, maar sommige items konden niet voor hen worden herversleuteld: die zijn nog versleuteld voor de vorige ontvangers, die ze nog steeds kunnen lezen. Met Git is de wijziging lokaal gecommit en niet gepusht: QtPass pusht deze opslag niet automatisch totdat een herversleuteling slaagt, en een handmatige push verstuurt de wijziging.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3978,37 +3978,37 @@ uit en schakel Git daarna in bij Instellingen.</translation>
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De OTP-configuratie is te lang.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dit is een tellergebaseerde (HOTP) configuratie. QtPass maakt alleen tijdgebaseerde (TOTP) codes.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Het algoritme in deze otpauth://-koppeling wordt niet ondersteund. QtPass ondersteunt SHA1, SHA256 en SHA512.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deze otpauth://-koppeling kan niet worden gelezen.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dit is geen TOTP-geheim en geen otpauth://totp/-koppeling.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Het geheim ontbreekt of is geen geldige base32.</translation>
     </message>
 </context>
 <context>

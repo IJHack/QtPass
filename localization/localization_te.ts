@@ -1711,7 +1711,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పుష్ చేయడం లేదు: ఈ స్టోర్‌లో మునుపటి రీ-ఎన్క్రిప్షన్ పూర్తి కాలేదు</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2637,15 +2637,15 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ను చదవలేకపోయింది, కాబట్టి అందులో ఏముందో తెలియదు.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>అందులోని %n ఫోల్డర్‌ను చదవలేకపోయింది, కాబట్టి దానిలో ఏముందో తెలియదు.</numerusform>
+            <numerusform>అందులోని %n ఫోల్డర్‌లను చదవలేకపోయింది, కాబట్టి వాటిలో ఏముందో తెలియదు.</numerusform>
         </translation>
     </message>
     <message>
@@ -3517,7 +3517,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">స్వయంచాలకంగా పుష్ చేయడం లేదు: చివరి రీ-ఎన్క్రిప్షన్ పూర్తి కాలేదు. మళ్లీ రీ-ఎన్క్రిప్ట్ చేయండి, లేదా మీరే స్వయంగా పుష్ చేయండి.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3550,7 +3550,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పుష్ చేయడం లేదు: ఈ స్టోర్‌లో మునుపటి రీ-ఎన్క్రిప్షన్ పూర్తి కాలేదు</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3581,7 +3581,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">గ్రహీతలు మార్చబడ్డారు, కానీ కొన్ని ఎంట్రీలను వారి కోసం రీ-ఎన్క్రిప్ట్ చేయలేకపోయింది: అవి ఇంకా మునుపటి గ్రహీతలకు ఎన్క్రిప్ట్ చేయబడి ఉన్నాయి, వారు ఇప్పటికీ వాటిని చదవగలరు. Git తో, మార్పు స్థానికంగా కమిట్ చేయబడింది మరియు పుష్ చేయబడలేదు: రీ-ఎన్క్రిప్షన్ విజయవంతమయ్యే వరకు QtPass ఈ స్టోర్‌ను స్వయంచాలకంగా పుష్ చేయదు, మరియు మీరే స్వయంగా చేసే పుష్ దాన్ని పంపుతుంది.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3694,37 +3694,37 @@ git config --global user.email you@example.org
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP కాన్ఫిగరేషన్ చాలా పొడవుగా ఉంది.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఇది కౌంటర్-ఆధారిత (HOTP) కాన్ఫిగరేషన్. QtPass సమయ-ఆధారిత (TOTP) కోడ్‌లను మాత్రమే తయారు చేస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఈ otpauth:// లింక్‌లోని అల్గారిథమ్‌కు మద్దతు లేదు. QtPass SHA1, SHA256 మరియు SHA512 లకు మద్దతు ఇస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఈ otpauth:// లింక్‌ను చదవలేము.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఇది TOTP సీక్రెట్ కాదు, otpauth://totp/ లింక్ కూడా కాదు.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">సీక్రెట్ లేదు, లేదా అది చెల్లుబాటు అయ్యే base32 కాదు.</translation>
     </message>
 </context>
 <context>

@@ -1751,7 +1751,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">푸시하지 않음: 이 비밀번호 저장소에서 이전 재암호화가 완료되지 않았습니다</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2842,14 +2842,14 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1을(를) 읽을 수 없어 그 안에 무엇이 있는지 알 수 없습니다.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>그 안의 폴더 %n개를 읽을 수 없어 그 안에 무엇이 있는지 알 수 없습니다.</numerusform>
         </translation>
     </message>
     <message>
@@ -3732,7 +3732,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">자동으로 푸시하지 않음: 마지막 재암호화가 완료되지 않았습니다. 다시 재암호화하거나 직접 푸시하세요.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3765,7 +3765,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">푸시하지 않음: 이 비밀번호 저장소에서 이전 재암호화가 완료되지 않았습니다</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3796,7 +3796,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">수신자가 변경되었지만 일부 항목을 새 수신자에 맞게 재암호화할 수 없었습니다. 해당 항목은 여전히 이전 수신자에 맞게 암호화되어 있어 이전 수신자가 계속 읽을 수 있습니다. Git을 사용하는 경우 변경 사항은 로컬에 커밋되었지만 푸시되지 않았습니다. 재암호화가 성공할 때까지 QtPass는 이 비밀번호 저장소를 자동으로 푸시하지 않으며, 직접 푸시하면 전송됩니다.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3912,37 +3912,37 @@ git config --global user.email you@example.org
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP 환경 구성이 너무 깁니다.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">카운터 기반(HOTP) 환경 구성입니다. QtPass는 시간 기반(TOTP) 코드만 생성합니다.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">이 otpauth:// 링크의 알고리즘은 지원되지 않습니다. QtPass는 SHA1, SHA256, SHA512를 지원합니다.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">이 otpauth:// 링크를 읽을 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TOTP 비밀 키 또는 otpauth://totp/ 링크가 아닙니다.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">비밀 키가 없거나 올바른 base32가 아닙니다.</translation>
     </message>
 </context>
 <context>

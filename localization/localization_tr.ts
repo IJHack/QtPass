@@ -1711,7 +1711,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="1417"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git push yapılmıyor: bu depodaki önceki bir yeniden şifreleme tamamlanmadı</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1471"/>
@@ -2694,14 +2694,14 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1367"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 okunamadı, bu yüzden içinde ne olduğu bilinmiyor.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1375"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>İçindeki %n klasör okunamadı, bu yüzden içlerinde ne olduğu bilinmiyor.</numerusform>
         </translation>
     </message>
     <message>
@@ -3596,7 +3596,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Otomatik olarak gönderilmiyor (push): son yeniden şifreleme tamamlanmadı. Yeniden şifreleyin ya da elle gönderin.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3629,7 +3629,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git push yapılmıyor: bu depodaki önceki bir yeniden şifreleme tamamlanmadı</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="187"/>
@@ -3660,7 +3660,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="494"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alıcılar değiştirildi, ancak bazı girdiler onlar için yeniden şifrelenemedi: bunlar hâlâ önceki alıcılar için şifreli ve bu alıcılar onları hâlâ okuyabilir. Git ile değişiklik yerel olarak commit edildi ve gönderilmedi (push): QtPass, bir yeniden şifreleme başarılı olana kadar bu depoyu otomatik olarak göndermez; elle yapılan bir push değişikliği gönderir.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3776,37 +3776,37 @@ komutlarını çalıştırın ve ardından Ayarlar&apos;dan Git&apos;i açın.</
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP yapılandırması çok uzun.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu, sayaç tabanlı (HOTP) bir yapılandırma. QtPass yalnızca zaman tabanlı (TOTP) kodlar üretir.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu otpauth:// bağlantısındaki algoritma desteklenmiyor. QtPass SHA1, SHA256 ve SHA512&apos;yi destekler.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu otpauth:// bağlantısı okunamıyor.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu bir TOTP şifresi veya otpauth://totp/ bağlantısı değil.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gizli anahtar eksik ya da geçerli bir base32 değil.</translation>
     </message>
 </context>
 <context>
