@@ -119,24 +119,59 @@ static auto otpConfigOf(const QString &line) -> QString {
 namespace {
 
 /**
+ * @brief The OTP configurations found of one kind: the first, and the first
+ * that gives a code.
+ */
+struct OtpCandidate {
+  QString first;  ///< The first configuration offered.
+  QString usable; ///< The first one Totp::isValid() accepts.
+
+  /**
+   * @brief Note @p config, until one that gives a code was noted.
+   * @param config A configuration of this kind, trimmed.
+   */
+  void offer(const QString &config) {
+    if (!usable.isEmpty()) {
+      return;
+    }
+    if (first.isEmpty()) {
+      first = config;
+    }
+    if (Totp::isValid(config)) {
+      usable = config;
+    }
+  }
+};
+
+/**
  * @brief Where an OTP configuration was found, in the order getOtpUri()
  * prefers: a named field first, then a bare `otpauth://` line, then an
  * `OTP:` line the template did not promote to a field.
  */
 struct OtpCandidates {
-  QString field;          ///< Value of the first OTP-named or URI-valued field.
-  QString bareLine;       ///< First bare `otpauth://` line (password line too).
-  QString remainingField; ///< Value of the first `OTP:` line left as text.
+  OtpCandidate field;          ///< OTP-named or URI-valued fields.
+  OtpCandidate bareLine;       ///< Bare `otpauth://` lines (password line too).
+  OtpCandidate remainingField; ///< `OTP:` lines left as text.
 
   /**
-   * @brief The first of the three that was found.
+   * @brief The first configuration that gives a code, in the order above,
+   * so an unusable one (an `otpauth-migration://` export, HOTP) does not
+   * hide a later one that works. With none usable, the first found, for
+   * the "Invalid OTP secret" note.
    * @return The configuration string, or empty when none was found.
    */
   auto pick() const -> QString {
-    if (!field.isEmpty()) {
-      return field;
+    for (const OtpCandidate *kind : {&field, &bareLine, &remainingField}) {
+      if (!kind->usable.isEmpty()) {
+        return kind->usable;
+      }
     }
-    return bareLine.isEmpty() ? remainingField : bareLine;
+    for (const OtpCandidate *kind : {&field, &bareLine, &remainingField}) {
+      if (!kind->first.isEmpty()) {
+        return kind->first;
+      }
+    }
+    return {};
   }
 };
 
@@ -149,7 +184,7 @@ struct OtpCandidates {
  * @param allFields The "Template all fields" setting.
  * @param alsoField Extra predicate on the trimmed name; may be empty.
  * @param namedValues Receives the field when it is taken.
- * @param otp Receives the first OTP candidate of each kind.
+ * @param otp Is offered the OTP candidates of each kind.
  * @return true when the line became a field and is not remaining text.
  */
 auto takeNamedValue(const QString &line, const QStringList &templateFields,
@@ -167,17 +202,16 @@ auto takeNamedValue(const QString &line, const QStringList &templateFields,
       !(allFields && !value.startsWith(QStringLiteral("//"))) &&
       !(alsoField && alsoField(name.trimmed()))) {
     // An `OTP:` line the template did not promote to a field.
-    if (otp.remainingField.isEmpty() && FileContent::isOtpFieldName(name)) {
-      otp.remainingField = value.trimmed();
+    if (FileContent::isOtpFieldName(name)) {
+      otp.remainingField.offer(value.trimmed());
     }
     return false;
   }
   namedValues.append({name.trimmed(), value.trimmed(), line});
   // Keyed on the value as well as the name: a field called anything at all
   // whose value is an otpauth URI is still a shared secret.
-  if (otp.field.isEmpty() && (FileContent::isOtpFieldName(name) ||
-                              FileContent::isOtpUriValue(value))) {
-    otp.field = value.trimmed();
+  if (FileContent::isOtpFieldName(name) || FileContent::isOtpUriValue(value)) {
+    otp.field.offer(value.trimmed());
   }
   return true;
 }
@@ -230,7 +264,7 @@ auto FileContent::parse(const QString &fileContent,
   // (holdsOtpConfig()); a first line with a URI elsewhere in it is kept off
   // the screen all the same (isOtpPasswordLine()).
   if (holdsOtpConfig(password)) {
-    otp.bareLine = otpConfigOf(password);
+    otp.bareLine.offer(otpConfigOf(password));
   }
   for (; it != tokens.end(); ++it) {
     const QString line = it->toString();
@@ -263,9 +297,9 @@ auto FileContent::parse(const QString &fileContent,
     }
     remainingData += line;
     ++remainingLines;
-    if (isOtpUri(line) && otp.bareLine.isEmpty()) {
+    if (isOtpUri(line)) {
       // A bare otpauth:// line, the convention the pass-otp extension uses.
-      otp.bareLine = line.trimmed();
+      otp.bareLine.offer(line.trimmed());
     }
     if (!isLineHidden(line) && !secretPastTheCap) {
       if (displayedLines == kMaxDisplayLines) {

@@ -867,6 +867,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   secret with other characters than letters, digits, spaces, `-`, `.`, `_`
   and `=` padding (a remark in brackets after it, say), whose code was made
   from the remark's letters too.
+- An entry with more than one OTP configuration gives a code from the first
+  one that works. An unusable one (an `otpauth-migration://` export, an
+  HOTP URI, a value that is not a secret) stood in the way of a working
+  `otpauth://totp/` line further down, and the entry gave no code at all.
 - An entry whose content is not UTF-8 text (a password typed on a Latin-1
   terminal, a key file stored with `pass insert -m`) keeps its bytes. With
   the native backend, re-encrypting a folder (changing its recipients,
