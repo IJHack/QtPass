@@ -5752,8 +5752,8 @@ void tst_mainwindow::deleteFolderWarnsAboutStrayFiles() {
 
 /**
  * @brief A linked folder in the tree is deleted as a link: the question
- *        says so, and what it points to stays. An entry seen through a link
- *        is refused, as it is not the store's to delete.
+ *        says so, and what it points to stays. What is behind the link is
+ *        not listed, so nothing seen through it can be deleted.
  */
 void tst_mainwindow::deleteLinkedFolderRemovesOnlyTheLink() {
 #ifdef Q_OS_WIN
@@ -5776,17 +5776,10 @@ void tst_mainwindow::deleteLinkedFolderRemovesOnlyTheLink() {
   QVERIFY(QFile::link(outside.path(), link));
   const auto cleanup = qScopeGuard([&link] { QFile::remove(link); });
 
-  // The entry behind the link: refused, nothing asked.
-  QVERIFY(selectPath(link + QStringLiteral("/behind.gpg")));
-  {
-    ModalDriver driver(answerBox(QMessageBox::Yes));
-    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
-                                      Qt::DirectConnection));
-    COMPARE_BOX_TITLES(driver.boxTitles, QStringList{QStringLiteral(
-                                             "Not a folder of the store")});
-    QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("symbolic link")),
-             qPrintable(driver.boxTexts.value(0)));
-  }
+  // The entry behind the link is not listed at all: a link is never
+  // entered (the backends still refuse such a path, should one get there).
+  QVERIFY2(!selectPath(link + QStringLiteral("/behind.gpg")),
+           "an entry behind a link must not be in the tree");
   QVERIFY(QFileInfo::exists(outside.filePath(QStringLiteral("behind.gpg"))));
 
   // The link itself: asked as a link, removed as a link.
