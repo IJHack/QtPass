@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_totp.htm
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Settings" id="r_Settings"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_totp_1_1_settings.html">Settings</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validated TOTP parameters. Only <a class="el" href="#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> produces one.  <a href="struct_totp_1_1_settings.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validated TOTP parameters. Only <a class="el" href="#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">Totp::parse()</a> produces one.  <a href="struct_totp_1_1_settings.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -140,11 +140,26 @@ Public Types</h2></td></tr>
 , <a class="el" href="#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b">Steam</a>
  }</td></tr>
 <tr class="memdesc:acd260916c919c39104526b0ccadce8a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Digit encoding, selected by the <span class="tt">encoder</span> URI parameter.  <a href="#acd260916c919c39104526b0ccadce8a0">More...</a><br /></td></tr>
+<tr class="memitem:acf4966342831a437cd0db45f8f05bf01" id="r_acf4966342831a437cd0db45f8f05bf01"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#acf4966342831a437cd0db45f8f05bf01">Refusal</a> { <br />
+&#160;&#160;<a class="el" href="#acf4966342831a437cd0db45f8f05bf01a6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="#acf4966342831a437cd0db45f8f05bf01ace2c8aed9c2fa0cfbed56cbda4d8bf07">Empty</a>
+, <a class="el" href="#acf4966342831a437cd0db45f8f05bf01a046afc1d5955fb46cbc55a8aa1f373dc">TooLong</a>
+, <a class="el" href="#acf4966342831a437cd0db45f8f05bf01a803e1b5921bc8d43066c4cabc6c557e6">Hotp</a>
+, <br />
+&#160;&#160;<a class="el" href="#acf4966342831a437cd0db45f8f05bf01a7d47ba5550f1ccff14024788e68904ae">UnknownAlgorithm</a>
+, <a class="el" href="#acf4966342831a437cd0db45f8f05bf01aa987954d709016bfeb9a0b168ee30fe4">UnreadableUri</a>
+, <a class="el" href="#acf4966342831a437cd0db45f8f05bf01a8f34b724caf3209f51ac8b2d627d2852">NotASecret</a>
+, <a class="el" href="#acf4966342831a437cd0db45f8f05bf01ab1ee9905cd4c4e35d30601db350f3964">NoSecret</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:acf4966342831a437cd0db45f8f05bf01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Why <a class="el" href="#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">parse()</a> gave no settings, so the user can be told more than "invalid".  <a href="#acf4966342831a437cd0db45f8f05bf01">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae6ad2f9cfb9cb54108b8138d660c803b" id="r_ae6ad2f9cfb9cb54108b8138d660c803b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae6ad2f9cfb9cb54108b8138d660c803b">parse</a> (const QString &amp;config) -&gt; std::optional&lt; <a class="el" href="struct_totp_1_1_settings.html">Settings</a> &gt;</td></tr>
-<tr class="memdesc:ae6ad2f9cfb9cb54108b8138d660c803b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an OTP configuration string.  <br /></td></tr>
+<tr class="memitem:a6acbc69133a69635bd907e037a001fda" id="r_a6acbc69133a69635bd907e037a001fda"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6acbc69133a69635bd907e037a001fda">parse</a> (const QString &amp;config, <a class="el" href="#acf4966342831a437cd0db45f8f05bf01">Refusal</a> *why=nullptr) -&gt; std::optional&lt; <a class="el" href="struct_totp_1_1_settings.html">Settings</a> &gt;</td></tr>
+<tr class="memdesc:a6acbc69133a69635bd907e037a001fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an OTP configuration string.  <br /></td></tr>
+<tr class="memitem:ab9e119555f7a25be2c61a8780e041365" id="r_ab9e119555f7a25be2c61a8780e041365"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab9e119555f7a25be2c61a8780e041365">describe</a> (<a class="el" href="#acf4966342831a437cd0db45f8f05bf01">Refusal</a> why) -&gt; QString</td></tr>
+<tr class="memdesc:ab9e119555f7a25be2c61a8780e041365"><td class="mdescLeft">&#160;</td><td class="mdescRight">One sentence for the user on why a configuration gives no code.  <br /></td></tr>
 <tr class="memitem:af023ce3487d15c2e290419ddd1ea0699" id="r_af023ce3487d15c2e290419ddd1ea0699"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af023ce3487d15c2e290419ddd1ea0699">isValid</a> (const QString &amp;config) -&gt; bool</td></tr>
 <tr class="memdesc:af023ce3487d15c2e290419ddd1ea0699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience validity test, for UI feedback.  <br /></td></tr>
 <tr class="memitem:ab8caa914c714a205c21919b3ac09cf08" id="r_ab8caa914c714a205c21919b3ac09cf08"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab8caa914c714a205c21919b3ac09cf08">generate</a> (const <a class="el" href="struct_totp_1_1_settings.html">Settings</a> &amp;settings, quint64 unixTime) -&gt; QString</td></tr>
@@ -186,7 +201,7 @@ Private Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RFC 6238 time-based one-time password generation. </p>
 <p>Ported and trimmed from KeePassXC (<span class="tt">src/core/Totp.cpp</span>). <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> stores TOTP configuration as an <span class="tt">otpauth://totp/...</span> URI — canonically in the <span class="tt">OTP</span> template field, and also accepted as a bare line in the entry body, which is the convention the <span class="tt">pass-otp</span> extension uses. Only that dialect plus a bare base32 secret is parsed; KeePassXC's KeeOtp and legacy <span class="tt">[step];[digits]</span> formats exist purely to read <span class="tt">.kdbx</span> entry attributes and have no meaning in a password store.</p>
-<p><a class="el" href="#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> validates everything it returns, so <a class="el" href="struct_totp_1_1_settings.html" title="Validated TOTP parameters. Only Totp::parse() produces one.">Settings</a> is valid by construction and <a class="el" href="#ab8caa914c714a205c21919b3ac09cf08" title="Generate the code for a given point in time.">Totp::generate()</a> cannot fail. HMAC comes from QtCore (QMessageAuthenticationCode), so no crypto dependency is added. </p>
+<p><a class="el" href="#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">Totp::parse()</a> validates everything it returns, so <a class="el" href="struct_totp_1_1_settings.html" title="Validated TOTP parameters. Only Totp::parse() produces one.">Settings</a> is valid by construction and <a class="el" href="#ab8caa914c714a205c21919b3ac09cf08" title="Generate the code for a given point in time.">Totp::generate()</a> cannot fail. HMAC comes from QtCore (QMessageAuthenticationCode), so no crypto dependency is added. </p>
 
 <p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00036">36</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
@@ -256,6 +271,50 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="acf4966342831a437cd0db45f8f05bf01" name="acf4966342831a437cd0db45f8f05bf01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf4966342831a437cd0db45f8f05bf01">&#9670;&#160;</a></span>Refusal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#acf4966342831a437cd0db45f8f05bf01">Totp::Refusal</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Why <a class="el" href="#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">parse()</a> gave no settings, so the user can be told more than "invalid". </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acf4966342831a437cd0db45f8f05bf01a6adf97f83acf6453d4a6a4b1070f3754" name="acf4966342831a437cd0db45f8f05bf01a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"><p>Parsed: there was nothing to refuse. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf4966342831a437cd0db45f8f05bf01ace2c8aed9c2fa0cfbed56cbda4d8bf07" name="acf4966342831a437cd0db45f8f05bf01ace2c8aed9c2fa0cfbed56cbda4d8bf07"></a>Empty&#160;</td><td class="fielddoc"><p>Nothing but white space. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf4966342831a437cd0db45f8f05bf01a046afc1d5955fb46cbc55a8aa1f373dc" name="acf4966342831a437cd0db45f8f05bf01a046afc1d5955fb46cbc55a8aa1f373dc"></a>TooLong&#160;</td><td class="fielddoc"><p>Longer than MAX_CONFIG_LENGTH. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf4966342831a437cd0db45f8f05bf01a803e1b5921bc8d43066c4cabc6c557e6" name="acf4966342831a437cd0db45f8f05bf01a803e1b5921bc8d43066c4cabc6c557e6"></a>Hotp&#160;</td><td class="fielddoc"><p>An <span class="tt">otpauth://hotp/</span> URI: counter-based. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf4966342831a437cd0db45f8f05bf01a7d47ba5550f1ccff14024788e68904ae" name="acf4966342831a437cd0db45f8f05bf01a7d47ba5550f1ccff14024788e68904ae"></a>UnknownAlgorithm&#160;</td><td class="fielddoc"><p>An <span class="tt">algorithm</span> other than SHA-1, -256 or -512. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf4966342831a437cd0db45f8f05bf01aa987954d709016bfeb9a0b168ee30fe4" name="acf4966342831a437cd0db45f8f05bf01aa987954d709016bfeb9a0b168ee30fe4"></a>UnreadableUri&#160;</td><td class="fielddoc"><p><span class="tt">otpauth:</span> but no URI QUrl reads, or no <span class="tt">totp</span>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf4966342831a437cd0db45f8f05bf01a8f34b724caf3209f51ac8b2d627d2852" name="acf4966342831a437cd0db45f8f05bf01a8f34b724caf3209f51ac8b2d627d2852"></a>NotASecret&#160;</td><td class="fielddoc"><p>Neither an otpauth URI nor written as a secret. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf4966342831a437cd0db45f8f05bf01ab1ee9905cd4c4e35d30601db350f3964" name="acf4966342831a437cd0db45f8f05bf01ab1ee9905cd4c4e35d30601db350f3964"></a>NoSecret&#160;</td><td class="fielddoc"><p>No secret, or one that is not valid base32. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00059">59</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a47445f93d87ea47de27ab8045914686d" name="a47445f93d87ea47de27ab8045914686d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a47445f93d87ea47de27ab8045914686d">&#9670;&#160;</a></span>counter()</h2>
@@ -294,7 +353,7 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">unixTime / settings.step</span>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00264">264</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00307">307</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
 <div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
@@ -330,12 +389,54 @@ Private Member Functions</h2></td></tr>
 <p>Current wall-clock time. </p>
 <dl class="section return"><dt>Returns</dt><dd>Seconds since the Unix epoch (UTC). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00380">380</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00423">423</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a84866e76305152267035b917e7d84bdb_icgraph.svg" width="100%" height="449"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ab9e119555f7a25be2c61a8780e041365" name="ab9e119555f7a25be2c61a8780e041365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9e119555f7a25be2c61a8780e041365">&#9670;&#160;</a></span>describe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Totp::describe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#acf4966342831a437cd0db45f8f05bf01">Refusal</a></td>          <td class="paramname"><span class="paramname"><em>why</em></span></td><td>)</td>
+          <td> -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>One sentence for the user on why a configuration gives no code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">why</td><td>What <a class="el" href="#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">parse()</a> reported. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The translated sentence; empty for <a class="el" href="#acf4966342831a437cd0db45f8f05bf01a6adf97f83acf6453d4a6a4b1070f3754" title="Parsed: there was nothing to refuse.">Refusal::None</a> and <a class="el" href="#acf4966342831a437cd0db45f8f05bf01ace2c8aed9c2fa0cfbed56cbda4d8bf07" title="Nothing but white space.">Refusal::Empty</a>, which callers word themselves. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00274">274</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_ab9e119555f7a25be2c61a8780e041365_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -377,17 +478,17 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The code, exactly <a class="el" href="struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d" title="Code length, MIN_DIGITS..MAX_DIGITS.">Settings::digits</a> characters long. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00273">273</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary">
-</div>
-<div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_ab8caa914c714a205c21919b3ac09cf08_cgraph.svg" width="279" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00316">316</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
 <div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_ab8caa914c714a205c21919b3ac09cf08_cgraph.svg" width="279" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_ab8caa914c714a205c21919b3ac09cf08_icgraph.svg" width="100%" height="449"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -425,17 +526,17 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The current code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00318">318</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
-</div>
-<div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a48931c8c589844c1b5c6334287931594_cgraph.svg" width="522" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00361">361</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
 <div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a48931c8c589844c1b5c6334287931594_cgraph.svg" width="522" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a48931c8c589844c1b5c6334287931594_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -471,19 +572,19 @@ Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">parse()</a> would succeed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">parse()</a> would succeed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00260">260</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
-</div>
-<div id="dynsection-6-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_af023ce3487d15c2e290419ddd1ea0699_cgraph.svg" width="660" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00303">303</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
 <div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_af023ce3487d15c2e290419ddd1ea0699_cgraph.svg" width="660" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_af023ce3487d15c2e290419ddd1ea0699_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -532,24 +633,24 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A canonical URI, or an empty string when <code class="param">config</code> is not valid or its URI would be longer than MAX_CONFIG_LENGTH. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00358">358</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
-</div>
-<div id="dynsection-8-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_aaad8df6ff63cde2ee3d13c79a24abdb7_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00401">401</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
 <div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_aaad8df6ff63cde2ee3d13c79a24abdb7_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_aaad8df6ff63cde2ee3d13c79a24abdb7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="ae6ad2f9cfb9cb54108b8138d660c803b" name="ae6ad2f9cfb9cb54108b8138d660c803b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6ad2f9cfb9cb54108b8138d660c803b">&#9670;&#160;</a></span>parse()</h2>
+<a id="a6acbc69133a69635bd907e037a001fda" name="a6acbc69133a69635bd907e037a001fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6acbc69133a69635bd907e037a001fda">&#9670;&#160;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -560,8 +661,12 @@ Private Member Functions</h2></td></tr>
         <tr>
           <td class="memname">auto Totp::parse </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
-          <td> -&gt; std::optional&lt; <a class="el" href="struct_totp_1_1_settings.html">Settings</a> &gt;</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#acf4966342831a437cd0db45f8f05bf01">Refusal</a> *</td>          <td class="paramname"><span class="paramname"><em>why</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; std::optional&lt; <a class="el" href="struct_totp_1_1_settings.html">Settings</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -576,23 +681,24 @@ Private Member Functions</h2></td></tr>
 <p><span class="tt">digits</span> is clamped to MIN_DIGITS..MAX_DIGITS and <span class="tt">period</span> to 1..MAX_STEP. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>URI or bare base32 secret; surrounding whitespace is ignored. </td></tr>
+    <tr><td class="paramname">why</td><td>Receives why the configuration was refused, or <a class="el" href="#acf4966342831a437cd0db45f8f05bf01a6adf97f83acf6453d4a6a4b1070f3754" title="Parsed: there was nothing to refuse.">Refusal::None</a>; may be null. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Validated settings, or std::nullopt when the secret is missing or is not decodable base32, the URI is HOTP or names an unknown algorithm, a bare secret holds other characters, or the configuration (its surrounding whitespace included) is longer than MAX_CONFIG_LENGTH. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00122">122</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
-</div>
-<div id="dynsection-10-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_ae6ad2f9cfb9cb54108b8138d660c803b_cgraph.svg" width="514" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00123">123</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
 <div id="dynsection-11-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_ae6ad2f9cfb9cb54108b8138d660c803b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a6acbc69133a69635bd907e037a001fda_cgraph.svg" width="514" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a6acbc69133a69635bd907e037a001fda_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -634,11 +740,11 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A value in 1..settings.step, so a period boundary reads as a full step rather than zero. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00268">268</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00311">311</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_af449a258178c0fdc0f744be9bf2d6103_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -669,7 +775,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Serialise settings as a canonical otpauth URI. </p>
 <p>Always emits <span class="tt">secret</span>, <span class="tt">digits</span> and <span class="tt">period</span>; emits <span class="tt">issuer</span> when it is set, <span class="tt">algorithm</span> only when it differs from the RFC 6238 default, and <span class="tt">encoder=steam</span> for <a class="el" href="#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b" title="Steam Guard&#39;s five-character alphabet.">Encoder::Steam</a>.</p>
-<p>Percent-encoding can make the URI longer than the configuration it was parsed from: for one near MAX_CONFIG_LENGTH, <a class="el" href="#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">parse()</a> refuses it, and <a class="el" href="#aaad8df6ff63cde2ee3d13c79a24abdb7" title="Normalise a user-entered value to a canonical otpauth URI.">normalize()</a> returns nothing rather than such a URI. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Percent-encoding can make the URI longer than the configuration it was parsed from: for one near MAX_CONFIG_LENGTH, <a class="el" href="#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">parse()</a> refuses it, and <a class="el" href="#aaad8df6ff63cde2ee3d13c79a24abdb7" title="Normalise a user-entered value to a canonical otpauth URI.">normalize()</a> returns nothing rather than such a URI. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">settings</td><td>Validated settings. </td></tr>
   </table>
@@ -677,17 +783,17 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <span class="tt">otpauth://totp/...</span> URI. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00322">322</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
-</div>
-<div id="dynsection-13-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a9cae7b2213a242c4bb6fb6dfb5f42351_cgraph.svg" width="326" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="totp_8cpp_source.html#l00365">365</a> of file <a class="el" href="totp_8cpp_source.html">totp.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
 <div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a9cae7b2213a242c4bb6fb6dfb5f42351_cgraph.svg" width="326" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_totp_a9cae7b2213a242c4bb6fb6dfb5f42351_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -716,7 +822,7 @@ Private Member Functions</h2></td></tr>
 
 <p>RFC 6238 default code length. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00077">77</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00092">92</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -742,7 +848,7 @@ Private Member Functions</h2></td></tr>
 
 <p>RFC 6238 default period. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00078">78</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00093">93</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -765,9 +871,9 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Longest configuration <a class="el" href="#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">parse()</a> takes: far beyond any real otpauth URI, short of what a compressed entry can expand to (millions of query parameters, each an object, before anything is checked). </p>
+<p>Longest configuration <a class="el" href="#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">parse()</a> takes: far beyond any real otpauth URI, short of what a compressed entry can expand to (millions of query parameters, each an object, before anything is checked). </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00086">86</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00101">101</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -793,7 +899,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Upper clamp for <span class="tt">digits</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00081">81</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00096">96</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -818,7 +924,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Upper clamp for <span class="tt">period</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00082">82</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00097">97</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -844,7 +950,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Lower clamp for <span class="tt">digits</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00080">80</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00095">95</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -870,7 +976,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Steam codes are always 5 chars. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00079">79</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00094">94</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>

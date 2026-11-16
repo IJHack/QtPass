@@ -1,6 +1,6 @@
 <map id="Totp::normalize" name="Totp::normalize">
 <area shape="rect" id="Node000001" title="Normalise a user&#45;entered value to a canonical otpauth URI." alt="" coords="5,84,127,112"/>
-<area shape="rect" id="Node000002" href="$class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string." alt="" coords="175,57,267,85"/>
+<area shape="rect" id="Node000002" href="$class_totp.html#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string." alt="" coords="175,57,267,85"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,85,162,81,157,83,128,90"/>
 <area shape="rect" id="Node000006" href="$class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351" title="Serialise settings as a canonical otpauth URI." alt="" coords="177,109,265,137"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="127,105,164,113,159,114,127,110"/>

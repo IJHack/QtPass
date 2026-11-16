@@ -24,5 +24,6 @@ var searchData=
   ['hidewhennomenuisopen_21',['hideWhenNoMenuIsOpen',['../class_menu_bar_peek.html#a5b64a884de1b4b23d3ce8a04e3ccc7af',1,'MenuBarPeek']]],
   ['holdautopush_22',['holdAutoPush',['../class_pass.html#a63823c10dde60d0694b377699169a5ca',1,'Pass']]],
   ['holdsotpconfig_23',['holdsOtpConfig',['../filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9',1,'filecontent.cpp']]],
-  ['hookotpfield_24',['hookOtpField',['../class_password_dialog.html#a0fbd5f4e410c2fadd96b44ad563fdea9',1,'PasswordDialog']]]
+  ['hookotpfield_24',['hookOtpField',['../class_password_dialog.html#a0fbd5f4e410c2fadd96b44ad563fdea9',1,'PasswordDialog']]],
+  ['hotp_25',['Hotp',['../class_totp.html#acf4966342831a437cd0db45f8f05bf01a803e1b5921bc8d43066c4cabc6c557e6',1,'Totp']]]
 ];

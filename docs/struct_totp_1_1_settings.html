@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('struct_totp_1_
 </div><!--header-->
 <div class="contents">
 
-<p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> produces one.  
+<p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">Totp::parse()</a> produces one.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="totp_8h_source.html">totp.h</a>&gt;</code></p>
@@ -145,9 +145,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:af01d2100389e8356c2fd71d974fa4275" id="r_af01d2100389e8356c2fd71d974fa4275"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#af01d2100389e8356c2fd71d974fa4275">fragment</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> produces one. </p>
+<div class="textblock"><p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">Totp::parse()</a> produces one. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00059">59</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00074">74</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a8c8529f1946b9c46f48567ef78ffa386" name="a8c8529f1946b9c46f48567ef78ffa386"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c8529f1946b9c46f48567ef78ffa386">&#9670;&#160;</a></span>algorithm</h2>
@@ -163,7 +163,7 @@ Public Attributes</h2></td></tr>
 
 <p>HMAC hash function. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00062">62</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00077">77</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -181,7 +181,7 @@ Public Attributes</h2></td></tr>
 
 <p>Sanitized base32 secret, for re-serialisation. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00061">61</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00076">76</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -199,7 +199,7 @@ Public Attributes</h2></td></tr>
 
 <p>Code length, MIN_DIGITS..MAX_DIGITS. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00064">64</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00079">79</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -217,7 +217,7 @@ Public Attributes</h2></td></tr>
 
 <p>Digit encoding. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00063">63</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00078">78</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -234,7 +234,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Query parameters the parser does not model, kept verbatim so <a class="el" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351" title="Serialise settings as a canonical otpauth URI.">toUri()</a> can put them back instead of silently dropping them. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00070">70</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00085">85</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>What followed a <span class="tt">#</span> in the URI, as written: recovery codes or a remark noted behind it. Kept so <a class="el" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351" title="Serialise settings as a canonical otpauth URI.">toUri()</a> puts it back; a canonicalised URI used to lose it on every save. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00074">74</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00089">89</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -268,7 +268,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>otpauth issuer; may be empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00067">67</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00082">82</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -286,7 +286,7 @@ Public Attributes</h2></td></tr>
 
 <p>Decoded shared secret; never empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00060">60</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00075">75</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -304,7 +304,7 @@ Public Attributes</h2></td></tr>
 
 <p>otpauth label; may be empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00066">66</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00081">81</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -322,7 +322,7 @@ Public Attributes</h2></td></tr>
 
 <p>Period in seconds, 1..MAX_STEP. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00065">65</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00080">80</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>

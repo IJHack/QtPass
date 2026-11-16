@@ -47,7 +47,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" target="_top" xlink:title="Parse an OTP configuration string.">
+<g id="a_Node000003"><a xlink:href="class_totp.html#a6acbc69133a69635bd907e037a001fda" target="_top" xlink:title="Parse an OTP configuration string.">
 <polygon fill="white" stroke="#666666" points="300,-39.75 230.75,-39.75 230.75,-19 300,-19 300,-39.75"/>
 <text xml:space="preserve" text-anchor="middle" x="265.38" y="-26.25" font-family="Helvetica,sans-Serif" font-size="10.00">Totp::parse</text>
 </a>

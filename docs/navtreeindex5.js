@@ -1,5 +1,15 @@
 var NAVTREEINDEX5 =
 {
+"classes.html":[3,1],
+"clipboardmanager_8cpp.html":[4,0,1,3],
+"clipboardmanager_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99":[4,0,1,3,0],
+"clipboardmanager_8cpp_source.html":[4,0,1,3],
+"clipboardmanager_8h.html":[4,0,1,4],
+"clipboardmanager_8h.html#a3c09484969938782ada78d86c565b534":[4,0,1,4,1],
+"clipboardmanager_8h.html#ad02159f3c84f6ec8d7535395bdb55d99":[4,0,1,4,0],
+"clipboardmanager_8h_source.html":[4,0,1,4],
+"configdialog_8cpp.html":[4,0,1,5],
+"configdialog_8cpp_source.html":[4,0,1,5],
 "configdialog_8h.html":[4,0,1,6],
 "configdialog_8h_source.html":[4,0,1,6],
 "deselectabletreeview_8h.html":[4,0,1,7],
@@ -239,15 +249,5 @@ var NAVTREEINDEX5 =
 "pass_8h_source.html":[4,0,1,42],
 "passbackendfactory_8cpp.html":[4,0,1,43],
 "passbackendfactory_8cpp_source.html":[4,0,1,43],
-"passbackendfactory_8h.html":[4,0,1,44],
-"passbackendfactory_8h_source.html":[4,0,1,44],
-"passwordconfiguration_8h.html":[4,0,1,45],
-"passwordconfiguration_8h_source.html":[4,0,1,45],
-"passworddialog_8cpp.html":[4,0,1,46],
-"passworddialog_8cpp_source.html":[4,0,1,46],
-"passworddialog_8h.html":[4,0,1,47],
-"passworddialog_8h_source.html":[4,0,1,47],
-"passworddisplaypanel_8cpp.html":[4,0,1,48],
-"passworddisplaypanel_8cpp_source.html":[4,0,1,48],
-"passworddisplaypanel_8h.html":[4,0,1,49]
+"passbackendfactory_8h.html":[4,0,1,44]
 };

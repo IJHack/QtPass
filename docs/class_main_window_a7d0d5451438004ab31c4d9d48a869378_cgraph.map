@@ -29,7 +29,7 @@
 <area shape="poly" id="edge13_Node000010_Node000010" title=" " alt="" coords="840,184,835,176,839,167,853,161,875,159,899,161,913,170,908,170,897,166,875,164,854,166,843,171,840,176,845,186"/>
 <area shape="rect" id="Node000011" href="$class_totp.html#af023ce3487d15c2e290419ddd1ea0699" title="Convenience validity test, for UI feedback." alt="" coords="1027,185,1126,213"/>
 <area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="932,197,1013,199,1008,199,932,202"/>
-<area shape="rect" id="Node000012" href="$class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string." alt="" coords="1224,185,1316,213"/>
+<area shape="rect" id="Node000012" href="$class_totp.html#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string." alt="" coords="1224,185,1316,213"/>
 <area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="1126,197,1211,199,1206,199,1126,202"/>
 <area shape="rect" id="Node000013" href="$class_base32.html#aab3feed3644b481794685b42410cf1e1" title="Decode strict RFC 4648 base32 data." alt="" coords="1433,159,1557,186"/>
 <area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="1317,191,1415,182,1420,181,1317,196"/>

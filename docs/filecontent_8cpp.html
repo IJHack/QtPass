@@ -329,7 +329,7 @@ file's content as-is" bypasses this filter and shows the entry raw.  <br /></td>
 </div><div class="memdoc">
 
 <p>Whether <code class="param">value</code> is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; white space, dashes, dots or underscores between groups and "=" padding allowed), at least 16 of them (80 bits, the shortest seed in common use), that <a class="el" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699" title="Convenience validity test, for UI feedback.">Totp::isValid()</a> takes. </p>
-<p>Strict where <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> is lenient (it drops punctuation and reads 0, 1 and 8 as letters, which almost any password survives): this decides whether a first line is a seed or the password. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Strict where <a class="el" href="class_totp.html#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">Totp::parse()</a> is lenient (it drops punctuation and reads 0, 1 and 8 as letters, which almost any password survives): this decides whether a first line is a seed or the password. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The value of an <span class="tt">OTP:</span>/<span class="tt">TOTP:</span> field. </td></tr>
   </table>

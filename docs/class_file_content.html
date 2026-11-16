@@ -416,7 +416,7 @@ Private Attributes</h2></td></tr>
 <li>the first bare <span class="tt">otpauth://</span> line in the body, which is how the <span class="tt">pass-otp</span> extension stores it;</li>
 <li>the value of the first <span class="tt">OTP:</span> line that was not promoted to a named value, which is what happens when the template does not list <span class="tt">OTP</span>.</li>
 </ol>
-<p>The string is returned verbatim and is not validated here: it may be an <span class="tt">otpauth://</span> URI or a bare base32 secret. <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> does the validation. </p><dl class="section return"><dt>Returns</dt><dd>The OTP configuration string, or an empty string when the entry has none. </dd></dl>
+<p>The string is returned verbatim and is not validated here: it may be an <span class="tt">otpauth://</span> URI or a bare base32 secret. <a class="el" href="class_totp.html#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string.">Totp::parse()</a> does the validation. </p><dl class="section return"><dt>Returns</dt><dd>The OTP configuration string, or an empty string when the entry has none. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00496">496</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>

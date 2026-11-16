@@ -6,7 +6,7 @@
 <!-- Title: MainWindow::passwordFromFileToClipboard Pages: 1 -->
 <svg width="1336pt" height="203pt"
  viewBox="0.00 0.00 1336.00 203.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="page0,1_graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 198.75)">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 198.75)">
 <title>MainWindow::passwordFromFileToClipboard</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
@@ -282,7 +282,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" target="_top" xlink:title="Parse an OTP configuration string.">
+<g id="a_Node000012"><a xlink:href="class_totp.html#a6acbc69133a69635bd907e037a001fda" target="_top" xlink:title="Parse an OTP configuration string.">
 <polygon fill="white" stroke="#666666" points="983.25,-59.75 914,-59.75 914,-39 983.25,-39 983.25,-59.75"/>
 <text xml:space="preserve" text-anchor="middle" x="948.62" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Totp::parse</text>
 </a>
