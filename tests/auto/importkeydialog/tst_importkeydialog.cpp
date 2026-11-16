@@ -162,6 +162,42 @@ void tst_importkeydialog::parseGpgImportOutput_data() {
   QTest::newRow("english_human_line_8char_no_match")
       << QStringLiteral("gpg: key DEADBEEF: imported\n") << QString();
 
+  // A user ID is chosen by whoever made the key, and gpg echoes it on the
+  // IMPORTED line: status text inside it must not name the fingerprint.
+  QTest::newRow("user_id_spoofing_import_ok_loses_to_the_real_one")
+      << QStringLiteral(
+             "[GNUPG:] IMPORTED 1111222233334444 Alice [GNUPG:] IMPORT_OK 1 "
+             "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n"
+             "[GNUPG:] IMPORT_OK 1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n")
+      << QStringLiteral("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+  QTest::newRow("user_id_spoofing_import_ok_alone_gives_the_key_id")
+      << QStringLiteral(
+             "[GNUPG:] IMPORTED 1111222233334444 Alice [GNUPG:] IMPORT_OK 1 "
+             "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n")
+      << QStringLiteral("1111222233334444");
+  // A translated gpg line (no status line to go by) carrying an English
+  // "gpg: key …: imported" inside its user ID gives no key, not that one.
+  QTest::newRow("user_id_spoofing_the_human_line")
+      << QStringLiteral("gpg: clave 1111222233334444: \"gpg: key "
+                        "EEEEEEEEEEEEEEEE: imported\" importada\n")
+      << QString();
+  QTest::newRow("crlf_line_ends")
+      << QStringLiteral(
+             "[GNUPG:] IMPORT_OK 1 "
+             "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\r\n"
+             "[GNUPG:] IMPORT_RES 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0\r\n")
+      << QStringLiteral("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+  QTest::newRow("v5_fingerprint_64_hex")
+      << QStringLiteral(
+             "[GNUPG:] IMPORT_OK 1 "
+             "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+             "AAAAAA\n")
+      << QStringLiteral("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                        "AAAAAAAAAA");
+  QTest::newRow("imported_without_user_id")
+      << QStringLiteral("[GNUPG:] IMPORTED DEADBEEFCAFE0123\n")
+      << QStringLiteral("DEADBEEFCAFE0123");
+
   // IMPORT_OK followed only by IMPORT_RES (no IMPORTED line) still works.
   QTest::newRow("import_ok_then_import_res_only")
       << QStringLiteral(

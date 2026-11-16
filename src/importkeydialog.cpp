@@ -27,18 +27,23 @@
 // Doxygen reads `Type name(args);` as a function, so these three constants
 // are hidden from it and described here instead.
 /// @cond
-// `[GNUPG:] IMPORT_OK <reason> <fingerprint>`: captures the full fingerprint,
-// the preferred identifier.
-static const QRegularExpression
-    IMPORT_OK_RE(QStringLiteral(R"(\[GNUPG:\] IMPORT_OK \d+ ([0-9A-Fa-f]+))"));
+// All three are anchored at the start of the line: gpg echoes the key's
+// user ID, which whoever made the key chooses, on the IMPORTED line and in
+// the human line, so "[GNUPG:] IMPORT_OK 1 <hex>" inside a user ID must not
+// pass for gpg's own status line and name the fingerprint to verify.
+// `[GNUPG:] IMPORT_OK <reason> <fingerprint>`: captures the full fingerprint
+// (40 hex, or 64 for v5/v6 keys), the preferred identifier, which ends the
+// line.
+static const QRegularExpression IMPORT_OK_RE(QStringLiteral(
+    R"(^\[GNUPG:\] IMPORT_OK \d+ ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{64})$)"));
 // `[GNUPG:] IMPORTED <keyid> <userid>`: captures the 16-hex long key id, tried
 // after IMPORT_OK_RE.
-static const QRegularExpression
-    IMPORTED_RE(QStringLiteral(R"(\[GNUPG:\] IMPORTED ([0-9A-Fa-f]{16}))"));
+static const QRegularExpression IMPORTED_RE(
+    QStringLiteral(R"(^\[GNUPG:\] IMPORTED ([0-9A-Fa-f]{16})(?: |$))"));
 // Fallback for the human-readable (English-locale) `gpg: key <id>: ...
 // imported` line, last resort when no status line was seen.
-static const QRegularExpression KEY_IMPORTED_FALLBACK(
-    QStringLiteral(R"(gpg: key ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}):.*imported)"));
+static const QRegularExpression KEY_IMPORTED_FALLBACK(QStringLiteral(
+    R"(^gpg: key ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}):.*imported)"));
 /// @endcond
 
 ImportKeyDialog::ImportKeyDialog(const QString &gpgExe, QWidget *parent)
@@ -165,7 +170,10 @@ bool ImportKeyDialog::importFromString(const QString &input) {
 }
 
 auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
-  const QStringList lines = output.split('\n', Qt::SkipEmptyParts);
+  // Line by line, a CRLF end included (gpg on Windows): the patterns are
+  // anchored at both ends of the line.
+  const QStringList lines = output.split(
+      QRegularExpression(QStringLiteral("\\r?\\n")), Qt::SkipEmptyParts);
   // The order here is the priority order: prefer the locale-independent
   // status lines over the English human-readable line, and within the
   // status lines prefer IMPORT_OK (full fingerprint) over IMPORTED

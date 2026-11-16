@@ -807,6 +807,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   Users, Add password and Add folder acted on the hit's folder instead of
   the store: removing a colleague changed a subfolder's recipients and left
   them on the store's own list (scan finding ANT-2026-O7OZF35D)
+- Import key reads only gpg's own status lines for the fingerprint it asks
+  you to verify. gpg repeats the key's user ID on an earlier line, and a
+  user ID containing `[GNUPG:] IMPORT_OK 1 <hex>` named that fingerprint
+  instead of the key's own (scan finding ANT-2026-208NMCS0)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old
