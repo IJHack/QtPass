@@ -94,6 +94,33 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   return path.contains(filterRegularExpression());
 }
 
+auto StoreModel::isLinkInStore(const QModelIndex &proxyIndex) const -> bool {
+  if (fs == nullptr || !proxyIndex.isValid()) {
+    return false;
+  }
+  const QString filePath = fs->filePath(mapToSource(proxyIndex));
+  const QString path = QDir(store).relativeFilePath(filePath);
+  if (path == QLatin1String(".") || path == QLatin1String("..") ||
+      path.startsWith(QLatin1String("../")) || QDir::isAbsolutePath(path)) {
+    return false;
+  }
+  return Util::isLinkedFolder(filePath);
+}
+
+auto StoreModel::hasChildren(const QModelIndex &parent) const -> bool {
+  return !isLinkInStore(parent) && QSortFilterProxyModel::hasChildren(parent);
+}
+
+auto StoreModel::canFetchMore(const QModelIndex &parent) const -> bool {
+  return !isLinkInStore(parent) && QSortFilterProxyModel::canFetchMore(parent);
+}
+
+void StoreModel::fetchMore(const QModelIndex &parent) {
+  if (!isLinkInStore(parent)) {
+    QSortFilterProxyModel::fetchMore(parent);
+  }
+}
+
 void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
                                   const QString &passStore) {
   setSourceModel(sourceModel);

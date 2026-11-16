@@ -267,9 +267,16 @@ void tst_storetree::aLinkInsideTheStoreIsListedButNeverEntered() {
       waitFor(tree, m_store + QStringLiteral("/folder/inner.gpg")).isValid());
   QModelIndex link;
   QTRY_VERIFY((link = tree.indexFor(loop)).isValid());
-  // Have the file system model list what is behind the link, two levels
-  // deep, as expanding it in the view would.
+  // Before anything behind it is loaded: no children, nothing to fetch,
+  // and asking to fetch does not have the file system model list it.
   QFileSystemModel &fs = tree.fileSystem();
+  QVERIFY(!tree.proxy().hasChildren(link));
+  QVERIFY(!tree.proxy().canFetchMore(link));
+  tree.proxy().fetchMore(link);
+  QTest::qWait(200);
+  QCOMPARE(fs.rowCount(fs.index(loop)), 0);
+  // Have the file system model list what is behind the link, two levels
+  // deep, as expanding it in the view once could.
   for (const QString &level : {loop, loop + QStringLiteral("/folder")}) {
     const QModelIndex source = fs.index(level);
     fs.fetchMore(source);

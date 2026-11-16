@@ -135,6 +135,13 @@ private:
    */
   auto performDrop(const QString &cleanedSrc, const QString &cleanedDest,
                    Qt::DropAction action, bool force) -> bool;
+  /**
+   * @brief Whether a proxy index is a link (or junction) inside the store,
+   *        the store root excluded.
+   * @param proxyIndex Index in this model.
+   * @return true for a link inside the store.
+   */
+  [[nodiscard]] auto isLinkInStore(const QModelIndex &proxyIndex) const -> bool;
 
 public:
   /**
@@ -164,6 +171,28 @@ public:
    * @return true if index should be visible.
    */
   [[nodiscard]] auto showThis(const QModelIndex &index) const -> bool;
+
+  /**
+   * @brief No children for a link inside the store: it is listed by name
+   *        but never entered, so the view shows no expand arrow.
+   * @param parent Proxy index.
+   * @return false for a link inside the store, otherwise as the base class.
+   */
+  [[nodiscard]] auto
+  hasChildren(const QModelIndex &parent = QModelIndex()) const -> bool override;
+  /**
+   * @brief Nothing to fetch under a link inside the store, so the file
+   *        system model never lists what the link points to.
+   * @param parent Proxy index.
+   * @return false for a link inside the store, otherwise as the base class.
+   */
+  [[nodiscard]] auto canFetchMore(const QModelIndex &parent) const
+      -> bool override;
+  /**
+   * @brief Fetch more rows, except under a link inside the store.
+   * @param parent Proxy index.
+   */
+  void fetchMore(const QModelIndex &parent) override;
 
   /**
    * @brief Initialize model with source model and store path.
