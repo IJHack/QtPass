@@ -181,6 +181,11 @@
   [#2191](https://github.com/IJHack/QtPass/pull/2191),
   [#2199](https://github.com/IJHack/QtPass/pull/2199) and
   [#2209](https://github.com/IJHack/QtPass/pull/2209))
+- The split `otpauth: //…` line that the edit dialog saved with `otpauth` in
+  the template gives its OTP code, read as the URI without the blanks. It
+  never gave a code, and since the change above it was hidden as well. The
+  entry is kept as written (ported from
+  [#2226](https://github.com/IJHack/QtPass/pull/2226))
 
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 

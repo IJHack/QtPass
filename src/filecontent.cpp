@@ -11,6 +11,32 @@ static auto isOtpUri(const QString &value) -> bool {
 }
 
 /**
+ * @brief The otpauth URI a line is written as: a bare `otpauth://` line, or
+ * the split `otpauth: //...` that 1.8 to 2.0-rc2 saved (a template field
+ * "otpauth" with the rest of the URI as its value), its blanks dropped.
+ * @param line One line of the entry.
+ * @return The URI, trimmed, or an empty string when the line is not one.
+ */
+static auto bareOtpUriOf(const QString &line) -> QString {
+  const QString trimmed = line.trimmed();
+  if (isOtpUri(trimmed)) {
+    return trimmed;
+  }
+  static const QString scheme = QStringLiteral("otpauth:");
+  if (!trimmed.startsWith(scheme, Qt::CaseInsensitive)) {
+    return {};
+  }
+  qsizetype i = scheme.size();
+  while (i < trimmed.size() && trimmed.at(i).isSpace()) {
+    ++i;
+  }
+  if (trimmed.mid(i, 2) != QLatin1String("//")) {
+    return {};
+  }
+  return trimmed.left(scheme.size()) + trimmed.mid(i);
+}
+
+/**
  * @brief Checks if a line should be hidden from display: it carries a TOTP
  * shared secret (FileContent::isOtpLine()).
  * @param line The line to check
@@ -64,13 +90,14 @@ static auto afterFirstColon(const QString &line) -> QString {
 
 /**
  * @brief Whether a first line is written as an OTP configuration that
- * otpConfigOf() can read: a bare otpauth URI, a field whose value is one, or
+ * otpConfigOf() can read: a bare otpauth URI (split or not, see
+ * bareOtpUriOf()), a field whose value is one, or
  * an `OTP:`/`TOTP:` field whose value is written as a base32 seed.
  * @param line The entry's first line.
  * @return true when the line is read as the OTP configuration.
  */
 static auto holdsOtpConfig(const QString &line) -> bool {
-  if (isOtpUri(line)) {
+  if (!bareOtpUriOf(line).isEmpty()) {
     return true;
   }
   const qsizetype colon = line.indexOf(QLatin1Char(':'));
@@ -86,14 +113,14 @@ static auto holdsOtpConfig(const QString &line) -> bool {
 }
 
 /**
- * @brief The OTP configuration an OTP line holds: the line itself for a bare
- * `otpauth://` line, the value for a field.
+ * @brief The OTP configuration an OTP line holds: the URI for a bare
+ * `otpauth://` line (bareOtpUriOf()), the value for a field.
  * @param line A line for which holdsOtpConfig() is true.
  * @return The configuration, trimmed.
  */
 static auto otpConfigOf(const QString &line) -> QString {
-  if (isOtpUri(line)) {
-    return line.trimmed();
+  if (const QString uri = bareOtpUriOf(line); !uri.isEmpty()) {
+    return uri;
   }
   return afterFirstColon(line).trimmed();
 }
@@ -164,9 +191,10 @@ auto FileContent::parse(const QString &fileContent,
     }
 
     remainingData.append(line);
-    if (isOtpUri(line) && otpFromBareLine.isEmpty()) {
-      // A bare otpauth:// line, the convention the pass-otp extension uses.
-      otpFromBareLine = line.trimmed();
+    if (otpFromBareLine.isEmpty()) {
+      // A bare otpauth:// line, the convention the pass-otp extension uses,
+      // or the split form older versions saved.
+      otpFromBareLine = bareOtpUriOf(line);
     }
     if (!isLineHidden(line)) {
       remainingDataDisplay.append(line);
