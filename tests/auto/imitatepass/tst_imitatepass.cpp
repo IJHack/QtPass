@@ -614,6 +614,7 @@ private Q_SLOTS:
   void reencryptPathPushesWhenAllFilesSucceed();
   void reencryptPathDoesNotPushAfterFailures();
   void pushAskedForDuringAReencryptionWaitsForIt();
+  void failedReencryptionWithoutGitHoldsToo();
   void insertRunsNoGitWhenGitIsDisabled();
   void insertEncryptsToTheRecipientsWhoseSignatureWasChecked();
   void insertEncryptsIntoATemporaryAndMovesItIntoPlace();
@@ -1332,7 +1333,32 @@ void tst_imitatepass::pushAskedForDuringAReencryptionWaitsForIt() {
       QTest::qWait(300);
       QCoreApplication::processEvents();
       QVERIFY2(!hasPush(loggedCalls(gitLog)), "a failed run pushes nothing");
+      // Nor does the next automatic push, after any later edit: the
+      // recipients change is committed already.
+      QVERIFY2(pass.autoPushHeld(), "a failed run holds automatic pushes");
+      // A clean run of another folder releases nothing, and its own
+      // automatic push waits too: it would publish the store as it is.
+      s.gpgExecutable = writeRecordingGpg(storeDir.path(), gpgLog);
+      s.autoPush = true;
+      pass.init(s);
+      QVERIFY(pass.autoPushHeld());
+      const QString other = QDir(storeDir.path()).filePath("other");
+      QVERIFY(QDir().mkpath(other));
+      endSpy.clear();
+      pass.reencryptPath(other);
+      QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+      QTest::qWait(300);
+      QCoreApplication::processEvents();
+      QVERIFY2(pass.autoPushHeld(), "a clean run elsewhere releases nothing");
+      QVERIFY2(!hasPush(loggedCalls(gitLog)),
+               "nor does its own automatic push go");
+      // A clean run of the store releases the hold.
+      endSpy.clear();
+      pass.reencryptPath(storeDir.path());
+      QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+      QVERIFY2(!pass.autoPushHeld(), "a clean run releases the hold");
     } else {
+      QVERIFY(!pass.autoPushHeld());
       QVERIFY(pushSpy.count() > 0 || pushSpy.wait(5000));
       int pushes = 0;
       for (const QStringList &call : loggedCalls(gitLog)) {
@@ -1341,6 +1367,44 @@ void tst_imitatepass::pushAskedForDuringAReencryptionWaitsForIt() {
       QCOMPARE(pushes, 1);
     }
   }
+#endif
+}
+
+/**
+ * @brief A re-encryption that failed with Git off holds automatic pushes as
+ *        well: its recipients change is not committed now, but a later
+ *        commit (the next run's backup commit once Git is on) sweeps it up
+ *        and pushes it. A clean run releases the hold.
+ */
+void tst_imitatepass::failedReencryptionWithoutGitHoldsToo() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gpgLog = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString failing = writeCustomGpg(
+      storeDir.path(), gpgLog,
+      {{QStringLiteral("encrypt"), QStringLiteral("cat >/dev/null; exit 2")}});
+  QVERIFY(!failing.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), failing);
+  s.useGit = false;
+  pass.init(s);
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QVERIFY2(pass.autoPushHeld(), "a failed run holds, Git or not");
+  s.gpgExecutable = writeRecordingGpg(storeDir.path(), gpgLog);
+  pass.init(s);
+  endSpy.clear();
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QVERIFY2(!pass.autoPushHeld(), "a clean run releases the hold");
 #endif
 }
 
@@ -4492,6 +4556,8 @@ void tst_imitatepass::initReportsAFailedSignature() {
   QCOMPARE(startSpy.count(), 0);
   QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
            "nothing may be encrypted to an unsigned list");
+  // The new list is written: a later backup commit would take it along.
+  QVERIFY2(pass.autoPushHeld(), "the written list holds automatic pushes");
 
   // Without a word from gpg the message still names the file.
   const QString silentGpg =

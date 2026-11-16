@@ -18,6 +18,7 @@
 #include <QProcess>
 #include <QProcessEnvironment>
 #include <QQueue>
+#include <QSet>
 #include <QString>
 #include <QStringList>
 
@@ -444,7 +445,53 @@ public:
     return exec.hasQueued(Enums::GIT_PUSH);
   }
 
+  /**
+   * @brief Whether automatic pushes of the current store are held because
+   *        its last re-encryption did not finish cleanly.
+   *
+   * The recipients change is committed locally first, so after a failed or
+   * cancelled re-encryption the next automatic push (after any later edit)
+   * would publish a .gpg-id whose entries are partly still encrypted to the
+   * previous recipients. Held while any folder of the store has such a run
+   * outstanding, until a clean re-encryption covers it; a push the user asks
+   * for is not held. Shared by both backends, so switching between them
+   * keeps it; kept for this session only.
+   * @return true when an automatic push of the current store should not run.
+   */
+  [[nodiscard]] auto autoPushHeld() const -> bool;
+
+  /**
+   * @brief GitPush() for an automatic push, the one after a change. A
+   *        backend that has to make the push later drops it then if the
+   *        store is held by that time (autoPushHeld()); a push by hand
+   *        (GitPush()) still goes.
+   */
+  void GitPushAutomatic();
+
 protected:
+  /**
+   * @brief Whether the GitPush() running now is an automatic one.
+   * @return true inside GitPushAutomatic().
+   */
+  [[nodiscard]] auto pushIsAutomatic() const -> bool;
+
+  /**
+   * @brief Hold automatic pushes of the store that holds @p scope
+   *        (autoPushHeld()): its re-encryption did not finish cleanly.
+   * @param scope The folder (or entry) the run re-encrypted, absolute or
+   *        relative to the current store.
+   */
+  void holdAutoPush(const QString &scope);
+
+  /**
+   * @brief Release the holds a clean re-encryption of @p folder covers:
+   *        those for @p folder itself and everything under it. Holds for
+   *        other folders stay.
+   * @param folder The folder the clean run re-encrypted, absolute or
+   *        relative to the current store.
+   */
+  void releaseAutoPush(const QString &folder);
+
   /**
    * @brief With signing on, refuse to encrypt @p file when the lookup passed
    * over its folder's own list (skippedGpgId()): the parent's list is not
@@ -697,6 +744,21 @@ protected slots:
                         const QString &err);
 
 private:
+  /**
+   * @brief The folders (cleaned absolute paths) whose re-encryption did not
+   *        finish, for every store and both backends.
+   * @return The shared set, for this session.
+   */
+  static auto heldScopes() -> QSet<QString> &;
+  /**
+   * @brief @p path as an absolute, cleaned path, relative ones taken from
+   *        the current store.
+   * @param path A folder or entry.
+   * @return The cleaned absolute path.
+   */
+  [[nodiscard]] auto scopePath(const QString &path) const -> QString;
+  /// Set while GitPushAutomatic() runs GitPush().
+  bool m_pushIsAutomatic = false;
   /// Files of the Show() calls still in flight, oldest first.
   QQueue<QString> m_pendingShows;
   /// Inserts that have started queueing but not yet reported; see queueInsert.

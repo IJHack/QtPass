@@ -63,7 +63,34 @@ void RealPass::GitPull_b() {
 
 void RealPass::GitPull() { executePass(GIT_PULL, {"git", "pull"}); }
 
-void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
+void RealPass::GitPush() {
+  // Queued behind an init, move or copy, the push would run before its
+  // outcome is known and send its commit even when the re-encryption then
+  // fails (the hold is set only then): it waits for them.
+  if (!m_reencryptScopes.isEmpty() || !m_reencryptPending.isEmpty()) {
+    m_pushAfterReencrypt = true;
+    m_deferredPushByHand = m_deferredPushByHand || !pushIsAutomatic();
+    return;
+  }
+  executePass(GIT_PUSH, {"git", "push"});
+}
+
+void RealPass::sendDeferredPush() {
+  if (!m_pushAfterReencrypt || !m_reencryptScopes.isEmpty() ||
+      !m_reencryptPending.isEmpty()) {
+    return;
+  }
+  const bool byHand = m_deferredPushByHand;
+  m_pushAfterReencrypt = false;
+  m_deferredPushByHand = false;
+  if (!byHand && autoPushHeld()) {
+    emit statusMsg(tr("Not pushing: an earlier re-encryption in this "
+                      "store did not finish"),
+                   5000);
+    return;
+  }
+  executePass(GIT_PUSH, {"git", "push"});
+}
 
 void RealPass::Show(QString file) {
   // pass follows links as readily as gpg does.
@@ -224,7 +251,15 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
 }
 
 void RealPass::onDequeuing(int id, bool completes) {
-  if (completes && (id == PASS_INIT || id == PASS_MOVE || id == PASS_COPY)) {
+  if (id == PASS_INIT || id == PASS_MOVE || id == PASS_COPY) {
+    // Leaves the queue with its command: a dropped one's scope must not
+    // pair with the next completion.
+    const QString scope =
+        m_reencryptScopes.isEmpty() ? QString() : m_reencryptScopes.dequeue();
+    if (!completes) {
+      return;
+    }
+    m_reencryptPending.enqueue(scope);
     // pass exits 0 when it could not re-encrypt an entry (reencrypt_path
     // drops the temporary and carries on), so its exit code says nothing.
     // gpg's status lines do, in every locale: on stderr (fd 1 is the
@@ -239,6 +274,7 @@ void RealPass::onDequeuing(int id, bool completes) {
         key,
         (environment.value(key) + QStringLiteral(" --status-fd 2")).trimmed());
     exec.setEnvironment(environment);
+    return;
   }
   if (id != PASS_INSERT || m_insertQueue.isEmpty()) {
     return;
@@ -373,10 +409,31 @@ void RealPass::finished(int id, int exitCode, const QString &out,
   }
   const auto pid = static_cast<PROCESS>(id);
   if (pid == PASS_INIT || pid == PASS_MOVE || pid == PASS_COPY) {
+    // Without a recorded scope (not queued through Init/Move/Copy), the
+    // whole store: held as a whole, released by nothing short of it.
+    const QString scope =
+        m_reencryptPending.isEmpty() ? QString() : m_reencryptPending.dequeue();
     if (exitCode == 0 && reencryptFailed(out, err)) {
+      holdAutoPush(scope);
+      sendDeferredPush();
       reportReencryptFailure(pid, out, err);
       return;
     }
+    // A run that failed may have stopped after its commit (pass init commits
+    // the new .gpg-id before re-encrypting; signing it may fail, the process
+    // may be killed): held as well, until a clean init covers it. A move or
+    // copy that failed before re-encrypting anything (the destination
+    // exists, a mistyped name) changed no recipients: not held.
+    if (exitCode != 0 && (pid == PASS_INIT ||
+                          out.contains(QLatin1String(": reencrypting to ")))) {
+      holdAutoPush(scope);
+    }
+    // pass init re-encrypts everything under its folder: a clean run
+    // releases the holds there. A move or copy covers only its entries.
+    if (pid == PASS_INIT && exitCode == 0 && !scope.isEmpty()) {
+      releaseAutoPush(scope);
+    }
+    sendDeferredPush();
     // The status lines are for this check, not for the output panel.
     Pass::finished(id, exitCode, out, withoutStatusLines(err));
     return;
@@ -437,7 +494,9 @@ void RealPass::reportReencryptFailure(PROCESS pid, const QString &out,
       tr("The recipients were changed, but some entries could not be "
          "re-encrypted for them: those are still encrypted to the previous "
          "recipients, who can still read them. With Git the change is "
-         "committed locally and was not pushed now; the next push sends it.");
+         "committed locally and not pushed: QtPass does not push this store "
+         "automatically until a re-encryption succeeds, and a push by hand "
+         "sends it.");
   for (const QString &part : {reason, human}) {
     if (!part.isEmpty()) {
       body += QStringLiteral("\n\n") + part;
@@ -524,6 +583,7 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
       args.append(user.key_id);
     }
   }
+  m_reencryptScopes.enqueue(inStore);
   executePass(PASS_INIT, args);
 }
 
@@ -596,6 +656,7 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   }
   args << passSrc;
   args << passDest;
+  m_reencryptScopes.enqueue(QDir::cleanPath(QDir(dest).absolutePath()));
   executePass(id, args);
 }
 

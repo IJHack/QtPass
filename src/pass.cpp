@@ -26,6 +26,7 @@
 #include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QTextStream>
+#include <algorithm>
 #include <array>
 #include <optional>
 #include <utility>
@@ -791,6 +792,45 @@ auto nearestGpgId(const GpgIdLookup &lookup) -> std::optional<QString> {
 }
 
 } // namespace
+
+auto Pass::heldScopes() -> QSet<QString> & {
+  static QSet<QString> scopes;
+  return scopes;
+}
+
+auto Pass::scopePath(const QString &path) const -> QString {
+  return QDir::cleanPath(QDir(m_settings.passStore).absoluteFilePath(path));
+}
+
+auto Pass::autoPushHeld() const -> bool {
+  const QString store = scopePath(QString());
+  const QSet<QString> &scopes = heldScopes();
+  return std::any_of(scopes.cbegin(), scopes.cend(),
+                     [&store](const QString &s) {
+                       return isAtOrUnder(s, store, store + QLatin1Char('/'));
+                     });
+}
+
+void Pass::GitPushAutomatic() {
+  m_pushIsAutomatic = true;
+  GitPush();
+  m_pushIsAutomatic = false;
+}
+
+auto Pass::pushIsAutomatic() const -> bool { return m_pushIsAutomatic; }
+
+void Pass::holdAutoPush(const QString &scope) {
+  heldScopes().insert(scopePath(scope));
+}
+
+void Pass::releaseAutoPush(const QString &folder) {
+  const QString root = scopePath(folder);
+  QSet<QString> &scopes = heldScopes();
+  for (auto it = scopes.begin(); it != scopes.end();) {
+    it = isAtOrUnder(*it, root, root + QLatin1Char('/')) ? scopes.erase(it)
+                                                         : std::next(it);
+  }
+}
 
 auto Pass::refuseLinkedPath(const QString &path, LinkScope scope,
                             PathSpelling spelling) -> bool {

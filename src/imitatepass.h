@@ -658,6 +658,8 @@ private:
   /// A push was asked for while a run was active (GitPush()); the run makes
   /// it at its end, when every file went through.
   bool m_pushAfterReencrypt = false;
+  /// The folder the re-encryption in flight covers, for the push hold.
+  QString m_reencryptScope;
   /// Set while finishReencrypt() pushes, so GitPush() does not hold it.
   bool m_reencryptPushing = false;
   /// Set by cancelReencryptPath() and the destructor; read by the worker

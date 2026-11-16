@@ -160,9 +160,20 @@ auto QtPass::formatOutput(QString output, const QString &prefix,
 }
 
 void QtPass::doGitPush() {
-  if (QtPassSettings::isAutoPush()) {
-    emit pushRequested();
+  if (!QtPassSettings::isAutoPush()) {
+    return;
   }
+  // After a re-encryption that did not finish: the push would publish the
+  // recipients change with entries still for the previous recipients.
+  if (Pass *pass = QtPassSettings::getPass();
+      pass != nullptr && pass->autoPushHeld()) {
+    emit statusMessage(tr("Not pushing automatically: the last "
+                          "re-encryption did not finish. Re-encrypt again, "
+                          "or push by hand."),
+                       10000);
+    return;
+  }
+  emit pushRequested();
 }
 
 void QtPass::showTextAsQRCode(const QString &text) {
