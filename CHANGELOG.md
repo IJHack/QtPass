@@ -1074,7 +1074,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   `otpauth: //…`, as the edit dialog of 1.8 to 2.0-rc2 saved it with
   `otpauth` in the template. Only a bare line and the value after the first
   colon were caught, so these showed `secret=` in the main window, also
-  with "Hide password" on, and as a field with copy and QR buttons
+  with "Hide password" on, and as a field with copy and QR buttons. The
+  split `otpauth: //…` form also gives the OTP code again, read as the URI
+  without the blanks; the entry is kept as written
 - Ctrl+C with text selected in the shown entry (a login, a URL, a note)
   copies that text. It copied the entry's password instead, said "Copied
   to clipboard" and cleared the selection; only the context menu's Copy
