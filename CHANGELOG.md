@@ -811,6 +811,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   you to verify. gpg repeats the key's user ID on an earlier line, and a
   user ID containing `[GNUPG:] IMPORT_OK 1 <hex>` named that fingerprint
   instead of the key's own (scan finding ANT-2026-208NMCS0)
+- The search lists only entries of the current store. After a profile
+  switch it still matched the previous store's entries, which the tree
+  keeps loaded, and showed them when nothing in the current store matched;
+  Return opened one, and saving it re-encrypted it to the current store's
+  recipients (scan finding ANT-2026-0DJ8UWM6)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old
