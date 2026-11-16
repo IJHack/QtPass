@@ -695,58 +695,58 @@ email</translation>
         <translation>Tallenna leikepöydälle tarvittaessa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="353"/>
-        <location filename="../src/configdialog.cpp" line="361"/>
+        <location filename="../src/configdialog.cpp" line="364"/>
+        <location filename="../src/configdialog.cpp" line="372"/>
         <source>This field is required</source>
         <translation>Tämä kenttä on vaadittu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="356"/>
+        <location filename="../src/configdialog.cpp" line="367"/>
         <source>A profile name cannot contain / or \</source>
         <translation type="unfinished">Profiilin nimessä ei voi olla merkkejä / tai \</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="358"/>
+        <location filename="../src/configdialog.cpp" line="369"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Toisella profiililla on jo tämä nimi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="367"/>
+        <location filename="../src/configdialog.cpp" line="378"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">Vain avainten täydet sormenjäljet (40 tai 64 heksadesimaalimerkkiä) välilyönnein eroteltuina</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="514"/>
+        <location filename="../src/configdialog.cpp" line="525"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 allekirjoittaa samalla avaimella toista varastoa varten. Toista näistä varastoista varten allekirjoitettu vastaanottajaluettelo hyväksytään myös toisessa: käytä erillistä allekirjoitusavainta jokaiselle varastolle, jonka vastaanottajat eroavat.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="542"/>
+        <location filename="../src/configdialog.cpp" line="553"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation type="unfinished">pass commitoi kohteen %1 muutokset Git-tietovarastoon kohteessa %2: koska varaston polussa on kaksoispiste, pass ei voi rajata Gitiä varastoon. Suorita varastossa &quot;git init&quot; tai käytä natiivia Git/GPG:tä.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="576"/>
         <source>The path does not exist.</source>
         <translation>Polku ei ole olemassa.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="568"/>
+        <location filename="../src/configdialog.cpp" line="579"/>
         <source>The path is not readable.</source>
         <translation>Polku ei ole luettavissa.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="571"/>
+        <location filename="../src/configdialog.cpp" line="582"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Polku ei ole Unix-domeenisoketti.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="575"/>
+        <location filename="../src/configdialog.cpp" line="586"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Mahdollisesti virheellinen SSH_AUTH_SOCK-ohitus</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="576"/>
+        <location filename="../src/configdialog.cpp" line="587"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -759,37 +759,37 @@ The value will still be saved as entered.</source>
 Arvo tallennetaan silti sellaisenaan kuin se on syötetty.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="833"/>
+        <location filename="../src/configdialog.cpp" line="844"/>
         <source>Create profile directory?</source>
         <translation>Luo profiilihakemisto?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="834"/>
+        <location filename="../src/configdialog.cpp" line="845"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Luodaanko salasanavarasto sijaintiin %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="841"/>
+        <location filename="../src/configdialog.cpp" line="852"/>
         <source>Could not create profile directory: %1</source>
         <translation>Profiilihakemiston luonti epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="865"/>
+        <location filename="../src/configdialog.cpp" line="876"/>
         <source>Select recipients for %1</source>
         <translation>Valitse vastaanottajat kohteelle %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="874"/>
+        <location filename="../src/configdialog.cpp" line="885"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Profiilia %1 ei voitu alustaa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="877"/>
+        <location filename="../src/configdialog.cpp" line="888"/>
         <source>Profile %1</source>
         <translation type="unfinished">Profiili %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="900"/>
+        <location filename="../src/configdialog.cpp" line="911"/>
         <source>New profile</source>
         <translation>Uusi profiili</translation>
     </message>
@@ -798,12 +798,12 @@ Arvo tallennetaan silti sellaisenaan kuin se on syötetty.</translation>
         <translation type="vanished">Uusi profiili</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="921"/>
+        <location filename="../src/configdialog.cpp" line="932"/>
         <source>No profile selected</source>
         <translation>Ei profiilia valittuna</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="922"/>
+        <location filename="../src/configdialog.cpp" line="933"/>
         <source>No profile selected to delete</source>
         <translation>Ei valittua profiilia poistettavaksi</translation>
     </message>
@@ -824,7 +824,7 @@ Arvo tallennetaan silti sellaisenaan kuin se on syötetty.</translation>
         <translation type="vanished">Haluatko luoda salasanasäilön sijaintiin %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="840"/>
+        <location filename="../src/configdialog.cpp" line="851"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
@@ -846,17 +846,17 @@ Arvo tallennetaan silti sellaisenaan kuin se on syötetty.</translation>
         <translation type="vanished">Kansio %1 ei näytä olevan salasanasäilö tai sitä ei ole vielä alustettu.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1141"/>
+        <location filename="../src/configdialog.cpp" line="1152"/>
         <source>New profile: %1 at %2</source>
         <translation>Uusi profiili: %1 sijainnissa %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1143"/>
+        <location filename="../src/configdialog.cpp" line="1154"/>
         <source>Profile: %1 at %2</source>
         <translation>Profiili: %1 sijainnissa %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1146"/>
+        <location filename="../src/configdialog.cpp" line="1157"/>
         <source>Fill in all required fields</source>
         <translation>Täytä kaikki pakolliset kentät</translation>
     </message>
@@ -1135,7 +1135,7 @@ sähköposti</translation>
 <context>
     <name>FileContent</name>
     <message numerus="yes">
-        <location filename="../src/filecontent.cpp" line="196"/>
+        <location filename="../src/filecontent.cpp" line="257"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
             <numerusform>… vielä %n rivi näyttämättä</numerusform>
@@ -1376,15 +1376,15 @@ sähköposti</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="477"/>
-        <location filename="../src/imitatepass.cpp" line="665"/>
-        <location filename="../src/realpass.cpp" line="104"/>
+        <location filename="../src/imitatepass.cpp" line="474"/>
+        <location filename="../src/imitatepass.cpp" line="668"/>
+        <location filename="../src/realpass.cpp" line="131"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Kohteen %1 allekirjoitus on virheellinen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
-        <location filename="../src/imitatepass.cpp" line="944"/>
+        <location filename="../src/imitatepass.cpp" line="946"/>
         <source>Can not edit</source>
         <translation>Ei muokattavissa</translation>
     </message>
@@ -1400,27 +1400,27 @@ sähköposti</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
-        <location filename="../src/imitatepass.cpp" line="945"/>
+        <location filename="../src/imitatepass.cpp" line="947"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Salausavainta ei voitu lukea käyttöä varten, .gpg-id tiedosto puuttuu tai on virheellinen.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="962"/>
+        <location filename="../src/pass.cpp" line="1002"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">Vastaanottajaluetteloa ei voi tarkistaa</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="964"/>
+        <location filename="../src/pass.cpp" line="1004"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Ei voida päätellä, onko %2 poistettu, joten mitään ei salattu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="971"/>
+        <location filename="../src/pass.cpp" line="1011"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Vastaanottajaluettelo puuttuu</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="972"/>
+        <location filename="../src/pass.cpp" line="1012"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">Allekirjoitettu vastaanottajaluettelo %1 puuttuu tai ei ole tavallinen tiedosto. QtPass ei käytä sen sijaan yläkansion luetteloa: sitä luetteloa ei ole allekirjoitettu tälle kansiolle. Jos tällä nimellä on linkki, poista se. Avaa sitten Käyttäjät-ikkuna kyseiselle kansiolle ja tallenna sen vastaanottajat, mikä kirjoittaa ja allekirjoittaa uuden luettelon.</translation>
     </message>
@@ -1435,58 +1435,58 @@ sähköposti</translation>
         <translation type="unfinished">Väliaikaishakemistoa ei voitu luoda: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="346"/>
+        <location filename="../src/imitatepass.cpp" line="343"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
         <translation type="unfinished">Kaikkea kohteen %1 sisältöä ei voitu poistaa. Se, mikä voitiin poistaa, on poistettu; tarkista, mitä siihen jäi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="355"/>
+        <location filename="../src/imitatepass.cpp" line="352"/>
         <source>Could not remove %1: %2</source>
         <translation type="unfinished">Kohdetta %1 ei voitu poistaa: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="374"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation type="unfinished">%1 ei ole salasanavaraston sisällä, tai matkan varrella olevan kansion nimessä on rivinvaihto tai muu ohjausmerkki, jota allekirjoitettuun luetteloon ei voi tallentaa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="468"/>
+        <location filename="../src/imitatepass.cpp" line="465"/>
         <source>GPG signing failed!</source>
         <translation>GPG-allekirjoitus epäonnistui!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="470"/>
+        <location filename="../src/imitatepass.cpp" line="467"/>
         <source>Failed to sign %1.</source>
         <translation>%1:n allekirjoittaminen epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="610"/>
+        <location filename="../src/imitatepass.cpp" line="607"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Vastaanottajia ei muutettu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="611"/>
+        <location filename="../src/imitatepass.cpp" line="608"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Uudelleensalaus on yhä käynnissä. Odota, kunnes se on valmis, ja tallenna sitten vastaanottajat uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="617"/>
+        <location filename="../src/imitatepass.cpp" line="614"/>
         <source>No signing key!</source>
         <translation>Ei allekirjoitusavainta!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="618"/>
+        <location filename="../src/imitatepass.cpp" line="615"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Mitään salaisista allekirjoitusavaimista ei ole saatavilla.
 Et voi muuttaa käyttäjäluetteloa!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="376"/>
-        <location filename="../src/imitatepass.cpp" line="401"/>
-        <location filename="../src/imitatepass.cpp" line="407"/>
-        <location filename="../src/imitatepass.cpp" line="435"/>
-        <location filename="../src/imitatepass.cpp" line="569"/>
+        <location filename="../src/imitatepass.cpp" line="373"/>
+        <location filename="../src/imitatepass.cpp" line="398"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
+        <location filename="../src/imitatepass.cpp" line="432"/>
+        <location filename="../src/imitatepass.cpp" line="566"/>
         <source>Cannot update</source>
         <translation>Ei päivitettävissä</translation>
     </message>
@@ -1497,21 +1497,21 @@ Et voi muuttaa käyttäjäluetteloa!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="212"/>
-        <location filename="../src/imitatepass.cpp" line="476"/>
-        <location filename="../src/imitatepass.cpp" line="820"/>
-        <location filename="../src/realpass.cpp" line="108"/>
+        <location filename="../src/imitatepass.cpp" line="473"/>
+        <location filename="../src/imitatepass.cpp" line="823"/>
+        <location filename="../src/realpass.cpp" line="135"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Tarkista .gpg-id-tiedoston allekirjoitus!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="321"/>
-        <location filename="../src/imitatepass.cpp" line="345"/>
-        <location filename="../src/imitatepass.cpp" line="354"/>
+        <location filename="../src/imitatepass.cpp" line="318"/>
+        <location filename="../src/imitatepass.cpp" line="342"/>
+        <location filename="../src/imitatepass.cpp" line="351"/>
         <source>Delete failed</source>
         <translation type="unfinished">Poistaminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="322"/>
+        <location filename="../src/imitatepass.cpp" line="319"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Linkkiä %1 ei voitu poistaa.</translation>
     </message>
@@ -1528,87 +1528,87 @@ Et voi muuttaa käyttäjäluetteloa!</translation>
         <translation type="obsolete">Kohteen %1 kirjoittaminen epäonnistui: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="446"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Vastaanottajaluettelo kirjoitettiin, mutta sitä ei kirjattu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="450"/>
+        <location filename="../src/imitatepass.cpp" line="447"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Tallenna vastaanottajat vielä kerran päästäksesi eteenpäin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="455"/>
+        <location filename="../src/imitatepass.cpp" line="452"/>
         <source>Check selected users!</source>
         <translation>Tarkista valitut käyttäjät!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="456"/>
+        <location filename="../src/imitatepass.cpp" line="453"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Millään valituista avaimista ei ole salaista avainta saatavilla.
 Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="471"/>
+        <location filename="../src/imitatepass.cpp" line="468"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">%1:n allekirjoittaminen epäonnistui: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="570"/>
+        <location filename="../src/imitatepass.cpp" line="567"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Vanhan allekirjoituksen %1 poistaminen epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="649"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git päättyi koodilla %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="688"/>
+        <location filename="../src/imitatepass.cpp" line="691"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1:ta ei voida lukea vastaanottajaluettelona (normaalitiedosto, jonka koko on enintään %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="702"/>
-        <location filename="../src/imitatepass.cpp" line="730"/>
-        <location filename="../src/imitatepass.cpp" line="738"/>
+        <location filename="../src/imitatepass.cpp" line="705"/>
+        <location filename="../src/imitatepass.cpp" line="733"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Aiemman uudelleensalauksen jäänne</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="703"/>
+        <location filename="../src/imitatepass.cpp" line="706"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 ei ole tavallinen tiedosto, eikä sitä palautettu. Tarkista ja poista se, ja salaa sitten uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="731"/>
+        <location filename="../src/imitatepass.cpp" line="734"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 on olemassa kohteen %2 rinnalla. Molemmat ovat merkinnän salattuja kopioita; tarkista, kumman haluat säilyttää, poista toinen ja salaa sitten uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="745"/>
+        <location filename="../src/imitatepass.cpp" line="748"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 palautettiin varmuuskopiosta, jonka keskeytynyt uudelleensalaus jätti jälkeensä.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="739"/>
+        <location filename="../src/imitatepass.cpp" line="742"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 puuttuu, eikä sen varmuuskopiota %2 voitu nimetä takaisin. Nimeä se uudelleen käsin ja salaa sitten uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="985"/>
+        <location filename="../src/imitatepass.cpp" line="987"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">Kohdetta %1 ei voitu salata uudelleen: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1049"/>
+        <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
         <translation type="unfinished">Salasanavaraston Git-tietovarastossa on yhdistämättömiä tiedostoja. Ratkaise ristiriita Gitillä ennen kuin salaat tiedot uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1374"/>
-        <location filename="../src/realpass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="1377"/>
+        <location filename="../src/realpass.cpp" line="508"/>
         <source>Re-encryption failed</source>
         <translation>Uudelleensalaus epäonnistui</translation>
     </message>
@@ -1625,86 +1625,86 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         <translation type="obsolete">Varmuuskopiota %1 ei voitu poistaa uudelleensalauksen jälkeen; sen voi turvallisesti poistaa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1022"/>
+        <location filename="../src/imitatepass.cpp" line="1024"/>
         <source>Creating backup commit</source>
         <translation>Varmuuskopion commitin luonti</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1036"/>
-        <location filename="../src/imitatepass.cpp" line="1060"/>
+        <location filename="../src/imitatepass.cpp" line="1038"/>
+        <location filename="../src/imitatepass.cpp" line="1062"/>
         <source>Backup commit failed</source>
         <translation>Varmuuskopion commit epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1037"/>
+        <location filename="../src/imitatepass.cpp" line="1039"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Gitin tilan tarkistaminen epäonnistui. Uudelleensalaus keskeytettiin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1048"/>
-        <location filename="../src/imitatepass.cpp" line="1293"/>
+        <location filename="../src/imitatepass.cpp" line="1050"/>
+        <location filename="../src/imitatepass.cpp" line="1296"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Keskeneräinen Git-toiminto</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
+        <location filename="../src/imitatepass.cpp" line="1063"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Uudelleensalaus keskeytettiin, koska git-varmuuskopiota ei voitu luoda.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1103"/>
+        <location filename="../src/imitatepass.cpp" line="1105"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Uudelleensalaus on jo käynnissä</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1110"/>
+        <location filename="../src/imitatepass.cpp" line="1112"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Kansio ei kuulu varastoon</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1111"/>
+        <location filename="../src/imitatepass.cpp" line="1113"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 on symbolinen linkki tai liitospiste tai sijaitsee sellaisen takana. Sen kohde ei ole osa salasanavarastoa, eikä sitä salattu uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1126"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Uudelleensalaus kansiosta %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1202"/>
-        <location filename="../src/imitatepass.cpp" line="1401"/>
+        <location filename="../src/imitatepass.cpp" line="1205"/>
+        <location filename="../src/imitatepass.cpp" line="1421"/>
         <source>Updating password-store</source>
         <translation>Päivitetään salasanasäilöä</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1215"/>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
+        <location filename="../src/imitatepass.cpp" line="1224"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1216"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Pullin jälkeen ei voitu tarkistaa, onko varastossa yhdistämättömiä tiedostoja. Tarkista se gitillä ennen uudelleensalausta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1225"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pull jätti varastoon yhdistämättömiä tiedostoja. Ratkaise ristiriita ennen uudelleensalausta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1226"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull epäonnistui, varasto salataan uudelleen sellaisenaan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <location filename="../src/imitatepass.cpp" line="1246"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
         <translation type="unfinished">Kansiota %1 ei voitu lukea: sen merkintöjä ei salattu uudelleen</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1247"/>
+        <location filename="../src/imitatepass.cpp" line="1250"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n merkintä ohitettiin: symbolinen linkki, liitospiste tai erikoistiedosto ei ole osa varastoa.</numerusform>
@@ -1712,27 +1712,27 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1271"/>
         <source>GPG ID verification failed</source>
         <translation>GPG-tunnuksen vahvistus epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1269"/>
+        <location filename="../src/imitatepass.cpp" line="1272"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Hakemiston .gpg-id-tiedoston vahvistaminen epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1302"/>
+        <location filename="../src/imitatepass.cpp" line="1305"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Ei kuulu varastoon</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1303"/>
+        <location filename="../src/imitatepass.cpp" line="1306"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 on pullin jälkeen symbolinen linkki tai liitospiste tai sijaitsee sellaisen takana. Sen kohde ei ole osa salasanavarastoa, eikä siihen kosketa.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1372"/>
+        <location filename="../src/imitatepass.cpp" line="1375"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... ja %n muu</numerusform>
@@ -1740,7 +1740,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1375"/>
+        <location filename="../src/imitatepass.cpp" line="1378"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n tiedostoa ei voitu salata uudelleen:</numerusform>
@@ -1748,18 +1748,23 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1381"/>
+        <location filename="../src/imitatepass.cpp" line="1396"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Uudelleensalaus peruutettu: %1/%2 tiedostoa tarkistettu, %3 salattu uudelleen, %4 epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1451"/>
-        <location filename="../src/imitatepass.cpp" line="1460"/>
+        <location filename="../src/imitatepass.cpp" line="1417"/>
+        <source>Not pushing: an earlier re-encryption in this store did not finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1471"/>
+        <location filename="../src/imitatepass.cpp" line="1480"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Vastaanottajien muutosta ei viety Gitiin</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1452"/>
+        <location filename="../src/imitatepass.cpp" line="1472"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1772,7 +1777,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Muutosta ei ole vielä viety Gitiin eikä lähetetty etävarastoon. Korjaa Git-ongelma ja tee sitten muutoksista commit tai tallenna vastaanottajat uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1461"/>
+        <location filename="../src/imitatepass.cpp" line="1481"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1785,22 +1790,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Uudelleensalaus ei valmistunut, joten osa merkinnöistä tai kaikki merkinnät on yhä salattu aiemmille vastaanottajille, jotka voivat edelleen lukea ne. Mitään ei viety Gitiin eikä lähetetty etävarastoon. Korjaa Git-ongelma ja tallenna sitten vastaanottajat uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1572"/>
+        <location filename="../src/imitatepass.cpp" line="1592"/>
         <source>Move failed</source>
         <translation type="unfinished">Siirtäminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1573"/>
+        <location filename="../src/imitatepass.cpp" line="1593"/>
         <source>Could not move %1 to %2.</source>
         <translation type="unfinished">Kohdetta %1 ei voitu siirtää kohteeseen %2.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1662"/>
+        <location filename="../src/imitatepass.cpp" line="1682"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git-ohjelmaa ei ole määritetty, git ohitetaan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1739"/>
+        <location filename="../src/imitatepass.cpp" line="1759"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg ei kirjoittanut salatekstiä kohteelle %1.</translation>
     </message>
@@ -1829,17 +1834,17 @@ Uudelleensalaus ei valmistunut, joten osa merkinnöistä tai kaikki merkinnät o
         <translation type="vanished">%1:n uudelleensalaus epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1390"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Uudelleensalaus valmis: %1 onnistui, %2 epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1395"/>
+        <location filename="../src/imitatepass.cpp" line="1410"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Uudelleensalaus valmis: %1 tiedostoa salattu uudelleen</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1406"/>
+        <location filename="../src/imitatepass.cpp" line="1426"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Git push ohitetaan: %n tiedostoa ei voitu salata uudelleen</numerusform>
@@ -1847,14 +1852,14 @@ Uudelleensalaus ei valmistunut, joten osa merkinnöistä tai kaikki merkinnät o
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1581"/>
-        <location filename="../src/imitatepass.cpp" line="1628"/>
+        <location filename="../src/imitatepass.cpp" line="1601"/>
+        <location filename="../src/imitatepass.cpp" line="1648"/>
         <source>Copy failed</source>
         <translation type="unfinished">Kopiointi epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1582"/>
-        <location filename="../src/imitatepass.cpp" line="1629"/>
+        <location filename="../src/imitatepass.cpp" line="1602"/>
+        <location filename="../src/imitatepass.cpp" line="1649"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Kohteen %1 kopiointi kohteeseen %2 epäonnistui.</translation>
     </message>
@@ -2165,14 +2170,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1721"/>
+        <location filename="../src/mainwindow.cpp" line="1779"/>
         <source>Edit</source>
         <translation>Muokkaa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1733"/>
+        <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
@@ -2260,7 +2265,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Users</source>
         <translation>Käyttäjät</translation>
     </message>
@@ -2290,8 +2295,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="791"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="996"/>
         <source>Search password</source>
         <translation>Etsi salasana</translation>
     </message>
@@ -2533,6 +2538,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="595"/>
         <location filename="../src/mainwindow.cpp" line="605"/>
+        <location filename="../src/mainwindow.cpp" line="612"/>
         <source>Updating password-store</source>
         <translation>Päivitetään salasanasäilöä</translation>
     </message>
@@ -2549,8 +2555,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="705"/>
-        <location filename="../src/mainwindow.cpp" line="1045"/>
+        <location filename="../src/mainwindow.cpp" line="712"/>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
         <source>Content hidden</source>
         <translation>Sisältö piilotettu</translation>
     </message>
@@ -2599,12 +2605,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="882"/>
+        <location filename="../src/mainwindow.cpp" line="893"/>
         <source>Looking for: %1</source>
         <translation>Etsitään: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1063"/>
+        <location filename="../src/mainwindow.cpp" line="1070"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n osuma löytyi</numerusform>
@@ -2634,17 +2640,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Haluatko varmasti poistaa %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1312"/>
+        <location filename="../src/mainwindow.cpp" line="1336"/>
         <source>Delete password?</source>
         <translation>Poista salasana?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1313"/>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Haluatko varmasti poistaa kohteen %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1336"/>
+        <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Delete folder?</source>
         <translation>Poista kansio?</translation>
     </message>
@@ -2669,26 +2675,26 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1532"/>
+        <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Profile changed to %1</source>
         <translation>Profiiliksi muutettu %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1712"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>Open folder with file manager</source>
         <translation>Avaa kansio tiedostoselaimessa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <location filename="../src/mainwindow.cpp" line="1771"/>
         <source>Add folder</source>
         <translation>Lisää kansio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Add password</source>
         <translation>Lisää salasana</translation>
     </message>
@@ -2712,45 +2718,45 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Prosessin tuloste</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="742"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Tämän salasanan salauksen purku epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="746"/>
-        <location filename="../src/mainwindow.cpp" line="764"/>
-        <location filename="../src/mainwindow.cpp" line="1414"/>
+        <location filename="../src/mainwindow.cpp" line="753"/>
+        <location filename="../src/mainwindow.cpp" line="772"/>
+        <location filename="../src/mainwindow.cpp" line="1463"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP-koodi kopioitu leikepöydälle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="766"/>
-        <location filename="../src/mainwindow.cpp" line="1402"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <location filename="../src/mainwindow.cpp" line="1451"/>
         <source>No OTP code found in this password entry</source>
         <translation>Tässä salasanassa ei löytynyt OTP-koodia</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="795"/>
+        <location filename="../src/mainwindow.cpp" line="806"/>
         <source>Password and content hidden</source>
         <translation>Salasana ja sisältö piilotettu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="864"/>
+        <location filename="../src/mainwindow.cpp" line="875"/>
         <source>About QtPass</source>
         <translation type="unfinished">Tietoja QtPassista</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="865"/>
+        <location filename="../src/mainwindow.cpp" line="876"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Monialustainen graafinen käyttöliittymä &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;-ohjelmalle, Unixin standardille salasanahallintaohjelmalle.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Lähdekoodi ja ongelmat&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Lisensoitu &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL -lisenssin version 3&lt;/a&gt; tai uudemman ehdoilla.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="934"/>
+        <location filename="../src/mainwindow.cpp" line="945"/>
         <source>Searching…</source>
         <translation>Etsitään…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="977"/>
         <source>Search content (regex)</source>
         <translation>Etsi sisällöstä (regex)</translation>
     </message>
@@ -2759,17 +2765,17 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Sisältöhaku käyttää POSIX-perussäännöllisiä lausekkeita (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="971"/>
+        <location filename="../src/mainwindow.cpp" line="981"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Sisältöhaku käyttää Perl-yhteensopivia säännöllisiä lausekkeita (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1019"/>
+        <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>No matches found.</source>
         <translation>Ei osumia.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1065"/>
+        <location filename="../src/mainwindow.cpp" line="1072"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n merkinnässä.</numerusform>
@@ -2777,53 +2783,53 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1260"/>
+        <location filename="../src/mainwindow.cpp" line="1282"/>
         <source>Invalid name</source>
         <translation type="unfinished">Virheellinen nimi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1261"/>
+        <location filename="../src/mainwindow.cpp" line="1283"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Tuo nimi viittaisi salasanavaraston ulkopuolelle. Valitse eri nimi.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1343"/>
+        <location filename="../src/mainwindow.cpp" line="1387"/>
         <source>Delete link?</source>
         <translation type="unfinished">Poista linkki?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1344"/>
+        <location filename="../src/mainwindow.cpp" line="1388"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 on symbolinen linkki tai liitospiste. Poistetaanko linkki? Sen kohteeseen ei kosketa.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1397"/>
+        <location filename="../src/mainwindow.cpp" line="1446"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP-luontia varten ei ole valittu salasanaa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1727"/>
-        <location filename="../src/mainwindow.cpp" line="1825"/>
+        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1883"/>
         <source>Rename folder</source>
         <translation>Nimeä kansio uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1730"/>
+        <location filename="../src/mainwindow.cpp" line="1788"/>
         <source>Rename password</source>
         <translation>Nimeä salasana uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1667"/>
+        <location filename="../src/mainwindow.cpp" line="1725"/>
         <source>Share</source>
         <translation>Jaa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1043"/>
+        <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… lisää osumia tässä kohteessa</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1058"/>
+        <location filename="../src/mainwindow.cpp" line="1065"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Näytetään ensimmäinen %n osuma; hae tarkemmin nähdäksesi loput.</numerusform>
@@ -2831,120 +2837,135 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1320"/>
+        <location filename="../src/mainwindow.cpp" line="1344"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Haluatko varmasti poistaa kohteen %1 ja koko sen sisällön?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1333"/>
+        <location filename="../src/mainwindow.cpp" line="1360"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Huomio: valitussa kansiossa on odottamattomia tiedostoja, tarkista ne ennen jatkamista.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1677"/>
+        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <source>%1 could not be read, so what it holds is unknown.</source>
+        <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="1375"/>
+        <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
+        <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Re-encrypt all passwords</source>
         <translation>Salaa kaikki salasanat uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1740"/>
         <source>Export my public key...</source>
         <translation>Vie julkinen avaimeni…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1686"/>
+        <location filename="../src/mainwindow.cpp" line="1744"/>
         <source>Add recipient...</source>
         <translation>Lisää vastaanottaja…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1691"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>What is this?</source>
         <translation>Mikä tämä on?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1765"/>
+        <location filename="../src/mainwindow.cpp" line="1823"/>
         <source>New folder</source>
         <translation type="unfinished">Uusi kansio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1824"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Uusi kansio:
 (Sijoitetaan sijaintiin %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1790"/>
+        <location filename="../src/mainwindow.cpp" line="1848"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Piilotettu kansio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1791"/>
+        <location filename="../src/mainwindow.cpp" line="1849"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">Pisteellä alkava kansio ei näkyisi luettelossa: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1825"/>
+        <location filename="../src/mainwindow.cpp" line="1883"/>
         <source>Rename folder to: </source>
         <translation>Nimeä kansio uudelleen seuraavaksi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1864"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>Rename file to: </source>
         <translation>Nimeä tiedosto uudelleen seuraavaksi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1987"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Tämä kohde sisältää OTP-salaisuuden, ei salasanaa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1977"/>
+        <location filename="../src/mainwindow.cpp" line="2040"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Salataan salasanoja uudelleen...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1978"/>
+        <location filename="../src/mainwindow.cpp" line="2041"/>
         <source>Cancel</source>
         <translation type="unfinished">Peruuta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1986"/>
+        <location filename="../src/mainwindow.cpp" line="2049"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Peruutetaan uudelleensalaus</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1997"/>
+        <location filename="../src/mainwindow.cpp" line="2060"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Salataan salasanoja uudelleen: %1/%2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2018"/>
-        <location filename="../src/mainwindow.cpp" line="2037"/>
+        <location filename="../src/mainwindow.cpp" line="2081"/>
+        <location filename="../src/mainwindow.cpp" line="2100"/>
         <source>Export public key</source>
         <translation>Vie julkinen avain</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2019"/>
+        <location filename="../src/mainwindow.cpp" line="2082"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Vie julkinen avaimesi&lt;/h3&gt;&lt;p&gt;Allekirjoitusavainta ei ole määritetty. Aseta sellainen kohdassa QtPass-asetukset &amp;gt; GPG-avaimet, tai suorita seuraava komento päätteessä:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Lähetä sen jälkeen tiedosto tiimisi jäsenille.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2066"/>
+        <location filename="../src/mainwindow.cpp" line="2129"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Kansio ei kuulu varastoon</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
+        <location filename="../src/mainwindow.cpp" line="2130"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 on symbolinen linkki tai liitospiste tai sijaitsee sellaisen takana. Sen kohde ei ole osa salasanavarastoa, eikä siihen kosketa.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2075"/>
+        <location filename="../src/mainwindow.cpp" line="2138"/>
         <source>Sharing passwords with GPG</source>
         <translation>Salasanojen jakaminen GPG:llä</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2076"/>
+        <location filename="../src/mainwindow.cpp" line="2139"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Salasanojen jakaminen GPG:llä&lt;/h3&gt;&lt;p&gt;Salasanojen jakamiseen muiden käyttäjien kanssa:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Vie julkinen avaimesi&lt;/b&gt; ja lähetä se tiimisi jäsenille&lt;/li&gt;&lt;li&gt;&lt;b&gt;Tuo tiimin jäsenten julkiset avaimet&lt;/b&gt; GPG-avainnippuusi&lt;/li&gt;&lt;li&gt;&lt;b&gt;Salaa salasanat uudelleen&lt;/b&gt; jotta kaikki vastaanottajat voivat purkaa salauksen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vain henkilöt, joilla on vastaava salainen avain, voivat purkaa salasanojen salauksen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vinkki:&lt;/b&gt; Käytä samaa GPG-avainta kaikissa jaetuissa kansioissa.&lt;/p&gt;&lt;p&gt;Lisätietoja löydät UKK-osiosta.&lt;/p&gt;</translation>
     </message>
@@ -2957,7 +2978,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;h3&gt;Vie julkinen avaimesi&lt;/h3&gt;&lt;p&gt;Allekirjoitusavainta ei ole määritetty. Aseta sellainen kohdassa QtPass-asetukset &amp;gt; GPG-avaimet, tai suorita seuraava komento päätteessä:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Lähetä sen jälkeen tiedosto tiimisi jäsenille.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2038"/>
+        <location filename="../src/mainwindow.cpp" line="2101"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2966,7 +2987,7 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2040"/>
+        <location filename="../src/mainwindow.cpp" line="2103"/>
         <source>No output from gpg.</source>
         <translation>gpg ei tuottanut tulostetta.</translation>
     </message>
@@ -2983,24 +3004,24 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Salaa uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1798"/>
-        <location filename="../src/mainwindow.cpp" line="1813"/>
-        <location filename="../src/mainwindow.cpp" line="1937"/>
+        <location filename="../src/mainwindow.cpp" line="1856"/>
+        <location filename="../src/mainwindow.cpp" line="1871"/>
+        <location filename="../src/mainwindow.cpp" line="2000"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1799"/>
+        <location filename="../src/mainwindow.cpp" line="1857"/>
         <source>Failed to create folder: %1</source>
         <translation>Kansion luonti epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1814"/>
+        <location filename="../src/mainwindow.cpp" line="1872"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>.gpg-id-tiedoston luominen epäonnistui kohdassa: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1864"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>Rename file</source>
         <translation>Nimeä tiedosto uudelleen</translation>
     </message>
@@ -3013,18 +3034,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Nimeä tiedosto uudelleen seuraavaksi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1938"/>
+        <location filename="../src/mainwindow.cpp" line="2001"/>
         <source>Directory does not exist: %1</source>
         <translation>Hakemistoa ei ole olemassa: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1946"/>
-        <location filename="../src/mainwindow.cpp" line="1979"/>
+        <location filename="../src/mainwindow.cpp" line="2009"/>
+        <location filename="../src/mainwindow.cpp" line="2042"/>
         <source>Re-encrypt passwords</source>
         <translation>Salaa salasanat uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1947"/>
+        <location filename="../src/mainwindow.cpp" line="2010"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3062,87 +3083,87 @@ Jatketaanko?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="200"/>
+        <location filename="../src/pass.cpp" line="201"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">Määritettyä GPG-kotihakemistoa %1 ei ole olemassa, käytetään oletusavainnippua</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="208"/>
+        <location filename="../src/pass.cpp" line="209"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">Määritettyä GPG-kotihakemistoa %1 ei ole olemassa, käytetään ympäristömuuttujan GNUPGHOME arvoa %2</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="221"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Invalid password length</source>
         <translation>Virheellinen salasanan pituus</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="222"/>
+        <location filename="../src/pass.cpp" line="223"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Salasanaa ei voi luoda nollapituudella.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="250"/>
+        <location filename="../src/pass.cpp" line="251"/>
         <source>Password generation failed</source>
         <translation type="unfinished">Salasanan luonti epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="251"/>
+        <location filename="../src/pass.cpp" line="252"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
         <translation type="unfinished">pwgen-ohjelmaa ei voitu suorittaa (&quot;%1&quot;). Tarkista pwgen-ohjelma asetuksista tai poista &quot;Käytä pwgeniä&quot; käytöstä.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="265"/>
+        <location filename="../src/pass.cpp" line="266"/>
         <source>No characters chosen</source>
         <translation>Ei merkkejä valittu</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="266"/>
+        <location filename="../src/pass.cpp" line="267"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Salasanaa ei voitu luoda, sillä ei ole merkkejä joista valita asetuksissa!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="404"/>
         <location filename="../src/pass.cpp" line="405"/>
+        <location filename="../src/pass.cpp" line="406"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">GPG-ohjelmaa ei ole määritetty</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="475"/>
-        <location filename="../src/pass.cpp" line="494"/>
+        <location filename="../src/pass.cpp" line="476"/>
+        <location filename="../src/pass.cpp" line="495"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Salaus epäonnistui: GPG-avain on vanhentunut. Uusi tai korvaa avain.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="480"/>
-        <location filename="../src/pass.cpp" line="499"/>
+        <location filename="../src/pass.cpp" line="481"/>
+        <location filename="../src/pass.cpp" line="500"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Salaus epäonnistui: GPG-avain on peruutettu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="484"/>
-        <location filename="../src/pass.cpp" line="513"/>
+        <location filename="../src/pass.cpp" line="485"/>
+        <location filename="../src/pass.cpp" line="514"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Salaus epäonnistui: vastaanottajan GPG-avainta ei löytynyt tai se on virheellinen. Tarkista, että .gpg-id-tiedoston avaintunniste on oikein ja tuotu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="488"/>
-        <location filename="../src/pass.cpp" line="517"/>
+        <location filename="../src/pass.cpp" line="489"/>
+        <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Salaus epäonnistui. Tarkista, että GPG-avaimesi on kelvollinen.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="507"/>
+        <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation type="unfinished">Salaus epäonnistui: vastaanottajan GPG-avainta ei voi käyttää. Se voi olla vanhentunut tai mitätöity, siltä voi puuttua salauksen aliavain tai se ei ole luotettu; alla oleva gpg:n viesti kertoo, mistä on kyse.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="567"/>
+        <location filename="../src/pass.cpp" line="568"/>
         <source>Saved, not committed</source>
         <translation type="unfinished">Tallennettu, mutta ei commitattu</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="568"/>
+        <location filename="../src/pass.cpp" line="569"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
@@ -3151,99 +3172,99 @@ Jatketaanko?</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="816"/>
+        <location filename="../src/pass.cpp" line="856"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 on symbolinen linkki tai liitospiste tai sijaitsee sellaisen takana. Sen kohde ei ole osa salasanavarastoa, eikä siihen kosketa.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="833"/>
+        <location filename="../src/pass.cpp" line="873"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">%1 ei ole salasanavaraston sisällä. Vastaanottajat määritetään varastolle tai sen sisällä olevalle kansiolle.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="852"/>
-        <location filename="../src/pass.cpp" line="855"/>
+        <location filename="../src/pass.cpp" line="892"/>
+        <location filename="../src/pass.cpp" line="895"/>
         <source>rebase</source>
         <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="858"/>
+        <location filename="../src/pass.cpp" line="898"/>
         <source>merge</source>
         <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="861"/>
+        <location filename="../src/pass.cpp" line="901"/>
         <source>cherry-pick</source>
         <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="864"/>
+        <location filename="../src/pass.cpp" line="904"/>
         <source>revert</source>
         <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="871"/>
+        <location filename="../src/pass.cpp" line="911"/>
         <source>cherry-pick or revert</source>
         <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="895"/>
+        <location filename="../src/pass.cpp" line="935"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
         <translation type="unfinished">Salasanavaraston Git-tietovarastossa on kesken toiminto %1. Viimeistele tai keskeytä se Gitillä ennen kuin muutat salasanavarastoa, tai muutoksesi voivat kadota.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="908"/>
+        <location filename="../src/pass.cpp" line="948"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
         <translation type="unfinished">Salasanavarastoa päivitetään (Git pull on käynnissä). Odota, kunnes se on valmis, ja yritä sitten uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="913"/>
+        <location filename="../src/pass.cpp" line="953"/>
         <source>Update in progress</source>
         <translation type="unfinished">Päivitys on käynnissä</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="927"/>
+        <location filename="../src/pass.cpp" line="967"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Keskeneräinen Git-toiminto</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="936"/>
+        <location filename="../src/pass.cpp" line="976"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Ei kuulu varastoon</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1031"/>
+        <location filename="../src/pass.cpp" line="1071"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">Vastaanottajaluetteloiden sukupolvikirjanpitoa ei voi lukea.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1113"/>
+        <location filename="../src/pass.cpp" line="1153"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1:ta ei voida lukea vastaanottajaluettelona (tavallinen tiedosto, jonka koko on enintään %2), joten mitään ei ole valittu automaattisesti. Tarkista se ennen vastaanottajien valitsemista tässä: &quot;OK&quot; korvaa sen uudella luettelolla.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1134"/>
+        <location filename="../src/pass.cpp" line="1174"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Vastaanottajaluettelo %1 puuttuu tai ei ole tavallinen tiedosto, joten mitään ei ole esivalittu: yläkansion luetteloa ei ole allekirjoitettu tälle kansiolle. Valitse tämän kansion vastaanottajat itse; OK kirjoittaa ja allekirjoittaa uuden luettelon.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1139"/>
+        <location filename="../src/pass.cpp" line="1179"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Mitään ei ole esivalittu: ei voida päätellä, onko %2 poistettu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1154"/>
+        <location filename="../src/pass.cpp" line="1194"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Vastaanottajaluettelon %1 allekirjoitusta ei voi varmentaa allekirjoitusavaimella, joten mitään ei ole esivalittu: tallentaminen allekirjoittaisi kaiken, mitä luettelossa nyt on. Valitse vastaanottajat itse; OK kirjoittaa ja allekirjoittaa uuden luettelon.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1078"/>
+        <location filename="../src/pass.cpp" line="1118"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Mitään ei ole esivalittu: tallentaminen allekirjoittaisi kaiken, mitä luettelossa nyt on. Valitse vastaanottajat itse.</translation>
     </message>
@@ -3411,7 +3432,7 @@ Jatketaanko?</translation>
         <translation type="unfinished">Kansiota %1 ei voitu luoda.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="751"/>
+        <location filename="../src/passworddialog.cpp" line="755"/>
         <source>Remove field</source>
         <translation type="unfinished">Poista kenttä</translation>
     </message>
@@ -3426,17 +3447,17 @@ Jatketaanko?</translation>
         <translation type="unfinished">otpauth://-URI tai base32-salaisuus</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="570"/>
+        <location filename="../src/passworddialog.cpp" line="574"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Virheellinen OTP-salaisuus</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="875"/>
+        <location filename="../src/passworddialog.cpp" line="879"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
         <translation type="unfinished">Tämä merkintä sisältää tavuja, joita QtPass ei voi tallentaa muuttamattomina, joten sitä ei voi muokata tässä.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="894"/>
+        <location filename="../src/passworddialog.cpp" line="898"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Tässä merkinnässä on %n rivi, liian monta muokattavaksi tässä.</numerusform>
@@ -3592,8 +3613,8 @@ Jatketaanko?</translation>
         <translation type="unfinished">Avaa %1 selaimessa</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="387"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="403"/>
         <source>OTP code</source>
         <translation>OTP koodi</translation>
     </message>
@@ -3602,7 +3623,7 @@ Jatketaanko?</translation>
         <translation type="obsolete">OTP koodi</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="389"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Tässä salasanassa ei löytynyt OTP-koodia</translation>
     </message>
@@ -3720,22 +3741,27 @@ Jatketaanko?</translation>
         <translation type="vanished">Tallennettu leikepöydälle</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="180"/>
+        <location filename="../src/qtpass.cpp" line="170"/>
+        <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="191"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">qrencoden käynnistys epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="188"/>
+        <location filename="../src/qtpass.cpp" line="199"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode ei valmistunut ajoissa</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="200"/>
+        <location filename="../src/qtpass.cpp" line="211"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode kaatui</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="201"/>
+        <location filename="../src/qtpass.cpp" line="212"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode päättyi koodilla %1</translation>
     </message>
@@ -3748,43 +3774,52 @@ Jatketaanko?</translation>
         <translation type="unfinished">Git pull epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="160"/>
+        <location filename="../src/realpass.cpp" line="87"/>
+        <source>Not pushing: an earlier re-encryption in this store did not finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="187"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">Tarkistetaan vastaanottajaluetteloita kohteen %1 alla…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="296"/>
+        <location filename="../src/realpass.cpp" line="332"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Linkkiä %1 ei voitu poistaa.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="297"/>
+        <location filename="../src/realpass.cpp" line="333"/>
         <source>Delete failed</source>
         <translation type="unfinished">Poistaminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="347"/>
+        <location filename="../src/realpass.cpp" line="383"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">Linkki %1 poistettiin, mutta git ei voinut kirjata sitä: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="349"/>
-        <location filename="../src/realpass.cpp" line="476"/>
+        <location filename="../src/realpass.cpp" line="385"/>
+        <location filename="../src/realpass.cpp" line="535"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">Poisto keskeneräinen</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="437"/>
-        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished">Vastaanottajat muutettiin, mutta joitakin merkintöjä ei voitu salata uudelleen heille: ne on yhä salattu aiemmille vastaanottajille, jotka voivat edelleen lukea ne. Gitiä käytettäessä muutos on viety paikallisesti Gitiin (commit), mutta sitä ei lähetetty nyt etävarastoon; seuraava lähetys (push) vie sen.</translation>
+        <location filename="../src/realpass.cpp" line="494"/>
+        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="473"/>
+        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
+        <translation type="obsolete">Vastaanottajat muutettiin, mutta joitakin merkintöjä ei voitu salata uudelleen heille: ne on yhä salattu aiemmille vastaanottajille, jotka voivat edelleen lukea ne. Gitiä käytettäessä muutos on viety paikallisesti Gitiin (commit), mutta sitä ei lähetetty nyt etävarastoon; seuraava lähetys (push) vie sen.</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="532"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">Linkki %1 poistettiin ja Git ei enää seuraa sitä, mutta commit epäonnistui: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="606"/>
+        <location filename="../src/realpass.cpp" line="667"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">Haku edellyttää, että GPG-ohjelma on määritetty.</translation>
     </message>
@@ -3881,6 +3916,45 @@ ja ota Git sen jälkeen käyttöön Asetuksista.</translation>
         <location filename="../src/firstrunwizard.cpp" line="446"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation type="unfinished">Palaa takaisin ja valitse vähintään yksi avain, jolle salata.</translation>
+    </message>
+</context>
+<context>
+    <name>Totp</name>
+    <message>
+        <location filename="../src/totp.cpp" line="278"/>
+        <source>The OTP configuration is too long.</source>
+        <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="282"/>
+        <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
+        <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="287"/>
+        <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
+        <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="292"/>
+        <source>This otpauth:// link cannot be read.</source>
+        <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="296"/>
+        <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
+        <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="300"/>
+        <source>The secret is missing or is not valid base32.</source>
+        <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

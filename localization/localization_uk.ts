@@ -695,58 +695,58 @@ email</translation>
         <translation>Копіювати на вимогу в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="353"/>
-        <location filename="../src/configdialog.cpp" line="361"/>
+        <location filename="../src/configdialog.cpp" line="364"/>
+        <location filename="../src/configdialog.cpp" line="372"/>
         <source>This field is required</source>
         <translation>Це поле обов&apos;язкове</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="356"/>
+        <location filename="../src/configdialog.cpp" line="367"/>
         <source>A profile name cannot contain / or \</source>
         <translation type="unfinished">Назва профілю не може містити / або \</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="358"/>
+        <location filename="../src/configdialog.cpp" line="369"/>
         <source>Another profile already has this name</source>
         <translation>Інший профіль уже має таку назву</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="367"/>
+        <location filename="../src/configdialog.cpp" line="378"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation>Лише повні відбитки ключів (40 або 64 шістнадцяткових символи), розділені пробілами</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="514"/>
+        <location filename="../src/configdialog.cpp" line="525"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 підписує тим самим ключем і для іншого сховища. Список отримувачів, підписаний для одного з цих сховищ, приймається в іншому: використовуйте окремий ключ підписання для кожного сховища, отримувачі якого відрізняються.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="542"/>
+        <location filename="../src/configdialog.cpp" line="553"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation>pass фіксує зміни в %1 у репозиторії Git у %2: якщо шлях до сховища містить двокрапку, pass не може обмежити Git сховищем. Виконайте &quot;git init&quot; у сховищі або використовуйте вбудований Git/GPG.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="565"/>
+        <location filename="../src/configdialog.cpp" line="576"/>
         <source>The path does not exist.</source>
         <translation>Шлях не існує.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="568"/>
+        <location filename="../src/configdialog.cpp" line="579"/>
         <source>The path is not readable.</source>
         <translation>Шлях не читається.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="571"/>
+        <location filename="../src/configdialog.cpp" line="582"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Шлях не є доменним сокетом Unix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="575"/>
+        <location filename="../src/configdialog.cpp" line="586"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Можливо недійсне перевизначення SSH_AUTH_SOCK</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="576"/>
+        <location filename="../src/configdialog.cpp" line="587"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -759,37 +759,37 @@ The value will still be saved as entered.</source>
 Значення все одно буде збережено таким, як введено.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="833"/>
+        <location filename="../src/configdialog.cpp" line="844"/>
         <source>Create profile directory?</source>
         <translation>Створити каталог профілю?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="834"/>
+        <location filename="../src/configdialog.cpp" line="845"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Бажаєте створити сховище паролів у %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="841"/>
+        <location filename="../src/configdialog.cpp" line="852"/>
         <source>Could not create profile directory: %1</source>
         <translation>Не вдалося створити каталог профілю: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="865"/>
+        <location filename="../src/configdialog.cpp" line="876"/>
         <source>Select recipients for %1</source>
         <translation>Виберіть одержувачів для %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="874"/>
+        <location filename="../src/configdialog.cpp" line="885"/>
         <source>Could not initialise profile %1</source>
         <translation>Не вдалося ініціалізувати профіль %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="877"/>
+        <location filename="../src/configdialog.cpp" line="888"/>
         <source>Profile %1</source>
         <translation>Профіль %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="900"/>
+        <location filename="../src/configdialog.cpp" line="911"/>
         <source>New profile</source>
         <translation>Новий профіль</translation>
     </message>
@@ -798,12 +798,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Новий профіль</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="921"/>
+        <location filename="../src/configdialog.cpp" line="932"/>
         <source>No profile selected</source>
         <translation>Профіль не вибрано</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="922"/>
+        <location filename="../src/configdialog.cpp" line="933"/>
         <source>No profile selected to delete</source>
         <translation>Не вибрано жодного профілю для видалення</translation>
     </message>
@@ -824,7 +824,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Хочете створити сховище паролів в %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="840"/>
+        <location filename="../src/configdialog.cpp" line="851"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
@@ -846,17 +846,17 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Тека %1, схоже, не є сховищем паролів або ще не ініціалізована.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1141"/>
+        <location filename="../src/configdialog.cpp" line="1152"/>
         <source>New profile: %1 at %2</source>
         <translation>Новий профіль: %1 у %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1143"/>
+        <location filename="../src/configdialog.cpp" line="1154"/>
         <source>Profile: %1 at %2</source>
         <translation>Профіль: %1 у %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1146"/>
+        <location filename="../src/configdialog.cpp" line="1157"/>
         <source>Fill in all required fields</source>
         <translation>Заповніть усі обов&apos;язкові поля</translation>
     </message>
@@ -1135,7 +1135,7 @@ URL
 <context>
     <name>FileContent</name>
     <message numerus="yes">
-        <location filename="../src/filecontent.cpp" line="196"/>
+        <location filename="../src/filecontent.cpp" line="257"/>
         <source>… %n more line(s) not shown</source>
         <translation>
             <numerusform>… ще %n рядок не показано</numerusform>
@@ -1377,15 +1377,15 @@ URL
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="477"/>
-        <location filename="../src/imitatepass.cpp" line="665"/>
-        <location filename="../src/realpass.cpp" line="104"/>
+        <location filename="../src/imitatepass.cpp" line="474"/>
+        <location filename="../src/imitatepass.cpp" line="668"/>
+        <location filename="../src/realpass.cpp" line="131"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Підпис для %1 недійсний.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
-        <location filename="../src/imitatepass.cpp" line="944"/>
+        <location filename="../src/imitatepass.cpp" line="946"/>
         <source>Can not edit</source>
         <translation>Не можна редагувати</translation>
     </message>
@@ -1401,27 +1401,27 @@ URL
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
-        <location filename="../src/imitatepass.cpp" line="945"/>
+        <location filename="../src/imitatepass.cpp" line="947"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Не вдалося прочитати ключ шифрування для використання, файл .gpg-id відсутній або недійсний.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="962"/>
+        <location filename="../src/pass.cpp" line="1002"/>
         <source>Cannot check the recipient list</source>
         <translation>Не вдається перевірити список одержувачів</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="964"/>
+        <location filename="../src/pass.cpp" line="1004"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation>%1 Неможливо визначити, чи було видалено %2, тому нічого не зашифровано.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="971"/>
+        <location filename="../src/pass.cpp" line="1011"/>
         <source>Recipient list missing</source>
         <translation>Список одержувачів відсутній</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="972"/>
+        <location filename="../src/pass.cpp" line="1012"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation>Підписаний список одержувачів %1 відсутній або не є звичайним файлом. QtPass не використовує замість нього список батьківської папки: той список не було підписано для цієї папки. Якщо під цією назвою є посилання, видаліть його. Потім відкрийте «Користувачі» для цієї папки й збережіть її одержувачів, що запише й підпише новий список.</translation>
     </message>
@@ -1436,58 +1436,58 @@ URL
         <translation>Не вдалося створити тимчасовий каталог: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="346"/>
+        <location filename="../src/imitatepass.cpp" line="343"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
         <translation type="unfinished">Не вдалося повністю видалити %1. Те, що можна було видалити, видалено; перевірте, що в ній залишилося.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="355"/>
+        <location filename="../src/imitatepass.cpp" line="352"/>
         <source>Could not remove %1: %2</source>
         <translation type="unfinished">Не вдалося видалити %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="374"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation>%1 не знаходиться всередині сховища паролів, або назва папки містить символ переходу на новий рядок або інший керуючий символ, який підписаний список не може записати.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="468"/>
+        <location filename="../src/imitatepass.cpp" line="465"/>
         <source>GPG signing failed!</source>
         <translation>Підписання GPG не вдалося!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="470"/>
+        <location filename="../src/imitatepass.cpp" line="467"/>
         <source>Failed to sign %1.</source>
         <translation>Не вдалося підписати %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="610"/>
+        <location filename="../src/imitatepass.cpp" line="607"/>
         <source>Recipients not changed</source>
         <translation>Одержувачів не змінено</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="611"/>
+        <location filename="../src/imitatepass.cpp" line="608"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation>Повторне шифрування ще виконується. Зачекайте, доки воно завершиться, а потім збережіть одержувачів ще раз.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="617"/>
+        <location filename="../src/imitatepass.cpp" line="614"/>
         <source>No signing key!</source>
         <translation>Немає ключа підпису!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="618"/>
+        <location filename="../src/imitatepass.cpp" line="615"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Жоден із секретних ключів підпису недоступний.
 Ви не зможете змінити список користувачів!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="376"/>
-        <location filename="../src/imitatepass.cpp" line="401"/>
-        <location filename="../src/imitatepass.cpp" line="407"/>
-        <location filename="../src/imitatepass.cpp" line="435"/>
-        <location filename="../src/imitatepass.cpp" line="569"/>
+        <location filename="../src/imitatepass.cpp" line="373"/>
+        <location filename="../src/imitatepass.cpp" line="398"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
+        <location filename="../src/imitatepass.cpp" line="432"/>
+        <location filename="../src/imitatepass.cpp" line="566"/>
         <source>Cannot update</source>
         <translation>Не вдається оновити</translation>
     </message>
@@ -1498,21 +1498,21 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="212"/>
-        <location filename="../src/imitatepass.cpp" line="476"/>
-        <location filename="../src/imitatepass.cpp" line="820"/>
-        <location filename="../src/realpass.cpp" line="108"/>
+        <location filename="../src/imitatepass.cpp" line="473"/>
+        <location filename="../src/imitatepass.cpp" line="823"/>
+        <location filename="../src/realpass.cpp" line="135"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Перевірте підпис файлу .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="321"/>
-        <location filename="../src/imitatepass.cpp" line="345"/>
-        <location filename="../src/imitatepass.cpp" line="354"/>
+        <location filename="../src/imitatepass.cpp" line="318"/>
+        <location filename="../src/imitatepass.cpp" line="342"/>
+        <location filename="../src/imitatepass.cpp" line="351"/>
         <source>Delete failed</source>
         <translation>Помилка видалення</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="322"/>
+        <location filename="../src/imitatepass.cpp" line="319"/>
         <source>Could not remove the link %1.</source>
         <translation>Не вдалося видалити посилання %1.</translation>
     </message>
@@ -1529,87 +1529,87 @@ You will not be able to change the user list!</source>
         <translation type="vanished">Не вдалося записати %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="446"/>
         <source>Recipient list written, but not recorded</source>
         <translation>Список одержувачів записано, але не зареєстровано</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="450"/>
+        <location filename="../src/imitatepass.cpp" line="447"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation>%1 Збережіть одержувачів ще раз, щоб продовжити.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="455"/>
+        <location filename="../src/imitatepass.cpp" line="452"/>
         <source>Check selected users!</source>
         <translation>Перевірте вибраних користувачів!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="456"/>
+        <location filename="../src/imitatepass.cpp" line="453"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Жодна з вибраних клавіш не має секретного ключа.
 Ви не зможете розшифрувати щойно додані паролі!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="471"/>
+        <location filename="../src/imitatepass.cpp" line="468"/>
         <source>Failed to sign %1: %2</source>
         <translation>Не вдалося підписати %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="570"/>
+        <location filename="../src/imitatepass.cpp" line="567"/>
         <source>Failed to remove the old signature %1.</source>
         <translation>Не вдалося видалити старий підпис %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="649"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>Git exited with code %1.</source>
         <translation>Git завершив роботу з кодом %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="688"/>
+        <location filename="../src/imitatepass.cpp" line="691"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation>%1 не може бути прочитаний як список отримувачів (звичайний файл, розмір якого становить щонайбільше %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="702"/>
-        <location filename="../src/imitatepass.cpp" line="730"/>
-        <location filename="../src/imitatepass.cpp" line="738"/>
+        <location filename="../src/imitatepass.cpp" line="705"/>
+        <location filename="../src/imitatepass.cpp" line="733"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation>Залишок від попереднього повторного шифрування</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="703"/>
+        <location filename="../src/imitatepass.cpp" line="706"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation>%1 не є звичайним файлом, тому його не було відновлено. Перегляньте його й видаліть, а потім повторіть повторне шифрування.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="731"/>
+        <location filename="../src/imitatepass.cpp" line="734"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation>%1 існує поруч із %2. Обидва файли є зашифрованими копіями запису; перевірте, який із них потрібний, видаліть інший, а потім повторіть повторне шифрування.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="745"/>
+        <location filename="../src/imitatepass.cpp" line="748"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation>%1 відновлено з резервної копії, яку залишило перерване повторне шифрування.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="739"/>
+        <location filename="../src/imitatepass.cpp" line="742"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation>%1 відсутній, а його резервну копію %2 не вдалося перейменувати назад. Перейменуйте її вручну, а потім повторіть повторне шифрування.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="985"/>
+        <location filename="../src/imitatepass.cpp" line="987"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation>Не вдалося повторно зашифрувати %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1049"/>
+        <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
         <translation type="unfinished">Репозиторій Git сховища паролів має незлиті файли. Розв&apos;яжіть конфлікт за допомогою Git перед повторним шифруванням.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1374"/>
-        <location filename="../src/realpass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="1377"/>
+        <location filename="../src/realpass.cpp" line="508"/>
         <source>Re-encryption failed</source>
         <translation>Повторне шифрування не вдалося</translation>
     </message>
@@ -1626,86 +1626,86 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">Не вдалося видалити резервну копію %1 після повторного шифрування; її можна безпечно видалити.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1022"/>
+        <location filename="../src/imitatepass.cpp" line="1024"/>
         <source>Creating backup commit</source>
         <translation>Створення резервного коміту</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1036"/>
-        <location filename="../src/imitatepass.cpp" line="1060"/>
+        <location filename="../src/imitatepass.cpp" line="1038"/>
+        <location filename="../src/imitatepass.cpp" line="1062"/>
         <source>Backup commit failed</source>
         <translation>Не вдалося зробити резервну копію</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1037"/>
+        <location filename="../src/imitatepass.cpp" line="1039"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Не вдалося перевірити стан git. Повторне шифрування перервано.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1048"/>
-        <location filename="../src/imitatepass.cpp" line="1293"/>
+        <location filename="../src/imitatepass.cpp" line="1050"/>
+        <location filename="../src/imitatepass.cpp" line="1296"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Незавершена операція Git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
+        <location filename="../src/imitatepass.cpp" line="1063"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Повторне шифрування було перервано, оскільки не вдалося створити резервну копію git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1103"/>
+        <location filename="../src/imitatepass.cpp" line="1105"/>
         <source>A re-encryption is already running</source>
         <translation>Повторне шифрування вже виконується</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1110"/>
+        <location filename="../src/imitatepass.cpp" line="1112"/>
         <source>Not a folder of the store</source>
         <translation>Це не папка сховища</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1111"/>
+        <location filename="../src/imitatepass.cpp" line="1113"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і не було повторно зашифроване.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1126"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Повторне шифрування з теки %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1202"/>
-        <location filename="../src/imitatepass.cpp" line="1401"/>
+        <location filename="../src/imitatepass.cpp" line="1205"/>
+        <location filename="../src/imitatepass.cpp" line="1421"/>
         <source>Updating password-store</source>
         <translation>Оновлення сховища паролів</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1215"/>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
+        <location filename="../src/imitatepass.cpp" line="1224"/>
         <source>Git pull failed</source>
         <translation>Не вдалося виконати Git pull</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1216"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation>Не вдалося перевірити, чи є у сховищі незлиті файли після pull. Перевірте його за допомогою git перед повторним шифруванням.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1225"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>Після pull у сховищі залишилися незлиті файли. Розв&apos;яжіть конфлікт перед повторним шифруванням.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1226"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Не вдалося виконати Git pull, сховище повторно шифрується в поточному стані</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <location filename="../src/imitatepass.cpp" line="1246"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
         <translation type="unfinished">Не вдалося прочитати %1: записи в ній не було повторно зашифровано</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1247"/>
+        <location filename="../src/imitatepass.cpp" line="1250"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>Пропущено %n запис: символічне посилання, точка з&apos;єднання чи спеціальний файл не є частиною сховища.</numerusform>
@@ -1714,27 +1714,27 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1271"/>
         <source>GPG ID verification failed</source>
         <translation>Не вдалося перевірити ідентифікатор GPG</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1269"/>
+        <location filename="../src/imitatepass.cpp" line="1272"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Не вдалося перевірити .gpg-id для каталогу.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1302"/>
+        <location filename="../src/imitatepass.cpp" line="1305"/>
         <source>Not part of the store</source>
         <translation>Не є частиною сховища</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1303"/>
+        <location filename="../src/imitatepass.cpp" line="1306"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">Після pull %1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1372"/>
+        <location filename="../src/imitatepass.cpp" line="1375"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... і ще %n файл</numerusform>
@@ -1743,7 +1743,7 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1375"/>
+        <location filename="../src/imitatepass.cpp" line="1378"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>Не вдалося повторно зашифрувати %n файл:</numerusform>
@@ -1752,18 +1752,23 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1381"/>
+        <location filename="../src/imitatepass.cpp" line="1396"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Повторне шифрування скасовано: перевірено %1 з %2 файлів, %3 повторно зашифровано, %4 не вдалося</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1451"/>
-        <location filename="../src/imitatepass.cpp" line="1460"/>
+        <location filename="../src/imitatepass.cpp" line="1417"/>
+        <source>Not pushing: an earlier re-encryption in this store did not finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1471"/>
+        <location filename="../src/imitatepass.cpp" line="1480"/>
         <source>Recipients not committed</source>
         <translation>Коміт одержувачів не створено</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1452"/>
+        <location filename="../src/imitatepass.cpp" line="1472"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1776,7 +1781,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Зміну ще не зафіксовано в коміті й не надіслано. Усуньте проблему з Git, а потім створіть коміт зі змінами або збережіть одержувачів ще раз.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1461"/>
+        <location filename="../src/imitatepass.cpp" line="1481"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1789,22 +1794,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Повторне шифрування не завершилося, тому деякі або всі записи досі зашифровано для попередніх одержувачів, які все ще можуть їх прочитати. Нічого не зафіксовано в коміті й не надіслано. Усуньте проблему з Git, а потім збережіть одержувачів ще раз.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1572"/>
+        <location filename="../src/imitatepass.cpp" line="1592"/>
         <source>Move failed</source>
         <translation type="unfinished">Не вдалося перемістити</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1573"/>
+        <location filename="../src/imitatepass.cpp" line="1593"/>
         <source>Could not move %1 to %2.</source>
         <translation type="unfinished">Не вдалося перемістити %1 до %2.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1662"/>
+        <location filename="../src/imitatepass.cpp" line="1682"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Виконуваний файл Git не налаштовано, git пропускається</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1739"/>
+        <location filename="../src/imitatepass.cpp" line="1759"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>gpg не записав шифротекст для %1.</translation>
     </message>
@@ -1833,17 +1838,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">Не вдалося повторно зашифрувати %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1390"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Повторне шифрування завершено: %1 успішно, %2 не вдалося</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1395"/>
+        <location filename="../src/imitatepass.cpp" line="1410"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Повторне шифрування завершено: %1 файлів повторно зашифровано</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1406"/>
+        <location filename="../src/imitatepass.cpp" line="1426"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Git push не виконується: не вдалося повторно зашифрувати %n файл</numerusform>
@@ -1852,14 +1857,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1581"/>
-        <location filename="../src/imitatepass.cpp" line="1628"/>
+        <location filename="../src/imitatepass.cpp" line="1601"/>
+        <location filename="../src/imitatepass.cpp" line="1648"/>
         <source>Copy failed</source>
         <translation>Помилка копіювання</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1582"/>
-        <location filename="../src/imitatepass.cpp" line="1629"/>
+        <location filename="../src/imitatepass.cpp" line="1602"/>
+        <location filename="../src/imitatepass.cpp" line="1649"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Не вдалося скопіювати %1 до %2.</translation>
     </message>
@@ -2170,14 +2175,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1721"/>
+        <location filename="../src/mainwindow.cpp" line="1779"/>
         <source>Edit</source>
         <translation>Редагувати</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1733"/>
+        <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Delete</source>
         <translation>Видалити</translation>
     </message>
@@ -2265,7 +2270,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Users</source>
         <translation>Користувачі</translation>
     </message>
@@ -2295,8 +2300,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="791"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="996"/>
         <source>Search password</source>
         <translation>Пошук паролю</translation>
     </message>
@@ -2538,6 +2543,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="595"/>
         <location filename="../src/mainwindow.cpp" line="605"/>
+        <location filename="../src/mainwindow.cpp" line="612"/>
         <source>Updating password-store</source>
         <translation>Оновлення сховища паролів</translation>
     </message>
@@ -2554,8 +2560,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="705"/>
-        <location filename="../src/mainwindow.cpp" line="1045"/>
+        <location filename="../src/mainwindow.cpp" line="712"/>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
         <source>Content hidden</source>
         <translation>Вміст приховано</translation>
     </message>
@@ -2604,12 +2610,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="882"/>
+        <location filename="../src/mainwindow.cpp" line="893"/>
         <source>Looking for: %1</source>
         <translation>Шукаю: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1063"/>
+        <location filename="../src/mainwindow.cpp" line="1070"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Знайдено %n збіг</numerusform>
@@ -2640,17 +2646,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ви впевнені, що хочете видалити %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1312"/>
+        <location filename="../src/mainwindow.cpp" line="1336"/>
         <source>Delete password?</source>
         <translation>Видалити пароль?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1313"/>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Ви впевнені, що хочете видалити %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1336"/>
+        <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Delete folder?</source>
         <translation>Видалити папку?</translation>
     </message>
@@ -2675,26 +2681,26 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1532"/>
+        <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Profile changed to %1</source>
         <translation>Профіль змінено на %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1712"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>Open folder with file manager</source>
         <translation>Відкрити папку за допомогою файлового менеджера</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <location filename="../src/mainwindow.cpp" line="1771"/>
         <source>Add folder</source>
         <translation>Додати папку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Add password</source>
         <translation>Додати пароль</translation>
     </message>
@@ -2709,30 +2715,30 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="746"/>
-        <location filename="../src/mainwindow.cpp" line="764"/>
-        <location filename="../src/mainwindow.cpp" line="1414"/>
+        <location filename="../src/mainwindow.cpp" line="753"/>
+        <location filename="../src/mainwindow.cpp" line="772"/>
+        <location filename="../src/mainwindow.cpp" line="1463"/>
         <source>OTP code copied to clipboard</source>
         <translation>Код OTP скопійовано в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="766"/>
-        <location filename="../src/mainwindow.cpp" line="1402"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <location filename="../src/mainwindow.cpp" line="1451"/>
         <source>No OTP code found in this password entry</source>
         <translation>У цьому паролі не знайдено коду OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="934"/>
+        <location filename="../src/mainwindow.cpp" line="945"/>
         <source>Searching…</source>
         <translation>Пошук…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="977"/>
         <source>Search content (regex)</source>
         <translation>Пошук контенту (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1019"/>
+        <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>No matches found.</source>
         <translation>Збігів не знайдено.</translation>
     </message>
@@ -2745,7 +2751,7 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1065"/>
+        <location filename="../src/mainwindow.cpp" line="1072"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>у %n записі.</numerusform>
@@ -2754,18 +2760,18 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1397"/>
+        <location filename="../src/mainwindow.cpp" line="1446"/>
         <source>No password selected for OTP generation</source>
         <translation>Пароль для генерації OTP не вибрано</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1727"/>
-        <location filename="../src/mainwindow.cpp" line="1825"/>
+        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1883"/>
         <source>Rename folder</source>
         <translation>Перейменувати папку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1730"/>
+        <location filename="../src/mainwindow.cpp" line="1788"/>
         <source>Rename password</source>
         <translation>Перейменувати пароль</translation>
     </message>
@@ -2783,22 +2789,22 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Вихід процесу</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="742"/>
         <source>Could not decrypt this password entry</source>
         <translation>Не вдалося розшифрувати цей запис пароля</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="795"/>
+        <location filename="../src/mainwindow.cpp" line="806"/>
         <source>Password and content hidden</source>
         <translation>Пароль та вміст приховано</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="864"/>
+        <location filename="../src/mainwindow.cpp" line="875"/>
         <source>About QtPass</source>
         <translation>Про QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="865"/>
+        <location filename="../src/mainwindow.cpp" line="876"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Багатоплатформний графічний інтерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролів Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Вихідний код і звіти про помилки&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Авторське право &amp;copy; 2014&amp;ndash;%2 IJhack. Ліцензовано на умовах &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL версії 3&lt;/a&gt; або новішої.&lt;/p&gt;</translation>
     </message>
@@ -2807,17 +2813,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Пошук за вмістом використовує базові регулярні вирази POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="971"/>
+        <location filename="../src/mainwindow.cpp" line="981"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation>Пошук за вмістом використовує Perl-сумісні регулярні вирази (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1043"/>
+        <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>… more matches in this entry</source>
         <translation>... більше збігів у цій записі</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1058"/>
+        <location filename="../src/mainwindow.cpp" line="1065"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation>
             <numerusform>Показано перший %n збіг; шукайте щось конкретніше, щоб побачити решту.</numerusform>
@@ -2826,142 +2832,158 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1260"/>
+        <location filename="../src/mainwindow.cpp" line="1282"/>
         <source>Invalid name</source>
         <translation>Недійсна назва</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1261"/>
+        <location filename="../src/mainwindow.cpp" line="1283"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation>Це ім&apos;я буде розпізнано поза межами сховища паролів. Виберіть інше ім&apos;я.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1320"/>
+        <location filename="../src/mainwindow.cpp" line="1344"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation>Ви впевнені, що хочете видалити %1 разом з усім вмістом?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1333"/>
+        <location filename="../src/mainwindow.cpp" line="1360"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation>Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1343"/>
+        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <source>%1 could not be read, so what it holds is unknown.</source>
+        <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="1375"/>
+        <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
+        <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1387"/>
         <source>Delete link?</source>
         <translation>Видалити посилання?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1344"/>
+        <location filename="../src/mainwindow.cpp" line="1388"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation>%1 є символічним посиланням або точкою з&apos;єднання. Видалити посилання? Те, на що воно вказує, залишиться без змін.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1667"/>
+        <location filename="../src/mainwindow.cpp" line="1725"/>
         <source>Share</source>
         <translation>Поширити</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1677"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Re-encrypt all passwords</source>
         <translation>Перешифрувати всі паролі</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1740"/>
         <source>Export my public key...</source>
         <translation>Експортувати мій відкритий ключ...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1686"/>
+        <location filename="../src/mainwindow.cpp" line="1744"/>
         <source>Add recipient...</source>
         <translation>Додати одержувача...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1691"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>What is this?</source>
         <translation>Що це?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1765"/>
+        <location filename="../src/mainwindow.cpp" line="1823"/>
         <source>New folder</source>
         <translation>Нова папка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1824"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Нова папка: 
 (Буде розміщено в %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1790"/>
+        <location filename="../src/mainwindow.cpp" line="1848"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Прихована папка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1791"/>
+        <location filename="../src/mainwindow.cpp" line="1849"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">Папка, назва якої починається з крапки, була б прихована у списку: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1798"/>
-        <location filename="../src/mainwindow.cpp" line="1813"/>
-        <location filename="../src/mainwindow.cpp" line="1937"/>
+        <location filename="../src/mainwindow.cpp" line="1856"/>
+        <location filename="../src/mainwindow.cpp" line="1871"/>
+        <location filename="../src/mainwindow.cpp" line="2000"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1799"/>
+        <location filename="../src/mainwindow.cpp" line="1857"/>
         <source>Failed to create folder: %1</source>
         <translation>Не вдалося створити папку: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1814"/>
+        <location filename="../src/mainwindow.cpp" line="1872"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Не вдалося створити файл .gpg-id у: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1825"/>
+        <location filename="../src/mainwindow.cpp" line="1883"/>
         <source>Rename folder to: </source>
         <translation>Перейменувати папку на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1864"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>Rename file</source>
         <translation>Перейменувати файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1864"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>Rename file to: </source>
         <translation>Перейменувати файл на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2018"/>
-        <location filename="../src/mainwindow.cpp" line="2037"/>
+        <location filename="../src/mainwindow.cpp" line="2081"/>
+        <location filename="../src/mainwindow.cpp" line="2100"/>
         <source>Export public key</source>
         <translation>Експортувати відкритий ключ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2019"/>
+        <location filename="../src/mainwindow.cpp" line="2082"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Експорт вашого відкритого ключа&lt;/h3&gt;&lt;p&gt;Ключ підпису не налаштовано. Встановіть його в налаштуваннях QtPass &gt; Ключі GPG або виконайте це в терміналі:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Потім надішліть файл своїм товаришам по команді.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2066"/>
+        <location filename="../src/mainwindow.cpp" line="2129"/>
         <source>Not a folder of the store</source>
         <translation>Це не папка сховища</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
+        <location filename="../src/mainwindow.cpp" line="2130"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2075"/>
+        <location filename="../src/mainwindow.cpp" line="2138"/>
         <source>Sharing passwords with GPG</source>
         <translation>Спільне використання паролів з GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2076"/>
+        <location filename="../src/mainwindow.cpp" line="2139"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Спільний доступ до паролів за допомогою GPG&lt;/h3&gt;&lt;p&gt;Щоб поділитися паролями з іншими користувачами:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Експортуйте свій відкритий ключ&lt;/b&gt; та надішліть його товаришам по команді&lt;/li&gt;&lt;li&gt;&lt;b&gt;Імпортуйте відкриті ключі товаришів по команді&lt;/b&gt; у свою смужку ключів GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Повторно зашифруйте паролі&lt;/b&gt;, щоб усі одержувачі могли їх розшифрувати&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Розшифрувати паролі можуть лише ті, хто має відповідний секретний ключ.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Порада:&lt;/b&gt; Використовуйте той самий ключ GPG для всіх спільних папок.&lt;/p&gt;&lt;p&gt;Див. розділ FAQ для отримання додаткової інформації.&lt;/p&gt;</translation>
     </message>
@@ -2974,7 +2996,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Перейменувати файл на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1987"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Цей запис містить секрет OTP, а не пароль</translation>
     </message>
@@ -2983,18 +3005,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Відкрити %1 у браузері</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1938"/>
+        <location filename="../src/mainwindow.cpp" line="2001"/>
         <source>Directory does not exist: %1</source>
         <translation>Каталог не існує: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1946"/>
-        <location filename="../src/mainwindow.cpp" line="1979"/>
+        <location filename="../src/mainwindow.cpp" line="2009"/>
+        <location filename="../src/mainwindow.cpp" line="2042"/>
         <source>Re-encrypt passwords</source>
         <translation>Перешифрувати паролі</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1947"/>
+        <location filename="../src/mainwindow.cpp" line="2010"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3011,22 +3033,22 @@ Continue?</source>
 Продовжити?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1977"/>
+        <location filename="../src/mainwindow.cpp" line="2040"/>
         <source>Re-encrypting passwords...</source>
         <translation>Повторне шифрування паролів...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1978"/>
+        <location filename="../src/mainwindow.cpp" line="2041"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1986"/>
+        <location filename="../src/mainwindow.cpp" line="2049"/>
         <source>Cancelling re-encryption</source>
         <translation>Скасування повторного шифрування</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1997"/>
+        <location filename="../src/mainwindow.cpp" line="2060"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>Повторне шифрування паролів: %1 з %2</translation>
     </message>
@@ -3039,7 +3061,7 @@ Continue?</source>
         <translation type="vanished">&lt;h3&gt;Експорт вашого відкритого ключа&lt;/h3&gt;&lt;p&gt;Ключ підпису не налаштовано. Встановіть його в налаштуваннях QtPass &gt; Ключі GPG або виконайте це в терміналі:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Потім надішліть файл своїм товаришам по команді.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2038"/>
+        <location filename="../src/mainwindow.cpp" line="2101"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -3048,7 +3070,7 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2040"/>
+        <location filename="../src/mainwindow.cpp" line="2103"/>
         <source>No output from gpg.</source>
         <translation>Немає виводу з gpg.</translation>
     </message>
@@ -3086,87 +3108,87 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="200"/>
+        <location filename="../src/pass.cpp" line="201"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation>Налаштований домашній каталог GPG %1 не існує, використовується брелок за замовчуванням</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="208"/>
+        <location filename="../src/pass.cpp" line="209"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation>Налаштований домашній каталог GPG %1 не існує, використовується GNUPGHOME %2 із середовища</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="221"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Invalid password length</source>
         <translation>Недійсна довжина пароля</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="222"/>
+        <location filename="../src/pass.cpp" line="223"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Неможливо згенерувати пароль нульової довжини.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="250"/>
+        <location filename="../src/pass.cpp" line="251"/>
         <source>Password generation failed</source>
         <translation type="unfinished">Не вдалося згенерувати пароль</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="251"/>
+        <location filename="../src/pass.cpp" line="252"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
         <translation type="unfinished">Не вдалося запустити pwgen («%1»). Перевірте програму pwgen у налаштуваннях або вимкніть «Використовувати pwgen».</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="265"/>
+        <location filename="../src/pass.cpp" line="266"/>
         <source>No characters chosen</source>
         <translation>Не вибрано жодного символа</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="266"/>
+        <location filename="../src/pass.cpp" line="267"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Не вдається згенерувати пароль, у конфігурації немає символів для вибору!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="404"/>
         <location filename="../src/pass.cpp" line="405"/>
+        <location filename="../src/pass.cpp" line="406"/>
         <source>No GPG executable configured</source>
         <translation>Не налаштовано виконуваний файл GPG</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="475"/>
-        <location filename="../src/pass.cpp" line="494"/>
+        <location filename="../src/pass.cpp" line="476"/>
+        <location filename="../src/pass.cpp" line="495"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Помилка шифрування: термін дії ключа GPG минув. Будь ласка, поновіть або замініть його.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="480"/>
-        <location filename="../src/pass.cpp" line="499"/>
+        <location filename="../src/pass.cpp" line="481"/>
+        <location filename="../src/pass.cpp" line="500"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Не вдалося шифрувати: ключ GPG відкликано.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="484"/>
-        <location filename="../src/pass.cpp" line="513"/>
+        <location filename="../src/pass.cpp" line="485"/>
+        <location filename="../src/pass.cpp" line="514"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Не вдалося шифрувати: ключ GPG одержувача не знайдено або він недійсний. Перевірте, чи ідентифікатор ключа в .gpg-id правильний та імпортований.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="488"/>
-        <location filename="../src/pass.cpp" line="517"/>
+        <location filename="../src/pass.cpp" line="489"/>
+        <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Не вдалося шифрувати. Перевірте, чи ваш GPG-ключ дійсний.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="507"/>
+        <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation>Помилка шифрування: ключ GPG одержувача не можна використати. Можливо, термін його дії минув або його відкликано, він не має підключа для шифрування або не є довіреним; повідомлення gpg нижче вказує, що саме.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="567"/>
+        <location filename="../src/pass.cpp" line="568"/>
         <source>Saved, not committed</source>
         <translation>Збережено, але коміт не створено</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="568"/>
+        <location filename="../src/pass.cpp" line="569"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
@@ -3175,99 +3197,99 @@ Continue?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="816"/>
+        <location filename="../src/pass.cpp" line="856"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="833"/>
+        <location filename="../src/pass.cpp" line="873"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation>%1 не знаходиться у сховищі паролів. Одержувачі встановлені для сховища або папки в ньому.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="852"/>
-        <location filename="../src/pass.cpp" line="855"/>
+        <location filename="../src/pass.cpp" line="892"/>
+        <location filename="../src/pass.cpp" line="895"/>
         <source>rebase</source>
         <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="858"/>
+        <location filename="../src/pass.cpp" line="898"/>
         <source>merge</source>
         <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="861"/>
+        <location filename="../src/pass.cpp" line="901"/>
         <source>cherry-pick</source>
         <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="864"/>
+        <location filename="../src/pass.cpp" line="904"/>
         <source>revert</source>
         <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="871"/>
+        <location filename="../src/pass.cpp" line="911"/>
         <source>cherry-pick or revert</source>
         <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="895"/>
+        <location filename="../src/pass.cpp" line="935"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
         <translation type="unfinished">Репозиторій Git сховища паролів перебуває посеред операції %1. Завершіть або скасуйте її за допомогою Git перед зміною сховища паролів, інакше ваші зміни можуть бути втрачені.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="908"/>
+        <location filename="../src/pass.cpp" line="948"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
         <translation type="unfinished">Сховище паролів оновлюється (виконується Git pull). Зачекайте, поки оновлення завершиться, а потім спробуйте ще раз.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="913"/>
+        <location filename="../src/pass.cpp" line="953"/>
         <source>Update in progress</source>
         <translation type="unfinished">Триває оновлення</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="927"/>
+        <location filename="../src/pass.cpp" line="967"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Незавершена операція Git</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="936"/>
+        <location filename="../src/pass.cpp" line="976"/>
         <source>Not part of the store</source>
         <translation>Не є частиною сховища</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1031"/>
+        <location filename="../src/pass.cpp" line="1071"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation>Не вдається прочитати реєстр поколінь списків одержувачів.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1113"/>
+        <location filename="../src/pass.cpp" line="1153"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation>%1 не може бути прочитаний як список одержувачів (звичайний файл, розмір якого становить щонайбільше %2), тому нічого не буде попередньо вибрано. Перевірте це перед вибором одержувачів тут: &quot;OK&quot; перезапише цей список.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1134"/>
+        <location filename="../src/pass.cpp" line="1174"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Список одержувачів %1 відсутній або не є звичайним файлом, тому нічого попередньо не вибрано: список батьківської папки не було підписано для цієї. Виберіть одержувачів цієї папки самостійно; кнопка OK запише й підпише новий список.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1139"/>
+        <location filename="../src/pass.cpp" line="1179"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation>%1 Нічого попередньо не вибрано: неможливо визначити, чи було видалено %2.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1154"/>
+        <location filename="../src/pass.cpp" line="1194"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Список одержувачів %1 не проходить перевірку за ключем підписання, тому нічого попередньо не вибрано: збереження підписало б усе, що в ньому є. Виберіть одержувачів самостійно; кнопка OK запише й підпише новий список.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1078"/>
+        <location filename="../src/pass.cpp" line="1118"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Нічого попередньо не вибрано: збереження підписало б усе, що в ньому є. Виберіть одержувачів самостійно.</translation>
     </message>
@@ -3435,7 +3457,7 @@ Continue?</source>
         <translation>Не вдалося створити папку %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="751"/>
+        <location filename="../src/passworddialog.cpp" line="755"/>
         <source>Remove field</source>
         <translation>Видалити поле</translation>
     </message>
@@ -3450,17 +3472,17 @@ Continue?</source>
         <translation>URI otpauth:// або секрет base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="570"/>
+        <location filename="../src/passworddialog.cpp" line="574"/>
         <source>Invalid OTP secret</source>
         <translation>Недійсний секрет OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="875"/>
+        <location filename="../src/passworddialog.cpp" line="879"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
         <translation type="unfinished">Цей запис містить байти, які QtPass не може зберегти без змін, тому його не можна редагувати тут.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="894"/>
+        <location filename="../src/passworddialog.cpp" line="898"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation>
             <numerusform>Цей запис має %n рядок, забагато для редагування тут.</numerusform>
@@ -3618,8 +3640,8 @@ Continue?</source>
         <translation>Відкрити %1 у браузері</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="387"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="403"/>
         <source>OTP code</source>
         <translation>Код OTP</translation>
     </message>
@@ -3628,7 +3650,7 @@ Continue?</source>
         <translation type="vanished">Код OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="389"/>
         <source>No OTP code found in this password entry</source>
         <translation>У цьому паролі не знайдено коду OTP</translation>
     </message>
@@ -3746,22 +3768,27 @@ Continue?</source>
         <translation type="vanished">Скопійовано в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="180"/>
+        <location filename="../src/qtpass.cpp" line="170"/>
+        <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="191"/>
         <source>Could not start qrencode: %1</source>
         <translation>Не вдалося запустити qrencode: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="188"/>
+        <location filename="../src/qtpass.cpp" line="199"/>
         <source>qrencode did not finish in time</source>
         <translation>qrencode не завершив роботу вчасно</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="200"/>
+        <location filename="../src/qtpass.cpp" line="211"/>
         <source>qrencode crashed</source>
         <translation>qrencode аварійно завершив роботу</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="201"/>
+        <location filename="../src/qtpass.cpp" line="212"/>
         <source>qrencode exited with code %1</source>
         <translation>qrencode завершив роботу з кодом %1</translation>
     </message>
@@ -3774,43 +3801,52 @@ Continue?</source>
         <translation type="unfinished">Не вдалося виконати Git pull: %1</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="160"/>
+        <location filename="../src/realpass.cpp" line="87"/>
+        <source>Not pushing: an earlier re-encryption in this store did not finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="187"/>
         <source>Checking the recipient lists under %1…</source>
         <translation>Перевірка списків отримувачів за %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="296"/>
+        <location filename="../src/realpass.cpp" line="332"/>
         <source>Could not remove the link %1.</source>
         <translation>Не вдалося видалити посилання %1.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="297"/>
+        <location filename="../src/realpass.cpp" line="333"/>
         <source>Delete failed</source>
         <translation>Помилка видалення</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="347"/>
+        <location filename="../src/realpass.cpp" line="383"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation>Посилання %1 видалено, але git не зміг це зафіксувати: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="349"/>
-        <location filename="../src/realpass.cpp" line="476"/>
+        <location filename="../src/realpass.cpp" line="385"/>
+        <location filename="../src/realpass.cpp" line="535"/>
         <source>Delete incomplete</source>
         <translation>Видалення не завершено</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="437"/>
-        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
-        <translation type="unfinished">Одержувачів змінено, але деякі записи не вдалося повторно зашифрувати для них: вони й далі зашифровані для попередніх одержувачів, які все ще можуть їх прочитати. З Git зміну зафіксовано локальним комітом і зараз не надіслано (push); наступне надсилання її відправить.</translation>
+        <location filename="../src/realpass.cpp" line="494"/>
+        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="473"/>
+        <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
+        <translation type="obsolete">Одержувачів змінено, але деякі записи не вдалося повторно зашифрувати для них: вони й далі зашифровані для попередніх одержувачів, які все ще можуть їх прочитати. З Git зміну зафіксовано локальним комітом і зараз не надіслано (push); наступне надсилання її відправить.</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="532"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation>Посилання %1 видалено, і Git більше не відстежує його, але коміт завершився невдало: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="606"/>
+        <location filename="../src/realpass.cpp" line="667"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation>Для пошуку потрібно налаштувати виконуваний файл GPG.</translation>
     </message>
@@ -3908,6 +3944,45 @@ git config --global user.email you@example.org
         <location filename="../src/firstrunwizard.cpp" line="446"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation>Поверніться назад і позначте принаймні один ключ, для якого шифрувати.</translation>
+    </message>
+</context>
+<context>
+    <name>Totp</name>
+    <message>
+        <location filename="../src/totp.cpp" line="278"/>
+        <source>The OTP configuration is too long.</source>
+        <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="282"/>
+        <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
+        <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="287"/>
+        <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
+        <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="292"/>
+        <source>This otpauth:// link cannot be read.</source>
+        <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="296"/>
+        <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
+        <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/totp.cpp" line="300"/>
+        <source>The secret is missing or is not valid base32.</source>
+        <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
