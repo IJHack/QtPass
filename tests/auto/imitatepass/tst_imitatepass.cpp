@@ -614,6 +614,7 @@ private Q_SLOTS:
   void reencryptPathPushesWhenAllFilesSucceed();
   void reencryptPathDoesNotPushAfterFailures();
   void pushAskedForDuringAReencryptionWaitsForIt();
+  void failedReencryptionWithoutGitHoldsToo();
   void insertRunsNoGitWhenGitIsDisabled();
   void insertEncryptsToTheRecipientsWhoseSignatureWasChecked();
   void insertEncryptsIntoATemporaryAndMovesItIntoPlace();
@@ -1366,6 +1367,44 @@ void tst_imitatepass::pushAskedForDuringAReencryptionWaitsForIt() {
       QCOMPARE(pushes, 1);
     }
   }
+#endif
+}
+
+/**
+ * @brief A re-encryption that failed with Git off holds automatic pushes as
+ *        well: its recipients change is not committed now, but a later
+ *        commit (the next run's backup commit once Git is on) sweeps it up
+ *        and pushes it. A clean run releases the hold.
+ */
+void tst_imitatepass::failedReencryptionWithoutGitHoldsToo() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gpgLog = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString failing = writeCustomGpg(
+      storeDir.path(), gpgLog,
+      {{QStringLiteral("encrypt"), QStringLiteral("cat >/dev/null; exit 2")}});
+  QVERIFY(!failing.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), failing);
+  s.useGit = false;
+  pass.init(s);
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QVERIFY2(pass.autoPushHeld(), "a failed run holds, Git or not");
+  s.gpgExecutable = writeRecordingGpg(storeDir.path(), gpgLog);
+  pass.init(s);
+  endSpy.clear();
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QVERIFY2(!pass.autoPushHeld(), "a clean run releases the hold");
 #endif
 }
 

@@ -382,6 +382,12 @@ void RealPass::finished(int id, int exitCode, const QString &out,
       reportReencryptFailure(pid, out, err);
       return;
     }
+    // A run that failed may have stopped after its commit (pass init commits
+    // the new .gpg-id before re-encrypting; signing it may fail, the process
+    // may be killed): held as well, until a clean init covers it.
+    if (exitCode != 0) {
+      holdAutoPush(scope);
+    }
     // pass init re-encrypts everything under its folder: a clean run
     // releases the holds there. A move or copy covers only its entries.
     if (pid == PASS_INIT && exitCode == 0 && !scope.isEmpty()) {

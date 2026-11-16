@@ -1381,13 +1381,13 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
   // The recipients change is committed already: a run that did not finish
   // leaves entries for the previous recipients, which the next automatic
   // push (after any edit) would publish with it. A clean run releases only
-  // the holds of what it covered.
-  if (reencryptUsesGit()) {
-    if (result.cancelled || result.aborted || !result.failed.isEmpty()) {
-      holdAutoPush(m_reencryptScope);
-    } else {
-      releaseAutoPush(m_reencryptScope);
-    }
+  // the holds of what it covered. Also without Git: a recipients change
+  // left uncommitted now is swept into a later commit (the next run's
+  // backup commit) once Git is on, and pushed with it.
+  if (result.cancelled || result.aborted || !result.failed.isEmpty()) {
+    holdAutoPush(m_reencryptScope);
+  } else {
+    releaseAutoPush(m_reencryptScope);
   }
 
   if (result.cancelled) {

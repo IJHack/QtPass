@@ -1053,7 +1053,8 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
     QVERIFY(QDir().mkpath(QDir(store).filePath(folder)));
   }
   // Fails to re-encrypt in any folder named in FAIL (a file next to the
-  // script, read at each run), reports a clean run elsewhere.
+  // script, read at each run), exits 1 for one named with a "!" before it,
+  // and reports a clean run elsewhere.
   const QString failList = dir.filePath(QStringLiteral("FAIL"));
   const QString script = dir.filePath(QStringLiteral("pass"));
   {
@@ -1062,6 +1063,9 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
     f.write("#!/bin/sh\nfor a in \"$@\"; do case \"$a\" in --path=*) "
             "p=\"${a#--path=}\";; esac; last=\"$a\"; done\n"
             "echo \"x: reencrypting to AAAA\"\n"
+            "if grep -qx \"!${p:-$last}\" \"");
+    f.write(QFile::encodeName(failList));
+    f.write("\" 2>/dev/null; then exit 1; fi\n"
             "if grep -qx \"${p:-$last}\" \"");
     f.write(QFile::encodeName(failList));
     f.write("\" 2>/dev/null; then\n"
@@ -1140,6 +1144,13 @@ void tst_realpass::failedReencryptionHoldsAutomaticPushes() {
   QVERIFY2(pass.autoPushHeld(), "folder ab is not under folder a");
   QVERIFY(init(QStringLiteral("ab")));
   QVERIFY2(!pass.autoPushHeld(), "every failed folder covered again");
+  // An init that exits non-zero may have stopped after its commit.
+  QVERIFY(failFolders({QStringLiteral("!c")}));
+  QVERIFY(init(QStringLiteral("c")));
+  QVERIFY2(pass.autoPushHeld(), "a failed init holds its folder");
+  QVERIFY(failFolders({QStringLiteral("none")}));
+  QVERIFY(init(QStringLiteral("c")));
+  QVERIFY(!pass.autoPushHeld());
   // A failure, then a clean init of the whole store.
   QVERIFY(failFolders({QStringLiteral("c")}));
   QVERIFY(init(QStringLiteral("c")));
