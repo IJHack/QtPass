@@ -3727,10 +3727,21 @@ void tst_mainwindow::entryActionsWaitWhileContentResultsHideTheTree() {
   });
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
-  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
-                      QStringLiteral("out-of-sight")));
   const QString file =
       QDir(m_storeDir.path()).filePath(QStringLiteral("out-of-sight.gpg"));
+  // Listed by the file system model first (rows walked, no index() call):
+  // on macOS, selectEntry()'s QFileSystemModel::index() makes a node ahead
+  // of the directory listing, and the listing arriving later can replace it
+  // and take the selection with it, at a random point further down.
+  {
+    QFile entry(file);
+    QVERIFY(entry.open(QIODevice::WriteOnly));
+    entry.write("not really encrypted");
+  }
+  QTRY_VERIFY_WITH_TIMEOUT(
+      inTree(storeProxy(m_window.data()), m_storeDir.path(), file), 5000);
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("out-of-sight")));
   m_window->setUiElementsEnabled(true);
   auto *edit = m_window->findChild<QAction *>(QStringLiteral("actionEdit"));
   auto *del = m_window->findChild<QAction *>(QStringLiteral("actionDelete"));
@@ -3798,7 +3809,10 @@ void tst_mainwindow::entryActionsWaitWhileContentResultsHideTheTree() {
   grep->setChecked(false);
   QVERIFY(!treeView()->isHidden());
   QVERIFY2(edit->isEnabled() && del->isEnabled() && otp->isEnabled(),
-           "back with the tree and its selection");
+           qPrintable(QStringLiteral("back with the tree and its selection "
+                                     "(selected: %1, current: %2)")
+                          .arg(treeView()->selectionModel()->hasSelection())
+                          .arg(treeView()->currentIndex().isValid())));
 
   // Deselecting while results show brings the tree back with nothing
   // selected (the current index stays): they stay off.
