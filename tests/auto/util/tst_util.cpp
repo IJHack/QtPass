@@ -19,6 +19,7 @@
 #include <qt_windows.h>
 #endif
 #ifndef Q_OS_WIN
+#include <fcntl.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/un.h>
@@ -5285,7 +5286,7 @@ void tst_util::regularFilesUnderReportsFoldersWithUnreadableNames() {
   // A folder and a file named in Latin-1, as an old tool or another system
   // may have left them.
   const QByteArray badFolder = QFile::encodeName(team) + "/old\xff";
-  const QByteArray badFile = QFile::encodeName(other) + "/caf\xe9.gpg";
+  const QByteArray badFile = QFile::encodeName(other) + "/old\xe9.gpg";
   if (::mkdir(badFolder.constData(), 0700) != 0) {
     QSKIP("this file system refuses names that are not UTF-8");
   }
