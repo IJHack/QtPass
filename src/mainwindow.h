@@ -435,6 +435,17 @@ private slots:
    * @param pos Viewport position of the right-click.
    */
   void showBrowserContextMenu(const QPoint &pos);
+  /**
+   * @brief The text browser's standard context menu, with "Copy Link
+   *        Location" copying through ClipboardManager.
+   *
+   * Qt's own action puts the link on the clipboard as bare text, without
+   * the secret hint, the autoclear, or a copied() report; the link can be
+   * the entry's URL with a token in it.
+   * @param pos Viewport position of the right-click.
+   * @return A new menu, parented to the window; the caller deletes it.
+   */
+  auto browserContextMenu(const QPoint &pos) -> QMenu *;
   /** @brief Context menu "Open folder with file manager" on the current
    *         folder. */
   void openFolder();

@@ -51,7 +51,10 @@ OtpCodeWidget::OtpCodeWidget(Totp::Settings settings, bool withCopyButton,
 
   m_codeLabel = new QLabel(this);
   m_codeLabel->setObjectName(QStringLiteral("OTP code"));
-  m_codeLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
+  // Not selectable: the label's own Copy and the X11 selection put the code
+  // out without the secret hint or the autoclear, and past "never copy".
+  // The copy button copies it the tracked way.
+  m_codeLabel->setTextInteractionFlags(Qt::NoTextInteraction);
   if (monospace) {
     m_codeLabel->setStyleSheet("QLabel { font-family: monospace; }");
   }

@@ -746,6 +746,7 @@ auto PasswordDialog::addFieldRow(const NamedValue &field, QWidget *previous)
           });
   connect(label, &FieldLabel::removeRequested, this,
           [this, line] { removeField(line); });
+  connect(label, &FieldLabel::copied, this, &PasswordDialog::copied);
   // The visible way to remove the field; the context menu is the other.
   auto *remove = line->addAction(
       QIcon::fromTheme(QStringLiteral("edit-delete"),

@@ -875,6 +875,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - A copied text that is still in the X11 primary selection stays tracked,
   so autoclear clears it there too, also after the next copy (scan finding
   ANT-2026-4LOQS7PG)
+- Copies that skipped the secret hint and the autoclear now go through the
+  clipboard manager: Ctrl+Insert (and every other Copy key) on a content
+  search result, the field name editor in the password dialog, and "Copy
+  Link Location" on a shown entry. The OTP code can no longer be selected:
+  its copy button copies it (scan findings ANT-2026-8O2CHMNT,
+  ANT-2026-8PN56SET, ANT-2026-F6XDGDW8, ANT-2026-3BM3VV2Z)
+- Clearing the panel, as the autoclear does, also closes the QR code popup
+  of the password (scan finding ANT-2026-TCCEFEJA)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

@@ -409,6 +409,8 @@ private Q_SLOTS:
   void templateMarkedSecretsAreHidden();
   void secretsAreHiddenWithTemplatesOff();
   void ctrlCCopiesTheSelectedText();
+  void everyCopyKeyCopiesASearchResultAsASecret();
+  void copyLinkLocationCopiesAsASecret();
   void otpRequestAnswersOnlyItsOwnEntry();
   void otpRequestKeepsThePasswordOffTheClipboard();
   void otpFastPathCopiesTheVisibleCodeWithoutDecrypting();
@@ -416,6 +418,7 @@ private Q_SLOTS:
   void refusedShowClearsThePreviousEntryAndReleasesTheInterface();
   void clipboardAutoclearSurvivesShowingAnotherEntry();
   void showTextAsQRCodeReportsMissingQrencode();
+  void clearingThePanelClosesTheQRCode();
   void textBrowserFollowsRuntimePaletteChange();
   void fieldFrameBorderFollowsRuntimePaletteChange();
   void toolsAreaBarDropsStaleStylePaletteAfterThemeSwitch_data();
@@ -1122,6 +1125,93 @@ void tst_mainwindow::ctrlCCopiesTheSelectedText() {
 }
 
 /**
+ * @brief Every Copy key (Ctrl+C, Ctrl+Insert) copies a content search result
+ *        line through the clipboard manager: marked as a secret and tracked
+ *        for the autoclear. Ctrl+Insert reached the view's own copy, which
+ *        put the decrypted line on the clipboard bare.
+ */
+void tst_mainwindow::everyCopyKeyCopiesASearchResultAsASecret() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(m_window.data()));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(results != nullptr);
+  results->clear();
+  results->setVisible(true);
+  auto *entry = new QTreeWidgetItem(results, {QStringLiteral("bank")});
+  auto *line = new QTreeWidgetItem(entry, {QStringLiteral("pin: 4321")});
+  results->expandAll();
+  results->setCurrentItem(line);
+  results->setFocus();
+  QCOMPARE(QApplication::focusWidget(), results);
+  const auto cleanup = qScopeGuard([results] {
+    results->clear();
+    results->setVisible(false);
+  });
+
+  QClipboard *clip = QApplication::clipboard();
+  ClipboardManager &manager = m_window->findChild<QtPass *>()->clipboard();
+  for (const QKeyCombination keys :
+       {QKeyCombination(Qt::ControlModifier, Qt::Key_C),
+        QKeyCombination(Qt::ControlModifier, Qt::Key_Insert)}) {
+    clip->setText(QStringLiteral("sentinel"));
+    manager.clear();
+    QTest::keyClick(m_window.get(), keys.key(), keys.keyboardModifiers());
+    QCOMPARE(clip->text(), QStringLiteral("pin: 4321"));
+    QCOMPARE(manager.trackedText(), QStringLiteral("pin: 4321"));
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
+    QVERIFY(clip->mimeData()->hasFormat(
+        QStringLiteral("x-kde-passwordManagerHint")));
+#endif
+  }
+}
+
+/**
+ * @brief "Copy Link Location" in the shown entry's context menu copies the
+ *        link through the clipboard manager: marked as a secret and tracked
+ *        for the autoclear. Qt's own action put it out bare, and the link
+ *        can carry a token.
+ */
+void tst_mainwindow::copyLinkLocationCopiesAsASecret() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  const QString url = QStringLiteral("https://example.org/reset?token=s3cret");
+  browser->setHtml(QStringLiteral("<a href=\"%1\">reset link</a>").arg(url));
+  QTextCursor cursor(browser->document());
+  cursor.setPosition(2);
+  const QPoint pos = browser->cursorRect(cursor).center();
+  QCOMPARE(browser->anchorAt(pos), url);
+
+  QMenu *menu = nullptr;
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "browserContextMenu", Qt::DirectConnection,
+      Q_RETURN_ARG(QMenu *, menu), Q_ARG(QPoint, pos)));
+  QVERIFY(menu != nullptr);
+  const auto cleanup = qScopeGuard([menu, browser] {
+    delete menu;
+    browser->clear();
+  });
+  auto *copyLink = menu->findChild<QAction *>(QStringLiteral("link-copy"));
+  QVERIFY2(copyLink != nullptr, "Qt's menu names the action link-copy");
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+  ClipboardManager &manager = m_window->findChild<QtPass *>()->clipboard();
+  manager.clear();
+  copyLink->trigger();
+  QCOMPARE(clip->text(), url);
+  QCOMPARE(manager.trackedText(), url);
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
+  QVERIFY(
+      clip->mimeData()->hasFormat(QStringLiteral("x-kde-passwordManagerHint")));
+#endif
+}
+
+/**
  * @brief "Also hide other secrets" works in the default setup, templates
  *        off: a line named by the word list becomes a hidden row instead of
  *        staying in the text below the fields. 2.0-rc2 showed `PIN: 4821`
@@ -1659,6 +1749,70 @@ void tst_mainwindow::passwordFromFileToClipboardSkipsOtpSecret() {
   m_window->passwordFromFileToClipboard(
       QStringLiteral("totp:Secr3t!\nlogin: alice"), QStringLiteral("otpentry"));
   QCOMPARE(clip->text(), QStringLiteral("totp:Secr3t!"));
+}
+
+/**
+ * @brief Clearing the panel (what the autoclear runs) also closes the QR code
+ *        popup showing the password: it is a window of its own, and stayed
+ *        on screen.
+ */
+void tst_mainwindow::clearingThePanelClosesTheQRCode() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in qrencode is a shell script");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString png = QDir(dir.path()).filePath(QStringLiteral("qr.png"));
+  QImage qr(21, 21, QImage::Format_RGB32);
+  qr.fill(Qt::black);
+  QVERIFY(qr.save(png, "PNG"));
+  const QString exe = QDir(dir.path()).filePath(QStringLiteral("qrencode"));
+  {
+    QFile f(exe);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("#!/bin/sh\ncat >/dev/null\ncat \"" + png.toUtf8() + "\"\n");
+  }
+  QVERIFY(QFile::setPermissions(exe, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner));
+  const AppSettings before = QtPassSettings::load();
+  const auto restore = qScopeGuard([&before] { QtPassSettings::save(before); });
+  AppSettings s = before;
+  s.qrencodeExecutable = exe;
+  QtPassSettings::save(s);
+
+  bool shown = false;
+  bool byGuard = false;
+  QTimer poker;
+  poker.setInterval(20);
+  connect(&poker, &QTimer::timeout, [&]() {
+    for (QWidget *w : QApplication::topLevelWidgets()) {
+      auto *dialog = qobject_cast<QDialog *>(w);
+      if (dialog != nullptr && dialog->windowType() == Qt::Popup &&
+          dialog->isVisible()) {
+        shown = true;
+        poker.stop();
+        QVERIFY(QMetaObject::invokeMethod(m_window.data(), "clearPanel",
+                                          Qt::DirectConnection,
+                                          Q_ARG(bool, false)));
+        return;
+      }
+    }
+  });
+  poker.start();
+  QTimer::singleShot(10000, &poker, [&]() {
+    for (QWidget *w : QApplication::topLevelWidgets()) {
+      if (auto *dialog = qobject_cast<QDialog *>(w);
+          dialog != nullptr && dialog->isVisible()) {
+        byGuard = true;
+        dialog->close();
+      }
+    }
+  });
+  m_window->findChild<QtPass *>()->showTextAsQRCode(QStringLiteral("hunter2"));
+  poker.stop();
+  QVERIFY2(shown, "the popup must have been shown");
+  QVERIFY2(!byGuard, "clearing the panel must have closed the popup");
+#endif
 }
 
 /**

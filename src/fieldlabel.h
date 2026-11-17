@@ -58,6 +58,11 @@ signals:
    * @brief The user chose "Remove field".
    */
   void removeRequested();
+  /**
+   * @brief Text was copied out of the name editor, marked as a secret.
+   * @param text The text copied.
+   */
+  void copied(const QString &text);
 
 protected:
   /**

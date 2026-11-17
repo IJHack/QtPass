@@ -518,6 +518,12 @@ void tst_passworddisplaypanel::otpRowHonoursClipboardNever() {
   OtpCodeWidget *otp = otpWidgetAt(1);
   QVERIFY(otp != nullptr);
   QVERIFY(otp->findChild<QPushButtonWithClipboard *>() == nullptr);
+  // Nor can the code be selected and copied past that choice (or past the
+  // secret hint and the autoclear, with a copy button).
+  const auto *code = otp->findChild<QLabel *>(QStringLiteral("OTP code"));
+  QVERIFY(code != nullptr);
+  QVERIFY(!(code->textInteractionFlags() & Qt::TextSelectableByMouse));
+  QVERIFY(!(code->textInteractionFlags() & Qt::TextSelectableByKeyboard));
 }
 
 /**
