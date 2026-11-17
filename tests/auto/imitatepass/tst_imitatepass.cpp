@@ -631,6 +631,7 @@ private Q_SLOTS:
   void reencryptUsesTheRecipientsWhoseSignatureWasChecked();
   void initCommitsGpgIdAndSignatureTogether();
   void initReencryptsWithoutGitWhenTheGpgIdCommitFails();
+  void initStopsWhenThePullChangesTheChosenRecipients();
   void initSaysTheEntriesKeepTheOldRecipientsWhenReencryptionFailsToo();
   void initWithALockedGitIndexStillReencryptsAndCommitsNothing();
   void initWithAWorkingGitCommitsTheListAndTheEntries();
@@ -2840,6 +2841,108 @@ void tst_imitatepass::initCommitsGpgIdAndSignatureTogether() {
   // The re-encryption's own commits come after, never before, that commit.
   const QList<QStringList> enc = encryptCalls(loggedCalls(gpgLog));
   QCOMPARE(enc.size(), 1);
+#endif
+}
+
+/**
+ * @brief Init() writes and commits the recipients the user ticked, and the
+ *        run then pulls. A pull that merges another change to the same list
+ *        cleanly would have the entries encrypted to a key nobody chose in
+ *        the dialog; without a signing key nothing else notices. The run
+ *        stops before any entry is touched and says why. Without such a
+ *        change the run goes through to the chosen recipients.
+ */
+void tst_imitatepass::initStopsWhenThePullChangesTheChosenRecipients() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gpgLog = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), gpgLog);
+  QVERIFY(!fakeGpg.isEmpty());
+  // A git whose pull, once the marker exists, merges in one more recipient
+  // line, as a clean merge of a remote addition would.
+  const QString marker = QDir(storeDir.path()).filePath("merge-in-mallory");
+  const QString gpgIdFile = QDir(storeDir.path()).filePath(".gpg-id");
+  const QString fakeGit = QDir(storeDir.path()).filePath("merge-git.sh");
+  {
+    QFile f(fakeGit);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << gitLog << "'\n"
+        << "case \"$*\" in\n"
+        << "  *' diff --cached --quiet'*) exit 1;;\n"
+        << "  *' pull'*) [ -e '" << marker << "' ] && printf "
+        << "'4D414C4C4F525921\\n' >> '" << gpgIdFile << "';;\n"
+        << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = true;
+  s.addGPGId = true;
+  s.autoPull = true;
+  s.gitExecutable = fakeGit;
+  pass.init(s);
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  const QString chosen = QStringLiteral("FEDCBA9876543210");
+  const QString store = QDir(storeDir.path()).path() + QLatin1Char('/');
+
+  // The pull changes nothing: encrypted to the chosen recipient.
+  pass.Init(store, {user(chosen)});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QList<QStringList> enc = encryptCalls(loggedCalls(gpgLog));
+  QCOMPARE(enc.size(), 1);
+  QCOMPARE(recipientsOf(enc.first()), QStringList{chosen});
+  QVERIFY2(rec.criticals.isEmpty(), qPrintable(rec.criticals.join('\n')));
+
+  // The pull merges in another recipient: nothing is re-encrypted.
+  {
+    QFile m(marker);
+    QVERIFY(m.open(QIODevice::WriteOnly));
+  }
+  QFile::remove(gpgLog);
+  endSpy.clear();
+  const QString other = QStringLiteral("0011223344556677");
+  pass.Init(store, {user(other)});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QTest::qWait(100);
+  QCoreApplication::processEvents();
+  QVERIFY2(encryptCalls(loggedCalls(gpgLog)).isEmpty(),
+           "no entry may be encrypted to recipients nobody chose");
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(
+      rec.criticals.first().contains(QStringLiteral("changed the recipients")),
+      qPrintable(rec.criticals.first()));
+  bool pulled = false;
+  for (const QStringList &c : loggedCalls(gitLog)) {
+    pulled = pulled || c.contains(QStringLiteral("pull"));
+  }
+  QVERIFY(pulled);
+
+  // A later re-encryption the user asks for is not Init()'s: it takes the
+  // lists as they are now, with no check left over from the refused run.
+  QVERIFY(QFile::remove(marker));
+  QFile::remove(gpgLog);
+  endSpy.clear();
+  pass.reencryptPath(store);
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QTest::qWait(100);
+  QCoreApplication::processEvents();
+  QCOMPARE(rec.criticals.size(), 1);
+  QCOMPARE(encryptCalls(loggedCalls(gpgLog)).size(), 1);
 #endif
 }
 
