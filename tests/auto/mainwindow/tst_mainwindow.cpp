@@ -498,7 +498,7 @@ private Q_SLOTS:
   void contextMenuOnAFolderOffersSharing();
   void shareMenuExportsThePublicKey();
   void shareMenuReencryptAsksFirst();
-  void addFolderCreatesItWithAGpgId();
+  void addFolderCreatesItWithoutAGpgId();
   void addFolderRefusesEscapesAndDuplicates();
   void addFolderRefusesHiddenAndLinkedPlaces();
   void renameFolderMovesIt();
@@ -5300,12 +5300,13 @@ void tst_mainwindow::shareMenuReencryptAsksFirst() {
 }
 
 /**
- * @brief "Add folder" asks for a name, creates the folder in the current
- *        one and, with "add .gpg-id" on and no signing key, seeds its
- *        .gpg-id from the recipients in effect for the parent (#1682 left
- *        an empty file there). A cancelled prompt creates nothing.
+ * @brief "Add folder" asks for a name and creates the folder in the current
+ *        one, without a .gpg-id of its own: it uses its parent's
+ *        recipients, so removing someone there reaches it too. A copy of
+ *        the parent's list (#1688) kept every recipient removed later. A
+ *        cancelled prompt creates nothing.
  */
-void tst_mainwindow::addFolderCreatesItWithAGpgId() {
+void tst_mainwindow::addFolderCreatesItWithoutAGpgId() {
   {
     AppSettings s = QtPassSettings::load();
     s.addGPGId = true;
@@ -5322,10 +5323,12 @@ void tst_mainwindow::addFolderCreatesItWithAGpgId() {
   }
   QVERIFY2(QFileInfo(store.filePath(QStringLiteral("brand-new"))).isDir(),
            "the folder is created in the store root");
-  QFile gpgId(store.filePath(QStringLiteral("brand-new/.gpg-id")));
-  QVERIFY2(gpgId.open(QIODevice::ReadOnly), ".gpg-id must be seeded");
-  QCOMPARE(QString::fromUtf8(gpgId.readAll()).trimmed(),
-           QStringLiteral("0000000000000000"));
+  QVERIFY2(
+      !QFileInfo::exists(store.filePath(QStringLiteral("brand-new/.gpg-id"))),
+      "the folder must not get a copy of its parent's list");
+  QCOMPARE(Pass::getRecipientList(
+               store.filePath(QStringLiteral("brand-new/x.gpg")), store.path()),
+           QStringList{QStringLiteral("0000000000000000")});
 
   {
     ModalDriver driver(answerBox(QMessageBox::Cancel));
@@ -5438,42 +5441,6 @@ void tst_mainwindow::addFolderRefusesEscapesAndDuplicates() {
                  QStringLiteral("Failed to create folder")),
              qPrintable(driver.boxTexts.value(0)));
   }
-
-  // No recipients to seed from (an empty root .gpg-id): the folder is made
-  // but the missing .gpg-id is reported.
-  const QString rootGpgId = store.filePath(QStringLiteral(".gpg-id"));
-  QFile gpgId(rootGpgId);
-  QVERIFY(gpgId.open(QIODevice::ReadOnly));
-  const QByteArray recipients = gpgId.readAll();
-  gpgId.close();
-  const auto restoreGpgId = qScopeGuard([&rootGpgId, &recipients] {
-    QFile f(rootGpgId);
-    if (f.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-      f.write(recipients);
-    }
-  });
-  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Truncate));
-  gpgId.close();
-  {
-    AppSettings s = QtPassSettings::load();
-    s.addGPGId = true;
-    s.passSigningKey.clear();
-    QtPassSettings::save(s);
-  }
-  treeView()->setCurrentIndex(QModelIndex());
-  {
-    ModalDriver driver(typeIntoInputDialog(QStringLiteral("seedless")));
-    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
-                                      Qt::DirectConnection));
-    QCOMPARE(driver.seen, 2);
-    COMPARE_BOX_TITLES(driver.boxTitles, QStringList{QStringLiteral("Error")});
-    QVERIFY2(driver.boxTexts.value(0).contains(
-                 QStringLiteral("Failed to create .gpg-id file")),
-             qPrintable(driver.boxTexts.value(0)));
-  }
-  QVERIFY(QFileInfo(store.filePath(QStringLiteral("seedless"))).isDir());
-  QVERIFY(
-      !QFileInfo::exists(store.filePath(QStringLiteral("seedless/.gpg-id"))));
 }
 
 /**

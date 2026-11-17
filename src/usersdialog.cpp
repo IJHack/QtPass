@@ -10,10 +10,13 @@
 #include "pass.h"
 #include "qtpasssettings.h"
 #include "ui_usersdialog.h"
+#include "util.h"
 #include "windowstatestore.h"
 #include <QApplication>
 #include <QDateTime>
 #include <QDialogButtonBox>
+#include <QDir>
+#include <QFileInfo>
 #include <QFont>
 #include <QHash>
 #include <QKeyEvent>
@@ -50,6 +53,7 @@ UsersDialog::UsersDialog(Pass *pass, const AppSettings &s, QString dir,
   }
 
   loadRecipients();
+  showNestedLists();
   populateList();
 
   connectSignals();
@@ -99,13 +103,14 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
   }
 }
 
-void UsersDialog::showRecipientWarning(const QString &text) {
+void UsersDialog::showRecipientWarning(const QString &text,
+                                       const QString &name) {
   // Plain text before the text is set: it can quote the store's recipient
   // list, which as rich text could make Qt load a file (<img src=...>).
   auto *banner = new QLabel(this);
   banner->setTextFormat(Qt::PlainText);
   banner->setText(text);
-  banner->setObjectName(QStringLiteral("recipientWarning"));
+  banner->setObjectName(name);
   banner->setWordWrap(true);
   // Palette, not a stylesheet colour, so it reads on dark themes too; red as
   // ProcessOutputPanel paints error lines.
@@ -117,6 +122,39 @@ void UsersDialog::showRecipientWarning(const QString &text) {
   banner->setPalette(palette);
   banner->setContentsMargins(4, 4, 4, 4);
   ui->verticalLayout->insertWidget(1, banner);
+}
+
+void UsersDialog::showNestedLists() {
+  // The walk re-encryption takes: hidden folders and links are not entered.
+  const QString dir = QDir::cleanPath(m_dir);
+  if (!QFileInfo(dir).isDir()) {
+    return;
+  }
+  QStringList nested;
+  const QStringList lists =
+      Util::regularFilesUnder(dir, {QStringLiteral(".gpg-id")}, nullptr, true);
+  for (const QString &list : lists) {
+    const QString folder = QFileInfo(list).path();
+    if (QDir::cleanPath(folder) != dir) {
+      nested << QDir::toNativeSeparators(QDir(dir).relativeFilePath(folder));
+    }
+  }
+  if (nested.isEmpty()) {
+    return;
+  }
+  constexpr qsizetype kMaxNamed = 5;
+  QString names = nested.mid(0, kMaxNamed).join(QStringLiteral(", "));
+  if (nested.size() > kMaxNamed) {
+    names += QStringLiteral(", …");
+  }
+  //: %1 lists folders, such as "work, work/bank". Shown when changing the
+  //: recipients of a folder that has folders with their own list below it.
+  showRecipientWarning(
+      tr("%n folder(s) below this one have their own recipients, which "
+         "saving here does not change: %1",
+         nullptr, static_cast<int>(nested.size()))
+          .arg(names),
+      QStringLiteral("nestedListsWarning"));
 }
 
 namespace {

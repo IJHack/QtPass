@@ -16,6 +16,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   once more. Lists already accepted keep working, and lists written by
   plain `pass` are not affected
   ([#2050](https://github.com/IJHack/QtPass/issues/2050)).
+- **"Add folder" no longer copies the recipients.** A new folder has no
+  `.gpg-id` of its own and uses its parent's recipients, as with `pass`
+  (and as QtPass already did with a signing key), until the users dialog
+  gives it a list. A copy made by an earlier version stays and keeps its
+  recipients when someone is removed above it: the users dialog now names
+  the folders below with a list of their own. Remove a copy you do not
+  need, or save its recipients too (scan finding ANT-2026-3I1PV36T).
 - **"Hide password" hides more.** With it on, fields that name a secret
   (PIN, PIN code, PUK, CVV, CVC, secret, token, key, passphrase, password,
   recovery, answer, seed, mnemonic, as whole words) are behind the eye

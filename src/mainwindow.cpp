@@ -1861,22 +1861,10 @@ void MainWindow::addFolder() {
                              tr("Failed to create folder: %1").arg(newdir));
     return;
   }
-  // With a signing key, ImitatePass::loadVerifiedRecipients and pass
-  // (PASSWORD_STORE_SIGNING_KEY) refuse a .gpg-id without .gpg-id.sig, and
-  // signing needs a passphrase just to make a folder. So it inherits the
-  // parent's signed list; UsersDialog (Init) gives it its own.
-  const bool signingConfigured = !s.passSigningKey.trimmed().isEmpty();
-  if (s.addGPGId && !signingConfigured) {
-    // Seed from the parent's recipients in effect, not from `enabled` keys:
-    // that flag is only set in UsersDialog, so it left a zero-byte .gpg-id
-    // shadowing the parent's recipients (#1682).
-    if (!Pass::seedGpgIdFile(newdir, s.passStore)) {
-      PlainMessageBox::warning(
-          this, tr("Error"),
-          tr("Failed to create .gpg-id file in: %1").arg(newdir));
-      return;
-    }
-  }
+  // No .gpg-id of its own: the folder uses its parent's recipients, as with
+  // pass, until Users gives it a list. A copy of the parent's list (#1688)
+  // kept every recipient later removed above it, and its entries stayed
+  // readable by them.
 }
 
 void MainWindow::renameFolder() {

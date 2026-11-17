@@ -179,8 +179,17 @@ private:
    * @brief Show @p text above the key list in bold red, for a recipient list
    * that could not be verified.
    * @param text The warning, plain text.
+   * @param name The banner's object name.
    */
-  void showRecipientWarning(const QString &text);
+  void showRecipientWarning(
+      const QString &text,
+      const QString &name = QStringLiteral("recipientWarning"));
+  /**
+   * @brief Name the folders below this one that have a recipient list of
+   * their own: saving here does not change theirs, so someone removed here
+   * can still read what is in them.
+   */
+  void showNestedLists();
   /**
    * @brief Tick the keys the folder is encrypted to, and list recipients no
    * key in the keyring answers to, so saving does not drop them silently.
