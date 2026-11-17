@@ -165,8 +165,8 @@ void UsersDialog::showNestedLists() {
                 .arg(named(nested));
   }
   if (!unread.isEmpty()) {
-    //: %1 lists folders, such as "work, work/bank", that QtPass has no
-    //: permission to read.
+    //: %1 lists folders, such as "work, work/bank", that QtPass could not
+    //: read: no permission, or a name in them that is not valid UTF-8.
     text << tr("%n folder(s) below this one could not be read, so whether "
                "they have their own recipients is unknown: %1",
                nullptr, static_cast<int>(unread.size()))

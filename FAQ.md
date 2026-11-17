@@ -142,7 +142,7 @@ Saving recipients in the **Users** dialog changes the recipient list (`.gpg-id`)
   - Without a signing key: delete a copy you do not need, then use **Share › Re-encrypt all passwords** on that folder.
   - With a signing key: open **Users** for that folder, untick the person and save. A deleted list that this device has accepted is not replaced by the parent's list, and saving into that folder then stops with "Recipient list missing".
 
-- **Hidden folders** (names that start with a dot). QtPass does not show, search or re-encrypt them, as `pass ls` does not list them. Move the entries into a normal folder, then re-encrypt.
+- **Hidden folders** (names that start with a dot). QtPass does not show, search or re-encrypt them, as `pass ls` does not list them (`pass init` does re-encrypt them). Move the entries into a normal folder, then re-encrypt.
 - **Copies elsewhere.** Re-encrypting does not take back what the person could already read: Git history, backups and synced copies keep the old files. Change the passwords that matter.
 
 ### How do I set up a one-time password (OTP/TOTP)?
