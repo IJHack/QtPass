@@ -1328,8 +1328,11 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
         emit critical(
             tr("Recipients changed by the pull"),
             tr("The pull changed the recipients of %1 after you saved "
-               "them, so nothing was re-encrypted. Open the users dialog "
-               "for that folder again, check the recipients, and save.")
+               "them, so nothing was re-encrypted: entries in it may still "
+               "be encrypted to the previous recipients, and anyone you "
+               "just removed may still be able to read them. Open the users "
+               "dialog for that folder again, check the recipients, and "
+               "save.")
                 .arg(QDir::toNativeSeparators(
                     QFileInfo(m_writtenGpgId->file).path())));
       }
