@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 14:11:57</td>
+            <td class="headerValue">2026-11-17 14:37:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -662,9 +662,9 @@
 <span id="L589"><span class="lineNum">     589</span> <span class="tlaGNC">         186 :   return QFile(executable).exists();</span></span>
 <span id="L590"><span class="lineNum">     590</span>              : }</span>
 <span id="L591"><span class="lineNum">     591</span>              : </span>
-<span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">       15257 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
-<span id="L593"><span class="lineNum">     593</span> <span class="tlaGNC">       15264 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
-<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">       15257 :   return expr;</span></span>
+<span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">       15159 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L593"><span class="lineNum">     593</span> <span class="tlaGNC">       15166 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
+<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">       15159 :   return expr;</span></span>
 <span id="L595"><span class="lineNum">     595</span>              : }</span>
 <span id="L596"><span class="lineNum">     596</span>              : </span>
 <span id="L597"><span class="lineNum">     597</span>              : // Stops at whitespace, quotes and brackets so a URL on its own line keeps no</span>
@@ -840,8 +840,8 @@
 <span id="L767"><span class="lineNum">     767</span> <span class="tlaGNC">         580 : }</span></span>
 <span id="L768"><span class="lineNum">     768</span>              : </span>
 <span id="L769"><span class="lineNum">     769</span>              : /// A symlink or an NTFS junction: never entered, never listed.</span>
-<span id="L770"><span class="lineNum">     770</span> <span class="tlaGNC">       16180 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
-<span id="L771"><span class="lineNum">     771</span> <span class="tlaGNC">       16180 :   return entry.isSymLink() || entry.isJunction();</span></span>
+<span id="L770"><span class="lineNum">     770</span> <span class="tlaGNC">       16070 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
+<span id="L771"><span class="lineNum">     771</span> <span class="tlaGNC">       16070 :   return entry.isSymLink() || entry.isJunction();</span></span>
 <span id="L772"><span class="lineNum">     772</span>              : }</span>
 <span id="L773"><span class="lineNum">     773</span>              : </span>
 <span id="L774"><span class="lineNum">     774</span>              : /// Hidden by attribute, or by the dot convention on every platform: Qt 6.11</span>
@@ -924,11 +924,11 @@
 <span id="L851"><span class="lineNum">     851</span>              : #endif</span>
 <span id="L852"><span class="lineNum">     852</span>              : }</span>
 <span id="L853"><span class="lineNum">     853</span>              : </span>
-<span id="L854"><span class="lineNum">     854</span> <span class="tlaGNC">       12765 : auto Util::isLinkedFolder(const QString &amp;path) -&gt; bool {</span></span>
-<span id="L855"><span class="lineNum">     855</span> <span class="tlaGNC">       25530 :   return isLink(QFileInfo(QDir::cleanPath(path)));</span></span>
+<span id="L854"><span class="lineNum">     854</span> <span class="tlaGNC">       12655 : auto Util::isLinkedFolder(const QString &amp;path) -&gt; bool {</span></span>
+<span id="L855"><span class="lineNum">     855</span> <span class="tlaGNC">       25310 :   return isLink(QFileInfo(QDir::cleanPath(path)));</span></span>
 <span id="L856"><span class="lineNum">     856</span>              : }</span>
 <span id="L857"><span class="lineNum">     857</span>              : </span>
-<span id="L858"><span class="lineNum">     858</span> <span class="tlaGNC">       11086 : auto Util::isUnderLink(const QString &amp;path, const QString &amp;storeRoot,</span></span>
+<span id="L858"><span class="lineNum">     858</span> <span class="tlaGNC">       10978 : auto Util::isUnderLink(const QString &amp;path, const QString &amp;storeRoot,</span></span>
 <span id="L859"><span class="lineNum">     859</span>              :                        bool includeSelf) -&gt; bool {</span>
 <span id="L860"><span class="lineNum">     860</span>              :   // &quot;C:/Store&quot; and &quot;c:/store&quot; are one directory on Windows; a path spelled</span>
 <span id="L861"><span class="lineNum">     861</span>              :   // the other way must not skip the walk (as in Pass::getGpgIdPath).</span>
@@ -937,22 +937,22 @@
 <span id="L864"><span class="lineNum">     864</span>              : #else</span>
 <span id="L865"><span class="lineNum">     865</span>              :   constexpr auto cs = Qt::CaseSensitive;</span>
 <span id="L866"><span class="lineNum">     866</span>              : #endif</span>
-<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">       11086 :   const QString root = QDir::cleanPath(storeRoot);</span></span>
+<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">       10978 :   const QString root = QDir::cleanPath(storeRoot);</span></span>
 <span id="L868"><span class="lineNum">     868</span>              :   // A root of &quot;/&quot; or &quot;C:/&quot; already ends in the separator.</span>
 <span id="L869"><span class="lineNum">     869</span>              :   const QString prefix =</span>
-<span id="L870"><span class="lineNum">     870</span> <span class="tlaGNC">       11086 :       root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');</span></span>
+<span id="L870"><span class="lineNum">     870</span> <span class="tlaGNC">       10978 :       root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');</span></span>
 <span id="L871"><span class="lineNum">     871</span>              :   const auto isRoot = [&amp;](const QString &amp;p) {</span>
-<span id="L872"><span class="lineNum">     872</span> <span class="tlaGNC">       12169 :     return p.compare(root, cs) == 0;</span></span>
+<span id="L872"><span class="lineNum">     872</span> <span class="tlaGNC">       12061 :     return p.compare(root, cs) == 0;</span></span>
 <span id="L873"><span class="lineNum">     873</span>              :   };</span>
-<span id="L874"><span class="lineNum">     874</span> <span class="tlaGNC">       11086 :   QString current = QDir::cleanPath(path);</span></span>
-<span id="L875"><span class="lineNum">     875</span> <span class="tlaGNC">       11086 :   if (!current.startsWith(prefix, cs)) {</span></span>
+<span id="L874"><span class="lineNum">     874</span> <span class="tlaGNC">       10978 :   QString current = QDir::cleanPath(path);</span></span>
+<span id="L875"><span class="lineNum">     875</span> <span class="tlaGNC">       10978 :   if (!current.startsWith(prefix, cs)) {</span></span>
 <span id="L876"><span class="lineNum">     876</span>              :     // Not under the store as named: only the entry itself can be judged.</span>
 <span id="L877"><span class="lineNum">     877</span> <span class="tlaGNC">         466 :     return includeSelf &amp;&amp; !isRoot(current) &amp;&amp; isLinkedFolder(current);</span></span>
 <span id="L878"><span class="lineNum">     878</span>              :   }</span>
-<span id="L879"><span class="lineNum">     879</span> <span class="tlaGNC">       10853 :   if (!includeSelf) {</span></span>
-<span id="L880"><span class="lineNum">     880</span> <span class="tlaGNC">       20568 :     current = QFileInfo(current).path();</span></span>
+<span id="L879"><span class="lineNum">     879</span> <span class="tlaGNC">       10745 :   if (!includeSelf) {</span></span>
+<span id="L880"><span class="lineNum">     880</span> <span class="tlaGNC">       20352 :     current = QFileInfo(current).path();</span></span>
 <span id="L881"><span class="lineNum">     881</span>              :   }</span>
-<span id="L882"><span class="lineNum">     882</span> <span class="tlaGNC">       11936 :   for (; !isRoot(current) &amp;&amp; current.startsWith(prefix, cs);</span></span>
+<span id="L882"><span class="lineNum">     882</span> <span class="tlaGNC">       11828 :   for (; !isRoot(current) &amp;&amp; current.startsWith(prefix, cs);</span></span>
 <span id="L883"><span class="lineNum">     883</span> <span class="tlaGNC">        2166 :        current = QFileInfo(current).path()) {</span></span>
 <span id="L884"><span class="lineNum">     884</span> <span class="tlaGNC">        1129 :     if (isLinkedFolder(current)) {</span></span>
 <span id="L885"><span class="lineNum">     885</span>              :       return true;</span>

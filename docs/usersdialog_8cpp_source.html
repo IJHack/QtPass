@@ -295,8 +295,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('usersdialog_8c
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                .arg(named(nested));</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  }</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keywordflow">if</span> (!unread.isEmpty()) {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">//: %1 lists folders, such as &quot;work, work/bank&quot;, that QtPass has no</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="comment">//: permission to read.</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">//: %1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="comment">//: read: no permission, or a name in them that is not valid UTF-8.</span></div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    text &lt;&lt; tr(<span class="stringliteral">&quot;%n folder(s) below this one could not be read, so whether &quot;</span></div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>               <span class="stringliteral">&quot;they have their own recipients is unknown: %1&quot;</span>,</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>               <span class="keyword">nullptr</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(unread.size()))</div>
