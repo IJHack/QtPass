@@ -172,9 +172,9 @@ secret stays in the file and QtPass simply stops rendering a code for it.
 ### I can't select or copy the OTP code
 
 The code is not selectable text. Copy it with the copy button next to it, or
-with the **OTP** action in the toolbar: those copies are marked as a secret, so
-clipboard managers keep them out of their history, and with autoclear on they
-are removed again. Selecting the code skipped both.
+with the **OTP** action in the toolbar: those copies are marked as a secret,
+which clipboard managers that honour it keep out of their history, and with
+autoclear on they are removed again. Selecting the code skipped both.
 
 With **No clipboard** chosen on the **Clipboard** page of the settings, the
 panel shows no copy buttons. The **OTP** action in the toolbar still copies the

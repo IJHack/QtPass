@@ -1819,9 +1819,13 @@ auto MainWindow::browserContextMenu(const QPoint &pos) -> QMenu * {
   // createStandardContextMenu() takes document coordinates, anchorAt() and
   // the menu's place viewport ones: scrolled, the menu checked the text
   // above the link and left "Copy Link Location" disabled.
+  // Right to left, the horizontal offset counts from the other end.
+  const QScrollBar *across = ui->textBrowser->horizontalScrollBar();
+  const int dx = ui->textBrowser->isRightToLeft()
+                     ? across->maximum() - across->value()
+                     : across->value();
   const QPoint documentPos =
-      pos + QPoint(ui->textBrowser->horizontalScrollBar()->value(),
-                   ui->textBrowser->verticalScrollBar()->value());
+      pos + QPoint(dx, ui->textBrowser->verticalScrollBar()->value());
   QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(documentPos);
   // Reparent from textBrowser: a browser stylesheet cascades to the child
   // QMenu and breaks its opaque native background.
