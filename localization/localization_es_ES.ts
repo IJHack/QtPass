@@ -1701,12 +1701,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Destinatarios cambiados por la incorporación desde Git</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La incorporación desde Git cambió los destinatarios de %1 después de que los guardara, así que no se volvió a cifrar nada: puede que sus entradas sigan cifradas para los destinatarios anteriores y que alguien a quien acaba de quitar todavía pueda leerlas. Vuelva a abrir el diálogo Usuarios para esa carpeta, revise los destinatarios y guarde.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3743,13 +3743,13 @@ Esto puede sobrescribir muchos ficheros y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No se pueden comprobar las listas de destinatarios</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 contiene un fichero o una carpeta cuyo nombre no es UTF-8 válido. QtPass no puede ver qué hay detrás de ese nombre, mientras que pass lo volvería a cifrar, así que no se cambió nada. Cámbiele el nombre y vuelva a intentarlo.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4053,8 +4053,8 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n carpeta debajo de esta tiene sus propios destinatarios, que guardar aquí no cambia: %1</numerusform>
+            <numerusform>%n carpetas debajo de esta tienen sus propios destinatarios, que guardar aquí no cambia: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4062,8 +4062,8 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n carpeta debajo de esta no se pudo leer, así que no se sabe si tiene sus propios destinatarios: %1</numerusform>
+            <numerusform>%n carpetas debajo de esta no se pudieron leer, así que no se sabe si tienen sus propios destinatarios: %1</numerusform>
         </translation>
     </message>
     <message>

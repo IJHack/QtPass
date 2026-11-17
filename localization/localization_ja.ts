@@ -1732,12 +1732,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pull により受信者が変更されました</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">保存した後に pull によって %1 の受信者が変更されたため、何も再暗号化されていません。その中のエントリはまだ以前の受信者向けに暗号化されている可能性があり、削除したばかりのユーザーがまだ読める可能性があります。そのフォルダーの「ユーザー」ダイアログをもう一度開き、受信者を確認して保存してください。</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3782,13 +3782,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">受信者リストを確認できません</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 には、名前が有効な UTF-8 ではないファイルまたはフォルダーがあります。QtPass はその名前の先にあるものを確認できませんが、pass はそれを再暗号化してしまうため、何も変更していません。名前を変更してから、もう一度お試しください。</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4096,7 +4096,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>このフォルダーの下にある %n 個のフォルダーには独自の受信者があり、ここで保存しても変更されません: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4104,7 +4104,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>このフォルダーの下にある %n 個のフォルダーを読み取れなかったため、独自の受信者があるかどうかは不明です: %1</numerusform>
         </translation>
     </message>
     <message>

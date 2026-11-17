@@ -1694,12 +1694,12 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Marrësit u ndryshuan nga pull-i</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull-i ndryshoi marrësit e %1 pasi i ruajtët, prandaj asgjë nuk u rienkriptua: zërat në të mund të jenë ende të enkriptuar për marrësit e mëparshëm, dhe kushdo që sapo hoqët mund të jetë ende në gjendje t’i lexojë. Hapni sërish dialogun Përdoruesit për atë dosje, kontrolloni marrësit dhe ruani.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3612,13 +3612,13 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Listat e marrësve nuk mund të kontrollohen</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 përmban një skedar ose dosje, emri i së cilës nuk është UTF-8 i vlefshëm. QtPass nuk mund të shohë se çfarë fshihet pas atij emri, ndërsa pass do ta rienkriptonte, prandaj nuk u ndryshua asgjë. Riemërtojeni, pastaj provoni sërish.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3918,8 +3918,8 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n dosje nën këtë ka marrësit e vet, të cilët ruajtja këtu nuk i ndryshon: %1</numerusform>
+            <numerusform>%n dosje nën këtë kanë marrësit e tyre, të cilët ruajtja këtu nuk i ndryshon: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3927,8 +3927,8 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n dosje nën këtë nuk u lexua dot, prandaj nuk dihet nëse ka marrësit e vet: %1</numerusform>
+            <numerusform>%n dosje nën këtë nuk u lexuan dot, prandaj nuk dihet nëse kanë marrësit e tyre: %1</numerusform>
         </translation>
     </message>
     <message>

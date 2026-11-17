@@ -1696,12 +1696,12 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operacja pull zmieniła odbiorców</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operacja pull zmieniła odbiorców dla %1 po ich zapisaniu, więc nic nie zostało ponownie zaszyfrowane: wpisy w tym folderze mogą nadal być zaszyfrowane dla poprzednich odbiorców, a osoby, które właśnie usunięto, być może nadal mogą je odczytać. Ponownie otwórz okno Użytkownicy dla tego folderu, sprawdź odbiorców i zapisz.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3659,13 +3659,13 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nie można sprawdzić list odbiorców</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 zawiera plik lub folder, którego nazwa nie jest poprawnym tekstem UTF-8. QtPass nie widzi, co kryje się pod tą nazwą, a pass zaszyfrowałby to ponownie, więc nic nie zostało zmienione. Zmień nazwę tego elementu, a następnie spróbuj ponownie.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3952,9 +3952,9 @@ Wpisy oznaczone jako [NIEPRAWIDŁOWY] i&#xa0;[WYGASŁY] nie mogą być użyte do
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n podfolder ma własnych odbiorców, których zapisanie tutaj nie zmienia: %1</numerusform>
+            <numerusform>%n podfoldery mają własnych odbiorców, których zapisanie tutaj nie zmienia: %1</numerusform>
+            <numerusform>%n podfolderów ma własnych odbiorców, których zapisanie tutaj nie zmienia: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3962,9 +3962,9 @@ Wpisy oznaczone jako [NIEPRAWIDŁOWY] i&#xa0;[WYGASŁY] nie mogą być użyte do
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Nie można odczytać %n podfolderu, więc nie wiadomo, czy ma własnych odbiorców: %1</numerusform>
+            <numerusform>Nie można odczytać %n podfolderów, więc nie wiadomo, czy mają własnych odbiorców: %1</numerusform>
+            <numerusform>Nie można odczytać %n podfolderów, więc nie wiadomo, czy mają własnych odbiorców: %1</numerusform>
         </translation>
     </message>
     <message>

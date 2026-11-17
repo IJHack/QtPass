@@ -1690,12 +1690,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পুলের ফলে প্রাপক পরিবর্তিত হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি সংরক্ষণ করার পরে পুল %1-এর প্রাপকদের পরিবর্তন করেছে, তাই কিছুই পুনরায় এনক্রিপ্ট করা হয়নি: এর এন্ট্রিগুলো এখনও আগের প্রাপকদের জন্য এনক্রিপ্ট করা থাকতে পারে, এবং আপনি এইমাত্র যাদের সরিয়েছেন তারা এখনও সেগুলো পড়তে সক্ষম হতে পারে। ওই ফোল্ডারের জন্য আবার ব্যবহারকারীরা খুলুন, প্রাপকদের যাচাই করুন এবং সংরক্ষণ করুন।</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3560,13 +3560,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রাপক তালিকাগুলো যাচাই করা যাচ্ছে না</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1-এ এমন একটি ফাইল বা ফোল্ডার রয়েছে যার নাম বৈধ UTF-8 নয়। ওই নামের পেছনে কী আছে তা QtPass দেখতে পারে না, অথচ pass সেটি পুনরায় এনক্রিপ্ট করবে, তাই কিছুই পরিবর্তন করা হয়নি। এর নাম পরিবর্তন করুন, তারপর আবার চেষ্টা করুন।</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3838,8 +3838,8 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>এই ফোল্ডারের নিচের %nটি ফোল্ডারের নিজস্ব প্রাপক রয়েছে, যা এখানে সংরক্ষণ করলে পরিবর্তিত হয় না: %1</numerusform>
+            <numerusform>এই ফোল্ডারের নিচের %nটি ফোল্ডারের নিজস্ব প্রাপক রয়েছে, যা এখানে সংরক্ষণ করলে পরিবর্তিত হয় না: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3847,8 +3847,8 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>এই ফোল্ডারের নিচের %nটি ফোল্ডার পড়া যায়নি, তাই সেগুলোর নিজস্ব প্রাপক আছে কিনা জানা নেই: %1</numerusform>
+            <numerusform>এই ফোল্ডারের নিচের %nটি ফোল্ডার পড়া যায়নি, তাই সেগুলোর নিজস্ব প্রাপক আছে কিনা জানা নেই: %1</numerusform>
         </translation>
     </message>
     <message>

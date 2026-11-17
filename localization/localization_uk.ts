@@ -1736,12 +1736,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Одержувачів змінено операцією pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Операція pull змінила одержувачів папки %1 після того, як ви їх зберегли, тому нічого не було повторно зашифровано: записи в ній досі можуть бути зашифровані для попередніх одержувачів, і ті, кого ви щойно видалили, можливо, все ще можуть їх прочитати. Знову відкрийте «Користувачі» для цієї папки, перевірте одержувачів і збережіть.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3821,13 +3821,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не вдається перевірити списки одержувачів</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 містить файл або папку, назва яких не є дійсним UTF-8. QtPass не бачить, що стоїть за цією назвою, тоді як pass повторно зашифрував би це, тому нічого не змінено. Перейменуйте цей елемент, а потім спробуйте ще раз.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4136,9 +4136,9 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n вкладена папка має власних одержувачів, яких збереження тут не змінює: %1</numerusform>
+            <numerusform>%n вкладені папки мають власних одержувачів, яких збереження тут не змінює: %1</numerusform>
+            <numerusform>%n вкладених папок мають власних одержувачів, яких збереження тут не змінює: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4146,9 +4146,9 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Не вдалося прочитати %n вкладену папку, тому невідомо, чи має вона власних одержувачів: %1</numerusform>
+            <numerusform>Не вдалося прочитати %n вкладені папки, тому невідомо, чи мають вони власних одержувачів: %1</numerusform>
+            <numerusform>Не вдалося прочитати %n вкладених папок, тому невідомо, чи мають вони власних одержувачів: %1</numerusform>
         </translation>
     </message>
     <message>

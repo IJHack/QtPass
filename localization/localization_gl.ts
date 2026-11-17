@@ -1761,12 +1761,12 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Destinatarios cambiados polo pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O pull cambiou os destinatarios de %1 despois de que os gardases, así que non se re-cifrou nada: as entradas que contén poden seguir cifradas para os destinatarios anteriores, e calquera persoa que acabes de quitar aínda podería lelas. Abre de novo o diálogo Usuarios para ese cartafol, revisa os destinatarios e garda.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3771,13 +3771,13 @@ Continuar?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Non se poden comprobar as listas de destinatarios</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 contén un ficheiro ou cartafol cuxo nome non é UTF-8 válido. QtPass non pode ver o que hai detrás dese nome, mentres que pass o re-cifraría, así que non se cambiou nada. Cámbialle o nome e téntao de novo.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4063,8 +4063,8 @@ As entradas con [NON VÁLIDA] ou [CADUCADA] non se poden cifrar; as entradas [PA
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n cartafol debaixo deste ten os seus propios destinatarios, que gardar aquí non cambia: %1</numerusform>
+            <numerusform>%n cartafoles debaixo deste teñen os seus propios destinatarios, que gardar aquí non cambia: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4072,8 +4072,8 @@ As entradas con [NON VÁLIDA] ou [CADUCADA] non se poden cifrar; as entradas [PA
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Non se puido ler %n cartafol debaixo deste, así que non se sabe se ten os seus propios destinatarios: %1</numerusform>
+            <numerusform>Non se puideron ler %n cartafoles debaixo deste, así que non se sabe se teñen os seus propios destinatarios: %1</numerusform>
         </translation>
     </message>
     <message>

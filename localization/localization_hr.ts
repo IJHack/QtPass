@@ -1736,12 +1736,12 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull je promijenio primatelje</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull je promijenio primatelje mape %1 nakon što su spremljeni, pa ništa nije ponovno šifrirano: unosi u njoj možda su još uvijek šifrirani za prethodne primatelje, a svatko tko je upravo uklonjen možda ih još uvijek može čitati. Ponovno otvori dijalog Korisnici za tu mapu, provjeri primatelje i spremi.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3837,13 +3837,13 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nije moguće provjeriti popise primatelja</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 sadrži datoteku ili mapu čije ime nije valjan UTF-8. QtPass ne može vidjeti što se krije iza tog imena, a pass bi je ponovno šifrirao, pa ništa nije promijenjeno. Preimenuj je, a zatim pokušaj ponovno.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4152,9 +4152,9 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n podmapa ima vlastite primatelje, koje spremanje ovdje ne mijenja: %1</numerusform>
+            <numerusform>%n podmape imaju vlastite primatelje, koje spremanje ovdje ne mijenja: %1</numerusform>
+            <numerusform>%n podmapa ima vlastite primatelje, koje spremanje ovdje ne mijenja: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4162,9 +4162,9 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n podmapu nije bilo moguće pročitati, pa nije poznato ima li vlastite primatelje: %1</numerusform>
+            <numerusform>%n podmape nije bilo moguće pročitati, pa nije poznato imaju li vlastite primatelje: %1</numerusform>
+            <numerusform>%n podmapa nije bilo moguće pročitati, pa nije poznato imaju li vlastite primatelje: %1</numerusform>
         </translation>
     </message>
     <message>

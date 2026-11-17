@@ -1694,12 +1694,12 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Empfänger duerch de pull geännert</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De pull huet d&apos;Empfänger vun %1 geännert, nodeems Dir se gespäichert hutt, dofir gouf näischt nei verschlësselt: Androungen dodran kënnen nach ëmmer op déi fréier Empfänger verschlësselt sinn, an déi, déi Dir grad ewechgeholl hutt, kënnen se eventuell nach liesen. Maacht &quot;Benotzer&quot; fir dësen Dossier nach eng Kéier op, kontrolléiert d&apos;Empfänger a späichert.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3611,13 +3611,13 @@ Weider?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D&apos;Empfängerlëschte kënnen net gepréift ginn</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 enthält eng Datei oder en Dossier mat engem Numm, deen kee gëltegt UTF-8 ass. QtPass kann net gesinn, wat hannert deem Numm stécht, wärend pass et nei verschlësselen géif, dofir gouf näischt geännert. Benennt et ëm a probéiert et dann nach eng Kéier.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3917,8 +3917,8 @@ Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n Dossier ënnert dësem huet seng eegen Empfänger, déi sech net änneren, wann Dir hei späichert: %1</numerusform>
+            <numerusform>%n Dossieren ënnert dësem hunn hir eegen Empfänger, déi sech net änneren, wann Dir hei späichert: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3926,8 +3926,8 @@ Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n Dossier ënnert dësem konnt net gelies ginn, dofir ass onbekannt, ob en eegen Empfänger huet: %1</numerusform>
+            <numerusform>%n Dossieren ënnert dësem konnten net gelies ginn, dofir ass onbekannt, ob se eegen Empfänger hunn: %1</numerusform>
         </translation>
     </message>
     <message>

@@ -1714,12 +1714,12 @@ Não conseguirá decifrar nenhuma das palavras-passe recentemente adicionadas!</
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Destinatários alterados pelo pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O pull alterou os destinatários de %1 depois de os ter guardado, pelo que nada foi recifrado: as entradas nela podem continuar cifradas para os destinatários anteriores, e quem acabou de remover pode ainda conseguir lê-las. Abra novamente a janela Utilizadores para essa pasta, verifique os destinatários e guarde.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3741,13 +3741,13 @@ Continua?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Não é possível verificar as listas de destinatários</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 contém um ficheiro ou pasta cujo nome não é UTF-8 válido. O QtPass não consegue ver o que está por trás desse nome, enquanto o pass o recifraria, pelo que nada foi alterado. Mude-lhe o nome e tente novamente.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4055,8 +4055,8 @@ Os elementos a vermelho não são válidos. Não será possível desencriptar ut
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n pasta abaixo desta tem os seus próprios destinatários, que guardar aqui não altera: %1</numerusform>
+            <numerusform>%n pastas abaixo desta têm os seus próprios destinatários, que guardar aqui não altera: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4064,8 +4064,8 @@ Os elementos a vermelho não são válidos. Não será possível desencriptar ut
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n pasta abaixo desta não pôde ser lida, pelo que não se sabe se tem os seus próprios destinatários: %1</numerusform>
+            <numerusform>%n pastas abaixo desta não puderam ser lidas, pelo que não se sabe se têm os seus próprios destinatários: %1</numerusform>
         </translation>
     </message>
     <message>

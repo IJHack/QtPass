@@ -1734,12 +1734,12 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull muutis saajaid</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull muutis kausta %1 saajaid pärast seda, kui need salvestasid, seega ei krüptitud midagi uuesti: selle kirjed võivad endiselt olla krüptitud eelmistele saajatele ja need, kelle just eemaldasid, võivad neid ikka veel lugeda. Ava selle kausta „Kasutajad“ dialoog uuesti, kontrolli saajad üle ja salvesta.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3830,13 +3830,13 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saajate loendeid ei saa kontrollida</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 sisaldab faili või kausta, mille nimi pole kehtiv UTF-8. QtPass ei näe, mis selle nime taga on, kuid pass krüptiks selle uuesti, seega midagi ei muudetud. Nimeta see ümber ja proovi siis uuesti.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4144,8 +4144,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Selle kausta all on %n kaust, millel on omad saajad, mida siin salvestamine ei muuda: %1</numerusform>
+            <numerusform>Selle kausta all on %n kausta, millel on omad saajad, mida siin salvestamine ei muuda: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4153,8 +4153,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Selle kausta all olevat %n kausta ei õnnestunud lugeda, seega pole teada, kas sellel on omad saajad: %1</numerusform>
+            <numerusform>Selle kausta all olevat %n kausta ei õnnestunud lugeda, seega pole teada, kas neil on omad saajad: %1</numerusform>
         </translation>
     </message>
     <message>

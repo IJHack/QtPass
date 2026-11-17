@@ -1728,12 +1728,12 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A pull megváltoztatta a címzetteket</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A pull megváltoztatta a(z) %1 címzettjeit, miután mentette őket, ezért semmi sem lett újratitkosítva: a benne lévő bejegyzések még mindig a korábbi címzettekhez lehetnek titkosítva, és akiket az imént eltávolított, talán még mindig olvashatják őket. Nyissa meg újra a Felhasználók ablakot ehhez a mappához, ellenőrizze a címzetteket, és mentsen.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3671,13 +3671,13 @@ Folytatja?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nem lehet ellenőrizni a címzettlistákat</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A(z) %1 olyan fájlt vagy mappát tartalmaz, amelynek neve nem érvényes UTF-8. A QtPass nem látja, mi van e név mögött, a pass viszont újratitkosítaná, ezért semmi sem módosult. Nevezze át, majd próbálja újra.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3952,7 +3952,7 @@ Az [ÉRVÉNYTELEN] és [LEJÁRT] bejegyzésekhez nem lehet titkosítani; a [RÉS
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>Ez alatt a mappa alatt %n mappának saját címzettjei vannak, amelyeket az itteni mentés nem módosít: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3960,7 +3960,7 @@ Az [ÉRVÉNYTELEN] és [LEJÁRT] bejegyzésekhez nem lehet titkosítani; a [RÉS
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>Ez alatt a mappa alatt %n mappát nem sikerült beolvasni, ezért nem tudható, vannak-e saját címzettjei: %1</numerusform>
         </translation>
     </message>
     <message>

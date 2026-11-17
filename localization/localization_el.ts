@@ -1694,12 +1694,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι παραλήπτες άλλαξαν από το pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το pull άλλαξε τους παραλήπτες του %1 αφού τους αποθηκεύσατε, οπότε δεν επανακρυπτογραφήθηκε τίποτα: οι καταχωρίσεις του μπορεί να είναι ακόμα κρυπτογραφημένες για τους προηγούμενους παραλήπτες, και όσοι μόλις αφαιρέθηκαν ίσως εξακολουθούν να μπορούν να τις διαβάσουν. Ανοίξτε ξανά το παράθυρο «Χρήστες» για αυτόν τον φάκελο, ελέγξτε τους παραλήπτες και αποθηκεύστε.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3619,13 +3619,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν είναι δυνατός ο έλεγχος των λιστών παραληπτών</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 περιέχει ένα αρχείο ή φάκελο του οποίου το όνομα δεν είναι έγκυρο UTF-8. Το QtPass δεν μπορεί να δει τι υπάρχει πίσω από αυτό το όνομα, ενώ το pass θα το επανακρυπτογραφούσε, οπότε δεν άλλαξε τίποτα. Μετονομάστε το και δοκιμάστε ξανά.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3901,8 +3901,8 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n φάκελος κάτω από αυτόν έχει δικούς του παραλήπτες, τους οποίους η αποθήκευση εδώ δεν αλλάζει: %1</numerusform>
+            <numerusform>%n φάκελοι κάτω από αυτόν έχουν δικούς τους παραλήπτες, τους οποίους η αποθήκευση εδώ δεν αλλάζει: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3910,8 +3910,8 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Δεν ήταν δυνατή η ανάγνωση %n φακέλου κάτω από αυτόν, οπότε δεν είναι γνωστό αν έχει δικούς του παραλήπτες: %1</numerusform>
+            <numerusform>Δεν ήταν δυνατή η ανάγνωση %n φακέλων κάτω από αυτόν, οπότε δεν είναι γνωστό αν έχουν δικούς τους παραλήπτες: %1</numerusform>
         </translation>
     </message>
     <message>

@@ -1734,12 +1734,12 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Empfänger durch den Pull geändert</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Der Pull hat die Empfänger von %1 geändert, nachdem Sie sie gespeichert hatten, daher wurde nichts wiederverschlüsselt: Einträge darin sind möglicherweise noch für die bisherigen Empfänger verschlüsselt, und alle, die Sie gerade entfernt haben, können sie möglicherweise weiterhin lesen. Öffnen Sie „Benutzer“ für diesen Ordner erneut, prüfen Sie die Empfänger und speichern Sie.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3726,13 +3726,13 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Empfängerlisten können nicht geprüft werden</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 enthält eine Datei oder einen Ordner mit einem Namen, der kein gültiges UTF-8 ist. QtPass kann nicht sehen, was sich hinter diesem Namen verbirgt, pass würde es jedoch wiederverschlüsseln, daher wurde nichts geändert. Benennen Sie es um und versuchen Sie es dann erneut.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4040,8 +4040,8 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n Ordner unterhalb dieses Ordners hat eigene Empfänger, die durch das Speichern hier nicht geändert werden: %1</numerusform>
+            <numerusform>%n Ordner unterhalb dieses Ordners haben eigene Empfänger, die durch das Speichern hier nicht geändert werden: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4049,8 +4049,8 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n Ordner unterhalb dieses Ordners konnte nicht gelesen werden, daher ist unbekannt, ob er eigene Empfänger hat: %1</numerusform>
+            <numerusform>%n Ordner unterhalb dieses Ordners konnten nicht gelesen werden, daher ist unbekannt, ob sie eigene Empfänger haben: %1</numerusform>
         </translation>
     </message>
     <message>

@@ -1736,12 +1736,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">拉取更改了接收者</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在您保存之后，拉取更改了 %1 的接收者，因此未重新加密任何内容：其中的条目可能仍加密给之前的接收者，您刚刚移除的人可能仍能读取它们。请再次为该文件夹打开“用户”对话框，检查接收者并保存。</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3789,13 +3789,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">无法检查接收者列表</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 中有名称不是有效 UTF-8 的文件或文件夹。QtPass 无法看到该名称背后的内容，而 pass 会重新加密它，因此未做任何更改。请重命名后重试。</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4102,7 +4102,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>此文件夹下的 %n 个文件夹有自己的接收者，在此保存不会更改它们：%1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4110,7 +4110,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>此文件夹下的 %n 个文件夹无法读取，因此不确定它们是否有自己的接收者：%1</numerusform>
         </translation>
     </message>
     <message>

@@ -1692,12 +1692,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saņemšana (pull) mainīja saņēmējus</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saņemšana (pull) mainīja mapes %1 saņēmējus pēc tam, kad tos saglabājāt, tāpēc nekas netika pāršifrēts: tās ieraksti joprojām var būt šifrēti iepriekšējiem saņēmējiem, un tie, kurus tikko noņēmāt, joprojām var tos lasīt. Vēlreiz atveriet šīs mapes logu Lietotāji, pārbaudiet saņēmējus un saglabājiet.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3567,13 +3567,13 @@ Turpināt?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nevar pārbaudīt saņēmēju sarakstus</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapē %1 ir fails vai mape, kura nosaukums nav derīgs UTF-8. QtPass nevar redzēt, kas slēpjas aiz šī nosaukuma, bet pass to pāršifrētu, tāpēc nekas netika mainīts. Pārdēvējiet to un mēģiniet vēlreiz.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3846,9 +3846,9 @@ Parastajiem ierakstiem ir uzticama šifrēšanas atslēga; atlasiet tos, lai ļa
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Zem šīs mapes %n mapei ir savi saņēmēji, kurus saglabāšana šeit nemaina: %1</numerusform>
+            <numerusform>Zem šīs mapes %n mapēm ir savi saņēmēji, kurus saglabāšana šeit nemaina: %1</numerusform>
+            <numerusform>Zem šīs mapes %n mapēm ir savi saņēmēji, kurus saglabāšana šeit nemaina: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3856,9 +3856,9 @@ Parastajiem ierakstiem ir uzticama šifrēšanas atslēga; atlasiet tos, lai ļa
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Zem šīs mapes %n mapi neizdevās nolasīt, tāpēc nav zināms, vai tai ir savi saņēmēji: %1</numerusform>
+            <numerusform>Zem šīs mapes %n mapes neizdevās nolasīt, tāpēc nav zināms, vai tām ir savi saņēmēji: %1</numerusform>
+            <numerusform>Zem šīs mapes %n mapes neizdevās nolasīt, tāpēc nav zināms, vai tām ir savi saņēmēji: %1</numerusform>
         </translation>
     </message>
     <message>

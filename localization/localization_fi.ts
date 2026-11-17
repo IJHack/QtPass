@@ -1734,12 +1734,12 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull muutti vastaanottajia</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull muutti kansion %1 vastaanottajia sen jälkeen, kun tallensit ne, joten mitään ei salattu uudelleen: sen merkinnät voivat yhä olla salattuja aiemmille vastaanottajille, ja juuri poistamasi henkilöt voivat ehkä yhä lukea niitä. Avaa kyseisen kansion Käyttäjät-ikkuna uudelleen, tarkista vastaanottajat ja tallenna.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3794,13 +3794,13 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vastaanottajaluetteloita ei voi tarkistaa</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 sisältää tiedoston tai kansion, jonka nimi ei ole kelvollista UTF-8:aa. QtPass ei näe, mitä nimen takana on, mutta pass salaisi sen uudelleen, joten mitään ei muutettu. Nimeä se uudelleen ja yritä sitten uudestaan.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4108,8 +4108,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Tämän alla on %n kansio, jolla on omat vastaanottajat, joita täällä tallentaminen ei muuta: %1</numerusform>
+            <numerusform>Tämän alla on %n kansiota, joilla on omat vastaanottajat, joita täällä tallentaminen ei muuta: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4117,8 +4117,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Tämän alla olevaa %n kansiota ei voitu lukea, joten ei tiedetä, onko sillä omia vastaanottajia: %1</numerusform>
+            <numerusform>Tämän alla olevaa %n kansiota ei voitu lukea, joten ei tiedetä, onko niillä omia vastaanottajia: %1</numerusform>
         </translation>
     </message>
     <message>

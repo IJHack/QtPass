@@ -1724,12 +1724,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull је променио примаоце</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull је променио примаоце за %1 након што сте их сачували, па ништа није поново шифровано: ставке у њој можда су и даље шифроване за претходне примаоце, а они које сте управо уклонили можда и даље могу да их читају. Поново отворите „Корисници“ за ту фасциклу, проверите примаоце и сачувајте.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3793,13 +3793,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Није могуће проверити листе прималаца</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 садржи датотеку или фасциклу чији назив није исправан UTF-8. QtPass не може да види шта се крије иза тог назива, а pass би је поново шифровао, па ништа није промењено. Преименујте је, па покушајте поново.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4098,9 +4098,9 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n подфасцикла има сопствене примаоце, које чување овде не мења: %1</numerusform>
+            <numerusform>%n подфасцикле имају сопствене примаоце, које чување овде не мења: %1</numerusform>
+            <numerusform>%n подфасцикли има сопствене примаоце, које чување овде не мења: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4108,9 +4108,9 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n подфасциклу није било могуће прочитати, па није познато да ли има сопствене примаоце: %1</numerusform>
+            <numerusform>%n подфасцикле није било могуће прочитати, па није познато да ли имају сопствене примаоце: %1</numerusform>
+            <numerusform>%n подфасцикли није било могуће прочитати, па није познато да ли имају сопствене примаоце: %1</numerusform>
         </translation>
     </message>
     <message>

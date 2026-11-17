@@ -1734,12 +1734,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Получателите са променени от pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Операцията pull промени получателите на %1, след като ги запазихте, затова нищо не беше криптирано повторно: записите в папката може все още да са криптирани за предишните получатели и е възможно всеки, когото току-що премахнахте, все още да може да ги чете. Отворете отново „Потребители“ за тази папка, проверете получателите и запазете.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3766,13 +3766,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъците с получатели не могат да бъдат проверени</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 съдържа файл или папка, чието име не е валиден UTF-8. QtPass не може да види какво стои зад това име, докато pass би го криптирал повторно, затова нищо не беше променено. Преименувайте го и опитайте отново.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4080,8 +4080,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n вложена папка има собствени получатели, които запазването тук не променя: %1</numerusform>
+            <numerusform>%n вложени папки имат собствени получатели, които запазването тук не променя: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4089,8 +4089,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n вложена папка не можа да бъде прочетена, така че не е известно дали има собствени получатели: %1</numerusform>
+            <numerusform>%n вложени папки не можаха да бъдат прочетени, така че не е известно дали имат собствени получатели: %1</numerusform>
         </translation>
     </message>
     <message>

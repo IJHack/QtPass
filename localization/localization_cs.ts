@@ -1732,12 +1732,12 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operace pull změnila příjemce</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operace pull změnila příjemce složky %1 poté, co jste je uložili, takže nic nebylo znovu zašifrováno: položky v ní mohou být stále zašifrovány pro předchozí příjemce a kdokoli, koho jste právě odebrali, je možná stále může číst. Znovu otevřete dialog Uživatelé pro tuto složku, zkontrolujte příjemce a uložte.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3769,13 +3769,13 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznamy příjemců nelze zkontrolovat</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 obsahuje soubor nebo složku s názvem, který není v platném kódování UTF-8. QtPass nevidí, co se za tímto názvem skrývá, zatímco pass by to znovu zašifroval, takže se nic nezměnilo. Přejmenujte tuto položku a zkuste to znovu.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4084,9 +4084,9 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n podsložka má vlastní příjemce, které uložení zde nezmění: %1</numerusform>
+            <numerusform>%n podsložky mají vlastní příjemce, které uložení zde nezmění: %1</numerusform>
+            <numerusform>%n podsložek má vlastní příjemce, které uložení zde nezmění: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4094,9 +4094,9 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n podsložku se nepodařilo přečíst, takže není známo, zda má vlastní příjemce: %1</numerusform>
+            <numerusform>%n podsložky se nepodařilo přečíst, takže není známo, zda mají vlastní příjemce: %1</numerusform>
+            <numerusform>%n podsložek se nepodařilo přečíst, takže není známo, zda mají vlastní příjemce: %1</numerusform>
         </translation>
     </message>
     <message>

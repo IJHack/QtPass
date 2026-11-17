@@ -1734,12 +1734,12 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ûntfangers feroare troch de pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De pull hat de ûntfangers fan %1 feroare neidat jo se bewarre hiene, dus der is neat opnij fersifere: ynfieren dêryn kinne noch fersifere wêze nei de foarige ûntfangers, en wa&apos;t jo krekt fuortsmiten hawwe, kin se mooglik noch lêze. Iepenje Brûkers opnij foar dy map, kontrolearje de ûntfangers en bewarje.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3833,13 +3833,13 @@ Trochgean?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kin de ûntfangerslisten net kontrolearje</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 befettet in bestân of map wêrfan&apos;t de namme gjin jildige UTF-8 is. QtPass kin net sjen wat der efter dy namme sit, wylst pass it wol opnij fersiferje soe, dus der is neat feroare. Neam it om en besykje it dan opnij.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4147,8 +4147,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n map ûnder dizze map hat eigen ûntfangers, dy&apos;t net feroarje troch hjir te bewarjen: %1</numerusform>
+            <numerusform>%n mappen ûnder dizze map hawwe eigen ûntfangers, dy&apos;t net feroarje troch hjir te bewarjen: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4156,8 +4156,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n map ûnder dizze map koe net lêzen wurde, dus it is ûnbekend oft dy eigen ûntfangers hat: %1</numerusform>
+            <numerusform>%n mappen ûnder dizze map koene net lêzen wurde, dus it is ûnbekend oft se eigen ûntfangers hawwe: %1</numerusform>
         </translation>
     </message>
     <message>

@@ -1688,12 +1688,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Penerima diubah oleh pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull mengubah penerima %1 setelah Anda menyimpannya, sehingga tidak ada yang dienkripsi ulang: entri di dalamnya mungkin masih terenkripsi untuk penerima sebelumnya, dan siapa pun yang baru saja Anda hapus mungkin masih dapat membacanya. Buka lagi dialog Pengguna untuk folder tersebut, periksa penerimanya, lalu simpan.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3545,13 +3545,13 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat memeriksa daftar penerima</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 berisi berkas atau folder yang namanya bukan UTF-8 yang valid. QtPass tidak dapat melihat apa yang ada di balik nama tersebut, sedangkan pass akan mengenkripsinya ulang, sehingga tidak ada yang diubah. Ubah namanya, lalu coba lagi.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3822,7 +3822,7 @@ Enkripsi tidak dapat dilakukan ke entri [TIDAK VALID] dan [KEDALUWARSA]; entri [
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n folder di bawah folder ini memiliki penerimanya sendiri, yang tidak diubah dengan menyimpan di sini: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3830,7 +3830,7 @@ Enkripsi tidak dapat dilakukan ke entri [TIDAK VALID] dan [KEDALUWARSA]; entri [
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n folder di bawah folder ini tidak dapat dibaca, sehingga tidak diketahui apakah folder tersebut memiliki penerimanya sendiri: %1</numerusform>
         </translation>
     </message>
     <message>

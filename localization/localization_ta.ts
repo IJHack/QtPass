@@ -1734,12 +1734,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இழுப்பால் பெறுநர்கள் மாற்றப்பட்டனர்</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நீங்கள் சேமித்த பிறகு இழுப்பு %1 இன் பெறுநர்களை மாற்றியது, எனவே எதுவும் மீண்டும் குறியாக்கம் செய்யப்படவில்லை: அதிலுள்ள உள்ளீடுகள் இன்னும் முந்தைய பெறுநர்களுக்குக் குறியாக்கம் செய்யப்பட்டிருக்கலாம், மேலும் நீங்கள் இப்போது நீக்கிய எவரும் அவற்றை இன்னும் படிக்க முடியக்கூடும். அந்தக் கோப்புறைக்கு &quot;பயனர்கள்&quot; ஐ மீண்டும் திறந்து, பெறுநர்களைச் சரிபார்த்து, சேமிக்கவும்.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3826,13 +3826,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பெறுநர் பட்டியல்களைச் சரிபார்க்க முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 இல் செல்லுபடியான UTF-8 அல்லாத பெயருடைய ஒரு கோப்பு அல்லது கோப்புறை உள்ளது. அந்தப் பெயருக்குப் பின்னால் என்ன உள்ளது என்பதை QtPass ஆல் பார்க்க முடியாது, ஆனால் pass அதை மீண்டும் குறியாக்கம் செய்யும், எனவே எதுவும் மாற்றப்படவில்லை. அதன் பெயரை மாற்றி, மீண்டும் முயற்சிக்கவும்.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4140,8 +4140,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>இதற்குக் கீழுள்ள %n கோப்புறைக்குச் சொந்தப் பெறுநர்கள் உள்ளனர், இங்கே சேமிப்பது அவர்களை மாற்றாது: %1</numerusform>
+            <numerusform>இதற்குக் கீழுள்ள %n கோப்புறைகளுக்குச் சொந்தப் பெறுநர்கள் உள்ளனர், இங்கே சேமிப்பது அவர்களை மாற்றாது: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4149,8 +4149,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>இதற்குக் கீழுள்ள %n கோப்புறையைப் படிக்க முடியவில்லை, எனவே அதற்குச் சொந்தப் பெறுநர்கள் உள்ளனரா என்பது தெரியவில்லை: %1</numerusform>
+            <numerusform>இதற்குக் கீழுள்ள %n கோப்புறைகளைப் படிக்க முடியவில்லை, எனவே அவற்றுக்குச் சொந்தப் பெறுநர்கள் உள்ளனரா என்பது தெரியவில்லை: %1</numerusform>
         </translation>
     </message>
     <message>

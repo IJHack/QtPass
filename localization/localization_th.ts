@@ -1684,12 +1684,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">การ pull เปลี่ยนผู้รับ</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">การ pull ได้เปลี่ยนผู้รับของ %1 หลังจากที่คุณบันทึกไว้ จึงไม่มีการเข้ารหัสใหม่ใด ๆ รายการในนั้นอาจยังคงเข้ารหัสไว้สำหรับผู้รับเดิม และผู้ที่คุณเพิ่งนำออกอาจยังอ่านรายการเหล่านั้นได้ โปรดเปิดกล่องโต้ตอบผู้ใช้สำหรับโฟลเดอร์นั้นอีกครั้ง ตรวจสอบผู้รับ แล้วบันทึก</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3553,13 +3553,13 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ไม่สามารถตรวจสอบรายชื่อผู้รับได้</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 มีไฟล์หรือโฟลเดอร์ที่ชื่อไม่ใช่ UTF-8 ที่ถูกต้อง QtPass ไม่สามารถเห็นสิ่งที่อยู่เบื้องหลังชื่อนั้น ในขณะที่ pass จะเข้ารหัสใหม่ จึงไม่มีการเปลี่ยนแปลงใด ๆ โปรดเปลี่ยนชื่อ แล้วลองอีกครั้ง</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3830,7 +3830,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>โฟลเดอร์ %n โฟลเดอร์ภายใต้โฟลเดอร์นี้มีผู้รับของตัวเอง ซึ่งการบันทึกที่นี่จะไม่เปลี่ยนแปลง: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3838,7 +3838,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>ไม่สามารถอ่านโฟลเดอร์ %n โฟลเดอร์ภายใต้โฟลเดอร์นี้ได้ จึงไม่ทราบว่ามีผู้รับของตัวเองหรือไม่: %1</numerusform>
         </translation>
     </message>
     <message>

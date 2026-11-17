@@ -1738,12 +1738,12 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ontvangers gewijzigd door de pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De pull heeft de ontvangers van %1 gewijzigd nadat u ze had opgeslagen, dus er is niets herversleuteld: items daarin zijn mogelijk nog versleuteld naar de vorige ontvangers, en wie u net hebt verwijderd, kan ze mogelijk nog lezen. Open het venster Gebruikers opnieuw voor die map, controleer de ontvangers en sla op.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3848,13 +3848,13 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kan de ontvangerslijsten niet controleren</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 bevat een bestand of map waarvan de naam geen geldige UTF-8 is. QtPass kan niet zien wat er achter die naam zit, terwijl pass het wel zou herversleutelen, dus er is niets gewijzigd. Hernoem het en probeer het dan opnieuw.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4162,8 +4162,8 @@ Rode inzendingen zijn niet geldig, u zult niet in staat zijn om te coderen voor 
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n map onder deze map heeft eigen ontvangers, die niet veranderen door hier op te slaan: %1</numerusform>
+            <numerusform>%n mappen onder deze map hebben eigen ontvangers, die niet veranderen door hier op te slaan: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4171,8 +4171,8 @@ Rode inzendingen zijn niet geldig, u zult niet in staat zijn om te coderen voor 
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n map onder deze map kon niet worden gelezen, dus het is onbekend of die eigen ontvangers heeft: %1</numerusform>
+            <numerusform>%n mappen onder deze map konden niet worden gelezen, dus het is onbekend of ze eigen ontvangers hebben: %1</numerusform>
         </translation>
     </message>
     <message>

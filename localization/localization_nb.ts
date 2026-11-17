@@ -1694,12 +1694,12 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mottakere endret av pullen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pullen endret mottakerne for %1 etter at du lagret dem, så ingenting ble rekryptert: oppføringer i den kan fortsatt være kryptert til de forrige mottakerne, og alle du nettopp fjernet, kan kanskje fortsatt lese dem. Åpne Brukere for den mappen igjen, kontroller mottakerne og lagre.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3596,13 +3596,13 @@ Fortsette?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kan ikke kontrollere mottakerlistene</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 inneholder en fil eller mappe med et navn som ikke er gyldig UTF-8. QtPass kan ikke se hva som ligger bak det navnet, mens pass ville rekryptert det, så ingenting ble endret. Gi det nytt navn, og prøv deretter igjen.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3892,8 +3892,8 @@ Vanlige oppføringer har en klarert krypteringsnøkkel; velg disse for å la and
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n mappe under denne har egne mottakere, som ikke endres ved å lagre her: %1</numerusform>
+            <numerusform>%n mapper under denne har egne mottakere, som ikke endres ved å lagre her: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3901,8 +3901,8 @@ Vanlige oppføringer har en klarert krypteringsnøkkel; velg disse for å la and
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n mappe under denne kunne ikke leses, så det er ukjent om den har egne mottakere: %1</numerusform>
+            <numerusform>%n mapper under denne kunne ikke leses, så det er ukjent om de har egne mottakere: %1</numerusform>
         </translation>
     </message>
     <message>

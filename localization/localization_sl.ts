@@ -1694,12 +1694,12 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull je spremenil prejemnike</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull je spremenil prejemnike za %1, potem ko ste jih shranili, zato ni bilo nič ponovno šifrirano: vnosi v njej so morda še vedno šifrirani za prejšnje prejemnike, tisti, ki ste jih pravkar odstranili, pa jih morda še vedno lahko preberejo. Za to mapo znova odprite Uporabnike, preverite prejemnike in shranite.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3578,13 +3578,13 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznamov prejemnikov ni mogoče preveriti</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 vsebuje datoteko ali mapo, katere ime ni veljaven UTF-8. QtPass ne vidi, kaj je za tem imenom, pass pa bi jo ponovno šifriral, zato ni bilo nič spremenjeno. Preimenujte jo in poskusite znova.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -3858,10 +3858,10 @@ Za vnose [NEVELJAVEN] in [POTEKEL] ni mogoče šifrirati; vnosi [DELNI] imajo kl
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n podmapa ima lastne prejemnike, ki jih shranjevanje tukaj ne spremeni: %1</numerusform>
+            <numerusform>%n podmapi imata lastne prejemnike, ki jih shranjevanje tukaj ne spremeni: %1</numerusform>
+            <numerusform>%n podmape imajo lastne prejemnike, ki jih shranjevanje tukaj ne spremeni: %1</numerusform>
+            <numerusform>%n podmap ima lastne prejemnike, ki jih shranjevanje tukaj ne spremeni: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3869,10 +3869,10 @@ Za vnose [NEVELJAVEN] in [POTEKEL] ni mogoče šifrirati; vnosi [DELNI] imajo kl
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n podmape ni bilo mogoče prebrati, zato ni znano, ali ima lastne prejemnike: %1</numerusform>
+            <numerusform>%n podmap ni bilo mogoče prebrati, zato ni znano, ali imata lastne prejemnike: %1</numerusform>
+            <numerusform>%n podmap ni bilo mogoče prebrati, zato ni znano, ali imajo lastne prejemnike: %1</numerusform>
+            <numerusform>%n podmap ni bilo mogoče prebrati, zato ni znano, ali imajo lastne prejemnike: %1</numerusform>
         </translation>
     </message>
     <message>

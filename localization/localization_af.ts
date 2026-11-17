@@ -1734,12 +1734,12 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ontvangers deur die pull verander</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die pull het die ontvangers van %1 verander nadat jy hulle gestoor het, dus is niks herenkripteer nie: inskrywings daarin is dalk steeds na die vorige ontvangers geënkripteer, en enigiemand wat jy pas verwyder het, kan hulle dalk steeds lees. Open Gebruikers weer vir daardie lêergids, kontroleer die ontvangers en stoor.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3805,13 +3805,13 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kan nie die ontvangerslyste nagaan nie</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 bevat &apos;n lêer of lêergids waarvan die naam nie geldige UTF-8 is nie. QtPass kan nie sien wat agter daardie naam is nie, terwyl pass dit wel sou herenkripteer, dus is niks verander nie. Hernoem dit en probeer dan weer.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4119,8 +4119,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n lêergids onder hierdie een het sy eie ontvangers, wat nie verander word deur hier te stoor nie: %1</numerusform>
+            <numerusform>%n lêergidse onder hierdie een het hul eie ontvangers, wat nie verander word deur hier te stoor nie: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -4128,8 +4128,8 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n lêergids onder hierdie een kon nie gelees word nie, dus is dit onbekend of dit eie ontvangers het: %1</numerusform>
+            <numerusform>%n lêergidse onder hierdie een kon nie gelees word nie, dus is dit onbekend of hulle eie ontvangers het: %1</numerusform>
         </translation>
     </message>
     <message>
