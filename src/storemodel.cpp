@@ -6,6 +6,7 @@
 #include "util.h"
 #include <QApplication>
 #include <QDebug>
+#include <QDir>
 #include <QFileSystemModel>
 #include <QMessageBox>
 #include <QMimeData>
@@ -62,6 +63,12 @@ void StoreModel::setPass(Pass *pass) { m_pass = pass; }
 auto StoreModel::filterAcceptsRow(int sourceRow,
                                   const QModelIndex &sourceParent) const
     -> bool {
+  // Nothing under a folder that leads back into its own path is listed,
+  // also when the file system model loaded it anyway.
+  if (fs != nullptr && sourceParent.isValid() &&
+      leadsBack(fs->filePath(sourceParent))) {
+    return false;
+  }
   QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
   return showThis(index);
 }
@@ -77,8 +84,10 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   if (fs == nullptr) {
     return retVal;
   }
-  // Gives you the info for number of children with a parent
-  if (sourceModel()->rowCount(index) > 0) {
+  // Gives you the info for number of children with a parent. A folder that
+  // leads back into its own path (a link such as `x -> .`) is judged by its
+  // name like an entry: entering it would never end.
+  if (sourceModel()->rowCount(index) > 0 && !leadsBack(fs->filePath(index))) {
     for (int nChild = 0; nChild < sourceModel()->rowCount(index); ++nChild) {
       QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
       if (!childIndex.isValid()) {
@@ -108,6 +117,79 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
     retVal = path.contains(filterRegularExpression());
   }
   return retVal;
+}
+
+namespace {
+#ifdef Q_OS_WIN
+/// One folder may be spelled in either case on Windows.
+constexpr Qt::CaseSensitivity pathCase = Qt::CaseInsensitive;
+#else
+/// Paths differing in case are different folders.
+constexpr Qt::CaseSensitivity pathCase = Qt::CaseSensitive;
+#endif
+
+/**
+ * @brief Whether folder @p dir is @p other or a folder above it.
+ * @param dir Canonical path of a folder.
+ * @param other Canonical path of another folder.
+ * @return true when @p other is @p dir or lies under it.
+ */
+auto isSameOrAbove(const QString &dir, const QString &other) -> bool {
+  if (other.compare(dir, pathCase) == 0) {
+    return true;
+  }
+  const QString prefix =
+      dir.endsWith(QLatin1Char('/')) ? dir : dir + QLatin1Char('/');
+  return other.startsWith(prefix, pathCase);
+}
+} // namespace
+
+auto StoreModel::leadsBack(const QString &path) const -> bool {
+  const QString relative = QDir(store).relativeFilePath(path);
+  if (relative == QLatin1String(".") || relative == QLatin1String("..") ||
+      relative.startsWith(QLatin1String("../")) ||
+      QDir::isAbsolutePath(relative)) {
+    return false;
+  }
+  const QFileInfo info(path);
+  if (!info.isDir()) {
+    return false;
+  }
+  const QString target = info.canonicalFilePath();
+  if (target.isEmpty()) {
+    return true;
+  }
+  // Compare with every folder on the way up to the store: a cycle through
+  // several links comes back to one of them.
+  const QString root = QDir::cleanPath(store);
+  QString up = QDir::cleanPath(path);
+  do {
+    up = QFileInfo(up).path();
+    const QString seen = QFileInfo(up).canonicalFilePath();
+    if (!seen.isEmpty() && isSameOrAbove(target, seen)) {
+      return true;
+    }
+  } while (up.compare(root, pathCase) != 0 && QFileInfo(up).path() != up);
+  return false;
+}
+
+auto StoreModel::leadsBackAt(const QModelIndex &proxyIndex) const -> bool {
+  return fs != nullptr && proxyIndex.isValid() &&
+         leadsBack(fs->filePath(mapToSource(proxyIndex)));
+}
+
+auto StoreModel::hasChildren(const QModelIndex &parent) const -> bool {
+  return !leadsBackAt(parent) && QSortFilterProxyModel::hasChildren(parent);
+}
+
+auto StoreModel::canFetchMore(const QModelIndex &parent) const -> bool {
+  return !leadsBackAt(parent) && QSortFilterProxyModel::canFetchMore(parent);
+}
+
+void StoreModel::fetchMore(const QModelIndex &parent) {
+  if (!leadsBackAt(parent)) {
+    QSortFilterProxyModel::fetchMore(parent);
+  }
 }
 
 /**
