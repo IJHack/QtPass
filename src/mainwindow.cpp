@@ -1088,10 +1088,14 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
     return;
   const QString fullPath =
       QDir::cleanPath(QDir(s.passStore).filePath(entry + ".gpg"));
-  const QModelIndex proxyIndex = m_tree->indexFor(fullPath);
+  // Persistent: setCurrentIndex() runs the selection handlers, which can
+  // change the model before the click is handled.
+  const QPersistentModelIndex proxyIndex(m_tree->indexFor(fullPath));
   if (!proxyIndex.isValid())
     return;
   ui->treeView->setCurrentIndex(proxyIndex);
+  if (!proxyIndex.isValid())
+    return;
   on_treeView_clicked(proxyIndex);
   if (s.hideContent || s.useAutoclearPanel)
     ui->grepResultsList->clear();
@@ -2045,21 +2049,34 @@ void MainWindow::startReencryptPath() {
 }
 
 void MainWindow::reencryptProgress(int current, int total) {
-  if (!m_reencryptProgress)
+  if (!m_reencryptProgress || m_inProgressUpdate)
     return;
-  m_reencryptProgress->setMaximum(total);
-  m_reencryptProgress->setLabelText(
+  QProgressDialog *progress = m_reencryptProgress;
+  progress->setMaximum(total);
+  progress->setLabelText(
       tr("Re-encrypting passwords: %1 of %2").arg(current).arg(total));
   // On a modal dialog setValue() runs processEvents(), which can deliver
-  // endReencryptPath() and reset m_reencryptProgress: keep this last.
-  m_reencryptProgress->setValue(current);
+  // endReencryptPath(), even inside a nested event loop that would delete a
+  // deleteLater()ed dialog under setValue()'s feet: keep this last, and
+  // delete the dialog only after it returns.
+  m_inProgressUpdate = true;
+  progress->setValue(current);
+  m_inProgressUpdate = false;
+  if (m_progressToDelete) {
+    m_progressToDelete->deleteLater();
+    m_progressToDelete = nullptr;
+  }
 }
 
 void MainWindow::endReencryptPath() {
   m_reencryptRunning = false;
   if (m_reencryptProgress) {
     m_reencryptProgress->hide();
-    m_reencryptProgress->deleteLater();
+    if (m_inProgressUpdate) {
+      m_progressToDelete = m_reencryptProgress;
+    } else {
+      m_reencryptProgress->deleteLater();
+    }
     m_reencryptProgress = nullptr;
   }
   setUiElementsEnabled(true);

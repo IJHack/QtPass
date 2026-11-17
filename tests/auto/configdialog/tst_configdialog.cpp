@@ -182,6 +182,7 @@ private Q_SLOTS:
   void passBackendWarnsOfARepositoryAboveTheStore();
   void signingKeyMustBeAFullFingerprint();
   void activeProfileFollowsRenameAndDeletion();
+  void deleteLeavesTheFormOnTheHighlightedProfile();
   void fieldLabelsHaveBuddies();
   void browseButtonsAreNamed();
   void dialogCanShrinkBelowItsOldMinimum();
@@ -1184,6 +1185,51 @@ void tst_configdialog::okWaitsForValidProfiles() {
   QVERIFY2(ok->isEnabled(), "the broken profile is gone");
   QCOMPARE(list->count(), 1);
   QCOMPARE(dialog.getProfiles().keys(), QStringList{QStringLiteral("one")});
+}
+
+/**
+ * @brief After Delete, the form shows the profile the list highlights, and
+ * edits go to it. The list moved its current row while the row was being
+ * removed, so the form named the profile after it: a signing key typed next
+ * went to the wrong profile.
+ */
+void tst_configdialog::deleteLeavesTheFormOnTheHighlightedProfile() {
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+
+  Profiles profiles;
+  for (const char *name : {"a", "b", "c", "d"}) {
+    Profile p;
+    p.path = QStringLiteral("/store/") + QLatin1String(name);
+    profiles.insert(QLatin1String(name), p);
+  }
+  QtPassSettings::setProfiles(profiles);
+
+  ConfigDialog dialog(nullptr);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("profileList"));
+  auto *name = child<QLineEdit>(dialog, "profileName");
+  auto *key = child<QLineEdit>(dialog, "profileSigningKey");
+  QVERIFY(list != nullptr && list->count() == 4);
+  list->setCurrentRow(0);
+  QCOMPARE(name->text(), QStringLiteral("a"));
+
+  QVERIFY(QMetaObject::invokeMethod(&dialog, "on_deleteButton_clicked"));
+  QCOMPARE(list->count(), 3);
+  QCOMPARE(name->text(), list->currentItem()->text());
+
+  const QString highlighted = list->currentItem()->text();
+  key->setText(QStringLiteral("0123456789ABCDEF"));
+  emit key->textEdited(key->text());
+  const Profiles after = dialog.getProfiles();
+  QCOMPARE(after.value(highlighted).signingKey,
+           QStringLiteral("0123456789ABCDEF"));
+  for (auto i = after.cbegin(); i != after.cend(); ++i) {
+    if (i.key() != highlighted) {
+      QVERIFY2(i.value().signingKey.isEmpty(), qPrintable(i.key()));
+    }
+  }
 }
 
 /**

@@ -121,6 +121,7 @@ private Q_SLOTS:
   void deselectableTreeViewClickDoesNotBlock();
   void deselectableTreeViewClearsSelectionAfterDoubleClickInterval();
   void deselectableTreeViewDoubleClickKeepsSelection();
+  void deselectableTreeViewFollowsTheRowAClickHandlerMoves();
   void deselectableTreeViewSecondClickCancelsPendingDeselect();
 };
 
@@ -1200,6 +1201,33 @@ void tst_ui::deselectableTreeViewClearsSelectionAfterDoubleClickInterval() {
 
   QVERIFY2(spy.wait(5000), "emptyClicked should fire after the interval");
   QVERIFY(!view.selectionModel()->isSelected(first));
+}
+
+/// The released row is followed when what clicked() runs changes the model
+/// (a message box for a link, the file system model reloading meanwhile): a
+/// plain index then named another row, or memory that was gone.
+void tst_ui::deselectableTreeViewFollowsTheRowAClickHandlerMoves() {
+  DeselectableTreeView view(nullptr);
+  QStandardItemModel model(1, 1);
+  model.setItem(0, 0, new QStandardItem(QStringLiteral("one")));
+  view.setModel(&model);
+  view.resize(200, 100);
+
+  const QModelIndex first = model.index(0, 0);
+  view.selectionModel()->select(first, QItemSelectionModel::Select);
+  connect(&view, &QTreeView::clicked, &view, [&model] {
+    model.insertRow(0, new QStandardItem(QStringLiteral("new")));
+  });
+
+  QSignalSpy spy(&view, &DeselectableTreeView::emptyClicked);
+  const QPoint pos = view.visualRect(first).center();
+  QTest::mousePress(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+  QTest::mouseRelease(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+
+  QVERIFY2(spy.wait(5000),
+           "the selected row moved down, and its deselect must still run");
+  QCOMPARE(model.item(1)->text(), QStringLiteral("one"));
+  QVERIFY(!view.selectionModel()->isSelected(model.index(1, 0)));
 }
 
 /// A double-click opens the editor, so it must cancel the pending deselect.

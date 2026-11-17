@@ -393,6 +393,7 @@ private Q_SLOTS:
   void backendCompletionReachesTheWindowThroughQtPass();
   void reencryptKeepsUiDisabledUntilEnd();
   void reencryptProgressSurvivesQueuedEnd();
+  void reencryptProgressSurvivesANestedLoopThatEndsTheRun();
   void flashTextSetsContent();
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
@@ -724,6 +725,39 @@ void tst_mainwindow::reencryptKeepsUiDisabledUntilEnd() {
   QVERIFY(!treeView->isEnabled());
   m_window->setUiElementsEnabled(true);
   QVERIFY(treeView->isEnabled());
+}
+
+/**
+ * @brief The dialog is not deleted while its setValue() is on the stack.
+ *
+ * setValue() on the modal dialog runs processEvents(). When that delivers
+ * the worker's error box, its nested event loop runs endReencryptPath() and
+ * then processes the dialog's deleteLater(): the dialog went while setValue()
+ * still ran on it. Here the queued call ends the run and flushes deferred
+ * deletes, as that nested loop does.
+ */
+void tst_mainwindow::reencryptProgressSurvivesANestedLoopThatEndsTheRun() {
+  m_window->startReencryptPath();
+  QPointer<QProgressDialog> progress = m_window->findChild<QProgressDialog *>();
+  QVERIFY2(progress != nullptr, "a progress dialog must be shown");
+  m_window->reencryptProgress(0, 5);
+  QTest::qWait(10);
+
+  bool aliveInside = false;
+  bool ran = false;
+  QMetaObject::invokeMethod(
+      m_window.data(),
+      [this, &progress, &aliveInside, &ran]() {
+        m_window->endReencryptPath();
+        QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+        aliveInside = !progress.isNull();
+        ran = true;
+      },
+      Qt::QueuedConnection);
+  m_window->reencryptProgress(5, 5);
+  QVERIFY2(ran, "the queued end must have run inside setValue()");
+  QVERIFY2(aliveInside, "the dialog must outlive its own setValue()");
+  QTRY_VERIFY2(progress.isNull(), "the dialog is deleted afterwards");
 }
 
 /**

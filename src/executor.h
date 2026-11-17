@@ -166,6 +166,15 @@ public:
    * @param parent Parent QObject, or nullptr for no parent.
    */
   explicit Executor(QObject *parent = nullptr);
+  /**
+   * @brief Stop listening to the running process before it goes.
+   *
+   * ~QProcess kills a command still running (a gpg decrypting at quit) and
+   * emits finished(). Delivered, that ran onProcessFinished() and the owner's
+   * slots on an object half destroyed: Pass::finished() read members that
+   * were already gone.
+   */
+  ~Executor() override;
 
   /**
    * @brief Queue a command without stdin input.
