@@ -1142,23 +1142,23 @@ The value will still be saved as entered.</source>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="199"/>
+        <location filename="../src/gpgidgeneration.cpp" line="200"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">ไม่สามารถเข้าถึงระเบียนรุ่นของรายชื่อผู้รับ %1 ได้</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="208"/>
+        <location filename="../src/gpgidgeneration.cpp" line="209"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">ไม่สามารถอ่านระเบียนรุ่นของรายชื่อผู้รับ %1 ได้ รายชื่อผู้รับที่ลงนามแล้วจะไม่ได้รับการยอมรับจนกว่าระเบียนนี้จะได้รับการซ่อมแซมหรือถูกลบออก (ซึ่งจะทำให้ลืมสิ่งที่เคยยอมรับไว้ก่อนหน้า)</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="230"/>
-        <location filename="../src/gpgidgeneration.cpp" line="243"/>
+        <location filename="../src/gpgidgeneration.cpp" line="231"/>
+        <location filename="../src/gpgidgeneration.cpp" line="244"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">ไม่สามารถเขียนระเบียนรุ่นของรายชื่อผู้รับ %1 ได้</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="297"/>
+        <location filename="../src/gpgidgeneration.cpp" line="298"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">ไม่สามารถล็อกระเบียนรุ่นของรายชื่อผู้รับ %1 ได้: QtPass อีกตัวหนึ่งอาจกำลังใช้งานอยู่ หรือไม่สามารถเขียนลงโฟลเดอร์ของระเบียนได้</translation>
     </message>
@@ -1171,32 +1171,32 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">บรรทัดที่เก็บมีรูปแบบไม่ถูกต้อง: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="470"/>
+        <location filename="../src/gpgidgeneration.cpp" line="471"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">รายชื่อนี้มีบรรทัดรุ่นมากกว่าหนึ่งบรรทัด</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="479"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">บรรทัดรุ่นมีรูปแบบไม่ถูกต้อง: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="485"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">รายชื่อนี้มีบรรทัดโฟลเดอร์มากกว่าหนึ่งบรรทัด</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="495"/>
+        <location filename="../src/gpgidgeneration.cpp" line="504"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">บรรทัดโฟลเดอร์มีรูปแบบไม่ถูกต้อง: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="499"/>
+        <location filename="../src/gpgidgeneration.cpp" line="508"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">บรรทัดส่วนหัวมีรูปแบบไม่ถูกต้อง: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
+        <location filename="../src/gpgidgeneration.cpp" line="541"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">รายชื่อนี้มีบรรทัดรุ่นแต่ไม่มีบรรทัดโฟลเดอร์</translation>
     </message>
@@ -1205,50 +1205,50 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">รายชื่อนี้มีบรรทัดที่เก็บ แต่ไม่มีบรรทัดรุ่น</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="695"/>
+        <location filename="../src/gpgidgeneration.cpp" line="704"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 ไม่ใช่รายชื่อที่ควรเชื่อถือ: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="631"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 ถูกเขียนขึ้นสำหรับโฟลเดอร์ &quot;%2&quot; ของที่เก็บรหัสผ่าน ไม่ใช่สำหรับ &quot;%3&quot; จึงไม่ถูกนำมาใช้ รายชื่อนี้อาจถูกผู้อื่นคัดลอกมาไว้ที่นี่ แต่หากเป็นเพราะโฟลเดอร์ถูกย้ายหรือเปลี่ยนชื่อ ให้ผู้ถือกุญแจลงนามเปิดผู้ใช้ที่โฟลเดอร์นี้แล้วบันทึกผู้รับ ซึ่งจะผูกรายชื่อเข้ากับตำแหน่งที่อยู่ในปัจจุบัน</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <location filename="../src/gpgidgeneration.cpp" line="454"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
         <translation type="unfinished">รายชื่อนี้มีบรรทัด ID ที่เก็บมากกว่าหนึ่งบรรทัด</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="465"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
         <translation type="unfinished">บรรทัด ID ที่เก็บมีรูปแบบไม่ถูกต้อง: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <location filename="../src/gpgidgeneration.cpp" line="549"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
         <translation type="unfinished">รายชื่อนี้มีบรรทัด ID ที่เก็บแต่ไม่มีบรรทัดรุ่น</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="635"/>
+        <location filename="../src/gpgidgeneration.cpp" line="644"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">รุ่นที่ %1 เป็นรุ่นสูงสุดที่เป็นไปได้แล้ว จึงไม่สามารถเขียนรายชื่อที่ใหม่กว่านี้ที่นี่ได้: การลบ %2 จะทำให้อุปกรณ์นี้ลืมสิ่งที่เคยยอมรับไว้ก่อนหน้า หลังจากนั้นผู้ถือกุญแจลงนามจึงสามารถดำเนินการต่อได้โดยเปิดผู้ใช้แล้ว%3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="642"/>
+        <location filename="../src/gpgidgeneration.cpp" line="651"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">ผู้ถือกุญแจลงนามสามารถดำเนินการต่อได้โดยเปิดผู้ใช้แล้ว%1 ซึ่งจะเขียนรุ่นที่ %2 การลบ %3 จะทำให้อุปกรณ์นี้ลืมสิ่งที่เคยยอมรับไว้ก่อนหน้า</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="659"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 ไม่มีบรรทัดรุ่น ขณะที่รุ่นที่ %2 เคยได้รับการยอมรับที่นี่มาก่อน pass ไม่เขียนบรรทัดรุ่น (รวมถึงเมื่อใช้ผ่านแบ็กเอนด์ pass ของ QtPass ด้วย) และ QtPass ก่อนเวอร์ชัน 2.0 ก็ไม่เขียนเช่นกัน เมื่อไม่มีบรรทัดรุ่น รายชื่อนี้อาจถูกเขียนขึ้นสำหรับโฟลเดอร์อื่นของที่เก็บรหัสผ่านแล้วถูกคัดลอกมาไว้ที่นี่ก็เป็นได้ %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="668"/>
+        <location filename="../src/gpgidgeneration.cpp" line="677"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">เลือกผู้รับใหม่ทั้งหมดแล้วบันทึก</translation>
     </message>
@@ -1257,7 +1257,7 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">รายชื่อผู้รับที่ลงนาม %1 ไม่มีบรรทัดที่เก็บ ในขณะที่อุปกรณ์นี้รู้จักที่เก็บนี้ด้วย ID %2: รายชื่อนี้อาจถูกเขียนสำหรับที่เก็บอื่นแล้วคัดลอกมาไว้ที่นี่ หรือเขียนโดย QtPass รุ่นเก่ากว่า ผู้ถือกุญแจลงนามแก้ไขได้โดยเปิด &quot;ผู้ใช้&quot; เลือกผู้รับใหม่อีกครั้ง แล้วบันทึก ซึ่งจะเขียนบรรทัดที่เก็บ</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="873"/>
+        <location filename="../src/gpgidgeneration.cpp" line="882"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">ระเบียนรุ่นของรายชื่อผู้รับ %1 ได้เลื่อนไปเป็นรุ่นที่ %2 แล้ว ขณะที่รุ่นที่ %3 กำลังถูกเขียนอยู่</translation>
     </message>
@@ -1270,38 +1270,38 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">รายชื่อผู้รับที่ลงนามแล้ว %1 ไม่มีบรรทัดรุ่น ขณะที่รุ่นที่ %2 เคยได้รับการยอมรับที่นี่มาก่อน pass ไม่เขียนบรรทัดรุ่น (รวมถึงเมื่อใช้ผ่านแบ็กเอนด์ pass ของ QtPass ด้วย) และ QtPass ก่อนเวอร์ชัน 2.0 ก็ไม่เขียนเช่นกัน %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="673"/>
+        <location filename="../src/gpgidgeneration.cpp" line="682"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 เป็นรุ่นที่ %2 ซึ่งเก่ากว่ารุ่นที่ %3 อันเป็นรุ่นล่าสุดที่ QtPass ยอมรับที่นี่ รายชื่อนี้อาจถูกผู้อื่นนำกลับมาวางไว้ %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="680"/>
+        <location filename="../src/gpgidgeneration.cpp" line="689"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">บันทึกผู้รับ: ผู้รับที่เลือกไว้ล่วงหน้าในนั้นคือผู้รับตามรายชื่อนี้ ดังนั้นให้ลบผู้ที่ไม่ควรมีสิทธิ์เข้าถึงอีกต่อไปออกก่อน</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="754"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 เป็นรุ่นที่ %2 ซึ่งเป็นรุ่นเดียวกับรายชื่ออื่นที่อุปกรณ์นี้เคยยอมรับไว้ก่อนหน้า อาจเป็นเพราะอุปกรณ์สองเครื่องบันทึกผู้รับพร้อมกัน (Git จะแสดงข้อขัดแย้งให้เห็น) หรือมีการนำรายชื่อของแท้ในรุ่นนั้นมาสับเปลี่ยนแทน %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="753"/>
+        <location filename="../src/gpgidgeneration.cpp" line="762"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">ตรวจสอบผู้รับแล้วบันทึก</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="779"/>
+        <location filename="../src/gpgidgeneration.cpp" line="788"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 ถูกเขียนขึ้นสำหรับที่เก็บรหัสผ่านอื่น (ID ที่เก็บ %2; อุปกรณ์นี้รู้จักที่เก็บนี้ในชื่อ %3) จึงไม่ถูกนำมาใช้ รายชื่อนี้อาจถูกคัดลอกมาจากที่เก็บที่ลงนามด้วยกุญแจเดียวกัน หากที่เก็บนี้ถูกตั้งค่าใหม่แทน การลบ %4 จะทำให้อุปกรณ์นี้ลืม ID ที่เก็บที่รู้จัก</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <location filename="../src/gpgidgeneration.cpp" line="806"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
         <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 ไม่มีบรรทัด ID ที่เก็บ ในขณะที่อุปกรณ์นี้รู้จักที่เก็บนี้ด้วย ID %2: รายชื่อนี้อาจถูกเขียนสำหรับที่เก็บอื่นแล้วคัดลอกมาไว้ที่นี่ หรือเขียนโดย QtPass รุ่นเก่า ผู้ถือกุญแจลงนามสามารถดำเนินการต่อได้โดยเปิดผู้ใช้ เลือกผู้รับใหม่อีกครั้งแล้วบันทึก ซึ่งจะเขียนบรรทัด ID ที่เก็บ</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="841"/>
+        <location filename="../src/gpgidgeneration.cpp" line="850"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">รายชื่อผู้รับ %1 มาถึงรุ่นที่ %2 ซึ่งเป็นรุ่นสูงสุดที่เป็นไปได้แล้ว จึงไม่สามารถเขียนรายชื่อได้</translation>
     </message>
@@ -1334,21 +1334,21 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="212"/>
         <location filename="../src/imitatepass.cpp" line="473"/>
-        <location filename="../src/imitatepass.cpp" line="823"/>
+        <location filename="../src/imitatepass.cpp" line="828"/>
         <location filename="../src/realpass.cpp" line="135"/>
         <source>Check .gpg-id file signature!</source>
         <translation>ตรวจสอบลายเซ็นไฟล์ .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="474"/>
-        <location filename="../src/imitatepass.cpp" line="668"/>
+        <location filename="../src/imitatepass.cpp" line="673"/>
         <location filename="../src/realpass.cpp" line="131"/>
         <source>Signature for %1 is invalid.</source>
         <translation>ลายเซ็นสำหรับ %1 ไม่ถูกต้อง</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
-        <location filename="../src/imitatepass.cpp" line="946"/>
+        <location filename="../src/imitatepass.cpp" line="951"/>
         <source>Can not edit</source>
         <translation>ไม่สามารถแก้ไข</translation>
     </message>
@@ -1364,7 +1364,7 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
-        <location filename="../src/imitatepass.cpp" line="947"/>
+        <location filename="../src/imitatepass.cpp" line="952"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>ไม่สามารถอ่านกุญแจเข้ารหัสเพื่อใช้ ไฟล์ .gpg-id หายไปหรือไม่ถูกต้อง</translation>
     </message>
@@ -1516,50 +1516,50 @@ You will not be able to change the user list!</source>
         <translation type="unfinished">Git จบการทำงานด้วยรหัส %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="691"/>
+        <location filename="../src/imitatepass.cpp" line="696"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 ไม่สามารถอ่านเป็นรายชื่อผู้รับได้ (ต้องเป็นไฟล์ปกติที่มีขนาดไม่เกิน %2)</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="705"/>
-        <location filename="../src/imitatepass.cpp" line="733"/>
-        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/imitatepass.cpp" line="710"/>
+        <location filename="../src/imitatepass.cpp" line="738"/>
+        <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">ไฟล์ที่หลงเหลือจากการเข้ารหัสใหม่ครั้งก่อน</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="706"/>
+        <location filename="../src/imitatepass.cpp" line="711"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 ไม่ใช่ไฟล์ปกติและไม่ได้ถูกกู้คืน โปรดตรวจดูและลบออก จากนั้นเข้ารหัสใหม่อีกครั้ง</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="734"/>
+        <location filename="../src/imitatepass.cpp" line="739"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">มี %1 อยู่ข้าง %2 ทั้งสองไฟล์เป็นสำเนาที่เข้ารหัสของรายการเดียวกัน โปรดตรวจสอบว่าต้องการไฟล์ใดแล้วลบอีกไฟล์ จากนั้นเข้ารหัสใหม่อีกครั้ง</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="748"/>
+        <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">กู้คืน %1 จากไฟล์สำรองที่การเข้ารหัสใหม่ซึ่งถูกขัดจังหวะทิ้งไว้แล้ว</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="742"/>
+        <location filename="../src/imitatepass.cpp" line="747"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">ไม่พบ %1 และไม่สามารถเปลี่ยนชื่อไฟล์สำรอง %2 กลับได้ โปรดเปลี่ยนชื่อด้วยตนเอง จากนั้นเข้ารหัสใหม่อีกครั้ง</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="987"/>
+        <location filename="../src/imitatepass.cpp" line="992"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">ไม่สามารถเข้ารหัส %1 ใหม่ได้: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1051"/>
+        <location filename="../src/imitatepass.cpp" line="1056"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
         <translation type="unfinished">ที่เก็บ Git ของที่เก็บรหัสผ่านมีไฟล์ที่ยังไม่ได้รวม โปรดแก้ไขความขัดแย้งด้วย Git ก่อนเข้ารหัสใหม่</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1377"/>
-        <location filename="../src/realpass.cpp" line="508"/>
+        <location filename="../src/imitatepass.cpp" line="1407"/>
+        <location filename="../src/realpass.cpp" line="529"/>
         <source>Re-encryption failed</source>
         <translation>การเข้ารหัสใหม่ล้มเหลว</translation>
     </message>
@@ -1576,143 +1576,153 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">ไม่สามารถลบไฟล์สำรอง %1 หลังการเข้ารหัสใหม่ สามารถลบได้อย่างปลอดภัย</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1024"/>
+        <location filename="../src/imitatepass.cpp" line="1029"/>
         <source>Creating backup commit</source>
         <translation>กำลังสร้างคอมมิตสำรอง</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1038"/>
-        <location filename="../src/imitatepass.cpp" line="1062"/>
+        <location filename="../src/imitatepass.cpp" line="1043"/>
+        <location filename="../src/imitatepass.cpp" line="1067"/>
         <source>Backup commit failed</source>
         <translation>คอมมิตสำรองล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1039"/>
+        <location filename="../src/imitatepass.cpp" line="1044"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>ไม่สามารถตรวจสอบสถานะ git การเข้ารหัสใหม่ถูกยกเลิก</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1050"/>
-        <location filename="../src/imitatepass.cpp" line="1296"/>
+        <location filename="../src/imitatepass.cpp" line="1055"/>
+        <location filename="../src/imitatepass.cpp" line="1301"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">การทำงาน Git ยังไม่เสร็จ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1063"/>
+        <location filename="../src/imitatepass.cpp" line="1068"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>การเข้ารหัสใหม่ถูกยกเลิกเนื่องจากไม่สามารถสร้างสำรอง git ได้</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1105"/>
+        <location filename="../src/imitatepass.cpp" line="1110"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">การเข้ารหัสใหม่กำลังทำงานอยู่แล้ว</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1112"/>
+        <location filename="../src/imitatepass.cpp" line="1117"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">ไม่ใช่โฟลเดอร์ของที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1113"/>
+        <location filename="../src/imitatepass.cpp" line="1118"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 เป็นลิงก์สัญลักษณ์หรือจังก์ชัน หรืออยู่ภายใต้ลิงก์ดังกล่าว สิ่งที่ลิงก์ชี้ไปไม่ใช่ส่วนหนึ่งของที่เก็บรหัสผ่านและไม่ได้ถูกเข้ารหัสใหม่</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1134"/>
         <source>Re-encrypting from folder %1</source>
         <translation>กำลังเข้ารหัสใหม่จากโฟลเดอร์ %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1205"/>
-        <location filename="../src/imitatepass.cpp" line="1421"/>
+        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1451"/>
         <source>Updating password-store</source>
         <translation>กำลังอัปเดตที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1218"/>
-        <location filename="../src/imitatepass.cpp" line="1224"/>
+        <location filename="../src/imitatepass.cpp" line="1223"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull ล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1219"/>
+        <location filename="../src/imitatepass.cpp" line="1224"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">ไม่สามารถตรวจสอบได้ว่าที่เก็บรหัสผ่านมีไฟล์ที่ยังไม่ได้ผสานรวมหลังการ pull หรือไม่ โปรดตรวจสอบด้วย git ก่อนเข้ารหัสใหม่</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1225"/>
+        <location filename="../src/imitatepass.cpp" line="1230"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">การ pull ทำให้ที่เก็บรหัสผ่านมีไฟล์ที่ยังไม่ได้ผสานรวม โปรดแก้ไขข้อขัดแย้งก่อนเข้ารหัสใหม่</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1229"/>
+        <location filename="../src/imitatepass.cpp" line="1234"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull ล้มเหลว กำลังเข้ารหัสที่เก็บรหัสผ่านใหม่ตามสภาพที่เป็นอยู่</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1246"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
         <translation type="unfinished">ไม่สามารถอ่าน %1: รายการในนั้นไม่ได้ถูกเข้ารหัสใหม่</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1250"/>
+        <location filename="../src/imitatepass.cpp" line="1255"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>ข้าม %n รายการ: ลิงก์สัญลักษณ์ จังก์ชัน หรือไฟล์พิเศษไม่ใช่ส่วนหนึ่งของที่เก็บรหัสผ่าน</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1271"/>
+        <location filename="../src/imitatepass.cpp" line="1276"/>
         <source>GPG ID verification failed</source>
         <translation>การตรวจสอบ GPG ID ล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1272"/>
+        <location filename="../src/imitatepass.cpp" line="1277"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>ไม่สามารถตรวจสอบ .gpg-id สำหรับไดเรกทอรี</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1305"/>
+        <location filename="../src/imitatepass.cpp" line="1310"/>
         <source>Not part of the store</source>
         <translation type="unfinished">ไม่ใช่ส่วนหนึ่งของที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1306"/>
+        <location filename="../src/imitatepass.cpp" line="1311"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">หลังการ pull %1 เป็นลิงก์สัญลักษณ์หรือจังก์ชัน หรืออยู่ภายใต้ลิงก์ดังกล่าว สิ่งที่ลิงก์ชี้ไปไม่ใช่ส่วนหนึ่งของที่เก็บรหัสผ่านและจะไม่ถูกแตะต้อง</translation>
     </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1329"/>
+        <source>Recipients changed by the pull</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1330"/>
+        <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1375"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... และอีก %n รายการ</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1378"/>
+        <location filename="../src/imitatepass.cpp" line="1408"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>มี %n ไฟล์ที่ไม่สามารถเข้ารหัสใหม่ได้:</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1396"/>
+        <location filename="../src/imitatepass.cpp" line="1426"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">การเข้ารหัสใหม่ถูกยกเลิก: ตรวจสอบแล้ว %1 จาก %2 ไฟล์, เข้ารหัสใหม่ %3 ไฟล์, ล้มเหลว %4 ไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1417"/>
+        <location filename="../src/imitatepass.cpp" line="1447"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
         <translation type="unfinished">ไม่ push: การเข้ารหัสใหม่ครั้งก่อนในที่เก็บรหัสผ่านนี้ยังไม่เสร็จสิ้น</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1471"/>
-        <location filename="../src/imitatepass.cpp" line="1480"/>
+        <location filename="../src/imitatepass.cpp" line="1502"/>
+        <location filename="../src/imitatepass.cpp" line="1511"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">ยังไม่ได้คอมมิตผู้รับ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1472"/>
+        <location filename="../src/imitatepass.cpp" line="1503"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1725,7 +1735,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 การเปลี่ยนแปลงยังไม่ได้คอมมิตหรือส่งขึ้นไป โปรดแก้ไขปัญหา Git แล้วคอมมิตการเปลี่ยนแปลง หรือบันทึกผู้รับอีกครั้ง</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1481"/>
+        <location filename="../src/imitatepass.cpp" line="1512"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1738,22 +1748,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 การเข้ารหัสใหม่ไม่เสร็จสมบูรณ์ ดังนั้นบางรายการหรือทุกรายการยังคงเข้ารหัสไว้สำหรับผู้รับเดิม ซึ่งยังอ่านรายการเหล่านั้นได้ ไม่มีสิ่งใดถูกคอมมิตหรือส่งขึ้นไป โปรดแก้ไขปัญหา Git แล้วบันทึกผู้รับอีกครั้ง</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1592"/>
+        <location filename="../src/imitatepass.cpp" line="1623"/>
         <source>Move failed</source>
         <translation type="unfinished">ย้ายไม่สำเร็จ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1593"/>
+        <location filename="../src/imitatepass.cpp" line="1624"/>
         <source>Could not move %1 to %2.</source>
         <translation type="unfinished">ไม่สามารถย้าย %1 ไปยัง %2 ได้</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1682"/>
+        <location filename="../src/imitatepass.cpp" line="1713"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">ไม่ได้กำหนดค่าไฟล์ปฏิบัติการ Git จึงข้าม git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1759"/>
+        <location filename="../src/imitatepass.cpp" line="1790"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg ไม่ได้เขียนข้อความที่เข้ารหัสสำหรับ %1 ออกมา</translation>
     </message>
@@ -1782,31 +1792,31 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">ไม่สามารถเข้ารหัสใหม่ %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1405"/>
+        <location filename="../src/imitatepass.cpp" line="1435"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>การเข้ารหัสใหม่เสร็จสมบูรณ์: %1 สำเร็จ, %2 ล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1410"/>
+        <location filename="../src/imitatepass.cpp" line="1440"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>การเข้ารหัสใหม่เสร็จสมบูรณ์: เข้ารหัสใหม่ %1 ไฟล์</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1426"/>
+        <location filename="../src/imitatepass.cpp" line="1456"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>ไม่ push: มี %n ไฟล์ที่เข้ารหัสใหม่ล้มเหลว</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1601"/>
-        <location filename="../src/imitatepass.cpp" line="1648"/>
+        <location filename="../src/imitatepass.cpp" line="1632"/>
+        <location filename="../src/imitatepass.cpp" line="1679"/>
         <source>Copy failed</source>
         <translation type="unfinished">การคัดลอกล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1602"/>
-        <location filename="../src/imitatepass.cpp" line="1649"/>
+        <location filename="../src/imitatepass.cpp" line="1633"/>
+        <location filename="../src/imitatepass.cpp" line="1680"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">ไม่สามารถคัดลอก %1 ไปยัง %2</translation>
     </message>
@@ -1837,7 +1847,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="58"/>
+        <location filename="../src/importkeydialog.cpp" line="63"/>
         <source>Import GPG key</source>
         <translation>นำเข้ากุญแจ GPG</translation>
     </message>
@@ -1857,7 +1867,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>นำเข้า</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="59"/>
+        <location filename="../src/importkeydialog.cpp" line="64"/>
         <source>ASCII-armored GPG key</source>
         <translation>กุญแจ GPG แบบ ASCII-armored</translation>
     </message>
@@ -1870,12 +1880,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">นำเข้ากุญแจ</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="76"/>
+        <location filename="../src/importkeydialog.cpp" line="81"/>
         <source>Could not open file: %1</source>
         <translation>ไม่สามารถเปิดไฟล์: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="101"/>
+        <location filename="../src/importkeydialog.cpp" line="106"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 ดูเหมือนจะไม่ใช่กุญแจ GPG แบบ ASCII-armored แปลงด้วย &lt;code&gt;gpg --armor --export&lt;/code&gt; ก่อน หรือวางบล็อก armored ผ่าน &lt;b&gt;จากคลิปบอร์ด&lt;/b&gt;</translation>
     </message>
@@ -1884,38 +1894,38 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 ดูเหมือนจะไม่ใช่กุญแจ GPG แบบ ASCII-armored แปลงด้วย &lt;code&gt;gpg --armor --export&lt;/code&gt; ก่อนหรือวางบล็อก armored ผ่าน &lt;b&gt;จากคลิปบอร์ด&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="59"/>
+        <location filename="../src/importkeydialog.cpp" line="64"/>
         <source>All files</source>
         <translation>ไฟล์ทั้งหมด</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="75"/>
-        <location filename="../src/importkeydialog.cpp" line="88"/>
-        <location filename="../src/importkeydialog.cpp" line="100"/>
-        <location filename="../src/importkeydialog.cpp" line="200"/>
-        <location filename="../src/importkeydialog.cpp" line="204"/>
+        <location filename="../src/importkeydialog.cpp" line="80"/>
+        <location filename="../src/importkeydialog.cpp" line="93"/>
+        <location filename="../src/importkeydialog.cpp" line="105"/>
+        <location filename="../src/importkeydialog.cpp" line="208"/>
+        <location filename="../src/importkeydialog.cpp" line="212"/>
         <source>Import key</source>
         <translation>นำเข้ากุญแจ</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="89"/>
+        <location filename="../src/importkeydialog.cpp" line="94"/>
         <source>%1 is larger than a key file can be.</source>
         <translation type="unfinished">%1 มีขนาดใหญ่เกินกว่าที่ไฟล์กุญแจจะเป็นได้</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="148"/>
+        <location filename="../src/importkeydialog.cpp" line="153"/>
         <source>GPG import failed:
 %1</source>
         <translation>การนำเข้า GPG ล้มเหลว:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="158"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>ไม่สามารถแยกวิเคราะห์ ID กุญแจที่นำเข้าจากผลลัพธ์ GPG</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="205"/>
+        <location filename="../src/importkeydialog.cpp" line="213"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">นำเข้ากุญแจสาธารณะ %1 แล้ว โปรดตรวจสอบลายนิ้วมือกับเจ้าของกุญแจก่อนเข้ารหัสให้กุญแจนี้ การนำเข้ากุญแจไม่ได้บอกอะไรเลยว่าใครเป็นผู้ถือกุญแจ</translation>
     </message>
@@ -2089,8 +2099,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="802"/>
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="806"/>
+        <location filename="../src/mainwindow.cpp" line="1000"/>
         <source>Search password</source>
         <translation>ค้นหารหัสผ่าน</translation>
     </message>
@@ -2192,7 +2202,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1776"/>
         <source>Add password</source>
         <translation>เพิ่มรหัสผ่าน</translation>
     </message>
@@ -2204,21 +2214,21 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1771"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>Add folder</source>
         <translation>เพิ่มโฟลเดอร์</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1779"/>
+        <location filename="../src/mainwindow.cpp" line="1783"/>
         <source>Edit</source>
         <translation>แก้ไข</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1791"/>
+        <location filename="../src/mainwindow.cpp" line="1795"/>
         <source>Delete</source>
         <translation>ลบ</translation>
     </message>
@@ -2259,7 +2269,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1773"/>
+        <location filename="../src/mainwindow.cpp" line="1777"/>
         <source>Users</source>
         <translation>ผู้ใช้</translation>
     </message>
@@ -2396,8 +2406,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>กำลังอัปเดตที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="712"/>
-        <location filename="../src/mainwindow.cpp" line="1053"/>
+        <location filename="../src/mainwindow.cpp" line="716"/>
+        <location filename="../src/mainwindow.cpp" line="1057"/>
         <source>Content hidden</source>
         <translation>ซ่อนเนื้อหา</translation>
     </message>
@@ -2410,15 +2420,15 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">รหัส OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="753"/>
-        <location filename="../src/mainwindow.cpp" line="772"/>
-        <location filename="../src/mainwindow.cpp" line="1463"/>
+        <location filename="../src/mainwindow.cpp" line="757"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>OTP code copied to clipboard</source>
         <translation>คัดลอกรหัส OTP ไปยังคลิปบอร์ดแล้ว</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="776"/>
-        <location filename="../src/mainwindow.cpp" line="1451"/>
+        <location filename="../src/mainwindow.cpp" line="780"/>
+        <location filename="../src/mainwindow.cpp" line="1455"/>
         <source>No OTP code found in this password entry</source>
         <translation>ไม่พบรหัส OTP ในรายการรหัสผ่านนี้</translation>
     </message>
@@ -2427,46 +2437,46 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">ซ่อนรหัสผ่านและเนื้อหา</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="893"/>
+        <location filename="../src/mainwindow.cpp" line="897"/>
         <source>Looking for: %1</source>
         <translation>กำลังมองหา: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="945"/>
+        <location filename="../src/mainwindow.cpp" line="949"/>
         <source>Searching…</source>
         <translation>กำลังค้นหา…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="977"/>
+        <location filename="../src/mainwindow.cpp" line="981"/>
         <source>Search content (regex)</source>
         <translation>ค้นหาเนื้อหา (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1028"/>
+        <location filename="../src/mainwindow.cpp" line="1032"/>
         <source>No matches found.</source>
         <translation>ไม่พบรายการที่ตรงกัน</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1070"/>
+        <location filename="../src/mainwindow.cpp" line="1074"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>พบ %n รายการที่ตรงกัน</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1072"/>
+        <location filename="../src/mainwindow.cpp" line="1076"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>ใน %n รายการ</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Invalid name</source>
         <translation type="unfinished">ชื่อไม่ถูกต้อง</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1283"/>
+        <location filename="../src/mainwindow.cpp" line="1287"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">ชื่อนี้จะชี้ออกไปนอกที่เก็บรหัสผ่าน โปรดเลือกชื่ออื่น</translation>
     </message>
@@ -2492,22 +2502,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="unfinished">การดำเนินการหมดเวลา กำลังเปิดใช้อินเทอร์เฟซอีกครั้ง</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="742"/>
+        <location filename="../src/mainwindow.cpp" line="746"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">ไม่สามารถถอดรหัสรายการรหัสผ่านนี้</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="806"/>
+        <location filename="../src/mainwindow.cpp" line="810"/>
         <source>Password and content hidden</source>
         <translation>ซ่อนรหัสผ่านและเนื้อหา</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="875"/>
+        <location filename="../src/mainwindow.cpp" line="879"/>
         <source>About QtPass</source>
         <translation type="unfinished">เกี่ยวกับ QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="876"/>
+        <location filename="../src/mainwindow.cpp" line="880"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;GUI ข้ามแพลตฟอร์มสำหรับ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; ตัวจัดการรหัสผ่านมาตรฐานของ Unix&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;ซอร์สโค้ดและรายงานปัญหา&lt;/a&gt;&lt;/p&gt;&lt;p&gt;สงวนลิขสิทธิ์ &amp;copy; 2014&amp;ndash;%2 IJhack เผยแพร่ภายใต้สัญญาอนุญาต &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL เวอร์ชัน 3&lt;/a&gt; หรือใหม่กว่า&lt;/p&gt;</translation>
     </message>
@@ -2516,7 +2526,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="obsolete">การค้นหาเนื้อหาใช้นิพจน์ปรกติพื้นฐานแบบ POSIX (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="981"/>
+        <location filename="../src/mainwindow.cpp" line="985"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">การค้นหาเนื้อหาใช้นิพจน์ปรกติที่เข้ากันได้กับ Perl (PCRE)</translation>
     </message>
@@ -2531,12 +2541,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished"> และเนื้อหาทั้งหมด?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1387"/>
+        <location filename="../src/mainwindow.cpp" line="1391"/>
         <source>Delete link?</source>
         <translation type="unfinished">ลบลิงก์?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1388"/>
+        <location filename="../src/mainwindow.cpp" line="1392"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 เป็นลิงก์สัญลักษณ์หรือจังก์ชัน ต้องการลบลิงก์หรือไม่? สิ่งที่ลิงก์ชี้ไปจะไม่ถูกแตะต้อง</translation>
     </message>
@@ -2545,12 +2555,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished"> และเนื้อหาทั้งหมด? &lt;br&gt;&lt;strong&gt;ระวัง: มีไฟล์ที่ไม่คาดคิดในโฟลเดอร์ที่กำหนด ตรวจสอบก่อนดำเนินการต่อ&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1380"/>
+        <location filename="../src/mainwindow.cpp" line="1384"/>
         <source>Delete folder?</source>
         <translation>ลบโฟลเดอร์?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1336"/>
+        <location filename="../src/mainwindow.cpp" line="1340"/>
         <source>Delete password?</source>
         <translation>ลบรหัสผ่าน?</translation>
     </message>
@@ -2559,71 +2569,71 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">คุณแน่ใจหรือไม่ว่าต้องการลบ %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1446"/>
+        <location filename="../src/mainwindow.cpp" line="1450"/>
         <source>No password selected for OTP generation</source>
         <translation>ไม่ได้เลือกรหัสผ่านสำหรับการสร้าง OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1584"/>
+        <location filename="../src/mainwindow.cpp" line="1588"/>
         <source>Profile changed to %1</source>
         <translation>เปลี่ยนโปรไฟล์เป็น %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1770"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Open folder with file manager</source>
         <translation>เปิดโฟลเดอร์ด้วยตัวจัดการไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
-        <location filename="../src/mainwindow.cpp" line="1883"/>
+        <location filename="../src/mainwindow.cpp" line="1789"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Rename folder</source>
         <translation>เปลี่ยนชื่อโฟลเดอร์</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1788"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Rename password</source>
         <translation>เปลี่ยนชื่อรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1725"/>
+        <location filename="../src/mainwindow.cpp" line="1729"/>
         <source>Share</source>
         <translation>แชร์</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1051"/>
+        <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… ยังมีผลลัพธ์อื่นๆ ในรายการนี้</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1065"/>
+        <location filename="../src/mainwindow.cpp" line="1069"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>แสดงผลการค้นหา %n รายการแรก; หากต้องการดูผลที่เหลือ ให้ทำการค้นหาด้วยคำหรือเงื่อนไขที่เฉพาะเจาะจงมากขึ้น</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1337"/>
+        <location filename="../src/mainwindow.cpp" line="1341"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">คุณแน่ใจหรือไม่ว่าต้องการลบ %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1344"/>
+        <location filename="../src/mainwindow.cpp" line="1348"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">คุณแน่ใจหรือไม่ว่าต้องการลบ %1 และเนื้อหาทั้งหมดในนั้น?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1360"/>
+        <location filename="../src/mainwindow.cpp" line="1364"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">โปรดทราบ: มีไฟล์ที่ไม่คาดคิดอยู่ในโฟลเดอร์ที่ระบุ โปรดตรวจสอบก่อนดำเนินการต่อ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
         <translation type="unfinished">ไม่สามารถอ่าน %1 ได้ จึงไม่ทราบว่ามีอะไรอยู่ภายใน</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1375"/>
+        <location filename="../src/mainwindow.cpp" line="1379"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
@@ -2631,80 +2641,80 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1735"/>
+        <location filename="../src/mainwindow.cpp" line="1739"/>
         <source>Re-encrypt all passwords</source>
         <translation>เข้ารหัสรหัสผ่านทั้งหมดใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1740"/>
+        <location filename="../src/mainwindow.cpp" line="1744"/>
         <source>Export my public key...</source>
         <translation>ส่งออกกุญแจสาธารณะของฉัน...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1744"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>Add recipient...</source>
         <translation>เพิ่มผู้รับ...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1749"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>What is this?</source>
         <translation>นี่คืออะไร?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1823"/>
+        <location filename="../src/mainwindow.cpp" line="1827"/>
         <source>New folder</source>
         <translation type="unfinished">โฟลเดอร์ใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1824"/>
+        <location filename="../src/mainwindow.cpp" line="1828"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>โฟลเดอร์ใหม่:
 (จะถูกวางไว้ใน %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1848"/>
+        <location filename="../src/mainwindow.cpp" line="1852"/>
         <source>Hidden folder</source>
         <translation type="unfinished">โฟลเดอร์ที่ซ่อนไว้</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1849"/>
+        <location filename="../src/mainwindow.cpp" line="1853"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">โฟลเดอร์ที่เริ่มต้นด้วยจุด จะถูกซ่อนจากรายการ: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1922"/>
+        <location filename="../src/mainwindow.cpp" line="1914"/>
         <source>Rename file to: </source>
         <translation>เปลี่ยนชื่อไฟล์เป็น: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2081"/>
-        <location filename="../src/mainwindow.cpp" line="2100"/>
+        <location filename="../src/mainwindow.cpp" line="2073"/>
+        <location filename="../src/mainwindow.cpp" line="2092"/>
         <source>Export public key</source>
         <translation>ส่งออกกุญแจสาธารณะ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2082"/>
+        <location filename="../src/mainwindow.cpp" line="2074"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/h3&gt;&lt;p&gt;ไม่ได้กำหนดค่ากุญแจลงนาม ตั้งค่าหนึ่งในการตั้งค่า QtPass &amp;gt; กุญแจ GPG หรือรันคำสั่งนี้ในเทอร์มินัล:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;จากนั้นส่งไฟล์ไปยังเพื่อนร่วมทีมของคุณ&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2129"/>
+        <location filename="../src/mainwindow.cpp" line="2121"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">ไม่ใช่โฟลเดอร์ของที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2130"/>
+        <location filename="../src/mainwindow.cpp" line="2122"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 เป็นลิงก์สัญลักษณ์หรือจังก์ชัน หรืออยู่ภายใต้ลิงก์ดังกล่าว สิ่งที่ลิงก์ชี้ไปไม่ใช่ส่วนหนึ่งของที่เก็บรหัสผ่านและจะไม่ถูกแตะต้อง</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2138"/>
+        <location filename="../src/mainwindow.cpp" line="2130"/>
         <source>Sharing passwords with GPG</source>
         <translation>การแชร์รหัสผ่านด้วย GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2139"/>
+        <location filename="../src/mainwindow.cpp" line="2131"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;การแชร์รหัสผ่านด้วย GPG&lt;/h3&gt;&lt;p&gt;เพื่อแชร์รหัสผ่านกับผู้ใช้อื่น:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/b&gt; และส่งไปยังเพื่อนร่วมทีม&lt;/li&gt;&lt;li&gt;&lt;b&gt;นำเข้ากุญแจสาธารณะของเพื่อนร่วมทีม&lt;/b&gt; เข้าสู่พวงกุญแจ GPG ของคุณ&lt;/li&gt;&lt;li&gt;&lt;b&gt;เข้ารหัสรหัสผ่านใหม่&lt;/b&gt; เพื่อให้ผู้รับทั้งหมดสามารถถอดรหัสได้&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;เฉพาะผู้ที่มีกุญแจลับที่ตรงกันเท่านั้นที่สามารถถอดรหัสรหัสผ่านได้&lt;/p&gt;&lt;p&gt;&lt;b&gt;เคล็ดลับ:&lt;/b&gt; ใช้กุญแจ GPG เดียวกันสำหรับโฟลเดอร์ที่แชร์ทั้งหมด&lt;/p&gt;&lt;p&gt;ดู FAQ สำหรับรายละเอียดเพิ่มเติม&lt;/p&gt;</translation>
     </message>
@@ -2715,29 +2725,27 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (จะถูกวางไว้ใน %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1856"/>
-        <location filename="../src/mainwindow.cpp" line="1871"/>
-        <location filename="../src/mainwindow.cpp" line="2000"/>
+        <location filename="../src/mainwindow.cpp" line="1860"/>
+        <location filename="../src/mainwindow.cpp" line="1992"/>
         <source>Error</source>
         <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1857"/>
+        <location filename="../src/mainwindow.cpp" line="1861"/>
         <source>Failed to create folder: %1</source>
         <translation>ไม่สามารถสร้างโฟลเดอร์: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1872"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>ไม่สามารถสร้างไฟล์ .gpg-id ใน: %1</translation>
+        <translation type="vanished">ไม่สามารถสร้างไฟล์ .gpg-id ใน: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1883"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Rename folder to: </source>
         <translation>เปลี่ยนชื่อโฟลเดอร์เป็น: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1922"/>
+        <location filename="../src/mainwindow.cpp" line="1914"/>
         <source>Rename file</source>
         <translation>เปลี่ยนชื่อไฟล์</translation>
     </message>
@@ -2750,23 +2758,23 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">เปลี่ยนชื่อไฟล์เป็น: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1987"/>
+        <location filename="../src/mainwindow.cpp" line="1979"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">รายการนี้มีข้อมูลลับ OTP ไม่ใช่รหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2001"/>
+        <location filename="../src/mainwindow.cpp" line="1993"/>
         <source>Directory does not exist: %1</source>
         <translation>ไดเรกทอรีไม่มีอยู่: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2009"/>
-        <location filename="../src/mainwindow.cpp" line="2042"/>
+        <location filename="../src/mainwindow.cpp" line="2001"/>
+        <location filename="../src/mainwindow.cpp" line="2034"/>
         <source>Re-encrypt passwords</source>
         <translation>เข้ารหัสรหัสผ่านใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2010"/>
+        <location filename="../src/mainwindow.cpp" line="2002"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2783,22 +2791,22 @@ Continue?</source>
 ดำเนินการต่อ?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2040"/>
+        <location filename="../src/mainwindow.cpp" line="2032"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">กำลังเข้ารหัสรหัสผ่านใหม่...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2041"/>
+        <location filename="../src/mainwindow.cpp" line="2033"/>
         <source>Cancel</source>
         <translation type="unfinished">ยกเลิก</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2049"/>
+        <location filename="../src/mainwindow.cpp" line="2041"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">กำลังยกเลิกการเข้ารหัสใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2060"/>
+        <location filename="../src/mainwindow.cpp" line="2052"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">กำลังเข้ารหัสรหัสผ่านใหม่: %1 จาก %2</translation>
     </message>
@@ -2811,7 +2819,7 @@ Continue?</source>
         <translation type="vanished">&lt;h3&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/h3&gt;&lt;p&gt;ไม่ได้กำหนดค่ากุญแจลงนาม ตั้งค่าหนึ่งในการตั้งค่า QtPass &amp;gt; กุญแจ GPG หรือรันคำสั่งนี้ในเทอร์มินัล:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;จากนั้นส่งไฟล์ไปยังเพื่อนร่วมทีมของคุณ&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2101"/>
+        <location filename="../src/mainwindow.cpp" line="2093"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2820,7 +2828,7 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2103"/>
+        <location filename="../src/mainwindow.cpp" line="2095"/>
         <source>No output from gpg.</source>
         <translation>ไม่มีผลลัพธ์จาก gpg</translation>
     </message>
@@ -3538,33 +3546,44 @@ Continue?</source>
         <translation type="unfinished">ไม่ push: การเข้ารหัสใหม่ครั้งก่อนในที่เก็บรหัสผ่านนี้ยังไม่เสร็จสิ้น</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="187"/>
+        <location filename="../src/realpass.cpp" line="195"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">กำลังตรวจสอบรายชื่อผู้รับภายใต้ %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="332"/>
+        <location filename="../src/realpass.cpp" line="219"/>
+        <source>Cannot check the recipient lists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="222"/>
+        <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
+        <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="353"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">ไม่สามารถลบลิงก์ %1 ได้</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="333"/>
+        <location filename="../src/realpass.cpp" line="354"/>
         <source>Delete failed</source>
         <translation type="unfinished">การลบล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="383"/>
+        <location filename="../src/realpass.cpp" line="404"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">ลบลิงก์ %1 แล้ว แต่ git ไม่สามารถบันทึกการเปลี่ยนแปลงได้: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="385"/>
-        <location filename="../src/realpass.cpp" line="535"/>
+        <location filename="../src/realpass.cpp" line="406"/>
+        <location filename="../src/realpass.cpp" line="556"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">การลบยังไม่สมบูรณ์</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="494"/>
+        <location filename="../src/realpass.cpp" line="515"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
         <translation type="unfinished">ผู้รับถูกเปลี่ยนแล้ว แต่บางรายการไม่สามารถเข้ารหัสใหม่ให้กับผู้รับเหล่านั้นได้ รายการเหล่านั้นยังคงเข้ารหัสไว้ให้กับผู้รับเดิม ซึ่งยังคงอ่านได้ เมื่อใช้ Git การเปลี่ยนแปลงจะถูกคอมมิตไว้ในเครื่องและไม่ถูก push โดย QtPass จะไม่ push ที่เก็บรหัสผ่านนี้โดยอัตโนมัติจนกว่าการเข้ารหัสใหม่จะสำเร็จ และการ push ด้วยตนเองจะส่งการเปลี่ยนแปลงนี้ไป</translation>
     </message>
@@ -3573,12 +3592,12 @@ Continue?</source>
         <translation type="obsolete">ผู้รับถูกเปลี่ยนแล้ว แต่บางรายการไม่สามารถเข้ารหัสใหม่ให้กับผู้รับเหล่านั้นได้ รายการเหล่านั้นยังคงเข้ารหัสไว้ให้กับผู้รับเดิม ซึ่งยังคงอ่านได้ เมื่อใช้ Git การเปลี่ยนแปลงจะถูกคอมมิตไว้ในเครื่องและยังไม่ได้ push ในตอนนี้ การ push ครั้งถัดไปจะส่งการเปลี่ยนแปลงนี้</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="532"/>
+        <location filename="../src/realpass.cpp" line="553"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">ลิงก์ %1 ถูกลบออก และ Git ไม่ได้ติดตามลิงก์นั้นอีกต่อไป แต่การคอมมิตกลับไม่สำเร็จ: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="667"/>
+        <location filename="../src/realpass.cpp" line="688"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">การค้นหาต้องมีการกำหนดค่าไฟล์ปฏิบัติการ GPG ก่อน</translation>
     </message>
@@ -3586,12 +3605,12 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="295"/>
+        <location filename="../src/storemodel.cpp" line="334"/>
         <source>Force overwrite?</source>
         <translation>บังคับเขียนทับ?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="296"/>
+        <location filename="../src/storemodel.cpp" line="335"/>
         <source>overwrite %1 with %2?</source>
         <translation>เขียนทับ %1 ด้วย %2?</translation>
     </message>
@@ -3797,42 +3816,58 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation>นำเข้ากุญแจ GPG จากไฟล์หรือคลิปบอร์ด</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="77"/>
+        <location filename="../src/usersdialog.cpp" line="81"/>
         <source>Keylist missing</source>
         <translation>ขาดรายการกุญแจ</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="78"/>
+        <location filename="../src/usersdialog.cpp" line="82"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>ไม่สามารถดึงรายการกุญแจ GPG ที่พร้อมใช้งาน</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/usersdialog.cpp" line="162"/>
+        <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
+        <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/usersdialog.cpp" line="170"/>
+        <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
+        <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="220"/>
+        <location filename="../src/usersdialog.cpp" line="279"/>
         <source>Key not found in keyring</source>
         <translation>ไม่พบกุญแจในพวงกุญแจ</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="427"/>
         <source>created</source>
         <translation>สร้าง</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="372"/>
+        <location filename="../src/usersdialog.cpp" line="431"/>
         <source>expires</source>
         <translation>หมดอายุ</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="454"/>
         <source>[INVALID] </source>
         <translation>[ไม่ถูกต้อง] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="450"/>
         <source>[EXPIRED] </source>
         <translation>[หมดอายุ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="399"/>
+        <location filename="../src/usersdialog.cpp" line="458"/>
         <source>[PARTIAL] </source>
         <translation>[บางส่วน] </translation>
     </message>
@@ -3840,34 +3875,34 @@ Plain entries have a trusted encryption key, select these to allow other people 
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1151"/>
+        <location filename="../src/util.cpp" line="1176"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">ไม่สามารถสร้างไฟล์ชั่วคราวไว้ข้าง %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1163"/>
-        <location filename="../src/util.cpp" line="1255"/>
-        <location filename="../src/util.cpp" line="1285"/>
+        <location filename="../src/util.cpp" line="1188"/>
+        <location filename="../src/util.cpp" line="1280"/>
+        <location filename="../src/util.cpp" line="1310"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">ไม่สามารถเขียน %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1188"/>
+        <location filename="../src/util.cpp" line="1213"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">ไม่สามารถแทนที่ %1</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1193"/>
+        <location filename="../src/util.cpp" line="1218"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">มี %1 อยู่แล้ว</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1195"/>
+        <location filename="../src/util.cpp" line="1220"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">ไม่สามารถเขียน %1</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1242"/>
+        <location filename="../src/util.cpp" line="1267"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 ถูกแทนที่ด้วยไฟล์อื่นในขณะที่กำลังเขียนอยู่</translation>
     </message>
@@ -3876,12 +3911,12 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation type="obsolete">%1 ถูกแทนที่ด้วยลิงก์ในขณะที่กำลังเขียนอยู่</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1268"/>
+        <location filename="../src/util.cpp" line="1293"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">ไม่สามารถอ่าน %1 ได้</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1278"/>
+        <location filename="../src/util.cpp" line="1303"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">ไม่สามารถอ่าน %1: %2</translation>
     </message>

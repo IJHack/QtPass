@@ -1147,23 +1147,23 @@ The value will still be saved as entered.</source>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="199"/>
+        <location filename="../src/gpgidgeneration.cpp" line="200"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">प्राप्तकर्ता सूच्यांची पिढी नोंद, %1, उघडता येत नाही.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="208"/>
+        <location filename="../src/gpgidgeneration.cpp" line="209"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">प्राप्तकर्ता सूच्यांची पिढी नोंद, %1, वाचनीय नाही. ती दुरुस्त होईपर्यंत किंवा काढून टाकली जाईपर्यंत (ज्यामुळे आधी काय स्वीकारले होते ते विसरले जाते) स्वाक्षरीकृत प्राप्तकर्ता सूच्या स्वीकारल्या जात नाहीत.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="230"/>
-        <location filename="../src/gpgidgeneration.cpp" line="243"/>
+        <location filename="../src/gpgidgeneration.cpp" line="231"/>
+        <location filename="../src/gpgidgeneration.cpp" line="244"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">प्राप्तकर्ता सूच्यांची पिढी नोंद, %1, लिहिता येत नाही.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="297"/>
+        <location filename="../src/gpgidgeneration.cpp" line="298"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">प्राप्तकर्ता सूच्यांची पिढी नोंद, %1, लॉक करता आली नाही: दुसरे QtPass ती वापरत असू शकते, किंवा तिच्या फोल्डरमध्ये लिहिता येत नाही.</translation>
     </message>
@@ -1176,32 +1176,32 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">स्टोअर ओळीमध्ये त्रुटी आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="470"/>
+        <location filename="../src/gpgidgeneration.cpp" line="471"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">सूचीमध्ये एकापेक्षा जास्त पिढी ओळी आहेत.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="479"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">पिढी ओळ सदोष आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="485"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">सूचीमध्ये एकापेक्षा जास्त फोल्डर ओळी आहेत.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="495"/>
+        <location filename="../src/gpgidgeneration.cpp" line="504"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">फोल्डर ओळ सदोष आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="499"/>
+        <location filename="../src/gpgidgeneration.cpp" line="508"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">हेडर ओळ सदोष आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
+        <location filename="../src/gpgidgeneration.cpp" line="541"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">सूचीमध्ये पिढी ओळ आहे, पण फोल्डर ओळ नाही.</translation>
     </message>
@@ -1210,50 +1210,50 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">सूचीमध्ये स्टोअर ओळ आहे, पण पिढी ओळ नाही.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="695"/>
+        <location filename="../src/gpgidgeneration.cpp" line="704"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 विश्वास ठेवण्यासारखी नाही: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="631"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 स्टोअरच्या &quot;%2&quot; फोल्डरसाठी लिहिली गेली होती, &quot;%3&quot; साठी नाही, आणि ती वापरली जात नाही. ती कदाचित दुसऱ्या कोणीतरी येथे कॉपी केली असावी; त्याऐवजी फोल्डर हलवले किंवा त्याचे नाव बदलले गेले असल्यास, स्वाक्षरी की धारक त्यावर &quot;वापरकर्ते&quot; उघडून प्राप्तकर्ते जतन करतो, ज्यामुळे सूची ती आता जिथे आहे तिथे बांधली जाते.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <location filename="../src/gpgidgeneration.cpp" line="454"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
         <translation type="unfinished">या यादीत एकापेक्षा जास्त स्टोअर आयडी ओळी आहेत.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="465"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
         <translation type="unfinished">स्टोअर आयडी ओळ चुकीच्या स्वरूपात आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <location filename="../src/gpgidgeneration.cpp" line="549"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
         <translation type="unfinished">या यादीत स्टोअर आयडी ओळ आहे, पण जनरेशन ओळ नाही.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="635"/>
+        <location filename="../src/gpgidgeneration.cpp" line="644"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">पिढी %1 ही सर्वोच्च आहे, त्यामुळे येथे त्यापेक्षा नवी सूची लिहिता येत नाही: %2 काढून टाकल्यास या डिव्हाइसने आधी काय स्वीकारले होते ते विसरले जाते, आणि त्यानंतर स्वाक्षरी की धारकाचा पुढे जाण्याचा मार्ग म्हणजे &quot;वापरकर्ते&quot; उघडणे आणि %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="642"/>
+        <location filename="../src/gpgidgeneration.cpp" line="651"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">स्वाक्षरी की धारकाचा पुढे जाण्याचा मार्ग (ज्यामुळे पिढी %2 लिहिली जाते) म्हणजे &quot;वापरकर्ते&quot; उघडणे आणि %1. %3 काढून टाकल्यास या डिव्हाइसने आधी काय स्वीकारले होते ते विसरले जाते.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="659"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 मध्ये पिढी ओळ नाही, तर येथे आधी पिढी %2 स्वीकारली गेली होती. pass पिढी ओळ लिहीत नाही (QtPass च्या pass बॅकएंडद्वारेही नाही), आणि 2.0 पूर्वीचे QtPass देखील लिहीत नव्हते; पिढी ओळ नसल्यास ही सूची स्टोअरच्या दुसऱ्या फोल्डरसाठी लिहून येथे कॉपी केली गेली असण्याचीही शक्यता आहे. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="668"/>
+        <location filename="../src/gpgidgeneration.cpp" line="677"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">प्राप्तकर्ते नव्याने निवडून जतन करणे</translation>
     </message>
@@ -1262,7 +1262,7 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 मध्ये स्टोअर ओळ नाही, तर हे डिव्हाइस या स्टोअरला त्याच्या ID %2 ने ओळखते: ती कदाचित दुसऱ्या स्टोअरसाठी लिहून येथे कॉपी केली गेली असेल, किंवा जुन्या QtPass ने लिहिली असेल. स्वाक्षरी की धारक वापरकर्ते उघडून, प्राप्तकर्ते नव्याने निवडून आणि जतन करून यातून मार्ग काढतो; त्यामुळे स्टोअर ओळ लिहिली जाते.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="873"/>
+        <location filename="../src/gpgidgeneration.cpp" line="882"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">प्राप्तकर्ता सूच्यांची पिढी नोंद, %1, पिढी %3 लिहिली जात असताना पिढी %2 वर पुढे गेली आहे.</translation>
     </message>
@@ -1275,38 +1275,38 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 मध्ये पिढी ओळ नाही, तर येथे आधी पिढी %2 स्वीकारली गेली होती. pass पिढी ओळ लिहीत नाही (QtPass च्या pass बॅकएंडद्वारेही नाही), आणि 2.0 पूर्वीचे QtPass देखील लिहीत नव्हते. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="673"/>
+        <location filename="../src/gpgidgeneration.cpp" line="682"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 ही पिढी %2 आहे, जी QtPass ने येथे शेवटी स्वीकारलेल्या पिढी %3 पेक्षा जुनी आहे. ती कदाचित दुसऱ्या कोणीतरी परत ठेवली असावी. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="680"/>
+        <location filename="../src/gpgidgeneration.cpp" line="689"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">प्राप्तकर्ते जतन करणे: तेथे आधीच निवडलेले प्राप्तकर्ते या सूचीतील असतात, म्हणून ज्यांना यापुढे प्रवेश नसावा त्यांना आधी काढून टाका</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="754"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 ही पिढी %2 आहे, जी या डिव्हाइसने आधी स्वीकारलेल्या एका वेगळ्या सूचीचीच पिढी आहे. एकतर दोन डिव्हाइसनी एकाच वेळी प्राप्तकर्ते जतन केले (गिटने संघर्ष दाखवला असेल), किंवा त्या पिढीची एक अस्सल सूची येथे बदलून ठेवली गेली. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="753"/>
+        <location filename="../src/gpgidgeneration.cpp" line="762"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">प्राप्तकर्ते तपासून जतन करणे</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="779"/>
+        <location filename="../src/gpgidgeneration.cpp" line="788"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">स्वाक्षरी केलेली प्राप्तकर्ता सूची %1 दुसऱ्या पासवर्ड स्टोअरसाठी लिहिली गेली होती (स्टोअर आयडी %2; हे डिव्हाइस या स्टोअरला %3 म्हणून ओळखते) आणि ती वापरली जात नाही. ती कदाचित त्याच कीने स्वाक्षरी केलेल्या स्टोअरमधून येथे कॉपी केली गेली असेल. त्याऐवजी हे स्टोअर पुन्हा सेट केले गेले असेल, तर %4 काढून टाकल्यास हे डिव्हाइस त्याला माहीत असलेले स्टोअर आयडी विसरते.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <location filename="../src/gpgidgeneration.cpp" line="806"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
         <translation type="unfinished">स्वाक्षरी केलेल्या प्राप्तकर्ता सूची %1 मध्ये स्टोअर आयडी ओळ नाही, तर हे डिव्हाइस या स्टोअरला त्याच्या आयडी %2 ने ओळखते: ती कदाचित दुसऱ्या स्टोअरसाठी लिहून येथे कॉपी केली गेली असेल, किंवा जुन्या QtPass ने लिहिली असेल. स्वाक्षरी कीचा धारक &quot;वापरकर्ते&quot; उघडून, प्राप्तकर्ते पुन्हा निवडून आणि जतन करून यातून पुढे जाऊ शकतो; त्यामुळे स्टोअर आयडी ओळ लिहिली जाते.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="841"/>
+        <location filename="../src/gpgidgeneration.cpp" line="850"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">प्राप्तकर्ता सूची %1 पिढी %2 वर पोहोचली आहे, जी सर्वोच्च आहे; सूची लिहिता येत नाही.</translation>
     </message>
@@ -1339,21 +1339,21 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="212"/>
         <location filename="../src/imitatepass.cpp" line="473"/>
-        <location filename="../src/imitatepass.cpp" line="823"/>
+        <location filename="../src/imitatepass.cpp" line="828"/>
         <location filename="../src/realpass.cpp" line="135"/>
         <source>Check .gpg-id file signature!</source>
         <translation>.gpg-id फाइल स्वाक्षरी तपासा!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="474"/>
-        <location filename="../src/imitatepass.cpp" line="668"/>
+        <location filename="../src/imitatepass.cpp" line="673"/>
         <location filename="../src/realpass.cpp" line="131"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 साठी स्वाक्षरी अवैध आहे.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
-        <location filename="../src/imitatepass.cpp" line="946"/>
+        <location filename="../src/imitatepass.cpp" line="951"/>
         <source>Can not edit</source>
         <translation>संपादित करता येत नाही</translation>
     </message>
@@ -1369,7 +1369,7 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
-        <location filename="../src/imitatepass.cpp" line="947"/>
+        <location filename="../src/imitatepass.cpp" line="952"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>वापरण्यासाठी एन्क्रिप्शन की वाचता आली नाही, .gpg-id फाइल गहाळ किंवा अवैध आहे.</translation>
     </message>
@@ -1521,50 +1521,50 @@ You will not be able to change the user list!</source>
         <translation type="unfinished">Git कोड %1 सह बंद झाले.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="691"/>
+        <location filename="../src/imitatepass.cpp" line="696"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 प्राप्तकर्ता सूची म्हणून वाचता येत नाही (कमाल %2 आकाराची नियमित फाइल).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="705"/>
-        <location filename="../src/imitatepass.cpp" line="733"/>
-        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/imitatepass.cpp" line="710"/>
+        <location filename="../src/imitatepass.cpp" line="738"/>
+        <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">आधीच्या पुन्हा-एन्क्रिप्शनमधून उरलेले</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="706"/>
+        <location filename="../src/imitatepass.cpp" line="711"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 ही नियमित फाइल नाही आणि ती पुनर्संचयित केली गेली नाही. ती तपासा आणि काढून टाका, नंतर पुन्हा-एन्क्रिप्ट करा.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="734"/>
+        <location filename="../src/imitatepass.cpp" line="739"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%2 च्या शेजारी %1 अस्तित्वात आहे. दोन्ही या एंट्रीच्या एन्क्रिप्ट केलेल्या प्रती आहेत; तुम्हाला कोणती हवी ते तपासा आणि दुसरी हटवा, नंतर पुन्हा-एन्क्रिप्ट करा.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="748"/>
+        <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">व्यत्यय आलेल्या पुन्हा-एन्क्रिप्शनने मागे ठेवलेल्या बॅकअपमधून %1 पुनर्संचयित केले.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="742"/>
+        <location filename="../src/imitatepass.cpp" line="747"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 गहाळ आहे आणि त्याच्या बॅकअप %2 चे नाव परत बदलता आले नाही. त्याचे नाव हाताने बदला, नंतर पुन्हा-एन्क्रिप्ट करा.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="987"/>
+        <location filename="../src/imitatepass.cpp" line="992"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 पुन्हा-एन्क्रिप्ट करता आले नाही: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1051"/>
+        <location filename="../src/imitatepass.cpp" line="1056"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
         <translation type="unfinished">पासवर्ड स्टोअरच्या गिट रिपॉजिटरीमध्ये मर्ज न झालेल्या फाईल्स आहेत. पुन्हा एन्क्रिप्ट करण्यापूर्वी गिट वापरून संघर्ष सोडवा.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1377"/>
-        <location filename="../src/realpass.cpp" line="508"/>
+        <location filename="../src/imitatepass.cpp" line="1407"/>
+        <location filename="../src/realpass.cpp" line="529"/>
         <source>Re-encryption failed</source>
         <translation>पुन्हा-एन्क्रिप्शन अयशस्वी</translation>
     </message>
@@ -1581,86 +1581,86 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">पुन्हा-एन्क्रिप्ट केल्यानंतर बॅकअप %1 काढता आला नाही; तो हटवणे सुरक्षित आहे.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1024"/>
+        <location filename="../src/imitatepass.cpp" line="1029"/>
         <source>Creating backup commit</source>
         <translation>बॅकअप कमिट तयार करत आहे</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1038"/>
-        <location filename="../src/imitatepass.cpp" line="1062"/>
+        <location filename="../src/imitatepass.cpp" line="1043"/>
+        <location filename="../src/imitatepass.cpp" line="1067"/>
         <source>Backup commit failed</source>
         <translation>बॅकअप कमिट अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1039"/>
+        <location filename="../src/imitatepass.cpp" line="1044"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>गिट स्थिती तपासता आली नाही. पुन्हा-एन्क्रिप्शन रद्द केले.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1050"/>
-        <location filename="../src/imitatepass.cpp" line="1296"/>
+        <location filename="../src/imitatepass.cpp" line="1055"/>
+        <location filename="../src/imitatepass.cpp" line="1301"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">अपूर्ण गिट ऑपरेशन</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1063"/>
+        <location filename="../src/imitatepass.cpp" line="1068"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>गिट बॅकअप तयार करता आले नाही म्हणून पुन्हा-एन्क्रिप्शन रद्द केले.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1105"/>
+        <location filename="../src/imitatepass.cpp" line="1110"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">पुन्हा-एन्क्रिप्शन आधीच सुरू आहे</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1112"/>
+        <location filename="../src/imitatepass.cpp" line="1117"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">स्टोअरचा फोल्डर नाही</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1113"/>
+        <location filename="../src/imitatepass.cpp" line="1118"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 ही एक सिम्बॉलिक लिंक किंवा जंक्शन आहे, किंवा अशा लिंकच्या मागे आहे. ती ज्याकडे निर्देश करते ते पासवर्ड स्टोअरचा भाग नाही आणि ते पुन्हा-एन्क्रिप्ट केले गेले नाही.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1134"/>
         <source>Re-encrypting from folder %1</source>
         <translation>फोल्डर %1 मधून पुन्हा-एन्क्रिप्ट करत आहे</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1205"/>
-        <location filename="../src/imitatepass.cpp" line="1421"/>
+        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1451"/>
         <source>Updating password-store</source>
         <translation>पासवर्ड-स्टोअर अद्यतनित करत आहे</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1218"/>
-        <location filename="../src/imitatepass.cpp" line="1224"/>
+        <location filename="../src/imitatepass.cpp" line="1223"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Git pull failed</source>
         <translation type="unfinished">गिट पुल अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1219"/>
+        <location filename="../src/imitatepass.cpp" line="1224"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">पुलनंतर स्टोअरमध्ये विलीन न केलेल्या फायली आहेत का ते तपासता आले नाही. पुन्हा एन्क्रिप्ट करण्यापूर्वी git ने ते तपासा.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1225"/>
+        <location filename="../src/imitatepass.cpp" line="1230"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">पुलनंतर स्टोअरमध्ये विलीन न झालेल्या फाइल्स राहिल्या आहेत. पुन्हा-एन्क्रिप्ट करण्यापूर्वी संघर्ष सोडवा.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1229"/>
+        <location filename="../src/imitatepass.cpp" line="1234"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">गिट पुल अयशस्वी, स्टोअर जसे आहे तसे पुन्हा-एन्क्रिप्ट करत आहे</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1246"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
         <translation type="unfinished">%1 वाचता आले नाही: त्यातील एंट्री पुन्हा-एन्क्रिप्ट केल्या गेल्या नाहीत</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1250"/>
+        <location filename="../src/imitatepass.cpp" line="1255"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n एंट्री वगळली: सिमलिंक, जंक्शन किंवा विशेष फाइल स्टोअरचा भाग नाही.</numerusform>
@@ -1668,27 +1668,37 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1271"/>
+        <location filename="../src/imitatepass.cpp" line="1276"/>
         <source>GPG ID verification failed</source>
         <translation>जीपीजी ID सत्यापन अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1272"/>
+        <location filename="../src/imitatepass.cpp" line="1277"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>डिरेक्टरीसाठी .gpg-id सत्यापित करता आली नाही.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1305"/>
+        <location filename="../src/imitatepass.cpp" line="1310"/>
         <source>Not part of the store</source>
         <translation type="unfinished">स्टोअरचा भाग नाही</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1306"/>
+        <location filename="../src/imitatepass.cpp" line="1311"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">पुल केल्यानंतर %1 ही एक सिम्बॉलिक लिंक किंवा जंक्शन आहे, किंवा अशा लिंकच्या मागे आहे. ती ज्याकडे निर्देश करते ते पासवर्ड स्टोअरचा भाग नाही आणि ते तसेच राहील.</translation>
     </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1329"/>
+        <source>Recipients changed by the pull</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1330"/>
+        <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1375"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... आणि आणखी %n</numerusform>
@@ -1696,7 +1706,7 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1378"/>
+        <location filename="../src/imitatepass.cpp" line="1408"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n फाइल पुन्हा-एन्क्रिप्ट करता आली नाही:</numerusform>
@@ -1704,23 +1714,23 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1396"/>
+        <location filename="../src/imitatepass.cpp" line="1426"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">पुन्हा-एन्क्रिप्शन रद्द केले: %2 पैकी %1 फाइल्स तपासल्या, %3 पुन्हा-एन्क्रिप्ट केल्या, %4 अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1417"/>
+        <location filename="../src/imitatepass.cpp" line="1447"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
         <translation type="unfinished">पुश करत नाही: या स्टोअरमधील आधीचे पुन्हा-एन्क्रिप्शन पूर्ण झाले नाही</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1471"/>
-        <location filename="../src/imitatepass.cpp" line="1480"/>
+        <location filename="../src/imitatepass.cpp" line="1502"/>
+        <location filename="../src/imitatepass.cpp" line="1511"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">प्राप्तकर्ते कमिट झाले नाहीत</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1472"/>
+        <location filename="../src/imitatepass.cpp" line="1503"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1733,7 +1743,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 हा बदल अद्याप कमिट किंवा पुश केलेला नाही. Git ची समस्या दुरुस्त करा, नंतर बदल कमिट करा किंवा प्राप्तकर्ते पुन्हा जतन करा.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1481"/>
+        <location filename="../src/imitatepass.cpp" line="1512"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1746,22 +1756,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 पुन्हा-एन्क्रिप्शन पूर्ण झाले नाही, त्यामुळे काही किंवा सर्व एंट्री अजूनही आधीच्या प्राप्तकर्त्यांसाठी एन्क्रिप्ट केलेल्या आहेत, जे त्या अजूनही वाचू शकतात. काहीही कमिट किंवा पुश केले गेले नाही. Git ची समस्या दुरुस्त करा, नंतर प्राप्तकर्ते पुन्हा जतन करा.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1592"/>
+        <location filename="../src/imitatepass.cpp" line="1623"/>
         <source>Move failed</source>
         <translation type="unfinished">हलवणे अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1593"/>
+        <location filename="../src/imitatepass.cpp" line="1624"/>
         <source>Could not move %1 to %2.</source>
         <translation type="unfinished">%1 हे %2 मध्ये हलवता आले नाही.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1682"/>
+        <location filename="../src/imitatepass.cpp" line="1713"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">गिट एक्झिक्युटेबल कॉन्फिगर केलेले नाही, गिट वगळत आहे</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1759"/>
+        <location filename="../src/imitatepass.cpp" line="1790"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg ने %1 साठी कोणताही एन्क्रिप्ट केलेला मजकूर लिहिला नाही.</translation>
     </message>
@@ -1790,17 +1800,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 पुन्हा-एन्क्रिप्ट करण्यात अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1405"/>
+        <location filename="../src/imitatepass.cpp" line="1435"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>पुन्हा-एन्क्रिप्शन पूर्ण: %1 यशस्वी, %2 अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1410"/>
+        <location filename="../src/imitatepass.cpp" line="1440"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>पुन्हा-एन्क्रिप्शन पूर्ण: %1 फाइल्स पुन्हा-एन्क्रिप्ट केल्या</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1426"/>
+        <location filename="../src/imitatepass.cpp" line="1456"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>पुश करत नाही: %n फाइल पुन्हा-एन्क्रिप्ट करण्यात अयशस्वी</numerusform>
@@ -1808,14 +1818,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1601"/>
-        <location filename="../src/imitatepass.cpp" line="1648"/>
+        <location filename="../src/imitatepass.cpp" line="1632"/>
+        <location filename="../src/imitatepass.cpp" line="1679"/>
         <source>Copy failed</source>
         <translation type="unfinished">कॉपी अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1602"/>
-        <location filename="../src/imitatepass.cpp" line="1649"/>
+        <location filename="../src/imitatepass.cpp" line="1633"/>
+        <location filename="../src/imitatepass.cpp" line="1680"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 ला %2 मध्ये कॉपी करता आले नाही.</translation>
     </message>
@@ -1846,7 +1856,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="58"/>
+        <location filename="../src/importkeydialog.cpp" line="63"/>
         <source>Import GPG key</source>
         <translation>जीपीजी की आयात करा</translation>
     </message>
@@ -1866,7 +1876,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>आयात करा</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="59"/>
+        <location filename="../src/importkeydialog.cpp" line="64"/>
         <source>ASCII-armored GPG key</source>
         <translation>ASCII-armored जीपीजी की</translation>
     </message>
@@ -1879,12 +1889,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">की आयात करा</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="76"/>
+        <location filename="../src/importkeydialog.cpp" line="81"/>
         <source>Could not open file: %1</source>
         <translation>फाइल उघडता आली नाही: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="101"/>
+        <location filename="../src/importkeydialog.cpp" line="106"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 ही ASCII-armored जीपीजी की वाटत नाही. आधी ती &lt;code&gt;gpg --armor --export&lt;/code&gt; ने रूपांतरित करा, किंवा armored ब्लॉक &lt;b&gt;क्लिपबोर्डमधून&lt;/b&gt; द्वारे पेस्ट करा.</translation>
     </message>
@@ -1893,38 +1903,38 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 ASCII-armored जीपीजी की सारखे दिसत नाही. प्रथम &lt;code&gt;gpg --armor --export&lt;/code&gt; सह रूपांतरित करा, किंवा &lt;b&gt;क्लिपबोर्डमधून&lt;/b&gt; द्वारे armored ब्लॉक पेस्ट करा.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="59"/>
+        <location filename="../src/importkeydialog.cpp" line="64"/>
         <source>All files</source>
         <translation>सर्व फाइल्स</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="75"/>
-        <location filename="../src/importkeydialog.cpp" line="88"/>
-        <location filename="../src/importkeydialog.cpp" line="100"/>
-        <location filename="../src/importkeydialog.cpp" line="200"/>
-        <location filename="../src/importkeydialog.cpp" line="204"/>
+        <location filename="../src/importkeydialog.cpp" line="80"/>
+        <location filename="../src/importkeydialog.cpp" line="93"/>
+        <location filename="../src/importkeydialog.cpp" line="105"/>
+        <location filename="../src/importkeydialog.cpp" line="208"/>
+        <location filename="../src/importkeydialog.cpp" line="212"/>
         <source>Import key</source>
         <translation>की आयात करा</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="89"/>
+        <location filename="../src/importkeydialog.cpp" line="94"/>
         <source>%1 is larger than a key file can be.</source>
         <translation type="unfinished">%1 ही फाइल की फाइलच्या कमाल शक्य आकारापेक्षा मोठी आहे.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="148"/>
+        <location filename="../src/importkeydialog.cpp" line="153"/>
         <source>GPG import failed:
 %1</source>
         <translation>जीपीजी आयात अयशस्वी:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="158"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>जीपीजी आउटपुटमधून आयात केलेली की id पार्स करता आली नाही.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="205"/>
+        <location filename="../src/importkeydialog.cpp" line="213"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">सार्वजनिक की %1 आयात केली. तिच्यासाठी एन्क्रिप्ट करण्यापूर्वी तिचा फिंगरप्रिंट तिच्या मालकाकडे तपासून पाहा: की आयात केल्याने ती कोणाकडे आहे याबद्दल काहीही कळत नाही.</translation>
     </message>
@@ -2098,8 +2108,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="802"/>
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="806"/>
+        <location filename="../src/mainwindow.cpp" line="1000"/>
         <source>Search password</source>
         <translation>पासवर्ड शोधा</translation>
     </message>
@@ -2201,7 +2211,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1776"/>
         <source>Add password</source>
         <translation>पासवर्ड जोडा</translation>
     </message>
@@ -2213,21 +2223,21 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1771"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>Add folder</source>
         <translation>फोल्डर जोडा</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1779"/>
+        <location filename="../src/mainwindow.cpp" line="1783"/>
         <source>Edit</source>
         <translation>संपादित करा</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1791"/>
+        <location filename="../src/mainwindow.cpp" line="1795"/>
         <source>Delete</source>
         <translation>हटवा</translation>
     </message>
@@ -2268,7 +2278,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1773"/>
+        <location filename="../src/mainwindow.cpp" line="1777"/>
         <source>Users</source>
         <translation>वापरकर्ते</translation>
     </message>
@@ -2405,8 +2415,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>पासवर्ड-स्टोअर अद्यतनित करत आहे</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="712"/>
-        <location filename="../src/mainwindow.cpp" line="1053"/>
+        <location filename="../src/mainwindow.cpp" line="716"/>
+        <location filename="../src/mainwindow.cpp" line="1057"/>
         <source>Content hidden</source>
         <translation>सामग्री लपवलेली</translation>
     </message>
@@ -2424,20 +2434,20 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">OTP कोड</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="742"/>
+        <location filename="../src/mainwindow.cpp" line="746"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">ही पासवर्ड एंट्री डिक्रिप्ट करता आली नाही</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="753"/>
-        <location filename="../src/mainwindow.cpp" line="772"/>
-        <location filename="../src/mainwindow.cpp" line="1463"/>
+        <location filename="../src/mainwindow.cpp" line="757"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP कोड क्लिपबोर्डवर कॉपी केला</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="776"/>
-        <location filename="../src/mainwindow.cpp" line="1451"/>
+        <location filename="../src/mainwindow.cpp" line="780"/>
+        <location filename="../src/mainwindow.cpp" line="1455"/>
         <source>No OTP code found in this password entry</source>
         <translation>या पासवर्ड एंट्रीमध्ये कोणताही OTP कोड सापडला नाही</translation>
     </message>
@@ -2446,27 +2456,27 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">पासवर्ड आणि सामग्री लपवलेली</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="875"/>
+        <location filename="../src/mainwindow.cpp" line="879"/>
         <source>About QtPass</source>
         <translation type="unfinished">QtPass बद्दल</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="876"/>
+        <location filename="../src/mainwindow.cpp" line="880"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, मानक युनिक्स पासवर्ड मॅनेजरसाठी बहु-प्लॅटफॉर्म GUI.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;स्रोत कोड आणि समस्या&lt;/a&gt;&lt;/p&gt;&lt;p&gt;कॉपीराइट &amp;copy; 2014&amp;ndash;%2 IJhack. &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL आवृत्ती 3&lt;/a&gt; किंवा त्यानंतरच्या आवृत्तीअंतर्गत परवानाकृत.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="893"/>
+        <location filename="../src/mainwindow.cpp" line="897"/>
         <source>Looking for: %1</source>
         <translation>शोधत आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="945"/>
+        <location filename="../src/mainwindow.cpp" line="949"/>
         <source>Searching…</source>
         <translation>शोधत आहे…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="977"/>
+        <location filename="../src/mainwindow.cpp" line="981"/>
         <source>Search content (regex)</source>
         <translation>सामग्री शोधा (regex)</translation>
     </message>
@@ -2475,17 +2485,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="obsolete">सामग्री शोध POSIX बेसिक रेग्युलर एक्सप्रेशन वापरतो (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="981"/>
+        <location filename="../src/mainwindow.cpp" line="985"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">सामग्री शोध Perl-सुसंगत रेग्युलर एक्सप्रेशन (PCRE) वापरतो.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1028"/>
+        <location filename="../src/mainwindow.cpp" line="1032"/>
         <source>No matches found.</source>
         <translation>कोणतेही जुळणारे सापडले नाही.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1070"/>
+        <location filename="../src/mainwindow.cpp" line="1074"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n जुळणी सापडली</numerusform>
@@ -2493,7 +2503,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1072"/>
+        <location filename="../src/mainwindow.cpp" line="1076"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n एंट्रीमध्ये.</numerusform>
@@ -2501,12 +2511,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Invalid name</source>
         <translation type="unfinished">अवैध नाव</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1283"/>
+        <location filename="../src/mainwindow.cpp" line="1287"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">हे नाव पासवर्ड स्टोअरच्या बाहेर निर्देश करेल. कृपया दुसरे नाव निवडा.</translation>
     </message>
@@ -2521,7 +2531,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1 मध्ये ठेवली जाईल)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1823"/>
+        <location filename="../src/mainwindow.cpp" line="1827"/>
         <source>New folder</source>
         <translation type="unfinished">नवीन फोल्डर</translation>
     </message>
@@ -2538,7 +2548,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1 मध्ये ठेवली जाईल)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="806"/>
+        <location filename="../src/mainwindow.cpp" line="810"/>
         <source>Password and content hidden</source>
         <translation>पासवर्ड आणि सामग्री लपवलेली</translation>
     </message>
@@ -2547,12 +2557,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished"> आणि संपूर्ण सामग्री?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1387"/>
+        <location filename="../src/mainwindow.cpp" line="1391"/>
         <source>Delete link?</source>
         <translation type="unfinished">लिंक हटवायची?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1388"/>
+        <location filename="../src/mainwindow.cpp" line="1392"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 ही एक सिम्बॉलिक लिंक किंवा जंक्शन आहे. लिंक काढायची? ती ज्याकडे निर्देश करते ते तसेच राहील.</translation>
     </message>
@@ -2561,12 +2571,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished"> आणि संपूर्ण सामग्री? &lt;br&gt;&lt;strong&gt;लक्ष द्या: दिलेल्या फोल्डरमध्ये अनपेक्षित फाइल्स आहेत, सुरू ठेवण्यापूर्वी त्यांची तपासणी करा.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1380"/>
+        <location filename="../src/mainwindow.cpp" line="1384"/>
         <source>Delete folder?</source>
         <translation>फोल्डर हटवायचा?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1336"/>
+        <location filename="../src/mainwindow.cpp" line="1340"/>
         <source>Delete password?</source>
         <translation>पासवर्ड हटवायचा?</translation>
     </message>
@@ -2575,43 +2585,43 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">तुम्हाला नक्की %1%2 हटवायचे आहे का?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1446"/>
+        <location filename="../src/mainwindow.cpp" line="1450"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP निर्मितीसाठी कोणताही पासवर्ड निवडला नाही</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1584"/>
+        <location filename="../src/mainwindow.cpp" line="1588"/>
         <source>Profile changed to %1</source>
         <translation>प्रोफाइल %1 वर बदलली</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1770"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Open folder with file manager</source>
         <translation>फाइल मॅनेजरसह फोल्डर उघडा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
-        <location filename="../src/mainwindow.cpp" line="1883"/>
+        <location filename="../src/mainwindow.cpp" line="1789"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Rename folder</source>
         <translation>फोल्डरचे नाव बदला</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1788"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Rename password</source>
         <translation>पासवर्डचे नाव बदला</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1725"/>
+        <location filename="../src/mainwindow.cpp" line="1729"/>
         <source>Share</source>
         <translation>शेअर करा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1051"/>
+        <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… या एंट्रीमध्ये आणखी जुळण्या</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1065"/>
+        <location filename="../src/mainwindow.cpp" line="1069"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>पहिली %n जुळणी दाखवत आहे; उर्वरित पाहण्यासाठी अधिक नेमके शोधा.</numerusform>
@@ -2619,28 +2629,28 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1337"/>
+        <location filename="../src/mainwindow.cpp" line="1341"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">तुम्हाला नक्की %1 हटवायचे आहे का?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1344"/>
+        <location filename="../src/mainwindow.cpp" line="1348"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">तुम्हाला नक्की %1 आणि त्यातील संपूर्ण सामग्री हटवायची आहे का?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1360"/>
+        <location filename="../src/mainwindow.cpp" line="1364"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">लक्ष द्या: दिलेल्या फोल्डरमध्ये अनपेक्षित फाइल्स आहेत, सुरू ठेवण्यापूर्वी त्यांची तपासणी करा.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
         <translation type="unfinished">%1 वाचता आले नाही, त्यामुळे त्यात काय आहे हे अज्ञात आहे.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1375"/>
+        <location filename="../src/mainwindow.cpp" line="1379"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
@@ -2649,75 +2659,75 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1735"/>
+        <location filename="../src/mainwindow.cpp" line="1739"/>
         <source>Re-encrypt all passwords</source>
         <translation>सर्व पासवर्ड पुन्हा-एन्क्रिप्ट करा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1740"/>
+        <location filename="../src/mainwindow.cpp" line="1744"/>
         <source>Export my public key...</source>
         <translation>माझी सार्वजनिक की निर्यात करा...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1744"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>Add recipient...</source>
         <translation>प्राप्तकर्ता जोडा...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1749"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>What is this?</source>
         <translation>हे काय आहे?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1824"/>
+        <location filename="../src/mainwindow.cpp" line="1828"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>नवीन फोल्डर: 
 (%1 मध्ये ठेवले जाईल )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1848"/>
+        <location filename="../src/mainwindow.cpp" line="1852"/>
         <source>Hidden folder</source>
         <translation type="unfinished">लपवलेला फोल्डर</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1849"/>
+        <location filename="../src/mainwindow.cpp" line="1853"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">डॉटने सुरू होणारा फोल्डर सूचीमध्ये लपलेला राहील: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1922"/>
+        <location filename="../src/mainwindow.cpp" line="1914"/>
         <source>Rename file to: </source>
         <translation>फाइलचे नाव बदला: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2081"/>
-        <location filename="../src/mainwindow.cpp" line="2100"/>
+        <location filename="../src/mainwindow.cpp" line="2073"/>
+        <location filename="../src/mainwindow.cpp" line="2092"/>
         <source>Export public key</source>
         <translation>सार्वजनिक की निर्यात करा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2082"/>
+        <location filename="../src/mainwindow.cpp" line="2074"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;तुमची सार्वजनिक की निर्यात करा&lt;/h3&gt;&lt;p&gt;कोणतीही स्वाक्षरी की कॉन्फिगर केलेली नाही. QtPass सेटिंग्ज &amp;gt; जीपीजी की मध्ये एक सेट करा, किंवा टर्मिनलमध्ये हे चालवा:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;नंतर फाइल तुमच्या सहकाऱ्यांना पाठवा.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2129"/>
+        <location filename="../src/mainwindow.cpp" line="2121"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">स्टोअरचा फोल्डर नाही</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2130"/>
+        <location filename="../src/mainwindow.cpp" line="2122"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ही एक सिम्बॉलिक लिंक किंवा जंक्शन आहे, किंवा अशा लिंकच्या मागे आहे. ती ज्याकडे निर्देश करते ते पासवर्ड स्टोअरचा भाग नाही आणि ते तसेच राहील.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2138"/>
+        <location filename="../src/mainwindow.cpp" line="2130"/>
         <source>Sharing passwords with GPG</source>
         <translation>जीपीजीसह पासवर्ड शेअर करणे</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2139"/>
+        <location filename="../src/mainwindow.cpp" line="2131"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;जीपीजीसह पासवर्ड शेअर करणे&lt;/h3&gt;&lt;p&gt;इतर वापरकर्त्यांसह पासवर्ड शेअर करण्यासाठी:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;तुमची सार्वजनिक की निर्यात करा&lt;/b&gt; आणि सहकाऱ्यांना पाठवा&lt;/li&gt;&lt;li&gt;&lt;b&gt;सहकाऱ्यांच्या सार्वजनिक की आयात करा&lt;/b&gt; तुमच्या जीपीजी कीरिंगमध्ये&lt;/li&gt;&lt;li&gt;&lt;b&gt;पासवर्ड पुन्हा-एन्क्रिप्ट करा&lt;/b&gt; जेणेकरून सर्व प्राप्तकर्ते त्यांना डिक्रिप्ट करू शकतील&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;केवळ जुळणारी गुप्त की असलेले लोक पासवर्ड डिक्रिप्ट करू शकतात.&lt;/p&gt;&lt;p&gt;&lt;b&gt;टीप:&lt;/b&gt; सर्व शेअर केलेल्या फोल्डरसाठी समान जीपीजी की वापरा.&lt;/p&gt;&lt;p&gt;अधिक तपशीलांसाठी FAQ पहा.&lt;/p&gt;</translation>
     </message>
@@ -2728,29 +2738,27 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1 मध्ये ठेवला जाईल)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1856"/>
-        <location filename="../src/mainwindow.cpp" line="1871"/>
-        <location filename="../src/mainwindow.cpp" line="2000"/>
+        <location filename="../src/mainwindow.cpp" line="1860"/>
+        <location filename="../src/mainwindow.cpp" line="1992"/>
         <source>Error</source>
         <translation>त्रुटी</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1857"/>
+        <location filename="../src/mainwindow.cpp" line="1861"/>
         <source>Failed to create folder: %1</source>
         <translation>फोल्डर तयार करण्यात अयशस्वी: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1872"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>%1 मध्ये .gpg-id फाइल तयार करण्यात अयशस्वी</translation>
+        <translation type="vanished">%1 मध्ये .gpg-id फाइल तयार करण्यात अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1883"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Rename folder to: </source>
         <translation>फोल्डरचे नाव बदला: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1922"/>
+        <location filename="../src/mainwindow.cpp" line="1914"/>
         <source>Rename file</source>
         <translation>फाइलचे नाव बदला</translation>
     </message>
@@ -2763,23 +2771,23 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">फाइलचे नाव बदला: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1987"/>
+        <location filename="../src/mainwindow.cpp" line="1979"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">या एंट्रीमध्ये OTP सीक्रेट आहे, पासवर्ड नाही</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2001"/>
+        <location filename="../src/mainwindow.cpp" line="1993"/>
         <source>Directory does not exist: %1</source>
         <translation>डिरेक्टरी अस्तित्वात नाही: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2009"/>
-        <location filename="../src/mainwindow.cpp" line="2042"/>
+        <location filename="../src/mainwindow.cpp" line="2001"/>
+        <location filename="../src/mainwindow.cpp" line="2034"/>
         <source>Re-encrypt passwords</source>
         <translation>पासवर्ड पुन्हा-एन्क्रिप्ट करा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2010"/>
+        <location filename="../src/mainwindow.cpp" line="2002"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2796,22 +2804,22 @@ Continue?</source>
 सुरू ठेवायचे?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2040"/>
+        <location filename="../src/mainwindow.cpp" line="2032"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">पासवर्ड पुन्हा-एन्क्रिप्ट करत आहे...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2041"/>
+        <location filename="../src/mainwindow.cpp" line="2033"/>
         <source>Cancel</source>
         <translation type="unfinished">रद्द करा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2049"/>
+        <location filename="../src/mainwindow.cpp" line="2041"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">पुन्हा-एन्क्रिप्शन रद्द करत आहे</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2060"/>
+        <location filename="../src/mainwindow.cpp" line="2052"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">पासवर्ड पुन्हा-एन्क्रिप्ट करत आहे: %2 पैकी %1</translation>
     </message>
@@ -2824,7 +2832,7 @@ Continue?</source>
         <translation type="vanished">&lt;h3&gt;तुमची सार्वजनिक की निर्यात करा&lt;/h3&gt;&lt;p&gt;कोणतीही स्वाक्षरी की कॉन्फिगर केलेली नाही. QtPass सेटिंग्ज &amp;gt; जीपीजी की मध्ये एक सेट करा, किंवा टर्मिनलमध्ये हे चालवा:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;नंतर फाइल तुमच्या सहकाऱ्यांना पाठवा.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2101"/>
+        <location filename="../src/mainwindow.cpp" line="2093"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2833,7 +2841,7 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2103"/>
+        <location filename="../src/mainwindow.cpp" line="2095"/>
         <source>No output from gpg.</source>
         <translation>gpg कडून कोणतेही आउटपुट नाही.</translation>
     </message>
@@ -3553,33 +3561,44 @@ Continue?</source>
         <translation type="unfinished">पुश करत नाही: या स्टोअरमधील आधीचे पुन्हा-एन्क्रिप्शन पूर्ण झाले नाही</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="187"/>
+        <location filename="../src/realpass.cpp" line="195"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">%1 अंतर्गत प्राप्तकर्ता सूच्या तपासत आहे…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="332"/>
+        <location filename="../src/realpass.cpp" line="219"/>
+        <source>Cannot check the recipient lists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="222"/>
+        <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
+        <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="353"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">लिंक %1 काढता आली नाही.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="333"/>
+        <location filename="../src/realpass.cpp" line="354"/>
         <source>Delete failed</source>
         <translation type="unfinished">हटवणे अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="383"/>
+        <location filename="../src/realpass.cpp" line="404"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">दुवा %1 काढला गेला, पण git ते नोंदवू शकले नाही: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="385"/>
-        <location filename="../src/realpass.cpp" line="535"/>
+        <location filename="../src/realpass.cpp" line="406"/>
+        <location filename="../src/realpass.cpp" line="556"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">हटवणे अपूर्ण</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="494"/>
+        <location filename="../src/realpass.cpp" line="515"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
         <translation type="unfinished">प्राप्तकर्ते बदलले गेले, पण काही एंट्री त्यांच्यासाठी पुन्हा-एन्क्रिप्ट करता आल्या नाहीत: त्या अजूनही आधीच्या प्राप्तकर्त्यांसाठी एन्क्रिप्ट आहेत, जे त्या अजूनही वाचू शकतात. Git सह हा बदल स्थानिकरित्या कमिट केला आहे आणि पुश केलेला नाही: पुन्हा-एन्क्रिप्शन यशस्वी होईपर्यंत QtPass हे स्टोअर स्वयंचलितपणे पुश करत नाही, आणि हाताने केलेला पुश तो पाठवतो.</translation>
     </message>
@@ -3588,12 +3607,12 @@ Continue?</source>
         <translation type="obsolete">प्राप्तकर्ते बदलले गेले, पण काही एंट्री त्यांच्यासाठी पुन्हा-एन्क्रिप्ट करता आल्या नाहीत: त्या अजूनही आधीच्या प्राप्तकर्त्यांसाठी एन्क्रिप्ट आहेत, जे त्या अजूनही वाचू शकतात. Git सह हा बदल स्थानिकरित्या कमिट केला आहे आणि आता पुश केलेला नाही; पुढील पुश तो पाठवेल.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="532"/>
+        <location filename="../src/realpass.cpp" line="553"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">&apos;%1&apos; ही लिंक काढून टाकली आहे आणि &apos;गिट&apos; आता ती ट्रॅक करत नाही, परंतु कमिट अयशस्वी झाले: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="667"/>
+        <location filename="../src/realpass.cpp" line="688"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">शोधासाठी GPG एक्झिक्युटेबल कॉन्फिगर केलेले असणे आवश्यक आहे.</translation>
     </message>
@@ -3601,12 +3620,12 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="295"/>
+        <location filename="../src/storemodel.cpp" line="334"/>
         <source>Force overwrite?</source>
         <translation>सक्तीने अधिलिखित करायचे?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="296"/>
+        <location filename="../src/storemodel.cpp" line="335"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 ला %2 सह अधिलिखित करायचे?</translation>
     </message>
@@ -3813,42 +3832,60 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation>फाइल किंवा क्लिपबोर्डमधून जीपीजी की आयात करा</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="77"/>
+        <location filename="../src/usersdialog.cpp" line="81"/>
         <source>Keylist missing</source>
         <translation>की सूची गहाळ आहे</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="78"/>
+        <location filename="../src/usersdialog.cpp" line="82"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>उपलब्ध जीपीजी की ची सूची मिळवता आली नाही</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/usersdialog.cpp" line="162"/>
+        <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
+        <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/usersdialog.cpp" line="170"/>
+        <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
+        <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="220"/>
+        <location filename="../src/usersdialog.cpp" line="279"/>
         <source>Key not found in keyring</source>
         <translation>कीरिंगमध्ये की सापडली नाही</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="427"/>
         <source>created</source>
         <translation>तयार केले</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="372"/>
+        <location filename="../src/usersdialog.cpp" line="431"/>
         <source>expires</source>
         <translation>कालबाह्य</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="454"/>
         <source>[INVALID] </source>
         <translation>[अवैध] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="450"/>
         <source>[EXPIRED] </source>
         <translation>[कालबाह्य] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="399"/>
+        <location filename="../src/usersdialog.cpp" line="458"/>
         <source>[PARTIAL] </source>
         <translation>[आंशिक] </translation>
     </message>
@@ -3856,34 +3893,34 @@ Plain entries have a trusted encryption key, select these to allow other people 
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1151"/>
+        <location filename="../src/util.cpp" line="1176"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">%1 च्या शेजारी तात्पुरती फाइल तयार करता येत नाही: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1163"/>
-        <location filename="../src/util.cpp" line="1255"/>
-        <location filename="../src/util.cpp" line="1285"/>
+        <location filename="../src/util.cpp" line="1188"/>
+        <location filename="../src/util.cpp" line="1280"/>
+        <location filename="../src/util.cpp" line="1310"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">%1 लिहिता येत नाही: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1188"/>
+        <location filename="../src/util.cpp" line="1213"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">%1 बदलण्यात अयशस्वी.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1193"/>
+        <location filename="../src/util.cpp" line="1218"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 आधीपासूनच अस्तित्वात आहे.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1195"/>
+        <location filename="../src/util.cpp" line="1220"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">%1 लिहिण्यात अयशस्वी.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1242"/>
+        <location filename="../src/util.cpp" line="1267"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 लिहिले जात असताना त्याच्या जागी दुसरी फाइल ठेवली गेली.</translation>
     </message>
@@ -3892,12 +3929,12 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation type="obsolete">%1 लिहिले जात असताना त्याच्या जागी लिंक ठेवली गेली.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1268"/>
+        <location filename="../src/util.cpp" line="1293"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">%1 वाचता येत नाही.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1278"/>
+        <location filename="../src/util.cpp" line="1303"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">%1 वाचता येत नाही: %2</translation>
     </message>
