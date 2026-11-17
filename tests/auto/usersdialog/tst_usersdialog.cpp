@@ -56,6 +56,7 @@ private slots:
   void newStoreStartsWithNothingSelected();
   void existingStorePreselectsItsRecipients();
   void foldersBelowWithTheirOwnListAreNamed();
+  void foldersBelowThatCannotBeReadAreNamed();
   void withSigningATamperedListPreselectsNothing();
   void withSigningAnOlderVerifiedListIsPreselectedWithAWarning();
   void withSigningAListForAnotherFolderPreselectsNothing();
@@ -306,6 +307,47 @@ void tst_usersdialog::foldersBelowWithTheirOwnListAreNamed() {
     QVERIFY(dialog.findChild<QLabel *>(QStringLiteral("nestedListsWarning")) ==
             nullptr);
   }
+}
+
+/**
+ * @brief A folder below that cannot be read may hold a list of its own that
+ *        the dialog cannot see, so it is named as unknown rather than left
+ *        out.
+ */
+void tst_usersdialog::foldersBelowThatCannotBeReadAreNamed() {
+#ifdef Q_OS_WIN
+  QSKIP("relies on Unix directory permissions");
+#else
+  if (::geteuid() == 0) {
+    QSKIP("root reads anywhere");
+  }
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QDir root(store.path());
+  QVERIFY(root.mkpath(QStringLiteral("locked/inner")));
+  {
+    QFile gpgId(root.filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    gpgId.write("31850CF72D9CDDE9\n");
+  }
+  const QString locked = root.filePath(QStringLiteral("locked"));
+  QVERIFY(QFile::setPermissions(locked, QFile::WriteOwner));
+  const auto restore = qScopeGuard([&locked] {
+    QFile::setPermissions(locked, QFile::ReadOwner | QFile::WriteOwner |
+                                      QFile::ExeOwner);
+  });
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *label =
+      dialog.findChild<QLabel *>(QStringLiteral("nestedListsWarning"));
+  QVERIFY(label != nullptr);
+  QVERIFY2(label->text().startsWith(QStringLiteral("1 folder")) &&
+               label->text().contains(QStringLiteral("could not be read")) &&
+               label->text().endsWith(QStringLiteral(": locked")),
+           qPrintable(label->text()));
+#endif
 }
 
 /**

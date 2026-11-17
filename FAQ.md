@@ -129,6 +129,22 @@ Right-click on a **folder** in the password tree to access the **Share** submenu
 
 The submenu only appears on folders, not individual password files.
 
+### I removed someone, but they can still read some passwords
+
+Saving recipients in the **Users** dialog changes the recipient list (`.gpg-id`) of that folder and re-encrypts the entries that use it. Some entries are not reached:
+
+- **Folders below with a list of their own.** For those, their own `.gpg-id` decides, not the one you saved. The Users dialog names them (up to five), and also names folders below that it could not read. Earlier QtPass versions gave every folder made with **Add folder** its own copy of the parent's list. To find every such list, run this with your own store path:
+
+  ```sh
+  find ~/.password-store -mindepth 2 -name .gpg-id
+  ```
+
+  - Without a signing key: delete a copy you do not need, then use **Share › Re-encrypt all passwords** on that folder.
+  - With a signing key: open **Users** for that folder, untick the person and save. A deleted list that this device has accepted is not replaced by the parent's list, and saving into that folder then stops with "Recipient list missing".
+
+- **Hidden folders** (names that start with a dot). QtPass does not show, search or re-encrypt them, as `pass ls` does not list them. Move the entries into a normal folder, then re-encrypt.
+- **Copies elsewhere.** Re-encrypting does not take back what the person could already read: Git history, backups and synced copies keep the old files. Change the passwords that matter.
+
 ### How do I set up a one-time password (OTP/TOTP)?
 
 QtPass generates TOTP codes itself (RFC 6238), so you no longer need the

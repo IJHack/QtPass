@@ -187,7 +187,8 @@ private:
   /**
    * @brief Name the folders below this one that have a recipient list of
    * their own: saving here does not change theirs, so someone removed here
-   * can still read what is in them.
+   * can still read what is in them. Folders below that cannot be read are
+   * named too, since whether they have one is unknown.
    */
   void showNestedLists();
   /**
