@@ -22,9 +22,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   gives it a list. A copy made by an earlier version stays and keeps its
   recipients when someone is removed above it: the users dialog now names
   the folders below with a list of their own. In a store without a signing
-  key, remove a copy you do not need. With a signing key, open the users
-  dialog for that folder instead, untick anyone who should no longer read
-  it, and save: a list this device has accepted is not replaced by the
+  key, remove a copy you do not need, then use "Re-encrypt all passwords"
+  on that folder: its entries stay encrypted to whoever they were encrypted
+  to until then. With a signing key, open the users dialog for that folder
+  instead, untick anyone who should no longer read it, and save: a list this device has accepted is not replaced by the
   parent's when it is deleted, and saving into that folder then stops with
   "Recipient list missing" (scan finding ANT-2026-3I1PV36T).
 - **"Hide password" hides more.** With it on, fields that name a secret
