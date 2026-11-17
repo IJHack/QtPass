@@ -197,6 +197,14 @@
           },
           {
             "@type": "Question",
+            "name": "I removed someone, but they can still read some passwords",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Saving recipients in the Users dialog changes the recipient list (.gpg-id) of that folder and re-encrypts the entries that use it. Some entries are not reached: Folders below with a list of their own. For those, their own .gpg-id decides, not the one you saved. QtPass 1.8.4 and earlier gave every folder made with Add folder its own copy of the parent's list. To find every such list, run this with your own store path: find ~/.password-store -mindepth 2 -name .gpg-id Without a signing key: delete a copy you do not need, then use Share › Re-encrypt all passwords on that folder. With a signing key: open Users for that folder, untick the person and save. Hidden folders (names that start with a dot). QtPass does not show, search or re-encrypt them, as pass ls does not list them (pass init does re-encrypt them). Move the entries into a normal folder, then re-encrypt. Copies elsewhere. Re-encrypting does not take back what the person could already read: Git history, backups and synced copies keep the old files. Change the passwords that matter."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "How do I set up a one-time password (OTP/TOTP)?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -455,6 +463,12 @@
             <li>
               <a href="#what-does-the-share-submenu-do"
                 >What does the Share submenu do?</a
+              >
+            </li>
+            <li>
+              <a
+                href="#i-removed-someone-but-they-can-still-read-some-passwords"
+                >I removed someone, but they can still read some passwords</a
               >
             </li>
             <li>
@@ -860,6 +874,62 @@ setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--as
         <p>
           The submenu only appears on folders, not individual password files.
         </p>
+        <h3>
+          <a
+            id="i-removed-someone-but-they-can-still-read-some-passwords"
+            class="anchor"
+            href="#i-removed-someone-but-they-can-still-read-some-passwords"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >I removed someone, but they can still read some passwords
+        </h3>
+        <p>
+          Saving recipients in the <strong>Users</strong> dialog changes the
+          recipient list (<code>.gpg-id</code>) of that folder and re-encrypts
+          the entries that use it. Some entries are not reached:
+        </p>
+        <ul>
+          <li>
+            <p>
+              <strong>Folders below with a list of their own.</strong> For
+              those, their own <code>.gpg-id</code> decides, not the one you
+              saved. QtPass 1.8.4 and earlier gave every folder made with
+              <strong>Add folder</strong> its own copy of the parent&#39;s list.
+              To find every such list, run this with your own store path:
+            </p>
+            <pre><code class="language-sh">find ~/.password-store -mindepth 2 -name .gpg-id
+</code></pre>
+            <ul>
+              <li>
+                Without a signing key: delete a copy you do not need, then use
+                <strong>Share › Re-encrypt all passwords</strong> on that
+                folder.
+              </li>
+              <li>
+                With a signing key: open <strong>Users</strong> for that folder,
+                untick the person and save.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              <strong>Hidden folders</strong> (names that start with a dot).
+              QtPass does not show, search or re-encrypt them, as
+              <code>pass ls</code> does not list them (<code>pass init</code>
+              does re-encrypt them). Move the entries into a normal folder, then
+              re-encrypt.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Copies elsewhere.</strong> Re-encrypting does not take
+              back what the person could already read: Git history, backups and
+              synced copies keep the old files. Change the passwords that
+              matter.
+            </p>
+          </li>
+        </ul>
         <h3>
           <a
             id="how-do-i-set-up-a-one-time-password-otptotp"
