@@ -7,13 +7,14 @@ var searchData=
   ['haschildren_4',['hasChildren',['../class_store_model.html#aa3dee919cc1ea95f64adfdf55d68b988',1,'StoreModel']]],
   ['hasqueued_5',['hasQueued',['../class_executor.html#a77fc56acc6ba0d9efd0e50fbbd71b002',1,'Executor']]],
   ['hasselection_6',['hasSelection',['../class_users_dialog.html#adb673bcebad1749f22183ce146b846cd',1,'UsersDialog']]],
-  ['havesecretkey_7',['haveSecretKey',['../class_gpg_id_signer.html#aefa1594ea06e773745d73b9752d2dda7',1,'GpgIdSigner']]],
-  ['header_8',['header',['../class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc',1,'GpgIdGeneration']]],
-  ['heldscopes_9',['heldScopes',['../class_pass.html#ab7bebb6dc42ed85ccdf7de9e7cdd528c',1,'Pass']]],
-  ['hide_10',['hide',['../class_menu_bar_peek.html#ad21d624502b17fbd7aea6b32c33c6176',1,'MenuBarPeek']]],
-  ['hides_11',['hides',['../class_password_display_panel.html#af0b6c619d59cff43692b8087999fe3a5',1,'PasswordDisplayPanel']]],
-  ['hidewhennomenuisopen_12',['hideWhenNoMenuIsOpen',['../class_menu_bar_peek.html#a5b64a884de1b4b23d3ce8a04e3ccc7af',1,'MenuBarPeek']]],
-  ['holdautopush_13',['holdAutoPush',['../class_pass.html#a63823c10dde60d0694b377699169a5ca',1,'Pass']]],
-  ['holdsotpconfig_14',['holdsOtpConfig',['../filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9',1,'filecontent.cpp']]],
-  ['hookotpfield_15',['hookOtpField',['../class_password_dialog.html#a0fbd5f4e410c2fadd96b44ad563fdea9',1,'PasswordDialog']]]
+  ['hasunreadablename_7',['hasUnreadableName',['../class_util.html#a4313266763fb44f8b3d11df30dab21c7',1,'Util']]],
+  ['havesecretkey_8',['haveSecretKey',['../class_gpg_id_signer.html#aefa1594ea06e773745d73b9752d2dda7',1,'GpgIdSigner']]],
+  ['header_9',['header',['../class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc',1,'GpgIdGeneration']]],
+  ['heldscopes_10',['heldScopes',['../class_pass.html#ab7bebb6dc42ed85ccdf7de9e7cdd528c',1,'Pass']]],
+  ['hide_11',['hide',['../class_menu_bar_peek.html#ad21d624502b17fbd7aea6b32c33c6176',1,'MenuBarPeek']]],
+  ['hides_12',['hides',['../class_password_display_panel.html#af0b6c619d59cff43692b8087999fe3a5',1,'PasswordDisplayPanel']]],
+  ['hidewhennomenuisopen_13',['hideWhenNoMenuIsOpen',['../class_menu_bar_peek.html#a5b64a884de1b4b23d3ce8a04e3ccc7af',1,'MenuBarPeek']]],
+  ['holdautopush_14',['holdAutoPush',['../class_pass.html#a63823c10dde60d0694b377699169a5ca',1,'Pass']]],
+  ['holdsotpconfig_15',['holdsOtpConfig',['../filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9',1,'filecontent.cpp']]],
+  ['hookotpfield_16',['hookOtpField',['../class_password_dialog.html#a0fbd5f4e410c2fadd96b44ad563fdea9',1,'PasswordDialog']]]
 ];

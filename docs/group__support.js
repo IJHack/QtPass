@@ -56,6 +56,7 @@ var group__support =
       [ "findPasswordStore", "class_util.html#a503abb6ccbf2aa18056c220b9b45284e", null ],
       [ "gitCeiling", "class_util.html#afd0e45a8685dd277e6f3d51c361e0b03", null ],
       [ "gitStoreVariables", "class_util.html#a98271dbaefe09960e1eaded52fed2694", null ],
+      [ "hasUnreadableName", "class_util.html#a4313266763fb44f8b3d11df30dab21c7", null ],
       [ "initialiseEnvironment", "class_util.html#ae448351f44d5e8f0d03eeff8ef3e54b2", null ],
       [ "isLaunchableWebUrl", "class_util.html#a86864a9430f6903425908e76ba6079b5", null ],
       [ "isLinkedFolder", "class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d", null ],

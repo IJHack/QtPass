@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa":[4,0,1,42,1],
 "pass_8h_source.html":[4,0,1,42],
 "passbackendfactory_8cpp.html":[4,0,1,43],
 "passbackendfactory_8cpp_source.html":[4,0,1,43],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_profile.html#a02fe0d44538b9aac07fc7e684237fefb":[1,4,2,5],
 "struct_profile.html#a1e4c9f21760536f1ec3a4689b0932557":[1,4,2,6],
 "struct_profile.html#a2cbcbd0c1c062264c3952449f512aa06":[1,4,2,3],
-"struct_profile.html#a3365fc692edf8aa98fc48afa850a792c":[1,4,2,4],
-"struct_profile.html#a3943541e66642e37b2ef228c6e3bc4f3":[1,4,2,8]
+"struct_profile.html#a3365fc692edf8aa98fc48afa850a792c":[1,4,2,4]
 };

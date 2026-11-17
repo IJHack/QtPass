@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 07:55:51</td>
+            <td class="headerValue">2026-11-17 09:21:39</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -426,14 +426,14 @@
 <span id="L353"><span class="lineNum">     353</span> <span class="tlaGNC">          67 :   m_firstShowCompleted = true;</span></span>
 <span id="L354"><span class="lineNum">     354</span>              : }</span>
 <span id="L355"><span class="lineNum">     355</span>              : </span>
-<span id="L356"><span class="lineNum">     356</span> <span class="tlaGNC">        7772 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">        7772 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L356"><span class="lineNum">     356</span> <span class="tlaGNC">        7773 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">        7773 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L359"><span class="lineNum">     359</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L360"><span class="lineNum">     360</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L362"><span class="lineNum">     362</span>              :   }</span>
-<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        7772 :   return QMainWindow::event(event);</span></span>
+<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        7773 :   return QMainWindow::event(event);</span></span>
 <span id="L364"><span class="lineNum">     364</span>              : }</span>
 <span id="L365"><span class="lineNum">     365</span>              : </span>
 <span id="L366"><span class="lineNum">     366</span> <span class="tlaGNC">         232 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -1739,21 +1739,21 @@
 <span id="L1666"><span class="lineNum">    1666</span>              : // Only once the application palette changed (see m_themeSwitched): a bar</span>
 <span id="L1667"><span class="lineNum">    1667</span>              : // whose active Window lightness is far from the application's shows the</span>
 <span id="L1668"><span class="lineNum">    1668</span>              : // other theme.</span>
-<span id="L1669"><span class="lineNum">    1669</span> <span class="tlaGNC">          31 : void MainWindow::dropStaleToolsAreaPalettes() {</span></span>
-<span id="L1670"><span class="lineNum">    1670</span> <span class="tlaGNC">          31 :   if (!m_themeSwitched) {</span></span>
+<span id="L1669"><span class="lineNum">    1669</span> <span class="tlaGNC">          28 : void MainWindow::dropStaleToolsAreaPalettes() {</span></span>
+<span id="L1670"><span class="lineNum">    1670</span> <span class="tlaGNC">          28 :   if (!m_themeSwitched) {</span></span>
 <span id="L1671"><span class="lineNum">    1671</span>              :     return;</span>
 <span id="L1672"><span class="lineNum">    1672</span>              :   }</span>
 <span id="L1673"><span class="lineNum">    1673</span>              :   constexpr int kStaleToolsAreaLightness = 64;</span>
 <span id="L1674"><span class="lineNum">    1674</span>              :   // The active group on both sides: a bar's palette() reads the inactive</span>
 <span id="L1675"><span class="lineNum">    1675</span>              :   // group while another window has focus (the settings app, during a theme</span>
 <span id="L1676"><span class="lineNum">    1676</span>              :   // switch), and Breeze gives the header set different inactive colours.</span>
-<span id="L1677"><span class="lineNum">    1677</span> <span class="tlaGNC">          54 :   const int appLightness = QApplication::palette()</span></span>
+<span id="L1677"><span class="lineNum">    1677</span> <span class="tlaGNC">          48 :   const int appLightness = QApplication::palette()</span></span>
 <span id="L1678"><span class="lineNum">    1678</span>              :                                .color(QPalette::Active, QPalette::Window)</span>
-<span id="L1679"><span class="lineNum">    1679</span> <span class="tlaGNC">          27 :                                .lightness();</span></span>
-<span id="L1680"><span class="lineNum">    1680</span> <span class="tlaGNC">         108 :   for (QWidget *bar : {static_cast&lt;QWidget *&gt;(ui-&gt;toolBar),</span></span>
-<span id="L1681"><span class="lineNum">    1681</span> <span class="tlaGNC">          81 :                        static_cast&lt;QWidget *&gt;(menuBar())}) {</span></span>
-<span id="L1682"><span class="lineNum">    1682</span> <span class="tlaGNC">          54 :     if (!bar-&gt;testAttribute(Qt::WA_SetPalette)) {</span></span>
-<span id="L1683"><span class="lineNum">    1683</span> <span class="tlaGNC">          48 :       continue;</span></span>
+<span id="L1679"><span class="lineNum">    1679</span> <span class="tlaGNC">          24 :                                .lightness();</span></span>
+<span id="L1680"><span class="lineNum">    1680</span> <span class="tlaGNC">          96 :   for (QWidget *bar : {static_cast&lt;QWidget *&gt;(ui-&gt;toolBar),</span></span>
+<span id="L1681"><span class="lineNum">    1681</span> <span class="tlaGNC">          72 :                        static_cast&lt;QWidget *&gt;(menuBar())}) {</span></span>
+<span id="L1682"><span class="lineNum">    1682</span> <span class="tlaGNC">          48 :     if (!bar-&gt;testAttribute(Qt::WA_SetPalette)) {</span></span>
+<span id="L1683"><span class="lineNum">    1683</span> <span class="tlaGNC">          42 :       continue;</span></span>
 <span id="L1684"><span class="lineNum">    1684</span>              :     }</span>
 <span id="L1685"><span class="lineNum">    1685</span>              :     const int barLightness =</span>
 <span id="L1686"><span class="lineNum">    1686</span> <span class="tlaGNC">          12 :         bar-&gt;palette().color(QPalette::Active, QPalette::Window).lightness();</span></span>

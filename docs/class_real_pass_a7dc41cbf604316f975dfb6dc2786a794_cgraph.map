@@ -1,113 +1,114 @@
 <map id="RealPass::passMoveOrCopy" name="RealPass::passMoveOrCopy">
-<area shape="rect" id="Node000001" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="5,201,207,229"/>
-<area shape="rect" id="Node000002" href="$class_real_pass.html#ae210a8e9148b9ea58e229e770b88f19b" title="Execute pass command with arguments." alt="" coords="282,33,450,61"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,199,171,139,210,105,253,76,281,65,277,69,256,80,213,109,175,143,121,202"/>
-<area shape="rect" id="Node000004" href="$class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="288,89,444,117"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="132,199,254,139,307,120,304,124,256,144,135,203"/>
-<area shape="rect" id="Node000006" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="281,280,450,308"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="154,227,305,273,301,277,155,232"/>
-<area shape="rect" id="Node000014" href="$class_pass.html#a273c43add4c728d419585f642bce24d4" title="Refuse a store change while a Git pull is still queued or running." alt="" coords="544,201,720,229"/>
-<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="206,213,531,213,527,217,208,218"/>
-<area shape="rect" id="Node000015" href="$class_pass.html#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid&#45;rebase, &#45;merge, &#45;cherry&#45;pick or &#45;revert." alt="" coords="538,133,726,178"/>
-<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="206,200,254,194,525,165,521,169,255,199,209,204"/>
-<area shape="rect" id="Node000018" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass..." alt="" coords="257,471,475,498"/>
-<area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="122,227,343,459,338,461,121,232"/>
-<area shape="rect" id="Node000046" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when the signed list of one of its..." alt="" coords="255,523,477,550"/>
-<area shape="poly" id="edge60_Node000001_Node000046" title=" " alt="" coords="110,227,126,282,152,358,172,399,195,439,223,476,256,508,264,514,259,515,253,512,219,480,191,442,167,401,148,360,121,284,110,232"/>
+<area shape="rect" id="Node000001" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="5,245,207,273"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#ae210a8e9148b9ea58e229e770b88f19b" title="Execute pass command with arguments." alt="" coords="282,44,450,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,244,169,174,208,133,253,97,299,76,295,80,256,101,212,137,173,178,119,246"/>
+<area shape="rect" id="Node000004" href="$class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="288,111,444,138"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="131,243,253,177,323,143,320,147,256,182,135,247"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="281,191,450,218"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="174,243,284,220,280,224,177,247"/>
+<area shape="rect" id="Node000014" href="$class_pass.html#a273c43add4c728d419585f642bce24d4" title="Refuse a store change while a Git pull is still queued or running." alt="" coords="544,357,720,385"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="174,271,550,352,547,356,175,276"/>
+<area shape="rect" id="Node000015" href="$class_pass.html#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid&#45;rebase, &#45;merge, &#45;cherry&#45;pick or &#45;revert." alt="" coords="538,237,726,282"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="206,257,525,257,521,261,208,262"/>
+<area shape="rect" id="Node000018" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass..." alt="" coords="257,585,475,613"/>
+<area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="110,271,127,326,154,402,173,443,197,485,224,523,256,557,288,578,283,580,253,561,220,527,192,487,169,446,149,404,122,327,110,276"/>
+<area shape="rect" id="Node000046" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when the signed list of one of its..." alt="" coords="255,520,477,548"/>
+<area shape="poly" id="edge60_Node000001_Node000046" title=" " alt="" coords="121,271,343,507,338,510,120,276"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="550,29,714,57"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,44,537,43,532,46,451,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,51,537,47,532,50,451,56"/>
 <area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="587,29,580,20,586,11,603,5,632,3,663,5,681,13,676,15,662,10,632,8,605,10,589,15,585,20,592,29"/>
 <area shape="rect" id="Node000005" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="562,81,702,109"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="443,98,549,96,545,99,446,103"/>
-<area shape="rect" id="Node000007" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="525,357,739,385"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="409,305,526,342,559,352,554,354,524,347,410,311"/>
-<area shape="rect" id="Node000008" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="568,305,697,333"/>
-<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="450,299,554,310,549,313,452,304"/>
-<area shape="rect" id="Node000010" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="526,253,738,281"/>
-<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="450,283,513,278,508,281,452,288"/>
-<area shape="rect" id="Node000009" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="823,344,969,372"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="697,326,810,344,805,346,698,331"/>
-<area shape="rect" id="Node000011" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="1093,293,1195,321"/>
-<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="738,275,788,279,1080,302,1075,304,787,284,740,280"/>
-<area shape="rect" id="Node000012" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="814,243,978,270"/>
-<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="738,260,801,259,796,261,740,265"/>
-<area shape="rect" id="Node000013" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="789,141,1003,169"/>
-<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="700,250,738,238,803,207,862,176,858,179,806,212,740,243,703,255"/>
-<area shape="poly" id="edge15_Node000014_Node000011" title=" " alt="" coords="719,205,784,203,856,205,932,213,1005,229,1064,253,1114,284,1108,284,1061,257,1004,234,931,218,856,211,784,209,721,210"/>
-<area shape="poly" id="edge16_Node000014_Node000012" title=" " alt="" coords="720,226,801,240,796,242,721,232"/>
-<area shape="poly" id="edge17_Node000014_Node000013" title=" " alt="" coords="695,198,819,172,814,174,697,203"/>
-<area shape="poly" id="edge19_Node000015_Node000011" title=" " alt="" coords="696,130,764,112,843,101,885,100,926,104,967,113,1006,127,1029,141,1050,159,1087,199,1114,242,1133,280,1128,279,1110,244,1082,202,1047,163,1026,146,1004,132,966,118,926,109,884,106,843,107,765,118,699,135"/>
-<area shape="poly" id="edge20_Node000015_Node000012" title=" " alt="" coords="706,175,740,187,852,235,847,237,738,192,707,181"/>
-<area shape="poly" id="edge21_Node000015_Node000013" title=" " alt="" coords="725,153,776,154,771,156,727,158"/>
-<area shape="rect" id="Node000016" href="$class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b" title="The unfinished git operation in progress in the store, if any." alt="" coords="792,22,1000,67"/>
-<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="711,130,738,118,762,101,786,84,815,72,811,75,789,88,765,106,741,123,714,134"/>
-<area shape="rect" id="Node000017" href="$class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7" title="Run a git command in the store&#39;s repository, blocking." alt="" coords="1089,31,1199,58"/>
-<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="1000,42,1076,44,1071,45,1001,47"/>
-<area shape="rect" id="Node000019" href="$class_gpg_id_signer.html#a2157ca742c6ae1d1971a01f0dc7f86f0" title="Whether any signing key is configured at all." alt="" coords="552,523,712,550"/>
-<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="440,496,545,518,540,520,441,502"/>
-<area shape="rect" id="Node000020" href="$class_real_pass.html#af4b087c502643f89c605c2c80e172cda" title="The verifier for signed lists, gpg in the store&#39;s environment." alt="" coords="558,575,706,602"/>
-<area shape="poly" id="edge26_Node000018_Node000020" title=" " alt="" coords="449,496,478,509,494,522,503,535,512,548,526,560,546,571,541,571,524,564,508,551,499,538,490,525,476,513,450,502"/>
-<area shape="rect" id="Node000030" href="$class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="556,471,708,498"/>
-<area shape="poly" id="edge36_Node000018_Node000030" title=" " alt="" coords="475,482,543,484,538,485,476,487"/>
-<area shape="rect" id="Node000021" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="800,653,992,681"/>
-<area shape="poly" id="edge27_Node000020_Node000021" title=" " alt="" coords="701,600,740,613,765,625,788,638,814,649,808,649,786,643,762,630,738,618,701,606"/>
-<area shape="rect" id="Node000028" href="$class_gpg_id_signer.html#ad3a52326de6aaea36bbb4394576708b6" title="Split the settings value into keys, upper&#45;cased the way gpg prints fingerprints." alt="" coords="787,601,1005,629"/>
-<area shape="poly" id="edge34_Node000020_Node000028" title=" " alt="" coords="707,593,774,602,769,603,707,599"/>
-<area shape="rect" id="Node000022" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1063,712,1225,740"/>
-<area shape="poly" id="edge28_Node000021_Node000022" title=" " alt="" coords="957,679,1070,708,1065,708,957,684"/>
-<area shape="rect" id="Node000023" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1300,796,1490,824"/>
-<area shape="poly" id="edge29_Node000022_Node000023" title=" " alt="" coords="1175,738,1226,760,1284,782,1311,792,1305,792,1282,787,1224,765,1174,743"/>
-<area shape="rect" id="Node000024" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1581,796,1747,824"/>
-<area shape="poly" id="edge30_Node000023_Node000024" title=" " alt="" coords="1490,807,1568,810,1563,810,1490,812"/>
-<area shape="rect" id="Node000025" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1822,744,2040,772"/>
-<area shape="poly" id="edge31_Node000024_Node000025" title=" " alt="" coords="1739,793,1838,776,1844,775,1739,798"/>
-<area shape="rect" id="Node000026" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1825,796,2037,824"/>
-<area shape="poly" id="edge32_Node000024_Node000026" title=" " alt="" coords="1747,807,1812,810,1806,810,1747,812"/>
-<area shape="rect" id="Node000027" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1829,848,2033,876"/>
-<area shape="poly" id="edge33_Node000024_Node000027" title=" " alt="" coords="1739,822,1844,845,1838,844,1739,827"/>
-<area shape="rect" id="Node000029" href="$class_gpg_id_signer.html#a772cffc3e742e90ae31d253e012494e8" title="The keys this signer was given." alt="" coords="1075,601,1213,629"/>
-<area shape="poly" id="edge35_Node000028_Node000029" title=" " alt="" coords="1005,613,1062,615,1057,616,1006,618"/>
-<area shape="poly" id="edge37_Node000030_Node000011" title=" " alt="" coords="673,468,787,431,848,417,897,409,944,400,1004,381,1059,355,1106,331,1111,328,1061,360,1006,386,946,405,898,414,849,422,788,436,675,473"/>
-<area shape="rect" id="Node000031" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="823,445,969,473"/>
-<area shape="poly" id="edge38_Node000030_Node000031" title=" " alt="" coords="708,475,811,467,805,468,709,480"/>
-<area shape="rect" id="Node000032" href="$class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="801,497,991,525"/>
-<area shape="poly" id="edge39_Node000030_Node000032" title=" " alt="" coords="708,490,788,499,783,501,709,495"/>
-<area shape="rect" id="Node000036" href="$class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb" title="Whether gpgIdFile is a signed list QtPass accepts: its signature verifies (GpgIdSigner::verifyFile())..." alt="" coords="815,549,977,577"/>
-<area shape="poly" id="edge44_Node000030_Node000036" title=" " alt="" coords="701,496,740,509,765,521,788,534,814,544,808,545,786,539,762,526,738,514,701,502"/>
-<area shape="poly" id="edge40_Node000032_Node000011" title=" " alt="" coords="981,494,1003,482,1020,466,1029,449,1037,430,1050,408,1116,334,1121,331,1055,411,1042,433,1034,452,1024,469,1006,487,983,499"/>
-<area shape="rect" id="Node000033" href="$class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="1070,421,1218,449"/>
-<area shape="poly" id="edge41_Node000032_Node000033" title=" " alt="" coords="959,494,1004,482,1094,454,1089,456,1005,487,961,499"/>
-<area shape="rect" id="Node000034" href="$class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile...." alt="" coords="1283,319,1506,346"/>
-<area shape="poly" id="edge42_Node000033_Node000034" title=" " alt="" coords="1168,419,1220,391,1282,362,1324,350,1319,352,1284,367,1222,395,1171,423"/>
-<area shape="rect" id="Node000035" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="1583,344,1745,372"/>
-<area shape="poly" id="edge43_Node000034_Node000035" title=" " alt="" coords="1506,340,1570,348,1565,349,1507,346"/>
-<area shape="rect" id="Node000037" href="$class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387" title="Decide about a verified list: its folder against where it sits, its generation against the remembered..." alt="" coords="1053,549,1235,577"/>
-<area shape="poly" id="edge45_Node000036_Node000037" title=" " alt="" coords="977,561,1040,563,1035,564,978,566"/>
-<area shape="poly" id="edge51_Node000037_Node000035" title=" " alt="" coords="1154,547,1203,488,1240,454,1282,426,1353,397,1428,376,1501,364,1570,360,1565,361,1502,369,1429,382,1355,402,1284,431,1243,458,1207,491,1157,551"/>
-<area shape="rect" id="Node000038" href="$class_gpg_id_generation.html#a94e96377e9735f5e01b56a7703827095" title="Whether header&#39;s folder line, if it has one, names the folder the list sits in: a pair copied elsewhe..." alt="" coords="1298,728,1491,772"/>
-<area shape="poly" id="edge46_Node000037_Node000038" title=" " alt="" coords="1217,575,1237,588,1250,604,1257,620,1262,652,1266,683,1273,698,1285,713,1289,719,1284,718,1281,717,1268,701,1261,685,1256,653,1252,621,1246,607,1233,592,1216,580"/>
-<area shape="rect" id="Node000040" href="$class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" title="The header lines for a list." alt="" coords="1572,625,1756,653"/>
-<area shape="poly" id="edge50_Node000037_Node000040" title=" " alt="" coords="1200,575,1236,587,1260,600,1284,611,1353,626,1425,635,1559,643,1554,643,1424,640,1352,631,1282,616,1257,605,1234,592,1199,580"/>
-<area shape="rect" id="Node000041" href="$class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1" title="The digest of a list as the record keeps it: SHA&#45;256 of the exact bytes, hexadecimal,..." alt="" coords="1305,575,1484,602"/>
-<area shape="poly" id="edge49_Node000037_Node000041" title=" " alt="" coords="1235,570,1292,578,1287,578,1236,575"/>
-<area shape="rect" id="Node000042" href="$class_gpg_id_generation.html#a2e43ee7d9b9fe9a24572a1b2e1c9654d" title="Whether header fits the store this device knows by pinned: its store line names that id,..." alt="" coords="1288,676,1501,704"/>
-<area shape="poly" id="edge52_Node000037_Node000042" title=" " alt="" coords="1213,575,1237,588,1253,605,1261,623,1269,640,1285,656,1306,670,1301,669,1281,660,1265,643,1257,625,1249,608,1233,592,1212,580"/>
-<area shape="rect" id="Node000043" href="$class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" title="The header a .gpg&#45;id&#39;s bytes declare." alt="" coords="1307,523,1482,550"/>
-<area shape="poly" id="edge54_Node000037_Node000043" title=" " alt="" coords="1235,551,1294,547,1289,548,1236,556"/>
-<area shape="rect" id="Node000044" href="$class_gpg_id_generation.html#aa86015bb280ffcb87fe676eed5fd3820" title="The refusal for a list older than the one accepted here: a rollback, or an unbound list that could be..." alt="" coords="1298,471,1492,498"/>
-<area shape="poly" id="edge56_Node000037_Node000044" title=" " alt="" coords="1179,546,1282,509,1315,502,1310,503,1284,514,1181,551"/>
-<area shape="rect" id="Node000045" href="$class_gpg_id_generation.html#af86ff868df611b4db16a014a414f943c" title="How a holder of the signing key gets through a refusal, in words: saving the recipients writes the ne..." alt="" coords="1554,445,1774,473"/>
-<area shape="poly" id="edge59_Node000037_Node000045" title=" " alt="" coords="1157,547,1207,500,1243,475,1282,457,1355,440,1430,433,1503,434,1570,442,1564,443,1502,439,1430,438,1356,445,1284,462,1245,480,1210,504,1159,551"/>
-<area shape="rect" id="Node000039" href="$class_gpg_id_generation.html#a8400be9a8caa988172707186e9f457d4" title="The store&#45;relative folder of gpgIdFile, as written in and compared against the folder line: ...." alt="" coords="1568,736,1760,764"/>
-<area shape="poly" id="edge47_Node000038_Node000039" title=" " alt="" coords="1492,747,1555,750,1549,750,1492,752"/>
-<area shape="poly" id="edge48_Node000038_Node000040" title=" " alt="" coords="1473,724,1505,713,1620,661,1625,660,1507,718,1474,730"/>
-<area shape="poly" id="edge53_Node000042_Node000040" title=" " alt="" coords="1472,673,1569,657,1574,656,1472,678"/>
-<area shape="poly" id="edge55_Node000043_Node000040" title=" " alt="" coords="1466,548,1507,561,1570,587,1627,618,1622,617,1568,592,1505,566,1465,554"/>
-<area shape="poly" id="edge57_Node000044_Node000040" title=" " alt="" coords="1475,496,1507,509,1547,532,1584,559,1642,615,1636,613,1580,564,1544,536,1505,514,1475,502"/>
-<area shape="poly" id="edge58_Node000044_Node000045" title=" " alt="" coords="1492,473,1542,470,1536,471,1493,478"/>
-<area shape="poly" id="edge61_Node000046_Node000019" title=" " alt="" coords="477,534,539,536,534,537,478,539"/>
-<area shape="poly" id="edge62_Node000046_Node000020" title=" " alt="" coords="440,548,545,570,540,572,441,554"/>
-<area shape="poly" id="edge63_Node000046_Node000030" title=" " alt="" coords="440,520,545,501,540,503,442,524"/>
-<area shape="rect" id="Node000047" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="570,627,695,654"/>
-<area shape="poly" id="edge64_Node000046_Node000047" title=" " alt="" coords="392,548,453,580,526,611,557,623,552,624,524,616,451,584,392,553"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="443,114,549,103,545,106,446,118"/>
+<area shape="rect" id="Node000007" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="525,133,739,161"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="432,188,551,163,547,167,435,192"/>
+<area shape="rect" id="Node000008" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="568,185,697,213"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="450,200,554,199,550,202,452,205"/>
+<area shape="rect" id="Node000010" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="526,305,738,333"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="388,216,449,254,526,291,547,300,542,301,524,296,447,258,389,222"/>
+<area shape="rect" id="Node000009" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="823,83,969,110"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="696,187,738,170,752,158,761,146,770,132,786,120,811,110,807,114,789,124,774,136,765,149,756,162,741,175,699,191"/>
+<area shape="rect" id="Node000011" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="1093,432,1195,460"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="717,331,877,360,1005,389,1100,425,1095,426,1004,394,876,365,718,336"/>
+<area shape="rect" id="Node000012" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="814,253,978,281"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="705,302,809,283,805,286,707,307"/>
+<area shape="rect" id="Node000013" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="789,305,1003,333"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="738,317,776,318,771,320,740,322"/>
+<area shape="poly" id="edge15_Node000014_Node000011" title=" " alt="" coords="720,381,1080,435,1075,437,721,387"/>
+<area shape="poly" id="edge16_Node000014_Node000012" title=" " alt="" coords="710,355,738,342,752,330,761,318,770,304,786,292,803,286,798,289,789,296,774,308,766,321,756,334,741,347,713,359"/>
+<area shape="poly" id="edge17_Node000014_Node000013" title=" " alt="" coords="705,354,809,335,805,338,707,359"/>
+<area shape="poly" id="edge19_Node000015_Node000011" title=" " alt="" coords="700,234,768,218,847,209,888,209,929,214,968,224,1006,239,1031,256,1054,277,1091,325,1118,374,1136,418,1131,417,1113,377,1087,328,1050,280,1028,260,1003,244,967,229,928,219,887,215,847,214,769,223,703,239"/>
+<area shape="poly" id="edge20_Node000015_Node000012" title=" " alt="" coords="725,259,801,263,796,265,727,265"/>
+<area shape="poly" id="edge21_Node000015_Node000013" title=" " alt="" coords="726,278,819,300,814,302,727,283"/>
+<area shape="rect" id="Node000016" href="$class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b" title="The unfinished git operation in progress in the store, if any." alt="" coords="792,134,1000,179"/>
+<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="708,234,738,222,786,195,819,183,815,186,789,200,740,227,711,239"/>
+<area shape="rect" id="Node000017" href="$class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7" title="Run a git command in the store&#39;s repository, blocking." alt="" coords="1089,143,1199,170"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="1000,154,1076,156,1071,157,1001,159"/>
+<area shape="rect" id="Node000019" href="$class_gpg_id_signer.html#a2157ca742c6ae1d1971a01f0dc7f86f0" title="Whether any signing key is configured at all." alt="" coords="552,612,712,640"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="475,608,539,616,534,617,476,613"/>
+<area shape="rect" id="Node000020" href="$class_real_pass.html#af4b087c502643f89c605c2c80e172cda" title="The verifier for signed lists, gpg in the store&#39;s environment." alt="" coords="558,689,706,717"/>
+<area shape="poly" id="edge26_Node000018_Node000020" title=" " alt="" coords="404,611,583,683,578,684,404,616"/>
+<area shape="rect" id="Node000030" href="$class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="556,560,708,588"/>
+<area shape="poly" id="edge36_Node000018_Node000030" title=" " alt="" coords="475,586,543,581,538,584,476,591"/>
+<area shape="rect" id="Node000021" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="800,715,992,742"/>
+<area shape="poly" id="edge27_Node000020_Node000021" title=" " alt="" coords="707,708,787,717,781,718,707,713"/>
+<area shape="rect" id="Node000028" href="$class_gpg_id_signer.html#ad3a52326de6aaea36bbb4394576708b6" title="Split the settings value into keys, upper&#45;cased the way gpg prints fingerprints." alt="" coords="787,767,1005,794"/>
+<area shape="poly" id="edge34_Node000020_Node000028" title=" " alt="" coords="675,715,788,751,821,762,816,762,787,756,674,720"/>
+<area shape="rect" id="Node000022" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1063,715,1225,742"/>
+<area shape="poly" id="edge28_Node000021_Node000022" title=" " alt="" coords="993,726,1050,728,1045,729,993,731"/>
+<area shape="rect" id="Node000023" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1300,859,1490,886"/>
+<area shape="poly" id="edge29_Node000022_Node000023" title=" " alt="" coords="1215,740,1237,753,1255,776,1261,800,1268,823,1285,844,1293,852,1288,850,1281,848,1263,825,1256,802,1250,779,1233,757,1214,746"/>
+<area shape="rect" id="Node000024" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1581,859,1747,886"/>
+<area shape="poly" id="edge30_Node000023_Node000024" title=" " alt="" coords="1490,870,1568,872,1563,873,1490,875"/>
+<area shape="rect" id="Node000025" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1822,807,2040,834"/>
+<area shape="poly" id="edge31_Node000024_Node000025" title=" " alt="" coords="1739,855,1838,838,1844,838,1739,861"/>
+<area shape="rect" id="Node000026" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1825,859,2037,886"/>
+<area shape="poly" id="edge32_Node000024_Node000026" title=" " alt="" coords="1747,870,1812,872,1806,873,1747,875"/>
+<area shape="rect" id="Node000027" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1829,911,2033,938"/>
+<area shape="poly" id="edge33_Node000024_Node000027" title=" " alt="" coords="1739,884,1844,907,1838,907,1739,890"/>
+<area shape="rect" id="Node000029" href="$class_gpg_id_signer.html#a772cffc3e742e90ae31d253e012494e8" title="The keys this signer was given." alt="" coords="1075,767,1213,794"/>
+<area shape="poly" id="edge35_Node000028_Node000029" title=" " alt="" coords="1005,778,1062,780,1057,781,1005,783"/>
+<area shape="poly" id="edge37_Node000030_Node000011" title=" " alt="" coords="705,557,844,527,1004,487,1089,464,1084,466,1005,492,845,532,707,562"/>
+<area shape="rect" id="Node000031" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="823,663,969,690"/>
+<area shape="poly" id="edge38_Node000030_Node000031" title=" " alt="" coords="708,584,741,598,756,611,765,624,774,636,789,648,811,660,806,660,786,652,770,640,761,627,752,614,738,603,708,590"/>
+<area shape="rect" id="Node000032" href="$class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="801,559,991,586"/>
+<area shape="poly" id="edge39_Node000030_Node000032" title=" " alt="" coords="708,571,788,572,783,574,709,576"/>
+<area shape="rect" id="Node000036" href="$class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb" title="Whether gpgIdFile is a signed list QtPass accepts: its signature verifies (GpgIdSigner::verifyFile())..." alt="" coords="815,611,977,638"/>
+<area shape="poly" id="edge44_Node000030_Node000036" title=" " alt="" coords="708,586,808,607,803,608,708,591"/>
+<area shape="poly" id="edge40_Node000032_Node000011" title=" " alt="" coords="962,556,1003,538,1018,528,1027,518,1051,494,1097,469,1102,466,1054,499,1031,521,1021,532,1006,543,964,561"/>
+<area shape="rect" id="Node000033" href="$class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="1070,508,1218,536"/>
+<area shape="poly" id="edge41_Node000032_Node000033" title=" " alt="" coords="966,556,1061,539,1055,540,968,561"/>
+<area shape="rect" id="Node000034" href="$class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile...." alt="" coords="1283,381,1506,409"/>
+<area shape="poly" id="edge42_Node000033_Node000034" title=" " alt="" coords="1173,505,1233,469,1256,446,1266,436,1282,425,1309,415,1314,413,1284,429,1270,440,1260,450,1237,473,1176,510"/>
+<area shape="rect" id="Node000035" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="1583,407,1745,434"/>
+<area shape="poly" id="edge43_Node000034_Node000035" title=" " alt="" coords="1506,403,1570,411,1565,412,1507,408"/>
+<area shape="rect" id="Node000037" href="$class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387" title="Decide about a verified list: its folder against where it sits, its generation against the remembered..." alt="" coords="1053,611,1235,638"/>
+<area shape="poly" id="edge45_Node000036_Node000037" title=" " alt="" coords="977,622,1040,624,1035,625,978,627"/>
+<area shape="poly" id="edge51_Node000037_Node000035" title=" " alt="" coords="1162,608,1233,545,1255,515,1265,502,1282,489,1352,457,1427,436,1501,424,1570,420,1565,421,1502,429,1428,441,1354,462,1284,493,1269,505,1259,518,1237,549,1165,612"/>
+<area shape="rect" id="Node000038" href="$class_gpg_id_generation.html#a94e96377e9735f5e01b56a7703827095" title="Whether header&#39;s folder line, if it has one, names the folder the list sits in: a pair copied elsewhe..." alt="" coords="1298,738,1491,783"/>
+<area shape="poly" id="edge46_Node000037_Node000038" title=" " alt="" coords="1162,636,1215,679,1284,723,1299,732,1294,732,1282,728,1212,683,1160,641"/>
+<area shape="rect" id="Node000040" href="$class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" title="The header lines for a list." alt="" coords="1572,636,1756,664"/>
+<area shape="poly" id="edge50_Node000037_Node000040" title=" " alt="" coords="1235,626,1559,644,1554,645,1235,632"/>
+<area shape="rect" id="Node000041" href="$class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1" title="The digest of a list as the record keeps it: SHA&#45;256 of the exact bytes, hexadecimal,..." alt="" coords="1305,807,1484,834"/>
+<area shape="poly" id="edge49_Node000037_Node000041" title=" " alt="" coords="1166,636,1202,665,1237,702,1252,728,1259,751,1266,773,1285,793,1294,801,1288,800,1281,797,1262,775,1253,753,1247,730,1233,705,1198,669,1165,642"/>
+<area shape="rect" id="Node000042" href="$class_gpg_id_generation.html#a2e43ee7d9b9fe9a24572a1b2e1c9654d" title="Whether header fits the store this device knows by pinned: its store line names that id,..." alt="" coords="1288,687,1501,714"/>
+<area shape="poly" id="edge52_Node000037_Node000042" title=" " alt="" coords="1189,636,1284,666,1331,682,1326,682,1282,671,1189,642"/>
+<area shape="rect" id="Node000043" href="$class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" title="The header a .gpg&#45;id&#39;s bytes declare." alt="" coords="1307,585,1482,613"/>
+<area shape="poly" id="edge54_Node000037_Node000043" title=" " alt="" coords="1235,613,1294,609,1289,610,1236,618"/>
+<area shape="rect" id="Node000044" href="$class_gpg_id_generation.html#aa86015bb280ffcb87fe676eed5fd3820" title="The refusal for a list older than the one accepted here: a rollback, or an unbound list that could be..." alt="" coords="1298,533,1492,561"/>
+<area shape="poly" id="edge56_Node000037_Node000044" title=" " alt="" coords="1180,607,1282,571,1316,565,1311,566,1284,576,1182,613"/>
+<area shape="rect" id="Node000045" href="$class_gpg_id_generation.html#af86ff868df611b4db16a014a414f943c" title="How a holder of the signing key gets through a refusal, in words: saving the recipients writes the ne..." alt="" coords="1554,508,1774,536"/>
+<area shape="poly" id="edge59_Node000037_Node000045" title=" " alt="" coords="1160,608,1222,557,1255,534,1282,519,1355,502,1430,496,1502,497,1569,505,1564,506,1502,502,1430,501,1356,508,1284,524,1258,538,1225,562,1163,612"/>
+<area shape="rect" id="Node000039" href="$class_gpg_id_generation.html#a8400be9a8caa988172707186e9f457d4" title="The store&#45;relative folder of gpgIdFile, as written in and compared against the folder line: ...." alt="" coords="1568,747,1760,774"/>
+<area shape="poly" id="edge47_Node000038_Node000039" title=" " alt="" coords="1492,758,1555,760,1549,761,1492,763"/>
+<area shape="poly" id="edge48_Node000038_Node000040" title=" " alt="" coords="1473,735,1505,723,1620,672,1625,671,1507,728,1474,740"/>
+<area shape="poly" id="edge53_Node000042_Node000040" title=" " alt="" coords="1472,683,1569,668,1574,667,1473,689"/>
+<area shape="poly" id="edge55_Node000043_Node000040" title=" " alt="" coords="1472,611,1574,632,1569,633,1472,616"/>
+<area shape="poly" id="edge57_Node000044_Node000040" title=" " alt="" coords="1466,559,1507,571,1570,598,1627,629,1622,628,1568,603,1505,576,1465,564"/>
+<area shape="poly" id="edge58_Node000044_Node000045" title=" " alt="" coords="1492,535,1542,533,1536,534,1493,541"/>
+<area shape="poly" id="edge61_Node000046_Node000011" title=" " alt="" coords="418,517,525,494,679,474,833,459,1080,447,1075,449,834,465,680,479,525,499,420,522"/>
+<area shape="poly" id="edge62_Node000046_Node000019" title=" " alt="" coords="411,546,478,571,502,585,526,597,551,607,546,608,524,602,500,589,476,576,411,551"/>
+<area shape="poly" id="edge63_Node000046_Node000020" title=" " alt="" coords="428,546,455,557,479,572,496,591,504,611,512,630,527,649,550,667,578,683,572,683,547,671,523,653,507,633,499,613,491,594,475,576,453,561,429,551"/>
+<area shape="poly" id="edge64_Node000046_Node000030" title=" " alt="" coords="462,546,543,559,538,561,463,551"/>
+<area shape="rect" id="Node000047" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="570,508,695,536"/>
+<area shape="poly" id="edge65_Node000046_Node000047" title=" " alt="" coords="477,526,556,524,551,526,478,531"/>
 </map>
