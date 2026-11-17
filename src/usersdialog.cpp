@@ -130,31 +130,52 @@ void UsersDialog::showNestedLists() {
   if (!QFileInfo(dir).isDir()) {
     return;
   }
+  QStringList unlisted;
+  const QStringList lists = Util::regularFilesUnder(
+      dir, {QStringLiteral(".gpg-id")}, nullptr, true, &unlisted);
+  const auto relative = [&dir](const QString &folder) {
+    return QDir::toNativeSeparators(QDir(dir).relativeFilePath(folder));
+  };
   QStringList nested;
-  const QStringList lists =
-      Util::regularFilesUnder(dir, {QStringLiteral(".gpg-id")}, nullptr, true);
   for (const QString &list : lists) {
     const QString folder = QFileInfo(list).path();
     if (QDir::cleanPath(folder) != dir) {
-      nested << QDir::toNativeSeparators(QDir(dir).relativeFilePath(folder));
+      nested << relative(folder);
     }
   }
-  if (nested.isEmpty()) {
-    return;
+  QStringList unread;
+  for (const QString &folder : std::as_const(unlisted)) {
+    unread << relative(folder);
   }
   constexpr qsizetype kMaxNamed = 5;
-  QString names = nested.mid(0, kMaxNamed).join(QStringLiteral(", "));
-  if (nested.size() > kMaxNamed) {
-    names += QStringLiteral(", …");
+  const auto named = [](const QStringList &folders) {
+    QString names = folders.mid(0, kMaxNamed).join(QStringLiteral(", "));
+    if (folders.size() > kMaxNamed) {
+      names += QStringLiteral(", …");
+    }
+    return names;
+  };
+  QStringList text;
+  if (!nested.isEmpty()) {
+    //: %1 lists folders, such as "work, work/bank". Shown when changing the
+    //: recipients of a folder that has folders with their own list below it.
+    text << tr("%n folder(s) below this one have their own recipients, which "
+               "saving here does not change: %1",
+               nullptr, static_cast<int>(nested.size()))
+                .arg(named(nested));
   }
-  //: %1 lists folders, such as "work, work/bank". Shown when changing the
-  //: recipients of a folder that has folders with their own list below it.
-  showRecipientWarning(
-      tr("%n folder(s) below this one have their own recipients, which "
-         "saving here does not change: %1",
-         nullptr, static_cast<int>(nested.size()))
-          .arg(names),
-      QStringLiteral("nestedListsWarning"));
+  if (!unread.isEmpty()) {
+    //: %1 lists folders, such as "work, work/bank", that QtPass has no
+    //: permission to read.
+    text << tr("%n folder(s) below this one could not be read, so whether "
+               "they have their own recipients is unknown: %1",
+               nullptr, static_cast<int>(unread.size()))
+                .arg(named(unread));
+  }
+  if (!text.isEmpty()) {
+    showRecipientWarning(text.join(QLatin1Char('\n')),
+                         QStringLiteral("nestedListsWarning"));
+  }
 }
 
 namespace {
