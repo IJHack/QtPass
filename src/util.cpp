@@ -18,6 +18,7 @@
 #include <QHash>
 #include <QRegularExpression>
 #include <QRegularExpressionMatchIterator>
+#include <QScopeGuard>
 #include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QUrl>
@@ -32,6 +33,7 @@
 #else
 #include <cerrno>
 #include <cstdio>
+#include <dirent.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -707,7 +709,8 @@ namespace {
 /**
  * @brief Whether the walk can see what is in @p dir: read permission to list
  * it and, on Unix, search permission to look at what it holds (without it the
- * names come, but no entry reads as a file or a folder).
+ * names come, but no entry reads as a file or a folder), and no name Qt
+ * leaves out of the listing (Util::hasUnreadableName()).
  * @param dir An existing directory.
  * @return false when the walk would miss what is in it.
  */
@@ -718,7 +721,8 @@ auto canList(const QString &dir) -> bool {
   return QFileInfo(dir).isReadable();
 #else
   const QFileInfo info(dir);
-  return info.isReadable() && info.isExecutable();
+  return info.isReadable() && info.isExecutable() &&
+         !Util::hasUnreadableName(dir);
 #endif
 }
 
@@ -824,6 +828,27 @@ auto Util::directoriesUnder(const QString &dir) -> QStringList {
     return true;
   });
   return dirs;
+}
+
+auto Util::hasUnreadableName(const QString &dir) -> bool {
+#ifdef Q_OS_WIN
+  Q_UNUSED(dir);
+  return false;
+#else
+  // The names as bytes, as readdir() gives them; Qt's own listing has
+  // already dropped the ones this is looking for.
+  DIR *listing = ::opendir(QFile::encodeName(dir).constData());
+  if (listing == nullptr) {
+    return false;
+  }
+  const auto close = qScopeGuard([listing] { ::closedir(listing); });
+  while (const dirent *entry = ::readdir(listing)) {
+    if (!QByteArrayView(entry->d_name).isValidUtf8()) {
+      return true;
+    }
+  }
+  return false;
+#endif
 }
 
 auto Util::isLinkedFolder(const QString &path) -> bool {

@@ -160,9 +160,17 @@ namespace {
 /// @p dir and every folder under it as pass's reencrypt_path() walks them
 /// (find without -L): hidden ones included, .git left out, no link
 /// followed. Each entry pass re-encrypts lies in one of them, and its list
-/// is that folder's nearest.
-auto passFoldersUnder(const QString &dir) -> QStringList {
+/// is that folder's nearest. A folder holding a name Qt cannot read
+/// (Util::hasUnreadableName()) goes to @p unreadable instead of being
+/// walked: find sees what Qt leaves out, a folder with its own list
+/// included.
+auto passFoldersUnder(const QString &dir, QStringList &unreadable)
+    -> QStringList {
   QStringList folders{QDir::cleanPath(dir)};
+  if (Util::hasUnreadableName(dir)) {
+    unreadable << QDir::cleanPath(dir);
+    return folders;
+  }
   const QFileInfoList children = QDir(dir).entryInfoList(
       QDir::Dirs | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot);
   for (const QFileInfo &child : children) {
@@ -170,7 +178,7 @@ auto passFoldersUnder(const QString &dir) -> QStringList {
         child.fileName() == QLatin1String(".git")) {
       continue;
     }
-    folders << passFoldersUnder(child.absoluteFilePath());
+    folders << passFoldersUnder(child.absoluteFilePath(), unreadable);
   }
   return folders;
 }
@@ -205,7 +213,19 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   // merges an incoming folder into one of the same name, so the entries it
   // brings get a list already there, and a list it brings replaces the one
   // there for the entries already in it.
-  for (const QString &folder : passFoldersUnder(dir)) {
+  QStringList unreadable;
+  const QStringList folders = passFoldersUnder(dir, unreadable);
+  if (!unreadable.isEmpty()) {
+    //: %1 is a folder. "UTF-8" is the text encoding; keep it as is.
+    emit critical(
+        tr("Cannot check the recipient lists"),
+        tr("%1 holds a file or folder whose name is not valid UTF-8. QtPass "
+           "cannot see what is behind that name, while pass would re-encrypt "
+           "it, so nothing was changed. Rename it, then try again.")
+            .arg(QDir::toNativeSeparators(unreadable.first())));
+    return true;
+  }
+  for (const QString &folder : folders) {
     if (refuseList(folder, signer, verified, within, except)) {
       return true;
     }
