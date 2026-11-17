@@ -20,6 +20,7 @@
 #include <QMutexLocker>
 #include <QSaveFile>
 #include <QSettings>
+#include <QStringDecoder>
 #include <QUuid>
 #include <algorithm>
 
@@ -488,8 +489,16 @@ auto takeHeaderLine(const QByteArray &line, std::optional<qint64> &generation,
     // A control character (a second \r of "\r\r\n", a tab, a NUL) is not
     // part of a folder name QtPass writes, and would not survive being
     // written back: header() ends the line, parse() strips one \r.
-    if (!value.isEmpty() && !hasControl(value)) {
-      folder = QString::fromUtf8(value);
+    // The name is the bytes signed, nothing else: QString::fromUtf8() drops
+    // a leading byte order mark and turns bytes that are not UTF-8 into
+    // U+FFFD, so a list signed for "\uFEFFfinance" or "fin\xFF" would read
+    // as bound to finance/ or to a folder really named "fin\uFFFD".
+    QStringDecoder utf8(QStringDecoder::Utf8,
+                        QStringDecoder::Flag::Stateless |
+                            QStringDecoder::Flag::ConvertInitialBom);
+    const QString name = utf8(value);
+    if (!value.isEmpty() && !hasControl(value) && name.toUtf8() == value) {
+      folder = name;
       return {};
     }
     return QCoreApplication::translate("GpgIdGeneration",
