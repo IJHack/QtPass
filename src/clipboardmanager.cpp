@@ -30,6 +30,10 @@ namespace {
 /**
  * @brief Whether @p data carries a mark password managers (QtPass included)
  * put on a secret, on any platform.
+ *
+ * Matched within each format name: Qt shows another program's clipboard
+ * format wrapped (application/x-qt-windows-mime;value="...", or a
+ * com.trolltech.anymime name on macOS), not under the bare name.
  * @param data The clipboard's current content, or null.
  * @return true for a marked secret.
  */
@@ -37,11 +41,15 @@ auto markedSecret(const QMimeData *data) -> bool {
   if (data == nullptr) {
     return false;
   }
-  for (const char *format : {"x-kde-passwordManagerHint",
-                             "application/x-nspasteboard-concealed-type",
-                             "ExcludeClipboardContentFromMonitorProcessing"}) {
-    if (data->hasFormat(QLatin1String(format))) {
-      return true;
+  const QStringList formats = data->formats();
+  for (const QString &format : formats) {
+    for (const char *mark :
+         {"passwordManagerHint", "nspasteboard-concealed-type",
+          "nspasteboard.ConcealedType",
+          "ExcludeClipboardContentFromMonitorProcessing"}) {
+      if (format.contains(QLatin1String(mark), Qt::CaseInsensitive)) {
+        return true;
+      }
     }
   }
   return false;
@@ -175,6 +183,9 @@ void ClipboardManager::trackCopied(const QString &text) {
 }
 
 void ClipboardManager::clear() {
+  // A clear before the deadline (a deselect) ends this window: a copy
+  // tracked after it starts a full one, not the rest of the old one.
+  m_clearTimer.stop();
   // Whatever happens below, the saved text is forgotten: it is the user's,
   // and no later autoclear may put it back.
   const std::optional<QString> previousClipboard =

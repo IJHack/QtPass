@@ -46,6 +46,8 @@ private slots:
   void aCopyOnTheClipboardOutlivesManySelections();
   void anotherPasswordManagersSecretIsNotPutBack();
   void aSelectionDoesNotPostponeAutoclear();
+  void aWrappedSecretMarkIsRecognised();
+  void aCopyAfterAClearGetsAFullPeriod();
   void aCopyStillInTheSelectionStaysTracked();
   void aSelectedTextIsNotMergedAway();
   void secretLineEditCopiesOnlyWhenShownAndMarksIt();
@@ -408,6 +410,45 @@ void tst_clipboardmanager::anotherPasswordManagersSecretIsNotPutBack() {
   QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
   QCOMPARE(status.at(1).at(0).toString(), QStringLiteral("Clipboard cleared"));
   QVERIFY(clipboard->text().isEmpty());
+}
+
+/**
+ * @brief Qt shows another program's format wrapped, as Windows' monitor
+ *        exclusion read back from the clipboard: still a marked secret.
+ */
+void tst_clipboardmanager::aWrappedSecretMarkIsRecognised() {
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND, true);
+  QClipboard *clipboard = QApplication::clipboard();
+  auto *theirs = new QMimeData;
+  theirs->setText(QStringLiteral("their secret"));
+  theirs->setData(
+      QStringLiteral("application/x-qt-windows-mime;value=\""
+                     "ExcludeClipboardContentFromMonitorProcessing\""),
+      QByteArray(4, '\1'));
+  clipboard->setMimeData(theirs);
+  ClipboardManager manager;
+  QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+  manager.copyText(QStringLiteral("hunter2"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
+  QVERIFY(clipboard->text().isEmpty());
+}
+
+/**
+ * @brief A clear before the deadline (a deselect) ends the window: a copy
+ *        tracked after it gets a full period, not the rest of the old one.
+ */
+void tst_clipboardmanager::aCopyAfterAClearGetsAFullPeriod() {
+  saveClipboardSettings(true, 2, Enums::CLIPBOARD_ON_DEMAND);
+  QClipboard *clipboard = QApplication::clipboard();
+  ClipboardManager manager;
+  manager.copyText(QStringLiteral("hunter2"));
+  QTest::qWait(1500);
+  manager.clear();
+  clipboard->setText(QStringLiteral("a field"));
+  manager.trackCopied(QStringLiteral("a field"));
+  QTest::qWait(1000);
+  QCOMPARE(clipboard->text(), QStringLiteral("a field"));
+  QTRY_VERIFY_WITH_TIMEOUT(clipboard->text().isEmpty(), 2500);
 }
 
 /**
