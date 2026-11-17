@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QMenu>
+#include <QMimeData>
 #include <QSettings>
 #include <QSignalSpy>
 #include <QTemporaryDir>
@@ -43,6 +44,10 @@ private slots:
   void secretTextBrowserMarksAndReportsWhatIsCopied();
   void aGrowingSelectionIsTrackedOnce();
   void aCopyOnTheClipboardOutlivesManySelections();
+  void anotherPasswordManagersSecretIsNotPutBack();
+  void aSelectionDoesNotPostponeAutoclear();
+  void aCopyStillInTheSelectionStaysTracked();
+  void aSelectedTextIsNotMergedAway();
   void secretLineEditCopiesOnlyWhenShownAndMarksIt();
   void secretLineEditContextMenuCopyIsMarked();
   void secretLineEditMarksThePrimarySelection();
@@ -382,6 +387,87 @@ void tst_clipboardmanager::aGrowingSelectionIsTrackedOnce() {
   manager.trackCopied(QStringLiteral("pin: 1234"));
   manager.trackCopied(QStringLiteral("1234"));
   QTRY_VERIFY_WITH_TIMEOUT(QApplication::clipboard()->text().isEmpty(), 3000);
+}
+
+/**
+ * @brief A secret another password manager marked as one is not put back
+ *        when autoclear runs: as plain text it would lose that mark, go into
+ *        clipboard history, and nobody would clear it again.
+ */
+void tst_clipboardmanager::anotherPasswordManagersSecretIsNotPutBack() {
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND, true);
+  QClipboard *clipboard = QApplication::clipboard();
+  auto *theirs = new QMimeData;
+  theirs->setText(QStringLiteral("their secret"));
+  theirs->setData(QStringLiteral("x-kde-passwordManagerHint"), "secret");
+  clipboard->setMimeData(theirs);
+  QCOMPARE(clipboard->text(), QStringLiteral("their secret"));
+  ClipboardManager manager;
+  QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+  manager.copyText(QStringLiteral("hunter2"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
+  QCOMPARE(status.at(1).at(0).toString(), QStringLiteral("Clipboard cleared"));
+  QVERIFY(clipboard->text().isEmpty());
+}
+
+/**
+ * @brief Selecting or dragging shown text does not give a password copied
+ *        earlier a new full autoclear period: the first deadline counts.
+ */
+void tst_clipboardmanager::aSelectionDoesNotPostponeAutoclear() {
+  saveClipboardSettings(true, 2, Enums::CLIPBOARD_ON_DEMAND);
+  ClipboardManager manager;
+  manager.copyText(QStringLiteral("hunter2"));
+  QTest::qWait(1200);
+  manager.trackCopied(QStringLiteral("a selected word"));
+  // Cleared at 2 s after the copy; a restart would hold it until 3.2 s.
+  QTRY_VERIFY_WITH_TIMEOUT(
+      QApplication::clipboard()->text() != QStringLiteral("hunter2"), 1500);
+}
+
+/**
+ * @brief A copied text that is still in the primary selection stays tracked
+ *        when the next copy replaces it on the clipboard, and autoclear
+ *        clears it there too.
+ */
+void tst_clipboardmanager::aCopyStillInTheSelectionStaysTracked() {
+  QClipboard *clipboard = QApplication::clipboard();
+  if (!clipboard->supportsSelection()) {
+    QSKIP("this platform has no primary selection");
+  }
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND);
+  ClipboardManager manager;
+  QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+  manager.copyText(QStringLiteral("1234"));
+  // The user selects the shown PIN: the same text, now also in the selection.
+  clipboard->setText(QStringLiteral("1234"), QClipboard::Selection);
+  manager.trackCopied(QStringLiteral("1234"));
+  manager.copyText(QStringLiteral("hunter2"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 3, 3000);
+  QVERIFY2(clipboard->text(QClipboard::Selection).isEmpty(),
+           qPrintable(clipboard->text(QClipboard::Selection)));
+}
+
+/**
+ * @brief A tracked text still in the primary selection is not merged away
+ *        by a longer copy that contains it: it stays tracked and is cleared.
+ */
+void tst_clipboardmanager::aSelectedTextIsNotMergedAway() {
+  QClipboard *clipboard = QApplication::clipboard();
+  if (!clipboard->supportsSelection()) {
+    QSKIP("this platform has no primary selection");
+  }
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND);
+  ClipboardManager manager;
+  QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+  clipboard->setText(QStringLiteral("4321"), QClipboard::Selection);
+  manager.trackCopied(QStringLiteral("4321"));
+  clipboard->setText(QStringLiteral("PIN 4321"));
+  manager.trackCopied(QStringLiteral("PIN 4321"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 1, 3000);
+  QVERIFY2(clipboard->text(QClipboard::Selection).isEmpty(),
+           qPrintable(clipboard->text(QClipboard::Selection)));
+  QVERIFY(clipboard->text().isEmpty());
 }
 
 /**

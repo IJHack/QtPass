@@ -10,6 +10,7 @@
 #include "util.h"
 #include <QApplication>
 #include <QClipboard>
+#include <QMimeData>
 #include <utility>
 
 ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {
@@ -24,6 +25,28 @@ void ClipboardManager::setAutoclearTimer() {
   m_clearTimer.setInterval(MS_PER_SECOND *
                            QtPassSettings::getAutoclearSeconds());
 }
+
+namespace {
+/**
+ * @brief Whether @p data carries a mark password managers (QtPass included)
+ * put on a secret, on any platform.
+ * @param data The clipboard's current content, or null.
+ * @return true for a marked secret.
+ */
+auto markedSecret(const QMimeData *data) -> bool {
+  if (data == nullptr) {
+    return false;
+  }
+  for (const char *format : {"x-kde-passwordManagerHint",
+                             "application/x-nspasteboard-concealed-type",
+                             "ExcludeClipboardContentFromMonitorProcessing"}) {
+    if (data->hasFormat(QLatin1String(format))) {
+      return true;
+    }
+  }
+  return false;
+}
+} // namespace
 
 void ClipboardManager::copyIfAlways(const QString &text,
                                     const QString &p_output) {
@@ -63,14 +86,27 @@ void ClipboardManager::copyText(const QString &text) {
     // it would leave a secret on the clipboard for good), and a later copy
     // in the window cannot take a snapshot instead.
     if (!previous) {
-      const bool safe =
-          now != text && now != m_clippedText && !m_otherCopies.contains(now);
+      // Another password manager's secret is marked as one; put back as
+      // plain text it would lose that mark (and go into clipboard history)
+      // and nobody would clear it again.
+      const bool safe = now != text && now != m_clippedText &&
+                        !m_otherCopies.contains(now) &&
+                        !markedSecret(clip->mimeData(mode));
       previous = safe ? now : QString();
     }
   }
   forgetIfSaved(text);
   clip->setMimeData(buildClipboardMimeData(text), mode);
 
+  // The text copied before may still be in the other buffer (a PIN copied to
+  // the clipboard, then selected, so also in the X11 selection): replacing
+  // it here would leave it there past autoclear.
+  if (!m_clippedText.isEmpty() && m_clippedText != text &&
+      !m_otherCopies.contains(m_clippedText) &&
+      (clip->text(QClipboard::Clipboard) == m_clippedText ||
+       clip->text(QClipboard::Selection) == m_clippedText)) {
+    m_otherCopies.append(m_clippedText);
+  }
   m_clippedText = text;
   emit statusMessage(tr("Copied to clipboard"));
   if (s.useAutoclear) {
@@ -107,7 +143,8 @@ void ClipboardManager::trackCopied(const QString &text) {
     const QString &last =
         m_otherCopies.isEmpty() ? QString() : m_otherCopies.last();
     if (!last.isEmpty() && (text.contains(last) || last.contains(text)) &&
-        QApplication::clipboard()->text(QClipboard::Clipboard) != last) {
+        QApplication::clipboard()->text(QClipboard::Clipboard) != last &&
+        QApplication::clipboard()->text(QClipboard::Selection) != last) {
       m_otherCopies.last() = text;
     } else {
       if (m_otherCopies.size() >= kMaxOtherCopies) {
@@ -129,7 +166,10 @@ void ClipboardManager::trackCopied(const QString &text) {
       m_otherCopies.append(text);
     }
   }
-  if (QtPassSettings::load().useAutoclear) {
+  // Not pushed back: a selection reports itself on every change, and a drag
+  // too, so restarting here gave a password copied earlier a new full
+  // period each time. The first deadline clears everything tracked.
+  if (QtPassSettings::load().useAutoclear && !m_clearTimer.isActive()) {
     m_clearTimer.start();
   }
 }
