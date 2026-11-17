@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-16 23:33:15</td>
+            <td class="headerValue">2026-11-17 07:55:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -426,14 +426,14 @@
 <span id="L353"><span class="lineNum">     353</span> <span class="tlaGNC">          67 :   m_firstShowCompleted = true;</span></span>
 <span id="L354"><span class="lineNum">     354</span>              : }</span>
 <span id="L355"><span class="lineNum">     355</span>              : </span>
-<span id="L356"><span class="lineNum">     356</span> <span class="tlaGNC">        7775 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">        7775 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L356"><span class="lineNum">     356</span> <span class="tlaGNC">        7772 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">        7772 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L359"><span class="lineNum">     359</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L360"><span class="lineNum">     360</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L362"><span class="lineNum">     362</span>              :   }</span>
-<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        7775 :   return QMainWindow::event(event);</span></span>
+<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        7772 :   return QMainWindow::event(event);</span></span>
 <span id="L364"><span class="lineNum">     364</span>              : }</span>
 <span id="L365"><span class="lineNum">     365</span>              : </span>
 <span id="L366"><span class="lineNum">     366</span> <span class="tlaGNC">         232 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -687,8 +687,8 @@
 <span id="L614"><span class="lineNum">     614</span>              :   }</span>
 <span id="L615"><span class="lineNum">     615</span> <span class="tlaGNC">           8 : }</span></span>
 <span id="L616"><span class="lineNum">     616</span>              : </span>
-<span id="L617"><span class="lineNum">     617</span> <span class="tlaGNC">          63 : auto MainWindow::getFile(const QModelIndex &amp;index, bool forPass) -&gt; QString {</span></span>
-<span id="L618"><span class="lineNum">     618</span> <span class="tlaGNC">          63 :   return m_tree-&gt;fileFor(index, forPass);</span></span>
+<span id="L617"><span class="lineNum">     617</span> <span class="tlaGNC">          62 : auto MainWindow::getFile(const QModelIndex &amp;index, bool forPass) -&gt; QString {</span></span>
+<span id="L618"><span class="lineNum">     618</span> <span class="tlaGNC">          62 :   return m_tree-&gt;fileFor(index, forPass);</span></span>
 <span id="L619"><span class="lineNum">     619</span>              : }</span>
 <span id="L620"><span class="lineNum">     620</span>              : </span>
 <span id="L621"><span class="lineNum">     621</span> <span class="tlaGNC">          24 : void MainWindow::on_treeView_clicked(const QModelIndex &amp;index) {</span></span>
@@ -1333,21 +1333,21 @@
 <span id="L1260"><span class="lineNum">    1260</span> <span class="tlaGNC">           6 :   on_treeView_clicked(index);</span></span>
 <span id="L1261"><span class="lineNum">    1261</span> <span class="tlaGNC">           6 : }</span></span>
 <span id="L1262"><span class="lineNum">    1262</span>              : </span>
-<span id="L1263"><span class="lineNum">    1263</span> <span class="tlaGNC">          25 : auto MainWindow::firstFile(QModelIndex parentIndex) -&gt; QModelIndex {</span></span>
-<span id="L1264"><span class="lineNum">    1264</span> <span class="tlaGNC">          25 :   StoreModel &amp;proxy = m_tree-&gt;proxy();</span></span>
-<span id="L1265"><span class="lineNum">    1265</span> <span class="tlaGNC">          25 :   int numRows = proxy.rowCount(parentIndex);</span></span>
-<span id="L1266"><span class="lineNum">    1266</span> <span class="tlaGNC">          32 :   for (int row = 0; row &lt; numRows; ++row) {</span></span>
+<span id="L1263"><span class="lineNum">    1263</span> <span class="tlaGNC">          24 : auto MainWindow::firstFile(QModelIndex parentIndex) -&gt; QModelIndex {</span></span>
+<span id="L1264"><span class="lineNum">    1264</span> <span class="tlaGNC">          24 :   StoreModel &amp;proxy = m_tree-&gt;proxy();</span></span>
+<span id="L1265"><span class="lineNum">    1265</span> <span class="tlaGNC">          24 :   int numRows = proxy.rowCount(parentIndex);</span></span>
+<span id="L1266"><span class="lineNum">    1266</span> <span class="tlaGNC">          31 :   for (int row = 0; row &lt; numRows; ++row) {</span></span>
 <span id="L1267"><span class="lineNum">    1267</span> <span class="tlaGNC">          22 :     QModelIndex index = proxy.index(row, 0, parentIndex);</span></span>
 <span id="L1268"><span class="lineNum">    1268</span> <span class="tlaGNC">          22 :     if (m_tree-&gt;fileInfo(index).isFile()) {</span></span>
 <span id="L1269"><span class="lineNum">    1269</span> <span class="tlaGNC">          15 :       return index;</span></span>
 <span id="L1270"><span class="lineNum">    1270</span>              :     }</span>
 <span id="L1271"><span class="lineNum">    1271</span> <span class="tlaGNC">          13 :     if (proxy.hasChildren(index)) {</span></span>
-<span id="L1272"><span class="lineNum">    1272</span> <span class="tlaGNC">           9 :       QModelIndex childFile = firstFile(index);</span></span>
+<span id="L1272"><span class="lineNum">    1272</span> <span class="tlaGNC">           8 :       QModelIndex childFile = firstFile(index);</span></span>
 <span id="L1273"><span class="lineNum">    1273</span>              :       if (childFile.isValid())</span>
 <span id="L1274"><span class="lineNum">    1274</span> <span class="tlaGNC">           6 :         return childFile;</span></span>
 <span id="L1275"><span class="lineNum">    1275</span>              :     }</span>
 <span id="L1276"><span class="lineNum">    1276</span>              :   }</span>
-<span id="L1277"><span class="lineNum">    1277</span> <span class="tlaGNC">          10 :   return QModelIndex();</span></span>
+<span id="L1277"><span class="lineNum">    1277</span> <span class="tlaGNC">           9 :   return QModelIndex();</span></span>
 <span id="L1278"><span class="lineNum">    1278</span>              : }</span>
 <span id="L1279"><span class="lineNum">    1279</span>              : </span>
 <span id="L1280"><span class="lineNum">    1280</span>              : // Guards the input dialogs (create, move, rename) against names like</span>
@@ -1467,23 +1467,23 @@
 <span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">           2 :           .arg(QDir::separator() + file));</span></span>
 <span id="L1395"><span class="lineNum">    1395</span>              : }</span>
 <span id="L1396"><span class="lineNum">    1396</span>              : </span>
-<span id="L1397"><span class="lineNum">    1397</span> <span class="tlaGNC">          12 : void MainWindow::onDelete() {</span></span>
-<span id="L1398"><span class="lineNum">    1398</span> <span class="tlaGNC">          12 :   const QModelIndex currentIndex = ui-&gt;treeView-&gt;currentIndex();</span></span>
+<span id="L1397"><span class="lineNum">    1397</span> <span class="tlaGNC">          11 : void MainWindow::onDelete() {</span></span>
+<span id="L1398"><span class="lineNum">    1398</span> <span class="tlaGNC">          11 :   const QModelIndex currentIndex = ui-&gt;treeView-&gt;currentIndex();</span></span>
 <span id="L1399"><span class="lineNum">    1399</span>              :   // While content search results hide the tree, its current entry is not</span>
 <span id="L1400"><span class="lineNum">    1400</span>              :   // what the user looks at (the Delete key comes here directly).</span>
-<span id="L1401"><span class="lineNum">    1401</span> <span class="tlaGNC">          10 :   if (!currentIndex.isValid() || ui-&gt;treeView-&gt;isHidden()) {</span></span>
+<span id="L1401"><span class="lineNum">    1401</span> <span class="tlaGNC">           9 :   if (!currentIndex.isValid() || ui-&gt;treeView-&gt;isHidden()) {</span></span>
 <span id="L1402"><span class="lineNum">    1402</span>              :     // Otherwise the whole password directory would be deleted (#556).</span>
-<span id="L1403"><span class="lineNum">    1403</span> <span class="tlaGNC">           9 :     return;</span></span>
+<span id="L1403"><span class="lineNum">    1403</span> <span class="tlaGNC">           8 :     return;</span></span>
 <span id="L1404"><span class="lineNum">    1404</span>              :   }</span>
 <span id="L1405"><span class="lineNum">    1405</span>              : </span>
-<span id="L1406"><span class="lineNum">    1406</span> <span class="tlaGNC">           8 :   const bool isDir = !m_tree-&gt;fileInfo(currentIndex).isFile();</span></span>
+<span id="L1406"><span class="lineNum">    1406</span> <span class="tlaGNC">           7 :   const bool isDir = !m_tree-&gt;fileInfo(currentIndex).isFile();</span></span>
 <span id="L1407"><span class="lineNum">    1407</span>              :   const QString file =</span>
-<span id="L1408"><span class="lineNum">    1408</span> <span class="tlaGNC">           8 :       isDir ? m_tree-&gt;currentDir(true) : getFile(currentIndex, true);</span></span>
+<span id="L1408"><span class="lineNum">    1408</span> <span class="tlaGNC">           7 :       isDir ? m_tree-&gt;currentDir(true) : getFile(currentIndex, true);</span></span>
 <span id="L1409"><span class="lineNum">    1409</span>              :   const QString folder =</span>
-<span id="L1410"><span class="lineNum">    1410</span> <span class="tlaGNC">           8 :       m_tree-&gt;fileSystem().rootPath() + QDir::separator() + file;</span></span>
-<span id="L1411"><span class="lineNum">    1411</span> <span class="tlaGNC">           8 :   const bool linkedFolder = isDir &amp;&amp; Util::isLinkedFolder(folder);</span></span>
+<span id="L1410"><span class="lineNum">    1410</span> <span class="tlaGNC">           7 :       m_tree-&gt;fileSystem().rootPath() + QDir::separator() + file;</span></span>
+<span id="L1411"><span class="lineNum">    1411</span> <span class="tlaGNC">           7 :   const bool linkedFolder = isDir &amp;&amp; Util::isLinkedFolder(folder);</span></span>
 <span id="L1412"><span class="lineNum">    1412</span>              : </span>
-<span id="L1413"><span class="lineNum">    1413</span> <span class="tlaGNC">           7 :   if (!linkedFolder &amp;&amp; refuseLinkedFolder(folder)) {</span></span>
+<span id="L1413"><span class="lineNum">    1413</span> <span class="tlaGNC">           6 :   if (!linkedFolder &amp;&amp; refuseLinkedFolder(folder)) {</span></span>
 <span id="L1414"><span class="lineNum">    1414</span>              :     // Behind a link: deleting would reach outside the store.</span>
 <span id="L1415"><span class="lineNum">    1415</span>              :     return;</span>
 <span id="L1416"><span class="lineNum">    1416</span>              :   }</span>
@@ -1702,8 +1702,8 @@
 <span id="L1629"><span class="lineNum">    1629</span>              :   }</span>
 <span id="L1630"><span class="lineNum">    1630</span> <span class="tlaGNC">           4 : }</span></span>
 <span id="L1631"><span class="lineNum">    1631</span>              : </span>
-<span id="L1632"><span class="lineNum">    1632</span> <span class="tlaGNC">        7339 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
-<span id="L1633"><span class="lineNum">    1633</span> <span class="tlaGNC">        7339 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
+<span id="L1632"><span class="lineNum">    1632</span> <span class="tlaGNC">        7335 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
+<span id="L1633"><span class="lineNum">    1633</span> <span class="tlaGNC">        7335 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
 <span id="L1634"><span class="lineNum">    1634</span>              :       event-&gt;type() == QEvent::PaletteChange) {</span>
 <span id="L1635"><span class="lineNum">    1635</span>              :     // Breeze gives these bars a &quot;header&quot; palette and, after a runtime</span>
 <span id="L1636"><span class="lineNum">    1636</span>              :     // light/dark switch, stamps the previous theme's colours back from a</span>
@@ -1711,7 +1711,7 @@
 <span id="L1638"><span class="lineNum">    1638</span>              :     // re-enter the style while it is still applying its palette.</span>
 <span id="L1639"><span class="lineNum">    1639</span> <span class="tlaGNC">          36 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L1640"><span class="lineNum">    1640</span>              :   }</span>
-<span id="L1641"><span class="lineNum">    1641</span> <span class="tlaGNC">        7339 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
+<span id="L1641"><span class="lineNum">    1641</span> <span class="tlaGNC">        7335 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
 <span id="L1642"><span class="lineNum">    1642</span> <span class="tlaGNC">           5 :     auto *key = dynamic_cast&lt;QKeyEvent *&gt;(event);</span></span>
 <span id="L1643"><span class="lineNum">    1643</span> <span class="tlaGNC">           5 :     if (key != nullptr &amp;&amp; key-&gt;key() == Qt::Key_Down) {</span></span>
 <span id="L1644"><span class="lineNum">    1644</span>              :       // Into whichever list is in sight: the tree, or content search results.</span>
@@ -1733,7 +1733,7 @@
 <span id="L1660"><span class="lineNum">    1660</span> <span class="tlaGNC">           3 :       return true;</span></span>
 <span id="L1661"><span class="lineNum">    1661</span>              :     }</span>
 <span id="L1662"><span class="lineNum">    1662</span>              :   }</span>
-<span id="L1663"><span class="lineNum">    1663</span> <span class="tlaGNC">        7336 :   return QObject::eventFilter(obj, event);</span></span>
+<span id="L1663"><span class="lineNum">    1663</span> <span class="tlaGNC">        7332 :   return QObject::eventFilter(obj, event);</span></span>
 <span id="L1664"><span class="lineNum">    1664</span>              : }</span>
 <span id="L1665"><span class="lineNum">    1665</span>              : </span>
 <span id="L1666"><span class="lineNum">    1666</span>              : // Only once the application palette changed (see m_themeSwitched): a bar</span>
@@ -2198,16 +2198,16 @@
 <span id="L2125"><span class="lineNum">    2125</span>              : // A tree-picked folder that is, or lies behind, a symlink or junction is not</span>
 <span id="L2126"><span class="lineNum">    2126</span>              : // a folder of the store. The store root itself may be a link (a synced</span>
 <span id="L2127"><span class="lineNum">    2127</span>              : // folder); that is configuration, not a tree pick.</span>
-<span id="L2128"><span class="lineNum">    2128</span> <span class="tlaGNC">          19 : auto MainWindow::refuseLinkedFolder(const QString &amp;dir) -&gt; bool {</span></span>
-<span id="L2129"><span class="lineNum">    2129</span> <span class="tlaGNC">          19 :   if (!Util::isUnderLink(dir, QtPassSettings::load().passStore)) {</span></span>
+<span id="L2128"><span class="lineNum">    2128</span> <span class="tlaGNC">          18 : auto MainWindow::refuseLinkedFolder(const QString &amp;dir) -&gt; bool {</span></span>
+<span id="L2129"><span class="lineNum">    2129</span> <span class="tlaGNC">          18 :   if (!Util::isUnderLink(dir, QtPassSettings::load().passStore)) {</span></span>
 <span id="L2130"><span class="lineNum">    2130</span>              :     return false;</span>
 <span id="L2131"><span class="lineNum">    2131</span>              :   }</span>
-<span id="L2132"><span class="lineNum">    2132</span> <span class="tlaGNC">           4 :   PlainMessageBox::critical(</span></span>
-<span id="L2133"><span class="lineNum">    2133</span> <span class="tlaGNC">           4 :       this, tr(&quot;Not a folder of the store&quot;),</span></span>
-<span id="L2134"><span class="lineNum">    2134</span> <span class="tlaGNC">           4 :       tr(&quot;%1 is, or lies behind, a symbolic link or junction. What that &quot;</span></span>
+<span id="L2132"><span class="lineNum">    2132</span> <span class="tlaGNC">           3 :   PlainMessageBox::critical(</span></span>
+<span id="L2133"><span class="lineNum">    2133</span> <span class="tlaGNC">           3 :       this, tr(&quot;Not a folder of the store&quot;),</span></span>
+<span id="L2134"><span class="lineNum">    2134</span> <span class="tlaGNC">           3 :       tr(&quot;%1 is, or lies behind, a symbolic link or junction. What that &quot;</span></span>
 <span id="L2135"><span class="lineNum">    2135</span>              :          &quot;points to is not part of the password store and is left alone.&quot;)</span>
-<span id="L2136"><span class="lineNum">    2136</span> <span class="tlaGNC">           8 :           .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))));</span></span>
-<span id="L2137"><span class="lineNum">    2137</span> <span class="tlaGNC">           4 :   return true;</span></span>
+<span id="L2136"><span class="lineNum">    2136</span> <span class="tlaGNC">           6 :           .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))));</span></span>
+<span id="L2137"><span class="lineNum">    2137</span> <span class="tlaGNC">           3 :   return true;</span></span>
 <span id="L2138"><span class="lineNum">    2138</span>              : }</span>
 <span id="L2139"><span class="lineNum">    2139</span>              : </span>
 <span id="L2140"><span class="lineNum">    2140</span> <span class="tlaGNC">           1 : void MainWindow::showShareHelp() {</span></span>

@@ -1,0 +1,29 @@
+<map id="StoreModel::hasChildren" name="StoreModel::hasChildren">
+<area shape="rect" id="Node000001" title="No children for a link inside the store: it is listed by name but never entered, so the view shows no..." alt="" coords="1566,44,1747,72"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ae9a674e42e112906d72b37ede211ca4d" title="Depth&#45;first search for the first entry under a folder." alt="" coords="1358,44,1518,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1548,58,1519,61,1519,56,1554,58"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="1474,29,1462,25,1438,23,1415,25,1403,30,1400,35,1405,45,1401,43,1395,36,1399,26,1414,20,1438,18,1464,20,1479,30"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a7491c2974ab54018ac9a7d1738a4f654" title=" " alt="" coords="1108,44,1310,72"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="1340,58,1311,61,1310,56,1345,58"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a6ed67aa63c63c4867166cb21115d64f7" title="Enter in the search box: in content&#45;search mode start (or, for an empty query, cancel) the grep; othe..." alt="" coords="584,5,768,50"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="1089,52,768,36,768,30,1094,51"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a661b52ed29bc2ff2b16d973c8306fdca" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="833,70,1060,98"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="1089,70,1060,75,1060,70,1095,69"/>
+<area shape="poly" id="edge16_Node000005_Node000004" title=" " alt="" coords="858,66,768,49,769,44,863,66"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a2a80222ef73eb5c6d9350db559787488" title="Searches for text as qtpass(1) promises for the command line and for text handed over by another qtpa..." alt="" coords="566,126,785,154"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="864,101,747,128,746,123,858,102"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#ad3c41db78ea5f1d67d0ffbf7ade2d079" title=" " alt="" coords="586,74,765,102"/>
+<area shape="poly" id="edge14_Node000005_Node000011" title=" " alt="" coords="815,86,766,89,765,84,821,85"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="304,74,500,102"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="581,122,479,105,479,100,587,122"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b" title="Handle an incoming inter&#45;process message (single&#45;instance mode)." alt="" coords="287,138,518,166"/>
+<area shape="poly" id="edge11_Node000006_Node000009" title=" " alt="" coords="547,145,519,149,518,144,553,145"/>
+<area shape="poly" id="edge8_Node000007_Node000007" title=" " alt="" coords="448,58,433,55,402,52,374,54,358,59,354,65,361,74,356,73,348,65,354,55,373,49,402,47,434,50,453,59"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,74,239,102"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="286,97,239,99,239,94,292,96"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="254,76,306,78,301,80,255,81"/>
+<area shape="rect" id="Node000010" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="95,150,149,178"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="269,158,150,165,149,160,274,157"/>
+<area shape="poly" id="edge13_Node000010_Node000010" title=" " alt="" coords="163,149,172,142,169,136,153,131,122,128,88,131,73,138,72,141,75,145,97,157,92,157,71,149,67,142,69,135,86,126,122,123,154,125,172,132,177,143,165,154"/>
+<area shape="poly" id="edge15_Node000011_Node000007" title=" " alt="" coords="569,88,501,90,501,85,574,87"/>
+</map>

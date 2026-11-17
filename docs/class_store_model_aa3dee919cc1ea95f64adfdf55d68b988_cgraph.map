@@ -1,0 +1,7 @@
+<map id="StoreModel::hasChildren" name="StoreModel::hasChildren">
+<area shape="rect" id="Node000001" title="No children for a link inside the store: it is listed by name but never entered, so the view shows no..." alt="" coords="5,5,186,33"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#ab68d55f45eea235695da5bb987c6bde2" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="234,5,421,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,17,221,19,215,19,186,22"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="469,5,614,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="421,17,456,19,451,19,422,22"/>
+</map>

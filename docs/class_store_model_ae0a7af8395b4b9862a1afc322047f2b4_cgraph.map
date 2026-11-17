@@ -1,0 +1,7 @@
+<map id="StoreModel::canFetchMore" name="StoreModel::canFetchMore">
+<area shape="rect" id="Node000001" title="Nothing to fetch under a link inside the store, so the file system model never lists what the link po..." alt="" coords="5,5,200,33"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#ab68d55f45eea235695da5bb987c6bde2" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="248,5,435,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,17,235,19,230,19,200,22"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="483,5,628,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,17,470,19,465,19,436,22"/>
+</map>

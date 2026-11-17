@@ -1,0 +1,5 @@
+<map id="StoreModel::isLinkInStore" name="StoreModel::isLinkInStore">
+<area shape="rect" id="Node000001" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="5,5,193,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="241,5,386,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,17,228,19,222,19,193,22"/>
+</map>

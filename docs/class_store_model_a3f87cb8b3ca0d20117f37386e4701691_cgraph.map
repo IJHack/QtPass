@@ -1,6 +1,11 @@
 <map id="StoreModel::showThis" name="StoreModel::showThis">
-<area shape="rect" id="Node000001" title="Check if a specific index should be shown." alt="" coords="5,29,170,57"/>
-<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="53,29,47,20,52,11,66,5,88,3,111,5,125,14,120,14,110,10,87,8,67,10,56,15,53,20,58,29"/>
-<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="218,29,357,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,41,205,43,199,43,170,46"/>
+<area shape="rect" id="Node000001" title="Check if a specific index should be shown." alt="" coords="5,56,170,84"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="53,56,47,47,52,37,66,31,88,29,111,32,125,40,120,41,110,37,87,35,67,37,56,41,53,47,58,55"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="218,5,357,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,53,217,36,213,39,146,58"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="405,81,550,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,72,390,87,388,92,170,78"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="223,107,352,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,82,218,102,213,103,145,87"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="352,109,387,107,392,107,352,115"/>
 </map>

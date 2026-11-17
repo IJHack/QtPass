@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"struct_profile.html#a5e7cc4f12dbd6e0e51a0ef93f9c37e7d":[1,4,2,1],
+"struct_profile.html#a61ce06694c6c8e7dab43504a29e80db2":[1,4,2,2],
+"struct_profile.html#a89364a3e36a6f8b6197adc385854e023":[1,4,2,0],
+"struct_profile.html#aca298d5aa8281c8ee91f97744dcdcc48":[1,4,2,7],
 "struct_real_pass_1_1_insert_record.html":[1,0,5,1],
 "struct_real_pass_1_1_insert_record.html#aa214efefd2d7737cb6fceef597986cc5":[1,0,5,1,1],
 "struct_real_pass_1_1_insert_record.html#ab2b5fb5da4f4c402e869b9248b200063":[1,0,5,1,0],

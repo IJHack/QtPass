@@ -1,0 +1,7 @@
+<map id="StoreModel::fetchMore" name="StoreModel::fetchMore">
+<area shape="rect" id="Node000001" title="Fetch more rows, except under a link inside the store." alt="" coords="5,5,175,33"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#ab68d55f45eea235695da5bb987c6bde2" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="223,5,410,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,17,210,19,205,19,175,22"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="458,5,603,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,17,445,19,440,19,411,22"/>
+</map>

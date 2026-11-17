@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-16 23:33:15</td>
+            <td class="headerValue">2026-11-17 07:55:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -208,151 +208,180 @@
 <span id="L135"><span class="lineNum">     135</span>              :    */</span>
 <span id="L136"><span class="lineNum">     136</span>              :   auto performDrop(const QString &amp;cleanedSrc, const QString &amp;cleanedDest,</span>
 <span id="L137"><span class="lineNum">     137</span>              :                    Qt::DropAction action, bool force) -&gt; bool;</span>
-<span id="L138"><span class="lineNum">     138</span>              : </span>
-<span id="L139"><span class="lineNum">     139</span>              : public:</span>
-<span id="L140"><span class="lineNum">     140</span>              :   /**</span>
-<span id="L141"><span class="lineNum">     141</span>              :    * @brief Construct a StoreModel.</span>
-<span id="L142"><span class="lineNum">     142</span>              :    */</span>
-<span id="L143"><span class="lineNum">     143</span>              :   StoreModel();</span>
-<span id="L144"><span class="lineNum">     144</span>              : </span>
-<span id="L145"><span class="lineNum">     145</span>              :   /**</span>
-<span id="L146"><span class="lineNum">     146</span>              :    * @brief Inject the Pass backend for drag-and-drop Move/Copy operations.</span>
-<span id="L147"><span class="lineNum">     147</span>              :    * @param pass Pass backend instance; must outlive this StoreModel.</span>
-<span id="L148"><span class="lineNum">     148</span>              :    */</span>
-<span id="L149"><span class="lineNum">     149</span>              :   void setPass(Pass *pass);</span>
-<span id="L150"><span class="lineNum">     150</span>              : </span>
-<span id="L151"><span class="lineNum">     151</span>              :   /**</span>
-<span id="L152"><span class="lineNum">     152</span>              :    * @brief Filter whether a row should be displayed.</span>
-<span id="L153"><span class="lineNum">     153</span>              :    * @param source_row Row index in source model.</span>
-<span id="L154"><span class="lineNum">     154</span>              :    * @param source_parent Parent index in source model.</span>
-<span id="L155"><span class="lineNum">     155</span>              :    * @return true if row should be displayed.</span>
-<span id="L156"><span class="lineNum">     156</span>              :    */</span>
-<span id="L157"><span class="lineNum">     157</span>              :   [[nodiscard]] auto filterAcceptsRow(int source_row,</span>
-<span id="L158"><span class="lineNum">     158</span>              :                                       const QModelIndex &amp;source_parent) const</span>
-<span id="L159"><span class="lineNum">     159</span>              :       -&gt; bool override;</span>
-<span id="L160"><span class="lineNum">     160</span>              : </span>
-<span id="L161"><span class="lineNum">     161</span>              :   /**</span>
-<span id="L162"><span class="lineNum">     162</span>              :    * @brief Check if a specific index should be shown.</span>
-<span id="L163"><span class="lineNum">     163</span>              :    * @param index Model index to check.</span>
-<span id="L164"><span class="lineNum">     164</span>              :    * @return true if index should be visible.</span>
-<span id="L165"><span class="lineNum">     165</span>              :    */</span>
-<span id="L166"><span class="lineNum">     166</span>              :   [[nodiscard]] auto showThis(const QModelIndex &amp;index) const -&gt; bool;</span>
+<span id="L138"><span class="lineNum">     138</span>              :   /**</span>
+<span id="L139"><span class="lineNum">     139</span>              :    * @brief Whether a proxy index is a link (or junction) inside the store,</span>
+<span id="L140"><span class="lineNum">     140</span>              :    *        the store root excluded.</span>
+<span id="L141"><span class="lineNum">     141</span>              :    * @param proxyIndex Index in this model.</span>
+<span id="L142"><span class="lineNum">     142</span>              :    * @return true for a link inside the store.</span>
+<span id="L143"><span class="lineNum">     143</span>              :    */</span>
+<span id="L144"><span class="lineNum">     144</span>              :   [[nodiscard]] auto isLinkInStore(const QModelIndex &amp;proxyIndex) const -&gt; bool;</span>
+<span id="L145"><span class="lineNum">     145</span>              : </span>
+<span id="L146"><span class="lineNum">     146</span>              : public:</span>
+<span id="L147"><span class="lineNum">     147</span>              :   /**</span>
+<span id="L148"><span class="lineNum">     148</span>              :    * @brief Construct a StoreModel.</span>
+<span id="L149"><span class="lineNum">     149</span>              :    */</span>
+<span id="L150"><span class="lineNum">     150</span>              :   StoreModel();</span>
+<span id="L151"><span class="lineNum">     151</span>              : </span>
+<span id="L152"><span class="lineNum">     152</span>              :   /**</span>
+<span id="L153"><span class="lineNum">     153</span>              :    * @brief Inject the Pass backend for drag-and-drop Move/Copy operations.</span>
+<span id="L154"><span class="lineNum">     154</span>              :    * @param pass Pass backend instance; must outlive this StoreModel.</span>
+<span id="L155"><span class="lineNum">     155</span>              :    */</span>
+<span id="L156"><span class="lineNum">     156</span>              :   void setPass(Pass *pass);</span>
+<span id="L157"><span class="lineNum">     157</span>              : </span>
+<span id="L158"><span class="lineNum">     158</span>              :   /**</span>
+<span id="L159"><span class="lineNum">     159</span>              :    * @brief Filter whether a row should be displayed.</span>
+<span id="L160"><span class="lineNum">     160</span>              :    * @param source_row Row index in source model.</span>
+<span id="L161"><span class="lineNum">     161</span>              :    * @param source_parent Parent index in source model.</span>
+<span id="L162"><span class="lineNum">     162</span>              :    * @return true if row should be displayed.</span>
+<span id="L163"><span class="lineNum">     163</span>              :    */</span>
+<span id="L164"><span class="lineNum">     164</span>              :   [[nodiscard]] auto filterAcceptsRow(int source_row,</span>
+<span id="L165"><span class="lineNum">     165</span>              :                                       const QModelIndex &amp;source_parent) const</span>
+<span id="L166"><span class="lineNum">     166</span>              :       -&gt; bool override;</span>
 <span id="L167"><span class="lineNum">     167</span>              : </span>
 <span id="L168"><span class="lineNum">     168</span>              :   /**</span>
-<span id="L169"><span class="lineNum">     169</span>              :    * @brief Initialize model with source model and store path.</span>
-<span id="L170"><span class="lineNum">     170</span>              :    * @param sourceModel Filesystem model to wrap.</span>
-<span id="L171"><span class="lineNum">     171</span>              :    * @param passStore Root path of password store.</span>
+<span id="L169"><span class="lineNum">     169</span>              :    * @brief Check if a specific index should be shown.</span>
+<span id="L170"><span class="lineNum">     170</span>              :    * @param index Model index to check.</span>
+<span id="L171"><span class="lineNum">     171</span>              :    * @return true if index should be visible.</span>
 <span id="L172"><span class="lineNum">     172</span>              :    */</span>
-<span id="L173"><span class="lineNum">     173</span>              :   void setModelAndStore(QFileSystemModel *sourceModel,</span>
-<span id="L174"><span class="lineNum">     174</span>              :                         const QString &amp;passStore);</span>
-<span id="L175"><span class="lineNum">     175</span>              : </span>
-<span id="L176"><span class="lineNum">     176</span>              :   /**</span>
-<span id="L177"><span class="lineNum">     177</span>              :    * @brief Set the source filesystem root and map it to a proxy index.</span>
-<span id="L178"><span class="lineNum">     178</span>              :    *</span>
-<span id="L179"><span class="lineNum">     179</span>              :    * Wraps the recurring `mapFromSource(fs-&gt;setRootPath(path))` dance used to</span>
-<span id="L180"><span class="lineNum">     180</span>              :    * point the tree view at a directory, so callers don't reach through to the</span>
-<span id="L181"><span class="lineNum">     181</span>              :    * wrapped QFileSystemModel.</span>
-<span id="L182"><span class="lineNum">     182</span>              :    * @param path Directory to make the source root.</span>
-<span id="L183"><span class="lineNum">     183</span>              :    * @return Proxy index for `path`, or an invalid index if no source model is</span>
-<span id="L184"><span class="lineNum">     184</span>              :    * set.</span>
-<span id="L185"><span class="lineNum">     185</span>              :    */</span>
-<span id="L186"><span class="lineNum">     186</span>              :   auto rootIndexFor(const QString &amp;path) -&gt; QModelIndex;</span>
-<span id="L187"><span class="lineNum">     187</span>              : </span>
-<span id="L188"><span class="lineNum">     188</span>              :   /**</span>
-<span id="L189"><span class="lineNum">     189</span>              :    * @brief Update the store path used for filtering without changing the source</span>
-<span id="L190"><span class="lineNum">     190</span>              :    * model.</span>
-<span id="L191"><span class="lineNum">     191</span>              :    * @param passStore New root path of password store.</span>
-<span id="L192"><span class="lineNum">     192</span>              :    */</span>
-<span id="L193"><span class="lineNum">     193</span>              :   void setStore(const QString &amp;passStore);</span>
-<span id="L194"><span class="lineNum">     194</span>              : </span>
-<span id="L195"><span class="lineNum">     195</span>              :   /**</span>
-<span id="L196"><span class="lineNum">     196</span>              :    * @brief Get display data for index.</span>
-<span id="L197"><span class="lineNum">     197</span>              :    * @param index Model index.</span>
-<span id="L198"><span class="lineNum">     198</span>              :    * @param role Data role (e.g., Qt::DisplayRole).</span>
-<span id="L199"><span class="lineNum">     199</span>              :    * @return Display data for the role.</span>
-<span id="L200"><span class="lineNum">     200</span>              :    */</span>
-<span id="L201"><span class="lineNum">     201</span>              :   [[nodiscard]] auto data(const QModelIndex &amp;index, int role) const</span>
-<span id="L202"><span class="lineNum">     202</span>              :       -&gt; QVariant override;</span>
-<span id="L203"><span class="lineNum">     203</span>              : </span>
-<span id="L204"><span class="lineNum">     204</span>              :   /**</span>
-<span id="L205"><span class="lineNum">     205</span>              :    * @brief Compare two indices for sorting.</span>
-<span id="L206"><span class="lineNum">     206</span>              :    * @param source_left Left index to compare.</span>
-<span id="L207"><span class="lineNum">     207</span>              :    * @param source_right Right index to compare.</span>
-<span id="L208"><span class="lineNum">     208</span>              :    * @return true if left &lt; right.</span>
-<span id="L209"><span class="lineNum">     209</span>              :    */</span>
-<span id="L210"><span class="lineNum">     210</span>              :   [[nodiscard]] auto lessThan(const QModelIndex &amp;source_left,</span>
-<span id="L211"><span class="lineNum">     211</span>              :                               const QModelIndex &amp;source_right) const</span>
-<span id="L212"><span class="lineNum">     212</span>              :       -&gt; bool override;</span>
-<span id="L213"><span class="lineNum">     213</span>              : </span>
-<span id="L214"><span class="lineNum">     214</span>              :   /**</span>
-<span id="L215"><span class="lineNum">     215</span>              :    * @brief Get the password store root path.</span>
-<span id="L216"><span class="lineNum">     216</span>              :    * @return Store path.</span>
-<span id="L217"><span class="lineNum">     217</span>              :    */</span>
-<span id="L218"><span class="lineNum">     218</span>              :   [[nodiscard]] auto getStore() const -&gt; QString { return store; }</span>
-<span id="L219"><span class="lineNum">     219</span>              : </span>
-<span id="L220"><span class="lineNum">     220</span>              :   // QAbstractItemModel interface</span>
-<span id="L221"><span class="lineNum">     221</span>              : public:</span>
-<span id="L222"><span class="lineNum">     222</span>              :   /**</span>
-<span id="L223"><span class="lineNum">     223</span>              :    * @brief Get supported drop actions.</span>
-<span id="L224"><span class="lineNum">     224</span>              :    * @return Supported Qt::DropActions.</span>
-<span id="L225"><span class="lineNum">     225</span>              :    */</span>
-<span id="L226"><span class="lineNum">     226</span>              :   [[nodiscard]] auto supportedDropActions() const -&gt; Qt::DropActions override;</span>
-<span id="L227"><span class="lineNum">     227</span>              : </span>
-<span id="L228"><span class="lineNum">     228</span>              :   /**</span>
-<span id="L229"><span class="lineNum">     229</span>              :    * @brief Get supported drag actions.</span>
-<span id="L230"><span class="lineNum">     230</span>              :    * @return Supported Qt::DropActions.</span>
-<span id="L231"><span class="lineNum">     231</span>              :    */</span>
-<span id="L232"><span class="lineNum">     232</span>              :   [[nodiscard]] auto supportedDragActions() const -&gt; Qt::DropActions override;</span>
-<span id="L233"><span class="lineNum">     233</span>              : </span>
-<span id="L234"><span class="lineNum">     234</span>              :   /**</span>
-<span id="L235"><span class="lineNum">     235</span>              :    * @brief Get item flags for index.</span>
-<span id="L236"><span class="lineNum">     236</span>              :    * @param index Model index.</span>
-<span id="L237"><span class="lineNum">     237</span>              :    * @return Item flags.</span>
+<span id="L173"><span class="lineNum">     173</span>              :   [[nodiscard]] auto showThis(const QModelIndex &amp;index) const -&gt; bool;</span>
+<span id="L174"><span class="lineNum">     174</span>              : </span>
+<span id="L175"><span class="lineNum">     175</span>              :   /**</span>
+<span id="L176"><span class="lineNum">     176</span>              :    * @brief No children for a link inside the store: it is listed by name</span>
+<span id="L177"><span class="lineNum">     177</span>              :    *        but never entered, so the view shows no expand arrow.</span>
+<span id="L178"><span class="lineNum">     178</span>              :    * @param parent Proxy index.</span>
+<span id="L179"><span class="lineNum">     179</span>              :    * @return false for a link inside the store, otherwise as the base class.</span>
+<span id="L180"><span class="lineNum">     180</span>              :    */</span>
+<span id="L181"><span class="lineNum">     181</span>              :   [[nodiscard]] auto</span>
+<span id="L182"><span class="lineNum">     182</span>              :   hasChildren(const QModelIndex &amp;parent = QModelIndex()) const -&gt; bool override;</span>
+<span id="L183"><span class="lineNum">     183</span>              :   /**</span>
+<span id="L184"><span class="lineNum">     184</span>              :    * @brief Nothing to fetch under a link inside the store, so the file</span>
+<span id="L185"><span class="lineNum">     185</span>              :    *        system model never lists what the link points to.</span>
+<span id="L186"><span class="lineNum">     186</span>              :    * @param parent Proxy index.</span>
+<span id="L187"><span class="lineNum">     187</span>              :    * @return false for a link inside the store, otherwise as the base class.</span>
+<span id="L188"><span class="lineNum">     188</span>              :    */</span>
+<span id="L189"><span class="lineNum">     189</span>              :   [[nodiscard]] auto canFetchMore(const QModelIndex &amp;parent) const</span>
+<span id="L190"><span class="lineNum">     190</span>              :       -&gt; bool override;</span>
+<span id="L191"><span class="lineNum">     191</span>              :   /**</span>
+<span id="L192"><span class="lineNum">     192</span>              :    * @brief Fetch more rows, except under a link inside the store.</span>
+<span id="L193"><span class="lineNum">     193</span>              :    * @param parent Proxy index.</span>
+<span id="L194"><span class="lineNum">     194</span>              :    */</span>
+<span id="L195"><span class="lineNum">     195</span>              :   void fetchMore(const QModelIndex &amp;parent) override;</span>
+<span id="L196"><span class="lineNum">     196</span>              : </span>
+<span id="L197"><span class="lineNum">     197</span>              :   /**</span>
+<span id="L198"><span class="lineNum">     198</span>              :    * @brief Initialize model with source model and store path.</span>
+<span id="L199"><span class="lineNum">     199</span>              :    * @param sourceModel Filesystem model to wrap.</span>
+<span id="L200"><span class="lineNum">     200</span>              :    * @param passStore Root path of password store.</span>
+<span id="L201"><span class="lineNum">     201</span>              :    */</span>
+<span id="L202"><span class="lineNum">     202</span>              :   void setModelAndStore(QFileSystemModel *sourceModel,</span>
+<span id="L203"><span class="lineNum">     203</span>              :                         const QString &amp;passStore);</span>
+<span id="L204"><span class="lineNum">     204</span>              : </span>
+<span id="L205"><span class="lineNum">     205</span>              :   /**</span>
+<span id="L206"><span class="lineNum">     206</span>              :    * @brief Set the source filesystem root and map it to a proxy index.</span>
+<span id="L207"><span class="lineNum">     207</span>              :    *</span>
+<span id="L208"><span class="lineNum">     208</span>              :    * Wraps the recurring `mapFromSource(fs-&gt;setRootPath(path))` dance used to</span>
+<span id="L209"><span class="lineNum">     209</span>              :    * point the tree view at a directory, so callers don't reach through to the</span>
+<span id="L210"><span class="lineNum">     210</span>              :    * wrapped QFileSystemModel.</span>
+<span id="L211"><span class="lineNum">     211</span>              :    * @param path Directory to make the source root.</span>
+<span id="L212"><span class="lineNum">     212</span>              :    * @return Proxy index for `path`, or an invalid index if no source model is</span>
+<span id="L213"><span class="lineNum">     213</span>              :    * set.</span>
+<span id="L214"><span class="lineNum">     214</span>              :    */</span>
+<span id="L215"><span class="lineNum">     215</span>              :   auto rootIndexFor(const QString &amp;path) -&gt; QModelIndex;</span>
+<span id="L216"><span class="lineNum">     216</span>              : </span>
+<span id="L217"><span class="lineNum">     217</span>              :   /**</span>
+<span id="L218"><span class="lineNum">     218</span>              :    * @brief Update the store path used for filtering without changing the source</span>
+<span id="L219"><span class="lineNum">     219</span>              :    * model.</span>
+<span id="L220"><span class="lineNum">     220</span>              :    * @param passStore New root path of password store.</span>
+<span id="L221"><span class="lineNum">     221</span>              :    */</span>
+<span id="L222"><span class="lineNum">     222</span>              :   void setStore(const QString &amp;passStore);</span>
+<span id="L223"><span class="lineNum">     223</span>              : </span>
+<span id="L224"><span class="lineNum">     224</span>              :   /**</span>
+<span id="L225"><span class="lineNum">     225</span>              :    * @brief Get display data for index.</span>
+<span id="L226"><span class="lineNum">     226</span>              :    * @param index Model index.</span>
+<span id="L227"><span class="lineNum">     227</span>              :    * @param role Data role (e.g., Qt::DisplayRole).</span>
+<span id="L228"><span class="lineNum">     228</span>              :    * @return Display data for the role.</span>
+<span id="L229"><span class="lineNum">     229</span>              :    */</span>
+<span id="L230"><span class="lineNum">     230</span>              :   [[nodiscard]] auto data(const QModelIndex &amp;index, int role) const</span>
+<span id="L231"><span class="lineNum">     231</span>              :       -&gt; QVariant override;</span>
+<span id="L232"><span class="lineNum">     232</span>              : </span>
+<span id="L233"><span class="lineNum">     233</span>              :   /**</span>
+<span id="L234"><span class="lineNum">     234</span>              :    * @brief Compare two indices for sorting.</span>
+<span id="L235"><span class="lineNum">     235</span>              :    * @param source_left Left index to compare.</span>
+<span id="L236"><span class="lineNum">     236</span>              :    * @param source_right Right index to compare.</span>
+<span id="L237"><span class="lineNum">     237</span>              :    * @return true if left &lt; right.</span>
 <span id="L238"><span class="lineNum">     238</span>              :    */</span>
-<span id="L239"><span class="lineNum">     239</span>              :   [[nodiscard]] auto flags(const QModelIndex &amp;index) const</span>
-<span id="L240"><span class="lineNum">     240</span>              :       -&gt; Qt::ItemFlags override;</span>
-<span id="L241"><span class="lineNum">     241</span>              : </span>
-<span id="L242"><span class="lineNum">     242</span>              :   /**</span>
-<span id="L243"><span class="lineNum">     243</span>              :    * @brief Get supported MIME types for drag/drop.</span>
-<span id="L244"><span class="lineNum">     244</span>              :    * @return List of MIME type strings.</span>
-<span id="L245"><span class="lineNum">     245</span>              :    */</span>
-<span id="L246"><span class="lineNum">     246</span>              :   [[nodiscard]] auto mimeTypes() const -&gt; QStringList override;</span>
-<span id="L247"><span class="lineNum">     247</span>              : </span>
-<span id="L248"><span class="lineNum">     248</span>              :   /**</span>
-<span id="L249"><span class="lineNum">     249</span>              :    * @brief Create MIME data from indexes.</span>
-<span id="L250"><span class="lineNum">     250</span>              :    * @param indexes List of selected indexes.</span>
-<span id="L251"><span class="lineNum">     251</span>              :    * @return MIME data object.</span>
-<span id="L252"><span class="lineNum">     252</span>              :    */</span>
-<span id="L253"><span class="lineNum">     253</span>              :   [[nodiscard]] auto mimeData(const QModelIndexList &amp;indexes) const</span>
-<span id="L254"><span class="lineNum">     254</span>              :       -&gt; QMimeData * override;</span>
-<span id="L255"><span class="lineNum">     255</span>              : </span>
-<span id="L256"><span class="lineNum">     256</span>              :   /**</span>
-<span id="L257"><span class="lineNum">     257</span>              :    * @brief Check if drop is possible.</span>
-<span id="L258"><span class="lineNum">     258</span>              :    * @param data MIME data to drop.</span>
-<span id="L259"><span class="lineNum">     259</span>              :    * @param action Drop action.</span>
-<span id="L260"><span class="lineNum">     260</span>              :    * @param row Target row.</span>
-<span id="L261"><span class="lineNum">     261</span>              :    * @param column Target column.</span>
-<span id="L262"><span class="lineNum">     262</span>              :    * @param parent Target parent index.</span>
-<span id="L263"><span class="lineNum">     263</span>              :    * @return true if drop is possible.</span>
-<span id="L264"><span class="lineNum">     264</span>              :    */</span>
-<span id="L265"><span class="lineNum">     265</span>              :   auto canDropMimeData(const QMimeData *data, Qt::DropAction action, int row,</span>
-<span id="L266"><span class="lineNum">     266</span>              :                        int column, const QModelIndex &amp;parent) const</span>
-<span id="L267"><span class="lineNum">     267</span>              :       -&gt; bool override;</span>
-<span id="L268"><span class="lineNum">     268</span>              : </span>
-<span id="L269"><span class="lineNum">     269</span>              :   /**</span>
-<span id="L270"><span class="lineNum">     270</span>              :    * @brief Handle dropped MIME data.</span>
-<span id="L271"><span class="lineNum">     271</span>              :    * @param data MIME data to drop.</span>
-<span id="L272"><span class="lineNum">     272</span>              :    * @param action Drop action.</span>
-<span id="L273"><span class="lineNum">     273</span>              :    * @param row Target row.</span>
-<span id="L274"><span class="lineNum">     274</span>              :    * @param column Target column.</span>
-<span id="L275"><span class="lineNum">     275</span>              :    * @param parent Target parent index.</span>
-<span id="L276"><span class="lineNum">     276</span>              :    * @return true if drop was handled.</span>
-<span id="L277"><span class="lineNum">     277</span>              :    */</span>
-<span id="L278"><span class="lineNum">     278</span>              :   auto dropMimeData(const QMimeData *data, Qt::DropAction action, int row,</span>
-<span id="L279"><span class="lineNum">     279</span>              :                     int column, const QModelIndex &amp;parent) -&gt; bool override;</span>
-<span id="L280"><span class="lineNum">     280</span>              : };</span>
-<span id="L281"><span class="lineNum">     281</span>              : </span>
-<span id="L282"><span class="lineNum">     282</span>              : #endif // SRC_STOREMODEL_H_</span>
+<span id="L239"><span class="lineNum">     239</span>              :   [[nodiscard]] auto lessThan(const QModelIndex &amp;source_left,</span>
+<span id="L240"><span class="lineNum">     240</span>              :                               const QModelIndex &amp;source_right) const</span>
+<span id="L241"><span class="lineNum">     241</span>              :       -&gt; bool override;</span>
+<span id="L242"><span class="lineNum">     242</span>              : </span>
+<span id="L243"><span class="lineNum">     243</span>              :   /**</span>
+<span id="L244"><span class="lineNum">     244</span>              :    * @brief Get the password store root path.</span>
+<span id="L245"><span class="lineNum">     245</span>              :    * @return Store path.</span>
+<span id="L246"><span class="lineNum">     246</span>              :    */</span>
+<span id="L247"><span class="lineNum">     247</span>              :   [[nodiscard]] auto getStore() const -&gt; QString { return store; }</span>
+<span id="L248"><span class="lineNum">     248</span>              : </span>
+<span id="L249"><span class="lineNum">     249</span>              :   // QAbstractItemModel interface</span>
+<span id="L250"><span class="lineNum">     250</span>              : public:</span>
+<span id="L251"><span class="lineNum">     251</span>              :   /**</span>
+<span id="L252"><span class="lineNum">     252</span>              :    * @brief Get supported drop actions.</span>
+<span id="L253"><span class="lineNum">     253</span>              :    * @return Supported Qt::DropActions.</span>
+<span id="L254"><span class="lineNum">     254</span>              :    */</span>
+<span id="L255"><span class="lineNum">     255</span>              :   [[nodiscard]] auto supportedDropActions() const -&gt; Qt::DropActions override;</span>
+<span id="L256"><span class="lineNum">     256</span>              : </span>
+<span id="L257"><span class="lineNum">     257</span>              :   /**</span>
+<span id="L258"><span class="lineNum">     258</span>              :    * @brief Get supported drag actions.</span>
+<span id="L259"><span class="lineNum">     259</span>              :    * @return Supported Qt::DropActions.</span>
+<span id="L260"><span class="lineNum">     260</span>              :    */</span>
+<span id="L261"><span class="lineNum">     261</span>              :   [[nodiscard]] auto supportedDragActions() const -&gt; Qt::DropActions override;</span>
+<span id="L262"><span class="lineNum">     262</span>              : </span>
+<span id="L263"><span class="lineNum">     263</span>              :   /**</span>
+<span id="L264"><span class="lineNum">     264</span>              :    * @brief Get item flags for index.</span>
+<span id="L265"><span class="lineNum">     265</span>              :    * @param index Model index.</span>
+<span id="L266"><span class="lineNum">     266</span>              :    * @return Item flags.</span>
+<span id="L267"><span class="lineNum">     267</span>              :    */</span>
+<span id="L268"><span class="lineNum">     268</span>              :   [[nodiscard]] auto flags(const QModelIndex &amp;index) const</span>
+<span id="L269"><span class="lineNum">     269</span>              :       -&gt; Qt::ItemFlags override;</span>
+<span id="L270"><span class="lineNum">     270</span>              : </span>
+<span id="L271"><span class="lineNum">     271</span>              :   /**</span>
+<span id="L272"><span class="lineNum">     272</span>              :    * @brief Get supported MIME types for drag/drop.</span>
+<span id="L273"><span class="lineNum">     273</span>              :    * @return List of MIME type strings.</span>
+<span id="L274"><span class="lineNum">     274</span>              :    */</span>
+<span id="L275"><span class="lineNum">     275</span>              :   [[nodiscard]] auto mimeTypes() const -&gt; QStringList override;</span>
+<span id="L276"><span class="lineNum">     276</span>              : </span>
+<span id="L277"><span class="lineNum">     277</span>              :   /**</span>
+<span id="L278"><span class="lineNum">     278</span>              :    * @brief Create MIME data from indexes.</span>
+<span id="L279"><span class="lineNum">     279</span>              :    * @param indexes List of selected indexes.</span>
+<span id="L280"><span class="lineNum">     280</span>              :    * @return MIME data object.</span>
+<span id="L281"><span class="lineNum">     281</span>              :    */</span>
+<span id="L282"><span class="lineNum">     282</span>              :   [[nodiscard]] auto mimeData(const QModelIndexList &amp;indexes) const</span>
+<span id="L283"><span class="lineNum">     283</span>              :       -&gt; QMimeData * override;</span>
+<span id="L284"><span class="lineNum">     284</span>              : </span>
+<span id="L285"><span class="lineNum">     285</span>              :   /**</span>
+<span id="L286"><span class="lineNum">     286</span>              :    * @brief Check if drop is possible.</span>
+<span id="L287"><span class="lineNum">     287</span>              :    * @param data MIME data to drop.</span>
+<span id="L288"><span class="lineNum">     288</span>              :    * @param action Drop action.</span>
+<span id="L289"><span class="lineNum">     289</span>              :    * @param row Target row.</span>
+<span id="L290"><span class="lineNum">     290</span>              :    * @param column Target column.</span>
+<span id="L291"><span class="lineNum">     291</span>              :    * @param parent Target parent index.</span>
+<span id="L292"><span class="lineNum">     292</span>              :    * @return true if drop is possible.</span>
+<span id="L293"><span class="lineNum">     293</span>              :    */</span>
+<span id="L294"><span class="lineNum">     294</span>              :   auto canDropMimeData(const QMimeData *data, Qt::DropAction action, int row,</span>
+<span id="L295"><span class="lineNum">     295</span>              :                        int column, const QModelIndex &amp;parent) const</span>
+<span id="L296"><span class="lineNum">     296</span>              :       -&gt; bool override;</span>
+<span id="L297"><span class="lineNum">     297</span>              : </span>
+<span id="L298"><span class="lineNum">     298</span>              :   /**</span>
+<span id="L299"><span class="lineNum">     299</span>              :    * @brief Handle dropped MIME data.</span>
+<span id="L300"><span class="lineNum">     300</span>              :    * @param data MIME data to drop.</span>
+<span id="L301"><span class="lineNum">     301</span>              :    * @param action Drop action.</span>
+<span id="L302"><span class="lineNum">     302</span>              :    * @param row Target row.</span>
+<span id="L303"><span class="lineNum">     303</span>              :    * @param column Target column.</span>
+<span id="L304"><span class="lineNum">     304</span>              :    * @param parent Target parent index.</span>
+<span id="L305"><span class="lineNum">     305</span>              :    * @return true if drop was handled.</span>
+<span id="L306"><span class="lineNum">     306</span>              :    */</span>
+<span id="L307"><span class="lineNum">     307</span>              :   auto dropMimeData(const QMimeData *data, Qt::DropAction action, int row,</span>
+<span id="L308"><span class="lineNum">     308</span>              :                     int column, const QModelIndex &amp;parent) -&gt; bool override;</span>
+<span id="L309"><span class="lineNum">     309</span>              : };</span>
+<span id="L310"><span class="lineNum">     310</span>              : </span>
+<span id="L311"><span class="lineNum">     311</span>              : #endif // SRC_STOREMODEL_H_</span>
         </pre>
               </td>
             </tr>
