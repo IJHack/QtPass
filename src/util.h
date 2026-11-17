@@ -315,8 +315,9 @@ public:
    * @param hiddenFiles List hidden files too (`.gpg-id`); hidden directories
    *        stay closed regardless.
    * @param unlisted Receives every directory the walk could not read (no
-   *        read permission): what is in it is missing from the result, not
-   *        absent. Null to not care.
+   *        read permission, or a name in it that is not valid UTF-8, see
+   *        hasUnreadableName()): what is in it is missing from the result,
+   *        not absent. Null to not care.
    * @return Absolute paths, sorted by name within each directory, a
    *         directory's files before its subdirectories.
    */
@@ -345,6 +346,17 @@ public:
    * @return true for a link or junction.
    */
   static auto isLinkedFolder(const QString &path) -> bool;
+  /**
+   * @brief Whether @p dir holds an entry whose name is not valid UTF-8.
+   *
+   * Qt reads every file name on Unix as UTF-8 and leaves out an entry whose
+   * name is not (reported to end the listing there on some versions), while
+   * pass, find and git take names as bytes. A walk over such a folder misses
+   * something they still see. Windows names are UTF-16 and always readable.
+   * @param dir An existing directory.
+   * @return true when a listing of @p dir is incomplete for that reason.
+   */
+  static auto hasUnreadableName(const QString &dir) -> bool;
   /**
    * @brief Whether the way from @p storeRoot down to @p path passes through
    * a symbolic link or NTFS junction: @p path itself or any folder between.

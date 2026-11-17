@@ -19,6 +19,11 @@
 #include "../testpass.h"
 #include "../testsettings.h"
 
+#ifndef Q_OS_WIN
+#include <sys/stat.h>
+#include <unistd.h>
+#endif
+
 namespace {
 /// A RealPass whose executor the test can reach, to drop a queued command.
 class ExposedRealPass : public RealPass {
@@ -50,6 +55,7 @@ private slots:
   void refusesToInsertDuringAnUnfinishedMerge();
   void refusesToInsertWhileAPullIsInFlight();
   void signedListIsCheckedAsTheNativeBackendDoes();
+  void folderWithAnUnreadableNameIsRefusedBeforePassRuns();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
   void loggedArgvRedactsSecretShapedValues();
@@ -553,6 +559,91 @@ void tst_realpass::refusesToInsertWhileAPullIsInFlight() {
   QCOMPARE(inserted.count(), 0);
   QVERIFY2(!QFile::exists(calls),
            "pass insert must not run while a pull is in flight");
+}
+
+/**
+ * @brief With a signing key, a move or copy of a folder holding a name that
+ *        is not valid UTF-8 is refused before pass runs. Qt leaves such a
+ *        name out of its listing, so a folder behind it, with a list of its
+ *        own, would go unchecked while pass's find still re-encrypts it.
+ */
+void tst_realpass::folderWithAnUnreadableNameIsRefusedBeforePassRuns() {
+#ifdef Q_OS_WIN
+  QSKIP("Windows file names are UTF-16 and always readable");
+#else
+  const QString signer =
+      QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString store = QDir::cleanPath(storeDir.path());
+  // A gpg that verifies anything as signed by `signer`.
+  const QString gpg = QDir(m_dir.path()).filePath(QStringLiteral("utf8-gpg"));
+  {
+    QFile f(gpg);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write(QStringLiteral(
+                "#!/bin/sh\ncat >/dev/null\n"
+                "printf '[GNUPG:] VALIDSIG %1 2026-09-19 1758200000 0 4 0 1 "
+                "10 00 %1\\n'\nexit 0\n")
+                .arg(signer)
+                .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  {
+    const QString list = QDir(store).filePath(QStringLiteral(".gpg-id"));
+    QFile f(list);
+    QFile sig(list + QStringLiteral(".sig"));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write(GpgIdGeneration::withHeader(1, QStringLiteral("."),
+                                                "ALICE\n")) > 0);
+    QVERIFY(sig.open(QIODevice::WriteOnly));
+    QCOMPARE(sig.write("sig"), 3);
+  }
+  QVERIFY(QDir(store).mkpath(QStringLiteral("team")));
+  QVERIFY(QDir(store).mkpath(QStringLiteral("dest")));
+  const QString team = QDir(store).filePath(QStringLiteral("team"));
+  const QString dest = QDir(store).filePath(QStringLiteral("dest"));
+  {
+    QFile e(QDir(team).filePath(QStringLiteral("a.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  AppSettings settings = m_settings;
+  settings.passStore = store;
+  settings.gpgExecutable = gpg;
+  settings.passSigningKey = signer;
+  RealPass pass;
+  pass.init(settings);
+  pass.updateEnv();
+  QSignalSpy critical(&pass, &Pass::critical);
+  const auto passRan = [this]() {
+    QTest::qWait(300);
+    return QFile::exists(m_log);
+  };
+
+  QFile::remove(m_log);
+  pass.Copy(team, dest, false);
+  // A folder Qt can list completely goes through.
+  QTRY_VERIFY_WITH_TIMEOUT(QFile::exists(m_log), 5000);
+  QCOMPARE(critical.count(), 0);
+
+  // A folder named in Latin-1, as an old tool or another system may have
+  // left it: Qt does not list it, pass would re-encrypt what is in it.
+  const QByteArray bad = QFile::encodeName(team) + "/old\xff";
+  if (::mkdir(bad.constData(), 0700) != 0) {
+    QSKIP("this file system refuses names that are not UTF-8");
+  }
+  const auto cleanup = qScopeGuard([&bad] { ::rmdir(bad.constData()); });
+  QFile::remove(m_log);
+  pass.Move(team, dest, false);
+  QVERIFY2(!passRan(), "pass never runs over what QtPass could not check");
+  QCOMPARE(critical.count(), 1);
+  QVERIFY2(critical.first().value(1).toString().contains(
+               QDir::toNativeSeparators(team)),
+           qPrintable(critical.first().value(1).toString()));
+#endif
 }
 
 /**

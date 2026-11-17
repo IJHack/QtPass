@@ -19,6 +19,7 @@
 #include <qt_windows.h>
 #endif
 #ifndef Q_OS_WIN
+#include <fcntl.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/un.h>
@@ -397,6 +398,7 @@ private Q_SLOTS:
   void regularFilesUnderLeavesJunctionsOut();
   void regularFilesUnderReportsSpecialFilesUnderAWantedName();
   void regularFilesUnderReportsFoldersItCannotRead();
+  void regularFilesUnderReportsFoldersWithUnreadableNames();
   void stagedWriteCatchesAFileSwappedUnderTheTemporary();
   void directoriesUnderListsRealVisibleFoldersOnly();
   void isLinkedFolderSeesThroughATrailingSeparator();
@@ -5252,6 +5254,60 @@ void tst_util::regularFilesUnderReportsFoldersItCannotRead() {
     QVERIFY(Util::regularFilesUnder(tmp.path(), {QStringLiteral("*.gpg")})
                 .contains(store.filePath(QStringLiteral("mail.gpg"))));
   }
+#endif
+}
+
+/**
+ * @brief A folder holding a name that is not valid UTF-8 is reported as
+ *        unlisted: Qt leaves such a name out of the listing, so the walk
+ *        would miss it without a sign while pass, find and git still see it.
+ */
+void tst_util::regularFilesUnderReportsFoldersWithUnreadableNames() {
+#ifdef Q_OS_WIN
+  QSKIP("Windows file names are UTF-16 and always readable");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QDir store(tmp.path());
+  QVERIFY(store.mkpath(QStringLiteral("team/sub")));
+  QVERIFY(store.mkpath(QStringLiteral("other")));
+  const QString mail = store.filePath(QStringLiteral("mail.gpg"));
+  for (const QString &name :
+       {mail, store.filePath(QStringLiteral("team/a.gpg")),
+        store.filePath(QStringLiteral("team/sub/b.gpg")),
+        store.filePath(QStringLiteral("other/c.gpg"))}) {
+    QFile f(name);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const QString team = store.filePath(QStringLiteral("team"));
+  const QString other = store.filePath(QStringLiteral("other"));
+  QVERIFY(!Util::hasUnreadableName(team));
+  // A folder and a file named in Latin-1, as an old tool or another system
+  // may have left them.
+  const QByteArray badFolder = QFile::encodeName(team) + "/old\xff";
+  const QByteArray badFile = QFile::encodeName(other) + "/old\xe9.gpg";
+  if (::mkdir(badFolder.constData(), 0700) != 0) {
+    QSKIP("this file system refuses names that are not UTF-8");
+  }
+  const auto cleanup = qScopeGuard([&badFolder, &badFile] {
+    ::rmdir(badFolder.constData());
+    ::unlink(badFile.constData());
+  });
+  const int fd = ::open(badFile.constData(), O_CREAT | O_WRONLY, 0600);
+  QVERIFY(fd >= 0);
+  ::close(fd);
+
+  QVERIFY(Util::hasUnreadableName(team));
+  QVERIFY(Util::hasUnreadableName(other));
+  QVERIFY(!Util::hasUnreadableName(store.path()));
+  QVERIFY(!Util::hasUnreadableName(store.filePath(QStringLiteral("team/sub"))));
+  QStringList skipped;
+  QStringList unlisted;
+  const QStringList files = Util::regularFilesUnder(
+      tmp.path(), {QStringLiteral("*.gpg")}, &skipped, false, &unlisted);
+  QCOMPARE(files, QStringList{mail});
+  QCOMPARE(unlisted, (QStringList{other, team}));
 #endif
 }
 

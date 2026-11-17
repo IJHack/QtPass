@@ -821,6 +821,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   end, and the search, which expands the whole tree, loaded it level after
   level until QtPass ran out of memory. Delete still removes the link (scan
   finding ANT-2026-A8D6Z9HP)
+- A folder holding a file or folder whose name is not valid UTF-8 is no
+  longer skipped without a word. Qt leaves such a name out of a listing,
+  while `pass`, `find` and Git still see it. With the `pass` backend and a
+  signing key, a move or copy over such a folder is refused, because a
+  recipient list behind that name would go unchecked while `pass`
+  re-encrypts it. Re-encrypting and deleting a folder report it as one that
+  could not be read (scan finding ANT-2026-Z3Q1EMNR)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old
