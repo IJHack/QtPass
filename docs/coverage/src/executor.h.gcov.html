@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 14:37:49</td>
+            <td class="headerValue">2026-11-17 22:42:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -102,7 +102,7 @@
 <span id="L29"><span class="lineNum">      29</span>              :  */</span>
 <span id="L30"><span class="lineNum">      30</span>              : </span>
 <span id="L31"><span class="lineNum">      31</span>              : class Executor : public QObject {</span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          14 :   Q_OBJECT</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          11 :   Q_OBJECT</span></span>
 <span id="L33"><span class="lineNum">      33</span>              : </span>
 <span id="L34"><span class="lineNum">      34</span>              :   /**</span>
 <span id="L35"><span class="lineNum">      35</span>              :    * @struct ExecQueueItem</span>
@@ -239,409 +239,418 @@
 <span id="L166"><span class="lineNum">     166</span>              :    * @param parent Parent QObject, or nullptr for no parent.</span>
 <span id="L167"><span class="lineNum">     167</span>              :    */</span>
 <span id="L168"><span class="lineNum">     168</span>              :   explicit Executor(QObject *parent = nullptr);</span>
-<span id="L169"><span class="lineNum">     169</span>              : </span>
-<span id="L170"><span class="lineNum">     170</span>              :   /**</span>
-<span id="L171"><span class="lineNum">     171</span>              :    * @brief Queue a command without stdin input.</span>
-<span id="L172"><span class="lineNum">     172</span>              :    * @param id Caller-assigned process identifier.</span>
-<span id="L173"><span class="lineNum">     173</span>              :    * @param app Executable path.</span>
-<span id="L174"><span class="lineNum">     174</span>              :    * @param args Command arguments.</span>
-<span id="L175"><span class="lineNum">     175</span>              :    * @param readStdout Whether to capture stdout.</span>
-<span id="L176"><span class="lineNum">     176</span>              :    * @param readStderr Whether to capture stderr.</span>
-<span id="L177"><span class="lineNum">     177</span>              :    */</span>
-<span id="L178"><span class="lineNum">     178</span>              :   void execute(int id, const QString &amp;app, const QStringList &amp;args,</span>
-<span id="L179"><span class="lineNum">     179</span>              :                bool readStdout, bool readStderr = true);</span>
-<span id="L180"><span class="lineNum">     180</span>              : </span>
-<span id="L181"><span class="lineNum">     181</span>              :   /**</span>
-<span id="L182"><span class="lineNum">     182</span>              :    * @brief Queue a command with an explicit working directory.</span>
-<span id="L183"><span class="lineNum">     183</span>              :    * @param id Caller-assigned process identifier.</span>
-<span id="L184"><span class="lineNum">     184</span>              :    * @param workDir Working directory for the process.</span>
-<span id="L185"><span class="lineNum">     185</span>              :    * @param app Executable path.</span>
-<span id="L186"><span class="lineNum">     186</span>              :    * @param args Command arguments.</span>
-<span id="L187"><span class="lineNum">     187</span>              :    * @param readStdout Whether to capture stdout.</span>
-<span id="L188"><span class="lineNum">     188</span>              :    * @param readStderr Whether to capture stderr.</span>
-<span id="L189"><span class="lineNum">     189</span>              :    */</span>
-<span id="L190"><span class="lineNum">     190</span>              :   void execute(int id, const QString &amp;workDir, const QString &amp;app,</span>
-<span id="L191"><span class="lineNum">     191</span>              :                const QStringList &amp;args, bool readStdout,</span>
-<span id="L192"><span class="lineNum">     192</span>              :                bool readStderr = true);</span>
-<span id="L193"><span class="lineNum">     193</span>              : </span>
-<span id="L194"><span class="lineNum">     194</span>              :   /**</span>
-<span id="L195"><span class="lineNum">     195</span>              :    * @brief Queue a command with optional stdin input.</span>
-<span id="L196"><span class="lineNum">     196</span>              :    * @param id Caller-assigned process identifier.</span>
-<span id="L197"><span class="lineNum">     197</span>              :    * @param app Executable path.</span>
-<span id="L198"><span class="lineNum">     198</span>              :    * @param args Command arguments.</span>
-<span id="L199"><span class="lineNum">     199</span>              :    * @param input Data to write to stdin.</span>
-<span id="L200"><span class="lineNum">     200</span>              :    * @param readStdout Whether to capture stdout.</span>
-<span id="L201"><span class="lineNum">     201</span>              :    * @param readStderr Whether to capture stderr.</span>
-<span id="L202"><span class="lineNum">     202</span>              :    */</span>
-<span id="L203"><span class="lineNum">     203</span>              :   void execute(int id, const QString &amp;app, const QStringList &amp;args,</span>
-<span id="L204"><span class="lineNum">     204</span>              :                QString input = QString(), bool readStdout = false,</span>
-<span id="L205"><span class="lineNum">     205</span>              :                bool readStderr = true);</span>
-<span id="L206"><span class="lineNum">     206</span>              : </span>
-<span id="L207"><span class="lineNum">     207</span>              :   /**</span>
-<span id="L208"><span class="lineNum">     208</span>              :    * @brief Queue a command with working directory and optional stdin input.</span>
-<span id="L209"><span class="lineNum">     209</span>              :    * @param id Caller-assigned process identifier.</span>
-<span id="L210"><span class="lineNum">     210</span>              :    * @param workDir Working directory for the process.</span>
-<span id="L211"><span class="lineNum">     211</span>              :    * @param app Executable path.</span>
-<span id="L212"><span class="lineNum">     212</span>              :    * @param args Command arguments.</span>
-<span id="L213"><span class="lineNum">     213</span>              :    * @param input Data to write to stdin.</span>
-<span id="L214"><span class="lineNum">     214</span>              :    * @param readStdout Whether to capture stdout.</span>
-<span id="L215"><span class="lineNum">     215</span>              :    * @param readStderr Whether to capture stderr.</span>
-<span id="L216"><span class="lineNum">     216</span>              :    */</span>
-<span id="L217"><span class="lineNum">     217</span>              :   void execute(int id, const QString &amp;workDir, const QString &amp;app,</span>
-<span id="L218"><span class="lineNum">     218</span>              :                const QStringList &amp;args, QString input = QString(),</span>
-<span id="L219"><span class="lineNum">     219</span>              :                bool readStdout = false, bool readStderr = true);</span>
-<span id="L220"><span class="lineNum">     220</span>              : </span>
-<span id="L221"><span class="lineNum">     221</span>              :   /**</span>
-<span id="L222"><span class="lineNum">     222</span>              :    * @brief Run a command synchronously and return its exit code.</span>
-<span id="L223"><span class="lineNum">     223</span>              :    * @param app Executable path.</span>
-<span id="L224"><span class="lineNum">     224</span>              :    * @param args Command arguments.</span>
-<span id="L225"><span class="lineNum">     225</span>              :    * @param input Data to write to stdin.</span>
-<span id="L226"><span class="lineNum">     226</span>              :    * @param process_out If non-null, receives stdout output.</span>
-<span id="L227"><span class="lineNum">     227</span>              :    * @param process_err If non-null, receives stderr output.</span>
-<span id="L228"><span class="lineNum">     228</span>              :    * @return Process exit code.</span>
-<span id="L229"><span class="lineNum">     229</span>              :    */</span>
-<span id="L230"><span class="lineNum">     230</span>              :   [[nodiscard]] static auto executeBlocking(const QString &amp;app,</span>
-<span id="L231"><span class="lineNum">     231</span>              :                                             const QStringList &amp;args,</span>
-<span id="L232"><span class="lineNum">     232</span>              :                                             const QString &amp;input = QString(),</span>
-<span id="L233"><span class="lineNum">     233</span>              :                                             QString *process_out = nullptr,</span>
-<span id="L234"><span class="lineNum">     234</span>              :                                             QString *process_err = nullptr)</span>
-<span id="L235"><span class="lineNum">     235</span>              :       -&gt; int;</span>
-<span id="L236"><span class="lineNum">     236</span>              : </span>
-<span id="L237"><span class="lineNum">     237</span>              :   /**</span>
-<span id="L238"><span class="lineNum">     238</span>              :    * @brief Run a command synchronously on a caller-supplied QProcess, with</span>
-<span id="L239"><span class="lineNum">     239</span>              :    * optional cancellation.</span>
-<span id="L240"><span class="lineNum">     240</span>              :    *</span>
-<span id="L241"><span class="lineNum">     241</span>              :    * The caller configures @p process (environment, say) before the call;</span>
-<span id="L242"><span class="lineNum">     242</span>              :    * it must be a fresh, not yet started object. QProcess is not thread-safe,</span>
-<span id="L243"><span class="lineNum">     243</span>              :    * so @p process belongs to the calling thread for the whole run: no other</span>
-<span id="L244"><span class="lineNum">     244</span>              :    * thread may call terminate(), kill() or anything else on it. To let a run</span>
-<span id="L245"><span class="lineNum">     245</span>              :    * be cancelled, pass @p cancel: the wait then polls the flag, and once it</span>
-<span id="L246"><span class="lineNum">     246</span>              :    * is set the calling thread itself terminate()s the child, waits a short</span>
-<span id="L247"><span class="lineNum">     247</span>              :    * grace period, kill()s it if it is still running, waits one more grace</span>
-<span id="L248"><span class="lineNum">     248</span>              :    * period at most, and returns -1. Setting the flag is the only thing</span>
-<span id="L249"><span class="lineNum">     249</span>              :    * another thread does; it may do so at any time, before or during the run.</span>
-<span id="L250"><span class="lineNum">     250</span>              :    * A run given @p timeoutMs ends the same way once that time has passed,</span>
-<span id="L251"><span class="lineNum">     251</span>              :    * start included, so it returns within the timeout plus twice the grace</span>
-<span id="L252"><span class="lineNum">     252</span>              :    * even when a kill()ed child cannot exit yet (uninterruptible sleep on a</span>
-<span id="L253"><span class="lineNum">     253</span>              :    * hung mount). Not timed: QProcess::start() itself, which can block, for</span>
-<span id="L254"><span class="lineNum">     254</span>              :    * example opening a FIFO named by a redirected channel (no caller</span>
-<span id="L255"><span class="lineNum">     255</span>              :    * redirects one), and QProcess's destructor, which still waits for such a</span>
-<span id="L256"><span class="lineNum">     256</span>              :    * child, for up to 30 s.</span>
-<span id="L257"><span class="lineNum">     257</span>              :    * @param process Process object to run the command on.</span>
-<span id="L258"><span class="lineNum">     258</span>              :    * @param app Executable path.</span>
-<span id="L259"><span class="lineNum">     259</span>              :    * @param args Command arguments.</span>
-<span id="L260"><span class="lineNum">     260</span>              :    * @param input Data to write to stdin.</span>
-<span id="L261"><span class="lineNum">     261</span>              :    * @param process_out If non-null, receives stdout output.</span>
-<span id="L262"><span class="lineNum">     262</span>              :    * @param process_err If non-null, receives stderr output.</span>
-<span id="L263"><span class="lineNum">     263</span>              :    * @param cancel If non-null, a flag that ends the run when set.</span>
-<span id="L264"><span class="lineNum">     264</span>              :    * @param timeoutMs Time for the whole run, start included; negative (the</span>
-<span id="L265"><span class="lineNum">     265</span>              :    *        default) for none.</span>
-<span id="L266"><span class="lineNum">     266</span>              :    * @return Process exit code, or -1 if it failed to start, crashed, was</span>
-<span id="L267"><span class="lineNum">     267</span>              :    * cancelled or ran out of time.</span>
-<span id="L268"><span class="lineNum">     268</span>              :    */</span>
-<span id="L269"><span class="lineNum">     269</span>              :   [[nodiscard]] static auto executeBlocking(</span>
-<span id="L270"><span class="lineNum">     270</span>              :       QProcess &amp;process, const QString &amp;app, const QStringList &amp;args,</span>
-<span id="L271"><span class="lineNum">     271</span>              :       const QString &amp;input = QString(), QString *process_out = nullptr,</span>
-<span id="L272"><span class="lineNum">     272</span>              :       QString *process_err = nullptr, const std::atomic_bool *cancel = nullptr,</span>
-<span id="L273"><span class="lineNum">     273</span>              :       int timeoutMs = -1) -&gt; int;</span>
-<span id="L274"><span class="lineNum">     274</span>              : </span>
-<span id="L275"><span class="lineNum">     275</span>              :   /**</span>
-<span id="L276"><span class="lineNum">     276</span>              :    * @brief executeBlocking() on bytes, for an entry's plaintext: @p input is</span>
-<span id="L277"><span class="lineNum">     277</span>              :    * written to stdin and stdout returned exactly as they are, so content</span>
-<span id="L278"><span class="lineNum">     278</span>              :    * that is not UTF-8 (a Latin-1 password, a binary key) passes through</span>
-<span id="L279"><span class="lineNum">     279</span>              :    * unchanged. stderr is decoded as in executeBlocking(). A name of its own,</span>
-<span id="L280"><span class="lineNum">     280</span>              :    * not an overload: a string literal or nullptr would be ambiguous.</span>
-<span id="L281"><span class="lineNum">     281</span>              :    * @param process Process object to run the command on.</span>
-<span id="L282"><span class="lineNum">     282</span>              :    * @param app Executable path.</span>
-<span id="L283"><span class="lineNum">     283</span>              :    * @param args Command arguments.</span>
-<span id="L284"><span class="lineNum">     284</span>              :    * @param input Bytes to write to stdin (empty = none).</span>
-<span id="L285"><span class="lineNum">     285</span>              :    * @param process_out If non-null, receives stdout.</span>
-<span id="L286"><span class="lineNum">     286</span>              :    * @param process_err If non-null, receives stderr.</span>
-<span id="L287"><span class="lineNum">     287</span>              :    * @param cancel If non-null, a flag that ends the run when set.</span>
-<span id="L288"><span class="lineNum">     288</span>              :    * @param timeoutMs Time for the whole run, start included; negative (the</span>
-<span id="L289"><span class="lineNum">     289</span>              :    *        default) for none.</span>
-<span id="L290"><span class="lineNum">     290</span>              :    * @return Process exit code, or -1 if it failed to start, crashed, was</span>
-<span id="L291"><span class="lineNum">     291</span>              :    * cancelled or ran out of time.</span>
-<span id="L292"><span class="lineNum">     292</span>              :    */</span>
-<span id="L293"><span class="lineNum">     293</span>              :   [[nodiscard]] static auto</span>
-<span id="L294"><span class="lineNum">     294</span>              :   executeBlockingRaw(QProcess &amp;process, const QString &amp;app,</span>
-<span id="L295"><span class="lineNum">     295</span>              :                      const QStringList &amp;args, const QByteArray &amp;input,</span>
-<span id="L296"><span class="lineNum">     296</span>              :                      QByteArray *process_out, QString *process_err = nullptr,</span>
-<span id="L297"><span class="lineNum">     297</span>              :                      const std::atomic_bool *cancel = nullptr,</span>
-<span id="L298"><span class="lineNum">     298</span>              :                      int timeoutMs = -1) -&gt; int;</span>
-<span id="L299"><span class="lineNum">     299</span>              : </span>
-<span id="L300"><span class="lineNum">     300</span>              :   /**</span>
-<span id="L301"><span class="lineNum">     301</span>              :    * @brief Run a command synchronously capturing stdout and stderr.</span>
-<span id="L302"><span class="lineNum">     302</span>              :    * @param app Executable path.</span>
-<span id="L303"><span class="lineNum">     303</span>              :    * @param args Command arguments.</span>
-<span id="L304"><span class="lineNum">     304</span>              :    * @param process_out Receives stdout output.</span>
-<span id="L305"><span class="lineNum">     305</span>              :    * @param process_err If non-null, receives stderr output.</span>
-<span id="L306"><span class="lineNum">     306</span>              :    * @return Process exit code.</span>
-<span id="L307"><span class="lineNum">     307</span>              :    */</span>
-<span id="L308"><span class="lineNum">     308</span>              :   [[nodiscard]] static auto</span>
-<span id="L309"><span class="lineNum">     309</span>              :   executeBlocking(const QString &amp;app, const QStringList &amp;args,</span>
-<span id="L310"><span class="lineNum">     310</span>              :                   QString *process_out, QString *process_err = nullptr) -&gt; int;</span>
-<span id="L311"><span class="lineNum">     311</span>              : </span>
-<span id="L312"><span class="lineNum">     312</span>              :   /**</span>
-<span id="L313"><span class="lineNum">     313</span>              :    * @brief Run a command synchronously with a custom environment.</span>
-<span id="L314"><span class="lineNum">     314</span>              :    * @param env Process environment for the child process.</span>
-<span id="L315"><span class="lineNum">     315</span>              :    * @param app Executable path.</span>
-<span id="L316"><span class="lineNum">     316</span>              :    * @param args Command arguments.</span>
-<span id="L317"><span class="lineNum">     317</span>              :    * @param process_out If non-null, receives stdout output.</span>
-<span id="L318"><span class="lineNum">     318</span>              :    * @param process_err If non-null, receives stderr output.</span>
-<span id="L319"><span class="lineNum">     319</span>              :    * @return Process exit code.</span>
-<span id="L320"><span class="lineNum">     320</span>              :    */</span>
-<span id="L321"><span class="lineNum">     321</span>              :   [[nodiscard]] static auto</span>
-<span id="L322"><span class="lineNum">     322</span>              :   executeBlocking(const QProcessEnvironment &amp;env, const QString &amp;app,</span>
-<span id="L323"><span class="lineNum">     323</span>              :                   const QStringList &amp;args, QString *process_out = nullptr,</span>
-<span id="L324"><span class="lineNum">     324</span>              :                   QString *process_err = nullptr) -&gt; int;</span>
-<span id="L325"><span class="lineNum">     325</span>              : </span>
-<span id="L326"><span class="lineNum">     326</span>              :   /**</span>
-<span id="L327"><span class="lineNum">     327</span>              :    * @brief The one rule for turning a configured executable into what runs.</span>
-<span id="L328"><span class="lineNum">     328</span>              :    *</span>
-<span id="L329"><span class="lineNum">     329</span>              :    * Absolute paths and &quot;wsl ...&quot; commands are used as given. A bare or</span>
-<span id="L330"><span class="lineNum">     330</span>              :    * relative name is looked up next to the application first (the Windows</span>
-<span id="L331"><span class="lineNum">     331</span>              :    * and macOS bundles ship gpg/git/pass there) and otherwise left for</span>
-<span id="L332"><span class="lineNum">     332</span>              :    * QProcess's PATH lookup. Both the queued and the blocking path go through</span>
-<span id="L333"><span class="lineNum">     333</span>              :    * this, so the same setting can no longer run two different binaries.</span>
-<span id="L334"><span class="lineNum">     334</span>              :    * @param app Executable as configured.</span>
-<span id="L335"><span class="lineNum">     335</span>              :    * @return What to hand to QProcess::start().</span>
-<span id="L336"><span class="lineNum">     336</span>              :    */</span>
-<span id="L337"><span class="lineNum">     337</span>              :   static auto resolveExecutable(const QString &amp;app) -&gt; QString;</span>
-<span id="L338"><span class="lineNum">     338</span>              : </span>
-<span id="L339"><span class="lineNum">     339</span>              :   /**</span>
-<span id="L340"><span class="lineNum">     340</span>              :    * @brief Make @p process start its child without a controlling terminal.</span>
-<span id="L341"><span class="lineNum">     341</span>              :    *</span>
-<span id="L342"><span class="lineNum">     342</span>              :    * On Unix the child starts in a new session (setsid), so it has no</span>
-<span id="L343"><span class="lineNum">     343</span>              :    * /dev/tty. git and ssh then use an askpass helper when there is one and</span>
-<span id="L344"><span class="lineNum">     344</span>              :    * fail at once otherwise, instead of prompting in the terminal QtPass was</span>
-<span id="L345"><span class="lineNum">     345</span>              :    * started from while the queue waits behind them. Other Unix process</span>
-<span id="L346"><span class="lineNum">     346</span>              :    * flags set on @p process are kept. Does nothing on Windows. Every child</span>
-<span id="L347"><span class="lineNum">     347</span>              :    * QtPass starts goes through this; startProcess() calls it for the queued</span>
-<span id="L348"><span class="lineNum">     348</span>              :    * and the blocking path.</span>
-<span id="L349"><span class="lineNum">     349</span>              :    * @param process Process to configure; call it before start().</span>
-<span id="L350"><span class="lineNum">     350</span>              :    */</span>
-<span id="L351"><span class="lineNum">     351</span>              :   static void detachFromTerminal(QProcess &amp;process);</span>
-<span id="L352"><span class="lineNum">     352</span>              : </span>
-<span id="L353"><span class="lineNum">     353</span>              :   /**</span>
-<span id="L354"><span class="lineNum">     354</span>              :    * @brief The umask every child QtPass starts gets, as pass sets its own.</span>
-<span id="L355"><span class="lineNum">     355</span>              :    *</span>
-<span id="L356"><span class="lineNum">     356</span>              :    * pass runs git and gpg under umask 077 (or PASSWORD_STORE_UMASK), so the</span>
-<span id="L357"><span class="lineNum">     357</span>              :    * folders and files they create in the store, .git included, are the</span>
-<span id="L358"><span class="lineNum">     358</span>              :    * user's alone. QtPass gives that umask to the processes it starts</span>
-<span id="L359"><span class="lineNum">     359</span>              :    * (startProcess(), the queue and the blocking calls) and not to itself:</span>
-<span id="L360"><span class="lineNum">     360</span>              :    * a browser or file manager it opens keeps the session's. Unix only.</span>
-<span id="L361"><span class="lineNum">     361</span>              :    * @param mask The umask, or a negative value for none (the default).</span>
-<span id="L362"><span class="lineNum">     362</span>              :    */</span>
-<span id="L363"><span class="lineNum">     363</span>              :   static void setChildUmask(int mask);</span>
-<span id="L364"><span class="lineNum">     364</span>              : </span>
-<span id="L365"><span class="lineNum">     365</span>              :   /**</span>
-<span id="L366"><span class="lineNum">     366</span>              :    * @brief The umask setChildUmask() set.</span>
-<span id="L367"><span class="lineNum">     367</span>              :    * @return The umask, or a negative value when none was set.</span>
-<span id="L368"><span class="lineNum">     368</span>              :    */</span>
-<span id="L369"><span class="lineNum">     369</span>              :   [[nodiscard]] static auto childUmask() -&gt; int;</span>
-<span id="L370"><span class="lineNum">     370</span>              : </span>
-<span id="L371"><span class="lineNum">     371</span>              :   /**</span>
-<span id="L372"><span class="lineNum">     372</span>              :    * @brief A configured executable that runs a Linux program through WSL.</span>
-<span id="L373"><span class="lineNum">     373</span>              :    *</span>
-<span id="L374"><span class="lineNum">     374</span>              :    * The one definition of &quot;a WSL command&quot; in QtPass; see parseWslCommand().</span>
-<span id="L375"><span class="lineNum">     375</span>              :    */</span>
-<span id="L376"><span class="lineNum">     376</span>              :   struct WslCommand {</span>
-<span id="L377"><span class="lineNum">     377</span>              :     /**</span>
-<span id="L378"><span class="lineNum">     378</span>              :      * @brief What to start.</span>
-<span id="L379"><span class="lineNum">     379</span>              :      *</span>
-<span id="L380"><span class="lineNum">     380</span>              :      * On Windows a bare `wsl`/`wsl.exe` in any case becomes `wsl`, which the</span>
-<span id="L381"><span class="lineNum">     381</span>              :      * PATH lookup resolves; elsewhere (QtPass itself running inside WSL,</span>
-<span id="L382"><span class="lineNum">     382</span>              :      * where `wsl.exe` is reachable through interop but `wsl` need not be)</span>
-<span id="L383"><span class="lineNum">     383</span>              :      * and for a launcher given as a path it stays as configured.</span>
-<span id="L384"><span class="lineNum">     384</span>              :      */</span>
-<span id="L385"><span class="lineNum">     385</span>              :     QString launcher;</span>
+<span id="L169"><span class="lineNum">     169</span>              :   /**</span>
+<span id="L170"><span class="lineNum">     170</span>              :    * @brief Stop listening to the running process before it goes.</span>
+<span id="L171"><span class="lineNum">     171</span>              :    *</span>
+<span id="L172"><span class="lineNum">     172</span>              :    * ~QProcess kills a command still running (a gpg decrypting at quit) and</span>
+<span id="L173"><span class="lineNum">     173</span>              :    * emits finished(). Delivered, that ran onProcessFinished() and the owner's</span>
+<span id="L174"><span class="lineNum">     174</span>              :    * slots on an object half destroyed: Pass::finished() read members that</span>
+<span id="L175"><span class="lineNum">     175</span>              :    * were already gone.</span>
+<span id="L176"><span class="lineNum">     176</span>              :    */</span>
+<span id="L177"><span class="lineNum">     177</span>              :   ~Executor() override;</span>
+<span id="L178"><span class="lineNum">     178</span>              : </span>
+<span id="L179"><span class="lineNum">     179</span>              :   /**</span>
+<span id="L180"><span class="lineNum">     180</span>              :    * @brief Queue a command without stdin input.</span>
+<span id="L181"><span class="lineNum">     181</span>              :    * @param id Caller-assigned process identifier.</span>
+<span id="L182"><span class="lineNum">     182</span>              :    * @param app Executable path.</span>
+<span id="L183"><span class="lineNum">     183</span>              :    * @param args Command arguments.</span>
+<span id="L184"><span class="lineNum">     184</span>              :    * @param readStdout Whether to capture stdout.</span>
+<span id="L185"><span class="lineNum">     185</span>              :    * @param readStderr Whether to capture stderr.</span>
+<span id="L186"><span class="lineNum">     186</span>              :    */</span>
+<span id="L187"><span class="lineNum">     187</span>              :   void execute(int id, const QString &amp;app, const QStringList &amp;args,</span>
+<span id="L188"><span class="lineNum">     188</span>              :                bool readStdout, bool readStderr = true);</span>
+<span id="L189"><span class="lineNum">     189</span>              : </span>
+<span id="L190"><span class="lineNum">     190</span>              :   /**</span>
+<span id="L191"><span class="lineNum">     191</span>              :    * @brief Queue a command with an explicit working directory.</span>
+<span id="L192"><span class="lineNum">     192</span>              :    * @param id Caller-assigned process identifier.</span>
+<span id="L193"><span class="lineNum">     193</span>              :    * @param workDir Working directory for the process.</span>
+<span id="L194"><span class="lineNum">     194</span>              :    * @param app Executable path.</span>
+<span id="L195"><span class="lineNum">     195</span>              :    * @param args Command arguments.</span>
+<span id="L196"><span class="lineNum">     196</span>              :    * @param readStdout Whether to capture stdout.</span>
+<span id="L197"><span class="lineNum">     197</span>              :    * @param readStderr Whether to capture stderr.</span>
+<span id="L198"><span class="lineNum">     198</span>              :    */</span>
+<span id="L199"><span class="lineNum">     199</span>              :   void execute(int id, const QString &amp;workDir, const QString &amp;app,</span>
+<span id="L200"><span class="lineNum">     200</span>              :                const QStringList &amp;args, bool readStdout,</span>
+<span id="L201"><span class="lineNum">     201</span>              :                bool readStderr = true);</span>
+<span id="L202"><span class="lineNum">     202</span>              : </span>
+<span id="L203"><span class="lineNum">     203</span>              :   /**</span>
+<span id="L204"><span class="lineNum">     204</span>              :    * @brief Queue a command with optional stdin input.</span>
+<span id="L205"><span class="lineNum">     205</span>              :    * @param id Caller-assigned process identifier.</span>
+<span id="L206"><span class="lineNum">     206</span>              :    * @param app Executable path.</span>
+<span id="L207"><span class="lineNum">     207</span>              :    * @param args Command arguments.</span>
+<span id="L208"><span class="lineNum">     208</span>              :    * @param input Data to write to stdin.</span>
+<span id="L209"><span class="lineNum">     209</span>              :    * @param readStdout Whether to capture stdout.</span>
+<span id="L210"><span class="lineNum">     210</span>              :    * @param readStderr Whether to capture stderr.</span>
+<span id="L211"><span class="lineNum">     211</span>              :    */</span>
+<span id="L212"><span class="lineNum">     212</span>              :   void execute(int id, const QString &amp;app, const QStringList &amp;args,</span>
+<span id="L213"><span class="lineNum">     213</span>              :                QString input = QString(), bool readStdout = false,</span>
+<span id="L214"><span class="lineNum">     214</span>              :                bool readStderr = true);</span>
+<span id="L215"><span class="lineNum">     215</span>              : </span>
+<span id="L216"><span class="lineNum">     216</span>              :   /**</span>
+<span id="L217"><span class="lineNum">     217</span>              :    * @brief Queue a command with working directory and optional stdin input.</span>
+<span id="L218"><span class="lineNum">     218</span>              :    * @param id Caller-assigned process identifier.</span>
+<span id="L219"><span class="lineNum">     219</span>              :    * @param workDir Working directory for the process.</span>
+<span id="L220"><span class="lineNum">     220</span>              :    * @param app Executable path.</span>
+<span id="L221"><span class="lineNum">     221</span>              :    * @param args Command arguments.</span>
+<span id="L222"><span class="lineNum">     222</span>              :    * @param input Data to write to stdin.</span>
+<span id="L223"><span class="lineNum">     223</span>              :    * @param readStdout Whether to capture stdout.</span>
+<span id="L224"><span class="lineNum">     224</span>              :    * @param readStderr Whether to capture stderr.</span>
+<span id="L225"><span class="lineNum">     225</span>              :    */</span>
+<span id="L226"><span class="lineNum">     226</span>              :   void execute(int id, const QString &amp;workDir, const QString &amp;app,</span>
+<span id="L227"><span class="lineNum">     227</span>              :                const QStringList &amp;args, QString input = QString(),</span>
+<span id="L228"><span class="lineNum">     228</span>              :                bool readStdout = false, bool readStderr = true);</span>
+<span id="L229"><span class="lineNum">     229</span>              : </span>
+<span id="L230"><span class="lineNum">     230</span>              :   /**</span>
+<span id="L231"><span class="lineNum">     231</span>              :    * @brief Run a command synchronously and return its exit code.</span>
+<span id="L232"><span class="lineNum">     232</span>              :    * @param app Executable path.</span>
+<span id="L233"><span class="lineNum">     233</span>              :    * @param args Command arguments.</span>
+<span id="L234"><span class="lineNum">     234</span>              :    * @param input Data to write to stdin.</span>
+<span id="L235"><span class="lineNum">     235</span>              :    * @param process_out If non-null, receives stdout output.</span>
+<span id="L236"><span class="lineNum">     236</span>              :    * @param process_err If non-null, receives stderr output.</span>
+<span id="L237"><span class="lineNum">     237</span>              :    * @return Process exit code.</span>
+<span id="L238"><span class="lineNum">     238</span>              :    */</span>
+<span id="L239"><span class="lineNum">     239</span>              :   [[nodiscard]] static auto executeBlocking(const QString &amp;app,</span>
+<span id="L240"><span class="lineNum">     240</span>              :                                             const QStringList &amp;args,</span>
+<span id="L241"><span class="lineNum">     241</span>              :                                             const QString &amp;input = QString(),</span>
+<span id="L242"><span class="lineNum">     242</span>              :                                             QString *process_out = nullptr,</span>
+<span id="L243"><span class="lineNum">     243</span>              :                                             QString *process_err = nullptr)</span>
+<span id="L244"><span class="lineNum">     244</span>              :       -&gt; int;</span>
+<span id="L245"><span class="lineNum">     245</span>              : </span>
+<span id="L246"><span class="lineNum">     246</span>              :   /**</span>
+<span id="L247"><span class="lineNum">     247</span>              :    * @brief Run a command synchronously on a caller-supplied QProcess, with</span>
+<span id="L248"><span class="lineNum">     248</span>              :    * optional cancellation.</span>
+<span id="L249"><span class="lineNum">     249</span>              :    *</span>
+<span id="L250"><span class="lineNum">     250</span>              :    * The caller configures @p process (environment, say) before the call;</span>
+<span id="L251"><span class="lineNum">     251</span>              :    * it must be a fresh, not yet started object. QProcess is not thread-safe,</span>
+<span id="L252"><span class="lineNum">     252</span>              :    * so @p process belongs to the calling thread for the whole run: no other</span>
+<span id="L253"><span class="lineNum">     253</span>              :    * thread may call terminate(), kill() or anything else on it. To let a run</span>
+<span id="L254"><span class="lineNum">     254</span>              :    * be cancelled, pass @p cancel: the wait then polls the flag, and once it</span>
+<span id="L255"><span class="lineNum">     255</span>              :    * is set the calling thread itself terminate()s the child, waits a short</span>
+<span id="L256"><span class="lineNum">     256</span>              :    * grace period, kill()s it if it is still running, waits one more grace</span>
+<span id="L257"><span class="lineNum">     257</span>              :    * period at most, and returns -1. Setting the flag is the only thing</span>
+<span id="L258"><span class="lineNum">     258</span>              :    * another thread does; it may do so at any time, before or during the run.</span>
+<span id="L259"><span class="lineNum">     259</span>              :    * A run given @p timeoutMs ends the same way once that time has passed,</span>
+<span id="L260"><span class="lineNum">     260</span>              :    * start included, so it returns within the timeout plus twice the grace</span>
+<span id="L261"><span class="lineNum">     261</span>              :    * even when a kill()ed child cannot exit yet (uninterruptible sleep on a</span>
+<span id="L262"><span class="lineNum">     262</span>              :    * hung mount). Not timed: QProcess::start() itself, which can block, for</span>
+<span id="L263"><span class="lineNum">     263</span>              :    * example opening a FIFO named by a redirected channel (no caller</span>
+<span id="L264"><span class="lineNum">     264</span>              :    * redirects one), and QProcess's destructor, which still waits for such a</span>
+<span id="L265"><span class="lineNum">     265</span>              :    * child, for up to 30 s.</span>
+<span id="L266"><span class="lineNum">     266</span>              :    * @param process Process object to run the command on.</span>
+<span id="L267"><span class="lineNum">     267</span>              :    * @param app Executable path.</span>
+<span id="L268"><span class="lineNum">     268</span>              :    * @param args Command arguments.</span>
+<span id="L269"><span class="lineNum">     269</span>              :    * @param input Data to write to stdin.</span>
+<span id="L270"><span class="lineNum">     270</span>              :    * @param process_out If non-null, receives stdout output.</span>
+<span id="L271"><span class="lineNum">     271</span>              :    * @param process_err If non-null, receives stderr output.</span>
+<span id="L272"><span class="lineNum">     272</span>              :    * @param cancel If non-null, a flag that ends the run when set.</span>
+<span id="L273"><span class="lineNum">     273</span>              :    * @param timeoutMs Time for the whole run, start included; negative (the</span>
+<span id="L274"><span class="lineNum">     274</span>              :    *        default) for none.</span>
+<span id="L275"><span class="lineNum">     275</span>              :    * @return Process exit code, or -1 if it failed to start, crashed, was</span>
+<span id="L276"><span class="lineNum">     276</span>              :    * cancelled or ran out of time.</span>
+<span id="L277"><span class="lineNum">     277</span>              :    */</span>
+<span id="L278"><span class="lineNum">     278</span>              :   [[nodiscard]] static auto executeBlocking(</span>
+<span id="L279"><span class="lineNum">     279</span>              :       QProcess &amp;process, const QString &amp;app, const QStringList &amp;args,</span>
+<span id="L280"><span class="lineNum">     280</span>              :       const QString &amp;input = QString(), QString *process_out = nullptr,</span>
+<span id="L281"><span class="lineNum">     281</span>              :       QString *process_err = nullptr, const std::atomic_bool *cancel = nullptr,</span>
+<span id="L282"><span class="lineNum">     282</span>              :       int timeoutMs = -1) -&gt; int;</span>
+<span id="L283"><span class="lineNum">     283</span>              : </span>
+<span id="L284"><span class="lineNum">     284</span>              :   /**</span>
+<span id="L285"><span class="lineNum">     285</span>              :    * @brief executeBlocking() on bytes, for an entry's plaintext: @p input is</span>
+<span id="L286"><span class="lineNum">     286</span>              :    * written to stdin and stdout returned exactly as they are, so content</span>
+<span id="L287"><span class="lineNum">     287</span>              :    * that is not UTF-8 (a Latin-1 password, a binary key) passes through</span>
+<span id="L288"><span class="lineNum">     288</span>              :    * unchanged. stderr is decoded as in executeBlocking(). A name of its own,</span>
+<span id="L289"><span class="lineNum">     289</span>              :    * not an overload: a string literal or nullptr would be ambiguous.</span>
+<span id="L290"><span class="lineNum">     290</span>              :    * @param process Process object to run the command on.</span>
+<span id="L291"><span class="lineNum">     291</span>              :    * @param app Executable path.</span>
+<span id="L292"><span class="lineNum">     292</span>              :    * @param args Command arguments.</span>
+<span id="L293"><span class="lineNum">     293</span>              :    * @param input Bytes to write to stdin (empty = none).</span>
+<span id="L294"><span class="lineNum">     294</span>              :    * @param process_out If non-null, receives stdout.</span>
+<span id="L295"><span class="lineNum">     295</span>              :    * @param process_err If non-null, receives stderr.</span>
+<span id="L296"><span class="lineNum">     296</span>              :    * @param cancel If non-null, a flag that ends the run when set.</span>
+<span id="L297"><span class="lineNum">     297</span>              :    * @param timeoutMs Time for the whole run, start included; negative (the</span>
+<span id="L298"><span class="lineNum">     298</span>              :    *        default) for none.</span>
+<span id="L299"><span class="lineNum">     299</span>              :    * @return Process exit code, or -1 if it failed to start, crashed, was</span>
+<span id="L300"><span class="lineNum">     300</span>              :    * cancelled or ran out of time.</span>
+<span id="L301"><span class="lineNum">     301</span>              :    */</span>
+<span id="L302"><span class="lineNum">     302</span>              :   [[nodiscard]] static auto</span>
+<span id="L303"><span class="lineNum">     303</span>              :   executeBlockingRaw(QProcess &amp;process, const QString &amp;app,</span>
+<span id="L304"><span class="lineNum">     304</span>              :                      const QStringList &amp;args, const QByteArray &amp;input,</span>
+<span id="L305"><span class="lineNum">     305</span>              :                      QByteArray *process_out, QString *process_err = nullptr,</span>
+<span id="L306"><span class="lineNum">     306</span>              :                      const std::atomic_bool *cancel = nullptr,</span>
+<span id="L307"><span class="lineNum">     307</span>              :                      int timeoutMs = -1) -&gt; int;</span>
+<span id="L308"><span class="lineNum">     308</span>              : </span>
+<span id="L309"><span class="lineNum">     309</span>              :   /**</span>
+<span id="L310"><span class="lineNum">     310</span>              :    * @brief Run a command synchronously capturing stdout and stderr.</span>
+<span id="L311"><span class="lineNum">     311</span>              :    * @param app Executable path.</span>
+<span id="L312"><span class="lineNum">     312</span>              :    * @param args Command arguments.</span>
+<span id="L313"><span class="lineNum">     313</span>              :    * @param process_out Receives stdout output.</span>
+<span id="L314"><span class="lineNum">     314</span>              :    * @param process_err If non-null, receives stderr output.</span>
+<span id="L315"><span class="lineNum">     315</span>              :    * @return Process exit code.</span>
+<span id="L316"><span class="lineNum">     316</span>              :    */</span>
+<span id="L317"><span class="lineNum">     317</span>              :   [[nodiscard]] static auto</span>
+<span id="L318"><span class="lineNum">     318</span>              :   executeBlocking(const QString &amp;app, const QStringList &amp;args,</span>
+<span id="L319"><span class="lineNum">     319</span>              :                   QString *process_out, QString *process_err = nullptr) -&gt; int;</span>
+<span id="L320"><span class="lineNum">     320</span>              : </span>
+<span id="L321"><span class="lineNum">     321</span>              :   /**</span>
+<span id="L322"><span class="lineNum">     322</span>              :    * @brief Run a command synchronously with a custom environment.</span>
+<span id="L323"><span class="lineNum">     323</span>              :    * @param env Process environment for the child process.</span>
+<span id="L324"><span class="lineNum">     324</span>              :    * @param app Executable path.</span>
+<span id="L325"><span class="lineNum">     325</span>              :    * @param args Command arguments.</span>
+<span id="L326"><span class="lineNum">     326</span>              :    * @param process_out If non-null, receives stdout output.</span>
+<span id="L327"><span class="lineNum">     327</span>              :    * @param process_err If non-null, receives stderr output.</span>
+<span id="L328"><span class="lineNum">     328</span>              :    * @return Process exit code.</span>
+<span id="L329"><span class="lineNum">     329</span>              :    */</span>
+<span id="L330"><span class="lineNum">     330</span>              :   [[nodiscard]] static auto</span>
+<span id="L331"><span class="lineNum">     331</span>              :   executeBlocking(const QProcessEnvironment &amp;env, const QString &amp;app,</span>
+<span id="L332"><span class="lineNum">     332</span>              :                   const QStringList &amp;args, QString *process_out = nullptr,</span>
+<span id="L333"><span class="lineNum">     333</span>              :                   QString *process_err = nullptr) -&gt; int;</span>
+<span id="L334"><span class="lineNum">     334</span>              : </span>
+<span id="L335"><span class="lineNum">     335</span>              :   /**</span>
+<span id="L336"><span class="lineNum">     336</span>              :    * @brief The one rule for turning a configured executable into what runs.</span>
+<span id="L337"><span class="lineNum">     337</span>              :    *</span>
+<span id="L338"><span class="lineNum">     338</span>              :    * Absolute paths and &quot;wsl ...&quot; commands are used as given. A bare or</span>
+<span id="L339"><span class="lineNum">     339</span>              :    * relative name is looked up next to the application first (the Windows</span>
+<span id="L340"><span class="lineNum">     340</span>              :    * and macOS bundles ship gpg/git/pass there) and otherwise left for</span>
+<span id="L341"><span class="lineNum">     341</span>              :    * QProcess's PATH lookup. Both the queued and the blocking path go through</span>
+<span id="L342"><span class="lineNum">     342</span>              :    * this, so the same setting can no longer run two different binaries.</span>
+<span id="L343"><span class="lineNum">     343</span>              :    * @param app Executable as configured.</span>
+<span id="L344"><span class="lineNum">     344</span>              :    * @return What to hand to QProcess::start().</span>
+<span id="L345"><span class="lineNum">     345</span>              :    */</span>
+<span id="L346"><span class="lineNum">     346</span>              :   static auto resolveExecutable(const QString &amp;app) -&gt; QString;</span>
+<span id="L347"><span class="lineNum">     347</span>              : </span>
+<span id="L348"><span class="lineNum">     348</span>              :   /**</span>
+<span id="L349"><span class="lineNum">     349</span>              :    * @brief Make @p process start its child without a controlling terminal.</span>
+<span id="L350"><span class="lineNum">     350</span>              :    *</span>
+<span id="L351"><span class="lineNum">     351</span>              :    * On Unix the child starts in a new session (setsid), so it has no</span>
+<span id="L352"><span class="lineNum">     352</span>              :    * /dev/tty. git and ssh then use an askpass helper when there is one and</span>
+<span id="L353"><span class="lineNum">     353</span>              :    * fail at once otherwise, instead of prompting in the terminal QtPass was</span>
+<span id="L354"><span class="lineNum">     354</span>              :    * started from while the queue waits behind them. Other Unix process</span>
+<span id="L355"><span class="lineNum">     355</span>              :    * flags set on @p process are kept. Does nothing on Windows. Every child</span>
+<span id="L356"><span class="lineNum">     356</span>              :    * QtPass starts goes through this; startProcess() calls it for the queued</span>
+<span id="L357"><span class="lineNum">     357</span>              :    * and the blocking path.</span>
+<span id="L358"><span class="lineNum">     358</span>              :    * @param process Process to configure; call it before start().</span>
+<span id="L359"><span class="lineNum">     359</span>              :    */</span>
+<span id="L360"><span class="lineNum">     360</span>              :   static void detachFromTerminal(QProcess &amp;process);</span>
+<span id="L361"><span class="lineNum">     361</span>              : </span>
+<span id="L362"><span class="lineNum">     362</span>              :   /**</span>
+<span id="L363"><span class="lineNum">     363</span>              :    * @brief The umask every child QtPass starts gets, as pass sets its own.</span>
+<span id="L364"><span class="lineNum">     364</span>              :    *</span>
+<span id="L365"><span class="lineNum">     365</span>              :    * pass runs git and gpg under umask 077 (or PASSWORD_STORE_UMASK), so the</span>
+<span id="L366"><span class="lineNum">     366</span>              :    * folders and files they create in the store, .git included, are the</span>
+<span id="L367"><span class="lineNum">     367</span>              :    * user's alone. QtPass gives that umask to the processes it starts</span>
+<span id="L368"><span class="lineNum">     368</span>              :    * (startProcess(), the queue and the blocking calls) and not to itself:</span>
+<span id="L369"><span class="lineNum">     369</span>              :    * a browser or file manager it opens keeps the session's. Unix only.</span>
+<span id="L370"><span class="lineNum">     370</span>              :    * @param mask The umask, or a negative value for none (the default).</span>
+<span id="L371"><span class="lineNum">     371</span>              :    */</span>
+<span id="L372"><span class="lineNum">     372</span>              :   static void setChildUmask(int mask);</span>
+<span id="L373"><span class="lineNum">     373</span>              : </span>
+<span id="L374"><span class="lineNum">     374</span>              :   /**</span>
+<span id="L375"><span class="lineNum">     375</span>              :    * @brief The umask setChildUmask() set.</span>
+<span id="L376"><span class="lineNum">     376</span>              :    * @return The umask, or a negative value when none was set.</span>
+<span id="L377"><span class="lineNum">     377</span>              :    */</span>
+<span id="L378"><span class="lineNum">     378</span>              :   [[nodiscard]] static auto childUmask() -&gt; int;</span>
+<span id="L379"><span class="lineNum">     379</span>              : </span>
+<span id="L380"><span class="lineNum">     380</span>              :   /**</span>
+<span id="L381"><span class="lineNum">     381</span>              :    * @brief A configured executable that runs a Linux program through WSL.</span>
+<span id="L382"><span class="lineNum">     382</span>              :    *</span>
+<span id="L383"><span class="lineNum">     383</span>              :    * The one definition of &quot;a WSL command&quot; in QtPass; see parseWslCommand().</span>
+<span id="L384"><span class="lineNum">     384</span>              :    */</span>
+<span id="L385"><span class="lineNum">     385</span>              :   struct WslCommand {</span>
 <span id="L386"><span class="lineNum">     386</span>              :     /**</span>
-<span id="L387"><span class="lineNum">     387</span>              :      * @brief wsl.exe options that go before the program (`-d Debian`,</span>
-<span id="L388"><span class="lineNum">     388</span>              :      * `-u me`), without any `-e`/`--exec`: argv() always adds that.</span>
-<span id="L389"><span class="lineNum">     389</span>              :      */</span>
-<span id="L390"><span class="lineNum">     390</span>              :     QStringList options;</span>
-<span id="L391"><span class="lineNum">     391</span>              :     /** @brief The Linux program to run, looked up on the WSL PATH. */</span>
-<span id="L392"><span class="lineNum">     392</span>              :     QString command;</span>
-<span id="L393"><span class="lineNum">     393</span>              :     /**</span>
-<span id="L394"><span class="lineNum">     394</span>              :      * @brief Arguments for @ref launcher that run @ref command with @p args.</span>
-<span id="L395"><span class="lineNum">     395</span>              :      *</span>
-<span id="L396"><span class="lineNum">     396</span>              :      * Always through `--exec`, so WSL starts the program itself instead of</span>
-<span id="L397"><span class="lineNum">     397</span>              :      * handing the joined command line to the distribution's default shell.</span>
-<span id="L398"><span class="lineNum">     398</span>              :      * Without it every argument (entry paths, .gpg-id recipients, commit</span>
-<span id="L399"><span class="lineNum">     399</span>              :      * messages) is word-split and `$()`-expanded by that shell, and a</span>
-<span id="L400"><span class="lineNum">     400</span>              :      * hostile password store gets code execution.</span>
-<span id="L401"><span class="lineNum">     401</span>              :      * @param args Arguments for @ref command, passed through verbatim.</span>
-<span id="L402"><span class="lineNum">     402</span>              :      * @return @ref options, `--exec`, @ref command, then @p args.</span>
-<span id="L403"><span class="lineNum">     403</span>              :      */</span>
-<span id="L404"><span class="lineNum">     404</span>              :     auto argv(const QStringList &amp;args) const -&gt; QStringList;</span>
-<span id="L405"><span class="lineNum">     405</span>              :     /**</span>
-<span id="L406"><span class="lineNum">     406</span>              :      * @brief The same launcher and options running another program.</span>
-<span id="L407"><span class="lineNum">     407</span>              :      * @param program Linux program to run instead of @ref command.</span>
-<span id="L408"><span class="lineNum">     408</span>              :      * @return A copy with @ref command replaced by @p program.</span>
-<span id="L409"><span class="lineNum">     409</span>              :      */</span>
-<span id="L410"><span class="lineNum">     410</span>              :     auto with(const QString &amp;program) const -&gt; WslCommand;</span>
-<span id="L411"><span class="lineNum">     411</span>              :   };</span>
-<span id="L412"><span class="lineNum">     412</span>              : </span>
-<span id="L413"><span class="lineNum">     413</span>              :   /**</span>
-<span id="L414"><span class="lineNum">     414</span>              :    * @brief Parse a configured executable as a WSL command.</span>
-<span id="L415"><span class="lineNum">     415</span>              :    *</span>
-<span id="L416"><span class="lineNum">     416</span>              :    * Accepts `wsl` or `wsl.exe` in any case, bare or as a path, followed by</span>
-<span id="L417"><span class="lineNum">     417</span>              :    * wsl.exe options and exactly one program: `wsl gpg`, `WSL.EXE -d Debian</span>
-<span id="L418"><span class="lineNum">     418</span>              :    * /usr/bin/gpg`, `C:\Windows\System32\wsl.exe -u me gpg`. A `-e`/`--exec`</span>
-<span id="L419"><span class="lineNum">     419</span>              :    * the user wrote is dropped (argv() adds it), anything after the program</span>
-<span id="L420"><span class="lineNum">     420</span>              :    * (`wsl sh -c &quot;gpg&quot;`) or a `wsl` with no program is not a WSL command.</span>
-<span id="L421"><span class="lineNum">     421</span>              :    *</span>
-<span id="L422"><span class="lineNum">     422</span>              :    * Every place that starts, probes or translates paths for a configured</span>
-<span id="L423"><span class="lineNum">     423</span>              :    * executable goes through this, so a form one of them accepts cannot be</span>
-<span id="L424"><span class="lineNum">     424</span>              :    * started differently by another.</span>
-<span id="L425"><span class="lineNum">     425</span>              :    * @param app Executable as configured.</span>
-<span id="L426"><span class="lineNum">     426</span>              :    * @return The parsed command, or nothing when @p app is not one.</span>
-<span id="L427"><span class="lineNum">     427</span>              :    */</span>
-<span id="L428"><span class="lineNum">     428</span>              :   static auto parseWslCommand(const QString &amp;app) -&gt; std::optional&lt;WslCommand&gt;;</span>
-<span id="L429"><span class="lineNum">     429</span>              : </span>
-<span id="L430"><span class="lineNum">     430</span>              :   /**</span>
-<span id="L431"><span class="lineNum">     431</span>              :    * @brief Build the wsl.exe argument list that runs @p command directly.</span>
-<span id="L432"><span class="lineNum">     432</span>              :    * @param command Linux command to run (looked up on the WSL PATH).</span>
-<span id="L433"><span class="lineNum">     433</span>              :    * @param args Arguments for @p command, passed through verbatim.</span>
-<span id="L434"><span class="lineNum">     434</span>              :    * @return Arguments for `wsl`: `--exec`, @p command, then @p args.</span>
-<span id="L435"><span class="lineNum">     435</span>              :    * @see WslCommand::argv</span>
+<span id="L387"><span class="lineNum">     387</span>              :      * @brief What to start.</span>
+<span id="L388"><span class="lineNum">     388</span>              :      *</span>
+<span id="L389"><span class="lineNum">     389</span>              :      * On Windows a bare `wsl`/`wsl.exe` in any case becomes `wsl`, which the</span>
+<span id="L390"><span class="lineNum">     390</span>              :      * PATH lookup resolves; elsewhere (QtPass itself running inside WSL,</span>
+<span id="L391"><span class="lineNum">     391</span>              :      * where `wsl.exe` is reachable through interop but `wsl` need not be)</span>
+<span id="L392"><span class="lineNum">     392</span>              :      * and for a launcher given as a path it stays as configured.</span>
+<span id="L393"><span class="lineNum">     393</span>              :      */</span>
+<span id="L394"><span class="lineNum">     394</span>              :     QString launcher;</span>
+<span id="L395"><span class="lineNum">     395</span>              :     /**</span>
+<span id="L396"><span class="lineNum">     396</span>              :      * @brief wsl.exe options that go before the program (`-d Debian`,</span>
+<span id="L397"><span class="lineNum">     397</span>              :      * `-u me`), without any `-e`/`--exec`: argv() always adds that.</span>
+<span id="L398"><span class="lineNum">     398</span>              :      */</span>
+<span id="L399"><span class="lineNum">     399</span>              :     QStringList options;</span>
+<span id="L400"><span class="lineNum">     400</span>              :     /** @brief The Linux program to run, looked up on the WSL PATH. */</span>
+<span id="L401"><span class="lineNum">     401</span>              :     QString command;</span>
+<span id="L402"><span class="lineNum">     402</span>              :     /**</span>
+<span id="L403"><span class="lineNum">     403</span>              :      * @brief Arguments for @ref launcher that run @ref command with @p args.</span>
+<span id="L404"><span class="lineNum">     404</span>              :      *</span>
+<span id="L405"><span class="lineNum">     405</span>              :      * Always through `--exec`, so WSL starts the program itself instead of</span>
+<span id="L406"><span class="lineNum">     406</span>              :      * handing the joined command line to the distribution's default shell.</span>
+<span id="L407"><span class="lineNum">     407</span>              :      * Without it every argument (entry paths, .gpg-id recipients, commit</span>
+<span id="L408"><span class="lineNum">     408</span>              :      * messages) is word-split and `$()`-expanded by that shell, and a</span>
+<span id="L409"><span class="lineNum">     409</span>              :      * hostile password store gets code execution.</span>
+<span id="L410"><span class="lineNum">     410</span>              :      * @param args Arguments for @ref command, passed through verbatim.</span>
+<span id="L411"><span class="lineNum">     411</span>              :      * @return @ref options, `--exec`, @ref command, then @p args.</span>
+<span id="L412"><span class="lineNum">     412</span>              :      */</span>
+<span id="L413"><span class="lineNum">     413</span>              :     auto argv(const QStringList &amp;args) const -&gt; QStringList;</span>
+<span id="L414"><span class="lineNum">     414</span>              :     /**</span>
+<span id="L415"><span class="lineNum">     415</span>              :      * @brief The same launcher and options running another program.</span>
+<span id="L416"><span class="lineNum">     416</span>              :      * @param program Linux program to run instead of @ref command.</span>
+<span id="L417"><span class="lineNum">     417</span>              :      * @return A copy with @ref command replaced by @p program.</span>
+<span id="L418"><span class="lineNum">     418</span>              :      */</span>
+<span id="L419"><span class="lineNum">     419</span>              :     auto with(const QString &amp;program) const -&gt; WslCommand;</span>
+<span id="L420"><span class="lineNum">     420</span>              :   };</span>
+<span id="L421"><span class="lineNum">     421</span>              : </span>
+<span id="L422"><span class="lineNum">     422</span>              :   /**</span>
+<span id="L423"><span class="lineNum">     423</span>              :    * @brief Parse a configured executable as a WSL command.</span>
+<span id="L424"><span class="lineNum">     424</span>              :    *</span>
+<span id="L425"><span class="lineNum">     425</span>              :    * Accepts `wsl` or `wsl.exe` in any case, bare or as a path, followed by</span>
+<span id="L426"><span class="lineNum">     426</span>              :    * wsl.exe options and exactly one program: `wsl gpg`, `WSL.EXE -d Debian</span>
+<span id="L427"><span class="lineNum">     427</span>              :    * /usr/bin/gpg`, `C:\Windows\System32\wsl.exe -u me gpg`. A `-e`/`--exec`</span>
+<span id="L428"><span class="lineNum">     428</span>              :    * the user wrote is dropped (argv() adds it), anything after the program</span>
+<span id="L429"><span class="lineNum">     429</span>              :    * (`wsl sh -c &quot;gpg&quot;`) or a `wsl` with no program is not a WSL command.</span>
+<span id="L430"><span class="lineNum">     430</span>              :    *</span>
+<span id="L431"><span class="lineNum">     431</span>              :    * Every place that starts, probes or translates paths for a configured</span>
+<span id="L432"><span class="lineNum">     432</span>              :    * executable goes through this, so a form one of them accepts cannot be</span>
+<span id="L433"><span class="lineNum">     433</span>              :    * started differently by another.</span>
+<span id="L434"><span class="lineNum">     434</span>              :    * @param app Executable as configured.</span>
+<span id="L435"><span class="lineNum">     435</span>              :    * @return The parsed command, or nothing when @p app is not one.</span>
 <span id="L436"><span class="lineNum">     436</span>              :    */</span>
-<span id="L437"><span class="lineNum">     437</span>              :   static auto wslExecArgs(const QString &amp;command, const QStringList &amp;args)</span>
-<span id="L438"><span class="lineNum">     438</span>              :       -&gt; QStringList;</span>
-<span id="L439"><span class="lineNum">     439</span>              : </span>
-<span id="L440"><span class="lineNum">     440</span>              :   /**</span>
-<span id="L441"><span class="lineNum">     441</span>              :    * @brief Translate a native path for a WSL-routed executable.</span>
-<span id="L442"><span class="lineNum">     442</span>              :    *</span>
-<span id="L443"><span class="lineNum">     443</span>              :    * When @p exe is a WSL command (parseWslCommand()) the path is converted</span>
-<span id="L444"><span class="lineNum">     444</span>              :    * with `wslpath` in the same distribution (the Linux binary cannot open</span>
-<span id="L445"><span class="lineNum">     445</span>              :    * `C:\...`); otherwise it is only cleaned.</span>
-<span id="L446"><span class="lineNum">     446</span>              :    * @param path Native filesystem path.</span>
-<span id="L447"><span class="lineNum">     447</span>              :    * @param exe Executable the path is meant for.</span>
-<span id="L448"><span class="lineNum">     448</span>              :    * @return Path suitable for @p exe.</span>
-<span id="L449"><span class="lineNum">     449</span>              :    */</span>
-<span id="L450"><span class="lineNum">     450</span>              :   static auto translatePathForWsl(const QString &amp;path, const QString &amp;exe)</span>
-<span id="L451"><span class="lineNum">     451</span>              :       -&gt; QString;</span>
-<span id="L452"><span class="lineNum">     452</span>              : </span>
-<span id="L453"><span class="lineNum">     453</span>              :   /**</span>
-<span id="L454"><span class="lineNum">     454</span>              :    * @brief Set the environment passed to all child processes.</span>
-<span id="L455"><span class="lineNum">     455</span>              :    * @param env Process environment for child processes.</span>
-<span id="L456"><span class="lineNum">     456</span>              :    */</span>
-<span id="L457"><span class="lineNum">     457</span>              :   void setEnvironment(const QProcessEnvironment &amp;env);</span>
-<span id="L458"><span class="lineNum">     458</span>              :   /**</span>
-<span id="L459"><span class="lineNum">     459</span>              :    * @brief Return the environment passed to child processes.</span>
-<span id="L460"><span class="lineNum">     460</span>              :    * @return Process environment.</span>
-<span id="L461"><span class="lineNum">     461</span>              :    */</span>
-<span id="L462"><span class="lineNum">     462</span>              :   auto environment() const -&gt; QProcessEnvironment;</span>
-<span id="L463"><span class="lineNum">     463</span>              : </span>
-<span id="L464"><span class="lineNum">     464</span>              :   /**</span>
-<span id="L465"><span class="lineNum">     465</span>              :    * @brief Cancel the next queued command without executing it.</span>
-<span id="L466"><span class="lineNum">     466</span>              :    * @return The id of the cancelled command, or -1 if the queue was empty.</span>
-<span id="L467"><span class="lineNum">     467</span>              :    */</span>
-<span id="L468"><span class="lineNum">     468</span>              :   auto cancelNext() -&gt; int;</span>
-<span id="L469"><span class="lineNum">     469</span>              :   /**</span>
-<span id="L470"><span class="lineNum">     470</span>              :    * @brief Whether no command is running and nothing is queued.</span>
-<span id="L471"><span class="lineNum">     471</span>              :    * @return true when the executor has nothing in flight.</span>
-<span id="L472"><span class="lineNum">     472</span>              :    */</span>
-<span id="L473"><span class="lineNum">     473</span> <span class="tlaGNC">         749 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
-<span id="L474"><span class="lineNum">     474</span>              :   /**</span>
-<span id="L475"><span class="lineNum">     475</span>              :    * @brief Whether the stdout of the item whose finished() or error() is</span>
-<span id="L476"><span class="lineNum">     476</span>              :    * being emitted encodes back (toUtf8(), as every writer here does) to</span>
-<span id="L477"><span class="lineNum">     477</span>              :    * exactly the bytes the process wrote. When false, writing that text back</span>
-<span id="L478"><span class="lineNum">     478</span>              :    * changes the bytes whatever else happens to it.</span>
-<span id="L479"><span class="lineNum">     479</span>              :    *</span>
-<span id="L480"><span class="lineNum">     480</span>              :    * Valid only in a slot directly connected to those signals, while the</span>
-<span id="L481"><span class="lineNum">     481</span>              :    * emission runs; at any other time, and when stdout was not read, true.</span>
-<span id="L482"><span class="lineNum">     482</span>              :    * @return false when the output was not UTF-8 or began with a byte order</span>
-<span id="L483"><span class="lineNum">     483</span>              :    *         mark.</span>
-<span id="L484"><span class="lineNum">     484</span>              :    */</span>
-<span id="L485"><span class="lineNum">     485</span>              :   [[nodiscard]] auto lastOutputLossless() const -&gt; bool {</span>
-<span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">          43 :     return m_outputLossless;</span></span>
-<span id="L487"><span class="lineNum">     487</span>              :   }</span>
-<span id="L488"><span class="lineNum">     488</span>              : </span>
-<span id="L489"><span class="lineNum">     489</span>              :   /**</span>
-<span id="L490"><span class="lineNum">     490</span>              :    * @brief Whether a command with process id @p id is queued or running.</span>
-<span id="L491"><span class="lineNum">     491</span>              :    *</span>
-<span id="L492"><span class="lineNum">     492</span>              :    * The running command stays at the head of the queue until it finishes, so</span>
-<span id="L493"><span class="lineNum">     493</span>              :    * one scan covers both the queued and the running one. Used to refuse a</span>
-<span id="L494"><span class="lineNum">     494</span>              :    * store change while a Git pull is still in flight, whose conflict a</span>
-<span id="L495"><span class="lineNum">     495</span>              :    * call-time check could not yet see.</span>
-<span id="L496"><span class="lineNum">     496</span>              :    * @param id The process id to look for (an Enums::PROCESS value).</span>
-<span id="L497"><span class="lineNum">     497</span>              :    * @return true when the queue holds a command with that id.</span>
-<span id="L498"><span class="lineNum">     498</span>              :    */</span>
-<span id="L499"><span class="lineNum">     499</span>              :   auto hasQueued(int id) const -&gt; bool {</span>
-<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">          35 :     for (const ExecQueueItem &amp;item : m_execQueue) {</span></span>
-<span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">          13 :       if (item.id == id) {</span></span>
-<span id="L502"><span class="lineNum">     502</span>              :         return true;</span>
-<span id="L503"><span class="lineNum">     503</span>              :       }</span>
-<span id="L504"><span class="lineNum">     504</span>              :     }</span>
-<span id="L505"><span class="lineNum">     505</span>              :     return false;</span>
-<span id="L506"><span class="lineNum">     506</span>              :   }</span>
-<span id="L507"><span class="lineNum">     507</span>              : </span>
-<span id="L508"><span class="lineNum">     508</span>              : private slots:</span>
-<span id="L509"><span class="lineNum">     509</span>              :   /**</span>
-<span id="L510"><span class="lineNum">     510</span>              :    * @brief Finish the running item when its process exits.</span>
-<span id="L511"><span class="lineNum">     511</span>              :    *</span>
-<span id="L512"><span class="lineNum">     512</span>              :    * Dequeues the head, collects its output and emits finished() for a</span>
-<span id="L513"><span class="lineNum">     513</span>              :    * normal exit or error() with exit code -1 for a crash (Qt leaves the</span>
-<span id="L514"><span class="lineNum">     514</span>              :    * code undefined then, and 0 or 1 would be mistaken for success or</span>
-<span id="L515"><span class="lineNum">     515</span>              :    * &quot;no matches&quot;), then starts the next item and posts a drained() check.</span>
-<span id="L516"><span class="lineNum">     516</span>              :    * @param exitCode Exit code reported by QProcess.</span>
-<span id="L517"><span class="lineNum">     517</span>              :    * @param exitStatus Whether the process exited normally or crashed.</span>
-<span id="L518"><span class="lineNum">     518</span>              :    */</span>
-<span id="L519"><span class="lineNum">     519</span>              :   void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);</span>
-<span id="L520"><span class="lineNum">     520</span>              : signals:</span>
-<span id="L521"><span class="lineNum">     521</span>              :   /**</span>
-<span id="L522"><span class="lineNum">     522</span>              :    * @brief Emitted once the last queued item is done and nothing runs or</span>
-<span id="L523"><span class="lineNum">     523</span>              :    * waits any more (isIdle()), after that item's finished() or error().</span>
-<span id="L524"><span class="lineNum">     524</span>              :    */</span>
-<span id="L525"><span class="lineNum">     525</span>              :   void drained();</span>
-<span id="L526"><span class="lineNum">     526</span>              :   /**</span>
-<span id="L527"><span class="lineNum">     527</span>              :    * @brief Emitted when a queued process exits normally, whatever its exit</span>
-<span id="L528"><span class="lineNum">     528</span>              :    * code; a non-zero code is the receiver's to interpret (Pass does).</span>
-<span id="L529"><span class="lineNum">     529</span>              :    * @param id Caller-assigned id the item was queued with.</span>
-<span id="L530"><span class="lineNum">     530</span>              :    * @param exitCode Exit code of the process.</span>
-<span id="L531"><span class="lineNum">     531</span>              :    * @param output stdout, when the item asked for it; empty otherwise.</span>
-<span id="L532"><span class="lineNum">     532</span>              :    * @param errout stderr, when the item asked for it or the exit code is</span>
-<span id="L533"><span class="lineNum">     533</span>              :    *        non-zero.</span>
-<span id="L534"><span class="lineNum">     534</span>              :    */</span>
-<span id="L535"><span class="lineNum">     535</span>              :   void finished(int id, int exitCode, const QString &amp;output,</span>
-<span id="L536"><span class="lineNum">     536</span>              :                 const QString &amp;errout);</span>
-<span id="L537"><span class="lineNum">     537</span>              :   /**</span>
-<span id="L538"><span class="lineNum">     538</span>              :    * @brief Emitted just before a queued process is started; the main</span>
-<span id="L539"><span class="lineNum">     539</span>              :    * window shows the busy indicator on it.</span>
-<span id="L540"><span class="lineNum">     540</span>              :    */</span>
-<span id="L541"><span class="lineNum">     541</span>              :   void starting();</span>
-<span id="L542"><span class="lineNum">     542</span>              :   /**</span>
-<span id="L543"><span class="lineNum">     543</span>              :    * @brief Emitted, synchronously, when the queue's head leaves it: just</span>
-<span id="L544"><span class="lineNum">     544</span>              :    * before it is started, when it cannot be (no executable, a failed</span>
-<span id="L545"><span class="lineNum">     545</span>              :    * start), or when cancelNext() drops it. Lets a caller do per-item work</span>
-<span id="L546"><span class="lineNum">     546</span>              :    * at the moment the item actually runs, not when it was queued.</span>
-<span id="L547"><span class="lineNum">     547</span>              :    * @param id The item's id.</span>
-<span id="L548"><span class="lineNum">     548</span>              :    * @param completes Whether finished() or error() follows for it: for</span>
-<span id="L549"><span class="lineNum">     549</span>              :    *        every item but one cancelNext() dropped. Those that complete</span>
-<span id="L550"><span class="lineNum">     550</span>              :    *        do so in the order they left the queue.</span>
-<span id="L551"><span class="lineNum">     551</span>              :    *</span>
-<span id="L552"><span class="lineNum">     552</span>              :    * A slot may queue more with execute(): that waits behind this item. The</span>
-<span id="L553"><span class="lineNum">     553</span>              :    * executor counts as running while the signal is out, also for an item</span>
-<span id="L554"><span class="lineNum">     554</span>              :    * cancelNext() drops, so cancelNext() drops nothing then (-1) and</span>
-<span id="L555"><span class="lineNum">     555</span>              :    * nothing starts until the signal has returned.</span>
-<span id="L556"><span class="lineNum">     556</span>              :    */</span>
-<span id="L557"><span class="lineNum">     557</span>              :   void dequeuing(int id, bool completes);</span>
-<span id="L558"><span class="lineNum">     558</span>              :   /**</span>
-<span id="L559"><span class="lineNum">     559</span>              :    * @brief Emitted instead of finished() when a queued process could not be</span>
-<span id="L560"><span class="lineNum">     560</span>              :    * started, had no executable configured, or crashed.</span>
-<span id="L561"><span class="lineNum">     561</span>              :    * @param id Caller-assigned id the item was queued with.</span>
-<span id="L562"><span class="lineNum">     562</span>              :    * @param exitCode Always -1; the real code is unknown in these cases.</span>
-<span id="L563"><span class="lineNum">     563</span>              :    * @param output stdout read so far, when the item asked for it.</span>
-<span id="L564"><span class="lineNum">     564</span>              :    * @param errout stderr, or a message saying what went wrong when the</span>
-<span id="L565"><span class="lineNum">     565</span>              :    *        process left none.</span>
-<span id="L566"><span class="lineNum">     566</span>              :    */</span>
-<span id="L567"><span class="lineNum">     567</span>              :   void error(int id, int exitCode, const QString &amp;output,</span>
-<span id="L568"><span class="lineNum">     568</span>              :              const QString &amp;errout);</span>
-<span id="L569"><span class="lineNum">     569</span>              : };</span>
-<span id="L570"><span class="lineNum">     570</span>              : </span>
-<span id="L571"><span class="lineNum">     571</span>              : #endif // SRC_EXECUTOR_H_</span>
+<span id="L437"><span class="lineNum">     437</span>              :   static auto parseWslCommand(const QString &amp;app) -&gt; std::optional&lt;WslCommand&gt;;</span>
+<span id="L438"><span class="lineNum">     438</span>              : </span>
+<span id="L439"><span class="lineNum">     439</span>              :   /**</span>
+<span id="L440"><span class="lineNum">     440</span>              :    * @brief Build the wsl.exe argument list that runs @p command directly.</span>
+<span id="L441"><span class="lineNum">     441</span>              :    * @param command Linux command to run (looked up on the WSL PATH).</span>
+<span id="L442"><span class="lineNum">     442</span>              :    * @param args Arguments for @p command, passed through verbatim.</span>
+<span id="L443"><span class="lineNum">     443</span>              :    * @return Arguments for `wsl`: `--exec`, @p command, then @p args.</span>
+<span id="L444"><span class="lineNum">     444</span>              :    * @see WslCommand::argv</span>
+<span id="L445"><span class="lineNum">     445</span>              :    */</span>
+<span id="L446"><span class="lineNum">     446</span>              :   static auto wslExecArgs(const QString &amp;command, const QStringList &amp;args)</span>
+<span id="L447"><span class="lineNum">     447</span>              :       -&gt; QStringList;</span>
+<span id="L448"><span class="lineNum">     448</span>              : </span>
+<span id="L449"><span class="lineNum">     449</span>              :   /**</span>
+<span id="L450"><span class="lineNum">     450</span>              :    * @brief Translate a native path for a WSL-routed executable.</span>
+<span id="L451"><span class="lineNum">     451</span>              :    *</span>
+<span id="L452"><span class="lineNum">     452</span>              :    * When @p exe is a WSL command (parseWslCommand()) the path is converted</span>
+<span id="L453"><span class="lineNum">     453</span>              :    * with `wslpath` in the same distribution (the Linux binary cannot open</span>
+<span id="L454"><span class="lineNum">     454</span>              :    * `C:\...`); otherwise it is only cleaned.</span>
+<span id="L455"><span class="lineNum">     455</span>              :    * @param path Native filesystem path.</span>
+<span id="L456"><span class="lineNum">     456</span>              :    * @param exe Executable the path is meant for.</span>
+<span id="L457"><span class="lineNum">     457</span>              :    * @return Path suitable for @p exe.</span>
+<span id="L458"><span class="lineNum">     458</span>              :    */</span>
+<span id="L459"><span class="lineNum">     459</span>              :   static auto translatePathForWsl(const QString &amp;path, const QString &amp;exe)</span>
+<span id="L460"><span class="lineNum">     460</span>              :       -&gt; QString;</span>
+<span id="L461"><span class="lineNum">     461</span>              : </span>
+<span id="L462"><span class="lineNum">     462</span>              :   /**</span>
+<span id="L463"><span class="lineNum">     463</span>              :    * @brief Set the environment passed to all child processes.</span>
+<span id="L464"><span class="lineNum">     464</span>              :    * @param env Process environment for child processes.</span>
+<span id="L465"><span class="lineNum">     465</span>              :    */</span>
+<span id="L466"><span class="lineNum">     466</span>              :   void setEnvironment(const QProcessEnvironment &amp;env);</span>
+<span id="L467"><span class="lineNum">     467</span>              :   /**</span>
+<span id="L468"><span class="lineNum">     468</span>              :    * @brief Return the environment passed to child processes.</span>
+<span id="L469"><span class="lineNum">     469</span>              :    * @return Process environment.</span>
+<span id="L470"><span class="lineNum">     470</span>              :    */</span>
+<span id="L471"><span class="lineNum">     471</span>              :   auto environment() const -&gt; QProcessEnvironment;</span>
+<span id="L472"><span class="lineNum">     472</span>              : </span>
+<span id="L473"><span class="lineNum">     473</span>              :   /**</span>
+<span id="L474"><span class="lineNum">     474</span>              :    * @brief Cancel the next queued command without executing it.</span>
+<span id="L475"><span class="lineNum">     475</span>              :    * @return The id of the cancelled command, or -1 if the queue was empty.</span>
+<span id="L476"><span class="lineNum">     476</span>              :    */</span>
+<span id="L477"><span class="lineNum">     477</span>              :   auto cancelNext() -&gt; int;</span>
+<span id="L478"><span class="lineNum">     478</span>              :   /**</span>
+<span id="L479"><span class="lineNum">     479</span>              :    * @brief Whether no command is running and nothing is queued.</span>
+<span id="L480"><span class="lineNum">     480</span>              :    * @return true when the executor has nothing in flight.</span>
+<span id="L481"><span class="lineNum">     481</span>              :    */</span>
+<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">         751 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L483"><span class="lineNum">     483</span>              :   /**</span>
+<span id="L484"><span class="lineNum">     484</span>              :    * @brief Whether the stdout of the item whose finished() or error() is</span>
+<span id="L485"><span class="lineNum">     485</span>              :    * being emitted encodes back (toUtf8(), as every writer here does) to</span>
+<span id="L486"><span class="lineNum">     486</span>              :    * exactly the bytes the process wrote. When false, writing that text back</span>
+<span id="L487"><span class="lineNum">     487</span>              :    * changes the bytes whatever else happens to it.</span>
+<span id="L488"><span class="lineNum">     488</span>              :    *</span>
+<span id="L489"><span class="lineNum">     489</span>              :    * Valid only in a slot directly connected to those signals, while the</span>
+<span id="L490"><span class="lineNum">     490</span>              :    * emission runs; at any other time, and when stdout was not read, true.</span>
+<span id="L491"><span class="lineNum">     491</span>              :    * @return false when the output was not UTF-8 or began with a byte order</span>
+<span id="L492"><span class="lineNum">     492</span>              :    *         mark.</span>
+<span id="L493"><span class="lineNum">     493</span>              :    */</span>
+<span id="L494"><span class="lineNum">     494</span>              :   [[nodiscard]] auto lastOutputLossless() const -&gt; bool {</span>
+<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">          44 :     return m_outputLossless;</span></span>
+<span id="L496"><span class="lineNum">     496</span>              :   }</span>
+<span id="L497"><span class="lineNum">     497</span>              : </span>
+<span id="L498"><span class="lineNum">     498</span>              :   /**</span>
+<span id="L499"><span class="lineNum">     499</span>              :    * @brief Whether a command with process id @p id is queued or running.</span>
+<span id="L500"><span class="lineNum">     500</span>              :    *</span>
+<span id="L501"><span class="lineNum">     501</span>              :    * The running command stays at the head of the queue until it finishes, so</span>
+<span id="L502"><span class="lineNum">     502</span>              :    * one scan covers both the queued and the running one. Used to refuse a</span>
+<span id="L503"><span class="lineNum">     503</span>              :    * store change while a Git pull is still in flight, whose conflict a</span>
+<span id="L504"><span class="lineNum">     504</span>              :    * call-time check could not yet see.</span>
+<span id="L505"><span class="lineNum">     505</span>              :    * @param id The process id to look for (an Enums::PROCESS value).</span>
+<span id="L506"><span class="lineNum">     506</span>              :    * @return true when the queue holds a command with that id.</span>
+<span id="L507"><span class="lineNum">     507</span>              :    */</span>
+<span id="L508"><span class="lineNum">     508</span>              :   auto hasQueued(int id) const -&gt; bool {</span>
+<span id="L509"><span class="lineNum">     509</span> <span class="tlaGNC">          35 :     for (const ExecQueueItem &amp;item : m_execQueue) {</span></span>
+<span id="L510"><span class="lineNum">     510</span> <span class="tlaGNC">          13 :       if (item.id == id) {</span></span>
+<span id="L511"><span class="lineNum">     511</span>              :         return true;</span>
+<span id="L512"><span class="lineNum">     512</span>              :       }</span>
+<span id="L513"><span class="lineNum">     513</span>              :     }</span>
+<span id="L514"><span class="lineNum">     514</span>              :     return false;</span>
+<span id="L515"><span class="lineNum">     515</span>              :   }</span>
+<span id="L516"><span class="lineNum">     516</span>              : </span>
+<span id="L517"><span class="lineNum">     517</span>              : private slots:</span>
+<span id="L518"><span class="lineNum">     518</span>              :   /**</span>
+<span id="L519"><span class="lineNum">     519</span>              :    * @brief Finish the running item when its process exits.</span>
+<span id="L520"><span class="lineNum">     520</span>              :    *</span>
+<span id="L521"><span class="lineNum">     521</span>              :    * Dequeues the head, collects its output and emits finished() for a</span>
+<span id="L522"><span class="lineNum">     522</span>              :    * normal exit or error() with exit code -1 for a crash (Qt leaves the</span>
+<span id="L523"><span class="lineNum">     523</span>              :    * code undefined then, and 0 or 1 would be mistaken for success or</span>
+<span id="L524"><span class="lineNum">     524</span>              :    * &quot;no matches&quot;), then starts the next item and posts a drained() check.</span>
+<span id="L525"><span class="lineNum">     525</span>              :    * @param exitCode Exit code reported by QProcess.</span>
+<span id="L526"><span class="lineNum">     526</span>              :    * @param exitStatus Whether the process exited normally or crashed.</span>
+<span id="L527"><span class="lineNum">     527</span>              :    */</span>
+<span id="L528"><span class="lineNum">     528</span>              :   void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);</span>
+<span id="L529"><span class="lineNum">     529</span>              : signals:</span>
+<span id="L530"><span class="lineNum">     530</span>              :   /**</span>
+<span id="L531"><span class="lineNum">     531</span>              :    * @brief Emitted once the last queued item is done and nothing runs or</span>
+<span id="L532"><span class="lineNum">     532</span>              :    * waits any more (isIdle()), after that item's finished() or error().</span>
+<span id="L533"><span class="lineNum">     533</span>              :    */</span>
+<span id="L534"><span class="lineNum">     534</span>              :   void drained();</span>
+<span id="L535"><span class="lineNum">     535</span>              :   /**</span>
+<span id="L536"><span class="lineNum">     536</span>              :    * @brief Emitted when a queued process exits normally, whatever its exit</span>
+<span id="L537"><span class="lineNum">     537</span>              :    * code; a non-zero code is the receiver's to interpret (Pass does).</span>
+<span id="L538"><span class="lineNum">     538</span>              :    * @param id Caller-assigned id the item was queued with.</span>
+<span id="L539"><span class="lineNum">     539</span>              :    * @param exitCode Exit code of the process.</span>
+<span id="L540"><span class="lineNum">     540</span>              :    * @param output stdout, when the item asked for it; empty otherwise.</span>
+<span id="L541"><span class="lineNum">     541</span>              :    * @param errout stderr, when the item asked for it or the exit code is</span>
+<span id="L542"><span class="lineNum">     542</span>              :    *        non-zero.</span>
+<span id="L543"><span class="lineNum">     543</span>              :    */</span>
+<span id="L544"><span class="lineNum">     544</span>              :   void finished(int id, int exitCode, const QString &amp;output,</span>
+<span id="L545"><span class="lineNum">     545</span>              :                 const QString &amp;errout);</span>
+<span id="L546"><span class="lineNum">     546</span>              :   /**</span>
+<span id="L547"><span class="lineNum">     547</span>              :    * @brief Emitted just before a queued process is started; the main</span>
+<span id="L548"><span class="lineNum">     548</span>              :    * window shows the busy indicator on it.</span>
+<span id="L549"><span class="lineNum">     549</span>              :    */</span>
+<span id="L550"><span class="lineNum">     550</span>              :   void starting();</span>
+<span id="L551"><span class="lineNum">     551</span>              :   /**</span>
+<span id="L552"><span class="lineNum">     552</span>              :    * @brief Emitted, synchronously, when the queue's head leaves it: just</span>
+<span id="L553"><span class="lineNum">     553</span>              :    * before it is started, when it cannot be (no executable, a failed</span>
+<span id="L554"><span class="lineNum">     554</span>              :    * start), or when cancelNext() drops it. Lets a caller do per-item work</span>
+<span id="L555"><span class="lineNum">     555</span>              :    * at the moment the item actually runs, not when it was queued.</span>
+<span id="L556"><span class="lineNum">     556</span>              :    * @param id The item's id.</span>
+<span id="L557"><span class="lineNum">     557</span>              :    * @param completes Whether finished() or error() follows for it: for</span>
+<span id="L558"><span class="lineNum">     558</span>              :    *        every item but one cancelNext() dropped. Those that complete</span>
+<span id="L559"><span class="lineNum">     559</span>              :    *        do so in the order they left the queue.</span>
+<span id="L560"><span class="lineNum">     560</span>              :    *</span>
+<span id="L561"><span class="lineNum">     561</span>              :    * A slot may queue more with execute(): that waits behind this item. The</span>
+<span id="L562"><span class="lineNum">     562</span>              :    * executor counts as running while the signal is out, also for an item</span>
+<span id="L563"><span class="lineNum">     563</span>              :    * cancelNext() drops, so cancelNext() drops nothing then (-1) and</span>
+<span id="L564"><span class="lineNum">     564</span>              :    * nothing starts until the signal has returned.</span>
+<span id="L565"><span class="lineNum">     565</span>              :    */</span>
+<span id="L566"><span class="lineNum">     566</span>              :   void dequeuing(int id, bool completes);</span>
+<span id="L567"><span class="lineNum">     567</span>              :   /**</span>
+<span id="L568"><span class="lineNum">     568</span>              :    * @brief Emitted instead of finished() when a queued process could not be</span>
+<span id="L569"><span class="lineNum">     569</span>              :    * started, had no executable configured, or crashed.</span>
+<span id="L570"><span class="lineNum">     570</span>              :    * @param id Caller-assigned id the item was queued with.</span>
+<span id="L571"><span class="lineNum">     571</span>              :    * @param exitCode Always -1; the real code is unknown in these cases.</span>
+<span id="L572"><span class="lineNum">     572</span>              :    * @param output stdout read so far, when the item asked for it.</span>
+<span id="L573"><span class="lineNum">     573</span>              :    * @param errout stderr, or a message saying what went wrong when the</span>
+<span id="L574"><span class="lineNum">     574</span>              :    *        process left none.</span>
+<span id="L575"><span class="lineNum">     575</span>              :    */</span>
+<span id="L576"><span class="lineNum">     576</span>              :   void error(int id, int exitCode, const QString &amp;output,</span>
+<span id="L577"><span class="lineNum">     577</span>              :              const QString &amp;errout);</span>
+<span id="L578"><span class="lineNum">     578</span>              : };</span>
+<span id="L579"><span class="lineNum">     579</span>              : </span>
+<span id="L580"><span class="lineNum">     580</span>              : #endif // SRC_EXECUTOR_H_</span>
         </pre>
               </td>
             </tr>

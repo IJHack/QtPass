@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 14:37:49</td>
+            <td class="headerValue">2026-11-17 22:42:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -119,16 +119,16 @@
 <span id="L46"><span class="lineNum">      46</span>              : </span>
 <span id="L47"><span class="lineNum">      47</span>              : namespace {</span>
 <span id="L48"><span class="lineNum">      48</span>              : auto fallbackCharset(const QString &amp;input, const QString &amp;fallback) -&gt; QString {</span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">        1585 :   return input.isEmpty() ? fallback : input;</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">        1586 :   return input.isEmpty() ? fallback : input;</span></span>
 <span id="L50"><span class="lineNum">      50</span>              : }</span>
 <span id="L51"><span class="lineNum">      51</span>              : </span>
-<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">         378 : auto effectiveCharset(const PasswordConfiguration &amp;passConfig) -&gt; QString {</span></span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">         378 :   int sel = passConfig.selected;</span></span>
-<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">         378 :   if (sel &lt; 0 || sel &gt;= PasswordConfiguration::CHARSETS_COUNT)</span></span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">         379 : auto effectiveCharset(const PasswordConfiguration &amp;passConfig) -&gt; QString {</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">         379 :   int sel = passConfig.selected;</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">         379 :   if (sel &lt; 0 || sel &gt;= PasswordConfiguration::CHARSETS_COUNT)</span></span>
 <span id="L55"><span class="lineNum">      55</span>              :     sel = PasswordConfiguration::ALLCHARS;</span>
 <span id="L56"><span class="lineNum">      56</span>              :   return fallbackCharset(</span>
-<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         378 :       passConfig.Characters[sel],</span></span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         378 :       passConfig.Characters[PasswordConfiguration::ALLCHARS]);</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         379 :       passConfig.Characters[sel],</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         379 :       passConfig.Characters[PasswordConfiguration::ALLCHARS]);</span></span>
 <span id="L59"><span class="lineNum">      59</span>              : }</span>
 <span id="L60"><span class="lineNum">      60</span>              : } // namespace</span>
 <span id="L61"><span class="lineNum">      61</span>              : </span>
@@ -229,8 +229,8 @@
 <span id="L156"><span class="lineNum">     156</span>              : </span>
 <span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">          66 : void Pass::beforeExecute(PROCESS /*id*/) {}</span></span>
 <span id="L158"><span class="lineNum">     158</span>              : </span>
-<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">         753 : void Pass::init(const AppSettings &amp;settings) {</span></span>
-<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">         753 :   m_settings = settings;</span></span>
+<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">         754 : void Pass::init(const AppSettings &amp;settings) {</span></span>
+<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">         754 :   m_settings = settings;</span></span>
 <span id="L161"><span class="lineNum">     161</span>              : #ifdef __APPLE__</span>
 <span id="L162"><span class="lineNum">     162</span>              :   // If it exists, prepend gpgtools to PATH</span>
 <span id="L163"><span class="lineNum">     163</span>              :   if (QFile(QStringLiteral(&quot;/usr/local/MacGPG2/bin&quot;)).exists())</span>
@@ -251,17 +251,17 @@
 <span id="L178"><span class="lineNum">     178</span>              :   // The configured gpgHome wins over GNUPGHOME only when it exists: a stale</span>
 <span id="L179"><span class="lineNum">     179</span>              :   // one (#1711) fails every gpg call with &quot;No secret key&quot;. Clearing the</span>
 <span id="L180"><span class="lineNum">     180</span>              :   // setting restores the inherited value rather than keeping the old path.</span>
-<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">        1506 :   const QString inheritedHome = QProcessEnvironment::systemEnvironment().value(</span></span>
-<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">        1506 :       QStringLiteral(&quot;GNUPGHOME&quot;));</span></span>
-<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">         711 :   const auto useInheritedHome = [this, &amp;inheritedHome]() {</span></span>
-<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">         711 :     if (inheritedHome.isEmpty()) {</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">        1508 :   const QString inheritedHome = QProcessEnvironment::systemEnvironment().value(</span></span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">        1508 :       QStringLiteral(&quot;GNUPGHOME&quot;));</span></span>
+<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">         712 :   const auto useInheritedHome = [this, &amp;inheritedHome]() {</span></span>
+<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">         712 :     if (inheritedHome.isEmpty()) {</span></span>
 <span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">         952 :       env.remove(QStringLiteral(&quot;GNUPGHOME&quot;));</span></span>
 <span id="L186"><span class="lineNum">     186</span>              :     } else {</span>
-<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">         470 :       env.insert(QStringLiteral(&quot;GNUPGHOME&quot;), inheritedHome);</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">         472 :       env.insert(QStringLiteral(&quot;GNUPGHOME&quot;), inheritedHome);</span></span>
 <span id="L188"><span class="lineNum">     188</span>              :     }</span>
-<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">        1464 :   };</span></span>
-<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">         753 :   if (m_settings.gpgHome.isEmpty()) {</span></span>
-<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         709 :     useInheritedHome();</span></span>
+<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">        1466 :   };</span></span>
+<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">         754 :   if (m_settings.gpgHome.isEmpty()) {</span></span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         710 :     useInheritedHome();</span></span>
 <span id="L192"><span class="lineNum">     192</span>              :   } else {</span>
 <span id="L193"><span class="lineNum">     193</span> <span class="tlaGNC">          44 :     QDir absHome(m_settings.gpgHome);</span></span>
 <span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">          44 :     absHome.makeAbsolute();</span></span>
@@ -287,7 +287,7 @@
 <span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">           2 :       useInheritedHome();</span></span>
 <span id="L215"><span class="lineNum">     215</span>              :     }</span>
 <span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">          44 :   }</span></span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">         753 : }</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">         754 : }</span></span>
 <span id="L218"><span class="lineNum">     218</span>              : </span>
 <span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">        1211 : auto Pass::generatePassword(unsigned int length, const QString &amp;charset)</span></span>
 <span id="L220"><span class="lineNum">     220</span>              :     -&gt; QString {</span>
@@ -594,40 +594,40 @@
 <span id="L521"><span class="lineNum">     521</span> <span class="tlaGNC">          13 :   return {};</span></span>
 <span id="L522"><span class="lineNum">     522</span> <span class="tlaUNC">           0 : }</span></span>
 <span id="L523"><span class="lineNum">     523</span>              : </span>
-<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">         244 : void Pass::finished(int id, int exitCode, const QString &amp;out,</span></span>
+<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">         240 : void Pass::finished(int id, int exitCode, const QString &amp;out,</span></span>
 <span id="L525"><span class="lineNum">     525</span>              :                     const QString &amp;err) {</span>
-<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">         244 :   auto pid = static_cast&lt;PROCESS&gt;(id);</span></span>
+<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">         240 :   auto pid = static_cast&lt;PROCESS&gt;(id);</span></span>
 <span id="L527"><span class="lineNum">     527</span>              : </span>
 <span id="L528"><span class="lineNum">     528</span>              :   // Pop the Show() this completion belongs to whether it worked or not, or</span>
 <span id="L529"><span class="lineNum">     529</span>              :   // the next result would be attributed to the wrong file.</span>
-<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">         244 :   QString shownFile;</span></span>
-<span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">         244 :   if (pid == PASS_SHOW &amp;&amp; !m_pendingShows.isEmpty()) {</span></span>
+<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">         240 :   QString shownFile;</span></span>
+<span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">         240 :   if (pid == PASS_SHOW &amp;&amp; !m_pendingShows.isEmpty()) {</span></span>
 <span id="L532"><span class="lineNum">     532</span> <span class="tlaGNC">          73 :     shownFile = m_pendingShows.dequeue();</span></span>
 <span id="L533"><span class="lineNum">     533</span>              :   }</span>
 <span id="L534"><span class="lineNum">     534</span>              :   // Count this insert off, success or failure, before its result goes out, so</span>
 <span id="L535"><span class="lineNum">     535</span>              :   // insertsPending() tracks the inserts still awaiting a report. Each insert</span>
 <span id="L536"><span class="lineNum">     536</span>              :   // reaches here once as PASS_INSERT.</span>
-<span id="L537"><span class="lineNum">     537</span> <span class="tlaGNC">         244 :   if (pid == PASS_INSERT &amp;&amp; m_insertsPending &gt; 0) {</span></span>
+<span id="L537"><span class="lineNum">     537</span> <span class="tlaGNC">         240 :   if (pid == PASS_INSERT &amp;&amp; m_insertsPending &gt; 0) {</span></span>
 <span id="L538"><span class="lineNum">     538</span> <span class="tlaGNC">          77 :     --m_insertsPending;</span></span>
 <span id="L539"><span class="lineNum">     539</span>              :   }</span>
 <span id="L540"><span class="lineNum">     540</span>              : </span>
-<span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">         244 :   if (exitCode != 0) {</span></span>
-<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          62 :     handleProcessError(pid, exitCode, out, err);</span></span>
+<span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">         240 :   if (exitCode != 0) {</span></span>
+<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          59 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L543"><span class="lineNum">     543</span>              :     return;</span>
 <span id="L544"><span class="lineNum">     544</span>              :   }</span>
 <span id="L545"><span class="lineNum">     545</span>              : </span>
-<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         182 :   if (pid == PASS_SHOW) {</span></span>
-<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          43 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
+<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         181 :   if (pid == PASS_SHOW) {</span></span>
+<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          44 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
 <span id="L548"><span class="lineNum">     548</span>              :     return;</span>
 <span id="L549"><span class="lineNum">     549</span>              :   }</span>
-<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         139 :   emitProcessFinishedSignal(pid, out, err);</span></span>
+<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         137 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L551"><span class="lineNum">     551</span>              : }</span>
 <span id="L552"><span class="lineNum">     552</span>              : </span>
-<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          62 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
+<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          59 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
 <span id="L554"><span class="lineNum">     554</span>              :                               const QString &amp;err) {</span>
 <span id="L555"><span class="lineNum">     555</span>              :   Q_UNUSED(out);</span>
 <span id="L556"><span class="lineNum">     556</span>              : </span>
-<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          62 :   if (pid == PASS_INSERT) {</span></span>
+<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          59 :   if (pid == PASS_INSERT) {</span></span>
 <span id="L558"><span class="lineNum">     558</span> <span class="tlaGNC">          18 :     const QString friendly = gpgErrorMessage(err);</span></span>
 <span id="L559"><span class="lineNum">     559</span>              :     const QString why =</span>
 <span id="L560"><span class="lineNum">     560</span> <span class="tlaGNC">          18 :         friendly.isEmpty() ? err : formatInsertError(friendly, err);</span></span>
@@ -647,10 +647,10 @@
 <span id="L574"><span class="lineNum">     574</span>              :     return;</span>
 <span id="L575"><span class="lineNum">     575</span>              :   }</span>
 <span id="L576"><span class="lineNum">     576</span>              : </span>
-<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          44 :   if (pid == GPG_GENKEYS) {</span></span>
+<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          41 :   if (pid == GPG_GENKEYS) {</span></span>
 <span id="L578"><span class="lineNum">     578</span> <span class="tlaGNC">           1 :     emit generateGPGKeysFailed(err);</span></span>
 <span id="L579"><span class="lineNum">     579</span>              :   }</span>
-<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          44 :   emit processErrorExit(exitCode, err);</span></span>
+<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          41 :   emit processErrorExit(exitCode, err);</span></span>
 <span id="L581"><span class="lineNum">     581</span>              : }</span>
 <span id="L582"><span class="lineNum">     582</span>              : </span>
 <span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">          44 : auto Pass::withoutStatusLines(const QString &amp;err) -&gt; QString {</span></span>
@@ -670,13 +670,13 @@
 <span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">          12 :   return humanErr.isEmpty() ? friendly : friendly + &quot;\n\n&quot; + humanErr;</span></span>
 <span id="L598"><span class="lineNum">     598</span>              : }</span>
 <span id="L599"><span class="lineNum">     599</span>              : </span>
-<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">         139 : void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &amp;out,</span></span>
+<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">         137 : void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &amp;out,</span></span>
 <span id="L601"><span class="lineNum">     601</span>              :                                      const QString &amp;err) {</span>
 <span id="L602"><span class="lineNum">     602</span>              :   // Only output that cannot contain a secret reaches the generic listeners</span>
 <span id="L603"><span class="lineNum">     603</span>              :   // (the output panel among them); Enums::processInfo is the one table.</span>
-<span id="L604"><span class="lineNum">     604</span> <span class="tlaGNC">         139 :   if (pid &gt;= 0 &amp;&amp; pid &lt; Enums::PROCESS_COUNT &amp;&amp;</span></span>
-<span id="L605"><span class="lineNum">     605</span> <span class="tlaGNC">         137 :       !Enums::processInfo(pid).secret) {</span></span>
-<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">          71 :     emit finishedAnyWithPid(out, err, pid);</span></span>
+<span id="L604"><span class="lineNum">     604</span> <span class="tlaGNC">         137 :   if (pid &gt;= 0 &amp;&amp; pid &lt; Enums::PROCESS_COUNT &amp;&amp;</span></span>
+<span id="L605"><span class="lineNum">     605</span> <span class="tlaGNC">         135 :       !Enums::processInfo(pid).secret) {</span></span>
+<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">          69 :     emit finishedAnyWithPid(out, err, pid);</span></span>
 <span id="L607"><span class="lineNum">     607</span>              :   }</span>
 <span id="L608"><span class="lineNum">     608</span>              : </span>
 <span id="L609"><span class="lineNum">     609</span>              :   // The kind-specific signal. PASS_SHOW is emitted by finished(), which</span>
@@ -693,46 +693,46 @@
 <span id="L620"><span class="lineNum">     620</span>              :       {PASS_MOVE, &amp;Pass::finishedMove},</span>
 <span id="L621"><span class="lineNum">     621</span>              :       {PASS_COPY, &amp;Pass::finishedCopy},</span>
 <span id="L622"><span class="lineNum">     622</span>              :       {GPG_GENKEYS, &amp;Pass::finishedGenerateGPGKeys},</span>
-<span id="L623"><span class="lineNum">     623</span> <span class="tlaGNC">         145 :   };</span></span>
-<span id="L624"><span class="lineNum">     624</span> <span class="tlaGNC">         139 :   if (const Signal signal = kSignals.value(pid, nullptr)) {</span></span>
-<span id="L625"><span class="lineNum">     625</span> <span class="tlaGNC">         135 :     (this-&gt;*signal)(out, err);</span></span>
+<span id="L623"><span class="lineNum">     623</span> <span class="tlaGNC">         143 :   };</span></span>
+<span id="L624"><span class="lineNum">     624</span> <span class="tlaGNC">         137 :   if (const Signal signal = kSignals.value(pid, nullptr)) {</span></span>
+<span id="L625"><span class="lineNum">     625</span> <span class="tlaGNC">         133 :     (this-&gt;*signal)(out, err);</span></span>
 <span id="L626"><span class="lineNum">     626</span>              :   }</span>
-<span id="L627"><span class="lineNum">     627</span> <span class="tlaGNC">         139 : }</span></span>
+<span id="L627"><span class="lineNum">     627</span> <span class="tlaGNC">         137 : }</span></span>
 <span id="L628"><span class="lineNum">     628</span>              : </span>
-<span id="L629"><span class="lineNum">     629</span> <span class="tlaGNC">        3412 : void Pass::setEnvVar(const QString &amp;name, const QString &amp;value) {</span></span>
-<span id="L630"><span class="lineNum">     630</span> <span class="tlaGNC">        3412 :   if (value.isEmpty())</span></span>
-<span id="L631"><span class="lineNum">     631</span> <span class="tlaGNC">        1133 :     env.remove(name);</span></span>
+<span id="L629"><span class="lineNum">     629</span> <span class="tlaGNC">        3421 : void Pass::setEnvVar(const QString &amp;name, const QString &amp;value) {</span></span>
+<span id="L630"><span class="lineNum">     630</span> <span class="tlaGNC">        3421 :   if (value.isEmpty())</span></span>
+<span id="L631"><span class="lineNum">     631</span> <span class="tlaGNC">        1136 :     env.remove(name);</span></span>
 <span id="L632"><span class="lineNum">     632</span>              :   else</span>
-<span id="L633"><span class="lineNum">     633</span> <span class="tlaGNC">        2279 :     env.insert(name, value);</span></span>
-<span id="L634"><span class="lineNum">     634</span> <span class="tlaGNC">        3412 : }</span></span>
+<span id="L633"><span class="lineNum">     633</span> <span class="tlaGNC">        2285 :     env.insert(name, value);</span></span>
+<span id="L634"><span class="lineNum">     634</span> <span class="tlaGNC">        3421 : }</span></span>
 <span id="L635"><span class="lineNum">     635</span>              : </span>
-<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">         378 : void Pass::updateEnv() {</span></span>
-<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">         756 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_SIGNING_KEY&quot;),</span></span>
-<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">         378 :             m_settings.passSigningKey);</span></span>
-<span id="L639"><span class="lineNum">     639</span> <span class="tlaGNC">         756 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_DIR&quot;), m_settings.passStore);</span></span>
+<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">         379 : void Pass::updateEnv() {</span></span>
+<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">         758 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_SIGNING_KEY&quot;),</span></span>
+<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">         379 :             m_settings.passSigningKey);</span></span>
+<span id="L639"><span class="lineNum">     639</span> <span class="tlaGNC">         758 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_DIR&quot;), m_settings.passStore);</span></span>
 <span id="L640"><span class="lineNum">     640</span>              :   // Every path QtPass hands git names one file or folder: an entry called</span>
 <span id="L641"><span class="lineNum">     641</span>              :   // &quot;a*.gpg&quot; must not make `git rm -f -- a*.gpg` remove every entry that</span>
 <span id="L642"><span class="lineNum">     642</span>              :   // matches. Also reaches the git that pass runs, which passes names the</span>
 <span id="L643"><span class="lineNum">     643</span>              :   // same way.</span>
-<span id="L644"><span class="lineNum">     644</span> <span class="tlaGNC">         756 :   setEnvVar(QStringLiteral(&quot;GIT_LITERAL_PATHSPECS&quot;), QStringLiteral(&quot;1&quot;));</span></span>
+<span id="L644"><span class="lineNum">     644</span> <span class="tlaGNC">         758 :   setEnvVar(QStringLiteral(&quot;GIT_LITERAL_PATHSPECS&quot;), QStringLiteral(&quot;1&quot;));</span></span>
 <span id="L645"><span class="lineNum">     645</span>              : </span>
-<span id="L646"><span class="lineNum">     646</span> <span class="tlaGNC">         378 :   const PasswordConfiguration &amp;passConfig = m_settings.passwordConfiguration;</span></span>
-<span id="L647"><span class="lineNum">     647</span> <span class="tlaGNC">         756 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_GENERATED_LENGTH&quot;),</span></span>
-<span id="L648"><span class="lineNum">     648</span> <span class="tlaGNC">         378 :             QString::number(passConfig.length));</span></span>
+<span id="L646"><span class="lineNum">     646</span> <span class="tlaGNC">         379 :   const PasswordConfiguration &amp;passConfig = m_settings.passwordConfiguration;</span></span>
+<span id="L647"><span class="lineNum">     647</span> <span class="tlaGNC">         758 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_GENERATED_LENGTH&quot;),</span></span>
+<span id="L648"><span class="lineNum">     648</span> <span class="tlaGNC">         379 :             QString::number(passConfig.length));</span></span>
 <span id="L649"><span class="lineNum">     649</span>              : </span>
-<span id="L650"><span class="lineNum">     650</span> <span class="tlaGNC">         756 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_CHARACTER_SET&quot;),</span></span>
-<span id="L651"><span class="lineNum">     651</span> <span class="tlaGNC">         378 :             effectiveCharset(passConfig));</span></span>
+<span id="L650"><span class="lineNum">     650</span> <span class="tlaGNC">         758 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_CHARACTER_SET&quot;),</span></span>
+<span id="L651"><span class="lineNum">     651</span> <span class="tlaGNC">         379 :             effectiveCharset(passConfig));</span></span>
 <span id="L652"><span class="lineNum">     652</span>              : </span>
 <span id="L653"><span class="lineNum">     653</span>              :   // pass hands PASSWORD_STORE_GPG_OPTS to every gpg it runs: the user's own</span>
 <span id="L654"><span class="lineNum">     654</span>              :   // options (split as pass's shell splits them: spaces, tabs, newlines),</span>
 <span id="L655"><span class="lineNum">     655</span>              :   // then the output limit ImitatePass passes directly.</span>
-<span id="L656"><span class="lineNum">     656</span> <span class="tlaGNC">         378 :   QStringList gpgOpts = QProcessEnvironment::systemEnvironment()</span></span>
-<span id="L657"><span class="lineNum">     657</span> <span class="tlaGNC">         756 :                             .value(QStringLiteral(&quot;PASSWORD_STORE_GPG_OPTS&quot;))</span></span>
-<span id="L658"><span class="lineNum">     658</span> <span class="tlaGNC">         756 :                             .split(QRegularExpression(QStringLiteral(&quot;\\s+&quot;)),</span></span>
-<span id="L659"><span class="lineNum">     659</span> <span class="tlaGNC">         756 :                                    Qt::SkipEmptyParts);</span></span>
-<span id="L660"><span class="lineNum">     660</span> <span class="tlaGNC">         756 :   gpgOpts &lt;&lt; maxOutputArgs();</span></span>
-<span id="L661"><span class="lineNum">     661</span> <span class="tlaGNC">         756 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_GPG_OPTS&quot;),</span></span>
-<span id="L662"><span class="lineNum">     662</span> <span class="tlaGNC">         378 :             gpgOpts.join(QLatin1Char(' ')));</span></span>
+<span id="L656"><span class="lineNum">     656</span> <span class="tlaGNC">         379 :   QStringList gpgOpts = QProcessEnvironment::systemEnvironment()</span></span>
+<span id="L657"><span class="lineNum">     657</span> <span class="tlaGNC">         758 :                             .value(QStringLiteral(&quot;PASSWORD_STORE_GPG_OPTS&quot;))</span></span>
+<span id="L658"><span class="lineNum">     658</span> <span class="tlaGNC">         758 :                             .split(QRegularExpression(QStringLiteral(&quot;\\s+&quot;)),</span></span>
+<span id="L659"><span class="lineNum">     659</span> <span class="tlaGNC">         758 :                                    Qt::SkipEmptyParts);</span></span>
+<span id="L660"><span class="lineNum">     660</span> <span class="tlaGNC">         758 :   gpgOpts &lt;&lt; maxOutputArgs();</span></span>
+<span id="L661"><span class="lineNum">     661</span> <span class="tlaGNC">         758 :   setEnvVar(QStringLiteral(&quot;PASSWORD_STORE_GPG_OPTS&quot;),</span></span>
+<span id="L662"><span class="lineNum">     662</span> <span class="tlaGNC">         379 :             gpgOpts.join(QLatin1Char(' ')));</span></span>
 <span id="L663"><span class="lineNum">     663</span>              : </span>
 <span id="L664"><span class="lineNum">     664</span>              :   // As pass does: git never looks for a repository above the store's own</span>
 <span id="L665"><span class="lineNum">     665</span>              :   // parent. A store that is not a repository itself but lies inside one (a</span>
@@ -747,20 +747,20 @@
 <span id="L674"><span class="lineNum">     674</span>              :   // list separator) is backed by GIT_DIR and GIT_WORK_TREE naming the</span>
 <span id="L675"><span class="lineNum">     675</span>              :   // store's own repository (Util::gitStoreVariables()); pass unsets those</span>
 <span id="L676"><span class="lineNum">     676</span>              :   // for itself and keeps its own ceiling.</span>
-<span id="L677"><span class="lineNum">     677</span> <span class="tlaGNC">         756 :   setEnvVar(QStringLiteral(&quot;GIT_DIR&quot;), QString());</span></span>
-<span id="L678"><span class="lineNum">     678</span> <span class="tlaGNC">         756 :   setEnvVar(QStringLiteral(&quot;GIT_WORK_TREE&quot;), QString());</span></span>
-<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">         378 :   if (m_settings.gitUseParentRepository || m_settings.passStore.isEmpty()) {</span></span>
+<span id="L677"><span class="lineNum">     677</span> <span class="tlaGNC">         758 :   setEnvVar(QStringLiteral(&quot;GIT_DIR&quot;), QString());</span></span>
+<span id="L678"><span class="lineNum">     678</span> <span class="tlaGNC">         758 :   setEnvVar(QStringLiteral(&quot;GIT_WORK_TREE&quot;), QString());</span></span>
+<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">         379 :   if (m_settings.gitUseParentRepository || m_settings.passStore.isEmpty()) {</span></span>
 <span id="L680"><span class="lineNum">     680</span> <span class="tlaGNC">          34 :     setEnvVar(QStringLiteral(&quot;GIT_CEILING_DIRECTORIES&quot;),</span></span>
 <span id="L681"><span class="lineNum">     681</span> <span class="tlaGNC">          34 :               qEnvironmentVariable(&quot;GIT_CEILING_DIRECTORIES&quot;));</span></span>
 <span id="L682"><span class="lineNum">     682</span>              :   } else {</span>
 <span id="L683"><span class="lineNum">     683</span>              :     for (const auto &amp;[name, value] : Util::gitStoreVariables(</span>
-<span id="L684"><span class="lineNum">     684</span> <span class="tlaGNC">        1087 :              m_settings.passStore, m_settings.gitExecutable)) {</span></span>
-<span id="L685"><span class="lineNum">     685</span> <span class="tlaGNC">         365 :       setEnvVar(name, value);</span></span>
+<span id="L684"><span class="lineNum">     684</span> <span class="tlaGNC">        1090 :              m_settings.passStore, m_settings.gitExecutable)) {</span></span>
+<span id="L685"><span class="lineNum">     685</span> <span class="tlaGNC">         366 :       setEnvVar(name, value);</span></span>
 <span id="L686"><span class="lineNum">     686</span>              :     }</span>
 <span id="L687"><span class="lineNum">     687</span>              :   }</span>
 <span id="L688"><span class="lineNum">     688</span>              : </span>
-<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">         378 :   exec.setEnvironment(env);</span></span>
-<span id="L690"><span class="lineNum">     690</span> <span class="tlaGNC">         378 : }</span></span>
+<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">         379 :   exec.setEnvironment(env);</span></span>
+<span id="L690"><span class="lineNum">     690</span> <span class="tlaGNC">         379 : }</span></span>
 <span id="L691"><span class="lineNum">     691</span>              : </span>
 <span id="L692"><span class="lineNum">     692</span> <span class="tlaGNC">        1037 : auto Pass::withCurrentGitPin(QProcessEnvironment base) const</span></span>
 <span id="L693"><span class="lineNum">     693</span>              :     -&gt; QProcessEnvironment {</span>
@@ -776,9 +776,9 @@
 <span id="L703"><span class="lineNum">     703</span> <span class="tlaGNC">        1037 :   return base;</span></span>
 <span id="L704"><span class="lineNum">     704</span>              : }</span>
 <span id="L705"><span class="lineNum">     705</span>              : </span>
-<span id="L706"><span class="lineNum">     706</span> <span class="tlaGNC">        1031 : auto Pass::maxOutputArgs() -&gt; QStringList {</span></span>
-<span id="L707"><span class="lineNum">     707</span> <span class="tlaGNC">        3093 :   return {QStringLiteral(&quot;--max-output&quot;), QString::number(kMaxPlaintextBytes)};</span></span>
-<span id="L708"><span class="lineNum">     708</span> <span class="tlaGNC">        1031 : }</span></span>
+<span id="L706"><span class="lineNum">     706</span> <span class="tlaGNC">        1032 : auto Pass::maxOutputArgs() -&gt; QStringList {</span></span>
+<span id="L707"><span class="lineNum">     707</span> <span class="tlaGNC">        3096 :   return {QStringLiteral(&quot;--max-output&quot;), QString::number(kMaxPlaintextBytes)};</span></span>
+<span id="L708"><span class="lineNum">     708</span> <span class="tlaGNC">        1032 : }</span></span>
 <span id="L709"><span class="lineNum">     709</span>              : </span>
 <span id="L710"><span class="lineNum">     710</span>              : namespace {</span>
 <span id="L711"><span class="lineNum">     711</span>              : /// File names compare the way the platform's file system compares them:</span>
@@ -790,10 +790,10 @@
 <span id="L717"><span class="lineNum">     717</span>              : #endif</span>
 <span id="L718"><span class="lineNum">     718</span>              : </span>
 <span id="L719"><span class="lineNum">     719</span>              : /// Whether @p path is @p dir or lies under it.</span>
-<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1211 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
+<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1213 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
 <span id="L721"><span class="lineNum">     721</span>              :                  const QString &amp;dirPrefix) -&gt; bool {</span>
-<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        2097 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
-<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">         886 :          path.startsWith(dirPrefix, kPathCase);</span></span>
+<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        2101 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
+<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">         888 :          path.startsWith(dirPrefix, kPathCase);</span></span>
 <span id="L724"><span class="lineNum">     724</span>              : }</span>
 <span id="L725"><span class="lineNum">     725</span>              : </span>
 <span id="L726"><span class="lineNum">     726</span>              : /// Where the lookup of a .gpg-id starts and the store that bounds it.</span>
@@ -879,8 +879,8 @@
 <span id="L806"><span class="lineNum">     806</span> <span class="tlaGNC">          57 :   const QString store = scopePath(QString());</span></span>
 <span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">          57 :   const QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L808"><span class="lineNum">     808</span> <span class="tlaGNC">          57 :   return std::any_of(scopes.cbegin(), scopes.cend(),</span></span>
-<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">         133 :                      [&amp;store](const QString &amp;s) {</span></span>
-<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">         266 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
+<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">         135 :                      [&amp;store](const QString &amp;s) {</span></span>
+<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">         270 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
 <span id="L811"><span class="lineNum">     811</span> <span class="tlaGNC">          57 :                      });</span></span>
 <span id="L812"><span class="lineNum">     812</span>              : }</span>
 <span id="L813"><span class="lineNum">     813</span>              : </span>

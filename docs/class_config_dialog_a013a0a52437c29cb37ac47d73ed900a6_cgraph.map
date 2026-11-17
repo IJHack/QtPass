@@ -1,62 +1,74 @@
 <map id="ConfigDialog::on_deleteButton_clicked" name="ConfigDialog::on_deleteButton_clicked">
-<area shape="rect" id="Node000001" title="Remove the selected profile row (a message when none is); the list&#39;s currentRowChanged re&#45;points the ..." alt="" coords="5,132,225,176"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ..." alt="" coords="273,140,438,168"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,151,259,153,255,155,226,156"/>
-<area shape="rect" id="Node000003" href="$struct_config_dialog_1_1_profile_problems.html#a2a577212daad2548b5888b385b5ca8d0" title="Whether all three fields are fine." alt="" coords="743,57,958,102"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,137,430,117,485,99,547,88,610,81,730,76,725,78,610,86,548,93,487,104,432,122,386,142"/>
-<area shape="rect" id="Node000004" href="$class_config_dialog.html#a7357606476ffeb9a76748429901e72cc" title="What is wrong with entry&#39;s name, store path and signing keys." alt="" coords="496,8,684,36"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="371,137,420,98,485,55,526,40,521,43,487,60,423,102,374,141"/>
-<area shape="rect" id="Node000006" href="$class_config_dialog.html#a1bffc0693aa2cb44f849aedcde4081be" title="The other profiles, for other stores, whose signing keys share a fingerprint with row row&#39;s." alt="" coords="486,113,694,141"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="438,142,473,140,468,142,439,147"/>
-<area shape="rect" id="Node000007" href="$class_config_dialog.html#a4fa75d1922ff11a4da0a89e5b436c267" title="Mark row row of the profile list, and the form fields when it is the row being edited,..." alt="" coords="486,165,694,193"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="438,160,474,166,469,167,439,165"/>
-<area shape="rect" id="Node000009" href="$class_config_dialog.html#a8a0804534596a8293402575b60bf1fcf" title="Resolve every profile&#39;s store and fingerprints once." alt="" coords="490,232,690,260"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="393,166,541,225,536,227,393,171"/>
-<area shape="rect" id="Node000028" href="$class_config_dialog.html#a22ec9ee25af48a65870b3ee28d594a80" title=" " alt="" coords="497,305,683,350"/>
-<area shape="poly" id="edge30_Node000002_Node000028" title=" " alt="" coords="371,165,421,214,488,269,531,297,525,297,484,273,417,218,370,171"/>
-<area shape="rect" id="Node000005" href="$class_config_dialog.html#a10a27a2854432e9294934b0ebcb76146" title="Whether a signing&#45;key setting holds only full key fingerprints (40 or 64 hexadecimal characters each,..." alt="" coords="742,5,959,33"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="684,18,729,20,724,21,686,23"/>
-<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="662,162,693,150,707,141,717,131,741,112,752,109,756,107,744,116,720,135,710,145,696,155,664,167"/>
-<area shape="rect" id="Node000008" href="$struct_config_dialog_1_1_profile_problems.html#a6125c12355bc1a1033f9addc61f0ba68" title="The first complaint, for a tooltip on the profile&#39;s row." alt="" coords="743,126,958,171"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="694,164,730,162,725,164,695,169"/>
-<area shape="rect" id="Node000010" href="$class_profile_init.html#aa5826d5206206e64edd2fce29d06b2af" title="The environment QtPass runs gpg in outside the active store&#39;s backend: the system&#39;s,..." alt="" coords="751,247,950,274"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="690,249,739,254,733,254,691,254"/>
-<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="773,299,928,326"/>
-<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="645,258,743,283,779,294,774,294,742,288,645,263"/>
-<area shape="rect" id="Node000017" href="$class_config_dialog.html#a66b11d5043653178859712ebede770e1" title="One profile&#39;s signing keys as signers: each key as written, plus the primary fingerprint gpg gives fo..." alt="" coords="759,195,942,222"/>
-<area shape="poly" id="edge17_Node000009_Node000017" title=" " alt="" coords="690,229,746,223,741,224,691,234"/>
-<area shape="rect" id="Node000012" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1007,299,1209,326"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="928,310,993,312,988,313,928,315"/>
-<area shape="rect" id="Node000014" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="1040,350,1176,395"/>
-<area shape="poly" id="edge14_Node000011_Node000014" title=" " alt="" coords="913,324,1028,353,1022,353,913,330"/>
-<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1257,299,1480,326"/>
-<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="1209,310,1244,312,1239,313,1210,315"/>
-<area shape="rect" id="Node000015" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="1272,420,1466,464"/>
-<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="1176,388,1270,415,1264,415,1176,393"/>
-<area shape="rect" id="Node000016" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="1266,350,1471,395"/>
-<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="1176,370,1253,372,1248,373,1176,375"/>
-<area shape="rect" id="Node000018" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1012,119,1204,146"/>
-<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="922,191,958,181,982,169,1006,157,1028,152,1033,150,1008,162,984,174,960,186,924,197"/>
-<area shape="rect" id="Node000025" href="$gpgkeystate_8cpp.html#a1d543e1b773901266ef423cfb0204b68" title="The primary key fingerprint of the key that key names." alt="" coords="1029,195,1186,222"/>
-<area shape="poly" id="edge25_Node000017_Node000025" title=" " alt="" coords="942,206,1016,208,1011,209,943,211"/>
-<area shape="rect" id="Node000019" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1288,119,1450,146"/>
-<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="1204,130,1275,132,1269,133,1205,135"/>
-<area shape="rect" id="Node000020" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1528,119,1719,146"/>
-<area shape="poly" id="edge20_Node000019_Node000020" title=" " alt="" coords="1450,130,1515,132,1510,133,1451,135"/>
-<area shape="rect" id="Node000021" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1767,119,1932,146"/>
-<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="1719,130,1754,132,1748,133,1719,135"/>
-<area shape="rect" id="Node000022" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1980,67,2198,94"/>
-<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="1916,115,2004,99,2009,98,1917,121"/>
-<area shape="rect" id="Node000023" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1983,119,2195,146"/>
-<area shape="poly" id="edge23_Node000021_Node000023" title=" " alt="" coords="1932,130,1970,132,1965,133,1933,135"/>
-<area shape="rect" id="Node000024" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1987,171,2191,198"/>
-<area shape="poly" id="edge24_Node000021_Node000024" title=" " alt="" coords="1917,144,2009,167,2004,167,1917,150"/>
-<area shape="poly" id="edge29_Node000025_Node000025" title=" " alt="" coords="1064,193,1057,186,1063,176,1080,170,1108,168,1138,170,1156,180,1150,179,1137,176,1108,173,1081,175,1066,180,1062,185,1069,195"/>
-<area shape="rect" id="Node000026" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a record of a gpg colon listing by its first field." alt="" coords="1311,195,1426,222"/>
-<area shape="poly" id="edge26_Node000025_Node000026" title=" " alt="" coords="1187,206,1298,208,1293,209,1187,211"/>
-<area shape="rect" id="Node000027" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="1292,247,1446,274"/>
-<area shape="poly" id="edge28_Node000025_Node000027" title=" " alt="" coords="1181,220,1283,243,1278,243,1181,226"/>
-<area shape="poly" id="edge27_Node000026_Node000026" title=" " alt="" coords="1325,193,1318,186,1324,176,1341,170,1369,168,1398,170,1416,180,1411,179,1397,176,1369,173,1342,175,1327,180,1324,185,1330,195"/>
-<area shape="rect" id="Node000029" href="$class_util.html#a158b1927cee3cffacaec8d583fbf72ad" title="The repository above store that pass itself would commit to, if any." alt="" coords="747,351,954,378"/>
-<area shape="poly" id="edge31_Node000028_Node000029" title=" " alt="" coords="684,338,737,348,732,348,684,343"/>
+<area shape="rect" id="Node000001" title="Remove the selected profile row (a message when none is); the list&#39;s currentRowChanged re&#45;points the ..." alt="" coords="5,137,225,182"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd" title="Show row row&#39;s profile in the form (or clear and disable it for &#45;1), with m_loadingForm set so the fi..." alt="" coords="273,145,487,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,157,259,158,254,161,226,162"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a9838b375aed57fa4a92e7670fac90f27" title="The entry the form is editing." alt="" coords="789,64,982,92"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,143,459,109,496,92,534,79,595,68,658,63,777,66,772,67,658,68,596,73,536,84,498,97,461,113,403,147"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#adf90869f278396a2efc8a03cdc6d450d" title="Refresh the status line under the form: the profile&#39;s name and cleaned path, marked &quot;New&quot; while the f..." alt="" coords="535,94,733,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="465,142,522,134,517,137,467,147"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" title="Enable or disable git integration." alt="" coords="557,187,711,214"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="469,171,544,185,539,186,470,176"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ..." alt="" coords="552,345,717,373"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="400,171,606,335,601,336,398,176"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="733,99,778,94,773,96,735,104"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="591,186,584,178,590,168,607,162,634,160,664,162,681,171,676,172,662,168,634,165,608,167,593,172,590,177,596,187"/>
+<area shape="rect" id="Node000006" href="$class_config_dialog.html#a96ca92ab55a5269a7d8615a137a877ac" title="Enable the Git&#45;dependent boxes (add .gpg&#45;id, auto pull/push, and in native mode the parent&#45;repository..." alt="" coords="786,157,985,202"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="711,191,773,188,768,190,712,197"/>
+<area shape="rect" id="Node000008" href="$struct_config_dialog_1_1_profile_problems.html#a2a577212daad2548b5888b385b5ca8d0" title="Whether all three fields are fine." alt="" coords="1039,409,1253,454"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="715,371,782,382,1026,417,1020,417,781,387,715,376"/>
+<area shape="rect" id="Node000009" href="$class_config_dialog.html#a7357606476ffeb9a76748429901e72cc" title="What is wrong with entry&#39;s name, store path and signing keys." alt="" coords="791,345,980,373"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="717,357,778,359,773,360,718,362"/>
+<area shape="rect" id="Node000011" href="$class_config_dialog.html#a1bffc0693aa2cb44f849aedcde4081be" title="The other profiles, for other stores, whose signing keys share a fingerprint with row row&#39;s." alt="" coords="781,447,990,474"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="663,371,718,398,782,426,821,442,816,441,780,431,716,403,663,376"/>
+<area shape="rect" id="Node000012" href="$class_config_dialog.html#a4fa75d1922ff11a4da0a89e5b436c267" title="Mark row row of the profile list, and the form fields when it is the row being edited,..." alt="" coords="782,499,989,526"/>
+<area shape="poly" id="edge13_Node000007_Node000012" title=" " alt="" coords="649,371,704,426,741,457,783,483,799,493,794,492,780,488,738,461,700,430,647,376"/>
+<area shape="rect" id="Node000014" href="$class_config_dialog.html#a8a0804534596a8293402575b60bf1fcf" title="Resolve every profile&#39;s store and fingerprints once." alt="" coords="785,225,986,253"/>
+<area shape="poly" id="edge16_Node000007_Node000014" title=" " alt="" coords="652,342,707,303,743,281,780,262,795,259,801,257,782,267,745,286,710,307,654,347"/>
+<area shape="rect" id="Node000033" href="$class_config_dialog.html#a22ec9ee25af48a65870b3ee28d594a80" title=" " alt="" coords="792,277,979,322"/>
+<area shape="poly" id="edge37_Node000007_Node000033" title=" " alt="" coords="694,342,780,324,775,326,696,347"/>
+<area shape="rect" id="Node000010" href="$class_config_dialog.html#a10a27a2854432e9294934b0ebcb76146" title="Whether a signing&#45;key setting holds only full key fingerprints (40 or 64 hexadecimal characters each,..." alt="" coords="1038,345,1254,373"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="980,357,1025,359,1020,359,980,362"/>
+<area shape="poly" id="edge15_Node000012_Node000008" title=" " alt="" coords="945,496,989,483,1066,460,1072,459,990,488,946,501"/>
+<area shape="rect" id="Node000013" href="$struct_config_dialog_1_1_profile_problems.html#a6125c12355bc1a1033f9addc61f0ba68" title="The first complaint, for a tooltip on the profile&#39;s row." alt="" coords="1039,490,1253,535"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="990,510,1026,512,1021,513,990,515"/>
+<area shape="rect" id="Node000015" href="$class_profile_init.html#aa5826d5206206e64edd2fce29d06b2af" title="The environment QtPass runs gpg in outside the active store&#39;s backend: the system&#39;s,..." alt="" coords="1047,185,1245,213"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="980,222,1039,215,1034,217,981,227"/>
+<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="1069,237,1223,265"/>
+<area shape="poly" id="edge18_Node000014_Node000016" title=" " alt="" coords="986,241,1056,247,1051,247,986,246"/>
+<area shape="rect" id="Node000022" href="$class_config_dialog.html#a66b11d5043653178859712ebede770e1" title="One profile&#39;s signing keys as signers: each key as written, plus the primary fingerprint gpg gives fo..." alt="" coords="1054,133,1238,161"/>
+<area shape="poly" id="edge24_Node000014_Node000022" title=" " alt="" coords="961,222,988,211,1002,202,1012,192,1021,182,1036,171,1052,167,1057,166,1039,176,1025,186,1016,196,1006,206,991,216,963,227"/>
+<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1302,237,1504,265"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="1223,249,1289,251,1283,251,1224,254"/>
+<area shape="rect" id="Node000019" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="1336,289,1471,334"/>
+<area shape="poly" id="edge21_Node000016_Node000019" title=" " alt="" coords="1208,263,1323,292,1318,292,1208,268"/>
+<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1552,237,1776,265"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="1504,249,1539,251,1534,251,1505,254"/>
+<area shape="rect" id="Node000020" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="1567,358,1761,403"/>
+<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="1472,326,1565,354,1560,353,1471,332"/>
+<area shape="rect" id="Node000021" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="1561,289,1767,334"/>
+<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="1471,309,1548,311,1543,311,1472,314"/>
+<area shape="rect" id="Node000023" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1307,57,1499,85"/>
+<area shape="poly" id="edge25_Node000022_Node000023" title=" " alt="" coords="1190,130,1301,95,1334,89,1329,90,1303,100,1192,135"/>
+<area shape="rect" id="Node000030" href="$gpgkeystate_8cpp.html#a1d543e1b773901266ef423cfb0204b68" title="The primary key fingerprint of the key that key names." alt="" coords="1324,133,1482,161"/>
+<area shape="poly" id="edge32_Node000022_Node000030" title=" " alt="" coords="1238,145,1312,147,1306,148,1238,150"/>
+<area shape="rect" id="Node000024" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1583,57,1745,85"/>
+<area shape="poly" id="edge26_Node000023_Node000024" title=" " alt="" coords="1500,69,1570,71,1565,72,1500,74"/>
+<area shape="rect" id="Node000025" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1824,57,2014,85"/>
+<area shape="poly" id="edge27_Node000024_Node000025" title=" " alt="" coords="1745,69,1811,71,1806,72,1746,74"/>
+<area shape="rect" id="Node000026" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="2062,57,2227,85"/>
+<area shape="poly" id="edge28_Node000025_Node000026" title=" " alt="" coords="2014,69,2049,71,2044,71,2014,74"/>
+<area shape="rect" id="Node000027" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="2275,5,2494,33"/>
+<area shape="poly" id="edge29_Node000026_Node000027" title=" " alt="" coords="2211,54,2299,38,2305,36,2213,59"/>
+<area shape="rect" id="Node000028" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="2278,57,2491,85"/>
+<area shape="poly" id="edge30_Node000026_Node000028" title=" " alt="" coords="2227,69,2266,71,2260,71,2228,74"/>
+<area shape="rect" id="Node000029" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="2282,109,2487,137"/>
+<area shape="poly" id="edge31_Node000026_Node000029" title=" " alt="" coords="2212,83,2305,105,2299,105,2212,88"/>
+<area shape="poly" id="edge36_Node000030_Node000030" title=" " alt="" coords="1359,132,1352,124,1358,115,1375,109,1403,107,1433,109,1451,118,1446,118,1432,114,1403,112,1376,114,1361,119,1358,124,1364,134"/>
+<area shape="rect" id="Node000031" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a record of a gpg colon listing by its first field." alt="" coords="1606,133,1722,161"/>
+<area shape="poly" id="edge33_Node000030_Node000031" title=" " alt="" coords="1482,145,1594,147,1588,148,1483,150"/>
+<area shape="rect" id="Node000032" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="1587,185,1741,213"/>
+<area shape="poly" id="edge35_Node000030_Node000032" title=" " alt="" coords="1476,159,1578,182,1573,182,1476,164"/>
+<area shape="poly" id="edge34_Node000031_Node000031" title=" " alt="" coords="1620,132,1614,124,1619,115,1636,109,1664,107,1694,109,1712,118,1706,118,1693,114,1664,112,1637,114,1623,119,1619,124,1625,134"/>
+<area shape="rect" id="Node000034" href="$class_util.html#a158b1927cee3cffacaec8d583fbf72ad" title="The repository above store that pass itself would commit to, if any." alt="" coords="1043,289,1249,317"/>
+<area shape="poly" id="edge38_Node000033_Node000034" title=" " alt="" coords="979,298,1030,301,1024,302,979,303"/>
 </map>

@@ -24,10 +24,10 @@
 <area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="866,203,813,177,750,151,715,140,714,135,752,146,815,172,871,203"/>
 <area shape="poly" id="edge12_Node000009_Node000007" title=" " alt="" coords="1071,141,1016,151,869,167,737,179,736,173,869,162,1015,146,1076,139"/>
 <area shape="rect" id="Node000010" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="805,109,1010,137"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1045,124,1011,126,1010,121,1050,122"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1045,124,1011,126,1010,121,1050,123"/>
 <area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="787,124,731,126,730,121,792,122"/>
 <area shape="rect" id="Node000012" href="$class_key_wizard_page.html#a42f52524e4dae186f78a6ef00b2546b4" title="List the secret keys of the chosen gpg into the wizard and the widget, ticking every usable key and g..." alt="" coords="1086,57,1256,85"/>
-<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="1309,86,1258,83,1257,77,1314,85"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="1309,86,1257,83,1257,77,1314,85"/>
 <area shape="rect" id="Node000013" href="$class_key_wizard_page.html#a7d7d221d80c65382462761e221b73225" title="Run KeygenDialog on a private ImitatePass built from the wizard&#39;s settings, so the chosen gpg is used..." alt="" coords="814,57,1001,85"/>
 <area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="1068,72,1002,74,1001,69,1073,70"/>
 <area shape="rect" id="Node000016" href="$class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd" title="List the secret keys for the gpg chosen on the previous page." alt="" coords="799,5,1016,33"/>
@@ -36,39 +36,39 @@
 <area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="796,72,753,74,751,69,801,70"/>
 <area shape="rect" id="Node000015" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="271,49,452,94"/>
 <area shape="poly" id="edge18_Node000014_Node000015" title=" " alt="" coords="504,72,453,74,451,69,509,70"/>
-<area shape="poly" id="edge21_Node000017_Node000017" title=" " alt="" coords="1686,228,1676,225,1655,223,1636,225,1626,229,1623,235,1628,244,1623,242,1618,235,1622,226,1635,219,1656,217,1678,220,1691,229"/>
+<area shape="poly" id="edge21_Node000017_Node000017" title=" " alt="" coords="1686,228,1676,225,1655,223,1636,225,1626,229,1623,235,1628,245,1623,242,1618,235,1622,226,1635,219,1656,217,1678,220,1691,229"/>
 <area shape="rect" id="Node000018" href="$class_config_dialog.html#a66b11d5043653178859712ebede770e1" title="One profile&#39;s signing keys as signers: each key as written, plus the primary fingerprint gpg gives fo..." alt="" coords="1334,257,1518,285"/>
 <area shape="poly" id="edge22_Node000017_Node000018" title=" " alt="" coords="1559,264,1519,268,1518,263,1564,263"/>
-<area shape="rect" id="Node000019" href="$class_config_dialog.html#a8a0804534596a8293402575b60bf1fcf" title="Resolve every profile&#39;s store and fingerprints once." alt="" coords="1071,332,1272,360"/>
-<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="1365,289,1222,334,1221,329,1359,290"/>
-<area shape="rect" id="Node000020" href="$class_config_dialog.html#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ..." alt="" coords="825,400,990,428"/>
-<area shape="poly" id="edge24_Node000019_Node000020" title=" " alt="" coords="1097,365,965,402,963,397,1103,363"/>
-<area shape="rect" id="Node000021" href="$class_config_dialog.html#ad6420609a0f70cbc8a065a6fbc21dc94" title="Forget the signing keys gpg did not know while the dialog is in the background, and check them again ..." alt="" coords="538,299,735,326"/>
-<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="861,393,750,347,695,330,695,324,752,342,867,393"/>
-<area shape="rect" id="Node000022" href="$class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd" title="Show row row&#39;s profile in the form (or clear and disable it for &#45;1), with m_loadingForm set so the fi..." alt="" coords="530,451,744,478"/>
-<area shape="poly" id="edge26_Node000020_Node000022" title=" " alt="" coords="812,432,715,453,714,447,818,430"/>
-<area shape="rect" id="Node000025" href="$class_config_dialog.html#a68f58b41ba03c59341759473d95c839e" title="Fill the profile list and m_entries from profiles, dropping the empty&#45;named leftover older versions w..." alt="" coords="271,501,452,529"/>
-<area shape="poly" id="edge41_Node000020_Node000025" title=" " alt="" coords="874,435,817,468,752,492,674,508,594,518,452,522,452,516,594,512,673,503,751,487,815,463,869,437"/>
-<area shape="rect" id="Node000026" href="$class_config_dialog.html#aecb3ede31edbc31bf9e295289f3cef15" title="Append a &quot;New profile&quot; row pointing at the global store path, select it and put the cursor in the nam..." alt="" coords="536,622,738,667"/>
-<area shape="poly" id="edge32_Node000020_Node000026" title=" " alt="" coords="894,440,871,481,839,526,800,572,753,612,731,624,729,619,750,608,796,569,835,523,867,478,890,443"/>
-<area shape="rect" id="Node000027" href="$class_config_dialog.html#a013a0a52437c29cb37ac47d73ed900a6" title="Remove the selected profile row (a message when none is); the list&#39;s currentRowChanged re&#45;points the ..." alt="" coords="527,230,746,275"/>
-<area shape="poly" id="edge33_Node000020_Node000027" title=" " alt="" coords="879,389,823,340,788,313,750,290,725,278,725,273,753,285,791,308,827,336,885,389"/>
-<area shape="rect" id="Node000028" href="$class_config_dialog.html#ae85c1736edfdde38aee8350ebae8201f" title="The name field was typed in: store it in the entry and the list item, then validate (duplicates,..." alt="" coords="257,381,466,426"/>
-<area shape="poly" id="edge34_Node000020_Node000028" title=" " alt="" coords="807,413,466,408,465,403,811,410"/>
-<area shape="rect" id="Node000029" href="$class_config_dialog.html#a7e412007641751f3b162bd5b6a2b80d9" title="The path field was typed in: store it in the entry, validate and refresh the status line." alt="" coords="538,553,735,598"/>
-<area shape="poly" id="edge36_Node000020_Node000029" title=" " alt="" coords="882,437,824,488,753,536,712,555,711,550,750,532,821,484,877,440"/>
-<area shape="rect" id="Node000031" href="$class_config_dialog.html#ab31637f94fe25e2179ba916fc50ab9eb" title="The signing&#45;key field was typed in: store it in the entry and validate (fingerprints only,..." alt="" coords="253,312,470,356"/>
-<area shape="poly" id="edge39_Node000020_Node000031" title=" " alt="" coords="806,399,751,392,470,352,470,346,752,387,812,398"/>
-<area shape="rect" id="Node000023" href="$class_config_dialog.html#a88d327d76d34dd8cf2c592d8add6ccd9" title="The profile list&#39;s current row changed: show that profile." alt="" coords="249,449,474,477"/>
-<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="511,464,475,466,474,461,516,463"/>
-<area shape="poly" id="edge30_Node000022_Node000025" title=" " alt="" coords="540,483,441,503,440,498,545,481"/>
-<area shape="rect" id="Node000024" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,449,201,477"/>
-<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="231,464,202,466,200,461,235,462"/>
-<area shape="poly" id="edge29_Node000024_Node000024" title=" " alt="" coords="146,435,132,430,103,428,76,430,61,435,57,440,64,448,59,449,52,440,58,431,75,425,103,423,133,425,151,433"/>
-<area shape="poly" id="edge31_Node000025_Node000024" title=" " alt="" coords="272,499,176,480,175,475,276,496"/>
-<area shape="poly" id="edge35_Node000028_Node000024" title=" " alt="" coords="246,431,167,451,165,446,250,428"/>
-<area shape="poly" id="edge37_Node000029_Node000024" title=" " alt="" coords="533,601,474,612,359,631,309,630,280,624,248,612,201,584,161,547,131,509,113,480,113,475,135,506,165,543,204,580,250,607,282,619,309,625,358,626,474,607,528,601"/>
-<area shape="rect" id="Node000030" href="$class_config_dialog.html#a59af9a31c3b09e4aa14f0fff5311ef57" title="Pick the selected profile&#39;s store folder and store it in its entry." alt="" coords="273,553,450,598"/>
-<area shape="poly" id="edge38_Node000029_Node000030" title=" " alt="" coords="520,575,450,578,450,573,525,575"/>
-<area shape="poly" id="edge40_Node000031_Node000024" title=" " alt="" coords="261,364,250,371,179,412,124,451,121,447,176,407,247,366,265,360"/>
+<area shape="rect" id="Node000019" href="$class_config_dialog.html#a8a0804534596a8293402575b60bf1fcf" title="Resolve every profile&#39;s store and fingerprints once." alt="" coords="1071,343,1272,370"/>
+<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="1370,290,1216,345,1214,340,1365,291"/>
+<area shape="rect" id="Node000020" href="$class_config_dialog.html#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ..." alt="" coords="825,395,990,422"/>
+<area shape="poly" id="edge24_Node000019_Node000020" title=" " alt="" coords="1080,375,982,397,981,391,1085,373"/>
+<area shape="rect" id="Node000021" href="$class_config_dialog.html#ad6420609a0f70cbc8a065a6fbc21dc94" title="Forget the signing keys gpg did not know while the dialog is in the background, and check them again ..." alt="" coords="538,368,735,396"/>
+<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="807,399,736,394,735,389,812,399"/>
+<area shape="rect" id="Node000022" href="$class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd" title="Show row row&#39;s profile in the form (or clear and disable it for &#45;1), with m_loadingForm set so the fi..." alt="" coords="530,420,744,448"/>
+<area shape="poly" id="edge26_Node000020_Node000022" title=" " alt="" coords="807,418,745,426,744,421,812,417"/>
+<area shape="rect" id="Node000026" href="$class_config_dialog.html#a68f58b41ba03c59341759473d95c839e" title="Fill the profile list and m_entries from profiles, dropping the empty&#45;named leftover older versions w..." alt="" coords="271,468,452,496"/>
+<area shape="poly" id="edge41_Node000020_Node000026" title=" " alt="" coords="859,428,807,448,752,462,673,474,593,481,452,486,452,480,593,476,673,468,751,457,806,443,854,429"/>
+<area shape="rect" id="Node000027" href="$class_config_dialog.html#aecb3ede31edbc31bf9e295289f3cef15" title="Append a &quot;New profile&quot; row pointing at the global store path, select it and put the cursor in the nam..." alt="" coords="536,300,738,344"/>
+<area shape="poly" id="edge33_Node000020_Node000027" title=" " alt="" coords="847,389,751,359,714,347,714,342,752,354,853,389"/>
+<area shape="rect" id="Node000028" href="$class_config_dialog.html#ae85c1736edfdde38aee8350ebae8201f" title="The name field was typed in: store it in the entry and the list item, then validate (duplicates,..." alt="" coords="257,520,466,564"/>
+<area shape="poly" id="edge34_Node000020_Node000028" title=" " alt="" coords="874,430,817,463,752,490,679,509,603,523,466,539,465,534,603,518,678,504,750,485,815,458,869,431"/>
+<area shape="rect" id="Node000029" href="$class_config_dialog.html#a7e412007641751f3b162bd5b6a2b80d9" title="The path field was typed in: store it in the entry, validate and refresh the status line." alt="" coords="538,230,735,275"/>
+<area shape="poly" id="edge36_Node000020_Node000029" title=" " alt="" coords="878,383,822,337,787,312,750,290,725,278,725,273,753,285,790,307,826,333,884,384"/>
+<area shape="rect" id="Node000031" href="$class_config_dialog.html#ab31637f94fe25e2179ba916fc50ab9eb" title="The signing&#45;key field was typed in: store it in the entry and validate (fingerprints only,..." alt="" coords="253,589,470,634"/>
+<area shape="poly" id="edge39_Node000020_Node000031" title=" " alt="" coords="886,433,829,489,792,516,752,539,682,566,608,586,536,599,471,608,470,602,536,594,607,581,680,561,750,534,789,512,825,485,881,435"/>
+<area shape="rect" id="Node000023" href="$class_config_dialog.html#a013a0a52437c29cb37ac47d73ed900a6" title="Remove the selected profile row (a message when none is); the list&#39;s currentRowChanged re&#45;points the ..." alt="" coords="252,400,471,444"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="511,429,472,429,471,424,516,428"/>
+<area shape="rect" id="Node000024" href="$class_config_dialog.html#a88d327d76d34dd8cf2c592d8add6ccd9" title="The profile list&#39;s current row changed: show that profile." alt="" coords="249,348,474,376"/>
+<area shape="poly" id="edge28_Node000022_Node000024" title=" " alt="" coords="549,416,521,410,473,390,435,379,434,374,475,385,523,405,554,415"/>
+<area shape="poly" id="edge31_Node000022_Node000026" title=" " alt="" coords="536,452,445,470,444,465,541,450"/>
+<area shape="rect" id="Node000025" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,468,201,496"/>
+<area shape="poly" id="edge29_Node000024_Node000025" title=" " alt="" coords="264,382,250,390,213,408,178,430,124,469,120,465,175,425,210,403,248,385,268,379"/>
+<area shape="poly" id="edge30_Node000025_Node000025" title=" " alt="" coords="146,454,132,449,103,447,76,449,61,453,57,459,64,467,59,468,52,459,58,449,75,443,103,441,133,444,151,452"/>
+<area shape="poly" id="edge32_Node000026_Node000025" title=" " alt="" coords="253,483,202,484,200,479,258,481"/>
+<area shape="poly" id="edge35_Node000028_Node000025" title=" " alt="" coords="245,517,166,499,166,494,250,514"/>
+<area shape="poly" id="edge37_Node000029_Node000025" title=" " alt="" coords="520,232,457,229,387,231,316,243,282,254,250,269,221,289,196,314,155,371,127,427,111,469,106,466,122,424,151,368,192,310,218,285,247,265,280,249,314,238,386,225,457,223,525,230"/>
+<area shape="rect" id="Node000030" href="$class_config_dialog.html#a59af9a31c3b09e4aa14f0fff5311ef57" title="Pick the selected profile&#39;s store folder and store it in its entry." alt="" coords="273,280,450,324"/>
+<area shape="poly" id="edge38_Node000029_Node000030" title=" " alt="" coords="520,274,451,288,449,284,525,272"/>
+<area shape="poly" id="edge40_Node000031_Node000025" title=" " alt="" coords="261,583,247,579,176,538,122,499,123,494,179,533,250,574,266,583"/>
 </map>

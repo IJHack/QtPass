@@ -160,6 +160,8 @@ Signals</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa15bf32ce5a10a04dce8fe549247ac7d" id="r_aa15bf32ce5a10a04dce8fe549247ac7d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa15bf32ce5a10a04dce8fe549247ac7d">Executor</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:aa15bf32ce5a10a04dce8fe549247ac7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="class_executor.html" title="Runs non-interactive external commands in FIFO order using a single QProcess.">Executor</a> with an optional parent QObject.  <br /></td></tr>
+<tr class="memitem:a9be12004428714d198ca318fe804ea49" id="r_a9be12004428714d198ca318fe804ea49"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9be12004428714d198ca318fe804ea49">~Executor</a> () override</td></tr>
+<tr class="memdesc:a9be12004428714d198ca318fe804ea49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop listening to the running process before it goes.  <br /></td></tr>
 <tr class="memitem:a7c4305c0af542f0174492badfdbfbc74" id="r_a7c4305c0af542f0174492badfdbfbc74"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74">execute</a> (int id, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</td></tr>
 <tr class="memdesc:a7c4305c0af542f0174492badfdbfbc74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a command without stdin input.  <br /></td></tr>
 <tr class="memitem:a490166ea519a8047e207da8d67f3c0d2" id="r_a490166ea519a8047e207da8d67f3c0d2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a490166ea519a8047e207da8d67f3c0d2">execute</a> (int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</td></tr>
@@ -291,6 +293,36 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9be12004428714d198ca318fe804ea49" name="a9be12004428714d198ca318fe804ea49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be12004428714d198ca318fe804ea49">&#9670;&#160;</a></span>~Executor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Executor::~Executor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stop listening to the running process before it goes. </p>
+<p>~QProcess kills a command still running (a gpg decrypting at quit) and emits <a class="el" href="#ace810a6d93c74dec7188038210c5a731" title="Emitted when a queued process exits normally, whatever its exit code; a non-zero code is the receiver...">finished()</a>. Delivered, that ran <a class="el" href="#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits.">onProcessFinished()</a> and the owner's slots on an object half destroyed: <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion.">Pass::finished()</a> read members that were already gone. </p>
+
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00034">34</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aee160ee2ec954bdb58a3a38555536090" name="aee160ee2ec954bdb58a3a38555536090"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee160ee2ec954bdb58a3a38555536090">&#9670;&#160;</a></span>cancelNext()</h2>
@@ -310,7 +342,7 @@ Private Attributes</h2></td></tr>
 <p>Cancel the next queued command without executing it. </p>
 <dl class="section return"><dt>Returns</dt><dd>The id of the cancelled command, or -1 if the queue was empty. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00505">505</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00507">507</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -352,7 +384,7 @@ Private Attributes</h2></td></tr>
 <p>The umask <a class="el" href="#a9f717e2a6f4b5ed7a0ef6f833a80d880" title="The umask every child QtPass starts gets, as pass sets its own.">setChildUmask()</a> set. </p>
 <dl class="section return"><dt>Returns</dt><dd>The umask, or a negative value when none was set. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00067">67</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00069">69</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -399,7 +431,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>stdout and stderr, each empty when not read. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00567">567</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00569">569</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
@@ -485,7 +517,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00034">34</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00036">36</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -546,7 +578,7 @@ Private Attributes</h2></td></tr>
 <p>Return the environment passed to child processes. </p>
 <dl class="section return"><dt>Returns</dt><dd>Process environment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00500">500</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00502">502</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
@@ -658,7 +690,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00273">273</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00275">275</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary">
 </div>
@@ -726,7 +758,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00284">284</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00286">286</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
@@ -788,7 +820,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00278">278</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00280">280</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary">
 </div>
@@ -856,7 +888,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00289">289</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00291">291</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary">
 </div>
@@ -921,7 +953,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00487">487</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00489">489</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary">
 </div>
@@ -986,7 +1018,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00465">465</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00467">467</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary">
 </div>
@@ -1051,7 +1083,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00481">481</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00483">483</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -1134,7 +1166,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 if it failed to start, crashed, was cancelled or ran out of time. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00472">472</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00474">474</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
@@ -1217,7 +1249,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 if it failed to start, crashed, was cancelled or ran out of time. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00455">455</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00457">457</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary">
 </div>
@@ -1259,7 +1291,7 @@ Private Attributes</h2></td></tr>
 <p>Start the head of the queue unless something runs or the queue is empty. </p>
 <p>Marks the executor running and emits <a class="el" href="#a22b5633f6b06f7f15be77370b5bd2871" title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,...">dequeuing()</a> before touching the item, so a slot there cannot invalidate it. An item with no executable is failed with a queued <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">error()</a> (an empty command used to wedge the queue, #1682) and the next one is tried at once. Called after each <a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Queue a command without stdin input.">execute()</a> and from <a class="el" href="#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits.">onProcessFinished()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00201">201</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00203">203</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary">
 </div>
@@ -1363,7 +1395,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the queue holds a command with that id. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00499">499</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00508">508</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary">
 </div>
@@ -1399,7 +1431,7 @@ Private Attributes</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00473">473</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00482">482</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-28-summary" class="dynsummary">
 </div>
@@ -1441,7 +1473,7 @@ Private Attributes</h2></td></tr>
 <p>Whether the stdout of the item whose <a class="el" href="#ace810a6d93c74dec7188038210c5a731" title="Emitted when a queued process exits normally, whatever its exit code; a non-zero code is the receiver...">finished()</a> or <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">error()</a> is being emitted encodes back (toUtf8(), as every writer here does) to exactly the bytes the process wrote. When false, writing that text back changes the bytes whatever else happens to it. </p>
 <p>Valid only in a slot directly connected to those signals, while the emission runs; at any other time, and when stdout was not read, true. </p><dl class="section return"><dt>Returns</dt><dd>false when the output was not UTF-8 or began with a byte order mark. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00485">485</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00494">494</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-30-summary" class="dynsummary">
 </div>
@@ -1487,7 +1519,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00521">521</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00523">523</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary">
 </div>
@@ -1537,7 +1569,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The parsed command, or nothing when <code class="param">app</code> is not one. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00114">114</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00116">116</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
@@ -1571,7 +1603,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Post one check for <a class="el" href="#a987e7227ac1932bbb59cea5cbc82d483" title="Emitted once the last queued item is done and nothing runs or waits any more (isIdle()),...">drained()</a>, coalesced: it comes after what is being emitted now, and fires only when the executor is idle and no <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">error()</a> of a failed start is still on its way. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00548">548</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00550">550</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-34-summary" class="dynsummary">
 </div>
@@ -1619,7 +1651,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>What to hand to QProcess::start(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00086">86</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00088">88</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-36-summary" class="dynsummary">
 </div>
@@ -1702,7 +1734,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 on start/crash failure, cancel or timeout. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00401">401</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00403">403</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-37-summary" class="dynsummary">
 </div>
@@ -1791,7 +1823,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 on start/crash failure, cancel or timeout. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00416">416</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00418">418</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-39-summary" class="dynsummary">
 </div>
@@ -1838,7 +1870,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00065">65</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00067">67</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-41-summary" class="dynsummary">
 </div>
@@ -1871,7 +1903,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00496">496</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00498">498</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-42-summary" class="dynsummary">
 </div>
@@ -1956,7 +1988,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00069">69</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00071">71</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-44-summary" class="dynsummary">
 </div>
@@ -2009,7 +2041,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Path suitable for <code class="param">exe</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00177">177</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00179">179</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-46-summary" class="dynsummary">
 </div>
@@ -2063,7 +2095,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Arguments for <span class="tt">wsl</span>: <span class="tt">--exec</span>, <code class="param">command</code>, then <code class="param">args</code>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b" title="Arguments for launcher that run command with args.">WslCommand::argv</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00172">172</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00174">174</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-48-summary" class="dynsummary">
 </div>

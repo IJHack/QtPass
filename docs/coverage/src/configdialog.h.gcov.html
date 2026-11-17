@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 14:37:49</td>
+            <td class="headerValue">2026-11-17 22:42:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -110,7 +110,7 @@
 <span id="L37"><span class="lineNum">      37</span>              :  * autoclear options, and exposes methods to read and update those settings.</span>
 <span id="L38"><span class="lineNum">      38</span>              :  */</span>
 <span id="L39"><span class="lineNum">      39</span>              : class ConfigDialog : public QDialog {</span>
-<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         522 :   Q_OBJECT</span></span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         533 :   Q_OBJECT</span></span>
 <span id="L41"><span class="lineNum">      41</span>              : </span>
 <span id="L42"><span class="lineNum">      42</span>              : public:</span>
 <span id="L43"><span class="lineNum">      43</span>              :   /**</span>
@@ -335,14 +335,14 @@
 <span id="L262"><span class="lineNum">     262</span>              :      * @return true when name, path and key have no complaint.</span>
 <span id="L263"><span class="lineNum">     263</span>              :      */</span>
 <span id="L264"><span class="lineNum">     264</span>              :     [[nodiscard]] auto none() const -&gt; bool {</span>
-<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">         460 :       return name.isEmpty() &amp;&amp; path.isEmpty() &amp;&amp; key.isEmpty();</span></span>
+<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">         521 :       return name.isEmpty() &amp;&amp; path.isEmpty() &amp;&amp; key.isEmpty();</span></span>
 <span id="L266"><span class="lineNum">     266</span>              :     }</span>
 <span id="L267"><span class="lineNum">     267</span>              :     /**</span>
 <span id="L268"><span class="lineNum">     268</span>              :      * @brief The first complaint, for a tooltip on the profile's row.</span>
 <span id="L269"><span class="lineNum">     269</span>              :      * @return The name, path or key complaint, in that order; empty if none.</span>
 <span id="L270"><span class="lineNum">     270</span>              :      */</span>
-<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">          14 :     [[nodiscard]] auto first() const -&gt; QString {</span></span>
-<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">          14 :       return !name.isEmpty() ? name : !path.isEmpty() ? path : key;</span></span>
+<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">          15 :     [[nodiscard]] auto first() const -&gt; QString {</span></span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">          15 :       return !name.isEmpty() ? name : !path.isEmpty() ? path : key;</span></span>
 <span id="L273"><span class="lineNum">     273</span>              :     }</span>
 <span id="L274"><span class="lineNum">     274</span>              :   };</span>
 <span id="L275"><span class="lineNum">     275</span>              :   /// Designer tooltip of the profile-name field, put back when validate()</span>
@@ -498,7 +498,7 @@
 <span id="L425"><span class="lineNum">     425</span>              :   void showProblems(int row, const ProfileProblems &amp;problems);</span>
 <span id="L426"><span class="lineNum">     426</span>              :   /// Per profile row: its store as the file system resolves it, and its</span>
 <span id="L427"><span class="lineNum">     427</span>              :   /// signing-key fingerprints (upper case).</span>
-<span id="L428"><span class="lineNum">     428</span> <span class="tlaGNC">         230 :   struct SigningStores {</span></span>
+<span id="L428"><span class="lineNum">     428</span> <span class="tlaGNC">         236 :   struct SigningStores {</span></span>
 <span id="L429"><span class="lineNum">     429</span>              :     QStringList stores;        ///&lt; Canonical (or cleaned) store path.</span>
 <span id="L430"><span class="lineNum">     430</span>              :     QList&lt;QSet&lt;QString&gt;&gt; keys; ///&lt; Fingerprints of the signing key.</span>
 <span id="L431"><span class="lineNum">     431</span>              :   };</span>

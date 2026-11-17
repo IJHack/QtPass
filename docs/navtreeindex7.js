@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"struct_password_configuration.html#a71920e2e29e1beca94502784de561a01afc48f773005a525f5b3a60d60d36018e":[1,3,4,0,2],
+"struct_password_configuration.html#ac5767646f5116892b972d32ae6bbf561":[1,3,4,1],
+"struct_profile.html":[1,4,2],
 "struct_profile.html#a02fe0d44538b9aac07fc7e684237fefb":[1,4,2,5],
 "struct_profile.html#a1e4c9f21760536f1ec3a4689b0932557":[1,4,2,6],
 "struct_profile.html#a2cbcbd0c1c062264c3952449f512aa06":[1,4,2,3],

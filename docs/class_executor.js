@@ -3,6 +3,7 @@ var class_executor =
     [ "ExecQueueItem", "struct_executor_1_1_exec_queue_item.html", "struct_executor_1_1_exec_queue_item" ],
     [ "WslCommand", "struct_executor_1_1_wsl_command.html", "struct_executor_1_1_wsl_command" ],
     [ "Executor", "class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d", null ],
+    [ "~Executor", "class_executor.html#a9be12004428714d198ca318fe804ea49", null ],
     [ "cancelNext", "class_executor.html#aee160ee2ec954bdb58a3a38555536090", null ],
     [ "childUmask", "class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b", null ],
     [ "collectOutput", "class_executor.html#a676362a1d54d7bce3bced4abd3e65944", null ],

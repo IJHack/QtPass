@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 14:37:49</td>
+            <td class="headerValue">2026-11-17 22:42:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -130,7 +130,7 @@
 <span id="L57"><span class="lineNum">      57</span>              :  * OTP).</span>
 <span id="L58"><span class="lineNum">      58</span>              :  */</span>
 <span id="L59"><span class="lineNum">      59</span>              : class MainWindow : public QMainWindow {</span>
-<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         459 :   Q_OBJECT</span></span>
+<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         464 :   Q_OBJECT</span></span>
 <span id="L61"><span class="lineNum">      61</span>              : </span>
 <span id="L62"><span class="lineNum">      62</span>              : public:</span>
 <span id="L63"><span class="lineNum">      63</span>              :   /**</span>
@@ -629,202 +629,211 @@
 <span id="L556"><span class="lineNum">     556</span>              :   /// Progress/cancel dialog shown between startReencryptPath() and</span>
 <span id="L557"><span class="lineNum">     557</span>              :   /// endReencryptPath(); QPointer so a closed dialog reads back as null.</span>
 <span id="L558"><span class="lineNum">     558</span>              :   QPointer&lt;QProgressDialog&gt; m_reencryptProgress;</span>
-<span id="L559"><span class="lineNum">     559</span>              :   /// The open applySearchText() waits to make until the tree has loaded the</span>
-<span id="L560"><span class="lineNum">     560</span>              :   /// entry; QPointer so an ended or cancelled wait reads back as null.</span>
-<span id="L561"><span class="lineNum">     561</span>              :   QPointer&lt;QObject&gt; m_pendingOpen;</span>
-<span id="L562"><span class="lineNum">     562</span>              :   /// True between startReencryptPath() and endReencryptPath(). While set,</span>
-<span id="L563"><span class="lineNum">     563</span>              :   /// setUiElementsEnabled(true) is ignored so the git completions queued by</span>
-<span id="L564"><span class="lineNum">     564</span>              :   /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface</span>
-<span id="L565"><span class="lineNum">     565</span>              :   /// while the re-encryption worker is still rewriting files.</span>
-<span id="L566"><span class="lineNum">     566</span>              :   bool m_reencryptRunning = false;</span>
-<span id="L567"><span class="lineNum">     567</span>              :   /// What setUiElementsEnabled() last set: updateProfileBox() keeps the</span>
-<span id="L568"><span class="lineNum">     568</span>              :   /// profile box disabled while an operation runs.</span>
-<span id="L569"><span class="lineNum">     569</span>              :   bool m_uiEnabled = true;</span>
-<span id="L570"><span class="lineNum">     570</span>              :   /// The system tray icon; null until initTrayIcon() creates it when the</span>
-<span id="L571"><span class="lineNum">     571</span>              :   /// setting is on, deleted again by destroyTrayIcon() when it is turned off</span>
-<span id="L572"><span class="lineNum">     572</span>              :   /// or no tray is available.</span>
-<span id="L573"><span class="lineNum">     573</span>              :   TrayIcon *m_tray{};</span>
-<span id="L574"><span class="lineNum">     574</span>              :   /// Whether the constructor ended with a usable configuration; main()</span>
-<span id="L575"><span class="lineNum">     575</span>              :   /// consults it via initSucceeded() to decide whether the application should</span>
-<span id="L576"><span class="lineNum">     576</span>              :   /// start at all.</span>
-<span id="L577"><span class="lineNum">     577</span>              :   bool m_initSucceeded = false;</span>
-<span id="L578"><span class="lineNum">     578</span>              :   /// No usable configuration has been accepted yet: config() runs the</span>
-<span id="L579"><span class="lineNum">     579</span>              :   /// first-run wizard and defaults to pass when it is installed.</span>
-<span id="L580"><span class="lineNum">     580</span>              :   bool m_freshStart = true;</span>
-<span id="L581"><span class="lineNum">     581</span>              : </span>
-<span id="L582"><span class="lineNum">     582</span>              :   /// Wire the toolbar and menu actions to their slots, set their icons, and</span>
-<span id="L583"><span class="lineNum">     583</span>              :   /// set up the &quot;Show menu bar&quot; toggle with its MenuBarPeek (not on macOS).</span>
-<span id="L584"><span class="lineNum">     584</span>              :   void initToolBarButtons();</span>
-<span id="L585"><span class="lineNum">     585</span>              :   /// Welcome message and the permanent logo in the status bar.</span>
-<span id="L586"><span class="lineNum">     586</span>              :   void initStatusBar();</span>
-<span id="L587"><span class="lineNum">     587</span>              :   /// Connect QtPass's and both backends' signals (the active backend can</span>
-<span id="L588"><span class="lineNum">     588</span>              :   /// change through the configuration dialog without a restart).</span>
-<span id="L589"><span class="lineNum">     589</span>              :   void connectBackends();</span>
-<span id="L590"><span class="lineNum">     590</span>              :   /// Font, wrapping and link handling of the text browser, per the settings.</span>
-<span id="L591"><span class="lineNum">     591</span>              :   void initTextBrowser();</span>
-<span id="L592"><span class="lineNum">     592</span>              :   /// The grid of decrypted fields and what its buttons ask for.</span>
-<span id="L593"><span class="lineNum">     593</span>              :   void initDisplayPanel();</span>
-<span id="L594"><span class="lineNum">     594</span>              :   /// The panel-clear and search timers, and the watchdog that re-enables</span>
-<span id="L595"><span class="lineNum">     595</span>              :   /// the UI when an operation never signals its end.</span>
-<span id="L596"><span class="lineNum">     596</span>              :   void initTimers();</span>
-<span id="L597"><span class="lineNum">     597</span>              :   /// The Process Output dock, its Settings-menu toggle, and the feed of</span>
-<span id="L598"><span class="lineNum">     598</span>              :   /// non-secret process output into it.</span>
-<span id="L599"><span class="lineNum">     599</span>              :   void initProcessOutput();</span>
-<span id="L600"><span class="lineNum">     600</span>              :   /**</span>
-<span id="L601"><span class="lineNum">     601</span>              :    * @brief Connect the signals of one backend that the window answers</span>
-<span id="L602"><span class="lineNum">     602</span>              :    *        itself: errors, critical messages, wrapper start, idle, status,</span>
-<span id="L603"><span class="lineNum">     603</span>              :    *        finishedShow (panel, OTP and Ctrl+C handlers) and finishedGrep.</span>
-<span id="L604"><span class="lineNum">     604</span>              :    * @param pass The backend; both are connected, see connectBackends().</span>
-<span id="L605"><span class="lineNum">     605</span>              :    */</span>
-<span id="L606"><span class="lineNum">     606</span>              :   void connectPassSignals(Pass *pass);</span>
-<span id="L607"><span class="lineNum">     607</span>              : </span>
-<span id="L608"><span class="lineNum">     608</span>              :   /// Make the entry named exactly as searched current, or else the first</span>
-<span id="L609"><span class="lineNum">     609</span>              :   /// entry (depth first) under the store root.</span>
-<span id="L610"><span class="lineNum">     610</span>              :   void selectFirstFile();</span>
-<span id="L611"><span class="lineNum">     611</span>              : </span>
-<span id="L612"><span class="lineNum">     612</span>              :   /**</span>
-<span id="L613"><span class="lineNum">     613</span>              :    * @brief Show the content search results in place of the tree, or the tree</span>
-<span id="L614"><span class="lineNum">     614</span>              :    *        again.</span>
-<span id="L615"><span class="lineNum">     615</span>              :    * @param shown True to show the results. Delete, Edit and OTP are off while</span>
-<span id="L616"><span class="lineNum">     616</span>              :    *        they hide the tree; showing the tree enables them again only for</span>
-<span id="L617"><span class="lineNum">     617</span>              :    *        a selected entry.</span>
-<span id="L618"><span class="lineNum">     618</span>              :    */</span>
-<span id="L619"><span class="lineNum">     619</span>              :   void showContentResults(bool shown);</span>
+<span id="L559"><span class="lineNum">     559</span>              :   /// True while reencryptProgress() is inside the dialog's setValue(), which</span>
+<span id="L560"><span class="lineNum">     560</span>              :   /// runs processEvents() on a modal dialog: endReencryptPath() then only</span>
+<span id="L561"><span class="lineNum">     561</span>              :   /// hides the dialog and leaves the delete to reencryptProgress(). A</span>
+<span id="L562"><span class="lineNum">     562</span>              :   /// nested event loop (the worker's error box) would otherwise delete it</span>
+<span id="L563"><span class="lineNum">     563</span>              :   /// with setValue() still on the stack.</span>
+<span id="L564"><span class="lineNum">     564</span>              :   bool m_inProgressUpdate = false;</span>
+<span id="L565"><span class="lineNum">     565</span>              :   /// Set by endReencryptPath() during m_inProgressUpdate: the dialog to</span>
+<span id="L566"><span class="lineNum">     566</span>              :   /// delete once setValue() has returned.</span>
+<span id="L567"><span class="lineNum">     567</span>              :   QPointer&lt;QProgressDialog&gt; m_progressToDelete;</span>
+<span id="L568"><span class="lineNum">     568</span>              :   /// The open applySearchText() waits to make until the tree has loaded the</span>
+<span id="L569"><span class="lineNum">     569</span>              :   /// entry; QPointer so an ended or cancelled wait reads back as null.</span>
+<span id="L570"><span class="lineNum">     570</span>              :   QPointer&lt;QObject&gt; m_pendingOpen;</span>
+<span id="L571"><span class="lineNum">     571</span>              :   /// True between startReencryptPath() and endReencryptPath(). While set,</span>
+<span id="L572"><span class="lineNum">     572</span>              :   /// setUiElementsEnabled(true) is ignored so the git completions queued by</span>
+<span id="L573"><span class="lineNum">     573</span>              :   /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface</span>
+<span id="L574"><span class="lineNum">     574</span>              :   /// while the re-encryption worker is still rewriting files.</span>
+<span id="L575"><span class="lineNum">     575</span>              :   bool m_reencryptRunning = false;</span>
+<span id="L576"><span class="lineNum">     576</span>              :   /// What setUiElementsEnabled() last set: updateProfileBox() keeps the</span>
+<span id="L577"><span class="lineNum">     577</span>              :   /// profile box disabled while an operation runs.</span>
+<span id="L578"><span class="lineNum">     578</span>              :   bool m_uiEnabled = true;</span>
+<span id="L579"><span class="lineNum">     579</span>              :   /// The system tray icon; null until initTrayIcon() creates it when the</span>
+<span id="L580"><span class="lineNum">     580</span>              :   /// setting is on, deleted again by destroyTrayIcon() when it is turned off</span>
+<span id="L581"><span class="lineNum">     581</span>              :   /// or no tray is available.</span>
+<span id="L582"><span class="lineNum">     582</span>              :   TrayIcon *m_tray{};</span>
+<span id="L583"><span class="lineNum">     583</span>              :   /// Whether the constructor ended with a usable configuration; main()</span>
+<span id="L584"><span class="lineNum">     584</span>              :   /// consults it via initSucceeded() to decide whether the application should</span>
+<span id="L585"><span class="lineNum">     585</span>              :   /// start at all.</span>
+<span id="L586"><span class="lineNum">     586</span>              :   bool m_initSucceeded = false;</span>
+<span id="L587"><span class="lineNum">     587</span>              :   /// No usable configuration has been accepted yet: config() runs the</span>
+<span id="L588"><span class="lineNum">     588</span>              :   /// first-run wizard and defaults to pass when it is installed.</span>
+<span id="L589"><span class="lineNum">     589</span>              :   bool m_freshStart = true;</span>
+<span id="L590"><span class="lineNum">     590</span>              : </span>
+<span id="L591"><span class="lineNum">     591</span>              :   /// Wire the toolbar and menu actions to their slots, set their icons, and</span>
+<span id="L592"><span class="lineNum">     592</span>              :   /// set up the &quot;Show menu bar&quot; toggle with its MenuBarPeek (not on macOS).</span>
+<span id="L593"><span class="lineNum">     593</span>              :   void initToolBarButtons();</span>
+<span id="L594"><span class="lineNum">     594</span>              :   /// Welcome message and the permanent logo in the status bar.</span>
+<span id="L595"><span class="lineNum">     595</span>              :   void initStatusBar();</span>
+<span id="L596"><span class="lineNum">     596</span>              :   /// Connect QtPass's and both backends' signals (the active backend can</span>
+<span id="L597"><span class="lineNum">     597</span>              :   /// change through the configuration dialog without a restart).</span>
+<span id="L598"><span class="lineNum">     598</span>              :   void connectBackends();</span>
+<span id="L599"><span class="lineNum">     599</span>              :   /// Font, wrapping and link handling of the text browser, per the settings.</span>
+<span id="L600"><span class="lineNum">     600</span>              :   void initTextBrowser();</span>
+<span id="L601"><span class="lineNum">     601</span>              :   /// The grid of decrypted fields and what its buttons ask for.</span>
+<span id="L602"><span class="lineNum">     602</span>              :   void initDisplayPanel();</span>
+<span id="L603"><span class="lineNum">     603</span>              :   /// The panel-clear and search timers, and the watchdog that re-enables</span>
+<span id="L604"><span class="lineNum">     604</span>              :   /// the UI when an operation never signals its end.</span>
+<span id="L605"><span class="lineNum">     605</span>              :   void initTimers();</span>
+<span id="L606"><span class="lineNum">     606</span>              :   /// The Process Output dock, its Settings-menu toggle, and the feed of</span>
+<span id="L607"><span class="lineNum">     607</span>              :   /// non-secret process output into it.</span>
+<span id="L608"><span class="lineNum">     608</span>              :   void initProcessOutput();</span>
+<span id="L609"><span class="lineNum">     609</span>              :   /**</span>
+<span id="L610"><span class="lineNum">     610</span>              :    * @brief Connect the signals of one backend that the window answers</span>
+<span id="L611"><span class="lineNum">     611</span>              :    *        itself: errors, critical messages, wrapper start, idle, status,</span>
+<span id="L612"><span class="lineNum">     612</span>              :    *        finishedShow (panel, OTP and Ctrl+C handlers) and finishedGrep.</span>
+<span id="L613"><span class="lineNum">     613</span>              :    * @param pass The backend; both are connected, see connectBackends().</span>
+<span id="L614"><span class="lineNum">     614</span>              :    */</span>
+<span id="L615"><span class="lineNum">     615</span>              :   void connectPassSignals(Pass *pass);</span>
+<span id="L616"><span class="lineNum">     616</span>              : </span>
+<span id="L617"><span class="lineNum">     617</span>              :   /// Make the entry named exactly as searched current, or else the first</span>
+<span id="L618"><span class="lineNum">     618</span>              :   /// entry (depth first) under the store root.</span>
+<span id="L619"><span class="lineNum">     619</span>              :   void selectFirstFile();</span>
 <span id="L620"><span class="lineNum">     620</span>              : </span>
-<span id="L621"><span class="lineNum">     621</span>              :   /// Stop a running content search on both backends (the active one may have</span>
-<span id="L622"><span class="lineNum">     622</span>              :   /// changed since it started). It runs outside the process queue, so only</span>
-<span id="L623"><span class="lineNum">     623</span>              :   /// this ends its walk and the gpg it is running; the result it still</span>
-<span id="L624"><span class="lineNum">     624</span>              :   /// delivers is discarded by onGrepFinished().</span>
-<span id="L625"><span class="lineNum">     625</span>              :   void cancelContentSearch();</span>
-<span id="L626"><span class="lineNum">     626</span>              :   /**</span>
-<span id="L627"><span class="lineNum">     627</span>              :    * @brief The entry whose name is exactly the search text, if the filtered</span>
-<span id="L628"><span class="lineNum">     628</span>              :    * tree shows it: `team/bank` for &quot;team/bank&quot;, not a folder of that name.</span>
-<span id="L629"><span class="lineNum">     629</span>              :    * @return Its proxy index, or invalid when no entry is named so.</span>
-<span id="L630"><span class="lineNum">     630</span>              :    */</span>
-<span id="L631"><span class="lineNum">     631</span>              :   auto exactMatch() -&gt; QModelIndex;</span>
-<span id="L632"><span class="lineNum">     632</span>              :   /**</span>
-<span id="L633"><span class="lineNum">     633</span>              :    * @brief The entry file named exactly as the search text, spaces around</span>
-<span id="L634"><span class="lineNum">     634</span>              :    * the text included; failing that, named as the text without them.</span>
-<span id="L635"><span class="lineNum">     635</span>              :    * @return Its path, or empty when no such file is in the store.</span>
-<span id="L636"><span class="lineNum">     636</span>              :    */</span>
-<span id="L637"><span class="lineNum">     637</span>              :   auto exactMatchPath() -&gt; QString;</span>
-<span id="L638"><span class="lineNum">     638</span>              :   /**</span>
-<span id="L639"><span class="lineNum">     639</span>              :    * @brief Searches for @p text as qtpass(1) promises for the command line</span>
-<span id="L640"><span class="lineNum">     640</span>              :    * and for text handed over by another qtpass: the tree is filtered to it</span>
-<span id="L641"><span class="lineNum">     641</span>              :    * at once, and an entry named exactly so is opened.</span>
-<span id="L642"><span class="lineNum">     642</span>              :    * @param text The search text.</span>
-<span id="L643"><span class="lineNum">     643</span>              :    */</span>
-<span id="L644"><span class="lineNum">     644</span>              :   void applySearchText(const QString &amp;text);</span>
-<span id="L645"><span class="lineNum">     645</span>              :   /**</span>
-<span id="L646"><span class="lineNum">     646</span>              :    * @brief Makes @p index current and opens it, as a click on it would.</span>
-<span id="L647"><span class="lineNum">     647</span>              :    * @param index Proxy index of the entry exactMatch() found.</span>
-<span id="L648"><span class="lineNum">     648</span>              :    */</span>
-<span id="L649"><span class="lineNum">     649</span>              :   void openExactMatch(const QModelIndex &amp;index);</span>
-<span id="L650"><span class="lineNum">     650</span>              :   /**</span>
-<span id="L651"><span class="lineNum">     651</span>              :    * @brief Depth-first search for the first entry under a folder.</span>
-<span id="L652"><span class="lineNum">     652</span>              :    * @param parentIndex Proxy index of the folder to search.</span>
-<span id="L653"><span class="lineNum">     653</span>              :    * @return Proxy index of the first file, or invalid when there is none.</span>
-<span id="L654"><span class="lineNum">     654</span>              :    */</span>
-<span id="L655"><span class="lineNum">     655</span>              :   auto firstFile(QModelIndex parentIndex) -&gt; QModelIndex;</span>
-<span id="L656"><span class="lineNum">     656</span>              :   /**</span>
-<span id="L657"><span class="lineNum">     657</span>              :    * @brief StoreTree::fileFor() on the tree.</span>
-<span id="L658"><span class="lineNum">     658</span>              :    * @param index Proxy index.</span>
-<span id="L659"><span class="lineNum">     659</span>              :    * @param forPass true for the store-relative entry name, false for the</span>
-<span id="L660"><span class="lineNum">     660</span>              :    *        absolute .gpg path.</span>
-<span id="L661"><span class="lineNum">     661</span>              :    * @return Entry name or path; empty for a folder or invalid index.</span>
-<span id="L662"><span class="lineNum">     662</span>              :    */</span>
-<span id="L663"><span class="lineNum">     663</span>              :   auto getFile(const QModelIndex &amp;index, bool forPass) -&gt; QString;</span>
-<span id="L664"><span class="lineNum">     664</span>              :   /**</span>
-<span id="L665"><span class="lineNum">     665</span>              :    * @brief Run PasswordDialog for a new or existing entry. For a new one the</span>
-<span id="L666"><span class="lineNum">     666</span>              :    *        dialog gets the store's real folders (current one preselected) and</span>
-<span id="L667"><span class="lineNum">     667</span>              :    *        the `.templates`, if any.</span>
-<span id="L668"><span class="lineNum">     668</span>              :    * @param file Store-relative entry name; empty when creating.</span>
-<span id="L669"><span class="lineNum">     669</span>              :    * @param isNew true to create, false to edit @p file.</span>
-<span id="L670"><span class="lineNum">     670</span>              :    */</span>
-<span id="L671"><span class="lineNum">     671</span>              :   void setPassword(const QString &amp;file, bool isNew = true);</span>
-<span id="L672"><span class="lineNum">     672</span>              :   /**</span>
-<span id="L673"><span class="lineNum">     673</span>              :    * @brief Guard the input dialogs (create, move, rename) against names like</span>
-<span id="L674"><span class="lineNum">     674</span>              :    *        `../../etc/passwd` or absolute paths escaping the store root; warns</span>
-<span id="L675"><span class="lineNum">     675</span>              :    *        the user when refusing.</span>
-<span id="L676"><span class="lineNum">     676</span>              :    * @param candidate Path the user asked for.</span>
-<span id="L677"><span class="lineNum">     677</span>              :    * @return true when it resolves inside the store.</span>
-<span id="L678"><span class="lineNum">     678</span>              :    */</span>
-<span id="L679"><span class="lineNum">     679</span>              :   auto confirmPathInStore(const QString &amp;candidate) -&gt; bool;</span>
-<span id="L680"><span class="lineNum">     680</span>              : </span>
+<span id="L621"><span class="lineNum">     621</span>              :   /**</span>
+<span id="L622"><span class="lineNum">     622</span>              :    * @brief Show the content search results in place of the tree, or the tree</span>
+<span id="L623"><span class="lineNum">     623</span>              :    *        again.</span>
+<span id="L624"><span class="lineNum">     624</span>              :    * @param shown True to show the results. Delete, Edit and OTP are off while</span>
+<span id="L625"><span class="lineNum">     625</span>              :    *        they hide the tree; showing the tree enables them again only for</span>
+<span id="L626"><span class="lineNum">     626</span>              :    *        a selected entry.</span>
+<span id="L627"><span class="lineNum">     627</span>              :    */</span>
+<span id="L628"><span class="lineNum">     628</span>              :   void showContentResults(bool shown);</span>
+<span id="L629"><span class="lineNum">     629</span>              : </span>
+<span id="L630"><span class="lineNum">     630</span>              :   /// Stop a running content search on both backends (the active one may have</span>
+<span id="L631"><span class="lineNum">     631</span>              :   /// changed since it started). It runs outside the process queue, so only</span>
+<span id="L632"><span class="lineNum">     632</span>              :   /// this ends its walk and the gpg it is running; the result it still</span>
+<span id="L633"><span class="lineNum">     633</span>              :   /// delivers is discarded by onGrepFinished().</span>
+<span id="L634"><span class="lineNum">     634</span>              :   void cancelContentSearch();</span>
+<span id="L635"><span class="lineNum">     635</span>              :   /**</span>
+<span id="L636"><span class="lineNum">     636</span>              :    * @brief The entry whose name is exactly the search text, if the filtered</span>
+<span id="L637"><span class="lineNum">     637</span>              :    * tree shows it: `team/bank` for &quot;team/bank&quot;, not a folder of that name.</span>
+<span id="L638"><span class="lineNum">     638</span>              :    * @return Its proxy index, or invalid when no entry is named so.</span>
+<span id="L639"><span class="lineNum">     639</span>              :    */</span>
+<span id="L640"><span class="lineNum">     640</span>              :   auto exactMatch() -&gt; QModelIndex;</span>
+<span id="L641"><span class="lineNum">     641</span>              :   /**</span>
+<span id="L642"><span class="lineNum">     642</span>              :    * @brief The entry file named exactly as the search text, spaces around</span>
+<span id="L643"><span class="lineNum">     643</span>              :    * the text included; failing that, named as the text without them.</span>
+<span id="L644"><span class="lineNum">     644</span>              :    * @return Its path, or empty when no such file is in the store.</span>
+<span id="L645"><span class="lineNum">     645</span>              :    */</span>
+<span id="L646"><span class="lineNum">     646</span>              :   auto exactMatchPath() -&gt; QString;</span>
+<span id="L647"><span class="lineNum">     647</span>              :   /**</span>
+<span id="L648"><span class="lineNum">     648</span>              :    * @brief Searches for @p text as qtpass(1) promises for the command line</span>
+<span id="L649"><span class="lineNum">     649</span>              :    * and for text handed over by another qtpass: the tree is filtered to it</span>
+<span id="L650"><span class="lineNum">     650</span>              :    * at once, and an entry named exactly so is opened.</span>
+<span id="L651"><span class="lineNum">     651</span>              :    * @param text The search text.</span>
+<span id="L652"><span class="lineNum">     652</span>              :    */</span>
+<span id="L653"><span class="lineNum">     653</span>              :   void applySearchText(const QString &amp;text);</span>
+<span id="L654"><span class="lineNum">     654</span>              :   /**</span>
+<span id="L655"><span class="lineNum">     655</span>              :    * @brief Makes @p index current and opens it, as a click on it would.</span>
+<span id="L656"><span class="lineNum">     656</span>              :    * @param index Proxy index of the entry exactMatch() found.</span>
+<span id="L657"><span class="lineNum">     657</span>              :    */</span>
+<span id="L658"><span class="lineNum">     658</span>              :   void openExactMatch(const QModelIndex &amp;index);</span>
+<span id="L659"><span class="lineNum">     659</span>              :   /**</span>
+<span id="L660"><span class="lineNum">     660</span>              :    * @brief Depth-first search for the first entry under a folder.</span>
+<span id="L661"><span class="lineNum">     661</span>              :    * @param parentIndex Proxy index of the folder to search.</span>
+<span id="L662"><span class="lineNum">     662</span>              :    * @return Proxy index of the first file, or invalid when there is none.</span>
+<span id="L663"><span class="lineNum">     663</span>              :    */</span>
+<span id="L664"><span class="lineNum">     664</span>              :   auto firstFile(QModelIndex parentIndex) -&gt; QModelIndex;</span>
+<span id="L665"><span class="lineNum">     665</span>              :   /**</span>
+<span id="L666"><span class="lineNum">     666</span>              :    * @brief StoreTree::fileFor() on the tree.</span>
+<span id="L667"><span class="lineNum">     667</span>              :    * @param index Proxy index.</span>
+<span id="L668"><span class="lineNum">     668</span>              :    * @param forPass true for the store-relative entry name, false for the</span>
+<span id="L669"><span class="lineNum">     669</span>              :    *        absolute .gpg path.</span>
+<span id="L670"><span class="lineNum">     670</span>              :    * @return Entry name or path; empty for a folder or invalid index.</span>
+<span id="L671"><span class="lineNum">     671</span>              :    */</span>
+<span id="L672"><span class="lineNum">     672</span>              :   auto getFile(const QModelIndex &amp;index, bool forPass) -&gt; QString;</span>
+<span id="L673"><span class="lineNum">     673</span>              :   /**</span>
+<span id="L674"><span class="lineNum">     674</span>              :    * @brief Run PasswordDialog for a new or existing entry. For a new one the</span>
+<span id="L675"><span class="lineNum">     675</span>              :    *        dialog gets the store's real folders (current one preselected) and</span>
+<span id="L676"><span class="lineNum">     676</span>              :    *        the `.templates`, if any.</span>
+<span id="L677"><span class="lineNum">     677</span>              :    * @param file Store-relative entry name; empty when creating.</span>
+<span id="L678"><span class="lineNum">     678</span>              :    * @param isNew true to create, false to edit @p file.</span>
+<span id="L679"><span class="lineNum">     679</span>              :    */</span>
+<span id="L680"><span class="lineNum">     680</span>              :   void setPassword(const QString &amp;file, bool isNew = true);</span>
 <span id="L681"><span class="lineNum">     681</span>              :   /**</span>
-<span id="L682"><span class="lineNum">     682</span>              :    * @brief Create m_tray and add the menu bar toggle to its menu; gives up</span>
-<span id="L683"><span class="lineNum">     683</span>              :    *        (m_tray stays null) when no system tray is available.</span>
-<span id="L684"><span class="lineNum">     684</span>              :    */</span>
-<span id="L685"><span class="lineNum">     685</span>              :   void initTrayIcon();</span>
-<span id="L686"><span class="lineNum">     686</span>              :   /// Delete m_tray and reset it to null.</span>
-<span id="L687"><span class="lineNum">     687</span>              :   void destroyTrayIcon();</span>
-<span id="L688"><span class="lineNum">     688</span>              :   /**</span>
-<span id="L689"><span class="lineNum">     689</span>              :    * @brief Share menu &quot;Re-encrypt all passwords&quot;: confirm, lock the UI via</span>
-<span id="L690"><span class="lineNum">     690</span>              :    *        startReencryptPath() and have ImitatePass rewrite every entry</span>
-<span id="L691"><span class="lineNum">     691</span>              :    *        under @p dir for the recipients in its `.gpg-id`.</span>
-<span id="L692"><span class="lineNum">     692</span>              :    * @param dir Absolute folder; refused when missing or behind a link.</span>
+<span id="L682"><span class="lineNum">     682</span>              :    * @brief Guard the input dialogs (create, move, rename) against names like</span>
+<span id="L683"><span class="lineNum">     683</span>              :    *        `../../etc/passwd` or absolute paths escaping the store root; warns</span>
+<span id="L684"><span class="lineNum">     684</span>              :    *        the user when refusing.</span>
+<span id="L685"><span class="lineNum">     685</span>              :    * @param candidate Path the user asked for.</span>
+<span id="L686"><span class="lineNum">     686</span>              :    * @return true when it resolves inside the store.</span>
+<span id="L687"><span class="lineNum">     687</span>              :    */</span>
+<span id="L688"><span class="lineNum">     688</span>              :   auto confirmPathInStore(const QString &amp;candidate) -&gt; bool;</span>
+<span id="L689"><span class="lineNum">     689</span>              : </span>
+<span id="L690"><span class="lineNum">     690</span>              :   /**</span>
+<span id="L691"><span class="lineNum">     691</span>              :    * @brief Create m_tray and add the menu bar toggle to its menu; gives up</span>
+<span id="L692"><span class="lineNum">     692</span>              :    *        (m_tray stays null) when no system tray is available.</span>
 <span id="L693"><span class="lineNum">     693</span>              :    */</span>
-<span id="L694"><span class="lineNum">     694</span>              :   void reencryptPath(const QString &amp;dir);</span>
-<span id="L695"><span class="lineNum">     695</span>              :   /**</span>
-<span id="L696"><span class="lineNum">     696</span>              :    * @brief Share menu &quot;Export my public key&quot;: run `gpg --armor --export` for</span>
-<span id="L697"><span class="lineNum">     697</span>              :    *        the configured signing key and show the result in</span>
-<span id="L698"><span class="lineNum">     698</span>              :    *        ExportPublicKeyDialog; explains what to do when no key is set.</span>
-<span id="L699"><span class="lineNum">     699</span>              :    */</span>
-<span id="L700"><span class="lineNum">     700</span>              :   void exportPublicKey();</span>
-<span id="L701"><span class="lineNum">     701</span>              :   /**</span>
-<span id="L702"><span class="lineNum">     702</span>              :    * @brief Share menu &quot;Add recipient&quot;: open UsersDialog for @p dir (keys</span>
-<span id="L703"><span class="lineNum">     703</span>              :    *        already in the keyring only).</span>
-<span id="L704"><span class="lineNum">     704</span>              :    * @param dir Absolute folder; refused when behind a link.</span>
-<span id="L705"><span class="lineNum">     705</span>              :    */</span>
-<span id="L706"><span class="lineNum">     706</span>              :   void addRecipient(const QString &amp;dir);</span>
-<span id="L707"><span class="lineNum">     707</span>              :   /**</span>
-<span id="L708"><span class="lineNum">     708</span>              :    * @brief Refuse, with a message, a tree-picked folder that is or lies</span>
-<span id="L709"><span class="lineNum">     709</span>              :    *        behind a symlink or junction: what it points to is not part of the</span>
-<span id="L710"><span class="lineNum">     710</span>              :    *        store. The store root itself may be a link.</span>
-<span id="L711"><span class="lineNum">     711</span>              :    * @param dir Absolute folder path.</span>
-<span id="L712"><span class="lineNum">     712</span>              :    * @return true when the folder was refused and the caller must stop.</span>
-<span id="L713"><span class="lineNum">     713</span>              :    */</span>
-<span id="L714"><span class="lineNum">     714</span>              :   auto refuseLinkedFolder(const QString &amp;dir) -&gt; bool;</span>
-<span id="L715"><span class="lineNum">     715</span>              :   /// Share menu &quot;What is this?&quot;: the explanation of sharing with GPG.</span>
-<span id="L716"><span class="lineNum">     716</span>              :   void showShareHelp();</span>
-<span id="L717"><span class="lineNum">     717</span>              : </span>
-<span id="L718"><span class="lineNum">     718</span>              :   /// Re-apply the monospace and line-wrapping settings to the text browser</span>
-<span id="L719"><span class="lineNum">     719</span>              :   /// after the configuration dialog.</span>
-<span id="L720"><span class="lineNum">     720</span>              :   void applyTextBrowserSettings();</span>
-<span id="L721"><span class="lineNum">     721</span>              :   /// Toggle Qt::WindowStaysOnTopHint to match the &quot;always on top&quot; setting,</span>
-<span id="L722"><span class="lineNum">     722</span>              :   /// skipping the native-window rebuild when nothing changes.</span>
-<span id="L723"><span class="lineNum">     723</span>              :   void applyWindowFlagsSettings();</span>
-<span id="L724"><span class="lineNum">     724</span>              :   /// Store geometry and dock/toolbar state in the settings; idempotent,</span>
-<span id="L725"><span class="lineNum">     725</span>              :   /// called from closeEvent() and the destructor.</span>
-<span id="L726"><span class="lineNum">     726</span>              :   void saveWindowState();</span>
-<span id="L727"><span class="lineNum">     727</span>              : </span>
-<span id="L728"><span class="lineNum">     728</span>              :   /**</span>
-<span id="L729"><span class="lineNum">     729</span>              :    * @brief Show Push and Pull only when Git is in use; enable them only while</span>
-<span id="L730"><span class="lineNum">     730</span>              :    *        the interface is.</span>
-<span id="L731"><span class="lineNum">     731</span>              :    * @param uiEnabled false while an operation runs</span>
-<span id="L732"><span class="lineNum">     732</span>              :    */</span>
-<span id="L733"><span class="lineNum">     733</span>              :   void updateGitButtonVisibility(bool uiEnabled = true);</span>
-<span id="L734"><span class="lineNum">     734</span>              :   /**</span>
-<span id="L735"><span class="lineNum">     735</span>              :    * @brief Refresh the OTP toolbar action from settings.</span>
-<span id="L736"><span class="lineNum">     736</span>              :    * @param uiEnabled false while a backend operation is in flight, so the</span>
-<span id="L737"><span class="lineNum">     737</span>              :    *        action is disabled along with the rest of the UI.</span>
-<span id="L738"><span class="lineNum">     738</span>              :    */</span>
-<span id="L739"><span class="lineNum">     739</span>              :   void updateOtpButtonVisibility(bool uiEnabled = true);</span>
-<span id="L740"><span class="lineNum">     740</span>              :   /// Show the content-search buttons only when the setting is on; turning</span>
-<span id="L741"><span class="lineNum">     741</span>              :   /// it off while in content-search mode leaves that mode.</span>
-<span id="L742"><span class="lineNum">     742</span>              :   void updateGrepButtonVisibility();</span>
+<span id="L694"><span class="lineNum">     694</span>              :   void initTrayIcon();</span>
+<span id="L695"><span class="lineNum">     695</span>              :   /// Delete m_tray and reset it to null.</span>
+<span id="L696"><span class="lineNum">     696</span>              :   void destroyTrayIcon();</span>
+<span id="L697"><span class="lineNum">     697</span>              :   /**</span>
+<span id="L698"><span class="lineNum">     698</span>              :    * @brief Share menu &quot;Re-encrypt all passwords&quot;: confirm, lock the UI via</span>
+<span id="L699"><span class="lineNum">     699</span>              :    *        startReencryptPath() and have ImitatePass rewrite every entry</span>
+<span id="L700"><span class="lineNum">     700</span>              :    *        under @p dir for the recipients in its `.gpg-id`.</span>
+<span id="L701"><span class="lineNum">     701</span>              :    * @param dir Absolute folder; refused when missing or behind a link.</span>
+<span id="L702"><span class="lineNum">     702</span>              :    */</span>
+<span id="L703"><span class="lineNum">     703</span>              :   void reencryptPath(const QString &amp;dir);</span>
+<span id="L704"><span class="lineNum">     704</span>              :   /**</span>
+<span id="L705"><span class="lineNum">     705</span>              :    * @brief Share menu &quot;Export my public key&quot;: run `gpg --armor --export` for</span>
+<span id="L706"><span class="lineNum">     706</span>              :    *        the configured signing key and show the result in</span>
+<span id="L707"><span class="lineNum">     707</span>              :    *        ExportPublicKeyDialog; explains what to do when no key is set.</span>
+<span id="L708"><span class="lineNum">     708</span>              :    */</span>
+<span id="L709"><span class="lineNum">     709</span>              :   void exportPublicKey();</span>
+<span id="L710"><span class="lineNum">     710</span>              :   /**</span>
+<span id="L711"><span class="lineNum">     711</span>              :    * @brief Share menu &quot;Add recipient&quot;: open UsersDialog for @p dir (keys</span>
+<span id="L712"><span class="lineNum">     712</span>              :    *        already in the keyring only).</span>
+<span id="L713"><span class="lineNum">     713</span>              :    * @param dir Absolute folder; refused when behind a link.</span>
+<span id="L714"><span class="lineNum">     714</span>              :    */</span>
+<span id="L715"><span class="lineNum">     715</span>              :   void addRecipient(const QString &amp;dir);</span>
+<span id="L716"><span class="lineNum">     716</span>              :   /**</span>
+<span id="L717"><span class="lineNum">     717</span>              :    * @brief Refuse, with a message, a tree-picked folder that is or lies</span>
+<span id="L718"><span class="lineNum">     718</span>              :    *        behind a symlink or junction: what it points to is not part of the</span>
+<span id="L719"><span class="lineNum">     719</span>              :    *        store. The store root itself may be a link.</span>
+<span id="L720"><span class="lineNum">     720</span>              :    * @param dir Absolute folder path.</span>
+<span id="L721"><span class="lineNum">     721</span>              :    * @return true when the folder was refused and the caller must stop.</span>
+<span id="L722"><span class="lineNum">     722</span>              :    */</span>
+<span id="L723"><span class="lineNum">     723</span>              :   auto refuseLinkedFolder(const QString &amp;dir) -&gt; bool;</span>
+<span id="L724"><span class="lineNum">     724</span>              :   /// Share menu &quot;What is this?&quot;: the explanation of sharing with GPG.</span>
+<span id="L725"><span class="lineNum">     725</span>              :   void showShareHelp();</span>
+<span id="L726"><span class="lineNum">     726</span>              : </span>
+<span id="L727"><span class="lineNum">     727</span>              :   /// Re-apply the monospace and line-wrapping settings to the text browser</span>
+<span id="L728"><span class="lineNum">     728</span>              :   /// after the configuration dialog.</span>
+<span id="L729"><span class="lineNum">     729</span>              :   void applyTextBrowserSettings();</span>
+<span id="L730"><span class="lineNum">     730</span>              :   /// Toggle Qt::WindowStaysOnTopHint to match the &quot;always on top&quot; setting,</span>
+<span id="L731"><span class="lineNum">     731</span>              :   /// skipping the native-window rebuild when nothing changes.</span>
+<span id="L732"><span class="lineNum">     732</span>              :   void applyWindowFlagsSettings();</span>
+<span id="L733"><span class="lineNum">     733</span>              :   /// Store geometry and dock/toolbar state in the settings; idempotent,</span>
+<span id="L734"><span class="lineNum">     734</span>              :   /// called from closeEvent() and the destructor.</span>
+<span id="L735"><span class="lineNum">     735</span>              :   void saveWindowState();</span>
+<span id="L736"><span class="lineNum">     736</span>              : </span>
+<span id="L737"><span class="lineNum">     737</span>              :   /**</span>
+<span id="L738"><span class="lineNum">     738</span>              :    * @brief Show Push and Pull only when Git is in use; enable them only while</span>
+<span id="L739"><span class="lineNum">     739</span>              :    *        the interface is.</span>
+<span id="L740"><span class="lineNum">     740</span>              :    * @param uiEnabled false while an operation runs</span>
+<span id="L741"><span class="lineNum">     741</span>              :    */</span>
+<span id="L742"><span class="lineNum">     742</span>              :   void updateGitButtonVisibility(bool uiEnabled = true);</span>
 <span id="L743"><span class="lineNum">     743</span>              :   /**</span>
-<span id="L744"><span class="lineNum">     744</span>              :    * @brief Enable or disable the Push and Pull actions together.</span>
-<span id="L745"><span class="lineNum">     745</span>              :    * @param state true to enable.</span>
-<span id="L746"><span class="lineNum">     746</span>              :    */</span>
-<span id="L747"><span class="lineNum">     747</span>              :   void enableGitButtons(const bool &amp;state);</span>
-<span id="L748"><span class="lineNum">     748</span>              : </span>
-<span id="L749"><span class="lineNum">     749</span>              :   /// Sync the Process Output dock and its menu toggle with the setting</span>
-<span id="L750"><span class="lineNum">     750</span>              :   /// after the configuration dialog.</span>
-<span id="L751"><span class="lineNum">     751</span>              :   void updateProcessOutputVisibility();</span>
-<span id="L752"><span class="lineNum">     752</span>              : };</span>
-<span id="L753"><span class="lineNum">     753</span>              : </span>
-<span id="L754"><span class="lineNum">     754</span>              : #endif // SRC_MAINWINDOW_H_</span>
+<span id="L744"><span class="lineNum">     744</span>              :    * @brief Refresh the OTP toolbar action from settings.</span>
+<span id="L745"><span class="lineNum">     745</span>              :    * @param uiEnabled false while a backend operation is in flight, so the</span>
+<span id="L746"><span class="lineNum">     746</span>              :    *        action is disabled along with the rest of the UI.</span>
+<span id="L747"><span class="lineNum">     747</span>              :    */</span>
+<span id="L748"><span class="lineNum">     748</span>              :   void updateOtpButtonVisibility(bool uiEnabled = true);</span>
+<span id="L749"><span class="lineNum">     749</span>              :   /// Show the content-search buttons only when the setting is on; turning</span>
+<span id="L750"><span class="lineNum">     750</span>              :   /// it off while in content-search mode leaves that mode.</span>
+<span id="L751"><span class="lineNum">     751</span>              :   void updateGrepButtonVisibility();</span>
+<span id="L752"><span class="lineNum">     752</span>              :   /**</span>
+<span id="L753"><span class="lineNum">     753</span>              :    * @brief Enable or disable the Push and Pull actions together.</span>
+<span id="L754"><span class="lineNum">     754</span>              :    * @param state true to enable.</span>
+<span id="L755"><span class="lineNum">     755</span>              :    */</span>
+<span id="L756"><span class="lineNum">     756</span>              :   void enableGitButtons(const bool &amp;state);</span>
+<span id="L757"><span class="lineNum">     757</span>              : </span>
+<span id="L758"><span class="lineNum">     758</span>              :   /// Sync the Process Output dock and its menu toggle with the setting</span>
+<span id="L759"><span class="lineNum">     759</span>              :   /// after the configuration dialog.</span>
+<span id="L760"><span class="lineNum">     760</span>              :   void updateProcessOutputVisibility();</span>
+<span id="L761"><span class="lineNum">     761</span>              : };</span>
+<span id="L762"><span class="lineNum">     762</span>              : </span>
+<span id="L763"><span class="lineNum">     763</span>              : #endif // SRC_MAINWINDOW_H_</span>
         </pre>
               </td>
             </tr>
