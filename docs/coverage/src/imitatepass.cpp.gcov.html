@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 12:26:48</td>
+            <td class="headerValue">2026-11-17 14:11:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -1265,7 +1265,7 @@
 <span id="L1192"><span class="lineNum">    1192</span> <span class="tlaGNC">          95 :   m_reencryptThread = thread;</span></span>
 <span id="L1193"><span class="lineNum">    1193</span> <span class="tlaGNC">          95 :   connect(thread, &amp;QThread::finished, this, [this, thread]() {</span></span>
 <span id="L1194"><span class="lineNum">    1194</span> <span class="tlaGNC">          91 :     if (m_reencryptThread == thread)</span></span>
-<span id="L1195"><span class="lineNum">    1195</span> <span class="tlaGNC">          90 :       m_reencryptThread = nullptr;</span></span>
+<span id="L1195"><span class="lineNum">    1195</span> <span class="tlaGNC">          91 :       m_reencryptThread = nullptr;</span></span>
 <span id="L1196"><span class="lineNum">    1196</span>              :   });</span>
 <span id="L1197"><span class="lineNum">    1197</span> <span class="tlaGNC">          95 :   connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</span></span>
 <span id="L1198"><span class="lineNum">    1198</span> <span class="tlaGNC">          95 :   thread-&gt;start();</span></span>
@@ -1838,11 +1838,11 @@
 <span id="L1765"><span class="lineNum">    1765</span> <span class="tlaGNC">         173 :   m_transactionOutput.append(out);</span></span>
 <span id="L1766"><span class="lineNum">    1766</span>              : </span>
 <span id="L1767"><span class="lineNum">    1767</span> <span class="tlaGNC">         173 :   if (exitCode == 0) {</span></span>
-<span id="L1768"><span class="lineNum">    1768</span> <span class="tlaGNC">         134 :     if (pid == INVALID) {</span></span>
+<span id="L1768"><span class="lineNum">    1768</span> <span class="tlaGNC">         133 :     if (pid == INVALID) {</span></span>
 <span id="L1769"><span class="lineNum">    1769</span>              :       return;</span>
 <span id="L1770"><span class="lineNum">    1770</span>              :     }</span>
 <span id="L1771"><span class="lineNum">    1771</span>              :   } else {</span>
-<span id="L1772"><span class="lineNum">    1772</span> <span class="tlaGNC">          44 :     while (pid == INVALID) {</span></span>
+<span id="L1772"><span class="lineNum">    1772</span> <span class="tlaGNC">          45 :     while (pid == INVALID) {</span></span>
 <span id="L1773"><span class="lineNum">    1773</span> <span class="tlaGNC">           5 :       id = exec.cancelNext();</span></span>
 <span id="L1774"><span class="lineNum">    1774</span> <span class="tlaGNC">           5 :       if (id == -1) {</span></span>
 <span id="L1775"><span class="lineNum">    1775</span>              :         //  this is probably irrecoverable and shall not happen</span>
