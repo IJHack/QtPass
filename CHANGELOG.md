@@ -828,6 +828,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   recipient list behind that name would go unchecked while `pass`
   re-encrypts it. Re-encrypting and deleting a folder report it as one that
   could not be read (scan finding ANT-2026-Z3Q1EMNR)
+- A signed recipient list is bound to the folder whose name is exactly the
+  bytes signed. A list signed for a look-alike folder whose name starts
+  with an invisible byte order mark (U+FEFF) was read as signed for the
+  folder without it, and a folder line that is not UTF-8 could match a
+  folder named with the replacement character. Such a list is now refused
+  where it does not belong (scan finding ANT-2026-OYWZA7MO)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

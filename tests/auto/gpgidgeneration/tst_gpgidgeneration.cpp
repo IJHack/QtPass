@@ -41,6 +41,7 @@ private slots:
   void recordWrittenDigestsTheBytesJustWritten();
   void aRecordHeldByAnotherProcessFailsClosed();
   void acceptRefusesAListWrittenForAnotherFolder();
+  void folderLineIsTheBytesSigned();
   void reserveNextIsOneAboveRecordAndVerifiedDiskAndRecorded();
   void reserveNextNeverExceedsWhatParseAccepts();
   void reservationIsWrittenThrough();
@@ -461,6 +462,60 @@ void tst_gpgidgeneration::acceptRefusesAListWrittenForAnotherFolder() {
   write(foreign, rootList);
   QVERIFY(GpgIdGeneration::accept(foreign, rootList, store, &why) !=
           GpgIdGeneration::Verdict::Accepted);
+}
+
+/// The folder line names the folder by the bytes signed. A leading byte
+/// order mark is part of the name, not dropped, so a list signed for a
+/// look-alike "<U+FEFF>finance" is refused in finance/; and bytes that are
+/// not UTF-8 are a malformed line, not U+FFFD that a real name could match.
+void tst_gpgidgeneration::folderLineIsTheBytesSigned() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString store = dir.path();
+  QVERIFY(QDir(store).mkpath(QStringLiteral("finance")));
+  const QString bom = QString(QChar(0xFEFF));
+  const QByteArray lookAlike = GpgIdGeneration::withHeader(
+      1, bom + QStringLiteral("finance"), "MALLORY\n");
+  const std::optional<GpgIdGeneration::Header> parsed =
+      GpgIdGeneration::parse(lookAlike);
+  QVERIFY(parsed && parsed->folder);
+  QCOMPARE(*parsed->folder, bom + QStringLiteral("finance"));
+  const QString planted =
+      QDir(store).filePath(QStringLiteral("finance/.gpg-id"));
+  write(planted, lookAlike);
+  QCOMPARE(GpgIdGeneration::accept(planted, lookAlike, store),
+           GpgIdGeneration::Verdict::WrongFolder);
+  // A mark alone is not the root.
+  const QString rootList = QDir(store).filePath(QStringLiteral(".gpg-id"));
+  const QByteArray markOnly = GpgIdGeneration::withHeader(1, bom, "MALLORY\n");
+  write(rootList, markOnly);
+  QCOMPARE(GpgIdGeneration::accept(rootList, markOnly, store),
+           GpgIdGeneration::Verdict::WrongFolder);
+  // In a folder really named that way, the same list is accepted.
+  const QString named = bom + QStringLiteral("finance");
+  if (QDir(store).mkpath(named)) {
+    const QString there =
+        QDir(QDir(store).filePath(named)).filePath(QStringLiteral(".gpg-id"));
+    write(there, lookAlike);
+    QCOMPARE(GpgIdGeneration::accept(there, lookAlike, store),
+             GpgIdGeneration::Verdict::Accepted);
+  }
+
+  // Not UTF-8: malformed, whatever folder it lies in.
+  const QByteArray notUtf8 = GpgIdGeneration::kGenerationPrefix + "1\n" +
+                             GpgIdGeneration::kFolderPrefix + "fin\xff\n" +
+                             "MALLORY\n";
+  QString why;
+  QVERIFY(!GpgIdGeneration::parse(notUtf8, &why));
+  QVERIFY2(why.contains(QStringLiteral("folder line")), qPrintable(why));
+  const QString replaced = QStringLiteral("fin") + QChar(0xFFFD);
+  if (QDir(store).mkpath(replaced)) {
+    const QString there = QDir(QDir(store).filePath(replaced))
+                              .filePath(QStringLiteral(".gpg-id"));
+    write(there, notUtf8);
+    QVERIFY(GpgIdGeneration::accept(there, notUtf8, store) !=
+            GpgIdGeneration::Verdict::Accepted);
+  }
 }
 
 /// A reservation is one above the record and the verified list on disk, and
