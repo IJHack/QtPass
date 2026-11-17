@@ -866,6 +866,15 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)
+- Autoclear no longer puts back another password manager's secret as plain
+  text: content marked as a secret is cleared instead of restored (scan
+  finding ANT-2026-T477FT3M)
+- Selecting or dragging shown text no longer pushes back autoclear of a
+  password copied earlier; the first deadline clears everything QtPass
+  copied (scan finding ANT-2026-FKYDSRHQ)
+- A copied text that is still in the X11 primary selection stays tracked,
+  so autoclear clears it there too, also after the next copy (scan finding
+  ANT-2026-4LOQS7PG)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old
