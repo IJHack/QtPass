@@ -4,6 +4,15 @@
 
 ### Upgrade Notes
 
+- **"Add folder" no longer copies the recipients.** A new folder has no
+  `.gpg-id` of its own and uses its parent's recipients, as with `pass`
+  (and as QtPass already did with a signing key), until the users dialog
+  gives it a list. A copy made by an earlier version stays, and keeps its
+  recipients when someone is removed above it: in a store without a
+  signing key, remove a copy you do not need; with one, save that
+  folder's recipients in the users dialog instead (scan finding
+  ANT-2026-3I1PV36T, [#2248](https://github.com/IJHack/QtPass/pull/2248)
+  on main).
 - **WSL with a signing key: pass inside WSL now checks the signature.**
   QtPass never handed the signing key to `pass` running in WSL, so `pass`
   there did not check `.gpg-id.sig`. It does now: with a signing key set,
