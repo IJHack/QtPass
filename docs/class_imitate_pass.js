@@ -3,6 +3,7 @@ var class_imitate_pass =
     [ "TransactionHelper", "class_imitate_pass_1_1_transaction_helper.html", "class_imitate_pass_1_1_transaction_helper" ],
     [ "PendingInsert", "struct_imitate_pass_1_1_pending_insert.html", "struct_imitate_pass_1_1_pending_insert" ],
     [ "UncommittedGpgId", "struct_imitate_pass_1_1_uncommitted_gpg_id.html", "struct_imitate_pass_1_1_uncommitted_gpg_id" ],
+    [ "WrittenGpgId", "struct_imitate_pass_1_1_written_gpg_id.html", "struct_imitate_pass_1_1_written_gpg_id" ],
     [ "ReencryptResult", "struct_imitate_pass_1_1_reencrypt_result.html", "struct_imitate_pass_1_1_reencrypt_result" ],
     [ "ImitatePass", "class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6", null ],
     [ "~ImitatePass", "class_imitate_pass.html#a59c774bacec45aa06d10e22bc71f596e", null ],
@@ -89,5 +90,6 @@ var class_imitate_pass =
     [ "m_reencryptThread", "class_imitate_pass.html#a783c34e41f2f2d3903d9c7d5cfe4935c", null ],
     [ "m_transaction", "class_imitate_pass.html#a8900e1dace8bc434e07b57d88901dc3d", null ],
     [ "m_transactionOutput", "class_imitate_pass.html#a1fb9d35f19a5a7b0ff56c3e1e4b398ee", null ],
-    [ "m_uncommittedGpgId", "class_imitate_pass.html#ab4c1b653dbb4b542b7a3a5f6333785d8", null ]
+    [ "m_uncommittedGpgId", "class_imitate_pass.html#ab4c1b653dbb4b542b7a3a5f6333785d8", null ],
+    [ "m_writtenGpgId", "class_imitate_pass.html#ad14e4778c6a770890489f2761354d567", null ]
 ];

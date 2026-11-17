@@ -17,6 +17,10 @@ var group__backend =
         [ "folder", "struct_imitate_pass_1_1_uncommitted_gpg_id.html#a5e7f216abca2472339985a00897495d2", null ],
         [ "gitError", "struct_imitate_pass_1_1_uncommitted_gpg_id.html#a6d8ab11a6b44ac87ef4639c0d55db524", null ]
       ] ],
+      [ "WrittenGpgId", "struct_imitate_pass_1_1_written_gpg_id.html", [
+        [ "bytes", "struct_imitate_pass_1_1_written_gpg_id.html#a5c9d73507728e1049b8ea31fb2db9103", null ],
+        [ "file", "struct_imitate_pass_1_1_written_gpg_id.html#a56b7913301462eb9d5b7b0633c9531b4", null ]
+      ] ],
       [ "ReencryptResult", "struct_imitate_pass_1_1_reencrypt_result.html", [
         [ "aborted", "struct_imitate_pass_1_1_reencrypt_result.html#ae0749007d118e1e9eaa3365dae956b03", null ],
         [ "cancelled", "struct_imitate_pass_1_1_reencrypt_result.html#a09ae84d683a38f225f9fe3927a614d08", null ],
@@ -110,7 +114,8 @@ var group__backend =
       [ "m_reencryptThread", "class_imitate_pass.html#a783c34e41f2f2d3903d9c7d5cfe4935c", null ],
       [ "m_transaction", "class_imitate_pass.html#a8900e1dace8bc434e07b57d88901dc3d", null ],
       [ "m_transactionOutput", "class_imitate_pass.html#a1fb9d35f19a5a7b0ff56c3e1e4b398ee", null ],
-      [ "m_uncommittedGpgId", "class_imitate_pass.html#ab4c1b653dbb4b542b7a3a5f6333785d8", null ]
+      [ "m_uncommittedGpgId", "class_imitate_pass.html#ab4c1b653dbb4b542b7a3a5f6333785d8", null ],
+      [ "m_writtenGpgId", "class_imitate_pass.html#ad14e4778c6a770890489f2761354d567", null ]
     ] ],
     [ "NativeGrep", "class_native_grep.html", [
       [ "Worker", "struct_native_grep_1_1_worker.html", [

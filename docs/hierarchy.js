@@ -111,5 +111,6 @@ var hierarchy =
     [ "UserInfo", "struct_user_info.html", null ],
     [ "Util", "class_util.html", null ],
     [ "NativeGrep::Worker", "struct_native_grep_1_1_worker.html", null ],
+    [ "ImitatePass::WrittenGpgId", "struct_imitate_pass_1_1_written_gpg_id.html", null ],
     [ "Executor::WslCommand", "struct_executor_1_1_wsl_command.html", null ]
 ];

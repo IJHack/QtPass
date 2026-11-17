@@ -20,8 +20,9 @@ var searchData=
   ['writegpgid_17',['writeGpgId',['../class_profile_init.html#ad02510c0e01ce2370690838e17f7a6d5',1,'ProfileInit']]],
   ['writegpgidfile_18',['writeGpgIdFile',['../class_imitate_pass.html#a4819b3c68c49968658849aa8535e1f40',1,'ImitatePass']]],
   ['writetemplates_19',['writeTemplates',['../class_template_i_o.html#a4e75ba7938c8c5200829b651c1cb651a',1,'TemplateIO']]],
-  ['wrongfolder_20',['WrongFolder',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9',1,'GpgIdGeneration']]],
-  ['wrongstore_21',['WrongStore',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ae037bb4b2fc6b1868bafa9f762c26365',1,'GpgIdGeneration']]],
-  ['wslcommand_22',['WslCommand',['../struct_executor_1_1_wsl_command.html',1,'Executor']]],
-  ['wslexecargs_23',['wslExecArgs',['../class_executor.html#a9eb4d0403edeab54a94cba4ba3cc3dfd',1,'Executor']]]
+  ['writtengpgid_20',['WrittenGpgId',['../struct_imitate_pass_1_1_written_gpg_id.html',1,'ImitatePass']]],
+  ['wrongfolder_21',['WrongFolder',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9',1,'GpgIdGeneration']]],
+  ['wrongstore_22',['WrongStore',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ae037bb4b2fc6b1868bafa9f762c26365',1,'GpgIdGeneration']]],
+  ['wslcommand_23',['WslCommand',['../struct_executor_1_1_wsl_command.html',1,'Executor']]],
+  ['wslexecargs_24',['wslExecArgs',['../class_executor.html#a9eb4d0403edeab54a94cba4ba3cc3dfd',1,'Executor']]]
 ];

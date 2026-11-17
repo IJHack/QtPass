@@ -42,13 +42,13 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryMed">75.0&nbsp;%</td>
-            <td class="headerCovTableEntry">8</td>
-            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryMed">77.8&nbsp;%</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">7</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 09:49:57</td>
+            <td class="headerValue">2026-11-17 10:33:11</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
@@ -111,7 +111,7 @@
 <span id="L38"><span class="lineNum">      38</span>              :  * This is used as a fallback when RealPass cannot be initialized.</span>
 <span id="L39"><span class="lineNum">      39</span>              :  */</span>
 <span id="L40"><span class="lineNum">      40</span>              : class ImitatePass : public Pass {</span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         475 :   Q_OBJECT</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         489 :   Q_OBJECT</span></span>
 <span id="L42"><span class="lineNum">      42</span>              : </span>
 <span id="L43"><span class="lineNum">      43</span>              :   friend class tst_util;</span>
 <span id="L44"><span class="lineNum">      44</span>              :   friend class tst_imitatepass;</span>
@@ -839,57 +839,71 @@
 <span id="L766"><span class="lineNum">     766</span>              :   /// worker runs; the worker only reads it, through reencryptUsesGit().</span>
 <span id="L767"><span class="lineNum">     767</span>              :   std::optional&lt;UncommittedGpgId&gt; m_uncommittedGpgId;</span>
 <span id="L768"><span class="lineNum">     768</span>              :   /**</span>
-<span id="L769"><span class="lineNum">     769</span>              :    * @brief gitConfigured(), unless the current run is one</span>
-<span id="L770"><span class="lineNum">     770</span>              :    * reencryptWithoutGit() started.</span>
-<span id="L771"><span class="lineNum">     771</span>              :    * @return Whether the re-encryption run may call Git.</span>
-<span id="L772"><span class="lineNum">     772</span>              :    */</span>
-<span id="L773"><span class="lineNum">     773</span>              :   auto reencryptUsesGit() const -&gt; bool;</span>
-<span id="L774"><span class="lineNum">     774</span>              :   /**</span>
-<span id="L775"><span class="lineNum">     775</span>              :    * @brief Re-encrypt @p dir to the `.gpg-id` Init() wrote although its</span>
-<span id="L776"><span class="lineNum">     776</span>              :    * commit failed, without any Git step (they would fail the same way), and</span>
-<span id="L777"><span class="lineNum">     777</span>              :    * tell the user afterwards that the change is not committed.</span>
-<span id="L778"><span class="lineNum">     778</span>              :    * @param dir The folder whose recipients changed.</span>
-<span id="L779"><span class="lineNum">     779</span>              :    * @param gitError What Git said when the commit failed.</span>
-<span id="L780"><span class="lineNum">     780</span>              :    */</span>
-<span id="L781"><span class="lineNum">     781</span>              :   void reencryptWithoutGit(const QString &amp;dir, const QString &amp;gitError);</span>
+<span id="L769"><span class="lineNum">     769</span>              :    * @brief The `.gpg-id` Init() wrote for the run it starts: the recipients</span>
+<span id="L770"><span class="lineNum">     770</span>              :    * the user ticked, as written.</span>
+<span id="L771"><span class="lineNum">     771</span>              :    */</span>
+<span id="L772"><span class="lineNum">     772</span> <span class="tlaGNC">          27 :   struct WrittenGpgId {</span></span>
+<span id="L773"><span class="lineNum">     773</span>              :     QString file;     ///&lt; The list's path.</span>
+<span id="L774"><span class="lineNum">     774</span>              :     QByteArray bytes; ///&lt; What Init() wrote there.</span>
+<span id="L775"><span class="lineNum">     775</span>              :   };</span>
+<span id="L776"><span class="lineNum">     776</span>              :   /// Set by Init() for the run it starts and cleared by finishReencrypt(),</span>
+<span id="L777"><span class="lineNum">     777</span>              :   /// or at once when that run is refused before it starts. After its pull</span>
+<span id="L778"><span class="lineNum">     778</span>              :   /// the worker stops when the list no longer holds these bytes: a merge</span>
+<span id="L779"><span class="lineNum">     779</span>              :   /// changed the recipients the user chose. Written only on the owning</span>
+<span id="L780"><span class="lineNum">     780</span>              :   /// thread while no worker runs; the worker only reads it.</span>
+<span id="L781"><span class="lineNum">     781</span>              :   std::optional&lt;WrittenGpgId&gt; m_writtenGpgId;</span>
 <span id="L782"><span class="lineNum">     782</span>              :   /**</span>
-<span id="L783"><span class="lineNum">     783</span>              :    * @brief Tell the user that the recipients of @p dir changed on disk but</span>
-<span id="L784"><span class="lineNum">     784</span>              :    * the change is not committed, and whether the entries were re-encrypted.</span>
-<span id="L785"><span class="lineNum">     785</span>              :    * @param dir The folder whose recipients changed.</span>
-<span id="L786"><span class="lineNum">     786</span>              :    * @param gitError What Git said when the commit failed.</span>
-<span id="L787"><span class="lineNum">     787</span>              :    * @param reencrypted Whether every entry was re-encrypted to the new</span>
-<span id="L788"><span class="lineNum">     788</span>              :    *        recipients; false means some or all are still encrypted to the</span>
-<span id="L789"><span class="lineNum">     789</span>              :    *        previous ones.</span>
-<span id="L790"><span class="lineNum">     790</span>              :    */</span>
-<span id="L791"><span class="lineNum">     791</span>              :   void reportUncommittedGpgId(const QString &amp;dir, const QString &amp;gitError,</span>
-<span id="L792"><span class="lineNum">     792</span>              :                               bool reencrypted);</span>
-<span id="L793"><span class="lineNum">     793</span>              : </span>
-<span id="L794"><span class="lineNum">     794</span>              :   /**</span>
-<span id="L795"><span class="lineNum">     795</span>              :    * @brief Translate @p path for the given @p exe when WSL-routed: wraps in</span>
-<span id="L796"><span class="lineNum">     796</span>              :    * wslpath substitution, otherwise returns @p path unchanged.</span>
-<span id="L797"><span class="lineNum">     797</span>              :    * @param path Native filesystem path.</span>
-<span id="L798"><span class="lineNum">     798</span>              :    * @param exe Executable path (checked for &quot;wsl &quot; prefix).</span>
-<span id="L799"><span class="lineNum">     799</span>              :    * @return Path suitable for the given executable.</span>
-<span id="L800"><span class="lineNum">     800</span>              :    */</span>
-<span id="L801"><span class="lineNum">     801</span>              :   auto translatePathForWsl(const QString &amp;path, const QString &amp;exe) const</span>
-<span id="L802"><span class="lineNum">     802</span>              :       -&gt; QString;</span>
-<span id="L803"><span class="lineNum">     803</span>              :   /**</span>
-<span id="L804"><span class="lineNum">     804</span>              :    * @brief Translate @p path for git when WSL-routed: wraps in wslpath</span>
-<span id="L805"><span class="lineNum">     805</span>              :    * substitution, otherwise returns @p path unchanged.</span>
-<span id="L806"><span class="lineNum">     806</span>              :    * @param path Native filesystem path.</span>
-<span id="L807"><span class="lineNum">     807</span>              :    * @return Path suitable for the configured git executable.</span>
-<span id="L808"><span class="lineNum">     808</span>              :    */</span>
-<span id="L809"><span class="lineNum">     809</span>              :   auto pgit(const QString &amp;path) const -&gt; QString;</span>
-<span id="L810"><span class="lineNum">     810</span>              :   /**</span>
-<span id="L811"><span class="lineNum">     811</span>              :    * @brief Translate @p path for gpg when WSL-routed: wraps in wslpath</span>
-<span id="L812"><span class="lineNum">     812</span>              :    * substitution, otherwise returns @p path unchanged.</span>
-<span id="L813"><span class="lineNum">     813</span>              :    * @param path Native filesystem path.</span>
-<span id="L814"><span class="lineNum">     814</span>              :    * @return Path suitable for the configured gpg executable.</span>
-<span id="L815"><span class="lineNum">     815</span>              :    */</span>
-<span id="L816"><span class="lineNum">     816</span>              :   auto pgpg(const QString &amp;path) const -&gt; QString;</span>
-<span id="L817"><span class="lineNum">     817</span>              : };</span>
-<span id="L818"><span class="lineNum">     818</span>              : </span>
-<span id="L819"><span class="lineNum">     819</span>              : #endif // SRC_IMITATEPASS_H_</span>
+<span id="L783"><span class="lineNum">     783</span>              :    * @brief gitConfigured(), unless the current run is one</span>
+<span id="L784"><span class="lineNum">     784</span>              :    * reencryptWithoutGit() started.</span>
+<span id="L785"><span class="lineNum">     785</span>              :    * @return Whether the re-encryption run may call Git.</span>
+<span id="L786"><span class="lineNum">     786</span>              :    */</span>
+<span id="L787"><span class="lineNum">     787</span>              :   auto reencryptUsesGit() const -&gt; bool;</span>
+<span id="L788"><span class="lineNum">     788</span>              :   /**</span>
+<span id="L789"><span class="lineNum">     789</span>              :    * @brief Re-encrypt @p dir to the `.gpg-id` Init() wrote although its</span>
+<span id="L790"><span class="lineNum">     790</span>              :    * commit failed, without any Git step (they would fail the same way), and</span>
+<span id="L791"><span class="lineNum">     791</span>              :    * tell the user afterwards that the change is not committed.</span>
+<span id="L792"><span class="lineNum">     792</span>              :    * @param dir The folder whose recipients changed.</span>
+<span id="L793"><span class="lineNum">     793</span>              :    * @param gitError What Git said when the commit failed.</span>
+<span id="L794"><span class="lineNum">     794</span>              :    */</span>
+<span id="L795"><span class="lineNum">     795</span>              :   void reencryptWithoutGit(const QString &amp;dir, const QString &amp;gitError);</span>
+<span id="L796"><span class="lineNum">     796</span>              :   /**</span>
+<span id="L797"><span class="lineNum">     797</span>              :    * @brief Tell the user that the recipients of @p dir changed on disk but</span>
+<span id="L798"><span class="lineNum">     798</span>              :    * the change is not committed, and whether the entries were re-encrypted.</span>
+<span id="L799"><span class="lineNum">     799</span>              :    * @param dir The folder whose recipients changed.</span>
+<span id="L800"><span class="lineNum">     800</span>              :    * @param gitError What Git said when the commit failed.</span>
+<span id="L801"><span class="lineNum">     801</span>              :    * @param reencrypted Whether every entry was re-encrypted to the new</span>
+<span id="L802"><span class="lineNum">     802</span>              :    *        recipients; false means some or all are still encrypted to the</span>
+<span id="L803"><span class="lineNum">     803</span>              :    *        previous ones.</span>
+<span id="L804"><span class="lineNum">     804</span>              :    */</span>
+<span id="L805"><span class="lineNum">     805</span>              :   void reportUncommittedGpgId(const QString &amp;dir, const QString &amp;gitError,</span>
+<span id="L806"><span class="lineNum">     806</span>              :                               bool reencrypted);</span>
+<span id="L807"><span class="lineNum">     807</span>              : </span>
+<span id="L808"><span class="lineNum">     808</span>              :   /**</span>
+<span id="L809"><span class="lineNum">     809</span>              :    * @brief Translate @p path for the given @p exe when WSL-routed: wraps in</span>
+<span id="L810"><span class="lineNum">     810</span>              :    * wslpath substitution, otherwise returns @p path unchanged.</span>
+<span id="L811"><span class="lineNum">     811</span>              :    * @param path Native filesystem path.</span>
+<span id="L812"><span class="lineNum">     812</span>              :    * @param exe Executable path (checked for &quot;wsl &quot; prefix).</span>
+<span id="L813"><span class="lineNum">     813</span>              :    * @return Path suitable for the given executable.</span>
+<span id="L814"><span class="lineNum">     814</span>              :    */</span>
+<span id="L815"><span class="lineNum">     815</span>              :   auto translatePathForWsl(const QString &amp;path, const QString &amp;exe) const</span>
+<span id="L816"><span class="lineNum">     816</span>              :       -&gt; QString;</span>
+<span id="L817"><span class="lineNum">     817</span>              :   /**</span>
+<span id="L818"><span class="lineNum">     818</span>              :    * @brief Translate @p path for git when WSL-routed: wraps in wslpath</span>
+<span id="L819"><span class="lineNum">     819</span>              :    * substitution, otherwise returns @p path unchanged.</span>
+<span id="L820"><span class="lineNum">     820</span>              :    * @param path Native filesystem path.</span>
+<span id="L821"><span class="lineNum">     821</span>              :    * @return Path suitable for the configured git executable.</span>
+<span id="L822"><span class="lineNum">     822</span>              :    */</span>
+<span id="L823"><span class="lineNum">     823</span>              :   auto pgit(const QString &amp;path) const -&gt; QString;</span>
+<span id="L824"><span class="lineNum">     824</span>              :   /**</span>
+<span id="L825"><span class="lineNum">     825</span>              :    * @brief Translate @p path for gpg when WSL-routed: wraps in wslpath</span>
+<span id="L826"><span class="lineNum">     826</span>              :    * substitution, otherwise returns @p path unchanged.</span>
+<span id="L827"><span class="lineNum">     827</span>              :    * @param path Native filesystem path.</span>
+<span id="L828"><span class="lineNum">     828</span>              :    * @return Path suitable for the configured gpg executable.</span>
+<span id="L829"><span class="lineNum">     829</span>              :    */</span>
+<span id="L830"><span class="lineNum">     830</span>              :   auto pgpg(const QString &amp;path) const -&gt; QString;</span>
+<span id="L831"><span class="lineNum">     831</span>              : };</span>
+<span id="L832"><span class="lineNum">     832</span>              : </span>
+<span id="L833"><span class="lineNum">     833</span>              : #endif // SRC_IMITATEPASS_H_</span>
         </pre>
               </td>
             </tr>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"class_main_window.html#a91bfea12c6549f4eb243b4d41a1e3895":[1,5,9,96],
 "class_main_window.html#a9211cb7acf62af3c66fec54ba813da4e":[1,5,9,94],
 "class_main_window.html#a928b1974ed88173cf93c164f0a613795":[1,5,9,111],
 "class_main_window.html#a93b9f16badab892958d7b5bb28c55aa5":[1,5,9,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "class_password_dialog.html#a77f54fa5d5517a2a9e452ecca0ec00f5":[1,5,11,57],
 "class_password_dialog.html#a78ace54e705a7900dfaa482b8a3abc68":[1,5,11,60],
 "class_password_dialog.html#a7f5de73194ff8f448c8f5efc1fa624c5":[1,5,11,27],
-"class_password_dialog.html#a8c3b897acc1613cb32a265e1bee670ac":[1,5,11,18],
-"class_password_dialog.html#a9bdb7133816fa45decda3e10e53f5f96":[1,5,11,21]
+"class_password_dialog.html#a8c3b897acc1613cb32a265e1bee670ac":[1,5,11,18]
 };
