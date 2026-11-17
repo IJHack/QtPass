@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,750,331,618,328,623,132,753"/>
 <area shape="rect" id="Node000036" href="$class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="258,752,473,780"/>
 <area shape="poly" id="edge46_Node000001_Node000036" title=" " alt="" coords="209,764,244,764,240,767,211,768"/>
-<area shape="rect" id="Node000045" href="$class_users_dialog.html#a20ad9e81e5b25bbef8aff5071f0f1890" title="Show text above the key list in bold red, for a recipient list that could not be verified." alt="" coords="264,804,467,848"/>
+<area shape="rect" id="Node000045" href="$class_users_dialog.html#a3af163e9ad85e7f272460ba74c6fccc4" title="Show text above the key list in bold red, for a recipient list that could not be verified." alt="" coords="264,804,467,848"/>
 <area shape="poly" id="edge61_Node000001_Node000045" title=" " alt="" coords="169,778,254,798,250,801,171,783"/>
 <area shape="rect" id="Node000003" href="$class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387" title="Decide about a verified list: its folder against where it sits, its generation against the remembered..." alt="" coords="538,331,721,358"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,582,604,367,601,372,384,585"/>

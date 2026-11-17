@@ -56,7 +56,7 @@
 <!-- Node45 -->
 <g id="Node000045" class="node">
 <title>Node45</title>
-<g id="a_Node000045"><a xlink:href="class_users_dialog.html#a20ad9e81e5b25bbef8aff5071f0f1890" target="_top" xlink:title="Show text above the key list in bold red, for a recipient list that could not be verified.">
+<g id="a_Node000045"><a xlink:href="class_users_dialog.html#a3af163e9ad85e7f272460ba74c6fccc4" target="_top" xlink:title="Show text above the key list in bold red, for a recipient list that could not be verified.">
 <polygon fill="white" stroke="#666666" points="346.25,-384.12 193.75,-384.12 193.75,-350.62 346.25,-350.62 346.25,-384.12"/>
 <text xml:space="preserve" text-anchor="start" x="201.75" y="-370.62" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::showRecipient</text>
 <text xml:space="preserve" text-anchor="middle" x="270" y="-357.88" font-family="Helvetica,sans-Serif" font-size="10.00">Warning</text>

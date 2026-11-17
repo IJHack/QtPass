@@ -81,7 +81,6 @@ var class_pass =
     [ "Remove", "class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764", null ],
     [ "resolveGpgconfCommand", "class_pass.html#a6a9aa8dc4ff288ce256351b671533a84", null ],
     [ "scopePath", "class_pass.html#a2651a5f937fe963d78263f8e93458210", null ],
-    [ "seedGpgIdFile", "class_pass.html#a5a10957e491f2f8e19d95a07e1221675", null ],
     [ "setEnvVar", "class_pass.html#ab99111861b84c7efcda725c53946b2ca", null ],
     [ "Show", "class_pass.html#a6520ffa669cd7934091934b24593d99c", null ],
     [ "skippedGpgId", "class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c", null ],
