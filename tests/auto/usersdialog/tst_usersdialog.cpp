@@ -55,6 +55,7 @@ private slots:
   void initTestCase();
   void newStoreStartsWithNothingSelected();
   void existingStorePreselectsItsRecipients();
+  void foldersBelowWithTheirOwnListAreNamed();
   void withSigningATamperedListPreselectsNothing();
   void withSigningAnOlderVerifiedListIsPreselectedWithAWarning();
   void withSigningAListForAnotherFolderPreselectsNothing();
@@ -242,6 +243,69 @@ void tst_usersdialog::existingStorePreselectsItsRecipients() {
   auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
   QVERIFY(list != nullptr);
   QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
+}
+
+/**
+ * @brief Saving a folder's recipients changes its own list only. A folder
+ *        below with a list of its own keeps its recipients, someone removed
+ *        here included, so the dialog names those folders. Hidden folders
+ *        are not walked (re-encryption does not walk them either), and a
+ *        folder with nothing below says nothing.
+ */
+void tst_usersdialog::foldersBelowWithTheirOwnListAreNamed() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QDir root(store.path());
+  for (const QString &folder :
+       {QStringLiteral("."), QStringLiteral("work"),
+        QStringLiteral("work/bank"), QStringLiteral(".hidden"),
+        QStringLiteral("plain/inner")}) {
+    QVERIFY(root.mkpath(folder));
+    if (folder == QLatin1String("plain/inner")) {
+      continue;
+    }
+    QFile gpgId(
+        QDir(root.filePath(folder)).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    gpgId.write("31850CF72D9CDDE9\n");
+  }
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  const auto banner = [](const UsersDialog &dialog) {
+    auto *label =
+        dialog.findChild<QLabel *>(QStringLiteral("nestedListsWarning"));
+    return label != nullptr ? label->text() : QString();
+  };
+
+  {
+    RecordingPass pass(s);
+    UsersDialog dialog(&pass, s, s.passStore);
+    const QString text = banner(dialog);
+    QVERIFY2(text.startsWith(QStringLiteral("2 folder")), qPrintable(text));
+    QVERIFY2(text.contains(QStringLiteral("work, ")) &&
+                 text.contains(
+                     QDir::toNativeSeparators(QStringLiteral("work/bank"))),
+             qPrintable(text));
+    QVERIFY2(!text.contains(QStringLiteral("hidden")), qPrintable(text));
+    QVERIFY2(!text.contains(QStringLiteral("plain")), qPrintable(text));
+    // The list itself is not a warning about the folder's own recipients.
+    QVERIFY(dialog.findChild<QLabel *>(QStringLiteral("recipientWarning")) ==
+            nullptr);
+  }
+  {
+    RecordingPass pass(s);
+    UsersDialog dialog(&pass, s, root.filePath(QStringLiteral("work")));
+    const QString text = banner(dialog);
+    QVERIFY2(text.startsWith(QStringLiteral("1 folder")) &&
+                 text.endsWith(QStringLiteral(": bank")),
+             qPrintable(text));
+  }
+  {
+    RecordingPass pass(s);
+    UsersDialog dialog(&pass, s, root.filePath(QStringLiteral("plain")));
+    QVERIFY(dialog.findChild<QLabel *>(QStringLiteral("nestedListsWarning")) ==
+            nullptr);
+  }
 }
 
 /**

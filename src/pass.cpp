@@ -1239,27 +1239,6 @@ auto Pass::parseRecipients(const QByteArray &contents,
   return recipients;
 }
 
-auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
-    -> bool {
-  const QString gpgIdFile = QDir(newDir).absoluteFilePath(".gpg-id");
-  if (QFileInfo::exists(gpgIdFile)) {
-    return false;
-  }
-  // Resolving from the file to be created finds the parent's .gpg-id whether
-  // or not newDir has a trailing separator.
-  const QStringList recipients = getRecipientList(gpgIdFile, passStore);
-  if (recipients.isEmpty()) {
-    return false;
-  }
-  // Only reached without a signing key, so no generation header: a plain
-  // list stays readable for clients that take a comment for a recipient.
-  // Staged and replacing nothing: a link planted after the exists() above
-  // (a dangling one passes it) fails the seed instead of being written through.
-  return Util::writeFileReplacing(
-      gpgIdFile,
-      (recipients.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8(), false);
-}
-
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
  */
 
