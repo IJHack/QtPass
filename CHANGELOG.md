@@ -21,8 +21,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   (and as QtPass already did with a signing key), until the users dialog
   gives it a list. A copy made by an earlier version stays and keeps its
   recipients when someone is removed above it: the users dialog now names
-  the folders below with a list of their own. Remove a copy you do not
-  need, or save its recipients too (scan finding ANT-2026-3I1PV36T).
+  the folders below with a list of their own. In a store without a signing
+  key, remove a copy you do not need. With a signing key, save that
+  folder's recipients in the users dialog instead: a list this device has
+  accepted is not replaced by the parent's when it is deleted, and saving
+  into that folder then stops with "Recipient list missing" (scan finding
+  ANT-2026-3I1PV36T).
 - **"Hide password" hides more.** With it on, fields that name a secret
   (PIN, PIN code, PUK, CVV, CVC, secret, token, key, passphrase, password,
   recovery, answer, seed, mnemonic, as whole words) are behind the eye
