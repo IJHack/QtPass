@@ -6,7 +6,10 @@
 #include <QDir>
 #include <QFileSystemModel>
 #include <QMimeData>
+#include <QTreeView>
 #include <QtTest>
+
+#include <functional>
 
 #include "../../../src/storemodel.h"
 
@@ -42,6 +45,7 @@ private Q_SLOTS:
   void filterExcludesGitDirectory();
   void filterAcceptsRowVisible();
   void filterRejectsAnEarlierStore();
+  void aFolderLeadingBackIsNeverEntered();
   void setModelAndStore();
   void showThisWithNullFs();
   void getStoreBasic();
@@ -215,6 +219,140 @@ void tst_storemodel::filterRejectsAnEarlierStore() {
            "an entry of the earlier store must not match");
   const QModelIndex here = fsm.index(current);
   QVERIFY(sm.filterAcceptsRow(here.row(), here.parent()));
+}
+
+/**
+ * @brief A folder inside the store that leads back into its own path is
+ *        listed by its name but never entered. A planted `loop -> .` was an
+ *        endlessly expandable folder that the search's expandAll() loaded
+ *        level after level until memory ran out. A cycle through two links
+ *        ends too, and a link to a folder elsewhere is still entered.
+ */
+void tst_storemodel::aFolderLeadingBackIsNeverEntered() {
+#ifdef Q_OS_WIN
+  QSKIP("symbolic links need privileges on Windows");
+#else
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QDir top(tempDir.path());
+  for (const QString &dir :
+       {QStringLiteral("store/folder"), QStringLiteral("store/one"),
+        QStringLiteral("store/two"), QStringLiteral("outside")}) {
+    QVERIFY(top.mkpath(dir));
+  }
+  const QString store = top.filePath(QStringLiteral("store"));
+  const QString inner = store + QStringLiteral("/folder/inner.gpg");
+  for (const QString &path :
+       {inner, top.filePath(QStringLiteral("outside/secret.gpg"))}) {
+    QFile f(path);
+    QVERIFY(f.open(QFile::WriteOnly));
+  }
+  const QString loop = store + QStringLiteral("/loop");
+  QVERIFY(QFile::link(QStringLiteral("."), loop));
+  QVERIFY(QFile::link(QStringLiteral("../two"),
+                      store + QStringLiteral("/one/to-two")));
+  QVERIFY(QFile::link(QStringLiteral("../one"),
+                      store + QStringLiteral("/two/to-one")));
+  QVERIFY(QFile::link(QStringLiteral("../outside"),
+                      store + QStringLiteral("/shared")));
+  const QString up = store + QStringLiteral("/up");
+  QVERIFY(QFile::link(QStringLiteral(".."), up));
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(store);
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, store);
+  QTreeView view;
+  view.setModel(&sm);
+  view.setRootIndex(sm.rootIndexFor(store));
+  QTRY_VERIFY(fsm.index(inner).isValid());
+  QTRY_VERIFY(fsm.index(loop).isValid());
+  QTRY_VERIFY(fsm.index(up).isValid());
+  // A link to a folder above the store leads back as much as `x -> .`;
+  // a real folder is entered.
+  QVERIFY(!sm.hasChildren(sm.mapFromSource(fsm.index(up))));
+  QVERIFY(sm.hasChildren(
+      sm.mapFromSource(fsm.index(store + QStringLiteral("/folder")))));
+
+  // Before anything behind it is loaded: no children, nothing to fetch,
+  // and asking to fetch does not have the file system model list it.
+  QModelIndex link = sm.mapFromSource(fsm.index(loop));
+  QVERIFY(link.isValid());
+  QVERIFY(!sm.hasChildren(link));
+  QVERIFY(!sm.canFetchMore(link));
+  sm.fetchMore(link);
+  QTest::qWait(200);
+  QCOMPARE(fsm.rowCount(fsm.index(loop)), 0);
+  // Have the file system model list what is behind the link, two levels
+  // deep, as expanding it in the view once could.
+  for (const QString &level : {loop, loop + QStringLiteral("/folder")}) {
+    const QModelIndex source = fsm.index(level);
+    fsm.fetchMore(source);
+    QTRY_VERIFY(fsm.rowCount(source) > 0);
+  }
+  sm.setFilterRegularExpression(QString());
+  link = sm.mapFromSource(fsm.index(loop));
+  QVERIFY(link.isValid());
+  QCOMPARE(sm.rowCount(link), 0);
+
+  // Expanding everything ends. Nothing behind the loop is listed, and the
+  // loop itself only by its name, which does not match.
+  QStringList listed;
+  bool tooDeep = false;
+  std::function<void(const QModelIndex &, int)> walk =
+      [&](const QModelIndex &parent, int depth) {
+        if (depth >= 20) {
+          tooDeep = true;
+          return;
+        }
+        for (int row = 0; row < sm.rowCount(parent); ++row) {
+          const QModelIndex child = sm.index(row, 0, parent);
+          listed << fsm.filePath(sm.mapToSource(child));
+          walk(child, depth + 1);
+        }
+      };
+  const auto expandAndWalk = [&](const QString &filter) {
+    sm.setFilterRegularExpression(filter);
+    for (int round = 0; round < 10; ++round) {
+      view.expandAll();
+      QTest::qWait(50);
+    }
+    listed.clear();
+    walk(view.rootIndex(), 0);
+  };
+  expandAndWalk(QStringLiteral("inner"));
+  QVERIFY(!tooDeep);
+  QVERIFY2(listed.contains(inner), qPrintable(listed.join(", ")));
+  QVERIFY2(!listed.contains(loop), qPrintable(listed.join(", ")));
+  QVERIFY2(listed.filter(QStringLiteral("/loop/")).isEmpty(),
+           qPrintable(listed.join(", ")));
+
+  // The two links that point at each other: one/to-two is entered (it
+  // leads to a sibling), one/to-two/to-one is not (it leads back to one).
+  sm.setFilterRegularExpression(QString());
+  const QString one = store + QStringLiteral("/one");
+  for (const QString &level : {one, one + QStringLiteral("/to-two")}) {
+    const QModelIndex source = fsm.index(level);
+    fsm.fetchMore(source);
+    QTRY_VERIFY(fsm.rowCount(source) > 0);
+  }
+  QVERIFY(sm.hasChildren(
+      sm.mapFromSource(fsm.index(one + QStringLiteral("/to-two")))));
+  const QModelIndex back =
+      sm.mapFromSource(fsm.index(one + QStringLiteral("/to-two/to-one")));
+  QVERIFY(back.isValid());
+  QVERIFY(!sm.hasChildren(back));
+
+  // A link to a folder elsewhere is entered as before.
+  const QString shared = store + QStringLiteral("/shared");
+  sm.setFilterRegularExpression(QString());
+  QVERIFY(sm.hasChildren(sm.mapFromSource(fsm.index(shared))));
+  fsm.fetchMore(fsm.index(shared));
+  QTRY_VERIFY(fsm.rowCount(fsm.index(shared)) > 0);
+  expandAndWalk(QStringLiteral("secret"));
+  QVERIFY2(listed.contains(store + QStringLiteral("/shared/secret.gpg")),
+           qPrintable(listed.join(", ")));
+#endif
 }
 
 void tst_storemodel::filterAcceptsRowVisible() {

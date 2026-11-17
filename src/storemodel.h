@@ -85,6 +85,23 @@ private:
    */
   auto performDrop(const QString &cleanedSrc, const QString &cleanedDest,
                    Qt::DropAction action, bool force) -> bool;
+  /**
+   * @brief Whether a folder inside the store leads back into its own path:
+   *        it resolves to itself or a folder above it, or to one of the
+   *        folders between it and the store root (a link such as `x -> .`,
+   *        `x -> /`, or a cycle through several links). Such a folder is
+   *        never entered; other linked folders are.
+   * @param path Path as the file system model names it.
+   * @return true for such a folder; false for the store root, anything
+   *         outside the store and anything that is not a folder.
+   */
+  [[nodiscard]] auto leadsBack(const QString &path) const -> bool;
+  /**
+   * @brief leadsBack() for an index of this model.
+   * @param proxyIndex Index in this model.
+   * @return true for a folder that leads back into its own path.
+   */
+  [[nodiscard]] auto leadsBackAt(const QModelIndex &proxyIndex) const -> bool;
 
 public:
   /**
@@ -114,6 +131,29 @@ public:
    * @return true if index should be visible.
    */
   [[nodiscard]] auto showThis(const QModelIndex &index) const -> bool;
+
+  /**
+   * @brief No children for a folder that leads back into its own path, so
+   *        the view shows no expand arrow and a search never enters it.
+   * @param parent Proxy index.
+   * @return false for such a folder, otherwise as the base class.
+   */
+  [[nodiscard]] auto
+  hasChildren(const QModelIndex &parent = QModelIndex()) const -> bool override;
+  /**
+   * @brief Nothing to fetch under a folder that leads back into its own
+   *        path, so the file system model never lists it.
+   * @param parent Proxy index.
+   * @return false for such a folder, otherwise as the base class.
+   */
+  [[nodiscard]] auto canFetchMore(const QModelIndex &parent) const
+      -> bool override;
+  /**
+   * @brief Fetch more rows, except under a folder that leads back into its
+   *        own path.
+   * @param parent Proxy index.
+   */
+  void fetchMore(const QModelIndex &parent) override;
 
   /**
    * @brief Initialize model with source model and store path.

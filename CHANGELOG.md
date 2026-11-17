@@ -63,6 +63,13 @@
   Return opened one, and saving it re-encrypted it to the current store's
   recipients (ported from
   [#2239](https://github.com/IJHack/QtPass/pull/2239))
+- A folder in the store that leads back into its own path, such as a
+  planted link `x -> .`, a link to a folder above the store, or two links
+  pointing at each other, is listed by its name but never opened. Such a
+  folder expanded without end, and the search, which expands the whole
+  tree, loaded it level after level until QtPass ran out of memory. Links to
+  folders elsewhere are opened as before (scan finding ANT-2026-A8D6Z9HP,
+  [#2242](https://github.com/IJHack/QtPass/pull/2242) on main)
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
