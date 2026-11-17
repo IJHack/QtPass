@@ -2914,6 +2914,7 @@ void tst_imitatepass::initStopsWhenThePullChangesTheChosenRecipients() {
     QVERIFY(m.open(QIODevice::WriteOnly));
   }
   QFile::remove(gpgLog);
+  QFile::remove(gitLog);
   endSpy.clear();
   const QString other = QStringLiteral("0011223344556677");
   pass.Init(store, {user(other)});
@@ -2924,7 +2925,9 @@ void tst_imitatepass::initStopsWhenThePullChangesTheChosenRecipients() {
            "no entry may be encrypted to recipients nobody chose");
   QCOMPARE(rec.criticals.size(), 1);
   QVERIFY2(
-      rec.criticals.first().contains(QStringLiteral("changed the recipients")),
+      rec.criticals.first().contains(
+          QStringLiteral("changed the recipients")) &&
+          rec.criticals.first().contains(QStringLiteral("previous recipients")),
       qPrintable(rec.criticals.first()));
   bool pulled = false;
   for (const QStringList &c : loggedCalls(gitLog)) {
