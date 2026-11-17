@@ -216,13 +216,14 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   QStringList unreadable;
   const QStringList folders = passFoldersUnder(dir, unreadable);
   if (!unreadable.isEmpty()) {
+    const QString title = tr("Cannot check the recipient lists");
     //: %1 is a folder. "UTF-8" is the text encoding; keep it as is.
-    emit critical(
-        tr("Cannot check the recipient lists"),
+    const QString text =
         tr("%1 holds a file or folder whose name is not valid UTF-8. QtPass "
            "cannot see what is behind that name, while pass would re-encrypt "
            "it, so nothing was changed. Rename it, then try again.")
-            .arg(QDir::toNativeSeparators(unreadable.first())));
+            .arg(QDir::toNativeSeparators(unreadable.first()));
+    emit critical(title, text);
     return true;
   }
   for (const QString &folder : folders) {
