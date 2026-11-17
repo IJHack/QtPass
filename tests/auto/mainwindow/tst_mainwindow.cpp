@@ -412,6 +412,7 @@ private Q_SLOTS:
   void ctrlCCopiesTheSelectedText();
   void everyCopyKeyCopiesASearchResultAsASecret();
   void copyLinkLocationCopiesAsASecret();
+  void copyLinkLocationFindsTheLinkRightToLeft();
   void otpRequestAnswersOnlyItsOwnEntry();
   void otpRequestKeepsThePasswordOffTheClipboard();
   void otpFastPathCopiesTheVisibleCodeWithoutDecrypting();
@@ -1226,6 +1227,47 @@ void tst_mainwindow::copyLinkLocationCopiesAsASecret() {
   QVERIFY(
       clip->mimeData()->hasFormat(QStringLiteral("x-kde-passwordManagerHint")));
 #endif
+}
+
+/**
+ * @brief Right to left, with line wrapping off (the "no line wrapping"
+ *        setting) and a long line, the menu still sees the link: Qt counts
+ *        the horizontal offset from the other end there.
+ */
+void tst_mainwindow::copyLinkLocationFindsTheLinkRightToLeft() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  const auto restore = qScopeGuard([browser, wrap = browser->lineWrapMode(),
+                                    dir = browser->layoutDirection()] {
+    browser->setLineWrapMode(wrap);
+    browser->setLayoutDirection(dir);
+    browser->clear();
+  });
+  browser->setLineWrapMode(QTextEdit::NoWrap);
+  browser->setLayoutDirection(Qt::RightToLeft);
+  const QString url = QStringLiteral("https://example.org/reset?token=s3cret");
+  browser->setHtml(QStringLiteral("<a href=\"%1\">reset link</a> ").arg(url) +
+                   QString(400, QLatin1Char('x')));
+  QVERIFY(browser->horizontalScrollBar()->maximum() > 0);
+  QTextCursor cursor(browser->document());
+  cursor.setPosition(2);
+  browser->setTextCursor(cursor);
+  browser->ensureCursorVisible();
+  const QPoint pos = browser->cursorRect(cursor).center();
+  QCOMPARE(browser->anchorAt(pos), url);
+
+  QMenu *menu = nullptr;
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "browserContextMenu", Qt::DirectConnection,
+      Q_RETURN_ARG(QMenu *, menu), Q_ARG(QPoint, pos)));
+  QVERIFY(menu != nullptr);
+  const auto cleanup = qScopeGuard([menu] { delete menu; });
+  auto *copyLink = menu->findChild<QAction *>(QStringLiteral("link-copy"));
+  QVERIFY(copyLink != nullptr);
+  QVERIFY2(copyLink->isEnabled(), "the menu must see the link under pos");
 }
 
 /**
