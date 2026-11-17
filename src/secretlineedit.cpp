@@ -76,6 +76,11 @@ SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {
   setValidator(new SingleLineValidator(this));
 }
 
+SecretLineEdit::SecretLineEdit(const QString &text, QWidget *parent)
+    : QLineEdit(text, parent) {
+  setValidator(new SingleLineValidator(this));
+}
+
 auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
   QMenu *menu = createStandardContextMenu();
   for (QAction *action : menu->actions()) {

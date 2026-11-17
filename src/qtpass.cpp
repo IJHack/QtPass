@@ -215,8 +215,14 @@ void QtPass::showTextAsQRCode(const QString &text) {
   } else {
     QPixmap image;
     image.loadFromData(output, "PNG");
-    QDialog *popup = createQRCodePopup(image);
-    popup->exec();
+    m_qrPopup = createQRCodePopup(image);
+    m_qrPopup->exec();
+  }
+}
+
+void QtPass::closeQRCode() {
+  if (m_qrPopup) {
+    m_qrPopup->close();
   }
 }
 

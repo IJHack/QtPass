@@ -50,6 +50,16 @@ public:
    * @param parent Owner.
    */
   explicit SecretLineEdit(QWidget *parent = nullptr);
+  /**
+   * @brief Constructs the line edit showing @p text.
+   *
+   * Not the same as setText() afterwards: QLineEdit takes the constructor's
+   * text as already finished, so losing focus without a change does not
+   * emit editingFinished().
+   * @param text The initial text.
+   * @param parent Owner.
+   */
+  explicit SecretLineEdit(const QString &text, QWidget *parent = nullptr);
 
   /**
    * @brief The standard context menu, with Copy and Cut going through the

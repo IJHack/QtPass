@@ -146,6 +146,7 @@ private Q_SLOTS:
   void anEntryTooLongToEditIsNotLoaded();
   void copiesOutOfTheEditorAreReported();
   void aFieldRenamedAwayFromOtpStillReportsCopies();
+  void aCopyOutOfTheNameEditorIsMarkedAndReported();
   void fieldLabelRefusesADuplicateName();
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
   void pastedLineBreaksStayOutOfTheEntry();
@@ -294,6 +295,35 @@ void tst_passworddialog::aFieldRenamedAwayFromOtpStillReportsCopies() {
   QTest::keySequence(line, QKeySequence::Copy);
   QCOMPARE(copied.count(), 1);
   QCOMPARE(copied.first().at(0).toString(), QStringLiteral("JBSWY3DPEHPK3PXP"));
+}
+
+/**
+ * @brief A copy out of the field name editor is marked as a secret and
+ *        reaches copied() (and so the autoclear), as a copy out of a field
+ *        does: in the "every key: value line" mode the name can be the
+ *        sensitive part.
+ */
+void tst_passworddialog::aCopyOutOfTheNameEditorIsMarkedAndReported() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: alice\n"));
+  FieldLabel *label = fieldLabel(d, QStringLiteral("login"));
+  QVERIFY(label != nullptr);
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  QSignalSpy copied(&d, &PasswordDialog::copied);
+  editor->selectAll();
+  QTest::keySequence(editor, QKeySequence::Copy);
+  QCOMPARE(copied.count(), 1);
+  QCOMPARE(copied.first().at(0).toString(), QStringLiteral("login"));
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
+  QVERIFY(QApplication::clipboard()->mimeData()->hasFormat(
+      QStringLiteral("x-kde-passwordManagerHint")));
+#endif
 }
 
 /**

@@ -52,6 +52,7 @@
 #include <QMessageBox>
 #include <QProgressDialog>
 #include <QPushButton>
+#include <QScrollBar>
 #include <QShortcut>
 #include <QTextCharFormat>
 #include <QTextEdit>
@@ -76,8 +77,14 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   restoreWindow();
   connectBackends();
 
-  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
-                &MainWindow::copySelectionOrPassword);
+  // Every Copy binding, not only the first (Ctrl+C): Ctrl+Insert and F16
+  // otherwise reached the views' own copy, which put decrypted text on the
+  // clipboard bare, without the secret hint or the autoclear.
+  const QList<QKeySequence> copyKeys =
+      QKeySequence::keyBindings(QKeySequence::StandardKey::Copy);
+  for (const QKeySequence &keys : copyKeys) {
+    new QShortcut(keys, this, this, &MainWindow::copySelectionOrPassword);
+  }
 
   m_tree = new StoreTree(ui->treeView, this);
   m_tree->setStore(QtPassSettings::getPassStore(Util::findPasswordStore()));
@@ -786,6 +793,9 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output,
 
 void MainWindow::clearPanel(bool notify) {
   m_displayPanel->clear();
+  // A QR code of the password is the password on screen as much as the
+  // panel is; it is a popup of its own, not part of the panel.
+  m_qtPass->closeQRCode();
   const bool grepWasVisible = ui->grepResultsList->isVisible();
   ui->grepResultsList->clear();
   if (grepWasVisible) {
@@ -1805,14 +1815,37 @@ void MainWindow::showContextMenu(const QPoint &pos) {
   contextMenu.exec(globalPos);
 }
 
-void MainWindow::showBrowserContextMenu(const QPoint &pos) {
-  QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(pos);
+auto MainWindow::browserContextMenu(const QPoint &pos) -> QMenu * {
+  // createStandardContextMenu() takes document coordinates, anchorAt() and
+  // the menu's place viewport ones: scrolled, the menu checked the text
+  // above the link and left "Copy Link Location" disabled.
+  // Right to left, the horizontal offset counts from the other end.
+  const QScrollBar *across = ui->textBrowser->horizontalScrollBar();
+  const int dx = ui->textBrowser->isRightToLeft()
+                     ? across->maximum() - across->value()
+                     : across->value();
+  const QPoint documentPos =
+      pos + QPoint(dx, ui->textBrowser->verticalScrollBar()->value());
+  QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(documentPos);
   // Reparent from textBrowser: a browser stylesheet cascades to the child
   // QMenu and breaks its opaque native background.
   contextMenu->setParent(this, contextMenu->windowFlags());
-  QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
+  if (auto *copyLink =
+          contextMenu->findChild<QAction *>(QStringLiteral("link-copy"))) {
+    const QString link = ui->textBrowser->anchorAt(pos);
+    disconnect(copyLink, &QAction::triggered, nullptr, nullptr);
+    connect(copyLink, &QAction::triggered, this, [this, link] {
+      if (!link.isEmpty()) {
+        m_qtPass->clipboard().copyText(link);
+      }
+    });
+  }
+  return contextMenu;
+}
 
-  contextMenu->exec(globalPos);
+void MainWindow::showBrowserContextMenu(const QPoint &pos) {
+  QMenu *contextMenu = browserContextMenu(pos);
+  contextMenu->exec(ui->textBrowser->viewport()->mapToGlobal(pos));
   delete contextMenu;
 }
 
@@ -1941,6 +1974,15 @@ void MainWindow::copySelectionOrPassword() {
   if (auto *label = qobject_cast<QLabel *>(focus);
       label != nullptr && label->hasSelectedText()) {
     m_qtPass->clipboard().copyText(label->selectedText());
+    return;
+  }
+  // A line of the content search results is decrypted text: through the
+  // clipboard manager too, for the secret hint and the autoclear.
+  if (focus == ui->grepResultsList) {
+    if (const QTreeWidgetItem *item = ui->grepResultsList->currentItem();
+        item != nullptr && !item->text(0).isEmpty()) {
+      m_qtPass->clipboard().copyText(item->text(0));
+    }
     return;
   }
   copyPasswordFromTreeview();

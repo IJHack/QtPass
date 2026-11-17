@@ -45,7 +45,12 @@ void FieldLabel::startEdit() {
     m_editor->setFocus();
     return;
   }
-  m_editor = new QLineEdit(text(), parentWidget());
+  // A SecretLineEdit: in the "every key: value line" mode the name can be the
+  // sensitive part, so a copy out of the editor is marked and tracked as any
+  // copy out of a field.
+  auto *editor = new SecretLineEdit(text(), parentWidget());
+  connect(editor, &SecretLineEdit::copied, this, &FieldLabel::copied);
+  m_editor = editor;
   m_editor->setObjectName(QStringLiteral("fieldNameEditor"));
   m_editor->installEventFilter(this);
   connect(m_editor, &QLineEdit::editingFinished, this,

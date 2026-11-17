@@ -12,6 +12,7 @@
 #include <QDialog>
 #include <QObject>
 #include <QPixmap>
+#include <QPointer>
 
 class Pass;
 
@@ -83,6 +84,11 @@ public slots:
    * @param text Text to convert into a QR code.
    */
   void showTextAsQRCode(const QString &text);
+  /**
+   * @brief Close the QR code popup showTextAsQRCode() has open, if any: the
+   * autoclear of the panel takes the code it shows off the screen too.
+   */
+  void closeQRCode();
 
 signals:
   /**
@@ -117,6 +123,8 @@ private:
    *        through clipboard(); parented to this object.
    */
   ClipboardManager m_clipboard;
+  /// The QR code popup while showTextAsQRCode() has it open.
+  QPointer<QDialog> m_qrPopup;
 
   /**
    * @brief Connect the completion signals of one backend to the slots that

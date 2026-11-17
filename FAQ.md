@@ -169,6 +169,18 @@ one-time password (OTP) support** on the **Settings** tab of the configuration
 dialog. The choice is remembered. Your entries are unchanged: the `otpauth://`
 secret stays in the file and QtPass simply stops rendering a code for it.
 
+### I can't select or copy the OTP code
+
+The code is not selectable text. Copy it with the copy button next to it, or
+with the **OTP** action in the toolbar: those copies are marked as a secret,
+which clipboard managers that honour it keep out of their history, and with
+autoclear on they are removed again. Selecting the code skipped both.
+
+With **No clipboard** chosen on the **Clipboard** page of the settings, the
+panel shows no copy buttons. The **OTP** action in the toolbar still copies the
+code, as the **Copy** action copies the password; or choose **On-demand copy to
+clipboard** to get the button back.
+
 ### How do I hide a PIN or other fields, like the password?
 
 Turn on **Hide password** on the **Display** page of the settings. The
