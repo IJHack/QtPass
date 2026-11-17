@@ -766,6 +766,20 @@ private:
   /// worker runs; the worker only reads it, through reencryptUsesGit().
   std::optional<UncommittedGpgId> m_uncommittedGpgId;
   /**
+   * @brief The `.gpg-id` Init() wrote for the run it starts: the recipients
+   * the user ticked, as written.
+   */
+  struct WrittenGpgId {
+    QString file;     ///< The list's path.
+    QByteArray bytes; ///< What Init() wrote there.
+  };
+  /// Set by Init() for the run it starts and cleared by finishReencrypt(),
+  /// or at once when that run is refused before it starts. After its pull
+  /// the worker stops when the list no longer holds these bytes: a merge
+  /// changed the recipients the user chose. Written only on the owning
+  /// thread while no worker runs; the worker only reads it.
+  std::optional<WrittenGpgId> m_writtenGpgId;
+  /**
    * @brief gitConfigured(), unless the current run is one
    * reencryptWithoutGit() started.
    * @return Whether the re-encryption run may call Git.

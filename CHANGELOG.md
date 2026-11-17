@@ -834,6 +834,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   folder without it, and a folder line that is not UTF-8 could match a
   folder named with the replacement character. Such a list is now refused
   where it does not belong (scan finding ANT-2026-OYWZA7MO)
+- With automatic pulling on, saving recipients in the users dialog no
+  longer re-encrypts to a list the pull changed. The pull before the
+  re-encryption could merge another change to the same `.gpg-id` cleanly,
+  and without a signing key the entries were then encrypted to a key the
+  dialog showed unticked. The run now stops before touching any entry and
+  asks to check the recipients again (scan finding ANT-2026-Z1A342BL)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

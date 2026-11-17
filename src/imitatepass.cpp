@@ -653,7 +653,12 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       return;
     }
   }
+  m_writtenGpgId = WrittenGpgId{gpgIdFile, written};
   reencryptPath(path);
+  if (!m_reencryptActive) {
+    // Refused before it started; reencryptPath() said why.
+    m_writtenGpgId.reset();
+  }
   // finishedInit once the .gpg-id landed in git, as the async path did.
   if (useGit) {
     Pass::finished(PASS_INIT, 0, gitOut, gitErr);
@@ -1311,6 +1316,28 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     return result;
   }
 
+  // Init() wrote the recipients the user ticked and committed them. A pull
+  // that merged another change to the same list cleanly (a line removed
+  // here, one added there) would have the run encrypt to keys nobody chose
+  // in the dialog, and without a signing key nothing else notices.
+  if (m_writtenGpgId) {
+    const std::optional<QByteArray> now =
+        Util::readRegularFile(m_writtenGpgId->file, Util::kMaxGpgIdBytes);
+    if (!now || *now != m_writtenGpgId->bytes) {
+      if (!m_reencryptCancel.load()) {
+        emit critical(
+            tr("Recipients changed by the pull"),
+            tr("The pull changed the recipients of %1 after you saved "
+               "them, so nothing was re-encrypted. Open the users dialog "
+               "for that folder again, check the recipients, and save.")
+                .arg(QDir::toNativeSeparators(
+                    QFileInfo(m_writtenGpgId->file).path())));
+      }
+      result.aborted = true;
+      return result;
+    }
+  }
+
   // Leftovers of an interrupted run first: a restored entry then goes into
   // the backup commit like everything else, and a stale temporary does not.
   if (!recoverReencryptLeftovers(dir)) {
@@ -1436,6 +1463,7 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                            !result.cancelled && !result.aborted &&
                                result.failed.isEmpty());
   }
+  m_writtenGpgId.reset();
   m_pushAfterReencrypt = false;
   m_reencryptActive = false;
   emit endReencryptPath();
