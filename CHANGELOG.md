@@ -879,8 +879,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   clipboard manager: Ctrl+Insert (and every other Copy key) on a content
   search result, the field name editor in the password dialog, and "Copy
   Link Location" on a shown entry. The OTP code can no longer be selected:
-  its copy button copies it. With "No clipboard" there is no button, so the
-  code is read, not copied (see the
+  its copy button or the OTP action copies it. With "No clipboard" the panel
+  has no button, and the OTP action copies it (see the
   [FAQ](FAQ.md#i-cant-select-or-copy-the-otp-code)) (scan findings
   ANT-2026-8O2CHMNT, ANT-2026-8PN56SET, ANT-2026-F6XDGDW8,
   ANT-2026-3BM3VV2Z)

@@ -48,6 +48,7 @@
 #include <QScopeGuard>
 #include <QScopedPointer>
 #include <QScreen>
+#include <QScrollBar>
 #include <QShortcut>
 #include <QSortFilterProxyModel>
 #include <QStatusBar>
@@ -1153,12 +1154,16 @@ void tst_mainwindow::everyCopyKeyCopiesASearchResultAsASecret() {
 
   QClipboard *clip = QApplication::clipboard();
   ClipboardManager &manager = m_window->findChild<QtPass *>()->clipboard();
-  for (const QKeyCombination keys :
-       {QKeyCombination(Qt::ControlModifier, Qt::Key_C),
-        QKeyCombination(Qt::ControlModifier, Qt::Key_Insert)}) {
+  // Every Copy key this platform has (Ctrl+C, and Ctrl+Insert and F16 on
+  // X11), sent to the focused list, so its own handling of the key is in
+  // the way as it is for the user.
+  const QList<QKeySequence> copyKeys =
+      QKeySequence::keyBindings(QKeySequence::Copy);
+  QVERIFY(!copyKeys.isEmpty());
+  for (const QKeySequence &keys : copyKeys) {
     clip->setText(QStringLiteral("sentinel"));
     manager.clear();
-    QTest::keyClick(m_window.get(), keys.key(), keys.keyboardModifiers());
+    QTest::keySequence(results, keys);
     QCOMPARE(clip->text(), QStringLiteral("pin: 4321"));
     QCOMPARE(manager.trackedText(), QStringLiteral("pin: 4321"));
 #if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
@@ -1181,9 +1186,20 @@ void tst_mainwindow::copyLinkLocationCopiesAsASecret() {
       m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
   QVERIFY(browser != nullptr);
   const QString url = QStringLiteral("https://example.org/reset?token=s3cret");
-  browser->setHtml(QStringLiteral("<a href=\"%1\">reset link</a>").arg(url));
+  // The link below a page of text, scrolled into view: the menu must check
+  // the link, not the text that sits there unscrolled.
+  QString html;
+  for (int i = 0; i < 200; ++i) {
+    html += QStringLiteral("line %1<br>").arg(i);
+  }
+  browser->setHtml(html +
+                   QStringLiteral("<a href=\"%1\">reset link</a>").arg(url));
   QTextCursor cursor(browser->document());
-  cursor.setPosition(2);
+  cursor.movePosition(QTextCursor::End);
+  cursor.movePosition(QTextCursor::Left, QTextCursor::MoveAnchor, 2);
+  browser->setTextCursor(cursor);
+  browser->ensureCursorVisible();
+  QVERIFY(browser->verticalScrollBar()->value() > 0);
   const QPoint pos = browser->cursorRect(cursor).center();
   QCOMPARE(browser->anchorAt(pos), url);
 
@@ -1198,6 +1214,7 @@ void tst_mainwindow::copyLinkLocationCopiesAsASecret() {
   });
   auto *copyLink = menu->findChild<QAction *>(QStringLiteral("link-copy"));
   QVERIFY2(copyLink != nullptr, "Qt's menu names the action link-copy");
+  QVERIFY2(copyLink->isEnabled(), "the menu must see the link under pos");
   QClipboard *clip = QApplication::clipboard();
   clip->setText(QStringLiteral("sentinel"));
   ClipboardManager &manager = m_window->findChild<QtPass *>()->clipboard();

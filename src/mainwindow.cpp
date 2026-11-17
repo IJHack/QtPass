@@ -52,6 +52,7 @@
 #include <QMessageBox>
 #include <QProgressDialog>
 #include <QPushButton>
+#include <QScrollBar>
 #include <QShortcut>
 #include <QTextCharFormat>
 #include <QTextEdit>
@@ -1815,7 +1816,13 @@ void MainWindow::showContextMenu(const QPoint &pos) {
 }
 
 auto MainWindow::browserContextMenu(const QPoint &pos) -> QMenu * {
-  QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(pos);
+  // createStandardContextMenu() takes document coordinates, anchorAt() and
+  // the menu's place viewport ones: scrolled, the menu checked the text
+  // above the link and left "Copy Link Location" disabled.
+  const QPoint documentPos =
+      pos + QPoint(ui->textBrowser->horizontalScrollBar()->value(),
+                   ui->textBrowser->verticalScrollBar()->value());
+  QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(documentPos);
   // Reparent from textBrowser: a browser stylesheet cascades to the child
   // QMenu and breaks its opaque native background.
   contextMenu->setParent(this, contextMenu->windowFlags());
