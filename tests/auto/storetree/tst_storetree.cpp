@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
 #include <QFile>
+#include <QFileSystemModel>
 #include <QHeaderView>
 #include <QRegularExpression>
 #include <QTemporaryDir>
@@ -28,6 +29,7 @@ private slots:
   void switchingStoresMovesTheRoot();
   void searchNeverMatchesAnEarlierStore();
   void aStoreReachedThroughALinkStillLists();
+  void aLinkInsideTheStoreIsListedButNeverEntered();
 
 private:
   auto makeEntry(const QString &relative) -> QString;
@@ -241,6 +243,67 @@ void tst_storetree::aStoreReachedThroughALinkStillLists() {
   QVERIFY2(tree.indexFor(link + QStringLiteral("/folder/inner.gpg")).isValid(),
            "a match in a store reached through a link is listed");
   QVERIFY(!tree.indexFor(link + QStringLiteral("/top.gpg")).isValid());
+#endif
+}
+
+/**
+ * @brief A link inside the store is neither an entry nor a folder: it is
+ *        listed by name (so it can be deleted) but has no children, and a
+ *        search never reaches what is behind it. A planted `loop -> .` was
+ *        an endlessly expandable folder that the search's expandAll() loaded
+ *        level after level until memory ran out.
+ */
+void tst_storetree::aLinkInsideTheStoreIsListedButNeverEntered() {
+#ifdef Q_OS_WIN
+  QSKIP("symbolic links need privileges on Windows");
+#else
+  const QString loop = QDir(m_store).filePath(QStringLiteral("loop"));
+  QVERIFY(QFile::link(QStringLiteral("."), loop));
+  QTreeView view;
+  StoreTree tree(&view);
+  tree.setStore(m_store);
+  QVERIFY(waitFor(tree, m_store + QStringLiteral("/top.gpg")).isValid());
+  QVERIFY(
+      waitFor(tree, m_store + QStringLiteral("/folder/inner.gpg")).isValid());
+  QModelIndex link;
+  QTRY_VERIFY((link = tree.indexFor(loop)).isValid());
+  // Before anything behind it is loaded: no children, nothing to fetch,
+  // and asking to fetch does not have the file system model list it.
+  QFileSystemModel &fs = tree.fileSystem();
+  QVERIFY(!tree.proxy().hasChildren(link));
+  QVERIFY(!tree.proxy().canFetchMore(link));
+  tree.proxy().fetchMore(link);
+  QTest::qWait(200);
+  QCOMPARE(fs.rowCount(fs.index(loop)), 0);
+  // Have the file system model list what is behind the link, two levels
+  // deep, as expanding it in the view once could.
+  for (const QString &level : {loop, loop + QStringLiteral("/folder")}) {
+    const QModelIndex source = fs.index(level);
+    fs.fetchMore(source);
+    QTRY_VERIFY(fs.rowCount(source) > 0);
+  }
+  tree.setFilter(QRegularExpression());
+  QTRY_VERIFY((link = tree.indexFor(loop)).isValid());
+  QCOMPARE(tree.proxy().rowCount(link), 0);
+
+  // Expanding everything ends, and nothing behind the link is listed.
+  tree.setFilter(QRegularExpression(QStringLiteral("inner")));
+  view.expandAll();
+  QStringList listed;
+  std::function<void(const QModelIndex &, int)> walk =
+      [&](const QModelIndex &parent, int depth) {
+        QVERIFY(depth < 20);
+        for (int row = 0; row < tree.proxy().rowCount(parent); ++row) {
+          const QModelIndex child = tree.proxy().index(row, 0, parent);
+          listed << tree.fileSystem().filePath(tree.proxy().mapToSource(child));
+          walk(child, depth + 1);
+        }
+      };
+  walk(view.rootIndex(), 0);
+  QVERIFY2(listed.filter(QStringLiteral("/loop/")).isEmpty(),
+           qPrintable(listed.join(", ")));
+  QVERIFY2(listed.contains(m_store + QStringLiteral("/folder/inner.gpg")),
+           qPrintable(listed.join(", ")));
 #endif
 }
 

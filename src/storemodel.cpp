@@ -54,40 +54,71 @@ auto StoreModel::filterAcceptsRow(int sourceRow,
 }
 
 auto StoreModel::showThis(const QModelIndex &index) const -> bool {
-  bool retVal = false;
   if (fs == nullptr) {
-    return retVal;
+    return false;
   }
-  if (sourceModel()->rowCount(index) > 0) {
+  const QString filePath = fs->filePath(index);
+  QString path = QDir(store).relativeFilePath(filePath);
+  // Only what lies in the current store. The file system model keeps the
+  // rows of a store shown earlier (a profile switch only re-roots it), and
+  // a search would otherwise match those, open one and save it encrypted
+  // to this store's recipients. Folders above the store still lead there.
+  const bool outside = path == QLatin1String("..") ||
+                       path.startsWith(QLatin1String("../")) ||
+                       QDir::isAbsolutePath(path);
+  // A link inside the store is neither an entry nor a folder (SECURITY.md):
+  // it is listed by its name, so it can be deleted, but never entered. A
+  // planted `x -> .` was an endlessly expandable folder, and the search's
+  // expandAll() loaded it level after level until memory ran out.
+  const bool inside = !outside && path != QLatin1String(".");
+  if (inside && Util::isUnderLink(filePath, store, false)) {
+    return false;
+  }
+  const bool link = inside && Util::isLinkedFolder(filePath);
+  if (!link && sourceModel()->rowCount(index) > 0) {
     for (int nChild = 0; nChild < sourceModel()->rowCount(index); ++nChild) {
-      QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
+      const QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
       if (!childIndex.isValid()) {
         break;
       }
-      retVal = showThis(childIndex);
-      if (retVal) {
-        break;
+      if (showThis(childIndex)) {
+        return true;
       }
     }
-  } else {
-    QModelIndex useIndex = sourceModel()->index(index.row(), 0, index.parent());
-    QString path = fs->filePath(useIndex);
-    path = QDir(store).relativeFilePath(path);
-    // Only what lies in the current store. The file system model keeps the
-    // rows of a store shown earlier (a profile switch only re-roots it), and
-    // a search would otherwise match those, open one and save it encrypted
-    // to this store's recipients.
-    if (path == QLatin1String("..") || path.startsWith(QLatin1String("../")) ||
-        QDir::isAbsolutePath(path)) {
-      return false;
-    }
-    if (path.startsWith(".git")) {
-      return false;
-    }
-    path.replace(Util::endsWithGpg(), "");
-    retVal = path.contains(filterRegularExpression());
+    return false;
   }
-  return retVal;
+  if (outside || path.startsWith(".git")) {
+    return false;
+  }
+  path.replace(Util::endsWithGpg(), "");
+  return path.contains(filterRegularExpression());
+}
+
+auto StoreModel::isLinkInStore(const QModelIndex &proxyIndex) const -> bool {
+  if (fs == nullptr || !proxyIndex.isValid()) {
+    return false;
+  }
+  const QString filePath = fs->filePath(mapToSource(proxyIndex));
+  const QString path = QDir(store).relativeFilePath(filePath);
+  if (path == QLatin1String(".") || path == QLatin1String("..") ||
+      path.startsWith(QLatin1String("../")) || QDir::isAbsolutePath(path)) {
+    return false;
+  }
+  return Util::isLinkedFolder(filePath);
+}
+
+auto StoreModel::hasChildren(const QModelIndex &parent) const -> bool {
+  return !isLinkInStore(parent) && QSortFilterProxyModel::hasChildren(parent);
+}
+
+auto StoreModel::canFetchMore(const QModelIndex &parent) const -> bool {
+  return !isLinkInStore(parent) && QSortFilterProxyModel::canFetchMore(parent);
+}
+
+void StoreModel::fetchMore(const QModelIndex &parent) {
+  if (!isLinkInStore(parent)) {
+    QSortFilterProxyModel::fetchMore(parent);
+  }
 }
 
 void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,

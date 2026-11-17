@@ -816,6 +816,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   keeps loaded, and showed them when nothing in the current store matched;
   Return opened one, and saving it re-encrypted it to the current store's
   recipients (scan finding ANT-2026-0DJ8UWM6)
+- A link inside the store is listed by its name in the tree but never
+  opened as a folder. A planted `x -> .` was a folder that expanded without
+  end, and the search, which expands the whole tree, loaded it level after
+  level until QtPass ran out of memory. Delete still removes the link (scan
+  finding ANT-2026-A8D6Z9HP)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old
