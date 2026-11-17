@@ -737,7 +737,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="367"/>
         <source>A profile name cannot contain / or \</source>
-        <translation type="unfinished">Ett profilnamn får inte innehålla / eller \</translation>
+        <translation>Ett profilnamn får inte innehålla / eller \</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="369"/>
@@ -1409,12 +1409,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="343"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
-        <translation type="unfinished">Kunde inte ta bort allt i %1. Det som kunde tas bort är borta; kontrollera vad som finns kvar i den.</translation>
+        <translation>Kunde inte ta bort allt av %1. Det som kunde tas bort är borta; kontrollera vad som finns kvar i den.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="352"/>
         <source>Could not remove %1: %2</source>
-        <translation type="unfinished">Kunde inte ta bort %1: %2</translation>
+        <translation>Kunde inte ta bort %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="374"/>
@@ -1668,7 +1668,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
-        <translation type="unfinished">%1 kunde inte läsas: dess poster omkrypterades inte</translation>
+        <translation>%1 kunde inte läsas: dess poster omkrypterades inte</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1255"/>
@@ -1732,7 +1732,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1447"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished">Ingen push: en tidigare omkryptering på den här lagringsplatsen slutfördes inte</translation>
+        <translation>Ingen push: en tidigare omkryptering på den här lagringsplatsen slutfördes inte</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1502"/>
@@ -1769,12 +1769,12 @@ Omkrypteringen slutfördes inte, så vissa eller alla poster är fortfarande kry
     <message>
         <location filename="../src/imitatepass.cpp" line="1623"/>
         <source>Move failed</source>
-        <translation type="unfinished">Flytten misslyckades</translation>
+        <translation>Flytt misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1624"/>
         <source>Could not move %1 to %2.</source>
-        <translation type="unfinished">Kunde inte flytta %1 till %2.</translation>
+        <translation>Kunde inte flytta %1 till %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1713"/>
@@ -2133,7 +2133,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="212"/>
         <source>The passphrase cannot start or end with a space or a tab.</source>
-        <translation type="unfinished">Lösenfrasen får inte börja eller sluta med ett mellanslag eller en tabb.</translation>
+        <translation>Lösenfrasen får inte börja eller sluta med ett mellanslag eller en tabb.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="216"/>
@@ -2766,13 +2766,13 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
-        <translation type="unfinished">%1 kunde inte läsas, så det är okänt vad den innehåller.</translation>
+        <translation>%1 kunde inte läsas, så det är okänt vad den innehåller.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1379"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n mapp i den kunde inte läsas, så det är okänt vad den innehåller.</numerusform>
             <numerusform>%n mappar i den kunde inte läsas, så det är okänt vad de innehåller.</numerusform>
         </translation>
@@ -3395,7 +3395,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="879"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
-        <translation type="unfinished">Den här posten innehåller byte som QtPass inte kan spara oförändrade, så den kan inte redigeras här.</translation>
+        <translation>Den här posten innehåller bytes som QtPass inte kan spara oförändrade, så den kan inte redigeras här.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="898"/>
@@ -3660,7 +3660,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="170"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
-        <translation type="unfinished">Ingen automatisk push: den senaste omkrypteringen slutfördes inte. Omkryptera igen, eller pusha för hand.</translation>
+        <translation>Ingen automatisk push: den senaste omkrypteringen slutfördes inte. Omkryptera igen, eller pusha för hand.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="191"/>
@@ -3712,12 +3712,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="60"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Git pull misslyckades: %1</translation>
+        <translation>Git pull misslyckades: %1</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
-        <translation type="unfinished">Ingen push: en tidigare omkryptering på den här lagringsplatsen slutfördes inte</translation>
+        <translation>Ingen push: en tidigare omkryptering på den här lagringsplatsen slutfördes inte</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="195"/>
@@ -3759,7 +3759,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="515"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
-        <translation type="unfinished">Mottagarna ändrades, men vissa poster kunde inte omkrypteras för dem: de är fortfarande krypterade för de tidigare mottagarna, som fortfarande kan läsa dem. Med Git har ändringen committats lokalt och inte pushats: QtPass pushar inte den här lagringsplatsen automatiskt förrän en omkryptering lyckas, och en push för hand skickar den.</translation>
+        <translation>Mottagarna ändrades, men vissa poster kunde inte omkrypteras för dem: de är fortfarande krypterade för de tidigare mottagarna, som fortfarande kan läsa dem. Med Git har ändringen committats lokalt och inte pushats: QtPass pushar inte den här lagringsplatsen automatiskt förrän en omkryptering lyckas, och en push för hand skickar den.</translation>
     </message>
     <message>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and was not pushed now; the next push sends it.</source>
@@ -3876,37 +3876,37 @@ och slå sedan på Git under Inställningar.</translation>
         <location filename="../src/totp.cpp" line="278"/>
         <source>The OTP configuration is too long.</source>
         <extracomment>OTP is a one-time password (a two-factor code).</extracomment>
-        <translation type="unfinished">OTP-konfigurationen är för lång.</translation>
+        <translation>OTP-konfigurationen är för lång.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="282"/>
         <source>This is a counter-based (HOTP) configuration. QtPass makes time-based (TOTP) codes only.</source>
         <extracomment>Keep HOTP and TOTP as written: they are the names of the two kinds.</extracomment>
-        <translation type="unfinished">Det här är en räknarbaserad (HOTP) konfiguration. QtPass skapar bara tidsbaserade (TOTP) koder.</translation>
+        <translation>Det här är en räknarbaserad (HOTP) konfiguration. QtPass skapar bara tidsbaserade (TOTP) koder.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="287"/>
         <source>The algorithm in this otpauth:// link is not supported. QtPass supports SHA1, SHA256 and SHA512.</source>
         <extracomment>Keep otpauth://, SHA1, SHA256 and SHA512 as written.</extracomment>
-        <translation type="unfinished">Algoritmen i den här otpauth://-länken stöds inte. QtPass stöder SHA1, SHA256 och SHA512.</translation>
+        <translation>Algoritmen i den här otpauth://-länken stöds inte. QtPass stöder SHA1, SHA256 och SHA512.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="292"/>
         <source>This otpauth:// link cannot be read.</source>
         <extracomment>Keep otpauth:// as written: it is the name of the link format.</extracomment>
-        <translation type="unfinished">Den här otpauth://-länken kan inte läsas.</translation>
+        <translation>Den här otpauth://-länken kan inte läsas.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="296"/>
         <source>This is not a TOTP secret or an otpauth://totp/ link.</source>
         <extracomment>Keep TOTP and otpauth://totp/ as written.</extracomment>
-        <translation type="unfinished">Det här är varken en TOTP-hemlighet eller en otpauth://totp/-länk.</translation>
+        <translation>Det här är varken en TOTP-hemlighet eller en otpauth://totp/-länk.</translation>
     </message>
     <message>
         <location filename="../src/totp.cpp" line="300"/>
         <source>The secret is missing or is not valid base32.</source>
         <extracomment>The secret is the shared key of the one-time password; keep base32.</extracomment>
-        <translation type="unfinished">Hemligheten saknas eller är inte giltig base32.</translation>
+        <translation>Hemligheten saknas eller är inte giltig base32.</translation>
     </message>
 </context>
 <context>
