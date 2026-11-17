@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 22:42:12</td>
+            <td class="headerValue">2026-11-17 23:17:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -600,7 +600,7 @@
 <span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">         308 :   auto [output, err] = collectOutput(i, exitCode);</span></span>
 <span id="L528"><span class="lineNum">     528</span> <span class="tlaGNC">         308 :   if (exitStatus == QProcess::NormalExit) {</span></span>
 <span id="L529"><span class="lineNum">     529</span> <span class="tlaGNC">         307 :     if (exitCode != 0) {</span></span>
-<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">          45 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
+<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">          46 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
 <span id="L531"><span class="lineNum">     531</span>              :     }</span>
 <span id="L532"><span class="lineNum">     532</span> <span class="tlaGNC">         307 :     emit finished(i.id, exitCode, output, err);</span></span>
 <span id="L533"><span class="lineNum">     533</span> <span class="tlaGNC">         307 :     m_outputLossless = true;</span></span>
@@ -632,8 +632,8 @@
 <span id="L559"><span class="lineNum">     559</span>              :       this,</span>
 <span id="L560"><span class="lineNum">     560</span> <span class="tlaGNC">         314 :       [this]() {</span></span>
 <span id="L561"><span class="lineNum">     561</span> <span class="tlaGNC">         259 :         m_drainCheckPosted = false;</span></span>
-<span id="L562"><span class="lineNum">     562</span> <span class="tlaGNC">         124 :         if (isIdle() &amp;&amp; m_pendingErrors == 0) {</span></span>
-<span id="L563"><span class="lineNum">     563</span> <span class="tlaGNC">         124 :           emit drained();</span></span>
+<span id="L562"><span class="lineNum">     562</span> <span class="tlaGNC">         123 :         if (isIdle() &amp;&amp; m_pendingErrors == 0) {</span></span>
+<span id="L563"><span class="lineNum">     563</span> <span class="tlaGNC">         123 :           emit drained();</span></span>
 <span id="L564"><span class="lineNum">     564</span>              :         }</span>
 <span id="L565"><span class="lineNum">     565</span> <span class="tlaGNC">         259 :       },</span></span>
 <span id="L566"><span class="lineNum">     566</span>              :       Qt::QueuedConnection);</span>
