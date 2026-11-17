@@ -556,6 +556,15 @@ private:
   /// Progress/cancel dialog shown between startReencryptPath() and
   /// endReencryptPath(); QPointer so a closed dialog reads back as null.
   QPointer<QProgressDialog> m_reencryptProgress;
+  /// True while reencryptProgress() is inside the dialog's setValue(), which
+  /// runs processEvents() on a modal dialog: endReencryptPath() then only
+  /// hides the dialog and leaves the delete to reencryptProgress(). A
+  /// nested event loop (the worker's error box) would otherwise delete it
+  /// with setValue() still on the stack.
+  bool m_inProgressUpdate = false;
+  /// Set by endReencryptPath() during m_inProgressUpdate: the dialog to
+  /// delete once setValue() has returned.
+  QPointer<QProgressDialog> m_progressToDelete;
   /// The open applySearchText() waits to make until the tree has loaded the
   /// entry; QPointer so an ended or cancelled wait reads back as null.
   QPointer<QObject> m_pendingOpen;

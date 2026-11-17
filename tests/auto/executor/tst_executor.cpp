@@ -44,6 +44,7 @@ private Q_SLOTS:
   void executeAsyncCapturesStdout();
   void executeAsyncNonZeroExitCode();
   void executeAsyncStartingSignal();
+  void destroyedWhileRunningEmitsNothing();
   void executeAsyncMultipleSequential();
   void executeAsyncWithWorkDir();
   void executeAsyncFailedToStartEmitsError();
@@ -699,6 +700,35 @@ void tst_executor::executeAsyncStartingSignal() {
   exec.execute(3, sh, {"-c", "echo starting-test"}, false, false);
   QTRY_COMPARE_WITH_TIMEOUT(doneSpy.count(), 1, 5000);
   QVERIFY2(startSpy.count() >= 1, "starting signal must have been emitted");
+}
+
+/**
+ * @brief An Executor destroyed while its command runs says nothing more and
+ *        starts nothing more: ~QProcess kills the command, and its finished()
+ *        reached onProcessFinished(), which reported the kill through error()
+ *        to the owner's slots on an object half destroyed (Pass at quit while
+ *        gpg decrypted) and started the next queued command.
+ */
+void tst_executor::destroyedWhileRunningEmitsNothing() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString marker = QDir(dir.path()).filePath(QStringLiteral("next-ran"));
+  auto *exec = new Executor;
+  int heard = 0;
+  QObject receiver;
+  connect(exec, &Executor::finished, &receiver, [&heard] { ++heard; });
+  connect(exec, &Executor::error, &receiver, [&heard] { ++heard; });
+  QSignalSpy startSpy(exec, &Executor::starting);
+  exec->execute(1, sh, {"-c", "sleep 30"}, true, true);
+  exec->execute(2, sh, {"-c", "touch \"$1\"", "sh", marker}, false, false);
+  QTRY_VERIFY_WITH_TIMEOUT(startSpy.count() >= 1, 5000);
+  delete exec;
+  QTest::qWait(300);
+  QCOMPARE(heard, 0);
+  QVERIFY2(!QFileInfo::exists(marker), "the next command must not start");
 }
 
 void tst_executor::executeAsyncMultipleSequential() {

@@ -935,8 +935,11 @@ void ConfigDialog::on_deleteButton_clicked() {
   }
   m_entries.removeAt(row);
   delete ui->profileList->takeItem(row);
-  // currentRowChanged has re-pointed the form at the neighbour (or nothing).
-  validate();
+  // The list moved its current row while the row was being removed, so
+  // currentRowChanged carried the old numbering: the form named the profile
+  // after the one now highlighted, and edits (a signing key) went there.
+  // Load it from the row the list shows now.
+  loadProfileForm(ui->profileList->currentRow());
 }
 
 void ConfigDialog::criticalMessage(const QString &title, const QString &text) {

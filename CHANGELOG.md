@@ -854,6 +854,18 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   and without a signing key the entries were then encrypted to a key the
   dialog showed unticked. The run now stops before touching any entry and
   asks to check the recipients again (scan finding ANT-2026-Z1A342BL)
+- QtPass no longer crashes when a re-encryption's error box appears while
+  the progress dialog updates: the dialog was deleted under its own update
+  (scan finding ANT-2026-FRSSA71E)
+- Quitting while gpg decrypts no longer reads freed memory: the killed
+  process's end reached the backend while it was being torn down, and the
+  next queued command started (scan finding ANT-2026-WCJM5G0D)
+- A click in the store tree or the content search results keeps hold of the
+  right entry when a message box appears and the tree reloads meanwhile
+  (scan finding ANT-2026-UH1Q6MX7)
+- After deleting a profile in Settings, the form shows the profile the list
+  highlights; it showed the one after it, and a signing key typed next was
+  saved there (scan finding ANT-2026-RVR8VNTF)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

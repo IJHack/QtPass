@@ -31,6 +31,8 @@ Executor::Executor(QObject *parent) : QObject(parent) {
   connect(&m_process, &QProcess::started, this, &Executor::starting);
 }
 
+Executor::~Executor() { m_process.blockSignals(true); }
+
 void Executor::detachFromTerminal(QProcess &process) {
 #if defined(Q_OS_UNIX) && QT_VERSION >= QT_VERSION_CHECK(6, 7, 0)
   // A child inherits QtPass's controlling terminal when QtPass was started

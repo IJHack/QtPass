@@ -10,6 +10,7 @@
 
 #include <QGuiApplication>
 #include <QMouseEvent>
+#include <QPersistentModelIndex>
 #include <QStyleHints>
 #include <QTimer>
 #include <QTreeView>
@@ -90,7 +91,11 @@ private:
    * @param event The mouse release; forwarded to QTreeView first.
    */
   void mouseReleaseEvent(QMouseEvent *event) override {
-    const QModelIndex item = indexAt(event->position().toPoint());
+    // Persistent: QTreeView::mouseReleaseEvent() emits clicked(), and what
+    // that runs can change the model (a message box for a link, the file
+    // system model reloading meanwhile); a plain index then names another
+    // row, or memory that is gone.
+    const QPersistentModelIndex item(indexAt(event->position().toPoint()));
     const bool pressWasOnSelection = clickSelected;
     clickSelected = false;
 
