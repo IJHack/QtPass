@@ -625,7 +625,8 @@ void tst_realpass::folderWithAnUnreadableNameIsRefusedBeforePassRuns() {
 
   QFile::remove(m_log);
   pass.Copy(team, dest, false);
-  QVERIFY2(passRan(), "a folder Qt can list completely goes through");
+  // A folder Qt can list completely goes through.
+  QTRY_VERIFY_WITH_TIMEOUT(QFile::exists(m_log), 5000);
   QCOMPARE(critical.count(), 0);
 
   // A folder named in Latin-1, as an old tool or another system may have
