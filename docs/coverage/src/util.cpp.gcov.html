@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 10:33:11</td>
+            <td class="headerValue">2026-11-17 10:57:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -662,18 +662,18 @@
 <span id="L589"><span class="lineNum">     589</span> <span class="tlaGNC">         186 :   return QFile(executable).exists();</span></span>
 <span id="L590"><span class="lineNum">     590</span>              : }</span>
 <span id="L591"><span class="lineNum">     591</span>              : </span>
-<span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">       15296 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
-<span id="L593"><span class="lineNum">     593</span> <span class="tlaGNC">       15303 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
-<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">       15296 :   return expr;</span></span>
+<span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">       15329 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L593"><span class="lineNum">     593</span> <span class="tlaGNC">       15336 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
+<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">       15329 :   return expr;</span></span>
 <span id="L595"><span class="lineNum">     595</span>              : }</span>
 <span id="L596"><span class="lineNum">     596</span>              : </span>
 <span id="L597"><span class="lineNum">     597</span>              : // Stops at whitespace, quotes and brackets so a URL on its own line keeps no</span>
 <span id="L598"><span class="lineNum">     598</span>              : // line break. file:/// is excluded on purpose (local, not network); the test</span>
 <span id="L599"><span class="lineNum">     599</span>              : // relies on that.</span>
-<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">         221 : auto Util::protocolRegex() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">         222 : auto Util::protocolRegex() -&gt; const QRegularExpression &amp; {</span></span>
 <span id="L601"><span class="lineNum">     601</span>              :   static const QRegularExpression regex{</span>
-<span id="L602"><span class="lineNum">     602</span> <span class="tlaGNC">         226 :       R&quot;(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^&quot;\s&lt;&gt;\)\]\[]+))&quot;};</span></span>
-<span id="L603"><span class="lineNum">     603</span> <span class="tlaGNC">         221 :   return regex;</span></span>
+<span id="L602"><span class="lineNum">     602</span> <span class="tlaGNC">         227 :       R&quot;(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^&quot;\s&lt;&gt;\)\]\[]+))&quot;};</span></span>
+<span id="L603"><span class="lineNum">     603</span> <span class="tlaGNC">         222 :   return regex;</span></span>
 <span id="L604"><span class="lineNum">     604</span>              : }</span>
 <span id="L605"><span class="lineNum">     605</span>              : </span>
 <span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">         116 : auto Util::isLaunchableWebUrl(const QString &amp;value) -&gt; bool {</span></span>
@@ -707,15 +707,15 @@
 <span id="L634"><span class="lineNum">     634</span>              :   return true;</span>
 <span id="L635"><span class="lineNum">     635</span> <span class="tlaGNC">         112 : }</span></span>
 <span id="L636"><span class="lineNum">     636</span>              : </span>
-<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">         217 : auto Util::linkifyUrls(const QString &amp;text, bool *linked) -&gt; QString {</span></span>
-<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">         217 :   if (linked != nullptr) {</span></span>
+<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">         218 : auto Util::linkifyUrls(const QString &amp;text, bool *linked) -&gt; QString {</span></span>
+<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">         218 :   if (linked != nullptr) {</span></span>
 <span id="L639"><span class="lineNum">     639</span> <span class="tlaGNC">         132 :     *linked = false;</span></span>
 <span id="L640"><span class="lineNum">     640</span>              :   }</span>
-<span id="L641"><span class="lineNum">     641</span> <span class="tlaGNC">         217 :   QString html;</span></span>
-<span id="L642"><span class="lineNum">     642</span> <span class="tlaGNC">         217 :   html.reserve(text.size());</span></span>
+<span id="L641"><span class="lineNum">     641</span> <span class="tlaGNC">         218 :   QString html;</span></span>
+<span id="L642"><span class="lineNum">     642</span> <span class="tlaGNC">         218 :   html.reserve(text.size());</span></span>
 <span id="L643"><span class="lineNum">     643</span>              :   qsizetype lastIndex = 0;</span>
-<span id="L644"><span class="lineNum">     644</span> <span class="tlaGNC">         217 :   QRegularExpressionMatchIterator it = protocolRegex().globalMatch(text);</span></span>
-<span id="L645"><span class="lineNum">     645</span> <span class="tlaGNC">         263 :   while (it.hasNext()) {</span></span>
+<span id="L644"><span class="lineNum">     644</span> <span class="tlaGNC">         218 :   QRegularExpressionMatchIterator it = protocolRegex().globalMatch(text);</span></span>
+<span id="L645"><span class="lineNum">     645</span> <span class="tlaGNC">         264 :   while (it.hasNext()) {</span></span>
 <span id="L646"><span class="lineNum">     646</span> <span class="tlaGNC">          46 :     const QRegularExpressionMatch match = it.next();</span></span>
 <span id="L647"><span class="lineNum">     647</span> <span class="tlaGNC">          46 :     const QString url = match.captured(0);</span></span>
 <span id="L648"><span class="lineNum">     648</span> <span class="tlaGNC">          46 :     if (!isLaunchableWebUrl(url)) {</span></span>
@@ -732,34 +732,34 @@
 <span id="L659"><span class="lineNum">     659</span> <span class="tlaGNC">          24 :       *linked = true;</span></span>
 <span id="L660"><span class="lineNum">     660</span>              :     }</span>
 <span id="L661"><span class="lineNum">     661</span> <span class="tlaGNC">          46 :   }</span></span>
-<span id="L662"><span class="lineNum">     662</span> <span class="tlaGNC">         217 :   html += text.mid(lastIndex).toHtmlEscaped();</span></span>
-<span id="L663"><span class="lineNum">     663</span> <span class="tlaGNC">         217 :   return html;</span></span>
-<span id="L664"><span class="lineNum">     664</span> <span class="tlaGNC">         217 : }</span></span>
+<span id="L662"><span class="lineNum">     662</span> <span class="tlaGNC">         218 :   html += text.mid(lastIndex).toHtmlEscaped();</span></span>
+<span id="L663"><span class="lineNum">     663</span> <span class="tlaGNC">         218 :   return html;</span></span>
+<span id="L664"><span class="lineNum">     664</span> <span class="tlaGNC">         218 : }</span></span>
 <span id="L665"><span class="lineNum">     665</span>              : </span>
 <span id="L666"><span class="lineNum">     666</span>              : // One pass, no regex: a pattern such as \s{1001,} retries from every</span>
 <span id="L667"><span class="lineNum">     667</span>              : // character of a shorter run, which is quadratic on an entry made of them.</span>
 <span id="L668"><span class="lineNum">     668</span>              : // A tab or a line feed ends a run in Qt's layout as well, so it ends one</span>
 <span id="L669"><span class="lineNum">     669</span>              : // here; \v and U+0085 do not, so they count.</span>
-<span id="L670"><span class="lineNum">     670</span> <span class="tlaGNC">         206 : auto Util::boundSpaceRuns(const QString &amp;text) -&gt; QString {</span></span>
-<span id="L671"><span class="lineNum">     671</span> <span class="tlaGNC">         206 :   QString bounded;</span></span>
+<span id="L670"><span class="lineNum">     670</span> <span class="tlaGNC">         207 : auto Util::boundSpaceRuns(const QString &amp;text) -&gt; QString {</span></span>
+<span id="L671"><span class="lineNum">     671</span> <span class="tlaGNC">         207 :   QString bounded;</span></span>
 <span id="L672"><span class="lineNum">     672</span>              :   // Text before this index is in bounded already, or dropped.</span>
 <span id="L673"><span class="lineNum">     673</span>              :   qsizetype from = 0;</span>
 <span id="L674"><span class="lineNum">     674</span>              :   qsizetype run = 0;</span>
-<span id="L675"><span class="lineNum">     675</span> <span class="tlaGNC">      153935 :   for (qsizetype i = 0; i &lt; text.size(); ++i) {</span></span>
+<span id="L675"><span class="lineNum">     675</span> <span class="tlaGNC">      154005 :   for (qsizetype i = 0; i &lt; text.size(); ++i) {</span></span>
 <span id="L676"><span class="lineNum">     676</span>              :     const QChar ch = text.at(i);</span>
-<span id="L677"><span class="lineNum">     677</span> <span class="tlaGNC">      153729 :     if (!ch.isSpace() || ch == QLatin1Char('\t') || ch == QLatin1Char('\n')) {</span></span>
+<span id="L677"><span class="lineNum">     677</span> <span class="tlaGNC">      153798 :     if (!ch.isSpace() || ch == QLatin1Char('\t') || ch == QLatin1Char('\n')) {</span></span>
 <span id="L678"><span class="lineNum">     678</span>              :       run = 0;</span>
-<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">        6703 :       continue;</span></span>
+<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">        6765 :       continue;</span></span>
 <span id="L680"><span class="lineNum">     680</span>              :     }</span>
-<span id="L681"><span class="lineNum">     681</span> <span class="tlaGNC">      147026 :     if (++run &lt;= kMaxSpaceRun) {</span></span>
-<span id="L682"><span class="lineNum">     682</span> <span class="tlaGNC">       11489 :       continue;</span></span>
+<span id="L681"><span class="lineNum">     681</span> <span class="tlaGNC">      147033 :     if (++run &lt;= kMaxSpaceRun) {</span></span>
+<span id="L682"><span class="lineNum">     682</span> <span class="tlaGNC">       11496 :       continue;</span></span>
 <span id="L683"><span class="lineNum">     683</span>              :     }</span>
 <span id="L684"><span class="lineNum">     684</span> <span class="tlaGNC">      135537 :     if (run == kMaxSpaceRun + 1) {</span></span>
 <span id="L685"><span class="lineNum">     685</span> <span class="tlaGNC">           6 :       bounded += QStringView(text).sliced(from, i - from);</span></span>
 <span id="L686"><span class="lineNum">     686</span>              :     }</span>
 <span id="L687"><span class="lineNum">     687</span> <span class="tlaGNC">      135537 :     from = i + 1;</span></span>
 <span id="L688"><span class="lineNum">     688</span>              :   }</span>
-<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">         206 :   if (from == 0) {</span></span>
+<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">         207 :   if (from == 0) {</span></span>
 <span id="L690"><span class="lineNum">     690</span>              :     return text;</span>
 <span id="L691"><span class="lineNum">     691</span>              :   }</span>
 <span id="L692"><span class="lineNum">     692</span>              :   bounded += QStringView(text).sliced(from);</span>
@@ -840,8 +840,8 @@
 <span id="L767"><span class="lineNum">     767</span> <span class="tlaGNC">         488 : }</span></span>
 <span id="L768"><span class="lineNum">     768</span>              : </span>
 <span id="L769"><span class="lineNum">     769</span>              : /// A symlink or an NTFS junction: never entered, never listed.</span>
-<span id="L770"><span class="lineNum">     770</span> <span class="tlaGNC">       16057 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
-<span id="L771"><span class="lineNum">     771</span> <span class="tlaGNC">       16057 :   return entry.isSymLink() || entry.isJunction();</span></span>
+<span id="L770"><span class="lineNum">     770</span> <span class="tlaGNC">       16131 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
+<span id="L771"><span class="lineNum">     771</span> <span class="tlaGNC">       16131 :   return entry.isSymLink() || entry.isJunction();</span></span>
 <span id="L772"><span class="lineNum">     772</span>              : }</span>
 <span id="L773"><span class="lineNum">     773</span>              : </span>
 <span id="L774"><span class="lineNum">     774</span>              : /// Hidden by attribute, or by the dot convention on every platform: Qt 6.11</span>
@@ -915,8 +915,8 @@
 <span id="L842"><span class="lineNum">     842</span>              :     return false;</span>
 <span id="L843"><span class="lineNum">     843</span>              :   }</span>
 <span id="L844"><span class="lineNum">     844</span> <span class="tlaGNC">         128 :   const auto close = qScopeGuard([listing] { ::closedir(listing); });</span></span>
-<span id="L845"><span class="lineNum">     845</span> <span class="tlaGNC">         780 :   while (const dirent *entry = ::readdir(listing)) {</span></span>
-<span id="L846"><span class="lineNum">     846</span> <span class="tlaGNC">         657 :     if (!QByteArrayView(entry-&gt;d_name).isValidUtf8()) {</span></span>
+<span id="L845"><span class="lineNum">     845</span> <span class="tlaGNC">         781 :   while (const dirent *entry = ::readdir(listing)) {</span></span>
+<span id="L846"><span class="lineNum">     846</span> <span class="tlaGNC">         658 :     if (!QByteArrayView(entry-&gt;d_name).isValidUtf8()) {</span></span>
 <span id="L847"><span class="lineNum">     847</span>              :       return true;</span>
 <span id="L848"><span class="lineNum">     848</span>              :     }</span>
 <span id="L849"><span class="lineNum">     849</span>              :   }</span>
@@ -924,11 +924,11 @@
 <span id="L851"><span class="lineNum">     851</span>              : #endif</span>
 <span id="L852"><span class="lineNum">     852</span>              : }</span>
 <span id="L853"><span class="lineNum">     853</span>              : </span>
-<span id="L854"><span class="lineNum">     854</span> <span class="tlaGNC">       12836 : auto Util::isLinkedFolder(const QString &amp;path) -&gt; bool {</span></span>
-<span id="L855"><span class="lineNum">     855</span> <span class="tlaGNC">       25672 :   return isLink(QFileInfo(QDir::cleanPath(path)));</span></span>
+<span id="L854"><span class="lineNum">     854</span> <span class="tlaGNC">       12910 : auto Util::isLinkedFolder(const QString &amp;path) -&gt; bool {</span></span>
+<span id="L855"><span class="lineNum">     855</span> <span class="tlaGNC">       25820 :   return isLink(QFileInfo(QDir::cleanPath(path)));</span></span>
 <span id="L856"><span class="lineNum">     856</span>              : }</span>
 <span id="L857"><span class="lineNum">     857</span>              : </span>
-<span id="L858"><span class="lineNum">     858</span> <span class="tlaGNC">       11119 : auto Util::isUnderLink(const QString &amp;path, const QString &amp;storeRoot,</span></span>
+<span id="L858"><span class="lineNum">     858</span> <span class="tlaGNC">       11182 : auto Util::isUnderLink(const QString &amp;path, const QString &amp;storeRoot,</span></span>
 <span id="L859"><span class="lineNum">     859</span>              :                        bool includeSelf) -&gt; bool {</span>
 <span id="L860"><span class="lineNum">     860</span>              :   // &quot;C:/Store&quot; and &quot;c:/store&quot; are one directory on Windows; a path spelled</span>
 <span id="L861"><span class="lineNum">     861</span>              :   // the other way must not skip the walk (as in Pass::getGpgIdPath).</span>
@@ -937,22 +937,22 @@
 <span id="L864"><span class="lineNum">     864</span>              : #else</span>
 <span id="L865"><span class="lineNum">     865</span>              :   constexpr auto cs = Qt::CaseSensitive;</span>
 <span id="L866"><span class="lineNum">     866</span>              : #endif</span>
-<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">       11119 :   const QString root = QDir::cleanPath(storeRoot);</span></span>
+<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">       11182 :   const QString root = QDir::cleanPath(storeRoot);</span></span>
 <span id="L868"><span class="lineNum">     868</span>              :   // A root of &quot;/&quot; or &quot;C:/&quot; already ends in the separator.</span>
 <span id="L869"><span class="lineNum">     869</span>              :   const QString prefix =</span>
-<span id="L870"><span class="lineNum">     870</span> <span class="tlaGNC">       11119 :       root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');</span></span>
+<span id="L870"><span class="lineNum">     870</span> <span class="tlaGNC">       11182 :       root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');</span></span>
 <span id="L871"><span class="lineNum">     871</span>              :   const auto isRoot = [&amp;](const QString &amp;p) {</span>
-<span id="L872"><span class="lineNum">     872</span> <span class="tlaGNC">       12203 :     return p.compare(root, cs) == 0;</span></span>
+<span id="L872"><span class="lineNum">     872</span> <span class="tlaGNC">       12266 :     return p.compare(root, cs) == 0;</span></span>
 <span id="L873"><span class="lineNum">     873</span>              :   };</span>
-<span id="L874"><span class="lineNum">     874</span> <span class="tlaGNC">       11119 :   QString current = QDir::cleanPath(path);</span></span>
-<span id="L875"><span class="lineNum">     875</span> <span class="tlaGNC">       11119 :   if (!current.startsWith(prefix, cs)) {</span></span>
+<span id="L874"><span class="lineNum">     874</span> <span class="tlaGNC">       11182 :   QString current = QDir::cleanPath(path);</span></span>
+<span id="L875"><span class="lineNum">     875</span> <span class="tlaGNC">       11182 :   if (!current.startsWith(prefix, cs)) {</span></span>
 <span id="L876"><span class="lineNum">     876</span>              :     // Not under the store as named: only the entry itself can be judged.</span>
 <span id="L877"><span class="lineNum">     877</span> <span class="tlaGNC">         466 :     return includeSelf &amp;&amp; !isRoot(current) &amp;&amp; isLinkedFolder(current);</span></span>
 <span id="L878"><span class="lineNum">     878</span>              :   }</span>
-<span id="L879"><span class="lineNum">     879</span> <span class="tlaGNC">       10886 :   if (!includeSelf) {</span></span>
-<span id="L880"><span class="lineNum">     880</span> <span class="tlaGNC">       20632 :     current = QFileInfo(current).path();</span></span>
+<span id="L879"><span class="lineNum">     879</span> <span class="tlaGNC">       10949 :   if (!includeSelf) {</span></span>
+<span id="L880"><span class="lineNum">     880</span> <span class="tlaGNC">       20758 :     current = QFileInfo(current).path();</span></span>
 <span id="L881"><span class="lineNum">     881</span>              :   }</span>
-<span id="L882"><span class="lineNum">     882</span> <span class="tlaGNC">       11970 :   for (; !isRoot(current) &amp;&amp; current.startsWith(prefix, cs);</span></span>
+<span id="L882"><span class="lineNum">     882</span> <span class="tlaGNC">       12033 :   for (; !isRoot(current) &amp;&amp; current.startsWith(prefix, cs);</span></span>
 <span id="L883"><span class="lineNum">     883</span> <span class="tlaGNC">        2168 :        current = QFileInfo(current).path()) {</span></span>
 <span id="L884"><span class="lineNum">     884</span> <span class="tlaGNC">        1130 :     if (isLinkedFolder(current)) {</span></span>
 <span id="L885"><span class="lineNum">     885</span>              :       return true;</span>
