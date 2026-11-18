@@ -8,6 +8,87 @@
 #include "plainmessagebox.h"
 #include "util.h"
 
+namespace {
+/// Lines and characters of a message a box shows whole.
+constexpr qsizetype kMaxLines = 40;
+/// See kMaxLines.
+constexpr qsizetype kMaxChars = 4000;
+/// Characters of a message kept whole under "Show Details...".
+constexpr qsizetype kMaxDetailChars = 256 * 1024;
+
+/**
+ * @brief The first @p chars UTF-16 units of @p text, or its last with
+ * @p fromEnd, one fewer where the cut would split a surrogate pair: half a
+ * pair shows as a broken glyph.
+ * @param text The text.
+ * @param chars The most UTF-16 units.
+ * @param fromEnd Take the end, not the start.
+ * @return That part of @p text, valid UTF-16 where @p text is.
+ */
+auto slice(const QString &text, qsizetype chars, bool fromEnd) -> QString {
+  if (chars >= text.size()) {
+    return text;
+  }
+  if (fromEnd) {
+    const qsizetype from = text.size() - chars;
+    return text.right(text.at(from).isLowSurrogate() ? chars - 1 : chars);
+  }
+  return text.left(text.at(chars - 1).isHighSurrogate() ? chars - 1 : chars);
+}
+
+/**
+ * @brief At most @p lines lines and @p chars characters from the start of
+ * @p text, or from its end with @p fromEnd.
+ * @param text The text.
+ * @param lines The most lines.
+ * @param chars The most characters.
+ * @param fromEnd Take the end, not the start.
+ * @return That part of @p text.
+ */
+auto part(const QString &text, qsizetype lines, qsizetype chars, bool fromEnd)
+    -> QString {
+  QString piece = slice(text, chars, fromEnd);
+  qsizetype seen = 0;
+  if (fromEnd) {
+    for (qsizetype i = piece.size() - 1; i >= 0; --i) {
+      if (piece.at(i) == QLatin1Char('\n') && ++seen == lines) {
+        return piece.mid(i + 1);
+      }
+    }
+  } else {
+    for (qsizetype i = 0; i < piece.size(); ++i) {
+      if (piece.at(i) == QLatin1Char('\n') && ++seen == lines) {
+        return piece.left(i);
+      }
+    }
+  }
+  return piece;
+}
+
+/**
+ * @brief @p text as a box shows it: whole up to kMaxLines lines and
+ * kMaxChars characters, else its start and its end with an ellipsis
+ * between.
+ *
+ * A message quoting git's or gpg's error output is as long as that output,
+ * and a pushed .gitattributes with many bad lines decides its length: laid
+ * out whole, the box froze the GUI. The end stays because that is where git
+ * puts what went wrong ("fatal: ..."), after its warnings.
+ * @param text The message.
+ * @param cut Set to whether anything was left out.
+ * @return The message to show.
+ */
+auto bounded(const QString &text, bool *cut) -> QString {
+  *cut = text.size() > kMaxChars || text.count(QLatin1Char('\n')) >= kMaxLines;
+  if (!*cut) {
+    return text;
+  }
+  return part(text, kMaxLines / 2, kMaxChars / 2, false) +
+         QStringLiteral("\n\u2026\n") +
+         part(text, kMaxLines / 2, kMaxChars / 2, true);
+}
+} // namespace
+
 auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,
                            const QString &title, const QString &text,
                            QMessageBox::StandardButtons buttons)
@@ -20,7 +101,21 @@ auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,
   // Before the text: set afterwards, the text would already have been laid
   // out as rich text once.
   box.setTextFormat(Qt::PlainText);
-  box.setText(Util::displayable(text));
+  const QString shown = Util::displayable(text);
+  bool cut = false;
+  box.setText(bounded(shown, &cut));
+  if (cut) {
+    // All of it under "Show Details...": plain text in a scrolling field,
+    // which does not lay it out at once as the label did. Not all tool
+    // output reaches the Process Output panel (the set-up runs git while
+    // the window waits), so this is where the cause can be read. Past
+    // 256 KB its start and end, for the same reason as the box.
+    box.setDetailedText(shown.size() <= kMaxDetailChars
+                            ? shown
+                            : slice(shown, kMaxDetailChars / 2, false) +
+                                  QStringLiteral("\n\u2026\n") +
+                                  slice(shown, kMaxDetailChars / 2, true));
+  }
   box.setStandardButtons(buttons);
   return static_cast<QMessageBox::StandardButton>(box.exec());
 }

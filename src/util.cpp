@@ -147,6 +147,35 @@ auto Util::gitCeiling(const QString &store) -> QString {
   return QFileInfo(path).absolutePath();
 }
 
+#ifndef Q_OS_WIN
+namespace {
+/**
+ * @brief Open @p path for reading, following a link, but only when it ends
+ * at a regular file, and never waiting: O_NONBLOCK keeps a FIFO from
+ * blocking the open until a writer comes, and the open handle is judged
+ * (fstat), so a FIFO or a device is refused. Unlike Util::openRegularFile(),
+ * a link is fine: git's own metadata may be one.
+ * @param path The file.
+ * @param file Receives the open file on success; untouched otherwise.
+ * @return Whether @p file is open on a regular file.
+ */
+auto openFollowedRegularFile(const QString &path, QFile &file) -> bool {
+  const int fd = ::open(QFile::encodeName(path).constData(),
+                        O_RDONLY | O_NONBLOCK | O_CLOEXEC);
+  if (fd < 0) {
+    return false;
+  }
+  struct stat info{};
+  if (::fstat(fd, &info) != 0 || !S_ISREG(info.st_mode) ||
+      !file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
+    ::close(fd);
+    return false;
+  }
+  return true;
+}
+} // namespace
+#endif
+
 auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
 #ifdef Q_OS_WIN
   Q_UNUSED(store);
@@ -218,8 +247,19 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
         !QFileInfo(dir.filePath(QStringLiteral("refs"))).isDir()) {
       return false;
     }
-    QFile head(dir.filePath(QStringLiteral("HEAD")));
-    if (!head.open(QIODevice::ReadOnly)) {
+    // As git (setup.c, validate_headref()): a HEAD that is a link counts
+    // when the link text starts with "refs/", without reading what it
+    // names, and not otherwise. Anything else is read only when it is a
+    // regular file, without waiting: a HEAD that is a FIFO (a pushed commit
+    // can carry a link to one, or to a device) blocked the open and the
+    // read on the GUI thread when Settings opened.
+    const QString headPath = dir.filePath(QStringLiteral("HEAD"));
+    if (const QFileInfo headInfo(headPath); headInfo.isSymLink()) {
+      // The link text as stored (Qt 6.6), not the path it resolves to.
+      return headInfo.readSymLink().startsWith(QLatin1String("refs/"));
+    }
+    QFile head;
+    if (!openFollowedRegularFile(headPath, head)) {
       return false;
     }
     static const QRegularExpression valid(
@@ -240,8 +280,10 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
     if (!info.exists()) {
       return Found::Nothing;
     }
-    QFile file(dotGit);
-    if (!file.open(QIODevice::ReadOnly)) {
+    // The same for a .git file (or a link to one): a FIFO there blocked in
+    // open().
+    QFile file;
+    if (!openFollowedRegularFile(dotGit, file)) {
       return Found::Refused;
     }
     const QString line = QString::fromUtf8(file.readLine(4096)).trimmed();

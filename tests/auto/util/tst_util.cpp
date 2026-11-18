@@ -316,6 +316,7 @@ private Q_SLOTS:
   void gitDoesNotClimbAboveTheStore();
   void gitStaysInTheStoreWhenItsParentHoldsTheSeparator();
   void repositoryPassClimbsToMatchesGit();
+  void repositoryPassClimbsToNeverBlocksOnHead();
   void gitPinIsJudgedWhenGitRuns();
   void gitPinHonoursSafeDirectory();
   void readRegularFileIsBoundedAndRegular();
@@ -2806,6 +2807,90 @@ void tst_util::gitPinHonoursSafeDirectory() {
  *        (#2076). Without one git finds none, not the one above; with one
  *        it finds that. An ordinary path keeps the ceiling alone.
  */
+/**
+ * @brief A HEAD that is a link to a FIFO (or a device) does not block the
+ *        repository check: a pushed commit can carry such a link, and the
+ *        open waited forever on the GUI thread when Settings opened.
+ */
+void tst_util::repositoryPassClimbsToNeverBlocksOnHead() {
+#ifdef Q_OS_WIN
+  QSKIP("pass runs in WSL on Windows; there is no check");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  const QDir dir(scratch.path());
+  QVERIFY(dir.mkpath(QStringLiteral("repo/.git/objects")));
+  QVERIFY(dir.mkpath(QStringLiteral("repo/.git/refs")));
+  const QString fifo = dir.filePath(QStringLiteral("fifo"));
+  QCOMPARE(::mkfifo(QFile::encodeName(fifo).constData(), 0600), 0);
+  QVERIFY(QFile::link(fifo, dir.filePath(QStringLiteral("repo/.git/HEAD"))));
+  const QString store = dir.filePath(QStringLiteral("repo/a:b/store"));
+  QVERIFY(QDir().mkpath(store));
+
+  QString found = QStringLiteral("not run");
+  QScopedPointer<QThread> worker(QThread::create(
+      [&found, &store] { found = Util::repositoryPassClimbsTo(store); }));
+  worker->start();
+  const bool done = worker->wait(5000);
+  if (!done) {
+    // Let the blocked open go, so the thread ends before the test does.
+    const int fd =
+        ::open(QFile::encodeName(fifo).constData(), O_WRONLY | O_NONBLOCK);
+    if (fd >= 0) {
+      ::close(fd);
+    }
+    worker->wait();
+  }
+  QVERIFY2(done, "the check blocked on HEAD");
+  QVERIFY2(found.isEmpty(), qPrintable(found));
+
+  // git's own links still count, as git judges them: a HEAD that links to
+  // "refs/..." (not read), but not one linking anywhere else, whatever the
+  // file there holds; and a .git link to a gitfile naming the repository.
+  const auto writeFile = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly) && f.write(bytes) == bytes.size();
+  };
+  for (const char *name : {"linked", "elsewhere"}) {
+    QVERIFY(dir.mkpath(QLatin1String(name) + QStringLiteral("/.git/objects")));
+    QVERIFY(dir.mkpath(QLatin1String(name) + QStringLiteral("/.git/refs")));
+  }
+  QVERIFY(QFile::link(QStringLiteral("refs/heads/main"),
+                      dir.filePath(QStringLiteral("linked/.git/HEAD"))));
+  const QString linkedStore = dir.filePath(QStringLiteral("linked/c:d/store"));
+  QVERIFY(QDir().mkpath(linkedStore));
+  QCOMPARE(
+      Util::repositoryPassClimbsTo(linkedStore),
+      QFileInfo(dir.filePath(QStringLiteral("linked"))).canonicalFilePath());
+  QVERIFY(writeFile(dir.filePath(QStringLiteral("elsewhere/.git/head-file")),
+                    "ref: refs/heads/main\n"));
+  QVERIFY(QFile::link(QStringLiteral("head-file"),
+                      dir.filePath(QStringLiteral("elsewhere/.git/HEAD"))));
+  const QString elsewhereStore =
+      dir.filePath(QStringLiteral("elsewhere/g:h/store"));
+  QVERIFY(QDir().mkpath(elsewhereStore));
+  QVERIFY(Util::repositoryPassClimbsTo(elsewhereStore).isEmpty());
+
+  QVERIFY(dir.mkpath(QStringLiteral("gitdir/objects")));
+  QVERIFY(dir.mkpath(QStringLiteral("gitdir/refs")));
+  QVERIFY(writeFile(dir.filePath(QStringLiteral("gitdir/HEAD")),
+                    "ref: refs/heads/main\n"));
+  QVERIFY(dir.mkpath(QStringLiteral("worktree")));
+  QVERIFY(writeFile(
+      dir.filePath(QStringLiteral("gitfile")),
+      "gitdir: " + QFile::encodeName(dir.filePath(QStringLiteral("gitdir"))) +
+          "\n"));
+  QVERIFY(QFile::link(dir.filePath(QStringLiteral("gitfile")),
+                      dir.filePath(QStringLiteral("worktree/.git"))));
+  const QString gitfileStore =
+      dir.filePath(QStringLiteral("worktree/e:f/store"));
+  QVERIFY(QDir().mkpath(gitfileStore));
+  QCOMPARE(
+      Util::repositoryPassClimbsTo(gitfileStore),
+      QFileInfo(dir.filePath(QStringLiteral("worktree"))).canonicalFilePath());
+#endif
+}
+
 /**
  * @brief Util::repositoryPassClimbsTo() names the repository git finds from
  *        the store under pass's own ceiling ("$PREFIX/.."), and nothing

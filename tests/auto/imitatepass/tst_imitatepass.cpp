@@ -638,6 +638,8 @@ private Q_SLOTS:
   void initRefusesWhileAReencryptionRuns();
   void initTakesARelativePathInTheStore();
   void initRefusesAFolderOutsideTheStore();
+  void backupCommitTakesTheStoreOnly();
+  void moveCommitsTheMoveOnly();
   void initWritesWhereItChecksPastALinkAndDotDot();
   void initThroughALinkedStoreEncryptsToTheNewList();
   void initRemovesTheOldSignatureWhenSigningIsOff();
@@ -1935,6 +1937,140 @@ void tst_imitatepass::reencryptRefusesToCommitAStashPopConflict() {
            0);
   QVERIFY2(status.contains(QStringLiteral("UU notes")), qPrintable(status));
   QVERIFY(encryptCalls(loggedCalls(logPath)).isEmpty());
+#endif
+}
+
+/**
+ * @brief The backup commit before a re-encryption takes the store only: in
+ *        a repository above the store, a modified tracked file outside it
+ *        stays uncommitted (autoPush would have published it).
+ */
+void tst_imitatepass::backupCommitTakesTheStoreOnly() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a real git and a shell-script fake gpg");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("needs a real git");
+  }
+  QTemporaryDir top;
+  QTemporaryDir tools;
+  QVERIFY(top.isValid() && tools.isValid());
+  const QString store = QDir(top.path()).filePath(QStringLiteral("store"));
+  QVERIFY(QDir().mkpath(store));
+  QVERIFY(populateStore(store, 1));
+  const QString outside =
+      QDir(top.path()).filePath(QStringLiteral("outside.txt"));
+  const auto write = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(bytes) == bytes.size();
+  };
+  QVERIFY(write(outside, "before\n"));
+  QVERIFY(commitStoreToRealGit(git, top.path()));
+  QVERIFY(write(outside, "changed outside the store\n"));
+  QVERIFY(write(QDir(store).filePath(QStringLiteral("entry0.gpg")),
+                "changed in the store"));
+
+  const QString gpgLog = QDir(tools.path()).filePath(QStringLiteral("gpg.log"));
+  const QString fakeGpg = writeRecordingGpg(tools.path(), gpgLog);
+  QVERIFY(!fakeGpg.isEmpty());
+  AppSettings s = settingsFor(store, fakeGpg);
+  s.useGit = true;
+  s.gitExecutable = git;
+  s.autoPull = false;
+  s.autoPush = false;
+  // A store kept inside a larger repository on purpose.
+  s.gitUseParentRepository = true;
+  ImitatePass pass;
+  pass.init(s);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy critical(&pass, &Pass::critical);
+  pass.reencryptPath(store);
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  // It ran: a run stopped before the backup commit would pass vacuously.
+  QVERIFY2(critical.isEmpty(),
+           qPrintable(critical.isEmpty() ? QString()
+                                         : critical.first().at(1).toString()));
+
+  QString status;
+  QCOMPARE(runRealGit(git, top.path(),
+                      {QStringLiteral("status"), QStringLiteral("--porcelain"),
+                       QStringLiteral("--"), QStringLiteral("outside.txt")},
+                      &status),
+           0);
+  QVERIFY2(status.startsWith(QStringLiteral(" M outside.txt")),
+           qPrintable(status));
+  QString logged;
+  QCOMPARE(runRealGit(git, top.path(),
+                      {QStringLiteral("log"), QStringLiteral("--name-only"),
+                       QStringLiteral("--format=")},
+                      &logged),
+           0);
+  QVERIFY2(logged.count(QStringLiteral("outside.txt")) == 1,
+           qPrintable(logged));
+#endif
+}
+
+/**
+ * @brief A move commits the move and nothing else: a change someone staged
+ *        meanwhile stays staged, out of the commit autoPush sends.
+ */
+void tst_imitatepass::moveCommitsTheMoveOnly() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a real git");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("needs a real git");
+  }
+  QTemporaryDir storeDir;
+  QTemporaryDir tools;
+  QVERIFY(storeDir.isValid() && tools.isValid());
+  const QString store = storeDir.path();
+  QVERIFY(populateStore(store, 2));
+  QVERIFY(commitStoreToRealGit(git, store));
+  {
+    QFile f(QDir(store).filePath(QStringLiteral("entry1.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write("staged by someone else");
+  }
+  QCOMPARE(runRealGit(git, store,
+                      {QStringLiteral("add"), QStringLiteral("entry1.gpg")}),
+           0);
+  const QString fakeGpg = writeRecordingGpg(
+      tools.path(), QDir(tools.path()).filePath(QStringLiteral("gpg.log")));
+  QVERIFY(!fakeGpg.isEmpty());
+  AppSettings s = settingsFor(store, fakeGpg);
+  s.useGit = true;
+  s.gitExecutable = git;
+  s.autoPull = false;
+  s.autoPush = false;
+  ImitatePass pass;
+  pass.init(s);
+  pass.Move(QDir(store).filePath(QStringLiteral("entry0.gpg")),
+            QDir(store).filePath(QStringLiteral("moved.gpg")), false);
+  QTRY_COMPARE_WITH_TIMEOUT(commitCount(git, store), 2, 15000);
+
+  QString status;
+  QCOMPARE(runRealGit(git, store,
+                      {QStringLiteral("status"), QStringLiteral("--porcelain"),
+                       QStringLiteral("--"), QStringLiteral("entry1.gpg")},
+                      &status),
+           0);
+  QVERIFY2(status.startsWith(QStringLiteral("M  entry1.gpg")),
+           qPrintable(status));
+  QString moved;
+  QCOMPARE(runRealGit(git, store,
+                      {QStringLiteral("show"), QStringLiteral("--name-only"),
+                       QStringLiteral("--no-renames"),
+                       QStringLiteral("--format="), QStringLiteral("HEAD")},
+                      &moved),
+           0);
+  QVERIFY2(moved.contains(QStringLiteral("moved.gpg")) &&
+               moved.contains(QStringLiteral("entry0.gpg")) &&
+               !moved.contains(QStringLiteral("entry1.gpg")),
+           qPrintable(moved));
 #endif
 }
 

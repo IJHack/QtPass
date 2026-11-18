@@ -328,11 +328,13 @@ auto StoreModel::executeDropAction(const StoreDragItem &info,
     if (destFileinfo.isDir()) {
       return performDrop(cleanedSrc, cleanedDest, action, false);
     }
-    return performDrop(
-        cleanedSrc, cleanedDest, action,
-        PlainMessageBox::askYes(
-            qobject_cast<QWidget *>(QObject::parent()), tr("Force overwrite?"),
-            tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc)));
+    return performDrop(cleanedSrc, cleanedDest, action,
+                       PlainMessageBox::askYes(
+                           qobject_cast<QWidget *>(QObject::parent()),
+                           tr("Force overwrite?"),
+                           tr("overwrite %1 with %2?")
+                               .arg(Util::displayable(cleanedDest, false),
+                                    Util::displayable(cleanedSrc, false))));
   default:
     qCWarning(lcQtPass)
         << "executeDropAction: unexpected ItemKind, ignoring drop";

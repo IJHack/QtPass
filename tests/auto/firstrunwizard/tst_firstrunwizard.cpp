@@ -48,6 +48,7 @@ class tst_firstrunwizard : public QObject {
   struct ModalRun {
     QStringList classes;
     QString messageText;
+    Qt::TextFormat messageFormat = Qt::AutoText;
   };
 
   /// Run @p trigger while a 20 ms timer drives every modal it opens: a
@@ -86,6 +87,7 @@ private slots:
   void finishTakesTheGpgIdBackWhenGitFails();
   void finishWarnsAboutEncryptedFilesAlreadyThere();
   void finishTakesTheRepositoryBackWhenCommitFails();
+  void gitErrorsAreShownAsPlainText();
   void finishPutsAnExistingStoreUnderGit();
 };
 
@@ -136,6 +138,7 @@ auto tst_firstrunwizard::driveModals(const std::function<void()> &trigger,
     }
     if (auto *box = qobject_cast<QMessageBox *>(modal)) {
       run.messageText = box->text();
+      run.messageFormat = box->textFormat();
       box->accept();
       return;
     }
@@ -823,6 +826,40 @@ void tst_firstrunwizard::finishWarnsAboutEncryptedFilesAlreadyThere() {
            QString::fromLatin1(kKeyId));
   QCOMPARE(QDir::cleanPath(QtPassSettings::load().passStore),
            QDir::cleanPath(store.path()));
+}
+
+/**
+ * @brief git's error output in the wizard's box is plain text: git quotes
+ *        values from a pushed .gitattributes, so as rich text a commit could
+ *        put markup and a link into it.
+ */
+void tst_firstrunwizard::gitErrorsAreShownAsPlainText() {
+  QTemporaryDir scratch;
+  const QString git =
+      script(QStringLiteral("git-commit-fails-html"),
+             "case \"$*\" in\n*config*) echo someone;;\n"
+             "init*) PATH=/bin:/usr/bin mkdir .git;;\n"
+             "commit*) echo '<b>bold</b> <a href=\"file:///etc\">link</a>' >&2;"
+             " exit 1;;\nesac\nexit 0\n");
+  QVERIFY(!git.isEmpty());
+  QTemporaryDir store;
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly));
+  gpgId.write("AAAABBBBCCCCDDDD\n");
+  gpgId.close();
+  AppSettings s = QtPassSettings::load();
+  s.gitExecutable = git;
+  s.useGit = true;
+  s.passStore = store.path();
+  QtPassSettings::save(s);
+
+  FirstRunWizard w;
+  walkToDone(w);
+  ModalRun run = driveModals([&]() { w.accept(); });
+  QCOMPARE(run.classes, QStringList{QStringLiteral("QMessageBox")});
+  QCOMPARE(run.messageFormat, Qt::PlainText);
+  QVERIFY2(run.messageText.contains(QStringLiteral("<a href=")),
+           qPrintable(run.messageText));
 }
 
 /**

@@ -903,6 +903,18 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   show as the replacement character. A folder name could mirror the rest of
   a warning, and a key's user ID could draw a fake fingerprint line (scan
   findings ANT-2026-K2VLSKHG, ANT-2026-L5TYQ24U)
+- Git commits QtPass makes take only what they are about: the backup
+  before a re-encryption commits the store and nothing outside it (in a
+  repository above the store), and a move or copy commits the entry moved
+  or copied, not whatever else was staged (scan finding ANT-2026-P6R5B5PK)
+- Git's error output in the first-run wizard and Settings is shown as plain
+  text: a value quoted from a pushed .gitattributes could put markup and a
+  link into the box. Longer such output shows its start and its end in the
+  box (Git puts what went wrong last), and all of it under "Show
+  Details...", or past 256 KB its start and end there too (scan findings
+  ANT-2026-V7X4M2B6, ANT-2026-J1OLDGTJ)
+- Settings no longer hangs on a repository whose HEAD or .git is a link to
+  a FIFO or a device (scan finding ANT-2026-0KZE41ZD)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

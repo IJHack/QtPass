@@ -1417,7 +1417,7 @@ auto MainWindow::confirmLinkRemoval(const QString &file) -> bool {
       this, tr("Delete link?"),
       tr("%1 is a symbolic link or junction. Remove the link? What it "
          "points to is left alone.")
-          .arg(QDir::separator() + file));
+          .arg(Util::displayable(QDir::separator() + file, false)));
 }
 
 void MainWindow::onDelete() {
@@ -2062,7 +2062,9 @@ void MainWindow::reencryptPath(const QString &dir) {
          "using the current recipients defined in .gpg-id.\n\n"
          "This may rewrite many files and cannot be undone easily.\n\n"
          "Continue?")
-          .arg(QDir(dir).dirName()));
+          // On one line: a name with line feeds pushed the warning out of
+          // the box, which shows 40 lines at most.
+          .arg(Util::displayable(QDir(dir).dirName(), false)));
 
   if (!yes)
     return;

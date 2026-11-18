@@ -274,11 +274,18 @@ public:
   void executeMoveGit(const QString &src, const QString &destFile, bool force);
 
   /**
-   * @brief Commit changes to git.
+   * @brief Commit one path to git.
    * @param file Changed file path.
    * @param msg Commit message.
    */
   void gitCommit(const QString &file, const QString &msg);
+  /**
+   * @brief Commit these paths and nothing else: a change someone staged
+   * meanwhile stays staged, out of a commit autoPush would send.
+   * @param files Changed paths (a moved entry's old and new path).
+   * @param msg Commit message.
+   */
+  void gitCommit(const QStringList &files, const QString &msg);
 
   /**
    * @brief Execute git command.

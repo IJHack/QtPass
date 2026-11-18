@@ -79,6 +79,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/passworddisplaypanel.h"
+#include "../../../src/plainmessagebox.h"
 #include "../../../src/processoutputpanel.h"
 #include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
@@ -154,6 +155,8 @@ public:
   QStringList boxTexts;
   /// Text formats of those message boxes.
   QList<Qt::TextFormat> boxFormats;
+  /// "Show Details..." text of those message boxes (empty when none).
+  QStringList boxDetails;
 
 private:
   /// One fresh single-shot timer per tick: a repeating QTimer does not fire
@@ -187,6 +190,7 @@ private:
       boxTitles << box->windowTitle();
       boxTexts << box->text();
       boxFormats << box->textFormat();
+      boxDetails << box->detailedText();
     }
     m_handler(widget);
   }
@@ -506,6 +510,7 @@ private Q_SLOTS:
   void contextMenuOnAFolderOffersSharing();
   void shareMenuExportsThePublicKey();
   void shareMenuReencryptAsksFirst();
+  void reencryptQuestionKeepsItsWarning();
   void addFolderCreatesItWithoutAGpgId();
   void addFolderRefusesEscapesAndDuplicates();
   void addFolderRefusesHiddenAndLinkedPlaces();
@@ -516,6 +521,7 @@ private Q_SLOTS:
   void backendErrorsArePlainText();
   void deleteFolderWarnsAboutStrayFiles();
   void aFolderNameCannotTurnTheQuestionAround();
+  void aMessageBoxShowsABoundedText();
   void deleteFolderWarnsAboutAFolderItCannotRead();
   void deleteLinkedFolderRemovesOnlyTheLink();
   void usersDialogOpensForTheStoreButNotForALink();
@@ -5498,6 +5504,41 @@ void tst_mainwindow::shareMenuExportsThePublicKey() {
 }
 
 /**
+ * @brief The re-encrypt question names the folder on one line: a name with
+ *        line feeds pushed the "cannot be undone" warning out of the box,
+ *        which shows 40 lines at most, and Yes still started the run.
+ */
+void tst_mainwindow::reencryptQuestionKeepsItsWarning() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  const QString folder = QStringLiteral("many") +
+                         QString(45, QLatin1Char('\n')) +
+                         QStringLiteral("lines");
+  QVERIFY(QDir(m_storeDir.path()).mkpath(folder));
+  const auto cleanup = qScopeGuard([this, &folder] {
+    QDir(QDir(m_storeDir.path()).filePath(folder)).removeRecursively();
+  });
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      folder + QStringLiteral("/inside")));
+  QStringList titles;
+  QStringList texts;
+  QVERIFY(triggerShareAction(m_window.data(), m_storeDir.path(), folder,
+                             QStringLiteral("Re-encrypt all passwords"),
+                             answerBox(QMessageBox::No), &titles, &texts));
+  COMPARE_BOX_TITLES(titles,
+                     QStringList{QStringLiteral("Re-encrypt passwords")});
+  QVERIFY2(texts.value(0).contains(QStringLiteral("cannot be undone")),
+           qPrintable(texts.value(0)));
+#endif
+}
+
+/**
  * @brief Share > Re-encrypt asks before rewriting anything and does nothing
  *        on No; a folder that vanished since the menu opened is reported
  *        instead of asked about. Add recipient opens the users dialog.
@@ -5969,6 +6010,75 @@ void tst_mainwindow::backendErrorsArePlainText() {
   QCOMPARE(driver.seen, 1);
   QCOMPARE(driver.boxTexts.value(0), message);
   QCOMPARE(driver.boxFormats.value(0), Qt::PlainText);
+}
+
+/**
+ * @brief A message box quoting tool output longer than 40 lines or 4000
+ *        characters shows its start and its end with an ellipsis between,
+ *        and all of it under "Show Details..." (past 256 KB its start and
+ *        end): a pushed .gitattributes decided how much git printed, a box
+ *        laid out whole froze the window, and git puts "fatal: ..." last.
+ */
+void tst_mainwindow::aMessageBoxShowsABoundedText() {
+  const QString ellipsis =
+      QStringLiteral("\n") + QChar(0x2026) + QStringLiteral("\n");
+  const auto show = [this](const QString &text) {
+    ModalDriver driver(answerBox(QMessageBox::Ok));
+    PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"), text);
+    return qMakePair(driver.boxTexts.value(0), driver.boxDetails.value(0));
+  };
+  QStringList many;
+  for (int i = 0; i < 5000; ++i) {
+    many << QStringLiteral("warning: line %1").arg(i);
+  }
+  many << QStringLiteral("fatal: the real cause");
+  const QString lines = many.join(QLatin1Char('\n'));
+  auto [text, details] = show(lines);
+  QVERIFY(text.startsWith(QStringLiteral("warning: line 0\n")));
+  QVERIFY(text.contains(ellipsis));
+  QVERIFY(text.endsWith(QStringLiteral("fatal: the real cause")));
+  QCOMPARE(text.count(QLatin1Char('\n')), 40);
+  QCOMPARE(details, lines);
+
+  // One long line: its start and end, 2000 characters each.
+  const QString wide = QString(10000, QLatin1Char('x'));
+  std::tie(text, details) = show(wide);
+  QCOMPARE(text.size(), 4003);
+  QCOMPARE(details, wide);
+  // Just past the limit: cut, and the details still hold it all. At 4003
+  // characters the shown text is exactly as long as the input, so only a
+  // cut flag, not a length comparison, knows it was cut.
+  for (const int size : {4002, 4003}) {
+    const QString justOver = QString(size, QLatin1Char('y'));
+    std::tie(text, details) = show(justOver);
+    QVERIFY(text.contains(ellipsis));
+    QCOMPARE(details, justOver);
+  }
+  // Past 256 KB the details keep the start and the end too.
+  const QString huge = QString(300 * 1024, QLatin1Char('z')) +
+                       QStringLiteral("\nfatal: at the end");
+  std::tie(text, details) = show(huge);
+  QVERIFY(text.endsWith(QStringLiteral("fatal: at the end")));
+  QVERIFY(details.endsWith(QStringLiteral("fatal: at the end")));
+  QVERIFY(details.size() <= 256 * 1024 + 3);
+  // A cut never splits a surrogate pair, in the box or in the details:
+  // half a pair at the start's end, then at the end's start.
+  const QString pair = QString::fromUcs4(U"\U0001F511");
+  const QString a = QStringLiteral("a");
+  const QString b = QStringLiteral("b");
+  for (const QString &input :
+       {a.repeated(1999) + pair + b.repeated(2000),
+        a.repeated(2000) + pair + b.repeated(1999),
+        a.repeated(131071) + pair + b.repeated(140000),
+        a.repeated(140000) + pair + b.repeated(131071)}) {
+    std::tie(text, details) = show(input);
+    QVERIFY(text.isValidUtf16());
+    QVERIFY(details.isValidUtf16());
+  }
+  // A short message is left as it is, with no details.
+  std::tie(text, details) = show(QStringLiteral("one\ntwo"));
+  QCOMPARE(text, QStringLiteral("one\ntwo"));
+  QVERIFY(details.isEmpty());
 }
 
 /**

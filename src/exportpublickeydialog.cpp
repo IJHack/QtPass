@@ -7,6 +7,7 @@
  * write.
  */
 #include "exportpublickeydialog.h"
+#include "plainmessagebox.h"
 #include "ui_exportpublickeydialog.h"
 
 #include <QApplication>
@@ -67,16 +68,16 @@ void ExportPublicKeyDialog::on_saveButton_clicked() {
   }
   QSaveFile file(fileName);
   if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-    QMessageBox::warning(this, tr("Save public key"),
-                         tr("Could not open %1 for writing: %2")
-                             .arg(fileName, file.errorString()));
+    PlainMessageBox::warning(this, tr("Save public key"),
+                             tr("Could not open %1 for writing: %2")
+                                 .arg(fileName, file.errorString()));
     return;
   }
   QTextStream out(&file);
   out << ui->plainTextEdit->toPlainText();
   out.flush();
   if (out.status() != QTextStream::Ok || !file.commit()) {
-    QMessageBox::warning(
+    PlainMessageBox::warning(
         this, tr("Save public key"),
         tr("Could not write to %1: %2").arg(fileName, file.errorString()));
   }
