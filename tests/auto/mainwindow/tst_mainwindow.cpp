@@ -6045,11 +6045,15 @@ void tst_mainwindow::aMessageBoxShowsABoundedText() {
   std::tie(text, details) = show(wide);
   QCOMPARE(text.size(), 4003);
   QCOMPARE(details, wide);
-  // Just past the limit: cut, and the details still hold it all.
-  const QString justOver = QString(4002, QLatin1Char('y'));
-  std::tie(text, details) = show(justOver);
-  QVERIFY(text.contains(ellipsis));
-  QCOMPARE(details, justOver);
+  // Just past the limit: cut, and the details still hold it all. At 4003
+  // characters the shown text is exactly as long as the input, so only a
+  // cut flag, not a length comparison, knows it was cut.
+  for (const int size : {4002, 4003}) {
+    const QString justOver = QString(size, QLatin1Char('y'));
+    std::tie(text, details) = show(justOver);
+    QVERIFY(text.contains(ellipsis));
+    QCOMPARE(details, justOver);
+  }
   // Past 256 KB the details keep the start and the end too.
   const QString huge = QString(300 * 1024, QLatin1Char('z')) +
                        QStringLiteral("\nfatal: at the end");
