@@ -136,13 +136,27 @@ class RealPass : public Pass {
   auto storeGit(const QStringList &args, QString *out) -> bool override;
 
   /**
+   * @brief The Git repository pass commits @p path in: the store's own, or
+   * one a folder in it holds (pass looks for the repository from the
+   * path's folder, as git does).
+   * @param path An absolute path in the store; it need not exist yet.
+   * @return The repository's folder relative to the store, empty for the
+   *         store's own (or when git cannot say).
+   */
+  auto repositoryOf(const QString &path) -> QString;
+
+  /**
    * @brief `git status --porcelain -z` through `pass git`, read: one
    * "XY name" per entry, a rename's old name dropped. Empty without Git, or
    * when git cannot say.
-   * @param args Further status arguments (options, then a pathspec).
+   * @param args Further status arguments (options, then a pathspec relative
+   *        to @p repository).
+   * @param repository The repository to ask, as repositoryOf() gives it;
+   *        its entries are named from the store.
    * @return The entries.
    */
-  auto statusEntries(const QStringList &args) -> QStringList;
+  auto statusEntries(const QStringList &args,
+                     const QString &repository = QString()) -> QStringList;
 
   /**
    * @brief What git has not recorded at @p paths: `git status --porcelain`
@@ -155,16 +169,20 @@ class RealPass : public Pass {
 
   /**
    * @brief Refuse a `pass init`, `mv`, `cp` or `insert` when @p paths hold
-   * changes git has not recorded, or anything at all is staged. pass stages
-   * the folder it wrote with `git add` and then commits the whole index, so
-   * a plaintext export lying in the folder or staged anywhere, or files a
-   * failed pull wrote, would be committed and pushed along with the change.
-   * Ignored files are left alone, as `git add` leaves them.
+   * changes git has not recorded, or anything at all is staged in the
+   * repository it commits in. pass stages the folder it wrote with
+   * `git add` and then commits the whole index, so a plaintext export lying
+   * in the folder or staged anywhere, or files a failed pull wrote, would be
+   * committed and pushed along with the change. Ignored files are left
+   * alone, as `git add` leaves them.
    * @param paths Absolute paths in the store that pass will stage; empty
-   *        for only the index (an insert stages its own entry alone).
+   *        for none (an insert stages its own entry alone).
+   * @param committing Absolute paths pass commits: the index of each one's
+   *        repository (see repositoryOf()) is checked.
    * @return Whether it was refused (and the user told).
    */
-  auto refuseUnrecordedChanges(const QStringList &paths) -> bool;
+  auto refuseUnrecordedChanges(const QStringList &paths,
+                               const QStringList &committing) -> bool;
 
   /**
    * @brief After a `pass insert`, `init`, `mv` or `cp` that exited 0, say

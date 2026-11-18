@@ -933,8 +933,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   failed pull wrote, were committed and pushed with the change. pass commits
   the whole index, so anything staged also stops these and an insert, and
   a move or copy is refused when a file Git ignores only where it is now
-  would be committed where it lands. Files Git ignores are otherwise left
-  alone (scan finding ANT-2026-H8BX5YR3)
+  would be committed where it lands. A folder with a Git repository of its
+  own is checked in that repository, where pass commits. Files Git ignores
+  are otherwise left alone (scan finding ANT-2026-H8BX5YR3)
 - With the `pass` backend, an entry Git did not record after an insert,
   Users, move or copy (one a `.gitignore` matches, say) is reported as
   saved but not committed: pass exits 0 whatever Git did, and such an entry
