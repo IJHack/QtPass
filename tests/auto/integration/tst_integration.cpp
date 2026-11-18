@@ -332,6 +332,50 @@ class tst_integration : public QObject {
     return runGitConfig(cfgSign, gitExe, {"config", "commit.gpgsign", "false"});
   }
 
+  // A store made by `pass init`, under Git with every file committed, and
+  // the settings pointing at it with the pass backend and Git on. Empty on
+  // success, else what failed.
+  auto initRealPassGitStore(const QString &store, const QString &passExe,
+                            const QString &gitExe) -> QString {
+    QtPassSettings::setPassStore(store);
+    {
+      AppSettings s = QtPassSettings::load();
+      s.passExecutable = passExe;
+      s.gpgExecutable = m_gpgExe;
+      s.gitExecutable = gitExe;
+      s.useGit = true;
+      QtPassSettings::save(s);
+    }
+    QtPassSettings::setUsePass(true);
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    env.insert("GNUPGHOME", m_gnupgHome.path());
+    env.insert("PASSWORD_STORE_DIR", store);
+    QProcess init;
+    init.setProcessEnvironment(env);
+    init.start(passExe, {"init", m_keyFingerprint});
+    if (!init.waitForFinished(15000) || init.exitCode() != 0)
+      return QStringLiteral("pass init failed");
+    if (!initGitRepo(store, gitExe))
+      return QStringLiteral("git init failed");
+    if (!runGit(store, gitExe, {"add", "-A"}) ||
+        !runGit(store, gitExe, {"commit", "-q", "-m", "store"}))
+      return QStringLiteral("first commit failed");
+    return {};
+  }
+
+  // Run git in @p dir; true when it exits 0. @p out receives stdout.
+  static auto runGit(const QString &dir, const QString &gitExe,
+                     const QStringList &args, QString *out = nullptr) -> bool {
+    QProcess git;
+    git.setWorkingDirectory(dir);
+    git.start(gitExe, args);
+    if (!git.waitForFinished(15000) || git.exitCode() != 0)
+      return false;
+    if (out != nullptr)
+      *out = QString::fromUtf8(git.readAllStandardOutput());
+    return true;
+  }
+
 private Q_SLOTS:
   void initTestCase();
   void cleanupTestCase();
@@ -381,6 +425,8 @@ private Q_SLOTS:
   void realPass_insertAndShow();
   void realPass_initThatCannotReencryptIsReported();
   void realPass_insertAndGrep();
+  void realPass_unrecordedEntryIsReported();
+  void realPass_initRefusesUnrecordedFiles();
 
   // pass-otp (skipped if extension not installed)
 };
@@ -2097,6 +2143,119 @@ void tst_integration::realPass_insertAndShow() {
   QVERIFY2(showSpy[0][0].toString().contains("realpassword"),
            "RealPass show should return inserted content");
 
+  QtPassSettings::setUsePass(false);
+}
+
+/**
+ * @brief pass exits 0 whatever its `git add` did: an entry a pushed
+ *        .gitignore matches is saved but never committed, so it is not
+ *        pushed and a pull can overwrite it. QtPass says so; an entry Git
+ *        records gets no such message.
+ */
+void tst_integration::realPass_unrecordedEntryIsReported() {
+  const QString passExe = findPass();
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (passExe.isEmpty() || gitExe.isEmpty())
+    QSKIP("pass or git not installed");
+  RestoreUseGit restoreUseGit;
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString setUp = initRealPassGitStore(storeDir.path(), passExe, gitExe);
+  QVERIFY2(setUp.isEmpty(), qPrintable(setUp));
+  QFile ignore(QDir(storeDir.path()).filePath(".gitignore"));
+  QVERIFY(ignore.open(QIODevice::WriteOnly));
+  ignore.write("ignored.gpg\n");
+  ignore.close();
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", ".gitignore"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "ignore"}));
+
+  RealPass pass;
+  setupPass(pass);
+  QSignalSpy inserted(&pass, &Pass::finishedInsert);
+  QSignalSpy errors(&pass, &Pass::processErrorExit);
+  QSignalSpy critical(&pass, &Pass::critical);
+  pass.Insert(QStringLiteral("recorded"), QStringLiteral("one\n"), false);
+  QVERIFY2(waitForSignal(inserted, 20000), gpgInsertErrorMsg(errors));
+  QCOMPARE(critical.size(), 0);
+
+  inserted.clear();
+  pass.Insert(QStringLiteral("ignored"), QStringLiteral("two\n"), false);
+  QVERIFY2(waitForSignal(inserted, 20000), gpgInsertErrorMsg(errors));
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(0).toString().contains("not committed"),
+           qPrintable(critical.first().at(0).toString()));
+  QVERIFY2(critical.first().at(1).toString().contains("ignored.gpg"),
+           qPrintable(critical.first().at(1).toString()));
+  QtPassSettings::setUsePass(false);
+}
+
+/**
+ * @brief pass init commits its whole folder with `git add`: a plaintext
+ *        file lying in the store, which Git does not track, was committed
+ *        and pushed with the new recipients. Init is refused while it is
+ *        there, and goes ahead once Git ignores it.
+ */
+void tst_integration::realPass_initRefusesUnrecordedFiles() {
+  const QString passExe = findPass();
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (passExe.isEmpty() || gitExe.isEmpty())
+    QSKIP("pass or git not installed");
+  RestoreUseGit restoreUseGit;
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString setUp = initRealPassGitStore(storeDir.path(), passExe, gitExe);
+  QVERIFY2(setUp.isEmpty(), qPrintable(setUp));
+  QFile notes(QDir(storeDir.path()).filePath("notes.txt"));
+  QVERIFY(notes.open(QIODevice::WriteOnly));
+  notes.write("plaintext export\n");
+  notes.close();
+
+  RealPass pass;
+  setupPass(pass);
+  UserInfo user;
+  user.key_id = m_keyFingerprint;
+  user.enabled = true;
+  QSignalSpy inited(&pass, &Pass::finishedInit);
+  QSignalSpy errors(&pass, &Pass::processErrorExit);
+  QSignalSpy critical(&pass, &Pass::critical);
+  pass.Init(storeDir.path(), {user});
+  QCOMPARE(errors.size(), 1);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains("notes.txt"),
+           qPrintable(critical.first().at(1).toString()));
+  QString tracked;
+  QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
+  QVERIFY2(!tracked.contains("notes.txt"), qPrintable(tracked));
+
+  // A folder that moves brings what lies in it along: pass mv stages the
+  // new path whole.
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath("team"));
+  QFile exported(store.filePath("team/export.csv"));
+  QVERIFY(exported.open(QIODevice::WriteOnly));
+  exported.write("plaintext\n");
+  exported.close();
+  critical.clear();
+  pass.Move(store.filePath("team"), store.filePath("moved"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains("team/export.csv"),
+           qPrintable(critical.first().at(1).toString()));
+  QVERIFY2(store.exists("team/export.csv"), "nothing was moved");
+  QVERIFY(QDir(store.filePath("team")).removeRecursively());
+
+  // Ignored, it is not pass's to commit.
+  QFile ignore(QDir(storeDir.path()).filePath(".gitignore"));
+  QVERIFY(ignore.open(QIODevice::WriteOnly));
+  ignore.write("notes.txt\n");
+  ignore.close();
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", ".gitignore"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "ignore"}));
+  critical.clear();
+  pass.Init(storeDir.path(), {user});
+  QVERIFY2(waitForSignal(inited, 30000), "init goes ahead once ignored");
+  QCOMPARE(critical.size(), 0);
+  QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
+  QVERIFY2(!tracked.contains("notes.txt"), qPrintable(tracked));
   QtPassSettings::setUsePass(false);
 }
 

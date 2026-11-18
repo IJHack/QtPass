@@ -927,6 +927,15 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   failed half-way through updating the store (the branch is still behind
   its upstream): those pulled files were committed as the backup, as the
   user's own (scan finding ANT-2026-K22L035R)
+- With the `pass` backend and Git, Users (`pass init`), move and copy are
+  refused while the folder holds changes Git has not recorded: pass commits
+  the whole folder, so a plaintext file lying in the store, or files a
+  failed pull wrote, were committed and pushed with the change. Files Git
+  ignores are left alone (scan finding ANT-2026-H8BX5YR3)
+- With the `pass` backend, an entry Git did not record after an insert,
+  Users, move or copy (one a `.gitignore` matches, say) is reported as
+  saved but not committed: pass exits 0 whatever Git did, and such an entry
+  is not pushed and a pull may overwrite it (scan finding ANT-2026-V9DS85ER)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

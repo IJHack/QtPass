@@ -136,6 +136,35 @@ class RealPass : public Pass {
   auto storeGit(const QStringList &args, QString *out) -> bool override;
 
   /**
+   * @brief What git has not recorded at @p paths: `git status --porcelain`
+   * lines, through `pass git`. Empty without Git, or when git cannot say.
+   * @param paths Absolute paths in the store.
+   * @param ignored Whether ignored files are listed too (as `!!`).
+   * @return The status entries, "XY name" each.
+   */
+  auto unrecorded(const QStringList &paths, bool ignored) -> QStringList;
+
+  /**
+   * @brief Refuse a `pass init`, `mv` or `cp` when @p paths hold changes
+   * git has not recorded. pass commits the whole folder with `git add`, so
+   * a plaintext export lying in it, or files a failed pull wrote, would be
+   * committed and pushed along with the change. Ignored files are left
+   * alone, as `git add` leaves them.
+   * @param paths Absolute paths in the store that pass will stage.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseUnrecordedChanges(const QStringList &paths) -> bool;
+
+  /**
+   * @brief After a `pass insert`, `init`, `mv` or `cp` that exited 0, say
+   * so when git did not record the entries it wrote: pass exits 0 whatever
+   * its `git add` and commit did (an entry a .gitignore matches, say), and
+   * an unrecorded entry is not pushed and a pull may overwrite it.
+   * @param paths Absolute paths the change wrote.
+   */
+  void reportUnrecorded(const QStringList &paths);
+
+  /**
    * @brief For a folder pass is about to re-encrypt in a move or copy:
    * refuse when the signed list of one of its entries (every one pass's
    * walk takes, hidden ones included) is not one QtPass accepts where it
