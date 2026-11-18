@@ -85,7 +85,10 @@ This tutorial might resolve your issues.
 
 ### Users, move or copy says "Changes Git has not recorded"
 
-With the `pass` backend and Git, `pass` commits the whole folder it changes, and everything staged with it. So QtPass refuses **Users**, move and copy while the folder holds files Git does not track or changes Git has not committed, and all of these and new entries while anything is staged in the repository `pass` commits in: a plaintext export left in the store would otherwise be committed and pushed. The message lists the files.
+With the `pass` backend and Git, `pass` commits the whole folder it changes, and everything staged with it. A plaintext export left in the store would be committed and pushed. The message lists the files. QtPass refuses:
+
+- **Users**, move and copy while the folder holds files Git does not track or changes Git has not committed.
+- These and new entries while anything is staged in the repository `pass` commits in.
 
 Commit them, remove them, or have Git ignore them, then try again.
 
