@@ -635,6 +635,20 @@ auto Util::isLaunchableWebUrl(const QString &value) -> bool {
   return true;
 }
 
+auto Util::displayable(const QString &text, bool lineBreaks) -> QString {
+  QString shown = text;
+  for (QChar &c : shown) {
+    const char16_t u = c.unicode();
+    const bool keep = u == u'\t' || (lineBreaks && u == u'\n');
+    if ((u < 0x20 && !keep) || (u >= 0x7f && u <= 0x9f) || u == 0x2028 ||
+        u == 0x2029 || (u >= 0x202a && u <= 0x202e) ||
+        (u >= 0x2066 && u <= 0x2069)) {
+      c = QChar(QChar::ReplacementCharacter);
+    }
+  }
+  return shown;
+}
+
 auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
   if (linked != nullptr) {
     *linked = false;

@@ -274,6 +274,24 @@ public:
    */
   [[nodiscard]] static auto boundSpaceRuns(const QString &text) -> QString;
   /**
+   * @brief @p text with the characters that change how the text around them
+   * reads replaced by U+FFFD, for showing text that comes from the store or
+   * a key (a folder name, a key's user ID) as plain text.
+   *
+   * Replaced: C0 controls (but tab and, with @p lineBreaks, line feed), DEL,
+   * C1 controls (NEL among them, U+009C ends a "string" in some terminals),
+   * the line and paragraph separators U+2028 and U+2029, and the bidi
+   * embedding, override and isolate controls (U+202A to U+202E, U+2066 to
+   * U+2069). An override mirrored the rest of a warning; a line separator in
+   * a user ID drew a fake fingerprint line. The left-to-right and
+   * right-to-left marks stay: right-to-left names use them as they should.
+   * @param text Text to show.
+   * @param lineBreaks Keep line feeds (a message of several lines).
+   * @return @p text with those characters shown as U+FFFD.
+   */
+  [[nodiscard]] static auto displayable(const QString &text,
+                                        bool lineBreaks = true) -> QString;
+  /**
    * @brief Returns a regex to match newline characters.
    * @return Reference to static regex
    */

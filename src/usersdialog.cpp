@@ -109,7 +109,9 @@ void UsersDialog::showRecipientWarning(const QString &text,
   // list, which as rich text could make Qt load a file (<img src=...>).
   auto *banner = new QLabel(this);
   banner->setTextFormat(Qt::PlainText);
-  banner->setText(text);
+  // And with nothing in it that changes how the rest reads: a folder name
+  // with a bidi override mirrored the warning after it.
+  banner->setText(Util::displayable(text));
   banner->setObjectName(name);
   banner->setWordWrap(true);
   // Palette, not a stylesheet colour, so it reads on dark themes too; red as
@@ -422,7 +424,9 @@ auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
 }
 
 QString UsersDialog::buildUserText(const UserInfo &user) const {
-  QString text = user.name + "\n" + user.key_id;
+  // One line for the user ID: a line separator in it (gpg escapes only
+  // ASCII) drew a line that looked like the key's fingerprint.
+  QString text = Util::displayable(user.name, false) + "\n" + user.key_id;
   if (user.created.isValid()) {
     text += " " + tr("created") + " " +
             QLocale::system().toString(user.created, QLocale::ShortFormat);
