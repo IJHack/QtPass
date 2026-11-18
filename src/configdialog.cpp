@@ -23,6 +23,7 @@
 #include <QClipboard>
 #include <QDir>
 #include <QEvent>
+#include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QFormLayout>
@@ -883,6 +884,12 @@ void ConfigDialog::initialiseProfileStore(const QString &name,
       path, usersDialog.selectedUsers(), profileSettings,
       profile.useGit.value_or(settings.useGit), &note);
   if (!ok) {
+    // ProfileInit writes .gpg-id before it signs and commits. Left behind,
+    // needsInit() would find a store that looks finished, and saving the
+    // profile again would never retry; the wizard takes it back the same
+    // way.
+    QFile::remove(QDir(path).filePath(QStringLiteral(".gpg-id")));
+    QFile::remove(QDir(path).filePath(QStringLiteral(".gpg-id.sig")));
     PlainMessageBox::warning(
         this, tr("Could not initialise profile %1").arg(name), note);
   } else if (!note.isEmpty()) {

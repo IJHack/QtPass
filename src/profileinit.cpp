@@ -14,9 +14,11 @@
 #include "userinfo.h"
 #include "util.h"
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
+#include <QSet>
 #include <algorithm>
 
 namespace {
@@ -60,6 +62,51 @@ auto gitEnvironment(const QString &dir, const AppSettings &s)
 /// "commit", and "-S" when git config pass.signcommits is true for the
 /// repository @p git runs in (a new one: so the user's own git config), as
 /// pass signs its commits.
+/// Time `git init` and `git add` may take while the window waits: the two
+/// that read what lies in the folder. A commit is not bounded: git may sign
+/// it (pass.signcommits or commit.gpgSign) and wait for the passphrase.
+constexpr int kGitSetupTimeoutMs = 2 * 60 * 1000;
+
+/**
+ * @brief The first thing git would open while staging @p files in @p dir
+ * that it could wait on for good, or empty.
+ *
+ * git add opens the .gitattributes and .gitignore of each folder it stages
+ * from, by name: a FIFO there, planted in a shared folder, kept it waiting
+ * in open() with the window waiting on it. A link to one counts as one:
+ * older git follows it. A sub-folder with a .git of its own is a repository git
+ * looks into (its HEAD, say).
+ * @param dir The store.
+ * @param files Paths relative to @p dir that git is to stage.
+ * @return That path, or empty.
+ */
+auto blocksGit(const QString &dir, const QStringList &files) -> QString {
+  QSet<QString> folders{QStringLiteral(".")};
+  for (const QString &file : files) {
+    for (QString folder = QFileInfo(file).path();
+         folder != QLatin1String(".") && !folders.contains(folder);
+         folder = QFileInfo(folder).path()) {
+      folders.insert(folder);
+    }
+  }
+  const QDir base(dir);
+  for (const QString &folder : std::as_const(folders)) {
+    const QDir here(base.filePath(folder));
+    for (const char *name : {".gitattributes", ".gitignore"}) {
+      const QFileInfo info(here.filePath(QLatin1String(name)));
+      if (info.exists() && !info.isFile()) {
+        return info.filePath();
+      }
+    }
+    const QFileInfo nested(here.filePath(QStringLiteral(".git")));
+    if (folder != QLatin1String(".") &&
+        (nested.exists() || nested.isSymLink())) {
+      return nested.filePath();
+    }
+  }
+  return {};
+}
+
 auto commitArgs(QProcess &git, const AppSettings &s) -> QStringList {
   QString out;
   const bool sign =
@@ -99,6 +146,14 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   const QDir folder(dir);
   if (!folder.exists() && !Util::mkpathForStore(folder.absolutePath())) {
     out = tr("Could not create %1.").arg(folder.absolutePath());
+    return false;
+  }
+  // Before anything is written: a refusal later would leave a .gpg-id
+  // behind, and a store that looks finished.
+  if (useGit &&
+      refusedForGit(folder.absolutePath(),
+                    {QStringLiteral(".gpg-id"), QStringLiteral(".gpg-id.sig")},
+                    &out)) {
     return false;
   }
   const QString gpgIdFile = folder.filePath(QStringLiteral(".gpg-id"));
@@ -259,6 +314,50 @@ auto ProfileInit::signGpgId(const QString &gpgIdFile,
   return true;
 }
 
+auto ProfileInit::runGit(QProcess &git, const AppSettings &s,
+                         const QString &dir, const QStringList &args,
+                         QString *note) -> bool {
+  const bool bounded = args.first() == QLatin1String("init") ||
+                       args.first() == QLatin1String("add");
+  QElapsedTimer clock;
+  clock.start();
+  QString err;
+  const int rc = Executor::executeBlocking(git, s.gitExecutable, args,
+                                           QString(), nullptr, &err, nullptr,
+                                           bounded ? kGitSetupTimeoutMs : -1);
+  if (rc == 0) {
+    return true;
+  }
+  // -1 is what a stopped run returns; git's own failures are positive.
+  if (bounded && rc == -1 && clock.elapsed() >= kGitSetupTimeoutMs) {
+    *note = tr("git %1 did not finish within %2 minutes in %3, and was "
+               "stopped.")
+                .arg(args.first())
+                .arg(kGitSetupTimeoutMs / 60000)
+                .arg(dir);
+  } else {
+    *note = tr("git %1 failed in %2: %3").arg(args.first(), dir, err.trimmed());
+  }
+  return false;
+}
+
+auto ProfileInit::refusedForGit(const QString &dir, const QStringList &files,
+                                QString *note) -> bool {
+  const QString path = blocksGit(dir, files);
+  if (path.isEmpty()) {
+    return false;
+  }
+  *note = QFileInfo(path).fileName() == QLatin1String(".git")
+              ? tr("%1 is a Git repository inside the store. Move it out of "
+                   "the store, then try again.")
+                    .arg(QDir::toNativeSeparators(QFileInfo(path).path()))
+              : tr("%1 is not a regular file, and Git could wait on it for "
+                   "good. Remove it or make it a regular file, then try "
+                   "again.")
+                    .arg(QDir::toNativeSeparators(path));
+  return true;
+}
+
 auto ProfileInit::commitGpgId(const QString &dir, const QString &gpgIdFile,
                               const QString &sigFile, const AppSettings &s,
                               QString *note) -> bool {
@@ -268,19 +367,16 @@ auto ProfileInit::commitGpgId(const QString &dir, const QString &gpgIdFile,
   git.setWorkingDirectory(dir);
   git.setProcessEnvironment(gitEnvironment(dir, s));
   auto run = [&](const QStringList &args) -> bool {
-    QString err;
-    const int rc = Executor::executeBlocking(git, s.gitExecutable, args,
-                                             QString(), nullptr, &err);
-    if (rc != 0) {
-      *note =
-          tr("git %1 failed in %2: %3").arg(args.first(), dir, err.trimmed());
-      return false;
-    }
-    return true;
+    return runGit(git, s, dir, args, note);
   };
   QStringList files{QFileInfo(gpgIdFile).fileName()};
   if (!sigFile.isEmpty()) {
     files << QFileInfo(sigFile).fileName();
+  }
+  // initialise() checked before writing these; again here, as signing can
+  // take a while and the folder is shared.
+  if (refusedForGit(dir, files, note)) {
+    return false;
   }
   const QStringList add =
       QStringList{QStringLiteral("add"), QStringLiteral("--")} + files;
@@ -300,15 +396,7 @@ auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
   git.setWorkingDirectory(dir);
   git.setProcessEnvironment(gitEnvironment(dir, s));
   auto run = [&](const QStringList &args) -> bool {
-    QString err;
-    const int rc = Executor::executeBlocking(git, s.gitExecutable, args,
-                                             QString(), nullptr, &err);
-    if (rc != 0) {
-      *note =
-          tr("git %1 failed in %2: %3").arg(args.first(), dir, err.trimmed());
-      return false;
-    }
-    return true;
+    return runGit(git, s, dir, args, note);
   };
   // Stage only store files (as the re-encryption backup commit does): an
   // existing folder may hold plaintext exports or swap files. Regular files
@@ -324,6 +412,9 @@ auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
       nullptr, true);
   for (const QString &path : found) {
     files << base.relativeFilePath(path);
+  }
+  if (refusedForGit(dir, files, note)) {
+    return false;
   }
   if (!run({QStringLiteral("init")})) {
     return false;

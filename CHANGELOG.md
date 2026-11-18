@@ -915,6 +915,18 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   ANT-2026-V7X4M2B6, ANT-2026-J1OLDGTJ)
 - Settings no longer hangs on a repository whose HEAD or .git is a link to
   a FIFO or a device (scan finding ANT-2026-0KZE41ZD)
+- Putting a store under Git (first-run wizard, a new profile) no longer
+  hangs on a shared folder: a `.gitattributes` or `.gitignore` that is not a
+  regular file, or a Git repository in a sub-folder, is named and Git is not
+  run, and `git init` and `git add` are stopped after two minutes (scan
+  finding ANT-2026-Z32IO5YF)
+- Settings: when setting up a new profile's store fails, the `.gpg-id`
+  written before the failure is removed again, as the first-run wizard
+  does, so saving the profile again retries the set-up
+- With the native backend, re-encryption stops when the pull before it
+  failed half-way through updating the store (the branch is still behind
+  its upstream): those pulled files were committed as the backup, as the
+  user's own (scan finding ANT-2026-K22L035R)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

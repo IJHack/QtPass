@@ -2543,7 +2543,8 @@ void tst_configdialog::newProfileIsInitialisedWithTheChosenRecipients() {
 /**
  * @brief When initialising fails (here: the profile's signing key, and a gpg
  *        that writes no signature) the failure is reported under the
- *        profile's name instead of being swallowed.
+ *        profile's name instead of being swallowed, and the .gpg-id written
+ *        before it is taken back.
  */
 void tst_configdialog::newProfileInitialisationFailureIsReported() {
 #ifdef Q_OS_WIN
@@ -2586,6 +2587,10 @@ void tst_configdialog::newProfileInitialisationFailureIsReported() {
   QVERIFY2(!QFile::exists(
                QDir(folder.path()).filePath(QStringLiteral(".gpg-id.sig"))),
            "no signature was produced");
+  QVERIFY2(
+      !QFile::exists(QDir(folder.path()).filePath(QStringLiteral(".gpg-id"))),
+      "the .gpg-id written before the failure is taken back, so saving "
+      "the profile again retries");
 }
 
 QTEST_MAIN(tst_configdialog)

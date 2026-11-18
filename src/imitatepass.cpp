@@ -1218,7 +1218,7 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
 /**
  * @brief Pull before re-encryption when automatic pulling is configured.
  * @return true if no pull is needed, the pull succeeds, or a failed pull leaves
- * no unmerged files; false if unmerged files remain or their check fails.
+ * no unmerged files and HEAD not behind its upstream; false otherwise.
  */
 auto ImitatePass::pullBeforeReencrypt() -> bool {
   if (!m_settings.autoPull || !reencryptUsesGit()) {
@@ -1246,6 +1246,26 @@ auto ImitatePass::pullBeforeReencrypt() -> bool {
     emit critical(tr("Git pull failed"),
                   tr("The pull left the store with unmerged files. Resolve "
                      "the conflict before re-encrypting."));
+    return false;
+  }
+  // A third kind: the fetch got the commits and the checkout then failed at
+  // one path (a link git could not create, say). Git leaves HEAD and the
+  // index where they were, but the pulled versions of the other files are
+  // already in the work tree, and the backup commit would take them as the
+  // user's own, signed with the user's key. HEAD still behind the upstream
+  // after a failed pull means the pull may have got that far. No upstream
+  // (rev-list fails) means there was nothing to merge.
+  QString behind;
+  if (execBlocking(m_settings.gitExecutable,
+                   {"-C", pgit(m_settings.passStore), "rev-list", "--count",
+                    "HEAD..@{upstream}"},
+                   &behind) == 0 &&
+      behind.trimmed().toInt() > 0) {
+    emit critical(tr("Git pull failed"),
+                  tr("The pull stopped before the store was up to date with "
+                     "its remote, and may have left files of the pulled "
+                     "commits in it. Check the store with git before "
+                     "re-encrypting."));
     return false;
   }
   emit statusMsg(tr("Git pull failed, re-encrypting the store as it is"), 5000);

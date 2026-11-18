@@ -13,6 +13,7 @@
 #include <QProcessEnvironment>
 #include <QString>
 
+class QProcess;
 struct AppSettings;
 struct UserInfo;
 
@@ -131,6 +132,32 @@ private:
   static auto commitGpgId(const QString &dir, const QString &gpgIdFile,
                           const QString &sigFile, const AppSettings &s,
                           QString *note) -> bool;
+  /**
+   * @brief Run one set-up git command on @p git and wait for it: `init` and
+   * `add`, which read what lies in the folder, for at most two minutes, as
+   * the window waits too; a commit, which git may sign and so wait for the
+   * passphrase, without a limit.
+   * @param git The process, set up for the store.
+   * @param s Settings for the git executable.
+   * @param dir The store, named in the note.
+   * @param args The git arguments; the first names the command.
+   * @param note Receives a translated error naming the command, or that it
+   *        ran out of time.
+   * @return Whether the command succeeded.
+   */
+  static auto runGit(QProcess &git, const AppSettings &s, const QString &dir,
+                     const QStringList &args, QString *note) -> bool;
+  /**
+   * @brief Whether staging @p files in @p dir is refused because git could
+   * wait on something there for good: a .gitattributes or .gitignore on
+   * the way that is not a regular file, or a repository in a sub-folder.
+   * @param dir The store.
+   * @param files Paths relative to @p dir that git is to stage.
+   * @param note Receives a translated reason naming the path.
+   * @return true when git must not be run.
+   */
+  static auto refusedForGit(const QString &dir, const QStringList &files,
+                            QString *note) -> bool;
 };
 
 #endif // SRC_PROFILEINIT_H_

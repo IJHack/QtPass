@@ -695,7 +695,8 @@ private:
    * @brief Pull before a run, when the store is a Git repository and
    * automatic pulling is on.
    * @return Whether re-encrypting may go ahead: false when a failed pull
-   * left unmerged files or the check for unmerged files fails.
+   * left unmerged files, the check for them fails, or HEAD is still behind
+   * its upstream (the checkout may have stopped half-way).
    */
   auto pullBeforeReencrypt() -> bool;
   /**
