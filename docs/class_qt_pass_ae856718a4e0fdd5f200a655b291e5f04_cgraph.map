@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,33,220,31,215,33,186,38"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="256,57,399,85"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,53,243,61,238,62,185,58"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass.html#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="470,31,631,58"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="470,31,631,58"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="399,60,457,56,452,56,399,65"/>
 <area shape="rect" id="Node000009" href="$class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6" title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser." alt="" coords="472,83,629,110"/>
 <area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="399,77,459,86,454,86,399,82"/>

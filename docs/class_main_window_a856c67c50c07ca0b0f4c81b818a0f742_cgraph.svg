@@ -5388,7 +5388,7 @@
 <g id="Node000249" class="node">
 <title>Node249</title>
 <g id="a_Node000249"><a xlink:href="class_password_display_panel.html#a63f3df891d869b0cc854ebb652b8ade7" target="_top" xlink:title="Render one name: value row: action buttons, then the value either behind the eye button (see hides())...">
-<polygon fill="white" stroke="#666666" points="1860.75,-5525.12 1736,-5525.12 1736,-5491.62 1860.75,-5491.62 1860.75,-5525.12"/>
+<polygon fill="#fff0f0" stroke="red" points="1860.75,-5525.12 1736,-5525.12 1736,-5491.62 1860.75,-5491.62 1860.75,-5525.12"/>
 <text xml:space="preserve" text-anchor="start" x="1744" y="-5511.62" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordDisplayPanel</text>
 <text xml:space="preserve" text-anchor="middle" x="1798.38" y="-5498.88" font-family="Helvetica,sans-Serif" font-size="10.00">::addField</text>
 </a>

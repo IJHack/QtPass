@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 00:06:16</td>
+            <td class="headerValue">2026-11-18 00:46:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -92,47 +92,47 @@
 <span id="L19"><span class="lineNum">      19</span>              : QScopedPointer&lt;RealPass&gt; PassBackendFactory::realPass;</span>
 <span id="L20"><span class="lineNum">      20</span>              : QScopedPointer&lt;ImitatePass&gt; PassBackendFactory::imitatePass;</span>
 <span id="L21"><span class="lineNum">      21</span>              : </span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         742 : auto PassBackendFactory::getPass() -&gt; Pass * {</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         742 :   if (!pass) {</span></span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         256 :     AppSettings s = QtPassSettings::load();</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         748 : auto PassBackendFactory::getPass() -&gt; Pass * {</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         748 :   if (!pass) {</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         258 :     AppSettings s = QtPassSettings::load();</span></span>
 <span id="L25"><span class="lineNum">      25</span>              :     // Ensure store directory exists (first-run side effect — load() normalises</span>
 <span id="L26"><span class="lineNum">      26</span>              :     // the path but does not create the directory).</span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         256 :     if (!QDir(s.passStore).exists())</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         258 :     if (!QDir(s.passStore).exists())</span></span>
 <span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           1 :       Util::mkpathForStore(s.passStore);</span></span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         256 :     if (s.usePass) {</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         258 :     if (s.usePass) {</span></span>
 <span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">           4 :       pass = getRealPass();</span></span>
 <span id="L31"><span class="lineNum">      31</span>              :     } else {</span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         252 :       pass = getImitatePass();</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         254 :       pass = getImitatePass();</span></span>
 <span id="L33"><span class="lineNum">      33</span>              :     }</span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         256 :     if (pass) {</span></span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         256 :       pass-&gt;init(s);</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         258 :     if (pass) {</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         258 :       pass-&gt;init(s);</span></span>
 <span id="L36"><span class="lineNum">      36</span>              :     }</span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">         256 :   }</span></span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         742 :   return pass;</span></span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">         258 :   }</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         748 :   return pass;</span></span>
 <span id="L39"><span class="lineNum">      39</span>              : }</span>
 <span id="L40"><span class="lineNum">      40</span>              : </span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         412 : auto PassBackendFactory::getRealPass() -&gt; RealPass * {</span></span>
-<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">         412 :   if (realPass.isNull()) {</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         416 : auto PassBackendFactory::getRealPass() -&gt; RealPass * {</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">         416 :   if (realPass.isNull()) {</span></span>
 <span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">           5 :     realPass.reset(new RealPass());</span></span>
 <span id="L44"><span class="lineNum">      44</span>              :   }</span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         412 :   return realPass.data();</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         416 :   return realPass.data();</span></span>
 <span id="L46"><span class="lineNum">      46</span>              : }</span>
 <span id="L47"><span class="lineNum">      47</span>              : </span>
-<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">         829 : auto PassBackendFactory::getImitatePass() -&gt; ImitatePass * {</span></span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">         829 :   if (imitatePass.isNull()) {</span></span>
+<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">         837 : auto PassBackendFactory::getImitatePass() -&gt; ImitatePass * {</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">         837 :   if (imitatePass.isNull()) {</span></span>
 <span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">           6 :     imitatePass.reset(new ImitatePass());</span></span>
 <span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">           6 :     AppSettings s = QtPassSettings::load();</span></span>
 <span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">           6 :     imitatePass-&gt;init(s);</span></span>
 <span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">           6 :   }</span></span>
-<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">         829 :   return imitatePass.data();</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">         837 :   return imitatePass.data();</span></span>
 <span id="L55"><span class="lineNum">      55</span>              : }</span>
 <span id="L56"><span class="lineNum">      56</span>              : </span>
-<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         199 : auto PassBackendFactory::isIdle() -&gt; bool {</span></span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         398 :   return (realPass.isNull() || realPass-&gt;isIdle()) &amp;&amp;</span></span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         199 :          (imitatePass.isNull() || imitatePass-&gt;isIdle());</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         202 : auto PassBackendFactory::isIdle() -&gt; bool {</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         404 :   return (realPass.isNull() || realPass-&gt;isIdle()) &amp;&amp;</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         202 :          (imitatePass.isNull() || imitatePass-&gt;isIdle());</span></span>
 <span id="L60"><span class="lineNum">      60</span>              : }</span>
 <span id="L61"><span class="lineNum">      61</span>              : </span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">        1102 : void PassBackendFactory::invalidate() { pass = nullptr; }</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">        1112 : void PassBackendFactory::invalidate() { pass = nullptr; }</span></span>
         </pre>
               </td>
             </tr>

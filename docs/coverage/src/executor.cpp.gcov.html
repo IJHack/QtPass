@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 00:06:16</td>
+            <td class="headerValue">2026-11-18 00:46:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -186,11 +186,11 @@
 <span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC">          12 :   return {launcher, options, program};</span></span>
 <span id="L114"><span class="lineNum">     114</span>              : }</span>
 <span id="L115"><span class="lineNum">     115</span>              : </span>
-<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">        3610 : auto Executor::parseWslCommand(const QString &amp;app)</span></span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">        3612 : auto Executor::parseWslCommand(const QString &amp;app)</span></span>
 <span id="L117"><span class="lineNum">     117</span>              :     -&gt; std::optional&lt;WslCommand&gt; {</span>
-<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">        3610 :   const QStringList parts = QProcess::splitCommand(app);</span></span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">        3610 :   if (parts.size() &lt; 2) {</span></span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">        3565 :     return std::nullopt;</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">        3612 :   const QStringList parts = QProcess::splitCommand(app);</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">        3612 :   if (parts.size() &lt; 2) {</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">        3567 :     return std::nullopt;</span></span>
 <span id="L121"><span class="lineNum">     121</span>              :   }</span>
 <span id="L122"><span class="lineNum">     122</span>              :   // The file name after the last separator of either kind: a Windows path</span>
 <span id="L123"><span class="lineNum">     123</span>              :   // has to be recognised as such wherever the parser runs.</span>
@@ -456,14 +456,14 @@
 <span id="L383"><span class="lineNum">     383</span>              :     }</span>
 <span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">        1012 :     return true;</span></span>
 <span id="L385"><span class="lineNum">     385</span>              :   }</span>
-<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">         974 :   while (!process.waitForFinished(</span></span>
+<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">         972 :   while (!process.waitForFinished(</span></span>
 <span id="L387"><span class="lineNum">     387</span>              :       deadline.isForever()</span>
 <span id="L388"><span class="lineNum">     388</span>              :           ? kBlockingCancelPollMs</span>
 <span id="L389"><span class="lineNum">     389</span> <span class="tlaGNC">           3 :           : qMin(kBlockingCancelPollMs, msecsLeft(deadline)))) {</span></span>
-<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">          37 :     if (process.state() == QProcess::NotRunning) {</span></span>
+<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">          36 :     if (process.state() == QProcess::NotRunning) {</span></span>
 <span id="L391"><span class="lineNum">     391</span>              :       return true;</span>
 <span id="L392"><span class="lineNum">     392</span>              :     }</span>
-<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">          49 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
+<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">          48 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
 <span id="L394"><span class="lineNum">     394</span> <span class="tlaGNC">          12 :       stopBlocking(process);</span></span>
 <span id="L395"><span class="lineNum">     395</span> <span class="tlaGNC">          12 :       return false;</span></span>
 <span id="L396"><span class="lineNum">     396</span>              :     }</span>
@@ -568,9 +568,9 @@
 <span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">          72 :   return runBlocking(process, app, args, QString(), process_out, process_err);</span></span>
 <span id="L496"><span class="lineNum">     496</span> <span class="tlaGNC">          36 : }</span></span>
 <span id="L497"><span class="lineNum">     497</span>              : </span>
-<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">         663 : void Executor::setEnvironment(const QProcessEnvironment &amp;env) {</span></span>
-<span id="L499"><span class="lineNum">     499</span> <span class="tlaGNC">         663 :   m_process.setProcessEnvironment(env);</span></span>
-<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">         663 : }</span></span>
+<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">         665 : void Executor::setEnvironment(const QProcessEnvironment &amp;env) {</span></span>
+<span id="L499"><span class="lineNum">     499</span> <span class="tlaGNC">         665 :   m_process.setProcessEnvironment(env);</span></span>
+<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">         665 : }</span></span>
 <span id="L501"><span class="lineNum">     501</span>              : </span>
 <span id="L502"><span class="lineNum">     502</span> <span class="tlaGNC">         126 : auto Executor::environment() const -&gt; QProcessEnvironment {</span></span>
 <span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">         126 :   return m_process.processEnvironment();</span></span>
@@ -600,7 +600,7 @@
 <span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">         308 :   auto [output, err] = collectOutput(i, exitCode);</span></span>
 <span id="L528"><span class="lineNum">     528</span> <span class="tlaGNC">         308 :   if (exitStatus == QProcess::NormalExit) {</span></span>
 <span id="L529"><span class="lineNum">     529</span> <span class="tlaGNC">         307 :     if (exitCode != 0) {</span></span>
-<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">          45 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
+<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">          44 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
 <span id="L531"><span class="lineNum">     531</span>              :     }</span>
 <span id="L532"><span class="lineNum">     532</span> <span class="tlaGNC">         307 :     emit finished(i.id, exitCode, output, err);</span></span>
 <span id="L533"><span class="lineNum">     533</span> <span class="tlaGNC">         307 :     m_outputLossless = true;</span></span>

@@ -1,6 +1,6 @@
 <map id="Util::boundSpaceRuns" name="Util::boundSpaceRuns">
 <area shape="rect" id="Node000001" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="2039,83,2202,110"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="1830,83,1991,110"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="1830,83,1991,110"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2020,97,1992,99,1992,94,2026,96"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="1553,32,1782,60"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1823,79,1737,63,1737,58,1829,79"/>

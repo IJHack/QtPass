@@ -11,7 +11,7 @@ var group__support =
       [ "doGitPush", "class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b", null ],
       [ "entryInserted", "class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e", null ],
       [ "finishedInsert", "class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb", null ],
-      [ "formatOutput", "class_qt_pass.html#a32860d084409d781977736d6fb40d629", null ],
+      [ "formatOutput", "class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c", null ],
       [ "init", "class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65", null ],
       [ "onKeyGenerationComplete", "class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243", null ],
       [ "operationFinished", "class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb", null ],

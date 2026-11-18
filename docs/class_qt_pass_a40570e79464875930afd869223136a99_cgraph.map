@@ -1,6 +1,6 @@
 <map id="QtPass::processFinished" name="QtPass::processFinished">
 <area shape="rect" id="Node000001" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std..." alt="" coords="5,69,183,97"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="468,31,629,58"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="468,31,629,58"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,66,172,45,230,29,287,21,346,20,455,29,450,30,346,25,288,27,231,34,174,50,125,71"/>
 <area shape="rect" id="Node000007" href="$class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again." alt="" coords="231,43,420,70"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="183,70,218,68,212,70,184,76"/>

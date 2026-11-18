@@ -146,7 +146,7 @@ Public Slots</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a83ed57a1825df0802c51314eccb963c6" id="r_a83ed57a1825df0802c51314eccb963c6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a83ed57a1825df0802c51314eccb963c6">outputReady</a> (const QString &amp;html)</td></tr>
-<tr class="memdesc:a83ed57a1825df0802c51314eccb963c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatted output (see <a class="el" href="#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...">formatOutput()</a>) or an error rendered in colour, ready for the text browser.  <br /></td></tr>
+<tr class="memdesc:a83ed57a1825df0802c51314eccb963c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatted output (see <a class="el" href="#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...">formatOutput()</a>) or an error rendered in colour, ready for the text browser.  <br /></td></tr>
 <tr class="memitem:a09c3a4f7b75656b6f79c90ffbabbf4cb" id="r_a09c3a4f7b75656b6f79c90ffbabbf4cb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a09c3a4f7b75656b6f79c90ffbabbf4cb">operationFinished</a> ()</td></tr>
 <tr class="memdesc:a09c3a4f7b75656b6f79c90ffbabbf4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A backend operation is over, successfully or not; the interface can be enabled again.  <br /></td></tr>
 <tr class="memitem:a21d53cbc4749f4f9aedb72b32e0b706a" id="r_a21d53cbc4749f4f9aedb72b32e0b706a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a21d53cbc4749f4f9aedb72b32e0b706a">statusMessage</a> (const QString &amp;message, int timeout)</td></tr>
@@ -169,8 +169,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a32860d084409d781977736d6fb40d629" id="r_a32860d084409d781977736d6fb40d629"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a32860d084409d781977736d6fb40d629">formatOutput</a> (QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString()) -&gt; QString</td></tr>
-<tr class="memdesc:a32860d084409d781977736d6fb40d629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn a process' plain-text output into the HTML the text browser shows: http(s) URLs become links, everything else is escaped, line breaks become <span class="tt">&lt;br /&gt;</span> and all other white space is kept as it is (a lone carriage return becomes a space).  <br /></td></tr>
+<tr class="memitem:a2fc3d9a02bd9d7581661560a9b5c0e8c" id="r_a2fc3d9a02bd9d7581661560a9b5c0e8c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2fc3d9a02bd9d7581661560a9b5c0e8c">formatOutput</a> (QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString(), bool links=true) -&gt; QString</td></tr>
+<tr class="memdesc:a2fc3d9a02bd9d7581661560a9b5c0e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn a process' plain-text output into the HTML the text browser shows: http(s) URLs become links, everything else is escaped, line breaks become <span class="tt">&lt;br /&gt;</span> and all other white space is kept as it is (a lone carriage return becomes a space).  <br /></td></tr>
 <tr class="memitem:abd2dacf3e88b411ef39ec78f49bbdd2d" id="r_abd2dacf3e88b411ef39ec78f49bbdd2d"><td class="memItemLeft">static QDialog *&#160;</td><td class="memItemRight"><a class="el" href="#abd2dacf3e88b411ef39ec78f49bbdd2d">createQRCodePopup</a> (const QPixmap &amp;image)</td></tr>
 <tr class="memdesc:abd2dacf3e88b411ef39ec78f49bbdd2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a frameless popup dialog, placed at the cursor, showing the given QR code. Split out of <a class="el" href="#aef5aaf0605c7681967995ede486590ef" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...">showTextAsQRCode()</a> so tests can inspect the dialog without running qrencode.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -575,8 +575,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a32860d084409d781977736d6fb40d629" name="a32860d084409d781977736d6fb40d629"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32860d084409d781977736d6fb40d629">&#9670;&#160;</a></span>formatOutput()</h2>
+<a id="a2fc3d9a02bd9d7581661560a9b5c0e8c" name="a2fc3d9a02bd9d7581661560a9b5c0e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc3d9a02bd9d7581661560a9b5c0e8c">&#9670;&#160;</a></span>formatOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -597,7 +597,12 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>postfix</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt; QString</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>postfix</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>links</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -613,6 +618,7 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramname">output</td><td>Plain text from a process. </td></tr>
     <tr><td class="paramname">prefix</td><td>HTML placed before the converted output. </td></tr>
     <tr><td class="paramname">postfix</td><td>HTML placed after it. </td></tr>
+    <tr><td class="paramname">links</td><td>Make launchable http(s) URLs links; off for text that holds the password (the entry shown as it is). </td></tr>
   </table>
   </dd>
 </dl>
@@ -623,13 +629,13 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary">
 </div>
 <div id="dynsection-15-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a32860d084409d781977736d6fb40d629_cgraph.svg" width="616" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a2fc3d9a02bd9d7581661560a9b5c0e8c_cgraph.svg" width="616" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary">
 </div>
 <div id="dynsection-16-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a32860d084409d781977736d6fb40d629_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a2fc3d9a02bd9d7581661560a9b5c0e8c_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -775,7 +781,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Formatted output (see <a class="el" href="#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...">formatOutput()</a>) or an error rendered in colour, ready for the text browser. </p>
+<p>Formatted output (see <a class="el" href="#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...">formatOutput()</a>) or an error rendered in colour, ready for the text browser. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">html</td><td>The HTML to show. </td></tr>
@@ -1146,7 +1152,7 @@ Private Attributes</h2></td></tr>
 
 <p>The clipboard handling for this application instance, exposed through <a class="el" href="#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance.">clipboard()</a>; parented to this object. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00125">125</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00128">128</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>
@@ -1172,7 +1178,7 @@ Private Attributes</h2></td></tr>
 
 <p>The QR code popup while <a class="el" href="#aef5aaf0605c7681967995ede486590ef" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...">showTextAsQRCode()</a> has it open. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00127">127</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00130">130</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>

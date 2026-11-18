@@ -1,6 +1,6 @@
 <map id="QtPass::reportError" name="QtPass::reportError">
 <area shape="rect" id="Node000001" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="5,57,149,85"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="197,31,358,58"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="197,31,358,58"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,59,184,57,179,58,150,64"/>
 <area shape="rect" id="Node000007" href="$class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6" title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser." alt="" coords="199,83,356,110"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="149,78,186,84,181,85,149,83"/>
