@@ -1,9 +1,10 @@
 <map id="MainWindow::confirmLinkRemoval" name="MainWindow::confirmLinkRemoval">
-<area shape="rect" id="Node000001" title="Ask before removing a folder that is a link, which takes the link and leaves what it points to." alt="" coords="5,5,252,33"/>
+<area shape="rect" id="Node000001" title="Ask before removing a folder that is a link, which takes the link and leaves what it points to." alt="" coords="5,31,252,58"/>
 <area shape="rect" id="Node000002" href="$namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d" title="Ask a yes/no question in plain text." alt="" coords="300,5,488,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,17,287,19,281,19,252,22"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,30,287,29,281,30,253,35"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="762,31,890,58"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="252,42,747,42,747,47,252,47"/>
 <area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="536,5,714,33"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="488,17,523,19,518,19,488,22"/>
-<area shape="rect" id="Node000004" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="762,5,890,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="715,17,749,19,744,19,715,22"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="715,28,749,35,744,34,714,33"/>
 </map>

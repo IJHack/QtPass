@@ -53,9 +53,18 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Commit changes to git.">
+<g id="a_Node000001"><a xlink:title="Commit one path to git.">
 <polygon fill="#999999" stroke="#666666" points="1618.5,-78.75 1487.75,-78.75 1487.75,-58 1618.5,-58 1618.5,-78.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1553.12" y="-65.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::gitCommit</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node1 -->
+<g id="edge20_Node000001_Node000001" class="edge">
+<title>Node1&#45;&gt;Node1</title>
+<g id="a_edge20_Node000001_Node000001"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1584.91,-90.24C1580.7,-94.08 1570.1,-96.75 1553.12,-96.75 1522.08,-96.75 1512.38,-87.81 1524.02,-79.15"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1588.34,-89.52 1582.59,-80.62 1581.53,-91.16 1588.34,-89.52"/>
 </a>
 </g>
 </g>
@@ -105,9 +114,9 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
-<g id="edge20_Node000001_Node000015" class="edge">
+<g id="edge21_Node000001_Node000015" class="edge">
 <title>Node1&#45;&gt;Node15</title>
-<g id="a_edge20_Node000001_Node000015"><a xlink:title=" ">
+<g id="a_edge21_Node000001_Node000015"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1475.94,-60.27C1459.21,-58.49 1441.86,-56.65 1426.3,-54.99"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1475.57,-63.75 1485.88,-61.33 1476.31,-56.79 1475.57,-63.75"/>
 </a>
@@ -123,9 +132,9 @@
 </g>
 </g>
 <!-- Node1&#45;&gt;Node16 -->
-<g id="edge21_Node000001_Node000016" class="edge">
+<g id="edge22_Node000001_Node000016" class="edge">
 <title>Node1&#45;&gt;Node16</title>
-<g id="a_edge21_Node000001_Node000016"><a xlink:title=" ">
+<g id="a_edge22_Node000001_Node000016"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1515.47,-53.37C1496.6,-45.94 1473.14,-37.13 1451.75,-30.38 1441.32,-27.08 1429.98,-23.94 1419.26,-21.16"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1514,-56.55 1524.58,-57 1516.59,-50.05 1514,-56.55"/>
 </a>

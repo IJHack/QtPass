@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 01:38:38</td>
+            <td class="headerValue">2026-11-18 08:28:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -86,18 +86,18 @@
 <span id="L13"><span class="lineNum">      13</span>              : #include &lt;QMimeData&gt;</span>
 <span id="L14"><span class="lineNum">      14</span>              : #include &lt;utility&gt;</span>
 <span id="L15"><span class="lineNum">      15</span>              : </span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         211 : ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {</span></span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         211 :   setAutoclearTimer();</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         211 :   m_clearTimer.setSingleShot(true);</span></span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         211 :   connect(&amp;m_clearTimer, &amp;QTimer::timeout, this, &amp;ClipboardManager::clear);</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         211 :   connect(QApplication::instance(), &amp;QApplication::aboutToQuit, this,</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         211 :           &amp;ClipboardManager::clear);</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         211 : }</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         214 : ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         214 :   setAutoclearTimer();</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         214 :   m_clearTimer.setSingleShot(true);</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         214 :   connect(&amp;m_clearTimer, &amp;QTimer::timeout, this, &amp;ClipboardManager::clear);</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         214 :   connect(QApplication::instance(), &amp;QApplication::aboutToQuit, this,</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         214 :           &amp;ClipboardManager::clear);</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         214 : }</span></span>
 <span id="L23"><span class="lineNum">      23</span>              : </span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         218 : void ClipboardManager::setAutoclearTimer() {</span></span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         436 :   m_clearTimer.setInterval(MS_PER_SECOND *</span></span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         436 :                            QtPassSettings::getAutoclearSeconds());</span></span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         218 : }</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         221 : void ClipboardManager::setAutoclearTimer() {</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         442 :   m_clearTimer.setInterval(MS_PER_SECOND *</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         442 :                            QtPassSettings::getAutoclearSeconds());</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         221 : }</span></span>
 <span id="L28"><span class="lineNum">      28</span>              : </span>
 <span id="L29"><span class="lineNum">      29</span>              : namespace {</span>
 <span id="L30"><span class="lineNum">      30</span>              : /**</span>

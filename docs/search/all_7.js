@@ -50,7 +50,7 @@ var searchData=
   ['git_5frm_47',['GIT_RM',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36',1,'Enums::GIT_RM'],['../imitatepass_8cpp.html#aadb94bb5187ca22b697e5576f46a6e36',1,'GIT_RM:&#160;enums.h']]],
   ['gitaddgpgid_48',['gitAddGpgId',['../class_imitate_pass.html#aae90cebd2128422bd41e32fc292a49a0',1,'ImitatePass']]],
   ['gitceiling_49',['gitCeiling',['../class_util.html#afd0e45a8685dd277e6f3d51c361e0b03',1,'Util']]],
-  ['gitcommit_50',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass']]],
+  ['gitcommit_50',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass::gitCommit(const QString &amp;file, const QString &amp;msg)'],['../class_imitate_pass.html#a1d83da6a864748b645e1beffc03849ce',1,'ImitatePass::gitCommit(const QStringList &amp;files, const QString &amp;msg)']]],
   ['gitconfigured_51',['gitConfigured',['../class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87',1,'ImitatePass']]],
   ['giterror_52',['gitError',['../struct_imitate_pass_1_1_uncommitted_gpg_id.html#a6d8ab11a6b44ac87ef4639c0d55db524',1,'ImitatePass::UncommittedGpgId']]],
   ['gitexecutable_53',['gitExecutable',['../struct_app_settings.html#a50480ce075727936c03f0ad797e5f4ae',1,'AppSettings']]],

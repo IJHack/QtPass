@@ -1,21 +1,27 @@
 <map id="FirstRunWizard::initialiseGit" name="FirstRunWizard::initialiseGit">
-<area shape="rect" id="Node000001" title="Give an existing store the Git repository it was chosen to have." alt="" coords="5,84,208,112"/>
-<area shape="rect" id="Node000002" href="$class_profile_init.html#a52111b898d794f14ec9d7dbe668dc5a2" title="Put an existing store under Git: git init, stage the .gpg entries and the .gpg&#45;id files (nothing else..." alt="" coords="256,84,387,112"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,95,243,98,238,98,209,100"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="435,57,627,85"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,87,416,86,422,85,388,92"/>
-<area shape="rect" id="Node000010" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="448,109,615,137"/>
-<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="388,103,435,111,430,111,388,108"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="675,57,838,85"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="627,69,662,71,657,71,628,74"/>
-<area shape="rect" id="Node000005" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="886,57,1076,85"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="838,69,873,71,867,71,838,74"/>
-<area shape="rect" id="Node000006" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1124,57,1289,85"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1076,69,1111,71,1106,71,1076,74"/>
-<area shape="rect" id="Node000007" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1337,5,1556,33"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1274,54,1361,37,1367,37,1274,59"/>
-<area shape="rect" id="Node000008" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1340,57,1553,85"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1290,69,1328,71,1322,71,1290,74"/>
-<area shape="rect" id="Node000009" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1344,109,1549,137"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="1274,83,1367,106,1361,105,1274,88"/>
+<area shape="rect" id="Node000001" title="Give an existing store the Git repository it was chosen to have." alt="" coords="5,136,208,164"/>
+<area shape="rect" id="Node000002" href="$class_profile_init.html#a52111b898d794f14ec9d7dbe668dc5a2" title="Put an existing store under Git: git init, stage the .gpg entries and the .gpg&#45;id files (nothing else..." alt="" coords="288,109,420,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,136,276,131,270,132,208,142"/>
+<area shape="rect" id="Node000011" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="256,161,452,189"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="208,158,243,163,237,164,208,163"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="500,57,692,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="419,106,511,89,516,88,421,112"/>
+<area shape="rect" id="Node000010" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="512,109,680,137"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="420,121,499,123,494,123,420,126"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="740,57,903,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="692,69,727,71,722,71,693,74"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="951,57,1141,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="903,69,938,71,932,71,903,74"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1189,57,1354,85"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1141,69,1176,71,1171,71,1141,74"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1402,5,1621,33"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1339,54,1426,37,1432,37,1340,59"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1405,57,1618,85"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1355,69,1393,71,1387,71,1355,74"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1409,109,1614,137"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="1339,83,1432,106,1426,105,1339,88"/>
+<area shape="rect" id="Node000012" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="507,161,685,189"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="453,173,494,175,489,175,453,178"/>
+<area shape="rect" id="Node000013" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="758,161,885,189"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="685,173,745,175,740,175,686,178"/>
 </map>

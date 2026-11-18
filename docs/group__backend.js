@@ -58,6 +58,7 @@ var group__backend =
       [ "getKeysFromFile", "class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834", null ],
       [ "gitAddGpgId", "class_imitate_pass.html#aae90cebd2128422bd41e32fc292a49a0", null ],
       [ "gitCommit", "class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb", null ],
+      [ "gitCommit", "class_imitate_pass.html#a1d83da6a864748b645e1beffc03849ce", null ],
       [ "gitConfigured", "class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87", null ],
       [ "GitInit", "class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb", null ],
       [ "GitPull", "class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced", null ],

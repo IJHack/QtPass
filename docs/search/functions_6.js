@@ -40,7 +40,7 @@ var searchData=
   ['getversion_37',['getVersion',['../class_qt_pass_settings.html#a5623f8d47534a6c21eb9fd95540b253e',1,'QtPassSettings']]],
   ['gitaddgpgid_38',['gitAddGpgId',['../class_imitate_pass.html#aae90cebd2128422bd41e32fc292a49a0',1,'ImitatePass']]],
   ['gitceiling_39',['gitCeiling',['../class_util.html#afd0e45a8685dd277e6f3d51c361e0b03',1,'Util']]],
-  ['gitcommit_40',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass']]],
+  ['gitcommit_40',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass::gitCommit(const QString &amp;file, const QString &amp;msg)'],['../class_imitate_pass.html#a1d83da6a864748b645e1beffc03849ce',1,'ImitatePass::gitCommit(const QStringList &amp;files, const QString &amp;msg)']]],
   ['gitconfigured_41',['gitConfigured',['../class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87',1,'ImitatePass']]],
   ['gitidentityconfigured_42',['gitIdentityConfigured',['../class_profile_init.html#aad9f0e985b23f16b59893e4c9e7a6c13',1,'ProfileInit']]],
   ['gitinit_43',['GitInit',['../class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb',1,'ImitatePass::GitInit()'],['../class_pass.html#a26bec7c69e7c35ccb67f8057db90825e',1,'Pass::GitInit()'],['../class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f',1,'RealPass::GitInit()']]],

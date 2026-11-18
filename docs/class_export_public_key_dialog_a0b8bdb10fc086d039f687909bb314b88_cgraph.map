@@ -1,5 +1,11 @@
 <map id="ExportPublicKeyDialog::on_saveButton_clicked" name="ExportPublicKeyDialog::on_saveButton_clicked">
-<area shape="rect" id="Node000001" title="Prompt for a destination and write the armored key to that file through a QSaveFile...." alt="" coords="5,5,184,50"/>
+<area shape="rect" id="Node000001" title="Prompt for a destination and write the armored key to that file through a QSaveFile...." alt="" coords="5,36,184,81"/>
 <area shape="rect" id="Node000002" href="$class_export_public_key_dialog.html#ab793452fcca2a8c931654ce7a2789008" title="Reduce a key identifier to a filesystem&#45;safe token." alt="" coords="232,5,428,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,25,219,27,213,28,184,30"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,44,218,42,213,43,184,49"/>
+<area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="232,74,428,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,67,219,73,213,74,184,72"/>
+<area shape="rect" id="Node000004" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="476,74,654,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="428,85,463,88,457,88,429,90"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="702,74,830,102"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="655,85,689,88,684,88,655,90"/>
 </map>

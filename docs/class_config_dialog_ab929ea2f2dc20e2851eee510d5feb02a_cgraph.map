@@ -1,5 +1,11 @@
 <map id="ConfigDialog::warnAboutSshAuthSockOverride" name="ConfigDialog::warnAboutSshAuthSockOverride">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,211,50"/>
-<area shape="rect" id="Node000002" href="$class_ssh_auth_sock.html#a5d4accd5e9b9f2461de8d3565fa336d8" title="Validate an SSH_AUTH_SOCK override path. Caller is expected to skip validation when the input is empt..." alt="" coords="259,14,467,42"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,25,246,27,240,28,211,30"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,24,211,68"/>
+<area shape="rect" id="Node000002" href="$class_ssh_auth_sock.html#a5d4accd5e9b9f2461de8d3565fa336d8" title="Validate an SSH_AUTH_SOCK override path. Caller is expected to skip validation when the input is empt..." alt="" coords="259,5,467,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,32,246,31,240,32,212,38"/>
+<area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="265,57,461,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,53,252,60,246,60,211,59"/>
+<area shape="rect" id="Node000004" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="515,57,693,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="462,69,502,71,497,71,462,74"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="741,57,869,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="694,69,728,71,723,71,694,74"/>
 </map>
