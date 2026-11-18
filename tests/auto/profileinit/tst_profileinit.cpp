@@ -2,13 +2,16 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QProcess>
 #include <QScopeGuard>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QtTest>
+#include <functional>
 #ifndef Q_OS_WIN
+#include <sys/stat.h>
 #include <unistd.h>
 #endif
 
@@ -46,6 +49,8 @@ private Q_SLOTS:
   void initGitCommitsAnEmptyStore();
   void initGitReportsAFailingInit();
   void initGitReportsAFailingAdd();
+  void initGitRefusesWhatGitCouldWaitOn();
+  void initialiseRefusesAFifoGitignore();
   void gitIdentityConfiguredWithNameAndEmail();
   void gitIdentityConfiguredFalseWithoutAnEmail();
   void gitIdentityIsNotTheParentRepositorysOwn();
@@ -765,6 +770,97 @@ void tst_profileinit::initGitReportsAFailingInit() {
            qPrintable("the note must name the command and folder: " + note));
   QVERIFY2(!QDir(dir.path()).exists(QStringLiteral(".git")),
            "no repository without git");
+}
+
+/**
+ * @brief initGit() does not run git when it would open something it could
+ *        wait on for good: a FIFO .gitattributes or .gitignore on the way to
+ *        a staged file (planted in a shared folder, it froze the window), a
+ *        link there to a device, or a repository in a sub-folder. A regular
+ *        .gitattributes is fine.
+ */
+void tst_profileinit::initGitRefusesWhatGitCouldWaitOn() {
+#ifdef Q_OS_WIN
+  QSKIP("FIFOs and links");
+#else
+  const AppSettings s = gitSettings();
+  if (s.gitExecutable.isEmpty())
+    QSKIP("git not found in PATH");
+  useTestGitIdentity();
+  const QList<QPair<QString, std::function<bool(const QString &)>>> cases{
+      {QStringLiteral("sub/.gitattributes"),
+       [](const QString &path) {
+         return ::mkfifo(QFile::encodeName(path).constData(), 0600) == 0;
+       }},
+      {QStringLiteral(".gitignore"),
+       [](const QString &path) {
+         return ::mkfifo(QFile::encodeName(path).constData(), 0600) == 0;
+       }},
+      {QStringLiteral("sub/deeper/.gitignore"),
+       [](const QString &path) {
+         return QFile::link(QStringLiteral("/dev/null"), path);
+       }},
+      {QStringLiteral("sub/.git"),
+       [](const QString &path) { return QDir().mkpath(path); }},
+  };
+  for (const auto &[planted, plant] : cases) {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QDir base(dir.path());
+    QVERIFY(base.mkpath(QStringLiteral("sub/deeper")));
+    QVERIFY(writeFile(base.filePath(QStringLiteral(".gpg-id")), "AAAA\n"));
+    QVERIFY(
+        writeFile(base.filePath(QStringLiteral("sub/deeper/low.gpg")), "x"));
+    QVERIFY2(plant(base.filePath(planted)), qPrintable(planted));
+    QElapsedTimer clock;
+    clock.start();
+    QString note;
+    QVERIFY2(!ProfileInit::initGit(dir.path(), s, &note), qPrintable(planted));
+    QVERIFY2(clock.elapsed() < 10000, qPrintable(planted));
+    QVERIFY2(
+        note.contains(QFileInfo(planted).fileName() == QLatin1String(".git")
+                          ? QStringLiteral("sub")
+                          : QFileInfo(planted).fileName()),
+        qPrintable(planted + ": " + note));
+    QVERIFY2(!base.exists(QStringLiteral(".git")),
+             qPrintable(planted + ": git must not have run"));
+  }
+  // A regular .gitattributes on the way is what git expects.
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QDir base(dir.path());
+  QVERIFY(base.mkpath(QStringLiteral("sub")));
+  QVERIFY(writeFile(base.filePath(QStringLiteral(".gpg-id")), "AAAA\n"));
+  QVERIFY(writeFile(base.filePath(QStringLiteral("sub/low.gpg")), "x"));
+  QVERIFY(writeFile(base.filePath(QStringLiteral("sub/.gitattributes")),
+                    "*.gpg diff=gpg\n"));
+  QString note;
+  QVERIFY2(ProfileInit::initGit(dir.path(), s, &note), qPrintable(note));
+#endif
+}
+
+/**
+ * @brief A new store's .gpg-id is committed with `git add` too: a FIFO
+ *        .gitignore beside it stops initialise() before git runs.
+ */
+void tst_profileinit::initialiseRefusesAFifoGitignore() {
+#ifdef Q_OS_WIN
+  QSKIP("FIFOs");
+#else
+  const AppSettings s = gitSettings();
+  if (s.gitExecutable.isEmpty())
+    QSKIP("git not found in PATH");
+  useTestGitIdentity();
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString fifo = QDir(dir.path()).filePath(QStringLiteral(".gitignore"));
+  QCOMPARE(::mkfifo(QFile::encodeName(fifo).constData(), 0600), 0);
+  QString note;
+  QVERIFY(!ProfileInit::initialise(dir.path(), twoUsers(), s, true, &note));
+  QVERIFY2(note.contains(QStringLiteral(".gitignore")), qPrintable(note));
+  QVERIFY2(!QDir(dir.path()).exists(QStringLiteral(".git")),
+           "git must not have run");
+#endif
 }
 
 /**

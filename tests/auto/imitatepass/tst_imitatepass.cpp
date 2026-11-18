@@ -693,6 +693,7 @@ private Q_SLOTS:
   void reencryptPullsFirstWhenAutoPullIsOn();
   void reencryptGoesOnWhenThePullFailsCleanly();
   void reencryptAbortsWhenThePullLeavesConflicts();
+  void reencryptAbortsWhenThePullStoppedBehindItsUpstream();
   void reencryptAbortsWhenTheWorkerPullLeavesARebase();
   void failureDialogListsAtMostFifteenFiles();
   void moveFolderResolvesItsDestination();
@@ -5873,6 +5874,44 @@ void tst_imitatepass::reencryptAbortsWhenThePullLeavesConflicts() {
                           return c.contains(QStringLiteral("status"));
                         }),
            "no backup commit is attempted on an unmerged tree");
+#endif
+}
+
+/**
+ * @brief A pull whose checkout failed at one path (a link git could not
+ *        create) exits non-zero with no unmerged entry, HEAD still behind its
+ *        upstream, and the pulled versions of the other files already in the
+ *        work tree. The backup commit would take those as the user's own, so
+ *        the run is aborted with a dialog and nothing is encrypted.
+ */
+void tst_imitatepass::reencryptAbortsWhenThePullStoppedBehindItsUpstream() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeScriptedGit(
+      storeDir.path(), gitLog,
+      QStringLiteral("  *' pull') exit 1;;\n"
+                     "  *' rev-list --count HEAD..@{upstream}') echo 1;;"));
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts,
+                              true));
+  QCOMPARE(encrypts, 0);
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(rec.criticals.first().contains(QStringLiteral("up to date")),
+           qPrintable(rec.criticals.first()));
+  QVERIFY2(!hasPush(git), "an aborted run is not pushed");
+  QVERIFY2(std::none_of(git.cbegin(), git.cend(),
+                        [](const QStringList &c) {
+                          return c.contains(QStringLiteral("commit"));
+                        }),
+           "no backup commit is made over the half-pulled tree");
 #endif
 }
 
