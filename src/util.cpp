@@ -23,6 +23,7 @@
 #include <QTemporaryFile>
 #include <QUrl>
 
+#include <algorithm>
 #include <memory>
 #include <optional>
 
@@ -645,7 +646,14 @@ auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
   while (it.hasNext()) {
     const QRegularExpressionMatch match = it.next();
     const QString url = match.captured(0);
-    if (!isLaunchableWebUrl(url)) {
+    // Only plain ASCII becomes a link: the link text is the URL as stored,
+    // and a right-to-left letter, a bidi control or a look-alike host in it
+    // makes it read as another address than the one it opens. Such a URL
+    // stays plain text; the open button still takes it.
+    const bool plain = std::all_of(url.cbegin(), url.cend(), [](QChar c) {
+      return c.unicode() > 0x20 && c.unicode() < 0x7f;
+    });
+    if (!plain || !isLaunchableWebUrl(url)) {
       // Not a web URL (or it carries credentials): leave it in the escaped
       // plain-text run instead of making it clickable.
       continue;
@@ -660,6 +668,18 @@ auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
     }
   }
   html += text.mid(lastIndex).toHtmlEscaped();
+  // With a link in it, no bidi embedding, override or isolate control is
+  // drawn: an override earlier in the entry (U+202E) drew the link text
+  // reversed, so it read as another address. Shown as U+FFFD, so the user
+  // sees that something was there; the copy button still copies the value.
+  if (linked != nullptr ? *linked : html.contains(QLatin1String("<a href="))) {
+    for (QChar &c : html) {
+      const char16_t u = c.unicode();
+      if ((u >= 0x202A && u <= 0x202E) || (u >= 0x2066 && u <= 0x2069)) {
+        c = QChar(QChar::ReplacementCharacter);
+      }
+    }
+  }
   return html;
 }
 

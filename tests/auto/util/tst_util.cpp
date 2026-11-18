@@ -259,6 +259,7 @@ private Q_SLOTS:
   void isLaunchableWebUrlRejects();
   void linkifyUrlsLinksLaunchableWebUrls();
   void linkifyUrlsLeavesNonWebUrlsAsText();
+  void linkifyUrlsLinksOnlyWhatReadsAsItOpens();
   void boundSpaceRunsCutsOnlyLongRuns();
   void utilRegexNewLines();
   void buildClipboardMimeDataDword();
@@ -1886,7 +1887,8 @@ void tst_util::linkifyUrlsLinksLaunchableWebUrls() {
                           "https://b.example/x</a>"));
 
   // The optional out parameter may be omitted.
-  QVERIFY(Util::linkifyUrls("https://example.org").startsWith("<a href="));
+  QVERIFY(Util::linkifyUrls("https://example.org")
+              .startsWith(QStringLiteral("<a href=")));
 
   // Multi-line input (pass file body shown as-is, gpg stderr): the URL on
   // its own line is linked and the line break stays outside the anchor, so
@@ -1906,6 +1908,36 @@ void tst_util::linkifyUrlsLinksLaunchableWebUrls() {
                           "https://example.org</a>\r\n"
                           "<a href=\"http://b.example/\">http://b.example/</a>"
                           "\tend"));
+}
+
+/// A link reads as the address it opens: an override earlier in the entry
+/// (U+202E) cannot reverse it, and a URL that would not read as the address
+/// it opens is not made a link.
+void tst_util::linkifyUrlsLinksOnlyWhatReadsAsItOpens() {
+  // An override earlier in the entry would draw the link reversed: with a
+  // link in the text, bidi controls are shown as U+FFFD.
+  bool linked = false;
+  const QString reversed = Util::linkifyUrls(
+      QStringLiteral("\u202Egnp.https://evil.example/x"), &linked);
+  QVERIFY(linked);
+  QCOMPARE(reversed,
+           QStringLiteral("\uFFFDgnp.<a href=\"https://evil.example/x\">"
+                          "https://evil.example/x</a>"));
+  // Without a link, the text is left as it is (right-to-left text may use
+  // them on purpose).
+  QCOMPARE(Util::linkifyUrls(QStringLiteral("\u202Bnote\u202C")),
+           QStringLiteral("\u202Bnote\u202C"));
+  // A URL with a right-to-left letter, a control or a look-alike
+  // (non-ASCII) host is not made a link at all.
+  for (const QString &value :
+       {QStringLiteral("https://ex\u00E4mple.org/"),
+        QStringLiteral("https://example.org/\u05D0x"),
+        QStringLiteral("https://example.org/a\u202Eb")}) {
+    linked = true;
+    const QString html = Util::linkifyUrls(value, &linked);
+    QVERIFY2(!linked, qPrintable(value));
+    QVERIFY2(!html.contains(QStringLiteral("<a href=")), qPrintable(html));
+  }
 }
 
 void tst_util::linkifyUrlsLeavesNonWebUrlsAsText() {
