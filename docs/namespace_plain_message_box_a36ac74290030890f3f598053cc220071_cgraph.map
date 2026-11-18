@@ -1,0 +1,5 @@
+<map id="PlainMessageBox::show" name="PlainMessageBox::show">
+<area shape="rect" id="Node000001" title="Show a modal message box with plain text and wait for it." alt="" coords="5,5,184,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="232,5,359,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,17,219,19,213,19,184,22"/>
+</map>

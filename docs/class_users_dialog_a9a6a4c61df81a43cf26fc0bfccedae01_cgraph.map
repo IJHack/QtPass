@@ -4,4 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,34,277,30,272,31,225,39"/>
 <area shape="rect" id="Node000003" href="$class_users_dialog.html#a3af163e9ad85e7f272460ba74c6fccc4" title="Show text above the key list in bold red, for a recipient list that could not be verified." alt="" coords="272,57,475,102"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,60,259,66,253,66,224,65"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="523,65,650,93"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="475,77,510,79,505,79,475,82"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="UsersDialog::showRecipientWarning" name="UsersDialog::showRecipientWarning">
+<area shape="rect" id="Node000001" title="Show text above the key list in bold red, for a recipient list that could not be verified." alt="" coords="5,5,209,50"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="257,14,384,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,25,244,27,238,28,209,30"/>
+</map>

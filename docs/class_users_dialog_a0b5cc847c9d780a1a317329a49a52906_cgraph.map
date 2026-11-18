@@ -1,25 +1,25 @@
 <map id="UsersDialog::on_importKeyButton_clicked" name="UsersDialog::on_importKeyButton_clicked">
-<area shape="rect" id="Node000001" title="Import a GPG key and refresh the list." alt="" coords="5,177,204,222"/>
-<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#a6ed8032e86a5f18fd07e23abcb8c5404" title="Get the imported key id on success." alt="" coords="268,65,466,110"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,174,193,146,251,119,271,113,267,117,253,124,196,151,146,178"/>
-<area shape="rect" id="Node000003" href="$class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565" title="Load GPG keys and determine secret key status." alt="" coords="270,133,464,161"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,177,280,163,276,166,205,182"/>
-<area shape="rect" id="Node000020" href="$class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d" title="Populate user list." alt="" coords="273,261,461,289"/>
-<area shape="poly" id="edge24_Node000001_Node000020" title=" " alt="" coords="184,219,304,255,299,258,184,225"/>
-<area shape="rect" id="Node000030" href="$class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9" title="Make the key gpg just imported the current row. gpg reports a 16&#45;character long ID (IMPORTED) or a 40..." alt="" coords="252,313,482,341"/>
-<area shape="poly" id="edge37_Node000001_Node000030" title=" " alt="" coords="132,219,187,260,253,298,275,308,269,309,251,303,184,264,132,225"/>
-<area shape="rect" id="Node000031" href="$class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="259,185,474,213"/>
-<area shape="poly" id="edge38_Node000001_Node000031" title=" " alt="" coords="203,197,245,198,241,201,205,202"/>
-<area shape="rect" id="Node000004" href="$class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2" title="Mark which keys have secret counterparts." alt="" coords="532,120,747,148"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="463,140,520,139,515,141,465,145"/>
-<area shape="rect" id="Node000005" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="842,165,951,193"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="722,146,829,166,824,167,722,151"/>
-<area shape="rect" id="Node000006" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1044,155,1236,182"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="951,174,1031,173,1025,174,952,179"/>
+<area shape="rect" id="Node000001" title="Import a GPG key and refresh the list." alt="" coords="5,213,204,258"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#a6ed8032e86a5f18fd07e23abcb8c5404" title="Get the imported key id on success." alt="" coords="268,101,466,146"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,210,193,182,251,155,271,149,267,153,253,160,196,187,146,214"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565" title="Load GPG keys and determine secret key status." alt="" coords="270,169,464,197"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,213,280,199,276,202,205,218"/>
+<area shape="rect" id="Node000020" href="$class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d" title="Populate user list." alt="" coords="273,297,461,325"/>
+<area shape="poly" id="edge24_Node000001_Node000020" title=" " alt="" coords="184,255,304,291,299,294,184,261"/>
+<area shape="rect" id="Node000031" href="$class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9" title="Make the key gpg just imported the current row. gpg reports a 16&#45;character long ID (IMPORTED) or a 40..." alt="" coords="252,349,482,377"/>
+<area shape="poly" id="edge38_Node000001_Node000031" title=" " alt="" coords="132,255,187,296,253,334,275,344,269,345,251,339,184,300,132,261"/>
+<area shape="rect" id="Node000032" href="$class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="259,221,474,249"/>
+<area shape="poly" id="edge39_Node000001_Node000032" title=" " alt="" coords="203,233,246,234,241,236,205,238"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2" title="Mark which keys have secret counterparts." alt="" coords="532,156,747,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="463,176,520,175,515,177,465,181"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="842,180,951,208"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="747,177,829,187,824,188,748,183"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1044,124,1236,152"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="951,179,1064,155,1059,156,952,184"/>
 <area shape="rect" id="Node000013" href="$gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8" title="Parse a gpg colon listing into one UserInfo per key." alt="" coords="1058,237,1222,265"/>
-<area shape="poly" id="edge12_Node000005_Node000013" title=" " alt="" coords="946,191,1078,232,1073,233,946,196"/>
+<area shape="poly" id="edge12_Node000005_Node000013" title=" " alt="" coords="951,204,1066,233,1061,233,951,209"/>
 <area shape="rect" id="Node000007" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1284,57,1446,85"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1167,152,1283,95,1300,91,1305,90,1285,100,1169,157"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1189,121,1304,89,1298,91,1190,126"/>
 <area shape="rect" id="Node000008" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1494,57,1685,85"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1446,69,1481,71,1476,72,1447,74"/>
 <area shape="rect" id="Node000009" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1733,57,1898,85"/>
@@ -34,9 +34,9 @@
 <area shape="rect" id="Node000014" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a record of a gpg colon listing by its first field." alt="" coords="1308,313,1423,341"/>
 <area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="1184,263,1310,308,1305,308,1183,268"/>
 <area shape="rect" id="Node000015" href="$gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178" title="Replace the key ID of the key being built with its fingerprint." alt="" coords="1300,389,1431,417"/>
-<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="1188,263,1214,274,1238,289,1254,305,1263,320,1272,335,1286,351,1326,382,1321,380,1282,354,1267,338,1258,322,1249,308,1234,293,1212,279,1188,268"/>
+<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="1162,263,1285,350,1330,381,1325,380,1283,355,1160,268"/>
 <area shape="rect" id="Node000016" href="$gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c" title="Start a key from a pub or sec record: key ID, the user ID the record may carry, validity,..." alt="" coords="1286,465,1444,493"/>
-<area shape="poly" id="edge17_Node000013_Node000016" title=" " alt="" coords="1197,263,1219,274,1238,289,1251,307,1259,325,1264,358,1268,392,1275,409,1286,427,1301,442,1320,458,1315,456,1298,446,1282,430,1270,411,1263,393,1259,359,1254,326,1247,310,1234,293,1216,279,1196,268"/>
+<area shape="poly" id="edge17_Node000013_Node000016" title=" " alt="" coords="1158,263,1197,300,1238,347,1252,369,1261,389,1270,407,1286,427,1324,458,1319,456,1282,430,1266,410,1256,391,1248,372,1234,350,1193,304,1157,268"/>
 <area shape="rect" id="Node000017" href="$gpgkeystate_8cpp.html#adbcf251249671777862e00f89092058b" title="Handle a uid record in GPG colon output." alt="" coords="1299,133,1431,161"/>
 <area shape="poly" id="edge19_Node000013_Node000017" title=" " alt="" coords="1164,234,1217,204,1283,171,1299,167,1304,166,1285,176,1220,208,1166,239"/>
 <area shape="rect" id="Node000018" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="1288,185,1442,213"/>
@@ -47,26 +47,28 @@
 <area shape="poly" id="edge16_Node000015_Node000015" title=" " alt="" coords="1327,388,1320,380,1325,371,1341,365,1365,363,1392,365,1407,374,1402,374,1390,370,1365,368,1342,370,1329,375,1326,380,1331,390"/>
 <area shape="poly" id="edge18_Node000016_Node000016" title=" " alt="" coords="1327,464,1320,456,1325,447,1341,441,1365,439,1392,441,1407,451,1402,450,1390,446,1365,444,1342,446,1329,451,1326,456,1331,466"/>
 <area shape="poly" id="edge20_Node000017_Node000017" title=" " alt="" coords="1327,132,1320,124,1325,115,1341,109,1365,107,1392,109,1407,118,1402,118,1390,114,1365,112,1342,114,1329,119,1326,124,1332,134"/>
-<area shape="rect" id="Node000021" href="$class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" title="Apply visual styling to user item." alt="" coords="530,325,749,353"/>
-<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="430,287,483,299,566,321,561,322,481,304,430,292"/>
-<area shape="rect" id="Node000026" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user." alt="" coords="541,221,738,249"/>
-<area shape="poly" id="edge31_Node000020_Node000026" title=" " alt="" coords="461,259,529,251,524,253,462,264"/>
-<area shape="rect" id="Node000027" href="$class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" title="Check if user passes filter." alt="" coords="546,377,733,405"/>
-<area shape="poly" id="edge32_Node000020_Node000027" title=" " alt="" coords="457,287,484,300,500,315,508,332,516,348,532,362,543,371,538,370,528,367,512,351,504,334,496,319,480,304,457,292"/>
-<area shape="rect" id="Node000028" href="$class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" title="Enable OK only while at least one key is ticked (hasSelection())." alt="" coords="532,273,747,301"/>
-<area shape="poly" id="edge35_Node000020_Node000028" title=" " alt="" coords="461,277,520,281,515,282,462,282"/>
-<area shape="rect" id="Node000022" href="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" title="Check full validity per GnuPG validity codes." alt="" coords="1067,303,1212,330"/>
-<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="749,332,1054,320,1049,321,750,337"/>
-<area shape="rect" id="Node000023" href="$class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106" title="Check if GPG key is expired." alt="" coords="797,347,996,374"/>
-<area shape="poly" id="edge27_Node000021_Node000023" title=" " alt="" coords="750,346,785,351,779,351,750,351"/>
-<area shape="rect" id="Node000024" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="833,399,960,426"/>
-<area shape="poly" id="edge28_Node000021_Node000024" title=" " alt="" coords="707,351,750,363,798,383,826,394,820,394,796,388,748,368,707,356"/>
-<area shape="poly" id="edge29_Node000024_Node000022" title=" " alt="" coords="957,395,995,383,1049,360,1097,339,1102,337,1052,365,997,388,958,401"/>
-<area shape="rect" id="Node000025" href="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" title="Check marginal validity per GnuPG validity codes." alt="" coords="1047,399,1233,426"/>
-<area shape="poly" id="edge30_Node000024_Node000025" title=" " alt="" coords="960,410,1034,412,1028,413,961,415"/>
-<area shape="poly" id="edge33_Node000027_Node000023" title=" " alt="" coords="733,377,785,374,779,375,734,383"/>
-<area shape="poly" id="edge34_Node000027_Node000024" title=" " alt="" coords="733,396,820,406,815,406,733,402"/>
-<area shape="rect" id="Node000029" href="$class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked." alt="" coords="801,245,992,273"/>
-<area shape="poly" id="edge36_Node000028_Node000029" title=" " alt="" coords="747,273,788,271,782,272,748,278"/>
-<area shape="poly" id="edge39_Node000031_Node000005" title=" " alt="" coords="474,192,829,180,824,183,475,198"/>
+<area shape="rect" id="Node000021" href="$class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" title="Apply visual styling to user item." alt="" coords="530,361,749,389"/>
+<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="430,323,483,335,566,357,561,357,481,340,430,328"/>
+<area shape="rect" id="Node000026" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user." alt="" coords="541,257,738,285"/>
+<area shape="poly" id="edge31_Node000020_Node000026" title=" " alt="" coords="461,295,529,287,524,289,462,300"/>
+<area shape="rect" id="Node000028" href="$class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" title="Check if user passes filter." alt="" coords="546,413,733,441"/>
+<area shape="poly" id="edge33_Node000020_Node000028" title=" " alt="" coords="457,323,484,336,500,351,508,368,516,384,532,398,543,407,538,406,528,403,512,387,504,370,496,355,480,340,457,328"/>
+<area shape="rect" id="Node000029" href="$class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" title="Enable OK only while at least one key is ticked (hasSelection())." alt="" coords="532,309,747,337"/>
+<area shape="poly" id="edge36_Node000020_Node000029" title=" " alt="" coords="461,313,520,317,515,318,462,318"/>
+<area shape="rect" id="Node000022" href="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" title="Check full validity per GnuPG validity codes." alt="" coords="1067,360,1212,388"/>
+<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="749,372,1054,374,1049,374,750,378"/>
+<area shape="rect" id="Node000023" href="$class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106" title="Check if GPG key is expired." alt="" coords="797,463,996,490"/>
+<area shape="poly" id="edge27_Node000021_Node000023" title=" " alt="" coords="721,387,751,400,766,412,776,424,784,436,799,448,813,457,808,456,796,452,781,440,771,427,762,415,748,404,721,392"/>
+<area shape="rect" id="Node000024" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="833,411,960,438"/>
+<area shape="poly" id="edge28_Node000021_Node000024" title=" " alt="" coords="716,387,820,409,815,409,715,392"/>
+<area shape="poly" id="edge29_Node000024_Node000022" title=" " alt="" coords="960,409,1052,392,1058,391,961,414"/>
+<area shape="rect" id="Node000025" href="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" title="Check marginal validity per GnuPG validity codes." alt="" coords="1047,412,1233,440"/>
+<area shape="poly" id="edge30_Node000024_Node000025" title=" " alt="" coords="960,422,1034,425,1028,425,961,428"/>
+<area shape="rect" id="Node000027" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="833,257,960,285"/>
+<area shape="poly" id="edge32_Node000026_Node000027" title=" " alt="" coords="739,269,820,271,814,272,739,274"/>
+<area shape="poly" id="edge34_Node000028_Node000023" title=" " alt="" coords="716,439,809,459,803,459,715,444"/>
+<area shape="poly" id="edge35_Node000028_Node000024" title=" " alt="" coords="733,424,820,425,815,425,734,429"/>
+<area shape="rect" id="Node000030" href="$class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked." alt="" coords="801,309,992,337"/>
+<area shape="poly" id="edge37_Node000029_Node000030" title=" " alt="" coords="747,321,788,323,782,323,748,326"/>
+<area shape="poly" id="edge40_Node000032_Node000005" title=" " alt="" coords="474,224,829,198,824,201,475,229"/>
 </map>

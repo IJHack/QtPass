@@ -169,6 +169,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ada742504985a1e8b2c6adb5e14b24794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn plain text into HTML with clickable links for safe web URLs.  <br /></td></tr>
 <tr class="memitem:a57fa6e612f022589f609d8b463111a48" id="r_a57fa6e612f022589f609d8b463111a48"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a57fa6e612f022589f609d8b463111a48">boundSpaceRuns</a> (const QString &amp;text) -&gt; QString</td></tr>
 <tr class="memdesc:a57fa6e612f022589f609d8b463111a48"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">text</code> with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters, for showing it with its white space kept.  <br /></td></tr>
+<tr class="memitem:aa853f5f3e8e0837eb316a90720bf0b90" id="r_aa853f5f3e8e0837eb316a90720bf0b90"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa853f5f3e8e0837eb316a90720bf0b90">displayable</a> (const QString &amp;text, bool lineBreaks=true) -&gt; QString</td></tr>
+<tr class="memdesc:aa853f5f3e8e0837eb316a90720bf0b90"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">text</code> with the characters that change how the text around them reads replaced by U+FFFD, for showing text that comes from the store or a key (a folder name, a key's user ID) as plain text.  <br /></td></tr>
 <tr class="memitem:aced819d4368806d046f0dc24a91843f7" id="r_aced819d4368806d046f0dc24a91843f7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aced819d4368806d046f0dc24a91843f7">newLinesRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
 <tr class="memdesc:aced819d4368806d046f0dc24a91843f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
 <tr class="memitem:aba7296e41ef990d5d945d5ed8cd99bd5" id="r_aba7296e41ef990d5d945d5ed8cd99bd5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aba7296e41ef990d5d945d5ed8cd99bd5">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
@@ -239,7 +241,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Fills the temporary of <a class="el" href="#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00445">445</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00464">464</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
@@ -319,7 +321,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code class="param">text</code>, with each longer run cut. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00690">690</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00708">708</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -426,7 +428,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">dst</code> now holds a copy of <code class="param">src</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01308">1308</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01326">1326</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -474,12 +476,59 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Absolute paths, parents before children. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00841">841</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00859">859</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
 <div id="dynsection-7-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aea1468816a5747a7b3421d9966689202_icgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa853f5f3e8e0837eb316a90720bf0b90" name="aa853f5f3e8e0837eb316a90720bf0b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa853f5f3e8e0837eb316a90720bf0b90">&#9670;&#160;</a></span>displayable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::displayable </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>lineBreaks</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code class="param">text</code> with the characters that change how the text around them reads replaced by U+FFFD, for showing text that comes from the store or a key (a folder name, a key's user ID) as plain text. </p>
+<p>Replaced: C0 controls (but tab and, with <code class="param">lineBreaks</code>, line feed and a carriage return right before one), DEL, C1 controls (NEL among them, U+009C ends a "string" in some terminals), the line and paragraph separators U+2028 and U+2029, and the bidi embedding, override and isolate controls (U+202A to U+202E, U+2066 to U+2069). An override mirrored the rest of a warning; a line separator in a user ID drew a fake fingerprint line. The left-to-right and right-to-left marks stay: right-to-left names use them as they should. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Text to show. </td></tr>
+    <tr><td class="paramname">lineBreaks</td><td>Keep line feeds (a message of several lines). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="param">text</code> with those characters shown as U+FFFD. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00638">638</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa853f5f3e8e0837eb316a90720bf0b90_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -511,10 +560,10 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00593">593</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
 </div>
-<div id="dynsection-8-content" class="dyncontent hidden">
+<div id="dynsection-9-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a2a7a32586578a9b631bc6b2a821ce616_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -554,10 +603,10 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>QString Path with a leading current-user tilde expanded. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00092">92</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
 </div>
-<div id="dynsection-9-content" class="dyncontent hidden">
+<div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa3f2185f3dc49fda5ec247646da61c6f_icgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -596,16 +645,16 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>QString Absolute path to the executable if found, empty QString otherwise. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00485">485</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
-</div>
-<div id="dynsection-10-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aee9122a528c60168a0c105bfbed062d5_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
 <div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aee9122a528c60168a0c105bfbed062d5_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aee9122a528c60168a0c105bfbed062d5_icgraph.svg" width="100%" height="521"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -679,16 +728,16 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>QString Path to the password store, always ends with '/'. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00077">77</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
-</div>
-<div id="dynsection-12-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a503abb6ccbf2aa18056c220b9b45284e_cgraph.svg" width="422" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
 <div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a503abb6ccbf2aa18056c220b9b45284e_cgraph.svg" width="422" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a503abb6ccbf2aa18056c220b9b45284e_icgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -727,10 +776,10 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The ceiling, empty for an empty <code class="param">store</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00139">139</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_afd0e45a8685dd277e6f3d51c361e0b03_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -780,16 +829,16 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Name and value pairs to set; empty for an empty <code class="param">store</code>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00387">387</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
-</div>
-<div id="dynsection-15-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a98271dbaefe09960e1eaded52fed2694_cgraph.svg" width="336" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary">
 </div>
 <div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a98271dbaefe09960e1eaded52fed2694_cgraph.svg" width="336" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a98271dbaefe09960e1eaded52fed2694_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -827,7 +876,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when a listing of <code class="param">dir</code> is incomplete for that reason. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00853">853</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00871">871</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>
@@ -857,10 +906,10 @@ Static Private Attributes</h2></td></tr>
 <p>Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacGPG2 and <span class="tt">/usr/local/bin</span> on macOS, WinGPG and GnuPG on Windows) when they exist. </p>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00050">50</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary">
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
 </div>
-<div id="dynsection-17-content" class="dyncontent hidden">
+<div id="dynsection-18-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ae448351f44d5e8f0d03eeff8ef3e54b2_icgraph.svg" width="100%" height="561"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -907,10 +956,10 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if the value is a launchable http(s) URL, false otherwise. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00607">607</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary">
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
 </div>
-<div id="dynsection-18-content" class="dyncontent hidden">
+<div id="dynsection-19-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a86864a9430f6903425908e76ba6079b5_icgraph.svg" width="100%" height="593"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -948,11 +997,11 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true for a link or junction. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00874">874</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00892">892</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
 </div>
-<div id="dynsection-19-content" class="dyncontent hidden">
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa9ae92951eb0e849c1e4f35d10c4192d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1001,17 +1050,17 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when something on the way is a link. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00878">878</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary">
-</div>
-<div id="dynsection-20-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a303cdce7f33f076823a0581defb52ca4_cgraph.svg" width="334" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00896">896</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
 <div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a303cdce7f33f076823a0581defb52ca4_cgraph.svg" width="334" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a303cdce7f33f076823a0581defb52ca4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1050,11 +1099,11 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if gpg may be given the token, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00724">724</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00742">742</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
 </div>
-<div id="dynsection-22-content" class="dyncontent hidden">
+<div id="dynsection-23-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aba7296e41ef990d5d945d5ed8cd99bd5_icgraph.svg" width="100%" height="541"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1098,17 +1147,17 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>HTML-escaped text with anchors for launchable http(s) URLs. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00638">638</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary">
-</div>
-<div id="dynsection-23-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ada742504985a1e8b2c6adb5e14b24794_cgraph.svg" width="362" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00656">656</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary">
 </div>
 <div id="dynsection-24-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ada742504985a1e8b2c6adb5e14b24794_cgraph.svg" width="362" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
+</div>
+<div id="dynsection-25-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ada742504985a1e8b2c6adb5e14b24794_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1147,16 +1196,16 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <dl class="section return"><dt>Returns</dt><dd>True when <code class="param">path</code> is a folder afterwards. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00449">449</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary">
-</div>
-<div id="dynsection-25-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa1d5ab65c22c21fe556ba0251e035f23_cgraph.svg" width="378" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
 <div id="dynsection-26-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa1d5ab65c22c21fe556ba0251e035f23_cgraph.svg" width="378" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
+</div>
+<div id="dynsection-27-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa1d5ab65c22c21fe556ba0251e035f23_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1188,11 +1237,11 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Returns a regex to match newline characters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00716">716</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00734">734</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
 </div>
-<div id="dynsection-27-content" class="dyncontent hidden">
+<div id="dynsection-28-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aced819d4368806d046f0dc24a91843f7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1232,10 +1281,10 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <dl class="section return"><dt>Returns</dt><dd>QString Path with a trailing '/' added if it was missing. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00102">102</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary">
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
 </div>
-<div id="dynsection-28-content" class="dyncontent hidden">
+<div id="dynsection-29-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_acfa7240a7682876cf78d5a44bbbb81de_icgraph.svg" width="100%" height="514"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1278,11 +1327,11 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">file</code> is open on a regular file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01026">1026</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01044">1044</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
 </div>
-<div id="dynsection-29-content" class="dyncontent hidden">
+<div id="dynsection-30-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_acf5bf60f4f6eb548fb8b3c9bfa760612_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1321,10 +1370,10 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <dl class="section return"><dt>Returns</dt><dd>The octal value when it is one (up to four octal digits), else 077, pass's default. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00126">126</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary">
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
 </div>
-<div id="dynsection-30-content" class="dyncontent hidden">
+<div id="dynsection-31-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a11eb90b4a067feefd84769d336d79b10_icgraph.svg" width="520" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1357,10 +1406,10 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00601">601</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary">
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
 </div>
-<div id="dynsection-31-content" class="dyncontent hidden">
+<div id="dynsection-32-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a133c5da0c8a3f106c09977679bc615c3_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1403,17 +1452,17 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The contents; nothing when the file is missing, not a regular file (a link, FIFO or device included), unreadable or larger. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01086">1086</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary">
-</div>
-<div id="dynsection-32-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a8e427903937505b5e19ebbea7050494e_cgraph.svg" width="371" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01104">1104</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
 <div id="dynsection-33-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a8e427903937505b5e19ebbea7050494e_cgraph.svg" width="371" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
+</div>
+<div id="dynsection-34-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a8e427903937505b5e19ebbea7050494e_icgraph.svg" width="100%" height="535"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1476,11 +1525,11 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Absolute paths, sorted by name within each directory, a directory's files before its subdirectories. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00810">810</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00828">828</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary">
 </div>
-<div id="dynsection-34-content" class="dyncontent hidden">
+<div id="dynsection-35-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a6416bfebddfbc3dbfee2d66d5204964b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1518,17 +1567,17 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when <code class="param">dir</code> is gone. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01368">1368</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary">
-</div>
-<div id="dynsection-35-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a1fb5c7c915c11a832a9d5a338f8d6b8c_cgraph.svg" width="140" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01386">1386</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-36-summary" class="dynsummary">
 </div>
 <div id="dynsection-36-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a1fb5c7c915c11a832a9d5a338f8d6b8c_cgraph.svg" width="140" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
+</div>
+<div id="dynsection-37-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a1fb5c7c915c11a832a9d5a338f8d6b8c_icgraph.svg" width="348" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1577,11 +1626,11 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">to</code> is now that file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00986">986</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01004">1004</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
 </div>
-<div id="dynsection-37-content" class="dyncontent hidden">
+<div id="dynsection-38-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ab0e1c40d3ccc706e0d74d246361a2640_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1620,10 +1669,10 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <dl class="section return"><dt>Returns</dt><dd>The folder holding that repository's <span class="tt">.git</span>; empty when pass keeps to the store. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00150">150</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary">
+<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary">
 </div>
-<div id="dynsection-38-content" class="dyncontent hidden">
+<div id="dynsection-39-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a158b1927cee3cffacaec8d583fbf72ad_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1748,17 +1797,17 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">path</code> now holds what <code class="param">fill</code> wrote. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01268">1268</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary">
-</div>
-<div id="dynsection-39-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_add1e4f70c6d7630ace5e350b30f78907_cgraph.svg" width="358" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01286">1286</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-40-summary" class="dynsummary">
 </div>
 <div id="dynsection-40-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_add1e4f70c6d7630ace5e350b30f78907_cgraph.svg" width="358" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary">
+</div>
+<div id="dynsection-41-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_add1e4f70c6d7630ace5e350b30f78907_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1796,7 +1845,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the data is on the device. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01105">1105</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01123">1123</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>
@@ -1849,17 +1898,17 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">path</code> now holds <code class="param">bytes</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01294">1294</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary">
-</div>
-<div id="dynsection-41-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5d33d7a093ab7e104320384f4ec3213c_cgraph.svg" width="578" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01312">1312</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-42-summary" class="dynsummary">
 </div>
 <div id="dynsection-42-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5d33d7a093ab7e104320384f4ec3213c_cgraph.svg" width="578" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary">
+</div>
+<div id="dynsection-43-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5d33d7a093ab7e104320384f4ec3213c_icgraph.svg" width="100%" height="468"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1887,7 +1936,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </div><div class="memdoc">
 <p>The environment <a class="el" href="#aee9122a528c60168a0c105bfbed062d5" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL.">findBinaryInPath()</a> and <a class="el" href="#a503abb6ccbf2aa18056c220b9b45284e" title="Locate the password store directory.">findPasswordStore()</a> read, as <a class="el" href="#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG...">initialiseEnvironment()</a> built it. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00522">522</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00541">541</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
@@ -1913,7 +1962,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 
 <p>Whether <a class="el" href="#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG...">initialiseEnvironment()</a> has run. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00524">524</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00543">543</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
@@ -1940,7 +1989,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Most bytes of a .gpg-id <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> reads. </p>
 <p>A recipient list is a few lines; a shared store's other writers could otherwise hand it a sparse file of gigabytes to read before the signature is even checked. Far beyond any real list. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00427">427</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00446">446</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>

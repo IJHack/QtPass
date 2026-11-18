@@ -55,13 +55,15 @@
 <area shape="poly" id="edge28_Node000024_Node000024" title=" " alt="" coords="748,108,742,100,747,91,763,85,788,83,814,85,830,94,825,94,813,90,787,88,764,90,751,95,747,100,753,109"/>
 <area shape="rect" id="Node000025" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="934,109,1096,137"/>
 <area shape="poly" id="edge27_Node000024_Node000025" title=" " alt="" coords="866,121,921,123,916,124,867,126"/>
-<area shape="poly" id="edge35_Node000026_Node000010" title=" " alt="" coords="414,365,627,345,752,330,876,310,949,296,954,294,877,315,753,335,627,351,415,370"/>
+<area shape="poly" id="edge36_Node000026_Node000010" title=" " alt="" coords="414,365,627,345,752,330,876,310,949,296,954,294,877,315,753,335,627,351,415,370"/>
 <area shape="rect" id="Node000027" href="$namespace_plain_message_box.html#ae9796117699b84c7f457dcfa9cdc4335" title="Show an error in plain text." alt="" coords="462,381,650,409"/>
 <area shape="poly" id="edge31_Node000026_Node000027" title=" " alt="" coords="414,380,449,385,444,386,415,385"/>
-<area shape="rect" id="Node000029" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="492,433,621,461"/>
-<area shape="poly" id="edge33_Node000026_Node000029" title=" " alt="" coords="387,394,463,418,492,429,487,428,461,423,387,399"/>
+<area shape="rect" id="Node000030" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="492,433,621,461"/>
+<area shape="poly" id="edge34_Node000026_Node000030" title=" " alt="" coords="387,394,463,418,492,429,487,428,461,423,387,399"/>
 <area shape="rect" id="Node000028" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="698,381,877,409"/>
 <area shape="poly" id="edge32_Node000027_Node000028" title=" " alt="" coords="650,393,685,395,680,395,651,398"/>
-<area shape="rect" id="Node000030" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="715,433,860,461"/>
-<area shape="poly" id="edge34_Node000029_Node000030" title=" " alt="" coords="621,445,702,447,697,447,621,450"/>
+<area shape="rect" id="Node000029" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="952,381,1079,409"/>
+<area shape="poly" id="edge33_Node000028_Node000029" title=" " alt="" coords="877,393,939,395,934,395,877,398"/>
+<area shape="rect" id="Node000031" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="715,433,860,461"/>
+<area shape="poly" id="edge35_Node000030_Node000031" title=" " alt="" coords="621,445,702,447,697,447,621,450"/>
 </map>

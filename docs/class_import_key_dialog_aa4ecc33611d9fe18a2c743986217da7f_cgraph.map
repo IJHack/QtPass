@@ -6,4 +6,6 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,52,195,58,190,59,160,57"/>
 <area shape="rect" id="Node000004" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="452,57,630,85"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="404,69,439,71,433,71,405,74"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="678,57,806,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="631,69,665,71,660,71,631,74"/>
 </map>

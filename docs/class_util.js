@@ -6,6 +6,7 @@ var class_util =
     [ "configIsValid", "class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc", null ],
     [ "copyFileReplacing", "class_util.html#ac134662c3a71ca1cd0ec04642e9a6255", null ],
     [ "directoriesUnder", "class_util.html#aea1468816a5747a7b3421d9966689202", null ],
+    [ "displayable", "class_util.html#aa853f5f3e8e0837eb316a90720bf0b90", null ],
     [ "endsWithGpg", "class_util.html#a2a7a32586578a9b631bc6b2a821ce616", null ],
     [ "expandTilde", "class_util.html#aa3f2185f3dc49fda5ec247646da61c6f", null ],
     [ "findBinaryInPath", "class_util.html#aee9122a528c60168a0c105bfbed062d5", null ],

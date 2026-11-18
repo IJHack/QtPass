@@ -98,70 +98,51 @@
 </a>
 </g>
 </g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc" target="_top" xlink:title="&quot;Import&quot; button: runs importFromString() on the trimmed input and closes the dialog with accept() on ...">
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:href="class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc" target="_top" xlink:title="&quot;Import&quot; button: runs importFromString() on the trimmed input and closes the dialog with accept() on ...">
 <polygon fill="white" stroke="#666666" points="318.88,-175.5 194.12,-175.5 194.12,-142 318.88,-142 318.88,-175.5"/>
 <text xml:space="preserve" text-anchor="start" x="202.12" y="-162" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::on</text>
 <text xml:space="preserve" text-anchor="middle" x="256.5" y="-149.25" font-family="Helvetica,sans-Serif" font-size="10.00">_importButton_clicked</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge6_Node000001_Node000007" class="edge">
-<title>Node1&#45;&gt;Node7</title>
-<g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node8 -->
+<g id="edge7_Node000001_Node000008" class="edge">
+<title>Node1&#45;&gt;Node8</title>
+<g id="a_edge7_Node000001_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M144.68,-144.77C157.13,-146.34 170.1,-147.98 182.59,-149.56"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="182.04,-153.01 192.4,-150.79 182.91,-146.07 182.04,-153.01"/>
 </a>
 </g>
 </g>
-<!-- Node16 -->
-<g id="Node000016" class="node">
-<title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_import_key_dialog.html#a5cac84f9f66c898bcf885abd67aaecec" target="_top" xlink:title="Parse GPG import output to extract a key id or fingerprint.">
+<!-- Node17 -->
+<g id="Node000017" class="node">
+<title>Node17</title>
+<g id="a_Node000017"><a xlink:href="class_import_key_dialog.html#a5cac84f9f66c898bcf885abd67aaecec" target="_top" xlink:title="Parse GPG import output to extract a key id or fingerprint.">
 <polygon fill="white" stroke="#666666" points="724.75,-91.5 574.5,-91.5 574.5,-58 724.75,-58 724.75,-91.5"/>
 <text xml:space="preserve" text-anchor="start" x="582.5" y="-78" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::parseGpg</text>
 <text xml:space="preserve" text-anchor="middle" x="649.62" y="-65.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImportOutput</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node16 -->
-<g id="edge21_Node000001_Node000016" class="edge">
-<title>Node1&#45;&gt;Node16</title>
-<g id="a_edge21_Node000001_Node000016"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node17 -->
+<g id="edge22_Node000001_Node000017" class="edge">
+<title>Node1&#45;&gt;Node17</title>
+<g id="a_edge22_Node000001_Node000017"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M144.56,-128.18C250.49,-116.95 448.94,-95.92 562.68,-83.86"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="563.01,-87.34 572.58,-82.81 562.27,-80.38 563.01,-87.34"/>
-</a>
-</g>
-</g>
-<!-- Node19 -->
-<g id="Node000019" class="node">
-<title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_import_key_dialog.html#afc5360c5b23099d8141a44a12a47c6d4" target="_top" xlink:title="Enables the Import button only while the input field holds non&#45;blank text.">
-<polygon fill="white" stroke="#666666" points="332.75,-85.5 180.25,-85.5 180.25,-52 332.75,-52 332.75,-85.5"/>
-<text xml:space="preserve" text-anchor="start" x="188.25" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::on</text>
-<text xml:space="preserve" text-anchor="middle" x="256.5" y="-59.25" font-family="Helvetica,sans-Serif" font-size="10.00">_inputTextEdit_textChanged</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node19 -->
-<g id="edge19_Node000001_Node000019" class="edge">
-<title>Node1&#45;&gt;Node19</title>
-<g id="a_edge19_Node000001_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M119.62,-118.67C143.53,-109.88 172.9,-99.09 198.21,-89.8"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="199.17,-93.17 207.35,-86.44 196.76,-86.6 199.17,-93.17"/>
 </a>
 </g>
 </g>
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="class_import_key_dialog.html#ad86cbcb4a634566cf4131d158b5652fe" target="_top" xlink:title="&quot;From clipboard&quot; button: replaces the input field with the clipboard text, unless the clipboard is em...">
-<polygon fill="white" stroke="#666666" points="316.25,-33.5 196.75,-33.5 196.75,0 316.25,0 316.25,-33.5"/>
-<text xml:space="preserve" text-anchor="start" x="204.75" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::on</text>
-<text xml:space="preserve" text-anchor="middle" x="256.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">_pasteButton_clicked</text>
+<g id="a_Node000020"><a xlink:href="class_import_key_dialog.html#afc5360c5b23099d8141a44a12a47c6d4" target="_top" xlink:title="Enables the Import button only while the input field holds non&#45;blank text.">
+<polygon fill="white" stroke="#666666" points="332.75,-85.5 180.25,-85.5 180.25,-52 332.75,-52 332.75,-85.5"/>
+<text xml:space="preserve" text-anchor="start" x="188.25" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::on</text>
+<text xml:space="preserve" text-anchor="middle" x="256.5" y="-59.25" font-family="Helvetica,sans-Serif" font-size="10.00">_inputTextEdit_textChanged</text>
 </a>
 </g>
 </g>
@@ -169,6 +150,25 @@
 <g id="edge20_Node000001_Node000020" class="edge">
 <title>Node1&#45;&gt;Node20</title>
 <g id="a_edge20_Node000001_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M119.62,-118.67C143.53,-109.88 172.9,-99.09 198.21,-89.8"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="199.17,-93.17 207.35,-86.44 196.76,-86.6 199.17,-93.17"/>
+</a>
+</g>
+</g>
+<!-- Node21 -->
+<g id="Node000021" class="node">
+<title>Node21</title>
+<g id="a_Node000021"><a xlink:href="class_import_key_dialog.html#ad86cbcb4a634566cf4131d158b5652fe" target="_top" xlink:title="&quot;From clipboard&quot; button: replaces the input field with the clipboard text, unless the clipboard is em...">
+<polygon fill="white" stroke="#666666" points="316.25,-33.5 196.75,-33.5 196.75,0 316.25,0 316.25,-33.5"/>
+<text xml:space="preserve" text-anchor="start" x="204.75" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::on</text>
+<text xml:space="preserve" text-anchor="middle" x="256.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">_pasteButton_clicked</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node21 -->
+<g id="edge21_Node000001_Node000021" class="edge">
+<title>Node1&#45;&gt;Node21</title>
+<g id="a_edge21_Node000001_Node000021"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M88.65,-118.77C108.24,-98.23 143.78,-63.82 180.25,-42.75 182.71,-41.33 185.26,-39.97 187.87,-38.67"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="189.17,-41.92 196.8,-34.58 186.25,-35.56 189.17,-41.92"/>
 </a>
@@ -228,31 +228,31 @@
 </a>
 </g>
 </g>
-<!-- Node8 -->
-<g id="Node000008" class="node">
-<title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94" target="_top" xlink:title="Feeds input to gpg &#45;&#45;status&#45;fd 1 &#45;&#45;import &#45;&#45;batch &#45;&#45;yes via Executor::executeBlocking() and records t...">
-<polygon fill="white" stroke="#666666" points="529.5,-175.5 368.75,-175.5 368.75,-142 529.5,-142 529.5,-175.5"/>
-<text xml:space="preserve" text-anchor="start" x="376.75" y="-162" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::importFrom</text>
-<text xml:space="preserve" text-anchor="middle" x="449.12" y="-149.25" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:href="class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" target="_top" xlink:title="text with the characters that change how the text around them reads replaced by U+FFFD,...">
+<polygon fill="white" stroke="#666666" points="1241.5,-227.12 1146,-227.12 1146,-206.38 1241.5,-206.38 1241.5,-227.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1193.75" y="-213.62" font-family="Helvetica,sans-Serif" font-size="10.00">Util::displayable</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge7_Node000007_Node000008" class="edge">
-<title>Node7&#45;&gt;Node8</title>
-<g id="a_edge7_Node000007_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M319.13,-158.75C331.24,-158.75 344.19,-158.75 357.04,-158.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="356.76,-162.25 366.76,-158.75 356.76,-155.25 356.76,-162.25"/>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge6_Node000006_Node000007" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<g id="a_edge6_Node000006_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1091.53,-216.75C1105.66,-216.75 1120.49,-216.75 1134.31,-216.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1134.13,-220.25 1144.13,-216.75 1134.13,-213.25 1134.13,-220.25"/>
 </a>
 </g>
 </g>
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_executor.html#a4e210af42a76029683ded3210cf7bce2" target="_top" xlink:title="Run a command synchronously and return its exit code.">
-<polygon fill="white" stroke="#666666" points="721.75,-169.12 577.5,-169.12 577.5,-148.38 721.75,-148.38 721.75,-169.12"/>
-<text xml:space="preserve" text-anchor="middle" x="649.62" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
+<g id="a_Node000009"><a xlink:href="class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94" target="_top" xlink:title="Feeds input to gpg &#45;&#45;status&#45;fd 1 &#45;&#45;import &#45;&#45;batch &#45;&#45;yes via Executor::executeBlocking() and records t...">
+<polygon fill="white" stroke="#666666" points="529.5,-175.5 368.75,-175.5 368.75,-142 529.5,-142 529.5,-175.5"/>
+<text xml:space="preserve" text-anchor="start" x="376.75" y="-162" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::importFrom</text>
+<text xml:space="preserve" text-anchor="middle" x="449.12" y="-149.25" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
 </a>
 </g>
 </g>
@@ -260,62 +260,17 @@
 <g id="edge8_Node000008_Node000009" class="edge">
 <title>Node8&#45;&gt;Node9</title>
 <g id="a_edge8_Node000008_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M529.72,-158.75C541.57,-158.75 553.81,-158.75 565.73,-158.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="565.52,-162.25 575.52,-158.75 565.52,-155.25 565.52,-162.25"/>
-</a>
-</g>
-</g>
-<!-- Node8&#45;&gt;Node16 -->
-<g id="edge15_Node000008_Node000016" class="edge">
-<title>Node8&#45;&gt;Node16</title>
-<g id="a_edge15_Node000008_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M500.19,-141.58C510.13,-137.52 520.32,-132.86 529.5,-127.75 546.98,-118.02 547.7,-109.87 565.5,-100.75 568.56,-99.18 571.74,-97.69 574.98,-96.26"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="576.18,-99.55 584.12,-92.54 573.54,-93.07 576.18,-99.55"/>
-</a>
-</g>
-</g>
-<!-- Node17 -->
-<g id="Node000017" class="node">
-<title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_import_key_dialog.html#a651aaa533aeccc853985fe53ce2f5d9a" target="_top" xlink:title="Shows message in a plain&#45;text warning box (gpg&#39;s stderr quotes user IDs, which must not be read as ma...">
-<polygon fill="white" stroke="#666666" points="725.88,-208.12 573.38,-208.12 573.38,-187.38 725.88,-187.38 725.88,-208.12"/>
-<text xml:space="preserve" text-anchor="middle" x="649.62" y="-194.62" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::showError</text>
-</a>
-</g>
-</g>
-<!-- Node8&#45;&gt;Node17 -->
-<g id="edge16_Node000008_Node000017" class="edge">
-<title>Node8&#45;&gt;Node17</title>
-<g id="a_edge16_Node000008_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M529.72,-174.39C547.24,-177.83 565.61,-181.44 582.53,-184.76"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="581.44,-188.12 591.92,-186.61 582.79,-181.25 581.44,-188.12"/>
-</a>
-</g>
-</g>
-<!-- Node18 -->
-<g id="Node000018" class="node">
-<title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_import_key_dialog.html#adef5ec5248765634e31af44dddfa3948" target="_top" xlink:title="Shows the &quot;imported, now verify the fingerprint&quot; information box.">
-<polygon fill="white" stroke="#666666" points="733.75,-130.12 565.5,-130.12 565.5,-109.38 733.75,-109.38 733.75,-130.12"/>
-<text xml:space="preserve" text-anchor="middle" x="649.62" y="-116.62" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::showSuccess</text>
-</a>
-</g>
-</g>
-<!-- Node8&#45;&gt;Node18 -->
-<g id="edge18_Node000008_Node000018" class="edge">
-<title>Node8&#45;&gt;Node18</title>
-<g id="a_edge18_Node000008_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M529.72,-143.11C547.24,-139.67 565.61,-136.06 582.53,-132.74"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="582.79,-136.25 591.92,-130.89 581.44,-129.38 582.79,-136.25"/>
+<path fill="none" stroke="#63b8ff" d="M319.13,-158.75C331.24,-158.75 344.19,-158.75 357.04,-158.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="356.76,-162.25 366.76,-158.75 356.76,-155.25 356.76,-162.25"/>
 </a>
 </g>
 </g>
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" target="_top" xlink:title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr....">
-<polygon fill="white" stroke="#666666" points="904.25,-169.12 782.5,-169.12 782.5,-148.38 904.25,-148.38 904.25,-169.12"/>
-<text xml:space="preserve" text-anchor="middle" x="843.38" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlocking</text>
+<g id="a_Node000010"><a xlink:href="class_executor.html#a4e210af42a76029683ded3210cf7bce2" target="_top" xlink:title="Run a command synchronously and return its exit code.">
+<polygon fill="white" stroke="#666666" points="721.75,-169.12 577.5,-169.12 577.5,-148.38 721.75,-148.38 721.75,-169.12"/>
+<text xml:space="preserve" text-anchor="middle" x="649.62" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlocking</text>
 </a>
 </g>
 </g>
@@ -323,17 +278,62 @@
 <g id="edge9_Node000009_Node000010" class="edge">
 <title>Node9&#45;&gt;Node10</title>
 <g id="a_edge9_Node000009_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M722.03,-158.75C737.96,-158.75 754.87,-158.75 770.81,-158.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="770.71,-162.25 780.71,-158.75 770.71,-155.25 770.71,-162.25"/>
+<path fill="none" stroke="#63b8ff" d="M529.72,-158.75C541.57,-158.75 553.81,-158.75 565.73,-158.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="565.52,-162.25 575.52,-158.75 565.52,-155.25 565.52,-162.25"/>
+</a>
+</g>
+</g>
+<!-- Node9&#45;&gt;Node17 -->
+<g id="edge16_Node000009_Node000017" class="edge">
+<title>Node9&#45;&gt;Node17</title>
+<g id="a_edge16_Node000009_Node000017"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M500.19,-141.58C510.13,-137.52 520.32,-132.86 529.5,-127.75 546.98,-118.02 547.7,-109.87 565.5,-100.75 568.56,-99.18 571.74,-97.69 574.98,-96.26"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="576.18,-99.55 584.12,-92.54 573.54,-93.07 576.18,-99.55"/>
+</a>
+</g>
+</g>
+<!-- Node18 -->
+<g id="Node000018" class="node">
+<title>Node18</title>
+<g id="a_Node000018"><a xlink:href="class_import_key_dialog.html#a651aaa533aeccc853985fe53ce2f5d9a" target="_top" xlink:title="Shows message in a plain&#45;text warning box (gpg&#39;s stderr quotes user IDs, which must not be read as ma...">
+<polygon fill="white" stroke="#666666" points="725.88,-208.12 573.38,-208.12 573.38,-187.38 725.88,-187.38 725.88,-208.12"/>
+<text xml:space="preserve" text-anchor="middle" x="649.62" y="-194.62" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::showError</text>
+</a>
+</g>
+</g>
+<!-- Node9&#45;&gt;Node18 -->
+<g id="edge17_Node000009_Node000018" class="edge">
+<title>Node9&#45;&gt;Node18</title>
+<g id="a_edge17_Node000009_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M529.72,-174.39C547.24,-177.83 565.61,-181.44 582.53,-184.76"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="581.44,-188.12 591.92,-186.61 582.79,-181.25 581.44,-188.12"/>
+</a>
+</g>
+</g>
+<!-- Node19 -->
+<g id="Node000019" class="node">
+<title>Node19</title>
+<g id="a_Node000019"><a xlink:href="class_import_key_dialog.html#adef5ec5248765634e31af44dddfa3948" target="_top" xlink:title="Shows the &quot;imported, now verify the fingerprint&quot; information box.">
+<polygon fill="white" stroke="#666666" points="733.75,-130.12 565.5,-130.12 565.5,-109.38 733.75,-109.38 733.75,-130.12"/>
+<text xml:space="preserve" text-anchor="middle" x="649.62" y="-116.62" font-family="Helvetica,sans-Serif" font-size="10.00">ImportKeyDialog::showSuccess</text>
+</a>
+</g>
+</g>
+<!-- Node9&#45;&gt;Node19 -->
+<g id="edge19_Node000009_Node000019" class="edge">
+<title>Node9&#45;&gt;Node19</title>
+<g id="a_edge19_Node000009_Node000019"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M529.72,-143.11C547.24,-139.67 565.61,-136.06 582.53,-132.74"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="582.79,-136.25 591.92,-130.89 581.44,-129.38 582.79,-136.25"/>
 </a>
 </g>
 </g>
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" target="_top" xlink:title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en...">
-<polygon fill="white" stroke="#666666" points="1095.75,-169.12 953,-169.12 953,-148.38 1095.75,-148.38 1095.75,-169.12"/>
-<text xml:space="preserve" text-anchor="middle" x="1024.38" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlockingRaw</text>
+<g id="a_Node000011"><a xlink:href="class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" target="_top" xlink:title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr....">
+<polygon fill="white" stroke="#666666" points="904.25,-169.12 782.5,-169.12 782.5,-148.38 904.25,-148.38 904.25,-169.12"/>
+<text xml:space="preserve" text-anchor="middle" x="843.38" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlocking</text>
 </a>
 </g>
 </g>
@@ -341,17 +341,17 @@
 <g id="edge10_Node000010_Node000011" class="edge">
 <title>Node10&#45;&gt;Node11</title>
 <g id="a_edge10_Node000010_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M904.48,-158.75C916.3,-158.75 928.89,-158.75 941.28,-158.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="941.08,-162.25 951.08,-158.75 941.08,-155.25 941.08,-162.25"/>
+<path fill="none" stroke="#63b8ff" d="M722.03,-158.75C737.96,-158.75 754.87,-158.75 770.81,-158.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="770.71,-162.25 780.71,-158.75 770.71,-155.25 770.71,-162.25"/>
 </a>
 </g>
 </g>
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" target="_top" xlink:title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path.">
-<polygon fill="white" stroke="#666666" points="1255.75,-169.12 1131.75,-169.12 1131.75,-148.38 1255.75,-148.38 1255.75,-169.12"/>
-<text xml:space="preserve" text-anchor="middle" x="1193.75" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::startProcess</text>
+<g id="a_Node000012"><a xlink:href="class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" target="_top" xlink:title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en...">
+<polygon fill="white" stroke="#666666" points="1095.75,-169.12 953,-169.12 953,-148.38 1095.75,-148.38 1095.75,-169.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1024.38" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlockingRaw</text>
 </a>
 </g>
 </g>
@@ -359,17 +359,17 @@
 <g id="edge11_Node000011_Node000012" class="edge">
 <title>Node11&#45;&gt;Node12</title>
 <g id="a_edge11_Node000011_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1095.87,-158.75C1103.89,-158.75 1112.07,-158.75 1120.11,-158.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1119.84,-162.25 1129.84,-158.75 1119.84,-155.25 1119.84,-162.25"/>
+<path fill="none" stroke="#63b8ff" d="M904.48,-158.75C916.3,-158.75 928.89,-158.75 941.28,-158.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="941.08,-162.25 951.08,-158.75 941.08,-155.25 941.08,-162.25"/>
 </a>
 </g>
 </g>
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
-<polygon fill="white" stroke="#666666" points="1455.5,-208.12 1291.75,-208.12 1291.75,-187.38 1455.5,-187.38 1455.5,-208.12"/>
-<text xml:space="preserve" text-anchor="middle" x="1373.62" y="-194.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
+<g id="a_Node000013"><a xlink:href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" target="_top" xlink:title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path.">
+<polygon fill="white" stroke="#666666" points="1255.75,-169.12 1131.75,-169.12 1131.75,-148.38 1255.75,-148.38 1255.75,-169.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1193.75" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::startProcess</text>
 </a>
 </g>
 </g>
@@ -377,51 +377,69 @@
 <g id="edge12_Node000012_Node000013" class="edge">
 <title>Node12&#45;&gt;Node13</title>
 <g id="a_edge12_Node000012_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1244.3,-169.61C1265.22,-174.2 1289.79,-179.59 1311.79,-184.41"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1311.04,-187.83 1321.56,-186.55 1312.54,-180.99 1311.04,-187.83"/>
+<path fill="none" stroke="#63b8ff" d="M1095.87,-158.75C1103.89,-158.75 1112.07,-158.75 1120.11,-158.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1119.84,-162.25 1129.84,-158.75 1119.84,-155.25 1119.84,-162.25"/>
 </a>
 </g>
 </g>
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" target="_top" xlink:title="Parse a configured executable as a WSL command.">
-<polygon fill="white" stroke="#666666" points="1453.25,-169.12 1294,-169.12 1294,-148.38 1453.25,-148.38 1453.25,-169.12"/>
-<text xml:space="preserve" text-anchor="middle" x="1373.62" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::parseWslCommand</text>
+<g id="a_Node000014"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
+<polygon fill="white" stroke="#666666" points="1455.5,-208.12 1291.75,-208.12 1291.75,-187.38 1455.5,-187.38 1455.5,-208.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1373.62" y="-194.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
 </a>
 </g>
 </g>
-<!-- Node12&#45;&gt;Node14 -->
-<g id="edge13_Node000012_Node000014" class="edge">
-<title>Node12&#45;&gt;Node14</title>
-<g id="a_edge13_Node000012_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1255.96,-158.75C1264.51,-158.75 1273.44,-158.75 1282.39,-158.75"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1282.19,-162.25 1292.19,-158.75 1282.19,-155.25 1282.19,-162.25"/>
+<!-- Node13&#45;&gt;Node14 -->
+<g id="edge13_Node000013_Node000014" class="edge">
+<title>Node13&#45;&gt;Node14</title>
+<g id="a_edge13_Node000013_Node000014"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1244.3,-169.61C1265.22,-174.2 1289.79,-179.59 1311.79,-184.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1311.04,-187.83 1321.56,-186.55 1312.54,-180.99 1311.04,-187.83"/>
 </a>
 </g>
 </g>
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
+<g id="a_Node000015"><a xlink:href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" target="_top" xlink:title="Parse a configured executable as a WSL command.">
+<polygon fill="white" stroke="#666666" points="1453.25,-169.12 1294,-169.12 1294,-148.38 1453.25,-148.38 1453.25,-169.12"/>
+<text xml:space="preserve" text-anchor="middle" x="1373.62" y="-155.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::parseWslCommand</text>
+</a>
+</g>
+</g>
+<!-- Node13&#45;&gt;Node15 -->
+<g id="edge14_Node000013_Node000015" class="edge">
+<title>Node13&#45;&gt;Node15</title>
+<g id="a_edge14_Node000013_Node000015"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1255.96,-158.75C1264.51,-158.75 1273.44,-158.75 1282.39,-158.75"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1282.19,-162.25 1292.19,-158.75 1282.19,-155.25 1282.19,-162.25"/>
+</a>
+</g>
+</g>
+<!-- Node16 -->
+<g id="Node000016" class="node">
+<title>Node16</title>
+<g id="a_Node000016"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
 <polygon fill="white" stroke="#666666" points="1450.25,-130.12 1297,-130.12 1297,-109.38 1450.25,-109.38 1450.25,-130.12"/>
 <text xml:space="preserve" text-anchor="middle" x="1373.62" y="-116.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
 </a>
 </g>
 </g>
-<!-- Node12&#45;&gt;Node15 -->
-<g id="edge14_Node000012_Node000015" class="edge">
-<title>Node12&#45;&gt;Node15</title>
-<g id="a_edge14_Node000012_Node000015"><a xlink:title=" ">
+<!-- Node13&#45;&gt;Node16 -->
+<g id="edge15_Node000013_Node000016" class="edge">
+<title>Node13&#45;&gt;Node16</title>
+<g id="a_edge15_Node000013_Node000016"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1244.3,-147.89C1265.22,-143.3 1289.79,-137.91 1311.79,-133.09"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1312.54,-136.51 1321.56,-130.95 1311.04,-129.67 1312.54,-136.51"/>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node5 -->
-<g id="edge17_Node000017_Node000005" class="edge">
-<title>Node17&#45;&gt;Node5</title>
-<g id="a_edge17_Node000017_Node000005"><a xlink:title=" ">
+<!-- Node18&#45;&gt;Node5 -->
+<g id="edge18_Node000018_Node000005" class="edge">
+<title>Node18&#45;&gt;Node5</title>
+<g id="a_edge18_Node000018_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M726.13,-205.23C736.6,-206.27 747.41,-207.34 758.02,-208.39"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="757.64,-211.87 767.94,-209.37 758.33,-204.9 757.64,-211.87"/>
 </a>

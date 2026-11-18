@@ -14,13 +14,14 @@ var searchData=
   ['digest_11',['digest',['../class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1',1,'GpgIdGeneration']]],
   ['directoriesunder_12',['directoriesUnder',['../class_util.html#aea1468816a5747a7b3421d9966689202',1,'Util']]],
   ['dirfor_13',['dirFor',['../class_store_tree.html#a0af4ab5f8c00e1188af669b8aea1ab47',1,'StoreTree']]],
-  ['displayfields_14',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
-  ['dogitpush_15',['doGitPush',['../class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b',1,'QtPass']]],
-  ['done_16',['done',['../class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a',1,'KeygenDialog']]],
-  ['donewizardpage_17',['DoneWizardPage',['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage']]],
-  ['drained_18',['drained',['../class_executor.html#a987e7227ac1932bbb59cea5cbc82d483',1,'Executor']]],
-  ['dropmimedata_19',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
-  ['dropstaletemporary_20',['dropStaleTemporary',['../class_imitate_pass.html#ae9a418566f8f18e20fe4552d0b88e46c',1,'ImitatePass']]],
-  ['dropstaletoolsareapalettes_21',['dropStaleToolsAreaPalettes',['../class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168',1,'MainWindow']]],
-  ['dwordbytes_22',['dwordBytes',['../clipboardmanager_8h.html#a3c09484969938782ada78d86c565b534',1,'clipboardmanager.h']]]
+  ['displayable_14',['displayable',['../class_util.html#aa853f5f3e8e0837eb316a90720bf0b90',1,'Util']]],
+  ['displayfields_15',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
+  ['dogitpush_16',['doGitPush',['../class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b',1,'QtPass']]],
+  ['done_17',['done',['../class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a',1,'KeygenDialog']]],
+  ['donewizardpage_18',['DoneWizardPage',['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage']]],
+  ['drained_19',['drained',['../class_executor.html#a987e7227ac1932bbb59cea5cbc82d483',1,'Executor']]],
+  ['dropmimedata_20',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
+  ['dropstaletemporary_21',['dropStaleTemporary',['../class_imitate_pass.html#ae9a418566f8f18e20fe4552d0b88e46c',1,'ImitatePass']]],
+  ['dropstaletoolsareapalettes_22',['dropStaleToolsAreaPalettes',['../class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168',1,'MainWindow']]],
+  ['dwordbytes_23',['dwordBytes',['../clipboardmanager_8h.html#a3c09484969938782ada78d86c565b534',1,'clipboardmanager.h']]]
 ];
