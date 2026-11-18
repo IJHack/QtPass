@@ -1354,7 +1354,10 @@ void MainWindow::addPassword() { setPassword(QString()); }
 auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
   const QString path = QDir::separator() + file;
   // As the platform writes paths: backslashes only on Windows, never a mix.
-  const QString shown = QDir::toNativeSeparators(path);
+  // On one line: a name from the store may hold a line feed (Unix allows
+  // one), which drew lines of its own into the question.
+  const QString shown =
+      Util::displayable(QDir::toNativeSeparators(path), false);
   if (!isDir) {
     return PlainMessageBox::askYes(
         this, tr("Delete password?"),
@@ -1388,10 +1391,13 @@ auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
   // holds goes too, or stays behind when the removal cannot list it.
   if (unlisted.size() == 1) {
     //: %1 is a folder in the password store, such as /Work/bank.
-    const QString one = tr("%1 could not be read, so what it holds is unknown.")
-                            .arg(QDir::toNativeSeparators(
-                                QDir::separator() +
-                                QDir(root).relativeFilePath(unlisted.first())));
+    const QString one =
+        tr("%1 could not be read, so what it holds is unknown.")
+            .arg(Util::displayable(
+                QDir::toNativeSeparators(
+                    QDir::separator() +
+                    QDir(root).relativeFilePath(unlisted.first())),
+                false));
     question += QStringLiteral("\n\n") + one;
   } else if (unlisted.size() > 1) {
     //: Only shown for two or more folders; one folder is named instead.

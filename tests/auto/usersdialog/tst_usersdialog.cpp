@@ -72,6 +72,7 @@ private slots:
   void selectionSurvivesFilteringAndEscapeClearsTheFilter();
   void searchListsUserIdsWithASlash();
   void aUserIdCannotDrawALineOfItsOwn();
+  void anUnknownRecipientCannotDrawALineOfItsOwn();
   void aFolderNameCannotTurnTheWarningAround();
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
@@ -915,6 +916,37 @@ void tst_usersdialog::aUserIdCannotDrawALineOfItsOwn() {
               .contains(QChar(QChar::ReplacementCharacter)));
   QVERIFY(row.section(QLatin1Char('\n'), 1)
               .startsWith(QStringLiteral("AAAAAAAAAAAAAAA1")));
+}
+
+/**
+ * @brief A recipient no key answers to is listed by its .gpg-id line as
+ *        written; a line separator in it cannot draw a line of its own.
+ */
+void tst_usersdialog::anUnknownRecipientCannotDrawALineOfItsOwn() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write((QStringLiteral("DEADBEEFDEADBEEF") + QChar(0x2028) +
+               QStringLiteral("0000000000000000\n"))
+                  .toUtf8());
+  gpgId.close();
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  bool seen = false;
+  for (int r = 0; r < list->count(); ++r) {
+    const QString text = list->item(r)->text();
+    if (text.contains(QStringLiteral("DEADBEEFDEADBEEF"))) {
+      seen = true;
+      QVERIFY2(!text.contains(QChar(0x2028)), qPrintable(text));
+      QCOMPARE(text.count(QLatin1Char('\n')), 1);
+    }
+  }
+  QVERIFY2(seen, "the unknown recipient is listed");
 }
 
 /**

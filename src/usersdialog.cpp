@@ -426,7 +426,10 @@ auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
 QString UsersDialog::buildUserText(const UserInfo &user) const {
   // One line for the user ID: a line separator in it (gpg escapes only
   // ASCII) drew a line that looked like the key's fingerprint.
-  QString text = Util::displayable(user.name, false) + "\n" + user.key_id;
+  // The key ID too: a recipient no key answers to is the .gpg-id line as
+  // written, which may hold the same separators.
+  QString text = Util::displayable(user.name, false) + "\n" +
+                 Util::displayable(user.key_id, false);
   if (user.created.isValid()) {
     text += " " + tr("created") + " " +
             QLocale::system().toString(user.created, QLocale::ShortFormat);
