@@ -948,6 +948,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   pulled `~/.password-store` instead, and the edit dialog opened on the old
   copy of the entry. A failed pull is now said in the status bar, as with
   the native backend.
+- With the native backend, Users writes nothing while a folder's
+  `.gpg-id` or `.gpg-id.sig` is something other than a file (a folder of
+  that name). The new list was written and the change then stopped: not
+  committed, the entries not re-encrypted to it, and nothing said that the
+  removal had not taken effect (scan finding ANT-2026-Z2NFWEZT)
 - "Hide on close" and "Start minimized" hide the window only into a tray
   icon. Without one (the tray icon switched off, or a desktop without a
   system tray) closing the window left QtPass running invisibly, with the

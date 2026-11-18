@@ -500,7 +500,8 @@ public:
    * and re-encrypts the folder to it. When that commit fails the entries are
    * still re-encrypted, without any Git step, and a critical() afterwards
    * says the change is not committed and whether the re-encryption
-   * completed.
+   * completed. Nothing is written while `.gpg-id` or `.gpg-id.sig` is
+   * there as something other than a regular file (a folder).
    * @param path Root path of the password store.
    * @param users List of recipient GPG keys.
    */

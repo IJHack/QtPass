@@ -622,6 +622,20 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
 
   const bool useGit = gitReady();
   const QString gpgIdFile = path + ".gpg-id";
+  // Each name free or a regular file, before anything is written: a folder
+  // named .gpg-id.sig stopped the change after the new list was on disk,
+  // which was then neither committed nor were the entries re-encrypted to
+  // it, while the dialog had closed as if done. Links were refused above.
+  for (const QString &name : {gpgIdFile, gpgIdFile + QStringLiteral(".sig")}) {
+    if (const QFileInfo info(name); info.exists() && !info.isFile()) {
+      emit critical(tr("Recipients not changed"),
+                    tr("%1 is not a regular file, so the recipients were not "
+                       "changed. Move it out of the way, then save the "
+                       "recipients again.")
+                        .arg(QDir::toNativeSeparators(name)));
+      return;
+    }
+  }
   QByteArray written;
   QString sigToCommit;
   if (!writeGpgIdFile(gpgIdFile, users, &written)) {
