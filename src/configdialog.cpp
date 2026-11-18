@@ -22,8 +22,8 @@
 #include "windowstatestore.h"
 #include <QClipboard>
 #include <QDir>
-#include <QFile>
 #include <QEvent>
+#include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QFormLayout>
