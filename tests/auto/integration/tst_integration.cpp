@@ -391,6 +391,7 @@ private Q_SLOTS:
   void imitatePass_copyOntoExistingEntryClash();
   void imitatePass_copyIntoFolderReencryptsToFolderKey();
   void imitatePass_moveIntoFolderReencryptsToFolderKey();
+  void imitatePass_gitMoveReencryptsOnceItRan();
   void imitatePass_noMessageBoxInsideATransaction();
   void imitatePass_insertAndRemove();
   void imitatePass_generateGpgKeysEmptyExecutable();
@@ -943,8 +944,8 @@ void tst_integration::imitatePass_moveIntoFolderReencryptsToFolderKey() {
 
   QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
   for (const QString &name :
-       {QStringLiteral("rootentry"), QStringLiteral("own/kept"),
-        QStringLiteral("plain/carried")}) {
+       {QStringLiteral("rootentry"), QStringLiteral("other"),
+        QStringLiteral("own/kept"), QStringLiteral("plain/carried")}) {
     QSignalSpy spy(&pass, &Pass::finishedInsert);
     pass.Insert(name, QStringLiteral("r\n"), false);
     QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
@@ -962,6 +963,10 @@ void tst_integration::imitatePass_moveIntoFolderReencryptsToFolderKey() {
 
   QSignalSpy criticalSpy(&pass, &Pass::critical);
   QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+  // A neighbour still encrypted to the root's key: the move re-encrypts
+  // what moved, not the folder it lands in.
+  const QString neighbour = team + "/neighbour.gpg";
+  QVERIFY(QFile::copy(store.filePath("other.gpg"), neighbour));
   // An entry dropped onto a folder with another list.
   const QString moved = QDir::cleanPath(team + "/rootentry.gpg");
   {
@@ -974,6 +979,7 @@ void tst_integration::imitatePass_moveIntoFolderReencryptsToFolderKey() {
   }
   QVERIFY2(targetsOnly(moved, sub2, sub1),
            qPrintable(recipientKeyIds(m_gnupgHome.path(), moved).join(',')));
+  QVERIFY2(targetsOnly(neighbour, sub1, sub2), "the neighbour was left alone");
 
   // A rename in the same folder keeps the list: nothing to re-encrypt.
   startSpy.clear();
@@ -1234,6 +1240,78 @@ void tst_integration::imitatePass_gitInitAndCommit() {
   QVERIFY2(commitMsg.contains("gitentry"),
            qPrintable(QString("commit message should mention gitentry: %1")
                           .arg(commitMsg)));
+}
+
+void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
+  // With Git the move is queued: whether it happened, and which list
+  // applies where it lands, is known only once git mv has run. A folder
+  // move queued before can create the destination folder, and a git mv
+  // that fails leaves the destination as it was, not to be rewritten.
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed");
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  QVERIFY(initGitRepo(storeDir.path(), gitExe));
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath("own"));
+  QFile list(store.filePath("own/.gpg-id"));
+  QVERIFY(list.open(QIODevice::WriteOnly));
+  list.write((m_keyFingerprint2 + "\n").toUtf8());
+  list.close();
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", "own/.gpg-id"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "own"}));
+
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  for (const QString &name :
+       {QStringLiteral("a"), QStringLiteral("own/kept")}) {
+    QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+    pass.Insert(name, QStringLiteral("r\n"), false);
+    QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  }
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+
+  QSignalSpy critical(&pass, &Pass::critical);
+  QSignalSpy started(&pass, &ImitatePass::startReencryptPath);
+  QSignalSpy ended(&pass, &ImitatePass::endReencryptPath);
+  // Both queued before either runs: team does not exist yet when the
+  // entry's move is asked for, the folder move creates it.
+  pass.Move(store.filePath("own"), store.filePath("team"), false);
+  pass.Move(store.filePath("a.gpg"), store.filePath("team/a.gpg"), false);
+  QCOMPARE(started.size(), 0);
+  QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
+  QCOMPARE(started.size(), 1);
+  const QStringList ids =
+      recipientKeyIds(m_gnupgHome.path(), store.filePath("team/a.gpg"));
+  QVERIFY2(ids.contains(sub2) && !ids.contains(sub1),
+           qPrintable(ids.join(',')));
+  QVERIFY2(critical.isEmpty(),
+           qPrintable(critical.isEmpty() ? QString()
+                                         : critical.first().at(1).toString()));
+
+  // git mv refuses a file Git does not track: nothing moved, so the entry
+  // under the destination name is not re-encrypted.
+  QVERIFY(QFile::copy(store.filePath("team/a.gpg"),
+                      store.filePath("untracked.gpg")));
+  QSignalSpy failed(&pass, &Pass::processErrorExit);
+  started.clear();
+  pass.Move(store.filePath("untracked.gpg"), store.filePath("team/kept.gpg"),
+            true);
+  QVERIFY2(waitForSignal(failed, 30000), "git mv failed");
+  QTest::qWait(300);
+  QCOMPARE(started.size(), 0);
+  QVERIFY(QFile::exists(store.filePath("untracked.gpg")));
 }
 
 void tst_integration::imitatePass_gitCopyAndShow() {

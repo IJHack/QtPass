@@ -1186,7 +1186,10 @@ void ImitatePass::reencryptPath(const QString &dir) {
   m_reencryptActive = true;
   m_reencryptScope = dir;
   m_reencryptCancel.store(false);
-  emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
+  emit statusMsg(QFileInfo(dir).isDir()
+                     ? tr("Re-encrypting from folder %1").arg(dir)
+                     : tr("Re-encrypting %1").arg(dir),
+                 3000);
   emit startReencryptPath();
   startReencryptWorker(dir);
 }
@@ -1314,6 +1317,14 @@ auto ImitatePass::entriesToReencrypt(const QString &dir, QStringList *failed)
     -> QStringList {
   // Regular files only: a symlink or junction is not a password entry, and
   // following one would decrypt and rewrite something outside the store.
+  // One entry (what a move moved): itself, when it is one.
+  if (const QFileInfo one(dir); !one.isDir()) {
+    if (one.isFile() && !Util::isLinkedFolder(dir) &&
+        one.fileName().endsWith(QLatin1String(".gpg"))) {
+      return {one.filePath()};
+    }
+    return {};
+  }
   QStringList skipped;
   QStringList unlisted;
   // A dot-named entry (.env.gpg) too, as with `pass init`: left out, it
@@ -1694,37 +1705,56 @@ void ImitatePass::Move(const QString src, const QString dest,
   qCDebug(lcQtPass) << "Move Source: " << src;
   qCDebug(lcQtPass) << "Move Destination: " << destFile;
 
-  // As `pass mv`, what moved is encrypted for the recipients where it
-  // lands. Not needed when the same list applies there (a rename, a move
-  // within its folder's reach) or a folder takes its own list along.
   const bool folder = QFileInfo(src).isDir();
-  const QString fromList =
-      QDir::cleanPath(getGpgIdPath(src, m_settings.passStore));
-  const bool ownList =
-      folder && fromList == QDir::cleanPath(QDir(src).filePath(".gpg-id"));
-  const bool reencrypt =
-      !ownList &&
-      fromList != QDir::cleanPath(getGpgIdPath(destFile, m_settings.passStore));
+  const PendingMove move{
+      src, destFile, QDir::cleanPath(getGpgIdPath(src, m_settings.passStore))};
 
   if (gitReady()) {
+    // Settled in finished() once the move's commands have run: only then
+    // is it known whether git mv moved anything, and which list applies
+    // where it landed (a move queued before this one may create that
+    // folder). Every Move() through Git ends in one PASS_MOVE.
+    m_pendingMoves.enqueue(move);
     TransactionHelper trans(&m_transaction, PASS_MOVE);
     executeMoveGit(src, destFile, force);
-  } else {
-    // A forced move replaces the destination entry in the one rename, as
-    // git mv -f does: removing it first lost it when the rename then failed
-    // (and lost the entry itself, moved onto its own name). A folder is never
-    // replaced, forced or not. Without Git nothing else reports a failure.
-    const bool moved = force && !folder ? Util::replaceFile(src, destFile, true)
-                                        : QDir().rename(src, destFile);
-    if (!moved) {
-      emit critical(tr("Move failed"),
-                    tr("Could not move %1 to %2.").arg(src, destFile));
-      return;
-    }
+    return;
   }
-  if (reencrypt) {
-    reencryptPath(folder ? destFile : QFileInfo(destFile).absolutePath());
+  // A forced move replaces the destination entry in the one rename, as
+  // git mv -f does: removing it first lost it when the rename then failed
+  // (and lost the entry itself, moved onto its own name). A folder is never
+  // replaced, forced or not. Without Git nothing else reports a failure.
+  const bool moved = force && !folder ? Util::replaceFile(src, destFile, true)
+                                      : QDir().rename(src, destFile);
+  if (!moved) {
+    emit critical(tr("Move failed"),
+                  tr("Could not move %1 to %2.").arg(src, destFile));
+    return;
   }
+  reencryptMoved(move);
+}
+
+void ImitatePass::reencryptMoved(const PendingMove &move) {
+  // What is on disk now decides: a move that did not happen (git mv
+  // refused an existing name) leaves its source, and re-encrypting the
+  // destination would rewrite the entry that was there.
+  const QFileInfo landed(move.destFile);
+  if (QFileInfo::exists(move.src) || !landed.exists() ||
+      Util::isLinkedFolder(move.destFile)) {
+    return;
+  }
+  // As `pass mv`, what moved is encrypted for the recipients where it
+  // landed. Not needed when the same list applies there (a rename, a move
+  // within its folder's reach) or a folder took its own list along.
+  const QString toList =
+      QDir::cleanPath(getGpgIdPath(move.destFile, m_settings.passStore));
+  if (toList == move.fromList ||
+      (landed.isDir() &&
+       toList == QDir::cleanPath(QDir(move.destFile).filePath(".gpg-id")))) {
+    return;
+  }
+  // The entry alone, or the folder: not its neighbours, which this move
+  // did not touch.
+  reencryptPath(QDir::cleanPath(move.destFile));
 }
 
 auto ImitatePass::copyDestination(const QString &src, const QString &dest,
@@ -1883,6 +1913,9 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
   }
   Pass::finished(pid, exitCode, m_transactionOutput, error);
   m_transactionOutput.clear();
+  if (pid == PASS_MOVE && !m_pendingMoves.isEmpty()) {
+    reencryptMoved(m_pendingMoves.dequeue());
+  }
 }
 
 auto ImitatePass::placeEncryptedFile(const QString &output, const QString &file,

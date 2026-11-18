@@ -517,7 +517,8 @@ public:
    * A second call while a run is active is ignored. Dot-named entries
    * (`.env.gpg`) are re-encrypted too, as with `pass init`; hidden folders
    * (`.git`, `.stversions`) are not entered.
-   * @param dir Directory path.
+   * @param dir Directory path, or one entry's `.gpg` file (a move
+   *        re-encrypts what it moved, not the folder around it).
    */
   void reencryptPath(const QString &dir);
   /**
@@ -582,8 +583,9 @@ public:
    *
    * As `pass mv`, what moved is then re-encrypted for the recipients where
    * it landed, when another `.gpg-id` applies there than where it came from
-   * (a folder with its own list takes that along). No message box opens
-   * while the move's Git commands are being queued.
+   * (a folder with its own list takes that along): see reencryptMoved().
+   * With Git that happens once the queued git mv has run. No message box
+   * opens while the move's Git commands are being queued.
    * @param src Source path.
    * @param dest Destination path.
    * @param force true to overwrite existing destination.
@@ -615,6 +617,23 @@ private:
   /// Groups the git/gpg processes of one operation (Insert, Remove, Move,
   /// Copy) into a single completion; see finished() and TransactionHelper.
   SimpleTransaction m_transaction;
+  /**
+   * @brief A move whose re-encryption is decided once it has run.
+   */
+  struct PendingMove {
+    QString src;      ///< What was moved.
+    QString destFile; ///< Where to: the entry's `.gpg` file, or the folder.
+    QString fromList; ///< The `.gpg-id` that applied to it before.
+  };
+  /// Moves through Git, in order, each settled when its PASS_MOVE ends.
+  QQueue<PendingMove> m_pendingMoves;
+  /**
+   * @brief Re-encrypt what @p move moved, if it moved and another
+   * `.gpg-id` applies where it landed; a folder that has its own list is
+   * left as it is. Only that entry or folder, not what is around it.
+   * @param move The move, as Move() recorded it.
+   */
+  void reencryptMoved(const PendingMove &move);
   /// Background search over the decrypted store; relays to finishedGrep.
   NativeGrep m_grep;
   /**
