@@ -218,8 +218,11 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
         !QFileInfo(dir.filePath(QStringLiteral("refs"))).isDir()) {
       return false;
     }
-    QFile head(dir.filePath(QStringLiteral("HEAD")));
-    if (!head.open(QIODevice::ReadOnly)) {
+    // As the regular file it is: a HEAD that is a link to a device or a
+    // FIFO (a pushed commit can carry a link) blocked the open and the read
+    // on the GUI thread when Settings opened.
+    QFile head;
+    if (!Util::openRegularFile(dir.filePath(QStringLiteral("HEAD")), head)) {
       return false;
     }
     static const QRegularExpression valid(
@@ -240,8 +243,9 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
     if (!info.exists()) {
       return Found::Nothing;
     }
-    QFile file(dotGit);
-    if (!file.open(QIODevice::ReadOnly)) {
+    // The same for a .git file: a FIFO there blocked in open().
+    QFile file;
+    if (!Util::openRegularFile(dotGit, file)) {
       return Found::Refused;
     }
     const QString line = QString::fromUtf8(file.readLine(4096)).trimmed();

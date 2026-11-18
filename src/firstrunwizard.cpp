@@ -11,6 +11,7 @@
 #include "imitatepass.h"
 #include "keygendialog.h"
 #include "passbackendfactory.h"
+#include "plainmessagebox.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
 #include "util.h"
@@ -129,7 +130,7 @@ auto FirstRunWizard::initialiseStore(const QString &store) -> bool {
   }
   const bool created = !QDir(store).exists();
   if (created && !Util::mkpathForStore(store)) {
-    QMessageBox::warning(
+    PlainMessageBox::warning(
         this, tr("Error"),
         tr("Failed to create password-store at: %1").arg(store));
     return false;
@@ -149,14 +150,14 @@ auto FirstRunWizard::initialiseStore(const QString &store) -> bool {
     // a store that looks finished.
     QFile::remove(QDir(store).filePath(QStringLiteral(".gpg-id")));
     QFile::remove(QDir(store).filePath(QStringLiteral(".gpg-id.sig")));
-    QMessageBox::warning(this, tr("Password store not initialised"), note);
+    PlainMessageBox::warning(this, tr("Password store not initialised"), note);
     return false;
   }
   if (!note.isEmpty()) {
     // ProfileInit's own note talks of switching profiles; on the first run
     // the folder simply becomes the store.
-    QMessageBox::information(
-        this, tr("Password store"),
+    PlainMessageBox::show(
+        this, QMessageBox::Information, tr("Password store"),
         tr("%1 already contains encrypted files; they were not "
            "re-encrypted to the ticked keys. Open Users after the start "
            "to do that.")
@@ -173,7 +174,7 @@ auto FirstRunWizard::initialiseGit(const QString &store) -> bool {
   // Take the repository back too, so a second Finish retries the whole thing
   // instead of skipping a .git that never got its first commit.
   QDir(QDir(store).filePath(QStringLiteral(".git"))).removeRecursively();
-  QMessageBox::warning(this, tr("Password store not initialised"), note);
+  PlainMessageBox::warning(this, tr("Password store not initialised"), note);
   return false;
 }
 

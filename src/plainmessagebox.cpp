@@ -8,6 +8,38 @@
 #include "plainmessagebox.h"
 #include "util.h"
 
+namespace {
+/// Lines and characters of a message a box shows at most.
+constexpr qsizetype kMaxLines = 40;
+/// See kMaxLines.
+constexpr qsizetype kMaxChars = 4000;
+
+/**
+ * @brief @p text cut to kMaxLines lines and kMaxChars characters, with an
+ * ellipsis where it was cut.
+ *
+ * A message quoting git's or gpg's error output is as long as that output,
+ * and a pushed .gitattributes with many bad lines decides its length: laid
+ * out whole, the box froze the GUI. The Process Output panel keeps all of it.
+ * @param text The message.
+ * @return The message, at most that long.
+ */
+auto bounded(const QString &text) -> QString {
+  QString shown = text.left(kMaxChars);
+  qsizetype lines = 0;
+  for (qsizetype i = 0; i < shown.size(); ++i) {
+    if (shown.at(i) == QLatin1Char('\n') && ++lines == kMaxLines) {
+      shown.truncate(i);
+      break;
+    }
+  }
+  if (shown.size() < text.size()) {
+    shown += QStringLiteral("\n\u2026");
+  }
+  return shown;
+}
+} // namespace
+
 auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,
                            const QString &title, const QString &text,
                            QMessageBox::StandardButtons buttons)
@@ -20,7 +52,7 @@ auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,
   // Before the text: set afterwards, the text would already have been laid
   // out as rich text once.
   box.setTextFormat(Qt::PlainText);
-  box.setText(Util::displayable(text));
+  box.setText(bounded(Util::displayable(text)));
   box.setStandardButtons(buttons);
   return static_cast<QMessageBox::StandardButton>(box.exec());
 }

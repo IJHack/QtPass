@@ -12,6 +12,7 @@
 #include "executor.h"
 #include "gpgkeystate.h"
 #include "keygendialog.h"
+#include "plainmessagebox.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
 #include "sshauthsock.h"
@@ -582,7 +583,7 @@ void ConfigDialog::warnAboutSshAuthSockOverride() {
     reason = tr("The path is not a Unix domain socket.");
     break;
   }
-  QMessageBox::warning(
+  PlainMessageBox::warning(
       this, tr("Potentially invalid SSH_AUTH_SOCK override"),
       tr("The SSH_AUTH_SOCK override value may be invalid.\n\n%1\n\n"
          "The value will still be saved as entered.")
@@ -847,7 +848,7 @@ auto ConfigDialog::ensureProfileFolder(const QString &path) -> bool {
     return false;
   }
   if (!Util::mkpathForStore(path)) {
-    QMessageBox::warning(
+    PlainMessageBox::warning(
         this, tr("Error"),
         tr("Could not create profile directory: %1").arg(path));
     return false;
@@ -882,10 +883,11 @@ void ConfigDialog::initialiseProfileStore(const QString &name,
       path, usersDialog.selectedUsers(), profileSettings,
       profile.useGit.value_or(settings.useGit), &note);
   if (!ok) {
-    QMessageBox::warning(this, tr("Could not initialise profile %1").arg(name),
-                         note);
+    PlainMessageBox::warning(
+        this, tr("Could not initialise profile %1").arg(name), note);
   } else if (!note.isEmpty()) {
-    QMessageBox::information(this, tr("Profile %1").arg(name), note);
+    PlainMessageBox::show(this, QMessageBox::Information,
+                          tr("Profile %1").arg(name), note);
   }
 }
 

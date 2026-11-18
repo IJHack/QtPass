@@ -79,6 +79,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/passworddisplaypanel.h"
+#include "../../../src/plainmessagebox.h"
 #include "../../../src/processoutputpanel.h"
 #include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
@@ -516,6 +517,7 @@ private Q_SLOTS:
   void backendErrorsArePlainText();
   void deleteFolderWarnsAboutStrayFiles();
   void aFolderNameCannotTurnTheQuestionAround();
+  void aMessageBoxShowsABoundedText();
   void deleteFolderWarnsAboutAFolderItCannotRead();
   void deleteLinkedFolderRemovesOnlyTheLink();
   void usersDialogOpensForTheStoreButNotForALink();
@@ -5969,6 +5971,43 @@ void tst_mainwindow::backendErrorsArePlainText() {
   QCOMPARE(driver.seen, 1);
   QCOMPARE(driver.boxTexts.value(0), message);
   QCOMPARE(driver.boxFormats.value(0), Qt::PlainText);
+}
+
+/**
+ * @brief A message box quoting tool output shows at most 40 lines and 4000
+ *        characters, then an ellipsis: a pushed .gitattributes decided how
+ *        much git printed, and a box laid out whole froze the window.
+ */
+void tst_mainwindow::aMessageBoxShowsABoundedText() {
+  QStringList many;
+  for (int i = 0; i < 5000; ++i) {
+    many << QStringLiteral("warning: line %1").arg(i);
+  }
+  const QString ellipsis(QChar(0x2026));
+  {
+    ModalDriver driver(answerBox(QMessageBox::Ok));
+    PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"),
+                             many.join(QLatin1Char('\n')));
+    QCOMPARE(driver.seen, 1);
+    const QString text = driver.boxTexts.value(0);
+    QCOMPARE(text.count(QLatin1Char('\n')), 40);
+    QVERIFY(text.endsWith(ellipsis));
+  }
+  {
+    ModalDriver driver(answerBox(QMessageBox::Ok));
+    PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"),
+                             QString(10000, QLatin1Char('x')));
+    const QString text = driver.boxTexts.value(0);
+    QCOMPARE(text.size(), 4002);
+    QVERIFY(text.endsWith(ellipsis));
+  }
+  {
+    // A short message is left as it is.
+    ModalDriver driver(answerBox(QMessageBox::Ok));
+    PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"),
+                             QStringLiteral("one\ntwo"));
+    QCOMPARE(driver.boxTexts.value(0), QStringLiteral("one\ntwo"));
+  }
 }
 
 /**

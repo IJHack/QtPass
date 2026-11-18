@@ -287,12 +287,15 @@ auto ImitatePass::commitArgs() -> QStringList {
 }
 
 void ImitatePass::gitCommit(const QString &file, const QString &msg) {
-  if (file.isEmpty()) {
-    executeGit(GIT_COMMIT, commitArgs() + QStringList{"-m", msg});
-  } else {
-    executeGit(GIT_COMMIT,
-               commitArgs() + QStringList{"-m", msg, "--", pgit(file)});
+  gitCommit(QStringList{file}, msg);
+}
+
+void ImitatePass::gitCommit(const QStringList &files, const QString &msg) {
+  QStringList args = commitArgs() + QStringList{"-m", msg, "--"};
+  for (const QString &file : files) {
+    args << pgit(file);
   }
+  executeGit(GIT_COMMIT, args);
 }
 
 void ImitatePass::Remove(QString file, bool isDir) {
@@ -1058,11 +1061,25 @@ auto ImitatePass::createBackupCommit() -> bool {
                        "re-encrypting."));
     return false;
   }
-  if (!statusOut.trimmed().isEmpty()) {
-    if (execBlocking(git, {"-C", store, "add", "-u"}) != 0 ||
-        execBlocking(
-            git, QStringList{"-C", store} + commitArgs() +
-                     QStringList{"-m", "Backup before re-encryption"}) != 0) {
+  // The store only: in a repository above it, a modified tracked file
+  // outside the store is not the store's to back up, and autoPush would
+  // publish it. `.` is the store, as git runs with -C the store.
+  QString storeStatus;
+  if (execBlocking(git,
+                   {"-C", store, "status", "--porcelain",
+                    "--untracked-files=no", "--", "."},
+                   &storeStatus) != 0) {
+    if (!m_reencryptCancel.load())
+      emit critical(
+          tr("Backup commit failed"),
+          tr("Could not inspect git status. Re-encryption was aborted."));
+    return false;
+  }
+  if (!storeStatus.trimmed().isEmpty()) {
+    if (execBlocking(git, {"-C", store, "add", "-u", "--", "."}) != 0 ||
+        execBlocking(git, QStringList{"-C", store} + commitArgs() +
+                              QStringList{"-m", "Backup before re-encryption",
+                                          "--", "."}) != 0) {
       if (!m_reencryptCancel.load())
         emit critical(tr("Backup commit failed"),
                       tr("Re-encryption was aborted because a git backup "
@@ -1572,8 +1589,11 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
   args << "--" << pgit(src) << pgit(destFile);
   executeGit(GIT_MOVE, args);
 
-  gitCommit("", QString("Moved for %1 to %2 using QtPass.")
-                    .arg(commitName(src), commitName(destFile)));
+  // The move alone: with no path, the commit took whatever else was
+  // staged.
+  gitCommit(QStringList{src, destFile},
+            QString("Moved for %1 to %2 using QtPass.")
+                .arg(commitName(src), commitName(destFile)));
 }
 
 auto ImitatePass::commitName(const QString &path) const -> QString {
@@ -1683,8 +1703,8 @@ void ImitatePass::Copy(const QString src, const QString dest,
   }
   if (gitReady()) {
     executeGit(GIT_COPY, {"add", "--", pgit(destFile)});
-    gitCommit("", QString("Copied from %1 to %2 using QtPass.")
-                      .arg(commitName(src), commitName(destFile)));
+    gitCommit(destFile, QString("Copied from %1 to %2 using QtPass.")
+                            .arg(commitName(src), commitName(destFile)));
   }
   const QFileInfo written(destFile);
   if (written.isDir()) {

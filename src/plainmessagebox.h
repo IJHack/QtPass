@@ -28,7 +28,10 @@ namespace PlainMessageBox {
  * @param parent The parent widget.
  * @param icon The icon.
  * @param title The window title.
- * @param text The message, shown as it is.
+ * @param text The message, shown as it is: plain, with characters that
+ *        turn the text around shown as U+FFFD (Util::displayable()), and cut
+ *        to 40 lines and 4000 characters, as tool output quoted in it can be
+ *        any length.
  * @param buttons The buttons offered.
  * @return The button clicked.
  */
