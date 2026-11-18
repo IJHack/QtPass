@@ -83,6 +83,28 @@ setx GIT_ASKPASS "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass
 This tutorial might resolve your issues.
 <https://gitforwindows.org/OpenSSH-Integration-with-Pageant>
 
+### Users, move or copy says "Changes Git has not recorded"
+
+With the `pass` backend and Git, `pass` commits the whole folder it changes, and everything staged with it. A plaintext export left in the store would be committed and pushed. The message lists the files. QtPass refuses:
+
+- **Users**, move and copy while the folder holds files Git does not track or changes Git has not committed.
+- These and new entries while anything is staged in the repository `pass` commits in.
+
+Commit only what belongs in the store. Move a plaintext export or anything else private out of the store, or delete it; if you staged it, unstage it first with `git restore --staged <file>`, and if Git already tracks it, remove it from Git with `git rm --cached <file>` and `git commit` (it stays in the history). Have Git ignore what should stay but not be shared. Then try again.
+
+Finder (macOS), Explorer (Windows) and Dolphin (KDE) write `.DS_Store`, `Thumbs.db`, `desktop.ini` or `.directory` into folders they open. Removing them does not last, so the message names the lines to add to the `.gitignore` at the top of the store (or of a folder with a Git repository of its own), for example:
+
+```gitignore
+.DS_Store
+Thumbs.db
+```
+
+Commit the `.gitignore` and push it, so your teammates' devices skip these files too.
+
+A rule does not untrack a file Git already tracks: remove such a file from Git with `git rm --cached` and commit that along with the rule. If Git still lists the file, a rule deeper down un-ignores it; `git check-ignore -v <file>` names that rule.
+
+QtPass does not skip these files on its own: `pass` would commit them, and a `.DS_Store` names the files in its folder.
+
 ### gpg reports a missing `/tmp/tst_integration-…/pubring.kbx`
 
 QtPass is pointing gpg at a `GNUPGHOME` that no longer exists. The 1.7.0

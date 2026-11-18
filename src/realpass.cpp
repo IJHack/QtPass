@@ -362,6 +362,34 @@ auto RealPass::unrecorded(const QStringList &paths, bool ignored)
 
 namespace {
 /**
+ * @brief The untracked files among @p lines that a file manager writes by
+ * itself in the folders it opens: Finder's `.DS_Store`, Explorer's
+ * `Thumbs.db` and `desktop.ini`, Dolphin's `.directory`. A rule in a
+ * .gitignore keeps those out; one Git already tracks it does not.
+ * @param lines `git status --porcelain` entries.
+ * @param paths Receives each such file's path, as the entry names it.
+ * @return Each such name once, in that order.
+ */
+auto fileManagerFiles(const QStringList &lines, QStringList *paths)
+    -> QStringList {
+  QStringList found;
+  for (const QString &name :
+       {QStringLiteral(".DS_Store"), QStringLiteral("Thumbs.db"),
+        QStringLiteral("desktop.ini"), QStringLiteral(".directory")}) {
+    for (const QString &line : lines) {
+      if (line.startsWith(QLatin1String("?? ")) &&
+          QFileInfo(line.mid(3)).fileName() == name) {
+        if (!found.contains(name)) {
+          found << name;
+        }
+        *paths << line.mid(3);
+      }
+    }
+  }
+  return found;
+}
+
+/**
  * @brief Whether @p name is one pass writes: an entry or a recipient list.
  * @param name A file name.
  * @return true for `*.gpg`, `.gpg-id` and `.gpg-id.sig`.
@@ -415,11 +443,49 @@ auto RealPass::refuseUnrecordedChanges(const QStringList &paths,
   if (changes.isEmpty()) {
     return false;
   }
-  const QString why =
+  QString why =
       tr("The folder holds changes Git has not recorded, and pass would "
          "commit and push them along with this one:\n\n%1\n\nCommit, "
          "remove or ignore them with Git first, then try again.")
           .arg(namedChanges(changes));
+  // These come back in every folder the file manager opens: removing them
+  // does not last, ignoring them once does, in the .gitignore of the
+  // repository that reports them (a folder may hold one of its own).
+  QStringList writtenAt;
+  const QStringList written = fileManagerFiles(changes, &writtenAt);
+  if (!written.isEmpty()) {
+    const QDir store(QDir::cleanPath(m_settings.passStore));
+    // Each .gitignore with the names its repository reports, alone: a
+    // rule for a name that is not there could hide something else.
+    QStringList ignoreFiles;
+    QMap<QString, QStringList> namesFor;
+    for (const QString &path : std::as_const(writtenAt)) {
+      const QString repository = repositoryOf(store.filePath(path));
+      const QString file = repository.isEmpty()
+                               ? QStringLiteral(".gitignore")
+                               : repository + QStringLiteral("/.gitignore");
+      if (!ignoreFiles.contains(file)) {
+        ignoreFiles << file;
+      }
+      const QString name = QFileInfo(path).fileName();
+      if (!namesFor[file].contains(name)) {
+        namesFor[file] << name;
+      }
+    }
+    QStringList blocks;
+    for (const QString &file : std::as_const(ignoreFiles)) {
+      blocks << file + QStringLiteral(":\n") +
+                    namesFor.value(file).join(QLatin1Char('\n'));
+    }
+    why += QStringLiteral("\n\n") +
+           tr("The system writes %1 by itself, in folders a file manager "
+              "opens (Finder on macOS, Explorer on Windows, Dolphin on "
+              "KDE). Git leaves such files alone in every folder once each "
+              ".gitignore in the store below holds its lines, committed:"
+              "\n\n%2")
+               .arg(written.join(QStringLiteral(", ")),
+                    blocks.join(QStringLiteral("\n\n")));
+  }
   // As the other refusals: the interface arms when an operation starts and
   // is released by processErrorExit(); a refusal starts nothing.
   emit startingExecuteWrapper();

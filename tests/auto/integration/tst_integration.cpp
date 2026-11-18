@@ -427,6 +427,7 @@ private Q_SLOTS:
   void realPass_insertAndGrep();
   void realPass_unrecordedEntryIsReported();
   void realPass_initRefusesUnrecordedFiles();
+  void realPass_fileManagerFilesGetAHint();
   void realPass_refusesStagedAndUnignoredFiles();
   void realPass_checksTheRepositoryPassCommitsIn();
 
@@ -2225,6 +2226,8 @@ void tst_integration::realPass_initRefusesUnrecordedFiles() {
   QCOMPARE(critical.size(), 1);
   QVERIFY2(critical.first().at(1).toString().contains("notes.txt"),
            qPrintable(critical.first().at(1).toString()));
+  QVERIFY2(!critical.first().at(1).toString().contains("Finder"),
+           "no file manager hint for a file of the user's own");
   QString tracked;
   QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
   QVERIFY2(!tracked.contains("notes.txt"), qPrintable(tracked));
@@ -2377,6 +2380,126 @@ void tst_integration::realPass_checksTheRepositoryPassCommitsIn() {
   pass.Insert(QStringLiteral("other"), QStringLiteral("three\n"), false);
   QVERIFY2(waitForSignal(inserted, 20000), gpgInsertErrorMsg(errors));
   QCOMPARE(critical.size(), 0);
+  QtPassSettings::setUsePass(false);
+}
+
+/**
+ * @brief Finder and Explorer leave .DS_Store and Thumbs.db in folders they
+ *        open, and those refuse a move as any file Git has not recorded.
+ *        The message says which .gitignore lines keep them out, and with
+ *        those lines committed the move goes ahead.
+ */
+void tst_integration::realPass_fileManagerFilesGetAHint() {
+  const QString passExe = findPass();
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (passExe.isEmpty() || gitExe.isEmpty())
+    QSKIP("pass or git not installed");
+  RestoreUseGit restoreUseGit;
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString setUp = initRealPassGitStore(storeDir.path(), passExe, gitExe);
+  QVERIFY2(setUp.isEmpty(), qPrintable(setUp));
+  const QDir store(storeDir.path());
+  // Whatever the user's own ignore rules say.
+  QTemporaryDir noRules;
+  QVERIFY(noRules.isValid());
+  const QString noExcludes = noRules.filePath("none");
+  QVERIFY(runGit(storeDir.path(), gitExe,
+                 {"config", "core.excludesFile", noExcludes}));
+  QVERIFY(store.mkpath("team/sub"));
+  for (const QString &name :
+       {QStringLiteral("team/sub/Thumbs.db"), QStringLiteral("team/.DS_Store"),
+        QStringLiteral("team/sub/.DS_Store")}) {
+    QFile file(store.filePath(name));
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("file manager\n");
+    file.close();
+  }
+
+  RealPass pass;
+  setupPass(pass);
+  QSignalSpy moved(&pass, &Pass::finishedMove);
+  QSignalSpy errors(&pass, &Pass::processErrorExit);
+  QSignalSpy critical(&pass, &Pass::critical);
+  pass.Move(store.filePath("team"), store.filePath("moved"), false);
+  QCOMPARE(critical.size(), 1);
+  const QString why = critical.first().at(1).toString();
+  QVERIFY2(why.contains("Finder"), qPrintable(why));
+  // The lines to add, in a fixed order, and only the ones found.
+  QVERIFY2(why.endsWith(":\n\n.gitignore:\n.DS_Store\nThumbs.db"),
+           qPrintable(why));
+  QVERIFY2(store.exists("team/.DS_Store"), "nothing was moved");
+
+  QFile ignore(store.filePath(".gitignore"));
+  QVERIFY(ignore.open(QIODevice::WriteOnly));
+  ignore.write(".DS_Store\nThumbs.db\n");
+  ignore.close();
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", ".gitignore"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "ignore"}));
+  critical.clear();
+  pass.Move(store.filePath("team"), store.filePath("moved"), false);
+  QVERIFY2(waitForSignal(moved, 20000), gpgInsertErrorMsg(errors));
+  QCOMPARE(critical.size(), 0);
+  QVERIFY(store.exists("moved/.DS_Store"));
+  QString tracked;
+  QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
+  QVERIFY2(!tracked.contains(".DS_Store") && !tracked.contains("Thumbs.db"),
+           qPrintable(tracked));
+
+  // One Git already tracks: a rule does not untrack it, so no hint.
+  QVERIFY(store.mkpath("tracked"));
+  QFile kept(store.filePath("tracked/.DS_Store"));
+  QVERIFY(kept.open(QIODevice::WriteOnly));
+  kept.write("one\n");
+  kept.close();
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", "-f", "tracked/.DS_Store"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "tracked"}));
+  QVERIFY(kept.open(QIODevice::Append));
+  kept.write("two\n");
+  kept.close();
+  critical.clear();
+  pass.Move(store.filePath("tracked"), store.filePath("moved2"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains("tracked/.DS_Store"),
+           qPrintable(critical.first().at(1).toString()));
+  QVERIFY2(!critical.first().at(1).toString().contains("Finder"),
+           qPrintable(critical.first().at(1).toString()));
+
+  // A folder with a repository of its own reads its own .gitignore: the
+  // hint names that one.
+  QVERIFY(store.mkpath("other"));
+  QVERIFY(initGitRepo(store.filePath("other"), gitExe));
+  QVERIFY(runGit(store.filePath("other"), gitExe,
+                 {"config", "core.excludesFile", noExcludes}));
+  QFile otherFile(store.filePath("other/.DS_Store"));
+  QVERIFY(otherFile.open(QIODevice::WriteOnly));
+  otherFile.write("file manager\n");
+  otherFile.close();
+  critical.clear();
+  pass.Move(store.filePath("other"), store.filePath("moved3"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().endsWith(
+               ":\n\nother/.gitignore:\n.DS_Store"),
+           qPrintable(critical.first().at(1).toString()));
+
+  // Names from both repositories: each .gitignore gets its own alone.
+  QVERIFY(store.mkpath("other/in"));
+  QFile dolphin(store.filePath("other/in/.directory"));
+  QVERIFY(dolphin.open(QIODevice::WriteOnly));
+  dolphin.write("file manager\n");
+  dolphin.close();
+  QVERIFY(store.mkpath("fresh"));
+  QFile finder(store.filePath("fresh/desktop.ini"));
+  QVERIFY(finder.open(QIODevice::WriteOnly));
+  finder.write("file manager\n");
+  finder.close();
+  critical.clear();
+  pass.Move(store.filePath("fresh"), store.filePath("other/in"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(
+      critical.first().at(1).toString().endsWith(
+          ":\n\n.gitignore:\ndesktop.ini\n\nother/.gitignore:\n.directory"),
+      qPrintable(critical.first().at(1).toString()));
   QtPassSettings::setUsePass(false);
 }
 
