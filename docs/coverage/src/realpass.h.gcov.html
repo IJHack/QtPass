@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 13:52:09</td>
+            <td class="headerValue">2026-11-18 15:34:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -247,263 +247,267 @@
 <span id="L174"><span class="lineNum">     174</span>              :    * `git add` and then commits the whole index, so a plaintext export lying</span>
 <span id="L175"><span class="lineNum">     175</span>              :    * in the folder or staged anywhere, or files a failed pull wrote, would be</span>
 <span id="L176"><span class="lineNum">     176</span>              :    * committed and pushed along with the change. Ignored files are left</span>
-<span id="L177"><span class="lineNum">     177</span>              :    * alone, as `git add` leaves them.</span>
-<span id="L178"><span class="lineNum">     178</span>              :    * @param paths Absolute paths in the store that pass will stage; empty</span>
-<span id="L179"><span class="lineNum">     179</span>              :    *        for none (an insert stages its own entry alone).</span>
-<span id="L180"><span class="lineNum">     180</span>              :    * @param committing Absolute paths pass commits: the index of each one's</span>
-<span id="L181"><span class="lineNum">     181</span>              :    *        repository (see repositoryOf()) is checked.</span>
-<span id="L182"><span class="lineNum">     182</span>              :    * @return Whether it was refused (and the user told).</span>
-<span id="L183"><span class="lineNum">     183</span>              :    */</span>
-<span id="L184"><span class="lineNum">     184</span>              :   auto refuseUnrecordedChanges(const QStringList &amp;paths,</span>
-<span id="L185"><span class="lineNum">     185</span>              :                                const QStringList &amp;committing) -&gt; bool;</span>
-<span id="L186"><span class="lineNum">     186</span>              : </span>
-<span id="L187"><span class="lineNum">     187</span>              :   /**</span>
-<span id="L188"><span class="lineNum">     188</span>              :    * @brief After a `pass insert`, `init`, `mv` or `cp` that exited 0, say</span>
-<span id="L189"><span class="lineNum">     189</span>              :    * so when git did not record the entries it wrote: pass exits 0 whatever</span>
-<span id="L190"><span class="lineNum">     190</span>              :    * its `git add` and commit did (an entry a .gitignore matches, say), and</span>
-<span id="L191"><span class="lineNum">     191</span>              :    * an unrecorded entry is not pushed and a pull may overwrite it.</span>
-<span id="L192"><span class="lineNum">     192</span>              :    * @param paths Absolute paths the change wrote.</span>
-<span id="L193"><span class="lineNum">     193</span>              :    */</span>
-<span id="L194"><span class="lineNum">     194</span>              :   void reportUnrecorded(const QStringList &amp;paths);</span>
-<span id="L195"><span class="lineNum">     195</span>              : </span>
-<span id="L196"><span class="lineNum">     196</span>              :   /**</span>
-<span id="L197"><span class="lineNum">     197</span>              :    * @brief Refuse a `pass mv` or `cp` of the folder @p src when a file in</span>
-<span id="L198"><span class="lineNum">     198</span>              :    * it that Git ignores would not be ignored where it lands: a rule naming</span>
-<span id="L199"><span class="lineNum">     199</span>              :    * the old place (`/team/export.csv`) does not follow the file, and pass</span>
-<span id="L200"><span class="lineNum">     200</span>              :    * stages the new path whole. Entries and recipient lists are not counted:</span>
-<span id="L201"><span class="lineNum">     201</span>              :    * committing those is what pass is for.</span>
-<span id="L202"><span class="lineNum">     202</span>              :    * @param src The folder moved or copied (anything else passes).</span>
-<span id="L203"><span class="lineNum">     203</span>              :    * @param dest Where to, as handed to pass: an existing folder takes it in.</span>
-<span id="L204"><span class="lineNum">     204</span>              :    * @return Whether it was refused (and the user told).</span>
-<span id="L205"><span class="lineNum">     205</span>              :    */</span>
-<span id="L206"><span class="lineNum">     206</span>              :   auto refuseIgnoredThatMoves(const QString &amp;src, const QString &amp;dest) -&gt; bool;</span>
-<span id="L207"><span class="lineNum">     207</span>              : </span>
-<span id="L208"><span class="lineNum">     208</span>              :   /**</span>
-<span id="L209"><span class="lineNum">     209</span>              :    * @brief `git check-ignore --stdin -z` on @p paths through `pass git`.</span>
-<span id="L210"><span class="lineNum">     210</span>              :    * @param repository Where to ask, as repositoryOf() gives it.</span>
-<span id="L211"><span class="lineNum">     211</span>              :    * @param paths Paths relative to that repository.</span>
-<span id="L212"><span class="lineNum">     212</span>              :    * @param verbose Whether to ask which rule matched (`-v`): four fields</span>
-<span id="L213"><span class="lineNum">     213</span>              :    *        per ignored path (rule's file, line, pattern, path).</span>
-<span id="L214"><span class="lineNum">     214</span>              :    * @param fields Receives the output's fields: the ignored paths, or the</span>
-<span id="L215"><span class="lineNum">     215</span>              :    *        four fields each with @p verbose.</span>
-<span id="L216"><span class="lineNum">     216</span>              :    * @return false when git could not say.</span>
-<span id="L217"><span class="lineNum">     217</span>              :    */</span>
-<span id="L218"><span class="lineNum">     218</span>              :   auto checkIgnore(const QString &amp;repository, const QStringList &amp;paths,</span>
-<span id="L219"><span class="lineNum">     219</span>              :                    bool verbose, QStringList *fields) -&gt; bool;</span>
-<span id="L220"><span class="lineNum">     220</span>              : </span>
-<span id="L221"><span class="lineNum">     221</span>              :   /**</span>
-<span id="L222"><span class="lineNum">     222</span>              :    * @brief For a folder pass is about to re-encrypt in a move or copy:</span>
-<span id="L223"><span class="lineNum">     223</span>              :    * refuse when the signed list of one of its entries (every one pass's</span>
-<span id="L224"><span class="lineNum">     224</span>              :    * walk takes, hidden ones included) is not one QtPass accepts where it</span>
-<span id="L225"><span class="lineNum">     225</span>              :    * lies now (as refuseUnverifiedList()).</span>
-<span id="L226"><span class="lineNum">     226</span>              :    * @param dir The folder moved or copied, or the existing folder written</span>
-<span id="L227"><span class="lineNum">     227</span>              :    *        into. Each of its folders' lists counts, used by an entry yet or</span>
-<span id="L228"><span class="lineNum">     228</span>              :    *        not: a copy merges into a folder of the same name, so lists on</span>
-<span id="L229"><span class="lineNum">     229</span>              :    *        either side meet the other side's entries.</span>
-<span id="L230"><span class="lineNum">     230</span>              :    * @param onlyListsWithin Whether only lists inside @p dir count: for the</span>
-<span id="L231"><span class="lineNum">     231</span>              :    *        folder that moves, whose entries get the destination's list in</span>
-<span id="L232"><span class="lineNum">     232</span>              :    *        place of any list above it.</span>
-<span id="L233"><span class="lineNum">     233</span>              :    * @param except A list about to be written (`pass init`'s own), neither</span>
-<span id="L234"><span class="lineNum">     234</span>              :    *        verified nor refused for being missing.</span>
-<span id="L235"><span class="lineNum">     235</span>              :    * @return Whether it was refused (and the user told).</span>
-<span id="L236"><span class="lineNum">     236</span>              :    */</span>
-<span id="L237"><span class="lineNum">     237</span>              :   auto refuseUnverifiedTree(const QString &amp;dir, bool onlyListsWithin,</span>
-<span id="L238"><span class="lineNum">     238</span>              :                             const QString &amp;except = QString()) -&gt; bool;</span>
-<span id="L239"><span class="lineNum">     239</span>              : </span>
-<span id="L240"><span class="lineNum">     240</span>              :   /**</span>
-<span id="L241"><span class="lineNum">     241</span>              :    * @brief The verifier for signed lists, gpg in the store's environment.</span>
-<span id="L242"><span class="lineNum">     242</span>              :    * @return A GpgIdSigner with the configured signing keys.</span>
-<span id="L243"><span class="lineNum">     243</span>              :    */</span>
-<span id="L244"><span class="lineNum">     244</span>              :   auto listSigner() -&gt; GpgIdSigner;</span>
-<span id="L245"><span class="lineNum">     245</span>              : </span>
-<span id="L246"><span class="lineNum">     246</span>              :   /**</span>
-<span id="L247"><span class="lineNum">     247</span>              :    * @brief The checks of refuseUnverifiedList() for @p file's nearest list,</span>
-<span id="L248"><span class="lineNum">     248</span>              :    * once per list.</span>
-<span id="L249"><span class="lineNum">     249</span>              :    * @param file The entry.</span>
-<span id="L250"><span class="lineNum">     250</span>              :    * @param signer The verifier.</span>
-<span id="L251"><span class="lineNum">     251</span>              :    * @param verified The lists already found good; extended.</span>
-<span id="L252"><span class="lineNum">     252</span>              :    * @param within When set, only a list under this folder (absolute,</span>
-<span id="L253"><span class="lineNum">     253</span>              :    *        cleaned, with a trailing &quot;/&quot;) is verified; the skipped-list check</span>
-<span id="L254"><span class="lineNum">     254</span>              :    *        applies regardless.</span>
-<span id="L255"><span class="lineNum">     255</span>              :    * @param except A list about to be written, neither verified nor refused</span>
-<span id="L256"><span class="lineNum">     256</span>              :    *        for being missing.</span>
-<span id="L257"><span class="lineNum">     257</span>              :    * @return Whether it was refused (and the user told).</span>
-<span id="L258"><span class="lineNum">     258</span>              :    */</span>
-<span id="L259"><span class="lineNum">     259</span>              :   auto refuseList(const QString &amp;file, const GpgIdSigner &amp;signer,</span>
-<span id="L260"><span class="lineNum">     260</span>              :                   QSet&lt;QString&gt; &amp;verified, const QString &amp;within = QString(),</span>
-<span id="L261"><span class="lineNum">     261</span>              :                   const QString &amp;except = QString()) -&gt; bool;</span>
-<span id="L262"><span class="lineNum">     262</span>              : </span>
-<span id="L263"><span class="lineNum">     263</span>              :   /**</span>
-<span id="L264"><span class="lineNum">     264</span>              :    * @brief The executor is about to run (or drop) its next item: for an</span>
-<span id="L265"><span class="lineNum">     265</span>              :    * insert, take its entry from m_insertQueue and fingerprint it now, not</span>
-<span id="L266"><span class="lineNum">     266</span>              :    * when it was queued, so an earlier queued save of the same entry counts</span>
-<span id="L267"><span class="lineNum">     267</span>              :    * as &quot;before&quot;. Kept in m_insertPending for that insert's own completion.</span>
-<span id="L268"><span class="lineNum">     268</span>              :    * For `pass init`, `mv` and `cp`, add `--status-fd 2` to that one</span>
-<span id="L269"><span class="lineNum">     269</span>              :    * process's PASSWORD_STORE_GPG_OPTS, so finished() can tell whether every</span>
-<span id="L270"><span class="lineNum">     270</span>              :    * entry was re-encrypted (reencryptFailed()), and move its scope from</span>
-<span id="L271"><span class="lineNum">     271</span>              :    * m_reencryptScopes to m_reencryptPending (dropped when it does not</span>
-<span id="L272"><span class="lineNum">     272</span>              :    * complete).</span>
-<span id="L273"><span class="lineNum">     273</span>              :    * @param id The item's process id.</span>
-<span id="L274"><span class="lineNum">     274</span>              :    * @param completes Whether a completion follows (not for a dropped one).</span>
-<span id="L275"><span class="lineNum">     275</span>              :    */</span>
-<span id="L276"><span class="lineNum">     276</span>              :   void onDequeuing(int id, bool completes);</span>
-<span id="L277"><span class="lineNum">     277</span>              : </span>
-<span id="L278"><span class="lineNum">     278</span>              :   /**</span>
-<span id="L279"><span class="lineNum">     279</span>              :    * @brief A SHA-256 of the regular file @p path (opened without following</span>
-<span id="L280"><span class="lineNum">     280</span>              :    * a link or blocking on a FIFO).</span>
-<span id="L281"><span class="lineNum">     281</span>              :    * @param path The entry's file.</span>
-<span id="L282"><span class="lineNum">     282</span>              :    * @return The hash; empty when @p path is no readable regular file.</span>
-<span id="L283"><span class="lineNum">     283</span>              :    */</span>
-<span id="L284"><span class="lineNum">     284</span>              :   static auto entryFingerprint(const QString &amp;path) -&gt; QByteArray;</span>
-<span id="L285"><span class="lineNum">     285</span>              : </span>
-<span id="L286"><span class="lineNum">     286</span>              :   /// An insert's entry and its fingerprint when the insert started to run</span>
-<span id="L287"><span class="lineNum">     287</span>              :   /// (empty when the entry did not exist).</span>
-<span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">          82 :   struct InsertRecord {</span></span>
-<span id="L289"><span class="lineNum">     289</span>              :     QString target;    ///&lt; The entry's file.</span>
-<span id="L290"><span class="lineNum">     290</span>              :     QByteArray before; ///&lt; Its fingerprint when the insert started.</span>
-<span id="L291"><span class="lineNum">     291</span>              :   };</span>
-<span id="L292"><span class="lineNum">     292</span>              :   /// The entries of the queued inserts, oldest first.</span>
-<span id="L293"><span class="lineNum">     293</span>              :   QQueue&lt;QString&gt; m_insertQueue;</span>
-<span id="L294"><span class="lineNum">     294</span>              :   /// The inserts that left the queue and have yet to complete, in the</span>
-<span id="L295"><span class="lineNum">     295</span>              :   /// order their completions come: a failed start's error is posted, and</span>
-<span id="L296"><span class="lineNum">     296</span>              :   /// the next insert may start before it arrives.</span>
-<span id="L297"><span class="lineNum">     297</span>              :   QQueue&lt;InsertRecord&gt; m_insertPending;</span>
-<span id="L298"><span class="lineNum">     298</span>              :   /// The insert whose completion is being handled.</span>
-<span id="L299"><span class="lineNum">     299</span>              :   InsertRecord m_insertDone;</span>
-<span id="L300"><span class="lineNum">     300</span>              :   /// What each queued init, move or copy re-encrypts (its folder, or the</span>
-<span id="L301"><span class="lineNum">     301</span>              :   /// destination), oldest first, for the push hold.</span>
-<span id="L302"><span class="lineNum">     302</span>              :   QQueue&lt;QString&gt; m_reencryptScopes;</span>
-<span id="L303"><span class="lineNum">     303</span>              :   /// The scopes of the inits, moves and copies that left the queue and have</span>
-<span id="L304"><span class="lineNum">     304</span>              :   /// yet to complete, in completion order; one the executor drops never</span>
-<span id="L305"><span class="lineNum">     305</span>              :   /// gets here, so it cannot pair with a later command's completion.</span>
-<span id="L306"><span class="lineNum">     306</span>              :   QQueue&lt;QString&gt; m_reencryptPending;</span>
-<span id="L307"><span class="lineNum">     307</span>              :   /// A push was asked for while an init, move or copy was queued or</span>
-<span id="L308"><span class="lineNum">     308</span>              :   /// running: sendDeferredPush() makes it once they have completed.</span>
-<span id="L309"><span class="lineNum">     309</span>              :   bool m_pushAfterReencrypt = false;</span>
-<span id="L310"><span class="lineNum">     310</span>              :   /// One of those pushes was asked for by hand: it goes despite a hold.</span>
-<span id="L311"><span class="lineNum">     311</span>              :   bool m_deferredPushByHand = false;</span>
-<span id="L312"><span class="lineNum">     312</span>              : </span>
-<span id="L313"><span class="lineNum">     313</span>              : public:</span>
-<span id="L314"><span class="lineNum">     314</span>              :   /**</span>
-<span id="L315"><span class="lineNum">     315</span>              :    * @brief Construct a RealPass instance.</span>
-<span id="L316"><span class="lineNum">     316</span>              :    */</span>
-<span id="L317"><span class="lineNum">     317</span>              :   RealPass();</span>
+<span id="L177"><span class="lineNum">     177</span>              :    * alone, as `git add` leaves them. When the changes include untracked</span>
+<span id="L178"><span class="lineNum">     178</span>              :    * files a file manager writes by itself (`.DS_Store`, `Thumbs.db`), the</span>
+<span id="L179"><span class="lineNum">     179</span>              :    * message says which `.gitignore` lines keep them out for good, for the</span>
+<span id="L180"><span class="lineNum">     180</span>              :    * `.gitignore` of each repository that reports them (unless a deeper</span>
+<span id="L181"><span class="lineNum">     181</span>              :    * rule there un-ignores them again).</span>
+<span id="L182"><span class="lineNum">     182</span>              :    * @param paths Absolute paths in the store that pass will stage; empty</span>
+<span id="L183"><span class="lineNum">     183</span>              :    *        for none (an insert stages its own entry alone).</span>
+<span id="L184"><span class="lineNum">     184</span>              :    * @param committing Absolute paths pass commits: the index of each one's</span>
+<span id="L185"><span class="lineNum">     185</span>              :    *        repository (see repositoryOf()) is checked.</span>
+<span id="L186"><span class="lineNum">     186</span>              :    * @return Whether it was refused (and the user told).</span>
+<span id="L187"><span class="lineNum">     187</span>              :    */</span>
+<span id="L188"><span class="lineNum">     188</span>              :   auto refuseUnrecordedChanges(const QStringList &amp;paths,</span>
+<span id="L189"><span class="lineNum">     189</span>              :                                const QStringList &amp;committing) -&gt; bool;</span>
+<span id="L190"><span class="lineNum">     190</span>              : </span>
+<span id="L191"><span class="lineNum">     191</span>              :   /**</span>
+<span id="L192"><span class="lineNum">     192</span>              :    * @brief After a `pass insert`, `init`, `mv` or `cp` that exited 0, say</span>
+<span id="L193"><span class="lineNum">     193</span>              :    * so when git did not record the entries it wrote: pass exits 0 whatever</span>
+<span id="L194"><span class="lineNum">     194</span>              :    * its `git add` and commit did (an entry a .gitignore matches, say), and</span>
+<span id="L195"><span class="lineNum">     195</span>              :    * an unrecorded entry is not pushed and a pull may overwrite it.</span>
+<span id="L196"><span class="lineNum">     196</span>              :    * @param paths Absolute paths the change wrote.</span>
+<span id="L197"><span class="lineNum">     197</span>              :    */</span>
+<span id="L198"><span class="lineNum">     198</span>              :   void reportUnrecorded(const QStringList &amp;paths);</span>
+<span id="L199"><span class="lineNum">     199</span>              : </span>
+<span id="L200"><span class="lineNum">     200</span>              :   /**</span>
+<span id="L201"><span class="lineNum">     201</span>              :    * @brief Refuse a `pass mv` or `cp` of the folder @p src when a file in</span>
+<span id="L202"><span class="lineNum">     202</span>              :    * it that Git ignores would not be ignored where it lands: a rule naming</span>
+<span id="L203"><span class="lineNum">     203</span>              :    * the old place (`/team/export.csv`) does not follow the file, and pass</span>
+<span id="L204"><span class="lineNum">     204</span>              :    * stages the new path whole. Entries and recipient lists are not counted:</span>
+<span id="L205"><span class="lineNum">     205</span>              :    * committing those is what pass is for.</span>
+<span id="L206"><span class="lineNum">     206</span>              :    * @param src The folder moved or copied (anything else passes).</span>
+<span id="L207"><span class="lineNum">     207</span>              :    * @param dest Where to, as handed to pass: an existing folder takes it in.</span>
+<span id="L208"><span class="lineNum">     208</span>              :    * @return Whether it was refused (and the user told).</span>
+<span id="L209"><span class="lineNum">     209</span>              :    */</span>
+<span id="L210"><span class="lineNum">     210</span>              :   auto refuseIgnoredThatMoves(const QString &amp;src, const QString &amp;dest) -&gt; bool;</span>
+<span id="L211"><span class="lineNum">     211</span>              : </span>
+<span id="L212"><span class="lineNum">     212</span>              :   /**</span>
+<span id="L213"><span class="lineNum">     213</span>              :    * @brief `git check-ignore --stdin -z` on @p paths through `pass git`.</span>
+<span id="L214"><span class="lineNum">     214</span>              :    * @param repository Where to ask, as repositoryOf() gives it.</span>
+<span id="L215"><span class="lineNum">     215</span>              :    * @param paths Paths relative to that repository.</span>
+<span id="L216"><span class="lineNum">     216</span>              :    * @param verbose Whether to ask which rule matched (`-v`): four fields</span>
+<span id="L217"><span class="lineNum">     217</span>              :    *        per ignored path (rule's file, line, pattern, path).</span>
+<span id="L218"><span class="lineNum">     218</span>              :    * @param fields Receives the output's fields: the ignored paths, or the</span>
+<span id="L219"><span class="lineNum">     219</span>              :    *        four fields each with @p verbose.</span>
+<span id="L220"><span class="lineNum">     220</span>              :    * @return false when git could not say.</span>
+<span id="L221"><span class="lineNum">     221</span>              :    */</span>
+<span id="L222"><span class="lineNum">     222</span>              :   auto checkIgnore(const QString &amp;repository, const QStringList &amp;paths,</span>
+<span id="L223"><span class="lineNum">     223</span>              :                    bool verbose, QStringList *fields) -&gt; bool;</span>
+<span id="L224"><span class="lineNum">     224</span>              : </span>
+<span id="L225"><span class="lineNum">     225</span>              :   /**</span>
+<span id="L226"><span class="lineNum">     226</span>              :    * @brief For a folder pass is about to re-encrypt in a move or copy:</span>
+<span id="L227"><span class="lineNum">     227</span>              :    * refuse when the signed list of one of its entries (every one pass's</span>
+<span id="L228"><span class="lineNum">     228</span>              :    * walk takes, hidden ones included) is not one QtPass accepts where it</span>
+<span id="L229"><span class="lineNum">     229</span>              :    * lies now (as refuseUnverifiedList()).</span>
+<span id="L230"><span class="lineNum">     230</span>              :    * @param dir The folder moved or copied, or the existing folder written</span>
+<span id="L231"><span class="lineNum">     231</span>              :    *        into. Each of its folders' lists counts, used by an entry yet or</span>
+<span id="L232"><span class="lineNum">     232</span>              :    *        not: a copy merges into a folder of the same name, so lists on</span>
+<span id="L233"><span class="lineNum">     233</span>              :    *        either side meet the other side's entries.</span>
+<span id="L234"><span class="lineNum">     234</span>              :    * @param onlyListsWithin Whether only lists inside @p dir count: for the</span>
+<span id="L235"><span class="lineNum">     235</span>              :    *        folder that moves, whose entries get the destination's list in</span>
+<span id="L236"><span class="lineNum">     236</span>              :    *        place of any list above it.</span>
+<span id="L237"><span class="lineNum">     237</span>              :    * @param except A list about to be written (`pass init`'s own), neither</span>
+<span id="L238"><span class="lineNum">     238</span>              :    *        verified nor refused for being missing.</span>
+<span id="L239"><span class="lineNum">     239</span>              :    * @return Whether it was refused (and the user told).</span>
+<span id="L240"><span class="lineNum">     240</span>              :    */</span>
+<span id="L241"><span class="lineNum">     241</span>              :   auto refuseUnverifiedTree(const QString &amp;dir, bool onlyListsWithin,</span>
+<span id="L242"><span class="lineNum">     242</span>              :                             const QString &amp;except = QString()) -&gt; bool;</span>
+<span id="L243"><span class="lineNum">     243</span>              : </span>
+<span id="L244"><span class="lineNum">     244</span>              :   /**</span>
+<span id="L245"><span class="lineNum">     245</span>              :    * @brief The verifier for signed lists, gpg in the store's environment.</span>
+<span id="L246"><span class="lineNum">     246</span>              :    * @return A GpgIdSigner with the configured signing keys.</span>
+<span id="L247"><span class="lineNum">     247</span>              :    */</span>
+<span id="L248"><span class="lineNum">     248</span>              :   auto listSigner() -&gt; GpgIdSigner;</span>
+<span id="L249"><span class="lineNum">     249</span>              : </span>
+<span id="L250"><span class="lineNum">     250</span>              :   /**</span>
+<span id="L251"><span class="lineNum">     251</span>              :    * @brief The checks of refuseUnverifiedList() for @p file's nearest list,</span>
+<span id="L252"><span class="lineNum">     252</span>              :    * once per list.</span>
+<span id="L253"><span class="lineNum">     253</span>              :    * @param file The entry.</span>
+<span id="L254"><span class="lineNum">     254</span>              :    * @param signer The verifier.</span>
+<span id="L255"><span class="lineNum">     255</span>              :    * @param verified The lists already found good; extended.</span>
+<span id="L256"><span class="lineNum">     256</span>              :    * @param within When set, only a list under this folder (absolute,</span>
+<span id="L257"><span class="lineNum">     257</span>              :    *        cleaned, with a trailing &quot;/&quot;) is verified; the skipped-list check</span>
+<span id="L258"><span class="lineNum">     258</span>              :    *        applies regardless.</span>
+<span id="L259"><span class="lineNum">     259</span>              :    * @param except A list about to be written, neither verified nor refused</span>
+<span id="L260"><span class="lineNum">     260</span>              :    *        for being missing.</span>
+<span id="L261"><span class="lineNum">     261</span>              :    * @return Whether it was refused (and the user told).</span>
+<span id="L262"><span class="lineNum">     262</span>              :    */</span>
+<span id="L263"><span class="lineNum">     263</span>              :   auto refuseList(const QString &amp;file, const GpgIdSigner &amp;signer,</span>
+<span id="L264"><span class="lineNum">     264</span>              :                   QSet&lt;QString&gt; &amp;verified, const QString &amp;within = QString(),</span>
+<span id="L265"><span class="lineNum">     265</span>              :                   const QString &amp;except = QString()) -&gt; bool;</span>
+<span id="L266"><span class="lineNum">     266</span>              : </span>
+<span id="L267"><span class="lineNum">     267</span>              :   /**</span>
+<span id="L268"><span class="lineNum">     268</span>              :    * @brief The executor is about to run (or drop) its next item: for an</span>
+<span id="L269"><span class="lineNum">     269</span>              :    * insert, take its entry from m_insertQueue and fingerprint it now, not</span>
+<span id="L270"><span class="lineNum">     270</span>              :    * when it was queued, so an earlier queued save of the same entry counts</span>
+<span id="L271"><span class="lineNum">     271</span>              :    * as &quot;before&quot;. Kept in m_insertPending for that insert's own completion.</span>
+<span id="L272"><span class="lineNum">     272</span>              :    * For `pass init`, `mv` and `cp`, add `--status-fd 2` to that one</span>
+<span id="L273"><span class="lineNum">     273</span>              :    * process's PASSWORD_STORE_GPG_OPTS, so finished() can tell whether every</span>
+<span id="L274"><span class="lineNum">     274</span>              :    * entry was re-encrypted (reencryptFailed()), and move its scope from</span>
+<span id="L275"><span class="lineNum">     275</span>              :    * m_reencryptScopes to m_reencryptPending (dropped when it does not</span>
+<span id="L276"><span class="lineNum">     276</span>              :    * complete).</span>
+<span id="L277"><span class="lineNum">     277</span>              :    * @param id The item's process id.</span>
+<span id="L278"><span class="lineNum">     278</span>              :    * @param completes Whether a completion follows (not for a dropped one).</span>
+<span id="L279"><span class="lineNum">     279</span>              :    */</span>
+<span id="L280"><span class="lineNum">     280</span>              :   void onDequeuing(int id, bool completes);</span>
+<span id="L281"><span class="lineNum">     281</span>              : </span>
+<span id="L282"><span class="lineNum">     282</span>              :   /**</span>
+<span id="L283"><span class="lineNum">     283</span>              :    * @brief A SHA-256 of the regular file @p path (opened without following</span>
+<span id="L284"><span class="lineNum">     284</span>              :    * a link or blocking on a FIFO).</span>
+<span id="L285"><span class="lineNum">     285</span>              :    * @param path The entry's file.</span>
+<span id="L286"><span class="lineNum">     286</span>              :    * @return The hash; empty when @p path is no readable regular file.</span>
+<span id="L287"><span class="lineNum">     287</span>              :    */</span>
+<span id="L288"><span class="lineNum">     288</span>              :   static auto entryFingerprint(const QString &amp;path) -&gt; QByteArray;</span>
+<span id="L289"><span class="lineNum">     289</span>              : </span>
+<span id="L290"><span class="lineNum">     290</span>              :   /// An insert's entry and its fingerprint when the insert started to run</span>
+<span id="L291"><span class="lineNum">     291</span>              :   /// (empty when the entry did not exist).</span>
+<span id="L292"><span class="lineNum">     292</span> <span class="tlaGNC">          82 :   struct InsertRecord {</span></span>
+<span id="L293"><span class="lineNum">     293</span>              :     QString target;    ///&lt; The entry's file.</span>
+<span id="L294"><span class="lineNum">     294</span>              :     QByteArray before; ///&lt; Its fingerprint when the insert started.</span>
+<span id="L295"><span class="lineNum">     295</span>              :   };</span>
+<span id="L296"><span class="lineNum">     296</span>              :   /// The entries of the queued inserts, oldest first.</span>
+<span id="L297"><span class="lineNum">     297</span>              :   QQueue&lt;QString&gt; m_insertQueue;</span>
+<span id="L298"><span class="lineNum">     298</span>              :   /// The inserts that left the queue and have yet to complete, in the</span>
+<span id="L299"><span class="lineNum">     299</span>              :   /// order their completions come: a failed start's error is posted, and</span>
+<span id="L300"><span class="lineNum">     300</span>              :   /// the next insert may start before it arrives.</span>
+<span id="L301"><span class="lineNum">     301</span>              :   QQueue&lt;InsertRecord&gt; m_insertPending;</span>
+<span id="L302"><span class="lineNum">     302</span>              :   /// The insert whose completion is being handled.</span>
+<span id="L303"><span class="lineNum">     303</span>              :   InsertRecord m_insertDone;</span>
+<span id="L304"><span class="lineNum">     304</span>              :   /// What each queued init, move or copy re-encrypts (its folder, or the</span>
+<span id="L305"><span class="lineNum">     305</span>              :   /// destination), oldest first, for the push hold.</span>
+<span id="L306"><span class="lineNum">     306</span>              :   QQueue&lt;QString&gt; m_reencryptScopes;</span>
+<span id="L307"><span class="lineNum">     307</span>              :   /// The scopes of the inits, moves and copies that left the queue and have</span>
+<span id="L308"><span class="lineNum">     308</span>              :   /// yet to complete, in completion order; one the executor drops never</span>
+<span id="L309"><span class="lineNum">     309</span>              :   /// gets here, so it cannot pair with a later command's completion.</span>
+<span id="L310"><span class="lineNum">     310</span>              :   QQueue&lt;QString&gt; m_reencryptPending;</span>
+<span id="L311"><span class="lineNum">     311</span>              :   /// A push was asked for while an init, move or copy was queued or</span>
+<span id="L312"><span class="lineNum">     312</span>              :   /// running: sendDeferredPush() makes it once they have completed.</span>
+<span id="L313"><span class="lineNum">     313</span>              :   bool m_pushAfterReencrypt = false;</span>
+<span id="L314"><span class="lineNum">     314</span>              :   /// One of those pushes was asked for by hand: it goes despite a hold.</span>
+<span id="L315"><span class="lineNum">     315</span>              :   bool m_deferredPushByHand = false;</span>
+<span id="L316"><span class="lineNum">     316</span>              : </span>
+<span id="L317"><span class="lineNum">     317</span>              : public:</span>
 <span id="L318"><span class="lineNum">     318</span>              :   /**</span>
-<span id="L319"><span class="lineNum">     319</span>              :    * @brief Whether a `pass init`, `mv` or `cp` that exited 0 left entries</span>
-<span id="L320"><span class="lineNum">     320</span>              :    * as they were: pass carries on past an entry gpg could not re-encrypt.</span>
-<span id="L321"><span class="lineNum">     321</span>              :    *</span>
-<span id="L322"><span class="lineNum">     322</span>              :    * Judged by gpg's status lines (onDequeuing() adds `--status-fd 2`),</span>
-<span id="L323"><span class="lineNum">     323</span>              :    * which no locale changes: an INV_RECP, FAILURE or DECRYPTION_FAILED</span>
-<span id="L324"><span class="lineNum">     324</span>              :    * line, or fewer END_ENCRYPTION lines than the entries pass said it was</span>
-<span id="L325"><span class="lineNum">     325</span>              :    * re-encrypting (&quot;name: reencrypting to ...&quot; on stdout). KEYEXPIRED and</span>
-<span id="L326"><span class="lineNum">     326</span>              :    * NO_SECKEY alone are not failures.</span>
-<span id="L327"><span class="lineNum">     327</span>              :    * @param out pass's standard output.</span>
-<span id="L328"><span class="lineNum">     328</span>              :    * @param err pass's and gpg's standard error.</span>
-<span id="L329"><span class="lineNum">     329</span>              :    * @return true on a failure; false without any status line, since then</span>
-<span id="L330"><span class="lineNum">     330</span>              :    *         the option did not reach gpg and there is nothing to judge by.</span>
-<span id="L331"><span class="lineNum">     331</span>              :    */</span>
-<span id="L332"><span class="lineNum">     332</span>              :   static auto reencryptFailed(const QString &amp;out, const QString &amp;err) -&gt; bool;</span>
-<span id="L333"><span class="lineNum">     333</span>              :   /**</span>
-<span id="L334"><span class="lineNum">     334</span>              :    * @brief Destructor; lets the search workers wind down.</span>
+<span id="L319"><span class="lineNum">     319</span>              :    * @brief Construct a RealPass instance.</span>
+<span id="L320"><span class="lineNum">     320</span>              :    */</span>
+<span id="L321"><span class="lineNum">     321</span>              :   RealPass();</span>
+<span id="L322"><span class="lineNum">     322</span>              :   /**</span>
+<span id="L323"><span class="lineNum">     323</span>              :    * @brief Whether a `pass init`, `mv` or `cp` that exited 0 left entries</span>
+<span id="L324"><span class="lineNum">     324</span>              :    * as they were: pass carries on past an entry gpg could not re-encrypt.</span>
+<span id="L325"><span class="lineNum">     325</span>              :    *</span>
+<span id="L326"><span class="lineNum">     326</span>              :    * Judged by gpg's status lines (onDequeuing() adds `--status-fd 2`),</span>
+<span id="L327"><span class="lineNum">     327</span>              :    * which no locale changes: an INV_RECP, FAILURE or DECRYPTION_FAILED</span>
+<span id="L328"><span class="lineNum">     328</span>              :    * line, or fewer END_ENCRYPTION lines than the entries pass said it was</span>
+<span id="L329"><span class="lineNum">     329</span>              :    * re-encrypting (&quot;name: reencrypting to ...&quot; on stdout). KEYEXPIRED and</span>
+<span id="L330"><span class="lineNum">     330</span>              :    * NO_SECKEY alone are not failures.</span>
+<span id="L331"><span class="lineNum">     331</span>              :    * @param out pass's standard output.</span>
+<span id="L332"><span class="lineNum">     332</span>              :    * @param err pass's and gpg's standard error.</span>
+<span id="L333"><span class="lineNum">     333</span>              :    * @return true on a failure; false without any status line, since then</span>
+<span id="L334"><span class="lineNum">     334</span>              :    *         the option did not reach gpg and there is nothing to judge by.</span>
 <span id="L335"><span class="lineNum">     335</span>              :    */</span>
-<span id="L336"><span class="lineNum">     336</span>              :   ~RealPass() override;</span>
-<span id="L337"><span class="lineNum">     337</span>              : </span>
-<span id="L338"><span class="lineNum">     338</span>              :   // Git operations</span>
-<span id="L339"><span class="lineNum">     339</span>              :   /**</span>
-<span id="L340"><span class="lineNum">     340</span>              :    * @brief Initialize Git repository in password store.</span>
-<span id="L341"><span class="lineNum">     341</span>              :    */</span>
-<span id="L342"><span class="lineNum">     342</span>              :   void GitInit() override;</span>
+<span id="L336"><span class="lineNum">     336</span>              :   static auto reencryptFailed(const QString &amp;out, const QString &amp;err) -&gt; bool;</span>
+<span id="L337"><span class="lineNum">     337</span>              :   /**</span>
+<span id="L338"><span class="lineNum">     338</span>              :    * @brief Destructor; lets the search workers wind down.</span>
+<span id="L339"><span class="lineNum">     339</span>              :    */</span>
+<span id="L340"><span class="lineNum">     340</span>              :   ~RealPass() override;</span>
+<span id="L341"><span class="lineNum">     341</span>              : </span>
+<span id="L342"><span class="lineNum">     342</span>              :   // Git operations</span>
 <span id="L343"><span class="lineNum">     343</span>              :   /**</span>
-<span id="L344"><span class="lineNum">     344</span>              :    * @brief Pull changes from remote.</span>
+<span id="L344"><span class="lineNum">     344</span>              :    * @brief Initialize Git repository in password store.</span>
 <span id="L345"><span class="lineNum">     345</span>              :    */</span>
-<span id="L346"><span class="lineNum">     346</span>              :   void GitPull() override;</span>
+<span id="L346"><span class="lineNum">     346</span>              :   void GitInit() override;</span>
 <span id="L347"><span class="lineNum">     347</span>              :   /**</span>
-<span id="L348"><span class="lineNum">     348</span>              :    * @brief Pull with rebase.</span>
+<span id="L348"><span class="lineNum">     348</span>              :    * @brief Pull changes from remote.</span>
 <span id="L349"><span class="lineNum">     349</span>              :    */</span>
-<span id="L350"><span class="lineNum">     350</span>              :   void GitPull_b() override;</span>
+<span id="L350"><span class="lineNum">     350</span>              :   void GitPull() override;</span>
 <span id="L351"><span class="lineNum">     351</span>              :   /**</span>
-<span id="L352"><span class="lineNum">     352</span>              :    * @brief Push changes to remote.</span>
+<span id="L352"><span class="lineNum">     352</span>              :    * @brief Pull with rebase.</span>
 <span id="L353"><span class="lineNum">     353</span>              :    */</span>
-<span id="L354"><span class="lineNum">     354</span>              :   void GitPush() override;</span>
-<span id="L355"><span class="lineNum">     355</span>              : </span>
-<span id="L356"><span class="lineNum">     356</span>              :   // Password operations</span>
-<span id="L357"><span class="lineNum">     357</span>              :   /**</span>
-<span id="L358"><span class="lineNum">     358</span>              :    * @brief Show decrypted password.</span>
-<span id="L359"><span class="lineNum">     359</span>              :    * @param file Path to password file.</span>
-<span id="L360"><span class="lineNum">     360</span>              :    */</span>
-<span id="L361"><span class="lineNum">     361</span>              :   void Show(QString file) override;</span>
-<span id="L362"><span class="lineNum">     362</span>              :   /**</span>
-<span id="L363"><span class="lineNum">     363</span>              :    * @brief Insert new password.</span>
-<span id="L364"><span class="lineNum">     364</span>              :    * @param file Path to password file.</span>
-<span id="L365"><span class="lineNum">     365</span>              :    * @param newValue Password content.</span>
-<span id="L366"><span class="lineNum">     366</span>              :    * @param overwrite true to overwrite existing.</span>
-<span id="L367"><span class="lineNum">     367</span>              :    */</span>
-<span id="L368"><span class="lineNum">     368</span>              :   void Insert(QString file, QString newValue, bool overwrite) override;</span>
-<span id="L369"><span class="lineNum">     369</span>              :   /**</span>
-<span id="L370"><span class="lineNum">     370</span>              :    * @brief Remove an entry or folder with `pass rm`.</span>
-<span id="L371"><span class="lineNum">     371</span>              :    *</span>
-<span id="L372"><span class="lineNum">     372</span>              :    * A folder that is a link is unlinked here instead, without deleting its</span>
-<span id="L373"><span class="lineNum">     373</span>              :    * target; that removal is committed only when Git is enabled and the</span>
-<span id="L374"><span class="lineNum">     374</span>              :    * tracking lookup and index removal both report success.</span>
-<span id="L375"><span class="lineNum">     375</span>              :    * @param file Store-relative entry path, without `.gpg` for a password</span>
-<span id="L376"><span class="lineNum">     376</span>              :    *        file.</span>
-<span id="L377"><span class="lineNum">     377</span>              :    * @param isDir true to remove a directory; false to remove a password</span>
-<span id="L378"><span class="lineNum">     378</span>              :    *        file.</span>
-<span id="L379"><span class="lineNum">     379</span>              :    */</span>
-<span id="L380"><span class="lineNum">     380</span>              :   void Remove(QString file, bool isDir) override;</span>
-<span id="L381"><span class="lineNum">     381</span>              :   /**</span>
-<span id="L382"><span class="lineNum">     382</span>              :    * @brief Initialize password store.</span>
-<span id="L383"><span class="lineNum">     383</span>              :    * @param path Store root path.</span>
-<span id="L384"><span class="lineNum">     384</span>              :    * @param users GPG recipients.</span>
-<span id="L385"><span class="lineNum">     385</span>              :    */</span>
-<span id="L386"><span class="lineNum">     386</span>              :   void Init(QString path, const QList&lt;UserInfo&gt; &amp;users) override;</span>
-<span id="L387"><span class="lineNum">     387</span>              : </span>
-<span id="L388"><span class="lineNum">     388</span>              : protected:</span>
-<span id="L389"><span class="lineNum">     389</span>              :   /**</span>
-<span id="L390"><span class="lineNum">     390</span>              :    * @brief Finish a process; a linked-folder removal commit (GIT_COMMIT,</span>
-<span id="L391"><span class="lineNum">     391</span>              :    * which RealPass uses for nothing else) is judged by finishLinkCommit().</span>
-<span id="L392"><span class="lineNum">     392</span>              :    * @param id Process identifier.</span>
-<span id="L393"><span class="lineNum">     393</span>              :    * @param exitCode Exit code.</span>
-<span id="L394"><span class="lineNum">     394</span>              :    * @param out Standard output.</span>
-<span id="L395"><span class="lineNum">     395</span>              :    * @param err Standard error.</span>
-<span id="L396"><span class="lineNum">     396</span>              :    */</span>
-<span id="L397"><span class="lineNum">     397</span>              :   void finished(int id, int exitCode, const QString &amp;out,</span>
-<span id="L398"><span class="lineNum">     398</span>              :                 const QString &amp;err) override;</span>
-<span id="L399"><span class="lineNum">     399</span>              : </span>
-<span id="L400"><span class="lineNum">     400</span>              :   // Pass interface</span>
-<span id="L401"><span class="lineNum">     401</span>              : public:</span>
-<span id="L402"><span class="lineNum">     402</span>              :   /**</span>
-<span id="L403"><span class="lineNum">     403</span>              :    * @brief Move password file or directory.</span>
-<span id="L404"><span class="lineNum">     404</span>              :    * @param src Source path.</span>
-<span id="L405"><span class="lineNum">     405</span>              :    * @param dest Destination path.</span>
-<span id="L406"><span class="lineNum">     406</span>              :    * @param force Overwrite existing.</span>
-<span id="L407"><span class="lineNum">     407</span>              :    */</span>
-<span id="L408"><span class="lineNum">     408</span>              :   void Move(const QString src, const QString dest, const bool force) override;</span>
-<span id="L409"><span class="lineNum">     409</span>              :   /**</span>
-<span id="L410"><span class="lineNum">     410</span>              :    * @brief Copy password file or directory.</span>
-<span id="L411"><span class="lineNum">     411</span>              :    * @param src Source path.</span>
-<span id="L412"><span class="lineNum">     412</span>              :    * @param dest Destination path.</span>
-<span id="L413"><span class="lineNum">     413</span>              :    * @param force Overwrite existing.</span>
-<span id="L414"><span class="lineNum">     414</span>              :    */</span>
-<span id="L415"><span class="lineNum">     415</span>              :   void Copy(const QString src, const QString dest, const bool force) override;</span>
-<span id="L416"><span class="lineNum">     416</span>              :   /**</span>
-<span id="L417"><span class="lineNum">     417</span>              :    * @brief Search all password content by GPG-decrypting each real `.gpg`</span>
-<span id="L418"><span class="lineNum">     418</span>              :    * file, as ImitatePass does.</span>
-<span id="L419"><span class="lineNum">     419</span>              :    *</span>
-<span id="L420"><span class="lineNum">     420</span>              :    * Not `pass grep`: that enumerates with `find -L`, which follows a link</span>
-<span id="L421"><span class="lineNum">     421</span>              :    * out of the store and decrypts what it finds there. Same pattern</span>
-<span id="L422"><span class="lineNum">     422</span>              :    * semantics as ImitatePass::Grep (QRegularExpression).</span>
-<span id="L423"><span class="lineNum">     423</span>              :    * @param pattern Search pattern (QRegularExpression).</span>
-<span id="L424"><span class="lineNum">     424</span>              :    * @param caseInsensitive true for case-insensitive search.</span>
-<span id="L425"><span class="lineNum">     425</span>              :    */</span>
-<span id="L426"><span class="lineNum">     426</span>              :   void Grep(QString pattern, bool caseInsensitive) override;</span>
-<span id="L427"><span class="lineNum">     427</span>              :   /**</span>
-<span id="L428"><span class="lineNum">     428</span>              :    * @brief Stop the running search (NativeGrep::cancel()).</span>
+<span id="L354"><span class="lineNum">     354</span>              :   void GitPull_b() override;</span>
+<span id="L355"><span class="lineNum">     355</span>              :   /**</span>
+<span id="L356"><span class="lineNum">     356</span>              :    * @brief Push changes to remote.</span>
+<span id="L357"><span class="lineNum">     357</span>              :    */</span>
+<span id="L358"><span class="lineNum">     358</span>              :   void GitPush() override;</span>
+<span id="L359"><span class="lineNum">     359</span>              : </span>
+<span id="L360"><span class="lineNum">     360</span>              :   // Password operations</span>
+<span id="L361"><span class="lineNum">     361</span>              :   /**</span>
+<span id="L362"><span class="lineNum">     362</span>              :    * @brief Show decrypted password.</span>
+<span id="L363"><span class="lineNum">     363</span>              :    * @param file Path to password file.</span>
+<span id="L364"><span class="lineNum">     364</span>              :    */</span>
+<span id="L365"><span class="lineNum">     365</span>              :   void Show(QString file) override;</span>
+<span id="L366"><span class="lineNum">     366</span>              :   /**</span>
+<span id="L367"><span class="lineNum">     367</span>              :    * @brief Insert new password.</span>
+<span id="L368"><span class="lineNum">     368</span>              :    * @param file Path to password file.</span>
+<span id="L369"><span class="lineNum">     369</span>              :    * @param newValue Password content.</span>
+<span id="L370"><span class="lineNum">     370</span>              :    * @param overwrite true to overwrite existing.</span>
+<span id="L371"><span class="lineNum">     371</span>              :    */</span>
+<span id="L372"><span class="lineNum">     372</span>              :   void Insert(QString file, QString newValue, bool overwrite) override;</span>
+<span id="L373"><span class="lineNum">     373</span>              :   /**</span>
+<span id="L374"><span class="lineNum">     374</span>              :    * @brief Remove an entry or folder with `pass rm`.</span>
+<span id="L375"><span class="lineNum">     375</span>              :    *</span>
+<span id="L376"><span class="lineNum">     376</span>              :    * A folder that is a link is unlinked here instead, without deleting its</span>
+<span id="L377"><span class="lineNum">     377</span>              :    * target; that removal is committed only when Git is enabled and the</span>
+<span id="L378"><span class="lineNum">     378</span>              :    * tracking lookup and index removal both report success.</span>
+<span id="L379"><span class="lineNum">     379</span>              :    * @param file Store-relative entry path, without `.gpg` for a password</span>
+<span id="L380"><span class="lineNum">     380</span>              :    *        file.</span>
+<span id="L381"><span class="lineNum">     381</span>              :    * @param isDir true to remove a directory; false to remove a password</span>
+<span id="L382"><span class="lineNum">     382</span>              :    *        file.</span>
+<span id="L383"><span class="lineNum">     383</span>              :    */</span>
+<span id="L384"><span class="lineNum">     384</span>              :   void Remove(QString file, bool isDir) override;</span>
+<span id="L385"><span class="lineNum">     385</span>              :   /**</span>
+<span id="L386"><span class="lineNum">     386</span>              :    * @brief Initialize password store.</span>
+<span id="L387"><span class="lineNum">     387</span>              :    * @param path Store root path.</span>
+<span id="L388"><span class="lineNum">     388</span>              :    * @param users GPG recipients.</span>
+<span id="L389"><span class="lineNum">     389</span>              :    */</span>
+<span id="L390"><span class="lineNum">     390</span>              :   void Init(QString path, const QList&lt;UserInfo&gt; &amp;users) override;</span>
+<span id="L391"><span class="lineNum">     391</span>              : </span>
+<span id="L392"><span class="lineNum">     392</span>              : protected:</span>
+<span id="L393"><span class="lineNum">     393</span>              :   /**</span>
+<span id="L394"><span class="lineNum">     394</span>              :    * @brief Finish a process; a linked-folder removal commit (GIT_COMMIT,</span>
+<span id="L395"><span class="lineNum">     395</span>              :    * which RealPass uses for nothing else) is judged by finishLinkCommit().</span>
+<span id="L396"><span class="lineNum">     396</span>              :    * @param id Process identifier.</span>
+<span id="L397"><span class="lineNum">     397</span>              :    * @param exitCode Exit code.</span>
+<span id="L398"><span class="lineNum">     398</span>              :    * @param out Standard output.</span>
+<span id="L399"><span class="lineNum">     399</span>              :    * @param err Standard error.</span>
+<span id="L400"><span class="lineNum">     400</span>              :    */</span>
+<span id="L401"><span class="lineNum">     401</span>              :   void finished(int id, int exitCode, const QString &amp;out,</span>
+<span id="L402"><span class="lineNum">     402</span>              :                 const QString &amp;err) override;</span>
+<span id="L403"><span class="lineNum">     403</span>              : </span>
+<span id="L404"><span class="lineNum">     404</span>              :   // Pass interface</span>
+<span id="L405"><span class="lineNum">     405</span>              : public:</span>
+<span id="L406"><span class="lineNum">     406</span>              :   /**</span>
+<span id="L407"><span class="lineNum">     407</span>              :    * @brief Move password file or directory.</span>
+<span id="L408"><span class="lineNum">     408</span>              :    * @param src Source path.</span>
+<span id="L409"><span class="lineNum">     409</span>              :    * @param dest Destination path.</span>
+<span id="L410"><span class="lineNum">     410</span>              :    * @param force Overwrite existing.</span>
+<span id="L411"><span class="lineNum">     411</span>              :    */</span>
+<span id="L412"><span class="lineNum">     412</span>              :   void Move(const QString src, const QString dest, const bool force) override;</span>
+<span id="L413"><span class="lineNum">     413</span>              :   /**</span>
+<span id="L414"><span class="lineNum">     414</span>              :    * @brief Copy password file or directory.</span>
+<span id="L415"><span class="lineNum">     415</span>              :    * @param src Source path.</span>
+<span id="L416"><span class="lineNum">     416</span>              :    * @param dest Destination path.</span>
+<span id="L417"><span class="lineNum">     417</span>              :    * @param force Overwrite existing.</span>
+<span id="L418"><span class="lineNum">     418</span>              :    */</span>
+<span id="L419"><span class="lineNum">     419</span>              :   void Copy(const QString src, const QString dest, const bool force) override;</span>
+<span id="L420"><span class="lineNum">     420</span>              :   /**</span>
+<span id="L421"><span class="lineNum">     421</span>              :    * @brief Search all password content by GPG-decrypting each real `.gpg`</span>
+<span id="L422"><span class="lineNum">     422</span>              :    * file, as ImitatePass does.</span>
+<span id="L423"><span class="lineNum">     423</span>              :    *</span>
+<span id="L424"><span class="lineNum">     424</span>              :    * Not `pass grep`: that enumerates with `find -L`, which follows a link</span>
+<span id="L425"><span class="lineNum">     425</span>              :    * out of the store and decrypts what it finds there. Same pattern</span>
+<span id="L426"><span class="lineNum">     426</span>              :    * semantics as ImitatePass::Grep (QRegularExpression).</span>
+<span id="L427"><span class="lineNum">     427</span>              :    * @param pattern Search pattern (QRegularExpression).</span>
+<span id="L428"><span class="lineNum">     428</span>              :    * @param caseInsensitive true for case-insensitive search.</span>
 <span id="L429"><span class="lineNum">     429</span>              :    */</span>
-<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">          24 :   void CancelGrep() override { m_grep.cancel(); }</span></span>
-<span id="L431"><span class="lineNum">     431</span>              : };</span>
-<span id="L432"><span class="lineNum">     432</span>              : </span>
-<span id="L433"><span class="lineNum">     433</span>              : #endif // SRC_REALPASS_H_</span>
+<span id="L430"><span class="lineNum">     430</span>              :   void Grep(QString pattern, bool caseInsensitive) override;</span>
+<span id="L431"><span class="lineNum">     431</span>              :   /**</span>
+<span id="L432"><span class="lineNum">     432</span>              :    * @brief Stop the running search (NativeGrep::cancel()).</span>
+<span id="L433"><span class="lineNum">     433</span>              :    */</span>
+<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">          24 :   void CancelGrep() override { m_grep.cancel(); }</span></span>
+<span id="L435"><span class="lineNum">     435</span>              : };</span>
+<span id="L436"><span class="lineNum">     436</span>              : </span>
+<span id="L437"><span class="lineNum">     437</span>              : #endif // SRC_REALPASS_H_</span>
         </pre>
               </td>
             </tr>

@@ -296,7 +296,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a1bc6a926665e62752e23f2f46efc2c90" id="r_a1bc6a926665e62752e23f2f46efc2c90"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1bc6a926665e62752e23f2f46efc2c90">unrecorded</a> (const QStringList &amp;paths, bool ignored) -&gt; QStringList</td></tr>
 <tr class="memdesc:a1bc6a926665e62752e23f2f46efc2c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">What git has not recorded at <code class="param">paths:</code> <span class="tt">git status --porcelain</span> lines, through <span class="tt">pass git</span>. Empty without Git, or when git cannot say.  <br /></td></tr>
 <tr class="memitem:a133e32f08f41de37b18f3aefa3953846" id="r_a133e32f08f41de37b18f3aefa3953846"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a133e32f08f41de37b18f3aefa3953846">refuseUnrecordedChanges</a> (const QStringList &amp;paths, const QStringList &amp;committing) -&gt; bool</td></tr>
-<tr class="memdesc:a133e32f08f41de37b18f3aefa3953846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse a <span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span>, <span class="tt">cp</span> or <span class="tt">insert</span> when <code class="param">paths</code> hold changes git has not recorded, or anything at all is staged in the repository it commits in. pass stages the folder it wrote with <span class="tt">git add</span> and then commits the whole index, so a plaintext export lying in the folder or staged anywhere, or files a failed pull wrote, would be committed and pushed along with the change. Ignored files are left alone, as <span class="tt">git add</span> leaves them.  <br /></td></tr>
+<tr class="memdesc:a133e32f08f41de37b18f3aefa3953846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse a <span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span>, <span class="tt">cp</span> or <span class="tt">insert</span> when <code class="param">paths</code> hold changes git has not recorded, or anything at all is staged in the repository it commits in. pass stages the folder it wrote with <span class="tt">git add</span> and then commits the whole index, so a plaintext export lying in the folder or staged anywhere, or files a failed pull wrote, would be committed and pushed along with the change. Ignored files are left alone, as <span class="tt">git add</span> leaves them. When the changes include untracked files a file manager writes by itself (<span class="tt">.DS_Store</span>, <span class="tt">Thumbs.db</span>), the message says which <span class="tt">.gitignore</span> lines keep them out for good, for the <span class="tt">.gitignore</span> of each repository that reports them (unless a deeper rule there un-ignores them again).  <br /></td></tr>
 <tr class="memitem:a696202ddae3220f4da5f416fdd350d74" id="r_a696202ddae3220f4da5f416fdd350d74"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a696202ddae3220f4da5f416fdd350d74">reportUnrecorded</a> (const QStringList &amp;paths)</td></tr>
 <tr class="memdesc:a696202ddae3220f4da5f416fdd350d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">After a <span class="tt">pass insert</span>, <span class="tt"><a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span> or <span class="tt">cp</span> that exited 0, say so when git did not record the entries it wrote: pass exits 0 whatever its <span class="tt">git add</span> and commit did (an entry a .gitignore matches, say), and an unrecorded entry is not pushed and a pull may overwrite it.  <br /></td></tr>
 <tr class="memitem:a2fd6d533c480d182529f809467a050eb" id="r_a2fd6d533c480d182529f809467a050eb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2fd6d533c480d182529f809467a050eb">refuseIgnoredThatMoves</a> (const QString &amp;src, const QString &amp;dest) -&gt; bool</td></tr>
@@ -504,7 +504,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a109a1abbd06afe20ed85c2fc9b46427c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00430">430</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00434">434</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -563,7 +563,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false when git could not say. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00534">534</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00600">600</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
@@ -623,7 +623,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00955">955</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01021">1021</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -665,7 +665,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The hash; empty when <code class="param">path</code> is no readable regular file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00660">660</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00726">726</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -735,7 +735,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01044">1044</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01110">1110</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
@@ -801,7 +801,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00751">751</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00817">817</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -853,7 +853,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00873">873</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00939">939</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
@@ -1055,7 +1055,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01033">1033</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01099">1099</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -1103,7 +1103,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00900">900</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00966">966</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
@@ -1157,7 +1157,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00581">581</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00647">647</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary">
 </div>
@@ -1201,7 +1201,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00642">642</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00708">708</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
@@ -1297,7 +1297,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00951">951</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01017">1017</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
@@ -1343,7 +1343,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00607">607</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00673">673</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary">
 </div>
@@ -1413,7 +1413,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00969">969</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01035">1035</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-29-summary" class="dynsummary">
 </div>
@@ -1466,7 +1466,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The store-relative name. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00959">959</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01025">1025</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary">
 </div>
@@ -1519,7 +1519,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on a failure; false without any status line, since then the option did not reach gpg and there is nothing to judge by. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00804">804</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00870">870</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
@@ -1566,7 +1566,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00450">450</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00516">516</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-34-summary" class="dynsummary">
 </div>
@@ -1680,7 +1680,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Refuse a <span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span>, <span class="tt">cp</span> or <span class="tt">insert</span> when <code class="param">paths</code> hold changes git has not recorded, or anything at all is staged in the repository it commits in. pass stages the folder it wrote with <span class="tt">git add</span> and then commits the whole index, so a plaintext export lying in the folder or staged anywhere, or files a failed pull wrote, would be committed and pushed along with the change. Ignored files are left alone, as <span class="tt">git add</span> leaves them. </p>
+<p>Refuse a <span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span>, <span class="tt">cp</span> or <span class="tt">insert</span> when <code class="param">paths</code> hold changes git has not recorded, or anything at all is staged in the repository it commits in. pass stages the folder it wrote with <span class="tt">git add</span> and then commits the whole index, so a plaintext export lying in the folder or staged anywhere, or files a failed pull wrote, would be committed and pushed along with the change. Ignored files are left alone, as <span class="tt">git add</span> leaves them. When the changes include untracked files a file manager writes by itself (<span class="tt">.DS_Store</span>, <span class="tt">Thumbs.db</span>), the message says which <span class="tt">.gitignore</span> lines keep them out for good, for the <span class="tt">.gitignore</span> of each repository that reports them (unless a deeper rule there un-ignores them again). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">paths</td><td>Absolute paths in the store that pass will stage; empty for none (an insert stages its own entry alone). </td></tr>
@@ -1690,7 +1690,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00395">395</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00423">423</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-38-summary" class="dynsummary">
 </div>
@@ -1851,7 +1851,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00672">672</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00738">738</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-44-summary" class="dynsummary">
 </div>
@@ -1903,7 +1903,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00838">838</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00904">904</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-45" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-45-summary" class="dynsummary">
 </div>
@@ -1950,7 +1950,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00431">431</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00497">497</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary">
 </div>
@@ -2282,7 +2282,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>One of those pushes was asked for by hand: it goes despite a hold. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00311">311</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00315">315</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2333,7 +2333,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The insert whose completion is being handled. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00299">299</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00303">303</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2358,7 +2358,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The inserts that left the queue and have yet to complete, in the order their completions come: a failed start's error is posted, and the next insert may start before it arrives. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00297">297</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00301">301</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2384,7 +2384,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The entries of the queued inserts, oldest first. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00293">293</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00297">297</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2434,7 +2434,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>A push was asked for while an init, move or copy was queued or running: <a class="el" href="#aaaf6e02c8547397a5b1da80e45cebea2" title="Once the last queued init, move or copy has completed, make the push asked for meanwhile (GitPush())....">sendDeferredPush()</a> makes it once they have completed. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00309">309</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00313">313</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2459,7 +2459,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The scopes of the inits, moves and copies that left the queue and have yet to complete, in completion order; one the executor drops never gets here, so it cannot pair with a later command's completion. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00306">306</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00310">310</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2484,7 +2484,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>What each queued init, move or copy re-encrypts (its folder, or the destination), oldest first, for the push hold. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00302">302</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00306">306</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
