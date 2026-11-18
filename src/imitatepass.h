@@ -733,6 +733,7 @@ private:
    * flight on a shared store; a 1.8.x `<entry>.reencrypt.bak` whose original
    * is missing is put back, one next to a present original is reported and
    * left alone (both are valid ciphertexts, the choice is the user's).
+   * Whatever needs a human is reported in one critical(), the list capped.
    * @param dir Directory to scan, recursively.
    * @return false when something was reported that needs a human first.
    */
@@ -749,14 +750,17 @@ private:
    * missing; report it when both exist (both are valid ciphertexts, the
    * choice is the user's) or when the rename fails.
    * @param path The `<entry>.reencrypt.bak` file.
+   * @param problems Gets what to tell the user, if anything.
    * @return Whether nothing needs a human first.
    */
-  auto restoreBackup(const QString &path) -> bool;
+  auto restoreBackup(const QString &path, QStringList &problems) -> bool;
   /**
-   * @brief Tell the user a leftover is not a regular file and was left.
+   * @brief Note for the user that a leftover is not a regular file and was
+   * left.
    * @param path The leftover.
+   * @param problems Gets the sentence for it.
    */
-  void reportUnrestorable(const QString &path);
+  void reportUnrestorable(const QString &path, QStringList &problems);
   /**
    * @brief Report the outcome of a run and emit endReencryptPath().
    * @param result Outcome produced by reencryptFiles().

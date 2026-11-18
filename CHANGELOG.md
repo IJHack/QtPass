@@ -958,6 +958,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the previous recipients, a key just removed among them, while the run
   reported success. Hidden folders (`.git`, a sync tool's `.stversions`)
   are still not entered (scan finding ANT-2026-4DLI3Z4U)
+- With the native backend, the leftovers of an interrupted re-encryption
+  that need a look are listed in one message, at most 15 of them. Each one
+  opened its own box inside the one before, so a store with a few thousand
+  planted leftovers crashed QtPass (scan finding ANT-2026-D7NRESWW)
 - "Hide on close" and "Start minimized" hide the window only into a tray
   icon. Without one (the tray icon switched off, or a desktop without a
   system tray) closing the window left QtPass running invisibly, with the
