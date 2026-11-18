@@ -6013,45 +6013,54 @@ void tst_mainwindow::backendErrorsArePlainText() {
 }
 
 /**
- * @brief A message box quoting tool output shows at most 40 lines and 4000
- *        characters, then an ellipsis, with the rest under "Show Details...":
- *        a pushed .gitattributes decided how much git printed, and a box
- *        laid out whole froze the window.
+ * @brief A message box quoting tool output longer than 40 lines or 4000
+ *        characters shows its start and its end with an ellipsis between,
+ *        and all of it under "Show Details..." (past 256 KB its start and
+ *        end): a pushed .gitattributes decided how much git printed, a box
+ *        laid out whole froze the window, and git puts "fatal: ..." last.
  */
 void tst_mainwindow::aMessageBoxShowsABoundedText() {
+  const QString ellipsis =
+      QStringLiteral("\n") + QChar(0x2026) + QStringLiteral("\n");
+  const auto show = [this](const QString &text) {
+    ModalDriver driver(answerBox(QMessageBox::Ok));
+    PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"), text);
+    return qMakePair(driver.boxTexts.value(0), driver.boxDetails.value(0));
+  };
   QStringList many;
   for (int i = 0; i < 5000; ++i) {
     many << QStringLiteral("warning: line %1").arg(i);
   }
-  const QString ellipsis(QChar(0x2026));
-  {
-    ModalDriver driver(answerBox(QMessageBox::Ok));
-    PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"),
-                             many.join(QLatin1Char('\n')));
-    QCOMPARE(driver.seen, 1);
-    const QString text = driver.boxTexts.value(0);
-    QCOMPARE(text.count(QLatin1Char('\n')), 40);
-    QVERIFY(text.endsWith(ellipsis));
-    // The rest is under "Show Details...", as not all output reaches the
-    // Process Output panel.
-    QCOMPARE(driver.boxDetails.value(0), many.join(QLatin1Char('\n')));
-  }
-  {
-    ModalDriver driver(answerBox(QMessageBox::Ok));
-    PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"),
-                             QString(10000, QLatin1Char('x')));
-    const QString text = driver.boxTexts.value(0);
-    QCOMPARE(text.size(), 4002);
-    QVERIFY(text.endsWith(ellipsis));
-  }
-  {
-    // A short message is left as it is.
-    ModalDriver driver(answerBox(QMessageBox::Ok));
-    PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"),
-                             QStringLiteral("one\ntwo"));
-    QCOMPARE(driver.boxTexts.value(0), QStringLiteral("one\ntwo"));
-    QVERIFY(driver.boxDetails.value(0).isEmpty());
-  }
+  many << QStringLiteral("fatal: the real cause");
+  const QString lines = many.join(QLatin1Char('\n'));
+  auto [text, details] = show(lines);
+  QVERIFY(text.startsWith(QStringLiteral("warning: line 0\n")));
+  QVERIFY(text.contains(ellipsis));
+  QVERIFY(text.endsWith(QStringLiteral("fatal: the real cause")));
+  QCOMPARE(text.count(QLatin1Char('\n')), 40);
+  QCOMPARE(details, lines);
+
+  // One long line: its start and end, 2000 characters each.
+  const QString wide = QString(10000, QLatin1Char('x'));
+  std::tie(text, details) = show(wide);
+  QCOMPARE(text.size(), 4003);
+  QCOMPARE(details, wide);
+  // Just past the limit: cut, and the details still hold it all.
+  const QString justOver = QString(4002, QLatin1Char('y'));
+  std::tie(text, details) = show(justOver);
+  QVERIFY(text.contains(ellipsis));
+  QCOMPARE(details, justOver);
+  // Past 256 KB the details keep the start and the end too.
+  const QString huge = QString(300 * 1024, QLatin1Char('z')) +
+                       QStringLiteral("\nfatal: at the end");
+  std::tie(text, details) = show(huge);
+  QVERIFY(text.endsWith(QStringLiteral("fatal: at the end")));
+  QVERIFY(details.endsWith(QStringLiteral("fatal: at the end")));
+  QVERIFY(details.size() <= 256 * 1024 + 3);
+  // A short message is left as it is, with no details.
+  std::tie(text, details) = show(QStringLiteral("one\ntwo"));
+  QCOMPARE(text, QStringLiteral("one\ntwo"));
+  QVERIFY(details.isEmpty());
 }
 
 /**

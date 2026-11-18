@@ -909,9 +909,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   or copied, not whatever else was staged (scan finding ANT-2026-P6R5B5PK)
 - Git's error output in the first-run wizard and Settings is shown as plain
   text: a value quoted from a pushed .gitattributes could put markup and a
-  link into the box. Message boxes show at most 40 lines of such output,
-  with the rest under "Show Details..." (scan findings ANT-2026-V7X4M2B6,
-  ANT-2026-J1OLDGTJ)
+  link into the box. Longer such output shows its start and its end in the
+  box (git puts what went wrong last), and all of it under "Show
+  Details..." (scan findings ANT-2026-V7X4M2B6, ANT-2026-J1OLDGTJ)
 - Settings no longer hangs on a repository whose HEAD or .git is a link to
   a FIFO or a device (scan finding ANT-2026-0KZE41ZD)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
