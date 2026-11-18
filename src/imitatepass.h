@@ -624,6 +624,8 @@ private:
     QString src;      ///< What was moved.
     QString destFile; ///< Where to: the entry's `.gpg` file, or the folder.
     QString fromList; ///< The `.gpg-id` that applied to it before.
+    /// Whether its git mv succeeded, once that has run (finished()).
+    std::optional<bool> landed;
   };
   /// Moves through Git, in order, each settled when its PASS_MOVE ends.
   QQueue<PendingMove> m_pendingMoves;
@@ -651,6 +653,16 @@ private:
    * @param move The move, as Move() recorded it.
    */
   void reencryptMoved(const PendingMove &move);
+  /**
+   * @brief Refuse a move of @p src to @p destFile that touches what an
+   * earlier move or a re-encryption still has to settle: moving it again
+   * meanwhile would leave the run for the place it is no longer at.
+   * @param src What is to be moved.
+   * @param destFile Where to, as resolveMoveDestination() gave it.
+   * @return true if refused (the user told).
+   */
+  auto refuseOverlappingMove(const QString &src, const QString &destFile)
+      -> bool;
   /// Background search over the decrypted store; relays to finishedGrep.
   NativeGrep m_grep;
   /**

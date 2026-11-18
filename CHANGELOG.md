@@ -966,8 +966,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   other recipients is re-encrypted for them, as `pass mv` does: only what
   moved, once the move has run. It stayed readable for the recipients of
   the folder it came from. A rename, or a folder with a `.gpg-id` of its
-  own, keeps its recipients and is not re-encrypted (scan finding
-  ANT-2026-04TL734H)
+  own, keeps its recipients and is not re-encrypted. Moving something
+  again while an earlier move or its re-encryption has not finished (into
+  a folder a queued move creates, or the folder an entry was just moved
+  into) is refused until it has (scan finding ANT-2026-04TL734H)
 - With the native backend, a move, copy or delete that is refused or fails
   shows its message after the Git commands are queued, not while they are.
   An entry opened while that message was open came back as the output of

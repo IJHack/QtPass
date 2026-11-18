@@ -15,6 +15,7 @@
 
 #include <algorithm>
 #include <functional>
+#include <utility>
 
 #include <QAbstractItemModel>
 #include <QCoreApplication>
@@ -1273,7 +1274,9 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   for (const QString &name :
        {QStringLiteral("a"), QStringLiteral("b"), QStringLiteral("c"),
-        QStringLiteral("d"), QStringLiteral("own/kept")}) {
+        QStringLiteral("d"), QStringLiteral("f"), QStringLiteral("g"),
+        QStringLiteral("h"), QStringLiteral("i"), QStringLiteral("j"),
+        QStringLiteral("own/kept")}) {
     QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
     pass.Insert(name, QStringLiteral("r\n"), false);
     QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
@@ -1286,11 +1289,19 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
   QSignalSpy critical(&pass, &Pass::critical);
   QSignalSpy started(&pass, &ImitatePass::startReencryptPath);
   QSignalSpy ended(&pass, &ImitatePass::endReencryptPath);
-  // Both queued before either runs: team does not exist yet when the
-  // entry's move is asked for, the folder move creates it.
+  QSignalSpy movedSpy(&pass, &Pass::finishedMove);
+  // A move into what a queued move is still to create: refused, as
+  // which list applies there is not known yet. Once that has run it goes.
   pass.Move(store.filePath("own"), store.filePath("team"), false);
   pass.Move(store.filePath("a.gpg"), store.filePath("team/a.gpg"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains("still being moved"),
+           qPrintable(critical.first().at(1).toString()));
+  QVERIFY(QFile::exists(store.filePath("a.gpg")));
+  QVERIFY(waitForSignal(movedSpy, 30000));
   QCOMPARE(started.size(), 0);
+  critical.clear();
+  pass.Move(store.filePath("a.gpg"), store.filePath("team/a.gpg"), false);
   QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
   QCOMPARE(started.size(), 1);
   const QStringList ids =
@@ -1300,6 +1311,95 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
   QVERIFY2(critical.isEmpty(),
            qPrintable(critical.isEmpty() ? QString()
                                          : critical.first().at(1).toString()));
+
+  // Moving the folder an entry's run is still waiting for: refused, or the
+  // run would look for the entry where it no longer is. While the entry's
+  // move is queued, while its run is in flight, and while it waits behind
+  // another run.
+  const auto keyOf = [&](const QString &name) {
+    return recipientKeyIds(m_gnupgHome.path(), store.filePath(name));
+  };
+  const auto moveTeamAway = [&] {
+    pass.Move(store.filePath("team"), store.filePath("archive"), false);
+  };
+  started.clear();
+  ended.clear();
+  pass.Move(store.filePath("f.gpg"), store.filePath("team"), false);
+  moveTeamAway();
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
+
+  bool armed = true;
+  auto hook = connect(&pass, &ImitatePass::startReencryptPath, this, [&] {
+    if (std::exchange(armed, false)) {
+      moveTeamAway();
+    }
+  });
+  ended.clear();
+  pass.Move(store.filePath("h.gpg"), store.filePath("team"), false);
+  QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
+  disconnect(hook);
+  QCOMPARE(critical.size(), 2);
+
+  armed = true;
+  hook = connect(&pass, &ImitatePass::endReencryptPath, this, [&] {
+    if (std::exchange(armed, false)) {
+      moveTeamAway();
+    }
+  });
+  ended.clear();
+  pass.Move(store.filePath("i.gpg"), store.filePath("team"), false);
+  pass.Move(store.filePath("j.gpg"), store.filePath("team"), false);
+  QTRY_COMPARE_WITH_TIMEOUT(ended.size(), 2, 60000);
+  disconnect(hook);
+  QCOMPARE(critical.size(), 3);
+  QVERIFY(QFileInfo(store.filePath("team")).isDir());
+  for (const QString &name :
+       {QStringLiteral("team/f.gpg"), QStringLiteral("team/h.gpg"),
+        QStringLiteral("team/i.gpg"), QStringLiteral("team/j.gpg")}) {
+    const QStringList now = keyOf(name);
+    QVERIFY2(now.contains(sub2) && !now.contains(sub1),
+             qPrintable(name + ": " + now.join(',')));
+  }
+  critical.clear();
+
+  // A git mv that fails moves nothing, even when an earlier step took its
+  // source away: the entry under the destination name stays as it is. Git
+  // through a wrapper that holds `rm` back a second, so the source is still
+  // there when the move is asked for.
+  QTemporaryDir wrapDir;
+  QVERIFY(wrapDir.isValid());
+  const QString wrapper = wrapDir.filePath("git");
+  {
+    QFile script(wrapper);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write("#!/bin/sh\ncase \" $* \" in *\" rm \"*) sleep 1;; esac\n"
+                 "exec \"" +
+                 gitExe.toUtf8() + "\" \"$@\"\n");
+    script.close();
+    QVERIFY(script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                                  QFile::ExeOwner));
+  }
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = wrapper;
+    pass.init(s);
+    pass.updateEnv();
+  }
+  started.clear();
+  QSignalSpy failedMove(&pass, &Pass::processErrorExit);
+  pass.Remove(QStringLiteral("g"), false);
+  QVERIFY(QFile::exists(store.filePath("g.gpg")));
+  pass.Move(store.filePath("g.gpg"), store.filePath("team/kept.gpg"), true);
+  QVERIFY2(waitForSignal(failedMove, 30000), "git mv failed");
+  QTest::qWait(300);
+  QCOMPARE(started.size(), 0);
+  QVERIFY(!QFile::exists(store.filePath("g.gpg")));
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
 
   // git mv refuses a file Git does not track: nothing moved, so the entry
   // under the destination name is not re-encrypted.

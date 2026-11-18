@@ -1740,12 +1740,17 @@ void ImitatePass::Move(const QString src, const QString dest,
     return;
   }
 
+  if (refuseOverlappingMove(src, destFile)) {
+    return;
+  }
+
   qCDebug(lcQtPass) << "Move Source: " << src;
   qCDebug(lcQtPass) << "Move Destination: " << destFile;
 
   const bool folder = QFileInfo(src).isDir();
-  const PendingMove move{
-      src, destFile, QDir::cleanPath(getGpgIdPath(src, m_settings.passStore))};
+  PendingMove move{src, destFile,
+                   QDir::cleanPath(getGpgIdPath(src, m_settings.passStore)),
+                   std::nullopt};
 
   if (gitReady()) {
     // Settled in finished() once the move's commands have run: only then
@@ -1768,14 +1773,53 @@ void ImitatePass::Move(const QString src, const QString dest,
                   tr("Could not move %1 to %2.").arg(src, destFile));
     return;
   }
+  move.landed = true;
   reencryptMoved(move);
   startMovedReencrypts();
 }
 
+auto ImitatePass::refuseOverlappingMove(const QString &src,
+                                        const QString &destFile) -> bool {
+#ifdef Q_OS_WIN
+  constexpr auto cs = Qt::CaseInsensitive;
+#else
+  constexpr auto cs = Qt::CaseSensitive;
+#endif
+  // The same path, or one inside the other.
+  const auto overlap = [](const QString &a, const QString &b) {
+    const QString x = QDir::cleanPath(a);
+    const QString y = QDir::cleanPath(b);
+    return x.compare(y, cs) == 0 || x.startsWith(y + QLatin1Char('/'), cs) ||
+           y.startsWith(x + QLatin1Char('/'), cs);
+  };
+  QStringList busy = m_movedToReencrypt;
+  for (const PendingMove &move : std::as_const(m_pendingMoves)) {
+    busy << move.src << move.destFile;
+  }
+  if (m_reencryptActive) {
+    busy << m_reencryptScope;
+  }
+  for (const QString &path : std::as_const(busy)) {
+    if (overlap(path, src) || overlap(path, destFile)) {
+      emit critical(tr("Move not started"),
+                    tr("%1 is still being moved or re-encrypted. Move it "
+                       "again once that has finished.")
+                        .arg(QDir::toNativeSeparators(QDir::cleanPath(path))));
+      return true;
+    }
+  }
+  return false;
+}
+
 void ImitatePass::reencryptMoved(const PendingMove &move) {
-  // What is on disk now decides: a move that did not happen (git mv
-  // refused an existing name) leaves its source, and re-encrypting the
-  // destination would rewrite the entry that was there.
+  // A git mv that failed moved nothing, whatever is on disk now (an earlier
+  // step may have taken the source away).
+  if (move.landed == false) {
+    return;
+  }
+  // And what is on disk decides: a move that did not happen leaves its
+  // source, and re-encrypting the destination would rewrite the entry that
+  // was there.
   const QFileInfo landed(move.destFile);
   if (QFileInfo::exists(move.src) || !landed.exists() ||
       Util::isLinkedFolder(move.destFile)) {
@@ -1904,6 +1948,16 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
                            const QString &err) {
   qCDebug(lcQtPass) << "Imitate Pass";
   QString error = err;
+  // A move's git mv runs first in its transaction, so in order: the first
+  // pending move without an answer is this one's.
+  if (id == GIT_MOVE) {
+    for (PendingMove &move : m_pendingMoves) {
+      if (!move.landed) {
+        move.landed = exitCode == 0;
+        break;
+      }
+    }
+  }
   if (id == PASS_INSERT && !m_pendingInserts.isEmpty()) {
     // Insert()'s gpg step: place the ciphertext before the queued git steps
     // run (the executor starts the next item only after this returns). On
