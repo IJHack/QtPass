@@ -373,7 +373,11 @@ auto ProfileInit::commitGpgId(const QString &dir, const QString &gpgIdFile,
   if (!sigFile.isEmpty()) {
     files << QFileInfo(sigFile).fileName();
   }
-  // initialise() refused what git could wait on before writing these.
+  // initialise() checked before writing these; again here, as signing can
+  // take a while and the folder is shared.
+  if (refusedForGit(dir, files, note)) {
+    return false;
+  }
   const QStringList add =
       QStringList{QStringLiteral("add"), QStringLiteral("--")} + files;
   if (!run({QStringLiteral("init")}) || !run(add)) {

@@ -920,6 +920,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   regular file, or a Git repository in a sub-folder, is named and Git is not
   run, and `git init` and `git add` are stopped after two minutes (scan
   finding ANT-2026-Z32IO5YF)
+- Settings: when setting up a new profile's store fails, the `.gpg-id`
+  written before the failure is removed again, as the first-run wizard
+  does, so saving the profile again retries the set-up
 - With the native backend, re-encryption stops when the pull before it
   failed half-way through updating the store (the branch is still behind
   its upstream): those pulled files were committed as the backup, as the
