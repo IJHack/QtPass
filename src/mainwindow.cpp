@@ -474,16 +474,18 @@ auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
 
 void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
+  // setText() applies the current char format to the whole message. Start
+  // from an empty one: inherited from a cursor on a linkified URL it carried
+  // the anchor, and the message became a link to that address. No colour
+  // but red for an error, so text follows runtime light/dark switches (#946).
+  QTextCursor cursor = ui->textBrowser->textCursor();
+  cursor.clearSelection();
+  ui->textBrowser->setTextCursor(cursor);
+  QTextCharFormat format;
   if (isError) {
-    ui->textBrowser->setTextColor(Qt::red);
-  } else {
-    // setText() re-applies the current char format, red after an error, to
-    // the whole document. Clear the foreground rather than pin a palette
-    // colour, so text follows runtime light/dark switches (#946).
-    QTextCharFormat format = ui->textBrowser->currentCharFormat();
-    format.clearForeground();
-    ui->textBrowser->setCurrentCharFormat(format);
+    format.setForeground(QColor(Qt::red));
   }
+  ui->textBrowser->setCurrentCharFormat(format);
 
   if (isHtml) {
     QString _text = text;
@@ -735,7 +737,11 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
     clearPanelTimer.start();
   }
 
-  flashText(QtPass::formatOutput(output), false, true);
+  // Shown as it is, the text holds the password and every secret field: no
+  // links in it, or a click on a URL-shaped one handed it to the browser.
+  flashText(QtPass::formatOutput(output, QString(), QString(),
+                                 !s.displayAsIs || s.hideContent),
+            false, true);
   setUiElementsEnabled(true);
 }
 

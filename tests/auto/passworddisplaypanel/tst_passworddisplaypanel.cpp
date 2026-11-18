@@ -53,6 +53,7 @@ private Q_SLOTS:
   void otpCodeMatchesRfcVectorForPinnedTime();
   void otpCopyButtonEmitsCurrentCode();
   void otpRowHonoursClipboardNever();
+  void aShownSecretIsNeverALink();
   void otpRowSurvivesClearWithoutCrashing();
   void duplicateOtpFieldsRenderOneRow();
   void currentOtpCodeReturnsDisplayedCode();
@@ -510,6 +511,35 @@ void tst_passworddisplaypanel::otpCopyButtonEmitsCurrentCode() {
 }
 
 /// CLIPBOARD_NEVER must not put the code on a copy button at all.
+/**
+ * @brief A shown password or other secret is never a link: a click on a
+ *        URL-shaped one handed it to the browser. Other fields still are.
+ */
+void tst_passworddisplaypanel::aShownSecretIsNeverALink() {
+  AppSettings s;
+  s.hidePassword = false;
+  const QString url = QStringLiteral("https://example.org/?p=s3cret");
+  m_panel->displayFields(
+      url,
+      NamedValues{{QStringLiteral("pin"), url}, {QStringLiteral("url"), url}},
+      s);
+  const auto browser = [this](const QString &name) {
+    return m_parent->findChild<QTextBrowser *>(name);
+  };
+  for (const QString &name :
+       {QStringLiteral("Password"), QStringLiteral("pin")}) {
+    QTextBrowser *b = browser(name);
+    QVERIFY2(b != nullptr, qPrintable(name));
+    QVERIFY2(!b->toHtml().contains(QStringLiteral("<a href")),
+             qPrintable(name));
+    QCOMPARE(b->toPlainText(), url);
+  }
+  QVERIFY(browser(QStringLiteral("url")) != nullptr);
+  QVERIFY(browser(QStringLiteral("url"))
+              ->toHtml()
+              .contains(QStringLiteral("<a href")));
+}
+
 void tst_passworddisplaypanel::otpRowHonoursClipboardNever() {
   AppSettings s;
   s.clipBoardType = Enums::CLIPBOARD_NEVER;

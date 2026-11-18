@@ -62,10 +62,13 @@ public:
    * @param output Plain text from a process.
    * @param prefix HTML placed before the converted output.
    * @param postfix HTML placed after it.
+   * @param links Make launchable http(s) URLs links; off for text that
+   *        holds the password (the entry shown as it is).
    * @return The HTML.
    */
   static auto formatOutput(QString output, const QString &prefix = QString(),
-                           const QString &postfix = QString()) -> QString;
+                           const QString &postfix = QString(),
+                           bool links = true) -> QString;
 
   /**
    * @brief Create a frameless popup dialog, placed at the cursor, showing the

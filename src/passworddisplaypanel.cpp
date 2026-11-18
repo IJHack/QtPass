@@ -138,9 +138,10 @@ constexpr int kFieldHeight = 26;
 /// A read-only, one-line browser showing @p value. Only launchable http(s)
 /// URLs become anchors (the open-in-browser button's predicate):
 /// setOpenExternalLinks() would hand ssh://, ftp:// or user:pass@ URLs
-/// straight to the OS URL handler on click.
+/// straight to the OS URL handler on click. With @p links false nothing
+/// does: a secret is shown, never opened.
 auto valueBrowser(const QString &field, const QString &value,
-                  const QString &lineStyle) -> SecretTextBrowser * {
+                  const QString &lineStyle, bool links) -> SecretTextBrowser * {
   auto *browser = new SecretTextBrowser();
   browser->setOpenExternalLinks(true);
   browser->setOpenLinks(true);
@@ -153,7 +154,8 @@ auto valueBrowser(const QString &field, const QString &value,
   // 65536 spaces; the copy button still gets the value itself.
   const QString shown = Util::boundSpaceRuns(value);
   bool linked = false;
-  const QString linkedText = Util::linkifyUrls(shown, &linked);
+  const QString linkedText =
+      links ? Util::linkifyUrls(shown, &linked) : QString();
   if (linked) {
     // Always HTML here: the text is escaped and carries anchor tags, so do
     // not leave the interpretation to setText()'s auto-detection. With its
@@ -301,8 +303,16 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   if (hides(trimmedField, s)) {
     addHiddenPassword(frame->layout(), trimmedField, displayValue, lineStyle);
   } else {
+    // A password or another secret is never a link, also when shown: a
+    // click on a URL-shaped one handed it to the browser, its history and
+    // the command line of the URL handler.
+    AppSettings asHidden = s;
+    asHidden.hidePassword = true;
+    asHidden.hideSecretFields = true;
+    const bool secret = trimmedField == QObject::tr("Password") ||
+                        isSecret(trimmedField, asHidden);
     SecretTextBrowser *browser =
-        valueBrowser(trimmedField, displayValue, lineStyle);
+        valueBrowser(trimmedField, displayValue, lineStyle, !secret);
     connect(browser, &SecretTextBrowser::copied, this,
             &PasswordDisplayPanel::textCopied);
     frame->layout()->addWidget(browser);

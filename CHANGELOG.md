@@ -886,6 +886,17 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   ANT-2026-3BM3VV2Z)
 - Clearing the panel, as the autoclear does, also closes the QR code popup
   of the password (scan finding ANT-2026-TCCEFEJA)
+- A link in a shown entry reads as the address it opens: only plain ASCII
+  URLs become links, and with a link in the text, bidi override and isolate
+  controls show as the replacement character, so an override earlier in the
+  entry cannot draw the link reversed (scan findings ANT-2026-OVE9IV9D,
+  ANT-2026-T20GJXZU)
+- A shown password or other secret is never a clickable link: a click on a
+  URL-shaped one opened the browser with it. An entry shown as it is
+  ("Show the file content as-is") has no links at all, as its text holds the
+  password (scan finding ANT-2026-BSMYXPM7)
+- Messages in the entry panel ("No OTP code found") no longer become a
+  link to a URL of the entry shown before (scan finding ANT-2026-H7P77YAX)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old
