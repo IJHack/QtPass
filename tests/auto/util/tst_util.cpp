@@ -2844,23 +2844,32 @@ void tst_util::repositoryPassClimbsToNeverBlocksOnHead() {
   QVERIFY2(done, "the check blocked on HEAD");
   QVERIFY2(found.isEmpty(), qPrintable(found));
 
-  // git's own links still count: HEAD -> a ref file, and a .git link to a
-  // gitfile naming the repository.
+  // git's own links still count, as git judges them: a HEAD that links to
+  // "refs/..." (not read), but not one linking anywhere else, whatever the
+  // file there holds; and a .git link to a gitfile naming the repository.
   const auto writeFile = [](const QString &path, const QByteArray &bytes) {
     QFile f(path);
     return f.open(QIODevice::WriteOnly) && f.write(bytes) == bytes.size();
   };
-  QVERIFY(dir.mkpath(QStringLiteral("linked/.git/objects")));
-  QVERIFY(dir.mkpath(QStringLiteral("linked/.git/refs")));
-  QVERIFY(writeFile(dir.filePath(QStringLiteral("linked/.git/head-file")),
-                    "ref: refs/heads/main\n"));
-  QVERIFY(QFile::link(QStringLiteral("head-file"),
+  for (const char *name : {"linked", "elsewhere"}) {
+    QVERIFY(dir.mkpath(QLatin1String(name) + QStringLiteral("/.git/objects")));
+    QVERIFY(dir.mkpath(QLatin1String(name) + QStringLiteral("/.git/refs")));
+  }
+  QVERIFY(QFile::link(QStringLiteral("refs/heads/main"),
                       dir.filePath(QStringLiteral("linked/.git/HEAD"))));
   const QString linkedStore = dir.filePath(QStringLiteral("linked/c:d/store"));
   QVERIFY(QDir().mkpath(linkedStore));
   QCOMPARE(
       Util::repositoryPassClimbsTo(linkedStore),
       QFileInfo(dir.filePath(QStringLiteral("linked"))).canonicalFilePath());
+  QVERIFY(writeFile(dir.filePath(QStringLiteral("elsewhere/.git/head-file")),
+                    "ref: refs/heads/main\n"));
+  QVERIFY(QFile::link(QStringLiteral("head-file"),
+                      dir.filePath(QStringLiteral("elsewhere/.git/HEAD"))));
+  const QString elsewhereStore =
+      dir.filePath(QStringLiteral("elsewhere/g:h/store"));
+  QVERIFY(QDir().mkpath(elsewhereStore));
+  QVERIFY(Util::repositoryPassClimbsTo(elsewhereStore).isEmpty());
 
   QVERIFY(dir.mkpath(QStringLiteral("gitdir/objects")));
   QVERIFY(dir.mkpath(QStringLiteral("gitdir/refs")));

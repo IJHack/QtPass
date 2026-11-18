@@ -34,6 +34,7 @@
 #else
 #include <cerrno>
 #include <cstdio>
+#include <cstring>
 #include <dirent.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -247,12 +248,21 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
         !QFileInfo(dir.filePath(QStringLiteral("refs"))).isDir()) {
       return false;
     }
-    // Only a regular file, link or not (git takes HEAD -> refs/heads/main):
-    // a HEAD that is a link to a device or a FIFO (a pushed commit can carry
-    // a link) blocked the open and the read on the GUI thread when Settings
-    // opened.
+    // As git (setup.c, validate_headref()): a HEAD that is a link counts
+    // when the link text starts with "refs/", without reading what it
+    // names, and not otherwise. Anything else is read only when it is a
+    // regular file, without waiting: a HEAD that is a FIFO (a pushed commit
+    // can carry a link to one, or to a device) blocked the open and the
+    // read on the GUI thread when Settings opened.
+    const QString headPath = dir.filePath(QStringLiteral("HEAD"));
+    if (QFileInfo(headPath).isSymLink()) {
+      char target[256];
+      const ssize_t length = ::readlink(QFile::encodeName(headPath).constData(),
+                                        target, sizeof(target) - 1);
+      return length >= 5 && std::memcmp(target, "refs/", 5) == 0;
+    }
     QFile head;
-    if (!openFollowedRegularFile(dir.filePath(QStringLiteral("HEAD")), head)) {
+    if (!openFollowedRegularFile(headPath, head)) {
       return false;
     }
     static const QRegularExpression valid(
