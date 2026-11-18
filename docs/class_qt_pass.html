@@ -140,6 +140,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_qt_pass.
 Public Slots</h2></td></tr>
 <tr class="memitem:aef5aaf0605c7681967995ede486590ef" id="r_aef5aaf0605c7681967995ede486590ef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aef5aaf0605c7681967995ede486590ef">showTextAsQRCode</a> (const QString &amp;text)</td></tr>
 <tr class="memdesc:aef5aaf0605c7681967995ede486590ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported through <a class="el" href="#a21d53cbc4749f4f9aedb72b32e0b706a" title="A short message for the status bar.">statusMessage()</a>.  <br /></td></tr>
+<tr class="memitem:aaea72043a726c32e580650d090faba1f" id="r_aaea72043a726c32e580650d090faba1f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaea72043a726c32e580650d090faba1f">closeQRCode</a> ()</td></tr>
+<tr class="memdesc:aaea72043a726c32e580650d090faba1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the QR code popup <a class="el" href="#aef5aaf0605c7681967995ede486590ef" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...">showTextAsQRCode()</a> has open, if any: the autoclear of the panel takes the code it shows off the screen too.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -198,11 +200,13 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a2b93e09069f27c938b606431c890ff68" id="r_a2b93e09069f27c938b606431c890ff68"><td class="memItemLeft"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2b93e09069f27c938b606431c890ff68">m_clipboard</a></td></tr>
 <tr class="memdesc:a2b93e09069f27c938b606431c890ff68"><td class="mdescLeft">&#160;</td><td class="mdescRight">The clipboard handling for this application instance, exposed through <a class="el" href="#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance.">clipboard()</a>; parented to this object.  <br /></td></tr>
+<tr class="memitem:ae6de998eb4def80948028666b52b8d52" id="r_ae6de998eb4def80948028666b52b8d52"><td class="memItemLeft">QPointer&lt; QDialog &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae6de998eb4def80948028666b52b8d52">m_qrPopup</a></td></tr>
+<tr class="memdesc:ae6de998eb4def80948028666b52b8d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">The QR code popup while <a class="el" href="#aef5aaf0605c7681967995ede486590ef" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...">showTextAsQRCode()</a> has it open.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Application-level glue between the pass backends and whatever shows their results: turns the backends' completion signals into UI-neutral signals (formatted output, status messages, "the operation is over"), owns the <a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a>, migrates the settings of older versions on start-up and renders QR codes. It knows nothing about the main window; the window connects to the signals below. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00028">28</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00029">29</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa74fc7422261b27a790a0ea0d875fc7b" name="aa74fc7422261b27a790a0ea0d875fc7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa74fc7422261b27a790a0ea0d875fc7b">&#9670;&#160;</a></span>QtPass()</h2>
@@ -311,12 +315,47 @@ Private Attributes</h2></td></tr>
 <p>The clipboard handling for this application instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>The manager; lives as long as this object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00054">54</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00055">55</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
 <div id="dynsection-5-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa1918767cdefea447f1c90272fd95966_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aaea72043a726c32e580650d090faba1f" name="aaea72043a726c32e580650d090faba1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea72043a726c32e580650d090faba1f">&#9670;&#160;</a></span>closeQRCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::closeQRCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Close the QR code popup <a class="el" href="#aef5aaf0605c7681967995ede486590ef" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...">showTextAsQRCode()</a> has open, if any: the autoclear of the panel takes the code it shows off the screen too. </p>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00223">223</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aaea72043a726c32e580650d090faba1f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -353,16 +392,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00084">84</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
-</div>
-<div id="dynsection-6-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a81e0207207f490616dd442837a2469d4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
 <div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a81e0207207f490616dd442837a2469d4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a81e0207207f490616dd442837a2469d4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -400,11 +439,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to a QDialog showing the image; it deletes itself on close, the caller shows it. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00223">223</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00229">229</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
 </div>
-<div id="dynsection-8-content" class="dyncontent hidden">
+<div id="dynsection-9-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_abd2dacf3e88b411ef39ec78f49bbdd2d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -436,16 +475,16 @@ Private Attributes</h2></td></tr>
 <p>Emit <a class="el" href="#a61c4a373b679d83e94f3d48ac8850c5a" title="The store changed and the settings ask for an automatic push.">pushRequested()</a> when the settings ask for automatic push. </p>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00162">162</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
-</div>
-<div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ab7c71f983556835691ab2da4a51f5f9b_cgraph.svg" width="100%" height="593"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
 <div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ab7c71f983556835691ab2da4a51f5f9b_cgraph.svg" width="100%" height="593"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ab7c71f983556835691ab2da4a51f5f9b_icgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -475,10 +514,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>An entry was written; the view of the current entry is stale. </p>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
+<div id="dynsection-12-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a343ad459c6420baf92070a4e7a31ec6e_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -521,16 +560,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00129">129</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
-</div>
-<div id="dynsection-12-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a8f03731a98c5de1cc086c10479d63dbb_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
 <div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a8f03731a98c5de1cc086c10479d63dbb_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a8f03731a98c5de1cc086c10479d63dbb_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -580,16 +619,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The HTML. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00142">142</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
-</div>
-<div id="dynsection-14-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a32860d084409d781977736d6fb40d629_cgraph.svg" width="616" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary">
 </div>
 <div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a32860d084409d781977736d6fb40d629_cgraph.svg" width="616" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a32860d084409d781977736d6fb40d629_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -613,16 +652,16 @@ Private Attributes</h2></td></tr>
 <p>Resolve the password store and the executables and migrate the settings of an older version (fresh-install defaults, the native-OTP switch). Whether the resulting configuration is usable is the caller's question: see <a class="el" href="class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc" title="Verify that the required configuration is complete.">Util::configIsValid()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00031">31</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary">
-</div>
-<div id="dynsection-16-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa247e023d75a86e72f96617f3e8f2b65_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary">
 </div>
 <div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa247e023d75a86e72f96617f3e8f2b65_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa247e023d75a86e72f96617f3e8f2b65_icgraph.svg" width="631" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -665,16 +704,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00135">135</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary">
-</div>
-<div id="dynsection-18-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a951d0166f5aafa6f2c1fb37d584f0243_cgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary">
 </div>
 <div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a951d0166f5aafa6f2c1fb37d584f0243_cgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a951d0166f5aafa6f2c1fb37d584f0243_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -704,10 +743,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>A backend operation is over, successfully or not; the interface can be enabled again. </p>
-<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary">
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
 </div>
-<div id="dynsection-20-content" class="dyncontent hidden">
+<div id="dynsection-21-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a09c3a4f7b75656b6f79c90ffbabbf4cb_icgraph.svg" width="100%" height="499"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -743,10 +782,10 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary">
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
 </div>
-<div id="dynsection-21-content" class="dyncontent hidden">
+<div id="dynsection-22-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a83ed57a1825df0802c51314eccb963c6_icgraph.svg" width="100%" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -789,16 +828,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00124">124</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary">
-</div>
-<div id="dynsection-22-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa1153ea591126774caa31920020d188e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
 <div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa1153ea591126774caa31920020d188e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
+</div>
+<div id="dynsection-24-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa1153ea591126774caa31920020d188e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -841,16 +880,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00109">109</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary">
-</div>
-<div id="dynsection-24-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ae856718a4e0fdd5f200a655b291e5f04_cgraph.svg" width="100%" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary">
 </div>
 <div id="dynsection-25-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ae856718a4e0fdd5f200a655b291e5f04_cgraph.svg" width="100%" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
+</div>
+<div id="dynsection-26-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ae856718a4e0fdd5f200a655b291e5f04_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -893,16 +932,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00114">114</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary">
-</div>
-<div id="dynsection-26-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a40570e79464875930afd869223136a99_cgraph.svg" width="100%" height="415"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary">
 </div>
 <div id="dynsection-27-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a40570e79464875930afd869223136a99_cgraph.svg" width="100%" height="415"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
+</div>
+<div id="dynsection-28-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a40570e79464875930afd869223136a99_icgraph.svg" width="100%" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -932,10 +971,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The store changed and the settings ask for an automatic push. </p>
-<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary">
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
 </div>
-<div id="dynsection-28-content" class="dyncontent hidden">
+<div id="dynsection-29-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a61c4a373b679d83e94f3d48ac8850c5a_icgraph.svg" width="100%" height="406"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -978,16 +1017,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00098">98</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary">
-</div>
-<div id="dynsection-29-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a90e284bd33b10bf0407541d5c698f199_cgraph.svg" width="100%" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-30-summary" class="dynsummary">
 </div>
 <div id="dynsection-30-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a90e284bd33b10bf0407541d5c698f199_cgraph.svg" width="100%" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
+</div>
+<div id="dynsection-31-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a90e284bd33b10bf0407541d5c698f199_icgraph.svg" width="100%" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1025,16 +1064,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00179">179</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary">
-</div>
-<div id="dynsection-31-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aef5aaf0605c7681967995ede486590ef_cgraph.svg" width="100%" height="488"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-32-summary" class="dynsummary">
 </div>
 <div id="dynsection-32-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aef5aaf0605c7681967995ede486590ef_cgraph.svg" width="100%" height="488"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
+</div>
+<div id="dynsection-33-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aef5aaf0605c7681967995ede486590ef_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1075,10 +1114,10 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary">
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
 </div>
-<div id="dynsection-33-content" class="dyncontent hidden">
+<div id="dynsection-34-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a21d53cbc4749f4f9aedb72b32e0b706a_icgraph.svg" width="100%" height="466"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1107,7 +1146,33 @@ Private Attributes</h2></td></tr>
 
 <p>The clipboard handling for this application instance, exposed through <a class="el" href="#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance.">clipboard()</a>; parented to this object. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00119">119</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00125">125</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+
+</div>
+</div>
+<a id="ae6de998eb4def80948028666b52b8d52" name="ae6de998eb4def80948028666b52b8d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6de998eb4def80948028666b52b8d52">&#9670;&#160;</a></span>m_qrPopup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointer&lt;QDialog&gt; QtPass::m_qrPopup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The QR code popup while <a class="el" href="#aef5aaf0605c7681967995ede486590ef" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...">showTextAsQRCode()</a> has it open. </p>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00127">127</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>

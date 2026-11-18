@@ -65,13 +65,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9af1d4ac54357cc0932f385d56814ba7e4",
-"class_main_window.html#a8c981247a44bc74f5152c312c15a8a79",
-"class_password_dialog.html#a7f5de73194ff8f448c8f5efc1fa624c5",
-"class_secret_line_edit.html#a6e29923734219602f135750ef4b0ecc4",
-"class_util.html#acfa7240a7682876cf78d5a44bbbb81de",
-"pass_8cpp.html",
-"struct_password_configuration.html#a71920e2e29e1beca94502784de561a01afc48f773005a525f5b3a60d60d36018e"
+"class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32",
+"class_main_window.html#a8719b3a133e95915dd72b244db1e49bf",
+"class_password_dialog.html#a77f54fa5d5517a2a9e452ecca0ec00f5",
+"class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d",
+"class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5",
+"otpcodewidget_8cpp.html",
+"struct_password_configuration.html#a71920e2e29e1beca94502784de561a01"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

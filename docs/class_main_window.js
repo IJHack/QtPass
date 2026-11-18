@@ -9,6 +9,7 @@ var class_main_window =
     [ "applySearchText", "class_main_window.html#a2a80222ef73eb5c6d9350db559787488", null ],
     [ "applyTextBrowserSettings", "class_main_window.html#ac5705aca84795de049d9a0f0a0d5e3fb", null ],
     [ "applyWindowFlagsSettings", "class_main_window.html#a8c981247a44bc74f5152c312c15a8a79", null ],
+    [ "browserContextMenu", "class_main_window.html#aa24503cb5aa74e6f7153d6b9c941457d", null ],
     [ "cancelContentSearch", "class_main_window.html#acea360ee08a3087d30db0c94ae8306ad", null ],
     [ "cancelOtpRequest", "class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841", null ],
     [ "changeEvent", "class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad", null ],

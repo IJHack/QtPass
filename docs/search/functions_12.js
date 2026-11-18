@@ -11,7 +11,7 @@ var searchData=
   ['secondsremaining_8',['secondsRemaining',['../class_otp_code_widget.html#ab0d806d623337313c961d284a7ef2758',1,'OtpCodeWidget::secondsRemaining()'],['../class_totp.html#af449a258178c0fdc0f744be9bf2d6103',1,'Totp::secondsRemaining()']]],
   ['secretfieldsin_9',['secretFieldsIn',['../class_template_i_o.html#af8aac6eb0c68a90f03869c53606aa254',1,'TemplateIO']]],
   ['secretkeys_10',['secretKeys',['../class_first_run_wizard.html#aba1e75b404b0982f37637cde0f087cb9',1,'FirstRunWizard']]],
-  ['secretlineedit_11',['SecretLineEdit',['../class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c',1,'SecretLineEdit']]],
+  ['secretlineedit_11',['SecretLineEdit',['../class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c',1,'SecretLineEdit::SecretLineEdit(QWidget *parent=nullptr)'],['../class_secret_line_edit.html#ade6283b2fd4c83122d80943a6f9e8760',1,'SecretLineEdit::SecretLineEdit(const QString &amp;text, QWidget *parent=nullptr)']]],
   ['secretplaintextedit_12',['SecretPlainTextEdit',['../class_secret_plain_text_edit.html#a30bbdda25932ef4bf6f31427d806e7a2',1,'SecretPlainTextEdit']]],
   ['secrettextbrowser_13',['SecretTextBrowser',['../class_secret_text_browser.html#a1449b6999d563e78a670847cd6a1f6ef',1,'SecretTextBrowser']]],
   ['selectedusers_14',['selectedUsers',['../class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7',1,'UsersDialog']]],

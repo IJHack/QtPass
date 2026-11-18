@@ -1,71 +1,72 @@
 <map id="Pass::Insert" name="Pass::Insert">
-<area shape="rect" id="Node000001" title="Insert or update password." alt="" coords="3577,229,3672,257"/>
-<area shape="rect" id="Node000002" href="$class_password_dialog.html#a54dd6051718f6c7c72a1b8dba015db25" title="Start inserting what the dialog holds and wait for the result." alt="" coords="3366,229,3529,257"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3559,243,3530,246,3530,241,3564,243"/>
-<area shape="rect" id="Node000003" href="$class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736" title="OK: for a new entry, resolve and check the name first and stay open when it is not usable; then inser..." alt="" coords="3142,203,3318,230"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="3348,231,3318,230,3318,225,3353,231"/>
-<area shape="rect" id="Node000004" href="$class_password_dialog.html#aa09071e9cbd91dddfdaa865ec1b54687" title="Text was copied out of the password, a field or the body, marked as a secret: for ClipboardManager::t..." alt="" coords="3142,255,3318,282"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="3353,254,3318,261,3318,256,3348,255"/>
-<area shape="rect" id="Node000005" href="$class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c" title="Construct a PasswordDialog for editing an existing password file." alt="" coords="1553,170,1746,215"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="3146,246,3140,244,3128,229,3121,215,3116,186,3111,157,3104,144,3092,130,3047,93,3006,65,2966,45,2925,31,2883,23,2837,19,2725,18,2191,18,2080,13,1992,8,1950,10,1907,16,1859,29,1805,51,1762,76,1724,109,1692,142,1668,172,1666,167,1688,139,1720,105,1759,72,1802,46,1858,24,1906,11,1950,4,1992,3,2080,8,2191,13,2725,13,2837,14,2884,18,2927,26,2968,40,3008,60,3050,89,3096,127,3109,141,3116,156,3121,185,3126,213,3133,227,3144,240,3151,247"/>
-<area shape="rect" id="Node000006" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="Construct a PasswordDialog for entering a new password." alt="" coords="1820,85,2014,130"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="3155,248,3141,244,3117,226,3093,208,2995,151,2916,107,2877,90,2834,78,2784,71,2725,69,2460,69,2269,72,2078,87,2014,95,2013,90,2078,82,2268,67,2460,63,2725,63,2785,66,2835,73,2879,85,2919,102,2998,146,3096,204,3120,222,3144,240,3160,249"/>
-<area shape="rect" id="Node000007" href="$class_password_dialog.html#ac720352c9c25b6b05d48ab29d553dc78" title="Forwards the line edit&#39;s SecretLineEdit::copied to this dialog&#39;s copied(), so every copy out of any f..." alt="" coords="2879,255,3094,282"/>
-<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="3124,278,3095,280,3095,275,3129,277"/>
-<area shape="rect" id="Node000016" href="$class_main_window.html#a2b0351f339c894215610f1b3557c8630" title="Run PasswordDialog for a new or existing entry. For a new one the dialog gets the store&#39;s real folder..." alt="" coords="1302,447,1495,474"/>
-<area shape="poly" id="edge45_Node000004_Node000016" title=" " alt="" coords="3217,295,3198,331,3171,370,3137,408,3096,439,3045,465,3000,482,2958,492,2918,497,2832,496,2725,493,1915,493,1689,486,1496,472,1496,467,1690,480,1916,487,2725,487,2832,491,2918,491,2957,487,2998,477,3043,460,3093,434,3133,404,3167,367,3193,329,3213,298"/>
-<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="1832,134,1722,172,1721,167,1827,136"/>
-<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="1959,70,1944,66,1917,64,1892,65,1876,70,1870,76,1871,86,1867,83,1865,75,1873,66,1891,60,1917,58,1946,61,1964,70"/>
-<area shape="poly" id="edge41_Node000007_Node000004" title=" " alt="" coords="3110,257,3144,260,3139,260,3110,262"/>
-<area shape="poly" id="edge42_Node000007_Node000005" title=" " alt="" coords="2875,252,2684,232,2573,224,2462,221,2191,221,1951,214,1746,202,1746,197,1951,209,2191,215,2462,215,2573,218,2685,227,2880,252"/>
-<area shape="poly" id="edge43_Node000007_Node000006" title=" " alt="" coords="2876,246,2862,235,2852,222,2843,211,2830,202,2724,159,2612,127,2498,107,2385,95,2277,89,2176,89,2014,99,2014,93,2176,84,2277,84,2385,89,2499,101,2613,122,2726,153,2832,197,2847,207,2856,219,2866,232,2881,247"/>
-<area shape="rect" id="Node000008" href="$class_password_dialog.html#a591e5449bf04ce02f98c7aceca3c5da5" title="Adds a row for a field outside the template: a FieldLabel that can be renamed or removed,..." alt="" coords="2616,305,2831,333"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="2899,286,2800,307,2799,302,2894,286"/>
-<area shape="rect" id="Node000012" href="$class_password_dialog.html#ac157ada38d02eb47d7038b2edb1a2e9e" title="Set the template fields and whether templating is enabled." alt="" coords="2355,307,2567,334"/>
-<area shape="poly" id="edge44_Node000007_Node000012" title=" " alt="" coords="2861,274,2744,284,2616,297,2537,309,2536,303,2615,291,2743,279,2866,274"/>
-<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="2846,312,2966,304,3094,291,3158,283,3163,283,3095,297,2967,309,2847,317"/>
-<area shape="rect" id="Node000009" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Populate the dialog&#39;s password field with the given text." alt="" coords="2354,255,2568,282"/>
-<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="2631,302,2536,286,2537,280,2636,302"/>
-<area shape="poly" id="edge19_Node000008_Node000012" title=" " alt="" coords="2597,320,2568,323,2568,317,2603,320"/>
-<area shape="rect" id="Node000010" href="$class_password_dialog.html#acddd50947c80336ac71442d186e7c6ff" title="Connected to QDialog::rejected: blanks the password and field widgets so the decrypted secret does no..." alt="" coords="2118,306,2266,351"/>
-<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="2384,286,2267,315,2266,309,2378,287"/>
-<area shape="rect" id="Node000011" href="$class_password_dialog.html#aa3ae11c8655a48bfa12621d81b2b6571" title="Populate the dialog from a decrypted entry (Pass::finishedShow)." alt="" coords="2102,153,2283,181"/>
-<area shape="poly" id="edge15_Node000009_Node000011" title=" " alt="" coords="2406,249,2231,184,2232,179,2411,249"/>
-<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="2282,337,2355,343,2564,357,2727,364,2806,361,2889,353,2983,338,3094,315,3148,299,3194,283,3199,282,3150,304,3095,320,2984,344,2890,359,2806,367,2727,369,2563,362,2354,349,2282,342"/>
-<area shape="poly" id="edge14_Node000010_Node000005" title=" " alt="" coords="2100,330,2036,330,1960,324,1880,311,1803,290,1767,275,1733,256,1678,218,1679,213,1736,251,1769,270,1805,285,1881,305,1960,318,2036,325,2105,330"/>
-<area shape="poly" id="edge16_Node000011_Node000004" title=" " alt="" coords="2298,166,2542,175,2687,184,2831,197,2964,216,3095,241,3156,254,3151,254,3094,246,2963,221,2831,202,2687,189,2542,180,2299,171"/>
-<area shape="poly" id="edge17_Node000011_Node000005" title=" " alt="" coords="2084,173,1747,191,1746,185,2089,172"/>
-<area shape="poly" id="edge18_Node000011_Node000006" title=" " alt="" coords="2108,150,2014,131,2014,126,2113,149"/>
-<area shape="poly" id="edge40_Node000012_Node000005" title=" " alt="" coords="2364,303,2306,297,2165,280,2054,272,1944,262,1803,239,1721,218,1721,213,1804,234,1944,257,2054,267,2165,275,2307,291,2369,304"/>
-<area shape="rect" id="Node000013" href="$class_password_dialog.html#ae2040e83c9d4ddf49ccdc7ce23388ef3" title="Switch to a named template: records it, selects it in the combo box and rebuilds the field rows throu..." alt="" coords="2078,375,2306,402"/>
-<area shape="poly" id="edge20_Node000012_Node000013" title=" " alt="" coords="2398,339,2307,366,2261,377,2260,371,2306,361,2393,340"/>
-<area shape="rect" id="Node000014" href="$class_password_dialog.html#a3be525fe15b6af1939dad714e3244733" title="Cycle to next template (Ctrl+T)." alt="" coords="1804,425,2030,453"/>
-<area shape="poly" id="edge21_Node000013_Node000014" title=" " alt="" coords="2101,405,1996,427,1996,422,2095,406"/>
-<area shape="rect" id="Node000015" href="$class_password_dialog.html#a3bf288e273871a79ae041830fa82ae6a" title="Set available templates from file and select default." alt="" coords="1543,408,1756,452"/>
-<area shape="poly" id="edge39_Node000013_Node000015" title=" " alt="" coords="2060,396,1804,417,1756,421,1756,416,1803,411,2065,396"/>
-<area shape="poly" id="edge22_Node000014_Node000004" title=" " alt="" coords="2045,437,2460,437,2725,437,2831,434,2914,423,2994,399,3093,359,3128,342,3161,320,3210,284,3215,282,3164,325,3131,346,3095,364,2996,405,2915,428,2832,439,2725,442,2460,442,2045,442"/>
-<area shape="poly" id="edge23_Node000014_Node000015" title=" " alt="" coords="1785,435,1756,436,1756,431,1791,435"/>
-<area shape="poly" id="edge24_Node000015_Node000016" title=" " alt="" coords="1531,445,1496,451,1496,446,1525,445"/>
-<area shape="rect" id="Node000017" href="$class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder." alt="" coords="810,420,1008,448"/>
-<area shape="poly" id="edge25_Node000016_Node000017" title=" " alt="" coords="1284,455,1008,442,1008,437,1289,454"/>
-<area shape="rect" id="Node000021" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1056,472,1254,500"/>
-<area shape="poly" id="edge32_Node000016_Node000021" title=" " alt="" coords="1289,472,1255,478,1254,473,1284,472"/>
-<area shape="rect" id="Node000018" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,420,762,448"/>
-<area shape="poly" id="edge26_Node000017_Node000018" title=" " alt="" coords="792,434,763,437,763,431,797,434"/>
-<area shape="rect" id="Node000020" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,459,239,486"/>
-<area shape="poly" id="edge31_Node000017_Node000020" title=" " alt="" coords="821,417,762,411,628,401,524,398,419,405,287,426,221,442,163,461,161,456,219,437,286,421,419,400,524,392,629,395,763,406,826,417"/>
-<area shape="rect" id="Node000019" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,459,483,486"/>
-<area shape="poly" id="edge27_Node000018_Node000019" title=" " alt="" coords="531,451,484,461,483,455,536,450"/>
-<area shape="poly" id="edge28_Node000019_Node000019" title=" " alt="" coords="428,443,414,440,385,437,357,439,342,444,338,450,345,459,340,458,333,450,339,440,356,434,385,432,415,435,434,443"/>
-<area shape="poly" id="edge29_Node000019_Node000020" title=" " alt="" coords="269,482,239,484,239,479,274,481"/>
-<area shape="poly" id="edge30_Node000020_Node000019" title=" " alt="" coords="254,461,289,463,284,464,255,466"/>
-<area shape="rect" id="Node000022" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="812,524,1006,568"/>
-<area shape="poly" id="edge33_Node000021_Node000022" title=" " alt="" coords="1083,504,1004,526,1003,520,1078,504"/>
-<area shape="rect" id="Node000023" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="832,472,986,500"/>
-<area shape="poly" id="edge34_Node000021_Node000023" title=" " alt="" coords="1037,486,986,489,986,483,1043,486"/>
-<area shape="poly" id="edge37_Node000023_Node000018" title=" " alt="" coords="818,469,720,451,721,446,823,468"/>
-<area shape="poly" id="edge38_Node000023_Node000020" title=" " alt="" coords="826,503,763,514,629,523,524,522,420,514,286,501,206,490,206,484,287,495,420,509,524,517,629,517,762,509,821,503"/>
-<area shape="rect" id="Node000024" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,472,755,500"/>
-<area shape="poly" id="edge35_Node000023_Node000024" title=" " alt="" coords="814,486,756,489,756,483,820,486"/>
-<area shape="poly" id="edge36_Node000024_Node000019" title=" " alt="" coords="520,480,484,480,483,475,525,479"/>
+<area shape="rect" id="Node000001" title="Insert or update password." alt="" coords="3577,210,3672,237"/>
+<area shape="rect" id="Node000002" href="$class_password_dialog.html#a54dd6051718f6c7c72a1b8dba015db25" title="Start inserting what the dialog holds and wait for the result." alt="" coords="3366,210,3529,237"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3559,224,3530,226,3530,221,3564,223"/>
+<area shape="rect" id="Node000003" href="$class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736" title="OK: for a new entry, resolve and check the name first and stay open when it is not usable; then inser..." alt="" coords="3142,183,3318,211"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="3348,212,3318,210,3318,205,3353,212"/>
+<area shape="rect" id="Node000004" href="$class_password_dialog.html#aa09071e9cbd91dddfdaa865ec1b54687" title="Text was copied out of the password, a field or the body, marked as a secret: for ClipboardManager::t..." alt="" coords="3142,235,3318,263"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="3353,234,3318,241,3318,236,3348,235"/>
+<area shape="rect" id="Node000005" href="$class_password_dialog.html#a591e5449bf04ce02f98c7aceca3c5da5" title="Adds a row for a field outside the template: a FieldLabel that can be renamed or removed,..." alt="" coords="2616,198,2831,225"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="3124,249,2822,229,2822,223,3130,249"/>
+<area shape="rect" id="Node000008" href="$class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c" title="Construct a PasswordDialog for editing an existing password file." alt="" coords="1553,316,1746,360"/>
+<area shape="poly" id="edge38_Node000004_Node000008" title=" " alt="" coords="3221,275,3203,318,3177,366,3141,414,3119,436,3096,454,3046,483,3002,502,2961,514,2920,520,2833,521,2725,518,2191,518,2080,523,1992,528,1950,526,1906,520,1858,506,1802,484,1759,459,1720,426,1688,392,1666,363,1668,359,1692,388,1724,422,1762,454,1805,480,1859,501,1907,514,1950,521,1992,523,2080,517,2191,513,2725,513,2833,516,2919,515,2959,509,3000,497,3044,478,3093,449,3116,431,3137,411,3172,364,3198,316,3216,278"/>
+<area shape="rect" id="Node000010" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="Construct a PasswordDialog for entering a new password." alt="" coords="1820,425,2014,470"/>
+<area shape="poly" id="edge39_Node000004_Node000010" title=" " alt="" coords="3204,272,3155,314,3096,351,2997,402,2918,439,2878,451,2834,460,2784,466,2725,467,2460,467,2219,463,2014,455,2014,450,2219,458,2460,462,2725,462,2784,460,2833,455,2876,446,2916,434,2995,398,3093,346,3152,309,3199,274"/>
+<area shape="rect" id="Node000015" href="$class_main_window.html#a2b0351f339c894215610f1b3557c8630" title="Run PasswordDialog for a new or existing entry. For a new one the dialog gets the store&#39;s real folder..." alt="" coords="1302,58,1495,85"/>
+<area shape="poly" id="edge46_Node000004_Node000015" title=" " alt="" coords="3146,226,3140,224,3128,210,3121,194,3116,165,3112,137,3105,124,3093,111,3047,78,3004,57,2964,44,2923,38,2835,39,2725,43,1916,43,1690,51,1496,65,1495,60,1689,45,1915,38,2725,38,2835,34,2923,33,2965,39,3006,52,3049,74,3096,107,3109,120,3117,135,3122,164,3126,193,3133,207,3144,220,3151,228"/>
+<area shape="rect" id="Node000024" href="$class_password_dialog.html#ac720352c9c25b6b05d48ab29d553dc78" title="Forwards the line edit&#39;s SecretLineEdit::copied to this dialog&#39;s copied(), so every copy out of any f..." alt="" coords="2879,266,3094,293"/>
+<area shape="poly" id="edge40_Node000004_Node000024" title=" " alt="" coords="3163,265,3095,277,3094,272,3158,266"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="2847,210,3145,235,3139,235,2847,215"/>
+<area shape="rect" id="Node000006" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Populate the dialog&#39;s password field with the given text." alt="" coords="2354,248,2568,276"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="2636,228,2537,250,2536,245,2631,229"/>
+<area shape="rect" id="Node000011" href="$class_password_dialog.html#ac157ada38d02eb47d7038b2edb1a2e9e" title="Set the template fields and whether templating is enabled." alt="" coords="2355,196,2567,224"/>
+<area shape="poly" id="edge16_Node000005_Node000011" title=" " alt="" coords="2597,211,2568,213,2568,208,2603,211"/>
+<area shape="rect" id="Node000007" href="$class_password_dialog.html#acddd50947c80336ac71442d186e7c6ff" title="Connected to QDialog::rejected: blanks the password and field widgets so the decrypted secret does no..." alt="" coords="2118,180,2266,224"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="2378,244,2267,221,2267,216,2384,244"/>
+<area shape="rect" id="Node000009" href="$class_password_dialog.html#aa3ae11c8655a48bfa12621d81b2b6571" title="Populate the dialog from a decrypted entry (Pass::finishedShow)." alt="" coords="2102,350,2283,377"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="2411,281,2232,352,2231,346,2406,282"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="2281,188,2354,182,2563,166,2728,155,2806,154,2890,161,2985,175,3095,198,3120,208,3143,220,3181,235,3176,234,3141,225,3118,213,3094,203,2984,180,2890,166,2806,160,2728,160,2564,172,2355,187,2282,194"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="2100,201,2036,206,1960,212,1881,225,1805,246,1769,261,1736,279,1680,318,1678,313,1733,275,1767,256,1803,241,1880,220,1960,207,2036,200,2105,200"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="2298,366,2455,369,2655,363,2764,355,2875,343,2986,326,3094,302,3151,283,3199,264,3204,262,3153,288,3095,307,2987,331,2876,348,2764,361,2655,368,2455,374,2298,371"/>
+<area shape="poly" id="edge12_Node000009_Node000008" title=" " alt="" coords="2084,359,1747,345,1747,340,2089,358"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="2126,382,2079,398,1987,427,1986,422,2077,393,2121,382"/>
+<area shape="poly" id="edge14_Node000010_Node000008" title=" " alt="" coords="1844,419,1706,364,1707,358,1849,419"/>
+<area shape="poly" id="edge15_Node000010_Node000010" title=" " alt="" coords="1959,410,1944,406,1917,404,1892,406,1876,410,1870,416,1871,426,1867,423,1865,415,1873,406,1891,400,1917,398,1946,401,1964,410"/>
+<area shape="poly" id="edge37_Node000011_Node000008" title=" " alt="" coords="2369,227,2307,239,2165,256,2054,264,1944,274,1804,297,1722,318,1721,313,1803,291,1944,268,2054,258,2165,250,2306,234,2364,228"/>
+<area shape="rect" id="Node000012" href="$class_password_dialog.html#ae2040e83c9d4ddf49ccdc7ce23388ef3" title="Switch to a named template: records it, selects it in the combo box and rebuilds the field rows throu..." alt="" coords="2078,128,2306,156"/>
+<area shape="poly" id="edge17_Node000011_Node000012" title=" " alt="" coords="2393,191,2306,170,2260,159,2261,154,2307,165,2398,192"/>
+<area shape="rect" id="Node000013" href="$class_password_dialog.html#a3be525fe15b6af1939dad714e3244733" title="Cycle to next template (Ctrl+T)." alt="" coords="1804,78,2030,105"/>
+<area shape="poly" id="edge18_Node000012_Node000013" title=" " alt="" coords="2095,125,1996,109,1996,103,2101,125"/>
+<area shape="rect" id="Node000014" href="$class_password_dialog.html#a3bf288e273871a79ae041830fa82ae6a" title="Set available templates from file and select default." alt="" coords="1543,78,1756,123"/>
+<area shape="poly" id="edge36_Node000012_Node000014" title=" " alt="" coords="2060,135,1803,119,1756,115,1756,110,1804,114,2065,135"/>
+<area shape="poly" id="edge19_Node000013_Node000004" title=" " alt="" coords="2045,89,2460,89,2725,89,2833,88,2919,93,2959,100,3000,113,3045,133,3096,161,3112,176,3121,191,3129,206,3144,220,3169,235,3164,234,3141,224,3125,209,3116,193,3108,179,3093,166,3043,138,2999,118,2958,105,2918,98,2833,93,2725,94,2460,94,2045,94"/>
+<area shape="poly" id="edge20_Node000013_Node000014" title=" " alt="" coords="1786,96,1756,100,1756,94,1791,96"/>
+<area shape="poly" id="edge21_Node000014_Node000015" title=" " alt="" coords="1525,87,1496,85,1496,80,1531,86"/>
+<area shape="rect" id="Node000016" href="$class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder." alt="" coords="810,31,1008,59"/>
+<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="1284,66,1009,53,1008,47,1289,65"/>
+<area shape="rect" id="Node000020" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1056,83,1254,111"/>
+<area shape="poly" id="edge29_Node000015_Node000020" title=" " alt="" coords="1284,84,1255,89,1254,84,1289,82"/>
+<area shape="rect" id="Node000017" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,31,762,59"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="792,46,763,47,762,42,797,44"/>
+<area shape="rect" id="Node000019" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,70,239,97"/>
+<area shape="poly" id="edge28_Node000016_Node000019" title=" " alt="" coords="821,28,762,22,628,11,524,9,419,16,287,37,221,53,163,71,160,67,219,48,286,31,419,11,524,3,629,6,763,17,826,27"/>
+<area shape="rect" id="Node000018" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,70,483,97"/>
+<area shape="poly" id="edge24_Node000017_Node000018" title=" " alt="" coords="531,63,484,71,482,66,536,60"/>
+<area shape="poly" id="edge25_Node000018_Node000018" title=" " alt="" coords="428,55,414,51,385,48,357,50,342,55,338,60,345,69,340,69,333,61,339,51,356,45,385,43,415,45,433,54"/>
+<area shape="poly" id="edge26_Node000018_Node000019" title=" " alt="" coords="269,94,240,95,238,90,273,91"/>
+<area shape="poly" id="edge27_Node000019_Node000018" title=" " alt="" coords="253,72,289,73,284,76,255,77"/>
+<area shape="rect" id="Node000021" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="812,134,1006,179"/>
+<area shape="poly" id="edge30_Node000020_Node000021" title=" " alt="" coords="1078,116,1004,136,1002,131,1083,114"/>
+<area shape="rect" id="Node000022" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="832,83,986,111"/>
+<area shape="poly" id="edge31_Node000020_Node000022" title=" " alt="" coords="1037,97,987,99,986,94,1043,96"/>
+<area shape="poly" id="edge34_Node000022_Node000017" title=" " alt="" coords="818,80,721,62,720,57,823,79"/>
+<area shape="poly" id="edge35_Node000022_Node000019" title=" " alt="" coords="821,115,763,125,629,133,524,133,420,125,286,111,207,100,205,95,287,106,420,120,524,128,629,128,762,119,826,113"/>
+<area shape="rect" id="Node000023" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,83,755,111"/>
+<area shape="poly" id="edge32_Node000022_Node000023" title=" " alt="" coords="814,97,756,99,755,94,820,96"/>
+<area shape="poly" id="edge33_Node000023_Node000018" title=" " alt="" coords="520,91,484,91,483,86,525,89"/>
+<area shape="poly" id="edge42_Node000024_Node000004" title=" " alt="" coords="3056,260,3139,251,3144,251,3057,265"/>
+<area shape="poly" id="edge41_Node000024_Node000005" title=" " alt="" coords="2913,261,2780,228,2780,223,2918,261"/>
+<area shape="poly" id="edge43_Node000024_Node000008" title=" " alt="" coords="2861,292,2675,308,2462,315,2191,315,1951,322,1747,334,1746,328,1951,316,2191,310,2462,310,2675,303,2866,291"/>
+<area shape="poly" id="edge44_Node000024_Node000010" title=" " alt="" coords="2901,298,2880,307,2856,321,2832,334,2721,366,2607,391,2491,411,2379,426,2173,444,2014,450,2014,444,2173,438,2378,421,2491,406,2606,386,2720,361,2830,329,2854,316,2878,302,2896,299"/>
+<area shape="poly" id="edge45_Node000024_Node000011" title=" " alt="" coords="2861,267,2615,239,2540,227,2540,222,2616,234,2866,267"/>
 </map>

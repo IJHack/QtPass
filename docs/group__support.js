@@ -5,6 +5,7 @@ var group__support =
       [ "QtPass", "class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b", null ],
       [ "~QtPass", "class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5", null ],
       [ "clipboard", "class_qt_pass.html#aa1918767cdefea447f1c90272fd95966", null ],
+      [ "closeQRCode", "class_qt_pass.html#aaea72043a726c32e580650d090faba1f", null ],
       [ "connectPassSignalHandlers", "class_qt_pass.html#a81e0207207f490616dd442837a2469d4", null ],
       [ "createQRCodePopup", "class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d", null ],
       [ "doGitPush", "class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b", null ],
@@ -22,7 +23,8 @@ var group__support =
       [ "reportError", "class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199", null ],
       [ "showTextAsQRCode", "class_qt_pass.html#aef5aaf0605c7681967995ede486590ef", null ],
       [ "statusMessage", "class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a", null ],
-      [ "m_clipboard", "class_qt_pass.html#a2b93e09069f27c938b606431c890ff68", null ]
+      [ "m_clipboard", "class_qt_pass.html#a2b93e09069f27c938b606431c890ff68", null ],
+      [ "m_qrPopup", "class_qt_pass.html#ae6de998eb4def80948028666b52b8d52", null ]
     ] ],
     [ "SingleApplication", "class_single_application.html", [
       [ "SingleApplication", "class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5", null ],

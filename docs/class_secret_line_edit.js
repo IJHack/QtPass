@@ -1,6 +1,7 @@
 var class_secret_line_edit =
 [
     [ "SecretLineEdit", "class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c", null ],
+    [ "SecretLineEdit", "class_secret_line_edit.html#ade6283b2fd4c83122d80943a6f9e8760", null ],
     [ "contextMenuEvent", "class_secret_line_edit.html#a6e29923734219602f135750ef4b0ecc4", null ],
     [ "copied", "class_secret_line_edit.html#a2edc83d685d05c5f94e1d792e03eedd5", null ],
     [ "copySelection", "class_secret_line_edit.html#ae2aa8733d9f5647aa7d9af0ed481e393", null ],

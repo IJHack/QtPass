@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-17 23:17:19</td>
+            <td class="headerValue">2026-11-18 00:06:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -97,7 +97,7 @@
 <span id="L24"><span class="lineNum">      24</span>              :  * @return true when it is an `otpauth://` URI.</span>
 <span id="L25"><span class="lineNum">      25</span>              :  */</span>
 <span id="L26"><span class="lineNum">      26</span>              : static auto isOtpUri(const QString &amp;value) -&gt; bool {</span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">       20753 :   return FileContent::isOtpUriValue(value);</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">       20756 :   return FileContent::isOtpUriValue(value);</span></span>
 <span id="L28"><span class="lineNum">      28</span>              : }</span>
 <span id="L29"><span class="lineNum">      29</span>              : </span>
 <span id="L30"><span class="lineNum">      30</span>              : /**</span>
@@ -107,14 +107,14 @@
 <span id="L34"><span class="lineNum">      34</span>              :  * @param line One line of the entry.</span>
 <span id="L35"><span class="lineNum">      35</span>              :  * @return The URI, trimmed, or an empty string when the line is not one.</span>
 <span id="L36"><span class="lineNum">      36</span>              :  */</span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">       20637 : static auto bareOtpUriOf(const QString &amp;line) -&gt; QString {</span></span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">       20640 : static auto bareOtpUriOf(const QString &amp;line) -&gt; QString {</span></span>
 <span id="L38"><span class="lineNum">      38</span>              :   const QString trimmed = line.trimmed();</span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">       20637 :   if (isOtpUri(trimmed)) {</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">       20640 :   if (isOtpUri(trimmed)) {</span></span>
 <span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">          28 :     return trimmed;</span></span>
 <span id="L41"><span class="lineNum">      41</span>              :   }</span>
-<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">       20622 :   static const QString scheme = QStringLiteral(&quot;otpauth:&quot;);</span></span>
-<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">       20609 :   if (!trimmed.startsWith(scheme, Qt::CaseInsensitive)) {</span></span>
-<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">       20594 :     return {};</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">       20625 :   static const QString scheme = QStringLiteral(&quot;otpauth:&quot;);</span></span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">       20612 :   if (!trimmed.startsWith(scheme, Qt::CaseInsensitive)) {</span></span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">       20597 :     return {};</span></span>
 <span id="L45"><span class="lineNum">      45</span>              :   }</span>
 <span id="L46"><span class="lineNum">      46</span>              :   qsizetype i = scheme.size();</span>
 <span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          30 :   while (i &lt; trimmed.size() &amp;&amp; trimmed.at(i).isSpace()) {</span></span>
@@ -134,7 +134,7 @@
 <span id="L61"><span class="lineNum">      61</span>              :  * @return true when the line is kept out of getRemainingDataForDisplay().</span>
 <span id="L62"><span class="lineNum">      62</span>              :  */</span>
 <span id="L63"><span class="lineNum">      63</span>              : static auto isLineHidden(const QString &amp;line) -&gt; bool {</span>
-<span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">       20239 :   return FileContent::isOtpLine(line);</span></span>
+<span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">       20240 :   return FileContent::isOtpLine(line);</span></span>
 <span id="L65"><span class="lineNum">      65</span>              : }</span>
 <span id="L66"><span class="lineNum">      66</span>              : </span>
 <span id="L67"><span class="lineNum">      67</span>              : /**</span>
@@ -187,12 +187,12 @@
 <span id="L114"><span class="lineNum">     114</span>              :  * @param line The entry's first line.</span>
 <span id="L115"><span class="lineNum">     115</span>              :  * @return true when the line is read as the OTP configuration.</span>
 <span id="L116"><span class="lineNum">     116</span>              :  */</span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         381 : static auto holdsOtpConfig(const QString &amp;line) -&gt; bool {</span></span>
-<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">         762 :   if (!bareOtpUriOf(line).isEmpty()) {</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         383 : static auto holdsOtpConfig(const QString &amp;line) -&gt; bool {</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">         766 :   if (!bareOtpUriOf(line).isEmpty()) {</span></span>
 <span id="L119"><span class="lineNum">     119</span>              :     return true;</span>
 <span id="L120"><span class="lineNum">     120</span>              :   }</span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">         374 :   const qsizetype colon = line.indexOf(u':');</span></span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         374 :   if (colon &lt; 0) {</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">         376 :   const qsizetype colon = line.indexOf(u':');</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         376 :   if (colon &lt; 0) {</span></span>
 <span id="L123"><span class="lineNum">     123</span>              :     return false;</span>
 <span id="L124"><span class="lineNum">     124</span>              :   }</span>
 <span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          61 :   const QString value = line.mid(colon + 1);</span></span>
@@ -260,18 +260,18 @@
 <span id="L187"><span class="lineNum">     187</span>              :    * the &quot;Invalid OTP secret&quot; note.</span>
 <span id="L188"><span class="lineNum">     188</span>              :    * @return The configuration string, or empty when none was found.</span>
 <span id="L189"><span class="lineNum">     189</span>              :    */</span>
-<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">         226 :   auto pick() const -&gt; QString {</span></span>
-<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         765 :     for (const OtpCandidate *kind : {&amp;field, &amp;bareLine, &amp;remainingField}) {</span></span>
-<span id="L192"><span class="lineNum">     192</span> <span class="tlaGNC">         599 :       if (!kind-&gt;usable.isEmpty()) {</span></span>
+<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">         228 :   auto pick() const -&gt; QString {</span></span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         773 :     for (const OtpCandidate *kind : {&amp;field, &amp;bareLine, &amp;remainingField}) {</span></span>
+<span id="L192"><span class="lineNum">     192</span> <span class="tlaGNC">         605 :       if (!kind-&gt;usable.isEmpty()) {</span></span>
 <span id="L193"><span class="lineNum">     193</span> <span class="tlaGNC">          60 :         return kind-&gt;usable;</span></span>
 <span id="L194"><span class="lineNum">     194</span>              :       }</span>
 <span id="L195"><span class="lineNum">     195</span>              :     }</span>
-<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">         642 :     for (const OtpCandidate *kind : {&amp;field, &amp;bareLine, &amp;remainingField}) {</span></span>
-<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">         485 :       if (!kind-&gt;first.isEmpty()) {</span></span>
+<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">         650 :     for (const OtpCandidate *kind : {&amp;field, &amp;bareLine, &amp;remainingField}) {</span></span>
+<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">         491 :       if (!kind-&gt;first.isEmpty()) {</span></span>
 <span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">           9 :         return kind-&gt;first;</span></span>
 <span id="L199"><span class="lineNum">     199</span>              :       }</span>
 <span id="L200"><span class="lineNum">     200</span>              :     }</span>
-<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">         157 :     return {};</span></span>
+<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">         159 :     return {};</span></span>
 <span id="L202"><span class="lineNum">     202</span>              :   }</span>
 <span id="L203"><span class="lineNum">     203</span>              : };</span>
 <span id="L204"><span class="lineNum">     204</span>              : </span>
@@ -287,30 +287,30 @@
 <span id="L214"><span class="lineNum">     214</span>              :  * @param otp Is offered the OTP candidates of each kind.</span>
 <span id="L215"><span class="lineNum">     215</span>              :  * @return true when the line became a field and is not remaining text.</span>
 <span id="L216"><span class="lineNum">     216</span>              :  */</span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">       23351 : auto takeNamedValue(const QString &amp;line, const QStringList &amp;templateFields,</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">       23353 : auto takeNamedValue(const QString &amp;line, const QStringList &amp;templateFields,</span></span>
 <span id="L218"><span class="lineNum">     218</span>              :                     bool allFields,</span>
 <span id="L219"><span class="lineNum">     219</span>              :                     const std::function&lt;bool(const QString &amp;)&gt; &amp;alsoField,</span>
 <span id="L220"><span class="lineNum">     220</span>              :                     NamedValues &amp;namedValues, OtpCandidates &amp;otp) -&gt; bool {</span>
-<span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">       23351 :   const qsizetype colon = line.indexOf(u':');</span></span>
-<span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">       23351 :   if (colon &lt; 0) {</span></span>
+<span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">       23353 :   const qsizetype colon = line.indexOf(u':');</span></span>
+<span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">       23353 :   if (colon &lt; 0) {</span></span>
 <span id="L223"><span class="lineNum">     223</span>              :     return false;</span>
 <span id="L224"><span class="lineNum">     224</span>              :   }</span>
-<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">        3201 :   const QString name = line.left(colon);</span></span>
-<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">        3201 :   const QString value = line.right(line.length() - colon - 1);</span></span>
+<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">        3202 :   const QString name = line.left(colon);</span></span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">        3202 :   const QString value = line.right(line.length() - colon - 1);</span></span>
 <span id="L227"><span class="lineNum">     227</span>              :   // A value starting with // means the colon is probably from a URL.</span>
-<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">        3113 :   if (!templateFields.contains(name) &amp;&amp;</span></span>
-<span id="L229"><span class="lineNum">     229</span> <span class="tlaGNC">        9515 :       !(allFields &amp;&amp; !value.startsWith(QStringLiteral(&quot;//&quot;))) &amp;&amp;</span></span>
-<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">        3220 :       !(alsoField &amp;&amp; alsoField(name.trimmed()))) {</span></span>
+<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">        3114 :   if (!templateFields.contains(name) &amp;&amp;</span></span>
+<span id="L229"><span class="lineNum">     229</span> <span class="tlaGNC">        9518 :       !(allFields &amp;&amp; !value.startsWith(QStringLiteral(&quot;//&quot;))) &amp;&amp;</span></span>
+<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">        3221 :       !(alsoField &amp;&amp; alsoField(name.trimmed()))) {</span></span>
 <span id="L231"><span class="lineNum">     231</span>              :     // An `OTP:` line the template did not promote to a field.</span>
 <span id="L232"><span class="lineNum">     232</span> <span class="tlaGNC">          47 :     if (FileContent::isOtpFieldName(name)) {</span></span>
 <span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">          10 :       otp.remainingField.offer(value.trimmed());</span></span>
 <span id="L234"><span class="lineNum">     234</span>              :     }</span>
 <span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">          47 :     return false;</span></span>
 <span id="L236"><span class="lineNum">     236</span>              :   }</span>
-<span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">        6308 :   namedValues.append({name.trimmed(), value.trimmed(), line});</span></span>
+<span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">        6310 :   namedValues.append({name.trimmed(), value.trimmed(), line});</span></span>
 <span id="L238"><span class="lineNum">     238</span>              :   // Keyed on the value as well as the name: a field called anything at all</span>
 <span id="L239"><span class="lineNum">     239</span>              :   // whose value is an otpauth URI is still a shared secret.</span>
-<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">        3154 :   if (FileContent::isOtpFieldName(name) || FileContent::isOtpUriValue(value)) {</span></span>
+<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">        3155 :   if (FileContent::isOtpFieldName(name) || FileContent::isOtpUriValue(value)) {</span></span>
 <span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">          66 :     otp.field.offer(value.trimmed());</span></span>
 <span id="L242"><span class="lineNum">     242</span>              :   }</span>
 <span id="L243"><span class="lineNum">     243</span>              :   return true;</span>
@@ -333,7 +333,7 @@
 <span id="L260"><span class="lineNum">     260</span>              : </span>
 <span id="L261"><span class="lineNum">     261</span>              : } // namespace</span>
 <span id="L262"><span class="lineNum">     262</span>              : </span>
-<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">         226 : auto FileContent::parse(const QString &amp;fileContent,</span></span>
+<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">         228 : auto FileContent::parse(const QString &amp;fileContent,</span></span>
 <span id="L264"><span class="lineNum">     264</span>              :                         const QStringList &amp;templateFields, bool allFields,</span>
 <span id="L265"><span class="lineNum">     265</span>              :                         const std::function&lt;bool(const QString &amp;)&gt; &amp;alsoField)</span>
 <span id="L266"><span class="lineNum">     266</span>              :     -&gt; FileContent {</span>
@@ -342,31 +342,31 @@
 <span id="L269"><span class="lineNum">     269</span>              :   // limit, and a QString each (empty ones too) would take gigabytes.</span>
 <span id="L270"><span class="lineNum">     270</span>              :   QStringTokenizer tokens = QStringView(fileContent).tokenize(u'\n');</span>
 <span id="L271"><span class="lineNum">     271</span>              :   auto it = tokens.begin();</span>
-<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">         226 :   QString password;</span></span>
-<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">         226 :   if (it != tokens.end()) {</span></span>
-<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">         452 :     password = passwordLine(*it);</span></span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">         228 :   QString password;</span></span>
+<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">         228 :   if (it != tokens.end()) {</span></span>
+<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">         456 :     password = passwordLine(*it);</span></span>
 <span id="L275"><span class="lineNum">     275</span>              :     ++it;</span>
 <span id="L276"><span class="lineNum">     276</span>              :   }</span>
-<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">         226 :   QString remainingData;</span></span>
-<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">         226 :   QString remainingDataDisplay;</span></span>
+<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">         228 :   QString remainingData;</span></span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">         228 :   QString remainingDataDisplay;</span></span>
 <span id="L279"><span class="lineNum">     279</span>              :   qsizetype remainingLines = 0;</span>
 <span id="L280"><span class="lineNum">     280</span>              :   qsizetype displayedLines = 0;</span>
 <span id="L281"><span class="lineNum">     281</span>              :   qsizetype notShown = 0;</span>
 <span id="L282"><span class="lineNum">     282</span>              :   // Past kMaxNamedFields a line is still offered to takeNamedValue(), into</span>
 <span id="L283"><span class="lineNum">     283</span>              :   // this throwaway list, for what it notes about OTP: the line stays text.</span>
-<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">         226 :   NamedValues pastTheCap;</span></span>
-<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         226 :   NamedValues namedValues;</span></span>
-<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">         226 :   OtpCandidates otp;</span></span>
+<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">         228 :   NamedValues pastTheCap;</span></span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         228 :   NamedValues namedValues;</span></span>
+<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">         228 :   OtpCandidates otp;</span></span>
 <span id="L287"><span class="lineNum">     287</span>              :   // An entry from `pass otp insert` has the URI as its only (password) line,</span>
 <span id="L288"><span class="lineNum">     288</span>              :   // which the loop below never sees; an `OTP:`/`TOTP:` field written there by</span>
 <span id="L289"><span class="lineNum">     289</span>              :   // hand holding a usable secret is the same, and yields a code as it does</span>
 <span id="L290"><span class="lineNum">     290</span>              :   // further down. Read only from what is written as a configuration</span>
 <span id="L291"><span class="lineNum">     291</span>              :   // (holdsOtpConfig()); a first line with a URI elsewhere in it is kept off</span>
 <span id="L292"><span class="lineNum">     292</span>              :   // the screen all the same (isOtpPasswordLine()).</span>
-<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">         226 :   if (holdsOtpConfig(password)) {</span></span>
+<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">         228 :   if (holdsOtpConfig(password)) {</span></span>
 <span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">          34 :     otp.bareLine.offer(otpConfigOf(password));</span></span>
 <span id="L295"><span class="lineNum">     295</span>              :   }</span>
-<span id="L296"><span class="lineNum">     296</span> <span class="tlaGNC">       23610 :   for (; it != tokens.end(); ++it) {</span></span>
+<span id="L296"><span class="lineNum">     296</span> <span class="tlaGNC">       23614 :   for (; it != tokens.end(); ++it) {</span></span>
 <span id="L297"><span class="lineNum">     297</span>              :     const QString line = it-&gt;toString();</span>
 <span id="L298"><span class="lineNum">     298</span>              :     bool secretPastTheCap = false;</span>
 <span id="L299"><span class="lineNum">     299</span>              :     // A line with an otpauth URI in it is never a field unless the URI is</span>
@@ -375,11 +375,11 @@
 <span id="L302"><span class="lineNum">     302</span>              :     // marks it as a shared secret and be shown seed and all (&quot;otpauth://...&quot;,</span>
 <span id="L303"><span class="lineNum">     303</span>              :     // &quot;AWS: backup phone: otpauth://...&quot;). Past kMaxNamedFields, lines stay</span>
 <span id="L304"><span class="lineNum">     304</span>              :     // text.</span>
-<span id="L305"><span class="lineNum">     305</span> <span class="tlaGNC">       23439 :     if (!carriesOtpUri(line) || isOtpUri(afterFirstColon(line))) {</span></span>
-<span id="L306"><span class="lineNum">     306</span> <span class="tlaGNC">       23351 :       if (namedValues.size() &lt; kMaxNamedFields) {</span></span>
-<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">       23341 :         if (takeNamedValue(line, templateFields, allFields, alsoField,</span></span>
+<span id="L305"><span class="lineNum">     305</span> <span class="tlaGNC">       23441 :     if (!carriesOtpUri(line) || isOtpUri(afterFirstColon(line))) {</span></span>
+<span id="L306"><span class="lineNum">     306</span> <span class="tlaGNC">       23353 :       if (namedValues.size() &lt; kMaxNamedFields) {</span></span>
+<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">       23343 :         if (takeNamedValue(line, templateFields, allFields, alsoField,</span></span>
 <span id="L308"><span class="lineNum">     308</span>              :                            namedValues, otp)) {</span>
-<span id="L309"><span class="lineNum">     309</span> <span class="tlaGNC">        3145 :           continue;</span></span>
+<span id="L309"><span class="lineNum">     309</span> <span class="tlaGNC">        3146 :           continue;</span></span>
 <span id="L310"><span class="lineNum">     310</span>              :         }</span>
 <span id="L311"><span class="lineNum">     311</span>              :       } else {</span>
 <span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">          10 :         takeNamedValue(line, templateFields, allFields, alsoField, pastTheCap,</span></span>
@@ -392,29 +392,29 @@
 <span id="L319"><span class="lineNum">     319</span>              :       }</span>
 <span id="L320"><span class="lineNum">     320</span>              :     }</span>
 <span id="L321"><span class="lineNum">     321</span>              :     // Joined with &quot;\n&quot; as they go, as split() and join() did.</span>
-<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">       20239 :     if (remainingLines &gt; 0) {</span></span>
+<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">       20240 :     if (remainingLines &gt; 0) {</span></span>
 <span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">       20084 :       remainingData += QLatin1Char('\n');</span></span>
 <span id="L324"><span class="lineNum">     324</span>              :     }</span>
 <span id="L325"><span class="lineNum">     325</span>              :     remainingData += line;</span>
-<span id="L326"><span class="lineNum">     326</span> <span class="tlaGNC">       20239 :     ++remainingLines;</span></span>
+<span id="L326"><span class="lineNum">     326</span> <span class="tlaGNC">       20240 :     ++remainingLines;</span></span>
 <span id="L327"><span class="lineNum">     327</span>              :     // A bare otpauth:// line, the convention the pass-otp extension uses,</span>
 <span id="L328"><span class="lineNum">     328</span>              :     // or the split form older versions saved.</span>
-<span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">       20239 :     if (const QString uri = bareOtpUriOf(line); !uri.isEmpty()) {</span></span>
+<span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">       20240 :     if (const QString uri = bareOtpUriOf(line); !uri.isEmpty()) {</span></span>
 <span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">          24 :       otp.bareLine.offer(uri);</span></span>
 <span id="L331"><span class="lineNum">     331</span>              :     }</span>
-<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">       20239 :     if (!isLineHidden(line) &amp;&amp; !secretPastTheCap) {</span></span>
-<span id="L333"><span class="lineNum">     333</span> <span class="tlaGNC">       20198 :       if (displayedLines == kMaxDisplayLines) {</span></span>
+<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">       20240 :     if (!isLineHidden(line) &amp;&amp; !secretPastTheCap) {</span></span>
+<span id="L333"><span class="lineNum">     333</span> <span class="tlaGNC">       20199 :       if (displayedLines == kMaxDisplayLines) {</span></span>
 <span id="L334"><span class="lineNum">     334</span> <span class="tlaGNC">           7 :         ++notShown;</span></span>
 <span id="L335"><span class="lineNum">     335</span> <span class="tlaGNC">           7 :         continue;</span></span>
 <span id="L336"><span class="lineNum">     336</span>              :       }</span>
-<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">       20191 :       if (displayedLines &gt; 0) {</span></span>
+<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">       20192 :       if (displayedLines &gt; 0) {</span></span>
 <span id="L338"><span class="lineNum">     338</span> <span class="tlaGNC">       20053 :         remainingDataDisplay += QLatin1Char('\n');</span></span>
 <span id="L339"><span class="lineNum">     339</span>              :       }</span>
 <span id="L340"><span class="lineNum">     340</span>              :       remainingDataDisplay += line;</span>
-<span id="L341"><span class="lineNum">     341</span> <span class="tlaGNC">       20191 :       ++displayedLines;</span></span>
+<span id="L341"><span class="lineNum">     341</span> <span class="tlaGNC">       20192 :       ++displayedLines;</span></span>
 <span id="L342"><span class="lineNum">     342</span>              :     }</span>
 <span id="L343"><span class="lineNum">     343</span>              :   }</span>
-<span id="L344"><span class="lineNum">     344</span> <span class="tlaGNC">         226 :   if (notShown &gt; 0) {</span></span>
+<span id="L344"><span class="lineNum">     344</span> <span class="tlaGNC">         228 :   if (notShown &gt; 0) {</span></span>
 <span id="L345"><span class="lineNum">     345</span> <span class="tlaGNC">           2 :     remainingDataDisplay += QLatin1Char('\n') + moreLinesNotShown(notShown);</span></span>
 <span id="L346"><span class="lineNum">     346</span>              :   }</span>
 <span id="L347"><span class="lineNum">     347</span>              :   // The OTP value stays in namedValues/remainingData: the edit dialog reads it</span>
@@ -422,13 +422,13 @@
 <span id="L349"><span class="lineNum">     349</span>              :   // stripping it here would delete the secret on the next save. Suppression</span>
 <span id="L350"><span class="lineNum">     350</span>              :   // happens in getRemainingDataForDisplay() and PasswordDisplayPanel.</span>
 <span id="L351"><span class="lineNum">     351</span>              :   return {password,   namedValues,   remainingData, remainingDataDisplay,</span>
-<span id="L352"><span class="lineNum">     352</span> <span class="tlaGNC">         678 :           otp.pick(), remainingLines};</span></span>
-<span id="L353"><span class="lineNum">     353</span> <span class="tlaGNC">         226 : }</span></span>
+<span id="L352"><span class="lineNum">     352</span> <span class="tlaGNC">         684 :           otp.pick(), remainingLines};</span></span>
+<span id="L353"><span class="lineNum">     353</span> <span class="tlaGNC">         228 : }</span></span>
 <span id="L354"><span class="lineNum">     354</span>              : </span>
-<span id="L355"><span class="lineNum">     355</span> <span class="tlaGNC">        3548 : auto FileContent::isOtpFieldName(const QString &amp;name) -&gt; bool {</span></span>
+<span id="L355"><span class="lineNum">     355</span> <span class="tlaGNC">        3550 : auto FileContent::isOtpFieldName(const QString &amp;name) -&gt; bool {</span></span>
 <span id="L356"><span class="lineNum">     356</span>              :   const QString trimmed = name.trimmed();</span>
-<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">       10542 :   return trimmed.compare(QStringLiteral(&quot;OTP&quot;), Qt::CaseInsensitive) == 0 ||</span></span>
-<span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">        6994 :          trimmed.compare(QStringLiteral(&quot;TOTP&quot;), Qt::CaseInsensitive) == 0;</span></span>
+<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">       10548 :   return trimmed.compare(QStringLiteral(&quot;OTP&quot;), Qt::CaseInsensitive) == 0 ||</span></span>
+<span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">        6998 :          trimmed.compare(QStringLiteral(&quot;TOTP&quot;), Qt::CaseInsensitive) == 0;</span></span>
 <span id="L359"><span class="lineNum">     359</span>              : }</span>
 <span id="L360"><span class="lineNum">     360</span>              : </span>
 <span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">          59 : auto FileContent::isSecretFieldName(const QString &amp;name,</span></span>
@@ -502,19 +502,19 @@
 <span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">           4 :                      });</span></span>
 <span id="L430"><span class="lineNum">     430</span>              : }</span>
 <span id="L431"><span class="lineNum">     431</span>              : </span>
-<span id="L432"><span class="lineNum">     432</span> <span class="tlaGNC">       23882 : auto FileContent::isOtpUriValue(const QString &amp;value) -&gt; bool {</span></span>
-<span id="L433"><span class="lineNum">     433</span> <span class="tlaGNC">       47764 :   return value.trimmed().startsWith(QStringLiteral(&quot;otpauth://&quot;),</span></span>
-<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">       23882 :                                     Qt::CaseInsensitive);</span></span>
+<span id="L432"><span class="lineNum">     432</span> <span class="tlaGNC">       23886 : auto FileContent::isOtpUriValue(const QString &amp;value) -&gt; bool {</span></span>
+<span id="L433"><span class="lineNum">     433</span> <span class="tlaGNC">       47772 :   return value.trimmed().startsWith(QStringLiteral(&quot;otpauth://&quot;),</span></span>
+<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">       23886 :                                     Qt::CaseInsensitive);</span></span>
 <span id="L435"><span class="lineNum">     435</span>              : }</span>
 <span id="L436"><span class="lineNum">     436</span>              : </span>
-<span id="L437"><span class="lineNum">     437</span> <span class="tlaGNC">       43881 : auto FileContent::carriesOtpUri(const QString &amp;text) -&gt; bool {</span></span>
+<span id="L437"><span class="lineNum">     437</span> <span class="tlaGNC">       43884 : auto FileContent::carriesOtpUri(const QString &amp;text) -&gt; bool {</span></span>
 <span id="L438"><span class="lineNum">     438</span>              :   // Not only at the start: &quot;- otpauth://&quot;, &quot;\&quot;otpauth://...\&quot;&quot;, &quot;old token</span>
 <span id="L439"><span class="lineNum">     439</span>              :   // otpauth://&quot;, &quot;AWS: backup phone: otpauth://&quot; and the split &quot;otpauth:</span>
 <span id="L440"><span class="lineNum">     440</span>              :   // //totp/&quot; all showed the seed, being neither a bare line nor the value</span>
 <span id="L441"><span class="lineNum">     441</span>              :   // after the first colon. By hand, not a regular expression: parse() asks</span>
 <span id="L442"><span class="lineNum">     442</span>              :   // this for every line of an entry, up to 64 MiB of them.</span>
-<span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">       43888 :   static const QString scheme = QStringLiteral(&quot;otpauth:&quot;);</span></span>
-<span id="L444"><span class="lineNum">     444</span> <span class="tlaGNC">       43893 :   for (qsizetype at = text.indexOf(scheme, 0, Qt::CaseInsensitive); at &gt;= 0;</span></span>
+<span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">       43891 :   static const QString scheme = QStringLiteral(&quot;otpauth:&quot;);</span></span>
+<span id="L444"><span class="lineNum">     444</span> <span class="tlaGNC">       43896 :   for (qsizetype at = text.indexOf(scheme, 0, Qt::CaseInsensitive); at &gt;= 0;</span></span>
 <span id="L445"><span class="lineNum">     445</span> <span class="tlaGNC">          12 :        at = text.indexOf(scheme, at + 1, Qt::CaseInsensitive)) {</span></span>
 <span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">         137 :     qsizetype i = at + scheme.size();</span></span>
 <span id="L447"><span class="lineNum">     447</span> <span class="tlaGNC">         167 :     while (i &lt; text.size() &amp;&amp; text.at(i).isSpace()) {</span></span>
@@ -527,39 +527,39 @@
 <span id="L454"><span class="lineNum">     454</span>              :   return false;</span>
 <span id="L455"><span class="lineNum">     455</span>              : }</span>
 <span id="L456"><span class="lineNum">     456</span>              : </span>
-<span id="L457"><span class="lineNum">     457</span> <span class="tlaGNC">         239 : auto FileContent::passwordLine(QStringView text) -&gt; QString {</span></span>
+<span id="L457"><span class="lineNum">     457</span> <span class="tlaGNC">         241 : auto FileContent::passwordLine(QStringView text) -&gt; QString {</span></span>
 <span id="L458"><span class="lineNum">     458</span>              :   // left(-1) is the whole text when there is no line feed.</span>
 <span id="L459"><span class="lineNum">     459</span>              :   QStringView line = text.left(text.indexOf(u'\n'));</span>
 <span id="L460"><span class="lineNum">     460</span>              :   if (line.endsWith(u'\r')) {</span>
 <span id="L461"><span class="lineNum">     461</span>              :     line.chop(1);</span>
 <span id="L462"><span class="lineNum">     462</span>              :   }</span>
-<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">         239 :   return line.toString();</span></span>
+<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">         241 :   return line.toString();</span></span>
 <span id="L464"><span class="lineNum">     464</span>              : }</span>
 <span id="L465"><span class="lineNum">     465</span>              : </span>
-<span id="L466"><span class="lineNum">     466</span> <span class="tlaGNC">       20251 : auto FileContent::isOtpLine(const QString &amp;line) -&gt; bool {</span></span>
-<span id="L467"><span class="lineNum">     467</span> <span class="tlaGNC">       20251 :   if (carriesOtpUri(line)) {</span></span>
+<span id="L466"><span class="lineNum">     466</span> <span class="tlaGNC">       20252 : auto FileContent::isOtpLine(const QString &amp;line) -&gt; bool {</span></span>
+<span id="L467"><span class="lineNum">     467</span> <span class="tlaGNC">       20252 :   if (carriesOtpUri(line)) {</span></span>
 <span id="L468"><span class="lineNum">     468</span>              :     return true;</span>
 <span id="L469"><span class="lineNum">     469</span>              :   }</span>
-<span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">       20210 :   const qsizetype colon = line.indexOf(u':');</span></span>
-<span id="L471"><span class="lineNum">     471</span> <span class="tlaGNC">       20267 :   return colon &gt;= 0 &amp;&amp; isOtpFieldName(line.left(colon));</span></span>
+<span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">       20211 :   const qsizetype colon = line.indexOf(u':');</span></span>
+<span id="L471"><span class="lineNum">     471</span> <span class="tlaGNC">       20268 :   return colon &gt;= 0 &amp;&amp; isOtpFieldName(line.left(colon));</span></span>
 <span id="L472"><span class="lineNum">     472</span>              : }</span>
 <span id="L473"><span class="lineNum">     473</span>              : </span>
 <span id="L474"><span class="lineNum">     474</span> <span class="tlaGNC">         175 : auto FileContent::isOtpPasswordLine(const QString &amp;line) -&gt; bool {</span></span>
 <span id="L475"><span class="lineNum">     475</span> <span class="tlaGNC">         175 :   return carriesOtpUri(line) || holdsOtpConfig(line);</span></span>
 <span id="L476"><span class="lineNum">     476</span>              : }</span>
 <span id="L477"><span class="lineNum">     477</span>              : </span>
-<span id="L478"><span class="lineNum">     478</span> <span class="tlaGNC">         118 : auto FileContent::getPassword() const -&gt; QString { return this-&gt;password; }</span></span>
+<span id="L478"><span class="lineNum">     478</span> <span class="tlaGNC">         120 : auto FileContent::getPassword() const -&gt; QString { return this-&gt;password; }</span></span>
 <span id="L479"><span class="lineNum">     479</span>              : </span>
 <span id="L480"><span class="lineNum">     480</span> <span class="tlaGNC">          56 : auto FileContent::getPasswordForDisplay() const -&gt; QString {</span></span>
 <span id="L481"><span class="lineNum">     481</span> <span class="tlaGNC">          56 :   return isOtpPasswordLine(this-&gt;password) ? QString() : this-&gt;password;</span></span>
 <span id="L482"><span class="lineNum">     482</span>              : }</span>
 <span id="L483"><span class="lineNum">     483</span>              : </span>
-<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">         145 : auto FileContent::getNamedValues() const -&gt; NamedValues {</span></span>
-<span id="L485"><span class="lineNum">     485</span> <span class="tlaGNC">         145 :   return this-&gt;namedValues;</span></span>
+<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">         147 : auto FileContent::getNamedValues() const -&gt; NamedValues {</span></span>
+<span id="L485"><span class="lineNum">     485</span> <span class="tlaGNC">         147 :   return this-&gt;namedValues;</span></span>
 <span id="L486"><span class="lineNum">     486</span>              : }</span>
 <span id="L487"><span class="lineNum">     487</span>              : </span>
-<span id="L488"><span class="lineNum">     488</span> <span class="tlaGNC">         113 : auto FileContent::getRemainingData() const -&gt; QString {</span></span>
-<span id="L489"><span class="lineNum">     489</span> <span class="tlaGNC">         113 :   return this-&gt;remainingData;</span></span>
+<span id="L488"><span class="lineNum">     488</span> <span class="tlaGNC">         115 : auto FileContent::getRemainingData() const -&gt; QString {</span></span>
+<span id="L489"><span class="lineNum">     489</span> <span class="tlaGNC">         115 :   return this-&gt;remainingData;</span></span>
 <span id="L490"><span class="lineNum">     490</span>              : }</span>
 <span id="L491"><span class="lineNum">     491</span>              : </span>
 <span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">          73 : auto FileContent::getRemainingDataForDisplay() const -&gt; QString {</span></span>
@@ -568,13 +568,13 @@
 <span id="L495"><span class="lineNum">     495</span>              : </span>
 <span id="L496"><span class="lineNum">     496</span> <span class="tlaGNC">          92 : auto FileContent::getOtpUri() const -&gt; QString { return this-&gt;otpUri; }</span></span>
 <span id="L497"><span class="lineNum">     497</span>              : </span>
-<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">         226 : FileContent::FileContent(QString password, NamedValues namedValues,</span></span>
+<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">         228 : FileContent::FileContent(QString password, NamedValues namedValues,</span></span>
 <span id="L499"><span class="lineNum">     499</span>              :                          QString remainingData, QString remainingDataDisplay,</span>
-<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">         226 :                          QString otpUri, qsizetype remainingLines)</span></span>
+<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">         228 :                          QString otpUri, qsizetype remainingLines)</span></span>
 <span id="L501"><span class="lineNum">     501</span>              :     : password(std::move(password)), namedValues(std::move(namedValues)),</span>
 <span id="L502"><span class="lineNum">     502</span>              :       remainingData(std::move(remainingData)),</span>
 <span id="L503"><span class="lineNum">     503</span>              :       remainingDataDisplay(std::move(remainingDataDisplay)),</span>
-<span id="L504"><span class="lineNum">     504</span> <span class="tlaGNC">         226 :       otpUri(std::move(otpUri)), remainingLines(remainingLines) {}</span></span>
+<span id="L504"><span class="lineNum">     504</span> <span class="tlaGNC">         228 :       otpUri(std::move(otpUri)), remainingLines(remainingLines) {}</span></span>
 <span id="L505"><span class="lineNum">     505</span>              : </span>
 <span id="L506"><span class="lineNum">     506</span> <span class="tlaGNC">           4 : auto FileContent::boundedForDisplay(const QString &amp;text) -&gt; QString {</span></span>
 <span id="L507"><span class="lineNum">     507</span>              :   // Where the line after the last one shown starts, if there is one.</span>
@@ -594,7 +594,7 @@
 <span id="L521"><span class="lineNum">     521</span> <span class="tlaGNC">           1 :   return remainingLines;</span></span>
 <span id="L522"><span class="lineNum">     522</span>              : }</span>
 <span id="L523"><span class="lineNum">     523</span>              : </span>
-<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">         592 : NamedValues::NamedValues() = default;</span></span>
+<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">         597 : NamedValues::NamedValues() = default;</span></span>
 <span id="L525"><span class="lineNum">     525</span>              : </span>
 <span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">          53 : NamedValues::NamedValues(std::initializer_list&lt;NamedValue&gt; values)</span></span>
 <span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">          53 :     : QList(values) {}</span></span>

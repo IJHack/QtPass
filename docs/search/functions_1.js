@@ -10,7 +10,8 @@ var searchData=
   ['boundedrandom_7',['boundedRandom',['../class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b',1,'Pass']]],
   ['boundspaceruns_8',['boundSpaceRuns',['../class_util.html#a57fa6e612f022589f609d8b463111a48',1,'Util']]],
   ['boundtoitsfolder_9',['boundToItsFolder',['../class_gpg_id_generation.html#a94e96377e9735f5e01b56a7703827095',1,'GpgIdGeneration']]],
-  ['buildclipboardmimedata_10',['buildClipboardMimeData',['../clipboardmanager_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99',1,'buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData *:&#160;clipboardmanager.cpp'],['../clipboardmanager_8h.html#ad02159f3c84f6ec8d7535395bdb55d99',1,'buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData *:&#160;clipboardmanager.cpp']]],
-  ['buildusertext_11',['buildUserText',['../class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189',1,'UsersDialog']]],
-  ['buttonclicked_12',['buttonClicked',['../class_q_push_button_as_q_r_code.html#a131b43ae67e83063e9ebb8227c161bdc',1,'QPushButtonAsQRCode::buttonClicked()'],['../class_q_push_button_show_password.html#a9d72b7458ae773ca37d7aee0e8167122',1,'QPushButtonShowPassword::buttonClicked()'],['../class_q_push_button_with_clipboard.html#a602f1fd427f6dc9d823bae27f0f50a02',1,'QPushButtonWithClipboard::buttonClicked()']]]
+  ['browsercontextmenu_10',['browserContextMenu',['../class_main_window.html#aa24503cb5aa74e6f7153d6b9c941457d',1,'MainWindow']]],
+  ['buildclipboardmimedata_11',['buildClipboardMimeData',['../clipboardmanager_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99',1,'buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData *:&#160;clipboardmanager.cpp'],['../clipboardmanager_8h.html#ad02159f3c84f6ec8d7535395bdb55d99',1,'buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData *:&#160;clipboardmanager.cpp']]],
+  ['buildusertext_12',['buildUserText',['../class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189',1,'UsersDialog']]],
+  ['buttonclicked_13',['buttonClicked',['../class_q_push_button_as_q_r_code.html#a131b43ae67e83063e9ebb8227c161bdc',1,'QPushButtonAsQRCode::buttonClicked()'],['../class_q_push_button_show_password.html#a9d72b7458ae773ca37d7aee0e8167122',1,'QPushButtonShowPassword::buttonClicked()'],['../class_q_push_button_with_clipboard.html#a602f1fd427f6dc9d823bae27f0f50a02',1,'QPushButtonWithClipboard::buttonClicked()']]]
 ];

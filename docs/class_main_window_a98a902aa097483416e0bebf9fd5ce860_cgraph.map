@@ -1,0 +1,5 @@
+<map id="MainWindow::showBrowserContextMenu" name="MainWindow::showBrowserContextMenu">
+<area shape="rect" id="Node000001" title="Show the text browser&#39;s standard context menu, reparented to the window so the browser&#39;s stylesheet d..." alt="" coords="5,5,292,33"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aa24503cb5aa74e6f7153d6b9c941457d" title="The text browser&#39;s standard context menu, with &quot;Copy Link &#160;&#160;&#160;&#160;&#160;&#160;Location&quot; copying through ClipboardMa..." alt="" coords="340,5,591,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="292,17,327,19,322,19,292,22"/>
+</map>

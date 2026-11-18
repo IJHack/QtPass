@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5":[1,7,3,18],
+"class_util.html#ac134662c3a71ca1cd0ec04642e9a6255":[1,7,3,4],
+"class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76":[1,7,3,0],
+"class_util.html#aced819d4368806d046f0dc24a91843f7":[1,7,3,21],
+"class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612":[1,7,3,23],
 "class_util.html#acfa7240a7682876cf78d5a44bbbb81de":[1,7,3,22],
 "class_util.html#acfef9dbc0925b6f3631f19b381a3cabb":[1,7,3,39],
 "class_util.html#ada742504985a1e8b2c6adb5e14b24794":[1,7,3,19],
@@ -244,10 +249,5 @@ var NAVTREEINDEX5 =
 "nativegrep_8cpp.html":[4,0,1,37],
 "nativegrep_8cpp_source.html":[4,0,1,37],
 "nativegrep_8h.html":[4,0,1,38],
-"nativegrep_8h_source.html":[4,0,1,38],
-"otpcodewidget_8cpp.html":[4,0,1,39],
-"otpcodewidget_8cpp_source.html":[4,0,1,39],
-"otpcodewidget_8h.html":[4,0,1,40],
-"otpcodewidget_8h_source.html":[4,0,1,40],
-"pages.html":[]
+"nativegrep_8h_source.html":[4,0,1,38]
 };
