@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 20:15:25</td>
+            <td class="headerValue">2026-11-18 22:57:28</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
@@ -111,7 +111,7 @@
 <span id="L38"><span class="lineNum">      38</span>              :  * This is used as a fallback when RealPass cannot be initialized.</span>
 <span id="L39"><span class="lineNum">      39</span>              :  */</span>
 <span id="L40"><span class="lineNum">      40</span>              : class ImitatePass : public Pass {</span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         498 :   Q_OBJECT</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         504 :   Q_OBJECT</span></span>
 <span id="L42"><span class="lineNum">      42</span>              : </span>
 <span id="L43"><span class="lineNum">      43</span>              :   friend class tst_util;</span>
 <span id="L44"><span class="lineNum">      44</span>              :   friend class tst_imitatepass;</span>
@@ -412,12 +412,12 @@
 <span id="L339"><span class="lineNum">     339</span>              :      */</span>
 <span id="L340"><span class="lineNum">     340</span>              :     TransactionHelper(SimpleTransaction *trans, PROCESS result)</span>
 <span id="L341"><span class="lineNum">     341</span>              :         : m_transaction(trans), m_result(result) {</span>
-<span id="L342"><span class="lineNum">     342</span> <span class="tlaGNC">         107 :       m_transaction-&gt;transactionStart();</span></span>
-<span id="L343"><span class="lineNum">     343</span> <span class="tlaGNC">          64 :     }</span></span>
+<span id="L342"><span class="lineNum">     342</span> <span class="tlaGNC">         110 :       m_transaction-&gt;transactionStart();</span></span>
+<span id="L343"><span class="lineNum">     343</span> <span class="tlaGNC">          67 :     }</span></span>
 <span id="L344"><span class="lineNum">     344</span>              :     /**</span>
 <span id="L345"><span class="lineNum">     345</span>              :      * @brief End transaction on destruction.</span>
 <span id="L346"><span class="lineNum">     346</span>              :      */</span>
-<span id="L347"><span class="lineNum">     347</span> <span class="tlaGNC">         107 :     ~TransactionHelper() { m_transaction-&gt;transactionEnd(m_result); }</span></span>
+<span id="L347"><span class="lineNum">     347</span> <span class="tlaGNC">         110 :     ~TransactionHelper() { m_transaction-&gt;transactionEnd(m_result); }</span></span>
 <span id="L348"><span class="lineNum">     348</span>              :   };</span>
 <span id="L349"><span class="lineNum">     349</span>              : </span>
 <span id="L350"><span class="lineNum">     350</span>              : protected:</span>
@@ -587,332 +587,334 @@
 <span id="L514"><span class="lineNum">     514</span>              :    * per-file gpg calls on a worker thread. Progress is reported through</span>
 <span id="L515"><span class="lineNum">     515</span>              :    * reencryptProgress(); per-file failures are collected and reported in a</span>
 <span id="L516"><span class="lineNum">     516</span>              :    * single critical() once the run is over, followed by endReencryptPath().</span>
-<span id="L517"><span class="lineNum">     517</span>              :    * A second call while a run is active is ignored.</span>
-<span id="L518"><span class="lineNum">     518</span>              :    * @param dir Directory path.</span>
-<span id="L519"><span class="lineNum">     519</span>              :    */</span>
-<span id="L520"><span class="lineNum">     520</span>              :   void reencryptPath(const QString &amp;dir);</span>
-<span id="L521"><span class="lineNum">     521</span>              :   /**</span>
-<span id="L522"><span class="lineNum">     522</span>              :    * @brief Re-encrypt @p dir under @p settings, the current profile's.</span>
-<span id="L523"><span class="lineNum">     523</span>              :    *</span>
-<span id="L524"><span class="lineNum">     524</span>              :    * This backend re-encrypts also when pass is the active one, and then is</span>
-<span id="L525"><span class="lineNum">     525</span>              :    * not re-initialised on a profile switch: without this it would decrypt</span>
-<span id="L526"><span class="lineNum">     526</span>              :    * the current profile's entries and encrypt them to the recipients and</span>
-<span id="L527"><span class="lineNum">     527</span>              :    * signing policy of the profile it last ran for. The settings are taken</span>
-<span id="L528"><span class="lineNum">     528</span>              :    * only when no run is active, so a running one keeps its own.</span>
-<span id="L529"><span class="lineNum">     529</span>              :    * @param dir Directory path.</span>
-<span id="L530"><span class="lineNum">     530</span>              :    * @param settings The current settings.</span>
-<span id="L531"><span class="lineNum">     531</span>              :    */</span>
-<span id="L532"><span class="lineNum">     532</span>              :   void reencryptPath(const QString &amp;dir, const AppSettings &amp;settings);</span>
-<span id="L533"><span class="lineNum">     533</span>              :   /**</span>
-<span id="L534"><span class="lineNum">     534</span>              :    * @brief Ask a running reencryptPath() to stop.</span>
-<span id="L535"><span class="lineNum">     535</span>              :    *</span>
-<span id="L536"><span class="lineNum">     536</span>              :    * Only sets a flag. The worker starts no further gpg or git process, and</span>
-<span id="L537"><span class="lineNum">     537</span>              :    * the one it is blocked on (gpg waiting on pinentry, say) is terminated by</span>
-<span id="L538"><span class="lineNum">     538</span>              :    * the worker itself, and killed if it is still running after a short grace</span>
-<span id="L539"><span class="lineNum">     539</span>              :    * period, so the cancel takes effect promptly rather than after the current</span>
-<span id="L540"><span class="lineNum">     540</span>              :    * file. The store stays</span>
-<span id="L541"><span class="lineNum">     541</span>              :    * consistent: reencryptSingleFile() only replaces a file once the new</span>
-<span id="L542"><span class="lineNum">     542</span>              :    * ciphertext is verified, so an interrupted file is left untouched, or</span>
-<span id="L543"><span class="lineNum">     543</span>              :    * already re-encrypted but not yet committed when git was the process that</span>
-<span id="L544"><span class="lineNum">     544</span>              :    * was interrupted. The remaining files are left untouched and the</span>
-<span id="L545"><span class="lineNum">     545</span>              :    * interrupted file is not reported as a failure. endReencryptPath() is</span>
-<span id="L546"><span class="lineNum">     546</span>              :    * still emitted when the worker has stopped.</span>
-<span id="L547"><span class="lineNum">     547</span>              :    */</span>
-<span id="L548"><span class="lineNum">     548</span>              :   void cancelReencryptPath();</span>
-<span id="L549"><span class="lineNum">     549</span>              : </span>
-<span id="L550"><span class="lineNum">     550</span>              : signals:</span>
-<span id="L551"><span class="lineNum">     551</span>              :   /**</span>
-<span id="L552"><span class="lineNum">     552</span>              :    * @brief A reencryptPath() run is about to start its worker thread.</span>
-<span id="L553"><span class="lineNum">     553</span>              :    *</span>
-<span id="L554"><span class="lineNum">     554</span>              :    * The main window disables the interface and shows a progress dialog</span>
-<span id="L555"><span class="lineNum">     555</span>              :    * with a Cancel button on it. Always followed by endReencryptPath().</span>
-<span id="L556"><span class="lineNum">     556</span>              :    */</span>
-<span id="L557"><span class="lineNum">     557</span>              :   void startReencryptPath();</span>
-<span id="L558"><span class="lineNum">     558</span>              :   /**</span>
-<span id="L559"><span class="lineNum">     559</span>              :    * @brief A reencryptPath() run is over, whether it finished, failed, was</span>
-<span id="L560"><span class="lineNum">     560</span>              :    * cancelled or was refused; the main window releases the interface.</span>
-<span id="L561"><span class="lineNum">     561</span>              :    *</span>
-<span id="L562"><span class="lineNum">     562</span>              :    * Also emitted without a preceding startReencryptPath() when the folder</span>
-<span id="L563"><span class="lineNum">     563</span>              :    * is refused before anything starts.</span>
-<span id="L564"><span class="lineNum">     564</span>              :    */</span>
-<span id="L565"><span class="lineNum">     565</span>              :   void endReencryptPath();</span>
-<span id="L566"><span class="lineNum">     566</span>              :   /**</span>
-<span id="L567"><span class="lineNum">     567</span>              :    * @brief Re-encryption progress: @p current of @p total files checked.</span>
-<span id="L568"><span class="lineNum">     568</span>              :    *</span>
-<span id="L569"><span class="lineNum">     569</span>              :    * Emitted from the worker thread; connect with a queued (or automatic)</span>
-<span id="L570"><span class="lineNum">     570</span>              :    * connection.</span>
-<span id="L571"><span class="lineNum">     571</span>              :    * @param current Number of files checked so far, including this one.</span>
-<span id="L572"><span class="lineNum">     572</span>              :    * @param total Total number of files found by the scan.</span>
-<span id="L573"><span class="lineNum">     573</span>              :    */</span>
-<span id="L574"><span class="lineNum">     574</span>              :   void reencryptProgress(int current, int total);</span>
-<span id="L575"><span class="lineNum">     575</span>              : </span>
-<span id="L576"><span class="lineNum">     576</span>              :   // Pass interface</span>
-<span id="L577"><span class="lineNum">     577</span>              : public:</span>
-<span id="L578"><span class="lineNum">     578</span>              :   /**</span>
-<span id="L579"><span class="lineNum">     579</span>              :    * @brief Move password file.</span>
-<span id="L580"><span class="lineNum">     580</span>              :    * @param src Source path.</span>
-<span id="L581"><span class="lineNum">     581</span>              :    * @param dest Destination path.</span>
-<span id="L582"><span class="lineNum">     582</span>              :    * @param force true to overwrite existing destination.</span>
-<span id="L583"><span class="lineNum">     583</span>              :    */</span>
-<span id="L584"><span class="lineNum">     584</span>              :   void Move(const QString src, const QString dest, const bool force) override;</span>
-<span id="L585"><span class="lineNum">     585</span>              :   /**</span>
-<span id="L586"><span class="lineNum">     586</span>              :    * @brief Copy password file.</span>
-<span id="L587"><span class="lineNum">     587</span>              :    * @param src Source path.</span>
-<span id="L588"><span class="lineNum">     588</span>              :    * @param dest Destination path.</span>
-<span id="L589"><span class="lineNum">     589</span>              :    * @param force true to overwrite existing destination.</span>
-<span id="L590"><span class="lineNum">     590</span>              :    */</span>
-<span id="L591"><span class="lineNum">     591</span>              :   void Copy(const QString src, const QString dest, const bool force) override;</span>
-<span id="L592"><span class="lineNum">     592</span>              :   /**</span>
-<span id="L593"><span class="lineNum">     593</span>              :    * @brief Search all password content by GPG-decrypting each .gpg file.</span>
-<span id="L594"><span class="lineNum">     594</span>              :    *</span>
-<span id="L595"><span class="lineNum">     595</span>              :    * Pattern is interpreted as a QRegularExpression (PCRE-like); RealPass::Grep</span>
-<span id="L596"><span class="lineNum">     596</span>              :    * uses the same search, so both backends match alike.</span>
-<span id="L597"><span class="lineNum">     597</span>              :    *</span>
-<span id="L598"><span class="lineNum">     598</span>              :    * @param pattern Search pattern (QRegularExpression).</span>
-<span id="L599"><span class="lineNum">     599</span>              :    * @param caseInsensitive true for case-insensitive search.</span>
-<span id="L600"><span class="lineNum">     600</span>              :    */</span>
-<span id="L601"><span class="lineNum">     601</span>              :   void Grep(QString pattern, bool caseInsensitive) override;</span>
-<span id="L602"><span class="lineNum">     602</span>              :   /**</span>
-<span id="L603"><span class="lineNum">     603</span>              :    * @brief Stop the running search (NativeGrep::cancel()).</span>
-<span id="L604"><span class="lineNum">     604</span>              :    */</span>
-<span id="L605"><span class="lineNum">     605</span> <span class="tlaGNC">          24 :   void CancelGrep() override { m_grep.cancel(); }</span></span>
-<span id="L606"><span class="lineNum">     606</span>              : </span>
-<span id="L607"><span class="lineNum">     607</span>              : private:</span>
-<span id="L608"><span class="lineNum">     608</span>              :   /// Groups the git/gpg processes of one operation (Insert, Remove, Move,</span>
-<span id="L609"><span class="lineNum">     609</span>              :   /// Copy) into a single completion; see finished() and TransactionHelper.</span>
-<span id="L610"><span class="lineNum">     610</span>              :   SimpleTransaction m_transaction;</span>
-<span id="L611"><span class="lineNum">     611</span>              :   /// Background search over the decrypted store; relays to finishedGrep.</span>
-<span id="L612"><span class="lineNum">     612</span>              :   NativeGrep m_grep;</span>
-<span id="L613"><span class="lineNum">     613</span>              :   /**</span>
-<span id="L614"><span class="lineNum">     614</span>              :    * @brief stdout of the steps of the transaction in flight, collected by</span>
-<span id="L615"><span class="lineNum">     615</span>              :    * finished() and handed on, then cleared, when its last step ends.</span>
-<span id="L616"><span class="lineNum">     616</span>              :    */</span>
-<span id="L617"><span class="lineNum">     617</span>              :   QString m_transactionOutput;</span>
-<span id="L618"><span class="lineNum">     618</span>              : </span>
-<span id="L619"><span class="lineNum">     619</span>              :   /// An Insert() whose gpg is running or queued: the private directory gpg</span>
-<span id="L620"><span class="lineNum">     620</span>              :   /// writes into (removed with it), the entry it is for, and whether an</span>
-<span id="L621"><span class="lineNum">     621</span>              :   /// existing entry may be replaced. Consumed by finished() when the gpg</span>
-<span id="L622"><span class="lineNum">     622</span>              :   /// step ends; one per Insert(), in order.</span>
-<span id="L623"><span class="lineNum">     623</span>              :   struct PendingInsert {</span>
-<span id="L624"><span class="lineNum">     624</span>              :     /** @brief The private directory gpg writes into; removed with this. */</span>
-<span id="L625"><span class="lineNum">     625</span>              :     std::shared_ptr&lt;QTemporaryDir&gt; scratch;</span>
-<span id="L626"><span class="lineNum">     626</span>              :     /** @brief The ciphertext file gpg writes, inside @ref scratch. */</span>
-<span id="L627"><span class="lineNum">     627</span>              :     QString output;</span>
-<span id="L628"><span class="lineNum">     628</span>              :     /** @brief The entry's path in the store, where @ref output goes. */</span>
-<span id="L629"><span class="lineNum">     629</span>              :     QString file;</span>
-<span id="L630"><span class="lineNum">     630</span>              :     /** @brief Whether an entry already at @ref file may be replaced. */</span>
-<span id="L631"><span class="lineNum">     631</span>              :     bool overwrite = false;</span>
-<span id="L632"><span class="lineNum">     632</span>              :   };</span>
-<span id="L633"><span class="lineNum">     633</span>              :   /** @brief The inserts whose gpg step has not ended yet, oldest first. */</span>
-<span id="L634"><span class="lineNum">     634</span>              :   QQueue&lt;PendingInsert&gt; m_pendingInserts;</span>
-<span id="L635"><span class="lineNum">     635</span>              :   /// The insert whose gpg step ended last placed its entry in the store; its</span>
-<span id="L636"><span class="lineNum">     636</span>              :   /// git steps may still fail. Set per gpg completion in finished(), not per</span>
-<span id="L637"><span class="lineNum">     637</span>              :   /// Insert() call, so a second queued insert's failure is not reported with</span>
-<span id="L638"><span class="lineNum">     638</span>              :   /// an earlier insert's answer.</span>
-<span id="L639"><span class="lineNum">     639</span>              :   bool m_insertPlaced = false;</span>
-<span id="L640"><span class="lineNum">     640</span>              : </span>
-<span id="L641"><span class="lineNum">     641</span>              :   /**</span>
-<span id="L642"><span class="lineNum">     642</span>              :    * @brief Bring the ciphertext gpg wrote to @p output into the store as</span>
-<span id="L643"><span class="lineNum">     643</span>              :    * @p file (Util::copyFileReplacing): through a temporary created next to</span>
-<span id="L644"><span class="lineNum">     644</span>              :    * the entry and written by its open handle, then the operating system's</span>
-<span id="L645"><span class="lineNum">     645</span>              :    * rename, which replaces the entry under that name (or, without</span>
-<span id="L646"><span class="lineNum">     646</span>              :    * @p overwrite, fails when one has appeared) and follows nothing. Reports</span>
-<span id="L647"><span class="lineNum">     647</span>              :    * nothing itself: Insert()'s finished() routes the reason through the</span>
-<span id="L648"><span class="lineNum">     648</span>              :    * failed-operation path once the queued git steps are cancelled, and</span>
-<span id="L649"><span class="lineNum">     649</span>              :    * re-encryption lists it in the run's summary.</span>
-<span id="L650"><span class="lineNum">     650</span>              :    * @param output The file gpg wrote, in a directory of QtPass's own.</span>
-<span id="L651"><span class="lineNum">     651</span>              :    * @param file The entry's path.</span>
-<span id="L652"><span class="lineNum">     652</span>              :    * @param overwrite Whether an entry already there may be replaced.</span>
-<span id="L653"><span class="lineNum">     653</span>              :    * @param error Receives why @p file could not be written, if not.</span>
-<span id="L654"><span class="lineNum">     654</span>              :    * @return Whether @p file now holds the new ciphertext.</span>
-<span id="L655"><span class="lineNum">     655</span>              :    */</span>
-<span id="L656"><span class="lineNum">     656</span>              :   auto placeEncryptedFile(const QString &amp;output, const QString &amp;file,</span>
-<span id="L657"><span class="lineNum">     657</span>              :                           bool overwrite, QString *error) -&gt; bool;</span>
-<span id="L658"><span class="lineNum">     658</span>              : </span>
-<span id="L659"><span class="lineNum">     659</span>              :   /**</span>
-<span id="L660"><span class="lineNum">     660</span>              :    * @brief Outcome of one reencryptPath() run; filled on the worker thread and</span>
-<span id="L661"><span class="lineNum">     661</span>              :    * consumed by finishReencrypt() on the owning thread.</span>
-<span id="L662"><span class="lineNum">     662</span>              :    */</span>
-<span id="L663"><span class="lineNum">     663</span>              :   struct ReencryptResult;</span>
-<span id="L664"><span class="lineNum">     664</span>              :   /// Set while a re-encryption run is pending or on the worker thread.</span>
-<span id="L665"><span class="lineNum">     665</span>              :   bool m_reencryptActive = false;</span>
-<span id="L666"><span class="lineNum">     666</span>              :   /// A push was asked for while a run was active (GitPush()); the run makes</span>
-<span id="L667"><span class="lineNum">     667</span>              :   /// it at its end, when every file went through.</span>
-<span id="L668"><span class="lineNum">     668</span>              :   bool m_pushAfterReencrypt = false;</span>
-<span id="L669"><span class="lineNum">     669</span>              :   /// The folder the re-encryption in flight covers, for the push hold.</span>
-<span id="L670"><span class="lineNum">     670</span>              :   QString m_reencryptScope;</span>
-<span id="L671"><span class="lineNum">     671</span>              :   /// Set while finishReencrypt() pushes, so GitPush() does not hold it.</span>
-<span id="L672"><span class="lineNum">     672</span>              :   bool m_reencryptPushing = false;</span>
-<span id="L673"><span class="lineNum">     673</span>              :   /// Set by cancelReencryptPath() and the destructor; read by the worker</span>
-<span id="L674"><span class="lineNum">     674</span>              :   /// between files and polled by Executor::executeBlocking() while the worker</span>
-<span id="L675"><span class="lineNum">     675</span>              :   /// waits on a process, which the worker then ends itself. The flag is the</span>
-<span id="L676"><span class="lineNum">     676</span>              :   /// only thing shared with the worker: its QProcess is not thread-safe and</span>
-<span id="L677"><span class="lineNum">     677</span>              :   /// is never touched from another thread.</span>
-<span id="L678"><span class="lineNum">     678</span>              :   std::atomic&lt;bool&gt; m_reencryptCancel{false};</span>
-<span id="L679"><span class="lineNum">     679</span>              :   /**</span>
-<span id="L680"><span class="lineNum">     680</span>              :    * @brief The re-encryption worker while it runs, null otherwise. The</span>
-<span id="L681"><span class="lineNum">     681</span>              :    * destructor sets m_reencryptCancel and joins it.</span>
-<span id="L682"><span class="lineNum">     682</span>              :    */</span>
-<span id="L683"><span class="lineNum">     683</span>              :   QThread *m_reencryptThread = nullptr;</span>
-<span id="L684"><span class="lineNum">     684</span>              :   /**</span>
-<span id="L685"><span class="lineNum">     685</span>              :    * @brief Start the worker thread once the Executor queue is idle.</span>
-<span id="L686"><span class="lineNum">     686</span>              :    * @param dir Directory passed to reencryptPath().</span>
-<span id="L687"><span class="lineNum">     687</span>              :    */</span>
-<span id="L688"><span class="lineNum">     688</span>              :   void startReencryptWorker(const QString &amp;dir);</span>
-<span id="L689"><span class="lineNum">     689</span>              :   /**</span>
-<span id="L690"><span class="lineNum">     690</span>              :    * @brief Worker-thread body: scan @p dir and re-encrypt stale files.</span>
-<span id="L691"><span class="lineNum">     691</span>              :    * @param dir Directory passed to reencryptPath().</span>
-<span id="L692"><span class="lineNum">     692</span>              :    * @return Counts and the list of files that could not be re-encrypted.</span>
-<span id="L693"><span class="lineNum">     693</span>              :    */</span>
-<span id="L694"><span class="lineNum">     694</span>              :   auto reencryptFiles(const QString &amp;dir) -&gt; ReencryptResult;</span>
-<span id="L695"><span class="lineNum">     695</span>              :   /**</span>
-<span id="L696"><span class="lineNum">     696</span>              :    * @brief Pull before a run, when the store is a Git repository and</span>
-<span id="L697"><span class="lineNum">     697</span>              :    * automatic pulling is on.</span>
-<span id="L698"><span class="lineNum">     698</span>              :    * @return Whether re-encrypting may go ahead: false when a failed pull</span>
-<span id="L699"><span class="lineNum">     699</span>              :    * left unmerged files, the check for them fails, or HEAD is still behind</span>
-<span id="L700"><span class="lineNum">     700</span>              :    * its upstream (the checkout may have stopped half-way).</span>
-<span id="L701"><span class="lineNum">     701</span>              :    */</span>
-<span id="L702"><span class="lineNum">     702</span>              :   auto pullBeforeReencrypt() -&gt; bool;</span>
-<span id="L703"><span class="lineNum">     703</span>              :   /**</span>
-<span id="L704"><span class="lineNum">     704</span>              :    * @brief The entries under @p dir a run considers, telling the user about</span>
-<span id="L705"><span class="lineNum">     705</span>              :    * anything skipped for not being a regular file.</span>
-<span id="L706"><span class="lineNum">     706</span>              :    * @param dir Directory to walk, recursively.</span>
-<span id="L707"><span class="lineNum">     707</span>              :    * @param failed Receives a failure line for every folder that could not be</span>
-<span id="L708"><span class="lineNum">     708</span>              :    *        read: its entries are not in the result, and the run must not</span>
-<span id="L709"><span class="lineNum">     709</span>              :    *        pass for complete.</span>
-<span id="L710"><span class="lineNum">     710</span>              :    * @return The `.gpg` files, links and special files left out.</span>
-<span id="L711"><span class="lineNum">     711</span>              :    */</span>
-<span id="L712"><span class="lineNum">     712</span>              :   auto entriesToReencrypt(const QString &amp;dir, QStringList *failed)</span>
-<span id="L713"><span class="lineNum">     713</span>              :       -&gt; QStringList;</span>
-<span id="L714"><span class="lineNum">     714</span>              :   /**</span>
-<span id="L715"><span class="lineNum">     715</span>              :    * @brief The verified recipients for the folder @p fileName sits in.</span>
-<span id="L716"><span class="lineNum">     716</span>              :    * @param fileName An entry in the folder.</span>
-<span id="L717"><span class="lineNum">     717</span>              :    * @param verified Cache of the `.gpg-id` files already checked.</span>
-<span id="L718"><span class="lineNum">     718</span>              :    * @param gpgId Receives the recipients to encrypt that folder to.</span>
-<span id="L719"><span class="lineNum">     719</span>              :    * @param result Marked cancelled or aborted when the answer is no.</span>
-<span id="L720"><span class="lineNum">     720</span>              :    * @return Whether the run may go on with this folder.</span>
-<span id="L721"><span class="lineNum">     721</span>              :    */</span>
-<span id="L722"><span class="lineNum">     722</span>              :   auto recipientsForDir(const QString &amp;fileName,</span>
-<span id="L723"><span class="lineNum">     723</span>              :                         QHash&lt;QString, QStringList&gt; &amp;verified,</span>
-<span id="L724"><span class="lineNum">     724</span>              :                         QStringList &amp;gpgId, ReencryptResult &amp;result) -&gt; bool;</span>
-<span id="L725"><span class="lineNum">     725</span>              :   /**</span>
-<span id="L726"><span class="lineNum">     726</span>              :    * @brief Deal with what a crashed or failed earlier run left under @p dir</span>
-<span id="L727"><span class="lineNum">     727</span>              :    * before touching anything: stale temporaries (today's staged</span>
-<span id="L728"><span class="lineNum">     728</span>              :    * `.qtpass-XXXXXX.tmp`, 1.8.x's `&lt;entry&gt;.reencrypt.tmp`, the</span>
-<span id="L729"><span class="lineNum">     729</span>              :    * `&lt;entry&gt;.XXXXXX.tmp` of builds in between) are removed unless they were</span>
-<span id="L730"><span class="lineNum">     730</span>              :    * modified within the hour, where they may be another QtPass's write in</span>
-<span id="L731"><span class="lineNum">     731</span>              :    * flight on a shared store; a 1.8.x `&lt;entry&gt;.reencrypt.bak` whose original</span>
-<span id="L732"><span class="lineNum">     732</span>              :    * is missing is put back, one next to a present original is reported and</span>
-<span id="L733"><span class="lineNum">     733</span>              :    * left alone (both are valid ciphertexts, the choice is the user's).</span>
-<span id="L734"><span class="lineNum">     734</span>              :    * @param dir Directory to scan, recursively.</span>
-<span id="L735"><span class="lineNum">     735</span>              :    * @return false when something was reported that needs a human first.</span>
-<span id="L736"><span class="lineNum">     736</span>              :    */</span>
-<span id="L737"><span class="lineNum">     737</span>              :   auto recoverReencryptLeftovers(const QString &amp;dir) -&gt; bool;</span>
-<span id="L738"><span class="lineNum">     738</span>              :   /**</span>
-<span id="L739"><span class="lineNum">     739</span>              :    * @brief Remove a stale temporary a crashed run left, unless it was</span>
-<span id="L740"><span class="lineNum">     740</span>              :    * modified within the hour: on a shared store it may be another QtPass's</span>
-<span id="L741"><span class="lineNum">     741</span>              :    * write in flight under the same name.</span>
-<span id="L742"><span class="lineNum">     742</span>              :    * @param path The temporary, a regular file.</span>
-<span id="L743"><span class="lineNum">     743</span>              :    */</span>
-<span id="L744"><span class="lineNum">     744</span>              :   void dropStaleTemporary(const QString &amp;path);</span>
-<span id="L745"><span class="lineNum">     745</span>              :   /**</span>
-<span id="L746"><span class="lineNum">     746</span>              :    * @brief Put a 1.8.x backup back in its entry's place when the entry is</span>
-<span id="L747"><span class="lineNum">     747</span>              :    * missing; report it when both exist (both are valid ciphertexts, the</span>
-<span id="L748"><span class="lineNum">     748</span>              :    * choice is the user's) or when the rename fails.</span>
-<span id="L749"><span class="lineNum">     749</span>              :    * @param path The `&lt;entry&gt;.reencrypt.bak` file.</span>
-<span id="L750"><span class="lineNum">     750</span>              :    * @return Whether nothing needs a human first.</span>
-<span id="L751"><span class="lineNum">     751</span>              :    */</span>
-<span id="L752"><span class="lineNum">     752</span>              :   auto restoreBackup(const QString &amp;path) -&gt; bool;</span>
-<span id="L753"><span class="lineNum">     753</span>              :   /**</span>
-<span id="L754"><span class="lineNum">     754</span>              :    * @brief Tell the user a leftover is not a regular file and was left.</span>
-<span id="L755"><span class="lineNum">     755</span>              :    * @param path The leftover.</span>
-<span id="L756"><span class="lineNum">     756</span>              :    */</span>
-<span id="L757"><span class="lineNum">     757</span>              :   void reportUnrestorable(const QString &amp;path);</span>
-<span id="L758"><span class="lineNum">     758</span>              :   /**</span>
-<span id="L759"><span class="lineNum">     759</span>              :    * @brief Report the outcome of a run and emit endReencryptPath().</span>
-<span id="L760"><span class="lineNum">     760</span>              :    * @param result Outcome produced by reencryptFiles().</span>
-<span id="L761"><span class="lineNum">     761</span>              :    */</span>
-<span id="L762"><span class="lineNum">     762</span>              :   void finishReencrypt(const ReencryptResult &amp;result);</span>
-<span id="L763"><span class="lineNum">     763</span>              : </span>
-<span id="L764"><span class="lineNum">     764</span>              :   /**</span>
-<span id="L765"><span class="lineNum">     765</span>              :    * @brief A `.gpg-id` Init() wrote but could not commit.</span>
-<span id="L766"><span class="lineNum">     766</span>              :    */</span>
-<span id="L767"><span class="lineNum">     767</span> <span class="tlaGNC">           6 :   struct UncommittedGpgId {</span></span>
-<span id="L768"><span class="lineNum">     768</span>              :     QString folder;   ///&lt; The folder whose recipients changed.</span>
-<span id="L769"><span class="lineNum">     769</span>              :     QString gitError; ///&lt; What Git said when the commit failed.</span>
-<span id="L770"><span class="lineNum">     770</span>              :   };</span>
-<span id="L771"><span class="lineNum">     771</span>              :   /// Set by reencryptWithoutGit() for the run it starts and cleared by</span>
-<span id="L772"><span class="lineNum">     772</span>              :   /// finishReencrypt(): that run does no Git at all (no pull, backup</span>
-<span id="L773"><span class="lineNum">     773</span>              :   /// commit, per-entry commit or push) and ends with</span>
-<span id="L774"><span class="lineNum">     774</span>              :   /// reportUncommittedGpgId(). Written only on the owning thread while no</span>
-<span id="L775"><span class="lineNum">     775</span>              :   /// worker runs; the worker only reads it, through reencryptUsesGit().</span>
-<span id="L776"><span class="lineNum">     776</span>              :   std::optional&lt;UncommittedGpgId&gt; m_uncommittedGpgId;</span>
-<span id="L777"><span class="lineNum">     777</span>              :   /**</span>
-<span id="L778"><span class="lineNum">     778</span>              :    * @brief The `.gpg-id` Init() wrote for the run it starts: the recipients</span>
-<span id="L779"><span class="lineNum">     779</span>              :    * the user ticked, as written.</span>
-<span id="L780"><span class="lineNum">     780</span>              :    */</span>
-<span id="L781"><span class="lineNum">     781</span> <span class="tlaGNC">          27 :   struct WrittenGpgId {</span></span>
-<span id="L782"><span class="lineNum">     782</span>              :     QString file;     ///&lt; The list's path.</span>
-<span id="L783"><span class="lineNum">     783</span>              :     QByteArray bytes; ///&lt; What Init() wrote there.</span>
-<span id="L784"><span class="lineNum">     784</span>              :   };</span>
-<span id="L785"><span class="lineNum">     785</span>              :   /// Set by Init() for the run it starts and cleared by finishReencrypt(),</span>
-<span id="L786"><span class="lineNum">     786</span>              :   /// or at once when that run is refused before it starts. After its pull</span>
-<span id="L787"><span class="lineNum">     787</span>              :   /// the worker stops when the list no longer holds these bytes: a merge</span>
-<span id="L788"><span class="lineNum">     788</span>              :   /// changed the recipients the user chose. Written only on the owning</span>
-<span id="L789"><span class="lineNum">     789</span>              :   /// thread while no worker runs; the worker only reads it.</span>
-<span id="L790"><span class="lineNum">     790</span>              :   std::optional&lt;WrittenGpgId&gt; m_writtenGpgId;</span>
-<span id="L791"><span class="lineNum">     791</span>              :   /**</span>
-<span id="L792"><span class="lineNum">     792</span>              :    * @brief gitConfigured(), unless the current run is one</span>
-<span id="L793"><span class="lineNum">     793</span>              :    * reencryptWithoutGit() started.</span>
-<span id="L794"><span class="lineNum">     794</span>              :    * @return Whether the re-encryption run may call Git.</span>
-<span id="L795"><span class="lineNum">     795</span>              :    */</span>
-<span id="L796"><span class="lineNum">     796</span>              :   auto reencryptUsesGit() const -&gt; bool;</span>
-<span id="L797"><span class="lineNum">     797</span>              :   /**</span>
-<span id="L798"><span class="lineNum">     798</span>              :    * @brief Re-encrypt @p dir to the `.gpg-id` Init() wrote although its</span>
-<span id="L799"><span class="lineNum">     799</span>              :    * commit failed, without any Git step (they would fail the same way), and</span>
-<span id="L800"><span class="lineNum">     800</span>              :    * tell the user afterwards that the change is not committed.</span>
-<span id="L801"><span class="lineNum">     801</span>              :    * @param dir The folder whose recipients changed.</span>
-<span id="L802"><span class="lineNum">     802</span>              :    * @param gitError What Git said when the commit failed.</span>
-<span id="L803"><span class="lineNum">     803</span>              :    */</span>
-<span id="L804"><span class="lineNum">     804</span>              :   void reencryptWithoutGit(const QString &amp;dir, const QString &amp;gitError);</span>
-<span id="L805"><span class="lineNum">     805</span>              :   /**</span>
-<span id="L806"><span class="lineNum">     806</span>              :    * @brief Tell the user that the recipients of @p dir changed on disk but</span>
-<span id="L807"><span class="lineNum">     807</span>              :    * the change is not committed, and whether the entries were re-encrypted.</span>
-<span id="L808"><span class="lineNum">     808</span>              :    * @param dir The folder whose recipients changed.</span>
-<span id="L809"><span class="lineNum">     809</span>              :    * @param gitError What Git said when the commit failed.</span>
-<span id="L810"><span class="lineNum">     810</span>              :    * @param reencrypted Whether every entry was re-encrypted to the new</span>
-<span id="L811"><span class="lineNum">     811</span>              :    *        recipients; false means some or all are still encrypted to the</span>
-<span id="L812"><span class="lineNum">     812</span>              :    *        previous ones.</span>
-<span id="L813"><span class="lineNum">     813</span>              :    */</span>
-<span id="L814"><span class="lineNum">     814</span>              :   void reportUncommittedGpgId(const QString &amp;dir, const QString &amp;gitError,</span>
-<span id="L815"><span class="lineNum">     815</span>              :                               bool reencrypted);</span>
-<span id="L816"><span class="lineNum">     816</span>              : </span>
-<span id="L817"><span class="lineNum">     817</span>              :   /**</span>
-<span id="L818"><span class="lineNum">     818</span>              :    * @brief Translate @p path for the given @p exe when WSL-routed: wraps in</span>
-<span id="L819"><span class="lineNum">     819</span>              :    * wslpath substitution, otherwise returns @p path unchanged.</span>
-<span id="L820"><span class="lineNum">     820</span>              :    * @param path Native filesystem path.</span>
-<span id="L821"><span class="lineNum">     821</span>              :    * @param exe Executable path (checked for &quot;wsl &quot; prefix).</span>
-<span id="L822"><span class="lineNum">     822</span>              :    * @return Path suitable for the given executable.</span>
-<span id="L823"><span class="lineNum">     823</span>              :    */</span>
-<span id="L824"><span class="lineNum">     824</span>              :   auto translatePathForWsl(const QString &amp;path, const QString &amp;exe) const</span>
-<span id="L825"><span class="lineNum">     825</span>              :       -&gt; QString;</span>
-<span id="L826"><span class="lineNum">     826</span>              :   /**</span>
-<span id="L827"><span class="lineNum">     827</span>              :    * @brief Translate @p path for git when WSL-routed: wraps in wslpath</span>
-<span id="L828"><span class="lineNum">     828</span>              :    * substitution, otherwise returns @p path unchanged.</span>
-<span id="L829"><span class="lineNum">     829</span>              :    * @param path Native filesystem path.</span>
-<span id="L830"><span class="lineNum">     830</span>              :    * @return Path suitable for the configured git executable.</span>
-<span id="L831"><span class="lineNum">     831</span>              :    */</span>
-<span id="L832"><span class="lineNum">     832</span>              :   auto pgit(const QString &amp;path) const -&gt; QString;</span>
-<span id="L833"><span class="lineNum">     833</span>              :   /**</span>
-<span id="L834"><span class="lineNum">     834</span>              :    * @brief Translate @p path for gpg when WSL-routed: wraps in wslpath</span>
-<span id="L835"><span class="lineNum">     835</span>              :    * substitution, otherwise returns @p path unchanged.</span>
-<span id="L836"><span class="lineNum">     836</span>              :    * @param path Native filesystem path.</span>
-<span id="L837"><span class="lineNum">     837</span>              :    * @return Path suitable for the configured gpg executable.</span>
-<span id="L838"><span class="lineNum">     838</span>              :    */</span>
-<span id="L839"><span class="lineNum">     839</span>              :   auto pgpg(const QString &amp;path) const -&gt; QString;</span>
-<span id="L840"><span class="lineNum">     840</span>              : };</span>
-<span id="L841"><span class="lineNum">     841</span>              : </span>
-<span id="L842"><span class="lineNum">     842</span>              : #endif // SRC_IMITATEPASS_H_</span>
+<span id="L517"><span class="lineNum">     517</span>              :    * A second call while a run is active is ignored. Dot-named entries</span>
+<span id="L518"><span class="lineNum">     518</span>              :    * (`.env.gpg`) are re-encrypted too, as with `pass init`; hidden folders</span>
+<span id="L519"><span class="lineNum">     519</span>              :    * (`.git`, `.stversions`) are not entered.</span>
+<span id="L520"><span class="lineNum">     520</span>              :    * @param dir Directory path.</span>
+<span id="L521"><span class="lineNum">     521</span>              :    */</span>
+<span id="L522"><span class="lineNum">     522</span>              :   void reencryptPath(const QString &amp;dir);</span>
+<span id="L523"><span class="lineNum">     523</span>              :   /**</span>
+<span id="L524"><span class="lineNum">     524</span>              :    * @brief Re-encrypt @p dir under @p settings, the current profile's.</span>
+<span id="L525"><span class="lineNum">     525</span>              :    *</span>
+<span id="L526"><span class="lineNum">     526</span>              :    * This backend re-encrypts also when pass is the active one, and then is</span>
+<span id="L527"><span class="lineNum">     527</span>              :    * not re-initialised on a profile switch: without this it would decrypt</span>
+<span id="L528"><span class="lineNum">     528</span>              :    * the current profile's entries and encrypt them to the recipients and</span>
+<span id="L529"><span class="lineNum">     529</span>              :    * signing policy of the profile it last ran for. The settings are taken</span>
+<span id="L530"><span class="lineNum">     530</span>              :    * only when no run is active, so a running one keeps its own.</span>
+<span id="L531"><span class="lineNum">     531</span>              :    * @param dir Directory path.</span>
+<span id="L532"><span class="lineNum">     532</span>              :    * @param settings The current settings.</span>
+<span id="L533"><span class="lineNum">     533</span>              :    */</span>
+<span id="L534"><span class="lineNum">     534</span>              :   void reencryptPath(const QString &amp;dir, const AppSettings &amp;settings);</span>
+<span id="L535"><span class="lineNum">     535</span>              :   /**</span>
+<span id="L536"><span class="lineNum">     536</span>              :    * @brief Ask a running reencryptPath() to stop.</span>
+<span id="L537"><span class="lineNum">     537</span>              :    *</span>
+<span id="L538"><span class="lineNum">     538</span>              :    * Only sets a flag. The worker starts no further gpg or git process, and</span>
+<span id="L539"><span class="lineNum">     539</span>              :    * the one it is blocked on (gpg waiting on pinentry, say) is terminated by</span>
+<span id="L540"><span class="lineNum">     540</span>              :    * the worker itself, and killed if it is still running after a short grace</span>
+<span id="L541"><span class="lineNum">     541</span>              :    * period, so the cancel takes effect promptly rather than after the current</span>
+<span id="L542"><span class="lineNum">     542</span>              :    * file. The store stays</span>
+<span id="L543"><span class="lineNum">     543</span>              :    * consistent: reencryptSingleFile() only replaces a file once the new</span>
+<span id="L544"><span class="lineNum">     544</span>              :    * ciphertext is verified, so an interrupted file is left untouched, or</span>
+<span id="L545"><span class="lineNum">     545</span>              :    * already re-encrypted but not yet committed when git was the process that</span>
+<span id="L546"><span class="lineNum">     546</span>              :    * was interrupted. The remaining files are left untouched and the</span>
+<span id="L547"><span class="lineNum">     547</span>              :    * interrupted file is not reported as a failure. endReencryptPath() is</span>
+<span id="L548"><span class="lineNum">     548</span>              :    * still emitted when the worker has stopped.</span>
+<span id="L549"><span class="lineNum">     549</span>              :    */</span>
+<span id="L550"><span class="lineNum">     550</span>              :   void cancelReencryptPath();</span>
+<span id="L551"><span class="lineNum">     551</span>              : </span>
+<span id="L552"><span class="lineNum">     552</span>              : signals:</span>
+<span id="L553"><span class="lineNum">     553</span>              :   /**</span>
+<span id="L554"><span class="lineNum">     554</span>              :    * @brief A reencryptPath() run is about to start its worker thread.</span>
+<span id="L555"><span class="lineNum">     555</span>              :    *</span>
+<span id="L556"><span class="lineNum">     556</span>              :    * The main window disables the interface and shows a progress dialog</span>
+<span id="L557"><span class="lineNum">     557</span>              :    * with a Cancel button on it. Always followed by endReencryptPath().</span>
+<span id="L558"><span class="lineNum">     558</span>              :    */</span>
+<span id="L559"><span class="lineNum">     559</span>              :   void startReencryptPath();</span>
+<span id="L560"><span class="lineNum">     560</span>              :   /**</span>
+<span id="L561"><span class="lineNum">     561</span>              :    * @brief A reencryptPath() run is over, whether it finished, failed, was</span>
+<span id="L562"><span class="lineNum">     562</span>              :    * cancelled or was refused; the main window releases the interface.</span>
+<span id="L563"><span class="lineNum">     563</span>              :    *</span>
+<span id="L564"><span class="lineNum">     564</span>              :    * Also emitted without a preceding startReencryptPath() when the folder</span>
+<span id="L565"><span class="lineNum">     565</span>              :    * is refused before anything starts.</span>
+<span id="L566"><span class="lineNum">     566</span>              :    */</span>
+<span id="L567"><span class="lineNum">     567</span>              :   void endReencryptPath();</span>
+<span id="L568"><span class="lineNum">     568</span>              :   /**</span>
+<span id="L569"><span class="lineNum">     569</span>              :    * @brief Re-encryption progress: @p current of @p total files checked.</span>
+<span id="L570"><span class="lineNum">     570</span>              :    *</span>
+<span id="L571"><span class="lineNum">     571</span>              :    * Emitted from the worker thread; connect with a queued (or automatic)</span>
+<span id="L572"><span class="lineNum">     572</span>              :    * connection.</span>
+<span id="L573"><span class="lineNum">     573</span>              :    * @param current Number of files checked so far, including this one.</span>
+<span id="L574"><span class="lineNum">     574</span>              :    * @param total Total number of files found by the scan.</span>
+<span id="L575"><span class="lineNum">     575</span>              :    */</span>
+<span id="L576"><span class="lineNum">     576</span>              :   void reencryptProgress(int current, int total);</span>
+<span id="L577"><span class="lineNum">     577</span>              : </span>
+<span id="L578"><span class="lineNum">     578</span>              :   // Pass interface</span>
+<span id="L579"><span class="lineNum">     579</span>              : public:</span>
+<span id="L580"><span class="lineNum">     580</span>              :   /**</span>
+<span id="L581"><span class="lineNum">     581</span>              :    * @brief Move password file.</span>
+<span id="L582"><span class="lineNum">     582</span>              :    * @param src Source path.</span>
+<span id="L583"><span class="lineNum">     583</span>              :    * @param dest Destination path.</span>
+<span id="L584"><span class="lineNum">     584</span>              :    * @param force true to overwrite existing destination.</span>
+<span id="L585"><span class="lineNum">     585</span>              :    */</span>
+<span id="L586"><span class="lineNum">     586</span>              :   void Move(const QString src, const QString dest, const bool force) override;</span>
+<span id="L587"><span class="lineNum">     587</span>              :   /**</span>
+<span id="L588"><span class="lineNum">     588</span>              :    * @brief Copy password file.</span>
+<span id="L589"><span class="lineNum">     589</span>              :    * @param src Source path.</span>
+<span id="L590"><span class="lineNum">     590</span>              :    * @param dest Destination path.</span>
+<span id="L591"><span class="lineNum">     591</span>              :    * @param force true to overwrite existing destination.</span>
+<span id="L592"><span class="lineNum">     592</span>              :    */</span>
+<span id="L593"><span class="lineNum">     593</span>              :   void Copy(const QString src, const QString dest, const bool force) override;</span>
+<span id="L594"><span class="lineNum">     594</span>              :   /**</span>
+<span id="L595"><span class="lineNum">     595</span>              :    * @brief Search all password content by GPG-decrypting each .gpg file.</span>
+<span id="L596"><span class="lineNum">     596</span>              :    *</span>
+<span id="L597"><span class="lineNum">     597</span>              :    * Pattern is interpreted as a QRegularExpression (PCRE-like); RealPass::Grep</span>
+<span id="L598"><span class="lineNum">     598</span>              :    * uses the same search, so both backends match alike.</span>
+<span id="L599"><span class="lineNum">     599</span>              :    *</span>
+<span id="L600"><span class="lineNum">     600</span>              :    * @param pattern Search pattern (QRegularExpression).</span>
+<span id="L601"><span class="lineNum">     601</span>              :    * @param caseInsensitive true for case-insensitive search.</span>
+<span id="L602"><span class="lineNum">     602</span>              :    */</span>
+<span id="L603"><span class="lineNum">     603</span>              :   void Grep(QString pattern, bool caseInsensitive) override;</span>
+<span id="L604"><span class="lineNum">     604</span>              :   /**</span>
+<span id="L605"><span class="lineNum">     605</span>              :    * @brief Stop the running search (NativeGrep::cancel()).</span>
+<span id="L606"><span class="lineNum">     606</span>              :    */</span>
+<span id="L607"><span class="lineNum">     607</span> <span class="tlaGNC">          24 :   void CancelGrep() override { m_grep.cancel(); }</span></span>
+<span id="L608"><span class="lineNum">     608</span>              : </span>
+<span id="L609"><span class="lineNum">     609</span>              : private:</span>
+<span id="L610"><span class="lineNum">     610</span>              :   /// Groups the git/gpg processes of one operation (Insert, Remove, Move,</span>
+<span id="L611"><span class="lineNum">     611</span>              :   /// Copy) into a single completion; see finished() and TransactionHelper.</span>
+<span id="L612"><span class="lineNum">     612</span>              :   SimpleTransaction m_transaction;</span>
+<span id="L613"><span class="lineNum">     613</span>              :   /// Background search over the decrypted store; relays to finishedGrep.</span>
+<span id="L614"><span class="lineNum">     614</span>              :   NativeGrep m_grep;</span>
+<span id="L615"><span class="lineNum">     615</span>              :   /**</span>
+<span id="L616"><span class="lineNum">     616</span>              :    * @brief stdout of the steps of the transaction in flight, collected by</span>
+<span id="L617"><span class="lineNum">     617</span>              :    * finished() and handed on, then cleared, when its last step ends.</span>
+<span id="L618"><span class="lineNum">     618</span>              :    */</span>
+<span id="L619"><span class="lineNum">     619</span>              :   QString m_transactionOutput;</span>
+<span id="L620"><span class="lineNum">     620</span>              : </span>
+<span id="L621"><span class="lineNum">     621</span>              :   /// An Insert() whose gpg is running or queued: the private directory gpg</span>
+<span id="L622"><span class="lineNum">     622</span>              :   /// writes into (removed with it), the entry it is for, and whether an</span>
+<span id="L623"><span class="lineNum">     623</span>              :   /// existing entry may be replaced. Consumed by finished() when the gpg</span>
+<span id="L624"><span class="lineNum">     624</span>              :   /// step ends; one per Insert(), in order.</span>
+<span id="L625"><span class="lineNum">     625</span>              :   struct PendingInsert {</span>
+<span id="L626"><span class="lineNum">     626</span>              :     /** @brief The private directory gpg writes into; removed with this. */</span>
+<span id="L627"><span class="lineNum">     627</span>              :     std::shared_ptr&lt;QTemporaryDir&gt; scratch;</span>
+<span id="L628"><span class="lineNum">     628</span>              :     /** @brief The ciphertext file gpg writes, inside @ref scratch. */</span>
+<span id="L629"><span class="lineNum">     629</span>              :     QString output;</span>
+<span id="L630"><span class="lineNum">     630</span>              :     /** @brief The entry's path in the store, where @ref output goes. */</span>
+<span id="L631"><span class="lineNum">     631</span>              :     QString file;</span>
+<span id="L632"><span class="lineNum">     632</span>              :     /** @brief Whether an entry already at @ref file may be replaced. */</span>
+<span id="L633"><span class="lineNum">     633</span>              :     bool overwrite = false;</span>
+<span id="L634"><span class="lineNum">     634</span>              :   };</span>
+<span id="L635"><span class="lineNum">     635</span>              :   /** @brief The inserts whose gpg step has not ended yet, oldest first. */</span>
+<span id="L636"><span class="lineNum">     636</span>              :   QQueue&lt;PendingInsert&gt; m_pendingInserts;</span>
+<span id="L637"><span class="lineNum">     637</span>              :   /// The insert whose gpg step ended last placed its entry in the store; its</span>
+<span id="L638"><span class="lineNum">     638</span>              :   /// git steps may still fail. Set per gpg completion in finished(), not per</span>
+<span id="L639"><span class="lineNum">     639</span>              :   /// Insert() call, so a second queued insert's failure is not reported with</span>
+<span id="L640"><span class="lineNum">     640</span>              :   /// an earlier insert's answer.</span>
+<span id="L641"><span class="lineNum">     641</span>              :   bool m_insertPlaced = false;</span>
+<span id="L642"><span class="lineNum">     642</span>              : </span>
+<span id="L643"><span class="lineNum">     643</span>              :   /**</span>
+<span id="L644"><span class="lineNum">     644</span>              :    * @brief Bring the ciphertext gpg wrote to @p output into the store as</span>
+<span id="L645"><span class="lineNum">     645</span>              :    * @p file (Util::copyFileReplacing): through a temporary created next to</span>
+<span id="L646"><span class="lineNum">     646</span>              :    * the entry and written by its open handle, then the operating system's</span>
+<span id="L647"><span class="lineNum">     647</span>              :    * rename, which replaces the entry under that name (or, without</span>
+<span id="L648"><span class="lineNum">     648</span>              :    * @p overwrite, fails when one has appeared) and follows nothing. Reports</span>
+<span id="L649"><span class="lineNum">     649</span>              :    * nothing itself: Insert()'s finished() routes the reason through the</span>
+<span id="L650"><span class="lineNum">     650</span>              :    * failed-operation path once the queued git steps are cancelled, and</span>
+<span id="L651"><span class="lineNum">     651</span>              :    * re-encryption lists it in the run's summary.</span>
+<span id="L652"><span class="lineNum">     652</span>              :    * @param output The file gpg wrote, in a directory of QtPass's own.</span>
+<span id="L653"><span class="lineNum">     653</span>              :    * @param file The entry's path.</span>
+<span id="L654"><span class="lineNum">     654</span>              :    * @param overwrite Whether an entry already there may be replaced.</span>
+<span id="L655"><span class="lineNum">     655</span>              :    * @param error Receives why @p file could not be written, if not.</span>
+<span id="L656"><span class="lineNum">     656</span>              :    * @return Whether @p file now holds the new ciphertext.</span>
+<span id="L657"><span class="lineNum">     657</span>              :    */</span>
+<span id="L658"><span class="lineNum">     658</span>              :   auto placeEncryptedFile(const QString &amp;output, const QString &amp;file,</span>
+<span id="L659"><span class="lineNum">     659</span>              :                           bool overwrite, QString *error) -&gt; bool;</span>
+<span id="L660"><span class="lineNum">     660</span>              : </span>
+<span id="L661"><span class="lineNum">     661</span>              :   /**</span>
+<span id="L662"><span class="lineNum">     662</span>              :    * @brief Outcome of one reencryptPath() run; filled on the worker thread and</span>
+<span id="L663"><span class="lineNum">     663</span>              :    * consumed by finishReencrypt() on the owning thread.</span>
+<span id="L664"><span class="lineNum">     664</span>              :    */</span>
+<span id="L665"><span class="lineNum">     665</span>              :   struct ReencryptResult;</span>
+<span id="L666"><span class="lineNum">     666</span>              :   /// Set while a re-encryption run is pending or on the worker thread.</span>
+<span id="L667"><span class="lineNum">     667</span>              :   bool m_reencryptActive = false;</span>
+<span id="L668"><span class="lineNum">     668</span>              :   /// A push was asked for while a run was active (GitPush()); the run makes</span>
+<span id="L669"><span class="lineNum">     669</span>              :   /// it at its end, when every file went through.</span>
+<span id="L670"><span class="lineNum">     670</span>              :   bool m_pushAfterReencrypt = false;</span>
+<span id="L671"><span class="lineNum">     671</span>              :   /// The folder the re-encryption in flight covers, for the push hold.</span>
+<span id="L672"><span class="lineNum">     672</span>              :   QString m_reencryptScope;</span>
+<span id="L673"><span class="lineNum">     673</span>              :   /// Set while finishReencrypt() pushes, so GitPush() does not hold it.</span>
+<span id="L674"><span class="lineNum">     674</span>              :   bool m_reencryptPushing = false;</span>
+<span id="L675"><span class="lineNum">     675</span>              :   /// Set by cancelReencryptPath() and the destructor; read by the worker</span>
+<span id="L676"><span class="lineNum">     676</span>              :   /// between files and polled by Executor::executeBlocking() while the worker</span>
+<span id="L677"><span class="lineNum">     677</span>              :   /// waits on a process, which the worker then ends itself. The flag is the</span>
+<span id="L678"><span class="lineNum">     678</span>              :   /// only thing shared with the worker: its QProcess is not thread-safe and</span>
+<span id="L679"><span class="lineNum">     679</span>              :   /// is never touched from another thread.</span>
+<span id="L680"><span class="lineNum">     680</span>              :   std::atomic&lt;bool&gt; m_reencryptCancel{false};</span>
+<span id="L681"><span class="lineNum">     681</span>              :   /**</span>
+<span id="L682"><span class="lineNum">     682</span>              :    * @brief The re-encryption worker while it runs, null otherwise. The</span>
+<span id="L683"><span class="lineNum">     683</span>              :    * destructor sets m_reencryptCancel and joins it.</span>
+<span id="L684"><span class="lineNum">     684</span>              :    */</span>
+<span id="L685"><span class="lineNum">     685</span>              :   QThread *m_reencryptThread = nullptr;</span>
+<span id="L686"><span class="lineNum">     686</span>              :   /**</span>
+<span id="L687"><span class="lineNum">     687</span>              :    * @brief Start the worker thread once the Executor queue is idle.</span>
+<span id="L688"><span class="lineNum">     688</span>              :    * @param dir Directory passed to reencryptPath().</span>
+<span id="L689"><span class="lineNum">     689</span>              :    */</span>
+<span id="L690"><span class="lineNum">     690</span>              :   void startReencryptWorker(const QString &amp;dir);</span>
+<span id="L691"><span class="lineNum">     691</span>              :   /**</span>
+<span id="L692"><span class="lineNum">     692</span>              :    * @brief Worker-thread body: scan @p dir and re-encrypt stale files.</span>
+<span id="L693"><span class="lineNum">     693</span>              :    * @param dir Directory passed to reencryptPath().</span>
+<span id="L694"><span class="lineNum">     694</span>              :    * @return Counts and the list of files that could not be re-encrypted.</span>
+<span id="L695"><span class="lineNum">     695</span>              :    */</span>
+<span id="L696"><span class="lineNum">     696</span>              :   auto reencryptFiles(const QString &amp;dir) -&gt; ReencryptResult;</span>
+<span id="L697"><span class="lineNum">     697</span>              :   /**</span>
+<span id="L698"><span class="lineNum">     698</span>              :    * @brief Pull before a run, when the store is a Git repository and</span>
+<span id="L699"><span class="lineNum">     699</span>              :    * automatic pulling is on.</span>
+<span id="L700"><span class="lineNum">     700</span>              :    * @return Whether re-encrypting may go ahead: false when a failed pull</span>
+<span id="L701"><span class="lineNum">     701</span>              :    * left unmerged files, the check for them fails, or HEAD is still behind</span>
+<span id="L702"><span class="lineNum">     702</span>              :    * its upstream (the checkout may have stopped half-way).</span>
+<span id="L703"><span class="lineNum">     703</span>              :    */</span>
+<span id="L704"><span class="lineNum">     704</span>              :   auto pullBeforeReencrypt() -&gt; bool;</span>
+<span id="L705"><span class="lineNum">     705</span>              :   /**</span>
+<span id="L706"><span class="lineNum">     706</span>              :    * @brief The entries under @p dir a run considers, telling the user about</span>
+<span id="L707"><span class="lineNum">     707</span>              :    * anything skipped for not being a regular file.</span>
+<span id="L708"><span class="lineNum">     708</span>              :    * @param dir Directory to walk, recursively.</span>
+<span id="L709"><span class="lineNum">     709</span>              :    * @param failed Receives a failure line for every folder that could not be</span>
+<span id="L710"><span class="lineNum">     710</span>              :    *        read: its entries are not in the result, and the run must not</span>
+<span id="L711"><span class="lineNum">     711</span>              :    *        pass for complete.</span>
+<span id="L712"><span class="lineNum">     712</span>              :    * @return The `.gpg` files, links and special files left out.</span>
+<span id="L713"><span class="lineNum">     713</span>              :    */</span>
+<span id="L714"><span class="lineNum">     714</span>              :   auto entriesToReencrypt(const QString &amp;dir, QStringList *failed)</span>
+<span id="L715"><span class="lineNum">     715</span>              :       -&gt; QStringList;</span>
+<span id="L716"><span class="lineNum">     716</span>              :   /**</span>
+<span id="L717"><span class="lineNum">     717</span>              :    * @brief The verified recipients for the folder @p fileName sits in.</span>
+<span id="L718"><span class="lineNum">     718</span>              :    * @param fileName An entry in the folder.</span>
+<span id="L719"><span class="lineNum">     719</span>              :    * @param verified Cache of the `.gpg-id` files already checked.</span>
+<span id="L720"><span class="lineNum">     720</span>              :    * @param gpgId Receives the recipients to encrypt that folder to.</span>
+<span id="L721"><span class="lineNum">     721</span>              :    * @param result Marked cancelled or aborted when the answer is no.</span>
+<span id="L722"><span class="lineNum">     722</span>              :    * @return Whether the run may go on with this folder.</span>
+<span id="L723"><span class="lineNum">     723</span>              :    */</span>
+<span id="L724"><span class="lineNum">     724</span>              :   auto recipientsForDir(const QString &amp;fileName,</span>
+<span id="L725"><span class="lineNum">     725</span>              :                         QHash&lt;QString, QStringList&gt; &amp;verified,</span>
+<span id="L726"><span class="lineNum">     726</span>              :                         QStringList &amp;gpgId, ReencryptResult &amp;result) -&gt; bool;</span>
+<span id="L727"><span class="lineNum">     727</span>              :   /**</span>
+<span id="L728"><span class="lineNum">     728</span>              :    * @brief Deal with what a crashed or failed earlier run left under @p dir</span>
+<span id="L729"><span class="lineNum">     729</span>              :    * before touching anything: stale temporaries (today's staged</span>
+<span id="L730"><span class="lineNum">     730</span>              :    * `.qtpass-XXXXXX.tmp`, 1.8.x's `&lt;entry&gt;.reencrypt.tmp`, the</span>
+<span id="L731"><span class="lineNum">     731</span>              :    * `&lt;entry&gt;.XXXXXX.tmp` of builds in between) are removed unless they were</span>
+<span id="L732"><span class="lineNum">     732</span>              :    * modified within the hour, where they may be another QtPass's write in</span>
+<span id="L733"><span class="lineNum">     733</span>              :    * flight on a shared store; a 1.8.x `&lt;entry&gt;.reencrypt.bak` whose original</span>
+<span id="L734"><span class="lineNum">     734</span>              :    * is missing is put back, one next to a present original is reported and</span>
+<span id="L735"><span class="lineNum">     735</span>              :    * left alone (both are valid ciphertexts, the choice is the user's).</span>
+<span id="L736"><span class="lineNum">     736</span>              :    * @param dir Directory to scan, recursively.</span>
+<span id="L737"><span class="lineNum">     737</span>              :    * @return false when something was reported that needs a human first.</span>
+<span id="L738"><span class="lineNum">     738</span>              :    */</span>
+<span id="L739"><span class="lineNum">     739</span>              :   auto recoverReencryptLeftovers(const QString &amp;dir) -&gt; bool;</span>
+<span id="L740"><span class="lineNum">     740</span>              :   /**</span>
+<span id="L741"><span class="lineNum">     741</span>              :    * @brief Remove a stale temporary a crashed run left, unless it was</span>
+<span id="L742"><span class="lineNum">     742</span>              :    * modified within the hour: on a shared store it may be another QtPass's</span>
+<span id="L743"><span class="lineNum">     743</span>              :    * write in flight under the same name.</span>
+<span id="L744"><span class="lineNum">     744</span>              :    * @param path The temporary, a regular file.</span>
+<span id="L745"><span class="lineNum">     745</span>              :    */</span>
+<span id="L746"><span class="lineNum">     746</span>              :   void dropStaleTemporary(const QString &amp;path);</span>
+<span id="L747"><span class="lineNum">     747</span>              :   /**</span>
+<span id="L748"><span class="lineNum">     748</span>              :    * @brief Put a 1.8.x backup back in its entry's place when the entry is</span>
+<span id="L749"><span class="lineNum">     749</span>              :    * missing; report it when both exist (both are valid ciphertexts, the</span>
+<span id="L750"><span class="lineNum">     750</span>              :    * choice is the user's) or when the rename fails.</span>
+<span id="L751"><span class="lineNum">     751</span>              :    * @param path The `&lt;entry&gt;.reencrypt.bak` file.</span>
+<span id="L752"><span class="lineNum">     752</span>              :    * @return Whether nothing needs a human first.</span>
+<span id="L753"><span class="lineNum">     753</span>              :    */</span>
+<span id="L754"><span class="lineNum">     754</span>              :   auto restoreBackup(const QString &amp;path) -&gt; bool;</span>
+<span id="L755"><span class="lineNum">     755</span>              :   /**</span>
+<span id="L756"><span class="lineNum">     756</span>              :    * @brief Tell the user a leftover is not a regular file and was left.</span>
+<span id="L757"><span class="lineNum">     757</span>              :    * @param path The leftover.</span>
+<span id="L758"><span class="lineNum">     758</span>              :    */</span>
+<span id="L759"><span class="lineNum">     759</span>              :   void reportUnrestorable(const QString &amp;path);</span>
+<span id="L760"><span class="lineNum">     760</span>              :   /**</span>
+<span id="L761"><span class="lineNum">     761</span>              :    * @brief Report the outcome of a run and emit endReencryptPath().</span>
+<span id="L762"><span class="lineNum">     762</span>              :    * @param result Outcome produced by reencryptFiles().</span>
+<span id="L763"><span class="lineNum">     763</span>              :    */</span>
+<span id="L764"><span class="lineNum">     764</span>              :   void finishReencrypt(const ReencryptResult &amp;result);</span>
+<span id="L765"><span class="lineNum">     765</span>              : </span>
+<span id="L766"><span class="lineNum">     766</span>              :   /**</span>
+<span id="L767"><span class="lineNum">     767</span>              :    * @brief A `.gpg-id` Init() wrote but could not commit.</span>
+<span id="L768"><span class="lineNum">     768</span>              :    */</span>
+<span id="L769"><span class="lineNum">     769</span> <span class="tlaGNC">           6 :   struct UncommittedGpgId {</span></span>
+<span id="L770"><span class="lineNum">     770</span>              :     QString folder;   ///&lt; The folder whose recipients changed.</span>
+<span id="L771"><span class="lineNum">     771</span>              :     QString gitError; ///&lt; What Git said when the commit failed.</span>
+<span id="L772"><span class="lineNum">     772</span>              :   };</span>
+<span id="L773"><span class="lineNum">     773</span>              :   /// Set by reencryptWithoutGit() for the run it starts and cleared by</span>
+<span id="L774"><span class="lineNum">     774</span>              :   /// finishReencrypt(): that run does no Git at all (no pull, backup</span>
+<span id="L775"><span class="lineNum">     775</span>              :   /// commit, per-entry commit or push) and ends with</span>
+<span id="L776"><span class="lineNum">     776</span>              :   /// reportUncommittedGpgId(). Written only on the owning thread while no</span>
+<span id="L777"><span class="lineNum">     777</span>              :   /// worker runs; the worker only reads it, through reencryptUsesGit().</span>
+<span id="L778"><span class="lineNum">     778</span>              :   std::optional&lt;UncommittedGpgId&gt; m_uncommittedGpgId;</span>
+<span id="L779"><span class="lineNum">     779</span>              :   /**</span>
+<span id="L780"><span class="lineNum">     780</span>              :    * @brief The `.gpg-id` Init() wrote for the run it starts: the recipients</span>
+<span id="L781"><span class="lineNum">     781</span>              :    * the user ticked, as written.</span>
+<span id="L782"><span class="lineNum">     782</span>              :    */</span>
+<span id="L783"><span class="lineNum">     783</span> <span class="tlaGNC">          27 :   struct WrittenGpgId {</span></span>
+<span id="L784"><span class="lineNum">     784</span>              :     QString file;     ///&lt; The list's path.</span>
+<span id="L785"><span class="lineNum">     785</span>              :     QByteArray bytes; ///&lt; What Init() wrote there.</span>
+<span id="L786"><span class="lineNum">     786</span>              :   };</span>
+<span id="L787"><span class="lineNum">     787</span>              :   /// Set by Init() for the run it starts and cleared by finishReencrypt(),</span>
+<span id="L788"><span class="lineNum">     788</span>              :   /// or at once when that run is refused before it starts. After its pull</span>
+<span id="L789"><span class="lineNum">     789</span>              :   /// the worker stops when the list no longer holds these bytes: a merge</span>
+<span id="L790"><span class="lineNum">     790</span>              :   /// changed the recipients the user chose. Written only on the owning</span>
+<span id="L791"><span class="lineNum">     791</span>              :   /// thread while no worker runs; the worker only reads it.</span>
+<span id="L792"><span class="lineNum">     792</span>              :   std::optional&lt;WrittenGpgId&gt; m_writtenGpgId;</span>
+<span id="L793"><span class="lineNum">     793</span>              :   /**</span>
+<span id="L794"><span class="lineNum">     794</span>              :    * @brief gitConfigured(), unless the current run is one</span>
+<span id="L795"><span class="lineNum">     795</span>              :    * reencryptWithoutGit() started.</span>
+<span id="L796"><span class="lineNum">     796</span>              :    * @return Whether the re-encryption run may call Git.</span>
+<span id="L797"><span class="lineNum">     797</span>              :    */</span>
+<span id="L798"><span class="lineNum">     798</span>              :   auto reencryptUsesGit() const -&gt; bool;</span>
+<span id="L799"><span class="lineNum">     799</span>              :   /**</span>
+<span id="L800"><span class="lineNum">     800</span>              :    * @brief Re-encrypt @p dir to the `.gpg-id` Init() wrote although its</span>
+<span id="L801"><span class="lineNum">     801</span>              :    * commit failed, without any Git step (they would fail the same way), and</span>
+<span id="L802"><span class="lineNum">     802</span>              :    * tell the user afterwards that the change is not committed.</span>
+<span id="L803"><span class="lineNum">     803</span>              :    * @param dir The folder whose recipients changed.</span>
+<span id="L804"><span class="lineNum">     804</span>              :    * @param gitError What Git said when the commit failed.</span>
+<span id="L805"><span class="lineNum">     805</span>              :    */</span>
+<span id="L806"><span class="lineNum">     806</span>              :   void reencryptWithoutGit(const QString &amp;dir, const QString &amp;gitError);</span>
+<span id="L807"><span class="lineNum">     807</span>              :   /**</span>
+<span id="L808"><span class="lineNum">     808</span>              :    * @brief Tell the user that the recipients of @p dir changed on disk but</span>
+<span id="L809"><span class="lineNum">     809</span>              :    * the change is not committed, and whether the entries were re-encrypted.</span>
+<span id="L810"><span class="lineNum">     810</span>              :    * @param dir The folder whose recipients changed.</span>
+<span id="L811"><span class="lineNum">     811</span>              :    * @param gitError What Git said when the commit failed.</span>
+<span id="L812"><span class="lineNum">     812</span>              :    * @param reencrypted Whether every entry was re-encrypted to the new</span>
+<span id="L813"><span class="lineNum">     813</span>              :    *        recipients; false means some or all are still encrypted to the</span>
+<span id="L814"><span class="lineNum">     814</span>              :    *        previous ones.</span>
+<span id="L815"><span class="lineNum">     815</span>              :    */</span>
+<span id="L816"><span class="lineNum">     816</span>              :   void reportUncommittedGpgId(const QString &amp;dir, const QString &amp;gitError,</span>
+<span id="L817"><span class="lineNum">     817</span>              :                               bool reencrypted);</span>
+<span id="L818"><span class="lineNum">     818</span>              : </span>
+<span id="L819"><span class="lineNum">     819</span>              :   /**</span>
+<span id="L820"><span class="lineNum">     820</span>              :    * @brief Translate @p path for the given @p exe when WSL-routed: wraps in</span>
+<span id="L821"><span class="lineNum">     821</span>              :    * wslpath substitution, otherwise returns @p path unchanged.</span>
+<span id="L822"><span class="lineNum">     822</span>              :    * @param path Native filesystem path.</span>
+<span id="L823"><span class="lineNum">     823</span>              :    * @param exe Executable path (checked for &quot;wsl &quot; prefix).</span>
+<span id="L824"><span class="lineNum">     824</span>              :    * @return Path suitable for the given executable.</span>
+<span id="L825"><span class="lineNum">     825</span>              :    */</span>
+<span id="L826"><span class="lineNum">     826</span>              :   auto translatePathForWsl(const QString &amp;path, const QString &amp;exe) const</span>
+<span id="L827"><span class="lineNum">     827</span>              :       -&gt; QString;</span>
+<span id="L828"><span class="lineNum">     828</span>              :   /**</span>
+<span id="L829"><span class="lineNum">     829</span>              :    * @brief Translate @p path for git when WSL-routed: wraps in wslpath</span>
+<span id="L830"><span class="lineNum">     830</span>              :    * substitution, otherwise returns @p path unchanged.</span>
+<span id="L831"><span class="lineNum">     831</span>              :    * @param path Native filesystem path.</span>
+<span id="L832"><span class="lineNum">     832</span>              :    * @return Path suitable for the configured git executable.</span>
+<span id="L833"><span class="lineNum">     833</span>              :    */</span>
+<span id="L834"><span class="lineNum">     834</span>              :   auto pgit(const QString &amp;path) const -&gt; QString;</span>
+<span id="L835"><span class="lineNum">     835</span>              :   /**</span>
+<span id="L836"><span class="lineNum">     836</span>              :    * @brief Translate @p path for gpg when WSL-routed: wraps in wslpath</span>
+<span id="L837"><span class="lineNum">     837</span>              :    * substitution, otherwise returns @p path unchanged.</span>
+<span id="L838"><span class="lineNum">     838</span>              :    * @param path Native filesystem path.</span>
+<span id="L839"><span class="lineNum">     839</span>              :    * @return Path suitable for the configured gpg executable.</span>
+<span id="L840"><span class="lineNum">     840</span>              :    */</span>
+<span id="L841"><span class="lineNum">     841</span>              :   auto pgpg(const QString &amp;path) const -&gt; QString;</span>
+<span id="L842"><span class="lineNum">     842</span>              : };</span>
+<span id="L843"><span class="lineNum">     843</span>              : </span>
+<span id="L844"><span class="lineNum">     844</span>              : #endif // SRC_IMITATEPASS_H_</span>
         </pre>
               </td>
             </tr>
