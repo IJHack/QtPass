@@ -71,6 +71,9 @@ private slots:
   void togglingAFilteredRowEnablesTheRightKey();
   void selectionSurvivesFilteringAndEscapeClearsTheFilter();
   void searchListsUserIdsWithASlash();
+  void aUserIdCannotDrawALineOfItsOwn();
+  void anUnknownRecipientCannotDrawALineOfItsOwn();
+  void aFolderNameCannotTurnTheWarningAround();
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
   void unreadableRecipientLineLeavesTheOthersTicked();
@@ -873,6 +876,107 @@ void tst_usersdialog::selectionSurvivesFilteringAndEscapeClearsTheFilter() {
   QCOMPARE(
       enabledIds(pass.initCalls.first().second),
       QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
+}
+
+/**
+ * @brief A user ID with a line separator (gpg escapes only ASCII) cannot
+ *        draw a line of its own: the row is the name on one line and the key
+ *        ID on the next, so a fake fingerprint line cannot push the real one
+ *        out of view.
+ */
+void tst_usersdialog::aUserIdCannotDrawALineOfItsOwn() {
+  const QString uid = QStringLiteral("Alice") + QChar(0x2028) +
+                      QStringLiteral("0000000000000000 created 1/1/20");
+  const QString listing =
+      QStringLiteral(
+          "pub:u:4096:1:AAAAAAAAAAAAAAA1:1700000000:::u:::escarESCA::::::23::"
+          "0:\n"
+          "fpr:::::::::1111111111111111111111111111111111111111:\n"
+          "uid:u::::1700000000::H1::") +
+      uid + QStringLiteral(" <alice@example.org>::::::::::0:\n");
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-separator-uid"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "cat <<'LISTING'\n") +
+          listing + QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore, UsersDialog::Preselect::Nothing);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QCOMPARE(list->count(), 1);
+  const QString row = list->item(0)->text();
+  QVERIFY2(!row.contains(QChar(0x2028)), qPrintable(row));
+  QCOMPARE(row.count(QLatin1Char('\n')), 1);
+  QVERIFY(row.section(QLatin1Char('\n'), 0, 0)
+              .contains(QChar(QChar::ReplacementCharacter)));
+  QVERIFY(row.section(QLatin1Char('\n'), 1)
+              .startsWith(QStringLiteral("AAAAAAAAAAAAAAA1")));
+}
+
+/**
+ * @brief A recipient no key answers to is listed by its .gpg-id line as
+ *        written; a line separator in it cannot draw a line of its own.
+ */
+void tst_usersdialog::anUnknownRecipientCannotDrawALineOfItsOwn() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write((QStringLiteral("DEADBEEFDEADBEEF") + QChar(0x2028) +
+               QStringLiteral("0000000000000000\n"))
+                  .toUtf8());
+  gpgId.close();
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  bool seen = false;
+  for (int r = 0; r < list->count(); ++r) {
+    const QString text = list->item(r)->text();
+    if (text.contains(QStringLiteral("DEADBEEFDEADBEEF"))) {
+      seen = true;
+      QVERIFY2(!text.contains(QChar(0x2028)), qPrintable(text));
+      QCOMPARE(text.count(QLatin1Char('\n')), 1);
+    }
+  }
+  QVERIFY2(seen, "the unknown recipient is listed");
+}
+
+/**
+ * @brief A folder name with a bidi override cannot turn the warning that
+ *        names it around: the override is shown as U+FFFD.
+ */
+void tst_usersdialog::aFolderNameCannotTurnTheWarningAround() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QDir root(store.path());
+  const QString name =
+      QStringLiteral("work") + QChar(0x202E) + QStringLiteral("knab");
+  QVERIFY(root.mkpath(name));
+  for (const QString &folder : {QStringLiteral("."), name}) {
+    QFile gpgId(
+        QDir(root.filePath(folder)).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    gpgId.write("31850CF72D9CDDE9\n");
+  }
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *banner =
+      dialog.findChild<QLabel *>(QStringLiteral("nestedListsWarning"));
+  QVERIFY(banner != nullptr);
+  QVERIFY2(!banner->text().contains(QChar(0x202E)), qPrintable(banner->text()));
+  QVERIFY(banner->text().contains(QStringLiteral("work") +
+                                  QChar(QChar::ReplacementCharacter) +
+                                  QStringLiteral("knab")));
 }
 
 /**

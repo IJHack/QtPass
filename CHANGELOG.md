@@ -897,6 +897,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   password (scan finding ANT-2026-BSMYXPM7)
 - Messages in the entry panel ("No OTP code found") no longer become a
   link to a URL of the entry shown before (scan finding ANT-2026-H7P77YAX)
+- Names from the store or a key are shown with nothing in them that turns
+  the text around them: in message boxes, the users dialog's warnings and
+  its list of keys, bidi overrides, control characters and line separators
+  show as the replacement character. A folder name could mirror the rest of
+  a warning, and a key's user ID could draw a fake fingerprint line (scan
+  findings ANT-2026-K2VLSKHG, ANT-2026-L5TYQ24U)
 - With the `pass` backend, the pull before an edit ("Automatically pull")
   pulls the configured store. It ran without the store's settings, so `pass`
   pulled `~/.password-store` instead, and the edit dialog opened on the old

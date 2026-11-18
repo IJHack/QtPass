@@ -260,6 +260,7 @@ private Q_SLOTS:
   void linkifyUrlsLinksLaunchableWebUrls();
   void linkifyUrlsLeavesNonWebUrlsAsText();
   void linkifyUrlsLinksOnlyWhatReadsAsItOpens();
+  void displayableShowsWhatTurnsTheTextAround();
   void boundSpaceRunsCutsOnlyLongRuns();
   void utilRegexNewLines();
   void buildClipboardMimeDataDword();
@@ -1938,6 +1939,34 @@ void tst_util::linkifyUrlsLinksOnlyWhatReadsAsItOpens() {
     QVERIFY2(!linked, qPrintable(value));
     QVERIFY2(!html.contains(QStringLiteral("<a href=")), qPrintable(html));
   }
+}
+
+/// Characters that change how the text around them reads are shown as
+/// U+FFFD; tabs, the marks right-to-left text uses and (when asked) line
+/// feeds stay.
+void tst_util::displayableShowsWhatTurnsTheTextAround() {
+  const QChar fffd(QChar::ReplacementCharacter);
+  for (const char16_t u : {0x01, 0x7f, 0x85, 0x9c, 0x2028, 0x2029, 0x202a,
+                           0x202e, 0x2066, 0x2069}) {
+    const QString in = QStringLiteral("a") + QChar(u) + QStringLiteral("b");
+    QCOMPARE(Util::displayable(in),
+             QStringLiteral("a") + fffd + QStringLiteral("b"));
+  }
+  const QString kept = QStringLiteral("a\tb") + QChar(0x200E) + QChar(0x200F) +
+                       QChar(0x05D0) + QChar(0x0627);
+  QCOMPARE(Util::displayable(kept), kept);
+  QCOMPARE(Util::displayable(QStringLiteral("one\ntwo")),
+           QStringLiteral("one\ntwo"));
+  QCOMPARE(Util::displayable(QStringLiteral("one\ntwo"), false),
+           QStringLiteral("one") + fffd + QStringLiteral("two"));
+  // A Windows line end (tool output quoted in a message) stays; a carriage
+  // return on its own does not.
+  QCOMPARE(Util::displayable(QStringLiteral("one\r\ntwo")),
+           QStringLiteral("one\r\ntwo"));
+  QCOMPARE(Util::displayable(QStringLiteral("one\rtwo")),
+           QStringLiteral("one") + fffd + QStringLiteral("two"));
+  QCOMPARE(Util::displayable(QStringLiteral("one\r\ntwo"), false),
+           QStringLiteral("one") + fffd + fffd + QStringLiteral("two"));
 }
 
 void tst_util::linkifyUrlsLeavesNonWebUrlsAsText() {

@@ -515,6 +515,7 @@ private Q_SLOTS:
   void deletePasswordAsksFirst();
   void backendErrorsArePlainText();
   void deleteFolderWarnsAboutStrayFiles();
+  void aFolderNameCannotTurnTheQuestionAround();
   void deleteFolderWarnsAboutAFolderItCannotRead();
   void deleteLinkedFolderRemovesOnlyTheLink();
   void usersDialogOpensForTheStoreButNotForALink();
@@ -5968,6 +5969,57 @@ void tst_mainwindow::backendErrorsArePlainText() {
   QCOMPARE(driver.seen, 1);
   QCOMPARE(driver.boxTexts.value(0), message);
   QCOMPARE(driver.boxFormats.value(0), Qt::PlainText);
+}
+
+/**
+ * @brief A message box quoting a name from the store shows a bidi override
+ *        in it as U+FFFD: it mirrored the rest of the question, so "delete
+ *        X and the whole content" could read as something else.
+ */
+void tst_mainwindow::aFolderNameCannotTurnTheQuestionAround() {
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  }
+  const QDir store(m_storeDir.path());
+  const QString name =
+      QStringLiteral("keep") + QChar(0x202E) + QStringLiteral("ton");
+  QVERIFY(store.mkpath(name));
+  const auto cleanup = qScopeGuard(
+      [&store, &name] { QDir(store.filePath(name)).removeRecursively(); });
+  QVERIFY(selectPath(store.filePath(name)));
+  {
+    ModalDriver driver(answerBox(QMessageBox::No));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 1);
+    const QString text = driver.boxTexts.value(0);
+    QVERIFY2(!text.contains(QChar(0x202E)), qPrintable(text));
+    QVERIFY2(text.contains(QStringLiteral("keep") +
+                           QChar(QChar::ReplacementCharacter) +
+                           QStringLiteral("ton")),
+             qPrintable(text));
+  }
+  QVERIFY(QFileInfo(store.filePath(name)).isDir());
+
+  // A line feed in a name (Unix allows one) does not add a line of its own.
+#ifndef Q_OS_WIN
+  const QString twoLines = QStringLiteral("first\nsecond");
+  QVERIFY(store.mkpath(twoLines));
+  const auto cleanupLines = qScopeGuard([&store, &twoLines] {
+    QDir(store.filePath(twoLines)).removeRecursively();
+  });
+  QVERIFY(selectPath(store.filePath(twoLines)));
+  ModalDriver lines(answerBox(QMessageBox::No));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                    Qt::DirectConnection));
+  const QString question = lines.boxTexts.value(0);
+  QVERIFY2(question.contains(QStringLiteral("first") +
+                             QChar(QChar::ReplacementCharacter) +
+                             QStringLiteral("second")),
+           qPrintable(question));
+#endif
 }
 
 /**

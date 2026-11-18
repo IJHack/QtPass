@@ -635,6 +635,24 @@ auto Util::isLaunchableWebUrl(const QString &value) -> bool {
   return true;
 }
 
+auto Util::displayable(const QString &text, bool lineBreaks) -> QString {
+  QString shown = text;
+  for (qsizetype i = 0; i < shown.size(); ++i) {
+    const char16_t u = shown.at(i).unicode();
+    // A carriage return before a line feed is a Windows line end (git or
+    // gpg output quoted in a message), not a character of its own.
+    const bool lineEnd =
+        lineBreaks && (u == u'\n' || (u == u'\r' && i + 1 < shown.size() &&
+                                      shown.at(i + 1) == u'\n'));
+    if ((u < 0x20 && u != u'\t' && !lineEnd) || (u >= 0x7f && u <= 0x9f) ||
+        u == 0x2028 || u == 0x2029 || (u >= 0x202a && u <= 0x202e) ||
+        (u >= 0x2066 && u <= 0x2069)) {
+      shown[i] = QChar(QChar::ReplacementCharacter);
+    }
+  }
+  return shown;
+}
+
 auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
   if (linked != nullptr) {
     *linked = false;
