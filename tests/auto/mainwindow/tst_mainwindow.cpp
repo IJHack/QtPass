@@ -6061,6 +6061,20 @@ void tst_mainwindow::aMessageBoxShowsABoundedText() {
   QVERIFY(text.endsWith(QStringLiteral("fatal: at the end")));
   QVERIFY(details.endsWith(QStringLiteral("fatal: at the end")));
   QVERIFY(details.size() <= 256 * 1024 + 3);
+  // A cut never splits a surrogate pair, in the box or in the details:
+  // half a pair at the start's end, then at the end's start.
+  const QString pair = QString::fromUcs4(U"\U0001F511");
+  const QString a = QStringLiteral("a");
+  const QString b = QStringLiteral("b");
+  for (const QString &input :
+       {a.repeated(1999) + pair + b.repeated(2000),
+        a.repeated(2000) + pair + b.repeated(1999),
+        a.repeated(131071) + pair + b.repeated(140000),
+        a.repeated(140000) + pair + b.repeated(131071)}) {
+    std::tie(text, details) = show(input);
+    QVERIFY(text.isValidUtf16());
+    QVERIFY(details.isValidUtf16());
+  }
   // A short message is left as it is, with no details.
   std::tie(text, details) = show(QStringLiteral("one\ntwo"));
   QCOMPARE(text, QStringLiteral("one\ntwo"));

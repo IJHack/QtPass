@@ -17,6 +17,26 @@ constexpr qsizetype kMaxChars = 4000;
 constexpr qsizetype kMaxDetailChars = 256 * 1024;
 
 /**
+ * @brief The first @p chars UTF-16 units of @p text, or its last with
+ * @p fromEnd, one fewer where the cut would split a surrogate pair: half a
+ * pair shows as a broken glyph.
+ * @param text The text.
+ * @param chars The most UTF-16 units.
+ * @param fromEnd Take the end, not the start.
+ * @return That part of @p text, valid UTF-16 where @p text is.
+ */
+auto slice(const QString &text, qsizetype chars, bool fromEnd) -> QString {
+  if (chars >= text.size()) {
+    return text;
+  }
+  if (fromEnd) {
+    const qsizetype from = text.size() - chars;
+    return text.right(text.at(from).isLowSurrogate() ? chars - 1 : chars);
+  }
+  return text.left(text.at(chars - 1).isHighSurrogate() ? chars - 1 : chars);
+}
+
+/**
  * @brief At most @p lines lines and @p chars characters from the start of
  * @p text, or from its end with @p fromEnd.
  * @param text The text.
@@ -27,7 +47,7 @@ constexpr qsizetype kMaxDetailChars = 256 * 1024;
  */
 auto part(const QString &text, qsizetype lines, qsizetype chars, bool fromEnd)
     -> QString {
-  QString piece = fromEnd ? text.right(chars) : text.left(chars);
+  QString piece = slice(text, chars, fromEnd);
   qsizetype seen = 0;
   if (fromEnd) {
     for (qsizetype i = piece.size() - 1; i >= 0; --i) {
@@ -92,9 +112,9 @@ auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,
     // 256 KB its start and end, for the same reason as the box.
     box.setDetailedText(shown.size() <= kMaxDetailChars
                             ? shown
-                            : shown.left(kMaxDetailChars / 2) +
+                            : slice(shown, kMaxDetailChars / 2, false) +
                                   QStringLiteral("\n\u2026\n") +
-                                  shown.right(kMaxDetailChars / 2));
+                                  slice(shown, kMaxDetailChars / 2, true));
   }
   box.setStandardButtons(buttons);
   return static_cast<QMessageBox::StandardButton>(box.exec());
