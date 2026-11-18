@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 15:34:16</td>
+            <td class="headerValue">2026-11-18 20:15:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -612,22 +612,22 @@
 <span id="L539"><span class="lineNum">     539</span>              :   }</span>
 <span id="L540"><span class="lineNum">     540</span>              : </span>
 <span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">         241 :   if (exitCode != 0) {</span></span>
-<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          59 :     handleProcessError(pid, exitCode, out, err);</span></span>
+<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          58 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L543"><span class="lineNum">     543</span>              :     return;</span>
 <span id="L544"><span class="lineNum">     544</span>              :   }</span>
 <span id="L545"><span class="lineNum">     545</span>              : </span>
-<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         182 :   if (pid == PASS_SHOW) {</span></span>
-<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          44 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
+<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         183 :   if (pid == PASS_SHOW) {</span></span>
+<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          45 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
 <span id="L548"><span class="lineNum">     548</span>              :     return;</span>
 <span id="L549"><span class="lineNum">     549</span>              :   }</span>
 <span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         138 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L551"><span class="lineNum">     551</span>              : }</span>
 <span id="L552"><span class="lineNum">     552</span>              : </span>
-<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          59 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
+<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          58 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
 <span id="L554"><span class="lineNum">     554</span>              :                               const QString &amp;err) {</span>
 <span id="L555"><span class="lineNum">     555</span>              :   Q_UNUSED(out);</span>
 <span id="L556"><span class="lineNum">     556</span>              : </span>
-<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          59 :   if (pid == PASS_INSERT) {</span></span>
+<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          58 :   if (pid == PASS_INSERT) {</span></span>
 <span id="L558"><span class="lineNum">     558</span> <span class="tlaGNC">          18 :     const QString friendly = gpgErrorMessage(err);</span></span>
 <span id="L559"><span class="lineNum">     559</span>              :     const QString why =</span>
 <span id="L560"><span class="lineNum">     560</span> <span class="tlaGNC">          18 :         friendly.isEmpty() ? err : formatInsertError(friendly, err);</span></span>
@@ -647,10 +647,10 @@
 <span id="L574"><span class="lineNum">     574</span>              :     return;</span>
 <span id="L575"><span class="lineNum">     575</span>              :   }</span>
 <span id="L576"><span class="lineNum">     576</span>              : </span>
-<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          41 :   if (pid == GPG_GENKEYS) {</span></span>
+<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          40 :   if (pid == GPG_GENKEYS) {</span></span>
 <span id="L578"><span class="lineNum">     578</span> <span class="tlaGNC">           1 :     emit generateGPGKeysFailed(err);</span></span>
 <span id="L579"><span class="lineNum">     579</span>              :   }</span>
-<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          41 :   emit processErrorExit(exitCode, err);</span></span>
+<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          40 :   emit processErrorExit(exitCode, err);</span></span>
 <span id="L581"><span class="lineNum">     581</span>              : }</span>
 <span id="L582"><span class="lineNum">     582</span>              : </span>
 <span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">          44 : auto Pass::withoutStatusLines(const QString &amp;err) -&gt; QString {</span></span>
@@ -790,10 +790,10 @@
 <span id="L717"><span class="lineNum">     717</span>              : #endif</span>
 <span id="L718"><span class="lineNum">     718</span>              : </span>
 <span id="L719"><span class="lineNum">     719</span>              : /// Whether @p path is @p dir or lies under it.</span>
-<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1236 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
+<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1215 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
 <span id="L721"><span class="lineNum">     721</span>              :                  const QString &amp;dirPrefix) -&gt; bool {</span>
-<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        2141 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
-<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">         905 :          path.startsWith(dirPrefix, kPathCase);</span></span>
+<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        2099 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
+<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">         884 :          path.startsWith(dirPrefix, kPathCase);</span></span>
 <span id="L724"><span class="lineNum">     724</span>              : }</span>
 <span id="L725"><span class="lineNum">     725</span>              : </span>
 <span id="L726"><span class="lineNum">     726</span>              : /// Where the lookup of a .gpg-id starts and the store that bounds it.</span>
@@ -866,21 +866,21 @@
 <span id="L793"><span class="lineNum">     793</span>              : </span>
 <span id="L794"><span class="lineNum">     794</span>              : } // namespace</span>
 <span id="L795"><span class="lineNum">     795</span>              : </span>
-<span id="L796"><span class="lineNum">     796</span> <span class="tlaGNC">         219 : auto Pass::heldScopes() -&gt; QSet&lt;QString&gt; &amp; {</span></span>
-<span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">         225 :   static QSet&lt;QString&gt; scopes;</span></span>
-<span id="L798"><span class="lineNum">     798</span> <span class="tlaGNC">         219 :   return scopes;</span></span>
+<span id="L796"><span class="lineNum">     796</span> <span class="tlaGNC">         218 : auto Pass::heldScopes() -&gt; QSet&lt;QString&gt; &amp; {</span></span>
+<span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">         224 :   static QSet&lt;QString&gt; scopes;</span></span>
+<span id="L798"><span class="lineNum">     798</span> <span class="tlaGNC">         218 :   return scopes;</span></span>
 <span id="L799"><span class="lineNum">     799</span>              : }</span>
 <span id="L800"><span class="lineNum">     800</span>              : </span>
-<span id="L801"><span class="lineNum">     801</span> <span class="tlaGNC">         219 : auto Pass::scopePath(const QString &amp;path) const -&gt; QString {</span></span>
-<span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">         438 :   return QDir::cleanPath(QDir(m_settings.passStore).absoluteFilePath(path));</span></span>
+<span id="L801"><span class="lineNum">     801</span> <span class="tlaGNC">         218 : auto Pass::scopePath(const QString &amp;path) const -&gt; QString {</span></span>
+<span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">         436 :   return QDir::cleanPath(QDir(m_settings.passStore).absoluteFilePath(path));</span></span>
 <span id="L803"><span class="lineNum">     803</span>              : }</span>
 <span id="L804"><span class="lineNum">     804</span>              : </span>
 <span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">          57 : auto Pass::autoPushHeld() const -&gt; bool {</span></span>
 <span id="L806"><span class="lineNum">     806</span> <span class="tlaGNC">          57 :   const QString store = scopePath(QString());</span></span>
 <span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">          57 :   const QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L808"><span class="lineNum">     808</span> <span class="tlaGNC">          57 :   return std::any_of(scopes.cbegin(), scopes.cend(),</span></span>
-<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">         142 :                      [&amp;store](const QString &amp;s) {</span></span>
-<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">         284 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
+<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">         126 :                      [&amp;store](const QString &amp;s) {</span></span>
+<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">         252 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
 <span id="L811"><span class="lineNum">     811</span> <span class="tlaGNC">          57 :                      });</span></span>
 <span id="L812"><span class="lineNum">     812</span>              : }</span>
 <span id="L813"><span class="lineNum">     813</span>              : </span>
@@ -892,28 +892,28 @@
 <span id="L819"><span class="lineNum">     819</span>              : </span>
 <span id="L820"><span class="lineNum">     820</span> <span class="tlaGNC">           4 : auto Pass::pushIsAutomatic() const -&gt; bool { return m_pushIsAutomatic; }</span></span>
 <span id="L821"><span class="lineNum">     821</span>              : </span>
-<span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">          87 : void Pass::holdAutoPush(const QString &amp;scope) {</span></span>
-<span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">          87 :   heldScopes().insert(scopePath(scope));</span></span>
-<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">          87 : }</span></span>
+<span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">          86 : void Pass::holdAutoPush(const QString &amp;scope) {</span></span>
+<span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">          86 :   heldScopes().insert(scopePath(scope));</span></span>
+<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">          86 : }</span></span>
 <span id="L825"><span class="lineNum">     825</span>              : </span>
 <span id="L826"><span class="lineNum">     826</span> <span class="tlaGNC">          75 : void Pass::releaseAutoPush(const QString &amp;folder) {</span></span>
 <span id="L827"><span class="lineNum">     827</span> <span class="tlaGNC">          75 :   const QString root = scopePath(folder);</span></span>
 <span id="L828"><span class="lineNum">     828</span> <span class="tlaGNC">          75 :   QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L829"><span class="lineNum">     829</span>              :   for (auto it = scopes.begin(); it != scopes.end();) {</span>
-<span id="L830"><span class="lineNum">     830</span> <span class="tlaGNC">         810 :     it = isAtOrUnder(*it, root, root + QLatin1Char('/')) ? scopes.erase(it)</span></span>
-<span id="L831"><span class="lineNum">     831</span> <span class="tlaGNC">         405 :                                                          : std::next(it);</span></span>
+<span id="L830"><span class="lineNum">     830</span> <span class="tlaGNC">         800 :     it = isAtOrUnder(*it, root, root + QLatin1Char('/')) ? scopes.erase(it)</span></span>
+<span id="L831"><span class="lineNum">     831</span> <span class="tlaGNC">         400 :                                                          : std::next(it);</span></span>
 <span id="L832"><span class="lineNum">     832</span>              :   }</span>
 <span id="L833"><span class="lineNum">     833</span> <span class="tlaGNC">          75 : }</span></span>
 <span id="L834"><span class="lineNum">     834</span>              : </span>
-<span id="L835"><span class="lineNum">     835</span> <span class="tlaGNC">         577 : auto Pass::refuseLinkedPath(const QString &amp;path, LinkScope scope,</span></span>
+<span id="L835"><span class="lineNum">     835</span> <span class="tlaGNC">         580 : auto Pass::refuseLinkedPath(const QString &amp;path, LinkScope scope,</span></span>
 <span id="L836"><span class="lineNum">     836</span>              :                             PathSpelling spelling) -&gt; bool {</span>
 <span id="L837"><span class="lineNum">     837</span>              :   const QString full = QDir::isAbsolutePath(path)</span>
-<span id="L838"><span class="lineNum">     838</span> <span class="tlaGNC">         577 :                            ? path</span></span>
+<span id="L838"><span class="lineNum">     838</span> <span class="tlaGNC">         580 :                            ? path</span></span>
 <span id="L839"><span class="lineNum">     839</span> <span class="tlaGNC">         107 :                            : QDir(m_settings.passStore).filePath(path);</span></span>
 <span id="L840"><span class="lineNum">     840</span>              :   // The link check below walks only under the store as configured: a path</span>
 <span id="L841"><span class="lineNum">     841</span>              :   // spelled through the root's link target would get no more than the</span>
 <span id="L842"><span class="lineNum">     842</span>              :   // entry itself judged. No caller makes one; say so if one starts to.</span>
-<span id="L843"><span class="lineNum">     843</span> <span class="tlaGNC">         925 :   if (spelling == PathSpelling::Configured &amp;&amp;</span></span>
+<span id="L843"><span class="lineNum">     843</span> <span class="tlaGNC">         928 :   if (spelling == PathSpelling::Configured &amp;&amp;</span></span>
 <span id="L844"><span class="lineNum">     844</span> <span class="tlaGNC">         348 :       PathValidator::isTargetSpelled(m_settings.passStore, full)) {</span></span>
 <span id="L845"><span class="lineNum">     845</span> <span class="tlaGNC">           4 :     qCWarning(lcQtPass)</span></span>
 <span id="L846"><span class="lineNum">     846</span>              :         &lt;&lt; &quot;Path spelled through the store root's link target, not as the &quot;</span>
@@ -921,7 +921,7 @@
 <span id="L848"><span class="lineNum">     848</span> <span class="tlaGNC">           2 :            &quot;spelling:&quot;</span></span>
 <span id="L849"><span class="lineNum">     849</span> <span class="tlaGNC">           2 :         &lt;&lt; full;</span></span>
 <span id="L850"><span class="lineNum">     850</span>              :   }</span>
-<span id="L851"><span class="lineNum">     851</span> <span class="tlaGNC">         577 :   if (!Util::isUnderLink(full, m_settings.passStore,</span></span>
+<span id="L851"><span class="lineNum">     851</span> <span class="tlaGNC">         580 :   if (!Util::isUnderLink(full, m_settings.passStore,</span></span>
 <span id="L852"><span class="lineNum">     852</span>              :                          scope == LinkScope::EntryAndParents)) {</span>
 <span id="L853"><span class="lineNum">     853</span>              :     return false;</span>
 <span id="L854"><span class="lineNum">     854</span>              :   }</span>
@@ -933,12 +933,12 @@
 <span id="L860"><span class="lineNum">     860</span>              :   return true;</span>
 <span id="L861"><span class="lineNum">     861</span>              : }</span>
 <span id="L862"><span class="lineNum">     862</span>              : </span>
-<span id="L863"><span class="lineNum">     863</span> <span class="tlaGNC">          74 : auto Pass::refuseFolderOutsideStore(const QString &amp;folder, QString *relative)</span></span>
+<span id="L863"><span class="lineNum">     863</span> <span class="tlaGNC">          75 : auto Pass::refuseFolderOutsideStore(const QString &amp;folder, QString *relative)</span></span>
 <span id="L864"><span class="lineNum">     864</span>              :     -&gt; bool {</span>
-<span id="L865"><span class="lineNum">     865</span> <span class="tlaGNC">          74 :   if (const std::optional&lt;QString&gt; inStore =</span></span>
-<span id="L866"><span class="lineNum">     866</span> <span class="tlaGNC">          74 :           PathValidator::storeRelativePath(m_settings.passStore, folder)) {</span></span>
-<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">          69 :     if (relative != nullptr) {</span></span>
-<span id="L868"><span class="lineNum">     868</span> <span class="tlaGNC">          69 :       *relative = *inStore;</span></span>
+<span id="L865"><span class="lineNum">     865</span> <span class="tlaGNC">          75 :   if (const std::optional&lt;QString&gt; inStore =</span></span>
+<span id="L866"><span class="lineNum">     866</span> <span class="tlaGNC">          75 :           PathValidator::storeRelativePath(m_settings.passStore, folder)) {</span></span>
+<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">          70 :     if (relative != nullptr) {</span></span>
+<span id="L868"><span class="lineNum">     868</span> <span class="tlaGNC">          70 :       *relative = *inStore;</span></span>
 <span id="L869"><span class="lineNum">     869</span>              :     }</span>
 <span id="L870"><span class="lineNum">     870</span>              :     return false;</span>
 <span id="L871"><span class="lineNum">     871</span>              :   }</span>
@@ -949,9 +949,9 @@
 <span id="L876"><span class="lineNum">     876</span> <span class="tlaGNC">           5 :   return true;</span></span>
 <span id="L877"><span class="lineNum">     877</span>              : }</span>
 <span id="L878"><span class="lineNum">     878</span>              : </span>
-<span id="L879"><span class="lineNum">     879</span> <span class="tlaGNC">         572 : auto Pass::unfinishedGitOperationReason() -&gt; QString {</span></span>
-<span id="L880"><span class="lineNum">     880</span> <span class="tlaGNC">         572 :   if (!m_settings.useGit) {</span></span>
-<span id="L881"><span class="lineNum">     881</span> <span class="tlaGNC">         435 :     return {};</span></span>
+<span id="L879"><span class="lineNum">     879</span> <span class="tlaGNC">         573 : auto Pass::unfinishedGitOperationReason() -&gt; QString {</span></span>
+<span id="L880"><span class="lineNum">     880</span> <span class="tlaGNC">         573 :   if (!m_settings.useGit) {</span></span>
+<span id="L881"><span class="lineNum">     881</span> <span class="tlaGNC">         436 :     return {};</span></span>
 <span id="L882"><span class="lineNum">     882</span>              :   }</span>
 <span id="L883"><span class="lineNum">     883</span>              :   // One git call names the path of each marker file or directory, whether or</span>
 <span id="L884"><span class="lineNum">     884</span>              :   // not it exists; the backend runs it in the store (ImitatePass with</span>
@@ -1028,9 +1028,9 @@
 <span id="L955"><span class="lineNum">     955</span>              :   return true;</span>
 <span id="L956"><span class="lineNum">     956</span>              : }</span>
 <span id="L957"><span class="lineNum">     957</span>              : </span>
-<span id="L958"><span class="lineNum">     958</span> <span class="tlaGNC">         415 : auto Pass::refuseUnfinishedGitOperation() -&gt; bool {</span></span>
-<span id="L959"><span class="lineNum">     959</span> <span class="tlaGNC">         415 :   const QString why = unfinishedGitOperationReason();</span></span>
-<span id="L960"><span class="lineNum">     960</span> <span class="tlaGNC">         415 :   if (why.isEmpty()) {</span></span>
+<span id="L958"><span class="lineNum">     958</span> <span class="tlaGNC">         416 : auto Pass::refuseUnfinishedGitOperation() -&gt; bool {</span></span>
+<span id="L959"><span class="lineNum">     959</span> <span class="tlaGNC">         416 :   const QString why = unfinishedGitOperationReason();</span></span>
+<span id="L960"><span class="lineNum">     960</span> <span class="tlaGNC">         416 :   if (why.isEmpty()) {</span></span>
 <span id="L961"><span class="lineNum">     961</span>              :     return false;</span>
 <span id="L962"><span class="lineNum">     962</span>              :   }</span>
 <span id="L963"><span class="lineNum">     963</span>              :   // Like refuseAsNotPartOfStore(): the interface arms when an operation starts</span>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 15:34:16</td>
+            <td class="headerValue">2026-11-18 20:15:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -433,14 +433,14 @@
 <span id="L360"><span class="lineNum">     360</span> <span class="tlaGNC">          72 :   m_firstShowCompleted = true;</span></span>
 <span id="L361"><span class="lineNum">     361</span>              : }</span>
 <span id="L362"><span class="lineNum">     362</span>              : </span>
-<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        8523 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">        8523 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        8512 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">        8512 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L365"><span class="lineNum">     365</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L366"><span class="lineNum">     366</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L367"><span class="lineNum">     367</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L368"><span class="lineNum">     368</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L369"><span class="lineNum">     369</span>              :   }</span>
-<span id="L370"><span class="lineNum">     370</span> <span class="tlaGNC">        8523 :   return QMainWindow::event(event);</span></span>
+<span id="L370"><span class="lineNum">     370</span> <span class="tlaGNC">        8512 :   return QMainWindow::event(event);</span></span>
 <span id="L371"><span class="lineNum">     371</span>              : }</span>
 <span id="L372"><span class="lineNum">     372</span>              : </span>
 <span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">         248 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -1728,8 +1728,8 @@
 <span id="L1655"><span class="lineNum">    1655</span>              :   }</span>
 <span id="L1656"><span class="lineNum">    1656</span> <span class="tlaGNC">           4 : }</span></span>
 <span id="L1657"><span class="lineNum">    1657</span>              : </span>
-<span id="L1658"><span class="lineNum">    1658</span> <span class="tlaGNC">        7820 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
-<span id="L1659"><span class="lineNum">    1659</span> <span class="tlaGNC">        7820 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
+<span id="L1658"><span class="lineNum">    1658</span> <span class="tlaGNC">        7816 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
+<span id="L1659"><span class="lineNum">    1659</span> <span class="tlaGNC">        7816 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
 <span id="L1660"><span class="lineNum">    1660</span>              :       event-&gt;type() == QEvent::PaletteChange) {</span>
 <span id="L1661"><span class="lineNum">    1661</span>              :     // Breeze gives these bars a &quot;header&quot; palette and, after a runtime</span>
 <span id="L1662"><span class="lineNum">    1662</span>              :     // light/dark switch, stamps the previous theme's colours back from a</span>
@@ -1737,7 +1737,7 @@
 <span id="L1664"><span class="lineNum">    1664</span>              :     // re-enter the style while it is still applying its palette.</span>
 <span id="L1665"><span class="lineNum">    1665</span> <span class="tlaGNC">          36 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L1666"><span class="lineNum">    1666</span>              :   }</span>
-<span id="L1667"><span class="lineNum">    1667</span> <span class="tlaGNC">        7820 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
+<span id="L1667"><span class="lineNum">    1667</span> <span class="tlaGNC">        7816 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
 <span id="L1668"><span class="lineNum">    1668</span> <span class="tlaGNC">           5 :     auto *key = dynamic_cast&lt;QKeyEvent *&gt;(event);</span></span>
 <span id="L1669"><span class="lineNum">    1669</span> <span class="tlaGNC">           5 :     if (key != nullptr &amp;&amp; key-&gt;key() == Qt::Key_Down) {</span></span>
 <span id="L1670"><span class="lineNum">    1670</span>              :       // Into whichever list is in sight: the tree, or content search results.</span>
@@ -1759,7 +1759,7 @@
 <span id="L1686"><span class="lineNum">    1686</span> <span class="tlaGNC">           3 :       return true;</span></span>
 <span id="L1687"><span class="lineNum">    1687</span>              :     }</span>
 <span id="L1688"><span class="lineNum">    1688</span>              :   }</span>
-<span id="L1689"><span class="lineNum">    1689</span> <span class="tlaGNC">        7817 :   return QObject::eventFilter(obj, event);</span></span>
+<span id="L1689"><span class="lineNum">    1689</span> <span class="tlaGNC">        7813 :   return QObject::eventFilter(obj, event);</span></span>
 <span id="L1690"><span class="lineNum">    1690</span>              : }</span>
 <span id="L1691"><span class="lineNum">    1691</span>              : </span>
 <span id="L1692"><span class="lineNum">    1692</span>              : // Only once the application palette changed (see m_themeSwitched): a bar</span>
