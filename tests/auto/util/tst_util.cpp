@@ -2843,6 +2843,42 @@ void tst_util::repositoryPassClimbsToNeverBlocksOnHead() {
   }
   QVERIFY2(done, "the check blocked on HEAD");
   QVERIFY2(found.isEmpty(), qPrintable(found));
+
+  // git's own links still count: HEAD -> a ref file, and a .git link to a
+  // gitfile naming the repository.
+  const auto writeFile = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly) && f.write(bytes) == bytes.size();
+  };
+  QVERIFY(dir.mkpath(QStringLiteral("linked/.git/objects")));
+  QVERIFY(dir.mkpath(QStringLiteral("linked/.git/refs")));
+  QVERIFY(writeFile(dir.filePath(QStringLiteral("linked/.git/head-file")),
+                    "ref: refs/heads/main\n"));
+  QVERIFY(QFile::link(QStringLiteral("head-file"),
+                      dir.filePath(QStringLiteral("linked/.git/HEAD"))));
+  const QString linkedStore = dir.filePath(QStringLiteral("linked/c:d/store"));
+  QVERIFY(QDir().mkpath(linkedStore));
+  QCOMPARE(
+      Util::repositoryPassClimbsTo(linkedStore),
+      QFileInfo(dir.filePath(QStringLiteral("linked"))).canonicalFilePath());
+
+  QVERIFY(dir.mkpath(QStringLiteral("gitdir/objects")));
+  QVERIFY(dir.mkpath(QStringLiteral("gitdir/refs")));
+  QVERIFY(writeFile(dir.filePath(QStringLiteral("gitdir/HEAD")),
+                    "ref: refs/heads/main\n"));
+  QVERIFY(dir.mkpath(QStringLiteral("worktree")));
+  QVERIFY(writeFile(
+      dir.filePath(QStringLiteral("gitfile")),
+      "gitdir: " + QFile::encodeName(dir.filePath(QStringLiteral("gitdir"))) +
+          "\n"));
+  QVERIFY(QFile::link(dir.filePath(QStringLiteral("gitfile")),
+                      dir.filePath(QStringLiteral("worktree/.git"))));
+  const QString gitfileStore =
+      dir.filePath(QStringLiteral("worktree/e:f/store"));
+  QVERIFY(QDir().mkpath(gitfileStore));
+  QCOMPARE(
+      Util::repositoryPassClimbsTo(gitfileStore),
+      QFileInfo(dir.filePath(QStringLiteral("worktree"))).canonicalFilePath());
 #endif
 }
 

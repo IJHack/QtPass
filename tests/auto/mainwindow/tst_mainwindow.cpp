@@ -507,6 +507,7 @@ private Q_SLOTS:
   void contextMenuOnAFolderOffersSharing();
   void shareMenuExportsThePublicKey();
   void shareMenuReencryptAsksFirst();
+  void reencryptQuestionKeepsItsWarning();
   void addFolderCreatesItWithoutAGpgId();
   void addFolderRefusesEscapesAndDuplicates();
   void addFolderRefusesHiddenAndLinkedPlaces();
@@ -5495,6 +5496,41 @@ void tst_mainwindow::shareMenuExportsThePublicKey() {
                QStringLiteral("Could not export public key for NOKEY")),
            qPrintable(texts.value(0)));
   QVERIFY2(texts.value(0).contains(QStringLiteral("nothing exported")),
+           qPrintable(texts.value(0)));
+#endif
+}
+
+/**
+ * @brief The re-encrypt question names the folder on one line: a name with
+ *        line feeds pushed the "cannot be undone" warning out of the box,
+ *        which shows 40 lines at most, and Yes still started the run.
+ */
+void tst_mainwindow::reencryptQuestionKeepsItsWarning() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  const QString folder = QStringLiteral("many") +
+                         QString(45, QLatin1Char('\n')) +
+                         QStringLiteral("lines");
+  QVERIFY(QDir(m_storeDir.path()).mkpath(folder));
+  const auto cleanup = qScopeGuard([this, &folder] {
+    QDir(QDir(m_storeDir.path()).filePath(folder)).removeRecursively();
+  });
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      folder + QStringLiteral("/inside")));
+  QStringList titles;
+  QStringList texts;
+  QVERIFY(triggerShareAction(m_window.data(), m_storeDir.path(), folder,
+                             QStringLiteral("Re-encrypt all passwords"),
+                             answerBox(QMessageBox::No), &titles, &texts));
+  COMPARE_BOX_TITLES(titles,
+                     QStringList{QStringLiteral("Re-encrypt passwords")});
+  QVERIFY2(texts.value(0).contains(QStringLiteral("cannot be undone")),
            qPrintable(texts.value(0)));
 #endif
 }

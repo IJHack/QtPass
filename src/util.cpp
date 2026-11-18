@@ -147,6 +147,35 @@ auto Util::gitCeiling(const QString &store) -> QString {
   return QFileInfo(path).absolutePath();
 }
 
+#ifndef Q_OS_WIN
+namespace {
+/**
+ * @brief Open @p path for reading, following a link, but only when it ends
+ * at a regular file, and never waiting: O_NONBLOCK keeps a FIFO from
+ * blocking the open until a writer comes, and the open handle is judged
+ * (fstat), so a FIFO or a device is refused. Unlike Util::openRegularFile(),
+ * a link is fine: git's own metadata may be one.
+ * @param path The file.
+ * @param file Receives the open file on success; untouched otherwise.
+ * @return Whether @p file is open on a regular file.
+ */
+auto openFollowedRegularFile(const QString &path, QFile &file) -> bool {
+  const int fd = ::open(QFile::encodeName(path).constData(),
+                        O_RDONLY | O_NONBLOCK | O_CLOEXEC);
+  if (fd < 0) {
+    return false;
+  }
+  struct stat info{};
+  if (::fstat(fd, &info) != 0 || !S_ISREG(info.st_mode) ||
+      !file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
+    ::close(fd);
+    return false;
+  }
+  return true;
+}
+} // namespace
+#endif
+
 auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
 #ifdef Q_OS_WIN
   Q_UNUSED(store);
@@ -218,11 +247,12 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
         !QFileInfo(dir.filePath(QStringLiteral("refs"))).isDir()) {
       return false;
     }
-    // As the regular file it is: a HEAD that is a link to a device or a
-    // FIFO (a pushed commit can carry a link) blocked the open and the read
-    // on the GUI thread when Settings opened.
+    // Only a regular file, link or not (git takes HEAD -> refs/heads/main):
+    // a HEAD that is a link to a device or a FIFO (a pushed commit can carry
+    // a link) blocked the open and the read on the GUI thread when Settings
+    // opened.
     QFile head;
-    if (!Util::openRegularFile(dir.filePath(QStringLiteral("HEAD")), head)) {
+    if (!openFollowedRegularFile(dir.filePath(QStringLiteral("HEAD")), head)) {
       return false;
     }
     static const QRegularExpression valid(
@@ -243,9 +273,10 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
     if (!info.exists()) {
       return Found::Nothing;
     }
-    // The same for a .git file: a FIFO there blocked in open().
+    // The same for a .git file (or a link to one): a FIFO there blocked in
+    // open().
     QFile file;
-    if (!Util::openRegularFile(dotGit, file)) {
+    if (!openFollowedRegularFile(dotGit, file)) {
       return Found::Refused;
     }
     const QString line = QString::fromUtf8(file.readLine(4096)).trimmed();
