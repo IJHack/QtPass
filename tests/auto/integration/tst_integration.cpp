@@ -1272,7 +1272,8 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
 
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   for (const QString &name :
-       {QStringLiteral("a"), QStringLiteral("own/kept")}) {
+       {QStringLiteral("a"), QStringLiteral("b"), QStringLiteral("c"),
+        QStringLiteral("d"), QStringLiteral("own/kept")}) {
     QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
     pass.Insert(name, QStringLiteral("r\n"), false);
     QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
@@ -1312,6 +1313,76 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
   QTest::qWait(300);
   QCOMPARE(started.size(), 0);
   QVERIFY(QFile::exists(store.filePath("untracked.gpg")));
+  QVERIFY(QFile::remove(store.filePath("untracked.gpg")));
+
+  // A remote: the push after a move waits for its re-encryption, so what
+  // reaches it is the entry for team's recipients, not the one it moved as.
+  QTemporaryDir remoteDir;
+  QVERIFY(remoteDir.isValid());
+  QVERIFY(runGit(remoteDir.path(), gitExe, {"init", "-q", "--bare"}));
+  QVERIFY(runGit(storeDir.path(), gitExe,
+                 {"remote", "add", "origin", remoteDir.path()}));
+  QVERIFY(
+      runGit(storeDir.path(), gitExe, {"push", "-q", "-u", "origin", "HEAD"}));
+  QSignalSpy pushed(&pass, &Pass::finishedGitPush);
+
+  // Two entries queued into team: the second settles while the first's
+  // run is in flight, and is re-encrypted after it, not skipped. The push
+  // waits for both runs.
+  started.clear();
+  ended.clear();
+  pass.Move(store.filePath("b.gpg"), store.filePath("team"), false);
+  pass.Move(store.filePath("c.gpg"), store.filePath("team"), false);
+  pass.GitPushAutomatic();
+  QVERIFY(waitForSignal(ended, 60000));
+  QTRY_COMPARE_WITH_TIMEOUT(ended.size(), 2, 60000);
+  QCOMPARE(started.size(), 2);
+  for (const QString &name :
+       {QStringLiteral("team/b.gpg"), QStringLiteral("team/c.gpg")}) {
+    const QStringList now =
+        recipientKeyIds(m_gnupgHome.path(), store.filePath(name));
+    QVERIFY2(now.contains(sub2) && !now.contains(sub1),
+             qPrintable(name + ": " + now.join(',')));
+  }
+
+  QVERIFY2(waitForSignal(pushed, 30000), "the push was made");
+  QCOMPARE(pushed.size(), 1);
+  const auto remoteIdsOf = [&](const QString &name) {
+    QProcess show;
+    show.setWorkingDirectory(remoteDir.path());
+    show.setStandardOutputFile(store.filePath("remote.gpg"));
+    show.start(gitExe, {"show", "HEAD:" + name});
+    show.waitForFinished();
+    const QStringList ids =
+        recipientKeyIds(m_gnupgHome.path(), store.filePath("remote.gpg"));
+    QFile::remove(store.filePath("remote.gpg"));
+    return ids;
+  };
+  for (const QString &name :
+       {QStringLiteral("team/b.gpg"), QStringLiteral("team/c.gpg")}) {
+    const QStringList remote = remoteIdsOf(name);
+    QVERIFY2(remote.contains(sub2) && !remote.contains(sub1),
+             qPrintable("remote " + name + ": " + remote.join(',')));
+  }
+
+  // One entry, and the push asked for while its move is still queued.
+  pushed.clear();
+  pass.Move(store.filePath("d.gpg"), store.filePath("team"), false);
+  pass.GitPushAutomatic();
+  QVERIFY2(waitForSignal(pushed, 60000), "the push was made");
+  const QStringList remoteIds = remoteIdsOf("team/d.gpg");
+  QVERIFY2(remoteIds.contains(sub2) && !remoteIds.contains(sub1),
+           qPrintable(remoteIds.join(',')));
+
+  // A rename needs no re-encryption: its push goes once the move settled.
+  pushed.clear();
+  started.clear();
+  pass.Move(store.filePath("team/d.gpg"), store.filePath("team/e"), false);
+  pass.GitPushAutomatic();
+  QVERIFY2(waitForSignal(pushed, 30000), "the push was made");
+  QCOMPARE(started.size(), 0);
+  QVERIFY(
+      runGit(remoteDir.path(), gitExe, {"cat-file", "-e", "HEAD:team/e.gpg"}));
 }
 
 void tst_integration::imitatePass_gitCopyAndShow() {

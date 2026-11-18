@@ -154,14 +154,42 @@ void ImitatePass::GitPull_b() {
 void ImitatePass::GitPush() {
   // Now it would send the new .gpg-id with entries still encrypted to the
   // previous recipients, a key just removed among them, also when the run
-  // then fails, and push a clean run twice.
-  if (m_reencryptActive && !m_reencryptPushing) {
+  // then fails, and push a clean run twice. The same for a move whose
+  // re-encryption is not decided yet, or waits for the run in flight.
+  if ((m_reencryptActive && !m_reencryptPushing) || !m_pendingMoves.isEmpty() ||
+      !m_movedToReencrypt.isEmpty()) {
     m_pushAfterReencrypt = true;
+    m_deferredPushByHand = m_deferredPushByHand || !pushIsAutomatic();
     return;
   }
   if (gitReady()) {
     executeGit(GIT_PUSH, {"push"});
   }
+}
+
+void ImitatePass::sendDeferredPush() {
+  if (!m_pushAfterReencrypt || m_reencryptActive || !m_pendingMoves.isEmpty() ||
+      !m_movedToReencrypt.isEmpty()) {
+    return;
+  }
+  const bool byHand = m_deferredPushByHand;
+  m_pushAfterReencrypt = false;
+  m_deferredPushByHand = false;
+  if (!byHand && autoPushHeld()) {
+    emit statusMsg(tr("Not pushing: an earlier re-encryption in this "
+                      "store did not finish"),
+                   5000);
+    return;
+  }
+  GitPush();
+}
+
+void ImitatePass::startMovedReencrypts() {
+  // A run refused at its start (reencryptPath() said why) leaves the next.
+  while (!m_reencryptActive && !m_movedToReencrypt.isEmpty()) {
+    reencryptPath(m_movedToReencrypt.takeFirst());
+  }
+  sendDeferredPush();
 }
 
 void ImitatePass::Show(QString file) {
@@ -1530,7 +1558,11 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                          .arg(result.reencrypted),
                      3000);
     }
-    if ((m_settings.autoPush || m_pushAfterReencrypt) && reencryptUsesGit()) {
+    // With a moved entry's run still to come, that one pushes at its end.
+    if (m_movedToReencrypt.isEmpty() &&
+        (m_settings.autoPush || m_pushAfterReencrypt) && reencryptUsesGit()) {
+      m_pushAfterReencrypt = false;
+      m_deferredPushByHand = false;
       if (result.failed.isEmpty() && autoPushHeld()) {
         // Clean here, but another folder's run did not finish.
         emit statusMsg(tr("Not pushing: an earlier re-encryption in this "
@@ -1556,9 +1588,15 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                                result.failed.isEmpty());
   }
   m_writtenGpgId.reset();
-  m_pushAfterReencrypt = false;
+  // No push after a cancel or abort; otherwise one asked for meanwhile is
+  // still to make (by a run to come, or once a pending move settles).
+  if (result.cancelled || result.aborted) {
+    m_pushAfterReencrypt = false;
+    m_deferredPushByHand = false;
+  }
   m_reencryptActive = false;
   emit endReencryptPath();
+  startMovedReencrypts();
 }
 
 auto ImitatePass::reencryptUsesGit() const -> bool {
@@ -1731,6 +1769,7 @@ void ImitatePass::Move(const QString src, const QString dest,
     return;
   }
   reencryptMoved(move);
+  startMovedReencrypts();
 }
 
 void ImitatePass::reencryptMoved(const PendingMove &move) {
@@ -1753,8 +1792,11 @@ void ImitatePass::reencryptMoved(const PendingMove &move) {
     return;
   }
   // The entry alone, or the folder: not its neighbours, which this move
-  // did not touch.
-  reencryptPath(QDir::cleanPath(move.destFile));
+  // did not touch. One run at a time: behind the one in flight, if any.
+  const QString scope = QDir::cleanPath(move.destFile);
+  if (!m_movedToReencrypt.contains(scope)) {
+    m_movedToReencrypt << scope;
+  }
 }
 
 auto ImitatePass::copyDestination(const QString &src, const QString &dest,
@@ -1915,6 +1957,7 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
   m_transactionOutput.clear();
   if (pid == PASS_MOVE && !m_pendingMoves.isEmpty()) {
     reencryptMoved(m_pendingMoves.dequeue());
+    startMovedReencrypts();
   }
 }
 

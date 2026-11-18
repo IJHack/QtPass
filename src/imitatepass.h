@@ -627,10 +627,27 @@ private:
   };
   /// Moves through Git, in order, each settled when its PASS_MOVE ends.
   QQueue<PendingMove> m_pendingMoves;
+  /// What settled moves still need re-encrypted: one run each, started by
+  /// startMovedReencrypts() once no run is in flight. Pushes wait for them.
+  QStringList m_movedToReencrypt;
+  /// The deferred push (m_pushAfterReencrypt) includes one asked for by
+  /// hand, which a hold (autoPushHeld()) does not stop.
+  bool m_deferredPushByHand = false;
   /**
-   * @brief Re-encrypt what @p move moved, if it moved and another
-   * `.gpg-id` applies where it landed; a folder that has its own list is
-   * left as it is. Only that entry or folder, not what is around it.
+   * @brief Start the runs in m_movedToReencrypt, one at a time, while none
+   * is in flight; then send a deferred push once nothing is left.
+   */
+  void startMovedReencrypts();
+  /**
+   * @brief Make the push GitPush() deferred, once no run is in flight and
+   * no move is waiting; an automatic one only while the store is not held.
+   */
+  void sendDeferredPush();
+  /**
+   * @brief Queue a re-encryption of what @p move moved, if it moved and
+   * another `.gpg-id` applies where it landed; a folder that has its own
+   * list is left as it is. Only that entry or folder, not what is around
+   * it; startMovedReencrypts() starts it.
    * @param move The move, as Move() recorded it.
    */
   void reencryptMoved(const PendingMove &move);
