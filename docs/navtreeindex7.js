@@ -1,5 +1,12 @@
 var NAVTREEINDEX7 =
 {
+"struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3":[1,0,3,0,2],
+"struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc":[1,0,3,0,3],
+"struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073":[1,0,3,0,0],
+"struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a3f68e67dc6c397aaa9d1c24c356f754f":[1,0,3,0,0,1],
+"struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a8a0f9d1cb7131a1031d38f0a7d9635bf":[1,0,3,0,0,2],
+"struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a":[1,0,3,0,0,0],
+"struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699":[1,0,3,0,0,3],
 "struct_password_configuration.html":[1,3,4],
 "struct_password_configuration.html#a1f0990ce1daaecb8852976eeb7df61bd":[1,3,4,3],
 "struct_password_configuration.html#a6a47dc673e03fd9a8f71f7b44ddb16d3":[1,3,4,4],

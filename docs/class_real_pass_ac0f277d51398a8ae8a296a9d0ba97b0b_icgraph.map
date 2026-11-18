@@ -1,0 +1,22 @@
+<map id="RealPass::statusEntries" name="RealPass::statusEntries">
+<area shape="rect" id="Node000001" title="git status &#45;&#45;porcelain &#45;z through pass git, read: one &quot;XY name&quot; per entry, a rename&#39;s old name droppe..." alt="" coords="886,95,1058,122"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#a133e32f08f41de37b18f3aefa3953846" title="Refuse a pass init, mv, cp or insert when paths hold changes git has not recorded,..." alt="" coords="426,61,629,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="868,103,630,92,630,86,873,102"/>
+<area shape="rect" id="Node000008" href="$class_real_pass.html#a1bc6a926665e62752e23f2f46efc2c90" title="What git has not recorded at paths: git status &#45;&#45;porcelain lines, through pass git...." alt="" coords="677,120,838,148"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="873,120,838,127,838,122,867,121"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="Initialize password store." alt="" coords="223,5,332,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,57,332,36,332,30,426,56"/>
+<area shape="rect" id="Node000004" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="215,57,340,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="408,78,340,77,340,71,413,77"/>
+<area shape="rect" id="Node000005" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="177,109,378,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="408,102,369,111,368,106,413,101"/>
+<area shape="rect" id="Node000006" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="7,84,127,112"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="159,110,128,108,127,102,164,108"/>
+<area shape="rect" id="Node000007" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="5,136,129,164"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="159,139,129,145,128,139,164,137"/>
+<area shape="poly" id="edge8_Node000008_Node000002" title=" " alt="" coords="674,116,630,108,630,103,679,116"/>
+<area shape="rect" id="Node000009" href="$class_real_pass.html#a696202ddae3220f4da5f416fdd350d74" title="After a pass insert, init, mv or cp that exited 0, say so when git did not record the entries it wrot..." alt="" coords="427,140,628,168"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="664,142,629,148,629,142,659,142"/>
+<area shape="rect" id="Node000010" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="208,161,346,189"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="414,164,347,172,347,167,409,164"/>
+</map>

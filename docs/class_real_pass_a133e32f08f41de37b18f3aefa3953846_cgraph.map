@@ -1,0 +1,34 @@
+<map id="RealPass::refuseUnrecordedChanges" name="RealPass::refuseUnrecordedChanges">
+<area shape="rect" id="Node000001" title="Refuse a pass init, mv, cp or insert when paths hold changes git has not recorded,..." alt="" coords="5,125,209,170"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="313,5,415,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,122,188,82,256,43,300,30,295,33,258,48,191,86,137,126"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="282,57,446,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,122,302,88,298,92,186,127"/>
+<area shape="rect" id="Node000004" href="$class_real_pass.html#aa8c33f08cbdeb7d367d1bb9ca3a1435e" title="The Git repository pass commits path in: the store&#39;s own, or one a folder in it holds (pass looks for..." alt="" coords="521,184,689,212"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="209,135,335,132,404,136,472,145,519,158,564,177,559,177,518,163,470,150,403,141,335,137,210,140"/>
+<area shape="rect" id="Node000013" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="257,159,471,186"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="209,155,244,160,239,161,210,160"/>
+<area shape="rect" id="Node000014" href="$class_real_pass.html#ac0f277d51398a8ae8a296a9d0ba97b0b" title="git status &#45;&#45;porcelain &#45;z through pass git, read: one &quot;XY name&quot; per entry, a rename&#39;s old name droppe..." alt="" coords="519,236,691,264"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="132,168,187,211,221,232,257,247,320,261,384,267,446,267,501,266,506,265,446,272,384,272,319,266,256,252,219,237,184,216,131,173"/>
+<area shape="rect" id="Node000015" href="$class_real_pass.html#a1bc6a926665e62752e23f2f46efc2c90" title="What git has not recorded at paths: git status &#45;&#45;porcelain lines, through pass git...." alt="" coords="284,211,444,238"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="172,167,257,195,290,206,284,206,256,200,172,173"/>
+<area shape="rect" id="Node000005" href="$class_real_pass.html#a23317f24cad6782794cfc83a355af4fa" title="Run a git command in the store through pass git, blocking." alt="" coords="739,211,879,238"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="690,206,726,213,721,213,689,211"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="927,211,1119,238"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="879,222,913,224,908,225,879,227"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1167,211,1329,238"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1119,222,1154,224,1148,225,1119,227"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1377,211,1568,238"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1329,222,1364,224,1359,225,1330,227"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1616,211,1781,238"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1568,222,1603,224,1597,225,1568,227"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1829,159,2047,186"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1765,207,1853,191,1858,190,1766,213"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1832,211,2044,238"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="1781,222,1819,224,1814,225,1781,227"/>
+<area shape="rect" id="Node000012" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1836,263,2040,290"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="1766,236,1858,259,1853,258,1765,242"/>
+<area shape="poly" id="edge14_Node000014_Node000005" title=" " alt="" coords="692,236,721,235,726,235,692,242"/>
+<area shape="poly" id="edge16_Node000015_Node000004" title=" " alt="" coords="444,213,509,208,503,209,445,218"/>
+<area shape="poly" id="edge17_Node000015_Node000014" title=" " alt="" coords="445,230,506,239,501,239,445,236"/>
+</map>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 10:02:46</td>
+            <td class="headerValue">2026-11-18 13:52:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -433,14 +433,14 @@
 <span id="L360"><span class="lineNum">     360</span> <span class="tlaGNC">          72 :   m_firstShowCompleted = true;</span></span>
 <span id="L361"><span class="lineNum">     361</span>              : }</span>
 <span id="L362"><span class="lineNum">     362</span>              : </span>
-<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        8519 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">        8519 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        8517 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">        8517 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L365"><span class="lineNum">     365</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L366"><span class="lineNum">     366</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L367"><span class="lineNum">     367</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L368"><span class="lineNum">     368</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L369"><span class="lineNum">     369</span>              :   }</span>
-<span id="L370"><span class="lineNum">     370</span> <span class="tlaGNC">        8519 :   return QMainWindow::event(event);</span></span>
+<span id="L370"><span class="lineNum">     370</span> <span class="tlaGNC">        8517 :   return QMainWindow::event(event);</span></span>
 <span id="L371"><span class="lineNum">     371</span>              : }</span>
 <span id="L372"><span class="lineNum">     372</span>              : </span>
 <span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">         248 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -1643,7 +1643,7 @@
 <span id="L1570"><span class="lineNum">    1570</span> <span class="tlaGNC">         193 :   updateProfileBoxEnabled();</span></span>
 <span id="L1571"><span class="lineNum">    1571</span> <span class="tlaGNC">         193 : }</span></span>
 <span id="L1572"><span class="lineNum">    1572</span>              : </span>
-<span id="L1573"><span class="lineNum">    1573</span> <span class="tlaGNC">         643 : void MainWindow::updateProfileBoxEnabled() {</span></span>
+<span id="L1573"><span class="lineNum">    1573</span> <span class="tlaGNC">         642 : void MainWindow::updateProfileBoxEnabled() {</span></span>
 <span id="L1574"><span class="lineNum">    1574</span>              :   // No profile switch while anything of the store runs or waits: the</span>
 <span id="L1575"><span class="lineNum">    1575</span>              :   // backend's store and environment would change under it, and what is</span>
 <span id="L1576"><span class="lineNum">    1576</span>              :   // still queued (a push after a save, say) would finish for the other</span>
@@ -1651,9 +1651,9 @@
 <span id="L1578"><span class="lineNum">    1578</span>              :   // watchdog releases the interface while a slow gpg or git still runs.</span>
 <span id="L1579"><span class="lineNum">    1579</span>              :   // Every backend: one kept from before a switch of backend may still</span>
 <span id="L1580"><span class="lineNum">    1580</span>              :   // run what was queued on it.</span>
-<span id="L1581"><span class="lineNum">    1581</span> <span class="tlaGNC">        1287 :   ui-&gt;profileBox-&gt;setEnabled(m_uiEnabled &amp;&amp; ui-&gt;profileBox-&gt;count() &gt; 1 &amp;&amp;</span></span>
+<span id="L1581"><span class="lineNum">    1581</span> <span class="tlaGNC">        1285 :   ui-&gt;profileBox-&gt;setEnabled(m_uiEnabled &amp;&amp; ui-&gt;profileBox-&gt;count() &gt; 1 &amp;&amp;</span></span>
 <span id="L1582"><span class="lineNum">    1582</span> <span class="tlaGNC">          11 :                              QtPassSettings::backendsIdle());</span></span>
-<span id="L1583"><span class="lineNum">    1583</span> <span class="tlaGNC">         643 : }</span></span>
+<span id="L1583"><span class="lineNum">    1583</span> <span class="tlaGNC">         642 : }</span></span>
 <span id="L1584"><span class="lineNum">    1584</span>              : </span>
 <span id="L1585"><span class="lineNum">    1585</span> <span class="tlaGNC">           6 : void MainWindow::on_profileBox_currentTextChanged(const QString &amp;name) {</span></span>
 <span id="L1586"><span class="lineNum">    1586</span> <span class="tlaGNC">          18 :   if (m_freshStart || name == QtPassSettings::getProfile()) {</span></span>
