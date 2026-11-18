@@ -90,7 +90,7 @@ With the `pass` backend and Git, `pass` commits the whole folder it changes, and
 - **Users**, move and copy while the folder holds files Git does not track or changes Git has not committed.
 - These and new entries while anything is staged in the repository `pass` commits in.
 
-Commit only what belongs in the store. Move a plaintext export or anything else private out of the store, or delete it. Have Git ignore what should stay but not be shared. Then try again.
+Commit only what belongs in the store. Move a plaintext export or anything else private out of the store, or delete it; if you staged it, unstage it first with `git restore --staged <file>`, and if Git already tracks it, commit its removal with `git rm --cached <file>` (it stays in the history). Have Git ignore what should stay but not be shared. Then try again.
 
 Finder (macOS), Explorer (Windows) and Dolphin (KDE) write `.DS_Store`, `Thumbs.db`, `desktop.ini` or `.directory` into folders they open. Removing them does not last, so the message names the lines to add to the `.gitignore` at the top of the store (or of a folder with a Git repository of its own), for example:
 
