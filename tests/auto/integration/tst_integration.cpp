@@ -2294,6 +2294,9 @@ void tst_integration::realPass_checksTheRepositoryPassCommitsIn() {
   notes.close();
   QVERIFY(runGit(storeDir.path(), gitExe, {"add", "ab notes.txt"}));
   QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "notes"}));
+  // Whatever the user's own Git configuration says.
+  QVERIFY(
+      runGit(storeDir.path(), gitExe, {"config", "status.renames", "true"}));
   QVERIFY(store.rename("ab notes.txt", "renamed.txt"));
   QVERIFY(runGit(storeDir.path(), gitExe,
                  {"add", "--intent-to-add", "renamed.txt"}));
@@ -2310,9 +2313,14 @@ void tst_integration::realPass_checksTheRepositoryPassCommitsIn() {
   QVERIFY2(waitForSignal(inserted, 20000), gpgInsertErrorMsg(errors));
   QCOMPARE(critical.size(), 0);
 
-  // A folder with a repository of its own, something staged in it.
+  // A folder with a repository of its own, an entry committed there, then
+  // something staged.
   QVERIFY(store.mkpath("team"));
   QVERIFY(initGitRepo(store.filePath("team"), gitExe));
+  inserted.clear();
+  pass.Insert(QStringLiteral("team/kept"), QStringLiteral("kept\n"), false);
+  QVERIFY2(waitForSignal(inserted, 20000), gpgInsertErrorMsg(errors));
+  QCOMPARE(critical.size(), 0);
   QFile secret(store.filePath("team/secret.txt"));
   QVERIFY(secret.open(QIODevice::WriteOnly));
   secret.write("plaintext\n");
@@ -2323,6 +2331,29 @@ void tst_integration::realPass_checksTheRepositoryPassCommitsIn() {
   QVERIFY2(critical.first().at(1).toString().contains("team/secret.txt"),
            qPrintable(critical.first().at(1).toString()));
   QVERIFY2(!store.exists("team/entry.gpg"), "the insert did not run");
+
+  // pass copies and commits where the copy lands: what is staged where the
+  // original lies does not go along.
+  QSignalSpy copied(&pass, &Pass::finishedCopy);
+  critical.clear();
+  pass.Copy(store.filePath("team/kept.gpg"), store.filePath("copied.gpg"),
+            false);
+  QVERIFY2(waitForSignal(copied, 20000), gpgInsertErrorMsg(errors));
+  QCOMPARE(critical.size(), 0);
+
+  // A folder whose name starts with two dots is a folder, not a step up.
+  QVERIFY(store.mkpath("..team"));
+  QVERIFY(initGitRepo(store.filePath("..team"), gitExe));
+  QFile dotted(store.filePath("..team/secret.txt"));
+  QVERIFY(dotted.open(QIODevice::WriteOnly));
+  dotted.write("plaintext\n");
+  dotted.close();
+  QVERIFY(runGit(store.filePath("..team"), gitExe, {"add", "secret.txt"}));
+  critical.clear();
+  pass.Insert(QStringLiteral("..team/entry"), QStringLiteral("two\n"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains("..team/secret.txt"),
+           qPrintable(critical.first().at(1).toString()));
 
   // The store's own repository has nothing staged: an entry there goes in.
   inserted.clear();
@@ -2409,6 +2440,24 @@ void tst_integration::realPass_refusesStagedAndUnignoredFiles() {
   QCOMPARE(critical.size(), 0);
   QVERIFY(store.exists("kept/export.csv"));
   QString tracked;
+  QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
+  QVERIFY2(!tracked.contains("export.csv"), qPrintable(tracked));
+  // So does one where the folder's own .gitignore ignores it: the rule
+  // goes along.
+  QVERIFY(store.mkpath("carry"));
+  QFile carryIgnore(store.filePath("carry/.gitignore"));
+  QVERIFY(carryIgnore.open(QIODevice::WriteOnly));
+  carryIgnore.write("/export.csv\n");
+  carryIgnore.close();
+  QVERIFY(QFile::copy(store.filePath("team/export.csv"),
+                      store.filePath("carry/export.csv")));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", "carry/.gitignore"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "carry"}));
+  copied.clear();
+  pass.Copy(store.filePath("carry"), store.filePath("carried"), false);
+  QVERIFY2(waitForSignal(copied, 20000), gpgInsertErrorMsg(errors));
+  QCOMPARE(critical.size(), 0);
+  QVERIFY(store.exists("carried/export.csv"));
   QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
   QVERIFY2(!tracked.contains("export.csv"), qPrintable(tracked));
   // Into an existing folder it lands as other/team/export.csv, which no

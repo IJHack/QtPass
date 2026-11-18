@@ -275,8 +275,8 @@ auto RealPass::repositoryOf(const QString &path) -> QString {
     folder = QFileInfo(folder).path();
   }
   const QString relative = QDir(root).relativeFilePath(folder);
-  if (relative == QLatin1String(".") ||
-      relative.startsWith(QLatin1String(".."))) {
+  if (relative == QLatin1String(".") || relative == QLatin1String("..") ||
+      relative.startsWith(QLatin1String("../"))) {
     return {};
   }
   // The folder's place in its repository ("team/" in the store's own,
@@ -491,35 +491,26 @@ auto RealPass::refuseIgnoredThatMoves(const QString &src, const QString &dest)
   if (landed.isEmpty()) {
     return false;
   }
-  // check-ignore takes -z only with --stdin. pass git exits 0 whatever git
-  // did, so a lookup that failed shows only on stderr: then nothing counts
-  // as ignored there, and the move is refused.
-  QString input;
-  for (const QString &file : std::as_const(landed)) {
-    input += file + QChar(0);
+  // A rule in a .gitignore inside the folder goes with it, so what it
+  // ignores stays ignored where it lands.
+  QStringList travelling;
+  QStringList rules;
+  if (checkIgnore(fromRepository, moving, true, &rules)) {
+    for (qsizetype i = 0; i + 3 < rules.size(); i += 4) {
+      if (rules.at(i).startsWith(from + QLatin1Char('/'))) {
+        travelling << rules.at(i + 3);
+      }
+    }
   }
-  // check-ignore refuses every path under GIT_LITERAL_PATHSPECS, which
-  // the store's environment sets; it takes its paths as names anyway.
-  QProcessEnvironment lookupEnvironment = storeEnvironment();
-  lookupEnvironment.remove(QStringLiteral("GIT_LITERAL_PATHSPECS"));
-  QProcess lookup;
-  lookup.setProcessEnvironment(lookupEnvironment);
-  QString stillIgnored;
-  QString lookupError;
-  (void)Executor::executeBlocking(
-      lookup, m_settings.passExecutable,
-      QStringList{QStringLiteral("git")} +
-          inRepository(toRepository,
-                       {QStringLiteral("check-ignore"),
-                        QStringLiteral("--stdin"), QStringLiteral("-z")}),
-      input, &stillIgnored, &lookupError);
-  const QStringList ignoredThere =
-      lookupError.trimmed().isEmpty()
-          ? stillIgnored.split(QChar(0), Qt::SkipEmptyParts)
-          : QStringList();
+  // A lookup that failed counts nothing as ignored: the move is refused.
+  QStringList ignoredThere;
+  if (!checkIgnore(toRepository, landed, false, &ignoredThere)) {
+    ignoredThere.clear();
+  }
   QStringList exposed;
   for (qsizetype i = 0; i < landed.size(); ++i) {
-    if (!ignoredThere.contains(landed.at(i))) {
+    if (!travelling.contains(moving.at(i)) &&
+        !ignoredThere.contains(landed.at(i))) {
       exposed << moving.at(i) + QStringLiteral(" > ") + landed.at(i);
     }
   }
@@ -534,6 +525,42 @@ auto RealPass::refuseIgnoredThatMoves(const QString &src, const QString &dest)
   emit startingExecuteWrapper();
   emit critical(tr("Ignored files would be committed"), why);
   emit processErrorExit(1, why);
+  return true;
+}
+
+auto RealPass::checkIgnore(const QString &repository, const QStringList &paths,
+                           bool verbose, QStringList *fields) -> bool {
+  // check-ignore takes -z only with --stdin.
+  QString input;
+  for (const QString &path : paths) {
+    input += path + QChar(0);
+  }
+  QStringList args{QStringLiteral("check-ignore"), QStringLiteral("--stdin"),
+                   QStringLiteral("-z")};
+  if (verbose) {
+    args << QStringLiteral("-v");
+  }
+  // check-ignore refuses every path under GIT_LITERAL_PATHSPECS, which
+  // the store's environment sets; it takes its paths as names anyway.
+  QProcessEnvironment environment = storeEnvironment();
+  environment.remove(QStringLiteral("GIT_LITERAL_PATHSPECS"));
+  QProcess lookup;
+  lookup.setProcessEnvironment(environment);
+  QString out;
+  QString err;
+  (void)Executor::executeBlocking(lookup, m_settings.passExecutable,
+                                  QStringList{QStringLiteral("git")} +
+                                      inRepository(repository, args),
+                                  input, &out, &err);
+  // pass git exits 0 whatever git did: a lookup that failed shows only on
+  // stderr.
+  if (!err.trimmed().isEmpty()) {
+    return false;
+  }
+  *fields = out.split(QChar(0));
+  if (!fields->isEmpty() && fields->constLast().isEmpty()) {
+    fields->removeLast();
+  }
   return true;
 }
 
@@ -959,7 +986,7 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   // pass stages what it moved or copied with `git add` on the new path,
   // and a folder brings whatever lies in it along.
   if (refuseUnfinishedGitOperation() || refusePendingPull() ||
-      refuseUnrecordedChanges({src, dest}, {src, dest}) ||
+      refuseUnrecordedChanges({src, dest}, {dest}) ||
       refuseIgnoredThatMoves(src, dest)) {
     return;
   }

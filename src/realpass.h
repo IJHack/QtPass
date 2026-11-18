@@ -206,6 +206,19 @@ class RealPass : public Pass {
   auto refuseIgnoredThatMoves(const QString &src, const QString &dest) -> bool;
 
   /**
+   * @brief `git check-ignore --stdin -z` on @p paths through `pass git`.
+   * @param repository Where to ask, as repositoryOf() gives it.
+   * @param paths Paths relative to that repository.
+   * @param verbose Whether to ask which rule matched (`-v`): four fields
+   *        per ignored path (rule's file, line, pattern, path).
+   * @param fields Receives the output's fields: the ignored paths, or the
+   *        four fields each with @p verbose.
+   * @return false when git could not say.
+   */
+  auto checkIgnore(const QString &repository, const QStringList &paths,
+                   bool verbose, QStringList *fields) -> bool;
+
+  /**
    * @brief For a folder pass is about to re-encrypt in a move or copy:
    * refuse when the signed list of one of its entries (every one pass's
    * walk takes, hidden ones included) is not one QtPass accepts where it
