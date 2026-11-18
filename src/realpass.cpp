@@ -18,6 +18,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QMap>
 #include <QProcess>
 #include <QRegularExpression>
 #include <algorithm>
@@ -246,6 +247,337 @@ auto RealPass::storeGit(const QStringList &args, QString *out) -> bool {
              QStringList{QStringLiteral("git")} + args, out, &err) == 0;
 }
 
+namespace {
+/**
+ * @brief @p args for `pass git`, run in @p repository.
+ * @param repository A folder relative to the store; empty for the store.
+ * @param args The git arguments.
+ * @return `-C <repository>` and @p args.
+ */
+auto inRepository(const QString &repository, const QStringList &args)
+    -> QStringList {
+  if (repository.isEmpty()) {
+    return args;
+  }
+  return QStringList{QStringLiteral("-C"), repository} + args;
+}
+} // namespace
+
+auto RealPass::repositoryOf(const QString &path) -> QString {
+  if (!m_settings.useGit) {
+    return {};
+  }
+  const QString root = QDir::cleanPath(m_settings.passStore);
+  // From the nearest folder that exists, as pass looks for it.
+  QString folder = QDir::cleanPath(path);
+  while (!QFileInfo(folder).isDir() &&
+         folder.startsWith(root + QLatin1Char('/'))) {
+    folder = QFileInfo(folder).path();
+  }
+  const QString relative = QDir(root).relativeFilePath(folder);
+  if (relative == QLatin1String(".") || relative == QLatin1String("..") ||
+      relative.startsWith(QLatin1String("../"))) {
+    return {};
+  }
+  // The folder's place in its repository ("team/" in the store's own,
+  // "" at the top of the one it holds itself).
+  QString prefix;
+  storeGit({QStringLiteral("-C"), relative, QStringLiteral("rev-parse"),
+            QStringLiteral("--show-prefix")},
+           &prefix);
+  if (prefix.endsWith(QLatin1Char('\n'))) {
+    prefix.chop(1);
+  }
+  const QString withSlash = relative + QLatin1Char('/');
+  if (!withSlash.endsWith(prefix)) {
+    return {};
+  }
+  QString repository = withSlash.chopped(prefix.size());
+  if (repository.endsWith(QLatin1Char('/'))) {
+    repository.chop(1);
+  }
+  return repository;
+}
+
+auto RealPass::statusEntries(const QStringList &args, const QString &repository)
+    -> QStringList {
+  if (!m_settings.useGit) {
+    return {};
+  }
+  QString out;
+  // -z: names as they are, not quoted when they hold a non-ASCII letter.
+  // `pass git` exits 0 whatever git did: the output decides, and a git
+  // that cannot say (no repository) prints nothing to it.
+  storeGit(inRepository(repository, QStringList{QStringLiteral("status"),
+                                                QStringLiteral("--porcelain"),
+                                                QStringLiteral("-z")} +
+                                        args),
+           &out);
+  const QString place =
+      repository.isEmpty() ? QString() : repository + QLatin1Char('/');
+  QStringList entries;
+  const QStringList fields = out.split(QChar(0), Qt::SkipEmptyParts);
+  for (qsizetype i = 0; i < fields.size(); ++i) {
+    const QString &field = fields.at(i);
+    if (field.size() < 4 || field.at(2) != QLatin1Char(' ')) {
+      continue;
+    }
+    entries << field.left(3) + place + field.mid(3);
+    // A rename or copy, in the index or in the work tree (an intent-to-add
+    // file), is followed by its old name.
+    if (field.at(0) == QLatin1Char('R') || field.at(0) == QLatin1Char('C') ||
+        field.at(1) == QLatin1Char('R') || field.at(1) == QLatin1Char('C')) {
+      ++i;
+    }
+  }
+  return entries;
+}
+
+auto RealPass::unrecorded(const QStringList &paths, bool ignored)
+    -> QStringList {
+  if (paths.isEmpty()) {
+    return {};
+  }
+  const QDir store(QDir::cleanPath(m_settings.passStore));
+  // Each path in the repository pass commits it in: a folder may hold one
+  // of its own, which the store's status does not look into.
+  QMap<QString, QStringList> byRepository;
+  for (const QString &path : paths) {
+    const QString repository = repositoryOf(path);
+    const QDir top(repository.isEmpty() ? store.path()
+                                        : store.filePath(repository));
+    byRepository[repository] << top.relativeFilePath(QDir::cleanPath(path));
+  }
+  QStringList entries;
+  for (auto it = byRepository.cbegin(); it != byRepository.cend(); ++it) {
+    QStringList args{QStringLiteral("--untracked-files=all")};
+    if (ignored) {
+      args << QStringLiteral("--ignored");
+    }
+    args << QStringLiteral("--");
+    entries += statusEntries(args + it.value(), it.key());
+  }
+  return entries;
+}
+
+namespace {
+/**
+ * @brief Whether @p name is one pass writes: an entry or a recipient list.
+ * @param name A file name.
+ * @return true for `*.gpg`, `.gpg-id` and `.gpg-id.sig`.
+ */
+auto isStoreFileName(const QString &name) -> bool {
+  return name.endsWith(QLatin1String(".gpg")) ||
+         name == QLatin1String(".gpg-id") ||
+         name == QLatin1String(".gpg-id.sig");
+}
+
+/// At most this many status lines are named in a message.
+constexpr qsizetype kMaxNamedChanges = 10;
+
+/**
+ * @brief @p lines for a message: the first kMaxNamedChanges, and how many
+ * more there are.
+ * @param lines `git status --porcelain` lines.
+ * @return One per line.
+ */
+auto namedChanges(const QStringList &lines) -> QString {
+  QString named = lines.mid(0, kMaxNamedChanges).join(QLatin1Char('\n'));
+  if (lines.size() > kMaxNamedChanges) {
+    named += QLatin1Char('\n') +
+             RealPass::tr("and %n more", nullptr,
+                          static_cast<int>(lines.size() - kMaxNamedChanges));
+  }
+  return named;
+}
+} // namespace
+
+auto RealPass::refuseUnrecordedChanges(const QStringList &paths,
+                                       const QStringList &committing) -> bool {
+  QStringList changes = unrecorded(paths, false);
+  QStringList repositories;
+  for (const QString &path : committing) {
+    const QString repository = repositoryOf(path);
+    if (!repositories.contains(repository)) {
+      repositories << repository;
+    }
+  }
+  // pass commits the whole index, not only what it staged: anything staged
+  // elsewhere goes along.
+  for (const QString &repository : std::as_const(repositories)) {
+    for (const QString &entry :
+         statusEntries({QStringLiteral("--untracked-files=no")}, repository)) {
+      if (entry.at(0) != QLatin1Char(' ') && !changes.contains(entry)) {
+        changes << entry;
+      }
+    }
+  }
+  if (changes.isEmpty()) {
+    return false;
+  }
+  const QString why =
+      tr("The folder holds changes Git has not recorded, and pass would "
+         "commit and push them along with this one:\n\n%1\n\nCommit, "
+         "remove or ignore them with Git first, then try again.")
+          .arg(namedChanges(changes));
+  // As the other refusals: the interface arms when an operation starts and
+  // is released by processErrorExit(); a refusal starts nothing.
+  emit startingExecuteWrapper();
+  emit critical(tr("Changes Git has not recorded"), why);
+  emit processErrorExit(1, why);
+  return true;
+}
+
+void RealPass::reportUnrecorded(const QStringList &paths) {
+  QStringList changes;
+  for (const QString &line : unrecorded(paths, true)) {
+    // What pass writes: entries and recipient lists. Other ignored files in
+    // a folder are the user's own business.
+    if (isStoreFileName(QFileInfo(line.mid(3)).fileName())) {
+      changes << line;
+    }
+  }
+  if (changes.isEmpty()) {
+    return;
+  }
+  emit critical(tr("Saved, not committed"),
+                tr("The change is in the store, but Git did not record it, "
+                   "so it is not pushed, and a pull may overwrite it "
+                   "(\"!!\" marks a file Git ignores):\n\n%1")
+                    .arg(namedChanges(changes)));
+}
+
+auto RealPass::refuseIgnoredThatMoves(const QString &src, const QString &dest)
+    -> bool {
+  if (!m_settings.useGit || !QFileInfo(src).isDir()) {
+    return false;
+  }
+  const QDir store(QDir::cleanPath(m_settings.passStore));
+  // pass moves a folder into an existing one, as mv does.
+  const QString landing = QFileInfo(dest).isDir()
+                              ? QDir(dest).filePath(QFileInfo(src).fileName())
+                              : dest;
+  // Each side in its own repository: where the files lie now, and the one
+  // pass commits them in.
+  const QString fromRepository = repositoryOf(src);
+  const QString toRepository = repositoryOf(landing);
+  const QString from =
+      QDir(fromRepository.isEmpty() ? store.path()
+                                    : store.filePath(fromRepository))
+          .relativeFilePath(QDir::cleanPath(src));
+  const QString to =
+      QDir(toRepository.isEmpty() ? store.path() : store.filePath(toRepository))
+          .relativeFilePath(QDir::cleanPath(landing));
+  // ls-files names files relative to where git runs, where status names
+  // them from the repository's root; both are that repository here.
+  QString out;
+  storeGit(
+      inRepository(fromRepository,
+                   {QStringLiteral("ls-files"), QStringLiteral("-z"),
+                    QStringLiteral("--others"), QStringLiteral("--ignored"),
+                    QStringLiteral("--exclude-standard"), QStringLiteral("--"),
+                    from}),
+      &out);
+  QStringList moving;
+  QStringList landed;
+  for (const QString &file : out.split(QChar(0), Qt::SkipEmptyParts)) {
+    if (!file.startsWith(from + QLatin1Char('/')) ||
+        isStoreFileName(QFileInfo(file).fileName())) {
+      continue;
+    }
+    moving << file;
+    landed << to + file.mid(from.size());
+  }
+  if (landed.isEmpty()) {
+    return false;
+  }
+  // A rule in a .gitignore inside the folder goes with it, so what it
+  // ignores stays ignored where it lands, and decides there: deeper rules
+  // win. Into a folder that is already there, a rule waiting deeper in it
+  // could undo that, so only the lookup there counts.
+  QStringList travelling;
+  QStringList rules;
+  if (!QFileInfo::exists(landing) &&
+      checkIgnore(fromRepository, moving, true, &rules)) {
+    for (qsizetype i = 0; i + 3 < rules.size(); i += 4) {
+      if (rules.at(i).startsWith(from + QLatin1Char('/'))) {
+        travelling << rules.at(i + 3);
+      }
+    }
+  }
+  // A lookup that failed counts nothing as ignored: the move is refused.
+  QStringList ignoredThere;
+  if (!checkIgnore(toRepository, landed, false, &ignoredThere)) {
+    ignoredThere.clear();
+  }
+  QStringList exposed;
+  for (qsizetype i = 0; i < landed.size(); ++i) {
+    if (!travelling.contains(moving.at(i)) &&
+        !ignoredThere.contains(landed.at(i))) {
+      exposed << moving.at(i) + QStringLiteral(" > ") + landed.at(i);
+    }
+  }
+  if (exposed.isEmpty()) {
+    return false;
+  }
+  const QString why =
+      tr("Git ignores these files only where they are now, and pass would "
+         "commit and push them where they land:\n\n%1\n\nMove them out of "
+         "the folder, or have Git ignore them there too, then try again.")
+          .arg(namedChanges(exposed));
+  emit startingExecuteWrapper();
+  emit critical(tr("Ignored files would be committed"), why);
+  emit processErrorExit(1, why);
+  return true;
+}
+
+auto RealPass::checkIgnore(const QString &repository, const QStringList &paths,
+                           bool verbose, QStringList *fields) -> bool {
+  // check-ignore takes -z only with --stdin. Without
+  // GIT_LITERAL_PATHSPECS (below) a name starting with ':' reads as
+  // pathspec magic: "./" keeps every name a name. Git answers with the
+  // name as given.
+  const QString here = QStringLiteral("./");
+  QString input;
+  for (const QString &path : paths) {
+    input += here + path + QChar(0);
+  }
+  QStringList args{QStringLiteral("check-ignore"), QStringLiteral("--stdin"),
+                   QStringLiteral("-z")};
+  if (verbose) {
+    args << QStringLiteral("-v");
+  }
+  // check-ignore refuses every path under GIT_LITERAL_PATHSPECS, which
+  // the store's environment sets; it takes its paths as names anyway.
+  QProcessEnvironment environment = storeEnvironment();
+  environment.remove(QStringLiteral("GIT_LITERAL_PATHSPECS"));
+  QProcess lookup;
+  lookup.setProcessEnvironment(environment);
+  QString out;
+  QString err;
+  (void)Executor::executeBlocking(lookup, m_settings.passExecutable,
+                                  QStringList{QStringLiteral("git")} +
+                                      inRepository(repository, args),
+                                  input, &out, &err);
+  // pass git exits 0 whatever git did: a lookup that failed shows only on
+  // stderr.
+  if (!err.trimmed().isEmpty()) {
+    return false;
+  }
+  *fields = out.split(QChar(0));
+  if (!fields->isEmpty() && fields->constLast().isEmpty()) {
+    fields->removeLast();
+  }
+  // The path is every field, or every fourth with -v.
+  const qsizetype step = verbose ? 4 : 1;
+  for (qsizetype i = step - 1; i < fields->size(); i += step) {
+    if ((*fields)[i].startsWith(here)) {
+      (*fields)[i].remove(0, here.size());
+    }
+  }
+  return true;
+}
+
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file + ".gpg")) {
     return;
@@ -257,7 +589,8 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseUnverifiedList(entry)) {
     return;
   }
-  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull() ||
+      refuseUnrecordedChanges({}, {entry})) {
     return;
   }
   m_insertQueue.enqueue(entry);
@@ -454,10 +787,16 @@ void RealPass::finished(int id, int exitCode, const QString &out,
     if (pid == PASS_INIT && exitCode == 0 && !scope.isEmpty()) {
       releaseAutoPush(scope);
     }
+    if (exitCode == 0 && !scope.isEmpty()) {
+      reportUnrecorded({scope});
+    }
     sendDeferredPush();
     // The status lines are for this check, not for the output panel.
     Pass::finished(id, exitCode, out, withoutStatusLines(err));
     return;
+  }
+  if (pid == PASS_INSERT && exitCode == 0 && !m_insertDone.target.isEmpty()) {
+    reportUnrecorded({m_insertDone.target});
   }
   Pass::finished(id, exitCode, out, err);
 }
@@ -595,7 +934,8 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
                            QDir(inStore).filePath(QStringLiteral(".gpg-id")))) {
     return;
   }
-  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull() ||
+      refuseUnrecordedChanges({inStore}, {inStore})) {
     return;
   }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
@@ -657,7 +997,14 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
       (destFileInfo.isDir() && refuseUnverifiedTree(dest, false))) {
     return;
   }
-  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
+  // pass stages what it moved or copied with `git add` on the new path,
+  // and a folder brings whatever lies in it along. It commits there, and a
+  // move commits the removal where the original was as well.
+  const QStringList committing =
+      id == PASS_MOVE ? QStringList{src, dest} : QStringList{dest};
+  if (refuseUnfinishedGitOperation() || refusePendingPull() ||
+      refuseUnrecordedChanges({src, dest}, committing) ||
+      refuseIgnoredThatMoves(src, dest)) {
     return;
   }
 
