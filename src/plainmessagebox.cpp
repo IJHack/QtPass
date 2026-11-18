@@ -13,6 +13,8 @@ namespace {
 constexpr qsizetype kMaxLines = 40;
 /// See kMaxLines.
 constexpr qsizetype kMaxChars = 4000;
+/// Characters of a cut message kept under "Show Details...".
+constexpr qsizetype kMaxDetailChars = 256 * 1024;
 
 /**
  * @brief @p text cut to kMaxLines lines and kMaxChars characters, with an
@@ -20,7 +22,7 @@ constexpr qsizetype kMaxChars = 4000;
  *
  * A message quoting git's or gpg's error output is as long as that output,
  * and a pushed .gitattributes with many bad lines decides its length: laid
- * out whole, the box froze the GUI. The Process Output panel keeps all of it.
+ * out whole, the box froze the GUI. The rest goes under "Show Details...".
  * @param text The message.
  * @return The message, at most that long.
  */
@@ -52,7 +54,16 @@ auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,
   // Before the text: set afterwards, the text would already have been laid
   // out as rich text once.
   box.setTextFormat(Qt::PlainText);
-  box.setText(bounded(Util::displayable(text)));
+  const QString shown = Util::displayable(text);
+  const QString cut = bounded(shown);
+  box.setText(cut);
+  if (cut.size() != shown.size()) {
+    // The rest under "Show Details...": plain text in a scrolling field,
+    // which does not lay it out at once as the label did. Not all tool
+    // output reaches the Process Output panel (the set-up runs git while
+    // the window waits), so this is where the cause can be read.
+    box.setDetailedText(shown.left(kMaxDetailChars));
+  }
   box.setStandardButtons(buttons);
   return static_cast<QMessageBox::StandardButton>(box.exec());
 }

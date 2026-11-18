@@ -155,6 +155,8 @@ public:
   QStringList boxTexts;
   /// Text formats of those message boxes.
   QList<Qt::TextFormat> boxFormats;
+  /// "Show Details..." text of those message boxes (empty when none).
+  QStringList boxDetails;
 
 private:
   /// One fresh single-shot timer per tick: a repeating QTimer does not fire
@@ -188,6 +190,7 @@ private:
       boxTitles << box->windowTitle();
       boxTexts << box->text();
       boxFormats << box->textFormat();
+      boxDetails << box->detailedText();
     }
     m_handler(widget);
   }
@@ -6011,8 +6014,9 @@ void tst_mainwindow::backendErrorsArePlainText() {
 
 /**
  * @brief A message box quoting tool output shows at most 40 lines and 4000
- *        characters, then an ellipsis: a pushed .gitattributes decided how
- *        much git printed, and a box laid out whole froze the window.
+ *        characters, then an ellipsis, with the rest under "Show Details...":
+ *        a pushed .gitattributes decided how much git printed, and a box
+ *        laid out whole froze the window.
  */
 void tst_mainwindow::aMessageBoxShowsABoundedText() {
   QStringList many;
@@ -6028,6 +6032,9 @@ void tst_mainwindow::aMessageBoxShowsABoundedText() {
     const QString text = driver.boxTexts.value(0);
     QCOMPARE(text.count(QLatin1Char('\n')), 40);
     QVERIFY(text.endsWith(ellipsis));
+    // The rest is under "Show Details...", as not all output reaches the
+    // Process Output panel.
+    QCOMPARE(driver.boxDetails.value(0), many.join(QLatin1Char('\n')));
   }
   {
     ModalDriver driver(answerBox(QMessageBox::Ok));
@@ -6043,6 +6050,7 @@ void tst_mainwindow::aMessageBoxShowsABoundedText() {
     PlainMessageBox::warning(m_window.data(), QStringLiteral("Git"),
                              QStringLiteral("one\ntwo"));
     QCOMPARE(driver.boxTexts.value(0), QStringLiteral("one\ntwo"));
+    QVERIFY(driver.boxDetails.value(0).isEmpty());
   }
 }
 
