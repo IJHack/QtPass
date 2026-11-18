@@ -136,6 +136,15 @@ class RealPass : public Pass {
   auto storeGit(const QStringList &args, QString *out) -> bool override;
 
   /**
+   * @brief `git status --porcelain -z` through `pass git`, read: one
+   * "XY name" per entry, a rename's old name dropped. Empty without Git, or
+   * when git cannot say.
+   * @param args Further status arguments (options, then a pathspec).
+   * @return The entries.
+   */
+  auto statusEntries(const QStringList &args) -> QStringList;
+
+  /**
    * @brief What git has not recorded at @p paths: `git status --porcelain`
    * lines, through `pass git`. Empty without Git, or when git cannot say.
    * @param paths Absolute paths in the store.
@@ -145,12 +154,14 @@ class RealPass : public Pass {
   auto unrecorded(const QStringList &paths, bool ignored) -> QStringList;
 
   /**
-   * @brief Refuse a `pass init`, `mv` or `cp` when @p paths hold changes
-   * git has not recorded. pass commits the whole folder with `git add`, so
-   * a plaintext export lying in it, or files a failed pull wrote, would be
-   * committed and pushed along with the change. Ignored files are left
-   * alone, as `git add` leaves them.
-   * @param paths Absolute paths in the store that pass will stage.
+   * @brief Refuse a `pass init`, `mv`, `cp` or `insert` when @p paths hold
+   * changes git has not recorded, or anything at all is staged. pass stages
+   * the folder it wrote with `git add` and then commits the whole index, so
+   * a plaintext export lying in the folder or staged anywhere, or files a
+   * failed pull wrote, would be committed and pushed along with the change.
+   * Ignored files are left alone, as `git add` leaves them.
+   * @param paths Absolute paths in the store that pass will stage; empty
+   *        for only the index (an insert stages its own entry alone).
    * @return Whether it was refused (and the user told).
    */
   auto refuseUnrecordedChanges(const QStringList &paths) -> bool;
@@ -163,6 +174,18 @@ class RealPass : public Pass {
    * @param paths Absolute paths the change wrote.
    */
   void reportUnrecorded(const QStringList &paths);
+
+  /**
+   * @brief Refuse a `pass mv` or `cp` of the folder @p src when a file in
+   * it that Git ignores would not be ignored where it lands: a rule naming
+   * the old place (`/team/export.csv`) does not follow the file, and pass
+   * stages the new path whole. Entries and recipient lists are not counted:
+   * committing those is what pass is for.
+   * @param src The folder moved or copied (anything else passes).
+   * @param dest Where to, as handed to pass: an existing folder takes it in.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseIgnoredThatMoves(const QString &src, const QString &dest) -> bool;
 
   /**
    * @brief For a folder pass is about to re-encrypt in a move or copy:
