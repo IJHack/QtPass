@@ -2426,7 +2426,8 @@ void tst_integration::realPass_fileManagerFilesGetAHint() {
   const QString why = critical.first().at(1).toString();
   QVERIFY2(why.contains("Finder"), qPrintable(why));
   // The lines to add, in a fixed order, and only the ones found.
-  QVERIFY2(why.endsWith(":\n\n.DS_Store\nThumbs.db"), qPrintable(why));
+  QVERIFY2(why.endsWith(":\n\n.gitignore:\n.DS_Store\nThumbs.db"),
+           qPrintable(why));
   QVERIFY2(store.exists("team/.DS_Store"), "nothing was moved");
 
   QFile ignore(store.filePath(".gitignore"));
@@ -2477,9 +2478,28 @@ void tst_integration::realPass_fileManagerFilesGetAHint() {
   critical.clear();
   pass.Move(store.filePath("other"), store.filePath("moved3"), false);
   QCOMPARE(critical.size(), 1);
-  QVERIFY2(critical.first().at(1).toString().contains(
-               "store's other/.gitignore holds"),
+  QVERIFY2(critical.first().at(1).toString().endsWith(
+               ":\n\nother/.gitignore:\n.DS_Store"),
            qPrintable(critical.first().at(1).toString()));
+
+  // Names from both repositories: each .gitignore gets its own alone.
+  QVERIFY(store.mkpath("other/in"));
+  QFile dolphin(store.filePath("other/in/.directory"));
+  QVERIFY(dolphin.open(QIODevice::WriteOnly));
+  dolphin.write("file manager\n");
+  dolphin.close();
+  QVERIFY(store.mkpath("fresh"));
+  QFile finder(store.filePath("fresh/desktop.ini"));
+  QVERIFY(finder.open(QIODevice::WriteOnly));
+  finder.write("file manager\n");
+  finder.close();
+  critical.clear();
+  pass.Move(store.filePath("fresh"), store.filePath("other/in"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(
+      critical.first().at(1).toString().endsWith(
+          ":\n\n.gitignore:\ndesktop.ini\n\nother/.gitignore:\n.directory"),
+      qPrintable(critical.first().at(1).toString()));
   QtPassSettings::setUsePass(false);
 }
 

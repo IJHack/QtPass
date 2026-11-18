@@ -176,8 +176,9 @@ class RealPass : public Pass {
    * committed and pushed along with the change. Ignored files are left
    * alone, as `git add` leaves them. When the changes include untracked
    * files a file manager writes by itself (`.DS_Store`, `Thumbs.db`), the
-   * message says which `.gitignore` lines keep them out for good, and in
-   * which repository's `.gitignore`.
+   * message says which `.gitignore` lines keep them out for good, for the
+   * `.gitignore` of each repository that reports them (unless a deeper
+   * rule there un-ignores them again).
    * @param paths Absolute paths in the store that pass will stage; empty
    *        for none (an insert stages its own entry alone).
    * @param committing Absolute paths pass commits: the index of each one's

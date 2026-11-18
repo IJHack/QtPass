@@ -455,7 +455,10 @@ auto RealPass::refuseUnrecordedChanges(const QStringList &paths,
   const QStringList written = fileManagerFiles(changes, &writtenAt);
   if (!written.isEmpty()) {
     const QDir store(QDir::cleanPath(m_settings.passStore));
+    // Each .gitignore with the names its repository reports, alone: a
+    // rule for a name that is not there could hide something else.
     QStringList ignoreFiles;
+    QMap<QString, QStringList> namesFor;
     for (const QString &path : std::as_const(writtenAt)) {
       const QString repository = repositoryOf(store.filePath(path));
       const QString file = repository.isEmpty()
@@ -464,15 +467,24 @@ auto RealPass::refuseUnrecordedChanges(const QStringList &paths,
       if (!ignoreFiles.contains(file)) {
         ignoreFiles << file;
       }
+      const QString name = QFileInfo(path).fileName();
+      if (!namesFor[file].contains(name)) {
+        namesFor[file] << name;
+      }
+    }
+    QStringList blocks;
+    for (const QString &file : std::as_const(ignoreFiles)) {
+      blocks << file + QStringLiteral(":\n") +
+                    namesFor.value(file).join(QLatin1Char('\n'));
     }
     why += QStringLiteral("\n\n") +
            tr("The system writes %1 by itself, in folders a file manager "
               "opens (Finder on macOS, Explorer on Windows, Dolphin on "
-              "KDE). Git leaves such files alone in every folder once the "
-              "store's %3 holds these lines, committed:\n\n%2")
+              "KDE). Git leaves such files alone in every folder once each "
+              ".gitignore in the store below holds its lines, committed:"
+              "\n\n%2")
                .arg(written.join(QStringLiteral(", ")),
-                    written.join(QLatin1Char('\n')),
-                    ignoreFiles.join(QStringLiteral(", ")));
+                    blocks.join(QStringLiteral("\n\n")));
   }
   // As the other refusals: the interface arms when an operation starts and
   // is released by processErrorExit(); a refusal starts nothing.
