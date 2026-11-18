@@ -278,7 +278,8 @@ public:
    * reads replaced by U+FFFD, for showing text that comes from the store or
    * a key (a folder name, a key's user ID) as plain text.
    *
-   * Replaced: C0 controls (but tab and, with @p lineBreaks, line feed), DEL,
+   * Replaced: C0 controls (but tab and, with @p lineBreaks, line feed and
+   * a carriage return right before one), DEL,
    * C1 controls (NEL among them, U+009C ends a "string" in some terminals),
    * the line and paragraph separators U+2028 and U+2029, and the bidi
    * embedding, override and isolate controls (U+202A to U+202E, U+2066 to

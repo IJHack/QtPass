@@ -1959,6 +1959,14 @@ void tst_util::displayableShowsWhatTurnsTheTextAround() {
            QStringLiteral("one\ntwo"));
   QCOMPARE(Util::displayable(QStringLiteral("one\ntwo"), false),
            QStringLiteral("one") + fffd + QStringLiteral("two"));
+  // A Windows line end (tool output quoted in a message) stays; a carriage
+  // return on its own does not.
+  QCOMPARE(Util::displayable(QStringLiteral("one\r\ntwo")),
+           QStringLiteral("one\r\ntwo"));
+  QCOMPARE(Util::displayable(QStringLiteral("one\rtwo")),
+           QStringLiteral("one") + fffd + QStringLiteral("two"));
+  QCOMPARE(Util::displayable(QStringLiteral("one\r\ntwo"), false),
+           QStringLiteral("one") + fffd + fffd + QStringLiteral("two"));
 }
 
 void tst_util::linkifyUrlsLeavesNonWebUrlsAsText() {
@@ -2038,8 +2046,8 @@ void tst_util::utilRegexNewLines() {
 // const-qualified variables continue to work correctly.
 
 void tst_util::findBinaryInPathWithConstQString() {
-  // Pass a const-qualified variable to verify the const-ref signature
-  // compiles and executes correctly.
+  // Pass a const-qualified variable to verify the const-ref signature compiles
+  // and executes correctly.
 #ifdef Q_OS_WIN
   const QString binaryName = QStringLiteral("cmd.exe");
 #else
@@ -3446,8 +3454,7 @@ void tst_util::gpgErrorMessageUnknownReturnsEmpty() {
 
 void tst_util::gpgErrorMessageStatusTokenTakesPriorityOverFallback() {
   // KEYEXPIRED token present alongside a generic "encryption failed" line —
-  // the specific expired message should be returned, not the generic
-  // fallback.
+  // the specific expired message should be returned, not the generic fallback.
   QString err = "[GNUPG:] KEYEXPIRED 1234567890\n"
                 "gpg: [stdin]: encryption failed: Unusable public key";
   QString msg = gpgErrorMessage(err);
@@ -4006,8 +4013,7 @@ void tst_util::storeRelativePathFollowsTheCheck() {
 /**
  * @brief isTargetSpelled() flags a path under a linked root's target that is
  *        not under the root as configured; the configured spelling, a path
- *        outside the store, a relative one, or a root that is no link are
- * not.
+ *        outside the store, a relative one, or a root that is no link are not.
  */
 void tst_util::isTargetSpelledNamesOnlyTheTargetSpelling() {
   QTemporaryDir store;
@@ -6251,8 +6257,7 @@ void tst_util::generatePasswordPwgenFailureYieldsEmpty() {
   QVERIFY2(pass.generatePassword(16, QString()).isEmpty(),
            "a failing pwgen must not hand out its output as a password");
   // The failure is reported (not silent), as a zero length or empty charset
-  // is, so Generate does not quietly do nothing and OK save an empty
-  // password.
+  // is, so Generate does not quietly do nothing and OK save an empty password.
   QCOMPARE(critical.count(), 1);
 #endif
 }
