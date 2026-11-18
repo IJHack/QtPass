@@ -406,6 +406,7 @@ private Q_SLOTS:
   void imitatePass_insertIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptPreservesPerFolderRecipients();
+  void imitatePass_reencryptIncludesDotNamedEntries();
   void imitatePass_signedGpgIdInitAndReencrypt();
   void imitatePass_tamperedGpgIdSignatureAbortsReencrypt();
   void imitatePass_reencryptMixedFailuresReportedOnce();
@@ -1610,6 +1611,66 @@ void tst_integration::imitatePass_reencryptIgnoresGpgConfEncryptTo() {
            qPrintable(QStringLiteral("gpg.conf encrypt-to must not re-add the "
                                      "removed recipient, got: %1")
                           .arg(after.join(','))));
+}
+
+void tst_integration::imitatePass_reencryptIncludesDotNamedEntries() {
+  // An entry whose name starts with a dot (.env) is re-encrypted with the
+  // rest, as `pass init` does; it was left encrypted to the previous
+  // recipients. A hidden folder stays closed.
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  const QDir store(storeDir.path());
+  const auto writeGpgId = [&](const QString &fpr) {
+    QFile f(store.filePath(".gpg-id"));
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    const QByteArray payload = (fpr + "\n").toUtf8();
+    return f.write(payload) == payload.size();
+  };
+  QVERIFY(writeGpgId(m_keyFingerprint));
+  QVERIFY(store.mkpath("team"));
+  QVERIFY(store.mkpath(".stash"));
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  for (const QString &name : {QStringLiteral("plain"), QStringLiteral(".env"),
+                              QStringLiteral("team/.secret")}) {
+    QSignalSpy spy(&pass, &Pass::finishedInsert);
+    pass.Insert(name, QStringLiteral("r\n"), false);
+    QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
+  }
+  QVERIFY(QFile::copy(store.filePath("plain.gpg"),
+                      store.filePath(".stash/kept.gpg")));
+
+  QVERIFY(writeGpgId(m_keyFingerprint2));
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  }
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+  for (const QString &name :
+       {QStringLiteral("plain.gpg"), QStringLiteral(".env.gpg"),
+        QStringLiteral("team/.secret.gpg")}) {
+    const QStringList ids =
+        recipientKeyIds(m_gnupgHome.path(), store.filePath(name));
+    QVERIFY2(ids.contains(sub2) && !ids.contains(sub1),
+             qPrintable(name + ": " + ids.join(',')));
+  }
+  const QStringList stashed =
+      recipientKeyIds(m_gnupgHome.path(), store.filePath(".stash/kept.gpg"));
+  QVERIFY2(stashed.contains(sub1) && !stashed.contains(sub2),
+           qPrintable(stashed.join(',')));
 }
 
 void tst_integration::imitatePass_reencryptPreservesPerFolderRecipients() {

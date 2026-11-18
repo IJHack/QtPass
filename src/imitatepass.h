@@ -514,7 +514,9 @@ public:
    * per-file gpg calls on a worker thread. Progress is reported through
    * reencryptProgress(); per-file failures are collected and reported in a
    * single critical() once the run is over, followed by endReencryptPath().
-   * A second call while a run is active is ignored.
+   * A second call while a run is active is ignored. Dot-named entries
+   * (`.env.gpg`) are re-encrypted too, as with `pass init`; hidden folders
+   * (`.git`, `.stversions`) are not entered.
    * @param dir Directory path.
    */
   void reencryptPath(const QString &dir);

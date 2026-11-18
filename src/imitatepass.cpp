@@ -1292,8 +1292,11 @@ auto ImitatePass::entriesToReencrypt(const QString &dir, QStringList *failed)
   // following one would decrypt and rewrite something outside the store.
   QStringList skipped;
   QStringList unlisted;
+  // A dot-named entry (.env.gpg) too, as with `pass init`: left out, it
+  // stayed encrypted to a recipient just removed while the run reported
+  // success. A hidden folder (.git, a sync tool's .stversions) stays closed.
   const QStringList files = Util::regularFilesUnder(
-      dir, QStringList() << "*.gpg", &skipped, false, &unlisted);
+      dir, QStringList() << "*.gpg", &skipped, true, &unlisted);
   // A folder that cannot be read looked empty, and the run reported success
   // over it with its entries still encrypted to the old recipients (a key
   // just removed among them). Each is a failure: the dialog names it and

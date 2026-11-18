@@ -953,6 +953,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   that name). The new list was written and the change then stopped: not
   committed, the entries not re-encrypted to it, and nothing said that the
   removal had not taken effect (scan finding ANT-2026-Z2NFWEZT)
+- With the native backend, re-encryption also covers entries whose name
+  starts with a dot (`.env`), as `pass init` does. They stayed encrypted to
+  the previous recipients, a key just removed among them, while the run
+  reported success. Hidden folders (`.git`, a sync tool's `.stversions`)
+  are still not entered (scan finding ANT-2026-4DLI3Z4U)
 - "Hide on close" and "Start minimized" hide the window only into a tray
   icon. Without one (the tray icon switched off, or a desktop without a
   system tray) closing the window left QtPass running invisibly, with the
