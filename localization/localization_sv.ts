@@ -1701,12 +1701,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1329"/>
         <source>Recipients changed by the pull</source>
-        <translation type="unfinished">Mottagare ändrade av pullen</translation>
+        <translation>Mottagare ändrade av pullen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
-        <translation type="unfinished">Pullen ändrade mottagarna för %1 efter att du sparade dem, så inget omkrypterades: poster i den kan fortfarande vara krypterade till de tidigare mottagarna, och den som du just tog bort kan kanske fortfarande läsa dem. Öppna Användare för den mappen igen, kontrollera mottagarna och spara.</translation>
+        <translation>Pullen ändrade mottagarna för %1 efter att du sparade dem, så inget omkrypterades: poster i den kan fortfarande vara krypterade till de tidigare mottagarna, och den som du just tog bort kan kanske fortfarande läsa dem. Öppna Användare för den mappen igen, kontrollera mottagarna och spara.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1405"/>
@@ -3727,13 +3727,13 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="219"/>
         <source>Cannot check the recipient lists</source>
-        <translation type="unfinished">Kan inte kontrollera mottagarlistorna</translation>
+        <translation>Kan inte kontrollera mottagarlistorna</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="222"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
-        <translation type="unfinished">%1 innehåller en fil eller mapp med ett namn som inte är giltig UTF-8. QtPass kan inte se vad som finns bakom det namnet, medan pass skulle omkryptera det, så inget ändrades. Byt namn på det och försök sedan igen.</translation>
+        <translation>%1 innehåller en fil eller mapp med ett namn som inte är giltig UTF-8. QtPass kan inte se vad som finns bakom det namnet, medan pass skulle omkryptera det, så inget ändrades. Byt namn på det och försök sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="353"/>
@@ -4037,18 +4037,18 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
         <location filename="../src/usersdialog.cpp" line="162"/>
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
-        <translation type="unfinished">
-            <numerusform>%n mapp under den här har egna mottagare, som inte ändras när du sparar här: %1</numerusform>
-            <numerusform>%n mappar under den här har egna mottagare, som inte ändras när du sparar här: %1</numerusform>
+        <translation>
+            <numerusform>%n mapp under den här har egna mottagare, som inte ändras när du sparar här ändrar inte: %1</numerusform>
+            <numerusform>%n mappar under den här har egna mottagare, som inte ändras när du sparar här ändrar inte: %1</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/usersdialog.cpp" line="170"/>
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
-        <translation type="unfinished">
-            <numerusform>%n mapp under den här kunde inte läsas, så det är okänt om den har egna mottagare: %1</numerusform>
-            <numerusform>%n mappar under den här kunde inte läsas, så det är okänt om de har egna mottagare: %1</numerusform>
+        <translation>
+            <numerusform>%n mapp under den här kunde inte läsas, så det är okänt om den har egna mottagare som är okänd: %1</numerusform>
+            <numerusform>%n mappar under den här kunde inte läsas, så det är okänt om de har egna mottagare som är okända: %1</numerusform>
         </translation>
     </message>
     <message>
