@@ -492,10 +492,13 @@ auto RealPass::refuseIgnoredThatMoves(const QString &src, const QString &dest)
     return false;
   }
   // A rule in a .gitignore inside the folder goes with it, so what it
-  // ignores stays ignored where it lands.
+  // ignores stays ignored where it lands, and decides there: deeper rules
+  // win. Into a folder that is already there, a rule waiting deeper in it
+  // could undo that, so only the lookup there counts.
   QStringList travelling;
   QStringList rules;
-  if (checkIgnore(fromRepository, moving, true, &rules)) {
+  if (!QFileInfo::exists(landing) &&
+      checkIgnore(fromRepository, moving, true, &rules)) {
     for (qsizetype i = 0; i + 3 < rules.size(); i += 4) {
       if (rules.at(i).startsWith(from + QLatin1Char('/'))) {
         travelling << rules.at(i + 3);
@@ -530,10 +533,14 @@ auto RealPass::refuseIgnoredThatMoves(const QString &src, const QString &dest)
 
 auto RealPass::checkIgnore(const QString &repository, const QStringList &paths,
                            bool verbose, QStringList *fields) -> bool {
-  // check-ignore takes -z only with --stdin.
+  // check-ignore takes -z only with --stdin. Without
+  // GIT_LITERAL_PATHSPECS (below) a name starting with ':' reads as
+  // pathspec magic: "./" keeps every name a name. Git answers with the
+  // name as given.
+  const QString here = QStringLiteral("./");
   QString input;
   for (const QString &path : paths) {
-    input += path + QChar(0);
+    input += here + path + QChar(0);
   }
   QStringList args{QStringLiteral("check-ignore"), QStringLiteral("--stdin"),
                    QStringLiteral("-z")};
@@ -560,6 +567,13 @@ auto RealPass::checkIgnore(const QString &repository, const QStringList &paths,
   *fields = out.split(QChar(0));
   if (!fields->isEmpty() && fields->constLast().isEmpty()) {
     fields->removeLast();
+  }
+  // The path is every field, or every fourth with -v.
+  const qsizetype step = verbose ? 4 : 1;
+  for (qsizetype i = step - 1; i < fields->size(); i += step) {
+    if ((*fields)[i].startsWith(here)) {
+      (*fields)[i].remove(0, here.size());
+    }
   }
   return true;
 }
@@ -984,9 +998,12 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
     return;
   }
   // pass stages what it moved or copied with `git add` on the new path,
-  // and a folder brings whatever lies in it along.
+  // and a folder brings whatever lies in it along. It commits there, and a
+  // move commits the removal where the original was as well.
+  const QStringList committing =
+      id == PASS_MOVE ? QStringList{src, dest} : QStringList{dest};
   if (refuseUnfinishedGitOperation() || refusePendingPull() ||
-      refuseUnrecordedChanges({src, dest}, {dest}) ||
+      refuseUnrecordedChanges({src, dest}, committing) ||
       refuseIgnoredThatMoves(src, dest)) {
     return;
   }

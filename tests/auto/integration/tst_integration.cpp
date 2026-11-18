@@ -2340,6 +2340,22 @@ void tst_integration::realPass_checksTheRepositoryPassCommitsIn() {
             false);
   QVERIFY2(waitForSignal(copied, 20000), gpgInsertErrorMsg(errors));
   QCOMPARE(critical.size(), 0);
+  QString committed;
+  QVERIFY(runGit(storeDir.path(), gitExe,
+                 {"ls-tree", "--name-only", "HEAD", "copied.gpg"}, &committed));
+  QCOMPARE(committed.trimmed(), QStringLiteral("copied.gpg"));
+  QString stagedThere;
+  QVERIFY(runGit(store.filePath("team"), gitExe,
+                 {"diff", "--cached", "--name-only"}, &stagedThere));
+  QCOMPARE(stagedThere.trimmed(), QStringLiteral("secret.txt"));
+  // A move commits the removal where the original was too, with whatever
+  // is staged there.
+  pass.Move(store.filePath("team/kept.gpg"), store.filePath("moved.gpg"),
+            false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains("team/secret.txt"),
+           qPrintable(critical.first().at(1).toString()));
+  QVERIFY2(store.exists("team/kept.gpg"), "nothing was moved");
 
   // A folder whose name starts with two dots is a folder, not a step up.
   QVERIFY(store.mkpath("..team"));
@@ -2442,6 +2458,15 @@ void tst_integration::realPass_refusesStagedAndUnignoredFiles() {
   QString tracked;
   QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
   QVERIFY2(!tracked.contains("export.csv"), qPrintable(tracked));
+  // A name starting with ':' is a name: ":kept" is not "kept".
+  critical.clear();
+  // Joined by hand: QDir takes ":kept" for a resource path.
+  pass.Copy(store.filePath("team"), storeDir.path() + "/:kept", false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains(":kept/export.csv"),
+           qPrintable(critical.first().at(1).toString()));
+  QVERIFY2(!QFileInfo::exists(storeDir.path() + "/:kept"),
+           "nothing was copied");
   // So does one where the folder's own .gitignore ignores it: the rule
   // goes along.
   QVERIFY(store.mkpath("carry"));
@@ -2453,6 +2478,7 @@ void tst_integration::realPass_refusesStagedAndUnignoredFiles() {
                       store.filePath("carry/export.csv")));
   QVERIFY(runGit(storeDir.path(), gitExe, {"add", "carry/.gitignore"}));
   QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "carry"}));
+  critical.clear();
   copied.clear();
   pass.Copy(store.filePath("carry"), store.filePath("carried"), false);
   QVERIFY2(waitForSignal(copied, 20000), gpgInsertErrorMsg(errors));
@@ -2460,6 +2486,21 @@ void tst_integration::realPass_refusesStagedAndUnignoredFiles() {
   QVERIFY(store.exists("carried/export.csv"));
   QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
   QVERIFY2(!tracked.contains("export.csv"), qPrintable(tracked));
+  // Into a folder already there, a rule waiting deeper in it may undo the
+  // one that comes along: only the lookup there counts, and it does not
+  // see the rule coming. Refused.
+  QVERIFY(store.mkpath("into/carry"));
+  QFile readme(store.filePath("into/carry/readme"));
+  QVERIFY(readme.open(QIODevice::WriteOnly));
+  readme.write("here\n");
+  readme.close();
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", "into"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "into"}));
+  pass.Copy(store.filePath("carry"), store.filePath("into"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains("into/carry/export.csv"),
+           qPrintable(critical.first().at(1).toString()));
+  QVERIFY2(!store.exists("into/carry/export.csv"), "nothing was copied");
   // Into an existing folder it lands as other/team/export.csv, which no
   // rule ignores (other/export.csv would be).
   QVERIFY(store.mkpath("other"));
