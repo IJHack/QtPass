@@ -14,6 +14,7 @@
  */
 
 #include <algorithm>
+#include <functional>
 
 #include <QAbstractItemModel>
 #include <QCoreApplication>
@@ -389,6 +390,8 @@ private Q_SLOTS:
   void imitatePass_copyOntoFolderAndShow();
   void imitatePass_copyOntoExistingEntryClash();
   void imitatePass_copyIntoFolderReencryptsToFolderKey();
+  void imitatePass_moveIntoFolderReencryptsToFolderKey();
+  void imitatePass_noMessageBoxInsideATransaction();
   void imitatePass_insertAndRemove();
   void imitatePass_generateGpgKeysEmptyExecutable();
   void imitatePass_nestedDirectoryInsertAndShow();
@@ -905,6 +908,170 @@ void tst_integration::imitatePass_copyIntoFolderReencryptsToFolderKey() {
            qPrintable(QStringLiteral("source must still target key1 only, "
                                      "got: %1")
                           .arg(srcIds.join(','))));
+}
+
+void tst_integration::imitatePass_moveIntoFolderReencryptsToFolderKey() {
+  // A move into a folder with another .gpg-id re-encrypts what moved for
+  // that folder's recipients, as `pass mv` does: the source folder's
+  // recipients must not keep reading it. A rename, or a folder that takes
+  // its own list along, needs no re-encryption.
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+
+  auto writeGpgId = [](const QString &dir, const QString &fpr) -> bool {
+    QDir().mkpath(dir);
+    QFile f(QDir::cleanPath(dir + "/.gpg-id"));
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    const QByteArray payload = (fpr + "\n").toUtf8();
+    return f.write(payload) == payload.size();
+  };
+  const QDir store(storeDir.path());
+  QVERIFY(writeGpgId(storeDir.path(), m_keyFingerprint));
+  const QString team = QDir::cleanPath(store.filePath("team"));
+  QVERIFY(writeGpgId(team, m_keyFingerprint2));
+  QVERIFY(writeGpgId(store.filePath("own"), m_keyFingerprint));
+  QVERIFY(store.mkpath("plain"));
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  for (const QString &name :
+       {QStringLiteral("rootentry"), QStringLiteral("own/kept"),
+        QStringLiteral("plain/carried")}) {
+    QSignalSpy spy(&pass, &Pass::finishedInsert);
+    pass.Insert(name, QStringLiteral("r\n"), false);
+    QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
+  }
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+  const auto targetsOnly = [&](const QString &file, const QString &key,
+                               const QString &other) {
+    const QStringList ids = recipientKeyIds(m_gnupgHome.path(), file);
+    return ids.contains(key) && !ids.contains(other);
+  };
+
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+  // An entry dropped onto a folder with another list.
+  const QString moved = QDir::cleanPath(team + "/rootentry.gpg");
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.Move(store.filePath("rootentry.gpg"), team, false);
+    QVERIFY2(criticalSpy.isEmpty(), "the move must not fail");
+    QVERIFY(QFile::exists(moved));
+    QVERIFY2(waitForSignal(endSpy, 60000),
+             "a move into a folder with another list must re-encrypt it");
+  }
+  QVERIFY2(targetsOnly(moved, sub2, sub1),
+           qPrintable(recipientKeyIds(m_gnupgHome.path(), moved).join(',')));
+
+  // A rename in the same folder keeps the list: nothing to re-encrypt.
+  startSpy.clear();
+  pass.Move(moved, team + "/renamed", false);
+  QVERIFY(QFile::exists(team + "/renamed.gpg"));
+  QCOMPARE(startSpy.size(), 0);
+
+  // A folder with its own list takes it along.
+  pass.Move(store.filePath("own"), team, false);
+  QVERIFY(QFile::exists(team + "/own/kept.gpg"));
+  QCOMPARE(startSpy.size(), 0);
+  QVERIFY(targetsOnly(team + "/own/kept.gpg", sub1, sub2));
+
+  // A folder without one does not.
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.Move(store.filePath("plain"), team, false);
+    QVERIFY(QFile::exists(team + "/plain/carried.gpg"));
+    QVERIFY2(waitForSignal(endSpy, 60000),
+             "a folder moved under another list must be re-encrypted");
+  }
+  QVERIFY(targetsOnly(team + "/plain/carried.gpg", sub2, sub1));
+  QVERIFY2(criticalSpy.isEmpty(),
+           qPrintable(criticalSpy.isEmpty()
+                          ? QString()
+                          : criticalSpy.first().at(1).toString()));
+}
+
+void tst_integration::imitatePass_noMessageBoxInsideATransaction() {
+  // A message box spins an event loop; whatever the user does meanwhile can
+  // queue a process. Opened inside a move's, copy's or removal's
+  // transaction, that process was booked as a step of it: an entry opened
+  // then came back as the output of `pass mv`, which is not secret, and
+  // never reached finishedShow. Here the box is a slot that opens the entry.
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath("locked"));
+
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  for (const QString &name : {QStringLiteral("mail"), QStringLiteral("bank"),
+                              QStringLiteral("locked/entry")}) {
+    QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+    pass.Insert(name, name + QStringLiteral("-secret\n"), false);
+    QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  }
+  QVERIFY(QFile::link(store.filePath("bank.gpg"), store.filePath("work.gpg")));
+
+  bool open = false;
+  QStringList titles;
+  connect(&pass, &Pass::critical, this, [&](const QString &title) {
+    titles << title;
+    if (open) {
+      open = false;
+      pass.Show(QStringLiteral("bank"));
+    }
+  });
+  const auto showsWhileTheBoxIsOpen = [&](const std::function<void()> &op) {
+    QSignalSpy showSpy(&pass, &Pass::finishedShow);
+    titles.clear();
+    open = true;
+    op();
+    return !open && waitForSignal(showSpy) &&
+           showSpy.first().at(0).toString().contains("bank-secret");
+  };
+
+  // A rename onto a name whose .gpg is a link.
+  QVERIFY2(showsWhileTheBoxIsOpen([&] {
+             pass.Move(store.filePath("mail.gpg"), store.filePath("work"),
+                       false);
+           }),
+           qPrintable(titles.join(',')));
+  QVERIFY(QFile::exists(store.filePath("mail.gpg")));
+  // A copy onto it.
+  QVERIFY2(showsWhileTheBoxIsOpen([&] {
+             pass.Copy(store.filePath("mail.gpg"), store.filePath("work"),
+                       false);
+           }),
+           qPrintable(titles.join(',')));
+
+  // A removal that fails.
+  const QString locked = store.filePath("locked");
+  QVERIFY(QFile::setPermissions(locked, QFile::ReadOwner | QFile::ExeOwner));
+  QFile probe(locked + "/probe");
+  if (probe.open(QIODevice::WriteOnly)) {
+    probe.close();
+    probe.remove();
+    QFile::setPermissions(locked, QFile::ReadOwner | QFile::WriteOwner |
+                                      QFile::ExeOwner);
+    QSKIP("a read-only folder does not stop this user (root?)");
+  }
+  const bool shown = showsWhileTheBoxIsOpen(
+      [&] { pass.Remove(QStringLiteral("locked/entry"), false); });
+  QFile::setPermissions(locked,
+                        QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
+  QVERIFY2(shown, qPrintable(titles.join(',')));
+  QVERIFY(QFile::exists(locked + "/entry.gpg"));
 }
 
 void tst_integration::imitatePass_insertAndRemove() {

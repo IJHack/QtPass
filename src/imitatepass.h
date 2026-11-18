@@ -579,6 +579,11 @@ signals:
 public:
   /**
    * @brief Move password file.
+   *
+   * As `pass mv`, what moved is then re-encrypted for the recipients where
+   * it landed, when another `.gpg-id` applies there than where it came from
+   * (a folder with its own list takes that along). No message box opens
+   * while the move's Git commands are being queued.
    * @param src Source path.
    * @param dest Destination path.
    * @param force true to overwrite existing destination.

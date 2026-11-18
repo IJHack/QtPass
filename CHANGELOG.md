@@ -962,6 +962,17 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   that need a look are listed in one message, at most 15 of them. Each one
   opened its own box inside the one before, so a store with a few thousand
   planted leftovers crashed QtPass (scan finding ANT-2026-D7NRESWW)
+- With the native backend, an entry or folder moved into a folder with
+  other recipients is re-encrypted for them, as `pass mv` does. It stayed
+  readable for the recipients of the folder it came from. A rename, or a
+  folder with a `.gpg-id` of its own, keeps its recipients and is not
+  re-encrypted (scan finding ANT-2026-04TL734H)
+- With the native backend, a move, copy or delete that is refused or fails
+  shows its message after the Git commands are queued, not while they are.
+  An entry opened while that message was open came back as the output of
+  the move, which is not treated as secret: it was printed in the process
+  output panel and shown even with "Hide content" on (scan finding
+  ANT-2026-R4V358TS)
 - "Hide on close" and "Start minimized" hide the window only into a tray
   icon. Without one (the tray icon switched off, or a desktop without a
   system tray) closing the window left QtPass running invisibly, with the
