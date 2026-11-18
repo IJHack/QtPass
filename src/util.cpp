@@ -34,7 +34,6 @@
 #else
 #include <cerrno>
 #include <cstdio>
-#include <cstring>
 #include <dirent.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -255,11 +254,9 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
     // can carry a link to one, or to a device) blocked the open and the
     // read on the GUI thread when Settings opened.
     const QString headPath = dir.filePath(QStringLiteral("HEAD"));
-    if (QFileInfo(headPath).isSymLink()) {
-      char target[256];
-      const ssize_t length = ::readlink(QFile::encodeName(headPath).constData(),
-                                        target, sizeof(target) - 1);
-      return length >= 5 && std::memcmp(target, "refs/", 5) == 0;
+    if (const QFileInfo headInfo(headPath); headInfo.isSymLink()) {
+      // The link text as stored (Qt 6.6), not the path it resolves to.
+      return headInfo.readSymLink().startsWith(QLatin1String("refs/"));
     }
     QFile head;
     if (!openFollowedRegularFile(headPath, head)) {
