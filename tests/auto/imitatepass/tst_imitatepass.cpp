@@ -669,7 +669,7 @@ private Q_SLOTS:
   void initReportsAFailedSignature();
   void initRefusesASignatureThatDoesNotVerify();
   void initRefusesWhenTheSigningKeyHasNoSecret();
-  void initReportsAnOldSignatureItCannotRemove();
+  void initRefusesAListOrSignatureThatIsNotAFile();
   void initCommitsTheRemovalOfATrackedOldSignature();
   void initWithGitButWithoutAddGpgIdStillFinishes();
   void recoveryRemovesALinkUnderATemporaryName();
@@ -4910,7 +4910,11 @@ void tst_imitatepass::initRefusesWhenTheSigningKeyHasNoSecret() {
  *        directory sits under its name): Init reports it instead of leaving
  *        the new list under a stale signature pass would reject.
  */
-void tst_imitatepass::initReportsAnOldSignatureItCannotRemove() {
+void tst_imitatepass::initRefusesAListOrSignatureThatIsNotAFile() {
+  // A folder under the signature's name cannot be removed as an old
+  // signature: Init wrote the new list first and stopped there, so it was
+  // neither committed nor were the entries re-encrypted to it. Nothing is
+  // written now, and the message says why. The same for the list's name.
 #ifdef Q_OS_WIN
   QSKIP("uses a shell script as a fake gpg");
 #else
@@ -4919,6 +4923,7 @@ void tst_imitatepass::initReportsAnOldSignatureItCannotRemove() {
   QVERIFY(populateStore(storeDir.path(), 0));
   const QDir root(storeDir.path());
   QVERIFY(root.mkpath(QStringLiteral(".gpg-id.sig")));
+  QVERIFY(root.mkpath(QStringLiteral("team/.gpg-id")));
   const QString logPath = root.filePath("gpg-argv.log");
   const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
   QVERIFY(!fakeGpg.isEmpty());
@@ -4927,17 +4932,24 @@ void tst_imitatepass::initReportsAnOldSignatureItCannotRemove() {
   QSignalSpy criticalSpy(&pass, &Pass::critical);
   QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
 
-  pass.Init(root.path() + QLatin1Char('/'),
-            {user(QStringLiteral("0123456789ABCDEF"))});
-  QTest::qWait(200);
-  QCOMPARE(criticalSpy.count(), 1);
-  QCOMPARE(criticalSpy.first().at(0).toString(),
-           QStringLiteral("Cannot update"));
-  QVERIFY2(criticalSpy.first().at(1).toString().contains(
-               QStringLiteral("Failed to remove the old signature")),
-           qPrintable(criticalSpy.first().at(1).toString()));
+  for (const QString &folder : {QString(), QStringLiteral("team/")}) {
+    criticalSpy.clear();
+    pass.Init(root.path() + QLatin1Char('/') + folder,
+              {user(QStringLiteral("FEDCBA9876543210"))});
+    QTest::qWait(200);
+    QCOMPARE(criticalSpy.count(), 1);
+    QCOMPARE(criticalSpy.first().at(0).toString(),
+             QStringLiteral("Recipients not changed"));
+    QVERIFY2(criticalSpy.first().at(1).toString().contains(
+                 QStringLiteral("not a regular file")),
+             qPrintable(criticalSpy.first().at(1).toString()));
+  }
+  QFile list(root.filePath(".gpg-id"));
+  QVERIFY(list.open(QIODevice::ReadOnly));
+  QCOMPARE(list.readAll(), QByteArray("0123456789ABCDEF\n"));
   QVERIFY2(QFileInfo(root.filePath(".gpg-id.sig")).isDir(),
            "what sits under the signature's name is left alone");
+  QVERIFY(QFileInfo(root.filePath("team/.gpg-id")).isDir());
   QCOMPARE(startSpy.count(), 0);
 #endif
 }
