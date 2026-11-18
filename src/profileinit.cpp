@@ -62,8 +62,9 @@ auto gitEnvironment(const QString &dir, const AppSettings &s)
 /// "commit", and "-S" when git config pass.signcommits is true for the
 /// repository @p git runs in (a new one: so the user's own git config), as
 /// pass signs its commits.
-/// Time a set-up git command may take while the window waits: init, add
-/// and an unsigned commit. A signed one waits for the passphrase instead.
+/// Time `git init` and `git add` may take while the window waits: the two
+/// that read what lies in the folder. A commit is not bounded: git may sign
+/// it (pass.signcommits or commit.gpgSign) and wait for the passphrase.
 constexpr int kGitSetupTimeoutMs = 2 * 60 * 1000;
 
 /**
@@ -113,7 +114,7 @@ auto commitArgs(QProcess &git, const AppSettings &s) -> QStringList {
           git, s.gitExecutable,
           {QStringLiteral("config"), QStringLiteral("--bool"),
            QStringLiteral("--get"), QStringLiteral("pass.signcommits")},
-          QString(), &out, nullptr, nullptr, kGitSetupTimeoutMs) == 0 &&
+          QString(), &out, nullptr) == 0 &&
       out.trimmed() == QLatin1String("true");
   return sign ? QStringList{QStringLiteral("commit"), QStringLiteral("-S")}
               : QStringList{QStringLiteral("commit")};
@@ -145,6 +146,14 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   const QDir folder(dir);
   if (!folder.exists() && !Util::mkpathForStore(folder.absolutePath())) {
     out = tr("Could not create %1.").arg(folder.absolutePath());
+    return false;
+  }
+  // Before anything is written: a refusal later would leave a .gpg-id
+  // behind, and a store that looks finished.
+  if (useGit &&
+      refusedForGit(folder.absolutePath(),
+                    {QStringLiteral(".gpg-id"), QStringLiteral(".gpg-id.sig")},
+                    &out)) {
     return false;
   }
   const QString gpgIdFile = folder.filePath(QStringLiteral(".gpg-id"));
@@ -308,17 +317,19 @@ auto ProfileInit::signGpgId(const QString &gpgIdFile,
 auto ProfileInit::runGit(QProcess &git, const AppSettings &s,
                          const QString &dir, const QStringList &args,
                          QString *note) -> bool {
-  const bool signs = args.contains(QStringLiteral("-S"));
+  const bool bounded = args.first() == QLatin1String("init") ||
+                       args.first() == QLatin1String("add");
   QElapsedTimer clock;
   clock.start();
   QString err;
-  const int rc =
-      Executor::executeBlocking(git, s.gitExecutable, args, QString(), nullptr,
-                                &err, nullptr, signs ? -1 : kGitSetupTimeoutMs);
+  const int rc = Executor::executeBlocking(git, s.gitExecutable, args,
+                                           QString(), nullptr, &err, nullptr,
+                                           bounded ? kGitSetupTimeoutMs : -1);
   if (rc == 0) {
     return true;
   }
-  if (!signs && clock.hasExpired(kGitSetupTimeoutMs)) {
+  // -1 is what a stopped run returns; git's own failures are positive.
+  if (bounded && rc == -1 && clock.elapsed() >= kGitSetupTimeoutMs) {
     *note = tr("git %1 did not finish within %2 minutes in %3, and was "
                "stopped.")
                 .arg(args.first())
@@ -362,9 +373,7 @@ auto ProfileInit::commitGpgId(const QString &dir, const QString &gpgIdFile,
   if (!sigFile.isEmpty()) {
     files << QFileInfo(sigFile).fileName();
   }
-  if (refusedForGit(dir, files, note)) {
-    return false;
-  }
+  // initialise() refused what git could wait on before writing these.
   const QStringList add =
       QStringList{QStringLiteral("add"), QStringLiteral("--")} + files;
   if (!run({QStringLiteral("init")}) || !run(add)) {

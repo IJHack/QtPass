@@ -133,9 +133,10 @@ private:
                           const QString &sigFile, const AppSettings &s,
                           QString *note) -> bool;
   /**
-   * @brief Run one set-up git command on @p git and wait for it, at most
-   * two minutes unless it is a signed commit (which waits for the
-   * passphrase): the window waits too.
+   * @brief Run one set-up git command on @p git and wait for it: `init` and
+   * `add`, which read what lies in the folder, for at most two minutes, as
+   * the window waits too; a commit, which git may sign and so wait for the
+   * passphrase, without a limit.
    * @param git The process, set up for the store.
    * @param s Settings for the git executable.
    * @param dir The store, named in the note.

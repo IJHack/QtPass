@@ -841,7 +841,8 @@ void tst_profileinit::initGitRefusesWhatGitCouldWaitOn() {
 
 /**
  * @brief A new store's .gpg-id is committed with `git add` too: a FIFO
- *        .gitignore beside it stops initialise() before git runs.
+ *        .gitignore beside it stops initialise() before anything is
+ *        written, so no store that looks finished is left behind.
  */
 void tst_profileinit::initialiseRefusesAFifoGitignore() {
 #ifdef Q_OS_WIN
@@ -860,6 +861,8 @@ void tst_profileinit::initialiseRefusesAFifoGitignore() {
   QVERIFY2(note.contains(QStringLiteral(".gitignore")), qPrintable(note));
   QVERIFY2(!QDir(dir.path()).exists(QStringLiteral(".git")),
            "git must not have run");
+  QVERIFY2(!QDir(dir.path()).exists(QStringLiteral(".gpg-id")),
+           "refused before the recipients were written");
 #endif
 }
 

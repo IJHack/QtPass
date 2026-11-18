@@ -5895,7 +5895,8 @@ void tst_imitatepass::reencryptAbortsWhenThePullStoppedBehindItsUpstream() {
   const QString fakeGit = writeScriptedGit(
       storeDir.path(), gitLog,
       QStringLiteral("  *' pull') exit 1;;\n"
-                     "  *' rev-list --count HEAD..@{upstream}') echo 1;;"));
+                     "  *' rev-list --count HEAD..@{upstream}') echo 1;;\n"
+                     "  *' status '*) echo ' M entry0.gpg';;"));
   QVERIFY(!fakeGit.isEmpty());
   Recorder rec;
   QList<QStringList> git;
