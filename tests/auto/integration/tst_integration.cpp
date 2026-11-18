@@ -1276,7 +1276,7 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
        {QStringLiteral("a"), QStringLiteral("b"), QStringLiteral("c"),
         QStringLiteral("d"), QStringLiteral("f"), QStringLiteral("g"),
         QStringLiteral("h"), QStringLiteral("i"), QStringLiteral("j"),
-        QStringLiteral("own/kept")}) {
+        QStringLiteral("k"), QStringLiteral("own/kept")}) {
     QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
     pass.Insert(name, QStringLiteral("r\n"), false);
     QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
@@ -1365,15 +1365,16 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
 
   // A git mv that fails moves nothing, even when an earlier step took its
   // source away: the entry under the destination name stays as it is. Git
-  // through a wrapper that holds `rm` back a second, so the source is still
-  // there when the move is asked for.
+  // through a wrapper that holds `rm` and `commit` back a second, so the
+  // source is still there when the move is asked for.
   QTemporaryDir wrapDir;
   QVERIFY(wrapDir.isValid());
   const QString wrapper = wrapDir.filePath("git");
   {
     QFile script(wrapper);
     QVERIFY(script.open(QIODevice::WriteOnly));
-    script.write("#!/bin/sh\ncase \" $* \" in *\" rm \"*) sleep 1;; esac\n"
+    script.write("#!/bin/sh\ncase \" $* \" in *\" rm \"*|*\" commit \"*) sleep "
+                 "1;; esac\n"
                  "exec \"" +
                  gitExe.toUtf8() + "\" \"$@\"\n");
     script.close();
@@ -1395,6 +1396,22 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
   QTest::qWait(300);
   QCOMPARE(started.size(), 0);
   QVERIFY(!QFile::exists(store.filePath("g.gpg")));
+
+  // Something written under the source name after git mv ran, before the
+  // move settles (its commit is held back), does not stop the run.
+  started.clear();
+  ended.clear();
+  pass.Move(store.filePath("k.gpg"), store.filePath("team"), false);
+  QTRY_VERIFY_WITH_TIMEOUT(QFile::exists(store.filePath("team/k.gpg")), 10000);
+  QFile again(store.filePath("k.gpg"));
+  QVERIFY(again.open(QIODevice::WriteOnly));
+  again.write("written again\n");
+  again.close();
+  QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
+  const QStringList kIds = keyOf("team/k.gpg");
+  QVERIFY2(kIds.contains(sub2) && !kIds.contains(sub1),
+           qPrintable(kIds.join(',')));
+  QVERIFY(QFile::remove(store.filePath("k.gpg")));
   {
     AppSettings s = QtPassSettings::load();
     pass.init(s);

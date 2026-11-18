@@ -1812,17 +1812,15 @@ auto ImitatePass::refuseOverlappingMove(const QString &src,
 }
 
 void ImitatePass::reencryptMoved(const PendingMove &move) {
-  // A git mv that failed moved nothing, whatever is on disk now (an earlier
-  // step may have taken the source away).
-  if (move.landed == false) {
+  // Only a move whose git mv (or rename) succeeded: one that failed, or
+  // never ran, moved nothing, and re-encrypting the destination would
+  // rewrite the entry that was there. Not the source name: something may
+  // be written under it again before the move settles.
+  if (move.landed != true) {
     return;
   }
-  // And what is on disk decides: a move that did not happen leaves its
-  // source, and re-encrypting the destination would rewrite the entry that
-  // was there.
   const QFileInfo landed(move.destFile);
-  if (QFileInfo::exists(move.src) || !landed.exists() ||
-      Util::isLinkedFolder(move.destFile)) {
+  if (!landed.exists() || Util::isLinkedFolder(move.destFile)) {
     return;
   }
   // As `pass mv`, what moved is encrypted for the recipients where it
