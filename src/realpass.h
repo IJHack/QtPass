@@ -174,7 +174,9 @@ class RealPass : public Pass {
    * `git add` and then commits the whole index, so a plaintext export lying
    * in the folder or staged anywhere, or files a failed pull wrote, would be
    * committed and pushed along with the change. Ignored files are left
-   * alone, as `git add` leaves them.
+   * alone, as `git add` leaves them. When the changes include files a file
+   * manager writes by itself (`.DS_Store`, `Thumbs.db`), the message says
+   * which `.gitignore` lines keep them out for good.
    * @param paths Absolute paths in the store that pass will stage; empty
    *        for none (an insert stages its own entry alone).
    * @param committing Absolute paths pass commits: the index of each one's

@@ -83,6 +83,21 @@ setx GIT_ASKPASS "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass
 This tutorial might resolve your issues.
 <https://gitforwindows.org/OpenSSH-Integration-with-Pageant>
 
+### Users, move or copy says "Changes Git has not recorded"
+
+With the `pass` backend and Git, `pass` commits the whole folder it changes, and everything staged with it. So QtPass refuses **Users**, move and copy while the folder holds files Git does not track, and also new entries while anything is staged: a plaintext export left in the store would otherwise be committed and pushed. The message lists the files.
+
+Commit them, remove them, or have Git ignore them, then try again.
+
+Finder (macOS), Explorer (Windows) and Dolphin (KDE) write `.DS_Store`, `Thumbs.db`, `desktop.ini` or `.directory` into folders they open. Removing them does not last, so the message names the lines to add to the `.gitignore` at the top of the store, for example:
+
+```gitignore
+.DS_Store
+Thumbs.db
+```
+
+Commit the `.gitignore` and push it, so your teammates' devices skip these files too. QtPass does not skip them on its own: `pass` would commit them, and a `.DS_Store` names the files in its folder.
+
 ### gpg reports a missing `/tmp/tst_integration-…/pubring.kbx`
 
 QtPass is pointing gpg at a `GNUPGHOME` that no longer exists. The 1.7.0

@@ -935,7 +935,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   a move or copy is refused when a file Git ignores only where it is now
   would be committed where it lands. A folder with a Git repository of its
   own is checked in that repository, where pass commits. Files Git ignores
-  are otherwise left alone (scan finding ANT-2026-H8BX5YR3)
+  are otherwise left alone (scan finding ANT-2026-H8BX5YR3). When the
+  changes include `.DS_Store`, `Thumbs.db`, `desktop.ini` or `.directory`,
+  which Finder, Explorer and Dolphin write by themselves, the message names
+  the `.gitignore` lines that keep them out
 - With the `pass` backend, an entry Git did not record after an insert,
   Users, move or copy (one a `.gitignore` matches, say) is reported as
   saved but not committed: pass exits 0 whatever Git did, and such an entry

@@ -427,6 +427,7 @@ private Q_SLOTS:
   void realPass_insertAndGrep();
   void realPass_unrecordedEntryIsReported();
   void realPass_initRefusesUnrecordedFiles();
+  void realPass_fileManagerFilesGetAHint();
   void realPass_refusesStagedAndUnignoredFiles();
   void realPass_checksTheRepositoryPassCommitsIn();
 
@@ -2225,6 +2226,8 @@ void tst_integration::realPass_initRefusesUnrecordedFiles() {
   QCOMPARE(critical.size(), 1);
   QVERIFY2(critical.first().at(1).toString().contains("notes.txt"),
            qPrintable(critical.first().at(1).toString()));
+  QVERIFY2(!critical.first().at(1).toString().contains("Finder"),
+           "no file manager hint for a file of the user's own");
   QString tracked;
   QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
   QVERIFY2(!tracked.contains("notes.txt"), qPrintable(tracked));
@@ -2377,6 +2380,64 @@ void tst_integration::realPass_checksTheRepositoryPassCommitsIn() {
   pass.Insert(QStringLiteral("other"), QStringLiteral("three\n"), false);
   QVERIFY2(waitForSignal(inserted, 20000), gpgInsertErrorMsg(errors));
   QCOMPARE(critical.size(), 0);
+  QtPassSettings::setUsePass(false);
+}
+
+/**
+ * @brief Finder and Explorer leave .DS_Store and Thumbs.db in folders they
+ *        open, and those refuse a move as any file Git has not recorded.
+ *        The message says which .gitignore lines keep them out, and with
+ *        those lines committed the move goes ahead.
+ */
+void tst_integration::realPass_fileManagerFilesGetAHint() {
+  const QString passExe = findPass();
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (passExe.isEmpty() || gitExe.isEmpty())
+    QSKIP("pass or git not installed");
+  RestoreUseGit restoreUseGit;
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString setUp = initRealPassGitStore(storeDir.path(), passExe, gitExe);
+  QVERIFY2(setUp.isEmpty(), qPrintable(setUp));
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath("team/sub"));
+  for (const QString &name :
+       {QStringLiteral("team/sub/Thumbs.db"), QStringLiteral("team/.DS_Store"),
+        QStringLiteral("team/sub/.DS_Store")}) {
+    QFile file(store.filePath(name));
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("file manager\n");
+    file.close();
+  }
+
+  RealPass pass;
+  setupPass(pass);
+  QSignalSpy moved(&pass, &Pass::finishedMove);
+  QSignalSpy errors(&pass, &Pass::processErrorExit);
+  QSignalSpy critical(&pass, &Pass::critical);
+  pass.Move(store.filePath("team"), store.filePath("moved"), false);
+  QCOMPARE(critical.size(), 1);
+  const QString why = critical.first().at(1).toString();
+  QVERIFY2(why.contains("Finder"), qPrintable(why));
+  // The lines to add, in a fixed order, and only the ones found.
+  QVERIFY2(why.endsWith(":\n\n.DS_Store\nThumbs.db"), qPrintable(why));
+  QVERIFY2(store.exists("team/.DS_Store"), "nothing was moved");
+
+  QFile ignore(store.filePath(".gitignore"));
+  QVERIFY(ignore.open(QIODevice::WriteOnly));
+  ignore.write(".DS_Store\nThumbs.db\n");
+  ignore.close();
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", ".gitignore"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "ignore"}));
+  critical.clear();
+  pass.Move(store.filePath("team"), store.filePath("moved"), false);
+  QVERIFY2(waitForSignal(moved, 20000), gpgInsertErrorMsg(errors));
+  QCOMPARE(critical.size(), 0);
+  QVERIFY(store.exists("moved/.DS_Store"));
+  QString tracked;
+  QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
+  QVERIFY2(!tracked.contains(".DS_Store") && !tracked.contains("Thumbs.db"),
+           qPrintable(tracked));
   QtPassSettings::setUsePass(false);
 }
 
