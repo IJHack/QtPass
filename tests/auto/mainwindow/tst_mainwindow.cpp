@@ -400,6 +400,7 @@ private Q_SLOTS:
   void flashTextHtmlRenderedInBrowser();
   void flashTextNonErrorClearsErrorForeground();
   void flashTextIsNeverALink();
+  void anEntryShownAsItIsHasNoLinks();
   void showStatusMessageAppearsInStatusBar();
   void deselectDoesNotCrash();
   void onProcessOutputAppendsToPanel();
@@ -860,6 +861,32 @@ void tst_mainwindow::flashTextHtmlRenderedInBrowser() {
   QVERIFY2(
       !browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
       "flashText with isHtml=true must not escape HTML tags");
+}
+
+/**
+ * @brief Shown as it is, an entry holds the password and every secret field
+ *        in its text: none of it becomes a link, or a click on a URL-shaped
+ *        password handed it to the browser.
+ */
+void tst_mainwindow::anEntryShownAsItIsHasNoLinks() {
+  const AppSettings before = QtPassSettings::load();
+  const auto restore = qScopeGuard([&before] { QtPassSettings::save(before); });
+  AppSettings s = before;
+  s.displayAsIs = true;
+  s.hideContent = false;
+  QtPassSettings::save(s);
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  browser->clear();
+  m_window->passShowHandler(QStringLiteral(
+      "https://example.org/?p=s3cret\nurl: https://example.org/login\n"));
+  QVERIFY2(browser->toPlainText().contains(
+               QStringLiteral("https://example.org/?p=s3cret")),
+           qPrintable(browser->toPlainText()));
+  QVERIFY2(!browser->toHtml().contains(QStringLiteral("href")),
+           qPrintable(browser->toHtml()));
+  browser->clear();
 }
 
 /**

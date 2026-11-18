@@ -737,7 +737,11 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
     clearPanelTimer.start();
   }
 
-  flashText(QtPass::formatOutput(output), false, true);
+  // Shown as it is, the text holds the password and every secret field: no
+  // links in it, or a click on a URL-shaped one handed it to the browser.
+  flashText(QtPass::formatOutput(output, QString(), QString(),
+                                 !s.displayAsIs || s.hideContent),
+            false, true);
   setUiElementsEnabled(true);
 }
 

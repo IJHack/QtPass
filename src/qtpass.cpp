@@ -140,7 +140,7 @@ void QtPass::onKeyGenerationComplete(const QString &output,
 }
 
 auto QtPass::formatOutput(QString output, const QString &prefix,
-                          const QString &postfix) -> QString {
+                          const QString &postfix, bool links) -> QString {
   // White space is kept below, so a "\r\n" must be one line end, and a lone
   // "\r" stays a space inside its line, as before: as a block of its own it
   // would slip past the display cap, which counts "\n" only.
@@ -150,7 +150,7 @@ auto QtPass::formatOutput(QString output, const QString &prefix,
   output = Util::boundSpaceRuns(output);
   // Escapes and links only launchable http(s) URLs; anything else stays
   // plain text (the text browser opens external links on click).
-  output = Util::linkifyUrls(output);
+  output = links ? Util::linkifyUrls(output) : output.toHtmlEscaped();
   output.replace(QStringLiteral("\n"), "<br />");
   // As stored: rich text otherwise shows, and Select All + Copy hand back,
   // "a  b" as "a b", drops indentation and turns a tab into a space (#210).
