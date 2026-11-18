@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"nativegrep_8cpp.html":[4,0,1,37],
+"nativegrep_8cpp_source.html":[4,0,1,37],
 "nativegrep_8h.html":[4,0,1,38],
 "nativegrep_8h_source.html":[4,0,1,38],
 "otpcodewidget_8cpp.html":[4,0,1,39],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a3f68e67dc6c397aaa9d1c24c356f754f":[1,0,3,0,0,1],
 "struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a8a0f9d1cb7131a1031d38f0a7d9635bf":[1,0,3,0,0,2],
 "struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a":[1,0,3,0,0,0],
-"struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699":[1,0,3,0,0,3],
-"struct_password_configuration.html":[1,3,4],
-"struct_password_configuration.html#a1f0990ce1daaecb8852976eeb7df61bd":[1,3,4,3]
+"struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699":[1,0,3,0,0,3]
 };

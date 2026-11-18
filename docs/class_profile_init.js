@@ -6,6 +6,8 @@ var class_profile_init =
     [ "initGit", "class_profile_init.html#a52111b898d794f14ec9d7dbe668dc5a2", null ],
     [ "initialise", "class_profile_init.html#ac65b0b3a9265d2bf8f793ad3071f8b24", null ],
     [ "needsInit", "class_profile_init.html#a1d8b28d9c505d6419193cade236a8865", null ],
+    [ "refusedForGit", "class_profile_init.html#a21a8281b13a960c70a69723d0b46c13b", null ],
+    [ "runGit", "class_profile_init.html#a9d0e4d0f6fd056a9a16fbbd2e3a51e43", null ],
     [ "signGpgId", "class_profile_init.html#afe19dd50dc653f56630443479959eb9e", null ],
     [ "writeGpgId", "class_profile_init.html#ad02510c0e01ce2370690838e17f7a6d5", null ]
 ];

@@ -145,12 +145,16 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memdesc:afe19dd50dc653f56630443479959eb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sign the list just written as <code class="param">gpgIdFile</code>, over the bytes <code class="param">contents</code> that were written.  <br /></td></tr>
 <tr class="memitem:a5588f9cb4ba9610c1f1899c10628dffb" id="r_a5588f9cb4ba9610c1f1899c10628dffb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5588f9cb4ba9610c1f1899c10628dffb">commitGpgId</a> (const QString &amp;dir, const QString &amp;gpgIdFile, const QString &amp;sigFile, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s, QString *note) -&gt; bool</td></tr>
 <tr class="memdesc:a5588f9cb4ba9610c1f1899c10628dffb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">git init</span> in <code class="param">dir</code>, stage the <span class="tt">.gpg-id</span> and its signature, and commit them (signed when <span class="tt">pass.signcommits</span> is set), with a QProcess of its own in the store's Git environment.  <br /></td></tr>
+<tr class="memitem:a9d0e4d0f6fd056a9a16fbbd2e3a51e43" id="r_a9d0e4d0f6fd056a9a16fbbd2e3a51e43"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9d0e4d0f6fd056a9a16fbbd2e3a51e43">runGit</a> (QProcess &amp;git, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s, const QString &amp;dir, const QStringList &amp;args, QString *note) -&gt; bool</td></tr>
+<tr class="memdesc:a9d0e4d0f6fd056a9a16fbbd2e3a51e43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run one set-up git command on <code class="param">git</code> and wait for it: <span class="tt">init</span> and <span class="tt">add</span>, which read what lies in the folder, for at most two minutes, as the window waits too; a commit, which git may sign and so wait for the passphrase, without a limit.  <br /></td></tr>
+<tr class="memitem:a21a8281b13a960c70a69723d0b46c13b" id="r_a21a8281b13a960c70a69723d0b46c13b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a21a8281b13a960c70a69723d0b46c13b">refusedForGit</a> (const QString &amp;dir, const QStringList &amp;files, QString *note) -&gt; bool</td></tr>
+<tr class="memdesc:a21a8281b13a960c70a69723d0b46c13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether staging <code class="param">files</code> in <code class="param">dir</code> is refused because git could wait on something there for good: a .gitattributes or .gitignore on the way that is not a regular file, or a repository in a sub-folder.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Turn a directory into a password store without going through the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend of the currently active store. </p>
 <p>The backend is a shared singleton bound to the active store (settings snapshot, PASSWORD_STORE_DIR, one FIFO of asynchronous processes), so a new profile cannot be initialised through it without racing the active store (#1774). Everything here is synchronous and touches only <code class="param">dir</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8h_source.html#l00030">30</a> of file <a class="el" href="profileinit_8h_source.html">profileinit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profileinit_8h_source.html#l00031">31</a> of file <a class="el" href="profileinit_8h_source.html">profileinit.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a5588f9cb4ba9610c1f1899c10628dffb" name="a5588f9cb4ba9610c1f1899c10628dffb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5588f9cb4ba9610c1f1899c10628dffb">&#9670;&#160;</a></span>commitGpgId()</h2>
@@ -207,7 +211,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the commit was made. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00262">262</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00361">361</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
 <div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
@@ -260,7 +264,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when a commit would not fail for lack of an identity. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00340">340</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00431">431</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -308,7 +312,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The environment for a gpg process. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00077">77</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00124">124</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -361,12 +365,12 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the repository exists and the commit is made. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00297">297</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00393">393</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
 <div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_a52111b898d794f14ec9d7dbe668dc5a2_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_a52111b898d794f14ec9d7dbe668dc5a2_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
@@ -432,7 +436,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the .gpg-id (and signature/commit if requested) is in place. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00092">92</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00139">139</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -480,12 +484,136 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the path exists but has no .gpg-id file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00081">81</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00128">128</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
 <div id="dynsection-9-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_a1d8b28d9c505d6419193cade236a8865_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a21a8281b13a960c70a69723d0b46c13b" name="a21a8281b13a960c70a69723d0b46c13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a8281b13a960c70a69723d0b46c13b">&#9670;&#160;</a></span>refusedForGit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ProfileInit::refusedForGit </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>files</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>note</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether staging <code class="param">files</code> in <code class="param">dir</code> is refused because git could wait on something there for good: a .gitattributes or .gitignore on the way that is not a regular file, or a repository in a sub-folder. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>The store. </td></tr>
+    <tr><td class="paramname">files</td><td>Paths relative to <code class="param">dir</code> that git is to stage. </td></tr>
+    <tr><td class="paramname">note</td><td>Receives a translated reason naming the path. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when git must not be run. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00344">344</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_a21a8281b13a960c70a69723d0b46c13b_icgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a9d0e4d0f6fd056a9a16fbbd2e3a51e43" name="a9d0e4d0f6fd056a9a16fbbd2e3a51e43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d0e4d0f6fd056a9a16fbbd2e3a51e43">&#9670;&#160;</a></span>runGit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ProfileInit::runGit </td>
+          <td>(</td>
+          <td class="paramtype">QProcess &amp;</td>          <td class="paramname"><span class="paramname"><em>git</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>note</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Run one set-up git command on <code class="param">git</code> and wait for it: <span class="tt">init</span> and <span class="tt">add</span>, which read what lies in the folder, for at most two minutes, as the window waits too; a commit, which git may sign and so wait for the passphrase, without a limit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">git</td><td>The process, set up for the store. </td></tr>
+    <tr><td class="paramname">s</td><td>Settings for the git executable. </td></tr>
+    <tr><td class="paramname">dir</td><td>The store, named in the note. </td></tr>
+    <tr><td class="paramname">args</td><td>The git arguments; the first names the command. </td></tr>
+    <tr><td class="paramname">note</td><td>Receives a translated error naming the command, or that it ran out of time. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the command succeeded. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00317">317</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_a9d0e4d0f6fd056a9a16fbbd2e3a51e43_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_a9d0e4d0f6fd056a9a16fbbd2e3a51e43_icgraph.svg" width="100%" height="441"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -539,17 +667,17 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the signature is in place. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00225">225</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00280">280</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-10-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_afe19dd50dc653f56630443479959eb9e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_afe19dd50dc653f56630443479959eb9e_icgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -610,17 +738,17 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the file was written. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00168">168</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="profileinit_8cpp_source.html#l00223">223</a> of file <a class="el" href="profileinit_8cpp_source.html">profileinit.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_ad02510c0e01ce2370690838e17f7a6d5_cgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_profile_init_ad02510c0e01ce2370690838e17f7a6d5_icgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
