@@ -3881,11 +3881,22 @@ void tst_imitatepass::reencryptWaitsForTheOtherBackend() {
   QTemporaryDir scratch;
   QVERIFY(storeDir.isValid() && scratch.isValid());
   QVERIFY(populateStore(storeDir.path(), 1));
+  // The pull holds until the test releases it (or 30 s pass), so a slow
+  // test thread cannot see it finish before the check below.
   const QString slowPass = QDir(scratch.path()).filePath("slow-pass");
+  const QString release = QDir(scratch.path()).filePath("release");
+  const auto releasePull = [&release] {
+    QFile r(release);
+    return r.open(QIODevice::WriteOnly);
+  };
   {
     QFile f(slowPass);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
-    f.write("#!/bin/sh\nsleep 1\nexit 0\n");
+    f.write(QStringLiteral("#!/bin/sh\ni=0\nwhile [ ! -e '%1' ] && "
+                           "[ $i -lt 300 ]; do sleep 0.1; i=$((i+1)); "
+                           "done\nexit 0\n")
+                .arg(release)
+                .toUtf8());
     f.close();
     QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
                              QFile::ExeOwner));
@@ -3898,7 +3909,8 @@ void tst_imitatepass::reencryptWaitsForTheOtherBackend() {
   AppSettings rs = settingsFor(storeDir.path(), fakeGpg);
   rs.passExecutable = slowPass;
   real->init(rs);
-  const auto idle = qScopeGuard([real] {
+  const auto idle = qScopeGuard([real, &releasePull] {
+    releasePull();
     QTRY_VERIFY_WITH_TIMEOUT(real->isIdle(), 10000);
     real->init(AppSettings());
   });
@@ -3912,6 +3924,7 @@ void tst_imitatepass::reencryptWaitsForTheOtherBackend() {
   QTest::qWait(300);
   QVERIFY2(loggedCalls(logPath).isEmpty(),
            "nothing decrypted while the pull still runs");
+  QVERIFY(releasePull());
   QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
   QVERIFY(real->isIdle());
   const QList<QStringList> calls = loggedCalls(logPath);
