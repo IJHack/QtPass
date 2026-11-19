@@ -80,6 +80,7 @@ private slots:
   void unreadableLineStaysMissingWhenAResolvedUidContainsIt();
   void fallbackPerLineLookupIsCappedAndReused();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
+  void v6FingerprintMatchesHeadIdsButNotTailIds();
   void unusableKeysAreHiddenUntilAskedForAndThenBadged();
   void unusableRecipientsAreShownAndCanBeRemoved();
   void rowWithAnOutOfRangeIndexChangesNoSelection();
@@ -1149,6 +1150,63 @@ void tst_usersdialog::recipientByShortOrLongIdIsNotListedAsNotFound() {
 }
 
 /**
+ * @brief A v6 fingerprint uses its first 16 hex digits as the long key ID
+ *        and the next eight as the short ID. Its tail must not match either.
+ */
+void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
+  const QString fingerprint =
+      QStringLiteral("0123456789ABCDEF") + QString(48, QLatin1Char('A'));
+  const QString listing =
+      QStringLiteral("pub:u:255:22:0123456789ABCDEF:1774947438:::u::::\n"
+                     "fpr:::::::::%1:\n"
+                     "uid:u::::1774947438::H::V6 key <v6@example.org>::::\n")
+          .arg(fingerprint);
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-v6-recipient"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "all() { cat <<'LISTING'\n") +
+          listing +
+          QStringLiteral("LISTING\n}\n"
+                         "case \"$*\" in\n"
+                         "  *0123456789ABCDEF*|*89ABCDEF*) all ;;\n"
+                         "  *AAAAAAAAAAAAAAAA*) exit 0 ;;\n"
+                         "  *) all ;;\n"
+                         "esac\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+
+  for (const QString &recipient : {QStringLiteral("0123456789ABCDEF"),
+                                   QStringLiteral("89ABCDEF"),
+                                   QStringLiteral("AAAAAAAAAAAAAAAA")}) {
+    QTemporaryDir store;
+    QVERIFY(store.isValid());
+    QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    gpgId.write(recipient.toLatin1() + '\n');
+    gpgId.close();
+    s.passStore = store.path() + QLatin1Char('/');
+    RecordingPass pass(s);
+    UsersDialog dialog(&pass, s, s.passStore);
+    auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+    QVERIFY(list != nullptr);
+    const QList<UserInfo> selected = dialog.selectedUsers();
+    QCOMPARE(selected.size(), recipient == QStringLiteral("AAAAAAAAAAAAAAAA")
+                                  ? 2
+                                  : 1);
+    QCOMPARE(selected.first().key_id, fingerprint);
+    QCOMPARE(selected.first().enabled,
+             recipient != QStringLiteral("AAAAAAAAAAAAAAAA"));
+    if (recipient == QStringLiteral("AAAAAAAAAAAAAAAA")) {
+      QVERIFY(list->item(1)->text().contains(
+          QStringLiteral("Key not found in keyring")));
+    } else {
+      QVERIFY(!list->item(0)->text().contains(
+          QStringLiteral("Key not found in keyring")));
+    }
+  }
+}
+
+/**
  * @brief A recipient in .gpg-id that gpg does not know must not silently
  *        drop out of the list (saving would then re-encrypt the store
  *        without them): it is listed as a ticked placeholder that says the
@@ -1637,7 +1695,7 @@ const char kImportingGpg[] =
     "case \"$*\" in\n"
     "  *--import*) cat > /dev/null; touch \"$0.imported\"; "
     "printf '[GNUPG:] IMPORT_OK 1 "
-    "4EF2550F79F4E9E68B09F71D693A0AF3FA364E76\\n'; "
+    "A1B2C3D4E5F60718\\n'; "
     "exit 0 ;;\n"
     "  *--list-secret-keys*) exit 0 ;;\n"
     "esac\n"
@@ -1709,10 +1767,20 @@ auto driveImport(UsersDialog *dialog, const QString &armored) -> int {
  *        stored key id, whether gpg reported a long id or a fingerprint).
  */
 void tst_usersdialog::importingAKeyRefreshesTheListAndSelectsIt() {
+  const QString v6Key =
+      QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947439:::u::::\n"
+                     "fpr:::::::::%1:\n"
+                     "uid:u::::1774947439::H::Bob <bob@example.org>::::::::::0:\n")
+          .arg(QStringLiteral("A1B2C3D4E5F60718") +
+               QString(48, QLatin1Char('B')));
   AppSettings s = m_settings;
   s.gpgExecutable = writeGpg(QStringLiteral("gpg-importing"),
                              QString::fromLatin1(kImportingGpg) +
-                                 QString::fromLatin1(kColonListing) +
+                                 QString::fromLatin1(kColonListing)
+                                     .split(QLatin1Char('\n'))
+                                     .mid(0, 3)
+                                     .join(QLatin1Char('\n')) +
+                                 QLatin1Char('\n') + v6Key +
                                  QString::fromLatin1(kImportingGpgTail));
   QVERIFY(!s.gpgExecutable.isEmpty());
   QFile::remove(s.gpgExecutable + QStringLiteral(".imported"));

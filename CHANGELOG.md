@@ -186,6 +186,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   turns such a name into one relative to the store, and the `pass` backend
   hands `pass insert` a store-relative name (scan finding
   ANT-2026-7S4YMHGT)
+- For OpenPGP v5/v6 keys, GnuPG reports the 16-hex key ID from the
+  fingerprint's first 16 digits; for v4 keys, it uses the last 16. QtPass now
+  keeps the full 64-character fingerprint while continuing to recognize
+  existing `.gpg-id` entries that use a key ID.
 - With a signing key, a sub-folder list without a generation line (written
   by `pass`, by the `pass` backend or by QtPass before 2.0) that this device
   accepted and that is then deleted is refused, as one with a generation

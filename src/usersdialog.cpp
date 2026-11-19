@@ -191,19 +191,39 @@ auto normalisedKeyId(const QString &id) -> QString {
       .toUpper();
 }
 
+/// Whether two hex identifiers name the same key. v4 key IDs are fingerprint
+/// suffixes; v5/v6 key IDs are the first 16 digits, with the short ID in the
+/// following eight. Do not accept a v5/v6 fingerprint's tail as its key ID.
+auto keyIdsMatch(const QString &first, const QString &second) -> bool {
+  static const QRegularExpression hexId(
+      QStringLiteral("^[0-9A-F]{8,}$"));
+  const QString a = normalisedKeyId(first);
+  const QString b = normalisedKeyId(second);
+  if (!hexId.match(a).hasMatch() || !hexId.match(b).hasMatch()) {
+    return false;
+  }
+  if (a.size() == 64) {
+    return b == a || (b.size() == 16 && a.startsWith(b)) ||
+           (b.size() == 8 && a.mid(8, 8) == b);
+  }
+  if (b.size() == 64) {
+    return a == b || (a.size() == 16 && b.startsWith(a)) ||
+           (a.size() == 8 && b.mid(8, 8) == a);
+  }
+  return a.endsWith(b) || b.endsWith(a);
+}
+
 /// Whether @p recipient, as a .gpg-id lists it, names @p key the way gpg's
 /// -r resolves it: a key ID in any length gpg accepts (the key carries its
-/// fingerprint, the list may carry a long or short ID, a suffix of it, or
-/// the fingerprint; eight characters is the shortest), or else a name,
-/// matched case-insensitively as a substring of the UID after gpg's
-/// "=", "<...>", "@" and "*" markers.
+/// fingerprint, the list may carry its v4 suffix or v5/v6 head ID, or the
+/// fingerprint itself; eight characters is the shortest), or else a name,
+/// matched case-insensitively as a substring of the UID after gpg's "=",
+/// "<...>", "@" and "*" markers.
 auto answersTo(const UserInfo &key, const QString &recipient) -> bool {
   static const QRegularExpression hexId(
       QStringLiteral("^(0x)?[0-9A-Fa-f]{8,}$"));
   if (hexId.match(recipient.trimmed()).hasMatch()) {
-    const QString id = normalisedKeyId(recipient);
-    const QString keyId = normalisedKeyId(key.key_id);
-    return keyId.endsWith(id) || (keyId.size() >= 8 && id.endsWith(keyId));
+    return keyIdsMatch(key.key_id, recipient);
   }
   QString term = recipient.trimmed();
   if (term.startsWith(u'=') || term.startsWith(u'@') || term.startsWith(u'*')) {
@@ -484,20 +504,14 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
 
 void UsersDialog::selectImportedKey(const QString &importedKey) {
-  // Suffixes shorter than 16 characters would give false positives.
-  const auto sameKey = [&importedKey](const QString &keyId) {
-    return (keyId.length() >= 16 &&
-            importedKey.endsWith(keyId, Qt::CaseInsensitive)) ||
-           (importedKey.length() >= 16 &&
-            keyId.endsWith(importedKey, Qt::CaseInsensitive));
-  };
   // The stored key_id, not the item text.
   for (int i = 0; i < ui->listWidget->count(); ++i) {
     QListWidgetItem *item = ui->listWidget->item(i);
     bool ok = false;
     const int idx = item != nullptr ? item->data(Qt::UserRole).toInt(&ok) : -1;
     if (ok && idx >= 0 && idx < m_userList.size() &&
-        !m_userList[idx].key_id.isEmpty() && sameKey(m_userList[idx].key_id)) {
+        !m_userList[idx].key_id.isEmpty() &&
+        keyIdsMatch(m_userList[idx].key_id, importedKey)) {
       ui->listWidget->setCurrentItem(item);
       return;
     }
