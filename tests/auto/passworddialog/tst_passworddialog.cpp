@@ -1011,6 +1011,21 @@ void tst_passworddialog::acceptResolvesTheNameAndCreatesItsFolder() {
   QVERIFY2(QDir(store.path()).exists(QStringLiteral("work/vpn")),
            "the folder the name asked for was created");
   QVERIFY(d.windowTitle().endsWith(QStringLiteral("work/vpn/office")));
+
+  // The full path of the entry's file, typed at the store's top: the name
+  // handed on is still relative to the store (pass would save an absolute
+  // one below the root, for the root's recipients).
+  PasswordDialog full(&pass, s, QString(), true);
+  full.setNewEntryLocation(store.path(), {QString(), QStringLiteral("work")},
+                           QString());
+  full.findChild<QLineEdit *>(QStringLiteral("nameEdit"))
+      ->setText(QDir(store.path()).filePath(QStringLiteral("work/card")));
+  full.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"))
+      ->setText(QStringLiteral("s3cret"));
+  okButton(full)->click();
+  QCOMPARE(full.result(), int(QDialog::Accepted));
+  QCOMPARE(full.entryPath(), QStringLiteral("work/card"));
+  QCOMPARE(pass.inserted, QStringLiteral("work/card"));
 }
 
 /**

@@ -271,6 +271,15 @@ void tst_realpass::insertPipesTheValue() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("insert"), QStringLiteral("-m"),
                         QStringLiteral("-f"), QStringLiteral("folder/new")}));
+
+  // An absolute name inside the store goes to pass relative to it: pass
+  // would save <store>/<the whole path> for the root's recipients.
+  QFile::remove(m_log);
+  pass->Insert(m_store + QStringLiteral("folder/abs"), QStringLiteral("x"),
+               false);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("insert"), QStringLiteral("-m"),
+                        QStringLiteral("folder/abs")}));
 }
 
 /**
