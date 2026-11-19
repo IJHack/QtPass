@@ -898,7 +898,9 @@ void MainWindow::onConfig() {
   if (!QtPassSettings::backendsIdle()) {
     critical(tr("Settings not opened"),
              tr("A gpg, Git or pass command is still running or waiting. "
-                "Open the settings again once it has finished."));
+                "Open the settings again once it has finished. If it does "
+                "not finish, answer or cancel the PIN or password prompt it "
+                "waits for, or restart QtPass."));
     return;
   }
   config();

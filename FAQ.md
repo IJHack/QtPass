@@ -298,7 +298,9 @@ a group separator, and `\` too on Windows.
 Since 2.0, Settings and the profile box wait until no `gpg`, `git` or `pass`
 command runs or waits. A slow push or a `gpg` that waits for your PIN keeps
 them closed until it is done. If a PIN dialog is open, answer or cancel it,
-then open Settings again.
+then open Settings again. If the command never ends (`git` waiting for a
+password, a `gpg` that hangs), restart QtPass: Settings open at once, so you
+can fix the path or option that caused it.
 
 Why: what is still queued runs with the store and programs that are set when
 it starts. A store changed in Settings meanwhile was the one a pending
