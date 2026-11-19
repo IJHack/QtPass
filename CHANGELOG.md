@@ -167,6 +167,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- A new profile or the first-run wizard with a signing key checks that its
+  secret key is available before writing the store's recipient list, as
+  saving recipients in Users already did. Without it the list was written,
+  took the next generation and was then removed again unsigned, leaving
+  this device's record one ahead: the store's genuine signed list was then
+  refused as a rollback (scan finding ANT-2026-RLSEQWKO)
 - With a signing key, a sub-folder list without a generation line (written
   by `pass`, by the `pass` backend or by QtPass before 2.0) that this device
   accepted and that is then deleted is refused, as one with a generation

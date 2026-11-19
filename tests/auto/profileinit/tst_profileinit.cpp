@@ -42,6 +42,7 @@ private Q_SLOTS:
   void initialiseLeavesNoHalfWrittenGpgId();
   void initialiseFailsWhenTheDirectoryCannotBeCreated();
   void initialiseRefusesWhenNoGenerationCanBeReserved();
+  void initialiseWritesNothingWithoutTheSecretKey();
   void initialiseSignsAndCommitsTheSignature();
   void initialiseRefusesASignatureByAnotherKey();
   void initialiseReportsAFailingGit();
@@ -64,6 +65,7 @@ private:
   static auto writeScript(const QString &path, const QByteArray &body) -> bool;
   static auto signingGpg(const QString &signedLog, const QString &signer)
       -> QByteArray;
+  static auto secretKeyOnlyGpg() -> QByteArray;
   static const inline QString kSigningKey =
       QStringLiteral("AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111");
   static auto writeFile(const QString &path, const QByteArray &body) -> bool;
@@ -81,12 +83,18 @@ auto tst_profileinit::twoUsers() -> QList<UserInfo> {
   return {alice, bob};
 }
 
-/// A stand-in gpg that signs by writing FAKESIG to --output (keeping what it
-/// was given in @p signedLog) and answers --verify with a VALIDSIG by
+/// A stand-in gpg that has the secret key asked for (--list-secret-keys
+/// considers it), signs by writing FAKESIG to --output (keeping what it was
+/// given in @p signedLog) and answers --verify with a VALIDSIG by
 /// @p signer.
 auto tst_profileinit::signingGpg(const QString &signedLog,
                                  const QString &signer) -> QByteArray {
   return QStringLiteral(
+             "case \" $* \" in *' --list-secret-keys '*)\n"
+             "  for a in \"$@\"; do last=\"$a\"; done\n"
+             "  printf '[GNUPG:] KEY_CONSIDERED %s 0\\n' \"$last\"\n"
+             "  exit 0;;\n"
+             "esac\n"
              "out=''\nprev=''\nmode=sign\n"
              "for a in \"$@\"; do\n"
              "  if [ \"$prev\" = --output ]; then out=\"$a\"; fi\n"
@@ -104,6 +112,19 @@ auto tst_profileinit::signingGpg(const QString &signedLog,
              "exit 0\n")
       .arg(signedLog, signer)
       .toUtf8();
+}
+
+/// A stand-in gpg that has the secret key asked for and fails everything
+/// else, signing included.
+auto tst_profileinit::secretKeyOnlyGpg() -> QByteArray {
+  return QByteArrayLiteral(
+      "case \" $* \" in *' --list-secret-keys '*)\n"
+      "  for a in \"$@\"; do last=\"$a\"; done\n"
+      "  printf '[GNUPG:] KEY_CONSIDERED %s 0\\n' \"$last\"\n"
+      "  exit 0;;\n"
+      "esac\n"
+      "echo 'gpg: signing failed' >&2\n"
+      "exit 2\n");
 }
 
 /**
@@ -169,7 +190,7 @@ void tst_profileinit::initialiseSignsInTheConfiguredGpgHome() {
   QVERIFY(!ProfileInit::initialise(
       QDir(base.path()).filePath(QStringLiteral("store2")), twoUsers(), s,
       false, &note));
-  QVERIFY2(note.contains(QStringLiteral("no secret key")) &&
+  QVERIFY2(note.contains(QStringLiteral("is not available")) &&
                note.contains(s.gpgHome + QStringLiteral(" does not exist")),
            qPrintable(note));
 #endif
@@ -343,11 +364,17 @@ void tst_profileinit::initialiseLeavesNoHalfWrittenGpgId() {
  *        signed store's first list looks like.
  */
 void tst_profileinit::initialiseWithASigningKeyWritesTheGenerationHeader() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
   QTemporaryDir dir;
-  QVERIFY(dir.isValid());
+  QTemporaryDir bin;
+  QVERIFY(dir.isValid() && bin.isValid());
+  const QString fakeGpg = QDir(bin.path()).filePath(QStringLiteral("gpg"));
+  QVERIFY(writeScript(fakeGpg, secretKeyOnlyGpg()));
   AppSettings s;
   s.passSigningKey = QStringLiteral("AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111");
-  s.gpgExecutable = QStringLiteral("/nonexistent/gpg");
+  s.gpgExecutable = fakeGpg;
   QString note;
   ProfileInit::initialise(dir.path(), twoUsers(), s, false, &note);
   const QString gpgIdFile =
@@ -375,6 +402,7 @@ void tst_profileinit::initialiseWithASigningKeyWritesTheGenerationHeader() {
                                   1, QStringLiteral("."), "BBBB\n", *storeId),
                               dir.path()),
       GpgIdGeneration::Verdict::Conflict);
+#endif
 }
 
 void tst_profileinit::initialiseRefusesWithoutRecipients() {
@@ -561,8 +589,14 @@ void tst_profileinit::initialiseFailsWhenTheDirectoryCannotBeCreated() {
  *        writes no .gpg-id, so no unnumbered list can be signed.
  */
 void tst_profileinit::initialiseRefusesWhenNoGenerationCanBeReserved() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
   QTemporaryDir dir;
-  QVERIFY(dir.isValid());
+  QTemporaryDir bin;
+  QVERIFY(dir.isValid() && bin.isValid());
+  const QString fakeGpg = QDir(bin.path()).filePath(QStringLiteral("gpg"));
+  QVERIFY(writeScript(fakeGpg, secretKeyOnlyGpg()));
   const QString gpgIdFile =
       QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
   QCOMPARE(GpgIdGeneration::reserveNext(gpgIdFile,
@@ -570,13 +604,37 @@ void tst_profileinit::initialiseRefusesWhenNoGenerationCanBeReserved() {
            std::optional<qint64>(GpgIdGeneration::kMaxGeneration));
   AppSettings s;
   s.passSigningKey = QStringLiteral("AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111");
-  s.gpgExecutable = QStringLiteral("/nonexistent/gpg");
+  s.gpgExecutable = fakeGpg;
   QString note;
   QVERIFY2(!ProfileInit::initialise(dir.path(), twoUsers(), s, false, &note),
            "no generation left means no list");
   QVERIFY2(note.contains(QStringLiteral("highest there is")),
            qPrintable("the record's reason is the note: " + note));
   QVERIFY2(!QFile::exists(gpgIdFile), "no .gpg-id without a generation");
+#endif
+}
+
+/**
+ * @brief Without the signing key's secret key, initialise() writes nothing
+ *        and takes no generation: a list written first and then left
+ *        unsigned had this device's record one ahead of the store's own,
+ *        which was refused as a rollback afterwards.
+ */
+void tst_profileinit::initialiseWritesNothingWithoutTheSecretKey() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString gpgIdFile =
+      QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
+  AppSettings s;
+  s.passSigningKey = kSigningKey;
+  s.gpgExecutable = QStringLiteral("/nonexistent/gpg");
+  QString note;
+  QVERIFY(!ProfileInit::initialise(dir.path(), twoUsers(), s, false, &note));
+  QVERIFY2(note.contains(kSigningKey) &&
+               note.contains(QStringLiteral("is not available")),
+           qPrintable(note));
+  QVERIFY2(!QFile::exists(gpgIdFile), "no .gpg-id without the secret key");
+  QCOMPARE(GpgIdGeneration::remembered(gpgIdFile), std::optional<qint64>(0));
 }
 
 /**

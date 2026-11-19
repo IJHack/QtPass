@@ -107,6 +107,25 @@ auto blocksGit(const QString &dir, const QStringList &files) -> QString {
   return {};
 }
 
+/**
+ * @brief The signer for the store set up with @p s: gpg runs in the
+ * configured GPG home, as ImitatePass's signer runs in the store's
+ * environment.
+ * @param s The settings, with the signing key and gpg to use.
+ * @return The signer.
+ */
+auto signerFor(const AppSettings &s) -> GpgIdSigner {
+  return GpgIdSigner(
+      s.gpgExecutable, GpgIdSigner::keysFromSetting(s.passSigningKey),
+      [s](const QString &app, const QStringList &args, const QString &input,
+          QString *out, QString *err) {
+        QProcess gpg;
+        gpg.setProcessEnvironment(
+            withGpgHome(QProcessEnvironment::systemEnvironment(), s));
+        return Executor::executeBlocking(gpg, app, args, input, out, err);
+      });
+}
+
 auto commitArgs(QProcess &git, const AppSettings &s) -> QStringList {
   QString out;
   const bool sign =
@@ -157,6 +176,26 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
     return false;
   }
   const QString gpgIdFile = folder.filePath(QStringLiteral(".gpg-id"));
+  // Before the list is written, as ImitatePass::Init() does: writing it
+  // takes the next generation, and a list that then cannot be signed left
+  // this device's record one ahead of the store's own, refused afterwards
+  // as a rollback.
+  if (!s.passSigningKey.trimmed().isEmpty() && !signerFor(s).haveSecretKey()) {
+    out = tr("The secret key of the signing key %1 is not available, so no "
+             "recipient list was written.")
+              .arg(GpgIdSigner::keysFromSetting(s.passSigningKey).first());
+    // withGpgHome() fell back to the inherited home, as for signing below.
+    if (!s.gpgHome.isEmpty()) {
+      QDir home(s.gpgHome);
+      home.makeAbsolute();
+      if (!home.exists()) {
+        out += QLatin1Char(' ') + tr("The configured GPG home %1 does not "
+                                     "exist.")
+                                      .arg(home.path());
+      }
+    }
+    return false;
+  }
   QByteArray written;
   if (!writeGpgId(gpgIdFile, users, !s.passSigningKey.trimmed().isEmpty(), &out,
                   &written)) {
@@ -280,17 +319,7 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
 auto ProfileInit::signGpgId(const QString &gpgIdFile,
                             const QByteArray &contents, const AppSettings &s,
                             QString *note) -> bool {
-  // In the configured GPG home, as ImitatePass's signer runs in the store's
-  // environment.
-  const GpgIdSigner signer(
-      s.gpgExecutable, GpgIdSigner::keysFromSetting(s.passSigningKey),
-      [&s](const QString &app, const QStringList &args, const QString &input,
-           QString *out, QString *err) {
-        QProcess gpg;
-        gpg.setProcessEnvironment(
-            withGpgHome(QProcessEnvironment::systemEnvironment(), s));
-        return Executor::executeBlocking(gpg, app, args, input, out, err);
-      });
+  const GpgIdSigner signer = signerFor(s);
   QString err;
   if (!signer.sign(gpgIdFile, contents, &err)) {
     *note = err.trimmed().isEmpty()

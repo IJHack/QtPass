@@ -2542,7 +2542,7 @@ void tst_configdialog::newProfileIsInitialisedWithTheChosenRecipients() {
 
 /**
  * @brief When initialising fails (here: the profile's signing key, and a gpg
- *        that writes no signature) the failure is reported under the
+ *        that has no secret key for it) the failure is reported under the
  *        profile's name instead of being swallowed, and the .gpg-id written
  *        before it is taken back.
  */
@@ -2582,7 +2582,9 @@ void tst_configdialog::newProfileInitialisationFailureIsReported() {
   COMPARE_BOX_TITLE(titles,
                     QStringList{QStringLiteral("Could not initialise profile "
                                                "signed")});
-  QVERIFY2(texts.first().contains(QStringLiteral("signature")),
+  // gpg's reason, naming the key: here that its secret key is missing.
+  QVERIFY2(texts.first().contains(
+               QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")),
            qPrintable(texts.first()));
   QVERIFY2(!QFile::exists(
                QDir(folder.path()).filePath(QStringLiteral(".gpg-id.sig"))),
