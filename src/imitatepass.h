@@ -222,11 +222,15 @@ protected:
    * Bytes, not text: an entry that is not UTF-8 (a Latin-1 password, a
    * binary key) went through QString before, and every such byte came back
    * as U+FFFD in the re-encrypted entry.
+   * The entry is read without following a link and given to gpg on
+   * stdin, so a link put under its name since the run listed it is refused.
    * @param fileName The entry to read.
    * @param plaintext Receives exactly what gpg printed.
+   * @param why Set when the entry is no longer a regular file; may be null.
    * @return Whether gpg decrypted it to something.
    */
-  auto decryptEntry(const QString &fileName, QByteArray *plaintext) -> bool;
+  auto decryptEntry(const QString &fileName, QByteArray *plaintext,
+                    QString *why) -> bool;
   /**
    * @brief Encrypt @p plaintext to @p recipients, into @p output.
    * @param output Where gpg writes the ciphertext; outside the store.
