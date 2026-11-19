@@ -135,6 +135,7 @@ auto parseGpgColonOutput(const QString &output, bool secret)
   for (const QString &key : lines) {
     QStringList props = key.split(':');
     if (props.size() < GPG_MIN_FIELDS) {
+      expectPrimaryFingerprint = false;
       continue;
     }
 
