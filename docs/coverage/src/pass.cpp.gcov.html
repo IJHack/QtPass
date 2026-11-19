@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 11:32:38</td>
+            <td class="headerValue">2026-11-19 12:03:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -146,8 +146,8 @@
 <span id="L73"><span class="lineNum">      73</span>              :     // later dialog would take its own report for an earlier one and wait for</span>
 <span id="L74"><span class="lineNum">      74</span>              :     // ever. Idle cannot fall between a dialog's insertsPending() read and its</span>
 <span id="L75"><span class="lineNum">      75</span>              :     // own report, since that insert keeps the executor busy.</span>
-<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">         110 :     m_insertsPending = 0;</span></span>
-<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         110 :     emit idle();</span></span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">         111 :     m_insertsPending = 0;</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         111 :     emit idle();</span></span>
 <span id="L78"><span class="lineNum">      78</span>              :   });</span>
 <span id="L79"><span class="lineNum">      79</span>              :   // Each queued process starts in the environment as the store is then:</span>
 <span id="L80"><span class="lineNum">      80</span>              :   // the Git pin is judged at that moment (dequeuing() comes just before the</span>
@@ -612,22 +612,22 @@
 <span id="L539"><span class="lineNum">     539</span>              :   }</span>
 <span id="L540"><span class="lineNum">     540</span>              : </span>
 <span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">         286 :   if (exitCode != 0) {</span></span>
-<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          60 :     handleProcessError(pid, exitCode, out, err);</span></span>
+<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          61 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L543"><span class="lineNum">     543</span>              :     return;</span>
 <span id="L544"><span class="lineNum">     544</span>              :   }</span>
 <span id="L545"><span class="lineNum">     545</span>              : </span>
-<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         226 :   if (pid == PASS_SHOW) {</span></span>
-<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          48 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
+<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         225 :   if (pid == PASS_SHOW) {</span></span>
+<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          47 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
 <span id="L548"><span class="lineNum">     548</span>              :     return;</span>
 <span id="L549"><span class="lineNum">     549</span>              :   }</span>
 <span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         178 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L551"><span class="lineNum">     551</span>              : }</span>
 <span id="L552"><span class="lineNum">     552</span>              : </span>
-<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          60 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
+<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          61 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
 <span id="L554"><span class="lineNum">     554</span>              :                               const QString &amp;err) {</span>
 <span id="L555"><span class="lineNum">     555</span>              :   Q_UNUSED(out);</span>
 <span id="L556"><span class="lineNum">     556</span>              : </span>
-<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          60 :   if (pid == PASS_INSERT) {</span></span>
+<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          61 :   if (pid == PASS_INSERT) {</span></span>
 <span id="L558"><span class="lineNum">     558</span> <span class="tlaGNC">          18 :     const QString friendly = gpgErrorMessage(err);</span></span>
 <span id="L559"><span class="lineNum">     559</span>              :     const QString why =</span>
 <span id="L560"><span class="lineNum">     560</span> <span class="tlaGNC">          18 :         friendly.isEmpty() ? err : formatInsertError(friendly, err);</span></span>
@@ -647,10 +647,10 @@
 <span id="L574"><span class="lineNum">     574</span>              :     return;</span>
 <span id="L575"><span class="lineNum">     575</span>              :   }</span>
 <span id="L576"><span class="lineNum">     576</span>              : </span>
-<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          42 :   if (pid == GPG_GENKEYS) {</span></span>
+<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          43 :   if (pid == GPG_GENKEYS) {</span></span>
 <span id="L578"><span class="lineNum">     578</span> <span class="tlaGNC">           1 :     emit generateGPGKeysFailed(err);</span></span>
 <span id="L579"><span class="lineNum">     579</span>              :   }</span>
-<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          42 :   emit processErrorExit(exitCode, err);</span></span>
+<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          43 :   emit processErrorExit(exitCode, err);</span></span>
 <span id="L581"><span class="lineNum">     581</span>              : }</span>
 <span id="L582"><span class="lineNum">     582</span>              : </span>
 <span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">          44 : auto Pass::withoutStatusLines(const QString &amp;err) -&gt; QString {</span></span>
