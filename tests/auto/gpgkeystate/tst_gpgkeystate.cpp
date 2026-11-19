@@ -309,8 +309,7 @@ void tst_gpgkeystate::handleFprEdgeCases() {
   QCOMPARE(user.key_id, QStringLiteral("0123456789ABCDEF"));
   matchingProps[9] = QString(24, QLatin1Char('A')) + "0123456789ABCDEF";
   handleFprRecord(matchingProps, user);
-  QCOMPARE(user.key_id,
-           QString(24, QLatin1Char('A')) + "0123456789ABCDEF");
+  QCOMPARE(user.key_id, QString(24, QLatin1Char('A')) + "0123456789ABCDEF");
 
   // v5/v6 keys: 64 hex characters.
   user.key_id = "0123456789ABCDEF";
@@ -380,16 +379,16 @@ void tst_gpgkeystate::parseV5V6PrimaryFingerprints() {
 
   // A subkey fingerprint must not replace its primary key's identity.
   const QString subkeyListing =
-      QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
-                     "fpr:::::::::%1:\n"
-                     "sub:u:255:18:1234567890ABCDEF:1774947438::::::e:\n"
-                     "fpr:::::::::%2:\n"
-                     "uid:u::::1774947438::H::Subkey test <sub@example.org>::::")
+      QStringLiteral(
+          "pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
+          "fpr:::::::::%1:\n"
+          "sub:u:255:18:1234567890ABCDEF:1774947438::::::e:\n"
+          "fpr:::::::::%2:\n"
+          "uid:u::::1774947438::H::Subkey test <sub@example.org>::::")
           .arg(QString(64, QLatin1Char('C')),
                QStringLiteral("A1B2C3D4E5F60718") +
                    QString(48, QLatin1Char('B')));
-  const QList<UserInfo> subkeyUsers =
-      parseGpgColonOutput(subkeyListing, false);
+  const QList<UserInfo> subkeyUsers = parseGpgColonOutput(subkeyListing, false);
   QCOMPARE(subkeyUsers.size(), 1);
   QCOMPARE(subkeyUsers.first().key_id, QStringLiteral("A1B2C3D4E5F60718"));
 }

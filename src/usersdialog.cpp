@@ -195,8 +195,7 @@ auto normalisedKeyId(const QString &id) -> QString {
 /// suffixes; v5/v6 key IDs are the first 16 digits, with the short ID in the
 /// following eight. Do not accept a v5/v6 fingerprint's tail as its key ID.
 auto keyIdsMatch(const QString &first, const QString &second) -> bool {
-  static const QRegularExpression hexId(
-      QStringLiteral("^[0-9A-F]{8,}$"));
+  static const QRegularExpression hexId(QStringLiteral("^[0-9A-F]{8,}$"));
   const QString a = normalisedKeyId(first);
   const QString b = normalisedKeyId(second);
   if (!hexId.match(a).hasMatch() || !hexId.match(b).hasMatch()) {

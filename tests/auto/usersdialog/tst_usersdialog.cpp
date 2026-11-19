@@ -1175,9 +1175,9 @@ void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
                          "esac\nexit 0\n"));
   QVERIFY(!s.gpgExecutable.isEmpty());
 
-  for (const QString &recipient : {QStringLiteral("0123456789ABCDEF"),
-                                   QStringLiteral("89ABCDEF"),
-                                   QStringLiteral("AAAAAAAAAAAAAAAA")}) {
+  for (const QString &recipient :
+       {QStringLiteral("0123456789ABCDEF"), QStringLiteral("89ABCDEF"),
+        QStringLiteral("AAAAAAAAAAAAAAAA")}) {
     QTemporaryDir store;
     QVERIFY(store.isValid());
     QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
@@ -1190,9 +1190,8 @@ void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
     auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
     QVERIFY(list != nullptr);
     const QList<UserInfo> selected = dialog.selectedUsers();
-    QCOMPARE(selected.size(), recipient == QStringLiteral("AAAAAAAAAAAAAAAA")
-                                  ? 2
-                                  : 1);
+    QCOMPARE(selected.size(),
+             recipient == QStringLiteral("AAAAAAAAAAAAAAAA") ? 2 : 1);
     QCOMPARE(selected.first().key_id, fingerprint);
     QCOMPARE(selected.first().enabled,
              recipient != QStringLiteral("AAAAAAAAAAAAAAAA"));
@@ -1788,9 +1787,10 @@ auto driveImport(UsersDialog *dialog, const QString &armored) -> int {
  */
 void tst_usersdialog::importingAKeyRefreshesTheListAndSelectsIt() {
   const QString v6Key =
-      QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947439:::u::::\n"
-                     "fpr:::::::::%1:\n"
-                     "uid:u::::1774947439::H::Bob <bob@example.org>::::::::::0:\n")
+      QStringLiteral(
+          "pub:u:255:22:A1B2C3D4E5F60718:1774947439:::u::::\n"
+          "fpr:::::::::%1:\n"
+          "uid:u::::1774947439::H::Bob <bob@example.org>::::::::::0:\n")
           .arg(QStringLiteral("A1B2C3D4E5F60718") +
                QString(48, QLatin1Char('B')));
   AppSettings s = m_settings;
