@@ -320,7 +320,7 @@ void tst_gpgkeystate::handleFprEdgeCases() {
            QString("0123456789ABCDEF") + QString(48, QLatin1Char('A')));
 
   user.key_id = "0123456789ABCDEF";
-  matchingProps[9] = "0123456789ABCDEF" + QString(48, QLatin1Char('A'));
+  matchingProps[9] = QString(48, QLatin1Char('A')) + "0123456789ABCDEF";
   handleFprRecord(matchingProps, user);
   QCOMPARE(user.key_id, QStringLiteral("0123456789ABCDEF"));
 
