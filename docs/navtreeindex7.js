@@ -1,5 +1,17 @@
 var NAVTREEINDEX7 =
 {
+"struct_imitate_pass_1_1_written_gpg_id.html":[1,0,0,4],
+"struct_imitate_pass_1_1_written_gpg_id.html#a56b7913301462eb9d5b7b0633c9531b4":[1,0,0,4,1],
+"struct_imitate_pass_1_1_written_gpg_id.html#a5c9d73507728e1049b8ea31fb2db9103":[1,0,0,4,0],
+"struct_named_value.html":[1,3,2],
+"struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867":[1,3,2,0],
+"struct_named_value.html#a6fe60f7b7f43af03ac3a00e0a8d1b1e8":[1,3,2,1],
+"struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d":[1,3,2,2],
+"struct_native_grep_1_1_worker.html":[1,0,1,0],
+"struct_native_grep_1_1_worker.html#a5dd658bbb228077a92546358b9437d85":[1,0,1,0,1],
+"struct_native_grep_1_1_worker.html#ab2d52f36bec34c01a8f6fef909380a24":[1,0,1,0,0],
+"struct_pass_1_1_recipients_for_editing.html":[1,0,3,0],
+"struct_pass_1_1_recipients_for_editing.html#a1d5f75f32ae50b5189f5f9579e4ea2e5":[1,0,3,0,1],
 "struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3":[1,0,3,0,2],
 "struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc":[1,0,3,0,3],
 "struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073":[1,0,3,0,0],

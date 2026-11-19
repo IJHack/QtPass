@@ -1,12 +1,14 @@
 <map id="ImitatePass::GitPush" name="ImitatePass::GitPush">
-<area shape="rect" id="Node000001" title="Push to remote. While a re&#45;encryption runs the push is held (Users ▸ OK and a copy ask for it as soon..." alt="" coords="5,56,161,84"/>
+<area shape="rect" id="Node000001" title="Push to remote. While a re&#45;encryption runs the push is held (Users ▸ OK and a copy ask for it as soon..." alt="" coords="5,81,161,109"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="209,29,384,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,58,196,55,190,57,161,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,78,224,60,219,63,144,83"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="215,81,378,109"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="161,76,202,83,197,84,161,82"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="161,93,201,94,196,96,161,98"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a507057c5ae685ca61469c4dae27fd2e6" title="Whether the GitPush() running now is an automatic one." alt="" coords="213,133,380,161"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="143,107,224,128,219,130,143,112"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="432,29,596,57"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,41,419,43,414,43,385,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,41,419,43,414,44,385,46"/>
 <area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="477,28,471,20,476,11,490,5,514,3,540,5,555,14,550,14,538,10,514,8,492,10,479,15,476,20,482,30"/>
 <area shape="rect" id="Node000005" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="452,81,577,109"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="378,93,439,95,433,95,378,98"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="378,93,439,95,433,95,379,98"/>
 </map>

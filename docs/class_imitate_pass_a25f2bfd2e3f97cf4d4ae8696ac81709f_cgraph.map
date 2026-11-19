@@ -1,0 +1,5 @@
+<map id="ImitatePass::refuseOverlappingMove" name="ImitatePass::refuseOverlappingMove">
+<area shape="rect" id="Node000001" title="Refuse a move of src to destFile that touches what an earlier move or a re&#45;encryption still has to se..." alt="" coords="5,5,267,33"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="315,5,417,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,17,302,19,296,19,267,22"/>
+</map>

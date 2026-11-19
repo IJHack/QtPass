@@ -1,0 +1,7 @@
+<map id="ImitatePass::reencryptMoved" name="ImitatePass::reencryptMoved">
+<area shape="rect" id="Node000001" title="Queue a re&#45;encryption of what move moved, if it moved and another .gpg&#45;id applies where it landed; a ..." alt="" coords="5,32,217,60"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="265,5,410,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,31,252,29,246,30,217,36"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="265,57,410,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,55,252,61,246,61,217,60"/>
+</map>

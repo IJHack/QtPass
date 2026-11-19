@@ -14,12 +14,13 @@ var searchData=
   ['showmenubar_11',['showMenuBar',['../struct_app_settings.html#a4b414237cc2001c4a07a242f2565cb85',1,'AppSettings']]],
   ['showprocessoutput_12',['showProcessOutput',['../struct_app_settings.html#a61d0d4c9f61852bac9fe3be71a9b1814',1,'AppSettings']]],
   ['signingkey_13',['signingKey',['../struct_profile.html#aca298d5aa8281c8ee91f97744dcdcc48',1,'Profile']]],
-  ['sshauthsockoverride_14',['sshAuthSockOverride',['../struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1',1,'AppSettings']]],
-  ['startminimized_15',['startMinimized',['../struct_app_settings.html#a663732cc2174f4adeadc4244bbfbe7e2',1,'AppSettings']]],
-  ['state_16',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing']]],
-  ['steam_5fdigits_17',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
-  ['step_18',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]],
-  ['store_19',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header::store'],['../class_store_model.html#a98ebce85d60d3372420113fe7e714428',1,'StoreModel::store']]],
-  ['stores_20',['stores',['../struct_config_dialog_1_1_signing_stores.html#a05aded4260ca220959acaa60e1bf64a1',1,'ConfigDialog::SigningStores']]],
-  ['systrayicon_21',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
+  ['src_14',['src',['../struct_imitate_pass_1_1_pending_move.html#a2d31b186e51a677de5bbb685bc8ed259',1,'ImitatePass::PendingMove']]],
+  ['sshauthsockoverride_15',['sshAuthSockOverride',['../struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1',1,'AppSettings']]],
+  ['startminimized_16',['startMinimized',['../struct_app_settings.html#a663732cc2174f4adeadc4244bbfbe7e2',1,'AppSettings']]],
+  ['state_17',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing']]],
+  ['steam_5fdigits_18',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
+  ['step_19',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]],
+  ['store_20',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header::store'],['../class_store_model.html#a98ebce85d60d3372420113fe7e714428',1,'StoreModel::store']]],
+  ['stores_21',['stores',['../struct_config_dialog_1_1_signing_stores.html#a05aded4260ca220959acaa60e1bf64a1',1,'ConfigDialog::SigningStores']]],
+  ['systrayicon_22',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
 ];

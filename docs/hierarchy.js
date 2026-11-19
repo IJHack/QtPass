@@ -17,6 +17,7 @@ var hierarchy =
     [ "PasswordConfiguration", "struct_password_configuration.html", null ],
     [ "PathValidator", "class_path_validator.html", null ],
     [ "ImitatePass::PendingInsert", "struct_imitate_pass_1_1_pending_insert.html", null ],
+    [ "ImitatePass::PendingMove", "struct_imitate_pass_1_1_pending_move.html", null ],
     [ "Enums::ProcessInfo", "struct_enums_1_1_process_info.html", null ],
     [ "Profile", "struct_profile.html", null ],
     [ "ConfigDialog::ProfileEntry", "struct_config_dialog_1_1_profile_entry.html", null ],
