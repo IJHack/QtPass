@@ -9,6 +9,7 @@
 #include "imitatepass.h"
 #include "executor.h"
 #include "gpgidgeneration.h"
+#include "passbackendfactory.h"
 #include "util.h"
 #include <QDateTime>
 #include <QDir>
@@ -934,14 +935,30 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   return actualKeys;
 }
 
-auto ImitatePass::decryptEntry(const QString &fileName, QByteArray *plaintext)
-    -> bool {
+auto ImitatePass::decryptEntry(const QString &fileName, QByteArray *plaintext,
+                               QString *why) -> bool {
+  // Read here, without following a link, and handed to gpg on stdin: the
+  // name was listed as a regular file before the run, and a pull since may
+  // have put a link there. gpg given the name would follow it, and the
+  // file it points to would be re-encrypted for this folder's recipients.
+  const std::optional<QByteArray> ciphertext =
+      Util::readRegularFile(fileName, kMaxPlaintextBytes);
+  if (!ciphertext) {
+    qCDebug(lcQtPass) << "Not a regular file any more, or too large:"
+                      << fileName;
+    if (why != nullptr) {
+      *why = tr("%1 is no longer a regular file, or is too large, and was "
+                "not re-encrypted.")
+                 .arg(fileName);
+    }
+    return false;
+  }
   const QStringList args =
       QStringList{"-d",      "--quiet",    "--yes", "--no-encrypt-to",
                   "--batch", "--use-agent"} +
-      maxOutputArgs() + QStringList{QStringLiteral("--"), pgpg(fileName)};
-  if (execBlockingRaw(m_settings.gpgExecutable, args, QByteArray(),
-                      plaintext) != 0 ||
+      maxOutputArgs();
+  if (execBlockingRaw(m_settings.gpgExecutable, args, *ciphertext, plaintext) !=
+          0 ||
       plaintext->isEmpty()) {
     qCDebug(lcQtPass) << "Decrypt error on re-encrypt for:" << fileName;
     return false;
@@ -1025,7 +1042,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     return false;
   }
   QByteArray plaintext;
-  if (!decryptEntry(fileName, &plaintext)) {
+  if (!decryptEntry(fileName, &plaintext, why)) {
     return false;
   }
 
@@ -1232,7 +1249,9 @@ void ImitatePass::cancelReencryptPath() {
 
 // Init(), Move() and Copy() queue async git commands right before
 // reencryptPath(); the worker's blocking git would fight them for the index
-// lock, so wait for the queue to drain.
+// lock, so wait for the queue to drain. The other backend's too: with pass
+// as the backend an Update's `pass git pull` runs on RealPass's queue, and
+// the run listed the store while that pull could still change it.
 void ImitatePass::startReencryptWorker(const QString &dir) {
   if (m_reencryptCancel.load()) {
     ReencryptResult result;
@@ -1240,7 +1259,7 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
     finishReencrypt(result);
     return;
   }
-  if (!exec.isIdle()) {
+  if (!exec.isIdle() || !PassBackendFactory::isIdle()) {
     QTimer::singleShot(kReencryptRetryMs, this,
                        [this, dir]() { startReencryptWorker(dir); });
     return;

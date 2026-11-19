@@ -48,6 +48,8 @@
 
 #include "../../../src/gpgidgeneration.h"
 #include "../../../src/imitatepass.h"
+#include "../../../src/passbackendfactory.h"
+#include "../../../src/realpass.h"
 #include "../testsettings.h"
 
 namespace {
@@ -650,6 +652,8 @@ private Q_SLOTS:
   void recoveryDoesNotPromoteASymlinkToAnEntry();
   void recoveryDoesNotPromoteASpecialFileToAnEntry();
   void recoveryReportsManyLeftoversInOneBox();
+  void reencryptWaitsForTheOtherBackend();
+  void reencryptRefusesAnEntryThatBecameALink();
   void reencryptSkipsSymlinkedEntries();
   void removeFolderWithoutGitLeavesLinkTargetsAlone();
   void reencryptRefusesAFolderBehindALink();
@@ -3859,6 +3863,104 @@ void tst_imitatepass::recoveryReportsManyLeftoversInOneBox() {
   QCOMPARE(report.count("not a regular file") +
                report.count("Both are encrypted copies"),
            15);
+#endif
+}
+
+/**
+ * @brief With pass as the backend, an Update's `pass git pull` runs on
+ *        RealPass's queue: the run waits for it before it lists the store,
+ *        or the pull could put a link under a name the run already listed.
+ *        And gpg gets the entry on stdin, not its name.
+ */
+void tst_imitatepass::reencryptWaitsForTheOtherBackend() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as a fake pass and gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir scratch;
+  QVERIFY(storeDir.isValid() && scratch.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString slowPass = QDir(scratch.path()).filePath("slow-pass");
+  {
+    QFile f(slowPass);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\nsleep 1\nexit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const QString logPath = QDir(scratch.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(scratch.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+
+  RealPass *real = PassBackendFactory::getRealPass();
+  AppSettings rs = settingsFor(storeDir.path(), fakeGpg);
+  rs.passExecutable = slowPass;
+  real->init(rs);
+  const auto idle = qScopeGuard([real] {
+    QTRY_VERIFY_WITH_TIMEOUT(real->isIdle(), 10000);
+    real->init(AppSettings());
+  });
+  real->GitPull();
+  QVERIFY(!PassBackendFactory::isIdle());
+
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  QTest::qWait(300);
+  QVERIFY2(loggedCalls(logPath).isEmpty(),
+           "nothing decrypted while the pull still runs");
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QVERIFY(real->isIdle());
+  const QList<QStringList> calls = loggedCalls(logPath);
+  QCOMPARE(encryptCalls(calls).size(), 1);
+  for (const QStringList &call : calls) {
+    if (call.contains(QStringLiteral("-d"))) {
+      QVERIFY2(!call.join(' ').contains(QStringLiteral("entry0.gpg")),
+               qPrintable("gpg is given the bytes, not the name: " +
+                          call.join(' ')));
+    }
+  }
+#endif
+}
+
+/**
+ * @brief An entry the run listed as a regular file and that is a link by
+ *        the time it is decrypted is refused: gpg given the name followed
+ *        the link, and the file it points to was re-encrypted for this
+ *        folder's recipients and committed under the entry's name.
+ */
+void tst_imitatepass::reencryptRefusesAnEntryThatBecameALink() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString outside = QDir(outsideDir.path()).filePath("bank.gpg");
+  {
+    QFile f(outside);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("somebody else's ciphertext");
+  }
+  const QString entry = QDir(storeDir.path()).filePath("notes.gpg");
+  QVERIFY(QFile::link(outside, entry));
+  const QString logPath = QDir(outsideDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(outsideDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QString why;
+  QVERIFY(!pass.reencryptSingleFile(entry, {kSigner}, &why));
+  QVERIFY2(why.contains(QStringLiteral("no longer a regular file")),
+           qPrintable(why));
+  QVERIFY2(loggedCalls(logPath).isEmpty(), "gpg never saw the link");
+  QVERIFY(QFileInfo(entry).isSymLink());
+  QFile check(outside);
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
 #endif
 }
 
