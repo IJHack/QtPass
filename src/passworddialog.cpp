@@ -320,10 +320,12 @@ auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
     return {};
   }
   const QString folder = ui->folderBox->currentData().toString();
-  const QString typed =
-      QDir::cleanPath(folder.isEmpty() ? name : folder + u'/' + name);
-  // A typed absolute name stays as it is here (filePath() does not join
-  // it), so the store check below covers it.
+  // A name typed as a full path is not put under the chosen folder; it
+  // stays as it is (filePath() does not join it either), so the store
+  // check below covers it.
+  const QString typed = QDir::cleanPath(
+      (folder.isEmpty() || QDir::isAbsolutePath(name)) ? name
+                                                       : folder + u'/' + name);
   const QString absolute = QDir::cleanPath(QDir(m_storeRoot).filePath(typed));
   if (typed.isEmpty() || typed == QStringLiteral(".") ||
       !PathValidator::isPathInStore(m_storeRoot, absolute)) {
