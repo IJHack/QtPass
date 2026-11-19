@@ -649,6 +649,7 @@ private Q_SLOTS:
   void reencryptRemovesStaleTemporaries();
   void recoveryDoesNotPromoteASymlinkToAnEntry();
   void recoveryDoesNotPromoteASpecialFileToAnEntry();
+  void recoveryReportsManyLeftoversInOneBox();
   void reencryptSkipsSymlinkedEntries();
   void removeFolderWithoutGitLeavesLinkTargetsAlone();
   void reencryptRefusesAFolderBehindALink();
@@ -3819,6 +3820,45 @@ void tst_imitatepass::recoveryDoesNotPromoteASpecialFileToAnEntry() {
   QVERIFY(rec.criticals.first().contains("not a regular file"));
   QVERIFY2(!QFileInfo::exists(entry), "no entry may appear under the name");
   QCOMPARE(encrypts, 0);
+#endif
+}
+
+/**
+ * @brief Many leftovers a run cannot put back are reported in one critical()
+ *        with a capped list: one box each opened every box from inside the
+ *        one before, and a few thousand planted names overflowed the stack.
+ */
+void tst_imitatepass::recoveryReportsManyLeftoversInOneBox() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir store(storeDir.path());
+  // Forty dangling links under a backup's name, and a backup next to its
+  // present original: forty-one things for the user to look at.
+  for (int i = 0; i < 40; ++i) {
+    QVERIFY(QFile::link(
+        store.filePath(QStringLiteral("gone%1").arg(i)),
+        store.filePath(QStringLiteral("link%1.gpg.reencrypt.bak").arg(i))));
+  }
+  const QString entry = store.filePath("entry0.gpg");
+  QVERIFY(QFile::copy(entry, entry + ".reencrypt.bak"));
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = false;
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
+  QVERIFY(aborted);
+  QCOMPARE(encrypts, 0);
+  QCOMPARE(rec.criticals.size(), 1);
+  const QString &report = rec.criticals.first();
+  QVERIFY2(report.contains("41 leftover(s)"), qPrintable(report));
+  QVERIFY2(report.contains("and 26 more"), qPrintable(report));
+  QCOMPARE(report.count("not a regular file") +
+               report.count("Both are encrypted copies"),
+           15);
 #endif
 }
 

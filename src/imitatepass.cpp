@@ -178,6 +178,9 @@ void ImitatePass::Show(QString file) {
 
 namespace {
 
+/// Cap on the entries listed in one aggregated re-encryption dialog.
+constexpr int kReencryptMaxListedFailures = 15;
+
 /**
  * @brief The arguments of every gpg encrypt call: @p leading, then encrypt
  * to exactly @p recipients from stdin into @p output. --no-encrypt-to keeps
@@ -723,11 +726,11 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
   return true;
 }
 
-void ImitatePass::reportUnrestorable(const QString &path) {
-  emit critical(tr("Leftover from an earlier re-encryption"),
-                tr("%1 is not a regular file and was not restored. Look "
-                   "at it and remove it, then re-encrypt again.")
-                    .arg(path));
+void ImitatePass::reportUnrestorable(const QString &path,
+                                     QStringList &problems) {
+  problems << tr("%1 is not a regular file and was not restored. Look "
+                 "at it and remove it, then re-encrypt again.")
+                  .arg(path);
 }
 
 void ImitatePass::dropStaleTemporary(const QString &path) {
@@ -742,28 +745,27 @@ void ImitatePass::dropStaleTemporary(const QString &path) {
   }
 }
 
-auto ImitatePass::restoreBackup(const QString &path) -> bool {
+auto ImitatePass::restoreBackup(const QString &path, QStringList &problems)
+    -> bool {
   // Belt and braces: the walker only lists regular files.
   const QFileInfo backup(path);
   if (backup.isSymLink() || !backup.isFile()) {
-    reportUnrestorable(path);
+    reportUnrestorable(path, problems);
     return false;
   }
   const QString original =
       path.chopped(QStringLiteral(".reencrypt.bak").size());
   if (QFileInfo::exists(original)) {
-    emit critical(tr("Leftover from an earlier re-encryption"),
-                  tr("%1 exists next to %2. Both are encrypted copies of the "
-                     "entry; check which one you want and delete the other, "
-                     "then re-encrypt again.")
-                      .arg(path, original));
+    problems << tr("%1 exists next to %2. Both are encrypted copies of the "
+                   "entry; check which one you want and delete the other, "
+                   "then re-encrypt again.")
+                    .arg(path, original);
     return false;
   }
   if (!QFile::rename(path, original)) {
-    emit critical(tr("Leftover from an earlier re-encryption"),
-                  tr("%1 is missing and its backup %2 could not be renamed "
-                     "back. Rename it by hand, then re-encrypt again.")
-                      .arg(original, path));
+    problems << tr("%1 is missing and its backup %2 could not be renamed "
+                   "back. Rename it by hand, then re-encrypt again.")
+                    .arg(original, path);
     return false;
   }
   qCWarning(lcQtPass) << "Restored" << original << "from" << path;
@@ -794,7 +796,10 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
   // Hidden files included: the staged name starts with a dot.
   const QStringList leftovers = Util::regularFilesUnder(
       QDir::cleanPath(dir), leftoverNames, &skipped, true);
-  bool clean = true;
+  // One report for all of them: a box per leftover opened each from inside
+  // the one before (a modal box runs the next queued critical()), and a
+  // store with thousands of them overflowed the stack.
+  QStringList problems;
   for (const QString &path : skipped) {
     if (!QDir::match(leftoverNames, QFileInfo(path).fileName())) {
       continue;
@@ -808,17 +813,35 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
       }
       continue;
     }
-    reportUnrestorable(path);
-    clean = false;
+    reportUnrestorable(path, problems);
   }
   for (const QString &path : leftovers) {
     if (isTemporary(path)) {
       dropStaleTemporary(path);
     } else {
-      clean = restoreBackup(path) && clean;
+      restoreBackup(path, problems);
     }
   }
-  return clean;
+  if (problems.isEmpty()) {
+    return true;
+  }
+  const qsizetype count = problems.size();
+  if (count == 1) {
+    emit critical(tr("Leftover from an earlier re-encryption"),
+                  problems.first());
+    return false;
+  }
+  QStringList listed = problems.mid(0, kReencryptMaxListedFailures);
+  if (count > listed.size()) {
+    listed << tr("... and %n more", nullptr,
+                 static_cast<int>(count - listed.size()));
+  }
+  emit critical(tr("Leftovers from an earlier re-encryption"),
+                tr("%n leftover(s) of an earlier re-encryption need a look "
+                   "before the run can start:",
+                   nullptr, static_cast<int>(count)) +
+                    "\n\n" + listed.join("\n\n"));
+  return false;
 }
 
 auto ImitatePass::verifyGpgIdForDir(const QString &file,
@@ -1123,8 +1146,6 @@ struct ImitatePass::ReencryptResult {
 namespace {
 /// Poll interval while waiting for queued git commands to drain.
 constexpr int kReencryptRetryMs = 100;
-/// Cap on the file names listed in the aggregated failure dialog.
-constexpr int kReencryptMaxListedFailures = 15;
 } // namespace
 
 void ImitatePass::reencryptPath(const QString &dir,
