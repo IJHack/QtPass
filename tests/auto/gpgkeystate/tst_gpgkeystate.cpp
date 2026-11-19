@@ -363,7 +363,7 @@ void tst_gpgkeystate::parseV5V6PrimaryFingerprints() {
       QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
                      "fpr:::::::::%1:\n"
                      "sub:u:255:18:1234567890ABCDEF:1774947438::::::e:\n"
-                     "fpr:::::::::1234567890ABCDEF%3:\n"
+                     "fpr:::::::::A1B2C3D4E5F60718%3:\n"
                      "uid:u::::1774947438::H::First <first@example.org>::::\n"
                      "pub:u:255:22:A1B2C3D4E5F60718:1774947439:::u::::\n"
                      "fpr:::::::::%2:\n"

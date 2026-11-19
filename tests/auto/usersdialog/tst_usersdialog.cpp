@@ -1170,7 +1170,7 @@ void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
           QStringLiteral("LISTING\n}\n"
                          "case \"$*\" in\n"
                          "  *0123456789ABCDEF*|*89ABCDEF*) all ;;\n"
-                         "  *AAAAAAAAAAAAAAAA*) exit 0 ;;\n"
+                         "  *AAAAAAAAAAAAAAAA*|*DEADBEEF*) exit 0 ;;\n"
                          "  *) all ;;\n"
                          "esac\nexit 0\n"));
   QVERIFY(!s.gpgExecutable.isEmpty());
@@ -1204,6 +1204,27 @@ void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
           QStringLiteral("Key not found in keyring")));
     }
   }
+
+  // Once the ten per-recipient lookups are spent, a v6 head ID still matches
+  // the already-listed fingerprint without another gpg call.
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  for (int i = 1; i <= 10; ++i) {
+    gpgId.write(QStringLiteral("DEADBEEF%1\n")
+                    .arg(i, 8, 16, QLatin1Char('0'))
+                    .toLatin1());
+  }
+  gpgId.write("0123456789ABCDEF\n");
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  const QList<UserInfo> selected = dialog.selectedUsers();
+  QCOMPARE(selected.size(), 11);
+  QCOMPARE(selected.first().key_id, fingerprint);
+  QVERIFY(selected.first().enabled);
 }
 
 /**
@@ -1694,8 +1715,7 @@ namespace {
 const char kImportingGpg[] =
     "case \"$*\" in\n"
     "  *--import*) cat > /dev/null; touch \"$0.imported\"; "
-    "printf '[GNUPG:] IMPORT_OK 1 "
-    "A1B2C3D4E5F60718\\n'; "
+    "printf '[GNUPG:] IMPORTED A1B2C3D4E5F60718 Bob\\n'; "
     "exit 0 ;;\n"
     "  *--list-secret-keys*) exit 0 ;;\n"
     "esac\n"
