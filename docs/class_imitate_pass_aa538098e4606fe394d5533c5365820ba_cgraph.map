@@ -1,0 +1,7 @@
+<map id="ImitatePass::restoreBackup" name="ImitatePass::restoreBackup">
+<area shape="rect" id="Node000001" title="Put a 1.8.x backup back in its entry&#39;s place when the entry is missing; report it when both exist (bo..." alt="" coords="5,32,204,60"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a436e4b1b82ae9f612a71142253e0a676" title="Note for the user that a leftover is not a regular file and was left." alt="" coords="252,5,480,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,33,239,32,233,33,204,38"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="303,57,428,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,53,290,63,285,64,204,58"/>
+</map>

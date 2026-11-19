@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-18 22:57:28</td>
+            <td class="headerValue">2026-11-19 01:06:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -224,9 +224,9 @@
 <span id="L151"><span class="lineNum">     151</span>              : </span>
 <span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">         184 : void MainWindow::connectBackends() {</span></span>
 <span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">         184 :   connect(m_qtPass, &amp;QtPass::outputReady, this,</span></span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">         225 :           [this](const QString &amp;html) { flashText(html, false, true); });</span></span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">         226 :           [this](const QString &amp;html) { flashText(html, false, true); });</span></span>
 <span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">         184 :   connect(m_qtPass, &amp;QtPass::operationFinished, this,</span></span>
-<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">         244 :           [this]() { setUiElementsEnabled(true); });</span></span>
+<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">         245 :           [this]() { setUiElementsEnabled(true); });</span></span>
 <span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">         184 :   connect(m_qtPass, &amp;QtPass::statusMessage, this,</span></span>
 <span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">         184 :           &amp;MainWindow::showStatusMessage);</span></span>
 <span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">         184 :   connect(m_qtPass, &amp;QtPass::pushRequested, this, &amp;MainWindow::onAutoPush);</span></span>
@@ -433,14 +433,14 @@
 <span id="L360"><span class="lineNum">     360</span> <span class="tlaGNC">          72 :   m_firstShowCompleted = true;</span></span>
 <span id="L361"><span class="lineNum">     361</span>              : }</span>
 <span id="L362"><span class="lineNum">     362</span>              : </span>
-<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        8517 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">        8517 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">        8521 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">        8521 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L365"><span class="lineNum">     365</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L366"><span class="lineNum">     366</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L367"><span class="lineNum">     367</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L368"><span class="lineNum">     368</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L369"><span class="lineNum">     369</span>              :   }</span>
-<span id="L370"><span class="lineNum">     370</span> <span class="tlaGNC">        8517 :   return QMainWindow::event(event);</span></span>
+<span id="L370"><span class="lineNum">     370</span> <span class="tlaGNC">        8521 :   return QMainWindow::event(event);</span></span>
 <span id="L371"><span class="lineNum">     371</span>              : }</span>
 <span id="L372"><span class="lineNum">     372</span>              : </span>
 <span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">         248 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -545,31 +545,31 @@
 <span id="L472"><span class="lineNum">     472</span> <span class="tlaGNC">           9 :   return ui-&gt;treeView-&gt;currentIndex();</span></span>
 <span id="L473"><span class="lineNum">     473</span>              : }</span>
 <span id="L474"><span class="lineNum">     474</span>              : </span>
-<span id="L475"><span class="lineNum">     475</span> <span class="tlaGNC">          84 : void MainWindow::flashText(const QString &amp;text, const bool isError,</span></span>
+<span id="L475"><span class="lineNum">     475</span> <span class="tlaGNC">          85 : void MainWindow::flashText(const QString &amp;text, const bool isError,</span></span>
 <span id="L476"><span class="lineNum">     476</span>              :                            const bool isHtml) {</span>
 <span id="L477"><span class="lineNum">     477</span>              :   // setText() applies the current char format to the whole message. Start</span>
 <span id="L478"><span class="lineNum">     478</span>              :   // from an empty one: inherited from a cursor on a linkified URL it carried</span>
 <span id="L479"><span class="lineNum">     479</span>              :   // the anchor, and the message became a link to that address. No colour</span>
 <span id="L480"><span class="lineNum">     480</span>              :   // but red for an error, so text follows runtime light/dark switches (#946).</span>
-<span id="L481"><span class="lineNum">     481</span> <span class="tlaGNC">          84 :   QTextCursor cursor = ui-&gt;textBrowser-&gt;textCursor();</span></span>
-<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">          84 :   cursor.clearSelection();</span></span>
-<span id="L483"><span class="lineNum">     483</span> <span class="tlaGNC">          84 :   ui-&gt;textBrowser-&gt;setTextCursor(cursor);</span></span>
-<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">          84 :   QTextCharFormat format;</span></span>
-<span id="L485"><span class="lineNum">     485</span> <span class="tlaGNC">          84 :   if (isError) {</span></span>
+<span id="L481"><span class="lineNum">     481</span> <span class="tlaGNC">          85 :   QTextCursor cursor = ui-&gt;textBrowser-&gt;textCursor();</span></span>
+<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">          85 :   cursor.clearSelection();</span></span>
+<span id="L483"><span class="lineNum">     483</span> <span class="tlaGNC">          85 :   ui-&gt;textBrowser-&gt;setTextCursor(cursor);</span></span>
+<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">          85 :   QTextCharFormat format;</span></span>
+<span id="L485"><span class="lineNum">     485</span> <span class="tlaGNC">          85 :   if (isError) {</span></span>
 <span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">          11 :     format.setForeground(QColor(Qt::red));</span></span>
 <span id="L487"><span class="lineNum">     487</span>              :   }</span>
-<span id="L488"><span class="lineNum">     488</span> <span class="tlaGNC">          84 :   ui-&gt;textBrowser-&gt;setCurrentCharFormat(format);</span></span>
+<span id="L488"><span class="lineNum">     488</span> <span class="tlaGNC">          85 :   ui-&gt;textBrowser-&gt;setCurrentCharFormat(format);</span></span>
 <span id="L489"><span class="lineNum">     489</span>              : </span>
-<span id="L490"><span class="lineNum">     490</span> <span class="tlaGNC">          84 :   if (isHtml) {</span></span>
+<span id="L490"><span class="lineNum">     490</span> <span class="tlaGNC">          85 :   if (isHtml) {</span></span>
 <span id="L491"><span class="lineNum">     491</span>              :     QString _text = text;</span>
-<span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">         140 :     if (!ui-&gt;textBrowser-&gt;toPlainText().isEmpty()) {</span></span>
-<span id="L493"><span class="lineNum">     493</span> <span class="tlaGNC">          36 :       _text = ui-&gt;textBrowser-&gt;toHtml() + _text;</span></span>
+<span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">         142 :     if (!ui-&gt;textBrowser-&gt;toPlainText().isEmpty()) {</span></span>
+<span id="L493"><span class="lineNum">     493</span> <span class="tlaGNC">          38 :       _text = ui-&gt;textBrowser-&gt;toHtml() + _text;</span></span>
 <span id="L494"><span class="lineNum">     494</span>              :     }</span>
-<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">          70 :     ui-&gt;textBrowser-&gt;setHtml(_text);</span></span>
+<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">          71 :     ui-&gt;textBrowser-&gt;setHtml(_text);</span></span>
 <span id="L496"><span class="lineNum">     496</span>              :   } else {</span>
 <span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">          14 :     ui-&gt;textBrowser-&gt;setText(text);</span></span>
 <span id="L498"><span class="lineNum">     498</span>              :   }</span>
-<span id="L499"><span class="lineNum">     499</span> <span class="tlaGNC">          84 : }</span></span>
+<span id="L499"><span class="lineNum">     499</span> <span class="tlaGNC">          85 : }</span></span>
 <span id="L500"><span class="lineNum">     500</span>              : </span>
 <span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">           5 : void MainWindow::applyTextBrowserSettings() {</span></span>
 <span id="L502"><span class="lineNum">     502</span> <span class="tlaGNC">           5 :   const AppSettings s = QtPassSettings::load();</span></span>
@@ -750,19 +750,19 @@
 <span id="L677"><span class="lineNum">     677</span>              :   }</span>
 <span id="L678"><span class="lineNum">     678</span> <span class="tlaGNC">          63 : }</span></span>
 <span id="L679"><span class="lineNum">     679</span>              : </span>
-<span id="L680"><span class="lineNum">     680</span> <span class="tlaGNC">          38 : void MainWindow::passShowHandler(const QString &amp;p_output, const QString &amp;file) {</span></span>
+<span id="L680"><span class="lineNum">     680</span> <span class="tlaGNC">          37 : void MainWindow::passShowHandler(const QString &amp;p_output, const QString &amp;file) {</span></span>
 <span id="L681"><span class="lineNum">     681</span>              :   // Only the entry we most recently asked to show may repaint the panel; a</span>
 <span id="L682"><span class="lineNum">     682</span>              :   // slower decrypt of an entry the user has since left is dropped, and so is</span>
 <span id="L683"><span class="lineNum">     683</span>              :   // one that arrives after the selection was cleared (deselect, a profile</span>
 <span id="L684"><span class="lineNum">     684</span>              :   // switch): nothing is asked to be shown then.</span>
-<span id="L685"><span class="lineNum">     685</span> <span class="tlaGNC">          38 :   if (!file.isEmpty() &amp;&amp; file != m_shownFile) {</span></span>
+<span id="L685"><span class="lineNum">     685</span> <span class="tlaGNC">          37 :   if (!file.isEmpty() &amp;&amp; file != m_shownFile) {</span></span>
 <span id="L686"><span class="lineNum">     686</span>              :     // A newer show is pending and releases the interface when it lands;</span>
 <span id="L687"><span class="lineNum">     687</span>              :     // with none (the selection was cleared) nothing else would until the</span>
 <span id="L688"><span class="lineNum">     688</span>              :     // watchdog. setUiElementsEnabled() keeps a re-encryption's lock.</span>
-<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">          10 :     if (m_shownFile.isEmpty()) {</span></span>
+<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">           9 :     if (m_shownFile.isEmpty()) {</span></span>
 <span id="L690"><span class="lineNum">     690</span> <span class="tlaGNC">           7 :       setUiElementsEnabled(true);</span></span>
 <span id="L691"><span class="lineNum">     691</span>              :     }</span>
-<span id="L692"><span class="lineNum">     692</span> <span class="tlaGNC">          10 :     return;</span></span>
+<span id="L692"><span class="lineNum">     692</span> <span class="tlaGNC">           9 :     return;</span></span>
 <span id="L693"><span class="lineNum">     693</span>              :   }</span>
 <span id="L694"><span class="lineNum">     694</span> <span class="tlaGNC">          28 :   const AppSettings s = QtPassSettings::load();</span></span>
 <span id="L695"><span class="lineNum">     695</span>              :   // What a template marks secret, in the settings or the store's</span>
@@ -818,12 +818,12 @@
 <span id="L745"><span class="lineNum">     745</span> <span class="tlaGNC">          28 :   setUiElementsEnabled(true);</span></span>
 <span id="L746"><span class="lineNum">     746</span> <span class="tlaGNC">          56 : }</span></span>
 <span id="L747"><span class="lineNum">     747</span>              : </span>
-<span id="L748"><span class="lineNum">     748</span> <span class="tlaGNC">          28 : void MainWindow::otpFromFileToClipboard(const QString &amp;p_output,</span></span>
+<span id="L748"><span class="lineNum">     748</span> <span class="tlaGNC">          27 : void MainWindow::otpFromFileToClipboard(const QString &amp;p_output,</span></span>
 <span id="L749"><span class="lineNum">     749</span>              :                                         const QString &amp;file) {</span>
 <span id="L750"><span class="lineNum">     750</span>              :   // Permanently connected: only the decrypt of the entry onOtp() asked for</span>
 <span id="L751"><span class="lineNum">     751</span>              :   // is ours, everything else belongs to a tree click or a Ctrl+C.</span>
-<span id="L752"><span class="lineNum">     752</span> <span class="tlaGNC">          28 :   if (m_otpRequestFile.isEmpty() || file != m_otpRequestFile) {</span></span>
-<span id="L753"><span class="lineNum">     753</span> <span class="tlaGNC">          24 :     return;</span></span>
+<span id="L752"><span class="lineNum">     752</span> <span class="tlaGNC">          27 :   if (m_otpRequestFile.isEmpty() || file != m_otpRequestFile) {</span></span>
+<span id="L753"><span class="lineNum">     753</span> <span class="tlaGNC">          23 :     return;</span></span>
 <span id="L754"><span class="lineNum">     754</span>              :   }</span>
 <span id="L755"><span class="lineNum">     755</span> <span class="tlaGNC">           6 :   m_otpRequestFile.clear();</span></span>
 <span id="L756"><span class="lineNum">     756</span>              : </span>
@@ -903,37 +903,37 @@
 <span id="L830"><span class="lineNum">     830</span>              :   }</span>
 <span id="L831"><span class="lineNum">     831</span> <span class="tlaGNC">          67 : }</span></span>
 <span id="L832"><span class="lineNum">     832</span>              : </span>
-<span id="L833"><span class="lineNum">     833</span> <span class="tlaGNC">         411 : void MainWindow::setUiElementsEnabled(bool state) {</span></span>
+<span id="L833"><span class="lineNum">     833</span> <span class="tlaGNC">         412 : void MainWindow::setUiElementsEnabled(bool state) {</span></span>
 <span id="L834"><span class="lineNum">     834</span>              :   // A running re-encryption owns the UI state: the progress dialog's Cancel is</span>
 <span id="L835"><span class="lineNum">     835</span>              :   // the user's escape hatch and endReencryptPath() releases the interface, so</span>
 <span id="L836"><span class="lineNum">     836</span>              :   // neither an unrelated completion nor the watchdog may re-enable it early.</span>
-<span id="L837"><span class="lineNum">     837</span> <span class="tlaGNC">         411 :   if (state &amp;&amp; m_reencryptRunning) {</span></span>
+<span id="L837"><span class="lineNum">     837</span> <span class="tlaGNC">         412 :   if (state &amp;&amp; m_reencryptRunning) {</span></span>
 <span id="L838"><span class="lineNum">     838</span> <span class="tlaGNC">           1 :     m_uiWatchdog.stop();</span></span>
 <span id="L839"><span class="lineNum">     839</span> <span class="tlaGNC">           1 :     return;</span></span>
 <span id="L840"><span class="lineNum">     840</span>              :   }</span>
 <span id="L841"><span class="lineNum">     841</span>              :   // Arm the watchdog while the UI is disabled; disarm once re-enabled.</span>
 <span id="L842"><span class="lineNum">     842</span>              :   if (state) {</span>
-<span id="L843"><span class="lineNum">     843</span> <span class="tlaGNC">         323 :     m_uiWatchdog.stop();</span></span>
+<span id="L843"><span class="lineNum">     843</span> <span class="tlaGNC">         324 :     m_uiWatchdog.stop();</span></span>
 <span id="L844"><span class="lineNum">     844</span>              :   } else {</span>
 <span id="L845"><span class="lineNum">     845</span> <span class="tlaGNC">          87 :     m_uiWatchdog.start();</span></span>
 <span id="L846"><span class="lineNum">     846</span>              :   }</span>
-<span id="L847"><span class="lineNum">     847</span> <span class="tlaGNC">         410 :   ui-&gt;treeView-&gt;setEnabled(state);</span></span>
-<span id="L848"><span class="lineNum">     848</span> <span class="tlaGNC">         410 :   ui-&gt;lineEdit-&gt;setEnabled(state);</span></span>
-<span id="L849"><span class="lineNum">     849</span> <span class="tlaGNC">         410 :   ui-&gt;actionAddPassword-&gt;setEnabled(state);</span></span>
-<span id="L850"><span class="lineNum">     850</span> <span class="tlaGNC">         410 :   ui-&gt;actionAddFolder-&gt;setEnabled(state);</span></span>
-<span id="L851"><span class="lineNum">     851</span> <span class="tlaGNC">         410 :   ui-&gt;actionUsers-&gt;setEnabled(state);</span></span>
-<span id="L852"><span class="lineNum">     852</span> <span class="tlaGNC">         410 :   ui-&gt;actionConfig-&gt;setEnabled(state);</span></span>
-<span id="L853"><span class="lineNum">     853</span> <span class="tlaGNC">         410 :   m_uiEnabled = state;</span></span>
-<span id="L854"><span class="lineNum">     854</span> <span class="tlaGNC">         410 :   updateProfileBoxEnabled();</span></span>
+<span id="L847"><span class="lineNum">     847</span> <span class="tlaGNC">         411 :   ui-&gt;treeView-&gt;setEnabled(state);</span></span>
+<span id="L848"><span class="lineNum">     848</span> <span class="tlaGNC">         411 :   ui-&gt;lineEdit-&gt;setEnabled(state);</span></span>
+<span id="L849"><span class="lineNum">     849</span> <span class="tlaGNC">         411 :   ui-&gt;actionAddPassword-&gt;setEnabled(state);</span></span>
+<span id="L850"><span class="lineNum">     850</span> <span class="tlaGNC">         411 :   ui-&gt;actionAddFolder-&gt;setEnabled(state);</span></span>
+<span id="L851"><span class="lineNum">     851</span> <span class="tlaGNC">         411 :   ui-&gt;actionUsers-&gt;setEnabled(state);</span></span>
+<span id="L852"><span class="lineNum">     852</span> <span class="tlaGNC">         411 :   ui-&gt;actionConfig-&gt;setEnabled(state);</span></span>
+<span id="L853"><span class="lineNum">     853</span> <span class="tlaGNC">         411 :   m_uiEnabled = state;</span></span>
+<span id="L854"><span class="lineNum">     854</span> <span class="tlaGNC">         411 :   updateProfileBoxEnabled();</span></span>
 <span id="L855"><span class="lineNum">     855</span>              :   const bool uiEnabled = state;</span>
 <span id="L856"><span class="lineNum">     856</span>              :   // is a file selected, and in sight (content search results hide the tree)?</span>
-<span id="L857"><span class="lineNum">     857</span> <span class="tlaGNC">         823 :   state &amp;= ui-&gt;treeView-&gt;currentIndex().isValid() &amp;&amp; !ui-&gt;treeView-&gt;isHidden();</span></span>
-<span id="L858"><span class="lineNum">     858</span> <span class="tlaGNC">         410 :   ui-&gt;actionDelete-&gt;setEnabled(state);</span></span>
-<span id="L859"><span class="lineNum">     859</span> <span class="tlaGNC">         410 :   ui-&gt;actionEdit-&gt;setEnabled(state);</span></span>
-<span id="L860"><span class="lineNum">     860</span> <span class="tlaGNC">         410 :   updateGitButtonVisibility(uiEnabled);</span></span>
+<span id="L857"><span class="lineNum">     857</span> <span class="tlaGNC">         825 :   state &amp;= ui-&gt;treeView-&gt;currentIndex().isValid() &amp;&amp; !ui-&gt;treeView-&gt;isHidden();</span></span>
+<span id="L858"><span class="lineNum">     858</span> <span class="tlaGNC">         411 :   ui-&gt;actionDelete-&gt;setEnabled(state);</span></span>
+<span id="L859"><span class="lineNum">     859</span> <span class="tlaGNC">         411 :   ui-&gt;actionEdit-&gt;setEnabled(state);</span></span>
+<span id="L860"><span class="lineNum">     860</span> <span class="tlaGNC">         411 :   updateGitButtonVisibility(uiEnabled);</span></span>
 <span id="L861"><span class="lineNum">     861</span>              :   // `state` is now &quot;UI enabled AND a file is selected&quot;, which is exactly when</span>
 <span id="L862"><span class="lineNum">     862</span>              :   // generating an OTP makes sense.</span>
-<span id="L863"><span class="lineNum">     863</span> <span class="tlaGNC">         410 :   updateOtpButtonVisibility(state);</span></span>
+<span id="L863"><span class="lineNum">     863</span> <span class="tlaGNC">         411 :   updateOtpButtonVisibility(state);</span></span>
 <span id="L864"><span class="lineNum">     864</span>              : }</span>
 <span id="L865"><span class="lineNum">     865</span>              : </span>
 <span id="L866"><span class="lineNum">     866</span> <span class="tlaGNC">         195 : void MainWindow::restoreWindow() {</span></span>
@@ -1521,22 +1521,22 @@
 <span id="L1448"><span class="lineNum">    1448</span> <span class="tlaGNC">           6 :   QtPassSettings::getPass()-&gt;Remove(file, isDir);</span></span>
 <span id="L1449"><span class="lineNum">    1449</span>              : }</span>
 <span id="L1450"><span class="lineNum">    1450</span>              : </span>
-<span id="L1451"><span class="lineNum">    1451</span> <span class="tlaGNC">          91 : void MainWindow::cancelOtpRequest() {</span></span>
-<span id="L1452"><span class="lineNum">    1452</span> <span class="tlaGNC">          91 :   m_otpRequestFile.clear();</span></span>
-<span id="L1453"><span class="lineNum">    1453</span> <span class="tlaGNC">          91 :   m_copyRequestFile.clear();</span></span>
-<span id="L1454"><span class="lineNum">    1454</span> <span class="tlaGNC">          91 : }</span></span>
+<span id="L1451"><span class="lineNum">    1451</span> <span class="tlaGNC">          92 : void MainWindow::cancelOtpRequest() {</span></span>
+<span id="L1452"><span class="lineNum">    1452</span> <span class="tlaGNC">          92 :   m_otpRequestFile.clear();</span></span>
+<span id="L1453"><span class="lineNum">    1453</span> <span class="tlaGNC">          92 :   m_copyRequestFile.clear();</span></span>
+<span id="L1454"><span class="lineNum">    1454</span> <span class="tlaGNC">          92 : }</span></span>
 <span id="L1455"><span class="lineNum">    1455</span>              : </span>
-<span id="L1456"><span class="lineNum">    1456</span> <span class="tlaGNC">          34 : void MainWindow::onOperationError() {</span></span>
-<span id="L1457"><span class="lineNum">    1457</span> <span class="tlaGNC">          34 :   cancelOtpRequest();</span></span>
+<span id="L1456"><span class="lineNum">    1456</span> <span class="tlaGNC">          35 : void MainWindow::onOperationError() {</span></span>
+<span id="L1457"><span class="lineNum">    1457</span> <span class="tlaGNC">          35 :   cancelOtpRequest();</span></span>
 <span id="L1458"><span class="lineNum">    1458</span>              :   // executeWrapperStarted() emptied the panel and the browser when the</span>
 <span id="L1459"><span class="lineNum">    1459</span>              :   // operation started (a refusal says so too); what is left to forget is</span>
 <span id="L1460"><span class="lineNum">    1460</span>              :   // which entry the panel was about to show.</span>
-<span id="L1461"><span class="lineNum">    1461</span> <span class="tlaGNC">          34 :   m_shownFile.clear();</span></span>
+<span id="L1461"><span class="lineNum">    1461</span> <span class="tlaGNC">          35 :   m_shownFile.clear();</span></span>
 <span id="L1462"><span class="lineNum">    1462</span>              :   // A save's refresh waiting for its push is dropped: it would clear the</span>
 <span id="L1463"><span class="lineNum">    1463</span>              :   // push's error (or whatever failed before it) from the browser.</span>
-<span id="L1464"><span class="lineNum">    1464</span> <span class="tlaGNC">          34 :   m_refreshAfterPush.clear();</span></span>
+<span id="L1464"><span class="lineNum">    1464</span> <span class="tlaGNC">          35 :   m_refreshAfterPush.clear();</span></span>
 <span id="L1465"><span class="lineNum">    1465</span>              :   m_refreshAfterPushOwner = nullptr;</span>
-<span id="L1466"><span class="lineNum">    1466</span> <span class="tlaGNC">          34 : }</span></span>
+<span id="L1466"><span class="lineNum">    1466</span> <span class="tlaGNC">          35 : }</span></span>
 <span id="L1467"><span class="lineNum">    1467</span>              : </span>
 <span id="L1468"><span class="lineNum">    1468</span>              : // Derives the code in-process from one decrypt, so it works with either</span>
 <span id="L1469"><span class="lineNum">    1469</span>              : // backend on every platform; otpFromFileToClipboard() finishes the job.</span>
@@ -1643,7 +1643,7 @@
 <span id="L1570"><span class="lineNum">    1570</span> <span class="tlaGNC">         193 :   updateProfileBoxEnabled();</span></span>
 <span id="L1571"><span class="lineNum">    1571</span> <span class="tlaGNC">         193 : }</span></span>
 <span id="L1572"><span class="lineNum">    1572</span>              : </span>
-<span id="L1573"><span class="lineNum">    1573</span> <span class="tlaGNC">         642 : void MainWindow::updateProfileBoxEnabled() {</span></span>
+<span id="L1573"><span class="lineNum">    1573</span> <span class="tlaGNC">         643 : void MainWindow::updateProfileBoxEnabled() {</span></span>
 <span id="L1574"><span class="lineNum">    1574</span>              :   // No profile switch while anything of the store runs or waits: the</span>
 <span id="L1575"><span class="lineNum">    1575</span>              :   // backend's store and environment would change under it, and what is</span>
 <span id="L1576"><span class="lineNum">    1576</span>              :   // still queued (a push after a save, say) would finish for the other</span>
@@ -1651,9 +1651,9 @@
 <span id="L1578"><span class="lineNum">    1578</span>              :   // watchdog releases the interface while a slow gpg or git still runs.</span>
 <span id="L1579"><span class="lineNum">    1579</span>              :   // Every backend: one kept from before a switch of backend may still</span>
 <span id="L1580"><span class="lineNum">    1580</span>              :   // run what was queued on it.</span>
-<span id="L1581"><span class="lineNum">    1581</span> <span class="tlaGNC">        1285 :   ui-&gt;profileBox-&gt;setEnabled(m_uiEnabled &amp;&amp; ui-&gt;profileBox-&gt;count() &gt; 1 &amp;&amp;</span></span>
+<span id="L1581"><span class="lineNum">    1581</span> <span class="tlaGNC">        1287 :   ui-&gt;profileBox-&gt;setEnabled(m_uiEnabled &amp;&amp; ui-&gt;profileBox-&gt;count() &gt; 1 &amp;&amp;</span></span>
 <span id="L1582"><span class="lineNum">    1582</span> <span class="tlaGNC">          11 :                              QtPassSettings::backendsIdle());</span></span>
-<span id="L1583"><span class="lineNum">    1583</span> <span class="tlaGNC">         642 : }</span></span>
+<span id="L1583"><span class="lineNum">    1583</span> <span class="tlaGNC">         643 : }</span></span>
 <span id="L1584"><span class="lineNum">    1584</span>              : </span>
 <span id="L1585"><span class="lineNum">    1585</span> <span class="tlaGNC">           6 : void MainWindow::on_profileBox_currentTextChanged(const QString &amp;name) {</span></span>
 <span id="L1586"><span class="lineNum">    1586</span> <span class="tlaGNC">          18 :   if (m_freshStart || name == QtPassSettings::getProfile()) {</span></span>
@@ -2092,10 +2092,10 @@
 <span id="L2019"><span class="lineNum">    2019</span>              :   }</span>
 <span id="L2020"><span class="lineNum">    2020</span> <span class="tlaGNC">           9 : }</span></span>
 <span id="L2021"><span class="lineNum">    2021</span>              : </span>
-<span id="L2022"><span class="lineNum">    2022</span> <span class="tlaGNC">          29 : void MainWindow::passwordFromFileToClipboard(const QString &amp;text,</span></span>
+<span id="L2022"><span class="lineNum">    2022</span> <span class="tlaGNC">          28 : void MainWindow::passwordFromFileToClipboard(const QString &amp;text,</span></span>
 <span id="L2023"><span class="lineNum">    2023</span>              :                                              const QString &amp;file) {</span>
-<span id="L2024"><span class="lineNum">    2024</span> <span class="tlaGNC">          29 :   if (m_copyRequestFile.isEmpty() || file != m_copyRequestFile) {</span></span>
-<span id="L2025"><span class="lineNum">    2025</span> <span class="tlaGNC">          24 :     return;</span></span>
+<span id="L2024"><span class="lineNum">    2024</span> <span class="tlaGNC">          28 :   if (m_copyRequestFile.isEmpty() || file != m_copyRequestFile) {</span></span>
+<span id="L2025"><span class="lineNum">    2025</span> <span class="tlaGNC">          23 :     return;</span></span>
 <span id="L2026"><span class="lineNum">    2026</span>              :   }</span>
 <span id="L2027"><span class="lineNum">    2027</span> <span class="tlaGNC">           8 :   m_copyRequestFile.clear();</span></span>
 <span id="L2028"><span class="lineNum">    2028</span>              :   // The first line, without a list of every line (an entry can expand into</span>
@@ -2288,31 +2288,31 @@
 <span id="L2215"><span class="lineNum">    2215</span>              :          &quot;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;&quot;));</span>
 <span id="L2216"><span class="lineNum">    2216</span> <span class="tlaGNC">           1 : }</span></span>
 <span id="L2217"><span class="lineNum">    2217</span>              : </span>
-<span id="L2218"><span class="lineNum">    2218</span> <span class="tlaGNC">         415 : void MainWindow::updateGitButtonVisibility(bool uiEnabled) {</span></span>
-<span id="L2219"><span class="lineNum">    2219</span> <span class="tlaGNC">         415 :   const AppSettings s = QtPassSettings::load();</span></span>
+<span id="L2218"><span class="lineNum">    2218</span> <span class="tlaGNC">         416 : void MainWindow::updateGitButtonVisibility(bool uiEnabled) {</span></span>
+<span id="L2219"><span class="lineNum">    2219</span> <span class="tlaGNC">         416 :   const AppSettings s = QtPassSettings::load();</span></span>
 <span id="L2220"><span class="lineNum">    2220</span>              :   // Without Git there is nothing to push or pull, ever: the buttons go, not</span>
 <span id="L2221"><span class="lineNum">    2221</span>              :   // grey out. While an operation runs they stay and are disabled.</span>
 <span id="L2222"><span class="lineNum">    2222</span>              :   const bool usable =</span>
-<span id="L2223"><span class="lineNum">    2223</span> <span class="tlaGNC">         415 :       s.useGit &amp;&amp; !(s.gitExecutable.isEmpty() &amp;&amp; s.passExecutable.isEmpty());</span></span>
-<span id="L2224"><span class="lineNum">    2224</span> <span class="tlaGNC">         415 :   ui-&gt;actionPush-&gt;setVisible(usable);</span></span>
-<span id="L2225"><span class="lineNum">    2225</span> <span class="tlaGNC">         415 :   ui-&gt;actionUpdate-&gt;setVisible(usable);</span></span>
+<span id="L2223"><span class="lineNum">    2223</span> <span class="tlaGNC">         416 :       s.useGit &amp;&amp; !(s.gitExecutable.isEmpty() &amp;&amp; s.passExecutable.isEmpty());</span></span>
+<span id="L2224"><span class="lineNum">    2224</span> <span class="tlaGNC">         416 :   ui-&gt;actionPush-&gt;setVisible(usable);</span></span>
+<span id="L2225"><span class="lineNum">    2225</span> <span class="tlaGNC">         416 :   ui-&gt;actionUpdate-&gt;setVisible(usable);</span></span>
 <span id="L2226"><span class="lineNum">    2226</span>              :   // The separator in front of them would otherwise sit next to the next one.</span>
-<span id="L2227"><span class="lineNum">    2227</span> <span class="tlaGNC">         415 :   const QList&lt;QAction *&gt; actions = ui-&gt;toolBar-&gt;actions();</span></span>
-<span id="L2228"><span class="lineNum">    2228</span> <span class="tlaGNC">         415 :   const qsizetype at = actions.indexOf(ui-&gt;actionPush);</span></span>
-<span id="L2229"><span class="lineNum">    2229</span> <span class="tlaGNC">         415 :   if (at &gt; 0 &amp;&amp; actions.at(at - 1)-&gt;isSeparator()) {</span></span>
-<span id="L2230"><span class="lineNum">    2230</span> <span class="tlaGNC">         415 :     actions.at(at - 1)-&gt;setVisible(usable);</span></span>
+<span id="L2227"><span class="lineNum">    2227</span> <span class="tlaGNC">         416 :   const QList&lt;QAction *&gt; actions = ui-&gt;toolBar-&gt;actions();</span></span>
+<span id="L2228"><span class="lineNum">    2228</span> <span class="tlaGNC">         416 :   const qsizetype at = actions.indexOf(ui-&gt;actionPush);</span></span>
+<span id="L2229"><span class="lineNum">    2229</span> <span class="tlaGNC">         416 :   if (at &gt; 0 &amp;&amp; actions.at(at - 1)-&gt;isSeparator()) {</span></span>
+<span id="L2230"><span class="lineNum">    2230</span> <span class="tlaGNC">         416 :     actions.at(at - 1)-&gt;setVisible(usable);</span></span>
 <span id="L2231"><span class="lineNum">    2231</span>              :   }</span>
-<span id="L2232"><span class="lineNum">    2232</span> <span class="tlaGNC">         415 :   enableGitButtons(usable &amp;&amp; uiEnabled);</span></span>
-<span id="L2233"><span class="lineNum">    2233</span> <span class="tlaGNC">         415 : }</span></span>
+<span id="L2232"><span class="lineNum">    2232</span> <span class="tlaGNC">         416 :   enableGitButtons(usable &amp;&amp; uiEnabled);</span></span>
+<span id="L2233"><span class="lineNum">    2233</span> <span class="tlaGNC">         416 : }</span></span>
 <span id="L2234"><span class="lineNum">    2234</span>              : </span>
-<span id="L2235"><span class="lineNum">    2235</span> <span class="tlaGNC">         421 : void MainWindow::updateOtpButtonVisibility(bool uiEnabled) {</span></span>
+<span id="L2235"><span class="lineNum">    2235</span> <span class="tlaGNC">         422 : void MainWindow::updateOtpButtonVisibility(bool uiEnabled) {</span></span>
 <span id="L2236"><span class="lineNum">    2236</span>              :   // No platform gating: codes are generated in-process. Visible but disabled</span>
 <span id="L2237"><span class="lineNum">    2237</span>              :   // when OTP is off: the panel never shows an OTP field (a secret), so hiding</span>
 <span id="L2238"><span class="lineNum">    2238</span>              :   // this too would leave no trace of the feature. Honour uiEnabled, or the</span>
 <span id="L2239"><span class="lineNum">    2239</span>              :   // user can stack Show calls while a decrypt is in flight.</span>
-<span id="L2240"><span class="lineNum">    2240</span> <span class="tlaGNC">         421 :   ui-&gt;actionOtp-&gt;setVisible(true);</span></span>
-<span id="L2241"><span class="lineNum">    2241</span> <span class="tlaGNC">         434 :   ui-&gt;actionOtp-&gt;setEnabled(QtPassSettings::isUseOtp() &amp;&amp; uiEnabled);</span></span>
-<span id="L2242"><span class="lineNum">    2242</span> <span class="tlaGNC">         421 : }</span></span>
+<span id="L2240"><span class="lineNum">    2240</span> <span class="tlaGNC">         422 :   ui-&gt;actionOtp-&gt;setVisible(true);</span></span>
+<span id="L2241"><span class="lineNum">    2241</span> <span class="tlaGNC">         435 :   ui-&gt;actionOtp-&gt;setEnabled(QtPassSettings::isUseOtp() &amp;&amp; uiEnabled);</span></span>
+<span id="L2242"><span class="lineNum">    2242</span> <span class="tlaGNC">         422 : }</span></span>
 <span id="L2243"><span class="lineNum">    2243</span>              : </span>
 <span id="L2244"><span class="lineNum">    2244</span> <span class="tlaGNC">         189 : void MainWindow::updateGrepButtonVisibility() {</span></span>
 <span id="L2245"><span class="lineNum">    2245</span> <span class="tlaGNC">         189 :   const bool enabled = QtPassSettings::isUseGrepSearch();</span></span>
@@ -2323,10 +2323,10 @@
 <span id="L2250"><span class="lineNum">    2250</span>              :   }</span>
 <span id="L2251"><span class="lineNum">    2251</span> <span class="tlaGNC">         189 : }</span></span>
 <span id="L2252"><span class="lineNum">    2252</span>              : </span>
-<span id="L2253"><span class="lineNum">    2253</span> <span class="tlaGNC">         415 : void MainWindow::enableGitButtons(const bool &amp;state) {</span></span>
-<span id="L2254"><span class="lineNum">    2254</span> <span class="tlaGNC">         415 :   ui-&gt;actionPush-&gt;setEnabled(state);</span></span>
-<span id="L2255"><span class="lineNum">    2255</span> <span class="tlaGNC">         415 :   ui-&gt;actionUpdate-&gt;setEnabled(state);</span></span>
-<span id="L2256"><span class="lineNum">    2256</span> <span class="tlaGNC">         415 : }</span></span>
+<span id="L2253"><span class="lineNum">    2253</span> <span class="tlaGNC">         416 : void MainWindow::enableGitButtons(const bool &amp;state) {</span></span>
+<span id="L2254"><span class="lineNum">    2254</span> <span class="tlaGNC">         416 :   ui-&gt;actionPush-&gt;setEnabled(state);</span></span>
+<span id="L2255"><span class="lineNum">    2255</span> <span class="tlaGNC">         416 :   ui-&gt;actionUpdate-&gt;setEnabled(state);</span></span>
+<span id="L2256"><span class="lineNum">    2256</span> <span class="tlaGNC">         416 : }</span></span>
 <span id="L2257"><span class="lineNum">    2257</span>              : </span>
 <span id="L2258"><span class="lineNum">    2258</span> <span class="tlaGNC">           3 : void MainWindow::critical(const QString &amp;title, const QString &amp;msg) {</span></span>
 <span id="L2259"><span class="lineNum">    2259</span>              :   // Pass's messages quote store paths; see PlainMessageBox.</span>

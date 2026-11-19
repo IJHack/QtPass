@@ -1,8 +1,8 @@
 <map id="ImitatePass::reportUnrestorable" name="ImitatePass::reportUnrestorable">
-<area shape="rect" id="Node000001" title="Tell the user a leftover is not a regular file and was left." alt="" coords="2614,159,2842,186"/>
+<area shape="rect" id="Node000001" title="Note for the user that a leftover is not a regular file and was left." alt="" coords="2614,159,2842,186"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#ae12b9655fdad620c3f6810aed04191ed" title="Deal with what a crashed or failed earlier run left under dir before touching anything: stale tempora..." alt="" coords="2099,150,2319,195"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2595,173,2320,175,2320,170,2601,172"/>
-<area shape="rect" id="Node000014" href="$class_imitate_pass.html#ae8b869923a6a4ab96b47c0c42d83fca0" title="Put a 1.8.x backup back in its entry&#39;s place when the entry is missing; report it when both exist (bo..." alt="" coords="2367,184,2566,212"/>
+<area shape="rect" id="Node000014" href="$class_imitate_pass.html#aa538098e4606fe394d5533c5365820ba" title="Put a 1.8.x backup back in its entry&#39;s place when the entry is missing; report it when both exist (bo..." alt="" coords="2367,184,2566,212"/>
 <area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="2601,185,2566,191,2566,186,2595,185"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#a8117ed7e6ccc1916801d88883ea2819a" title="Worker&#45;thread body: scan dir and re&#45;encrypt stale files." alt="" coords="1854,159,2051,186"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2081,173,2052,175,2052,170,2086,172"/>
