@@ -79,8 +79,10 @@ public:
 
   /**
    * @brief Whether gpg has the secret key that sign() will use, i.e. the
-   * first configured key: a primary key or subkey with that fingerprint
-   * that can sign and whose secret part is present (not a stub).
+   * first configured key. Configured as a subkey, that subkey must sign;
+   * as a primary key, it or one of its subkeys (gpg's --local-user picks
+   * one). Signing means able to, not revoked or expired, and with the
+   * secret part present (not a stub).
    * @return true when signing can work; false when no key is configured.
    */
   auto haveSecretKey() const -> bool;

@@ -178,6 +178,20 @@ void tst_gpgidsigner::haveSecretKeyReadsTheKeyRecords() {
                            "fpr:::::::::%2:\n")
                 .arg(kPrimary, kFpr);
   QVERIFY2(!signer.haveSecretKey(), "an encryption subkey does not sign");
+  gpg.out = QStringLiteral("sec:u:4096:1:A:1::::::scSC:::+:\n"
+                           "fpr:::::::::%1:\n"
+                           "ssb:r:4096:1:B:1::::::s:::+:\n"
+                           "fpr:::::::::%2:\n")
+                .arg(kPrimary, kFpr);
+  QVERIFY2(!signer.haveSecretKey(), "a revoked subkey does not sign");
+
+  // A primary key with a designated revoker: gpg lists the rvk between the
+  // key and its fpr.
+  gpg.out = QStringLiteral("sec:u:4096:1:A:1::::::scSC:::+:\n"
+                           "rvk:::1::::::%2:80:\n"
+                           "fpr:::::::::%1:\n")
+                .arg(kFpr, kPrimary);
+  QVERIFY2(signer.haveSecretKey(), "the rvk is not the key's fingerprint");
 
   // A user ID its owner wrote to look like the configured key: gpg escapes
   // its colons and line breaks, and a user ID is no key record anyway.
@@ -187,6 +201,23 @@ void tst_gpgidsigner::haveSecretKeyReadsTheKeyRecords() {
                            "fpr\\x3a%2::\n")
                 .arg(kPrimary, kFpr);
   QVERIFY2(!signer.haveSecretKey(), "a user ID is not the key");
+
+  // The primary key configured, only able to certify and offline: gpg's
+  // --local-user signs with its signing subkey, so that will do. Not when
+  // the subkey is a stub too.
+  const GpgIdSigner byPrimary(QStringLiteral("gpg"), {kPrimary}, gpg.exec());
+  gpg.out = QStringLiteral("sec:u:4096:1:A:1::::::cSC:::#:\n"
+                           "fpr:::::::::%1:\n"
+                           "ssb:u:4096:1:B:1::::::s:::+:\n"
+                           "fpr:::::::::%2:\n")
+                .arg(kPrimary, kFpr);
+  QVERIFY2(byPrimary.haveSecretKey(), "its signing subkey signs");
+  gpg.out = QStringLiteral("sec:u:4096:1:A:1::::::cSC:::#:\n"
+                           "fpr:::::::::%1:\n"
+                           "ssb:u:4096:1:B:1::::::s:::#:\n"
+                           "fpr:::::::::%2:\n")
+                .arg(kPrimary, kFpr);
+  QVERIFY2(!byPrimary.haveSecretKey(), "no secret part anywhere");
 
   const GpgIdSigner none(QStringLiteral("gpg"), {}, gpg.exec());
   QVERIFY2(!none.haveSecretKey(), "nothing configured, nothing to sign with");

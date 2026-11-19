@@ -12,6 +12,7 @@
 #include <QFile>
 #include <QRegularExpression>
 #include <QTemporaryDir>
+#include <algorithm>
 #include <utility>
 
 #include "qtpasslogging.h"
@@ -60,29 +61,64 @@ auto GpgIdSigner::haveSecretKey() const -> bool {
     qCDebug(lcQtPass) << "GPG list-secret-keys failed with code:" << rc;
     return false;
   }
-  // Records, one per line: a key (sec, or ssb for a subkey) and then its
-  // own fpr. A user ID is a record of its own, with its colons and line
-  // breaks escaped, so nothing a key's owner wrote can pass for either; a
-  // search of the whole output for the fingerprint could be fooled by one.
-  // The configured key itself must sign and its secret part be here (field
-  // 15 is # for a stub), whether it is the primary key or a subkey.
-  bool usable = false;
-  bool expectFpr = false;
+  // Records, one per line: a key (sec, or ssb for a subkey) and later its
+  // own fpr (an rvk may come between). A user ID is a record of its own,
+  // with its colons and line breaks escaped, so nothing a key's owner
+  // wrote can pass for either; a search of the whole output for the
+  // fingerprint could be fooled by one. A key signs when it can (s in its
+  // own capabilities), is not revoked, expired or invalid, and its secret
+  // part is here (field 15 is # for a stub).
+  // Configured as a subkey, that subkey must sign. Configured as a primary
+  // key, gpg's --local-user picks a signing key from its whole block, so
+  // the primary or any of its subkeys will do.
+  struct Key {
+    bool signs = false;
+    bool primary = false;
+    QString fpr;
+  };
+  QList<QList<Key>> blocks;
+  bool awaitingFpr = false;
   const QStringList lines = out.split(QLatin1Char('\n'));
   for (const QString &line : lines) {
     const QStringList fields = line.trimmed().split(QLatin1Char(':'));
     const QString &type = fields.first();
-    if (type == QLatin1String("sec") || type == QLatin1String("ssb")) {
-      usable = fields.value(11).contains(QLatin1Char('s')) &&
-               fields.value(14) != QLatin1String("#");
-      expectFpr = true;
-      continue;
+    const bool primary = type == QLatin1String("sec");
+    if (primary || type == QLatin1String("ssb")) {
+      if (primary) {
+        blocks.append(QList<Key>());
+      }
+      if (blocks.isEmpty()) {
+        awaitingFpr = false;
+        continue;
+      }
+      const QString validity = fields.value(1);
+      Key k;
+      k.primary = primary;
+      k.signs = fields.value(11).contains(QLatin1Char('s')) &&
+                fields.value(14) != QLatin1String("#") &&
+                validity != QLatin1String("r") &&
+                validity != QLatin1String("e") &&
+                validity != QLatin1String("i");
+      blocks.last().append(k);
+      awaitingFpr = true;
+    } else if (type == QLatin1String("fpr") && awaitingFpr) {
+      blocks.last().last().fpr = fields.value(9);
+      awaitingFpr = false;
     }
-    if (type == QLatin1String("fpr") && expectFpr && usable &&
-        fields.value(9).compare(key, Qt::CaseInsensitive) == 0) {
-      return true;
+  }
+  for (const QList<Key> &block : std::as_const(blocks)) {
+    for (const Key &k : block) {
+      if (k.fpr.compare(key, Qt::CaseInsensitive) != 0) {
+        continue;
+      }
+      if (k.signs) {
+        return true;
+      }
+      if (k.primary && std::any_of(block.cbegin(), block.cend(),
+                                   [](const Key &sub) { return sub.signs; })) {
+        return true;
+      }
     }
-    expectFpr = false;
   }
   return false;
 }
