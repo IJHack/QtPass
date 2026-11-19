@@ -51,6 +51,11 @@ for src in "$here"/fuzz_*.cpp; do
 	name="$(basename "$src" .cpp)"
 	# --as-needed: a target that only pulls QtCore code from the library
 	# needs only QtCore at run time.
+	# --disable-new-dtags: an RPATH, not a RUNPATH. A RUNPATH serves only
+	# the binary's own dependencies, so a library pulled in by a bundled one
+	# (pcre by glib, which has no search path of its own) was looked for in
+	# the system only, and is missing on ClusterFuzz's bots. The RPATH also
+	# serves those.
 	# CXXFLAGS and LIB_FUZZING_ENGINE are lists of flags, split on purpose.
 	# shellcheck disable=SC2086
 	"$CXX" $CXXFLAGS -std=c++17 -fPIC \
@@ -58,6 +63,7 @@ for src in "$here"/fuzz_*.cpp; do
 		-I"$qt_headers" -I"$qt_headers/QtCore" \
 		"$src" "$lib" $LIB_FUZZING_ENGINE \
 		-Wl,--as-needed -L"$qt_libs" -lQt6Core \
+		-Wl,--disable-new-dtags \
 		-Wl,-rpath,"\$ORIGIN/lib" -Wl,-rpath,"$qt_libs" \
 		-o "$out/$name"
 done
