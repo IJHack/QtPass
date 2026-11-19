@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 10:23:38</td>
+            <td class="headerValue">2026-11-19 11:32:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -612,22 +612,22 @@
 <span id="L539"><span class="lineNum">     539</span>              :   }</span>
 <span id="L540"><span class="lineNum">     540</span>              : </span>
 <span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">         286 :   if (exitCode != 0) {</span></span>
-<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          62 :     handleProcessError(pid, exitCode, out, err);</span></span>
+<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          60 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L543"><span class="lineNum">     543</span>              :     return;</span>
 <span id="L544"><span class="lineNum">     544</span>              :   }</span>
 <span id="L545"><span class="lineNum">     545</span>              : </span>
-<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         224 :   if (pid == PASS_SHOW) {</span></span>
-<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          46 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
+<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         226 :   if (pid == PASS_SHOW) {</span></span>
+<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          48 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
 <span id="L548"><span class="lineNum">     548</span>              :     return;</span>
 <span id="L549"><span class="lineNum">     549</span>              :   }</span>
 <span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         178 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L551"><span class="lineNum">     551</span>              : }</span>
 <span id="L552"><span class="lineNum">     552</span>              : </span>
-<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          62 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
+<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          60 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
 <span id="L554"><span class="lineNum">     554</span>              :                               const QString &amp;err) {</span>
 <span id="L555"><span class="lineNum">     555</span>              :   Q_UNUSED(out);</span>
 <span id="L556"><span class="lineNum">     556</span>              : </span>
-<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          62 :   if (pid == PASS_INSERT) {</span></span>
+<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">          60 :   if (pid == PASS_INSERT) {</span></span>
 <span id="L558"><span class="lineNum">     558</span> <span class="tlaGNC">          18 :     const QString friendly = gpgErrorMessage(err);</span></span>
 <span id="L559"><span class="lineNum">     559</span>              :     const QString why =</span>
 <span id="L560"><span class="lineNum">     560</span> <span class="tlaGNC">          18 :         friendly.isEmpty() ? err : formatInsertError(friendly, err);</span></span>
@@ -647,10 +647,10 @@
 <span id="L574"><span class="lineNum">     574</span>              :     return;</span>
 <span id="L575"><span class="lineNum">     575</span>              :   }</span>
 <span id="L576"><span class="lineNum">     576</span>              : </span>
-<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          44 :   if (pid == GPG_GENKEYS) {</span></span>
+<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          42 :   if (pid == GPG_GENKEYS) {</span></span>
 <span id="L578"><span class="lineNum">     578</span> <span class="tlaGNC">           1 :     emit generateGPGKeysFailed(err);</span></span>
 <span id="L579"><span class="lineNum">     579</span>              :   }</span>
-<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          44 :   emit processErrorExit(exitCode, err);</span></span>
+<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          42 :   emit processErrorExit(exitCode, err);</span></span>
 <span id="L581"><span class="lineNum">     581</span>              : }</span>
 <span id="L582"><span class="lineNum">     582</span>              : </span>
 <span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">          44 : auto Pass::withoutStatusLines(const QString &amp;err) -&gt; QString {</span></span>
@@ -790,10 +790,10 @@
 <span id="L717"><span class="lineNum">     717</span>              : #endif</span>
 <span id="L718"><span class="lineNum">     718</span>              : </span>
 <span id="L719"><span class="lineNum">     719</span>              : /// Whether @p path is @p dir or lies under it.</span>
-<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1498 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
+<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1480 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
 <span id="L721"><span class="lineNum">     721</span>              :                  const QString &amp;dirPrefix) -&gt; bool {</span>
-<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        2605 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
-<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">        1107 :          path.startsWith(dirPrefix, kPathCase);</span></span>
+<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        2569 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
+<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">        1089 :          path.startsWith(dirPrefix, kPathCase);</span></span>
 <span id="L724"><span class="lineNum">     724</span>              : }</span>
 <span id="L725"><span class="lineNum">     725</span>              : </span>
 <span id="L726"><span class="lineNum">     726</span>              : /// Where the lookup of a .gpg-id starts and the store that bounds it.</span>
@@ -879,8 +879,8 @@
 <span id="L806"><span class="lineNum">     806</span> <span class="tlaGNC">          63 :   const QString store = scopePath(QString());</span></span>
 <span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">          63 :   const QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L808"><span class="lineNum">     808</span> <span class="tlaGNC">          63 :   return std::any_of(scopes.cbegin(), scopes.cend(),</span></span>
-<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">         158 :                      [&amp;store](const QString &amp;s) {</span></span>
-<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">         316 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
+<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">         140 :                      [&amp;store](const QString &amp;s) {</span></span>
+<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">         280 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
 <span id="L811"><span class="lineNum">     811</span> <span class="tlaGNC">          63 :                      });</span></span>
 <span id="L812"><span class="lineNum">     812</span>              : }</span>
 <span id="L813"><span class="lineNum">     813</span>              : </span>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 10:23:38</td>
+            <td class="headerValue">2026-11-19 11:32:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -1607,8 +1607,8 @@
 <span id="L1534"><span class="lineNum">    1534</span> <span class="tlaGNC">         115 :     const QFileInfo entry(fileName);</span></span>
 <span id="L1535"><span class="lineNum">    1535</span> <span class="tlaGNC">         229 :     if (entry.isSymLink() || !entry.isFile() ||</span></span>
 <span id="L1536"><span class="lineNum">    1536</span> <span class="tlaGNC">         114 :         Util::isUnderLink(fileName, m_settings.passStore)) {</span></span>
-<span id="L1537"><span class="lineNum">    1537</span> <span class="tlaGNC">           2 :       result.failed &lt;&lt; tr(&quot;%1 is no longer a regular file, or is too large, &quot;</span></span>
-<span id="L1538"><span class="lineNum">    1538</span>              :                           &quot;and was not re-encrypted.&quot;)</span>
+<span id="L1537"><span class="lineNum">    1537</span> <span class="tlaGNC">           2 :       result.failed &lt;&lt; tr(&quot;%1 is no longer a regular file, or lies behind a &quot;</span></span>
+<span id="L1538"><span class="lineNum">    1538</span>              :                           &quot;link, and was not re-encrypted.&quot;)</span>
 <span id="L1539"><span class="lineNum">    1539</span> <span class="tlaGNC">           4 :                            .arg(fileName);</span></span>
 <span id="L1540"><span class="lineNum">    1540</span> <span class="tlaGNC">         226 :     } else if (getKeysFromFile(fileName) != gpgId) {</span></span>
 <span id="L1541"><span class="lineNum">    1541</span> <span class="tlaGNC">         111 :       QString why;</span></span>
@@ -2108,11 +2108,11 @@
 <span id="L2035"><span class="lineNum">    2035</span> <span class="tlaGNC">         256 :   m_transactionOutput.append(out);</span></span>
 <span id="L2036"><span class="lineNum">    2036</span>              : </span>
 <span id="L2037"><span class="lineNum">    2037</span> <span class="tlaGNC">         256 :   if (exitCode == 0) {</span></span>
-<span id="L2038"><span class="lineNum">    2038</span> <span class="tlaGNC">         214 :     if (pid == INVALID) {</span></span>
+<span id="L2038"><span class="lineNum">    2038</span> <span class="tlaGNC">         216 :     if (pid == INVALID) {</span></span>
 <span id="L2039"><span class="lineNum">    2039</span>              :       return;</span>
 <span id="L2040"><span class="lineNum">    2040</span>              :     }</span>
 <span id="L2041"><span class="lineNum">    2041</span>              :   } else {</span>
-<span id="L2042"><span class="lineNum">    2042</span> <span class="tlaGNC">          49 :     while (pid == INVALID) {</span></span>
+<span id="L2042"><span class="lineNum">    2042</span> <span class="tlaGNC">          47 :     while (pid == INVALID) {</span></span>
 <span id="L2043"><span class="lineNum">    2043</span> <span class="tlaGNC">           7 :       id = exec.cancelNext();</span></span>
 <span id="L2044"><span class="lineNum">    2044</span> <span class="tlaGNC">           7 :       if (id == -1) {</span></span>
 <span id="L2045"><span class="lineNum">    2045</span>              :         //  this is probably irrecoverable and shall not happen</span>
