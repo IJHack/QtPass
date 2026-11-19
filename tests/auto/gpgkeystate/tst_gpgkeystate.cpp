@@ -391,6 +391,21 @@ void tst_gpgkeystate::parseV5V6PrimaryFingerprints() {
   const QList<UserInfo> subkeyUsers = parseGpgColonOutput(subkeyListing, false);
   QCOMPARE(subkeyUsers.size(), 1);
   QCOMPARE(subkeyUsers.first().key_id, QStringLiteral("A1B2C3D4E5F60718"));
+
+  // A designated revoker's rvk record (and a grp record) between pub and fpr
+  // must not stop the primary fingerprint from being taken.
+  const QString revokerListing =
+      QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
+                     "rvk:::22::::::%1:80:\n"
+                     "grp:::::::::%2:\n"
+                     "fpr:::::::::%3:\n"
+                     "uid:u::::1774947438::H::Revoker <rvk@example.org>::::")
+          .arg(QString(40, QLatin1Char('D')), QString(40, QLatin1Char('E')),
+               first);
+  const QList<UserInfo> revokerUsers =
+      parseGpgColonOutput(revokerListing, false);
+  QCOMPARE(revokerUsers.size(), 1);
+  QCOMPARE(revokerUsers.first().key_id, first);
 }
 
 // Tests targeting the const-ref refactor in gpgkeystate.cpp.
