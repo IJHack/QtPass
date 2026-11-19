@@ -4850,6 +4850,34 @@ void tst_mainwindow::profileBoxIsDisabledWhileAnOperationRuns() {
   QVERIFY2(!box->isEnabled(), "no switch while git still runs");
   QTRY_VERIFY_WITH_TIMEOUT(backend->isIdle(), 10000);
   QTRY_VERIFY_WITH_TIMEOUT(box->isEnabled(), 5000);
+
+  // Settings switch stores too: refused the same way while git runs, so
+  // nothing still queued runs in the store picked there.
+  backend->init(busy);
+  backend->GitPull();
+  QVERIFY(!QtPassSettings::backendsIdle());
+  m_window->setUiElementsEnabled(true); // as the watchdog does
+  auto *settings =
+      m_window->findChild<QAction *>(QStringLiteral("actionConfig"));
+  QVERIFY(settings != nullptr && settings->isEnabled());
+  {
+    ModalDriver driver(
+        [](QWidget *w) { QMetaObject::invokeMethod(w, "close"); });
+    settings->trigger();
+    QTRY_COMPARE_WITH_TIMEOUT(driver.seen, 1, 5000);
+    QVERIFY2(driver.boxTitles.value(0) == QStringLiteral("Settings not opened"),
+             qPrintable(driver.seenClasses.join(',')));
+  }
+  QTRY_VERIFY_WITH_TIMEOUT(backend->isIdle(), 10000);
+  backend->init(QtPassSettings::load());
+  {
+    // Idle again: Settings open as before.
+    ModalDriver driver(
+        [](QWidget *w) { QMetaObject::invokeMethod(w, "close"); });
+    settings->trigger();
+    QTRY_COMPARE_WITH_TIMEOUT(driver.seen, 1, 5000);
+    QCOMPARE(driver.seenClasses.value(0), QStringLiteral("ConfigDialog"));
+  }
 #endif
 
   // A content search runs outside the queue: switching leaves grep mode,

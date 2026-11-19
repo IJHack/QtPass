@@ -976,6 +976,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the move, which is not treated as secret: it was printed in the process
   output panel and shown even with "Hide content" on (scan finding
   ANT-2026-R4V358TS)
+- Settings do not open while a `gpg`, `git` or `pass` command still runs
+  or waits, as the profile box already does. A store changed there meanwhile
+  was the one a queued `pass init` from Users re-encrypted, for the
+  recipients chosen for the other store. Settings now wait for a slow push
+  or a PIN prompt to end (scan finding ANT-2026-QBQ5NZBI)
 - "Hide on close" and "Start minimized" hide the window only into a tray
   icon. Without one (the tray icon switched off, or a desktop without a
   system tray) closing the window left QtPass running invisibly, with the

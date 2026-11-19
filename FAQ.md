@@ -293,6 +293,17 @@ under its new name.
 A profile name also cannot contain `/` or `\`: the configuration reads `/` as
 a group separator, and `\` too on Windows.
 
+### Settings won't open: "Settings not opened"
+
+Since 2.0, Settings and the profile box wait until no `gpg`, `git` or `pass`
+command runs or waits. A slow push or a `gpg` that waits for your PIN keeps
+them closed until it is done. If a PIN dialog is open, answer or cancel it,
+then open Settings again.
+
+Why: what is still queued runs with the store and programs that are set when
+it starts. A store changed in Settings meanwhile was the one a pending
+`pass init` re-encrypted, for the recipients you chose for the other store.
+
 ### What happened to WebDAV support?
 
 It was removed in QtPass 2.0. The feature mounted your password store from a
