@@ -888,7 +888,21 @@ void MainWindow::restoreWindow() {
   }
 }
 
-void MainWindow::onConfig() { config(); }
+void MainWindow::onConfig() {
+  // No Settings while anything of the store runs or waits, as with the
+  // profile box (#2071): the store, backend and programs chosen there apply
+  // to what is still queued, so a pending `pass init` re-encrypted the store
+  // just picked for the recipients chosen for the other. Asked of the
+  // backends: the watchdog releases the interface while a slow gpg or git
+  // still runs.
+  if (!QtPassSettings::backendsIdle()) {
+    critical(tr("Settings not opened"),
+             tr("A gpg, Git or pass command is still running or waiting. "
+                "Open the settings again once it has finished."));
+    return;
+  }
+  config();
+}
 
 void MainWindow::showAbout() {
   QMessageBox::about(

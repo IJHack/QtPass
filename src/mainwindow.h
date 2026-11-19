@@ -360,7 +360,10 @@ private slots:
    *        folder, unless it lies behind a link.
    */
   void onUsers();
-  /** @brief Toolbar "Config": config(), ignoring its result. */
+  /**
+   * @brief Toolbar "Config": config(), ignoring its result; refused while
+   *        a backend still runs or waits, as a profile switch is.
+   */
   void onConfig();
   /**
    * @brief Show the About box: version, project link, licence.
