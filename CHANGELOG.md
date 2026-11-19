@@ -167,6 +167,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- With a signing key, a sub-folder list without a generation line (written
+  by `pass`, by the `pass` backend or by QtPass before 2.0) that this device
+  accepted and that is then deleted is refused, as one with a generation
+  already was. Its removal went unnoticed, and new entries in the folder
+  were encrypted to the parent folder's recipients without a message (scan
+  finding ANT-2026-SKPKV41U)
 - A signed `.gpg-id` is bound to its store, not only to its folder: a
   third signed comment line, `# QtPass-GpgId-Store: <id>`, names the store,
   each device remembers the ID it first saw per store (in

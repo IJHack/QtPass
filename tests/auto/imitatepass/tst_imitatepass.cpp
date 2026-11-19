@@ -4522,6 +4522,26 @@ void tst_imitatepass::skippedGpgIdNamesOnlyAListThatWasPassedOver() {
   QVERIFY(removed.has_value());
   QCOMPARE(QDir::cleanPath(*removed), QDir::cleanPath(secretList));
 
+  // The same for a headerless list (pass, or QtPass before 2.0), which
+  // has no generation to remember: accepted once, its removal is named too.
+  QVERIFY(root.mkpath(QStringLiteral("legacy")));
+  const QString legacyList = root.filePath(QStringLiteral("legacy/.gpg-id"));
+  const QString legacyEntry = root.filePath(QStringLiteral("legacy/z.gpg"));
+  {
+    QFile f(legacyList);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("OWNER\n");
+  }
+  QCOMPARE(
+      GpgIdGeneration::accept(legacyList, QByteArrayLiteral("OWNER\n"), store),
+      GpgIdGeneration::Verdict::Accepted);
+  QCOMPARE(Pass::skippedGpgId(legacyEntry, store), std::optional<QString>());
+  QVERIFY(QFile::remove(legacyList));
+  const std::optional<QString> headerless =
+      Pass::skippedGpgId(legacyEntry, store);
+  QVERIFY2(headerless.has_value(), "a removed headerless list is named");
+  QCOMPARE(QDir::cleanPath(*headerless), QDir::cleanPath(legacyList));
+
   // The root's own list is never named: there is no parent to fall back to.
   QCOMPARE(Pass::skippedGpgId(root.filePath(QStringLiteral("y.gpg")), store),
            std::optional<QString>());

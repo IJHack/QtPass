@@ -1062,8 +1062,8 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
     // here cannot be told, so this folder is refused too (fail closed), with
     // the record's own reason for the caller to show.
     QString why;
-    const std::optional<qint64> seen =
-        GpgIdGeneration::remembered(candidate.absoluteFilePath(), &why);
+    const std::optional<bool> seen =
+        GpgIdGeneration::seen(candidate.absoluteFilePath(), &why);
     if (!seen) {
       if (recordError != nullptr) {
         *recordError =
@@ -1074,7 +1074,7 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
       }
       return candidate.absoluteFilePath();
     }
-    if (*seen > 0) {
+    if (*seen) {
       return candidate.absoluteFilePath();
     }
     if (!dir.cdUp()) {

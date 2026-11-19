@@ -325,6 +325,11 @@ struct Transaction {
     return false;
   }
 
+  /// Whether anything is recorded for @p key, a generation 0 included.
+  [[nodiscard]] auto known(const QString &key) const -> bool {
+    return entries->lists.contains(key);
+  }
+
   /// The remembered generation for @p key, 0 when never seen.
   [[nodiscard]] auto generation(const QString &key) const -> qint64 {
     return entries->lists.value(key).generation;
@@ -615,6 +620,15 @@ auto GpgIdGeneration::remembered(const QString &gpgIdFile, QString *error)
   return t.generation(key(gpgIdFile));
 }
 
+auto GpgIdGeneration::seen(const QString &gpgIdFile, QString *error)
+    -> std::optional<bool> {
+  Transaction t;
+  if (!t.ok(error)) {
+    return std::nullopt;
+  }
+  return t.known(key(gpgIdFile));
+}
+
 auto GpgIdGeneration::boundToItsFolder(const QString &gpgIdFile,
                                        const Header &header,
                                        const QString &storeRoot, QString *error)
@@ -741,7 +755,11 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
   if (generation == 0) {
     // pass writes headerless lists on every change, so differing bytes here
     // are normal, not a conflict. Generation 0 has no freshness to keep
-    // (SECURITY.md).
+    // (SECURITY.md). Still noted, once, so that a removal of the list is
+    // told apart from a folder that never had one (Pass::skippedGpgId()).
+    if (!t.known(k) && !t.remember(k, 0, QString(), error)) {
+      return Verdict::RecordUnavailable;
+    }
     return pinHere() ? Verdict::Accepted : Verdict::RecordUnavailable;
   }
   if (generation == last) {
