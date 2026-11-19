@@ -944,8 +944,13 @@ auto ImitatePass::decryptEntry(const QString &fileName, QByteArray *plaintext,
   // The cap is on what decrypts; the ciphertext of an entry just under it
   // is a little larger (packet headers, one session key per recipient).
   constexpr qint64 kCiphertextMargin = 1024LL * 1024;
+  // That read refuses a link only as the last part of the name; a folder
+  // on the way that became a link is checked here.
   const std::optional<QByteArray> ciphertext =
-      Util::readRegularFile(fileName, kMaxPlaintextBytes + kCiphertextMargin);
+      Util::isUnderLink(fileName, m_settings.passStore)
+          ? std::nullopt
+          : Util::readRegularFile(fileName,
+                                  kMaxPlaintextBytes + kCiphertextMargin);
   if (!ciphertext) {
     qCDebug(lcQtPass) << "Not a regular file any more, or too large:"
                       << fileName;
@@ -1515,11 +1520,13 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
       }
       currentDir = fileDir;
     }
-    // A pull since the listing may have put a link under the name. gpg
-    // given the name reads the target, and one already encrypted for these
-    // recipients would pass the comparison without a word.
+    // A pull since the listing may have put a link under the name, or in
+    // place of a folder on the way to it. gpg given the name reads the
+    // target, and one already encrypted for these recipients would pass the
+    // comparison without a word.
     const QFileInfo entry(fileName);
-    if (entry.isSymLink() || !entry.isFile()) {
+    if (entry.isSymLink() || !entry.isFile() ||
+        Util::isUnderLink(fileName, m_settings.passStore)) {
       result.failed << tr("%1 is no longer a regular file, or is too large, "
                           "and was not re-encrypted.")
                            .arg(fileName);
