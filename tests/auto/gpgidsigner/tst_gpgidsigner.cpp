@@ -218,6 +218,17 @@ void tst_gpgidsigner::haveSecretKeyReadsTheKeyRecords() {
                            "fpr:::::::::%2:\n")
                 .arg(kPrimary, kFpr);
   QVERIFY2(!byPrimary.haveSecretKey(), "no secret part anywhere");
+  // A revoked or expired primary key: gpg signs with none of its subkeys,
+  // configured by the primary's fingerprint or by the subkey's.
+  for (const QString &state : {QStringLiteral("r"), QStringLiteral("e")}) {
+    gpg.out = QStringLiteral("sec:%3:4096:1:A:1::::::cSC:::#:\n"
+                             "fpr:::::::::%1:\n"
+                             "ssb:u:4096:1:B:1::::::s:::+:\n"
+                             "fpr:::::::::%2:\n")
+                  .arg(kPrimary, kFpr, state);
+    QVERIFY2(!byPrimary.haveSecretKey(), qPrintable(state));
+    QVERIFY2(!signer.haveSecretKey(), qPrintable(state));
+  }
 
   const GpgIdSigner none(QStringLiteral("gpg"), {}, gpg.exec());
   QVERIFY2(!none.haveSecretKey(), "nothing configured, nothing to sign with");
