@@ -364,6 +364,11 @@ void tst_gpgidgeneration::acceptTellsTwoListsOfOneGenerationApart() {
   QCOMPARE(GpgIdGeneration::accept(plain, "ALICE\nBOB\n", other.path()),
            GpgIdGeneration::Verdict::Accepted);
   QCOMPARE(GpgIdGeneration::remembered(plain), std::optional<qint64>(0));
+  // Still seen: its removal is not a folder that never had a list.
+  QCOMPARE(GpgIdGeneration::seen(plain), std::optional<bool>(true));
+  QCOMPARE(GpgIdGeneration::seen(
+               QDir(other.path()).filePath(QStringLiteral("never/.gpg-id"))),
+           std::optional<bool>(false));
 }
 
 /**

@@ -156,6 +156,17 @@ public:
       -> std::optional<qint64>;
 
   /**
+   * @brief Whether this device accepted or wrote a list at @p gpgIdFile
+   * before, of any generation: a headerless list (generation 0) counts too,
+   * so its removal is told apart from a folder that never had one.
+   * @param gpgIdFile The `.gpg-id`.
+   * @param error Receives why the record could not be read, if not null.
+   * @return Whether it was seen; nothing when the record cannot be read.
+   */
+  static auto seen(const QString &gpgIdFile, QString *error = nullptr)
+      -> std::optional<bool>;
+
+  /**
    * @brief The outcome of accept(). Only Accepted means the list may be
    * used; the others say why not, and Rollback alone is an authentic list
    * of this folder.
