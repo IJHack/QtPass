@@ -966,8 +966,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the native backend's own commands, and hands each entry to `gpg` as bytes
   read without following a link. A pull that put a link under an entry's
   name after the run listed it had the file the link points to decrypted
-  and re-encrypted for that folder's recipients (scan finding
-  ANT-2026-C1CUR2X8)
+  and re-encrypted for that folder's recipients. Such a name is now skipped
+  and named in the summary, also when the target already had the folder's
+  recipients (scan finding ANT-2026-C1CUR2X8)
 - With the native backend, an entry or folder moved into a folder with
   other recipients is re-encrypted for them, as `pass mv` does: only what
   moved, once the move has run. It stayed readable for the recipients of

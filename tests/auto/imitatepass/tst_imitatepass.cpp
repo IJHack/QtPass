@@ -654,6 +654,7 @@ private Q_SLOTS:
   void recoveryReportsManyLeftoversInOneBox();
   void reencryptWaitsForTheOtherBackend();
   void reencryptRefusesAnEntryThatBecameALink();
+  void reencryptReportsALinkWhoseTargetHasTheRecipients();
   void reencryptSkipsSymlinkedEntries();
   void removeFolderWithoutGitLeavesLinkTargetsAlone();
   void reencryptRefusesAFolderBehindALink();
@@ -3958,6 +3959,68 @@ void tst_imitatepass::reencryptRefusesAnEntryThatBecameALink() {
            qPrintable(why));
   QVERIFY2(loggedCalls(logPath).isEmpty(), "gpg never saw the link");
   QVERIFY(QFileInfo(entry).isSymLink());
+  QFile check(outside);
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
+#endif
+}
+
+/**
+ * @brief A name that became a link after the listing is reported, even when
+ *        the target is already encrypted for the folder's recipients: gpg
+ *        reads a link given by name, so the recipient comparison alone would
+ *        pass it over without a word.
+ */
+void tst_imitatepass::reencryptReportsALinkWhoseTargetHasTheRecipients() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 2));
+  const QString outside = QDir(outsideDir.path()).filePath("bank.gpg");
+  {
+    QFile f(outside);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("somebody else's ciphertext");
+  }
+  // Every entry lists the folder's recipient. The first listing puts a link
+  // under the other entry's name: a pull landing while the run works.
+  const QString logPath = QDir(outsideDir.path()).filePath("gpg-argv.log");
+  const QString marker = QDir(outsideDir.path()).filePath("linked");
+  const QString script = QDir(outsideDir.path()).filePath("list-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "for a in \"$@\"; do last=\"$a\"; done\n"
+        << "if [ ! -e '" << marker << "' ]; then\n"
+        << "  : > '" << marker << "'\n"
+        << "  for e in '" << storeDir.path() << "'/entry*.gpg; do\n"
+        << "    [ \"$e\" = \"$last\" ] || ln -sf '" << outside << "' \"$e\"\n"
+        << "  done\n"
+        << "fi\n"
+        << "echo 'gpg: public key is 0123456789ABCDEF' >&2\n"
+        << "exit 0\n";
+  }
+  QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                            QFile::ExeOwner));
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), script));
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCoreApplication::processEvents();
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(rec.criticals.first().contains("no longer a regular file"),
+           qPrintable(rec.criticals.first()));
+  QCOMPARE(loggedCalls(logPath).size(), 1);
   QFile check(outside);
   QVERIFY(check.open(QIODevice::ReadOnly));
   QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
