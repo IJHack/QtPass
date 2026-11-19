@@ -92,7 +92,8 @@ auto tst_profileinit::signingGpg(const QString &signedLog,
   return QStringLiteral(
              "case \" $* \" in *' --list-secret-keys '*)\n"
              "  for a in \"$@\"; do last=\"$a\"; done\n"
-             "  printf '[GNUPG:] KEY_CONSIDERED %s 0\\n' \"$last\"\n"
+             "  printf 'sec:u:4096:1:X:1::::::scSC:::+:\\nfpr:::::::::%s:\\n' "
+             "\"$last\"\n"
              "  exit 0;;\n"
              "esac\n"
              "out=''\nprev=''\nmode=sign\n"
@@ -120,7 +121,8 @@ auto tst_profileinit::secretKeyOnlyGpg() -> QByteArray {
   return QByteArrayLiteral(
       "case \" $* \" in *' --list-secret-keys '*)\n"
       "  for a in \"$@\"; do last=\"$a\"; done\n"
-      "  printf '[GNUPG:] KEY_CONSIDERED %s 0\\n' \"$last\"\n"
+      "  printf 'sec:u:4096:1:X:1::::::scSC:::+:\\nfpr:::::::::%s:\\n' "
+      "\"$last\"\n"
       "  exit 0;;\n"
       "esac\n"
       "echo 'gpg: signing failed' >&2\n"

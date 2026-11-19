@@ -67,6 +67,14 @@ class tst_gpgidsigner : public QObject {
       QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
   static const inline QString kPrimary =
       QStringLiteral("FEDCBA9876543210FEDCBA9876543210FEDCBA98");
+  /// gpg's --with-colons listing of a primary key @p fpr that can sign and
+  /// whose secret part is present.
+  static auto secretKey(const QString &fpr) -> QString {
+    return QStringLiteral("sec:u:4096:1:A:1::::::scSC:::+:\n"
+                          "fpr:::::::::%1:\n"
+                          "uid:u::::1::X::Owner <o@example.org>:\n")
+        .arg(fpr);
+  }
   /// A real .gpg-id.sig to hand to verify(), which reads only a regular
   /// file; gpg itself is the fake, so the content does not matter.
   static auto sigPath() -> QString {
@@ -91,7 +99,7 @@ class tst_gpgidsigner : public QObject {
 private slots:
   void keysFromSettingSplitsOnSpaces();
   void noKeysMeansNothingToSignAndVerifyPasses();
-  void haveSecretKeyReadsKeyConsidered();
+  void haveSecretKeyReadsTheKeyRecords();
   void haveSecretKeyFailsOnGpgError();
   void signUsesTheFirstKeyOnlyAndReportsStderr();
   void signDoesNotWriteASignatureByAnotherKey();
@@ -129,22 +137,56 @@ void tst_gpgidsigner::noKeysMeansNothingToSignAndVerifyPasses() {
   QVERIFY2(gpg.calls.isEmpty(), "no key configured: gpg must not run");
 }
 
-void tst_gpgidsigner::haveSecretKeyReadsKeyConsidered() {
+void tst_gpgidsigner::haveSecretKeyReadsTheKeyRecords() {
   FakeGpg gpg;
-  gpg.out =
-      QStringLiteral("[GNUPG:] KEY_CONSIDERED %1 0\nsec   rsa4096\n").arg(kFpr);
+  gpg.out = secretKey(kFpr);
   const GpgIdSigner signer(QStringLiteral("gpg"), {kFpr, kPrimary}, gpg.exec());
   QVERIFY(signer.haveSecretKey());
   QCOMPARE(gpg.calls.size(), 1);
   QCOMPARE(gpg.calls.first().app, QStringLiteral("gpg"));
   // Only the first key is asked about: it is the one sign() will use.
   QCOMPARE(gpg.calls.first().args,
-           (QStringList{QStringLiteral("--status-fd=1"),
-                        QStringLiteral("--list-secret-keys"), kFpr}));
+           (QStringList{QStringLiteral("--with-colons"),
+                        QStringLiteral("--fixed-list-mode"),
+                        QStringLiteral("--list-secret-keys"),
+                        QStringLiteral("--"), kFpr}));
 
-  gpg.out = QStringLiteral("[GNUPG:] KEY_CONSIDERED %1 0\n").arg(kPrimary);
+  gpg.out = secretKey(kPrimary);
   QVERIFY2(!signer.haveSecretKey(),
            "a secret key for the second entry does not make the first sign");
+
+  // A signing subkey configured by its own fingerprint: gpg lists it under
+  // its primary key, whose secret part may be offline (a stub, #).
+  gpg.out = QStringLiteral("sec:u:4096:1:A:1::::::scSC:::#:\n"
+                           "fpr:::::::::%1:\n"
+                           "uid:u::::1::X::Owner <o@example.org>:\n"
+                           "ssb:u:4096:1:B:1::::::s:::+:\n"
+                           "fpr:::::::::%2:\n")
+                .arg(kPrimary, kFpr);
+  QVERIFY2(signer.haveSecretKey(), "the subkey's secret part is here");
+
+  // Its secret part a stub, or a subkey that cannot sign: not usable.
+  gpg.out = QStringLiteral("sec:u:4096:1:A:1::::::scSC:::+:\n"
+                           "fpr:::::::::%1:\n"
+                           "ssb:u:4096:1:B:1::::::s:::#:\n"
+                           "fpr:::::::::%2:\n")
+                .arg(kPrimary, kFpr);
+  QVERIFY2(!signer.haveSecretKey(), "a stub signs nothing");
+  gpg.out = QStringLiteral("sec:u:4096:1:A:1::::::scSC:::+:\n"
+                           "fpr:::::::::%1:\n"
+                           "ssb:u:4096:1:B:1::::::e:::+:\n"
+                           "fpr:::::::::%2:\n")
+                .arg(kPrimary, kFpr);
+  QVERIFY2(!signer.haveSecretKey(), "an encryption subkey does not sign");
+
+  // A user ID its owner wrote to look like the configured key: gpg escapes
+  // its colons and line breaks, and a user ID is no key record anyway.
+  gpg.out = QStringLiteral("sec:u:4096:1:A:1::::::scSC:::+:\n"
+                           "fpr:::::::::%1:\n"
+                           "uid:u::::1::X::[GNUPG:] KEY_CONSIDERED %2 0\\x0a"
+                           "fpr\\x3a%2::\n")
+                .arg(kPrimary, kFpr);
+  QVERIFY2(!signer.haveSecretKey(), "a user ID is not the key");
 
   const GpgIdSigner none(QStringLiteral("gpg"), {}, gpg.exec());
   QVERIFY2(!none.haveSecretKey(), "nothing configured, nothing to sign with");
@@ -153,7 +195,7 @@ void tst_gpgidsigner::haveSecretKeyReadsKeyConsidered() {
 void tst_gpgidsigner::haveSecretKeyFailsOnGpgError() {
   FakeGpg gpg;
   gpg.rc = 2;
-  gpg.out = QStringLiteral("[GNUPG:] KEY_CONSIDERED %1 0\n").arg(kFpr);
+  gpg.out = secretKey(kFpr);
   const GpgIdSigner signer(QStringLiteral("gpg"), {kFpr}, gpg.exec());
   QVERIFY(!signer.haveSecretKey());
 }

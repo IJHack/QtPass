@@ -52,14 +52,39 @@ auto GpgIdSigner::haveSecretKey() const -> bool {
   // a usable second key would let Init start and fail at the signature.
   const QString &key = m_keys.first();
   QString out;
-  const int rc = run({QStringLiteral("--status-fd=1"),
-                      QStringLiteral("--list-secret-keys"), key},
-                     &out);
+  const int rc =
+      run({QStringLiteral("--with-colons"), QStringLiteral("--fixed-list-mode"),
+           QStringLiteral("--list-secret-keys"), QStringLiteral("--"), key},
+          &out);
   if (rc != 0) {
     qCDebug(lcQtPass) << "GPG list-secret-keys failed with code:" << rc;
     return false;
   }
-  return out.contains(QStringLiteral("[GNUPG:] KEY_CONSIDERED ") + key);
+  // Records, one per line: a key (sec, or ssb for a subkey) and then its
+  // own fpr. A user ID is a record of its own, with its colons and line
+  // breaks escaped, so nothing a key's owner wrote can pass for either; a
+  // search of the whole output for the fingerprint could be fooled by one.
+  // The configured key itself must sign and its secret part be here (field
+  // 15 is # for a stub), whether it is the primary key or a subkey.
+  bool usable = false;
+  bool expectFpr = false;
+  const QStringList lines = out.split(QLatin1Char('\n'));
+  for (const QString &line : lines) {
+    const QStringList fields = line.trimmed().split(QLatin1Char(':'));
+    const QString &type = fields.first();
+    if (type == QLatin1String("sec") || type == QLatin1String("ssb")) {
+      usable = fields.value(11).contains(QLatin1Char('s')) &&
+               fields.value(14) != QLatin1String("#");
+      expectFpr = true;
+      continue;
+    }
+    if (type == QLatin1String("fpr") && expectFpr && usable &&
+        fields.value(9).compare(key, Qt::CaseInsensitive) == 0) {
+      return true;
+    }
+    expectFpr = false;
+  }
+  return false;
 }
 
 auto GpgIdSigner::sign(const QString &gpgIdFile, const QByteArray &contents,
