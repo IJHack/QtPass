@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 14:33:54</td>
+            <td class="headerValue">2026-11-19 14:55:24</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">40.0&nbsp;%</td>
@@ -272,7 +272,7 @@
 <span id="L199"><span class="lineNum">     199</span>              :    * pending) from its own.</span>
 <span id="L200"><span class="lineNum">     200</span>              :    * @return The number of inserts awaiting their report.</span>
 <span id="L201"><span class="lineNum">     201</span>              :    */</span>
-<span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">          32 :   [[nodiscard]] auto insertsPending() const -&gt; int { return m_insertsPending; }</span></span>
+<span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">          34 :   [[nodiscard]] auto insertsPending() const -&gt; int { return m_insertsPending; }</span></span>
 <span id="L203"><span class="lineNum">     203</span>              :   /**</span>
 <span id="L204"><span class="lineNum">     204</span>              :    * @brief Remove password file or directory.</span>
 <span id="L205"><span class="lineNum">     205</span>              :    * @param file Path to remove.</span>
@@ -609,7 +609,7 @@
 <span id="L536"><span class="lineNum">     536</span>              :    * flight. A dialog reads insertsPending() before its own Insert() to learn</span>
 <span id="L537"><span class="lineNum">     537</span>              :    * how many earlier reports are not its own.</span>
 <span id="L538"><span class="lineNum">     538</span>              :    */</span>
-<span id="L539"><span class="lineNum">     539</span> <span class="tlaGNC">          99 :   void queueInsert() { ++m_insertsPending; }</span></span>
+<span id="L539"><span class="lineNum">     539</span> <span class="tlaGNC">         101 :   void queueInsert() { ++m_insertsPending; }</span></span>
 <span id="L540"><span class="lineNum">     540</span>              :   /** @brief What refuseLinkedPath() judges. */</span>
 <span id="L541"><span class="lineNum">     541</span>              :   enum class LinkScope {</span>
 <span id="L542"><span class="lineNum">     542</span>              :     /** @brief The entry itself and every folder above it in the store. */</span>

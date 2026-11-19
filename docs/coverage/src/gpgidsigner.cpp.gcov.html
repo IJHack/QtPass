@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 14:33:54</td>
+            <td class="headerValue">2026-11-19 14:55:24</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -90,27 +90,27 @@
 <span id="L17"><span class="lineNum">      17</span>              : </span>
 <span id="L18"><span class="lineNum">      18</span>              : #include &quot;qtpasslogging.h&quot;</span>
 <span id="L19"><span class="lineNum">      19</span>              : </span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         617 : GpgIdSigner::GpgIdSigner(QString gpgExecutable, QStringList signingKeys,</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         617 :                          Exec exec)</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         619 : GpgIdSigner::GpgIdSigner(QString gpgExecutable, QStringList signingKeys,</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         619 :                          Exec exec)</span></span>
 <span id="L22"><span class="lineNum">      22</span>              :     : m_gpg(std::move(gpgExecutable)), m_keys(std::move(signingKeys)),</span>
 <span id="L23"><span class="lineNum">      23</span>              :       m_exec(std::move(exec)) {</span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         617 :   if (!m_exec) {</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         619 :   if (!m_exec) {</span></span>
 <span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">          52 :     m_exec = [](const QString &amp;app, const QStringList &amp;args,</span></span>
 <span id="L26"><span class="lineNum">      26</span>              :                 const QString &amp;input, QString *out, QString *err) {</span>
 <span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           9 :       return Executor::executeBlocking(app, args, input, out, err);</span></span>
 <span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">          52 :     };</span></span>
 <span id="L29"><span class="lineNum">      29</span>              :   }</span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         617 : }</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         619 : }</span></span>
 <span id="L31"><span class="lineNum">      31</span>              : </span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         604 : auto GpgIdSigner::keysFromSetting(const QString &amp;passSigningKey)</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         606 : auto GpgIdSigner::keysFromSetting(const QString &amp;passSigningKey)</span></span>
 <span id="L33"><span class="lineNum">      33</span>              :     -&gt; QStringList {</span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         604 :   QStringList keys = passSigningKey.split(QLatin1Char(' '), Qt::SkipEmptyParts);</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         606 :   QStringList keys = passSigningKey.split(QLatin1Char(' '), Qt::SkipEmptyParts);</span></span>
 <span id="L35"><span class="lineNum">      35</span>              :   // gpg prints fingerprints in upper case in its status lines; accept them</span>
 <span id="L36"><span class="lineNum">      36</span>              :   // typed either way.</span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">        1385 :   for (QString &amp;key : keys) {</span></span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">        1389 :   for (QString &amp;key : keys) {</span></span>
 <span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         177 :     key = key.toUpper();</span></span>
 <span id="L39"><span class="lineNum">      39</span>              :   }</span>
-<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         604 :   return keys;</span></span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         606 :   return keys;</span></span>
 <span id="L41"><span class="lineNum">      41</span>              : }</span>
 <span id="L42"><span class="lineNum">      42</span>              : </span>
 <span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">         206 : auto GpgIdSigner::run(const QStringList &amp;args, QString *out, QString *err,</span></span>
