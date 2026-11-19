@@ -300,7 +300,10 @@ command runs or waits. A slow push or a `gpg` that waits for your PIN keeps
 them closed until it is done. If a PIN dialog is open, answer or cancel it,
 then open Settings again. If the command never ends (`git` waiting for a
 password, a `gpg` that hangs), restart QtPass: Settings open at once, so you
-can fix the path or option that caused it.
+can fix the path or option that caused it. A restart forgets a re-encryption
+that was still to run, and the hold on automatic pushes that goes with it: if
+you moved entries into a folder with other recipients, re-encrypt that folder
+(Users dialog, or `pass init` again) before you push.
 
 Why: what is still queued runs with the store and programs that are set when
 it starts. A store changed in Settings meanwhile was the one a pending
