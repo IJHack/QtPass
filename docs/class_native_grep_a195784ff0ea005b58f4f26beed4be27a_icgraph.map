@@ -41,7 +41,7 @@
 <area shape="poly" id="edge32_Node000006_Node000022" title=" " alt="" coords="2258,1536,2124,1524,2050,1510,1977,1492,1903,1462,1842,1429,1842,1424,1905,1458,1978,1487,2051,1505,2125,1518,2263,1535"/>
 <area shape="rect" id="Node000008" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="300,1106,496,1134"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1153,1547,1116,1536,1004,1489,892,1434,785,1375,685,1316,519,1208,420,1137,418,1132,522,1203,688,1311,788,1371,895,1429,1006,1484,1118,1531,1159,1546"/>
-<area shape="rect" id="Node000010" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="868,1360,1038,1387"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="868,1360,1038,1387"/>
 <area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="1141,1546,1115,1536,1066,1500,1022,1459,964,1390,965,1385,1026,1456,1069,1496,1118,1531,1147,1546"/>
 <area shape="poly" id="edge8_Node000008_Node000008" title=" " alt="" coords="444,1092,429,1087,398,1085,369,1087,353,1092,349,1097,357,1105,351,1106,344,1097,350,1088,368,1082,398,1080,430,1082,449,1090"/>
 <area shape="rect" id="Node000009" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,506,239,534"/>

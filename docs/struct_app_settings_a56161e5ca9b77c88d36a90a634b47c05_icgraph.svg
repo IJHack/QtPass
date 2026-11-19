@@ -877,7 +877,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" target="_top" xlink:title="Toolbar &quot;Config&quot;: config(), ignoring its result.">
+<g id="a_Node000012"><a xlink:href="class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" target="_top" xlink:title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,...">
 <polygon fill="white" stroke="#666666" points="745.75,-1903.66 618.75,-1903.66 618.75,-1882.91 745.75,-1882.91 745.75,-1903.66"/>
 <text xml:space="preserve" text-anchor="middle" x="682.25" y="-1890.16" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onConfig</text>
 </a>

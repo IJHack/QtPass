@@ -57,7 +57,7 @@
 <area shape="rect" id="Node000027" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="Handle a click on an item in the tree view." alt="" coords="1876,464,2069,509"/>
 <area shape="poly" id="edge46_Node000015_Node000027" title=" " alt="" coords="2216,685,2001,512,2003,507,2221,686"/>
 <area shape="poly" id="edge26_Node000016_Node000003" title=" " alt="" coords="1049,733,816,725,531,705,484,700,483,695,531,700,816,719,1055,731"/>
-<area shape="rect" id="Node000017" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,619,980,647"/>
+<area shape="rect" id="Node000017" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="810,619,980,647"/>
 <area shape="poly" id="edge27_Node000016_Node000017" title=" " alt="" coords="1091,715,931,650,932,645,1096,714"/>
 <area shape="poly" id="edge28_Node000017_Node000011" title=" " alt="" coords="792,634,763,636,762,631,797,633"/>
 <area shape="poly" id="edge31_Node000018_Node000003" title=" " alt="" coords="1876,774,1665,801,1543,810,1420,813,894,813,824,810,753,800,617,769,500,732,419,701,419,696,502,727,618,764,754,795,824,804,894,808,1420,808,1542,804,1665,795,1870,775"/>

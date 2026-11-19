@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 01:36:10</td>
+            <td class="headerValue">2026-11-19 02:03:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -202,11 +202,11 @@
 <span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">           4 :   executeGit(GIT_INIT, {&quot;init&quot;, pgit(m_settings.passStore)});</span></span>
 <span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L131"><span class="lineNum">     131</span>              : </span>
-<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">           6 : void ImitatePass::GitPull() {</span></span>
-<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">           6 :   if (gitReady()) {</span></span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">          24 :     executeGit(GIT_PULL, {&quot;pull&quot;});</span></span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">           7 : void ImitatePass::GitPull() {</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">           7 :   if (gitReady()) {</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">          28 :     executeGit(GIT_PULL, {&quot;pull&quot;});</span></span>
 <span id="L135"><span class="lineNum">     135</span>              :   }</span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">           6 : }</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">           7 : }</span></span>
 <span id="L137"><span class="lineNum">     137</span>              : </span>
 <span id="L138"><span class="lineNum">     138</span>              : // Blocks until git finishes.</span>
 <span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">           4 : void ImitatePass::GitPull_b() {</span></span>
@@ -1997,31 +1997,31 @@
 <span id="L1924"><span class="lineNum">    1924</span>              : </span>
 <span id="L1925"><span class="lineNum">    1925</span>              : // Tells the user once per operation why git was skipped, so the store</span>
 <span id="L1926"><span class="lineNum">    1926</span>              : // silently drifting from git does not go unnoticed.</span>
-<span id="L1927"><span class="lineNum">    1927</span> <span class="tlaGNC">         201 : auto ImitatePass::gitReady() -&gt; bool {</span></span>
-<span id="L1928"><span class="lineNum">    1928</span> <span class="tlaGNC">         201 :   if (m_settings.useGit &amp;&amp; m_settings.gitExecutable.isEmpty()) {</span></span>
+<span id="L1927"><span class="lineNum">    1927</span> <span class="tlaGNC">         202 : auto ImitatePass::gitReady() -&gt; bool {</span></span>
+<span id="L1928"><span class="lineNum">    1928</span> <span class="tlaGNC">         202 :   if (m_settings.useGit &amp;&amp; m_settings.gitExecutable.isEmpty()) {</span></span>
 <span id="L1929"><span class="lineNum">    1929</span> <span class="tlaGNC">           8 :     emit statusMsg(tr(&quot;Git executable not configured, skipping git&quot;), 3000);</span></span>
 <span id="L1930"><span class="lineNum">    1930</span> <span class="tlaGNC">           8 :     return false;</span></span>
 <span id="L1931"><span class="lineNum">    1931</span>              :   }</span>
 <span id="L1932"><span class="lineNum">    1932</span>              :   return m_settings.useGit;</span>
 <span id="L1933"><span class="lineNum">    1933</span>              : }</span>
 <span id="L1934"><span class="lineNum">    1934</span>              : </span>
-<span id="L1935"><span class="lineNum">    1935</span> <span class="tlaGNC">          98 : void ImitatePass::executeGit(PROCESS id, const QStringList &amp;args, QString input,</span></span>
+<span id="L1935"><span class="lineNum">    1935</span> <span class="tlaGNC">          99 : void ImitatePass::executeGit(PROCESS id, const QStringList &amp;args, QString input,</span></span>
 <span id="L1936"><span class="lineNum">    1936</span>              :                              bool readStdout, bool readStderr) {</span>
 <span id="L1937"><span class="lineNum">    1937</span>              :   // Callers check gitReady() first; an empty executable that still gets here</span>
 <span id="L1938"><span class="lineNum">    1938</span>              :   // is reported by the Executor instead of wedging the queue (#1682).</span>
-<span id="L1939"><span class="lineNum">    1939</span> <span class="tlaGNC">          98 :   executeWrapper(id, m_settings.gitExecutable, args, std::move(input),</span></span>
+<span id="L1939"><span class="lineNum">    1939</span> <span class="tlaGNC">          99 :   executeWrapper(id, m_settings.gitExecutable, args, std::move(input),</span></span>
 <span id="L1940"><span class="lineNum">    1940</span>              :                  readStdout, readStderr);</span>
-<span id="L1941"><span class="lineNum">    1941</span> <span class="tlaGNC">          98 : }</span></span>
+<span id="L1941"><span class="lineNum">    1941</span> <span class="tlaGNC">          99 : }</span></span>
 <span id="L1942"><span class="lineNum">    1942</span>              : </span>
 <span id="L1943"><span class="lineNum">    1943</span>              : // Only PASS_* processes reach Pass::finished, so to the interface this looks</span>
 <span id="L1944"><span class="lineNum">    1944</span>              : // the same as RealPass.</span>
-<span id="L1945"><span class="lineNum">    1945</span> <span class="tlaGNC">         250 : void ImitatePass::finished(int id, int exitCode, const QString &amp;out,</span></span>
+<span id="L1945"><span class="lineNum">    1945</span> <span class="tlaGNC">         251 : void ImitatePass::finished(int id, int exitCode, const QString &amp;out,</span></span>
 <span id="L1946"><span class="lineNum">    1946</span>              :                            const QString &amp;err) {</span>
-<span id="L1947"><span class="lineNum">    1947</span> <span class="tlaGNC">         250 :   qCDebug(lcQtPass) &lt;&lt; &quot;Imitate Pass&quot;;</span></span>
+<span id="L1947"><span class="lineNum">    1947</span> <span class="tlaGNC">         251 :   qCDebug(lcQtPass) &lt;&lt; &quot;Imitate Pass&quot;;</span></span>
 <span id="L1948"><span class="lineNum">    1948</span>              :   QString error = err;</span>
 <span id="L1949"><span class="lineNum">    1949</span>              :   // A move's git mv runs first in its transaction, so in order: the first</span>
 <span id="L1950"><span class="lineNum">    1950</span>              :   // pending move without an answer is this one's.</span>
-<span id="L1951"><span class="lineNum">    1951</span> <span class="tlaGNC">         250 :   if (id == GIT_MOVE) {</span></span>
+<span id="L1951"><span class="lineNum">    1951</span> <span class="tlaGNC">         251 :   if (id == GIT_MOVE) {</span></span>
 <span id="L1952"><span class="lineNum">    1952</span> <span class="tlaGNC">          16 :     for (PendingMove &amp;move : m_pendingMoves) {</span></span>
 <span id="L1953"><span class="lineNum">    1953</span> <span class="tlaGNC">          16 :       if (!move.landed) {</span></span>
 <span id="L1954"><span class="lineNum">    1954</span> <span class="tlaGNC">          16 :         move.landed = exitCode == 0;</span></span>
@@ -2029,7 +2029,7 @@
 <span id="L1956"><span class="lineNum">    1956</span>              :       }</span>
 <span id="L1957"><span class="lineNum">    1957</span>              :     }</span>
 <span id="L1958"><span class="lineNum">    1958</span>              :   }</span>
-<span id="L1959"><span class="lineNum">    1959</span> <span class="tlaGNC">         250 :   if (id == PASS_INSERT &amp;&amp; !m_pendingInserts.isEmpty()) {</span></span>
+<span id="L1959"><span class="lineNum">    1959</span> <span class="tlaGNC">         251 :   if (id == PASS_INSERT &amp;&amp; !m_pendingInserts.isEmpty()) {</span></span>
 <span id="L1960"><span class="lineNum">    1960</span>              :     // Insert()'s gpg step: place the ciphertext before the queued git steps</span>
 <span id="L1961"><span class="lineNum">    1961</span>              :     // run (the executor starts the next item only after this returns). On</span>
 <span id="L1962"><span class="lineNum">    1962</span>              :     // failure it fails like a gpg error: git steps cancelled below.</span>
@@ -2060,15 +2060,15 @@
 <span id="L1987"><span class="lineNum">    1987</span>              :       }</span>
 <span id="L1988"><span class="lineNum">    1988</span>              :     }</span>
 <span id="L1989"><span class="lineNum">    1989</span> <span class="tlaGNC">          85 :   }</span></span>
-<span id="L1990"><span class="lineNum">    1990</span> <span class="tlaGNC">         250 :   PROCESS pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
-<span id="L1991"><span class="lineNum">    1991</span> <span class="tlaGNC">         250 :   m_transactionOutput.append(out);</span></span>
+<span id="L1990"><span class="lineNum">    1990</span> <span class="tlaGNC">         251 :   PROCESS pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
+<span id="L1991"><span class="lineNum">    1991</span> <span class="tlaGNC">         251 :   m_transactionOutput.append(out);</span></span>
 <span id="L1992"><span class="lineNum">    1992</span>              : </span>
-<span id="L1993"><span class="lineNum">    1993</span> <span class="tlaGNC">         250 :   if (exitCode == 0) {</span></span>
-<span id="L1994"><span class="lineNum">    1994</span> <span class="tlaGNC">         209 :     if (pid == INVALID) {</span></span>
+<span id="L1993"><span class="lineNum">    1993</span> <span class="tlaGNC">         251 :   if (exitCode == 0) {</span></span>
+<span id="L1994"><span class="lineNum">    1994</span> <span class="tlaGNC">         211 :     if (pid == INVALID) {</span></span>
 <span id="L1995"><span class="lineNum">    1995</span>              :       return;</span>
 <span id="L1996"><span class="lineNum">    1996</span>              :     }</span>
 <span id="L1997"><span class="lineNum">    1997</span>              :   } else {</span>
-<span id="L1998"><span class="lineNum">    1998</span> <span class="tlaGNC">          48 :     while (pid == INVALID) {</span></span>
+<span id="L1998"><span class="lineNum">    1998</span> <span class="tlaGNC">          47 :     while (pid == INVALID) {</span></span>
 <span id="L1999"><span class="lineNum">    1999</span> <span class="tlaGNC">           7 :       id = exec.cancelNext();</span></span>
 <span id="L2000"><span class="lineNum">    2000</span> <span class="tlaGNC">           7 :       if (id == -1) {</span></span>
 <span id="L2001"><span class="lineNum">    2001</span>              :         //  this is probably irrecoverable and shall not happen</span>
@@ -2078,9 +2078,9 @@
 <span id="L2005"><span class="lineNum">    2005</span> <span class="tlaGNC">           7 :       pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
 <span id="L2006"><span class="lineNum">    2006</span>              :     }</span>
 <span id="L2007"><span class="lineNum">    2007</span>              :   }</span>
-<span id="L2008"><span class="lineNum">    2008</span> <span class="tlaGNC">         205 :   Pass::finished(pid, exitCode, m_transactionOutput, error);</span></span>
-<span id="L2009"><span class="lineNum">    2009</span> <span class="tlaGNC">         205 :   m_transactionOutput.clear();</span></span>
-<span id="L2010"><span class="lineNum">    2010</span> <span class="tlaGNC">         205 :   if (pid == PASS_MOVE &amp;&amp; !m_pendingMoves.isEmpty()) {</span></span>
+<span id="L2008"><span class="lineNum">    2008</span> <span class="tlaGNC">         206 :   Pass::finished(pid, exitCode, m_transactionOutput, error);</span></span>
+<span id="L2009"><span class="lineNum">    2009</span> <span class="tlaGNC">         206 :   m_transactionOutput.clear();</span></span>
+<span id="L2010"><span class="lineNum">    2010</span> <span class="tlaGNC">         206 :   if (pid == PASS_MOVE &amp;&amp; !m_pendingMoves.isEmpty()) {</span></span>
 <span id="L2011"><span class="lineNum">    2011</span> <span class="tlaGNC">          16 :     reencryptMoved(m_pendingMoves.dequeue());</span></span>
 <span id="L2012"><span class="lineNum">    2012</span> <span class="tlaGNC">          16 :     startMovedReencrypts();</span></span>
 <span id="L2013"><span class="lineNum">    2013</span>              :   }</span>
@@ -2098,9 +2098,9 @@
 <span id="L2025"><span class="lineNum">    2025</span> <span class="tlaGNC">         151 :   return Util::copyFileReplacing(output, file, overwrite, error);</span></span>
 <span id="L2026"><span class="lineNum">    2026</span>              : }</span>
 <span id="L2027"><span class="lineNum">    2027</span>              : </span>
-<span id="L2028"><span class="lineNum">    2028</span> <span class="tlaGNC">         260 : void ImitatePass::beforeExecute(PROCESS id) {</span></span>
-<span id="L2029"><span class="lineNum">    2029</span> <span class="tlaGNC">         260 :   m_transaction.transactionAdd(id);</span></span>
-<span id="L2030"><span class="lineNum">    2030</span> <span class="tlaGNC">         260 : }</span></span>
+<span id="L2028"><span class="lineNum">    2028</span> <span class="tlaGNC">         261 : void ImitatePass::beforeExecute(PROCESS id) {</span></span>
+<span id="L2029"><span class="lineNum">    2029</span> <span class="tlaGNC">         261 :   m_transaction.transactionAdd(id);</span></span>
+<span id="L2030"><span class="lineNum">    2030</span> <span class="tlaGNC">         261 : }</span></span>
 <span id="L2031"><span class="lineNum">    2031</span>              : </span>
 <span id="L2032"><span class="lineNum">    2032</span>              : // PCRE, as for RealPass (see Pass::Grep). Runs on a NativeGrep thread; the</span>
 <span id="L2033"><span class="lineNum">    2033</span>              : // result arrives on this thread as finishedGrep.</span>

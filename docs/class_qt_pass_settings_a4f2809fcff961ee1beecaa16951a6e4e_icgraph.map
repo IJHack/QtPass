@@ -19,7 +19,7 @@
 <area shape="rect" id="Node000018" href="$class_main_window.html#a097538a4ac04120ab0995cdfdf657e58" title="Show the content search results in place of the tree, or the tree again." alt="" coords="2418,524,2664,552"/>
 <area shape="poly" id="edge67_Node000006_Node000018" title=" " alt="" coords="3014,772,2571,555,2572,550,3020,773"/>
 <area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="1050,908,979,900,852,884,752,876,654,862,530,830,463,803,410,774,410,769,465,798,532,825,655,857,753,871,853,879,980,894,1055,908"/>
-<area shape="rect" id="Node000008" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,908,980,936"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="810,908,980,936"/>
 <area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="1049,923,980,925,980,920,1055,922"/>
 <area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="792,923,763,925,762,920,797,922"/>
 <area shape="poly" id="edge25_Node000009_Node000002" title=" " alt="" coords="2803,387,2549,1112,2545,1109,2799,390"/>

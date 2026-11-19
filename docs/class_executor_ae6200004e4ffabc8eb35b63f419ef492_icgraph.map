@@ -137,7 +137,7 @@
 <area shape="rect" id="Node000043" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="1623,1218,1818,1246"/>
 <area shape="poly" id="edge55_Node000039_Node000043" title=" " alt="" coords="1923,978,1896,993,1864,1018,1835,1047,1786,1112,1751,1174,1730,1219,1725,1216,1746,1172,1782,1110,1831,1044,1860,1014,1893,988,1928,975"/>
 <area shape="poly" id="edge51_Node000040_Node000004" title=" " alt="" coords="1087,830,843,821,544,801,491,795,488,791,544,796,843,816,1091,827"/>
-<area shape="rect" id="Node000041" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="837,716,1007,743"/>
+<area shape="rect" id="Node000041" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="837,716,1007,743"/>
 <area shape="poly" id="edge52_Node000040_Node000041" title=" " alt="" coords="1127,812,961,746,959,741,1131,810"/>
 <area shape="rect" id="Node000042" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="544,714,775,742"/>
 <area shape="poly" id="edge53_Node000041_Node000042" title=" " alt="" coords="819,730,777,731,774,726,824,727"/>

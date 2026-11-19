@@ -61,7 +61,7 @@
 <area shape="rect" id="Node000013" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="1623,2600,1818,2628"/>
 <area shape="poly" id="edge15_Node000007_Node000013" title=" " alt="" coords="1977,2174,1936,2211,1897,2255,1864,2302,1835,2352,1785,2454,1750,2542,1728,2602,1725,2598,1745,2541,1781,2452,1830,2350,1860,2299,1893,2251,1932,2208,1972,2176"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1086,2077,843,2073,693,2065,544,2053,469,2042,466,2037,544,2048,694,2060,843,2067,1091,2074"/>
-<area shape="rect" id="Node000011" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="837,1959,1007,1987"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="837,1959,1007,1987"/>
 <area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="1126,2056,959,1990,959,1985,1131,2055"/>
 <area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="436,1997,421,1992,391,1990,363,1992,348,1997,344,2002,351,2010,345,2011,338,2002,344,1992,362,1987,391,1985,423,1987,441,1995"/>
 <area shape="rect" id="Node000010" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,2011,239,2039"/>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 01:36:10</td>
+            <td class="headerValue">2026-11-19 02:03:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -108,14 +108,14 @@
 <span id="L35"><span class="lineNum">      35</span>              :    * @param value &quot;true&quot;, &quot;false&quot; or anything else (unset).</span>
 <span id="L36"><span class="lineNum">      36</span>              :    * @return The flag, or nullopt when unset.</span>
 <span id="L37"><span class="lineNum">      37</span>              :    */</span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         204 :   static auto flagFromString(const QString &amp;value) -&gt; std::optional&lt;bool&gt; {</span></span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">         204 :     if (value == QLatin1String(&quot;true&quot;)) {</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         210 :   static auto flagFromString(const QString &amp;value) -&gt; std::optional&lt;bool&gt; {</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">         210 :     if (value == QLatin1String(&quot;true&quot;)) {</span></span>
 <span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">           2 :       return true;</span></span>
 <span id="L41"><span class="lineNum">      41</span>              :     }</span>
-<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">         202 :     if (value == QLatin1String(&quot;false&quot;)) {</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">         208 :     if (value == QLatin1String(&quot;false&quot;)) {</span></span>
 <span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">           4 :       return false;</span></span>
 <span id="L44"><span class="lineNum">      44</span>              :     }</span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         198 :     return std::nullopt;</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         204 :     return std::nullopt;</span></span>
 <span id="L46"><span class="lineNum">      46</span>              :   }</span>
 <span id="L47"><span class="lineNum">      47</span>              : </span>
 <span id="L48"><span class="lineNum">      48</span>              :   /**</span>

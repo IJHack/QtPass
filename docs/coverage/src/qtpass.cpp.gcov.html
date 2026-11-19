@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 01:36:10</td>
+            <td class="headerValue">2026-11-19 02:03:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -168,9 +168,9 @@
 <span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">         400 :           &amp;QtPass::onKeyGenerationComplete);</span></span>
 <span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         400 : }</span></span>
 <span id="L97"><span class="lineNum">      97</span>              : </span>
-<span id="L98"><span class="lineNum">      98</span> <span class="tlaGNC">          76 : void QtPass::reportError(int exitCode, const QString &amp;error) {</span></span>
-<span id="L99"><span class="lineNum">      99</span> <span class="tlaGNC">          76 :   if (error.isEmpty()) {</span></span>
-<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">          34 :     return;</span></span>
+<span id="L98"><span class="lineNum">      98</span> <span class="tlaGNC">          77 : void QtPass::reportError(int exitCode, const QString &amp;error) {</span></span>
+<span id="L99"><span class="lineNum">      99</span> <span class="tlaGNC">          77 :   if (error.isEmpty()) {</span></span>
+<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">          35 :     return;</span></span>
 <span id="L101"><span class="lineNum">     101</span>              :   }</span>
 <span id="L102"><span class="lineNum">     102</span>              :   const QString colour =</span>
 <span id="L103"><span class="lineNum">     103</span> <span class="tlaGNC">          49 :       exitCode == 0 ? QStringLiteral(&quot;darkgray&quot;) : QStringLiteral(&quot;red&quot;);</span></span>
@@ -184,15 +184,15 @@
 <span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">          39 :   emit operationFinished();</span></span>
 <span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">          39 : }</span></span>
 <span id="L113"><span class="lineNum">     113</span>              : </span>
-<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">          37 : void QtPass::processFinished(const QString &amp;output, const QString &amp;errout) {</span></span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">          38 : void QtPass::processFinished(const QString &amp;output, const QString &amp;errout) {</span></span>
 <span id="L115"><span class="lineNum">     115</span>              :   // A silent command (git push with nothing to push, say) has nothing to</span>
 <span id="L116"><span class="lineNum">     116</span>              :   // show; re-setting the browser's HTML for it would only reset its scroll.</span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">          37 :   if (!output.isEmpty()) {</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">          38 :   if (!output.isEmpty()) {</span></span>
 <span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">           8 :     emit outputReady(formatOutput(output));</span></span>
 <span id="L119"><span class="lineNum">     119</span>              :   }</span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">          37 :   reportError(0, errout);</span></span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">          37 :   emit operationFinished();</span></span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          37 : }</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">          38 :   reportError(0, errout);</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">          38 :   emit operationFinished();</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          38 : }</span></span>
 <span id="L123"><span class="lineNum">     123</span>              : </span>
 <span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">           7 : void QtPass::passStoreChanged(const QString &amp;output, const QString &amp;errout) {</span></span>
 <span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">           7 :   processFinished(output, errout);</span></span>

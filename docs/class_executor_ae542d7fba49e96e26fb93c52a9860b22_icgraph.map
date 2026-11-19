@@ -66,7 +66,7 @@
 <area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="145,1128,195,1161,251,1192,345,1228,441,1256,600,1294,595,1297,439,1261,343,1233,249,1197,192,1165,146,1133"/>
 <area shape="poly" id="edge10_Node000010_Node000010" title=" " alt="" coords="147,1080,133,1075,103,1072,76,1074,61,1079,57,1084,64,1092,59,1094,52,1085,58,1075,75,1069,104,1067,134,1069,152,1077"/>
 <area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="830,374,703,380,626,389,547,404,466,426,388,457,316,498,282,523,252,551,237,569,223,593,197,658,174,737,154,823,124,987,109,1094,104,1093,119,986,149,821,169,735,192,656,218,591,233,566,248,547,279,519,313,494,386,452,464,421,545,399,626,384,702,375,834,371"/>
-<area shape="rect" id="Node000012" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="561,636,730,664"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="561,636,730,664"/>
 <area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="906,407,841,526,800,587,764,626,733,641,729,637,761,621,796,583,837,523,909,402"/>
 <area shape="rect" id="Node000013" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="250,992,481,1020"/>
 <area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="600,674,566,698,531,728,502,762,475,799,429,876,395,945,375,993,370,991,390,943,424,874,470,797,497,759,527,724,563,693,604,670"/>

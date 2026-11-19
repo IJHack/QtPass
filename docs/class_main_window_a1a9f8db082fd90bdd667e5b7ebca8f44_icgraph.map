@@ -1,5 +1,5 @@
 <map id="MainWindow::onConfig" name="MainWindow::onConfig">
-<area shape="rect" id="Node000001" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,29,980,57"/>
+<area shape="rect" id="Node000001" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="810,29,980,57"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,29,762,57"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="792,43,763,46,763,41,797,43"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>

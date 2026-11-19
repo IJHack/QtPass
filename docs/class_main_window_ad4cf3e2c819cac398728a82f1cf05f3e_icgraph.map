@@ -9,7 +9,7 @@
 <area shape="rect" id="Node000009" href="$class_main_window.html#a661b52ed29bc2ff2b16d973c8306fdca" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="845,238,1072,266"/>
 <area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="1889,152,1843,178,1792,197,1696,220,1597,237,1497,248,1399,256,1218,263,1072,261,1072,255,1218,257,1399,251,1496,243,1596,231,1695,215,1791,192,1841,174,1884,154"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1111,87,1071,84,929,71,818,64,707,67,566,84,499,100,440,120,438,115,497,95,566,79,707,62,818,58,930,65,1072,79,1116,87"/>
-<area shape="rect" id="Node000005" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="874,93,1043,121"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="874,93,1043,121"/>
 <area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="1102,106,1044,109,1043,103,1107,105"/>
 <area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="449,104,434,100,402,97,373,99,357,104,353,109,360,118,355,118,347,109,353,100,372,94,402,92,436,94,455,103"/>
 <area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,118,239,146"/>

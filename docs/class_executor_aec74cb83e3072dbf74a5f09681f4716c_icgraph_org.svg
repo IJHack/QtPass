@@ -6,7 +6,7 @@
 <!-- Title: Executor::parseWslCommand Pages: 1 -->
 <svg width="3778pt" height="2194pt"
  viewBox="0.00 0.00 3778.00 2194.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2190.38)">
+<g id="page0,1_graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2190.38)">
 <title>Executor::parseWslCommand</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
@@ -218,7 +218,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" target="_top" xlink:title="Toolbar &quot;Config&quot;: config(), ignoring its result.">
+<g id="a_Node000007"><a xlink:href="class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" target="_top" xlink:title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,...">
 <polygon fill="white" stroke="#666666" points="531.75,-1169.75 404.75,-1169.75 404.75,-1149 531.75,-1149 531.75,-1169.75"/>
 <text xml:space="preserve" text-anchor="middle" x="468.25" y="-1156.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onConfig</text>
 </a>

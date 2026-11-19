@@ -52,7 +52,7 @@
 <area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="124,547,179,503,248,458,338,411,430,368,587,306,584,310,432,373,341,415,251,463,182,507,128,550"/>
 <area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="147,546,133,541,103,539,76,541,61,546,57,551,64,559,59,560,52,551,58,541,75,535,104,533,134,536,152,543"/>
 <area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="829,790,765,796,688,798,608,793,528,780,465,763,403,740,286,686,189,631,126,591,125,586,192,627,288,681,405,735,467,758,530,775,608,788,688,792,765,791,834,788"/>
-<area shape="rect" id="Node000008" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="561,739,730,766"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="561,739,730,766"/>
 <area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="829,770,731,763,730,758,834,769"/>
 <area shape="rect" id="Node000009" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="250,560,481,588"/>
 <area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="544,734,528,728,479,696,435,657,378,591,377,585,439,653,482,691,530,724,549,733"/>

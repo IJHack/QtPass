@@ -85,7 +85,7 @@
 <area shape="poly" id="edge24_Node000020_Node000019" title=" " alt="" coords="153,1046,251,1099,353,1142,457,1179,617,1234,612,1236,455,1184,352,1147,249,1103,155,1051"/>
 <area shape="poly" id="edge23_Node000020_Node000020" title=" " alt="" coords="147,999,133,994,103,991,76,993,61,998,57,1003,64,1011,59,1013,52,1004,58,994,75,988,104,986,134,988,152,996"/>
 <area shape="poly" id="edge26_Node000021_Node000020" title=" " alt="" coords="872,678,608,793,251,955,134,1014,130,1010,249,951,606,789,875,674"/>
-<area shape="rect" id="Node000022" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="561,953,730,980"/>
+<area shape="rect" id="Node000022" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="561,953,730,980"/>
 <area shape="poly" id="edge27_Node000021_Node000022" title=" " alt="" coords="898,683,662,954,658,950,901,679"/>
 <area shape="rect" id="Node000023" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="250,1439,481,1467"/>
 <area shape="poly" id="edge28_Node000022_Node000023" title=" " alt="" coords="546,989,531,1003,486,1056,450,1116,422,1180,402,1245,387,1307,378,1363,370,1440,365,1438,373,1362,382,1306,396,1244,417,1179,445,1114,481,1053,527,999,550,985"/>
