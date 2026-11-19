@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-19 02:03:43</td>
+            <td class="headerValue">2026-11-19 07:39:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryMed">88.4&nbsp;%</td>
@@ -108,12 +108,12 @@
 <span id="L35"><span class="lineNum">      35</span>              : using Enums::PASS_REMOVE;</span>
 <span id="L36"><span class="lineNum">      36</span>              : using Enums::PASS_SHOW;</span>
 <span id="L37"><span class="lineNum">      37</span>              : </span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          37 : RealPass::RealPass() : m_grep(this) {</span></span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          37 :   connect(&amp;m_grep, &amp;NativeGrep::finished, this, &amp;RealPass::finishedGrep);</span></span>
-<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">          37 :   connect(&amp;exec, &amp;Executor::dequeuing, this, &amp;RealPass::onDequeuing);</span></span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">          37 : }</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          38 : RealPass::RealPass() : m_grep(this) {</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          38 :   connect(&amp;m_grep, &amp;NativeGrep::finished, this, &amp;RealPass::finishedGrep);</span></span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">          38 :   connect(&amp;exec, &amp;Executor::dequeuing, this, &amp;RealPass::onDequeuing);</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">          38 : }</span></span>
 <span id="L42"><span class="lineNum">      42</span>              : </span>
-<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">          94 : RealPass::~RealPass() { m_grep.cancel(); }</span></span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">          97 : RealPass::~RealPass() { m_grep.cancel(); }</span></span>
 <span id="L44"><span class="lineNum">      44</span>              : </span>
 <span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">           6 : void RealPass::GitInit() { executePass(GIT_INIT, {&quot;git&quot;, &quot;init&quot;}); }</span></span>
 <span id="L46"><span class="lineNum">      46</span>              : </span>
@@ -135,7 +135,7 @@
 <span id="L62"><span class="lineNum">      62</span>              :   }</span>
 <span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L64"><span class="lineNum">      64</span>              : </span>
-<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">          12 : void RealPass::GitPull() { executePass(GIT_PULL, {&quot;git&quot;, &quot;pull&quot;}); }</span></span>
+<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">          18 : void RealPass::GitPull() { executePass(GIT_PULL, {&quot;git&quot;, &quot;pull&quot;}); }</span></span>
 <span id="L66"><span class="lineNum">      66</span>              : </span>
 <span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">           5 : void RealPass::GitPush() {</span></span>
 <span id="L68"><span class="lineNum">      68</span>              :   // Queued behind an init, move or copy, the push would run before its</span>
@@ -743,8 +743,8 @@
 <span id="L670"><span class="lineNum">     670</span> <span class="tlaGNC">          26 :   executePass(PASS_INSERT, args, newValue);</span></span>
 <span id="L671"><span class="lineNum">     671</span>              : }</span>
 <span id="L672"><span class="lineNum">     672</span>              : </span>
-<span id="L673"><span class="lineNum">     673</span> <span class="tlaGNC">          66 : void RealPass::onDequeuing(int id, bool completes) {</span></span>
-<span id="L674"><span class="lineNum">     674</span> <span class="tlaGNC">          66 :   if (id == PASS_INIT || id == PASS_MOVE || id == PASS_COPY) {</span></span>
+<span id="L673"><span class="lineNum">     673</span> <span class="tlaGNC">          67 : void RealPass::onDequeuing(int id, bool completes) {</span></span>
+<span id="L674"><span class="lineNum">     674</span> <span class="tlaGNC">          67 :   if (id == PASS_INIT || id == PASS_MOVE || id == PASS_COPY) {</span></span>
 <span id="L675"><span class="lineNum">     675</span>              :     // Leaves the queue with its command: a dropped one's scope must not</span>
 <span id="L676"><span class="lineNum">     676</span>              :     // pair with the next completion.</span>
 <span id="L677"><span class="lineNum">     677</span>              :     const QString scope =</span>
@@ -769,7 +769,7 @@
 <span id="L696"><span class="lineNum">     696</span> <span class="tlaGNC">          38 :     exec.setEnvironment(environment);</span></span>
 <span id="L697"><span class="lineNum">     697</span>              :     return;</span>
 <span id="L698"><span class="lineNum">     698</span> <span class="tlaGNC">          38 :   }</span></span>
-<span id="L699"><span class="lineNum">     699</span> <span class="tlaGNC">          27 :   if (id != PASS_INSERT || m_insertQueue.isEmpty()) {</span></span>
+<span id="L699"><span class="lineNum">     699</span> <span class="tlaGNC">          28 :   if (id != PASS_INSERT || m_insertQueue.isEmpty()) {</span></span>
 <span id="L700"><span class="lineNum">     700</span>              :     return;</span>
 <span id="L701"><span class="lineNum">     701</span>              :   }</span>
 <span id="L702"><span class="lineNum">     702</span>              :   const QString target = m_insertQueue.dequeue();</span>
@@ -887,21 +887,21 @@
 <span id="L814"><span class="lineNum">     814</span> <span class="tlaGNC">          15 :   executePass(PASS_REMOVE, {&quot;rm&quot;, (isDir ? &quot;-rf&quot; : &quot;-f&quot;), file});</span></span>
 <span id="L815"><span class="lineNum">     815</span> <span class="tlaGNC">          18 : }</span></span>
 <span id="L816"><span class="lineNum">     816</span>              : </span>
-<span id="L817"><span class="lineNum">     817</span> <span class="tlaGNC">          72 : void RealPass::finished(int id, int exitCode, const QString &amp;out,</span></span>
+<span id="L817"><span class="lineNum">     817</span> <span class="tlaGNC">          73 : void RealPass::finished(int id, int exitCode, const QString &amp;out,</span></span>
 <span id="L818"><span class="lineNum">     818</span>              :                         const QString &amp;err) {</span>
-<span id="L819"><span class="lineNum">     819</span> <span class="tlaGNC">          72 :   if (static_cast&lt;PROCESS&gt;(id) == GIT_COMMIT &amp;&amp; !m_linkCommits.isEmpty()) {</span></span>
+<span id="L819"><span class="lineNum">     819</span> <span class="tlaGNC">          73 :   if (static_cast&lt;PROCESS&gt;(id) == GIT_COMMIT &amp;&amp; !m_linkCommits.isEmpty()) {</span></span>
 <span id="L820"><span class="lineNum">     820</span>              :     // Whatever the exit code (pass itself failing, or 0 whatever git</span>
 <span id="L821"><span class="lineNum">     821</span>              :     // did), what is left staged decides.</span>
 <span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">           2 :     finishLinkCommit(m_linkCommits.dequeue(), out, err);</span></span>
 <span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">           2 :     return;</span></span>
 <span id="L824"><span class="lineNum">     824</span>              :   }</span>
-<span id="L825"><span class="lineNum">     825</span> <span class="tlaGNC">          70 :   if (static_cast&lt;PROCESS&gt;(id) == PASS_INSERT) {</span></span>
+<span id="L825"><span class="lineNum">     825</span> <span class="tlaGNC">          71 :   if (static_cast&lt;PROCESS&gt;(id) == PASS_INSERT) {</span></span>
 <span id="L826"><span class="lineNum">     826</span>              :     // This completion's own insert, not whichever left the queue last.</span>
 <span id="L827"><span class="lineNum">     827</span>              :     m_insertDone =</span>
 <span id="L828"><span class="lineNum">     828</span> <span class="tlaGNC">          41 :         m_insertPending.isEmpty() ? InsertRecord{} : m_insertPending.dequeue();</span></span>
 <span id="L829"><span class="lineNum">     829</span>              :   }</span>
-<span id="L830"><span class="lineNum">     830</span> <span class="tlaGNC">          70 :   const auto pid = static_cast&lt;PROCESS&gt;(id);</span></span>
-<span id="L831"><span class="lineNum">     831</span> <span class="tlaGNC">          70 :   if (pid == PASS_INIT || pid == PASS_MOVE || pid == PASS_COPY) {</span></span>
+<span id="L830"><span class="lineNum">     830</span> <span class="tlaGNC">          71 :   const auto pid = static_cast&lt;PROCESS&gt;(id);</span></span>
+<span id="L831"><span class="lineNum">     831</span> <span class="tlaGNC">          71 :   if (pid == PASS_INIT || pid == PASS_MOVE || pid == PASS_COPY) {</span></span>
 <span id="L832"><span class="lineNum">     832</span>              :     // Without a recorded scope (not queued through Init/Move/Copy), the</span>
 <span id="L833"><span class="lineNum">     833</span>              :     // whole store: held as a whole, released by nothing short of it.</span>
 <span id="L834"><span class="lineNum">     834</span>              :     const QString scope =</span>
@@ -934,10 +934,10 @@
 <span id="L861"><span class="lineNum">     861</span> <span class="tlaGNC">          28 :     Pass::finished(id, exitCode, out, withoutStatusLines(err));</span></span>
 <span id="L862"><span class="lineNum">     862</span> <span class="tlaGNC">          28 :     return;</span></span>
 <span id="L863"><span class="lineNum">     863</span>              :   }</span>
-<span id="L864"><span class="lineNum">     864</span> <span class="tlaGNC">          32 :   if (pid == PASS_INSERT &amp;&amp; exitCode == 0 &amp;&amp; !m_insertDone.target.isEmpty()) {</span></span>
+<span id="L864"><span class="lineNum">     864</span> <span class="tlaGNC">          33 :   if (pid == PASS_INSERT &amp;&amp; exitCode == 0 &amp;&amp; !m_insertDone.target.isEmpty()) {</span></span>
 <span id="L865"><span class="lineNum">     865</span> <span class="tlaGNC">          21 :     reportUnrecorded({m_insertDone.target});</span></span>
 <span id="L866"><span class="lineNum">     866</span>              :   }</span>
-<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">          32 :   Pass::finished(id, exitCode, out, err);</span></span>
+<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">          33 :   Pass::finished(id, exitCode, out, err);</span></span>
 <span id="L868"><span class="lineNum">     868</span>              : }</span>
 <span id="L869"><span class="lineNum">     869</span>              : </span>
 <span id="L870"><span class="lineNum">     870</span> <span class="tlaGNC">          42 : auto RealPass::reencryptFailed(const QString &amp;out, const QString &amp;err) -&gt; bool {</span></span>
@@ -1180,11 +1180,11 @@
 <span id="L1107"><span class="lineNum">    1107</span> <span class="tlaGNC">           1 :                 m_settings.passStore, exec.environment());</span></span>
 <span id="L1108"><span class="lineNum">    1108</span>              : }</span>
 <span id="L1109"><span class="lineNum">    1109</span>              : </span>
-<span id="L1110"><span class="lineNum">    1110</span> <span class="tlaGNC">          66 : void RealPass::executePass(PROCESS id, const QStringList &amp;args, QString input,</span></span>
+<span id="L1110"><span class="lineNum">    1110</span> <span class="tlaGNC">          67 : void RealPass::executePass(PROCESS id, const QStringList &amp;args, QString input,</span></span>
 <span id="L1111"><span class="lineNum">    1111</span>              :                            bool readStdout, bool readStderr) {</span>
-<span id="L1112"><span class="lineNum">    1112</span> <span class="tlaGNC">          66 :   executeWrapper(id, m_settings.passExecutable, args, std::move(input),</span></span>
+<span id="L1112"><span class="lineNum">    1112</span> <span class="tlaGNC">          67 :   executeWrapper(id, m_settings.passExecutable, args, std::move(input),</span></span>
 <span id="L1113"><span class="lineNum">    1113</span>              :                  readStdout, readStderr);</span>
-<span id="L1114"><span class="lineNum">    1114</span> <span class="tlaGNC">          66 : }</span></span>
+<span id="L1114"><span class="lineNum">    1114</span> <span class="tlaGNC">          67 : }</span></span>
         </pre>
               </td>
             </tr>

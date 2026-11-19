@@ -48,7 +48,7 @@ var group__backend =
       [ "Copy", "class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a", null ],
       [ "copyDestination", "class_imitate_pass.html#a3d49034415dcced209f0294b631c1ddc", null ],
       [ "createBackupCommit", "class_imitate_pass.html#a086365ec85674590afbd883df0b27a80", null ],
-      [ "decryptEntry", "class_imitate_pass.html#a8739cd853cfd41e1dcf4637f43f0ae66", null ],
+      [ "decryptEntry", "class_imitate_pass.html#abfbc12c05460d88f0e4ee600f2ebf58a", null ],
       [ "dropStaleTemporary", "class_imitate_pass.html#ae9a418566f8f18e20fe4552d0b88e46c", null ],
       [ "encryptFor", "class_imitate_pass.html#a82d39a641bb54cc1b8cb9b7168d699e8", null ],
       [ "endReencryptPath", "class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7", null ],
