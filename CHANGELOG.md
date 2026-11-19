@@ -180,6 +180,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   took the next generation and was then removed again unsigned, leaving
   this device's record one ahead: the store's genuine signed list was then
   refused as a rollback (scan finding ANT-2026-RLSEQWKO)
+- With the `pass` backend, a new entry named by the full path of its file
+  in the store was saved below the store's top under that whole path, for
+  the top folder's recipients instead of its own folder's. Add password now
+  turns such a name into one relative to the store, and the `pass` backend
+  hands `pass insert` a store-relative name (scan finding
+  ANT-2026-7S4YMHGT)
 - With a signing key, a sub-folder list without a generation line (written
   by `pass`, by the `pass` backend or by QtPass before 2.0) that this device
   accepted and that is then deleted is refused, as one with a generation

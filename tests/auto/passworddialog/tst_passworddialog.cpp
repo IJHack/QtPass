@@ -1011,6 +1011,37 @@ void tst_passworddialog::acceptResolvesTheNameAndCreatesItsFolder() {
   QVERIFY2(QDir(store.path()).exists(QStringLiteral("work/vpn")),
            "the folder the name asked for was created");
   QVERIFY(d.windowTitle().endsWith(QStringLiteral("work/vpn/office")));
+
+  // The full path of the entry's file, typed at the store's top: the name
+  // handed on is still relative to the store (pass would save an absolute
+  // one below the root, for the root's recipients).
+  PasswordDialog full(&pass, s, QString(), true);
+  full.setNewEntryLocation(store.path(), {QString(), QStringLiteral("work")},
+                           QString());
+  full.findChild<QLineEdit *>(QStringLiteral("nameEdit"))
+      ->setText(QDir(store.path()).filePath(QStringLiteral("work/card")));
+  full.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"))
+      ->setText(QStringLiteral("s3cret"));
+  okButton(full)->click();
+  QCOMPARE(full.result(), int(QDialog::Accepted));
+  QCOMPARE(full.entryPath(), QStringLiteral("work/card"));
+  QCOMPARE(pass.inserted, QStringLiteral("work/card"));
+
+  // Also with another folder chosen: a full path is not put under it.
+  QVERIFY(QDir(store.path()).mkpath(QStringLiteral("personal")));
+  PasswordDialog other(&pass, s, QString(), true);
+  other.setNewEntryLocation(
+      store.path(),
+      {QString(), QStringLiteral("personal"), QStringLiteral("work")},
+      QStringLiteral("personal"));
+  other.findChild<QLineEdit *>(QStringLiteral("nameEdit"))
+      ->setText(QDir(store.path()).filePath(QStringLiteral("work/pin")));
+  other.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"))
+      ->setText(QStringLiteral("s3cret"));
+  okButton(other)->click();
+  QCOMPARE(other.result(), int(QDialog::Accepted));
+  QCOMPARE(other.entryPath(), QStringLiteral("work/pin"));
+  QCOMPARE(pass.inserted, QStringLiteral("work/pin"));
 }
 
 /**

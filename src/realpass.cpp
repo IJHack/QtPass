@@ -666,7 +666,12 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (overwrite) {
     args.append("-f");
   }
-  args.append(file);
+  // pass takes every name as one below the store root: an absolute one
+  // would be saved under <store>/<the whole path>, for the root's list
+  // rather than the one refuseUnverifiedList() checked.
+  // A name that starts with a dash is still the entry, not an option.
+  args.append(QStringLiteral("--"));
+  args.append(passName(entry, true));
   executePass(PASS_INSERT, args, newValue);
 }
 

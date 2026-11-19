@@ -320,11 +320,24 @@ auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
     return {};
   }
   const QString folder = ui->folderBox->currentData().toString();
-  const QString rel =
-      QDir::cleanPath(folder.isEmpty() ? name : folder + u'/' + name);
-  const QString absolute = QDir(m_storeRoot).filePath(rel);
-  if (rel.isEmpty() || rel == QStringLiteral(".") ||
+  // A name typed as a full path is not put under the chosen folder; it
+  // stays as it is (filePath() does not join it either), so the store
+  // check below covers it.
+  const QString typed = QDir::cleanPath(
+      (folder.isEmpty() || QDir::isAbsolutePath(name)) ? name
+                                                       : folder + u'/' + name);
+  const QString absolute = QDir::cleanPath(QDir(m_storeRoot).filePath(typed));
+  if (typed.isEmpty() || typed == QStringLiteral(".") ||
       !PathValidator::isPathInStore(m_storeRoot, absolute)) {
+    *problem = tr("That name would resolve outside the password store.");
+    return {};
+  }
+  // The entry's name is relative to the store, also when it was typed as
+  // the full path of its file: `pass insert` takes any name as one below
+  // the store root and would save it there, for the root's recipients.
+  const QString rel =
+      QDir(QDir::cleanPath(m_storeRoot)).relativeFilePath(absolute);
+  if (rel.isEmpty() || rel == QStringLiteral(".")) {
     *problem = tr("That name would resolve outside the password store.");
     return {};
   }

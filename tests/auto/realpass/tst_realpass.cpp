@@ -263,14 +263,31 @@ void tst_realpass::insertPipesTheValue() {
   Call call = waitForCall();
   QCOMPARE(call.args,
            (QStringList{QStringLiteral("insert"), QStringLiteral("-m"),
-                        QStringLiteral("folder/new")}));
+                        QStringLiteral("--"), QStringLiteral("folder/new")}));
   QCOMPARE(call.stdinData, QStringLiteral("hunter2\nuser: me\n"));
 
   QFile::remove(m_log);
   pass->Insert(QStringLiteral("folder/new"), QStringLiteral("x"), true);
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("insert"), QStringLiteral("-m"),
-                        QStringLiteral("-f"), QStringLiteral("folder/new")}));
+                        QStringLiteral("-f"), QStringLiteral("--"),
+                        QStringLiteral("folder/new")}));
+
+  // An absolute name inside the store goes to pass relative to it: pass
+  // would save <store>/<the whole path> for the root's recipients.
+  QFile::remove(m_log);
+  pass->Insert(m_store + QStringLiteral("folder/abs"), QStringLiteral("x"),
+               false);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("insert"), QStringLiteral("-m"),
+                        QStringLiteral("--"), QStringLiteral("folder/abs")}));
+
+  // A name that starts with a dash stays the entry, not pass's -f.
+  QFile::remove(m_log);
+  pass->Insert(QStringLiteral("./-f"), QStringLiteral("x"), false);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("insert"), QStringLiteral("-m"),
+                        QStringLiteral("--"), QStringLiteral("-f")}));
 }
 
 /**
