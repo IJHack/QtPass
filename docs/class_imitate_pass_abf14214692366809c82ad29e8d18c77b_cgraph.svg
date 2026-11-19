@@ -2080,9 +2080,9 @@
 <!-- Node84 -->
 <g id="Node000084" class="node">
 <title>Node84</title>
-<g id="a_Node000084"><a xlink:href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" target="_top" xlink:title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile....">
-<polygon fill="white" stroke="#666666" points="1775.62,-1471.75 1608.12,-1471.75 1608.12,-1451 1775.62,-1451 1775.62,-1471.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1691.88" y="-1458.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::remembered</text>
+<g id="a_Node000084"><a xlink:href="class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" target="_top" xlink:title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis...">
+<polygon fill="white" stroke="#666666" points="1755.75,-1471.75 1628,-1471.75 1628,-1451 1755.75,-1451 1755.75,-1471.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1691.88" y="-1458.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::seen</text>
 </a>
 </g>
 </g>
@@ -2090,8 +2090,8 @@
 <g id="edge128_Node000083_Node000084" class="edge">
 <title>Node83&#45;&gt;Node84</title>
 <g id="a_edge128_Node000083_Node000084"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1540.91,-1461.38C1558.04,-1461.38 1577.47,-1461.38 1596.54,-1461.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1596.5,-1464.88 1606.5,-1461.38 1596.5,-1457.88 1596.5,-1464.88"/>
+<path fill="none" stroke="#63b8ff" d="M1540.91,-1461.38C1564.1,-1461.38 1591.51,-1461.38 1616.51,-1461.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1616.29,-1464.88 1626.29,-1461.38 1616.29,-1457.88 1616.29,-1464.88"/>
 </a>
 </g>
 </g>
@@ -2099,8 +2099,8 @@
 <g id="edge129_Node000084_Node000077" class="edge">
 <title>Node84&#45;&gt;Node77</title>
 <g id="a_edge129_Node000084_Node000077"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1776.08,-1461.38C1794.1,-1461.38 1813.01,-1461.38 1830.52,-1461.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1830.3,-1464.88 1840.3,-1461.38 1830.3,-1457.88 1830.3,-1464.88"/>
+<path fill="none" stroke="#63b8ff" d="M1756.15,-1461.38C1779.59,-1461.38 1806.33,-1461.38 1830.44,-1461.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1830.17,-1464.88 1840.17,-1461.38 1830.17,-1457.88 1830.17,-1464.88"/>
 </a>
 </g>
 </g>

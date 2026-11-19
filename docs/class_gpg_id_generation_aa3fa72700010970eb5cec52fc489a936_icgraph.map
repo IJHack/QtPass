@@ -1,7 +1,7 @@
-<map id="GpgIdGeneration::remembered" name="GpgIdGeneration::remembered">
-<area shape="rect" id="Node000001" title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile...." alt="" coords="3328,111,3551,138"/>
+<map id="GpgIdGeneration::seen" name="GpgIdGeneration::seen">
+<area shape="rect" id="Node000001" title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis..." alt="" coords="3328,111,3498,138"/>
 <area shape="rect" id="Node000002" href="$class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="3132,111,3280,138"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3309,125,3280,127,3280,122,3314,124"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3309,125,3280,127,3280,122,3315,124"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#a849c5089c91fa9599653d9dad6e4c28c" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="2896,65,3083,93"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="3119,107,3059,96,3059,91,3124,107"/>
 <area shape="rect" id="Node000006" href="$class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="2895,136,3084,164"/>

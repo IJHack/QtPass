@@ -159,6 +159,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8400be9a8caa988172707186e9f457d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store-relative folder of <code class="param">gpgIdFile</code>, as written in and compared against the folder line: <span class="tt">.</span> for the store root, <span class="tt">/</span>-separated, from canonical paths, lower-cased on Windows.  <br /></td></tr>
 <tr class="memitem:aa71275249d300d5d4f18761334d85c02" id="r_aa71275249d300d5d4f18761334d85c02"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa71275249d300d5d4f18761334d85c02">remembered</a> (const QString &amp;gpgIdFile, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
 <tr class="memdesc:aa71275249d300d5d4f18761334d85c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">The highest generation this device has accepted or written for the <span class="tt">.gpg-id</span> at <code class="param">gpgIdFile</code>. Unreadable is not "never seen": a signed list must then be refused, not compared against 0.  <br /></td></tr>
+<tr class="memitem:aa3fa72700010970eb5cec52fc489a936" id="r_aa3fa72700010970eb5cec52fc489a936"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa3fa72700010970eb5cec52fc489a936">seen</a> (const QString &amp;gpgIdFile, QString *error=nullptr) -&gt; std::optional&lt; bool &gt;</td></tr>
+<tr class="memdesc:aa3fa72700010970eb5cec52fc489a936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this device accepted or wrote a list at <code class="param">gpgIdFile</code> before, of any generation: a headerless list (generation 0) counts too, so its removal is told apart from a folder that never had one.  <br /></td></tr>
 <tr class="memitem:a0cd43291d31707b298c9e86226a79387" id="r_a0cd43291d31707b298c9e86226a79387"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0cd43291d31707b298c9e86226a79387">accept</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, const QString &amp;storeRoot, QString *error=nullptr) -&gt; <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td></tr>
 <tr class="memdesc:a0cd43291d31707b298c9e86226a79387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide about a verified list: its folder against where it sits, its generation against the remembered one, its bytes against the remembered digest when the generations are equal, and remember it when it passes. One transaction under the lock: read, compare, write through.  <br /></td></tr>
 <tr class="memitem:a8a0a444b882b99932d353adaedcfd6a4" id="r_a8a0a444b882b99932d353adaedcfd6a4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8a0a444b882b99932d353adaedcfd6a4">reserveNext</a> (const QString &amp;gpgIdFile, std::optional&lt; qint64 &gt; verifiedOnDisk, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
@@ -240,7 +242,7 @@ Static Private Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00163">163</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00174">174</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
@@ -294,7 +296,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Accepted when the list may be used; otherwise why not. Without established freshness state nothing is accepted. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00696">696</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00710">710</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
@@ -359,7 +361,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the list belongs where it is. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00618">618</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00632">632</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -407,7 +409,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>64 hexadecimal characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00604">604</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00609">609</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -454,7 +456,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The folder, or nothing when <code class="param">gpgIdFile</code> is not under the store or a folder name on the way holds a control character, a line break among them (the folder line could not record it). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00575">575</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00580">580</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -507,7 +509,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The lines, newlines included. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00559">559</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00564">564</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
@@ -549,7 +551,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>64 hexadecimal characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00581">581</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00586">586</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -620,7 +622,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the list is this store's. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00777">777</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00795">795</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -673,7 +675,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The header (generation 0 and no folder for a list written before generations existed, or by <span class="tt">pass</span>); nothing when a line is malformed, appears twice, a generation line comes without a folder line or a store line without a generation line, which is not a list to trust. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00515">515</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00520">520</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
@@ -715,7 +717,7 @@ Static Private Member Functions</h2></td></tr>
 <p>The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what was accepted, which is the manual way out for a device that cannot save the list itself. </p>
 <dl class="section return"><dt>Returns</dt><dd>The record's path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00600">600</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00605">605</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 
 </div>
 </div>
@@ -762,7 +764,7 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the digest was recorded. A list written but not digested is still recognised by its generation; only a second list of that generation would pass until it is read once. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00865">865</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00883">883</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary">
 </div>
@@ -815,18 +817,12 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 when this device has never seen the list, the generation otherwise; nothing when the record cannot be read. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00609">609</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00614">614</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
 <div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa71275249d300d5d4f18761334d85c02_cgraph.svg" width="444" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
-</div>
-<div id="dynsection-15-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa71275249d300d5d4f18761334d85c02_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -874,18 +870,71 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The generation to write, or nothing when the record could not be read or written or the counter is exhausted; the caller must not write the list then. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00838">838</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
-<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00856">856</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a8a0a444b882b99932d353adaedcfd6a4_cgraph.svg" width="440" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary">
 </div>
 <div id="dynsection-16-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a8a0a444b882b99932d353adaedcfd6a4_cgraph.svg" width="440" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a8a0a444b882b99932d353adaedcfd6a4_icgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+
+</div>
+</div>
+<a id="aa3fa72700010970eb5cec52fc489a936" name="aa3fa72700010970eb5cec52fc489a936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3fa72700010970eb5cec52fc489a936">&#9670;&#160;</a></span>seen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto GpgIdGeneration::seen </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; std::optional&lt; bool &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether this device accepted or wrote a list at <code class="param">gpgIdFile</code> before, of any generation: a headerless list (generation 0) counts too, so its removal is told apart from a folder that never had one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span>. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives why the record could not be read, if not null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it was seen; nothing when the record cannot be read. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00623">623</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary">
 </div>
 <div id="dynsection-17-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a8a0a444b882b99932d353adaedcfd6a4_icgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa3fa72700010970eb5cec52fc489a936_cgraph.svg" width="392" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa3fa72700010970eb5cec52fc489a936_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -945,17 +994,17 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Rollback for a list that says which folder it is for, Unbound for one that does not. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00659">659</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
-<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary">
-</div>
-<div id="dynsection-18-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa86015bb280ffcb87fe676eed5fd3820_cgraph.svg" width="472" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00673">673</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary">
 </div>
 <div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa86015bb280ffcb87fe676eed5fd3820_cgraph.svg" width="472" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa86015bb280ffcb87fe676eed5fd3820_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1004,17 +1053,17 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The id, or nothing when the record is unavailable; the caller must not write the list then. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00816">816</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
-<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary">
-</div>
-<div id="dynsection-20-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_af7f352375eac190196e889e05cfb67bd_cgraph.svg" width="426" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00834">834</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
 <div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_af7f352375eac190196e889e05cfb67bd_cgraph.svg" width="426" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_af7f352375eac190196e889e05cfb67bd_icgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1046,7 +1095,7 @@ Static Private Member Functions</h2></td></tr>
 <p>The file the store IDs are kept in, next to <a class="el" href="#ae5b416ea3d26c3787b2af8e2e640e758" title="The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what...">recordFile()</a> and under its lock, so a <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> from before store IDs, rewriting the record, cannot drop them. Removing it forgets the IDs. </p>
 <dl class="section return"><dt>Returns</dt><dd>The file's path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00602">602</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00607">607</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
 
 </div>
 </div>
@@ -1093,11 +1142,11 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The sentence to append to a refusal. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00641">641</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
-<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00655">655</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
 </div>
-<div id="dynsection-22-content" class="dyncontent hidden">
+<div id="dynsection-23-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_af86ff868df611b4db16a014a414f943c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1152,17 +1201,17 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The bytes to write. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00569">569</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
-<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary">
-</div>
-<div id="dynsection-23-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_adf82e57f1cda154b35f36dfde958120f_cgraph.svg" width="458" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00574">574</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary">
 </div>
 <div id="dynsection-24-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_adf82e57f1cda154b35f36dfde958120f_cgraph.svg" width="458" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
+</div>
+<div id="dynsection-25-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_adf82e57f1cda154b35f36dfde958120f_icgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 

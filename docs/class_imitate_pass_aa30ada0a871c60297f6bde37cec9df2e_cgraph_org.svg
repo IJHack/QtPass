@@ -2011,9 +2011,9 @@
 <!-- Node83 -->
 <g id="Node000083" class="node">
 <title>Node83</title>
-<g id="a_Node000083"><a xlink:href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" target="_top" xlink:title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile....">
-<polygon fill="white" stroke="#666666" points="1807.12,-2385.46 1639.62,-2385.46 1639.62,-2364.71 1807.12,-2364.71 1807.12,-2385.46"/>
-<text xml:space="preserve" text-anchor="middle" x="1723.38" y="-2371.96" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::remembered</text>
+<g id="a_Node000083"><a xlink:href="class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" target="_top" xlink:title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis...">
+<polygon fill="white" stroke="#666666" points="1787.25,-2385.46 1659.5,-2385.46 1659.5,-2364.71 1787.25,-2364.71 1787.25,-2385.46"/>
+<text xml:space="preserve" text-anchor="middle" x="1723.38" y="-2371.96" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::seen</text>
 </a>
 </g>
 </g>
@@ -2021,8 +2021,8 @@
 <g id="edge126_Node000082_Node000083" class="edge">
 <title>Node82&#45;&gt;Node83</title>
 <g id="a_edge126_Node000082_Node000083"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1526.97,-2232.58C1553.6,-2263.27 1629.97,-2350.91 1637,-2355.08 1640.14,-2356.95 1643.45,-2358.64 1646.85,-2360.17"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1645.33,-2363.33 1655.92,-2363.75 1647.91,-2356.82 1645.33,-2363.33"/>
+<path fill="none" stroke="#63b8ff" d="M1526.97,-2232.58C1553.6,-2263.27 1629.97,-2350.91 1637,-2355.08 1640.62,-2357.23 1644.45,-2359.14 1648.4,-2360.85"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1647.1,-2364.1 1657.69,-2364.38 1649.59,-2357.56 1647.1,-2364.1"/>
 </a>
 </g>
 </g>
@@ -2030,8 +2030,8 @@
 <g id="edge127_Node000083_Node000076" class="edge">
 <title>Node83&#45;&gt;Node76</title>
 <g id="a_edge127_Node000083_Node000076"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1807.58,-2374.69C1825.6,-2374.6 1844.51,-2374.51 1862.02,-2374.43"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1861.82,-2377.93 1871.8,-2374.38 1861.78,-2370.93 1861.82,-2377.93"/>
+<path fill="none" stroke="#63b8ff" d="M1787.65,-2374.78C1811.09,-2374.67 1837.83,-2374.54 1861.94,-2374.43"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1861.68,-2377.93 1871.67,-2374.38 1861.65,-2370.93 1861.68,-2377.93"/>
 </a>
 </g>
 </g>

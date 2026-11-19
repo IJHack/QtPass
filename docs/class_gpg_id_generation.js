@@ -23,6 +23,7 @@ var class_gpg_id_generation =
     [ "recordWritten", "class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540", null ],
     [ "remembered", "class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02", null ],
     [ "reserveNext", "class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4", null ],
+    [ "seen", "class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936", null ],
     [ "staleList", "class_gpg_id_generation.html#aa86015bb280ffcb87fe676eed5fd3820", null ],
     [ "storeIdFor", "class_gpg_id_generation.html#af7f352375eac190196e889e05cfb67bd", null ],
     [ "storeRecordFile", "class_gpg_id_generation.html#a70cd5b49f5dca1370b8cef78873090d8", null ],

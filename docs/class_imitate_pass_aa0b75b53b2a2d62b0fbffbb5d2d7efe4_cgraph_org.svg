@@ -2760,9 +2760,9 @@
 <!-- Node118 -->
 <g id="Node000118" class="node">
 <title>Node118</title>
-<g id="a_Node000118"><a xlink:href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" target="_top" xlink:title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile....">
-<polygon fill="white" stroke="#666666" points="1976.88,-653.38 1809.38,-653.38 1809.38,-632.63 1976.88,-632.63 1976.88,-653.38"/>
-<text xml:space="preserve" text-anchor="middle" x="1893.12" y="-639.88" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::remembered</text>
+<g id="a_Node000118"><a xlink:href="class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" target="_top" xlink:title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis...">
+<polygon fill="white" stroke="#666666" points="1957,-653.38 1829.25,-653.38 1829.25,-632.63 1957,-632.63 1957,-653.38"/>
+<text xml:space="preserve" text-anchor="middle" x="1893.12" y="-639.88" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::seen</text>
 </a>
 </g>
 </g>

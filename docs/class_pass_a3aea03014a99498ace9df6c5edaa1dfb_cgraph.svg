@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="658" data-view-height="68" data-section-id="dynsection-84">
+<svg id="graph" class="graph" data-view-width="618" data-view-height="68" data-section-id="dynsection-84">
 <g id="viewport">
 <title>Pass::refuseSkippedGpgId</title>
 <!-- Node1 -->
@@ -98,9 +98,9 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" target="_top" xlink:title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile....">
-<polygon fill="white" stroke="#666666" points="492,-20.75 324.5,-20.75 324.5,0 492,0 492,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="408.25" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::remembered</text>
+<g id="a_Node000004"><a xlink:href="class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" target="_top" xlink:title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis...">
+<polygon fill="white" stroke="#666666" points="452.25,-20.75 324.5,-20.75 324.5,0 452.25,0 452.25,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="388.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::seen</text>
 </a>
 </g>
 </g>
@@ -108,8 +108,8 @@
 <g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M288.99,-10.38C296.59,-10.38 304.57,-10.38 312.65,-10.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="312.59,-13.88 322.59,-10.38 312.59,-6.88 312.59,-13.88"/>
+<path fill="none" stroke="#63b8ff" d="M288.67,-10.38C296.5,-10.38 304.66,-10.38 312.8,-10.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="312.73,-13.88 322.73,-10.38 312.73,-6.88 312.73,-13.88"/>
 </a>
 </g>
 </g>
@@ -117,8 +117,8 @@
 <g id="Node000005" class="node">
 <title>Node5</title>
 <g id="a_Node000005"><a xlink:href="class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" target="_top" xlink:title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,...">
-<polygon fill="white" stroke="#666666" points="649.75,-20.75 528,-20.75 528,0 649.75,0 649.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="588.88" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::key</text>
+<polygon fill="white" stroke="#666666" points="610,-20.75 488.25,-20.75 488.25,0 610,0 610,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="549.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::key</text>
 </a>
 </g>
 </g>
@@ -126,8 +126,8 @@
 <g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
 <g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M492.29,-10.38C500.31,-10.38 508.39,-10.38 516.29,-10.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="516.17,-13.88 526.17,-10.38 516.17,-6.88 516.17,-13.88"/>
+<path fill="none" stroke="#63b8ff" d="M452.57,-10.38C460.51,-10.38 468.67,-10.38 476.71,-10.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="476.47,-13.88 486.47,-10.38 476.47,-6.88 476.47,-13.88"/>
 </a>
 </g>
 </g>

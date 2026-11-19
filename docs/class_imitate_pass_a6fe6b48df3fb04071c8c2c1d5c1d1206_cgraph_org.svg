@@ -2905,9 +2905,9 @@
 <!-- Node119 -->
 <g id="Node000119" class="node">
 <title>Node119</title>
-<g id="a_Node000119"><a xlink:href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" target="_top" xlink:title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile....">
-<polygon fill="white" stroke="#666666" points="2180.38,-20.75 2012.88,-20.75 2012.88,0 2180.38,0 2180.38,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2096.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::remembered</text>
+<g id="a_Node000119"><a xlink:href="class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" target="_top" xlink:title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis...">
+<polygon fill="white" stroke="#666666" points="2160.5,-20.75 2032.75,-20.75 2032.75,0 2160.5,0 2160.5,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2096.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::seen</text>
 </a>
 </g>
 </g>

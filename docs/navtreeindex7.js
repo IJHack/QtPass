@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"struct_imitate_pass_1_1_uncommitted_gpg_id.html#a6d8ab11a6b44ac87ef4639c0d55db524":[1,0,0,3,1],
 "struct_imitate_pass_1_1_written_gpg_id.html":[1,0,0,4],
 "struct_imitate_pass_1_1_written_gpg_id.html#a56b7913301462eb9d5b7b0633c9531b4":[1,0,0,4,1],
 "struct_imitate_pass_1_1_written_gpg_id.html#a5c9d73507728e1049b8ea31fb2db9103":[1,0,0,4,0],

@@ -2378,9 +2378,9 @@
 <!-- Node94 -->
 <g id="Node000094" class="node">
 <title>Node94</title>
-<g id="a_Node000094"><a xlink:href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" target="_top" xlink:title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile....">
-<polygon fill="white" stroke="#666666" points="1739.62,-2083.43 1572.12,-2083.43 1572.12,-2062.68 1739.62,-2062.68 1739.62,-2083.43"/>
-<text xml:space="preserve" text-anchor="middle" x="1655.88" y="-2069.93" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::remembered</text>
+<g id="a_Node000094"><a xlink:href="class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" target="_top" xlink:title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis...">
+<polygon fill="white" stroke="#666666" points="1719.75,-2083.43 1592,-2083.43 1592,-2062.68 1719.75,-2062.68 1719.75,-2083.43"/>
+<text xml:space="preserve" text-anchor="middle" x="1655.88" y="-2069.93" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::seen</text>
 </a>
 </g>
 </g>
@@ -2397,8 +2397,8 @@
 <g id="edge149_Node000094_Node000087" class="edge">
 <title>Node94&#45;&gt;Node87</title>
 <g id="a_edge149_Node000094_Node000087"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1740.08,-2075.45C1757.83,-2075.96 1776.43,-2076.5 1793.69,-2076.99"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1793.21,-2080.48 1803.3,-2077.27 1793.41,-2073.48 1793.21,-2080.48"/>
+<path fill="none" stroke="#63b8ff" d="M1720.21,-2074.88C1743.34,-2075.54 1769.67,-2076.3 1793.49,-2076.99"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1793.34,-2080.48 1803.43,-2077.27 1793.54,-2073.49 1793.34,-2080.48"/>
 </a>
 </g>
 </g>

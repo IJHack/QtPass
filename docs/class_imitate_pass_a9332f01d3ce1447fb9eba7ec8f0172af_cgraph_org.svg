@@ -2381,9 +2381,9 @@
 <!-- Node95 -->
 <g id="Node000095" class="node">
 <title>Node95</title>
-<g id="a_Node000095"><a xlink:href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" target="_top" xlink:title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile....">
-<polygon fill="white" stroke="#666666" points="1966.38,-1146.38 1798.88,-1146.38 1798.88,-1125.62 1966.38,-1125.62 1966.38,-1146.38"/>
-<text xml:space="preserve" text-anchor="middle" x="1882.62" y="-1132.88" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::remembered</text>
+<g id="a_Node000095"><a xlink:href="class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" target="_top" xlink:title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis...">
+<polygon fill="white" stroke="#666666" points="1946.5,-1146.38 1818.75,-1146.38 1818.75,-1125.62 1946.5,-1125.62 1946.5,-1146.38"/>
+<text xml:space="preserve" text-anchor="middle" x="1882.62" y="-1132.88" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::seen</text>
 </a>
 </g>
 </g>
@@ -2391,8 +2391,8 @@
 <g id="edge149_Node000094_Node000095" class="edge">
 <title>Node94&#45;&gt;Node95</title>
 <g id="a_edge149_Node000094_Node000095"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1728.09,-1137.47C1746.21,-1137.3 1766.92,-1137.1 1787.15,-1136.91"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1787.16,-1140.41 1797.13,-1136.81 1787.09,-1133.41 1787.16,-1140.41"/>
+<path fill="none" stroke="#63b8ff" d="M1728.09,-1137.47C1752.23,-1137.24 1780.99,-1136.97 1807.06,-1136.72"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1806.95,-1140.22 1816.91,-1136.62 1806.88,-1133.22 1806.95,-1140.22"/>
 </a>
 </g>
 </g>
@@ -2400,8 +2400,8 @@
 <g id="edge150_Node000095_Node000088" class="edge">
 <title>Node95&#45;&gt;Node88</title>
 <g id="a_edge150_Node000095_Node000088"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1966.84,-1133.5C1981.7,-1133.05 1997.06,-1132.59 2011.56,-1132.15"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="2011.57,-1135.66 2021.46,-1131.86 2011.36,-1128.66 2011.57,-1135.66"/>
+<path fill="none" stroke="#63b8ff" d="M1946.79,-1134.1C1967.41,-1133.48 1990.46,-1132.79 2011.66,-1132.15"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="2011.48,-1135.66 2021.37,-1131.86 2011.27,-1128.66 2011.48,-1135.66"/>
 </a>
 </g>
 </g>
