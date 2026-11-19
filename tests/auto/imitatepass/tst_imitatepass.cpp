@@ -4032,7 +4032,7 @@ void tst_imitatepass::reencryptReportsALinkWhoseTargetHasTheRecipients() {
   QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
   QCoreApplication::processEvents();
   QCOMPARE(rec.criticals.size(), 1);
-  QVERIFY2(rec.criticals.first().contains("no longer a regular file"),
+  QVERIFY2(rec.criticals.first().contains("lies behind a link"),
            qPrintable(rec.criticals.first()));
   QCOMPARE(loggedCalls(logPath).size(), 1);
   QFile check(outside);
@@ -4096,7 +4096,7 @@ void tst_imitatepass::reencryptReportsAFolderThatBecameALink() {
   QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
   QCoreApplication::processEvents();
   QCOMPARE(rec.criticals.size(), 1);
-  QVERIFY2(rec.criticals.first().contains("no longer a regular file"),
+  QVERIFY2(rec.criticals.first().contains("lies behind a link"),
            qPrintable(rec.criticals.first()));
   QCOMPARE(loggedCalls(logPath).size(), 1);
   for (const QString &name :

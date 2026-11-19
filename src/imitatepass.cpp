@@ -1534,8 +1534,8 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     const QFileInfo entry(fileName);
     if (entry.isSymLink() || !entry.isFile() ||
         Util::isUnderLink(fileName, m_settings.passStore)) {
-      result.failed << tr("%1 is no longer a regular file, or is too large, "
-                          "and was not re-encrypted.")
+      result.failed << tr("%1 is no longer a regular file, or lies behind a "
+                          "link, and was not re-encrypted.")
                            .arg(fileName);
     } else if (getKeysFromFile(fileName) != gpgId) {
       QString why;

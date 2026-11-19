@@ -162,7 +162,7 @@ Saving recipients in the **Users** dialog changes the recipient list (`.gpg-id`)
   ```
 
   - Without a signing key: delete a copy you do not need, then use **Share › Re-encrypt all passwords** on that folder.
-  - With a signing key: open **Users** for that folder, untick the person and save. A deleted list that this device has accepted is not replaced by the parent's list, and saving into that folder then stops with "Recipient list missing".
+  - With a signing key: open **Users** for that folder, untick the person and save. A deleted list that this device has accepted is not replaced by the parent's list, also one without a generation line (written by `pass` or by QtPass before 2.0), and saving into that folder then stops with "Recipient list missing". If someone removed it on purpose, the folder cannot go back to the parent's list on this device: open **Users** for it and save the recipients it should have, which gives it a fresh signed list of its own.
 
 - **Hidden folders** (names that start with a dot). QtPass does not show, search or re-encrypt them, as `pass ls` does not list them (`pass init` does re-encrypt them). Move the entries into a normal folder, then re-encrypt.
 - **Copies elsewhere.** Re-encrypting does not take back what the person could already read: Git history, backups and synced copies keep the old files. Change the passwords that matter.
@@ -308,8 +308,8 @@ still to do. Then re-encrypt each folder whose re-encryption did not finish or
 that you moved entries into with **Share › Re-encrypt all passwords** on that
 folder. For the top of the store, which has no Share menu, right-click an
 empty part of the tree, open **Users** and save the recipients as they are. Turn
-automatic push back on once all are done. The Users dialog would give a folder a
-recipient list of its own.
+automatic push back on once all are done. On a sub-folder, the Users dialog
+would give it a recipient list of its own.
 
 Why: what is still queued runs with the store and programs that are set when
 it starts. A store changed in Settings meanwhile was the one a pending
