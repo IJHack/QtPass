@@ -306,8 +306,9 @@ cancelled or refused one left. So first turn off **Automatically push** in
 Settings: each run that finishes would push the whole store, also a folder
 still to do. Then re-encrypt each folder whose re-encryption did not finish or
 that you moved entries into with **Share › Re-encrypt all passwords** on that
-folder. For the top of the store, use it on an entry there. Turn automatic
-push back on once all are done. The Users dialog would give a folder a
+folder. For the top of the store, which has no Share menu, right-click an
+empty part of the tree, open **Users** and save the recipients as they are. Turn
+automatic push back on once all are done. The Users dialog would give a folder a
 recipient list of its own.
 
 Why: what is still queued runs with the store and programs that are set when
