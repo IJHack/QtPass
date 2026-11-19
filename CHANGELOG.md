@@ -167,6 +167,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- The check that the signing key's secret key is available reads gpg's key
+  records instead of searching its whole output for the fingerprint, which
+  a user ID crafted by a key's owner could contain. It now also accepts a
+  signing subkey configured by its own fingerprint, and a primary key one of
+  whose subkeys signs, and refuses a key that cannot sign, is revoked or
+  expired, or whose secret part is only a stub (scan finding
+  ANT-2026-IGZWV58C)
 - A new profile or the first-run wizard with a signing key checks that its
   secret key is available before writing the store's recipient list, as
   saving recipients in Users already did. Without it the list was written,

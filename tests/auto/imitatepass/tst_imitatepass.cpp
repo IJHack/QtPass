@@ -209,8 +209,8 @@ class tst_imitatepass : public QObject {
         << "  encrypt) cat >/dev/null; printf 'ciphertext\\n' > "
            "\"$outfile\";;\n"
         << "  sign) cat >/dev/null; printf 'sig' > \"$outfile\";;\n"
-        << "  seckeys) printf '[GNUPG:] KEY_CONSIDERED " << kSigner
-        << " 0\\n';;\n"
+        << "  seckeys) printf 'sec:u:4096:1:X:1::::::scSC:::+:\\nfpr:::::::::"
+        << kSigner << ":\\n';;\n"
         << "  verify) cat >/dev/null\n";
     if (!swapGpgIdTo.isEmpty()) {
       out << "    printf '" << swapGpgIdTo << "\\n' > '"
@@ -274,7 +274,8 @@ class tst_imitatepass : public QObject {
         {QStringLiteral("sign"),
          QStringLiteral("cat >/dev/null; printf 'sig' > \"$outfile\"")},
         {QStringLiteral("seckeys"),
-         QStringLiteral("printf '[GNUPG:] KEY_CONSIDERED %1 0\\n'")
+         QStringLiteral(
+             "printf 'sec:u:4096:1:X:1::::::scSC:::+:\\nfpr:::::::::%1:\\n'")
              .arg(kSigner)},
         {QStringLiteral("verify"),
          QStringLiteral("cat >/dev/null; printf '[GNUPG:] VALIDSIG %1 "
