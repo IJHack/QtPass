@@ -304,7 +304,8 @@ can fix the path or option that caused it. A restart forgets a re-encryption
 that was still to run, and the hold on automatic pushes that a failed,
 cancelled or refused one left. Before anything is pushed, automatically or by
 hand, re-encrypt each folder whose re-encryption did not finish or that you
-moved entries into (Users dialog, or `pass init` again).
+moved entries into: **Share › Re-encrypt all passwords** on that folder. The
+Users dialog would give the folder a recipient list of its own.
 
 Why: what is still queued runs with the store and programs that are set when
 it starts. A store changed in Settings meanwhile was the one a pending
