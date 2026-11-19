@@ -14,6 +14,8 @@
  */
 
 #include <algorithm>
+#include <functional>
+#include <utility>
 
 #include <QAbstractItemModel>
 #include <QCoreApplication>
@@ -389,6 +391,9 @@ private Q_SLOTS:
   void imitatePass_copyOntoFolderAndShow();
   void imitatePass_copyOntoExistingEntryClash();
   void imitatePass_copyIntoFolderReencryptsToFolderKey();
+  void imitatePass_moveIntoFolderReencryptsToFolderKey();
+  void imitatePass_gitMoveReencryptsOnceItRan();
+  void imitatePass_noMessageBoxInsideATransaction();
   void imitatePass_insertAndRemove();
   void imitatePass_generateGpgKeysEmptyExecutable();
   void imitatePass_nestedDirectoryInsertAndShow();
@@ -907,6 +912,175 @@ void tst_integration::imitatePass_copyIntoFolderReencryptsToFolderKey() {
                           .arg(srcIds.join(','))));
 }
 
+void tst_integration::imitatePass_moveIntoFolderReencryptsToFolderKey() {
+  // A move into a folder with another .gpg-id re-encrypts what moved for
+  // that folder's recipients, as `pass mv` does: the source folder's
+  // recipients must not keep reading it. A rename, or a folder that takes
+  // its own list along, needs no re-encryption.
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+
+  auto writeGpgId = [](const QString &dir, const QString &fpr) -> bool {
+    QDir().mkpath(dir);
+    QFile f(QDir::cleanPath(dir + "/.gpg-id"));
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    const QByteArray payload = (fpr + "\n").toUtf8();
+    return f.write(payload) == payload.size();
+  };
+  const QDir store(storeDir.path());
+  QVERIFY(writeGpgId(storeDir.path(), m_keyFingerprint));
+  const QString team = QDir::cleanPath(store.filePath("team"));
+  QVERIFY(writeGpgId(team, m_keyFingerprint2));
+  QVERIFY(writeGpgId(store.filePath("own"), m_keyFingerprint));
+  QVERIFY(store.mkpath("plain"));
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  for (const QString &name :
+       {QStringLiteral("rootentry"), QStringLiteral("other"),
+        QStringLiteral("own/kept"), QStringLiteral("plain/carried")}) {
+    QSignalSpy spy(&pass, &Pass::finishedInsert);
+    pass.Insert(name, QStringLiteral("r\n"), false);
+    QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
+  }
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+  const auto targetsOnly = [&](const QString &file, const QString &key,
+                               const QString &other) {
+    const QStringList ids = recipientKeyIds(m_gnupgHome.path(), file);
+    return ids.contains(key) && !ids.contains(other);
+  };
+
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+  // A neighbour still encrypted to the root's key: the move re-encrypts
+  // what moved, not the folder it lands in.
+  const QString neighbour = team + "/neighbour.gpg";
+  QVERIFY(QFile::copy(store.filePath("other.gpg"), neighbour));
+  // An entry dropped onto a folder with another list.
+  const QString moved = QDir::cleanPath(team + "/rootentry.gpg");
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.Move(store.filePath("rootentry.gpg"), team, false);
+    QVERIFY2(criticalSpy.isEmpty(), "the move must not fail");
+    QVERIFY(QFile::exists(moved));
+    QVERIFY2(waitForSignal(endSpy, 60000),
+             "a move into a folder with another list must re-encrypt it");
+  }
+  QVERIFY2(targetsOnly(moved, sub2, sub1),
+           qPrintable(recipientKeyIds(m_gnupgHome.path(), moved).join(',')));
+  QVERIFY2(targetsOnly(neighbour, sub1, sub2), "the neighbour was left alone");
+
+  // A rename in the same folder keeps the list: nothing to re-encrypt.
+  startSpy.clear();
+  pass.Move(moved, team + "/renamed", false);
+  QVERIFY(QFile::exists(team + "/renamed.gpg"));
+  QCOMPARE(startSpy.size(), 0);
+
+  // A folder with its own list takes it along.
+  pass.Move(store.filePath("own"), team, false);
+  QVERIFY(QFile::exists(team + "/own/kept.gpg"));
+  QCOMPARE(startSpy.size(), 0);
+  QVERIFY(targetsOnly(team + "/own/kept.gpg", sub1, sub2));
+
+  // A folder without one does not.
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.Move(store.filePath("plain"), team, false);
+    QVERIFY(QFile::exists(team + "/plain/carried.gpg"));
+    QVERIFY2(waitForSignal(endSpy, 60000),
+             "a folder moved under another list must be re-encrypted");
+  }
+  QVERIFY(targetsOnly(team + "/plain/carried.gpg", sub2, sub1));
+  QVERIFY2(criticalSpy.isEmpty(),
+           qPrintable(criticalSpy.isEmpty()
+                          ? QString()
+                          : criticalSpy.first().at(1).toString()));
+}
+
+void tst_integration::imitatePass_noMessageBoxInsideATransaction() {
+  // A message box spins an event loop; whatever the user does meanwhile can
+  // queue a process. Opened inside a move's, copy's or removal's
+  // transaction, that process was booked as a step of it: an entry opened
+  // then came back as the output of `pass mv`, which is not secret, and
+  // never reached finishedShow. Here the box is a slot that opens the entry.
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath("locked"));
+
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  for (const QString &name : {QStringLiteral("mail"), QStringLiteral("bank"),
+                              QStringLiteral("locked/entry")}) {
+    QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+    pass.Insert(name, name + QStringLiteral("-secret\n"), false);
+    QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  }
+  QVERIFY(QFile::link(store.filePath("bank.gpg"), store.filePath("work.gpg")));
+
+  bool open = false;
+  QStringList titles;
+  connect(&pass, &Pass::critical, this, [&](const QString &title) {
+    titles << title;
+    if (open) {
+      open = false;
+      pass.Show(QStringLiteral("bank"));
+    }
+  });
+  const auto showsWhileTheBoxIsOpen = [&](const std::function<void()> &op) {
+    QSignalSpy showSpy(&pass, &Pass::finishedShow);
+    titles.clear();
+    open = true;
+    op();
+    return !open && waitForSignal(showSpy) &&
+           showSpy.first().at(0).toString().contains("bank-secret");
+  };
+
+  // A rename onto a name whose .gpg is a link.
+  QVERIFY2(showsWhileTheBoxIsOpen([&] {
+             pass.Move(store.filePath("mail.gpg"), store.filePath("work"),
+                       false);
+           }),
+           qPrintable(titles.join(',')));
+  QVERIFY(QFile::exists(store.filePath("mail.gpg")));
+  // A copy onto it.
+  QVERIFY2(showsWhileTheBoxIsOpen([&] {
+             pass.Copy(store.filePath("mail.gpg"), store.filePath("work"),
+                       false);
+           }),
+           qPrintable(titles.join(',')));
+
+  // A removal that fails.
+  const QString locked = store.filePath("locked");
+  QVERIFY(QFile::setPermissions(locked, QFile::ReadOwner | QFile::ExeOwner));
+  QFile probe(locked + "/probe");
+  if (probe.open(QIODevice::WriteOnly)) {
+    probe.close();
+    probe.remove();
+    QFile::setPermissions(locked, QFile::ReadOwner | QFile::WriteOwner |
+                                      QFile::ExeOwner);
+    QSKIP("a read-only folder does not stop this user (root?)");
+  }
+  const bool shown = showsWhileTheBoxIsOpen(
+      [&] { pass.Remove(QStringLiteral("locked/entry"), false); });
+  QFile::setPermissions(locked,
+                        QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
+  QVERIFY2(shown, qPrintable(titles.join(',')));
+  QVERIFY(QFile::exists(locked + "/entry.gpg"));
+}
+
 void tst_integration::imitatePass_insertAndRemove() {
   QTemporaryDir storeDir;
   ImitatePass pass;
@@ -1067,6 +1241,265 @@ void tst_integration::imitatePass_gitInitAndCommit() {
   QVERIFY2(commitMsg.contains("gitentry"),
            qPrintable(QString("commit message should mention gitentry: %1")
                           .arg(commitMsg)));
+}
+
+void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
+  // With Git the move is queued: whether it happened, and which list
+  // applies where it lands, is known only once git mv has run. A folder
+  // move queued before can create the destination folder, and a git mv
+  // that fails leaves the destination as it was, not to be rewritten.
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed");
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  QVERIFY(initGitRepo(storeDir.path(), gitExe));
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath("own"));
+  QFile list(store.filePath("own/.gpg-id"));
+  QVERIFY(list.open(QIODevice::WriteOnly));
+  list.write((m_keyFingerprint2 + "\n").toUtf8());
+  list.close();
+  QVERIFY(runGit(storeDir.path(), gitExe, {"add", "own/.gpg-id"}));
+  QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "own"}));
+
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  for (const QString &name :
+       {QStringLiteral("a"), QStringLiteral("b"), QStringLiteral("c"),
+        QStringLiteral("d"), QStringLiteral("f"), QStringLiteral("g"),
+        QStringLiteral("h"), QStringLiteral("i"), QStringLiteral("j"),
+        QStringLiteral("k"), QStringLiteral("own/kept")}) {
+    QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+    pass.Insert(name, QStringLiteral("r\n"), false);
+    QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  }
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+
+  QSignalSpy critical(&pass, &Pass::critical);
+  QSignalSpy started(&pass, &ImitatePass::startReencryptPath);
+  QSignalSpy ended(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy movedSpy(&pass, &Pass::finishedMove);
+  // A move into what a queued move is still to create: refused, as
+  // which list applies there is not known yet. Once that has run it goes.
+  pass.Move(store.filePath("own"), store.filePath("team"), false);
+  pass.Move(store.filePath("a.gpg"), store.filePath("team/a.gpg"), false);
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(critical.first().at(1).toString().contains("still being moved"),
+           qPrintable(critical.first().at(1).toString()));
+  QVERIFY(QFile::exists(store.filePath("a.gpg")));
+  QVERIFY(waitForSignal(movedSpy, 30000));
+  QCOMPARE(started.size(), 0);
+  critical.clear();
+  pass.Move(store.filePath("a.gpg"), store.filePath("team/a.gpg"), false);
+  QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
+  QCOMPARE(started.size(), 1);
+  const QStringList ids =
+      recipientKeyIds(m_gnupgHome.path(), store.filePath("team/a.gpg"));
+  QVERIFY2(ids.contains(sub2) && !ids.contains(sub1),
+           qPrintable(ids.join(',')));
+  QVERIFY2(critical.isEmpty(),
+           qPrintable(critical.isEmpty() ? QString()
+                                         : critical.first().at(1).toString()));
+
+  // Moving the folder an entry's run is still waiting for: refused, or the
+  // run would look for the entry where it no longer is. While the entry's
+  // move is queued, while its run is in flight, and while it waits behind
+  // another run.
+  const auto keyOf = [&](const QString &name) {
+    return recipientKeyIds(m_gnupgHome.path(), store.filePath(name));
+  };
+  const auto moveTeamAway = [&] {
+    pass.Move(store.filePath("team"), store.filePath("archive"), false);
+  };
+  started.clear();
+  ended.clear();
+  pass.Move(store.filePath("f.gpg"), store.filePath("team"), false);
+  moveTeamAway();
+  QCOMPARE(critical.size(), 1);
+  QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
+
+  bool armed = true;
+  auto hook = connect(&pass, &ImitatePass::startReencryptPath, this, [&] {
+    if (std::exchange(armed, false)) {
+      moveTeamAway();
+    }
+  });
+  ended.clear();
+  pass.Move(store.filePath("h.gpg"), store.filePath("team"), false);
+  QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
+  disconnect(hook);
+  QCOMPARE(critical.size(), 2);
+
+  armed = true;
+  hook = connect(&pass, &ImitatePass::endReencryptPath, this, [&] {
+    if (std::exchange(armed, false)) {
+      moveTeamAway();
+    }
+  });
+  ended.clear();
+  pass.Move(store.filePath("i.gpg"), store.filePath("team"), false);
+  pass.Move(store.filePath("j.gpg"), store.filePath("team"), false);
+  QTRY_COMPARE_WITH_TIMEOUT(ended.size(), 2, 60000);
+  disconnect(hook);
+  QCOMPARE(critical.size(), 3);
+  QVERIFY(QFileInfo(store.filePath("team")).isDir());
+  for (const QString &name :
+       {QStringLiteral("team/f.gpg"), QStringLiteral("team/h.gpg"),
+        QStringLiteral("team/i.gpg"), QStringLiteral("team/j.gpg")}) {
+    const QStringList now = keyOf(name);
+    QVERIFY2(now.contains(sub2) && !now.contains(sub1),
+             qPrintable(name + ": " + now.join(',')));
+  }
+  critical.clear();
+
+  // A git mv that fails moves nothing, even when an earlier step took its
+  // source away: the entry under the destination name stays as it is. Git
+  // through a wrapper that holds `rm` and `commit` back a second, so the
+  // source is still there when the move is asked for.
+  QTemporaryDir wrapDir;
+  QVERIFY(wrapDir.isValid());
+  const QString wrapper = wrapDir.filePath("git");
+  {
+    QFile script(wrapper);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write("#!/bin/sh\ncase \" $* \" in *\" rm \"*|*\" commit \"*) sleep "
+                 "1;; esac\n"
+                 "exec \"" +
+                 gitExe.toUtf8() + "\" \"$@\"\n");
+    script.close();
+    QVERIFY(script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                                  QFile::ExeOwner));
+  }
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = wrapper;
+    pass.init(s);
+    pass.updateEnv();
+  }
+  started.clear();
+  QSignalSpy failedMove(&pass, &Pass::processErrorExit);
+  pass.Remove(QStringLiteral("g"), false);
+  QVERIFY(QFile::exists(store.filePath("g.gpg")));
+  pass.Move(store.filePath("g.gpg"), store.filePath("team/kept.gpg"), true);
+  QVERIFY2(waitForSignal(failedMove, 30000), "git mv failed");
+  QTest::qWait(300);
+  QCOMPARE(started.size(), 0);
+  QVERIFY(!QFile::exists(store.filePath("g.gpg")));
+
+  // Something written under the source name after git mv ran, before the
+  // move settles (its commit is held back), does not stop the run.
+  started.clear();
+  ended.clear();
+  pass.Move(store.filePath("k.gpg"), store.filePath("team"), false);
+  QTRY_VERIFY_WITH_TIMEOUT(QFile::exists(store.filePath("team/k.gpg")), 10000);
+  QFile again(store.filePath("k.gpg"));
+  QVERIFY(again.open(QIODevice::WriteOnly));
+  again.write("written again\n");
+  again.close();
+  QVERIFY2(waitForSignal(ended, 60000), "the entry was re-encrypted");
+  const QStringList kIds = keyOf("team/k.gpg");
+  QVERIFY2(kIds.contains(sub2) && !kIds.contains(sub1),
+           qPrintable(kIds.join(',')));
+  QVERIFY(QFile::remove(store.filePath("k.gpg")));
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  // git mv refuses a file Git does not track: nothing moved, so the entry
+  // under the destination name is not re-encrypted.
+  QVERIFY(QFile::copy(store.filePath("team/a.gpg"),
+                      store.filePath("untracked.gpg")));
+  QSignalSpy failed(&pass, &Pass::processErrorExit);
+  started.clear();
+  pass.Move(store.filePath("untracked.gpg"), store.filePath("team/kept.gpg"),
+            true);
+  QVERIFY2(waitForSignal(failed, 30000), "git mv failed");
+  QTest::qWait(300);
+  QCOMPARE(started.size(), 0);
+  QVERIFY(QFile::exists(store.filePath("untracked.gpg")));
+  QVERIFY(QFile::remove(store.filePath("untracked.gpg")));
+
+  // A remote: the push after a move waits for its re-encryption, so what
+  // reaches it is the entry for team's recipients, not the one it moved as.
+  QTemporaryDir remoteDir;
+  QVERIFY(remoteDir.isValid());
+  QVERIFY(runGit(remoteDir.path(), gitExe, {"init", "-q", "--bare"}));
+  QVERIFY(runGit(storeDir.path(), gitExe,
+                 {"remote", "add", "origin", remoteDir.path()}));
+  QVERIFY(
+      runGit(storeDir.path(), gitExe, {"push", "-q", "-u", "origin", "HEAD"}));
+  QSignalSpy pushed(&pass, &Pass::finishedGitPush);
+
+  // Two entries queued into team: the second settles while the first's
+  // run is in flight, and is re-encrypted after it, not skipped. The push
+  // waits for both runs.
+  started.clear();
+  ended.clear();
+  pass.Move(store.filePath("b.gpg"), store.filePath("team"), false);
+  pass.Move(store.filePath("c.gpg"), store.filePath("team"), false);
+  pass.GitPushAutomatic();
+  QVERIFY(waitForSignal(ended, 60000));
+  QTRY_COMPARE_WITH_TIMEOUT(ended.size(), 2, 60000);
+  QCOMPARE(started.size(), 2);
+  for (const QString &name :
+       {QStringLiteral("team/b.gpg"), QStringLiteral("team/c.gpg")}) {
+    const QStringList now =
+        recipientKeyIds(m_gnupgHome.path(), store.filePath(name));
+    QVERIFY2(now.contains(sub2) && !now.contains(sub1),
+             qPrintable(name + ": " + now.join(',')));
+  }
+
+  QVERIFY2(waitForSignal(pushed, 30000), "the push was made");
+  QCOMPARE(pushed.size(), 1);
+  const auto remoteIdsOf = [&](const QString &name) {
+    QProcess show;
+    show.setWorkingDirectory(remoteDir.path());
+    show.setStandardOutputFile(store.filePath("remote.gpg"));
+    show.start(gitExe, {"show", "HEAD:" + name});
+    show.waitForFinished();
+    const QStringList ids =
+        recipientKeyIds(m_gnupgHome.path(), store.filePath("remote.gpg"));
+    QFile::remove(store.filePath("remote.gpg"));
+    return ids;
+  };
+  for (const QString &name :
+       {QStringLiteral("team/b.gpg"), QStringLiteral("team/c.gpg")}) {
+    const QStringList remote = remoteIdsOf(name);
+    QVERIFY2(remote.contains(sub2) && !remote.contains(sub1),
+             qPrintable("remote " + name + ": " + remote.join(',')));
+  }
+
+  // One entry, and the push asked for while its move is still queued.
+  pushed.clear();
+  pass.Move(store.filePath("d.gpg"), store.filePath("team"), false);
+  pass.GitPushAutomatic();
+  QVERIFY2(waitForSignal(pushed, 60000), "the push was made");
+  const QStringList remoteIds = remoteIdsOf("team/d.gpg");
+  QVERIFY2(remoteIds.contains(sub2) && !remoteIds.contains(sub1),
+           qPrintable(remoteIds.join(',')));
+
+  // A rename needs no re-encryption: its push goes once the move settled.
+  pushed.clear();
+  started.clear();
+  pass.Move(store.filePath("team/d.gpg"), store.filePath("team/e"), false);
+  pass.GitPushAutomatic();
+  QVERIFY2(waitForSignal(pushed, 30000), "the push was made");
+  QCOMPARE(started.size(), 0);
+  QVERIFY(
+      runGit(remoteDir.path(), gitExe, {"cat-file", "-e", "HEAD:team/e.gpg"}));
 }
 
 void tst_integration::imitatePass_gitCopyAndShow() {
