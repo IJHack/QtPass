@@ -4865,7 +4865,9 @@ void tst_mainwindow::profileBoxIsDisabledWhileAnOperationRuns() {
         [](QWidget *w) { QMetaObject::invokeMethod(w, "close"); });
     settings->trigger();
     QTRY_COMPARE_WITH_TIMEOUT(driver.seen, 1, 5000);
-    QVERIFY2(driver.boxTitles.value(0) == QStringLiteral("Settings not opened"),
+    // The text, not the title: macOS ignores a message box's title.
+    QVERIFY2(driver.boxTexts.value(0).contains(
+                 QStringLiteral("still running or waiting")),
              qPrintable(driver.seenClasses.join(',')));
   }
   QTRY_VERIFY_WITH_TIMEOUT(backend->isIdle(), 10000);
