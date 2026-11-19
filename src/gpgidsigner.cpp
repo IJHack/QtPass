@@ -73,6 +73,7 @@ auto GpgIdSigner::haveSecretKey() const -> bool {
   // the primary or any of its subkeys will do.
   struct Key {
     bool signs = false;
+    bool valid = false;
     bool primary = false;
     QString fpr;
   };
@@ -94,11 +95,11 @@ auto GpgIdSigner::haveSecretKey() const -> bool {
       const QString validity = fields.value(1);
       Key k;
       k.primary = primary;
-      k.signs = fields.value(11).contains(QLatin1Char('s')) &&
-                fields.value(14) != QLatin1String("#") &&
-                validity != QLatin1String("r") &&
+      k.valid = validity != QLatin1String("r") &&
                 validity != QLatin1String("e") &&
                 validity != QLatin1String("i");
+      k.signs = k.valid && fields.value(11).contains(QLatin1Char('s')) &&
+                fields.value(14) != QLatin1String("#");
       blocks.last().append(k);
       awaitingFpr = true;
     } else if (type == QLatin1String("fpr") && awaitingFpr) {
@@ -107,6 +108,10 @@ auto GpgIdSigner::haveSecretKey() const -> bool {
     }
   }
   for (const QList<Key> &block : std::as_const(blocks)) {
+    // A revoked or expired primary key takes its subkeys with it.
+    if (block.isEmpty() || !block.first().valid) {
+      continue;
+    }
     for (const Key &k : block) {
       if (k.fpr.compare(key, Qt::CaseInsensitive) != 0) {
         continue;
