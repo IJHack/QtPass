@@ -1,6 +1,6 @@
 <map id="GpgIdSigner::enabled" name="GpgIdSigner::enabled">
 <area shape="rect" id="Node000001" title="Whether any signing key is configured at all." alt="" coords="3164,505,3325,533"/>
-<area shape="rect" id="Node000002" href="$class_gpg_id_signer.html#aefa1594ea06e773745d73b9752d2dda7" title="Whether gpg has the secret key that sign() will use, i.e. the first configured key." alt="" coords="1630,455,1836,482"/>
+<area shape="rect" id="Node000002" href="$class_gpg_id_signer.html#aefa1594ea06e773745d73b9752d2dda7" title="Whether gpg has the secret key that sign() will use, i.e. the first configured key...." alt="" coords="1630,455,1836,482"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3146,504,2963,483,2855,474,2747,471,2237,471,1836,471,1836,466,2237,466,2747,466,2855,469,2964,478,3152,504"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="1116,379,1242,406"/>
 <area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="3219,492,3175,451,3146,429,3115,412,3063,391,3017,378,2976,370,2937,366,2853,367,2747,370,1732,370,1459,377,1243,390,1242,385,1459,372,1732,364,2747,364,2853,362,2937,361,2977,364,3019,372,3065,386,3117,407,3149,425,3178,447,3224,494"/>

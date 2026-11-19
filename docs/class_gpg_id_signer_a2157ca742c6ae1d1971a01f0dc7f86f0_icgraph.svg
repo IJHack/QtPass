@@ -62,7 +62,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_gpg_id_signer.html#aefa1594ea06e773745d73b9752d2dda7" target="_top" xlink:title="Whether gpg has the secret key that sign() will use, i.e. the first configured key.">
+<g id="a_Node000002"><a xlink:href="class_gpg_id_signer.html#aefa1594ea06e773745d73b9752d2dda7" target="_top" xlink:title="Whether gpg has the secret key that sign() will use, i.e. the first configured key....">
 <polygon fill="white" stroke="#666666" points="1372.75,-251.75 1218.75,-251.75 1218.75,-231 1372.75,-231 1372.75,-251.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1295.75" y="-238.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdSigner::haveSecretKey</text>
 </a>
