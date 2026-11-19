@@ -900,8 +900,10 @@ void MainWindow::onConfig() {
              tr("A gpg, Git or pass command is still running or waiting. "
                 "Open the settings again once it has finished. If it does "
                 "not finish, answer or cancel the PIN or password prompt it "
-                "waits for, or restart QtPass. After a restart, re-encrypt "
-                "a folder you moved entries into before you push."));
+                "waits for, or restart QtPass. A restart forgets which "
+                "folders still need re-encrypting: re-encrypt any folder "
+                "whose re-encryption did not finish, or that you moved "
+                "entries into, before anything is pushed."));
     return;
   }
   config();
