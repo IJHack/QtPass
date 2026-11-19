@@ -298,7 +298,18 @@ a group separator, and `\` too on Windows.
 Since 2.0, Settings and the profile box wait until no `gpg`, `git` or `pass`
 command runs or waits. A slow push or a `gpg` that waits for your PIN keeps
 them closed until it is done. If a PIN dialog is open, answer or cancel it,
-then open Settings again.
+then open Settings again. If the command never ends (`git` waiting for a
+password, a `gpg` that hangs), restart QtPass: Settings open at once, so you
+can fix the path or option that caused it. A restart forgets a re-encryption
+that was still to run, and the hold on automatic pushes that a failed,
+cancelled or refused one left. So first turn off **Automatically push** in
+Settings: each run that finishes would push the whole store, also a folder
+still to do. Then re-encrypt each folder whose re-encryption did not finish or
+that you moved entries into with **Share › Re-encrypt all passwords** on that
+folder. For the top of the store, which has no Share menu, right-click an
+empty part of the tree, open **Users** and save the recipients as they are. Turn
+automatic push back on once all are done. The Users dialog would give a folder a
+recipient list of its own.
 
 Why: what is still queued runs with the store and programs that are set when
 it starts. A store changed in Settings meanwhile was the one a pending

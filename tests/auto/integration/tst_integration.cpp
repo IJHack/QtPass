@@ -1276,7 +1276,7 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
        {QStringLiteral("a"), QStringLiteral("b"), QStringLiteral("c"),
         QStringLiteral("d"), QStringLiteral("f"), QStringLiteral("g"),
         QStringLiteral("h"), QStringLiteral("i"), QStringLiteral("j"),
-        QStringLiteral("k"), QStringLiteral("own/kept")}) {
+        QStringLiteral("k"), QStringLiteral("l"), QStringLiteral("own/kept")}) {
     QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
     pass.Insert(name, QStringLiteral("r\n"), false);
     QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
@@ -1500,6 +1500,25 @@ void tst_integration::imitatePass_gitMoveReencryptsOnceItRan() {
   QCOMPARE(started.size(), 0);
   QVERIFY(
       runGit(remoteDir.path(), gitExe, {"cat-file", "-e", "HEAD:team/e.gpg"}));
+
+  // A run refused at its start (a rebase begun while the move was queued):
+  // the entry is still for the recipients it came from, so automatic
+  // pushes are held, as after a run that did not finish.
+  pushed.clear();
+  started.clear();
+  critical.clear();
+  QVERIFY(!pass.autoPushHeld());
+  pass.Move(store.filePath("l.gpg"), store.filePath("team"), false);
+  QVERIFY(store.mkpath(".git/rebase-merge"));
+  pass.GitPushAutomatic();
+  QTRY_VERIFY_WITH_TIMEOUT(!critical.isEmpty(), 30000);
+  QCOMPARE(critical.first().at(0).toString(),
+           QStringLiteral("Unfinished Git operation"));
+  QTest::qWait(500);
+  QCOMPARE(started.size(), 0);
+  QCOMPARE(pushed.size(), 0);
+  QVERIFY2(pass.autoPushHeld(), "the push waits for a clean run");
+  QVERIFY(QDir(store.filePath(".git/rebase-merge")).removeRecursively());
 }
 
 void tst_integration::imitatePass_gitCopyAndShow() {

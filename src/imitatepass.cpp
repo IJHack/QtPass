@@ -188,7 +188,14 @@ void ImitatePass::sendDeferredPush() {
 void ImitatePass::startMovedReencrypts() {
   // A run refused at its start (reencryptPath() said why) leaves the next.
   while (!m_reencryptActive && !m_movedToReencrypt.isEmpty()) {
-    reencryptPath(m_movedToReencrypt.takeFirst());
+    const QString scope = m_movedToReencrypt.takeFirst();
+    reencryptPath(scope);
+    if (!m_reencryptActive) {
+      // What moved is still encrypted for the recipients it came from: the
+      // automatic push after the move waits, as after a run that did not
+      // finish. A push by hand still goes.
+      holdAutoPush(scope);
+    }
   }
   sendDeferredPush();
 }

@@ -994,6 +994,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   was the one a queued `pass init` from Users re-encrypted, for the
   recipients chosen for the other store. Settings now wait for a slow push
   or a PIN prompt to end (scan finding ANT-2026-QBQ5NZBI)
+- With the native backend, a moved entry whose re-encryption is refused at
+  its start (an unfinished rebase or merge, say) holds automatic pushes, as
+  a run that did not finish does. The push after the move sent the entry
+  still encrypted for the recipients it came from. A push by hand still goes
 - "Hide on close" and "Start minimized" hide the window only into a tray
   icon. Without one (the tray icon switched off, or a desktop without a
   system tray) closing the window left QtPass running invisibly, with the
