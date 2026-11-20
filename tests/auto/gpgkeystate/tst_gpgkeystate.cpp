@@ -416,8 +416,9 @@ void tst_gpgkeystate::parseV5V6PrimaryFingerprints() {
   QCOMPARE(noPrimaryFprUsers.first().key_id,
            QStringLiteral("A1B2C3D4E5F60718"));
 
-  // A designated revoker's rvk record (and a grp record) between pub and fpr
-  // must not stop the primary fingerprint from being taken.
+  // A designated revoker's rvk record between pub and fpr must not stop the
+  // primary fingerprint from being taken. The grp record after the fpr is
+  // where gpg --with-keygrip prints it.
   const QString revokerListing =
       QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
                      "rvk:::22::::::%1:80:\n"

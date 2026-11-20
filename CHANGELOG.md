@@ -744,8 +744,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
-- QtPass now keeps the full fingerprint of OpenPGP v5 (LibrePGP) and v6 (RFC 9580) keys, whose key ID is the head of the fingerprint rather than the
-  tail; `.gpg-id` entries that use a key ID still match.
+- QtPass now keeps the full fingerprint of OpenPGP v5 (LibrePGP) and v6
+  (RFC 9580) keys, whose key ID is the head of the fingerprint rather than
+  the tail; `.gpg-id` entries that use a key ID still match.
 - Saves, deletes, moves, copies and re-encryption are refused while the
   store's Git repository is in the middle of a rebase, merge, cherry-pick or
   revert (a pull that stopped in a conflict). QtPass used to keep committing
