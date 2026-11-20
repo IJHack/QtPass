@@ -141,8 +141,8 @@ auto parseGpgColonOutput(const QString &output, bool secret)
 
     const QString &record_type = props[0];
     const GpgRecordType type = classifyRecord(record_type);
-    // Only a uid or subkey record ends the primary key's head: an rvk
-    // (designated revoker) or grp record may sit between pub and its fpr.
+    // Short records, uids, and subkey records end the primary key's head: an
+    // rvk (designated revoker) or grp record may sit between pub and its fpr.
     if (type == GpgRecordType::Uid || type == GpgRecordType::Sub ||
         type == GpgRecordType::Ssb) {
       expectPrimaryFingerprint = false;

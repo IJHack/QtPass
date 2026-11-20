@@ -86,6 +86,7 @@ private slots:
   void rowWithAnOutOfRangeIndexChangesNoSelection();
   void ownKeysAreBoldAndInLinkColour();
   void importingAKeyRefreshesTheListAndSelectsIt();
+  void importingAV6KeyRefreshesTheListAndSelectsIt();
   void cancellingTheImportLeavesTheListAlone();
 
 private:
@@ -1195,17 +1196,17 @@ void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
     QCOMPARE(selected.first().key_id, fingerprint);
     QCOMPARE(selected.first().enabled,
              recipient != QStringLiteral("AAAAAAAAAAAAAAAA"));
+    QListWidgetItem *missing =
+        itemWithText(list, QStringLiteral("Key not found in keyring"));
     if (recipient == QStringLiteral("AAAAAAAAAAAAAAAA")) {
-      QVERIFY(list->item(1)->text().contains(
-          QStringLiteral("Key not found in keyring")));
+      QVERIFY(missing != nullptr);
     } else {
-      QVERIFY(!list->item(0)->text().contains(
-          QStringLiteral("Key not found in keyring")));
+      QCOMPARE(missing, nullptr);
     }
   }
 
-  // Once the ten per-recipient lookups are spent, a v6 head ID still matches
-  // the already-listed fingerprint without another gpg call.
+  // Once the ten per-recipient lookups are spent, a v6 head ID and short ID
+  // still match the already-listed fingerprint without another gpg call.
   QTemporaryDir store;
   QVERIFY(store.isValid());
   QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
@@ -1216,14 +1217,20 @@ void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
                     .toLatin1());
   }
   gpgId.write("0123456789ABCDEF\n");
+  gpgId.write("89ABCDEF\n");
+  gpgId.write("AAAAAAAA\n");
   gpgId.close();
   s.passStore = store.path() + QLatin1Char('/');
   RecordingPass pass(s);
   UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
   const QList<UserInfo> selected = dialog.selectedUsers();
-  QCOMPARE(selected.size(), 11);
+  QCOMPARE(selected.size(), 12);
   QCOMPARE(selected.first().key_id, fingerprint);
   QVERIFY(selected.first().enabled);
+  QVERIFY(itemWithText(list, QStringLiteral("AAAAAAAA")) != nullptr);
+  QCOMPARE(itemWithText(list, QStringLiteral("89ABCDEF")), nullptr);
 }
 
 /**
@@ -1714,7 +1721,8 @@ namespace {
 const char kImportingGpg[] =
     "case \"$*\" in\n"
     "  *--import*) cat > /dev/null; touch \"$0.imported\"; "
-    "printf '[GNUPG:] IMPORTED A1B2C3D4E5F60718 Bob\\n'; "
+    "printf '[GNUPG:] IMPORT_OK 1 "
+    "4EF2550F79F4E9E68B09F71D693A0AF3FA364E76\\n'; "
     "exit 0 ;;\n"
     "  *--list-secret-keys*) exit 0 ;;\n"
     "esac\n"
@@ -1786,6 +1794,62 @@ auto driveImport(UsersDialog *dialog, const QString &armored) -> int {
  *        stored key id, whether gpg reported a long id or a fingerprint).
  */
 void tst_usersdialog::importingAKeyRefreshesTheListAndSelectsIt() {
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(QStringLiteral("gpg-importing"),
+                             QString::fromLatin1(kImportingGpg) +
+                                 QString::fromLatin1(kColonListing) +
+                                 QString::fromLatin1(kImportingGpgTail));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  QFile::remove(s.gpgExecutable + QStringLiteral(".imported"));
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(list != nullptr && filter != nullptr);
+  QCOMPARE(list->count(), 1);
+  QVERIFY(list->item(0)->text().startsWith(QStringLiteral("Alice")));
+  // Tick Alice before importing: the reload rebuilds m_userList from gpg, but
+  // the selection made before the import must survive it, so an import does not
+  // silently drop the other recipients.
+  list->item(0)->setCheckState(Qt::Checked);
+  filter->setText(QStringLiteral("nobody"));
+  QCOMPARE(list->count(), 0);
+
+  QCOMPARE(driveImport(&dialog, QStringLiteral(
+                                    "-----BEGIN PGP PUBLIC KEY BLOCK-----\n"
+                                    "bob\n-----END PGP PUBLIC KEY BLOCK-----")),
+           1);
+
+  QVERIFY2(filter->text().isEmpty(), qPrintable(filter->text()));
+  QCOMPARE(list->count(), 2);
+  QVERIFY2(list->currentItem() != nullptr, "the imported key must be current");
+  QVERIFY2(list->currentItem()->text().startsWith(QStringLiteral("Bob")),
+           qPrintable(list->currentItem()->text()));
+  QVERIFY2(list->currentItem()->checkState() == Qt::Unchecked,
+           "importing does not tick the key; the user decides");
+
+  // Alice's tick survived the import; Bob was not ticked by it.
+  QListWidgetItem *alice = nullptr;
+  for (int i = 0; i < list->count(); ++i) {
+    if (list->item(i)->text().startsWith(QStringLiteral("Alice"))) {
+      alice = list->item(i);
+    }
+  }
+  QVERIFY2(alice != nullptr, "Alice must still be listed after the import");
+  QVERIFY2(alice->checkState() == Qt::Checked,
+           "Alice's selection must survive importing another key");
+  QCOMPARE(enabledIds(dialog.selectedUsers()).size(), 1);
+  QCOMPARE(dialog.selectedUsers().size(), 2);
+  QVERIFY2(QFile::exists(s.gpgExecutable + QStringLiteral(".imported")),
+           "gpg --import must have run");
+}
+
+/**
+ * @brief After an OpenPGP v6 key is imported and gpg reports its 16-hex
+ *        head key ID on an IMPORTED line, the key is selected by matching
+ *        its stored 64-hex fingerprint.
+ */
+void tst_usersdialog::importingAV6KeyRefreshesTheListAndSelectsIt() {
   const QString v6Key =
       QStringLiteral(
           "pub:u:255:22:A1B2C3D4E5F60718:1774947439:::u::::\n"
@@ -1794,14 +1858,20 @@ void tst_usersdialog::importingAKeyRefreshesTheListAndSelectsIt() {
           .arg(QStringLiteral("A1B2C3D4E5F60718") +
                QString(48, QLatin1Char('B')));
   AppSettings s = m_settings;
-  s.gpgExecutable = writeGpg(QStringLiteral("gpg-importing"),
-                             QString::fromLatin1(kImportingGpg) +
-                                 QString::fromLatin1(kColonListing)
-                                     .split(QLatin1Char('\n'))
-                                     .mid(0, 3)
-                                     .join(QLatin1Char('\n')) +
-                                 QLatin1Char('\n') + v6Key +
-                                 QString::fromLatin1(kImportingGpgTail));
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-importing-v6"),
+      QStringLiteral("case \"$*\" in\n"
+                     "  *--import*) cat > /dev/null; touch \"$0.imported\"; "
+                     "printf '[GNUPG:] IMPORTED A1B2C3D4E5F60718 Bob\\n'; "
+                     "exit 0 ;;\n"
+                     "  *--list-secret-keys*) exit 0 ;;\n"
+                     "esac\n"
+                     "all() { cat <<'LISTING'\n") +
+          QString::fromLatin1(kColonListing)
+              .split(QLatin1Char('\n'))
+              .mid(0, 3)
+              .join(QLatin1Char('\n')) +
+          QLatin1Char('\n') + v6Key + QString::fromLatin1(kImportingGpgTail));
   QVERIFY(!s.gpgExecutable.isEmpty());
   QFile::remove(s.gpgExecutable + QStringLiteral(".imported"));
   RecordingPass pass(s);
