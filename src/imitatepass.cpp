@@ -431,7 +431,23 @@ auto ImitatePass::addGenerationHeader(const QString &gpgIdFile,
     const auto header = GpgIdGeneration::parse(current);
     if (header && (!header->folder || *header->folder == *folder)) {
       verifiedOnDisk = header->generation;
-      storeOnDisk = header->store;
+      // The store's id comes only from a list this store accepts. A refused
+      // one (a rollback, a conflict) may be another store's, signed with
+      // the same key and copied in: taking its id over would make the list
+      // saved now one of that store too. Its generation still counts, so the
+      // next one is above it. Without the record, which it is cannot be
+      // told: a store id made up now could split the store from devices
+      // that know its own.
+      QString unavailable;
+      const GpgIdGeneration::Verdict verdict = GpgIdGeneration::accept(
+          gpgIdFile, current, m_settings.passStore, &unavailable);
+      if (verdict == GpgIdGeneration::Verdict::RecordUnavailable) {
+        emit critical(tr("Cannot update"), unavailable);
+        return false;
+      }
+      if (verdict == GpgIdGeneration::Verdict::Accepted) {
+        storeOnDisk = header->store;
+      }
     }
   }
   QString why;
