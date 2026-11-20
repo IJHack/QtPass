@@ -726,6 +726,8 @@ auto isAtOrUnder(const QString &path, const QString &dir,
 /// Where the lookup of a .gpg-id starts and the store that bounds it.
 struct GpgIdLookup {
   QDir start;
+  /// The folder whose list is wanted, whether it exists or not.
+  QString folder;
   QString storeDir;
   QString storePrefix;
 };
@@ -757,13 +759,15 @@ auto gpgIdLookup(const QString &for_file, const QString &passStore)
   // move to one) starts the walk at its nearest existing ancestor in the
   // store, as pass's set_gpg_recipients does: otherwise the walk ended at
   // once and the store root's list was taken over the one in between.
-  QString start = isFolder ? fullPath : QFileInfo(fullPath).absolutePath();
+  const QString folder =
+      QDir::cleanPath(isFolder ? fullPath : QFileInfo(fullPath).absolutePath());
+  QString start = folder;
   while (!QFileInfo(start).exists() &&
          isAtOrUnder(QDir::cleanPath(start), storeDir, storePrefix) &&
          QDir::cleanPath(start) != storeDir) {
     start = QFileInfo(start).absolutePath();
   }
-  return {QDir(start), storeDir, storePrefix};
+  return {QDir(start), folder, storeDir, storePrefix};
 }
 
 /// Whether @p candidate can be its folder's .gpg-id. A link under the name
@@ -1042,13 +1046,14 @@ auto Pass::verifySignedList(const GpgIdSigner &signer, const QString &gpgIdFile,
 auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
                         QString *recordError) -> std::optional<QString> {
   const GpgIdLookup lookup = gpgIdLookup(forFile, passStore);
-  QDir dir = lookup.start;
   // The same walk as nearestGpgId(), stopping at the list it finds, and
   // short of the store root: the root's own list has no parent to fall
-  // back to, and the signature check refuses it when it is missing.
-  while (dir.exists() && QDir::cleanPath(dir.absolutePath())
-                             .startsWith(lookup.storePrefix, kPathCase)) {
-    const QFileInfo candidate(dir.absoluteFilePath(".gpg-id"));
+  // back to, and the signature check refuses it when it is missing. It
+  // starts at the folder asked for, not at its nearest existing one: a
+  // folder removed together with its list is asked of the record too.
+  QString dir = lookup.folder;
+  while (dir.startsWith(lookup.storePrefix, kPathCase)) {
+    const QFileInfo candidate(dir + QStringLiteral("/.gpg-id"));
     if (isOwnGpgId(candidate)) {
       return std::nullopt;
     }
@@ -1077,9 +1082,11 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
     if (*seen) {
       return candidate.absoluteFilePath();
     }
-    if (!dir.cdUp()) {
+    const QString parent = QDir::cleanPath(QFileInfo(dir).absolutePath());
+    if (parent == dir) {
       break;
     }
+    dir = parent;
   }
   return std::nullopt;
 }

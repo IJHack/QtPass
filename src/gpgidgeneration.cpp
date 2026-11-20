@@ -585,13 +585,28 @@ auto GpgIdGeneration::folderOf(const QString &gpgIdFile,
 
 auto GpgIdGeneration::key(const QString &gpgIdFile) -> QString {
   const QFileInfo info(gpgIdFile);
-  // canonicalFilePath() is empty for a file that does not exist yet (a new
-  // profile's list): its folder does, so canonicalise that and append.
+  // canonicalFilePath() is empty for a file that does not exist (a new
+  // profile's list, or one whose folder was removed with it): canonicalise
+  // the nearest folder that does exist and append the rest, so that the
+  // key is the one the list had while it was there.
   QString canonical = info.canonicalFilePath();
   if (canonical.isEmpty()) {
-    const QString dir = info.absoluteDir().canonicalPath();
-    canonical = (dir.isEmpty() ? info.absolutePath() : dir) + QLatin1Char('/') +
-                info.fileName();
+    QString existing = QDir::cleanPath(info.absolutePath());
+    QString rest = info.fileName();
+    while (!QFileInfo(existing).isDir()) {
+      const QFileInfo up(existing);
+      const QString parent = QDir::cleanPath(up.absolutePath());
+      if (parent == existing) {
+        break;
+      }
+      rest = up.fileName() + QLatin1Char('/') + rest;
+      existing = parent;
+    }
+    QString dir = QDir(existing).canonicalPath();
+    if (dir.isEmpty()) {
+      dir = existing;
+    }
+    canonical = QDir::cleanPath(dir + QLatin1Char('/') + rest);
   }
   canonical = QDir::fromNativeSeparators(canonical);
 #ifdef Q_OS_WIN
