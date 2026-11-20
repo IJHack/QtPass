@@ -629,6 +629,7 @@ private Q_SLOTS:
   void anOlderSignedGpgIdIsRefusedUntilSavedAgain();
   void aDifferentListOfTheSameGenerationIsAConflict();
   void aListOfAnotherStoreIsRefused();
+  void aRefusedListLendsNoStoreId();
   void aSignedGpgIdCopiedIntoAnotherFolderIsRefused();
   void aPlantedGenerationDoesNotMoveTheCounter();
   void reencryptUsesTheRecipientsWhoseSignatureWasChecked();
@@ -2679,6 +2680,85 @@ void tst_imitatepass::aListOfAnotherStoreIsRefused() {
            qPrintable(why));
   QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
            "nothing may be encrypted to another store's list");
+#endif
+}
+
+/**
+ * @brief A signed list that this store refuses lends the list saved next
+ *        no store id. Another store's list, signed with the same key and
+ *        copied over the root of a store this device knows by no id yet
+ *        (its lists were written before store lines), is refused as a
+ *        rollback or a conflict. Saving the recipients then gives the store
+ *        an id of its own, not the copied list's: with that id, the new list
+ *        would be accepted as a newer list of the other store.
+ */
+void tst_imitatepass::aRefusedListLendsNoStoreId() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  const QString theirs = QStringLiteral("fedcba9876543210fedcba9876543210");
+  const QString bob =
+      QStringLiteral("89ABCDEF0123456789ABCDEF0123456789ABCDEF");
+  // A rollback (generation 1 below the accepted 3) and a conflict (the
+  // accepted generation 3, other bytes).
+  for (const qint64 copied : {qint64(1), qint64(3)}) {
+    QTemporaryDir storeDir;
+    QVERIFY(storeDir.isValid());
+    QVERIFY(populateStore(storeDir.path(), 0));
+    const QString gpgIdFile = QDir(storeDir.path()).filePath(".gpg-id");
+    const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+    const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath);
+    QVERIFY(!fakeGpg.isEmpty());
+    const QString store = QDir(storeDir.path()).path() + QLatin1Char('/');
+    // This store's generation 3, written before store lines, accepted here.
+    const QByteArray own = GpgIdGeneration::withHeader(
+        3, QStringLiteral("."), (kSigner + "\n").toUtf8(), QString());
+    QCOMPARE(GpgIdGeneration::accept(gpgIdFile, own, store),
+             GpgIdGeneration::Verdict::Accepted);
+    // Another store's list, same key and folder, copied over it.
+    {
+      QFile g(gpgIdFile);
+      QVERIFY(g.open(QIODevice::WriteOnly | QIODevice::Truncate));
+      g.write(GpgIdGeneration::withHeader(
+          copied, QStringLiteral("."), (kSigner + "\n" + bob + "\n").toUtf8(),
+          theirs));
+      QFile sig(gpgIdFile + QStringLiteral(".sig"));
+      QVERIFY(sig.open(QIODevice::WriteOnly));
+      sig.write("sig");
+    }
+    QVERIFY(GpgIdGeneration::accept(
+                gpgIdFile,
+                [&] {
+                  QFile g(gpgIdFile);
+                  return g.open(QIODevice::ReadOnly) ? g.readAll()
+                                                     : QByteArray();
+                }(),
+                store) != GpgIdGeneration::Verdict::Accepted);
+
+    ImitatePass pass;
+    AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+    s.passSigningKey = kSigner;
+    pass.init(s);
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    UserInfo alice;
+    alice.key_id = kSigner;
+    alice.enabled = true;
+    alice.have_secret = true;
+    pass.Init(store, {alice});
+    QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+
+    QFile g(gpgIdFile);
+    QVERIFY(g.open(QIODevice::ReadOnly));
+    const QByteArray saved = g.readAll();
+    const std::optional<GpgIdGeneration::Header> header =
+        GpgIdGeneration::parse(saved);
+    QVERIFY2(header.has_value(), saved.constData());
+    QCOMPARE(header->generation, qint64(4));
+    QVERIFY2(header->store.has_value(), saved.constData());
+    QVERIFY2(*header->store != theirs,
+             "the refused list's store id must not be taken over");
+    QCOMPARE(GpgIdGeneration::storeIdFor(store, std::nullopt), header->store);
+  }
 #endif
 }
 

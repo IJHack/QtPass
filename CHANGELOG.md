@@ -172,6 +172,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   name, with either backend, used to encrypt it to the parent folder's list,
   because the check started at the nearest folder that still exists; it is
   now refused as for a removed list (scan finding ANT-2026-AIP59ME1)
+- Saving the recipients of a store this device knows by no store ID yet no
+  longer takes the ID over from a signed list that the store refuses (a
+  rollback or a conflict). Such a list may be another store's, signed with
+  the same key and copied in; with its ID, the list saved next would have
+  been accepted as a newer list of that other store. The store now gets an
+  ID of its own (scan finding ANT-2026-4AYR1AE5)
 - The check that the signing key's secret key is available reads gpg's key
   records instead of searching its whole output for the fingerprint, which
   a user ID crafted by a key's owner could contain. It now also accepts a
