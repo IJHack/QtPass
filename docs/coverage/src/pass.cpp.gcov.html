@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-20 21:11:23</td>
+            <td class="headerValue">2026-11-20 21:36:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -790,10 +790,10 @@
 <span id="L717"><span class="lineNum">     717</span>              : #endif</span>
 <span id="L718"><span class="lineNum">     718</span>              : </span>
 <span id="L719"><span class="lineNum">     719</span>              : /// Whether @p path is @p dir or lies under it.</span>
-<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1504 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
+<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1481 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
 <span id="L721"><span class="lineNum">     721</span>              :                  const QString &amp;dirPrefix) -&gt; bool {</span>
-<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        2607 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
-<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">        1103 :          path.startsWith(dirPrefix, kPathCase);</span></span>
+<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        2561 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
+<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">        1080 :          path.startsWith(dirPrefix, kPathCase);</span></span>
 <span id="L724"><span class="lineNum">     724</span>              : }</span>
 <span id="L725"><span class="lineNum">     725</span>              : </span>
 <span id="L726"><span class="lineNum">     726</span>              : /// Where the lookup of a .gpg-id starts and the store that bounds it.</span>
@@ -879,8 +879,8 @@
 <span id="L806"><span class="lineNum">     806</span> <span class="tlaGNC">          63 :   const QString store = scopePath(QString());</span></span>
 <span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">          63 :   const QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L808"><span class="lineNum">     808</span> <span class="tlaGNC">          63 :   return std::any_of(scopes.cbegin(), scopes.cend(),</span></span>
-<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">         153 :                      [&amp;store](const QString &amp;s) {</span></span>
-<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">         306 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
+<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">         130 :                      [&amp;store](const QString &amp;s) {</span></span>
+<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">         260 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
 <span id="L811"><span class="lineNum">     811</span> <span class="tlaGNC">          63 :                      });</span></span>
 <span id="L812"><span class="lineNum">     812</span>              : }</span>
 <span id="L813"><span class="lineNum">     813</span>              : </span>
