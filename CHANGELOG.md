@@ -167,6 +167,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- With the `pass` backend, QtPass no longer runs `pass` where the walk to a
+  folder's recipient list meets a `.gpg-id` that is a link, also without a
+  signing key. `pass` followed the link and encrypted to the recipients it
+  points to, while the Users dialog showed the parent folder's list. A
+  shared list linked into several folders no longer works; see the FAQ
+  (scan finding ANT-2026-BSUT09L8)
 - With a signing key, a sub-folder removed together with its signed list is
   still asked of the generation record. Putting an entry back under the old
   name, with either backend, used to encrypt it to the parent folder's list,

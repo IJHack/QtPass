@@ -67,6 +67,7 @@ private slots:
   void failedReencryptionHoldsAutomaticPushes();
   void reencryptFailureIsReportedNotFinished();
   void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
+  void aLinkedListIsRefusedWithoutASigningKey();
   void gitPullBlockingReturnsAfterPassRanWhateverItsExitCode();
   void linkedFolderThatCannotBeUnlinkedReportsDeleteFailed();
   void linkedFolderKnownToGitIsForgottenByGitAlone();
@@ -1522,6 +1523,78 @@ void tst_realpass::moveBetweenExistingFilesNeedsForce() {
       waitForCall().args,
       (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
                    QStringLiteral("folder/x"), QStringLiteral("folder/y")}));
+}
+
+/**
+ * @brief Without a signing key too, pass is not run where the walk to a
+ *        folder's list meets a `.gpg-id` that is a link: pass would follow
+ *        it and encrypt to the recipients it points to, while QtPass shows
+ *        the parent's list. An insert, a move or copy into the folder and a
+ *        move of the folder itself are refused; a folder below it with its
+ *        own list, and the folder once the link is gone, are not.
+ */
+void tst_realpass::aLinkedListIsRefusedWithoutASigningKey() {
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString elsewhere =
+      QDir(outsideDir.path()).filePath(QStringLiteral("recipients"));
+  {
+    QFile f(elsewhere);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("MALLORY\n");
+  }
+  QVERIFY(QDir(m_store).mkpath(QStringLiteral("team/sub")));
+  const QString linkedList = m_store + QStringLiteral("team/.gpg-id");
+  const QString subList = m_store + QStringLiteral("team/sub/.gpg-id");
+  QVERIFY(QFile::link(elsewhere, linkedList));
+  {
+    QFile f(subList);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("ALICE\n");
+  }
+  const QString entry = m_store + QStringLiteral("folder/entry.gpg");
+  {
+    QFile f(entry);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(linkedList);
+    QDir(m_store + QStringLiteral("team")).removeRecursively();
+    QDir(m_store + QStringLiteral("moved")).removeRecursively();
+    QFile::remove(entry);
+  });
+  AppSettings settings = m_settings;
+  settings.passSigningKey.clear();
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(settings);
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+
+  pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
+  pass->Move(entry, m_store + QStringLiteral("team/moved.gpg"), false);
+  pass->Copy(entry, m_store + QStringLiteral("team"), false);
+  pass->Move(m_store + QStringLiteral("team"),
+             m_store + QStringLiteral("moved"), false);
+  QTest::qWait(300);
+  QVERIFY2(!QFile::exists(m_log), "pass must not run under a linked list");
+  QCOMPARE(criticalSpy.count(), 4);
+  for (const QList<QVariant> &args : std::as_const(criticalSpy)) {
+    QVERIFY2(args.at(1).toString().contains(
+                 QDir::toNativeSeparators(QDir::cleanPath(linkedList))),
+             qPrintable(args.at(1).toString()));
+  }
+
+  // The folder below has its own list: the link above it is not met.
+  pass->Insert(QStringLiteral("team/sub/fresh"), QStringLiteral("v"), false);
+  QVERIFY2(!waitForCall().args.isEmpty(), "pass runs under the own list");
+  QCOMPARE(criticalSpy.count(), 4);
+
+  // The link gone, the folder falls back to the store's list, as for pass.
+  QFile::remove(m_log);
+  QVERIFY(QFile::remove(linkedList));
+  pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
+  QVERIFY(!waitForCall().args.isEmpty());
+  QCOMPARE(criticalSpy.count(), 4);
 }
 
 /**

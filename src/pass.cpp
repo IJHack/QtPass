@@ -1091,6 +1091,28 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
   return std::nullopt;
 }
 
+auto Pass::linkedGpgId(const QString &forFile, const QString &passStore)
+    -> std::optional<QString> {
+  const GpgIdLookup lookup = gpgIdLookup(forFile, passStore);
+  // The walk of nearestGpgId(), root included, stopping at the list it
+  // finds.
+  QDir dir = lookup.start;
+  while (dir.exists() && isAtOrUnder(QDir::cleanPath(dir.absolutePath()),
+                                     lookup.storeDir, lookup.storePrefix)) {
+    const QFileInfo candidate(dir.absoluteFilePath(".gpg-id"));
+    if (isOwnGpgId(candidate)) {
+      return std::nullopt;
+    }
+    if (candidate.isSymLink() || candidate.isJunction()) {
+      return candidate.absoluteFilePath();
+    }
+    if (!dir.cdUp()) {
+      break;
+    }
+  }
+  return std::nullopt;
+}
+
 namespace {
 
 /// What the Users dialog may preselect for a verified list, given what the

@@ -118,14 +118,28 @@ class RealPass : public Pass {
   [[nodiscard]] auto insertWritten(const QString &err) const -> bool override;
 
   /**
-   * @brief With signing on, refuse to have pass encrypt @p file when the
-   * signed list it would use is not one QtPass accepts: its folder's own
-   * list was passed over, the signature does not verify, or the list is
-   * older than one this device accepted or signed for another folder.
+   * @brief Refuse to have pass encrypt @p file when the list it would use
+   * is a link (refuseLinkedList()), or, with signing on, not one QtPass
+   * accepts: its folder's own list was passed over, the signature does not
+   * verify, or the list is older than one this device accepted or signed
+   * for another folder.
    * @param file The entry (or the place a move or copy writes to).
    * @return Whether it was refused (and the user told).
    */
   auto refuseUnverifiedList(const QString &file) -> bool;
+
+  /**
+   * @brief Refuse to have pass encrypt @p file when the walk to its list
+   * meets a `.gpg-id` that is a link or junction (Pass::linkedGpgId()),
+   * with or without a signing key: pass would follow it, while QtPass shows
+   * the list of a folder above it.
+   * @param file The entry or folder.
+   * @param except A list about to be written (`pass init`'s own), not
+   *        refused.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseLinkedList(const QString &file, const QString &except = QString())
+      -> bool;
 
   /**
    * @brief Run a git command in the store through `pass git`, blocking.

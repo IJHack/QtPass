@@ -142,13 +142,36 @@ auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
   return false;
 }
 
+auto RealPass::refuseLinkedList(const QString &file, const QString &except)
+    -> bool {
+  const std::optional<QString> linked =
+      Pass::linkedGpgId(file, m_settings.passStore);
+  if (!linked || (!except.isEmpty() &&
+                  QDir::cleanPath(QFileInfo(*linked).absoluteFilePath()) ==
+                      QDir::cleanPath(QFileInfo(except).absoluteFilePath()))) {
+    return false;
+  }
+  emit critical(
+      tr("Recipient list is a link"),
+      tr("%1 is a link. pass would encrypt to the recipients in the file it "
+         "points to, while QtPass shows the list of a folder above it, so "
+         "nothing was encrypted. Replace the link with a copy of the list, or "
+         "remove it.")
+          .arg(QDir::toNativeSeparators(*linked)));
+  return true;
+}
+
 auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
   // pass verifies the signature itself, but knows nothing of the generation
   // and folder lines: an older authentic list put back, or one signed for
   // another folder, would get the secret (#2077). The same checks as the
   // native backend, with gpg in the store's environment. pass reads the list
   // again afterwards; a swap in between is a concurrent writer, out of
-  // scope (SECURITY.md).
+  // scope (SECURITY.md). A linked list differs from what QtPass shows,
+  // signing key or not.
+  if (refuseLinkedList(file)) {
+    return true;
+  }
   const GpgIdSigner signer = listSigner();
   if (!signer.enabled()) {
     return false;
@@ -187,6 +210,14 @@ auto passFoldersUnder(const QString &dir, QStringList &unreadable)
 
 auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
                                     const QString &except) -> bool {
+  // A linked list differs from what QtPass shows, signing key or not: in
+  // every folder pass's walk takes, and above them.
+  QStringList unreadableHere;
+  for (const QString &folder : passFoldersUnder(dir, unreadableHere)) {
+    if (refuseLinkedList(folder + QLatin1Char('/'), except)) {
+      return true;
+    }
+  }
   const GpgIdSigner signer = listSigner();
   if (!signer.enabled()) {
     return false;
