@@ -178,6 +178,8 @@ A shared recipient list kept in one place and linked into several folders theref
 find ~/.password-store -name .gpg-id -type l
 ```
 
+This includes the list at the top of the store: a store whose own `.gpg-id` is a link, as a dotfile manager such as GNU Stow or chezmoi may set it up, cannot be saved to with the `pass` backend until the link is replaced by a regular file.
+
 With a signing key, a linked list was already refused, also with the native backend.
 
 ### How do I set up a one-time password (OTP/TOTP)?
