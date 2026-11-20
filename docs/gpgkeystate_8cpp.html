@@ -232,7 +232,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Replace the key ID of the key being built with its fingerprint. </p>
-<p>Only when the <span class="tt">fpr</span> record's value is shaped like a fingerprint (40 or 64 hex digits) and ends in the key ID already there, so a subkey's fingerprint is never taken for the primary key's. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Only when the <span class="tt">fpr</span> record's value has the expected fingerprint shape and contains the exact 16-hex key ID in its version-specific position: the tail for a 40-hex v4 fingerprint, the head for a 64-hex v5/v6 fingerprint. A subkey's fingerprint therefore cannot replace the primary key's ID. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">props</td><td>The colon-split fields of the record. </td></tr>
     <tr><td class="paramname">current_user</td><td>The key being built; its key ID may be replaced. </td></tr>
@@ -379,7 +379,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The keys, in the order gpg listed them. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00112">112</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00125">125</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -424,7 +424,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The primary fingerprint in upper case, or empty when no block, or more than one, in <code class="param">output</code> holds <code class="param">key</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00160">160</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00185">185</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
