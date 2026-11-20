@@ -663,6 +663,7 @@ private Q_SLOTS:
   void operationsRefuseLinkedEntriesAndFoldersButRemoveUnlinks();
   void linkedGpgIdIsNotARecipientList();
   void skippedGpgIdNamesOnlyAListThatWasPassedOver();
+  void skippedGpgIdAsksAFolderRemovedWithItsList();
   void skippedGpgIdFailsClosedWhenTheRecordIsUnreadable();
   void aRemovedOrLinkedFolderListIsRefusedWhenSigning();
   void aRemovedFolderListFallsBackToTheParentWithoutSigning();
@@ -4563,6 +4564,76 @@ void tst_imitatepass::skippedGpgIdNamesOnlyAListThatWasPassedOver() {
   QVERIFY(QFile::remove(teamList));
   QVERIFY(QFile::link(root.filePath(QStringLiteral("nowhere")), teamList));
   QVERIFY(Pass::skippedGpgId(teamEntry, store).has_value());
+#endif
+}
+
+/**
+ * @brief A folder removed together with its accepted list is still named by
+ *        Pass::skippedGpgId(): the walk starts at the folder asked for, not
+ *        at its nearest existing one, so an entry put back under the old
+ *        name is not encrypted to the parent's list. The record is asked by
+ *        the key the list had while it was there, also through a link to
+ *        the store.
+ */
+void tst_imitatepass::skippedGpgIdAsksAFolderRemovedWithItsList() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString store = root.path() + QLatin1Char('/');
+  QVERIFY(root.mkpath(QStringLiteral("team/sub")));
+  const QString subList = root.filePath(QStringLiteral("team/sub/.gpg-id"));
+  const QString subEntry = root.filePath(QStringLiteral("team/sub/x.gpg"));
+  {
+    QFile f(subList);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(GpgIdGeneration::withHeader(1, QStringLiteral("team/sub"),
+                                        QByteArrayLiteral("OWNER\n")));
+  }
+  {
+    QFile f(subList);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QCOMPARE(GpgIdGeneration::accept(subList, f.readAll(), store),
+             GpgIdGeneration::Verdict::Accepted);
+  }
+
+  // The folder goes, its list with it: an entry restored under the old
+  // name, or a folder by that name, still names the list.
+  QVERIFY(QDir(root.filePath(QStringLiteral("team/sub"))).removeRecursively());
+  std::optional<QString> skipped = Pass::skippedGpgId(subEntry, store);
+  QVERIFY2(skipped.has_value(), "a folder removed with its list is asked too");
+  QCOMPARE(QDir::cleanPath(*skipped), QDir::cleanPath(subList));
+  skipped =
+      Pass::skippedGpgId(root.filePath(QStringLiteral("team/sub/")), store);
+  QVERIFY(skipped.has_value());
+  QCOMPARE(QDir::cleanPath(*skipped), QDir::cleanPath(subList));
+
+  // Two levels gone, and an entry in a new folder below the removed one.
+  QVERIFY(QDir(root.filePath(QStringLiteral("team"))).removeRecursively());
+  skipped = Pass::skippedGpgId(
+      root.filePath(QStringLiteral("team/sub/new/y.gpg")), store);
+  QVERIFY(skipped.has_value());
+  QCOMPARE(QDir::cleanPath(*skipped), QDir::cleanPath(subList));
+
+  // A folder that never had a list, existing or not, names nothing.
+  QCOMPARE(
+      Pass::skippedGpgId(root.filePath(QStringLiteral("fresh/z.gpg")), store),
+      std::optional<QString>());
+  QCOMPARE(Pass::skippedGpgId(root.filePath(QStringLiteral("team/other.gpg")),
+                              store),
+           std::optional<QString>());
+
+#ifndef Q_OS_WIN
+  // The same store reached through a link: the removed folder's list is
+  // still the one the record knows.
+  QTemporaryDir linkDir;
+  QVERIFY(linkDir.isValid());
+  const QString viaLink =
+      QDir(linkDir.path()).filePath(QStringLiteral("store"));
+  QVERIFY(QFile::link(root.path(), viaLink));
+  const std::optional<QString> linked = Pass::skippedGpgId(
+      viaLink + QStringLiteral("/team/sub/x.gpg"), viaLink + QLatin1Char('/'));
+  QVERIFY2(linked.has_value(), "the record is asked by the list's own key");
 #endif
 }
 

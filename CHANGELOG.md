@@ -167,6 +167,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- With a signing key, a sub-folder removed together with its signed list is
+  still asked of the generation record. Putting an entry back under the old
+  name, with either backend, used to encrypt it to the parent folder's list,
+  because the check started at the nearest folder that still exists; it is
+  now refused as for a removed list (scan finding ANT-2026-AIP59ME1)
 - The check that the signing key's secret key is available reads gpg's key
   records instead of searching its whole output for the fingerprint, which
   a user ID crafted by a key's owner could contain. It now also accepts a
