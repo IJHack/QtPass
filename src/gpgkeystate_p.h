@@ -28,9 +28,10 @@ void handlePubSecRecord(const QStringList &props, bool secret,
 /**
  * @brief Replace the key ID of the key being built with its fingerprint.
  *
- * Only when the `fpr` record's value is shaped like a fingerprint (40 or 64
- * hex digits) and ends in the key ID already there, so a subkey's
- * fingerprint is never taken for the primary key's.
+ * Only when the `fpr` record's value has the expected fingerprint shape and
+ * contains the exact 16-hex key ID in its version-specific position: the
+ * tail for a 40-hex v4 fingerprint, the head for a 64-hex v5/v6 fingerprint.
+ * A subkey's fingerprint therefore cannot replace the primary key's ID.
  * @param props The colon-split fields of the record.
  * @param current_user The key being built; its key ID may be replaced.
  */

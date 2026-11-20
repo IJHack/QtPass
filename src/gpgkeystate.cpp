@@ -97,14 +97,27 @@ void handleFprRecord(const QStringList &props, UserInfo &current_user) {
   if (props.size() < GPG_MIN_FIELDS) {
     return;
   }
-  // The key ID from the pub/sec record is the fingerprint's tail; take the
-  // whole fingerprint, but only something shaped like one (40 hex for v4,
-  // 64 for v5/v6): it becomes a recipient and a signing identity later.
-  static const QRegularExpression shape(
-      QStringLiteral("^(?:[0-9A-Fa-f]{40}|[0-9A-Fa-f]{64})$"));
+  // GnuPG reports the v4 key ID from the fingerprint's tail, and the v5/v6
+  // key ID from its head. Promote only an exact 16-hex key ID with the
+  // version-specific fingerprint shape and location; malformed or mismatched
+  // input stays a key ID rather than becoming a false full identity.
+  static const QRegularExpression keyIdShape(
+      QStringLiteral("^[0-9A-Fa-f]{16}$"));
+  static const QRegularExpression v4FingerprintShape(
+      QStringLiteral("^[0-9A-Fa-f]{40}$"));
+  static const QRegularExpression v5v6FingerprintShape(
+      QStringLiteral("^[0-9A-Fa-f]{64}$"));
+  const QString &keyId = current_user.key_id;
+  if (!keyIdShape.match(keyId).hasMatch()) {
+    return;
+  }
+
   const QString &fingerprint = props[GPG_FIELD_FINGERPRINT];
-  if (!current_user.key_id.isEmpty() && shape.match(fingerprint).hasMatch() &&
-      fingerprint.endsWith(current_user.key_id, Qt::CaseInsensitive)) {
+  const bool isV4 = v4FingerprintShape.match(fingerprint).hasMatch() &&
+                    fingerprint.endsWith(keyId, Qt::CaseInsensitive);
+  const bool isV5V6 = v5v6FingerprintShape.match(fingerprint).hasMatch() &&
+                      fingerprint.startsWith(keyId, Qt::CaseInsensitive);
+  if (isV4 || isV5V6) {
     current_user.key_id = fingerprint;
   }
 }
@@ -117,15 +130,23 @@ auto parseGpgColonOutput(const QString &output, bool secret)
       output.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
 
   UserInfo current_user;
+  bool expectPrimaryFingerprint = false;
 
   for (const QString &key : lines) {
     QStringList props = key.split(':');
     if (props.size() < GPG_MIN_FIELDS) {
+      expectPrimaryFingerprint = false;
       continue;
     }
 
     const QString &record_type = props[0];
     const GpgRecordType type = classifyRecord(record_type);
+    // Short records, uids, and subkey records end the primary key's head: an
+    // rvk (designated revoker) or grp record may sit between pub and its fpr.
+    if (type == GpgRecordType::Uid || type == GpgRecordType::Sub ||
+        type == GpgRecordType::Ssb) {
+      expectPrimaryFingerprint = false;
+    }
 
     switch (type) {
     case GpgRecordType::Pub:
@@ -136,6 +157,7 @@ auto parseGpgColonOutput(const QString &output, bool secret)
       current_user = UserInfo();
       handlePubSecRecord(props, secret && (type == GpgRecordType::Sec),
                          current_user);
+      expectPrimaryFingerprint = true;
       break;
     case GpgRecordType::Uid:
       if (current_user.name.isEmpty()) {
@@ -143,7 +165,10 @@ auto parseGpgColonOutput(const QString &output, bool secret)
       }
       break;
     case GpgRecordType::Fpr:
-      handleFprRecord(props, current_user);
+      if (expectPrimaryFingerprint) {
+        handleFprRecord(props, current_user);
+        expectPrimaryFingerprint = false;
+      }
       break;
     default:
       break;

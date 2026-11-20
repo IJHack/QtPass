@@ -17,6 +17,7 @@ private Q_SLOTS:
   void parseSecretKeys_data();
   void parseSingleKey();
   void parseSingleKey_data();
+  void parseV5V6PrimaryFingerprints();
   void parseKeyRollover();
   void parseKeyRollover_data();
   void classifyRecordTypes();
@@ -303,20 +304,52 @@ void tst_gpgkeystate::handleFprEdgeCases() {
   QStringList matchingProps;
   for (int i = 0; i < 10; ++i)
     matchingProps.append("");
-  matchingProps[9] = "FEDCBA98765432100123456789ABCDEF0123456789ABCDEF";
+  matchingProps[9] = "0123456789ABCDEF" + QString(24, QLatin1Char('A'));
   handleFprRecord(matchingProps, user);
-  QVERIFY2(user.key_id == "0123456789ABCDEF",
-           "48 hex characters are not a fingerprint, keep the key ID");
-  matchingProps[9] = "FEDCBA9876543210FEDCBA980123456789ABCDEF";
+  QCOMPARE(user.key_id, QStringLiteral("0123456789ABCDEF"));
+  matchingProps[9] = QString(24, QLatin1Char('A')) + "0123456789ABCDEF";
   handleFprRecord(matchingProps, user);
-  QVERIFY2(user.key_id == "FEDCBA9876543210FEDCBA980123456789ABCDEF",
-           "a 40-hex fpr ending with the key ID becomes the key ID");
+  QCOMPARE(user.key_id, QString(24, QLatin1Char('A')) + "0123456789ABCDEF");
+
+  // Mixed-case v4 tail match.
+  user.key_id = "0123456789abcdef";
+  matchingProps[9] = QString(24, QLatin1Char('A')) + "0123456789ABCDEF";
+  handleFprRecord(matchingProps, user);
+  QCOMPARE(user.key_id, QString(24, QLatin1Char('A')) + "0123456789ABCDEF");
 
   // v5/v6 keys: 64 hex characters.
   user.key_id = "0123456789ABCDEF";
+  matchingProps[9] = "0123456789ABCDEF" + QString(48, QLatin1Char('A'));
+  handleFprRecord(matchingProps, user);
+  QCOMPARE(user.key_id,
+           QString("0123456789ABCDEF") + QString(48, QLatin1Char('A')));
+
+  user.key_id = "0123456789ABCDEF";
   matchingProps[9] = QString(48, QLatin1Char('A')) + "0123456789ABCDEF";
   handleFprRecord(matchingProps, user);
-  QCOMPARE(user.key_id, QString(48, QLatin1Char('A')) + "0123456789ABCDEF");
+  QCOMPARE(user.key_id, QStringLiteral("0123456789ABCDEF"));
+
+  user.key_id = "0123456789abcdef";
+  matchingProps[9] = "0123456789ABCDEF" + QString(48, QLatin1Char('a'));
+  handleFprRecord(matchingProps, user);
+  QCOMPARE(user.key_id,
+           QString("0123456789ABCDEF") + QString(48, QLatin1Char('a')));
+
+  user.key_id = "0123456789ABCDEF";
+  matchingProps[9] = "0123456789abcdef" + QString(48, QLatin1Char('a'));
+  handleFprRecord(matchingProps, user);
+  QCOMPARE(user.key_id,
+           QString("0123456789abcdef") + QString(48, QLatin1Char('a')));
+
+  user.key_id = "0123456789ABCDEF";
+  matchingProps[9] = "0123456789ABCDEG" + QString(48, QLatin1Char('A'));
+  handleFprRecord(matchingProps, user);
+  QCOMPARE(user.key_id, QStringLiteral("0123456789ABCDEF"));
+
+  user.key_id = "12345678";
+  matchingProps[9] = "12345678" + QString(56, QLatin1Char('A'));
+  handleFprRecord(matchingProps, user);
+  QCOMPARE(user.key_id, QStringLiteral("12345678"));
 
   // Anything else shaped like text is not taken as an identity.
   user.key_id = "id456";
@@ -324,6 +357,79 @@ void tst_gpgkeystate::handleFprEdgeCases() {
   handleFprRecord(matchingProps, user);
   QVERIFY2(user.key_id == "id456",
            "a non-hex fpr field must not become the key ID");
+}
+
+void tst_gpgkeystate::parseV5V6PrimaryFingerprints() {
+  const QString first = QStringLiteral(
+      "A1B2C3D4E5F60718293A4B5C6D7E8F90112233445566778899AABBCCDDEEFF00");
+  const QString second = QStringLiteral(
+      "A1B2C3D4E5F60718FFEEDDCCBBAA998877665544332211009988776655443322");
+  const QString listing =
+      QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
+                     "fpr:::::::::%1:\n"
+                     "sub:u:255:18:1234567890ABCDEF:1774947438::::::e:\n"
+                     "fpr:::::::::A1B2C3D4E5F60718%3:\n"
+                     "uid:u::::1774947438::H::First <first@example.org>::::\n"
+                     "pub:u:255:22:A1B2C3D4E5F60718:1774947439:::u::::\n"
+                     "fpr:::::::::%2:\n"
+                     "uid:u::::1774947439::H::Second "
+                     "<second@example.org>::::\n")
+          .arg(first)
+          .arg(second)
+          .arg(QString(48, QLatin1Char('B')));
+
+  const QList<UserInfo> users = parseGpgColonOutput(listing, false);
+  QCOMPARE(users.size(), 2);
+  QCOMPARE(users.at(0).key_id, first);
+  QCOMPARE(users.at(1).key_id, second);
+
+  // A subkey fingerprint must not replace its primary key's identity.
+  const QString subkeyListing =
+      QStringLiteral(
+          "pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
+          "fpr:::::::::%1:\n"
+          "sub:u:255:18:1234567890ABCDEF:1774947438::::::e:\n"
+          "fpr:::::::::%2:\n"
+          "uid:u::::1774947438::H::Subkey test <sub@example.org>::::")
+          .arg(QString(64, QLatin1Char('C')),
+               QStringLiteral("A1B2C3D4E5F60718") +
+                   QString(48, QLatin1Char('B')));
+  const QList<UserInfo> subkeyUsers = parseGpgColonOutput(subkeyListing, false);
+  QCOMPARE(subkeyUsers.size(), 1);
+  QCOMPARE(subkeyUsers.first().key_id, QStringLiteral("A1B2C3D4E5F60718"));
+
+  // When a primary key has no fpr record, a subkey's fingerprint that matches
+  // the primary key's ID must not be taken because uid/sub resets the
+  // expectation.
+  const QString noPrimaryFprListing =
+      QStringLiteral(
+          "pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
+          "uid:u::::1774947438::H::Primary <primary@example.org>::::\n"
+          "sub:u:255:18:1234567890ABCDEF:1774947438::::::e:\n"
+          "fpr:::::::::%1:\n"
+          "uid:u::::1774947438::H::Subkey <subkey@example.org>::::")
+          .arg(QStringLiteral("A1B2C3D4E5F60718") +
+               QString(48, QLatin1Char('B')));
+  const QList<UserInfo> noPrimaryFprUsers =
+      parseGpgColonOutput(noPrimaryFprListing, false);
+  QCOMPARE(noPrimaryFprUsers.size(), 1);
+  QCOMPARE(noPrimaryFprUsers.first().key_id,
+           QStringLiteral("A1B2C3D4E5F60718"));
+
+  // A designated revoker's rvk record (and a grp record) between pub and fpr
+  // must not stop the primary fingerprint from being taken.
+  const QString revokerListing =
+      QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
+                     "rvk:::22::::::%1:80:\n"
+                     "fpr:::::::::%3:\n"
+                     "grp:::::::::%2:\n"
+                     "uid:u::::1774947438::H::Revoker <rvk@example.org>::::")
+          .arg(QString(40, QLatin1Char('D')), QString(40, QLatin1Char('E')),
+               first);
+  const QList<UserInfo> revokerUsers =
+      parseGpgColonOutput(revokerListing, false);
+  QCOMPARE(revokerUsers.size(), 1);
+  QCOMPARE(revokerUsers.first().key_id, first);
 }
 
 // Tests targeting the const-ref refactor in gpgkeystate.cpp.
