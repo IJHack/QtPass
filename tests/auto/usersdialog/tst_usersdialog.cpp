@@ -1229,8 +1229,12 @@ void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
   QCOMPARE(selected.size(), 12);
   QCOMPARE(selected.first().key_id, fingerprint);
   QVERIFY(selected.first().enabled);
-  QVERIFY(itemWithText(list, QStringLiteral("AAAAAAAA")) != nullptr);
-  QCOMPARE(itemWithText(list, QStringLiteral("89ABCDEF")), nullptr);
+  QVERIFY(itemWithText(list,
+                       QStringLiteral("Key not found in keyring\nAAAAAAAA")) !=
+          nullptr);
+  QCOMPARE(
+      itemWithText(list, QStringLiteral("Key not found in keyring\n89ABCDEF")),
+      nullptr);
 }
 
 /**
