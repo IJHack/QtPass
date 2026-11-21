@@ -12,6 +12,7 @@
 #include "filecontent.h"
 
 #include <QObject>
+#include <QSet>
 #include <QString>
 
 struct AppSettings;
@@ -235,10 +236,11 @@ private:
       -> bool;
 
   /**
-   * @brief Field names the current template marks as secret, compared
-   *        case-insensitively in isSecret(); set by setMarkedSecrets().
+   * @brief Field names the current template marks as secret, case-folded,
+   *        so isSecret() looks a name up in any case at once; set by
+   *        setMarkedSecrets().
    */
-  QStringList m_markedSecrets;
+  QSet<QString> m_markedSecrets;
   /** @brief The grid the rows go into; owned by MainWindow's .ui. */
   QGridLayout *m_grid;
   /**
