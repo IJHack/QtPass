@@ -888,6 +888,14 @@ void tst_mainwindow::flashTextWrapsALongUnbrokenRunAnywhere() {
   m_window->flashText(QString(400000, QLatin1Char('b')), false, true);
   QCOMPARE(browser->wordWrapMode(), QTextOption::WrapAnywhere);
   browser->clear();
+
+  // Links split the run in the source ("<a href" has a space), not on
+  // screen: what is shown counts.
+  const QString link = QStringLiteral("<a href=\"https://x.example\">") +
+                       QString(4000, QLatin1Char('a')) + QStringLiteral("</a>");
+  m_window->flashText(link.repeated(100), false, true);
+  QCOMPARE(browser->wordWrapMode(), QTextOption::WrapAnywhere);
+  browser->clear();
 }
 
 /**

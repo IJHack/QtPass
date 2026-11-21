@@ -488,24 +488,21 @@ void MainWindow::flashText(const QString &text, const bool isError,
   ui->textBrowser->setCurrentCharFormat(format);
 
   // Wrapped at word boundaries, a run of hundreds of thousands of letters
-  // took Qt seconds to minutes; anywhere, it is linear. Prose keeps its
-  // word wrap.
-  const auto wrapFor = [this](const QString &shown) {
-    ui->textBrowser->setWordWrapMode(
-        Util::hasLongUnbrokenRun(shown)
-            ? QTextOption::WrapAnywhere
-            : QTextOption::WrapAtWordBoundaryOrAnywhere);
-  };
+  // took Qt seconds to minutes; anywhere, it is linear. Anywhere while the
+  // text goes in, then word wrap back unless what is shown has such a run:
+  // markup (a link's "<a href") splits a run in the source, not on screen.
+  ui->textBrowser->setWordWrapMode(QTextOption::WrapAnywhere);
   if (isHtml) {
     QString _text = text;
     if (!ui->textBrowser->toPlainText().isEmpty()) {
       _text = ui->textBrowser->toHtml() + _text;
     }
-    wrapFor(_text);
     ui->textBrowser->setHtml(_text);
   } else {
-    wrapFor(text);
     ui->textBrowser->setText(text);
+  }
+  if (!Util::hasLongUnbrokenRun(ui->textBrowser->toPlainText())) {
+    ui->textBrowser->setWordWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
   }
 }
 
