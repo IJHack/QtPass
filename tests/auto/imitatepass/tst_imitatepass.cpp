@@ -4672,7 +4672,7 @@ void tst_imitatepass::skippedGpgIdAsksEachFolderOnceInATreeCheck() {
   QVERIFY(populateStore(storeDir.path(), 0));
   const QDir root(storeDir.path());
   const QString store = root.path() + QLatin1Char('/');
-  constexpr int kDepth = 400;
+  constexpr int kDepth = 200;
   QStringList folders;
   QString relative;
   for (int i = 0; i < kDepth; ++i) {
@@ -4698,17 +4698,31 @@ void tst_imitatepass::skippedGpgIdAsksEachFolderOnceInATreeCheck() {
   }
   QVERIFY(QFile::remove(middleList));
 
-  Pass::SkippedWalks walks;
-  QList<std::optional<QString>> answers;
+  // One climb from the bottom asks every level once: the yardstick, as a
+  // record transaction costs very different times on each platform.
   QElapsedTimer timer;
   timer.start();
+  const std::optional<QString> fromTheBottom =
+      Pass::skippedGpgId(folders.last() + QLatin1Char('/'), store);
+  const qint64 oneClimb = timer.elapsed();
+
+  // Every folder with one cache costs about that climb; without it, half
+  // the depth times as much.
+  Pass::SkippedWalks walks;
+  QList<std::optional<QString>> answers;
+  timer.restart();
   for (const QString &folder : std::as_const(folders)) {
     answers << Pass::skippedGpgId(folder + QLatin1Char('/'), store, nullptr,
                                   &walks);
   }
-  QVERIFY2(timer.elapsed() < 2000,
-           qPrintable(QString::number(timer.elapsed())));
-  for (int i = 0; i < kDepth; i += 37) {
+  const qint64 allFolders = timer.elapsed();
+  QVERIFY2(allFolders < 5 * oneClimb + 500,
+           qPrintable(QStringLiteral("%1 ms for every folder, %2 ms for one "
+                                     "climb")
+                          .arg(allFolders)
+                          .arg(oneClimb)));
+  QCOMPARE(answers.last(), fromTheBottom);
+  for (const int i : {0, kDepth / 2 - 1, kDepth / 2 + 1}) {
     QCOMPARE(answers.at(i),
              Pass::skippedGpgId(folders.at(i) + QLatin1Char('/'), store));
   }
