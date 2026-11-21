@@ -966,6 +966,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   answered froze QtPass, clipboard autoclear included. Past the deadline
   the status bar says so, and the entry is edited as it is on this device
   (scan finding ANT-2026-OVSRX5SC)
+- Setting up recipients for a store without them (first-run wizard,
+  Settings › Profiles › Add) no longer freezes on a deep chain of nested
+  folders. To count the entries the new list covers, QtPass climbed from
+  every entry to the store root again; each folder is now checked once
+  (scan finding ANT-2026-R5H0RM6J)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)
