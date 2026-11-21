@@ -14,11 +14,13 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QPlainTextEdit>
+#include <QProcess>
 #include <QRegularExpression>
 #include <QString>
 
@@ -46,8 +48,10 @@ static const QRegularExpression KEY_IMPORTED_FALLBACK(QStringLiteral(
     R"(^gpg: key ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}):.*imported)"));
 /// @endcond
 
-ImportKeyDialog::ImportKeyDialog(const QString &gpgExe, QWidget *parent)
-    : QDialog(parent), ui(new Ui::ImportKeyDialog), m_gpgExe(gpgExe) {
+ImportKeyDialog::ImportKeyDialog(const QString &gpgExe, QWidget *parent,
+                                 int timeoutMs)
+    : QDialog(parent), ui(new Ui::ImportKeyDialog), m_gpgExe(gpgExe),
+      m_timeoutMs(timeoutMs) {
   ui->setupUi(this);
   ui->importButton->setEnabled(false);
 }
@@ -147,8 +151,19 @@ bool ImportKeyDialog::importFromString(const QString &input) {
   QString stdOut;
   QString stdErr;
 
-  int result = Executor::executeBlocking(gpgExe, args, input, &stdOut, &stdErr);
-
+  QProcess gpg;
+  QElapsedTimer timer;
+  timer.start();
+  const int result = Executor::executeBlocking(
+      gpg, gpgExe, args, input, &stdOut, &stdErr, nullptr, m_timeoutMs);
+  if (result != 0 && timer.elapsed() >= m_timeoutMs) {
+    const int seconds = (m_timeoutMs + 999) / 1000;
+    showError(tr("gpg did not finish the import within %n second(s) and was "
+                 "stopped. Part of the key may be in your keyring already: "
+                 "check it with gpg --list-keys before you use it.",
+                 nullptr, seconds));
+    return false;
+  }
   if (result != 0) {
     showError(tr("GPG import failed:\n%1").arg(stdErr));
     return false;

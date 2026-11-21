@@ -49,6 +49,7 @@ private Q_SLOTS:
   void pasteButtonKeepsInputForEmptyClipboard();
   void importButtonIgnoresEmptyInput();
   void importSuccessAcceptsWithKeyIdAndFeedsInputToGpg();
+  void anImportThatDoesNotFinishIsStopped();
   void importFailureShowsStderrAndStaysOpen();
   void importUnparseableOutputShowsParseErrorAndStaysOpen();
   void importFallsBackToStderrForKeyId();
@@ -550,6 +551,39 @@ void tst_importkeydialog::importButtonIgnoresEmptyInput() {
            "gpg must not run for empty input");
   QCOMPARE(accepted.count(), 0);
   QVERIFY2(dialog.importedKeyId().isEmpty(), "no key id without an import");
+}
+
+/**
+ * @brief An import that does not finish is stopped at its deadline and said
+ *        to be stopped: a key crafted with many user IDs kept gpg busy for
+ *        minutes, the window frozen with it (scan finding
+ *        ANT-2026-3JXO7AX0).
+ */
+void tst_importkeydialog::anImportThatDoesNotFinishIsStopped() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  const QString gpg = writeGpg(QStringLiteral("gpg-slow"),
+                               QStringLiteral("cat >/dev/null\nsleep 10\n"));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg, nullptr, 300);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  QVERIFY(edit != nullptr);
+  edit->setPlainText(QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----"));
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+  QElapsedTimer timer;
+  timer.start();
+  const ModalRun run = driveModals([&]() {
+    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_importButton_clicked",
+                                      Qt::DirectConnection));
+  });
+  QVERIFY2(timer.elapsed() < 5000,
+           qPrintable(QString::number(timer.elapsed())));
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.contains(QStringLiteral("did not finish")),
+           qPrintable(run.messageText));
+  QCOMPARE(accepted.count(), 0);
 }
 
 /**
