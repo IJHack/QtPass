@@ -6,12 +6,12 @@
 <!-- Title: RealPass::entryFingerprint Pages: 1 -->
 <svg width="306pt" height="29pt"
  viewBox="0.00 0.00 306.00 29.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24.75)">
+<g id="page0,1_graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24.75)">
 <title>RealPass::entryFingerprint</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO).">
+<g id="a_Node000001"><a xlink:title="A SHA&#45;256 of the size and first 64 KiB of the regular file path (opened without following a link or b...">
 <polygon fill="#999999" stroke="#666666" points="143.5,-20.75 0,-20.75 0,0 143.5,0 143.5,-20.75"/>
 <text xml:space="preserve" text-anchor="middle" x="71.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::entryFingerprint</text>
 </a>

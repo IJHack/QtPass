@@ -3016,7 +3016,7 @@
 <!-- Node122 -->
 <g id="Node000122" class="node">
 <title>Node122</title>
-<g id="a_Node000122"><a xlink:href="class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" target="_top" xlink:title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO).">
+<g id="a_Node000122"><a xlink:href="class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" target="_top" xlink:title="A SHA&#45;256 of the size and first 64 KiB of the regular file path (opened without following a link or b...">
 <polygon fill="white" stroke="#666666" points="1374.25,-301.12 1230.75,-301.12 1230.75,-280.38 1374.25,-280.38 1374.25,-301.12"/>
 <text xml:space="preserve" text-anchor="middle" x="1302.5" y="-287.62" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::entryFingerprint</text>
 </a>

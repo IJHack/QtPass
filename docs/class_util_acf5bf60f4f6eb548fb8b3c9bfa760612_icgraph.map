@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="4048,1806,4206,1834"/>
 <area shape="rect" id="Node000002" href="$class_util.html#ac134662c3a71ca1cd0ec04642e9a6255" title="Copy the regular file src to the name dst through stageFileReplacing(): src is read through a handle ..." alt="" coords="3580,1806,3750,1834"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="4030,1820,3750,1823,3750,1817,4035,1820"/>
-<area shape="rect" id="Node000020" href="$class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO)." alt="" coords="3809,1501,4000,1528"/>
+<area shape="rect" id="Node000020" href="$class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" title="A SHA&#45;256 of the size and first 64 KiB of the regular file path (opened without following a link or b..." alt="" coords="3809,1501,4000,1528"/>
 <area shape="poly" id="edge28_Node000001_Node000020" title=" " alt="" coords="4104,1793,3915,1531,3917,1527,4109,1794"/>
 <area shape="rect" id="Node000078" href="$class_import_key_dialog.html#aa4ecc33611d9fe18a2c743986217da7f" title="&quot;From file&quot; button: picks a file, reads it as a regular file of at most 16 MiB, requires the &#45;&#45;&#45;&#45;&#45;BEG..." alt="" coords="3828,1738,3982,1782"/>
 <area shape="poly" id="edge133_Node000001_Node000078" title=" " alt="" coords="4056,1801,3982,1783,3983,1778,4061,1802"/>

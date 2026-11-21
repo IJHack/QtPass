@@ -39,7 +39,7 @@
 <area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="1068,121,1146,123,1140,124,1069,126"/>
 <area shape="rect" id="Node000017" href="$class_real_pass.html#a6d7163b691663d92f31ca20886f9979f" title="The executor is about to run (or drop) its next item: for an insert, take its entry from m_insertQueu..." alt="" coords="1148,161,1322,189"/>
 <area shape="poly" id="edge18_Node000015_Node000017" title=" " alt="" coords="1063,135,1155,157,1150,157,1063,140"/>
-<area shape="rect" id="Node000018" href="$class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO)." alt="" coords="1400,57,1592,85"/>
+<area shape="rect" id="Node000018" href="$class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" title="A SHA&#45;256 of the size and first 64 KiB of the regular file path (opened without following a link or b..." alt="" coords="1400,57,1592,85"/>
 <area shape="poly" id="edge19_Node000017_Node000018" title=" " alt="" coords="1309,158,1335,146,1349,134,1358,122,1367,108,1383,96,1395,92,1400,90,1386,100,1371,112,1362,125,1353,138,1338,151,1310,163"/>
 <area shape="rect" id="Node000020" href="$class_executor.html#a554cab50d6449b456ad4e8309ee11a90" title="Return the environment passed to child processes." alt="" coords="1412,109,1580,137"/>
 <area shape="poly" id="edge21_Node000017_Node000020" title=" " alt="" coords="1308,158,1405,141,1410,140,1309,163"/>

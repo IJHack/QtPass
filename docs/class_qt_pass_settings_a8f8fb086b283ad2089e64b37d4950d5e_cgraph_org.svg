@@ -129,7 +129,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" target="_top" xlink:title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO).">
+<g id="a_Node000008"><a xlink:href="class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" target="_top" xlink:title="A SHA&#45;256 of the size and first 64 KiB of the regular file path (opened without following a link or b...">
 <polygon fill="white" stroke="#666666" points="794.75,-98.75 651.25,-98.75 651.25,-78 794.75,-78 794.75,-98.75"/>
 <text xml:space="preserve" text-anchor="middle" x="723" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::entryFingerprint</text>
 </a>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 16:18:36</td>
+            <td class="headerValue">2026-11-21 16:54:50</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">40.0&nbsp;%</td>
@@ -147,7 +147,7 @@
 <span id="L74"><span class="lineNum">      74</span>              :  * not the link.</span>
 <span id="L75"><span class="lineNum">      75</span>              :  */</span>
 <span id="L76"><span class="lineNum">      76</span>              : class Pass : public QObject {</span>
-<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         373 :   Q_OBJECT</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         375 :   Q_OBJECT</span></span>
 <span id="L78"><span class="lineNum">      78</span>              : </span>
 <span id="L79"><span class="lineNum">      79</span>              :   /** @brief Unused; kept from the time Pass tracked the running wrapper. */</span>
 <span id="L80"><span class="lineNum">      80</span>              :   bool wrapperRunning{false};</span>
@@ -229,7 +229,7 @@
 <span id="L156"><span class="lineNum">     156</span>              :    */</span>
 <span id="L157"><span class="lineNum">     157</span>              :   static QString getDefaultKeyTemplate(const QString &amp;gpgExecutable = {});</span>
 <span id="L158"><span class="lineNum">     158</span>              : </span>
-<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">         258 :   ~Pass() override = default;</span></span>
+<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">         259 :   ~Pass() override = default;</span></span>
 <span id="L160"><span class="lineNum">     160</span>              : </span>
 <span id="L161"><span class="lineNum">     161</span>              :   // Git operations</span>
 <span id="L162"><span class="lineNum">     162</span>              :   /**</span>
@@ -624,7 +624,7 @@
 <span id="L551"><span class="lineNum">     551</span>              :    * flight. A dialog reads insertsPending() before its own Insert() to learn</span>
 <span id="L552"><span class="lineNum">     552</span>              :    * how many earlier reports are not its own.</span>
 <span id="L553"><span class="lineNum">     553</span>              :    */</span>
-<span id="L554"><span class="lineNum">     554</span> <span class="tlaGNC">         103 :   void queueInsert() { ++m_insertsPending; }</span></span>
+<span id="L554"><span class="lineNum">     554</span> <span class="tlaGNC">         104 :   void queueInsert() { ++m_insertsPending; }</span></span>
 <span id="L555"><span class="lineNum">     555</span>              :   /** @brief What refuseLinkedPath() judges. */</span>
 <span id="L556"><span class="lineNum">     556</span>              :   enum class LinkScope {</span>
 <span id="L557"><span class="lineNum">     557</span>              :     /** @brief The entry itself and every folder above it in the store. */</span>
