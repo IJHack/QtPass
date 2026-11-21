@@ -6,6 +6,7 @@
  * readTemplateFile(), which refuses anything but a small regular file.
  */
 #include "templateio.h"
+#include "filecontent.h"
 #include "util.h"
 
 #include <QDebug>
@@ -137,10 +138,29 @@ auto TemplateIO::readSecretFields(const QString &storePath) -> QStringList {
 }
 
 auto TemplateIO::fieldsIn(const QString &templateText) -> QStringList {
-  QStringList fields = templateText.split(QLatin1Char('\n'));
-  fields.removeIf([](const QString &line) {
-    return line.trimmed().startsWith(QLatin1Char('#'));
-  });
+  // Every field becomes a row of widgets in the password dialog, built with
+  // a focus chain that grows quadratically: a store's 64 KiB .templates of
+  // one-letter lines froze Add password for half a minute. A template gets
+  // as many fields as an entry may have.
+  QStringList fields;
+  int named = 0;
+  const QStringList lines = templateText.split(QLatin1Char('\n'));
+  for (const QString &line : lines) {
+    if (line.trimmed().startsWith(QLatin1Char('#'))) {
+      continue;
+    }
+    // Counted as setTemplate() builds rows: for every line not empty, a
+    // line of blanks too.
+    if (!line.isEmpty()) {
+      if (named == FileContent::kMaxNamedFields) {
+        qWarning() << "Template has more than" << FileContent::kMaxNamedFields
+                   << "fields; ignoring the rest";
+        break;
+      }
+      ++named;
+    }
+    fields.append(line);
+  }
   return fields;
 }
 
