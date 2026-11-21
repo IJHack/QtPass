@@ -27,6 +27,7 @@
 #include <QPalette>
 #include <QPushButton>
 #include <QRegularExpression>
+#include <QScrollArea>
 #include <QSet>
 #include <QSignalBlocker>
 #include <QWidget>
@@ -123,7 +124,18 @@ void UsersDialog::showRecipientWarning(const QString &text,
   palette.setColor(QPalette::WindowText, QColor(Qt::red));
   banner->setPalette(palette);
   banner->setContentsMargins(4, 4, 4, 4);
-  ui->verticalLayout->insertWidget(1, banner);
+  // In a scroll area of a few lines: the text quotes folder paths a
+  // co-writer chose, and a word-wrapped label is as wide as its longest
+  // run without a space and as tall as its lines. Unscrolled it sized the
+  // dialog to tens of thousands of pixels; a scroll area asks for at most
+  // a bounded size, and all of the text can still be read.
+  auto *area = new QScrollArea(this);
+  area->setWidget(banner);
+  area->setWidgetResizable(true);
+  area->setFrameShape(QFrame::NoFrame);
+  area->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+  area->setMaximumHeight(banner->fontMetrics().lineSpacing() * 8 + 8);
+  ui->verticalLayout->insertWidget(1, area);
 }
 
 void UsersDialog::showNestedLists() {

@@ -330,7 +330,8 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   // and as rich text <img src="/dev/zero"> has Qt read that file without end.
   auto *label = new QLabel();
   label->setTextFormat(Qt::PlainText);
-  label->setText(trimmedField);
+  // Bounded: the label sizes the main window.
+  label->setText(Util::shownName(trimmedField));
   addRow(position, label, frame);
 }
 

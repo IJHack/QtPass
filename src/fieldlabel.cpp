@@ -8,6 +8,7 @@
 #include "fieldlabel.h"
 #include "secretlineedit.h"
 
+#include "util.h"
 #include <QContextMenuEvent>
 #include <QFormLayout>
 #include <QKeyEvent>
@@ -19,8 +20,14 @@ FieldLabel::FieldLabel(const QString &name, QWidget *parent) : QLabel(parent) {
   // control: as rich text, <img src="/dev/zero"> would have Qt read that
   // file without end. Plain text before the name is set.
   setTextFormat(Qt::PlainText);
-  setText(name);
+  setName(name);
   setToolTip(tr("Double-click to rename this field"));
+}
+
+void FieldLabel::setName(const QString &name) {
+  m_name = name;
+  // Bounded: the label sizes the dialog, and every & in it is a mnemonic.
+  setText(Util::shownName(name));
 }
 
 void FieldLabel::mouseDoubleClickEvent(QMouseEvent *event) {
@@ -48,7 +55,7 @@ void FieldLabel::startEdit() {
   // A SecretLineEdit: in the "every key: value line" mode the name can be the
   // sensitive part, so a copy out of the editor is marked and tracked as any
   // copy out of a field.
-  auto *editor = new SecretLineEdit(text(), parentWidget());
+  auto *editor = new SecretLineEdit(m_name, parentWidget());
   connect(editor, &SecretLineEdit::copied, this, &FieldLabel::copied);
   m_editor = editor;
   m_editor->setObjectName(QStringLiteral("fieldNameEditor"));
@@ -119,7 +126,10 @@ void FieldLabel::finishEdit(bool commit) {
     show();
   }
   editor->deleteLater();
-  if (commit && !name.isEmpty() && name != text()) {
-    emit renamed(text(), name);
+  if (commit && !name.isEmpty() && name != m_name) {
+    // A copy: a receiver that accepts the name calls setName(), and later
+    // receivers would read the new name as the old one.
+    const QString from = m_name;
+    emit renamed(from, name);
   }
 }

@@ -275,6 +275,39 @@ public:
    * @return @p text, with each longer run cut.
    */
   [[nodiscard]] static auto boundSpaceRuns(const QString &text) -> QString;
+  /** @brief Longest name shownName() leaves whole. */
+  static constexpr qsizetype kMaxShownName = 120;
+  /**
+   * @brief A name or path from the store, as a label or list shows it: one
+   * line, at most @p max characters.
+   *
+   * A label is as wide as its longest line and as tall as its lines, and
+   * its window grows with it: a co-writer's field name, folder path or
+   * template name of tens of thousands of characters, or of thousands of
+   * line breaks, made windows hundreds of thousands of pixels large and
+   * took gigabytes. Line breaks and other controls show as U+FFFD
+   * (displayable()), a tab as a space, and a longer name is cut in the
+   * middle with an ellipsis, never between the halves of a surrogate pair.
+   * The full name stays where it is used; this is only what is shown.
+   * @param name The name or path.
+   * @param max Most characters to show.
+   * @return The name as shown.
+   */
+  [[nodiscard]] static auto shownName(const QString &name,
+                                      qsizetype max = kMaxShownName) -> QString;
+  /**
+   * @brief @p text as a tooltip that shows it as written.
+   *
+   * Qt guesses whether a tooltip is rich text, and as rich text a name a
+   * co-writer chose, such as `<img src=/dev/zero>`, would have Qt read
+   * that file without end. Escaped, in a paragraph that keeps its white
+   * space and still wraps, it is always shown as the text it is,
+   * with controls as U+FFFD (displayable()) and long runs of white space
+   * cut (boundSpaceRuns()).
+   * @param text Plain text, such as a store name or path.
+   * @return The tooltip.
+   */
+  [[nodiscard]] static auto plainToolTip(const QString &text) -> QString;
   /** @brief Longest run without white space hasLongUnbrokenRun() allows. */
   static constexpr qsizetype kMaxUnbrokenRun = 10000;
   /**

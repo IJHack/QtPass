@@ -33,6 +33,18 @@ public:
    * @param parent owning widget
    */
   explicit FieldLabel(const QString &name, QWidget *parent = nullptr);
+
+  /**
+   * @brief The field's key, whole; the label shows it through
+   *        Util::shownName().
+   * @return The key.
+   */
+  [[nodiscard]] auto name() const -> QString { return m_name; }
+  /**
+   * @brief Name the field @p name and show it.
+   * @param name The field's new key.
+   */
+  void setName(const QString &name);
   /**
    * @brief Takes an open editor with it: the editor is a sibling, not a
    * child, so it would otherwise stay behind when the field is removed
@@ -96,6 +108,8 @@ private:
    *        a child, so the destructor deletes it explicitly.
    */
   QPointer<QLineEdit> m_editor;
+  /** @brief The field's key, whole (the text shown may be cut). */
+  QString m_name;
 };
 
 #endif // FIELDLABEL_H_
