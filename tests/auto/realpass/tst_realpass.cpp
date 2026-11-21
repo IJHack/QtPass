@@ -1613,6 +1613,7 @@ void tst_realpass::aLinkedListIsRefusedWithoutASigningKey() {
   QVERIFY(QFile::remove(rootList));
   QVERIFY(QDir(m_store + QStringLiteral("team/.gpg-id")).removeRecursively());
 
+#ifndef Q_OS_WIN
   // A name Qt cannot read hides what is behind it, a linked list included:
   // a folder move stops there without a signing key too.
   const QByteArray bad =
@@ -1627,6 +1628,7 @@ void tst_realpass::aLinkedListIsRefusedWithoutASigningKey() {
   QTest::qWait(300);
   QVERIFY2(!QFile::exists(m_log), "pass never runs over an unread name");
   QCOMPARE(criticalSpy.count(), 6);
+#endif
 }
 
 /**
