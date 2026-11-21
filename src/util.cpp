@@ -830,6 +830,23 @@ auto Util::hasLongUnbrokenRun(QStringView text) -> bool {
   return false;
 }
 
+auto Util::shownName(const QString &name, qsizetype max) -> QString {
+  QString line = displayable(name, false);
+  line.replace(QLatin1Char('\t'), QLatin1Char(' '));
+  if (line.size() <= max) {
+    return line;
+  }
+  qsizetype head = max / 3;
+  if (line.at(head - 1).isHighSurrogate()) {
+    --head;
+  }
+  qsizetype tail = max - max / 3 - 1;
+  if (line.at(line.size() - tail).isLowSurrogate()) {
+    --tail;
+  }
+  return line.left(head) + QChar(0x2026) + line.right(tail);
+}
+
 // One pass, no regex: a pattern such as \s{1001,} retries from every
 // character of a shorter run, which is quadratic on an entry made of them.
 // A tab or a line feed ends a run in Qt's layout as well, so it ends one

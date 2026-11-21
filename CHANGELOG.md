@@ -986,6 +986,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   which froze it for half a minute and made it thousands of pixels wide; it
   now keeps a normal width and shows a path longer than 120 characters cut
   in the middle, whole in its tooltip (scan finding ANT-2026-A2HE9KJT)
+- Names from the store no longer make windows tens of thousands of pixels
+  large. A field name, an entry or folder path or a template name of tens of
+  thousands of characters or line breaks sized the main window, the edit
+  dialog, the Add folder prompt and the users dialog, and took gigabytes.
+  Such names now show on one line of at most 120 characters, cut in the
+  middle; renaming a field and picking a template still use the whole name
+  (scan finding ANT-2026-MRD4LUFB)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

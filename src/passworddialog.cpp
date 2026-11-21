@@ -500,13 +500,14 @@ void PasswordDialog::renameField(QLineEdit *line, FieldLabel *label,
   allLines.append(m_otherLines);
   for (QLineEdit *other : std::as_const(allLines)) {
     if (other != line && other->objectName() == to) {
-      ui->statusLabel->setText(tr("A field called %1 already exists.").arg(to));
+      ui->statusLabel->setText(
+          tr("A field called %1 already exists.").arg(Util::shownName(to)));
       return;
     }
   }
   ui->statusLabel->clear();
   line->setObjectName(to);
-  label->setText(to);
+  label->setName(to);
   // The field may have become, or stopped being, the OTP one.
   hookOtpField();
 }
@@ -749,7 +750,7 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
       // without end.
       auto *label = new QLabel();
       label->setTextFormat(Qt::PlainText);
-      label->setText(field);
+      label->setText(Util::shownName(field));
       line->setObjectName(field);
       const NamedValue kept = held.takeNamedValue(field);
       if (!kept.name.isEmpty()) {
@@ -837,14 +838,18 @@ void PasswordDialog::usePwgen(bool usePwgen) {
 void PasswordDialog::setupTemplateBox() {
   ui->label_template->hide();
   ui->templateBox->hide();
-  connect(ui->templateBox, &QComboBox::currentTextChanged, this,
-          [this](const QString &name) {
-            // applyTemplate() rebuilds the field rows, so only act on a real
-            // change; the box is also updated from applyTemplate() itself.
-            if (name != m_currentTemplateName) {
-              applyTemplate(name);
-            }
-          });
+  // The names are the items' data; the text shown may be cut.
+  ui->templateBox->setSizeAdjustPolicy(
+      QComboBox::AdjustToMinimumContentsLengthWithIcon);
+  ui->templateBox->setMinimumContentsLength(20);
+  connect(ui->templateBox, &QComboBox::currentIndexChanged, this, [this] {
+    // applyTemplate() rebuilds the field rows, so only act on a real
+    // change; the box is also updated from applyTemplate() itself.
+    const QString name = ui->templateBox->currentData().toString();
+    if (name != m_currentTemplateName) {
+      applyTemplate(name);
+    }
+  });
 }
 
 void PasswordDialog::setAvailableTemplates(
@@ -859,7 +864,9 @@ void PasswordDialog::setAvailableTemplates(
   {
     const QSignalBlocker blocker(ui->templateBox);
     ui->templateBox->clear();
-    ui->templateBox->addItems(templateNames);
+    for (const QString &name : std::as_const(templateNames)) {
+      ui->templateBox->addItem(Util::shownName(name), name);
+    }
   }
   ui->label_template->show();
   ui->templateBox->show();
@@ -882,7 +889,7 @@ void PasswordDialog::applyTemplate(const QString &templateName) {
   if (it != m_availableTemplates.constEnd()) {
     m_currentTemplateName = templateName;
     const QSignalBlocker blocker(ui->templateBox);
-    ui->templateBox->setCurrentText(templateName);
+    ui->templateBox->setCurrentIndex(ui->templateBox->findData(templateName));
     QString fields = it.value().join("\n");
     setTemplate(fields, true);
   }

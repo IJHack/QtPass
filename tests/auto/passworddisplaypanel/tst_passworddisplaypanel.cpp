@@ -42,6 +42,7 @@ private Q_SLOTS:
   void templateMarkedFieldsHideWithThePassword();
   void aValueIsShownAsOneBlock();
   void aLongUnbrokenValueWrapsAnywhere();
+  void aLongFieldNameIsShownShort();
   void manyMarkedNamesAreLookedUpAtOnce();
   void hideEveryFieldHidesThemAll();
   void fieldNamesArePlainText();
@@ -286,6 +287,30 @@ void tst_passworddisplaypanel::aLongUnbrokenValueWrapsAnywhere() {
   (void)value->document()->size();
   QVERIFY2(timer.elapsed() < 2000,
            qPrintable(QString::number(timer.elapsed())));
+}
+
+/**
+ * @brief A field name of tens of thousands of characters and line breaks is
+ * shown on one short line: the label sized the main window to hundreds of
+ * thousands of pixels (scan finding ANT-2026-MRD4LUFB).
+ */
+void tst_passworddisplaypanel::aLongFieldNameIsShownShort() {
+  const QString name =
+      QString(60000, QLatin1Char('W')) + QString(60, QChar(0x2028));
+  AppSettings s;
+  s.hidePassword = false;
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{name, QStringLiteral("x")}}, s);
+  bool found = false;
+  for (const QLabel *label : m_parent->findChildren<QLabel *>()) {
+    if (label->text().startsWith(QStringLiteral("WWWW"))) {
+      found = true;
+      QVERIFY2(label->text().size() <= Util::kMaxShownName,
+               qPrintable(QString::number(label->text().size())));
+      QVERIFY(!label->text().contains(QChar(0x2028)));
+    }
+  }
+  QVERIFY2(found, "the field's label is shown");
 }
 
 /**

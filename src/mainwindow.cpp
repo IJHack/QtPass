@@ -329,7 +329,7 @@ void MainWindow::connectPassSignals(Pass *pass) {
     const QString file = std::exchange(m_refreshAfterPush, QString());
     m_refreshAfterPushOwner = nullptr;
     if (file == m_shownFile && pass->isIdle()) {
-      ui->passwordName->setText(file);
+      ui->passwordName->setText(Util::shownName(file));
       pass->Show(file);
     }
   });
@@ -639,7 +639,7 @@ auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
   QString file = getFile(index, true);
-  ui->passwordName->setText(file);
+  ui->passwordName->setText(Util::shownName(file));
   if (!file.isEmpty() && !cleared) {
     // Remember what the panel is about to show, so onOtp() can tell whether the
     // code it can see belongs to the entry that is currently selected.
@@ -1892,11 +1892,11 @@ void MainWindow::addFolder() {
   const AppSettings s = QtPassSettings::load();
   bool ok;
   QString dir = m_tree->currentDir(false);
-  QString newdir =
-      QInputDialog::getText(this, tr("New folder"),
-                            tr("New folder: \n(Will be placed in %1 )")
-                                .arg(s.passStore + m_tree->currentDir(true)),
-                            QLineEdit::Normal, "", &ok);
+  QString newdir = QInputDialog::getText(
+      this, tr("New folder"),
+      tr("New folder: \n(Will be placed in %1 )")
+          .arg(Util::shownName(s.passStore + m_tree->currentDir(true))),
+      QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty()) {
     return;
   }

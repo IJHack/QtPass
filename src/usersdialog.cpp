@@ -111,7 +111,26 @@ void UsersDialog::showRecipientWarning(const QString &text,
   banner->setTextFormat(Qt::PlainText);
   // And with nothing in it that changes how the rest reads: a folder name
   // with a bidi override mirrored the warning after it.
-  banner->setText(Util::displayable(text));
+  // It quotes folder paths a co-writer chose, and the label sizes the
+  // dialog: a word-wrapped label is as wide as its longest run without a
+  // space and as tall as its lines. So each such run is cut to 160
+  // characters (shownName()), and at most 12 lines are shown.
+  constexpr qsizetype kMaxLines = 12;
+  constexpr qsizetype kMaxRun = 160;
+  QStringList lines = text.split(QLatin1Char('\n'));
+  const bool more = lines.size() > kMaxLines;
+  lines = lines.mid(0, kMaxLines);
+  for (QString &line : lines) {
+    QStringList words = line.split(QLatin1Char(' '));
+    for (QString &word : words) {
+      word = Util::shownName(word, kMaxRun);
+    }
+    line = words.join(QLatin1Char(' '));
+  }
+  if (more) {
+    lines << QString(QChar(0x2026));
+  }
+  banner->setText(lines.join(QLatin1Char('\n')));
   banner->setObjectName(name);
   banner->setWordWrap(true);
   // Palette, not a stylesheet colour, so it reads on dark themes too; red as

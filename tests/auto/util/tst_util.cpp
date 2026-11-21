@@ -265,6 +265,7 @@ private Q_SLOTS:
   void displayableShowsWhatTurnsTheTextAround();
   void boundSpaceRunsCutsOnlyLongRuns();
   void hasLongUnbrokenRunCountsRunsBetweenSpaces();
+  void shownNameIsOneBoundedLine();
   void utilRegexNewLines();
   void buildClipboardMimeDataDword();
   void imitatePassResolveMoveDestination();
@@ -2068,6 +2069,45 @@ void tst_util::hasLongUnbrokenRunCountsRunsBetweenSpaces() {
              qPrintable(QString::number(noBreak.unicode(), 16)));
   }
   QVERIFY(!Util::hasLongUnbrokenRun(QString()));
+}
+
+/**
+ * @brief A store name is shown on one line of at most kMaxShownName
+ *        characters, cut in the middle, never inside a surrogate pair: a
+ *        label sizes its window (scan finding ANT-2026-MRD4LUFB).
+ */
+void tst_util::shownNameIsOneBoundedLine() {
+  QCOMPARE(Util::shownName(QStringLiteral("work/bank")),
+           QStringLiteral("work/bank"));
+  QCOMPARE(Util::shownName(QStringLiteral("a\tb")), QStringLiteral("a b"));
+  const QString broken = Util::shownName(QStringLiteral("a\nb\u2028c\u2029d"));
+  QVERIFY(!broken.contains(QLatin1Char('\n')));
+  QVERIFY(!broken.contains(QChar(0x2028)));
+  QVERIFY(!broken.contains(QChar(0x2029)));
+  const qsizetype max = Util::kMaxShownName;
+  QCOMPARE(Util::shownName(QString(max, QLatin1Char('w'))).size(), max);
+  const QString cut = Util::shownName(QStringLiteral("head") +
+                                      QString(60000, QLatin1Char('W')) +
+                                      QStringLiteral("tail"));
+  QVERIFY2(cut.size() <= max, qPrintable(QString::number(cut.size())));
+  QVERIFY(cut.startsWith(QStringLiteral("head")));
+  QVERIFY(cut.endsWith(QStringLiteral("tail")));
+  QVERIFY(cut.contains(QChar(0x2026)));
+  // A pair at either cut stays whole.
+  const QString key = QStringLiteral("\U0001F511");
+  const QString pairs = QString(max / 3 - 1, QLatin1Char('h')) + key +
+                        QString(500, QLatin1Char('m')) + key +
+                        QString(max - max / 3 - 3, QLatin1Char('t'));
+  const QString shown = Util::shownName(pairs);
+  for (qsizetype i = 0; i < shown.size(); ++i) {
+    if (shown.at(i).isHighSurrogate()) {
+      QVERIFY(i + 1 < shown.size() && shown.at(i + 1).isLowSurrogate());
+    }
+    if (shown.at(i).isLowSurrogate()) {
+      QVERIFY(i > 0 && shown.at(i - 1).isHighSurrogate());
+    }
+  }
+  QCOMPARE(Util::shownName(QString(50, QLatin1Char('x')), 10).size(), 10);
 }
 
 void tst_util::boundSpaceRunsCutsOnlyLongRuns() {

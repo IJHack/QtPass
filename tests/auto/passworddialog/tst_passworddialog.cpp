@@ -43,6 +43,7 @@
 #include "../../../src/passworddialog.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/secretlineedit.h"
+#include "../../../src/util.h"
 #include "../testpass.h"
 #include "../testsettings.h"
 
@@ -147,6 +148,7 @@ private Q_SLOTS:
   void anEntryTooLongToEditIsNotLoaded();
   void aLongUnbrokenLineWrapsAnywhereInTheEditor();
   void manyLongFoldersDoNotSizeTheDialog();
+  void longFieldAndTemplateNamesAreShownShort();
   void copiesOutOfTheEditorAreReported();
   void aFieldRenamedAwayFromOtpStillReportsCopies();
   void aCopyOutOfTheNameEditorIsMarkedAndReported();
@@ -507,6 +509,59 @@ void tst_passworddialog::manyLongFoldersDoNotSizeTheDialog() {
   box->hidePopup();
   QVERIFY2(timer.elapsed() < 1500,
            qPrintable(QString::number(timer.elapsed())));
+}
+
+/**
+ * @brief Long names from the entry or the store's .templates are shown
+ * short, and kept whole where they are used: a renamed field starts from
+ * its whole name, and a template is picked by its whole name (scan finding
+ * ANT-2026-MRD4LUFB).
+ */
+void tst_passworddialog::longFieldAndTemplateNamesAreShownShort() {
+  const QString longName =
+      QStringLiteral("k") + QString(5000, QLatin1Char('&'));
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  pass.deliverShow(QStringLiteral("secret\n") + longName +
+                   QStringLiteral(": bob\n"));
+  FieldLabel *label = nullptr;
+  for (FieldLabel *candidate : d.findChildren<FieldLabel *>()) {
+    if (candidate->name() == longName) {
+      label = candidate;
+    }
+  }
+  QVERIFY2(label != nullptr, "the field keeps its whole name");
+  QVERIFY(label->text().size() <= Util::kMaxShownName);
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  QCOMPARE(editor->text(), longName);
+  QSignalSpy renamed(label, &FieldLabel::renamed);
+  editor->setText(QStringLiteral("short"));
+  QTest::keyClick(editor, Qt::Key_Return);
+  QCOMPARE(renamed.count(), 1);
+  QCOMPARE(renamed.first().at(0).toString(), longName);
+  QCOMPARE(label->name(), QStringLiteral("short"));
+  QCOMPARE(label->text(), QStringLiteral("short"));
+
+  // A template named at length: shown short, picked whole.
+  FakePass other;
+  PasswordDialog e(&other, allFieldsSettings(), QString(), true);
+  const QString longTemplate = QString(65000, QLatin1Char('z'));
+  e.setAvailableTemplates({{longTemplate, {QStringLiteral("user")}},
+                           {QStringLiteral("wifi"), {QStringLiteral("ssid")}}},
+                          longTemplate);
+  auto *box = e.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  QVERIFY(box != nullptr);
+  QCOMPARE(box->currentData().toString(), longTemplate);
+  QVERIFY(box->currentText().size() <= Util::kMaxShownName);
+  QCOMPARE(box->sizeAdjustPolicy(),
+           QComboBox::AdjustToMinimumContentsLengthWithIcon);
+  QVERIFY(e.findChild<QLineEdit *>(QStringLiteral("user")) != nullptr);
+  box->setCurrentIndex(box->findData(QStringLiteral("wifi")));
+  QVERIFY(e.findChild<QLineEdit *>(QStringLiteral("ssid")) != nullptr);
+  QVERIFY(e.findChild<QLineEdit *>(QStringLiteral("user")) == nullptr);
 }
 
 /**
