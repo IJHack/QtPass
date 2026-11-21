@@ -264,6 +264,7 @@ private Q_SLOTS:
   void linkifyUrlsLinksOnlyWhatReadsAsItOpens();
   void displayableShowsWhatTurnsTheTextAround();
   void boundSpaceRunsCutsOnlyLongRuns();
+  void hasLongUnbrokenRunCountsRunsBetweenSpaces();
   void utilRegexNewLines();
   void buildClipboardMimeDataDword();
   void imitatePassResolveMoveDestination();
@@ -2045,6 +2046,25 @@ void tst_util::linkifyUrlsLeavesNonWebUrlsAsText() {
  * Util::kMaxSpaceRun. Every white space Qt counts in such a run counts here;
  * a tab or a line feed ends one; shorter runs and the text around are kept.
  */
+/**
+ * @brief A run of more than Util::kMaxUnbrokenRun characters without white
+ *        space makes a widget wrap anywhere (scan finding ANT-2026-0RRSZ1YR);
+ *        any white space ends a run.
+ */
+void tst_util::hasLongUnbrokenRunCountsRunsBetweenSpaces() {
+  const qsizetype max = Util::kMaxUnbrokenRun;
+  QVERIFY(!Util::hasLongUnbrokenRun(QString(max, QLatin1Char('a'))));
+  QVERIFY(Util::hasLongUnbrokenRun(QString(max + 1, QLatin1Char('a'))));
+  QVERIFY(Util::hasLongUnbrokenRun(QStringLiteral("x y ") +
+                                   QString(max + 1, QLatin1Char('a'))));
+  for (const QChar space :
+       {QChar(u' '), QChar(u'\t'), QChar(u'\n'), QChar(0x00A0)}) {
+    QVERIFY(!Util::hasLongUnbrokenRun(QString(max, QLatin1Char('a')) + space +
+                                      QString(max, QLatin1Char('a'))));
+  }
+  QVERIFY(!Util::hasLongUnbrokenRun(QString()));
+}
+
 void tst_util::boundSpaceRunsCutsOnlyLongRuns() {
   const qsizetype max = Util::kMaxSpaceRun;
   const QString keep = QStringLiteral("a") + QString(max, QLatin1Char(' ')) +

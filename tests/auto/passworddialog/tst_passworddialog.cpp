@@ -144,6 +144,7 @@ private Q_SLOTS:
   void ctrlTCyclesTemplatesAndUpdatesBox();
   void fieldLabelRenamesTheField();
   void anEntryTooLongToEditIsNotLoaded();
+  void aLongUnbrokenLineWrapsAnywhereInTheEditor();
   void copiesOutOfTheEditorAreReported();
   void aFieldRenamedAwayFromOtpStillReportsCopies();
   void aCopyOutOfTheNameEditorIsMarkedAndReported();
@@ -397,6 +398,27 @@ void tst_passworddialog::anEntryTooLongToEditIsNotLoaded() {
                 ->toPlainText()
                 .isEmpty(),
            "a line ending in \"\\r\\n\" counts once");
+}
+
+/**
+ * @brief Notes with hundreds of thousands of letters in a row wrap anywhere
+ * in the editor: at word boundaries Qt took minutes to lay them out (scan
+ * finding ANT-2026-0RRSZ1YR). Notes of words keep word wrap.
+ */
+void tst_passworddialog::aLongUnbrokenLineWrapsAnywhereInTheEditor() {
+  for (const bool longRun : {false, true}) {
+    FakePass pass;
+    PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                     false);
+    pass.deliverShow(QStringLiteral("secret\n") +
+                     (longRun ? QString(400000, QLatin1Char('a'))
+                              : QStringLiteral("a few words")));
+    auto *body = d.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+    QVERIFY(body != nullptr);
+    QCOMPARE(body->wordWrapMode(),
+             longRun ? QTextOption::WrapAnywhere
+                     : QTextOption::WrapAtWordBoundaryOrAnywhere);
+  }
 }
 
 /**

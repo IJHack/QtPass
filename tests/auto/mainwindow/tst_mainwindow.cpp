@@ -402,6 +402,7 @@ private Q_SLOTS:
   void flashTextSetsContent();
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
+  void flashTextWrapsALongUnbrokenRunAnywhere();
   void flashTextNonErrorClearsErrorForeground();
   void flashTextIsNeverALink();
   void anEntryShownAsItIsHasNoLinks();
@@ -868,6 +869,25 @@ void tst_mainwindow::flashTextHtmlRenderedInBrowser() {
   QVERIFY2(
       !browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
       "flashText with isHtml=true must not escape HTML tags");
+}
+
+/**
+ * @brief Text with hundreds of thousands of letters in a row wraps anywhere
+ * in the main browser, which is linear; at word boundaries Qt took seconds
+ * to minutes (scan finding ANT-2026-0RRSZ1YR). Text of words, shown after
+ * it, gets word wrap back.
+ */
+void tst_mainwindow::flashTextWrapsALongUnbrokenRunAnywhere() {
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  m_window->flashText(QString(400000, QLatin1Char('a')), false, false);
+  QCOMPARE(browser->wordWrapMode(), QTextOption::WrapAnywhere);
+  m_window->flashText(QStringLiteral("a few words"), false, false);
+  QCOMPARE(browser->wordWrapMode(), QTextOption::WrapAtWordBoundaryOrAnywhere);
+  m_window->flashText(QString(400000, QLatin1Char('b')), false, true);
+  QCOMPARE(browser->wordWrapMode(), QTextOption::WrapAnywhere);
+  browser->clear();
 }
 
 /**

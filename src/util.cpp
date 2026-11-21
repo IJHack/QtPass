@@ -814,6 +814,17 @@ auto Util::withoutOtherBlockBreaks(QString text) -> QString {
   return text;
 }
 
+auto Util::hasLongUnbrokenRun(QStringView text) -> bool {
+  qsizetype run = 0;
+  for (const QChar c : text) {
+    run = c.isSpace() ? 0 : run + 1;
+    if (run > kMaxUnbrokenRun) {
+      return true;
+    }
+  }
+  return false;
+}
+
 // One pass, no regex: a pattern such as \s{1001,} retries from every
 // character of a shorter run, which is quadratic on an entry made of them.
 // A tab or a line feed ends a run in Qt's layout as well, so it ends one

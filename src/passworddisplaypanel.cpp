@@ -155,6 +155,11 @@ auto valueBrowser(const QString &field, const QString &value,
   // them for a crafted password line.
   const QString shown =
       Util::boundSpaceRuns(Util::withoutOtherBlockBreaks(value));
+  // A value of hundreds of thousands of letters in a row (a crafted
+  // password line) wraps anywhere: at word boundaries Qt took minutes.
+  if (Util::hasLongUnbrokenRun(shown)) {
+    browser->setWordWrapMode(QTextOption::WrapAnywhere);
+  }
   bool linked = false;
   const QString linkedText =
       links ? Util::linkifyUrls(shown, &linked) : QString();

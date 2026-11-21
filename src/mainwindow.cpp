@@ -487,13 +487,24 @@ void MainWindow::flashText(const QString &text, const bool isError,
   }
   ui->textBrowser->setCurrentCharFormat(format);
 
+  // Wrapped at word boundaries, a run of hundreds of thousands of letters
+  // took Qt seconds to minutes; anywhere, it is linear. Prose keeps its
+  // word wrap.
+  const auto wrapFor = [this](const QString &shown) {
+    ui->textBrowser->setWordWrapMode(
+        Util::hasLongUnbrokenRun(shown)
+            ? QTextOption::WrapAnywhere
+            : QTextOption::WrapAtWordBoundaryOrAnywhere);
+  };
   if (isHtml) {
     QString _text = text;
     if (!ui->textBrowser->toPlainText().isEmpty()) {
       _text = ui->textBrowser->toHtml() + _text;
     }
+    wrapFor(_text);
     ui->textBrowser->setHtml(_text);
   } else {
+    wrapFor(text);
     ui->textBrowser->setText(text);
   }
 }

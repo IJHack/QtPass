@@ -275,6 +275,21 @@ public:
    * @return @p text, with each longer run cut.
    */
   [[nodiscard]] static auto boundSpaceRuns(const QString &text) -> QString;
+  /** @brief Longest run without white space hasLongUnbrokenRun() allows. */
+  static constexpr qsizetype kMaxUnbrokenRun = 10000;
+  /**
+   * @brief Whether @p text holds more than kMaxUnbrokenRun characters in a
+   * row without white space.
+   *
+   * Qt wraps such a run at word boundaries in time quadratic in its length:
+   * one line of 400 000 letters in a small compressed entry froze the window
+   * for seconds, more for longer ones. A widget showing such text wraps
+   * anywhere instead (QTextOption::WrapAnywhere), which is linear; no prose
+   * has a word this long.
+   * @param text Text to show.
+   * @return true when such a run is in it.
+   */
+  [[nodiscard]] static auto hasLongUnbrokenRun(QStringView text) -> bool;
   /**
    * @brief Whether Qt's text document starts a new block at @p c, besides
    * at a line feed: a carriage return, U+2029 (paragraph separator) and the
