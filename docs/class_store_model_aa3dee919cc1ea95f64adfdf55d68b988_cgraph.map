@@ -1,7 +1,9 @@
 <map id="StoreModel::hasChildren" name="StoreModel::hasChildren">
-<area shape="rect" id="Node000001" title="No children for a link inside the store: it is listed by name but never entered, so the view shows no..." alt="" coords="5,5,186,33"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#ab68d55f45eea235695da5bb987c6bde2" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="234,5,421,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,17,221,19,215,19,186,22"/>
-<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="469,5,614,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="421,17,456,19,451,19,422,22"/>
+<area shape="rect" id="Node000001" title="No children for a link inside the store: it is listed by name but never entered, so the view shows no..." alt="" coords="5,32,186,60"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#ab68d55f45eea235695da5bb987c6bde2" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="234,32,421,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,43,221,45,215,46,186,48"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="470,5,615,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="421,32,452,30,457,30,422,37"/>
+<area shape="rect" id="Node000004" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="469,57,616,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="421,54,457,61,451,61,421,60"/>
 </map>

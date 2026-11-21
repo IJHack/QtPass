@@ -1,13 +1,15 @@
 <map id="StoreModel::filterAcceptsRow" name="StoreModel::filterAcceptsRow">
-<area shape="rect" id="Node000001" title="Filter whether a row should be displayed." alt="" coords="5,56,218,84"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown." alt="" coords="266,56,430,84"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,67,253,69,247,70,218,72"/>
-<area shape="poly" id="edge6_Node000002_Node000002" title=" " alt="" coords="313,55,308,47,312,37,326,31,348,29,371,32,386,41,380,40,370,37,348,35,327,37,316,41,313,47,318,56"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="478,5,617,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="405,53,473,38,478,37,406,58"/>
-<area shape="rect" id="Node000004" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="665,81,811,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="430,72,652,89,647,90,430,78"/>
-<area shape="rect" id="Node000005" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="483,107,612,134"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="405,82,478,102,473,102,405,87"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="612,109,647,107,652,107,613,115"/>
+<area shape="rect" id="Node000001" title="Filter whether a row should be displayed." alt="" coords="5,81,218,109"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown." alt="" coords="266,81,430,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,93,253,95,247,96,218,98"/>
+<area shape="poly" id="edge7_Node000002_Node000002" title=" " alt="" coords="312,80,307,72,312,63,325,57,348,55,372,57,386,66,381,66,370,62,348,60,327,62,315,67,312,72,318,82"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="482,5,621,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,78,495,40,501,38,388,83"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="673,81,819,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="430,93,661,95,655,96,431,98"/>
+<area shape="rect" id="Node000005" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="487,107,616,134"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="430,103,474,110,469,111,430,108"/>
+<area shape="rect" id="Node000006" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="478,159,625,186"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="386,107,479,143,499,153,494,152,477,148,385,112"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="616,109,655,107,661,106,617,115"/>
 </map>

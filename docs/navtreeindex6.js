@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4":[2,0,0,2,4],
 "namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40":[2,0,0,2,5],
 "namespace_enums.html#ad33195b2ca21f0ffd9b33b76bf09a03e":[2,0,0,3],
 "namespace_plain_message_box.html":[1,5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_imitate_pass_1_1_reencrypt_result.html#a361f02fa1e8941a21c36ac5c76412774":[1,0,0,5,4],
 "struct_imitate_pass_1_1_reencrypt_result.html#a61a9845141cf4db0ed17e6ec38ee4330":[1,0,0,5,3],
 "struct_imitate_pass_1_1_reencrypt_result.html#aa2d55a9aad9499e114e002f106a5328f":[1,0,0,5,2],
-"struct_imitate_pass_1_1_reencrypt_result.html#aad78e6196e403eb0834539269eb92646":[1,0,0,5,5],
-"struct_imitate_pass_1_1_reencrypt_result.html#ae0749007d118e1e9eaa3365dae956b03":[1,0,0,5,0]
+"struct_imitate_pass_1_1_reencrypt_result.html#aad78e6196e403eb0834539269eb92646":[1,0,0,5,5]
 };

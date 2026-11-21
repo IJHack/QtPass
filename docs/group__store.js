@@ -90,6 +90,7 @@ var group__store =
       [ "mimeData", "class_store_model.html#a8a6c01f4d7883133d69730ceb1e97a09", null ],
       [ "mimeTypes", "class_store_model.html#a40620d3b37bb04b06b999308bf2ee137", null ],
       [ "parseDropData", "class_store_model.html#a3f12de1e5eb2337e3165aa838655e5a5", null ],
+      [ "pathOf", "class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513", null ],
       [ "performDrop", "class_store_model.html#ac66256efac2ec5e6924d8694b7a718c5", null ],
       [ "rootIndexFor", "class_store_model.html#a9830413c7cf960e473adfa98311c3bcd", null ],
       [ "setModelAndStore", "class_store_model.html#a71787f93027b50575cfbdcbb1d8de071", null ],
