@@ -57,6 +57,7 @@ private slots:
   void newStoreStartsWithNothingSelected();
   void existingStorePreselectsItsRecipients();
   void foldersBelowWithTheirOwnListAreNamed();
+  void aWarningQuotingLongFolderNamesDoesNotSizeTheDialog();
   void foldersBelowThatCannotBeReadAreNamed();
   void withSigningATamperedListPreselectsNothing();
   void withSigningAnOlderVerifiedListIsPreselectedWithAWarning();
@@ -315,6 +316,50 @@ void tst_usersdialog::foldersBelowWithTheirOwnListAreNamed() {
     QVERIFY(dialog.findChild<QLabel *>(QStringLiteral("nestedListsWarning")) ==
             nullptr);
   }
+}
+
+/**
+ * @brief Folder names a co-writer chose, long, of many short words and with
+ * line breaks, do not size the dialog by the warning that quotes them: it
+ * scrolls in a bounded area, its explanation whole (scan finding
+ * ANT-2026-MRD4LUFB).
+ */
+void tst_usersdialog::aWarningQuotingLongFolderNamesDoesNotSizeTheDialog() {
+#ifdef Q_OS_WIN
+  QSKIP("folder names with line breaks need a POSIX file system");
+#else
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QDir root(store.path());
+  const QString words = QStringLiteral("w ").repeated(20);
+  QStringList folders{QStringLiteral(".")};
+  for (int i = 0; i < 5; ++i) {
+    folders << QStringLiteral("%1%2").arg(i).arg(words) +
+                   QString(200, QLatin1Char('\n')) + QStringLiteral("end");
+  }
+  for (const QString &folder : std::as_const(folders)) {
+    QVERIFY(root.mkpath(folder));
+    QFile gpgId(
+        QDir(root.filePath(folder)).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    gpgId.write("31850CF72D9CDDE9\n");
+  }
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *label =
+      dialog.findChild<QLabel *>(QStringLiteral("nestedListsWarning"));
+  QVERIFY(label != nullptr);
+  QVERIFY2(label->text().contains(QStringLiteral("have their own recipients")),
+           qPrintable(label->text()));
+  dialog.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&dialog));
+  QVERIFY2(
+      dialog.width() < 2000 && dialog.height() < 2000,
+      qPrintable(
+          QStringLiteral("%1x%2").arg(dialog.width()).arg(dialog.height())));
+#endif
 }
 
 /**

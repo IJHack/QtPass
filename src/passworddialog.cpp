@@ -866,6 +866,8 @@ void PasswordDialog::setAvailableTemplates(
     ui->templateBox->clear();
     for (const QString &name : std::as_const(templateNames)) {
       ui->templateBox->addItem(Util::shownName(name), name);
+      ui->templateBox->setItemData(ui->templateBox->count() - 1, name,
+                                   Qt::ToolTipRole);
     }
   }
   ui->label_template->show();

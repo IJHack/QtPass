@@ -2108,6 +2108,12 @@ void tst_util::shownNameIsOneBoundedLine() {
     }
   }
   QCOMPARE(Util::shownName(QString(50, QLatin1Char('x')), 10).size(), 10);
+  // Too short for two ends and an ellipsis: the head, never half a pair.
+  QCOMPARE(Util::shownName(QStringLiteral("abc"), 2), QStringLiteral("ab"));
+  QCOMPARE(Util::shownName(QStringLiteral("abc"), 1), QStringLiteral("a"));
+  QCOMPARE(Util::shownName(QStringLiteral("abc"), 0), QString());
+  QCOMPARE(Util::shownName(QStringLiteral("abc"), -1), QString());
+  QCOMPARE(Util::shownName(QStringLiteral("a") + key, 2), QStringLiteral("a"));
 }
 
 void tst_util::boundSpaceRunsCutsOnlyLongRuns() {

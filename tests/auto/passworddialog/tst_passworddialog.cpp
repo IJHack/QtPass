@@ -556,6 +556,8 @@ void tst_passworddialog::longFieldAndTemplateNamesAreShownShort() {
   QVERIFY(box != nullptr);
   QCOMPARE(box->currentData().toString(), longTemplate);
   QVERIFY(box->currentText().size() <= Util::kMaxShownName);
+  QCOMPARE(box->itemData(box->currentIndex(), Qt::ToolTipRole).toString(),
+           longTemplate);
   QCOMPARE(box->sizeAdjustPolicy(),
            QComboBox::AdjustToMinimumContentsLengthWithIcon);
   QVERIFY(e.findChild<QLineEdit *>(QStringLiteral("user")) != nullptr);

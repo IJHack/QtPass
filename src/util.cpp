@@ -836,6 +836,14 @@ auto Util::shownName(const QString &name, qsizetype max) -> QString {
   if (line.size() <= max) {
     return line;
   }
+  // Too short for an ellipsis between two ends: the head alone.
+  if (max < 3) {
+    qsizetype keep = std::max<qsizetype>(max, 0);
+    if (keep > 0 && line.at(keep - 1).isHighSurrogate()) {
+      --keep;
+    }
+    return line.left(keep);
+  }
   qsizetype head = max / 3;
   if (line.at(head - 1).isHighSurrogate()) {
     --head;
