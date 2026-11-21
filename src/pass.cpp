@@ -1054,9 +1054,10 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
   // for every folder climbed, a tree check asks each one record lookup,
   // where climbing again from every folder cost depth squared.
   QStringList climbed;
-  const auto answer = [&climbed, walks,
-                       recordError](const std::optional<QString> &skipped,
-                                    const QString &why) {
+  // By value: on a hit they come out of walks, which the inserts below
+  // may rehash.
+  const auto answer = [&climbed, walks, recordError](
+                          std::optional<QString> skipped, QString why) {
     if (walks != nullptr) {
       for (const QString &folder : std::as_const(climbed)) {
         walks->insert(folder, {skipped, why});
