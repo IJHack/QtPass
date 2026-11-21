@@ -1,0 +1,5 @@
+<map id="Util::withoutOtherBlockBreaks" name="Util::withoutOtherBlockBreaks">
+<area shape="rect" id="Node000001" title="text with every block break other than a line feed (isOtherBlockBreak()) shown as a space,..." alt="" coords="5,5,224,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#ac44a8c32a9ac0fbb9d471dd115359064" title="Whether Qt&#39;s text document starts a new block at c, besides at a line feed: a carriage return,..." alt="" coords="272,5,445,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,17,259,19,253,19,224,22"/>
+</map>

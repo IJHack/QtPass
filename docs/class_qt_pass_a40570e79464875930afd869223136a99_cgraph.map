@@ -1,21 +1,25 @@
 <map id="QtPass::processFinished" name="QtPass::processFinished">
-<area shape="rect" id="Node000001" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std..." alt="" coords="5,69,183,97"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="468,31,629,58"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,66,172,45,230,29,287,21,346,20,455,29,450,30,346,25,288,27,231,34,174,50,125,71"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again." alt="" coords="231,43,420,70"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="183,70,218,68,212,70,184,76"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6" title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser." alt="" coords="470,120,627,148"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="125,95,174,115,231,131,288,139,347,142,452,143,457,142,347,147,288,144,230,136,173,120,124,100"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="254,95,397,122"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="183,90,241,99,236,99,183,96"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a57fa6e612f022589f609d8b463111a48" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="677,5,841,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="629,32,664,30,659,31,630,37"/>
-<area shape="rect" id="Node000004" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="700,57,818,85"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="630,52,687,62,682,62,630,57"/>
-<area shape="rect" id="Node000005" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="889,31,1073,58"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="818,61,871,58,876,57,819,67"/>
-<area shape="rect" id="Node000006" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="908,83,1054,110"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="819,75,895,86,890,86,818,81"/>
-<area shape="poly" id="edge9_Node000009_Node000002" title=" " alt="" coords="377,91,419,79,481,64,487,63,421,84,378,97"/>
-<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="397,114,457,123,452,123,397,119"/>
+<area shape="rect" id="Node000001" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std..." alt="" coords="5,96,183,124"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="468,57,629,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,93,172,72,230,55,287,48,346,46,455,56,450,57,346,52,288,53,231,60,174,77,125,98"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again." alt="" coords="231,69,420,97"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="183,97,218,95,212,97,184,102"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6" title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser." alt="" coords="470,147,627,174"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="125,122,174,142,231,158,288,165,347,169,452,169,457,169,347,174,288,171,230,163,173,147,124,127"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="254,121,397,149"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="183,117,241,125,236,126,183,122"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a57fa6e612f022589f609d8b463111a48" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="705,5,868,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="615,54,702,37,707,36,616,59"/>
+<area shape="rect" id="Node000004" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="727,57,846,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="629,69,714,71,709,71,630,74"/>
+<area shape="rect" id="Node000007" href="$class_util.html#a3495d95f8ec81a1be6d71efac07ca97e" title="text with every block break other than a line feed (isOtherBlockBreak()) shown as a space,..." alt="" coords="677,109,896,137"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="616,83,707,105,702,105,615,88"/>
+<area shape="rect" id="Node000005" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="944,5,1128,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="846,56,948,37,954,36,847,61"/>
+<area shape="rect" id="Node000006" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="963,57,1109,85"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="846,69,950,71,945,71,846,74"/>
+<area shape="rect" id="Node000008" href="$class_util.html#ac44a8c32a9ac0fbb9d471dd115359064" title="Whether Qt&#39;s text document starts a new block at c, besides at a line feed: a carriage return,..." alt="" coords="949,109,1122,137"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="896,121,936,123,931,123,896,126"/>
+<area shape="poly" id="edge11_Node000011_Node000002" title=" " alt="" coords="377,118,419,106,481,90,487,89,421,111,378,123"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="397,141,457,150,452,150,397,146"/>
 </map>

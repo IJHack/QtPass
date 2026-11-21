@@ -1,11 +1,15 @@
 <map id="QtPass::formatOutput" name="QtPass::formatOutput">
-<area shape="rect" id="Node000001" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="5,32,167,60"/>
-<area shape="rect" id="Node000002" href="$class_util.html#a57fa6e612f022589f609d8b463111a48" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="215,5,378,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,33,202,31,197,32,168,38"/>
-<area shape="rect" id="Node000003" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="237,57,356,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,53,225,62,219,63,167,58"/>
-<area shape="rect" id="Node000004" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="426,31,610,58"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="355,61,413,57,408,58,356,67"/>
-<area shape="rect" id="Node000005" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="445,83,591,110"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="356,75,432,86,427,86,356,81"/>
+<area shape="rect" id="Node000001" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="5,57,167,85"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a57fa6e612f022589f609d8b463111a48" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="242,5,406,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,54,244,36,240,38,154,59"/>
+<area shape="rect" id="Node000003" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="265,57,383,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,69,251,70,246,72,167,74"/>
+<area shape="rect" id="Node000006" href="$class_util.html#a3495d95f8ec81a1be6d71efac07ca97e" title="text with every block break other than a line feed (isOtherBlockBreak()) shown as a space,..." alt="" coords="215,109,433,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="153,83,245,105,240,106,153,88"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="481,5,665,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="383,56,486,37,491,36,384,61"/>
+<area shape="rect" id="Node000005" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="500,57,646,85"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="383,69,487,71,482,71,384,74"/>
+<area shape="rect" id="Node000007" href="$class_util.html#ac44a8c32a9ac0fbb9d471dd115359064" title="Whether Qt&#39;s text document starts a new block at c, besides at a line feed: a carriage return,..." alt="" coords="486,109,660,137"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="433,121,474,123,468,123,433,126"/>
 </map>
