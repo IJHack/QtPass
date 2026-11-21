@@ -945,6 +945,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   names that repeat those words. The words were joined into a pattern that
   tried every repeat again before giving up; each word is now taken at its
   first place after the one before (scan finding ANT-2026-TMKUCXVJ)
+- Saving with the `pass` backend no longer stalls the window on an entry a
+  co-writer padded to gigabytes. To tell afterwards whether `pass` rewrote
+  the entry, QtPass hashed all of it before each save; it now hashes its
+  size and first 64 KiB, which a new encryption always changes (scan finding
+  ANT-2026-XZKCLIWH)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

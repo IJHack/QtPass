@@ -773,10 +773,18 @@ auto RealPass::entryFingerprint(const QString &path) -> QByteArray {
   if (!Util::openRegularFile(path, file)) {
     return {};
   }
-  QCryptographicHash hash(QCryptographicHash::Sha256);
-  if (!hash.addData(&file)) {
+  // The size and the head only: this runs on the GUI thread before every
+  // insert, and a co-writer could pad an entry to gigabytes. An encryption
+  // never gives the same head twice, as the session key encrypted to each
+  // recipient comes first and is fresh every time.
+  constexpr qint64 kHeadBytes = 64 * 1024;
+  const QByteArray head = file.read(kHeadBytes);
+  if (head.isEmpty() && file.size() > 0) {
     return {};
   }
+  QCryptographicHash hash(QCryptographicHash::Sha256);
+  hash.addData(QByteArray::number(file.size()) + '\n');
+  hash.addData(head);
   return hash.result();
 }
 
