@@ -279,6 +279,13 @@ void PasswordDialog::setNewEntryLocation(const QString &storeRoot,
                                          const QStringList &folders,
                                          const QString &currentFolder) {
   m_storeRoot = QDir::cleanPath(storeRoot);
+  // Not sized to its items: the box shaped the text of every folder path to
+  // find its width, and a co-writer's thousands of nested folders froze
+  // Add password for half a minute and made the dialog thousands of pixels
+  // wide.
+  ui->folderBox->setSizeAdjustPolicy(
+      QComboBox::AdjustToMinimumContentsLengthWithIcon);
+  ui->folderBox->setMinimumContentsLength(30);
   ui->folderBox->clear();
   int current = 0;
   for (const QString &folder : folders) {
@@ -290,8 +297,19 @@ void PasswordDialog::setNewEntryLocation(const QString &storeRoot,
          QDir::cleanPath(currentFolder) == QStringLiteral("."))) {
       current = ui->folderBox->count();
     }
-    ui->folderBox->addItem(rel.isEmpty() ? QStringLiteral("/") : rel + u'/',
-                           rel);
+    // A long path is shown cut in the middle, whole in its tooltip: the
+    // list that drops down still measures every row it shows.
+    constexpr qsizetype kMaxShown = 120;
+    const QString shown = rel.isEmpty() ? QStringLiteral("/") : rel + u'/';
+    if (shown.size() > kMaxShown) {
+      ui->folderBox->addItem(shown.left(kMaxShown / 3) + QChar(0x2026) +
+                                 shown.right(kMaxShown - kMaxShown / 3 - 1),
+                             rel);
+      ui->folderBox->setItemData(ui->folderBox->count() - 1, shown,
+                                 Qt::ToolTipRole);
+    } else {
+      ui->folderBox->addItem(shown, rel);
+    }
   }
   ui->folderBox->setCurrentIndex(current);
   m_newEntryFolder = ui->folderBox->currentData().toString();

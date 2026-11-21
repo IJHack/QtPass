@@ -19,6 +19,7 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFormLayout>
 #include <QLabel>
@@ -145,6 +146,7 @@ private Q_SLOTS:
   void fieldLabelRenamesTheField();
   void anEntryTooLongToEditIsNotLoaded();
   void aLongUnbrokenLineWrapsAnywhereInTheEditor();
+  void manyLongFoldersDoNotSizeTheDialog();
   void copiesOutOfTheEditorAreReported();
   void aFieldRenamedAwayFromOtpStillReportsCopies();
   void aCopyOutOfTheNameEditorIsMarkedAndReported();
@@ -419,6 +421,56 @@ void tst_passworddialog::aLongUnbrokenLineWrapsAnywhereInTheEditor() {
              longRun ? QTextOption::WrapAnywhere
                      : QTextOption::WrapAtWordBoundaryOrAnywhere);
   }
+}
+
+/**
+ * @brief Thousands of long folder paths in the folder picker open at once
+ * and do not make the dialog as wide as the longest: the combo box shaped
+ * every item to size itself, and a co-writer's nested chains froze Add
+ * password for half a minute (scan finding ANT-2026-A2HE9KJT).
+ */
+void tst_passworddialog::manyLongFoldersDoNotSizeTheDialog() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QString(), true);
+  QStringList folders{QString()};
+  QString chain;
+  for (int i = 0; i < 20000; ++i) {
+    chain += (i % 1000 == 0 ? QStringLiteral("c%1").arg(i / 1000)
+                            : QStringLiteral("/a"));
+    folders << chain;
+    if (i % 1000 == 999) {
+      chain.clear();
+    }
+  }
+  QElapsedTimer timer;
+  timer.start();
+  d.setNewEntryLocation(QStringLiteral("/store"), folders, QString());
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  const qint64 opened = timer.elapsed();
+  QVERIFY2(d.width() < 2000, qPrintable(QString::number(d.width())));
+  QVERIFY2(opened < 1500, qPrintable(QString::number(opened)));
+  auto *box = d.findChild<QComboBox *>(QStringLiteral("folderBox"));
+  QVERIFY(box != nullptr);
+  QCOMPARE(box->count(), folders.size());
+  QCOMPARE(box->sizeAdjustPolicy(),
+           QComboBox::AdjustToMinimumContentsLengthWithIcon);
+  // A long path is shown cut, whole in its tooltip and in what is picked.
+  const int deepest = 1000;
+  QVERIFY2(box->itemText(deepest).size() <= 120,
+           qPrintable(QString::number(box->itemText(deepest).size())));
+  QVERIFY(box->itemText(deepest).contains(QChar(0x2026)));
+  QCOMPARE(box->itemData(deepest).toString(), folders.at(deepest));
+  QCOMPARE(box->itemData(deepest, Qt::ToolTipRole).toString(),
+           folders.at(deepest) + QLatin1Char('/'));
+  QCOMPARE(box->itemText(2), folders.at(2) + QLatin1Char('/'));
+  // The list it drops down measures short rows.
+  timer.restart();
+  box->showPopup();
+  QCoreApplication::processEvents();
+  box->hidePopup();
+  QVERIFY2(timer.elapsed() < 1500,
+           qPrintable(QString::number(timer.elapsed())));
 }
 
 /**
