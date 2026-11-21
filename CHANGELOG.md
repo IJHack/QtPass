@@ -914,6 +914,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   when the store's `.templates` marks thousands of fields secret. Each field
   line of the entry was compared with every marked name; the names are now
   looked up at once (scan finding ANT-2026-Q7ZADQ8F)
+- Copying or selecting two huge texts of an entry one after the other no
+  longer freezes the window. To merge the steps of a growing selection,
+  QtPass asked whether one text contained the other, which took time in the
+  product of their lengths; it now compares their ends only (scan finding
+  ANT-2026-RJVIUJLX)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

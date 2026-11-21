@@ -3,6 +3,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
+#include <QElapsedTimer>
 #include <QMenu>
 #include <QMimeData>
 #include <QSettings>
@@ -43,6 +44,8 @@ private slots:
   void trackedCopyIsClearedWithoutDroppingTheCopiedPassword();
   void secretTextBrowserMarksAndReportsWhatIsCopied();
   void aGrowingSelectionIsTrackedOnce();
+  void aSelectionMovingItsOtherEndIsTrackedOnce();
+  void twoHugeCopiesDoNotFreezeTheWindow();
   void aCopyOnTheClipboardOutlivesManySelections();
   void anotherPasswordManagersSecretIsNotPutBack();
   void aSelectionDoesNotPostponeAutoclear();
@@ -389,6 +392,52 @@ void tst_clipboardmanager::aGrowingSelectionIsTrackedOnce() {
   manager.trackCopied(QStringLiteral("pin: 1234"));
   manager.trackCopied(QStringLiteral("1234"));
   QTRY_VERIFY_WITH_TIMEOUT(QApplication::clipboard()->text().isEmpty(), 3000);
+}
+
+/**
+ * @brief A selection grown to the left, or shrunk, keeps one end of the step
+ * before it, so only where it ends stays tracked: the steps it passed
+ * through are not cleared from the clipboard later.
+ */
+void tst_clipboardmanager::aSelectionMovingItsOtherEndIsTrackedOnce() {
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND);
+  const QList<QStringList> selections = {
+      {QStringLiteral("c"), QStringLiteral("bc"), QStringLiteral("abc")},
+      {QStringLiteral("abc"), QStringLiteral("ab"), QStringLiteral("a")},
+      {QStringLiteral("abc"), QStringLiteral("bc"), QStringLiteral("c")},
+  };
+  for (const QStringList &steps : selections) {
+    QApplication::clipboard()->clear();
+    ClipboardManager manager;
+    for (const QString &step : steps) {
+      manager.trackCopied(step);
+    }
+    QApplication::clipboard()->setText(steps.first());
+    QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+    QTRY_COMPARE_WITH_TIMEOUT(status.count(), 1, 3000);
+    QCOMPARE(QApplication::clipboard()->text(), steps.first());
+  }
+}
+
+/**
+ * @brief Copying two huge texts of an entry one after the other returns at
+ * once. Asking whether one contains the other took time in the product of
+ * their lengths: a first line "baaa…" and a body "aaaa…" a co-writer planted
+ * froze the window for seconds to minutes (scan finding ANT-2026-RJVIUJLX).
+ */
+void tst_clipboardmanager::twoHugeCopiesDoNotFreezeTheWindow() {
+  saveClipboardSettings(true, 60, Enums::CLIPBOARD_ON_DEMAND);
+  ClipboardManager manager;
+  const QString firstLine =
+      QLatin1Char('b') + QString(200000, QLatin1Char('a'));
+  const QString body(400000, QLatin1Char('a'));
+  QElapsedTimer timer;
+  timer.start();
+  manager.trackCopied(firstLine);
+  manager.trackCopied(body);
+  QVERIFY2(timer.elapsed() < 1000,
+           qPrintable(QString::number(timer.elapsed())));
+  manager.clear();
 }
 
 /**

@@ -54,6 +54,18 @@ auto markedSecret(const QMimeData *data) -> bool {
   }
   return false;
 }
+
+/**
+ * @brief Whether one text is the other grown or shrunk at one end only.
+ * @param a One text.
+ * @param b The other text.
+ * @return True when the shorter one starts or ends the longer one.
+ */
+auto sharesAnEnd(const QString &a, const QString &b) -> bool {
+  const QString &longer = a.size() >= b.size() ? a : b;
+  const QString &shorter = a.size() >= b.size() ? b : a;
+  return longer.startsWith(shorter) || longer.endsWith(shorter);
+}
 } // namespace
 
 void ClipboardManager::copyIfAlways(const QString &text,
@@ -148,9 +160,12 @@ void ClipboardManager::trackCopied(const QString &text) {
     // passing "a" would stay tracked and autoclear could take someone
     // else's "a" later.
     // An earlier copy still on the clipboard proper (Ctrl+C) stays tracked.
+    // A selection keeps its anchor, so a step shares one end with the one
+    // before: comparing the ends stays linear, where contains() on two
+    // texts of an entry could take their product and freeze the window.
     const QString &last =
         m_otherCopies.isEmpty() ? QString() : m_otherCopies.last();
-    if (!last.isEmpty() && (text.contains(last) || last.contains(text)) &&
+    if (!last.isEmpty() && sharesAnEnd(text, last) &&
         QApplication::clipboard()->text(QClipboard::Clipboard) != last &&
         QApplication::clipboard()->text(QClipboard::Selection) != last) {
       m_otherCopies.last() = text;
