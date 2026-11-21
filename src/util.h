@@ -229,6 +229,8 @@ public:
    * action, where launching a non-web scheme would be a security risk.
    * Returns true only when the trimmed value:
    * - contains no control characters (CR, LF, NUL),
+   * - has an authority (host and port) of at most 259 characters, checked
+   *   before QUrl normalises the host,
    * - parses to a valid QUrl,
    * - has scheme exactly "http" or "https" (case-insensitive),
    * - has a non-empty host,
