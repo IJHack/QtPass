@@ -919,6 +919,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   QtPass asks whether one text contains the other, which took time in the
   product of their lengths; it now asks that in linear time (scan finding
   ANT-2026-RJVIUJLX)
+- The users dialog opens at once for a `.gpg-id` that lists thousands of
+  recipients no key answers to. Each "[INVALID]" badge made Qt sort every row
+  listed so far again; the rows are now sorted once (scan finding
+  ANT-2026-6KB4IRXS)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

@@ -3,6 +3,7 @@
 #include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
 #include <QLabel>
@@ -76,6 +77,7 @@ private slots:
   void aFolderNameCannotTurnTheWarningAround();
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
+  void manyUnknownRecipientsOpenAtOnceAndSorted();
   void unreadableRecipientLineLeavesTheOthersTicked();
   void unreadableLineStaysMissingWhenAResolvedUidContainsIt();
   void fallbackPerLineLookupIsCappedAndReused();
@@ -1284,6 +1286,65 @@ void tst_usersdialog::unknownRecipientIsListedAsNotFoundAndTicked() {
   QCOMPARE(
       enabledIds(dialog.selectedUsers()),
       QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
+}
+
+/**
+ * @brief A .gpg-id of thousands of recipients no key answers to opens at
+ * once, its rows still sorted: each [INVALID] badge re-sorted every row
+ * added so far, so a co-writer's list kept the dialog from opening for
+ * minutes (scan finding ANT-2026-6KB4IRXS).
+ */
+void tst_usersdialog::manyUnknownRecipientsOpenAtOnceAndSorted() {
+  const auto writeList = [](const QTemporaryDir &store,
+                            const QStringList &lines) {
+    QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+    if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
+      return false;
+    }
+    gpgId.write((lines.join(QLatin1Char('\n')) + QLatin1Char('\n')).toLatin1());
+    return true;
+  };
+  const auto sorted = [](const QListWidget *list) {
+    for (int row = 1; row < list->count(); ++row) {
+      if (*list->item(row) < *list->item(row - 1)) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  // In order, as a co-writer would list them: each badge put its row out of
+  // place and Qt sorted all rows again (6.8 s for these, before).
+  QTemporaryDir store;
+  QStringList many;
+  for (int i = 0; i < 6000; ++i) {
+    many << QStringLiteral("k%1").arg(i, 6, 10, QLatin1Char('0'));
+  }
+  QVERIFY(writeList(store, many));
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  QElapsedTimer timer;
+  timer.start();
+  UsersDialog dialog(&pass, s, s.passStore);
+  const qint64 elapsed = timer.elapsed();
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QVERIFY2(list->count() > 3000, qPrintable(QString::number(list->count())));
+  QVERIFY2(elapsed < 3000, qPrintable(QString::number(elapsed)));
+  QVERIFY(sorted(list));
+
+  // Listed backwards: the rows still come out sorted, and stay so.
+  QTemporaryDir backwards;
+  QVERIFY(writeList(backwards, {QStringLiteral("k3"), QStringLiteral("k2"),
+                                QStringLiteral("k1")}));
+  s.passStore = backwards.path() + QLatin1Char('/');
+  RecordingPass otherPass(s);
+  UsersDialog few(&otherPass, s, s.passStore);
+  list = few.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QVERIFY(sorted(list));
+  QVERIFY2(list->isSortingEnabled(), "a later search keeps the rows sorted");
 }
 
 /**
