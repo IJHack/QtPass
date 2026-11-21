@@ -279,7 +279,7 @@ public:
   static constexpr qsizetype kMaxUnbrokenRun = 10000;
   /**
    * @brief Whether @p text holds more than kMaxUnbrokenRun characters in a
-   * row without white space.
+   * row without white space Qt wraps at (a no-break space is not).
    *
    * Qt wraps such a run at word boundaries in time quadratic in its length:
    * one line of 400 000 letters in a small compressed entry froze the window

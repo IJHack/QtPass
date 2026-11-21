@@ -817,7 +817,12 @@ auto Util::withoutOtherBlockBreaks(QString text) -> QString {
 auto Util::hasLongUnbrokenRun(QStringView text) -> bool {
   qsizetype run = 0;
   for (const QChar c : text) {
-    run = c.isSpace() ? 0 : run + 1;
+    // A no-break space (U+00A0, U+2007, U+202F) is white space to
+    // isSpace(), but Qt does not wrap at it.
+    const char16_t u = c.unicode();
+    const bool breaks =
+        c.isSpace() && u != 0x00A0 && u != 0x2007 && u != 0x202F;
+    run = breaks ? 0 : run + 1;
     if (run > kMaxUnbrokenRun) {
       return true;
     }

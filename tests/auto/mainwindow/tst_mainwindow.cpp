@@ -896,6 +896,14 @@ void tst_mainwindow::flashTextWrapsALongUnbrokenRunAnywhere() {
   m_window->flashText(link.repeated(100), false, true);
   QCOMPARE(browser->wordWrapMode(), QTextOption::WrapAnywhere);
   browser->clear();
+
+  // Qt does not wrap at a no-break space, which toPlainText() would show
+  // as a plain one.
+  m_window->flashText(
+      (QString(4000, QLatin1Char('a')) + QChar(0x00A0)).repeated(100), false,
+      false);
+  QCOMPARE(browser->wordWrapMode(), QTextOption::WrapAnywhere);
+  browser->clear();
 }
 
 /**

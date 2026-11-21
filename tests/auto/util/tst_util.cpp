@@ -2049,7 +2049,7 @@ void tst_util::linkifyUrlsLeavesNonWebUrlsAsText() {
 /**
  * @brief A run of more than Util::kMaxUnbrokenRun characters without white
  *        space makes a widget wrap anywhere (scan finding ANT-2026-0RRSZ1YR);
- *        any white space ends a run.
+ *        white space ends a run, a no-break space does not.
  */
 void tst_util::hasLongUnbrokenRunCountsRunsBetweenSpaces() {
   const qsizetype max = Util::kMaxUnbrokenRun;
@@ -2057,10 +2057,15 @@ void tst_util::hasLongUnbrokenRunCountsRunsBetweenSpaces() {
   QVERIFY(Util::hasLongUnbrokenRun(QString(max + 1, QLatin1Char('a'))));
   QVERIFY(Util::hasLongUnbrokenRun(QStringLiteral("x y ") +
                                    QString(max + 1, QLatin1Char('a'))));
-  for (const QChar space :
-       {QChar(u' '), QChar(u'\t'), QChar(u'\n'), QChar(0x00A0)}) {
+  for (const QChar space : {QChar(u' '), QChar(u'\t'), QChar(u'\n')}) {
     QVERIFY(!Util::hasLongUnbrokenRun(QString(max, QLatin1Char('a')) + space +
                                       QString(max, QLatin1Char('a'))));
+  }
+  // Qt does not wrap at a no-break space, so it does not end a run.
+  for (const QChar noBreak : {QChar(0x00A0), QChar(0x2007), QChar(0x202F)}) {
+    QVERIFY2(Util::hasLongUnbrokenRun(QString(max, QLatin1Char('a')) + noBreak +
+                                      QString(max, QLatin1Char('a'))),
+             qPrintable(QString::number(noBreak.unicode(), 16)));
   }
   QVERIFY(!Util::hasLongUnbrokenRun(QString()));
 }

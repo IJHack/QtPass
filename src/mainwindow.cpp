@@ -501,7 +501,8 @@ void MainWindow::flashText(const QString &text, const bool isError,
   } else {
     ui->textBrowser->setText(text);
   }
-  if (!Util::hasLongUnbrokenRun(ui->textBrowser->toPlainText())) {
+  // The raw text: toPlainText() turns a no-break space into a plain one.
+  if (!Util::hasLongUnbrokenRun(ui->textBrowser->document()->toRawText())) {
     ui->textBrowser->setWordWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
   }
 }
