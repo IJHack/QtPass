@@ -94,7 +94,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" target="_top" xlink:title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass...">
+<g id="a_Node000005"><a xlink:href="class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" target="_top" xlink:title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),...">
 <polygon fill="white" stroke="#666666" points="1940.5,-132.78 1776.75,-132.78 1776.75,-112.03 1940.5,-112.03 1940.5,-132.78"/>
 <text xml:space="preserve" text-anchor="middle" x="1858.62" y="-119.28" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::refuseUnverifiedList</text>
 </a>

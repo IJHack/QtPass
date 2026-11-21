@@ -1,5 +1,5 @@
 <map id="RealPass::refuseUnverifiedList" name="RealPass::refuseUnverifiedList">
-<area shape="rect" id="Node000001" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass..." alt="" coords="426,32,644,60"/>
+<area shape="rect" id="Node000001" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),..." alt="" coords="426,32,644,60"/>
 <area shape="rect" id="Node000002" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="215,5,340,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="408,33,340,28,340,23,413,33"/>
 <area shape="rect" id="Node000003" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="177,57,378,85"/>

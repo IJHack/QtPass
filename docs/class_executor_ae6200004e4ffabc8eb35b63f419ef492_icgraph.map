@@ -309,7 +309,7 @@
 <area shape="rect" id="Node000117" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="2720,427,2924,455"/>
 <area shape="poly" id="edge173_Node000116_Node000117" title=" " alt="" coords="2997,358,2986,366,2972,378,2963,391,2954,404,2938,417,2911,429,2908,425,2936,412,2950,401,2959,388,2968,374,2984,362,3001,355"/>
 <area shape="poly" id="edge174_Node000117_Node000115" title=" " alt="" coords="2701,433,2647,430,2645,425,2706,431"/>
-<area shape="rect" id="Node000119" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass..." alt="" coords="2994,1261,3213,1288"/>
+<area shape="rect" id="Node000119" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),..." alt="" coords="2994,1261,3213,1288"/>
 <area shape="poly" id="edge177_Node000118_Node000119" title=" " alt="" coords="3287,1272,3214,1275,3212,1270,3293,1270"/>
 <area shape="rect" id="Node000121" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when the signed list of one of its..." alt="" coords="2992,1209,3215,1236"/>
 <area shape="poly" id="edge180_Node000118_Node000121" title=" " alt="" coords="3288,1255,3190,1240,3189,1234,3293,1254"/>

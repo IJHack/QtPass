@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40":[2,0,0,2,5],
+"namespace_enums.html#ad33195b2ca21f0ffd9b33b76bf09a03e":[2,0,0,3],
 "namespace_plain_message_box.html":[1,5,0],
 "namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071":[2,0,1,2],
 "namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d":[2,0,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "struct_imitate_pass_1_1_reencrypt_result.html#a61a9845141cf4db0ed17e6ec38ee4330":[1,0,0,5,3],
 "struct_imitate_pass_1_1_reencrypt_result.html#aa2d55a9aad9499e114e002f106a5328f":[1,0,0,5,2],
 "struct_imitate_pass_1_1_reencrypt_result.html#aad78e6196e403eb0834539269eb92646":[1,0,0,5,5],
-"struct_imitate_pass_1_1_reencrypt_result.html#ae0749007d118e1e9eaa3365dae956b03":[1,0,0,5,0],
-"struct_imitate_pass_1_1_uncommitted_gpg_id.html":[1,0,0,3],
-"struct_imitate_pass_1_1_uncommitted_gpg_id.html#a5e7f216abca2472339985a00897495d2":[1,0,0,3,0]
+"struct_imitate_pass_1_1_reencrypt_result.html#ae0749007d118e1e9eaa3365dae956b03":[1,0,0,5,0]
 };
