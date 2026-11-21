@@ -930,7 +930,7 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - Showing an entry no longer freezes the window on a web address whose host
   holds thousands of combining marks. Qt normalises a host in time
   quadratic in such marks; an address whose host and port run past 259
-  characters, longer than any real host name, is now shown as plain text
+  characters, longer than any real hostname, is now shown as plain text
   without asking Qt (scan finding ANT-2026-IQ1GNHQA)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
