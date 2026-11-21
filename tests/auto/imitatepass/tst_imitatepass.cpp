@@ -40,6 +40,9 @@
 #include <QTemporaryDir>
 #include <QTextStream>
 #include <QtTest>
+#ifndef Q_OS_WIN
+#include <csignal>
+#endif
 #include <algorithm>
 #ifndef Q_OS_WIN
 #include <sys/stat.h>
@@ -4972,8 +4975,12 @@ void tst_imitatepass::gitPullBlockingStopsAtItsDeadline() {
   QTemporaryDir storeDir;
   QVERIFY(storeDir.isValid());
   const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  // As git runs its remote helper: a child that would go on fetching.
+  const QString childPid = QDir(storeDir.path()).filePath("child.pid");
   const QString silentGit = writeScriptedGit(
-      storeDir.path(), gitLog, QStringLiteral("  *' pull') sleep 10;;"));
+      storeDir.path(), gitLog,
+      QStringLiteral("  *' pull') sleep 30 & echo $! > '%1'; wait;;")
+          .arg(childPid));
   QVERIFY(!silentGit.isEmpty());
   AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
   s.useGit = true;
@@ -4989,6 +4996,12 @@ void tst_imitatepass::gitPullBlockingStopsAtItsDeadline() {
   QCOMPARE(statusSpy.count(), 1);
   const QString msg = statusSpy.first().at(0).toString();
   QVERIFY2(msg.contains(QStringLiteral("did not finish")), qPrintable(msg));
+  // The pull's own child is stopped too.
+  QFile pidFile(childPid);
+  QVERIFY(pidFile.open(QIODevice::ReadOnly));
+  const auto child = static_cast<pid_t>(pidFile.readAll().trimmed().toInt());
+  QVERIFY(child > 0);
+  QTRY_VERIFY_WITH_TIMEOUT(::kill(child, 0) != 0, 3000);
 #endif
 }
 

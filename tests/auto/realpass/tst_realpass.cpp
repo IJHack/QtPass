@@ -9,6 +9,9 @@
 #include <QTemporaryDir>
 #include <QThread>
 #include <QtTest>
+#ifdef Q_OS_UNIX
+#include <csignal>
+#endif
 
 #include "../../../src/appsettings.h"
 #include "../../../src/gpgidgeneration.h"
@@ -1763,7 +1766,10 @@ void tst_realpass::gitPullBlockingStopsAtItsDeadline() {
   {
     QFile f(silent);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
-    f.write("#!/bin/sh\nsleep 10\n");
+    // As pass runs git: a child that would go on pulling.
+    f.write(QStringLiteral("#!/bin/sh\nsleep 30 &\necho $! > '%1'\nwait\n")
+                .arg(QDir(m_dir.path()).filePath(QStringLiteral("child.pid")))
+                .toUtf8());
     f.close();
     QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
                              QFile::ExeOwner));
@@ -1781,6 +1787,14 @@ void tst_realpass::gitPullBlockingStopsAtItsDeadline() {
   QCOMPARE(statusSpy.count(), 1);
   const QString msg = statusSpy.first().at(0).toString();
   QVERIFY2(msg.contains(QStringLiteral("did not finish")), qPrintable(msg));
+#ifdef Q_OS_UNIX
+  // The pull's own child is stopped too, not left pulling into the store.
+  QFile pidFile(QDir(m_dir.path()).filePath(QStringLiteral("child.pid")));
+  QVERIFY(pidFile.open(QIODevice::ReadOnly));
+  const auto child = static_cast<pid_t>(pidFile.readAll().trimmed().toInt());
+  QVERIFY(child > 0);
+  QTRY_VERIFY_WITH_TIMEOUT(::kill(child, 0) != 0, 3000);
+#endif
 }
 
 /**

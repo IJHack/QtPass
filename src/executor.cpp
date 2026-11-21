@@ -6,6 +6,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QStringDecoder>
+#include <QThread>
 #include <algorithm>
 #include <climits>
 #include <utility>
@@ -13,6 +14,7 @@
 #include "qtpasslogging.h"
 
 #ifdef Q_OS_UNIX
+#include <csignal>
 #include <sys/stat.h>
 #endif
 
@@ -327,26 +329,73 @@ static auto decodeAssumingUtf8(const QByteArray &in, bool *lossless = nullptr)
 // handling elsewhere.
 namespace {
 
+#ifdef Q_OS_UNIX
+/**
+ * @brief Wait up to @p ms for every process in group @p group to exit.
+ * @param group A process group id; the child's own pid, as it leads a
+ *        session of its own (Executor::detachFromTerminal()).
+ * @param ms Most milliseconds to wait.
+ * @return true once the group is empty.
+ */
+auto waitForGroup(pid_t group, int ms) -> bool {
+  QDeadlineTimer deadline(ms);
+  // kill(-group, 0) fails with ESRCH once no process is left in it; while
+  // one is, no new process can be given that id.
+  while (::kill(-group, 0) == 0) {
+    if (deadline.hasExpired()) {
+      return false;
+    }
+    QThread::msleep(10);
+  }
+  return true;
+}
+#endif
+
 /**
  * @brief Stop a running @p process from the thread that owns it:
  * terminate(), then kill() if it is still running after a grace period,
  * then at most one more grace period for it to exit.
  * A console gpg ignores terminate() on Windows (WM_CLOSE), hence the kill.
+ *
+ * On Unix the whole process group gets the signals and is waited for: pass
+ * is a shell script, and the git it runs would otherwise go on pulling into
+ * the store after the run was reported stopped.
  */
 void stopBlocking(QProcess &process) {
+#ifdef Q_OS_UNIX
+  const auto group = static_cast<pid_t>(process.processId());
+  const auto signalGroup = [group](int signal) {
+    if (group > 0) {
+      ::kill(-group, signal);
+    }
+  };
+  signalGroup(SIGTERM);
+#endif
   process.terminate();
-  if (process.waitForFinished(kBlockingKillGraceMs)) {
-    return;
-  }
-  process.kill();
-  // SIGKILL cannot be ignored, but a child in uninterruptible sleep (a hung
-  // NFS or FUSE mount) dies only when the kernel lets it. Wait one more grace
-  // period, not forever: the run is reported as failed either way, and a
-  // blocking run then lasts at most its timeout plus twice the grace.
   if (!process.waitForFinished(kBlockingKillGraceMs)) {
-    qCWarning(lcQtPass) << "Process still running after kill():"
-                        << process.program();
+#ifdef Q_OS_UNIX
+    signalGroup(SIGKILL);
+#endif
+    process.kill();
+    // SIGKILL cannot be ignored, but a child in uninterruptible sleep (a
+    // hung NFS or FUSE mount) dies only when the kernel lets it. Wait one
+    // more grace period, not forever: the run is reported as failed either
+    // way, and a blocking run then lasts at most its timeout plus twice the
+    // grace.
+    if (!process.waitForFinished(kBlockingKillGraceMs)) {
+      qCWarning(lcQtPass) << "Process still running after kill():"
+                          << process.program();
+    }
   }
+#ifdef Q_OS_UNIX
+  if (group > 0 && !waitForGroup(group, kBlockingKillGraceMs)) {
+    signalGroup(SIGKILL);
+    if (!waitForGroup(group, kBlockingKillGraceMs)) {
+      qCWarning(lcQtPass) << "Processes started by" << process.program()
+                          << "still running after kill()";
+    }
+  }
+#endif
 }
 
 /**
