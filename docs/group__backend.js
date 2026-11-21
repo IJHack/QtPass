@@ -156,6 +156,10 @@ var group__backend =
       [ "program", "struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3", null ]
     ] ],
     [ "Pass", "class_pass.html", [
+      [ "SkippedWalk", "struct_pass_1_1_skipped_walk.html", [
+        [ "recordError", "struct_pass_1_1_skipped_walk.html#aca19a6cf99efa09ed47299a049a76eda", null ],
+        [ "skipped", "struct_pass_1_1_skipped_walk.html#a00b5c0c7d471035bded05e3eb3d4e679", null ]
+      ] ],
       [ "RecipientsForEditing", "struct_pass_1_1_recipients_for_editing.html", [
         [ "State", "struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073", [
           [ "Unsigned", "struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a", null ],
@@ -168,6 +172,7 @@ var group__backend =
         [ "warning", "struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc", null ]
       ] ],
       [ "PROCESS", "class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772", null ],
+      [ "SkippedWalks", "class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294", null ],
       [ "LinkScope", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106", [
         [ "EntryAndParents", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d", null ],
         [ "ParentsOnly", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106a0588f0c47720fb7c0f78e98ff6755ec0", null ]
@@ -243,7 +248,7 @@ var group__backend =
       [ "refuseFolderOutsideStore", "class_pass.html#afea04fa657d65846e2772b0b25c96276", null ],
       [ "refuseLinkedPath", "class_pass.html#a6cca7cd5646a752c16dac59df6e53581", null ],
       [ "refusePendingPull", "class_pass.html#a273c43add4c728d419585f642bce24d4", null ],
-      [ "refuseSkippedGpgId", "class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb", null ],
+      [ "refuseSkippedGpgId", "class_pass.html#add19eb5f11e729d3637ecb6d1b648fe6", null ],
       [ "refuseUnfinishedGitOperation", "class_pass.html#af1859cdb9fb7f506d92740f3370acd0b", null ],
       [ "releaseAutoPush", "class_pass.html#a281b40eaf38860243a3ffaf73c2fd815", null ],
       [ "Remove", "class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764", null ],
@@ -251,7 +256,7 @@ var group__backend =
       [ "scopePath", "class_pass.html#a2651a5f937fe963d78263f8e93458210", null ],
       [ "setEnvVar", "class_pass.html#ab99111861b84c7efcda725c53946b2ca", null ],
       [ "Show", "class_pass.html#a6520ffa669cd7934091934b24593d99c", null ],
-      [ "skippedGpgId", "class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c", null ],
+      [ "skippedGpgId", "class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c", null ],
       [ "startingExecuteWrapper", "class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6", null ],
       [ "statusMsg", "class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb", null ],
       [ "storeEnvironment", "class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2", null ],
@@ -317,7 +322,7 @@ var group__backend =
       [ "reencryptFailed", "class_real_pass.html#a5e54561fccd028576a58b17731907880", null ],
       [ "refuseIgnoredThatMoves", "class_real_pass.html#a2fd6d533c480d182529f809467a050eb", null ],
       [ "refuseLinkedList", "class_real_pass.html#ab61e44281306f4a26cb69cdedab0ff68", null ],
-      [ "refuseList", "class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7", null ],
+      [ "refuseList", "class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80", null ],
       [ "refuseUnrecordedChanges", "class_real_pass.html#a133e32f08f41de37b18f3aefa3953846", null ],
       [ "refuseUnverifiedList", "class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629", null ],
       [ "refuseUnverifiedTree", "class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa", null ],

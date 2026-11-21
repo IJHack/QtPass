@@ -79,7 +79,7 @@
 <area shape="poly" id="edge46_Node000030_Node000032" title=" " alt="" coords="302,808,433,871,502,903,497,905,431,876,303,813"/>
 <area shape="rect" id="Node000035" href="$class_real_pass.html#ab61e44281306f4a26cb69cdedab0ff68" title="Refuse to have pass encrypt file when the walk to its list meets a .gpg&#45;id that is a link or junction..." alt="" coords="450,782,644,810"/>
 <area shape="poly" id="edge50_Node000030_Node000035" title=" " alt="" coords="384,794,437,795,433,797,386,799"/>
-<area shape="rect" id="Node000037" href="$class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="472,730,623,758"/>
+<area shape="rect" id="Node000037" href="$class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="472,730,623,758"/>
 <area shape="poly" id="edge53_Node000030_Node000037" title=" " alt="" coords="349,779,458,760,454,763,351,784"/>
 <area shape="rect" id="Node000053" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="484,834,610,862"/>
 <area shape="poly" id="edge77_Node000030_Node000053" title=" " alt="" coords="349,808,471,832,467,835,350,813"/>
@@ -94,12 +94,12 @@
 <area shape="poly" id="edge54_Node000037_Node000006" title=" " alt="" coords="574,728,635,697,709,666,770,646,818,635,927,608,1010,585,1006,587,928,613,819,640,771,651,711,671,637,702,577,732"/>
 <area shape="rect" id="Node000038" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="746,680,892,707"/>
 <area shape="poly" id="edge55_Node000037_Node000038" title=" " alt="" coords="622,728,733,709,729,711,625,733"/>
-<area shape="rect" id="Node000039" href="$class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="724,732,914,759"/>
+<area shape="rect" id="Node000039" href="$class_pass.html#add19eb5f11e729d3637ecb6d1b648fe6" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="724,732,914,759"/>
 <area shape="poly" id="edge56_Node000037_Node000039" title=" " alt="" coords="623,742,711,744,706,746,624,747"/>
 <area shape="rect" id="Node000043" href="$class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb" title="Whether gpgIdFile is a signed list QtPass accepts: its signature verifies (GpgIdSigner::verifyFile())..." alt="" coords="738,833,900,861"/>
 <area shape="poly" id="edge61_Node000037_Node000043" title=" " alt="" coords="620,756,663,768,726,795,782,825,777,825,724,800,661,773,621,761"/>
 <area shape="poly" id="edge57_Node000039_Node000006" title=" " alt="" coords="900,729,926,717,964,689,997,656,1047,596,1050,592,1001,659,967,693,929,721,902,733"/>
-<area shape="rect" id="Node000040" href="$class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="993,782,1140,810"/>
+<area shape="rect" id="Node000040" href="$class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="993,782,1140,810"/>
 <area shape="poly" id="edge58_Node000039_Node000040" title=" " alt="" coords="890,757,984,778,978,779,890,763"/>
 <area shape="rect" id="Node000041" href="$class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis..." alt="" coords="1228,808,1398,835"/>
 <area shape="poly" id="edge59_Node000040_Node000041" title=" " alt="" coords="1141,801,1215,811,1209,812,1141,806"/>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 20:56:24</td>
+            <td class="headerValue">2026-11-21 21:15:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -1409,7 +1409,7 @@
 <span id="L1336"><span class="lineNum">    1336</span> <span class="tlaGNC">         115 :   m_reencryptThread = thread;</span></span>
 <span id="L1337"><span class="lineNum">    1337</span> <span class="tlaGNC">         115 :   connect(thread, &amp;QThread::finished, this, [this, thread]() {</span></span>
 <span id="L1338"><span class="lineNum">    1338</span> <span class="tlaGNC">         111 :     if (m_reencryptThread == thread)</span></span>
-<span id="L1339"><span class="lineNum">    1339</span> <span class="tlaGNC">         108 :       m_reencryptThread = nullptr;</span></span>
+<span id="L1339"><span class="lineNum">    1339</span> <span class="tlaGNC">         109 :       m_reencryptThread = nullptr;</span></span>
 <span id="L1340"><span class="lineNum">    1340</span>              :   });</span>
 <span id="L1341"><span class="lineNum">    1341</span> <span class="tlaGNC">         115 :   connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</span></span>
 <span id="L1342"><span class="lineNum">    1342</span> <span class="tlaGNC">         115 :   thread-&gt;start();</span></span>

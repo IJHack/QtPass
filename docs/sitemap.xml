@@ -914,6 +914,12 @@
     <loc>https://qtpass.org/docs/class_pass-members.html</loc>
   </url>
   <url>
+    <loc>https://qtpass.org/docs/struct_pass_1_1_skipped_walk.html</loc>
+  </url>
+  <url>
+    <loc>https://qtpass.org/docs/struct_pass_1_1_skipped_walk-members.html</loc>
+  </url>
+  <url>
     <loc>https://qtpass.org/docs/struct_pass_1_1_recipients_for_editing.html</loc>
   </url>
   <url>
@@ -1470,6 +1476,9 @@
   </url>
   <url>
     <loc>https://qtpass.org/docs/functions_vars_w.html</loc>
+  </url>
+  <url>
+    <loc>https://qtpass.org/docs/functions_type.html</loc>
   </url>
   <url>
     <loc>https://qtpass.org/docs/functions_type.html</loc>

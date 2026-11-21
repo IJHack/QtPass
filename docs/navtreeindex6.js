@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684":[2,0,0,2,8],
 "namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a":[2,0,0,2,14],
 "namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023":[2,0,0,2,17],
 "namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556":[2,0,0,2,2],
@@ -38,7 +39,7 @@ var NAVTREEINDEX6 =
 "pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc":[4,0,1,41,0],
 "pass_8cpp_source.html":[4,0,1,41],
 "pass_8h.html":[4,0,1,42],
-"pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa":[4,0,1,42,1],
+"pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa":[4,0,1,42,2],
 "pass_8h_source.html":[4,0,1,42],
 "passbackendfactory_8cpp.html":[4,0,1,43],
 "passbackendfactory_8cpp_source.html":[4,0,1,43],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_imitate_pass_1_1_pending_insert.html#af5e2d28da0146d7d6a2fd8ed1bf78683":[1,0,0,2,1],
 "struct_imitate_pass_1_1_pending_move.html":[1,0,0,1],
 "struct_imitate_pass_1_1_pending_move.html#a2d31b186e51a677de5bbb685bc8ed259":[1,0,0,1,3],
-"struct_imitate_pass_1_1_pending_move.html#aa0f8e48e4e9dba13a43698c191e232fb":[1,0,0,1,0],
-"struct_imitate_pass_1_1_pending_move.html#aae21844972c7a3dec073474296acbaca":[1,0,0,1,1]
+"struct_imitate_pass_1_1_pending_move.html#aa0f8e48e4e9dba13a43698c191e232fb":[1,0,0,1,0]
 };

@@ -103,6 +103,7 @@ var hierarchy =
     [ "SettingsSerializer", "class_settings_serializer.html", null ],
     [ "ConfigDialog::SigningStores", "struct_config_dialog_1_1_signing_stores.html", null ],
     [ "SimpleTransaction", "class_simple_transaction.html", null ],
+    [ "Pass::SkippedWalk", "struct_pass_1_1_skipped_walk.html", null ],
     [ "SshAuthSock", "class_ssh_auth_sock.html", null ],
     [ "StoreDragItem", "struct_store_drag_item.html", null ],
     [ "TemplateIO", "class_template_i_o.html", null ],

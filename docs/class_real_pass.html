@@ -216,8 +216,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6a9aa8dc4ff288ce256351b671533a84 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the gpgconf command to kill agents.  <br /></td></tr>
 <tr class="memitem:a229cc680077f9ad2cfa0484a8aa20efe inherit pub_static_methods_class_pass" id="r_a229cc680077f9ad2cfa0484a8aa20efe"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">getGpgIdPath</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</td></tr>
 <tr class="memdesc:a229cc680077f9ad2cfa0484a8aa20efe inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
-<tr class="memitem:a4e4099a6ae5113a926fca1a68d8b6c6c inherit pub_static_methods_class_pass" id="r_a4e4099a6ae5113a926fca1a68d8b6c6c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">skippedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
-<tr class="memdesc:a4e4099a6ae5113a926fca1a68d8b6c6c inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder list <a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> passed over on its way up to the one it returns, if it passed one over that a signed store must not.  <br /></td></tr>
+<tr class="memitem:a0f50a74f9ba237e4509b47ad1a6bdf6c inherit pub_static_methods_class_pass" id="r_a0f50a74f9ba237e4509b47ad1a6bdf6c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c">skippedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr, <a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *walks=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:a0f50a74f9ba237e4509b47ad1a6bdf6c inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder list <a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> passed over on its way up to the one it returns, if it passed one over that a signed store must not.  <br /></td></tr>
 <tr class="memitem:a3e5278aaff6a417a29769b6b98c5c881 inherit pub_static_methods_class_pass" id="r_a3e5278aaff6a417a29769b6b98c5c881"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a3e5278aaff6a417a29769b6b98c5c881">linkedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore) -&gt; std::optional&lt; QString &gt;</td></tr>
 <tr class="memdesc:a3e5278aaff6a417a29769b6b98c5c881 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The link or junction under the name <span class="tt">.gpg-id</span> that <a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> skips on its way up from <code class="param">forFile</code>, if it skips one before the list it returns.  <br /></td></tr>
 <tr class="memitem:ae97e7a760b71609933dd3fe3a4629703 inherit pub_static_methods_class_pass" id="r_ae97e7a760b71609933dd3fe3a4629703"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">getRecipientList</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td></tr>
@@ -242,8 +242,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a63823c10dde60d0694b377699169a5ca inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hold automatic pushes of the store that holds <code class="param">scope</code> (<a class="el" href="class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1" title="Whether automatic pushes of the current store are held because its last re-encryption did not finish ...">autoPushHeld()</a>): its re-encryption did not finish cleanly.  <br /></td></tr>
 <tr class="memitem:a281b40eaf38860243a3ffaf73c2fd815 inherit pro_methods_class_pass" id="r_a281b40eaf38860243a3ffaf73c2fd815"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a281b40eaf38860243a3ffaf73c2fd815">releaseAutoPush</a> (const QString &amp;folder)</td></tr>
 <tr class="memdesc:a281b40eaf38860243a3ffaf73c2fd815 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the holds a clean re-encryption of <code class="param">folder</code> covers: those for <code class="param">folder</code> itself and everything under it. Holds for other folders stay.  <br /></td></tr>
-<tr class="memitem:a3aea03014a99498ace9df6c5edaa1dfb inherit pro_methods_class_pass" id="r_a3aea03014a99498ace9df6c5edaa1dfb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">refuseSkippedGpgId</a> (const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</td></tr>
-<tr class="memdesc:a3aea03014a99498ace9df6c5edaa1dfb inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">With signing on, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>): the parent's list is not what was signed for it.  <br /></td></tr>
+<tr class="memitem:add19eb5f11e729d3637ecb6d1b648fe6 inherit pro_methods_class_pass" id="r_add19eb5f11e729d3637ecb6d1b648fe6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#add19eb5f11e729d3637ecb6d1b648fe6">refuseSkippedGpgId</a> (const QString &amp;file, bool signing, const QString &amp;except=QString(), <a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *walks=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:add19eb5f11e729d3637ecb6d1b648fe6 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">With signing on, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>): the parent's list is not what was signed for it.  <br /></td></tr>
 <tr class="memitem:aa048c50cd2e6fa95033b4c69910e04bb inherit pro_methods_class_pass" id="r_aa048c50cd2e6fa95033b4c69910e04bb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">verifySignedList</a> (const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</td></tr>
 <tr class="memdesc:aa048c50cd2e6fa95033b4c69910e04bb inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">gpgIdFile</code> is a signed list <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts: its signature verifies (<a class="el" href="class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f" title="Read gpgIdFile and verify it against &lt;file&gt;.sig.">GpgIdSigner::verifyFile()</a>), and it is current and bound to the folder it lies in (<a class="el" href="class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">GpgIdGeneration::accept()</a>), so an older authentic list put back, or one signed for another folder, is refused.  <br /></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388 inherit pro_methods_class_pass" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
@@ -313,8 +313,8 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:af496429ebd2607ddb2c7c1f6c897d3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a folder pass is about to re-encrypt in a move or copy: refuse when the signed list of one of its entries (every one pass's walk takes, hidden ones included) is not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts where it lies now (as <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),...">refuseUnverifiedList()</a>).  <br /></td></tr>
 <tr class="memitem:af4b087c502643f89c605c2c80e172cda" id="r_af4b087c502643f89c605c2c80e172cda"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af4b087c502643f89c605c2c80e172cda">listSigner</a> () -&gt; <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a></td></tr>
 <tr class="memdesc:af4b087c502643f89c605c2c80e172cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">The verifier for signed lists, gpg in the store's environment.  <br /></td></tr>
-<tr class="memitem:a465da341035daa9bbdd1c4eb9fc78eb7" id="r_a465da341035daa9bbdd1c4eb9fc78eb7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a465da341035daa9bbdd1c4eb9fc78eb7">refuseList</a> (const QString &amp;file, const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, QSet&lt; QString &gt; &amp;verified, const QString &amp;within=QString(), const QString &amp;except=QString()) -&gt; bool</td></tr>
-<tr class="memdesc:a465da341035daa9bbdd1c4eb9fc78eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The checks of <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),...">refuseUnverifiedList()</a> for <code class="param">file's</code> nearest list, once per list.  <br /></td></tr>
+<tr class="memitem:aa005a98fabdaca8ffbb3c83798263d80" id="r_aa005a98fabdaca8ffbb3c83798263d80"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa005a98fabdaca8ffbb3c83798263d80">refuseList</a> (const QString &amp;file, const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, QSet&lt; QString &gt; &amp;verified, const QString &amp;within=QString(), const QString &amp;except=QString(), <a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *walks=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:aa005a98fabdaca8ffbb3c83798263d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">The checks of <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),...">refuseUnverifiedList()</a> for <code class="param">file's</code> nearest list, once per list.  <br /></td></tr>
 <tr class="memitem:a6d7163b691663d92f31ca20886f9979f" id="r_a6d7163b691663d92f31ca20886f9979f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6d7163b691663d92f31ca20886f9979f">onDequeuing</a> (int id, bool completes)</td></tr>
 <tr class="memdesc:a6d7163b691663d92f31ca20886f9979f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The executor is about to run (or drop) its next item: for an insert, take its entry from m_insertQueue and fingerprint it now, not when it was queued, so an earlier queued save of the same entry counts as "before". Kept in m_insertPending for that insert's own completion. For <span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span> and <span class="tt">cp</span>, add <span class="tt">--status-fd 2</span> to that one process's PASSWORD_STORE_GPG_OPTS, so <a class="el" href="#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked-folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i...">finished()</a> can tell whether every entry was re-encrypted (<a class="el" href="#a5e54561fccd028576a58b17731907880" title="Whether a pass init, mv or cp that exited 0 left entries as they were: pass carries on past an entry ...">reencryptFailed()</a>), and move its scope from m_reencryptScopes to m_reencryptPending (dropped when it does not complete).  <br /></td></tr>
 </table><table class="memberdecls">
@@ -340,6 +340,9 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
+<tr class="memitem:a754fdd2e5663b70b6ac8856aa3ae5294 inherit pub_types_class_pass" id="r_a754fdd2e5663b70b6ac8856aa3ae5294"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> = QHash&lt;QString, <a class="el" href="struct_pass_1_1_skipped_walk.html">SkippedWalk</a>&gt;</td></tr>
+<tr class="memdesc:a754fdd2e5663b70b6ac8856aa3ae5294 inherit pub_types_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_pass_1_1_skipped_walk.html" title="What skippedGpgId() found on its way up from one folder.">SkippedWalk</a> per absolute folder, for one check of many folders.  <br /></td></tr>
 <tr class="inherit_header signals_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Signals inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:ad0936452d739b37d9a9e46db356792c2 inherit signals_class_pass" id="r_ad0936452d739b37d9a9e46db356792c2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ad0936452d739b37d9a9e46db356792c2">idle</a> ()</td></tr>
 <tr class="memdesc:ad0936452d739b37d9a9e46db356792c2 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nothing of the store's runs or waits any more (<a class="el" href="class_pass.html#a66d554f693ae3069381483cb229bb193" title="Whether no gpg, git or pass of this backend runs or waits.">isIdle()</a>).  <br /></td></tr>
@@ -512,7 +515,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a109a1abbd06afe20ed85c2fc9b46427c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00455">455</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00458">458</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -571,7 +574,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false when git could not say. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00645">645</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00648">648</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
@@ -631,7 +634,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01079">1079</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01082">1082</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -673,7 +676,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The hash; empty when <code class="param">path</code> is no readable regular file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00776">776</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00779">779</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -743,7 +746,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01168">1168</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01171">1171</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
@@ -809,7 +812,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00875">875</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00878">878</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -861,7 +864,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00997">997</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01000">1000</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
@@ -1069,7 +1072,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01157">1157</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01160">1160</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -1117,7 +1120,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01024">1024</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01027">1027</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
@@ -1171,7 +1174,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00692">692</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00695">695</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary">
 </div>
@@ -1215,7 +1218,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00758">758</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00761">761</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
@@ -1311,7 +1314,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01075">1075</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01078">1078</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
@@ -1357,7 +1360,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00723">723</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00726">726</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary">
 </div>
@@ -1427,7 +1430,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01093">1093</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01096">1096</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-29-summary" class="dynsummary">
 </div>
@@ -1480,7 +1483,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The store-relative name. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01083">1083</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01086">1086</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary">
 </div>
@@ -1533,7 +1536,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on a failure; false without any status line, since then the option did not reach gpg and there is nothing to judge by. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00928">928</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00931">931</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
@@ -1580,7 +1583,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00561">561</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00564">564</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-34-summary" class="dynsummary">
 </div>
@@ -1655,8 +1658,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a465da341035daa9bbdd1c4eb9fc78eb7" name="a465da341035daa9bbdd1c4eb9fc78eb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a465da341035daa9bbdd1c4eb9fc78eb7">&#9670;&#160;</a></span>refuseList()</h2>
+<a id="aa005a98fabdaca8ffbb3c83798263d80" name="aa005a98fabdaca8ffbb3c83798263d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa005a98fabdaca8ffbb3c83798263d80">&#9670;&#160;</a></span>refuseList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1687,7 +1690,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>except</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt; bool</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>except</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *</td>          <td class="paramname"><span class="paramname"><em>walks</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1705,6 +1713,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">verified</td><td>The lists already found good; extended. </td></tr>
     <tr><td class="paramname">within</td><td>When set, only a list under this folder (absolute, cleaned, with a trailing "/") is verified; the skipped-list check applies regardless. </td></tr>
     <tr><td class="paramname">except</td><td>A list about to be written, neither verified nor refused for being missing. </td></tr>
+    <tr><td class="paramname">walks</td><td>Passed on to <a class="el" href="class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>, for a check of many folders; null for none. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1715,13 +1724,13 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-38-summary" class="dynsummary">
 </div>
 <div id="dynsection-38-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a465da341035daa9bbdd1c4eb9fc78eb7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aa005a98fabdaca8ffbb3c83798263d80_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-39-summary" class="dynsummary">
 </div>
 <div id="dynsection-39-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a465da341035daa9bbdd1c4eb9fc78eb7_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aa005a98fabdaca8ffbb3c83798263d80_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1763,7 +1772,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00468">468</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00471">471</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-40-summary" class="dynsummary">
 </div>
@@ -1924,7 +1933,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00796">796</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00799">799</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-46-summary" class="dynsummary">
 </div>
@@ -1976,7 +1985,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00962">962</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00965">965</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary">
 </div>
@@ -2023,7 +2032,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00542">542</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00545">545</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-49" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-49-summary" class="dynsummary">
 </div>
@@ -2071,7 +2080,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The repository's folder relative to the store, empty for the store's own (or when git cannot say). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00311">311</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00314">314</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-51-summary" class="dynsummary">
 </div>
@@ -2208,7 +2217,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The entries. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00347">347</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00350">350</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-56" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-56-summary" class="dynsummary">
 </div>
@@ -2263,7 +2272,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00283">283</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00286">286</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-58" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-58-summary" class="dynsummary">
 </div>
@@ -2316,7 +2325,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The status entries, "XY name" each. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00381">381</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00384">384</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-60" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-60-summary" class="dynsummary">
 </div>
@@ -2355,7 +2364,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>One of those pushes was asked for by hand: it goes despite a hold. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00335">335</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00338">338</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2406,7 +2415,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The insert whose completion is being handled. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00323">323</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00326">326</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2431,7 +2440,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The inserts that left the queue and have yet to complete, in the order their completions come: a failed start's error is posted, and the next insert may start before it arrives. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00321">321</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00324">324</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2457,7 +2466,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The entries of the queued inserts, oldest first. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00317">317</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00320">320</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2507,7 +2516,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>A push was asked for while an init, move or copy was queued or running: <a class="el" href="#aaaf6e02c8547397a5b1da80e45cebea2" title="Once the last queued init, move or copy has completed, make the push asked for meanwhile (GitPush())....">sendDeferredPush()</a> makes it once they have completed. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00333">333</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00336">336</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2532,7 +2541,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The scopes of the inits, moves and copies that left the queue and have yet to complete, in completion order; one the executor drops never gets here, so it cannot pair with a later command's completion. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00330">330</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00333">333</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2557,7 +2566,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>What each queued init, move or copy re-encrypts (its folder, or the destination), oldest first, for the push hold. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00326">326</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00329">329</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>

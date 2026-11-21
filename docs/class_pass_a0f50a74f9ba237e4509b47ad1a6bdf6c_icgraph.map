@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="3132,111,3280,138"/>
 <area shape="rect" id="Node000002" href="$class_pass.html#a849c5089c91fa9599653d9dad6e4c28c" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="2896,65,3083,93"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3119,107,3059,96,3059,91,3124,107"/>
-<area shape="rect" id="Node000005" href="$class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="2895,136,3084,164"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#add19eb5f11e729d3637ecb6d1b648fe6" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="2895,136,3084,164"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="3119,135,3085,141,3085,136,3114,135"/>
 <area shape="rect" id="Node000003" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="2643,45,2847,73"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2877,70,2847,70,2847,65,2883,70"/>
@@ -10,7 +10,7 @@
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2624,59,2578,62,2577,57,2630,59"/>
 <area shape="rect" id="Node000006" href="$class_imitate_pass.html#a2cd108bdff679ad6d03daf0c7dfd1aa3" title="The recipients to encrypt file to: its folder&#39;s .gpg&#45;id, verified when a signing key is set." alt="" coords="2650,97,2840,142"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="2877,136,2840,134,2840,128,2882,136"/>
-<area shape="rect" id="Node000008" href="$class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="2669,165,2820,193"/>
+<area shape="rect" id="Node000008" href="$class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="2669,165,2820,193"/>
 <area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="2882,163,2821,173,2821,167,2877,163"/>
 <area shape="rect" id="Node000016" href="$class_imitate_pass.html#a4b2388a7e250b886534e79c7ca131dbf" title="Recipients for the directory of file, from its verified .gpg&#45;id." alt="" coords="2655,230,2835,275"/>
 <area shape="poly" id="edge16_Node000005_Node000016" title=" " alt="" coords="2943,170,2801,232,2800,227,2938,171"/>

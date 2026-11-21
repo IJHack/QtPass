@@ -1,7 +1,9 @@
 var class_pass =
 [
+    [ "SkippedWalk", "struct_pass_1_1_skipped_walk.html", "struct_pass_1_1_skipped_walk" ],
     [ "RecipientsForEditing", "struct_pass_1_1_recipients_for_editing.html", "struct_pass_1_1_recipients_for_editing" ],
     [ "PROCESS", "class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772", null ],
+    [ "SkippedWalks", "class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294", null ],
     [ "LinkScope", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106", [
       [ "EntryAndParents", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d", null ],
       [ "ParentsOnly", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106a0588f0c47720fb7c0f78e98ff6755ec0", null ]
@@ -77,7 +79,7 @@ var class_pass =
     [ "refuseFolderOutsideStore", "class_pass.html#afea04fa657d65846e2772b0b25c96276", null ],
     [ "refuseLinkedPath", "class_pass.html#a6cca7cd5646a752c16dac59df6e53581", null ],
     [ "refusePendingPull", "class_pass.html#a273c43add4c728d419585f642bce24d4", null ],
-    [ "refuseSkippedGpgId", "class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb", null ],
+    [ "refuseSkippedGpgId", "class_pass.html#add19eb5f11e729d3637ecb6d1b648fe6", null ],
     [ "refuseUnfinishedGitOperation", "class_pass.html#af1859cdb9fb7f506d92740f3370acd0b", null ],
     [ "releaseAutoPush", "class_pass.html#a281b40eaf38860243a3ffaf73c2fd815", null ],
     [ "Remove", "class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764", null ],
@@ -85,7 +87,7 @@ var class_pass =
     [ "scopePath", "class_pass.html#a2651a5f937fe963d78263f8e93458210", null ],
     [ "setEnvVar", "class_pass.html#ab99111861b84c7efcda725c53946b2ca", null ],
     [ "Show", "class_pass.html#a6520ffa669cd7934091934b24593d99c", null ],
-    [ "skippedGpgId", "class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c", null ],
+    [ "skippedGpgId", "class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c", null ],
     [ "startingExecuteWrapper", "class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6", null ],
     [ "statusMsg", "class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb", null ],
     [ "storeEnvironment", "class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2", null ],

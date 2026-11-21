@@ -8,7 +8,7 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,235,324,305,319,308,154,241"/>
 <area shape="rect" id="Node000014" href="$class_real_pass.html#ab61e44281306f4a26cb69cdedab0ff68" title="Refuse to have pass encrypt file when the walk to its list meets a .gpg&#45;id that is a link or junction..." alt="" coords="276,68,469,96"/>
 <area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="142,207,333,102,331,106,145,211"/>
-<area shape="rect" id="Node000016" href="$class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="297,183,448,211"/>
+<area shape="rect" id="Node000016" href="$class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="297,183,448,211"/>
 <area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="227,210,284,205,279,208,229,214"/>
 <area shape="rect" id="Node000032" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="310,364,435,392"/>
 <area shape="poly" id="edge40_Node000001_Node000032" title=" " alt="" coords="131,235,192,291,233,322,277,349,297,359,292,360,274,354,230,327,189,295,131,240"/>
@@ -36,12 +36,12 @@
 <area shape="poly" id="edge17_Node000016_Node000002" title=" " alt="" coords="424,180,516,156,625,132,734,105,825,76,820,78,735,110,627,137,518,161,427,185"/>
 <area shape="rect" id="Node000017" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="553,222,698,249"/>
 <area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="448,206,540,221,535,223,449,211"/>
-<area shape="rect" id="Node000018" href="$class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="531,170,720,197"/>
+<area shape="rect" id="Node000018" href="$class_pass.html#add19eb5f11e729d3637ecb6d1b648fe6" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="531,170,720,197"/>
 <area shape="poly" id="edge19_Node000016_Node000018" title=" " alt="" coords="448,190,518,188,514,190,449,195"/>
 <area shape="rect" id="Node000022" href="$class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb" title="Whether gpgIdFile is a signed list QtPass accepts: its signature verifies (GpgIdSigner::verifyFile())..." alt="" coords="544,274,707,301"/>
 <area shape="poly" id="edge24_Node000016_Node000022" title=" " alt="" coords="438,209,470,221,485,231,495,240,504,250,518,259,537,268,532,269,516,263,501,254,491,244,482,235,468,226,439,214"/>
 <area shape="poly" id="edge20_Node000018_Node000002" title=" " alt="" coords="686,167,733,149,792,115,841,82,845,79,795,119,735,154,688,172"/>
-<area shape="rect" id="Node000019" href="$class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="800,144,947,172"/>
+<area shape="rect" id="Node000019" href="$class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="800,144,947,172"/>
 <area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="720,171,787,166,782,168,721,176"/>
 <area shape="rect" id="Node000020" href="$class_gpg_id_generation.html#aa3fa72700010970eb5cec52fc489a936" title="Whether this device accepted or wrote a list at gpgIdFile before, of any generation: a headerless lis..." alt="" coords="1034,26,1204,53"/>
 <area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="893,142,945,106,1012,69,1049,57,1044,60,1014,74,948,111,895,146"/>

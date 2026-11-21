@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Whether gpgIdFile is a signed list QtPass accepts: its signature verifies (GpgIdSigner::verifyFile())..." alt="" coords="3125,312,3288,340"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e" title="Read a .gpg&#45;id, verify its detached signature and parse the recipients from the bytes that were verif..." alt="" coords="2895,273,3077,318"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3107,312,3078,311,3078,305,3113,313"/>
-<area shape="rect" id="Node000022" href="$class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="2910,341,3062,369"/>
+<area shape="rect" id="Node000022" href="$class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="2910,341,3062,369"/>
 <area shape="poly" id="edge28_Node000001_Node000022" title=" " alt="" coords="3112,338,3062,348,3062,342,3107,339"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#a2cd108bdff679ad6d03daf0c7dfd1aa3" title="The recipients to encrypt file to: its folder&#39;s .gpg&#45;id, verified when a signing key is set." alt="" coords="2641,204,2830,248"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2885,268,2819,251,2819,246,2891,268"/>

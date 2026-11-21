@@ -28,7 +28,7 @@
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="2630,439,2578,445,2577,440,2624,439"/>
 <area shape="rect" id="Node000010" href="$class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e" title="Read a .gpg&#45;id, verify its detached signature and parse the recipients from the bytes that were verif..." alt="" coords="2904,225,3086,270"/>
 <area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="3144,269,3086,263,3087,258,3149,269"/>
-<area shape="rect" id="Node000029" href="$class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="2669,348,2820,376"/>
+<area shape="rect" id="Node000029" href="$class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="2669,348,2820,376"/>
 <area shape="poly" id="edge36_Node000009_Node000029" title=" " alt="" coords="3184,302,3143,318,3119,327,3095,335,3023,348,2950,356,2821,364,2821,359,2949,351,3022,343,3094,330,3118,322,3141,313,3179,303"/>
 <area shape="rect" id="Node000011" href="$class_imitate_pass.html#a2cd108bdff679ad6d03daf0c7dfd1aa3" title="The recipients to encrypt file to: its folder&#39;s .gpg&#45;id, verified when a signing key is set." alt="" coords="2650,210,2840,255"/>
 <area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="2885,241,2840,241,2840,235,2891,241"/>
@@ -109,10 +109,10 @@
 <area shape="poly" id="edge54_Node000044_Node000045" title=" " alt="" coords="2635,113,2569,115,2569,110,2640,112"/>
 <area shape="poly" id="edge58_Node000047_Node000003" title=" " alt="" coords="3378,174,3344,176,3344,171,3383,174"/>
 <area shape="poly" id="edge59_Node000047_Node000038" title=" " alt="" coords="3426,157,3391,151,3303,130,3303,124,3392,146,3431,157"/>
-<area shape="rect" id="Node000049" href="$class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="3169,371,3317,398"/>
+<area shape="rect" id="Node000049" href="$class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="3169,371,3317,398"/>
 <area shape="poly" id="edge61_Node000048_Node000049" title=" " alt="" coords="3418,351,3318,373,3317,368,3413,351"/>
 <area shape="poly" id="edge62_Node000049_Node000006" title=" " alt="" coords="3157,393,3089,402,3089,397,3152,393"/>
-<area shape="rect" id="Node000050" href="$class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="2900,293,3089,321"/>
+<area shape="rect" id="Node000050" href="$class_pass.html#add19eb5f11e729d3637ecb6d1b648fe6" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="2900,293,3089,321"/>
 <area shape="poly" id="edge63_Node000049_Node000050" title=" " alt="" coords="3179,365,3041,324,3042,319,3184,366"/>
 <area shape="poly" id="edge64_Node000050_Node000011" title=" " alt="" coords="2918,289,2894,284,2812,258,2813,253,2896,279,2923,289"/>
 <area shape="poly" id="edge66_Node000050_Node000013" title=" " alt="" coords="2882,305,2835,306,2835,301,2887,305"/>
