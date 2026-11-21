@@ -22,6 +22,6 @@ var class_password_display_panel =
     [ "textCopied", "class_password_display_panel.html#ab3183a3523179d61490f18e41fbda13a", null ],
     [ "m_container", "class_password_display_panel.html#a580a255eef7ca0b304bcd45cefb589da", null ],
     [ "m_grid", "class_password_display_panel.html#a50268730943ba64e36bc8e13d2fdd2d8", null ],
-    [ "m_markedSecrets", "class_password_display_panel.html#a3be383ffb43c6be89ce0d45f040cc27c", null ],
+    [ "m_markedSecrets", "class_password_display_panel.html#abfa6aa7c1cdc17bf57b1156baffb1cb1", null ],
     [ "m_widgetParent", "class_password_display_panel.html#a1e9ba0ef466c4207b26b898e1dc50a18", null ]
 ];
