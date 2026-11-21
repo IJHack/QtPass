@@ -21,7 +21,6 @@
 #include <QScopeGuard>
 #include <QStandardPaths>
 #include <QTemporaryFile>
-#include <QTextDocument>
 #include <QUrl>
 
 #include <algorithm>
