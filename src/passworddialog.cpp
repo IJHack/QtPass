@@ -302,9 +302,17 @@ void PasswordDialog::setNewEntryLocation(const QString &storeRoot,
     constexpr qsizetype kMaxShown = 120;
     const QString shown = rel.isEmpty() ? QStringLiteral("/") : rel + u'/';
     if (shown.size() > kMaxShown) {
-      ui->folderBox->addItem(shown.left(kMaxShown / 3) + QChar(0x2026) +
-                                 shown.right(kMaxShown - kMaxShown / 3 - 1),
-                             rel);
+      // Never between the halves of a surrogate pair.
+      qsizetype head = kMaxShown / 3;
+      if (shown.at(head - 1).isHighSurrogate()) {
+        --head;
+      }
+      qsizetype tail = kMaxShown - kMaxShown / 3 - 1;
+      if (shown.at(shown.size() - tail).isLowSurrogate()) {
+        --tail;
+      }
+      ui->folderBox->addItem(
+          shown.left(head) + QChar(0x2026) + shown.right(tail), rel);
       ui->folderBox->setItemData(ui->folderBox->count() - 1, shown,
                                  Qt::ToolTipRole);
     } else {
@@ -392,6 +400,17 @@ auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
 void PasswordDialog::validateNewEntry() {
   QString problem;
   const QString rel = resolveNewEntry(&problem);
+  // A folder shown cut could be a look-alike of another long one: the box's
+  // tooltip names the chosen one whole, and the status says to look.
+  const QString whole = ui->folderBox->currentData(Qt::ToolTipRole).toString();
+  ui->folderBox->setToolTip(
+      whole.isEmpty() ? tr("The folder of the password store the new entry "
+                           "goes into")
+                      : whole);
+  if (problem.isEmpty() && !whole.isEmpty()) {
+    problem = tr("The folder's path is shortened above; hold the pointer "
+                 "over it to read it whole before you save.");
+  }
   ui->statusLabel->setText(problem);
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!rel.isEmpty());
 }

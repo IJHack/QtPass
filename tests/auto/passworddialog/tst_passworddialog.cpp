@@ -431,6 +431,8 @@ void tst_passworddialog::aLongUnbrokenLineWrapsAnywhereInTheEditor() {
  */
 void tst_passworddialog::manyLongFoldersDoNotSizeTheDialog() {
   FakePass pass;
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
   PasswordDialog d(&pass, allFieldsSettings(), QString(), true);
   QStringList folders{QString()};
   QString chain;
@@ -444,7 +446,7 @@ void tst_passworddialog::manyLongFoldersDoNotSizeTheDialog() {
   }
   QElapsedTimer timer;
   timer.start();
-  d.setNewEntryLocation(QStringLiteral("/store"), folders, QString());
+  d.setNewEntryLocation(store.path(), folders, QString());
   d.show();
   QVERIFY(QTest::qWaitForWindowExposed(&d));
   const qint64 opened = timer.elapsed();
@@ -464,6 +466,40 @@ void tst_passworddialog::manyLongFoldersDoNotSizeTheDialog() {
   QCOMPARE(box->itemData(deepest, Qt::ToolTipRole).toString(),
            folders.at(deepest) + QLatin1Char('/'));
   QCOMPARE(box->itemText(2), folders.at(2) + QLatin1Char('/'));
+  // Chosen, a cut path is named whole on the box, and the status says so.
+  d.findChild<QLineEdit *>(QStringLiteral("nameEdit"))
+      ->setText(QStringLiteral("entry"));
+  box->setCurrentIndex(deepest);
+  QCOMPARE(box->toolTip(), folders.at(deepest) + QLatin1Char('/'));
+  QVERIFY2(d.findChild<QLabel *>(QStringLiteral("statusLabel"))
+               ->text()
+               .contains(QStringLiteral("shortened")),
+           "the user is told to read the whole path");
+  box->setCurrentIndex(2);
+  QVERIFY(!d.findChild<QLabel *>(QStringLiteral("statusLabel"))
+               ->text()
+               .contains(QStringLiteral("shortened")));
+  // A cut never splits a surrogate pair, at either end.
+  {
+    PasswordDialog e(&pass, allFieldsSettings(), QString(), true);
+    const QString key = QStringLiteral("\U0001F511");
+    const QString path = QString(39, QLatin1Char('h')) + key +
+                         QString(200, QLatin1Char('m')) + key +
+                         QString(77, QLatin1Char('t'));
+    e.setNewEntryLocation(QStringLiteral("/store"), {QString(), path},
+                          QString());
+    auto *other = e.findChild<QComboBox *>(QStringLiteral("folderBox"));
+    QVERIFY(other != nullptr);
+    const QString text = other->itemText(1);
+    for (qsizetype i = 0; i < text.size(); ++i) {
+      if (text.at(i).isHighSurrogate()) {
+        QVERIFY(i + 1 < text.size() && text.at(i + 1).isLowSurrogate());
+      }
+      if (text.at(i).isLowSurrogate()) {
+        QVERIFY(i > 0 && text.at(i - 1).isHighSurrogate());
+      }
+    }
+  }
   // The list it drops down measures short rows.
   timer.restart();
   box->showPopup();
