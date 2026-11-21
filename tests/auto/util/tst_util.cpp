@@ -257,6 +257,7 @@ private Q_SLOTS:
   void utilRegexProtocol();
   void isLaunchableWebUrlAccepts();
   void isLaunchableWebUrlRejects();
+  void isLaunchableWebUrlBoundsTheHostItNormalises();
   void linkifyUrlsLinksLaunchableWebUrls();
   void linkifyUrlsLeavesNonWebUrlsAsText();
   void linkifyUrlsLinksOnlyWhatReadsAsItOpens();
@@ -1864,6 +1865,36 @@ void tst_util::isLaunchableWebUrlRejects() {
   QVERIFY2(
       !Util::isLaunchableWebUrl(QString("https://e.com") + QChar(0) + ".com"),
       "NUL");
+}
+
+/**
+ * @brief QUrl normalises the host in time quadratic in combining marks out
+ * of canonical order: a host of thousands of them is refused before QUrl
+ * sees it (scan finding ANT-2026-IQ1GNHQA). A host of 253 characters with a
+ * port, and a long path or query, are still web addresses.
+ */
+void tst_util::isLaunchableWebUrlBoundsTheHostItNormalises() {
+  const QString marks =
+      QString(20000, QChar(0x0301)) + QString(20000, QChar(0x0323));
+  QElapsedTimer timer;
+  timer.start();
+  QVERIFY(!Util::isLaunchableWebUrl("https://a" + marks + ".example/"));
+  QVERIFY(!Util::isLaunchableWebUrl("http://a" + marks + ".example?q"));
+  QVERIFY2(timer.elapsed() < 1000,
+           qPrintable(QString::number(timer.elapsed())));
+
+  QString host;
+  while (host.size() < 253) {
+    host += QStringLiteral("abcdefghi.");
+  }
+  host = host.left(249) + QStringLiteral(".org");
+  QCOMPARE(host.size(), 253);
+  QVERIFY(Util::isLaunchableWebUrl("https://" + host + ":65535/"));
+  QVERIFY(!Util::isLaunchableWebUrl("https://x" + host + ":65535/"));
+  const QString longPath = QString(20000, QLatin1Char('p'));
+  QVERIFY(Util::isLaunchableWebUrl("https://example.org/" + longPath));
+  QVERIFY(Util::isLaunchableWebUrl("https://example.org?" + longPath));
+  QVERIFY(Util::isLaunchableWebUrl("https://example.org#" + longPath));
 }
 
 void tst_util::linkifyUrlsLinksLaunchableWebUrls() {

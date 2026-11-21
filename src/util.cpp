@@ -659,6 +659,25 @@ auto Util::isLaunchableWebUrl(const QString &value) -> bool {
       return false;
     }
   }
+  // QUrl runs the host through Unicode normalisation, which takes time in
+  // the square of a run of combining marks out of canonical order: one line
+  // of an entry kept the window busy for minutes. A host has at most 253
+  // characters and a port six more, so a longer authority (what follows
+  // "://" up to the path, query or fragment) is no web address anyway.
+  constexpr qsizetype kMaxAuthority = 259;
+  const qsizetype afterScheme = trimmed.indexOf(QLatin1String("://"));
+  if (afterScheme >= 0) {
+    const qsizetype from = afterScheme + 3;
+    qsizetype end = from;
+    while (end < trimmed.size() && trimmed.at(end) != QLatin1Char('/') &&
+           trimmed.at(end) != QLatin1Char('?') &&
+           trimmed.at(end) != QLatin1Char('#')) {
+      ++end;
+    }
+    if (end - from > kMaxAuthority) {
+      return false;
+    }
+  }
   const QUrl url(trimmed, QUrl::StrictMode);
   if (!url.isValid()) {
     return false;
