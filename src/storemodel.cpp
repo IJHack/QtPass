@@ -13,6 +13,7 @@
 #include "util.h"
 #include <QApplication>
 #include <QDebug>
+#include <QFileInfo>
 #include <QFileSystemModel>
 #include <QMessageBox>
 #include <QMimeData>
@@ -57,7 +58,9 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   if (fs == nullptr) {
     return false;
   }
-  const QString filePath = fs->filePath(index);
+  // Through filePath() a filter pass cost entries times sibling folders,
+  // again on every key typed in the search.
+  const QString filePath = pathOf(index);
   QString path = QDir(store).relativeFilePath(filePath);
   // Only what lies in the current store. The file system model keeps the
   // rows of a store shown earlier (a profile switch only re-roots it), and
@@ -98,13 +101,22 @@ auto StoreModel::isLinkInStore(const QModelIndex &proxyIndex) const -> bool {
   if (fs == nullptr || !proxyIndex.isValid()) {
     return false;
   }
-  const QString filePath = fs->filePath(mapToSource(proxyIndex));
+  // The same path showThis() lists the row by, or a link it lists would
+  // still get an expand arrow on Windows.
+  const QString filePath = pathOf(mapToSource(proxyIndex));
   const QString path = QDir(store).relativeFilePath(filePath);
   if (path == QLatin1String(".") || path == QLatin1String("..") ||
       path.startsWith(QLatin1String("../")) || QDir::isAbsolutePath(path)) {
     return false;
   }
   return Util::isLinkedFolder(filePath);
+}
+
+auto StoreModel::pathOf(const QModelIndex &sourceIndex) const -> QString {
+  // filePath() only for a node that has no file information yet.
+  const QFileInfo info = fs->fileInfo(sourceIndex);
+  return info.filePath().isEmpty() ? fs->filePath(sourceIndex)
+                                   : info.absoluteFilePath();
 }
 
 auto StoreModel::hasChildren(const QModelIndex &parent) const -> bool {

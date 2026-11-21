@@ -923,6 +923,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   recipients no key answers to. Each "[INVALID]" badge made Qt sort every row
   listed so far again; the rows are now sorted once (scan finding
   ANT-2026-6KB4IRXS)
+- Typing in the search box no longer freezes the window for seconds per key
+  in a store with thousands of folders side by side. The filter rebuilt each
+  entry's path by looking its folder up among all its siblings; it now takes
+  the path from the entry itself (scan finding ANT-2026-YL6RC1I6)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

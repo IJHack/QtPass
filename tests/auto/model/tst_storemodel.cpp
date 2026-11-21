@@ -50,6 +50,7 @@ private Q_SLOTS:
   void filterAcceptsRowVisible();
   void setModelAndStore();
   void showThisWithNullFs();
+  void showThisAsksNoParent();
   void getStoreBasic();
   void filterRegularExpression();
   void setStoreUpdatesPath();
@@ -279,6 +280,67 @@ void tst_storemodel::showThisWithNullFs() {
   QModelIndex index;
   bool result = sm.showThis(index);
   QVERIFY(!result);
+}
+
+namespace {
+/// A file system model that counts parent() calls.
+class ParentCountingModel : public QFileSystemModel {
+public:
+  /// How often parent() was asked since the last reset.
+  mutable int parents = 0;
+  /**
+   * @brief Count the call, then answer as QFileSystemModel does.
+   * @param child The index whose parent is asked.
+   * @return The parent's index.
+   */
+  [[nodiscard]] auto parent(const QModelIndex &child) const
+      -> QModelIndex override {
+    ++parents;
+    return QFileSystemModel::parent(child);
+  }
+  using QFileSystemModel::parent;
+};
+} // namespace
+
+/**
+ * @brief The filter takes each row's path from the row itself. Through
+ * parent(), QFileSystemModel looks each folder up among all its siblings,
+ * so a co-writer's push of many one-entry folders made every key typed in
+ * the search freeze the window (scan finding ANT-2026-YL6RC1I6).
+ */
+void tst_storemodel::showThisAsksNoParent() {
+  QTemporaryDir tempDir;
+  const QString store = tempDir.path() + "/store";
+  QVERIFY(QDir(store).mkpath("archive/2026"));
+  QVERIFY(QDir(tempDir.path()).mkpath("other"));
+  for (const QString &name :
+       {store + "/archive/2026/bank.gpg", tempDir.path() + "/other/bank.gpg"}) {
+    QFile entry(name);
+    QVERIFY(entry.open(QFile::WriteOnly));
+  }
+
+  ParentCountingModel fsm;
+  fsm.setRootPath(tempDir.path());
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, store);
+  const QModelIndex folder = fsm.index(store + "/archive");
+  const QModelIndex leaf = fsm.index(store + "/archive/2026/bank.gpg");
+  const QModelIndex outside = fsm.index(tempDir.path() + "/other/bank.gpg");
+  QVERIFY(leaf.isValid());
+  QVERIFY(outside.isValid());
+  QTRY_VERIFY(fsm.fileInfo(leaf).exists());
+  QTRY_VERIFY(fsm.fileInfo(outside).exists());
+  QTRY_COMPARE(fsm.rowCount(folder), 1);
+
+  fsm.parents = 0;
+  sm.setFilterRegularExpression("2026/bank");
+  QVERIFY2(sm.showThis(leaf), "matched on its path in the store");
+  QVERIFY2(sm.showThis(folder), "a folder holding a match is shown");
+  sm.setFilterRegularExpression("bank");
+  QVERIFY2(!sm.showThis(outside), "an entry outside the store is not");
+  sm.setFilterRegularExpression("nothing-matches-this");
+  QVERIFY(!sm.showThis(leaf));
+  QCOMPARE(fsm.parents, 0);
 }
 
 void tst_storemodel::getStoreBasic() {

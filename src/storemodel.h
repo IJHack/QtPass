@@ -142,6 +142,16 @@ private:
    * @return true for a link inside the store.
    */
   [[nodiscard]] auto isLinkInStore(const QModelIndex &proxyIndex) const -> bool;
+  /**
+   * @brief The path of a file system model index, as the node keeps it.
+   *
+   * Not QFileSystemModel::filePath(): that rebuilds the path through
+   * parent(), which looks each folder up among all its siblings, and on
+   * Windows it gives a resolved link's target instead of the link.
+   * @param sourceIndex Index in the file system model; fs must be set.
+   * @return The absolute path.
+   */
+  [[nodiscard]] auto pathOf(const QModelIndex &sourceIndex) const -> QString;
 
 public:
   /**
