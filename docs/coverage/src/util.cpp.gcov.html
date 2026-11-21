@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 14:57:01</td>
+            <td class="headerValue">2026-11-21 15:34:24</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -705,9 +705,9 @@
 <span id="L632"><span class="lineNum">     632</span> <span class="tlaGNC">         198 :   return QFile(executable).exists();</span></span>
 <span id="L633"><span class="lineNum">     633</span>              : }</span>
 <span id="L634"><span class="lineNum">     634</span>              : </span>
-<span id="L635"><span class="lineNum">     635</span> <span class="tlaGNC">       16220 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
-<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">       16227 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
-<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">       16220 :   return expr;</span></span>
+<span id="L635"><span class="lineNum">     635</span> <span class="tlaGNC">       16249 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">       16256 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
+<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">       16249 :   return expr;</span></span>
 <span id="L638"><span class="lineNum">     638</span>              : }</span>
 <span id="L639"><span class="lineNum">     639</span>              : </span>
 <span id="L640"><span class="lineNum">     640</span>              : // Stops at whitespace, quotes and brackets so a URL on its own line keeps no</span>
@@ -977,8 +977,8 @@
 <span id="L904"><span class="lineNum">     904</span> <span class="tlaGNC">         672 : }</span></span>
 <span id="L905"><span class="lineNum">     905</span>              : </span>
 <span id="L906"><span class="lineNum">     906</span>              : /// A symlink or an NTFS junction: never entered, never listed.</span>
-<span id="L907"><span class="lineNum">     907</span> <span class="tlaGNC">       17827 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
-<span id="L908"><span class="lineNum">     908</span> <span class="tlaGNC">       17827 :   return entry.isSymLink() || entry.isJunction();</span></span>
+<span id="L907"><span class="lineNum">     907</span> <span class="tlaGNC">       17828 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
+<span id="L908"><span class="lineNum">     908</span> <span class="tlaGNC">       17828 :   return entry.isSymLink() || entry.isJunction();</span></span>
 <span id="L909"><span class="lineNum">     909</span>              : }</span>
 <span id="L910"><span class="lineNum">     910</span>              : </span>
 <span id="L911"><span class="lineNum">     911</span>              : /// Hidden by attribute, or by the dot convention on every platform: Qt 6.11</span>

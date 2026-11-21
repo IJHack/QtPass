@@ -137,7 +137,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae6ce559fb2377f31bef854fb75df0af0" id="r_ae6ce559fb2377f31bef854fb75df0af0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae6ce559fb2377f31bef854fb75df0af0">readSecretFields</a> (const QString &amp;storePath) -&gt; QStringList</td></tr>
 <tr class="memdesc:ae6ce559fb2377f31bef854fb75df0af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field names the store's <span class="tt">.templates</span> file marks as secret, in any of its sections (see <a class="el" href="#af8aac6eb0c68a90f03869c53606aa254" title="The field names a template marks as secret.">secretFieldsIn()</a>).  <br /></td></tr>
 <tr class="memitem:a5396bc2abe581bb25003d9c735ac14fd" id="r_a5396bc2abe581bb25003d9c735ac14fd"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5396bc2abe581bb25003d9c735ac14fd">fieldsIn</a> (const QString &amp;templateText) -&gt; QStringList</td></tr>
-<tr class="memdesc:a5396bc2abe581bb25003d9c735ac14fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field names of the template in the settings: one per line, with comment lines (starting with <span class="tt">#</span>, such as a <span class="tt"># secret:</span> line) left out. Other lines are kept as they are, empty ones too.  <br /></td></tr>
+<tr class="memdesc:a5396bc2abe581bb25003d9c735ac14fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field names of the template in the settings: one per line, with comment lines (starting with <span class="tt">#</span>, such as a <span class="tt"># secret:</span> line) left out. Other lines are kept as they are, empty ones too, up to <a class="el" href="class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8" title="Most named fields parse() takes from one entry.">FileContent::kMaxNamedFields</a> fields that are not empty (blanks count): each becomes a row of widgets, and the store's <span class="tt">.templates</span> is anyone's to write.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Read and write password-store template configuration. </p>
@@ -168,7 +168,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The field names of the template in the settings: one per line, with comment lines (starting with <span class="tt">#</span>, such as a <span class="tt"># secret:</span> line) left out. Other lines are kept as they are, empty ones too. </p>
+<p>The field names of the template in the settings: one per line, with comment lines (starting with <span class="tt">#</span>, such as a <span class="tt"># secret:</span> line) left out. Other lines are kept as they are, empty ones too, up to <a class="el" href="class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8" title="Most named fields parse() takes from one entry.">FileContent::kMaxNamedFields</a> fields that are not empty (blanks count): each becomes a row of widgets, and the store's <span class="tt">.templates</span> is anyone's to write. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">templateText</td><td>The template's text, newline-separated. </td></tr>
@@ -177,7 +177,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The field names. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00139">139</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00140">140</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
 <div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
@@ -224,7 +224,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Template name or empty if none found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00176">176</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00196">196</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
@@ -266,7 +266,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The marked names; empty when there is no readable file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00133">133</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00134">134</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -314,7 +314,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Hash of template name to field list. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00075">75</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00076">76</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -356,7 +356,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The marked names in the order they appear. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00111">111</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00112">112</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -403,7 +403,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if write succeeded. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00147">147</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="templateio_8cpp_source.html#l00167">167</a> of file <a class="el" href="templateio_8cpp_source.html">templateio.cpp</a>.</p>
 
 </div>
 </div>
