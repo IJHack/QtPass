@@ -151,8 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aacaf85a65fc1398c356dd44370e5e22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Git repository in password store.  <br /></td></tr>
 <tr class="memitem:ac3206e85bc586214e6cc75186cff65c3" id="r_ac3206e85bc586214e6cc75186cff65c3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac3206e85bc586214e6cc75186cff65c3">GitPull</a> () override</td></tr>
 <tr class="memdesc:ac3206e85bc586214e6cc75186cff65c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull changes from remote.  <br /></td></tr>
-<tr class="memitem:a6a959408a305cc8dd7cc6c7bd9c17210" id="r_a6a959408a305cc8dd7cc6c7bd9c17210"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6a959408a305cc8dd7cc6c7bd9c17210">GitPull_b</a> () override</td></tr>
-<tr class="memdesc:a6a959408a305cc8dd7cc6c7bd9c17210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull with rebase.  <br /></td></tr>
+<tr class="memitem:ad218ae042cc6d3322ecf10b4b6c45e6d" id="r_ad218ae042cc6d3322ecf10b4b6c45e6d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad218ae042cc6d3322ecf10b4b6c45e6d">GitPull_b</a> (int timeoutMs) override</td></tr>
+<tr class="memdesc:ad218ae042cc6d3322ecf10b4b6c45e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run <span class="tt">pass git pull</span> and wait for it, at most <code class="param">timeoutMs</code>.  <br /></td></tr>
 <tr class="memitem:ae32fd82fe5e57b2c45df05bfe2991b5b" id="r_ae32fd82fe5e57b2c45df05bfe2991b5b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae32fd82fe5e57b2c45df05bfe2991b5b">GitPush</a> () override</td></tr>
 <tr class="memdesc:ae32fd82fe5e57b2c45df05bfe2991b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push changes to remote.  <br /></td></tr>
 <tr class="memitem:a63da21db00da709ae5aa8f7a992e16e1" id="r_a63da21db00da709ae5aa8f7a992e16e1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a63da21db00da709ae5aa8f7a992e16e1">Show</a> (QString file) override</td></tr>
@@ -208,6 +208,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a57cc7915c4d3f4a795b0ec8ad4056482 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if GPG supports Ed25519 encryption.  <br /></td></tr>
 <tr class="memitem:a126c484e0780c5ac98a57007a4daa926 inherit pub_static_methods_class_pass" id="r_a126c484e0780c5ac98a57007a4daa926"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a126c484e0780c5ac98a57007a4daa926">getDefaultKeyTemplate</a> (const QString &amp;gpgExecutable={})</td></tr>
 <tr class="memdesc:a126c484e0780c5ac98a57007a4daa926 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default key template for new GPG keys.  <br /></td></tr>
+<tr class="memitem:ac4f20d4ca8f4069365ce1a74be811be2 inherit pub_static_methods_class_pass" id="r_ac4f20d4ca8f4069365ce1a74be811be2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ac4f20d4ca8f4069365ce1a74be811be2">pullTimedOut</a> (int timeoutMs) -&gt; QString</td></tr>
+<tr class="memdesc:ac4f20d4ca8f4069365ce1a74be811be2 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status-bar text for a blocking pull stopped at its deadline.  <br /></td></tr>
 <tr class="memitem:a5a0b433814c3701da1bdb0b7bd87052a inherit pub_static_methods_class_pass" id="r_a5a0b433814c3701da1bdb0b7bd87052a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">maxOutputArgs</a> () -&gt; QStringList</td></tr>
 <tr class="memdesc:a5a0b433814c3701da1bdb0b7bd87052a inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The gpg options that enforce kMaxPlaintextBytes.  <br /></td></tr>
 <tr class="memitem:a6a9aa8dc4ff288ce256351b671533a84 inherit pub_static_methods_class_pass" id="r_a6a9aa8dc4ff288ce256351b671533a84"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a6a9aa8dc4ff288ce256351b671533a84">resolveGpgconfCommand</a> (const QString &amp;gpgPath) -&gt; <a class="el" href="struct_resolved_gpgconf_command.html">ResolvedGpgconfCommand</a></td></tr>
@@ -378,6 +380,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a74344f203b81f87b4d42a6281a176db4 inherit signals_class_pass" id="r_a74344f203b81f87b4d42a6281a176db4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
 <tr class="memdesc:a74344f203b81f87b4d42a6281a176db4 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The newest <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176" title="Search password content for a pattern.">Grep()</a> is over; an empty list means no entry matched.  <br /></td></tr>
 <tr class="inherit_header pub_static_attribs_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
+<tr class="memitem:afeaea2f12756a0e114d66c40c0860da0 inherit pub_static_attribs_class_pass" id="r_afeaea2f12756a0e114d66c40c0860da0"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#afeaea2f12756a0e114d66c40c0860da0">kBlockingPullMs</a> = 30000</td></tr>
+<tr class="memdesc:afeaea2f12756a0e114d66c40c0860da0 inherit pub_static_attribs_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">How long the pull before an edit may block the window.  <br /></td></tr>
 <tr class="memitem:ae6e6a7bafd0f0753db6bae3205c22c72 inherit pub_static_attribs_class_pass" id="r_ae6e6a7bafd0f0753db6bae3205c22c72"><td class="memItemLeft">static constexpr qint64&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72">kMaxPlaintextBytes</a> = 64LL * 1024 * 1024</td></tr>
 <tr class="memdesc:ae6e6a7bafd0f0753db6bae3205c22c72 inherit pub_static_attribs_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most bytes of plaintext a gpg decryption may produce.  <br /></td></tr>
 <tr class="inherit_header pro_types_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
@@ -429,7 +433,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Construct a <a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00038">38</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00039">39</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -470,7 +474,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Destructor; lets the search workers wind down. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00043">43</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00044">44</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -508,7 +512,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a109a1abbd06afe20ed85c2fc9b46427c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00454">454</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00455">455</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -567,7 +571,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false when git could not say. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00640">640</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00645">645</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
@@ -627,7 +631,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01074">1074</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01079">1079</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -669,7 +673,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The hash; empty when <code class="param">path</code> is no readable regular file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00771">771</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00776">776</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -739,7 +743,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01163">1163</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01168">1168</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
@@ -805,7 +809,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00870">870</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00875">875</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -857,7 +861,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00992">992</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00997">997</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
@@ -900,7 +904,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00045">45</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00046">46</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary">
 </div>
@@ -937,7 +941,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00065">65</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00070">70</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary">
 </div>
@@ -947,8 +951,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6a959408a305cc8dd7cc6c7bd9c17210" name="a6a959408a305cc8dd7cc6c7bd9c17210"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a959408a305cc8dd7cc6c7bd9c17210">&#9670;&#160;</a></span>GitPull_b()</h2>
+<a id="ad218ae042cc6d3322ecf10b4b6c45e6d" name="ad218ae042cc6d3322ecf10b4b6c45e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad218ae042cc6d3322ecf10b4b6c45e6d">&#9670;&#160;</a></span>GitPull_b()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -959,7 +963,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void RealPass::GitPull_b </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -970,16 +974,22 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Pull with rebase. </p>
+<p>Run <span class="tt">pass git pull</span> and wait for it, at most <code class="param">timeoutMs</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeoutMs</td><td>Most milliseconds to wait (<a class="el" href="class_pass.html#afeaea2f12756a0e114d66c40c0860da0" title="How long the pull before an edit may block the window.">Pass::kBlockingPullMs</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implements <a class="el" href="class_pass.html#a7a109d5c0a7f565398b7238c32bb6328">Pass</a>.</p>
+<p>Implements <a class="el" href="class_pass.html#a87e2fdc79528cc18678d7c489301af83">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00047">47</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00048">48</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary">
 </div>
 <div id="dynsection-18-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a6a959408a305cc8dd7cc6c7bd9c17210_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ad218ae042cc6d3322ecf10b4b6c45e6d_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1011,7 +1021,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00067">67</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00072">72</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary">
 </div>
@@ -1059,7 +1069,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01152">1152</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01157">1157</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -1107,7 +1117,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01019">1019</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01024">1024</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
@@ -1161,7 +1171,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00687">687</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00692">692</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary">
 </div>
@@ -1205,7 +1215,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00753">753</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00758">758</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
@@ -1241,7 +1251,7 @@ Additional Inherited Members</h2></td></tr>
 <p>The verifier for signed lists, gpg in the store's environment. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_gpg_id_signer.html" title="The detached signature on a store&#39;s .gpg-id: whether the configured signing key is usable,...">GpgIdSigner</a> with the configured signing keys. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00105">105</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00110">110</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary">
 </div>
@@ -1301,7 +1311,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01070">1070</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01075">1075</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
@@ -1347,7 +1357,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00718">718</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00723">723</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary">
 </div>
@@ -1417,7 +1427,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01088">1088</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01093">1093</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-29-summary" class="dynsummary">
 </div>
@@ -1470,7 +1480,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The store-relative name. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01078">1078</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01083">1083</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary">
 </div>
@@ -1523,7 +1533,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on a failure; false without any status line, since then the option did not reach gpg and there is nothing to judge by. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00923">923</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00928">928</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
@@ -1570,7 +1580,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00556">556</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00561">561</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-34-summary" class="dynsummary">
 </div>
@@ -1629,7 +1639,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00145">145</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00150">150</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-36-summary" class="dynsummary">
 </div>
@@ -1700,7 +1710,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00116">116</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00121">121</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-38-summary" class="dynsummary">
 </div>
@@ -1753,7 +1763,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00463">463</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00468">468</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-40-summary" class="dynsummary">
 </div>
@@ -1801,7 +1811,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00169">169</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00174">174</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-42-summary" class="dynsummary">
 </div>
@@ -1860,7 +1870,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00216">216</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00221">221</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-44-summary" class="dynsummary">
 </div>
@@ -1914,7 +1924,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00791">791</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00796">796</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-46-summary" class="dynsummary">
 </div>
@@ -1966,7 +1976,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00957">957</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00962">962</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary">
 </div>
@@ -2013,7 +2023,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00537">537</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00542">542</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-49" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-49-summary" class="dynsummary">
 </div>
@@ -2061,7 +2071,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The repository's folder relative to the store, empty for the store's own (or when git cannot say). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00306">306</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00311">311</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-51-summary" class="dynsummary">
 </div>
@@ -2102,7 +2112,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Once the last queued init, move or copy has completed, make the push asked for meanwhile (<a class="el" href="#ae32fd82fe5e57b2c45df05bfe2991b5b" title="Push changes to remote.">GitPush()</a>). An automatic one is dropped while a re-encryption in this store is held, and the status line says why; one asked for by hand goes. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00079">79</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00084">84</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-53" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-53-summary" class="dynsummary">
 </div>
@@ -2151,7 +2161,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00096">96</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00101">101</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-55" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-55-summary" class="dynsummary">
 </div>
@@ -2198,7 +2208,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The entries. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00342">342</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00347">347</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-56" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-56-summary" class="dynsummary">
 </div>
@@ -2253,7 +2263,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00278">278</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00283">283</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-58" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-58-summary" class="dynsummary">
 </div>
@@ -2306,7 +2316,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The status entries, "XY name" each. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00376">376</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00381">381</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-60" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-60-summary" class="dynsummary">
 </div>

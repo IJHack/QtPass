@@ -192,8 +192,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a26bec7c69e7c35ccb67f8057db90825e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Git repository in password store.  <br /></td></tr>
 <tr class="memitem:a30c3829a890d65d3e4ba90c12b1852e8" id="r_a30c3829a890d65d3e4ba90c12b1852e8"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a30c3829a890d65d3e4ba90c12b1852e8">GitPull</a> ()=0</td></tr>
 <tr class="memdesc:a30c3829a890d65d3e4ba90c12b1852e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull changes from remote Git repository.  <br /></td></tr>
-<tr class="memitem:a7a109d5c0a7f565398b7238c32bb6328" id="r_a7a109d5c0a7f565398b7238c32bb6328"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a7a109d5c0a7f565398b7238c32bb6328">GitPull_b</a> ()=0</td></tr>
-<tr class="memdesc:a7a109d5c0a7f565398b7238c32bb6328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull with rebase from remote.  <br /></td></tr>
+<tr class="memitem:a87e2fdc79528cc18678d7c489301af83" id="r_a87e2fdc79528cc18678d7c489301af83"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a87e2fdc79528cc18678d7c489301af83">GitPull_b</a> (int timeoutMs)=0</td></tr>
+<tr class="memdesc:a87e2fdc79528cc18678d7c489301af83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull from the remote and wait for it, at most <code class="param">timeoutMs:</code> the pull before an edit, on the GUI thread.  <br /></td></tr>
 <tr class="memitem:a7b5fa97ca6f3795512ac7c10db5c8f09" id="r_a7b5fa97ca6f3795512ac7c10db5c8f09"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a7b5fa97ca6f3795512ac7c10db5c8f09">GitPush</a> ()=0</td></tr>
 <tr class="memdesc:a7b5fa97ca6f3795512ac7c10db5c8f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push changes to remote Git repository.  <br /></td></tr>
 <tr class="memitem:a6520ffa669cd7934091934b24593d99c" id="r_a6520ffa669cd7934091934b24593d99c"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a6520ffa669cd7934091934b24593d99c">Show</a> (QString file)=0</td></tr>
@@ -241,6 +241,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a57cc7915c4d3f4a795b0ec8ad4056482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if GPG supports Ed25519 encryption.  <br /></td></tr>
 <tr class="memitem:a126c484e0780c5ac98a57007a4daa926" id="r_a126c484e0780c5ac98a57007a4daa926"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#a126c484e0780c5ac98a57007a4daa926">getDefaultKeyTemplate</a> (const QString &amp;gpgExecutable={})</td></tr>
 <tr class="memdesc:a126c484e0780c5ac98a57007a4daa926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default key template for new GPG keys.  <br /></td></tr>
+<tr class="memitem:ac4f20d4ca8f4069365ce1a74be811be2" id="r_ac4f20d4ca8f4069365ce1a74be811be2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac4f20d4ca8f4069365ce1a74be811be2">pullTimedOut</a> (int timeoutMs) -&gt; QString</td></tr>
+<tr class="memdesc:ac4f20d4ca8f4069365ce1a74be811be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status-bar text for a blocking pull stopped at its deadline.  <br /></td></tr>
 <tr class="memitem:a5a0b433814c3701da1bdb0b7bd87052a" id="r_a5a0b433814c3701da1bdb0b7bd87052a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5a0b433814c3701da1bdb0b7bd87052a">maxOutputArgs</a> () -&gt; QStringList</td></tr>
 <tr class="memdesc:a5a0b433814c3701da1bdb0b7bd87052a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The gpg options that enforce kMaxPlaintextBytes.  <br /></td></tr>
 <tr class="memitem:a6a9aa8dc4ff288ce256351b671533a84" id="r_a6a9aa8dc4ff288ce256351b671533a84"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6a9aa8dc4ff288ce256351b671533a84">resolveGpgconfCommand</a> (const QString &amp;gpgPath) -&gt; <a class="el" href="struct_resolved_gpgconf_command.html">ResolvedGpgconfCommand</a></td></tr>
@@ -260,6 +262,8 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="memitem:afeaea2f12756a0e114d66c40c0860da0" id="r_afeaea2f12756a0e114d66c40c0860da0"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#afeaea2f12756a0e114d66c40c0860da0">kBlockingPullMs</a> = 30000</td></tr>
+<tr class="memdesc:afeaea2f12756a0e114d66c40c0860da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">How long the pull before an edit may block the window.  <br /></td></tr>
 <tr class="memitem:ae6e6a7bafd0f0753db6bae3205c22c72" id="r_ae6e6a7bafd0f0753db6bae3205c22c72"><td class="memItemLeft">static constexpr qint64&#160;</td><td class="memItemRight"><a class="el" href="#ae6e6a7bafd0f0753db6bae3205c22c72">kMaxPlaintextBytes</a> = 64LL * 1024 * 1024</td></tr>
 <tr class="memdesc:ae6e6a7bafd0f0753db6bae3205c22c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most bytes of plaintext a gpg decryption may produce.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -439,7 +443,7 @@ Private Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00556">556</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00573">573</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -471,7 +475,7 @@ Private Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00566">566</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00583">583</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -664,7 +668,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a5938fafb40e80ab43db44d7e9a200867">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ae0ccd39e17991ddfc3029dde0be8f8ee">RealPass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00248">248</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00258">258</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1994,8 +1998,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7a109d5c0a7f565398b7238c32bb6328" name="a7a109d5c0a7f565398b7238c32bb6328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a109d5c0a7f565398b7238c32bb6328">&#9670;&#160;</a></span>GitPull_b()</h2>
+<a id="a87e2fdc79528cc18678d7c489301af83" name="a87e2fdc79528cc18678d7c489301af83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e2fdc79528cc18678d7c489301af83">&#9670;&#160;</a></span>GitPull_b()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2006,7 +2010,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void Pass::GitPull_b </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -2017,9 +2021,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Pull with rebase from remote. </p>
+<p>Pull from the remote and wait for it, at most <code class="param">timeoutMs:</code> the pull before an edit, on the GUI thread. </p>
+<p>A remote that never answers froze the window, autoclear timers included, until git gave up, which it may never do. Past the deadline git is stopped and the status bar says the pull did not finish. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeoutMs</td><td>Most milliseconds to wait (kBlockingPullMs from the window). </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implemented in <a class="el" href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210">RealPass</a>.</p>
+<p>Implemented in <a class="el" href="class_imitate_pass.html#ad7676bac39423557c1921497f36897e6">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ad218ae042cc6d3322ecf10b4b6c45e6d">RealPass</a>.</p>
 
 </div>
 </div>
@@ -2562,7 +2572,7 @@ Private Attributes</h2></td></tr>
 <p>How many inserts have started queueing but not yet reported. </p>
 <p>One <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> still in the command queue, or running, counts here until its PASS_INSERT result goes out. A <a class="el" href="class_password_dialog.html" title="Dialog for creating a password entry or editing an existing one.">PasswordDialog</a> reads this just before its own <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> so it can tell an earlier insert's report (which it is also connected to, once a hanging queue let it open while its save was still pending) from its own. </p><dl class="section return"><dt>Returns</dt><dd>The number of inserts awaiting their report. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00202">202</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00212">212</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-56" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-56-summary" class="dynsummary">
 </div>
@@ -2606,7 +2616,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a54b0d821ced68089162fd3872087e7ec">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ae83239077615fed7e3cd5fccfad9336a">RealPass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00531">531</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00548">548</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-57" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-57-summary" class="dynsummary">
 </div>
@@ -2648,7 +2658,7 @@ Private Attributes</h2></td></tr>
 <p>Whether no gpg, git or pass of this backend runs or waits. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when its executor is idle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00439">439</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00456">456</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-59" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-59-summary" class="dynsummary">
 </div>
@@ -2690,7 +2700,7 @@ Private Attributes</h2></td></tr>
 <p>Whether a Git push of this backend is queued or running. </p>
 <dl class="section return"><dt>Returns</dt><dd>true while one waits or runs. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00445">445</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00462">462</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-61" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-61-summary" class="dynsummary">
 </div>
@@ -3060,6 +3070,48 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac4f20d4ca8f4069365ce1a74be811be2" name="ac4f20d4ca8f4069365ce1a74be811be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f20d4ca8f4069365ce1a74be811be2">&#9670;&#160;</a></span>pullTimedOut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::pullTimedOut </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span></td><td>)</td>
+          <td> -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The status-bar text for a blocking pull stopped at its deadline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeoutMs</td><td>The deadline that passed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The message. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01306">1306</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-72" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-72-summary" class="dynsummary">
+</div>
+<div id="dynsection-72-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ac4f20d4ca8f4069365ce1a74be811be2_icgraph.svg" width="368" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a507057c5ae685ca61469c4dae27fd2e6" name="a507057c5ae685ca61469c4dae27fd2e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a507057c5ae685ca61469c4dae27fd2e6">&#9670;&#160;</a></span>pushIsAutomatic()</h2>
 
@@ -3087,10 +3139,10 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true inside <a class="el" href="#a45818547e0b844bd6f111a67b3e9b249" title="GitPush() for an automatic push, the one after a change. A backend that has to make the push later dr...">GitPushAutomatic()</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00826">826</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-72" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-72-summary" class="dynsummary">
+<div id="dynsection-73" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-73-summary" class="dynsummary">
 </div>
-<div id="dynsection-72-content" class="dyncontent hidden">
+<div id="dynsection-73-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a507057c5ae685ca61469c4dae27fd2e6_icgraph.svg" width="100%" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3122,11 +3174,11 @@ Private Attributes</h2></td></tr>
 <p>Count one insert that has started queueing but not yet reported. </p>
 <p>Backends call this where <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> queues its work, past every refusal; <a class="el" href="#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion.">Pass::finished()</a> counts it off again when the insert reports. Each queued insert reports once, as a PASS_INSERT, so the count tracks the inserts in flight. A dialog reads <a class="el" href="#aa4e8d6d0d817903ae20ddadc3c34657e" title="How many inserts have started queueing but not yet reported.">insertsPending()</a> before its own <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> to learn how many earlier reports are not its own. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00554">554</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
-<div id="dynsection-73" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-73-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00571">571</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<div id="dynsection-74" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-74-summary" class="dynsummary">
 </div>
-<div id="dynsection-73-content" class="dyncontent hidden">
+<div id="dynsection-74-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_af2bb81415b1f19148f9837de0cd545c7_icgraph.svg" width="336" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -3163,11 +3215,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00544">544</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
-<div id="dynsection-74" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-74-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00561">561</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<div id="dynsection-75" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-75-summary" class="dynsummary">
 </div>
-<div id="dynsection-74-content" class="dyncontent hidden">
+<div id="dynsection-75-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a36a6f3e2815272e10ff895edc487d388_icgraph.svg" width="332" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -3203,16 +3255,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The state, the recipients to preselect and the warning to show. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01159">1159</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-75" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-75-summary" class="dynsummary">
-</div>
-<div id="dynsection-75-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a849c5089c91fa9599653d9dad6e4c28c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-76" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-76" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-76-summary" class="dynsummary">
 </div>
 <div id="dynsection-76-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a849c5089c91fa9599653d9dad6e4c28c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-77" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-77-summary" class="dynsummary">
+</div>
+<div id="dynsection-77-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a849c5089c91fa9599653d9dad6e4c28c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3250,16 +3302,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00978">978</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-77" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-77-summary" class="dynsummary">
-</div>
-<div id="dynsection-77-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a587c7c2f547746e11e668cdb769f0f69_cgraph.svg" width="486" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-78" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-78" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-78-summary" class="dynsummary">
 </div>
 <div id="dynsection-78-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a587c7c2f547746e11e668cdb769f0f69_cgraph.svg" width="486" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-79" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-79-summary" class="dynsummary">
+</div>
+<div id="dynsection-79-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a587c7c2f547746e11e668cdb769f0f69_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3303,16 +3355,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00869">869</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-79" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-79-summary" class="dynsummary">
-</div>
-<div id="dynsection-79-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_afea04fa657d65846e2772b0b25c96276_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-80" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-80" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-80-summary" class="dynsummary">
 </div>
 <div id="dynsection-80-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_afea04fa657d65846e2772b0b25c96276_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-81" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-81-summary" class="dynsummary">
+</div>
+<div id="dynsection-81-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_afea04fa657d65846e2772b0b25c96276_icgraph.svg" width="375" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -3362,16 +3414,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00841">841</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-81" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-81-summary" class="dynsummary">
-</div>
-<div id="dynsection-81-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6cca7cd5646a752c16dac59df6e53581_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-82" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-82" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-82-summary" class="dynsummary">
 </div>
 <div id="dynsection-82-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6cca7cd5646a752c16dac59df6e53581_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-83" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-83-summary" class="dynsummary">
+</div>
+<div id="dynsection-83-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6cca7cd5646a752c16dac59df6e53581_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3404,16 +3456,16 @@ Private Attributes</h2></td></tr>
 <p>An operation checks the repository when it is requested, but a pull queued before it (the asynchronous Update) has not run yet, so a conflict it will cause is not visible. For operations that commit without a later point to re-check (every delete, move and copy, and the <span class="tt">pass</span> backend, whose single <span class="tt">pass insert</span> commits by itself), refuse while the pull is in flight so the change cannot land in the conflict it leaves. Nothing is refused when Git is off or no pull is pending. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00949">949</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-83" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-83-summary" class="dynsummary">
-</div>
-<div id="dynsection-83-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a273c43add4c728d419585f642bce24d4_cgraph.svg" width="448" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-84" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-84" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-84-summary" class="dynsummary">
 </div>
 <div id="dynsection-84-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a273c43add4c728d419585f642bce24d4_cgraph.svg" width="448" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-85" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-85-summary" class="dynsummary">
+</div>
+<div id="dynsection-85-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a273c43add4c728d419585f642bce24d4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3463,16 +3515,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00993">993</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-85" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-85-summary" class="dynsummary">
-</div>
-<div id="dynsection-85-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a3aea03014a99498ace9df6c5edaa1dfb_cgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-86" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-86" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-86-summary" class="dynsummary">
 </div>
 <div id="dynsection-86-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a3aea03014a99498ace9df6c5edaa1dfb_cgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-87" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-87-summary" class="dynsummary">
+</div>
+<div id="dynsection-87-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a3aea03014a99498ace9df6c5edaa1dfb_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3505,16 +3557,16 @@ Private Attributes</h2></td></tr>
 <p>A pull that stopped in a conflict leaves the repository part-way through an operation. Committing a save or a re-encryption into it lands the change on a detached HEAD (a later <span class="tt">git rebase --abort</span> drops it) or concludes the merge in favour of the local copy (pushing over a colleague's change). Every store-changing operation calls this at its entry, next to <a class="el" href="#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the...">refuseLinkedPath()</a>, so the change is refused before gpg or pass runs and the dialog keeps what was typed. Nothing is refused when git is off, the store is not a repository, or git gives no answer. A HEAD detached by hand (no operation in progress) is deliberately accepted. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00964">964</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-87" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-87-summary" class="dynsummary">
-</div>
-<div id="dynsection-87-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_af1859cdb9fb7f506d92740f3370acd0b_cgraph.svg" width="619" height="211"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-88" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-88" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-88-summary" class="dynsummary">
 </div>
 <div id="dynsection-88-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_af1859cdb9fb7f506d92740f3370acd0b_cgraph.svg" width="619" height="211"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-89" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-89-summary" class="dynsummary">
+</div>
+<div id="dynsection-89-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_af1859cdb9fb7f506d92740f3370acd0b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3552,16 +3604,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00832">832</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-89" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-89-summary" class="dynsummary">
-</div>
-<div id="dynsection-89-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a281b40eaf38860243a3ffaf73c2fd815_cgraph.svg" width="359" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-90" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-90" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-90-summary" class="dynsummary">
 </div>
 <div id="dynsection-90-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a281b40eaf38860243a3ffaf73c2fd815_cgraph.svg" width="359" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-91" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-91-summary" class="dynsummary">
+</div>
+<div id="dynsection-91-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a281b40eaf38860243a3ffaf73c2fd815_icgraph.svg" width="100%" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3640,16 +3692,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Resolved command with program and arguments. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00355">355</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-91" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-91-summary" class="dynsummary">
-</div>
-<div id="dynsection-91-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6a9aa8dc4ff288ce256351b671533a84_cgraph.svg" width="499" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-92" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-92" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-92-summary" class="dynsummary">
 </div>
 <div id="dynsection-92-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6a9aa8dc4ff288ce256351b671533a84_cgraph.svg" width="499" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-93" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-93-summary" class="dynsummary">
+</div>
+<div id="dynsection-93-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6a9aa8dc4ff288ce256351b671533a84_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3688,10 +3740,10 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The cleaned absolute path. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00807">807</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-93" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-93-summary" class="dynsummary">
+<div id="dynsection-94" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-94-summary" class="dynsummary">
 </div>
-<div id="dynsection-93-content" class="dyncontent hidden">
+<div id="dynsection-94-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a2651a5f937fe963d78263f8e93458210_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3734,10 +3786,10 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00629">629</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-94" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-94-summary" class="dynsummary">
+<div id="dynsection-95" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-95-summary" class="dynsummary">
 </div>
-<div id="dynsection-94-content" class="dyncontent hidden">
+<div id="dynsection-95-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ab99111861b84c7efcda725c53946b2ca_icgraph.svg" width="100%" height="598"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3775,10 +3827,10 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a63da21db00da709ae5aa8f7a992e16e1">RealPass</a>.</p>
-<div id="dynsection-95" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-95-summary" class="dynsummary">
+<div id="dynsection-96" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-96-summary" class="dynsummary">
 </div>
-<div id="dynsection-95-content" class="dyncontent hidden">
+<div id="dynsection-96-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6520ffa669cd7934091934b24593d99c_icgraph.svg" width="100%" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3828,16 +3880,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The skipped <span class="tt">.gpg-id</span> path, or nothing when the list found is the one that applies. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01048">1048</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-96" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-96-summary" class="dynsummary">
-</div>
-<div id="dynsection-96-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a4e4099a6ae5113a926fca1a68d8b6c6c_cgraph.svg" width="587" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-97" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-97" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-97-summary" class="dynsummary">
 </div>
 <div id="dynsection-97-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a4e4099a6ae5113a926fca1a68d8b6c6c_cgraph.svg" width="587" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-98" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-98-summary" class="dynsummary">
+</div>
+<div id="dynsection-98-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a4e4099a6ae5113a926fca1a68d8b6c6c_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3868,10 +3920,10 @@ Private Attributes</h2></td></tr>
 
 <p>Emitted each time a queued process is about to start, and by the refusals that go on to emit <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a>. </p>
 <p>The main window shows the busy state on it. An operation made of several processes emits it once per process; the operation then ends with a <span class="tt"><a class="el" href="#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion.">finished</a>...</span> signal or with <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a>. </p>
-<div id="dynsection-98" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-98-summary" class="dynsummary">
+<div id="dynsection-99" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-99-summary" class="dynsummary">
 </div>
-<div id="dynsection-98-content" class="dyncontent hidden">
+<div id="dynsection-99-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a0345d3ffdb213234031e9c84fe8ca7c6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3912,10 +3964,10 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-99" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-99-summary" class="dynsummary">
+<div id="dynsection-100" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-100-summary" class="dynsummary">
 </div>
-<div id="dynsection-99-content" class="dyncontent hidden">
+<div id="dynsection-100-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a3a8bd6ab55ed8b2338955f01573bc2fb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -3948,16 +4000,16 @@ Private Attributes</h2></td></tr>
 <p>What <a class="el" href="#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">updateEnv()</a> made: the git ceiling and the PASSWORD_STORE_ variables <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own environment does not carry. For blocking calls that start their own process. </p><dl class="section return"><dt>Returns</dt><dd>A copy of the environment. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00104">104</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
-<div id="dynsection-100" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-100-summary" class="dynsummary">
-</div>
-<div id="dynsection-100-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a0037d3169c1c0fc270270cde4b8d25d2_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-101" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-101" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-101-summary" class="dynsummary">
 </div>
 <div id="dynsection-101-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a0037d3169c1c0fc270270cde4b8d25d2_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-102" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-102-summary" class="dynsummary">
+</div>
+<div id="dynsection-102-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a0037d3169c1c0fc270270cde4b8d25d2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -4002,11 +4054,11 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#ad2f55fd94626cc4a10b69e9dc76e1b32">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a23317f24cad6782794cfc83a355af4fa">RealPass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00630">630</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
-<div id="dynsection-102" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-102-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00647">647</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<div id="dynsection-103" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-103-summary" class="dynsummary">
 </div>
-<div id="dynsection-102-content" class="dyncontent hidden">
+<div id="dynsection-103-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a5cb7bb449be8c12124b3c3be6d94e3a7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -4039,16 +4091,16 @@ Private Attributes</h2></td></tr>
 <p>The detection behind <a class="el" href="#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid-rebase, -merge, -cherry-pick or -revert.">refuseUnfinishedGitOperation()</a>, without emitting a refusal: a backend re-checks it when a save's gpg step has finished (a pull queued before the save, from the asynchronous Update, may have finished and left a conflict meanwhile) so the entry is not placed or committed into the operation. </p><dl class="section return"><dt>Returns</dt><dd>A ready-to-show reason naming the operation (rebase, merge, cherry-pick or revert), or an empty string when none is in progress, git is off, or the store is not a repository. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00885">885</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-103" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-103-summary" class="dynsummary">
-</div>
-<div id="dynsection-103-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a433f0bf99f1a4fdd8e56944ff234eb2b_cgraph.svg" width="378" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-104" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-104" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-104-summary" class="dynsummary">
 </div>
 <div id="dynsection-104-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a433f0bf99f1a4fdd8e56944ff234eb2b_cgraph.svg" width="378" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-105" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-105-summary" class="dynsummary">
+</div>
+<div id="dynsection-105-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a433f0bf99f1a4fdd8e56944ff234eb2b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -4072,16 +4124,16 @@ Private Attributes</h2></td></tr>
 <p>Update environment for subprocesses. </p>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00636">636</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-105" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-105-summary" class="dynsummary">
-</div>
-<div id="dynsection-105-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_cgraph.svg" width="538" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-106" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-106" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-106-summary" class="dynsummary">
 </div>
 <div id="dynsection-106-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_cgraph.svg" width="538" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-107" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-107-summary" class="dynsummary">
+</div>
+<div id="dynsection-107-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_icgraph.svg" width="100%" height="598"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -4137,16 +4189,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether the list may be encrypted to. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01029">1029</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-107" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-107-summary" class="dynsummary">
-</div>
-<div id="dynsection-107-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_aa048c50cd2e6fa95033b4c69910e04bb_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-108" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-108" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-108-summary" class="dynsummary">
 </div>
 <div id="dynsection-108-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_aa048c50cd2e6fa95033b4c69910e04bb_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-109" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-109-summary" class="dynsummary">
+</div>
+<div id="dynsection-109-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_aa048c50cd2e6fa95033b4c69910e04bb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -4185,16 +4237,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code class="param">base</code>, the two variables recomputed (left as they are when the store keeps to a parent repository or there is none). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00692">692</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-109" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-109-summary" class="dynsummary">
-</div>
-<div id="dynsection-109-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ab81d7dbed9e18a9368c2be06876c4630_cgraph.svg" width="558" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-110" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-110" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-110-summary" class="dynsummary">
 </div>
 <div id="dynsection-110-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ab81d7dbed9e18a9368c2be06876c4630_cgraph.svg" width="558" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-111" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-111-summary" class="dynsummary">
+</div>
+<div id="dynsection-111-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ab81d7dbed9e18a9368c2be06876c4630_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -4233,10 +4285,10 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The remaining lines, joined with "\n". </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00583">583</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-111" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-111-summary" class="dynsummary">
+<div id="dynsection-112" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-112-summary" class="dynsummary">
 </div>
-<div id="dynsection-111-content" class="dyncontent hidden">
+<div id="dynsection-112-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ab637f5baaa9cba439f61e4936e437e6f_icgraph.svg" width="100%" height="494"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -4295,6 +4347,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="afeaea2f12756a0e114d66c40c0860da0" name="afeaea2f12756a0e114d66c40c0860da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeaea2f12756a0e114d66c40c0860da0">&#9670;&#160;</a></span>kBlockingPullMs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Pass::kBlockingPullMs = 30000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How long the pull before an edit may block the window. </p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00183">183</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
 <a id="ae6e6a7bafd0f0753db6bae3205c22c72" name="ae6e6a7bafd0f0753db6bae3205c22c72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6e6a7bafd0f0753db6bae3205c22c72">&#9670;&#160;</a></span>kMaxPlaintextBytes</h2>
 
@@ -4318,7 +4396,7 @@ Private Attributes</h2></td></tr>
 <p>Most bytes of plaintext a gpg decryption may produce. </p>
 <p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; gpg stops at this many (&ndash;max-output) instead of filling <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s memory. Far above any real entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00292">292</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00302">302</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4344,7 +4422,7 @@ Private Attributes</h2></td></tr>
 
 <p>Inserts that have started queueing but not yet reported; see queueInsert. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00766">766</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00783">783</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4370,7 +4448,7 @@ Private Attributes</h2></td></tr>
 
 <p>Files of the <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> calls still in flight, oldest first. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00764">764</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00781">781</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4396,7 +4474,7 @@ Private Attributes</h2></td></tr>
 
 <p>Set while <a class="el" href="#a45818547e0b844bd6f111a67b3e9b249" title="GitPush() for an automatic push, the one after a change. A backend that has to make the push later dr...">GitPushAutomatic()</a> runs <a class="el" href="#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Push changes to remote Git repository.">GitPush()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00762">762</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00779">779</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

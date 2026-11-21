@@ -1,0 +1,7 @@
+<map id="Pass::pullTimedOut" name="Pass::pullTimedOut">
+<area shape="rect" id="Node000001" title="The status&#45;bar text for a blocking pull stopped at its deadline." alt="" coords="217,32,363,60"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#ad7676bac39423557c1921497f36897e6" title="Run git pull in the store and wait for it, at most timeoutMs." alt="" coords="5,5,169,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,35,169,33,169,27,204,34"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#ad218ae042cc6d3322ecf10b4b6c45e6d" title="Run pass git pull and wait for it, at most timeoutMs." alt="" coords="14,57,160,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,57,161,65,160,59,204,57"/>
+</map>

@@ -111,7 +111,7 @@
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" target="_top" xlink:title="Pull with rebase.">
+<g id="a_Node000020"><a xlink:href="class_imitate_pass.html#ad7676bac39423557c1921497f36897e6" target="_top" xlink:title="Run git pull in the store and wait for it, at most timeoutMs.">
 <polygon fill="white" stroke="#666666" points="1571.75,-226.75 1449.25,-226.75 1449.25,-206 1571.75,-206 1571.75,-226.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1510.5" y="-213.25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull_b</text>
 </a>
@@ -129,7 +129,7 @@
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" target="_top" xlink:title="Pull with rebase.">
+<g id="a_Node000021"><a xlink:href="class_real_pass.html#ad218ae042cc6d3322ecf10b4b6c45e6d" target="_top" xlink:title="Run pass git pull and wait for it, at most timeoutMs.">
 <polygon fill="white" stroke="#666666" points="2182.62,-149.75 2073.62,-149.75 2073.62,-129 2182.62,-129 2182.62,-149.75"/>
 <text xml:space="preserve" text-anchor="middle" x="2128.12" y="-136.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::GitPull_b</text>
 </a>

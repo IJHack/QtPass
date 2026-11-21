@@ -13,7 +13,7 @@ var class_real_pass =
     [ "finishLinkCommit", "class_real_pass.html#a014fcc263c7f47c2ee0163d84b7a3dd7", null ],
     [ "GitInit", "class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f", null ],
     [ "GitPull", "class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3", null ],
-    [ "GitPull_b", "class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210", null ],
+    [ "GitPull_b", "class_real_pass.html#ad218ae042cc6d3322ecf10b4b6c45e6d", null ],
     [ "GitPush", "class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b", null ],
     [ "Grep", "class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3", null ],
     [ "Init", "class_real_pass.html#a12a7e631a5040eee70da06585fe047ba", null ],

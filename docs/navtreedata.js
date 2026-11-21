@@ -67,11 +67,11 @@ var NAVTREEINDEX =
 "annotated.html",
 "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ae037bb4b2fc6b1868bafa9f762c26365",
 "class_main_window.html#a770b38c0ee4e6ffcd234857b039061ee",
-"class_password_dialog.html#a546ab45626d21a2ecbe7646605857a11",
-"class_rnp_crypto.html#a4c706b9a5c20ce2c1eb8c666c8af1bcd",
-"class_util.html#a2a7a32586578a9b631bc6b2a821ce616",
-"namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556",
-"struct_imitate_pass_1_1_reencrypt_result.html#a09ae84d683a38f225f9fe3927a614d08"
+"class_password_dialog.html#a4e1824ae0890f4fbbad953930008cc9b",
+"class_rnp_crypto.html#a389051ff44ce503a7315d95087c2f0dc",
+"class_util.html#a158b1927cee3cffacaec8d583fbf72ad",
+"namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a",
+"struct_imitate_pass_1_1_pending_move.html#ab37e6953543c6864bdd9326e3f8f4165"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

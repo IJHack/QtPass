@@ -8,7 +8,7 @@
 <area shape="poly" id="edge31_Node000001_Node000016" title=" " alt="" coords="1828,428,1666,419,1477,413,675,413,537,409,400,399,180,374,179,369,401,394,537,404,675,408,1477,408,1666,414,1834,427"/>
 <area shape="rect" id="Node000017" href="$class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced" title="Pull from remote." alt="" coords="1643,448,1791,475"/>
 <area shape="poly" id="edge23_Node000001_Node000017" title=" " alt="" coords="1834,447,1792,455,1791,450,1829,448"/>
-<area shape="rect" id="Node000018" href="$class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" title="Pull with rebase." alt="" coords="1635,500,1799,527"/>
+<area shape="rect" id="Node000018" href="$class_imitate_pass.html#ad7676bac39423557c1921497f36897e6" title="Run git pull in the store and wait for it, at most timeoutMs." alt="" coords="1635,500,1799,527"/>
 <area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="1881,455,1800,489,1764,502,1763,496,1798,484,1876,457"/>
 <area shape="rect" id="Node000019" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote. While a re&#45;encryption runs the push is held (Users ▸ OK and a copy ask for it as soon..." alt="" coords="864,296,1020,323"/>
 <area shape="poly" id="edge25_Node000001_Node000019" title=" " alt="" coords="1875,416,1798,395,1690,374,1578,357,1359,333,1165,319,1020,313,1020,308,1165,314,1360,327,1579,351,1691,368,1799,389,1881,416"/>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 19:09:34</td>
+            <td class="headerValue">2026-11-21 19:51:03</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -382,7 +382,7 @@
 <span id="L309"><span class="lineNum">     309</span>              : </span>
 <span id="L310"><span class="lineNum">     310</span>              :   /// An insert's entry and its fingerprint when the insert started to run</span>
 <span id="L311"><span class="lineNum">     311</span>              :   /// (empty when the entry did not exist).</span>
-<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">          99 :   struct InsertRecord {</span></span>
+<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">         100 :   struct InsertRecord {</span></span>
 <span id="L313"><span class="lineNum">     313</span>              :     QString target;    ///&lt; The entry's file.</span>
 <span id="L314"><span class="lineNum">     314</span>              :     QByteArray before; ///&lt; Its fingerprint when the insert started.</span>
 <span id="L315"><span class="lineNum">     315</span>              :   };</span>
@@ -442,92 +442,93 @@
 <span id="L369"><span class="lineNum">     369</span>              :    */</span>
 <span id="L370"><span class="lineNum">     370</span>              :   void GitPull() override;</span>
 <span id="L371"><span class="lineNum">     371</span>              :   /**</span>
-<span id="L372"><span class="lineNum">     372</span>              :    * @brief Pull with rebase.</span>
-<span id="L373"><span class="lineNum">     373</span>              :    */</span>
-<span id="L374"><span class="lineNum">     374</span>              :   void GitPull_b() override;</span>
-<span id="L375"><span class="lineNum">     375</span>              :   /**</span>
-<span id="L376"><span class="lineNum">     376</span>              :    * @brief Push changes to remote.</span>
-<span id="L377"><span class="lineNum">     377</span>              :    */</span>
-<span id="L378"><span class="lineNum">     378</span>              :   void GitPush() override;</span>
-<span id="L379"><span class="lineNum">     379</span>              : </span>
-<span id="L380"><span class="lineNum">     380</span>              :   // Password operations</span>
-<span id="L381"><span class="lineNum">     381</span>              :   /**</span>
-<span id="L382"><span class="lineNum">     382</span>              :    * @brief Show decrypted password.</span>
-<span id="L383"><span class="lineNum">     383</span>              :    * @param file Path to password file.</span>
-<span id="L384"><span class="lineNum">     384</span>              :    */</span>
-<span id="L385"><span class="lineNum">     385</span>              :   void Show(QString file) override;</span>
-<span id="L386"><span class="lineNum">     386</span>              :   /**</span>
-<span id="L387"><span class="lineNum">     387</span>              :    * @brief Insert new password.</span>
-<span id="L388"><span class="lineNum">     388</span>              :    * @param file Path to password file.</span>
-<span id="L389"><span class="lineNum">     389</span>              :    * @param newValue Password content.</span>
-<span id="L390"><span class="lineNum">     390</span>              :    * @param overwrite true to overwrite existing.</span>
-<span id="L391"><span class="lineNum">     391</span>              :    */</span>
-<span id="L392"><span class="lineNum">     392</span>              :   void Insert(QString file, QString newValue, bool overwrite) override;</span>
-<span id="L393"><span class="lineNum">     393</span>              :   /**</span>
-<span id="L394"><span class="lineNum">     394</span>              :    * @brief Remove an entry or folder with `pass rm`.</span>
-<span id="L395"><span class="lineNum">     395</span>              :    *</span>
-<span id="L396"><span class="lineNum">     396</span>              :    * A folder that is a link is unlinked here instead, without deleting its</span>
-<span id="L397"><span class="lineNum">     397</span>              :    * target; that removal is committed only when Git is enabled and the</span>
-<span id="L398"><span class="lineNum">     398</span>              :    * tracking lookup and index removal both report success.</span>
-<span id="L399"><span class="lineNum">     399</span>              :    * @param file Store-relative entry path, without `.gpg` for a password</span>
-<span id="L400"><span class="lineNum">     400</span>              :    *        file.</span>
-<span id="L401"><span class="lineNum">     401</span>              :    * @param isDir true to remove a directory; false to remove a password</span>
-<span id="L402"><span class="lineNum">     402</span>              :    *        file.</span>
-<span id="L403"><span class="lineNum">     403</span>              :    */</span>
-<span id="L404"><span class="lineNum">     404</span>              :   void Remove(QString file, bool isDir) override;</span>
-<span id="L405"><span class="lineNum">     405</span>              :   /**</span>
-<span id="L406"><span class="lineNum">     406</span>              :    * @brief Initialize password store.</span>
-<span id="L407"><span class="lineNum">     407</span>              :    * @param path Store root path.</span>
-<span id="L408"><span class="lineNum">     408</span>              :    * @param users GPG recipients.</span>
-<span id="L409"><span class="lineNum">     409</span>              :    */</span>
-<span id="L410"><span class="lineNum">     410</span>              :   void Init(QString path, const QList&lt;UserInfo&gt; &amp;users) override;</span>
-<span id="L411"><span class="lineNum">     411</span>              : </span>
-<span id="L412"><span class="lineNum">     412</span>              : protected:</span>
-<span id="L413"><span class="lineNum">     413</span>              :   /**</span>
-<span id="L414"><span class="lineNum">     414</span>              :    * @brief Finish a process; a linked-folder removal commit (GIT_COMMIT,</span>
-<span id="L415"><span class="lineNum">     415</span>              :    * which RealPass uses for nothing else) is judged by finishLinkCommit().</span>
-<span id="L416"><span class="lineNum">     416</span>              :    * @param id Process identifier.</span>
-<span id="L417"><span class="lineNum">     417</span>              :    * @param exitCode Exit code.</span>
-<span id="L418"><span class="lineNum">     418</span>              :    * @param out Standard output.</span>
-<span id="L419"><span class="lineNum">     419</span>              :    * @param err Standard error.</span>
-<span id="L420"><span class="lineNum">     420</span>              :    */</span>
-<span id="L421"><span class="lineNum">     421</span>              :   void finished(int id, int exitCode, const QString &amp;out,</span>
-<span id="L422"><span class="lineNum">     422</span>              :                 const QString &amp;err) override;</span>
-<span id="L423"><span class="lineNum">     423</span>              : </span>
-<span id="L424"><span class="lineNum">     424</span>              :   // Pass interface</span>
-<span id="L425"><span class="lineNum">     425</span>              : public:</span>
-<span id="L426"><span class="lineNum">     426</span>              :   /**</span>
-<span id="L427"><span class="lineNum">     427</span>              :    * @brief Move password file or directory.</span>
-<span id="L428"><span class="lineNum">     428</span>              :    * @param src Source path.</span>
-<span id="L429"><span class="lineNum">     429</span>              :    * @param dest Destination path.</span>
-<span id="L430"><span class="lineNum">     430</span>              :    * @param force Overwrite existing.</span>
-<span id="L431"><span class="lineNum">     431</span>              :    */</span>
-<span id="L432"><span class="lineNum">     432</span>              :   void Move(const QString src, const QString dest, const bool force) override;</span>
-<span id="L433"><span class="lineNum">     433</span>              :   /**</span>
-<span id="L434"><span class="lineNum">     434</span>              :    * @brief Copy password file or directory.</span>
-<span id="L435"><span class="lineNum">     435</span>              :    * @param src Source path.</span>
-<span id="L436"><span class="lineNum">     436</span>              :    * @param dest Destination path.</span>
-<span id="L437"><span class="lineNum">     437</span>              :    * @param force Overwrite existing.</span>
-<span id="L438"><span class="lineNum">     438</span>              :    */</span>
-<span id="L439"><span class="lineNum">     439</span>              :   void Copy(const QString src, const QString dest, const bool force) override;</span>
-<span id="L440"><span class="lineNum">     440</span>              :   /**</span>
-<span id="L441"><span class="lineNum">     441</span>              :    * @brief Search all password content by GPG-decrypting each real `.gpg`</span>
-<span id="L442"><span class="lineNum">     442</span>              :    * file, as ImitatePass does.</span>
-<span id="L443"><span class="lineNum">     443</span>              :    *</span>
-<span id="L444"><span class="lineNum">     444</span>              :    * Not `pass grep`: that enumerates with `find -L`, which follows a link</span>
-<span id="L445"><span class="lineNum">     445</span>              :    * out of the store and decrypts what it finds there. Same pattern</span>
-<span id="L446"><span class="lineNum">     446</span>              :    * semantics as ImitatePass::Grep (QRegularExpression).</span>
-<span id="L447"><span class="lineNum">     447</span>              :    * @param pattern Search pattern (QRegularExpression).</span>
-<span id="L448"><span class="lineNum">     448</span>              :    * @param caseInsensitive true for case-insensitive search.</span>
-<span id="L449"><span class="lineNum">     449</span>              :    */</span>
-<span id="L450"><span class="lineNum">     450</span>              :   void Grep(QString pattern, bool caseInsensitive) override;</span>
-<span id="L451"><span class="lineNum">     451</span>              :   /**</span>
-<span id="L452"><span class="lineNum">     452</span>              :    * @brief Stop the running search (NativeGrep::cancel()).</span>
-<span id="L453"><span class="lineNum">     453</span>              :    */</span>
-<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">          24 :   void CancelGrep() override { m_grep.cancel(); }</span></span>
-<span id="L455"><span class="lineNum">     455</span>              : };</span>
-<span id="L456"><span class="lineNum">     456</span>              : </span>
-<span id="L457"><span class="lineNum">     457</span>              : #endif // SRC_REALPASS_H_</span>
+<span id="L372"><span class="lineNum">     372</span>              :    * @brief Run `pass git pull` and wait for it, at most @p timeoutMs.</span>
+<span id="L373"><span class="lineNum">     373</span>              :    * @param timeoutMs Most milliseconds to wait (Pass::kBlockingPullMs).</span>
+<span id="L374"><span class="lineNum">     374</span>              :    */</span>
+<span id="L375"><span class="lineNum">     375</span>              :   void GitPull_b(int timeoutMs) override;</span>
+<span id="L376"><span class="lineNum">     376</span>              :   /**</span>
+<span id="L377"><span class="lineNum">     377</span>              :    * @brief Push changes to remote.</span>
+<span id="L378"><span class="lineNum">     378</span>              :    */</span>
+<span id="L379"><span class="lineNum">     379</span>              :   void GitPush() override;</span>
+<span id="L380"><span class="lineNum">     380</span>              : </span>
+<span id="L381"><span class="lineNum">     381</span>              :   // Password operations</span>
+<span id="L382"><span class="lineNum">     382</span>              :   /**</span>
+<span id="L383"><span class="lineNum">     383</span>              :    * @brief Show decrypted password.</span>
+<span id="L384"><span class="lineNum">     384</span>              :    * @param file Path to password file.</span>
+<span id="L385"><span class="lineNum">     385</span>              :    */</span>
+<span id="L386"><span class="lineNum">     386</span>              :   void Show(QString file) override;</span>
+<span id="L387"><span class="lineNum">     387</span>              :   /**</span>
+<span id="L388"><span class="lineNum">     388</span>              :    * @brief Insert new password.</span>
+<span id="L389"><span class="lineNum">     389</span>              :    * @param file Path to password file.</span>
+<span id="L390"><span class="lineNum">     390</span>              :    * @param newValue Password content.</span>
+<span id="L391"><span class="lineNum">     391</span>              :    * @param overwrite true to overwrite existing.</span>
+<span id="L392"><span class="lineNum">     392</span>              :    */</span>
+<span id="L393"><span class="lineNum">     393</span>              :   void Insert(QString file, QString newValue, bool overwrite) override;</span>
+<span id="L394"><span class="lineNum">     394</span>              :   /**</span>
+<span id="L395"><span class="lineNum">     395</span>              :    * @brief Remove an entry or folder with `pass rm`.</span>
+<span id="L396"><span class="lineNum">     396</span>              :    *</span>
+<span id="L397"><span class="lineNum">     397</span>              :    * A folder that is a link is unlinked here instead, without deleting its</span>
+<span id="L398"><span class="lineNum">     398</span>              :    * target; that removal is committed only when Git is enabled and the</span>
+<span id="L399"><span class="lineNum">     399</span>              :    * tracking lookup and index removal both report success.</span>
+<span id="L400"><span class="lineNum">     400</span>              :    * @param file Store-relative entry path, without `.gpg` for a password</span>
+<span id="L401"><span class="lineNum">     401</span>              :    *        file.</span>
+<span id="L402"><span class="lineNum">     402</span>              :    * @param isDir true to remove a directory; false to remove a password</span>
+<span id="L403"><span class="lineNum">     403</span>              :    *        file.</span>
+<span id="L404"><span class="lineNum">     404</span>              :    */</span>
+<span id="L405"><span class="lineNum">     405</span>              :   void Remove(QString file, bool isDir) override;</span>
+<span id="L406"><span class="lineNum">     406</span>              :   /**</span>
+<span id="L407"><span class="lineNum">     407</span>              :    * @brief Initialize password store.</span>
+<span id="L408"><span class="lineNum">     408</span>              :    * @param path Store root path.</span>
+<span id="L409"><span class="lineNum">     409</span>              :    * @param users GPG recipients.</span>
+<span id="L410"><span class="lineNum">     410</span>              :    */</span>
+<span id="L411"><span class="lineNum">     411</span>              :   void Init(QString path, const QList&lt;UserInfo&gt; &amp;users) override;</span>
+<span id="L412"><span class="lineNum">     412</span>              : </span>
+<span id="L413"><span class="lineNum">     413</span>              : protected:</span>
+<span id="L414"><span class="lineNum">     414</span>              :   /**</span>
+<span id="L415"><span class="lineNum">     415</span>              :    * @brief Finish a process; a linked-folder removal commit (GIT_COMMIT,</span>
+<span id="L416"><span class="lineNum">     416</span>              :    * which RealPass uses for nothing else) is judged by finishLinkCommit().</span>
+<span id="L417"><span class="lineNum">     417</span>              :    * @param id Process identifier.</span>
+<span id="L418"><span class="lineNum">     418</span>              :    * @param exitCode Exit code.</span>
+<span id="L419"><span class="lineNum">     419</span>              :    * @param out Standard output.</span>
+<span id="L420"><span class="lineNum">     420</span>              :    * @param err Standard error.</span>
+<span id="L421"><span class="lineNum">     421</span>              :    */</span>
+<span id="L422"><span class="lineNum">     422</span>              :   void finished(int id, int exitCode, const QString &amp;out,</span>
+<span id="L423"><span class="lineNum">     423</span>              :                 const QString &amp;err) override;</span>
+<span id="L424"><span class="lineNum">     424</span>              : </span>
+<span id="L425"><span class="lineNum">     425</span>              :   // Pass interface</span>
+<span id="L426"><span class="lineNum">     426</span>              : public:</span>
+<span id="L427"><span class="lineNum">     427</span>              :   /**</span>
+<span id="L428"><span class="lineNum">     428</span>              :    * @brief Move password file or directory.</span>
+<span id="L429"><span class="lineNum">     429</span>              :    * @param src Source path.</span>
+<span id="L430"><span class="lineNum">     430</span>              :    * @param dest Destination path.</span>
+<span id="L431"><span class="lineNum">     431</span>              :    * @param force Overwrite existing.</span>
+<span id="L432"><span class="lineNum">     432</span>              :    */</span>
+<span id="L433"><span class="lineNum">     433</span>              :   void Move(const QString src, const QString dest, const bool force) override;</span>
+<span id="L434"><span class="lineNum">     434</span>              :   /**</span>
+<span id="L435"><span class="lineNum">     435</span>              :    * @brief Copy password file or directory.</span>
+<span id="L436"><span class="lineNum">     436</span>              :    * @param src Source path.</span>
+<span id="L437"><span class="lineNum">     437</span>              :    * @param dest Destination path.</span>
+<span id="L438"><span class="lineNum">     438</span>              :    * @param force Overwrite existing.</span>
+<span id="L439"><span class="lineNum">     439</span>              :    */</span>
+<span id="L440"><span class="lineNum">     440</span>              :   void Copy(const QString src, const QString dest, const bool force) override;</span>
+<span id="L441"><span class="lineNum">     441</span>              :   /**</span>
+<span id="L442"><span class="lineNum">     442</span>              :    * @brief Search all password content by GPG-decrypting each real `.gpg`</span>
+<span id="L443"><span class="lineNum">     443</span>              :    * file, as ImitatePass does.</span>
+<span id="L444"><span class="lineNum">     444</span>              :    *</span>
+<span id="L445"><span class="lineNum">     445</span>              :    * Not `pass grep`: that enumerates with `find -L`, which follows a link</span>
+<span id="L446"><span class="lineNum">     446</span>              :    * out of the store and decrypts what it finds there. Same pattern</span>
+<span id="L447"><span class="lineNum">     447</span>              :    * semantics as ImitatePass::Grep (QRegularExpression).</span>
+<span id="L448"><span class="lineNum">     448</span>              :    * @param pattern Search pattern (QRegularExpression).</span>
+<span id="L449"><span class="lineNum">     449</span>              :    * @param caseInsensitive true for case-insensitive search.</span>
+<span id="L450"><span class="lineNum">     450</span>              :    */</span>
+<span id="L451"><span class="lineNum">     451</span>              :   void Grep(QString pattern, bool caseInsensitive) override;</span>
+<span id="L452"><span class="lineNum">     452</span>              :   /**</span>
+<span id="L453"><span class="lineNum">     453</span>              :    * @brief Stop the running search (NativeGrep::cancel()).</span>
+<span id="L454"><span class="lineNum">     454</span>              :    */</span>
+<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">          24 :   void CancelGrep() override { m_grep.cancel(); }</span></span>
+<span id="L456"><span class="lineNum">     456</span>              : };</span>
+<span id="L457"><span class="lineNum">     457</span>              : </span>
+<span id="L458"><span class="lineNum">     458</span>              : #endif // SRC_REALPASS_H_</span>
         </pre>
               </td>
             </tr>

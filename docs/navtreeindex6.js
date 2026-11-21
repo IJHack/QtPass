@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a":[2,0,0,2,14],
+"namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023":[2,0,0,2,17],
 "namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556":[2,0,0,2,2],
 "namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36":[2,0,0,2,3],
 "namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9":[2,0,0,2,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "struct_imitate_pass_1_1_pending_move.html":[1,0,0,1],
 "struct_imitate_pass_1_1_pending_move.html#a2d31b186e51a677de5bbb685bc8ed259":[1,0,0,1,3],
 "struct_imitate_pass_1_1_pending_move.html#aa0f8e48e4e9dba13a43698c191e232fb":[1,0,0,1,0],
-"struct_imitate_pass_1_1_pending_move.html#aae21844972c7a3dec073474296acbaca":[1,0,0,1,1],
-"struct_imitate_pass_1_1_pending_move.html#ab37e6953543c6864bdd9326e3f8f4165":[1,0,0,1,2],
-"struct_imitate_pass_1_1_reencrypt_result.html":[1,0,0,5]
+"struct_imitate_pass_1_1_pending_move.html#aae21844972c7a3dec073474296acbaca":[1,0,0,1,1]
 };

@@ -39,7 +39,7 @@ var class_imitate_pass =
     [ "gitConfigured", "class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87", null ],
     [ "GitInit", "class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb", null ],
     [ "GitPull", "class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced", null ],
-    [ "GitPull_b", "class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2", null ],
+    [ "GitPull_b", "class_imitate_pass.html#ad7676bac39423557c1921497f36897e6", null ],
     [ "GitPush", "class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9", null ],
     [ "gitReady", "class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219", null ],
     [ "gitTracks", "class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3", null ],
