@@ -932,6 +932,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   quadratic in such marks; an address whose host and port run past 259
   characters, longer than any real hostname, is now shown as plain text
   without asking Qt (scan finding ANT-2026-IQ1GNHQA)
+- A template gives at most 1000 fields, as an entry does. Every field is a
+  row in the password dialog, and a store's `.templates` of tens of
+  thousands of one-letter lines froze Add password for half a minute (scan
+  finding ANT-2026-8WAS09ZR)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

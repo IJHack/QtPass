@@ -74,7 +74,9 @@ public:
   /**
    * @brief The field names of the template in the settings: one per line,
    * with comment lines (starting with `#`, such as a `# secret:` line) left
-   * out. Other lines are kept as they are, empty ones too.
+   * out. Other lines are kept as they are, empty ones too, up to
+   * FileContent::kMaxNamedFields fields that are not empty: each becomes a
+   * row of widgets, and the store's `.templates` is anyone's to write.
    * @param templateText The template's text, newline-separated.
    * @return The field names.
    */

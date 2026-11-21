@@ -15,6 +15,7 @@
 #include <QThread>
 #include <QUuid>
 #include <QtTest>
+#include <algorithm>
 #ifdef Q_OS_WIN
 #include <qt_windows.h>
 #endif
@@ -373,6 +374,7 @@ private Q_SLOTS:
   void templateSecretMarkerLines();
   void readSecretFieldsFromEverySection();
   void templateFieldsSkipCommentLines();
+  void templateFieldsAreCappedLikeAnEntrys();
   void readTemplatesEmptySectionIgnored();
   void readTemplatesCommentsIgnored();
   void writeTemplatesRoundTrip();
@@ -4482,6 +4484,32 @@ void tst_util::templateFieldsSkipCommentLines() {
                                                "\n  # note\npin")),
            (QStringList{QStringLiteral("login"), QStringLiteral("url"),
                         QString(), QStringLiteral("pin")}));
+}
+
+/**
+ * @brief A template gives at most as many fields as an entry: each becomes a
+ *        row of widgets in the password dialog, and a store's .templates of
+ *        tens of thousands of one-letter lines froze Add password for half a
+ *        minute (scan finding ANT-2026-8WAS09ZR). Empty lines between them
+ *        are not fields and do not count.
+ */
+void tst_util::templateFieldsAreCappedLikeAnEntrys() {
+  const QString text =
+      QStringLiteral("a\n\n").repeated(FileContent::kMaxNamedFields + 500) +
+      QStringLiteral("last");
+  const QStringList fields = TemplateIO::fieldsIn(text);
+  const auto named =
+      std::count_if(fields.cbegin(), fields.cend(),
+                    [](const QString &f) { return !f.isEmpty(); });
+  QCOMPARE(named, FileContent::kMaxNamedFields);
+  QVERIFY(!fields.contains(QStringLiteral("last")));
+  QCOMPARE(fields.size(), 2 * FileContent::kMaxNamedFields);
+
+  const QStringList few = TemplateIO::fieldsIn(
+      QStringLiteral("a\n").repeated(FileContent::kMaxNamedFields - 1) +
+      QStringLiteral("last"));
+  QCOMPARE(few.size(), FileContent::kMaxNamedFields);
+  QCOMPARE(few.last(), QStringLiteral("last"));
 }
 
 void tst_util::readTemplatesEmptySectionIgnored() {
