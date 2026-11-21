@@ -1,6 +1,6 @@
 var class_import_key_dialog =
 [
-    [ "ImportKeyDialog", "class_import_key_dialog.html#acc2623c9f02a244daa1efff235b5704a", null ],
+    [ "ImportKeyDialog", "class_import_key_dialog.html#a7a454d3a77debc1cb8d34b8761f5d5a4", null ],
     [ "~ImportKeyDialog", "class_import_key_dialog.html#a3f791b9599a6c0903fb4c244d01c58bb", null ],
     [ "importedKeyId", "class_import_key_dialog.html#a6ed8032e86a5f18fd07e23abcb8c5404", null ],
     [ "importFromString", "class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94", null ],
@@ -11,7 +11,9 @@ var class_import_key_dialog =
     [ "parseGpgImportOutput", "class_import_key_dialog.html#a5cac84f9f66c898bcf885abd67aaecec", null ],
     [ "showError", "class_import_key_dialog.html#a651aaa533aeccc853985fe53ce2f5d9a", null ],
     [ "showSuccess", "class_import_key_dialog.html#adef5ec5248765634e31af44dddfa3948", null ],
+    [ "kImportTimeoutMs", "class_import_key_dialog.html#ab35cd83c791ca52bc7b050e22fd0a76a", null ],
     [ "m_gpgExe", "class_import_key_dialog.html#acdccd08b8f1f2198f8a8a8ba10304830", null ],
     [ "m_importedKeyId", "class_import_key_dialog.html#a7eacdb5d2d478f846bbe54be938e1538", null ],
+    [ "m_timeoutMs", "class_import_key_dialog.html#a7d31f02d606027453ef8d109d2a53a73", null ],
     [ "ui", "class_import_key_dialog.html#aef777c2c76f289d635cc3ba8b6ca0acf", null ]
 ];

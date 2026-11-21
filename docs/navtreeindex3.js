@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"class_password_dialog.html#a43daa037d9ca640d4159c35a7d3aa0d6":[1,5,11,8],
+"class_password_dialog.html#a4c48eba727163e0d1533b951dc54e9b7":[1,5,11,13],
 "class_password_dialog.html#a4d4d0ed37161f3f768e27ffea9267bfc":[1,5,11,42],
 "class_password_dialog.html#a4e1824ae0890f4fbbad953930008cc9b":[1,5,11,37],
 "class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736":[1,5,11,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa":[1,0,5,30],
 "class_real_pass.html#af4b087c502643f89c605c2c80e172cda":[1,0,5,19],
 "class_real_pass.html#af4c87fe10cd48503c70e7e78ed135fab":[1,0,5,44],
-"class_rnp_crypto.html":[1,0,6],
-"class_rnp_crypto.html#a08e85cba6d5f77da56509a1882273222":[1,0,6,16],
-"class_rnp_crypto.html#a30389cc8522a6d684ecb8caacf934228":[1,0,6,14]
+"class_rnp_crypto.html":[1,0,6]
 };

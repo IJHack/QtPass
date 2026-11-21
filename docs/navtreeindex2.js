@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"class_main_window.html#a7491c2974ab54018ac9a7d1738a4f654":[1,5,9,82],
+"class_main_window.html#a769fe025472b4faa73f4846b92b552ed":[1,5,9,16],
 "class_main_window.html#a770b38c0ee4e6ffcd234857b039061ee":[1,5,9,63],
 "class_main_window.html#a79cf4ec54be24e7deecc7bbb9a1f36ec":[1,5,9,96],
 "class_main_window.html#a7cb8cceb6798c42b16f050462c37650f":[1,5,9,52],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "class_password_dialog.html#a3acaf78f140cb84e22fcdb74b34c94c6":[1,5,11,54],
 "class_password_dialog.html#a3be525fe15b6af1939dad714e3244733":[1,5,11,7],
 "class_password_dialog.html#a3bf288e273871a79ae041830fa82ae6a":[1,5,11,26],
-"class_password_dialog.html#a406798d3ed4909913a9d302d3823ab99":[1,5,11,36],
-"class_password_dialog.html#a43daa037d9ca640d4159c35a7d3aa0d6":[1,5,11,8],
-"class_password_dialog.html#a4c48eba727163e0d1533b951dc54e9b7":[1,5,11,13]
+"class_password_dialog.html#a406798d3ed4909913a9d302d3823ab99":[1,5,11,36]
 };
