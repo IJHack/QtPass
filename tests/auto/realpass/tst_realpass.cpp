@@ -9,6 +9,9 @@
 #include <QTemporaryDir>
 #include <QThread>
 #include <QtTest>
+#ifdef Q_OS_UNIX
+#include <csignal>
+#endif
 
 #include "../../../src/appsettings.h"
 #include "../../../src/gpgidgeneration.h"
@@ -69,6 +72,7 @@ private slots:
   void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
   void aLinkedListIsRefusedWithoutASigningKey();
   void gitPullBlockingReturnsAfterPassRanWhateverItsExitCode();
+  void gitPullBlockingStopsAtItsDeadline();
   void linkedFolderThatCannotBeUnlinkedReportsDeleteFailed();
   void linkedFolderKnownToGitIsForgottenByGitAlone();
   void linkedFolderRemovalSaysWhenTheCommitFails();
@@ -1752,6 +1756,48 @@ void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
 }
 
 /**
+ * @brief The pull before an edit stops at its deadline: a remote that never
+ *        answers froze the window, autoclear included (scan finding
+ *        ANT-2026-OVSRX5SC). The status bar says it did not finish.
+ */
+void tst_realpass::gitPullBlockingStopsAtItsDeadline() {
+  const QString silent =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-silent"));
+  {
+    QFile f(silent);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    // As pass runs git: a child that would go on pulling.
+    f.write(QStringLiteral("#!/bin/sh\nsleep 30 &\necho $! > '%1'\nwait\n")
+                .arg(QDir(m_dir.path()).filePath(QStringLiteral("child.pid")))
+                .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  AppSettings settings = m_settings;
+  settings.passExecutable = silent;
+  RealPass pass;
+  pass.init(settings);
+  QSignalSpy statusSpy(&pass, &Pass::statusMsg);
+  QElapsedTimer timer;
+  timer.start();
+  pass.GitPull_b(300);
+  QVERIFY2(timer.elapsed() < 5000,
+           qPrintable(QString::number(timer.elapsed())));
+  QCOMPARE(statusSpy.count(), 1);
+  const QString msg = statusSpy.first().at(0).toString();
+  QVERIFY2(msg.contains(QStringLiteral("did not finish")), qPrintable(msg));
+#ifdef Q_OS_UNIX
+  // The pull's own child is stopped too, not left pulling into the store.
+  QFile pidFile(QDir(m_dir.path()).filePath(QStringLiteral("child.pid")));
+  QVERIFY(pidFile.open(QIODevice::ReadOnly));
+  const auto child = static_cast<pid_t>(pidFile.readAll().trimmed().toInt());
+  QVERIFY(child > 0);
+  QTRY_VERIFY_WITH_TIMEOUT(::kill(child, 0) != 0, 3000);
+#endif
+}
+
+/**
  * @brief GitPull_b blocks: when it returns, the stand-in has already run
  *        `git pull` (the log exists without waiting), in the store's
  *        environment: without PASSWORD_STORE_DIR, pass pulled
@@ -1764,7 +1810,7 @@ void tst_realpass::gitPullBlockingReturnsAfterPassRanWhateverItsExitCode() {
   QSignalSpy criticalSpy(pass.data(), &Pass::critical);
   QSignalSpy errorSpy(pass.data(), &Pass::processErrorExit);
   QSignalSpy statusSpy(pass.data(), &Pass::statusMsg);
-  pass->GitPull_b();
+  pass->GitPull_b(Pass::kBlockingPullMs);
   QVERIFY2(QFile::exists(m_log),
            "GitPull_b must not return before the stand-in pass finished");
   Call call = waitForCall();
@@ -1802,7 +1848,7 @@ void tst_realpass::gitPullBlockingReturnsAfterPassRanWhateverItsExitCode() {
   // is emitted and checked (the guard restores the default, info and up).
   QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=true"));
   QTest::ignoreMessage(QtDebugMsg, "Git pull failed with code: 3");
-  pass->GitPull_b();
+  pass->GitPull_b(Pass::kBlockingPullMs);
   QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=false"));
   QVERIFY2(QFile::exists(m_log), "the failing pass must still have run");
   call = waitForCall();

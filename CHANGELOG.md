@@ -961,6 +961,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   quadratic in its length; text with a run of more than 10 000 characters
   without a space now wraps anywhere, in the main window, a field's row and
   the edit dialog's notes (scan finding ANT-2026-0RRSZ1YR)
+- With automatic pull on, the pull before an edit stops after 30 seconds.
+  It ran on the window's thread with no deadline, so a remote that never
+  answered froze QtPass, clipboard autoclear included. Past the deadline
+  the status bar says so, and the entry is edited as it is on this device
+  (scan finding ANT-2026-OVSRX5SC)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

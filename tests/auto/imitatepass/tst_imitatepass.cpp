@@ -40,6 +40,9 @@
 #include <QTemporaryDir>
 #include <QTextStream>
 #include <QtTest>
+#ifndef Q_OS_WIN
+#include <csignal>
+#endif
 #include <algorithm>
 #ifndef Q_OS_WIN
 #include <sys/stat.h>
@@ -671,6 +674,7 @@ private Q_SLOTS:
   void removeLinkedFolderWithGitUnlinksAndForgets();
   void gitInitAndPullRunThroughTheExecutor();
   void gitPullBlockingReportsAFailedPull();
+  void gitPullBlockingStopsAtItsDeadline();
   void insertRefusesWhenTheStoreHasNoRecipientList();
   void insertReportsAnUnusableTemporaryLocation();
   void removeEntryWithGitAsksGitToRemoveAndCommit();
@@ -4960,6 +4964,48 @@ void tst_imitatepass::gitInitAndPullRunThroughTheExecutor() {
 }
 
 /**
+ * @brief The pull before an edit stops at its deadline: a remote that never
+ *        answers froze the window, autoclear included (scan finding
+ *        ANT-2026-OVSRX5SC). The status bar says it did not finish.
+ */
+void tst_imitatepass::gitPullBlockingStopsAtItsDeadline() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  // As git runs its remote helper: a child that would go on fetching.
+  const QString childPid = QDir(storeDir.path()).filePath("child.pid");
+  const QString silentGit = writeScriptedGit(
+      storeDir.path(), gitLog,
+      QStringLiteral("  *' pull') sleep 30 & echo $! > '%1'; wait;;")
+          .arg(childPid));
+  QVERIFY(!silentGit.isEmpty());
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = silentGit;
+  ImitatePass pass;
+  pass.init(s);
+  QSignalSpy statusSpy(&pass, &Pass::statusMsg);
+  QElapsedTimer timer;
+  timer.start();
+  pass.GitPull_b(300);
+  QVERIFY2(timer.elapsed() < 5000,
+           qPrintable(QString::number(timer.elapsed())));
+  QCOMPARE(statusSpy.count(), 1);
+  const QString msg = statusSpy.first().at(0).toString();
+  QVERIFY2(msg.contains(QStringLiteral("did not finish")), qPrintable(msg));
+  // The pull's own child is stopped too.
+  QFile pidFile(childPid);
+  QVERIFY(pidFile.open(QIODevice::ReadOnly));
+  const auto child = static_cast<pid_t>(pidFile.readAll().trimmed().toInt());
+  QVERIFY(child > 0);
+  QTRY_VERIFY_WITH_TIMEOUT(::kill(child, 0) != 0, 3000);
+#endif
+}
+
+/**
  * @brief GitPull_b() blocks, runs git in the store (-C) and only speaks up
  *        when the pull fails, quoting git's stderr in the status bar.
  */
@@ -4982,7 +5028,7 @@ void tst_imitatepass::gitPullBlockingReportsAFailedPull() {
   pass.init(s);
   QSignalSpy statusSpy(&pass, &Pass::statusMsg);
 
-  pass.GitPull_b();
+  pass.GitPull_b(Pass::kBlockingPullMs);
   QVERIFY2(statusSpy.isEmpty(), "a pull that worked has nothing to say");
   QList<QStringList> calls = loggedCalls(gitLog);
   QCOMPARE(calls.size(), 1);
@@ -4993,7 +5039,7 @@ void tst_imitatepass::gitPullBlockingReportsAFailedPull() {
 
   s.gitExecutable = failingGit;
   pass.init(s);
-  pass.GitPull_b();
+  pass.GitPull_b(Pass::kBlockingPullMs);
   QCOMPARE(statusSpy.count(), 1);
   const QString msg = statusSpy.first().at(0).toString();
   QVERIFY2(msg.contains(QStringLiteral("Git pull failed")) &&
@@ -5004,7 +5050,7 @@ void tst_imitatepass::gitPullBlockingReportsAFailedPull() {
   s.gitExecutable.clear();
   pass.init(s);
   statusSpy.clear();
-  pass.GitPull_b();
+  pass.GitPull_b(Pass::kBlockingPullMs);
   QCOMPARE(loggedCalls(gitLog).size(), 2);
   QCOMPARE(statusSpy.count(), 1);
   QVERIFY2(statusSpy.first().at(0).toString().contains("not configured"),

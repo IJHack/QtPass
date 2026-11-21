@@ -612,7 +612,7 @@ auto MainWindow::config() -> bool {
 void MainWindow::onUpdate(bool block) {
   ui->statusBar->showMessage(tr("Updating password-store"), 2000);
   if (block) {
-    QtPassSettings::getPass()->GitPull_b();
+    QtPassSettings::getPass()->GitPull_b(Pass::kBlockingPullMs);
   } else {
     QtPassSettings::getPass()->GitPull();
   }

@@ -1302,3 +1302,12 @@ auto Pass::generateRandomPassword(const QString &charset, unsigned int length)
   }
   return out;
 }
+
+auto Pass::pullTimedOut(int timeoutMs) -> QString {
+  // The count in a variable first: older lupdate versions lose a tr() with
+  // template arguments among its arguments.
+  const int seconds = (timeoutMs + 999) / 1000;
+  return tr("Git pull did not finish within %n second(s); editing the entry "
+            "as it is here.",
+            nullptr, seconds);
+}

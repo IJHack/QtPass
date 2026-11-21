@@ -168,9 +168,19 @@ public:
    */
   virtual void GitPull() = 0;
   /**
-   * @brief Pull with rebase from remote.
+   * @brief Pull from the remote and wait for it, at most @p timeoutMs: the
+   * pull before an edit, on the GUI thread.
+   *
+   * A remote that never answers froze the window, autoclear timers
+   * included, until git gave up, which it may never do. Past the deadline
+   * git is stopped and the status bar says the pull did not finish.
+   * @param timeoutMs Most milliseconds to wait (kBlockingPullMs from the
+   *        window).
    */
-  virtual void GitPull_b() = 0;
+  virtual void GitPull_b(int timeoutMs) = 0;
+
+  /** @brief How long the pull before an edit may block the window. */
+  static constexpr int kBlockingPullMs = 30000;
   /**
    * @brief Push changes to remote Git repository.
    */
@@ -290,6 +300,13 @@ public:
    * filling QtPass's memory. Far above any real entry.
    */
   static constexpr qint64 kMaxPlaintextBytes = 64LL * 1024 * 1024;
+
+  /**
+   * @brief The status-bar text for a blocking pull stopped at its deadline.
+   * @param timeoutMs The deadline that passed.
+   * @return The message.
+   */
+  [[nodiscard]] static auto pullTimedOut(int timeoutMs) -> QString;
 
   /**
    * @brief The gpg options that enforce kMaxPlaintextBytes.

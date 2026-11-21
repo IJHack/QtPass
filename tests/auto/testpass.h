@@ -21,7 +21,7 @@ public:
   NullPass() { init(AppSettings()); }
   void GitInit() override {}
   void GitPull() override {}
-  void GitPull_b() override {}
+  void GitPull_b(int /*timeoutMs*/) override {}
   void GitPush() override {}
   void Show(QString) override {}
   void Insert(QString, QString, bool) override {}

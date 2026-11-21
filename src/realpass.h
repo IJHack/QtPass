@@ -369,9 +369,10 @@ public:
    */
   void GitPull() override;
   /**
-   * @brief Pull with rebase.
+   * @brief Run `pass git pull` and wait for it, at most @p timeoutMs.
+   * @param timeoutMs Most milliseconds to wait (Pass::kBlockingPullMs).
    */
-  void GitPull_b() override;
+  void GitPull_b(int timeoutMs) override;
   /**
    * @brief Push changes to remote.
    */
