@@ -149,7 +149,9 @@ auto TemplateIO::fieldsIn(const QString &templateText) -> QStringList {
     if (line.trimmed().startsWith(QLatin1Char('#'))) {
       continue;
     }
-    if (!line.trimmed().isEmpty()) {
+    // Counted as setTemplate() builds rows: for every line not empty, a
+    // line of blanks too.
+    if (!line.isEmpty()) {
       if (named == FileContent::kMaxNamedFields) {
         qWarning() << "Template has more than" << FileContent::kMaxNamedFields
                    << "fields; ignoring the rest";

@@ -4491,7 +4491,8 @@ void tst_util::templateFieldsSkipCommentLines() {
  *        row of widgets in the password dialog, and a store's .templates of
  *        tens of thousands of one-letter lines froze Add password for half a
  *        minute (scan finding ANT-2026-8WAS09ZR). Empty lines between them
- *        are not fields and do not count.
+ *        are not fields and do not count; a line of blanks is a row, so it
+ *        does.
  */
 void tst_util::templateFieldsAreCappedLikeAnEntrys() {
   const QString text =
@@ -4510,6 +4511,11 @@ void tst_util::templateFieldsAreCappedLikeAnEntrys() {
       QStringLiteral("last"));
   QCOMPARE(few.size(), FileContent::kMaxNamedFields);
   QCOMPARE(few.last(), QStringLiteral("last"));
+
+  // A line of blanks is a row in the dialog too, so it counts.
+  const QStringList blanks = TemplateIO::fieldsIn(
+      QStringLiteral(" \n").repeated(FileContent::kMaxNamedFields + 500));
+  QCOMPARE(blanks.size(), FileContent::kMaxNamedFields);
 }
 
 void tst_util::readTemplatesEmptySectionIgnored() {
