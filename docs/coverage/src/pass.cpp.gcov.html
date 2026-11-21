@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 12:12:51</td>
+            <td class="headerValue">2026-11-21 12:30:53</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -594,33 +594,33 @@
 <span id="L521"><span class="lineNum">     521</span> <span class="tlaGNC">          13 :   return {};</span></span>
 <span id="L522"><span class="lineNum">     522</span> <span class="tlaUNC">           0 : }</span></span>
 <span id="L523"><span class="lineNum">     523</span>              : </span>
-<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">         291 : void Pass::finished(int id, int exitCode, const QString &amp;out,</span></span>
+<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">         290 : void Pass::finished(int id, int exitCode, const QString &amp;out,</span></span>
 <span id="L525"><span class="lineNum">     525</span>              :                     const QString &amp;err) {</span>
-<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">         291 :   auto pid = static_cast&lt;PROCESS&gt;(id);</span></span>
+<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">         290 :   auto pid = static_cast&lt;PROCESS&gt;(id);</span></span>
 <span id="L527"><span class="lineNum">     527</span>              : </span>
 <span id="L528"><span class="lineNum">     528</span>              :   // Pop the Show() this completion belongs to whether it worked or not, or</span>
 <span id="L529"><span class="lineNum">     529</span>              :   // the next result would be attributed to the wrong file.</span>
-<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">         291 :   QString shownFile;</span></span>
-<span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">         291 :   if (pid == PASS_SHOW &amp;&amp; !m_pendingShows.isEmpty()) {</span></span>
+<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">         290 :   QString shownFile;</span></span>
+<span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">         290 :   if (pid == PASS_SHOW &amp;&amp; !m_pendingShows.isEmpty()) {</span></span>
 <span id="L532"><span class="lineNum">     532</span> <span class="tlaGNC">          76 :     shownFile = m_pendingShows.dequeue();</span></span>
 <span id="L533"><span class="lineNum">     533</span>              :   }</span>
 <span id="L534"><span class="lineNum">     534</span>              :   // Count this insert off, success or failure, before its result goes out, so</span>
 <span id="L535"><span class="lineNum">     535</span>              :   // insertsPending() tracks the inserts still awaiting a report. Each insert</span>
 <span id="L536"><span class="lineNum">     536</span>              :   // reaches here once as PASS_INSERT.</span>
-<span id="L537"><span class="lineNum">     537</span> <span class="tlaGNC">         291 :   if (pid == PASS_INSERT &amp;&amp; m_insertsPending &gt; 0) {</span></span>
+<span id="L537"><span class="lineNum">     537</span> <span class="tlaGNC">         290 :   if (pid == PASS_INSERT &amp;&amp; m_insertsPending &gt; 0) {</span></span>
 <span id="L538"><span class="lineNum">     538</span> <span class="tlaGNC">         103 :     --m_insertsPending;</span></span>
 <span id="L539"><span class="lineNum">     539</span>              :   }</span>
 <span id="L540"><span class="lineNum">     540</span>              : </span>
-<span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">         291 :   if (exitCode != 0) {</span></span>
+<span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">         290 :   if (exitCode != 0) {</span></span>
 <span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">          60 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L543"><span class="lineNum">     543</span>              :     return;</span>
 <span id="L544"><span class="lineNum">     544</span>              :   }</span>
 <span id="L545"><span class="lineNum">     545</span>              : </span>
-<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         231 :   if (pid == PASS_SHOW) {</span></span>
+<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         230 :   if (pid == PASS_SHOW) {</span></span>
 <span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          48 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
 <span id="L548"><span class="lineNum">     548</span>              :     return;</span>
 <span id="L549"><span class="lineNum">     549</span>              :   }</span>
-<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         183 :   emitProcessFinishedSignal(pid, out, err);</span></span>
+<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         182 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L551"><span class="lineNum">     551</span>              : }</span>
 <span id="L552"><span class="lineNum">     552</span>              : </span>
 <span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">          60 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
@@ -670,13 +670,13 @@
 <span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">          12 :   return humanErr.isEmpty() ? friendly : friendly + &quot;\n\n&quot; + humanErr;</span></span>
 <span id="L598"><span class="lineNum">     598</span>              : }</span>
 <span id="L599"><span class="lineNum">     599</span>              : </span>
-<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">         183 : void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &amp;out,</span></span>
+<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">         182 : void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &amp;out,</span></span>
 <span id="L601"><span class="lineNum">     601</span>              :                                      const QString &amp;err) {</span>
 <span id="L602"><span class="lineNum">     602</span>              :   // Only output that cannot contain a secret reaches the generic listeners</span>
 <span id="L603"><span class="lineNum">     603</span>              :   // (the output panel among them); Enums::processInfo is the one table.</span>
-<span id="L604"><span class="lineNum">     604</span> <span class="tlaGNC">         183 :   if (pid &gt;= 0 &amp;&amp; pid &lt; Enums::PROCESS_COUNT &amp;&amp;</span></span>
-<span id="L605"><span class="lineNum">     605</span> <span class="tlaGNC">         181 :       !Enums::processInfo(pid).secret) {</span></span>
-<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">          89 :     emit finishedAnyWithPid(out, err, pid);</span></span>
+<span id="L604"><span class="lineNum">     604</span> <span class="tlaGNC">         182 :   if (pid &gt;= 0 &amp;&amp; pid &lt; Enums::PROCESS_COUNT &amp;&amp;</span></span>
+<span id="L605"><span class="lineNum">     605</span> <span class="tlaGNC">         180 :       !Enums::processInfo(pid).secret) {</span></span>
+<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">          88 :     emit finishedAnyWithPid(out, err, pid);</span></span>
 <span id="L607"><span class="lineNum">     607</span>              :   }</span>
 <span id="L608"><span class="lineNum">     608</span>              : </span>
 <span id="L609"><span class="lineNum">     609</span>              :   // The kind-specific signal. PASS_SHOW is emitted by finished(), which</span>
@@ -693,11 +693,11 @@
 <span id="L620"><span class="lineNum">     620</span>              :       {PASS_MOVE, &amp;Pass::finishedMove},</span>
 <span id="L621"><span class="lineNum">     621</span>              :       {PASS_COPY, &amp;Pass::finishedCopy},</span>
 <span id="L622"><span class="lineNum">     622</span>              :       {GPG_GENKEYS, &amp;Pass::finishedGenerateGPGKeys},</span>
-<span id="L623"><span class="lineNum">     623</span> <span class="tlaGNC">         189 :   };</span></span>
-<span id="L624"><span class="lineNum">     624</span> <span class="tlaGNC">         183 :   if (const Signal signal = kSignals.value(pid, nullptr)) {</span></span>
+<span id="L623"><span class="lineNum">     623</span> <span class="tlaGNC">         188 :   };</span></span>
+<span id="L624"><span class="lineNum">     624</span> <span class="tlaGNC">         182 :   if (const Signal signal = kSignals.value(pid, nullptr)) {</span></span>
 <span id="L625"><span class="lineNum">     625</span> <span class="tlaGNC">         179 :     (this-&gt;*signal)(out, err);</span></span>
 <span id="L626"><span class="lineNum">     626</span>              :   }</span>
-<span id="L627"><span class="lineNum">     627</span> <span class="tlaGNC">         183 : }</span></span>
+<span id="L627"><span class="lineNum">     627</span> <span class="tlaGNC">         182 : }</span></span>
 <span id="L628"><span class="lineNum">     628</span>              : </span>
 <span id="L629"><span class="lineNum">     629</span> <span class="tlaGNC">        3754 : void Pass::setEnvVar(const QString &amp;name, const QString &amp;value) {</span></span>
 <span id="L630"><span class="lineNum">     630</span> <span class="tlaGNC">        3754 :   if (value.isEmpty())</span></span>
@@ -790,10 +790,10 @@
 <span id="L717"><span class="lineNum">     717</span>              : #endif</span>
 <span id="L718"><span class="lineNum">     718</span>              : </span>
 <span id="L719"><span class="lineNum">     719</span>              : /// Whether @p path is @p dir or lies under it.</span>
-<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1906 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
+<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">        1894 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
 <span id="L721"><span class="lineNum">     721</span>              :                  const QString &amp;dirPrefix) -&gt; bool {</span>
-<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        3313 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
-<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">        1407 :          path.startsWith(dirPrefix, kPathCase);</span></span>
+<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">        3289 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
+<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">        1395 :          path.startsWith(dirPrefix, kPathCase);</span></span>
 <span id="L724"><span class="lineNum">     724</span>              : }</span>
 <span id="L725"><span class="lineNum">     725</span>              : </span>
 <span id="L726"><span class="lineNum">     726</span>              : /// Where the lookup of a .gpg-id starts and the store that bounds it.</span>
@@ -885,8 +885,8 @@
 <span id="L812"><span class="lineNum">     812</span> <span class="tlaGNC">          63 :   const QString store = scopePath(QString());</span></span>
 <span id="L813"><span class="lineNum">     813</span> <span class="tlaGNC">          63 :   const QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L814"><span class="lineNum">     814</span> <span class="tlaGNC">          63 :   return std::any_of(scopes.cbegin(), scopes.cend(),</span></span>
-<span id="L815"><span class="lineNum">     815</span> <span class="tlaGNC">         151 :                      [&amp;store](const QString &amp;s) {</span></span>
-<span id="L816"><span class="lineNum">     816</span> <span class="tlaGNC">         302 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
+<span id="L815"><span class="lineNum">     815</span> <span class="tlaGNC">         139 :                      [&amp;store](const QString &amp;s) {</span></span>
+<span id="L816"><span class="lineNum">     816</span> <span class="tlaGNC">         278 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
 <span id="L817"><span class="lineNum">     817</span> <span class="tlaGNC">          63 :                      });</span></span>
 <span id="L818"><span class="lineNum">     818</span>              : }</span>
 <span id="L819"><span class="lineNum">     819</span>              : </span>

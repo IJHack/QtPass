@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 12:12:51</td>
+            <td class="headerValue">2026-11-21 12:30:53</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
@@ -295,15 +295,15 @@
 <span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">          15 :   connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</span></span>
 <span id="L223"><span class="lineNum">     223</span> <span class="tlaGNC">          15 :   connect(thread, &amp;QThread::finished, this, [this, thread]() {</span></span>
 <span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">          14 :     m_workers.removeIf(</span></span>
-<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">          16 :         [thread](const Worker &amp;w) { return w.thread == thread; });</span></span>
+<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">          14 :         [thread](const Worker &amp;w) { return w.thread == thread; });</span></span>
 <span id="L226"><span class="lineNum">     226</span>              :   });</span>
 <span id="L227"><span class="lineNum">     227</span> <span class="tlaGNC">          15 :   thread-&gt;start();</span></span>
 <span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">          31 : }</span></span>
 <span id="L229"><span class="lineNum">     229</span>              : </span>
 <span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">         582 : void NativeGrep::cancel() {</span></span>
-<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">         593 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
+<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">         591 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
 <span id="L232"><span class="lineNum">     232</span>              :     w.cancel-&gt;store(true);</span>
-<span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">          11 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
+<span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">           9 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
 <span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">           8 :       w.thread-&gt;requestInterruption();</span></span>
 <span id="L235"><span class="lineNum">     235</span>              :   }</span>
 <span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">         582 : }</span></span>

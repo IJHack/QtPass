@@ -42,18 +42,18 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">98.1&nbsp;%</td>
-            <td class="headerCovTableEntry">105</td>
-            <td class="headerCovTableEntry">103</td>
+            <td class="headerCovTableEntryHi">98.4&nbsp;%</td>
+            <td class="headerCovTableEntry">122</td>
+            <td class="headerCovTableEntry">120</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 12:12:51</td>
+            <td class="headerValue">2026-11-21 12:30:53</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">11</td>
-            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">12</td>
           </tr>
                   <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -85,251 +85,296 @@
 <span id="L12"><span class="lineNum">      12</span>              : #include &lt;QClipboard&gt;</span>
 <span id="L13"><span class="lineNum">      13</span>              : #include &lt;QMimeData&gt;</span>
 <span id="L14"><span class="lineNum">      14</span>              : #include &lt;utility&gt;</span>
-<span id="L15"><span class="lineNum">      15</span>              : </span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         214 : ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {</span></span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         214 :   setAutoclearTimer();</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         214 :   m_clearTimer.setSingleShot(true);</span></span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         214 :   connect(&amp;m_clearTimer, &amp;QTimer::timeout, this, &amp;ClipboardManager::clear);</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         214 :   connect(QApplication::instance(), &amp;QApplication::aboutToQuit, this,</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         214 :           &amp;ClipboardManager::clear);</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         214 : }</span></span>
-<span id="L23"><span class="lineNum">      23</span>              : </span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         221 : void ClipboardManager::setAutoclearTimer() {</span></span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         442 :   m_clearTimer.setInterval(MS_PER_SECOND *</span></span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         442 :                            QtPassSettings::getAutoclearSeconds());</span></span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         221 : }</span></span>
-<span id="L28"><span class="lineNum">      28</span>              : </span>
-<span id="L29"><span class="lineNum">      29</span>              : namespace {</span>
-<span id="L30"><span class="lineNum">      30</span>              : /**</span>
-<span id="L31"><span class="lineNum">      31</span>              :  * @brief Whether @p data carries a mark password managers (QtPass included)</span>
-<span id="L32"><span class="lineNum">      32</span>              :  * put on a secret, on any platform.</span>
-<span id="L33"><span class="lineNum">      33</span>              :  *</span>
-<span id="L34"><span class="lineNum">      34</span>              :  * Matched within each format name: Qt shows another program's clipboard</span>
-<span id="L35"><span class="lineNum">      35</span>              :  * format wrapped (application/x-qt-windows-mime;value=&quot;...&quot;, or a</span>
-<span id="L36"><span class="lineNum">      36</span>              :  * com.trolltech.anymime name on macOS), not under the bare name.</span>
-<span id="L37"><span class="lineNum">      37</span>              :  * @param data The clipboard's current content, or null.</span>
-<span id="L38"><span class="lineNum">      38</span>              :  * @return true for a marked secret.</span>
-<span id="L39"><span class="lineNum">      39</span>              :  */</span>
-<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">          10 : auto markedSecret(const QMimeData *data) -&gt; bool {</span></span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">          10 :   if (data == nullptr) {</span></span>
-<span id="L42"><span class="lineNum">      42</span>              :     return false;</span>
-<span id="L43"><span class="lineNum">      43</span>              :   }</span>
-<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">          10 :   const QStringList formats = data-&gt;formats();</span></span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">          20 :   for (const QString &amp;format : formats) {</span></span>
-<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">          88 :     for (const char *mark :</span></span>
-<span id="L47"><span class="lineNum">      47</span>              :          {&quot;passwordManagerHint&quot;, &quot;nspasteboard-concealed-type&quot;,</span>
-<span id="L48"><span class="lineNum">      48</span>              :           &quot;nspasteboard.ConcealedType&quot;,</span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          55 :           &quot;ExcludeClipboardContentFromMonitorProcessing&quot;}) {</span></span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          45 :       if (format.contains(QLatin1String(mark), Qt::CaseInsensitive)) {</span></span>
-<span id="L51"><span class="lineNum">      51</span>              :         return true;</span>
-<span id="L52"><span class="lineNum">      52</span>              :       }</span>
-<span id="L53"><span class="lineNum">      53</span>              :     }</span>
-<span id="L54"><span class="lineNum">      54</span>              :   }</span>
-<span id="L55"><span class="lineNum">      55</span>              :   return false;</span>
-<span id="L56"><span class="lineNum">      56</span>              : }</span>
-<span id="L57"><span class="lineNum">      57</span>              : } // namespace</span>
+<span id="L15"><span class="lineNum">      15</span>              : #include &lt;vector&gt;</span>
+<span id="L16"><span class="lineNum">      16</span>              : </span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         220 : ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         220 :   setAutoclearTimer();</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         220 :   m_clearTimer.setSingleShot(true);</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         220 :   connect(&amp;m_clearTimer, &amp;QTimer::timeout, this, &amp;ClipboardManager::clear);</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         220 :   connect(QApplication::instance(), &amp;QApplication::aboutToQuit, this,</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         220 :           &amp;ClipboardManager::clear);</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         220 : }</span></span>
+<span id="L24"><span class="lineNum">      24</span>              : </span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         227 : void ClipboardManager::setAutoclearTimer() {</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         454 :   m_clearTimer.setInterval(MS_PER_SECOND *</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         454 :                            QtPassSettings::getAutoclearSeconds());</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         227 : }</span></span>
+<span id="L29"><span class="lineNum">      29</span>              : </span>
+<span id="L30"><span class="lineNum">      30</span>              : namespace {</span>
+<span id="L31"><span class="lineNum">      31</span>              : /**</span>
+<span id="L32"><span class="lineNum">      32</span>              :  * @brief Whether @p data carries a mark password managers (QtPass included)</span>
+<span id="L33"><span class="lineNum">      33</span>              :  * put on a secret, on any platform.</span>
+<span id="L34"><span class="lineNum">      34</span>              :  *</span>
+<span id="L35"><span class="lineNum">      35</span>              :  * Matched within each format name: Qt shows another program's clipboard</span>
+<span id="L36"><span class="lineNum">      36</span>              :  * format wrapped (application/x-qt-windows-mime;value=&quot;...&quot;, or a</span>
+<span id="L37"><span class="lineNum">      37</span>              :  * com.trolltech.anymime name on macOS), not under the bare name.</span>
+<span id="L38"><span class="lineNum">      38</span>              :  * @param data The clipboard's current content, or null.</span>
+<span id="L39"><span class="lineNum">      39</span>              :  * @return true for a marked secret.</span>
+<span id="L40"><span class="lineNum">      40</span>              :  */</span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">          10 : auto markedSecret(const QMimeData *data) -&gt; bool {</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">          10 :   if (data == nullptr) {</span></span>
+<span id="L43"><span class="lineNum">      43</span>              :     return false;</span>
+<span id="L44"><span class="lineNum">      44</span>              :   }</span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">          10 :   const QStringList formats = data-&gt;formats();</span></span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">          20 :   for (const QString &amp;format : formats) {</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          88 :     for (const char *mark :</span></span>
+<span id="L48"><span class="lineNum">      48</span>              :          {&quot;passwordManagerHint&quot;, &quot;nspasteboard-concealed-type&quot;,</span>
+<span id="L49"><span class="lineNum">      49</span>              :           &quot;nspasteboard.ConcealedType&quot;,</span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          55 :           &quot;ExcludeClipboardContentFromMonitorProcessing&quot;}) {</span></span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">          45 :       if (format.contains(QLatin1String(mark), Qt::CaseInsensitive)) {</span></span>
+<span id="L52"><span class="lineNum">      52</span>              :         return true;</span>
+<span id="L53"><span class="lineNum">      53</span>              :       }</span>
+<span id="L54"><span class="lineNum">      54</span>              :     }</span>
+<span id="L55"><span class="lineNum">      55</span>              :   }</span>
+<span id="L56"><span class="lineNum">      56</span>              :   return false;</span>
+<span id="L57"><span class="lineNum">      57</span>              : }</span>
 <span id="L58"><span class="lineNum">      58</span>              : </span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          30 : void ClipboardManager::copyIfAlways(const QString &amp;text,</span></span>
-<span id="L60"><span class="lineNum">      60</span>              :                                     const QString &amp;p_output) {</span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">          30 :   const AppSettings s = QtPassSettings::load();</span></span>
-<span id="L62"><span class="lineNum">      62</span>              :   // Only &quot;always copy&quot; mode actually places text on the clipboard here; in</span>
-<span id="L63"><span class="lineNum">      63</span>              :   // on-demand mode the copy happens later from the field's copy button.</span>
-<span id="L64"><span class="lineNum">      64</span>              :   // Crucially, do not touch m_clippedText otherwise — it tracks what is</span>
-<span id="L65"><span class="lineNum">      65</span>              :   // currently on the clipboard so the autoclear timer knows what to clear.</span>
-<span id="L66"><span class="lineNum">      66</span>              :   // Overwriting it when merely showing another entry left a previously copied</span>
-<span id="L67"><span class="lineNum">      67</span>              :   // password on the clipboard past its autoclear window (#1607).</span>
-<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">          30 :   if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS &amp;&amp; !p_output.isEmpty()) {</span></span>
-<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">           4 :     copyText(text);</span></span>
-<span id="L70"><span class="lineNum">      70</span>              :   }</span>
-<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">          30 : }</span></span>
-<span id="L72"><span class="lineNum">      72</span>              : </span>
-<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">          45 : void ClipboardManager::copyText(const QString &amp;text) {</span></span>
-<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">          45 :   const AppSettings s = QtPassSettings::load();</span></span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          45 :   QClipboard *clip = QApplication::clipboard();</span></span>
-<span id="L76"><span class="lineNum">      76</span>              : </span>
-<span id="L77"><span class="lineNum">      77</span>              :   QClipboard::Mode mode = QClipboard::Clipboard;</span>
-<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">          45 :   if (s.useSelection &amp;&amp; clip-&gt;supportsSelection()) {</span></span>
-<span id="L79"><span class="lineNum">      79</span>              :     mode = QClipboard::Selection;</span>
-<span id="L80"><span class="lineNum">      80</span>              :   }</span>
-<span id="L81"><span class="lineNum">      81</span>              : </span>
-<span id="L82"><span class="lineNum">      82</span>              :   // What was there before the first secret, to put back when autoclear</span>
-<span id="L83"><span class="lineNum">      83</span>              :   // runs (as pass -c does). Text only, as pass keeps it: rich content comes</span>
-<span id="L84"><span class="lineNum">      84</span>              :   // back as its plain text. Where Qt cannot read the clipboard without focus</span>
-<span id="L85"><span class="lineNum">      85</span>              :   // (some Wayland compositors, a copy from the tray), &quot;before&quot; reads as</span>
-<span id="L86"><span class="lineNum">      86</span>              :   // nothing and autoclear clears instead: the safe way round.</span>
-<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">          45 :   if (s.useAutoclear &amp;&amp; s.restoreClipboard) {</span></span>
-<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">          19 :     std::optional&lt;QString&gt; &amp;previous = mode == QClipboard::Selection</span></span>
-<span id="L89"><span class="lineNum">      89</span>              :                                            ? m_previousSelection</span>
-<span id="L90"><span class="lineNum">      90</span>              :                                            : m_previousClipboard;</span>
-<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">          19 :     const QString now = clip-&gt;text(mode);</span></span>
-<span id="L92"><span class="lineNum">      92</span>              :     // Taken once per window, at the first copy, whatever is there: a text</span>
-<span id="L93"><span class="lineNum">      93</span>              :     // of ours, or the very text being copied, is saved as nothing (restoring</span>
-<span id="L94"><span class="lineNum">      94</span>              :     // it would leave a secret on the clipboard for good), and a later copy</span>
-<span id="L95"><span class="lineNum">      95</span>              :     // in the window cannot take a snapshot instead.</span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          19 :     if (!previous) {</span></span>
-<span id="L97"><span class="lineNum">      97</span>              :       // Another password manager's secret is marked as one; put back as</span>
-<span id="L98"><span class="lineNum">      98</span>              :       // plain text it would lose that mark (and go into clipboard history)</span>
-<span id="L99"><span class="lineNum">      99</span>              :       // and nobody would clear it again.</span>
-<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">          22 :       const bool safe = now != text &amp;&amp; now != m_clippedText &amp;&amp;</span></span>
-<span id="L101"><span class="lineNum">     101</span> <span class="tlaGNC">          33 :                         !m_otherCopies.contains(now) &amp;&amp;</span></span>
-<span id="L102"><span class="lineNum">     102</span> <span class="tlaGNC">          10 :                         !markedSecret(clip-&gt;mimeData(mode));</span></span>
-<span id="L103"><span class="lineNum">     103</span> <span class="tlaGNC">          26 :       previous = safe ? now : QString();</span></span>
-<span id="L104"><span class="lineNum">     104</span>              :     }</span>
-<span id="L105"><span class="lineNum">     105</span>              :   }</span>
-<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">          45 :   forgetIfSaved(text);</span></span>
-<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">          45 :   clip-&gt;setMimeData(buildClipboardMimeData(text), mode);</span></span>
-<span id="L108"><span class="lineNum">     108</span>              : </span>
-<span id="L109"><span class="lineNum">     109</span>              :   // The text copied before may still be in the other buffer (a PIN copied to</span>
-<span id="L110"><span class="lineNum">     110</span>              :   // the clipboard, then selected, so also in the X11 selection): replacing</span>
-<span id="L111"><span class="lineNum">     111</span>              :   // it here would leave it there past autoclear.</span>
-<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">          14 :   if (!m_clippedText.isEmpty() &amp;&amp; m_clippedText != text &amp;&amp;</span></span>
-<span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC">          55 :       !m_otherCopies.contains(m_clippedText) &amp;&amp;</span></span>
-<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">          50 :       (clip-&gt;text(QClipboard::Clipboard) == m_clippedText ||</span></span>
-<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">          50 :        clip-&gt;text(QClipboard::Selection) == m_clippedText)) {</span></span>
-<span id="L116"><span class="lineNum">     116</span> <span class="tlaUNC">           0 :     m_otherCopies.append(m_clippedText);</span></span>
-<span id="L117"><span class="lineNum">     117</span>              :   }</span>
-<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">          45 :   m_clippedText = text;</span></span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">          45 :   emit statusMessage(tr(&quot;Copied to clipboard&quot;));</span></span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">          45 :   if (s.useAutoclear) {</span></span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">          25 :     m_clearTimer.start();</span></span>
-<span id="L122"><span class="lineNum">     122</span>              :   }</span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          45 : }</span></span>
+<span id="L59"><span class="lineNum">      59</span>              : /**</span>
+<span id="L60"><span class="lineNum">      60</span>              :  * @brief Whether one text holds the other, in time linear in both lengths.</span>
+<span id="L61"><span class="lineNum">      61</span>              :  *</span>
+<span id="L62"><span class="lineNum">      62</span>              :  * Knuth-Morris-Pratt: QString::contains() can take the product of the two</span>
+<span id="L63"><span class="lineNum">      63</span>              :  * lengths (&quot;baaa...&quot; in &quot;aaaa...&quot;), and both texts come from an entry.</span>
+<span id="L64"><span class="lineNum">      64</span>              :  * @param a One text.</span>
+<span id="L65"><span class="lineNum">      65</span>              :  * @param b The other text.</span>
+<span id="L66"><span class="lineNum">      66</span>              :  * @return True when the shorter one occurs in the longer one.</span>
+<span id="L67"><span class="lineNum">      67</span>              :  */</span>
+<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">          52 : auto oneHoldsTheOther(const QString &amp;a, const QString &amp;b) -&gt; bool {</span></span>
+<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">          52 :   const QString &amp;longer = a.size() &gt;= b.size() ? a : b;</span></span>
+<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">          52 :   const QString &amp;part = a.size() &gt;= b.size() ? b : a;</span></span>
+<span id="L71"><span class="lineNum">      71</span>              :   const qsizetype m = part.size();</span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">          52 :   if (m == 0) {</span></span>
+<span id="L73"><span class="lineNum">      73</span>              :     return true;</span>
+<span id="L74"><span class="lineNum">      74</span>              :   }</span>
+<span id="L75"><span class="lineNum">      75</span>              :   // fallback[i]: length of the longest proper prefix of part[0..i] that</span>
+<span id="L76"><span class="lineNum">      76</span>              :   // also ends there, so a mismatch resumes there instead of from the start.</span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">          52 :   std::vector&lt;qsizetype&gt; fallback(static_cast&lt;size_t&gt;(m), 0);</span></span>
+<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">      200792 :   for (qsizetype i = 1, k = 0; i &lt; m; ++i) {</span></span>
+<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">      200741 :     while (k &gt; 0 &amp;&amp; part.at(i) != part.at(k)) {</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">           1 :       k = fallback[static_cast&lt;size_t&gt;(k - 1)];</span></span>
+<span id="L81"><span class="lineNum">      81</span>              :     }</span>
+<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">      200740 :     if (part.at(i) == part.at(k)) {</span></span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">           1 :       ++k;</span></span>
+<span id="L84"><span class="lineNum">      84</span>              :     }</span>
+<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">      200740 :     fallback[static_cast&lt;size_t&gt;(i)] = k;</span></span>
+<span id="L86"><span class="lineNum">      86</span>              :   }</span>
+<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">      400854 :   for (qsizetype i = 0, k = 0; i &lt; longer.size(); ++i) {</span></span>
+<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">      400853 :     while (k &gt; 0 &amp;&amp; longer.at(i) != part.at(k)) {</span></span>
+<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">          40 :       k = fallback[static_cast&lt;size_t&gt;(k - 1)];</span></span>
+<span id="L90"><span class="lineNum">      90</span>              :     }</span>
+<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">      400813 :     if (longer.at(i) == part.at(k)) {</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">         443 :       ++k;</span></span>
+<span id="L93"><span class="lineNum">      93</span>              :     }</span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">      400813 :     if (k == m) {</span></span>
+<span id="L95"><span class="lineNum">      95</span>              :       return true;</span>
+<span id="L96"><span class="lineNum">      96</span>              :     }</span>
+<span id="L97"><span class="lineNum">      97</span>              :   }</span>
+<span id="L98"><span class="lineNum">      98</span>              :   return false;</span>
+<span id="L99"><span class="lineNum">      99</span>              : }</span>
+<span id="L100"><span class="lineNum">     100</span>              : } // namespace</span>
+<span id="L101"><span class="lineNum">     101</span>              : </span>
+<span id="L102"><span class="lineNum">     102</span> <span class="tlaGNC">          30 : void ClipboardManager::copyIfAlways(const QString &amp;text,</span></span>
+<span id="L103"><span class="lineNum">     103</span>              :                                     const QString &amp;p_output) {</span>
+<span id="L104"><span class="lineNum">     104</span> <span class="tlaGNC">          30 :   const AppSettings s = QtPassSettings::load();</span></span>
+<span id="L105"><span class="lineNum">     105</span>              :   // Only &quot;always copy&quot; mode actually places text on the clipboard here; in</span>
+<span id="L106"><span class="lineNum">     106</span>              :   // on-demand mode the copy happens later from the field's copy button.</span>
+<span id="L107"><span class="lineNum">     107</span>              :   // Crucially, do not touch m_clippedText otherwise — it tracks what is</span>
+<span id="L108"><span class="lineNum">     108</span>              :   // currently on the clipboard so the autoclear timer knows what to clear.</span>
+<span id="L109"><span class="lineNum">     109</span>              :   // Overwriting it when merely showing another entry left a previously copied</span>
+<span id="L110"><span class="lineNum">     110</span>              :   // password on the clipboard past its autoclear window (#1607).</span>
+<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">          30 :   if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS &amp;&amp; !p_output.isEmpty()) {</span></span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">           4 :     copyText(text);</span></span>
+<span id="L113"><span class="lineNum">     113</span>              :   }</span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">          30 : }</span></span>
+<span id="L115"><span class="lineNum">     115</span>              : </span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">          45 : void ClipboardManager::copyText(const QString &amp;text) {</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">          45 :   const AppSettings s = QtPassSettings::load();</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">          45 :   QClipboard *clip = QApplication::clipboard();</span></span>
+<span id="L119"><span class="lineNum">     119</span>              : </span>
+<span id="L120"><span class="lineNum">     120</span>              :   QClipboard::Mode mode = QClipboard::Clipboard;</span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">          45 :   if (s.useSelection &amp;&amp; clip-&gt;supportsSelection()) {</span></span>
+<span id="L122"><span class="lineNum">     122</span>              :     mode = QClipboard::Selection;</span>
+<span id="L123"><span class="lineNum">     123</span>              :   }</span>
 <span id="L124"><span class="lineNum">     124</span>              : </span>
-<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          99 : void ClipboardManager::forgetIfSaved(const QString &amp;text) {</span></span>
-<span id="L126"><span class="lineNum">     126</span>              :   // The saved text is copied as a secret now: putting it back would leave</span>
-<span id="L127"><span class="lineNum">     127</span>              :   // that secret on the clipboard. Emptied, not dropped, so no later copy</span>
-<span id="L128"><span class="lineNum">     128</span>              :   // takes a new snapshot in this window either; clear() then clears.</span>
-<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">         219 :   for (std::optional&lt;QString&gt; *previous :</span></span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         297 :        {&amp;m_previousClipboard, &amp;m_previousSelection}) {</span></span>
-<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">         198 :     if (*previous &amp;&amp; **previous == text) {</span></span>
-<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">           4 :       *previous = QString();</span></span>
-<span id="L133"><span class="lineNum">     133</span>              :     }</span>
-<span id="L134"><span class="lineNum">     134</span>              :   }</span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">          99 : }</span></span>
-<span id="L136"><span class="lineNum">     136</span>              : </span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          54 : void ClipboardManager::trackCopied(const QString &amp;text) {</span></span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">          54 :   if (text.isEmpty()) {</span></span>
-<span id="L139"><span class="lineNum">     139</span>              :     return;</span>
-<span id="L140"><span class="lineNum">     140</span>              :   }</span>
-<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          54 :   forgetIfSaved(text);</span></span>
-<span id="L142"><span class="lineNum">     142</span>              :   // Kept beside m_clippedText, not instead of it: replacing it would leave a</span>
-<span id="L143"><span class="lineNum">     143</span>              :   // password copied earlier on the clipboard past its autoclear (#1607).</span>
-<span id="L144"><span class="lineNum">     144</span>              :   constexpr qsizetype kMaxOtherCopies = 16;</span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          54 :   if (text != m_clippedText &amp;&amp; !m_otherCopies.contains(text)) {</span></span>
-<span id="L146"><span class="lineNum">     146</span>              :     // A mouse selection reports itself on every change while it grows or</span>
-<span id="L147"><span class="lineNum">     147</span>              :     // shrinks (the X11 primary selection); only where it ends counts, or a</span>
-<span id="L148"><span class="lineNum">     148</span>              :     // passing &quot;a&quot; would stay tracked and autoclear could take someone</span>
-<span id="L149"><span class="lineNum">     149</span>              :     // else's &quot;a&quot; later.</span>
-<span id="L150"><span class="lineNum">     150</span>              :     // An earlier copy still on the clipboard proper (Ctrl+C) stays tracked.</span>
-<span id="L151"><span class="lineNum">     151</span>              :     const QString &amp;last =</span>
-<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          54 :         m_otherCopies.isEmpty() ? QString() : m_otherCopies.last();</span></span>
-<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">          87 :     if (!last.isEmpty() &amp;&amp; (text.contains(last) || last.contains(text)) &amp;&amp;</span></span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">         113 :         QApplication::clipboard()-&gt;text(QClipboard::Clipboard) != last &amp;&amp;</span></span>
-<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">          56 :         QApplication::clipboard()-&gt;text(QClipboard::Selection) != last) {</span></span>
-<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">           2 :       m_otherCopies.last() = text;</span></span>
-<span id="L157"><span class="lineNum">     157</span>              :     } else {</span>
-<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          52 :       if (m_otherCopies.size() &gt;= kMaxOtherCopies) {</span></span>
-<span id="L159"><span class="lineNum">     159</span>              :         // Make room, but never by forgetting a text that is still on the</span>
-<span id="L160"><span class="lineNum">     160</span>              :         // clipboard or in the selection: it would then outlive autoclear.</span>
-<span id="L161"><span class="lineNum">     161</span>              :         // At most two are, so the oldest of the rest can always go.</span>
-<span id="L162"><span class="lineNum">     162</span>              :         const QString onClipboard =</span>
-<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">          25 :             QApplication::clipboard()-&gt;text(QClipboard::Clipboard);</span></span>
-<span id="L164"><span class="lineNum">     164</span>              :         const QString inSelection =</span>
-<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">          25 :             QApplication::clipboard()-&gt;text(QClipboard::Selection);</span></span>
-<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">          50 :         for (qsizetype i = 0; i &lt; m_otherCopies.size(); ++i) {</span></span>
-<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">          50 :           if (m_otherCopies.at(i) != onClipboard &amp;&amp;</span></span>
-<span id="L168"><span class="lineNum">     168</span>              :               m_otherCopies.at(i) != inSelection) {</span>
-<span id="L169"><span class="lineNum">     169</span>              :             m_otherCopies.removeAt(i);</span>
-<span id="L170"><span class="lineNum">     170</span>              :             break;</span>
-<span id="L171"><span class="lineNum">     171</span>              :           }</span>
-<span id="L172"><span class="lineNum">     172</span>              :         }</span>
-<span id="L173"><span class="lineNum">     173</span>              :       }</span>
-<span id="L174"><span class="lineNum">     174</span>              :       m_otherCopies.append(text);</span>
-<span id="L175"><span class="lineNum">     175</span>              :     }</span>
-<span id="L176"><span class="lineNum">     176</span>              :   }</span>
-<span id="L177"><span class="lineNum">     177</span>              :   // Not pushed back: a selection reports itself on every change, and a drag</span>
-<span id="L178"><span class="lineNum">     178</span>              :   // too, so restarting here gave a password copied earlier a new full</span>
-<span id="L179"><span class="lineNum">     179</span>              :   // period each time. The first deadline clears everything tracked.</span>
-<span id="L180"><span class="lineNum">     180</span> <span class="tlaGNC">         103 :   if (QtPassSettings::load().useAutoclear &amp;&amp; !m_clearTimer.isActive()) {</span></span>
-<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">           5 :     m_clearTimer.start();</span></span>
-<span id="L182"><span class="lineNum">     182</span>              :   }</span>
-<span id="L183"><span class="lineNum">     183</span>              : }</span>
-<span id="L184"><span class="lineNum">     184</span>              : </span>
-<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">          53 : void ClipboardManager::clear() {</span></span>
-<span id="L186"><span class="lineNum">     186</span>              :   // A clear before the deadline (a deselect) ends this window: a copy</span>
-<span id="L187"><span class="lineNum">     187</span>              :   // tracked after it starts a full one, not the rest of the old one.</span>
-<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">          53 :   m_clearTimer.stop();</span></span>
-<span id="L189"><span class="lineNum">     189</span>              :   // Whatever happens below, the saved text is forgotten: it is the user's,</span>
-<span id="L190"><span class="lineNum">     190</span>              :   // and no later autoclear may put it back.</span>
-<span id="L191"><span class="lineNum">     191</span>              :   const std::optional&lt;QString&gt; previousClipboard =</span>
-<span id="L192"><span class="lineNum">     192</span> <span class="tlaGNC">          53 :       std::exchange(m_previousClipboard, std::nullopt);</span></span>
-<span id="L193"><span class="lineNum">     193</span>              :   const std::optional&lt;QString&gt; previousSelection =</span>
-<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">          53 :       std::exchange(m_previousSelection, std::nullopt);</span></span>
-<span id="L195"><span class="lineNum">     195</span> <span class="tlaGNC">          53 :   if (m_clippedText.isEmpty() &amp;&amp; m_otherCopies.isEmpty()) {</span></span>
-<span id="L196"><span class="lineNum">     196</span>              :     // Nothing of ours is out there. The old code compared the empty tracker</span>
-<span id="L197"><span class="lineNum">     197</span>              :     // with an empty selection, &quot;cleared&quot; that and said so on every deselect.</span>
-<span id="L198"><span class="lineNum">     198</span>              :     return;</span>
-<span id="L199"><span class="lineNum">     199</span>              :   }</span>
-<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">          54 :   const auto ours = [this](const QString &amp;text) {</span></span>
-<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">          54 :     return !text.isEmpty() &amp;&amp;</span></span>
-<span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">          27 :            (text == m_clippedText || m_otherCopies.contains(text));</span></span>
-<span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">          27 :   };</span></span>
-<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">          27 :   QClipboard *clipboard = QApplication::clipboard();</span></span>
-<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">          27 :   const bool restore = QtPassSettings::load().restoreClipboard;</span></span>
-<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">          27 :   bool cleared = false;</span></span>
-<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">          27 :   bool restored = false;</span></span>
-<span id="L208"><span class="lineNum">     208</span>              :   // Ours still there: the text from before comes back if there was one and</span>
-<span id="L209"><span class="lineNum">     209</span>              :   // what is there is copyText()'s own copy, otherwise it is cleared. A copy</span>
-<span id="L210"><span class="lineNum">     210</span>              :   // from a shown field (trackCopied()) is cleared on purpose, not restored</span>
-<span id="L211"><span class="lineNum">     211</span>              :   // over: it can come long after copyText(), when &quot;before&quot; is stale, and the</span>
-<span id="L212"><span class="lineNum">     212</span>              :   // user chose that copy themselves. Something else copied meanwhile is left</span>
-<span id="L213"><span class="lineNum">     213</span>              :   // alone. The setting is read now: switched off during the window, the</span>
-<span id="L214"><span class="lineNum">     214</span>              :   // saved text was still held until here, and is dropped unused.</span>
-<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">          54 :   const auto putBack = [&amp;](QClipboard::Mode mode,</span></span>
-<span id="L216"><span class="lineNum">     216</span>              :                            const std::optional&lt;QString&gt; &amp;previous) {</span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">          54 :     const QString now = clipboard-&gt;text(mode);</span></span>
-<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">          54 :     if (!ours(now)) {</span></span>
-<span id="L219"><span class="lineNum">     219</span>              :       return;</span>
+<span id="L125"><span class="lineNum">     125</span>              :   // What was there before the first secret, to put back when autoclear</span>
+<span id="L126"><span class="lineNum">     126</span>              :   // runs (as pass -c does). Text only, as pass keeps it: rich content comes</span>
+<span id="L127"><span class="lineNum">     127</span>              :   // back as its plain text. Where Qt cannot read the clipboard without focus</span>
+<span id="L128"><span class="lineNum">     128</span>              :   // (some Wayland compositors, a copy from the tray), &quot;before&quot; reads as</span>
+<span id="L129"><span class="lineNum">     129</span>              :   // nothing and autoclear clears instead: the safe way round.</span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">          45 :   if (s.useAutoclear &amp;&amp; s.restoreClipboard) {</span></span>
+<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">          19 :     std::optional&lt;QString&gt; &amp;previous = mode == QClipboard::Selection</span></span>
+<span id="L132"><span class="lineNum">     132</span>              :                                            ? m_previousSelection</span>
+<span id="L133"><span class="lineNum">     133</span>              :                                            : m_previousClipboard;</span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">          19 :     const QString now = clip-&gt;text(mode);</span></span>
+<span id="L135"><span class="lineNum">     135</span>              :     // Taken once per window, at the first copy, whatever is there: a text</span>
+<span id="L136"><span class="lineNum">     136</span>              :     // of ours, or the very text being copied, is saved as nothing (restoring</span>
+<span id="L137"><span class="lineNum">     137</span>              :     // it would leave a secret on the clipboard for good), and a later copy</span>
+<span id="L138"><span class="lineNum">     138</span>              :     // in the window cannot take a snapshot instead.</span>
+<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">          19 :     if (!previous) {</span></span>
+<span id="L140"><span class="lineNum">     140</span>              :       // Another password manager's secret is marked as one; put back as</span>
+<span id="L141"><span class="lineNum">     141</span>              :       // plain text it would lose that mark (and go into clipboard history)</span>
+<span id="L142"><span class="lineNum">     142</span>              :       // and nobody would clear it again.</span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          22 :       const bool safe = now != text &amp;&amp; now != m_clippedText &amp;&amp;</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          33 :                         !m_otherCopies.contains(now) &amp;&amp;</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          10 :                         !markedSecret(clip-&gt;mimeData(mode));</span></span>
+<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">          26 :       previous = safe ? now : QString();</span></span>
+<span id="L147"><span class="lineNum">     147</span>              :     }</span>
+<span id="L148"><span class="lineNum">     148</span>              :   }</span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">          45 :   forgetIfSaved(text);</span></span>
+<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">          45 :   clip-&gt;setMimeData(buildClipboardMimeData(text), mode);</span></span>
+<span id="L151"><span class="lineNum">     151</span>              : </span>
+<span id="L152"><span class="lineNum">     152</span>              :   // The text copied before may still be in the other buffer (a PIN copied to</span>
+<span id="L153"><span class="lineNum">     153</span>              :   // the clipboard, then selected, so also in the X11 selection): replacing</span>
+<span id="L154"><span class="lineNum">     154</span>              :   // it here would leave it there past autoclear.</span>
+<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">          14 :   if (!m_clippedText.isEmpty() &amp;&amp; m_clippedText != text &amp;&amp;</span></span>
+<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">          55 :       !m_otherCopies.contains(m_clippedText) &amp;&amp;</span></span>
+<span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">          50 :       (clip-&gt;text(QClipboard::Clipboard) == m_clippedText ||</span></span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          50 :        clip-&gt;text(QClipboard::Selection) == m_clippedText)) {</span></span>
+<span id="L159"><span class="lineNum">     159</span> <span class="tlaUNC">           0 :     m_otherCopies.append(m_clippedText);</span></span>
+<span id="L160"><span class="lineNum">     160</span>              :   }</span>
+<span id="L161"><span class="lineNum">     161</span> <span class="tlaGNC">          45 :   m_clippedText = text;</span></span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">          45 :   emit statusMessage(tr(&quot;Copied to clipboard&quot;));</span></span>
+<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">          45 :   if (s.useAutoclear) {</span></span>
+<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">          25 :     m_clearTimer.start();</span></span>
+<span id="L165"><span class="lineNum">     165</span>              :   }</span>
+<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">          45 : }</span></span>
+<span id="L167"><span class="lineNum">     167</span>              : </span>
+<span id="L168"><span class="lineNum">     168</span> <span class="tlaGNC">         114 : void ClipboardManager::forgetIfSaved(const QString &amp;text) {</span></span>
+<span id="L169"><span class="lineNum">     169</span>              :   // The saved text is copied as a secret now: putting it back would leave</span>
+<span id="L170"><span class="lineNum">     170</span>              :   // that secret on the clipboard. Emptied, not dropped, so no later copy</span>
+<span id="L171"><span class="lineNum">     171</span>              :   // takes a new snapshot in this window either; clear() then clears.</span>
+<span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">         249 :   for (std::optional&lt;QString&gt; *previous :</span></span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">         342 :        {&amp;m_previousClipboard, &amp;m_previousSelection}) {</span></span>
+<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">         228 :     if (*previous &amp;&amp; **previous == text) {</span></span>
+<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">           4 :       *previous = QString();</span></span>
+<span id="L176"><span class="lineNum">     176</span>              :     }</span>
+<span id="L177"><span class="lineNum">     177</span>              :   }</span>
+<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">         114 : }</span></span>
+<span id="L179"><span class="lineNum">     179</span>              : </span>
+<span id="L180"><span class="lineNum">     180</span> <span class="tlaGNC">          69 : void ClipboardManager::trackCopied(const QString &amp;text) {</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">          69 :   if (text.isEmpty()) {</span></span>
+<span id="L182"><span class="lineNum">     182</span>              :     return;</span>
+<span id="L183"><span class="lineNum">     183</span>              :   }</span>
+<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">          69 :   forgetIfSaved(text);</span></span>
+<span id="L185"><span class="lineNum">     185</span>              :   // Kept beside m_clippedText, not instead of it: replacing it would leave a</span>
+<span id="L186"><span class="lineNum">     186</span>              :   // password copied earlier on the clipboard past its autoclear (#1607).</span>
+<span id="L187"><span class="lineNum">     187</span>              :   constexpr qsizetype kMaxOtherCopies = 16;</span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">          69 :   if (text != m_clippedText &amp;&amp; !m_otherCopies.contains(text)) {</span></span>
+<span id="L189"><span class="lineNum">     189</span>              :     // A mouse selection reports itself on every change while it grows or</span>
+<span id="L190"><span class="lineNum">     190</span>              :     // shrinks (the X11 primary selection); only where it ends counts, or a</span>
+<span id="L191"><span class="lineNum">     191</span>              :     // passing &quot;a&quot; would stay tracked and autoclear could take someone</span>
+<span id="L192"><span class="lineNum">     192</span>              :     // else's &quot;a&quot; later.</span>
+<span id="L193"><span class="lineNum">     193</span>              :     // An earlier copy still on the clipboard proper (Ctrl+C) stays tracked.</span>
+<span id="L194"><span class="lineNum">     194</span>              :     // A step holds the one before or lies in it (a word double-clicked,</span>
+<span id="L195"><span class="lineNum">     195</span>              :     // then Ctrl+A); oneHoldsTheOther() asks that in linear time.</span>
+<span id="L196"><span class="lineNum">     196</span>              :     const QString &amp;last =</span>
+<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">          69 :         m_otherCopies.isEmpty() ? QString() : m_otherCopies.last();</span></span>
+<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">          63 :     if (!last.isEmpty() &amp;&amp; oneHoldsTheOther(text, last) &amp;&amp;</span></span>
+<span id="L199"><span class="lineNum">     199</span> <span class="tlaGNC">         159 :         QApplication::clipboard()-&gt;text(QClipboard::Clipboard) != last &amp;&amp;</span></span>
+<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">          79 :         QApplication::clipboard()-&gt;text(QClipboard::Selection) != last) {</span></span>
+<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">          10 :       m_otherCopies.last() = text;</span></span>
+<span id="L202"><span class="lineNum">     202</span>              :     } else {</span>
+<span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">          59 :       if (m_otherCopies.size() &gt;= kMaxOtherCopies) {</span></span>
+<span id="L204"><span class="lineNum">     204</span>              :         // Make room, but never by forgetting a text that is still on the</span>
+<span id="L205"><span class="lineNum">     205</span>              :         // clipboard or in the selection: it would then outlive autoclear.</span>
+<span id="L206"><span class="lineNum">     206</span>              :         // At most two are, so the oldest of the rest can always go.</span>
+<span id="L207"><span class="lineNum">     207</span>              :         const QString onClipboard =</span>
+<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">          25 :             QApplication::clipboard()-&gt;text(QClipboard::Clipboard);</span></span>
+<span id="L209"><span class="lineNum">     209</span>              :         const QString inSelection =</span>
+<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">          25 :             QApplication::clipboard()-&gt;text(QClipboard::Selection);</span></span>
+<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">          50 :         for (qsizetype i = 0; i &lt; m_otherCopies.size(); ++i) {</span></span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">          50 :           if (m_otherCopies.at(i) != onClipboard &amp;&amp;</span></span>
+<span id="L213"><span class="lineNum">     213</span>              :               m_otherCopies.at(i) != inSelection) {</span>
+<span id="L214"><span class="lineNum">     214</span>              :             m_otherCopies.removeAt(i);</span>
+<span id="L215"><span class="lineNum">     215</span>              :             break;</span>
+<span id="L216"><span class="lineNum">     216</span>              :           }</span>
+<span id="L217"><span class="lineNum">     217</span>              :         }</span>
+<span id="L218"><span class="lineNum">     218</span>              :       }</span>
+<span id="L219"><span class="lineNum">     219</span>              :       m_otherCopies.append(text);</span>
 <span id="L220"><span class="lineNum">     220</span>              :     }</span>
-<span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">          23 :     if (restore &amp;&amp; previous &amp;&amp; !previous-&gt;isEmpty() &amp;&amp; now == m_clippedText) {</span></span>
-<span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">           3 :       clipboard-&gt;setText(*previous, mode);</span></span>
-<span id="L223"><span class="lineNum">     223</span> <span class="tlaGNC">           3 :       restored = true;</span></span>
-<span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">           3 :       return;</span></span>
-<span id="L225"><span class="lineNum">     225</span>              :     }</span>
-<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">          20 :     clipboard-&gt;clear(mode);</span></span>
-<span id="L227"><span class="lineNum">     227</span> <span class="tlaGNC">          20 :     if (mode == QClipboard::Selection) {</span></span>
-<span id="L228"><span class="lineNum">     228</span> <span class="tlaUNC">           0 :       clipboard-&gt;setText(QString(&quot;&quot;), QClipboard::Selection);</span></span>
-<span id="L229"><span class="lineNum">     229</span>              :     }</span>
-<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">          20 :     cleared = true;</span></span>
-<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">          27 :   };</span></span>
-<span id="L232"><span class="lineNum">     232</span> <span class="tlaGNC">          27 :   putBack(QClipboard::Selection, previousSelection);</span></span>
-<span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">          27 :   putBack(QClipboard::Clipboard, previousClipboard);</span></span>
-<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">          54 :   emit statusMessage(restored  ? tr(&quot;Clipboard restored&quot;)</span></span>
-<span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">          24 :                      : cleared ? tr(&quot;Clipboard cleared&quot;)</span></span>
-<span id="L236"><span class="lineNum">     236</span>              :                                : tr(&quot;Clipboard not cleared&quot;));</span>
-<span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">          27 :   m_clippedText.clear();</span></span>
-<span id="L238"><span class="lineNum">     238</span> <span class="tlaGNC">          27 :   m_otherCopies.clear();</span></span>
-<span id="L239"><span class="lineNum">     239</span>              : }</span>
-<span id="L240"><span class="lineNum">     240</span>              : </span>
-<span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">          67 : auto buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData * {</span></span>
-<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">          67 :   auto *mimeData = new QMimeData();</span></span>
-<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">          67 :   mimeData-&gt;setText(text);</span></span>
-<span id="L244"><span class="lineNum">     244</span>              : // The KDE hint (what wl-copy --sensitive sets) keeps the secret out of</span>
-<span id="L245"><span class="lineNum">     245</span>              : // Klipper, CopyQ and cliphist history, on the BSDs as well as on Linux.</span>
-<span id="L246"><span class="lineNum">     246</span>              : #if defined(Q_OS_UNIX) &amp;&amp; !defined(Q_OS_DARWIN)</span>
-<span id="L247"><span class="lineNum">     247</span> <span class="tlaGNC">         134 :   mimeData-&gt;setData(&quot;x-kde-passwordManagerHint&quot;, QByteArray(&quot;secret&quot;));</span></span>
-<span id="L248"><span class="lineNum">     248</span>              : #endif</span>
-<span id="L249"><span class="lineNum">     249</span>              : #ifdef Q_OS_MAC</span>
-<span id="L250"><span class="lineNum">     250</span>              :   mimeData-&gt;setData(&quot;application/x-nspasteboard-concealed-type&quot;, QByteArray());</span>
-<span id="L251"><span class="lineNum">     251</span>              : #endif</span>
-<span id="L252"><span class="lineNum">     252</span>              : #ifdef Q_OS_WIN</span>
-<span id="L253"><span class="lineNum">     253</span>              :   mimeData-&gt;setData(&quot;ExcludeClipboardContentFromMonitorProcessing&quot;,</span>
-<span id="L254"><span class="lineNum">     254</span>              :                     dwordBytes(1));</span>
-<span id="L255"><span class="lineNum">     255</span>              :   mimeData-&gt;setData(&quot;CanIncludeInClipboardHistory&quot;, dwordBytes(0));</span>
-<span id="L256"><span class="lineNum">     256</span>              :   mimeData-&gt;setData(&quot;CanUploadToCloudClipboard&quot;, dwordBytes(0));</span>
-<span id="L257"><span class="lineNum">     257</span>              : #endif</span>
-<span id="L258"><span class="lineNum">     258</span> <span class="tlaGNC">          67 :   return mimeData;</span></span>
-<span id="L259"><span class="lineNum">     259</span>              : }</span>
+<span id="L221"><span class="lineNum">     221</span>              :   }</span>
+<span id="L222"><span class="lineNum">     222</span>              :   // Not pushed back: a selection reports itself on every change, and a drag</span>
+<span id="L223"><span class="lineNum">     223</span>              :   // too, so restarting here gave a password copied earlier a new full</span>
+<span id="L224"><span class="lineNum">     224</span>              :   // period each time. The first deadline clears everything tracked.</span>
+<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">         127 :   if (QtPassSettings::load().useAutoclear &amp;&amp; !m_clearTimer.isActive()) {</span></span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">          11 :     m_clearTimer.start();</span></span>
+<span id="L227"><span class="lineNum">     227</span>              :   }</span>
+<span id="L228"><span class="lineNum">     228</span>              : }</span>
+<span id="L229"><span class="lineNum">     229</span>              : </span>
+<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">          59 : void ClipboardManager::clear() {</span></span>
+<span id="L231"><span class="lineNum">     231</span>              :   // A clear before the deadline (a deselect) ends this window: a copy</span>
+<span id="L232"><span class="lineNum">     232</span>              :   // tracked after it starts a full one, not the rest of the old one.</span>
+<span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">          59 :   m_clearTimer.stop();</span></span>
+<span id="L234"><span class="lineNum">     234</span>              :   // Whatever happens below, the saved text is forgotten: it is the user's,</span>
+<span id="L235"><span class="lineNum">     235</span>              :   // and no later autoclear may put it back.</span>
+<span id="L236"><span class="lineNum">     236</span>              :   const std::optional&lt;QString&gt; previousClipboard =</span>
+<span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">          59 :       std::exchange(m_previousClipboard, std::nullopt);</span></span>
+<span id="L238"><span class="lineNum">     238</span>              :   const std::optional&lt;QString&gt; previousSelection =</span>
+<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">          59 :       std::exchange(m_previousSelection, std::nullopt);</span></span>
+<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">          59 :   if (m_clippedText.isEmpty() &amp;&amp; m_otherCopies.isEmpty()) {</span></span>
+<span id="L241"><span class="lineNum">     241</span>              :     // Nothing of ours is out there. The old code compared the empty tracker</span>
+<span id="L242"><span class="lineNum">     242</span>              :     // with an empty selection, &quot;cleared&quot; that and said so on every deselect.</span>
+<span id="L243"><span class="lineNum">     243</span>              :     return;</span>
+<span id="L244"><span class="lineNum">     244</span>              :   }</span>
+<span id="L245"><span class="lineNum">     245</span> <span class="tlaGNC">          66 :   const auto ours = [this](const QString &amp;text) {</span></span>
+<span id="L246"><span class="lineNum">     246</span> <span class="tlaGNC">          66 :     return !text.isEmpty() &amp;&amp;</span></span>
+<span id="L247"><span class="lineNum">     247</span> <span class="tlaGNC">          33 :            (text == m_clippedText || m_otherCopies.contains(text));</span></span>
+<span id="L248"><span class="lineNum">     248</span> <span class="tlaGNC">          33 :   };</span></span>
+<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">          33 :   QClipboard *clipboard = QApplication::clipboard();</span></span>
+<span id="L250"><span class="lineNum">     250</span> <span class="tlaGNC">          33 :   const bool restore = QtPassSettings::load().restoreClipboard;</span></span>
+<span id="L251"><span class="lineNum">     251</span> <span class="tlaGNC">          33 :   bool cleared = false;</span></span>
+<span id="L252"><span class="lineNum">     252</span> <span class="tlaGNC">          33 :   bool restored = false;</span></span>
+<span id="L253"><span class="lineNum">     253</span>              :   // Ours still there: the text from before comes back if there was one and</span>
+<span id="L254"><span class="lineNum">     254</span>              :   // what is there is copyText()'s own copy, otherwise it is cleared. A copy</span>
+<span id="L255"><span class="lineNum">     255</span>              :   // from a shown field (trackCopied()) is cleared on purpose, not restored</span>
+<span id="L256"><span class="lineNum">     256</span>              :   // over: it can come long after copyText(), when &quot;before&quot; is stale, and the</span>
+<span id="L257"><span class="lineNum">     257</span>              :   // user chose that copy themselves. Something else copied meanwhile is left</span>
+<span id="L258"><span class="lineNum">     258</span>              :   // alone. The setting is read now: switched off during the window, the</span>
+<span id="L259"><span class="lineNum">     259</span>              :   // saved text was still held until here, and is dropped unused.</span>
+<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">          66 :   const auto putBack = [&amp;](QClipboard::Mode mode,</span></span>
+<span id="L261"><span class="lineNum">     261</span>              :                            const std::optional&lt;QString&gt; &amp;previous) {</span>
+<span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">          66 :     const QString now = clipboard-&gt;text(mode);</span></span>
+<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">          66 :     if (!ours(now)) {</span></span>
+<span id="L264"><span class="lineNum">     264</span>              :       return;</span>
+<span id="L265"><span class="lineNum">     265</span>              :     }</span>
+<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">          23 :     if (restore &amp;&amp; previous &amp;&amp; !previous-&gt;isEmpty() &amp;&amp; now == m_clippedText) {</span></span>
+<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">           3 :       clipboard-&gt;setText(*previous, mode);</span></span>
+<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">           3 :       restored = true;</span></span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">           3 :       return;</span></span>
+<span id="L270"><span class="lineNum">     270</span>              :     }</span>
+<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">          20 :     clipboard-&gt;clear(mode);</span></span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">          20 :     if (mode == QClipboard::Selection) {</span></span>
+<span id="L273"><span class="lineNum">     273</span> <span class="tlaUNC">           0 :       clipboard-&gt;setText(QString(&quot;&quot;), QClipboard::Selection);</span></span>
+<span id="L274"><span class="lineNum">     274</span>              :     }</span>
+<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">          20 :     cleared = true;</span></span>
+<span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">          33 :   };</span></span>
+<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">          33 :   putBack(QClipboard::Selection, previousSelection);</span></span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">          33 :   putBack(QClipboard::Clipboard, previousClipboard);</span></span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          66 :   emit statusMessage(restored  ? tr(&quot;Clipboard restored&quot;)</span></span>
+<span id="L280"><span class="lineNum">     280</span> <span class="tlaGNC">          30 :                      : cleared ? tr(&quot;Clipboard cleared&quot;)</span></span>
+<span id="L281"><span class="lineNum">     281</span>              :                                : tr(&quot;Clipboard not cleared&quot;));</span>
+<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">          33 :   m_clippedText.clear();</span></span>
+<span id="L283"><span class="lineNum">     283</span> <span class="tlaGNC">          33 :   m_otherCopies.clear();</span></span>
+<span id="L284"><span class="lineNum">     284</span>              : }</span>
+<span id="L285"><span class="lineNum">     285</span>              : </span>
+<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">          67 : auto buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData * {</span></span>
+<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">          67 :   auto *mimeData = new QMimeData();</span></span>
+<span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">          67 :   mimeData-&gt;setText(text);</span></span>
+<span id="L289"><span class="lineNum">     289</span>              : // The KDE hint (what wl-copy --sensitive sets) keeps the secret out of</span>
+<span id="L290"><span class="lineNum">     290</span>              : // Klipper, CopyQ and cliphist history, on the BSDs as well as on Linux.</span>
+<span id="L291"><span class="lineNum">     291</span>              : #if defined(Q_OS_UNIX) &amp;&amp; !defined(Q_OS_DARWIN)</span>
+<span id="L292"><span class="lineNum">     292</span> <span class="tlaGNC">         134 :   mimeData-&gt;setData(&quot;x-kde-passwordManagerHint&quot;, QByteArray(&quot;secret&quot;));</span></span>
+<span id="L293"><span class="lineNum">     293</span>              : #endif</span>
+<span id="L294"><span class="lineNum">     294</span>              : #ifdef Q_OS_MAC</span>
+<span id="L295"><span class="lineNum">     295</span>              :   mimeData-&gt;setData(&quot;application/x-nspasteboard-concealed-type&quot;, QByteArray());</span>
+<span id="L296"><span class="lineNum">     296</span>              : #endif</span>
+<span id="L297"><span class="lineNum">     297</span>              : #ifdef Q_OS_WIN</span>
+<span id="L298"><span class="lineNum">     298</span>              :   mimeData-&gt;setData(&quot;ExcludeClipboardContentFromMonitorProcessing&quot;,</span>
+<span id="L299"><span class="lineNum">     299</span>              :                     dwordBytes(1));</span>
+<span id="L300"><span class="lineNum">     300</span>              :   mimeData-&gt;setData(&quot;CanIncludeInClipboardHistory&quot;, dwordBytes(0));</span>
+<span id="L301"><span class="lineNum">     301</span>              :   mimeData-&gt;setData(&quot;CanUploadToCloudClipboard&quot;, dwordBytes(0));</span>
+<span id="L302"><span class="lineNum">     302</span>              : #endif</span>
+<span id="L303"><span class="lineNum">     303</span> <span class="tlaGNC">          67 :   return mimeData;</span></span>
+<span id="L304"><span class="lineNum">     304</span>              : }</span>
         </pre>
               </td>
             </tr>
