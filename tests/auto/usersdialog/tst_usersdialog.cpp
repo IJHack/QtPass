@@ -77,6 +77,7 @@ private slots:
   void aFolderNameCannotTurnTheWarningAround();
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
+  void anOverlongRecipientIsShownShortAndKeptWhole();
   void manyUnknownRecipientsOpenAtOnceAndSorted();
   void unreadableRecipientLineLeavesTheOthersTicked();
   void unreadableLineStaysMissingWhenAResolvedUidContainsIt();
@@ -1286,6 +1287,54 @@ void tst_usersdialog::unknownRecipientIsListedAsNotFoundAndTicked() {
   QCOMPARE(
       enabledIds(dialog.selectedUsers()),
       QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
+}
+
+/**
+ * @brief A .gpg-id line no key answers to is shown cut short, and kept whole
+ * in what OK writes back. Qt elided the whole line on every paint, in time
+ * quadratic in its tabs and script changes: a co-writer's line froze the
+ * dialog for minutes (scan finding ANT-2026-DAFRPZ0K).
+ */
+void tst_usersdialog::anOverlongRecipientIsShownShortAndKeptWhole() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  // "aα" crosses a script boundary every character; a surrogate pair sits
+  // where the row is cut. The stand-in gpg knows no key for DEADBEEF.
+  const QString line =
+      QString(255, QLatin1Char('k')) + QStringLiteral("\U0001F511") +
+      QStringLiteral("a\u03B1").repeated(30000) +
+      QString(20000, QLatin1Char('\t')) + QStringLiteral("DEADBEEFDEADBEEF");
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9\n" + line.toUtf8() +
+              "\n");
+  gpgId.close();
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QListWidgetItem *row = nullptr;
+  for (int i = 0; i < list->count(); ++i) {
+    if (list->item(i)->text().contains(QStringLiteral("kkkk"))) {
+      row = list->item(i);
+    }
+  }
+  QVERIFY2(row != nullptr, "the unknown recipient is listed");
+  const QString shown = row->text();
+  QVERIFY2(shown.size() < 1000, qPrintable(QString::number(shown.size())));
+  QVERIFY(shown.contains(QString(255, QLatin1Char('k')) + QChar(0x2026)));
+
+  dialog.resize(400, 300);
+  QElapsedTimer timer;
+  timer.start();
+  (void)list->viewport()->grab();
+  QVERIFY2(timer.elapsed() < 2000,
+           qPrintable(QString::number(timer.elapsed())));
+
+  QVERIFY2(enabledIds(dialog.selectedUsers()).contains(line),
+           "OK keeps the line as written");
 }
 
 /**
