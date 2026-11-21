@@ -168,6 +168,20 @@ Saving recipients in the **Users** dialog changes the recipient list (`.gpg-id`)
 - **Hidden folders** (names that start with a dot). QtPass does not show, search or re-encrypt them, as `pass ls` does not list them (`pass init` does re-encrypt them). Move the entries into a normal folder, then re-encrypt.
 - **Copies elsewhere.** Re-encrypting does not take back what the person could already read: Git history, backups and synced copies keep the old files. Change the passwords that matter.
 
+### Saving says "Recipient list is a link"
+
+With the `pass` backend, QtPass does not run `pass` where a folder's `.gpg-id` is a symbolic link (or, on Windows, a junction). `pass` follows such a link and encrypts to the recipients in the file it points to, while QtPass and its **Users** dialog skip it and show the list of a folder above. That would encrypt to people you cannot see in QtPass.
+
+A shared recipient list kept in one place and linked into several folders therefore no longer works with QtPass. Replace each link with a copy of the list, or remove it so that the folder uses its parent's list:
+
+```sh
+find ~/.password-store -name .gpg-id -type l
+```
+
+This includes the list at the top of the store: a store whose own `.gpg-id` is a link, as a dotfile manager such as GNU Stow or chezmoi may set it up, cannot be saved to with the `pass` backend until the link is replaced by a regular file.
+
+With a signing key, a linked list was already refused, also with the native backend.
+
 ### How do I set up a one-time password (OTP/TOTP)?
 
 QtPass generates TOTP codes itself (RFC 6238), so you no longer need the

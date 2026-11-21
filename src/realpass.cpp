@@ -142,13 +142,41 @@ auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
   return false;
 }
 
+auto RealPass::refuseLinkedList(const QString &file, const QString &within,
+                                const QString &except) -> bool {
+  const std::optional<QString> linked =
+      Pass::linkedGpgId(file, m_settings.passStore);
+  if (!linked) {
+    return false;
+  }
+  const QString absolute =
+      QDir::cleanPath(QFileInfo(*linked).absoluteFilePath());
+  if ((!except.isEmpty() &&
+       absolute == QDir::cleanPath(QFileInfo(except).absoluteFilePath())) ||
+      (!within.isEmpty() && !absolute.startsWith(within))) {
+    return false;
+  }
+  emit critical(
+      tr("Recipient list is a link"),
+      tr("%1 is a link. pass would encrypt to the recipients in the file it "
+         "points to, while QtPass shows the list of a folder above it, so "
+         "nothing was encrypted. Replace the link with a copy of the list, or "
+         "remove it.")
+          .arg(QDir::toNativeSeparators(*linked)));
+  return true;
+}
+
 auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
   // pass verifies the signature itself, but knows nothing of the generation
   // and folder lines: an older authentic list put back, or one signed for
   // another folder, would get the secret (#2077). The same checks as the
   // native backend, with gpg in the store's environment. pass reads the list
   // again afterwards; a swap in between is a concurrent writer, out of
-  // scope (SECURITY.md).
+  // scope (SECURITY.md). A linked list differs from what QtPass shows,
+  // signing key or not.
+  if (refuseLinkedList(file)) {
+    return true;
+  }
   const GpgIdSigner signer = listSigner();
   if (!signer.enabled()) {
     return false;
@@ -187,6 +215,37 @@ auto passFoldersUnder(const QString &dir, QStringList &unreadable)
 
 auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
                                     const QString &except) -> bool {
+  // Every folder pass's walk takes. A name Qt cannot read hides what is
+  // behind it, a linked list included, so the walk must be complete first,
+  // signing key or not.
+  QStringList unreadable;
+  const QStringList folders = passFoldersUnder(dir, unreadable);
+  if (!unreadable.isEmpty()) {
+    const QString title = tr("Cannot check the recipient lists");
+    //: %1 is a folder. "UTF-8" is the text encoding; keep it as is.
+    const QString text =
+        tr("%1 holds a file or folder whose name is not valid UTF-8. QtPass "
+           "cannot see what is behind that name, while pass would re-encrypt "
+           "it, so nothing was changed. Rename it, then try again.")
+            .arg(QDir::toNativeSeparators(unreadable.first()));
+    emit critical(title, text);
+    return true;
+  }
+  // Absolute, as getGpgIdPath() hands lists back: a relative or other
+  // spelling would match nothing and check nothing.
+  const QString within =
+      onlyListsWithin ? QDir::cleanPath(QFileInfo(dir).absoluteFilePath()) +
+                            QLatin1Char('/')
+                      : QString();
+  // A linked list differs from what QtPass shows, signing key or not: in
+  // every folder of the walk, and above them unless only the lists within
+  // count (the folder that moves gets the destination's list, the folder
+  // pass init writes its own).
+  for (const QString &folder : folders) {
+    if (refuseLinkedList(folder + QLatin1Char('/'), within, except)) {
+      return true;
+    }
+  }
   const GpgIdSigner signer = listSigner();
   if (!signer.enabled()) {
     return false;
@@ -203,30 +262,11 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   // recipients are saved there again), while a list above it is replaced
   // by the destination's, which the caller checks. For entries already in
   // the destination, their lists stay where they are: all of them count.
-  // Absolute, as getGpgIdPath() hands lists back: a relative or other
-  // spelling would match nothing and check nothing.
-  const QString within =
-      onlyListsWithin ? QDir::cleanPath(QFileInfo(dir).absoluteFilePath()) +
-                            QLatin1Char('/')
-                      : QString();
   QSet<QString> verified;
   // Every folder's list counts, also where no entry uses it yet: cp -r
   // merges an incoming folder into one of the same name, so the entries it
   // brings get a list already there, and a list it brings replaces the one
   // there for the entries already in it.
-  QStringList unreadable;
-  const QStringList folders = passFoldersUnder(dir, unreadable);
-  if (!unreadable.isEmpty()) {
-    const QString title = tr("Cannot check the recipient lists");
-    //: %1 is a folder. "UTF-8" is the text encoding; keep it as is.
-    const QString text =
-        tr("%1 holds a file or folder whose name is not valid UTF-8. QtPass "
-           "cannot see what is behind that name, while pass would re-encrypt "
-           "it, so nothing was changed. Rename it, then try again.")
-            .arg(QDir::toNativeSeparators(unreadable.first()));
-    emit critical(title, text);
-    return true;
-  }
   for (const QString &folder : folders) {
     if (refuseList(folder, signer, verified, within, except)) {
       return true;

@@ -770,10 +770,12 @@ auto gpgIdLookup(const QString &for_file, const QString &passStore)
   return {QDir(start), folder, storeDir, storePrefix};
 }
 
-/// Whether @p candidate can be its folder's .gpg-id. A link under the name
-/// is not: whoever planted it chose the recipients elsewhere.
+/// Whether @p candidate can be its folder's .gpg-id: a regular file, as
+/// pass looks for (test -f), so a folder under the name is passed over as
+/// pass passes it. A link under the name is not: whoever planted it chose
+/// the recipients elsewhere.
 auto isOwnGpgId(const QFileInfo &candidate) -> bool {
-  return candidate.exists() && !candidate.isSymLink() &&
+  return candidate.isFile() && !candidate.isSymLink() &&
          !candidate.isJunction();
 }
 
@@ -1087,6 +1089,28 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
       break;
     }
     dir = parent;
+  }
+  return std::nullopt;
+}
+
+auto Pass::linkedGpgId(const QString &forFile, const QString &passStore)
+    -> std::optional<QString> {
+  const GpgIdLookup lookup = gpgIdLookup(forFile, passStore);
+  // The walk of nearestGpgId(), root included, stopping at the list it
+  // finds.
+  QDir dir = lookup.start;
+  while (dir.exists() && isAtOrUnder(QDir::cleanPath(dir.absolutePath()),
+                                     lookup.storeDir, lookup.storePrefix)) {
+    const QFileInfo candidate(dir.absoluteFilePath(".gpg-id"));
+    if (isOwnGpgId(candidate)) {
+      return std::nullopt;
+    }
+    if (candidate.isSymLink() || candidate.isJunction()) {
+      return candidate.absoluteFilePath();
+    }
+    if (!dir.cdUp()) {
+      break;
+    }
   }
   return std::nullopt;
 }

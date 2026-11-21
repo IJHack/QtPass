@@ -340,6 +340,21 @@ public:
                            QString *recordError = nullptr)
       -> std::optional<QString>;
   /**
+   * @brief The link or junction under the name `.gpg-id` that getGpgIdPath()
+   * skips on its way up from @p forFile, if it skips one before the list it
+   * returns.
+   *
+   * `pass` follows such a link and encrypts to the recipients of the file it
+   * points to, while QtPass shows and checks the list of a folder above it.
+   * Unlike skippedGpgId(), this asks no generation record and includes the
+   * store root, so it applies with or without a signing key.
+   * @param forFile Entry or folder, as for getGpgIdPath().
+   * @param passStore Root directory of the password store.
+   * @return The linked `.gpg-id` path, or nothing when the walk meets none.
+   */
+  static auto linkedGpgId(const QString &forFile, const QString &passStore)
+      -> std::optional<QString>;
+  /**
    * @brief Get list of recipients for a password file.
    * @param for_file Path to password file.
    * @param passStore Root directory of the password store.
