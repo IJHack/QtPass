@@ -1610,8 +1610,21 @@ void tst_realpass::aLinkedListIsRefusedWithoutASigningKey() {
   QVERIFY2(criticalSpy.last().at(1).toString().contains(
                QDir::toNativeSeparators(QDir::cleanPath(rootList))),
            qPrintable(criticalSpy.last().at(1).toString()));
-  QVERIFY(QFile::remove(rootList));
   QVERIFY(QDir(m_store + QStringLiteral("team/.gpg-id")).removeRecursively());
+
+  // pass init writes the folder's own list, so a linked list above it no
+  // longer applies there: init goes through.
+  QFile::remove(m_log);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("AAAA");
+  alice.enabled = true;
+  pass->Init(m_store + QStringLiteral("team/"), {alice});
+  const QStringList initArgs = waitForCall().args;
+  QVERIFY2(initArgs.contains(QStringLiteral("init")),
+           qPrintable(initArgs.join(QLatin1Char(' '))));
+  QCOMPARE(criticalSpy.count(), 5);
+  QFile::remove(m_store + QStringLiteral("team/.gpg-id"));
+  QVERIFY(QFile::remove(rootList));
 
 #ifndef Q_OS_WIN
   // A name Qt cannot read hides what is behind it, a linked list included:

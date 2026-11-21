@@ -142,13 +142,18 @@ auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
   return false;
 }
 
-auto RealPass::refuseLinkedList(const QString &file, const QString &except)
-    -> bool {
+auto RealPass::refuseLinkedList(const QString &file, const QString &within,
+                                const QString &except) -> bool {
   const std::optional<QString> linked =
       Pass::linkedGpgId(file, m_settings.passStore);
-  if (!linked || (!except.isEmpty() &&
-                  QDir::cleanPath(QFileInfo(*linked).absoluteFilePath()) ==
-                      QDir::cleanPath(QFileInfo(except).absoluteFilePath()))) {
+  if (!linked) {
+    return false;
+  }
+  const QString absolute =
+      QDir::cleanPath(QFileInfo(*linked).absoluteFilePath());
+  if ((!except.isEmpty() &&
+       absolute == QDir::cleanPath(QFileInfo(except).absoluteFilePath())) ||
+      (!within.isEmpty() && !absolute.startsWith(within))) {
     return false;
   }
   emit critical(
@@ -226,10 +231,18 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
     emit critical(title, text);
     return true;
   }
+  // Absolute, as getGpgIdPath() hands lists back: a relative or other
+  // spelling would match nothing and check nothing.
+  const QString within =
+      onlyListsWithin ? QDir::cleanPath(QFileInfo(dir).absoluteFilePath()) +
+                            QLatin1Char('/')
+                      : QString();
   // A linked list differs from what QtPass shows, signing key or not: in
-  // every folder of the walk, and above them.
+  // every folder of the walk, and above them unless only the lists within
+  // count (the folder that moves gets the destination's list, the folder
+  // pass init writes its own).
   for (const QString &folder : folders) {
-    if (refuseLinkedList(folder + QLatin1Char('/'), except)) {
+    if (refuseLinkedList(folder + QLatin1Char('/'), within, except)) {
       return true;
     }
   }
@@ -249,12 +262,6 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   // recipients are saved there again), while a list above it is replaced
   // by the destination's, which the caller checks. For entries already in
   // the destination, their lists stay where they are: all of them count.
-  // Absolute, as getGpgIdPath() hands lists back: a relative or other
-  // spelling would match nothing and check nothing.
-  const QString within =
-      onlyListsWithin ? QDir::cleanPath(QFileInfo(dir).absoluteFilePath()) +
-                            QLatin1Char('/')
-                      : QString();
   QSet<QString> verified;
   // Every folder's list counts, also where no entry uses it yet: cp -r
   // merges an incoming folder into one of the same name, so the entries it

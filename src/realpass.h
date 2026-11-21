@@ -134,12 +134,14 @@ class RealPass : public Pass {
    * with or without a signing key: pass would follow it, while QtPass shows
    * the list of a folder above it.
    * @param file The entry or folder.
+   * @param within When set, only a link under this folder (absolute,
+   *        cleaned, with a trailing "/") is refused.
    * @param except A list about to be written (`pass init`'s own), not
    *        refused.
    * @return Whether it was refused (and the user told).
    */
-  auto refuseLinkedList(const QString &file, const QString &except = QString())
-      -> bool;
+  auto refuseLinkedList(const QString &file, const QString &within = QString(),
+                        const QString &except = QString()) -> bool;
 
   /**
    * @brief Run a git command in the store through `pass git`, blocking.
