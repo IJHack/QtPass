@@ -1,5 +1,5 @@
 <map id="UsersDialog::buildUserText" name="UsersDialog::buildUserText">
-<area shape="rect" id="Node000001" title="Build display text for user." alt="" coords="5,5,203,33"/>
+<area shape="rect" id="Node000001" title="Build display text for user: the user ID and key ID on a line each, each cut to 256 characters (the r..." alt="" coords="5,5,203,33"/>
 <area shape="rect" id="Node000002" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="251,5,378,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,17,238,19,232,19,203,22"/>
 </map>

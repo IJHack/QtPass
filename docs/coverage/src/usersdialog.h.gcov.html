@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 15:34:24</td>
+            <td class="headerValue">2026-11-21 16:01:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -106,7 +106,7 @@
 <span id="L33"><span class="lineNum">      33</span>              :  * status.</span>
 <span id="L34"><span class="lineNum">      34</span>              :  */</span>
 <span id="L35"><span class="lineNum">      35</span>              : class UsersDialog : public QDialog {</span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">       12230 :   Q_OBJECT</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">       12234 :   Q_OBJECT</span></span>
 <span id="L37"><span class="lineNum">      37</span>              : </span>
 <span id="L38"><span class="lineNum">      38</span>              : public:</span>
 <span id="L39"><span class="lineNum">      39</span>              :   /** @brief Whether the recipients on disk are ticked when it opens. */</span>
@@ -292,20 +292,21 @@
 <span id="L219"><span class="lineNum">     219</span>              :    */</span>
 <span id="L220"><span class="lineNum">     220</span>              :   auto isUserExpired(const UserInfo &amp;user) const -&gt; bool;</span>
 <span id="L221"><span class="lineNum">     221</span>              :   /**</span>
-<span id="L222"><span class="lineNum">     222</span>              :    * @brief Build display text for user.</span>
-<span id="L223"><span class="lineNum">     223</span>              :    * @param user User info.</span>
-<span id="L224"><span class="lineNum">     224</span>              :    * @return Formatted text.</span>
-<span id="L225"><span class="lineNum">     225</span>              :    */</span>
-<span id="L226"><span class="lineNum">     226</span>              :   QString buildUserText(const UserInfo &amp;user) const;</span>
-<span id="L227"><span class="lineNum">     227</span>              :   /**</span>
-<span id="L228"><span class="lineNum">     228</span>              :    * @brief Apply visual styling to user item.</span>
-<span id="L229"><span class="lineNum">     229</span>              :    * @param item List item.</span>
-<span id="L230"><span class="lineNum">     230</span>              :    * @param user User info.</span>
-<span id="L231"><span class="lineNum">     231</span>              :    */</span>
-<span id="L232"><span class="lineNum">     232</span>              :   void applyUserStyling(QListWidgetItem *item, const UserInfo &amp;user) const;</span>
-<span id="L233"><span class="lineNum">     233</span>              : };</span>
-<span id="L234"><span class="lineNum">     234</span>              : </span>
-<span id="L235"><span class="lineNum">     235</span>              : #endif // SRC_USERSDIALOG_H_</span>
+<span id="L222"><span class="lineNum">     222</span>              :    * @brief Build display text for user: the user ID and key ID on a line</span>
+<span id="L223"><span class="lineNum">     223</span>              :    *        each, each cut to 256 characters (the row only shows them).</span>
+<span id="L224"><span class="lineNum">     224</span>              :    * @param user User info.</span>
+<span id="L225"><span class="lineNum">     225</span>              :    * @return Formatted text.</span>
+<span id="L226"><span class="lineNum">     226</span>              :    */</span>
+<span id="L227"><span class="lineNum">     227</span>              :   QString buildUserText(const UserInfo &amp;user) const;</span>
+<span id="L228"><span class="lineNum">     228</span>              :   /**</span>
+<span id="L229"><span class="lineNum">     229</span>              :    * @brief Apply visual styling to user item.</span>
+<span id="L230"><span class="lineNum">     230</span>              :    * @param item List item.</span>
+<span id="L231"><span class="lineNum">     231</span>              :    * @param user User info.</span>
+<span id="L232"><span class="lineNum">     232</span>              :    */</span>
+<span id="L233"><span class="lineNum">     233</span>              :   void applyUserStyling(QListWidgetItem *item, const UserInfo &amp;user) const;</span>
+<span id="L234"><span class="lineNum">     234</span>              : };</span>
+<span id="L235"><span class="lineNum">     235</span>              : </span>
+<span id="L236"><span class="lineNum">     236</span>              : #endif // SRC_USERSDIALOG_H_</span>
         </pre>
               </td>
             </tr>

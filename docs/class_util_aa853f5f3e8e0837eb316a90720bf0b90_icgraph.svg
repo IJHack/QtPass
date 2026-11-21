@@ -62,7 +62,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" target="_top" xlink:title="Build display text for user.">
+<g id="a_Node000002"><a xlink:href="class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" target="_top" xlink:title="Build display text for user: the user ID and key ID on a line each, each cut to 256 characters (the r...">
 <polygon fill="white" stroke="#666666" points="1390,-841.12 1242,-841.12 1242,-820.38 1390,-820.38 1390,-841.12"/>
 <text xml:space="preserve" text-anchor="middle" x="1316" y="-827.62" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::buildUserText</text>
 </a>

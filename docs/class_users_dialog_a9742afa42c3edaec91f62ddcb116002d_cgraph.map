@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Populate user list." alt="" coords="5,109,194,137"/>
 <area shape="rect" id="Node000002" href="$class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" title="Apply visual styling to user item." alt="" coords="242,31,461,58"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,106,241,69,274,62,269,64,242,74,137,111"/>
-<area shape="rect" id="Node000007" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user." alt="" coords="253,135,450,162"/>
+<area shape="rect" id="Node000007" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user: the user ID and key ID on a line each, each cut to 256 characters (the r..." alt="" coords="253,135,450,162"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="194,130,240,136,235,138,195,135"/>
 <area shape="rect" id="Node000009" href="$class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" title="Check if user passes filter." alt="" coords="258,83,444,110"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="194,111,245,107,240,109,195,116"/>

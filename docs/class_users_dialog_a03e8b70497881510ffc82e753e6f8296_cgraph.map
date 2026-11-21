@@ -138,7 +138,7 @@
 <area shape="poly" id="edge86_Node000056_Node000007" title=" " alt="" coords="444,1234,763,1226,758,1229,445,1239"/>
 <area shape="rect" id="Node000057" href="$class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" title="Apply visual styling to user item." alt="" coords="507,1367,726,1394"/>
 <area shape="poly" id="edge75_Node000056_Node000057" title=" " alt="" coords="440,1251,461,1262,479,1285,486,1308,492,1331,509,1352,518,1360,513,1359,505,1356,487,1333,480,1310,474,1287,457,1267,441,1256"/>
-<area shape="rect" id="Node000062" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user." alt="" coords="518,1263,715,1290"/>
+<area shape="rect" id="Node000062" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user: the user ID and key ID on a line each, each cut to 256 characters (the r..." alt="" coords="518,1263,715,1290"/>
 <area shape="poly" id="edge81_Node000056_Node000062" title=" " alt="" coords="444,1250,505,1260,500,1261,445,1255"/>
 <area shape="rect" id="Node000063" href="$class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" title="Check if user passes filter." alt="" coords="524,1315,710,1342"/>
 <area shape="poly" id="edge83_Node000056_Node000063" title=" " alt="" coords="430,1251,460,1262,475,1272,485,1281,494,1291,508,1299,527,1309,522,1310,506,1304,491,1295,481,1285,472,1276,458,1267,431,1256"/>

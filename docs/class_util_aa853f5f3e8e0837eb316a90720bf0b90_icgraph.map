@@ -1,6 +1,6 @@
 <map id="Util::displayable" name="Util::displayable">
 <area shape="rect" id="Node000001" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="1910,338,2037,366"/>
-<area shape="rect" id="Node000002" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user." alt="" coords="1661,150,1859,178"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user: the user ID and key ID on a line each, each cut to 256 characters (the r..." alt="" coords="1661,150,1859,178"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1955,324,1916,267,1890,236,1860,208,1835,193,1809,181,1809,175,1837,188,1863,204,1894,232,1920,264,1960,325"/>
 <area shape="rect" id="Node000008" href="$class_main_window.html#a769fe025472b4faa73f4846b92b552ed" title="Ask before deleting an entry or a folder, naming what goes and warning when the folder holds anything..." alt="" coords="1113,388,1329,416"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1892,358,1330,398,1329,393,1897,356"/>
