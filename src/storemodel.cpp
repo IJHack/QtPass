@@ -13,6 +13,7 @@
 #include "util.h"
 #include <QApplication>
 #include <QDebug>
+#include <QFileInfo>
 #include <QFileSystemModel>
 #include <QMessageBox>
 #include <QMimeData>
@@ -57,7 +58,13 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   if (fs == nullptr) {
     return false;
   }
-  const QString filePath = fs->filePath(index);
+  // The node's own path: filePath() rebuilds it through parent(), which
+  // looks each folder up among all its siblings, so a filter pass cost
+  // entries times sibling folders, again on every key typed in the search.
+  // filePath() only for a node that has no file information yet.
+  const QFileInfo info = fs->fileInfo(index);
+  const QString filePath =
+      info.filePath().isEmpty() ? fs->filePath(index) : info.absoluteFilePath();
   QString path = QDir(store).relativeFilePath(filePath);
   // Only what lies in the current store. The file system model keeps the
   // rows of a store shown earlier (a profile switch only re-roots it), and
