@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 21:47:33</td>
+            <td class="headerValue">2026-11-21 22:11:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -552,7 +552,7 @@
 <span id="L479"><span class="lineNum">     479</span>              :    * @brief Whether no command is running and nothing is queued.</span>
 <span id="L480"><span class="lineNum">     480</span>              :    * @return true when the executor has nothing in flight.</span>
 <span id="L481"><span class="lineNum">     481</span>              :    */</span>
-<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">         942 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">         944 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
 <span id="L483"><span class="lineNum">     483</span>              :   /**</span>
 <span id="L484"><span class="lineNum">     484</span>              :    * @brief Whether the stdout of the item whose finished() or error() is</span>
 <span id="L485"><span class="lineNum">     485</span>              :    * being emitted encodes back (toUtf8(), as every writer here does) to</span>

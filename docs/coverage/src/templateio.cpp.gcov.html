@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 21:47:33</td>
+            <td class="headerValue">2026-11-21 22:11:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -210,21 +210,21 @@
 <span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          10 :   return contents ? secretFieldsIn(*contents) : QStringList();</span></span>
 <span id="L138"><span class="lineNum">     138</span>              : }</span>
 <span id="L139"><span class="lineNum">     139</span>              : </span>
-<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">         139 : auto TemplateIO::fieldsIn(const QString &amp;templateText) -&gt; QStringList {</span></span>
+<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">         141 : auto TemplateIO::fieldsIn(const QString &amp;templateText) -&gt; QStringList {</span></span>
 <span id="L141"><span class="lineNum">     141</span>              :   // Every field becomes a row of widgets in the password dialog, built with</span>
 <span id="L142"><span class="lineNum">     142</span>              :   // a focus chain that grows quadratically: a store's 64 KiB .templates of</span>
 <span id="L143"><span class="lineNum">     143</span>              :   // one-letter lines froze Add password for half a minute. A template gets</span>
 <span id="L144"><span class="lineNum">     144</span>              :   // as many fields as an entry may have.</span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">         139 :   QStringList fields;</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">         141 :   QStringList fields;</span></span>
 <span id="L146"><span class="lineNum">     146</span>              :   int named = 0;</span>
-<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">         139 :   const QStringList lines = templateText.split(QLatin1Char('\n'));</span></span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">        4304 :   for (const QString &amp;line : lines) {</span></span>
-<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">        4167 :     if (line.trimmed().startsWith(QLatin1Char('#'))) {</span></span>
+<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">         141 :   const QStringList lines = templateText.split(QLatin1Char('\n'));</span></span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">        4308 :   for (const QString &amp;line : lines) {</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">        4169 :     if (line.trimmed().startsWith(QLatin1Char('#'))) {</span></span>
 <span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">           5 :       continue;</span></span>
 <span id="L151"><span class="lineNum">     151</span>              :     }</span>
 <span id="L152"><span class="lineNum">     152</span>              :     // Counted as setTemplate() builds rows: for every line not empty, a</span>
 <span id="L153"><span class="lineNum">     153</span>              :     // line of blanks too.</span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">        4162 :     if (!line.isEmpty()) {</span></span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">        4164 :     if (!line.isEmpty()) {</span></span>
 <span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">        3087 :       if (named == FileContent::kMaxNamedFields) {</span></span>
 <span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">           4 :         qWarning() &lt;&lt; &quot;Template has more than&quot; &lt;&lt; FileContent::kMaxNamedFields</span></span>
 <span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">           2 :                    &lt;&lt; &quot;fields; ignoring the rest&quot;;</span></span>
@@ -234,7 +234,7 @@
 <span id="L161"><span class="lineNum">     161</span>              :     }</span>
 <span id="L162"><span class="lineNum">     162</span>              :     fields.append(line);</span>
 <span id="L163"><span class="lineNum">     163</span>              :   }</span>
-<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">         139 :   return fields;</span></span>
+<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">         141 :   return fields;</span></span>
 <span id="L165"><span class="lineNum">     165</span>              : }</span>
 <span id="L166"><span class="lineNum">     166</span>              : </span>
 <span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">           3 : auto TemplateIO::writeTemplates(const QString &amp;storePath,</span></span>
