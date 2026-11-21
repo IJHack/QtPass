@@ -12,6 +12,7 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
+#include <QTextDocument>
 #include <QThread>
 #include <QUuid>
 #include <QtTest>
@@ -2115,8 +2116,13 @@ void tst_util::shownNameIsOneBoundedLine() {
   QCOMPARE(Util::shownName(QStringLiteral("abc"), -1), QString());
   QCOMPARE(Util::shownName(QStringLiteral("a") + key, 2), QStringLiteral("a"));
   // A tooltip shows markup as written.
-  QCOMPARE(Util::plainToolTip(QStringLiteral("<img src=/dev/zero>&\n")),
-           QStringLiteral("<p>&lt;img src=/dev/zero&gt;&amp;\uFFFD</p>"));
+  QTextDocument shownTip;
+  const QString tip =
+      Util::plainToolTip(QStringLiteral("<img src=/dev/zero>&\na  b"));
+  QVERIFY2(!tip.contains(QStringLiteral("<img")), qPrintable(tip));
+  shownTip.setHtml(tip);
+  QCOMPARE(shownTip.toPlainText(),
+           QStringLiteral("<img src=/dev/zero>&\uFFFDa  b"));
 }
 
 void tst_util::boundSpaceRunsCutsOnlyLongRuns() {

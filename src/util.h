@@ -300,8 +300,10 @@ public:
    *
    * Qt guesses whether a tooltip is rich text, and as rich text a name a
    * co-writer chose, such as `<img src=/dev/zero>`, would have Qt read
-   * that file without end. Escaped and in a paragraph, it is always shown
-   * as the text it is, with controls as U+FFFD (displayable()).
+   * that file without end. Escaped, in a paragraph that keeps its white
+   * space and still wraps, it is always shown as the text it is,
+   * with controls as U+FFFD (displayable()) and long runs of white space
+   * cut (boundSpaceRuns()).
    * @param text Plain text, such as a store name or path.
    * @return The tooltip.
    */

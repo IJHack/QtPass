@@ -21,6 +21,7 @@
 #include <QScopeGuard>
 #include <QStandardPaths>
 #include <QTemporaryFile>
+#include <QTextDocument>
 #include <QUrl>
 
 #include <algorithm>
@@ -831,7 +832,10 @@ auto Util::hasLongUnbrokenRun(QStringView text) -> bool {
 }
 
 auto Util::plainToolTip(const QString &text) -> QString {
-  return QStringLiteral("<p>") + displayable(text, false).toHtmlEscaped() +
+  // Escaped, with its white space kept: two names that differ only in it
+  // must not read the same; a long run is cut as everywhere it is kept.
+  return QStringLiteral("<p style=\"white-space: pre-wrap;\">") +
+         boundSpaceRuns(displayable(text, false)).toHtmlEscaped() +
          QStringLiteral("</p>");
 }
 
