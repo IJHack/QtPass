@@ -401,6 +401,10 @@ void UsersDialog::populateList(const QString &filter) {
     }
   }
   const QRegularExpression &nameFilter = m_cachedNameFilter;
+  // Sorted once at the end: with sorting on, each badge and tick below
+  // re-sorted every row added so far, and a .gpg-id of thousands of
+  // unknown recipients kept the dialog from opening for minutes.
+  ui->listWidget->setSortingEnabled(false);
   ui->listWidget->clear();
 
   for (int i = 0; i < m_userList.size(); ++i) {
@@ -415,6 +419,9 @@ void UsersDialog::populateList(const QString &filter) {
     item->setData(Qt::UserRole, QVariant::fromValue(i));
     ui->listWidget->addItem(item);
   }
+  // setSortingEnabled() only sets the flag; sortItems() sorts.
+  ui->listWidget->sortItems();
+  ui->listWidget->setSortingEnabled(true);
   updateOkButton();
 }
 
