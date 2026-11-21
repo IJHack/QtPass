@@ -800,10 +800,6 @@ auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
   return html;
 }
 
-// One pass, no regex: a pattern such as \s{1001,} retries from every
-// character of a shorter run, which is quadratic on an entry made of them.
-// A tab or a line feed ends a run in Qt's layout as well, so it ends one
-// here; \v and U+0085 do not, so they count.
 auto Util::isOtherBlockBreak(QChar c) -> bool {
   const char16_t u = c.unicode();
   return u == u'\r' || u == 0x2029 || u == 0xFDD0 || u == 0xFDD1;
@@ -818,6 +814,10 @@ auto Util::withoutOtherBlockBreaks(QString text) -> QString {
   return text;
 }
 
+// One pass, no regex: a pattern such as \s{1001,} retries from every
+// character of a shorter run, which is quadratic on an entry made of them.
+// A tab or a line feed ends a run in Qt's layout as well, so it ends one
+// here; \v and U+0085 do not, so they count.
 auto Util::boundSpaceRuns(const QString &text) -> QString {
   QString bounded;
   // Text before this index is in bounded already, or dropped.
