@@ -368,6 +368,35 @@ void tst_passworddialog::anEntryTooLongToEditIsNotLoaded() {
   QVERIFY(!e.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"))
                ->toPlainText()
                .isEmpty());
+
+  // The editor starts a block at "\r" and U+2029 too: as many of those are
+  // refused alike (scan finding ANT-2026-PJR4L456). "\r\n" is one.
+  for (const QString &end : {QStringLiteral("\r"), QStringLiteral("\u2029"),
+                             QStringLiteral("\uFDD0")}) {
+    FakePass other;
+    PasswordDialog f(&other, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                     false);
+    f.show();
+    QVERIFY(QTest::qWaitForWindowExposed(&f));
+    other.deliverShow(
+        QStringLiteral("secret") +
+        (end + QStringLiteral("l")).repeated(FileContent::kMaxDisplayLines));
+    QVERIFY2(f.findChild<QLabel *>(QStringLiteral("statusLabel"))
+                 ->text()
+                 .contains(QStringLiteral("too many")),
+             qPrintable(end.toUtf8().toHex()));
+  }
+  FakePass crlf;
+  PasswordDialog g(&crlf, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  g.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&g));
+  crlf.deliverShow(
+      QStringLiteral("l\r\n").repeated(FileContent::kMaxDisplayLines));
+  QVERIFY2(!g.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"))
+                ->toPlainText()
+                .isEmpty(),
+           "a line ending in \"\\r\\n\" counts once");
 }
 
 /**

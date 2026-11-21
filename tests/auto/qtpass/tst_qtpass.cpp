@@ -102,6 +102,16 @@ void tst_qtpass::formatOutputFoldsCarriageReturns() {
   document.setHtml(QtPass::formatOutput(QStringLiteral("a\rb").repeated(1000)));
   QCOMPARE(document.blockCount(), 1);
   QCOMPARE(document.toPlainText(), QStringLiteral("a b").repeated(1000));
+
+  // Qt starts a block at U+2029 and the frame marks too: past the display
+  // cap, which counts "\n", they made millions (scan finding
+  // ANT-2026-PJR4L456).
+  for (const char16_t breaker : {u'\u2029', u'\uFDD0', u'\uFDD1'}) {
+    const QString line =
+        QStringLiteral("a") + QChar(breaker) + QStringLiteral("b");
+    document.setHtml(QtPass::formatOutput(line.repeated(1000)));
+    QCOMPARE(document.blockCount(), 1);
+  }
 }
 
 /**

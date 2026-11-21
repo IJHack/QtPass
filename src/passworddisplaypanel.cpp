@@ -150,8 +150,11 @@ auto valueBrowser(const QString &field, const QString &value,
       QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
   browser->setObjectName(field);
   // Both branches keep white space, which can hang Qt's layout on a run of
-  // 65536 spaces; the copy button still gets the value itself.
-  const QString shown = Util::boundSpaceRuns(value);
+  // 65536 spaces; the copy button still gets the value itself. One line:
+  // a carriage return or U+2029 in a value made a block each, millions of
+  // them for a crafted password line.
+  const QString shown =
+      Util::boundSpaceRuns(Util::withoutOtherBlockBreaks(value));
   bool linked = false;
   const QString linkedText =
       links ? Util::linkifyUrls(shown, &linked) : QString();
