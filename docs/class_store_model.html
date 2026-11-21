@@ -179,6 +179,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7eddcc6b50d64067e2ccf10c8ac82b8e" id="r_a7eddcc6b50d64067e2ccf10c8ac82b8e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7eddcc6b50d64067e2ccf10c8ac82b8e">dropMimeData</a> (const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &amp;parent) -&gt; bool override</td></tr>
 <tr class="memdesc:a7eddcc6b50d64067e2ccf10c8ac82b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle dropped MIME data.  <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4a762ee2bc32b9ddab12901d0bff75d1" id="r_a4a762ee2bc32b9ddab12901d0bff75d1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a762ee2bc32b9ddab12901d0bff75d1">wordsFilter</a> (const QString &amp;query) -&gt; QRegularExpression</td></tr>
+<tr class="memdesc:a4a762ee2bc32b9ddab12901d0bff75d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tree filter for what is typed in the search box.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a8b9aceaa0b421a227661324501d09404" id="r_a8b9aceaa0b421a227661324501d09404"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8b9aceaa0b421a227661324501d09404">executeDropAction</a> (const <a class="el" href="struct_store_drag_item.html">StoreDragItem</a> &amp;info, Qt::DropAction action, const QModelIndex &amp;parent) -&gt; bool</td></tr>
@@ -213,7 +218,7 @@ Private Attributes</h2></td></tr>
 <li>Custom sorting (directories before files) </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00084">84</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00085">85</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1d113aadab8e115cdd963f2246333664" name="a1d113aadab8e115cdd963f2246333664"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d113aadab8e115cdd963f2246333664">&#9670;&#160;</a></span>StoreModel()</h2>
@@ -292,7 +297,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if drop is possible. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00229">229</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00246">246</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -340,7 +345,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false for a link inside the store, otherwise as the base class. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00126">126</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00143">143</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -387,7 +392,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Display data for the role. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00162">162</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00179">179</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -458,7 +463,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if drop was handled. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00265">265</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00282">282</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -511,7 +516,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true once the operation has been dispatched to the backend; false for an escaping path, an unknown kind or a bad target. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00306">306</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00323">323</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -558,7 +563,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00130">130</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00147">147</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
@@ -647,7 +652,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Item flags. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00187">187</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00204">204</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -677,7 +682,7 @@ Private Attributes</h2></td></tr>
 <p>Get the password store root path. </p>
 <dl class="section return"><dt>Returns</dt><dd>Store path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00257">257</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00273">273</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 <div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary">
 </div>
@@ -725,7 +730,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false for a link inside the store, otherwise as the base class. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00122">122</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00139">139</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
@@ -773,7 +778,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true for a link inside the store. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00100">100</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00117">117</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary">
 </div>
@@ -826,7 +831,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if left &lt; right. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00371">371</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00388">388</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -862,7 +867,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>MIME data object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00202">202</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00219">219</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary">
 </div>
@@ -904,7 +909,7 @@ Private Attributes</h2></td></tr>
 <p>Get supported MIME types for drag/drop. </p>
 <dl class="section return"><dt>Returns</dt><dd>List of MIME type strings. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00196">196</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00213">213</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -940,7 +945,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The payload, or nothing when <code class="param">data</code> is null, carries no payload of ours, or the payload does not deserialise cleanly. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00288">288</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00305">305</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -988,7 +993,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The absolute path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00115">115</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00132">132</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary">
 </div>
@@ -1047,7 +1052,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true once the operation has been dispatched. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00357">357</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00374">374</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
@@ -1081,7 +1086,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Proxy index for <span class="tt">path</span>, or an invalid index if no source model is set. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00143">143</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00160">160</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary">
 </div>
@@ -1119,7 +1124,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00136">136</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00153">153</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary">
 </div>
@@ -1185,7 +1190,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00150">150</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00167">167</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary">
 </div>
@@ -1269,7 +1274,7 @@ Private Attributes</h2></td></tr>
 <p>Get supported drag actions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Supported Qt::DropActions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00183">183</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00200">200</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -1299,7 +1304,49 @@ Private Attributes</h2></td></tr>
 <p>Get supported drop actions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Supported Qt::DropActions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00179">179</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00196">196</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4a762ee2bc32b9ddab12901d0bff75d1" name="a4a762ee2bc32b9ddab12901d0bff75d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a762ee2bc32b9ddab12901d0bff75d1">&#9670;&#160;</a></span>wordsFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto StoreModel::wordsFilter </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>query</em></span></td><td>)</td>
+          <td> -&gt; QRegularExpression</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The tree filter for what is typed in the search box. </p>
+<p>The words, split at spaces, are matched literally and in order, with anything in between: "work vpn" finds work/acme/vpn. Each word is taken at its first place after the one before, which is where an in-order match can always continue, and the pattern is anchored with atomic groups, so a path is searched once: a greedy <span class="tt">.*</span> join backtracked through every repeat of a word in a long path. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>The search box text, with slashes as separators. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A case-insensitive pattern; empty for no words. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00100">100</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
+</div>
+<div id="dynsection-30-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a4a762ee2bc32b9ddab12901d0bff75d1_icgraph.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -1326,7 +1373,7 @@ Private Attributes</h2></td></tr>
 
 <p>The wrapped file system model, set by <a class="el" href="#a71787f93027b50575cfbdcbb1d8de071" title="Initialize model with source model and store path.">setModelAndStore()</a>; null until then, which makes <a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown.">showThis()</a> hide everything. </p>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00092">92</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00093">93</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 
 </div>
 </div>
@@ -1352,7 +1399,7 @@ Private Attributes</h2></td></tr>
 
 <p>Backend that performs drag-and-drop Move/Copy; not owned, null until <a class="el" href="#a90d7f788202bdb64c4722ee897a01363" title="Inject the Pass backend for drag-and-drop Move/Copy operations.">setPass()</a>, in which case drops are refused. </p>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00102">102</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00103">103</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 
 </div>
 </div>
@@ -1378,7 +1425,7 @@ Private Attributes</h2></td></tr>
 
 <p>Store root used to make paths relative for filtering and for the drop boundary check. </p>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00097">97</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00098">98</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 
 </div>
 </div>

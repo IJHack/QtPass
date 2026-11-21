@@ -42,13 +42,13 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">93.2&nbsp;%</td>
+            <td class="headerCovTableEntryHi">93.5&nbsp;%</td>
             <td class="headerCovTableEntry">1027</td>
-            <td class="headerCovTableEntry">957</td>
+            <td class="headerCovTableEntry">960</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 16:01:17</td>
+            <td class="headerValue">2026-11-21 16:18:36</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -131,7 +131,7 @@
 <span id="L58"><span class="lineNum">      58</span>              :   // ends its own blocked process on the flag (see execBlocking()).</span>
 <span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         219 :   if (m_reencryptThread &amp;&amp; m_reencryptThread-&gt;isRunning()) {</span></span>
 <span id="L60"><span class="lineNum">      60</span>              :     m_reencryptCancel.store(true);</span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           3 :     m_reencryptThread-&gt;wait();</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           4 :     m_reencryptThread-&gt;wait();</span></span>
 <span id="L62"><span class="lineNum">      62</span>              :   }</span>
 <span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">         445 : }</span></span>
 <span id="L64"><span class="lineNum">      64</span>              : </span>
@@ -1258,13 +1258,13 @@
 <span id="L1185"><span class="lineNum">    1185</span>              :                    {&quot;-C&quot;, store, &quot;status&quot;, &quot;--porcelain&quot;,</span>
 <span id="L1186"><span class="lineNum">    1186</span>              :                     &quot;--untracked-files=no&quot;, &quot;--&quot;, &quot;.&quot;},</span>
 <span id="L1187"><span class="lineNum">    1187</span>              :                    &amp;storeStatus) != 0) {</span>
-<span id="L1188"><span class="lineNum">    1188</span> <span class="tlaUNC">           0 :     if (!m_reencryptCancel.load())</span></span>
+<span id="L1188"><span class="lineNum">    1188</span> <span class="tlaGNC">           1 :     if (!m_reencryptCancel.load())</span></span>
 <span id="L1189"><span class="lineNum">    1189</span> <span class="tlaUNC">           0 :       emit critical(</span></span>
 <span id="L1190"><span class="lineNum">    1190</span> <span class="tlaUNC">           0 :           tr(&quot;Backup commit failed&quot;),</span></span>
 <span id="L1191"><span class="lineNum">    1191</span> <span class="tlaUNC">           0 :           tr(&quot;Could not inspect git status. Re-encryption was aborted.&quot;));</span></span>
-<span id="L1192"><span class="lineNum">    1192</span> <span class="tlaUNC">           0 :     return false;</span></span>
+<span id="L1192"><span class="lineNum">    1192</span> <span class="tlaGNC">           1 :     return false;</span></span>
 <span id="L1193"><span class="lineNum">    1193</span>              :   }</span>
-<span id="L1194"><span class="lineNum">    1194</span> <span class="tlaGNC">          34 :   if (!storeStatus.trimmed().isEmpty()) {</span></span>
+<span id="L1194"><span class="lineNum">    1194</span> <span class="tlaGNC">          33 :   if (!storeStatus.trimmed().isEmpty()) {</span></span>
 <span id="L1195"><span class="lineNum">    1195</span> <span class="tlaGNC">          63 :     if (execBlocking(git, {&quot;-C&quot;, store, &quot;add&quot;, &quot;-u&quot;, &quot;--&quot;, &quot;.&quot;}) != 0 ||</span></span>
 <span id="L1196"><span class="lineNum">    1196</span> <span class="tlaGNC">          63 :         execBlocking(git, QStringList{&quot;-C&quot;, store} + commitArgs() +</span></span>
 <span id="L1197"><span class="lineNum">    1197</span> <span class="tlaGNC">           7 :                               QStringList{&quot;-m&quot;, &quot;Backup before re-encryption&quot;,</span></span>
@@ -1464,34 +1464,34 @@
 <span id="L1391"><span class="lineNum">    1391</span> <span class="tlaGNC">           1 :   return true;</span></span>
 <span id="L1392"><span class="lineNum">    1392</span> <span class="tlaGNC">          13 : }</span></span>
 <span id="L1393"><span class="lineNum">    1393</span>              : </span>
-<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">         104 : auto ImitatePass::entriesToReencrypt(const QString &amp;dir, QStringList *failed)</span></span>
+<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">         103 : auto ImitatePass::entriesToReencrypt(const QString &amp;dir, QStringList *failed)</span></span>
 <span id="L1395"><span class="lineNum">    1395</span>              :     -&gt; QStringList {</span>
 <span id="L1396"><span class="lineNum">    1396</span>              :   // Regular files only: a symlink or junction is not a password entry, and</span>
 <span id="L1397"><span class="lineNum">    1397</span>              :   // following one would decrypt and rewrite something outside the store.</span>
 <span id="L1398"><span class="lineNum">    1398</span>              :   // One entry (what a move moved): itself, when it is one.</span>
-<span id="L1399"><span class="lineNum">    1399</span> <span class="tlaGNC">         104 :   if (const QFileInfo one(dir); !one.isDir()) {</span></span>
+<span id="L1399"><span class="lineNum">    1399</span> <span class="tlaGNC">         103 :   if (const QFileInfo one(dir); !one.isDir()) {</span></span>
 <span id="L1400"><span class="lineNum">    1400</span> <span class="tlaGNC">          20 :     if (one.isFile() &amp;&amp; !Util::isLinkedFolder(dir) &amp;&amp;</span></span>
 <span id="L1401"><span class="lineNum">    1401</span> <span class="tlaGNC">          30 :         one.fileName().endsWith(QLatin1String(&quot;.gpg&quot;))) {</span></span>
 <span id="L1402"><span class="lineNum">    1402</span> <span class="tlaGNC">          20 :       return {one.filePath()};</span></span>
 <span id="L1403"><span class="lineNum">    1403</span>              :     }</span>
 <span id="L1404"><span class="lineNum">    1404</span> <span class="tlaUNC">           0 :     return {};</span></span>
-<span id="L1405"><span class="lineNum">    1405</span> <span class="tlaGNC">         104 :   }</span></span>
-<span id="L1406"><span class="lineNum">    1406</span> <span class="tlaGNC">          94 :   QStringList skipped;</span></span>
-<span id="L1407"><span class="lineNum">    1407</span> <span class="tlaGNC">          94 :   QStringList unlisted;</span></span>
+<span id="L1405"><span class="lineNum">    1405</span> <span class="tlaGNC">         103 :   }</span></span>
+<span id="L1406"><span class="lineNum">    1406</span> <span class="tlaGNC">          93 :   QStringList skipped;</span></span>
+<span id="L1407"><span class="lineNum">    1407</span> <span class="tlaGNC">          93 :   QStringList unlisted;</span></span>
 <span id="L1408"><span class="lineNum">    1408</span>              :   // A dot-named entry (.env.gpg) too, as with `pass init`: left out, it</span>
 <span id="L1409"><span class="lineNum">    1409</span>              :   // stayed encrypted to a recipient just removed while the run reported</span>
 <span id="L1410"><span class="lineNum">    1410</span>              :   // success. A hidden folder (.git, a sync tool's .stversions) stays closed.</span>
 <span id="L1411"><span class="lineNum">    1411</span>              :   const QStringList files = Util::regularFilesUnder(</span>
-<span id="L1412"><span class="lineNum">    1412</span> <span class="tlaGNC">         282 :       dir, QStringList() &lt;&lt; &quot;*.gpg&quot;, &amp;skipped, true, &amp;unlisted);</span></span>
+<span id="L1412"><span class="lineNum">    1412</span> <span class="tlaGNC">         279 :       dir, QStringList() &lt;&lt; &quot;*.gpg&quot;, &amp;skipped, true, &amp;unlisted);</span></span>
 <span id="L1413"><span class="lineNum">    1413</span>              :   // A folder that cannot be read looked empty, and the run reported success</span>
 <span id="L1414"><span class="lineNum">    1414</span>              :   // over it with its entries still encrypted to the old recipients (a key</span>
 <span id="L1415"><span class="lineNum">    1415</span>              :   // just removed among them). Each is a failure: the dialog names it and</span>
 <span id="L1416"><span class="lineNum">    1416</span>              :   // nothing is pushed.</span>
-<span id="L1417"><span class="lineNum">    1417</span> <span class="tlaGNC">          96 :   for (const QString &amp;folder : std::as_const(unlisted)) {</span></span>
+<span id="L1417"><span class="lineNum">    1417</span> <span class="tlaGNC">          95 :   for (const QString &amp;folder : std::as_const(unlisted)) {</span></span>
 <span id="L1418"><span class="lineNum">    1418</span> <span class="tlaGNC">           2 :     *failed &lt;&lt; tr(&quot;%1 could not be read: its entries were not re-encrypted&quot;)</span></span>
 <span id="L1419"><span class="lineNum">    1419</span> <span class="tlaGNC">           4 :                    .arg(QDir::toNativeSeparators(folder));</span></span>
 <span id="L1420"><span class="lineNum">    1420</span>              :   }</span>
-<span id="L1421"><span class="lineNum">    1421</span> <span class="tlaGNC">          94 :   if (!skipped.isEmpty()) {</span></span>
+<span id="L1421"><span class="lineNum">    1421</span> <span class="tlaGNC">          93 :   if (!skipped.isEmpty()) {</span></span>
 <span id="L1422"><span class="lineNum">    1422</span> <span class="tlaGNC">           2 :     emit statusMsg(tr(&quot;%n entr(y/ies) skipped: a symlink, junction or special &quot;</span></span>
 <span id="L1423"><span class="lineNum">    1423</span>              :                       &quot;file is not part of the store.&quot;,</span>
 <span id="L1424"><span class="lineNum">    1424</span>              :                       &quot;&quot;, static_cast&lt;int&gt;(skipped.size())),</span>
@@ -1589,22 +1589,22 @@
 <span id="L1516"><span class="lineNum">    1516</span>              :   }</span>
 <span id="L1517"><span class="lineNum">    1517</span>              : </span>
 <span id="L1518"><span class="lineNum">    1518</span> <span class="tlaGNC">         107 :   if (!createBackupCommit()) {</span></span>
-<span id="L1519"><span class="lineNum">    1519</span> <span class="tlaGNC">           3 :     if (m_reencryptCancel.load()) {</span></span>
-<span id="L1520"><span class="lineNum">    1520</span> <span class="tlaUNC">           0 :       result.cancelled = true;</span></span>
+<span id="L1519"><span class="lineNum">    1519</span> <span class="tlaGNC">           4 :     if (m_reencryptCancel.load()) {</span></span>
+<span id="L1520"><span class="lineNum">    1520</span> <span class="tlaGNC">           1 :       result.cancelled = true;</span></span>
 <span id="L1521"><span class="lineNum">    1521</span>              :     } else {</span>
 <span id="L1522"><span class="lineNum">    1522</span> <span class="tlaGNC">           3 :       result.aborted = true;</span></span>
 <span id="L1523"><span class="lineNum">    1523</span>              :     }</span>
 <span id="L1524"><span class="lineNum">    1524</span>              :     return result;</span>
 <span id="L1525"><span class="lineNum">    1525</span>              :   }</span>
 <span id="L1526"><span class="lineNum">    1526</span>              : </span>
-<span id="L1527"><span class="lineNum">    1527</span> <span class="tlaGNC">         104 :   const QStringList files = entriesToReencrypt(dir, &amp;result.failed);</span></span>
-<span id="L1528"><span class="lineNum">    1528</span> <span class="tlaGNC">         104 :   result.total = files.size();</span></span>
-<span id="L1529"><span class="lineNum">    1529</span> <span class="tlaGNC">         104 :   emit reencryptProgress(0, result.total);</span></span>
+<span id="L1527"><span class="lineNum">    1527</span> <span class="tlaGNC">         103 :   const QStringList files = entriesToReencrypt(dir, &amp;result.failed);</span></span>
+<span id="L1528"><span class="lineNum">    1528</span> <span class="tlaGNC">         103 :   result.total = files.size();</span></span>
+<span id="L1529"><span class="lineNum">    1529</span> <span class="tlaGNC">         103 :   emit reencryptProgress(0, result.total);</span></span>
 <span id="L1530"><span class="lineNum">    1530</span>              : </span>
-<span id="L1531"><span class="lineNum">    1531</span> <span class="tlaGNC">         104 :   QString currentDir;</span></span>
-<span id="L1532"><span class="lineNum">    1532</span> <span class="tlaGNC">         104 :   QHash&lt;QString, QStringList&gt; gpgIdFilesVerified;</span></span>
-<span id="L1533"><span class="lineNum">    1533</span> <span class="tlaGNC">         104 :   QStringList gpgId;</span></span>
-<span id="L1534"><span class="lineNum">    1534</span> <span class="tlaGNC">         213 :   for (const QString &amp;fileName : std::as_const(files)) {</span></span>
+<span id="L1531"><span class="lineNum">    1531</span> <span class="tlaGNC">         103 :   QString currentDir;</span></span>
+<span id="L1532"><span class="lineNum">    1532</span> <span class="tlaGNC">         103 :   QHash&lt;QString, QStringList&gt; gpgIdFilesVerified;</span></span>
+<span id="L1533"><span class="lineNum">    1533</span> <span class="tlaGNC">         103 :   QStringList gpgId;</span></span>
+<span id="L1534"><span class="lineNum">    1534</span> <span class="tlaGNC">         212 :   for (const QString &amp;fileName : std::as_const(files)) {</span></span>
 <span id="L1535"><span class="lineNum">    1535</span> <span class="tlaGNC">         119 :     if (m_reencryptCancel.load()) {</span></span>
 <span id="L1536"><span class="lineNum">    1536</span> <span class="tlaUNC">           0 :       result.cancelled = true;</span></span>
 <span id="L1537"><span class="lineNum">    1537</span> <span class="tlaGNC">           6 :       break;</span></span>
@@ -1643,7 +1643,7 @@
 <span id="L1570"><span class="lineNum">    1570</span> <span class="tlaGNC">         109 :     emit reencryptProgress(result.checked, result.total);</span></span>
 <span id="L1571"><span class="lineNum">    1571</span> <span class="tlaGNC">         115 :   }</span></span>
 <span id="L1572"><span class="lineNum">    1572</span>              :   return result;</span>
-<span id="L1573"><span class="lineNum">    1573</span> <span class="tlaGNC">         104 : }</span></span>
+<span id="L1573"><span class="lineNum">    1573</span> <span class="tlaGNC">         103 : }</span></span>
 <span id="L1574"><span class="lineNum">    1574</span>              : </span>
 <span id="L1575"><span class="lineNum">    1575</span>              : // No push after a cancel, abort or per-file failure: a partially re-encrypted</span>
 <span id="L1576"><span class="lineNum">    1576</span>              : // store must not reach the remote before the user inspects it.</span>
@@ -2124,11 +2124,11 @@
 <span id="L2051"><span class="lineNum">    2051</span> <span class="tlaGNC">         256 :   m_transactionOutput.append(out);</span></span>
 <span id="L2052"><span class="lineNum">    2052</span>              : </span>
 <span id="L2053"><span class="lineNum">    2053</span> <span class="tlaGNC">         256 :   if (exitCode == 0) {</span></span>
-<span id="L2054"><span class="lineNum">    2054</span> <span class="tlaGNC">         216 :     if (pid == INVALID) {</span></span>
+<span id="L2054"><span class="lineNum">    2054</span> <span class="tlaGNC">         215 :     if (pid == INVALID) {</span></span>
 <span id="L2055"><span class="lineNum">    2055</span>              :       return;</span>
 <span id="L2056"><span class="lineNum">    2056</span>              :     }</span>
 <span id="L2057"><span class="lineNum">    2057</span>              :   } else {</span>
-<span id="L2058"><span class="lineNum">    2058</span> <span class="tlaGNC">          47 :     while (pid == INVALID) {</span></span>
+<span id="L2058"><span class="lineNum">    2058</span> <span class="tlaGNC">          48 :     while (pid == INVALID) {</span></span>
 <span id="L2059"><span class="lineNum">    2059</span> <span class="tlaGNC">           7 :       id = exec.cancelNext();</span></span>
 <span id="L2060"><span class="lineNum">    2060</span> <span class="tlaGNC">           7 :       if (id == -1) {</span></span>
 <span id="L2061"><span class="lineNum">    2061</span>              :         //  this is probably irrecoverable and shall not happen</span>

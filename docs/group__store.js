@@ -99,6 +99,7 @@ var group__store =
       [ "showThis", "class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691", null ],
       [ "supportedDragActions", "class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648", null ],
       [ "supportedDropActions", "class_store_model.html#af6982f1562988c413ae9e95e87a713a1", null ],
+      [ "wordsFilter", "class_store_model.html#a4a762ee2bc32b9ddab12901d0bff75d1", null ],
       [ "fs", "class_store_model.html#af094c70fe862af6d3e2023938b745a44", null ],
       [ "m_pass", "class_store_model.html#a67138cb92b226ee1dfe186e4b1707280", null ],
       [ "store", "class_store_model.html#a98ebce85d60d3372420113fe7e714428", null ]

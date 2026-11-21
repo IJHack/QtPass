@@ -54,8 +54,8 @@
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="searchTimer fired: filter the tree on the typed words (matched literally, in order,...">
-<polygon fill="#999999" stroke="#666666" points="169.75,-133.75 0,-133.75 0,-113 169.75,-113 169.75,-133.75"/>
-<text xml:space="preserve" text-anchor="middle" x="84.88" y="-120.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onTimeoutSearch</text>
+<polygon fill="#999999" stroke="#666666" points="169.75,-114.75 0,-114.75 0,-94 169.75,-94 169.75,-114.75"/>
+<text xml:space="preserve" text-anchor="middle" x="84.88" y="-101.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onTimeoutSearch</text>
 </a>
 </g>
 </g>
@@ -72,8 +72,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M97.47,-134.04C129.6,-163.56 220.03,-246.68 260.55,-283.92"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="257.99,-286.33 267.73,-290.52 262.73,-281.18 257.99,-286.33"/>
+<path fill="none" stroke="#63b8ff" d="M96.35,-115.02C127.85,-147.05 222.05,-242.82 262.19,-283.63"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="259.53,-285.92 269.04,-290.6 264.52,-281.01 259.53,-285.92"/>
 </a>
 </g>
 </g>
@@ -90,8 +90,8 @@
 <g id="edge44_Node000001_Node000040" class="edge">
 <title>Node1&#45;&gt;Node40</title>
 <g id="a_edge44_Node000001_Node000040"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M170.16,-115.15C187.79,-113.43 205.99,-111.66 222.42,-110.05"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="222.35,-113.58 231.96,-109.12 221.67,-106.61 222.35,-113.58"/>
+<path fill="none" stroke="#63b8ff" d="M170.16,-104.38C187.79,-104.38 205.99,-104.38 222.42,-104.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="221.96,-107.88 231.96,-104.38 221.96,-100.88 221.96,-107.88"/>
 </a>
 </g>
 </g>
@@ -108,8 +108,8 @@
 <g id="edge45_Node000001_Node000041" class="edge">
 <title>Node1&#45;&gt;Node41</title>
 <g id="a_edge45_Node000001_Node000041"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M170.16,-132.03C178.13,-132.85 186.21,-133.68 194.2,-134.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="193.59,-137.95 203.89,-135.49 194.3,-130.99 193.59,-137.95"/>
+<path fill="none" stroke="#63b8ff" d="M140.12,-115.24C163.45,-119.91 190.91,-125.41 215.34,-130.3"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="214.35,-133.67 224.85,-132.2 215.73,-126.81 214.35,-133.67"/>
 </a>
 </g>
 </g>
@@ -126,8 +126,26 @@
 <g id="edge62_Node000001_Node000055" class="edge">
 <title>Node1&#45;&gt;Node55</title>
 <g id="a_edge62_Node000001_Node000055"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M118.57,-112.56C142.6,-104.73 176.09,-94.03 205.75,-85.38 212.78,-83.32 220.21,-81.24 227.55,-79.23"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="228.35,-82.64 237.09,-76.64 226.53,-75.88 228.35,-82.64"/>
+<path fill="none" stroke="#63b8ff" d="M140.12,-93.51C163.84,-88.76 191.84,-83.16 216.57,-78.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="217.07,-81.67 226.19,-76.28 215.7,-74.81 217.07,-81.67"/>
+</a>
+</g>
+</g>
+<!-- Node57 -->
+<g id="Node000057" class="node">
+<title>Node57</title>
+<g id="a_Node000057"><a xlink:href="class_store_model.html#a4a762ee2bc32b9ddab12901d0bff75d1" target="_top" xlink:title="The tree filter for what is typed in the search box.">
+<polygon fill="white" stroke="#666666" points="347.38,-36.75 215.88,-36.75 215.88,-16 347.38,-16 347.38,-36.75"/>
+<text xml:space="preserve" text-anchor="middle" x="281.62" y="-23.25" font-family="Helvetica,sans-Serif" font-size="10.00">StoreModel::wordsFilter</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node57 -->
+<g id="edge64_Node000001_Node000057" class="edge">
+<title>Node1&#45;&gt;Node57</title>
+<g id="a_edge64_Node000001_Node000057"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M105.31,-93.55C128.61,-80.9 169.13,-59.99 205.75,-46.38 211.5,-44.24 217.59,-42.22 223.69,-40.36"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="224.58,-43.75 233.2,-37.6 222.62,-37.03 224.58,-43.75"/>
 </a>
 </g>
 </g>

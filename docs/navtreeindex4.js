@@ -86,8 +86,9 @@ var NAVTREEINDEX4 =
 "class_store_model.html#a3f12de1e5eb2337e3165aa838655e5a5":[1,3,7,15],
 "class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691":[1,3,7,22],
 "class_store_model.html#a40620d3b37bb04b06b999308bf2ee137":[1,3,7,14],
+"class_store_model.html#a4a762ee2bc32b9ddab12901d0bff75d1":[1,3,7,25],
 "class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513":[1,3,7,16],
-"class_store_model.html#a67138cb92b226ee1dfe186e4b1707280":[1,3,7,26],
+"class_store_model.html#a67138cb92b226ee1dfe186e4b1707280":[1,3,7,27],
 "class_store_model.html#a71787f93027b50575cfbdcbb1d8de071":[1,3,7,19],
 "class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e":[1,3,7,4],
 "class_store_model.html#a8578051e478ac18e32bb50bc9cb82ee8":[1,3,7,21],
@@ -95,7 +96,7 @@ var NAVTREEINDEX4 =
 "class_store_model.html#a8b9aceaa0b421a227661324501d09404":[1,3,7,5],
 "class_store_model.html#a90d7f788202bdb64c4722ee897a01363":[1,3,7,20],
 "class_store_model.html#a9830413c7cf960e473adfa98311c3bcd":[1,3,7,18],
-"class_store_model.html#a98ebce85d60d3372420113fe7e714428":[1,3,7,27],
+"class_store_model.html#a98ebce85d60d3372420113fe7e714428":[1,3,7,28],
 "class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648":[1,3,7,23],
 "class_store_model.html#aa3dee919cc1ea95f64adfdf55d68b988":[1,3,7,10],
 "class_store_model.html#aa567b884188c3a6fb57cbb9bf22aaac8":[1,3,7,6],
@@ -105,7 +106,7 @@ var NAVTREEINDEX4 =
 "class_store_model.html#accf361cc9145306e3063f7b0be939476":[1,3,7,1],
 "class_store_model.html#adc8a200930127d54a13b2f15f5478445":[1,3,7,12],
 "class_store_model.html#ae0a7af8395b4b9862a1afc322047f2b4":[1,3,7,2],
-"class_store_model.html#af094c70fe862af6d3e2023938b745a44":[1,3,7,25],
+"class_store_model.html#af094c70fe862af6d3e2023938b745a44":[1,3,7,26],
 "class_store_model.html#af6982f1562988c413ae9e95e87a713a1":[1,3,7,24],
 "class_store_tree.html":[1,3,8],
 "class_store_tree.html#a015b7288cf004733d1a55f6de6ffe054":[1,3,8,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "class_util.html#a11eb90b4a067feefd84769d336d79b10":[1,7,3,25],
 "class_util.html#a133c5da0c8a3f106c09977679bc615c3":[1,7,3,26],
 "class_util.html#a158b1927cee3cffacaec8d583fbf72ad":[1,7,3,31],
-"class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c":[1,7,3,29],
-"class_util.html#a2a7a32586578a9b631bc6b2a821ce616":[1,7,3,7]
+"class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c":[1,7,3,29]
 };

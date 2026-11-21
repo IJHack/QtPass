@@ -1,13 +1,15 @@
 <map id="MainWindow::onTimeoutSearch" name="MainWindow::onTimeoutSearch">
-<area shape="rect" id="Node000001" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="5,559,232,587"/>
+<area shape="rect" id="Node000001" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="5,584,232,612"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="Clear the current tree view selection." alt="" coords="297,320,464,348"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,557,351,357,354,361,137,561"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,582,353,357,357,361,136,586"/>
 <area shape="rect" id="Node000040" href="$class_store_tree.html#ae66c7d3a2c5f172035cdeb1808ce7593" title=" " alt="" coords="317,584,444,612"/>
-<area shape="poly" id="edge44_Node000001_Node000040" title=" " alt="" coords="232,581,304,590,299,592,233,587"/>
+<area shape="poly" id="edge44_Node000001_Node000040" title=" " alt="" coords="232,596,304,597,299,599,233,601"/>
 <area shape="rect" id="Node000041" href="$class_main_window.html#a7491c2974ab54018ac9a7d1738a4f654" title=" " alt="" coords="280,532,482,560"/>
-<area shape="poly" id="edge45_Node000001_Node000041" title=" " alt="" coords="231,559,267,557,262,559,233,564"/>
+<area shape="poly" id="edge45_Node000001_Node000041" title=" " alt="" coords="191,581,295,562,290,565,193,586"/>
 <area shape="rect" id="Node000055" href="$class_store_tree.html#a7c5e7b2806ebe8314f0ec7a72bd8a256" title="Filter the visible entries." alt="" coords="309,636,452,664"/>
-<area shape="poly" id="edge62_Node000001_Node000055" title=" " alt="" coords="164,585,280,621,311,632,306,632,279,626,163,590"/>
+<area shape="poly" id="edge62_Node000001_Node000055" title=" " alt="" coords="192,610,297,632,292,634,192,615"/>
+<area shape="rect" id="Node000057" href="$class_store_model.html#a4a762ee2bc32b9ddab12901d0bff75d1" title="The tree filter for what is typed in the search box." alt="" coords="293,688,468,716"/>
+<area shape="poly" id="edge64_Node000001_Node000057" title=" " alt="" coords="146,610,207,641,281,673,306,684,301,684,279,678,205,646,145,615"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841" title="Forget the pending OTP and copy requests." alt="" coords="530,346,760,374"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,340,517,346,512,348,466,345"/>
 <area shape="rect" id="Node000004" href="$class_main_window.html#abf59e43f7b3141fb5c25565c92e3abdb" title="Empty the display panel and the text browser, and leave content search if its results were showing...." alt="" coords="556,203,735,231"/>

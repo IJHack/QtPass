@@ -1,20 +1,22 @@
 <map id="src/storetree.h" name="src/storetree.h">
-<area shape="rect" id="Node000001" title="StoreTree: owns the QFileSystemModel and StoreModel behind the password tree view and maps view index..." alt="" coords="345,5,460,33"/>
-<area shape="rect" id="Node000002" href="$storemodel_8h.html" title="StoreModel, the filtering/sorting proxy over the store&#39;s QFileSystemModel, and StoreDragItem,..." alt="" coords="125,81,232,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="360,35,233,78,232,73,365,32"/>
+<area shape="rect" id="Node000001" title="StoreTree: owns the QFileSystemModel and StoreModel behind the password tree view and maps view index..." alt="" coords="351,5,467,33"/>
+<area shape="rect" id="Node000002" href="$storemodel_8h.html" title="StoreModel, the filtering/sorting proxy over the store&#39;s QFileSystemModel, and StoreDragItem,..." alt="" coords="131,81,239,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="367,35,240,78,238,73,371,32"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,157,85,184"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="342,22,292,28,233,38,171,56,114,83,83,112,61,144,56,141,79,108,112,79,169,51,231,33,292,23,347,20"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="256,81,399,109"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="391,32,353,72,350,68,387,35"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="423,81,531,109"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="416,31,455,70,450,69,415,36"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="555,81,628,109"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="437,31,547,75,541,75,436,36"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="653,81,722,109"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="455,31,641,80,635,81,455,36"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="157,110,83,152,80,147,152,109"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="109,157,277,184"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="183,107,190,142,185,140,179,111"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="301,157,376,184"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="208,107,299,149,293,150,206,112"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="349,23,300,29,240,39,179,57,121,83,87,112,62,145,58,142,83,108,118,79,177,52,239,34,299,24,354,21"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="263,81,406,109"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="398,32,360,72,357,68,393,35"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="430,81,537,109"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="423,31,462,70,457,69,422,36"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="562,81,635,109"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="443,31,553,75,548,75,442,36"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="660,81,729,109"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="462,31,647,80,642,81,461,36"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,110,85,152,82,147,158,108"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="109,157,261,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="187,107,187,142,183,140,183,111"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="285,157,453,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="218,107,325,150,320,151,217,112"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="477,157,552,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="240,105,464,154,460,158,239,110"/>
 </map>
