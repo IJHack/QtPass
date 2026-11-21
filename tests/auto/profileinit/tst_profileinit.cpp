@@ -38,6 +38,7 @@ private Q_SLOTS:
   void initialiseCommitsUnderGit();
   void initialiseWarnsAboutExistingEntries();
   void initialiseCountsEntriesInSubfolders();
+  void initialiseClimbsADeepChainOnce();
   void initialiseSignsInTheConfiguredGpgHome();
   void initialiseLeavesNoHalfWrittenGpgId();
   void initialiseFailsWhenTheDirectoryCannotBeCreated();
@@ -561,6 +562,48 @@ void tst_profileinit::initialiseCountsEntriesInSubfolders() {
                                   false, &note));
   QVERIFY2(note.contains(QStringLiteral("2 encrypted")), qPrintable(note));
 #endif
+}
+
+/**
+ * @brief Each folder is checked for a list of its own once, not once per
+ * entry below it: a co-writer's chain of a thousand nested folders with the
+ * entries at the bottom froze Finish for tens of minutes (scan finding
+ * ANT-2026-R5H0RM6J). A list halfway still takes the entries below it.
+ */
+void tst_profileinit::initialiseClimbsADeepChainOnce() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString deep = dir.path() + QStringLiteral("/d").repeated(1000);
+  QVERIFY(QDir().mkpath(deep));
+  for (int i = 0; i < 200; ++i) {
+    QFile f(deep + QStringLiteral("/e%1.gpg").arg(i));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+  }
+  {
+    QFile top(dir.path() + QStringLiteral("/top.gpg"));
+    QVERIFY(top.open(QIODevice::WriteOnly));
+  }
+  QString note;
+  QElapsedTimer timer;
+  timer.start();
+  QVERIFY2(ProfileInit::initialise(dir.path(), twoUsers(), AppSettings(), false,
+                                   &note),
+           qPrintable(note));
+  QVERIFY2(timer.elapsed() < 2000,
+           qPrintable(QString::number(timer.elapsed())));
+  QVERIFY2(note.contains(QStringLiteral("201 encrypted")), qPrintable(note));
+
+  // A list of its own halfway down: the 200 below it keep theirs.
+  {
+    QFile list(dir.path() + QStringLiteral("/d").repeated(500) +
+               QStringLiteral("/.gpg-id"));
+    QVERIFY(list.open(QIODevice::WriteOnly));
+    list.write("x\n");
+  }
+  QFile::remove(dir.path() + QStringLiteral("/.gpg-id"));
+  QVERIFY(ProfileInit::initialise(dir.path(), twoUsers(), AppSettings(), false,
+                                  &note));
+  QVERIFY2(note.contains(QStringLiteral("1 encrypted")), qPrintable(note));
 }
 
 /**

@@ -17,9 +17,11 @@
 #include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
+#include <QHash>
 #include <QProcess>
 #include <QSet>
 #include <algorithm>
+#include <optional>
 
 namespace {
 /// @p env with the configured GPG home applied as Pass::init() applies it:
@@ -223,27 +225,52 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   const QString rootList =
       QFileInfo(QDir(root).filePath(QStringLiteral(".gpg-id")))
           .canonicalFilePath();
-  const auto underSubStore = [&root, &rootList, viaPass](const QString &entry) {
+  // What a folder's own .gpg-id decides, if it has one.
+  const auto ownList = [&rootList,
+                        viaPass](const QString &dir) -> std::optional<bool> {
+    // A list of its own: a regular file. A linked .gpg-id is no list to
+    // the native backend, as everywhere in QtPass, so its folder's entries
+    // still count; pass follows the link (`-f`) and keeps that folder on
+    // the linked list, so with it they do not, unless the link leads to the
+    // root's own list: that folder follows the root, and Users on it
+    // re-encrypts them.
+    const QFileInfo list(QDir(dir).filePath(QStringLiteral(".gpg-id")));
+    if (viaPass && list.isFile() && !rootList.isEmpty() &&
+        list.canonicalFilePath() == rootList) {
+      return false;
+    }
+    if (list.isFile() &&
+        (viaPass || (!list.isSymLink() && !list.isJunction()))) {
+      return true;
+    }
+    return std::nullopt;
+  };
+  // Each folder's verdict once: climbing from every entry to the root again
+  // cost entries times depth, and a co-writer's deep chain of folders froze
+  // Finish for tens of minutes.
+  QHash<QString, bool> verdictOf;
+  const auto underSubStore = [&root, &ownList,
+                              &verdictOf](const QString &entry) {
+    QStringList climbed;
     QString dir = QFileInfo(entry).absolutePath();
+    bool verdict = false;
     while (dir != root && dir.startsWith(root + QLatin1Char('/'))) {
-      // A list of its own: a regular file. A linked .gpg-id is no list to
-      // the native backend, as everywhere in QtPass, so its folder's
-      // entries still count; pass follows the link (`-f`) and keeps that
-      // folder on the linked list, so with it they do not, unless the link
-      // leads to the root's own list: that folder follows the root, and
-      // Users on it re-encrypts them.
-      const QFileInfo list(QDir(dir).filePath(QStringLiteral(".gpg-id")));
-      if (viaPass && list.isFile() && !rootList.isEmpty() &&
-          list.canonicalFilePath() == rootList) {
-        return false;
+      if (const auto known = verdictOf.constFind(dir);
+          known != verdictOf.constEnd()) {
+        verdict = known.value();
+        break;
       }
-      if (list.isFile() &&
-          (viaPass || (!list.isSymLink() && !list.isJunction()))) {
-        return true;
+      climbed << dir;
+      if (const std::optional<bool> own = ownList(dir)) {
+        verdict = *own;
+        break;
       }
       dir = QFileInfo(dir).absolutePath();
     }
-    return false;
+    for (const QString &folder : std::as_const(climbed)) {
+      verdictOf.insert(folder, verdict);
+    }
+    return verdict;
   };
   QStringList existing =
       Util::regularFilesUnder(root, {QStringLiteral("*.gpg")});
