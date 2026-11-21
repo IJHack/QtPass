@@ -97,6 +97,23 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   return path.contains(filterRegularExpression());
 }
 
+auto StoreModel::wordsFilter(const QString &query) -> QRegularExpression {
+  // Regular expressions belong to the content search; here a typed "[" or
+  // "(" must not switch filtering off, so each word is escaped.
+  QString pattern;
+  for (const QString &word :
+       query.split(QLatin1Char(' '), Qt::SkipEmptyParts)) {
+    pattern += QStringLiteral("(?>.*?") + QRegularExpression::escape(word) +
+               QLatin1Char(')');
+  }
+  if (pattern.isEmpty()) {
+    return QRegularExpression();
+  }
+  return QRegularExpression(QLatin1Char('^') + pattern,
+                            QRegularExpression::CaseInsensitiveOption |
+                                QRegularExpression::DotMatchesEverythingOption);
+}
+
 auto StoreModel::isLinkInStore(const QModelIndex &proxyIndex) const -> bool {
   if (fs == nullptr || !proxyIndex.isValid()) {
     return false;

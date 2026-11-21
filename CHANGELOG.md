@@ -941,6 +941,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   Qt shortened on every paint in time quadratic in its tabs and script
   changes; the row now shows its first 256 characters, and saving keeps the
   whole recipient, not the shortened text (scan finding ANT-2026-DAFRPZ0K)
+- A search of several words no longer freezes the window on long folder
+  names that repeat those words. The words were joined into a pattern that
+  tried every repeat again before giving up; each word is now taken at its
+  first place after the one before (scan finding ANT-2026-TMKUCXVJ)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

@@ -4,6 +4,7 @@
 
 #include <QDataStream>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFileSystemModel>
 #include <QMimeData>
 #include <QtTest>
@@ -51,6 +52,8 @@ private Q_SLOTS:
   void setModelAndStore();
   void showThisWithNullFs();
   void showThisAsksNoParent();
+  void wordsFilterMatchesInOrder();
+  void wordsFilterDoesNotBacktrack();
   void getStoreBasic();
   void filterRegularExpression();
   void setStoreUpdatesPath();
@@ -341,6 +344,57 @@ void tst_storemodel::showThisAsksNoParent() {
   sm.setFilterRegularExpression("nothing-matches-this");
   QVERIFY(!sm.showThis(leaf));
   QCOMPARE(fsm.parents, 0);
+}
+
+/**
+ * @brief The search box's words match literally and in order, with anything
+ *        in between, in any case, and across a line break in a name.
+ */
+void tst_storemodel::wordsFilterMatchesInOrder() {
+  const auto matches = [](const QString &query, const QString &path) {
+    return StoreModel::wordsFilter(query).match(path).hasMatch();
+  };
+  QVERIFY(matches("work vpn", "work/acme/vpn"));
+  QVERIFY(matches("WORK  Vpn", "work/acme/vpn"));
+  QVERIFY(!matches("vpn work", "work/acme/vpn"));
+  QVERIFY(matches("acme", "work/acme/vpn"));
+  QVERIFY(matches("o v", "work/acme/vpn"));
+  QVERIFY2(!matches("cme acme", "work/acme/vpn"), "words do not overlap");
+  QVERIFY(matches("ab abc", "xab/abc"));
+  QVERIFY(matches("[team] (x)", "a/[team]/b(x)"));
+  QVERIFY(!matches("[team]", "a/team/b"));
+  QVERIFY(matches("first second", "first\nsecond"));
+  QVERIFY(StoreModel::wordsFilter("   ").pattern().isEmpty());
+  QVERIFY(StoreModel::wordsFilter("x").isValid());
+}
+
+/**
+ * @brief A path that holds the first word, repeats the second and lacks the
+ * last is searched once: joined with a greedy `.*`, PCRE backtracked through
+ * every repeat, and a co-writer's long folder names froze the search (scan
+ * finding ANT-2026-TMKUCXVJ).
+ */
+void tst_storemodel::wordsFilterDoesNotBacktrack() {
+  // As pushed: 14 nested folders of 250 characters repeating both words, and
+  // the filter asked for every folder on the way to each of 200 files.
+  const QString folder = QStringLiteral("customersacme").repeated(20).left(250);
+  QStringList paths;
+  QString path = QStringLiteral("customers/acme");
+  for (int depth = 0; depth < 14; ++depth) {
+    path += QLatin1Char('/') + folder;
+    for (int file = 0; file < 200; ++file) {
+      paths << path + QStringLiteral("/f%1").arg(file);
+    }
+  }
+  const QRegularExpression filter =
+      StoreModel::wordsFilter(QStringLiteral("customers acme jira"));
+  QElapsedTimer timer;
+  timer.start();
+  for (const QString &candidate : std::as_const(paths)) {
+    QVERIFY(!filter.match(candidate).hasMatch());
+  }
+  // A greedy ".*" join took 1.6 s here.
+  QVERIFY2(timer.elapsed() < 500, qPrintable(QString::number(timer.elapsed())));
 }
 
 void tst_storemodel::getStoreBasic() {

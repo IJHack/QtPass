@@ -9,6 +9,7 @@
 #define SRC_STOREMODEL_H_
 
 #include <QFileInfo>
+#include <QRegularExpression>
 #include <QSortFilterProxyModel>
 #include <optional>
 
@@ -223,6 +224,21 @@ public:
    * set.
    */
   auto rootIndexFor(const QString &path) -> QModelIndex;
+
+  /**
+   * @brief The tree filter for what is typed in the search box.
+   *
+   * The words, split at spaces, are matched literally and in order, with
+   * anything in between: "work vpn" finds work/acme/vpn. Each word is taken
+   * at its first place after the one before, which is where an in-order
+   * match can always continue, and the pattern is anchored with atomic
+   * groups, so a path is searched once: a greedy `.*` join backtracked
+   * through every repeat of a word in a long path.
+   * @param query The search box text, with slashes as separators.
+   * @return A case-insensitive pattern; empty for no words.
+   */
+  [[nodiscard]] static auto wordsFilter(const QString &query)
+      -> QRegularExpression;
 
   /**
    * @brief Update the store path used for filtering without changing the source
