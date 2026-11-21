@@ -313,8 +313,8 @@ void PasswordDialog::setNewEntryLocation(const QString &storeRoot,
       }
       ui->folderBox->addItem(
           shown.left(head) + QChar(0x2026) + shown.right(tail), rel);
-      ui->folderBox->setItemData(ui->folderBox->count() - 1, shown,
-                                 Qt::ToolTipRole);
+      ui->folderBox->setItemData(ui->folderBox->count() - 1,
+                                 Util::plainToolTip(shown), Qt::ToolTipRole);
     } else {
       ui->folderBox->addItem(shown, rel);
     }
@@ -866,8 +866,8 @@ void PasswordDialog::setAvailableTemplates(
     ui->templateBox->clear();
     for (const QString &name : std::as_const(templateNames)) {
       ui->templateBox->addItem(Util::shownName(name), name);
-      ui->templateBox->setItemData(ui->templateBox->count() - 1, name,
-                                   Qt::ToolTipRole);
+      ui->templateBox->setItemData(ui->templateBox->count() - 1,
+                                   Util::plainToolTip(name), Qt::ToolTipRole);
     }
   }
   ui->label_template->show();

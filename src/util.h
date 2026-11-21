@@ -295,6 +295,17 @@ public:
    */
   [[nodiscard]] static auto shownName(const QString &name,
                                       qsizetype max = kMaxShownName) -> QString;
+  /**
+   * @brief @p text as a tooltip that shows it as written.
+   *
+   * Qt guesses whether a tooltip is rich text, and as rich text a name a
+   * co-writer chose, such as `<img src=/dev/zero>`, would have Qt read
+   * that file without end. Escaped and in a paragraph, it is always shown
+   * as the text it is, with controls as U+FFFD (displayable()).
+   * @param text Plain text, such as a store name or path.
+   * @return The tooltip.
+   */
+  [[nodiscard]] static auto plainToolTip(const QString &text) -> QString;
   /** @brief Longest run without white space hasLongUnbrokenRun() allows. */
   static constexpr qsizetype kMaxUnbrokenRun = 10000;
   /**

@@ -2114,6 +2114,9 @@ void tst_util::shownNameIsOneBoundedLine() {
   QCOMPARE(Util::shownName(QStringLiteral("abc"), 0), QString());
   QCOMPARE(Util::shownName(QStringLiteral("abc"), -1), QString());
   QCOMPARE(Util::shownName(QStringLiteral("a") + key, 2), QStringLiteral("a"));
+  // A tooltip shows markup as written.
+  QCOMPARE(Util::plainToolTip(QStringLiteral("<img src=/dev/zero>&\n")),
+           QStringLiteral("<p>&lt;img src=/dev/zero&gt;&amp;\uFFFD</p>"));
 }
 
 void tst_util::boundSpaceRunsCutsOnlyLongRuns() {

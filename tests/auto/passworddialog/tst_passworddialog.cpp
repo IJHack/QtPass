@@ -466,13 +466,14 @@ void tst_passworddialog::manyLongFoldersDoNotSizeTheDialog() {
   QVERIFY(box->itemText(deepest).contains(QChar(0x2026)));
   QCOMPARE(box->itemData(deepest).toString(), folders.at(deepest));
   QCOMPARE(box->itemData(deepest, Qt::ToolTipRole).toString(),
-           folders.at(deepest) + QLatin1Char('/'));
+           Util::plainToolTip(folders.at(deepest) + QLatin1Char('/')));
   QCOMPARE(box->itemText(2), folders.at(2) + QLatin1Char('/'));
   // Chosen, a cut path is named whole on the box, and the status says so.
   d.findChild<QLineEdit *>(QStringLiteral("nameEdit"))
       ->setText(QStringLiteral("entry"));
   box->setCurrentIndex(deepest);
-  QCOMPARE(box->toolTip(), folders.at(deepest) + QLatin1Char('/'));
+  QCOMPARE(box->toolTip(),
+           Util::plainToolTip(folders.at(deepest) + QLatin1Char('/')));
   QVERIFY2(d.findChild<QLabel *>(QStringLiteral("statusLabel"))
                ->text()
                .contains(QStringLiteral("shortened")),
@@ -557,7 +558,20 @@ void tst_passworddialog::longFieldAndTemplateNamesAreShownShort() {
   QCOMPARE(box->currentData().toString(), longTemplate);
   QVERIFY(box->currentText().size() <= Util::kMaxShownName);
   QCOMPARE(box->itemData(box->currentIndex(), Qt::ToolTipRole).toString(),
-           longTemplate);
+           Util::plainToolTip(longTemplate));
+  // A name with markup is shown as written: as rich text, <img src=...>
+  // would make Qt read that file.
+  FakePass third;
+  PasswordDialog f(&third, allFieldsSettings(), QString(), true);
+  const QString markup =
+      QStringLiteral("<img src=/dev/zero>") + QString(200, QLatin1Char('x'));
+  f.setAvailableTemplates({{markup, {QStringLiteral("user")}}}, markup);
+  auto *markupBox = f.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  QVERIFY(markupBox != nullptr);
+  const QString tip = markupBox->itemData(0, Qt::ToolTipRole).toString();
+  QVERIFY2(tip.contains(QStringLiteral("&lt;img")) &&
+               !tip.contains(QStringLiteral("<img")),
+           qPrintable(tip));
   QCOMPARE(box->sizeAdjustPolicy(),
            QComboBox::AdjustToMinimumContentsLengthWithIcon);
   QVERIFY(e.findChild<QLineEdit *>(QStringLiteral("user")) != nullptr);

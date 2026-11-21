@@ -830,6 +830,11 @@ auto Util::hasLongUnbrokenRun(QStringView text) -> bool {
   return false;
 }
 
+auto Util::plainToolTip(const QString &text) -> QString {
+  return QStringLiteral("<p>") + displayable(text, false).toHtmlEscaped() +
+         QStringLiteral("</p>");
+}
+
 auto Util::shownName(const QString &name, qsizetype max) -> QString {
   QString line = displayable(name, false);
   line.replace(QLatin1Char('\t'), QLatin1Char(' '));
