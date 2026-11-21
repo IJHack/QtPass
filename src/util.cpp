@@ -646,6 +646,54 @@ auto Util::protocolRegex() -> const QRegularExpression & {
   return regex;
 }
 
+namespace {
+/**
+ * @brief The length of a URL's authority, found as QUrl finds it.
+ *
+ * QUrl takes the text before the first ':' that comes before any '/', '?'
+ * or '#' as the scheme when it is one (a letter, then letters, digits,
+ * '+', '-' or '.'); the rest starts there, or at the start otherwise. An
+ * authority follows a "//" at that point and runs to the first '/', '?'
+ * or '#'. So "//host" has one too, and a "://" later in the text does not
+ * start it.
+ * @param url The candidate URL.
+ * @return The authority's length, or -1 when there is none.
+ */
+auto authorityLength(const QString &url) -> qsizetype {
+  const auto endsPart = [](QChar c) {
+    return c == QLatin1Char('/') || c == QLatin1Char('?') ||
+           c == QLatin1Char('#');
+  };
+  const auto isAsciiLetter = [](QChar c) {
+    return (c >= QLatin1Char('a') && c <= QLatin1Char('z')) ||
+           (c >= QLatin1Char('A') && c <= QLatin1Char('Z'));
+  };
+  qsizetype colon = -1;
+  for (qsizetype i = 0; i < url.size() && !endsPart(url.at(i)); ++i) {
+    if (url.at(i) == QLatin1Char(':')) {
+      colon = i;
+      break;
+    }
+  }
+  bool scheme = colon > 0 && isAsciiLetter(url.at(0));
+  for (qsizetype i = 1; scheme && i < colon; ++i) {
+    const QChar c = url.at(i);
+    scheme =
+        isAsciiLetter(c) || (c >= QLatin1Char('0') && c <= QLatin1Char('9')) ||
+        c == QLatin1Char('+') || c == QLatin1Char('-') || c == QLatin1Char('.');
+  }
+  const qsizetype hier = scheme ? colon + 1 : 0;
+  if (url.mid(hier, 2) != QLatin1String("//")) {
+    return -1;
+  }
+  qsizetype end = hier + 2;
+  while (end < url.size() && !endsPart(url.at(end))) {
+    ++end;
+  }
+  return end - (hier + 2);
+}
+} // namespace
+
 auto Util::isLaunchableWebUrl(const QString &value) -> bool {
   const QString trimmed = value.trimmed();
   if (trimmed.isEmpty()) {
@@ -662,21 +710,11 @@ auto Util::isLaunchableWebUrl(const QString &value) -> bool {
   // QUrl runs the host through Unicode normalisation, which takes time in
   // the square of a run of combining marks out of canonical order: one line
   // of an entry kept the window busy for minutes. A host has at most 253
-  // characters and a port six more, so a longer authority (what follows
-  // "://" up to the path, query or fragment) is no web address anyway.
+  // characters and a port six more, so a longer authority is no web
+  // address anyway.
   constexpr qsizetype kMaxAuthority = 259;
-  const qsizetype afterScheme = trimmed.indexOf(QLatin1String("://"));
-  if (afterScheme >= 0) {
-    const qsizetype from = afterScheme + 3;
-    qsizetype end = from;
-    while (end < trimmed.size() && trimmed.at(end) != QLatin1Char('/') &&
-           trimmed.at(end) != QLatin1Char('?') &&
-           trimmed.at(end) != QLatin1Char('#')) {
-      ++end;
-    }
-    if (end - from > kMaxAuthority) {
-      return false;
-    }
+  if (authorityLength(trimmed) > kMaxAuthority) {
+    return false;
   }
   const QUrl url(trimmed, QUrl::StrictMode);
   if (!url.isValid()) {

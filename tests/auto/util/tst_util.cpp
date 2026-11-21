@@ -1880,6 +1880,11 @@ void tst_util::isLaunchableWebUrlBoundsTheHostItNormalises() {
   timer.start();
   QVERIFY(!Util::isLaunchableWebUrl("https://a" + marks + ".example/"));
   QVERIFY(!Util::isLaunchableWebUrl("http://a" + marks + ".example?q"));
+  // QUrl finds an authority after a bare "//" too, and the first "://" in
+  // the text need not be where it starts.
+  QVERIFY(!Util::isLaunchableWebUrl("//a" + marks + ".example/"));
+  QVERIFY(!Util::isLaunchableWebUrl("//a" + marks + "/x://y"));
+  QVERIFY(!Util::isLaunchableWebUrl("h-t.t+p2://a" + marks));
   QVERIFY2(timer.elapsed() < 1000,
            qPrintable(QString::number(timer.elapsed())));
 
