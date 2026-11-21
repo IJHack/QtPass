@@ -940,7 +940,7 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   characters that no key answers to. The row showed the whole line, which
   Qt shortened on every paint in time quadratic in its tabs and script
   changes; the row now shows its first 256 characters, and saving keeps the
-  line as written (scan finding ANT-2026-DAFRPZ0K)
+  whole recipient, not the shortened text (scan finding ANT-2026-DAFRPZ0K)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)
