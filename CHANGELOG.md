@@ -950,6 +950,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the entry, QtPass hashed all of it before each save; it now hashes its
   size and first 64 KiB, which a new encryption always changes (scan finding
   ANT-2026-XZKCLIWH)
+- The 10 000-line limit on what an entry shows, and on what the edit dialog
+  loads, now holds for lines ended by a carriage return, U+2029 or the
+  characters Qt uses as frame marks. Qt starts a new block at each of them,
+  and an entry of millions froze the window or crashed the edit dialog.
+  They show as spaces, and the edit dialog counts them as lines (scan
+  finding ANT-2026-PJR4L456)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

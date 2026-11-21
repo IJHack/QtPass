@@ -40,6 +40,7 @@ private Q_SLOTS:
   void displayFieldsAddsRows();
   void secretFieldsHideWithThePassword();
   void templateMarkedFieldsHideWithThePassword();
+  void aValueIsShownAsOneBlock();
   void manyMarkedNamesAreLookedUpAtOnce();
   void hideEveryFieldHidesThemAll();
   void fieldNamesArePlainText();
@@ -226,6 +227,27 @@ void tst_passworddisplaypanel::manyMarkedNamesAreLookedUpAtOnce() {
   QCOMPARE(found, 0);
   QVERIFY2(timer.elapsed() < 1000,
            qPrintable(QString::number(timer.elapsed())));
+}
+
+/**
+ * @brief A value row is one line: a carriage return, U+2029 or a frame mark
+ * in the value made a block each, millions for a crafted password line
+ * (scan finding ANT-2026-PJR4L456).
+ */
+void tst_passworddisplaypanel::aValueIsShownAsOneBlock() {
+  const QString password =
+      QStringLiteral("a\rb\u2029c\uFDD0d\uFDD1").repeated(1000);
+  AppSettings s;
+  s.hidePassword = false;
+  m_panel->displayFields(password, NamedValues{}, s);
+  SecretTextBrowser *value = nullptr;
+  for (int i = 0; i < m_grid->count() && value == nullptr; ++i) {
+    if (QWidget *w = m_grid->itemAt(i)->widget()) {
+      value = w->findChild<SecretTextBrowser *>();
+    }
+  }
+  QVERIFY(value != nullptr);
+  QCOMPARE(value->document()->blockCount(), 1);
 }
 
 /**

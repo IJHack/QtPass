@@ -901,8 +901,15 @@ void PasswordDialog::setPass(const QString &output, const QString &file,
   // newline pass and QtPass write ends the last line, it starts no new one.
   // Password and fields count too, so this is stricter than the display's
   // limit on the remaining text alone.
+  // Every block break counts, not only "\n": the editor starts a block at
+  // a carriage return and U+2029 too ("\r\n" is one).
   if (const qsizetype lines =
-          output.count(QLatin1Char('\n')) +
+          std::count_if(output.cbegin(), output.cend(),
+                        [](QChar c) {
+                          return c == QLatin1Char('\n') ||
+                                 Util::isOtherBlockBreak(c);
+                        }) -
+          output.count(QStringLiteral("\r\n")) +
           (output.isEmpty() || output.endsWith(QLatin1Char('\n')) ? 0 : 1);
       lines > FileContent::kMaxDisplayLines) {
     // The count in a variable first, as in FileContent: older lupdate

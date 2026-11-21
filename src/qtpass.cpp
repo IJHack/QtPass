@@ -143,9 +143,10 @@ auto QtPass::formatOutput(QString output, const QString &prefix,
                           const QString &postfix, bool links) -> QString {
   // White space is kept below, so a "\r\n" must be one line end, and a lone
   // "\r" stays a space inside its line, as before: as a block of its own it
-  // would slip past the display cap, which counts "\n" only.
+  // would slip past the display cap, which counts "\n" only. So do U+2029
+  // and the frame marks, which Qt also starts a block at.
   output.replace(QStringLiteral("\r\n"), QStringLiteral("\n"));
-  output.replace(QLatin1Char('\r'), QLatin1Char(' '));
+  output = Util::withoutOtherBlockBreaks(output);
   // Kept white space can hang Qt's layout on a run of 65536 spaces.
   output = Util::boundSpaceRuns(output);
   // Escapes and links only launchable http(s) URLs; anything else stays

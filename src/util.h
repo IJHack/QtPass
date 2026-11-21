@@ -276,6 +276,25 @@ public:
    */
   [[nodiscard]] static auto boundSpaceRuns(const QString &text) -> QString;
   /**
+   * @brief Whether Qt's text document starts a new block at @p c, besides
+   * at a line feed: a carriage return, U+2029 (paragraph separator) and the
+   * frame marks U+FDD0 and U+FDD1.
+   *
+   * A limit on lines that counts line feeds only misses these, and a text
+   * of millions of blocks freezes or exhausts a text widget.
+   * @param c A character.
+   * @return true for a block break other than a line feed.
+   */
+  [[nodiscard]] static auto isOtherBlockBreak(QChar c) -> bool;
+  /**
+   * @brief @p text with every block break other than a line feed
+   * (isOtherBlockBreak()) shown as a space, for a widget whose lines are
+   * counted by line feeds.
+   * @param text Plain text to show.
+   * @return The text with those characters replaced.
+   */
+  [[nodiscard]] static auto withoutOtherBlockBreaks(QString text) -> QString;
+  /**
    * @brief @p text with the characters that change how the text around them
    * reads replaced by U+FFFD, for showing text that comes from the store or
    * a key (a folder name, a key's user ID) as plain text.
