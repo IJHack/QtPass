@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-21 12:30:53</td>
+            <td class="headerValue">2026-11-21 13:34:54</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -131,7 +131,7 @@
 <span id="L58"><span class="lineNum">      58</span>              :   // ends its own blocked process on the flag (see execBlocking()).</span>
 <span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         219 :   if (m_reencryptThread &amp;&amp; m_reencryptThread-&gt;isRunning()) {</span></span>
 <span id="L60"><span class="lineNum">      60</span>              :     m_reencryptCancel.store(true);</span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           4 :     m_reencryptThread-&gt;wait();</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           3 :     m_reencryptThread-&gt;wait();</span></span>
 <span id="L62"><span class="lineNum">      62</span>              :   }</span>
 <span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">         445 : }</span></span>
 <span id="L64"><span class="lineNum">      64</span>              : </span>
@@ -2075,13 +2075,13 @@
 <span id="L2002"><span class="lineNum">    2002</span>              : </span>
 <span id="L2003"><span class="lineNum">    2003</span>              : // Only PASS_* processes reach Pass::finished, so to the interface this looks</span>
 <span id="L2004"><span class="lineNum">    2004</span>              : // the same as RealPass.</span>
-<span id="L2005"><span class="lineNum">    2005</span> <span class="tlaGNC">         255 : void ImitatePass::finished(int id, int exitCode, const QString &amp;out,</span></span>
+<span id="L2005"><span class="lineNum">    2005</span> <span class="tlaGNC">         256 : void ImitatePass::finished(int id, int exitCode, const QString &amp;out,</span></span>
 <span id="L2006"><span class="lineNum">    2006</span>              :                            const QString &amp;err) {</span>
-<span id="L2007"><span class="lineNum">    2007</span> <span class="tlaGNC">         255 :   qCDebug(lcQtPass) &lt;&lt; &quot;Imitate Pass&quot;;</span></span>
+<span id="L2007"><span class="lineNum">    2007</span> <span class="tlaGNC">         256 :   qCDebug(lcQtPass) &lt;&lt; &quot;Imitate Pass&quot;;</span></span>
 <span id="L2008"><span class="lineNum">    2008</span>              :   QString error = err;</span>
 <span id="L2009"><span class="lineNum">    2009</span>              :   // A move's git mv runs first in its transaction, so in order: the first</span>
 <span id="L2010"><span class="lineNum">    2010</span>              :   // pending move without an answer is this one's.</span>
-<span id="L2011"><span class="lineNum">    2011</span> <span class="tlaGNC">         255 :   if (id == GIT_MOVE) {</span></span>
+<span id="L2011"><span class="lineNum">    2011</span> <span class="tlaGNC">         256 :   if (id == GIT_MOVE) {</span></span>
 <span id="L2012"><span class="lineNum">    2012</span> <span class="tlaGNC">          17 :     for (PendingMove &amp;move : m_pendingMoves) {</span></span>
 <span id="L2013"><span class="lineNum">    2013</span> <span class="tlaGNC">          17 :       if (!move.landed) {</span></span>
 <span id="L2014"><span class="lineNum">    2014</span> <span class="tlaGNC">          17 :         move.landed = exitCode == 0;</span></span>
@@ -2089,7 +2089,7 @@
 <span id="L2016"><span class="lineNum">    2016</span>              :       }</span>
 <span id="L2017"><span class="lineNum">    2017</span>              :     }</span>
 <span id="L2018"><span class="lineNum">    2018</span>              :   }</span>
-<span id="L2019"><span class="lineNum">    2019</span> <span class="tlaGNC">         255 :   if (id == PASS_INSERT &amp;&amp; !m_pendingInserts.isEmpty()) {</span></span>
+<span id="L2019"><span class="lineNum">    2019</span> <span class="tlaGNC">         256 :   if (id == PASS_INSERT &amp;&amp; !m_pendingInserts.isEmpty()) {</span></span>
 <span id="L2020"><span class="lineNum">    2020</span>              :     // Insert()'s gpg step: place the ciphertext before the queued git steps</span>
 <span id="L2021"><span class="lineNum">    2021</span>              :     // run (the executor starts the next item only after this returns). On</span>
 <span id="L2022"><span class="lineNum">    2022</span>              :     // failure it fails like a gpg error: git steps cancelled below.</span>
@@ -2120,11 +2120,11 @@
 <span id="L2047"><span class="lineNum">    2047</span>              :       }</span>
 <span id="L2048"><span class="lineNum">    2048</span>              :     }</span>
 <span id="L2049"><span class="lineNum">    2049</span> <span class="tlaGNC">          86 :   }</span></span>
-<span id="L2050"><span class="lineNum">    2050</span> <span class="tlaGNC">         255 :   PROCESS pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
-<span id="L2051"><span class="lineNum">    2051</span> <span class="tlaGNC">         255 :   m_transactionOutput.append(out);</span></span>
+<span id="L2050"><span class="lineNum">    2050</span> <span class="tlaGNC">         256 :   PROCESS pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
+<span id="L2051"><span class="lineNum">    2051</span> <span class="tlaGNC">         256 :   m_transactionOutput.append(out);</span></span>
 <span id="L2052"><span class="lineNum">    2052</span>              : </span>
-<span id="L2053"><span class="lineNum">    2053</span> <span class="tlaGNC">         255 :   if (exitCode == 0) {</span></span>
-<span id="L2054"><span class="lineNum">    2054</span> <span class="tlaGNC">         215 :     if (pid == INVALID) {</span></span>
+<span id="L2053"><span class="lineNum">    2053</span> <span class="tlaGNC">         256 :   if (exitCode == 0) {</span></span>
+<span id="L2054"><span class="lineNum">    2054</span> <span class="tlaGNC">         216 :     if (pid == INVALID) {</span></span>
 <span id="L2055"><span class="lineNum">    2055</span>              :       return;</span>
 <span id="L2056"><span class="lineNum">    2056</span>              :     }</span>
 <span id="L2057"><span class="lineNum">    2057</span>              :   } else {</span>
@@ -2138,9 +2138,9 @@
 <span id="L2065"><span class="lineNum">    2065</span> <span class="tlaGNC">           7 :       pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
 <span id="L2066"><span class="lineNum">    2066</span>              :     }</span>
 <span id="L2067"><span class="lineNum">    2067</span>              :   }</span>
-<span id="L2068"><span class="lineNum">    2068</span> <span class="tlaGNC">         207 :   Pass::finished(pid, exitCode, m_transactionOutput, error);</span></span>
-<span id="L2069"><span class="lineNum">    2069</span> <span class="tlaGNC">         207 :   m_transactionOutput.clear();</span></span>
-<span id="L2070"><span class="lineNum">    2070</span> <span class="tlaGNC">         207 :   if (pid == PASS_MOVE &amp;&amp; !m_pendingMoves.isEmpty()) {</span></span>
+<span id="L2068"><span class="lineNum">    2068</span> <span class="tlaGNC">         208 :   Pass::finished(pid, exitCode, m_transactionOutput, error);</span></span>
+<span id="L2069"><span class="lineNum">    2069</span> <span class="tlaGNC">         208 :   m_transactionOutput.clear();</span></span>
+<span id="L2070"><span class="lineNum">    2070</span> <span class="tlaGNC">         208 :   if (pid == PASS_MOVE &amp;&amp; !m_pendingMoves.isEmpty()) {</span></span>
 <span id="L2071"><span class="lineNum">    2071</span> <span class="tlaGNC">          17 :     reencryptMoved(m_pendingMoves.dequeue());</span></span>
 <span id="L2072"><span class="lineNum">    2072</span> <span class="tlaGNC">          17 :     startMovedReencrypts();</span></span>
 <span id="L2073"><span class="lineNum">    2073</span>              :   }</span>
