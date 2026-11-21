@@ -219,7 +219,8 @@ private:
    */
   auto isUserExpired(const UserInfo &user) const -> bool;
   /**
-   * @brief Build display text for user.
+   * @brief Build display text for user: the user ID and key ID on a line
+   *        each, each cut to 256 characters (the row only shows them).
    * @param user User info.
    * @return Formatted text.
    */

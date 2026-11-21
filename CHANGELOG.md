@@ -936,6 +936,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   row in the password dialog, and a store's `.templates` of tens of
   thousands of one-letter lines froze Add password for half a minute (scan
   finding ANT-2026-8WAS09ZR)
+- The users dialog no longer hangs on a `.gpg-id` line of thousands of
+  characters that no key answers to. The row showed the whole line, which
+  Qt shortened on every paint in time quadratic in its tabs and script
+  changes; the row now shows its first 256 characters, and saving keeps the
+  whole recipient, not the shortened text (scan finding ANT-2026-DAFRPZ0K)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

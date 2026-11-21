@@ -449,13 +449,38 @@ auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
          (user.expiry.isValid() && m_cachedCurrentDateTime > user.expiry);
 }
 
+namespace {
+/**
+ * @brief Text cut to a length a list row can draw at once.
+ *
+ * A .gpg-id line no key answers to is shown as written, up to the 1 MiB the
+ * list may hold: Qt elided such a row on every paint in time quadratic in
+ * its tabs and script changes, and the dialog hung for minutes. No user ID
+ * or key ID is this long.
+ * @param text A user ID or key ID.
+ * @return The text, or its first 256 characters followed by an ellipsis;
+ *         a surrogate pair is never split.
+ */
+auto shortened(const QString &text) -> QString {
+  constexpr qsizetype kMaxShown = 256;
+  if (text.size() <= kMaxShown) {
+    return text;
+  }
+  qsizetype cut = kMaxShown;
+  if (text.at(cut - 1).isHighSurrogate()) {
+    --cut;
+  }
+  return text.left(cut) + QChar(0x2026);
+}
+} // namespace
+
 QString UsersDialog::buildUserText(const UserInfo &user) const {
   // One line for the user ID: a line separator in it (gpg escapes only
   // ASCII) drew a line that looked like the key's fingerprint.
   // The key ID too: a recipient no key answers to is the .gpg-id line as
   // written, which may hold the same separators.
-  QString text = Util::displayable(user.name, false) + "\n" +
-                 Util::displayable(user.key_id, false);
+  QString text = Util::displayable(shortened(user.name), false) + "\n" +
+                 Util::displayable(shortened(user.key_id), false);
   if (user.created.isValid()) {
     text += " " + tr("created") + " " +
             QLocale::system().toString(user.created, QLocale::ShortFormat);
