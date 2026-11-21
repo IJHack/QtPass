@@ -41,6 +41,7 @@ private Q_SLOTS:
   void secretFieldsHideWithThePassword();
   void templateMarkedFieldsHideWithThePassword();
   void aValueIsShownAsOneBlock();
+  void aLongUnbrokenValueWrapsAnywhere();
   void manyMarkedNamesAreLookedUpAtOnce();
   void hideEveryFieldHidesThemAll();
   void fieldNamesArePlainText();
@@ -248,6 +249,43 @@ void tst_passworddisplaypanel::aValueIsShownAsOneBlock() {
   }
   QVERIFY(value != nullptr);
   QCOMPARE(value->document()->blockCount(), 1);
+}
+
+/**
+ * @brief A value of hundreds of thousands of letters in a row wraps anywhere
+ * and lays out at once: at word boundaries Qt took seconds, quadratic in the
+ * run (scan finding ANT-2026-0RRSZ1YR). A value of words keeps word wrap.
+ */
+void tst_passworddisplaypanel::aLongUnbrokenValueWrapsAnywhere() {
+  const auto valueRow = [this]() -> SecretTextBrowser * {
+    for (int i = 0; i < m_grid->count(); ++i) {
+      if (QWidget *w = m_grid->itemAt(i)->widget()) {
+        if (auto *b = w->findChild<SecretTextBrowser *>()) {
+          return b;
+        }
+      }
+    }
+    return nullptr;
+  };
+  AppSettings s;
+  s.hidePassword = false;
+  m_panel->displayFields(QStringLiteral("a few words"), NamedValues{}, s);
+  SecretTextBrowser *value = valueRow();
+  QVERIFY(value != nullptr);
+  QCOMPARE(value->wordWrapMode(), QTextOption::WrapAtWordBoundaryOrAnywhere);
+
+  m_panel->clear();
+  m_panel->displayFields(QString(400000, QLatin1Char('a')), NamedValues{}, s);
+  value = valueRow();
+  QVERIFY(value != nullptr);
+  QCOMPARE(value->wordWrapMode(), QTextOption::WrapAnywhere);
+  value->resize(600, 26);
+  QElapsedTimer timer;
+  timer.start();
+  value->document()->setTextWidth(600);
+  (void)value->document()->size();
+  QVERIFY2(timer.elapsed() < 2000,
+           qPrintable(QString::number(timer.elapsed())));
 }
 
 /**

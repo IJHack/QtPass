@@ -445,6 +445,12 @@ void PasswordDialog::setPassword(const QString &password) {
 
   // setPlainText, not insertPlainText: re-populating must replace the body,
   // not save back a duplicated copy.
+  // A run of hundreds of thousands of letters wraps anywhere: at word
+  // boundaries Qt took minutes to lay it out.
+  ui->plainTextEdit->setWordWrapMode(
+      Util::hasLongUnbrokenRun(fileContent.getRemainingData())
+          ? QTextOption::WrapAnywhere
+          : QTextOption::WrapAtWordBoundaryOrAnywhere);
   ui->plainTextEdit->setPlainText(fileContent.getRemainingData());
 
   // m_otherLines was just rebuilt, so the OTP field may be a new widget.
