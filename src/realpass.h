@@ -274,11 +274,14 @@ class RealPass : public Pass {
    *        applies regardless.
    * @param except A list about to be written, neither verified nor refused
    *        for being missing.
+   * @param walks Passed on to skippedGpgId(), for a check of many folders;
+   *        null for none.
    * @return Whether it was refused (and the user told).
    */
   auto refuseList(const QString &file, const GpgIdSigner &signer,
                   QSet<QString> &verified, const QString &within = QString(),
-                  const QString &except = QString()) -> bool;
+                  const QString &except = QString(),
+                  SkippedWalks *walks = nullptr) -> bool;
 
   /**
    * @brief The executor is about to run (or drop) its next item: for an

@@ -971,6 +971,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   folders. To count the entries the new list covers, QtPass climbed from
   every entry to the store root again; each folder is now checked once
   (scan finding ANT-2026-R5H0RM6J)
+- With the `pass` backend and a signing key, moving or copying into a deep
+  chain of nested folders no longer freezes the window. The check for a
+  folder's missing signed list climbed from every folder to the store root
+  again, one record lookup per level; each folder is now looked up once
+  (scan finding ANT-2026-3IEW5YFJ)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

@@ -23,6 +23,7 @@
 #include <QStringList>
 
 class GpgIdSigner;
+#include <QHash>
 #include <cassert>
 #include <map>
 #include <optional>
@@ -134,6 +135,16 @@ protected:
   using PROCESS = Enums::PROCESS;
 
 public:
+  /// What skippedGpgId() found on its way up from one folder.
+  struct SkippedWalk {
+    /// The skipped `.gpg-id`, if any.
+    std::optional<QString> skipped;
+    /// The generation record's error, when that is why it was named.
+    QString recordError;
+  };
+  /// SkippedWalk per absolute folder, for one check of many folders.
+  using SkippedWalks = QHash<QString, SkippedWalk>;
+
   /**
    * @brief Construct a Pass instance.
    */
@@ -350,11 +361,15 @@ public:
    * @param passStore Root directory of the password store.
    * @param recordError Receives the record's error when it could not be
    *        read, if not null; left untouched otherwise.
+   * @param walks What earlier calls found per folder, for one check of many
+   *        folders (RealPass::refuseUnverifiedTree()); read and extended, so
+   *        each folder is looked up once. Null for none.
    * @return The skipped `.gpg-id` path, or nothing when the list found is
    *         the one that applies.
    */
   static auto skippedGpgId(const QString &forFile, const QString &passStore,
-                           QString *recordError = nullptr)
+                           QString *recordError = nullptr,
+                           SkippedWalks *walks = nullptr)
       -> std::optional<QString>;
   /**
    * @brief The link or junction under the name `.gpg-id` that getGpgIdPath()
@@ -518,10 +533,12 @@ protected:
    * @param signing Whether a signing key is set (signed lists in use).
    * @param except A list about to be written (by `pass init`), which may
    *        be missing now without that being refused.
+   * @param walks Passed on to skippedGpgId(); null for none.
    * @return Whether it was refused (and the user told).
    */
   auto refuseSkippedGpgId(const QString &file, bool signing,
-                          const QString &except = QString()) -> bool;
+                          const QString &except = QString(),
+                          SkippedWalks *walks = nullptr) -> bool;
 
   /**
    * @brief Whether @p gpgIdFile is a signed list QtPass accepts: its
