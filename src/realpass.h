@@ -296,8 +296,12 @@ class RealPass : public Pass {
   void onDequeuing(int id, bool completes);
 
   /**
-   * @brief A SHA-256 of the regular file @p path (opened without following
-   * a link or blocking on a FIFO).
+   * @brief A SHA-256 of the size and first 64 KiB of the regular file
+   * @p path (opened without following a link or blocking on a FIFO).
+   *
+   * Enough to tell a rewritten entry: each encryption starts with a fresh
+   * session key. Not the whole file, which a co-writer could pad to
+   * gigabytes on the GUI thread's way.
    * @param path The entry's file.
    * @return The hash; empty when @p path is no readable regular file.
    */

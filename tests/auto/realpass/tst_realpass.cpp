@@ -386,6 +386,25 @@ void tst_realpass::insertWhoseCommitFailsSaysWhetherTheEntryWasWritten() {
       run(QStringLiteral("folder/fresh"), false, {QStringLiteral("commit")});
   QVERIFY(written);
   QCOMPARE(title, QStringLiteral("Saved, not committed"));
+
+  // An entry a co-writer padded to gigabytes (sparse here) is told apart at
+  // once: hashing all of it stalled the window before every save (scan
+  // finding ANT-2026-XZKCLIWH).
+  {
+    QFile huge(entry);
+    QVERIFY(huge.open(QIODevice::WriteOnly));
+    QVERIFY(huge.write("old") == 3);
+    if (!huge.resize(qint64(8) * 1024 * 1024 * 1024)) {
+      QSKIP("this file system cannot hold a sparse 8 GiB file");
+    }
+  }
+  QElapsedTimer timer;
+  timer.start();
+  std::tie(written, title) = run(edited, true, {QStringLiteral("commit")});
+  QVERIFY2(timer.elapsed() < 3000,
+           qPrintable(QString::number(timer.elapsed())));
+  QVERIFY2(written, "the padded entry was rewritten");
+  QFile::remove(entry);
 }
 
 /**
