@@ -566,16 +566,17 @@ void tst_profileinit::initialiseCountsEntriesInSubfolders() {
 
 /**
  * @brief Each folder is checked for a list of its own once, not once per
- * entry below it: a co-writer's chain of a thousand nested folders with the
- * entries at the bottom froze Finish for tens of minutes (scan finding
- * ANT-2026-R5H0RM6J). A list halfway still takes the entries below it.
+ * entry below it: a co-writer's chain of nested folders with the entries at
+ * the bottom froze Finish for tens of minutes (scan finding
+ * ANT-2026-R5H0RM6J). A list halfway still takes the entries below it. The
+ * chain stays within macOS's 1 024-byte path limit.
  */
 void tst_profileinit::initialiseClimbsADeepChainOnce() {
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
-  const QString deep = dir.path() + QStringLiteral("/d").repeated(1000);
+  const QString deep = dir.path() + QStringLiteral("/d").repeated(400);
   QVERIFY(QDir().mkpath(deep));
-  for (int i = 0; i < 200; ++i) {
+  for (int i = 0; i < 2000; ++i) {
     QFile f(deep + QStringLiteral("/e%1.gpg").arg(i));
     QVERIFY(f.open(QIODevice::WriteOnly));
   }
@@ -589,13 +590,14 @@ void tst_profileinit::initialiseClimbsADeepChainOnce() {
   QVERIFY2(ProfileInit::initialise(dir.path(), twoUsers(), AppSettings(), false,
                                    &note),
            qPrintable(note));
-  QVERIFY2(timer.elapsed() < 2000,
+  QVERIFY2(timer.elapsed() < 1500,
            qPrintable(QString::number(timer.elapsed())));
-  QVERIFY2(note.contains(QStringLiteral("201 encrypted")), qPrintable(note));
+  QVERIFY2(note.contains(QStringLiteral("contains 2001 encrypted")),
+           qPrintable(note));
 
-  // A list of its own halfway down: the 200 below it keep theirs.
+  // A list of its own halfway down: the 2 000 below it keep theirs.
   {
-    QFile list(dir.path() + QStringLiteral("/d").repeated(500) +
+    QFile list(dir.path() + QStringLiteral("/d").repeated(200) +
                QStringLiteral("/.gpg-id"));
     QVERIFY(list.open(QIODevice::WriteOnly));
     list.write("x\n");
@@ -603,7 +605,8 @@ void tst_profileinit::initialiseClimbsADeepChainOnce() {
   QFile::remove(dir.path() + QStringLiteral("/.gpg-id"));
   QVERIFY(ProfileInit::initialise(dir.path(), twoUsers(), AppSettings(), false,
                                   &note));
-  QVERIFY2(note.contains(QStringLiteral("1 encrypted")), qPrintable(note));
+  QVERIFY2(note.contains(QStringLiteral("contains 1 encrypted")),
+           qPrintable(note));
 }
 
 /**
