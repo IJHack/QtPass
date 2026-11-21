@@ -1525,7 +1525,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <source>%1 is not a regular file, so the recipients were not changed. Move it out of the way, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nie jest zwykłym plikiem, więc odbiorcy nie zostali zmienieni. Usuń go z&#xa0;drogi, a&#xa0;następnie ponownie zapisz odbiorców.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
@@ -1642,7 +1642,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1275"/>
         <source>Re-encrypting %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponowne szyfrowanie %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1354"/>
@@ -1670,7 +1670,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1392"/>
         <source>The pull stopped before the store was up to date with its remote, and may have left files of the pulled commits in it. Check the store with git before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ściąganie zostało zatrzymane, zanim magazyn zaktualizował swój zdalny i mogło pozostawić w&#xa0;nim pliki ściągniętych zatwierdzeń. Sprawdź magazyn za pomocą git przed ponownym zaszyfrowaniem.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1398"/>
@@ -1754,26 +1754,26 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="902"/>
         <source>Leftovers from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozostałości po wcześniejszym ponownym szyfrowaniu</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="903"/>
         <source>%n leftover(s) of an earlier re-encryption need a look before the run can start:</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n pozostałość wcześniejszego ponownego szyfrowania należy sprawdzić przed rozpoczęciem uruchamiania:</numerusform>
+            <numerusform>%n pozostałości wcześniejszego ponownego szyfrowania należy sprawdzić przed rozpoczęciem uruchamiania:</numerusform>
+            <numerusform>%n pozostałości wcześniejszego ponownego szyfrowania należy sprawdzić przed rozpoczęciem uruchamiania:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="989"/>
         <source>%1 is no longer a regular file, or is too large, and was not re-encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nie jest już zwykłym plikiem lub jest zbyt duży i nie został ponownie zaszyfrowany.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1561"/>
         <source>%1 is no longer a regular file, or lies behind a link, and was not re-encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nie jest już zwykłym plikiem lub znajduje się za łączem i nie został ponownie zaszyfrowany.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1697"/>
@@ -1820,12 +1820,12 @@ Proces ponownego szyfrowania nie został ukończony, więc niektóre lub wszystk
     <message>
         <location filename="../src/imitatepass.cpp" line="1872"/>
         <source>Move not started</source>
-        <translation type="unfinished"></translation>
+        <translation>Przenoszenie nie zostało rozpoczęte</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1873"/>
         <source>%1 is still being moved or re-encrypted. Move it again once that has finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 jest nadal przenoszony lub ponownie szyfrowany. Po zakończeniu przesuń go ponownie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1997"/>
@@ -1987,10 +1987,10 @@ Proces ponownego szyfrowania nie został ukończony, więc niektóre lub wszystk
     <message numerus="yes">
         <location filename="../src/importkeydialog.cpp" line="161"/>
         <source>gpg did not finish the import within %n second(s) and was stopped. Part of the key may be in your keyring already: check it with gpg --list-keys before you use it.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>gpg nie zakończył importu w&#xa0;ciągu %n sekundy i&#xa0;został zatrzymany. Część klucza może już znajdować się w&#xa0;Twoim zestawie kluczy: sprawdź to za pomocą gpg --list-keys przed użyciem.</numerusform>
+            <numerusform>gpg nie zakończył importu w&#xa0;ciągu %n sekund i&#xa0;został zatrzymany. Część klucza może już znajdować się w&#xa0;Twoim zestawie kluczy: sprawdź to za pomocą gpg --list-keys przed użyciem.</numerusform>
+            <numerusform>gpg nie zakończył importu w&#xa0;ciągu %n sekund i&#xa0;został zatrzymany. Część klucza może już znajdować się w&#xa0;Twoim zestawie kluczy: sprawdź to za pomocą gpg --list-keys przed użyciem.</numerusform>
         </translation>
     </message>
     <message>
@@ -2741,12 +2741,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="908"/>
         <source>Settings not opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia nie zostały otwarte</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="909"/>
         <source>A gpg, Git or pass command is still running or waiting. Open the settings again once it has finished. If it does not finish, answer or cancel the PIN or password prompt it waits for, or restart QtPass. A restart forgets which folders still need re-encrypting: re-encrypt any folder whose re-encryption did not finish, or that you moved entries into, before anything is pushed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Polecenie gpg, git lub pass nadal działa lub czeka. Po zakończeniu otwórz ustawienia ponownie. Jeśli proces się nie zakończy, odbierz lub anuluj oczekiwanie na monit o&#xa0;podanie kodu PIN lub hasła lub uruchom ponownie QtPass. Po ponownym uruchomieniu zapominają, które foldery wymagają ponownego zaszyfrowania: ponownie zaszyfruj każdy folder, którego ponowne szyfrowanie nie zostało zakończone lub do którego przeniosłeś wpisy, zanim cokolwiek zostanie przesłane.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1091"/>
@@ -3210,10 +3210,10 @@ Kontynuować?</translation>
     <message numerus="yes">
         <location filename="../src/pass.cpp" line="1334"/>
         <source>Git pull did not finish within %n second(s); editing the entry as it is here.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Ściąganie git nie zakończyło się w&#xa0;ciągu %n sekundy; edytuj wpis w&#xa0;takiej postaci, w&#xa0;jakiej jest tutaj.</numerusform>
+            <numerusform>Ściąganie git nie zakończyło się w&#xa0;ciągu %n sekund; edytuj wpis w&#xa0;takiej postaci, w&#xa0;jakiej jest tutaj.</numerusform>
+            <numerusform>Ściąganie git nie zakończyło się w&#xa0;ciągu %n sekund; edytuj wpis w&#xa0;takiej postaci, w&#xa0;jakiej jest tutaj.</numerusform>
         </translation>
     </message>
     <message>
@@ -3384,7 +3384,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="411"/>
         <source>The folder&apos;s path is shortened above; hold the pointer over it to read it whole before you save.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ścieżka folderu została skrócona powyżej; przytrzymaj nad nim wskaźnik, aby przeczytać go w&#xa0;całości przed zapisaniem.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="433"/>
@@ -3458,7 +3458,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="186"/>
         <source>The secret key of the signing key %1 is not available, so no recipient list was written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tajny klucz klucza podpisującego %1 jest niedostępny, dlatego nie została zapisana żadna lista odbiorców.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="281"/>
@@ -3482,12 +3482,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="407"/>
         <source>%1 is a Git repository inside the store. Move it out of the store, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 to repozytorium Git w&#xa0;magazynie. Przenieś go z&#xa0;magazynu i&#xa0;spróbuj ponownie.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="410"/>
         <source>%1 is not a regular file, and Git could wait on it for good. Remove it or make it a regular file, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nie jest zwykłym plikiem i&#xa0;Git mógłby na niego poczekać. Usuń go lub zmień jako zwykły plik i&#xa0;spróbuj ponownie.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3507,7 +3507,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="389"/>
         <source>git %1 did not finish within %2 minutes in %3, and was stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>git %1 nie zakończył działania w&#xa0;ciągu %2 minut w %3 i&#xa0;został zatrzymany.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="395"/>
@@ -3774,12 +3774,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="165"/>
         <source>Recipient list is a link</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista odbiorców jest odnośnikiem</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="166"/>
         <source>%1 is a link. pass would encrypt to the recipients in the file it points to, while QtPass shows the list of a folder above it, so nothing was encrypted. Replace the link with a copy of the list, or remove it.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 jest odnośnikiem. pass zaszyfrowałby odbiorców w&#xa0;pliku, na który wskazuje, podczas gdy QtPass wyświetla listę folderów nad nim, więc nic nie zostało zaszyfrowane. Zastąp odnośnik kopią listy lub usuń ją.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="232"/>
@@ -3790,10 +3790,10 @@ Kontynuować?</translation>
     <message numerus="yes">
         <location filename="../src/realpass.cpp" line="464"/>
         <source>and %n more</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>i&#xa0;%n więcej</numerusform>
+            <numerusform>i&#xa0;%n więcej</numerusform>
+            <numerusform>i&#xa0;%n więcej</numerusform>
         </translation>
     </message>
     <message>
@@ -3803,31 +3803,39 @@ Kontynuować?</translation>
 %1
 
 Commit, remove or ignore them with Git first, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Folder zawiera zmiany, których Git nie zarejestrował, a&#xa0;pass zatwierdzi je i&#xa0;wypchnie wraz z&#xa0;tym:
+
+%1
+
+Najpierw zatwierdź, usuń lub zignoruj je za pomocą Git, a&#xa0;następnie spróbuj ponownie.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="529"/>
         <source>The system writes %1 by itself, in folders a file manager opens (Finder on macOS, Explorer on Windows, Dolphin on KDE). Git leaves such files alone in every folder once each .gitignore in the store below holds its lines, committed:
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>System sam zapisuje %1 w&#xa0;folderach otwieranych przez menedżer plików (Finder w&#xa0;macOS, Eksplorator w&#xa0;Windows, Dolphin w&#xa0;KDE). Git pozostawia takie pliki same w&#xa0;każdym folderze, gdy każdy plik .gitignore w&#xa0;magazynie poniżej zawiera swoje wiersze, zatwierdzono:
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="540"/>
         <source>Changes Git has not recorded</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmiany, których Git nie zarejestrował</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="557"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Zapisane, niezatwierdzone</translation>
+        <translation>Zapisane, niezatwierdzone</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="558"/>
         <source>The change is in the store, but Git did not record it, so it is not pushed, and a pull may overwrite it (&quot;!!&quot; marks a file Git ignores):
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmiana jest w&#xa0;magazynie, ale Git jej nie zapisał, więc nie jest wypychana, a ściąganie może ją nadpisać („!!” oznacza plik, który Git ignoruje):
+
+%1</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="638"/>
@@ -3836,12 +3844,16 @@ Commit, remove or ignore them with Git first, then try again.</source>
 %1
 
 Move them out of the folder, or have Git ignore them there too, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Git ignoruje te pliki tylko tam, gdzie się teraz znajdują, a&#xa0;pass zatwierdzi i&#xa0;wypchnie je tam, gdzie wylądują:
+
+%1
+
+Przenieś je poza folder lub pozwól Git zignorować je również tam, a&#xa0;następnie spróbuj ponownie.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="643"/>
         <source>Ignored files would be committed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zignorowane pliki zostaną zatwierdzone</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="813"/>
