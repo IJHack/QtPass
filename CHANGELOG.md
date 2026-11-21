@@ -910,6 +910,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - A click in the store tree or the content search results keeps hold of the
   right entry when a message box appears and the tree reloads meanwhile
   (scan finding ANT-2026-UH1Q6MX7)
+- Showing an entry with "Hide password" on no longer freezes the window
+  when the store's `.templates` marks thousands of fields secret. Each field
+  line of the entry was compared with every marked name; the names are now
+  looked up at once (scan finding ANT-2026-Q7ZADQ8F)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

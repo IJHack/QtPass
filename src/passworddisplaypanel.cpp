@@ -31,7 +31,6 @@
 #include <QPushButton>
 #include <QTextBrowser>
 #include <QUrl>
-#include <algorithm>
 
 PasswordDisplayPanel::PasswordDisplayPanel(QGridLayout *grid,
                                            QBoxLayout *container,
@@ -200,7 +199,13 @@ auto urlButton(const QString &url, QWidget *parent) -> QPushButton * {
 } // namespace
 
 void PasswordDisplayPanel::setMarkedSecrets(const QStringList &names) {
-  m_markedSecrets = names;
+  // Case-folded into a set once: isSecret() runs for every field line of an
+  // entry, and a store's .templates may mark thousands of names, so a scan
+  // of the list per line froze the window for minutes.
+  m_markedSecrets.clear();
+  for (const QString &name : names) {
+    m_markedSecrets.insert(name.toCaseFolded());
+  }
 }
 
 auto PasswordDisplayPanel::hides(const QString &field,
@@ -215,11 +220,7 @@ auto PasswordDisplayPanel::isSecret(const QString &field,
   if (!s.hidePassword) {
     return false;
   }
-  const bool marked =
-      std::any_of(m_markedSecrets.cbegin(), m_markedSecrets.cend(),
-                  [&field](const QString &name) {
-                    return field.compare(name, Qt::CaseInsensitive) == 0;
-                  });
+  const bool marked = m_markedSecrets.contains(field.toCaseFolded());
   return marked || (s.hideSecretFields &&
                     FileContent::isSecretFieldName(field, s.secretFieldNames));
 }

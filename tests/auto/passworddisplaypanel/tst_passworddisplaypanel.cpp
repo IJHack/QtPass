@@ -3,6 +3,7 @@
 #include <QtTest>
 
 #include <QDrag>
+#include <QElapsedTimer>
 #include <QGridLayout>
 #include <QLabel>
 #include <QLineEdit>
@@ -39,6 +40,7 @@ private Q_SLOTS:
   void displayFieldsAddsRows();
   void secretFieldsHideWithThePassword();
   void templateMarkedFieldsHideWithThePassword();
+  void manyMarkedNamesAreLookedUpAtOnce();
   void hideEveryFieldHidesThemAll();
   void fieldNamesArePlainText();
   void doubleClickOnARowAsksForEdit();
@@ -189,6 +191,41 @@ void tst_passworddisplaypanel::templateMarkedFieldsHideWithThePassword() {
   s.hidePassword = false;
   m_panel->displayFields(QStringLiteral("secret"), fields, s);
   QVERIFY(!hidden(QStringLiteral("iban")));
+}
+
+/**
+ * @brief A store's .templates may mark thousands of names secret, and every
+ * field line of an entry asks isSecret(): each answer is a lookup, not a
+ * scan of every mark, so a co-writer's marks and a long entry cannot freeze
+ * the window (scan finding ANT-2026-Q7ZADQ8F). Any case still matches,
+ * beyond ASCII too, by case folding as before.
+ */
+void tst_passworddisplaypanel::manyMarkedNamesAreLookedUpAtOnce() {
+  QStringList marks;
+  for (int i = 0; i < 10000; ++i) {
+    marks << QString::number(i, 16);
+  }
+  marks << QStringLiteral("ÄRZTEKAMMER") << QStringLiteral("\u00B5g");
+  m_panel->setMarkedSecrets(marks);
+  AppSettings s;
+  s.hidePassword = true;
+  s.hideSecretFields = false;
+  QVERIFY(m_panel->isSecret(QStringLiteral("ärztekammer"), s));
+  QVERIFY(m_panel->isSecret(QStringLiteral("FFF"), s));
+  QVERIFY2(
+      m_panel->isSecret(QStringLiteral("\u039CG"), s),
+      "the micro sign folds to the Greek mu, as a compare in any case does");
+  QVERIFY(!m_panel->isSecret(QStringLiteral("note"), s));
+
+  QElapsedTimer timer;
+  timer.start();
+  int found = 0;
+  for (int i = 0; i < 50000; ++i) {
+    found += m_panel->isSecret(QStringLiteral("note"), s) ? 1 : 0;
+  }
+  QCOMPARE(found, 0);
+  QVERIFY2(timer.elapsed() < 1000,
+           qPrintable(QString::number(timer.elapsed())));
 }
 
 /**
