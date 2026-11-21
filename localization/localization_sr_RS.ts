@@ -4,22 +4,22 @@
 <context>
     <name>ClipboardManager</name>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="75"/>
+        <location filename="../src/clipboardmanager.cpp" line="162"/>
         <source>Copied to clipboard</source>
         <translation>Kopirano u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="183"/>
+        <location filename="../src/clipboardmanager.cpp" line="279"/>
         <source>Clipboard restored</source>
         <translation type="unfinished">Međuspremnik vraćen</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="184"/>
+        <location filename="../src/clipboardmanager.cpp" line="280"/>
         <source>Clipboard cleared</source>
         <translation>Međuspremnik je izbrisan</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="185"/>
+        <location filename="../src/clipboardmanager.cpp" line="281"/>
         <source>Clipboard not cleared</source>
         <translation>Međuspremnik nije izbrisan</translation>
     </message>
@@ -680,73 +680,73 @@ email</translation>
         <translation type="vanished">Nema međuspremnika</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="154"/>
+        <location filename="../src/configdialog.cpp" line="156"/>
         <source>No clipboard</source>
         <translation>Bez međuspremnika</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="155"/>
+        <location filename="../src/configdialog.cpp" line="157"/>
         <source>Always copy to clipboard</source>
         <translation>Uvijek kopiraj u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="156"/>
+        <location filename="../src/configdialog.cpp" line="158"/>
         <source>On-demand copy to clipboard</source>
         <translation>Kopirati u međuspremnik po potrebi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="364"/>
-        <location filename="../src/configdialog.cpp" line="372"/>
+        <location filename="../src/configdialog.cpp" line="366"/>
+        <location filename="../src/configdialog.cpp" line="374"/>
         <source>This field is required</source>
         <translation>Ovo polje je obavezno</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="367"/>
+        <location filename="../src/configdialog.cpp" line="369"/>
         <source>A profile name cannot contain / or \</source>
         <translation type="unfinished">Naziv profila ne može da sadrži / ili \</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="369"/>
+        <location filename="../src/configdialog.cpp" line="371"/>
         <source>Another profile already has this name</source>
         <translation>Drugi profil već ima ovaj naziv</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="378"/>
+        <location filename="../src/configdialog.cpp" line="380"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation>Samo puni otisci ključeva (40 ili 64 heksadecimalna znaka), razdvojeni razmacima</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="525"/>
+        <location filename="../src/configdialog.cpp" line="527"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 potpisuje istim ključem i za drugo skladište. Lista primalaca potpisana za jedno od ovih skladišta prihvata se i u drugom: koristite poseban ključ za potpisivanje za svako skladište čiji se primaoci razlikuju.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="553"/>
+        <location filename="../src/configdialog.cpp" line="555"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation type="unfinished">pass komituje izmene u %1 u Git repozitorijum u %2: sa dvotačkom u putanji skladišta, pass ne može da ograniči Git na skladište. Pokrenite &quot;git init&quot; u skladištu ili koristite nativni Git/GPG.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="576"/>
+        <location filename="../src/configdialog.cpp" line="578"/>
         <source>The path does not exist.</source>
         <translation>Putanja ne postoji.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="579"/>
+        <location filename="../src/configdialog.cpp" line="581"/>
         <source>The path is not readable.</source>
         <translation>Putanja nije čitljiva.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="584"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Putanja nije Unix domen soket.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="586"/>
+        <location filename="../src/configdialog.cpp" line="588"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Potencijalno neispravno SSH_AUTH_SOCK nadjačavanje</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="587"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -759,37 +759,37 @@ The value will still be saved as entered.</source>
 Vrijednost će i dalje biti spremljena kao unesena.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="844"/>
+        <location filename="../src/configdialog.cpp" line="846"/>
         <source>Create profile directory?</source>
         <translation>Napraviti direktorijum profila?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="845"/>
+        <location filename="../src/configdialog.cpp" line="847"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Želite li da napravite skladište lozinki na %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="852"/>
+        <location filename="../src/configdialog.cpp" line="854"/>
         <source>Could not create profile directory: %1</source>
         <translation>Nije moguće napraviti direktorijum profila: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="876"/>
+        <location filename="../src/configdialog.cpp" line="878"/>
         <source>Select recipients for %1</source>
         <translation>Izaberite primaoce za %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="885"/>
+        <location filename="../src/configdialog.cpp" line="894"/>
         <source>Could not initialise profile %1</source>
         <translation>Nije moguće inicijalizovati profil %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="888"/>
+        <location filename="../src/configdialog.cpp" line="897"/>
         <source>Profile %1</source>
         <translation>Profil %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
+        <location filename="../src/configdialog.cpp" line="920"/>
         <source>New profile</source>
         <translation>Novi profil</translation>
     </message>
@@ -798,12 +798,12 @@ Vrijednost će i dalje biti spremljena kao unesena.</translation>
         <translation type="vanished">Novi profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="932"/>
+        <location filename="../src/configdialog.cpp" line="941"/>
         <source>No profile selected</source>
         <translation>Nijedan profil nije selektovan</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="933"/>
+        <location filename="../src/configdialog.cpp" line="942"/>
         <source>No profile selected to delete</source>
         <translation>Nijedan profil za brisanje nije selektovan</translation>
     </message>
@@ -824,12 +824,12 @@ Vrijednost će i dalje biti spremljena kao unesena.</translation>
         <translation type="vanished">Želite li stvoriti pohranu lozinki na %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="851"/>
+        <location filename="../src/configdialog.cpp" line="853"/>
         <source>Error</source>
         <translation>Greška</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="98"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation>Nije dostupno na Wayland-u; umesto toga koristite pravilo prozora „uvek iznad“ u svom kompozitoru</translation>
     </message>
@@ -846,17 +846,17 @@ Vrijednost će i dalje biti spremljena kao unesena.</translation>
         <translation type="vanished">Mapa %1 nije spremište lozinki ili još nije inicijalizirana.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1152"/>
+        <location filename="../src/configdialog.cpp" line="1164"/>
         <source>New profile: %1 at %2</source>
         <translation>Novi profil: %1 na %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1154"/>
+        <location filename="../src/configdialog.cpp" line="1166"/>
         <source>Profile: %1 at %2</source>
         <translation>Profil: %1 na %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1157"/>
+        <location filename="../src/configdialog.cpp" line="1169"/>
         <source>Fill in all required fields</source>
         <translation>Popunite sva obavezna polja</translation>
     </message>
@@ -871,7 +871,7 @@ Vrijednost će i dalje biti spremljena kao unesena.</translation>
         <translation>Automatsko otkrivanje</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="85"/>
+        <location filename="../src/configdialog.cpp" line="87"/>
         <source>System tray is not available</source>
         <translation>Sistemska traka nije dostupna</translation>
     </message>
@@ -880,7 +880,7 @@ Vrijednost će i dalje biti spremljena kao unesena.</translation>
         <translation type="vanished">Potrebno je instalirati proširenje Pass OTP</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="108"/>
+        <location filename="../src/configdialog.cpp" line="110"/>
         <source>qrencode needs to be installed</source>
         <translation>Potrebno je instalirati qrencode</translation>
     </message>
@@ -965,62 +965,62 @@ e-pošta</translation>
 <context>
     <name>DoneWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="471"/>
+        <location filename="../src/firstrunwizard.cpp" line="472"/>
         <source>Hide passwords until asked</source>
         <translation>Sakrij lozinke dok se ne zatraže</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="472"/>
+        <location filename="../src/firstrunwizard.cpp" line="473"/>
         <source>Show an icon in the system tray</source>
         <translation>Prikaži ikonicu u sistemskoj traci</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="473"/>
+        <location filename="../src/firstrunwizard.cpp" line="474"/>
         <source>Ready</source>
         <translation>Spremno</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="474"/>
+        <location filename="../src/firstrunwizard.cpp" line="475"/>
         <source>Everything else can be changed later in Settings.</source>
         <translation>Sve ostalo možete kasnije promeniti u Postavkama.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="481"/>
+        <location filename="../src/firstrunwizard.cpp" line="482"/>
         <source>Show the password line as dots; Show password reveals it</source>
         <translation>Prikazuje red sa lozinkom kao tačkice; „Prikaži lozinku“ je otkriva</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="492"/>
+        <location filename="../src/firstrunwizard.cpp" line="493"/>
         <source>Store: %1</source>
         <translation>Skladište: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="494"/>
+        <location filename="../src/firstrunwizard.cpp" line="495"/>
         <source>It is already a password store and is used as it is.</source>
         <translation>Već je skladište lozinki i koristi se takvo kakvo jeste.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="496"/>
+        <location filename="../src/firstrunwizard.cpp" line="497"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
         <translation>Biće podešeno za označene ključeve i stavljeno pod Git.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="498"/>
+        <location filename="../src/firstrunwizard.cpp" line="499"/>
         <source>It will be set up for the ticked keys.</source>
         <translation>Biće podešeno za označene ključeve.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="500"/>
+        <location filename="../src/firstrunwizard.cpp" line="501"/>
         <source>GnuPG: %1</source>
         <translation>GnuPG: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="501"/>
+        <location filename="../src/firstrunwizard.cpp" line="502"/>
         <source>Operations run through pass.</source>
         <translation>Operacije se izvršavaju kroz pass.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="502"/>
+        <location filename="../src/firstrunwizard.cpp" line="503"/>
         <source>Operations run through gpg and git directly.</source>
         <translation>Operacije se izvršavaju direktno kroz gpg i git.</translation>
     </message>
@@ -1028,17 +1028,17 @@ e-pošta</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="224"/>
+        <location filename="../src/executor.cpp" line="228"/>
         <source>No executable configured for this command</source>
         <translation>Za ovu komandu nije konfigurisana izvršna datoteka</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="254"/>
+        <location filename="../src/executor.cpp" line="258"/>
         <source>Failed to start %1</source>
         <translation>Nije moguće pokrenuti %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="536"/>
+        <location filename="../src/executor.cpp" line="587"/>
         <source>%1 crashed or was killed</source>
         <translation>%1 se srušio ili je nasilno prekinut</translation>
     </message>
@@ -1078,12 +1078,12 @@ e-pošta</translation>
         <translation type="vanished">Sačuvaj u datoteku…</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="27"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
         <translation>Javni ključ za %1</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="51"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="52"/>
         <source>Copied!</source>
         <translation>Kopirano!</translation>
     </message>
@@ -1092,24 +1092,24 @@ e-pošta</translation>
         <translation type="vanished">Sačuvaj javni ključ</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="63"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="70"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="80"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="64"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="71"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="81"/>
         <source>Save public key</source>
         <translation>Sačuvaj javni ključ</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="64"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="65"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
         <translation>Ključ ASCII-armored (*.asc);;Sve datoteke (*)</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="71"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="72"/>
         <source>Could not open %1 for writing: %2</source>
         <translation>Nije moguće otvoriti %1 za pisanje: %2</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="81"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="82"/>
         <source>Could not write to %1: %2</source>
         <translation>Nije moguće pisati u %1: %2</translation>
     </message>
@@ -1147,44 +1147,44 @@ e-pošta</translation>
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="49"/>
+        <location filename="../src/firstrunwizard.cpp" line="50"/>
         <source>Browse</source>
         <translation>Pregledaj</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="72"/>
-        <location filename="../src/firstrunwizard.cpp" line="78"/>
+        <location filename="../src/firstrunwizard.cpp" line="73"/>
+        <location filename="../src/firstrunwizard.cpp" line="79"/>
         <source>Welcome to QtPass</source>
         <translation>Dobrodošli na QtPass</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="81"/>
+        <location filename="../src/firstrunwizard.cpp" line="82"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
         <translation>QtPass je grafičko okruženje za &lt;i&gt;pass&lt;/i&gt;, standardni Unix upravljač lozinkama: svaka lozinka je datoteka šifrovana pomoću GnuPG-a, smeštena u fascikli koju možete staviti pod Git.&lt;br&gt;&lt;br&gt;Naredne stranice pronalaze GnuPG, proveravaju da imate ključ za šifrovanje i biraju fasciklu u kojoj se nalaze vaše lozinke. Ništa se ne upisuje dok ne pritisnete Završi.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="133"/>
+        <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Error</source>
         <translation>Greška</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="134"/>
+        <location filename="../src/firstrunwizard.cpp" line="135"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Nije uspelo kreiranje skladišta lozinki na: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="152"/>
-        <location filename="../src/firstrunwizard.cpp" line="176"/>
+        <location filename="../src/firstrunwizard.cpp" line="153"/>
+        <location filename="../src/firstrunwizard.cpp" line="177"/>
         <source>Password store not initialised</source>
         <translation>Lozinkova baza nije inicijalizovana</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="159"/>
+        <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>Password store</source>
         <translation>Skladište lozinki</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="160"/>
+        <location filename="../src/firstrunwizard.cpp" line="161"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
         <translation>%1 već sadrži šifrovane datoteke; one nisu ponovo šifrovane za označene ključeve. Da biste to uradili, otvorite Korisnike nakon pokretanja.</translation>
     </message>
@@ -1221,32 +1221,32 @@ e-pošta</translation>
         <translation type="obsolete">Red skladišta je neispravno oblikovan: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="471"/>
+        <location filename="../src/gpgidgeneration.cpp" line="476"/>
         <source>The list carries more than one generation line.</source>
         <translation>Lista sadrži više od jednog reda generacije.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="479"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The generation line is malformed: %1</source>
         <translation>Red generacije je neispravno oblikovan: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="485"/>
+        <location filename="../src/gpgidgeneration.cpp" line="490"/>
         <source>The list carries more than one folder line.</source>
         <translation>Lista sadrži više od jednog reda fascikle.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="504"/>
+        <location filename="../src/gpgidgeneration.cpp" line="509"/>
         <source>The folder line is malformed: %1</source>
         <translation>Red fascikle je neispravno oblikovan: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="508"/>
+        <location filename="../src/gpgidgeneration.cpp" line="513"/>
         <source>The header line is malformed: %1</source>
         <translation>Red zaglavlja je neispravno oblikovan: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="541"/>
+        <location filename="../src/gpgidgeneration.cpp" line="546"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>Lista sadrži red generacije, ali ne i red fascikle.</translation>
     </message>
@@ -1255,50 +1255,50 @@ e-pošta</translation>
         <translation type="obsolete">Lista sadrži red skladišta, ali ne i red generacije.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="704"/>
+        <location filename="../src/gpgidgeneration.cpp" line="733"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>Potpisana lista primalaca %1 nije od poverenja: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="631"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>Potpisana lista primalaca %1 napisana je za fasciklu &quot;%2&quot; u skladištu, a ne za &quot;%3&quot;, i ne koristi se. Moguće je da ju je ovde kopirao neko drugi; ako je fascikla umesto toga premeštena ili preimenovana, vlasnik ključa za potpisivanje otvara na njoj Korisnike i čuva primaoce, čime se lista vezuje za mesto na kome se sada nalazi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="454"/>
+        <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
         <translation type="unfinished">Lista sadrži više od jednog reda sa ID-jem skladišta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="465"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
         <translation type="unfinished">Red sa ID-jem skladišta je neispravan: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="549"/>
+        <location filename="../src/gpgidgeneration.cpp" line="554"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
         <translation type="unfinished">Lista sadrži red sa ID-jem skladišta, ali ne i red generacije.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="644"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>Generacija %1 je najviša moguća, pa se ovde ne može upisati novija lista: uklanjanjem datoteke %2 ovaj uređaj zaboravlja šta je ranije prihvatio, a nakon toga vlasnik ključa za potpisivanje ovo prevazilazi tako što otvori Korisnike i %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>Vlasnik ključa za potpisivanje ovo prevazilazi tako što otvori Korisnike i %1, čime se upisuje generacija %2. Uklanjanjem datoteke %3 ovaj uređaj zaboravlja šta je ranije prihvatio.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="668"/>
+        <location filename="../src/gpgidgeneration.cpp" line="697"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>Potpisana lista primalaca %1 ne sadrži red generacije, dok je ovde ranije prihvaćena generacija %2. pass ne upisuje red generacije (ni kroz QtPass-ov pozadinski program pass), a nije ga upisivao ni QtPass pre verzije 2.0; bez njega je lista mogla biti napisana i za drugu fasciklu u skladištu i kopirana ovde. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="677"/>
+        <location filename="../src/gpgidgeneration.cpp" line="706"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>iznova izabere primaoce pa ih sačuva</translation>
     </message>
@@ -1307,7 +1307,7 @@ e-pošta</translation>
         <translation type="obsolete">Potpisana lista primalaca %1 ne sadrži red skladišta, dok ovaj uređaj poznaje ovo skladište po ID-u %2: možda je napisana za drugo skladište i kopirana ovde, ili ju je napisao stariji QtPass. Vlasnik ključa za potpisivanje to rešava tako što otvori Korisnici, iznova izabere primaoce i sačuva, čime se upisuje red skladišta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="882"/>
+        <location filename="../src/gpgidgeneration.cpp" line="915"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>Evidencija generacija za liste primalaca, %1, prešla je na generaciju %2 dok se upisivala generacija %3.</translation>
     </message>
@@ -1320,38 +1320,38 @@ e-pošta</translation>
         <translation type="obsolete">Potpisana lista primalaca %1 ne sadrži red generacije, dok je ovde ranije prihvaćena generacija %2. pass ne upisuje red generacije (ni kroz QtPass-ov pozadinski program pass), a nije ga upisivao ni QtPass pre verzije 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="682"/>
+        <location filename="../src/gpgidgeneration.cpp" line="711"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>Potpisana lista primalaca %1 je generacija %2, starija od generacije %3, poslednje koju je QtPass ovde prihvatio. Moguće je da ju je neko drugi vratio. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="689"/>
+        <location filename="../src/gpgidgeneration.cpp" line="718"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>sačuva primaoce: primaoci koji su tamo unapred izabrani jesu oni sa ove liste, pa prvo uklonite svakoga ko više ne bi trebalo da ima pristup</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="754"/>
+        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>Potpisana lista primalaca %1 je generacija %2, ista generacija kao i neka druga lista koju je ovaj uređaj ranije prihvatio. Ili su dva uređaja sačuvala primaoce u isto vreme (Git je u tom slučaju prikazao konflikt), ili je podmetnuta autentična lista te generacije. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="762"/>
+        <location filename="../src/gpgidgeneration.cpp" line="795"/>
         <source>checking the recipients and saving</source>
         <translation>proveri primaoce pa ih sačuva</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="788"/>
+        <location filename="../src/gpgidgeneration.cpp" line="821"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Potpisana lista primalaca %1 napisana je za drugo skladište lozinki (ID skladišta %2; ovaj uređaj poznaje ovo skladište kao %3) i ne koristi se. Možda je ovamo kopirana iz skladišta potpisanog istim ključem. Ako je umesto toga ovo skladište ponovo podešeno, uklanjanje %4 briše ID-ove skladišta koje ovaj uređaj poznaje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="806"/>
+        <location filename="../src/gpgidgeneration.cpp" line="839"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
         <translation type="unfinished">Potpisana lista primalaca %1 ne sadrži red sa ID-jem skladišta, a ovaj uređaj zna ovo skladište po ID-ju %2: možda je napisana za drugo skladište i kopirana ovde, ili ju je napisao stariji QtPass. Vlasnik ključa za potpisivanje ovo prevazilazi tako što otvori Korisnike, ponovo izabere primaoce i sačuva, čime se upisuje red sa ID-jem skladišta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="850"/>
+        <location filename="../src/gpgidgeneration.cpp" line="883"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>Lista primalaca %1 dostigla je generaciju %2, najvišu moguću; lista se ne može upisati.</translation>
     </message>
@@ -1359,17 +1359,17 @@ e-pošta</translation>
 <context>
     <name>GpgIdSigner</name>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="79"/>
+        <location filename="../src/gpgidsigner.cpp" line="145"/>
         <source>the recipient list is not valid UTF-8</source>
         <translation>lista primalaca nije ispravan UTF-8</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="106"/>
+        <location filename="../src/gpgidsigner.cpp" line="172"/>
         <source>gpg wrote no signature</source>
         <translation>gpg nije upisao nikakav potpis</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="116"/>
+        <location filename="../src/gpgidsigner.cpp" line="182"/>
         <source>the new signature does not verify as one of the signing keys</source>
         <translation type="unfinished">novi potpis ne prolazi proveru kao potpis nekog od ključeva za potpisivanje</translation>
     </message>
@@ -1377,142 +1377,144 @@ e-pošta</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="474"/>
-        <location filename="../src/imitatepass.cpp" line="673"/>
-        <location filename="../src/realpass.cpp" line="131"/>
+        <location filename="../src/imitatepass.cpp" line="543"/>
+        <location filename="../src/imitatepass.cpp" line="756"/>
+        <location filename="../src/realpass.cpp" line="137"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Potpis za %1 nije ispravan.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="216"/>
-        <location filename="../src/imitatepass.cpp" line="951"/>
+        <location filename="../src/imitatepass.cpp" line="263"/>
+        <location filename="../src/imitatepass.cpp" line="1078"/>
         <source>Can not edit</source>
         <translation>Nije moguće menjati</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="241"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>Cannot add</source>
         <translation>Nije moguće dodati</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="241"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>%1 already exists.</source>
         <translation>%1 već postoji.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="217"/>
-        <location filename="../src/imitatepass.cpp" line="952"/>
+        <location filename="../src/imitatepass.cpp" line="264"/>
+        <location filename="../src/imitatepass.cpp" line="1079"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nije moguće pročitati ključ za kripciju, .gpg-id datoteka ne postoji ili nije ispravna.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1002"/>
+        <location filename="../src/pass.cpp" line="1009"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">Nije moguće proveriti listu primalaca</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1004"/>
+        <location filename="../src/pass.cpp" line="1011"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Ne može se utvrditi da li je datoteka %2 uklonjena, pa ništa nije šifrovano.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1011"/>
+        <location filename="../src/pass.cpp" line="1018"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Lista primalaca nedostaje</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1012"/>
+        <location filename="../src/pass.cpp" line="1019"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">Potpisana lista primalaca %1 nedostaje ili nije obična datoteka. QtPass umesto nje ne koristi listu nadređene fascikle: ta lista nije potpisana za ovu fasciklu. Ako se pod tim imenom nalazi veza, uklonite je. Zatim otvorite Korisnike za tu fasciklu i sačuvajte njene primaoce, čime se upisuje i potpisuje nova lista.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="253"/>
+        <location filename="../src/imitatepass.cpp" line="300"/>
         <source>Cannot write</source>
         <translation>Nije moguće upisati</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="254"/>
+        <location filename="../src/imitatepass.cpp" line="301"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation>Nije moguće napraviti privremeni direktorijum: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="343"/>
+        <location filename="../src/imitatepass.cpp" line="396"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
         <translation type="unfinished">Nije moguće ukloniti celokupan sadržaj %1. Ono što je moglo da se ukloni je uklonjeno; proverite šta je u njoj ostalo.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="352"/>
+        <location filename="../src/imitatepass.cpp" line="405"/>
         <source>Could not remove %1: %2</source>
         <translation type="unfinished">Nije moguće ukloniti %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="374"/>
+        <location filename="../src/imitatepass.cpp" line="427"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation type="unfinished">%1 nije unutar skladišta lozinki ili naziv fascikle na putanji sadrži prelom reda ili drugi kontrolni znak, koji potpisana lista ne može da zabeleži.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="465"/>
+        <location filename="../src/imitatepass.cpp" line="534"/>
         <source>GPG signing failed!</source>
         <translation>GPG potpisivanje nije uspjelo!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="467"/>
+        <location filename="../src/imitatepass.cpp" line="536"/>
         <source>Failed to sign %1.</source>
         <translation>Nije uspjelo potpisivanje %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="607"/>
+        <location filename="../src/imitatepass.cpp" line="676"/>
+        <location filename="../src/imitatepass.cpp" line="697"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Primaoci nisu promenjeni</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="608"/>
+        <location filename="../src/imitatepass.cpp" line="677"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Ponovno šifrovanje je još u toku. Sačekajte da se završi, a zatim ponovo sačuvajte primaoce.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="614"/>
+        <location filename="../src/imitatepass.cpp" line="683"/>
         <source>No signing key!</source>
         <translation>Nema ključa za potpisivanje!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="615"/>
+        <location filename="../src/imitatepass.cpp" line="684"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Nijedan od tajnih ključeva za potpisivanje nije dostupan.
 Nećete moći da menjate listu korisnika!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="373"/>
-        <location filename="../src/imitatepass.cpp" line="398"/>
-        <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="432"/>
-        <location filename="../src/imitatepass.cpp" line="566"/>
+        <location filename="../src/imitatepass.cpp" line="426"/>
+        <location filename="../src/imitatepass.cpp" line="453"/>
+        <location filename="../src/imitatepass.cpp" line="467"/>
+        <location filename="../src/imitatepass.cpp" line="473"/>
+        <location filename="../src/imitatepass.cpp" line="501"/>
+        <location filename="../src/imitatepass.cpp" line="635"/>
         <source>Cannot update</source>
         <translation>Nije moguće nadograditi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="150"/>
+        <location filename="../src/imitatepass.cpp" line="159"/>
         <source>Git pull failed: %1</source>
         <translation>Git pull nije uspeo: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="212"/>
-        <location filename="../src/imitatepass.cpp" line="473"/>
-        <location filename="../src/imitatepass.cpp" line="828"/>
-        <location filename="../src/realpass.cpp" line="135"/>
+        <location filename="../src/imitatepass.cpp" line="259"/>
+        <location filename="../src/imitatepass.cpp" line="542"/>
+        <location filename="../src/imitatepass.cpp" line="931"/>
+        <location filename="../src/realpass.cpp" line="141"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Proveri potpis .gpg-id datoteke!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="318"/>
-        <location filename="../src/imitatepass.cpp" line="342"/>
-        <location filename="../src/imitatepass.cpp" line="351"/>
+        <location filename="../src/imitatepass.cpp" line="369"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
         <source>Delete failed</source>
         <translation>Brisanje nije uspelo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="319"/>
+        <location filename="../src/imitatepass.cpp" line="370"/>
         <source>Could not remove the link %1.</source>
         <translation>Nije moguće ukloniti vezu %1.</translation>
     </message>
@@ -1529,87 +1531,90 @@ Nećete moći da menjate listu korisnika!</translation>
         <translation type="obsolete">Nije uspelo upisivanje %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="446"/>
+        <location filename="../src/imitatepass.cpp" line="515"/>
         <source>Recipient list written, but not recorded</source>
         <translation>Lista primalaca je upisana, ali nije evidentirana</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="447"/>
+        <location filename="../src/imitatepass.cpp" line="516"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation>%1 Sačuvajte primaoce još jednom da biste ovo prevazišli.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="452"/>
+        <location filename="../src/imitatepass.cpp" line="521"/>
         <source>Check selected users!</source>
         <translation>Proverite odabrane korisnike!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="453"/>
+        <location filename="../src/imitatepass.cpp" line="522"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nijedan od odabranih ključeva nema dostupan tajni ključ.
 Nećete moći da dekriptujete nove dodate lozinke!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="468"/>
+        <location filename="../src/imitatepass.cpp" line="537"/>
         <source>Failed to sign %1: %2</source>
         <translation>Nije uspelo potpisivanje %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="567"/>
+        <location filename="../src/imitatepass.cpp" line="636"/>
         <source>Failed to remove the old signature %1.</source>
         <translation>Nije uspelo uklanjanje starog potpisa %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="652"/>
+        <location filename="../src/imitatepass.cpp" line="698"/>
+        <source>%1 is not a regular file, so the recipients were not changed. Move it out of the way, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git je završio rad sa kodom %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="696"/>
+        <location filename="../src/imitatepass.cpp" line="779"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 ne može da se pročita kao lista primalaca (obična datoteka od najviše %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="710"/>
-        <location filename="../src/imitatepass.cpp" line="738"/>
-        <location filename="../src/imitatepass.cpp" line="746"/>
+        <location filename="../src/imitatepass.cpp" line="893"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation>Ostatak ranijeg ponovnog šifrovanja</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="711"/>
+        <location filename="../src/imitatepass.cpp" line="794"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation>%1 nije obična datoteka pa nije vraćeno. Proverite šta je to i uklonite ga, a zatim ponovo pokrenite ponovno šifrovanje.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="739"/>
+        <location filename="../src/imitatepass.cpp" line="822"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation>%1 postoji pored %2. Obe su šifrovane kopije stavke; proverite koju želite i obrišite drugu, a zatim ponovo pokrenite ponovno šifrovanje.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="753"/>
+        <location filename="../src/imitatepass.cpp" line="835"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation>%1 je vraćeno iz rezervne kopije koju je ostavilo prekinuto ponovno šifrovanje.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="747"/>
+        <location filename="../src/imitatepass.cpp" line="829"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation>%1 nedostaje, a njegova rezervna kopija %2 nije mogla da se vrati preimenovanjem. Preimenujte je ručno, a zatim ponovo pokrenite ponovno šifrovanje.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="992"/>
+        <location filename="../src/imitatepass.cpp" line="1119"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation>%1 nije moguće ponovo šifrirati: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1056"/>
+        <location filename="../src/imitatepass.cpp" line="1183"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
         <translation type="unfinished">Git repozitorijum skladišta ima nespojene datoteke. Razrešite konflikt pomoću Git-a pre ponovnog šifrovanja.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1407"/>
-        <location filename="../src/realpass.cpp" line="529"/>
+        <location filename="../src/imitatepass.cpp" line="1592"/>
+        <location filename="../src/realpass.cpp" line="995"/>
         <source>Re-encryption failed</source>
         <translation>Neuspešno je ponovo šifriranje</translation>
     </message>
@@ -1626,86 +1631,99 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
         <translation type="obsolete">Nije moguće ukloniti rezervnu kopiju %1 nakon ponovnog šifrovanja; bezbedno je obrisati je.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1029"/>
+        <location filename="../src/imitatepass.cpp" line="1156"/>
         <source>Creating backup commit</source>
         <translation>Kreiranje sačuvanog komiteta</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1043"/>
-        <location filename="../src/imitatepass.cpp" line="1067"/>
+        <location filename="../src/imitatepass.cpp" line="1170"/>
+        <location filename="../src/imitatepass.cpp" line="1198"/>
+        <location filename="../src/imitatepass.cpp" line="1208"/>
         <source>Backup commit failed</source>
         <translation>Sačuvanje komiteta nije uspelo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1044"/>
+        <location filename="../src/imitatepass.cpp" line="1171"/>
+        <location filename="../src/imitatepass.cpp" line="1199"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Ne mogu da proverim stanje Git-a. Ponovo šifriranje je prekinuto.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1055"/>
-        <location filename="../src/imitatepass.cpp" line="1301"/>
+        <location filename="../src/imitatepass.cpp" line="1182"/>
+        <location filename="../src/imitatepass.cpp" line="1476"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Nedovršena Git operacija</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1068"/>
+        <location filename="../src/imitatepass.cpp" line="1209"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Ponovo šifriranje je prekinuto jer se sačuvanje Git-a nije moglo kreirati.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1110"/>
+        <location filename="../src/imitatepass.cpp" line="1249"/>
         <source>A re-encryption is already running</source>
         <translation>Ponovno šifrovanje je već u toku</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1117"/>
+        <location filename="../src/imitatepass.cpp" line="1256"/>
         <source>Not a folder of the store</source>
         <translation>Nije fascikla skladišta</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1118"/>
+        <location filename="../src/imitatepass.cpp" line="1257"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 je simbolička veza ili tačka spajanja, ili se nalazi iza nje. Ono na šta ta veza pokazuje nije deo skladišta lozinki i nije ponovo šifrovano.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1134"/>
+        <location filename="../src/imitatepass.cpp" line="1274"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Ponovo se kriptuje iz fascikle %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
-        <location filename="../src/imitatepass.cpp" line="1451"/>
+        <location filename="../src/imitatepass.cpp" line="1275"/>
+        <source>Re-encrypting %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1354"/>
+        <location filename="../src/imitatepass.cpp" line="1640"/>
         <source>Updating password-store</source>
         <translation>Nadograđuje se skladište lozinki</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1223"/>
-        <location filename="../src/imitatepass.cpp" line="1229"/>
+        <location filename="../src/imitatepass.cpp" line="1367"/>
+        <location filename="../src/imitatepass.cpp" line="1373"/>
+        <location filename="../src/imitatepass.cpp" line="1391"/>
         <source>Git pull failed</source>
         <translation>Git pull nije uspeo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1224"/>
+        <location filename="../src/imitatepass.cpp" line="1368"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation>Nije bilo moguće proveriti da li skladište ima nespojene datoteke nakon pull. Proverite ga pomoću git pre ponovnog šifrovanja.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1230"/>
+        <location filename="../src/imitatepass.cpp" line="1374"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>Nakon pull-a u skladištu su ostale nespojene datoteke. Rešite konflikt pre ponovnog šifrovanja.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1234"/>
+        <location filename="../src/imitatepass.cpp" line="1392"/>
+        <source>The pull stopped before the store was up to date with its remote, and may have left files of the pulled commits in it. Check the store with git before re-encrypting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1398"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Git pull nije uspeo, skladište se ponovo šifruje u trenutnom stanju</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1426"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
         <translation type="unfinished">%1 nije moguće pročitati: njeni unosi nisu ponovo šifrovani</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1255"/>
+        <location filename="../src/imitatepass.cpp" line="1430"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>Preskočen je %n unos: simbolička veza, tačka spajanja ili specijalna datoteka nije deo skladišta.</numerusform>
@@ -1714,37 +1732,38 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1276"/>
+        <location filename="../src/imitatepass.cpp" line="1451"/>
         <source>GPG ID verification failed</source>
         <translation>Verifikacija GPG ID-a nije uspešna</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1277"/>
+        <location filename="../src/imitatepass.cpp" line="1452"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Ne mogu da verificiram .gpg-id za direktorijum.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1310"/>
+        <location filename="../src/imitatepass.cpp" line="1485"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nije deo skladišta</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1311"/>
+        <location filename="../src/imitatepass.cpp" line="1486"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 je nakon pull-a simbolička veza ili tačka spajanja, ili se nalazi iza nje. Ono na šta ta veza pokazuje nije deo skladišta lozinki i ostaje netaknuto.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1329"/>
+        <location filename="../src/imitatepass.cpp" line="1504"/>
         <source>Recipients changed by the pull</source>
         <translation type="unfinished">Pull je promenio primaoce</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1330"/>
+        <location filename="../src/imitatepass.cpp" line="1505"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
         <translation type="unfinished">Pull je promenio primaoce za %1 nakon što ste ih sačuvali, pa ništa nije ponovo šifrovano: unosi u njoj možda su i dalje šifrovani za prethodne primaoce, a oni koje ste upravo uklonili možda i dalje mogu da ih čitaju. Ponovo otvorite Korisnike za tu fasciklu, proverite primaoce i sačuvajte.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1405"/>
+        <location filename="../src/imitatepass.cpp" line="899"/>
+        <location filename="../src/imitatepass.cpp" line="1590"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... i još %n</numerusform>
@@ -1753,7 +1772,7 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1408"/>
+        <location filename="../src/imitatepass.cpp" line="1593"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>Nije bilo moguće ponovo šifrovati %n datoteku:</numerusform>
@@ -1762,23 +1781,48 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1426"/>
+        <location filename="../src/imitatepass.cpp" line="1611"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Ponovno šifrovanje je otkazano: provereno %1 od %2 datoteka, %3 ponovo šifrovano, %4 neuspešno</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1447"/>
+        <location filename="../src/imitatepass.cpp" line="188"/>
+        <location filename="../src/imitatepass.cpp" line="1636"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
         <translation type="unfinished">Push se ne izvršava: ranije ponovno šifrovanje u ovom skladištu nije završeno</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1502"/>
-        <location filename="../src/imitatepass.cpp" line="1511"/>
+        <location filename="../src/imitatepass.cpp" line="902"/>
+        <source>Leftovers from an earlier re-encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/imitatepass.cpp" line="903"/>
+        <source>%n leftover(s) of an earlier re-encryption need a look before the run can start:</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="989"/>
+        <source>%1 is no longer a regular file, or is too large, and was not re-encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1561"/>
+        <source>%1 is no longer a regular file, or lies behind a link, and was not re-encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1697"/>
+        <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Primaoci nisu komitovani</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1503"/>
+        <location filename="../src/imitatepass.cpp" line="1698"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1791,7 +1835,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Izmena još nije komitovana niti poslata. Rešite problem sa Git-om, a zatim komitujte izmene ili ponovo sačuvajte primaoce.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1512"/>
+        <location filename="../src/imitatepass.cpp" line="1707"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1804,22 +1848,32 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani za prethodne primaoce, koji ih i dalje mogu pročitati. Ništa nije komitovano niti poslato. Rešite problem sa Git-om, a zatim ponovo sačuvajte primaoce.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1623"/>
+        <location filename="../src/imitatepass.cpp" line="1840"/>
         <source>Move failed</source>
         <translation type="unfinished">Premeštanje nije uspelo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1624"/>
+        <location filename="../src/imitatepass.cpp" line="1841"/>
         <source>Could not move %1 to %2.</source>
         <translation type="unfinished">Nije moguće premestiti %1 u %2.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1713"/>
+        <location filename="../src/imitatepass.cpp" line="1872"/>
+        <source>Move not started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1873"/>
+        <source>%1 is still being moved or re-encrypted. Move it again once that has finished.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1997"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Izvršna datoteka Git-a nije konfigurisana, git se preskače</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1790"/>
+        <location filename="../src/imitatepass.cpp" line="2088"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>gpg nije upisao šifrovani tekst za %1.</translation>
     </message>
@@ -1848,17 +1902,17 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
         <translation type="vanished">Neuspešno je ponovo šifriranje %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1435"/>
+        <location filename="../src/imitatepass.cpp" line="1620"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Ponovo šifriranje je završeno: %1 uspešno, %2 neuspešno</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1440"/>
+        <location filename="../src/imitatepass.cpp" line="1625"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Ponovo šifriranje je završeno: %1 datoteka ponovo šifrirana</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1456"/>
+        <location filename="../src/imitatepass.cpp" line="1645"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Push se ne izvršava: nije uspelo ponovno šifrovanje %n datoteke</numerusform>
@@ -1867,14 +1921,14 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1632"/>
-        <location filename="../src/imitatepass.cpp" line="1679"/>
+        <location filename="../src/imitatepass.cpp" line="1915"/>
+        <location filename="../src/imitatepass.cpp" line="1962"/>
         <source>Copy failed</source>
         <translation>Kopiranje nije uspelo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1633"/>
-        <location filename="../src/imitatepass.cpp" line="1680"/>
+        <location filename="../src/imitatepass.cpp" line="1916"/>
+        <location filename="../src/imitatepass.cpp" line="1963"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Nije moguće kopirati %1 u %2.</translation>
     </message>
@@ -1905,7 +1959,7 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="63"/>
+        <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>Import GPG key</source>
         <translation>Uvezi GPG ključ</translation>
     </message>
@@ -1925,7 +1979,7 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
         <translation>Uvezi</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="64"/>
+        <location filename="../src/importkeydialog.cpp" line="68"/>
         <source>ASCII-armored GPG key</source>
         <translation>GPG ključ u ASCII-armored formatu</translation>
     </message>
@@ -1938,12 +1992,12 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
         <translation type="vanished">Uvezi ključ</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="81"/>
+        <location filename="../src/importkeydialog.cpp" line="85"/>
         <source>Could not open file: %1</source>
         <translation>Nije moguće otvoriti datoteku: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="106"/>
+        <location filename="../src/importkeydialog.cpp" line="110"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation>%1 ne izgleda kao GPG ključ u ASCII-armored formatu. Prvo ga konvertujte komandom &lt;code&gt;gpg --armor --export&lt;/code&gt;, ili nalepite ASCII-armored blok preko &lt;b&gt;Iz međuspremnika&lt;/b&gt;.</translation>
     </message>
@@ -1952,38 +2006,47 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
         <translation type="vanished">%1 ne izgleda kao GPG ključ u ASCII-armored formatu. Prvo ga konvertujte komandom &lt;code&gt;gpg --armor --export&lt;/code&gt;, ili nalepite ASCII-armored blok preko &lt;b&gt;Iz međuspremnika&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="64"/>
+        <location filename="../src/importkeydialog.cpp" line="68"/>
         <source>All files</source>
         <translation>Sve datoteke</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="80"/>
-        <location filename="../src/importkeydialog.cpp" line="93"/>
-        <location filename="../src/importkeydialog.cpp" line="105"/>
-        <location filename="../src/importkeydialog.cpp" line="208"/>
-        <location filename="../src/importkeydialog.cpp" line="212"/>
+        <location filename="../src/importkeydialog.cpp" line="84"/>
+        <location filename="../src/importkeydialog.cpp" line="97"/>
+        <location filename="../src/importkeydialog.cpp" line="109"/>
+        <location filename="../src/importkeydialog.cpp" line="223"/>
+        <location filename="../src/importkeydialog.cpp" line="227"/>
         <source>Import key</source>
         <translation>Uvezi ključ</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="94"/>
+        <location filename="../src/importkeydialog.cpp" line="98"/>
         <source>%1 is larger than a key file can be.</source>
         <translation type="unfinished">%1 je veći od veličine koju može da sadrži datoteka sa ključem.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/importkeydialog.cpp" line="161"/>
+        <source>gpg did not finish the import within %n second(s) and was stopped. Part of the key may be in your keyring already: check it with gpg --list-keys before you use it.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="153"/>
+        <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>GPG import failed:
 %1</source>
         <translation>Uvoz GPG nije uspeo:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="178"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>Identifikator uvezenog ključa nije moguće pročitati iz izlaza GPG-a.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="213"/>
+        <location filename="../src/importkeydialog.cpp" line="228"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation>Javni ključ %1 je uvezen. Proverite njegov otisak sa vlasnikom pre nego što šifrujete za njega: uvoz ključa ne govori ništa o tome ko ga poseduje.</translation>
     </message>
@@ -1995,32 +2058,32 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
 <context>
     <name>KeyWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="293"/>
+        <location filename="../src/firstrunwizard.cpp" line="294"/>
         <source>Generate a new key pair…</source>
         <translation>Generiši novi par ključeva…</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="295"/>
+        <location filename="../src/firstrunwizard.cpp" line="296"/>
         <source>Your key</source>
         <translation>Vaš ključ</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="296"/>
+        <location filename="../src/firstrunwizard.cpp" line="297"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
         <translation>Lozinke se šifruju za GnuPG ključeve. Označite ključeve koji treba da mogu da otvore novo skladište; potreban vam je bar jedan čija se tajna polovina nalazi na ovom računaru.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="324"/>
+        <location filename="../src/firstrunwizard.cpp" line="325"/>
         <source>expired</source>
         <translation>istekao</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="326"/>
+        <location filename="../src/firstrunwizard.cpp" line="327"/>
         <source>not usable</source>
         <translation>neupotrebljiv</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="339"/>
+        <location filename="../src/firstrunwizard.cpp" line="340"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
         <translation>GnuPG još nema tajni ključ. Generišite ga ovde ili prvo uvezite svoj postojeći ključ pomoću gpg-a.</translation>
     </message>
@@ -2185,14 +2248,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1783"/>
+        <location filename="../src/mainwindow.cpp" line="1829"/>
         <source>Edit</source>
         <translation>Uredi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1795"/>
+        <location filename="../src/mainwindow.cpp" line="1841"/>
         <source>Delete</source>
         <translation>Obriši</translation>
     </message>
@@ -2280,7 +2343,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1777"/>
+        <location filename="../src/mainwindow.cpp" line="1823"/>
         <source>Users</source>
         <translation>Korisnici</translation>
     </message>
@@ -2310,8 +2373,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="806"/>
-        <location filename="../src/mainwindow.cpp" line="1000"/>
+        <location filename="../src/mainwindow.cpp" line="831"/>
+        <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Search password</source>
         <translation>Pretraži lozinku</translation>
     </message>
@@ -2512,7 +2575,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="455"/>
+        <location filename="../src/mainwindow.cpp" line="462"/>
         <source>Welcome to QtPass %1</source>
         <translation>Dobrodošli na QtPass %1</translation>
     </message>
@@ -2551,9 +2614,9 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="595"/>
-        <location filename="../src/mainwindow.cpp" line="605"/>
-        <location filename="../src/mainwindow.cpp" line="612"/>
+        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="623"/>
+        <location filename="../src/mainwindow.cpp" line="630"/>
         <source>Updating password-store</source>
         <translation>Nadograđuje se skladište lozinki</translation>
     </message>
@@ -2570,8 +2633,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="716"/>
-        <location filename="../src/mainwindow.cpp" line="1057"/>
+        <location filename="../src/mainwindow.cpp" line="734"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Content hidden</source>
         <translation>Sadržaj sakriven</translation>
     </message>
@@ -2620,12 +2683,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="897"/>
+        <location filename="../src/mainwindow.cpp" line="941"/>
         <source>Looking for: %1</source>
         <translation>Traži se: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1074"/>
+        <location filename="../src/mainwindow.cpp" line="1110"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Pronađeno %n podudaranje</numerusform>
@@ -2656,17 +2719,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Jeste li sigurni da želite izbrisati %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1340"/>
+        <location filename="../src/mainwindow.cpp" line="1383"/>
         <source>Delete password?</source>
         <translation>Obriši lozinku?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1341"/>
+        <location filename="../src/mainwindow.cpp" line="1384"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Da li ste sigurni da želite da obrišete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1384"/>
+        <location filename="../src/mainwindow.cpp" line="1430"/>
         <source>Delete folder?</source>
         <translation>Obriši mapu?</translation>
     </message>
@@ -2691,26 +2754,26 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1588"/>
+        <location filename="../src/mainwindow.cpp" line="1634"/>
         <source>Profile changed to %1</source>
         <translation>Profil promenjen na %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1774"/>
+        <location filename="../src/mainwindow.cpp" line="1820"/>
         <source>Open folder with file manager</source>
         <translation>Otvaranje mape pomoću upravljača datoteka</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1775"/>
+        <location filename="../src/mainwindow.cpp" line="1821"/>
         <source>Add folder</source>
         <translation type="unfinished">Dodaj fasciklu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1776"/>
+        <location filename="../src/mainwindow.cpp" line="1822"/>
         <source>Add password</source>
         <translation>Dodaj lozinku</translation>
     </message>
@@ -2725,7 +2788,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="237"/>
+        <location filename="../src/mainwindow.cpp" line="244"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation>Isteklo je vreme operacije; interfejs se ponovo omogućava.</translation>
     </message>
@@ -2734,45 +2797,45 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Izlaz procesa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="746"/>
+        <location filename="../src/mainwindow.cpp" line="768"/>
         <source>Could not decrypt this password entry</source>
         <translation>Nije moguće dešifrovati ovaj unos lozinke</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="757"/>
-        <location filename="../src/mainwindow.cpp" line="776"/>
-        <location filename="../src/mainwindow.cpp" line="1467"/>
+        <location filename="../src/mainwindow.cpp" line="779"/>
+        <location filename="../src/mainwindow.cpp" line="798"/>
+        <location filename="../src/mainwindow.cpp" line="1513"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP kôd kopiran u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="780"/>
-        <location filename="../src/mainwindow.cpp" line="1455"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="1501"/>
         <source>No OTP code found in this password entry</source>
         <translation>U ovoj lozinci ne postoji kod OTP-a</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="810"/>
+        <location filename="../src/mainwindow.cpp" line="835"/>
         <source>Password and content hidden</source>
         <translation>Lozinka i sadržaj su sakriveni</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="879"/>
+        <location filename="../src/mainwindow.cpp" line="923"/>
         <source>About QtPass</source>
         <translation>O QtPass-u</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="880"/>
+        <location filename="../src/mainwindow.cpp" line="924"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Višeplatformski grafički interfejs za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni Unix menadžer lozinki.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Izvorni kod i prijava problema&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Autorska prava &amp;copy; 2014&amp;ndash;%2 IJhack. Licencirano pod &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL verzijom 3&lt;/a&gt; ili novijom.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="949"/>
+        <location filename="../src/mainwindow.cpp" line="985"/>
         <source>Searching…</source>
         <translation>Pretraživanje…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="981"/>
+        <location filename="../src/mainwindow.cpp" line="1017"/>
         <source>Search content (regex)</source>
         <translation>Pretraži sadržaj (regex)</translation>
     </message>
@@ -2781,17 +2844,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Pretraga sadržaja koristi osnovne regularne izraze POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="985"/>
+        <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation>Pretraga sadržaja koristi regularne izraze kompatibilne sa Perl-om (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1032"/>
+        <location filename="../src/mainwindow.cpp" line="1068"/>
         <source>No matches found.</source>
         <translation>Nema podudaranja.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1076"/>
+        <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>u %n unosu.</numerusform>
@@ -2800,53 +2863,63 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1286"/>
+        <location filename="../src/mainwindow.cpp" line="1326"/>
         <source>Invalid name</source>
         <translation>Nevažeći naziv</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1287"/>
+        <location filename="../src/mainwindow.cpp" line="1327"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation>To ime bi pokazivalo izvan skladišta lozinki. Izaberite drugo ime.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1391"/>
+        <location filename="../src/mainwindow.cpp" line="1437"/>
         <source>Delete link?</source>
         <translation>Obriši vezu?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1392"/>
+        <location filename="../src/mainwindow.cpp" line="1438"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation>%1 je simbolička veza ili tačka spajanja. Ukloniti vezu? Ono na šta pokazuje ostaje netaknuto.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1450"/>
+        <location filename="../src/mainwindow.cpp" line="1496"/>
         <source>No password selected for OTP generation</source>
         <translation>Niste selektovali lozinku za generisanje OTP-koda</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1789"/>
-        <location filename="../src/mainwindow.cpp" line="1875"/>
+        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1944"/>
         <source>Rename folder</source>
         <translation>Preimenuj fasciklu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1838"/>
         <source>Rename password</source>
         <translation>Preimenovati lozinku</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1729"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>Share</source>
         <translation>Deli</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
+        <location filename="../src/mainwindow.cpp" line="908"/>
+        <source>Settings not opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="909"/>
+        <source>A gpg, Git or pass command is still running or waiting. Open the settings again once it has finished. If it does not finish, answer or cancel the PIN or password prompt it waits for, or restart QtPass. A restart forgets which folders still need re-encrypting: re-encrypt any folder whose re-encryption did not finish, or that you moved entries into, before anything is pushed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1091"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… još podudaranja u ovom zapisu</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1069"/>
+        <location filename="../src/mainwindow.cpp" line="1105"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Prikazuje se prvi %n rezultat; potražite nešto određenije da biste videli ostale.</numerusform>
@@ -2855,23 +2928,23 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1348"/>
+        <location filename="../src/mainwindow.cpp" line="1391"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation>Da li ste sigurni da želite da obrišete %1 i sav njen sadržaj?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1364"/>
+        <location filename="../src/mainwindow.cpp" line="1407"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation>Pažnja: u navedenoj mapi postoje neočekivane datoteke; proverite ih pre nego što nastavite.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1371"/>
+        <location filename="../src/mainwindow.cpp" line="1415"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
         <translation type="unfinished">Fasciklu %1 nije bilo moguće pročitati, pa je njen sadržaj nepoznat.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1379"/>
+        <location filename="../src/mainwindow.cpp" line="1425"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
@@ -2881,110 +2954,110 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1739"/>
+        <location filename="../src/mainwindow.cpp" line="1785"/>
         <source>Re-encrypt all passwords</source>
         <translation>Ponovo šifruj sve lozinke</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1744"/>
+        <location filename="../src/mainwindow.cpp" line="1790"/>
         <source>Export my public key...</source>
         <translation>Izvezi moj javni ključ…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1748"/>
+        <location filename="../src/mainwindow.cpp" line="1794"/>
         <source>Add recipient...</source>
         <translation>Dodaj primaoca…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1799"/>
         <source>What is this?</source>
         <translation>Šta je ovo?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1827"/>
+        <location filename="../src/mainwindow.cpp" line="1896"/>
         <source>New folder</source>
         <translation>Nova fascikla</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1828"/>
+        <location filename="../src/mainwindow.cpp" line="1897"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Nova mapa:
 (Biće postavljena u %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1852"/>
+        <location filename="../src/mainwindow.cpp" line="1921"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Skrivena fascikla</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1853"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">Fascikla čije ime počinje tačkom bila bi skrivena u listi: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1875"/>
+        <location filename="../src/mainwindow.cpp" line="1944"/>
         <source>Rename folder to: </source>
         <translation>Preimenovati folder na: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1914"/>
+        <location filename="../src/mainwindow.cpp" line="1983"/>
         <source>Rename file to: </source>
         <translation>Preimenovati datoteku na: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1979"/>
+        <location filename="../src/mainwindow.cpp" line="2057"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Ovaj unos sadrži tajnu OTP-a, a ne lozinku</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2032"/>
+        <location filename="../src/mainwindow.cpp" line="2112"/>
         <source>Re-encrypting passwords...</source>
         <translation>Ponovno šifrovanje lozinki...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2033"/>
+        <location filename="../src/mainwindow.cpp" line="2113"/>
         <source>Cancel</source>
         <translation>Otkaži</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2041"/>
+        <location filename="../src/mainwindow.cpp" line="2121"/>
         <source>Cancelling re-encryption</source>
         <translation>Otkazivanje ponovnog šifrovanja</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2052"/>
+        <location filename="../src/mainwindow.cpp" line="2133"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>Ponovno šifrovanje lozinki: %1 od %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2073"/>
-        <location filename="../src/mainwindow.cpp" line="2092"/>
+        <location filename="../src/mainwindow.cpp" line="2166"/>
+        <location filename="../src/mainwindow.cpp" line="2185"/>
         <source>Export public key</source>
         <translation>Izvezi javni ključ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2074"/>
+        <location filename="../src/mainwindow.cpp" line="2167"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Izvezite svoj javni ključ&lt;/h3&gt;&lt;p&gt;Nije konfigurisan nikakav ključ za potpisivanje. Postavite ga u Podešavanjima QtPass &amp;gt; GPG ključevi, ili pokrenite ovo u terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Zatim pošaljite datoteku članovima vašeg tima.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2121"/>
+        <location filename="../src/mainwindow.cpp" line="2214"/>
         <source>Not a folder of the store</source>
         <translation>Nije fascikla skladišta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2122"/>
+        <location filename="../src/mainwindow.cpp" line="2215"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 je simbolička veza ili tačka spajanja, ili se nalazi iza nje. Ono na šta ta veza pokazuje nije deo skladišta lozinki i ostaje netaknuto.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2130"/>
+        <location filename="../src/mainwindow.cpp" line="2223"/>
         <source>Sharing passwords with GPG</source>
         <translation>Deljenje lozinki pomoću GPG-a</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2131"/>
+        <location filename="../src/mainwindow.cpp" line="2224"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Deljenje lozinki pomoću GPG-a&lt;/h3&gt;&lt;p&gt;Za deljenje lozinki sa drugim korisnicima:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Izvezite svoj javni ključ&lt;/b&gt; i pošaljite ga članovima tima&lt;/li&gt;&lt;li&gt;&lt;b&gt;Uvezite javne ključeve članova tima&lt;/b&gt; u vaš GPG privezak ključeva&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ponovo šifrujte lozinke&lt;/b&gt; kako bi ih svi primaoci mogli dešifrovati&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Lozinke mogu dešifrovati samo osobe sa odgovarajućim tajnim ključem.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Savet:&lt;/b&gt; Koristite isti GPG ključ za sve deljene fascikle.&lt;/p&gt;&lt;p&gt;Pogledajte ČPP za više detalja.&lt;/p&gt;</translation>
     </message>
@@ -2997,7 +3070,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;h3&gt;Izvezite svoj javni ključ&lt;/h3&gt;&lt;p&gt;Nije konfigurisan nikakav ključ za potpisivanje. Postavite ga u Podešavanjima QtPass &amp;gt; GPG ključevi, ili pokrenite ovo u terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Zatim pošaljite datoteku članovima vašeg tima.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2093"/>
+        <location filename="../src/mainwindow.cpp" line="2186"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -3006,7 +3079,7 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2095"/>
+        <location filename="../src/mainwindow.cpp" line="2188"/>
         <source>No output from gpg.</source>
         <translation>Nema izlaza iz gpg-a.</translation>
     </message>
@@ -3023,13 +3096,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ponovo šifrirajte</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1860"/>
-        <location filename="../src/mainwindow.cpp" line="1992"/>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <location filename="../src/mainwindow.cpp" line="2070"/>
         <source>Error</source>
         <translation>Greška</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1861"/>
+        <location filename="../src/mainwindow.cpp" line="1930"/>
         <source>Failed to create folder: %1</source>
         <translation>Neuspešno kreiranje mapa: %1</translation>
     </message>
@@ -3038,7 +3111,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Neuspešno kreiranje fajla .gpg-id u: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1914"/>
+        <location filename="../src/mainwindow.cpp" line="1983"/>
         <source>Rename file</source>
         <translation>Preimenovati datoteku</translation>
     </message>
@@ -3051,18 +3124,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Preimenovati datoteku na: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1993"/>
+        <location filename="../src/mainwindow.cpp" line="2071"/>
         <source>Directory does not exist: %1</source>
         <translation>Direktorij ne postoji: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2001"/>
-        <location filename="../src/mainwindow.cpp" line="2034"/>
+        <location filename="../src/mainwindow.cpp" line="2079"/>
+        <location filename="../src/mainwindow.cpp" line="2114"/>
         <source>Re-encrypt passwords</source>
         <translation>Ponovo šifrirati lozinke</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2002"/>
+        <location filename="../src/mainwindow.cpp" line="2080"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3092,7 +3165,7 @@ Nastaviti?</translation>
 <context>
     <name>OtpCodeWidget</name>
     <message>
-        <location filename="../src/otpcodewidget.cpp" line="68"/>
+        <location filename="../src/otpcodewidget.cpp" line="71"/>
         <source>Seconds until the OTP code changes</source>
         <translation>Sekundi do promene OTP kôda</translation>
     </message>
@@ -3189,99 +3262,108 @@ Nastaviti?</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="856"/>
+        <location filename="../src/pass.cpp" line="862"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 je simbolička veza ili tačka spajanja, ili se nalazi iza nje. Ono na šta ta veza pokazuje nije deo skladišta lozinki i ostaje netaknuto.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="873"/>
+        <location filename="../src/pass.cpp" line="879"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">%1 nije unutar skladišta lozinki. Primaoci su postavljeni za skladište ili fasciklu u njemu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="892"/>
-        <location filename="../src/pass.cpp" line="895"/>
+        <location filename="../src/pass.cpp" line="898"/>
+        <location filename="../src/pass.cpp" line="901"/>
         <source>rebase</source>
         <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="898"/>
+        <location filename="../src/pass.cpp" line="904"/>
         <source>merge</source>
         <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="901"/>
+        <location filename="../src/pass.cpp" line="907"/>
         <source>cherry-pick</source>
         <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="904"/>
+        <location filename="../src/pass.cpp" line="910"/>
         <source>revert</source>
         <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="911"/>
+        <location filename="../src/pass.cpp" line="917"/>
         <source>cherry-pick or revert</source>
         <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="935"/>
+        <location filename="../src/pass.cpp" line="941"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
         <translation type="unfinished">Git repozitorijum skladišta je usred operacije %1. Završite je ili prekinite pomoću Git-a pre nego što menjate skladište, inače izmene mogu biti izgubljene.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="948"/>
+        <location filename="../src/pass.cpp" line="954"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
         <translation type="unfinished">Skladište lozinki se ažurira (u toku je Git pull). Sačekajte da se završi, pa pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="953"/>
+        <location filename="../src/pass.cpp" line="959"/>
         <source>Update in progress</source>
         <translation type="unfinished">Ažuriranje je u toku</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="967"/>
+        <location filename="../src/pass.cpp" line="973"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">Nedovršena Git operacija</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="976"/>
+        <location filename="../src/pass.cpp" line="982"/>
         <source>Not part of the store</source>
         <translation>Nije deo skladišta</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1071"/>
+        <location filename="../src/pass.cpp" line="1104"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">Evidencija generacija za liste primalaca ne može se pročitati.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1153"/>
+        <location filename="../src/pass.cpp" line="1208"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1 ne može da se pročita kao lista primalaca (obična datoteka od najviše %2), pa ništa nije unapred izabrano. Proverite to pre nego što ovde izaberete primaoce: OK upisuje novu listu preko nje.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1174"/>
+        <location filename="../src/pass.cpp" line="1229"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Lista primalaca %1 nedostaje ili nije obična datoteka, pa ništa nije unapred izabrano: lista nadređene fascikle nije potpisana za ovu. Sami izaberite primaoce ove fascikle; OK upisuje i potpisuje novu listu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1179"/>
+        <location filename="../src/pass.cpp" line="1234"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Ništa nije unapred izabrano: ne može se utvrditi da li je datoteka %2 uklonjena.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1194"/>
+        <location filename="../src/pass.cpp" line="1249"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Lista primalaca %1 ne prolazi proveru ključem za potpisivanje, pa ništa nije unapred izabrano: čuvanjem bi se potpisalo šta god da je u njoj. Sami izaberite primaoce; OK upisuje i potpisuje novu listu.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/pass.cpp" line="1334"/>
+        <source>Git pull did not finish within %n second(s); editing the entry as it is here.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/pass.cpp" line="1118"/>
+        <location filename="../src/pass.cpp" line="1173"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Ništa nije unapred izabrano: čuvanjem bi se potpisalo šta god da je u njoj. Sami izaberite primaoce.</translation>
     </message>
@@ -3291,7 +3373,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="387"/>
+        <location filename="../src/passworddialog.cpp" line="437"/>
         <source>Password</source>
         <translation>Lozinka</translation>
     </message>
@@ -3302,6 +3384,7 @@ Nastaviti?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
+        <location filename="../src/passworddialog.cpp" line="407"/>
         <source>The folder of the password store the new entry goes into</source>
         <translation>Fascikla skladišta lozinki u koju ide novi unos</translation>
     </message>
@@ -3409,72 +3492,78 @@ Nastaviti?</translation>
         <translation>Nije sačuvano: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="315"/>
+        <location filename="../src/passworddialog.cpp" line="341"/>
         <source>Give the entry a name.</source>
         <translation>Dajte unosu naziv.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="319"/>
+        <location filename="../src/passworddialog.cpp" line="345"/>
         <source>A name cannot end in /.</source>
         <translation>Naziv se ne može završavati znakom /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="328"/>
+        <location filename="../src/passworddialog.cpp" line="358"/>
+        <location filename="../src/passworddialog.cpp" line="367"/>
         <source>That name would resolve outside the password store.</source>
         <translation>Taj naziv bi vodio izvan skladišta lozinki.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="336"/>
+        <location filename="../src/passworddialog.cpp" line="375"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
         <translation type="unfinished">Ime ili fascikla koja počinje tačkom bila bi skrivena u listi.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="343"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
         <translation type="unfinished">%1 se nalazi iza simboličke veze ili tačke spajanja, van skladišta lozinki.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="349"/>
+        <location filename="../src/passworddialog.cpp" line="388"/>
         <source>An entry called %1 already exists.</source>
         <translation>Unos pod nazivom %1 već postoji.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="353"/>
+        <location filename="../src/passworddialog.cpp" line="392"/>
         <source>%1 is a folder.</source>
         <translation>%1 je fascikla.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="383"/>
+        <location filename="../src/passworddialog.cpp" line="411"/>
+        <source>The folder&apos;s path is shortened above; hold the pointer over it to read it whole before you save.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="433"/>
         <source>Could not create the folder %1.</source>
         <translation>Nije moguće napraviti fasciklu %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="755"/>
+        <location filename="../src/passworddialog.cpp" line="812"/>
         <source>Remove field</source>
         <translation>Ukloni polje</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="447"/>
+        <location filename="../src/passworddialog.cpp" line="503"/>
         <source>A field called %1 already exists.</source>
         <translation>Polje pod nazivom %1 već postoji.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="533"/>
+        <location filename="../src/passworddialog.cpp" line="589"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>otpauth:// URI ili base32 tajna</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="574"/>
+        <location filename="../src/passworddialog.cpp" line="630"/>
         <source>Invalid OTP secret</source>
         <translation>Nevažeća tajna OTP-a</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="879"/>
+        <location filename="../src/passworddialog.cpp" line="936"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
         <translation type="unfinished">Ovaj unos sadrži bajtove koje QtPass ne može da sačuva nepromenjene, pa ga ovde nije moguće uređivati.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="898"/>
+        <location filename="../src/passworddialog.cpp" line="962"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Ovaj unos ima %n red, previše za uređivanje ovde.</numerusform>
@@ -3508,12 +3597,17 @@ Nastaviti?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="101"/>
+        <location filename="../src/profileinit.cpp" line="169"/>
         <source>Could not create %1.</source>
         <translation>Nije moguće napraviti %1.</translation>
     </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="186"/>
+        <source>The secret key of the signing key %1 is not available, so no recipient list was written.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="160"/>
+        <location filename="../src/profileinit.cpp" line="281"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation>
             <numerusform>%1 već sadrži %n šifrovanu datoteku; ona nije ponovo šifrovana. Da biste to uradili, prebacite se na profil i otvorite „Korisnici“.</numerusform>
@@ -3522,32 +3616,47 @@ Nastaviti?</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="178"/>
+        <location filename="../src/profileinit.cpp" line="299"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation>Nijedan primalac nije izabran; datoteka %1 nije upisana.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="242"/>
+        <location filename="../src/profileinit.cpp" line="353"/>
         <source>Could not sign %1 with %2.</source>
         <translation>Nije moguće potpisati %1 ključem %2.</translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="407"/>
+        <source>%1 is a Git repository inside the store. Move it out of the store, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="410"/>
+        <source>%1 is not a regular file, and Git could wait on it for good. Remove it or make it a regular file, then try again.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
         <translation type="obsolete">Nije moguće upisati %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="244"/>
+        <location filename="../src/profileinit.cpp" line="355"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation>Nije moguće potpisati %1 ključem %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="254"/>
+        <location filename="../src/profileinit.cpp" line="194"/>
+        <location filename="../src/profileinit.cpp" line="365"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">Konfigurisani GPG direktorijum %1 ne postoji.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="276"/>
-        <location filename="../src/profileinit.cpp" line="308"/>
+        <location filename="../src/profileinit.cpp" line="389"/>
+        <source>git %1 did not finish within %2 minutes in %3, and was stopped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="395"/>
         <source>git %1 failed in %2: %3</source>
         <translation>git %1 nije uspeo u %2: %3</translation>
     </message>
@@ -3555,57 +3664,57 @@ Nastaviti?</translation>
 <context>
     <name>ProgramsWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="207"/>
+        <location filename="../src/firstrunwizard.cpp" line="208"/>
         <source>Use the pass command-line tool</source>
         <translation>Koristi alat komandne linije pass</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="209"/>
+        <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>Programs</source>
         <translation>Programi</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="210"/>
+        <location filename="../src/firstrunwizard.cpp" line="211"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
         <translation>GnuPG obavlja šifrovanje. pass i Git nisu obavezni; QtPass može sam da obavi njihov posao.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="214"/>
+        <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>Select executable</source>
         <translation>Izaberite izvršnu datoteku</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="215"/>
+        <location filename="../src/firstrunwizard.cpp" line="216"/>
         <source>All files (*)</source>
         <translation>Sve datoteke (*)</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="217"/>
+        <location filename="../src/firstrunwizard.cpp" line="218"/>
         <source>GnuPG</source>
         <translation>GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="220"/>
+        <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="221"/>
+        <location filename="../src/firstrunwizard.cpp" line="222"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="222"/>
+        <location filename="../src/firstrunwizard.cpp" line="223"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
         <translation>Pokreće skriptu pass za svaku operaciju umesto da direktno poziva gpg i git</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="262"/>
+        <location filename="../src/firstrunwizard.cpp" line="263"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
         <translation>GnuPG nije pronađen. Instalirajte ga (gpg ili gpg2) i ovde unesite njegovu lokaciju.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="265"/>
+        <location filename="../src/firstrunwizard.cpp" line="266"/>
         <source>%1 is not an executable file.</source>
         <translation>%1 nije izvršna datoteka.</translation>
     </message>
@@ -3619,21 +3728,22 @@ Nastaviti?</translation>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="96"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="207"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="247"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="290"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="95"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="222"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="258"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="301"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>Password</source>
         <translation>Lozinka</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="186"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="195"/>
         <source>Open %1 in browser</source>
         <translation>Otvori %1 u pregledaču</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="387"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="403"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="406"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="422"/>
         <source>OTP code</source>
         <translation>OTP kôd</translation>
     </message>
@@ -3642,7 +3752,7 @@ Nastaviti?</translation>
         <translation type="obsolete">OTP kôd</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="389"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="408"/>
         <source>No OTP code found in this password entry</source>
         <translation>U ovoj lozinci ne postoji kod OTP-a</translation>
     </message>
@@ -3760,27 +3870,27 @@ Nastaviti?</translation>
         <translation type="vanished">Kopirano u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="170"/>
+        <location filename="../src/qtpass.cpp" line="171"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
         <translation type="unfinished">Automatski push se ne izvršava: poslednje ponovno šifrovanje nije završeno. Ponovo pokrenite šifrovanje ili ručno pošaljite izmene (push).</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="191"/>
+        <location filename="../src/qtpass.cpp" line="192"/>
         <source>Could not start qrencode: %1</source>
         <translation>Nije moguće pokrenuti qrencode: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="199"/>
+        <location filename="../src/qtpass.cpp" line="200"/>
         <source>qrencode did not finish in time</source>
         <translation>qrencode nije završio na vreme</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="211"/>
+        <location filename="../src/qtpass.cpp" line="212"/>
         <source>qrencode crashed</source>
         <translation>qrencode se srušio</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="212"/>
+        <location filename="../src/qtpass.cpp" line="213"/>
         <source>qrencode exited with code %1</source>
         <translation>qrencode je završio sa kôdom %1</translation>
     </message>
@@ -3788,54 +3898,120 @@ Nastaviti?</translation>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="60"/>
+        <location filename="../src/realpass.cpp" line="66"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git pull nije uspeo: %1</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="87"/>
+        <location filename="../src/realpass.cpp" line="93"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
         <translation type="unfinished">Push se ne izvršava: ranije ponovno šifrovanje u ovom skladištu nije završeno</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="195"/>
+        <location filename="../src/realpass.cpp" line="260"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">Provera lista primalaca pod %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="219"/>
+        <location filename="../src/realpass.cpp" line="229"/>
         <source>Cannot check the recipient lists</source>
         <translation type="unfinished">Nije moguće proveriti liste primalaca</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="222"/>
+        <location filename="../src/realpass.cpp" line="165"/>
+        <source>Recipient list is a link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="166"/>
+        <source>%1 is a link. pass would encrypt to the recipients in the file it points to, while QtPass shows the list of a folder above it, so nothing was encrypted. Replace the link with a copy of the list, or remove it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="232"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
         <translation type="unfinished">%1 sadrži datoteku ili fasciklu čiji naziv nije ispravan UTF-8. QtPass ne može da vidi šta se krije iza tog naziva, a pass bi je ponovo šifrovao, pa ništa nije promenjeno. Preimenujte je, pa pokušajte ponovo.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/realpass.cpp" line="464"/>
+        <source>and %n more</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/realpass.cpp" line="353"/>
+        <location filename="../src/realpass.cpp" line="495"/>
+        <source>The folder holds changes Git has not recorded, and pass would commit and push them along with this one:
+
+%1
+
+Commit, remove or ignore them with Git first, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="529"/>
+        <source>The system writes %1 by itself, in folders a file manager opens (Finder on macOS, Explorer on Windows, Dolphin on KDE). Git leaves such files alone in every folder once each .gitignore in the store below holds its lines, committed:
+
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="540"/>
+        <source>Changes Git has not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="557"/>
+        <source>Saved, not committed</source>
+        <translation type="unfinished">Sačuvano, nije komitovano</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="558"/>
+        <source>The change is in the store, but Git did not record it, so it is not pushed, and a pull may overwrite it (&quot;!!&quot; marks a file Git ignores):
+
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="638"/>
+        <source>Git ignores these files only where they are now, and pass would commit and push them where they land:
+
+%1
+
+Move them out of the folder, or have Git ignore them there too, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="643"/>
+        <source>Ignored files would be committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="813"/>
         <source>Could not remove the link %1.</source>
         <translation>Nije moguće ukloniti vezu %1.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="354"/>
+        <location filename="../src/realpass.cpp" line="814"/>
         <source>Delete failed</source>
         <translation>Brisanje nije uspelo</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="404"/>
+        <location filename="../src/realpass.cpp" line="864"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation>Veza %1 je uklonjena, ali git to nije mogao da zabeleži: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="406"/>
-        <location filename="../src/realpass.cpp" line="556"/>
+        <location filename="../src/realpass.cpp" line="866"/>
+        <location filename="../src/realpass.cpp" line="1022"/>
         <source>Delete incomplete</source>
         <translation>Brisanje nije dovršeno</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="515"/>
+        <location filename="../src/realpass.cpp" line="981"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
         <translation type="unfinished">Primaoci su promenjeni, ali neke unose nije bilo moguće ponovo šifrovati za njih: oni su i dalje šifrovani za prethodne primaoce, koji i dalje mogu da ih čitaju. Uz Git, promena je lokalno komitovana i nije poslata (push): QtPass ne šalje ovo skladište automatski dok ponovno šifrovanje ne uspe, a ručni push će je poslati.</translation>
     </message>
@@ -3844,12 +4020,12 @@ Nastaviti?</translation>
         <translation type="obsolete">Primaoci su promenjeni, ali neke unose nije bilo moguće ponovo šifrovati za njih: oni su i dalje šifrovani za prethodne primaoce, koji i dalje mogu da ih čitaju. Uz Git, promena je lokalno komitovana i sada nije poslata (push); poslaće je sledeći push.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="553"/>
+        <location filename="../src/realpass.cpp" line="1019"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">Veza %1 je uklonjena i git je više ne prati, ali komit nije uspeo: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="688"/>
+        <location filename="../src/realpass.cpp" line="1162"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation>Za pretragu mora biti podešena izvršna datoteka GPG-a.</translation>
     </message>
@@ -3861,12 +4037,12 @@ Nastaviti?</translation>
         <translation type="vanished">nasilno prepisati?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="334"/>
+        <location filename="../src/storemodel.cpp" line="363"/>
         <source>Force overwrite?</source>
         <translation>Prinudno prepisati?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="335"/>
+        <location filename="../src/storemodel.cpp" line="364"/>
         <source>overwrite %1 with %2?</source>
         <translation>prepisati %1 sa %2?</translation>
     </message>
@@ -3874,32 +4050,32 @@ Nastaviti?</translation>
 <context>
     <name>StoreWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="369"/>
+        <location filename="../src/firstrunwizard.cpp" line="370"/>
         <source>Keep the store under Git</source>
         <translation>Drži skladište pod Git-om</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="371"/>
+        <location filename="../src/firstrunwizard.cpp" line="372"/>
         <source>Password store</source>
         <translation>Skladište lozinki</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="372"/>
+        <location filename="../src/firstrunwizard.cpp" line="373"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
         <translation>Fascikla u kojoj se nalaze vaše lozinke. Postojeće skladište se koristi takvo kakvo jeste; prazna ili nepostojeća fascikla se podešava za ključeve koje ste označili.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="376"/>
+        <location filename="../src/firstrunwizard.cpp" line="377"/>
         <source>Folder</source>
         <translation>Fascikla</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="378"/>
+        <location filename="../src/firstrunwizard.cpp" line="379"/>
         <source>Choose the password store folder</source>
         <translation>Izaberite fasciklu skladišta lozinki</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="403"/>
+        <location filename="../src/firstrunwizard.cpp" line="404"/>
         <source>Git has no name and e-mail to commit with yet. Run
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
@@ -3910,17 +4086,17 @@ git config --global user.email vi@example.org
 i nakon toga uključite Git u Postavkama.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="407"/>
+        <location filename="../src/firstrunwizard.cpp" line="408"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
         <translation>Svaka izmena postaje komit; fascikla koja još nije repozitorijum dobija ga</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="431"/>
+        <location filename="../src/firstrunwizard.cpp" line="432"/>
         <source>Enter a folder.</source>
         <translation>Unesite fasciklu.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/firstrunwizard.cpp" line="435"/>
+        <location filename="../src/firstrunwizard.cpp" line="436"/>
         <source>An existing password store with %n entries.</source>
         <translation>
             <numerusform>Postojeće skladište lozinki sa %n unosom.</numerusform>
@@ -3929,22 +4105,22 @@ i nakon toga uključite Git u Postavkama.</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="438"/>
+        <location filename="../src/firstrunwizard.cpp" line="439"/>
         <source>An empty folder; it will be set up as a password store.</source>
         <translation>Prazna fascikla; biće podešena kao skladište lozinki.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="439"/>
+        <location filename="../src/firstrunwizard.cpp" line="440"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
         <translation>Ova fascikla još nije skladište lozinki; u nju će biti upisan .gpg-id za označene ključeve.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="442"/>
+        <location filename="../src/firstrunwizard.cpp" line="443"/>
         <source>The folder does not exist yet; it will be created.</source>
         <translation>Fascikla još ne postoji; biće napravljena.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="446"/>
+        <location filename="../src/firstrunwizard.cpp" line="447"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation>Vratite se i označite bar jedan ključ za koji će se šifrovati.</translation>
     </message>
@@ -4106,7 +4282,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation>Ne mogu da dobijem listu dostupnih GPG ključeva</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/usersdialog.cpp" line="162"/>
+        <location filename="../src/usersdialog.cpp" line="164"/>
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
@@ -4116,7 +4292,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/usersdialog.cpp" line="170"/>
+        <location filename="../src/usersdialog.cpp" line="172"/>
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
@@ -4126,32 +4302,32 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="279"/>
+        <location filename="../src/usersdialog.cpp" line="300"/>
         <source>Key not found in keyring</source>
         <translation>Ključ nije pronađen u privjesku za ključeve</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="427"/>
+        <location filename="../src/usersdialog.cpp" line="485"/>
         <source>created</source>
         <translation>stvoreno</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="431"/>
+        <location filename="../src/usersdialog.cpp" line="489"/>
         <source>expires</source>
         <translation>istekne</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="454"/>
+        <location filename="../src/usersdialog.cpp" line="512"/>
         <source>[INVALID] </source>
         <translation>[NEVAŽEĆI] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="450"/>
+        <location filename="../src/usersdialog.cpp" line="508"/>
         <source>[EXPIRED] </source>
         <translation>[ISTEKAO] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="458"/>
+        <location filename="../src/usersdialog.cpp" line="516"/>
         <source>[PARTIAL] </source>
         <translation>[DELIMIČAN] </translation>
     </message>
@@ -4159,34 +4335,34 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1176"/>
+        <location filename="../src/util.cpp" line="1343"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation>Nije moguće napraviti privremenu datoteku pored %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1188"/>
-        <location filename="../src/util.cpp" line="1280"/>
-        <location filename="../src/util.cpp" line="1310"/>
+        <location filename="../src/util.cpp" line="1355"/>
+        <location filename="../src/util.cpp" line="1447"/>
+        <location filename="../src/util.cpp" line="1477"/>
         <source>Cannot write %1: %2</source>
         <translation>Nije moguće upisati %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1213"/>
+        <location filename="../src/util.cpp" line="1380"/>
         <source>Failed to replace %1.</source>
         <translation>Nije uspela zamena %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1218"/>
+        <location filename="../src/util.cpp" line="1385"/>
         <source>%1 already exists.</source>
         <translation>%1 već postoji.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1220"/>
+        <location filename="../src/util.cpp" line="1387"/>
         <source>Failed to write %1.</source>
         <translation>Nije uspelo upisivanje %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1267"/>
+        <location filename="../src/util.cpp" line="1434"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation>Datoteka %1 je zamenjena drugom datotekom dok se upisivala.</translation>
     </message>
@@ -4195,12 +4371,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="obsolete">Datoteka %1 je zamenjena vezom dok se upisivala.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1293"/>
+        <location filename="../src/util.cpp" line="1460"/>
         <source>Cannot read %1.</source>
         <translation>Nije moguće pročitati %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1303"/>
+        <location filename="../src/util.cpp" line="1470"/>
         <source>Cannot read %1: %2</source>
         <translation>Nije moguće pročitati %1: %2</translation>
     </message>

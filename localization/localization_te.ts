@@ -4,22 +4,22 @@
 <context>
     <name>ClipboardManager</name>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="75"/>
+        <location filename="../src/clipboardmanager.cpp" line="162"/>
         <source>Copied to clipboard</source>
         <translation>క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="183"/>
+        <location filename="../src/clipboardmanager.cpp" line="279"/>
         <source>Clipboard restored</source>
         <translation type="unfinished">క్లిప్‌బోర్డ్ పునరుద్ధరించబడింది</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="184"/>
+        <location filename="../src/clipboardmanager.cpp" line="280"/>
         <source>Clipboard cleared</source>
         <translation>క్లిప్‌బోర్డ్ క్లియర్ చేయబడింది</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="185"/>
+        <location filename="../src/clipboardmanager.cpp" line="281"/>
         <source>Clipboard not cleared</source>
         <translation>క్లిప్‌బోర్డ్ క్లియర్ చేయబడలేదు</translation>
     </message>
@@ -711,7 +711,7 @@ URL
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; వెర్షన్ </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="85"/>
+        <location filename="../src/configdialog.cpp" line="87"/>
         <source>System tray is not available</source>
         <translation>సిస్టమ్ ట్రే అందుబాటులో లేదు</translation>
     </message>
@@ -720,12 +720,12 @@ URL
         <translation type="vanished">Pass OTP పొడిగింపును ఇన్‌స్టాల్ చేయాల్సిన అవసరం ఉంది</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="98"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished">Wayland లో అందుబాటులో లేదు; బదులుగా మీ కంపోజిటర్ యొక్క &quot;పైన ఉంచు&quot; విండో నియమాన్ని ఉపయోగించండి</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="108"/>
+        <location filename="../src/configdialog.cpp" line="110"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode ను ఇన్‌స్టాల్ చేయాల్సిన అవసరం ఉంది</translation>
     </message>
@@ -734,73 +734,73 @@ URL
         <translation type="vanished">క్లిప్‌బోర్డ్ లేదు</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="154"/>
+        <location filename="../src/configdialog.cpp" line="156"/>
         <source>No clipboard</source>
         <translation type="unfinished">క్లిప్‌బోర్డ్ లేదు</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="155"/>
+        <location filename="../src/configdialog.cpp" line="157"/>
         <source>Always copy to clipboard</source>
         <translation>ఎల్లప్పుడూ క్లిప్‌బోర్డ్‌కు కాపీ చేయి</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="156"/>
+        <location filename="../src/configdialog.cpp" line="158"/>
         <source>On-demand copy to clipboard</source>
         <translation>అవసరానుసారం క్లిప్‌బోర్డ్‌కు కాపీ చేయి</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="364"/>
-        <location filename="../src/configdialog.cpp" line="372"/>
+        <location filename="../src/configdialog.cpp" line="366"/>
+        <location filename="../src/configdialog.cpp" line="374"/>
         <source>This field is required</source>
         <translation>ఈ ఫీల్డ్ తప్పనిసరి</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="367"/>
+        <location filename="../src/configdialog.cpp" line="369"/>
         <source>A profile name cannot contain / or \</source>
         <translation type="unfinished">ప్రొఫైల్ పేరులో / లేదా \ ఉండకూడదు</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="369"/>
+        <location filename="../src/configdialog.cpp" line="371"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">మరొక ప్రొఫైల్‌కు ఇప్పటికే ఈ పేరు ఉంది</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="378"/>
+        <location filename="../src/configdialog.cpp" line="380"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">పూర్తి కీ ఫింగర్‌ప్రింట్‌లు మాత్రమే (40 లేదా 64 హెక్సాడెసిమల్ అక్షరాలు), ఖాళీలతో వేరు చేయబడినవి</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="525"/>
+        <location filename="../src/configdialog.cpp" line="527"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 వేరే స్టోర్ కోసం అదే కీతో సంతకం చేస్తుంది. ఈ స్టోర్లలో ఒకదాని కోసం సంతకం చేసిన గ్రహీతల జాబితా మరొకదానిలో కూడా ఆమోదించబడుతుంది: గ్రహీతలు వేరుగా ఉన్న ప్రతి స్టోర్ కోసం ప్రత్యేక సంతకం కీని ఉపయోగించండి.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="553"/>
+        <location filename="../src/configdialog.cpp" line="555"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation type="unfinished">pass %1 లోని మార్పులను %2 లోని గిట్ రిపోజిటరీకి కమిట్ చేస్తుంది: స్టోర్ మార్గంలో కోలన్ ఉంటే, pass గిట్‌ను స్టోర్‌కు పరిమితం చేయలేదు. స్టోర్‌లో &quot;git init&quot; ను అమలు చేయండి, లేదా స్థానిక Git/GPG ని ఉపయోగించండి.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="576"/>
+        <location filename="../src/configdialog.cpp" line="578"/>
         <source>The path does not exist.</source>
         <translation>మార్గం లేదు.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="579"/>
+        <location filename="../src/configdialog.cpp" line="581"/>
         <source>The path is not readable.</source>
         <translation>మార్గం చదవడం సాధ్యం కాదు.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="584"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>మార్గం యూనిక్స్ డొమైన్ సాకెట్ కాదు.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="586"/>
+        <location filename="../src/configdialog.cpp" line="588"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>సంభావ్యంగా చెల్లని SSH_AUTH_SOCK ఓవర్రైడ్</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="587"/>
+        <location filename="../src/configdialog.cpp" line="589"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -813,42 +813,42 @@ The value will still be saved as entered.</source>
 విలువ ఇప్పటికీ నమోదు చేసిన విధంగా సేవ్ చేయబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="844"/>
+        <location filename="../src/configdialog.cpp" line="846"/>
         <source>Create profile directory?</source>
         <translation>ప్రొఫైల్ డైరెక్టరీని సృష్టించాలా?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="845"/>
+        <location filename="../src/configdialog.cpp" line="847"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>మీరు %1 వద్ద పాస్‌వర్డ్ స్టోర్‌ను సృష్టించాలనుకుంటున్నారా?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="851"/>
+        <location filename="../src/configdialog.cpp" line="853"/>
         <source>Error</source>
         <translation>లోపం</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="852"/>
+        <location filename="../src/configdialog.cpp" line="854"/>
         <source>Could not create profile directory: %1</source>
         <translation>ప్రొఫైల్ డైరెక్టరీని సృష్టించలేకపోయింది: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="876"/>
+        <location filename="../src/configdialog.cpp" line="878"/>
         <source>Select recipients for %1</source>
         <translation>%1 కోసం గ్రహీతలను ఎంచుకోండి</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="885"/>
+        <location filename="../src/configdialog.cpp" line="894"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">ప్రొఫైల్ %1 ను ప్రారంభించలేకపోయింది</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="888"/>
+        <location filename="../src/configdialog.cpp" line="897"/>
         <source>Profile %1</source>
         <translation type="unfinished">ప్రొఫైల్ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
+        <location filename="../src/configdialog.cpp" line="920"/>
         <source>New profile</source>
         <translation>కొత్త ప్రొఫైల్</translation>
     </message>
@@ -857,12 +857,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">కొత్త ప్రొఫైల్</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="932"/>
+        <location filename="../src/configdialog.cpp" line="941"/>
         <source>No profile selected</source>
         <translation>ఏ ప్రొఫైల్ ఎంచుకోబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="933"/>
+        <location filename="../src/configdialog.cpp" line="942"/>
         <source>No profile selected to delete</source>
         <translation>తొలగించడానికి ఏ ప్రొఫైల్ ఎంచుకోబడలేదు</translation>
     </message>
@@ -903,17 +903,17 @@ The value will still be saved as entered.</source>
         <translation type="vanished">ఫోల్డర్ %1 పాస్‌వర్డ్ స్టోర్ లాగా కనిపించడం లేదు లేదా ఇంకా ప్రారంభించబడలేదు.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1152"/>
+        <location filename="../src/configdialog.cpp" line="1164"/>
         <source>New profile: %1 at %2</source>
         <translation>కొత్త ప్రొఫైల్: %2 వద్ద %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1154"/>
+        <location filename="../src/configdialog.cpp" line="1166"/>
         <source>Profile: %1 at %2</source>
         <translation>ప్రొఫైల్: %2 వద్ద %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1157"/>
+        <location filename="../src/configdialog.cpp" line="1169"/>
         <source>Fill in all required fields</source>
         <translation>అన్ని తప్పనిసరి ఫీల్డ్‌లను పూరించండి</translation>
     </message>
@@ -921,62 +921,62 @@ The value will still be saved as entered.</source>
 <context>
     <name>DoneWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="471"/>
+        <location filename="../src/firstrunwizard.cpp" line="472"/>
         <source>Hide passwords until asked</source>
         <translation type="unfinished">అడిగే వరకు పాస్‌వర్డ్‌లను దాచు</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="472"/>
+        <location filename="../src/firstrunwizard.cpp" line="473"/>
         <source>Show an icon in the system tray</source>
         <translation type="unfinished">సిస్టమ్ ట్రేలో ఐకాన్ చూపించు</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="473"/>
+        <location filename="../src/firstrunwizard.cpp" line="474"/>
         <source>Ready</source>
         <translation type="unfinished">సిద్ధం</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="474"/>
+        <location filename="../src/firstrunwizard.cpp" line="475"/>
         <source>Everything else can be changed later in Settings.</source>
         <translation type="unfinished">మిగతావన్నీ తరువాత సెట్టింగులలో మార్చుకోవచ్చు.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="481"/>
+        <location filename="../src/firstrunwizard.cpp" line="482"/>
         <source>Show the password line as dots; Show password reveals it</source>
         <translation type="unfinished">పాస్‌వర్డ్ లైన్‌ను చుక్కలుగా చూపించు; &quot;పాస్‌వర్డ్ చూపించు&quot; దాన్ని బయటపెడుతుంది</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="492"/>
+        <location filename="../src/firstrunwizard.cpp" line="493"/>
         <source>Store: %1</source>
         <translation type="unfinished">స్టోర్: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="494"/>
+        <location filename="../src/firstrunwizard.cpp" line="495"/>
         <source>It is already a password store and is used as it is.</source>
         <translation type="unfinished">ఇది ఇప్పటికే పాస్‌వర్డ్ స్టోర్, దీన్ని ఉన్నది ఉన్నట్లుగా ఉపయోగిస్తారు.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="496"/>
+        <location filename="../src/firstrunwizard.cpp" line="497"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
         <translation type="unfinished">ఇది టిక్ చేసిన కీల కోసం సెటప్ చేయబడి గిట్ కింద ఉంచబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="498"/>
+        <location filename="../src/firstrunwizard.cpp" line="499"/>
         <source>It will be set up for the ticked keys.</source>
         <translation type="unfinished">ఇది టిక్ చేసిన కీల కోసం సెటప్ చేయబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="500"/>
+        <location filename="../src/firstrunwizard.cpp" line="501"/>
         <source>GnuPG: %1</source>
         <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="501"/>
+        <location filename="../src/firstrunwizard.cpp" line="502"/>
         <source>Operations run through pass.</source>
         <translation type="unfinished">ఆపరేషన్లు pass ద్వారా నడుస్తాయి.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="502"/>
+        <location filename="../src/firstrunwizard.cpp" line="503"/>
         <source>Operations run through gpg and git directly.</source>
         <translation type="unfinished">ఆపరేషన్లు నేరుగా gpg మరియు git ద్వారా నడుస్తాయి.</translation>
     </message>
@@ -984,17 +984,17 @@ The value will still be saved as entered.</source>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="224"/>
+        <location filename="../src/executor.cpp" line="228"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">ఈ కమాండ్ కోసం ఎక్జిక్యూటబుల్ ఏదీ కాన్ఫిగర్ చేయబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="254"/>
+        <location filename="../src/executor.cpp" line="258"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">%1 ను ప్రారంభించలేకపోయింది</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="536"/>
+        <location filename="../src/executor.cpp" line="587"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 క్రాష్ అయింది లేదా బలవంతంగా ఆపివేయబడింది</translation>
     </message>
@@ -1034,12 +1034,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">ఫైల్‌కు సేవ్ చేయి...</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="27"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
         <translation>%1 కోసం పబ్లిక్ కీ</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="51"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="52"/>
         <source>Copied!</source>
         <translation>కాపీ చేయబడింది!</translation>
     </message>
@@ -1048,24 +1048,24 @@ The value will still be saved as entered.</source>
         <translation type="vanished">పబ్లిక్ కీని సేవ్ చేయి</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="63"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="70"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="80"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="64"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="71"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="81"/>
         <source>Save public key</source>
         <translation>పబ్లిక్ కీని సేవ్ చేయి</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="64"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="65"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
         <translation>ASCII-armored కీ (*.asc);;అన్ని ఫైళ్లు (*)</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="71"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="72"/>
         <source>Could not open %1 for writing: %2</source>
         <translation>వ్రాయడం కోసం %1 ను తెరవలేకపోయింది: %2</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="81"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="82"/>
         <source>Could not write to %1: %2</source>
         <translation>%1 కు వ్రాయలేకపోయింది: %2</translation>
     </message>
@@ -1102,44 +1102,44 @@ The value will still be saved as entered.</source>
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="49"/>
+        <location filename="../src/firstrunwizard.cpp" line="50"/>
         <source>Browse</source>
         <translation type="unfinished">బ్రౌజ్</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="72"/>
-        <location filename="../src/firstrunwizard.cpp" line="78"/>
+        <location filename="../src/firstrunwizard.cpp" line="73"/>
+        <location filename="../src/firstrunwizard.cpp" line="79"/>
         <source>Welcome to QtPass</source>
         <translation type="unfinished">QtPass కు స్వాగతం</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="81"/>
+        <location filename="../src/firstrunwizard.cpp" line="82"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
         <translation type="unfinished">QtPass అనేది ప్రామాణిక Unix పాస్‌వర్డ్ మేనేజర్ అయిన &lt;i&gt;pass&lt;/i&gt; కు గ్రాఫికల్ ఫ్రంట్-ఎండ్: ప్రతి పాస్‌వర్డ్ GnuPG తో ఎన్క్రిప్ట్ చేయబడిన ఫైల్, మీరు గిట్ కింద ఉంచగల ఫోల్డర్‌లో భద్రపరచబడుతుంది.&lt;br&gt;&lt;br&gt;తదుపరి పేజీలు GnuPG ను కనుగొంటాయి, ఎన్క్రిప్ట్ చేయడానికి మీకు కీ ఉందని నిర్ధారిస్తాయి మరియు మీ పాస్‌వర్డ్‌లు ఉండే ఫోల్డర్‌ను ఎంచుకుంటాయి. మీరు &quot;ముగించు&quot; నొక్కే వరకు ఏదీ రాయబడదు.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="133"/>
+        <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Error</source>
         <translation type="unfinished">లోపం</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="134"/>
+        <location filename="../src/firstrunwizard.cpp" line="135"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished">పాస్‌వర్డ్-స్టోర్‌ను సృష్టించడం విఫలమైంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="152"/>
-        <location filename="../src/firstrunwizard.cpp" line="176"/>
+        <location filename="../src/firstrunwizard.cpp" line="153"/>
+        <location filename="../src/firstrunwizard.cpp" line="177"/>
         <source>Password store not initialised</source>
         <translation type="unfinished">పాస్‌వర్డ్ స్టోర్ ప్రారంభించబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="159"/>
+        <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>Password store</source>
         <translation type="unfinished">పాస్‌వర్డ్ స్టోర్</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="160"/>
+        <location filename="../src/firstrunwizard.cpp" line="161"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
         <translation type="unfinished">%1 లో ఇప్పటికే ఎన్క్రిప్ట్ చేసిన ఫైళ్లు ఉన్నాయి; అవి టిక్ చేసిన కీలకు రీ-ఎన్క్రిప్ట్ చేయబడలేదు. అది చేయడానికి ప్రారంభం తరువాత వినియోగదారులు తెరవండి.</translation>
     </message>
@@ -1176,32 +1176,32 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">స్టోర్ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="471"/>
+        <location filename="../src/gpgidgeneration.cpp" line="476"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">జాబితాలో ఒకటి కంటే ఎక్కువ జనరేషన్ పంక్తులు ఉన్నాయి.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="479"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">జనరేషన్ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="485"/>
+        <location filename="../src/gpgidgeneration.cpp" line="490"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">జాబితాలో ఒకటి కంటే ఎక్కువ ఫోల్డర్ పంక్తులు ఉన్నాయి.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="504"/>
+        <location filename="../src/gpgidgeneration.cpp" line="509"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">ఫోల్డర్ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="508"/>
+        <location filename="../src/gpgidgeneration.cpp" line="513"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">హెడర్ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="541"/>
+        <location filename="../src/gpgidgeneration.cpp" line="546"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">జాబితాలో జనరేషన్ పంక్తి ఉంది కానీ ఫోల్డర్ పంక్తి లేదు.</translation>
     </message>
@@ -1210,50 +1210,50 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">జాబితాలో స్టోర్ పంక్తి ఉంది కానీ జనరేషన్ పంక్తి లేదు.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="704"/>
+        <location filename="../src/gpgidgeneration.cpp" line="733"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 నమ్మదగినది కాదు: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="631"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 స్టోర్‌లోని &quot;%2&quot; ఫోల్డర్ కోసం వ్రాయబడింది, &quot;%3&quot; కోసం కాదు, అందువల్ల ఇది ఉపయోగించబడదు. దీన్ని వేరొకరు ఇక్కడకు కాపీ చేసి ఉండవచ్చు; బదులుగా ఫోల్డర్ తరలించబడి లేదా పేరు మార్చబడి ఉంటే, సంతకం కీ కలిగిన వ్యక్తి దానిపై వినియోగదారులు తెరిచి గ్రహీతలను సేవ్ చేయాలి; అది జాబితాను ఇప్పుడు ఉన్న స్థానానికి బంధిస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="454"/>
+        <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
         <translation type="unfinished">ఈ జాబితాలో ఒకటి కంటే ఎక్కువ స్టోర్ ఐడీ పంక్తులు ఉన్నాయి.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="465"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
         <translation type="unfinished">స్టోర్ ఐడీ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="549"/>
+        <location filename="../src/gpgidgeneration.cpp" line="554"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
         <translation type="unfinished">జాబితాలో స్టోర్ ఐడీ పంక్తి ఉంది కానీ జనరేషన్ పంక్తి లేదు.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="644"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">జనరేషన్ %1 సాధ్యమైన అత్యధికం, అందువల్ల ఇక్కడ దీని కంటే కొత్త జాబితాను వ్రాయలేము: %2 ను తొలగిస్తే ఈ పరికరం ఇంతకు ముందు ఆమోదించినది మరచిపోతుంది, ఆ తరువాత సంతకం కీ కలిగిన వ్యక్తి వినియోగదారులు తెరిచి %3 ద్వారా ముందుకు సాగవచ్చు.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">సంతకం కీ కలిగిన వ్యక్తి వినియోగదారులు తెరిచి %1 ద్వారా ముందుకు సాగవచ్చు; అది జనరేషన్ %2 ను వ్రాస్తుంది. %3 ను తొలగిస్తే ఈ పరికరం ఇంతకు ముందు ఆమోదించినది మరచిపోతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="668"/>
+        <location filename="../src/gpgidgeneration.cpp" line="697"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 లో జనరేషన్ పంక్తి లేదు, అయితే ఇంతకు ముందు ఇక్కడ జనరేషన్ %2 ఆమోదించబడింది. pass జనరేషన్ పంక్తిని వ్రాయదు (QtPass యొక్క pass బ్యాకెండ్ ద్వారా కూడా), 2.0 కు ముందు QtPass కూడా వ్రాయలేదు; అది లేకుండా ఈ జాబితా స్టోర్‌లోని మరొక ఫోల్డర్ కోసం వ్రాయబడి ఇక్కడకు కాపీ చేయబడి ఉండవచ్చు కూడా. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="677"/>
+        <location filename="../src/gpgidgeneration.cpp" line="706"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">గ్రహీతలను కొత్తగా ఎంచుకొని సేవ్ చేయడం</translation>
     </message>
@@ -1262,7 +1262,7 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">సంతకం చేసిన గ్రహీతల జాబితా %1 లో స్టోర్ పంక్తి లేదు, కానీ ఈ పరికరానికి ఈ స్టోర్ దాని ID %2 ద్వారా తెలుసు: ఇది వేరే స్టోర్ కోసం వ్రాయబడి ఇక్కడికి కాపీ చేయబడి ఉండవచ్చు, లేదా పాత QtPass ద్వారా వ్రాయబడి ఉండవచ్చు. సంతకం కీ ఉన్న వ్యక్తి వినియోగదారులు తెరిచి, గ్రహీతలను మళ్లీ ఎంచుకుని, సేవ్ చేయడం ద్వారా దీన్ని పరిష్కరించవచ్చు; అది స్టోర్ పంక్తిని వ్రాస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="882"/>
+        <location filename="../src/gpgidgeneration.cpp" line="915"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">గ్రహీతల జాబితాల జనరేషన్ రికార్డ్ అయిన %1, జనరేషన్ %3 వ్రాయబడుతున్న సమయంలో జనరేషన్ %2 కు మారిపోయింది.</translation>
     </message>
@@ -1275,38 +1275,38 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">సంతకం చేసిన గ్రహీతల జాబితా %1 లో జనరేషన్ పంక్తి లేదు, అయితే ఇంతకు ముందు ఇక్కడ జనరేషన్ %2 ఆమోదించబడింది. pass జనరేషన్ పంక్తిని వ్రాయదు (QtPass యొక్క pass బ్యాకెండ్ ద్వారా కూడా), 2.0 కు ముందు QtPass కూడా వ్రాయలేదు. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="682"/>
+        <location filename="../src/gpgidgeneration.cpp" line="711"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 జనరేషన్ %2, ఇది QtPass ఇక్కడ చివరిగా ఆమోదించిన జనరేషన్ %3 కంటే పాతది. దీన్ని వేరొకరు తిరిగి ఉంచి ఉండవచ్చు. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="689"/>
+        <location filename="../src/gpgidgeneration.cpp" line="718"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">గ్రహీతలను సేవ్ చేయడం (అక్కడ ముందుగా ఎంచుకున్న గ్రహీతలు ఈ జాబితాలోని వారే, కాబట్టి ఇకపై యాక్సెస్ ఉండకూడని వారిని ముందుగా తీసివేయండి)</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="754"/>
+        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 జనరేషన్ %2, ఇది ఈ పరికరం ఇంతకు ముందు ఆమోదించిన వేరొక జాబితాకు ఉన్న జనరేషనే. రెండు పరికరాలు ఒకే సమయంలో గ్రహీతలను సేవ్ చేసి ఉండాలి (గిట్ వైరుధ్యాన్ని చూపించి ఉంటుంది), లేదా ఆ జనరేషన్‌కు చెందిన ఒక అసలైన జాబితా దాని స్థానంలో ఉంచబడి ఉండాలి. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="762"/>
+        <location filename="../src/gpgidgeneration.cpp" line="795"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">గ్రహీతలను తనిఖీ చేసి సేవ్ చేయడం</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="788"/>
+        <location filename="../src/gpgidgeneration.cpp" line="821"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 మరొక పాస్‌వర్డ్ స్టోర్ కోసం వ్రాయబడింది (స్టోర్ ఐడీ %2; ఈ పరికరానికి ఈ స్టోర్ %3 గా తెలుసు) మరియు ఉపయోగించబడదు. ఇది అదే కీతో సంతకం చేయబడిన స్టోర్ నుండి ఇక్కడికి కాపీ చేయబడి ఉండవచ్చు. అలా కాకుండా ఈ స్టోర్ మళ్లీ సెటప్ చేయబడి ఉంటే, %4 ను తీసివేస్తే ఈ పరికరం తనకు తెలిసిన స్టోర్ ఐడీలను మరచిపోతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="806"/>
+        <location filename="../src/gpgidgeneration.cpp" line="839"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 లో స్టోర్ ఐడీ పంక్తి లేదు, అయితే ఈ పరికరానికి ఈ స్టోర్ దాని ఐడీ %2 ద్వారా తెలుసు: ఇది వేరే స్టోర్ కోసం వ్రాసి ఇక్కడికి కాపీ చేయబడి ఉండవచ్చు, లేదా పాత QtPass దీన్ని వ్రాసి ఉండవచ్చు. సంతకం కీ కలిగిన వ్యక్తి &quot;వినియోగదారులు&quot; తెరిచి, గ్రహీతలను కొత్తగా ఎంచుకుని, సేవ్ చేయడం ద్వారా ముందుకు సాగవచ్చు; అది స్టోర్ ఐడీ పంక్తిని వ్రాస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="850"/>
+        <location filename="../src/gpgidgeneration.cpp" line="883"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">గ్రహీతల జాబితా %1 జనరేషన్ %2 కు చేరుకుంది, అది సాధ్యమైన అత్యధికం; జాబితాను వ్రాయలేము.</translation>
     </message>
@@ -1314,17 +1314,17 @@ The value will still be saved as entered.</source>
 <context>
     <name>GpgIdSigner</name>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="79"/>
+        <location filename="../src/gpgidsigner.cpp" line="145"/>
         <source>the recipient list is not valid UTF-8</source>
         <translation type="unfinished">గ్రహీతల జాబితా చెల్లుబాటు అయ్యే UTF-8 లో లేదు</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="106"/>
+        <location filename="../src/gpgidsigner.cpp" line="172"/>
         <source>gpg wrote no signature</source>
         <translation type="unfinished">gpg సంతకం ఏమీ వ్రాయలేదు</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="116"/>
+        <location filename="../src/gpgidsigner.cpp" line="182"/>
         <source>the new signature does not verify as one of the signing keys</source>
         <translation type="unfinished">కొత్త సంతకం సంతకం కీలలో ఒకదానిదిగా ధృవీకరించబడలేదు</translation>
     </message>
@@ -1332,95 +1332,96 @@ The value will still be saved as entered.</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="150"/>
+        <location filename="../src/imitatepass.cpp" line="159"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">గిట్ పుల్ విఫలమైంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="212"/>
-        <location filename="../src/imitatepass.cpp" line="473"/>
-        <location filename="../src/imitatepass.cpp" line="828"/>
-        <location filename="../src/realpass.cpp" line="135"/>
+        <location filename="../src/imitatepass.cpp" line="259"/>
+        <location filename="../src/imitatepass.cpp" line="542"/>
+        <location filename="../src/imitatepass.cpp" line="931"/>
+        <location filename="../src/realpass.cpp" line="141"/>
         <source>Check .gpg-id file signature!</source>
         <translation>.gpg-id ఫైల్ సంతకాన్ని తనిఖీ చేయండి!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="474"/>
-        <location filename="../src/imitatepass.cpp" line="673"/>
-        <location filename="../src/realpass.cpp" line="131"/>
+        <location filename="../src/imitatepass.cpp" line="543"/>
+        <location filename="../src/imitatepass.cpp" line="756"/>
+        <location filename="../src/realpass.cpp" line="137"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 కోసం సంతకం చెల్లదు.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="216"/>
-        <location filename="../src/imitatepass.cpp" line="951"/>
+        <location filename="../src/imitatepass.cpp" line="263"/>
+        <location filename="../src/imitatepass.cpp" line="1078"/>
         <source>Can not edit</source>
         <translation>సవరించలేము</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="241"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>Cannot add</source>
         <translation type="unfinished">జోడించలేము</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="241"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ఇప్పటికే ఉంది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="217"/>
-        <location filename="../src/imitatepass.cpp" line="952"/>
+        <location filename="../src/imitatepass.cpp" line="264"/>
+        <location filename="../src/imitatepass.cpp" line="1079"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>ఉపయోగించడానికి ఎన్క్రిప్షన్ కీని చదవలేకపోయింది, .gpg-id ఫైల్ లేదు లేదా చెల్లదు.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1002"/>
+        <location filename="../src/pass.cpp" line="1009"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">గ్రహీతల జాబితాను తనిఖీ చేయలేము</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1004"/>
+        <location filename="../src/pass.cpp" line="1011"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 %2 తొలగించబడిందో లేదో చెప్పలేము, అందువల్ల ఏదీ ఎన్క్రిప్ట్ చేయబడలేదు.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1011"/>
+        <location filename="../src/pass.cpp" line="1018"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">గ్రహీతల జాబితా లేదు</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1012"/>
+        <location filename="../src/pass.cpp" line="1019"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 లేదు లేదా అది సాధారణ ఫైల్ కాదు. దాని బదులుగా QtPass పేరెంట్ ఫోల్డర్ జాబితాను ఉపయోగించదు: ఆ జాబితా ఈ ఫోల్డర్ కోసం సంతకం చేయబడలేదు. ఆ పేరుతో లింక్ ఉంటే, దాన్ని తొలగించండి. ఆపై ఆ ఫోల్డర్ కోసం వినియోగదారులు డైలాగ్‌ను తెరిచి దాని గ్రహీతలను సేవ్ చేయండి; ఇది కొత్త జాబితాను వ్రాసి సంతకం చేస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="253"/>
+        <location filename="../src/imitatepass.cpp" line="300"/>
         <source>Cannot write</source>
         <translation type="unfinished">వ్రాయలేము</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="254"/>
+        <location filename="../src/imitatepass.cpp" line="301"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">తాత్కాలిక డైరెక్టరీని సృష్టించలేము: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="318"/>
-        <location filename="../src/imitatepass.cpp" line="342"/>
-        <location filename="../src/imitatepass.cpp" line="351"/>
+        <location filename="../src/imitatepass.cpp" line="369"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
         <source>Delete failed</source>
         <translation type="unfinished">తొలగించడం విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="319"/>
+        <location filename="../src/imitatepass.cpp" line="370"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">లింక్ %1 ను తీసివేయలేకపోయింది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="373"/>
-        <location filename="../src/imitatepass.cpp" line="398"/>
-        <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="432"/>
-        <location filename="../src/imitatepass.cpp" line="566"/>
+        <location filename="../src/imitatepass.cpp" line="426"/>
+        <location filename="../src/imitatepass.cpp" line="453"/>
+        <location filename="../src/imitatepass.cpp" line="467"/>
+        <location filename="../src/imitatepass.cpp" line="473"/>
+        <location filename="../src/imitatepass.cpp" line="501"/>
+        <location filename="../src/imitatepass.cpp" line="635"/>
         <source>Cannot update</source>
         <translation>నవీకరించలేము</translation>
     </message>
@@ -1437,134 +1438,133 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">%1 ను వ్రాయడం విఫలమైంది: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="446"/>
+        <location filename="../src/imitatepass.cpp" line="515"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">గ్రహీతల జాబితా వ్రాయబడింది, కానీ రికార్డ్ చేయబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="447"/>
+        <location filename="../src/imitatepass.cpp" line="516"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 ముందుకు సాగడానికి గ్రహీతలను మరోసారి సేవ్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="452"/>
+        <location filename="../src/imitatepass.cpp" line="521"/>
         <source>Check selected users!</source>
         <translation>ఎంచుకున్న వినియోగదారులను తనిఖీ చేయండి!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="453"/>
+        <location filename="../src/imitatepass.cpp" line="522"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>ఎంచుకున్న కీలలో ఏదీ సీక్రెట్ కీని కలిగి లేదు.
 మీరు కొత్తగా జోడించిన పాస్‌వర్డ్‌లను డీక్రిప్ట్ చేయలేరు!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="465"/>
+        <location filename="../src/imitatepass.cpp" line="534"/>
         <source>GPG signing failed!</source>
         <translation>జిపిజి సంతకం విఫలమైంది!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="467"/>
+        <location filename="../src/imitatepass.cpp" line="536"/>
         <source>Failed to sign %1.</source>
         <translation>%1 పై సంతకం చేయడం విఫలమైంది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="468"/>
+        <location filename="../src/imitatepass.cpp" line="537"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">%1 పై సంతకం చేయడం విఫలమైంది: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="607"/>
+        <location filename="../src/imitatepass.cpp" line="676"/>
+        <location filename="../src/imitatepass.cpp" line="697"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">గ్రహీతలు మార్చబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="608"/>
+        <location filename="../src/imitatepass.cpp" line="677"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">రీ-ఎన్క్రిప్షన్ ఇంకా నడుస్తోంది. అది పూర్తయ్యే వరకు వేచి ఉండి, ఆపై గ్రహీతలను మళ్లీ సేవ్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="614"/>
+        <location filename="../src/imitatepass.cpp" line="683"/>
         <source>No signing key!</source>
         <translation>సంతకం కీ లేదు!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="615"/>
+        <location filename="../src/imitatepass.cpp" line="684"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>సీక్రెట్ సంతకం కీలలో ఏదీ అందుబాటులో లేదు.
 మీరు వినియోగదారుల జాబితాను మార్చలేరు!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="567"/>
+        <location filename="../src/imitatepass.cpp" line="636"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">పాత సంతకం %1 ను తొలగించడం విఫలమైంది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="343"/>
+        <location filename="../src/imitatepass.cpp" line="396"/>
         <source>Could not remove all of %1. What could be removed is gone; check what is left in it.</source>
         <translation type="unfinished">%1 లోని అన్నింటినీ తొలగించలేకపోయింది. తొలగించగలిగినవి తొలగించబడ్డాయి; అందులో ఏమి మిగిలి ఉందో తనిఖీ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="352"/>
+        <location filename="../src/imitatepass.cpp" line="405"/>
         <source>Could not remove %1: %2</source>
         <translation type="unfinished">%1 ను తొలగించలేకపోయింది: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="374"/>
+        <location filename="../src/imitatepass.cpp" line="427"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation type="unfinished">%1 పాస్‌వర్డ్ స్టోర్‌లో లేదు, లేదా మార్గంలో ఉన్న ఫోల్డర్ పేరులో ఒక లైన్ బ్రేక్ లేదా మరొక కంట్రోల్ క్యారెక్టర్ ఉంది, దీనిని సంతకం చేసిన జాబితా రికార్డ్ చేయలేదు.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="652"/>
+        <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git కోడ్ %1 తో ముగిసింది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="696"/>
+        <location filename="../src/imitatepass.cpp" line="779"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 ను గ్రహీతల జాబితాగా చదవలేము (గ్రహీతల జాబితా గరిష్ఠంగా %2 పరిమాణం గల సాధారణ ఫైల్ అయి ఉండాలి).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="710"/>
-        <location filename="../src/imitatepass.cpp" line="738"/>
-        <location filename="../src/imitatepass.cpp" line="746"/>
+        <location filename="../src/imitatepass.cpp" line="893"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">మునుపటి రీ-ఎన్క్రిప్షన్ నుండి మిగిలిపోయినది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="711"/>
+        <location filename="../src/imitatepass.cpp" line="794"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 సాధారణ ఫైల్ కాదు, అందువల్ల పునరుద్ధరించబడలేదు. దాన్ని పరిశీలించి తొలగించండి, ఆపై మళ్లీ రీ-ఎన్క్రిప్ట్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="739"/>
+        <location filename="../src/imitatepass.cpp" line="822"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%2 పక్కనే %1 ఉంది. రెండూ ఎంట్రీ యొక్క ఎన్క్రిప్ట్ చేసిన కాపీలు; మీకు ఏది కావాలో తనిఖీ చేసి మరొకదాన్ని తొలగించండి, ఆపై మళ్లీ రీ-ఎన్క్రిప్ట్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="753"/>
+        <location filename="../src/imitatepass.cpp" line="835"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">అంతరాయం కలిగిన రీ-ఎన్క్రిప్షన్ వదిలిపెట్టిన బ్యాకప్ నుండి %1 పునరుద్ధరించబడింది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="747"/>
+        <location filename="../src/imitatepass.cpp" line="829"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 లేదు మరియు దాని బ్యాకప్ %2 ను తిరిగి పేరు మార్చలేకపోయింది. దాన్ని మీరే స్వయంగా పేరు మార్చి, ఆపై మళ్లీ రీ-ఎన్క్రిప్ట్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="992"/>
+        <location filename="../src/imitatepass.cpp" line="1119"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 ను మళ్లీ ఎన్క్రిప్ట్ చేయడం సాధ్యం కాలేదు: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1056"/>
+        <location filename="../src/imitatepass.cpp" line="1183"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
         <translation type="unfinished">పాస్‌వర్డ్ స్టోర్ యొక్క గిట్ రిపోజిటరీలో విలీనం కాని ఫైళ్లు ఉన్నాయి. మళ్లీ ఎన్‌క్రిప్ట్ చేసే ముందు గిట్‌తో వైరుధ్యాన్ని పరిష్కరించండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1407"/>
-        <location filename="../src/realpass.cpp" line="529"/>
+        <location filename="../src/imitatepass.cpp" line="1592"/>
+        <location filename="../src/realpass.cpp" line="995"/>
         <source>Re-encryption failed</source>
         <translation>రీ-ఎన్క్రిప్షన్ విఫలమైంది</translation>
     </message>
@@ -1581,86 +1581,99 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">రీ-ఎన్క్రిప్ట్ చేసిన తరువాత బ్యాకప్ %1 ను తొలగించలేకపోయింది; దాన్ని తొలగించడం సురక్షితం.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1029"/>
+        <location filename="../src/imitatepass.cpp" line="1156"/>
         <source>Creating backup commit</source>
         <translation>బ్యాకప్ కమిట్‌ను సృష్టిస్తోంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1043"/>
-        <location filename="../src/imitatepass.cpp" line="1067"/>
+        <location filename="../src/imitatepass.cpp" line="1170"/>
+        <location filename="../src/imitatepass.cpp" line="1198"/>
+        <location filename="../src/imitatepass.cpp" line="1208"/>
         <source>Backup commit failed</source>
         <translation>బ్యాకప్ కమిట్ విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1044"/>
+        <location filename="../src/imitatepass.cpp" line="1171"/>
+        <location filename="../src/imitatepass.cpp" line="1199"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>గిట్ స్థితిని తనిఖీ చేయలేకపోయింది. రీ-ఎన్క్రిప్షన్ రద్దు చేయబడింది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1055"/>
-        <location filename="../src/imitatepass.cpp" line="1301"/>
+        <location filename="../src/imitatepass.cpp" line="1182"/>
+        <location filename="../src/imitatepass.cpp" line="1476"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">అసంపూర్ణ గిట్ ఆపరేషన్</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1068"/>
+        <location filename="../src/imitatepass.cpp" line="1209"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>గిట్ బ్యాకప్‌ను సృష్టించలేకపోయినందున రీ-ఎన్క్రిప్షన్ రద్దు చేయబడింది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1110"/>
+        <location filename="../src/imitatepass.cpp" line="1249"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">రీ-ఎన్క్రిప్షన్ ఇప్పటికే నడుస్తోంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1117"/>
+        <location filename="../src/imitatepass.cpp" line="1256"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">స్టోర్‌కు చెందిన ఫోల్డర్ కాదు</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1118"/>
+        <location filename="../src/imitatepass.cpp" line="1257"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 ఒక సింబాలిక్ లింక్ లేదా జంక్షన్, లేదా అటువంటిదాని వెనుక ఉంది. అది సూచించేది పాస్‌వర్డ్ స్టోర్‌లో భాగం కాదు, కాబట్టి రీ-ఎన్క్రిప్ట్ చేయబడలేదు.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1134"/>
+        <location filename="../src/imitatepass.cpp" line="1274"/>
         <source>Re-encrypting from folder %1</source>
         <translation>ఫోల్డర్ %1 నుండి రీ-ఎన్క్రిప్ట్ చేస్తోంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
-        <location filename="../src/imitatepass.cpp" line="1451"/>
+        <location filename="../src/imitatepass.cpp" line="1275"/>
+        <source>Re-encrypting %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1354"/>
+        <location filename="../src/imitatepass.cpp" line="1640"/>
         <source>Updating password-store</source>
         <translation>పాస్‌వర్డ్-స్టోర్‌ను నవీకరిస్తోంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1223"/>
-        <location filename="../src/imitatepass.cpp" line="1229"/>
+        <location filename="../src/imitatepass.cpp" line="1367"/>
+        <location filename="../src/imitatepass.cpp" line="1373"/>
+        <location filename="../src/imitatepass.cpp" line="1391"/>
         <source>Git pull failed</source>
         <translation type="unfinished">గిట్ పుల్ విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1224"/>
+        <location filename="../src/imitatepass.cpp" line="1368"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">pull తర్వాత స్టోర్‌లో విలీనం కాని ఫైళ్లు ఉన్నాయో లేదో తనిఖీ చేయలేకపోయింది. మళ్లీ ఎన్‌క్రిప్ట్ చేసే ముందు git తో దాన్ని తనిఖీ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1230"/>
+        <location filename="../src/imitatepass.cpp" line="1374"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">పుల్ తరువాత స్టోర్‌లో విలీనం కాని ఫైళ్లు మిగిలాయి. రీ-ఎన్క్రిప్ట్ చేయడానికి ముందు వైరుధ్యాన్ని పరిష్కరించండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1234"/>
+        <location filename="../src/imitatepass.cpp" line="1392"/>
+        <source>The pull stopped before the store was up to date with its remote, and may have left files of the pulled commits in it. Check the store with git before re-encrypting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1398"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">గిట్ పుల్ విఫలమైంది, స్టోర్‌ను ఉన్నది ఉన్నట్లుగా రీ-ఎన్క్రిప్ట్ చేస్తోంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1426"/>
         <source>%1 could not be read: its entries were not re-encrypted</source>
         <translation type="unfinished">%1 ను చదవలేకపోయింది: దాని ఎంట్రీలు రీ-ఎన్క్రిప్ట్ చేయబడలేదు</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1255"/>
+        <location filename="../src/imitatepass.cpp" line="1430"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n ఎంట్రీ దాటవేయబడింది: సిమ్‌లింక్, జంక్షన్ లేదా ప్రత్యేక ఫైల్ స్టోర్‌లో భాగం కాదు.</numerusform>
@@ -1668,37 +1681,38 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1276"/>
+        <location filename="../src/imitatepass.cpp" line="1451"/>
         <source>GPG ID verification failed</source>
         <translation>జిపిజి ఐడి ధృవీకరణ విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1277"/>
+        <location filename="../src/imitatepass.cpp" line="1452"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>డైరెక్టరీ కోసం .gpg-id ను ధృవీకరించలేకపోయింది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1310"/>
+        <location filename="../src/imitatepass.cpp" line="1485"/>
         <source>Not part of the store</source>
         <translation type="unfinished">స్టోర్‌లో భాగం కాదు</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1311"/>
+        <location filename="../src/imitatepass.cpp" line="1486"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">పుల్ చేసిన తర్వాత %1 ఒక సింబాలిక్ లింక్ లేదా జంక్షన్, లేదా అటువంటిదాని వెనుక ఉంది. అది సూచించేది పాస్‌వర్డ్ స్టోర్‌లో భాగం కాదు, కాబట్టి అలాగే ఉంచబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1329"/>
+        <location filename="../src/imitatepass.cpp" line="1504"/>
         <source>Recipients changed by the pull</source>
         <translation type="unfinished">పుల్ వల్ల గ్రహీతలు మారారు</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1330"/>
+        <location filename="../src/imitatepass.cpp" line="1505"/>
         <source>The pull changed the recipients of %1 after you saved them, so nothing was re-encrypted: entries in it may still be encrypted to the previous recipients, and anyone you just removed may still be able to read them. Open the users dialog for that folder again, check the recipients, and save.</source>
         <translation type="unfinished">మీరు సేవ్ చేసిన తర్వాత పుల్ %1 యొక్క గ్రహీతలను మార్చింది, కాబట్టి ఏదీ రీ-ఎన్క్రిప్ట్ చేయబడలేదు: దానిలోని ఎంట్రీలు ఇంకా మునుపటి గ్రహీతలకు ఎన్క్రిప్ట్ చేయబడి ఉండవచ్చు, మరియు మీరు ఇప్పుడే తీసివేసిన వారు ఇంకా వాటిని చదవగలిగే అవకాశం ఉంది. ఆ ఫోల్డర్ కోసం వినియోగదారులు మళ్లీ తెరిచి, గ్రహీతలను తనిఖీ చేసి, సేవ్ చేయండి.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1405"/>
+        <location filename="../src/imitatepass.cpp" line="899"/>
+        <location filename="../src/imitatepass.cpp" line="1590"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... మరియు మరో %n</numerusform>
@@ -1706,7 +1720,7 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1408"/>
+        <location filename="../src/imitatepass.cpp" line="1593"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n ఫైల్‌ను రీ-ఎన్క్రిప్ట్ చేయలేకపోయింది:</numerusform>
@@ -1714,23 +1728,52 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1426"/>
+        <location filename="../src/imitatepass.cpp" line="1611"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">రీ-ఎన్క్రిప్షన్ రద్దు చేయబడింది: %2 ఫైళ్లలో %1 తనిఖీ చేయబడ్డాయి, %3 రీ-ఎన్క్రిప్ట్ చేయబడ్డాయి, %4 విఫలమయ్యాయి</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1447"/>
+        <location filename="../src/imitatepass.cpp" line="188"/>
+        <location filename="../src/imitatepass.cpp" line="1636"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
         <translation type="unfinished">పుష్ చేయడం లేదు: ఈ స్టోర్‌లో మునుపటి రీ-ఎన్క్రిప్షన్ పూర్తి కాలేదు</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1502"/>
-        <location filename="../src/imitatepass.cpp" line="1511"/>
+        <location filename="../src/imitatepass.cpp" line="698"/>
+        <source>%1 is not a regular file, so the recipients were not changed. Move it out of the way, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="902"/>
+        <source>Leftovers from an earlier re-encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/imitatepass.cpp" line="903"/>
+        <source>%n leftover(s) of an earlier re-encryption need a look before the run can start:</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="989"/>
+        <source>%1 is no longer a regular file, or is too large, and was not re-encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1561"/>
+        <source>%1 is no longer a regular file, or lies behind a link, and was not re-encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1697"/>
+        <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">గ్రహీతలు కమిట్ చేయబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1503"/>
+        <location filename="../src/imitatepass.cpp" line="1698"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1743,7 +1786,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 మార్పు ఇంకా కమిట్ లేదా పుష్ చేయబడలేదు. Git సమస్యను సరిచేసి, ఆపై మార్పులను కమిట్ చేయండి, లేదా గ్రహీతలను మళ్లీ సేవ్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1512"/>
+        <location filename="../src/imitatepass.cpp" line="1707"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1756,22 +1799,32 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 రీ-ఎన్క్రిప్షన్ పూర్తి కాలేదు, అందువల్ల కొన్ని లేదా అన్ని ఎంట్రీలు ఇంకా మునుపటి గ్రహీతల కోసమే ఎన్క్రిప్ట్ చేయబడి ఉన్నాయి, వారు ఇప్పటికీ వాటిని చదవగలరు. ఏదీ కమిట్ లేదా పుష్ చేయబడలేదు. Git సమస్యను సరిచేసి, ఆపై గ్రహీతలను మళ్లీ సేవ్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1623"/>
+        <location filename="../src/imitatepass.cpp" line="1840"/>
         <source>Move failed</source>
         <translation type="unfinished">తరలింపు విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1624"/>
+        <location filename="../src/imitatepass.cpp" line="1841"/>
         <source>Could not move %1 to %2.</source>
         <translation type="unfinished">%1 ను %2 కు తరలించలేకపోయింది.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1713"/>
+        <location filename="../src/imitatepass.cpp" line="1872"/>
+        <source>Move not started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1873"/>
+        <source>%1 is still being moved or re-encrypted. Move it again once that has finished.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1997"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">గిట్ ఎక్జిక్యూటబుల్ కాన్ఫిగర్ చేయబడలేదు, git ను దాటవేస్తోంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1790"/>
+        <location filename="../src/imitatepass.cpp" line="2088"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">%1 కోసం gpg సైఫర్‌టెక్స్ట్ ఏమీ వ్రాయలేదు.</translation>
     </message>
@@ -1800,17 +1853,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 ను రీ-ఎన్క్రిప్ట్ చేయడం విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1435"/>
+        <location filename="../src/imitatepass.cpp" line="1620"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>రీ-ఎన్క్రిప్షన్ పూర్తయింది: %1 విజయవంతం, %2 విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1440"/>
+        <location filename="../src/imitatepass.cpp" line="1625"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>రీ-ఎన్క్రిప్షన్ పూర్తయింది: %1 ఫైళ్లు రీ-ఎన్క్రిప్ట్ చేయబడ్డాయి</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1456"/>
+        <location filename="../src/imitatepass.cpp" line="1645"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>పుష్ చేయడం లేదు: %n ఫైల్ రీ-ఎన్క్రిప్ట్ చేయడంలో విఫలమైంది</numerusform>
@@ -1818,14 +1871,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1632"/>
-        <location filename="../src/imitatepass.cpp" line="1679"/>
+        <location filename="../src/imitatepass.cpp" line="1915"/>
+        <location filename="../src/imitatepass.cpp" line="1962"/>
         <source>Copy failed</source>
         <translation type="unfinished">కాపీ విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1633"/>
-        <location filename="../src/imitatepass.cpp" line="1680"/>
+        <location filename="../src/imitatepass.cpp" line="1916"/>
+        <location filename="../src/imitatepass.cpp" line="1963"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 ను %2 కు కాపీ చేయలేకపోయింది.</translation>
     </message>
@@ -1856,7 +1909,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="63"/>
+        <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>Import GPG key</source>
         <translation>జిపిజి కీని దిగుమతి చేయి</translation>
     </message>
@@ -1876,7 +1929,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>దిగుమతి చేయి</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="64"/>
+        <location filename="../src/importkeydialog.cpp" line="68"/>
         <source>ASCII-armored GPG key</source>
         <translation>ASCII-armored జిపిజి కీ</translation>
     </message>
@@ -1889,12 +1942,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">కీని దిగుమతి చేయి</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="81"/>
+        <location filename="../src/importkeydialog.cpp" line="85"/>
         <source>Could not open file: %1</source>
         <translation>ఫైల్‌ను తెరవలేకపోయింది: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="106"/>
+        <location filename="../src/importkeydialog.cpp" line="110"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 ASCII-armored GPG కీ లాగా కనిపించడం లేదు. మొదట &lt;code&gt;gpg --armor --export&lt;/code&gt; తో దీన్ని మార్చండి, లేదా &lt;b&gt;క్లిప్‌బోర్డ్ నుండి&lt;/b&gt; ద్వారా armored బ్లాక్‌ను పేస్ట్ చేయండి.</translation>
     </message>
@@ -1903,38 +1956,46 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 ASCII-armored జిపిజి కీ లాగా కనిపించడం లేదు. మొదట &lt;code&gt;gpg --armor --export&lt;/code&gt; తో దీన్ని మార్చండి, లేదా &lt;b&gt;క్లిప్‌బోర్డ్ నుండి&lt;/b&gt; ద్వారా armored బ్లాక్‌ను పేస్ట్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="64"/>
+        <location filename="../src/importkeydialog.cpp" line="68"/>
         <source>All files</source>
         <translation>అన్ని ఫైళ్లు</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="80"/>
-        <location filename="../src/importkeydialog.cpp" line="93"/>
-        <location filename="../src/importkeydialog.cpp" line="105"/>
-        <location filename="../src/importkeydialog.cpp" line="208"/>
-        <location filename="../src/importkeydialog.cpp" line="212"/>
+        <location filename="../src/importkeydialog.cpp" line="84"/>
+        <location filename="../src/importkeydialog.cpp" line="97"/>
+        <location filename="../src/importkeydialog.cpp" line="109"/>
+        <location filename="../src/importkeydialog.cpp" line="223"/>
+        <location filename="../src/importkeydialog.cpp" line="227"/>
         <source>Import key</source>
         <translation>కీని దిగుమతి చేయి</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="94"/>
+        <location filename="../src/importkeydialog.cpp" line="98"/>
         <source>%1 is larger than a key file can be.</source>
         <translation type="unfinished">%1 ఒక కీ ఫైల్ ఉండగలిగే పరిమాణం కంటే పెద్దది.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/importkeydialog.cpp" line="161"/>
+        <source>gpg did not finish the import within %n second(s) and was stopped. Part of the key may be in your keyring already: check it with gpg --list-keys before you use it.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="153"/>
+        <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>GPG import failed:
 %1</source>
         <translation>జిపిజి దిగుమతి విఫలమైంది:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="178"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>జిపిజి అవుట్‌పుట్ నుండి దిగుమతి చేయబడిన కీ ఐడిని పార్స్ చేయలేకపోయింది.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="213"/>
+        <location filename="../src/importkeydialog.cpp" line="228"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">పబ్లిక్ కీ %1 దిగుమతి చేయబడింది. దానికి ఎన్క్రిప్ట్ చేయడానికి ముందు దాని ఫింగర్‌ప్రింట్‌ను దాని యజమానితో తనిఖీ చేయండి: కీని దిగుమతి చేయడం అది ఎవరి వద్ద ఉందో ఏమీ చెప్పదు.</translation>
     </message>
@@ -1946,32 +2007,32 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 <context>
     <name>KeyWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="293"/>
+        <location filename="../src/firstrunwizard.cpp" line="294"/>
         <source>Generate a new key pair…</source>
         <translation type="unfinished">కొత్త కీ జతను తయారు చేయి…</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="295"/>
+        <location filename="../src/firstrunwizard.cpp" line="296"/>
         <source>Your key</source>
         <translation type="unfinished">మీ కీ</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="296"/>
+        <location filename="../src/firstrunwizard.cpp" line="297"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
         <translation type="unfinished">పాస్‌వర్డ్‌లు GnuPG కీలకు ఎన్క్రిప్ట్ చేయబడతాయి. కొత్త స్టోర్‌ను తెరవగలగాల్సిన కీలను టిక్ చేయండి; ఈ మెషీన్‌లో సీక్రెట్ భాగం ఉన్న కీ కనీసం ఒకటి మీకు అవసరం.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="324"/>
+        <location filename="../src/firstrunwizard.cpp" line="325"/>
         <source>expired</source>
         <translation type="unfinished">గడువు ముగిసింది</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="326"/>
+        <location filename="../src/firstrunwizard.cpp" line="327"/>
         <source>not usable</source>
         <translation type="unfinished">ఉపయోగించలేనిది</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="339"/>
+        <location filename="../src/firstrunwizard.cpp" line="340"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
         <translation type="unfinished">GnuPG లో ఇంకా సీక్రెట్ కీ లేదు. ఇక్కడ ఒకదాన్ని తయారు చేయండి, లేదా ముందుగా మీ ఉన్న కీని gpg తో దిగుమతి చేయండి.</translation>
     </message>
@@ -2108,8 +2169,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="806"/>
-        <location filename="../src/mainwindow.cpp" line="1000"/>
+        <location filename="../src/mainwindow.cpp" line="831"/>
+        <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Search password</source>
         <translation>పాస్‌వర్డ్ శోధించు</translation>
     </message>
@@ -2211,7 +2272,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1776"/>
+        <location filename="../src/mainwindow.cpp" line="1822"/>
         <source>Add password</source>
         <translation>పాస్‌వర్డ్ జోడించు</translation>
     </message>
@@ -2223,21 +2284,21 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1775"/>
+        <location filename="../src/mainwindow.cpp" line="1821"/>
         <source>Add folder</source>
         <translation>ఫోల్డర్ జోడించు</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1783"/>
+        <location filename="../src/mainwindow.cpp" line="1829"/>
         <source>Edit</source>
         <translation>సవరించు</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1795"/>
+        <location filename="../src/mainwindow.cpp" line="1841"/>
         <source>Delete</source>
         <translation>తొలగించు</translation>
     </message>
@@ -2278,7 +2339,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1777"/>
+        <location filename="../src/mainwindow.cpp" line="1823"/>
         <source>Users</source>
         <translation>వినియోగదారులు</translation>
     </message>
@@ -2391,7 +2452,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="unfinished">&amp;Qt గురించి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="455"/>
+        <location filename="../src/mainwindow.cpp" line="462"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass %1 కు స్వాగతం</translation>
     </message>
@@ -2408,15 +2469,15 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">ప్రాసెస్ అవుట్‌పుట్</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="595"/>
-        <location filename="../src/mainwindow.cpp" line="605"/>
-        <location filename="../src/mainwindow.cpp" line="612"/>
+        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="623"/>
+        <location filename="../src/mainwindow.cpp" line="630"/>
         <source>Updating password-store</source>
         <translation>పాస్‌వర్డ్-స్టోర్‌ను నవీకరిస్తోంది</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="716"/>
-        <location filename="../src/mainwindow.cpp" line="1057"/>
+        <location filename="../src/mainwindow.cpp" line="734"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Content hidden</source>
         <translation>కంటెంట్ దాచబడింది</translation>
     </message>
@@ -2425,7 +2486,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">పాస్‌వర్డ్</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="237"/>
+        <location filename="../src/mainwindow.cpp" line="244"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">ఆపరేషన్ సమయం ముగిసింది; ఇంటర్‌ఫేస్ మళ్లీ ప్రారంభించబడుతోంది.</translation>
     </message>
@@ -2434,20 +2495,20 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">OTP కోడ్</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="746"/>
+        <location filename="../src/mainwindow.cpp" line="768"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">ఈ పాస్‌వర్డ్ ఎంట్రీని డీక్రిప్ట్ చేయలేకపోయింది</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="757"/>
-        <location filename="../src/mainwindow.cpp" line="776"/>
-        <location filename="../src/mainwindow.cpp" line="1467"/>
+        <location filename="../src/mainwindow.cpp" line="779"/>
+        <location filename="../src/mainwindow.cpp" line="798"/>
+        <location filename="../src/mainwindow.cpp" line="1513"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP కోడ్ క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="780"/>
-        <location filename="../src/mainwindow.cpp" line="1455"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="1501"/>
         <source>No OTP code found in this password entry</source>
         <translation>ఈ పాస్‌వర్డ్ ఎంట్రీలో OTP కోడ్ కనుగొనబడలేదు</translation>
     </message>
@@ -2456,27 +2517,27 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">పాస్‌వర్డ్ మరియు కంటెంట్ దాచబడ్డాయి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="879"/>
+        <location filename="../src/mainwindow.cpp" line="923"/>
         <source>About QtPass</source>
         <translation type="unfinished">QtPass గురించి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="880"/>
+        <location filename="../src/mainwindow.cpp" line="924"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;ప్రామాణిక Unix పాస్‌వర్డ్ మేనేజర్ అయిన &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; కోసం బహుళ-ప్లాట్‌ఫారమ్ GUI.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;సోర్స్ మరియు సమస్యలు&lt;/a&gt;&lt;/p&gt;&lt;p&gt;కాపీరైట్ &amp;copy; 2014&amp;ndash;%2 IJhack. &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL వెర్షన్ 3&lt;/a&gt; లేదా తర్వాతి వెర్షన్ కింద లైసెన్స్ చేయబడింది.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="897"/>
+        <location filename="../src/mainwindow.cpp" line="941"/>
         <source>Looking for: %1</source>
         <translation>వెతుకుతోంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="949"/>
+        <location filename="../src/mainwindow.cpp" line="985"/>
         <source>Searching…</source>
         <translation>శోధిస్తోంది…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="981"/>
+        <location filename="../src/mainwindow.cpp" line="1017"/>
         <source>Search content (regex)</source>
         <translation>కంటెంట్‌ను శోధించు (regex)</translation>
     </message>
@@ -2485,17 +2546,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="obsolete">కంటెంట్ శోధన POSIX బేసిక్ రెగ్యులర్ ఎక్స్‌ప్రెషన్‌లను ఉపయోగిస్తుంది (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="985"/>
+        <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">కంటెంట్ శోధన Perl-అనుకూల రెగ్యులర్ ఎక్స్‌ప్రెషన్‌లను (PCRE) ఉపయోగిస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1032"/>
+        <location filename="../src/mainwindow.cpp" line="1068"/>
         <source>No matches found.</source>
         <translation>సరిపోలికలు కనుగొనబడలేదు.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1074"/>
+        <location filename="../src/mainwindow.cpp" line="1110"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n సరిపోలిక కనుగొనబడింది</numerusform>
@@ -2503,7 +2564,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1076"/>
+        <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n ఎంట్రీలో.</numerusform>
@@ -2511,12 +2572,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1286"/>
+        <location filename="../src/mainwindow.cpp" line="1326"/>
         <source>Invalid name</source>
         <translation type="unfinished">చెల్లని పేరు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1287"/>
+        <location filename="../src/mainwindow.cpp" line="1327"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">ఆ పేరు పాస్‌వర్డ్ స్టోర్ వెలుపలికి సూచిస్తుంది. దయచేసి వేరే పేరును ఎంచుకోండి.</translation>
     </message>
@@ -2531,7 +2592,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1 లో ఉంచబడుతుంది)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1827"/>
+        <location filename="../src/mainwindow.cpp" line="1896"/>
         <source>New folder</source>
         <translation type="unfinished">కొత్త ఫోల్డర్</translation>
     </message>
@@ -2548,7 +2609,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1 లో ఉంచబడుతుంది)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="810"/>
+        <location filename="../src/mainwindow.cpp" line="835"/>
         <source>Password and content hidden</source>
         <translation>పాస్‌వర్డ్ మరియు కంటెంట్ దాచబడ్డాయి</translation>
     </message>
@@ -2557,12 +2618,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished"> మరియు మొత్తం కంటెంట్?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1391"/>
+        <location filename="../src/mainwindow.cpp" line="1437"/>
         <source>Delete link?</source>
         <translation type="unfinished">లింక్‌ను తొలగించాలా?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1392"/>
+        <location filename="../src/mainwindow.cpp" line="1438"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 ఒక సింబాలిక్ లింక్ లేదా జంక్షన్. లింక్‌ను తీసివేయాలా? అది సూచించేది అలాగే ఉంచబడుతుంది.</translation>
     </message>
@@ -2571,12 +2632,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished"> మరియు మొత్తం కంటెంట్? &lt;br&gt;&lt;strong&gt;శ్రద్ధ: ఇచ్చిన ఫోల్డర్‌లో అనుకోని ఫైళ్లు ఉన్నాయి, కొనసాగించడానికి ముందు వాటిని తనిఖీ చేయండి.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1384"/>
+        <location filename="../src/mainwindow.cpp" line="1430"/>
         <source>Delete folder?</source>
         <translation>ఫోల్డర్‌ను తొలగించాలా?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1340"/>
+        <location filename="../src/mainwindow.cpp" line="1383"/>
         <source>Delete password?</source>
         <translation>పాస్‌వర్డ్‌ను తొలగించాలా?</translation>
     </message>
@@ -2585,43 +2646,53 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">మీరు %1%2 ను తొలగించాలనుకుంటున్నారా?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1450"/>
+        <location filename="../src/mainwindow.cpp" line="1496"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP తయారీ కోసం ఏ పాస్‌వర్డ్ ఎంచుకోబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1588"/>
+        <location filename="../src/mainwindow.cpp" line="1634"/>
         <source>Profile changed to %1</source>
         <translation>ప్రొఫైల్ %1 కు మార్చబడింది</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1774"/>
+        <location filename="../src/mainwindow.cpp" line="1820"/>
         <source>Open folder with file manager</source>
         <translation>ఫైల్ మేనేజర్‌తో ఫోల్డర్‌ను తెరువు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1789"/>
-        <location filename="../src/mainwindow.cpp" line="1875"/>
+        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1944"/>
         <source>Rename folder</source>
         <translation>ఫోల్డర్‌ను పేరు మార్చు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1838"/>
         <source>Rename password</source>
         <translation>పాస్‌వర్డ్‌ను పేరు మార్చు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1729"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>Share</source>
         <translation>భాగస్వామ్యం చేయి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
+        <location filename="../src/mainwindow.cpp" line="908"/>
+        <source>Settings not opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="909"/>
+        <source>A gpg, Git or pass command is still running or waiting. Open the settings again once it has finished. If it does not finish, answer or cancel the PIN or password prompt it waits for, or restart QtPass. A restart forgets which folders still need re-encrypting: re-encrypt any folder whose re-encryption did not finish, or that you moved entries into, before anything is pushed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1091"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… ఈ ఎంట్రీలో మరిన్ని సరిపోలికలు ఉన్నాయి</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1069"/>
+        <location filename="../src/mainwindow.cpp" line="1105"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>మొదటి %n సరిపోలిక చూపబడుతోంది; మిగిలినవి చూడటానికి మరింత నిర్దిష్టంగా వెతకండి.</numerusform>
@@ -2629,28 +2700,28 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1341"/>
+        <location filename="../src/mainwindow.cpp" line="1384"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">మీరు %1 ను ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1348"/>
+        <location filename="../src/mainwindow.cpp" line="1391"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">మీరు %1 ను మరియు దానిలోని మొత్తం కంటెంట్‌ను ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1364"/>
+        <location filename="../src/mainwindow.cpp" line="1407"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">గమనిక: ఇచ్చిన ఫోల్డర్‌లో ఊహించని ఫైల్‌లు ఉన్నాయి, కొనసాగించే ముందు వాటిని తనిఖీ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1371"/>
+        <location filename="../src/mainwindow.cpp" line="1415"/>
         <source>%1 could not be read, so what it holds is unknown.</source>
         <extracomment>%1 is a folder in the password store, such as /Work/bank.</extracomment>
         <translation type="unfinished">%1 ను చదవలేకపోయింది, కాబట్టి అందులో ఏముందో తెలియదు.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1379"/>
+        <location filename="../src/mainwindow.cpp" line="1425"/>
         <source>%n folder(s) in it could not be read, so what they hold is unknown.</source>
         <extracomment>Only shown for two or more folders; one folder is named instead.</extracomment>
         <translation type="unfinished">
@@ -2659,75 +2730,75 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1739"/>
+        <location filename="../src/mainwindow.cpp" line="1785"/>
         <source>Re-encrypt all passwords</source>
         <translation>అన్ని పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేయి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1744"/>
+        <location filename="../src/mainwindow.cpp" line="1790"/>
         <source>Export my public key...</source>
         <translation>నా పబ్లిక్ కీని ఎగుమతి చేయి...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1748"/>
+        <location filename="../src/mainwindow.cpp" line="1794"/>
         <source>Add recipient...</source>
         <translation>గ్రహీతను జోడించు...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1799"/>
         <source>What is this?</source>
         <translation>ఇది ఏమిటి?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1828"/>
+        <location filename="../src/mainwindow.cpp" line="1897"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>కొత్త ఫోల్డర్: 
 (%1 లో ఉంచబడుతుంది)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1852"/>
+        <location filename="../src/mainwindow.cpp" line="1921"/>
         <source>Hidden folder</source>
         <translation type="unfinished">దాచిన ఫోల్డర్</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1853"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">డాట్ (.) తో మొదలయ్యే ఫోల్డర్ జాబితా నుండి దాచబడుతుంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1914"/>
+        <location filename="../src/mainwindow.cpp" line="1983"/>
         <source>Rename file to: </source>
         <translation>ఫైల్‌ను ఇలా పేరు మార్చు: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2073"/>
-        <location filename="../src/mainwindow.cpp" line="2092"/>
+        <location filename="../src/mainwindow.cpp" line="2166"/>
+        <location filename="../src/mainwindow.cpp" line="2185"/>
         <source>Export public key</source>
         <translation>పబ్లిక్ కీని ఎగుమతి చేయి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2074"/>
+        <location filename="../src/mainwindow.cpp" line="2167"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/h3&gt;&lt;p&gt;సంతకం కీ కాన్ఫిగర్ చేయబడలేదు. QtPass సెట్టింగులు &amp;gt; జిపిజి కీలలో ఒకదానిని సెట్ చేయండి, లేదా టెర్మినల్‌లో దీన్ని అమలు చేయండి:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;తర్వాత ఫైల్‌ను మీ టీమ్‌మేట్స్‌కు పంపండి.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2121"/>
+        <location filename="../src/mainwindow.cpp" line="2214"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">స్టోర్‌కు చెందిన ఫోల్డర్ కాదు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2122"/>
+        <location filename="../src/mainwindow.cpp" line="2215"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ఒక సింబాలిక్ లింక్ లేదా జంక్షన్, లేదా అటువంటిదాని వెనుక ఉంది. అది సూచించేది పాస్‌వర్డ్ స్టోర్‌లో భాగం కాదు, కాబట్టి అలాగే ఉంచబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2130"/>
+        <location filename="../src/mainwindow.cpp" line="2223"/>
         <source>Sharing passwords with GPG</source>
         <translation>జిపిజితో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడం</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2131"/>
+        <location filename="../src/mainwindow.cpp" line="2224"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;జిపిజితో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడం&lt;/h3&gt;&lt;p&gt;ఇతర వినియోగదారులతో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడానికి:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/b&gt; మరియు దీన్ని టీమ్‌మేట్స్‌కు పంపండి&lt;/li&gt;&lt;li&gt;&lt;b&gt;టీమ్‌మేట్స్ పబ్లిక్ కీలను దిగుమతి చేయండి&lt;/b&gt; మీ జిపిజి కీరింగ్‌లోకి&lt;/li&gt;&lt;li&gt;&lt;b&gt;పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేయండి&lt;/b&gt; తద్వారా అన్ని గ్రహీతలు వాటిని డీక్రిప్ట్ చేయగలరు&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;సరిపోలే సీక్రెట్ కీని కలిగి ఉన్న వ్యక్తులు మాత్రమే పాస్‌వర్డ్‌లను డీక్రిప్ట్ చేయగలరు.&lt;/p&gt;&lt;p&gt;&lt;b&gt;చిట్కా:&lt;/b&gt; అన్ని భాగస్వామ్య ఫోల్డర్‌ల కోసం అదే జిపిజి కీని ఉపయోగించండి.&lt;/p&gt;&lt;p&gt;మరిన్ని వివరాల కోసం FAQ చూడండి.&lt;/p&gt;</translation>
     </message>
@@ -2738,13 +2809,13 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1 లో ఉంచబడుతుంది)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1860"/>
-        <location filename="../src/mainwindow.cpp" line="1992"/>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <location filename="../src/mainwindow.cpp" line="2070"/>
         <source>Error</source>
         <translation>లోపం</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1861"/>
+        <location filename="../src/mainwindow.cpp" line="1930"/>
         <source>Failed to create folder: %1</source>
         <translation>ఫోల్డర్‌ను సృష్టించడం విఫలమైంది: %1</translation>
     </message>
@@ -2753,12 +2824,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 లో .gpg-id ఫైల్‌ను సృష్టించడం విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1875"/>
+        <location filename="../src/mainwindow.cpp" line="1944"/>
         <source>Rename folder to: </source>
         <translation>ఫోల్డర్‌ను ఇలా పేరు మార్చు: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1914"/>
+        <location filename="../src/mainwindow.cpp" line="1983"/>
         <source>Rename file</source>
         <translation>ఫైల్‌ను పేరు మార్చు</translation>
     </message>
@@ -2771,23 +2842,23 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">ఫైల్‌ను ఇలా పేరు మార్చు: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1979"/>
+        <location filename="../src/mainwindow.cpp" line="2057"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">ఈ ఎంట్రీలో OTP సీక్రెట్ ఉంది, పాస్‌వర్డ్ కాదు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1993"/>
+        <location filename="../src/mainwindow.cpp" line="2071"/>
         <source>Directory does not exist: %1</source>
         <translation>డైరెక్టరీ ఉనికిలో లేదు: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2001"/>
-        <location filename="../src/mainwindow.cpp" line="2034"/>
+        <location filename="../src/mainwindow.cpp" line="2079"/>
+        <location filename="../src/mainwindow.cpp" line="2114"/>
         <source>Re-encrypt passwords</source>
         <translation>పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేయి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2002"/>
+        <location filename="../src/mainwindow.cpp" line="2080"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2804,22 +2875,22 @@ Continue?</source>
 కొనసాగించాలా?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2032"/>
+        <location filename="../src/mainwindow.cpp" line="2112"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేస్తోంది...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2033"/>
+        <location filename="../src/mainwindow.cpp" line="2113"/>
         <source>Cancel</source>
         <translation type="unfinished">రద్దు చేయి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2041"/>
+        <location filename="../src/mainwindow.cpp" line="2121"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">రీ-ఎన్క్రిప్షన్‌ను రద్దు చేస్తోంది</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2052"/>
+        <location filename="../src/mainwindow.cpp" line="2133"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేస్తోంది: %2 లో %1</translation>
     </message>
@@ -2832,7 +2903,7 @@ Continue?</source>
         <translation type="vanished">&lt;h3&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/h3&gt;&lt;p&gt;సంతకం కీ కాన్ఫిగర్ చేయబడలేదు. QtPass సెట్టింగులు &amp;gt; జిపిజి కీలలో ఒకదానిని సెట్ చేయండి, లేదా టెర్మినల్‌లో దీన్ని అమలు చేయండి:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;తర్వాత ఫైల్‌ను మీ టీమ్‌మేట్స్‌కు పంపండి.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2093"/>
+        <location filename="../src/mainwindow.cpp" line="2186"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2841,7 +2912,7 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2095"/>
+        <location filename="../src/mainwindow.cpp" line="2188"/>
         <source>No output from gpg.</source>
         <translation>gpg నుండి అవుట్‌పుట్ లేదు.</translation>
     </message>
@@ -2857,7 +2928,7 @@ Continue?</source>
 <context>
     <name>OtpCodeWidget</name>
     <message>
-        <location filename="../src/otpcodewidget.cpp" line="68"/>
+        <location filename="../src/otpcodewidget.cpp" line="71"/>
         <source>Seconds until the OTP code changes</source>
         <translation type="unfinished">OTP కోడ్ మారడానికి మిగిలిన సెకన్లు</translation>
     </message>
@@ -2954,99 +3025,107 @@ Continue?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="856"/>
+        <location filename="../src/pass.cpp" line="862"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ఒక సింబాలిక్ లింక్ లేదా జంక్షన్, లేదా అటువంటిదాని వెనుక ఉంది. అది సూచించేది పాస్‌వర్డ్ స్టోర్‌లో భాగం కాదు, కాబట్టి అలాగే ఉంచబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="873"/>
+        <location filename="../src/pass.cpp" line="879"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">%1 పాస్‌వర్డ్ స్టోర్ లోపల లేదు. గ్రహీతలు స్టోర్ కోసం లేదా దానిలోని ఫోల్డర్ కోసం సెట్ చేయబడతారు.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="892"/>
-        <location filename="../src/pass.cpp" line="895"/>
+        <location filename="../src/pass.cpp" line="898"/>
+        <location filename="../src/pass.cpp" line="901"/>
         <source>rebase</source>
         <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="898"/>
+        <location filename="../src/pass.cpp" line="904"/>
         <source>merge</source>
         <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="901"/>
+        <location filename="../src/pass.cpp" line="907"/>
         <source>cherry-pick</source>
         <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="904"/>
+        <location filename="../src/pass.cpp" line="910"/>
         <source>revert</source>
         <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="911"/>
+        <location filename="../src/pass.cpp" line="917"/>
         <source>cherry-pick or revert</source>
         <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="935"/>
+        <location filename="../src/pass.cpp" line="941"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
         <translation type="unfinished">పాస్‌వర్డ్ స్టోర్ యొక్క గిట్ రిపోజిటరీ ఒక %1 మధ్యలో ఉంది. పాస్‌వర్డ్ స్టోర్‌ను మార్చే ముందు గిట్‌తో దాన్ని పూర్తి చేయండి లేదా రద్దు చేయండి, లేకపోతే మీరు చేసే మార్పులు కోల్పోవచ్చు.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="948"/>
+        <location filename="../src/pass.cpp" line="954"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
         <translation type="unfinished">పాస్‌వర్డ్ స్టోర్ నవీకరించబడుతోంది (గిట్ పుల్ జరుగుతోంది). అది పూర్తయ్యే వరకు వేచి ఉండండి, ఆపై మళ్లీ ప్రయత్నించండి.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="953"/>
+        <location filename="../src/pass.cpp" line="959"/>
         <source>Update in progress</source>
         <translation type="unfinished">నవీకరణ జరుగుతోంది</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="967"/>
+        <location filename="../src/pass.cpp" line="973"/>
         <source>Unfinished Git operation</source>
         <translation type="unfinished">అసంపూర్ణ గిట్ ఆపరేషన్</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="976"/>
+        <location filename="../src/pass.cpp" line="982"/>
         <source>Not part of the store</source>
         <translation type="unfinished">స్టోర్‌లో భాగం కాదు</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1071"/>
+        <location filename="../src/pass.cpp" line="1104"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">గ్రహీతల జాబితాల జనరేషన్ రికార్డ్‌ను చదవలేము.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1153"/>
+        <location filename="../src/pass.cpp" line="1208"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1 ను గ్రహీతల జాబితాగా చదవలేము (గ్రహీతల జాబితా గరిష్ఠంగా %2 పరిమాణం గల సాధారణ ఫైల్ అయి ఉండాలి), కాబట్టి ఏదీ ముందే ఎంపిక చేయబడలేదు. ఇక్కడ గ్రహీతలను ఎంచుకునే ముందు దాన్ని తనిఖీ చేయండి: &quot;సరే&quot; దానిపై కొత్త జాబితాను వ్రాస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1174"/>
+        <location filename="../src/pass.cpp" line="1229"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">గ్రహీతల జాబితా %1 లేదు లేదా అది సాధారణ ఫైల్ కాదు, అందువల్ల ఏదీ ముందుగా ఎంచుకోబడలేదు: పేరెంట్ ఫోల్డర్ జాబితా ఈ ఫోల్డర్ కోసం సంతకం చేయబడలేదు. ఈ ఫోల్డర్ గ్రహీతలను మీరే ఎంచుకోండి; OK కొత్త జాబితాను వ్రాసి సంతకం చేస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1179"/>
+        <location filename="../src/pass.cpp" line="1234"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 ఏదీ ముందుగా ఎంచుకోబడలేదు: %2 తొలగించబడిందో లేదో చెప్పలేము.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1194"/>
+        <location filename="../src/pass.cpp" line="1249"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">గ్రహీతల జాబితా %1 సంతకం కీతో ధృవీకరణ కావడం లేదు, అందువల్ల ఏదీ ముందుగా ఎంచుకోబడలేదు: సేవ్ చేస్తే అందులో ఏమి ఉన్నా దానిపైనే సంతకం చేయబడుతుంది. గ్రహీతలను మీరే ఎంచుకోండి; OK కొత్త జాబితాను వ్రాసి సంతకం చేస్తుంది.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/pass.cpp" line="1334"/>
+        <source>Git pull did not finish within %n second(s); editing the entry as it is here.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/pass.cpp" line="1118"/>
+        <location filename="../src/pass.cpp" line="1173"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 ఏదీ ముందుగా ఎంచుకోబడలేదు: సేవ్ చేస్తే అందులో ఏమి ఉన్నా దానిపైనే సంతకం చేయబడుతుంది. గ్రహీతలను మీరే ఎంచుకోండి.</translation>
     </message>
@@ -3056,7 +3135,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="387"/>
+        <location filename="../src/passworddialog.cpp" line="437"/>
         <source>Password</source>
         <translation>పాస్‌వర్డ్</translation>
     </message>
@@ -3067,6 +3146,7 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
+        <location filename="../src/passworddialog.cpp" line="407"/>
         <source>The folder of the password store the new entry goes into</source>
         <translation type="unfinished">కొత్త ఎంట్రీ చేరే పాస్‌వర్డ్ స్టోర్ ఫోల్డర్</translation>
     </message>
@@ -3174,72 +3254,78 @@ Continue?</source>
         <translation type="unfinished">సేవ్ కాలేదు: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="315"/>
+        <location filename="../src/passworddialog.cpp" line="341"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">ఎంట్రీకి పేరు ఇవ్వండి.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="319"/>
+        <location filename="../src/passworddialog.cpp" line="345"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">పేరు / తో ముగియకూడదు.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="328"/>
+        <location filename="../src/passworddialog.cpp" line="358"/>
+        <location filename="../src/passworddialog.cpp" line="367"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">ఆ పేరు పాస్‌వర్డ్ స్టోర్ వెలుపలికి సూచిస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="336"/>
+        <location filename="../src/passworddialog.cpp" line="375"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
         <translation type="unfinished">డాట్ (.) తో మొదలయ్యే పేరు లేదా ఫోల్డర్ జాబితా నుండి దాచబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="343"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
         <translation type="unfinished">%1 పాస్‌వర్డ్ స్టోర్ వెలుపల, ఒక సింబాలిక్ లింక్ లేదా జంక్షన్ వెనుక ఉంది.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="349"/>
+        <location filename="../src/passworddialog.cpp" line="388"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1 అనే ఎంట్రీ ఇప్పటికే ఉంది.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="353"/>
+        <location filename="../src/passworddialog.cpp" line="392"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 ఒక ఫోల్డర్.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="383"/>
+        <location filename="../src/passworddialog.cpp" line="411"/>
+        <source>The folder&apos;s path is shortened above; hold the pointer over it to read it whole before you save.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="433"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">ఫోల్డర్ %1 ను సృష్టించలేకపోయింది.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="755"/>
+        <location filename="../src/passworddialog.cpp" line="812"/>
         <source>Remove field</source>
         <translation type="unfinished">ఫీల్డ్‌ను తీసివేయి</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="447"/>
+        <location filename="../src/passworddialog.cpp" line="503"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">%1 అనే పేరుతో ఫీల్డ్ ఇప్పటికే ఉంది.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="533"/>
+        <location filename="../src/passworddialog.cpp" line="589"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI లేదా base32 సీక్రెట్</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="574"/>
+        <location filename="../src/passworddialog.cpp" line="630"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">చెల్లని OTP సీక్రెట్</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="879"/>
+        <location filename="../src/passworddialog.cpp" line="936"/>
         <source>This entry contains bytes QtPass cannot save unchanged, so it cannot be edited here.</source>
         <translation type="unfinished">ఈ ఎంట్రీలో QtPass మార్చకుండా సేవ్ చేయలేని బైట్‌లు ఉన్నాయి, కాబట్టి దీన్ని ఇక్కడ సవరించలేరు.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="898"/>
+        <location filename="../src/passworddialog.cpp" line="962"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>ఈ ఎంట్రీలో %n పంక్తి ఉంది, ఇక్కడ సవరించడానికి చాలా ఎక్కువ.</numerusform>
@@ -3272,12 +3358,17 @@ Continue?</source>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="101"/>
+        <location filename="../src/profileinit.cpp" line="169"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">%1 ను సృష్టించలేకపోయింది.</translation>
     </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="186"/>
+        <source>The secret key of the signing key %1 is not available, so no recipient list was written.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="160"/>
+        <location filename="../src/profileinit.cpp" line="281"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 లో ఇప్పటికే %n ఎన్క్రిప్ట్ చేసిన ఫైల్ ఉంది; అది రీ-ఎన్క్రిప్ట్ చేయబడలేదు. అలా చేయడానికి ప్రొఫైల్‌కు మారి వినియోగదారులు తెరవండి.</numerusform>
@@ -3285,32 +3376,47 @@ Continue?</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="178"/>
+        <location filename="../src/profileinit.cpp" line="299"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">ఏ గ్రహీత ఎంచుకోబడలేదు; %1 వ్రాయబడలేదు.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="242"/>
+        <location filename="../src/profileinit.cpp" line="353"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">%2 తో %1 పై సంతకం చేయలేకపోయింది.</translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="407"/>
+        <source>%1 is a Git repository inside the store. Move it out of the store, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="410"/>
+        <source>%1 is not a regular file, and Git could wait on it for good. Remove it or make it a regular file, then try again.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
         <translation type="obsolete">%1 ను వ్రాయలేకపోయింది: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="244"/>
+        <location filename="../src/profileinit.cpp" line="355"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">%2 తో %1 పై సంతకం చేయలేకపోయింది: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="254"/>
+        <location filename="../src/profileinit.cpp" line="194"/>
+        <location filename="../src/profileinit.cpp" line="365"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">కాన్ఫిగర్ చేసిన GPG హోమ్ డైరెక్టరీ %1 లేదు.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="276"/>
-        <location filename="../src/profileinit.cpp" line="308"/>
+        <location filename="../src/profileinit.cpp" line="389"/>
+        <source>git %1 did not finish within %2 minutes in %3, and was stopped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="395"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">%2 లో git %1 విఫలమైంది: %3</translation>
     </message>
@@ -3318,57 +3424,57 @@ Continue?</source>
 <context>
     <name>ProgramsWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="207"/>
+        <location filename="../src/firstrunwizard.cpp" line="208"/>
         <source>Use the pass command-line tool</source>
         <translation type="unfinished">pass కమాండ్-లైన్ సాధనాన్ని ఉపయోగించండి</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="209"/>
+        <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>Programs</source>
         <translation type="unfinished">ప్రోగ్రామ్‌లు</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="210"/>
+        <location filename="../src/firstrunwizard.cpp" line="211"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
         <translation type="unfinished">ఎన్క్రిప్షన్ GnuPG చేస్తుంది. pass మరియు గిట్ ఐచ్ఛికం; వాటి పనిని QtPass స్వయంగా చేయగలదు.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="214"/>
+        <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>Select executable</source>
         <translation type="unfinished">ఎక్జిక్యూటబుల్‌ను ఎంచుకోండి</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="215"/>
+        <location filename="../src/firstrunwizard.cpp" line="216"/>
         <source>All files (*)</source>
         <translation type="unfinished">అన్ని ఫైళ్లు (*)</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="217"/>
+        <location filename="../src/firstrunwizard.cpp" line="218"/>
         <source>GnuPG</source>
         <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="220"/>
+        <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>Git</source>
         <translation type="unfinished">గిట్</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="221"/>
+        <location filename="../src/firstrunwizard.cpp" line="222"/>
         <source>pass</source>
         <translation type="unfinished">pass</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="222"/>
+        <location filename="../src/firstrunwizard.cpp" line="223"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
         <translation type="unfinished">gpg మరియు git ను నేరుగా పిలవడానికి బదులు ప్రతి ఆపరేషన్‌కూ pass స్క్రిప్ట్‌ను నడుపు</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="262"/>
+        <location filename="../src/firstrunwizard.cpp" line="263"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
         <translation type="unfinished">GnuPG కనుగొనబడలేదు. దాన్ని (gpg లేదా gpg2) ఇన్‌స్టాల్ చేసి, దాని స్థానాన్ని ఇక్కడ నమోదు చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="265"/>
+        <location filename="../src/firstrunwizard.cpp" line="266"/>
         <source>%1 is not an executable file.</source>
         <translation type="unfinished">%1 ఎక్జిక్యూటబుల్ ఫైల్ కాదు.</translation>
     </message>
@@ -3382,21 +3488,22 @@ Continue?</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="96"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="207"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="247"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="290"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="95"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="222"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="258"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="301"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>Password</source>
         <translation type="unfinished">పాస్‌వర్డ్</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="186"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="195"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">%1 ను బ్రౌజర్‌లో తెరువు</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="387"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="403"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="406"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="422"/>
         <source>OTP code</source>
         <translation>OTP కోడ్</translation>
     </message>
@@ -3405,7 +3512,7 @@ Continue?</source>
         <translation type="obsolete">OTP కోడ్</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="389"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="408"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">ఈ పాస్‌వర్డ్ ఎంట్రీలో OTP కోడ్ కనుగొనబడలేదు</translation>
     </message>
@@ -3523,27 +3630,27 @@ Continue?</source>
         <translation type="vanished">క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="170"/>
+        <location filename="../src/qtpass.cpp" line="171"/>
         <source>Not pushing automatically: the last re-encryption did not finish. Re-encrypt again, or push by hand.</source>
         <translation type="unfinished">స్వయంచాలకంగా పుష్ చేయడం లేదు: చివరి రీ-ఎన్క్రిప్షన్ పూర్తి కాలేదు. మళ్లీ రీ-ఎన్క్రిప్ట్ చేయండి, లేదా మీరే స్వయంగా పుష్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="191"/>
+        <location filename="../src/qtpass.cpp" line="192"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">qrencode ను ప్రారంభించలేకపోయింది: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="199"/>
+        <location filename="../src/qtpass.cpp" line="200"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode సమయానికి పూర్తి కాలేదు</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="211"/>
+        <location filename="../src/qtpass.cpp" line="212"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode క్రాష్ అయింది</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="212"/>
+        <location filename="../src/qtpass.cpp" line="213"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode కోడ్ %1 తో ముగిసింది</translation>
     </message>
@@ -3551,54 +3658,119 @@ Continue?</source>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="60"/>
+        <location filename="../src/realpass.cpp" line="66"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">గిట్ పుల్ విఫలమైంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="87"/>
+        <location filename="../src/realpass.cpp" line="93"/>
         <source>Not pushing: an earlier re-encryption in this store did not finish</source>
         <translation type="unfinished">పుష్ చేయడం లేదు: ఈ స్టోర్‌లో మునుపటి రీ-ఎన్క్రిప్షన్ పూర్తి కాలేదు</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="195"/>
+        <location filename="../src/realpass.cpp" line="260"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">%1 కింద గ్రహీతల జాబితాలను తనిఖీ చేస్తోంది…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="219"/>
+        <location filename="../src/realpass.cpp" line="229"/>
         <source>Cannot check the recipient lists</source>
         <translation type="unfinished">గ్రహీతల జాబితాలను తనిఖీ చేయలేము</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="222"/>
+        <location filename="../src/realpass.cpp" line="165"/>
+        <source>Recipient list is a link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="166"/>
+        <source>%1 is a link. pass would encrypt to the recipients in the file it points to, while QtPass shows the list of a folder above it, so nothing was encrypted. Replace the link with a copy of the list, or remove it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="232"/>
         <source>%1 holds a file or folder whose name is not valid UTF-8. QtPass cannot see what is behind that name, while pass would re-encrypt it, so nothing was changed. Rename it, then try again.</source>
         <extracomment>%1 is a folder. &quot;UTF-8&quot; is the text encoding; keep it as is.</extracomment>
         <translation type="unfinished">%1 లో చెల్లుబాటు అయ్యే UTF-8 కాని పేరు గల ఫైల్ లేదా ఫోల్డర్ ఉంది. ఆ పేరు వెనుక ఏముందో QtPass చూడలేదు, అయితే pass దాన్ని రీ-ఎన్క్రిప్ట్ చేస్తుంది, కాబట్టి ఏదీ మార్చబడలేదు. దాని పేరు మార్చి, మళ్లీ ప్రయత్నించండి.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/realpass.cpp" line="464"/>
+        <source>and %n more</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/realpass.cpp" line="353"/>
+        <location filename="../src/realpass.cpp" line="495"/>
+        <source>The folder holds changes Git has not recorded, and pass would commit and push them along with this one:
+
+%1
+
+Commit, remove or ignore them with Git first, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="529"/>
+        <source>The system writes %1 by itself, in folders a file manager opens (Finder on macOS, Explorer on Windows, Dolphin on KDE). Git leaves such files alone in every folder once each .gitignore in the store below holds its lines, committed:
+
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="540"/>
+        <source>Changes Git has not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="557"/>
+        <source>Saved, not committed</source>
+        <translation type="unfinished">సేవ్ చేయబడింది, కమిట్ చేయబడలేదు</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="558"/>
+        <source>The change is in the store, but Git did not record it, so it is not pushed, and a pull may overwrite it (&quot;!!&quot; marks a file Git ignores):
+
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="638"/>
+        <source>Git ignores these files only where they are now, and pass would commit and push them where they land:
+
+%1
+
+Move them out of the folder, or have Git ignore them there too, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="643"/>
+        <source>Ignored files would be committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="813"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">లింక్ %1 ను తీసివేయలేకపోయింది.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="354"/>
+        <location filename="../src/realpass.cpp" line="814"/>
         <source>Delete failed</source>
         <translation type="unfinished">తొలగించడం విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="404"/>
+        <location filename="../src/realpass.cpp" line="864"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">లింక్ %1 తొలగించబడింది, కానీ git దాన్ని నమోదు చేయలేకపోయింది: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="406"/>
-        <location filename="../src/realpass.cpp" line="556"/>
+        <location filename="../src/realpass.cpp" line="866"/>
+        <location filename="../src/realpass.cpp" line="1022"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">తొలగింపు అసంపూర్ణం</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="515"/>
+        <location filename="../src/realpass.cpp" line="981"/>
         <source>The recipients were changed, but some entries could not be re-encrypted for them: those are still encrypted to the previous recipients, who can still read them. With Git the change is committed locally and not pushed: QtPass does not push this store automatically until a re-encryption succeeds, and a push by hand sends it.</source>
         <translation type="unfinished">గ్రహీతలు మార్చబడ్డారు, కానీ కొన్ని ఎంట్రీలను వారి కోసం రీ-ఎన్క్రిప్ట్ చేయలేకపోయింది: అవి ఇంకా మునుపటి గ్రహీతలకు ఎన్క్రిప్ట్ చేయబడి ఉన్నాయి, వారు ఇప్పటికీ వాటిని చదవగలరు. Git తో, మార్పు స్థానికంగా కమిట్ చేయబడింది మరియు పుష్ చేయబడలేదు: రీ-ఎన్క్రిప్షన్ విజయవంతమయ్యే వరకు QtPass ఈ స్టోర్‌ను స్వయంచాలకంగా పుష్ చేయదు, మరియు మీరే స్వయంగా చేసే పుష్ దాన్ని పంపుతుంది.</translation>
     </message>
@@ -3607,12 +3779,12 @@ Continue?</source>
         <translation type="obsolete">గ్రహీతలు మార్చబడ్డారు, కానీ కొన్ని ఎంట్రీలను వారి కోసం రీ-ఎన్క్రిప్ట్ చేయలేకపోయింది: అవి ఇంకా మునుపటి గ్రహీతలకు ఎన్క్రిప్ట్ చేయబడి ఉన్నాయి, వారు ఇప్పటికీ వాటిని చదవగలరు. Git తో, మార్పు స్థానికంగా కమిట్ చేయబడింది మరియు ఇప్పుడు పుష్ చేయబడలేదు; తదుపరి పుష్ దాన్ని పంపుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="553"/>
+        <location filename="../src/realpass.cpp" line="1019"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">%1 లింక్ తొలగించబడింది మరియు గిట్ ఇప్పుడు దానిని ట్రాక్ చేయడం లేదు, కానీ కమిట్ విఫలం అయింది: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="688"/>
+        <location filename="../src/realpass.cpp" line="1162"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">శోధన కోసం GPG ఎక్జిక్యూటబుల్‌ను కాన్ఫిగర్ చేయాలి.</translation>
     </message>
@@ -3620,12 +3792,12 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="334"/>
+        <location filename="../src/storemodel.cpp" line="363"/>
         <source>Force overwrite?</source>
         <translation>బలవంతంగా ఓవర్‌రైట్ చేయాలా?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="335"/>
+        <location filename="../src/storemodel.cpp" line="364"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 ను %2 తో ఓవర్‌రైట్ చేయాలా?</translation>
     </message>
@@ -3633,32 +3805,32 @@ Continue?</source>
 <context>
     <name>StoreWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="369"/>
+        <location filename="../src/firstrunwizard.cpp" line="370"/>
         <source>Keep the store under Git</source>
         <translation type="unfinished">స్టోర్‌ను గిట్ కింద ఉంచు</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="371"/>
+        <location filename="../src/firstrunwizard.cpp" line="372"/>
         <source>Password store</source>
         <translation type="unfinished">పాస్‌వర్డ్ స్టోర్</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="372"/>
+        <location filename="../src/firstrunwizard.cpp" line="373"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
         <translation type="unfinished">మీ పాస్‌వర్డ్‌లు ఉండే ఫోల్డర్. ఇప్పటికే ఉన్న స్టోర్ ఉన్నది ఉన్నట్లుగా ఉపయోగించబడుతుంది; ఖాళీ లేదా లేని ఫోల్డర్ మీరు టిక్ చేసిన కీల కోసం సెటప్ చేయబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="376"/>
+        <location filename="../src/firstrunwizard.cpp" line="377"/>
         <source>Folder</source>
         <translation type="unfinished">ఫోల్డర్</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="378"/>
+        <location filename="../src/firstrunwizard.cpp" line="379"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">పాస్‌వర్డ్ స్టోర్ ఫోల్డర్‌ను ఎంచుకోండి</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="403"/>
+        <location filename="../src/firstrunwizard.cpp" line="404"/>
         <source>Git has no name and e-mail to commit with yet. Run
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
@@ -3669,17 +3841,17 @@ git config --global user.email you@example.org
 నడిపి, ఆ తరువాత సెట్టింగులలో గిట్ ఆన్ చేయండి.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="407"/>
+        <location filename="../src/firstrunwizard.cpp" line="408"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
         <translation type="unfinished">ప్రతి మార్పు ఒక కమిట్ అవుతుంది; ఇంకా రిపోజిటరీ కాని ఫోల్డర్‌కు ఒకటి సృష్టించబడుతుంది</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="431"/>
+        <location filename="../src/firstrunwizard.cpp" line="432"/>
         <source>Enter a folder.</source>
         <translation type="unfinished">ఫోల్డర్‌ను నమోదు చేయండి.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/firstrunwizard.cpp" line="435"/>
+        <location filename="../src/firstrunwizard.cpp" line="436"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
             <numerusform>%n ఎంట్రీతో ఇప్పటికే ఉన్న పాస్‌వర్డ్ స్టోర్.</numerusform>
@@ -3687,22 +3859,22 @@ git config --global user.email you@example.org
         </translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="438"/>
+        <location filename="../src/firstrunwizard.cpp" line="439"/>
         <source>An empty folder; it will be set up as a password store.</source>
         <translation type="unfinished">ఖాళీ ఫోల్డర్; ఇది పాస్‌వర్డ్ స్టోర్‌గా సెటప్ చేయబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="439"/>
+        <location filename="../src/firstrunwizard.cpp" line="440"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
         <translation type="unfinished">ఈ ఫోల్డర్ ఇంకా పాస్‌వర్డ్ స్టోర్ కాదు; టిక్ చేసిన కీల కోసం .gpg-id దీనిలో రాయబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="442"/>
+        <location filename="../src/firstrunwizard.cpp" line="443"/>
         <source>The folder does not exist yet; it will be created.</source>
         <translation type="unfinished">ఫోల్డర్ ఇంకా లేదు; ఇది సృష్టించబడుతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="446"/>
+        <location filename="../src/firstrunwizard.cpp" line="447"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation type="unfinished">వెనక్కి వెళ్లి, ఎన్క్రిప్ట్ చేయడానికి కనీసం ఒక కీని టిక్ చేయండి.</translation>
     </message>
@@ -3842,7 +4014,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation>అందుబాటులో ఉన్న జిపిజి కీల జాబితాను పొందలేకపోయింది</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/usersdialog.cpp" line="162"/>
+        <location filename="../src/usersdialog.cpp" line="164"/>
         <source>%n folder(s) below this one have their own recipients, which saving here does not change: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;. Shown when changing the recipients of a folder that has folders with their own list below it.</extracomment>
         <translation type="unfinished">
@@ -3851,7 +4023,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/usersdialog.cpp" line="170"/>
+        <location filename="../src/usersdialog.cpp" line="172"/>
         <source>%n folder(s) below this one could not be read, so whether they have their own recipients is unknown: %1</source>
         <extracomment>%1 lists folders, such as &quot;work, work/bank&quot;, that QtPass could not read: no permission, or a name in them that is not valid UTF-8.</extracomment>
         <translation type="unfinished">
@@ -3860,32 +4032,32 @@ Plain entries have a trusted encryption key, select these to allow other people 
         </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="279"/>
+        <location filename="../src/usersdialog.cpp" line="300"/>
         <source>Key not found in keyring</source>
         <translation>కీరింగ్‌లో కీ కనుగొనబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="427"/>
+        <location filename="../src/usersdialog.cpp" line="485"/>
         <source>created</source>
         <translation>సృష్టించబడింది</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="431"/>
+        <location filename="../src/usersdialog.cpp" line="489"/>
         <source>expires</source>
         <translation>గడువు ముగుస్తుంది</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="454"/>
+        <location filename="../src/usersdialog.cpp" line="512"/>
         <source>[INVALID] </source>
         <translation>[చెల్లదు] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="450"/>
+        <location filename="../src/usersdialog.cpp" line="508"/>
         <source>[EXPIRED] </source>
         <translation>[గడువు ముగిసింది] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="458"/>
+        <location filename="../src/usersdialog.cpp" line="516"/>
         <source>[PARTIAL] </source>
         <translation>[పాక్షికం] </translation>
     </message>
@@ -3893,34 +4065,34 @@ Plain entries have a trusted encryption key, select these to allow other people 
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1176"/>
+        <location filename="../src/util.cpp" line="1343"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">%1 పక్కన తాత్కాలిక ఫైల్‌ను సృష్టించలేము: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1188"/>
-        <location filename="../src/util.cpp" line="1280"/>
-        <location filename="../src/util.cpp" line="1310"/>
+        <location filename="../src/util.cpp" line="1355"/>
+        <location filename="../src/util.cpp" line="1447"/>
+        <location filename="../src/util.cpp" line="1477"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">%1 ను వ్రాయలేము: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1213"/>
+        <location filename="../src/util.cpp" line="1380"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">%1 ను భర్తీ చేయడం విఫలమైంది.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1218"/>
+        <location filename="../src/util.cpp" line="1385"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ఇప్పటికే ఉంది.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1220"/>
+        <location filename="../src/util.cpp" line="1387"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">%1 ను వ్రాయడం విఫలమైంది.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1267"/>
+        <location filename="../src/util.cpp" line="1434"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 వ్రాయబడుతున్నప్పుడు అది వేరొక ఫైల్‌తో భర్తీ చేయబడింది.</translation>
     </message>
@@ -3929,12 +4101,12 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation type="obsolete">%1 వ్రాయబడుతున్నప్పుడు అది ఒక లింక్‌తో భర్తీ చేయబడింది.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1293"/>
+        <location filename="../src/util.cpp" line="1460"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">%1 ను చదవలేము.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1303"/>
+        <location filename="../src/util.cpp" line="1470"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">%1 ను చదవలేము: %2</translation>
     </message>
