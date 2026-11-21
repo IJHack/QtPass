@@ -12,6 +12,7 @@
 #include <QClipboard>
 #include <QMimeData>
 #include <utility>
+#include <vector>
 
 ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {
   setAutoclearTimer();
@@ -50,6 +51,48 @@ auto markedSecret(const QMimeData *data) -> bool {
       if (format.contains(QLatin1String(mark), Qt::CaseInsensitive)) {
         return true;
       }
+    }
+  }
+  return false;
+}
+
+/**
+ * @brief Whether one text holds the other, in time linear in both lengths.
+ *
+ * Knuth-Morris-Pratt: QString::contains() can take the product of the two
+ * lengths ("baaa..." in "aaaa..."), and both texts come from an entry.
+ * @param a One text.
+ * @param b The other text.
+ * @return True when the shorter one occurs in the longer one.
+ */
+auto oneHoldsTheOther(const QString &a, const QString &b) -> bool {
+  const QString &longer = a.size() >= b.size() ? a : b;
+  const QString &part = a.size() >= b.size() ? b : a;
+  const qsizetype m = part.size();
+  if (m == 0) {
+    return true;
+  }
+  // fallback[i]: length of the longest proper prefix of part[0..i] that
+  // also ends there, so a mismatch resumes there instead of from the start.
+  std::vector<qsizetype> fallback(static_cast<size_t>(m), 0);
+  for (qsizetype i = 1, k = 0; i < m; ++i) {
+    while (k > 0 && part.at(i) != part.at(k)) {
+      k = fallback[static_cast<size_t>(k - 1)];
+    }
+    if (part.at(i) == part.at(k)) {
+      ++k;
+    }
+    fallback[static_cast<size_t>(i)] = k;
+  }
+  for (qsizetype i = 0, k = 0; i < longer.size(); ++i) {
+    while (k > 0 && longer.at(i) != part.at(k)) {
+      k = fallback[static_cast<size_t>(k - 1)];
+    }
+    if (longer.at(i) == part.at(k)) {
+      ++k;
+    }
+    if (k == m) {
+      return true;
     }
   }
   return false;
@@ -148,9 +191,11 @@ void ClipboardManager::trackCopied(const QString &text) {
     // passing "a" would stay tracked and autoclear could take someone
     // else's "a" later.
     // An earlier copy still on the clipboard proper (Ctrl+C) stays tracked.
+    // A step holds the one before or lies in it (a word double-clicked,
+    // then Ctrl+A); oneHoldsTheOther() asks that in linear time.
     const QString &last =
         m_otherCopies.isEmpty() ? QString() : m_otherCopies.last();
-    if (!last.isEmpty() && (text.contains(last) || last.contains(text)) &&
+    if (!last.isEmpty() && oneHoldsTheOther(text, last) &&
         QApplication::clipboard()->text(QClipboard::Clipboard) != last &&
         QApplication::clipboard()->text(QClipboard::Selection) != last) {
       m_otherCopies.last() = text;
