@@ -467,9 +467,10 @@ public:
    */
   void GitPull() override;
   /**
-   * @brief Pull with rebase.
+   * @brief Run git pull in the store and wait for it, at most @p timeoutMs.
+   * @param timeoutMs Most milliseconds to wait (Pass::kBlockingPullMs).
    */
-  void GitPull_b() override;
+  void GitPull_b(int timeoutMs) override;
   /**
    * @brief Push to remote. While a re-encryption runs the push is held
    * (Users ▸ OK and a copy ask for it as soon as their commit is made, before

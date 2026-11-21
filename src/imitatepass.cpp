@@ -13,6 +13,7 @@
 #include "util.h"
 #include <QDateTime>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
 #include <QLocale>
@@ -137,17 +138,24 @@ void ImitatePass::GitPull() {
 }
 
 // Blocks until git finishes.
-void ImitatePass::GitPull_b() {
+void ImitatePass::GitPull_b(int timeoutMs) {
   if (!gitReady())
     return;
   // -C the store: executeBlocking sets no working directory, so without it
   // git would run in QtPass's launch directory and pull an unrelated
   // repository, or fail with "not a git repository".
   QString err;
+  QProcess process;
+  const std::atomic_bool *cancel = prepareBlocking(process);
+  QElapsedTimer timer;
+  timer.start();
   const int rc =
-      execBlocking(m_settings.gitExecutable,
-                   {"-C", pgit(m_settings.passStore), "pull"}, nullptr, &err);
-  if (rc != 0) {
+      Executor::executeBlocking(process, m_settings.gitExecutable,
+                                {"-C", pgit(m_settings.passStore), "pull"},
+                                QString(), nullptr, &err, cancel, timeoutMs);
+  if (rc != 0 && timer.elapsed() >= timeoutMs) {
+    emit statusMsg(pullTimedOut(timeoutMs), 5000);
+  } else if (rc != 0) {
     emit statusMsg(tr("Git pull failed: %1").arg(err.trimmed()), 5000);
   }
 }
