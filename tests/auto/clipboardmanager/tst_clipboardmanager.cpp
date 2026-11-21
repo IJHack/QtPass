@@ -44,7 +44,7 @@ private slots:
   void trackedCopyIsClearedWithoutDroppingTheCopiedPassword();
   void secretTextBrowserMarksAndReportsWhatIsCopied();
   void aGrowingSelectionIsTrackedOnce();
-  void aSelectionMovingItsOtherEndIsTrackedOnce();
+  void aSelectionStepInsideTheNextIsTrackedOnce();
   void twoHugeCopiesDoNotFreezeTheWindow();
   void aCopyOnTheClipboardOutlivesManySelections();
   void anotherPasswordManagersSecretIsNotPutBack();
@@ -395,16 +395,19 @@ void tst_clipboardmanager::aGrowingSelectionIsTrackedOnce() {
 }
 
 /**
- * @brief A selection grown to the left, or shrunk, keeps one end of the step
- * before it, so only where it ends stays tracked: the steps it passed
- * through are not cleared from the clipboard later.
+ * @brief A selection grown to the left, shrunk, or widened around a word
+ * (double-click, then Ctrl+A) holds the step before it or lies in it, so
+ * only where it ends stays tracked: the steps it passed through are not
+ * cleared from the clipboard later.
  */
-void tst_clipboardmanager::aSelectionMovingItsOtherEndIsTrackedOnce() {
+void tst_clipboardmanager::aSelectionStepInsideTheNextIsTrackedOnce() {
   saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND);
   const QList<QStringList> selections = {
       {QStringLiteral("c"), QStringLiteral("bc"), QStringLiteral("abc")},
       {QStringLiteral("abc"), QStringLiteral("ab"), QStringLiteral("a")},
       {QStringLiteral("abc"), QStringLiteral("bc"), QStringLiteral("c")},
+      {QStringLiteral("b"), QStringLiteral("abc")},
+      {QStringLiteral("aab"), QStringLiteral("aaabx")},
   };
   for (const QStringList &steps : selections) {
     QApplication::clipboard()->clear();
