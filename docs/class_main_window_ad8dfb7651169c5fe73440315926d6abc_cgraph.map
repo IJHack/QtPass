@@ -1,267 +1,269 @@
 <map id="MainWindow::passShowHandler" name="MainWindow::passShowHandler">
-<area shape="rect" id="Node000001" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="5,1934,234,1962"/>
-<area shape="rect" id="Node000002" href="$class_file_content.html#a2afdde46ca2b092bbd613219f37fd400" title="text cut to kMaxDisplayLines lines, as getRemainingDataForDisplay() is: for showing an entry as it is..." alt="" coords="282,952,510,980"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,1933,125,1761,134,1626,149,1476,169,1324,197,1184,214,1122,233,1068,255,1023,280,990,284,988,282,992,284,993,260,1026,238,1070,219,1124,202,1185,174,1325,154,1476,140,1626,131,1761,124,1934"/>
-<area shape="rect" id="Node000003" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="313,1004,479,1049"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,1933,129,1773,139,1648,155,1510,176,1370,203,1240,219,1183,237,1133,258,1091,280,1059,300,1045,297,1049,284,1063,262,1094,242,1135,224,1185,208,1242,181,1371,160,1511,145,1649,134,1773,124,1934"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass.html#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance." alt="" coords="329,1072,462,1100"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="119,1933,130,1782,157,1536,179,1406,206,1285,239,1185,258,1146,280,1117,295,1104,316,1095,313,1099,298,1108,284,1120,263,1149,244,1187,211,1286,184,1407,163,1537,135,1783,124,1934"/>
-<area shape="rect" id="Node000005" href="$class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f" title="Render the password and template fields of a decrypted entry." alt="" coords="313,1384,479,1429"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="123,1933,180,1782,226,1675,279,1568,323,1498,369,1438,366,1443,327,1501,284,1570,231,1677,185,1784,128,1934"/>
-<area shape="rect" id="Node000015" href="$class_password_display_panel.html#a05afd2d04c8c317910fb04b0c53cdb4a" title="Whether a field is a secret &quot;Hide password&quot; hides: one a template marks (setMarkedSecrets()),..." alt="" coords="1684,731,1850,775"/>
-<area shape="poly" id="edge124_Node000001_Node000015" title=" " alt="" coords="119,1933,130,1845,157,1702,178,1619,205,1534,239,1450,279,1370,313,1327,373,1260,543,1087,718,921,786,862,830,829,883,803,938,781,1052,748,1169,727,1285,717,1397,714,1501,718,1671,736,1666,738,1500,723,1397,720,1285,722,1169,733,1053,753,939,786,885,808,833,834,790,866,722,925,546,1091,377,1264,317,1331,284,1373,243,1452,210,1536,183,1621,162,1703,136,1846,125,1934"/>
-<area shape="rect" id="Node000069" href="$class_template_i_o.html#a5396bc2abe581bb25003d9c735ac14fd" title="The field names of the template in the settings: one per line, with comment lines (starting with #,..." alt="" coords="321,1907,471,1935"/>
-<area shape="poly" id="edge110_Node000001_Node000069" title=" " alt="" coords="233,1934,308,1928,304,1931,235,1939"/>
-<area shape="rect" id="Node000070" href="$class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89" title="Display a transient message in the text panel." alt="" coords="311,1959,481,1987"/>
-<area shape="poly" id="edge111_Node000001_Node000070" title=" " alt="" coords="233,1956,297,1962,293,1965,235,1961"/>
-<area shape="rect" id="Node000071" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="315,1855,476,1883"/>
-<area shape="poly" id="edge112_Node000001_Node000071" title=" " alt="" coords="161,1931,281,1893,316,1885,312,1889,282,1898,164,1935"/>
-<area shape="rect" id="Node000077" href="$class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" title=" " alt="" coords="289,2011,503,2039"/>
-<area shape="poly" id="edge119_Node000001_Node000077" title=" " alt="" coords="163,1960,282,1996,318,2006,313,2008,281,2001,164,1965"/>
-<area shape="rect" id="Node000078" href="$class_file_content.html#ad196088dd0d816ee3c1311a4448940d2" title="The entry&#39;s raw one&#45;time password configuration, if it has one." alt="" coords="313,2063,479,2091"/>
-<area shape="poly" id="edge120_Node000001_Node000078" title=" " alt="" coords="138,1959,201,2003,241,2027,283,2048,306,2057,301,2059,281,2053,238,2032,198,2008,139,1964"/>
-<area shape="rect" id="Node000079" href="$class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4" title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpPasswordLine())." alt="" coords="303,1581,488,1626"/>
-<area shape="poly" id="edge121_Node000001_Node000079" title=" " alt="" coords="130,1932,367,1636,367,1641,134,1935"/>
-<area shape="rect" id="Node000080" href="$class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret)." alt="" coords="299,2115,493,2159"/>
-<area shape="poly" id="edge123_Node000001_Node000080" title=" " alt="" coords="131,1959,193,2027,235,2066,283,2100,295,2107,289,2109,280,2105,232,2070,189,2031,132,1965"/>
-<area shape="rect" id="Node000081" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="871,2268,1025,2296"/>
-<area shape="poly" id="edge125_Node000001_Node000081" title=" " alt="" coords="126,1959,147,2004,180,2062,225,2122,252,2148,283,2169,318,2187,351,2200,413,2213,470,2214,526,2207,583,2199,644,2195,710,2200,784,2220,799,2228,809,2236,819,2245,832,2253,859,2265,853,2265,830,2258,816,2249,806,2240,796,2232,782,2225,709,2205,644,2200,584,2204,527,2213,470,2219,412,2219,350,2205,316,2192,280,2174,249,2152,221,2125,175,2065,143,2006,126,1965"/>
-<area shape="rect" id="Node000087" href="$class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="326,1803,466,1831"/>
-<area shape="poly" id="edge131_Node000001_Node000087" title=" " alt="" coords="136,1932,198,1887,238,1862,281,1841,313,1831,309,1835,283,1846,241,1867,201,1891,141,1935"/>
-<area shape="rect" id="Node000094" href="$class_template_i_o.html#ae6ce559fb2377f31bef854fb75df0af0" title="The field names the store&#39;s .templates file marks as secret, in any of its sections (see secretFields..." alt="" coords="290,2354,502,2382"/>
-<area shape="poly" id="edge148_Node000001_Node000094" title=" " alt="" coords="123,1959,136,2028,162,2129,183,2184,209,2239,243,2290,283,2334,300,2347,294,2347,280,2338,239,2293,205,2241,178,2186,157,2131,131,2030,122,1964"/>
-<area shape="rect" id="Node000095" href="$class_template_i_o.html#af8aac6eb0c68a90f03869c53606aa254" title="The field names a template marks as secret." alt="" coords="574,2442,767,2470"/>
-<area shape="poly" id="edge150_Node000001_Node000095" title=" " alt="" coords="123,1959,138,2022,166,2112,187,2160,213,2208,245,2252,283,2290,312,2308,340,2316,368,2317,395,2315,423,2313,451,2315,481,2322,512,2340,530,2362,537,2386,543,2408,560,2428,566,2435,561,2433,556,2432,538,2410,531,2387,525,2365,508,2344,479,2327,450,2320,423,2319,395,2321,368,2322,339,2321,310,2312,280,2294,241,2256,208,2211,182,2163,161,2114,133,2024,123,1965"/>
-<area shape="rect" id="Node000096" href="$class_password_display_panel.html#a4654eec1dc8a91f02d20a63247bfb840" title="Set the field names a template marks as secret." alt="" coords="313,2405,479,2450"/>
-<area shape="poly" id="edge151_Node000001_Node000096" title=" " alt="" coords="122,1959,132,2037,142,2092,156,2153,176,2216,204,2280,239,2339,283,2391,302,2406,296,2405,280,2395,235,2342,199,2282,171,2218,151,2154,136,2093,127,2038,121,1965"/>
-<area shape="rect" id="Node000097" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="Enable or disable the main UI elements." alt="" coords="292,2235,500,2279"/>
-<area shape="poly" id="edge152_Node000001_Node000097" title=" " alt="" coords="125,1959,146,2008,178,2076,224,2150,252,2184,283,2214,301,2227,296,2227,280,2218,248,2187,220,2153,173,2079,141,2010,125,1964"/>
-<area shape="rect" id="Node000006" href="$class_password_display_panel.html#a63f3df891d869b0cc854ebb652b8ade7" title="Render one name: value row: action buttons, then the value either behind the eye button (see hides())..." alt="" coords="865,844,1031,889"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="415,1382,556,1234,754,1042,912,897,909,902,758,1046,560,1238,420,1385"/>
-<area shape="rect" id="Node000046" href="$class_password_display_panel.html#ae39ac5b0704842fa580cfd902c73f268" title="Render the live OTP row: an OtpCodeWidget in a field frame under an &quot;OTP code&quot; label...." alt="" coords="588,1248,754,1293"/>
-<area shape="poly" id="edge71_Node000005_Node000046" title=" " alt="" coords="441,1382,612,1298,608,1302,445,1386"/>
-<area shape="rect" id="Node000060" href="$class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b" title="Whether text holds an otpauth URI anywhere: after a list dash, in quotes, behind other text or a seco..." alt="" coords="1134,1611,1323,1639"/>
-<area shape="poly" id="edge93_Node000005_Node000060" title=" " alt="" coords="478,1394,546,1389,623,1388,704,1395,784,1410,809,1423,833,1439,897,1466,949,1484,1001,1502,1066,1529,1134,1565,1194,1602,1189,1603,1132,1570,1064,1534,999,1507,947,1489,895,1471,830,1443,807,1428,782,1416,704,1400,623,1394,546,1394,481,1398"/>
-<area shape="rect" id="Node000061" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="1125,1663,1332,1691"/>
-<area shape="poly" id="edge94_Node000005_Node000061" title=" " alt="" coords="478,1410,663,1428,742,1440,769,1447,785,1455,804,1479,812,1504,812,1529,809,1555,806,1580,807,1604,815,1627,833,1648,869,1673,909,1689,952,1700,996,1705,1082,1703,1160,1694,1155,1696,1083,1709,996,1710,951,1705,908,1694,867,1677,830,1652,810,1629,802,1605,801,1580,804,1554,807,1529,807,1505,799,1481,782,1459,767,1452,741,1445,663,1433,480,1415"/>
-<area shape="rect" id="Node000062" href="$class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password." alt="" coords="558,1468,783,1496"/>
-<area shape="poly" id="edge95_Node000005_Node000062" title=" " alt="" coords="478,1427,606,1463,601,1465,480,1432"/>
-<area shape="rect" id="Node000007" href="$class_password_display_panel.html#a57fc5d83ebe5d878f373c6785af5f8d4" title="Add the copy, QR and open&#45;in&#45;browser buttons a field gets, per the settings." alt="" coords="1145,916,1312,961"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1031,885,1132,912,1128,914,1032,890"/>
-<area shape="rect" id="Node000014" href="$class_password_display_panel.html#af0b6c619d59cff43692b8087999fe3a5" title="Whether a field is shown behind the eye button: the password, a field a template marks,..." alt="" coords="1420,772,1587,817"/>
-<area shape="poly" id="edge68_Node000006_Node000014" title=" " alt="" coords="1030,853,1407,805,1403,809,1033,858"/>
-<area shape="poly" id="edge69_Node000006_Node000015" title=" " alt="" coords="1010,841,1112,809,1251,776,1392,757,1537,748,1671,749,1666,751,1537,754,1392,762,1252,781,1113,814,1013,846"/>
-<area shape="rect" id="Node000021" href="$class_password_display_panel.html#ae5b1f044561af878f68b76253fdc382e" title="Add the password, hidden, with a button that shows it." alt="" coords="1145,440,1312,485"/>
-<area shape="poly" id="edge25_Node000006_Node000021" title=" " alt="" coords="952,842,970,781,1002,697,1048,605,1077,562,1111,522,1131,504,1156,490,1152,494,1134,509,1115,526,1082,565,1053,608,1007,699,975,783,957,845"/>
-<area shape="rect" id="Node000039" href="$class_password_display_panel.html#ab3183a3523179d61490f18e41fbda13a" title="Text was selected and copied out of a field&#39;s value (Ctrl+C, the context menu, a drag,..." alt="" coords="1420,500,1587,545"/>
-<area shape="poly" id="edge70_Node000006_Node000039" title=" " alt="" coords="953,842,971,789,1003,719,1024,682,1049,647,1078,614,1111,587,1145,567,1182,550,1259,528,1335,517,1407,516,1402,518,1336,523,1260,533,1184,555,1148,571,1114,591,1082,618,1053,650,1028,685,1008,721,976,791,958,845"/>
-<area shape="rect" id="Node000040" href="$class_password_display_panel.html#acc2144babbefdd5937daf939410786b4" title="Put a row&#39;s label and value frame into the grid, listening for a double&#45;click on either (and on the f..." alt="" coords="1145,985,1312,1030"/>
-<area shape="poly" id="edge60_Node000006_Node000040" title=" " alt="" coords="978,886,1040,929,1114,971,1133,980,1128,981,1111,975,1037,933,979,892"/>
-<area shape="rect" id="Node000041" href="$class_secret_text_browser.html#aec3ccda72fda735063fe8286c818a81b" title="Selected text was copied out of the browser." alt="" coords="1153,601,1304,646"/>
-<area shape="poly" id="edge61_Node000006_Node000041" title=" " alt="" coords="971,842,1111,714,1188,654,1184,658,1114,718,975,845"/>
-<area shape="rect" id="Node000044" href="$class_password_display_panel.html#a84cafffc7779be4e2ba12f0119e6d374" title="New bordered frame with a tight horizontal layout, styled by applyFrameStyle(); shared by addField() ..." alt="" coords="1145,1360,1312,1405"/>
-<area shape="poly" id="edge66_Node000006_Node000044" title=" " alt="" coords="961,887,1012,997,1067,1143,1075,1175,1078,1203,1078,1253,1080,1276,1085,1299,1096,1322,1115,1346,1134,1362,1128,1362,1111,1350,1091,1324,1080,1300,1074,1277,1073,1254,1073,1204,1070,1176,1062,1144,1007,999,960,892"/>
-<area shape="rect" id="Node000008" href="$class_q_push_button_as_q_r_code.html#a63baaf712643365fe4ebf1a9084fceb8" title="Emitted when the button is activated with the current text payload." alt="" coords="1417,980,1590,1025"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1311,955,1404,978,1399,980,1313,960"/>
-<area shape="rect" id="Node000010" href="$class_q_push_button_with_clipboard.html#a14c2e48aa665e500839ef2a3222e995a" title="Emitted when the button is activated with the stored text." alt="" coords="1405,1049,1602,1094"/>
-<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="1312,954,1346,971,1362,987,1370,1004,1379,1020,1394,1035,1402,1042,1397,1042,1390,1039,1374,1023,1366,1006,1358,990,1342,975,1312,959"/>
-<area shape="rect" id="Node000013" href="$class_password_display_panel.html#ad58c050737049fabcc9b8004df7bc038" title="Emitted when a field&#39;s copy button is clicked." alt="" coords="1420,1188,1587,1233"/>
-<area shape="poly" id="edge15_Node000007_Node000013" title=" " alt="" coords="1311,949,1331,959,1346,971,1364,997,1372,1023,1373,1049,1371,1074,1368,1100,1369,1124,1377,1149,1394,1174,1409,1188,1404,1188,1390,1177,1372,1151,1364,1125,1363,1099,1365,1074,1368,1049,1367,1024,1359,999,1342,975,1328,963,1312,954"/>
-<area shape="poly" id="edge16_Node000007_Node000014" title=" " alt="" coords="1256,914,1316,870,1391,827,1408,821,1404,824,1393,831,1319,874,1260,917"/>
-<area shape="rect" id="Node000017" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="1412,1547,1596,1575"/>
-<area shape="poly" id="edge19_Node000007_Node000017" title=" " alt="" coords="1312,948,1331,957,1346,971,1359,993,1368,1021,1376,1089,1375,1169,1369,1256,1364,1342,1364,1421,1372,1488,1381,1514,1394,1534,1401,1542,1396,1542,1390,1537,1376,1516,1367,1489,1358,1422,1359,1342,1364,1255,1370,1169,1371,1089,1363,1022,1354,995,1342,975,1328,962,1312,953"/>
-<area shape="rect" id="Node000018" href="$class_q_push_button_as_q_r_code.html#a8b9e33d9c6a605b6071267d0f5bd3c00" title="Construct a QPushButtonAsQRCode with an optional initial text." alt="" coords="1413,911,1594,955"/>
-<area shape="poly" id="edge20_Node000007_Node000018" title=" " alt="" coords="1311,934,1400,934,1395,936,1313,939"/>
-<area shape="rect" id="Node000019" href="$class_q_push_button_with_clipboard.html#a9fcd74d855d552598d1ebf4910f53666" title="Construct a QPushButtonWithClipboard with an optional initial text." alt="" coords="1401,1119,1606,1163"/>
-<area shape="poly" id="edge22_Node000007_Node000019" title=" " alt="" coords="1311,950,1346,971,1360,988,1367,1005,1371,1039,1374,1073,1381,1088,1394,1105,1398,1109,1392,1109,1390,1108,1376,1091,1369,1074,1365,1040,1362,1007,1355,991,1342,975,1312,956"/>
-<area shape="rect" id="Node000020" href="$class_password_display_panel.html#a064002137dbd9f257e05d5571f0b9ada" title="Emitted when a field&#39;s QR button is clicked." alt="" coords="1420,841,1587,886"/>
-<area shape="poly" id="edge24_Node000007_Node000020" title=" " alt="" coords="1310,914,1407,889,1403,892,1313,918"/>
-<area shape="rect" id="Node000009" href="$class_q_push_button_as_q_r_code.html#a131b43ae67e83063e9ebb8227c161bdc" title="Connected to QPushButton::clicked(bool); re&#45;emits the overload carrying the stored text so receivers ..." alt="" coords="1680,980,1854,1025"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1590,1008,1667,1010,1662,1012,1592,1013"/>
-<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="1677,995,1607,996,1605,991,1682,993"/>
-<area shape="rect" id="Node000011" href="$class_q_push_button_with_clipboard.html#a602f1fd427f6dc9d823bae27f0f50a02" title="Connected to QPushButton::clicked(bool); shows the pushed icon, arms the revert timer and re&#45;emits cl..." alt="" coords="1668,1105,1866,1150"/>
-<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1574,1092,1656,1112,1651,1113,1575,1097"/>
-<area shape="rect" id="Node000012" href="$class_q_push_button_with_clipboard.html#a54c897f5d3d52aafb69bf34f64c2d037" title="Restores the default copy icon; fired by a single&#45;shot timer 500 ms after a click." alt="" coords="1933,1076,2130,1121"/>
-<area shape="poly" id="edge14_Node000010_Node000012" title=" " alt="" coords="1602,1074,1919,1092,1914,1094,1603,1079"/>
-<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="1694,1105,1618,1090,1617,1084,1699,1104"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1865,1114,1920,1110,1915,1112,1867,1119"/>
-<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="1586,779,1671,767,1666,770,1589,784"/>
-<area shape="rect" id="Node000016" href="$class_file_content.html#a91dfee0a7472e06dad305a66d8025460" title="Whether a field name names a secret: one of secrets occurs in it as whole words, compared case&#45;insens..." alt="" coords="1919,739,2144,767"/>
-<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="1850,751,1906,752,1901,754,1852,755"/>
-<area shape="poly" id="edge21_Node000018_Node000009" title=" " alt="" coords="1591,953,1668,975,1663,976,1592,959"/>
-<area shape="poly" id="edge23_Node000019_Node000011" title=" " alt="" coords="1606,1133,1655,1132,1650,1134,1608,1138"/>
-<area shape="rect" id="Node000022" href="$class_secret_line_edit.html#a2edc83d685d05c5f94e1d792e03eedd5" title="Selected text was copied out of the line edit." alt="" coords="1421,364,1586,392"/>
-<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="1303,437,1443,396,1439,399,1306,442"/>
-<area shape="rect" id="Node000036" href="$class_q_push_button_show_password.html#a1e81689266a6cde3a115466da1aee783" title="Construct a show&#45;password button linked to the given QLineEdit." alt="" coords="1399,151,1608,195"/>
-<area shape="poly" id="edge56_Node000021_Node000036" title=" " alt="" coords="1249,438,1472,205,1469,209,1253,441"/>
-<area shape="rect" id="Node000038" href="$class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c" title="Constructs the line edit." alt="" coords="1396,448,1611,476"/>
-<area shape="poly" id="edge58_Node000021_Node000038" title=" " alt="" coords="1311,460,1383,461,1378,464,1313,465"/>
-<area shape="poly" id="edge59_Node000021_Node000039" title=" " alt="" coords="1311,478,1408,500,1403,502,1313,483"/>
-<area shape="rect" id="Node000023" href="$class_secret_line_edit.html#a6e29923734219602f135750ef4b0ecc4" title="Shows createSecretContextMenu()." alt="" coords="1663,491,1871,535"/>
-<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="1534,390,1617,435,1641,453,1665,469,1691,484,1686,485,1662,474,1638,457,1614,439,1535,395"/>
-<area shape="rect" id="Node000025" href="$class_secret_line_edit.html#ae2aa8733d9f5647aa7d9af0ed481e393" title="Puts the selection on the clipboard or in the primary selection as secret&#45;marked MIME data and emits ..." alt="" coords="2469,427,2683,455"/>
-<area shape="poly" id="edge39_Node000022_Node000025" title=" " alt="" coords="1586,386,2008,414,2456,439,2452,441,2008,419,1588,391"/>
-<area shape="rect" id="Node000027" href="$class_secret_line_edit.html#a3707e8c2e63b6d31f2400e7a04ecef1a" title="Copies the selection through copySelection() and then deletes it. Does nothing when read&#45;only or with..." alt="" coords="2206,540,2408,568"/>
-<area shape="poly" id="edge40_Node000022_Node000027" title=" " alt="" coords="1547,390,1584,409,1617,435,1628,451,1634,466,1639,496,1645,522,1652,534,1665,545,1704,563,1758,574,1824,580,1897,582,2051,577,2192,567,2187,569,2051,582,1897,587,1824,585,1758,579,1702,568,1662,550,1648,538,1640,524,1634,496,1629,467,1624,453,1613,439,1581,413,1548,395"/>
-<area shape="rect" id="Node000028" href="$class_secret_line_edit.html#ad39e7fa39594b1b6e99e28844943f274" title="Pastes the clipboard or the primary selection with its line breaks removed, as one undoable edit...." alt="" coords="2201,244,2412,272"/>
-<area shape="poly" id="edge53_Node000022_Node000028" title=" " alt="" coords="1524,362,1585,324,1662,285,1732,257,1787,237,1844,224,1918,212,1982,203,2032,200,2081,202,2145,212,2169,220,2193,229,2226,240,2221,241,2191,234,2167,225,2143,217,2081,208,2032,205,1982,209,1919,217,1845,229,1789,242,1734,262,1664,290,1588,329,1528,366"/>
-<area shape="rect" id="Node000029" href="$class_secret_line_edit.html#aba684a353cbd69ebd8608ef056b058c6" title="Ends the current undo step, so that the next edit starts its own, as QLineEdit::paste() does around a..." alt="" coords="2481,116,2671,161"/>
-<area shape="poly" id="edge48_Node000022_Node000029" title=" " alt="" coords="1510,363,1530,326,1563,277,1608,227,1634,205,1662,187,1712,162,1764,142,1872,111,1983,93,2094,85,2201,86,2301,92,2468,115,2463,117,2301,97,2201,91,2094,91,1984,98,1873,116,1766,147,1714,167,1665,191,1637,209,1611,231,1568,281,1535,329,1514,366"/>
-<area shape="rect" id="Node000032" href="$class_secret_line_edit.html#af663c468b888e7e1c81f116cba75fab5" title="Ctrl+C copies with the hints, Ctrl+X as well before it deletes; after any other key the primary selec..." alt="" coords="1941,296,2122,341"/>
-<area shape="poly" id="edge41_Node000022_Node000032" title=" " alt="" coords="1585,366,1663,357,1928,329,1923,331,1664,362,1588,371"/>
-<area shape="rect" id="Node000033" href="$class_secret_line_edit.html#a5f82bf213b8d3162b9593ea02bed0646" title="Fills the X11 primary selection with the marked selection, on platforms that have one; called after a..." alt="" coords="2192,192,2421,220"/>
-<area shape="poly" id="edge54_Node000022_Node000033" title=" " alt="" coords="1514,363,1572,299,1614,263,1662,233,1733,205,1808,186,1884,174,1960,169,2034,169,2102,173,2220,188,2215,190,2102,178,2033,174,1960,174,1885,179,1809,191,1735,210,1665,238,1618,267,1576,303,1518,366"/>
-<area shape="rect" id="Node000034" href="$class_secret_line_edit.html#a386b60705220dff0bcd807ebb1589b24" title="Runs a base&#45;class event handler so that it cannot fill the primary selection with plain text: in a re..." alt="" coords="2205,347,2408,391"/>
-<area shape="poly" id="edge55_Node000022_Node000034" title=" " alt="" coords="1586,375,2192,369,2188,372,1588,380"/>
-<area shape="rect" id="Node000035" href="$class_secret_line_edit.html#a242041f66b392847e4963c5e70451977" title="Fills the primary selection with the marked selection on a left&#45;button release, instead of QLineEdit&#39;..." alt="" coords="1922,227,2140,271"/>
-<area shape="poly" id="edge49_Node000022_Node000035" title=" " alt="" coords="1548,362,1663,328,1909,272,1904,275,1664,333,1551,366"/>
-<area shape="rect" id="Node000024" href="$class_secret_line_edit.html#a4bd5b8640f8be96ed3e794bd936022f3" title="The standard context menu, with Copy and Cut going through the secret copy." alt="" coords="1929,491,2134,535"/>
-<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="1870,511,1916,512,1911,514,1872,515"/>
-<area shape="poly" id="edge29_Node000024_Node000025" title=" " alt="" coords="2133,502,2270,489,2421,469,2497,457,2492,460,2422,474,2271,494,2135,507"/>
-<area shape="poly" id="edge33_Node000024_Node000027" title=" " alt="" coords="2133,526,2198,537,2193,538,2135,531"/>
-<area shape="poly" id="edge35_Node000024_Node000028" title=" " alt="" coords="2048,489,2108,416,2147,373,2190,332,2228,303,2270,279,2265,282,2232,307,2194,336,2151,377,2112,420,2052,492"/>
-<area shape="poly" id="edge32_Node000025_Node000022" title=" " alt="" coords="2466,430,2032,403,1603,381,1601,376,2033,398,2471,428"/>
-<area shape="rect" id="Node000026" href="$clipboardmanager_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="2738,518,2922,546"/>
-<area shape="poly" id="edge30_Node000025_Node000026" title=" " alt="" coords="2617,453,2777,512,2772,513,2617,458"/>
-<area shape="poly" id="edge31_Node000026_Node000026" title=" " alt="" coords="2786,517,2780,509,2785,499,2802,493,2830,491,2860,494,2877,502,2872,503,2858,499,2830,496,2803,498,2789,503,2785,509,2792,518"/>
-<area shape="poly" id="edge34_Node000027_Node000025" title=" " alt="" coords="2367,538,2420,520,2483,491,2541,461,2536,464,2485,495,2422,525,2369,542"/>
-<area shape="poly" id="edge36_Node000028_Node000029" title=" " alt="" coords="2383,242,2420,229,2479,200,2534,168,2529,171,2481,205,2422,234,2385,246"/>
-<area shape="rect" id="Node000030" href="$class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d" title="text with every line break (see isLineBreak()) removed: what a one&#45;line field keeps of a paste." alt="" coords="2477,236,2675,281"/>
-<area shape="poly" id="edge37_Node000028_Node000030" title=" " alt="" coords="2412,256,2464,257,2459,259,2414,261"/>
-<area shape="rect" id="Node000031" href="$class_secret_line_edit.html#aaffec2fbdc78aea02c002f3dee79736a" title="Whether ch breaks a line: LF, CR, NEL (U+0085), or the Unicode line and paragraph separators (U+2028,..." alt="" coords="2731,244,2929,272"/>
-<area shape="poly" id="edge38_Node000030_Node000031" title=" " alt="" coords="2675,256,2718,257,2713,259,2676,261"/>
-<area shape="poly" id="edge42_Node000032_Node000025" title=" " alt="" coords="2121,306,2189,302,2265,304,2345,313,2422,332,2460,348,2495,370,2552,416,2547,416,2492,374,2457,353,2420,337,2344,318,2265,309,2189,308,2123,311"/>
-<area shape="poly" id="edge43_Node000032_Node000027" title=" " alt="" coords="2059,338,2280,530,2275,531,2059,344"/>
-<area shape="poly" id="edge44_Node000032_Node000028" title=" " alt="" coords="2121,296,2227,275,2222,277,2123,301"/>
-<area shape="poly" id="edge45_Node000032_Node000033" title=" " alt="" coords="2120,293,2143,281,2157,269,2166,256,2175,243,2191,231,2208,225,2203,228,2193,235,2179,247,2170,260,2161,273,2145,286,2123,297"/>
-<area shape="poly" id="edge47_Node000032_Node000034" title=" " alt="" coords="2121,332,2192,347,2187,348,2123,337"/>
-<area shape="poly" id="edge46_Node000033_Node000025" title=" " alt="" coords="2397,218,2423,231,2479,304,2558,414,2553,414,2475,307,2420,235,2398,223"/>
-<area shape="poly" id="edge50_Node000035_Node000028" title=" " alt="" coords="2140,250,2188,253,2183,255,2142,255"/>
-<area shape="poly" id="edge51_Node000035_Node000033" title=" " alt="" coords="2140,230,2200,222,2196,224,2142,234"/>
-<area shape="poly" id="edge52_Node000035_Node000034" title=" " alt="" coords="2112,269,2145,281,2203,308,2257,338,2251,339,2200,313,2143,286,2113,274"/>
+<area shape="rect" id="Node000001" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="5,1298,234,1326"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#a2afdde46ca2b092bbd613219f37fd400" title="text cut to kMaxDisplayLines lines, as getRemainingDataForDisplay() is: for showing an entry as it is..." alt="" coords="282,650,510,678"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,1297,136,1179,169,995,191,898,217,809,246,736,263,708,280,687,286,684,283,689,284,691,267,711,251,739,222,811,196,899,174,996,141,1180,125,1298"/>
+<area shape="rect" id="Node000003" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="313,701,479,746"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,1297,120,1206,126,1138,138,1061,158,980,187,900,227,823,252,789,280,756,300,743,298,747,283,760,256,792,231,826,192,902,163,982,144,1063,132,1139,125,1206,123,1297"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance." alt="" coords="329,770,462,798"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="118,1297,122,1213,129,1151,142,1081,162,1008,190,935,229,867,253,836,280,808,295,797,316,790,312,794,298,802,283,812,257,840,234,870,195,937,167,1009,147,1082,135,1152,127,1213,123,1298"/>
+<area shape="rect" id="Node000005" href="$class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f" title="Render the password and template fields of a decrypted entry." alt="" coords="313,1203,479,1247"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="163,1295,281,1257,307,1250,303,1254,282,1262,167,1299"/>
+<area shape="rect" id="Node000015" href="$class_password_display_panel.html#a05afd2d04c8c317910fb04b0c53cdb4a" title="Whether a field is a secret &quot;Hide password&quot; hides: one a template marks (setMarkedSecrets()),..." alt="" coords="1684,747,1850,791"/>
+<area shape="poly" id="edge125_Node000001_Node000015" title=" " alt="" coords="136,1296,199,1246,280,1188,416,1106,557,1032,690,956,750,926,831,894,896,878,949,873,1001,866,1030,858,1063,844,1078,835,1087,826,1111,805,1185,762,1245,732,1308,710,1391,690,1454,679,1504,674,1554,678,1616,690,1641,701,1665,716,1708,739,1703,740,1662,721,1639,706,1615,696,1553,683,1504,680,1455,684,1393,696,1310,715,1247,737,1188,767,1114,810,1091,830,1081,839,1066,849,1032,863,1002,871,950,878,897,883,832,900,753,931,693,961,559,1037,419,1111,283,1193,202,1251,140,1299"/>
+<area shape="rect" id="Node000069" href="$class_template_i_o.html#a5396bc2abe581bb25003d9c735ac14fd" title="The field names of the template in the settings: one per line, with comment lines (starting with #,..." alt="" coords="321,926,471,954"/>
+<area shape="poly" id="edge110_Node000001_Node000069" title=" " alt="" coords="121,1297,134,1237,163,1149,184,1100,210,1053,242,1008,280,970,308,954,305,959,283,974,246,1012,215,1056,189,1103,168,1151,139,1238,126,1298"/>
+<area shape="rect" id="Node000070" href="$class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89" title="Display a transient message in the text panel." alt="" coords="311,822,481,850"/>
+<area shape="poly" id="edge111_Node000001_Node000070" title=" " alt="" coords="119,1297,126,1220,134,1164,148,1102,169,1037,197,972,233,912,280,860,298,850,295,854,283,864,237,915,201,975,174,1039,153,1103,140,1165,131,1221,124,1298"/>
+<area shape="rect" id="Node000072" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="315,874,476,902"/>
+<area shape="poly" id="edge113_Node000001_Node000072" title=" " alt="" coords="119,1297,129,1228,155,1124,175,1066,203,1010,237,958,280,912,302,900,299,904,283,916,241,961,207,1013,180,1068,160,1125,134,1229,125,1298"/>
+<area shape="rect" id="Node000078" href="$class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" title=" " alt="" coords="289,1271,503,1299"/>
+<area shape="poly" id="edge120_Node000001_Node000078" title=" " alt="" coords="232,1299,275,1295,271,1299,236,1303"/>
+<area shape="rect" id="Node000079" href="$class_file_content.html#ad196088dd0d816ee3c1311a4448940d2" title="The entry&#39;s raw one&#45;time password configuration, if it has one." alt="" coords="313,1323,479,1351"/>
+<area shape="poly" id="edge121_Node000001_Node000079" title=" " alt="" coords="233,1320,299,1326,295,1330,236,1324"/>
+<area shape="rect" id="Node000080" href="$class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4" title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpPasswordLine())." alt="" coords="303,1375,488,1419"/>
+<area shape="poly" id="edge122_Node000001_Node000080" title=" " alt="" coords="165,1324,282,1360,308,1368,303,1371,281,1365,167,1329"/>
+<area shape="rect" id="Node000081" href="$class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret)." alt="" coords="299,1444,493,1489"/>
+<area shape="poly" id="edge124_Node000001_Node000081" title=" " alt="" coords="135,1323,199,1375,239,1404,283,1429,297,1437,293,1439,280,1434,237,1408,195,1379,137,1328"/>
+<area shape="rect" id="Node000082" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="871,2008,1025,2036"/>
+<area shape="poly" id="edge126_Node000001_Node000082" title=" " alt="" coords="124,1323,143,1389,174,1485,221,1596,250,1650,284,1701,347,1778,404,1832,470,1875,559,1921,877,2003,872,2005,557,1926,467,1880,401,1836,343,1782,280,1704,246,1653,216,1598,169,1487,138,1390,124,1329"/>
+<area shape="rect" id="Node000088" href="$class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="326,1663,466,1691"/>
+<area shape="poly" id="edge132_Node000001_Node000088" title=" " alt="" coords="132,1323,377,1650,372,1652,131,1329"/>
+<area shape="rect" id="Node000095" href="$class_template_i_o.html#ae6ce559fb2377f31bef854fb75df0af0" title="The field names the store&#39;s .templates file marks as secret, in any of its sections (see secretFields..." alt="" coords="290,1942,502,1970"/>
+<area shape="poly" id="edge149_Node000001_Node000095" title=" " alt="" coords="123,1323,142,1441,176,1622,198,1716,223,1803,252,1874,268,1901,284,1922,297,1934,291,1934,280,1926,263,1904,247,1877,218,1805,193,1718,170,1623,137,1442,123,1329"/>
+<area shape="rect" id="Node000096" href="$class_template_i_o.html#af8aac6eb0c68a90f03869c53606aa254" title="The field names a template marks as secret." alt="" coords="574,1992,767,2020"/>
+<area shape="poly" id="edge151_Node000001_Node000096" title=" " alt="" coords="122,1323,138,1453,168,1653,189,1757,216,1853,247,1930,265,1958,283,1979,302,1990,329,1998,398,2009,479,2012,561,2013,556,2014,479,2017,398,2014,327,2004,300,1995,280,1983,260,1961,242,1932,211,1854,184,1758,162,1654,133,1453,122,1329"/>
+<area shape="rect" id="Node000097" href="$class_password_display_panel.html#a4654eec1dc8a91f02d20a63247bfb840" title="Set the field names a template marks as secret." alt="" coords="313,2044,479,2089"/>
+<area shape="poly" id="edge152_Node000001_Node000097" title=" " alt="" coords="122,1323,140,1457,171,1667,193,1778,219,1881,250,1966,266,1998,284,2023,302,2040,297,2040,280,2027,262,2001,245,1968,214,1882,188,1779,166,1668,135,1458,122,1328"/>
+<area shape="rect" id="Node000098" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="Enable or disable the main UI elements." alt="" coords="292,2113,500,2158"/>
+<area shape="poly" id="edge153_Node000001_Node000098" title=" " alt="" coords="122,1323,137,1471,166,1704,187,1828,214,1942,246,2036,264,2072,284,2099,287,2104,281,2103,280,2103,260,2075,241,2038,209,1943,182,1829,160,1705,132,1471,122,1329"/>
+<area shape="rect" id="Node000006" href="$class_password_display_panel.html#a63f3df891d869b0cc854ebb652b8ade7" title="Render one name: value row: action buttons, then the value either behind the eye button (see hides())..." alt="" coords="865,909,1031,954"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="424,1200,484,1155,557,1107,690,1032,830,971,866,958,862,962,832,975,693,1037,559,1111,487,1159,428,1204"/>
+<area shape="rect" id="Node000046" href="$class_password_display_panel.html#ae39ac5b0704842fa580cfd902c73f268" title="Render the live OTP row: an OtpCodeWidget in a field frame under an &quot;OTP code&quot; label...." alt="" coords="588,1121,754,1166"/>
+<area shape="poly" id="edge71_Node000005_Node000046" title=" " alt="" coords="472,1200,580,1169,576,1173,476,1204"/>
+<area shape="rect" id="Node000060" href="$class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b" title="Whether text holds an otpauth URI anywhere: after a list dash, in quotes, behind other text or a seco..." alt="" coords="1134,1479,1323,1507"/>
+<area shape="poly" id="edge93_Node000005_Node000060" title=" " alt="" coords="479,1240,817,1315,977,1357,1033,1375,1066,1389,1083,1407,1091,1425,1099,1443,1114,1459,1137,1473,1131,1473,1111,1463,1094,1445,1086,1427,1079,1410,1063,1394,1032,1380,976,1362,816,1320,480,1245"/>
+<area shape="rect" id="Node000061" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="1125,1535,1332,1563"/>
+<area shape="poly" id="edge94_Node000005_Node000061" title=" " alt="" coords="479,1242,511,1257,527,1271,536,1285,545,1298,559,1311,590,1327,618,1337,668,1346,720,1352,784,1369,809,1381,833,1395,971,1460,1114,1516,1155,1530,1149,1531,1112,1521,969,1465,830,1399,806,1386,782,1374,719,1357,667,1351,616,1342,588,1332,557,1315,541,1302,532,1288,523,1275,509,1262,480,1247"/>
+<area shape="rect" id="Node000062" href="$class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password." alt="" coords="558,1383,783,1411"/>
+<area shape="poly" id="edge95_Node000005_Node000062" title=" " alt="" coords="479,1238,512,1258,524,1271,531,1285,536,1312,542,1338,549,1351,560,1363,577,1375,571,1377,556,1367,544,1354,537,1340,531,1313,526,1287,519,1274,508,1262,480,1244"/>
+<area shape="rect" id="Node000007" href="$class_password_display_panel.html#a57fc5d83ebe5d878f373c6785af5f8d4" title="Add the copy, QR and open&#45;in&#45;browser buttons a field gets, per the settings." alt="" coords="1145,909,1312,954"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1030,929,1132,930,1127,933,1033,934"/>
+<area shape="rect" id="Node000014" href="$class_password_display_panel.html#af0b6c619d59cff43692b8087999fe3a5" title="Whether a field is shown behind the eye button: the password, a field a template marks,..." alt="" coords="1420,807,1587,851"/>
+<area shape="poly" id="edge68_Node000006_Node000014" title=" " alt="" coords="1030,911,1112,894,1407,843,1403,846,1113,900,1033,916"/>
+<area shape="poly" id="edge69_Node000006_Node000015" title=" " alt="" coords="1020,907,1063,888,1087,872,1111,856,1183,829,1258,808,1335,792,1410,780,1552,767,1671,765,1666,767,1552,772,1411,785,1336,797,1260,813,1185,834,1114,861,1090,876,1066,893,1023,911"/>
+<area shape="rect" id="Node000021" href="$class_password_display_panel.html#ae5b1f044561af878f68b76253fdc382e" title="Add the password, hidden, with a button that shows it." alt="" coords="1145,411,1312,455"/>
+<area shape="poly" id="edge25_Node000006_Node000021" title=" " alt="" coords="994,907,1032,880,1049,864,1062,845,1083,798,1091,754,1089,712,1083,672,1078,631,1077,589,1086,545,1110,498,1129,477,1154,461,1151,465,1132,481,1115,501,1092,547,1082,590,1083,631,1089,671,1095,712,1096,754,1089,799,1067,848,1053,867,1035,884,998,911"/>
+<area shape="rect" id="Node000039" href="$class_password_display_panel.html#ab3183a3523179d61490f18e41fbda13a" title="Text was selected and copied out of a field&#39;s value (Ctrl+C, the context menu, a drag,..." alt="" coords="1420,483,1587,527"/>
+<area shape="poly" id="edge70_Node000006_Node000039" title=" " alt="" coords="993,907,1031,880,1048,864,1062,845,1079,807,1085,772,1083,737,1078,703,1074,670,1075,637,1086,604,1111,571,1142,545,1177,526,1214,511,1254,500,1333,490,1407,492,1403,495,1333,496,1255,506,1216,516,1179,530,1145,550,1115,575,1091,607,1080,638,1079,670,1083,703,1088,736,1090,772,1084,809,1067,848,1052,867,1034,884,997,911"/>
+<area shape="rect" id="Node000040" href="$class_password_display_panel.html#acc2144babbefdd5937daf939410786b4" title="Put a row&#39;s label and value frame into the grid, listening for a double&#45;click on either (and on the f..." alt="" coords="1145,1101,1312,1146"/>
+<area shape="poly" id="edge60_Node000006_Node000040" title=" " alt="" coords="968,952,1030,1017,1070,1053,1114,1084,1134,1095,1128,1096,1111,1089,1067,1057,1026,1021,968,957"/>
+<area shape="rect" id="Node000041" href="$class_secret_text_browser.html#aec3ccda72fda735063fe8286c818a81b" title="Selected text was copied out of the browser." alt="" coords="1153,585,1304,630"/>
+<area shape="poly" id="edge61_Node000006_Node000041" title=" " alt="" coords="988,907,1026,879,1063,845,1079,820,1088,799,1096,776,1110,749,1153,690,1198,640,1195,644,1157,693,1115,752,1101,778,1093,801,1084,823,1067,848,1030,883,991,911"/>
+<area shape="rect" id="Node000044" href="$class_password_display_panel.html#a84cafffc7779be4e2ba12f0119e6d374" title="New bordered frame with a tight horizontal layout, styled by applyFrameStyle(); shared by addField() ..." alt="" coords="1145,1029,1312,1074"/>
+<area shape="poly" id="edge66_Node000006_Node000044" title=" " alt="" coords="1002,952,1163,1022,1157,1024,1003,957"/>
+<area shape="rect" id="Node000008" href="$class_q_push_button_as_q_r_code.html#a63baaf712643365fe4ebf1a9084fceb8" title="Emitted when the button is activated with the current text payload." alt="" coords="1417,945,1590,990"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1311,940,1404,953,1399,955,1313,945"/>
+<area shape="rect" id="Node000010" href="$class_q_push_button_with_clipboard.html#a14c2e48aa665e500839ef2a3222e995a" title="Emitted when the button is activated with the stored text." alt="" coords="1405,1223,1602,1267"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="1274,952,1313,979,1346,1015,1360,1043,1366,1069,1366,1117,1366,1140,1368,1163,1377,1185,1394,1209,1397,1213,1392,1213,1390,1212,1372,1188,1363,1164,1360,1140,1361,1117,1361,1070,1355,1045,1342,1019,1310,983,1274,957"/>
+<area shape="rect" id="Node000013" href="$class_password_display_panel.html#ad58c050737049fabcc9b8004df7bc038" title="Emitted when a field&#39;s copy button is clicked." alt="" coords="1420,1084,1587,1129"/>
+<area shape="poly" id="edge15_Node000007_Node000013" title=" " alt="" coords="1312,950,1346,971,1364,997,1370,1022,1376,1046,1383,1058,1394,1070,1409,1082,1404,1082,1390,1074,1379,1061,1372,1048,1365,1023,1359,999,1342,975,1312,955"/>
+<area shape="poly" id="edge16_Node000007_Node000014" title=" " alt="" coords="1280,906,1391,861,1414,855,1409,858,1393,866,1283,911"/>
+<area shape="rect" id="Node000017" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="1412,704,1596,732"/>
+<area shape="poly" id="edge19_Node000007_Node000017" title=" " alt="" coords="1253,907,1315,854,1390,792,1470,739,1466,743,1394,796,1318,858,1257,911"/>
+<area shape="rect" id="Node000018" href="$class_q_push_button_as_q_r_code.html#a8b9e33d9c6a605b6071267d0f5bd3c00" title="Construct a QPushButtonAsQRCode with an optional initial text." alt="" coords="1413,1015,1594,1059"/>
+<area shape="poly" id="edge20_Node000007_Node000018" title=" " alt="" coords="1300,952,1345,971,1369,986,1393,1000,1410,1008,1405,1009,1391,1005,1367,990,1343,975,1301,957"/>
+<area shape="rect" id="Node000019" href="$class_q_push_button_with_clipboard.html#a9fcd74d855d552598d1ebf4910f53666" title="Construct a QPushButtonWithClipboard with an optional initial text." alt="" coords="1401,1292,1606,1337"/>
+<area shape="poly" id="edge22_Node000007_Node000019" title=" " alt="" coords="1275,952,1314,979,1346,1016,1363,1053,1370,1088,1369,1121,1365,1153,1361,1184,1363,1215,1372,1246,1394,1278,1397,1282,1391,1281,1390,1281,1368,1248,1358,1216,1356,1184,1359,1152,1363,1121,1364,1088,1358,1054,1342,1018,1311,983,1275,957"/>
+<area shape="rect" id="Node000020" href="$class_password_display_panel.html#a064002137dbd9f257e05d5571f0b9ada" title="Emitted when a field&#39;s QR button is clicked." alt="" coords="1420,876,1587,921"/>
+<area shape="poly" id="edge24_Node000007_Node000020" title=" " alt="" coords="1311,919,1407,909,1402,911,1313,924"/>
+<area shape="rect" id="Node000009" href="$class_q_push_button_as_q_r_code.html#a131b43ae67e83063e9ebb8227c161bdc" title="Connected to QPushButton::clicked(bool); re&#45;emits the overload carrying the stored text so receivers ..." alt="" coords="1680,945,1854,990"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1590,974,1667,976,1662,977,1592,979"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="1677,960,1607,961,1605,956,1682,958"/>
+<area shape="rect" id="Node000011" href="$class_q_push_button_with_clipboard.html#a602f1fd427f6dc9d823bae27f0f50a02" title="Connected to QPushButton::clicked(bool); shows the pushed icon, arms the revert timer and re&#45;emits cl..." alt="" coords="1668,1253,1866,1298"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1602,1263,1655,1271,1650,1272,1603,1268"/>
+<area shape="rect" id="Node000012" href="$class_q_push_button_with_clipboard.html#a54c897f5d3d52aafb69bf34f64c2d037" title="Restores the default copy icon; fired by a single&#45;shot timer 500 ms after a click." alt="" coords="1933,1224,2130,1269"/>
+<area shape="poly" id="edge14_Node000010_Node000012" title=" " alt="" coords="1602,1240,1663,1238,1871,1238,1920,1241,1915,1243,1871,1244,1663,1244,1604,1245"/>
+<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="1665,1256,1618,1252,1617,1247,1670,1255"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1865,1262,1920,1258,1915,1260,1867,1267"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="1586,808,1671,790,1666,793,1589,812"/>
+<area shape="rect" id="Node000016" href="$class_file_content.html#a91dfee0a7472e06dad305a66d8025460" title="Whether a field name names a secret: one of secrets occurs in it as whole words, compared case&#45;insens..." alt="" coords="1919,755,2144,783"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="1850,766,1906,768,1901,770,1852,772"/>
+<area shape="poly" id="edge21_Node000018_Node000009" title=" " alt="" coords="1590,1012,1668,993,1663,996,1593,1016"/>
+<area shape="poly" id="edge23_Node000019_Node000011" title=" " alt="" coords="1606,1297,1655,1292,1650,1293,1608,1302"/>
+<area shape="rect" id="Node000022" href="$class_secret_line_edit.html#a2edc83d685d05c5f94e1d792e03eedd5" title="Selected text was copied out of the line edit." alt="" coords="1421,355,1586,383"/>
+<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="1310,411,1428,385,1424,388,1313,416"/>
+<area shape="rect" id="Node000036" href="$class_q_push_button_show_password.html#a1e81689266a6cde3a115466da1aee783" title="Construct a show&#45;password button linked to the given QLineEdit." alt="" coords="1399,145,1608,190"/>
+<area shape="poly" id="edge56_Node000021_Node000036" title=" " alt="" coords="1251,409,1470,199,1466,203,1255,412"/>
+<area shape="rect" id="Node000038" href="$class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c" title="Constructs the line edit." alt="" coords="1396,419,1611,447"/>
+<area shape="poly" id="edge58_Node000021_Node000038" title=" " alt="" coords="1311,431,1383,432,1378,434,1313,435"/>
+<area shape="poly" id="edge59_Node000021_Node000039" title=" " alt="" coords="1311,452,1408,478,1403,480,1313,457"/>
+<area shape="rect" id="Node000023" href="$class_secret_line_edit.html#a6e29923734219602f135750ef4b0ecc4" title="Shows createSecretContextMenu()." alt="" coords="1663,176,1871,221"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="1517,353,1578,299,1618,266,1662,237,1689,226,1685,229,1665,242,1621,271,1581,303,1521,357"/>
+<area shape="rect" id="Node000025" href="$class_secret_line_edit.html#ae2aa8733d9f5647aa7d9af0ed481e393" title="Puts the selection on the clipboard or in the primary selection as secret&#45;marked MIME data and emits ..." alt="" coords="2469,482,2683,510"/>
+<area shape="poly" id="edge39_Node000022_Node000025" title=" " alt="" coords="1533,381,1575,395,1617,418,1633,436,1641,455,1648,472,1665,487,1721,514,1779,535,1840,552,1901,564,2027,577,2150,576,2267,566,2371,549,2459,530,2528,514,2523,516,2460,536,2372,555,2267,571,2150,581,2026,582,1901,570,1838,557,1777,541,1718,519,1662,491,1644,475,1636,457,1629,439,1614,422,1573,400,1534,386"/>
+<area shape="rect" id="Node000027" href="$class_secret_line_edit.html#a3707e8c2e63b6d31f2400e7a04ecef1a" title="Copies the selection through copySelection() and then deletes it. Does nothing when read&#45;only or with..." alt="" coords="2206,302,2408,330"/>
+<area shape="poly" id="edge40_Node000022_Node000027" title=" " alt="" coords="1537,352,1596,331,1663,314,1804,298,1946,293,2079,295,2192,304,2187,305,2079,301,1946,298,1804,303,1664,320,1597,336,1540,357"/>
+<area shape="rect" id="Node000028" href="$class_secret_line_edit.html#ad39e7fa39594b1b6e99e28844943f274" title="Pastes the clipboard or the primary selection with its line breaks removed, as one undoable edit...." alt="" coords="2201,184,2412,212"/>
+<area shape="poly" id="edge53_Node000022_Node000028" title=" " alt="" coords="1511,353,1580,249,1624,195,1644,174,1662,161,1701,145,1740,132,1823,117,1907,113,1990,118,2069,129,2141,144,2255,178,2250,180,2140,149,2068,134,1989,123,1907,118,1823,122,1742,137,1702,150,1665,166,1647,178,1628,198,1584,253,1516,356"/>
+<area shape="rect" id="Node000029" href="$class_secret_line_edit.html#aba684a353cbd69ebd8608ef056b058c6" title="Ends the current undo step, so that the next edit starts its own, as QLineEdit::paste() does around a..." alt="" coords="2481,87,2671,131"/>
+<area shape="poly" id="edge48_Node000022_Node000029" title=" " alt="" coords="1513,353,1613,201,1625,177,1632,155,1642,136,1662,119,1691,105,1727,94,1814,79,1919,71,2035,69,2269,78,2468,96,2463,98,2269,84,2035,75,1920,76,1815,84,1728,99,1693,110,1665,123,1646,139,1637,157,1630,179,1618,204,1517,356"/>
+<area shape="rect" id="Node000032" href="$class_secret_line_edit.html#af663c468b888e7e1c81f116cba75fab5" title="Ctrl+C copies with the hints, Ctrl+X as well before it deletes; after any other key the primary selec..." alt="" coords="1941,416,2122,461"/>
+<area shape="poly" id="edge41_Node000022_Node000032" title=" " alt="" coords="1586,377,1928,423,1924,426,1587,382"/>
+<area shape="rect" id="Node000033" href="$class_secret_line_edit.html#a5f82bf213b8d3162b9593ea02bed0646" title="Fills the X11 primary selection with the marked selection, on platforms that have one; called after a..." alt="" coords="2192,359,2421,387"/>
+<area shape="poly" id="edge54_Node000022_Node000033" title=" " alt="" coords="1586,353,1697,339,1836,327,1990,323,2068,325,2144,332,2196,340,2246,354,2241,355,2194,346,2144,337,2068,330,1990,328,1837,332,1698,344,1588,358"/>
+<area shape="rect" id="Node000034" href="$class_secret_line_edit.html#a386b60705220dff0bcd807ebb1589b24" title="Runs a base&#45;class event handler so that it cannot fill the primary selection with plain text: in a re..." alt="" coords="2205,413,2408,458"/>
+<area shape="poly" id="edge55_Node000022_Node000034" title=" " alt="" coords="1544,381,1664,418,1797,453,1902,474,1953,479,2008,480,2144,470,2210,461,2205,463,2144,476,2008,486,1953,484,1901,479,1795,458,1663,424,1545,386"/>
+<area shape="rect" id="Node000035" href="$class_secret_line_edit.html#a242041f66b392847e4963c5e70451977" title="Fills the primary selection with the marked selection on a left&#45;button release, instead of QLineEdit&#39;..." alt="" coords="1922,347,2140,391"/>
+<area shape="poly" id="edge49_Node000022_Node000035" title=" " alt="" coords="1586,366,1909,368,1905,370,1587,372"/>
+<area shape="rect" id="Node000024" href="$class_secret_line_edit.html#a4bd5b8640f8be96ed3e794bd936022f3" title="The standard context menu, with Copy and Cut going through the secret copy." alt="" coords="1929,176,2134,221"/>
+<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="1870,196,1916,197,1911,199,1872,201"/>
+<area shape="poly" id="edge29_Node000024_Node000025" title=" " alt="" coords="2133,212,2298,245,2371,265,2423,288,2471,329,2512,378,2543,427,2565,469,2559,468,2538,429,2507,381,2468,333,2420,293,2370,270,2296,250,2134,217"/>
+<area shape="poly" id="edge33_Node000024_Node000027" title=" " alt="" coords="2102,219,2145,237,2170,254,2193,271,2248,296,2243,297,2191,275,2166,259,2143,242,2103,224"/>
+<area shape="poly" id="edge35_Node000024_Node000028" title=" " alt="" coords="2133,196,2188,197,2183,199,2135,201"/>
+<area shape="poly" id="edge32_Node000025_Node000022" title=" " alt="" coords="2495,511,2337,542,2234,554,2122,560,2004,557,1886,543,1827,531,1770,514,1715,493,1662,467,1644,451,1636,433,1629,415,1614,398,1601,389,1600,383,1617,394,1633,412,1641,431,1648,448,1665,463,1717,488,1772,509,1829,526,1887,538,2005,552,2122,555,2233,548,2336,536,2500,509"/>
+<area shape="rect" id="Node000026" href="$clipboardmanager_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="2738,548,2922,576"/>
+<area shape="poly" id="edge30_Node000025_Node000026" title=" " alt="" coords="2631,507,2762,544,2757,545,2632,513"/>
+<area shape="poly" id="edge31_Node000026_Node000026" title=" " alt="" coords="2786,547,2780,540,2785,530,2802,524,2830,522,2860,524,2877,533,2872,533,2858,530,2830,527,2803,529,2789,534,2785,539,2792,548"/>
+<area shape="poly" id="edge34_Node000027_Node000025" title=" " alt="" coords="2379,327,2423,345,2464,373,2501,406,2557,470,2552,469,2497,410,2460,378,2420,350,2380,333"/>
+<area shape="poly" id="edge36_Node000028_Node000029" title=" " alt="" coords="2350,182,2495,135,2490,138,2352,186"/>
+<area shape="rect" id="Node000030" href="$class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d" title="text with every line break (see isLineBreak()) removed: what a one&#45;line field keeps of a paste." alt="" coords="2477,176,2675,221"/>
+<area shape="poly" id="edge37_Node000028_Node000030" title=" " alt="" coords="2412,196,2464,197,2459,199,2414,201"/>
+<area shape="rect" id="Node000031" href="$class_secret_line_edit.html#aaffec2fbdc78aea02c002f3dee79736a" title="Whether ch breaks a line: LF, CR, NEL (U+0085), or the Unicode line and paragraph separators (U+2028,..." alt="" coords="2731,184,2929,212"/>
+<area shape="poly" id="edge38_Node000030_Node000031" title=" " alt="" coords="2675,196,2718,197,2713,199,2676,201"/>
+<area shape="poly" id="edge42_Node000032_Node000025" title=" " alt="" coords="2121,456,2192,468,2327,481,2456,491,2451,493,2327,487,2192,473,2123,461"/>
+<area shape="poly" id="edge43_Node000032_Node000027" title=" " alt="" coords="2120,414,2142,401,2157,388,2166,374,2175,360,2190,345,2219,334,2215,337,2194,350,2179,363,2170,377,2161,391,2146,406,2123,418"/>
+<area shape="poly" id="edge44_Node000032_Node000028" title=" " alt="" coords="2120,417,2142,402,2154,388,2162,376,2168,349,2174,320,2190,289,2227,249,2271,219,2267,223,2231,253,2194,292,2179,322,2173,350,2166,378,2159,392,2146,406,2123,421"/>
+<area shape="poly" id="edge45_Node000032_Node000033" title=" " alt="" coords="2121,415,2233,390,2228,392,2123,419"/>
+<area shape="poly" id="edge47_Node000032_Node000034" title=" " alt="" coords="2121,435,2192,436,2187,438,2123,440"/>
+<area shape="poly" id="edge46_Node000033_Node000025" title=" " alt="" coords="2381,385,2422,399,2490,434,2546,473,2541,473,2487,438,2420,403,2381,390"/>
+<area shape="poly" id="edge50_Node000035_Node000028" title=" " alt="" coords="2067,344,2271,219,2267,223,2070,348"/>
+<area shape="poly" id="edge51_Node000035_Node000033" title=" " alt="" coords="2140,368,2179,370,2174,372,2142,373"/>
+<area shape="poly" id="edge52_Node000035_Node000034" title=" " alt="" coords="2126,389,2200,409,2194,410,2127,395"/>
 <area shape="rect" id="Node000037" href="$class_q_push_button_show_password.html#a9d72b7458ae773ca37d7aee0e8167122" title="Connected to QPushButton::clicked(bool); flips the echo mode of line and updates icon,..." alt="" coords="1666,5,1868,50"/>
-<area shape="poly" id="edge57_Node000036_Node000037" title=" " alt="" coords="1534,149,1592,108,1662,67,1691,55,1687,58,1665,71,1595,113,1537,152"/>
-<area shape="rect" id="Node000042" href="$class_secret_text_browser.html#aba8acf3c7011b08b484a59e0d1762e1a" title="The selection as secret&#45;marked plain text." alt="" coords="1392,601,1615,646"/>
-<area shape="poly" id="edge62_Node000041_Node000042" title=" " alt="" coords="1303,629,1378,631,1374,634,1305,634"/>
-<area shape="poly" id="edge63_Node000042_Node000026" title=" " alt="" coords="1615,621,2030,621,2308,621,2436,613,2563,594,2676,570,2768,549,2763,551,2677,576,2564,600,2437,619,2308,626,2030,626,1616,626"/>
-<area shape="poly" id="edge64_Node000042_Node000041" title=" " alt="" coords="1389,616,1320,618,1318,613,1394,614"/>
+<area shape="poly" id="edge57_Node000036_Node000037" title=" " alt="" coords="1536,143,1594,105,1662,67,1692,55,1688,58,1665,71,1597,110,1540,147"/>
+<area shape="rect" id="Node000042" href="$class_secret_text_browser.html#aba8acf3c7011b08b484a59e0d1762e1a" title="The selection as secret&#45;marked plain text." alt="" coords="1392,585,1615,630"/>
+<area shape="poly" id="edge62_Node000041_Node000042" title=" " alt="" coords="1303,613,1378,615,1374,618,1305,618"/>
+<area shape="poly" id="edge63_Node000042_Node000026" title=" " alt="" coords="1615,610,1809,617,2030,621,2308,621,2425,617,2541,606,2741,578,2736,580,2542,611,2425,622,2308,626,2030,626,1809,623,1616,616"/>
+<area shape="poly" id="edge64_Node000042_Node000041" title=" " alt="" coords="1389,600,1320,602,1318,597,1394,598"/>
 <area shape="rect" id="Node000043" href="$class_secret_text_browser.html#a1449b6999d563e78a670847cd6a1f6ef" title="Constructs the browser." alt="" coords="1692,661,1842,706"/>
-<area shape="poly" id="edge65_Node000042_Node000043" title=" " alt="" coords="1604,644,1679,662,1674,664,1605,649"/>
-<area shape="rect" id="Node000045" href="$class_password_display_panel.html#af9fbeff3680f3e39dd393d9827c748ee" title="Give a field frame its rounded border in the current QPalette::Mid colour. The colour is baked into t..." alt="" coords="1420,1479,1587,1523"/>
-<area shape="poly" id="edge67_Node000044_Node000045" title=" " alt="" coords="1269,1402,1327,1433,1393,1464,1412,1473,1406,1473,1391,1469,1325,1438,1269,1408"/>
-<area shape="poly" id="edge72_Node000046_Node000006" title=" " alt="" coords="685,1246,924,899,922,904,690,1249"/>
-<area shape="poly" id="edge75_Node000046_Node000013" title=" " alt="" coords="753,1262,1407,1215,1403,1219,755,1267"/>
-<area shape="poly" id="edge73_Node000046_Node000040" title=" " alt="" coords="693,1246,753,1194,790,1166,830,1141,906,1105,985,1073,1132,1029,1128,1033,987,1078,908,1109,833,1146,793,1171,756,1198,697,1250"/>
-<area shape="poly" id="edge76_Node000046_Node000044" title=" " alt="" coords="709,1290,767,1319,832,1344,909,1361,987,1372,1132,1382,1127,1384,987,1377,908,1366,831,1349,765,1324,710,1296"/>
-<area shape="rect" id="Node000047" href="$class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6" title="Emitted when the copy button is activated." alt="" coords="1113,1308,1344,1336"/>
-<area shape="poly" id="edge74_Node000046_Node000047" title=" " alt="" coords="753,1271,899,1279,1065,1293,1137,1305,1132,1306,1064,1298,899,1284,755,1276"/>
-<area shape="rect" id="Node000048" href="$class_totp.html#ab9e119555f7a25be2c61a8780e041365" title="One sentence for the user on why a configuration gives no code." alt="" coords="892,1307,1004,1335"/>
-<area shape="poly" id="edge77_Node000046_Node000048" title=" " alt="" coords="754,1283,879,1307,874,1309,755,1288"/>
-<area shape="rect" id="Node000049" href="$class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd" title="Build a live OTP code display and start its refresh timer." alt="" coords="831,1155,1065,1183"/>
-<area shape="poly" id="edge78_Node000046_Node000049" title=" " alt="" coords="718,1245,830,1198,876,1186,872,1189,832,1204,721,1250"/>
-<area shape="rect" id="Node000056" href="$class_totp.html#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string." alt="" coords="1721,1644,1813,1672"/>
-<area shape="poly" id="edge89_Node000046_Node000056" title=" " alt="" coords="698,1290,759,1337,833,1384,895,1413,946,1430,999,1444,1066,1465,1228,1529,1299,1555,1393,1584,1562,1622,1708,1649,1703,1650,1561,1628,1391,1589,1298,1560,1226,1534,1064,1470,997,1449,945,1435,893,1418,830,1389,756,1341,698,1296"/>
-<area shape="poly" id="edge79_Node000049_Node000010" title=" " alt="" coords="990,1152,1048,1134,1112,1118,1256,1094,1392,1080,1387,1082,1257,1099,1113,1124,1049,1140,993,1157"/>
-<area shape="poly" id="edge82_Node000049_Node000019" title=" " alt="" coords="1026,1152,1112,1141,1254,1135,1388,1136,1383,1138,1254,1140,1113,1146,1028,1157"/>
-<area shape="poly" id="edge80_Node000049_Node000047" title=" " alt="" coords="971,1181,1066,1250,1089,1274,1099,1284,1114,1293,1131,1302,1126,1304,1111,1298,1096,1288,1086,1277,1063,1254,971,1186"/>
-<area shape="rect" id="Node000050" href="$class_totp.html#a84866e76305152267035b917e7d84bdb" title="Current wall&#45;clock time." alt="" coords="1146,1155,1311,1183"/>
-<area shape="poly" id="edge81_Node000049_Node000050" title=" " alt="" coords="1064,1167,1133,1168,1128,1170,1066,1171"/>
-<area shape="rect" id="Node000051" href="$class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec" title="Recompute the code and countdown for an explicit point in time." alt="" coords="1140,1256,1317,1284"/>
-<area shape="poly" id="edge83_Node000049_Node000051" title=" " alt="" coords="988,1181,1176,1250,1171,1252,989,1186"/>
-<area shape="rect" id="Node000052" href="$class_totp.html#a47445f93d87ea47de27ab8045914686d" title="Time&#45;step counter for a point in time." alt="" coords="1714,1342,1820,1370"/>
-<area shape="poly" id="edge84_Node000051_Node000052" title=" " alt="" coords="1317,1266,1458,1271,1538,1279,1616,1293,1674,1311,1727,1335,1722,1335,1672,1316,1615,1298,1537,1284,1458,1276,1318,1271"/>
-<area shape="rect" id="Node000053" href="$class_totp.html#ab8caa914c714a205c21919b3ac09cf08" title="Generate the code for a given point in time." alt="" coords="1446,1427,1561,1455"/>
-<area shape="poly" id="edge85_Node000051_Node000053" title=" " alt="" coords="1317,1279,1346,1295,1359,1310,1366,1325,1371,1356,1375,1386,1382,1400,1394,1414,1412,1425,1434,1435,1429,1436,1409,1430,1390,1418,1377,1403,1370,1388,1365,1357,1361,1327,1354,1313,1342,1299,1318,1284"/>
-<area shape="rect" id="Node000054" href="$class_totp.html#af449a258178c0fdc0f744be9bf2d6103" title="Seconds until the code for unixTime expires." alt="" coords="1414,1307,1593,1335"/>
-<area shape="poly" id="edge87_Node000051_Node000054" title=" " alt="" coords="1307,1282,1412,1303,1407,1305,1308,1287"/>
-<area shape="rect" id="Node000055" href="$class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8" title="Update the stored text used for copying." alt="" coords="1405,1359,1602,1403"/>
-<area shape="poly" id="edge88_Node000051_Node000055" title=" " alt="" coords="1316,1282,1345,1295,1361,1307,1370,1320,1379,1332,1394,1344,1404,1351,1399,1352,1390,1349,1375,1336,1366,1323,1357,1311,1343,1299,1316,1287"/>
-<area shape="poly" id="edge86_Node000053_Node000052" title=" " alt="" coords="1560,1427,1615,1413,1722,1375,1718,1377,1616,1418,1562,1432"/>
-<area shape="rect" id="Node000057" href="$class_base32.html#aab3feed3644b481794685b42410cf1e1" title="Decode strict RFC 4648 base32 data." alt="" coords="1969,1670,2094,1698"/>
-<area shape="poly" id="edge90_Node000056_Node000057" title=" " alt="" coords="1813,1660,1957,1676,1951,1677,1814,1665"/>
-<area shape="rect" id="Node000058" href="$class_base32.html#a251fbe9bbf3a490d0660690182de2fcb" title="Make human&#45;entered base32 text decodable." alt="" coords="1951,1618,2112,1646"/>
-<area shape="poly" id="edge91_Node000056_Node000058" title=" " alt="" coords="1813,1651,1938,1641,1933,1642,1814,1656"/>
-<area shape="rect" id="Node000059" href="$class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters." alt="" coords="2230,1618,2383,1646"/>
-<area shape="poly" id="edge92_Node000058_Node000059" title=" " alt="" coords="2112,1629,2217,1631,2212,1632,2113,1634"/>
-<area shape="poly" id="edge96_Node000062_Node000060" title=" " alt="" coords="733,1494,784,1506,1161,1605,1156,1608,783,1512,734,1499"/>
-<area shape="rect" id="Node000063" href="$filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9" title="Whether a first line is written as an OTP configuration that otpConfigOf() can read: a bare otpauth U..." alt="" coords="888,1878,1008,1906"/>
-<area shape="poly" id="edge97_Node000062_Node000063" title=" " alt="" coords="767,1494,785,1507,810,1542,821,1576,823,1610,819,1644,814,1678,812,1714,817,1751,834,1790,850,1813,869,1834,912,1869,906,1869,865,1838,845,1817,829,1793,812,1752,807,1714,809,1678,814,1643,818,1610,816,1577,805,1545,781,1511,768,1499"/>
-<area shape="poly" id="edge108_Node000063_Node000061" title=" " alt="" coords="993,1875,1029,1858,1063,1834,1079,1812,1087,1791,1094,1770,1111,1746,1144,1718,1183,1697,1179,1700,1147,1722,1115,1749,1099,1772,1092,1793,1084,1815,1067,1838,1032,1862,996,1880"/>
-<area shape="poly" id="edge103_Node000063_Node000063" title=" " alt="" coords="901,1877,893,1869,899,1859,918,1853,948,1851,980,1854,999,1862,994,1863,979,1859,948,1856,919,1858,903,1863,899,1869,906,1878"/>
-<area shape="rect" id="Node000064" href="$filecontent_8cpp.html#a5bdca692129830dd78bdf3b23c6a6909" title="The otpauth URI a line is written as: a bare otpauth:// line, or the split otpauth: //...." alt="" coords="1175,1952,1282,1980"/>
-<area shape="poly" id="edge98_Node000063_Node000064" title=" " alt="" coords="1003,1903,1162,1948,1157,1949,1003,1909"/>
-<area shape="rect" id="Node000065" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="1466,1952,1541,1980"/>
-<area shape="poly" id="edge109_Node000063_Node000065" title=" " alt="" coords="1008,1888,1162,1893,1253,1901,1345,1914,1401,1928,1454,1947,1449,1947,1399,1933,1343,1920,1253,1906,1161,1899,1009,1894"/>
-<area shape="rect" id="Node000067" href="$filecontent_8cpp.html#a6159791af25b399e08098b04e888f7f0" title="Whether value is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; whit..." alt="" coords="1172,1783,1284,1811"/>
-<area shape="poly" id="edge104_Node000063_Node000067" title=" " alt="" coords="990,1875,1173,1815,1168,1817,993,1880"/>
-<area shape="poly" id="edge99_Node000064_Node000064" title=" " alt="" coords="1181,1951,1174,1944,1180,1934,1198,1928,1228,1926,1260,1928,1279,1937,1274,1937,1259,1934,1228,1931,1199,1933,1183,1938,1179,1943,1187,1953"/>
-<area shape="poly" id="edge100_Node000064_Node000065" title=" " alt="" coords="1282,1964,1454,1966,1449,1967,1283,1969"/>
-<area shape="poly" id="edge101_Node000065_Node000065" title=" " alt="" coords="1463,1954,1452,1946,1456,1935,1473,1928,1504,1926,1544,1931,1554,1937,1555,1946,1550,1944,1549,1940,1542,1936,1504,1931,1474,1933,1460,1939,1457,1945,1469,1955"/>
-<area shape="rect" id="Node000066" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="1671,1952,1863,1980"/>
-<area shape="poly" id="edge102_Node000065_Node000066" title=" " alt="" coords="1541,1964,1658,1966,1653,1967,1542,1969"/>
-<area shape="poly" id="edge105_Node000067_Node000067" title=" " alt="" coords="1181,1782,1174,1774,1180,1764,1198,1759,1228,1757,1260,1759,1279,1768,1274,1768,1259,1764,1228,1762,1199,1764,1183,1769,1179,1774,1187,1783"/>
-<area shape="rect" id="Node000068" href="$class_totp.html#af023ce3487d15c2e290419ddd1ea0699" title="Convenience validity test, for UI feedback." alt="" coords="1454,1736,1553,1764"/>
-<area shape="poly" id="edge106_Node000067_Node000068" title=" " alt="" coords="1284,1785,1442,1760,1437,1762,1286,1790"/>
-<area shape="poly" id="edge107_Node000068_Node000056" title=" " alt="" coords="1545,1733,1713,1677,1708,1679,1547,1738"/>
-<area shape="rect" id="Node000072" href="$class_util.html#a57fa6e612f022589f609d8b463111a48" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="589,2080,752,2108"/>
-<area shape="poly" id="edge113_Node000071_Node000072" title=" " alt="" coords="476,1874,496,1882,512,1894,528,1915,536,1936,537,1978,538,2020,545,2040,560,2060,578,2075,572,2075,556,2064,540,2043,533,2021,532,1979,531,1937,524,1917,508,1898,493,1887,477,1879"/>
-<area shape="rect" id="Node000073" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="612,1776,730,1804"/>
-<area shape="poly" id="edge114_Node000071_Node000073" title=" " alt="" coords="461,1852,509,1840,616,1808,612,1811,511,1845,464,1857"/>
-<area shape="rect" id="Node000075" href="$class_util.html#a3495d95f8ec81a1be6d71efac07ca97e" title="text with every block break other than a line feed (isOtherBlockBreak()) shown as a space,..." alt="" coords="562,2132,780,2160"/>
-<area shape="poly" id="edge117_Node000071_Node000075" title=" " alt="" coords="477,1873,496,1882,512,1894,532,1922,540,1951,540,1979,537,2008,533,2036,533,2064,541,2091,560,2118,564,2123,559,2123,556,2121,536,2093,528,2065,528,2036,531,2007,535,1979,535,1951,527,1924,508,1898,493,1886,478,1879"/>
-<area shape="poly" id="edge115_Node000073_Node000017" title=" " alt="" coords="729,1786,757,1777,782,1762,796,1742,803,1722,803,1680,802,1658,804,1637,812,1617,830,1598,872,1575,931,1560,1003,1550,1083,1544,1249,1544,1399,1552,1394,1554,1249,1549,1083,1550,1004,1555,932,1565,874,1580,833,1602,817,1620,809,1639,807,1659,808,1680,808,1723,801,1745,785,1766,760,1782,731,1790"/>
-<area shape="rect" id="Node000074" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="875,1752,1021,1780"/>
-<area shape="poly" id="edge116_Node000073_Node000074" title=" " alt="" coords="729,1783,862,1773,857,1775,731,1788"/>
-<area shape="rect" id="Node000076" href="$class_util.html#ac44a8c32a9ac0fbb9d471dd115359064" title="Whether Qt&#39;s text document starts a new block at c, besides at a line feed: a carriage return,..." alt="" coords="861,2132,1035,2160"/>
-<area shape="poly" id="edge118_Node000075_Node000076" title=" " alt="" coords="780,2144,848,2146,843,2147,781,2149"/>
-<area shape="poly" id="edge122_Node000079_Node000062" title=" " alt="" coords="428,1579,487,1542,557,1507,583,1499,579,1503,559,1511,489,1546,431,1583"/>
-<area shape="rect" id="Node000082" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1127,2216,1330,2244"/>
-<area shape="poly" id="edge126_Node000081_Node000082" title=" " alt="" coords="1025,2265,1138,2247,1132,2248,1026,2271"/>
-<area shape="rect" id="Node000084" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="1161,2268,1296,2313"/>
-<area shape="poly" id="edge128_Node000081_Node000084" title=" " alt="" coords="1025,2282,1148,2288,1143,2288,1026,2287"/>
-<area shape="rect" id="Node000083" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1392,2216,1615,2244"/>
-<area shape="poly" id="edge127_Node000082_Node000083" title=" " alt="" coords="1330,2228,1379,2230,1374,2231,1330,2233"/>
-<area shape="rect" id="Node000085" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="1406,2268,1601,2313"/>
-<area shape="poly" id="edge129_Node000084_Node000085" title=" " alt="" coords="1296,2288,1394,2290,1388,2291,1297,2293"/>
-<area shape="rect" id="Node000086" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="1401,2337,1606,2382"/>
-<area shape="poly" id="edge130_Node000084_Node000086" title=" " alt="" coords="1297,2305,1400,2333,1395,2333,1296,2310"/>
-<area shape="poly" id="edge135_Node000087_Node000060" title=" " alt="" coords="465,1822,611,1832,788,1837,875,1834,953,1826,1018,1812,1043,1802,1063,1790,1077,1774,1085,1758,1087,1723,1089,1686,1096,1667,1111,1650,1118,1648,1122,1644,1115,1654,1101,1670,1094,1687,1092,1723,1090,1760,1082,1777,1066,1794,1046,1806,1020,1817,954,1831,875,1840,788,1843,610,1838,467,1827"/>
-<area shape="poly" id="edge137_Node000087_Node000063" title=" " alt="" coords="462,1829,511,1841,535,1850,559,1857,642,1871,726,1880,875,1890,870,1892,726,1885,641,1876,557,1862,533,1855,509,1846,463,1834"/>
-<area shape="poly" id="edge134_Node000087_Node000064" title=" " alt="" coords="465,1824,511,1841,527,1854,536,1867,545,1879,559,1889,609,1907,676,1921,843,1942,1018,1955,1162,1964,1157,1965,1018,1961,842,1948,675,1926,607,1912,557,1894,541,1883,532,1870,523,1857,509,1846,466,1829"/>
-<area shape="poly" id="edge143_Node000087_Node000065" title=" " alt="" coords="465,1819,491,1827,512,1842,528,1863,536,1886,535,1931,534,1952,536,1973,543,1993,560,2012,590,2031,629,2045,676,2054,730,2059,854,2060,989,2050,1127,2033,1256,2013,1454,1977,1449,1978,1257,2018,1128,2039,990,2056,854,2066,730,2065,675,2059,627,2050,587,2036,556,2016,539,1996,530,1975,529,1952,530,1930,530,1887,524,1866,508,1846,488,1832,466,1824"/>
-<area shape="rect" id="Node000088" href="$filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06" title="What follows a line&#39;s first colon; empty without one." alt="" coords="612,1620,729,1648"/>
-<area shape="poly" id="edge132_Node000087_Node000088" title=" " alt="" coords="405,1801,464,1732,507,1692,557,1659,600,1644,596,1647,559,1663,511,1697,468,1736,410,1804"/>
-<area shape="rect" id="Node000089" href="$class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19" title="Assemble a parsed entry; only parse() calls this." alt="" coords="582,1672,759,1700"/>
-<area shape="poly" id="edge136_Node000087_Node000089" title=" " alt="" coords="413,1801,475,1756,515,1732,557,1711,582,1703,577,1707,559,1715,517,1736,477,1761,417,1805"/>
-<area shape="rect" id="Node000090" href="$filecontent_8cpp.html#a675927185d9a8c3fb4d0310af8c2198a" title="Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (File..." alt="" coords="618,1544,723,1572"/>
-<area shape="poly" id="edge138_Node000087_Node000090" title=" " alt="" coords="404,1801,483,1680,527,1617,556,1583,578,1571,605,1564,601,1568,580,1576,560,1587,532,1620,488,1683,409,1804"/>
-<area shape="rect" id="Node000092" href="$filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da" title="The OTP configuration an OTP line holds: the URI for a bare otpauth:// line (bareOtpUriOf()),..." alt="" coords="899,2003,997,2031"/>
-<area shape="poly" id="edge144_Node000087_Node000092" title=" " alt="" coords="465,1820,490,1828,512,1842,525,1856,532,1872,536,1903,540,1932,547,1946,560,1959,583,1972,617,1983,703,1999,799,2008,886,2015,881,2016,799,2013,703,2004,615,1988,581,1977,556,1963,543,1949,535,1934,531,1903,527,1873,520,1859,508,1846,488,1833,467,1825"/>
-<area shape="rect" id="Node000093" href="$class_file_content.html#a41f00506abcd1629b156219f4acb0f1a" title="The password of an entry: its first line, without the carriage return of a CRLF line end." alt="" coords="574,1724,767,1752"/>
-<area shape="poly" id="edge147_Node000087_Node000093" title=" " alt="" coords="437,1800,557,1762,593,1755,588,1758,559,1768,440,1805"/>
-<area shape="poly" id="edge133_Node000088_Node000088" title=" " alt="" coords="624,1620,617,1612,623,1602,641,1596,671,1594,703,1596,722,1604,716,1606,702,1602,671,1599,642,1601,626,1606,622,1611,629,1620"/>
-<area shape="poly" id="edge139_Node000090_Node000090" title=" " alt="" coords="624,1544,617,1536,623,1526,641,1520,671,1518,703,1520,722,1528,716,1530,702,1526,671,1523,642,1525,626,1530,622,1535,629,1544"/>
-<area shape="rect" id="Node000091" href="$class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="866,1611,1030,1639"/>
-<area shape="poly" id="edge140_Node000090_Node000091" title=" " alt="" coords="723,1568,784,1582,876,1606,871,1608,783,1588,724,1573"/>
-<area shape="poly" id="edge141_Node000091_Node000060" title=" " alt="" coords="1030,1622,1121,1624,1116,1626,1032,1628"/>
-<area shape="poly" id="edge142_Node000091_Node000061" title=" " alt="" coords="1026,1637,1137,1659,1132,1660,1027,1642"/>
-<area shape="poly" id="edge145_Node000092_Node000064" title=" " alt="" coords="997,2006,1162,1978,1157,1980,998,2011"/>
-<area shape="poly" id="edge146_Node000092_Node000092" title=" " alt="" coords="901,2002,893,1994,899,1984,918,1979,948,1977,980,1979,999,1988,994,1988,979,1984,948,1982,919,1984,903,1989,899,1994,906,2003"/>
-<area shape="poly" id="edge149_Node000094_Node000095" title=" " alt="" coords="481,2380,511,2391,526,2400,536,2410,545,2419,559,2428,575,2437,570,2436,557,2433,542,2423,532,2414,523,2404,509,2395,481,2385"/>
-<area shape="rect" id="Node000098" href="$class_main_window.html#a37c3f03eee7961428579d2f3a9c77df5" title="Show Push and Pull only when Git is in use; enable them only while the interface is." alt="" coords="561,2304,780,2349"/>
-<area shape="poly" id="edge153_Node000097_Node000098" title=" " alt="" coords="487,2277,567,2299,562,2300,487,2283"/>
-<area shape="rect" id="Node000100" href="$class_main_window.html#a9211cb7acf62af3c66fec54ba813da4e" title="Refresh the OTP toolbar action from settings." alt="" coords="559,2235,782,2279"/>
-<area shape="poly" id="edge156_Node000097_Node000100" title=" " alt="" coords="500,2254,546,2256,541,2258,501,2260"/>
-<area shape="rect" id="Node000102" href="$class_main_window.html#a86ff9b9b01ed40f6040b68ed2777d824" title="Enable the profile box only when there is more than one profile, the interface is enabled and the bac..." alt="" coords="572,2373,770,2418"/>
-<area shape="poly" id="edge159_Node000097_Node000102" title=" " alt="" coords="477,2277,512,2296,528,2312,536,2329,544,2344,560,2359,568,2366,563,2365,556,2363,540,2347,531,2331,523,2316,508,2300,477,2282"/>
-<area shape="poly" id="edge155_Node000098_Node000081" title=" " alt="" coords="780,2306,858,2296,853,2297,781,2312"/>
-<area shape="rect" id="Node000099" href="$class_main_window.html#a1a3647880d3bf6d3e5d3584add2e8d49" title="Enable or disable the Push and Pull actions together." alt="" coords="835,2320,1061,2348"/>
-<area shape="poly" id="edge154_Node000098_Node000099" title=" " alt="" coords="781,2327,822,2330,817,2331,781,2332"/>
-<area shape="rect" id="Node000101" href="$class_qt_pass_settings.html#a4f2809fcff961ee1beecaa16951a6e4e" title="Check whether OTP support is enabled." alt="" coords="855,2216,1041,2244"/>
-<area shape="poly" id="edge157_Node000100_Node000101" title=" " alt="" coords="782,2244,843,2240,837,2241,783,2249"/>
-<area shape="poly" id="edge158_Node000101_Node000082" title=" " alt="" coords="1041,2228,1114,2230,1109,2231,1041,2233"/>
-<area shape="rect" id="Node000103" href="$class_qt_pass_settings.html#afeb532f63d4dfa060f2ca012de89b5d9" title="Whether no backend, the active one or one kept from before a switch, runs or waits for anything (Pass..." alt="" coords="842,2382,1054,2410"/>
-<area shape="poly" id="edge160_Node000102_Node000103" title=" " alt="" coords="770,2393,830,2396,824,2396,770,2398"/>
-<area shape="rect" id="Node000104" href="$class_pass_backend_factory.html#aa8ab517b87e5b6923eed8a963cca3706" title="Whether neither backend runs or waits for anything: after a switch of backend the previous one is kep..." alt="" coords="1152,2373,1304,2418"/>
-<area shape="poly" id="edge161_Node000103_Node000104" title=" " alt="" coords="1054,2393,1139,2396,1134,2396,1054,2398"/>
+<area shape="poly" id="edge65_Node000042_Node000043" title=" " alt="" coords="1583,628,1679,657,1674,658,1584,633"/>
+<area shape="rect" id="Node000045" href="$class_password_display_panel.html#af9fbeff3680f3e39dd393d9827c748ee" title="Give a field frame its rounded border in the current QPalette::Mid colour. The colour is baked into t..." alt="" coords="1420,1153,1587,1198"/>
+<area shape="poly" id="edge67_Node000044_Node000045" title=" " alt="" coords="1312,1070,1345,1087,1361,1100,1370,1114,1379,1126,1394,1139,1409,1149,1403,1149,1390,1143,1375,1130,1366,1117,1357,1104,1343,1091,1312,1076"/>
+<area shape="poly" id="edge72_Node000046_Node000006" title=" " alt="" coords="701,1119,741,1086,781,1046,795,1026,803,1007,812,989,830,971,853,958,849,962,833,975,817,992,808,1010,800,1028,785,1049,745,1090,705,1123"/>
+<area shape="poly" id="edge75_Node000046_Node000013" title=" " alt="" coords="753,1128,782,1112,797,1094,804,1074,812,1053,830,1035,876,1015,938,1000,1009,990,1085,985,1162,984,1234,989,1297,999,1345,1015,1362,1027,1371,1041,1379,1056,1394,1070,1409,1079,1403,1080,1390,1074,1375,1059,1367,1044,1358,1031,1343,1019,1296,1005,1234,995,1162,990,1085,990,1009,995,939,1005,878,1020,833,1039,816,1056,809,1075,802,1096,785,1116,756,1132"/>
+<area shape="poly" id="edge73_Node000046_Node000040" title=" " alt="" coords="754,1138,1131,1126,1127,1129,755,1143"/>
+<area shape="poly" id="edge76_Node000046_Node000044" title=" " alt="" coords="707,1119,764,1089,831,1065,908,1051,987,1043,1132,1044,1127,1046,987,1048,909,1056,832,1070,766,1094,711,1123"/>
+<area shape="rect" id="Node000047" href="$class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6" title="Emitted when the copy button is activated." alt="" coords="1113,1175,1344,1203"/>
+<area shape="poly" id="edge74_Node000046_Node000047" title=" " alt="" coords="754,1148,1100,1177,1095,1180,755,1153"/>
+<area shape="rect" id="Node000048" href="$class_totp.html#ab9e119555f7a25be2c61a8780e041365" title="One sentence for the user on why a configuration gives no code." alt="" coords="892,1079,1004,1107"/>
+<area shape="poly" id="edge77_Node000046_Node000048" title=" " alt="" coords="753,1126,879,1104,875,1107,756,1131"/>
+<area shape="rect" id="Node000049" href="$class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd" title="Build a live OTP code display and start its refresh timer." alt="" coords="831,1231,1065,1259"/>
+<area shape="poly" id="edge78_Node000046_Node000049" title=" " alt="" coords="719,1164,832,1210,877,1226,872,1227,830,1216,720,1169"/>
+<area shape="rect" id="Node000056" href="$class_totp.html#a6acbc69133a69635bd907e037a001fda" title="Parse an OTP configuration string." alt="" coords="1721,1610,1813,1638"/>
+<area shape="poly" id="edge89_Node000046_Node000056" title=" " alt="" coords="695,1164,755,1216,793,1244,833,1268,866,1282,897,1290,952,1296,1006,1306,1035,1318,1066,1338,1083,1357,1091,1378,1098,1397,1114,1415,1145,1431,1174,1439,1202,1440,1230,1438,1257,1436,1286,1438,1315,1447,1346,1466,1358,1478,1365,1492,1370,1519,1375,1545,1382,1557,1394,1568,1417,1580,1449,1590,1532,1605,1624,1615,1708,1621,1702,1622,1623,1620,1531,1611,1448,1596,1415,1585,1390,1572,1378,1560,1370,1547,1365,1520,1360,1494,1354,1481,1342,1470,1313,1452,1285,1443,1257,1441,1230,1443,1202,1445,1173,1444,1143,1436,1111,1419,1093,1400,1086,1380,1079,1360,1063,1342,1033,1322,1005,1311,951,1302,896,1296,865,1287,830,1273,790,1248,752,1221,695,1169"/>
+<area shape="poly" id="edge79_Node000049_Node000010" title=" " alt="" coords="1065,1242,1392,1244,1387,1246,1066,1248"/>
+<area shape="poly" id="edge82_Node000049_Node000019" title=" " alt="" coords="1018,1257,1066,1275,1081,1285,1090,1296,1099,1305,1114,1313,1182,1330,1252,1338,1322,1337,1388,1334,1383,1336,1322,1343,1252,1343,1181,1336,1112,1318,1096,1310,1086,1299,1077,1289,1063,1279,1019,1262"/>
+<area shape="poly" id="edge80_Node000049_Node000047" title=" " alt="" coords="1020,1228,1143,1205,1138,1208,1022,1233"/>
+<area shape="rect" id="Node000050" href="$class_totp.html#a84866e76305152267035b917e7d84bdb" title="Current wall&#45;clock time." alt="" coords="1146,1276,1311,1304"/>
+<area shape="poly" id="edge81_Node000049_Node000050" title=" " alt="" coords="1037,1257,1133,1274,1128,1275,1039,1262"/>
+<area shape="rect" id="Node000051" href="$class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec" title="Recompute the code and countdown for an explicit point in time." alt="" coords="1140,1378,1317,1406"/>
+<area shape="poly" id="edge83_Node000049_Node000051" title=" " alt="" coords="1032,1257,1066,1275,1084,1296,1091,1317,1098,1338,1114,1358,1134,1371,1129,1371,1111,1362,1093,1341,1086,1319,1079,1299,1063,1279,1032,1262"/>
+<area shape="rect" id="Node000052" href="$class_totp.html#a47445f93d87ea47de27ab8045914686d" title="Time&#45;step counter for a point in time." alt="" coords="1714,1470,1820,1498"/>
+<area shape="poly" id="edge84_Node000051_Node000052" title=" " alt="" coords="1317,1401,1458,1421,1616,1448,1702,1468,1697,1468,1615,1453,1457,1426,1318,1406"/>
+<area shape="rect" id="Node000053" href="$class_totp.html#ab8caa914c714a205c21919b3ac09cf08" title="Generate the code for a given point in time." alt="" coords="1446,1531,1561,1559"/>
+<area shape="poly" id="edge85_Node000051_Node000053" title=" " alt="" coords="1313,1403,1346,1422,1357,1434,1364,1446,1370,1471,1376,1495,1383,1507,1394,1518,1412,1528,1434,1538,1429,1539,1410,1533,1390,1522,1379,1510,1371,1497,1365,1473,1359,1448,1353,1437,1342,1426,1313,1409"/>
+<area shape="rect" id="Node000054" href="$class_totp.html#af449a258178c0fdc0f744be9bf2d6103" title="Seconds until the code for unixTime expires." alt="" coords="1414,1360,1593,1388"/>
+<area shape="poly" id="edge87_Node000051_Node000054" title=" " alt="" coords="1317,1384,1401,1380,1396,1382,1318,1389"/>
+<area shape="rect" id="Node000055" href="$class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8" title="Update the stored text used for copying." alt="" coords="1405,1463,1602,1507"/>
+<area shape="poly" id="edge88_Node000051_Node000055" title=" " alt="" coords="1286,1403,1345,1421,1393,1441,1428,1456,1423,1457,1391,1446,1343,1426,1287,1409"/>
+<area shape="poly" id="edge86_Node000053_Node000052" title=" " alt="" coords="1560,1530,1615,1517,1702,1499,1697,1501,1616,1522,1562,1535"/>
+<area shape="rect" id="Node000057" href="$class_base32.html#aab3feed3644b481794685b42410cf1e1" title="Decode strict RFC 4648 base32 data." alt="" coords="1969,1583,2094,1611"/>
+<area shape="poly" id="edge90_Node000056_Node000057" title=" " alt="" coords="1813,1616,1957,1604,1951,1605,1814,1622"/>
+<area shape="rect" id="Node000058" href="$class_base32.html#a251fbe9bbf3a490d0660690182de2fcb" title="Make human&#45;entered base32 text decodable." alt="" coords="1951,1635,2112,1663"/>
+<area shape="poly" id="edge91_Node000056_Node000058" title=" " alt="" coords="1813,1625,1938,1639,1933,1640,1814,1631"/>
+<area shape="rect" id="Node000059" href="$class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters." alt="" coords="2230,1635,2383,1663"/>
+<area shape="poly" id="edge92_Node000058_Node000059" title=" " alt="" coords="2112,1646,2217,1649,2212,1649,2113,1652"/>
+<area shape="poly" id="edge96_Node000062_Node000060" title=" " alt="" coords="783,1389,849,1390,921,1395,994,1407,1066,1427,1081,1434,1091,1442,1114,1459,1150,1474,1145,1475,1111,1463,1087,1446,1078,1438,1064,1431,993,1412,920,1401,849,1395,785,1394"/>
+<area shape="rect" id="Node000063" href="$filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9" title="Whether a first line is written as an OTP configuration that otpConfigOf() can read: a bare otpauth U..." alt="" coords="888,1690,1008,1718"/>
+<area shape="poly" id="edge97_Node000062_Node000063" title=" " alt="" coords="701,1409,744,1435,785,1471,803,1498,812,1521,819,1545,834,1573,878,1630,923,1679,918,1679,874,1634,829,1576,814,1547,807,1523,798,1500,781,1475,741,1439,702,1414"/>
+<area shape="poly" id="edge108_Node000063_Node000061" title=" " alt="" coords="972,1687,1111,1605,1187,1569,1182,1571,1114,1610,974,1692"/>
+<area shape="poly" id="edge103_Node000063_Node000063" title=" " alt="" coords="901,1689,893,1681,899,1671,918,1665,948,1663,980,1666,999,1674,994,1675,979,1671,948,1668,919,1670,903,1675,899,1681,906,1690"/>
+<area shape="rect" id="Node000064" href="$filecontent_8cpp.html#a5bdca692129830dd78bdf3b23c6a6909" title="The otpauth URI a line is written as: a bare otpauth:// line, or the split otpauth: //...." alt="" coords="1175,1790,1282,1818"/>
+<area shape="poly" id="edge98_Node000063_Node000064" title=" " alt="" coords="989,1715,1175,1784,1170,1784,989,1721"/>
+<area shape="rect" id="Node000065" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="1466,1790,1541,1818"/>
+<area shape="poly" id="edge109_Node000063_Node000065" title=" " alt="" coords="1008,1705,1162,1721,1253,1735,1345,1752,1455,1785,1449,1786,1343,1757,1253,1740,1161,1727,1009,1711"/>
+<area shape="rect" id="Node000067" href="$filecontent_8cpp.html#a6159791af25b399e08098b04e888f7f0" title="Whether value is written as a TOTP seed: base32 letters and the digits 2 to 7 only (either case; whit..." alt="" coords="1172,1643,1284,1671"/>
+<area shape="poly" id="edge104_Node000063_Node000067" title=" " alt="" coords="1008,1691,1159,1668,1154,1670,1009,1696"/>
+<area shape="poly" id="edge99_Node000064_Node000064" title=" " alt="" coords="1181,1789,1174,1781,1180,1771,1198,1765,1228,1763,1260,1766,1279,1775,1274,1775,1259,1771,1228,1768,1199,1770,1183,1775,1179,1781,1187,1790"/>
+<area shape="poly" id="edge100_Node000064_Node000065" title=" " alt="" coords="1282,1801,1454,1803,1449,1804,1283,1806"/>
+<area shape="poly" id="edge101_Node000065_Node000065" title=" " alt="" coords="1463,1792,1452,1783,1456,1772,1473,1766,1504,1763,1544,1768,1554,1774,1555,1784,1550,1781,1549,1777,1542,1773,1504,1768,1474,1771,1460,1776,1457,1782,1468,1793"/>
+<area shape="rect" id="Node000066" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="1671,1790,1863,1818"/>
+<area shape="poly" id="edge102_Node000065_Node000066" title=" " alt="" coords="1541,1801,1658,1803,1653,1804,1542,1806"/>
+<area shape="poly" id="edge105_Node000067_Node000067" title=" " alt="" coords="1181,1642,1174,1634,1180,1624,1198,1619,1228,1617,1260,1619,1279,1628,1274,1628,1259,1624,1228,1622,1199,1624,1183,1629,1179,1634,1187,1643"/>
+<area shape="rect" id="Node000068" href="$class_totp.html#af023ce3487d15c2e290419ddd1ea0699" title="Convenience validity test, for UI feedback." alt="" coords="1454,1638,1553,1666"/>
+<area shape="poly" id="edge106_Node000067_Node000068" title=" " alt="" coords="1284,1653,1441,1652,1436,1654,1285,1659"/>
+<area shape="poly" id="edge107_Node000068_Node000056" title=" " alt="" coords="1553,1644,1708,1629,1703,1631,1554,1649"/>
+<area shape="rect" id="Node000071" href="$class_util.html#a2c23d8b7193efd20c8ef55c77b0f6542" title="Whether text holds more than kMaxUnbrokenRun characters in a row without white space Qt wraps at (a n..." alt="" coords="574,711,767,739"/>
+<area shape="poly" id="edge112_Node000070_Node000071" title=" " alt="" coords="480,820,509,807,523,793,532,779,540,764,556,749,571,743,568,747,560,754,545,767,536,782,528,797,511,811,483,824"/>
+<area shape="rect" id="Node000073" href="$class_util.html#a57fa6e612f022589f609d8b463111a48" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="589,822,752,850"/>
+<area shape="poly" id="edge114_Node000072_Node000073" title=" " alt="" coords="471,871,581,851,577,855,475,875"/>
+<area shape="rect" id="Node000074" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="612,763,730,791"/>
+<area shape="poly" id="edge115_Node000072_Node000074" title=" " alt="" coords="475,873,509,859,523,847,532,834,541,821,557,808,598,791,595,795,559,813,545,825,536,837,527,851,511,863,479,877"/>
+<area shape="rect" id="Node000076" href="$class_util.html#a3495d95f8ec81a1be6d71efac07ca97e" title="text with every block break other than a line feed (isOtherBlockBreak()) shown as a space,..." alt="" coords="562,874,780,902"/>
+<area shape="poly" id="edge118_Node000072_Node000076" title=" " alt="" coords="476,885,548,886,544,889,478,890"/>
+<area shape="poly" id="edge116_Node000074_Node000017" title=" " alt="" coords="728,760,831,741,984,726,1138,718,1398,715,1394,718,1138,724,985,732,832,746,731,765"/>
+<area shape="rect" id="Node000075" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="875,755,1021,783"/>
+<area shape="poly" id="edge117_Node000074_Node000075" title=" " alt="" coords="729,773,861,770,857,773,732,778"/>
+<area shape="rect" id="Node000077" href="$class_util.html#ac44a8c32a9ac0fbb9d471dd115359064" title="Whether Qt&#39;s text document starts a new block at c, besides at a line feed: a carriage return,..." alt="" coords="861,807,1035,835"/>
+<area shape="poly" id="edge119_Node000076_Node000077" title=" " alt="" coords="731,871,783,858,875,837,871,841,784,864,734,875"/>
+<area shape="poly" id="edge123_Node000080_Node000062" title=" " alt="" coords="488,1395,545,1396,540,1398,490,1399"/>
+<area shape="rect" id="Node000083" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1127,2091,1330,2119"/>
+<area shape="poly" id="edge127_Node000082_Node000083" title=" " alt="" coords="1017,2034,1065,2046,1178,2086,1172,2085,1064,2052,1017,2039"/>
+<area shape="rect" id="Node000085" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="1161,2000,1296,2045"/>
+<area shape="poly" id="edge129_Node000082_Node000085" title=" " alt="" coords="1025,2020,1148,2022,1143,2023,1026,2025"/>
+<area shape="rect" id="Node000084" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1392,2091,1615,2119"/>
+<area shape="poly" id="edge128_Node000083_Node000084" title=" " alt="" coords="1330,2102,1379,2105,1374,2105,1330,2108"/>
+<area shape="rect" id="Node000086" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="1406,1941,1601,1986"/>
+<area shape="poly" id="edge130_Node000085_Node000086" title=" " alt="" coords="1296,2005,1389,1988,1394,1987,1297,2011"/>
+<area shape="rect" id="Node000087" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="1401,2011,1606,2055"/>
+<area shape="poly" id="edge131_Node000085_Node000087" title=" " alt="" coords="1296,2022,1388,2028,1383,2029,1296,2028"/>
+<area shape="poly" id="edge136_Node000088_Node000060" title=" " alt="" coords="401,1662,420,1621,453,1567,498,1513,526,1489,557,1471,602,1456,663,1449,734,1446,813,1447,975,1459,1121,1477,1116,1479,975,1464,812,1453,734,1451,663,1454,603,1462,559,1475,529,1494,502,1516,457,1570,425,1624,405,1664"/>
+<area shape="poly" id="edge138_Node000088_Node000063" title=" " alt="" coords="432,1689,491,1709,558,1725,642,1732,727,1731,805,1724,875,1717,870,1719,806,1729,727,1736,642,1738,558,1730,490,1714,433,1694"/>
+<area shape="poly" id="edge135_Node000088_Node000064" title=" " alt="" coords="412,1689,474,1739,515,1766,559,1788,639,1813,722,1829,806,1838,890,1840,969,1837,1042,1831,1162,1817,1157,1818,1042,1836,969,1843,890,1845,806,1843,721,1835,637,1818,557,1793,512,1771,471,1743,412,1694"/>
+<area shape="poly" id="edge144_Node000088_Node000065" title=" " alt="" coords="414,1689,460,1729,512,1781,525,1799,533,1815,543,1829,559,1841,618,1867,680,1886,743,1900,807,1909,873,1914,938,1915,1065,1906,1185,1888,1293,1865,1383,1841,1449,1823,1454,1821,1385,1846,1294,1870,1186,1894,1066,1912,938,1920,872,1919,807,1915,742,1905,678,1891,616,1872,557,1846,539,1833,529,1818,521,1802,508,1784,457,1733,414,1694"/>
+<area shape="rect" id="Node000089" href="$filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06" title="What follows a line&#39;s first colon; empty without one." alt="" coords="612,1636,729,1664"/>
+<area shape="poly" id="edge133_Node000088_Node000089" title=" " alt="" coords="465,1668,599,1656,595,1659,467,1673"/>
+<area shape="rect" id="Node000090" href="$class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19" title="Assemble a parsed entry; only parse() calls this." alt="" coords="582,1688,759,1716"/>
+<area shape="poly" id="edge137_Node000088_Node000090" title=" " alt="" coords="465,1681,569,1692,564,1694,467,1686"/>
+<area shape="rect" id="Node000091" href="$filecontent_8cpp.html#a675927185d9a8c3fb4d0310af8c2198a" title="Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (File..." alt="" coords="618,1508,723,1536"/>
+<area shape="poly" id="edge139_Node000088_Node000091" title=" " alt="" coords="409,1661,469,1605,511,1573,557,1547,605,1532,601,1535,559,1551,514,1578,473,1609,413,1664"/>
+<area shape="rect" id="Node000093" href="$filecontent_8cpp.html#a0d86769788e23564914f8cff635df3da" title="The OTP configuration an OTP line holds: the URI for a bare otpauth:// line (bareOtpUriOf()),..." alt="" coords="899,1790,997,1818"/>
+<area shape="poly" id="edge145_Node000088_Node000093" title=" " alt="" coords="427,1689,488,1714,559,1738,646,1759,734,1775,886,1797,881,1798,733,1781,645,1764,557,1744,486,1719,428,1694"/>
+<area shape="rect" id="Node000094" href="$class_file_content.html#a41f00506abcd1629b156219f4acb0f1a" title="The password of an entry: its first line, without the carriage return of a CRLF line end." alt="" coords="574,1560,767,1588"/>
+<area shape="poly" id="edge148_Node000088_Node000094" title=" " alt="" coords="422,1661,483,1630,557,1598,587,1591,583,1594,559,1604,485,1634,425,1665"/>
+<area shape="poly" id="edge134_Node000089_Node000089" title=" " alt="" coords="624,1636,617,1628,623,1618,641,1612,671,1610,703,1612,722,1621,716,1622,702,1618,671,1615,642,1617,626,1622,622,1627,629,1636"/>
+<area shape="poly" id="edge140_Node000091_Node000091" title=" " alt="" coords="624,1508,617,1500,623,1490,641,1484,671,1482,703,1484,722,1493,716,1494,702,1490,671,1487,642,1489,626,1494,622,1499,629,1508"/>
+<area shape="rect" id="Node000092" href="$class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="866,1535,1030,1563"/>
+<area shape="poly" id="edge141_Node000091_Node000092" title=" " alt="" coords="723,1525,853,1539,848,1541,724,1530"/>
+<area shape="poly" id="edge142_Node000092_Node000060" title=" " alt="" coords="1020,1532,1143,1509,1138,1512,1022,1537"/>
+<area shape="poly" id="edge143_Node000092_Node000061" title=" " alt="" coords="1030,1546,1112,1548,1107,1550,1031,1552"/>
+<area shape="poly" id="edge146_Node000093_Node000064" title=" " alt="" coords="997,1801,1162,1803,1157,1804,998,1806"/>
+<area shape="poly" id="edge147_Node000093_Node000093" title=" " alt="" coords="901,1789,893,1781,899,1771,918,1765,948,1763,980,1766,999,1774,994,1775,979,1771,948,1768,919,1770,903,1775,899,1781,906,1790"/>
+<area shape="poly" id="edge150_Node000095_Node000096" title=" " alt="" coords="475,1967,579,1988,574,1990,475,1973"/>
+<area shape="rect" id="Node000099" href="$class_main_window.html#a37c3f03eee7961428579d2f3a9c77df5" title="Show Push and Pull only when Git is in use; enable them only while the interface is." alt="" coords="561,2044,780,2089"/>
+<area shape="poly" id="edge154_Node000098_Node000099" title=" " alt="" coords="487,2110,562,2094,567,2092,488,2115"/>
+<area shape="rect" id="Node000101" href="$class_main_window.html#a9211cb7acf62af3c66fec54ba813da4e" title="Refresh the OTP toolbar action from settings." alt="" coords="559,2113,782,2158"/>
+<area shape="poly" id="edge157_Node000098_Node000101" title=" " alt="" coords="500,2133,546,2135,541,2136,500,2138"/>
+<area shape="rect" id="Node000103" href="$class_main_window.html#a86ff9b9b01ed40f6040b68ed2777d824" title="Enable the profile box only when there is more than one profile, the interface is enabled and the bac..." alt="" coords="572,2183,770,2227"/>
+<area shape="poly" id="edge160_Node000098_Node000103" title=" " alt="" coords="488,2156,567,2178,562,2178,487,2161"/>
+<area shape="poly" id="edge156_Node000099_Node000082" title=" " alt="" coords="780,2046,858,2036,853,2037,781,2052"/>
+<area shape="rect" id="Node000100" href="$class_main_window.html#a1a3647880d3bf6d3e5d3584add2e8d49" title="Enable or disable the Push and Pull actions together." alt="" coords="835,2060,1061,2088"/>
+<area shape="poly" id="edge155_Node000099_Node000100" title=" " alt="" coords="781,2067,822,2070,817,2071,781,2072"/>
+<area shape="rect" id="Node000102" href="$class_qt_pass_settings.html#a4f2809fcff961ee1beecaa16951a6e4e" title="Check whether OTP support is enabled." alt="" coords="855,2118,1041,2146"/>
+<area shape="poly" id="edge158_Node000101_Node000102" title=" " alt="" coords="783,2131,842,2133,837,2133,783,2137"/>
+<area shape="poly" id="edge159_Node000102_Node000083" title=" " alt="" coords="1041,2120,1114,2116,1109,2116,1041,2126"/>
+<area shape="rect" id="Node000104" href="$class_qt_pass_settings.html#afeb532f63d4dfa060f2ca012de89b5d9" title="Whether no backend, the active one or one kept from before a switch, runs or waits for anything (Pass..." alt="" coords="842,2191,1054,2219"/>
+<area shape="poly" id="edge161_Node000103_Node000104" title=" " alt="" coords="770,2202,830,2205,824,2205,770,2208"/>
+<area shape="rect" id="Node000105" href="$class_pass_backend_factory.html#aa8ab517b87e5b6923eed8a963cca3706" title="Whether neither backend runs or waits for anything: after a switch of backend the previous one is kep..." alt="" coords="1152,2183,1304,2227"/>
+<area shape="poly" id="edge162_Node000104_Node000105" title=" " alt="" coords="1054,2202,1139,2205,1134,2205,1054,2208"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="MainWindow::flashText" name="MainWindow::flashText">
+<area shape="rect" id="Node000001" title="Display a transient message in the text panel." alt="" coords="5,5,176,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2c23d8b7193efd20c8ef55c77b0f6542" title="Whether text holds more than kMaxUnbrokenRun characters in a row without white space Qt wraps at (a n..." alt="" coords="224,5,417,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,17,211,19,205,19,176,22"/>
+</map>

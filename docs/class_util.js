@@ -14,6 +14,7 @@ var class_util =
     [ "findPasswordStore", "class_util.html#a503abb6ccbf2aa18056c220b9b45284e", null ],
     [ "gitCeiling", "class_util.html#afd0e45a8685dd277e6f3d51c361e0b03", null ],
     [ "gitStoreVariables", "class_util.html#a98271dbaefe09960e1eaded52fed2694", null ],
+    [ "hasLongUnbrokenRun", "class_util.html#a2c23d8b7193efd20c8ef55c77b0f6542", null ],
     [ "hasUnreadableName", "class_util.html#a4313266763fb44f8b3d11df30dab21c7", null ],
     [ "initialiseEnvironment", "class_util.html#ae448351f44d5e8f0d03eeff8ef3e54b2", null ],
     [ "isLaunchableWebUrl", "class_util.html#a86864a9430f6903425908e76ba6079b5", null ],
@@ -42,5 +43,6 @@ var class_util =
     [ "_env", "class_util.html#a6f14f16322c96b174b357bbad4b66b67", null ],
     [ "_envInitialised", "class_util.html#aeccb471a23085461c3c79f24f7f82e2c", null ],
     [ "kMaxGpgIdBytes", "class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a", null ],
-    [ "kMaxSpaceRun", "class_util.html#acfef9dbc0925b6f3631f19b381a3cabb", null ]
+    [ "kMaxSpaceRun", "class_util.html#acfef9dbc0925b6f3631f19b381a3cabb", null ],
+    [ "kMaxUnbrokenRun", "class_util.html#a8925bde844b953909be54f7e2f42065e", null ]
 ];
