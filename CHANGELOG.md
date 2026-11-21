@@ -976,6 +976,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   folder's missing signed list climbed from every folder to the store root
   again, one record lookup per level; each folder is now looked up once
   (scan finding ANT-2026-3IEW5YFJ)
+- Importing a key stops after 60 seconds. gpg ran on the window's thread
+  without a deadline, and a key crafted with many user IDs kept it busy for
+  minutes with the window frozen. Past the deadline the dialog says gpg was
+  stopped and that part of the key may already be in the keyring (scan
+  finding ANT-2026-3JXO7AX0)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)

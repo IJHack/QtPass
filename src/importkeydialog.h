@@ -29,11 +29,20 @@ class ImportKeyDialog : public QDialog {
 
 public:
   /**
+   * @brief How long gpg may take to import before it is stopped: the import
+   * runs on the GUI thread, and a key crafted with many user IDs kept gpg
+   * busy for minutes, the window and its autoclear timers frozen with it.
+   */
+  static constexpr int kImportTimeoutMs = 60000;
+
+  /**
    * @brief Construct an ImportKeyDialog.
    * @param gpgExe Path to the gpg executable (falls back to "gpg" if empty).
    * @param parent Optional parent widget.
+   * @param timeoutMs Most milliseconds gpg may take to import.
    */
-  explicit ImportKeyDialog(const QString &gpgExe, QWidget *parent = nullptr);
+  explicit ImportKeyDialog(const QString &gpgExe, QWidget *parent = nullptr,
+                           int timeoutMs = kImportTimeoutMs);
   /** @brief Destroys the dialog and its generated UI. */
   ~ImportKeyDialog() override;
 
@@ -91,6 +100,8 @@ private:
   QString m_importedKeyId;
   /** @brief Path of the gpg binary to run; empty means plain `gpg` on PATH. */
   QString m_gpgExe;
+  /** @brief Most milliseconds gpg may take to import (kImportTimeoutMs). */
+  int m_timeoutMs;
 
   /**
    * @brief Feeds @p input to `gpg --status-fd 1 --import --batch --yes` via
