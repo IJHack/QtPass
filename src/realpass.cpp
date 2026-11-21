@@ -210,10 +210,25 @@ auto passFoldersUnder(const QString &dir, QStringList &unreadable)
 
 auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
                                     const QString &except) -> bool {
+  // Every folder pass's walk takes. A name Qt cannot read hides what is
+  // behind it, a linked list included, so the walk must be complete first,
+  // signing key or not.
+  QStringList unreadable;
+  const QStringList folders = passFoldersUnder(dir, unreadable);
+  if (!unreadable.isEmpty()) {
+    const QString title = tr("Cannot check the recipient lists");
+    //: %1 is a folder. "UTF-8" is the text encoding; keep it as is.
+    const QString text =
+        tr("%1 holds a file or folder whose name is not valid UTF-8. QtPass "
+           "cannot see what is behind that name, while pass would re-encrypt "
+           "it, so nothing was changed. Rename it, then try again.")
+            .arg(QDir::toNativeSeparators(unreadable.first()));
+    emit critical(title, text);
+    return true;
+  }
   // A linked list differs from what QtPass shows, signing key or not: in
-  // every folder pass's walk takes, and above them.
-  QStringList unreadableHere;
-  for (const QString &folder : passFoldersUnder(dir, unreadableHere)) {
+  // every folder of the walk, and above them.
+  for (const QString &folder : folders) {
     if (refuseLinkedList(folder + QLatin1Char('/'), except)) {
       return true;
     }
@@ -245,19 +260,6 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   // merges an incoming folder into one of the same name, so the entries it
   // brings get a list already there, and a list it brings replaces the one
   // there for the entries already in it.
-  QStringList unreadable;
-  const QStringList folders = passFoldersUnder(dir, unreadable);
-  if (!unreadable.isEmpty()) {
-    const QString title = tr("Cannot check the recipient lists");
-    //: %1 is a folder. "UTF-8" is the text encoding; keep it as is.
-    const QString text =
-        tr("%1 holds a file or folder whose name is not valid UTF-8. QtPass "
-           "cannot see what is behind that name, while pass would re-encrypt "
-           "it, so nothing was changed. Rename it, then try again.")
-            .arg(QDir::toNativeSeparators(unreadable.first()));
-    emit critical(title, text);
-    return true;
-  }
   for (const QString &folder : folders) {
     if (refuseList(folder, signer, verified, within, except)) {
       return true;

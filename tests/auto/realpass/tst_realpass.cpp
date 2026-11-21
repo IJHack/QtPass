@@ -1595,6 +1595,38 @@ void tst_realpass::aLinkedListIsRefusedWithoutASigningKey() {
   pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
   QVERIFY(!waitForCall().args.isEmpty());
   QCOMPARE(criticalSpy.count(), 4);
+
+  // A folder under the name .gpg-id is no list, for pass (test -f) as for
+  // QtPass: the walk goes on, and meets the store's own list as a link.
+  QFile::remove(m_log);
+  const QString rootList = m_store + QStringLiteral(".gpg-id");
+  QVERIFY(QDir(m_store).mkpath(QStringLiteral("team/.gpg-id")));
+  QVERIFY(QFile::link(elsewhere, rootList));
+  const auto removeRootList = qScopeGuard([&] { QFile::remove(rootList); });
+  pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
+  QTest::qWait(300);
+  QVERIFY2(!QFile::exists(m_log), "a folder named .gpg-id stops nothing");
+  QCOMPARE(criticalSpy.count(), 5);
+  QVERIFY2(criticalSpy.last().at(1).toString().contains(
+               QDir::toNativeSeparators(QDir::cleanPath(rootList))),
+           qPrintable(criticalSpy.last().at(1).toString()));
+  QVERIFY(QFile::remove(rootList));
+  QVERIFY(QDir(m_store + QStringLiteral("team/.gpg-id")).removeRecursively());
+
+  // A name Qt cannot read hides what is behind it, a linked list included:
+  // a folder move stops there without a signing key too.
+  const QByteArray bad =
+      QFile::encodeName(m_store + QStringLiteral("team")) + "/old\xff";
+  if (::mkdir(bad.constData(), 0700) != 0) {
+    QSKIP("this file system refuses names that are not UTF-8");
+  }
+  const auto removeBad = qScopeGuard([&bad] { ::rmdir(bad.constData()); });
+  QFile::remove(m_log);
+  pass->Move(m_store + QStringLiteral("team"),
+             m_store + QStringLiteral("moved"), false);
+  QTest::qWait(300);
+  QVERIFY2(!QFile::exists(m_log), "pass never runs over an unread name");
+  QCOMPARE(criticalSpy.count(), 6);
 }
 
 /**
