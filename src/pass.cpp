@@ -991,14 +991,15 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
 }
 
 auto Pass::refuseSkippedGpgId(const QString &file, bool signing,
-                              const QString &except) -> bool {
+                              const QString &except, SkippedWalks *walks)
+    -> bool {
   // Without a signing key the parent's list applies, as it does for pass.
   if (!signing) {
     return false;
   }
   QString recordError;
   const std::optional<QString> skipped =
-      skippedGpgId(file, m_settings.passStore, &recordError);
+      skippedGpgId(file, m_settings.passStore, &recordError, walks);
   if (!skipped || (!except.isEmpty() &&
                    QDir::cleanPath(*skipped) == QDir::cleanPath(except))) {
     return false;
@@ -1046,8 +1047,27 @@ auto Pass::verifySignedList(const GpgIdSigner &signer, const QString &gpgIdFile,
 }
 
 auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
-                        QString *recordError) -> std::optional<QString> {
+                        QString *recordError, SkippedWalks *walks)
+    -> std::optional<QString> {
   const GpgIdLookup lookup = gpgIdLookup(forFile, passStore);
+  // A folder's answer depends only on it and the folders above it: kept
+  // for every folder climbed, a tree check asks each one record lookup,
+  // where climbing again from every folder cost depth squared.
+  QStringList climbed;
+  // By value: on a hit they come out of walks, which the inserts below
+  // may rehash.
+  const auto answer = [&climbed, walks, recordError](
+                          std::optional<QString> skipped, QString why) {
+    if (walks != nullptr) {
+      for (const QString &folder : std::as_const(climbed)) {
+        walks->insert(folder, {skipped, why});
+      }
+    }
+    if (recordError != nullptr && !why.isEmpty()) {
+      *recordError = why;
+    }
+    return skipped;
+  };
   // The same walk as nearestGpgId(), stopping at the list it finds, and
   // short of the store root: the root's own list has no parent to fall
   // back to, and the signature check refuses it when it is missing. It
@@ -1055,15 +1075,22 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
   // folder removed together with its list is asked of the record too.
   QString dir = lookup.folder;
   while (dir.startsWith(lookup.storePrefix, kPathCase)) {
+    if (walks != nullptr) {
+      if (const auto known = walks->constFind(dir);
+          known != walks->constEnd()) {
+        return answer(known->skipped, known->recordError);
+      }
+    }
+    climbed << dir;
     const QFileInfo candidate(dir + QStringLiteral("/.gpg-id"));
     if (isOwnGpgId(candidate)) {
-      return std::nullopt;
+      return answer(std::nullopt, QString());
     }
     // A link under the name (dangling or not), or nothing under it where
     // this device accepted a list before: both are the folder's list gone,
     // not a folder that never had one.
     if (candidate.isSymLink() || candidate.isJunction()) {
-      return candidate.absoluteFilePath();
+      return answer(candidate.absoluteFilePath(), QString());
     }
     // An unreadable record is not "never seen": whether a list was accepted
     // here cannot be told, so this folder is refused too (fail closed), with
@@ -1072,17 +1099,14 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
     const std::optional<bool> seen =
         GpgIdGeneration::seen(candidate.absoluteFilePath(), &why);
     if (!seen) {
-      if (recordError != nullptr) {
-        *recordError =
-            why.isEmpty()
-                ? tr("The generation record of the recipient lists cannot "
-                     "be read.")
-                : why;
-      }
-      return candidate.absoluteFilePath();
+      return answer(candidate.absoluteFilePath(),
+                    why.isEmpty()
+                        ? tr("The generation record of the recipient lists "
+                             "cannot be read.")
+                        : why);
     }
     if (*seen) {
-      return candidate.absoluteFilePath();
+      return answer(candidate.absoluteFilePath(), QString());
     }
     const QString parent = QDir::cleanPath(QFileInfo(dir).absolutePath());
     if (parent == dir) {
@@ -1090,7 +1114,7 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
     }
     dir = parent;
   }
-  return std::nullopt;
+  return answer(std::nullopt, QString());
 }
 
 auto Pass::linkedGpgId(const QString &forFile, const QString &passStore)

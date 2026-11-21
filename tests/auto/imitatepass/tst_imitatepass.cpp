@@ -668,6 +668,7 @@ private Q_SLOTS:
   void linkedGpgIdIsNotARecipientList();
   void skippedGpgIdNamesOnlyAListThatWasPassedOver();
   void skippedGpgIdAsksAFolderRemovedWithItsList();
+  void skippedGpgIdAsksEachFolderOnceInATreeCheck();
   void skippedGpgIdFailsClosedWhenTheRecordIsUnreadable();
   void aRemovedOrLinkedFolderListIsRefusedWhenSigning();
   void aRemovedFolderListFallsBackToTheParentWithoutSigning();
@@ -4659,6 +4660,77 @@ void tst_imitatepass::skippedGpgIdNamesOnlyAListThatWasPassedOver() {
  *        the key the list had while it was there, also through a link to
  *        the store.
  */
+/**
+ * @brief In a check of every folder of a tree, each folder's record lookup
+ * is done once, and the answers are the ones asked one by one: climbing
+ * again from every folder of a co-writer's deep chain cost depth squared
+ * record transactions on the GUI thread (scan finding ANT-2026-3IEW5YFJ).
+ */
+void tst_imitatepass::skippedGpgIdAsksEachFolderOnceInATreeCheck() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString store = root.path() + QLatin1Char('/');
+  constexpr int kDepth = 200;
+  QStringList folders;
+  QString relative;
+  for (int i = 0; i < kDepth; ++i) {
+    relative += (i == 0 ? QString() : QStringLiteral("/")) + QLatin1Char('d');
+    folders << root.filePath(relative);
+  }
+  QVERIFY(root.mkpath(relative));
+  // A list accepted halfway down, then gone: every folder below it names
+  // it, the folders above name nothing.
+  const QString middle = folders.at(kDepth / 2);
+  const QString middleList = middle + QStringLiteral("/.gpg-id");
+  {
+    QFile f(middleList);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(GpgIdGeneration::withHeader(1, root.relativeFilePath(middle),
+                                        QByteArrayLiteral("OWNER\n")));
+  }
+  {
+    QFile f(middleList);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QCOMPARE(GpgIdGeneration::accept(middleList, f.readAll(), store),
+             GpgIdGeneration::Verdict::Accepted);
+  }
+  QVERIFY(QFile::remove(middleList));
+
+  // One climb from the bottom asks every level once: the yardstick, as a
+  // record transaction costs very different times on each platform.
+  QElapsedTimer timer;
+  timer.start();
+  const std::optional<QString> fromTheBottom =
+      Pass::skippedGpgId(folders.last() + QLatin1Char('/'), store);
+  const qint64 oneClimb = timer.elapsed();
+
+  // Every folder with one cache costs about that climb; without it, half
+  // the depth times as much.
+  Pass::SkippedWalks walks;
+  QList<std::optional<QString>> answers;
+  timer.restart();
+  for (const QString &folder : std::as_const(folders)) {
+    answers << Pass::skippedGpgId(folder + QLatin1Char('/'), store, nullptr,
+                                  &walks);
+  }
+  const qint64 allFolders = timer.elapsed();
+  QVERIFY2(allFolders < 5 * oneClimb + 500,
+           qPrintable(QStringLiteral("%1 ms for every folder, %2 ms for one "
+                                     "climb")
+                          .arg(allFolders)
+                          .arg(oneClimb)));
+  QCOMPARE(answers.last(), fromTheBottom);
+  for (const int i : {0, kDepth / 2 - 1, kDepth / 2 + 1}) {
+    QCOMPARE(answers.at(i),
+             Pass::skippedGpgId(folders.at(i) + QLatin1Char('/'), store));
+  }
+  QVERIFY(!answers.first().has_value());
+  QVERIFY(answers.last().has_value());
+  QCOMPARE(QDir::cleanPath(*answers.last()), QDir::cleanPath(middleList));
+}
+
 void tst_imitatepass::skippedGpgIdAsksAFolderRemovedWithItsList() {
   QTemporaryDir storeDir;
   QVERIFY(storeDir.isValid());

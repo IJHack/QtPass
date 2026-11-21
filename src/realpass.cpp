@@ -120,8 +120,8 @@ auto RealPass::listSigner() -> GpgIdSigner {
 
 auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
                           QSet<QString> &verified, const QString &within,
-                          const QString &except) -> bool {
-  if (refuseSkippedGpgId(file, true, except)) {
+                          const QString &except, SkippedWalks *walks) -> bool {
+  if (refuseSkippedGpgId(file, true, except, walks)) {
     return true;
   }
   const QString gpgIdFile = Pass::getGpgIdPath(file, m_settings.passStore);
@@ -268,12 +268,15 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   // by the destination's, which the caller checks. For entries already in
   // the destination, their lists stay where they are: all of them count.
   QSet<QString> verified;
+  // Each folder's skipped-list answer once for the whole tree: asked again
+  // from every folder, a deep chain cost depth squared record lookups.
+  SkippedWalks walks;
   // Every folder's list counts, also where no entry uses it yet: cp -r
   // merges an incoming folder into one of the same name, so the entries it
   // brings get a list already there, and a list it brings replaces the one
   // there for the entries already in it.
   for (const QString &folder : folders) {
-    if (refuseList(folder, signer, verified, within, except)) {
+    if (refuseList(folder, signer, verified, within, except, &walks)) {
       return true;
     }
   }
