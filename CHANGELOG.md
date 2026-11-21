@@ -981,6 +981,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   minutes with the window frozen. Past the deadline the dialog says gpg was
   stopped and that part of the key may already be in the keyring (scan
   finding ANT-2026-3JXO7AX0)
+- Add password opens at once in a store with thousands of deeply nested
+  folders. The folder picker measured every folder path to size the dialog,
+  which froze it for half a minute and made it thousands of pixels wide; it
+  now keeps a normal width and shows a path longer than 120 characters cut
+  in the middle, whole in its tooltip (scan finding ANT-2026-A2HE9KJT)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)
