@@ -487,6 +487,11 @@ void MainWindow::flashText(const QString &text, const bool isError,
   }
   ui->textBrowser->setCurrentCharFormat(format);
 
+  // Wrapped at word boundaries, a run of hundreds of thousands of letters
+  // took Qt seconds to minutes; anywhere, it is linear. Anywhere while the
+  // text goes in, then word wrap back unless what is shown has such a run:
+  // markup (a link's "<a href") splits a run in the source, not on screen.
+  ui->textBrowser->setWordWrapMode(QTextOption::WrapAnywhere);
   if (isHtml) {
     QString _text = text;
     if (!ui->textBrowser->toPlainText().isEmpty()) {
@@ -495,6 +500,10 @@ void MainWindow::flashText(const QString &text, const bool isError,
     ui->textBrowser->setHtml(_text);
   } else {
     ui->textBrowser->setText(text);
+  }
+  // The raw text: toPlainText() turns a no-break space into a plain one.
+  if (!Util::hasLongUnbrokenRun(ui->textBrowser->document()->toRawText())) {
+    ui->textBrowser->setWordWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
   }
 }
 

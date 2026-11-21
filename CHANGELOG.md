@@ -956,6 +956,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   and an entry of millions froze the window or crashed the edit dialog.
   They show as spaces, and the edit dialog counts them as lines (scan
   finding ANT-2026-PJR4L456)
+- An entry with one line of hundreds of thousands of letters no longer
+  freezes the window. Qt wraps such a run at word boundaries in time
+  quadratic in its length; text with a run of more than 10 000 characters
+  without a space now wraps anywhere, in the main window, a field's row and
+  the edit dialog's notes (scan finding ANT-2026-0RRSZ1YR)
 - After deleting a profile in Settings, the form shows the profile the list
   highlights; it showed the one after it, and a signing key typed next was
   saved there (scan finding ANT-2026-RVR8VNTF)
