@@ -220,9 +220,11 @@ void MainWindow::initDisplayPanel() {
   connect(m_displayPanel, &PasswordDisplayPanel::qrRequested, m_qtPass,
           &QtPass::showTextAsQRCode);
   // Double-click on what is shown edits it, as in the tree.
+  // The entry whose rows were double-clicked, not the tree's current row:
+  // arrow keys and a right-click move that row without repainting the panel.
   connect(m_displayPanel, &PasswordDisplayPanel::editRequested, this, [this] {
-    if (ui->actionEdit->isEnabled()) {
-      onEdit();
+    if (ui->actionEdit->isEnabled() && !m_panelEntry.isEmpty()) {
+      editPassword(m_panelEntry);
     }
   });
 }
@@ -678,6 +680,7 @@ void MainWindow::deselect() {
 
 void MainWindow::executeWrapperStarted() {
   m_displayPanel->clear();
+  m_panelEntry.clear();
   ui->textBrowser->clear();
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
@@ -729,6 +732,7 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
   }
 
   m_displayPanel->clear();
+  m_panelEntry.clear();
 
   if (s.hideContent) {
     output = "***" + tr("Content hidden") + "***";
@@ -736,6 +740,7 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
     // As it is, but not a block per line of millions.
     output = FileContent::boundedForDisplay(p_output);
   } else {
+    m_panelEntry = file;
     m_displayPanel->displayFields(password, fileContent.getNamedValues(), s,
                                   s.useOtp ? fileContent.getOtpUri()
                                            : QString());
@@ -808,6 +813,7 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output,
 
 void MainWindow::clearPanel(bool notify) {
   m_displayPanel->clear();
+  m_panelEntry.clear();
   // A QR code of the password is the password on screen as much as the
   // panel is; it is a popup of its own, not part of the panel.
   m_qtPass->closeQRCode();

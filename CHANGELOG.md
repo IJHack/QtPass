@@ -763,6 +763,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- A double-click on the shown entry's fields edits that entry. It used to
+  edit the tree's highlighted row, which the arrow keys or a right-click can
+  move without showing it: the new password then overwrote the other entry,
+  encrypted to that folder's recipients (scan ANT-2026-GVHYU5T1).
 - QtPass now keeps the full fingerprint of OpenPGP v5 (LibrePGP) and v6
   (RFC 9580) keys, whose key ID is the head of the fingerprint rather than
   the tail; `.gpg-id` entries that use a key ID still match.

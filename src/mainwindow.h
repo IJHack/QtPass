@@ -532,6 +532,10 @@ private:
   /// QTreeView::clicked), so onOtp() must not assume the visible code belongs
   /// to the selected entry.
   QString m_shownFile;
+  /// Entry whose fields the display panel's rows show; empty while the panel
+  /// is empty. Unlike m_shownFile it is not dropped when Edit opens, and only
+  /// a rendered entry sets it, so a double-click on a row edits that entry.
+  QString m_panelEntry;
   /// Entry a save's refresh will show once the push queued with it is done;
   /// empty when none waits. Started behind the push, the refresh would empty
   /// the browser before a failed push's error was painted.
