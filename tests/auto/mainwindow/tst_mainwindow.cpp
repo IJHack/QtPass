@@ -469,6 +469,7 @@ private Q_SLOTS:
   void otpAnswerWithoutACodeSaysSo();
   void otpNeedsASelectionAndTheSetting();
   void editRequestIsIgnoredWhileEditIsDisabled();
+  void editRequestEditsTheShownEntry();
   void editPullsFirstWhenAutoPullIsOn();
   void failedPushAfterASaveStaysOnScreen();
   void refreshAfterPushGivesWayToTheUser();
@@ -3456,6 +3457,55 @@ void tst_mainwindow::editRequestIsIgnoredWhileEditIsDisabled() {
 }
 
 /**
+ * @brief A double-click on the panel edits the entry the panel shows, not the
+ *        tree's current row: arrow keys and a right-click move that row
+ *        without repainting the panel (scan ANT-2026-GVHYU5T1).
+ */
+void tst_mainwindow::editRequestEditsTheShownEntry() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch, [](AppSettings &s) {
+             s.useOtp = false;
+           }).isEmpty());
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QTRY_VERIFY_WITH_TIMEOUT(QtPassSettings::backendsIdle(), 20000);
+  QCOMPARE(passwordName()->text(), QStringLiteral("shown"));
+
+  // The highlight moves on, as with the Down key; nothing else is shown.
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("highlighted")));
+  m_window->setUiElementsEnabled(true);
+  QCOMPARE(passwordName()->text(), QStringLiteral("shown"));
+
+  QString dialogTitle;
+  ModalDriver driver([&dialogTitle](QWidget *w) {
+    if (auto *dialog = qobject_cast<PasswordDialog *>(w)) {
+      dialogTitle = dialog->windowTitle();
+      dialog->reject();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  auto *panel = m_window->findChild<PasswordDisplayPanel *>();
+  QVERIFY(panel != nullptr);
+  emit panel->editRequested();
+  QTRY_VERIFY_WITH_TIMEOUT(QtPassSettings::backendsIdle(), 20000);
+
+  QVERIFY2(dialogTitle.contains(QStringLiteral("shown")),
+           qPrintable(QStringLiteral("dialog title: ") + dialogTitle));
+  QVERIFY2(!dialogTitle.contains(QStringLiteral("highlighted")),
+           qPrintable(QStringLiteral("dialog title: ") + dialogTitle));
+#endif
+}
+
+/**
  * @brief Editing an entry with Git and auto-pull on first pulls, blocking,
  *        and a failed pull is reported in the status bar; the edit dialog
  *        then opens for the entry and asks the backend to decrypt it.
@@ -3480,6 +3530,15 @@ void tst_mainwindow::editPullsFirstWhenAutoPullIsOn() {
     s.autoPull = false;
     QtPassSettings::save(s);
   });
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("edit-me")));
+  // The panel's double-click edits the entry the panel shows: show it.
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QTRY_VERIFY_WITH_TIMEOUT(QtPassSettings::backendsIdle(), 20000);
+  // Showing re-resolves the file-system node and leaves the current index
+  // stale; select the entry again, as the user's click would have.
   QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
                       QStringLiteral("edit-me")));
   m_window->setUiElementsEnabled(true);
