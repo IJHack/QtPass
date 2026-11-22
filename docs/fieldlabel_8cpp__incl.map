@@ -1,26 +1,56 @@
 <map id="src/fieldlabel.cpp" name="src/fieldlabel.cpp">
-<area shape="rect" id="Node000001" title="Implements FieldLabel; startEdit() and finishEdit() swap the label and its editor in and out of the p..." alt="" coords="505,5,636,33"/>
-<area shape="rect" id="Node000002" href="$fieldlabel_8h.html" title="FieldLabel: the in&#45;place renamable, removable name label of a key: value field in PasswordDialog." alt="" coords="88,81,181,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="504,34,197,86,196,80,505,29"/>
-<area shape="rect" id="Node000005" href="$secretlineedit_8h.html" title="QLineEdit whose copies, cuts and primary&#45;selection fills carry the secret clipboard hints and are rep..." alt="" coords="296,81,418,109"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="535,33,411,78,409,73,530,34"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="425,157,508,184"/>
-<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="542,33,510,55,483,82,472,111,468,143,464,139,467,110,479,80,506,51,537,35"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="493,81,648,109"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="572,32,573,67,568,64,569,36"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="672,81,781,109"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="599,31,688,74,682,74,598,36"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="804,81,897,109"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="621,31,792,77,787,78,620,36"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="921,81,988,109"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="636,28,758,48,908,80,903,80,757,53,636,33"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,157,72,184"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,108,69,149,66,145,115,110"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="96,157,173,184"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="136,107,137,142,132,140,133,111"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="197,157,290,184"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="339,108,278,151,275,146,334,110"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="377,107,437,148,432,147,376,112"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="314,157,400,184"/>
-<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="359,107,359,143,355,139,355,111"/>
+<area shape="rect" id="Node000001" title="Implements FieldLabel; startEdit() and finishEdit() swap the label and its editor in and out of the p..." alt="" coords="585,5,716,33"/>
+<area shape="rect" id="Node000002" href="$fieldlabel_8h.html" title="FieldLabel: the in&#45;place renamable, removable name label of a key: value field in PasswordDialog." alt="" coords="93,81,187,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="584,32,203,87,201,82,585,27"/>
+<area shape="rect" id="Node000005" href="$secretlineedit_8h.html" title="QLineEdit whose copies, cuts and primary&#45;selection fills carry the secret clipboard hints and are rep..." alt="" coords="384,81,506,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="612,35,497,78,495,73,616,32"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="197,157,280,184"/>
+<area shape="poly" id="edge28_Node000001_Node000007" title=" " alt="" coords="582,29,483,49,427,64,373,83,315,115,267,149,264,145,312,110,371,79,426,59,482,44,587,27"/>
+<area shape="rect" id="Node000009" href="$util_8h.html" title="Util: static helpers for the process environment, binary discovery, store paths, URL safety and the l..." alt="" coords="560,81,614,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="641,32,610,71,606,67,637,35"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="638,81,794,109"/>
+<area shape="poly" id="edge25_Node000001_Node000022" title=" " alt="" coords="663,31,697,70,692,69,662,36"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="818,81,926,109"/>
+<area shape="poly" id="edge26_Node000001_Node000023" title=" " alt="" coords="690,31,821,75,815,76,690,36"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="950,81,1042,109"/>
+<area shape="poly" id="edge27_Node000001_Node000024" title=" " alt="" coords="714,31,938,80,933,81,714,36"/>
+<area shape="rect" id="Node000025" title=" " alt="" coords="1066,81,1134,109"/>
+<area shape="poly" id="edge29_Node000001_Node000025" title=" " alt="" coords="717,25,867,45,1054,80,1048,81,866,51,717,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="107,157,173,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="141,107,143,142,137,140,139,112"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,157,83,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="122,112,75,149,71,145,124,107"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="304,157,397,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="431,108,381,149,378,145,426,111"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="406,111,291,153,289,149,411,108"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="421,157,507,184"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="450,107,459,142,454,140,447,112"/>
+<area shape="poly" id="edge23_Node000009_Node000008" title=" " alt="" coords="567,108,500,151,498,146,562,110"/>
+<area shape="rect" id="Node000010" href="$appsettings_8h.html" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="629,157,739,184"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="605,107,658,148,652,147,603,112"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="649,308,719,336"/>
+<area shape="poly" id="edge21_Node000009_Node000014" title=" " alt="" coords="614,102,627,106,673,118,716,125,790,138,822,149,852,166,880,193,905,231,911,255,904,275,886,290,861,302,798,316,734,322,734,317,797,311,859,297,883,286,900,272,906,255,900,233,876,196,849,171,820,154,788,143,715,131,672,123,626,111,614,107"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="798,232,890,260"/>
+<area shape="poly" id="edge22_Node000009_Node000018" title=" " alt="" coords="614,102,690,128,752,154,793,186,826,221,821,220,789,190,749,159,688,133,614,107"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="966,157,1130,184"/>
+<area shape="poly" id="edge19_Node000009_Node000019" title=" " alt="" coords="614,103,627,106,772,130,953,157,948,157,771,136,626,111,615,108"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="1154,157,1307,184"/>
+<area shape="poly" id="edge20_Node000009_Node000020" title=" " alt="" coords="614,103,627,106,768,129,880,137,994,142,1141,156,1136,156,994,147,880,142,768,134,626,111,615,108"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="531,157,605,184"/>
+<area shape="poly" id="edge24_Node000009_Node000021" title=" " alt="" coords="585,107,577,143,573,140,581,111"/>
+<area shape="rect" id="Node000011" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="151,232,228,260"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="626,183,618,187,514,201,432,209,349,218,244,235,243,229,348,213,431,204,513,196,617,182,631,182"/>
+<area shape="rect" id="Node000013" href="$passwordconfiguration_8h.html" title="Value object for the password generator: chosen character set, its alphabets and the length." alt="" coords="594,232,774,260"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="686,183,686,218,682,215,682,187"/>
+<area shape="poly" id="edge17_Node000010_Node000014" title=" " alt="" coords="649,184,619,201,595,217,581,237,580,248,584,259,607,284,638,305,632,304,603,288,579,261,574,248,576,235,591,214,616,196,643,186"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="252,232,348,260"/>
+<area shape="poly" id="edge14_Node000010_Node000015" title=" " alt="" coords="626,183,618,187,364,234,363,229,617,182,631,182"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="372,232,436,260"/>
+<area shape="poly" id="edge15_Node000010_Node000016" title=" " alt="" coords="634,184,452,234,451,229,629,186"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="460,232,518,260"/>
+<area shape="poly" id="edge16_Node000010_Node000017" title=" " alt="" coords="652,184,534,231,532,226,647,186"/>
+<area shape="poly" id="edge18_Node000010_Node000018" title=" " alt="" coords="713,182,804,226,799,225,712,188"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="142,308,236,336"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="191,259,192,294,187,291,188,262"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="686,259,686,294,682,291,682,262"/>
 </map>

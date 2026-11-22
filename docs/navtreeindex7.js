@@ -1,5 +1,11 @@
 var NAVTREEINDEX7 =
 {
+"struct_imitate_pass_1_1_pending_insert.html":[1,0,0,2],
+"struct_imitate_pass_1_1_pending_insert.html#a84a8e10430f4315a1ecb383cd5806333":[1,0,0,2,0],
+"struct_imitate_pass_1_1_pending_insert.html#a8dd788fbfb052e3e2c7c03f8fbabdfa6":[1,0,0,2,3],
+"struct_imitate_pass_1_1_pending_insert.html#aabc2c7d1804c96e544e2c10d7d38856d":[1,0,0,2,2],
+"struct_imitate_pass_1_1_pending_insert.html#af5e2d28da0146d7d6a2fd8ed1bf78683":[1,0,0,2,1],
+"struct_imitate_pass_1_1_pending_move.html":[1,0,0,1],
 "struct_imitate_pass_1_1_pending_move.html#a2d31b186e51a677de5bbb685bc8ed259":[1,0,0,1,3],
 "struct_imitate_pass_1_1_pending_move.html#aa0f8e48e4e9dba13a43698c191e232fb":[1,0,0,1,0],
 "struct_imitate_pass_1_1_pending_move.html#aae21844972c7a3dec073474296acbaca":[1,0,0,1,1],

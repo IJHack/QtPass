@@ -1,11 +1,13 @@
 <map id="FieldLabel::eventFilter" name="FieldLabel::eventFilter">
-<area shape="rect" id="Node000001" title="Escape in the editor cancels the edit." alt="" coords="5,36,171,64"/>
-<area shape="rect" id="Node000002" href="$class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac" title="Close the editor, putting the label back in its place." alt="" coords="219,36,374,64"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,47,205,49,200,50,172,52"/>
-<area shape="rect" id="Node000003" href="$class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00" title="The user typed a different name and confirmed it." alt="" coords="444,5,598,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,37,432,31,426,32,375,42"/>
-<area shape="rect" id="Node000004" href="$class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d" title="text with every line break (see isLineBreak()) removed: what a one&#45;line field keeps of a paste." alt="" coords="422,57,620,102"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="374,57,409,64,404,64,374,63"/>
-<area shape="rect" id="Node000005" href="$class_secret_line_edit.html#aaffec2fbdc78aea02c002f3dee79736a" title="Whether ch breaks a line: LF, CR, NEL (U+0085), or the Unicode line and paragraph separators (U+2028,..." alt="" coords="668,65,867,93"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="621,77,655,79,650,79,621,82"/>
+<area shape="rect" id="Node000001" title="Escape in the editor cancels the edit." alt="" coords="5,57,171,85"/>
+<area shape="rect" id="Node000002" href="$class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac" title="Close the editor, putting the label back in its place." alt="" coords="219,57,374,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,69,205,70,200,72,172,74"/>
+<area shape="rect" id="Node000003" href="$class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6" title="The field&#39;s key, whole; the label shows it through Util::shownName()." alt="" coords="455,5,587,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="359,54,446,36,441,38,360,59"/>
+<area shape="rect" id="Node000004" href="$class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00" title="The user typed a different name and confirmed it." alt="" coords="444,57,598,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="374,69,432,71,426,72,374,74"/>
+<area shape="rect" id="Node000005" href="$class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d" title="text with every line break (see isLineBreak()) removed: what a one&#45;line field keeps of a paste." alt="" coords="422,109,620,154"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="351,83,423,104,418,104,351,88"/>
+<area shape="rect" id="Node000006" href="$class_secret_line_edit.html#aaffec2fbdc78aea02c002f3dee79736a" title="Whether ch breaks a line: LF, CR, NEL (U+0085), or the Unicode line and paragraph separators (U+2028,..." alt="" coords="668,117,867,145"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="621,129,655,131,650,131,621,134"/>
 </map>

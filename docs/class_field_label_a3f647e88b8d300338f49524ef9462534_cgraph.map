@@ -1,0 +1,9 @@
+<map id="FieldLabel::setName" name="FieldLabel::setName">
+<area shape="rect" id="Node000001" title="Name the field name and show it." alt="" coords="5,32,160,60"/>
+<area shape="rect" id="Node000002" href="$class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6" title="The field&#39;s key, whole; the label shows it through Util::shownName()." alt="" coords="208,5,340,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,32,195,30,190,31,161,38"/>
+<area shape="rect" id="Node000003" href="$class_util.html#ad56543fef6f716ae7acb2e201cdf965e" title="A name or path from the store, as a label or list shows it: one line, at most max characters." alt="" coords="208,57,341,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,53,195,60,190,61,160,59"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="389,57,516,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="342,69,376,71,371,71,342,74"/>
+</map>

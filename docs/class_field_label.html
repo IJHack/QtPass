@@ -154,6 +154,10 @@ Signals</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a02ed94111b21b7f6419fb4e35ead4d62" id="r_a02ed94111b21b7f6419fb4e35ead4d62"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a02ed94111b21b7f6419fb4e35ead4d62">FieldLabel</a> (const QString &amp;name, QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:a02ed94111b21b7f6419fb4e35ead4d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label for the field called <code class="param">name</code>.  <br /></td></tr>
+<tr class="memitem:ae34a53c3b3d58a61f1e9ab4411567ed6" id="r_ae34a53c3b3d58a61f1e9ab4411567ed6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a> () const -&gt; QString</td></tr>
+<tr class="memdesc:ae34a53c3b3d58a61f1e9ab4411567ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field's key, whole; the label shows it through <a class="el" href="class_util.html#ad56543fef6f716ae7acb2e201cdf965e" title="A name or path from the store, as a label or list shows it: one line, at most max characters.">Util::shownName()</a>.  <br /></td></tr>
+<tr class="memitem:a3f647e88b8d300338f49524ef9462534" id="r_a3f647e88b8d300338f49524ef9462534"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3f647e88b8d300338f49524ef9462534">setName</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a3f647e88b8d300338f49524ef9462534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name the field <code class="param">name</code> and show it.  <br /></td></tr>
 <tr class="memitem:a97d47e3ccb600aa8012953dc801079f8" id="r_a97d47e3ccb600aa8012953dc801079f8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a97d47e3ccb600aa8012953dc801079f8">~FieldLabel</a> () override</td></tr>
 <tr class="memdesc:a97d47e3ccb600aa8012953dc801079f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an open editor with it: the editor is a sibling, not a child, so it would otherwise stay behind when the field is removed while its name is being edited.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -175,6 +179,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a30ecfc400277695f42c82ece55adc22d" id="r_a30ecfc400277695f42c82ece55adc22d"><td class="memItemLeft">QPointer&lt; QLineEdit &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a30ecfc400277695f42c82ece55adc22d">m_editor</a></td></tr>
 <tr class="memdesc:a30ecfc400277695f42c82ece55adc22d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The line edit open over the label while a rename is in progress; null otherwise. A sibling in the parent's form layout rather than a child, so the destructor deletes it explicitly.  <br /></td></tr>
+<tr class="memitem:af3e1444936ccdc63ca95c78e509383fc" id="r_af3e1444936ccdc63ca95c78e509383fc"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#af3e1444936ccdc63ca95c78e509383fc">m_name</a></td></tr>
+<tr class="memdesc:af3e1444936ccdc63ca95c78e509383fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field's key, whole (the text shown may be cut).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The name of a <span class="tt">key: value</span> field in <a class="el" href="class_password_dialog.html" title="Dialog for creating a password entry or editing an existing one.">PasswordDialog</a>, editable in place: double-click or the context menu renames it, the context menu can also remove the field (#132). </p>
@@ -218,11 +224,17 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00017">17</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00018">18</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
 <div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a02ed94111b21b7f6419fb4e35ead4d62_cgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a02ed94111b21b7f6419fb4e35ead4d62_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -253,7 +265,7 @@ Private Attributes</h2></td></tr>
 
 <p>Takes an open editor with it: the editor is a sibling, not a child, so it would otherwise stay behind when the field is removed while its name is being edited. </p>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00041">41</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00048">48</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
 
 </div>
 </div>
@@ -289,17 +301,17 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00034">34</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
-</div>
-<div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a24ff71ebb79c3ad3b5c4bb36ddd5aeb2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00041">41</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
 <div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a24ff71ebb79c3ad3b5c4bb36ddd5aeb2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a24ff71ebb79c3ad3b5c4bb36ddd5aeb2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -335,16 +347,16 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
-</div>
-<div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a3b42f714f8ba58c0e66c9d999b864581_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
 <div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a3b42f714f8ba58c0e66c9d999b864581_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a3b42f714f8ba58c0e66c9d999b864581_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -387,17 +399,17 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the event was consumed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00078">78</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary">
-</div>
-<div id="dynsection-7-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ae22070170533686456e216dc4e7fe62f_cgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00085">85</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
 <div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ae22070170533686456e216dc4e7fe62f_cgraph.svg" width="100%" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ae22070170533686456e216dc4e7fe62f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -434,17 +446,17 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00097">97</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
-</div>
-<div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a8ffd88532b8137846c84d7c8812d64ac_cgraph.svg" width="659" height="107"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00104">104</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
 <div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a8ffd88532b8137846c84d7c8812d64ac_cgraph.svg" width="659" height="159"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a8ffd88532b8137846c84d7c8812d64ac_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -481,18 +493,54 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00026">26</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
-</div>
-<div id="dynsection-11-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ab888cb34aab13458b37ac20c5c491b70_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00033">33</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary">
 </div>
 <div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ab888cb34aab13458b37ac20c5c491b70_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ab888cb34aab13458b37ac20c5c491b70_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ae34a53c3b3d58a61f1e9ab4411567ed6" name="ae34a53c3b3d58a61f1e9ab4411567ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae34a53c3b3d58a61f1e9ab4411567ed6">&#9670;&#160;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FieldLabel::name </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The field's key, whole; the label shows it through <a class="el" href="class_util.html#ad56543fef6f716ae7acb2e201cdf965e" title="A name or path from the store, as a label or list shows it: one line, at most max characters.">Util::shownName()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The key. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8h_source.html#l00042">42</a> of file <a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ae34a53c3b3d58a61f1e9ab4411567ed6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -521,10 +569,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The user chose "Remove field". </p>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a656a2fae4db3fbc2ff06e154b1ecbcee_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -565,11 +613,50 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_aa6c313a70722faead0ca8abf7c2abd00_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a3f647e88b8d300338f49524ef9462534" name="a3f647e88b8d300338f49524ef9462534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f647e88b8d300338f49524ef9462534">&#9670;&#160;</a></span>setName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FieldLabel::setName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Name the field <code class="param">name</code> and show it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The field's new key. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00027">27</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a3f647e88b8d300338f49524ef9462534_cgraph.svg" width="522" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a3f647e88b8d300338f49524ef9462534_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -599,17 +686,17 @@ Private Attributes</h2></td></tr>
 
 <p>Open the in-place editor over the label. </p>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00043">43</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00050">50</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
 </div>
-<div id="dynsection-15-content" class="dyncontent hidden">
+<div id="dynsection-19-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_adae9f17d579fe091fe9ea94a8ba4719e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary">
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
 </div>
-<div id="dynsection-16-content" class="dyncontent hidden">
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_adae9f17d579fe091fe9ea94a8ba4719e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -638,7 +725,33 @@ Private Attributes</h2></td></tr>
 
 <p>The line edit open over the label while a rename is in progress; null otherwise. A sibling in the parent's form layout rather than a child, so the destructor deletes it explicitly. </p>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8h_source.html#l00098">98</a> of file <a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8h_source.html#l00110">110</a> of file <a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a>.</p>
+
+</div>
+</div>
+<a id="af3e1444936ccdc63ca95c78e509383fc" name="af3e1444936ccdc63ca95c78e509383fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3e1444936ccdc63ca95c78e509383fc">&#9670;&#160;</a></span>m_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString FieldLabel::m_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The field's key, whole (the text shown may be cut). </p>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8h_source.html#l00112">112</a> of file <a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a>.</p>
 
 </div>
 </div>

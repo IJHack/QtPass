@@ -1,39 +1,65 @@
 <map id="Util::boundSpaceRuns" name="Util::boundSpaceRuns">
-<area shape="rect" id="Node000001" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="2039,83,2202,110"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="1830,83,1991,110"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2020,97,1992,99,1992,94,2026,96"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="1553,32,1782,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1823,79,1737,63,1737,58,1829,79"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass.html#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std..." alt="" coords="1297,108,1474,136"/>
-<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="1811,101,1475,120,1475,115,1817,101"/>
-<area shape="rect" id="Node000014" href="$class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="1596,133,1739,161"/>
-<area shape="poly" id="edge19_Node000002_Node000014" title=" " alt="" coords="1829,114,1738,135,1737,130,1823,114"/>
-<area shape="rect" id="Node000004" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="1266,5,1505,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1535,34,1506,33,1506,28,1541,34"/>
-<area shape="rect" id="Node000005" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="696,15,922,42"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1248,22,923,29,922,24,1253,21"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,79,483,106"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="695,46,482,81,481,75,700,44"/>
-<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="418,63,408,60,385,57,364,59,352,64,349,69,354,79,349,77,344,70,348,60,362,54,385,52,409,55,424,63"/>
-<area shape="rect" id="Node000007" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,79,239,106"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="269,102,239,104,238,99,274,101"/>
-<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="254,81,289,83,284,85,255,86"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass.html#a81e0207207f490616dd442837a2469d4" title="Connect the completion signals of one backend to the slots that turn them into output,..." alt="" coords="712,99,906,144"/>
-<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="1333,102,1279,86,1218,72,1148,63,1094,60,1039,63,970,72,917,85,867,101,865,96,915,80,969,67,1039,58,1094,54,1149,58,1218,67,1280,81,1338,102"/>
-<area shape="rect" id="Node000011" href="$class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb" title="Slot for Pass::finishedInsert: like passStoreChanged(), then emit entryInserted() so the window refre..." alt="" coords="1013,81,1174,109"/>
-<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="1278,112,1175,105,1175,100,1284,112"/>
-<area shape="rect" id="Node000012" href="$class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243" title="Slot for Pass::finishedGenerateGPGKeys: a status message followed by processFinished()...." alt="" coords="970,133,1218,161"/>
-<area shape="poly" id="edge15_Node000008_Node000012" title=" " alt="" coords="1278,131,1219,139,1218,134,1284,131"/>
-<area shape="rect" id="Node000013" href="$class_qt_pass.html#aa1153ea591126774caa31920020d188e" title="Slot for the backend signals that change the store on disk (git init, remove, init,..." alt="" coords="997,185,1191,213"/>
-<area shape="poly" id="edge17_Node000008_Node000013" title=" " alt="" coords="1329,140,1219,175,1167,187,1166,182,1217,170,1323,141"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b" title="Construct the glue and connect it to both pass backends." alt="" coords="531,104,648,132"/>
-<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="694,120,649,122,649,116,699,120"/>
-<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="513,109,484,107,483,102,518,108"/>
-<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="995,104,906,115,906,110,1000,104"/>
-<area shape="poly" id="edge16_Node000012_Node000009" title=" " alt="" coords="952,135,906,133,906,128,957,135"/>
-<area shape="poly" id="edge18_Node000013_Node000009" title=" " alt="" coords="1003,181,969,175,877,147,878,142,970,170,1009,182"/>
-<area shape="poly" id="edge22_Node000014_Node000008" title=" " alt="" coords="1578,139,1475,132,1475,127,1583,139"/>
-<area shape="rect" id="Node000015" href="$class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04" title="Slot for Pass::processErrorExit: report the error in red and emit operationFinished()." alt="" coords="1296,185,1475,213"/>
-<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="1583,163,1465,187,1464,182,1578,163"/>
-<area shape="poly" id="edge21_Node000015_Node000009" title=" " alt="" coords="1320,217,1245,234,1157,244,1062,243,1015,238,969,227,929,211,893,191,835,147,836,142,895,186,932,207,970,222,1016,232,1062,238,1156,238,1244,229,1315,217"/>
+<area shape="rect" id="Node000001" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="2125,271,2288,298"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a2fc3d9a02bd9d7581661560a9b5c0e8c" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="1916,215,2077,242"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2135,266,2051,246,2052,240,2140,266"/>
+<area shape="rect" id="Node000016" href="$class_util.html#ac8e125ea4b7210280d4395c7bac6be6b" title="text as a tooltip that shows it as written." alt="" coords="1931,300,2062,328"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="2112,298,2062,307,2062,302,2107,298"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="1639,240,1868,268"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1897,239,1869,245,1868,239,1903,238"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass.html#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std..." alt="" coords="1383,140,1560,168"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="1898,215,1639,181,1561,169,1561,164,1640,175,1903,215"/>
+<area shape="rect" id="Node000014" href="$class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="1682,139,1825,166"/>
+<area shape="poly" id="edge19_Node000002_Node000014" title=" " alt="" coords="1938,209,1867,187,1808,170,1808,164,1868,182,1944,209"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="1352,241,1591,269"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1621,255,1592,257,1592,252,1627,254"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="534,219,759,246"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1334,253,759,238,759,233,1339,250"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,271,483,298"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="556,251,459,273,458,267,561,249"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="428,256,414,252,385,249,357,251,342,256,338,261,345,271,340,270,333,262,339,252,356,246,385,244,415,247,434,255"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,296,239,324"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="300,302,240,310,239,305,304,300"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="205,291,289,284,284,287,206,296"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass.html#a81e0207207f490616dd442837a2469d4" title="Connect the completion signals of one backend to the slots that turn them into output,..." alt="" coords="812,108,1006,152"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="1382,171,1314,184,1231,191,1143,192,1055,183,1007,171,962,155,962,150,1008,166,1056,178,1143,186,1231,185,1313,178,1387,170"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb" title="Slot for Pass::finishedInsert: like passStoreChanged(), then emit entryInserted() so the window refre..." alt="" coords="1099,37,1260,65"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="1427,132,1370,107,1303,80,1260,68,1260,63,1305,75,1372,102,1432,133"/>
+<area shape="rect" id="Node000012" href="$class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243" title="Slot for Pass::finishedGenerateGPGKeys: a status message followed by processFinished()...." alt="" coords="1056,89,1304,117"/>
+<area shape="poly" id="edge15_Node000008_Node000012" title=" " alt="" coords="1370,137,1264,120,1264,115,1376,137"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass.html#aa1153ea591126774caa31920020d188e" title="Slot for the backend signals that change the store on disk (git init, remove, init,..." alt="" coords="1083,141,1277,169"/>
+<area shape="poly" id="edge17_Node000008_Node000013" title=" " alt="" coords="1365,155,1278,157,1277,152,1370,154"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b" title="Construct the glue and connect it to both pass backends." alt="" coords="588,141,705,169"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="794,141,706,152,705,147,799,140"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="601,175,532,210,413,272,411,268,530,205,596,177"/>
+<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="1088,70,1056,80,970,110,968,104,1055,75,1093,68"/>
+<area shape="poly" id="edge16_Node000012_Node000009" title=" " alt="" coords="1037,118,1007,123,1006,118,1043,116"/>
+<area shape="poly" id="edge18_Node000013_Node000009" title=" " alt="" coords="1065,145,1006,142,1006,136,1070,144"/>
+<area shape="poly" id="edge22_Node000014_Node000008" title=" " alt="" coords="1664,153,1561,156,1560,151,1669,153"/>
+<area shape="rect" id="Node000015" href="$class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04" title="Slot for Pass::processErrorExit: report the error in red and emit operationFinished()." alt="" coords="1382,37,1561,65"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="1696,133,1512,68,1513,63,1701,133"/>
+<area shape="poly" id="edge21_Node000015_Node000009" title=" " alt="" coords="1404,33,1333,21,1244,10,1149,11,1102,17,1057,28,1020,44,987,65,934,109,931,105,984,61,1018,39,1055,23,1101,12,1149,5,1245,5,1334,15,1409,33"/>
+<area shape="rect" id="Node000017" href="$class_password_dialog.html#a3bf288e273871a79ae041830fa82ae6a" title="Set available templates from file and select default." alt="" coords="1647,361,1860,406"/>
+<area shape="poly" id="edge24_Node000016_Node000017" title=" " alt="" coords="1933,332,1835,363,1834,358,1928,333"/>
+<area shape="rect" id="Node000025" href="$class_password_dialog.html#aa33e69ece1d6591cd3507b79bf6ee686" title="Let a new entry be named inside the dialog: a folder picker over the store&#39;s folders and a name field..." alt="" coords="1646,292,1861,336"/>
+<area shape="poly" id="edge37_Node000016_Node000025" title=" " alt="" coords="1913,314,1862,317,1861,311,1918,314"/>
+<area shape="rect" id="Node000018" href="$class_main_window.html#a2b0351f339c894215610f1b3557c8630" title="Run PasswordDialog for a new or existing entry. For a new one the dialog gets the store&#39;s real folder..." alt="" coords="1375,365,1568,393"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="1629,382,1569,383,1569,378,1634,381"/>
+<area shape="rect" id="Node000019" href="$class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder." alt="" coords="810,423,1008,450"/>
+<area shape="poly" id="edge26_Node000018_Node000019" title=" " alt="" coords="1362,395,1304,405,1008,432,1008,427,1304,399,1357,395"/>
+<area shape="rect" id="Node000021" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1081,363,1279,390"/>
+<area shape="poly" id="edge30_Node000018_Node000021" title=" " alt="" coords="1356,378,1279,380,1279,375,1362,378"/>
+<area shape="poly" id="edge29_Node000019_Node000007" title=" " alt="" coords="792,434,668,429,531,414,429,395,328,371,170,327,170,322,329,366,430,389,531,409,668,424,797,434"/>
+<area shape="rect" id="Node000020" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,372,762,400"/>
+<area shape="poly" id="edge27_Node000019_Node000020" title=" " alt="" coords="816,419,722,403,722,398,822,419"/>
+<area shape="poly" id="edge28_Node000020_Node000006" title=" " alt="" coords="592,367,423,302,423,296,597,366"/>
+<area shape="rect" id="Node000022" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="812,354,1006,399"/>
+<area shape="poly" id="edge31_Node000021_Node000022" title=" " alt="" coords="1063,377,1006,379,1006,374,1068,376"/>
+<area shape="rect" id="Node000023" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="832,303,986,330"/>
+<area shape="poly" id="edge32_Node000021_Node000023" title=" " alt="" coords="1096,359,975,334,975,328,1102,359"/>
+<area shape="poly" id="edge36_Node000023_Node000007" title=" " alt="" coords="816,318,239,314,239,308,817,313"/>
+<area shape="poly" id="edge35_Node000023_Node000020" title=" " alt="" coords="840,334,811,344,701,374,700,369,810,339,835,335"/>
+<area shape="rect" id="Node000024" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,271,755,298"/>
+<area shape="poly" id="edge33_Node000023_Node000024" title=" " alt="" coords="814,306,756,300,756,295,820,305"/>
+<area shape="poly" id="edge34_Node000024_Node000006" title=" " alt="" coords="520,285,484,287,483,282,525,284"/>
+<area shape="poly" id="edge38_Node000025_Node000018" title=" " alt="" coords="1642,340,1535,367,1534,362,1637,341"/>
 </map>

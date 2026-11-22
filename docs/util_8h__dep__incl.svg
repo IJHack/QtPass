@@ -47,15 +47,15 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="3385" data-view-height="86" data-section-id="dynsection-1">
+<svg id="graph" class="graph" data-view-width="3501" data-view-height="86" data-section-id="dynsection-1">
 <g id="viewport">
 <title>src/util.h</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Util: static helpers for the process environment, binary discovery, store paths, URL safety and the l...">
-<polygon fill="#999999" stroke="#666666" points="1746.38,-77.5 1688.38,-77.5 1688.38,-56.75 1746.38,-56.75 1746.38,-77.5"/>
-<text xml:space="preserve" text-anchor="middle" x="1717.38" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/util.h</text>
+<polygon fill="#999999" stroke="#666666" points="1783.38,-77.5 1725.38,-77.5 1725.38,-56.75 1783.38,-56.75 1783.38,-77.5"/>
+<text xml:space="preserve" text-anchor="middle" x="1754.38" y="-64" font-family="Helvetica,sans-Serif" font-size="10.00">src/util.h</text>
 </a>
 </g>
 </g>
@@ -72,8 +72,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.86,-65.8C1458.26,-63.92 417.41,-53.36 97.38,-20.75 94.68,-20.48 91.91,-20.14 89.13,-19.77"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.54,-69.3 1686.57,-65.88 1676.6,-62.3 1676.54,-69.3"/>
+<path fill="none" stroke="#63b8ff" d="M1713.66,-65.83C1491.63,-64.07 425.07,-54.04 97.38,-20.75 94.68,-20.48 91.91,-20.14 89.13,-19.77"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.5,-69.33 1723.53,-65.9 1713.56,-62.33 1713.5,-69.33"/>
 </a>
 </g>
 </g>
@@ -90,8 +90,8 @@
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.75,-66.14C1504.66,-65.91 818.91,-62.3 257.38,-20.75 254.45,-20.53 251.46,-20.29 248.44,-20.02"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.5,-69.63 1686.5,-66.14 1676.5,-62.63 1676.5,-69.63"/>
+<path fill="none" stroke="#63b8ff" d="M1713.59,-66.18C1538.6,-66.14 834.09,-63.2 257.38,-20.75 254.45,-20.53 251.46,-20.29 248.44,-20.03"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.52,-69.68 1723.52,-66.18 1713.52,-62.68 1713.52,-69.68"/>
 </a>
 </g>
 </g>
@@ -108,17 +108,17 @@
 <g id="edge3_Node000001_Node000004" class="edge">
 <title>Node1&#45;&gt;Node4</title>
 <g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1677.01,-66.32C1514.88,-66.77 895.44,-65.29 388.38,-20.75 385.38,-20.49 382.31,-20.18 379.21,-19.84"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.81,-69.82 1686.8,-66.29 1676.79,-62.82 1676.81,-69.82"/>
+<path fill="none" stroke="#63b8ff" d="M1713.93,-66.37C1548.93,-67.05 910.66,-66.38 388.38,-20.75 385.38,-20.49 382.31,-20.18 379.21,-19.85"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.49,-69.87 1723.47,-66.33 1713.46,-62.87 1713.49,-69.87"/>
 </a>
 </g>
 </g>
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="firstrunwizard_8cpp.html" target="_top" xlink:title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init...">
-<polygon fill="white" stroke="#666666" points="517.5,-20.75 397.25,-20.75 397.25,0 517.5,0 517.5,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="457.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/firstrunwizard.cpp</text>
+<g id="a_Node000005"><a xlink:href="fieldlabel_8cpp.html" target="_top" xlink:title="Implements FieldLabel; startEdit() and finishEdit() swap the label and its editor in and out of the p...">
+<polygon fill="white" stroke="#666666" points="495.62,-20.75 397.12,-20.75 397.12,0 495.62,0 495.62,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="446.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/fieldlabel.cpp</text>
 </a>
 </g>
 </g>
@@ -126,17 +126,17 @@
 <g id="edge4_Node000001_Node000005" class="edge">
 <title>Node1&#45;&gt;Node5</title>
 <g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.85,-66C1525.15,-65.25 976.47,-59.81 526.38,-20.75 523.6,-20.51 520.78,-20.24 517.92,-19.94"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.76,-69.5 1686.78,-66.05 1676.79,-62.5 1676.76,-69.5"/>
+<path fill="none" stroke="#63b8ff" d="M1713.86,-66.48C1557.48,-67.44 978.27,-67.47 504.38,-20.75 501.63,-20.48 498.83,-20.16 496,-19.81"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.73,-69.98 1723.7,-66.41 1713.68,-62.98 1713.73,-69.98"/>
 </a>
 </g>
 </g>
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="gpgidsigner_8cpp.html" target="_top" xlink:title="Implements GpgIdSigner on top of gpg&#39;s &#45;&#45;status&#45;fd output.">
-<polygon fill="white" stroke="#666666" points="645.25,-20.75 535.5,-20.75 535.5,0 645.25,0 645.25,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="590.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/gpgidsigner.cpp</text>
+<g id="a_Node000006"><a xlink:href="firstrunwizard_8cpp.html" target="_top" xlink:title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init...">
+<polygon fill="white" stroke="#666666" points="633.5,-20.75 513.25,-20.75 513.25,0 633.5,0 633.5,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="573.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/firstrunwizard.cpp</text>
 </a>
 </g>
 </g>
@@ -144,17 +144,17 @@
 <g id="edge5_Node000001_Node000006" class="edge">
 <title>Node1&#45;&gt;Node6</title>
 <g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.64,-65.89C1535.07,-64.76 1051.52,-58.21 654.38,-20.75 651.47,-20.48 648.49,-20.16 645.49,-19.82"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.59,-69.39 1686.62,-65.97 1676.64,-62.39 1676.59,-69.39"/>
+<path fill="none" stroke="#63b8ff" d="M1713.7,-65.85C1568.17,-64.56 1059.85,-57.55 642.38,-20.75 639.61,-20.51 636.78,-20.23 633.92,-19.93"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.56,-69.35 1723.59,-65.93 1713.62,-62.35 1713.56,-69.35"/>
 </a>
 </g>
 </g>
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="gpgkeystate_8cpp.html" target="_top" xlink:title="Implements the colon&#45;listing parser: record classification, one handler per record type,...">
-<polygon fill="white" stroke="#666666" points="777.12,-20.75 663.62,-20.75 663.62,0 777.12,0 777.12,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="720.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/gpgkeystate.cpp</text>
+<g id="a_Node000007"><a xlink:href="gpgidsigner_8cpp.html" target="_top" xlink:title="Implements GpgIdSigner on top of gpg&#39;s &#45;&#45;status&#45;fd output.">
+<polygon fill="white" stroke="#666666" points="761.25,-20.75 651.5,-20.75 651.5,0 761.25,0 761.25,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="706.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/gpgidsigner.cpp</text>
 </a>
 </g>
 </g>
@@ -162,17 +162,17 @@
 <g id="edge6_Node000001_Node000007" class="edge">
 <title>Node1&#45;&gt;Node7</title>
 <g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.57,-65.52C1546.34,-63.28 1129,-53.82 785.38,-20.75 782.76,-20.5 780.1,-20.22 777.41,-19.91"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.35,-69.01 1686.41,-65.68 1676.47,-62.01 1676.35,-69.01"/>
+<path fill="none" stroke="#63b8ff" d="M1713.56,-65.69C1578.69,-63.96 1135.15,-55.79 770.38,-20.75 767.47,-20.47 764.49,-20.15 761.49,-19.8"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.36,-69.19 1723.4,-65.82 1713.45,-62.19 1713.36,-69.19"/>
 </a>
 </g>
 </g>
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="imitatepass_8cpp.html" target="_top" xlink:title="Implements ImitatePass: the gpg and git command sequences behind each operation, the transactions tha...">
-<polygon fill="white" stroke="#666666" points="906,-20.75 794.75,-20.75 794.75,0 906,0 906,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="850.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/imitatepass.cpp</text>
+<g id="a_Node000008"><a xlink:href="gpgkeystate_8cpp.html" target="_top" xlink:title="Implements the colon&#45;listing parser: record classification, one handler per record type,...">
+<polygon fill="white" stroke="#666666" points="893.12,-20.75 779.62,-20.75 779.62,0 893.12,0 893.12,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="836.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/gpgkeystate.cpp</text>
 </a>
 </g>
 </g>
@@ -180,17 +180,17 @@
 <g id="edge7_Node000001_Node000008" class="edge">
 <title>Node1&#45;&gt;Node8</title>
 <g id="a_edge7_Node000001_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.82,-65.11C1558.88,-61.88 1205.82,-50.27 914.38,-20.75 911.69,-20.48 908.95,-20.18 906.19,-19.85"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.53,-68.6 1686.62,-65.37 1676.72,-61.61 1676.53,-68.6"/>
+<path fill="none" stroke="#63b8ff" d="M1713.82,-65.26C1591.1,-62.38 1213.1,-51.46 901.38,-20.75 898.77,-20.49 896.1,-20.21 893.41,-19.9"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.62,-68.76 1723.7,-65.49 1713.78,-61.76 1713.62,-68.76"/>
 </a>
 </g>
 </g>
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="importkeydialog_8cpp.html" target="_top" xlink:title="Implements ImportKeyDialog: the guarded key&#45;file read, the blocking gpg &#45;&#45;import call and the status&#45;...">
-<polygon fill="white" stroke="#666666" points="1056.88,-20.75 923.88,-20.75 923.88,0 1056.88,0 1056.88,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="990.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/importkeydialog.cpp</text>
+<g id="a_Node000009"><a xlink:href="imitatepass_8cpp.html" target="_top" xlink:title="Implements ImitatePass: the gpg and git command sequences behind each operation, the transactions tha...">
+<polygon fill="white" stroke="#666666" points="1022,-20.75 910.75,-20.75 910.75,0 1022,0 1022,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="966.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/imitatepass.cpp</text>
 </a>
 </g>
 </g>
@@ -198,17 +198,17 @@
 <g id="edge8_Node000001_Node000009" class="edge">
 <title>Node1&#45;&gt;Node9</title>
 <g id="a_edge8_Node000001_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.8,-64.05C1574.33,-58.64 1296.89,-42.99 1066.38,-20.75 1063.33,-20.46 1060.22,-20.14 1057.08,-19.81"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.45,-67.53 1686.62,-64.56 1676.82,-60.54 1676.45,-67.53"/>
+<path fill="none" stroke="#63b8ff" d="M1713.77,-64.76C1603.61,-60.8 1289.91,-47.85 1030.38,-20.75 1027.69,-20.47 1024.95,-20.16 1022.19,-19.83"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.36,-68.25 1723.48,-65.1 1713.61,-61.25 1713.36,-68.25"/>
 </a>
 </g>
 </g>
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="keygendialog_8cpp.html" target="_top" xlink:title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse...">
-<polygon fill="white" stroke="#666666" points="1193.75,-20.75 1075,-20.75 1075,0 1193.75,0 1193.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1134.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/keygendialog.cpp</text>
+<g id="a_Node000010"><a xlink:href="importkeydialog_8cpp.html" target="_top" xlink:title="Implements ImportKeyDialog: the guarded key&#45;file read, the blocking gpg &#45;&#45;import call and the status&#45;...">
+<polygon fill="white" stroke="#666666" points="1172.88,-20.75 1039.88,-20.75 1039.88,0 1172.88,0 1172.88,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1106.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/importkeydialog.cpp</text>
 </a>
 </g>
 </g>
@@ -216,17 +216,17 @@
 <g id="edge9_Node000001_Node000010" class="edge">
 <title>Node1&#45;&gt;Node10</title>
 <g id="a_edge9_Node000001_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.53,-63.21C1589.32,-56.84 1378.49,-40.64 1202.38,-20.75 1199.65,-20.44 1196.87,-20.11 1194.06,-19.77"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.26,-66.7 1686.49,-63.94 1676.77,-59.72 1676.26,-66.7"/>
+<path fill="none" stroke="#63b8ff" d="M1713.68,-63.51C1619.89,-57.34 1381.29,-40.9 1182.38,-20.75 1179.33,-20.44 1176.22,-20.11 1173.08,-19.77"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.45,-67 1723.66,-64.16 1713.91,-60.02 1713.45,-67"/>
 </a>
 </g>
 </g>
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),...">
-<polygon fill="white" stroke="#666666" points="1326.88,-20.75 1211.88,-20.75 1211.88,0 1326.88,0 1326.88,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1269.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/mainwindow.cpp</text>
+<g id="a_Node000011"><a xlink:href="keygendialog_8cpp.html" target="_top" xlink:title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse...">
+<polygon fill="white" stroke="#666666" points="1309.75,-20.75 1191,-20.75 1191,0 1309.75,0 1309.75,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1250.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/keygendialog.cpp</text>
 </a>
 </g>
 </g>
@@ -234,17 +234,17 @@
 <g id="edge10_Node000001_Node000011" class="edge">
 <title>Node1&#45;&gt;Node11</title>
 <g id="a_edge10_Node000001_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.9,-61.58C1607.27,-53.7 1460.34,-36.8 1336.38,-20.75 1333.35,-20.36 1330.24,-19.95 1327.11,-19.53"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.36,-65.04 1686.69,-62.69 1677.14,-58.09 1676.36,-65.04"/>
+<path fill="none" stroke="#63b8ff" d="M1713.9,-62.37C1636.83,-55.11 1463.72,-38.33 1318.38,-20.75 1315.65,-20.42 1312.87,-20.08 1310.06,-19.72"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.2,-65.82 1723.49,-63.27 1713.86,-58.85 1713.2,-65.82"/>
 </a>
 </g>
 </g>
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="nativegrep_8cpp.html" target="_top" xlink:title="Implements NativeGrep: the store walk, the per&#45;file gpg runs and the hand&#45;over of results from the wo...">
-<polygon fill="white" stroke="#666666" points="1451.38,-20.75 1345.38,-20.75 1345.38,0 1451.38,0 1451.38,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1398.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/nativegrep.cpp</text>
+<g id="a_Node000012"><a xlink:href="mainwindow_8cpp.html" target="_top" xlink:title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),...">
+<polygon fill="white" stroke="#666666" points="1442.88,-20.75 1327.88,-20.75 1327.88,0 1442.88,0 1442.88,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1385.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/mainwindow.cpp</text>
 </a>
 </g>
 </g>
@@ -252,17 +252,17 @@
 <g id="edge11_Node000001_Node000012" class="edge">
 <title>Node1&#45;&gt;Node12</title>
 <g id="a_edge11_Node000001_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1676.81,-59.16C1619.59,-49.34 1515.08,-31.41 1451.66,-20.52"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676,-62.57 1686.44,-60.82 1677.18,-55.68 1676,-62.57"/>
+<path fill="none" stroke="#63b8ff" d="M1714.02,-60.14C1648.46,-50.41 1518.57,-31.14 1443.2,-19.95"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1713.21,-63.56 1723.61,-61.56 1714.24,-56.63 1713.21,-63.56"/>
 </a>
 </g>
 </g>
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="pass_8cpp.html" target="_top" xlink:title="Implements what both backends share: the environment the store&#39;s processes run in,...">
-<polygon fill="white" stroke="#666666" points="1545.38,-20.75 1469.38,-20.75 1469.38,0 1545.38,0 1545.38,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1507.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/pass.cpp</text>
+<g id="a_Node000013"><a xlink:href="nativegrep_8cpp.html" target="_top" xlink:title="Implements NativeGrep: the store walk, the per&#45;file gpg runs and the hand&#45;over of results from the wo...">
+<polygon fill="white" stroke="#666666" points="1567.38,-20.75 1461.38,-20.75 1461.38,0 1567.38,0 1567.38,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1514.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/nativegrep.cpp</text>
 </a>
 </g>
 </g>
@@ -270,17 +270,17 @@
 <g id="edge12_Node000001_Node000013" class="edge">
 <title>Node1&#45;&gt;Node13</title>
 <g id="a_edge12_Node000001_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1677.5,-55.73C1639.45,-45.81 1582.55,-30.97 1545.2,-21.24"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1676.15,-58.99 1686.71,-58.13 1677.92,-52.22 1676.15,-58.99"/>
+<path fill="none" stroke="#63b8ff" d="M1713.95,-56.9C1670.54,-47 1601.84,-31.33 1557.44,-21.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1712.94,-60.26 1723.47,-59.07 1714.5,-53.44 1712.94,-60.26"/>
 </a>
 </g>
 </g>
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="passbackendfactory_8cpp.html" target="_top" xlink:title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,...">
-<polygon fill="white" stroke="#666666" points="1713.12,-20.75 1563.62,-20.75 1563.62,0 1713.12,0 1713.12,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1638.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/passbackendfactory.cpp</text>
+<g id="a_Node000014"><a xlink:href="pass_8cpp.html" target="_top" xlink:title="Implements what both backends share: the environment the store&#39;s processes run in,...">
+<polygon fill="white" stroke="#666666" points="1661.38,-20.75 1585.38,-20.75 1585.38,0 1661.38,0 1661.38,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1623.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/pass.cpp</text>
 </a>
 </g>
 </g>
@@ -288,17 +288,17 @@
 <g id="edge13_Node000001_Node000014" class="edge">
 <title>Node1&#45;&gt;Node14</title>
 <g id="a_edge13_Node000001_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1694.05,-49.96C1680.51,-40.58 1663.91,-29.07 1652.38,-21.08"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1691.79,-52.66 1702.01,-55.47 1695.78,-46.9 1691.79,-52.66"/>
+<path fill="none" stroke="#63b8ff" d="M1720.52,-51.97C1697.3,-42.27 1667.11,-29.66 1646.59,-21.08"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1718.98,-55.13 1729.56,-55.75 1721.68,-48.67 1718.98,-55.13"/>
 </a>
 </g>
 </g>
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="passworddialog_8cpp.html" target="_top" xlink:title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali...">
-<polygon fill="white" stroke="#666666" points="1861.38,-20.75 1731.38,-20.75 1731.38,0 1861.38,0 1861.38,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1796.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/passworddialog.cpp</text>
+<g id="a_Node000015"><a xlink:href="passbackendfactory_8cpp.html" target="_top" xlink:title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,...">
+<polygon fill="white" stroke="#666666" points="1829.12,-20.75 1679.62,-20.75 1679.62,0 1829.12,0 1829.12,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1754.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/passbackendfactory.cpp</text>
 </a>
 </g>
 </g>
@@ -306,17 +306,17 @@
 <g id="edge14_Node000001_Node000015" class="edge">
 <title>Node1&#45;&gt;Node15</title>
 <g id="a_edge14_Node000001_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1740.7,-49.96C1754.24,-40.58 1770.84,-29.07 1782.37,-21.08"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1738.97,-46.9 1732.74,-55.47 1742.96,-52.66 1738.97,-46.9"/>
+<path fill="none" stroke="#63b8ff" d="M1754.38,-44.88C1754.38,-36.66 1754.38,-27.68 1754.38,-21.08"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1750.88,-44.82 1754.38,-54.82 1757.88,-44.82 1750.88,-44.82"/>
 </a>
 </g>
 </g>
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="passworddisplaypanel_8cpp.html" target="_top" xlink:title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local...">
-<polygon fill="white" stroke="#666666" points="2041.5,-20.75 1879.25,-20.75 1879.25,0 2041.5,0 2041.5,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1960.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/passworddisplaypanel.cpp</text>
+<g id="a_Node000016"><a xlink:href="passworddialog_8cpp.html" target="_top" xlink:title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali...">
+<polygon fill="white" stroke="#666666" points="1977.38,-20.75 1847.38,-20.75 1847.38,0 1977.38,0 1977.38,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1912.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/passworddialog.cpp</text>
 </a>
 </g>
 </g>
@@ -324,17 +324,17 @@
 <g id="edge15_Node000001_Node000016" class="edge">
 <title>Node1&#45;&gt;Node16</title>
 <g id="a_edge15_Node000001_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1757.79,-57.02C1801.64,-47.14 1871.44,-31.41 1916.58,-21.24"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1757.15,-53.58 1748.16,-59.19 1758.69,-60.4 1757.15,-53.58"/>
+<path fill="none" stroke="#63b8ff" d="M1793.29,-52.64C1821.42,-42.89 1858.79,-29.94 1884.11,-21.17"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1792.36,-49.26 1784.05,-55.84 1794.65,-55.87 1792.36,-49.26"/>
 </a>
 </g>
 </g>
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="plainmessagebox_8cpp.html" target="_top" xlink:title="Implements the PlainMessageBox helpers; the text format is set before the text so it is never laid ou...">
-<polygon fill="white" stroke="#666666" points="2199.25,-20.75 2059.5,-20.75 2059.5,0 2199.25,0 2199.25,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2129.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/plainmessagebox.cpp</text>
+<g id="a_Node000017"><a xlink:href="passworddisplaypanel_8cpp.html" target="_top" xlink:title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local...">
+<polygon fill="white" stroke="#666666" points="2157.5,-20.75 1995.25,-20.75 1995.25,0 2157.5,0 2157.5,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2076.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/passworddisplaypanel.cpp</text>
 </a>
 </g>
 </g>
@@ -342,17 +342,17 @@
 <g id="edge16_Node000001_Node000017" class="edge">
 <title>Node1&#45;&gt;Node17</title>
 <g id="a_edge16_Node000001_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1758.07,-60.72C1828.19,-51.4 1972.57,-32.21 2059.18,-20.7"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1757.63,-57.25 1748.18,-62.03 1758.55,-64.18 1757.63,-57.25"/>
+<path fill="none" stroke="#63b8ff" d="M1795.14,-59.19C1851.68,-49.58 1954.18,-32.15 2018.59,-21.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1794.57,-55.74 1785.3,-60.87 1795.74,-62.64 1794.57,-55.74"/>
 </a>
 </g>
 </g>
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="profileinit_8cpp.html" target="_top" xlink:title="Implements ProfileInit; the environments its gpg and git processes run in are built by withGpgHome() ...">
-<polygon fill="white" stroke="#666666" points="2317.38,-20.75 2217.38,-20.75 2217.38,0 2317.38,0 2317.38,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2267.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/profileinit.cpp</text>
+<g id="a_Node000018"><a xlink:href="plainmessagebox_8cpp.html" target="_top" xlink:title="Implements the PlainMessageBox helpers; the text format is set before the text so it is never laid ou...">
+<polygon fill="white" stroke="#666666" points="2315.25,-20.75 2175.5,-20.75 2175.5,0 2315.25,0 2315.25,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2245.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/plainmessagebox.cpp</text>
 </a>
 </g>
 </g>
@@ -360,17 +360,17 @@
 <g id="edge17_Node000001_Node000018" class="edge">
 <title>Node1&#45;&gt;Node18</title>
 <g id="a_edge17_Node000001_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1758.12,-63.27C1842.38,-57.15 2041.84,-41.65 2208.38,-20.75 2211.15,-20.4 2214,-20.02 2216.88,-19.62"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1758.01,-59.76 1748.29,-63.97 1758.51,-66.75 1758.01,-59.76"/>
+<path fill="none" stroke="#63b8ff" d="M1794.95,-61.77C1868.85,-53.82 2030.31,-36.32 2166.38,-20.75 2169.26,-20.42 2172.2,-20.08 2175.17,-19.74"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1794.93,-58.25 1785.36,-62.8 1795.68,-65.21 1794.93,-58.25"/>
 </a>
 </g>
 </g>
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="qtpass_8cpp.html" target="_top" xlink:title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ...">
-<polygon fill="white" stroke="#666666" points="2421.25,-20.75 2335.5,-20.75 2335.5,0 2421.25,0 2421.25,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2378.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/qtpass.cpp</text>
+<g id="a_Node000019"><a xlink:href="profileinit_8cpp.html" target="_top" xlink:title="Implements ProfileInit; the environments its gpg and git processes run in are built by withGpgHome() ...">
+<polygon fill="white" stroke="#666666" points="2433.38,-20.75 2333.38,-20.75 2333.38,0 2433.38,0 2433.38,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2383.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/profileinit.cpp</text>
 </a>
 </g>
 </g>
@@ -378,17 +378,17 @@
 <g id="edge18_Node000001_Node000019" class="edge">
 <title>Node1&#45;&gt;Node19</title>
 <g id="a_edge18_Node000001_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1758.07,-64.56C1856.17,-60.46 2113.34,-47.82 2326.38,-20.75 2329.2,-20.39 2332.1,-19.98 2335.02,-19.54"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1758,-61.06 1748.15,-64.96 1758.29,-68.05 1758,-61.06"/>
+<path fill="none" stroke="#63b8ff" d="M1795.31,-63.97C1889.12,-58.78 2126.77,-44.28 2324.38,-20.75 2327.16,-20.42 2330.01,-20.05 2332.88,-19.66"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795.13,-60.47 1785.33,-64.51 1795.51,-67.46 1795.13,-60.47"/>
 </a>
 </g>
 </g>
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="qtpasssettings_8cpp.html" target="_top" xlink:title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,...">
-<polygon fill="white" stroke="#666666" points="2563.75,-20.75 2439,-20.75 2439,0 2563.75,0 2563.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2501.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/qtpasssettings.cpp</text>
+<g id="a_Node000020"><a xlink:href="qtpass_8cpp.html" target="_top" xlink:title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ...">
+<polygon fill="white" stroke="#666666" points="2537.25,-20.75 2451.5,-20.75 2451.5,0 2537.25,0 2537.25,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2494.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/qtpass.cpp</text>
 </a>
 </g>
 </g>
@@ -396,17 +396,17 @@
 <g id="edge19_Node000001_Node000020" class="edge">
 <title>Node1&#45;&gt;Node20</title>
 <g id="a_edge19_Node000001_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1758.05,-64.5C1867.12,-59.94 2175.15,-45.69 2430.38,-20.75 2433.1,-20.48 2435.88,-20.19 2438.68,-19.89"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1757.99,-61 1748.15,-64.91 1758.28,-68 1757.99,-61"/>
+<path fill="none" stroke="#63b8ff" d="M1795.13,-65.04C1901.8,-61.85 2197.84,-50.76 2442.38,-20.75 2445.2,-20.4 2448.1,-20 2451.02,-19.57"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795.06,-61.54 1785.17,-65.33 1795.27,-68.53 1795.06,-61.54"/>
 </a>
 </g>
 </g>
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="realpass_8cpp.html" target="_top" xlink:title="Implements RealPass: builds the pass command lines and does itself the few things pass must not be tr...">
-<polygon fill="white" stroke="#666666" points="2676.75,-20.75 2582,-20.75 2582,0 2676.75,0 2676.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2629.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/realpass.cpp</text>
+<g id="a_Node000021"><a xlink:href="qtpasssettings_8cpp.html" target="_top" xlink:title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,...">
+<polygon fill="white" stroke="#666666" points="2679.75,-20.75 2555,-20.75 2555,0 2679.75,0 2679.75,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2617.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/qtpasssettings.cpp</text>
 </a>
 </g>
 </g>
@@ -414,17 +414,17 @@
 <g id="edge20_Node000001_Node000021" class="edge">
 <title>Node1&#45;&gt;Node21</title>
 <g id="a_edge20_Node000001_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1758.06,-65.55C1881.14,-63.48 2260.24,-54.6 2572.38,-20.75 2575.37,-20.43 2578.44,-20.05 2581.53,-19.64"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1758.08,-62.05 1748.14,-65.71 1758.2,-69.05 1758.08,-62.05"/>
+<path fill="none" stroke="#63b8ff" d="M1794.75,-64.87C1911.43,-61.01 2259.05,-47.91 2546.38,-20.75 2549.1,-20.49 2551.88,-20.21 2554.68,-19.91"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1794.95,-61.36 1785.07,-65.18 1795.18,-68.36 1794.95,-61.36"/>
 </a>
 </g>
 </g>
 <!-- Node22 -->
 <g id="Node000022" class="node">
 <title>Node22</title>
-<g id="a_Node000022"><a xlink:href="rnpcrypto_8cpp.html" target="_top" xlink:title="Implements RnpCrypto over RNP&#39;s C FFI, with RAII wrappers for its handles and bounded in&#45;memory input...">
-<polygon fill="white" stroke="#666666" points="2794.38,-20.75 2694.38,-20.75 2694.38,0 2794.38,0 2794.38,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2744.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/rnpcrypto.cpp</text>
+<g id="a_Node000022"><a xlink:href="realpass_8cpp.html" target="_top" xlink:title="Implements RealPass: builds the pass command lines and does itself the few things pass must not be tr...">
+<polygon fill="white" stroke="#666666" points="2792.75,-20.75 2698,-20.75 2698,0 2792.75,0 2792.75,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2745.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/realpass.cpp</text>
 </a>
 </g>
 </g>
@@ -432,17 +432,17 @@
 <g id="edge21_Node000001_Node000022" class="edge">
 <title>Node1&#45;&gt;Node22</title>
 <g id="a_edge21_Node000001_Node000022"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1758,-65.83C1891.26,-64.51 2327.15,-57.49 2685.38,-20.75 2688.16,-20.46 2691.02,-20.13 2693.89,-19.77"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1758.25,-62.33 1748.28,-65.92 1758.31,-69.33 1758.25,-62.33"/>
+<path fill="none" stroke="#63b8ff" d="M1794.85,-65.81C1924.94,-64.45 2343.97,-57.32 2688.38,-20.75 2691.37,-20.43 2694.44,-20.06 2697.53,-19.65"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795,-62.31 1785.03,-65.91 1795.07,-69.31 1795,-62.31"/>
 </a>
 </g>
 </g>
 <!-- Node23 -->
 <g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_Node000023"><a xlink:href="storemodel_8cpp.html" target="_top" xlink:title="Implements StoreModel and the StoreDragItem stream operators; the drop validation lives in executeDro...">
-<polygon fill="white" stroke="#666666" points="2921.88,-20.75 2812.88,-20.75 2812.88,0 2921.88,0 2921.88,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2867.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/storemodel.cpp</text>
+<g id="a_Node000023"><a xlink:href="rnpcrypto_8cpp.html" target="_top" xlink:title="Implements RnpCrypto over RNP&#39;s C FFI, with RAII wrappers for its handles and bounded in&#45;memory input...">
+<polygon fill="white" stroke="#666666" points="2910.38,-20.75 2810.38,-20.75 2810.38,0 2910.38,0 2910.38,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2860.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/rnpcrypto.cpp</text>
 </a>
 </g>
 </g>
@@ -450,17 +450,17 @@
 <g id="edge22_Node000001_Node000023" class="edge">
 <title>Node1&#45;&gt;Node23</title>
 <g id="a_edge22_Node000001_Node000023"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1758.08,-65.94C1901.51,-64.98 2396.77,-58.92 2803.38,-20.75 2806.39,-20.47 2809.49,-20.14 2812.61,-19.78"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1758.31,-62.44 1748.34,-66 1758.36,-69.44 1758.31,-62.44"/>
+<path fill="none" stroke="#63b8ff" d="M1794.99,-66.03C1935.08,-65.35 2410.88,-60.11 2801.38,-20.75 2804.16,-20.47 2807.02,-20.14 2809.89,-19.79"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795.11,-62.53 1785.12,-66.07 1795.14,-69.53 1795.11,-62.53"/>
 </a>
 </g>
 </g>
 <!-- Node24 -->
 <g id="Node000024" class="node">
 <title>Node24</title>
-<g id="a_Node000024"><a xlink:href="storetree_8cpp.html" target="_top" xlink:title="Implements StoreTree; setStore() is where the file system model, the proxy and the view are re&#45;rooted...">
-<polygon fill="white" stroke="#666666" points="3037.25,-20.75 2939.5,-20.75 2939.5,0 3037.25,0 3037.25,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="2988.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/storetree.cpp</text>
+<g id="a_Node000024"><a xlink:href="storemodel_8cpp.html" target="_top" xlink:title="Implements StoreModel and the StoreDragItem stream operators; the drop validation lives in executeDro...">
+<polygon fill="white" stroke="#666666" points="3037.88,-20.75 2928.88,-20.75 2928.88,0 3037.88,0 3037.88,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2983.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/storemodel.cpp</text>
 </a>
 </g>
 </g>
@@ -468,17 +468,17 @@
 <g id="edge23_Node000001_Node000024" class="edge">
 <title>Node1&#45;&gt;Node24</title>
 <g id="a_edge23_Node000001_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1757.74,-66.45C1911.12,-67.31 2472.22,-66.91 2931.38,-20.75 2933.97,-20.49 2936.62,-20.18 2939.3,-19.85"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1758.13,-62.96 1748.11,-66.39 1758.09,-69.96 1758.13,-62.96"/>
+<path fill="none" stroke="#63b8ff" d="M1795.03,-66.11C1944.86,-65.71 2480.3,-61.34 2919.38,-20.75 2922.39,-20.47 2925.49,-20.15 2928.61,-19.79"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795.22,-62.61 1785.23,-66.13 1795.23,-69.61 1795.22,-62.61"/>
 </a>
 </g>
 </g>
 <!-- Node25 -->
 <g id="Node000025" class="node">
 <title>Node25</title>
-<g id="a_Node000025"><a xlink:href="templateio_8cpp.html" target="_top" xlink:title="Implements TemplateIO; template files are read through readTemplateFile(), which refuses anything but...">
-<polygon fill="white" stroke="#666666" points="3161.75,-20.75 3055,-20.75 3055,0 3161.75,0 3161.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="3108.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/templateio.cpp</text>
+<g id="a_Node000025"><a xlink:href="storetree_8cpp.html" target="_top" xlink:title="Implements StoreTree; setStore() is where the file system model, the proxy and the view are re&#45;rooted...">
+<polygon fill="white" stroke="#666666" points="3153.25,-20.75 3055.5,-20.75 3055.5,0 3153.25,0 3153.25,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="3104.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/storetree.cpp</text>
 </a>
 </g>
 </g>
@@ -486,17 +486,17 @@
 <g id="edge24_Node000001_Node000025" class="edge">
 <title>Node1&#45;&gt;Node25</title>
 <g id="a_edge24_Node000001_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1757.75,-66.45C1919.92,-67.4 2539.52,-67.56 3046.38,-20.75 3049.09,-20.5 3051.86,-20.21 3054.65,-19.89"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1757.98,-62.95 1747.96,-66.39 1757.94,-69.95 1757.98,-62.95"/>
+<path fill="none" stroke="#63b8ff" d="M1794.73,-66.58C1954.19,-68 2555.65,-69.61 3047.38,-20.75 3049.97,-20.49 3052.63,-20.19 3055.3,-19.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795.14,-63.09 1785.11,-66.49 1795.08,-70.09 1795.14,-63.09"/>
 </a>
 </g>
 </g>
 <!-- Node26 -->
 <g id="Node000026" class="node">
 <title>Node26</title>
-<g id="a_Node000026"><a xlink:href="usersdialog_8cpp.html" target="_top" xlink:title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th...">
-<polygon fill="white" stroke="#666666" points="3289.25,-20.75 3179.5,-20.75 3179.5,0 3289.25,0 3289.25,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="3234.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/usersdialog.cpp</text>
+<g id="a_Node000026"><a xlink:href="templateio_8cpp.html" target="_top" xlink:title="Implements TemplateIO; template files are read through readTemplateFile(), which refuses anything but...">
+<polygon fill="white" stroke="#666666" points="3277.75,-20.75 3171,-20.75 3171,0 3277.75,0 3277.75,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="3224.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/templateio.cpp</text>
 </a>
 </g>
 </g>
@@ -504,17 +504,17 @@
 <g id="edge25_Node000001_Node000026" class="edge">
 <title>Node1&#45;&gt;Node26</title>
 <g id="a_edge25_Node000001_Node000026"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1758.1,-66.55C1929.92,-68 2612.47,-70.16 3170.38,-20.75 3173.28,-20.49 3176.26,-20.19 3179.26,-19.86"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1758.16,-63.05 1748.13,-66.46 1758.1,-70.05 1758.16,-63.05"/>
+<path fill="none" stroke="#63b8ff" d="M1794.95,-66.56C1963.28,-68.01 2623.06,-70.04 3162.38,-20.75 3165.09,-20.5 3167.86,-20.21 3170.65,-19.89"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795.23,-63.07 1785.2,-66.47 1795.17,-70.06 1795.23,-63.07"/>
 </a>
 </g>
 </g>
 <!-- Node27 -->
 <g id="Node000027" class="node">
 <title>Node27</title>
-<g id="a_Node000027"><a xlink:href="util_8cpp.html" target="_top" xlink:title="Implements Util; the staged, link&#45;safe store writes (stageFileReplacing() and its helpers) and the st...">
-<polygon fill="white" stroke="#666666" points="3377,-20.75 3307.75,-20.75 3307.75,0 3377,0 3377,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="3342.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/util.cpp</text>
+<g id="a_Node000027"><a xlink:href="usersdialog_8cpp.html" target="_top" xlink:title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th...">
+<polygon fill="white" stroke="#666666" points="3405.25,-20.75 3295.5,-20.75 3295.5,0 3405.25,0 3405.25,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="3350.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/usersdialog.cpp</text>
 </a>
 </g>
 </g>
@@ -522,8 +522,26 @@
 <g id="edge26_Node000001_Node000027" class="edge">
 <title>Node1&#45;&gt;Node27</title>
 <g id="a_edge26_Node000001_Node000027"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1757.94,-65.96C1973.58,-64.91 2987.14,-58.06 3298.38,-20.75 3301.32,-20.4 3304.36,-19.94 3307.41,-19.42"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1758.08,-62.46 1748.09,-66 1758.11,-69.46 1758.08,-62.46"/>
+<path fill="none" stroke="#63b8ff" d="M1795.32,-65.56C2007.61,-62.5 2984.59,-47.23 3286.38,-20.75 3289.28,-20.49 3292.26,-20.19 3295.26,-19.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795.3,-62.06 1785.35,-65.7 1795.4,-69.05 1795.3,-62.06"/>
+</a>
+</g>
+</g>
+<!-- Node28 -->
+<g id="Node000028" class="node">
+<title>Node28</title>
+<g id="a_Node000028"><a xlink:href="util_8cpp.html" target="_top" xlink:title="Implements Util; the staged, link&#45;safe store writes (stageFileReplacing() and its helpers) and the st...">
+<polygon fill="white" stroke="#666666" points="3493,-20.75 3423.75,-20.75 3423.75,0 3493,0 3493,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="3458.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/util.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node28 -->
+<g id="edge27_Node000001_Node000028" class="edge">
+<title>Node1&#45;&gt;Node28</title>
+<g id="a_edge27_Node000001_Node000028"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1795.19,-66.02C2017.73,-65.3 3086.71,-59.8 3414.38,-20.75 3417.32,-20.4 3420.36,-19.95 3423.41,-19.43"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1795.28,-62.52 1785.29,-66.05 1795.3,-69.52 1795.28,-62.52"/>
 </a>
 </g>
 </g>

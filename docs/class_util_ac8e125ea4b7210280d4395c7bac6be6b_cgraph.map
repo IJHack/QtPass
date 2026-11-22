@@ -1,0 +1,7 @@
+<map id="Util::plainToolTip" name="Util::plainToolTip">
+<area shape="rect" id="Node000001" title="text as a tooltip that shows it as written." alt="" coords="5,32,136,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a57fa6e612f022589f609d8b463111a48" title="text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,..." alt="" coords="184,5,347,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,34,171,32,166,33,136,40"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="202,57,329,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,52,189,61,184,61,136,57"/>
+</map>

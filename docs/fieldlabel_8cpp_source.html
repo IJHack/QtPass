@@ -123,149 +123,166 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fieldlabel_8cp
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="fieldlabel_8h.html">fieldlabel.h</a>&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="secretlineedit_8h.html">secretlineedit.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QContextMenuEvent&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QFormLayout&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QKeyEvent&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QMenu&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62">   17</a></span><a class="code hl_function" href="class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62">FieldLabel::FieldLabel</a>(<span class="keyword">const</span> QString &amp;name, QWidget *parent) : QLabel(parent) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="comment">// A field name comes from the entry, which a shared store&#39;s other writers</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="comment">// control: as rich text, &lt;img src=&quot;/dev/zero&quot;&gt; would have Qt read that</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="comment">// file without end. Plain text before the name is set.</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  setTextFormat(Qt::PlainText);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  setText(name);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  setToolTip(tr(<span class="stringliteral">&quot;Double-click to rename this field&quot;</span>));</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QContextMenuEvent&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QFormLayout&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QKeyEvent&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QMenu&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62">   18</a></span><a class="code hl_function" href="class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62">FieldLabel::FieldLabel</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a>, QWidget *parent) : QLabel(parent) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="comment">// A field name comes from the entry, which a shared store&#39;s other writers</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="comment">// control: as rich text, &lt;img src=&quot;/dev/zero&quot;&gt; would have Qt read that</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="comment">// file without end. Plain text before the name is set.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  setTextFormat(Qt::PlainText);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_function" href="class_field_label.html#a3f647e88b8d300338f49524ef9462534">setName</a>(<a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  setToolTip(tr(<span class="stringliteral">&quot;Double-click to rename this field&quot;</span>));</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">FieldLabel::mouseDoubleClickEvent</a>(QMouseEvent *event) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">if</span> (event-&gt;button() == Qt::LeftButton) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_slot" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">startEdit</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  QLabel::mouseDoubleClickEvent(event);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_field_label.html#a3f647e88b8d300338f49524ef9462534">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_field_label.html#a3f647e88b8d300338f49524ef9462534">FieldLabel::setName</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a>) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_variable" href="class_field_label.html#af3e1444936ccdc63ca95c78e509383fc">m_name</a> = <a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="comment">// Bounded: the label sizes the dialog, and every &amp; in it is a mnemonic.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  setText(<a class="code hl_function" href="class_util.html#ad56543fef6f716ae7acb2e201cdf965e">Util::shownName</a>(<a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a>));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2">FieldLabel::contextMenuEvent</a>(QContextMenuEvent *event) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  QMenu menu(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  menu.addAction(tr(<span class="stringliteral">&quot;Rename field…&quot;</span>), <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">FieldLabel::startEdit</a>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  menu.addAction(tr(<span class="stringliteral">&quot;Remove field&quot;</span>), <span class="keyword">this</span>, &amp;<a class="code hl_signal" href="class_field_label.html#a656a2fae4db3fbc2ff06e154b1ecbcee">FieldLabel::removeRequested</a>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  menu.exec(event-&gt;globalPos());</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">   33</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">FieldLabel::mouseDoubleClickEvent</a>(QMouseEvent *event) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordflow">if</span> (event-&gt;button() == Qt::LeftButton) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_slot" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">startEdit</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  QLabel::mouseDoubleClickEvent(event);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_field_label.html#a97d47e3ccb600aa8012953dc801079f8">   41</a></span><a class="code hl_function" href="class_field_label.html#a97d47e3ccb600aa8012953dc801079f8">FieldLabel::~FieldLabel</a>() { <span class="keyword">delete</span> <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>.data(); }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">   43</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">FieldLabel::startEdit</a>() {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;setFocus();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">// A SecretLineEdit: in the &quot;every key: value line&quot; mode the name can be the</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">// sensitive part, so a copy out of the editor is marked and tracked as any</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// copy out of a field.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">auto</span> *editor = <span class="keyword">new</span> <a class="code hl_function" href="class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c">SecretLineEdit</a>(text(), parentWidget());</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  connect(editor, &amp;<a class="code hl_signal" href="class_secret_line_edit.html#a2edc83d685d05c5f94e1d792e03eedd5">SecretLineEdit::copied</a>, <span class="keyword">this</span>, &amp;<a class="code hl_signal" href="class_field_label.html#a3b42f714f8ba58c0e66c9d999b864581">FieldLabel::copied</a>);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> = editor;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;fieldNameEditor&quot;</span>));</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;installEventFilter(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  connect(<a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>, &amp;QLineEdit::editingFinished, <span class="keyword">this</span>,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          [<span class="keyword">this</span>] { <a class="code hl_function" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">finishEdit</a>(<span class="keyword">true</span>); });</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">// Take the label&#39;s cell in the form, so the editor gets the label column</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="comment">// (which widens for it) instead of floating over the value next to it.</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">auto</span> *form = qobject_cast&lt;QFormLayout *&gt;(parentWidget()-&gt;layout());</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">int</span> row = -1;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  QFormLayout::ItemRole role{};</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">if</span> (form != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    form-&gt;getWidgetPosition(<span class="keyword">this</span>, &amp;row, &amp;role);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordflow">if</span> (row &gt;= 0) {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    form-&gt;removeWidget(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    hide();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    form-&gt;setWidget(row, role, <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;setGeometry(geometry());</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2">FieldLabel::contextMenuEvent</a>(QContextMenuEvent *event) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  QMenu menu(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  menu.addAction(tr(<span class="stringliteral">&quot;Rename field…&quot;</span>), <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">FieldLabel::startEdit</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  menu.addAction(tr(<span class="stringliteral">&quot;Remove field&quot;</span>), <span class="keyword">this</span>, &amp;<a class="code hl_signal" href="class_field_label.html#a656a2fae4db3fbc2ff06e154b1ecbcee">FieldLabel::removeRequested</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  menu.exec(event-&gt;globalPos());</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_field_label.html#a97d47e3ccb600aa8012953dc801079f8">   48</a></span><a class="code hl_function" href="class_field_label.html#a97d47e3ccb600aa8012953dc801079f8">FieldLabel::~FieldLabel</a>() { <span class="keyword">delete</span> <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>.data(); }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">   50</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">FieldLabel::startEdit</a>() {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;setFocus();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">// A SecretLineEdit: in the &quot;every key: value line&quot; mode the name can be the</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">// sensitive part, so a copy out of the editor is marked and tracked as any</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="comment">// copy out of a field.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">auto</span> *editor = <span class="keyword">new</span> <a class="code hl_function" href="class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c">SecretLineEdit</a>(<a class="code hl_variable" href="class_field_label.html#af3e1444936ccdc63ca95c78e509383fc">m_name</a>, parentWidget());</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  connect(editor, &amp;<a class="code hl_signal" href="class_secret_line_edit.html#a2edc83d685d05c5f94e1d792e03eedd5">SecretLineEdit::copied</a>, <span class="keyword">this</span>, &amp;<a class="code hl_signal" href="class_field_label.html#a3b42f714f8ba58c0e66c9d999b864581">FieldLabel::copied</a>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> = editor;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;fieldNameEditor&quot;</span>));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;installEventFilter(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  connect(<a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>, &amp;QLineEdit::editingFinished, <span class="keyword">this</span>,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          [<span class="keyword">this</span>] { <a class="code hl_function" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">finishEdit</a>(<span class="keyword">true</span>); });</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="comment">// Take the label&#39;s cell in the form, so the editor gets the label column</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="comment">// (which widens for it) instead of floating over the value next to it.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">auto</span> *form = qobject_cast&lt;QFormLayout *&gt;(parentWidget()-&gt;layout());</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">int</span> row = -1;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  QFormLayout::ItemRole role{};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">if</span> (form != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    form-&gt;getWidgetPosition(<span class="keyword">this</span>, &amp;row, &amp;role);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;show();</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;selectAll();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;setFocus();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordflow">if</span> (row &gt;= 0) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    form-&gt;removeWidget(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    hide();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    form-&gt;setWidget(row, role, <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;setGeometry(geometry());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;show();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;selectAll();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>-&gt;setFocus();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
 </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_field_label.html#ae22070170533686456e216dc4e7fe62f">   78</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_field_label.html#ae22070170533686456e216dc4e7fe62f">FieldLabel::eventFilter</a>(QObject *watched, QEvent *event) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">if</span> (watched != <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> || event-&gt;type() != QEvent::KeyPress) {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> QLabel::eventFilter(watched, event);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordflow">switch</span> (<span class="keyword">static_cast&lt;</span>QKeyEvent *<span class="keyword">&gt;</span>(event)-&gt;key()) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordflow">case</span> Qt::Key_Escape:</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_function" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">finishEdit</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordflow">case</span> Qt::Key_Return:</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">case</span> Qt::Key_Enter:</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// Enter confirms the name only; left alone it would also reach the</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// dialog&#39;s default button and save and close the whole entry.</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_function" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">finishEdit</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">return</span> QLabel::eventFilter(watched, event);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_field_label.html#ae22070170533686456e216dc4e7fe62f">   85</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_field_label.html#ae22070170533686456e216dc4e7fe62f">FieldLabel::eventFilter</a>(QObject *watched, QEvent *event) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordflow">if</span> (watched != <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> || event-&gt;type() != QEvent::KeyPress) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">return</span> QLabel::eventFilter(watched, event);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordflow">switch</span> (<span class="keyword">static_cast&lt;</span>QKeyEvent *<span class="keyword">&gt;</span>(event)-&gt;key()) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordflow">case</span> Qt::Key_Escape:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_function" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">finishEdit</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordflow">case</span> Qt::Key_Return:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">case</span> Qt::Key_Enter:</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">// Enter confirms the name only; left alone it would also reach the</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// dialog&#39;s default button and save and close the whole entry.</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_function" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">finishEdit</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> QLabel::eventFilter(watched, event);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
 </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">FieldLabel::finishEdit</a>(<span class="keywordtype">bool</span> commit) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="comment">// editingFinished fires again when the editor loses focus on hide; take</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="comment">// the pointer first so the second call finds nothing to do.</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  QLineEdit *editor = <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="comment">// A colon would start the value early when the line is written back, and</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="comment">// a line break, which QLineEdit keeps from a paste, would end the line.</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keyword">const</span> QString name =</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <a class="code hl_function" href="class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d">SecretLineEdit::withoutLineBreaks</a>(editor-&gt;text().remove(u<span class="charliteral">&#39;:&#39;</span>)).trimmed();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keyword">auto</span> *form = qobject_cast&lt;QFormLayout *&gt;(parentWidget()-&gt;layout());</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">int</span> row = -1;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  QFormLayout::ItemRole role{};</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordflow">if</span> (form != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    form-&gt;getWidgetPosition(editor, &amp;row, &amp;role);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  editor-&gt;hide();</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordflow">if</span> (row &gt;= 0) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    form-&gt;removeWidget(editor);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    form-&gt;setWidget(row, role, <span class="keyword">this</span>);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    show();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  }</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  editor-&gt;deleteLater();</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordflow">if</span> (commit &amp;&amp; !name.isEmpty() &amp;&amp; name != text()) {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    emit <a class="code hl_signal" href="class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00">renamed</a>(text(), name);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  }</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">  104</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">FieldLabel::finishEdit</a>(<span class="keywordtype">bool</span> commit) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="comment">// editingFinished fires again when the editor loses focus on hide; take</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="comment">// the pointer first so the second call finds nothing to do.</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  QLineEdit *editor = <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <a class="code hl_variable" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="comment">// A colon would start the value early when the line is written back, and</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="comment">// a line break, which QLineEdit keeps from a paste, would end the line.</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">const</span> QString <a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a> =</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <a class="code hl_function" href="class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d">SecretLineEdit::withoutLineBreaks</a>(editor-&gt;text().remove(u<span class="charliteral">&#39;:&#39;</span>)).trimmed();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keyword">auto</span> *form = qobject_cast&lt;QFormLayout *&gt;(parentWidget()-&gt;layout());</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordtype">int</span> row = -1;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  QFormLayout::ItemRole role{};</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordflow">if</span> (form != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    form-&gt;getWidgetPosition(editor, &amp;row, &amp;role);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  editor-&gt;hide();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">if</span> (row &gt;= 0) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    form-&gt;removeWidget(editor);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    form-&gt;setWidget(row, role, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    show();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  editor-&gt;deleteLater();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordflow">if</span> (commit &amp;&amp; !<a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a>.isEmpty() &amp;&amp; <a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a> != <a class="code hl_variable" href="class_field_label.html#af3e1444936ccdc63ca95c78e509383fc">m_name</a>) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// A copy: a receiver that accepts the name calls setName(), and later</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">// receivers would read the new name as the old one.</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">const</span> QString from = <a class="code hl_variable" href="class_field_label.html#af3e1444936ccdc63ca95c78e509383fc">m_name</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    emit <a class="code hl_signal" href="class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00">renamed</a>(from, <a class="code hl_function" href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">name</a>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
 </div>
-<div class="ttc" id="aclass_field_label_html_a02ed94111b21b7f6419fb4e35ead4d62"><div class="ttname"><a href="class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62">FieldLabel::FieldLabel</a></div><div class="ttdeci">FieldLabel(const QString &amp;name, QWidget *parent=nullptr)</div><div class="ttdoc">Label for the field called name.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">fieldlabel.cpp:17</a></div></div>
-<div class="ttc" id="aclass_field_label_html_a24ff71ebb79c3ad3b5c4bb36ddd5aeb2"><div class="ttname"><a href="class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2">FieldLabel::contextMenuEvent</a></div><div class="ttdeci">void contextMenuEvent(QContextMenuEvent *event) override</div><div class="ttdoc">Menu with Rename field and Remove field.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">fieldlabel.cpp:34</a></div></div>
-<div class="ttc" id="aclass_field_label_html_a30ecfc400277695f42c82ece55adc22d"><div class="ttname"><a href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">FieldLabel::m_editor</a></div><div class="ttdeci">QPointer&lt; QLineEdit &gt; m_editor</div><div class="ttdoc">The line edit open over the label while a rename is in progress; null otherwise. A sibling in the par...</div><div class="ttdef"><b>Definition</b> <a href="fieldlabel_8h_source.html#l00098">fieldlabel.h:98</a></div></div>
+<div class="ttc" id="aclass_field_label_html_a02ed94111b21b7f6419fb4e35ead4d62"><div class="ttname"><a href="class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62">FieldLabel::FieldLabel</a></div><div class="ttdeci">FieldLabel(const QString &amp;name, QWidget *parent=nullptr)</div><div class="ttdoc">Label for the field called name.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">fieldlabel.cpp:18</a></div></div>
+<div class="ttc" id="aclass_field_label_html_a24ff71ebb79c3ad3b5c4bb36ddd5aeb2"><div class="ttname"><a href="class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2">FieldLabel::contextMenuEvent</a></div><div class="ttdeci">void contextMenuEvent(QContextMenuEvent *event) override</div><div class="ttdoc">Menu with Rename field and Remove field.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">fieldlabel.cpp:41</a></div></div>
+<div class="ttc" id="aclass_field_label_html_a30ecfc400277695f42c82ece55adc22d"><div class="ttname"><a href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">FieldLabel::m_editor</a></div><div class="ttdeci">QPointer&lt; QLineEdit &gt; m_editor</div><div class="ttdoc">The line edit open over the label while a rename is in progress; null otherwise. A sibling in the par...</div><div class="ttdef"><b>Definition</b> <a href="fieldlabel_8h_source.html#l00110">fieldlabel.h:110</a></div></div>
 <div class="ttc" id="aclass_field_label_html_a3b42f714f8ba58c0e66c9d999b864581"><div class="ttname"><a href="class_field_label.html#a3b42f714f8ba58c0e66c9d999b864581">FieldLabel::copied</a></div><div class="ttdeci">void copied(const QString &amp;text)</div><div class="ttdoc">Text was copied out of the name editor, marked as a secret.</div></div>
+<div class="ttc" id="aclass_field_label_html_a3f647e88b8d300338f49524ef9462534"><div class="ttname"><a href="class_field_label.html#a3f647e88b8d300338f49524ef9462534">FieldLabel::setName</a></div><div class="ttdeci">void setName(const QString &amp;name)</div><div class="ttdoc">Name the field name and show it.</div><div class="ttdef"><b>Definition</b> <a href="#l00027">fieldlabel.cpp:27</a></div></div>
 <div class="ttc" id="aclass_field_label_html_a656a2fae4db3fbc2ff06e154b1ecbcee"><div class="ttname"><a href="class_field_label.html#a656a2fae4db3fbc2ff06e154b1ecbcee">FieldLabel::removeRequested</a></div><div class="ttdeci">void removeRequested()</div><div class="ttdoc">The user chose &quot;Remove field&quot;.</div></div>
-<div class="ttc" id="aclass_field_label_html_a8ffd88532b8137846c84d7c8812d64ac"><div class="ttname"><a href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">FieldLabel::finishEdit</a></div><div class="ttdeci">void finishEdit(bool commit)</div><div class="ttdoc">Close the editor, putting the label back in its place.</div><div class="ttdef"><b>Definition</b> <a href="#l00097">fieldlabel.cpp:97</a></div></div>
-<div class="ttc" id="aclass_field_label_html_a97d47e3ccb600aa8012953dc801079f8"><div class="ttname"><a href="class_field_label.html#a97d47e3ccb600aa8012953dc801079f8">FieldLabel::~FieldLabel</a></div><div class="ttdeci">~FieldLabel() override</div><div class="ttdoc">Takes an open editor with it: the editor is a sibling, not a child, so it would otherwise stay behind...</div><div class="ttdef"><b>Definition</b> <a href="#l00041">fieldlabel.cpp:41</a></div></div>
+<div class="ttc" id="aclass_field_label_html_a8ffd88532b8137846c84d7c8812d64ac"><div class="ttname"><a href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">FieldLabel::finishEdit</a></div><div class="ttdeci">void finishEdit(bool commit)</div><div class="ttdoc">Close the editor, putting the label back in its place.</div><div class="ttdef"><b>Definition</b> <a href="#l00104">fieldlabel.cpp:104</a></div></div>
+<div class="ttc" id="aclass_field_label_html_a97d47e3ccb600aa8012953dc801079f8"><div class="ttname"><a href="class_field_label.html#a97d47e3ccb600aa8012953dc801079f8">FieldLabel::~FieldLabel</a></div><div class="ttdeci">~FieldLabel() override</div><div class="ttdoc">Takes an open editor with it: the editor is a sibling, not a child, so it would otherwise stay behind...</div><div class="ttdef"><b>Definition</b> <a href="#l00048">fieldlabel.cpp:48</a></div></div>
 <div class="ttc" id="aclass_field_label_html_aa6c313a70722faead0ca8abf7c2abd00"><div class="ttname"><a href="class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00">FieldLabel::renamed</a></div><div class="ttdeci">void renamed(const QString &amp;from, const QString &amp;to)</div><div class="ttdoc">The user typed a different name and confirmed it.</div></div>
-<div class="ttc" id="aclass_field_label_html_ab888cb34aab13458b37ac20c5c491b70"><div class="ttname"><a href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">FieldLabel::mouseDoubleClickEvent</a></div><div class="ttdeci">void mouseDoubleClickEvent(QMouseEvent *event) override</div><div class="ttdoc">A left double-click starts editing the name.</div><div class="ttdef"><b>Definition</b> <a href="#l00026">fieldlabel.cpp:26</a></div></div>
-<div class="ttc" id="aclass_field_label_html_adae9f17d579fe091fe9ea94a8ba4719e"><div class="ttname"><a href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">FieldLabel::startEdit</a></div><div class="ttdeci">void startEdit()</div><div class="ttdoc">Open the in-place editor over the label.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">fieldlabel.cpp:43</a></div></div>
-<div class="ttc" id="aclass_field_label_html_ae22070170533686456e216dc4e7fe62f"><div class="ttname"><a href="class_field_label.html#ae22070170533686456e216dc4e7fe62f">FieldLabel::eventFilter</a></div><div class="ttdeci">auto eventFilter(QObject *watched, QEvent *event) -&gt; bool override</div><div class="ttdoc">Escape in the editor cancels the edit.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">fieldlabel.cpp:78</a></div></div>
+<div class="ttc" id="aclass_field_label_html_ab888cb34aab13458b37ac20c5c491b70"><div class="ttname"><a href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">FieldLabel::mouseDoubleClickEvent</a></div><div class="ttdeci">void mouseDoubleClickEvent(QMouseEvent *event) override</div><div class="ttdoc">A left double-click starts editing the name.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">fieldlabel.cpp:33</a></div></div>
+<div class="ttc" id="aclass_field_label_html_adae9f17d579fe091fe9ea94a8ba4719e"><div class="ttname"><a href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">FieldLabel::startEdit</a></div><div class="ttdeci">void startEdit()</div><div class="ttdoc">Open the in-place editor over the label.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">fieldlabel.cpp:50</a></div></div>
+<div class="ttc" id="aclass_field_label_html_ae22070170533686456e216dc4e7fe62f"><div class="ttname"><a href="class_field_label.html#ae22070170533686456e216dc4e7fe62f">FieldLabel::eventFilter</a></div><div class="ttdeci">auto eventFilter(QObject *watched, QEvent *event) -&gt; bool override</div><div class="ttdoc">Escape in the editor cancels the edit.</div><div class="ttdef"><b>Definition</b> <a href="#l00085">fieldlabel.cpp:85</a></div></div>
+<div class="ttc" id="aclass_field_label_html_ae34a53c3b3d58a61f1e9ab4411567ed6"><div class="ttname"><a href="class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6">FieldLabel::name</a></div><div class="ttdeci">auto name() const -&gt; QString</div><div class="ttdoc">The field&#39;s key, whole; the label shows it through Util::shownName().</div><div class="ttdef"><b>Definition</b> <a href="fieldlabel_8h_source.html#l00042">fieldlabel.h:42</a></div></div>
+<div class="ttc" id="aclass_field_label_html_af3e1444936ccdc63ca95c78e509383fc"><div class="ttname"><a href="class_field_label.html#af3e1444936ccdc63ca95c78e509383fc">FieldLabel::m_name</a></div><div class="ttdeci">QString m_name</div><div class="ttdoc">The field&#39;s key, whole (the text shown may be cut).</div><div class="ttdef"><b>Definition</b> <a href="fieldlabel_8h_source.html#l00112">fieldlabel.h:112</a></div></div>
 <div class="ttc" id="aclass_secret_line_edit_html_a2edc83d685d05c5f94e1d792e03eedd5"><div class="ttname"><a href="class_secret_line_edit.html#a2edc83d685d05c5f94e1d792e03eedd5">SecretLineEdit::copied</a></div><div class="ttdeci">void copied(const QString &amp;text)</div><div class="ttdoc">Selected text was copied out of the line edit.</div></div>
 <div class="ttc" id="aclass_secret_line_edit_html_a4137ccc5a0080d0e4892006745ca9f3d"><div class="ttname"><a href="class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d">SecretLineEdit::withoutLineBreaks</a></div><div class="ttdeci">static auto withoutLineBreaks(QString text) -&gt; QString</div><div class="ttdoc">text with every line break (see isLineBreak()) removed: what a one-line field keeps of a paste.</div><div class="ttdef"><b>Definition</b> <a href="secretlineedit_8cpp_source.html#l00061">secretlineedit.cpp:61</a></div></div>
 <div class="ttc" id="aclass_secret_line_edit_html_a6510dcfbecc9302dced39d8a76ba388c"><div class="ttname"><a href="class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c">SecretLineEdit::SecretLineEdit</a></div><div class="ttdeci">SecretLineEdit(QWidget *parent=nullptr)</div><div class="ttdoc">Constructs the line edit.</div><div class="ttdef"><b>Definition</b> <a href="secretlineedit_8cpp_source.html#l00075">secretlineedit.cpp:75</a></div></div>
+<div class="ttc" id="aclass_util_html_ad56543fef6f716ae7acb2e201cdf965e"><div class="ttname"><a href="class_util.html#ad56543fef6f716ae7acb2e201cdf965e">Util::shownName</a></div><div class="ttdeci">static auto shownName(const QString &amp;name, qsizetype max=kMaxShownName) -&gt; QString</div><div class="ttdoc">A name or path from the store, as a label or list shows it: one line, at most max characters.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00841">util.cpp:841</a></div></div>
 <div class="ttc" id="afieldlabel_8h_html"><div class="ttname"><a href="fieldlabel_8h.html">fieldlabel.h</a></div><div class="ttdoc">FieldLabel: the in-place renamable, removable name label of a key: value field in PasswordDialog.</div></div>
 <div class="ttc" id="asecretlineedit_8h_html"><div class="ttname"><a href="secretlineedit_8h.html">secretlineedit.h</a></div><div class="ttdoc">QLineEdit whose copies, cuts and primary-selection fills carry the secret clipboard hints and are rep...</div></div>
+<div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div><div class="ttdoc">Util: static helpers for the process environment, binary discovery, store paths, URL safety and the l...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -73,6 +73,7 @@ var group__support =
       [ "normalizeFolderPath", "class_util.html#acfa7240a7682876cf78d5a44bbbb81de", null ],
       [ "openRegularFile", "class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612", null ],
       [ "passUmask", "class_util.html#a11eb90b4a067feefd84769d336d79b10", null ],
+      [ "plainToolTip", "class_util.html#ac8e125ea4b7210280d4395c7bac6be6b", null ],
       [ "protocolRegex", "class_util.html#a133c5da0c8a3f106c09977679bc615c3", null ],
       [ "readRegularFile", "class_util.html#a8e427903937505b5e19ebbea7050494e", null ],
       [ "regularFilesUnder", "class_util.html#a6416bfebddfbc3dbfee2d66d5204964b", null ],
@@ -81,6 +82,7 @@ var group__support =
       [ "repositoryPassClimbsTo", "class_util.html#a158b1927cee3cffacaec8d583fbf72ad", null ],
       [ "setBeforePlacingForTests", "class_util.html#a7725c5ead1f6ecd7af1c4d85707e35b6", null ],
       [ "setGitOwnerForTests", "class_util.html#a44056a3fca6102be2a1a4f896d6a2208", null ],
+      [ "shownName", "class_util.html#ad56543fef6f716ae7acb2e201cdf965e", null ],
       [ "stageFileReplacing", "class_util.html#add1e4f70c6d7630ace5e350b30f78907", null ],
       [ "syncToDisk", "class_util.html#aa000e615528288c62c3388bfbad759ee", null ],
       [ "withoutOtherBlockBreaks", "class_util.html#a3495d95f8ec81a1be6d71efac07ca97e", null ],
@@ -88,6 +90,7 @@ var group__support =
       [ "_env", "class_util.html#a6f14f16322c96b174b357bbad4b66b67", null ],
       [ "_envInitialised", "class_util.html#aeccb471a23085461c3c79f24f7f82e2c", null ],
       [ "kMaxGpgIdBytes", "class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a", null ],
+      [ "kMaxShownName", "class_util.html#a3f6f66ae7d72dbdebda3e086c7ab6998", null ],
       [ "kMaxSpaceRun", "class_util.html#acfef9dbc0925b6f3631f19b381a3cabb", null ],
       [ "kMaxUnbrokenRun", "class_util.html#a8925bde844b953909be54f7e2f42065e", null ]
     ] ]

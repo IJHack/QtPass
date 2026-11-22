@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name_0',['name',['../struct_config_dialog_1_1_profile_entry.html#a7c1d4007219cbc0903bfbac9da3fb205',1,'ConfigDialog::ProfileEntry::name'],['../struct_config_dialog_1_1_profile_problems.html#a08edf369a2dd715d89d446578d1eed07',1,'ConfigDialog::ProfileProblems::name'],['../struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867',1,'NamedValue::name'],['../struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb',1,'UserInfo::name']]],
+  ['name_0',['name',['../struct_config_dialog_1_1_profile_entry.html#a7c1d4007219cbc0903bfbac9da3fb205',1,'ConfigDialog::ProfileEntry::name'],['../struct_config_dialog_1_1_profile_problems.html#a08edf369a2dd715d89d446578d1eed07',1,'ConfigDialog::ProfileProblems::name'],['../struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867',1,'NamedValue::name'],['../struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb',1,'UserInfo::name'],['../class_field_label.html#ae34a53c3b3d58a61f1e9ab4411567ed6',1,'FieldLabel::name()']]],
   ['namedvalue_1',['NamedValue',['../struct_named_value.html',1,'']]],
   ['namedvalues_2',['NamedValues',['../class_named_values.html',1,'NamedValues'],['../class_named_values.html#abe1c3dc2619efbc91cfd2d19c98a6dc6',1,'NamedValues::NamedValues()'],['../class_named_values.html#ae05206d5b3c53ee4545089e8f7997b4f',1,'NamedValues::NamedValues(std::initializer_list&lt; NamedValue &gt; values)']]],
   ['namedvalues_3',['namedValues',['../class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518',1,'FileContent']]],

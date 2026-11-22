@@ -1,0 +1,5 @@
+<map id="Util::shownName" name="Util::shownName">
+<area shape="rect" id="Node000001" title="A name or path from the store, as a label or list shows it: one line, at most max characters." alt="" coords="5,5,139,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="187,5,314,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,17,174,19,168,19,139,22"/>
+</map>
