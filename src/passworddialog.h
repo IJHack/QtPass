@@ -396,6 +396,11 @@ private:
   QString m_passwordLineEnd;
   /// True from accept() starting an insert until the backend reports back.
   bool m_saving{};
+  /// The widget that had the keyboard focus when the save started. Locking
+  /// the dialog moves the focus along the tab chain onto Cancel, the only
+  /// widget left enabled; a failed save gives it back, so the next Enter
+  /// tries again instead of cancelling.
+  QPointer<QWidget> m_focusBeforeSave;
   /// Inserts already pending when save() ran, whose reports must pass before
   /// one is taken as this dialog's own (counted down in isOwnInsertReport()).
   int m_insertsAhead{};
