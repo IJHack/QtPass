@@ -108,6 +108,7 @@ var class_main_window =
     [ "m_initSucceeded", "class_main_window.html#accfd1464f92298d292b7420d9e8aad23", null ],
     [ "m_inProgressUpdate", "class_main_window.html#ac51178ad833df0918d3666cfc05ff7af", null ],
     [ "m_otpRequestFile", "class_main_window.html#a968492980a2afd7e2ad940fd49ff2f83", null ],
+    [ "m_panelEntry", "class_main_window.html#a15754550c64116ede6ee160c156181cb", null ],
     [ "m_pendingOpen", "class_main_window.html#a2d2dba0de7041c5de5f34b7e114b9ab9", null ],
     [ "m_processOutput", "class_main_window.html#a4ebc3150bc50eb101d504fbedff4c419", null ],
     [ "m_progressToDelete", "class_main_window.html#aabb980ba180c68b1a3aba7e63708160b", null ],

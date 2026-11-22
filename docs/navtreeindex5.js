@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"class_users_dialog.html#ae4d6d585d09d26213b5c1fe757974544":[1,2,8,15],
 "class_users_dialog.html#ae86b7e4f8a990b980dfcc4f394722069":[1,2,8,40],
 "class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565":[1,2,8,12],
 "class_users_dialog.html#af37c4ba124940166decd520d1b1e3428":[1,2,8,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4":[2,0,0,1],
 "namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e":[2,0,0,1,1],
 "namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef":[2,0,0,1,0],
-"namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b":[2,0,0,1,2],
-"namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69":[2,0,0,2]
+"namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b":[2,0,0,1,2]
 };

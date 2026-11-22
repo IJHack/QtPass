@@ -353,6 +353,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a93f01ed6916dd3114676309ab386fe46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set once <a class="el" href="#a6ba35e7bf11ebd5236990a00daa079d7" title="Select-all and focus the search box once the window is visible; sets m_firstShowCompleted only on suc...">focusInput()</a> has actually focused the search box, so later show events leave the focus alone.  <br /></td></tr>
 <tr class="memitem:a6e89bee83cd89b0e4e08ca966ee6c898" id="r_a6e89bee83cd89b0e4e08ca966ee6c898"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6e89bee83cd89b0e4e08ca966ee6c898">m_themeSwitched</a> = false</td></tr>
 <tr class="memitem:aaba13f61c81edb811a593818518cf831" id="r_aaba13f61c81edb811a593818518cf831"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#aaba13f61c81edb811a593818518cf831">m_shownFile</a></td></tr>
+<tr class="memitem:a15754550c64116ede6ee160c156181cb" id="r_a15754550c64116ede6ee160c156181cb"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a15754550c64116ede6ee160c156181cb">m_panelEntry</a></td></tr>
 <tr class="memitem:a928b1974ed88173cf93c164f0a613795" id="r_a928b1974ed88173cf93c164f0a613795"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a928b1974ed88173cf93c164f0a613795">m_refreshAfterPush</a></td></tr>
 <tr class="memitem:a1a503a37be4b655f1696008b225d9491" id="r_a1a503a37be4b655f1696008b225d9491"><td class="memItemLeft">QPointer&lt; <a class="el" href="class_pass.html">Pass</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1a503a37be4b655f1696008b225d9491">m_refreshAfterPushOwner</a></td></tr>
 <tr class="memitem:a968492980a2afd7e2ad940fd49ff2f83" id="r_a968492980a2afd7e2ad940fd49ff2f83"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a968492980a2afd7e2ad940fd49ff2f83">m_otpRequestFile</a></td></tr>
@@ -461,7 +462,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Save the window state (a quit from the tray menu or a SIGTERM never delivers <a class="el" href="#a05fb9d72c044aa3bb7d187b994704e2f" title="Save window state and geometry on close.">closeEvent()</a>) and delete the <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> glue. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00292">292</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00294">294</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -497,7 +498,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Toolbar/context-menu "Add folder": ask for a name, create the folder under the current one (refusing paths that escape the store) and seed its <span class="tt">.gpg-id</span> from the parent when configured. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01891">1891</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01897">1897</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -538,7 +539,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Toolbar/context-menu "Add password": open <a class="el" href="class_password_dialog.html" title="Dialog for creating a password entry or editing an existing one.">PasswordDialog</a> for a new entry in the current folder. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01372">1372</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01378">1378</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -585,7 +586,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02198">2198</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02204">2204</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -637,7 +638,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01773">1773</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01779">1779</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
@@ -684,7 +685,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01249">1249</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01255">1255</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -724,7 +725,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Re-apply the monospace and line-wrapping settings to the text browser after the configuration dialog. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00510">510</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00512">512</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary">
 </div>
@@ -764,7 +765,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Toggle Qt::WindowStaysOnTopHint to match the "always on top" setting, skipping the native-window rebuild when nothing changes. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00527">527</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00529">529</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary">
 </div>
@@ -813,7 +814,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new menu, parented to the window; the caller deletes it. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01850">1850</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01856">1856</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary">
 </div>
@@ -847,7 +848,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Stop a running content search on both backends (the active one may have changed since it started). It runs outside the process queue, so only this ends its walk and the gpg it is running; the result it still delivers is discarded by <a class="el" href="#a270b5f2701f275c3de734f4150a3d897" title="Handle results from a completed grep search.">onGrepFinished()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01159">1159</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01165">1165</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -889,7 +890,7 @@ Static Private Attributes</h2></td></tr>
 <p>Forget the pending OTP and copy requests. </p>
 <p>A failed decrypt never emits <a class="el" href="class_pass.html#a67ebaa52485abc26494f0866aadcedeb" title="Emitted when a Show() succeeds.">Pass::finishedShow</a>; without this a later decrypt of the same entry (the user retrying) would be taken as the answer to a request the user has long given up on. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01471">1471</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01477">1477</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary">
 </div>
@@ -930,7 +931,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00373">373</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00375">375</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
@@ -971,7 +972,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00809">809</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00814">814</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary">
 </div>
@@ -1018,7 +1019,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01659">1659</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01665">1665</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
@@ -1046,7 +1047,7 @@ Static Private Attributes</h2></td></tr>
 <p>Open the configuration dialog. </p>
 <p>On a fresh start the first-run wizard runs before the dialog is shown. Accepting the dialog does not guarantee a usable configuration: the OK button is not gated on <a class="el" href="class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc" title="Verify that the required configuration is complete.">Util::configIsValid()</a>, so <a class="el" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh-in...">QtPass::init()</a> uses the return value to decide whether to ask again or to give up. </p><dl class="section return"><dt>Returns</dt><dd>true when the dialog was accepted, false when it was cancelled. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00546">546</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00548">548</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary">
 </div>
@@ -1099,7 +1100,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the user said yes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01374">1374</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01380">1380</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-29-summary" class="dynsummary">
 </div>
@@ -1147,7 +1148,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the user said yes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01433">1433</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01439">1439</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary">
 </div>
@@ -1195,7 +1196,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when it resolves inside the store. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01322">1322</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01328">1328</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
@@ -1282,7 +1283,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00300">300</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00302">302</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-37-summary" class="dynsummary">
 </div>
@@ -1323,7 +1324,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Ctrl+C on the tree: decrypt the current entry and let <a class="el" href="#a7d0d5451438004ab31c4d9d48a869378" title="Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPas...">passwordFromFileToClipboard()</a> copy its first line. The newest request wins (m_copyRequestFile). Does nothing while content search results hide the tree. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02023">2023</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02029">2029</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-39-summary" class="dynsummary">
 </div>
@@ -1365,7 +1366,7 @@ Static Private Attributes</h2></td></tr>
 <p>Ctrl+C anywhere in the window: the selected text when the focus is in a text view or a selectable label with a selection (the shown entry, its field values, the OTP code, the process output), otherwise the password (<a class="el" href="#a5389ebc0c173ffa3d38ead9b48a16cbb" title="Ctrl+C on the tree: decrypt the current entry and let passwordFromFileToClipboard() copy its first li...">copyPasswordFromTreeview()</a>). </p>
 <p>The shortcut is window-wide, and read-only text views and labels do not take Ctrl+C for themselves (line edits, the hidden password included, do), so a selected login or note was answered with the password. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01995">1995</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02001">2001</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-41-summary" class="dynsummary">
 </div>
@@ -1417,7 +1418,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02278">2278</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02284">2284</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-43-summary" class="dynsummary">
 </div>
@@ -1458,7 +1459,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Clear the current tree view selection. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00664">664</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00666">666</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-45" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-45-summary" class="dynsummary">
 </div>
@@ -1499,7 +1500,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Delete m_tray and reset it to null. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01654">1654</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01660">1660</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary">
 </div>
@@ -1534,7 +1535,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Drop a style-imposed menu bar or toolbar palette that belongs to the other theme (Breeze header palette after a light/dark switch). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01715">1715</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01721">1721</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-48-summary" class="dynsummary">
 </div>
@@ -1575,7 +1576,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01957">1957</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01963">1963</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-49" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-49-summary" class="dynsummary">
 </div>
@@ -1586,7 +1587,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-50-summary" class="dynsummary">
 </div>
 <div id="dynsection-50-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a4106ad4ec9fe0cbc62c4a604f91d88fe_icgraph.svg" width="100%" height="399"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a4106ad4ec9fe0cbc62c4a604f91d88fe_icgraph.svg" width="100%" height="412"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1622,7 +1623,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02273">2273</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02279">2279</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-51-summary" class="dynsummary">
 </div>
@@ -1657,7 +1658,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Finish a re-encryption pass on the current path. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02147">2147</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02153">2153</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-52" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-52-summary" class="dynsummary">
 </div>
@@ -1705,7 +1706,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the event was consumed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00363">363</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00365">365</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-54" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-54-summary" class="dynsummary">
 </div>
@@ -1758,7 +1759,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the event was consumed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01678">1678</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01684">1684</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-56" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-56-summary" class="dynsummary">
 </div>
@@ -1794,7 +1795,7 @@ Static Private Attributes</h2></td></tr>
 <p>The entry whose name is exactly the search text, if the filtered tree shows it: <span class="tt">team/bank</span> for "team/bank", not a folder of that name. </p>
 <dl class="section return"><dt>Returns</dt><dd>Its proxy index, or invalid when no entry is named so. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01236">1236</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01242">1242</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-57" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-57-summary" class="dynsummary">
 </div>
@@ -1836,7 +1837,7 @@ Static Private Attributes</h2></td></tr>
 <p>The entry file named exactly as the search text, spaces around the text included; failing that, named as the text without them. </p>
 <dl class="section return"><dt>Returns</dt><dd>Its path, or empty when no such file is in the store. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01218">1218</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01224">1224</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-59" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-59-summary" class="dynsummary">
 </div>
@@ -1877,7 +1878,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Slot called when an external process wrapper has started. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00679">679</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00681">681</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-61" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-61-summary" class="dynsummary">
 </div>
@@ -1918,7 +1919,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Share menu "Export my public key": run <span class="tt">gpg --armor --export</span> for the configured signing key and show the result in <a class="el" href="class_export_public_key_dialog.html" title="Dialog showing an ASCII-armored public GPG key for sharing.">ExportPublicKeyDialog</a>; explains what to do when no key is set. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02161">2161</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02167">2167</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-63" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-63-summary" class="dynsummary">
 </div>
@@ -1966,7 +1967,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Proxy index of the first file, or invalid when there is none. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01303">1303</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01309">1309</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-65" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-65-summary" class="dynsummary">
 </div>
@@ -2016,7 +2017,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00475">475</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00477">477</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-67" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-67-summary" class="dynsummary">
 </div>
@@ -2057,7 +2058,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Select-all and focus the search box once the window is visible; sets m_firstShowCompleted only on success so <a class="el" href="#a3febb9ef08a8e0f7fc00848ea540a899" title="First-show hook used to focus the search input once the window is actually mapped (avoids races with ...">showEvent()</a> retries. Looks the widget up by name because setWindowFlags() can rebuild it under <span class="tt">ui-&gt;lineEdit</span> (Qt 6.11). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00344">344</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00346">346</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-69" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-69-summary" class="dynsummary">
 </div>
@@ -2085,7 +2086,7 @@ Static Private Attributes</h2></td></tr>
 <p>Return the currently selected index in the tree view. </p>
 <dl class="section return"><dt>Returns</dt><dd>Current QModelIndex. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00471">471</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00473">473</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-70" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-70-summary" class="dynsummary">
 </div>
@@ -2132,7 +2133,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Entry name or path; empty for a folder or invalid index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00635">635</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00637">637</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-71" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-71-summary" class="dynsummary">
 </div>
@@ -2207,7 +2208,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The Process Output dock, its Settings-menu toggle, and the feed of non-secret process output into it. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00252">252</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00254">254</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-74" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-74-summary" class="dynsummary">
 </div>
@@ -2248,7 +2249,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Welcome message and the permanent logo in the status bar. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00461">461</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00463">463</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-76" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-76-summary" class="dynsummary">
 </div>
@@ -2359,7 +2360,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The panel-clear and search timers, and the watchdog that re-enables the UI when an operation never signals its end. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00230">230</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00232">232</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-80" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-80-summary" class="dynsummary">
 </div>
@@ -2399,7 +2400,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Wire the toolbar and menu actions to their slots, set their icons, and set up the "Show menu bar" toggle with its <a class="el" href="class_menu_bar_peek.html" title="Shows a hidden menu bar while Alt is used, as browsers and file managers do.">MenuBarPeek</a> (not on macOS). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00402">402</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00404">404</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-82" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-82-summary" class="dynsummary">
 </div>
@@ -2440,7 +2441,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Create m_tray and add the menu bar toggle to its menu; gives up (m_tray stays null) when no system tray is available. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01643">1643</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01649">1649</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-84" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-84-summary" class="dynsummary">
 </div>
@@ -2487,7 +2488,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01745">1745</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01751">1751</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-86" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-86-summary" class="dynsummary">
 </div>
@@ -2528,7 +2529,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01547">1547</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01553">1553</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-87" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-87-summary" class="dynsummary">
 </div>
@@ -2575,7 +2576,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01013">1013</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01019">1019</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-89" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-89-summary" class="dynsummary">
 </div>
@@ -2621,7 +2622,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01119">1119</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01125">1125</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-90" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-90-summary" class="dynsummary">
 </div>
@@ -2662,7 +2663,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Enter in the search box: in content-search mode start (or, for an empty query, cancel) the grep; otherwise select and show the first matching entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00977">977</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00983">983</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-92" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-92-summary" class="dynsummary">
 </div>
@@ -2703,7 +2704,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00938">938</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00944">944</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-93" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-93-summary" class="dynsummary">
 </div>
@@ -2744,7 +2745,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01605">1605</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01611">1611</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-94" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-94-summary" class="dynsummary">
 </div>
@@ -2791,7 +2792,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00639">639</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00641">641</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-96" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-96-summary" class="dynsummary">
 </div>
@@ -2838,7 +2839,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00656">656</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00658">658</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-98" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-98-summary" class="dynsummary">
 </div>
@@ -2873,7 +2874,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Trigger the automatic git push after a change (<a class="el" href="class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a" title="The store changed and the settings ask for an automatic push.">QtPass::pushRequested()</a>); see <a class="el" href="class_pass.html#a45818547e0b844bd6f111a67b3e9b249" title="GitPush() for an automatic push, the one after a change. A backend that has to make the push later dr...">Pass::GitPushAutomatic()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00628">628</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00630">630</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-99" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-99-summary" class="dynsummary">
 </div>
@@ -2914,7 +2915,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Toolbar "Config": <a class="el" href="#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog.">config()</a>, ignoring its result; refused while a backend still runs or waits, as a profile switch is. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00900">900</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00906">906</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-101" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-101-summary" class="dynsummary">
 </div>
@@ -2955,7 +2956,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Toolbar "Delete" or the Delete key: confirm, then remove the current entry or folder. Nothing selected is a no-op (#556); a linked folder only loses its link, a folder behind a link is refused. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01443">1443</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01449">1449</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-103" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-103-summary" class="dynsummary">
 </div>
@@ -2996,7 +2997,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Toolbar "Edit" or a double-click: <a class="el" href="#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto-pull is on....">editPassword()</a> on the current entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01527">1527</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01533">1533</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-105" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-105-summary" class="dynsummary">
 </div>
@@ -3007,7 +3008,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-106-summary" class="dynsummary">
 </div>
 <div id="dynsection-106-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a9480c0a26284df09cf4d595b0d1952fe_icgraph.svg" width="100%" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a9480c0a26284df09cf4d595b0d1952fe_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -3043,7 +3044,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01044">1044</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01050">1050</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-107" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-107-summary" class="dynsummary">
 </div>
@@ -3085,7 +3086,7 @@ Static Private Attributes</h2></td></tr>
 <p>An operation ended in an error before or instead of a result: forget the pending requests and what the panel was about to show. </p>
 <p>Connected to <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">Pass::processErrorExit</a>. A Show that never ran (a linked entry refused at the store boundary) leaves the previous entry's fields on the panel under the new name otherwise, and <a class="el" href="#a974b178baf718f5f5fe81d391aa666d7" title="Toolbar &quot;OTP&quot;: copy the current entry&#39;s one-time code. Uses the code the panel already shows for this...">onOtp()</a>'s fast path would take that entry's code for the refused one. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01476">1476</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01482">1482</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-109" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-109-summary" class="dynsummary">
 </div>
@@ -3126,7 +3127,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Toolbar "OTP": copy the current entry's one-time code. Uses the code the panel already shows for this entry; otherwise decrypts once and lets <a class="el" href="#ab7a805923a61f2441932d8d358fb040e" title="Generate a one-time password from decrypted content and copy it. Ignores decrypts of anything but the...">otpFromFileToClipboard()</a> finish. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01490">1490</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01496">1496</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-111" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-111-summary" class="dynsummary">
 </div>
@@ -3184,7 +3185,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02283">2283</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02289">2289</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-113" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-113-summary" class="dynsummary">
 </div>
@@ -3219,7 +3220,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Trigger a git push operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00621">621</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00623">623</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-114" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-114-summary" class="dynsummary">
 </div>
@@ -3260,7 +3261,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>searchTimer fired: filter the tree on the typed words (matched literally, in order, case-insensitively) and select the first match; an empty query collapses the tree and deselects. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00955">955</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00961">961</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-116" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-116-summary" class="dynsummary">
 </div>
@@ -3307,7 +3308,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00612">612</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00614">614</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-118" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-118-summary" class="dynsummary">
 </div>
@@ -3318,7 +3319,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-119-summary" class="dynsummary">
 </div>
 <div id="dynsection-119-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ad1f26db71fe29fdea3b1cd36bfc9c8d5_icgraph.svg" width="100%" height="400"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ad1f26db71fe29fdea3b1cd36bfc9c8d5_icgraph.svg" width="100%" height="431"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -3348,7 +3349,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Toolbar/context-menu "Users": open <a class="el" href="class_users_dialog.html" title="Dialog for selecting GPG recipients for password encryption.">UsersDialog</a> for the current folder, unless it lies behind a link. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01535">1535</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01541">1541</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-120" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-120-summary" class="dynsummary">
 </div>
@@ -3395,7 +3396,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01295">1295</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01301">1301</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-122" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-122-summary" class="dynsummary">
 </div>
@@ -3436,7 +3437,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Context menu "Open folder with file manager" on the current folder. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01884">1884</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01890">1890</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-124" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-124-summary" class="dynsummary">
 </div>
@@ -3488,7 +3489,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00757">757</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00762">762</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-126" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-126-summary" class="dynsummary">
 </div>
@@ -3540,7 +3541,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00689">689</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00692">692</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-128" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-128-summary" class="dynsummary">
 </div>
@@ -3592,7 +3593,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02042">2042</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02048">2048</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-130" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-130-summary" class="dynsummary">
 </div>
@@ -3639,7 +3640,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02067">2067</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02073">2073</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-132" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-132-summary" class="dynsummary">
 </div>
@@ -3691,7 +3692,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02127">2127</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02133">2133</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-134" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-134-summary" class="dynsummary">
 </div>
@@ -3733,7 +3734,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the folder was refused and the caller must stop. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02209">2209</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02215">2215</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-135" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-135-summary" class="dynsummary">
 </div>
@@ -3774,7 +3775,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Context menu "Rename folder": ask for a new name and Move the current folder, refusing a target outside the store. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01939">1939</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01945">1945</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-137" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-137-summary" class="dynsummary">
 </div>
@@ -3815,7 +3816,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Context menu "Rename password": ask for a new name and Move the current entry within its folder, refusing a target outside the store. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01973">1973</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01979">1979</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-139" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-139-summary" class="dynsummary">
 </div>
@@ -3848,7 +3849,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Restore window geometry and state from saved settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00875">875</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00881">881</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-141" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-141-summary" class="dynsummary">
 </div>
@@ -3888,7 +3889,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Store geometry and dock/toolbar state in the settings; idempotent, called from <a class="el" href="#a05fb9d72c044aa3bb7d187b994704e2f" title="Save window state and geometry on close.">closeEvent()</a> and the destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00339">339</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00341">341</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-143" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-143-summary" class="dynsummary">
 </div>
@@ -3928,7 +3929,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Make the entry named exactly as searched current, or else the first entry (depth first) under the store root. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01164">1164</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01170">1170</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-145" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-145-summary" class="dynsummary">
 </div>
@@ -3980,7 +3981,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01332">1332</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01338">1338</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-147" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-147-summary" class="dynsummary">
 </div>
@@ -3991,7 +3992,7 @@ Static Private Attributes</h2></td></tr>
 <div id="dynsection-148-summary" class="dynsummary">
 </div>
 <div id="dynsection-148-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a2b0351f339c894215610f1b3557c8630_icgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a2b0351f339c894215610f1b3557c8630_icgraph.svg" width="100%" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -4019,7 +4020,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00842">842</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00848">848</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-149" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-149-summary" class="dynsummary">
 </div>
@@ -4060,7 +4061,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Show the About box: version, project link, licence. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00921">921</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00927">927</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-151" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-151-summary" class="dynsummary">
 </div>
@@ -4101,7 +4102,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01878">1878</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01884">1884</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-152" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-152-summary" class="dynsummary">
 </div>
@@ -4148,7 +4149,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01143">1143</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01149">1149</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-154" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-154-summary" class="dynsummary">
 </div>
@@ -4195,7 +4196,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01803">1803</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01809">1809</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-156" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-156-summary" class="dynsummary">
 </div>
@@ -4242,7 +4243,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00390">390</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00392">392</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-158" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-158-summary" class="dynsummary">
 </div>
@@ -4277,7 +4278,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Share menu "What is this?": the explanation of sharing with GPG. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02221">2221</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02227">2227</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-159" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-159-summary" class="dynsummary">
 </div>
@@ -4323,7 +4324,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02063">2063</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02069">2069</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-160" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-160-summary" class="dynsummary">
 </div>
@@ -4359,7 +4360,7 @@ Static Private Attributes</h2></td></tr>
 <p>Begin a re-encryption pass on the current path. </p>
 <p>Disables the UI, shows a cancellable progress dialog and keeps both in place until <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a>: while the worker runs, unrelated completions must not re-enable the interface (see setUiElementsEnabled). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02103">2103</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02109">2109</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-161" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-161-summary" class="dynsummary">
 </div>
@@ -4406,7 +4407,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02238">2238</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02244">2244</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-163" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-163-summary" class="dynsummary">
 </div>
@@ -4446,7 +4447,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Show the content-search buttons only when the setting is on; turning it off while in content-search mode leaves that mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02264">2264</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02270">2270</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-165" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-165-summary" class="dynsummary">
 </div>
@@ -4493,7 +4494,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02255">2255</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02261">2261</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-167" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-167-summary" class="dynsummary">
 </div>
@@ -4533,7 +4534,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Sync the Process Output dock and its menu toggle with the setting after the configuration dialog. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02292">2292</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l02298">2298</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-169" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-169-summary" class="dynsummary">
 </div>
@@ -4574,7 +4575,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Fill the profile box from the settings, the active profile selected, without switching profiles while doing so. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01558">1558</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01564">1564</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-171" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-171-summary" class="dynsummary">
 </div>
@@ -4615,7 +4616,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Enable the profile box only when there is more than one profile, the interface is enabled and the backend is idle. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01593">1593</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01599">1599</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-173" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-173-summary" class="dynsummary">
 </div>
@@ -4653,7 +4654,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Single-shot timer that runs <a class="el" href="#abf59e43f7b3141fb5c25565c92e3abdb" title="Empty the display panel and the text browser, and leave content search if its results were showing....">clearPanel()</a> "Autoclear panel" seconds after an entry was shown. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00561">561</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00565">565</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4678,7 +4679,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Entry the in-flight Ctrl+C request asked for; empty when none. Each finishedShow is matched to it by file, so a second Ctrl+C on another entry just replaces the request instead of racing it. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00549">549</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00553">553</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4755,7 +4756,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>No usable configuration has been accepted yet: <a class="el" href="#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog.">config()</a> runs the first-run wizard and defaults to pass when it is installed. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00603">603</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00607">607</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4806,7 +4807,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Whether the constructor ended with a usable configuration; <a class="el" href="main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window.">main()</a> consults it via <a class="el" href="#ac4f5f3a524aa6bf13c16b348c48074b6" title="Return whether startup configuration succeeded.">initSucceeded()</a> to decide whether the application should start at all. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00600">600</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00604">604</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4831,7 +4832,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>True while <a class="el" href="#a558032c0521e95ce50f49be77300ff4e" title="Update the re-encryption progress dialog.">reencryptProgress()</a> is inside the dialog's setValue(), which runs processEvents() on a modal dialog: <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a> then only hides the dialog and leaves the delete to <a class="el" href="#a558032c0521e95ce50f49be77300ff4e" title="Update the re-encryption progress dialog.">reencryptProgress()</a>. A nested event loop (the worker's error box) would otherwise delete it with setValue() still on the stack. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00578">578</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00582">582</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4856,7 +4857,32 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Entry the in-flight OTP request asked for; empty when none. finishedShow names its file, so <a class="el" href="#ab7a805923a61f2441932d8d358fb040e" title="Generate a one-time password from decrypted content and copy it. Ignores decrypts of anything but the...">otpFromFileToClipboard()</a> simply ignores everything else and <a class="el" href="#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,...">passShowHandler()</a> skips the password copy for this one. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00545">545</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00549">549</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="a15754550c64116ede6ee160c156181cb" name="a15754550c64116ede6ee160c156181cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15754550c64116ede6ee160c156181cb">&#9670;&#160;</a></span>m_panelEntry</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MainWindow::m_panelEntry</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Entry whose fields the display panel's rows show; empty while the panel is empty. Unlike m_shownFile it is not dropped when Edit opens, and only a rendered entry sets it, so a double-click on a row edits that entry. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00538">538</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4881,7 +4907,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The open <a class="el" href="#a2a80222ef73eb5c6d9350db559787488" title="Searches for text as qtpass(1) promises for the command line and for text handed over by another qtpa...">applySearchText()</a> waits to make until the tree has loaded the entry; QPointer so an ended or cancelled wait reads back as null. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00584">584</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00588">588</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4906,7 +4932,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The process output console, a QDockWidget at the bottom dock area created in <a class="el" href="#adf84569020b01d026bd88ff43d07e16d">initProcessOutput()</a>. It isn't part of the .ui because uic places its QMainWindow children in centralWidget / statusBar / menuBar / toolBars / dock-widget slots only — a sibling widget at the QMainWindow level isn't laid out and ends up obscuring the centralWidget. See #1192 for the symptom. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00556">556</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00560">560</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4931,7 +4957,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Set by <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a> during m_inProgressUpdate: the dialog to delete once setValue() has returned. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00581">581</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00585">585</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -4982,7 +5008,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Progress/cancel dialog shown between <a class="el" href="#a02ec9927bda826675653c0af916c8f33" title="Begin a re-encryption pass on the current path.">startReencryptPath()</a> and <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a>; QPointer so a closed dialog reads back as null. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00572">572</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00576">576</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5007,7 +5033,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>True between <a class="el" href="#a02ec9927bda826675653c0af916c8f33" title="Begin a re-encryption pass on the current path.">startReencryptPath()</a> and <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a>. While set, setUiElementsEnabled(true) is ignored so the git completions queued by Init/Move/Copy (or the UI watchdog) cannot re-enable the interface while the re-encryption worker is still rewriting files. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00589">589</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00593">593</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5032,7 +5058,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Entry a save's refresh will show once the push queued with it is done; empty when none waits. Started behind the push, the refresh would empty the browser before a failed push's error was painted. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00538">538</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00542">542</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5057,7 +5083,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The backend whose push m_refreshAfterPush waits for: only its pushes end the wait, and the refresh runs on it. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00541">541</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00545">545</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5132,7 +5158,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The system tray icon; null until <a class="el" href="#aac6a34d508898a862807dc2512e6b659" title="Create m_tray and add the menu bar toggle to its menu; gives up (m_tray stays null) when no system tr...">initTrayIcon()</a> creates it when the setting is on, deleted again by <a class="el" href="#ae6cd4b4efa51da309090b9c394ae5a57" title="Delete m_tray and reset it to null.">destroyTrayIcon()</a> when it is turned off or no tray is available. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00596">596</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00600">600</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5158,7 +5184,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>The store as shown in the tree: models, view setup, path mapping. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00558">558</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00562">562</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5183,7 +5209,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>What <a class="el" href="#ac240119ea67a770e5d997a5aa0fe47a3" title="Enable or disable the main UI elements.">setUiElementsEnabled()</a> last set: <a class="el" href="#a91bfea12c6549f4eb243b4d41a1e3895" title="Fill the profile box from the settings, the active profile selected, without switching profiles while...">updateProfileBox()</a> keeps the profile box disabled while an operation runs. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00592">592</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00596">596</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5208,7 +5234,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Re-enables the UI if a backend operation disables it but never reports completion (see setUiElementsEnabled); armed whenever the UI is disabled, stopped when it is enabled again. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00567">567</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00571">571</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5233,7 +5259,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>searchTimer: single-shot 350 ms debounce between typing in the search box and <a class="el" href="#a661b52ed29bc2ff2b16d973c8306fdca" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,...">onTimeoutSearch()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00561">561</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00565">565</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -5285,7 +5311,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Interval of m_uiWatchdog in milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00569">569</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00573">573</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>

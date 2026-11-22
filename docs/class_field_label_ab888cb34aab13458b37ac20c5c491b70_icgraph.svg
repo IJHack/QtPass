@@ -409,8 +409,8 @@
 <g id="Node000013" class="node">
 <title>Node13</title>
 <g id="a_Node000013"><a xlink:href="class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" target="_top" xlink:title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder.">
-<polygon fill="white" stroke="#666666" points="751.75,-274.75 603.75,-274.75 603.75,-254 751.75,-254 751.75,-274.75"/>
-<text xml:space="preserve" text-anchor="middle" x="677.75" y="-261.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::addPassword</text>
+<polygon fill="white" stroke="#666666" points="751.75,-286.75 603.75,-286.75 603.75,-266 751.75,-266 751.75,-286.75"/>
+<text xml:space="preserve" text-anchor="middle" x="677.75" y="-273.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::addPassword</text>
 </a>
 </g>
 </g>
@@ -418,8 +418,8 @@
 <g id="edge20_Node000012_Node000013" class="edge">
 <title>Node12&#45;&gt;Node13</title>
 <g id="a_edge20_Node000012_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M960.81,-244.3C897.97,-248.77 812.52,-254.85 752.19,-259.15"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="961.04,-247.79 970.76,-243.59 960.54,-240.81 961.04,-247.79"/>
+<path fill="none" stroke="#63b8ff" d="M961.2,-246.99C898.32,-253.53 812.64,-262.44 752.19,-268.73"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="961.18,-250.51 970.77,-245.99 960.46,-243.55 961.18,-250.51"/>
 </a>
 </g>
 </g>
@@ -445,8 +445,8 @@
 <g id="Node000014" class="node">
 <title>Node14</title>
 <g id="a_Node000014"><a xlink:href="class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="567.75,-236.75 394.25,-236.75 394.25,-216 567.75,-216 567.75,-236.75"/>
-<text xml:space="preserve" text-anchor="middle" x="481" y="-223.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::initToolBarButtons</text>
+<polygon fill="white" stroke="#666666" points="567.75,-286.75 394.25,-286.75 394.25,-266 567.75,-266 567.75,-286.75"/>
+<text xml:space="preserve" text-anchor="middle" x="481" y="-273.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::initToolBarButtons</text>
 </a>
 </g>
 </g>
@@ -454,8 +454,8 @@
 <g id="edge21_Node000013_Node000014" class="edge">
 <title>Node13&#45;&gt;Node14</title>
 <g id="a_edge21_Node000013_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M610.2,-251.39C586.57,-246.78 560.24,-241.64 537.62,-237.23"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="609.23,-254.77 619.72,-253.25 610.57,-247.9 609.23,-254.77"/>
+<path fill="none" stroke="#63b8ff" d="M591.91,-276.38C584,-276.38 575.98,-276.38 568.05,-276.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="591.89,-279.88 601.89,-276.38 591.89,-272.88 591.89,-279.88"/>
 </a>
 </g>
 </g>
@@ -463,8 +463,8 @@
 <g id="Node000016" class="node">
 <title>Node16</title>
 <g id="a_Node000016"><a xlink:href="class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" target="_top" xlink:title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,...">
-<polygon fill="white" stroke="#666666" points="175,-207.75 0,-207.75 0,-187 175,-187 175,-207.75"/>
-<text xml:space="preserve" text-anchor="middle" x="87.5" y="-194.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::showContextMenu</text>
+<polygon fill="white" stroke="#666666" points="175,-257.75 0,-257.75 0,-237 175,-237 175,-257.75"/>
+<text xml:space="preserve" text-anchor="middle" x="87.5" y="-244.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::showContextMenu</text>
 </a>
 </g>
 </g>
@@ -472,8 +472,8 @@
 <g id="edge26_Node000013_Node000016" class="edge">
 <title>Node13&#45;&gt;Node16</title>
 <g id="a_edge26_Node000013_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M592.1,-264.71C498.23,-263.75 342.65,-258.17 211,-234.38 178.21,-228.45 141.79,-216.76 117.25,-208.1"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="591.98,-268.21 602.01,-264.8 592.04,-261.21 591.98,-268.21"/>
+<path fill="none" stroke="#63b8ff" d="M613.87,-289.24C598.83,-291.79 582.77,-294.08 567.75,-295.38 409.71,-309.05 367.16,-312.25 211,-284.38 178.19,-278.52 141.78,-266.82 117.24,-258.14"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="614.42,-292.7 623.66,-287.51 613.2,-285.8 614.42,-292.7"/>
 </a>
 </g>
 </g>
@@ -481,8 +481,8 @@
 <g id="Node000015" class="node">
 <title>Node15</title>
 <g id="a_Node000015"><a xlink:href="class_main_window.html#a52e97245b2f88492071e639395c4a15a" target="_top" xlink:title="Construct the main window.">
-<polygon fill="white" stroke="#666666" points="358.25,-207.75 211,-207.75 211,-187 358.25,-187 358.25,-207.75"/>
-<text xml:space="preserve" text-anchor="middle" x="284.62" y="-194.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
+<polygon fill="white" stroke="#666666" points="358.25,-257.75 211,-257.75 211,-237 358.25,-237 358.25,-257.75"/>
+<text xml:space="preserve" text-anchor="middle" x="284.62" y="-244.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>
 </g>
 </g>
@@ -490,8 +490,8 @@
 <g id="edge22_Node000014_Node000015" class="edge">
 <title>Node14&#45;&gt;Node15</title>
 <g id="a_edge22_Node000014_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M395.99,-213.84C383.51,-211.98 370.74,-210.07 358.52,-208.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="395.44,-217.3 405.85,-215.31 396.47,-210.37 395.44,-217.3"/>
+<path fill="none" stroke="#63b8ff" d="M395.99,-263.84C383.51,-261.98 370.74,-260.07 358.52,-258.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="395.44,-267.3 405.85,-265.31 396.47,-260.37 395.44,-267.3"/>
 </a>
 </g>
 </g>
@@ -499,8 +499,8 @@
 <g id="edge23_Node000015_Node000015" class="edge">
 <title>Node15&#45;&gt;Node15</title>
 <g id="a_edge23_Node000015_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M319.18,-219.24C314.6,-223.08 303.08,-225.75 284.62,-225.75 250.87,-225.75 240.33,-216.81 252.98,-208.15"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="322.58,-218.39 316.65,-209.61 315.81,-220.17 322.58,-218.39"/>
+<path fill="none" stroke="#63b8ff" d="M319.18,-269.24C314.6,-273.08 303.08,-275.75 284.62,-275.75 250.87,-275.75 240.33,-266.81 252.98,-258.15"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="322.58,-268.39 316.65,-259.61 315.81,-270.17 322.58,-268.39"/>
 </a>
 </g>
 </g>
@@ -508,8 +508,8 @@
 <g id="edge24_Node000015_Node000016" class="edge">
 <title>Node15&#45;&gt;Node16</title>
 <g id="a_edge24_Node000015_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M199.43,-190.68C191.39,-190.61 183.23,-190.61 175.17,-190.66"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="199.13,-194.18 209.18,-190.8 199.22,-187.18 199.13,-194.18"/>
+<path fill="none" stroke="#63b8ff" d="M199.43,-240.68C191.39,-240.61 183.23,-240.61 175.17,-240.66"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="199.13,-244.18 209.18,-240.8 199.22,-237.18 199.13,-244.18"/>
 </a>
 </g>
 </g>
@@ -517,18 +517,17 @@
 <g id="edge25_Node000016_Node000015" class="edge">
 <title>Node16&#45;&gt;Node15</title>
 <g id="a_edge25_Node000016_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M186.61,-204.12C194.72,-204.12 202.82,-204.06 210.69,-203.93"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="186.69,-200.63 176.68,-204.09 186.67,-207.63 186.69,-200.63"/>
+<path fill="none" stroke="#63b8ff" d="M186.61,-254.12C194.72,-254.12 202.82,-254.06 210.69,-253.93"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="186.69,-250.63 176.68,-254.09 186.67,-257.63 186.69,-250.63"/>
 </a>
 </g>
 </g>
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" target="_top" xlink:title="A double&#45;click on a tree entry opens it for editing; folders are left to the view.">
-<polygon fill="white" stroke="#666666" points="750.25,-236.12 605.25,-236.12 605.25,-202.62 750.25,-202.62 750.25,-236.12"/>
-<text xml:space="preserve" text-anchor="start" x="613.25" y="-222.62" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::on_treeView</text>
-<text xml:space="preserve" text-anchor="middle" x="677.75" y="-209.88" font-family="Helvetica,sans-Serif" font-size="10.00">_doubleClicked</text>
+<g id="a_Node000018"><a xlink:href="class_main_window.html#ab393d6375319b66d4c72f72e320940ae" target="_top" xlink:title="The grid of decrypted fields and what its buttons ask for.">
+<polygon fill="white" stroke="#666666" points="562.5,-247.75 399.5,-247.75 399.5,-227 562.5,-227 562.5,-247.75"/>
+<text xml:space="preserve" text-anchor="middle" x="481" y="-234.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::initDisplayPanel</text>
 </a>
 </g>
 </g>
@@ -536,71 +535,72 @@
 <g id="edge28_Node000017_Node000018" class="edge">
 <title>Node17&#45;&gt;Node18</title>
 <g id="a_edge28_Node000017_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M775.97,-219.38C767.49,-219.38 758.93,-219.38 750.61,-219.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="775.96,-222.88 785.96,-219.38 775.96,-215.88 775.96,-222.88"/>
+<path fill="none" stroke="#63b8ff" d="M776.35,-223.4C712.57,-226.43 625.71,-230.55 562.89,-233.53"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="776.24,-226.91 786.06,-222.94 775.91,-219.92 776.24,-226.91"/>
 </a>
 </g>
 </g>
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" target="_top" xlink:title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry.">
-<polygon fill="white" stroke="#666666" points="735.25,-184.75 620.25,-184.75 620.25,-164 735.25,-164 735.25,-184.75"/>
-<text xml:space="preserve" text-anchor="middle" x="677.75" y="-171.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onEdit</text>
+<g id="a_Node000019"><a xlink:href="class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" target="_top" xlink:title="A double&#45;click on a tree entry opens it for editing; folders are left to the view.">
+<polygon fill="white" stroke="#666666" points="750.25,-172.12 605.25,-172.12 605.25,-138.62 750.25,-138.62 750.25,-172.12"/>
+<text xml:space="preserve" text-anchor="start" x="613.25" y="-158.62" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::on_treeView</text>
+<text xml:space="preserve" text-anchor="middle" x="677.75" y="-145.88" font-family="Helvetica,sans-Serif" font-size="10.00">_doubleClicked</text>
 </a>
 </g>
 </g>
 <!-- Node17&#45;&gt;Node19 -->
-<g id="edge29_Node000017_Node000019" class="edge">
+<g id="edge30_Node000017_Node000019" class="edge">
 <title>Node17&#45;&gt;Node19</title>
-<g id="a_edge29_Node000017_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M806.32,-205.85C779.58,-199.25 747.84,-191.42 722.71,-185.22"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="805.42,-209.24 815.97,-208.23 807.1,-202.44 805.42,-209.24"/>
-</a>
-</g>
-</g>
-<!-- Node19&#45;&gt;Node14 -->
-<g id="edge32_Node000019_Node000014" class="edge">
-<title>Node19&#45;&gt;Node14</title>
-<g id="a_edge32_Node000019_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M621.69,-188.13C615.61,-189.82 609.54,-191.58 603.75,-193.38 587.5,-198.41 584.06,-201.55 567.75,-206.38 556.61,-209.67 544.53,-212.78 533.04,-215.51"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="622.36,-191.57 631.1,-185.58 620.53,-184.81 622.36,-191.57"/>
-</a>
-</g>
-</g>
-<!-- Node19&#45;&gt;Node16 -->
-<g id="edge33_Node000019_Node000016" class="edge">
-<title>Node19&#45;&gt;Node16</title>
-<g id="a_edge33_Node000019_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M608.7,-170.05C595.14,-169.35 581,-168.74 567.75,-168.38 409.19,-164.01 368.76,-161.88 211,-178.38 191.31,-180.43 169.95,-183.47 150.66,-186.51"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="608.24,-173.53 618.41,-170.57 608.61,-166.54 608.24,-173.53"/>
+<g id="a_edge30_Node000017_Node000019"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M819.43,-204.74C792.15,-195.17 756.38,-182.62 727.74,-172.57"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="818.16,-208.01 828.76,-208.02 820.48,-201.4 818.16,-208.01"/>
 </a>
 </g>
 </g>
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="class_main_window.html#ab393d6375319b66d4c72f72e320940ae" target="_top" xlink:title="The grid of decrypted fields and what its buttons ask for.">
-<polygon fill="white" stroke="#666666" points="562.5,-197.75 399.5,-197.75 399.5,-177 562.5,-177 562.5,-197.75"/>
-<text xml:space="preserve" text-anchor="middle" x="481" y="-184.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::initDisplayPanel</text>
+<g id="a_Node000020"><a xlink:href="class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" target="_top" xlink:title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry.">
+<polygon fill="white" stroke="#666666" points="735.25,-210.75 620.25,-210.75 620.25,-190 735.25,-190 735.25,-210.75"/>
+<text xml:space="preserve" text-anchor="middle" x="677.75" y="-197.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onEdit</text>
 </a>
 </g>
 </g>
-<!-- Node19&#45;&gt;Node20 -->
-<g id="edge30_Node000019_Node000020" class="edge">
-<title>Node19&#45;&gt;Node20</title>
-<g id="a_edge30_Node000019_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M608.77,-178.91C593.93,-179.9 578.09,-180.96 562.8,-181.98"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="608.64,-182.43 618.39,-178.27 608.18,-175.44 608.64,-182.43"/>
+<!-- Node17&#45;&gt;Node20 -->
+<g id="edge31_Node000017_Node000020" class="edge">
+<title>Node17&#45;&gt;Node20</title>
+<g id="a_edge31_Node000017_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M776.02,-210.51C762.3,-209.08 748.4,-207.63 735.56,-206.29"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="775.66,-213.99 785.97,-211.54 776.38,-207.03 775.66,-213.99"/>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node15 -->
-<g id="edge31_Node000020_Node000015" class="edge">
-<title>Node20&#45;&gt;Node15</title>
-<g id="a_edge31_Node000020_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M387.82,-192.12C378.04,-192.62 368.19,-193.13 358.66,-193.62"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="387.94,-195.62 397.74,-191.61 387.58,-188.63 387.94,-195.62"/>
+<!-- Node18&#45;&gt;Node15 -->
+<g id="edge29_Node000018_Node000015" class="edge">
+<title>Node18&#45;&gt;Node15</title>
+<g id="a_edge29_Node000018_Node000015"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M387.82,-242.12C378.04,-242.62 368.19,-243.13 358.66,-243.62"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="387.94,-245.62 397.74,-241.61 387.58,-238.63 387.94,-245.62"/>
+</a>
+</g>
+</g>
+<!-- Node20&#45;&gt;Node14 -->
+<g id="edge32_Node000020_Node000014" class="edge">
+<title>Node20&#45;&gt;Node14</title>
+<g id="a_edge32_Node000020_Node000014"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M649.48,-216.77C627.93,-229.14 596.76,-245.73 567.75,-256.38 558.14,-259.9 547.68,-262.96 537.48,-265.54"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="651.05,-219.91 657.93,-211.85 647.52,-213.86 651.05,-219.91"/>
+</a>
+</g>
+</g>
+<!-- Node20&#45;&gt;Node16 -->
+<g id="edge33_Node000020_Node000016" class="edge">
+<title>Node20&#45;&gt;Node16</title>
+<g id="a_edge33_Node000020_Node000016"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M608.73,-202.46C517.87,-205.71 351.96,-213.24 211,-228.38 191.42,-230.48 170.19,-233.5 150.98,-236.53"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="608.58,-205.97 618.46,-202.12 608.34,-198.98 608.58,-205.97"/>
 </a>
 </g>
 </g>
