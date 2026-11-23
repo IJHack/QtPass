@@ -30,6 +30,8 @@ private Q_SLOTS:
   void parseGpgColonOutputUnknownRecordTypes();
   void parseGpgColonOutputAllPublicRecordTypes();
   void multipleUidRecordsOnlyFirstNameUsed();
+  void nameComesFromTheUidThatEarnedTheValidity_data();
+  void nameComesFromTheUidThatEarnedTheValidity();
   void pubRecordDoesNotSetHaveSecret();
   void secRecordSetsHaveSecretOnlyWhenSecretTrue();
   void createdDateParsedFromEpoch();
@@ -530,6 +532,47 @@ void tst_gpgkeystate::multipleUidRecordsOnlyFirstNameUsed() {
   QVERIFY2(result.size() == 1, "one key expected");
   QVERIFY2(result.first().name == QStringLiteral("First Name <first@test.org>"),
            "only the first uid record should set the name");
+}
+
+void tst_gpgkeystate::nameComesFromTheUidThatEarnedTheValidity_data() {
+  QTest::addColumn<QString>("input");
+  QTest::addColumn<QString>("name");
+  // Scan ANT-2026-I8UP2BUX: the owner of a key the user certified adds a
+  // uid nobody certified and makes it primary; the key stays valid.
+  QTest::newRow("uncertified primary")
+      << QStringLiteral("pub:f:4096:1:KEYID001:1774947438:::-::::\n"
+                        "uid:-::::1774947438::H1::Bob <bob@test.org>::::\n"
+                        "uid:f::::1774947438::H2::Alice <alice@test.org>::::\n")
+      << QStringLiteral("Alice <alice@test.org>");
+  QTest::newRow("marginal beats unknown")
+      << QStringLiteral("pub:m:4096:1:KEYID001:1774947438:::-::::\n"
+                        "uid:-::::1774947438::H1::Bob <bob@test.org>::::\n"
+                        "uid:m::::1774947438::H2::Alice <alice@test.org>::::\n")
+      << QStringLiteral("Alice <alice@test.org>");
+  QTest::newRow("revoked primary")
+      << QStringLiteral("pub:-:4096:1:KEYID001:1774947438:::-::::\n"
+                        "uid:r::::1774947438::H1::Old <old@test.org>::::\n"
+                        "uid:-::::1774947438::H2::New <new@test.org>::::\n")
+      << QStringLiteral("New <new@test.org>");
+  QTest::newRow("equal validity keeps the primary")
+      << QStringLiteral(
+             "pub:-:4096:1:KEYID001:1774947438:::-::::\n"
+             "uid:-::::1774947438::H1::First <first@test.org>::::\n"
+             "uid:-::::1774947438::H2::Second <second@test.org>::::\n")
+      << QStringLiteral("First <first@test.org>");
+}
+
+/**
+ * @brief The name listed for a key is that of its first uid with the best
+ *        validity, so the key's validity, which GnuPG takes from its best
+ *        uid, is never shown beside a name nobody certified.
+ */
+void tst_gpgkeystate::nameComesFromTheUidThatEarnedTheValidity() {
+  QFETCH(QString, input);
+  QFETCH(QString, name);
+  const QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QCOMPARE(result.size(), 1);
+  QCOMPARE(result.first().name, name);
 }
 
 void tst_gpgkeystate::pubRecordDoesNotSetHaveSecret() {

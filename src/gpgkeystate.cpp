@@ -85,12 +85,45 @@ void handlePubSecRecord(const QStringList &props, bool secret,
 }
 
 /**
- * @brief Handle a uid record in GPG colon output
+ * @brief How far a uid record's own validity vouches for its name.
+ *
+ * The key's validity on the pub record is that of its best uid, so the
+ * name shown beside it has to be one that earned it: a certified key whose
+ * owner adds an uncertified uid and makes it primary must not show that
+ * name as valid.
+ * @param validity The record's validity field.
+ * @return 3 for ultimate or full, 2 for marginal, 1 for unknown or
+ *         undefined, 0 for anything else (invalid, revoked, expired, never).
+ */
+auto uidNameRank(const QString &validity) -> int {
+  switch (validity.isEmpty() ? '\0' : validity.at(0).toLatin1()) {
+  case 'u':
+  case 'f':
+    return 3;
+  case 'm':
+    return 2;
+  case '-':
+  case 'q':
+    return 1;
+  default:
+    return 0;
+  }
+}
+
+/**
+ * @brief Handle a uid record in GPG colon output: its name is the key's
+ *        name unless an earlier uid vouches at least as well for its own.
  * @param props The colon-split fields of the record
  * @param current_user UserInfo to populate with user name
+ * @param nameRank uidNameRank() of the name taken so far; updated
  */
-void handleUidRecord(const QStringList &props, UserInfo &current_user) {
-  current_user.name = props[GPG_FIELD_USERID];
+void handleUidRecord(const QStringList &props, UserInfo &current_user,
+                     int &nameRank) {
+  const int rank = uidNameRank(props[GPG_FIELD_VALIDITY]);
+  if (current_user.name.isEmpty() || rank > nameRank) {
+    current_user.name = props[GPG_FIELD_USERID];
+    nameRank = rank;
+  }
 }
 
 void handleFprRecord(const QStringList &props, UserInfo &current_user) {
@@ -131,6 +164,9 @@ auto parseGpgColonOutput(const QString &output, bool secret)
 
   UserInfo current_user;
   bool expectPrimaryFingerprint = false;
+  // uidNameRank() of current_user.name; a name GnuPG 1 put on the pub
+  // record itself counts as unknown.
+  int nameRank = 0;
 
   for (const QString &key : lines) {
     QStringList props = key.split(':');
@@ -158,12 +194,11 @@ auto parseGpgColonOutput(const QString &output, bool secret)
       current_user = UserInfo();
       handlePubSecRecord(props, secret && (type == GpgRecordType::Sec),
                          current_user);
+      nameRank = current_user.name.isEmpty() ? 0 : 1;
       expectPrimaryFingerprint = true;
       break;
     case GpgRecordType::Uid:
-      if (current_user.name.isEmpty()) {
-        handleUidRecord(props, current_user);
-      }
+      handleUidRecord(props, current_user, nameRank);
       break;
     case GpgRecordType::Fpr:
       if (expectPrimaryFingerprint) {
