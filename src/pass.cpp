@@ -1325,7 +1325,7 @@ auto Pass::passReadsDifferently(const QByteArray &contents) -> QString {
     for (const QChar c : recipient) {
       // read strips blanks and tabs; trimmed() strips every space.
       if (c.isSpace() && c != QLatin1Char(' ') && c != QLatin1Char('\t')) {
-        return tr("line %1 holds white space other than blanks and tabs")
+        return tr("line %1 holds whitespace other than blanks and tabs")
             .arg(i + 1);
       }
     }

@@ -170,7 +170,7 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - With the `pass` backend, QtPass no longer runs `pass` with a recipient
   list that `pass` reads differently from the Users dialog, also without a
   signing key. A byte-order mark, a NUL byte, invalid UTF-8, Windows line
-  ends, a no-break space or other unusual white space, a line starting with a
+  ends, a no-break space or other unusual whitespace, a line starting with a
   dash, or a last line without a line feed made `pass` encrypt to
   recipients the dialog did not show, or drop the last one. The dialog now
   names the problem, and **OK** writes the list anew; see the FAQ (scan

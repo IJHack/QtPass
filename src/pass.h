@@ -463,7 +463,7 @@ public:
    * pass reads the list with `while read -r`, which keeps NUL-free bytes as
    * they are, strips only blanks and tabs, and drops a last line without a
    * line feed; parseRecipients() decodes UTF-8 (losing a byte-order mark and
-   * invalid bytes), trims every kind of white space and skips a line that
+   * invalid bytes), trims every kind of whitespace and skips a line that
    * starts with a dash. Where the two differ, the Users dialog shows other
    * recipients than pass encrypts to.
    * @param contents The file's bytes.

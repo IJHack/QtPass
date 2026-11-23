@@ -190,7 +190,7 @@ With the `pass` backend, `pass` reads each `.gpg-id` itself, and it reads some l
 
 - starts with a byte-order mark, holds a NUL byte, or is not valid UTF-8;
 - has Windows line ends (a carriage return);
-- has white space other than blanks and tabs before a `#` comment, such as a no-break space;
+- has whitespace other than blanks and tabs before a `#` comment, such as a no-break space;
 - has a line that starts with a dash;
 - ends without a line feed after its last recipient. `pass` skips that last line, possibly your own key.
 
