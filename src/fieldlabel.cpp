@@ -77,6 +77,16 @@ void FieldLabel::startEdit() {
   } else {
     m_editor->setGeometry(geometry());
   }
+  // In the tab chain just before this field's value. Created last, the editor
+  // was the last tab stop, and Tab out of it wrapped to the password, all
+  // selected: the next key replaced it.
+  if (QWidget *value = buddy()) {
+    QWidget *before = value->previousInFocusChain();
+    if (before != nullptr && before != m_editor) {
+      QWidget::setTabOrder(before, m_editor);
+    }
+    QWidget::setTabOrder(m_editor, value);
+  }
   m_editor->show();
   m_editor->selectAll();
   m_editor->setFocus();
@@ -118,6 +128,14 @@ void FieldLabel::finishEdit(bool commit) {
   QFormLayout::ItemRole role{};
   if (form != nullptr) {
     form->getWidgetPosition(editor, &row, &role);
+  }
+  // Hidden with the focus, the editor would hand it on as Tab does, which
+  // could land on the password with all of it selected. The focus goes to
+  // this field's value instead, without selecting it.
+  if (editor->hasFocus()) {
+    if (QWidget *value = buddy()) {
+      value->setFocus(Qt::OtherFocusReason);
+    }
   }
   editor->hide();
   if (row >= 0) {
