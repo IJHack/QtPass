@@ -227,6 +227,11 @@ private:
   bool m_contentLoaded{};
   /// True from accept() starting an insert until the backend reports back.
   bool m_saving{};
+  /// The widget that had the keyboard focus when the save started. Locking
+  /// the dialog moves the focus along the tab chain onto Cancel, the only
+  /// widget left enabled; a failed save gives it back, so the next Enter
+  /// tries again instead of cancelling.
+  QPointer<QWidget> m_focusBeforeSave;
   /// Last pwgen mode passed to usePwgen(), so the policy can be re-applied
   /// after setEditorEnabled() re-enables the character-set widgets.
   bool m_usePwgen{};

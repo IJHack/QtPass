@@ -108,6 +108,7 @@ private Q_SLOTS:
   void refusedInsertKeepsWhatWasTyped();
   void savingCancelAsksBeforeClosing();
   void savingIgnoresATemplateSwitch();
+  void enterAfterAFailedSaveTriesAgain();
   void newEntryWrittenBeforeAFailedGitStepCloses();
   void contentLoadUnlocksEditorAndOk();
   void decryptErrorKeepsDialogOpenWithReason();
@@ -309,6 +310,45 @@ void tst_passworddialog::savingCancelAsksBeforeClosing() {
   emit pass.finishedInsert(QString(), QString());
   emit pass.insertFailed(QStringLiteral("late"), false);
   QVERIFY2(accepted.isEmpty(), "a late result does not reopen or accept");
+}
+
+/**
+ * @brief After a save started with a click on OK fails, Enter tries again.
+ *        Locking the dialog moved the focus onto Cancel, the only widget left
+ *        enabled, and made it the default: the next Enter closed the dialog
+ *        and dropped what was typed (scan ANT-2026-FJJBL9H5).
+ */
+void tst_passworddialog::enterAfterAFailedSaveTriesAgain() {
+  FakePass pass;
+  pass.holdResult = true;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("mail"), true);
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  password->setText(QStringLiteral("s3cret"));
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  d.activateWindow();
+  QTRY_VERIFY(d.isActiveWindow());
+  QSignalSpy rejected(&d, &QDialog::rejected);
+  // Typed into the password, then a click on OK (which takes the focus
+  // where buttons do, as on Linux and Windows).
+  password->setFocus();
+
+  QPushButton *ok = okButton(d);
+  QVERIFY(ok != nullptr);
+  QTest::mouseClick(ok, Qt::LeftButton);
+  QCOMPARE(pass.inserted, QStringLiteral("mail"));
+  emit pass.insertFailed(QStringLiteral("gpg: no public key"), false);
+  QVERIFY(ok->isEnabled());
+  auto *cancel = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"))
+                     ->button(QDialogButtonBox::Cancel);
+  QVERIFY(d.focusWidget() != nullptr);
+  QVERIFY2(d.focusWidget() != cancel, "the focus is not left on Cancel");
+
+  pass.inserted.clear();
+  QTest::keyClick(d.focusWidget(), Qt::Key_Return);
+  QVERIFY2(rejected.isEmpty() && d.isVisible(), "Enter did not cancel");
+  QCOMPARE(pass.inserted, QStringLiteral("mail"));
+  QCOMPARE(password->text(), QStringLiteral("s3cret"));
 }
 
 /**

@@ -85,6 +85,11 @@
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
+- After a failed save in the edit dialog, Enter tries the save again. The
+  keyboard focus was left on Cancel, so the next Enter closed the dialog
+  without a question and dropped the typed password (scan finding
+  ANT-2026-FJJBL9H5, [#2306](https://github.com/IJHack/QtPass/pull/2306) on
+  main).
 - The text of an entry below its fields is shown, and so selected and
   copied, with its whitespace as stored: two spaces in a row became one and
   indentation was dropped

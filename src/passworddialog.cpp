@@ -213,6 +213,9 @@ void PasswordDialog::save() {
 }
 
 void PasswordDialog::setSaving(bool saving) {
+  if (saving) {
+    m_focusBeforeSave = focusWidget();
+  }
   m_saving = saving;
   setEditorEnabled(!saving);
   // Cancel stays: a save that never reports (an unanswered PIN prompt, a
@@ -220,6 +223,18 @@ void PasswordDialog::setSaving(bool saving) {
   // way out. reject() asks first.
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!saving);
   ui->statusLabel->setText(saving ? tr("Saving…") : QString());
+  if (!saving) {
+    // Disabling the widget with the focus moved it onto Cancel, which then
+    // became the default: the next Enter, pressed to try again, would close
+    // the dialog and drop what was typed. The focus goes back where it was,
+    // or to the password; Cancel losing it makes OK the default again.
+    QWidget *back = m_focusBeforeSave;
+    m_focusBeforeSave = nullptr;
+    if (back == nullptr || !back->isEnabled() || !back->isVisible()) {
+      back = ui->lineEditPassword;
+    }
+    back->setFocus(Qt::OtherFocusReason);
+  }
 }
 
 void PasswordDialog::onInsertFinished() {
