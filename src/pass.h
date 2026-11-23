@@ -457,6 +457,21 @@ public:
   static auto parseRecipients(const QByteArray &contents,
                               const QString &sourceName) -> QStringList;
   /**
+   * @brief Why pass would read a `.gpg-id` differently from
+   * parseRecipients(), if it would.
+   *
+   * pass reads the list with `while read -r`, which keeps NUL-free bytes as
+   * they are, strips only blanks and tabs, and drops a last line without a
+   * line feed; parseRecipients() decodes UTF-8 (losing a byte-order mark and
+   * invalid bytes), trims every kind of white space and skips a line that
+   * starts with a dash. Where the two differ, the Users dialog shows other
+   * recipients than pass encrypts to.
+   * @param contents The file's bytes.
+   * @return The first difference, as a phrase for a message; empty when
+   *         both read the same recipients.
+   */
+  static auto passReadsDifferently(const QByteArray &contents) -> QString;
+  /**
    * @brief The arguments as they may appear in the debug log: the value of
    * `--passphrase` and friends, and otpauth URIs, are replaced.
    * @param args The argv about to be run.

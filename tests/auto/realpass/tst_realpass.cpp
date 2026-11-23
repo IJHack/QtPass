@@ -71,6 +71,9 @@ private slots:
   void reencryptFailureIsReportedNotFinished();
   void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
   void aLinkedListIsRefusedWithoutASigningKey();
+  void passReadsDifferently_data();
+  void passReadsDifferently();
+  void aListPassReadsDifferentlyIsRefused();
   void gitPullBlockingReturnsAfterPassRanWhateverItsExitCode();
   void gitPullBlockingStopsAtItsDeadline();
   void linkedFolderThatCannotBeUnlinkedReportsDeleteFailed();
@@ -1546,6 +1549,128 @@ void tst_realpass::moveBetweenExistingFilesNeedsForce() {
       waitForCall().args,
       (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
                    QStringLiteral("folder/x"), QStringLiteral("folder/y")}));
+}
+
+/**
+ * @brief Lists pass (`while read -r`) and parseRecipients() read alike pass;
+ *        each way they part is named: bytes UTF-8 decoding changes, white
+ *        space trimmed() strips and read keeps, a dash line QtPass skips,
+ *        and a last line without a line feed, which pass drops (scan
+ *        finding ANT-2026-HLUF95NP).
+ */
+void tst_realpass::passReadsDifferently_data() {
+  QTest::addColumn<QByteArray>("contents");
+  QTest::addColumn<QString>("says");
+
+  QTest::newRow("plain") << QByteArray("ALICE\nBOB\n") << QString();
+  QTest::newRow("comments and blank lines")
+      << QByteArray("# generation 3\n\nALICE # me\n  \n") << QString();
+  QTest::newRow("a user ID with blanks")
+      << QByteArray("Alice Smith <alice@example.org>\n") << QString();
+  QTest::newRow("tab before a key") << QByteArray("\tALICE\n") << QString();
+  QTest::newRow("no-break space in a comment")
+      << QByteArray("ALICE # \xC2\xA0 IT\n") << QString();
+  QTest::newRow("a last comment without a line feed")
+      << QByteArray("ALICE\n# end") << QString();
+  QTest::newRow("empty") << QByteArray() << QString();
+  QTest::newRow("byte-order mark") << QByteArray("\xEF\xBB\xBF"
+                                                 "ALICE\n")
+                                   << QStringLiteral("byte-order");
+  QTest::newRow("NUL") << QByteArray("ALICE\nBOB\0x\n", 12)
+                       << QStringLiteral("NUL");
+  QTest::newRow("CRLF") << QByteArray("ALICE\r\n")
+                        << QStringLiteral("carriage return");
+  QTest::newRow("a line of one no-break space")
+      << QByteArray("ALICE\n\xC2\xA0\n") << QStringLiteral("line 2");
+  QTest::newRow("line separator after a key")
+      << QByteArray("ALICE\xE2\x80\xA8\n") << QStringLiteral("line 1");
+  QTest::newRow("dash") << QByteArray("ALICE\n-Jones\n")
+                        << QStringLiteral("line 2 starts with a dash");
+  QTest::newRow("no final line feed")
+      << QByteArray("ALICE\nBOB") << QStringLiteral("last line");
+  QTest::newRow("not UTF-8")
+      << QByteArray("ALICE\n\xFF\n") << QStringLiteral("UTF-8");
+}
+
+void tst_realpass::passReadsDifferently() {
+  QFETCH(QByteArray, contents);
+  QFETCH(QString, says);
+  const QString why = Pass::passReadsDifferently(contents);
+  if (says.isEmpty()) {
+    QVERIFY2(why.isEmpty(), qPrintable(why));
+  } else {
+    QVERIFY2(why.contains(says), qPrintable(why));
+  }
+}
+
+/**
+ * @brief pass is not run, signing key or not, where the list it would use
+ *        reads differently to pass than to the Users dialog: a line of one
+ *        no-break space is blank to QtPass and a user ID search to pass.
+ *        An insert, a move into the folder and a move of the folder are
+ *        refused, and the dialog says so; pass init, which writes the list
+ *        anew, goes through, as does an insert once the list is clean.
+ */
+void tst_realpass::aListPassReadsDifferentlyIsRefused() {
+  QVERIFY(QDir(m_store).mkpath(QStringLiteral("team")));
+  const QString list = m_store + QStringLiteral("team/.gpg-id");
+  const auto writeList = [&list](const QByteArray &bytes) {
+    QFile f(list);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(bytes) == bytes.size();
+  };
+  QVERIFY(writeList("ALICE\n\xC2\xA0\n"));
+  const QString entry = m_store + QStringLiteral("folder/entry.gpg");
+  {
+    QFile f(entry);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QDir(m_store + QStringLiteral("team")).removeRecursively();
+    QDir(m_store + QStringLiteral("moved")).removeRecursively();
+    QFile::remove(entry);
+  });
+  AppSettings settings = m_settings;
+  settings.passSigningKey.clear();
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(settings);
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+
+  pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
+  pass->Move(entry, m_store + QStringLiteral("team/moved.gpg"), false);
+  pass->Move(m_store + QStringLiteral("team"),
+             m_store + QStringLiteral("moved"), false);
+  QTest::qWait(300);
+  QVERIFY2(!QFile::exists(m_log), "pass must not run with a misread list");
+  QCOMPARE(criticalSpy.count(), 3);
+  for (const QList<QVariant> &args : std::as_const(criticalSpy)) {
+    const QString text = args.at(1).toString();
+    QVERIFY2(text.contains(QDir::toNativeSeparators(QDir::cleanPath(list))) &&
+                 text.contains(QStringLiteral("line 2")),
+             qPrintable(text));
+  }
+
+  const Pass::RecipientsForEditing shown =
+      pass->recipientsForEditing(QStringLiteral("team"), m_store);
+  QCOMPARE(shown.recipients, QStringList{QStringLiteral("ALICE")});
+  QVERIFY2(shown.warning.contains(QStringLiteral("line 2")),
+           qPrintable(shown.warning));
+
+  // pass init writes the folder's list itself: the misread one is replaced.
+  UserInfo alice;
+  alice.key_id = QStringLiteral("ALICE");
+  alice.enabled = true;
+  pass->Init(m_store + QStringLiteral("team/"), {alice});
+  QVERIFY2(waitForCall().args.contains(QStringLiteral("init")),
+           "pass init must run over a misread list");
+  QCOMPARE(criticalSpy.count(), 3);
+
+  QFile::remove(m_log);
+  QVERIFY(writeList("ALICE\n"));
+  pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
+  QVERIFY2(!waitForCall().args.isEmpty(), "pass runs with a clean list");
+  QCOMPARE(criticalSpy.count(), 3);
 }
 
 /**

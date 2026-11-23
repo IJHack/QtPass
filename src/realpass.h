@@ -119,7 +119,8 @@ class RealPass : public Pass {
 
   /**
    * @brief Refuse to have pass encrypt @p file when the list it would use
-   * is a link (refuseLinkedList()), or, with signing on, not one QtPass
+   * is a link (refuseLinkedList()), pass would read it differently from
+   * QtPass (refuseMisreadList()), or, with signing on, not one QtPass
    * accepts: its folder's own list was passed over, the signature does not
    * verify, or the list is older than one this device accepted or signed
    * for another folder.
@@ -142,6 +143,23 @@ class RealPass : public Pass {
    */
   auto refuseLinkedList(const QString &file, const QString &within = QString(),
                         const QString &except = QString()) -> bool;
+
+  /**
+   * @brief Refuse to have pass encrypt @p file when its nearest `.gpg-id`
+   * holds lines pass reads differently from the Users dialog
+   * (Pass::passReadsDifferently()), with or without a signing key: pass
+   * would encrypt to recipients the dialog does not show.
+   * @param file The entry or folder.
+   * @param within When set, only a list under this folder (absolute,
+   *        cleaned, with a trailing "/") is refused.
+   * @param except A list about to be written (`pass init`'s own), not
+   *        refused.
+   * @param checked Lists already found fine in this walk; the list is added
+   *        when it is.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseMisreadList(const QString &file, const QString &within,
+                         const QString &except, QSet<QString> &checked) -> bool;
 
   /**
    * @brief Run a git command in the store through `pass git`, blocking.
