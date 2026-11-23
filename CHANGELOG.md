@@ -85,6 +85,11 @@
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
+- The users dialog lists a key under its first user ID with the best
+  validity, not always under its primary one. A key you certified could
+  otherwise be shown as valid under a name its owner added later and nobody
+  certified (scan finding ANT-2026-I8UP2BUX,
+  [#2310](https://github.com/IJHack/QtPass/pull/2310) on main).
 - After a failed save in the edit dialog, Enter tries the save again. The
   keyboard focus was left on Cancel, so the next Enter closed the dialog
   without a question and dropped the typed password (scan finding
