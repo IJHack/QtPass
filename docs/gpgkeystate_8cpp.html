@@ -141,8 +141,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab1cf61cd18b2400baaea7e88b55651dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classify a record of a gpg colon listing by its first field.  <br /></td></tr>
 <tr class="memitem:a10a7a502b6b816c2ad7d1d175d9f5a0c" id="r_a10a7a502b6b816c2ad7d1d175d9f5a0c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a10a7a502b6b816c2ad7d1d175d9f5a0c">handlePubSecRecord</a> (const QStringList &amp;props, bool secret, <a class="el" href="struct_user_info.html">UserInfo</a> &amp;current_user)</td></tr>
 <tr class="memdesc:a10a7a502b6b816c2ad7d1d175d9f5a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a key from a <span class="tt">pub</span> or <span class="tt">sec</span> record: key ID, the user ID the record may carry, validity, creation and expiry time.  <br /></td></tr>
-<tr class="memitem:adbcf251249671777862e00f89092058b" id="r_adbcf251249671777862e00f89092058b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adbcf251249671777862e00f89092058b">handleUidRecord</a> (const QStringList &amp;props, <a class="el" href="struct_user_info.html">UserInfo</a> &amp;current_user)</td></tr>
-<tr class="memdesc:adbcf251249671777862e00f89092058b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a uid record in GPG colon output.  <br /></td></tr>
+<tr class="memitem:a64f383089339f59a6f57485277a7684c" id="r_a64f383089339f59a6f57485277a7684c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a64f383089339f59a6f57485277a7684c">uidNameRank</a> (const QString &amp;validity) -&gt; int</td></tr>
+<tr class="memdesc:a64f383089339f59a6f57485277a7684c"><td class="mdescLeft">&#160;</td><td class="mdescRight">How far a uid record's own validity vouches for its name.  <br /></td></tr>
+<tr class="memitem:adb7dc883e7b40a750d4ba9789eb59581" id="r_adb7dc883e7b40a750d4ba9789eb59581"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adb7dc883e7b40a750d4ba9789eb59581">handleUidRecord</a> (const QStringList &amp;props, <a class="el" href="struct_user_info.html">UserInfo</a> &amp;current_user, int &amp;nameRank)</td></tr>
+<tr class="memdesc:adb7dc883e7b40a750d4ba9789eb59581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a uid record in GPG colon output: its name is the key's name unless an earlier uid vouches at least as well for its own.  <br /></td></tr>
 <tr class="memitem:ab4971658d9c682542957f596dc275178" id="r_ab4971658d9c682542957f596dc275178"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab4971658d9c682542957f596dc275178">handleFprRecord</a> (const QStringList &amp;props, <a class="el" href="struct_user_info.html">UserInfo</a> &amp;current_user)</td></tr>
 <tr class="memdesc:ab4971658d9c682542957f596dc275178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the key ID of the key being built with its fingerprint.  <br /></td></tr>
 <tr class="memitem:a12e5b0425a769a2aa80c91f3f5e1ddc8" id="r_a12e5b0425a769a2aa80c91f3f5e1ddc8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a12e5b0425a769a2aa80c91f3f5e1ddc8">parseGpgColonOutput</a> (const QString &amp;output, bool secret) -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td></tr>
@@ -240,7 +242,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00096">96</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00129">129</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -306,8 +308,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="adbcf251249671777862e00f89092058b" name="adbcf251249671777862e00f89092058b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbcf251249671777862e00f89092058b">&#9670;&#160;</a></span>handleUidRecord()</h2>
+<a id="adb7dc883e7b40a750d4ba9789eb59581" name="adb7dc883e7b40a750d4ba9789eb59581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb7dc883e7b40a750d4ba9789eb59581">&#9670;&#160;</a></span>handleUidRecord()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,32 +322,38 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_user_info.html">UserInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>current_user</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_user_info.html">UserInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>current_user</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>nameRank</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Handle a uid record in GPG colon output. </p>
+<p>Handle a uid record in GPG colon output: its name is the key's name unless an earlier uid vouches at least as well for its own. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">props</td><td>The colon-split fields of the record </td></tr>
     <tr><td class="paramname">current_user</td><td><a class="el" href="struct_user_info.html" title="Stores GPG key info including validity, creation date, and more.">UserInfo</a> to populate with user name </td></tr>
+    <tr><td class="paramname">nameRank</td><td><a class="el" href="#a64f383089339f59a6f57485277a7684c" title="How far a uid record&#39;s own validity vouches for its name.">uidNameRank()</a> of the name taken so far; updated </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00092">92</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00120">120</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
 <div id="dynsection-7-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_adbcf251249671777862e00f89092058b_cgraph.svg" width="143" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_adb7dc883e7b40a750d4ba9789eb59581_cgraph.svg" width="304" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
 <div id="dynsection-8-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_adbcf251249671777862e00f89092058b_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_adb7dc883e7b40a750d4ba9789eb59581_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -379,12 +387,12 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The keys, in the order gpg listed them. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00125">125</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00158">158</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
 <div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a12e5b0425a769a2aa80c91f3f5e1ddc8_cgraph.svg" width="380" height="395"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a12e5b0425a769a2aa80c91f3f5e1ddc8_cgraph.svg" width="542" height="395"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
@@ -424,7 +432,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The primary fingerprint in upper case, or empty when no block, or more than one, in <code class="param">output</code> holds <code class="param">key</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00186">186</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00221">221</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
@@ -436,6 +444,46 @@ Variables</h2></td></tr>
 </div>
 <div id="dynsection-12-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a1d543e1b773901266ef423cfb0204b68_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a64f383089339f59a6f57485277a7684c" name="a64f383089339f59a6f57485277a7684c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f383089339f59a6f57485277a7684c">&#9670;&#160;</a></span>uidNameRank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto uidNameRank </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>validity</em></span></td><td>)</td>
+          <td> -&gt; int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>How far a uid record's own validity vouches for its name. </p>
+<p>The key's validity on the pub record is that of its best uid, so the name shown beside it has to be one that earned it: a certified key whose owner adds an uncertified uid and makes it primary must not show that name as valid. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">validity</td><td>The record's validity field. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>3 for ultimate or full, 2 for marginal, 1 for unknown or undefined, 0 for anything else (invalid, revoked, expired, never). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00098">98</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a64f383089339f59a6f57485277a7684c_cgraph.svg" width="124" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a64f383089339f59a6f57485277a7684c_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

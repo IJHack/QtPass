@@ -70,8 +70,8 @@ var NAVTREEINDEX =
 "class_password_dialog.html#a3acaf78f140cb84e22fcdb74b34c94c6",
 "class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3",
 "class_users_dialog.html#adb673bcebad1749f22183ce146b846cd",
-"namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b",
-"struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595"
+"namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef",
+"struct_grep_search_controller_1_1_finish_outcome.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -3,7 +3,7 @@ var searchData=
   ['handlefprrecord_0',['handleFprRecord',['../gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178',1,'handleFprRecord(const QStringList &amp;props, UserInfo &amp;current_user):&#160;gpgkeystate.cpp'],['../gpgkeystate__p_8h.html#ab4971658d9c682542957f596dc275178',1,'handleFprRecord(const QStringList &amp;props, UserInfo &amp;current_user):&#160;gpgkeystate.cpp']]],
   ['handleprocesserror_1',['handleProcessError',['../class_pass.html#a23d86a80c0e1772771f097062dc0ab7c',1,'Pass']]],
   ['handlepubsecrecord_2',['handlePubSecRecord',['../gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c',1,'handlePubSecRecord(const QStringList &amp;props, bool secret, UserInfo &amp;current_user):&#160;gpgkeystate.cpp'],['../gpgkeystate__p_8h.html#a10a7a502b6b816c2ad7d1d175d9f5a0c',1,'handlePubSecRecord(const QStringList &amp;props, bool secret, UserInfo &amp;current_user):&#160;gpgkeystate.cpp']]],
-  ['handleuidrecord_3',['handleUidRecord',['../gpgkeystate_8cpp.html#adbcf251249671777862e00f89092058b',1,'gpgkeystate.cpp']]],
+  ['handleuidrecord_3',['handleUidRecord',['../gpgkeystate_8cpp.html#adb7dc883e7b40a750d4ba9789eb59581',1,'gpgkeystate.cpp']]],
   ['handling_20secrets_20in_20the_20interface_4',['Handling secrets in the interface',['../group__secrets.html',1,'']]],
   ['haschildren_5',['hasChildren',['../class_store_model.html#aa3dee919cc1ea95f64adfdf55d68b988',1,'StoreModel']]],
   ['haslongunbrokenrun_6',['hasLongUnbrokenRun',['../class_util.html#a2c23d8b7193efd20c8ef55c77b0f6542',1,'Util']]],

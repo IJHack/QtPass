@@ -1,0 +1,7 @@
+<map id="handleUidRecord" name="handleUidRecord">
+<area shape="rect" id="Node000001" title="Handle a uid record in GPG colon output: its name is the key&#39;s name unless an earlier uid vouches at ..." alt="" coords="5,29,138,57"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="41,29,37,20,41,11,53,5,72,3,92,5,104,14,99,14,90,10,71,8,54,10,45,15,42,20,47,29"/>
+<area shape="rect" id="Node000002" href="$gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" title="How far a uid record&#39;s own validity vouches for its name." alt="" coords="186,29,299,57"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="138,41,173,43,167,43,138,46"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="212,28,208,20,211,11,223,5,242,3,263,5,275,14,270,14,261,10,242,8,225,10,215,15,213,20,217,30"/>
+</map>

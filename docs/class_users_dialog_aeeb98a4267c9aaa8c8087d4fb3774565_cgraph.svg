@@ -240,9 +240,9 @@
 </g>
 </g>
 <!-- Node11&#45;&gt;Node11 -->
-<g id="edge20_Node000011_Node000011" class="edge">
+<g id="edge22_Node000011_Node000011" class="edge">
 <title>Node11&#45;&gt;Node11</title>
-<g id="a_edge20_Node000011_Node000011"><a xlink:title=" ">
+<g id="a_edge22_Node000011_Node000011"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M543.85,-156.15C534.23,-164.81 542.24,-173.75 567.88,-173.75 581.89,-173.75 590.64,-171.08 594.12,-167.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="597.59,-166.75 592.2,-157.63 590.72,-168.12 597.59,-166.75"/>
 </a>
@@ -305,7 +305,7 @@
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="gpgkeystate_8cpp.html#adbcf251249671777862e00f89092058b" target="_top" xlink:title="Handle a uid record in GPG colon output.">
+<g id="a_Node000015"><a xlink:href="gpgkeystate_8cpp.html#adb7dc883e7b40a750d4ba9789eb59581" target="_top" xlink:title="Handle a uid record in GPG colon output: its name is the key&#39;s name unless an earlier uid vouches at ...">
 <polygon fill="white" stroke="#666666" points="786.5,-98.75 687.25,-98.75 687.25,-78 786.5,-78 786.5,-98.75"/>
 <text xml:space="preserve" text-anchor="middle" x="736.88" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">handleUidRecord</text>
 </a>
@@ -320,30 +320,12 @@
 </a>
 </g>
 </g>
-<!-- Node16 -->
-<g id="Node000016" class="node">
-<title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_util.html#aced819d4368806d046f0dc24a91843f7" target="_top" xlink:title="Returns a regex to match newline characters.">
-<polygon fill="white" stroke="#666666" points="794.75,-59.75 679,-59.75 679,-39 794.75,-39 794.75,-59.75"/>
-<text xml:space="preserve" text-anchor="middle" x="736.88" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::newLinesRegex</text>
-</a>
-</g>
-</g>
-<!-- Node11&#45;&gt;Node16 -->
-<g id="edge19_Node000011_Node000016" class="edge">
-<title>Node11&#45;&gt;Node16</title>
-<g id="a_edge19_Node000011_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M581.28,-134.7C600.46,-118.65 638.99,-88.16 676,-69.38 679.63,-67.53 683.48,-65.8 687.39,-64.19"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="688.31,-67.58 696.4,-60.75 685.81,-61.04 688.31,-67.58"/>
-</a>
-</g>
-</g>
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" target="_top" xlink:title="Construct a UserInfo with default (invalid/disabled) state.">
-<polygon fill="white" stroke="#666666" points="789.12,-20.75 684.62,-20.75 684.62,0 789.12,0 789.12,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="736.88" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::UserInfo</text>
+<g id="a_Node000017"><a xlink:href="class_util.html#aced819d4368806d046f0dc24a91843f7" target="_top" xlink:title="Returns a regex to match newline characters.">
+<polygon fill="white" stroke="#666666" points="794.75,-59.75 679,-59.75 679,-39 794.75,-39 794.75,-59.75"/>
+<text xml:space="preserve" text-anchor="middle" x="736.88" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::newLinesRegex</text>
 </a>
 </g>
 </g>
@@ -351,6 +333,24 @@
 <g id="edge21_Node000011_Node000017" class="edge">
 <title>Node11&#45;&gt;Node17</title>
 <g id="a_edge21_Node000011_Node000017"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M581.28,-134.7C600.46,-118.65 638.99,-88.16 676,-69.38 679.63,-67.53 683.48,-65.8 687.39,-64.19"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="688.31,-67.58 696.4,-60.75 685.81,-61.04 688.31,-67.58"/>
+</a>
+</g>
+</g>
+<!-- Node18 -->
+<g id="Node000018" class="node">
+<title>Node18</title>
+<g id="a_Node000018"><a xlink:href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" target="_top" xlink:title="Construct a UserInfo with default (invalid/disabled) state.">
+<polygon fill="white" stroke="#666666" points="789.12,-20.75 684.62,-20.75 684.62,0 789.12,0 789.12,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="736.88" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::UserInfo</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node18 -->
+<g id="edge23_Node000011_Node000018" class="edge">
+<title>Node11&#45;&gt;Node18</title>
+<g id="a_edge23_Node000011_Node000018"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M575.88,-134.84C591.33,-112.41 630.56,-59.6 676,-30.38 678.55,-28.74 681.24,-27.22 684.03,-25.81"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="685.27,-29.09 692.98,-21.83 682.42,-22.7 685.27,-29.09"/>
 </a>
@@ -389,6 +389,33 @@
 <g id="a_edge18_Node000015_Node000015"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M709.76,-99.15C698.92,-107.81 707.96,-116.75 736.88,-116.75 752.69,-116.75 762.56,-114.08 766.48,-110.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="769.93,-109.61 764.32,-100.62 763.1,-111.15 769.93,-109.61"/>
+</a>
+</g>
+</g>
+<!-- Node16 -->
+<g id="Node000016" class="node">
+<title>Node16</title>
+<g id="a_Node000016"><a xlink:href="gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" target="_top" xlink:title="How far a uid record&#39;s own validity vouches for its name.">
+<polygon fill="white" stroke="#666666" points="947.62,-98.75 862.62,-98.75 862.62,-78 947.62,-78 947.62,-98.75"/>
+<text xml:space="preserve" text-anchor="middle" x="905.12" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">uidNameRank</text>
+</a>
+</g>
+</g>
+<!-- Node15&#45;&gt;Node16 -->
+<g id="edge19_Node000015_Node000016" class="edge">
+<title>Node15&#45;&gt;Node16</title>
+<g id="a_edge19_Node000015_Node000016"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M786.86,-88.38C806.97,-88.38 830.3,-88.38 850.84,-88.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="850.73,-91.88 860.73,-88.38 850.73,-84.88 850.73,-91.88"/>
+</a>
+</g>
+</g>
+<!-- Node16&#45;&gt;Node16 -->
+<g id="edge20_Node000016_Node000016" class="edge">
+<title>Node16&#45;&gt;Node16</title>
+<g id="a_edge20_Node000016_Node000016"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M878.01,-99.15C867.17,-107.81 876.21,-116.75 905.12,-116.75 920.94,-116.75 930.81,-114.08 934.73,-110.24"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="938.18,-109.61 932.57,-100.62 931.35,-111.15 938.18,-109.61"/>
 </a>
 </g>
 </g>

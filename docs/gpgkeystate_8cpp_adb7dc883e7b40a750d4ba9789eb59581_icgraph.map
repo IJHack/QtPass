@@ -1,5 +1,5 @@
 <map id="handleUidRecord" name="handleUidRecord">
-<area shape="rect" id="Node000001" title="Handle a uid record in GPG colon output." alt="" coords="1497,111,1630,138"/>
+<area shape="rect" id="Node000001" title="Handle a uid record in GPG colon output: its name is the key&#39;s name unless an earlier uid vouches at ..." alt="" coords="1497,111,1630,138"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="1595,95,1585,92,1563,89,1543,91,1532,96,1529,101,1534,111,1529,109,1524,102,1528,92,1542,86,1564,84,1587,87,1601,96"/>
 <area shape="rect" id="Node000002" href="$gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8" title="Parse a gpg colon listing into one UserInfo per key." alt="" coords="1285,111,1449,138"/>
 <area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="1479,125,1450,127,1450,122,1485,124"/>
