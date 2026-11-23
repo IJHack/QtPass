@@ -150,9 +150,10 @@ bool ImportKeyDialog::importFromString(const QString &input) {
 
   // gpg imports every key in the block, and all the user learns is the one
   // fingerprint named below. List the block first, writing nothing, so a
-  // second key or a private key cannot come along unmentioned. Without
-  // gpg.conf: a list-filter there hides keys from this listing, not from
-  // the import.
+  // second key or a private key cannot come along unmentioned. Both runs
+  // skip gpg.conf, so they judge the block alike: a list-filter there hides
+  // keys from this listing only, and allow-non-selfsigned-uid lets the
+  // import take a key the listing would have skipped.
   QString listing;
   QString listErr;
   if (!runGpg({QStringLiteral("--no-options"), QStringLiteral("--batch"),
@@ -183,9 +184,9 @@ bool ImportKeyDialog::importFromString(const QString &input) {
 
   QString stdOut;
   QString stdErr;
-  if (!runGpg({QStringLiteral("--status-fd"), QStringLiteral("1"),
-               QStringLiteral("--import"), QStringLiteral("--batch"),
-               QStringLiteral("--yes")},
+  if (!runGpg({QStringLiteral("--no-options"), QStringLiteral("--status-fd"),
+               QStringLiteral("1"), QStringLiteral("--import"),
+               QStringLiteral("--batch"), QStringLiteral("--yes")},
               input, &stdOut, &stdErr, timer)) {
     return false;
   }

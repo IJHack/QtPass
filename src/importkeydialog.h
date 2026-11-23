@@ -128,11 +128,12 @@ private:
   int m_timeoutMs;
 
   /**
-   * @brief Lists the keys in @p input first, with nothing written and
-   * without gpg.conf (whose list-filter would hide keys), and
+   * @brief Lists the keys in @p input first, with nothing written, and
    * refuses a block that holds a private key or more than one key. Then
-   * feeds it to `gpg --status-fd 1 --import --batch --yes` via
-   * Executor::executeBlocking() and records the imported key id.
+   * feeds it to `gpg --no-options --status-fd 1 --import --batch --yes` via
+   * Executor::executeBlocking() and records the imported key id. Neither run
+   * reads gpg.conf, so options there cannot make the listing and the import
+   * see different keys.
    * @param input Armored key text, trimmed.
    * @return true when the block held one public key, gpg exited with 0 and a
    *         key id could be parsed from its output; false after showError()

@@ -660,6 +660,9 @@ void tst_importkeydialog::importSuccessAcceptsWithKeyIdAndFeedsInputToGpg() {
   const QString args = QString::fromUtf8(argsFile.readAll());
   QVERIFY2(args.contains(QStringLiteral("--import")), qPrintable(args));
   QVERIFY2(args.contains(QStringLiteral("--status-fd 1")), qPrintable(args));
+  // As the dry run: gpg.conf options such as allow-non-selfsigned-uid would
+  // let the import take a key the listing skipped.
+  QVERIFY2(args.contains(QStringLiteral("--no-options")), qPrintable(args));
   QVERIFY2(args.contains(QStringLiteral("--batch")), qPrintable(args));
 }
 
