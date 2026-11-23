@@ -145,27 +145,45 @@ void ImportKeyDialog::on_inputTextEdit_textChanged() {
 }
 
 bool ImportKeyDialog::importFromString(const QString &input) {
-  QString gpgExe = m_gpgExe.isEmpty() ? QStringLiteral("gpg") : m_gpgExe;
-  QStringList args = {"--status-fd", "1", "--import", "--batch", "--yes"};
+  QElapsedTimer timer;
+  timer.start();
+
+  // gpg imports every key in the block, and all the user learns is the one
+  // fingerprint named below. List the block first, writing nothing, so a
+  // second key or a private key cannot come along unmentioned.
+  QString listing;
+  QString listErr;
+  if (!runGpg({QStringLiteral("--batch"), QStringLiteral("--with-colons"),
+               QStringLiteral("--import-options"), QStringLiteral("show-only"),
+               QStringLiteral("--import")},
+              input, &listing, &listErr, timer)) {
+    return false;
+  }
+  const BlockKeys keys = keysInBlock(listing);
+  if (keys.secretKeys > 0) {
+    showError(tr("This text holds a private key. QtPass imports public keys "
+                 "only, so nothing was imported. Import the public key: "
+                 "gpg --armor --export writes it."));
+    return false;
+  }
+  if (keys.publicKeys == 0) {
+    showError(tr("gpg found no key in this text, so nothing was imported."));
+    return false;
+  }
+  if (keys.publicKeys > 1) {
+    showError(tr("This text holds %n keys. QtPass imports one key at a time "
+                 "and names it, so you can check its fingerprint: nothing "
+                 "was imported. Import each key on its own.",
+                 nullptr, keys.publicKeys));
+    return false;
+  }
 
   QString stdOut;
   QString stdErr;
-
-  QProcess gpg;
-  QElapsedTimer timer;
-  timer.start();
-  const int result = Executor::executeBlocking(
-      gpg, gpgExe, args, input, &stdOut, &stdErr, nullptr, m_timeoutMs);
-  if (result != 0 && timer.elapsed() >= m_timeoutMs) {
-    const int seconds = (m_timeoutMs + 999) / 1000;
-    showError(tr("gpg did not finish the import within %n second(s) and was "
-                 "stopped. Part of the key may be in your keyring already: "
-                 "check it with gpg --list-keys before you use it.",
-                 nullptr, seconds));
-    return false;
-  }
-  if (result != 0) {
-    showError(tr("GPG import failed:\n%1").arg(stdErr));
+  if (!runGpg({QStringLiteral("--status-fd"), QStringLiteral("1"),
+               QStringLiteral("--import"), QStringLiteral("--batch"),
+               QStringLiteral("--yes")},
+              input, &stdOut, &stdErr, timer)) {
     return false;
   }
 
@@ -182,6 +200,46 @@ bool ImportKeyDialog::importFromString(const QString &input) {
   m_importedKeyId = keyId;
   showSuccess(keyId);
   return true;
+}
+
+auto ImportKeyDialog::runGpg(const QStringList &args, const QString &input,
+                             QString *stdOut, QString *stdErr,
+                             const QElapsedTimer &timer) -> bool {
+  const QString gpgExe = m_gpgExe.isEmpty() ? QStringLiteral("gpg") : m_gpgExe;
+  const qint64 left = m_timeoutMs - timer.elapsed();
+  int result = -1;
+  if (left > 0) {
+    QProcess gpg;
+    result = Executor::executeBlocking(gpg, gpgExe, args, input, stdOut, stdErr,
+                                       nullptr, static_cast<int>(left));
+  }
+  if (result != 0 && timer.elapsed() >= m_timeoutMs) {
+    const int seconds = (m_timeoutMs + 999) / 1000;
+    showError(tr("gpg did not finish the import within %n second(s) and was "
+                 "stopped. Part of the key may be in your keyring already: "
+                 "check it with gpg --list-keys before you use it.",
+                 nullptr, seconds));
+    return false;
+  }
+  if (result != 0) {
+    showError(tr("GPG import failed:\n%1").arg(*stdErr));
+    return false;
+  }
+  return true;
+}
+
+auto ImportKeyDialog::keysInBlock(const QString &listing) -> BlockKeys {
+  BlockKeys keys;
+  const QStringList lines = listing.split(
+      QRegularExpression(QStringLiteral("\\r?\\n")), Qt::SkipEmptyParts);
+  for (const QString &line : lines) {
+    if (line.startsWith(QLatin1String("pub:"))) {
+      ++keys.publicKeys;
+    } else if (line.startsWith(QLatin1String("sec:"))) {
+      ++keys.secretKeys;
+    }
+  }
+  return keys;
 }
 
 auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {

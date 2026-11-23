@@ -140,6 +140,8 @@ Open the **Users** dialog (the _Users_ button in the toolbar) and click **Import
 
 Once imported, QtPass refreshes the user list and selects the new key so you can tick it as a recipient. Binary keyrings aren't accepted in this dialog; convert them first with `gpg --armor --export <KEYID>`.
 
+The dialog takes one public key per import. A block that holds several keys, or a private key, is refused and nothing is imported: QtPass names the one key it imported so you can check its fingerprint, and a second key in the same block would enter your keyring unchecked. Import such keys one by one, or run `gpg --import` yourself.
+
 ### What does the Share submenu do?
 
 Right-click on a **folder** in the password tree to access the **Share** submenu. It bundles the recipient-management actions in one place:

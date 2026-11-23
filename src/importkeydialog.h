@@ -9,8 +9,10 @@
 #define SRC_IMPORTKEYDIALOG_H_
 
 #include <QDialog>
+#include <QElapsedTimer>
 #include <QScopedPointer>
 #include <QString>
+#include <QStringList>
 
 namespace Ui {
 class ImportKeyDialog;
@@ -65,6 +67,28 @@ public:
    */
   static auto parseGpgImportOutput(const QString &output) -> QString;
 
+  /**
+   * @brief How many keys an armored block holds, by kind.
+   */
+  struct BlockKeys {
+    /** @brief Public keys: `pub` records. */
+    int publicKeys = 0;
+    /** @brief Keys with their secret part: `sec` records. */
+    int secretKeys = 0;
+  };
+
+  /**
+   * @brief Count the keys in the listing of
+   * `gpg --with-colons --import-options show-only --import`.
+   *
+   * Only the primary-key records count (`pub` and `sec`); subkeys, user IDs
+   * and fingerprints belong to the key before them.
+   *
+   * @param listing gpg's colon listing of the block.
+   * @return The public and the secret keys in it.
+   */
+  static auto keysInBlock(const QString &listing) -> BlockKeys;
+
 private slots:
   /**
    * @brief "From file" button: picks a file, reads it as a regular file of at
@@ -104,13 +128,28 @@ private:
   int m_timeoutMs;
 
   /**
-   * @brief Feeds @p input to `gpg --status-fd 1 --import --batch --yes` via
+   * @brief Lists the keys in @p input first, with nothing written, and
+   * refuses a block that holds a private key or more than one key. Then
+   * feeds it to `gpg --status-fd 1 --import --batch --yes` via
    * Executor::executeBlocking() and records the imported key id.
    * @param input Armored key text, trimmed.
-   * @return true when gpg exited with 0 and a key id could be parsed from its
-   *         output; false after showError() otherwise.
+   * @return true when the block held one public key, gpg exited with 0 and a
+   *         key id could be parsed from its output; false after showError()
+   *         otherwise.
    */
   auto importFromString(const QString &input) -> bool;
+  /**
+   * @brief Runs gpg with @p args on @p input within what is left of
+   * m_timeoutMs since @p timer started.
+   * @param args gpg's arguments.
+   * @param input Text for gpg's stdin.
+   * @param stdOut Receives gpg's stdout.
+   * @param stdErr Receives gpg's stderr.
+   * @param timer Started when the import began.
+   * @return true when gpg exited with 0; false after showError() otherwise.
+   */
+  auto runGpg(const QStringList &args, const QString &input, QString *stdOut,
+              QString *stdErr, const QElapsedTimer &timer) -> bool;
   /**
    * @brief Shows @p message in a plain-text warning box (gpg's stderr quotes
    * user IDs, which must not be read as markup).

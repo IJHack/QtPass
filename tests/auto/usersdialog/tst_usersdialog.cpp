@@ -1879,6 +1879,9 @@ namespace {
 /// been run, Alice and Bob afterwards; --import reports Bob's fingerprint.
 const char kImportingGpg[] =
     "case \"$*\" in\n"
+    "  *show-only*) cat > /dev/null; "
+    "echo 'pub:-:255:22:693A0AF3FA364E76:1795454642:::-:::scSC::::::::0:'; "
+    "exit 0 ;;\n"
     "  *--import*) cat > /dev/null; touch \"$0.imported\"; "
     "printf '[GNUPG:] IMPORT_OK 1 "
     "4EF2550F79F4E9E68B09F71D693A0AF3FA364E76\\n'; "
@@ -2020,6 +2023,9 @@ void tst_usersdialog::importingAV6KeyRefreshesTheListAndSelectsIt() {
   s.gpgExecutable = writeGpg(
       QStringLiteral("gpg-importing-v6"),
       QStringLiteral("case \"$*\" in\n"
+                     "  *show-only*) cat > /dev/null; "
+                     "echo 'pub:-:255:22:A1B2C3D4E5F60718:1774947439::::::'; "
+                     "exit 0 ;;\n"
                      "  *--import*) cat > /dev/null; touch \"$0.imported\"; "
                      "printf '[GNUPG:] IMPORTED A1B2C3D4E5F60718 Bob\\n'; "
                      "exit 0 ;;\n"
