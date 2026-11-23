@@ -148,7 +148,9 @@ class RealPass : public Pass {
    * @brief Refuse to have pass encrypt @p file when its nearest `.gpg-id`
    * holds lines pass reads differently from the Users dialog
    * (Pass::passReadsDifferently()), with or without a signing key: pass
-   * would encrypt to recipients the dialog does not show.
+   * would encrypt to recipients the dialog does not show. A list that is
+   * there but not a regular file within Util::kMaxGpgIdBytes is refused
+   * too; a missing one is left to pass.
    * @param file The entry or folder.
    * @param within When set, only a list under this folder (absolute,
    *        cleaned, with a trailing "/") is refused.

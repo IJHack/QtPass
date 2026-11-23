@@ -19,6 +19,7 @@
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
 #include "../../../src/userinfo.h"
+#include "../../../src/util.h"
 #include "../testpass.h"
 #include "../testsettings.h"
 
@@ -1609,7 +1610,8 @@ void tst_realpass::passReadsDifferently() {
  *        no-break space is blank to QtPass and a user ID search to pass.
  *        An insert, a move into the folder and a move of the folder are
  *        refused, and the dialog says so; pass init, which writes the list
- *        anew, goes through, as does an insert once the list is clean.
+ *        anew, goes through. A list too large to read is refused as well,
+ *        and an insert goes through once the list is clean.
  */
 void tst_realpass::aListPassReadsDifferentlyIsRefused() {
   QVERIFY(QDir(m_store).mkpath(QStringLiteral("team")));
@@ -1666,11 +1668,24 @@ void tst_realpass::aListPassReadsDifferentlyIsRefused() {
            "pass init must run over a misread list");
   QCOMPARE(criticalSpy.count(), 3);
 
+  // Too large to read is not "nothing to judge": pass reads it all, while
+  // the dialog shows none of it.
+  QFile::remove(m_log);
+  QVERIFY(writeList("ALICE\n" + QByteArray(Util::kMaxGpgIdBytes, '#') +
+                    "\nMALLORY\n"));
+  pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
+  QTest::qWait(300);
+  QVERIFY2(!QFile::exists(m_log), "pass must not run with an unread list");
+  QCOMPARE(criticalSpy.count(), 4);
+  QVERIFY2(criticalSpy.last().at(1).toString().contains(
+               QDir::toNativeSeparators(QDir::cleanPath(list))),
+           qPrintable(criticalSpy.last().at(1).toString()));
+
   QFile::remove(m_log);
   QVERIFY(writeList("ALICE\n"));
   pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
   QVERIFY2(!waitForCall().args.isEmpty(), "pass runs with a clean list");
-  QCOMPARE(criticalSpy.count(), 3);
+  QCOMPARE(criticalSpy.count(), 4);
 }
 
 /**

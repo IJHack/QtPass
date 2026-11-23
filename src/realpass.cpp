@@ -183,10 +183,23 @@ auto RealPass::refuseMisreadList(const QString &file, const QString &within,
       (!within.isEmpty() && !absolute.startsWith(within))) {
     return false;
   }
-  // A list that is missing or cannot be read is not judged here: pass
-  // fails on it, or the other checks refuse it.
+  // A missing list is pass's to report. One that is there but not a
+  // regular file within the limit (too large, a FIFO, a device, unreadable)
+  // pass may still read in full, while the Users dialog shows none of it.
+  // A link was refused before this.
   const std::optional<QByteArray> bytes =
       Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);
+  if (!bytes && QFileInfo::exists(gpgIdFile)) {
+    //: %1 is the list's path, %2 a size such as "1 MiB".
+    emit critical(tr("Recipient list cannot be read"),
+                  tr("%1 is not a regular file of at most %2, so QtPass "
+                     "cannot show who pass would encrypt to. Nothing was "
+                     "encrypted. Check the recipients in Users for that "
+                     "folder and press OK to write the list anew.")
+                      .arg(QDir::toNativeSeparators(gpgIdFile),
+                           QLocale().formattedDataSize(Util::kMaxGpgIdBytes)));
+    return true;
+  }
   const QString misread =
       bytes ? Pass::passReadsDifferently(*bytes) : QString();
   if (misread.isEmpty()) {
