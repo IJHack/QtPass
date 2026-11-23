@@ -763,6 +763,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- After a failed save in the edit dialog, Enter tries the save again. The
+  keyboard focus was left on Cancel, so the next Enter closed the dialog
+  without a question and dropped the typed password (scan
+  ANT-2026-FJJBL9H5).
 - A double-click on the shown entry's fields edits that entry. It used to
   edit the tree's highlighted row, which the arrow keys or a right-click can
   move without showing it: the new password then overwrote the other entry,
