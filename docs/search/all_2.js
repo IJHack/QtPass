@@ -12,13 +12,14 @@ var searchData=
   ['before_9',['before',['../struct_real_pass_1_1_insert_record.html#ab2b5fb5da4f4c402e869b9248b200063',1,'RealPass::InsertRecord']]],
   ['beforeexecute_10',['beforeExecute',['../class_imitate_pass.html#afea4899feebac58489e710f4f8eba501',1,'ImitatePass::beforeExecute()'],['../class_pass.html#a0a580982bcc672c58aad1289d05c4951',1,'Pass::beforeExecute()']]],
   ['beginsearch_11',['beginSearch',['../class_grep_search_controller.html#a29e521fc2b0158dcac3c7cbdb00696fb',1,'GrepSearchController']]],
-  ['boundedfordisplay_12',['boundedForDisplay',['../class_file_content.html#a2afdde46ca2b092bbd613219f37fd400',1,'FileContent']]],
-  ['boundedrandom_13',['boundedRandom',['../class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b',1,'Pass']]],
-  ['boundspaceruns_14',['boundSpaceRuns',['../class_util.html#a57fa6e612f022589f609d8b463111a48',1,'Util']]],
-  ['boundtoitsfolder_15',['boundToItsFolder',['../class_gpg_id_generation.html#a94e96377e9735f5e01b56a7703827095',1,'GpgIdGeneration']]],
-  ['browsercontextmenu_16',['browserContextMenu',['../class_main_window.html#aa24503cb5aa74e6f7153d6b9c941457d',1,'MainWindow']]],
-  ['buildclipboardmimedata_17',['buildClipboardMimeData',['../clipboardmanager_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99',1,'buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData *:&#160;clipboardmanager.cpp'],['../clipboardmanager_8h.html#ad02159f3c84f6ec8d7535395bdb55d99',1,'buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData *:&#160;clipboardmanager.cpp']]],
-  ['buildusertext_18',['buildUserText',['../class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189',1,'UsersDialog']]],
-  ['buttonclicked_19',['buttonClicked',['../class_q_push_button_as_q_r_code.html#a131b43ae67e83063e9ebb8227c161bdc',1,'QPushButtonAsQRCode::buttonClicked()'],['../class_q_push_button_show_password.html#a9d72b7458ae773ca37d7aee0e8167122',1,'QPushButtonShowPassword::buttonClicked()'],['../class_q_push_button_with_clipboard.html#a602f1fd427f6dc9d823bae27f0f50a02',1,'QPushButtonWithClipboard::buttonClicked()']]],
-  ['bytes_20',['bytes',['../struct_imitate_pass_1_1_written_gpg_id.html#a5c9d73507728e1049b8ea31fb2db9103',1,'ImitatePass::WrittenGpgId']]]
+  ['blockkeys_12',['BlockKeys',['../struct_import_key_dialog_1_1_block_keys.html',1,'ImportKeyDialog']]],
+  ['boundedfordisplay_13',['boundedForDisplay',['../class_file_content.html#a2afdde46ca2b092bbd613219f37fd400',1,'FileContent']]],
+  ['boundedrandom_14',['boundedRandom',['../class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b',1,'Pass']]],
+  ['boundspaceruns_15',['boundSpaceRuns',['../class_util.html#a57fa6e612f022589f609d8b463111a48',1,'Util']]],
+  ['boundtoitsfolder_16',['boundToItsFolder',['../class_gpg_id_generation.html#a94e96377e9735f5e01b56a7703827095',1,'GpgIdGeneration']]],
+  ['browsercontextmenu_17',['browserContextMenu',['../class_main_window.html#aa24503cb5aa74e6f7153d6b9c941457d',1,'MainWindow']]],
+  ['buildclipboardmimedata_18',['buildClipboardMimeData',['../clipboardmanager_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99',1,'buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData *:&#160;clipboardmanager.cpp'],['../clipboardmanager_8h.html#ad02159f3c84f6ec8d7535395bdb55d99',1,'buildClipboardMimeData(const QString &amp;text) -&gt; QMimeData *:&#160;clipboardmanager.cpp']]],
+  ['buildusertext_19',['buildUserText',['../class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189',1,'UsersDialog']]],
+  ['buttonclicked_20',['buttonClicked',['../class_q_push_button_as_q_r_code.html#a131b43ae67e83063e9ebb8227c161bdc',1,'QPushButtonAsQRCode::buttonClicked()'],['../class_q_push_button_show_password.html#a9d72b7458ae773ca37d7aee0e8167122',1,'QPushButtonShowPassword::buttonClicked()'],['../class_q_push_button_with_clipboard.html#a602f1fd427f6dc9d823bae27f0f50a02',1,'QPushButtonWithClipboard::buttonClicked()']]],
+  ['bytes_21',['bytes',['../struct_imitate_pass_1_1_written_gpg_id.html#a5c9d73507728e1049b8ea31fb2db9103',1,'ImitatePass::WrittenGpgId']]]
 ];

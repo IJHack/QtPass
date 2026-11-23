@@ -17,7 +17,7 @@ var searchData=
   ['secret_14',['secret',['../struct_enums_1_1_process_info.html#afa94d5e39597cbf0a887006a8c37d7c7',1,'Enums::ProcessInfo']]],
   ['secretfieldnames_15',['secretFieldNames',['../struct_app_settings.html#a215aceceb20bd8a0851239cea82b48e2',1,'AppSettings']]],
   ['secretfieldsin_16',['secretFieldsIn',['../class_template_i_o.html#af8aac6eb0c68a90f03869c53606aa254',1,'TemplateIO']]],
-  ['secretkeys_17',['secretKeys',['../class_first_run_wizard.html#aba1e75b404b0982f37637cde0f087cb9',1,'FirstRunWizard']]],
+  ['secretkeys_17',['secretKeys',['../struct_import_key_dialog_1_1_block_keys.html#adbbe0af66db9c5973f2f51c12946bcf7',1,'ImportKeyDialog::BlockKeys::secretKeys'],['../class_first_run_wizard.html#aba1e75b404b0982f37637cde0f087cb9',1,'FirstRunWizard::secretKeys()']]],
   ['secretlineedit_18',['SecretLineEdit',['../class_secret_line_edit.html',1,'SecretLineEdit'],['../class_secret_line_edit.html#a6510dcfbecc9302dced39d8a76ba388c',1,'SecretLineEdit::SecretLineEdit(QWidget *parent=nullptr)'],['../class_secret_line_edit.html#ade6283b2fd4c83122d80943a6f9e8760',1,'SecretLineEdit::SecretLineEdit(const QString &amp;text, QWidget *parent=nullptr)']]],
   ['secretlineedit_2ecpp_19',['secretlineedit.cpp',['../secretlineedit_8cpp.html',1,'']]],
   ['secretlineedit_2eh_20',['secretlineedit.h',['../secretlineedit_8h.html',1,'']]],

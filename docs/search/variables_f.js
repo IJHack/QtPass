@@ -11,5 +11,6 @@ var searchData=
   ['path_8',['path',['../struct_config_dialog_1_1_profile_problems.html#a7e7b8cd08c6aaa7c976618a5caa28d15',1,'ConfigDialog::ProfileProblems::path'],['../struct_profile.html#a1e4c9f21760536f1ec3a4689b0932557',1,'Profile::path'],['../struct_store_drag_item.html#a67b80e2d0b8d10ca06559f0551e7e106',1,'StoreDragItem::path']]],
   ['profile_9',['profile',['../struct_config_dialog_1_1_profile_entry.html#ae5cef2c048f8b398f63b457906286aad',1,'ConfigDialog::ProfileEntry']]],
   ['program_10',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
-  ['pwgenexecutable_11',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
+  ['publickeys_11',['publicKeys',['../struct_import_key_dialog_1_1_block_keys.html#a5896c6023a179fae8a96f73b0179af79',1,'ImportKeyDialog::BlockKeys']]],
+  ['pwgenexecutable_12',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
 ];

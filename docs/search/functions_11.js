@@ -78,5 +78,6 @@ var searchData=
   ['run_75',['run',['../class_gpg_id_signer.html#a291af0865f896e7b0f7c2595de6dc3ea',1,'GpgIdSigner']]],
   ['runblocking_76',['runBlocking',['../class_executor.html#ae60746042ffc5c3eb343a2911a6bb896',1,'Executor']]],
   ['runblockingraw_77',['runBlockingRaw',['../class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2',1,'Executor']]],
-  ['rungit_78',['runGit',['../class_profile_init.html#a9d0e4d0f6fd056a9a16fbbd2e3a51e43',1,'ProfileInit']]]
+  ['rungit_78',['runGit',['../class_profile_init.html#a9d0e4d0f6fd056a9a16fbbd2e3a51e43',1,'ProfileInit']]],
+  ['rungpg_79',['runGpg',['../class_import_key_dialog.html#ac0a9ce64df6fbce97680fd8803da9f18',1,'ImportKeyDialog']]]
 ];

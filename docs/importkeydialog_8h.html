@@ -122,13 +122,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('importkeydialo
 <p>Dialog that imports an ASCII-armored GPG public key from a file or the clipboard by running <span class="tt">gpg --import</span>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;QDialog&gt;</code><br />
+<code>#include &lt;QElapsedTimer&gt;</code><br />
 <code>#include &lt;QScopedPointer&gt;</code><br />
 <code>#include &lt;QString&gt;</code><br />
+<code>#include &lt;QStringList&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Include dependency graph for importkeydialog.h:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="importkeydialog_8h__incl.svg" width="327" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="importkeydialog_8h__incl.svg" width="588" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary">
@@ -143,6 +145,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('importkeydialo
 Classes</h2></td></tr>
 <tr class="memitem:ImportKeyDialog" id="r_ImportKeyDialog"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dialog for importing GPG keys from file or clipboard.  <a href="class_import_key_dialog.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ImportKeyDialog_3A_3ABlockKeys" id="r_ImportKeyDialog_3A_3ABlockKeys"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_import_key_dialog_1_1_block_keys.html">ImportKeyDialog::BlockKeys</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many keys an armored block holds, by kind.  <a href="struct_import_key_dialog_1_1_block_keys.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dialog that imports an ASCII-armored GPG public key from a file or the clipboard by running <span class="tt">gpg --import</span>. </p>

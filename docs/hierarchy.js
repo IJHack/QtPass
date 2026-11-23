@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "AppSettings", "struct_app_settings.html", null ],
     [ "Base32", "class_base32.html", null ],
+    [ "ImportKeyDialog::BlockKeys", "struct_import_key_dialog_1_1_block_keys.html", null ],
     [ "Executor::ExecQueueItem", "struct_executor_1_1_exec_queue_item.html", null ],
     [ "FileContent", "class_file_content.html", null ],
     [ "GrepSearchController::FinishOutcome", "struct_grep_search_controller_1_1_finish_outcome.html", null ],

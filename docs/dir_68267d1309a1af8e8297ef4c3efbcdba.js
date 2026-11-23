@@ -30,7 +30,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "imitatepass.cpp", "imitatepass_8cpp.html", "imitatepass_8cpp" ],
     [ "imitatepass.h", "imitatepass_8h.html", "imitatepass_8h" ],
     [ "importkeydialog.cpp", "importkeydialog_8cpp.html", null ],
-    [ "importkeydialog.h", "importkeydialog_8h.html", null ],
+    [ "importkeydialog.h", "importkeydialog_8h.html", "importkeydialog_8h" ],
     [ "keygendialog.cpp", "keygendialog_8cpp.html", "keygendialog_8cpp" ],
     [ "keygendialog.h", "keygendialog_8h.html", null ],
     [ "mainwindow.cpp", "mainwindow_8cpp.html", null ],

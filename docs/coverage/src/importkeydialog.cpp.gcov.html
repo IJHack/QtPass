@@ -42,18 +42,18 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">96.0&nbsp;%</td>
-            <td class="headerCovTableEntry">101</td>
-            <td class="headerCovTableEntry">97</td>
+            <td class="headerCovTableEntryHi">96.9&nbsp;%</td>
+            <td class="headerCovTableEntry">130</td>
+            <td class="headerCovTableEntry">126</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-23 12:06:43</td>
+            <td class="headerValue">2026-11-23 19:11:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">11</td>
-            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">13</td>
           </tr>
                   <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -121,18 +121,18 @@
 <span id="L48"><span class="lineNum">      48</span>              :     R&quot;(^gpg: key ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}):.*imported)&quot;));</span>
 <span id="L49"><span class="lineNum">      49</span>              : /// @endcond</span>
 <span id="L50"><span class="lineNum">      50</span>              : </span>
-<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">          20 : ImportKeyDialog::ImportKeyDialog(const QString &amp;gpgExe, QWidget *parent,</span></span>
-<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          20 :                                  int timeoutMs)</span></span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          20 :     : QDialog(parent), ui(new Ui::ImportKeyDialog), m_gpgExe(gpgExe),</span></span>
-<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">          40 :       m_timeoutMs(timeoutMs) {</span></span>
-<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">          20 :   ui-&gt;setupUi(this);</span></span>
-<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">          20 :   ui-&gt;importButton-&gt;setEnabled(false);</span></span>
-<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">          20 : }</span></span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">          25 : ImportKeyDialog::ImportKeyDialog(const QString &amp;gpgExe, QWidget *parent,</span></span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          25 :                                  int timeoutMs)</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          25 :     : QDialog(parent), ui(new Ui::ImportKeyDialog), m_gpgExe(gpgExe),</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">          50 :       m_timeoutMs(timeoutMs) {</span></span>
+<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">          25 :   ui-&gt;setupUi(this);</span></span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">          25 :   ui-&gt;importButton-&gt;setEnabled(false);</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">          25 : }</span></span>
 <span id="L58"><span class="lineNum">      58</span>              : </span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          40 : ImportKeyDialog::~ImportKeyDialog() = default;</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          50 : ImportKeyDialog::~ImportKeyDialog() = default;</span></span>
 <span id="L60"><span class="lineNum">      60</span>              : </span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           8 : auto ImportKeyDialog::importedKeyId() const -&gt; QString {</span></span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           8 :   return m_importedKeyId;</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">          12 : auto ImportKeyDialog::importedKeyId() const -&gt; QString {</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">          12 :   return m_importedKeyId;</span></span>
 <span id="L63"><span class="lineNum">      63</span>              : }</span>
 <span id="L64"><span class="lineNum">      64</span>              : </span>
 <span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">           5 : void ImportKeyDialog::on_fileButton_clicked() {</span></span>
@@ -201,109 +201,171 @@
 <span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">           1 :   ui-&gt;inputTextEdit-&gt;setPlainText(text);</span></span>
 <span id="L129"><span class="lineNum">     129</span>              : }</span>
 <span id="L130"><span class="lineNum">     130</span>              : </span>
-<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">           8 : void ImportKeyDialog::on_importButton_clicked() {</span></span>
-<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">          16 :   const QString input = ui-&gt;inputTextEdit-&gt;toPlainText().trimmed();</span></span>
-<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">           8 :   if (input.isEmpty()) {</span></span>
+<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">          13 : void ImportKeyDialog::on_importButton_clicked() {</span></span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">          26 :   const QString input = ui-&gt;inputTextEdit-&gt;toPlainText().trimmed();</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">          13 :   if (input.isEmpty()) {</span></span>
 <span id="L134"><span class="lineNum">     134</span>              :     return;</span>
 <span id="L135"><span class="lineNum">     135</span>              :   }</span>
 <span id="L136"><span class="lineNum">     136</span>              : </span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">           7 :   if (importFromString(input)) {</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          12 :   if (importFromString(input)) {</span></span>
 <span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">           4 :     accept();</span></span>
 <span id="L139"><span class="lineNum">     139</span>              :   }</span>
 <span id="L140"><span class="lineNum">     140</span>              : }</span>
 <span id="L141"><span class="lineNum">     141</span>              : </span>
-<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">          15 : void ImportKeyDialog::on_inputTextEdit_textChanged() {</span></span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          45 :   const bool hasInput = !ui-&gt;inputTextEdit-&gt;toPlainText().trimmed().isEmpty();</span></span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          15 :   ui-&gt;importButton-&gt;setEnabled(hasInput);</span></span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          15 : }</span></span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">          20 : void ImportKeyDialog::on_inputTextEdit_textChanged() {</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          60 :   const bool hasInput = !ui-&gt;inputTextEdit-&gt;toPlainText().trimmed().isEmpty();</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          20 :   ui-&gt;importButton-&gt;setEnabled(hasInput);</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          20 : }</span></span>
 <span id="L146"><span class="lineNum">     146</span>              : </span>
-<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">           7 : bool ImportKeyDialog::importFromString(const QString &amp;input) {</span></span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">           7 :   QString gpgExe = m_gpgExe.isEmpty() ? QStringLiteral(&quot;gpg&quot;) : m_gpgExe;</span></span>
-<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">          77 :   QStringList args = {&quot;--status-fd&quot;, &quot;1&quot;, &quot;--import&quot;, &quot;--batch&quot;, &quot;--yes&quot;};</span></span>
+<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">          12 : bool ImportKeyDialog::importFromString(const QString &amp;input) {</span></span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">          12 :   QElapsedTimer timer;</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">          12 :   timer.start();</span></span>
 <span id="L150"><span class="lineNum">     150</span>              : </span>
-<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">           7 :   QString stdOut;</span></span>
-<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">           7 :   QString stdErr;</span></span>
-<span id="L153"><span class="lineNum">     153</span>              : </span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">           7 :   QProcess gpg;</span></span>
-<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">           7 :   QElapsedTimer timer;</span></span>
-<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">           7 :   timer.start();</span></span>
-<span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">           7 :   const int result = Executor::executeBlocking(</span></span>
-<span id="L158"><span class="lineNum">     158</span>              :       gpg, gpgExe, args, input, &amp;stdOut, &amp;stdErr, nullptr, m_timeoutMs);</span>
-<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">           7 :   if (result != 0 &amp;&amp; timer.elapsed() &gt;= m_timeoutMs) {</span></span>
-<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">           1 :     const int seconds = (m_timeoutMs + 999) / 1000;</span></span>
-<span id="L161"><span class="lineNum">     161</span> <span class="tlaGNC">           1 :     showError(tr(&quot;gpg did not finish the import within %n second(s) and was &quot;</span></span>
-<span id="L162"><span class="lineNum">     162</span>              :                  &quot;stopped. Part of the key may be in your keyring already: &quot;</span>
-<span id="L163"><span class="lineNum">     163</span>              :                  &quot;check it with gpg --list-keys before you use it.&quot;,</span>
-<span id="L164"><span class="lineNum">     164</span>              :                  nullptr, seconds));</span>
-<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">           1 :     return false;</span></span>
-<span id="L166"><span class="lineNum">     166</span>              :   }</span>
-<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">           6 :   if (result != 0) {</span></span>
-<span id="L168"><span class="lineNum">     168</span> <span class="tlaGNC">           2 :     showError(tr(&quot;GPG import failed:\n%1&quot;).arg(stdErr));</span></span>
-<span id="L169"><span class="lineNum">     169</span> <span class="tlaGNC">           1 :     return false;</span></span>
-<span id="L170"><span class="lineNum">     170</span>              :   }</span>
-<span id="L171"><span class="lineNum">     171</span>              : </span>
-<span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">           5 :   QString keyId = parseGpgImportOutput(stdOut);</span></span>
-<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">           5 :   if (keyId.isEmpty()) {</span></span>
-<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">           4 :     keyId = parseGpgImportOutput(stdErr);</span></span>
-<span id="L175"><span class="lineNum">     175</span>              :   }</span>
-<span id="L176"><span class="lineNum">     176</span>              : </span>
-<span id="L177"><span class="lineNum">     177</span> <span class="tlaGNC">           5 :   if (keyId.isEmpty()) {</span></span>
-<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">           1 :     showError(tr(&quot;Could not parse imported key id from GPG output.&quot;));</span></span>
-<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">           1 :     return false;</span></span>
-<span id="L180"><span class="lineNum">     180</span>              :   }</span>
-<span id="L181"><span class="lineNum">     181</span>              : </span>
-<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">           4 :   m_importedKeyId = keyId;</span></span>
-<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">           4 :   showSuccess(keyId);</span></span>
-<span id="L184"><span class="lineNum">     184</span>              :   return true;</span>
-<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">           7 : }</span></span>
-<span id="L186"><span class="lineNum">     186</span>              : </span>
-<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">          41 : auto ImportKeyDialog::parseGpgImportOutput(const QString &amp;output) -&gt; QString {</span></span>
-<span id="L188"><span class="lineNum">     188</span>              :   // Line by line, a CRLF end included (gpg on Windows): the patterns are</span>
-<span id="L189"><span class="lineNum">     189</span>              :   // anchored at both ends of the line.</span>
-<span id="L190"><span class="lineNum">     190</span>              :   const QStringList lines = output.split(</span>
-<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">          82 :       QRegularExpression(QStringLiteral(&quot;\\r?\\n&quot;)), Qt::SkipEmptyParts);</span></span>
-<span id="L192"><span class="lineNum">     192</span>              :   // The order here is the priority order: prefer the locale-independent</span>
-<span id="L193"><span class="lineNum">     193</span>              :   // status lines over the English human-readable line, and within the</span>
-<span id="L194"><span class="lineNum">     194</span>              :   // status lines prefer IMPORT_OK (full fingerprint) over IMPORTED</span>
-<span id="L195"><span class="lineNum">     195</span>              :   // (long key id). Each regex is scanned across every line before we</span>
-<span id="L196"><span class="lineNum">     196</span>              :   // fall through to the next regex; the per-line ordering of gpg's</span>
-<span id="L197"><span class="lineNum">     197</span>              :   // output (which emits IMPORTED before IMPORT_OK) must not pick the</span>
-<span id="L198"><span class="lineNum">     198</span>              :   // weaker identifier.</span>
-<span id="L199"><span class="lineNum">     199</span> <span class="tlaGNC">          70 :   for (const QString &amp;line : lines) {</span></span>
-<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">          45 :     const QRegularExpressionMatch match = IMPORT_OK_RE.match(line);</span></span>
-<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">          45 :     if (match.hasMatch()) {</span></span>
-<span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">          16 :       return match.captured(1);</span></span>
-<span id="L203"><span class="lineNum">     203</span>              :     }</span>
-<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">          45 :   }</span></span>
-<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">          44 :   for (const QString &amp;line : lines) {</span></span>
-<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">          24 :     const QRegularExpressionMatch match = IMPORTED_RE.match(line);</span></span>
-<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">          24 :     if (match.hasMatch()) {</span></span>
-<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">           5 :       return match.captured(1);</span></span>
-<span id="L209"><span class="lineNum">     209</span>              :     }</span>
-<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">          24 :   }</span></span>
-<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">          33 :   for (const QString &amp;line : lines) {</span></span>
-<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">          19 :     const QRegularExpressionMatch match = KEY_IMPORTED_FALLBACK.match(line);</span></span>
-<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">          19 :     if (match.hasMatch()) {</span></span>
-<span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">           6 :       return match.captured(1);</span></span>
-<span id="L215"><span class="lineNum">     215</span>              :     }</span>
-<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">          19 :   }</span></span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">          14 :   return {};</span></span>
-<span id="L218"><span class="lineNum">     218</span>              : }</span>
-<span id="L219"><span class="lineNum">     219</span>              : </span>
-<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">           3 : void ImportKeyDialog::showError(const QString &amp;message) {</span></span>
-<span id="L221"><span class="lineNum">     221</span>              :   // gpg's stderr quotes user IDs (&quot;Name &lt;a@b&gt;&quot;): plain, so they show as</span>
-<span id="L222"><span class="lineNum">     222</span>              :   // written and cannot be markup.</span>
-<span id="L223"><span class="lineNum">     223</span> <span class="tlaGNC">           3 :   PlainMessageBox::warning(this, tr(&quot;Import key&quot;), message);</span></span>
-<span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">           3 : }</span></span>
-<span id="L225"><span class="lineNum">     225</span>              : </span>
-<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">           4 : void ImportKeyDialog::showSuccess(const QString &amp;keyId) {</span></span>
-<span id="L227"><span class="lineNum">     227</span> <span class="tlaGNC">          12 :   QMessageBox::information(this, tr(&quot;Import key&quot;),</span></span>
-<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">           4 :                            tr(&quot;Public key %1 imported. Check its fingerprint &quot;</span></span>
-<span id="L229"><span class="lineNum">     229</span>              :                               &quot;with its owner before encrypting to it: &quot;</span>
-<span id="L230"><span class="lineNum">     230</span>              :                               &quot;importing a key says nothing about who holds &quot;</span>
-<span id="L231"><span class="lineNum">     231</span>              :                               &quot;it.&quot;)</span>
-<span id="L232"><span class="lineNum">     232</span> <span class="tlaGNC">           8 :                                .arg(keyId));</span></span>
-<span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">           4 : }</span></span>
+<span id="L151"><span class="lineNum">     151</span>              :   // gpg imports every key in the block, and all the user learns is the one</span>
+<span id="L152"><span class="lineNum">     152</span>              :   // fingerprint named below. List the block first, writing nothing, so a</span>
+<span id="L153"><span class="lineNum">     153</span>              :   // second key or a private key cannot come along unmentioned. Both runs</span>
+<span id="L154"><span class="lineNum">     154</span>              :   // skip gpg.conf, so they judge the block alike: a list-filter there hides</span>
+<span id="L155"><span class="lineNum">     155</span>              :   // keys from this listing only, and allow-non-selfsigned-uid lets the</span>
+<span id="L156"><span class="lineNum">     156</span>              :   // import take a key the listing would have skipped.</span>
+<span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">          12 :   QString listing;</span></span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          12 :   QString listErr;</span></span>
+<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">         108 :   if (!runGpg({QStringLiteral(&quot;--no-options&quot;), QStringLiteral(&quot;--batch&quot;),</span></span>
+<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">          12 :                QStringLiteral(&quot;--with-colons&quot;),</span></span>
+<span id="L161"><span class="lineNum">     161</span> <span class="tlaGNC">          12 :                QStringLiteral(&quot;--import-options&quot;), QStringLiteral(&quot;show-only&quot;),</span></span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">          12 :                QStringLiteral(&quot;--import&quot;)},</span></span>
+<span id="L163"><span class="lineNum">     163</span>              :               input, &amp;listing, &amp;listErr, timer)) {</span>
+<span id="L164"><span class="lineNum">     164</span>              :     return false;</span>
+<span id="L165"><span class="lineNum">     165</span>              :   }</span>
+<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">          10 :   const BlockKeys keys = keysInBlock(listing);</span></span>
+<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">          10 :   if (keys.secretKeys &gt; 0) {</span></span>
+<span id="L168"><span class="lineNum">     168</span> <span class="tlaGNC">           2 :     showError(tr(&quot;This text holds a private key. QtPass imports public keys &quot;</span></span>
+<span id="L169"><span class="lineNum">     169</span>              :                  &quot;only, so nothing was imported. Import the public key: &quot;</span>
+<span id="L170"><span class="lineNum">     170</span>              :                  &quot;gpg --armor --export writes it.&quot;));</span>
+<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">           2 :     return false;</span></span>
+<span id="L172"><span class="lineNum">     172</span>              :   }</span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">           8 :   if (keys.publicKeys == 0) {</span></span>
+<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">           1 :     showError(tr(&quot;gpg found no key in this text, so nothing was imported.&quot;));</span></span>
+<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">           1 :     return false;</span></span>
+<span id="L176"><span class="lineNum">     176</span>              :   }</span>
+<span id="L177"><span class="lineNum">     177</span> <span class="tlaGNC">           7 :   if (keys.publicKeys &gt; 1) {</span></span>
+<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">           2 :     showError(tr(&quot;This text holds %n keys. QtPass imports one key at a time &quot;</span></span>
+<span id="L179"><span class="lineNum">     179</span>              :                  &quot;and names it, so you can check its fingerprint: nothing &quot;</span>
+<span id="L180"><span class="lineNum">     180</span>              :                  &quot;was imported. Import each key on its own.&quot;,</span>
+<span id="L181"><span class="lineNum">     181</span>              :                  nullptr, keys.publicKeys));</span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">           2 :     return false;</span></span>
+<span id="L183"><span class="lineNum">     183</span>              :   }</span>
+<span id="L184"><span class="lineNum">     184</span>              : </span>
+<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">           5 :   QString stdOut;</span></span>
+<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">           5 :   QString stdErr;</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">          45 :   if (!runGpg({QStringLiteral(&quot;--no-options&quot;), QStringLiteral(&quot;--status-fd&quot;),</span></span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">           5 :                QStringLiteral(&quot;1&quot;), QStringLiteral(&quot;--import&quot;),</span></span>
+<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">           5 :                QStringLiteral(&quot;--batch&quot;), QStringLiteral(&quot;--yes&quot;)},</span></span>
+<span id="L190"><span class="lineNum">     190</span>              :               input, &amp;stdOut, &amp;stdErr, timer)) {</span>
+<span id="L191"><span class="lineNum">     191</span>              :     return false;</span>
+<span id="L192"><span class="lineNum">     192</span>              :   }</span>
+<span id="L193"><span class="lineNum">     193</span>              : </span>
+<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">           5 :   QString keyId = parseGpgImportOutput(stdOut);</span></span>
+<span id="L195"><span class="lineNum">     195</span> <span class="tlaGNC">           5 :   if (keyId.isEmpty()) {</span></span>
+<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">           4 :     keyId = parseGpgImportOutput(stdErr);</span></span>
+<span id="L197"><span class="lineNum">     197</span>              :   }</span>
+<span id="L198"><span class="lineNum">     198</span>              : </span>
+<span id="L199"><span class="lineNum">     199</span> <span class="tlaGNC">           5 :   if (keyId.isEmpty()) {</span></span>
+<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">           1 :     showError(tr(&quot;Could not parse imported key id from GPG output.&quot;));</span></span>
+<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">           1 :     return false;</span></span>
+<span id="L202"><span class="lineNum">     202</span>              :   }</span>
+<span id="L203"><span class="lineNum">     203</span>              : </span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">           4 :   m_importedKeyId = keyId;</span></span>
+<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">           4 :   showSuccess(keyId);</span></span>
+<span id="L206"><span class="lineNum">     206</span>              :   return true;</span>
+<span id="L207"><span class="lineNum">     207</span>              : }</span>
+<span id="L208"><span class="lineNum">     208</span>              : </span>
+<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">          17 : auto ImportKeyDialog::runGpg(const QStringList &amp;args, const QString &amp;input,</span></span>
+<span id="L210"><span class="lineNum">     210</span>              :                              QString *stdOut, QString *stdErr,</span>
+<span id="L211"><span class="lineNum">     211</span>              :                              const QElapsedTimer &amp;timer) -&gt; bool {</span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">          17 :   const QString gpgExe = m_gpgExe.isEmpty() ? QStringLiteral(&quot;gpg&quot;) : m_gpgExe;</span></span>
+<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">          17 :   const qint64 left = m_timeoutMs - timer.elapsed();</span></span>
+<span id="L214"><span class="lineNum">     214</span>              :   int result = -1;</span>
+<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">          17 :   if (left &gt; 0) {</span></span>
+<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">          17 :     QProcess gpg;</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">          17 :     result = Executor::executeBlocking(gpg, gpgExe, args, input, stdOut, stdErr,</span></span>
+<span id="L218"><span class="lineNum">     218</span>              :                                        nullptr, static_cast&lt;int&gt;(left));</span>
+<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">          17 :   }</span></span>
+<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">          17 :   if (result != 0 &amp;&amp; timer.elapsed() &gt;= m_timeoutMs) {</span></span>
+<span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">           1 :     const int seconds = (m_timeoutMs + 999) / 1000;</span></span>
+<span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">           1 :     showError(tr(&quot;gpg did not finish the import within %n second(s) and was &quot;</span></span>
+<span id="L223"><span class="lineNum">     223</span>              :                  &quot;stopped. Part of the key may be in your keyring already: &quot;</span>
+<span id="L224"><span class="lineNum">     224</span>              :                  &quot;check it with gpg --list-keys before you use it.&quot;,</span>
+<span id="L225"><span class="lineNum">     225</span>              :                  nullptr, seconds));</span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">           1 :     return false;</span></span>
+<span id="L227"><span class="lineNum">     227</span>              :   }</span>
+<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">          16 :   if (result != 0) {</span></span>
+<span id="L229"><span class="lineNum">     229</span> <span class="tlaGNC">           2 :     showError(tr(&quot;GPG import failed:\n%1&quot;).arg(*stdErr));</span></span>
+<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">           1 :     return false;</span></span>
+<span id="L231"><span class="lineNum">     231</span>              :   }</span>
+<span id="L232"><span class="lineNum">     232</span>              :   return true;</span>
+<span id="L233"><span class="lineNum">     233</span>              : }</span>
+<span id="L234"><span class="lineNum">     234</span>              : </span>
+<span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">          16 : auto ImportKeyDialog::keysInBlock(const QString &amp;listing) -&gt; BlockKeys {</span></span>
+<span id="L236"><span class="lineNum">     236</span>              :   BlockKeys keys;</span>
+<span id="L237"><span class="lineNum">     237</span>              :   const QStringList lines = listing.split(</span>
+<span id="L238"><span class="lineNum">     238</span> <span class="tlaGNC">          32 :       QRegularExpression(QStringLiteral(&quot;\\r?\\n&quot;)), Qt::SkipEmptyParts);</span></span>
+<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">          72 :   for (const QString &amp;line : lines) {</span></span>
+<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">          56 :     if (line.startsWith(QLatin1String(&quot;pub:&quot;))) {</span></span>
+<span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">          16 :       ++keys.publicKeys;</span></span>
+<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">          40 :     } else if (line.startsWith(QLatin1String(&quot;sec:&quot;))) {</span></span>
+<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">           4 :       ++keys.secretKeys;</span></span>
+<span id="L244"><span class="lineNum">     244</span>              :     }</span>
+<span id="L245"><span class="lineNum">     245</span>              :   }</span>
+<span id="L246"><span class="lineNum">     246</span> <span class="tlaGNC">          16 :   return keys;</span></span>
+<span id="L247"><span class="lineNum">     247</span>              : }</span>
+<span id="L248"><span class="lineNum">     248</span>              : </span>
+<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">          41 : auto ImportKeyDialog::parseGpgImportOutput(const QString &amp;output) -&gt; QString {</span></span>
+<span id="L250"><span class="lineNum">     250</span>              :   // Line by line, a CRLF end included (gpg on Windows): the patterns are</span>
+<span id="L251"><span class="lineNum">     251</span>              :   // anchored at both ends of the line.</span>
+<span id="L252"><span class="lineNum">     252</span>              :   const QStringList lines = output.split(</span>
+<span id="L253"><span class="lineNum">     253</span> <span class="tlaGNC">          82 :       QRegularExpression(QStringLiteral(&quot;\\r?\\n&quot;)), Qt::SkipEmptyParts);</span></span>
+<span id="L254"><span class="lineNum">     254</span>              :   // The order here is the priority order: prefer the locale-independent</span>
+<span id="L255"><span class="lineNum">     255</span>              :   // status lines over the English human-readable line, and within the</span>
+<span id="L256"><span class="lineNum">     256</span>              :   // status lines prefer IMPORT_OK (full fingerprint) over IMPORTED</span>
+<span id="L257"><span class="lineNum">     257</span>              :   // (long key id). Each regex is scanned across every line before we</span>
+<span id="L258"><span class="lineNum">     258</span>              :   // fall through to the next regex; the per-line ordering of gpg's</span>
+<span id="L259"><span class="lineNum">     259</span>              :   // output (which emits IMPORTED before IMPORT_OK) must not pick the</span>
+<span id="L260"><span class="lineNum">     260</span>              :   // weaker identifier.</span>
+<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">          70 :   for (const QString &amp;line : lines) {</span></span>
+<span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">          45 :     const QRegularExpressionMatch match = IMPORT_OK_RE.match(line);</span></span>
+<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">          45 :     if (match.hasMatch()) {</span></span>
+<span id="L264"><span class="lineNum">     264</span> <span class="tlaGNC">          16 :       return match.captured(1);</span></span>
+<span id="L265"><span class="lineNum">     265</span>              :     }</span>
+<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">          45 :   }</span></span>
+<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">          44 :   for (const QString &amp;line : lines) {</span></span>
+<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">          24 :     const QRegularExpressionMatch match = IMPORTED_RE.match(line);</span></span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">          24 :     if (match.hasMatch()) {</span></span>
+<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">           5 :       return match.captured(1);</span></span>
+<span id="L271"><span class="lineNum">     271</span>              :     }</span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">          24 :   }</span></span>
+<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">          33 :   for (const QString &amp;line : lines) {</span></span>
+<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">          19 :     const QRegularExpressionMatch match = KEY_IMPORTED_FALLBACK.match(line);</span></span>
+<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">          19 :     if (match.hasMatch()) {</span></span>
+<span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">           6 :       return match.captured(1);</span></span>
+<span id="L277"><span class="lineNum">     277</span>              :     }</span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">          19 :   }</span></span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          14 :   return {};</span></span>
+<span id="L280"><span class="lineNum">     280</span>              : }</span>
+<span id="L281"><span class="lineNum">     281</span>              : </span>
+<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">           8 : void ImportKeyDialog::showError(const QString &amp;message) {</span></span>
+<span id="L283"><span class="lineNum">     283</span>              :   // gpg's stderr quotes user IDs (&quot;Name &lt;a@b&gt;&quot;): plain, so they show as</span>
+<span id="L284"><span class="lineNum">     284</span>              :   // written and cannot be markup.</span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">           8 :   PlainMessageBox::warning(this, tr(&quot;Import key&quot;), message);</span></span>
+<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">           8 : }</span></span>
+<span id="L287"><span class="lineNum">     287</span>              : </span>
+<span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">           4 : void ImportKeyDialog::showSuccess(const QString &amp;keyId) {</span></span>
+<span id="L289"><span class="lineNum">     289</span> <span class="tlaGNC">          12 :   QMessageBox::information(this, tr(&quot;Import key&quot;),</span></span>
+<span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">           4 :                            tr(&quot;Public key %1 imported. Check its fingerprint &quot;</span></span>
+<span id="L291"><span class="lineNum">     291</span>              :                               &quot;with its owner before encrypting to it: &quot;</span>
+<span id="L292"><span class="lineNum">     292</span>              :                               &quot;importing a key says nothing about who holds &quot;</span>
+<span id="L293"><span class="lineNum">     293</span>              :                               &quot;it.&quot;)</span>
+<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">           8 :                                .arg(keyId));</span></span>
+<span id="L295"><span class="lineNum">     295</span> <span class="tlaGNC">           4 : }</span></span>
         </pre>
               </td>
             </tr>

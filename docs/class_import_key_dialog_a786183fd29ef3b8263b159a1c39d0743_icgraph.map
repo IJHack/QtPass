@@ -1,0 +1,7 @@
+<map id="ImportKeyDialog::keysInBlock" name="ImportKeyDialog::keysInBlock">
+<area shape="rect" id="Node000001" title="Count the keys in the listing of gpg &#45;&#45;with&#45;colons &#45;&#45;import&#45;options show&#45;only &#45;&#45;import." alt="" coords="482,14,698,42"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94" title="Lists the keys in input first, with nothing written, and refuses a block that holds a private key or ..." alt="" coords="220,5,434,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,28,435,30,434,25,469,28"/>
+<area shape="rect" id="Node000003" href="$class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc" title="&quot;Import&quot; button: runs importFromString() on the trimmed input and closes the dialog with accept() on ..." alt="" coords="5,5,172,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,28,172,30,172,25,207,27"/>
+</map>

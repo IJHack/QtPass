@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd":[1,2,8,24],
+"class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833":[1,2,8,18],
 "class_users_dialog.html#adb673bcebad1749f22183ce146b846cd":[1,2,8,8],
 "class_users_dialog.html#ae4d6d585d09d26213b5c1fe757974544":[1,2,8,15],
 "class_users_dialog.html#ae86b7e4f8a990b980dfcc4f394722069":[1,2,8,40],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "menubarpeek_8h.html":[4,0,1,36],
 "menubarpeek_8h_source.html":[4,0,1,36],
 "namespace_enums.html":[1,1,0],
-"namespace_enums.html#a10371ee44aefcd45e202978699eb03ca":[2,0,0,4],
-"namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4":[2,0,0,1],
-"namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e":[2,0,0,1,1]
+"namespace_enums.html#a10371ee44aefcd45e202978699eb03ca":[2,0,0,4]
 };

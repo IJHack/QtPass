@@ -1,29 +1,34 @@
 <map id="ImportKeyDialog::importFromString" name="ImportKeyDialog::importFromString">
-<area shape="rect" id="Node000001" title="Feeds input to gpg &#45;&#45;status&#45;fd 1 &#45;&#45;import &#45;&#45;batch &#45;&#45;yes via Executor::executeBlocking() and records t..." alt="" coords="5,140,220,184"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="284,57,476,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,136,267,94,295,88,290,90,269,99,163,141"/>
-<area shape="rect" id="Node000009" href="$class_import_key_dialog.html#a5cac84f9f66c898bcf885abd67aaecec" title="Parse GPG import output to extract a key id or fingerprint." alt="" coords="280,109,480,154"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="219,147,267,144,262,145,221,152"/>
-<area shape="rect" id="Node000010" href="$class_import_key_dialog.html#a651aaa533aeccc853985fe53ce2f5d9a" title="Shows message in a plain&#45;text warning box (gpg&#39;s stderr quotes user IDs, which must not be read as ma..." alt="" coords="278,177,482,205"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="220,171,265,178,260,179,220,176"/>
-<area shape="rect" id="Node000014" href="$class_import_key_dialog.html#adef5ec5248765634e31af44dddfa3948" title="Shows the &quot;imported, now verify the fingerprint&quot; information box." alt="" coords="268,229,492,257"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="174,182,268,214,302,225,296,225,267,219,173,187"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="557,57,719,85"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="476,69,544,71,539,72,477,74"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="784,57,975,85"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="719,69,771,71,766,72,720,74"/>
-<area shape="rect" id="Node000005" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1023,57,1188,85"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="975,69,1010,71,1004,71,975,74"/>
-<area shape="rect" id="Node000006" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1236,5,1454,33"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1172,54,1260,37,1265,36,1173,59"/>
-<area shape="rect" id="Node000007" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1239,57,1451,85"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1188,69,1226,71,1221,71,1188,74"/>
-<area shape="rect" id="Node000008" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1243,109,1447,137"/>
-<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1173,83,1265,105,1260,105,1173,88"/>
-<area shape="rect" id="Node000011" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="540,177,736,205"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="482,189,527,191,522,191,482,194"/>
-<area shape="rect" id="Node000012" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="790,177,969,205"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="737,189,777,191,772,191,737,194"/>
-<area shape="rect" id="Node000013" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="1042,177,1169,205"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="969,189,1029,191,1023,191,969,194"/>
+<area shape="rect" id="Node000001" title="Lists the keys in input first, with nothing written, and refuses a block that holds a private key or ..." alt="" coords="5,117,220,162"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#a786183fd29ef3b8263b159a1c39d0743" title="Count the keys in the listing of gpg &#45;&#45;with&#45;colons &#45;&#45;import&#45;options show&#45;only &#45;&#45;import." alt="" coords="272,5,488,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,114,199,77,267,42,288,37,284,39,269,47,201,82,146,119"/>
+<area shape="rect" id="Node000003" href="$class_import_key_dialog.html#a5cac84f9f66c898bcf885abd67aaecec" title="Parse GPG import output to extract a key id or fingerprint." alt="" coords="280,57,480,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,114,267,104,262,106,216,119"/>
+<area shape="rect" id="Node000004" href="$class_import_key_dialog.html#ac0a9ce64df6fbce97680fd8803da9f18" title="Runs gpg with args on input within what is left of m_timeoutMs since timer started." alt="" coords="287,125,472,153"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="219,137,275,138,269,140,220,142"/>
+<area shape="rect" id="Node000012" href="$class_import_key_dialog.html#a651aaa533aeccc853985fe53ce2f5d9a" title="Shows message in a plain&#45;text warning box (gpg&#39;s stderr quotes user IDs, which must not be read as ma..." alt="" coords="540,176,743,204"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="220,155,268,162,401,174,527,185,522,185,401,180,267,167,220,161"/>
+<area shape="rect" id="Node000016" href="$class_import_key_dialog.html#adef5ec5248765634e31af44dddfa3948" title="Shows the &quot;imported, now verify the fingerprint&quot; information box." alt="" coords="268,227,492,254"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="160,159,269,206,311,222,306,222,267,211,159,165"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="546,124,738,152"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="473,136,533,138,527,139,473,141"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="455,151,554,172,549,173,455,156"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="808,124,971,152"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="738,135,796,138,791,138,739,140"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1036,124,1226,152"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="971,135,1023,138,1017,138,971,140"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1274,124,1439,152"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1226,135,1261,138,1256,138,1226,140"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1487,72,1706,100"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1424,121,1511,104,1517,103,1424,126"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1490,124,1703,152"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="1440,135,1478,138,1472,138,1440,140"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1494,176,1699,204"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="1424,150,1517,172,1511,172,1424,155"/>
+<area shape="rect" id="Node000013" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="791,176,988,204"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="744,187,779,190,773,190,744,192"/>
+<area shape="rect" id="Node000014" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="1042,176,1220,204"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="988,187,1029,190,1023,190,988,192"/>
+<area shape="rect" id="Node000015" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="1293,176,1420,204"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="1220,187,1280,190,1275,190,1220,192"/>
 </map>

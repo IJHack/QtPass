@@ -1,9 +1,13 @@
 <map id="src/importkeydialog.h" name="src/importkeydialog.h">
-<area shape="rect" id="Node000001" title="Dialog that imports an ASCII&#45;armored GPG public key from a file or the clipboard by running gpg &#45;&#45;imp..." alt="" coords="84,5,246,33"/>
+<area shape="rect" id="Node000001" title="Dialog that imports an ASCII&#45;armored GPG public key from a file or the clipboard by running gpg &#45;&#45;imp..." alt="" coords="229,5,391,33"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,81,79,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,34,78,75,75,70,140,34"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="102,81,227,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,32,167,67,162,64,163,36"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="251,81,321,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="187,31,254,72,249,73,186,36"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,36,94,82,93,77,261,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="103,81,224,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="286,33,204,76,202,71,281,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="248,81,372,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="312,32,312,67,308,64,308,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="397,81,466,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="332,31,400,73,394,73,331,36"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="490,81,583,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="351,31,485,76,479,76,350,36"/>
 </map>

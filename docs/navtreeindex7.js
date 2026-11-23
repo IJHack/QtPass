@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"struct_gpg_id_generation_1_1_header.html#aa087dce0debfb992d80d165f1fee5fe7":[1,2,2,0,1],
+"struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf":[1,2,2,0,2],
 "struct_grep_search_controller_1_1_finish_outcome.html":[1,5,8,0],
 "struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595":[1,5,8,0,0],
 "struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8":[1,5,8,0,1],
@@ -26,6 +28,9 @@ var NAVTREEINDEX7 =
 "struct_imitate_pass_1_1_written_gpg_id.html":[1,0,0,4],
 "struct_imitate_pass_1_1_written_gpg_id.html#a56b7913301462eb9d5b7b0633c9531b4":[1,0,0,4,1],
 "struct_imitate_pass_1_1_written_gpg_id.html#a5c9d73507728e1049b8ea31fb2db9103":[1,0,0,4,0],
+"struct_import_key_dialog_1_1_block_keys.html":[1,2,5,0],
+"struct_import_key_dialog_1_1_block_keys.html#a5896c6023a179fae8a96f73b0179af79":[1,2,5,0,0],
+"struct_import_key_dialog_1_1_block_keys.html#adbbe0af66db9c5973f2f51c12946bcf7":[1,2,5,0,1],
 "struct_named_value.html":[1,3,2],
 "struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867":[1,3,2,0],
 "struct_named_value.html#a6fe60f7b7f43af03ac3a00e0a8d1b1e8":[1,3,2,1],
