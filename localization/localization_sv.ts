@@ -1536,7 +1536,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <source>%1 is not a regular file, so the recipients were not changed. Move it out of the way, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är inte en vanlig fil så mottagarna ändrades inte. Flytta undan den och spara sedan mottagarna igen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
@@ -1648,7 +1648,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1275"/>
         <source>Re-encrypting %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Omkrypterar %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1354"/>
@@ -1676,7 +1676,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1392"/>
         <source>The pull stopped before the store was up to date with its remote, and may have left files of the pulled commits in it. Check the store with git before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation>pull avbröts innan lagringsplatsen var synkroniserad med fjärrarkivet, vilket kan ha lämnat kvar filer från de hämtade incheckningarna. Kontrollera lagringsplatsen med git innan du krypterar det på nytt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1398"/>
@@ -1757,25 +1757,25 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="902"/>
         <source>Leftovers from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Rester från en tidigare omkryptering</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="903"/>
         <source>%n leftover(s) of an earlier re-encryption need a look before the run can start:</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n rester från en tidigare omkryptering måste ses över innan körningen kan påbörjas:</numerusform>
+            <numerusform>%n rester från flera tidigare omkryptering måste ses över innan körningen kan påbörjas:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="989"/>
         <source>%1 is no longer a regular file, or is too large, and was not re-encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är inte längre en vanlig fil, eller så är den för stor, och krypterades därför inte på nytt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1561"/>
         <source>%1 is no longer a regular file, or lies behind a link, and was not re-encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är inte längre en vanlig fil, eller ligger bakom en länk, och krypterades därför inte om.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1697"/>
@@ -1822,12 +1822,12 @@ Omkrypteringen slutfördes inte, så vissa eller alla poster är fortfarande kry
     <message>
         <location filename="../src/imitatepass.cpp" line="1872"/>
         <source>Move not started</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytt har inte startas</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1873"/>
         <source>%1 is still being moved or re-encrypted. Move it again once that has finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 flyttas eller krypteras om. Flytta den igen när detta är klart.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1997"/>
@@ -1993,9 +1993,9 @@ Omkrypteringen slutfördes inte, så vissa eller alla poster är fortfarande kry
     <message numerus="yes">
         <location filename="../src/importkeydialog.cpp" line="161"/>
         <source>gpg did not finish the import within %n second(s) and was stopped. Part of the key may be in your keyring already: check it with gpg --list-keys before you use it.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>gpg slutförde inte importen inom %n sekund och avbröts. En del av nyckeln kan redan finnas i din nyckelring: kontrollera detta med gpg --list-keys innan du använder det.</numerusform>
+            <numerusform>gpg slutförde inte importen inom %n sekunder och avbröts. En del av nyckeln kan redan finnas i din nyckelring: kontrollera detta med gpg --list-keys innan du använder dom.</numerusform>
         </translation>
     </message>
     <message>
@@ -2692,12 +2692,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="908"/>
         <source>Settings not opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningarna har inte öppnats</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="909"/>
         <source>A gpg, Git or pass command is still running or waiting. Open the settings again once it has finished. If it does not finish, answer or cancel the PIN or password prompt it waits for, or restart QtPass. A restart forgets which folders still need re-encrypting: re-encrypt any folder whose re-encryption did not finish, or that you moved entries into, before anything is pushed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett gpg, Git eller pass-kommando körs fortfarande eller väntar. Öppna inställningarna igen när det har avslutats. Om det inte avslutas, besvara eller avbryt den förfrågan om PIN-kod eller lösenord som kommandot väntar på, eller starta om QtPass. Vid en omstart glöms informationen om vilka mappar som fortfarande behöver krypteras om bort; se därför till att kryptera om alla mappar vars omkryptering inte slutfördes – eller mappar som du har flyttat poster till – innan du utför en push.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="985"/>
@@ -3278,9 +3278,9 @@ Fortsätta?</translation>
     <message numerus="yes">
         <location filename="../src/pass.cpp" line="1334"/>
         <source>Git pull did not finish within %n second(s); editing the entry as it is here.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Git pull slutfördes inte inom %n sekund; posten redigeras i sitt befintliga skick.</numerusform>
+            <numerusform>Git pull slutfördes inte inom %n sekunder; posterna redigeras i deras befintliga skick.</numerusform>
         </translation>
     </message>
     <message>
@@ -3451,7 +3451,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="411"/>
         <source>The folder&apos;s path is shortened above; hold the pointer over it to read it whole before you save.</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalogens sökväg är förkortad ovan; håll pekaren över den för att läsa hela sökvägen innan du sparar.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="433"/>
@@ -3524,7 +3524,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="186"/>
         <source>The secret key of the signing key %1 is not available, so no recipient list was written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den hemliga nyckeln för signeringsnyckeln %1 är inte tillgänglig, så ingen mottagarlista skrevs.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="281"/>
@@ -3547,12 +3547,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="407"/>
         <source>%1 is a Git repository inside the store. Move it out of the store, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är ett Git arkiv inuti lagringen. Flytta ut det från lagringen och försök sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="410"/>
         <source>%1 is not a regular file, and Git could wait on it for good. Remove it or make it a regular file, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är inte en vanlig fil, och Git kan komma att vänta på den på obestämd tid. Ta bort den eller gör om den till en vanlig fil, och försök sedan igen.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3572,7 +3572,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="389"/>
         <source>git %1 did not finish within %2 minutes in %3, and was stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>git %1 slutfördes inte inom %2 minuter i %3 och stoppades.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="395"/>
@@ -3839,12 +3839,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="165"/>
         <source>Recipient list is a link</source>
-        <translation type="unfinished"></translation>
+        <translation>Mottagarlistan är en länk</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="166"/>
         <source>%1 is a link. pass would encrypt to the recipients in the file it points to, while QtPass shows the list of a folder above it, so nothing was encrypted. Replace the link with a copy of the list, or remove it.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är en länk. pass skulle kryptera till mottagarna i filen den pekar på, medan QtPass visar listan över en katalog ovanför, så ingenting krypterades. Ersätt länken med en kopia av listan, eller ta bort den.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="232"/>
@@ -3855,9 +3855,9 @@ Fortsätta?</translation>
     <message numerus="yes">
         <location filename="../src/realpass.cpp" line="464"/>
         <source>and %n more</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>och %n mer</numerusform>
+            <numerusform>och %n mera</numerusform>
         </translation>
     </message>
     <message>
@@ -3867,31 +3867,39 @@ Fortsätta?</translation>
 %1
 
 Commit, remove or ignore them with Git first, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalogen innehåller ändringar som Git inte har registrerat; och pass kommer att checka in och skicka upp dessa tillsammans med den här ändringen:
+
+%1
+
+Checka in, ta bort eller ignorera dem med Git först, och försök sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="529"/>
         <source>The system writes %1 by itself, in folders a file manager opens (Finder on macOS, Explorer on Windows, Dolphin on KDE). Git leaves such files alone in every folder once each .gitignore in the store below holds its lines, committed:
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemet skapar %1 på egen hand, i kataloger som öppnas av en filhanterare (Finder på macOS, Utforskaren på Windows, Dolphin på KDE). Git låter sådana filer vara ifred i varje mapp, förutsatt att respektive .gitignore-fil i den underliggande katalogstrukturen innehåller de aktuella raderna och har checkats in:
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="540"/>
         <source>Changes Git has not recorded</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändringar som Git inte har registrerat</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="557"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Sparad, inte incheckat</translation>
+        <translation>Sparad, inte incheckat</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="558"/>
         <source>The change is in the store, but Git did not record it, so it is not pushed, and a pull may overwrite it (&quot;!!&quot; marks a file Git ignores):
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändringen finns i lagringsområdet, men Git har inte registrerat den; den har därför inte skickats vidare (push), och en hämtning (pull) kan komma att skriva över den (”!!” markerar en fil som Git ignorerar):
+
+%1</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="638"/>
@@ -3900,12 +3908,16 @@ Commit, remove or ignore them with Git first, then try again.</source>
 %1
 
 Move them out of the folder, or have Git ignore them there too, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Git ignorerar dessa filer endast där de befinner sig nu, medan pass skulle inkludera dem i en incheckning och pusha dem till den plats där de hamnar:
+
+%1
+
+Flytta ut dem från katalogen, eller se till att Git ignorerar dem även där, och försök sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="643"/>
         <source>Ignored files would be committed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorerade filer skulle inkluderas i en commit</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="813"/>
