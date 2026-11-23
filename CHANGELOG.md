@@ -763,6 +763,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Leaving the field name editor with Enter, Esc or Tab puts the keyboard
+  focus on that field's value. It used to land on the password with all of
+  it selected, so the next keys replaced the password unseen (scan
+  ANT-2026-KMM0IZJ2).
 - After a failed save in the edit dialog, Enter tries the save again. The
   keyboard focus was left on Cancel, so the next Enter closed the dialog
   without a question and dropped the typed password (scan

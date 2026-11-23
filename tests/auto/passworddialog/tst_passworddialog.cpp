@@ -152,6 +152,8 @@ private Q_SLOTS:
   void copiesOutOfTheEditorAreReported();
   void aFieldRenamedAwayFromOtpStillReportsCopies();
   void aCopyOutOfTheNameEditorIsMarkedAndReported();
+  void leavingTheNameEditorKeepsThePassword_data();
+  void leavingTheNameEditorKeepsThePassword();
   void fieldLabelRefusesADuplicateName();
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
   void pastedLineBreaksStayOutOfTheEntry();
@@ -301,6 +303,54 @@ void tst_passworddialog::aFieldRenamedAwayFromOtpStillReportsCopies() {
   QTest::keySequence(line, QKeySequence::Copy);
   QCOMPARE(copied.count(), 1);
   QCOMPARE(copied.first().at(0).toString(), QStringLiteral("JBSWY3DPEHPK3PXP"));
+}
+
+void tst_passworddialog::leavingTheNameEditorKeepsThePassword_data() {
+  QTest::addColumn<int>("key");
+  // Tab selects what it lands on, as everywhere; Enter and Esc only close
+  // the editor, so the value is not selected for the next key to replace.
+  QTest::addColumn<bool>("selected");
+  QTest::newRow("Enter") << int(Qt::Key_Return) << false;
+  QTest::newRow("Esc") << int(Qt::Key_Escape) << false;
+  QTest::newRow("Tab") << int(Qt::Key_Tab) << true;
+}
+
+/**
+ * @brief Leaving the field name editor with Enter, Esc or Tab puts the focus
+ *        on that field's value, not on the password with all of it selected,
+ *        where the next keys replaced it (scan ANT-2026-KMM0IZJ2).
+ */
+void tst_passworddialog::leavingTheNameEditorKeepsThePassword() {
+  QFETCH(int, key);
+  QFETCH(bool, selected);
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  d.activateWindow();
+  QTRY_VERIFY(d.isActiveWindow());
+  pass.deliverShow(QStringLiteral("correct-horse\npin: 1234\nlogin: alice\n"));
+  FieldLabel *label = fieldLabel(d, QStringLiteral("pin"));
+  QVERIFY(label != nullptr);
+  // The form shows the new rows on its next pass, as the user sees them.
+  QTRY_VERIFY(label->buddy() != nullptr && label->buddy()->isVisible());
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  QTRY_VERIFY(editor->hasFocus());
+  editor->setText(QStringLiteral("code"));
+  QTest::keyClick(editor, static_cast<Qt::Key>(key));
+
+  QWidget *focus = QApplication::focusWidget();
+  QVERIFY(focus != nullptr);
+  QCOMPARE(focus, label->buddy());
+  auto *value = qobject_cast<QLineEdit *>(focus);
+  QVERIFY(value != nullptr);
+  QCOMPARE(value->hasSelectedText(), selected);
+  QTest::keyClicks(focus, QStringLiteral("9"));
+  QCOMPARE(d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"))->text(),
+           QStringLiteral("correct-horse"));
 }
 
 /**
