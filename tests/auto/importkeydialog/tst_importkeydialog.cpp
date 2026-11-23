@@ -68,6 +68,7 @@ private Q_SLOTS:
   void importFallsBackToStderrForKeyId();
   void importRefusesABlockThatIsNotOnePublicKey_data();
   void importRefusesABlockThatIsNotOnePublicKey();
+  void theDryRunIgnoresAListFilterInGpgConf();
   void fileButtonCancelLeavesInputUntouched();
   void fileButtonLoadsArmoredFileIntoInput();
   void fileButtonRejectsNonArmoredFile();
@@ -872,6 +873,51 @@ void tst_importkeydialog::importRefusesABlockThatIsNotOnePublicKey() {
   QVERIFY2(!QFile::exists(gpg + QStringLiteral(".imported")),
            "gpg must not import a refused block");
   QVERIFY2(dialog.importedKeyId().isEmpty(), "a refused block stores no id");
+  QCOMPARE(accepted.count(), 0);
+}
+
+/**
+ * @brief The dry run reads no gpg.conf: a `list-filter select=...` there
+ *        hides a key from the show-only listing but not from the import, so
+ *        a two-key block passed for one key. The stand-in gpg lists only the
+ *        first key unless --no-options is given, as gpg 2.5 does with such a
+ *        filter.
+ */
+void tst_importkeydialog::theDryRunIgnoresAListFilterInGpgConf() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  const QString gpg = writeGpg(
+      QStringLiteral("gpg-list-filter"),
+      QStringLiteral(
+          "case \"$*\" in *show-only*) cat >/dev/null\n"
+          "  echo "
+          "'pub:-:255:22:D28866D166E386B7:1795454642:::-:::scSC::::::::0:'\n"
+          "  case \"$*\" in *--no-options*)\n"
+          "    echo "
+          "'pub:-:255:22:217EDF3BEBABB9D5:1795454642:::-:::scSC::::::::0:'"
+          " ;;\n  esac\n  exit 0 ;;\nesac\n"
+          "touch \"$0.imported\"\n"
+          "printf '[GNUPG:] IMPORT_OK 1 "
+          "D96CB9F0B48FBE9CBD7C8DD2D28866D166E386B7\\n'\n"));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  QVERIFY(edit != nullptr);
+  edit->setPlainText(QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----"));
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+
+  const ModalRun run = driveModals([&]() {
+    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_importButton_clicked",
+                                      Qt::DirectConnection));
+  });
+
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.contains(QStringLiteral("2 keys")),
+           qPrintable(run.messageText));
+  QVERIFY2(!QFile::exists(gpg + QStringLiteral(".imported")),
+           "gpg must not import a block the filter thinned out");
   QCOMPARE(accepted.count(), 0);
 }
 

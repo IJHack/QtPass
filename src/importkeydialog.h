@@ -128,7 +128,8 @@ private:
   int m_timeoutMs;
 
   /**
-   * @brief Lists the keys in @p input first, with nothing written, and
+   * @brief Lists the keys in @p input first, with nothing written and
+   * without gpg.conf (whose list-filter would hide keys), and
    * refuses a block that holds a private key or more than one key. Then
    * feeds it to `gpg --status-fd 1 --import --batch --yes` via
    * Executor::executeBlocking() and records the imported key id.

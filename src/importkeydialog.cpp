@@ -150,10 +150,13 @@ bool ImportKeyDialog::importFromString(const QString &input) {
 
   // gpg imports every key in the block, and all the user learns is the one
   // fingerprint named below. List the block first, writing nothing, so a
-  // second key or a private key cannot come along unmentioned.
+  // second key or a private key cannot come along unmentioned. Without
+  // gpg.conf: a list-filter there hides keys from this listing, not from
+  // the import.
   QString listing;
   QString listErr;
-  if (!runGpg({QStringLiteral("--batch"), QStringLiteral("--with-colons"),
+  if (!runGpg({QStringLiteral("--no-options"), QStringLiteral("--batch"),
+               QStringLiteral("--with-colons"),
                QStringLiteral("--import-options"), QStringLiteral("show-only"),
                QStringLiteral("--import")},
               input, &listing, &listErr, timer)) {
