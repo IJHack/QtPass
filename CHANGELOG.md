@@ -763,6 +763,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- The users dialog lists a key under its first user ID with the best
+  validity, not always under its primary one. A key you certified could
+  otherwise be shown as valid under a name its owner added later and nobody
+  certified (scan ANT-2026-I8UP2BUX).
 - Leaving the field name editor with Enter, Esc or Tab puts the keyboard
   focus on that field's value. It used to land on the password with all of
   it selected, so the next keys replaced the password unseen (scan
