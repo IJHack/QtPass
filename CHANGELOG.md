@@ -167,6 +167,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- Import key takes one public key at a time. gpg imports every key in the
+  pasted block, private keys too, while QtPass named only the first one, so
+  a key appended to a colleague's export entered the keyring unmentioned. A
+  block that holds more than one key or a private key is now refused before
+  anything is imported; import such a block key by key, or with
+  `gpg --import`. The dialog no longer reads `gpg.conf` either, so its
+  options cannot make the check and the import see different keys (scan
+  finding ANT-2026-5UOLGWA7)
 - With the `pass` backend, QtPass no longer runs `pass` where the walk to a
   folder's recipient list meets a `.gpg-id` that is a link, also without a
   signing key. `pass` followed the link and encrypted to the recipients it

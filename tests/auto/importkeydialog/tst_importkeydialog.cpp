@@ -23,6 +23,17 @@
 #include "../../../src/importkeydialog.h"
 #include "../testsettings.h"
 
+namespace {
+/// Fake-gpg prelude: the dry run (`--import-options show-only`) lists one
+/// public key, so the import that follows runs the rest of the script.
+const QString kListsOneKey = QStringLiteral(
+    "case \"$*\" in *show-only*) cat >/dev/null\n"
+    "  echo "
+    "'pub:-:255:22:D28866D166E386B7:1795454642:::-:::scSC:::::ed25519:::0:'\n"
+    "  echo 'fpr:::::::::D96CB9F0B48FBE9CBD7C8DD2D28866D166E386B7:'\n"
+    "  exit 0 ;;\nesac\n");
+} // namespace
+
 class tst_importkeydialog : public QObject {
   Q_OBJECT
 
@@ -43,6 +54,8 @@ private Q_SLOTS:
   void parseGpgImportOutputLowercaseOnlyFingerprint();
   void parseGpgImportOutputWhitespaceOnly();
   void parseGpgImportOutputImportResWithoutImportOk();
+  void keysInBlock_data();
+  void keysInBlock();
   void importButtonEnabledAfterTextInput();
   void importButtonDisabledForWhitespaceOnlyInput();
   void pasteButtonSetsTextFromClipboard();
@@ -53,6 +66,9 @@ private Q_SLOTS:
   void importFailureShowsStderrAndStaysOpen();
   void importUnparseableOutputShowsParseErrorAndStaysOpen();
   void importFallsBackToStderrForKeyId();
+  void importRefusesABlockThatIsNotOnePublicKey_data();
+  void importRefusesABlockThatIsNotOnePublicKey();
+  void theDryRunIgnoresAListFilterInGpgConf();
   void fileButtonCancelLeavesInputUntouched();
   void fileButtonLoadsArmoredFileIntoInput();
   void fileButtonRejectsNonArmoredFile();
@@ -600,11 +616,13 @@ void tst_importkeydialog::importSuccessAcceptsWithKeyIdAndFeedsInputToGpg() {
       QStringLiteral("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
   const QString gpg = writeGpg(
       QStringLiteral("gpg-ok"),
-      QStringLiteral("cat > \"$0.stdin\"\nprintf '%s\\n' \"$*\" > \"$0.args\"\n"
-                     "printf '[GNUPG:] IMPORTED DEADBEEFCAFE0123 "
-                     "user@example.com\\n'\n"
-                     "printf '[GNUPG:] IMPORT_OK 1 %1\\n'\nexit 0\n")
-          .arg(fingerprint));
+      kListsOneKey +
+          QStringLiteral(
+              "cat > \"$0.stdin\"\nprintf '%s\\n' \"$*\" > \"$0.args\"\n"
+              "printf '[GNUPG:] IMPORTED DEADBEEFCAFE0123 "
+              "user@example.com\\n'\n"
+              "printf '[GNUPG:] IMPORT_OK 1 %1\\n'\nexit 0\n")
+              .arg(fingerprint));
   QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
   ImportKeyDialog dialog(gpg);
   auto *edit =
@@ -642,6 +660,9 @@ void tst_importkeydialog::importSuccessAcceptsWithKeyIdAndFeedsInputToGpg() {
   const QString args = QString::fromUtf8(argsFile.readAll());
   QVERIFY2(args.contains(QStringLiteral("--import")), qPrintable(args));
   QVERIFY2(args.contains(QStringLiteral("--status-fd 1")), qPrintable(args));
+  // As the dry run: gpg.conf options such as allow-non-selfsigned-uid would
+  // let the import take a key the listing skipped.
+  QVERIFY2(args.contains(QStringLiteral("--no-options")), qPrintable(args));
   QVERIFY2(args.contains(QStringLiteral("--batch")), qPrintable(args));
 }
 
@@ -696,9 +717,11 @@ void tst_importkeydialog::importUnparseableOutputShowsParseErrorAndStaysOpen() {
 #endif
   const QString gpg = writeGpg(
       QStringLiteral("gpg-noid"),
-      QStringLiteral("echo 'gpg: Total number processed: 0'\n"
-                     "echo '[GNUPG:] IMPORT_RES 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
-                     "0'\nexit 0\n"));
+      kListsOneKey +
+          QStringLiteral(
+              "echo 'gpg: Total number processed: 0'\n"
+              "echo '[GNUPG:] IMPORT_RES 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+              "0'\nexit 0\n"));
   QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
   ImportKeyDialog dialog(gpg);
   auto *edit =
@@ -730,8 +753,9 @@ void tst_importkeydialog::importFallsBackToStderrForKeyId() {
 #endif
   const QString gpg = writeGpg(
       QStringLiteral("gpg-stderr"),
-      QStringLiteral("echo 'gpg: key DEADBEEFCAFE0123: public key \"u\" "
-                     "imported' >&2\nexit 0\n"));
+      kListsOneKey +
+          QStringLiteral("echo 'gpg: key DEADBEEFCAFE0123: public key \"u\" "
+                         "imported' >&2\nexit 0\n"));
   QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
   ImportKeyDialog dialog(gpg);
   auto *edit =
@@ -750,6 +774,154 @@ void tst_importkeydialog::importFallsBackToStderrForKeyId() {
            qPrintable(run.messageText));
   QCOMPARE(dialog.importedKeyId(), QStringLiteral("DEADBEEFCAFE0123"));
   QCOMPARE(accepted.count(), 1);
+}
+
+/**
+ * @brief Only primary-key records count: subkeys, user IDs and fingerprints
+ *        belong to the key before them, and a CRLF listing (gpg on Windows)
+ *        counts the same.
+ */
+void tst_importkeydialog::keysInBlock_data() {
+  QTest::addColumn<QString>("listing");
+  QTest::addColumn<int>("publicKeys");
+  QTest::addColumn<int>("secretKeys");
+
+  const QString pub = QStringLiteral(
+      "pub:-:255:22:D28866D166E386B7:1795454642:::-:::scSC:::::ed25519:::0:\n"
+      "fpr:::::::::D96CB9F0B48FBE9CBD7C8DD2D28866D166E386B7:\n"
+      "uid:-::::1795454642::CE9C::Bob <bob@example.org>::::::::::0:\n"
+      "sub:-:255:18:1111111111111111:1795454642::::::e:::::cv25519::\n"
+      "fpr:::::::::AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:\n");
+  const QString sec = QStringLiteral(
+      "sec:-:255:22:D28866D166E386B7:1795454642:::-:::scSC:::#::ed25519:::0:\n"
+      "fpr:::::::::D96CB9F0B48FBE9CBD7C8DD2D28866D166E386B7:\n"
+      "ssb:-:255:18:1111111111111111:1795454642::::::e:::::cv25519::\n");
+  QTest::newRow("one public key") << pub << 1 << 0;
+  QTest::newRow("two public keys") << pub + pub << 2 << 0;
+  QTest::newRow("a private key") << sec << 0 << 1;
+  QTest::newRow("public and private") << pub + sec << 1 << 1;
+  QString crlf = pub;
+  crlf.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
+  QTest::newRow("CRLF") << crlf + crlf << 2 << 0;
+  QTest::newRow("nothing") << QString() << 0 << 0;
+}
+
+void tst_importkeydialog::keysInBlock() {
+  QFETCH(QString, listing);
+  QFETCH(int, publicKeys);
+  QFETCH(int, secretKeys);
+  const ImportKeyDialog::BlockKeys keys = ImportKeyDialog::keysInBlock(listing);
+  QCOMPARE(keys.publicKeys, publicKeys);
+  QCOMPARE(keys.secretKeys, secretKeys);
+}
+
+/**
+ * @brief A block that is not exactly one public key is refused before gpg
+ *        imports anything: gpg would take every key in it, a private one
+ *        too, and the success box names only one (scan finding
+ *        ANT-2026-5UOLGWA7).
+ */
+void tst_importkeydialog::importRefusesABlockThatIsNotOnePublicKey_data() {
+  QTest::addColumn<QString>("listing");
+  QTest::addColumn<QString>("says");
+
+  const QString bob = QStringLiteral(
+      "pub:-:255:22:D28866D166E386B7:1795454642:::-:::scSC:::::ed25519:::0:\n"
+      "fpr:::::::::D96CB9F0B48FBE9CBD7C8DD2D28866D166E386B7:\n");
+  const QString mallory = QStringLiteral(
+      "pub:-:255:22:217EDF3BEBABB9D5:1795454642:::-:::scSC:::::ed25519:::0:\n"
+      "fpr:::::::::8256A4DC0C565438E30EB7E2217EDF3BEBABB9D5:\n");
+  const QString secret = QStringLiteral(
+      "sec:-:255:22:217EDF3BEBABB9D5:1795454642:::-:::scSC:::#::ed25519:::0:\n"
+      "fpr:::::::::8256A4DC0C565438E30EB7E2217EDF3BEBABB9D5:\n");
+  QTest::newRow("two keys") << bob + mallory << QStringLiteral("2 keys");
+  QTest::newRow("a private key") << secret << QStringLiteral("private key");
+  QTest::newRow("a key and a private key")
+      << bob + secret << QStringLiteral("private key");
+  QTest::newRow("no key") << QString() << QStringLiteral("no key");
+}
+
+void tst_importkeydialog::importRefusesABlockThatIsNotOnePublicKey() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  QFETCH(QString, listing);
+  QFETCH(QString, says);
+  const QString name = QStringLiteral("gpg-block-%1")
+                           .arg(QString::fromLatin1(QTest::currentDataTag())
+                                    .replace(QLatin1Char(' '), u'-'));
+  const QString gpg = writeGpg(
+      name, QStringLiteral("case \"$*\" in *show-only*) cat >/dev/null\n"
+                           "  printf '%1'\n  exit 0 ;;\nesac\n"
+                           "touch \"$0.imported\"\n"
+                           "printf '[GNUPG:] IMPORT_OK 1 "
+                           "D96CB9F0B48FBE9CBD7C8DD2D28866D166E386B7\\n'\n")
+                .arg(QString(listing).replace(QStringLiteral("\n"),
+                                              QStringLiteral("\\n"))));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  QVERIFY(edit != nullptr);
+  edit->setPlainText(QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----"));
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+
+  const ModalRun run = driveModals([&]() {
+    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_importButton_clicked",
+                                      Qt::DirectConnection));
+  });
+
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.contains(says), qPrintable(run.messageText));
+  QVERIFY2(!QFile::exists(gpg + QStringLiteral(".imported")),
+           "gpg must not import a refused block");
+  QVERIFY2(dialog.importedKeyId().isEmpty(), "a refused block stores no id");
+  QCOMPARE(accepted.count(), 0);
+}
+
+/**
+ * @brief The dry run reads no gpg.conf: a `list-filter select=...` there
+ *        hides a key from the show-only listing but not from the import, so
+ *        a two-key block passed for one key. The stand-in gpg lists only the
+ *        first key unless --no-options is given, as gpg 2.5 does with such a
+ *        filter.
+ */
+void tst_importkeydialog::theDryRunIgnoresAListFilterInGpgConf() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  const QString gpg = writeGpg(
+      QStringLiteral("gpg-list-filter"),
+      QStringLiteral(
+          "case \"$*\" in *show-only*) cat >/dev/null\n"
+          "  echo "
+          "'pub:-:255:22:D28866D166E386B7:1795454642:::-:::scSC::::::::0:'\n"
+          "  case \"$*\" in *--no-options*)\n"
+          "    echo "
+          "'pub:-:255:22:217EDF3BEBABB9D5:1795454642:::-:::scSC::::::::0:'"
+          " ;;\n  esac\n  exit 0 ;;\nesac\n"
+          "touch \"$0.imported\"\n"
+          "printf '[GNUPG:] IMPORT_OK 1 "
+          "D96CB9F0B48FBE9CBD7C8DD2D28866D166E386B7\\n'\n"));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  QVERIFY(edit != nullptr);
+  edit->setPlainText(QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----"));
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+
+  const ModalRun run = driveModals([&]() {
+    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_importButton_clicked",
+                                      Qt::DirectConnection));
+  });
+
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.contains(QStringLiteral("2 keys")),
+           qPrintable(run.messageText));
+  QVERIFY2(!QFile::exists(gpg + QStringLiteral(".imported")),
+           "gpg must not import a block the filter thinned out");
+  QCOMPARE(accepted.count(), 0);
 }
 
 /**
