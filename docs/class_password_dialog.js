@@ -48,6 +48,7 @@ var class_password_dialog =
     [ "m_currentTemplateName", "class_password_dialog.html#af86a69cb846a1c3ae7721eb27c723a20", null ],
     [ "m_fields", "class_password_dialog.html#a1ec8b1c5dbc22b837c0ef488564824f9", null ],
     [ "m_file", "class_password_dialog.html#a760b0e586c9e090365f50b20bc327877", null ],
+    [ "m_focusBeforeSave", "class_password_dialog.html#a9167866ded6e9a150c79ac4bd607f109", null ],
     [ "m_insertsAhead", "class_password_dialog.html#a1b29fbf519a6cdd8bb2f3cf064e3a1dc", null ],
     [ "m_isNew", "class_password_dialog.html#a624596401aa7d44b384dc715b126fb90", null ],
     [ "m_newEntryFolder", "class_password_dialog.html#a2de8de1813e3f297d8f739b2b2793122", null ],
