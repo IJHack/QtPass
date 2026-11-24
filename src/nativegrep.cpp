@@ -7,6 +7,7 @@
  */
 #include "nativegrep.h"
 #include "executor.h"
+#include "filecontent.h"
 #include "pass.h"
 #include "util.h"
 #include <QDir>
@@ -16,6 +17,7 @@
 #include <QRegularExpression>
 #include <QStringTokenizer>
 #include <QThread>
+#include <algorithm>
 #include <utility>
 
 NativeGrep::NativeGrep(QObject *parent) : QObject(parent) {}
@@ -61,7 +63,10 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
   // Line by line over the text, never a list of every line (a compressed
   // entry can expand into tens of millions), and a bounded number taken.
   QStringList matches;
+  bool first = true;
   for (QStringView line : QStringView(plaintext).tokenize(u'\n')) {
+    // The password is the first line, empty or not.
+    const bool password = std::exchange(first, false);
     if (line.endsWith(u'\r'))
       line.chop(1);
     const QStringView t = line.trimmed();
@@ -74,8 +79,19 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
       matches << QString(); // isMoreMarker(): not a match, not counted
       break;
     }
+    // A shared secret is never shown, as in the display panel: only that
+    // there was a match (isOtpMarker()).
+    const QString whole = t.toString();
+    if (password ? FileContent::isOtpPasswordLine(whole)
+                 : FileContent::isOtpLine(whole)) {
+      matches << QStringLiteral("\n");
+      continue;
+    }
+    // Marked, so the window shows it only where the panel would
+    // (isPasswordMatch()).
+    const QString mark = password ? QStringLiteral("\n") : QString();
     if (t.size() <= kMaxPreviewLength) {
-      matches << t.toString();
+      matches << mark + whole;
       continue;
     }
     // A window of the line that holds the match, a little context before
@@ -91,12 +107,29 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
       --start;
     if (end < t.size() && t[end - 1].isHighSurrogate())
       ++end;
-    QString preview = t.sliced(start, end - start).toString();
-    if (start > 0)
-      preview.prepend(QChar(0x2026));
+    // A field's name decides whether its value is hidden, so a window that
+    // cuts into a `name: value` line keeps the whole name in front. A name
+    // too long for that is shown cut, and then none of the value is.
+    const qsizetype colon = password ? -1 : t.indexOf(u':');
+    QString preview;
+    qsizetype from = start;
+    if (colon > 0 && start > 0) {
+      if (colon >= kMaxPreviewLength / 2) {
+        matches << t.first(kMaxPreviewLength / 2).toString() + QChar(0x2026) +
+                       QStringLiteral(": ") + QChar(0x2026);
+        continue;
+      }
+      from = std::max(start, colon + 1);
+      preview = t.first(colon + 1).toString() + u' ';
+      if (from > colon + 1)
+        preview += QChar(0x2026);
+    } else if (start > 0) {
+      preview = QChar(0x2026);
+    }
+    preview += t.sliced(from, end - from).toString();
     if (end < t.size())
       preview.append(QChar(0x2026));
-    matches << preview;
+    matches << mark + preview;
   }
   return matches;
 }

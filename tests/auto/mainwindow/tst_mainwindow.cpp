@@ -481,6 +481,7 @@ private Q_SLOTS:
   void deselectLeavesGrepModeWhenResultsAreShown();
   void entryActionsWaitWhileContentResultsHideTheTree();
   void grepResultsOfTheOtherBackendAreDropped();
+  void grepResultsHideWhatThePanelHides();
   void settingsCancelARunningContentSearch();
   void emptyingTheSearchLeavesNothingCurrent();
   void searchForAFolderWithoutFilesSelectsNothing();
@@ -4076,6 +4077,63 @@ void tst_mainwindow::settingsCancelARunningContentSearch() {
   QVERIFY(!results->isVisible());
   QCOMPARE(results->topLevelItemCount(), 0);
   grep->setChecked(false);
+}
+
+/**
+ * @brief Scan ANT-2026-OI3FLBKH: the content search results show a match
+ *        by the display panel's rules. With "Hide password" the password,
+ *        a secret field and a field the template marks keep their value out
+ *        of the list; a one-time password secret is never shown; other
+ *        lines are. With it off, only the secret stays out.
+ */
+void tst_mainwindow::grepResultsHideWhatThePanelHides() {
+  const QStringList matches = {
+      QStringLiteral("\nhunter2"),        QStringLiteral("\n"),
+      QStringLiteral("pin: 1234"),        QStringLiteral("door: 42"),
+      QStringLiteral("url: example.com"), QStringLiteral("plain note")};
+  const auto shown = [this, &matches](bool hidePassword) {
+    rebuildWindow([hidePassword](AppSettings &s) {
+      s.useGrepSearch = true;
+      s.useAutoclearPanel = false;
+      s.hidePassword = hidePassword;
+      s.hideSecretFields = true;
+      s.passTemplate = QStringLiteral("login\n# secret: door");
+    });
+    auto *grep =
+        m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+    auto *results =
+        m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+    QStringList texts;
+    if (grep == nullptr || results == nullptr) {
+      return texts;
+    }
+    grep->setChecked(true);
+    m_window->onGrepFinished({{QStringLiteral("work/acme/vpn"), matches}});
+    if (results->topLevelItemCount() != 1) {
+      return texts;
+    }
+    for (int i = 0; i < results->topLevelItem(0)->childCount(); ++i) {
+      texts << results->topLevelItem(0)->child(i)->text(0);
+    }
+    grep->setChecked(false);
+    return texts;
+  };
+
+  QCOMPARE(
+      shown(true),
+      QStringList({QStringLiteral("Password: ***hidden***"),
+                   QStringLiteral("One-time password secret: ***hidden***"),
+                   QStringLiteral("pin: ***hidden***"),
+                   QStringLiteral("door: ***hidden***"),
+                   QStringLiteral("url: example.com"),
+                   QStringLiteral("plain note")}));
+  QCOMPARE(
+      shown(false),
+      QStringList({QStringLiteral("hunter2"),
+                   QStringLiteral("One-time password secret: ***hidden***"),
+                   QStringLiteral("pin: 1234"), QStringLiteral("door: 42"),
+                   QStringLiteral("url: example.com"),
+                   QStringLiteral("plain note")}));
 }
 
 /**

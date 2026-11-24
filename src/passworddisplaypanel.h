@@ -109,6 +109,18 @@ public:
   void setMarkedSecrets(const QStringList &names);
 
   /**
+   * @brief Whether a field is shown behind the eye button: the password,
+   * a field a template marks, every field with "Hide every field", or one
+   * whose name holds a secret word with "Also hide other secrets". Only
+   * with "Hide password" on.
+   * @param field The field's name, trimmed.
+   * @param s The display settings.
+   * @return true to hide the value.
+   */
+  [[nodiscard]] auto hides(const QString &field, const AppSettings &s) const
+      -> bool;
+
+  /**
    * @brief Whether a field is a secret "Hide password" hides: one a
    * template marks (setMarkedSecrets()), or, with "Also hide other
    * secrets", one whose name holds a secret word. Not the password itself,
@@ -223,17 +235,6 @@ private:
    * @param frame The frame to style.
    */
   void applyFrameStyle(QFrame *frame) const;
-  /**
-   * @brief Whether a field is shown behind the eye button: the password,
-   * a field a template marks, every field with "Hide every field", or one
-   * whose name holds a secret word with "Also hide other secrets". Only
-   * with "Hide password" on.
-   * @param field The field's name, trimmed.
-   * @param s The display settings.
-   * @return true to hide the value.
-   */
-  [[nodiscard]] auto hides(const QString &field, const AppSettings &s) const
-      -> bool;
 
   /**
    * @brief Field names the current template marks as secret, case-folded,

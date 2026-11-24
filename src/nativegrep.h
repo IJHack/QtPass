@@ -82,6 +82,43 @@ public:
   }
 
   /**
+   * @brief Whether a line in a result stands for a match in a line holding
+   * a one-time password secret (FileContent::isOtpLine(), or
+   * FileContent::isOtpPasswordLine() for the first line), whose text is
+   * left out.
+   *
+   * A match never holds a line feed, so this marker (one line feed) cannot
+   * be mistaken for one. The display panel never shows such a line either.
+   * @param line A line of a result.
+   * @return Whether it is the marker.
+   */
+  [[nodiscard]] static auto isOtpMarker(const QString &line) -> bool {
+    return line == QLatin1String("\n");
+  }
+
+  /**
+   * @brief Whether a line in a result is a match in the entry's first line,
+   * the password: passwordMatchText() is its text, shown only where the
+   * panel would show the password.
+   *
+   * Marked by a leading line feed, which no match holds.
+   * @param line A line of a result.
+   * @return Whether it is a match in the password.
+   */
+  [[nodiscard]] static auto isPasswordMatch(const QString &line) -> bool {
+    return line.size() > 1 && line.front() == QLatin1Char('\n');
+  }
+
+  /**
+   * @brief The text of a match isPasswordMatch() accepts.
+   * @param line A line of a result.
+   * @return The matched text, without its mark.
+   */
+  [[nodiscard]] static auto passwordMatchText(const QString &line) -> QString {
+    return line.mid(1);
+  }
+
+  /**
    * @brief Whether a result is the marker for "the search stopped at
    * kMaxMatches, more entries were not searched".
    *
@@ -130,7 +167,11 @@ public:
    *        runs; nullptr to run to completion.
    * @return Matching lines, at most kMaxMatchesPerEntry and then a marker
    *         (isMoreMarker()) when there are more; empty when gpg fails, is
-   *         cancelled or nothing matches.
+   *         cancelled or nothing matches. A match in the first line is
+   *         marked (isPasswordMatch()), one in a line holding a one-time
+   *         password secret is only a marker (isOtpMarker()), and a cut
+   *         `name: value` line keeps its whole name, or shows none of its
+   *         value when the name is too long to keep.
    */
   static auto matchFile(const QProcessEnvironment &env, const QString &gpgExe,
                         const QString &filePath, const QRegularExpression &rx,

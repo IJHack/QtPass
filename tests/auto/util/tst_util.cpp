@@ -343,6 +343,7 @@ private Q_SLOTS:
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepCancelEndsARunningGpg();
   void grepTakesABoundedNumberOfMatches();
+  void grepMarksThePasswordAndOtpSecrets();
   void grepImitatePassEmptyStoreEmitsEmpty();
   void grepImitatePassInvalidRegexEmitsEmpty();
   // SSH_AUTH_SOCK auto-probe (issue #543)
@@ -3730,6 +3731,85 @@ void tst_util::grepCancelEndsARunningGpg() {
 }
 
 /**
+ * @brief Scan ANT-2026-OI3FLBKH: a match says which line it is in, so the
+ *        results list can hide what the display panel hides. A match in
+ *        the first line is marked as the password, one in a line holding a
+ *        one-time password secret carries no text at all, and a long
+ *        `name: value` line cut to a window keeps its name.
+ */
+void tst_util::grepMarksThePasswordAndOtpSecrets() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString gpg = tmp.filePath(QStringLiteral("gpg"));
+  const QString body = tmp.filePath(QStringLiteral("body.txt"));
+  QFile script(gpg);
+  QVERIFY(script.open(QIODevice::WriteOnly));
+  // Next to the script, so no path is quoted into it.
+  script.write("#!/bin/sh\ncat \"$(dirname \"$0\")/body.txt\"\n");
+  script.close();
+  QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner));
+  const auto write = [&body](const QString &text) {
+    QFile f(body);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(text.toUtf8()) > 0;
+  };
+  const QString entry = tmp.filePath(QStringLiteral("e.gpg"));
+  const QRegularExpression rx(QStringLiteral("hit"));
+  const QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+
+  QVERIFY(
+      write(QStringLiteral("pw hit\nnote hit\n"
+                           "otpauth://totp/a?secret=JBSWY3DPEHPK3PXP&hit=1\n"
+                           "totp: JBSWY3DPEHPK3PXP hit\n"
+                           "key: ") +
+            QString(300, u'x') + QStringLiteral("hit\n") +
+            // The window starts inside the name.
+            QStringLiteral("pin: ") + QString(46, u'x') +
+            QStringLiteral("hit") + QString(300, u'y') +
+            // A name too long to keep: none of the value is shown.
+            QStringLiteral("\n") + QString(150, u'n') + QStringLiteral(": ") +
+            QString(100, u'v') + QStringLiteral("hit") + QString(300, u'v') +
+            QStringLiteral("\n")));
+  const QStringList lines = NativeGrep::matchFile(env, gpg, entry, rx);
+  QCOMPARE(lines.size(), 7);
+  QVERIFY(NativeGrep::isPasswordMatch(lines.at(0)));
+  QCOMPARE(NativeGrep::passwordMatchText(lines.at(0)),
+           QStringLiteral("pw hit"));
+  QCOMPARE(lines.at(1), QStringLiteral("note hit"));
+  QVERIFY(!NativeGrep::isPasswordMatch(lines.at(1)));
+  QVERIFY(NativeGrep::isOtpMarker(lines.at(2)));
+  QVERIFY(NativeGrep::isOtpMarker(lines.at(3)));
+  QVERIFY2(lines.at(4).startsWith(QStringLiteral("key: ") + QChar(0x2026)),
+           qPrintable(lines.at(4)));
+  QVERIFY(lines.at(4).contains(QStringLiteral("xhit")));
+  QVERIFY2(lines.at(5).startsWith(QStringLiteral("pin: ")),
+           qPrintable(lines.at(5)));
+  QVERIFY(lines.at(5).contains(QStringLiteral("xhit")));
+  QVERIFY(lines.at(5).size() <= NativeGrep::kMaxPreviewLength + 8);
+  QVERIFY2(
+      lines.at(6).startsWith(QString(NativeGrep::kMaxPreviewLength / 2, u'n') +
+                             QChar(0x2026) + QStringLiteral(": ")),
+      qPrintable(lines.at(6)));
+  QVERIFY2(!lines.at(6).contains(u'v'), qPrintable(lines.at(6)));
+  for (const QString &line : lines) {
+    QVERIFY2(!line.contains(QStringLiteral("JBSWY3DP")), qPrintable(line));
+  }
+
+  // A first line that is itself the secret is no password to show either.
+  QVERIFY(write(QStringLiteral("otpauth://totp/a?secret=JBSWY3DPEHPK3PXP&"
+                               "hit=1\n")));
+  const QStringList otp = NativeGrep::matchFile(env, gpg, entry, rx);
+  QCOMPARE(otp.size(), 1);
+  QVERIFY(NativeGrep::isOtpMarker(otp.first()));
+  QVERIFY(!NativeGrep::isPasswordMatch(otp.first()));
+#endif
+}
+
+/**
  * @brief A compressed entry can expand into millions of matching lines
  * within the plaintext limit, each a result and a row in the results list.
  * One entry gives at most kMaxMatchesPerEntry and a line saying there are
@@ -3765,7 +3845,8 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
   const QStringList one =
       NativeGrep::matchFile(env, gpg, QDir(store).filePath("e0000.gpg"), rx);
   QCOMPARE(one.size(), NativeGrep::kMaxMatchesPerEntry + 1);
-  QCOMPARE(one.first(), QStringLiteral("hit 0"));
+  // The first line is the password: marked (isPasswordMatch()).
+  QCOMPARE(NativeGrep::passwordMatchText(one.first()), QStringLiteral("hit 0"));
   for (const QString &line : one) {
     QVERIFY(line.size() <= NativeGrep::kMaxPreviewLength + 1);
   }
@@ -3794,12 +3875,14 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
            "the walk stops at the budget and says so");
   QVERIFY(results.size() - 1 < entries);
 
-  // One long matching line is shown as a preview, not copied whole.
+  // One long matching line is shown as a preview, not copied whole. Below
+  // a password line, so it is a plain match.
   {
     const QString longGpg = tmp.filePath(QStringLiteral("gpg-long"));
     QFile script(longGpg);
     QVERIFY(script.open(QIODevice::WriteOnly));
-    script.write("#!/bin/sh\nprintf 'hit'; dd if=/dev/zero bs=1000 count=100 "
+    script.write("#!/bin/sh\nprintf 'pw\\n'; printf 'hit'; "
+                 "dd if=/dev/zero bs=1000 count=100 "
                  "2>/dev/null | tr '\\0' x; printf '\\n'\n");
     script.close();
     QVERIFY(QFile::setPermissions(
@@ -3813,7 +3896,8 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
 
     // A match far into the line: the preview is the part around it.
     QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    script.write("#!/bin/sh\ndd if=/dev/zero bs=1000 count=100 2>/dev/null | "
+    script.write("#!/bin/sh\nprintf 'pw\\n'; "
+                 "dd if=/dev/zero bs=1000 count=100 2>/dev/null | "
                  "tr '\\0' x; printf 'hit'; dd if=/dev/zero bs=1000 count=1 "
                  "2>/dev/null | tr '\\0' y; printf '\\n'\n");
     script.close();
@@ -3837,7 +3921,7 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
     {
       QFile f(plain);
       QVERIFY(f.open(QIODevice::WriteOnly));
-      f.write(wide.toUtf8() + '\n');
+      f.write("pw\n" + wide.toUtf8() + '\n');
     }
     QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Truncate));
     // Next to the script, so no path is quoted into it (TMPDIR may hold a
