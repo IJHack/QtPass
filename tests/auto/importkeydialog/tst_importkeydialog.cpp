@@ -74,6 +74,7 @@ private Q_SLOTS:
   void fileButtonRejectsNonArmoredFile();
   void fileButtonWarnsWhenFileCannotBeOpened();
   void fileButtonDoesNotWaitOnAFifo();
+  void onlyArmorShapedTextReachesTheEditor();
 
 private:
   /**
@@ -1076,6 +1077,109 @@ void tst_importkeydialog::fileButtonDoesNotWaitOnAFifo() {
   QVERIFY2(run.messageText.startsWith(QStringLiteral("Could not open file")),
            qPrintable(run.messageText));
 #endif
+}
+
+/**
+ * @brief A key file or clipboard of one long line, or of line breaks only,
+ *        never reaches the input field: wrapping the one took Qt minutes and
+ *        the other gigabytes, before gpg saw anything. Armor at its usual
+ *        64 characters a line still loads. Scan ANT-2026-8KAWLSYI.
+ */
+void tst_importkeydialog::onlyArmorShapedTextReachesTheEditor() {
+  const QString line(ImportKeyDialog::kMaxKeyLine, QLatin1Char('A'));
+  QVERIFY(ImportKeyDialog::fitsTheEditor(QString()));
+  QVERIFY(ImportKeyDialog::fitsTheEditor(line + QStringLiteral("\r\n") + line));
+  QVERIFY(!ImportKeyDialog::fitsTheEditor(line + QLatin1Char('A')));
+  QVERIFY(!ImportKeyDialog::fitsTheEditor(QStringLiteral("x\n") + line +
+                                          QLatin1Char('A')));
+  QVERIFY(ImportKeyDialog::fitsTheEditor(
+      QString(ImportKeyDialog::kMaxKeyLines - 1, QLatin1Char('\n'))));
+  QVERIFY(!ImportKeyDialog::fitsTheEditor(
+      QString(ImportKeyDialog::kMaxKeyLines, QLatin1Char('\n'))));
+  // A CR alone and the Unicode separators start a block too; CRLF is one.
+  QVERIFY(!ImportKeyDialog::fitsTheEditor(
+      QString(ImportKeyDialog::kMaxKeyLines, QLatin1Char('\r'))));
+  QVERIFY(ImportKeyDialog::fitsTheEditor(
+      QString(ImportKeyDialog::kMaxKeyLines - 1, QLatin1Char('\r')) +
+      QLatin1Char('\n')));
+  QString crlf;
+  for (qsizetype i = 0; i < ImportKeyDialog::kMaxKeyLines - 1; ++i) {
+    crlf += QStringLiteral("\r\n");
+  }
+  QVERIFY(ImportKeyDialog::fitsTheEditor(crlf));
+  for (const QChar c :
+       {QChar(0x2028), QChar(0x2029), QChar(0xFDD0), QChar(0xFDD1)}) {
+    QString grouped;
+    for (int i = 0; i < 300; ++i) {
+      grouped += QString(1000, c) + QLatin1Char('\n');
+    }
+    QVERIFY2(!ImportKeyDialog::fitsTheEditor(grouped),
+             qPrintable(QString::number(c.unicode(), 16)));
+  }
+
+  const QByteArray header("-----BEGIN PGP PUBLIC KEY BLOCK-----\n");
+  const QByteArray footer("\n-----END PGP PUBLIC KEY BLOCK-----\n");
+  const QList<QPair<QString, QByteArray>> refused = {
+      {QStringLiteral("long.asc"),
+       header + QByteArray(2 * 1024 * 1024, 'A') + footer},
+      {QStringLiteral("breaks.asc"),
+       header + QByteArray(2 * 1024 * 1024, '\n') + footer}};
+  for (const auto &[name, bytes] : refused) {
+    const QString path = writeFile(name, bytes);
+    QVERIFY2(!path.isEmpty(), "could not write key file");
+    ImportKeyDialog dialog(QString{});
+    auto *edit =
+        dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+    auto *fileButton =
+        dialog.findChild<QPushButton *>(QStringLiteral("fileButton"));
+    QVERIFY(edit != nullptr && fileButton != nullptr);
+    QElapsedTimer clock;
+    clock.start();
+    const ModalRun run = driveModals([&]() { fileButton->click(); }, path);
+    QCOMPARE(run.messageBoxes, 1);
+    QVERIFY2(run.messageText.contains(QStringLiteral("not laid out like")),
+             qPrintable(run.messageText));
+    QVERIFY2(run.messageText.contains(path), qPrintable(run.messageText));
+    QVERIFY2(edit->toPlainText().isEmpty(), qPrintable(name));
+    QVERIFY2(clock.elapsed() < 10000,
+             qPrintable(QString::number(clock.elapsed())));
+  }
+
+  // A key of many armor lines loads.
+  QByteArray armor = header;
+  for (int i = 0; i < 20000; ++i) {
+    armor += QByteArray(64, 'B') + '\n';
+  }
+  armor += footer;
+  const QString keyPath = writeFile(QStringLiteral("big.asc"), armor);
+  ImportKeyDialog dialog(QString{});
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *fileButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("fileButton"));
+  auto *pasteButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("pasteButton"));
+  QVERIFY(edit != nullptr && fileButton != nullptr && pasteButton != nullptr);
+  const ModalRun loaded = driveModals([&]() { fileButton->click(); }, keyPath);
+  QCOMPARE(loaded.messageBoxes, 0);
+  QCOMPARE(edit->toPlainText(), QString::fromUtf8(armor));
+
+  // The clipboard the same way: refused, and the input kept.
+  QClipboard *clipboard = QApplication::clipboard();
+  const QString originalClipboard = clipboard->text();
+  const auto restoreClipboard = qScopeGuard([clipboard, originalClipboard]() {
+    clipboard->setText(originalClipboard);
+  });
+  const QString flood = QString::fromUtf8(header) + line + line;
+  clipboard->setText(flood);
+  if (clipboard->text() != flood) {
+    QSKIP("Clipboard is not functional on this platform");
+  }
+  const ModalRun pasted = driveModals([&]() { pasteButton->click(); });
+  QCOMPARE(pasted.messageBoxes, 1);
+  QVERIFY2(pasted.messageText.startsWith(QStringLiteral("The clipboard")),
+           qPrintable(pasted.messageText));
+  QCOMPARE(edit->toPlainText(), QString::fromUtf8(armor));
 }
 
 QTEST_MAIN(tst_importkeydialog)

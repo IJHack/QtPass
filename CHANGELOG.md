@@ -805,6 +805,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- **Import key** refuses a file or clipboard text with a line longer than
+  1024 characters or more lines than a 16 MiB key file holds, before it
+  shows it. A 2 MiB file of one long line froze QtPass for minutes, and one
+  of line breaks only took gigabytes, before gpg ever saw them (scan
+  ANT-2026-8KAWLSYI).
 - Key generation refuses a pasted name, email or passphrase with a Unicode
   line or paragraph separator. The name field shows one as a space, but the
   batch handed to gpg read it as a line break, so pasted text could add gpg

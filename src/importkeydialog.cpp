@@ -62,6 +62,53 @@ auto ImportKeyDialog::importedKeyId() const -> QString {
   return m_importedKeyId;
 }
 
+// Every character the editor starts a new block (or line) at counts, as
+// QTextCursor::insertText() splits: LF, a CR alone or before an LF (one
+// separator), the paragraph and line separators and Qt's frame markers. A
+// CR ignored, a file of CRs only made millions of blocks all the same.
+auto ImportKeyDialog::fitsTheEditor(QStringView text) -> bool {
+  qsizetype lines = 1;
+  qsizetype run = 0;
+  for (qsizetype i = 0; i < text.size(); ++i) {
+    switch (text.at(i).unicode()) {
+    case u'\r':
+      if (i + 1 < text.size() && text.at(i + 1) == QLatin1Char('\n')) {
+        ++i;
+      }
+      [[fallthrough]];
+    case u'\n':
+    case QChar::LineSeparator:
+    case QChar::ParagraphSeparator:
+    case 0xFDD0: // QTextBeginningOfFrame
+    case 0xFDD1: // QTextEndOfFrame
+      if (++lines > kMaxKeyLines) {
+        return false;
+      }
+      run = 0;
+      break;
+    default:
+      if (++run > kMaxKeyLine) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+/**
+ * @brief The message for text that fails ImportKeyDialog::fitsTheEditor().
+ * @param what What holds the text: a file name, or "The clipboard".
+ * @return The plain-text message.
+ */
+static auto notLaidOutLikeAKey(const QString &what) -> QString {
+  return QCoreApplication::translate(
+             "ImportKeyDialog",
+             "%1 is not laid out like an ASCII-armored key: it has a line of "
+             "more than %2 characters or more than %3 lines.")
+      .arg(what, QString::number(ImportKeyDialog::kMaxKeyLine),
+           QString::number(ImportKeyDialog::kMaxKeyLines));
+}
+
 void ImportKeyDialog::on_fileButton_clicked() {
   const QString fileName = QFileDialog::getOpenFileName(
       this, tr("Import GPG key"), QString(),
@@ -114,7 +161,13 @@ void ImportKeyDialog::on_fileButton_clicked() {
     return;
   }
 
-  ui->inputTextEdit->setPlainText(QString::fromUtf8(bytes));
+  const QString text = QString::fromUtf8(bytes);
+  if (!fitsTheEditor(text)) {
+    PlainMessageBox::warning(this, tr("Import key"),
+                             notLaidOutLikeAKey(fileName));
+    return;
+  }
+  ui->inputTextEdit->setPlainText(text);
 }
 
 void ImportKeyDialog::on_pasteButton_clicked() {
@@ -123,6 +176,11 @@ void ImportKeyDialog::on_pasteButton_clicked() {
   if (text.isEmpty()) {
     // Don't wipe whatever the user already typed/loaded for an empty
     // clipboard.
+    return;
+  }
+  if (!fitsTheEditor(text)) {
+    PlainMessageBox::warning(this, tr("Import key"),
+                             notLaidOutLikeAKey(tr("The clipboard")));
     return;
   }
   ui->inputTextEdit->setPlainText(text);

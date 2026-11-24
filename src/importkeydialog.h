@@ -89,18 +89,43 @@ public:
    */
   static auto keysInBlock(const QString &listing) -> BlockKeys;
 
+  /** @brief Longest line fitsTheEditor() lets through, in characters. */
+  static constexpr qsizetype kMaxKeyLine = 1024;
+  /** @brief Most lines fitsTheEditor() lets through: a 16 MiB key file in
+   * armor's 64-character lines. */
+  static constexpr qsizetype kMaxKeyLines = 16 * 1024 * 1024 / 64;
+
+  /**
+   * @brief Whether @p text is laid out as armor can be, so the input field
+   * can show it at a bounded cost.
+   *
+   * Armor lines are 64 characters (76 at most) and a header line not much
+   * longer. A line without break opportunity takes Qt time growing with the
+   * square of its length to wrap, and each line costs the editor some
+   * 440 bytes, so a file of one long line or of line breaks only froze or
+   * filled the GUI before gpg ever saw it.
+   * @param text The text to show.
+   * A line ends where the editor starts a new one: LF, CR (CRLF once),
+   * U+2028, U+2029, U+FDD0 and U+FDD1.
+   * @return False when a line is longer than kMaxKeyLine or there are more
+   * than kMaxKeyLines lines.
+   */
+  [[nodiscard]] static auto fitsTheEditor(QStringView text) -> bool;
+
 private slots:
   /**
    * @brief "From file" button: picks a file, reads it as a regular file of at
    * most 16 MiB, requires the `-----BEGIN PGP` armor header and loads the
    * text into the input field. Binary keyrings are refused with a hint to
-   * `gpg --armor --export` first.
+   * `gpg --armor --export` first, and text that fails fitsTheEditor() with
+   * the limits it broke.
    */
   void on_fileButton_clicked();
 
   /**
    * @brief "From clipboard" button: replaces the input field with the
-   * clipboard text, unless the clipboard is empty.
+   * clipboard text, unless the clipboard is empty or the text fails
+   * fitsTheEditor().
    */
   void on_pasteButton_clicked();
 
