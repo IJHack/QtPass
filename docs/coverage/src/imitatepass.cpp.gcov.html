@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 14:20:05</td>
+            <td class="headerValue">2026-11-24 15:03:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -132,7 +132,7 @@
 <span id="L59"><span class="lineNum">      59</span>              :   // ends its own blocked process on the flag (see execBlocking()).</span>
 <span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         220 :   if (m_reencryptThread &amp;&amp; m_reencryptThread-&gt;isRunning()) {</span></span>
 <span id="L61"><span class="lineNum">      61</span>              :     m_reencryptCancel.store(true);</span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           3 :     m_reencryptThread-&gt;wait();</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           4 :     m_reencryptThread-&gt;wait();</span></span>
 <span id="L63"><span class="lineNum">      63</span>              :   }</span>
 <span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">         447 : }</span></span>
 <span id="L65"><span class="lineNum">      65</span>              : </span>
@@ -381,7 +381,7 @@
 <span id="L308"><span class="lineNum">     308</span> <span class="tlaGNC">         688 :       encryptArgs({&quot;--batch&quot;, &quot;--status-fd&quot;, &quot;2&quot;}, pgpg(output), recipients);</span></span>
 <span id="L309"><span class="lineNum">     309</span> <span class="tlaGNC">          86 :   m_pendingInserts.enqueue({std::move(scratch), output, file, overwrite});</span></span>
 <span id="L310"><span class="lineNum">     310</span>              :   // Past every refusal: this insert is now queued and will report once.</span>
-<span id="L311"><span class="lineNum">     311</span>              :   queueInsert();</span>
+<span id="L311"><span class="lineNum">     311</span>              :   queueInsert(file);</span>
 <span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">          86 :   executeGpg(PASS_INSERT, args, newValue);</span></span>
 <span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">          86 :   if (!gitReady()) {</span></span>
 <span id="L314"><span class="lineNum">     314</span>              :     return;</span>

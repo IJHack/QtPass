@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,228,86,197,109,158,139,117,176,82,194,73,191,78,179,87,143,121,113,161,91,200,77,229"/>
 <area shape="rect" id="Node000004" href="$class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="209,96,365,124"/>
 <area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="78,228,118,183,146,159,176,138,204,127,200,131,179,143,149,163,122,187,82,230"/>
-<area shape="rect" id="Node000006" href="$class_pass.html#af2bb81415b1f19148f9837de0cd545c7" title="Count one insert that has started queueing but not yet reported." alt="" coords="219,152,354,180"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a2ea20eee7cbe5f1c3291ff0f7561ef3f" title="Count one insert that has started queueing but not yet reported." alt="" coords="219,152,354,180"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="94,227,177,190,206,182,203,186,179,195,98,230"/>
 <area shape="rect" id="Node000007" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="202,204,372,232"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="128,234,189,227,185,231,132,238"/>

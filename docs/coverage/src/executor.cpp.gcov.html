@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 14:20:05</td>
+            <td class="headerValue">2026-11-24 15:03:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -101,14 +101,14 @@
 <span id="L28"><span class="lineNum">      28</span>              : constexpr int kBlockingKillGraceMs = 1000;</span>
 <span id="L29"><span class="lineNum">      29</span>              : } // namespace</span>
 <span id="L30"><span class="lineNum">      30</span>              : </span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         463 : Executor::Executor(QObject *parent) : QObject(parent) {</span></span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         463 :   connect(&amp;m_process, &amp;QProcess::finished, this, &amp;Executor::onProcessFinished);</span></span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">         463 :   connect(&amp;m_process, &amp;QProcess::started, this, &amp;Executor::starting);</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         463 : }</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         464 : Executor::Executor(QObject *parent) : QObject(parent) {</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         464 :   connect(&amp;m_process, &amp;QProcess::finished, this, &amp;Executor::onProcessFinished);</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">         464 :   connect(&amp;m_process, &amp;QProcess::started, this, &amp;Executor::starting);</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         464 : }</span></span>
 <span id="L35"><span class="lineNum">      35</span>              : </span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">         927 : Executor::~Executor() { m_process.blockSignals(true); }</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">         929 : Executor::~Executor() { m_process.blockSignals(true); }</span></span>
 <span id="L37"><span class="lineNum">      37</span>              : </span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">        2284 : void Executor::detachFromTerminal(QProcess &amp;process) {</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">        2289 : void Executor::detachFromTerminal(QProcess &amp;process) {</span></span>
 <span id="L39"><span class="lineNum">      39</span>              : #if defined(Q_OS_UNIX) &amp;&amp; QT_VERSION &gt;= QT_VERSION_CHECK(6, 7, 0)</span>
 <span id="L40"><span class="lineNum">      40</span>              :   // A child inherits QtPass's controlling terminal when QtPass was started</span>
 <span id="L41"><span class="lineNum">      41</span>              :   // from one. git (HTTPS credentials) and ssh (key passphrase, host key) then</span>
@@ -131,37 +131,37 @@
 <span id="L58"><span class="lineNum">      58</span>              :   // Terminal signals (Ctrl+C, the SIGHUP of a closed terminal) now reach</span>
 <span id="L59"><span class="lineNum">      59</span>              :   // QtPass but not the child; the children are short-lived and, with no</span>
 <span id="L60"><span class="lineNum">      60</span>              :   // terminal, cannot sit waiting for input.</span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">        2284 :   QProcess::UnixProcessParameters params = process.unixProcessParameters();</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">        2289 :   QProcess::UnixProcessParameters params = process.unixProcessParameters();</span></span>
 <span id="L62"><span class="lineNum">      62</span>              :   params.flags |= QProcess::UnixProcessFlag::CreateNewSession;</span>
-<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">        2284 :   process.setUnixProcessParameters(params);</span></span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">        2289 :   process.setUnixProcessParameters(params);</span></span>
 <span id="L64"><span class="lineNum">      64</span>              : #else</span>
 <span id="L65"><span class="lineNum">      65</span>              :   Q_UNUSED(process);</span>
 <span id="L66"><span class="lineNum">      66</span>              : #endif</span>
-<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">        2284 : }</span></span>
+<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">        2289 : }</span></span>
 <span id="L68"><span class="lineNum">      68</span>              : </span>
 <span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">           5 : void Executor::setChildUmask(int mask) { g_childUmask.store(mask); }</span></span>
 <span id="L70"><span class="lineNum">      70</span>              : </span>
 <span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">          30 : auto Executor::childUmask() -&gt; int { return g_childUmask.load(); }</span></span>
 <span id="L72"><span class="lineNum">      72</span>              : </span>
-<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">        2278 : void Executor::startProcess(QProcess &amp;process, const QString &amp;app,</span></span>
+<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">        2283 : void Executor::startProcess(QProcess &amp;process, const QString &amp;app,</span></span>
 <span id="L74"><span class="lineNum">      74</span>              :                             const QStringList &amp;args) {</span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">        2278 :   detachFromTerminal(process);</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">        2283 :   detachFromTerminal(process);</span></span>
 <span id="L76"><span class="lineNum">      76</span>              : #ifdef Q_OS_UNIX</span>
 <span id="L77"><span class="lineNum">      77</span>              :   // In the child, between fork and exec: umask() is async-signal-safe.</span>
-<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">        2278 :   if (const int mask = g_childUmask.load(); mask &gt;= 0) {</span></span>
+<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">        2283 :   if (const int mask = g_childUmask.load(); mask &gt;= 0) {</span></span>
 <span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">           1 :     process.setChildProcessModifier(</span></span>
 <span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">           1 :         [mask] { ::umask(static_cast&lt;mode_t&gt;(mask)); });</span></span>
 <span id="L81"><span class="lineNum">      81</span>              :   }</span>
 <span id="L82"><span class="lineNum">      82</span>              : #endif</span>
-<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">        2278 :   if (const auto wsl = parseWslCommand(app)) {</span></span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">        2283 :   if (const auto wsl = parseWslCommand(app)) {</span></span>
 <span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">          18 :     process.start(wsl-&gt;launcher, wsl-&gt;argv(args));</span></span>
 <span id="L85"><span class="lineNum">      85</span>              :   } else {</span>
-<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">        4538 :     process.start(resolveExecutable(app), args);</span></span>
+<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">        4548 :     process.start(resolveExecutable(app), args);</span></span>
 <span id="L87"><span class="lineNum">      87</span>              :   }</span>
-<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">        2278 : }</span></span>
+<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">        2283 : }</span></span>
 <span id="L89"><span class="lineNum">      89</span>              : </span>
-<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">        2275 : auto Executor::resolveExecutable(const QString &amp;app) -&gt; QString {</span></span>
-<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">        4549 :   if (app.isEmpty() || QDir::isAbsolutePath(app)) {</span></span>
+<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">        2280 : auto Executor::resolveExecutable(const QString &amp;app) -&gt; QString {</span></span>
+<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">        4559 :   if (app.isEmpty() || QDir::isAbsolutePath(app)) {</span></span>
 <span id="L92"><span class="lineNum">      92</span>              :     return app;</span>
 <span id="L93"><span class="lineNum">      93</span>              :   }</span>
 <span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">          65 :   const QDir appDir(QCoreApplication::applicationDirPath());</span></span>
@@ -188,11 +188,11 @@
 <span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">          12 :   return {launcher, options, program};</span></span>
 <span id="L116"><span class="lineNum">     116</span>              : }</span>
 <span id="L117"><span class="lineNum">     117</span>              : </span>
-<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">        4309 : auto Executor::parseWslCommand(const QString &amp;app)</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">        4316 : auto Executor::parseWslCommand(const QString &amp;app)</span></span>
 <span id="L119"><span class="lineNum">     119</span>              :     -&gt; std::optional&lt;WslCommand&gt; {</span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">        4309 :   const QStringList parts = QProcess::splitCommand(app);</span></span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">        4309 :   if (parts.size() &lt; 2) {</span></span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">        4264 :     return std::nullopt;</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">        4316 :   const QStringList parts = QProcess::splitCommand(app);</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">        4316 :   if (parts.size() &lt; 2) {</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">        4271 :     return std::nullopt;</span></span>
 <span id="L123"><span class="lineNum">     123</span>              :   }</span>
 <span id="L124"><span class="lineNum">     124</span>              :   // The file name after the last separator of either kind: a Windows path</span>
 <span id="L125"><span class="lineNum">     125</span>              :   // has to be recognised as such wherever the parser runs.</span>
@@ -275,20 +275,20 @@
 <span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">           4 :   return (rc == 0 &amp;&amp; !translated.isEmpty()) ? translated : normalizedPath;</span></span>
 <span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">           4 : }</span></span>
 <span id="L204"><span class="lineNum">     204</span>              : </span>
-<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">         847 : void Executor::executeNext() {</span></span>
-<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         847 :   if (running || m_execQueue.isEmpty()) {</span></span>
-<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">         437 :     return;</span></span>
+<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">         857 : void Executor::executeNext() {</span></span>
+<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         857 :   if (running || m_execQueue.isEmpty()) {</span></span>
+<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">         442 :     return;</span></span>
 <span id="L208"><span class="lineNum">     208</span>              :   }</span>
 <span id="L209"><span class="lineNum">     209</span>              :   // A copy, and marked running, before anyone hears of it: a slot on</span>
 <span id="L210"><span class="lineNum">     210</span>              :   // dequeuing() that queues more cannot invalidate it or start it a second</span>
 <span id="L211"><span class="lineNum">     211</span>              :   // time, and one that calls cancelNext() cannot drop it.</span>
-<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">         420 :   const ExecQueueItem i = m_execQueue.head();</span></span>
-<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">         420 :   running = true;</span></span>
-<span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">         420 :   emit dequeuing(i.id, true);</span></span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">         425 :   const ExecQueueItem i = m_execQueue.head();</span></span>
+<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">         425 :   running = true;</span></span>
+<span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">         425 :   emit dequeuing(i.id, true);</span></span>
 <span id="L215"><span class="lineNum">     215</span>              : </span>
 <span id="L216"><span class="lineNum">     216</span>              :   // An empty executable never emits finished(); dropping it wedged the queue</span>
 <span id="L217"><span class="lineNum">     217</span>              :   // (#1682). Fail it like a failed-to-start process so the queue drains.</span>
-<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">         420 :   if (i.app.isEmpty()) {</span></span>
+<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">         425 :   if (i.app.isEmpty()) {</span></span>
 <span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">           5 :     qCDebug(lcQtPass) &lt;&lt; &quot;No executable set for:&quot; &lt;&lt; i.id;</span></span>
 <span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">           5 :     const int failedId = i.id;</span></span>
 <span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">           5 :     running = false;</span></span>
@@ -309,14 +309,14 @@
 <span id="L236"><span class="lineNum">     236</span>              : </span>
 <span id="L237"><span class="lineNum">     237</span>              :   // Always set it: an item without a directory runs in the application's</span>
 <span id="L238"><span class="lineNum">     238</span>              :   // cwd, not wherever the previous item happened to run.</span>
-<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">         415 :   m_process.setWorkingDirectory(i.workingDir);</span></span>
-<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">         415 :   startProcess(m_process, i.app, i.args);</span></span>
+<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">         420 :   m_process.setWorkingDirectory(i.workingDir);</span></span>
+<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">         420 :   startProcess(m_process, i.app, i.args);</span></span>
 <span id="L241"><span class="lineNum">     241</span>              : </span>
 <span id="L242"><span class="lineNum">     242</span>              :   // A failed start never emits finished(), so `running` would stall the queue</span>
 <span id="L243"><span class="lineNum">     243</span>              :   // and waiters (the keygen dialog) would hang. The emit is queued so it does</span>
 <span id="L244"><span class="lineNum">     244</span>              :   // not re-enter KeygenDialog::done(), still on the stack; -1 goes through</span>
 <span id="L245"><span class="lineNum">     245</span>              :   // Pass::finished's non-zero error gate.</span>
-<span id="L246"><span class="lineNum">     246</span> <span class="tlaGNC">         415 :   if (!m_process.waitForStarted(-1)) {</span></span>
+<span id="L246"><span class="lineNum">     246</span> <span class="tlaGNC">         420 :   if (!m_process.waitForStarted(-1)) {</span></span>
 <span id="L247"><span class="lineNum">     247</span> <span class="tlaGNC">           5 :     qCDebug(lcQtPass) &lt;&lt; &quot;Process failed to start:&quot; &lt;&lt; i.id &lt;&lt; &quot; &quot; &lt;&lt; i.app;</span></span>
 <span id="L248"><span class="lineNum">     248</span> <span class="tlaGNC">           5 :     const int failedId = i.id;</span></span>
 <span id="L249"><span class="lineNum">     249</span>              :     const QString failedApp = i.app;</span>
@@ -337,15 +337,15 @@
 <span id="L264"><span class="lineNum">     264</span>              :     return;</span>
 <span id="L265"><span class="lineNum">     265</span>              :   }</span>
 <span id="L266"><span class="lineNum">     266</span>              : </span>
-<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">         410 :   if (!i.input.isEmpty()) {</span></span>
+<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">         415 :   if (!i.input.isEmpty()) {</span></span>
 <span id="L268"><span class="lineNum">     268</span>              :     QByteArray data = i.input.toUtf8();</span>
-<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         106 :     if (m_process.write(data) != data.length()) {</span></span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         110 :     if (m_process.write(data) != data.length()) {</span></span>
 <span id="L270"><span class="lineNum">     270</span> <span class="tlaUNC">           0 :       qCDebug(lcQtPass) &lt;&lt; &quot;Not all data written to process:&quot; &lt;&lt; i.id &lt;&lt; &quot; &quot;</span></span>
 <span id="L271"><span class="lineNum">     271</span> <span class="tlaUNC">           0 :                         &lt;&lt; i.app;</span></span>
 <span id="L272"><span class="lineNum">     272</span>              :     }</span>
 <span id="L273"><span class="lineNum">     273</span>              :   }</span>
-<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">         410 :   m_process.closeWriteChannel();</span></span>
-<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">         420 : }</span></span>
+<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">         415 :   m_process.closeWriteChannel();</span></span>
+<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">         425 : }</span></span>
 <span id="L276"><span class="lineNum">     276</span>              : </span>
 <span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">          85 : void Executor::execute(int id, const QString &amp;app, const QStringList &amp;args,</span></span>
 <span id="L278"><span class="lineNum">     278</span>              :                        bool readStdout, bool readStderr) {</span>
@@ -363,15 +363,15 @@
 <span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">           2 :   execute(id, QString(), app, args, std::move(input), readStdout, readStderr);</span></span>
 <span id="L291"><span class="lineNum">     291</span> <span class="tlaGNC">           1 : }</span></span>
 <span id="L292"><span class="lineNum">     292</span>              : </span>
-<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">         433 : void Executor::execute(int id, const QString &amp;workDir, const QString &amp;app,</span></span>
+<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">         438 : void Executor::execute(int id, const QString &amp;workDir, const QString &amp;app,</span></span>
 <span id="L294"><span class="lineNum">     294</span>              :                        const QStringList &amp;args, QString input, bool readStdout,</span>
 <span id="L295"><span class="lineNum">     295</span>              :                        bool readStderr) {</span>
 <span id="L296"><span class="lineNum">     296</span>              :   // Queue even an empty executable: executeNext() reports it (#1682).</span>
 <span id="L297"><span class="lineNum">     297</span>              :   // startProcess resolves the executable, as on the blocking path.</span>
-<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">         433 :   m_execQueue.push_back(</span></span>
+<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">         438 :   m_execQueue.push_back(</span></span>
 <span id="L299"><span class="lineNum">     299</span>              :       {id, app, args, std::move(input), readStdout, readStderr, workDir});</span>
-<span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">         433 :   executeNext();</span></span>
-<span id="L301"><span class="lineNum">     301</span> <span class="tlaGNC">        1299 : }</span></span>
+<span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">         438 :   executeNext();</span></span>
+<span id="L301"><span class="lineNum">     301</span> <span class="tlaGNC">        1314 : }</span></span>
 <span id="L302"><span class="lineNum">     302</span>              : </span>
 <span id="L303"><span class="lineNum">     303</span>              : // UTF-8 first; on a decoding error fall back to the system encoding.</span>
 <span id="L304"><span class="lineNum">     304</span>              : // lossless, when given, says whether the text encodes back to exactly these</span>
@@ -380,22 +380,22 @@
 <span id="L307"><span class="lineNum">     307</span>              : // or on Windows a code-page character), nor for a leading byte order mark,</span>
 <span id="L308"><span class="lineNum">     308</span>              : // which the decoder drops without an error. A literal U+FFFD, as older</span>
 <span id="L309"><span class="lineNum">     309</span>              : // QtPass versions left in such entries, does encode back.</span>
-<span id="L310"><span class="lineNum">     310</span> <span class="tlaGNC">        2387 : static auto decodeAssumingUtf8(const QByteArray &amp;in, bool *lossless = nullptr)</span></span>
+<span id="L310"><span class="lineNum">     310</span> <span class="tlaGNC">        2397 : static auto decodeAssumingUtf8(const QByteArray &amp;in, bool *lossless = nullptr)</span></span>
 <span id="L311"><span class="lineNum">     311</span>              :     -&gt; QString {</span>
 <span id="L312"><span class="lineNum">     312</span>              :   // Stateless: a truncated trailing byte becomes a replacement character</span>
 <span id="L313"><span class="lineNum">     313</span>              :   // instead of being held back for a continuation that never comes.</span>
-<span id="L314"><span class="lineNum">     314</span> <span class="tlaGNC">        2387 :   auto converter =</span></span>
+<span id="L314"><span class="lineNum">     314</span> <span class="tlaGNC">        2397 :   auto converter =</span></span>
 <span id="L315"><span class="lineNum">     315</span>              :       QStringDecoder(QStringDecoder::Utf8, QStringDecoder::Flag::Stateless);</span>
-<span id="L316"><span class="lineNum">     316</span> <span class="tlaGNC">        2387 :   QString out = converter(in);</span></span>
-<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">        2387 :   if (converter.hasError()) {</span></span>
+<span id="L316"><span class="lineNum">     316</span> <span class="tlaGNC">        2397 :   QString out = converter(in);</span></span>
+<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">        2397 :   if (converter.hasError()) {</span></span>
 <span id="L318"><span class="lineNum">     318</span> <span class="tlaGNC">           4 :     auto fallback =</span></span>
 <span id="L319"><span class="lineNum">     319</span>              :         QStringDecoder(QStringDecoder::System, QStringDecoder::Flag::Stateless);</span>
 <span id="L320"><span class="lineNum">     320</span> <span class="tlaGNC">           8 :     out = fallback(in);</span></span>
 <span id="L321"><span class="lineNum">     321</span>              :   }</span>
-<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">        2387 :   if (lossless != nullptr) {</span></span>
-<span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">         354 :     *lossless = out.toUtf8() == in;</span></span>
+<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">        2397 :   if (lossless != nullptr) {</span></span>
+<span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">         359 :     *lossless = out.toUtf8() == in;</span></span>
 <span id="L324"><span class="lineNum">     324</span>              :   }</span>
-<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">        2387 :   return out;</span></span>
+<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">        2397 :   return out;</span></span>
 <span id="L326"><span class="lineNum">     326</span>              : }</span>
 <span id="L327"><span class="lineNum">     327</span>              : </span>
 <span id="L328"><span class="lineNum">     328</span>              : // Returns an error code rather than throwing, matching QtPass's error</span>
@@ -505,14 +505,14 @@
 <span id="L432"><span class="lineNum">     432</span>              :     }</span>
 <span id="L433"><span class="lineNum">     433</span> <span class="tlaGNC">        1182 :     return true;</span></span>
 <span id="L434"><span class="lineNum">     434</span>              :   }</span>
-<span id="L435"><span class="lineNum">     435</span> <span class="tlaGNC">        1306 :   while (!process.waitForFinished(</span></span>
+<span id="L435"><span class="lineNum">     435</span> <span class="tlaGNC">        1308 :   while (!process.waitForFinished(</span></span>
 <span id="L436"><span class="lineNum">     436</span>              :       deadline.isForever()</span>
 <span id="L437"><span class="lineNum">     437</span>              :           ? kBlockingCancelPollMs</span>
 <span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">           3 :           : qMin(kBlockingCancelPollMs, msecsLeft(deadline)))) {</span></span>
-<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">          46 :     if (process.state() == QProcess::NotRunning) {</span></span>
+<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">          47 :     if (process.state() == QProcess::NotRunning) {</span></span>
 <span id="L440"><span class="lineNum">     440</span>              :       return true;</span>
 <span id="L441"><span class="lineNum">     441</span>              :     }</span>
-<span id="L442"><span class="lineNum">     442</span> <span class="tlaGNC">          58 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
+<span id="L442"><span class="lineNum">     442</span> <span class="tlaGNC">          59 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
 <span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">          12 :       stopBlocking(process);</span></span>
 <span id="L444"><span class="lineNum">     444</span> <span class="tlaGNC">          12 :       return false;</span></span>
 <span id="L445"><span class="lineNum">     445</span>              :     }</span>
@@ -617,9 +617,9 @@
 <span id="L544"><span class="lineNum">     544</span> <span class="tlaGNC">          72 :   return runBlocking(process, app, args, QString(), process_out, process_err);</span></span>
 <span id="L545"><span class="lineNum">     545</span> <span class="tlaGNC">          36 : }</span></span>
 <span id="L546"><span class="lineNum">     546</span>              : </span>
-<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">         804 : void Executor::setEnvironment(const QProcessEnvironment &amp;env) {</span></span>
-<span id="L548"><span class="lineNum">     548</span> <span class="tlaGNC">         804 :   m_process.setProcessEnvironment(env);</span></span>
-<span id="L549"><span class="lineNum">     549</span> <span class="tlaGNC">         804 : }</span></span>
+<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">         812 : void Executor::setEnvironment(const QProcessEnvironment &amp;env) {</span></span>
+<span id="L548"><span class="lineNum">     548</span> <span class="tlaGNC">         812 :   m_process.setProcessEnvironment(env);</span></span>
+<span id="L549"><span class="lineNum">     549</span> <span class="tlaGNC">         812 : }</span></span>
 <span id="L550"><span class="lineNum">     550</span>              : </span>
 <span id="L551"><span class="lineNum">     551</span> <span class="tlaGNC">         129 : auto Executor::environment() const -&gt; QProcessEnvironment {</span></span>
 <span id="L552"><span class="lineNum">     552</span> <span class="tlaGNC">         129 :   return m_process.processEnvironment();</span></span>
@@ -642,17 +642,17 @@
 <span id="L569"><span class="lineNum">     569</span> <span class="tlaGNC">          11 :   return id;</span></span>
 <span id="L570"><span class="lineNum">     570</span>              : }</span>
 <span id="L571"><span class="lineNum">     571</span>              : </span>
-<span id="L572"><span class="lineNum">     572</span> <span class="tlaGNC">         404 : void Executor::onProcessFinished(int exitCode,</span></span>
+<span id="L572"><span class="lineNum">     572</span> <span class="tlaGNC">         409 : void Executor::onProcessFinished(int exitCode,</span></span>
 <span id="L573"><span class="lineNum">     573</span>              :                                  QProcess::ExitStatus exitStatus) {</span>
 <span id="L574"><span class="lineNum">     574</span>              :   ExecQueueItem i = m_execQueue.dequeue();</span>
-<span id="L575"><span class="lineNum">     575</span> <span class="tlaGNC">         404 :   running = false;</span></span>
-<span id="L576"><span class="lineNum">     576</span> <span class="tlaGNC">         404 :   auto [output, err] = collectOutput(i, exitCode);</span></span>
-<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">         404 :   if (exitStatus == QProcess::NormalExit) {</span></span>
-<span id="L578"><span class="lineNum">     578</span> <span class="tlaGNC">         403 :     if (exitCode != 0) {</span></span>
+<span id="L575"><span class="lineNum">     575</span> <span class="tlaGNC">         409 :   running = false;</span></span>
+<span id="L576"><span class="lineNum">     576</span> <span class="tlaGNC">         409 :   auto [output, err] = collectOutput(i, exitCode);</span></span>
+<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">         409 :   if (exitStatus == QProcess::NormalExit) {</span></span>
+<span id="L578"><span class="lineNum">     578</span> <span class="tlaGNC">         408 :     if (exitCode != 0) {</span></span>
 <span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">          49 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
 <span id="L580"><span class="lineNum">     580</span>              :     }</span>
-<span id="L581"><span class="lineNum">     581</span> <span class="tlaGNC">         403 :     emit finished(i.id, exitCode, output, err);</span></span>
-<span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">         403 :     m_outputLossless = true;</span></span>
+<span id="L581"><span class="lineNum">     581</span> <span class="tlaGNC">         408 :     emit finished(i.id, exitCode, output, err);</span></span>
+<span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">         408 :     m_outputLossless = true;</span></span>
 <span id="L583"><span class="lineNum">     583</span>              :   } else {</span>
 <span id="L584"><span class="lineNum">     584</span>              :     // A signal-killed process usually leaves stderr empty; without this the</span>
 <span id="L585"><span class="lineNum">     585</span>              :     // password pane would show nothing at all for the failure.</span>
@@ -665,42 +665,42 @@
 <span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">           1 :     emit error(i.id, -1, output, err);</span></span>
 <span id="L593"><span class="lineNum">     593</span> <span class="tlaGNC">           1 :     m_outputLossless = true;</span></span>
 <span id="L594"><span class="lineNum">     594</span>              :   }</span>
-<span id="L595"><span class="lineNum">     595</span> <span class="tlaGNC">         404 :   executeNext();</span></span>
-<span id="L596"><span class="lineNum">     596</span> <span class="tlaGNC">         404 :   postDrainedIfIdle();</span></span>
-<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">         404 : }</span></span>
+<span id="L595"><span class="lineNum">     595</span> <span class="tlaGNC">         409 :   executeNext();</span></span>
+<span id="L596"><span class="lineNum">     596</span> <span class="tlaGNC">         409 :   postDrainedIfIdle();</span></span>
+<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">         409 : }</span></span>
 <span id="L598"><span class="lineNum">     598</span>              : </span>
-<span id="L599"><span class="lineNum">     599</span> <span class="tlaGNC">         414 : void Executor::postDrainedIfIdle() {</span></span>
+<span id="L599"><span class="lineNum">     599</span> <span class="tlaGNC">         419 : void Executor::postDrainedIfIdle() {</span></span>
 <span id="L600"><span class="lineNum">     600</span>              :   // One check at a time, run after what is emitted now; it fires only once</span>
 <span id="L601"><span class="lineNum">     601</span>              :   // nothing runs or waits and every posted error() of a failed start is</span>
 <span id="L602"><span class="lineNum">     602</span>              :   // out (the last of those posts the check again).</span>
-<span id="L603"><span class="lineNum">     603</span> <span class="tlaGNC">         414 :   if (m_drainCheckPosted) {</span></span>
+<span id="L603"><span class="lineNum">     603</span> <span class="tlaGNC">         419 :   if (m_drainCheckPosted) {</span></span>
 <span id="L604"><span class="lineNum">     604</span>              :     return;</span>
 <span id="L605"><span class="lineNum">     605</span>              :   }</span>
-<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">         410 :   m_drainCheckPosted = true;</span></span>
-<span id="L607"><span class="lineNum">     607</span> <span class="tlaGNC">         410 :   QMetaObject::invokeMethod(</span></span>
+<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">         415 :   m_drainCheckPosted = true;</span></span>
+<span id="L607"><span class="lineNum">     607</span> <span class="tlaGNC">         415 :   QMetaObject::invokeMethod(</span></span>
 <span id="L608"><span class="lineNum">     608</span>              :       this,</span>
-<span id="L609"><span class="lineNum">     609</span> <span class="tlaGNC">         410 :       [this]() {</span></span>
-<span id="L610"><span class="lineNum">     610</span> <span class="tlaGNC">         353 :         m_drainCheckPosted = false;</span></span>
-<span id="L611"><span class="lineNum">     611</span> <span class="tlaGNC">         150 :         if (isIdle() &amp;&amp; m_pendingErrors == 0) {</span></span>
-<span id="L612"><span class="lineNum">     612</span> <span class="tlaGNC">         150 :           emit drained();</span></span>
+<span id="L609"><span class="lineNum">     609</span> <span class="tlaGNC">         415 :       [this]() {</span></span>
+<span id="L610"><span class="lineNum">     610</span> <span class="tlaGNC">         358 :         m_drainCheckPosted = false;</span></span>
+<span id="L611"><span class="lineNum">     611</span> <span class="tlaGNC">         154 :         if (isIdle() &amp;&amp; m_pendingErrors == 0) {</span></span>
+<span id="L612"><span class="lineNum">     612</span> <span class="tlaGNC">         154 :           emit drained();</span></span>
 <span id="L613"><span class="lineNum">     613</span>              :         }</span>
-<span id="L614"><span class="lineNum">     614</span> <span class="tlaGNC">         353 :       },</span></span>
+<span id="L614"><span class="lineNum">     614</span> <span class="tlaGNC">         358 :       },</span></span>
 <span id="L615"><span class="lineNum">     615</span>              :       Qt::QueuedConnection);</span>
 <span id="L616"><span class="lineNum">     616</span>              : }</span>
 <span id="L617"><span class="lineNum">     617</span>              : </span>
-<span id="L618"><span class="lineNum">     618</span> <span class="tlaGNC">         404 : auto Executor::collectOutput(const ExecQueueItem &amp;item, int exitCode)</span></span>
+<span id="L618"><span class="lineNum">     618</span> <span class="tlaGNC">         409 : auto Executor::collectOutput(const ExecQueueItem &amp;item, int exitCode)</span></span>
 <span id="L619"><span class="lineNum">     619</span>              :     -&gt; std::pair&lt;QString, QString&gt; {</span>
-<span id="L620"><span class="lineNum">     620</span> <span class="tlaGNC">         404 :   QString output;</span></span>
-<span id="L621"><span class="lineNum">     621</span> <span class="tlaGNC">         404 :   QString err;</span></span>
-<span id="L622"><span class="lineNum">     622</span> <span class="tlaGNC">         404 :   m_outputLossless = true;</span></span>
-<span id="L623"><span class="lineNum">     623</span> <span class="tlaGNC">         404 :   if (item.readStdout) {</span></span>
-<span id="L624"><span class="lineNum">     624</span> <span class="tlaGNC">         708 :     output = decodeAssumingUtf8(m_process.readAllStandardOutput(),</span></span>
+<span id="L620"><span class="lineNum">     620</span> <span class="tlaGNC">         409 :   QString output;</span></span>
+<span id="L621"><span class="lineNum">     621</span> <span class="tlaGNC">         409 :   QString err;</span></span>
+<span id="L622"><span class="lineNum">     622</span> <span class="tlaGNC">         409 :   m_outputLossless = true;</span></span>
+<span id="L623"><span class="lineNum">     623</span> <span class="tlaGNC">         409 :   if (item.readStdout) {</span></span>
+<span id="L624"><span class="lineNum">     624</span> <span class="tlaGNC">         718 :     output = decodeAssumingUtf8(m_process.readAllStandardOutput(),</span></span>
 <span id="L625"><span class="lineNum">     625</span>              :                                 &amp;m_outputLossless);</span>
 <span id="L626"><span class="lineNum">     626</span>              :   }</span>
-<span id="L627"><span class="lineNum">     627</span> <span class="tlaGNC">         404 :   if (item.readStderr || exitCode != 0) {</span></span>
-<span id="L628"><span class="lineNum">     628</span> <span class="tlaGNC">         670 :     err = decodeAssumingUtf8(m_process.readAllStandardError());</span></span>
+<span id="L627"><span class="lineNum">     627</span> <span class="tlaGNC">         409 :   if (item.readStderr || exitCode != 0) {</span></span>
+<span id="L628"><span class="lineNum">     628</span> <span class="tlaGNC">         680 :     err = decodeAssumingUtf8(m_process.readAllStandardError());</span></span>
 <span id="L629"><span class="lineNum">     629</span>              :   }</span>
-<span id="L630"><span class="lineNum">     630</span> <span class="tlaGNC">         404 :   return {output, err};</span></span>
+<span id="L630"><span class="lineNum">     630</span> <span class="tlaGNC">         409 :   return {output, err};</span></span>
 <span id="L631"><span class="lineNum">     631</span>              : }</span>
         </pre>
               </td>
