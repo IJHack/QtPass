@@ -85,6 +85,11 @@
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
+- Key generation no longer stores the new key without a passphrase when the
+  pasted name holds half of an emoji. The passphrase was then added after
+  gpg had already created the key. Such a name or passphrase is now refused
+  (scan finding ANT-2026-NBW31RDB,
+  [#2324](https://github.com/IJHack/QtPass/pull/2324) on main).
 - The edit dialog no longer cuts a password or field longer than 32767
   characters, such as a key file kept as one line of base64. Such a line was
   loaded and pasted shortened, without a word, and saved shortened over the

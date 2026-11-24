@@ -44,6 +44,8 @@ private Q_SLOTS:
   void passphraseNeverWrittenToTemplate();
   void templateEditorHiddenUnlessExpert();
   void applyPassphraseReplacesNoProtection();
+  void applyPassphraseSeesNoProtectionNextToALoneSurrogate();
+  void halfACharacterStartsNothing();
   void applyPassphraseEmptyKeepsNoProtection();
   void applyPassphraseReplacesExistingPassphraseLine();
   void applyPassphraseEmptyRestoresNoProtection();
@@ -303,6 +305,23 @@ void tst_keygendialog::templateEditorHiddenUnlessExpert() {
   QVERIFY2(editor->isHidden(), "unchecking expert hides the template box");
 }
 
+/**
+ * @brief Half of an emoji anywhere in the batch must not hide
+ *        %no-protection: a regex split matched nothing in such text and left
+ *        it next to the Passphrase: line, after %commit.
+ */
+void tst_keygendialog::applyPassphraseSeesNoProtectionNextToALoneSurrogate() {
+  const QString batch =
+      QStringLiteral("Key-Type: RSA\nName-Real: Alice ") + QChar(0xD83D) +
+      QStringLiteral("\r\n%no-protection\n%commit\n%echo done");
+  const QString result =
+      KeygenDialog::applyPassphrase(batch, QStringLiteral("testkey123"));
+  QCOMPARE(result, QStringLiteral("Key-Type: RSA\nName-Real: Alice ") +
+                       QChar(0xD83D) +
+                       QStringLiteral("\nPassphrase: testkey123\n%commit\n"
+                                      "%echo done"));
+}
+
 void tst_keygendialog::applyPassphraseReplacesNoProtection() {
   const QString batch = QStringLiteral("%echo Generating a default key\n"
                                        "Key-Type: RSA\n"
@@ -546,6 +565,51 @@ void tst_keygendialog::passphraseWithOuterBlanksStartsNothing() {
   QCOMPARE(refusals.size(), 2);
   QVERIFY2(refusals.last().contains(QStringLiteral("Name")),
            qPrintable(refusals.last()));
+}
+
+/**
+ * @brief A name or passphrase with half of a character is refused before
+ *        anything starts: gpg would get a replacement character, and the key
+ *        would be protected by a passphrase other than the one typed. A
+ *        whole emoji is fine.
+ */
+void tst_keygendialog::halfACharacterStartsNothing() {
+  const QString whole =
+      QStringLiteral("Alice ") + QChar(0xD83D) + QChar(0xDE00);
+  QVERIFY(KeygenDialog::isWholeText(whole));
+  QVERIFY(KeygenDialog::isWholeText(QString()));
+  QVERIFY(!KeygenDialog::isWholeText(QStringLiteral("Alice ") + QChar(0xD83D)));
+  QVERIFY(!KeygenDialog::isWholeText(QChar(0xDE00) + QStringLiteral("x")));
+  QVERIFY(!KeygenDialog::isWholeText(QStringLiteral("a") + QChar(0xDE00) +
+                                     QChar(0xD83D)));
+
+  KeygenDialog d(nullptr);
+  auto *first = d.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *second = d.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  QVERIFY(first != nullptr && second != nullptr);
+  const QString broken = QStringLiteral("correct horse ") + QChar(0xDE00);
+  first->setText(broken);
+  second->setText(broken);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QStringList refusals;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&refusals] {
+    if (auto *box =
+            qobject_cast<QMessageBox *>(QApplication::activeModalWidget())) {
+      refusals << box->text();
+      box->accept();
+    }
+  });
+  poker.start();
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QCOMPARE(refusals.size(), 1);
+  QVERIFY2(refusals.first().contains(QStringLiteral("half of a character")),
+           qPrintable(refusals.first()));
+  QVERIFY2(d.findChild<QProgressIndicator *>() == nullptr,
+           "no generation may have started");
 }
 
 QTEST_MAIN(tst_keygendialog)

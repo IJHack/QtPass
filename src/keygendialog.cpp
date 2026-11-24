@@ -104,6 +104,26 @@ void KeygenDialog::on_name_textChanged(const QString &arg1) {
 }
 
 /**
+ * @brief batchLines cut a batch template into its non-empty lines at CR and
+ * LF.
+ *
+ * Plain character splitting, no regex: QRegularExpression matches nothing in
+ * text that is not valid UTF-16, so a lone surrogate anywhere (half of a
+ * pasted emoji) left the whole batch one "line", %no-protection was never
+ * found and the passphrase went after %commit.
+ * @param batch The template text.
+ * @return Its lines, without the line breaks and without empty ones.
+ */
+static QStringList batchLines(QString batch) {
+  batch.replace(QLatin1Char('\r'), QLatin1Char('\n'));
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+  return batch.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+#else
+  return batch.split(QLatin1Char('\n'), QString::SkipEmptyParts);
+#endif
+}
+
+/**
  * @brief KeygenDialog::replace do some regex magic for replacing Name-Real and
  * Name-Email in the keypair generation template.
  * @param key
@@ -112,13 +132,7 @@ void KeygenDialog::on_name_textChanged(const QString &arg1) {
 void KeygenDialog::replace(const QString &key, const QString &value) {
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  const QStringList lines =
-      expert.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-#else
-  const QStringList lines =
-      expert.split(Util::newLinesRegex(), QString::SkipEmptyParts);
-#endif
+  const QStringList lines = batchLines(expert);
   for (QString line : lines) {
     line.replace(QRegularExpression(key + ":.*"), key + ": " + value);
     clear.append(line);
@@ -172,13 +186,7 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
 
   QStringList clear;
   bool spliced = false;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  const QStringList lines =
-      batch.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-#else
-  const QStringList lines =
-      batch.split(Util::newLinesRegex(), QString::SkipEmptyParts);
-#endif
+  const QStringList lines = batchLines(batch);
   for (const QString &line : lines) {
     if (isControlStatement(line, noProtection) ||
         line.trimmed().startsWith(passphraseKey, Qt::CaseInsensitive)) {
@@ -214,6 +222,20 @@ bool KeygenDialog::isBatchPassphrase(const QString &passphrase) {
          (!blank(passphrase.front()) && !blank(passphrase.back()));
 }
 
+// Pairs walked by hand: QStringView::isValidUtf16() needs Qt 5.15.
+bool KeygenDialog::isWholeText(const QString &value) {
+  for (int i = 0; i < value.size(); ++i) {
+    const QChar c = value.at(i);
+    if (c.isHighSurrogate() && i + 1 < value.size() &&
+        value.at(i + 1).isLowSurrogate()) {
+      ++i;
+    } else if (c.isSurrogate()) {
+      return false;
+    }
+  }
+  return true;
+}
+
 /**
  * @brief KeygenDialog::done we are going to create a key pair and show the
  * QProgressIndicator and some text since the generation will take some time.
@@ -221,6 +243,14 @@ bool KeygenDialog::isBatchPassphrase(const QString &passphrase) {
  */
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) { //  ok was pressed
+    if (!isWholeText(ui->name->text()) ||
+        !isWholeText(ui->passphrase1->text())) {
+      QMessageBox::critical(this, tr("Invalid input"),
+                            tr("The name or the passphrase holds half of a "
+                               "character, such as a broken emoji. Type it "
+                               "again."));
+      return;
+    }
     // gpg would protect the key without the blanks, and then refuse the
     // passphrase as typed.
     if (!isBatchPassphrase(ui->passphrase1->text())) {
