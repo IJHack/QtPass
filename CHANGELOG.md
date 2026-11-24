@@ -805,6 +805,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Key generation refuses a pasted name, email or passphrase with a Unicode
+  line or paragraph separator. The name field shows one as a space, but the
+  batch handed to gpg read it as a line break, so pasted text could add gpg
+  directives such as `%pubring` with a file of its choosing, which gpg then
+  overwrote (scan ANT-2026-7HDPIZ0N).
 - Key generation no longer stores the new key without a passphrase when the
   pasted name holds half of an emoji. The passphrase was then added after
   gpg had already created the key. Such a name or passphrase is now refused

@@ -183,9 +183,26 @@ auto KeygenDialog::isBatchValue(const QString &value) -> bool {
   return !hasBatchBreak(value) && QStringView(value).isValidUtf16();
 }
 
+// The value goes into the template box and comes back through
+// toPlainText(), which hands the Unicode line and paragraph separators and
+// Qt's frame markers back as LF. A line edit shows the separators as a
+// space, so a pasted name looked like one line and still added its own
+// batch directives (%pubring <file> has gpg overwrite that file).
 auto KeygenDialog::hasBatchBreak(const QString &value) -> bool {
-  return value.contains(QLatin1Char('\n')) ||
-         value.contains(QLatin1Char('\r')) || value.contains(QChar::Null);
+  return std::any_of(value.cbegin(), value.cend(), [](QChar c) {
+    switch (c.unicode()) {
+    case u'\n':
+    case u'\r':
+    case u'\0':
+    case QChar::LineSeparator:
+    case QChar::ParagraphSeparator:
+    case 0xFDD0: // QTextBeginningOfFrame
+    case 0xFDD1: // QTextEndOfFrame
+      return true;
+    default:
+      return false;
+    }
+  });
 }
 
 // What gpg's batch reader takes off a value: C isspace() after the colon,

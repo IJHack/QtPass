@@ -74,14 +74,19 @@ public:
    * Text that is not valid UTF-16 (a lone surrogate) is refused too: gpg
    * gets no such text, only a replacement for it.
    * @param value A field's text.
-   * @return False when it holds a CR, LF or NUL, or is not valid UTF-16.
+   * @return False when hasBatchBreak() finds a break, or it is not valid
+   *         UTF-16.
    */
   [[nodiscard]] static auto isBatchValue(const QString &value) -> bool;
   /**
    * @brief Whether a field's text holds a line break or NUL, which would end
    *        its batch line early.
+   *
+   * The template box reads U+2028, U+2029, U+FDD0 and U+FDD1 back as LF, so
+   * those count as line breaks too.
    * @param value A field's text.
-   * @return True when it holds a CR, LF or NUL.
+   * @return True when it holds a CR, LF, NUL, U+2028, U+2029, U+FDD0 or
+   *         U+FDD1.
    */
   [[nodiscard]] static auto hasBatchBreak(const QString &value) -> bool;
 
