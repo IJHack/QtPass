@@ -6466,49 +6466,63 @@ void tst_mainwindow::usersDialogOpensForTheStoreButNotForALink() {
 
 /**
  * @brief Scan ANT-2026-1299KSWS: a save shows only the entry it wrote
- *        again. With "bank" selected, Add password and a save of the new
- *        entry used to decrypt "bank" once more and, with "Always copy",
- *        put its password on the clipboard. A save with no dialog open
- *        (as after the dialog closed) still shows the selected entry.
+ *        again, when that entry is selected. With "bank" selected, saving
+ *        another entry (Add password, or an earlier save reporting late)
+ *        used to decrypt "bank" once more and, with "Always copy", put its
+ *        password on the clipboard. Saving "bank" itself still shows it.
  */
 void tst_mainwindow::savingANewEntryDoesNotShowTheSelectedOneAgain() {
 #ifdef Q_OS_WIN
-  QSKIP("uses a shell script as the gpg stand-in");
+  QSKIP("uses a shell script as the pass stand-in");
 #else
   QTemporaryDir scratch;
   QVERIFY(scratch.isValid());
-  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
-  QVERIFY(
-      selectListed(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
-  Pass *pass = QtPassSettings::getPass();
-  QSignalSpy shown(pass, &Pass::finishedShow);
-  bool saved = false;
-  ModalDriver driver([&](QWidget *w) {
-    if (auto *dialog = qobject_cast<PasswordDialog *>(w)) {
-      // "bank" is still the selected row, and the new entry's save is
-      // reported while its dialog is open.
-      saved = selectListed(m_window.data(), m_storeDir.path(),
-                           QStringLiteral("bank"));
-      emit pass->finishedInsert(QString(), QString());
-      dialog->reject();
-      return;
-    }
-    answerBox(QMessageBox::Ok)(w);
+  const QString script = scratch.filePath(QStringLiteral("pass"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("#!/bin/sh\ncase \"$1\" in show) echo secret ;; "
+            "*) cat >/dev/null ;; esac\nexit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  rebuildWindow([&script](AppSettings &s) {
+    s.usePass = true;
+    s.passExecutable = script;
+    s.useGit = false;
+    s.useAutoclearPanel = false;
+    s.clipBoardType = Enums::CLIPBOARD_NEVER;
   });
-  auto *add =
-      m_window->findChild<QAction *>(QStringLiteral("actionAddPassword"));
-  QVERIFY(add != nullptr);
-  add->trigger();
-  QVERIFY(saved);
-  QTest::qWait(300);
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.usePass = false;
+    QtPassSettings::save(s);
+  });
+  Pass *pass = QtPassSettings::getPass();
+  // Whatever the rebuilt window still has queued settles first; then "bank"
+  // is the selected row.
+  QTest::qWait(200);
+  const auto selectBank = [this] {
+    return selectListed(m_window.data(), m_storeDir.path(),
+                        QStringLiteral("bank")) &&
+           treeView()->currentIndex().isValid();
+  };
+  QSignalSpy shown(pass, &Pass::finishedShow);
+  QSignalSpy inserted(pass, &Pass::finishedInsert);
+
+  QVERIFY(selectBank());
+  pass->Insert(QStringLiteral("fresh"), QStringLiteral("v\n"), false);
+  QTRY_COMPARE_WITH_TIMEOUT(inserted.count(), 1, 10000);
   QTRY_VERIFY_WITH_TIMEOUT(pass->isIdle(), 10000);
+  QTest::qWait(100);
   QCOMPARE(shown.count(), 0);
 
-  QVERIFY(
-      selectListed(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
-  emit pass->finishedInsert(QString(), QString());
+  QVERIFY(selectBank());
+  pass->Insert(QStringLiteral("bank"), QStringLiteral("v\n"), true);
+  QTRY_COMPARE_WITH_TIMEOUT(inserted.count(), 2, 10000);
   QVERIFY2(shown.count() == 1 || shown.wait(10000),
-           "without a dialog the selected entry is shown again");
+           "a save of the selected entry shows it again");
   QCOMPARE(shown.first().at(1).toString(), QStringLiteral("bank"));
 #endif
 }

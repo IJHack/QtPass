@@ -41,7 +41,6 @@ class ProcessOutputPanel;
 class QProgressDialog;
 class QTreeWidgetItem;
 class QtPass;
-class PasswordDialog;
 class PasswordDisplayPanel;
 class TrayIcon;
 
@@ -552,10 +551,6 @@ private:
   /// QTreeView::clicked), so onOtp() must not assume the visible code belongs
   /// to the selected entry.
   QString m_shownFile;
-  /// The edit dialog that is open (setPassword()), if any: its
-  /// PasswordDialog::entryPath() is the entry a save writes. A save shows
-  /// only that entry again, never the selected row in its place.
-  QPointer<PasswordDialog> m_editDialog;
   /// Entry whose fields the display panel's rows show; empty while the panel
   /// is empty. Unlike m_shownFile it is not dropped when Edit opens, and only
   /// a rendered entry sets it, so a double-click on a row edits that entry.

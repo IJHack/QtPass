@@ -25,6 +25,7 @@
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
+#include <QScopeGuard>
 #include <QTextStream>
 #include <algorithm>
 #include <array>
@@ -74,6 +75,7 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
     // ever. Idle cannot fall between a dialog's insertsPending() read and its
     // own report, since that insert keeps the executor busy.
     m_insertsPending = 0;
+    m_insertedEntries.clear();
     emit idle();
   });
   // Each queued process starts in the environment as the store is then:
@@ -534,9 +536,16 @@ void Pass::finished(int id, int exitCode, const QString &out,
   // Count this insert off, success or failure, before its result goes out, so
   // insertsPending() tracks the inserts still awaiting a report. Each insert
   // reaches here once as PASS_INSERT.
+  // Its entry is handed out (reportedInsert()) while the report goes out.
+  QString reported;
   if (pid == PASS_INSERT && m_insertsPending > 0) {
     --m_insertsPending;
+    if (!m_insertedEntries.isEmpty()) {
+      reported = m_insertedEntries.dequeue();
+    }
   }
+  m_reportedInsert = reported;
+  const auto reportedOut = qScopeGuard([this] { m_reportedInsert.clear(); });
 
   if (exitCode != 0) {
     handleProcessError(pid, exitCode, out, err);

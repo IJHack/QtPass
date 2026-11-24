@@ -576,12 +576,18 @@ void tst_integration::imitatePass_insertAndShow() {
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  // The report names the entry it wrote (scan ANT-2026-1299KSWS).
+  QString reported;
+  connect(&pass, &Pass::finishedInsert, this,
+          [&pass, &reported] { reported = pass.reportedInsert(); });
   pass.Insert(entryName, entryContent, false);
   QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   // Verify the .gpg file was created.
   const QString expectedFile = storeDir.path() + "/" + entryName + ".gpg";
   QVERIFY2(QFile::exists(expectedFile), "encrypted file should exist");
+  QCOMPARE(reported, QDir::cleanPath(expectedFile));
+  QVERIFY(pass.reportedInsert().isEmpty());
 
   // Now show it.
   QSignalSpy showSpy(&pass, &Pass::finishedShow);

@@ -802,7 +802,7 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   }
   m_insertQueue.enqueue(entry);
   // Past every refusal: this insert is now queued and will report once.
-  queueInsert();
+  queueInsert(entry);
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
