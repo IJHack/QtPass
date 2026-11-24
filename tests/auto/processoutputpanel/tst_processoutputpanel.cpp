@@ -23,6 +23,7 @@ private slots:
   void errorsAreRed();
   void escapesHtml();
   void capsAtMaxLinesDroppingTheOldest();
+  void capsBeforeLayingOutTheLines();
   void clearResetsCounterAndAutoScroll();
   void scrollingUpStopsAutoScrollUntilBackAtBottom();
   void draggingTheSliderDoesNotReArmAutoScroll();
@@ -82,6 +83,41 @@ void tst_processoutputpanel::capsAtMaxLinesDroppingTheOldest() {
   QVERIFY2(edit(panel)->toPlainText().startsWith(QStringLiteral("6: line")),
            "the five oldest lines must be the ones dropped");
   QCOMPARE(panel.lineCount(), ProcessOutputPanel::MaxLines + 5);
+}
+
+/**
+ * @brief Output of many lines is cut to the last MaxLines before it is laid
+ *        out: the document never holds more than a full panel plus one
+ *        call's kept lines, the numbering still counts every line, and no
+ *        undo history keeps the dropped ones. Scan ANT-2026-WIB6OLKY.
+ */
+void tst_processoutputpanel::capsBeforeLayingOutTheLines() {
+  ProcessOutputPanel panel;
+  QTextDocument *doc = edit(panel)->document();
+  QVERIFY2(!doc->isUndoRedoEnabled(), "a read-only console keeps no undo");
+  int most = 0;
+  connect(doc, &QTextDocument::blockCountChanged, this,
+          [&most](int count) { most = qMax(most, count); });
+  QStringList many;
+  for (int i = 0; i < ProcessOutputPanel::MaxLines; ++i) {
+    many << QStringLiteral("first");
+  }
+  panel.append(many.join(QLatin1Char('\n')), false);
+  QStringList flood;
+  for (int i = 0; i < 20 * ProcessOutputPanel::MaxLines; ++i) {
+    flood << QStringLiteral("line %1").arg(i);
+  }
+  panel.append(flood.join(QLatin1Char('\n')), true);
+
+  QVERIFY2(most <= 2 * ProcessOutputPanel::MaxLines,
+           qPrintable(QStringLiteral("%1 blocks laid out").arg(most)));
+  QCOMPARE(doc->blockCount(), ProcessOutputPanel::MaxLines);
+  QCOMPARE(panel.lineCount(), 21 * ProcessOutputPanel::MaxLines);
+  const QString text = edit(panel)->toPlainText();
+  QVERIFY2(text.startsWith(QStringLiteral("20001: line 19000\n")),
+           qPrintable(text.left(40)));
+  QVERIFY2(text.endsWith(QStringLiteral("21000: line 19999")),
+           qPrintable(text.right(40)));
 }
 
 void tst_processoutputpanel::clearResetsCounterAndAutoScroll() {

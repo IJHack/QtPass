@@ -805,6 +805,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- The **Process output** panel keeps only the last 1000 lines of a command's
+  output before it shows them, instead of laying out every line first. A
+  Git host that answered a push with 100,000 lines froze the window for
+  about 13 seconds (scan ANT-2026-WIB6OLKY).
 - With **Autoclear panel** on, content search results get a deadline of
   their own. A Pull or Push while they were listed stopped the only timer,
   so the decrypted lines stayed on screen until you left the search; and
