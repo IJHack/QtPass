@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 12:47:09</td>
+            <td class="headerValue">2026-11-24 14:20:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -106,10 +106,10 @@
 <span id="L33"><span class="lineNum">      33</span>              :  * @return The contents, or nothing when the file is absent, not a regular</span>
 <span id="L34"><span class="lineNum">      34</span>              :  *         file or too large.</span>
 <span id="L35"><span class="lineNum">      35</span>              :  */</span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          30 : auto readTemplateFile(const QString &amp;path) -&gt; std::optional&lt;QString&gt; {</span></span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">          30 :   QFile file;</span></span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          30 :   if (!Util::openRegularFile(path, file)) {</span></span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          13 :     return std::nullopt;</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          31 : auto readTemplateFile(const QString &amp;path) -&gt; std::optional&lt;QString&gt; {</span></span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">          31 :   QFile file;</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          31 :   if (!Util::openRegularFile(path, file)) {</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          14 :     return std::nullopt;</span></span>
 <span id="L40"><span class="lineNum">      40</span>              :   }</span>
 <span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">          17 :   const QByteArray bytes = file.read(kMaxTemplateFileBytes + 1);</span></span>
 <span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">          17 :   if (bytes.size() &gt; kMaxTemplateFileBytes) {</span></span>
@@ -122,7 +122,7 @@
 <span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          16 :   const QByteArray bom(&quot;\xEF\xBB\xBF&quot;);</span></span>
 <span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          32 :   return QString::fromUtf8(bytes.startsWith(bom) ? bytes.mid(bom.size())</span></span>
 <span id="L51"><span class="lineNum">      51</span>              :                                                  : bytes);</span>
-<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          30 : }</span></span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          31 : }</span></span>
 <span id="L53"><span class="lineNum">      53</span>              : </span>
 <span id="L54"><span class="lineNum">      54</span>              : /// The name of a `[section]` header line; nothing for any other line, and</span>
 <span id="L55"><span class="lineNum">      55</span>              : /// an empty name for `[]`.</span>
@@ -182,32 +182,32 @@
 <span id="L109"><span class="lineNum">     109</span>              :   return result;</span>
 <span id="L110"><span class="lineNum">     110</span> <span class="tlaGNC">           8 : }</span></span>
 <span id="L111"><span class="lineNum">     111</span>              : </span>
-<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">           8 : auto TemplateIO::secretFieldsIn(const QString &amp;templateText) -&gt; QStringList {</span></span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">           9 : auto TemplateIO::secretFieldsIn(const QString &amp;templateText) -&gt; QStringList {</span></span>
 <span id="L113"><span class="lineNum">     113</span>              :   static const QRegularExpression marker(</span>
 <span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">           2 :       QStringLiteral(&quot;^#\\s*secret\\s*:(.*)$&quot;),</span></span>
-<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">          10 :       QRegularExpression::CaseInsensitiveOption);</span></span>
-<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">           8 :   QStringList names;</span></span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">           8 :   const QStringList lines = templateText.split(QLatin1Char('\n'));</span></span>
-<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">          44 :   for (const QString &amp;line : lines) {</span></span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">          36 :     const QRegularExpressionMatch match = marker.match(line.trimmed());</span></span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">          36 :     if (!match.hasMatch()) {</span></span>
+<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">          11 :       QRegularExpression::CaseInsensitiveOption);</span></span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">           9 :   QStringList names;</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">           9 :   const QStringList lines = templateText.split(QLatin1Char('\n'));</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">          47 :   for (const QString &amp;line : lines) {</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">          38 :     const QRegularExpressionMatch match = marker.match(line.trimmed());</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">          38 :     if (!match.hasMatch()) {</span></span>
 <span id="L121"><span class="lineNum">     121</span>              :       continue;</span>
 <span id="L122"><span class="lineNum">     122</span>              :     }</span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          10 :     const QStringList listed = match.captured(1).split(QLatin1Char(','));</span></span>
-<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">          24 :     for (const QString &amp;name : listed) {</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          11 :     const QStringList listed = match.captured(1).split(QLatin1Char(','));</span></span>
+<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">          26 :     for (const QString &amp;name : listed) {</span></span>
 <span id="L125"><span class="lineNum">     125</span>              :       const QString trimmed = name.trimmed();</span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">          14 :       if (!trimmed.isEmpty()) {</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">          15 :       if (!trimmed.isEmpty()) {</span></span>
 <span id="L127"><span class="lineNum">     127</span>              :         names &lt;&lt; trimmed;</span>
 <span id="L128"><span class="lineNum">     128</span>              :       }</span>
 <span id="L129"><span class="lineNum">     129</span>              :     }</span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">          36 :   }</span></span>
-<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">           8 :   return names;</span></span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">          38 :   }</span></span>
+<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">           9 :   return names;</span></span>
 <span id="L132"><span class="lineNum">     132</span>              : }</span>
 <span id="L133"><span class="lineNum">     133</span>              : </span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">           5 : auto TemplateIO::readSecretFields(const QString &amp;storePath) -&gt; QStringList {</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">           6 : auto TemplateIO::readSecretFields(const QString &amp;storePath) -&gt; QStringList {</span></span>
 <span id="L135"><span class="lineNum">     135</span>              :   const std::optional&lt;QString&gt; contents =</span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">          10 :       readTemplateFile(QDir(storePath).filePath(&quot;.templates&quot;));</span></span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          10 :   return contents ? secretFieldsIn(*contents) : QStringList();</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">          12 :       readTemplateFile(QDir(storePath).filePath(&quot;.templates&quot;));</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          12 :   return contents ? secretFieldsIn(*contents) : QStringList();</span></span>
 <span id="L138"><span class="lineNum">     138</span>              : }</span>
 <span id="L139"><span class="lineNum">     139</span>              : </span>
 <span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">         157 : auto TemplateIO::fieldsIn(const QString &amp;templateText) -&gt; QStringList {</span></span>
@@ -218,19 +218,19 @@
 <span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">         157 :   QStringList fields;</span></span>
 <span id="L146"><span class="lineNum">     146</span>              :   int named = 0;</span>
 <span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">         157 :   const QStringList lines = templateText.split(QLatin1Char('\n'));</span></span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">        4342 :   for (const QString &amp;line : lines) {</span></span>
-<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">        4187 :     if (line.trimmed().startsWith(QLatin1Char('#'))) {</span></span>
-<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">           5 :       continue;</span></span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">        4340 :   for (const QString &amp;line : lines) {</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">        4185 :     if (line.trimmed().startsWith(QLatin1Char('#'))) {</span></span>
+<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">           7 :       continue;</span></span>
 <span id="L151"><span class="lineNum">     151</span>              :     }</span>
 <span id="L152"><span class="lineNum">     152</span>              :     // Counted as setTemplate() builds rows: for every line not empty, a</span>
 <span id="L153"><span class="lineNum">     153</span>              :     // line of blanks too.</span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">        4182 :     if (!line.isEmpty()) {</span></span>
-<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">        3093 :       if (named == FileContent::kMaxNamedFields) {</span></span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">        4178 :     if (!line.isEmpty()) {</span></span>
+<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">        3089 :       if (named == FileContent::kMaxNamedFields) {</span></span>
 <span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">           4 :         qWarning() &lt;&lt; &quot;Template has more than&quot; &lt;&lt; FileContent::kMaxNamedFields</span></span>
 <span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">           2 :                    &lt;&lt; &quot;fields; ignoring the rest&quot;;</span></span>
 <span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">           2 :         break;</span></span>
 <span id="L159"><span class="lineNum">     159</span>              :       }</span>
-<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">        3091 :       ++named;</span></span>
+<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">        3087 :       ++named;</span></span>
 <span id="L161"><span class="lineNum">     161</span>              :     }</span>
 <span id="L162"><span class="lineNum">     162</span>              :     fields.append(line);</span>
 <span id="L163"><span class="lineNum">     163</span>              :   }</span>

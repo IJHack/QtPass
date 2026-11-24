@@ -1,0 +1,9 @@
+<map id="MainWindow::grepLineForDisplay" name="MainWindow::grepLineForDisplay">
+<area shape="rect" id="Node000001" title="A content search match as the results list shows it, by the display panel&#39;s rules: a one&#45;time passwor..." alt="" coords="5,57,243,85"/>
+<area shape="rect" id="Node000002" href="$class_native_grep.html#af1a96b33afcc5c919805cc284ad7722b" title="Whether a line in a result stands for a match in a line holding a one&#45;time password secret (FileConte..." alt="" coords="316,5,498,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,54,315,35,310,37,204,59"/>
+<area shape="rect" id="Node000003" href="$class_native_grep.html#a54b11323f2f692cdf24ee5fffcd9f92c" title="Whether a line in a result is a match in the entry&#39;s first line, the password: passwordMatchText() is..." alt="" coords="299,57,514,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="243,69,286,71,281,72,243,74"/>
+<area shape="rect" id="Node000004" href="$class_native_grep.html#a9951254ad5d4bd85d22ecb60611a6f32" title="The text of a match isPasswordMatch() accepts." alt="" coords="291,109,523,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="204,83,315,105,310,107,203,88"/>
+</map>

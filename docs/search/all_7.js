@@ -89,7 +89,8 @@ var searchData=
   ['gpgrecordtype_86',['GpgRecordType',['../gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314',1,'gpgkeystate.h']]],
   ['gpgsupportsed25519_87',['gpgSupportsEd25519',['../class_pass.html#a57cc7915c4d3f4a795b0ec8ad4056482',1,'Pass']]],
   ['grep_88',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]],
-  ['grepsearchcontroller_89',['GrepSearchController',['../class_grep_search_controller.html',1,'']]],
-  ['grepsearchcontroller_2eh_90',['grepsearchcontroller.h',['../grepsearchcontroller_8h.html',1,'']]],
-  ['grp_91',['Grp',['../gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9',1,'gpgkeystate.h']]]
+  ['greplinefordisplay_89',['grepLineForDisplay',['../class_main_window.html#a46ed98f1afe90052e5eb3780d304e704',1,'MainWindow']]],
+  ['grepsearchcontroller_90',['GrepSearchController',['../class_grep_search_controller.html',1,'']]],
+  ['grepsearchcontroller_2eh_91',['grepsearchcontroller.h',['../grepsearchcontroller_8h.html',1,'']]],
+  ['grp_92',['Grp',['../gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9',1,'gpgkeystate.h']]]
 ];

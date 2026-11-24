@@ -56,5 +56,6 @@ var searchData=
   ['gpgidsigner_53',['GpgIdSigner',['../class_gpg_id_signer.html#a4861ba0784a1a7644ca697e3a72cd5b5',1,'GpgIdSigner']]],
   ['gpgidsigner_54',['gpgIdSigner',['../class_imitate_pass.html#aff483e62ab4ceede87aa3007c8f55588',1,'ImitatePass']]],
   ['gpgsupportsed25519_55',['gpgSupportsEd25519',['../class_pass.html#a57cc7915c4d3f4a795b0ec8ad4056482',1,'Pass']]],
-  ['grep_56',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]]
+  ['grep_56',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]],
+  ['greplinefordisplay_57',['grepLineForDisplay',['../class_main_window.html#a46ed98f1afe90052e5eb3780d304e704',1,'MainWindow']]]
 ];

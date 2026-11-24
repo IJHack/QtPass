@@ -161,6 +161,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5923d0185ca5c7739b00ef8159a11681" id="r_a5923d0185ca5c7739b00ef8159a11681"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5923d0185ca5c7739b00ef8159a11681">isMoreMarker</a> (const QString &amp;line) -&gt; bool</td></tr>
 <tr class="memdesc:a5923d0185ca5c7739b00ef8159a11681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a line in a result is the marker for "more matches in
 this entry" rather than a match.  <br /></td></tr>
+<tr class="memitem:af1a96b33afcc5c919805cc284ad7722b" id="r_af1a96b33afcc5c919805cc284ad7722b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af1a96b33afcc5c919805cc284ad7722b">isOtpMarker</a> (const QString &amp;line) -&gt; bool</td></tr>
+<tr class="memdesc:af1a96b33afcc5c919805cc284ad7722b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a line in a result stands for a match in a line holding a one-time password secret (<a class="el" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">FileContent::isOtpLine()</a>, or <a class="el" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password.">FileContent::isOtpPasswordLine()</a> for the first line), whose text is left out.  <br /></td></tr>
+<tr class="memitem:a54b11323f2f692cdf24ee5fffcd9f92c" id="r_a54b11323f2f692cdf24ee5fffcd9f92c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a54b11323f2f692cdf24ee5fffcd9f92c">isPasswordMatch</a> (const QString &amp;line) -&gt; bool</td></tr>
+<tr class="memdesc:a54b11323f2f692cdf24ee5fffcd9f92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a line in a result is a match in the entry's first line, the password: <a class="el" href="#a9951254ad5d4bd85d22ecb60611a6f32" title="The text of a match isPasswordMatch() accepts.">passwordMatchText()</a> is its text, shown only where the panel would show the password.  <br /></td></tr>
+<tr class="memitem:a9951254ad5d4bd85d22ecb60611a6f32" id="r_a9951254ad5d4bd85d22ecb60611a6f32"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9951254ad5d4bd85d22ecb60611a6f32">passwordMatchText</a> (const QString &amp;line) -&gt; QString</td></tr>
+<tr class="memdesc:a9951254ad5d4bd85d22ecb60611a6f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">The text of a match <a class="el" href="#a54b11323f2f692cdf24ee5fffcd9f92c" title="Whether a line in a result is a match in the entry&#39;s first line, the password: passwordMatchText() is...">isPasswordMatch()</a> accepts.  <br /></td></tr>
 <tr class="memitem:aa2bfb9a0d2fcdf94150d325e58e988d7" id="r_aa2bfb9a0d2fcdf94150d325e58e988d7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2bfb9a0d2fcdf94150d325e58e988d7">isStoppedMarker</a> (const QPair&lt; QString, QStringList &gt; &amp;result) -&gt; bool</td></tr>
 <tr class="memdesc:aa2bfb9a0d2fcdf94150d325e58e988d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a result is the marker for "the search stopped at
 kMaxMatches, more entries were not searched".  <br /></td></tr>
@@ -221,7 +227,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00021">21</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00023">23</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
 
 </div>
 </div>
@@ -250,7 +256,7 @@ Private Attributes</h2></td></tr>
 
 <p>Interrupt running searches and wait up to five seconds for them. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00023">23</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00025">25</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -278,7 +284,7 @@ Private Attributes</h2></td></tr>
 
 <p>Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that is decrypting is terminated by its own worker thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00230">230</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00263">263</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -370,6 +376,90 @@ this entry" rather than a match. </p>
 
 </div>
 </div>
+<a id="af1a96b33afcc5c919805cc284ad7722b" name="af1a96b33afcc5c919805cc284ad7722b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a96b33afcc5c919805cc284ad7722b">&#9670;&#160;</a></span>isOtpMarker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto NativeGrep::isOtpMarker </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>line</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a line in a result stands for a match in a line holding a one-time password secret (<a class="el" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">FileContent::isOtpLine()</a>, or <a class="el" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password.">FileContent::isOtpPasswordLine()</a> for the first line), whose text is left out. </p>
+<p>A match never holds a line feed, so this marker (one line feed) cannot be mistaken for one. The display panel never shows such a line either. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A line of a result. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it is the marker. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00095">95</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_af1a96b33afcc5c919805cc284ad7722b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a54b11323f2f692cdf24ee5fffcd9f92c" name="a54b11323f2f692cdf24ee5fffcd9f92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b11323f2f692cdf24ee5fffcd9f92c">&#9670;&#160;</a></span>isPasswordMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto NativeGrep::isPasswordMatch </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>line</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a line in a result is a match in the entry's first line, the password: <a class="el" href="#a9951254ad5d4bd85d22ecb60611a6f32" title="The text of a match isPasswordMatch() accepts.">passwordMatchText()</a> is its text, shown only where the panel would show the password. </p>
+<p>Marked by a leading line feed, which no match holds. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A line of a result. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it is a match in the password. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00108">108</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a54b11323f2f692cdf24ee5fffcd9f92c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="aa2bfb9a0d2fcdf94150d325e58e988d7" name="aa2bfb9a0d2fcdf94150d325e58e988d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa2bfb9a0d2fcdf94150d325e58e988d7">&#9670;&#160;</a></span>isStoppedMarker()</h2>
 
@@ -403,11 +493,11 @@ kMaxMatches, more entries were not searched". </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it is the marker. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00094">94</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00131">131</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
 </div>
-<div id="dynsection-6-content" class="dyncontent hidden">
+<div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_aa2bfb9a0d2fcdf94150d325e58e988d7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -467,20 +557,62 @@ kMaxMatches, more entries were not searched". </p>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Matching lines, at most kMaxMatchesPerEntry and then a marker (<a class="el" href="#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">isMoreMarker()</a>) when there are more; empty when gpg fails, is cancelled or nothing matches. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Matching lines, at most kMaxMatchesPerEntry and then a marker (<a class="el" href="#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">isMoreMarker()</a>) when there are more; empty when gpg fails, is cancelled or nothing matches. A match in the first line is marked (<a class="el" href="#a54b11323f2f692cdf24ee5fffcd9f92c" title="Whether a line in a result is a match in the entry&#39;s first line, the password: passwordMatchText() is...">isPasswordMatch()</a>), one in a line holding a one-time password secret is only a marker (<a class="el" href="#af1a96b33afcc5c919805cc284ad7722b" title="Whether a line in a result stands for a match in a line holding a one-time password secret (FileConte...">isOtpMarker()</a>), and a cut <span class="tt">name: value</span> line keeps its whole name, or shows none of its value when the name is too long to keep. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00041">41</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00043">43</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
 </div>
-<div id="dynsection-7-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a99b72a4ac50c6c01b24f8376e30a7a68_cgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a99b72a4ac50c6c01b24f8376e30a7a68_cgraph.svg" width="100%" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
 </div>
-<div id="dynsection-8-content" class="dyncontent hidden">
+<div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a99b72a4ac50c6c01b24f8376e30a7a68_icgraph.svg" width="100%" height="569"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a9951254ad5d4bd85d22ecb60611a6f32" name="a9951254ad5d4bd85d22ecb60611a6f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9951254ad5d4bd85d22ecb60611a6f32">&#9670;&#160;</a></span>passwordMatchText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto NativeGrep::passwordMatchText </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>line</em></span></td><td>)</td>
+          <td> -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The text of a match <a class="el" href="#a54b11323f2f692cdf24ee5fffcd9f92c" title="Whether a line in a result is a match in the entry&#39;s first line, the password: passwordMatchText() is...">isPasswordMatch()</a> accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A line of a result. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The matched text, without its mark. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00117">117</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a9951254ad5d4bd85d22ecb60611a6f32_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -541,17 +673,17 @@ kMaxMatches, more entries were not searched". </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>(entry name without .gpg, matching lines) per file with matches, at most kMaxMatches lines in all, an entry cut short ending in a marker (<a class="el" href="#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">isMoreMarker()</a>); when the walk stopped at that budget with entries left, a last result that is a marker (<a class="el" href="#aa2bfb9a0d2fcdf94150d325e58e988d7" title="Whether a result is the marker for &quot;the search stopped atkMaxMatches, more entries were not searched&quot;...">isStoppedMarker()</a>). Empty when the search is stopped. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00107">107</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00140">140</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
 </div>
-<div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a9c2523a0d1d82bc0201c6730bfa13a10_cgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a9c2523a0d1d82bc0201c6730bfa13a10_cgraph.svg" width="100%" height="596"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-10-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a9c2523a0d1d82bc0201c6730bfa13a10_icgraph.svg" width="100%" height="569"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -605,17 +737,17 @@ kMaxMatches, more entries were not searched". </p>
 </dl>
 <p>Results are emitted on the owner's thread via QMetaObject::invokeMethod. A sequence counter discards results from superseded searches; the previous search is asked to stop but not waited for, since blocking the UI thread while gpg decrypts would freeze the interface. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00160">160</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00193">193</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a393b6a05c39649304a77151702b76ec7_cgraph.svg" width="100%" height="459"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a393b6a05c39649304a77151702b76ec7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a393b6a05c39649304a77151702b76ec7_icgraph.svg" width="100%" height="569"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -725,7 +857,7 @@ kMaxMatches, more entries were not searched". </p>
 
 <p>Number of the newest search. A worker reports through <a class="el" href="#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over.">finished()</a> only when its own number still equals this. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00179">179</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00220">220</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>
@@ -751,7 +883,7 @@ kMaxMatches, more entries were not searched". </p>
 
 <p>Searches still running, superseded ones included. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00181">181</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00222">222</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>

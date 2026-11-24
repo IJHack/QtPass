@@ -1,5 +1,10 @@
 var NAVTREEINDEX6 =
 {
+"main_8cpp_source.html":[4,0,0,0],
+"mainwindow_8cpp.html":[4,0,1,33],
+"mainwindow_8cpp_source.html":[4,0,1,33],
+"mainwindow_8h.html":[4,0,1,34],
+"mainwindow_8h_source.html":[4,0,1,34],
 "menubarpeek_8cpp.html":[4,0,1,35],
 "menubarpeek_8cpp_source.html":[4,0,1,35],
 "menubarpeek_8h.html":[4,0,1,36],
@@ -244,10 +249,5 @@ var NAVTREEINDEX6 =
 "struct_executor_1_1_exec_queue_item.html#a06963eefa82e1b35d4c62a3352fcd60f":[1,1,1,0,5],
 "struct_executor_1_1_exec_queue_item.html#a1f17ba7a8c263325ae0aeb53f679648d":[1,1,1,0,6],
 "struct_executor_1_1_exec_queue_item.html#a476a6bde2037d797a9ad756d35b2a37f":[1,1,1,0,3],
-"struct_executor_1_1_exec_queue_item.html#a75c7c5eb871a6ed24e54dfb8590f615c":[1,1,1,0,2],
-"struct_executor_1_1_exec_queue_item.html#a776ad4913f376526ba807a69b9868115":[1,1,1,0,4],
-"struct_executor_1_1_exec_queue_item.html#aae200387410008405bad538de9897db9":[1,1,1,0,1],
-"struct_executor_1_1_exec_queue_item.html#ad5f3b9570d82aa7aff0e8ba6a683616a":[1,1,1,0,0],
-"struct_executor_1_1_wsl_command.html":[1,1,1,1],
-"struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b":[1,1,1,1,0]
+"struct_executor_1_1_exec_queue_item.html#a75c7c5eb871a6ed24e54dfb8590f615c":[1,1,1,0,2]
 };

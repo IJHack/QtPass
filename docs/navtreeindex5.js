@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9":[1,2,8,22],
+"class_users_dialog.html#a9a6a4c61df81a43cf26fc0bfccedae01":[1,2,8,25],
+"class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b":[1,2,8,13],
+"class_users_dialog.html#aa1630582c14afcef9ad80398752762a4":[1,2,8,4],
+"class_users_dialog.html#aa6d656c586c0469fe10e5a7055255c07":[1,2,8,29],
 "class_users_dialog.html#aa9efcd78d2b82147dd8667ced397353a":[1,2,8,33],
 "class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22":[1,2,8,1],
 "class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2":[1,2,8,14],
@@ -244,10 +249,5 @@ var NAVTREEINDEX5 =
 "main_8cpp.html":[4,0,0,0],
 "main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4":[4,0,0,0,2],
 "main_8cpp.html#a995d2d6ad06426c0ea94fe89d742bde3":[4,0,0,0,1],
-"main_8cpp.html#aef4b6e5a592d917ddf43ca95fc3fc21c":[4,0,0,0,0],
-"main_8cpp_source.html":[4,0,0,0],
-"mainwindow_8cpp.html":[4,0,1,33],
-"mainwindow_8cpp_source.html":[4,0,1,33],
-"mainwindow_8h.html":[4,0,1,34],
-"mainwindow_8h_source.html":[4,0,1,34]
+"main_8cpp.html#aef4b6e5a592d917ddf43ca95fc3fc21c":[4,0,0,0,0]
 };
