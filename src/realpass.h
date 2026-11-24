@@ -259,10 +259,19 @@ class RealPass : public Pass {
                    bool verbose, QStringList *fields) -> bool;
 
   /**
+   * @brief Refuse, and tell the user, when @p entry is set: an entry named
+   * like a password that is no regular file, which pass would hand to gpg.
+   * @param entry Its path, or empty when there is none.
+   * @return Whether it was refused.
+   */
+  auto refuseSpecialEntry(const QString &entry) -> bool;
+
+  /**
    * @brief For a folder pass is about to re-encrypt in a move or copy:
-   * refuse when the signed list of one of its entries (every one pass's
-   * walk takes, hidden ones included) is not one QtPass accepts where it
-   * lies now (as refuseUnverifiedList()).
+   * refuse when an entry pass's walk takes (hidden ones included) is no
+   * regular file (refuseSpecialEntry()), or when the signed list of one of
+   * them is not one QtPass accepts where it lies now (as
+   * refuseUnverifiedList()).
    * @param dir The folder moved or copied, or the existing folder written
    *        into. Each of its folders' lists counts, used by an entry yet or
    *        not: a copy merges into a folder of the same name, so lists on

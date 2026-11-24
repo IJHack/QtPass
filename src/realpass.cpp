@@ -263,7 +263,47 @@ auto passFoldersUnder(const QString &dir, QStringList &unreadable)
   }
   return folders;
 }
+
+/**
+ * @brief The first entry in @p folders that pass's walk hands to gpg but
+ *        that is no regular file: a FIFO, socket or device named like an
+ *        entry ("*.gpg" in any case, as `find -iname`, hidden ones too).
+ * @param folders Folders as passFoldersUnder() lists them.
+ * @return Its path, or empty when there is none.
+ *
+ * gpg waits forever to open a FIFO nobody writes to, and the command queue
+ * waits behind it. Links are left out, as pass skips them; a folder so
+ * named makes gpg fail at once.
+ */
+auto firstSpecialEntry(const QStringList &folders) -> QString {
+  for (const QString &folder : folders) {
+    const QFileInfoList entries = QDir(folder).entryInfoList(
+        {QStringLiteral("*.gpg")}, QDir::Files | QDir::System | QDir::Hidden,
+        QDir::Name);
+    for (const QFileInfo &entry : entries) {
+      if (!entry.isSymLink() && !entry.isFile() && !entry.isDir()) {
+        return entry.filePath();
+      }
+    }
+  }
+  return {};
+}
 } // namespace
+
+auto RealPass::refuseSpecialEntry(const QString &entry) -> bool {
+  if (entry.isEmpty()) {
+    return false;
+  }
+  const QString title = tr("Not a password file");
+  //: %1 is a path in the password store.
+  const QString text =
+      tr("%1 is named like a password but is not a regular file (for "
+         "example a named pipe). pass would wait on it forever, so nothing "
+         "was changed. Remove it, then try again.")
+          .arg(QDir::toNativeSeparators(entry));
+  emit critical(title, text);
+  return true;
+}
 
 auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
                                     const QString &except) -> bool {
@@ -281,6 +321,9 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
            "it, so nothing was changed. Rename it, then try again.")
             .arg(QDir::toNativeSeparators(unreadable.first()));
     emit critical(title, text);
+    return true;
+  }
+  if (refuseSpecialEntry(firstSpecialEntry(folders))) {
     return true;
   }
   // Absolute, as getGpgIdPath() hands lists back: a relative or other
@@ -1155,6 +1198,15 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   // writes through a link planted under that name.
   if (destFileInfo.isDir() &&
       refuseLinkedPath(QDir(dest).filePath(srcFileInfo.fileName()))) {
+    return;
+  }
+
+  // pass re-encrypts a moved or copied entry at its new place, and gpg
+  // never returns from a FIFO named like one.
+  if (refuseSpecialEntry(srcFileInfo.exists() && !srcFileInfo.isFile() &&
+                                 !srcFileInfo.isDir()
+                             ? src
+                             : QString())) {
     return;
   }
 
