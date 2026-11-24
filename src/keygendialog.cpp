@@ -130,6 +130,13 @@ static QStringList batchLines(QString batch) {
  * @param value
  */
 void KeygenDialog::replace(const QString &key, const QString &value) {
+  // A pasted line break would put batch directives of its own into the
+  // template (%pubring <file> has gpg overwrite that file), and correcting
+  // the field later would leave them there: nothing such goes in. done()
+  // refuses the field itself.
+  if (hasBatchBreak(value) || !isWholeText(value)) {
+    return;
+  }
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
   const QStringList lines = batchLines(expert);
@@ -222,6 +229,27 @@ bool KeygenDialog::isBatchPassphrase(const QString &passphrase) {
          (!blank(passphrase.front()) && !blank(passphrase.back()));
 }
 
+// The value goes into the template box and comes back through
+// toPlainText(), which hands the Unicode line and paragraph separators and
+// Qt's frame markers back as LF. A line edit shows the separators as a
+// space, so a pasted name looked like one line.
+bool KeygenDialog::hasBatchBreak(const QString &value) {
+  return std::any_of(value.cbegin(), value.cend(), [](QChar c) {
+    switch (c.unicode()) {
+    case '\n':
+    case '\r':
+    case 0:
+    case QChar::LineSeparator:
+    case QChar::ParagraphSeparator:
+    case 0xFDD0: // QTextBeginningOfFrame
+    case 0xFDD1: // QTextEndOfFrame
+      return true;
+    default:
+      return false;
+    }
+  });
+}
+
 // Pairs walked by hand: QStringView::isValidUtf16() needs Qt 5.15.
 bool KeygenDialog::isWholeText(const QString &value) {
   for (int i = 0; i < value.size(); ++i) {
@@ -243,6 +271,16 @@ bool KeygenDialog::isWholeText(const QString &value) {
  */
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) { //  ok was pressed
+    // Pasted text with a line break would become batch directives of its
+    // own (replace() kept it out of the template); the email is matched
+    // whole by its pattern below.
+    if (hasBatchBreak(ui->name->text()) ||
+        hasBatchBreak(ui->passphrase1->text())) {
+      QMessageBox::critical(this, tr("Invalid input"),
+                            tr("The name and the passphrase cannot contain "
+                               "line breaks."));
+      return;
+    }
     if (!isWholeText(ui->name->text()) ||
         !isWholeText(ui->passphrase1->text())) {
       QMessageBox::critical(this, tr("Invalid input"),
