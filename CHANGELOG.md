@@ -167,6 +167,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- The content search results follow the display settings. With **Hide
+  password** a match in the password, in a secret field, in a field the
+  template marks, or in any field with **Hide every field**, shows the
+  field's name but not its value. A line that holds a one-time password
+  secret is never shown. They used to show every matching line as it is,
+  unless all content was hidden (scan finding ANT-2026-OI3FLBKH)
 - With the `pass` backend, **OK** in the Users dialog and a move or copy
   are refused when the folder `pass` would re-encrypt holds something named
   like a password that is no regular file, such as a named pipe. `pass`

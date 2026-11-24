@@ -704,13 +704,7 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
     return;
   }
   const AppSettings s = QtPassSettings::load();
-  // What a template marks secret, in the settings or the store's
-  // .templates; read per entry shown, so an edit there counts at once.
-  if (s.hidePassword) {
-    m_displayPanel->setMarkedSecrets(
-        TemplateIO::secretFieldsIn(s.passTemplate) +
-        TemplateIO::readSecretFields(s.passStore));
-  }
+  refreshMarkedSecrets(s);
   QStringList templ =
       s.useTemplate ? TemplateIO::fieldsIn(s.passTemplate) : QStringList();
   bool allFields = s.useTemplate && s.templateAllFields;
@@ -1047,6 +1041,36 @@ void MainWindow::on_grepButton_toggled(bool checked) {
   }
 }
 
+void MainWindow::refreshMarkedSecrets(const AppSettings &s) {
+  if (s.hidePassword) {
+    m_displayPanel->setMarkedSecrets(
+        TemplateIO::secretFieldsIn(s.passTemplate) +
+        TemplateIO::readSecretFields(s.passStore));
+  }
+}
+
+auto MainWindow::grepLineForDisplay(const QString &line,
+                                    const AppSettings &s) const -> QString {
+  const QString hidden =
+      QStringLiteral("***") + tr("hidden") + QStringLiteral("***");
+  if (NativeGrep::isOtpMarker(line)) {
+    return tr("One-time password secret: %1").arg(hidden);
+  }
+  // The panel's own rules: the password and a field it would put behind
+  // the eye button keep their value out of the list too.
+  if (NativeGrep::isPasswordMatch(line)) {
+    return m_displayPanel->hides(QObject::tr("Password"), s)
+               ? tr("Password: %1").arg(hidden)
+               : NativeGrep::passwordMatchText(line);
+  }
+  if (const qsizetype colon = line.indexOf(QLatin1Char(':')); colon > 0) {
+    if (m_displayPanel->hides(line.left(colon).trimmed(), s)) {
+      return line.left(colon + 1) + QLatin1Char(' ') + hidden;
+    }
+  }
+  return line;
+}
+
 void MainWindow::onGrepFinished(
     const QList<QPair<QString, QStringList>> &results) {
   // Both backends stay connected, each with its own search: a search the
@@ -1077,6 +1101,7 @@ void MainWindow::onGrepFinished(
   }
   const AppSettings s = QtPassSettings::load();
   const bool hideContent = s.hideContent;
+  refreshMarkedSecrets(s);
   int totalLines = 0;
   int entries = 0;
   bool stopped = false;
@@ -1097,7 +1122,7 @@ void MainWindow::onGrepFinished(
         lineItem->setText(0, tr("… more matches in this entry"));
       } else {
         lineItem->setText(0, hideContent ? "***" + tr("Content hidden") + "***"
-                                         : line);
+                                         : grepLineForDisplay(line, s));
         ++totalLines;
       }
       lineItem->setData(0, Qt::UserRole, pair.first);

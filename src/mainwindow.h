@@ -254,6 +254,25 @@ public slots:
   void dropStaleToolsAreaPalettes();
 
   /**
+   * @brief Hand the display panel what a template marks secret, in the
+   * settings or the store's .templates, when "Hide password" is on. Read
+   * each time, so an edit there counts at once.
+   * @param s The settings in use.
+   */
+  void refreshMarkedSecrets(const AppSettings &s);
+
+  /**
+   * @brief A content search match as the results list shows it, by the
+   * display panel's rules: a one-time password secret never, the password
+   * and a hidden field (PasswordDisplayPanel::hides()) without their value.
+   * @param line A match from NativeGrep::matchFile().
+   * @param s The settings in use.
+   * @return The text to show.
+   */
+  [[nodiscard]] auto grepLineForDisplay(const QString &line,
+                                        const AppSettings &s) const -> QString;
+
+  /**
    * @brief Handle results from a completed grep search.
    * @param results List of file/match pairs from the grep operation.
    */

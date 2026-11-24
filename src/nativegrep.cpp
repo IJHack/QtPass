@@ -7,6 +7,7 @@
  */
 #include "nativegrep.h"
 #include "executor.h"
+#include "filecontent.h"
 #include "pass.h"
 #include "util.h"
 #include <QDir>
@@ -61,7 +62,10 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
   // Line by line over the text, never a list of every line (a compressed
   // entry can expand into tens of millions), and a bounded number taken.
   QStringList matches;
+  bool first = true;
   for (QStringView line : QStringView(plaintext).tokenize(u'\n')) {
+    // The password is the first line, empty or not.
+    const bool password = std::exchange(first, false);
     if (line.endsWith(u'\r'))
       line.chop(1);
     const QStringView t = line.trimmed();
@@ -74,8 +78,19 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
       matches << QString(); // isMoreMarker(): not a match, not counted
       break;
     }
+    // A shared secret is never shown, as in the display panel: only that
+    // there was a match (isOtpMarker()).
+    const QString whole = t.toString();
+    if (password ? FileContent::isOtpPasswordLine(whole)
+                 : FileContent::isOtpLine(whole)) {
+      matches << QStringLiteral("\n");
+      continue;
+    }
+    // Marked, so the window shows it only where the panel would
+    // (isPasswordMatch()).
+    const QString mark = password ? QStringLiteral("\n") : QString();
     if (t.size() <= kMaxPreviewLength) {
-      matches << t.toString();
+      matches << mark + whole;
       continue;
     }
     // A window of the line that holds the match, a little context before
@@ -96,7 +111,13 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
       preview.prepend(QChar(0x2026));
     if (end < t.size())
       preview.append(QChar(0x2026));
-    matches << preview;
+    // A field's name decides whether its value is hidden: a window that
+    // starts past it keeps the name in front.
+    const qsizetype colon = t.indexOf(u':');
+    if (!password && colon > 0 && colon < start) {
+      preview.prepend(t.first(colon + 1).toString() + u' ');
+    }
+    matches << mark + preview;
   }
   return matches;
 }
