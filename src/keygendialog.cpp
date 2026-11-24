@@ -12,7 +12,6 @@
 #include "qprogressindicator.h"
 #include "qtpasssettings.h"
 #include "ui_keygendialog.h"
-#include "util.h"
 #include "windowstatestore.h"
 #include <QCheckBox>
 #include <QMessageBox>
@@ -88,6 +87,20 @@ void KeygenDialog::on_name_textChanged(const QString &arg1) {
   replace("Name-Real", arg1);
 }
 
+/**
+ * @brief Cut a batch template into its non-empty lines at CR and LF.
+ *
+ * Plain character splitting, no regex: QRegularExpression matches nothing in
+ * text that is not valid UTF-16, so a lone surrogate anywhere left the whole
+ * batch one "line" and %no-protection was never found.
+ * @param batch The template text.
+ * @return Its lines, without the line breaks and without empty ones.
+ */
+static QStringList batchLines(QString batch) {
+  batch.replace(QLatin1Char('\r'), QLatin1Char('\n'));
+  return batch.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+}
+
 void KeygenDialog::replace(const QString &key, const QString &value) {
   // A pasted line break would put batch directives of its own into the
   // template, and correcting the field later would leave them there:
@@ -97,8 +110,7 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
   }
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
-  const QStringList lines =
-      expert.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
+  const QStringList lines = batchLines(expert);
   for (QString line : lines) {
     line.replace(QRegularExpression(key + ":.*"), key + ": " + value);
     clear.append(line);
@@ -137,8 +149,7 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
 
   QStringList clear;
   bool spliced = false;
-  const QStringList lines =
-      batch.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
+  const QStringList lines = batchLines(batch);
   for (QString line : lines) {
     // gpg reads each line as a C string, so it ends at a NUL: what follows
     // one would hide "%no-protection" from the check below and not from
@@ -169,8 +180,12 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
 }
 
 auto KeygenDialog::isBatchValue(const QString &value) -> bool {
-  return !value.contains(QLatin1Char('\n')) &&
-         !value.contains(QLatin1Char('\r')) && !value.contains(QChar::Null);
+  return !hasBatchBreak(value) && QStringView(value).isValidUtf16();
+}
+
+auto KeygenDialog::hasBatchBreak(const QString &value) -> bool {
+  return value.contains(QLatin1Char('\n')) ||
+         value.contains(QLatin1Char('\r')) || value.contains(QChar::Null);
 }
 
 // What gpg's batch reader takes off a value: C isspace() after the colon,
@@ -197,11 +212,23 @@ void KeygenDialog::done(int r) {
     // Pasted text with a line break would become batch directives of its
     // own (replace() kept it out of the template); the email is matched
     // whole by its pattern below.
-    if (!isBatchValue(ui->name->text()) ||
-        !isBatchValue(ui->passphrase1->text())) {
+    if (hasBatchBreak(ui->name->text()) ||
+        hasBatchBreak(ui->passphrase1->text())) {
       QMessageBox::critical(this, tr("Invalid input"),
                             tr("The name and the passphrase cannot contain "
                                "line breaks."));
+      return;
+    }
+    // Half of a character (one surrogate of an emoji, pasted in-process or
+    // from a UTF-16 clipboard) is no text gpg can take: the name would not
+    // be the one typed, and the passphrase would protect the key with
+    // another one.
+    if (!isBatchValue(ui->name->text()) ||
+        !isBatchValue(ui->passphrase1->text())) {
+      QMessageBox::critical(this, tr("Invalid input"),
+                            tr("The name or the passphrase holds half of a "
+                               "character, such as a broken emoji. Type it "
+                               "again."));
       return;
     }
     // gpg would protect the key without the blanks, and then refuse the

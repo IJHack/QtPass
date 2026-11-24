@@ -71,10 +71,19 @@ public:
    * The batch is line-oriented, and gpg reads a line as a C string: a line
    * break or NUL in a name or passphrase would start a directive of its own
    * (%no-protection, a Passphrase: of the paster's choosing).
+   * Text that is not valid UTF-16 (a lone surrogate) is refused too: gpg
+   * gets no such text, only a replacement for it.
    * @param value A field's text.
-   * @return False when it holds a CR, LF or NUL.
+   * @return False when it holds a CR, LF or NUL, or is not valid UTF-16.
    */
   [[nodiscard]] static auto isBatchValue(const QString &value) -> bool;
+  /**
+   * @brief Whether a field's text holds a line break or NUL, which would end
+   *        its batch line early.
+   * @param value A field's text.
+   * @return True when it holds a CR, LF or NUL.
+   */
+  [[nodiscard]] static auto hasBatchBreak(const QString &value) -> bool;
 
   /**
    * @brief Whether gpg reads @p passphrase back as typed from a batch
