@@ -396,11 +396,23 @@ private slots:
   void on_treeView_doubleClicked(const QModelIndex &index);
   /**
    * @brief Empty the display panel and the text browser, and leave content
-   *        search if its results were showing. Runs on the autoclear timer.
+   *        search if its results were showing.
    * @param notify true to show "Password and content hidden" in the browser,
    *        false to leave it blank.
    */
   void clearPanel(bool notify = true);
+  /**
+   * @brief Empty the display panel and the text browser and close the QR
+   *        code: the shown entry only. Runs on clearPanelTimer.
+   * @param notify true to show "Password and content hidden" in the browser,
+   *        false to leave it blank.
+   */
+  void clearShownEntry(bool notify);
+  /**
+   * @brief Empty the content search results and, if they were showing, put
+   *        the tree back and leave content search. Runs on clearResultsTimer.
+   */
+  void clearContentResults();
   /**
    * @brief The search box changed (name filtering only): drop the pending
    *        decrypt and the panel, expand the tree and restart searchTimer.
@@ -579,11 +591,15 @@ private:
   ProcessOutputPanel *m_processOutput = nullptr;
   /// The store as shown in the tree: models, view setup, path mapping.
   StoreTree *m_tree = nullptr;
-  /// Single-shot timer that runs clearPanel() "Autoclear panel" seconds
+  /// Single-shot timer that runs clearShownEntry() "Autoclear panel" seconds
   /// after an entry was shown.
   QTimer clearPanelTimer, searchTimer; ///< searchTimer: single-shot 350 ms
                                        ///< debounce between typing in the
                                        ///< search box and onTimeoutSearch().
+  /// Single-shot timer that runs clearContentResults() "Autoclear panel"
+  /// seconds after content search results were listed. Their own deadline:
+  /// an operation that starts or an entry shown meanwhile does not move it.
+  QTimer clearResultsTimer;
   /// Re-enables the UI if a backend operation disables it but never reports
   /// completion (see setUiElementsEnabled); armed whenever the UI is
   /// disabled, stopped when it is enabled again.

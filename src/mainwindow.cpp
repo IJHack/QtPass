@@ -214,6 +214,7 @@ void MainWindow::initTextBrowser() {
       ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
     }
     clearPanelTimer.setInterval(MS_PER_SECOND * s.autoclearPanelSeconds);
+    clearResultsTimer.setInterval(clearPanelTimer.interval());
   }
   ui->textBrowser->setOpenExternalLinks(true);
   ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -244,7 +245,11 @@ void MainWindow::initDisplayPanel() {
 
 void MainWindow::initTimers() {
   clearPanelTimer.setSingleShot(true);
-  connect(&clearPanelTimer, &QTimer::timeout, this, [this]() { clearPanel(); });
+  connect(&clearPanelTimer, &QTimer::timeout, this,
+          [this]() { clearShownEntry(true); });
+  clearResultsTimer.setSingleShot(true);
+  connect(&clearResultsTimer, &QTimer::timeout, this,
+          &MainWindow::clearContentResults);
 
   searchTimer.setInterval(350);
   searchTimer.setSingleShot(true);
@@ -599,6 +604,7 @@ auto MainWindow::config() -> bool {
   activePass->updateEnv();
   m_tree->setPass(activePass);
   clearPanelTimer.setInterval(MS_PER_SECOND * s.autoclearPanelSeconds);
+  clearResultsTimer.setInterval(clearPanelTimer.interval());
   m_qtPass->clipboard().setAutoclearTimer();
 
   updateGitButtonVisibility();
@@ -819,11 +825,26 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output,
 }
 
 void MainWindow::clearPanel(bool notify) {
+  clearShownEntry(notify);
+  clearContentResults();
+}
+
+void MainWindow::clearShownEntry(bool notify) {
   m_displayPanel->clear();
   m_panelEntry.clear();
   // A QR code of the password is the password on screen as much as the
   // panel is; it is a popup of its own, not part of the panel.
   m_qtPass->closeQRCode();
+  if (notify) {
+    QString output = "***" + tr("Password and content hidden") + "***";
+    ui->textBrowser->setHtml(output);
+  } else {
+    ui->textBrowser->setHtml("");
+  }
+}
+
+void MainWindow::clearContentResults() {
+  clearResultsTimer.stop();
   const bool grepWasVisible = ui->grepResultsList->isVisible();
   ui->grepResultsList->clear();
   if (grepWasVisible) {
@@ -843,12 +864,6 @@ void MainWindow::clearPanel(bool notify) {
       ui->lineEdit->blockSignals(false);
       ui->lineEdit->setPlaceholderText(tr("Search password"));
     }
-  }
-  if (notify) {
-    QString output = "***" + tr("Password and content hidden") + "***";
-    ui->textBrowser->setHtml(output);
-  } else {
-    ui->textBrowser->setHtml("");
   }
 }
 
@@ -1156,8 +1171,11 @@ void MainWindow::onGrepFinished(
                                    tr("in %n entr(ies).", nullptr, entries),
                                3000);
   }
+  // The results' own deadline: restarting the entry's timer here gave an
+  // entry still on the panel a second period, and an operation that stops
+  // the entry's timer left the results up with none.
   if (s.useAutoclearPanel)
-    clearPanelTimer.start();
+    clearResultsTimer.start();
 }
 
 void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
