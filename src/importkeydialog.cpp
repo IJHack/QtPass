@@ -62,6 +62,36 @@ auto ImportKeyDialog::importedKeyId() const -> QString {
   return m_importedKeyId;
 }
 
+auto ImportKeyDialog::fitsTheEditor(QStringView text) -> bool {
+  qsizetype lines = 1;
+  qsizetype run = 0;
+  for (const QChar c : text) {
+    if (c == QLatin1Char('\n')) {
+      if (++lines > kMaxKeyLines) {
+        return false;
+      }
+      run = 0;
+    } else if (c != QLatin1Char('\r') && ++run > kMaxKeyLine) {
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * @brief The message for text that fails ImportKeyDialog::fitsTheEditor().
+ * @param what What holds the text: a file name, or "The clipboard".
+ * @return The plain-text message.
+ */
+static auto notLaidOutLikeAKey(const QString &what) -> QString {
+  return QCoreApplication::translate(
+             "ImportKeyDialog",
+             "%1 is not laid out like an ASCII-armored key: it has a line of "
+             "more than %2 characters or more than %3 lines.")
+      .arg(what, QString::number(ImportKeyDialog::kMaxKeyLine),
+           QString::number(ImportKeyDialog::kMaxKeyLines));
+}
+
 void ImportKeyDialog::on_fileButton_clicked() {
   const QString fileName = QFileDialog::getOpenFileName(
       this, tr("Import GPG key"), QString(),
@@ -114,7 +144,13 @@ void ImportKeyDialog::on_fileButton_clicked() {
     return;
   }
 
-  ui->inputTextEdit->setPlainText(QString::fromUtf8(bytes));
+  const QString text = QString::fromUtf8(bytes);
+  if (!fitsTheEditor(text)) {
+    PlainMessageBox::warning(this, tr("Import key"),
+                             notLaidOutLikeAKey(fileName));
+    return;
+  }
+  ui->inputTextEdit->setPlainText(text);
 }
 
 void ImportKeyDialog::on_pasteButton_clicked() {
@@ -123,6 +159,11 @@ void ImportKeyDialog::on_pasteButton_clicked() {
   if (text.isEmpty()) {
     // Don't wipe whatever the user already typed/loaded for an empty
     // clipboard.
+    return;
+  }
+  if (!fitsTheEditor(text)) {
+    PlainMessageBox::warning(this, tr("Import key"),
+                             notLaidOutLikeAKey(tr("The clipboard")));
     return;
   }
   ui->inputTextEdit->setPlainText(text);
