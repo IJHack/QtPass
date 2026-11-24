@@ -117,7 +117,9 @@ auto FirstRunWizard::secretKeys(const QString &gpgExecutable, QString *problem)
       &out, &err);
   if (rc != 0 && problem != nullptr) {
     constexpr qsizetype kMaxProblem = 400;
-    *problem = err.trimmed();
+    // It may quote a user ID someone else chose: no bidi overrides or other
+    // controls that change how the text around them reads.
+    *problem = Util::displayable(err.trimmed());
     if (problem->size() > kMaxProblem) {
       *problem = problem->left(kMaxProblem) + QChar(0x2026);
     }

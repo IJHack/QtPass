@@ -59,7 +59,8 @@ public:
    * failure lists no keys.
    * @param gpgExecutable The gpg binary.
    * @param problem Receives gpg's error output when it did not exit
-   *        cleanly, cut to a few hundred characters; null to not care.
+   *        cleanly, cut to a few hundred characters and made displayable
+   *        (Util::displayable()); null to not care.
    * @return The keys, or an empty list when gpg cannot run or failed.
    */
   static auto secretKeys(const QString &gpgExecutable,

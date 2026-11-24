@@ -523,7 +523,8 @@ void tst_firstrunwizard::secretKeysAreEmptyWhenGpgFails() {
       "23::0:'\n"
       "echo 'fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:'\n"
       "echo 'uid:u::::1774947438::X::Anne <anne@example.org>::::::::::0:'\n"
-      "echo 'gpg: <b>unknown</b> algorithm 99' >&2\n"
+      "echo 'gpg: <b>unknown</b> algorithm 99 for \xE2\x80\xAE"
+      "evil' >&2\n"
       "exit 2\n");
   const QString failing = script(QStringLiteral("gpg-fail"),
                                  "echo 'sec:u:4096:1:31850CF72D9CDDE9:1::::'\n"
@@ -533,6 +534,9 @@ void tst_firstrunwizard::secretKeysAreEmptyWhenGpgFails() {
   QString problem;
   QCOMPARE(FirstRunWizard::secretKeys(partial, &problem).size(), 1);
   QVERIFY2(problem.contains(QStringLiteral("unknown")), qPrintable(problem));
+  // A user ID quoted in it cannot turn the text around (a bidi override).
+  QVERIFY2(!problem.contains(QChar(0x202E)) && problem.contains(QChar(0xFFFD)),
+           qPrintable(problem));
   problem.clear();
   QVERIFY2(FirstRunWizard::secretKeys(failing, &problem).isEmpty(),
            "any other failure lists no keys, whatever it printed");
