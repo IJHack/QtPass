@@ -988,9 +988,13 @@ void PasswordDialog::setPass(const QString &output, const QString &file,
   }
   // A password or field longer than its line edit holds would be cut on
   // load and the cut value saved. Every line counts: a template switch can
-  // make a line of the notes a field.
+  // make a line of the notes a field. The CR of a CRLF line end is not
+  // part of what a field holds (FileContent::passwordLine()).
   qsizetype longest = 0;
-  for (const QStringView line : QStringView(output).tokenize(u'\n')) {
+  for (QStringView line : QStringView(output).tokenize(u'\n')) {
+    if (line.endsWith(u'\r')) {
+      line.chop(1);
+    }
     longest = std::max(longest, line.size());
   }
   if (longest > SecretLineEdit::kMaxLength) {

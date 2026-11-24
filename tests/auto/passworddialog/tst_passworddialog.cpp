@@ -901,7 +901,7 @@ void tst_passworddialog::aLineLongerThanQLineEditsDefaultIsKeptWhole() {
  *        and time on every paint. Such an entry is not loaded, the dialog
  *        says why, and nothing can be saved over it from here, also when
  *        the line is in the notes (a template switch can make it a field).
- *        A line of exactly that length loads whole.
+ *        A line of exactly that length loads whole, also with a CRLF end.
  */
 void tst_passworddialog::anEntryWithALineTooLongToHoldIsNotLoaded() {
   const qsizetype limit = SecretLineEdit::kMaxLength;
@@ -935,6 +935,19 @@ void tst_passworddialog::anEntryWithALineTooLongToHoldIsNotLoaded() {
   QCOMPARE(password->maxLength(), SecretLineEdit::kMaxLength);
   QCOMPARE(password->text().size(), limit);
   QVERIFY2(e.getPassword() == entry, "loaded whole, saved unchanged");
+
+  // The CR of a CRLF line end is no part of the password.
+  FakePass crlf;
+  PasswordDialog f(&crlf, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  const QString windows =
+      QString(limit, u'a') + QStringLiteral("\r\nlogin: alice\r\n");
+  crlf.deliverShow(windows);
+  auto *crlfPassword =
+      f.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY(crlfPassword != nullptr);
+  QCOMPARE(crlfPassword->text().size(), limit);
+  QVERIFY2(f.getPassword() == windows, "loaded whole, saved unchanged");
 }
 
 /**
