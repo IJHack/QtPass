@@ -69,7 +69,7 @@ public:
   /**
    * @brief hasBatchBreak whether a field's text holds a line break or NUL,
    * which would end its batch line early and start a gpg directive of its
-   * own (%no-protection, %pubring <file>).
+   * own (%no-protection, or %pubring with a file name).
    *
    * The template box reads U+2028, U+2029, U+FDD0 and U+FDD1 back as LF, so
    * those count as line breaks too.
