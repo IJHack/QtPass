@@ -249,11 +249,12 @@ auto nameTermOfLine(const QString &recipient) -> QString {
   if (line.isEmpty()) {
     return {};
   }
-  // A leading 0x, or digits only, is a key ID gpg reads in its own way
+  // A leading 0x, digits only, or groups of four digits split by spaces (a
+  // fingerprint as gpg prints it) is a key ID gpg reads in its own way
   // (keyIdOfLine() takes the lengths it accepts); ".", "+", "#", "&", "^",
   // "/" and "[" start search modes this dialog does not model.
-  static const QRegularExpression hexish(
-      QStringLiteral("^(?:0[xX]|[0-9A-Fa-f]+!?$)"));
+  static const QRegularExpression hexish(QStringLiteral(
+      "^(?:0[xX]|[0-9A-Fa-f]+!?$|[0-9A-Fa-f]{4}(?:\\s+[0-9A-Fa-f]{4})+!?$)"));
   if (hexish.match(line).hasMatch() ||
       QStringLiteral(".+#&^/[!\\").contains(line.front())) {
     return {};
@@ -346,13 +347,13 @@ void UsersDialog::selectRecipients(const QStringList &listed) {
   constexpr int kMaxLookups = 10;
   int lookups = 0;
   QHash<QString, bool> perLineHasKey;
-  QStringList notLookedUp;
+  QSet<QString> notLookedUp;
   for (const QString &recipient : std::as_const(recipients)) {
     if (judgedLocally(recipient)) {
       continue;
     }
     if (lookups++ >= kMaxLookups) {
-      notLookedUp.append(recipient);
+      notLookedUp.insert(recipient);
       continue;
     }
     const QList<UserInfo> keys = m_pass->listKeys(recipient);
