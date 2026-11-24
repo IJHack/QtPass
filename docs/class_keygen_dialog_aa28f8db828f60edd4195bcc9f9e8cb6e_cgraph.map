@@ -1,9 +1,12 @@
 <map id="KeygenDialog::on_email_textChanged" name="KeygenDialog::on_email_textChanged">
-<area shape="rect" id="Node000001" title="Mirrors the e&#45;mail field into the template&#39;s Name&#45;Email: line." alt="" coords="5,24,185,68"/>
-<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a1697fd1a20cad8dd3bd3491120525a25" title="Rewrites every &lt;key&gt;: ... line of the batch template to carry value. Values that fail isBatchValue() ..." alt="" coords="233,32,400,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,43,220,45,214,46,185,48"/>
-<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="448,5,651,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,34,435,32,430,33,401,39"/>
-<area shape="rect" id="Node000004" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="472,57,627,85"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="400,52,460,61,455,61,400,58"/>
+<area shape="rect" id="Node000001" title="Mirrors the e&#45;mail field into the template&#39;s Name&#45;Email: line." alt="" coords="5,48,185,92"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a1697fd1a20cad8dd3bd3491120525a25" title="Rewrites every &lt;key&gt;: ... line of the batch template to carry value. Values that fail isBatchValue() ..." alt="" coords="233,56,400,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,67,220,69,214,70,185,72"/>
+<area shape="rect" id="Node000003" href="$keygendialog_8cpp.html#aa13991db4a3cd48e28550a58607efab4" title="Cut a batch template into its non&#45;empty lines at CR and LF." alt="" coords="504,29,595,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,58,491,50,486,50,401,63"/>
+<area shape="rect" id="Node000004" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="448,81,651,109"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="400,76,435,82,430,82,400,82"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="510,28,503,20,508,11,524,5,550,3,577,5,593,14,588,14,576,10,550,8,525,10,512,15,509,20,515,30"/>
+<area shape="rect" id="Node000005" href="$class_keygen_dialog.html#a366f3fe8a9b24f0359b3df12e0a93244" title="Whether a field&#39;s text holds a line break or NUL, which would end its batch line early." alt="" coords="699,81,917,109"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="652,93,686,95,681,95,652,98"/>
 </map>

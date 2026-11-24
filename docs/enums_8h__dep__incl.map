@@ -1,156 +1,155 @@
 <map id="src/enums.h" name="src/enums.h">
-<area shape="rect" id="Node000001" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="4244,5,4344,33"/>
-<area shape="rect" id="Node000002" href="$appsettings_8h.html" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="3559,81,3691,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="4231,27,3692,89,3691,84,4226,28"/>
-<area shape="rect" id="Node000004" href="$configdialog_8h.html" title="Settings dialog: every page of the configuration window and the profile table, with the validation th..." alt="" coords="4556,308,4691,336"/>
-<area shape="poly" id="edge91_Node000001_Node000004" title=" " alt="" coords="4360,18,4452,21,4555,31,4648,49,4683,62,4708,79,4726,108,4730,139,4724,173,4711,206,4673,267,4637,310,4635,305,4669,264,4706,204,4719,171,4725,139,4721,109,4704,83,4681,67,4646,54,4554,36,4451,27,4360,23"/>
-<area shape="rect" id="Node000006" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="4723,384,4876,411"/>
-<area shape="poly" id="edge92_Node000001_Node000006" title=" " alt="" coords="4360,23,4562,43,4662,59,4734,78,4775,94,4809,109,4823,119,4834,131,4841,148,4843,169,4843,248,4840,288,4830,326,4807,386,4804,381,4825,325,4834,287,4838,247,4838,169,4836,149,4830,134,4820,123,4807,113,4773,99,4732,84,4661,64,4561,48,4360,28"/>
-<area shape="rect" id="Node000009" href="$mainwindow_8h.html" title="MainWindow: the main application window (tree, toolbar, search, status bar, process output dock) and ..." alt="" coords="4281,232,4419,260"/>
-<area shape="poly" id="edge93_Node000001_Node000009" title=" " alt="" coords="4298,47,4306,111,4322,183,4344,233,4340,231,4317,185,4300,112,4294,51"/>
-<area shape="rect" id="Node000011" href="$pass_8h.html" title="Pass, the abstract password&#45;store backend that RealPass and ImitatePass implement,..." alt="" coords="3046,157,3132,184"/>
-<area shape="poly" id="edge94_Node000001_Node000011" title=" " alt="" coords="4226,24,3933,44,3741,61,3547,84,3312,124,3132,162,3132,157,3311,118,3546,78,3740,56,3932,39,4231,23"/>
-<area shape="rect" id="Node000018" href="$qtpasssettings_8h.html" title="QtPassSettings, the QSettings singleton behind every saved setting, the profiles and the Pass backend..." alt="" coords="3305,308,3456,336"/>
-<area shape="poly" id="edge102_Node000001_Node000018" title=" " alt="" coords="4292,46,4284,81,4270,119,4249,156,4220,187,4177,205,4102,223,3888,260,3650,292,3457,315,3457,310,3649,287,3888,255,4101,218,4175,200,4217,182,4245,153,4265,117,4279,80,4287,50"/>
-<area shape="rect" id="Node000044" href="$processinfo_8h.html" title="Enums::ProcessInfo, the one table that names each kind of subprocess and says whether its output may ..." alt="" coords="4335,81,4466,109"/>
-<area shape="poly" id="edge95_Node000001_Node000044" title=" " alt="" coords="4326,39,4385,81,4379,80,4325,45"/>
-<area shape="rect" id="Node000047" href="$processoutputpanel_8h.html" title="ProcessOutputPanel: the dockable console that shows numbered, colour&#45;coded git/pass/gpg output." alt="" coords="4510,81,4694,109"/>
-<area shape="poly" id="edge99_Node000001_Node000047" title=" " alt="" coords="4360,33,4550,81,4544,80,4359,39"/>
-<area shape="rect" id="Node000048" href="$simpletransaction_8h.html" title="SimpleTransaction, the bookkeeping that lets ImitatePass report several queued processes as one finis..." alt="" coords="4025,81,4198,109"/>
-<area shape="poly" id="edge103_Node000001_Node000048" title=" " alt="" coords="4250,39,4145,83,4143,78,4245,40"/>
-<area shape="rect" id="Node000003" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="4548,384,4699,411"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="3675,112,3865,178,4108,257,4366,329,4572,383,4566,383,4365,334,4107,263,3863,183,3674,117"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="3706,105,3799,125,3898,154,3923,168,3949,182,4036,212,4106,228,4269,257,4423,286,4558,310,4553,310,4422,291,4268,263,4105,234,4035,217,3946,187,3921,173,3896,159,3798,130,3706,111"/>
-<area shape="rect" id="Node000007" href="$firstrunwizard_8h.html" title="The first&#45;run wizard and its four pages: programs, key, store and summary." alt="" coords="3583,308,3728,336"/>
-<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="3636,121,3646,156,3656,242,3658,309,3654,306,3651,243,3641,157,3633,126"/>
-<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="3707,103,3822,122,3886,136,3948,154,3977,168,4006,182,4078,202,4152,217,4283,238,4278,238,4151,222,4077,207,4004,187,3975,173,3947,159,3885,141,3821,127,3706,108"/>
-<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="3546,107,3133,166,3132,161,3540,108"/>
-<area shape="rect" id="Node000015" href="$passbackendfactory_8cpp.html" title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,..." alt="" coords="2522,384,2722,411"/>
-<area shape="poly" id="edge48_Node000002_Node000015" title=" " alt="" coords="3540,100,3313,120,3174,136,3035,159,2901,184,2846,202,2778,235,2729,270,2687,312,2654,354,2631,386,2629,381,2650,350,2683,309,2725,266,2775,230,2844,197,2900,179,3034,154,3173,131,3313,115,3546,100"/>
-<area shape="poly" id="edge54_Node000002_Node000018" title=" " alt="" coords="3631,122,3633,155,3631,192,3621,229,3602,262,3570,288,3534,305,3495,316,3457,322,3457,317,3494,311,3532,300,3568,283,3597,258,3616,227,3625,191,3628,155,3627,126"/>
-<area shape="rect" id="Node000028" href="$passworddialog_8h.html" title="Dialog for creating or editing one password entry, including the generator, template fields,..." alt="" coords="3752,308,3911,336"/>
-<area shape="poly" id="edge49_Node000002_Node000028" title=" " alt="" coords="3648,118,3822,308,3817,306,3646,123"/>
+<area shape="rect" id="Node000001" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="4401,5,4502,33"/>
+<area shape="rect" id="Node000002" href="$appsettings_8h.html" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="3716,81,3848,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="4389,27,3849,89,3848,84,4383,28"/>
+<area shape="rect" id="Node000004" href="$configdialog_8h.html" title="Settings dialog: every page of the configuration window and the profile table, with the validation th..." alt="" coords="4434,308,4570,336"/>
+<area shape="poly" id="edge90_Node000001_Node000004" title=" " alt="" coords="4460,46,4469,80,4491,212,4503,309,4499,306,4485,213,4464,82,4457,50"/>
+<area shape="rect" id="Node000006" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="4720,384,4874,411"/>
+<area shape="poly" id="edge91_Node000001_Node000006" title=" " alt="" coords="4517,21,4617,28,4732,39,4840,56,4883,66,4915,79,4949,95,4976,112,4994,135,5001,169,5001,248,4997,275,4985,299,4968,320,4946,339,4897,367,4847,386,4846,381,4894,362,4943,334,4964,317,4981,296,4992,273,4996,247,4996,169,4989,137,4972,116,4946,100,4913,83,4881,71,4839,61,4731,44,4616,33,4517,26"/>
+<area shape="rect" id="Node000009" href="$mainwindow_8h.html" title="MainWindow: the main application window (tree, toolbar, search, status bar, process output dock) and ..." alt="" coords="4276,232,4414,260"/>
+<area shape="poly" id="edge92_Node000001_Node000009" title=" " alt="" coords="4454,47,4447,114,4438,151,4422,186,4398,214,4369,234,4368,229,4394,210,4417,183,4433,149,4442,113,4450,50"/>
+<area shape="rect" id="Node000011" href="$pass_8h.html" title="Pass, the abstract password&#45;store backend that RealPass and ImitatePass implement,..." alt="" coords="3200,157,3287,184"/>
+<area shape="poly" id="edge93_Node000001_Node000011" title=" " alt="" coords="4383,24,4090,44,3898,61,3704,84,3468,124,3287,162,3287,157,3467,118,3703,78,3897,56,4090,39,4389,23"/>
+<area shape="rect" id="Node000018" href="$qtpasssettings_8h.html" title="QtPassSettings, the QSettings singleton behind every saved setting, the profiles and the Pass backend..." alt="" coords="3462,308,3614,336"/>
+<area shape="poly" id="edge101_Node000001_Node000018" title=" " alt="" coords="4449,46,4441,81,4427,119,4406,156,4377,187,4334,205,4259,223,4046,260,3807,292,3614,315,3614,310,3807,287,4045,255,4258,218,4333,200,4374,182,4402,153,4422,117,4436,80,4445,50"/>
+<area shape="rect" id="Node000044" href="$processinfo_8h.html" title="Enums::ProcessInfo, the one table that names each kind of subprocess and says whether its output may ..." alt="" coords="4543,81,4674,109"/>
+<area shape="poly" id="edge94_Node000001_Node000044" title=" " alt="" coords="4494,37,4584,81,4578,80,4493,43"/>
+<area shape="rect" id="Node000047" href="$processoutputpanel_8h.html" title="ProcessOutputPanel: the dockable console that shows numbered, colour&#45;coded git/pass/gpg output." alt="" coords="4718,81,4902,109"/>
+<area shape="poly" id="edge98_Node000001_Node000047" title=" " alt="" coords="4517,31,4749,81,4743,80,4517,37"/>
+<area shape="rect" id="Node000048" href="$simpletransaction_8h.html" title="SimpleTransaction, the bookkeeping that lets ImitatePass report several queued processes as one finis..." alt="" coords="4182,81,4356,109"/>
+<area shape="poly" id="edge102_Node000001_Node000048" title=" " alt="" coords="4407,39,4302,83,4301,78,4402,40"/>
+<area shape="rect" id="Node000003" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="4363,384,4513,411"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="3832,112,3941,154,4005,182,4291,306,4363,345,4421,384,4415,382,4360,350,4289,310,4002,187,3938,159,3831,117"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="3851,110,4004,154,4078,182,4134,206,4191,231,4264,257,4357,284,4444,308,4439,307,4356,289,4263,263,4189,236,4132,211,4076,187,4003,159,3851,116"/>
+<area shape="rect" id="Node000007" href="$firstrunwizard_8h.html" title="The first&#45;run wizard and its four pages: programs, key, store and summary." alt="" coords="3743,308,3888,336"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="3793,121,3803,156,3815,242,3817,309,3813,306,3809,243,3798,157,3790,126"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="3864,103,3980,122,4043,136,4106,154,4135,167,4163,182,4303,232,4297,231,4161,187,4133,172,4104,159,4042,141,3979,127,3864,108"/>
+<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="3703,107,3287,166,3287,161,3698,107"/>
+<area shape="rect" id="Node000015" href="$passbackendfactory_8cpp.html" title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,..." alt="" coords="2694,384,2894,411"/>
+<area shape="poly" id="edge48_Node000002_Node000015" title=" " alt="" coords="3698,100,3469,119,3329,136,3189,159,3060,185,3006,203,2939,235,2890,267,2850,310,2822,349,2802,386,2799,381,2817,347,2845,306,2887,263,2937,230,3004,198,3058,180,3188,154,3328,131,3469,114,3703,99"/>
+<area shape="poly" id="edge54_Node000002_Node000018" title=" " alt="" coords="3788,122,3791,155,3788,192,3778,229,3759,262,3728,288,3691,305,3652,316,3615,322,3614,317,3651,311,3689,300,3725,283,3755,258,3774,227,3783,191,3785,155,3784,126"/>
+<area shape="rect" id="Node000028" href="$passworddialog_8h.html" title="Dialog for creating or editing one password entry, including the generator, template fields,..." alt="" coords="3912,308,4071,336"/>
+<area shape="poly" id="edge49_Node000002_Node000028" title=" " alt="" coords="3801,119,3852,185,3917,258,3976,308,3971,307,3914,262,3848,188,3799,124"/>
 <area shape="rect" id="Node000029" href="$passworddisplaypanel_8cpp.html" title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local..." alt="" coords="2125,384,2341,411"/>
-<area shape="poly" id="edge52_Node000002_Node000029" title=" " alt="" coords="3541,99,3162,120,2958,137,2874,147,2811,159,2745,178,2690,197,2600,238,2512,285,2395,338,2269,386,2268,381,2393,333,2509,280,2598,234,2688,192,2743,172,2810,154,2873,142,2957,132,3161,115,3546,99"/>
+<area shape="poly" id="edge52_Node000002_Node000029" title=" " alt="" coords="3698,95,3557,100,3369,108,3157,127,3050,141,2945,159,2842,183,2737,212,2538,277,2372,340,2263,386,2262,380,2370,335,2537,272,2736,207,2840,178,2944,154,3049,136,3157,121,3368,103,3557,94,3703,95"/>
 <area shape="rect" id="Node000030" href="$profileinit_8cpp.html" title="Implements ProfileInit; the environments its gpg and git processes run in are built by withGpgHome() ..." alt="" coords="2365,384,2498,411"/>
-<area shape="poly" id="edge53_Node000002_Node000030" title=" " alt="" coords="3541,99,3199,120,3017,137,2943,147,2887,159,2842,175,2809,191,2734,235,2456,386,2454,381,2732,230,2806,187,2840,170,2885,154,2942,142,3017,132,3198,115,3546,99"/>
-<area shape="rect" id="Node000031" href="$settingsserializer_8h.html" title="SettingsSerializer: the flat AppSettings fields to and from their QSettings keys, without side effect..." alt="" coords="3413,157,3580,184"/>
-<area shape="poly" id="edge55_Node000002_Node000031" title=" " alt="" coords="3592,116,3520,159,3519,154,3586,117"/>
-<area shape="rect" id="Node000033" href="$usersdialog_8h.html" title="UsersDialog, the recipient picker for a folder&#39;s .gpg&#45;id." alt="" coords="3984,308,4116,336"/>
-<area shape="poly" id="edge58_Node000002_Node000033" title=" " alt="" coords="3656,115,3861,258,3929,285,3996,308,3991,307,3927,290,3858,262,3655,121"/>
+<area shape="poly" id="edge53_Node000002_Node000030" title=" " alt="" coords="3698,95,3573,100,3410,108,3228,127,3136,141,3047,159,2957,183,2866,212,2694,277,2551,340,2458,386,2456,381,2549,335,2692,272,2864,207,2955,178,3046,154,3135,136,3227,122,3409,103,3573,95,3703,95"/>
+<area shape="rect" id="Node000031" href="$settingsserializer_8h.html" title="SettingsSerializer: the flat AppSettings fields to and from their QSettings keys, without side effect..." alt="" coords="3570,157,3738,184"/>
+<area shape="poly" id="edge55_Node000002_Node000031" title=" " alt="" coords="3749,116,3678,159,3676,154,3744,117"/>
+<area shape="rect" id="Node000033" href="$usersdialog_8h.html" title="UsersDialog, the recipient picker for a folder&#39;s .gpg&#45;id." alt="" coords="4147,308,4278,336"/>
+<area shape="poly" id="edge58_Node000002_Node000033" title=" " alt="" coords="3821,114,4190,308,4185,307,3820,119"/>
 <area shape="rect" id="Node000034" href="$util_8cpp.html" title="Implements Util; the staged, link&#45;safe store writes (stageFileReplacing() and its helpers) and the st..." alt="" coords="5,384,98,411"/>
-<area shape="poly" id="edge62_Node000002_Node000034" title=" " alt="" coords="3541,99,3048,121,2713,138,2372,159,1918,194,1566,226,762,311,436,342,293,359,111,386,99,388,98,383,110,381,292,354,435,337,762,305,1566,221,1918,189,2371,154,2713,133,3048,116,3546,99"/>
-<area shape="rect" id="Node000035" href="$util_8h.html" title="Util: static helpers for the process environment, binary discovery, store paths, URL safety and the l..." alt="" coords="2305,308,2382,336"/>
-<area shape="poly" id="edge63_Node000002_Node000035" title=" " alt="" coords="3540,98,3258,107,2889,119,2561,136,2452,147,2419,153,2402,159,2386,174,2374,193,2357,235,2349,276,2345,309,2342,306,2343,275,2351,233,2369,190,2382,171,2399,154,2418,148,2452,142,2561,131,2889,114,3258,102,3545,98"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="4625,350,4625,385,4622,381,4622,353"/>
-<area shape="rect" id="Node000005" href="$keygendialog_8cpp.html" title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse..." alt="" coords="4366,384,4524,411"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="4580,341,4477,386,4476,381,4575,342"/>
-<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="4670,339,4771,384,4766,383,4668,345"/>
-<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="3743,333,3891,345,4016,352,4229,357,4440,362,4565,369,4710,381,4725,385,4720,385,4710,386,4564,374,4440,368,4228,363,4016,358,3891,351,3743,338"/>
-<area shape="rect" id="Node000008" href="$firstrunwizard_8cpp.html" title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init..." alt="" coords="3461,384,3621,411"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="3625,344,3562,386,3560,381,3620,345"/>
-<area shape="poly" id="edge12_Node000009_Node000006" title=" " alt="" coords="4435,246,4497,251,4566,262,4637,279,4705,306,4732,323,4757,343,4792,385,4787,382,4753,347,4729,327,4702,310,4635,284,4565,267,4496,256,4435,251"/>
-<area shape="rect" id="Node000010" href="$main_8cpp.html" title="Program entry point: command&#45;line parsing, the single&#45;instance hand&#45; over, translations and the main ..." alt="" coords="3842,384,3960,411"/>
-<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="4269,259,4084,289,3974,310,3953,327,3934,347,3909,386,3906,381,3930,344,3949,323,3972,306,4083,284,4263,260"/>
-<area shape="poly" id="edge36_Node000011_Node000005" title=" " alt="" coords="3148,182,3233,203,3327,230,3395,258,3457,281,3518,306,3545,321,3572,333,3688,360,3787,374,3876,379,3959,378,4133,372,4235,373,4354,381,4368,385,4363,385,4354,386,4235,378,4133,377,3959,384,3875,385,3787,379,3687,365,3571,338,3542,326,3516,310,3455,286,3393,262,3325,235,3232,208,3147,187"/>
-<area shape="rect" id="Node000012" href="$imitatepass_8h.html" title="ImitatePass, the backend that does what pass does by running gpg and git itself." alt="" coords="3097,232,3230,260"/>
-<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="3114,193,3153,233,3148,231,3112,198"/>
-<area shape="poly" id="edge39_Node000011_Node000015" title=" " alt="" coords="3033,177,2929,197,2873,213,2820,235,2737,300,2638,386,2636,381,2734,296,2817,230,2871,208,2928,192,3027,177"/>
-<area shape="rect" id="Node000016" href="$qtpasssettings_8cpp.html" title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,..." alt="" coords="2746,384,2912,411"/>
-<area shape="poly" id="edge41_Node000011_Node000016" title=" " alt="" coords="3033,178,2919,200,2870,215,2852,224,2840,234,2829,251,2822,271,2817,313,2821,353,2827,385,2823,382,2816,354,2812,313,2817,270,2824,249,2836,231,2849,220,2868,210,2918,195,3027,178"/>
-<area shape="rect" id="Node000020" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="3645,384,3818,411"/>
-<area shape="poly" id="edge40_Node000011_Node000020" title=" " alt="" coords="3148,181,3198,200,3222,214,3244,230,3256,244,3263,258,3269,285,3275,311,3282,322,3294,333,3647,385,3642,385,3292,338,3278,326,3270,313,3263,286,3258,260,3251,247,3240,234,3219,218,3195,205,3147,187"/>
-<area shape="rect" id="Node000021" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="4196,384,4342,411"/>
-<area shape="poly" id="edge47_Node000011_Node000021" title=" " alt="" coords="3144,187,3271,230,3371,266,3470,306,3498,321,3527,333,3624,356,3708,368,3782,373,3852,373,3998,371,4083,373,4184,381,4198,385,4193,385,4183,386,4083,378,3998,376,3852,379,3782,378,3707,373,3623,361,3525,338,3496,326,3468,310,3369,271,3269,235,3143,192"/>
+<area shape="poly" id="edge62_Node000002_Node000034" title=" " alt="" coords="3698,97,3435,104,3043,113,2582,131,2110,159,1546,203,1107,244,670,300,111,386,99,388,98,383,110,381,669,294,1106,239,1545,197,2110,154,2582,126,3043,108,3435,98,3703,97"/>
+<area shape="rect" id="Node000035" href="$util_8h.html" title="Util: static helpers for the process environment, binary discovery, store paths, URL safety and the l..." alt="" coords="2266,308,2344,336"/>
+<area shape="poly" id="edge63_Node000002_Node000035" title=" " alt="" coords="3698,96,3326,100,2816,108,2568,115,2356,126,2204,140,2158,149,2136,159,2119,183,2115,207,2121,232,2136,258,2163,284,2197,301,2233,311,2268,319,2263,319,2232,317,2195,306,2160,289,2132,262,2116,234,2110,207,2115,180,2132,155,2156,144,2203,135,2356,121,2568,110,2816,102,3326,95,3703,96"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="4483,347,4451,386,4448,381,4478,349"/>
+<area shape="rect" id="Node000005" href="$keygendialog_8cpp.html" title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse..." alt="" coords="4538,384,4696,411"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="4536,342,4599,384,4594,383,4535,347"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="4570,337,4746,383,4741,383,4570,343"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="3904,333,4130,351,4307,357,4484,364,4708,381,4723,385,4717,385,4707,386,4483,369,4307,363,4130,356,3903,338"/>
+<area shape="rect" id="Node000008" href="$firstrunwizard_8cpp.html" title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init..." alt="" coords="3458,384,3618,411"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="3754,340,3588,386,3587,380,3748,340"/>
+<area shape="poly" id="edge12_Node000009_Node000006" title=" " alt="" coords="4421,261,4500,281,4583,305,4687,345,4771,384,4766,383,4685,350,4581,311,4498,286,4420,267"/>
+<area shape="rect" id="Node000010" href="$main_8cpp.html" title="Program entry point: command&#45;line parsing, the single&#45;instance hand&#45; over, translations and the main ..." alt="" coords="4051,384,4169,411"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="4263,253,4228,262,4195,273,4164,289,4137,310,4125,327,4118,347,4112,385,4108,381,4113,346,4121,325,4134,306,4161,284,4193,268,4227,257,4258,253"/>
+<area shape="poly" id="edge36_Node000011_Node000005" title=" " alt="" coords="3302,181,3389,202,3486,230,3552,258,3675,306,3703,321,3732,333,3850,359,3950,373,4040,378,4124,377,4301,371,4404,373,4525,381,4540,385,4534,385,4525,386,4404,378,4301,377,4125,383,4040,384,3950,379,3849,365,3731,338,3701,326,3673,310,3551,262,3484,235,3388,207,3302,187"/>
+<area shape="rect" id="Node000012" href="$imitatepass_8h.html" title="ImitatePass, the backend that does what pass does by running gpg and git itself." alt="" coords="3254,232,3388,260"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="3269,193,3310,233,3305,231,3267,198"/>
+<area shape="poly" id="edge39_Node000011_Node000015" title=" " alt="" coords="3187,177,3090,198,3037,214,2987,235,2930,271,2878,313,2806,386,2804,381,2874,309,2927,266,2985,230,3036,209,3088,193,3182,178"/>
+<area shape="rect" id="Node000016" href="$qtpasssettings_8cpp.html" title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,..." alt="" coords="3130,384,3296,411"/>
+<area shape="poly" id="edge41_Node000011_Node000016" title=" " alt="" coords="3222,195,3210,214,3201,233,3194,275,3196,317,3203,354,3210,385,3206,381,3198,356,3190,317,3188,274,3196,232,3205,212,3217,197"/>
+<area shape="rect" id="Node000020" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="3642,384,3816,411"/>
+<area shape="poly" id="edge40_Node000011_Node000020" title=" " alt="" coords="3302,181,3354,199,3379,213,3401,230,3413,244,3420,258,3426,285,3433,310,3440,322,3452,333,3478,344,3529,356,3655,383,3649,383,3528,361,3477,349,3449,338,3436,325,3428,312,3421,286,3415,260,3409,247,3398,234,3376,218,3351,204,3301,186"/>
+<area shape="rect" id="Node000021" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="4193,384,4339,411"/>
+<area shape="poly" id="edge47_Node000011_Node000021" title=" " alt="" coords="3300,187,3428,230,3529,265,3627,306,3656,321,3684,333,3758,351,3821,362,3930,369,4040,371,4181,381,4195,385,4190,385,4181,386,4040,376,3930,375,3820,367,3757,356,3683,338,3653,326,3625,310,3527,270,3427,235,3299,192"/>
 <area shape="rect" id="Node000023" href="$nativegrep_8cpp.html" title="Implements NativeGrep: the store walk, the per&#45;file gpg runs and the hand&#45;over of results from the wo..." alt="" coords="122,384,264,411"/>
-<area shape="poly" id="edge37_Node000011_Node000023" title=" " alt="" coords="3027,175,2630,198,1956,240,1130,303,699,342,276,386,264,388,264,382,275,381,698,337,1130,298,1955,235,2630,193,3033,174"/>
+<area shape="poly" id="edge37_Node000011_Node000023" title=" " alt="" coords="3182,176,2322,235,1678,287,1033,338,820,351,654,358,488,367,276,386,264,388,264,382,275,381,488,362,654,353,820,346,1033,333,1677,282,2322,230,3188,175"/>
 <area shape="rect" id="Node000024" href="$pass_8cpp.html" title="Implements what both backends share: the environment the store&#39;s processes run in,..." alt="" coords="288,384,389,411"/>
-<area shape="poly" id="edge38_Node000011_Node000024" title=" " alt="" coords="3028,173,2915,179,2760,188,2585,206,2409,235,2295,265,2186,310,2161,326,2135,338,2058,355,1969,367,1760,382,1523,386,1272,384,781,375,570,376,401,386,390,388,389,383,401,381,570,371,781,369,1272,378,1523,381,1760,377,1968,362,2057,350,2133,333,2159,321,2184,306,2294,260,2408,230,2584,201,2760,183,2915,173,3033,172"/>
-<area shape="rect" id="Node000025" href="$realpass_8h.html" title="RealPass, the backend that hands every store operation to the pass command&#45;line tool." alt="" coords="2945,232,3056,260"/>
-<area shape="poly" id="edge42_Node000011_Node000025" title=" " alt="" coords="3064,194,3017,234,3015,229,3059,195"/>
+<area shape="poly" id="edge38_Node000011_Node000024" title=" " alt="" coords="3182,173,3051,179,2866,189,2654,207,2440,235,2147,310,2122,325,2096,338,2021,355,1934,367,1730,381,1498,386,1252,383,772,375,566,376,401,386,390,388,389,383,401,381,566,371,772,369,1252,378,1498,380,1730,376,1933,362,2020,349,2095,333,2120,321,2145,306,2439,230,2654,201,2866,184,3051,174,3187,173"/>
+<area shape="rect" id="Node000025" href="$realpass_8h.html" title="RealPass, the backend that hands every store operation to the pass command&#45;line tool." alt="" coords="2998,232,3110,260"/>
+<area shape="poly" id="edge42_Node000011_Node000025" title=" " alt="" coords="3198,190,3088,234,3087,229,3193,191"/>
 <area shape="rect" id="Node000027" href="$storemodel_8cpp.html" title="Implements StoreModel and the StoreDragItem stream operators; the drop validation lives in executeDro..." alt="" coords="414,384,559,411"/>
-<area shape="poly" id="edge46_Node000011_Node000027" title=" " alt="" coords="3028,175,2887,187,2688,210,2577,227,2462,249,2347,277,2237,310,2212,325,2201,332,2186,338,2141,346,2073,353,1885,363,1380,374,875,379,685,382,572,386,559,388,559,382,571,381,685,376,875,373,1380,369,1885,358,2073,348,2140,341,2184,333,2199,327,2209,320,2234,306,2346,272,2461,244,2576,222,2687,205,2887,182,3033,174"/>
-<area shape="poly" id="edge15_Node000012_Node000008" title=" " alt="" coords="3182,270,3212,304,3250,333,3287,348,3341,361,3463,385,3458,385,3340,366,3286,353,3248,338,3208,308,3180,275"/>
-<area shape="rect" id="Node000013" href="$imitatepass_8cpp.html" title="Implements ImitatePass: the gpg and git command sequences behind each operation, the transactions tha..." alt="" coords="2936,384,3084,411"/>
-<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="3148,271,3092,338,3031,386,3029,381,3088,334,3143,273"/>
-<area shape="rect" id="Node000014" href="$passbackendfactory_8h.html" title="PassBackendFactory, which constructs the two Pass backends on demand and hands out the one the settin..." alt="" coords="2894,308,3078,336"/>
-<area shape="poly" id="edge17_Node000012_Node000014" title=" " alt="" coords="3120,266,3018,310,3017,305,3115,267"/>
-<area shape="rect" id="Node000017" href="$qtpass_8cpp.html" title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ..." alt="" coords="3109,384,3223,411"/>
-<area shape="poly" id="edge22_Node000012_Node000017" title=" " alt="" coords="3166,273,3168,385,3164,381,3162,277"/>
-<area shape="poly" id="edge23_Node000012_Node000018" title=" " alt="" coords="3217,263,3345,308,3339,307,3216,268"/>
-<area shape="poly" id="edge18_Node000014_Node000008" title=" " alt="" coords="3094,334,3449,381,3463,385,3457,385,3448,386,3093,340"/>
-<area shape="poly" id="edge19_Node000014_Node000013" title=" " alt="" coords="2997,349,3008,385,3004,382,2994,353"/>
-<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="2909,339,2688,386,2687,380,2903,340"/>
-<area shape="poly" id="edge21_Node000014_Node000016" title=" " alt="" coords="2947,342,2857,386,2856,381,2942,343"/>
-<area shape="poly" id="edge26_Node000018_Node000003" title=" " alt="" coords="3472,327,3572,333,3843,345,4054,351,4265,360,4536,381,4550,385,4545,385,4535,386,4265,365,4054,356,3843,351,3571,338,3472,332"/>
-<area shape="poly" id="edge28_Node000018_Node000005" title=" " alt="" coords="3472,329,3526,333,3759,347,3941,353,4122,362,4354,381,4368,385,4363,385,4354,386,4122,367,3940,359,3759,352,3526,338,3472,334"/>
-<area shape="poly" id="edge29_Node000018_Node000006" title=" " alt="" coords="3472,327,3572,333,3892,346,4141,350,4391,358,4710,381,4725,385,4720,385,4710,386,4390,363,4141,355,3892,351,3571,338,3472,332"/>
-<area shape="poly" id="edge27_Node000018_Node000008" title=" " alt="" coords="3424,340,3515,384,3510,383,3423,345"/>
-<area shape="poly" id="edge24_Node000018_Node000010" title=" " alt="" coords="3472,333,3831,381,3844,386,3838,385,3830,386,3472,338"/>
-<area shape="poly" id="edge30_Node000018_Node000015" title=" " alt="" coords="3292,331,2734,386,2722,388,2722,382,2734,381,3287,331"/>
-<area shape="poly" id="edge33_Node000018_Node000016" title=" " alt="" coords="3292,335,2913,388,2912,382,3287,335"/>
-<area shape="poly" id="edge32_Node000018_Node000017" title=" " alt="" coords="3331,341,3205,386,3204,380,3325,342"/>
-<area shape="rect" id="Node000019" href="$clipboardmanager_8cpp.html" title="Implements ClipboardManager and the per&#45;platform clipboard hints that keep secrets out of clipboard h..." alt="" coords="3248,384,3436,411"/>
-<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="3369,348,3350,385,3348,381,3365,351"/>
-<area shape="poly" id="edge31_Node000018_Node000020" title=" " alt="" coords="3459,337,3671,383,3666,383,3458,342"/>
-<area shape="poly" id="edge34_Node000018_Node000021" title=" " alt="" coords="3472,333,3476,333,3675,349,3830,356,3985,364,4184,381,4198,385,4193,385,4183,386,3985,369,3829,361,3674,354,3475,338,3471,338"/>
-<area shape="rect" id="Node000022" href="$windowstatestore_8cpp.html" title="Implements WindowStateStore on top of QWidget::saveGeometry() / restoreGeometry(); the Wayland check ..." alt="" coords="3984,384,4172,411"/>
-<area shape="poly" id="edge35_Node000018_Node000022" title=" " alt="" coords="3472,333,3476,333,3724,358,3972,381,3987,385,3981,385,3971,386,3723,363,3475,338,3471,338"/>
-<area shape="poly" id="edge43_Node000025_Node000014" title=" " alt="" coords="2997,274,2991,310,2987,306,2993,277"/>
-<area shape="poly" id="edge44_Node000025_Node000018" title=" " alt="" coords="3072,258,3315,307,3310,307,3072,264"/>
+<area shape="poly" id="edge46_Node000011_Node000027" title=" " alt="" coords="3187,176,2976,198,2689,228,2403,267,2286,288,2198,310,2173,325,2162,332,2147,338,2077,354,1996,365,1807,380,1591,386,1363,385,917,379,725,379,572,386,559,388,559,382,571,381,725,374,917,373,1363,380,1591,380,1806,375,1996,360,2076,348,2145,333,2160,327,2170,320,2196,306,2284,283,2403,261,2688,223,2975,193,3182,177"/>
+<area shape="poly" id="edge15_Node000012_Node000008" title=" " alt="" coords="3341,269,3371,302,3408,333,3455,361,3503,384,3498,383,3453,366,3405,338,3368,306,3339,274"/>
+<area shape="rect" id="Node000013" href="$imitatepass_8cpp.html" title="Implements ImitatePass: the gpg and git command sequences behind each operation, the transactions tha..." alt="" coords="2523,384,2671,411"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="3241,258,3096,281,2933,311,2772,349,2641,386,2641,380,2771,344,2932,305,3095,276,3236,258"/>
+<area shape="rect" id="Node000014" href="$passbackendfactory_8h.html" title="PassBackendFactory, which constructs the two Pass backends on demand and hands out the one the settin..." alt="" coords="2945,308,3129,336"/>
+<area shape="poly" id="edge17_Node000012_Node000014" title=" " alt="" coords="3258,264,3088,310,3087,305,3253,265"/>
+<area shape="rect" id="Node000017" href="$qtpass_8cpp.html" title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ..." alt="" coords="3320,384,3434,411"/>
+<area shape="poly" id="edge22_Node000012_Node000017" title=" " alt="" coords="3333,272,3374,385,3370,382,3329,277"/>
+<area shape="poly" id="edge23_Node000012_Node000018" title=" " alt="" coords="3374,263,3502,308,3497,307,3373,268"/>
+<area shape="poly" id="edge18_Node000014_Node000008" title=" " alt="" coords="3142,336,3460,385,3455,384,3142,341"/>
+<area shape="poly" id="edge19_Node000014_Node000013" title=" " alt="" coords="2946,339,2672,386,2671,381,2940,339"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="2981,340,2838,386,2837,380,2976,341"/>
+<area shape="poly" id="edge21_Node000014_Node000016" title=" " alt="" coords="3083,339,3184,384,3179,383,3082,345"/>
+<area shape="poly" id="edge26_Node000018_Node000003" title=" " alt="" coords="3629,329,3684,333,4018,354,4164,363,4352,381,4365,385,4360,385,4351,386,4164,369,4018,359,3683,338,3629,334"/>
+<area shape="poly" id="edge28_Node000018_Node000005" title=" " alt="" coords="3629,329,3684,333,3920,347,4105,354,4289,362,4525,381,4540,385,4534,385,4525,386,4288,367,4104,359,3920,352,3683,338,3629,334"/>
+<area shape="poly" id="edge29_Node000018_Node000006" title=" " alt="" coords="3629,327,3732,333,4006,345,4220,351,4434,360,4708,381,4723,385,4717,385,4707,386,4433,365,4220,356,4006,351,3731,338,3629,332"/>
+<area shape="poly" id="edge27_Node000018_Node000008" title=" " alt="" coords="3540,350,3540,385,3536,381,3536,353"/>
+<area shape="poly" id="edge24_Node000018_Node000010" title=" " alt="" coords="3629,332,3633,333,3836,356,4039,381,4053,386,4048,385,4038,386,3835,361,3633,338,3629,338"/>
+<area shape="poly" id="edge30_Node000018_Node000015" title=" " alt="" coords="3450,331,2905,386,2894,387,2894,382,2905,381,3444,332"/>
+<area shape="poly" id="edge33_Node000018_Node000016" title=" " alt="" coords="3468,339,3272,386,3271,380,3462,340"/>
+<area shape="poly" id="edge32_Node000018_Node000017" title=" " alt="" coords="3498,342,3406,386,3405,381,3493,343"/>
+<area shape="rect" id="Node000019" href="$clipboardmanager_8cpp.html" title="Implements ClipboardManager and the per&#45;platform clipboard hints that keep secrets out of clipboard h..." alt="" coords="2917,384,3106,411"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="3450,336,3106,386,3106,380,3445,336"/>
+<area shape="poly" id="edge31_Node000018_Node000020" title=" " alt="" coords="3587,339,3698,384,3692,383,3586,344"/>
+<area shape="poly" id="edge34_Node000018_Node000021" title=" " alt="" coords="3629,333,3633,333,3787,348,3907,356,4027,365,4181,381,4195,385,4190,385,4181,386,4027,371,3907,362,3787,353,3633,338,3629,338"/>
+<area shape="rect" id="Node000022" href="$windowstatestore_8cpp.html" title="Implements WindowStateStore on top of QWidget::saveGeometry() / restoreGeometry(); the Wayland check ..." alt="" coords="3839,384,4026,411"/>
+<area shape="poly" id="edge35_Node000018_Node000022" title=" " alt="" coords="3624,336,3864,383,3859,383,3624,342"/>
+<area shape="poly" id="edge43_Node000025_Node000014" title=" " alt="" coords="3050,274,3042,310,3038,306,3045,277"/>
+<area shape="poly" id="edge44_Node000025_Node000018" title=" " alt="" coords="3125,256,3465,309,3459,309,3125,261"/>
 <area shape="rect" id="Node000026" href="$realpass_8cpp.html" title="Implements RealPass: builds the pass command lines and does itself the few things pass must not be tr..." alt="" coords="583,384,709,411"/>
-<area shape="poly" id="edge45_Node000025_Node000026" title=" " alt="" coords="2932,250,2598,272,2421,289,2348,299,2294,311,2277,317,2266,324,2253,332,2236,338,2169,352,2091,362,1908,375,1701,380,1481,380,1053,376,869,378,721,386,710,388,709,382,721,381,869,373,1053,371,1481,375,1701,375,1908,370,2090,357,2168,346,2235,333,2251,327,2263,320,2275,312,2292,305,2347,294,2420,284,2597,267,2927,250"/>
-<area shape="poly" id="edge50_Node000028_Node000006" title=" " alt="" coords="3926,329,3973,333,4180,346,4342,354,4503,363,4710,381,4725,385,4720,385,4710,386,4503,368,4342,359,4180,352,3973,338,3926,334"/>
-<area shape="poly" id="edge51_Node000028_Node000020" title=" " alt="" coords="3804,344,3750,386,3748,381,3799,346"/>
-<area shape="poly" id="edge56_Node000031_Node000016" title=" " alt="" coords="3395,173,3276,179,3141,189,3018,207,2970,219,2934,235,2914,250,2896,268,2867,310,2847,352,2834,385,2831,381,2842,350,2862,308,2892,265,2910,246,2932,230,2968,214,3017,201,3140,184,3276,174,3400,172"/>
-<area shape="rect" id="Node000032" href="$settingsserializer_8cpp.html" title="Implements SettingsSerializer: one SettingsConstants key per AppSettings field, with the defaults app..." alt="" coords="3406,232,3588,260"/>
-<area shape="poly" id="edge57_Node000031_Node000032" title=" " alt="" coords="3499,198,3499,234,3495,230,3495,202"/>
-<area shape="poly" id="edge59_Node000033_Node000003" title=" " alt="" coords="4131,333,4135,333,4536,381,4550,385,4545,385,4535,386,4134,338,4131,338"/>
-<area shape="poly" id="edge60_Node000033_Node000006" title=" " alt="" coords="4131,327,4390,348,4710,381,4725,385,4720,385,4710,386,4389,354,4131,332"/>
-<area shape="poly" id="edge61_Node000033_Node000021" title=" " alt="" coords="4104,338,4232,383,4227,383,4103,344"/>
-<area shape="poly" id="edge66_Node000035_Node000003" title=" " alt="" coords="2398,322,3548,351,4201,369,4536,381,4550,385,4545,385,4535,386,4201,374,3548,356,2398,327"/>
-<area shape="poly" id="edge73_Node000035_Node000005" title=" " alt="" coords="2398,322,3414,348,4007,366,4354,381,4368,385,4363,385,4354,386,4006,371,3414,353,2398,327"/>
-<area shape="poly" id="edge74_Node000035_Node000006" title=" " alt="" coords="2397,322,3662,353,4710,381,4725,385,4720,385,4710,386,3661,358,2397,327"/>
-<area shape="poly" id="edge68_Node000035_Node000008" title=" " alt="" coords="2398,322,2833,339,3137,356,3449,381,3463,385,3457,385,3449,386,3137,362,2832,344,2398,327"/>
-<area shape="poly" id="edge64_Node000035_Node000010" title=" " alt="" coords="2398,322,3094,342,3519,359,3696,370,3830,381,3844,385,3838,385,3830,386,3696,375,3518,365,3094,347,2398,327"/>
-<area shape="poly" id="edge71_Node000035_Node000013" title=" " alt="" coords="2397,325,2627,348,2924,381,2938,385,2933,385,2923,386,2626,353,2397,331"/>
-<area shape="poly" id="edge77_Node000035_Node000015" title=" " alt="" coords="2397,335,2575,383,2569,383,2397,340"/>
-<area shape="poly" id="edge83_Node000035_Node000016" title=" " alt="" coords="2398,329,2748,384,2742,383,2397,334"/>
-<area shape="poly" id="edge82_Node000035_Node000017" title=" " alt="" coords="2398,323,2696,342,2895,359,3097,381,3111,385,3106,385,3096,386,2895,364,2696,347,2398,328"/>
-<area shape="poly" id="edge65_Node000035_Node000019" title=" " alt="" coords="2398,323,2750,344,3236,381,3250,385,3245,385,3235,386,2750,349,2398,329"/>
-<area shape="poly" id="edge78_Node000035_Node000020" title=" " alt="" coords="2398,322,2903,337,3263,355,3633,381,3647,385,3642,385,3633,386,3263,360,2902,342,2398,327"/>
-<area shape="poly" id="edge89_Node000035_Node000021" title=" " alt="" coords="2398,322,3329,348,3868,366,4184,381,4198,385,4193,385,4183,386,3868,371,3329,354,2397,327"/>
-<area shape="poly" id="edge75_Node000035_Node000023" title=" " alt="" coords="2287,324,1329,344,722,362,468,373,276,386,264,387,264,382,275,381,467,368,722,357,1329,339,2292,324"/>
-<area shape="poly" id="edge76_Node000035_Node000024" title=" " alt="" coords="2292,328,2185,338,1913,349,1683,351,1291,345,1103,343,901,347,672,361,401,386,390,388,389,383,401,381,671,355,901,342,1103,338,1291,339,1683,346,1913,343,2185,333,2287,328"/>
-<area shape="poly" id="edge84_Node000035_Node000026" title=" " alt="" coords="2292,335,2286,338,2049,362,1848,372,1670,373,1504,369,1338,364,1161,362,959,368,721,386,710,388,709,382,721,381,958,363,1160,357,1338,358,1504,363,1670,368,1847,367,2049,357,2286,333,2287,335"/>
-<area shape="poly" id="edge86_Node000035_Node000027" title=" " alt="" coords="2292,330,2236,338,1982,353,1768,359,1403,358,1227,357,1039,359,824,368,572,386,559,388,559,382,571,381,824,363,1039,354,1227,352,1403,353,1768,354,1982,348,2235,333,2287,331"/>
-<area shape="poly" id="edge79_Node000035_Node000029" title=" " alt="" coords="2314,344,2253,386,2252,381,2309,345"/>
-<area shape="poly" id="edge81_Node000035_Node000030" title=" " alt="" coords="2372,343,2418,384,2413,382,2370,348"/>
-<area shape="poly" id="edge90_Node000035_Node000034" title=" " alt="" coords="2286,323,1885,328,1253,337,595,355,318,369,110,386,99,388,98,383,110,381,318,363,595,350,1253,331,1885,323,2292,323"/>
+<area shape="poly" id="edge45_Node000025_Node000026" title=" " alt="" coords="2980,250,2817,258,2606,270,2402,287,2318,298,2255,311,2239,317,2227,324,2215,332,2198,338,2132,351,2056,362,1878,374,1676,379,1462,380,1044,376,865,378,721,386,710,388,709,382,721,381,865,373,1044,371,1462,374,1676,374,1878,369,2055,356,2131,346,2196,333,2212,327,2224,320,2236,312,2253,305,2317,293,2401,281,2606,264,2817,253,2986,249"/>
+<area shape="poly" id="edge50_Node000028_Node000006" title=" " alt="" coords="4086,329,4136,333,4422,355,4708,381,4723,385,4717,385,4707,386,4422,360,4135,338,4086,334"/>
+<area shape="poly" id="edge51_Node000028_Node000020" title=" " alt="" coords="3933,340,3776,386,3775,380,3927,341"/>
+<area shape="poly" id="edge56_Node000031_Node000016" title=" " alt="" coords="3553,174,3467,181,3375,191,3295,208,3265,220,3244,234,3231,251,3221,270,3212,312,3210,352,3213,385,3209,381,3205,352,3206,311,3216,268,3226,248,3240,230,3262,216,3294,203,3374,186,3467,176,3558,173"/>
+<area shape="rect" id="Node000032" href="$settingsserializer_8cpp.html" title="Implements SettingsSerializer: one SettingsConstants key per AppSettings field, with the defaults app..." alt="" coords="3563,232,3745,260"/>
+<area shape="poly" id="edge57_Node000031_Node000032" title=" " alt="" coords="3656,198,3656,234,3652,230,3652,202"/>
+<area shape="poly" id="edge59_Node000033_Node000003" title=" " alt="" coords="4268,338,4400,383,4395,383,4267,343"/>
+<area shape="poly" id="edge60_Node000033_Node000006" title=" " alt="" coords="4294,330,4708,381,4723,385,4717,385,4707,386,4294,335"/>
+<area shape="poly" id="edge61_Node000033_Node000021" title=" " alt="" coords="4233,346,4259,384,4254,382,4230,351"/>
+<area shape="poly" id="edge66_Node000035_Node000003" title=" " alt="" coords="2359,322,3393,347,3997,365,4352,381,4365,385,4360,385,4351,386,3997,371,3393,353,2359,327"/>
+<area shape="poly" id="edge73_Node000035_Node000006" title=" " alt="" coords="2359,322,3618,350,4338,369,4708,381,4723,385,4717,385,4707,386,4338,374,3617,356,2359,327"/>
+<area shape="poly" id="edge68_Node000035_Node000008" title=" " alt="" coords="2359,322,2808,338,3124,356,3446,381,3460,385,3455,385,3446,386,3123,361,2808,344,2359,327"/>
+<area shape="poly" id="edge64_Node000035_Node000010" title=" " alt="" coords="2359,321,3168,340,3670,358,3880,369,4038,381,4053,385,4048,385,4038,386,3879,374,3669,363,3168,345,2359,327"/>
+<area shape="poly" id="edge71_Node000035_Node000013" title=" " alt="" coords="2359,334,2547,383,2542,383,2358,339"/>
+<area shape="poly" id="edge76_Node000035_Node000015" title=" " alt="" coords="2359,329,2709,383,2704,383,2359,334"/>
+<area shape="poly" id="edge82_Node000035_Node000016" title=" " alt="" coords="2359,323,2681,344,3118,381,3132,385,3127,385,3118,386,2680,349,2359,329"/>
+<area shape="poly" id="edge81_Node000035_Node000017" title=" " alt="" coords="2359,322,2755,336,3029,354,3308,381,3322,385,3316,385,3307,386,3028,359,2755,342,2359,327"/>
+<area shape="poly" id="edge65_Node000035_Node000019" title=" " alt="" coords="2359,326,2906,381,2919,385,2914,385,2906,386,2359,331"/>
+<area shape="poly" id="edge77_Node000035_Node000020" title=" " alt="" coords="2359,321,2878,337,3249,354,3630,381,3644,385,3639,385,3630,386,3249,360,2878,342,2359,327"/>
+<area shape="poly" id="edge88_Node000035_Node000021" title=" " alt="" coords="2359,321,3233,341,3779,359,4008,369,4181,381,4195,385,4190,385,4181,386,4008,375,3779,364,3233,346,2359,327"/>
+<area shape="poly" id="edge74_Node000035_Node000023" title=" " alt="" coords="2253,326,2045,338,1775,346,1547,349,1159,347,972,348,772,354,544,365,276,386,264,387,264,382,275,381,544,360,772,348,972,343,1159,342,1547,343,1775,341,2045,333,2248,326"/>
+<area shape="poly" id="edge75_Node000035_Node000024" title=" " alt="" coords="2253,328,2146,338,1880,349,1655,351,1272,345,1088,344,890,348,666,361,401,386,390,388,389,383,401,381,665,356,890,343,1088,338,1272,340,1655,346,1880,343,2146,333,2248,328"/>
+<area shape="poly" id="edge83_Node000035_Node000026" title=" " alt="" coords="2253,335,2248,338,2016,362,1820,372,1646,373,1485,369,1323,364,1150,362,953,368,721,386,710,388,709,382,721,381,953,363,1150,357,1323,358,1485,363,1647,367,1820,366,2016,356,2247,333,2248,335"/>
+<area shape="poly" id="edge85_Node000035_Node000027" title=" " alt="" coords="2253,330,2197,338,1950,353,1740,359,1384,358,1212,357,1028,360,819,368,572,386,559,388,559,382,571,381,818,363,1028,354,1212,352,1384,353,1740,354,1949,347,2197,333,2248,331"/>
+<area shape="poly" id="edge78_Node000035_Node000029" title=" " alt="" coords="2284,346,2247,386,2245,381,2279,348"/>
+<area shape="poly" id="edge80_Node000035_Node000030" title=" " alt="" coords="2341,341,2412,384,2406,383,2340,346"/>
+<area shape="poly" id="edge89_Node000035_Node000034" title=" " alt="" coords="2248,323,1852,329,1232,337,586,355,315,369,110,386,99,388,98,383,110,381,314,364,586,350,1232,332,1852,323,2253,323"/>
 <area shape="rect" id="Node000036" href="$fieldlabel_8cpp.html" title="Implements FieldLabel; startEdit() and finishEdit() swap the label and its editor in and out of the p..." alt="" coords="1623,384,1754,411"/>
-<area shape="poly" id="edge67_Node000035_Node000036" title=" " alt="" coords="2293,335,2287,338,2141,357,2027,365,1913,371,1766,386,1755,388,1755,383,1766,381,1912,366,2026,359,2140,351,2286,333,2288,335"/>
+<area shape="poly" id="edge67_Node000035_Node000036" title=" " alt="" coords="2254,335,2248,338,2113,356,2007,364,1902,372,1766,386,1755,388,1755,383,1766,381,1901,366,2007,359,2112,351,2247,333,2249,335"/>
 <area shape="rect" id="Node000037" href="$gpgidsigner_8cpp.html" title="Implements GpgIdSigner on top of gpg&#39;s &#45;&#45;status&#45;fd output." alt="" coords="1778,384,1925,411"/>
-<area shape="poly" id="edge69_Node000035_Node000037" title=" " alt="" coords="2293,335,2287,338,2112,364,1937,386,1925,388,1925,383,1936,381,2111,359,2286,333,2288,335"/>
+<area shape="poly" id="edge69_Node000035_Node000037" title=" " alt="" coords="2254,335,2248,338,1925,388,1925,383,2247,333,2249,335"/>
 <area shape="rect" id="Node000038" href="$gpgkeystate_8cpp.html" title="Implements the colon&#45;listing parser: record classification, one handler per record type,..." alt="" coords="1949,384,2100,411"/>
-<area shape="poly" id="edge70_Node000035_Node000038" title=" " alt="" coords="2292,335,2082,386,2082,380,2287,336"/>
+<area shape="poly" id="edge70_Node000035_Node000038" title=" " alt="" coords="2254,337,2076,386,2075,380,2249,337"/>
 <area shape="rect" id="Node000039" href="$importkeydialog_8cpp.html" title="Implements ImportKeyDialog: the guarded key&#45;file read, the blocking gpg &#45;&#45;import call and the status&#45;..." alt="" coords="734,384,911,411"/>
-<area shape="poly" id="edge72_Node000035_Node000039" title=" " alt="" coords="2292,335,2286,338,2080,360,1904,371,1750,374,1605,373,1306,369,1130,373,922,386,911,387,911,382,922,381,1130,368,1306,364,1605,367,1750,369,1904,366,2079,355,2286,333,2287,335"/>
+<area shape="poly" id="edge72_Node000035_Node000039" title=" " alt="" coords="2253,335,2248,338,2047,360,1876,370,1726,373,1586,372,1295,369,1124,374,922,386,911,387,911,382,922,381,1124,368,1295,364,1586,367,1726,368,1876,365,2047,354,2247,333,2248,335"/>
 <area shape="rect" id="Node000040" href="$plainmessagebox_8cpp.html" title="Implements the PlainMessageBox helpers; the text format is set before the text so it is never laid ou..." alt="" coords="934,384,1121,411"/>
-<area shape="poly" id="edge80_Node000035_Node000040" title=" " alt="" coords="2292,335,2286,338,2112,358,1963,368,1833,372,1710,372,1457,371,1308,375,1133,386,1121,387,1121,382,1133,381,1308,370,1457,365,1710,366,1832,366,1963,362,2111,352,2286,333,2287,335"/>
+<area shape="poly" id="edge79_Node000035_Node000040" title=" " alt="" coords="2253,335,2248,338,2079,357,1936,367,1809,371,1691,371,1446,371,1303,375,1133,386,1121,387,1121,382,1133,381,1302,370,1446,366,1691,366,1809,366,1935,362,2078,352,2247,333,2248,335"/>
 <area shape="rect" id="Node000041" href="$rnpcrypto_8cpp.html" title="Implements RnpCrypto over RNP&#39;s C FFI, with RAII wrappers for its handles and bounded in&#45;memory input..." alt="" coords="1145,384,1278,411"/>
-<area shape="poly" id="edge85_Node000035_Node000041" title=" " alt="" coords="2292,335,2286,338,2136,355,2007,364,1789,367,1570,368,1442,374,1290,386,1279,388,1279,382,1290,381,1441,368,1570,362,1789,362,2007,359,2135,350,2286,333,2287,335"/>
+<area shape="poly" id="edge84_Node000035_Node000041" title=" " alt="" coords="2253,335,2248,338,2103,355,1979,363,1769,367,1559,368,1436,374,1290,386,1279,388,1279,382,1290,381,1435,369,1559,363,1769,362,1979,358,2102,349,2247,333,2248,335"/>
 <area shape="rect" id="Node000042" href="$storetree_8cpp.html" title="Implements StoreTree; setStore() is where the file system model, the proxy and the view are re&#45;rooted..." alt="" coords="1302,384,1433,411"/>
-<area shape="poly" id="edge87_Node000035_Node000042" title=" " alt="" coords="2292,335,2287,338,2159,353,2051,362,1866,366,1681,369,1573,375,1445,386,1433,388,1433,382,1445,381,1572,369,1681,364,1866,361,2050,356,2158,348,2286,333,2287,335"/>
+<area shape="poly" id="edge86_Node000035_Node000042" title=" " alt="" coords="2254,335,2248,338,2126,353,2023,361,1847,366,1670,369,1567,375,1445,386,1433,388,1433,382,1445,381,1567,370,1670,364,1847,361,2023,356,2126,347,2247,333,2249,335"/>
 <area shape="rect" id="Node000043" href="$templateio_8cpp.html" title="Implements TemplateIO; template files are read through readTemplateFile(), which refuses anything but..." alt="" coords="1456,384,1599,411"/>
-<area shape="poly" id="edge88_Node000035_Node000043" title=" " alt="" coords="2293,335,2287,338,2097,359,1949,366,1801,371,1612,386,1599,388,1599,382,1611,381,1801,366,1949,361,2097,354,2286,333,2288,335"/>
-<area shape="poly" id="edge96_Node000044_Node000024" title=" " alt="" coords="4317,102,4210,111,3880,126,3622,133,3365,142,3034,159,2292,203,1714,239,1436,261,1138,291,800,332,401,386,390,388,389,383,400,381,799,327,1138,286,1436,256,1714,233,2292,198,3034,154,3365,136,3622,128,3879,121,4210,106,4322,102"/>
-<area shape="rect" id="Node000045" href="$processinfo_8cpp.html" title="The process table behind Enums::processInfo(); a missing row for a new Enums::PROCESS value fails the..." alt="" coords="4332,157,4478,184"/>
-<area shape="poly" id="edge97_Node000044_Node000045" title=" " alt="" coords="4404,123,4406,158,4402,154,4401,126"/>
-<area shape="rect" id="Node000046" href="$processoutputpanel_8cpp.html" title="Implements ProcessOutputPanel; the sticky auto&#45;scroll hysteresis is set up in the constructor,..." alt="" coords="4502,157,4702,184"/>
-<area shape="poly" id="edge98_Node000044_Node000046" title=" " alt="" coords="4451,112,4569,156,4564,156,4450,117"/>
-<area shape="poly" id="edge100_Node000047_Node000006" title=" " alt="" coords="4656,113,4688,131,4716,155,4737,184,4755,215,4780,281,4794,341,4800,385,4796,381,4789,342,4775,283,4750,218,4733,187,4712,158,4685,135,4655,118"/>
-<area shape="poly" id="edge101_Node000047_Node000046" title=" " alt="" coords="4604,123,4604,158,4600,154,4600,126"/>
-<area shape="poly" id="edge104_Node000048_Node000012" title=" " alt="" coords="4026,112,3593,187,3231,239,3230,233,3592,182,4021,112"/>
-<area shape="rect" id="Node000049" href="$simpletransaction_8cpp.html" title="Implements SimpleTransaction as a queue of (last process, result) pairs." alt="" coords="4017,157,4206,184"/>
-<area shape="poly" id="edge105_Node000048_Node000049" title=" " alt="" coords="4113,123,4113,158,4110,154,4110,126"/>
+<area shape="poly" id="edge87_Node000035_Node000043" title=" " alt="" coords="2254,335,2248,338,2070,359,1930,366,1790,371,1612,386,1599,388,1599,383,1611,381,1790,366,1930,361,2069,353,2247,333,2249,335"/>
+<area shape="poly" id="edge95_Node000044_Node000024" title=" " alt="" coords="4525,101,4368,111,4036,125,3778,132,3520,142,3189,159,2403,203,1791,237,1497,259,1182,289,824,330,401,386,390,388,389,383,400,381,823,325,1181,283,1497,253,1791,231,2403,197,3189,154,3520,136,3778,127,4036,119,4367,106,4531,100"/>
+<area shape="rect" id="Node000045" href="$processinfo_8cpp.html" title="The process table behind Enums::processInfo(); a missing row for a new Enums::PROCESS value fails the..." alt="" coords="4540,157,4686,184"/>
+<area shape="poly" id="edge96_Node000044_Node000045" title=" " alt="" coords="4612,123,4614,158,4610,154,4609,126"/>
+<area shape="rect" id="Node000046" href="$processoutputpanel_8cpp.html" title="Implements ProcessOutputPanel; the sticky auto&#45;scroll hysteresis is set up in the constructor,..." alt="" coords="4710,157,4910,184"/>
+<area shape="poly" id="edge97_Node000044_Node000046" title=" " alt="" coords="4659,112,4777,156,4772,156,4658,117"/>
+<area shape="poly" id="edge99_Node000047_Node000006" title=" " alt="" coords="4873,113,4902,130,4925,155,4928,170,4925,185,4901,247,4868,305,4836,352,4809,386,4807,381,4831,349,4864,302,4896,245,4920,184,4923,170,4920,158,4899,134,4872,118"/>
+<area shape="poly" id="edge100_Node000047_Node000046" title=" " alt="" coords="4812,123,4812,158,4808,154,4808,126"/>
+<area shape="poly" id="edge103_Node000048_Node000012" title=" " alt="" coords="4183,112,3751,187,3388,239,3388,233,3750,182,4178,112"/>
+<area shape="rect" id="Node000049" href="$simpletransaction_8cpp.html" title="Implements SimpleTransaction as a queue of (last process, result) pairs." alt="" coords="4175,157,4363,184"/>
+<area shape="poly" id="edge104_Node000048_Node000049" title=" " alt="" coords="4271,123,4271,158,4267,154,4267,126"/>
 </map>

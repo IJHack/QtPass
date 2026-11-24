@@ -1,0 +1,5 @@
+<map id="KeygenDialog::isBatchValue" name="KeygenDialog::isBatchValue">
+<area shape="rect" id="Node000001" title="Whether value can go into a GPG batch line as one value." alt="" coords="5,5,209,33"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a366f3fe8a9b24f0359b3df12e0a93244" title="Whether a field&#39;s text holds a line break or NUL, which would end its batch line early." alt="" coords="257,5,474,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,17,244,19,238,19,209,22"/>
+</map>

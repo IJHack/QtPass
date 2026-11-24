@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('keygendialog_8
 <code>#include &quot;qprogressindicator.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="qtpasssettings_8h_source.html">qtpasssettings.h</a>&quot;</code><br />
 <code>#include &quot;ui_keygendialog.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="windowstatestore_8h_source.html">windowstatestore.h</a>&quot;</code><br />
 <code>#include &lt;QCheckBox&gt;</code><br />
 <code>#include &lt;QMessageBox&gt;</code><br />
@@ -145,6 +144,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('keygendialog_8
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa13991db4a3cd48e28550a58607efab4" id="r_aa13991db4a3cd48e28550a58607efab4"><td class="memItemLeft">static QStringList&#160;</td><td class="memItemRight"><a class="el" href="#aa13991db4a3cd48e28550a58607efab4">batchLines</a> (QString batch)</td></tr>
+<tr class="memdesc:aa13991db4a3cd48e28550a58607efab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cut a batch template into its non-empty lines at CR and LF.  <br /></td></tr>
 <tr class="memitem:a9bdefc87c7639ffbce0526943e36a3ac" id="r_a9bdefc87c7639ffbce0526943e36a3ac"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a9bdefc87c7639ffbce0526943e36a3ac">isControlStatement</a> (const QString &amp;line, const QString &amp;control)</td></tr>
 <tr class="memdesc:a9bdefc87c7639ffbce0526943e36a3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a batch line is the control statement <code class="param">control</code>.  <br /></td></tr>
 </table>
@@ -153,6 +154,54 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="aa13991db4a3cd48e28550a58607efab4" name="aa13991db4a3cd48e28550a58607efab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13991db4a3cd48e28550a58607efab4">&#9670;&#160;</a></span>batchLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList batchLines </td>
+          <td>(</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>batch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cut a batch template into its non-empty lines at CR and LF. </p>
+<p>Plain character splitting, no regex: QRegularExpression matches nothing in text that is not valid UTF-16, so a lone surrogate anywhere left the whole batch one "line" and no-protection was never found. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">batch</td><td>The template text. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Its lines, without the line breaks and without empty ones. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00099">99</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="keygendialog_8cpp_aa13991db4a3cd48e28550a58607efab4_cgraph.svg" width="103" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="keygendialog_8cpp_aa13991db4a3cd48e28550a58607efab4_icgraph.svg" width="100%" height="470"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a9bdefc87c7639ffbce0526943e36a3ac" name="a9bdefc87c7639ffbce0526943e36a3ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9bdefc87c7639ffbce0526943e36a3ac">&#9670;&#160;</a></span>isControlStatement()</h2>
 
@@ -190,17 +239,17 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the line is that statement, alone or followed by whitespace. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00119">119</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
-<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00131">131</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
 </div>
-<div id="dynsection-1-content" class="dyncontent hidden">
+<div id="dynsection-3-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="keygendialog_8cpp_a9bdefc87c7639ffbce0526943e36a3ac_cgraph.svg" width="159" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary">
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
 </div>
-<div id="dynsection-2-content" class="dyncontent hidden">
+<div id="dynsection-4-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="keygendialog_8cpp_a9bdefc87c7639ffbce0526943e36a3ac_icgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 

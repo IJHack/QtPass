@@ -1,7 +1,10 @@
 <map id="KeygenDialog::replace" name="KeygenDialog::replace">
-<area shape="rect" id="Node000001" title="Rewrites every &lt;key&gt;: ... line of the batch template to carry value. Values that fail isBatchValue() ..." alt="" coords="5,32,173,60"/>
-<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="221,5,424,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,34,207,32,202,33,173,39"/>
-<area shape="rect" id="Node000003" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="245,57,400,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,52,233,61,227,61,173,58"/>
+<area shape="rect" id="Node000001" title="Rewrites every &lt;key&gt;: ... line of the batch template to carry value. Values that fail isBatchValue() ..." alt="" coords="5,56,173,84"/>
+<area shape="rect" id="Node000002" href="$keygendialog_8cpp.html#aa13991db4a3cd48e28550a58607efab4" title="Cut a batch template into its non&#45;empty lines at CR and LF." alt="" coords="277,29,368,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,58,264,49,259,51,173,63"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="221,81,424,109"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="173,76,208,82,202,83,173,82"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="282,28,276,20,281,11,297,5,322,3,350,5,366,14,361,14,348,10,322,8,298,10,285,15,281,20,287,30"/>
+<area shape="rect" id="Node000004" href="$class_keygen_dialog.html#a366f3fe8a9b24f0359b3df12e0a93244" title="Whether a field&#39;s text holds a line break or NUL, which would end its batch line early." alt="" coords="472,81,689,109"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="424,93,459,95,454,95,424,98"/>
 </map>

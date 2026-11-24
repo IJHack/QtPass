@@ -1,39 +1,43 @@
 <map id="KeygenDialog::~KeygenDialog" name="KeygenDialog::~KeygenDialog">
-<area shape="rect" id="Node000001" title="Destroys the dialog and its generated UI." alt="" coords="5,321,226,349"/>
-<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a1286e8e44dcb894081e3e41c9cea21d1" title="Splice a passphrase into a GPG batch template." alt="" coords="280,29,508,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,320,135,271,165,202,186,166,211,129,239,96,272,68,284,62,281,66,275,72,243,100,215,133,191,168,170,205,140,273,123,322"/>
-<area shape="rect" id="Node000005" href="$class_keygen_dialog.html#a085a87e910e15156b8cc113af5cd5d82" title="Whether gpg reads passphrase back as typed from a batch Passphrase: line." alt="" coords="274,81,514,109"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="120,320,140,279,172,224,217,167,243,140,272,118,283,114,280,118,275,123,247,145,221,170,177,227,145,282,125,322"/>
-<area shape="rect" id="Node000006" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="847,235,1050,262"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="193,318,273,306,575,274,834,255,829,257,575,279,274,311,196,323"/>
-<area shape="rect" id="Node000007" href="$class_keygen_dialog.html#aa28f8db828f60edd4195bcc9f9e8cb6e" title="Mirrors the e&#45;mail field into the template&#39;s Name&#45;Email: line." alt="" coords="304,202,484,247"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="146,319,273,263,312,251,308,254,275,268,149,323"/>
-<area shape="rect" id="Node000009" href="$class_keygen_dialog.html#ac0ebf04c899e95033f560ae4aae5b2f3" title="Mirrors the name field into the template&#39;s Name&#45;Real: line." alt="" coords="304,133,484,178"/>
-<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="126,319,184,256,226,219,272,188,292,180,288,184,275,192,229,223,188,260,130,322"/>
-<area shape="rect" id="Node000010" href="$class_keygen_dialog.html#a68eaa387bd0f5f3074636fcfb6a5cc2f" title="First passphrase field edited: re&#45;evaluates whether OK may be enabled. The text itself stays out of t..." alt="" coords="565,424,789,468"/>
-<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="126,347,151,378,184,415,226,451,275,478,315,490,357,498,400,500,443,499,525,488,599,472,594,474,526,493,444,504,400,505,357,503,314,496,273,483,223,455,181,418,147,381,127,352"/>
-<area shape="rect" id="Node000011" href="$class_keygen_dialog.html#ab6bde78f9ab9d4ccd40a5ec1e2dd087d" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="840,403,1057,430"/>
-<area shape="poly" id="edge22_Node000001_Node000011" title=" " alt="" coords="225,326,344,324,486,326,640,336,793,358,851,374,905,396,900,396,850,379,792,363,640,341,486,331,344,329,227,332"/>
-<area shape="rect" id="Node000012" href="$class_keygen_dialog.html#aec6a86ea8b6fc8eee1c2a49c501198d4" title="Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox...." alt="" coords="1105,505,1298,550"/>
-<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="121,347,139,396,169,461,189,496,214,528,242,557,275,580,329,605,386,625,445,640,504,649,565,654,626,655,746,647,861,628,966,604,1057,577,1127,556,1132,555,1058,583,967,609,862,634,747,652,626,660,565,659,504,654,444,645,384,630,327,610,272,584,239,561,210,532,185,499,164,464,134,398,120,352"/>
-<area shape="rect" id="Node000013" href="$class_keygen_dialog.html#af674d915b30db393f7dd6c0824ef363d" title="Confirmation field edited: same as on_passphrase1_textChanged()." alt="" coords="282,424,506,468"/>
-<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="147,347,275,402,312,417,307,419,273,407,147,352"/>
-<area shape="rect" id="Node000014" href="$class_keygen_dialog.html#a3a0ea832334cd27c1f74bd5bb65d4258" title="Enable or disable expert mode (the editable batch template)." alt="" coords="285,543,502,570"/>
-<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="125,347,148,384,181,431,224,480,275,522,301,537,296,537,272,527,220,484,177,434,144,387,124,352"/>
-<area shape="rect" id="Node000015" href="$class_keygen_dialog.html#a5a56db2294c6d4a0a2e7c665ad2a54a1" title="Ticking &quot;no passphrase&quot; clears and disables the passphrase fields and makes OK available; unticking i..." alt="" coords="562,372,792,400"/>
-<area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="225,346,274,351,549,375,545,379,273,356,227,351"/>
-<area shape="rect" id="Node000003" href="$keygendialog_8cpp.html#a9bdefc87c7639ffbce0526943e36a3ac" title="Whether a batch line is the control statement control." alt="" coords="604,29,751,57"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="508,41,590,42,586,44,509,46"/>
-<area shape="rect" id="Node000004" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="871,145,1026,173"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="464,55,866,140,861,143,464,60"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="631,29,624,20,630,11,648,5,677,3,709,5,728,13,722,15,708,10,677,8,649,10,633,15,629,20,636,29"/>
-<area shape="rect" id="Node000008" href="$class_keygen_dialog.html#a1697fd1a20cad8dd3bd3491120525a25" title="Rewrites every &lt;key&gt;: ... line of the batch template to carry value. Values that fail isBatchValue() ..." alt="" coords="594,191,761,218"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="483,216,580,210,575,213,485,221"/>
-<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="760,188,859,174,854,176,762,193"/>
-<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="761,215,847,231,841,232,762,221"/>
-<area shape="poly" id="edge12_Node000009_Node000008" title=" " alt="" coords="483,168,581,186,576,188,485,173"/>
-<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="789,431,827,429,822,430,790,436"/>
-<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="983,428,1137,498,1132,498,982,434"/>
-<area shape="poly" id="edge17_Node000013_Node000010" title=" " alt="" coords="506,443,552,445,547,446,507,448"/>
-<area shape="poly" id="edge21_Node000015_Node000011" title=" " alt="" coords="793,396,827,402,822,403,793,402"/>
+<area shape="rect" id="Node000001" title="Destroys the dialog and its generated UI." alt="" coords="5,369,226,397"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a1286e8e44dcb894081e3e41c9cea21d1" title="Splice a passphrase into a GPG batch template." alt="" coords="280,104,508,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,368,137,323,169,261,213,196,241,166,272,141,282,137,279,141,275,145,245,170,218,199,173,264,142,325,124,370"/>
+<area shape="rect" id="Node000005" href="$class_keygen_dialog.html#a366f3fe8a9b24f0359b3df12e0a93244" title="Whether a field&#39;s text holds a line break or NUL, which would end its batch line early." alt="" coords="1105,130,1322,158"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="117,368,130,313,158,235,179,194,205,154,235,119,272,90,329,59,389,36,452,19,516,9,581,4,646,3,775,14,897,37,1006,66,1098,96,1167,124,1162,124,1096,101,1005,71,896,42,774,20,646,9,581,9,517,14,453,24,391,41,332,64,275,94,239,123,209,158,184,197,163,238,135,315,122,369"/>
+<area shape="rect" id="Node000006" href="$class_keygen_dialog.html#a085a87e910e15156b8cc113af5cd5d82" title="Whether gpg reads passphrase back as typed from a batch Passphrase: line." alt="" coords="274,344,514,371"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="225,370,260,368,256,371,227,375"/>
+<area shape="rect" id="Node000007" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="847,218,1050,246"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="153,366,210,347,273,329,418,300,531,285,646,273,792,253,842,248,837,250,793,259,646,278,532,290,418,305,274,335,211,352,157,371"/>
+<area shape="rect" id="Node000008" href="$class_keygen_dialog.html#aa28f8db828f60edd4195bcc9f9e8cb6e" title="Mirrors the e&#45;mail field into the template&#39;s Name&#45;Email: line." alt="" coords="304,224,484,269"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="135,367,196,328,273,286,307,273,303,277,275,290,199,332,139,370"/>
+<area shape="rect" id="Node000010" href="$class_keygen_dialog.html#ac0ebf04c899e95033f560ae4aae5b2f3" title="Mirrors the name field into the template&#39;s Name&#45;Real: line." alt="" coords="304,155,484,200"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="124,367,180,292,223,248,272,210,292,201,288,205,275,214,226,252,184,296,128,370"/>
+<area shape="rect" id="Node000011" href="$class_keygen_dialog.html#a68eaa387bd0f5f3074636fcfb6a5cc2f" title="First passphrase field edited: re&#45;evaluates whether OK may be enabled. The text itself stays out of t..." alt="" coords="565,496,789,541"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="166,395,274,424,556,491,552,494,273,429,167,400"/>
+<area shape="rect" id="Node000012" href="$class_keygen_dialog.html#ab6bde78f9ab9d4ccd40a5ec1e2dd087d" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="840,533,1057,561"/>
+<area shape="poly" id="edge25_Node000001_Node000012" title=" " alt="" coords="226,388,345,399,487,418,641,445,793,482,852,502,906,526,901,526,850,507,792,487,640,450,486,423,344,405,227,393"/>
+<area shape="rect" id="Node000013" href="$class_keygen_dialog.html#aec6a86ea8b6fc8eee1c2a49c501198d4" title="Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox...." alt="" coords="1117,579,1310,624"/>
+<area shape="poly" id="edge21_Node000001_Node000013" title=" " alt="" coords="122,394,142,439,173,496,193,526,217,554,244,579,275,599,305,611,341,621,432,635,540,641,659,641,900,629,1098,614,1104,614,900,634,659,646,540,646,432,640,340,626,303,616,272,604,241,583,213,558,189,529,168,499,137,441,121,400"/>
+<area shape="rect" id="Node000014" href="$class_keygen_dialog.html#af674d915b30db393f7dd6c0824ef363d" title="Confirmation field edited: same as on_passphrase1_textChanged()." alt="" coords="282,496,506,541"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="137,394,199,433,275,475,308,490,303,491,273,480,196,438,138,400"/>
+<area shape="rect" id="Node000015" href="$class_keygen_dialog.html#a3a0ea832334cd27c1f74bd5bb65d4258" title="Enable or disable expert mode (the editable batch template)." alt="" coords="285,666,502,694"/>
+<area shape="poly" id="edge22_Node000001_Node000015" title=" " alt="" coords="121,394,140,444,171,512,216,584,244,617,275,646,296,660,291,660,272,650,240,621,211,588,166,514,135,446,121,399"/>
+<area shape="rect" id="Node000016" href="$class_keygen_dialog.html#a5a56db2294c6d4a0a2e7c665ad2a54a1" title="Ticking &quot;no passphrase&quot; clears and disables the passphrase fields and makes OK available; unticking i..." alt="" coords="562,565,792,593"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="125,394,148,430,181,473,224,517,248,536,275,551,342,575,414,588,485,593,554,594,548,595,485,598,413,594,341,580,273,556,245,540,220,521,177,477,144,433,125,400"/>
+<area shape="rect" id="Node000003" href="$keygendialog_8cpp.html#aa13991db4a3cd48e28550a58607efab4" title="Cut a batch template into its non&#45;empty lines at CR and LF." alt="" coords="903,166,994,194"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,129,515,140,562,152,650,163,739,171,890,179,885,180,739,176,650,169,562,157,513,145,466,134"/>
+<area shape="rect" id="Node000004" href="$keygendialog_8cpp.html#a9bdefc87c7639ffbce0526943e36a3ac" title="Whether a batch line is the control statement control." alt="" coords="604,116,751,143"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="508,120,590,125,586,127,509,125"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="903,165,896,157,902,148,920,142,949,140,979,142,998,151,992,151,978,147,948,145,921,147,905,152,902,157,908,166"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="631,115,624,107,630,97,648,91,677,89,709,91,728,100,722,101,708,97,677,94,649,96,633,101,629,106,636,115"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="1013,215,1056,203,1167,163,1163,166,1058,208,1014,220"/>
+<area shape="rect" id="Node000009" href="$class_keygen_dialog.html#a1697fd1a20cad8dd3bd3491120525a25" title="Rewrites every &lt;key&gt;: ... line of the batch template to carry value. Values that fail isBatchValue() ..." alt="" coords="594,217,761,245"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="483,239,580,235,575,238,485,244"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="754,214,890,190,885,192,756,219"/>
+<area shape="poly" id="edge13_Node000009_Node000007" title=" " alt="" coords="761,229,833,231,828,232,762,234"/>
+<area shape="poly" id="edge15_Node000010_Node000009" title=" " alt="" coords="483,192,587,212,582,214,485,197"/>
+<area shape="poly" id="edge17_Node000011_Node000012" title=" " alt="" coords="790,528,827,534,822,534,790,533"/>
+<area shape="poly" id="edge18_Node000012_Node000013" title=" " alt="" coords="1019,559,1104,578,1099,578,1019,564"/>
+<area shape="poly" id="edge20_Node000014_Node000011" title=" " alt="" coords="506,516,552,518,547,519,507,521"/>
+<area shape="poly" id="edge24_Node000016_Node000012" title=" " alt="" coords="792,562,827,561,822,562,793,568"/>
 </map>

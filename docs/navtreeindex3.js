@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"class_pass_backend_factory.html#ab2ef5455daf9d9d09008ca95254da91a":[1,0,4,1],
 "class_pass_backend_factory.html#abef8590b56c897a52f55ba8a28ad71ae":[1,0,4,4],
 "class_password_dialog.html":[1,5,11],
 "class_password_dialog.html#a035a14b1473470f6af75fa0b88df7d16":[1,5,11,41],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794":[1,0,5,22],
 "class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719":[1,0,5,23],
 "class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629":[1,0,5,31],
-"class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80":[1,0,5,27],
-"class_real_pass.html#aa8c33f08cbdeb7d367d1bb9ca3a1435e":[1,0,5,36]
+"class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80":[1,0,5,27]
 };

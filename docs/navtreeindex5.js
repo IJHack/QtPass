@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8":[1,2,8,35],
 "class_users_dialog.html#a50e207112771a8c69d73a326f8efb0e2":[1,2,8,40],
 "class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1":[1,2,8,7],
 "class_users_dialog.html#a63e446d81e383b7ee8b21cb4ab5a8c8b":[1,2,8,38],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "importkeydialog_8h_source.html":[4,0,1,30],
 "index.html":[],
 "index.html":[0],
-"keygendialog_8cpp.html":[4,0,1,31],
-"keygendialog_8cpp.html#a9bdefc87c7639ffbce0526943e36a3ac":[4,0,1,31,0]
+"keygendialog_8cpp.html":[4,0,1,31]
 };

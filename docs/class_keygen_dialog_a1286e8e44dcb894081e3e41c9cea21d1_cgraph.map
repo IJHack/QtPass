@@ -1,8 +1,9 @@
 <map id="KeygenDialog::applyPassphrase" name="KeygenDialog::applyPassphrase">
-<area shape="rect" id="Node000001" title="Splice a passphrase into a GPG batch template." alt="" coords="5,56,234,84"/>
-<area shape="rect" id="Node000002" href="$keygendialog_8cpp.html#a9bdefc87c7639ffbce0526943e36a3ac" title="Whether a batch line is the control statement control." alt="" coords="285,29,432,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,54,272,53,267,54,235,60"/>
-<area shape="rect" id="Node000003" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="282,81,436,109"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="234,79,269,85,263,85,234,85"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="318,28,311,20,317,11,333,5,359,3,387,5,404,14,398,14,386,10,359,8,334,10,320,15,317,20,323,30"/>
+<area shape="rect" id="Node000001" title="Splice a passphrase into a GPG batch template." alt="" coords="5,68,234,96"/>
+<area shape="rect" id="Node000002" href="$keygendialog_8cpp.html#aa13991db4a3cd48e28550a58607efab4" title="Cut a batch template into its non&#45;empty lines at CR and LF." alt="" coords="310,29,401,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,65,297,52,292,54,208,70"/>
+<area shape="rect" id="Node000003" href="$keygendialog_8cpp.html#a9bdefc87c7639ffbce0526943e36a3ac" title="Whether a batch line is the control statement control." alt="" coords="282,105,429,133"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="211,94,269,105,264,105,211,99"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="315,28,308,20,314,11,330,5,355,3,383,5,399,14,394,14,382,10,355,8,331,10,317,15,314,20,320,30"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="315,104,308,96,314,87,330,81,355,79,383,81,399,90,394,90,382,86,355,84,331,86,317,91,314,96,320,106"/>
 </map>
