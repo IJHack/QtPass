@@ -1,0 +1,8 @@
+<map id="notLaidOutLikeAKey" name="notLaidOutLikeAKey">
+<area shape="rect" id="Node000001" title="The message for text that fails ImportKeyDialog::fitsTheEditor()." alt="" coords="213,48,364,76"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="321,33,311,29,288,27,267,29,256,34,253,39,258,49,253,47,248,40,252,30,266,24,288,22,312,24,327,33"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#aa4ecc33611d9fe18a2c743986217da7f" title="&quot;From file&quot; button: picks a file, reads it as a regular file of at most 16 MiB, requires the &#45;&#45;&#45;&#45;&#45;BEG..." alt="" coords="8,5,162,50"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="195,47,163,44,163,38,200,46"/>
+<area shape="rect" id="Node000003" href="$class_import_key_dialog.html#ad86cbcb4a634566cf4131d158b5652fe" title="&quot;From clipboard&quot; button: replaces the input field with the clipboard text, unless the clipboard is em..." alt="" coords="5,75,165,119"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="195,78,166,86,165,81,200,77"/>
+</map>

@@ -1,11 +1,16 @@
 <map id="ImportKeyDialog::on_fileButton_clicked" name="ImportKeyDialog::on_fileButton_clicked">
-<area shape="rect" id="Node000001" title="&quot;From file&quot; button: picks a file, reads it as a regular file of at most 16 MiB, requires the &#45;&#45;&#45;&#45;&#45;BEG..." alt="" coords="5,24,160,68"/>
-<area shape="rect" id="Node000002" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="227,5,384,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,34,214,30,209,31,160,39"/>
-<area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="208,57,404,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,52,195,58,190,59,160,57"/>
-<area shape="rect" id="Node000004" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="452,57,630,85"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="404,69,439,71,433,71,405,74"/>
-<area shape="rect" id="Node000005" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="678,57,806,85"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="631,69,665,71,660,71,631,74"/>
+<area shape="rect" id="Node000001" title="&quot;From file&quot; button: picks a file, reads it as a regular file of at most 16 MiB, requires the &#45;&#45;&#45;&#45;&#45;BEG..." alt="" coords="5,116,160,161"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#a2f1be126d17c6681dafb50f30c1417e8" title="Whether text is laid out as armor can be, so the input field can show it at a bounded cost." alt="" coords="215,5,397,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,113,158,86,206,60,223,55,219,58,209,65,161,91,119,118"/>
+<area shape="rect" id="Node000003" href="$importkeydialog_8cpp.html#aaaddd46d37ca0bc4761cd6d67da37ec6" title="The message for text that fails ImportKeyDialog::fitsTheEditor()." alt="" coords="230,98,382,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,127,217,121,212,124,160,132"/>
+<area shape="rect" id="Node000004" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="227,150,384,178"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="160,144,214,152,209,154,160,150"/>
+<area shape="rect" id="Node000005" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="208,202,404,230"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="136,159,209,186,236,197,231,197,207,192,135,164"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="267,97,261,89,266,79,281,73,306,71,332,74,348,82,342,83,331,79,306,76,283,78,270,83,267,89,272,98"/>
+<area shape="rect" id="Node000006" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="452,202,630,230"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="404,213,439,216,433,216,405,218"/>
+<area shape="rect" id="Node000007" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="678,202,806,230"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="631,213,665,216,660,216,631,218"/>
 </map>

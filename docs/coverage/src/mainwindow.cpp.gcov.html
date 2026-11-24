@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 22:37:12</td>
+            <td class="headerValue">2026-11-24 23:42:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -453,14 +453,14 @@
 <span id="L380"><span class="lineNum">     380</span> <span class="tlaGNC">          76 :   m_firstShowCompleted = true;</span></span>
 <span id="L381"><span class="lineNum">     381</span>              : }</span>
 <span id="L382"><span class="lineNum">     382</span>              : </span>
-<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">        9076 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">        9076 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">        9074 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">        9074 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L385"><span class="lineNum">     385</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L386"><span class="lineNum">     386</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L387"><span class="lineNum">     387</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L388"><span class="lineNum">     388</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L389"><span class="lineNum">     389</span>              :   }</span>
-<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">        9076 :   return QMainWindow::event(event);</span></span>
+<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">        9074 :   return QMainWindow::event(event);</span></span>
 <span id="L391"><span class="lineNum">     391</span>              : }</span>
 <span id="L392"><span class="lineNum">     392</span>              : </span>
 <span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">         263 : void MainWindow::changeEvent(QEvent *event) {</span></span>

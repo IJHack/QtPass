@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111":[1,2,8,0],
+"class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014":[1,2,8,0,0],
+"class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111af80a4ad87fee7c9fdc19b7769495fdb5":[1,2,8,0,1],
 "class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8":[1,2,8,35],
 "class_users_dialog.html#a50e207112771a8c69d73a326f8efb0e2":[1,2,8,40],
 "class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1":[1,2,8,7],
@@ -244,10 +247,7 @@ var NAVTREEINDEX5 =
 "imitatepass_8h.html":[4,0,1,28],
 "imitatepass_8h_source.html":[4,0,1,28],
 "importkeydialog_8cpp.html":[4,0,1,29],
+"importkeydialog_8cpp.html#aaaddd46d37ca0bc4761cd6d67da37ec6":[4,0,1,29,0],
 "importkeydialog_8cpp_source.html":[4,0,1,29],
-"importkeydialog_8h.html":[4,0,1,30],
-"importkeydialog_8h_source.html":[4,0,1,30],
-"index.html":[],
-"index.html":[0],
-"keygendialog_8cpp.html":[4,0,1,31]
+"importkeydialog_8h.html":[4,0,1,30]
 };

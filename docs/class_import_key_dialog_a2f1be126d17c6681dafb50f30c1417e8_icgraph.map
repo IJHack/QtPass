@@ -1,0 +1,7 @@
+<map id="ImportKeyDialog::fitsTheEditor" name="ImportKeyDialog::fitsTheEditor">
+<area shape="rect" id="Node000001" title="Whether text is laid out as armor can be, so the input field can show it at a bounded cost." alt="" coords="213,40,395,85"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#aa4ecc33611d9fe18a2c743986217da7f" title="&quot;From file&quot; button: picks a file, reads it as a regular file of at most 16 MiB, requires the &#45;&#45;&#45;&#45;&#45;BEG..." alt="" coords="8,5,162,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,46,163,43,163,37,200,45"/>
+<area shape="rect" id="Node000003" href="$class_import_key_dialog.html#ad86cbcb4a634566cf4131d158b5652fe" title="&quot;From clipboard&quot; button: replaces the input field with the clipboard text, unless the clipboard is em..." alt="" coords="5,75,165,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,80,166,87,165,82,200,79"/>
+</map>

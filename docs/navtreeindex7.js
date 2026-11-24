@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"struct_config_dialog_1_1_profile_problems.html#a7e7b8cd08c6aaa7c976618a5caa28d15":[1,5,1,1,4],
+"struct_config_dialog_1_1_profile_problems.html#ab4873e1d1d532424ba0b5a1c31c3963f":[1,5,1,1,2],
+"struct_config_dialog_1_1_signing_stores.html":[1,5,1,2],
+"struct_config_dialog_1_1_signing_stores.html#a05aded4260ca220959acaa60e1bf64a1":[1,5,1,2,1],
 "struct_config_dialog_1_1_signing_stores.html#a873217800146f3d46deea5615f7337a3":[1,5,1,2,0],
 "struct_enums_1_1_process_info.html":[1,1,2],
 "struct_enums_1_1_process_info.html#af7687e8a1fb2f7883aa00cd3eff9460e":[1,1,2,0],
