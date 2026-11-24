@@ -9,7 +9,9 @@
 #include <QMenu>
 #include <QMouseEvent>
 
-SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {}
+SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {
+  setMaxLength(kMaxLength);
+}
 
 auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
   QMenu *menu = createStandardContextMenu();

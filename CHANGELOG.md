@@ -85,6 +85,13 @@
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
+- The edit dialog no longer cuts a password or field longer than 32767
+  characters, such as a key file kept as one line of base64. Such a line was
+  loaded and pasted shortened, without a word, and saved shortened over the
+  entry, even when only the notes changed. A line now holds up to 1 MiB of
+  characters; a longer one is still cut (scan finding ANT-2026-0OJ00WWX,
+  [#2316](https://github.com/IJHack/QtPass/pull/2316) on main, where the
+  edit dialog refuses such an entry instead).
 - The users dialog lists a key under its first user ID with the best
   validity, not always under its primary one. A key you certified could
   otherwise be shown as valid under a name its owner added later and nobody
