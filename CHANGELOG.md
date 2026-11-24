@@ -794,6 +794,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- The edit dialog no longer cuts a password or field longer than 32767
+  characters, such as a key file kept as one line of base64. Such a line was
+  loaded and pasted shortened, without a word, and saved shortened over the
+  entry, even when only the notes changed (scan ANT-2026-0OJ00WWX).
 - The users dialog lists a key under its first user ID with the best
   validity, not always under its primary one. A key you certified could
   otherwise be shown as valid under a name its owner added later and nobody

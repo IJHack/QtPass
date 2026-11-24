@@ -161,6 +161,7 @@ private Q_SLOTS:
   void pasteIsAnUndoStepOfItsOwn();
   void unicodeLineSeparatorsAreRemoved();
   void storedSeparatorsSurviveAnUneditedSave();
+  void aLineLongerThanQLineEditsDefaultIsKeptWhole();
   void ctrlShiftInsertPastesThePrimarySelection();
   void fieldNameDropsLineBreaks();
   void templateFieldsKeepPlainLabels();
@@ -857,6 +858,40 @@ void tst_passworddialog::storedSeparatorsSurviveAnUneditedSave() {
   QCOMPARE(password->text(), QStringLiteral("pa\u2028ss\u0085word"));
   QCOMPARE(login->text(), QStringLiteral("a\u2029b"));
   QCOMPARE(d.getPassword(), entry);
+}
+
+/**
+ * @brief Scan ANT-2026-0OJ00WWX: QLineEdit keeps 32767 characters by
+ *        default and drops the rest without a word. A password or field of
+ *        40000 characters (a key file as one line of base64) loads whole, a
+ *        save without edits writes it back unchanged, a paste of one into
+ *        the password field keeps all of it, and so does a field name
+ *        editor (made with its text) given one.
+ */
+void tst_passworddialog::aLineLongerThanQLineEditsDefaultIsKeptWhole() {
+  const QString longPassword(40000, u'a');
+  const QString longLogin(40000, u'b');
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  const QString entry = longPassword + QStringLiteral("\nlogin: ") + longLogin +
+                        QStringLiteral("\nnotes\n");
+  pass.deliverShow(entry);
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *login = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(password != nullptr && login != nullptr);
+  QCOMPARE(password->text().size(), longPassword.size());
+  QCOMPARE(login->text().size(), longLogin.size());
+  QVERIFY2(d.getPassword() == entry, "an unedited save keeps every character");
+
+  password->clear();
+  QApplication::clipboard()->setText(longLogin);
+  password->paste();
+  QCOMPARE(password->text().size(), longLogin.size());
+
+  SecretLineEdit made(QStringLiteral("login"));
+  made.setText(longLogin);
+  QCOMPARE(made.text().size(), longLogin.size());
 }
 
 /**

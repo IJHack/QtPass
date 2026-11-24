@@ -15,6 +15,7 @@
 #include <QMouseEvent>
 #include <QValidator>
 #include <algorithm>
+#include <limits>
 
 namespace {
 /**
@@ -73,11 +74,16 @@ void SecretLineEdit::setStoredText(const QString &text) {
 }
 
 SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {
+  // QLineEdit cuts setText(), a paste and typing to 32767 characters without
+  // a word. A key file kept as one line of base64 is longer, and the
+  // password dialog saves what the field holds: the tail was lost on save.
+  setMaxLength(std::numeric_limits<int>::max());
   setValidator(new SingleLineValidator(this));
 }
 
 SecretLineEdit::SecretLineEdit(const QString &text, QWidget *parent)
     : QLineEdit(text, parent) {
+  setMaxLength(std::numeric_limits<int>::max());
   setValidator(new SingleLineValidator(this));
 }
 
