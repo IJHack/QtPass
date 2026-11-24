@@ -26,6 +26,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/secretlineedit.h"
 #include "../testsettings.h"
 
 namespace {
@@ -111,6 +112,7 @@ private Q_SLOTS:
   void enterAfterAFailedSaveTriesAgain();
   void newEntryWrittenBeforeAFailedGitStepCloses();
   void contentLoadUnlocksEditorAndOk();
+  void aLineLongerThanQLineEditsDefaultIsKeptWhole();
   void decryptErrorKeepsDialogOpenWithReason();
   void lateErrorAfterContentLoadIsIgnored();
   void newEntryStartsEditable();
@@ -164,6 +166,43 @@ void tst_passworddialog::contentLoadUnlocksEditorAndOk() {
   auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
   QVERIFY2(status->text().isEmpty(),
            "the status label must be cleared once the content has loaded");
+}
+
+/**
+ * @brief Scan ANT-2026-0OJ00WWX: QLineEdit keeps 32767 characters by
+ *        default and drops the rest without a word, and OK saves what the
+ *        fields hold. A password, a template field and another field of
+ *        40000 characters each (a key file as one line of base64) load
+ *        whole and are saved whole; the display panel's password field
+ *        holds one too.
+ */
+void tst_passworddialog::aLineLongerThanQLineEditsDefaultIsKeptWhole() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("login");
+  s.templateAllFields = true;
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  const QString password(40000, QLatin1Char('a'));
+  const QString login(40000, QLatin1Char('b'));
+  const QString url(40000, QLatin1Char('c'));
+  pass.deliverShow(password + QStringLiteral("\nlogin: ") + login +
+                   QStringLiteral("\nurl: ") + url + QStringLiteral("\n"));
+  for (const QString &name : {QStringLiteral("lineEditPassword"),
+                              QStringLiteral("login"), QStringLiteral("url")}) {
+    auto *line = d.findChild<QLineEdit *>(name);
+    QVERIFY2(line != nullptr, qPrintable(name));
+    QVERIFY2(line->text().size() == 40000, qPrintable(name));
+    QCOMPARE(line->maxLength(), SecretLineEdit::kMaxLength);
+  }
+  const QString saved = d.getPassword();
+  QVERIFY(saved.startsWith(password + QLatin1Char('\n')));
+  QVERIFY(saved.contains(QStringLiteral("login: ") + login + u'\n'));
+  QVERIFY(saved.contains(QStringLiteral("url: ") + url + u'\n'));
+
+  SecretLineEdit shown;
+  shown.setText(url);
+  QCOMPARE(shown.text().size(), url.size());
 }
 
 void tst_passworddialog::decryptErrorKeepsDialogOpenWithReason() {

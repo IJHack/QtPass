@@ -5,6 +5,7 @@
 #include "pass.h"
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"
+#include "secretlineedit.h"
 #include "totp.h"
 #include "ui_passworddialog.h"
 #include "util.h"
@@ -63,6 +64,7 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
   m_isNew = false;
 
   ui->setupUi(this);
+  ui->lineEditPassword->setMaxLength(SecretLineEdit::kMaxLength);
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
 
@@ -81,6 +83,9 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
       m_file(std::move(file)), m_isNew(isNew) {
 
   ui->setupUi(this);
+  // QLineEdit's own limit of 32767 cut a long key line, and OK saved the cut
+  // value (see SecretLineEdit::kMaxLength).
+  ui->lineEditPassword->setMaxLength(SecretLineEdit::kMaxLength);
 
   setWindowTitle(this->windowTitle() + " " + m_file);
   m_passConfig = s.passwordConfiguration;
@@ -304,6 +309,7 @@ void PasswordDialog::setPassword(const QString &password) {
   m_otherLines.clear();
   for (const NamedValue &nv : std::as_const(namedValues)) {
     auto *line = new QLineEdit();
+    line->setMaxLength(SecretLineEdit::kMaxLength);
     line->setObjectName(nv.name);
     line->setText(nv.value);
     line->setProperty(kOriginalLineProperty, nv.originalLine);
@@ -520,6 +526,7 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
         continue;
       }
       auto *line = new QLineEdit();
+      line->setMaxLength(SecretLineEdit::kMaxLength);
       auto *label = new QLabel(field);
       line->setObjectName(field);
       ui->formLayout->addRow(label, line);
