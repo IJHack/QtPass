@@ -64,6 +64,18 @@ jobs:
           target: android
           arch: android_arm64_v8a
           cache: true
+      # Gradle fetches the Android build's dependencies (kotlin-stdlib and
+      # the rest of the Qt template's classpath) from Maven Central, which
+      # answers runners with 429 Too Many Requests often enough to fail a run.
+      # The newest cache is restored here; it is saved after a run on main.
+      - name: Restore the Gradle cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-qt6.11-${{ github.run_id }}
+          restore-keys: gradle-qt6.11-
       - name: Build
         run: |
           mkdir build
@@ -76,11 +88,39 @@ jobs:
           mkdir -p "android-build/libs/$ABI"
           cp "main/libqtpass_$ABI.so" "android-build/libs/$ABI/"
           androiddeployqt=$(find "$QT_ROOT_DIR/.." -path '*/bin/androiddeployqt' | head -1)
-          "$androiddeployqt" \
-            --input main/android-qtpass-deployment-settings.json \
-            --output android-build --android-platform android-36 \
-            --jdk "$JAVA_HOME" --gradle
+          # A rate limit or a dropped connection fails Gradle's dependency
+          # download; it passes a minute or two later.
+          for attempt in 1 2 3; do
+            if "$androiddeployqt" \
+              --input main/android-qtpass-deployment-settings.json \
+              --output android-build --android-platform android-36 \
+              --jdk "$JAVA_HOME" --gradle; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              exit 1
+            fi
+            echo "::warning::androiddeployqt failed (attempt $attempt), retrying in $((attempt * 60)) s"
+            sleep $((attempt * 60))
+          done
           find android-build -name '*.apk' -exec ls -l {} +
+      # Saved from main only: a pull request's cache is visible to that
+      # branch alone, and would only crowd out main's. The key follows the
+      # generated Gradle files, so a Qt update with other dependencies saves
+      # anew; lock files and the GC marker are left out, as Gradle advises.
+      - name: Prepare the Gradle cache
+        if: github.event_name != 'pull_request'
+        run: |
+          rm -f ~/.gradle/caches/modules-2/modules-2.lock ~/.gradle/caches/modules-2/gc.properties
+          find ~/.gradle/caches -name '*.lock' -delete
+      - name: Save the Gradle cache
+        if: github.event_name != 'pull_request'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-qt6.11-${{ hashFiles('build/android-build/build.gradle', 'build/android-build/gradle/wrapper/gradle-wrapper.properties') }}
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: qtpass-android-arm64-v8a
