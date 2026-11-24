@@ -91,7 +91,8 @@ var group__secrets =
       [ "publishSelection", "class_secret_line_edit.html#a5f82bf213b8d3162b9593ea02bed0646", null ],
       [ "setStoredText", "class_secret_line_edit.html#aa3cb552ece80bffe0d80121cbb236493", null ],
       [ "withoutLineBreaks", "class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d", null ],
-      [ "withoutPlainSelectionCopy", "class_secret_line_edit.html#a386b60705220dff0bcd807ebb1589b24", null ]
+      [ "withoutPlainSelectionCopy", "class_secret_line_edit.html#a386b60705220dff0bcd807ebb1589b24", null ],
+      [ "kMaxLength", "class_secret_line_edit.html#a7cce1774389f5d0d58bb76936c51e0aa", null ]
     ] ],
     [ "SecretPlainTextEdit", "class_secret_plain_text_edit.html", [
       [ "SecretPlainTextEdit", "class_secret_plain_text_edit.html#a30bbdda25932ef4bf6f31427d806e7a2", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"class_users_dialog.html#aa9efcd78d2b82147dd8667ced397353a":[1,2,8,33],
 "class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22":[1,2,8,1],
 "class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2":[1,2,8,14],
 "class_users_dialog.html#aaf2a368116ead1381e833f52f4bb7cf5":[1,2,8,39],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "mainwindow_8cpp.html":[4,0,1,33],
 "mainwindow_8cpp_source.html":[4,0,1,33],
 "mainwindow_8h.html":[4,0,1,34],
-"mainwindow_8h_source.html":[4,0,1,34],
-"menubarpeek_8cpp.html":[4,0,1,35]
+"mainwindow_8h_source.html":[4,0,1,34]
 };
