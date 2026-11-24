@@ -32,6 +32,7 @@
 #include <QSignalBlocker>
 #include <QWidget>
 #include <algorithm>
+#include <iterator>
 #include <utility>
 
 #include "qtpasslogging.h"
@@ -224,39 +225,103 @@ auto keyIdsMatch(const QString &first, const QString &second) -> bool {
   return a.endsWith(b) || b.endsWith(a);
 }
 
-/// Whether @p recipient, as a .gpg-id lists it, names @p key the way gpg's
-/// -r resolves it: a key ID in any length gpg accepts (the key carries its
-/// fingerprint, the list may carry its v4 suffix or v5/v6 head ID, or the
-/// fingerprint itself; eight characters is the shortest), or else a name,
-/// matched case-insensitively as a substring of the UID after gpg's "=",
-/// "<...>", "@" and "*" markers.
-auto answersTo(const UserInfo &key, const QString &recipient) -> bool {
-  static const QRegularExpression hexId(
-      QStringLiteral("^(0x)?[0-9A-Fa-f]{8,}$"));
-  if (hexId.match(recipient.trimmed()).hasMatch()) {
-    return keyIdsMatch(key.key_id, recipient);
+/// The hex identifier a .gpg-id line names, without "0x" and a trailing
+/// "!", when the line is one in the lengths gpg reads as a key ID or
+/// fingerprint (8, 16, 40 or 64 digits); empty otherwise.
+auto keyIdOfLine(const QString &recipient) -> QString {
+  static const QRegularExpression hexLine(
+      QStringLiteral("^(?:0[xX])?([0-9A-Fa-f]+)!?$"));
+  const QRegularExpressionMatch match = hexLine.match(recipient.trimmed());
+  if (!match.hasMatch()) {
+    return {};
   }
-  QString term = recipient.trimmed();
-  if (term.startsWith(u'=') || term.startsWith(u'@') || term.startsWith(u'*')) {
-    term.remove(0, 1);
-  } else if (term.startsWith(u'<') && term.endsWith(u'>')) {
+  const QString digits = match.captured(1);
+  const qsizetype size = digits.size();
+  return size == 8 || size == 16 || size == 40 || size == 64 ? digits
+                                                             : QString();
+}
+
+/// The text a .gpg-id line searches the user IDs for, after gpg's "=",
+/// "<...>", "@" and "*" markers; empty when the line is not one of those
+/// forms or a plain name.
+auto nameTermOfLine(const QString &recipient) -> QString {
+  const QString line = recipient.trimmed();
+  if (line.isEmpty()) {
+    return {};
+  }
+  // A leading 0x, digits only, or groups of four digits split by spaces (a
+  // fingerprint as gpg prints it) is a key ID gpg reads in its own way
+  // (keyIdOfLine() takes the lengths it accepts); ".", "+", "#", "&", "^",
+  // "/", "[" and ":" start search modes this dialog does not model.
+  static const QRegularExpression hexish(QStringLiteral(
+      "^(?:0[xX]|[0-9A-Fa-f]+!?$|[0-9A-Fa-f]{4}(?:\\s+[0-9A-Fa-f]{4})+!?$)"));
+  if (hexish.match(line).hasMatch() ||
+      QStringLiteral(".+#&^/[:!\\").contains(line.front())) {
+    return {};
+  }
+  QString term = line;
+  if (term.startsWith(u'<')) {
+    if (!term.endsWith(u'>')) {
+      return {};
+    }
     term = term.mid(1, term.size() - 2);
+  } else if (term.startsWith(u'=') || term.startsWith(u'@') ||
+             term.startsWith(u'*')) {
+    term.remove(0, 1);
   }
-  return !term.isEmpty() && key.name.contains(term, Qt::CaseInsensitive);
+  return term;
+}
+
+/// Whether answersTo() can judge @p recipient on its own: a key ID or
+/// fingerprint in a length gpg reads as one, or a name. For those every key
+/// gpg resolves the line to is one answersTo() matches, given the key's full
+/// listing, so a line that matches no listed key names no key in the
+/// keyring. Any other form (a fingerprint written with spaces or between
+/// colons, a keygrip, "*" alone) needs gpg's own answer.
+auto judgedLocally(const QString &recipient) -> bool {
+  return !keyIdOfLine(recipient).isEmpty() ||
+         !nameTermOfLine(recipient).isEmpty();
+}
+
+/// Whether @p recipient, a .gpg-id line judgedLocally() accepts, names
+/// @p key the way gpg's -r resolves it: a key ID or fingerprint of the key
+/// or of one of its subkeys (v4 key IDs are a fingerprint's tail, v5/v6 ones
+/// its head), or else a name, matched case-insensitively as a substring of
+/// any of its user IDs. That is as loose as gpg's substring search and
+/// looser than its exact ("="), mailbox ("<...>") and domain ("@") ones, so
+/// it may claim a key gpg would not, but never misses one gpg finds.
+auto answersTo(const UserInfo &key, const QString &recipient) -> bool {
+  const QString keyId = keyIdOfLine(recipient);
+  if (!keyId.isEmpty()) {
+    return keyIdsMatch(key.key_id, keyId) ||
+           std::any_of(key.subkeys.cbegin(), key.subkeys.cend(),
+                       [&keyId](const QString &subkey) {
+                         return keyIdsMatch(subkey, keyId);
+                       });
+  }
+  const QString term = nameTermOfLine(recipient);
+  if (term.isEmpty()) {
+    return false;
+  }
+  const auto holds = [&term](const QString &uid) {
+    return uid.contains(term, Qt::CaseInsensitive);
+  };
+  return holds(key.name) ||
+         std::any_of(key.uids.cbegin(), key.uids.cend(), holds);
 }
 
 } // namespace
 
-void UsersDialog::selectRecipients(const QStringList &recipients) {
-  // Each per-line gpg lookup is a blocking call on the dialog's way up, so a
-  // store with many keys missing from the keyring (a fresh clone, a team
-  // store) is capped at this many across both the fallback below and the
-  // missing-key check; the rest resolve by the batched call or stay unchecked.
-  constexpr int kMaxLookups = 10;
-  int lookups = 0;
-  // Remembers the per-line lookups the fallback already ran, so the
-  // missing-key loop below reuses them instead of asking gpg a second time.
-  QHash<QString, bool> perLineHasKey;
+void UsersDialog::selectRecipients(const QStringList &listed) {
+  // A line listed twice is one recipient, and one row.
+  QStringList recipients;
+  QSet<QString> seen;
+  for (const QString &line : listed) {
+    if (!seen.contains(line)) {
+      seen.insert(line);
+      recipients.append(line);
+    }
+  }
 
   // One gpg call resolves every recipient, by key ID or by email/UID.
   QList<UserInfo> resolved = m_pass->listKeys(recipients);
@@ -264,17 +329,38 @@ void UsersDialog::selectRecipients(const QStringList &recipients) {
     // One line gpg cannot read as a key search ("0x", a fingerprint one
     // digit short) aborts that whole call with exit code 2, so nothing is
     // listed for the other lines, whose keys are in the keyring all the same.
-    // Asked for one by one they still resolve; only the unreadable line is
-    // reported missing by the loop below, as an unknown key already is.
-    for (const QString &recipient : recipients) {
-      if (lookups++ >= kMaxLookups) {
-        break;
-      }
-      const QList<UserInfo> keys = m_pass->listKeys(recipient);
-      perLineHasKey.insert(recipient, !keys.isEmpty());
-      resolved += keys;
+    // Every form judgedLocally() accepts gpg reads, so ask again for those;
+    // the rest get a call of their own below.
+    QStringList readable;
+    std::copy_if(recipients.cbegin(), recipients.cend(),
+                 std::back_inserter(readable), judgedLocally);
+    if (!readable.isEmpty() && readable.size() < recipients.size()) {
+      resolved = m_pass->listKeys(readable);
     }
   }
+
+  // A line answersTo() cannot judge gets gpg's own verdict, one blocking
+  // call each on the dialog's way up. Only unusual forms need it, so a few
+  // are asked; past that a line is listed unticked as not looked up, so it
+  // does not stay in the list unseen (a member could otherwise hide behind
+  // it a key the user unticks).
+  constexpr int kMaxLookups = 10;
+  int lookups = 0;
+  QHash<QString, bool> perLineHasKey;
+  QSet<QString> notLookedUp;
+  for (const QString &recipient : std::as_const(recipients)) {
+    if (judgedLocally(recipient)) {
+      continue;
+    }
+    if (lookups++ >= kMaxLookups) {
+      notLookedUp.insert(recipient);
+      continue;
+    }
+    const QList<UserInfo> keys = m_pass->listKeys(recipient);
+    perLineHasKey.insert(recipient, !keys.isEmpty());
+    resolved += keys;
+  }
+
   for (UserInfo &user : m_userList) {
     if (std::any_of(resolved.cbegin(), resolved.cend(),
                     [&user](const UserInfo &key) {
@@ -283,32 +369,29 @@ void UsersDialog::selectRecipients(const QStringList &recipients) {
       user.enabled = true;
     }
   }
-  // Only what gpg itself cannot find is reported missing. The fallback's
-  // per-line answer, when it has one, is gpg's own verdict for that line and
-  // decides it outright. Otherwise the heuristic match is a fast path (a
-  // secondary UID or a subkey ID resolves in gpg without showing in what it
-  // lists), and a per-line gpg call settles anything it does not catch. Taking
-  // the cached answer first also keeps a genuinely unreadable line ("0x")
-  // reported missing even when a resolved key's UID happens to contain it, so
-  // the heuristic answersTo() would otherwise match.
-  for (const QString &recipient : recipients) {
-    bool found = false;
-    const auto cached = perLineHasKey.constFind(recipient);
-    if (cached != perLineHasKey.constEnd()) {
-      found = cached.value();
-    } else {
-      found = std::any_of(resolved.cbegin(), resolved.cend(),
-                          [&recipient](const UserInfo &key) {
-                            return answersTo(key, recipient);
-                          });
-      if (!found && lookups++ < kMaxLookups) {
-        found = !m_pass->listKeys(recipient).isEmpty();
-      }
+  // Only what gpg itself cannot find is reported missing. A per-line answer
+  // is gpg's own verdict for that line and decides it outright; that also
+  // keeps a genuinely unreadable line ("0x") reported missing. Any other
+  // line is missing when no key gpg resolved answers to it: the full listing
+  // carries every user ID and subkey, so nothing is left for gpg to add.
+  for (const QString &recipient : std::as_const(recipients)) {
+    UserInfo missing;
+    missing.key_id = recipient;
+    if (notLookedUp.contains(recipient)) {
+      missing.name = " ?? " + tr("Not looked up in keyring");
+      m_notLookedUp.insert(recipient);
+      m_userList.append(missing);
+      continue;
     }
+    const auto cached = perLineHasKey.constFind(recipient);
+    const bool found = cached != perLineHasKey.constEnd()
+                           ? cached.value()
+                           : std::any_of(resolved.cbegin(), resolved.cend(),
+                                         [&recipient](const UserInfo &key) {
+                                           return answersTo(key, recipient);
+                                         });
     if (!found) {
-      UserInfo missing;
       missing.enabled = true;
-      missing.key_id = recipient;
       missing.name = " ?? " + tr("Key not found in keyring");
       m_userList.append(missing);
     }
@@ -444,8 +527,10 @@ bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
   }
   // A ticked key is one the folder is encrypted to: it is shown whatever
   // its state, or an expired or missing recipient stays in .gpg-id unseen and
-  // cannot be unticked. "Show unusable keys" is about keys to add.
-  if (user.enabled || ui->checkBox->isChecked()) {
+  // cannot be unticked. "Show unusable keys" is about keys to add. A line
+  // listed unticked without a lookup is shown too: OK would drop it unseen.
+  if (user.enabled || ui->checkBox->isChecked() ||
+      m_notLookedUp.contains(user.key_id)) {
     return true;
   }
   return user.isValid() && !isUserExpired(user);

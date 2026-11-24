@@ -82,7 +82,9 @@ private slots:
   void manyUnknownRecipientsOpenAtOnceAndSorted();
   void unreadableRecipientLineLeavesTheOthersTicked();
   void unreadableLineStaysMissingWhenAResolvedUidContainsIt();
-  void fallbackPerLineLookupIsCappedAndReused();
+  void fallbackAsksAgainForTheReadableLinesInOneCall();
+  void aLineNamingASubkeyOrAnotherUidTicksItsKey();
+  void unusualLinesPastTheLookupCapAreListedUnticked();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
   void v6FingerprintMatchesHeadIdsButNotTailIds();
   void unusableKeysAreHiddenUntilAskedForAndThenBadged();
@@ -1060,9 +1062,7 @@ void tst_usersdialog::searchListsUserIdsWithASlash() {
   QVERIFY(store.isValid());
   QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
   QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-  gpgId.write("1111111111111111111111111111111111111111\n"
-              "2222222222222222222222222222222222222222\n"
-              "3333333333333333333333333333333333333333\n");
+  gpgId.write("AAAAAAAAAAAAAAA1\nBBBBBBBBBBBBBBB2\nCCCCCCCCCCCCCCC3\n");
   gpgId.close();
   s.passStore = store.path() + QLatin1Char('/');
   RecordingPass pass(s);
@@ -1169,10 +1169,7 @@ void tst_usersdialog::recipientByShortOrLongIdIsNotListedAsNotFound() {
   for (const QByteArray &line :
        {QByteArrayLiteral("31850CF72D9CDDE9"), QByteArrayLiteral("0x2d9cdde9"),
         QByteArrayLiteral("alice@example.org"),
-        QByteArrayLiteral("<alice@example.org>"), QByteArrayLiteral("Alice"),
-        // A secondary UID: not in what the listing parser keeps, but gpg
-        // resolves it (the stand-in lists every key for it).
-        QByteArrayLiteral("alice-work@example.org")}) {
+        QByteArrayLiteral("<alice@example.org>"), QByteArrayLiteral("Alice")}) {
     QTemporaryDir store;
     QVERIFY(store.isValid());
     QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
@@ -1253,8 +1250,8 @@ void tst_usersdialog::v6FingerprintMatchesHeadIdsButNotTailIds() {
     }
   }
 
-  // Once the ten per-recipient lookups are spent, a v6 head ID and short ID
-  // still match the already-listed fingerprint without another gpg call.
+  // After ten lines that name no key, a v6 head ID and short ID still match
+  // the listed fingerprint without a gpg call of their own.
   QTemporaryDir store;
   QVERIFY(store.isValid());
   QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
@@ -1464,6 +1461,7 @@ void tst_usersdialog::unreadableRecipientLineLeavesTheOthersTicked() {
           QString::fromLatin1(kColonListing) +
           QStringLiteral("LISTING\n}\n"
                          "case \"$*\" in\n"
+                         "*31850CF72D9CDDE9*693A0AF3FA364E76*) all ;;\n"
                          "*31850CF72D9CDDE9*) all | head -3 ;;\n"
                          "*693A0AF3FA364E76*) all | tail -3 ;;\n"
                          "*) all ;;\nesac\nexit 0\n"));
@@ -1511,7 +1509,7 @@ void tst_usersdialog::unreadableLineStaysMissingWhenAResolvedUidContainsIt() {
   // and a bare "0x" both abort with exit 2, as real gpg does.
   const QString listing = QStringLiteral(
       "pub:u:4096:1:AAAABBBBCCCCDDDD:1700000000:::u:::escarESCA::::::23::0:\n"
-      "fpr:::::::::AAAABBBBCCCCDDDDAAAABBBBCCCCDDDDAAAABBBB:\n"
+      "fpr:::::::::AAAABBBBCCCCDDDDAAAABBBBAAAABBBBCCCCDDDD:\n"
       "uid:u::::1700000000::HASH::Max 0xface <max@example.org>::::::::::0:\n");
   AppSettings s = m_settings;
   s.gpgExecutable = writeGpg(
@@ -1527,7 +1525,7 @@ void tst_usersdialog::unreadableLineStaysMissingWhenAResolvedUidContainsIt() {
   QVERIFY(store.isValid());
   QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
   QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-  gpgId.write("AAAABBBBCCCCDDDDAAAABBBBCCCCDDDDAAAABBBB\n0x\n");
+  gpgId.write("AAAABBBBCCCCDDDDAAAABBBBAAAABBBBCCCCDDDD\n0x\n");
   gpgId.close();
   s.passStore = store.path() + QLatin1Char('/');
   RecordingPass pass(s);
@@ -1547,14 +1545,13 @@ void tst_usersdialog::unreadableLineStaysMissingWhenAResolvedUidContainsIt() {
 }
 
 /**
- * @brief The per-line fallback must stay bounded. A fresh clone or a team
- *        store can have every recipient's key missing from the keyring; with
- *        one unreadable line the batched gpg call fails and the fallback asks
- *        per line. It is capped at kMaxLookups and shares that budget and its
- *        results with the missing-key loop, which must not ask gpg about the
- *        same line a second time.
+ * @brief The fallback for a batched call that one unreadable line aborted
+ *        must stay bounded. A fresh clone or a team store can have every
+ *        recipient's key missing from the keyring. The dialog asks again for
+ *        all lines it can judge in one call, and only the unreadable line
+ *        gets a call of its own, however many lines there are.
  */
-void tst_usersdialog::fallbackPerLineLookupIsCappedAndReused() {
+void tst_usersdialog::fallbackAsksAgainForTheReadableLinesInOneCall() {
   // Build a store whose .gpg-id holds @p missing unknown fingerprints and one
   // unreadable "0x" line, open the Users dialog on it, and count the gpg calls
   // that carried a recipient (a fingerprint or "0x"); the whole-keyring and
@@ -1609,24 +1606,170 @@ void tst_usersdialog::fallbackPerLineLookupIsCappedAndReused() {
     return static_cast<int>(log.readAll().count('x'));
   };
 
-  // Five missing lines plus "0x" is six recipients, all looked up under the
-  // cap: 1 batched call (fails on "0x") + 6 per-line. The missing-key loop
-  // reuses those six results, so it adds nothing; without the reuse it would
-  // ask gpg about them again until the shared budget runs out (1 + 6 + 4 = 11).
-  const int few = callsFor(5);
-  QVERIFY2(few >= 0, "fallback harness failed to run");
-  QVERIFY2(few <= 7, qPrintable(QStringLiteral("gpg calls for 5 lines: %1 "
-                                               "(reuse missing?)")
-                                    .arg(few)));
+  // The batched call fails on "0x", the readable lines are asked again in
+  // one call, and "0x" alone once: three calls for five lines or fifteen.
+  // The per-line fallback this replaced made one call per line, up to ten.
+  QCOMPARE(callsFor(5), 3);
+  QCOMPARE(callsFor(15), 3);
+}
 
-  // Fifteen missing lines: the per-line budget stops the fallback at
-  // kMaxLookups = 10, so 1 batched + 10 per-line at most. Uncapped it would be
-  // 1 + 15 + 10 = 26.
-  const int many = callsFor(15);
-  QVERIFY2(many >= 0, "fallback harness failed to run");
-  QVERIFY2(many <= 11, qPrintable(QStringLiteral("gpg calls for 15 lines: %1 "
-                                                 "(cap missing?)")
-                                      .arg(many)));
+/// Alice from kColonListing, and Mallory with an encryption subkey and a
+/// second user ID, as gpg --with-colons lists them.
+const char kSubkeyListing[] =
+    "pub:u:255:22:D3DC2DCEA20CE159:1795499446:::u:::scESC::::::23::0:\n"
+    "fpr:::::::::149D30615789F7CD996A6581D3DC2DCEA20CE159:\n"
+    "uid:u::::1795499446::H1::Mallory <mallory@example.org>::::::::::0:\n"
+    "uid:u::::1795499446::H2::Mallory Work <mal-work@example.org>::::::::::0:"
+    "\n"
+    "sub:u:255:18:EBBFA1F57F2E64CD:1795499446::::::e:::::cv25519::\n"
+    "fpr:::::::::4B9D410DA3140B35BAC7A28EEBBFA1F57F2E64CD:\n";
+
+/**
+ * @brief Scan ANT-2026-G4QELVPH: a .gpg-id line may name a key by its
+ *        subkey's fingerprint, by a fingerprint with spaces (as gpg prints
+ *        it) or between colons, or by a user ID other than the one shown.
+ *        Such a line must tick that key and not also be listed as a ticked
+ *        "Key not found" row, or unticking the key leaves the line in the
+ *        list and the store stays encrypted to it. Ten lines naming no
+ *        key used to spend the lookups that recognised such a line.
+ */
+void tst_usersdialog::aLineNamingASubkeyOrAnotherUidTicksItsKey() {
+  const QString counter =
+      QDir(m_dir.path()).filePath(QStringLiteral("subkey-lookups"));
+  QFile::remove(counter);
+  // Like gpg: a call with recipients lists the keys they name (Alice and
+  // Mallory), and an unknown fingerprint adds nothing. Each such call is
+  // counted.
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-subkey"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "keyring() { cat <<'LISTING'\n") +
+          QString::fromLatin1(kColonListing) +
+          QStringLiteral("LISTING\n}\nmallory() { cat <<'LISTING'\n") +
+          QString::fromLatin1(kSubkeyListing) +
+          QStringLiteral("LISTING\n}\n"
+                         "case \"$*\" in\n"
+                         "  *--list-keys\\ ?*) echo x >> '") +
+          counter +
+          QStringLiteral("'; keyring | head -3; mallory ;;\n"
+                         "  *) keyring; mallory ;;\nesac\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QByteArray body = "13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9\n";
+  for (int i = 1; i <= 10; ++i) {
+    body +=
+        QStringLiteral("FACE%1\n").arg(i, 36, 16, QLatin1Char('0')).toLatin1();
+  }
+  // A line listed twice is one row.
+  body +=
+      QStringLiteral("FACE%1\n").arg(1, 36, 16, QLatin1Char('0')).toLatin1();
+  body += "4B9D410DA3140B35BAC7A28EEBBFA1F57F2E64CD\n"
+          "0x7F2E64CD!\n"
+          "mal-work@example.org\n"
+          "4B9D 410D A314 0B35 BAC7  A28E EBBF A1F5 7F2E 64CD\n"
+          ":149D30615789F7CD996A6581D3DC2DCEA20CE159:\n";
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write(body);
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+
+  const QString mallory =
+      QStringLiteral("149D30615789F7CD996A6581D3DC2DCEA20CE159");
+  QVERIFY2(enabledIds(dialog.selectedUsers()).contains(mallory),
+           qPrintable(enabledIds(dialog.selectedUsers()).join(u',')));
+  for (const QString &line :
+       {QStringLiteral("4B9D410DA3140B35BAC7A28EEBBFA1F57F2E64CD"),
+        QStringLiteral("0x7F2E64CD!"), QStringLiteral("mal-work@example.org"),
+        QStringLiteral("4B9D 410D A314 0B35 BAC7  A28E EBBF A1F5 7F2E 64CD"),
+        QStringLiteral(":149D30615789F7CD996A6581D3DC2DCEA20CE159:")}) {
+    QVERIFY2(itemWithText(list, line) == nullptr, qPrintable(line));
+  }
+  // The ten unknown fingerprints are still listed missing, without a gpg
+  // call each: one batched call answers for every line. Only the
+  // fingerprints written with spaces or between colons get a call each.
+  for (int i : {1, 10}) {
+    QVERIFY2(itemWithText(list, QStringLiteral("FACE%1").arg(
+                                    i, 36, 16, QLatin1Char('0'))) != nullptr,
+             "listed once");
+  }
+  QFile log(counter);
+  QVERIFY(log.open(QIODevice::ReadOnly | QIODevice::Text));
+  QCOMPARE(log.readAll().count('x'), 3);
+
+  // Unticking Mallory leaves no line that still names him.
+  QListWidgetItem *row = itemWithText(list, QStringLiteral("Mallory"));
+  QVERIFY(row != nullptr);
+  row->setCheckState(Qt::Unchecked);
+  const QStringList kept = enabledIds(dialog.selectedUsers());
+  QVERIFY2(!kept.contains(mallory), qPrintable(kept.join(u',')));
+  QVERIFY2(
+      kept.contains(QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")),
+      qPrintable(kept.join(u',')));
+  QCOMPARE(kept.size(), 11);
+}
+
+/**
+ * @brief A line in a form the dialog cannot judge itself (here a keygrip)
+ *        needs a gpg call of its own. Past ten such calls, a line must not
+ *        stay ticked unseen as "Key not found": it is listed unticked as not
+ *        looked up, so OK leaves it out unless the user ticks it.
+ */
+void tst_usersdialog::unusualLinesPastTheLookupCapAreListedUnticked() {
+  const QString counter =
+      QDir(m_dir.path()).filePath(QStringLiteral("keygrip-lookups"));
+  QFile::remove(counter);
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-keygrip"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "case \"$*\" in *--list-keys\\ \\&*) echo x >> '") +
+          counter + QStringLiteral("'; exit 0 ;; esac\ncat <<'LISTING'\n") +
+          QString::fromLatin1(kColonListing) +
+          QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QByteArray body = "13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9\n";
+  for (int i = 1; i <= 11; ++i) {
+    body += QStringLiteral("&%1\n").arg(i, 40, 16, QLatin1Char('0')).toLatin1();
+  }
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write(body);
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+
+  QFile log(counter);
+  QVERIFY(log.open(QIODevice::ReadOnly | QIODevice::Text));
+  QCOMPARE(log.readAll().count('x'), 10);
+  for (int i = 1; i <= 10; ++i) {
+    QListWidgetItem *row =
+        itemWithText(list, QStringLiteral("Key not found in keyring\n&%1")
+                               .arg(i, 40, 16, QLatin1Char('0')));
+    QVERIFY2(row != nullptr, qPrintable(QString::number(i)));
+    QCOMPARE(row->checkState(), Qt::Checked);
+  }
+  QListWidgetItem *last =
+      itemWithText(list, QStringLiteral("Not looked up in keyring\n&%1")
+                             .arg(11, 40, 16, QLatin1Char('0')));
+  QVERIFY(last != nullptr);
+  QCOMPARE(last->checkState(), Qt::Unchecked);
+  QVERIFY(
+      !enabledIds(dialog.selectedUsers())
+           .contains(QStringLiteral("&%1").arg(11, 40, 16, QLatin1Char('0'))));
 }
 
 namespace {

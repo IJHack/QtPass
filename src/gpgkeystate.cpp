@@ -13,6 +13,8 @@
 #include <QDateTime>
 #include <QRegularExpression>
 
+#include <cctype>
+
 /** @brief Fewest fields a record must have to be read at all. */
 constexpr int GPG_MIN_FIELDS = 10;
 /** @brief Field index of the validity letter (`u`, `f`, `r`, ...). */
@@ -111,6 +113,34 @@ auto uidNameRank(const QString &validity) -> int {
 }
 
 /**
+ * @brief Decode a field of GPG colon output: gpg writes a colon, a backslash
+ *        and control characters in a user ID as `\xHH`.
+ * @param field The field as gpg listed it
+ * @return The field with each `\xHH` replaced by its byte, read as UTF-8
+ */
+auto decodeColonField(const QString &field) -> QString {
+  if (!field.contains(QLatin1String("\\x"))) {
+    return field;
+  }
+  const QByteArray in = field.toUtf8();
+  const auto isHex = [](char c) {
+    return std::isxdigit(static_cast<unsigned char>(c)) != 0;
+  };
+  QByteArray out;
+  out.reserve(in.size());
+  for (int i = 0; i < in.size(); ++i) {
+    if (in.at(i) == '\\' && i + 3 < in.size() && in.at(i + 1) == 'x' &&
+        isHex(in.at(i + 2)) && isHex(in.at(i + 3))) {
+      out.append(static_cast<char>(in.mid(i + 2, 2).toInt(nullptr, 16)));
+      i += 3;
+    } else {
+      out.append(in.at(i));
+    }
+  }
+  return QString::fromUtf8(out);
+}
+
+/**
  * @brief Handle a uid record in GPG colon output: its name is the key's
  *        name unless an earlier uid vouches at least as well for its own.
  * @param props The colon-split fields of the record
@@ -119,6 +149,7 @@ auto uidNameRank(const QString &validity) -> int {
  */
 void handleUidRecord(const QStringList &props, UserInfo &current_user,
                      int &nameRank) {
+  current_user.uids.append(decodeColonField(props[GPG_FIELD_USERID]));
   const int rank = uidNameRank(props[GPG_FIELD_VALIDITY]);
   if (current_user.name.isEmpty() || rank > nameRank) {
     current_user.name = props[GPG_FIELD_USERID];
@@ -164,6 +195,8 @@ auto parseGpgColonOutput(const QString &output, bool secret)
 
   UserInfo current_user;
   bool expectPrimaryFingerprint = false;
+  // A subkey's fpr record follows its sub or ssb record.
+  bool expectSubkeyFingerprint = false;
   // uidNameRank() of current_user.name; a name GnuPG 1 put on the pub
   // record itself counts as unknown.
   int nameRank = 0;
@@ -172,6 +205,7 @@ auto parseGpgColonOutput(const QString &output, bool secret)
     QStringList props = key.split(':');
     if (props.size() < GPG_MIN_FIELDS) {
       expectPrimaryFingerprint = false;
+      expectSubkeyFingerprint = false;
       continue;
     }
 
@@ -196,15 +230,28 @@ auto parseGpgColonOutput(const QString &output, bool secret)
                          current_user);
       nameRank = current_user.name.isEmpty() ? 0 : 1;
       expectPrimaryFingerprint = true;
+      expectSubkeyFingerprint = false;
       break;
     case GpgRecordType::Uid:
       handleUidRecord(props, current_user, nameRank);
+      expectSubkeyFingerprint = false;
+      break;
+    case GpgRecordType::Sub:
+    case GpgRecordType::Ssb:
+      if (!props[GPG_FIELD_KEY_ID].isEmpty()) {
+        current_user.subkeys.append(props[GPG_FIELD_KEY_ID]);
+      }
+      expectSubkeyFingerprint = true;
       break;
     case GpgRecordType::Fpr:
       if (expectPrimaryFingerprint) {
         handleFprRecord(props, current_user);
         expectPrimaryFingerprint = false;
+      } else if (expectSubkeyFingerprint &&
+                 !props[GPG_FIELD_FINGERPRINT].isEmpty()) {
+        current_user.subkeys.append(props[GPG_FIELD_FINGERPRINT]);
       }
+      expectSubkeyFingerprint = false;
       break;
     default:
       break;
