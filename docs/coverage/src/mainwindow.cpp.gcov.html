@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 20:49:14</td>
+            <td class="headerValue">2026-11-24 21:18:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -453,14 +453,14 @@
 <span id="L380"><span class="lineNum">     380</span> <span class="tlaGNC">          76 :   m_firstShowCompleted = true;</span></span>
 <span id="L381"><span class="lineNum">     381</span>              : }</span>
 <span id="L382"><span class="lineNum">     382</span>              : </span>
-<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">        9066 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">        9066 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">        9080 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">        9080 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L385"><span class="lineNum">     385</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L386"><span class="lineNum">     386</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L387"><span class="lineNum">     387</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L388"><span class="lineNum">     388</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L389"><span class="lineNum">     389</span>              :   }</span>
-<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">        9066 :   return QMainWindow::event(event);</span></span>
+<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">        9080 :   return QMainWindow::event(event);</span></span>
 <span id="L391"><span class="lineNum">     391</span>              : }</span>
 <span id="L392"><span class="lineNum">     392</span>              : </span>
 <span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">         263 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -1725,7 +1725,7 @@
 <span id="L1652"><span class="lineNum">    1652</span> <span class="tlaGNC">         206 :   updateProfileBoxEnabled();</span></span>
 <span id="L1653"><span class="lineNum">    1653</span> <span class="tlaGNC">         206 : }</span></span>
 <span id="L1654"><span class="lineNum">    1654</span>              : </span>
-<span id="L1655"><span class="lineNum">    1655</span> <span class="tlaGNC">         697 : void MainWindow::updateProfileBoxEnabled() {</span></span>
+<span id="L1655"><span class="lineNum">    1655</span> <span class="tlaGNC">         698 : void MainWindow::updateProfileBoxEnabled() {</span></span>
 <span id="L1656"><span class="lineNum">    1656</span>              :   // No profile switch while anything of the store runs or waits: the</span>
 <span id="L1657"><span class="lineNum">    1657</span>              :   // backend's store and environment would change under it, and what is</span>
 <span id="L1658"><span class="lineNum">    1658</span>              :   // still queued (a push after a save, say) would finish for the other</span>
@@ -1733,9 +1733,9 @@
 <span id="L1660"><span class="lineNum">    1660</span>              :   // watchdog releases the interface while a slow gpg or git still runs.</span>
 <span id="L1661"><span class="lineNum">    1661</span>              :   // Every backend: one kept from before a switch of backend may still</span>
 <span id="L1662"><span class="lineNum">    1662</span>              :   // run what was queued on it.</span>
-<span id="L1663"><span class="lineNum">    1663</span> <span class="tlaGNC">        1396 :   ui-&gt;profileBox-&gt;setEnabled(m_uiEnabled &amp;&amp; ui-&gt;profileBox-&gt;count() &gt; 1 &amp;&amp;</span></span>
+<span id="L1663"><span class="lineNum">    1663</span> <span class="tlaGNC">        1398 :   ui-&gt;profileBox-&gt;setEnabled(m_uiEnabled &amp;&amp; ui-&gt;profileBox-&gt;count() &gt; 1 &amp;&amp;</span></span>
 <span id="L1664"><span class="lineNum">    1664</span> <span class="tlaGNC">          14 :                              QtPassSettings::backendsIdle());</span></span>
-<span id="L1665"><span class="lineNum">    1665</span> <span class="tlaGNC">         697 : }</span></span>
+<span id="L1665"><span class="lineNum">    1665</span> <span class="tlaGNC">         698 : }</span></span>
 <span id="L1666"><span class="lineNum">    1666</span>              : </span>
 <span id="L1667"><span class="lineNum">    1667</span> <span class="tlaGNC">           6 : void MainWindow::on_profileBox_currentTextChanged(const QString &amp;name) {</span></span>
 <span id="L1668"><span class="lineNum">    1668</span> <span class="tlaGNC">          18 :   if (m_freshStart || name == QtPassSettings::getProfile()) {</span></span>
@@ -1810,8 +1810,8 @@
 <span id="L1737"><span class="lineNum">    1737</span>              :   }</span>
 <span id="L1738"><span class="lineNum">    1738</span> <span class="tlaGNC">           4 : }</span></span>
 <span id="L1739"><span class="lineNum">    1739</span>              : </span>
-<span id="L1740"><span class="lineNum">    1740</span> <span class="tlaGNC">        8289 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
-<span id="L1741"><span class="lineNum">    1741</span> <span class="tlaGNC">        8289 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
+<span id="L1740"><span class="lineNum">    1740</span> <span class="tlaGNC">        8294 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
+<span id="L1741"><span class="lineNum">    1741</span> <span class="tlaGNC">        8294 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
 <span id="L1742"><span class="lineNum">    1742</span>              :       event-&gt;type() == QEvent::PaletteChange) {</span>
 <span id="L1743"><span class="lineNum">    1743</span>              :     // Breeze gives these bars a &quot;header&quot; palette and, after a runtime</span>
 <span id="L1744"><span class="lineNum">    1744</span>              :     // light/dark switch, stamps the previous theme's colours back from a</span>
@@ -1819,7 +1819,7 @@
 <span id="L1746"><span class="lineNum">    1746</span>              :     // re-enter the style while it is still applying its palette.</span>
 <span id="L1747"><span class="lineNum">    1747</span> <span class="tlaGNC">          36 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L1748"><span class="lineNum">    1748</span>              :   }</span>
-<span id="L1749"><span class="lineNum">    1749</span> <span class="tlaGNC">        8289 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
+<span id="L1749"><span class="lineNum">    1749</span> <span class="tlaGNC">        8294 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
 <span id="L1750"><span class="lineNum">    1750</span> <span class="tlaGNC">           5 :     auto *key = dynamic_cast&lt;QKeyEvent *&gt;(event);</span></span>
 <span id="L1751"><span class="lineNum">    1751</span> <span class="tlaGNC">           5 :     if (key != nullptr &amp;&amp; key-&gt;key() == Qt::Key_Down) {</span></span>
 <span id="L1752"><span class="lineNum">    1752</span>              :       // Into whichever list is in sight: the tree, or content search results.</span>
@@ -1841,7 +1841,7 @@
 <span id="L1768"><span class="lineNum">    1768</span> <span class="tlaGNC">           3 :       return true;</span></span>
 <span id="L1769"><span class="lineNum">    1769</span>              :     }</span>
 <span id="L1770"><span class="lineNum">    1770</span>              :   }</span>
-<span id="L1771"><span class="lineNum">    1771</span> <span class="tlaGNC">        8286 :   return QObject::eventFilter(obj, event);</span></span>
+<span id="L1771"><span class="lineNum">    1771</span> <span class="tlaGNC">        8291 :   return QObject::eventFilter(obj, event);</span></span>
 <span id="L1772"><span class="lineNum">    1772</span>              : }</span>
 <span id="L1773"><span class="lineNum">    1773</span>              : </span>
 <span id="L1774"><span class="lineNum">    1774</span>              : // Only once the application palette changed (see m_themeSwitched): a bar</span>
