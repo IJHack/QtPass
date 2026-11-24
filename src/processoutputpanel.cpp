@@ -35,6 +35,9 @@ ProcessOutputPanel::ProcessOutputPanel(QWidget *parent)
   m_edit->setObjectName(QStringLiteral("processOutputEdit"));
   m_edit->setReadOnly(true);
   m_edit->setAcceptRichText(false);
+  // Read-only: nothing to undo, and the undo stack kept every line the cap
+  // dropped alive.
+  m_edit->setUndoRedoEnabled(false);
   layout->addWidget(m_edit);
   setWidget(contents);
 
@@ -59,6 +62,11 @@ ProcessOutputPanel::ProcessOutputPanel(QWidget *parent)
 void ProcessOutputPanel::append(const QString &output, bool isError,
                                 const QString &linePrefix) {
   QStringList lines = output.split('\n', Qt::SkipEmptyParts);
+  // Trim first, render after: only the last MaxLines survive limitLines(),
+  // so the rest are counted but never laid out. A Git host or a store
+  // writer chooses how many lines git prints; laying out every one of them
+  // before the cap froze the window for seconds per hundred thousand.
+  QStringList kept;
   for (QString &line : lines) {
     // Right-trim only: remove trailing CR and whitespace, preserve leading
     // indentation
@@ -66,16 +74,20 @@ void ProcessOutputPanel::append(const QString &output, bool isError,
     while (!line.isEmpty() && line.back().isSpace()) {
       line.chop(1);
     }
-    if (line.isEmpty()) {
-      continue;
+    if (!line.isEmpty()) {
+      kept.append(line);
     }
-
+  }
+  const qsizetype skipped = qMax<qsizetype>(0, kept.size() - MaxLines);
+  m_counter += static_cast<int>(skipped);
+  const QColor textColor =
+      isError ? QColor(Qt::red) : m_edit->palette().color(QPalette::Text);
+  for (qsizetype i = skipped; i < kept.size(); ++i) {
     m_counter++;
-    const QColor textColor =
-        isError ? QColor(Qt::red) : m_edit->palette().color(QPalette::Text);
     // Apply the optional prefix per line so multi-line output stays
     // attributed to its command (e.g. all 3 lines of a `git push` show
     // "git push: ..." rather than only the first).
+    const QString &line = kept.at(i);
     const QString prefixed =
         linePrefix.isEmpty() ? line : linePrefix + QStringLiteral(": ") + line;
     // white-space: pre keeps the indentation the trimming above preserved;
