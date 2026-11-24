@@ -124,6 +124,7 @@ var group__ui =
       [ "isStore", "class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848", null ],
       [ "secretKeys", "class_first_run_wizard.html#aba1e75b404b0982f37637cde0f087cb9", null ],
       [ "settings", "class_first_run_wizard.html#ae784b52bdd028f2f1f92174179efaad3", null ],
+      [ "m_detectChoices", "class_first_run_wizard.html#ab57a8730577e76172646709d89078895", null ],
       [ "m_keys", "class_first_run_wizard.html#a7b3b53062e4879094eb06ae05a77b348", null ],
       [ "m_settings", "class_first_run_wizard.html#a6be706d678e87d55d9a27de30a5b1da9", null ]
     ] ],

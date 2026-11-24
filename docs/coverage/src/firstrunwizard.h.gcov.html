@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 15:03:05</td>
+            <td class="headerValue">2026-11-24 16:03:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -108,7 +108,7 @@
 <span id="L35"><span class="lineNum">      35</span>              :  * asking until the configuration is usable or the user gives up.</span>
 <span id="L36"><span class="lineNum">      36</span>              :  */</span>
 <span id="L37"><span class="lineNum">      37</span>              : class FirstRunWizard : public QWizard {</span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         175 :   Q_OBJECT</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         196 :   Q_OBJECT</span></span>
 <span id="L39"><span class="lineNum">      39</span>              : </span>
 <span id="L40"><span class="lineNum">      40</span>              : public:</span>
 <span id="L41"><span class="lineNum">      41</span>              :   /**</span>
@@ -177,200 +177,205 @@
 <span id="L104"><span class="lineNum">     104</span>              :   /// The pages' working copy of the settings, loaded in the constructor and</span>
 <span id="L105"><span class="lineNum">     105</span>              :   /// saved by accept(); the pages edit it through their friend access.</span>
 <span id="L106"><span class="lineNum">     106</span>              :   AppSettings m_settings;</span>
-<span id="L107"><span class="lineNum">     107</span>              :   /// The secret keys as listed on the key page; the enabled ones become the</span>
-<span id="L108"><span class="lineNum">     108</span>              :   /// recipients of a new store.</span>
-<span id="L109"><span class="lineNum">     109</span>              :   QList&lt;UserInfo&gt; m_keys;</span>
-<span id="L110"><span class="lineNum">     110</span>              : };</span>
-<span id="L111"><span class="lineNum">     111</span>              : </span>
-<span id="L112"><span class="lineNum">     112</span>              : /**</span>
-<span id="L113"><span class="lineNum">     113</span>              :  * @class ProgramsWizardPage</span>
-<span id="L114"><span class="lineNum">     114</span>              :  * @ingroup ui</span>
-<span id="L115"><span class="lineNum">     115</span>              :  * @brief Where gpg, pass and git are; gpg is required, the rest optional. A</span>
-<span id="L116"><span class="lineNum">     116</span>              :  * stored path that no longer runs is replaced by what PATH has.</span>
-<span id="L117"><span class="lineNum">     117</span>              :  */</span>
-<span id="L118"><span class="lineNum">     118</span>              : class ProgramsWizardPage : public QWizardPage {</span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">         173 :   Q_OBJECT</span></span>
-<span id="L120"><span class="lineNum">     120</span>              : </span>
-<span id="L121"><span class="lineNum">     121</span>              : public:</span>
-<span id="L122"><span class="lineNum">     122</span>              :   /**</span>
-<span id="L123"><span class="lineNum">     123</span>              :    * @brief Build the page.</span>
-<span id="L124"><span class="lineNum">     124</span>              :    * @param wizard Owner.</span>
-<span id="L125"><span class="lineNum">     125</span>              :    */</span>
-<span id="L126"><span class="lineNum">     126</span>              :   explicit ProgramsWizardPage(FirstRunWizard *wizard);</span>
+<span id="L107"><span class="lineNum">     107</span>              :   /// Whether nothing was chosen yet (SettingsConstants::firstRunPending):</span>
+<span id="L108"><span class="lineNum">     108</span>              :   /// only then are &quot;Use pass&quot; and &quot;Use Git&quot; turned on from what is</span>
+<span id="L109"><span class="lineNum">     109</span>              :   /// detected. The wizard also runs again for a store that lost its</span>
+<span id="L110"><span class="lineNum">     110</span>              :   /// recipient list, and then shows the choices saved before.</span>
+<span id="L111"><span class="lineNum">     111</span>              :   bool m_detectChoices = false;</span>
+<span id="L112"><span class="lineNum">     112</span>              :   /// The secret keys as listed on the key page; the enabled ones become the</span>
+<span id="L113"><span class="lineNum">     113</span>              :   /// recipients of a new store.</span>
+<span id="L114"><span class="lineNum">     114</span>              :   QList&lt;UserInfo&gt; m_keys;</span>
+<span id="L115"><span class="lineNum">     115</span>              : };</span>
+<span id="L116"><span class="lineNum">     116</span>              : </span>
+<span id="L117"><span class="lineNum">     117</span>              : /**</span>
+<span id="L118"><span class="lineNum">     118</span>              :  * @class ProgramsWizardPage</span>
+<span id="L119"><span class="lineNum">     119</span>              :  * @ingroup ui</span>
+<span id="L120"><span class="lineNum">     120</span>              :  * @brief Where gpg, pass and git are; gpg is required, the rest optional. A</span>
+<span id="L121"><span class="lineNum">     121</span>              :  * stored path that no longer runs is replaced by what PATH has.</span>
+<span id="L122"><span class="lineNum">     122</span>              :  */</span>
+<span id="L123"><span class="lineNum">     123</span>              : class ProgramsWizardPage : public QWizardPage {</span>
+<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">         194 :   Q_OBJECT</span></span>
+<span id="L125"><span class="lineNum">     125</span>              : </span>
+<span id="L126"><span class="lineNum">     126</span>              : public:</span>
 <span id="L127"><span class="lineNum">     127</span>              :   /**</span>
-<span id="L128"><span class="lineNum">     128</span>              :    * @brief Fill the fields from the settings (autodetection already ran).</span>
-<span id="L129"><span class="lineNum">     129</span>              :    */</span>
-<span id="L130"><span class="lineNum">     130</span>              :   void initializePage() override;</span>
-<span id="L131"><span class="lineNum">     131</span>              :   /**</span>
-<span id="L132"><span class="lineNum">     132</span>              :    * @brief Whether the gpg path points at something that can run.</span>
-<span id="L133"><span class="lineNum">     133</span>              :    * @return true when gpg exists (or is a `wsl` command).</span>
+<span id="L128"><span class="lineNum">     128</span>              :    * @brief Build the page.</span>
+<span id="L129"><span class="lineNum">     129</span>              :    * @param wizard Owner.</span>
+<span id="L130"><span class="lineNum">     130</span>              :    */</span>
+<span id="L131"><span class="lineNum">     131</span>              :   explicit ProgramsWizardPage(FirstRunWizard *wizard);</span>
+<span id="L132"><span class="lineNum">     132</span>              :   /**</span>
+<span id="L133"><span class="lineNum">     133</span>              :    * @brief Fill the fields from the settings (autodetection already ran).</span>
 <span id="L134"><span class="lineNum">     134</span>              :    */</span>
-<span id="L135"><span class="lineNum">     135</span>              :   auto isComplete() const -&gt; bool override;</span>
+<span id="L135"><span class="lineNum">     135</span>              :   void initializePage() override;</span>
 <span id="L136"><span class="lineNum">     136</span>              :   /**</span>
-<span id="L137"><span class="lineNum">     137</span>              :    * @brief Store the paths and the pass/Git choices in the settings.</span>
-<span id="L138"><span class="lineNum">     138</span>              :    * @return Always true; isComplete() gates Next.</span>
+<span id="L137"><span class="lineNum">     137</span>              :    * @brief Whether the gpg path points at something that can run.</span>
+<span id="L138"><span class="lineNum">     138</span>              :    * @return true when gpg exists (or is a `wsl` command).</span>
 <span id="L139"><span class="lineNum">     139</span>              :    */</span>
-<span id="L140"><span class="lineNum">     140</span>              :   auto validatePage() -&gt; bool override;</span>
-<span id="L141"><span class="lineNum">     141</span>              : </span>
-<span id="L142"><span class="lineNum">     142</span>              : private:</span>
-<span id="L143"><span class="lineNum">     143</span>              :   FirstRunWizard *m_wizard; ///&lt; Owner; its settings are what the page edits.</span>
-<span id="L144"><span class="lineNum">     144</span>              :   QLineEdit *m_gpg;         ///&lt; The gpg executable; required.</span>
-<span id="L145"><span class="lineNum">     145</span>              :   QLineEdit *m_git;         ///&lt; The git executable; optional.</span>
-<span id="L146"><span class="lineNum">     146</span>              :   QLineEdit *m_pass;        ///&lt; The pass executable; optional.</span>
-<span id="L147"><span class="lineNum">     147</span>              :   QCheckBox *m_usePass;     ///&lt; Run pass instead of gpg/git; needs m_pass.</span>
-<span id="L148"><span class="lineNum">     148</span>              :   QLabel *m_gpgStatus;      ///&lt; Under the gpg field: why it cannot be used.</span>
-<span id="L149"><span class="lineNum">     149</span>              : </span>
-<span id="L150"><span class="lineNum">     150</span>              :   /**</span>
-<span id="L151"><span class="lineNum">     151</span>              :    * @brief After an edit: say under the gpg field when it is missing or not</span>
-<span id="L152"><span class="lineNum">     152</span>              :    * executable, allow &quot;use pass&quot; only for a runnable pass (unticking it</span>
-<span id="L153"><span class="lineNum">     153</span>              :    * otherwise), and re-evaluate isComplete().</span>
-<span id="L154"><span class="lineNum">     154</span>              :    */</span>
-<span id="L155"><span class="lineNum">     155</span>              :   void updateStatus();</span>
-<span id="L156"><span class="lineNum">     156</span>              : };</span>
-<span id="L157"><span class="lineNum">     157</span>              : </span>
-<span id="L158"><span class="lineNum">     158</span>              : /**</span>
-<span id="L159"><span class="lineNum">     159</span>              :  * @class KeyWizardPage</span>
-<span id="L160"><span class="lineNum">     160</span>              :  * @ingroup ui</span>
-<span id="L161"><span class="lineNum">     161</span>              :  * @brief The secret keys gpg knows; a new pair can be generated here. The</span>
-<span id="L162"><span class="lineNum">     162</span>              :  * enabled ones become the recipients of a store that still has to be</span>
-<span id="L163"><span class="lineNum">     163</span>              :  * initialised.</span>
-<span id="L164"><span class="lineNum">     164</span>              :  */</span>
-<span id="L165"><span class="lineNum">     165</span>              : class KeyWizardPage : public QWizardPage {</span>
-<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">          75 :   Q_OBJECT</span></span>
-<span id="L167"><span class="lineNum">     167</span>              : </span>
-<span id="L168"><span class="lineNum">     168</span>              : public:</span>
-<span id="L169"><span class="lineNum">     169</span>              :   /**</span>
-<span id="L170"><span class="lineNum">     170</span>              :    * @brief Build the page.</span>
-<span id="L171"><span class="lineNum">     171</span>              :    * @param wizard Owner.</span>
-<span id="L172"><span class="lineNum">     172</span>              :    */</span>
-<span id="L173"><span class="lineNum">     173</span>              :   explicit KeyWizardPage(FirstRunWizard *wizard);</span>
+<span id="L140"><span class="lineNum">     140</span>              :   auto isComplete() const -&gt; bool override;</span>
+<span id="L141"><span class="lineNum">     141</span>              :   /**</span>
+<span id="L142"><span class="lineNum">     142</span>              :    * @brief Store the paths and the pass/Git choices in the settings.</span>
+<span id="L143"><span class="lineNum">     143</span>              :    * @return Always true; isComplete() gates Next.</span>
+<span id="L144"><span class="lineNum">     144</span>              :    */</span>
+<span id="L145"><span class="lineNum">     145</span>              :   auto validatePage() -&gt; bool override;</span>
+<span id="L146"><span class="lineNum">     146</span>              : </span>
+<span id="L147"><span class="lineNum">     147</span>              : private:</span>
+<span id="L148"><span class="lineNum">     148</span>              :   FirstRunWizard *m_wizard; ///&lt; Owner; its settings are what the page edits.</span>
+<span id="L149"><span class="lineNum">     149</span>              :   QLineEdit *m_gpg;         ///&lt; The gpg executable; required.</span>
+<span id="L150"><span class="lineNum">     150</span>              :   QLineEdit *m_git;         ///&lt; The git executable; optional.</span>
+<span id="L151"><span class="lineNum">     151</span>              :   QLineEdit *m_pass;        ///&lt; The pass executable; optional.</span>
+<span id="L152"><span class="lineNum">     152</span>              :   QCheckBox *m_usePass;     ///&lt; Run pass instead of gpg/git; needs m_pass.</span>
+<span id="L153"><span class="lineNum">     153</span>              :   QLabel *m_gpgStatus;      ///&lt; Under the gpg field: why it cannot be used.</span>
+<span id="L154"><span class="lineNum">     154</span>              : </span>
+<span id="L155"><span class="lineNum">     155</span>              :   /**</span>
+<span id="L156"><span class="lineNum">     156</span>              :    * @brief After an edit: say under the gpg field when it is missing or not</span>
+<span id="L157"><span class="lineNum">     157</span>              :    * executable, allow &quot;use pass&quot; only for a runnable pass (unticking it</span>
+<span id="L158"><span class="lineNum">     158</span>              :    * otherwise), and re-evaluate isComplete().</span>
+<span id="L159"><span class="lineNum">     159</span>              :    */</span>
+<span id="L160"><span class="lineNum">     160</span>              :   void updateStatus();</span>
+<span id="L161"><span class="lineNum">     161</span>              : };</span>
+<span id="L162"><span class="lineNum">     162</span>              : </span>
+<span id="L163"><span class="lineNum">     163</span>              : /**</span>
+<span id="L164"><span class="lineNum">     164</span>              :  * @class KeyWizardPage</span>
+<span id="L165"><span class="lineNum">     165</span>              :  * @ingroup ui</span>
+<span id="L166"><span class="lineNum">     166</span>              :  * @brief The secret keys gpg knows; a new pair can be generated here. The</span>
+<span id="L167"><span class="lineNum">     167</span>              :  * enabled ones become the recipients of a store that still has to be</span>
+<span id="L168"><span class="lineNum">     168</span>              :  * initialised.</span>
+<span id="L169"><span class="lineNum">     169</span>              :  */</span>
+<span id="L170"><span class="lineNum">     170</span>              : class KeyWizardPage : public QWizardPage {</span>
+<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">          84 :   Q_OBJECT</span></span>
+<span id="L172"><span class="lineNum">     172</span>              : </span>
+<span id="L173"><span class="lineNum">     173</span>              : public:</span>
 <span id="L174"><span class="lineNum">     174</span>              :   /**</span>
-<span id="L175"><span class="lineNum">     175</span>              :    * @brief List the secret keys for the gpg chosen on the previous page.</span>
-<span id="L176"><span class="lineNum">     176</span>              :    */</span>
-<span id="L177"><span class="lineNum">     177</span>              :   void initializePage() override;</span>
-<span id="L178"><span class="lineNum">     178</span>              :   /**</span>
-<span id="L179"><span class="lineNum">     179</span>              :    * @brief Always passable: an existing store needs no recipient choice</span>
-<span id="L180"><span class="lineNum">     180</span>              :    * here (and its key may not be imported yet); the store page insists on a</span>
-<span id="L181"><span class="lineNum">     181</span>              :    * ticked key when it has to initialise.</span>
-<span id="L182"><span class="lineNum">     182</span>              :    * @return true.</span>
-<span id="L183"><span class="lineNum">     183</span>              :    */</span>
-<span id="L184"><span class="lineNum">     184</span>              :   auto isComplete() const -&gt; bool override;</span>
-<span id="L185"><span class="lineNum">     185</span>              :   /**</span>
-<span id="L186"><span class="lineNum">     186</span>              :    * @brief Remember which keys are enabled.</span>
-<span id="L187"><span class="lineNum">     187</span>              :    * @return Always true.</span>
+<span id="L175"><span class="lineNum">     175</span>              :    * @brief Build the page.</span>
+<span id="L176"><span class="lineNum">     176</span>              :    * @param wizard Owner.</span>
+<span id="L177"><span class="lineNum">     177</span>              :    */</span>
+<span id="L178"><span class="lineNum">     178</span>              :   explicit KeyWizardPage(FirstRunWizard *wizard);</span>
+<span id="L179"><span class="lineNum">     179</span>              :   /**</span>
+<span id="L180"><span class="lineNum">     180</span>              :    * @brief List the secret keys for the gpg chosen on the previous page.</span>
+<span id="L181"><span class="lineNum">     181</span>              :    */</span>
+<span id="L182"><span class="lineNum">     182</span>              :   void initializePage() override;</span>
+<span id="L183"><span class="lineNum">     183</span>              :   /**</span>
+<span id="L184"><span class="lineNum">     184</span>              :    * @brief Always passable: an existing store needs no recipient choice</span>
+<span id="L185"><span class="lineNum">     185</span>              :    * here (and its key may not be imported yet); the store page insists on a</span>
+<span id="L186"><span class="lineNum">     186</span>              :    * ticked key when it has to initialise.</span>
+<span id="L187"><span class="lineNum">     187</span>              :    * @return true.</span>
 <span id="L188"><span class="lineNum">     188</span>              :    */</span>
-<span id="L189"><span class="lineNum">     189</span>              :   auto validatePage() -&gt; bool override;</span>
-<span id="L190"><span class="lineNum">     190</span>              : </span>
-<span id="L191"><span class="lineNum">     191</span>              : private:</span>
-<span id="L192"><span class="lineNum">     192</span>              :   FirstRunWizard *m_wizard; ///&lt; Owner; holds the key list this page fills.</span>
-<span id="L193"><span class="lineNum">     193</span>              :   QListWidget *m_list;      ///&lt; One checkable row per secret key.</span>
-<span id="L194"><span class="lineNum">     194</span>              :   QPushButton *m_generate;  ///&lt; Opens KeygenDialog.</span>
-<span id="L195"><span class="lineNum">     195</span>              :   QLabel *m_status;         ///&lt; Says so when gpg has no secret key yet.</span>
-<span id="L196"><span class="lineNum">     196</span>              : </span>
-<span id="L197"><span class="lineNum">     197</span>              :   /**</span>
-<span id="L198"><span class="lineNum">     198</span>              :    * @brief List the secret keys of the chosen gpg into the wizard and the</span>
-<span id="L199"><span class="lineNum">     199</span>              :    * widget, ticking every usable key and greying out expired or invalid</span>
-<span id="L200"><span class="lineNum">     200</span>              :    * ones.</span>
-<span id="L201"><span class="lineNum">     201</span>              :    */</span>
-<span id="L202"><span class="lineNum">     202</span>              :   void reload();</span>
-<span id="L203"><span class="lineNum">     203</span>              :   /**</span>
-<span id="L204"><span class="lineNum">     204</span>              :    * @brief Run KeygenDialog on a private ImitatePass built from the wizard's</span>
-<span id="L205"><span class="lineNum">     205</span>              :    * settings, so the chosen gpg is used and nothing is saved, then reload().</span>
+<span id="L189"><span class="lineNum">     189</span>              :   auto isComplete() const -&gt; bool override;</span>
+<span id="L190"><span class="lineNum">     190</span>              :   /**</span>
+<span id="L191"><span class="lineNum">     191</span>              :    * @brief Remember which keys are enabled.</span>
+<span id="L192"><span class="lineNum">     192</span>              :    * @return Always true.</span>
+<span id="L193"><span class="lineNum">     193</span>              :    */</span>
+<span id="L194"><span class="lineNum">     194</span>              :   auto validatePage() -&gt; bool override;</span>
+<span id="L195"><span class="lineNum">     195</span>              : </span>
+<span id="L196"><span class="lineNum">     196</span>              : private:</span>
+<span id="L197"><span class="lineNum">     197</span>              :   FirstRunWizard *m_wizard; ///&lt; Owner; holds the key list this page fills.</span>
+<span id="L198"><span class="lineNum">     198</span>              :   QListWidget *m_list;      ///&lt; One checkable row per secret key.</span>
+<span id="L199"><span class="lineNum">     199</span>              :   QPushButton *m_generate;  ///&lt; Opens KeygenDialog.</span>
+<span id="L200"><span class="lineNum">     200</span>              :   QLabel *m_status;         ///&lt; Says so when gpg has no secret key yet.</span>
+<span id="L201"><span class="lineNum">     201</span>              : </span>
+<span id="L202"><span class="lineNum">     202</span>              :   /**</span>
+<span id="L203"><span class="lineNum">     203</span>              :    * @brief List the secret keys of the chosen gpg into the wizard and the</span>
+<span id="L204"><span class="lineNum">     204</span>              :    * widget, ticking every usable key and greying out expired or invalid</span>
+<span id="L205"><span class="lineNum">     205</span>              :    * ones.</span>
 <span id="L206"><span class="lineNum">     206</span>              :    */</span>
-<span id="L207"><span class="lineNum">     207</span>              :   void generate();</span>
-<span id="L208"><span class="lineNum">     208</span>              : };</span>
-<span id="L209"><span class="lineNum">     209</span>              : </span>
-<span id="L210"><span class="lineNum">     210</span>              : /**</span>
-<span id="L211"><span class="lineNum">     211</span>              :  * @class StoreWizardPage</span>
-<span id="L212"><span class="lineNum">     212</span>              :  * @ingroup ui</span>
-<span id="L213"><span class="lineNum">     213</span>              :  * @brief The folder the passwords live in: an existing store is used as-is,</span>
-<span id="L214"><span class="lineNum">     214</span>              :  * a folder without `.gpg-id` (or no folder) is initialised on Finish. The</span>
-<span id="L215"><span class="lineNum">     215</span>              :  * Git box lives here because its sensible default depends on the folder: on</span>
-<span id="L216"><span class="lineNum">     216</span>              :  * for a repository or a store still to be created, off for an existing</span>
-<span id="L217"><span class="lineNum">     217</span>              :  * store that is no repository.</span>
-<span id="L218"><span class="lineNum">     218</span>              :  */</span>
-<span id="L219"><span class="lineNum">     219</span>              : class StoreWizardPage : public QWizardPage {</span>
-<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">         149 :   Q_OBJECT</span></span>
-<span id="L221"><span class="lineNum">     221</span>              : </span>
-<span id="L222"><span class="lineNum">     222</span>              : public:</span>
-<span id="L223"><span class="lineNum">     223</span>              :   /**</span>
-<span id="L224"><span class="lineNum">     224</span>              :    * @brief Build the page.</span>
-<span id="L225"><span class="lineNum">     225</span>              :    * @param wizard Owner.</span>
-<span id="L226"><span class="lineNum">     226</span>              :    */</span>
-<span id="L227"><span class="lineNum">     227</span>              :   explicit StoreWizardPage(FirstRunWizard *wizard);</span>
+<span id="L207"><span class="lineNum">     207</span>              :   void reload();</span>
+<span id="L208"><span class="lineNum">     208</span>              :   /**</span>
+<span id="L209"><span class="lineNum">     209</span>              :    * @brief Run KeygenDialog on a private ImitatePass built from the wizard's</span>
+<span id="L210"><span class="lineNum">     210</span>              :    * settings, so the chosen gpg is used and nothing is saved, then reload().</span>
+<span id="L211"><span class="lineNum">     211</span>              :    */</span>
+<span id="L212"><span class="lineNum">     212</span>              :   void generate();</span>
+<span id="L213"><span class="lineNum">     213</span>              : };</span>
+<span id="L214"><span class="lineNum">     214</span>              : </span>
+<span id="L215"><span class="lineNum">     215</span>              : /**</span>
+<span id="L216"><span class="lineNum">     216</span>              :  * @class StoreWizardPage</span>
+<span id="L217"><span class="lineNum">     217</span>              :  * @ingroup ui</span>
+<span id="L218"><span class="lineNum">     218</span>              :  * @brief The folder the passwords live in: an existing store is used as-is,</span>
+<span id="L219"><span class="lineNum">     219</span>              :  * a folder without `.gpg-id` (or no folder) is initialised on Finish. The</span>
+<span id="L220"><span class="lineNum">     220</span>              :  * Git box lives here because its sensible default depends on the folder: on</span>
+<span id="L221"><span class="lineNum">     221</span>              :  * for a repository or a store still to be created, off for an existing</span>
+<span id="L222"><span class="lineNum">     222</span>              :  * store that is no repository.</span>
+<span id="L223"><span class="lineNum">     223</span>              :  */</span>
+<span id="L224"><span class="lineNum">     224</span>              : class StoreWizardPage : public QWizardPage {</span>
+<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">         170 :   Q_OBJECT</span></span>
+<span id="L226"><span class="lineNum">     226</span>              : </span>
+<span id="L227"><span class="lineNum">     227</span>              : public:</span>
 <span id="L228"><span class="lineNum">     228</span>              :   /**</span>
-<span id="L229"><span class="lineNum">     229</span>              :    * @brief Show the configured store path.</span>
-<span id="L230"><span class="lineNum">     230</span>              :    */</span>
-<span id="L231"><span class="lineNum">     231</span>              :   void initializePage() override;</span>
-<span id="L232"><span class="lineNum">     232</span>              :   /**</span>
-<span id="L233"><span class="lineNum">     233</span>              :    * @brief Whether a path is given and, for a folder that is not a store</span>
-<span id="L234"><span class="lineNum">     234</span>              :    * yet, at least one key was ticked to encrypt it to.</span>
-<span id="L235"><span class="lineNum">     235</span>              :    * @return true when Finish can do its job.</span>
-<span id="L236"><span class="lineNum">     236</span>              :    */</span>
-<span id="L237"><span class="lineNum">     237</span>              :   auto isComplete() const -&gt; bool override;</span>
-<span id="L238"><span class="lineNum">     238</span>              :   /**</span>
-<span id="L239"><span class="lineNum">     239</span>              :    * @brief Store the path and the Git choice.</span>
-<span id="L240"><span class="lineNum">     240</span>              :    * @return Always true.</span>
+<span id="L229"><span class="lineNum">     229</span>              :    * @brief Build the page.</span>
+<span id="L230"><span class="lineNum">     230</span>              :    * @param wizard Owner.</span>
+<span id="L231"><span class="lineNum">     231</span>              :    */</span>
+<span id="L232"><span class="lineNum">     232</span>              :   explicit StoreWizardPage(FirstRunWizard *wizard);</span>
+<span id="L233"><span class="lineNum">     233</span>              :   /**</span>
+<span id="L234"><span class="lineNum">     234</span>              :    * @brief Show the configured store path.</span>
+<span id="L235"><span class="lineNum">     235</span>              :    */</span>
+<span id="L236"><span class="lineNum">     236</span>              :   void initializePage() override;</span>
+<span id="L237"><span class="lineNum">     237</span>              :   /**</span>
+<span id="L238"><span class="lineNum">     238</span>              :    * @brief Whether a path is given and, for a folder that is not a store</span>
+<span id="L239"><span class="lineNum">     239</span>              :    * yet, at least one key was ticked to encrypt it to.</span>
+<span id="L240"><span class="lineNum">     240</span>              :    * @return true when Finish can do its job.</span>
 <span id="L241"><span class="lineNum">     241</span>              :    */</span>
-<span id="L242"><span class="lineNum">     242</span>              :   auto validatePage() -&gt; bool override;</span>
-<span id="L243"><span class="lineNum">     243</span>              : </span>
-<span id="L244"><span class="lineNum">     244</span>              : private:</span>
-<span id="L245"><span class="lineNum">     245</span>              :   FirstRunWizard *m_wizard; ///&lt; Owner; its settings get the path and flag.</span>
-<span id="L246"><span class="lineNum">     246</span>              :   QLineEdit *m_path;        ///&lt; The store folder, in native separators.</span>
-<span id="L247"><span class="lineNum">     247</span>              :   QCheckBox *m_useGit;      ///&lt; Keep the store under Git; off without git.</span>
-<span id="L248"><span class="lineNum">     248</span>              :   QLabel *m_status;         ///&lt; What Finish will do with the folder.</span>
-<span id="L249"><span class="lineNum">     249</span>              : </span>
-<span id="L250"><span class="lineNum">     250</span>              :   /**</span>
-<span id="L251"><span class="lineNum">     251</span>              :    * @brief How many keys are ticked on the key page.</span>
-<span id="L252"><span class="lineNum">     252</span>              :    * @return The number of enabled entries in the wizard's key list.</span>
-<span id="L253"><span class="lineNum">     253</span>              :    */</span>
-<span id="L254"><span class="lineNum">     254</span>              :   auto recipients() const -&gt; int;</span>
+<span id="L242"><span class="lineNum">     242</span>              :   auto isComplete() const -&gt; bool override;</span>
+<span id="L243"><span class="lineNum">     243</span>              :   /**</span>
+<span id="L244"><span class="lineNum">     244</span>              :    * @brief Store the path and the Git choice.</span>
+<span id="L245"><span class="lineNum">     245</span>              :    * @return Always true.</span>
+<span id="L246"><span class="lineNum">     246</span>              :    */</span>
+<span id="L247"><span class="lineNum">     247</span>              :   auto validatePage() -&gt; bool override;</span>
+<span id="L248"><span class="lineNum">     248</span>              : </span>
+<span id="L249"><span class="lineNum">     249</span>              : private:</span>
+<span id="L250"><span class="lineNum">     250</span>              :   FirstRunWizard *m_wizard; ///&lt; Owner; its settings get the path and flag.</span>
+<span id="L251"><span class="lineNum">     251</span>              :   QLineEdit *m_path;        ///&lt; The store folder, in native separators.</span>
+<span id="L252"><span class="lineNum">     252</span>              :   QCheckBox *m_useGit;      ///&lt; Keep the store under Git; off without git.</span>
+<span id="L253"><span class="lineNum">     253</span>              :   QLabel *m_status;         ///&lt; What Finish will do with the folder.</span>
+<span id="L254"><span class="lineNum">     254</span>              : </span>
 <span id="L255"><span class="lineNum">     255</span>              :   /**</span>
-<span id="L256"><span class="lineNum">     256</span>              :    * @brief After an edit: describe the folder (existing store with its</span>
-<span id="L257"><span class="lineNum">     257</span>              :    * entry count, empty folder, not a store yet, missing) and ask for a</span>
-<span id="L258"><span class="lineNum">     258</span>              :    * ticked key when it has to be initialised, then re-evaluate isComplete().</span>
-<span id="L259"><span class="lineNum">     259</span>              :    */</span>
-<span id="L260"><span class="lineNum">     260</span>              :   void updateStatus();</span>
-<span id="L261"><span class="lineNum">     261</span>              : };</span>
-<span id="L262"><span class="lineNum">     262</span>              : </span>
-<span id="L263"><span class="lineNum">     263</span>              : /**</span>
-<span id="L264"><span class="lineNum">     264</span>              :  * @class DoneWizardPage</span>
-<span id="L265"><span class="lineNum">     265</span>              :  * @ingroup ui</span>
-<span id="L266"><span class="lineNum">     266</span>              :  * @brief Last page: a summary of what Finish will do and the two</span>
-<span id="L267"><span class="lineNum">     267</span>              :  * preferences worth asking on day one.</span>
-<span id="L268"><span class="lineNum">     268</span>              :  *</span>
-<span id="L269"><span class="lineNum">     269</span>              :  * The summary names the store and says whether it is used as it is or set</span>
-<span id="L270"><span class="lineNum">     270</span>              :  * up for the ticked keys, with or without Git. The two checkboxes are</span>
-<span id="L271"><span class="lineNum">     271</span>              :  * &quot;hide passwords until asked&quot; and &quot;show an icon in the system tray&quot;;</span>
-<span id="L272"><span class="lineNum">     272</span>              :  * everything else is left to the settings dialog.</span>
-<span id="L273"><span class="lineNum">     273</span>              :  */</span>
-<span id="L274"><span class="lineNum">     274</span>              : class DoneWizardPage : public QWizardPage {</span>
-<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">         160 :   Q_OBJECT</span></span>
-<span id="L276"><span class="lineNum">     276</span>              : </span>
-<span id="L277"><span class="lineNum">     277</span>              : public:</span>
-<span id="L278"><span class="lineNum">     278</span>              :   /**</span>
-<span id="L279"><span class="lineNum">     279</span>              :    * @brief Build the page.</span>
-<span id="L280"><span class="lineNum">     280</span>              :    * @param wizard Owner.</span>
-<span id="L281"><span class="lineNum">     281</span>              :    */</span>
-<span id="L282"><span class="lineNum">     282</span>              :   explicit DoneWizardPage(FirstRunWizard *wizard);</span>
+<span id="L256"><span class="lineNum">     256</span>              :    * @brief How many keys are ticked on the key page.</span>
+<span id="L257"><span class="lineNum">     257</span>              :    * @return The number of enabled entries in the wizard's key list.</span>
+<span id="L258"><span class="lineNum">     258</span>              :    */</span>
+<span id="L259"><span class="lineNum">     259</span>              :   auto recipients() const -&gt; int;</span>
+<span id="L260"><span class="lineNum">     260</span>              :   /**</span>
+<span id="L261"><span class="lineNum">     261</span>              :    * @brief After an edit: describe the folder (existing store with its</span>
+<span id="L262"><span class="lineNum">     262</span>              :    * entry count, empty folder, not a store yet, missing) and ask for a</span>
+<span id="L263"><span class="lineNum">     263</span>              :    * ticked key when it has to be initialised, then re-evaluate isComplete().</span>
+<span id="L264"><span class="lineNum">     264</span>              :    */</span>
+<span id="L265"><span class="lineNum">     265</span>              :   void updateStatus();</span>
+<span id="L266"><span class="lineNum">     266</span>              : };</span>
+<span id="L267"><span class="lineNum">     267</span>              : </span>
+<span id="L268"><span class="lineNum">     268</span>              : /**</span>
+<span id="L269"><span class="lineNum">     269</span>              :  * @class DoneWizardPage</span>
+<span id="L270"><span class="lineNum">     270</span>              :  * @ingroup ui</span>
+<span id="L271"><span class="lineNum">     271</span>              :  * @brief Last page: a summary of what Finish will do and the two</span>
+<span id="L272"><span class="lineNum">     272</span>              :  * preferences worth asking on day one.</span>
+<span id="L273"><span class="lineNum">     273</span>              :  *</span>
+<span id="L274"><span class="lineNum">     274</span>              :  * The summary names the store and says whether it is used as it is or set</span>
+<span id="L275"><span class="lineNum">     275</span>              :  * up for the ticked keys, with or without Git. The two checkboxes are</span>
+<span id="L276"><span class="lineNum">     276</span>              :  * &quot;hide passwords until asked&quot; and &quot;show an icon in the system tray&quot;;</span>
+<span id="L277"><span class="lineNum">     277</span>              :  * everything else is left to the settings dialog.</span>
+<span id="L278"><span class="lineNum">     278</span>              :  */</span>
+<span id="L279"><span class="lineNum">     279</span>              : class DoneWizardPage : public QWizardPage {</span>
+<span id="L280"><span class="lineNum">     280</span> <span class="tlaGNC">         175 :   Q_OBJECT</span></span>
+<span id="L281"><span class="lineNum">     281</span>              : </span>
+<span id="L282"><span class="lineNum">     282</span>              : public:</span>
 <span id="L283"><span class="lineNum">     283</span>              :   /**</span>
-<span id="L284"><span class="lineNum">     284</span>              :    * @brief Fill the summary from the settings.</span>
-<span id="L285"><span class="lineNum">     285</span>              :    */</span>
-<span id="L286"><span class="lineNum">     286</span>              :   void initializePage() override;</span>
-<span id="L287"><span class="lineNum">     287</span>              :   /**</span>
-<span id="L288"><span class="lineNum">     288</span>              :    * @brief Store the preferences.</span>
-<span id="L289"><span class="lineNum">     289</span>              :    * @return Always true.</span>
+<span id="L284"><span class="lineNum">     284</span>              :    * @brief Build the page.</span>
+<span id="L285"><span class="lineNum">     285</span>              :    * @param wizard Owner.</span>
+<span id="L286"><span class="lineNum">     286</span>              :    */</span>
+<span id="L287"><span class="lineNum">     287</span>              :   explicit DoneWizardPage(FirstRunWizard *wizard);</span>
+<span id="L288"><span class="lineNum">     288</span>              :   /**</span>
+<span id="L289"><span class="lineNum">     289</span>              :    * @brief Fill the summary from the settings.</span>
 <span id="L290"><span class="lineNum">     290</span>              :    */</span>
-<span id="L291"><span class="lineNum">     291</span>              :   auto validatePage() -&gt; bool override;</span>
-<span id="L292"><span class="lineNum">     292</span>              : </span>
-<span id="L293"><span class="lineNum">     293</span>              : private:</span>
-<span id="L294"><span class="lineNum">     294</span>              :   FirstRunWizard *m_wizard;  ///&lt; Owner; its settings get the preferences.</span>
-<span id="L295"><span class="lineNum">     295</span>              :   QLabel *m_summary;         ///&lt; Store, what Finish does with it, gpg, mode.</span>
-<span id="L296"><span class="lineNum">     296</span>              :   QCheckBox *m_hidePassword; ///&lt; Show the password line as dots; on.</span>
-<span id="L297"><span class="lineNum">     297</span>              :   QCheckBox *m_trayIcon;     ///&lt; Tray icon; hidden when there is no tray.</span>
-<span id="L298"><span class="lineNum">     298</span>              : };</span>
-<span id="L299"><span class="lineNum">     299</span>              : </span>
-<span id="L300"><span class="lineNum">     300</span>              : #endif // SRC_FIRSTRUNWIZARD_H_</span>
+<span id="L291"><span class="lineNum">     291</span>              :   void initializePage() override;</span>
+<span id="L292"><span class="lineNum">     292</span>              :   /**</span>
+<span id="L293"><span class="lineNum">     293</span>              :    * @brief Store the preferences.</span>
+<span id="L294"><span class="lineNum">     294</span>              :    * @return Always true.</span>
+<span id="L295"><span class="lineNum">     295</span>              :    */</span>
+<span id="L296"><span class="lineNum">     296</span>              :   auto validatePage() -&gt; bool override;</span>
+<span id="L297"><span class="lineNum">     297</span>              : </span>
+<span id="L298"><span class="lineNum">     298</span>              : private:</span>
+<span id="L299"><span class="lineNum">     299</span>              :   FirstRunWizard *m_wizard;  ///&lt; Owner; its settings get the preferences.</span>
+<span id="L300"><span class="lineNum">     300</span>              :   QLabel *m_summary;         ///&lt; Store, what Finish does with it, gpg, mode.</span>
+<span id="L301"><span class="lineNum">     301</span>              :   QCheckBox *m_hidePassword; ///&lt; Show the password line as dots; on.</span>
+<span id="L302"><span class="lineNum">     302</span>              :   QCheckBox *m_trayIcon;     ///&lt; Tray icon; hidden when there is no tray.</span>
+<span id="L303"><span class="lineNum">     303</span>              : };</span>
+<span id="L304"><span class="lineNum">     304</span>              : </span>
+<span id="L305"><span class="lineNum">     305</span>              : #endif // SRC_FIRSTRUNWIZARD_H_</span>
         </pre>
               </td>
             </tr>
