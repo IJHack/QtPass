@@ -104,6 +104,11 @@ private:
   /// The pages' working copy of the settings, loaded in the constructor and
   /// saved by accept(); the pages edit it through their friend access.
   AppSettings m_settings;
+  /// Whether nothing was chosen yet (SettingsConstants::firstRunPending):
+  /// only then are "Use pass" and "Use Git" turned on from what is
+  /// detected. The wizard also runs again for a store that lost its
+  /// recipient list, and then shows the choices saved before.
+  bool m_detectChoices = false;
   /// The secret keys as listed on the key page; the enabled ones become the
   /// recipients of a new store.
   QList<UserInfo> m_keys;

@@ -21,6 +21,7 @@
 
 #include "../../../src/firstrunwizard.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/settingsconstants.h"
 #include "../testsettings.h"
 
 /**
@@ -74,6 +75,7 @@ private slots:
   void keyPageListsAndTicksTheSecretKeys();
   void storePageDescribesThePath();
   void gitDefaultsFollowTheFolder();
+  void aLaterRunKeepsTheSavedChoices();
   void finishCreatesAndInitialisesTheStore();
   void finishLeavesAnExistingStoreAlone();
   void secretKeysAreEmptyWhenGpgFails();
@@ -223,6 +225,9 @@ void tst_firstrunwizard::init() {
   s.useGit = false;
   s.usePass = false;
   QtPassSettings::save(s);
+  // A first run, as QtPass::init() marks a fresh install.
+  QtPassSettings::getInstance()->setValue(SettingsConstants::firstRunPending,
+                                          true);
 }
 
 void tst_firstrunwizard::secretKeysNeedARunnableGpg() {
@@ -384,6 +389,56 @@ void tst_firstrunwizard::gitDefaultsFollowTheFolder() {
   QVERIFY(box->toolTip().contains(QStringLiteral("user.email")));
 }
 
+/**
+ * @brief Scan ANT-2026-N5FC0OF0: the wizard runs again when the store
+ *        lost its recipient list. Then "Use pass" and "Use Git" show the
+ *        choices saved before, not what is detected, or Next and Finish
+ *        switched the backend and Git on without a word. On a first run
+ *        they still follow what is found.
+ */
+void tst_firstrunwizard::aLaterRunKeepsTheSavedChoices() {
+  const QString pass = script(QStringLiteral("pass"), "exit 0\n");
+  const QString git = script(QStringLiteral("git"),
+                             "case \"$*\" in *config*) echo someone;; esac\n"
+                             "exit 0\n");
+  QVERIFY(!pass.isEmpty() && !git.isEmpty());
+  QTemporaryDir repo;
+  QVERIFY(repo.isValid());
+  QVERIFY(QDir(repo.path()).mkdir(QStringLiteral(".git")));
+  AppSettings s = QtPassSettings::load();
+  s.passExecutable = pass;
+  s.gitExecutable = git;
+  s.passStore = repo.path();
+  s.usePass = false;
+  s.useGit = false;
+  QtPassSettings::save(s);
+
+  const auto boxes = [] {
+    QPair<bool, bool> ticked{false, false};
+    FirstRunWizard w;
+    w.setStartId(FirstRunWizard::ProgramsPage);
+    w.restart();
+    if (auto *box = w.currentPage()->findChild<QCheckBox *>()) {
+      ticked.first = box->isChecked();
+    }
+    w.setStartId(FirstRunWizard::StorePage);
+    w.restart();
+    if (auto *box = w.currentPage()->findChild<QCheckBox *>()) {
+      ticked.second = box->isChecked();
+    }
+    return ticked;
+  };
+  QCOMPARE(boxes(), qMakePair(true, true));
+
+  QtPassSettings::getInstance()->remove(SettingsConstants::firstRunPending);
+  QCOMPARE(boxes(), qMakePair(false, false));
+
+  s.usePass = true;
+  s.useGit = true;
+  QtPassSettings::save(s);
+  QCOMPARE(boxes(), qMakePair(true, true));
+}
+
 void tst_firstrunwizard::finishCreatesAndInitialisesTheStore() {
   QTemporaryDir scratch;
   const QString store = scratch.filePath(QStringLiteral("store"));
@@ -442,6 +497,9 @@ void tst_firstrunwizard::finishLeavesAnExistingStoreAlone() {
   }
   w.accept();
   QCOMPARE(w.result(), int(QDialog::Accepted));
+  QVERIFY2(!QtPassSettings::getInstance()->contains(
+               SettingsConstants::firstRunPending),
+           "finished: a later run keeps the choices");
 
   QVERIFY(gpgId.open(QIODevice::ReadOnly));
   QCOMPARE(QString::fromUtf8(gpgId.readAll()),

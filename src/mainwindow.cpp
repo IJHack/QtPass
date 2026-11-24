@@ -131,6 +131,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
       return;
     }
   }
+  // Set up, with or without the wizard (a fresh install can find a store
+  // that already works): a later run of the wizard keeps the saved backend
+  // and Git choices. A cancelled first run returned above and keeps it.
+  QtPassSettings::getInstance()->remove(SettingsConstants::firstRunPending);
   m_freshStart = false;
   m_initSucceeded = true;
 

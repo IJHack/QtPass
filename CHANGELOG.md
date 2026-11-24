@@ -805,6 +805,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- The first-run wizard keeps the backend and Git choices you saved. It
+  also opens again when the store lost its recipient list, and then ticked
+  **Use pass** whenever `pass` was found and **Use Git** for any repository,
+  so Next and Finish switched them on without a word. It now suggests them
+  only on a fresh install (scan ANT-2026-N5FC0OF0).
 - The edit dialog no longer cuts a password or field longer than 32767
   characters, such as a key file kept as one line of base64. Such a line was
   loaded and pasted shortened, without a word, and saved shortened over the

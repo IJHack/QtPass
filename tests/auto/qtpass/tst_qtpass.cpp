@@ -342,6 +342,10 @@ void tst_qtpass::initSetsFreshInstallDefaults() {
   QVERIFY(QtPassSettings::getInstance()
               ->value(SettingsConstants::otpMigratedToNative, false)
               .toBool());
+  QVERIFY2(QtPassSettings::getInstance()
+               ->value(SettingsConstants::firstRunPending, false)
+               .toBool(),
+           "a fresh install lets the first-run wizard suggest the backend");
 }
 
 void tst_qtpass::initTurnsNativeOtpOnOnceForOlderProfiles() {
@@ -359,6 +363,9 @@ void tst_qtpass::initTurnsNativeOtpOnOnceForOlderProfiles() {
   }
   AppSettings after = QtPassSettings::load();
   QVERIFY2(after.useOtp, "the stale pass-otp opt-out is lifted once");
+  QVERIFY2(!QtPassSettings::getInstance()->contains(
+               SettingsConstants::firstRunPending),
+           "an existing profile keeps its saved backend choices");
   QCOMPARE(after.autoclearSeconds, 3);
   QCOMPARE(QtPassSettings::getVersion(), QString::fromLatin1(VERSION));
 

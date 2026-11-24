@@ -529,6 +529,7 @@ private Q_SLOTS:
   void deleteLinkedFolderRemovesOnlyTheLink();
   void usersDialogOpensForTheStoreButNotForALink();
   void addPasswordOffersTheStoreFolders();
+  void aWorkingStoreEndsTheFirstRun();
   void savingANewEntryDoesNotShowTheSelectedOneAgain();
   void typingInSearchDropsAPendingDecrypt();
   void editDoesNotClobberClipboardWithAlwaysCopy();
@@ -2956,13 +2957,20 @@ void tst_mainwindow::firstRunWizardCancelledStopsStartup() {
   QVERIFY2(!Util::configIsValid(QtPassSettings::load()),
            "a missing store must make the configuration invalid");
 
+  // A first run: cancelled, it stays one (scan ANT-2026-N5FC0OF0).
+  QtPassSettings::getInstance()->setValue(SettingsConstants::firstRunPending,
+                                          true);
   bool initSucceeded = true;
   const int wizards =
       runFirstRunFlow([](FirstRunWizard *) { return false; }, &initSucceeded);
   QtPassSettings::save(saved);
+  const bool stillPending = QtPassSettings::getInstance()->contains(
+      SettingsConstants::firstRunPending);
+  QtPassSettings::getInstance()->remove(SettingsConstants::firstRunPending);
 
   QCOMPARE(wizards, 1);
   QVERIFY2(!initSucceeded, "a cancelled wizard must not start the application");
+  QVERIFY2(stillPending, "the next start still suggests the backend and Git");
   // The backend creates the folder on construction; the wizard must not
   // have initialised it.
   QVERIFY2(
@@ -6525,6 +6533,23 @@ void tst_mainwindow::savingANewEntryDoesNotShowTheSelectedOneAgain() {
            "a save of the selected entry shows it again");
   QCOMPARE(shown.first().at(1).toString(), QStringLiteral("bank"));
 #endif
+}
+
+/**
+ * @brief Scan ANT-2026-N5FC0OF0: a fresh install that finds a store that
+ *        already works opens without the first-run wizard. The first run
+ *        ends there too, or the wizard, opened later for a store that lost
+ *        its recipient list, would tick "Use pass" and "Use Git" from what
+ *        it detects over the choices saved meanwhile.
+ */
+void tst_mainwindow::aWorkingStoreEndsTheFirstRun() {
+  QtPassSettings::getInstance()->setValue(SettingsConstants::firstRunPending,
+                                          true);
+  rebuildWindow([](AppSettings &) {});
+  QVERIFY(m_window->initSucceeded());
+  QVERIFY2(!QtPassSettings::getInstance()->contains(
+               SettingsConstants::firstRunPending),
+           "set up without the wizard: the first run is over");
 }
 
 /**
