@@ -726,6 +726,7 @@ private Q_SLOTS:
   void refusesToInsertDuringASequencerState();
   void refusesASaveWhenAConflictAppearsWhileEncrypting();
   void refusesToRemoveWhileAPullIsInFlight();
+  void refusesToChangeRecipientsWhileAPullIsInFlight();
   void queuedInsertGpgFailureReportsNotWritten();
   void insertsPendingCountsTheInsertsYetToReport();
   void aLostInsertReportIsHealedWhenTheQueueDrains();
@@ -2243,6 +2244,48 @@ void tst_imitatepass::refusesToRemoveWhileAPullIsInFlight() {
   QCOMPARE(removedSpy.count(), 0);
   QVERIFY2(QFileInfo::exists(QDir(storeDir.path()).filePath("entry0.gpg")),
            "the entry must not be removed while a pull is in flight");
+#endif
+}
+
+/**
+ * @brief Saving recipients is refused while a pull is still in flight, as
+ *        pass does: the pull lands after the new list is written, and a
+ *        newer list it brings was overwritten by the old one plus the
+ *        change. Scan ANT-2026-W7W7B1M9.
+ */
+void tst_imitatepass::refusesToChangeRecipientsWhileAPullIsInFlight() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gpgId = QDir(storeDir.path()).filePath(".gpg-id");
+  QFile before(gpgId);
+  const QByteArray listed =
+      before.open(QIODevice::ReadOnly) ? before.readAll() : QByteArray();
+  before.close();
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeScriptedGit(
+      storeDir.path(), gitLog, QStringLiteral("  *' pull') sleep 5;;"));
+  QVERIFY(!fakeGit.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  UserInfo carol;
+  carol.key_id = QStringLiteral("693A0AF3FA364E76");
+  carol.enabled = true;
+  pass.GitPull();
+  pass.Init(storeDir.path() + QLatin1Char('/'), {carol});
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Update in progress"));
+  QFile after(gpgId);
+  QVERIFY(after.open(QIODevice::ReadOnly) || listed.isEmpty());
+  QCOMPARE(after.readAll(), listed);
 #endif
 }
 

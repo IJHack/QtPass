@@ -409,6 +409,9 @@ void UsersDialog::loadRecipients() {
   // preselected, since OK signs whatever is selected.
   const Pass::RecipientsForEditing loaded =
       m_pass->recipientsForEditing(m_dir, m_passStore);
+  m_listRead = true;
+  m_readState = static_cast<int>(loaded.state);
+  m_readRecipients = loaded.recipients;
   if (!loaded.warning.isEmpty()) {
     showRecipientWarning(loaded.warning);
   }
@@ -422,10 +425,30 @@ void UsersDialog::loadRecipients() {
 
 UsersDialog::~UsersDialog() = default;
 
+auto UsersDialog::listChangedSinceRead() const -> bool {
+  const Pass::RecipientsForEditing now =
+      m_pass->recipientsForEditing(m_dir, m_passStore);
+  return static_cast<int>(now.state) != m_readState ||
+         now.recipients != m_readRecipients;
+}
+
 void UsersDialog::accept() {
   if (!hasSelection()) {
     // Nothing to encrypt to: an empty .gpg-id would make every insert fail
     // and the wizard never offers this dialog again once the file exists.
+    return;
+  }
+  // OK writes the whole selection, ticked from the list as it was read. A
+  // newer list that arrived meanwhile (a pull the watchdog let run on under
+  // the dialog, a sync) would be overwritten by the old one plus the user's
+  // change: someone just removed came back, signed as the next generation.
+  if (m_listRead && listChangedSinceRead()) {
+    QMessageBox::warning(
+        this, tr("Recipients not changed"),
+        tr("The recipient list of this folder changed while this dialog was "
+           "open, for example through an update from Git. OK would have "
+           "written the old list back. Close this dialog and open it again "
+           "to see the new list."));
     return;
   }
   if (m_initOnAccept) {

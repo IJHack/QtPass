@@ -660,7 +660,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       refuseFolderOutsideStore(path, &inStore)) {
     return;
   }
-  if (refuseUnfinishedGitOperation()) {
+  // A pull still queued would land after the new list is written: as with
+  // pass, nothing is changed until it has finished.
+  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
   // From here on in the store's own spelling, the same folder: one spelled

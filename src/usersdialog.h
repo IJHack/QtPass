@@ -143,6 +143,15 @@ private:
   void updateOkButton();
   QString m_dir;                               /**< Password store directory */
   Preselect m_preselect = Preselect::FromList; /**< What opens ticked */
+  /// Whether loadRecipients() read the folder's list, so accept() has
+  /// something to compare the list on disk with.
+  bool m_listRead = false;
+  /// How the list stood up when the dialog read it: a
+  /// Pass::RecipientsForEditing::State, kept as its value since Pass is only
+  /// declared here.
+  int m_readState = 0;
+  /// The recipients the list named when the dialog read it.
+  QStringList m_readRecipients;
   QString m_lastFilter; /**< Last filter text for caching */
   /**
    * @brief `.gpg-id` lines selectRecipients() listed unticked without asking
@@ -182,6 +191,14 @@ private:
    * @brief Load recipients and handle missing keys.
    */
   void loadRecipients();
+
+  /**
+   * @brief Whether the folder's recipient list reads differently now from
+   *        when loadRecipients() read it: a pull, a sync or another program
+   *        changed it while the dialog was open.
+   * @return True when the state or the recipients differ.
+   */
+  [[nodiscard]] auto listChangedSinceRead() const -> bool;
   /**
    * @brief Show @p text above the key list in bold red, for a recipient list
    * that could not be verified.
