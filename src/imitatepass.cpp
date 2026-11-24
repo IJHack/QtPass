@@ -704,6 +704,11 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       return;
     }
   }
+  // The last point before the write: a list that changed since the users
+  // dialog read it is not replaced by the old one plus the change.
+  if (refuseChangedList()) {
+    return;
+  }
   QByteArray written;
   QString sigToCommit;
   if (!writeGpgIdFile(gpgIdFile, users, &written)) {

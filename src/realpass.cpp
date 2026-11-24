@@ -1158,6 +1158,12 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
       refuseUnrecordedChanges({inStore}, {inStore})) {
     return;
   }
+  // pass writes the list once `pass init` runs: under initIfUnchanged() it
+  // must start now, with nothing queued before it, and the list is compared
+  // as late as that allows.
+  if (refuseBusyForExpectedList() || refuseChangedList()) {
+    return;
+  }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   for (const UserInfo &user : users) {
     if (user.enabled) {

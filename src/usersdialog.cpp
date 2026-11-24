@@ -452,7 +452,16 @@ void UsersDialog::accept() {
     return;
   }
   if (m_initOnAccept) {
-    m_pass->Init(m_dir, m_userList);
+    if (m_listRead) {
+      // Compared again by the backend at the last point before it writes:
+      // a pull in a terminal can still land between here and there.
+      Pass::RecipientsForEditing read;
+      read.state = static_cast<Pass::RecipientsForEditing::State>(m_readState);
+      read.recipients = m_readRecipients;
+      m_pass->initIfUnchanged(m_dir, m_userList, m_dir, m_passStore, read);
+    } else {
+      m_pass->Init(m_dir, m_userList);
+    }
   }
 
   QDialog::accept();
