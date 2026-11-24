@@ -1096,6 +1096,26 @@ void tst_importkeydialog::onlyArmorShapedTextReachesTheEditor() {
       QString(ImportKeyDialog::kMaxKeyLines - 1, QLatin1Char('\n'))));
   QVERIFY(!ImportKeyDialog::fitsTheEditor(
       QString(ImportKeyDialog::kMaxKeyLines, QLatin1Char('\n'))));
+  // A CR alone and the Unicode separators start a block too; CRLF is one.
+  QVERIFY(!ImportKeyDialog::fitsTheEditor(
+      QString(ImportKeyDialog::kMaxKeyLines, QLatin1Char('\r'))));
+  QVERIFY(ImportKeyDialog::fitsTheEditor(
+      QString(ImportKeyDialog::kMaxKeyLines - 1, QLatin1Char('\r')) +
+      QLatin1Char('\n')));
+  QString crlf;
+  for (qsizetype i = 0; i < ImportKeyDialog::kMaxKeyLines - 1; ++i) {
+    crlf += QStringLiteral("\r\n");
+  }
+  QVERIFY(ImportKeyDialog::fitsTheEditor(crlf));
+  for (const QChar c :
+       {QChar(0x2028), QChar(0x2029), QChar(0xFDD0), QChar(0xFDD1)}) {
+    QString grouped;
+    for (int i = 0; i < 300; ++i) {
+      grouped += QString(1000, c) + QLatin1Char('\n');
+    }
+    QVERIFY2(!ImportKeyDialog::fitsTheEditor(grouped),
+             qPrintable(QString::number(c.unicode(), 16)));
+  }
 
   const QByteArray header("-----BEGIN PGP PUBLIC KEY BLOCK-----\n");
   const QByteArray footer("\n-----END PGP PUBLIC KEY BLOCK-----\n");

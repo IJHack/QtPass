@@ -105,6 +105,8 @@ public:
    * 440 bytes, so a file of one long line or of line breaks only froze or
    * filled the GUI before gpg ever saw it.
    * @param text The text to show.
+   * A line ends where the editor starts a new one: LF, CR (CRLF once),
+   * U+2028, U+2029, U+FDD0 and U+FDD1.
    * @return False when a line is longer than kMaxKeyLine or there are more
    * than kMaxKeyLines lines.
    */
