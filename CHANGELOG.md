@@ -167,6 +167,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- With the `pass` backend, **OK** in the Users dialog and a move or copy
+  are refused when the folder `pass` would re-encrypt holds something named
+  like a password that is no regular file, such as a named pipe. `pass`
+  hands every `*.gpg` to `gpg`, which waits forever on a pipe nobody writes
+  to, and every later command waited behind it until QtPass was restarted.
+  Someone who can write to a shared store could stop QtPass this way. The
+  message names the file to remove (scan finding ANT-2026-CVBBG0AR)
 - The Users dialog ticks the key a recipient list line names by a subkey
   fingerprint or key ID, or by a user ID other than the one shown. Such a
   line was listed as a ticked "Key not found in keyring" row once ten lines

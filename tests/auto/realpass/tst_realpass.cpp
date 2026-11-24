@@ -72,6 +72,7 @@ private slots:
   void reencryptFailureIsReportedNotFinished();
   void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
   void aLinkedListIsRefusedWithoutASigningKey();
+  void entryThatIsNoRegularFileIsRefusedBeforePassRuns();
   void passReadsDifferently_data();
   void passReadsDifferently();
   void aListPassReadsDifferentlyIsRefused();
@@ -1686,6 +1687,64 @@ void tst_realpass::aListPassReadsDifferentlyIsRefused() {
   pass->Insert(QStringLiteral("team/fresh"), QStringLiteral("v"), false);
   QVERIFY2(!waitForCall().args.isEmpty(), "pass runs with a clean list");
   QCOMPARE(criticalSpy.count(), 4);
+}
+
+/**
+ * @brief Scan ANT-2026-CVBBG0AR: pass re-encrypts every "*.gpg" its find
+ *        lists, and gpg waits forever to open a FIFO nobody writes to, with
+ *        every later command queued behind it. Users (pass init), a move or
+ *        copy into the folder, a move of the folder and a copy of the FIFO
+ *        itself are refused before pass runs, with or without a signing
+ *        key; hidden names and any case count, as for find -iname. The
+ *        folder once the FIFO is gone is not refused.
+ */
+void tst_realpass::entryThatIsNoRegularFileIsRefusedBeforePassRuns() {
+#ifdef Q_OS_WIN
+  QSKIP("no FIFOs on Windows");
+#else
+  QVERIFY(QDir(m_store).mkpath(QStringLiteral("team/.old")));
+  const QString fifo = m_store + QStringLiteral("team/.old/.Stale.GPG");
+  QCOMPARE(::mkfifo(QFile::encodeName(fifo).constData(), 0600), 0);
+  const QString entry = m_store + QStringLiteral("folder/entry.gpg");
+  {
+    QFile f(entry);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QDir(m_store + QStringLiteral("team")).removeRecursively();
+    QDir(m_store + QStringLiteral("moved")).removeRecursively();
+    QFile::remove(entry);
+  });
+  AppSettings settings = m_settings;
+  settings.passSigningKey.clear();
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(settings);
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("ALICE");
+  alice.enabled = true;
+
+  pass->Init(m_store + QStringLiteral("team"), {alice});
+  pass->Move(entry, m_store + QStringLiteral("team"), false);
+  pass->Move(m_store + QStringLiteral("team"),
+             m_store + QStringLiteral("moved"), false);
+  pass->Copy(fifo, m_store + QStringLiteral("folder"), false);
+  QTest::qWait(300);
+  QVERIFY2(!QFile::exists(m_log), "pass must not be handed a FIFO");
+  QCOMPARE(criticalSpy.count(), 4);
+  for (const QList<QVariant> &args : std::as_const(criticalSpy)) {
+    QCOMPARE(args.at(0).toString(), QStringLiteral("Not a password file"));
+    QVERIFY2(args.at(1).toString().contains(QDir::toNativeSeparators(fifo)),
+             qPrintable(args.at(1).toString()));
+  }
+
+  // The FIFO gone, the same folder goes to pass.
+  QVERIFY(QFile::remove(fifo));
+  pass->Init(m_store + QStringLiteral("team"), {alice});
+  QVERIFY(!waitForCall().args.isEmpty());
+  QCOMPARE(criticalSpy.count(), 4);
+#endif
 }
 
 /**
