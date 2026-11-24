@@ -166,6 +166,15 @@ void MainWindow::connectBackends() {
     const QModelIndex index = getCurrentTreeViewIndex();
     const QString file = getFile(index, true);
     Pass *pass = QtPassSettings::getPass();
+    // Only the entry the save wrote is shown again, when it is the selected
+    // one. After Add, or a save that reports once another row is selected,
+    // the selected row is another entry: showing it decrypted it once more
+    // and, with "Always copy", put its password on the clipboard.
+    if (const QString saved = pass->reportedInsert();
+        !saved.isEmpty() &&
+        QDir::cleanPath(saved) != QDir::cleanPath(getFile(index, false))) {
+      return;
+    }
     if (!file.isEmpty() && pass->isPushing()) {
       m_refreshAfterPush = file;
       m_refreshAfterPushOwner = pass;

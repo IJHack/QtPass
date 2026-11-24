@@ -308,7 +308,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
       encryptArgs({"--batch", "--status-fd", "2"}, pgpg(output), recipients);
   m_pendingInserts.enqueue({std::move(scratch), output, file, overwrite});
   // Past every refusal: this insert is now queued and will report once.
-  queueInsert();
+  queueInsert(file);
   executeGpg(PASS_INSERT, args, newValue);
   if (!gitReady()) {
     return;

@@ -56,6 +56,7 @@ private slots:
   void insertWhoseCommitFailsSaysWhetherTheEntryWasWritten();
   void insertThatCannotStartIsNotCreditedWithTheNextWrite();
   void insertsPendingCountsTheInsertsYetToReport();
+  void eachInsertReportNamesItsEntry();
   void refusesToInsertDuringAnUnfinishedMerge();
   void refusesToInsertWhileAPullIsInFlight();
   void signedListIsCheckedAsTheNativeBackendDoes();
@@ -488,6 +489,29 @@ void tst_realpass::insertsPendingCountsTheInsertsYetToReport() {
   QCOMPARE(pass.insertsPending(), 2);
   QTRY_COMPARE(inserted.count(), 2);
   QCOMPARE(pass.insertsPending(), 0);
+}
+
+/**
+ * @brief Scan ANT-2026-1299KSWS: while an insert's report goes out,
+ *        reportedInsert() names the entry that insert wrote, in queue
+ *        order, so the window shows only that entry again. Outside a report
+ *        it is empty.
+ */
+void tst_realpass::eachInsertReportNamesItsEntry() {
+  RealPass pass;
+  pass.init(m_settings);
+  pass.updateEnv();
+  QStringList reported;
+  connect(&pass, &Pass::finishedInsert, this,
+          [&pass, &reported] { reported << pass.reportedInsert(); });
+  pass.Insert(QStringLiteral("folder/one"), QStringLiteral("v"), false);
+  pass.Insert(QStringLiteral("folder/two"), QStringLiteral("v"), false);
+  QTRY_COMPARE(reported.size(), 2);
+  const QDir store(m_store);
+  QCOMPARE(reported,
+           QStringList({QDir::cleanPath(store.filePath("folder/one.gpg")),
+                        QDir::cleanPath(store.filePath("folder/two.gpg"))}));
+  QVERIFY(pass.reportedInsert().isEmpty());
 }
 
 /**

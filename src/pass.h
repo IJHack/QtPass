@@ -222,6 +222,20 @@ public:
    */
   [[nodiscard]] auto insertsPending() const -> int { return m_insertsPending; }
   /**
+   * @brief The entry whose insert is reporting now: set while
+   * finishedInsert() or insertFailed() goes out, empty otherwise.
+   *
+   * Inserts report in the order they were queued, so each report is matched
+   * to the entry its Insert() named. A window refreshing after a save shows
+   * only that entry again, not whatever row is selected by then.
+   * @return Absolute path of the entry file (with `.gpg`), as the backend
+   *         wrote it; empty outside a report, or for a report no queued
+   *         insert accounts for.
+   */
+  [[nodiscard]] auto reportedInsert() const -> QString {
+    return m_reportedInsert;
+  }
+  /**
    * @brief Remove password file or directory.
    * @param file Path to remove.
    * @param isDir true if removing a directory.
@@ -599,8 +613,13 @@ protected:
    * insert reports once, as a PASS_INSERT, so the count tracks the inserts in
    * flight. A dialog reads insertsPending() before its own Insert() to learn
    * how many earlier reports are not its own.
+   * @param entry Absolute path of the entry file the insert writes, handed
+   *        out by reportedInsert() while its report goes out.
    */
-  void queueInsert() { ++m_insertsPending; }
+  void queueInsert(const QString &entry = QString()) {
+    ++m_insertsPending;
+    m_insertedEntries.enqueue(entry);
+  }
   /** @brief What refuseLinkedPath() judges. */
   enum class LinkScope {
     /** @brief The entry itself and every folder above it in the store. */
@@ -813,6 +832,10 @@ private:
   QQueue<QString> m_pendingShows;
   /// Inserts that have started queueing but not yet reported; see queueInsert.
   int m_insertsPending = 0;
+  /// The entries of the inserts counted in m_insertsPending, in queue order.
+  QQueue<QString> m_insertedEntries;
+  /// The entry of the insert whose report is going out; see reportedInsert().
+  QString m_reportedInsert;
   /**
    * @brief Report a process that exited non-zero; called by finished().
    *
