@@ -56,7 +56,8 @@ public:
    */
   static const QString otpMigratedToNative;
   /**
-   * @brief Set on a fresh install until the first-run wizard is finished.
+   * @brief Set on a fresh install until QtPass is first set up: the
+   * first-run wizard finished, or a store that already works was found.
    *
    * Only then does the wizard turn "Use pass" and "Use Git" on from what it
    * detects. It also runs again later, when the store lost its recipient
