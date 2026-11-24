@@ -52,6 +52,10 @@ void QtPass::init() {
     // would be undone by the migration branch on the next launch.
     QtPassSettings::getInstance()->setValue(
         SettingsConstants::otpMigratedToNative, true);
+    // Nothing chosen yet: the first-run wizard may suggest the backend and
+    // Git from what it finds, until it is finished.
+    QtPassSettings::getInstance()->setValue(SettingsConstants::firstRunPending,
+                                            true);
   } else {
     AppSettings s = QtPassSettings::load();
     bool changed = false;

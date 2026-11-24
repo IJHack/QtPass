@@ -55,6 +55,14 @@ public:
    * separately so a deliberate opt-out survives the next launch.
    */
   static const QString otpMigratedToNative;
+  /**
+   * @brief Set on a fresh install until the first-run wizard is finished.
+   *
+   * Only then does the wizard turn "Use pass" and "Use Git" on from what it
+   * detects. It also runs again later, when the store lost its recipient
+   * list, and then shows the choices saved before.
+   */
+  static const QString firstRunPending;
   static const QString useQrencode;
   static const QString qrencodeExecutable;
   static const QString usePwgen;

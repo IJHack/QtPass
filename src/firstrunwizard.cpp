@@ -14,6 +14,7 @@
 #include "plainmessagebox.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
+#include "settingsconstants.h"
 #include "util.h"
 #include <QCheckBox>
 #include <QDateTime>
@@ -69,7 +70,10 @@ auto runnable(const QString &exe) -> bool {
 // --------------------------------------------------------------------------
 
 FirstRunWizard::FirstRunWizard(QWidget *parent)
-    : QWizard(parent), m_settings(QtPassSettings::load()) {
+    : QWizard(parent), m_settings(QtPassSettings::load()),
+      m_detectChoices(QtPassSettings::getInstance()
+                          ->value(SettingsConstants::firstRunPending, false)
+                          .toBool()) {
   setWindowTitle(tr("Welcome to QtPass"));
   setWizardStyle(QWizard::ModernStyle);
   setOption(QWizard::NoBackButtonOnStartPage);
@@ -195,6 +199,8 @@ void FirstRunWizard::accept() {
   }
   m_settings.passStore = Util::normalizeFolderPath(store);
   QtPassSettings::save(m_settings);
+  // Chosen now: a later run (the store lost its list) keeps these choices.
+  QtPassSettings::getInstance()->remove(SettingsConstants::firstRunPending);
   // The backend cached the old paths at construction.
   PassBackendFactory::invalidate();
   QWizard::accept();
@@ -253,7 +259,12 @@ void ProgramsWizardPage::initializePage() {
   m_gpg->setText(s.gpgExecutable);
   m_git->setText(s.gitExecutable);
   m_pass->setText(s.passExecutable);
-  m_usePass->setChecked(s.usePass || runnable(s.passExecutable));
+  // Detected only the first time: a choice saved before (the wizard also
+  // runs for a store whose recipient list went missing) stays, or Next and
+  // Finish switched the backend without a word.
+  m_usePass->setChecked(m_wizard->m_detectChoices
+                            ? s.usePass || runnable(s.passExecutable)
+                            : s.usePass);
   updateStatus();
 }
 
@@ -411,9 +422,13 @@ void StoreWizardPage::initializePage() {
   m_useGit->setEnabled(haveGit);
   // On for a repository or a store still to be made, off for an existing
   // store that is no repository: turning Git on there would make every
-  // remove fail in a folder git knows nothing about.
-  m_useGit->setChecked(haveGit && (m_wizard->m_settings.useGit || repository ||
-                                   !FirstRunWizard::isStore(clean)));
+  // remove fail in a folder git knows nothing about. A choice saved before
+  // stays (see ProgramsWizardPage::initializePage()).
+  m_useGit->setChecked(haveGit &&
+                       (m_wizard->m_detectChoices
+                            ? m_wizard->m_settings.useGit || repository ||
+                                  !FirstRunWizard::isStore(clean)
+                            : m_wizard->m_settings.useGit));
   updateStatus();
 }
 
