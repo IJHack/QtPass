@@ -529,6 +529,7 @@ private Q_SLOTS:
   void deleteLinkedFolderRemovesOnlyTheLink();
   void usersDialogOpensForTheStoreButNotForALink();
   void addPasswordOffersTheStoreFolders();
+  void savingANewEntryDoesNotShowTheSelectedOneAgain();
   void typingInSearchDropsAPendingDecrypt();
   void editDoesNotClobberClipboardWithAlwaysCopy();
   void reencryptCancelIsReportedInTheStatusBar();
@@ -6460,6 +6461,55 @@ void tst_mainwindow::usersDialogOpensForTheStoreButNotForALink() {
                      QStringList{QStringLiteral("Not a folder of the store")});
   QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("users-link")),
            qPrintable(driver.boxTexts.value(0)));
+#endif
+}
+
+/**
+ * @brief Scan ANT-2026-1299KSWS: a save shows only the entry it wrote
+ *        again. With "bank" selected, Add password and a save of the new
+ *        entry used to decrypt "bank" once more and, with "Always copy",
+ *        put its password on the clipboard. A save with no dialog open
+ *        (as after the dialog closed) still shows the selected entry.
+ */
+void tst_mainwindow::savingANewEntryDoesNotShowTheSelectedOneAgain() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(
+      selectListed(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  Pass *pass = QtPassSettings::getPass();
+  QSignalSpy shown(pass, &Pass::finishedShow);
+  bool saved = false;
+  ModalDriver driver([&](QWidget *w) {
+    if (auto *dialog = qobject_cast<PasswordDialog *>(w)) {
+      // "bank" is still the selected row, and the new entry's save is
+      // reported while its dialog is open.
+      saved = selectListed(m_window.data(), m_storeDir.path(),
+                           QStringLiteral("bank"));
+      emit pass->finishedInsert(QString(), QString());
+      dialog->reject();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  auto *add =
+      m_window->findChild<QAction *>(QStringLiteral("actionAddPassword"));
+  QVERIFY(add != nullptr);
+  add->trigger();
+  QVERIFY(saved);
+  QTest::qWait(300);
+  QTRY_VERIFY_WITH_TIMEOUT(pass->isIdle(), 10000);
+  QCOMPARE(shown.count(), 0);
+
+  QVERIFY(
+      selectListed(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  emit pass->finishedInsert(QString(), QString());
+  QVERIFY2(shown.count() == 1 || shown.wait(10000),
+           "without a dialog the selected entry is shown again");
+  QCOMPARE(shown.first().at(1).toString(), QStringLiteral("bank"));
 #endif
 }
 

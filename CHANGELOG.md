@@ -167,6 +167,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- Saving a new entry no longer shows the selected entry again. After
+  **Add password**, QtPass decrypted the entry that was selected before
+  and, with **Always copy**, put that entry's password on the clipboard. A
+  save now shows only the entry it wrote, when that entry is selected
+  (scan finding ANT-2026-1299KSWS)
 - The content search results follow the display settings. With **Hide
   password** a match in the password, in a secret field, in a field the
   template marks, or in any field with **Hide every field**, shows the

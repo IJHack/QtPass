@@ -165,6 +165,13 @@ void MainWindow::connectBackends() {
   connect(m_qtPass, &QtPass::entryInserted, this, [this]() {
     const QModelIndex index = getCurrentTreeViewIndex();
     const QString file = getFile(index, true);
+    // Only the entry the dialog saved is shown again. After Add, or a save
+    // of an entry that is not the selected one, the selected row is another
+    // entry: showing it again decrypted it once more and, with "Always
+    // copy", put its password on the clipboard.
+    if (m_editDialog != nullptr && m_editDialog->entryPath() != file) {
+      return;
+    }
     Pass *pass = QtPassSettings::getPass();
     if (!file.isEmpty() && pass->isPushing()) {
       m_refreshAfterPush = file;
@@ -1395,9 +1402,11 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
     }
   }
 
+  m_editDialog = &d;
   if (!d.exec()) {
     ui->treeView->setFocus();
   }
+  m_editDialog.clear();
 }
 
 void MainWindow::addPassword() { setPassword(QString()); }
