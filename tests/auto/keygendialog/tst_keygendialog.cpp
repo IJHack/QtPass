@@ -44,6 +44,7 @@ private Q_SLOTS:
   void passphraseNeverWrittenToTemplate();
   void templateEditorHiddenUnlessExpert();
   void applyPassphraseReplacesNoProtection();
+  void applyPassphraseSeesNoProtectionNextToALoneSurrogate();
   void applyPassphraseEmptyKeepsNoProtection();
   void applyPassphraseReplacesExistingPassphraseLine();
   void applyPassphraseEmptyRestoresNoProtection();
@@ -301,6 +302,23 @@ void tst_keygendialog::templateEditorHiddenUnlessExpert() {
 
   checkBox->setChecked(false);
   QVERIFY2(editor->isHidden(), "unchecking expert hides the template box");
+}
+
+/**
+ * @brief Half of an emoji anywhere in the batch must not hide
+ *        %no-protection: a regex split matched nothing in such text and left
+ *        it next to the Passphrase: line, after %commit.
+ */
+void tst_keygendialog::applyPassphraseSeesNoProtectionNextToALoneSurrogate() {
+  const QString batch =
+      QStringLiteral("Key-Type: RSA\nName-Real: Alice ") + QChar(0xD83D) +
+      QStringLiteral("\r\n%no-protection\n%commit\n%echo done");
+  const QString result =
+      KeygenDialog::applyPassphrase(batch, QStringLiteral("testkey123"));
+  QCOMPARE(result, QStringLiteral("Key-Type: RSA\nName-Real: Alice ") +
+                       QChar(0xD83D) +
+                       QStringLiteral("\nPassphrase: testkey123\n%commit\n"
+                                      "%echo done"));
 }
 
 void tst_keygendialog::applyPassphraseReplacesNoProtection() {
