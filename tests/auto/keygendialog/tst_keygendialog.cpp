@@ -58,6 +58,7 @@ private Q_SLOTS:
   void applyPassphraseSeesNoProtectionBeforeANul();
   void applyPassphraseSeesNoProtectionNextToALoneSurrogate();
   void loneSurrogateStaysOutOfTheBatch();
+  void unicodeLineBreaksStayOutOfTheBatch();
   void batchValuesHoldNoLineBreaks();
   void batchPassphraseHasNoOuterBlanks();
   void pastedLineBreakNeverReachesTheTemplate();
@@ -964,6 +965,73 @@ void tst_keygendialog::loneSurrogateStaysOutOfTheBatch() {
                             Q_ARG(int, QDialog::Accepted));
   QCOMPARE(refusals.size(), 1);
   QVERIFY2(refusals.first().contains(QStringLiteral("half of a character")),
+           qPrintable(refusals.first()));
+  auto *spinner = d.findChild<QProgressIndicator *>();
+  QVERIFY2(spinner == nullptr || !spinner->isVisible(),
+           "no generation may have started");
+}
+
+/**
+ * @brief The template box reads U+2028, U+2029, U+FDD0 and U+FDD1 back as
+ *        a line feed, and a line edit shows the separators as a space. A
+ *        pasted name or email with one of them adds no batch line of its own
+ *        (%pubring would have gpg overwrite a file), and OK refuses a
+ *        passphrase with one. Scan ANT-2026-7HDPIZ0N.
+ */
+void tst_keygendialog::unicodeLineBreaksStayOutOfTheBatch() {
+  const QList<QChar> breaks = {QChar(0x2028), QChar(0x2029), QChar(0xFDD0),
+                               QChar(0xFDD1)};
+  for (const QChar c : breaks) {
+    const QString pasted =
+        QStringLiteral("Alice Example") + c + QStringLiteral("%pubring x");
+    QVERIFY2(KeygenDialog::hasBatchBreak(pasted),
+             qPrintable(QString::number(c.unicode(), 16)));
+    QVERIFY(!KeygenDialog::isBatchValue(pasted));
+
+    KeygenDialog dialog(QString(), nullptr);
+    auto *editor =
+        dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+    auto *name = dialog.findChild<QLineEdit *>(QStringLiteral("name"));
+    auto *email = dialog.findChild<QLineEdit *>(QStringLiteral("email"));
+    QVERIFY(editor != nullptr && name != nullptr && email != nullptr);
+    const qsizetype lines = editor->toPlainText().count(QLatin1Char('\n'));
+    name->setText(pasted);
+    email->setText(QStringLiteral("alice@example.com") + c +
+                   QStringLiteral("%pubring y"));
+    name->setText(QStringLiteral("Alice Example"));
+    const QString batch = editor->toPlainText();
+    QVERIFY2(!batch.contains(QStringLiteral("%pubring")), qPrintable(batch));
+    QCOMPARE(batch.count(QLatin1Char('\n')), lines);
+    QVERIFY(batch.contains(QStringLiteral("Name-Real: Alice Example\n")));
+  }
+
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d, false);
+  auto *first = d.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *second = d.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  QVERIFY(first != nullptr && second != nullptr);
+  const QString broken =
+      QStringLiteral("correct") + QChar(0x2029) + QStringLiteral("%commit");
+  first->setText(broken);
+  second->setText(broken);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QStringList refusals;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&refusals] {
+    if (auto *box =
+            qobject_cast<QMessageBox *>(QApplication::activeModalWidget())) {
+      refusals << box->text();
+      box->accept();
+    }
+  });
+  poker.start();
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QCOMPARE(refusals.size(), 1);
+  QVERIFY2(refusals.first().contains(QStringLiteral("line breaks")),
            qPrintable(refusals.first()));
   auto *spinner = d.findChild<QProgressIndicator *>();
   QVERIFY2(spinner == nullptr || !spinner->isVisible(),
