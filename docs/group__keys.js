@@ -127,6 +127,8 @@ var group__keys =
       [ "have_secret", "struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99", null ],
       [ "key_id", "struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6", null ],
       [ "name", "struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb", null ],
+      [ "subkeys", "struct_user_info.html#a77c6983769010c5c9ad8967f75e14187", null ],
+      [ "uids", "struct_user_info.html#a35d486c5ff04dfaa13556ab1f9ce73c8", null ],
       [ "validity", "struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766", null ]
     ] ],
     [ "UsersDialog", "class_users_dialog.html", [
@@ -156,7 +158,7 @@ var group__keys =
       [ "restoreDialogState", "class_users_dialog.html#a72f07ae1b408688108f0855624c789d2", null ],
       [ "selectedUsers", "class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7", null ],
       [ "selectImportedKey", "class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9", null ],
-      [ "selectRecipients", "class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee", null ],
+      [ "selectRecipients", "class_users_dialog.html#a3c3a5d0fdc783f2ad1b52f59a4903d31", null ],
       [ "setInitOnAccept", "class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd", null ],
       [ "showNestedLists", "class_users_dialog.html#a9a6a4c61df81a43cf26fc0bfccedae01", null ],
       [ "showRecipientWarning", "class_users_dialog.html#a3af163e9ad85e7f272460ba74c6fccc4", null ],
@@ -169,6 +171,7 @@ var group__keys =
       [ "m_gpgExe", "class_users_dialog.html#aa9efcd78d2b82147dd8667ced397353a", null ],
       [ "m_initOnAccept", "class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6", null ],
       [ "m_lastFilter", "class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8", null ],
+      [ "m_notLookedUp", "class_users_dialog.html#ab523762c16cb41558ef59ee40745a210", null ],
       [ "m_pass", "class_users_dialog.html#af37c4ba124940166decd520d1b1e3428", null ],
       [ "m_passStore", "class_users_dialog.html#a63e446d81e383b7ee8b21cb4ab5a8c8b", null ],
       [ "m_preselect", "class_users_dialog.html#aaf2a368116ead1381e833f52f4bb7cf5", null ],

@@ -10,5 +10,7 @@ var struct_user_info =
     [ "have_secret", "struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99", null ],
     [ "key_id", "struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6", null ],
     [ "name", "struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb", null ],
+    [ "subkeys", "struct_user_info.html#a77c6983769010c5c9ad8967f75e14187", null ],
+    [ "uids", "struct_user_info.html#a35d486c5ff04dfaa13556ab1f9ce73c8", null ],
     [ "validity", "struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766", null ]
 ];

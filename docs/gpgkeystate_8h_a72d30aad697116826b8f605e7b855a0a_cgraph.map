@@ -1,6 +1,6 @@
 <map id="parseGpgColonOutput" name="parseGpgColonOutput">
 <area shape="rect" id="Node000001" title="Parse a gpg colon listing into one UserInfo per key." alt="" coords="5,220,170,248"/>
-<area shape="poly" id="edge12_Node000001_Node000001" title=" " alt="" coords="51,220,46,211,50,201,65,195,88,193,112,196,127,204,122,206,111,201,87,199,66,201,54,205,51,211,56,219"/>
+<area shape="poly" id="edge14_Node000001_Node000001" title=" " alt="" coords="51,220,46,211,50,201,65,195,88,193,112,196,127,204,122,206,111,201,87,199,66,201,54,205,51,211,56,219"/>
 <area shape="rect" id="Node000002" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a record of a gpg colon listing by its first field." alt="" coords="239,29,354,57"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,218,139,147,174,105,216,68,229,62,225,66,219,72,178,108,143,150,98,221"/>
 <area shape="rect" id="Node000003" href="$gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178" title="Replace the key ID of the key being built with its fingerprint." alt="" coords="231,105,362,133"/>
@@ -9,15 +9,18 @@
 <area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="165,217,205,211,201,214,167,222"/>
 <area shape="rect" id="Node000005" href="$gpgkeystate_8cpp.html#adb7dc883e7b40a750d4ba9789eb59581" title="Handle a uid record in GPG colon output: its name is the key&#39;s name unless an earlier uid vouches at ..." alt="" coords="230,257,362,285"/>
 <area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="168,246,217,256,212,258,169,251"/>
-<area shape="rect" id="Node000007" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="219,309,374,337"/>
-<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="116,246,219,294,238,303,233,304,217,299,116,251"/>
-<area shape="rect" id="Node000008" href="$struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" title="Construct a UserInfo with default (invalid/disabled) state." alt="" coords="227,361,366,389"/>
-<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="102,246,151,295,184,322,219,346,233,355,227,355,216,351,181,326,148,299,101,251"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="264,29,259,20,263,11,276,5,296,3,318,5,331,13,326,15,317,10,296,8,277,10,267,15,265,20,269,29"/>
-<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="264,105,259,96,263,87,276,81,296,79,318,81,331,90,326,90,317,86,296,84,277,86,267,91,265,96,269,105"/>
-<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="264,180,259,172,263,163,276,157,296,155,318,157,331,166,326,166,317,162,296,160,277,162,267,167,265,172,269,181"/>
-<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="264,256,259,248,263,239,276,233,296,231,318,233,331,242,326,242,317,238,296,236,277,238,267,243,265,248,269,257"/>
-<area shape="rect" id="Node000006" href="$gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" title="How far a uid record&#39;s own validity vouches for its name." alt="" coords="423,257,536,285"/>
-<area shape="poly" id="edge9_Node000005_Node000006" title=" " alt="" coords="363,269,410,271,405,272,363,274"/>
-<area shape="poly" id="edge10_Node000006_Node000006" title=" " alt="" coords="448,256,443,248,447,239,459,233,480,231,501,233,515,242,509,242,500,238,480,236,461,238,451,243,448,248,453,258"/>
+<area shape="rect" id="Node000008" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="219,309,374,337"/>
+<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="116,246,219,294,238,303,233,304,217,299,116,251"/>
+<area shape="rect" id="Node000009" href="$struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" title="Construct a UserInfo with default (invalid/disabled) state." alt="" coords="227,361,366,389"/>
+<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="102,246,151,295,184,322,219,346,233,355,227,355,216,351,181,326,148,299,101,251"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="262,29,257,20,262,11,275,5,296,3,319,5,333,13,328,15,318,10,296,8,276,10,265,15,263,20,268,29"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="262,105,257,96,262,87,275,81,296,79,319,81,333,90,328,90,318,86,296,84,276,86,265,91,263,96,268,105"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="262,180,257,172,262,163,275,157,296,155,319,157,333,166,328,166,318,162,296,160,276,162,265,167,263,172,268,181"/>
+<area shape="poly" id="edge10_Node000005_Node000005" title=" " alt="" coords="262,256,257,248,262,239,275,233,296,231,319,233,333,242,328,242,318,238,296,236,276,238,265,243,263,248,268,257"/>
+<area shape="rect" id="Node000006" href="$gpgkeystate_8cpp.html#a6a934d2eca2c610e4ebb4ceb0bd8eeac" title="Decode a field of GPG colon output: gpg writes a colon, a backslash and control characters in a user ..." alt="" coords="423,220,559,248"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="362,256,411,249,405,250,363,261"/>
+<area shape="rect" id="Node000007" href="$gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" title="How far a uid record&#39;s own validity vouches for its name." alt="" coords="434,296,548,324"/>
+<area shape="poly" id="edge11_Node000005_Node000007" title=" " alt="" coords="363,282,423,296,417,296,363,287"/>
+<area shape="poly" id="edge9_Node000006_Node000006" title=" " alt="" coords="457,219,452,211,456,201,470,195,491,193,514,196,528,205,523,205,513,201,491,199,471,201,460,205,457,211,462,220"/>
+<area shape="poly" id="edge12_Node000007_Node000007" title=" " alt="" coords="457,294,452,287,456,277,470,271,491,269,514,272,528,281,523,280,513,277,491,275,471,277,460,281,457,287,462,296"/>
 </map>

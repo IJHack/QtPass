@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('gpgkeystate_8c
 <code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
 <code>#include &lt;QDateTime&gt;</code><br />
 <code>#include &lt;QRegularExpression&gt;</code><br />
+<code>#include &lt;cctype&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Include dependency graph for gpgkeystate.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
@@ -143,6 +144,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:a10a7a502b6b816c2ad7d1d175d9f5a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a key from a <span class="tt">pub</span> or <span class="tt">sec</span> record: key ID, the user ID the record may carry, validity, creation and expiry time.  <br /></td></tr>
 <tr class="memitem:a64f383089339f59a6f57485277a7684c" id="r_a64f383089339f59a6f57485277a7684c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a64f383089339f59a6f57485277a7684c">uidNameRank</a> (const QString &amp;validity) -&gt; int</td></tr>
 <tr class="memdesc:a64f383089339f59a6f57485277a7684c"><td class="mdescLeft">&#160;</td><td class="mdescRight">How far a uid record's own validity vouches for its name.  <br /></td></tr>
+<tr class="memitem:a6a934d2eca2c610e4ebb4ceb0bd8eeac" id="r_a6a934d2eca2c610e4ebb4ceb0bd8eeac"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6a934d2eca2c610e4ebb4ceb0bd8eeac">decodeColonField</a> (const QString &amp;field) -&gt; QString</td></tr>
+<tr class="memdesc:a6a934d2eca2c610e4ebb4ceb0bd8eeac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a field of GPG colon output: gpg writes a colon, a backslash and control characters in a user ID as <span class="tt">\xHH</span>.  <br /></td></tr>
 <tr class="memitem:adb7dc883e7b40a750d4ba9789eb59581" id="r_adb7dc883e7b40a750d4ba9789eb59581"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adb7dc883e7b40a750d4ba9789eb59581">handleUidRecord</a> (const QStringList &amp;props, <a class="el" href="struct_user_info.html">UserInfo</a> &amp;current_user, int &amp;nameRank)</td></tr>
 <tr class="memdesc:adb7dc883e7b40a750d4ba9789eb59581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a uid record in GPG colon output: its name is the key's name unless an earlier uid vouches at least as well for its own.  <br /></td></tr>
 <tr class="memitem:ab4971658d9c682542957f596dc275178" id="r_ab4971658d9c682542957f596dc275178"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab4971658d9c682542957f596dc275178">handleFprRecord</a> (const QStringList &amp;props, <a class="el" href="struct_user_info.html">UserInfo</a> &amp;current_user)</td></tr>
@@ -198,7 +201,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The matching <a class="el" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314" title="The record types of a gpg --with-colons listing that the parser tells apart; the first field of each ...">GpgRecordType</a>, or <a class="el" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e">GpgRecordType::Unknown</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00034">34</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00036">36</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
@@ -210,6 +213,46 @@ Variables</h2></td></tr>
 </div>
 <div id="dynsection-2-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_ab1cf61cd18b2400baaea7e88b55651dd_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a6a934d2eca2c610e4ebb4ceb0bd8eeac" name="a6a934d2eca2c610e4ebb4ceb0bd8eeac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a934d2eca2c610e4ebb4ceb0bd8eeac">&#9670;&#160;</a></span>decodeColonField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto decodeColonField </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>field</em></span></td><td>)</td>
+          <td> -&gt; QString</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode a field of GPG colon output: gpg writes a colon, a backslash and control characters in a user ID as <span class="tt">\xHH</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td>The field as gpg listed it </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The field with each <span class="tt">\xHH</span> replaced by its byte, read as UTF-8 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00121">121</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a6a934d2eca2c610e4ebb4ceb0bd8eeac_cgraph.svg" width="147" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a6a934d2eca2c610e4ebb4ceb0bd8eeac_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -242,17 +285,17 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00129">129</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00160">160</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
 </div>
-<div id="dynsection-3-content" class="dyncontent hidden">
+<div id="dynsection-5-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_ab4971658d9c682542957f596dc275178_cgraph.svg" width="143" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
 </div>
-<div id="dynsection-4-content" class="dyncontent hidden">
+<div id="dynsection-6-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_ab4971658d9c682542957f596dc275178_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -292,17 +335,17 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00059">59</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00061">61</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
 </div>
-<div id="dynsection-5-content" class="dyncontent hidden">
+<div id="dynsection-7-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a10a7a502b6b816c2ad7d1d175d9f5a0c_cgraph.svg" width="168" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
 </div>
-<div id="dynsection-6-content" class="dyncontent hidden">
+<div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a10a7a502b6b816c2ad7d1d175d9f5a0c_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -342,17 +385,17 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00120">120</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00150">150</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
 </div>
-<div id="dynsection-7-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_adb7dc883e7b40a750d4ba9789eb59581_cgraph.svg" width="304" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_adb7dc883e7b40a750d4ba9789eb59581_cgraph.svg" width="328" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
 </div>
-<div id="dynsection-8-content" class="dyncontent hidden">
+<div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_adb7dc883e7b40a750d4ba9789eb59581_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -387,17 +430,17 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The keys, in the order gpg listed them. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00158">158</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00189">189</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
 </div>
-<div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a12e5b0425a769a2aa80c91f3f5e1ddc8_cgraph.svg" width="542" height="395"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a12e5b0425a769a2aa80c91f3f5e1ddc8_cgraph.svg" width="566" height="395"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
 </div>
-<div id="dynsection-10-content" class="dyncontent hidden">
+<div id="dynsection-12-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a12e5b0425a769a2aa80c91f3f5e1ddc8_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -432,17 +475,17 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The primary fingerprint in upper case, or empty when no block, or more than one, in <code class="param">output</code> holds <code class="param">key</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00221">221</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00268">268</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a1d543e1b773901266ef423cfb0204b68_cgraph.svg" width="371" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a1d543e1b773901266ef423cfb0204b68_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -472,17 +515,17 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>3 for ultimate or full, 2 for marginal, 1 for unknown or undefined, 0 for anything else (invalid, revoked, expired, never). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00098">98</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00100">100</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a64f383089339f59a6f57485277a7684c_cgraph.svg" width="124" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="gpgkeystate_8cpp_a64f383089339f59a6f57485277a7684c_icgraph.svg" width="100%" height="509"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -511,7 +554,7 @@ Variables</h2></td></tr>
 
 <p>Field index of the creation time, in seconds since the epoch. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00023">23</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00025">25</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 
 </div>
 </div>
@@ -537,7 +580,7 @@ Variables</h2></td></tr>
 
 <p>Field index of the expiry time; empty for a key without one. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00025">25</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00027">27</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 
 </div>
 </div>
@@ -563,7 +606,7 @@ Variables</h2></td></tr>
 
 <p>Field 9 of an <span class="tt">fpr</span> record: the fingerprint, in the slot the user ID occupies in a <span class="tt">uid</span> record. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00032">32</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00034">34</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 
 </div>
 </div>
@@ -589,7 +632,7 @@ Variables</h2></td></tr>
 
 <p>Field index of the key ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00021">21</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00023">23</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 
 </div>
 </div>
@@ -615,7 +658,7 @@ Variables</h2></td></tr>
 
 <p>Field index of the user ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00027">27</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00029">29</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 
 </div>
 </div>
@@ -641,7 +684,7 @@ Variables</h2></td></tr>
 
 <p>Field index of the validity letter (<span class="tt">u</span>, <span class="tt">f</span>, <span class="tt">r</span>, ...). </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00019">19</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00021">21</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 
 </div>
 </div>
@@ -667,7 +710,7 @@ Variables</h2></td></tr>
 
 <p>Fewest fields a record must have to be read at all. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00017">17</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgkeystate_8cpp_source.html#l00019">19</a> of file <a class="el" href="gpgkeystate_8cpp_source.html">gpgkeystate.cpp</a>.</p>
 
 </div>
 </div>

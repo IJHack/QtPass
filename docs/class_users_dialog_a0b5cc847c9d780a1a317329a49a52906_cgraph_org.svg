@@ -55,55 +55,55 @@
 </a>
 </g>
 </g>
-<!-- Node21 -->
-<g id="Node000021" class="node">
-<title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d" target="_top" xlink:title="Populate user list.">
+<!-- Node22 -->
+<g id="Node000022" class="node">
+<title>Node22</title>
+<g id="a_Node000022"><a xlink:href="class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d" target="_top" xlink:title="Populate user list.">
 <polygon fill="white" stroke="#666666" points="341.75,-144.75 200.5,-144.75 200.5,-124 341.75,-124 341.75,-144.75"/>
 <text xml:space="preserve" text-anchor="middle" x="271.12" y="-131.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::populateList</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node21 -->
-<g id="edge26_Node000001_Node000021" class="edge">
-<title>Node1&#45;&gt;Node21</title>
-<g id="a_edge26_Node000001_Node000021"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node22 -->
+<g id="edge28_Node000001_Node000022" class="edge">
+<title>Node1&#45;&gt;Node22</title>
+<g id="a_edge28_Node000001_Node000022"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M134.07,-174.2C162.2,-165.96 195.46,-156.23 222.06,-148.44"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="222.95,-151.83 231.56,-145.66 220.98,-145.11 222.95,-151.83"/>
-</a>
-</g>
-</g>
-<!-- Node32 -->
-<g id="Node000032" class="node">
-<title>Node32</title>
-<g id="a_Node000032"><a xlink:href="class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9" target="_top" xlink:title="Make the key gpg just imported the current row. gpg reports a 16&#45;character long ID (IMPORTED) or a 40...">
-<polygon fill="white" stroke="#666666" points="357.5,-105.75 184.75,-105.75 184.75,-85 357.5,-85 357.5,-105.75"/>
-<text xml:space="preserve" text-anchor="middle" x="271.12" y="-92.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::selectImportedKey</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node32 -->
-<g id="edge40_Node000001_Node000032" class="edge">
-<title>Node1&#45;&gt;Node32</title>
-<g id="a_edge40_Node000001_Node000032"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M94.94,-174.32C115.82,-156.99 150.53,-130.6 184.75,-115.38 189.62,-113.21 194.76,-111.26 200,-109.51"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="200.86,-112.91 209.39,-106.63 198.81,-106.21 200.86,-112.91"/>
 </a>
 </g>
 </g>
 <!-- Node33 -->
 <g id="Node000033" class="node">
 <title>Node33</title>
-<g id="a_Node000033"><a xlink:href="class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee" target="_top" xlink:title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,...">
+<g id="a_Node000033"><a xlink:href="class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9" target="_top" xlink:title="Make the key gpg just imported the current row. gpg reports a 16&#45;character long ID (IMPORTED) or a 40...">
+<polygon fill="white" stroke="#666666" points="357.5,-105.75 184.75,-105.75 184.75,-85 357.5,-85 357.5,-105.75"/>
+<text xml:space="preserve" text-anchor="middle" x="271.12" y="-92.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::selectImportedKey</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node33 -->
+<g id="edge42_Node000001_Node000033" class="edge">
+<title>Node1&#45;&gt;Node33</title>
+<g id="a_edge42_Node000001_Node000033"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M94.94,-174.32C115.82,-156.99 150.53,-130.6 184.75,-115.38 189.62,-113.21 194.76,-111.26 200,-109.51"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="200.86,-112.91 209.39,-106.63 198.81,-106.21 200.86,-112.91"/>
+</a>
+</g>
+</g>
+<!-- Node34 -->
+<g id="Node000034" class="node">
+<title>Node34</title>
+<g id="a_Node000034"><a xlink:href="class_users_dialog.html#a3c3a5d0fdc783f2ad1b52f59a4903d31" target="_top" xlink:title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,...">
 <polygon fill="white" stroke="#666666" points="351.88,-201.75 190.38,-201.75 190.38,-181 351.88,-181 351.88,-201.75"/>
 <text xml:space="preserve" text-anchor="middle" x="271.12" y="-188.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::selectRecipients</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node33 -->
-<g id="edge41_Node000001_Node000033" class="edge">
-<title>Node1&#45;&gt;Node33</title>
-<g id="a_edge41_Node000001_Node000033"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node34 -->
+<g id="edge43_Node000001_Node000034" class="edge">
+<title>Node1&#45;&gt;Node34</title>
+<g id="a_edge43_Node000001_Node000034"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M149,-191.38C158.6,-191.38 168.53,-191.38 178.38,-191.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="178.37,-194.88 188.37,-191.38 178.37,-187.88 178.37,-194.88"/>
 </a>
@@ -290,9 +290,9 @@
 </g>
 </g>
 <!-- Node13&#45;&gt;Node13 -->
-<g id="edge24_Node000013_Node000013" class="edge">
+<g id="edge26_Node000013_Node000013" class="edge">
 <title>Node13&#45;&gt;Node13</title>
-<g id="a_edge24_Node000013_Node000013"><a xlink:title=" ">
+<g id="a_edge26_Node000013_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M823.64,-194.15C812.75,-202.81 821.83,-211.75 850.88,-211.75 866.76,-211.75 876.67,-209.08 880.61,-205.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="884.06,-204.61 878.44,-195.62 877.23,-206.15 884.06,-204.61"/>
 </a>
@@ -370,30 +370,12 @@
 </a>
 </g>
 </g>
-<!-- Node19 -->
-<g id="Node000019" class="node">
-<title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_util.html#aced819d4368806d046f0dc24a91843f7" target="_top" xlink:title="Returns a regex to match newline characters.">
-<polygon fill="white" stroke="#666666" points="1077.75,-232.75 962,-232.75 962,-212 1077.75,-212 1077.75,-232.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1019.88" y="-219.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::newLinesRegex</text>
-</a>
-</g>
-</g>
-<!-- Node13&#45;&gt;Node19 -->
-<g id="edge23_Node000013_Node000019" class="edge">
-<title>Node13&#45;&gt;Node19</title>
-<g id="a_edge23_Node000013_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M898.39,-194.24C917.86,-198.78 940.68,-204.11 961.19,-208.9"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="960.31,-212.29 970.84,-211.16 961.9,-205.48 960.31,-212.29"/>
-</a>
-</g>
-</g>
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" target="_top" xlink:title="Construct a UserInfo with default (invalid/disabled) state.">
-<polygon fill="white" stroke="#666666" points="1072.12,-193.75 967.62,-193.75 967.62,-173 1072.12,-173 1072.12,-193.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1019.88" y="-180.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::UserInfo</text>
+<g id="a_Node000020"><a xlink:href="class_util.html#aced819d4368806d046f0dc24a91843f7" target="_top" xlink:title="Returns a regex to match newline characters.">
+<polygon fill="white" stroke="#666666" points="1077.75,-232.75 962,-232.75 962,-212 1077.75,-212 1077.75,-232.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1019.88" y="-219.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::newLinesRegex</text>
 </a>
 </g>
 </g>
@@ -401,6 +383,24 @@
 <g id="edge25_Node000013_Node000020" class="edge">
 <title>Node13&#45;&gt;Node20</title>
 <g id="a_edge25_Node000013_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M898.39,-194.24C917.86,-198.78 940.68,-204.11 961.19,-208.9"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="960.31,-212.29 970.84,-211.16 961.9,-205.48 960.31,-212.29"/>
+</a>
+</g>
+</g>
+<!-- Node21 -->
+<g id="Node000021" class="node">
+<title>Node21</title>
+<g id="a_Node000021"><a xlink:href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" target="_top" xlink:title="Construct a UserInfo with default (invalid/disabled) state.">
+<polygon fill="white" stroke="#666666" points="1072.12,-193.75 967.62,-193.75 967.62,-173 1072.12,-173 1072.12,-193.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1019.88" y="-180.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::UserInfo</text>
+</a>
+</g>
+</g>
+<!-- Node13&#45;&gt;Node21 -->
+<g id="edge27_Node000013_Node000021" class="edge">
+<title>Node13&#45;&gt;Node21</title>
+<g id="a_edge27_Node000013_Node000021"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M912.64,-183.38C926.77,-183.38 941.84,-183.38 956.05,-183.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="955.72,-186.88 965.72,-183.38 955.72,-179.88 955.72,-186.88"/>
 </a>
@@ -434,9 +434,9 @@
 </g>
 </g>
 <!-- Node17&#45;&gt;Node17 -->
-<g id="edge20_Node000017_Node000017" class="edge">
+<g id="edge22_Node000017_Node000017" class="edge">
 <title>Node17&#45;&gt;Node17</title>
-<g id="a_edge20_Node000017_Node000017"><a xlink:title=" ">
+<g id="a_edge22_Node000017_Node000017"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M992.76,-272.15C981.92,-280.81 990.96,-289.75 1019.88,-289.75 1035.69,-289.75 1045.56,-287.08 1049.48,-283.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1052.93,-282.61 1047.32,-273.62 1046.1,-284.15 1052.93,-282.61"/>
 </a>
@@ -445,241 +445,268 @@
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" target="_top" xlink:title="How far a uid record&#39;s own validity vouches for its name.">
+<g id="a_Node000018"><a xlink:href="gpgkeystate_8cpp.html#a6a934d2eca2c610e4ebb4ceb0bd8eeac" target="_top" xlink:title="Decode a field of GPG colon output: gpg writes a colon, a backslash and control characters in a user ...">
+<polygon fill="white" stroke="#666666" points="1239.25,-214.75 1137,-214.75 1137,-194 1239.25,-194 1239.25,-214.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1188.12" y="-201.25" font-family="Helvetica,sans-Serif" font-size="10.00">decodeColonField</text>
+</a>
+</g>
+</g>
+<!-- Node17&#45;&gt;Node18 -->
+<g id="edge20_Node000017_Node000018" class="edge">
+<title>Node17&#45;&gt;Node18</title>
+<g id="a_edge20_Node000017_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1053.53,-250.55C1062.37,-247.6 1071.93,-244.38 1080.75,-241.38 1102.2,-234.06 1126.03,-225.79 1145.69,-218.92"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1146.72,-222.27 1155.01,-215.66 1144.41,-215.66 1146.72,-222.27"/>
+</a>
+</g>
+</g>
+<!-- Node19 -->
+<g id="Node000019" class="node">
+<title>Node19</title>
+<g id="a_Node000019"><a xlink:href="gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" target="_top" xlink:title="How far a uid record&#39;s own validity vouches for its name.">
 <polygon fill="white" stroke="#666666" points="1230.62,-271.75 1145.62,-271.75 1145.62,-251 1230.62,-251 1230.62,-271.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1188.12" y="-258.25" font-family="Helvetica,sans-Serif" font-size="10.00">uidNameRank</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node18 -->
-<g id="edge21_Node000017_Node000018" class="edge">
-<title>Node17&#45;&gt;Node18</title>
-<g id="a_edge21_Node000017_Node000018"><a xlink:title=" ">
+<!-- Node17&#45;&gt;Node19 -->
+<g id="edge23_Node000017_Node000019" class="edge">
+<title>Node17&#45;&gt;Node19</title>
+<g id="a_edge23_Node000017_Node000019"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1069.86,-261.38C1089.97,-261.38 1113.3,-261.38 1133.84,-261.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1133.73,-264.88 1143.73,-261.38 1133.73,-257.88 1133.73,-264.88"/>
 </a>
 </g>
 </g>
 <!-- Node18&#45;&gt;Node18 -->
-<g id="edge22_Node000018_Node000018" class="edge">
+<g id="edge21_Node000018_Node000018" class="edge">
 <title>Node18&#45;&gt;Node18</title>
-<g id="a_edge22_Node000018_Node000018"><a xlink:title=" ">
+<g id="a_edge21_Node000018_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1161.01,-215.15C1150.17,-223.81 1159.21,-232.75 1188.12,-232.75 1203.94,-232.75 1213.81,-230.08 1217.73,-226.24"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1221.18,-225.61 1215.57,-216.62 1214.35,-227.15 1221.18,-225.61"/>
+</a>
+</g>
+</g>
+<!-- Node19&#45;&gt;Node19 -->
+<g id="edge24_Node000019_Node000019" class="edge">
+<title>Node19&#45;&gt;Node19</title>
+<g id="a_edge24_Node000019_Node000019"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1161.01,-272.15C1150.17,-280.81 1159.21,-289.75 1188.12,-289.75 1203.94,-289.75 1213.81,-287.08 1217.73,-283.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1221.18,-282.61 1215.57,-273.62 1214.35,-284.15 1221.18,-282.61"/>
-</a>
-</g>
-</g>
-<!-- Node22 -->
-<g id="Node000022" class="node">
-<title>Node22</title>
-<g id="a_Node000022"><a xlink:href="class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" target="_top" xlink:title="Apply visual styling to user item.">
-<polygon fill="white" stroke="#666666" points="558,-96.75 393.5,-96.75 393.5,-76 558,-76 558,-96.75"/>
-<text xml:space="preserve" text-anchor="middle" x="475.75" y="-83.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::applyUserStyling</text>
-</a>
-</g>
-</g>
-<!-- Node21&#45;&gt;Node22 -->
-<g id="edge27_Node000021_Node000022" class="edge">
-<title>Node21&#45;&gt;Node22</title>
-<g id="a_edge27_Node000021_Node000022"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M318.66,-123.51C331.27,-120.56 344.91,-117.35 357.5,-114.38 377.42,-109.66 399.23,-104.47 418.58,-99.84"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="419.28,-103.27 428.19,-97.54 417.65,-96.46 419.28,-103.27"/>
-</a>
-</g>
-</g>
-<!-- Node27 -->
-<g id="Node000027" class="node">
-<title>Node27</title>
-<g id="a_Node000027"><a xlink:href="class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" target="_top" xlink:title="Build display text for user: the user ID and key ID on a line each, each cut to 256 characters (the r...">
-<polygon fill="white" stroke="#666666" points="549.75,-174.75 401.75,-174.75 401.75,-154 549.75,-154 549.75,-174.75"/>
-<text xml:space="preserve" text-anchor="middle" x="475.75" y="-161.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::buildUserText</text>
-</a>
-</g>
-</g>
-<!-- Node21&#45;&gt;Node27 -->
-<g id="edge33_Node000021_Node000027" class="edge">
-<title>Node21&#45;&gt;Node27</title>
-<g id="a_edge33_Node000021_Node000027"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M342.14,-144.74C357.76,-147.05 374.47,-149.53 390.59,-151.91"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="389.73,-155.32 400.13,-153.33 390.75,-148.4 389.73,-155.32"/>
-</a>
-</g>
-</g>
-<!-- Node29 -->
-<g id="Node000029" class="node">
-<title>Node29</title>
-<g id="a_Node000029"><a xlink:href="class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" target="_top" xlink:title="Check if user passes filter.">
-<polygon fill="white" stroke="#666666" points="545.62,-57.75 405.88,-57.75 405.88,-37 545.62,-37 545.62,-57.75"/>
-<text xml:space="preserve" text-anchor="middle" x="475.75" y="-44.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::passesFilter</text>
-</a>
-</g>
-</g>
-<!-- Node21&#45;&gt;Node29 -->
-<g id="edge35_Node000021_Node000029" class="edge">
-<title>Node21&#45;&gt;Node29</title>
-<g id="a_edge35_Node000021_Node000029"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M338.79,-123.59C345.38,-121.12 351.75,-118.09 357.5,-114.38 379.6,-100.1 371.48,-81.78 393.5,-67.38 396.09,-65.68 398.81,-64.13 401.62,-62.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="402.98,-65.94 410.75,-58.73 400.18,-59.52 402.98,-65.94"/>
-</a>
-</g>
-</g>
-<!-- Node30 -->
-<g id="Node000030" class="node">
-<title>Node30</title>
-<g id="a_Node000030"><a xlink:href="class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" target="_top" xlink:title="Enable OK only while at least one key is ticked (hasSelection()).">
-<polygon fill="white" stroke="#666666" points="556.12,-135.75 395.38,-135.75 395.38,-115 556.12,-115 556.12,-135.75"/>
-<text xml:space="preserve" text-anchor="middle" x="475.75" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::updateOkButton</text>
-</a>
-</g>
-</g>
-<!-- Node21&#45;&gt;Node30 -->
-<g id="edge38_Node000021_Node000030" class="edge">
-<title>Node21&#45;&gt;Node30</title>
-<g id="a_edge38_Node000021_Node000030"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M342.14,-131.27C355.59,-130.67 369.85,-130.03 383.85,-129.41"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="383.65,-132.92 393.49,-128.98 383.34,-125.93 383.65,-132.92"/>
 </a>
 </g>
 </g>
 <!-- Node23 -->
 <g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_Node000023"><a xlink:href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" target="_top" xlink:title="Check full validity per GnuPG validity codes.">
-<polygon fill="white" stroke="#666666" points="905.38,-97.75 796.38,-97.75 796.38,-77 905.38,-77 905.38,-97.75"/>
-<text xml:space="preserve" text-anchor="middle" x="850.88" y="-84.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::fullyValid</text>
+<g id="a_Node000023"><a xlink:href="class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" target="_top" xlink:title="Apply visual styling to user item.">
+<polygon fill="white" stroke="#666666" points="558,-96.75 393.5,-96.75 393.5,-76 558,-76 558,-96.75"/>
+<text xml:space="preserve" text-anchor="middle" x="475.75" y="-83.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::applyUserStyling</text>
 </a>
 </g>
 </g>
 <!-- Node22&#45;&gt;Node23 -->
-<g id="edge28_Node000022_Node000023" class="edge">
+<g id="edge29_Node000022_Node000023" class="edge">
 <title>Node22&#45;&gt;Node23</title>
-<g id="a_edge28_Node000022_Node000023"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M558.17,-86.59C626.1,-86.78 721.64,-87.03 784.62,-87.2"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="784.46,-90.7 794.47,-87.23 784.48,-83.7 784.46,-90.7"/>
-</a>
-</g>
-</g>
-<!-- Node24 -->
-<g id="Node000024" class="node">
-<title>Node24</title>
-<g id="a_Node000024"><a xlink:href="class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106" target="_top" xlink:title="Check if GPG key is expired.">
-<polygon fill="white" stroke="#666666" points="742.75,-20.75 594,-20.75 594,0 742.75,0 742.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="668.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::isUserExpired</text>
-</a>
-</g>
-</g>
-<!-- Node22&#45;&gt;Node24 -->
-<g id="edge29_Node000022_Node000024" class="edge">
-<title>Node22&#45;&gt;Node24</title>
-<g id="a_edge29_Node000022_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M536.77,-75.58C544.16,-73.11 551.42,-70.08 558,-66.38 577.71,-55.26 574.43,-41.73 594,-30.38 597.2,-28.52 600.57,-26.83 604.05,-25.29"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="605.26,-28.58 613.3,-21.68 602.71,-22.06 605.26,-28.58"/>
-</a>
-</g>
-</g>
-<!-- Node25 -->
-<g id="Node000025" class="node">
-<title>Node25</title>
-<g id="a_Node000025"><a xlink:href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" target="_top" xlink:title="Check whether the key has any usable validity level.">
-<polygon fill="white" stroke="#666666" points="716.12,-59.75 620.62,-59.75 620.62,-39 716.12,-39 716.12,-59.75"/>
-<text xml:space="preserve" text-anchor="middle" x="668.38" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::isValid</text>
-</a>
-</g>
-</g>
-<!-- Node22&#45;&gt;Node25 -->
-<g id="edge30_Node000022_Node000025" class="edge">
-<title>Node22&#45;&gt;Node25</title>
-<g id="a_edge30_Node000022_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M532.66,-75.52C556.65,-70.87 584.69,-65.42 608.95,-60.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="609.53,-64.17 618.68,-58.83 608.2,-57.3 609.53,-64.17"/>
-</a>
-</g>
-</g>
-<!-- Node25&#45;&gt;Node23 -->
-<g id="edge31_Node000025_Node000023" class="edge">
-<title>Node25&#45;&gt;Node23</title>
-<g id="a_edge31_Node000025_Node000023"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M716.33,-59.26C737.96,-63.81 763.95,-69.28 787.22,-74.18"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="786.41,-77.59 796.92,-76.23 787.85,-70.74 786.41,-77.59"/>
-</a>
-</g>
-</g>
-<!-- Node26 -->
-<g id="Node000026" class="node">
-<title>Node26</title>
-<g id="a_Node000026"><a xlink:href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" target="_top" xlink:title="Check marginal validity per GnuPG validity codes.">
-<polygon fill="white" stroke="#666666" points="920.75,-58.75 781,-58.75 781,-38 920.75,-38 920.75,-58.75"/>
-<text xml:space="preserve" text-anchor="middle" x="850.88" y="-45.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::marginallyValid</text>
-</a>
-</g>
-</g>
-<!-- Node25&#45;&gt;Node26 -->
-<g id="edge32_Node000025_Node000026" class="edge">
-<title>Node25&#45;&gt;Node26</title>
-<g id="a_edge32_Node000025_Node000026"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M716.33,-49.11C732.51,-49.03 751.13,-48.92 769.23,-48.82"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="769.22,-52.32 779.2,-48.77 769.18,-45.32 769.22,-52.32"/>
+<g id="a_edge29_Node000022_Node000023"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M318.66,-123.51C331.27,-120.56 344.91,-117.35 357.5,-114.38 377.42,-109.66 399.23,-104.47 418.58,-99.84"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="419.28,-103.27 428.19,-97.54 417.65,-96.46 419.28,-103.27"/>
 </a>
 </g>
 </g>
 <!-- Node28 -->
 <g id="Node000028" class="node">
 <title>Node28</title>
-<g id="a_Node000028"><a xlink:href="class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" target="_top" xlink:title="text with the characters that change how the text around them reads replaced by U+FFFD,...">
-<polygon fill="white" stroke="#666666" points="716.12,-174.75 620.62,-174.75 620.62,-154 716.12,-154 716.12,-174.75"/>
-<text xml:space="preserve" text-anchor="middle" x="668.38" y="-161.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::displayable</text>
+<g id="a_Node000028"><a xlink:href="class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" target="_top" xlink:title="Build display text for user: the user ID and key ID on a line each, each cut to 256 characters (the r...">
+<polygon fill="white" stroke="#666666" points="549.75,-174.75 401.75,-174.75 401.75,-154 549.75,-154 549.75,-174.75"/>
+<text xml:space="preserve" text-anchor="middle" x="475.75" y="-161.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::buildUserText</text>
 </a>
 </g>
 </g>
-<!-- Node27&#45;&gt;Node28 -->
-<g id="edge34_Node000027_Node000028" class="edge">
-<title>Node27&#45;&gt;Node28</title>
-<g id="a_edge34_Node000027_Node000028"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M550.18,-164.38C569.54,-164.38 590.18,-164.38 608.65,-164.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="608.63,-167.88 618.63,-164.38 608.63,-160.88 608.63,-167.88"/>
+<!-- Node22&#45;&gt;Node28 -->
+<g id="edge35_Node000022_Node000028" class="edge">
+<title>Node22&#45;&gt;Node28</title>
+<g id="a_edge35_Node000022_Node000028"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M342.14,-144.74C357.76,-147.05 374.47,-149.53 390.59,-151.91"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="389.73,-155.32 400.13,-153.33 390.75,-148.4 389.73,-155.32"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node24 -->
-<g id="edge36_Node000029_Node000024" class="edge">
-<title>Node29&#45;&gt;Node24</title>
-<g id="a_edge36_Node000029_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M532.66,-36.52C553.9,-32.4 578.3,-27.66 600.46,-23.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="600.83,-26.86 609.98,-21.51 599.5,-19.98 600.83,-26.86"/>
+<!-- Node30 -->
+<g id="Node000030" class="node">
+<title>Node30</title>
+<g id="a_Node000030"><a xlink:href="class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" target="_top" xlink:title="Check if user passes filter.">
+<polygon fill="white" stroke="#666666" points="545.62,-57.75 405.88,-57.75 405.88,-37 545.62,-37 545.62,-57.75"/>
+<text xml:space="preserve" text-anchor="middle" x="475.75" y="-44.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::passesFilter</text>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node25 -->
-<g id="edge37_Node000029_Node000025" class="edge">
-<title>Node29&#45;&gt;Node25</title>
-<g id="a_edge37_Node000029_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M546.11,-48.1C566.75,-48.32 589.16,-48.55 609.03,-48.76"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="608.85,-52.26 618.89,-48.87 608.92,-45.26 608.85,-52.26"/>
+<!-- Node22&#45;&gt;Node30 -->
+<g id="edge37_Node000022_Node000030" class="edge">
+<title>Node22&#45;&gt;Node30</title>
+<g id="a_edge37_Node000022_Node000030"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M338.79,-123.59C345.38,-121.12 351.75,-118.09 357.5,-114.38 379.6,-100.1 371.48,-81.78 393.5,-67.38 396.09,-65.68 398.81,-64.13 401.62,-62.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="402.98,-65.94 410.75,-58.73 400.18,-59.52 402.98,-65.94"/>
 </a>
 </g>
 </g>
 <!-- Node31 -->
 <g id="Node000031" class="node">
 <title>Node31</title>
-<g id="a_Node000031"><a xlink:href="class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" target="_top" xlink:title="Whether at least one key is ticked.">
+<g id="a_Node000031"><a xlink:href="class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" target="_top" xlink:title="Enable OK only while at least one key is ticked (hasSelection()).">
+<polygon fill="white" stroke="#666666" points="556.12,-135.75 395.38,-135.75 395.38,-115 556.12,-115 556.12,-135.75"/>
+<text xml:space="preserve" text-anchor="middle" x="475.75" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::updateOkButton</text>
+</a>
+</g>
+</g>
+<!-- Node22&#45;&gt;Node31 -->
+<g id="edge40_Node000022_Node000031" class="edge">
+<title>Node22&#45;&gt;Node31</title>
+<g id="a_edge40_Node000022_Node000031"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M342.14,-131.27C355.59,-130.67 369.85,-130.03 383.85,-129.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="383.65,-132.92 393.49,-128.98 383.34,-125.93 383.65,-132.92"/>
+</a>
+</g>
+</g>
+<!-- Node24 -->
+<g id="Node000024" class="node">
+<title>Node24</title>
+<g id="a_Node000024"><a xlink:href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" target="_top" xlink:title="Check full validity per GnuPG validity codes.">
+<polygon fill="white" stroke="#666666" points="905.38,-97.75 796.38,-97.75 796.38,-77 905.38,-77 905.38,-97.75"/>
+<text xml:space="preserve" text-anchor="middle" x="850.88" y="-84.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::fullyValid</text>
+</a>
+</g>
+</g>
+<!-- Node23&#45;&gt;Node24 -->
+<g id="edge30_Node000023_Node000024" class="edge">
+<title>Node23&#45;&gt;Node24</title>
+<g id="a_edge30_Node000023_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M558.17,-86.59C626.1,-86.78 721.64,-87.03 784.62,-87.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="784.46,-90.7 794.47,-87.23 784.48,-83.7 784.46,-90.7"/>
+</a>
+</g>
+</g>
+<!-- Node25 -->
+<g id="Node000025" class="node">
+<title>Node25</title>
+<g id="a_Node000025"><a xlink:href="class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106" target="_top" xlink:title="Check if GPG key is expired.">
+<polygon fill="white" stroke="#666666" points="742.75,-20.75 594,-20.75 594,0 742.75,0 742.75,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="668.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::isUserExpired</text>
+</a>
+</g>
+</g>
+<!-- Node23&#45;&gt;Node25 -->
+<g id="edge31_Node000023_Node000025" class="edge">
+<title>Node23&#45;&gt;Node25</title>
+<g id="a_edge31_Node000023_Node000025"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M536.77,-75.58C544.16,-73.11 551.42,-70.08 558,-66.38 577.71,-55.26 574.43,-41.73 594,-30.38 597.2,-28.52 600.57,-26.83 604.05,-25.29"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="605.26,-28.58 613.3,-21.68 602.71,-22.06 605.26,-28.58"/>
+</a>
+</g>
+</g>
+<!-- Node26 -->
+<g id="Node000026" class="node">
+<title>Node26</title>
+<g id="a_Node000026"><a xlink:href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" target="_top" xlink:title="Check whether the key has any usable validity level.">
+<polygon fill="white" stroke="#666666" points="716.12,-59.75 620.62,-59.75 620.62,-39 716.12,-39 716.12,-59.75"/>
+<text xml:space="preserve" text-anchor="middle" x="668.38" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::isValid</text>
+</a>
+</g>
+</g>
+<!-- Node23&#45;&gt;Node26 -->
+<g id="edge32_Node000023_Node000026" class="edge">
+<title>Node23&#45;&gt;Node26</title>
+<g id="a_edge32_Node000023_Node000026"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M532.66,-75.52C556.65,-70.87 584.69,-65.42 608.95,-60.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="609.53,-64.17 618.68,-58.83 608.2,-57.3 609.53,-64.17"/>
+</a>
+</g>
+</g>
+<!-- Node26&#45;&gt;Node24 -->
+<g id="edge33_Node000026_Node000024" class="edge">
+<title>Node26&#45;&gt;Node24</title>
+<g id="a_edge33_Node000026_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M716.33,-59.26C737.96,-63.81 763.95,-69.28 787.22,-74.18"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="786.41,-77.59 796.92,-76.23 787.85,-70.74 786.41,-77.59"/>
+</a>
+</g>
+</g>
+<!-- Node27 -->
+<g id="Node000027" class="node">
+<title>Node27</title>
+<g id="a_Node000027"><a xlink:href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" target="_top" xlink:title="Check marginal validity per GnuPG validity codes.">
+<polygon fill="white" stroke="#666666" points="920.75,-58.75 781,-58.75 781,-38 920.75,-38 920.75,-58.75"/>
+<text xml:space="preserve" text-anchor="middle" x="850.88" y="-45.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::marginallyValid</text>
+</a>
+</g>
+</g>
+<!-- Node26&#45;&gt;Node27 -->
+<g id="edge34_Node000026_Node000027" class="edge">
+<title>Node26&#45;&gt;Node27</title>
+<g id="a_edge34_Node000026_Node000027"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M716.33,-49.11C732.51,-49.03 751.13,-48.92 769.23,-48.82"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="769.22,-52.32 779.2,-48.77 769.18,-45.32 769.22,-52.32"/>
+</a>
+</g>
+</g>
+<!-- Node29 -->
+<g id="Node000029" class="node">
+<title>Node29</title>
+<g id="a_Node000029"><a xlink:href="class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" target="_top" xlink:title="text with the characters that change how the text around them reads replaced by U+FFFD,...">
+<polygon fill="white" stroke="#666666" points="716.12,-174.75 620.62,-174.75 620.62,-154 716.12,-154 716.12,-174.75"/>
+<text xml:space="preserve" text-anchor="middle" x="668.38" y="-161.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::displayable</text>
+</a>
+</g>
+</g>
+<!-- Node28&#45;&gt;Node29 -->
+<g id="edge36_Node000028_Node000029" class="edge">
+<title>Node28&#45;&gt;Node29</title>
+<g id="a_edge36_Node000028_Node000029"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M550.18,-164.38C569.54,-164.38 590.18,-164.38 608.65,-164.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="608.63,-167.88 618.63,-164.38 608.63,-160.88 608.63,-167.88"/>
+</a>
+</g>
+</g>
+<!-- Node30&#45;&gt;Node25 -->
+<g id="edge38_Node000030_Node000025" class="edge">
+<title>Node30&#45;&gt;Node25</title>
+<g id="a_edge38_Node000030_Node000025"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M532.66,-36.52C553.9,-32.4 578.3,-27.66 600.46,-23.36"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="600.83,-26.86 609.98,-21.51 599.5,-19.98 600.83,-26.86"/>
+</a>
+</g>
+</g>
+<!-- Node30&#45;&gt;Node26 -->
+<g id="edge39_Node000030_Node000026" class="edge">
+<title>Node30&#45;&gt;Node26</title>
+<g id="a_edge39_Node000030_Node000026"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M546.11,-48.1C566.75,-48.32 589.16,-48.55 609.03,-48.76"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="608.85,-52.26 618.89,-48.87 608.92,-45.26 608.85,-52.26"/>
+</a>
+</g>
+</g>
+<!-- Node32 -->
+<g id="Node000032" class="node">
+<title>Node32</title>
+<g id="a_Node000032"><a xlink:href="class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" target="_top" xlink:title="Whether at least one key is ticked.">
 <polygon fill="white" stroke="#666666" points="740.12,-135.75 596.62,-135.75 596.62,-115 740.12,-115 740.12,-135.75"/>
 <text xml:space="preserve" text-anchor="middle" x="668.38" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::hasSelection</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node31 -->
-<g id="edge39_Node000030_Node000031" class="edge">
-<title>Node30&#45;&gt;Node31</title>
-<g id="a_edge39_Node000030_Node000031"><a xlink:title=" ">
+<!-- Node31&#45;&gt;Node32 -->
+<g id="edge41_Node000031_Node000032" class="edge">
+<title>Node31&#45;&gt;Node32</title>
+<g id="a_edge41_Node000031_Node000032"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M556.49,-125.38C565.84,-125.38 575.41,-125.38 584.8,-125.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="584.64,-128.88 594.64,-125.38 584.64,-121.88 584.64,-128.88"/>
 </a>
 </g>
 </g>
-<!-- Node33&#45;&gt;Node5 -->
-<g id="edge42_Node000033_Node000005" class="edge">
-<title>Node33&#45;&gt;Node5</title>
-<g id="a_edge42_Node000033_Node000005"><a xlink:title=" ">
+<!-- Node34&#45;&gt;Node5 -->
+<g id="edge44_Node000034_Node000005" class="edge">
+<title>Node34&#45;&gt;Node5</title>
+<g id="a_edge44_Node000034_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M352.11,-198.46C430.9,-205.43 548.92,-215.89 615.97,-221.82"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="615.3,-225.28 625.57,-222.67 615.91,-218.3 615.3,-225.28"/>
 </a>

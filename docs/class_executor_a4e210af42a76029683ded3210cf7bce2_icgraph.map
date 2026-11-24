@@ -256,7 +256,7 @@
 <area shape="poly" id="edge144_Node000092_Node000093" title=" " alt="" coords="3293,2480,3146,2468,3146,2463,3298,2479"/>
 <area shape="rect" id="Node000094" href="$class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2" title="Mark which keys have secret counterparts." alt="" coords="2984,2551,3198,2578"/>
 <area shape="poly" id="edge145_Node000092_Node000094" title=" " alt="" coords="3313,2505,3210,2540,3161,2553,3160,2548,3209,2535,3308,2506"/>
-<area shape="rect" id="Node000098" href="$class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="2983,2499,3198,2526"/>
+<area shape="rect" id="Node000098" href="$class_users_dialog.html#a3c3a5d0fdc783f2ad1b52f59a4903d31" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="2983,2499,3198,2526"/>
 <area shape="poly" id="edge149_Node000092_Node000098" title=" " alt="" coords="3293,2493,3199,2505,3198,2499,3298,2492"/>
 <area shape="rect" id="Node000095" href="$class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565" title="Load GPG keys and determine secret key status." alt="" coords="2712,2551,2906,2578"/>
 <area shape="poly" id="edge146_Node000094_Node000095" title=" " alt="" coords="2965,2565,2906,2567,2906,2562,2971,2564"/>

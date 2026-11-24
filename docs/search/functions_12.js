@@ -20,7 +20,7 @@ var searchData=
   ['selectfirstfile_17',['selectFirstFile',['../class_main_window.html#a7491c2974ab54018ac9a7d1738a4f654',1,'MainWindow']]],
   ['selectfolder_18',['selectFolder',['../class_config_dialog.html#af46ecbc080ed3effc646a2776608bc03',1,'ConfigDialog']]],
   ['selectimportedkey_19',['selectImportedKey',['../class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9',1,'UsersDialog']]],
-  ['selectrecipients_20',['selectRecipients',['../class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee',1,'UsersDialog']]],
+  ['selectrecipients_20',['selectRecipients',['../class_users_dialog.html#a3c3a5d0fdc783f2ad1b52f59a4903d31',1,'UsersDialog']]],
   ['senddeferredpush_21',['sendDeferredPush',['../class_imitate_pass.html#ae8e3aad7da8b2e106c3d587f25296e3e',1,'ImitatePass::sendDeferredPush()'],['../class_real_pass.html#aaaf6e02c8547397a5b1da80e45cebea2',1,'RealPass::sendDeferredPush()']]],
   ['sendmessage_22',['sendMessage',['../class_single_application.html#ad63149f60ac6676dda4397a90116e351',1,'SingleApplication']]],
   ['setautocleartimer_23',['setAutoclearTimer',['../class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872',1,'ClipboardManager']]],

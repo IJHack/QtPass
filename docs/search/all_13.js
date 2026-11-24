@@ -36,7 +36,7 @@ var searchData=
   ['selectfirstfile_33',['selectFirstFile',['../class_main_window.html#a7491c2974ab54018ac9a7d1738a4f654',1,'MainWindow']]],
   ['selectfolder_34',['selectFolder',['../class_config_dialog.html#af46ecbc080ed3effc646a2776608bc03',1,'ConfigDialog']]],
   ['selectimportedkey_35',['selectImportedKey',['../class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9',1,'UsersDialog']]],
-  ['selectrecipients_36',['selectRecipients',['../class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee',1,'UsersDialog']]],
+  ['selectrecipients_36',['selectRecipients',['../class_users_dialog.html#a3c3a5d0fdc783f2ad1b52f59a4903d31',1,'UsersDialog']]],
   ['senddeferredpush_37',['sendDeferredPush',['../class_imitate_pass.html#ae8e3aad7da8b2e106c3d587f25296e3e',1,'ImitatePass::sendDeferredPush()'],['../class_real_pass.html#aaaf6e02c8547397a5b1da80e45cebea2',1,'RealPass::sendDeferredPush()']]],
   ['sendmessage_38',['sendMessage',['../class_single_application.html#ad63149f60ac6676dda4397a90116e351',1,'SingleApplication']]],
   ['setautocleartimer_39',['setAutoclearTimer',['../class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872',1,'ClipboardManager']]],
@@ -177,9 +177,10 @@ var searchData=
   ['storetree_2eh_174',['storetree.h',['../storetree_8h.html',1,'']]],
   ['storewizardpage_175',['StoreWizardPage',['../class_store_wizard_page.html',1,'StoreWizardPage'],['../class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14',1,'StoreWizardPage::StoreWizardPage()']]],
   ['sub_176',['Sub',['../gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314ae80155eceb940c89e2de63ad05868db2',1,'gpgkeystate.h']]],
-  ['support_177',['Application support',['../group__support.html',1,'']]],
-  ['supporteddragactions_178',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
-  ['supporteddropactions_179',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
-  ['synctodisk_180',['syncToDisk',['../class_util.html#aa000e615528288c62c3388bfbad759ee',1,'Util']]],
-  ['systrayicon_181',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
+  ['subkeys_177',['subkeys',['../struct_user_info.html#a77c6983769010c5c9ad8967f75e14187',1,'UserInfo']]],
+  ['support_178',['Application support',['../group__support.html',1,'']]],
+  ['supporteddragactions_179',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
+  ['supporteddropactions_180',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
+  ['synctodisk_181',['syncToDisk',['../class_util.html#aa000e615528288c62c3388bfbad759ee',1,'Util']]],
+  ['systrayicon_182',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
 ];

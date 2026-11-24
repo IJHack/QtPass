@@ -24,5 +24,6 @@ var searchData=
   ['step_21',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]],
   ['store_22',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header::store'],['../class_store_model.html#a98ebce85d60d3372420113fe7e714428',1,'StoreModel::store']]],
   ['stores_23',['stores',['../struct_config_dialog_1_1_signing_stores.html#a05aded4260ca220959acaa60e1bf64a1',1,'ConfigDialog::SigningStores']]],
-  ['systrayicon_24',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
+  ['subkeys_24',['subkeys',['../struct_user_info.html#a77c6983769010c5c9ad8967f75e14187',1,'UserInfo']]],
+  ['systrayicon_25',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
 ];

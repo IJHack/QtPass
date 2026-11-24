@@ -199,8 +199,8 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a3af163e9ad85e7f272460ba74c6fccc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show <code class="param">text</code> above the key list in bold red, for a recipient list that could not be verified.  <br /></td></tr>
 <tr class="memitem:a9a6a4c61df81a43cf26fc0bfccedae01" id="r_a9a6a4c61df81a43cf26fc0bfccedae01"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9a6a4c61df81a43cf26fc0bfccedae01">showNestedLists</a> ()</td></tr>
 <tr class="memdesc:a9a6a4c61df81a43cf26fc0bfccedae01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name the folders below this one that have a recipient list of their own: saving here does not change theirs, so someone removed here can still read what is in them. Folders below that cannot be read are named too, since whether they have one is unknown.  <br /></td></tr>
-<tr class="memitem:a9e4c29d22b7b8335eed934a5a55240ee" id="r_a9e4c29d22b7b8335eed934a5a55240ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9e4c29d22b7b8335eed934a5a55240ee">selectRecipients</a> (const QStringList &amp;recipients)</td></tr>
-<tr class="memdesc:a9e4c29d22b7b8335eed934a5a55240ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to, so saving does not drop them silently.  <br /></td></tr>
+<tr class="memitem:a3c3a5d0fdc783f2ad1b52f59a4903d31" id="r_a3c3a5d0fdc783f2ad1b52f59a4903d31"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3c3a5d0fdc783f2ad1b52f59a4903d31">selectRecipients</a> (const QStringList &amp;listed)</td></tr>
+<tr class="memdesc:a3c3a5d0fdc783f2ad1b52f59a4903d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to, so saving does not drop them silently. A line that names a key by a subkey or a secondary user ID ticks that key, so unticking it removes the line too.  <br /></td></tr>
 <tr class="memitem:a9742afa42c3edaec91f62ddcb116002d" id="r_a9742afa42c3edaec91f62ddcb116002d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9742afa42c3edaec91f62ddcb116002d">populateList</a> (const QString &amp;filter=QString())</td></tr>
 <tr class="memdesc:a9742afa42c3edaec91f62ddcb116002d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate user list.  <br /></td></tr>
 <tr class="memitem:ad8f7dcefe8f44773b5931295c2e35833" id="r_ad8f7dcefe8f44773b5931295c2e35833"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad8f7dcefe8f44773b5931295c2e35833">passesFilter</a> (const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;user, const QString &amp;filter, const QRegularExpression &amp;nameFilter) const</td></tr>
@@ -224,6 +224,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a486ab9a602907d6110dceaed9a7b3138" id="r_a486ab9a602907d6110dceaed9a7b3138"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a486ab9a602907d6110dceaed9a7b3138">m_dir</a></td></tr>
 <tr class="memitem:aaf2a368116ead1381e833f52f4bb7cf5" id="r_aaf2a368116ead1381e833f52f4bb7cf5"><td class="memItemLeft"><a class="el" href="#a4bc2c40314993e5e06b649bc6c037111">Preselect</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaf2a368116ead1381e833f52f4bb7cf5">m_preselect</a> = <a class="el" href="#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">Preselect::FromList</a></td></tr>
 <tr class="memitem:a50a8ee7a2dbd27672249f0c8d109beb8" id="r_a50a8ee7a2dbd27672249f0c8d109beb8"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a50a8ee7a2dbd27672249f0c8d109beb8">m_lastFilter</a></td></tr>
+<tr class="memitem:ab523762c16cb41558ef59ee40745a210" id="r_ab523762c16cb41558ef59ee40745a210"><td class="memItemLeft">QSet&lt; QString &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab523762c16cb41558ef59ee40745a210">m_notLookedUp</a></td></tr>
+<tr class="memdesc:ab523762c16cb41558ef59ee40745a210"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">.gpg-id</span> lines <a class="el" href="#a3c3a5d0fdc783f2ad1b52f59a4903d31" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,...">selectRecipients()</a> listed unticked without asking gpg. They are shown without "Show unusable keys", so OK does not drop them unseen.  <br /></td></tr>
 <tr class="memitem:a01126f883fe8cf0f351d340945af8552" id="r_a01126f883fe8cf0f351d340945af8552"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a01126f883fe8cf0f351d340945af8552">m_cachedPatternString</a></td></tr>
 <tr class="memitem:a0b48f9c3f9f9ab0fd01598c00ab29216" id="r_a0b48f9c3f9f9ab0fd01598c00ab29216"><td class="memItemLeft">QRegularExpression&#160;</td><td class="memItemRight"><a class="el" href="#a0b48f9c3f9f9ab0fd01598c00ab29216">m_cachedNameFilter</a></td></tr>
 <tr class="memitem:a6d7caab10693c9c45c0089c931f5843b" id="r_a6d7caab10693c9c45c0089c931f5843b"><td class="memItemLeft">QDateTime&#160;</td><td class="memItemRight"><a class="el" href="#a6d7caab10693c9c45c0089c931f5843b">m_cachedCurrentDateTime</a></td></tr>
@@ -233,7 +235,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Dialog for selecting GPG recipients for password encryption. </p>
 <p><a class="el" href="class_users_dialog.html" title="Dialog for selecting GPG recipients for password encryption.">UsersDialog</a> allows users to select which GPG keys to encrypt passwords to. It displays available keys, supports filtering, and shows key expiration status. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00035">35</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00036">36</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="a4bc2c40314993e5e06b649bc6c037111" name="a4bc2c40314993e5e06b649bc6c037111"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4bc2c40314993e5e06b649bc6c037111">&#9670;&#160;</a></span>Preselect</h2>
@@ -263,7 +265,7 @@ Private Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00040">40</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00041">41</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -316,7 +318,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00038">38</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00039">39</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -378,7 +380,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00042">42</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00043">43</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -414,7 +416,7 @@ Private Attributes</h2></td></tr>
 
 <p>Handle dialog acceptance. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00342">342</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00425">425</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -466,7 +468,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00507">507</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00592">592</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -514,7 +516,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Formatted text. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00489">489</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00574">574</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -555,7 +557,7 @@ Private Attributes</h2></td></tr>
 
 <p>Connect dialog signals. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00063">63</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00064">64</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
@@ -597,7 +599,7 @@ Private Attributes</h2></td></tr>
 <p>Whether at least one key is ticked. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if Init would get a recipient. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00355">355</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00438">438</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -639,7 +641,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if key is expired. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00454">454</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00539">539</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
@@ -680,7 +682,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00376">376</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00459">459</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary">
 </div>
@@ -727,7 +729,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00366">366</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00449">449</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 
 </div>
 </div>
@@ -757,7 +759,7 @@ Private Attributes</h2></td></tr>
 <p>Load GPG keys and determine secret key status. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if successful, false if keys could not be loaded. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00079">79</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00080">80</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary">
 </div>
@@ -798,7 +800,7 @@ Private Attributes</h2></td></tr>
 
 <p>Load recipients and handle missing keys. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00318">318</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00401">401</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary">
 </div>
@@ -845,7 +847,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00094">94</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00095">95</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
@@ -886,7 +888,7 @@ Private Attributes</h2></td></tr>
 
 <p>Handle select all checkbox. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00547">547</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00632">632</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
@@ -921,7 +923,7 @@ Private Attributes</h2></td></tr>
 
 <p>Import a GPG key and refresh the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00564">564</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00649">649</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary">
 </div>
@@ -962,7 +964,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00543">543</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00628">628</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary">
 </div>
@@ -1015,7 +1017,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if user passes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00440">440</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00523">523</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
@@ -1062,7 +1064,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00397">397</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00480">480</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-28-summary" class="dynsummary">
 </div>
@@ -1102,7 +1104,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Attach <a class="el" href="namespace_window_state_store.html" title="Persist and restore a top-level window&#39;s geometry, one way for the main window and every dialog.">WindowStateStore</a>, which restores the dialog's saved geometry now and saves it under "usersDialog" when the dialog closes. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00075">75</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00076">76</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-30-summary" class="dynsummary">
 </div>
@@ -1144,7 +1146,7 @@ Private Attributes</h2></td></tr>
 <p>The key list with the user's choice in each entry's enabled flag. </p>
 <dl class="section return"><dt>Returns</dt><dd>All listed users; the selected ones have enabled == true. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00083">83</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00084">84</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 <div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-32-summary" class="dynsummary">
 </div>
@@ -1185,7 +1187,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00549">549</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00634">634</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
@@ -1195,8 +1197,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9e4c29d22b7b8335eed934a5a55240ee" name="a9e4c29d22b7b8335eed934a5a55240ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e4c29d22b7b8335eed934a5a55240ee">&#9670;&#160;</a></span>selectRecipients()</h2>
+<a id="a3c3a5d0fdc783f2ad1b52f59a4903d31" name="a3c3a5d0fdc783f2ad1b52f59a4903d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c3a5d0fdc783f2ad1b52f59a4903d31">&#9670;&#160;</a></span>selectRecipients()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1207,7 +1209,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void UsersDialog::selectRecipients </td>
           <td>(</td>
-          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>recipients</em></span></td><td>)</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>listed</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1218,26 +1220,26 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to, so saving does not drop them silently. </p>
+<p>Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to, so saving does not drop them silently. A line that names a key by a subkey or a secondary user ID ticks that key, so unticking it removes the line too. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">recipients</td><td>The folder's recipients, as listed in its <span class="tt">.gpg-id</span>. </td></tr>
+    <tr><td class="paramname">listed</td><td>The folder's recipients, as listed in its <span class="tt">.gpg-id</span>. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00250">250</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00315">315</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-34-summary" class="dynsummary">
 </div>
 <div id="dynsection-34-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9e4c29d22b7b8335eed934a5a55240ee_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a3c3a5d0fdc783f2ad1b52f59a4903d31_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-35-summary" class="dynsummary">
 </div>
 <div id="dynsection-35-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9e4c29d22b7b8335eed934a5a55240ee_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a3c3a5d0fdc783f2ad1b52f59a4903d31_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1273,7 +1275,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00077">77</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00078">78</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 <div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-36-summary" class="dynsummary">
 </div>
@@ -1308,7 +1310,7 @@ Private Attributes</h2></td></tr>
 
 <p>Name the folders below this one that have a recipient list of their own: saving here does not change theirs, so someone removed here can still read what is in them. Folders below that cannot be read are named too, since whether they have one is unknown. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00141">141</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00142">142</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-37-summary" class="dynsummary">
 </div>
@@ -1360,7 +1362,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00107">107</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00108">108</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-39-summary" class="dynsummary">
 </div>
@@ -1401,7 +1403,7 @@ Private Attributes</h2></td></tr>
 
 <p>Enable OK only while at least one key is ticked (<a class="el" href="#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked.">hasSelection()</a>). </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00360">360</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00443">443</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-41-summary" class="dynsummary">
 </div>
@@ -1439,7 +1441,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Cached current date/time for expiry checks </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00148">148</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00155">155</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1466,7 +1468,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="keyword">false</span></div>
 </div><!-- fragment --><p>Whether cached date/time is valid </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00150">150</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00157">157</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1491,7 +1493,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Cached regex filter </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00147">147</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00154">154</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1516,7 +1518,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Cached pattern string </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00146">146</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00153">153</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1541,7 +1543,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Password store directory </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00143">143</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00144">144</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1566,7 +1568,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>GPG executable path </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00138">138</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00139">139</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1591,7 +1593,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Whether <a class="el" href="#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance.">accept()</a> runs <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Pass::Init</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00140">140</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00141">141</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1616,7 +1618,33 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Last filter text for caching </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00145">145</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00146">146</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="ab523762c16cb41558ef59ee40745a210" name="ab523762c16cb41558ef59ee40745a210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab523762c16cb41558ef59ee40745a210">&#9670;&#160;</a></span>m_notLookedUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSet&lt;QString&gt; UsersDialog::m_notLookedUp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">.gpg-id</span> lines <a class="el" href="#a3c3a5d0fdc783f2ad1b52f59a4903d31" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,...">selectRecipients()</a> listed unticked without asking gpg. They are shown without "Show unusable keys", so OK does not drop them unseen. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00152">152</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1641,7 +1669,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Active <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00136">136</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00137">137</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1666,7 +1694,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Password store root path </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00137">137</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00138">138</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1691,7 +1719,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>What opens ticked </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00144">144</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00145">145</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1716,7 +1744,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>List of available GPG users </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00139">139</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00140">140</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1742,7 +1770,7 @@ Private Attributes</h2></td></tr>
 
 <p>The widgets from usersdialog.ui. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00135">135</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00136">136</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>

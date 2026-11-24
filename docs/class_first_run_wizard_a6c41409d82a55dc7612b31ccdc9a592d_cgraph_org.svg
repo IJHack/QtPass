@@ -54,38 +54,38 @@
 </a>
 </g>
 </g>
-<!-- Node27 -->
-<g id="Node000027" class="node">
-<title>Node27</title>
-<g id="a_Node000027"><a xlink:href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b" target="_top" xlink:title="Build the page.">
+<!-- Node28 -->
+<g id="Node000028" class="node">
+<title>Node28</title>
+<g id="a_Node000028"><a xlink:href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b" target="_top" xlink:title="Build the page.">
 <polygon fill="white" stroke="#666666" points="327.5,-276.12 202,-276.12 202,-242.62 327.5,-242.62 327.5,-276.12"/>
 <text xml:space="preserve" text-anchor="start" x="210" y="-262.62" font-family="Helvetica,sans-Serif" font-size="10.00">ProgramsWizardPage</text>
 <text xml:space="preserve" text-anchor="middle" x="264.75" y="-249.88" font-family="Helvetica,sans-Serif" font-size="10.00">::ProgramsWizardPage</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node27 -->
-<g id="edge32_Node000001_Node000027" class="edge">
-<title>Node1&#45;&gt;Node27</title>
-<g id="a_edge32_Node000001_Node000027"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node28 -->
+<g id="edge34_Node000001_Node000028" class="edge">
+<title>Node1&#45;&gt;Node28</title>
+<g id="a_edge34_Node000001_Node000028"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M135.5,-273.83C153.14,-271.85 172.27,-269.69 190.24,-267.66"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="190.51,-271.16 200.05,-266.56 189.72,-264.2 190.51,-271.16"/>
 </a>
 </g>
 </g>
-<!-- Node29 -->
-<g id="Node000029" class="node">
-<title>Node29</title>
-<g id="a_Node000029"><a xlink:href="class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14" target="_top" xlink:title="Build the page.">
+<!-- Node30 -->
+<g id="Node000030" class="node">
+<title>Node30</title>
+<g id="a_Node000030"><a xlink:href="class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14" target="_top" xlink:title="Build the page.">
 <polygon fill="white" stroke="#666666" points="358.25,-224.75 171.25,-224.75 171.25,-204 358.25,-204 358.25,-224.75"/>
 <text xml:space="preserve" text-anchor="middle" x="264.75" y="-211.25" font-family="Helvetica,sans-Serif" font-size="10.00">StoreWizardPage::StoreWizardPage</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node29 -->
-<g id="edge34_Node000001_Node000029" class="edge">
-<title>Node1&#45;&gt;Node29</title>
-<g id="a_edge34_Node000001_Node000029"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node30 -->
+<g id="edge36_Node000001_Node000030" class="edge">
+<title>Node1&#45;&gt;Node30</title>
+<g id="a_edge36_Node000001_Node000030"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M100.19,-264.25C120.09,-254.05 146.6,-241.54 171.25,-233.38 177.33,-231.36 183.71,-229.52 190.16,-227.84"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="190.68,-231.32 199.56,-225.54 189.01,-224.52 190.68,-231.32"/>
 </a>
@@ -380,9 +380,9 @@
 </g>
 </g>
 <!-- Node19&#45;&gt;Node19 -->
-<g id="edge30_Node000019_Node000019" class="edge">
+<g id="edge32_Node000019_Node000019" class="edge">
 <title>Node19&#45;&gt;Node19</title>
-<g id="a_edge30_Node000019_Node000019"><a xlink:title=" ">
+<g id="a_edge32_Node000019_Node000019"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1017.39,-156.15C1006.5,-164.81 1015.58,-173.75 1044.62,-173.75 1060.51,-173.75 1070.42,-171.08 1074.36,-167.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1077.81,-166.61 1072.19,-157.62 1070.98,-168.15 1077.81,-166.61"/>
 </a>
@@ -460,30 +460,12 @@
 </a>
 </g>
 </g>
-<!-- Node25 -->
-<g id="Node000025" class="node">
-<title>Node25</title>
-<g id="a_Node000025"><a xlink:href="class_util.html#aced819d4368806d046f0dc24a91843f7" target="_top" xlink:title="Returns a regex to match newline characters.">
-<polygon fill="white" stroke="#666666" points="1271.5,-59.75 1155.75,-59.75 1155.75,-39 1271.5,-39 1271.5,-59.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1213.62" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::newLinesRegex</text>
-</a>
-</g>
-</g>
-<!-- Node19&#45;&gt;Node25 -->
-<g id="edge29_Node000019_Node000025" class="edge">
-<title>Node19&#45;&gt;Node25</title>
-<g id="a_edge29_Node000019_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1058.03,-134.7C1077.21,-118.65 1115.74,-88.16 1152.75,-69.38 1156.38,-67.53 1160.23,-65.8 1164.14,-64.19"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1165.06,-67.58 1173.15,-60.75 1162.56,-61.04 1165.06,-67.58"/>
-</a>
-</g>
-</g>
 <!-- Node26 -->
 <g id="Node000026" class="node">
 <title>Node26</title>
-<g id="a_Node000026"><a xlink:href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" target="_top" xlink:title="Construct a UserInfo with default (invalid/disabled) state.">
-<polygon fill="white" stroke="#666666" points="1265.88,-20.75 1161.38,-20.75 1161.38,0 1265.88,0 1265.88,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1213.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::UserInfo</text>
+<g id="a_Node000026"><a xlink:href="class_util.html#aced819d4368806d046f0dc24a91843f7" target="_top" xlink:title="Returns a regex to match newline characters.">
+<polygon fill="white" stroke="#666666" points="1271.5,-59.75 1155.75,-59.75 1155.75,-39 1271.5,-39 1271.5,-59.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1213.62" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::newLinesRegex</text>
 </a>
 </g>
 </g>
@@ -491,6 +473,24 @@
 <g id="edge31_Node000019_Node000026" class="edge">
 <title>Node19&#45;&gt;Node26</title>
 <g id="a_edge31_Node000019_Node000026"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1058.03,-134.7C1077.21,-118.65 1115.74,-88.16 1152.75,-69.38 1156.38,-67.53 1160.23,-65.8 1164.14,-64.19"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1165.06,-67.58 1173.15,-60.75 1162.56,-61.04 1165.06,-67.58"/>
+</a>
+</g>
+</g>
+<!-- Node27 -->
+<g id="Node000027" class="node">
+<title>Node27</title>
+<g id="a_Node000027"><a xlink:href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" target="_top" xlink:title="Construct a UserInfo with default (invalid/disabled) state.">
+<polygon fill="white" stroke="#666666" points="1265.88,-20.75 1161.38,-20.75 1161.38,0 1265.88,0 1265.88,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1213.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::UserInfo</text>
+</a>
+</g>
+</g>
+<!-- Node19&#45;&gt;Node27 -->
+<g id="edge33_Node000019_Node000027" class="edge">
+<title>Node19&#45;&gt;Node27</title>
+<g id="a_edge33_Node000019_Node000027"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1052.63,-134.84C1068.08,-112.41 1107.31,-59.6 1152.75,-30.38 1155.3,-28.74 1157.99,-27.22 1160.78,-25.81"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1162.02,-29.09 1169.73,-21.83 1159.17,-22.7 1162.02,-29.09"/>
 </a>
@@ -524,9 +524,9 @@
 </g>
 </g>
 <!-- Node23&#45;&gt;Node23 -->
-<g id="edge26_Node000023_Node000023" class="edge">
+<g id="edge28_Node000023_Node000023" class="edge">
 <title>Node23&#45;&gt;Node23</title>
-<g id="a_edge26_Node000023_Node000023"><a xlink:title=" ">
+<g id="a_edge28_Node000023_Node000023"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M1186.51,-99.15C1175.67,-107.81 1184.71,-116.75 1213.62,-116.75 1229.44,-116.75 1239.31,-114.08 1243.23,-110.24"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1246.68,-109.61 1241.07,-100.62 1239.85,-111.15 1246.68,-109.61"/>
 </a>
@@ -535,116 +535,143 @@
 <!-- Node24 -->
 <g id="Node000024" class="node">
 <title>Node24</title>
-<g id="a_Node000024"><a xlink:href="gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" target="_top" xlink:title="How far a uid record&#39;s own validity vouches for its name.">
-<polygon fill="white" stroke="#666666" points="1424.38,-98.75 1339.38,-98.75 1339.38,-78 1424.38,-78 1424.38,-98.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1381.88" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">uidNameRank</text>
+<g id="a_Node000024"><a xlink:href="gpgkeystate_8cpp.html#a6a934d2eca2c610e4ebb4ceb0bd8eeac" target="_top" xlink:title="Decode a field of GPG colon output: gpg writes a colon, a backslash and control characters in a user ...">
+<polygon fill="white" stroke="#666666" points="1433,-126.75 1330.75,-126.75 1330.75,-106 1433,-106 1433,-126.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1381.88" y="-113.25" font-family="Helvetica,sans-Serif" font-size="10.00">decodeColonField</text>
 </a>
 </g>
 </g>
 <!-- Node23&#45;&gt;Node24 -->
-<g id="edge27_Node000023_Node000024" class="edge">
+<g id="edge26_Node000023_Node000024" class="edge">
 <title>Node23&#45;&gt;Node24</title>
-<g id="a_edge27_Node000023_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1263.61,-88.38C1283.72,-88.38 1307.05,-88.38 1327.59,-88.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1327.48,-91.88 1337.48,-88.38 1327.48,-84.88 1327.48,-91.88"/>
+<g id="a_edge26_Node000023_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1263.61,-96.62C1281.06,-99.56 1300.94,-102.91 1319.31,-106.01"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1318.58,-109.43 1329.02,-107.64 1319.74,-102.53 1318.58,-109.43"/>
+</a>
+</g>
+</g>
+<!-- Node25 -->
+<g id="Node000025" class="node">
+<title>Node25</title>
+<g id="a_Node000025"><a xlink:href="gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" target="_top" xlink:title="How far a uid record&#39;s own validity vouches for its name.">
+<polygon fill="white" stroke="#666666" points="1424.38,-69.75 1339.38,-69.75 1339.38,-49 1424.38,-49 1424.38,-69.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1381.88" y="-56.25" font-family="Helvetica,sans-Serif" font-size="10.00">uidNameRank</text>
+</a>
+</g>
+</g>
+<!-- Node23&#45;&gt;Node25 -->
+<g id="edge29_Node000023_Node000025" class="edge">
+<title>Node23&#45;&gt;Node25</title>
+<g id="a_edge29_Node000023_Node000025"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1263.61,-79.83C1283.81,-76.31 1307.27,-72.21 1327.88,-68.62"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1328.25,-72.11 1337.5,-66.94 1327.05,-65.21 1328.25,-72.11"/>
 </a>
 </g>
 </g>
 <!-- Node24&#45;&gt;Node24 -->
-<g id="edge28_Node000024_Node000024" class="edge">
+<g id="edge27_Node000024_Node000024" class="edge">
 <title>Node24&#45;&gt;Node24</title>
-<g id="a_edge28_Node000024_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1354.76,-99.15C1343.92,-107.81 1352.96,-116.75 1381.88,-116.75 1397.69,-116.75 1407.56,-114.08 1411.48,-110.24"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1414.93,-109.61 1409.32,-100.62 1408.1,-111.15 1414.93,-109.61"/>
+<g id="a_edge27_Node000024_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1354.76,-127.15C1343.92,-135.81 1352.96,-144.75 1381.88,-144.75 1397.69,-144.75 1407.56,-142.08 1411.48,-138.24"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1414.93,-137.61 1409.32,-128.62 1408.1,-139.15 1414.93,-137.61"/>
 </a>
 </g>
 </g>
-<!-- Node28 -->
-<g id="Node000028" class="node">
-<title>Node28</title>
-<g id="a_Node000028"><a xlink:href="class_programs_wizard_page.html#a6644c4d240c1883cdf790d69214171c4" target="_top" xlink:title="After an edit: say under the gpg field when it is missing or not executable, allow &quot;use pass&quot; only fo...">
+<!-- Node25&#45;&gt;Node25 -->
+<g id="edge30_Node000025_Node000025" class="edge">
+<title>Node25&#45;&gt;Node25</title>
+<g id="a_edge30_Node000025_Node000025"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1354.76,-70.15C1343.92,-78.81 1352.96,-87.75 1381.88,-87.75 1397.69,-87.75 1407.56,-85.08 1411.48,-81.24"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1414.93,-80.61 1409.32,-71.62 1408.1,-82.15 1414.93,-80.61"/>
+</a>
+</g>
+</g>
+<!-- Node29 -->
+<g id="Node000029" class="node">
+<title>Node29</title>
+<g id="a_Node000029"><a xlink:href="class_programs_wizard_page.html#a6644c4d240c1883cdf790d69214171c4" target="_top" xlink:title="After an edit: say under the gpg field when it is missing or not executable, allow &quot;use pass&quot; only fo...">
 <polygon fill="white" stroke="#666666" points="538.5,-276.12 419,-276.12 419,-242.62 538.5,-242.62 538.5,-276.12"/>
 <text xml:space="preserve" text-anchor="start" x="427" y="-262.62" font-family="Helvetica,sans-Serif" font-size="10.00">ProgramsWizardPage</text>
 <text xml:space="preserve" text-anchor="middle" x="478.75" y="-249.88" font-family="Helvetica,sans-Serif" font-size="10.00">::updateStatus</text>
 </a>
 </g>
 </g>
-<!-- Node27&#45;&gt;Node28 -->
-<g id="edge33_Node000027_Node000028" class="edge">
-<title>Node27&#45;&gt;Node28</title>
-<g id="a_edge33_Node000027_Node000028"><a xlink:title=" ">
+<!-- Node28&#45;&gt;Node29 -->
+<g id="edge35_Node000028_Node000029" class="edge">
+<title>Node28&#45;&gt;Node29</title>
+<g id="a_edge35_Node000028_Node000029"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M327.92,-259.38C352.94,-259.38 381.9,-259.38 407.65,-259.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="407.34,-262.88 417.34,-259.38 407.34,-255.88 407.34,-262.88"/>
-</a>
-</g>
-</g>
-<!-- Node30 -->
-<g id="Node000030" class="node">
-<title>Node30</title>
-<g id="a_Node000030"><a xlink:href="class_store_wizard_page.html#af948497007b04b2b861b0c9882e8ab2b" target="_top" xlink:title="After an edit: describe the folder (existing store with its entry count, empty folder,...">
-<polygon fill="white" stroke="#666666" points="563.25,-224.75 394.25,-224.75 394.25,-204 563.25,-204 563.25,-224.75"/>
-<text xml:space="preserve" text-anchor="middle" x="478.75" y="-211.25" font-family="Helvetica,sans-Serif" font-size="10.00">StoreWizardPage::updateStatus</text>
-</a>
-</g>
-</g>
-<!-- Node29&#45;&gt;Node30 -->
-<g id="edge35_Node000029_Node000030" class="edge">
-<title>Node29&#45;&gt;Node30</title>
-<g id="a_edge35_Node000029_Node000030"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M358.74,-214.38C366.58,-214.38 374.53,-214.38 382.4,-214.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="382.33,-217.88 392.33,-214.38 382.33,-210.88 382.33,-217.88"/>
 </a>
 </g>
 </g>
 <!-- Node31 -->
 <g id="Node000031" class="node">
 <title>Node31</title>
-<g id="a_Node000031"><a xlink:href="class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848" target="_top" xlink:title="Whether path points at an initialised store.">
-<polygon fill="white" stroke="#666666" points="740.12,-263.75 610.88,-263.75 610.88,-243 740.12,-243 740.12,-263.75"/>
-<text xml:space="preserve" text-anchor="middle" x="675.5" y="-250.25" font-family="Helvetica,sans-Serif" font-size="10.00">FirstRunWizard::isStore</text>
+<g id="a_Node000031"><a xlink:href="class_store_wizard_page.html#af948497007b04b2b861b0c9882e8ab2b" target="_top" xlink:title="After an edit: describe the folder (existing store with its entry count, empty folder,...">
+<polygon fill="white" stroke="#666666" points="563.25,-224.75 394.25,-224.75 394.25,-204 563.25,-204 563.25,-224.75"/>
+<text xml:space="preserve" text-anchor="middle" x="478.75" y="-211.25" font-family="Helvetica,sans-Serif" font-size="10.00">StoreWizardPage::updateStatus</text>
 </a>
 </g>
 </g>
 <!-- Node30&#45;&gt;Node31 -->
-<g id="edge36_Node000030_Node000031" class="edge">
+<g id="edge37_Node000030_Node000031" class="edge">
 <title>Node30&#45;&gt;Node31</title>
-<g id="a_edge36_Node000030_Node000031"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M534,-225.24C557.33,-229.91 584.79,-235.41 609.22,-240.3"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="608.23,-243.67 618.72,-242.2 609.6,-236.81 608.23,-243.67"/>
+<g id="a_edge37_Node000030_Node000031"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M358.74,-214.38C366.58,-214.38 374.53,-214.38 382.4,-214.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="382.33,-217.88 392.33,-214.38 382.33,-210.88 382.33,-217.88"/>
 </a>
 </g>
 </g>
 <!-- Node32 -->
 <g id="Node000032" class="node">
 <title>Node32</title>
-<g id="a_Node000032"><a xlink:href="class_store_wizard_page.html#a8089e9bf2ad6987d309fcccfde5b2eff" target="_top" xlink:title="How many keys are ticked on the key page.">
-<polygon fill="white" stroke="#666666" points="751.75,-224.75 599.25,-224.75 599.25,-204 751.75,-204 751.75,-224.75"/>
-<text xml:space="preserve" text-anchor="middle" x="675.5" y="-211.25" font-family="Helvetica,sans-Serif" font-size="10.00">StoreWizardPage::recipients</text>
+<g id="a_Node000032"><a xlink:href="class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848" target="_top" xlink:title="Whether path points at an initialised store.">
+<polygon fill="white" stroke="#666666" points="740.12,-263.75 610.88,-263.75 610.88,-243 740.12,-243 740.12,-263.75"/>
+<text xml:space="preserve" text-anchor="middle" x="675.5" y="-250.25" font-family="Helvetica,sans-Serif" font-size="10.00">FirstRunWizard::isStore</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node32 -->
-<g id="edge37_Node000030_Node000032" class="edge">
-<title>Node30&#45;&gt;Node32</title>
-<g id="a_edge37_Node000030_Node000032"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M563.47,-214.38C571.46,-214.38 579.57,-214.38 587.59,-214.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="587.33,-217.88 597.33,-214.38 587.33,-210.88 587.33,-217.88"/>
+<!-- Node31&#45;&gt;Node32 -->
+<g id="edge38_Node000031_Node000032" class="edge">
+<title>Node31&#45;&gt;Node32</title>
+<g id="a_edge38_Node000031_Node000032"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M534,-225.24C557.33,-229.91 584.79,-235.41 609.22,-240.3"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="608.23,-243.67 618.72,-242.2 609.6,-236.81 608.23,-243.67"/>
 </a>
 </g>
 </g>
 <!-- Node33 -->
 <g id="Node000033" class="node">
 <title>Node33</title>
-<g id="a_Node000033"><a xlink:href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" target="_top" xlink:title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">
+<g id="a_Node000033"><a xlink:href="class_store_wizard_page.html#a8089e9bf2ad6987d309fcccfde5b2eff" target="_top" xlink:title="How many keys are ticked on the key page.">
+<polygon fill="white" stroke="#666666" points="751.75,-224.75 599.25,-224.75 599.25,-204 751.75,-204 751.75,-224.75"/>
+<text xml:space="preserve" text-anchor="middle" x="675.5" y="-211.25" font-family="Helvetica,sans-Serif" font-size="10.00">StoreWizardPage::recipients</text>
+</a>
+</g>
+</g>
+<!-- Node31&#45;&gt;Node33 -->
+<g id="edge39_Node000031_Node000033" class="edge">
+<title>Node31&#45;&gt;Node33</title>
+<g id="a_edge39_Node000031_Node000033"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M563.47,-214.38C571.46,-214.38 579.57,-214.38 587.59,-214.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="587.33,-217.88 597.33,-214.38 587.33,-210.88 587.33,-217.88"/>
+</a>
+</g>
+</g>
+<!-- Node34 -->
+<g id="Node000034" class="node">
+<title>Node34</title>
+<g id="a_Node000034"><a xlink:href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" target="_top" xlink:title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">
 <polygon fill="white" stroke="#666666" points="738.25,-185.75 612.75,-185.75 612.75,-165 738.25,-165 738.25,-185.75"/>
 <text xml:space="preserve" text-anchor="middle" x="675.5" y="-172.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::regularFilesUnder</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node33 -->
-<g id="edge38_Node000030_Node000033" class="edge">
-<title>Node30&#45;&gt;Node33</title>
-<g id="a_edge38_Node000030_Node000033"><a xlink:title=" ">
+<!-- Node31&#45;&gt;Node34 -->
+<g id="edge40_Node000031_Node000034" class="edge">
+<title>Node31&#45;&gt;Node34</title>
+<g id="a_edge40_Node000031_Node000034"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M534,-203.51C557.33,-198.84 584.79,-193.34 609.22,-188.45"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="609.6,-191.94 618.72,-186.55 608.23,-185.08 609.6,-191.94"/>
 </a>
