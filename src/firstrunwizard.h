@@ -52,10 +52,18 @@ public:
 
   /**
    * @brief The secret keys gpg lists for @p gpgExecutable.
+   *
+   * gpg exits with 2 after a complete listing when one key holds something
+   * it cannot handle (a subkey of an unknown algorithm, say): the keys it
+   * listed are taken, and what it reported goes to @p problem. Any other
+   * failure lists no keys.
    * @param gpgExecutable The gpg binary.
-   * @return The keys, or an empty list when gpg cannot run.
+   * @param problem Receives gpg's error output when it did not exit
+   *        cleanly, cut to a few hundred characters; null to not care.
+   * @return The keys, or an empty list when gpg cannot run or failed.
    */
-  static auto secretKeys(const QString &gpgExecutable) -> QList<UserInfo>;
+  static auto secretKeys(const QString &gpgExecutable,
+                         QString *problem = nullptr) -> QList<UserInfo>;
 
   /**
    * @brief Whether @p path points at an initialised store.

@@ -509,31 +509,61 @@ void tst_firstrunwizard::finishLeavesAnExistingStoreAlone() {
 }
 
 /**
- * @brief Pins secretKeys() on a gpg that runs but fails: a non-zero exit
- *        yields no keys rather than whatever landed on stdout, and the key
- *        page then shows the "no secret key yet" hint.
+ * @brief Scan ANT-2026-S38OMDEL: gpg exits with 2 after a complete listing
+ *        when one key holds something it cannot handle (a subkey of an
+ *        unknown algorithm). The keys it listed are offered, so setup does
+ *        not stall, and the key page shows what gpg reported. Any other
+ *        failure lists no keys, whatever landed on stdout, and the page
+ *        shows gpg's words instead of "no secret key yet".
  */
 void tst_firstrunwizard::secretKeysAreEmptyWhenGpgFails() {
+  const QString partial = script(
+      QStringLiteral("gpg-exit2"),
+      "echo 'sec:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA:::+:::"
+      "23::0:'\n"
+      "echo 'fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:'\n"
+      "echo 'uid:u::::1774947438::X::Anne <anne@example.org>::::::::::0:'\n"
+      "echo 'gpg: <b>unknown</b> algorithm 99' >&2\n"
+      "exit 2\n");
   const QString failing = script(QStringLiteral("gpg-fail"),
                                  "echo 'sec:u:4096:1:31850CF72D9CDDE9:1::::'\n"
-                                 "exit 2\n");
-  QVERIFY(!failing.isEmpty());
-  QVERIFY2(FirstRunWizard::secretKeys(failing).isEmpty(),
-           "a failing gpg lists no keys, whatever it printed");
+                                 "echo 'gpg: keybox locked' >&2\n"
+                                 "exit 1\n");
+  QVERIFY(!partial.isEmpty() && !failing.isEmpty());
+  QString problem;
+  QCOMPARE(FirstRunWizard::secretKeys(partial, &problem).size(), 1);
+  QVERIFY2(problem.contains(QStringLiteral("unknown")), qPrintable(problem));
+  problem.clear();
+  QVERIFY2(FirstRunWizard::secretKeys(failing, &problem).isEmpty(),
+           "any other failure lists no keys, whatever it printed");
+  QCOMPARE(problem, QStringLiteral("gpg: keybox locked"));
 
-  AppSettings s = QtPassSettings::load();
-  s.gpgExecutable = failing;
-  QtPassSettings::save(s);
-  FirstRunWizard w;
-  w.setStartId(FirstRunWizard::KeyPage);
-  w.restart();
-  QWizardPage *page = w.currentPage();
-  auto *list = page->findChild<QListWidget *>();
-  QVERIFY(list != nullptr);
+  const auto page = [](const QString &gpg) {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = gpg;
+    QtPassSettings::save(s);
+    auto *w = new FirstRunWizard;
+    w->setStartId(FirstRunWizard::KeyPage);
+    w->restart();
+    return w;
+  };
+  QScopedPointer<FirstRunWizard> listed(page(partial));
+  auto *list = listed->currentPage()->findChild<QListWidget *>();
+  auto *status = listed->currentPage()->findChild<QLabel *>();
+  QVERIFY(list != nullptr && status != nullptr);
+  QCOMPARE(list->count(), 1);
+  QVERIFY2(listed->currentPage()->isComplete(), "the listed key can be used");
+  QCOMPARE(status->textFormat(), Qt::PlainText);
+  QVERIFY2(status->text().contains(QStringLiteral("<b>unknown</b>")),
+           qPrintable(status->text()));
+
+  QScopedPointer<FirstRunWizard> none(page(failing));
+  list = none->currentPage()->findChild<QListWidget *>();
+  status = none->currentPage()->findChild<QLabel *>();
+  QVERIFY(list != nullptr && status != nullptr);
   QCOMPARE(list->count(), 0);
-  auto *status = page->findChild<QLabel *>();
-  QVERIFY(status != nullptr);
-  QVERIFY2(status->text().contains(QStringLiteral("no secret key")),
+  QVERIFY2(status->text().contains(QStringLiteral("keybox locked")) &&
+               !status->text().contains(QStringLiteral("no secret key")),
            qPrintable(status->text()));
 }
 

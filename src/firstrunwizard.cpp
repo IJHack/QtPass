@@ -102,19 +102,29 @@ FirstRunWizard::FirstRunWizard(QWidget *parent)
   resize(640, 480);
 }
 
-auto FirstRunWizard::secretKeys(const QString &gpgExecutable)
+auto FirstRunWizard::secretKeys(const QString &gpgExecutable, QString *problem)
     -> QList<UserInfo> {
   if (!runnable(gpgExecutable)) {
     return {};
   }
   QString out;
+  QString err;
   const int rc = Executor::executeBlocking(
       gpgExecutable,
       {QStringLiteral("--no-tty"), QStringLiteral("--with-colons"),
        QStringLiteral("--with-fingerprint"),
        QStringLiteral("--list-secret-keys")},
-      &out);
-  if (rc != 0) {
+      &out, &err);
+  if (rc != 0 && problem != nullptr) {
+    constexpr qsizetype kMaxProblem = 400;
+    *problem = err.trimmed();
+    if (problem->size() > kMaxProblem) {
+      *problem = problem->left(kMaxProblem) + QChar(0x2026);
+    }
+  }
+  // Exit 2 is gpg's "an error occurred", also after a complete listing in
+  // which one key could not be handled: setup must not stall on that key.
+  if (rc != 0 && rc != 2) {
     return {};
   }
   return parseGpgColonOutput(out, true);
@@ -310,6 +320,8 @@ KeyWizardPage::KeyWizardPage(FirstRunWizard *wizard)
                  "with its secret half on this machine."));
   auto *layout = new QVBoxLayout(this);
   layout->addWidget(m_list);
+  // What gpg reports is shown here: as text, never as markup.
+  m_status->setTextFormat(Qt::PlainText);
   m_status->setWordWrap(true);
   layout->addWidget(m_status);
   auto *buttons = new QHBoxLayout;
@@ -324,8 +336,9 @@ KeyWizardPage::KeyWizardPage(FirstRunWizard *wizard)
 void KeyWizardPage::initializePage() { reload(); }
 
 void KeyWizardPage::reload() {
+  QString problem;
   m_wizard->m_keys =
-      FirstRunWizard::secretKeys(m_wizard->m_settings.gpgExecutable);
+      FirstRunWizard::secretKeys(m_wizard->m_settings.gpgExecutable, &problem);
   m_list->clear();
   const QDateTime now = QDateTime::currentDateTime();
   for (UserInfo &key : m_wizard->m_keys) {
@@ -347,10 +360,20 @@ void KeyWizardPage::reload() {
                                : (item->flags() & ~Qt::ItemIsEnabled));
     item->setCheckState(key.enabled ? Qt::Checked : Qt::Unchecked);
   }
-  m_status->setText(m_wizard->m_keys.isEmpty()
-                        ? tr("GnuPG has no secret key yet. Generate one here, "
-                             "or import your existing key with gpg first.")
-                        : QString());
+  // gpg's own words when it did not exit cleanly: "no secret key yet" would
+  // send the user to make a key they may well have.
+  if (!problem.isEmpty()) {
+    //: %1 is what GnuPG reported, in its own words.
+    m_status->setText(tr("GnuPG reported a problem while listing the secret "
+                         "keys:\n%1")
+                          .arg(problem));
+  } else {
+    m_status->setText(
+        m_wizard->m_keys.isEmpty()
+            ? tr("GnuPG has no secret key yet. Generate one here, "
+                 "or import your existing key with gpg first.")
+            : QString());
+  }
   emit completeChanged();
 }
 
