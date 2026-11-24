@@ -184,6 +184,18 @@ find ~/.password-store -name .gpg-id -type l
 
 This includes the list at the top of the store: a store whose own `.gpg-id` is a link, as a dotfile manager such as GNU Stow or chezmoi may set it up, cannot be saved to with the `pass` backend until the link is replaced by a regular file.
 
+### Saving says "Recipient list reads differently"
+
+With the `pass` backend, `pass` reads each `.gpg-id` itself, and it reads some lists differently from the **Users** dialog. In such a list a line can name a recipient that the dialog does not show. QtPass then does not run `pass` for that folder. This happens when the list:
+
+- starts with a byte-order mark, holds a NUL byte, or is not valid UTF-8;
+- has Windows line ends (a carriage return);
+- has whitespace other than blanks and tabs before a `#` comment, such as a no-break space;
+- has a line that starts with a dash;
+- ends without a line feed after its last recipient. `pass` skips that last line, possibly your own key.
+
+Open **Users** for that folder, check the recipients and press **OK**. QtPass then writes the list again, one recipient per line. A list you edit by hand must use plain Unix line ends and end with a line feed.
+
 With a signing key, a linked list was already refused, also with the native backend.
 
 ### How do I set up a one-time password (OTP/TOTP)?

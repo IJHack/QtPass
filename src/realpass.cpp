@@ -171,6 +171,51 @@ auto RealPass::refuseLinkedList(const QString &file, const QString &within,
   return true;
 }
 
+auto RealPass::refuseMisreadList(const QString &file, const QString &within,
+                                 const QString &except, QSet<QString> &checked)
+    -> bool {
+  const QString gpgIdFile = Pass::getGpgIdPath(file, m_settings.passStore);
+  const QString absolute =
+      QDir::cleanPath(QFileInfo(gpgIdFile).absoluteFilePath());
+  if (checked.contains(absolute) ||
+      (!except.isEmpty() &&
+       absolute == QDir::cleanPath(QFileInfo(except).absoluteFilePath())) ||
+      (!within.isEmpty() && !absolute.startsWith(within))) {
+    return false;
+  }
+  // A missing list is pass's to report. One that is there but not a
+  // regular file within the limit (too large, a FIFO, a device, unreadable)
+  // pass may still read in full, while the Users dialog shows none of it.
+  // A link was refused before this.
+  const std::optional<QByteArray> bytes =
+      Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);
+  if (!bytes && QFileInfo::exists(gpgIdFile)) {
+    //: %1 is the list's path, %2 a size such as "1 MiB".
+    emit critical(tr("Recipient list cannot be read"),
+                  tr("%1 is not a regular file of at most %2, so QtPass "
+                     "cannot show who pass would encrypt to. Nothing was "
+                     "encrypted. Check the recipients in Users for that "
+                     "folder and press OK to write the list anew.")
+                      .arg(QDir::toNativeSeparators(gpgIdFile),
+                           QLocale().formattedDataSize(Util::kMaxGpgIdBytes)));
+    return true;
+  }
+  const QString misread =
+      bytes ? Pass::passReadsDifferently(*bytes) : QString();
+  if (misread.isEmpty()) {
+    checked.insert(absolute);
+    return false;
+  }
+  //: %1 is the list's path, %2 says what is wrong with it.
+  emit critical(tr("Recipient list reads differently"),
+                tr("pass reads %1 differently from the Users dialog (%2), so "
+                   "it could encrypt to recipients the dialog does not show. "
+                   "Nothing was encrypted. Check the recipients in Users for "
+                   "that folder and press OK to write the list anew.")
+                    .arg(QDir::toNativeSeparators(gpgIdFile), misread));
+  return true;
+}
+
 auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
   // pass verifies the signature itself, but knows nothing of the generation
   // and folder lines: an older authentic list put back, or one signed for
@@ -179,7 +224,9 @@ auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
   // again afterwards; a swap in between is a concurrent writer, out of
   // scope (SECURITY.md). A linked list differs from what QtPass shows,
   // signing key or not.
-  if (refuseLinkedList(file)) {
+  QSet<QString> readAlike;
+  if (refuseLinkedList(file) ||
+      refuseMisreadList(file, QString(), QString(), readAlike)) {
     return true;
   }
   const GpgIdSigner signer = listSigner();
@@ -246,8 +293,11 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   // every folder of the walk, and above them unless only the lists within
   // count (the folder that moves gets the destination's list, the folder
   // pass init writes its own).
+  QSet<QString> readAlike;
   for (const QString &folder : folders) {
-    if (refuseLinkedList(folder + QLatin1Char('/'), within, except)) {
+    if (refuseLinkedList(folder + QLatin1Char('/'), within, except) ||
+        refuseMisreadList(folder + QLatin1Char('/'), within, except,
+                          readAlike)) {
       return true;
     }
   }
