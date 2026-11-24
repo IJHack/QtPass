@@ -170,7 +170,8 @@ public:
    *         cancelled or nothing matches. A match in the first line is
    *         marked (isPasswordMatch()), one in a line holding a one-time
    *         password secret is only a marker (isOtpMarker()), and a cut
-   *         `name: value` line keeps its name.
+   *         `name: value` line keeps its whole name, or shows none of its
+   *         value when the name is too long to keep.
    */
   static auto matchFile(const QProcessEnvironment &env, const QString &gpgExe,
                         const QString &filePath, const QRegularExpression &rx,

@@ -17,6 +17,7 @@
 #include <QRegularExpression>
 #include <QStringTokenizer>
 #include <QThread>
+#include <algorithm>
 #include <utility>
 
 NativeGrep::NativeGrep(QObject *parent) : QObject(parent) {}
@@ -106,17 +107,28 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
       --start;
     if (end < t.size() && t[end - 1].isHighSurrogate())
       ++end;
-    QString preview = t.sliced(start, end - start).toString();
-    if (start > 0)
-      preview.prepend(QChar(0x2026));
+    // A field's name decides whether its value is hidden, so a window that
+    // cuts into a `name: value` line keeps the whole name in front. A name
+    // too long for that is shown cut, and then none of the value is.
+    const qsizetype colon = password ? -1 : t.indexOf(u':');
+    QString preview;
+    qsizetype from = start;
+    if (colon > 0 && start > 0) {
+      if (colon >= kMaxPreviewLength / 2) {
+        matches << t.first(kMaxPreviewLength / 2).toString() + QChar(0x2026) +
+                       QStringLiteral(": ") + QChar(0x2026);
+        continue;
+      }
+      from = std::max(start, colon + 1);
+      preview = t.first(colon + 1).toString() + u' ';
+      if (from > colon + 1)
+        preview += QChar(0x2026);
+    } else if (start > 0) {
+      preview = QChar(0x2026);
+    }
+    preview += t.sliced(from, end - from).toString();
     if (end < t.size())
       preview.append(QChar(0x2026));
-    // A field's name decides whether its value is hidden: a window that
-    // starts past it keeps the name in front.
-    const qsizetype colon = t.indexOf(u':');
-    if (!password && colon > 0 && colon < start) {
-      preview.prepend(t.first(colon + 1).toString() + u' ');
-    }
     matches << mark + preview;
   }
   return matches;

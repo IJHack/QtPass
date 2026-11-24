@@ -3766,9 +3766,16 @@ void tst_util::grepMarksThePasswordAndOtpSecrets() {
                            "otpauth://totp/a?secret=JBSWY3DPEHPK3PXP&hit=1\n"
                            "totp: JBSWY3DPEHPK3PXP hit\n"
                            "key: ") +
-            QString(300, u'x') + QStringLiteral("hit\n")));
+            QString(300, u'x') + QStringLiteral("hit\n") +
+            // The window starts inside the name.
+            QStringLiteral("pin: ") + QString(46, u'x') +
+            QStringLiteral("hit") + QString(300, u'y') +
+            // A name too long to keep: none of the value is shown.
+            QStringLiteral("\n") + QString(150, u'n') + QStringLiteral(": ") +
+            QString(100, u'v') + QStringLiteral("hit") + QString(300, u'v') +
+            QStringLiteral("\n")));
   const QStringList lines = NativeGrep::matchFile(env, gpg, entry, rx);
-  QCOMPARE(lines.size(), 5);
+  QCOMPARE(lines.size(), 7);
   QVERIFY(NativeGrep::isPasswordMatch(lines.at(0)));
   QCOMPARE(NativeGrep::passwordMatchText(lines.at(0)),
            QStringLiteral("pw hit"));
@@ -3779,6 +3786,15 @@ void tst_util::grepMarksThePasswordAndOtpSecrets() {
   QVERIFY2(lines.at(4).startsWith(QStringLiteral("key: ") + QChar(0x2026)),
            qPrintable(lines.at(4)));
   QVERIFY(lines.at(4).contains(QStringLiteral("xhit")));
+  QVERIFY2(lines.at(5).startsWith(QStringLiteral("pin: ")),
+           qPrintable(lines.at(5)));
+  QVERIFY(lines.at(5).contains(QStringLiteral("xhit")));
+  QVERIFY(lines.at(5).size() <= NativeGrep::kMaxPreviewLength + 8);
+  QVERIFY2(
+      lines.at(6).startsWith(QString(NativeGrep::kMaxPreviewLength / 2, u'n') +
+                             QChar(0x2026) + QStringLiteral(": ")),
+      qPrintable(lines.at(6)));
+  QVERIFY2(!lines.at(6).contains(u'v'), qPrintable(lines.at(6)));
   for (const QString &line : lines) {
     QVERIFY2(!line.contains(QStringLiteral("JBSWY3DP")), qPrintable(line));
   }
