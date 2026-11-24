@@ -52,9 +52,10 @@ public:
    * 32767 cut a key file kept as one line of base64, and the password
    * dialog saved the cut value. Without a bound, a line of tens of
    * megabytes (an entry may decrypt to Pass::kMaxPlaintextBytes) costs
-   * gigabytes and seconds on every paint, about 75 bytes and 80 ms per
-   * 1024 characters each. The password dialog does not load an entry with
-   * a longer line, so nothing is cut there.
+   * gigabytes and seconds: measured offscreen, about 75 bytes per
+   * character, and about 80 ms on every paint per 1,048,576 characters. The
+   * password dialog does not load an entry with a longer line, so nothing is
+   * cut there.
    */
   static constexpr int kMaxLength = 1 << 20;
 
