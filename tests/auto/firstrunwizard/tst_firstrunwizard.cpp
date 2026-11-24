@@ -552,7 +552,9 @@ void tst_firstrunwizard::secretKeysAreEmptyWhenGpgFails() {
   auto *status = listed->currentPage()->findChild<QLabel *>();
   QVERIFY(list != nullptr && status != nullptr);
   QCOMPARE(list->count(), 1);
-  QVERIFY2(listed->currentPage()->isComplete(), "the listed key can be used");
+  QVERIFY2(list->item(0)->flags().testFlag(Qt::ItemIsEnabled) &&
+               list->item(0)->checkState() == Qt::Checked,
+           "the listed key is ticked as a recipient of the new store");
   QCOMPARE(status->textFormat(), Qt::PlainText);
   QVERIFY2(status->text().contains(QStringLiteral("<b>unknown</b>")),
            qPrintable(status->text()));
