@@ -55,6 +55,17 @@ public:
    * @return False when it starts or ends with ASCII white space.
    */
   static bool isBatchPassphrase(const QString &passphrase);
+  /**
+   * @brief isWholeText whether a field's text is valid UTF-16, without half
+   * of a character (a lone surrogate, as half of a pasted emoji).
+   *
+   * gpg gets no such text, only a replacement character for it: a name would
+   * not be the one typed, and a passphrase would protect the key with
+   * another one.
+   * @param value A field's text.
+   * @return False when it holds a surrogate without its other half.
+   */
+  static bool isWholeText(const QString &value);
 
 protected:
   /**

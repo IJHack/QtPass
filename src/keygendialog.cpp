@@ -222,6 +222,20 @@ bool KeygenDialog::isBatchPassphrase(const QString &passphrase) {
          (!blank(passphrase.front()) && !blank(passphrase.back()));
 }
 
+// Pairs walked by hand: QStringView::isValidUtf16() needs Qt 5.15.
+bool KeygenDialog::isWholeText(const QString &value) {
+  for (int i = 0; i < value.size(); ++i) {
+    const QChar c = value.at(i);
+    if (c.isHighSurrogate() && i + 1 < value.size() &&
+        value.at(i + 1).isLowSurrogate()) {
+      ++i;
+    } else if (c.isSurrogate()) {
+      return false;
+    }
+  }
+  return true;
+}
+
 /**
  * @brief KeygenDialog::done we are going to create a key pair and show the
  * QProgressIndicator and some text since the generation will take some time.
@@ -229,6 +243,14 @@ bool KeygenDialog::isBatchPassphrase(const QString &passphrase) {
  */
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) { //  ok was pressed
+    if (!isWholeText(ui->name->text()) ||
+        !isWholeText(ui->passphrase1->text())) {
+      QMessageBox::critical(this, tr("Invalid input"),
+                            tr("The name or the passphrase holds half of a "
+                               "character, such as a broken emoji. Type it "
+                               "again."));
+      return;
+    }
     // gpg would protect the key without the blanks, and then refuse the
     // passphrase as typed.
     if (!isBatchPassphrase(ui->passphrase1->text())) {
