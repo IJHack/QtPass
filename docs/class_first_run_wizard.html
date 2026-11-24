@@ -160,8 +160,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aba1e75b404b0982f37637cde0f087cb9" id="r_aba1e75b404b0982f37637cde0f087cb9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aba1e75b404b0982f37637cde0f087cb9">secretKeys</a> (const QString &amp;gpgExecutable) -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td></tr>
-<tr class="memdesc:aba1e75b404b0982f37637cde0f087cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The secret keys gpg lists for <code class="param">gpgExecutable</code>.  <br /></td></tr>
+<tr class="memitem:a0c84624a1297411114912e7d8ef62f9b" id="r_a0c84624a1297411114912e7d8ef62f9b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0c84624a1297411114912e7d8ef62f9b">secretKeys</a> (const QString &amp;gpgExecutable, QString *problem=nullptr) -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td></tr>
+<tr class="memdesc:a0c84624a1297411114912e7d8ef62f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The secret keys gpg lists for <code class="param">gpgExecutable</code>.  <br /></td></tr>
 <tr class="memitem:a60461cf05ad3f52e132b9c3860c36848" id="r_a60461cf05ad3f52e132b9c3860c36848"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a60461cf05ad3f52e132b9c3860c36848">isStore</a> (const QString &amp;path) -&gt; bool</td></tr>
 <tr class="memdesc:a60461cf05ad3f52e132b9c3860c36848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">path</code> points at an initialised store.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -217,7 +217,7 @@ Friends</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00068">68</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00077">77</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 
 </div>
 </div>
@@ -289,7 +289,7 @@ Friends</h2></td></tr>
 
 <p>Write the settings and, when the chosen store has no <span class="tt">.gpg-id</span> yet, create and initialise it for the chosen keys first. </p>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00185">185</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00197">197</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -331,7 +331,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the repository is ready (the user was told otherwise). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00173">173</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00185">185</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -379,7 +379,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the store is ready (the user was told otherwise). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00128">128</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00140">140</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
@@ -427,7 +427,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when it holds a <span class="tt">.gpg-id</span>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00123">123</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00135">135</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -437,8 +437,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="aba1e75b404b0982f37637cde0f087cb9" name="aba1e75b404b0982f37637cde0f087cb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba1e75b404b0982f37637cde0f087cb9">&#9670;&#160;</a></span>secretKeys()</h2>
+<a id="a0c84624a1297411114912e7d8ef62f9b" name="a0c84624a1297411114912e7d8ef62f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c84624a1297411114912e7d8ef62f9b">&#9670;&#160;</a></span>secretKeys()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -449,8 +449,12 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">auto FirstRunWizard::secretKeys </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgExecutable</em></span></td><td>)</td>
-          <td> -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgExecutable</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>problem</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -461,26 +465,27 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The secret keys gpg lists for <code class="param">gpgExecutable</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>gpg exits with 2 after a complete listing when one key holds something it cannot handle (a subkey of an unknown algorithm, say): the keys it listed are taken, and what it reported goes to <code class="param">problem</code>. Any other failure lists no keys. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gpgExecutable</td><td>The gpg binary. </td></tr>
+    <tr><td class="paramname">problem</td><td>Receives gpg's error output when it did not exit cleanly, cut to a few hundred characters and made displayable (<a class="el" href="class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,...">Util::displayable()</a>); null to not care. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The keys, or an empty list when gpg cannot run. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The keys, or an empty list when gpg cannot run or failed. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00105">105</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
 <div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_first_run_wizard_aba1e75b404b0982f37637cde0f087cb9_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_first_run_wizard_a0c84624a1297411114912e7d8ef62f9b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
 <div id="dynsection-10-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_first_run_wizard_aba1e75b404b0982f37637cde0f087cb9_icgraph.svg" width="100%" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_first_run_wizard_a0c84624a1297411114912e7d8ef62f9b_icgraph.svg" width="100%" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -536,7 +541,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00102">102</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00111">111</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 
 </div>
 </div>
@@ -560,7 +565,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00100">100</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00109">109</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 
 </div>
 </div>
@@ -584,7 +589,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00099">99</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00108">108</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 
 </div>
 </div>
@@ -608,7 +613,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00101">101</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00110">110</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 
 </div>
 </div>
@@ -634,7 +639,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Whether nothing was chosen yet (SettingsConstants::firstRunPending): only then are "Use pass" and "Use Git" turned on from what is detected. The wizard also runs again for a store that lost its recipient list, and then shows the choices saved before. </p>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00111">111</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00120">120</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 
 </div>
 </div>
@@ -659,7 +664,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The secret keys as listed on the key page; the enabled ones become the recipients of a new store. </p>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00114">114</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00123">123</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 
 </div>
 </div>
@@ -684,7 +689,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The pages' working copy of the settings, loaded in the constructor and saved by <a class="el" href="#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg-id yet, create and initialise it for the ch...">accept()</a>; the pages edit it through their friend access. </p>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00106">106</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00115">115</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 
 </div>
 </div>

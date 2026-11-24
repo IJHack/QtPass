@@ -40,7 +40,7 @@
 <area shape="poly" id="edge167_Node000001_Node000111" title=" " alt="" coords="4114,2312,4072,2301,4025,2290,3858,2268,3692,2258,3544,2254,3432,2256,3431,2250,3544,2249,3692,2252,3859,2263,4026,2285,4073,2296,4119,2312"/>
 <area shape="rect" id="Node000121" href="$class_import_key_dialog.html#ac0a9ce64df6fbce97680fd8803da9f18" title="Runs gpg with args on input within what is left of m_timeoutMs since timer started." alt="" coords="3824,2876,4009,2904"/>
 <area shape="poly" id="edge179_Node000001_Node000121" title=" " alt="" coords="4166,2359,4150,2472,4120,2623,4101,2700,4079,2769,4054,2826,4027,2865,4009,2878,4007,2873,4023,2861,4050,2824,4074,2767,4095,2698,4115,2622,4144,2471,4162,2363"/>
-<area shape="rect" id="Node000124" href="$class_first_run_wizard.html#aba1e75b404b0982f37637cde0f087cb9" title="The secret keys gpg lists for gpgExecutable." alt="" coords="3818,2929,4016,2957"/>
+<area shape="rect" id="Node000124" href="$class_first_run_wizard.html#a0c84624a1297411114912e7d8ef62f9b" title="The secret keys gpg lists for gpgExecutable." alt="" coords="3818,2929,4016,2957"/>
 <area shape="poly" id="edge182_Node000001_Node000124" title=" " alt="" coords="4167,2358,4152,2481,4123,2648,4104,2733,4082,2810,4056,2874,4042,2898,4027,2917,4008,2931,4006,2926,4023,2913,4038,2895,4051,2871,4077,2808,4099,2731,4118,2647,4147,2480,4163,2362"/>
 <area shape="rect" id="Node000130" href="$class_config_dialog.html#a66b11d5043653178859712ebede770e1" title="One profile&#39;s signing keys as signers: each key as written, plus the primary fingerprint gpg gives fo..." alt="" coords="3549,2421,3732,2449"/>
 <area shape="poly" id="edge188_Node000001_Node000130" title=" " alt="" coords="4115,2350,4026,2378,3872,2407,3733,2427,3733,2422,3871,2402,4025,2373,4110,2351"/>

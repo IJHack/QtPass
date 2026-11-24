@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 16:03:34</td>
+            <td class="headerValue">2026-11-24 20:24:06</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -147,10 +147,10 @@
 <span id="L74"><span class="lineNum">      74</span>              :     // later dialog would take its own report for an earlier one and wait for</span>
 <span id="L75"><span class="lineNum">      75</span>              :     // ever. Idle cannot fall between a dialog's insertsPending() read and its</span>
 <span id="L76"><span class="lineNum">      76</span>              :     // own report, since that insert keeps the executor busy.</span>
-<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         125 :     m_insertsPending = 0;</span></span>
-<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">         125 :     m_insertedEntries.clear();</span></span>
-<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">         125 :     emit idle();</span></span>
-<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         125 :   });</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         124 :     m_insertsPending = 0;</span></span>
+<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">         124 :     m_insertedEntries.clear();</span></span>
+<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">         124 :     emit idle();</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         124 :   });</span></span>
 <span id="L81"><span class="lineNum">      81</span>              :   // Each queued process starts in the environment as the store is then:</span>
 <span id="L82"><span class="lineNum">      82</span>              :   // the Git pin is judged at that moment (dequeuing() comes just before the</span>
 <span id="L83"><span class="lineNum">      83</span>              :   // start, on this thread).</span>
@@ -799,10 +799,10 @@
 <span id="L726"><span class="lineNum">     726</span>              : #endif</span>
 <span id="L727"><span class="lineNum">     727</span>              : </span>
 <span id="L728"><span class="lineNum">     728</span>              : /// Whether @p path is @p dir or lies under it.</span>
-<span id="L729"><span class="lineNum">     729</span> <span class="tlaGNC">        2562 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
+<span id="L729"><span class="lineNum">     729</span> <span class="tlaGNC">        2571 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
 <span id="L730"><span class="lineNum">     730</span>              :                  const QString &amp;dirPrefix) -&gt; bool {</span>
-<span id="L731"><span class="lineNum">     731</span> <span class="tlaGNC">        4500 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
-<span id="L732"><span class="lineNum">     732</span> <span class="tlaGNC">        1938 :          path.startsWith(dirPrefix, kPathCase);</span></span>
+<span id="L731"><span class="lineNum">     731</span> <span class="tlaGNC">        4518 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
+<span id="L732"><span class="lineNum">     732</span> <span class="tlaGNC">        1947 :          path.startsWith(dirPrefix, kPathCase);</span></span>
 <span id="L733"><span class="lineNum">     733</span>              : }</span>
 <span id="L734"><span class="lineNum">     734</span>              : </span>
 <span id="L735"><span class="lineNum">     735</span>              : /// Where the lookup of a .gpg-id starts and the store that bounds it.</span>
@@ -894,8 +894,8 @@
 <span id="L821"><span class="lineNum">     821</span> <span class="tlaGNC">          63 :   const QString store = scopePath(QString());</span></span>
 <span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">          63 :   const QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">          63 :   return std::any_of(scopes.cbegin(), scopes.cend(),</span></span>
-<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">         132 :                      [&amp;store](const QString &amp;s) {</span></span>
-<span id="L825"><span class="lineNum">     825</span> <span class="tlaGNC">         264 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
+<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">         141 :                      [&amp;store](const QString &amp;s) {</span></span>
+<span id="L825"><span class="lineNum">     825</span> <span class="tlaGNC">         282 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
 <span id="L826"><span class="lineNum">     826</span> <span class="tlaGNC">          63 :                      });</span></span>
 <span id="L827"><span class="lineNum">     827</span>              : }</span>
 <span id="L828"><span class="lineNum">     828</span>              : </span>
