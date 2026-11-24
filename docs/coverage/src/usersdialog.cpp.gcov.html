@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-23 19:11:20</td>
+            <td class="headerValue">2026-11-24 06:01:06</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -177,39 +177,39 @@
 <span id="L104"><span class="lineNum">     104</span>              :   }</span>
 <span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">          60 : }</span></span>
 <span id="L106"><span class="lineNum">     106</span>              : </span>
-<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">          12 : void UsersDialog::showRecipientWarning(const QString &amp;text,</span></span>
+<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">          13 : void UsersDialog::showRecipientWarning(const QString &amp;text,</span></span>
 <span id="L108"><span class="lineNum">     108</span>              :                                        const QString &amp;name) {</span>
 <span id="L109"><span class="lineNum">     109</span>              :   // Plain text before the text is set: it can quote the store's recipient</span>
 <span id="L110"><span class="lineNum">     110</span>              :   // list, which as rich text could make Qt load a file (&lt;img src=...&gt;).</span>
-<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">          12 :   auto *banner = new QLabel(this);</span></span>
-<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">          12 :   banner-&gt;setTextFormat(Qt::PlainText);</span></span>
+<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">          13 :   auto *banner = new QLabel(this);</span></span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">          13 :   banner-&gt;setTextFormat(Qt::PlainText);</span></span>
 <span id="L113"><span class="lineNum">     113</span>              :   // And with nothing in it that changes how the rest reads: a folder name</span>
 <span id="L114"><span class="lineNum">     114</span>              :   // with a bidi override mirrored the warning after it.</span>
-<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">          12 :   banner-&gt;setText(Util::displayable(text));</span></span>
-<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">          12 :   banner-&gt;setObjectName(name);</span></span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">          12 :   banner-&gt;setWordWrap(true);</span></span>
+<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">          13 :   banner-&gt;setText(Util::displayable(text));</span></span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">          13 :   banner-&gt;setObjectName(name);</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">          13 :   banner-&gt;setWordWrap(true);</span></span>
 <span id="L118"><span class="lineNum">     118</span>              :   // Palette, not a stylesheet colour, so it reads on dark themes too; red as</span>
 <span id="L119"><span class="lineNum">     119</span>              :   // ProcessOutputPanel paints error lines.</span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">          12 :   QFont bold = banner-&gt;font();</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">          13 :   QFont bold = banner-&gt;font();</span></span>
 <span id="L121"><span class="lineNum">     121</span>              :   bold.setBold(true);</span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          12 :   banner-&gt;setFont(bold);</span></span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          12 :   QPalette palette = banner-&gt;palette();</span></span>
-<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">          12 :   palette.setColor(QPalette::WindowText, QColor(Qt::red));</span></span>
-<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          12 :   banner-&gt;setPalette(palette);</span></span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">          12 :   banner-&gt;setContentsMargins(4, 4, 4, 4);</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          13 :   banner-&gt;setFont(bold);</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          13 :   QPalette palette = banner-&gt;palette();</span></span>
+<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">          13 :   palette.setColor(QPalette::WindowText, QColor(Qt::red));</span></span>
+<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          13 :   banner-&gt;setPalette(palette);</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">          13 :   banner-&gt;setContentsMargins(4, 4, 4, 4);</span></span>
 <span id="L127"><span class="lineNum">     127</span>              :   // In a scroll area of a few lines: the text quotes folder paths a</span>
 <span id="L128"><span class="lineNum">     128</span>              :   // co-writer chose, and a word-wrapped label is as wide as its longest</span>
 <span id="L129"><span class="lineNum">     129</span>              :   // run without a space and as tall as its lines. Unscrolled it sized the</span>
 <span id="L130"><span class="lineNum">     130</span>              :   // dialog to tens of thousands of pixels; a scroll area asks for at most</span>
 <span id="L131"><span class="lineNum">     131</span>              :   // a bounded size, and all of the text can still be read.</span>
-<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">          12 :   auto *area = new QScrollArea(this);</span></span>
-<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">          12 :   area-&gt;setWidget(banner);</span></span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">          12 :   area-&gt;setWidgetResizable(true);</span></span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">          12 :   area-&gt;setFrameShape(QFrame::NoFrame);</span></span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">          12 :   area-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);</span></span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          12 :   area-&gt;setMaximumHeight(banner-&gt;fontMetrics().lineSpacing() * 8 + 8);</span></span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">          12 :   ui-&gt;verticalLayout-&gt;insertWidget(1, area);</span></span>
-<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">          12 : }</span></span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">          13 :   auto *area = new QScrollArea(this);</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">          13 :   area-&gt;setWidget(banner);</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">          13 :   area-&gt;setWidgetResizable(true);</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">          13 :   area-&gt;setFrameShape(QFrame::NoFrame);</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">          13 :   area-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          13 :   area-&gt;setMaximumHeight(banner-&gt;fontMetrics().lineSpacing() * 8 + 8);</span></span>
+<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">          13 :   ui-&gt;verticalLayout-&gt;insertWidget(1, area);</span></span>
+<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">          13 : }</span></span>
 <span id="L140"><span class="lineNum">     140</span>              : </span>
 <span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          58 : void UsersDialog::showNestedLists() {</span></span>
 <span id="L142"><span class="lineNum">     142</span>              :   // The walk re-encryption takes: hidden folders and links are not entered.</span>
@@ -400,7 +400,7 @@
 <span id="L327"><span class="lineNum">     327</span>              :   const Pass::RecipientsForEditing loaded =</span>
 <span id="L328"><span class="lineNum">     328</span> <span class="tlaGNC">          54 :       m_pass-&gt;recipientsForEditing(m_dir, m_passStore);</span></span>
 <span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">          54 :   if (!loaded.warning.isEmpty()) {</span></span>
-<span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">          14 :     showRecipientWarning(loaded.warning);</span></span>
+<span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">          16 :     showRecipientWarning(loaded.warning);</span></span>
 <span id="L331"><span class="lineNum">     331</span>              :   }</span>
 <span id="L332"><span class="lineNum">     332</span>              :   // A folder without .gpg-id (new store, new profile) has no recipients yet;</span>
 <span id="L333"><span class="lineNum">     333</span>              :   // listKeys() with no filter would return the whole keyring, preselected.</span>
