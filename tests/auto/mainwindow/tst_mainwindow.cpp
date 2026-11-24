@@ -482,6 +482,8 @@ private Q_SLOTS:
   void entryActionsWaitWhileContentResultsHideTheTree();
   void grepResultsOfTheOtherBackendAreDropped();
   void grepResultsHideWhatThePanelHides();
+  /// Results and the shown entry each keep their own autoclear deadline.
+  void grepResultsKeepTheirOwnAutoclear();
   void settingsCancelARunningContentSearch();
   void emptyingTheSearchLeavesNothingCurrent();
   void searchForAFolderWithoutFilesSelectsNothing();
@@ -4200,10 +4202,77 @@ void tst_mainwindow::deselectLeavesGrepModeWhenResultsAreShown() {
   QVERIFY(results->isVisible());
   QTRY_VERIFY_WITH_TIMEOUT(!results->isVisible(), 3000);
   QCOMPARE(results->topLevelItemCount(), 0);
-  QVERIFY2(browser()->toPlainText().contains(
-               QStringLiteral("Password and content hidden")),
-           qPrintable(browser()->toPlainText()));
   QVERIFY2(!grep->isChecked(), "the timer's clear leaves grep mode too");
+}
+
+/**
+ * @brief Content search results and a shown entry each keep their own
+ *        autoclear deadline. An operation that starts (Pull, Push) stops the
+ *        entry's timer but not the results', and results listed while an
+ *        entry is up neither give that entry a second period nor go with it.
+ *        Scan ANT-2026-1F53Q7VX.
+ */
+void tst_mainwindow::grepResultsKeepTheirOwnAutoclear() {
+  rebuildWindow([](AppSettings &s) {
+    s.useGrepSearch = true;
+    s.useAutoclearPanel = true;
+    s.autoclearPanelSeconds = 1;
+    s.hideContent = false;
+    s.displayAsIs = false;
+    s.useTemplate = false;
+  });
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && results != nullptr);
+  const QList<QPair<QString, QStringList>> found = {
+      {QStringLiteral("card"), {QStringLiteral("pin: 4711")}}};
+
+  // An operation starts while the results are listed and ends again.
+  grep->setChecked(true);
+  m_window->onGrepFinished(found);
+  QVERIFY(results->isVisible());
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "executeWrapperStarted",
+                                    Qt::DirectConnection));
+  m_window->setUiElementsEnabled(true);
+  QTRY_VERIFY_WITH_TIMEOUT(!results->isVisible(), 3000);
+  QCOMPARE(results->topLevelItemCount(), 0);
+  QVERIFY2(!grep->isChecked(), "the results' clear leaves grep mode");
+
+  // An entry is shown, then results come in before its time is up.
+  rebuildWindow([](AppSettings &s) {
+    s.useGrepSearch = true;
+    s.useAutoclearPanel = true;
+    s.autoclearPanelSeconds = 3;
+    s.hideContent = false;
+    s.displayAsIs = false;
+    s.useTemplate = false;
+  });
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && results != nullptr);
+  QElapsedTimer clock;
+  clock.start();
+  m_window->passShowHandler(QStringLiteral("hunter2\nlogin: alice\n"));
+  QVERIFY(browser()->toPlainText().contains(QStringLiteral("alice")));
+  QTest::qWait(1500);
+  grep->setChecked(true);
+  m_window->onGrepFinished(found);
+  QVERIFY(results->isVisible());
+  QTRY_VERIFY_WITH_TIMEOUT(
+      !browser()->toPlainText().contains(QStringLiteral("alice")), 3000);
+  QVERIFY2(clock.elapsed() < 4000,
+           qPrintable(
+               QStringLiteral("the entry stayed %1 ms").arg(clock.elapsed())));
+  QVERIFY2(results->isVisible(), "the entry's clear leaves the results");
+  QCOMPARE(results->topLevelItem(0)->child(0)->text(0),
+           QStringLiteral("pin: 4711"));
+  QTRY_VERIFY_WITH_TIMEOUT(!results->isVisible(), 4000);
 }
 
 /**

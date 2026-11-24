@@ -805,6 +805,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- With **Autoclear panel** on, content search results get a deadline of
+  their own. A Pull or Push while they were listed stopped the only timer,
+  so the decrypted lines stayed on screen until you left the search; and
+  results listed while an entry was shown gave that entry a second full
+  period (scan ANT-2026-1F53Q7VX).
 - The first-run wizard offers the secret keys gpg lists even when one key
   holds something gpg cannot handle, such as a subkey of an unknown
   algorithm. gpg then exits with an error after a complete listing, and
