@@ -85,6 +85,12 @@
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
+- Key generation refuses a pasted name, email or passphrase with a line
+  break, also a Unicode line or paragraph separator that the name field
+  shows as a space. Pasted text could otherwise add gpg directives such as
+  `%pubring` with a file of its choosing, which gpg then overwrote (scan
+  finding ANT-2026-7HDPIZ0N,
+  [#2326](https://github.com/IJHack/QtPass/pull/2326) on main).
 - Key generation no longer stores the new key without a passphrase when the
   pasted name holds half of an emoji. The passphrase was then added after
   gpg had already created the key. Such a name or passphrase is now refused
