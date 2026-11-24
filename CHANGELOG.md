@@ -805,6 +805,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Key generation no longer stores the new key without a passphrase when the
+  pasted name holds half of an emoji. The passphrase was then added after
+  gpg had already created the key. Such a name or passphrase is now refused
+  (scan ANT-2026-NBW31RDB).
 - The **Process output** panel keeps only the last 1000 lines of a command's
   output before it shows them, instead of laying out every line first. A
   Git host that answered a push with 100,000 lines froze the window for

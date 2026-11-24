@@ -56,6 +56,8 @@ private Q_SLOTS:
   void templateEditorHiddenUnlessExpert();
   void applyPassphraseReplacesNoProtection();
   void applyPassphraseSeesNoProtectionBeforeANul();
+  void applyPassphraseSeesNoProtectionNextToALoneSurrogate();
+  void loneSurrogateStaysOutOfTheBatch();
   void batchValuesHoldNoLineBreaks();
   void batchPassphraseHasNoOuterBlanks();
   void pastedLineBreakNeverReachesTheTemplate();
@@ -448,6 +450,24 @@ void tst_keygendialog::applyPassphraseSeesNoProtectionBeforeANul() {
   QCOMPARE(result,
            QStringLiteral("Key-Type: RSA\nPassphrase: testkey123\n%commit"));
   QVERIFY(!result.contains(QChar::Null));
+}
+
+/**
+ * @brief Half of an emoji anywhere in the batch must not hide
+ *        %no-protection: a regex split matched nothing in such text and left
+ *        it next to the Passphrase: line, after %commit. Scan
+ *        ANT-2026-NBW31RDB.
+ */
+void tst_keygendialog::applyPassphraseSeesNoProtectionNextToALoneSurrogate() {
+  const QString batch =
+      QStringLiteral("Key-Type: RSA\nName-Real: Alice ") + QChar(0xD83D) +
+      QStringLiteral("\r\n%no-protection\n%commit\n%echo done");
+  const QString result =
+      KeygenDialog::applyPassphrase(batch, QStringLiteral("testkey123"));
+  QCOMPARE(result, QStringLiteral("Key-Type: RSA\nName-Real: Alice ") +
+                       QChar(0xD83D) +
+                       QStringLiteral("\nPassphrase: testkey123\n%commit\n"
+                                      "%echo done"));
 }
 
 void tst_keygendialog::applyPassphraseReplacesNoProtection() {
@@ -885,6 +905,69 @@ void tst_keygendialog::unrelatedProcessErrorsDoNotTouchTheDialog() {
   QVERIFY(d.isVisible());
   emit pass.finishedGenerateGPGKeys(QString(), QString());
   QCOMPARE(d.result(), static_cast<int>(QDialog::Accepted));
+}
+
+/**
+ * @brief A name or passphrase with a lone surrogate is no batch value: the
+ *        template keeps the name it had, and OK refuses the field. A whole
+ *        emoji is fine.
+ */
+void tst_keygendialog::loneSurrogateStaysOutOfTheBatch() {
+  const QString half = QStringLiteral("Alice Example ") + QChar(0xD83D);
+  const QString lowHalf = QStringLiteral("Alice Example ") + QChar(0xDE00);
+  const QString whole =
+      QStringLiteral("Alice Example ") + QChar(0xD83D) + QChar(0xDE00);
+  QVERIFY(!KeygenDialog::isBatchValue(half));
+  QVERIFY(!KeygenDialog::isBatchValue(lowHalf));
+  QVERIFY(KeygenDialog::isBatchValue(whole));
+  QVERIFY(!KeygenDialog::hasBatchBreak(half));
+
+  KeygenDialog dialog(QString(), nullptr);
+  auto *editor =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+  auto *name = dialog.findChild<QLineEdit *>(QStringLiteral("name"));
+  QVERIFY(editor != nullptr && name != nullptr);
+  name->setText(QStringLiteral("Alice Example"));
+  name->setText(half);
+  QVERIFY2(editor->toPlainText().contains(
+               QStringLiteral("Name-Real: Alice Example\n")),
+           qPrintable(editor->toPlainText()));
+  QVERIFY(QStringView(editor->toPlainText()).isValidUtf16());
+  name->setText(whole);
+  QVERIFY(
+      editor->toPlainText().contains(QStringLiteral("Name-Real: ") + whole));
+
+  // OK refuses a passphrase with half a character and starts nothing.
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d, false);
+  auto *first = d.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *second = d.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  QVERIFY(first != nullptr && second != nullptr);
+  const QString broken = QStringLiteral("correct horse ") + QChar(0xDE00);
+  first->setText(broken);
+  second->setText(broken);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QStringList refusals;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&refusals] {
+    if (auto *box =
+            qobject_cast<QMessageBox *>(QApplication::activeModalWidget())) {
+      refusals << box->text();
+      box->accept();
+    }
+  });
+  poker.start();
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QCOMPARE(refusals.size(), 1);
+  QVERIFY2(refusals.first().contains(QStringLiteral("half of a character")),
+           qPrintable(refusals.first()));
+  auto *spinner = d.findChild<QProgressIndicator *>();
+  QVERIFY2(spinner == nullptr || !spinner->isVisible(),
+           "no generation may have started");
 }
 
 QTEST_MAIN(tst_keygendialog)
