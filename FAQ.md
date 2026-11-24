@@ -198,6 +198,12 @@ Open **Users** for that folder, check the recipients and press **OK**. QtPass th
 
 With a signing key, a linked list was already refused, also with the native backend.
 
+### Users lists "Key not found in keyring" or "Not looked up in keyring"
+
+The **Users** dialog ticks every key that a line in `.gpg-id` names, by fingerprint, key ID (of the key or of one of its subkeys), email address or any of its user IDs. A line that names no key in your keyring is listed as a ticked "Key not found in keyring" row, so saving keeps that recipient. Import their key to see who it is, or untick the row to remove them.
+
+A line in a form QtPass does not read itself, such as a keygrip (`&...`) or a fingerprint written with spaces, needs a gpg lookup of its own while the dialog opens. After ten such lookups, further lines of that kind are listed unticked as "Not looked up in keyring", and **OK** leaves them out. Tick a row to keep it, or write those recipients as fingerprints.
+
 ### How do I set up a one-time password (OTP/TOTP)?
 
 QtPass generates TOTP codes itself (RFC 6238), so you no longer need the

@@ -167,6 +167,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- The Users dialog ticks the key a recipient list line names by a subkey
+  fingerprint or key ID, or by a user ID other than the one shown. Such a
+  line was listed as a ticked "Key not found in keyring" row once ten lines
+  before it needed a gpg lookup, so unticking the key left the line, and
+  its subkey, in the list. A line in an unusual form (a keygrip, a
+  fingerprint written with spaces) still needs a lookup each; past ten of
+  them, a line is listed unticked as "Not looked up in keyring", and **OK**
+  leaves it out unless you tick it (scan finding ANT-2026-G4QELVPH)
 - With the `pass` backend, QtPass no longer runs `pass` with a recipient
   list that `pass` reads differently from the Users dialog, also without a
   signing key. A byte-order mark, a NUL byte, invalid UTF-8, Windows line

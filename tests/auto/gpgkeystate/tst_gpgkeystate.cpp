@@ -30,6 +30,7 @@ private Q_SLOTS:
   void parseGpgColonOutputUnknownRecordTypes();
   void parseGpgColonOutputAllPublicRecordTypes();
   void multipleUidRecordsOnlyFirstNameUsed();
+  void everyUidAndSubkeyIsKept();
   void nameComesFromTheUidThatEarnedTheValidity_data();
   void nameComesFromTheUidThatEarnedTheValidity();
   void pubRecordDoesNotSetHaveSecret();
@@ -532,6 +533,45 @@ void tst_gpgkeystate::multipleUidRecordsOnlyFirstNameUsed() {
   QVERIFY2(result.size() == 1, "one key expected");
   QVERIFY2(result.first().name == QStringLiteral("First Name <first@test.org>"),
            "only the first uid record should set the name");
+}
+
+/**
+ * @brief A recipient list may name a key by any of its user IDs or by a
+ *        subkey, so the parser keeps them all: every uid (colon escapes
+ *        decoded, revoked ones too) and each subkey's ID and fingerprint.
+ *        A subkey's fpr must not replace the primary key's ID.
+ */
+void tst_gpgkeystate::everyUidAndSubkeyIsKept() {
+  const QString input = QStringLiteral(
+      "pub:u:255:22:D3DC2DCEA20CE159:1795499446:::u::::\n"
+      "fpr:::::::::149D30615789F7CD996A6581D3DC2DCEA20CE159:\n"
+      "uid:u::::1795499446::H1::Alice <alice@example.org>::::\n"
+      "uid:r::::::H2::Ops\\x3a Alice \\x5cx41 <ops@example.org>::::\n"
+      "sub:u:255:18:EBBFA1F57F2E64CD:1795499446::::::e::::\n"
+      "fpr:::::::::4B9D410DA3140B35BAC7A28EEBBFA1F57F2E64CD:\n"
+      "sub:e:255:18:8B2405AF290E713E:1795499532::::::e::::\n"
+      "pub:u:255:22:1111222233334444:1795499446:::u::::\n"
+      "fpr:::::::::AAAABBBBCCCCDDDDEEEEFFFF1111222233334444:\n"
+      "uid:u::::1795499446::H3::Bob <bob@example.org>::::\n");
+  const QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QCOMPARE(result.size(), 2);
+  const UserInfo &alice = result.first();
+  QCOMPARE(alice.key_id,
+           QStringLiteral("149D30615789F7CD996A6581D3DC2DCEA20CE159"));
+  QCOMPARE(alice.name, QStringLiteral("Alice <alice@example.org>"));
+  QCOMPARE(alice.uids,
+           (QStringList{QStringLiteral("Alice <alice@example.org>"),
+                        QStringLiteral("Ops: Alice \\x41 <ops@example.org>")}));
+  QCOMPARE(
+      alice.subkeys,
+      (QStringList{QStringLiteral("EBBFA1F57F2E64CD"),
+                   QStringLiteral("4B9D410DA3140B35BAC7A28EEBBFA1F57F2E64CD"),
+                   QStringLiteral("8B2405AF290E713E")}));
+  const UserInfo &bob = result.last();
+  QCOMPARE(bob.key_id,
+           QStringLiteral("AAAABBBBCCCCDDDDEEEEFFFF1111222233334444"));
+  QCOMPARE(bob.uids, QStringList{QStringLiteral("Bob <bob@example.org>")});
+  QVERIFY(bob.subkeys.isEmpty());
 }
 
 void tst_gpgkeystate::nameComesFromTheUidThatEarnedTheValidity_data() {

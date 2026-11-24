@@ -10,6 +10,7 @@
 
 #include <QDateTime>
 #include <QString>
+#include <QStringList>
 
 /**
  * @struct UserInfo
@@ -50,6 +51,16 @@ struct UserInfo {
    * @brief Hexadecimal representation of the GnuPG key identifier.
    */
   QString key_id;
+  /**
+   * @brief Every user ID on the key, revoked ones included, with gpg's colon
+   * escapes (such as `\x3a`) decoded: the names a recipient list may use.
+   */
+  QStringList uids;
+  /**
+   * @brief Key IDs and fingerprints of the key's subkeys, by which a
+   * recipient list may name the key as well.
+   */
+  QStringList subkeys;
   /**
    * @brief GnuPG representation of validity.
    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS

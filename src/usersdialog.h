@@ -14,6 +14,7 @@
 #include <QList>
 #include <QRegularExpression>
 #include <QScopedPointer>
+#include <QSet>
 
 namespace Ui {
 class UsersDialog;
@@ -142,9 +143,15 @@ private:
   void updateOkButton();
   QString m_dir;                               /**< Password store directory */
   Preselect m_preselect = Preselect::FromList; /**< What opens ticked */
-  QString m_lastFilter;                  /**< Last filter text for caching */
-  QString m_cachedPatternString;         /**< Cached pattern string */
-  QRegularExpression m_cachedNameFilter; /**< Cached regex filter */
+  QString m_lastFilter; /**< Last filter text for caching */
+  /**
+   * @brief `.gpg-id` lines selectRecipients() listed unticked without asking
+   * gpg. They are shown without "Show unusable keys", so OK does not drop
+   * them unseen.
+   */
+  QSet<QString> m_notLookedUp;
+  QString m_cachedPatternString;             /**< Cached pattern string */
+  QRegularExpression m_cachedNameFilter;     /**< Cached regex filter */
   mutable QDateTime m_cachedCurrentDateTime; /**< Cached current date/time for
                                                      expiry checks */
   mutable bool m_cachedDateTimeValid =
@@ -194,9 +201,11 @@ private:
   /**
    * @brief Tick the keys the folder is encrypted to, and list recipients no
    * key in the keyring answers to, so saving does not drop them silently.
-   * @param recipients The folder's recipients, as listed in its `.gpg-id`.
+   * A line that names a key by a subkey or a secondary user ID ticks that
+   * key, so unticking it removes the line too.
+   * @param listed The folder's recipients, as listed in its `.gpg-id`.
    */
-  void selectRecipients(const QStringList &recipients);
+  void selectRecipients(const QStringList &listed);
 
   /**
    * @brief Populate user list.
