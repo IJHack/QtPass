@@ -805,6 +805,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- The first-run wizard offers the secret keys gpg lists even when one key
+  holds something gpg cannot handle, such as a subkey of an unknown
+  algorithm. gpg then exits with an error after a complete listing, and
+  the wizard said "no secret key yet" and could not finish. It now shows
+  what gpg reported, also when the listing failed altogether (scan
+  ANT-2026-S38OMDEL).
 - The first-run wizard keeps the backend and Git choices you saved. It
   also opens again when the store lost its recipient list, and then ticked
   **Use pass** whenever `pass` was found and **Use Git** for any repository,
