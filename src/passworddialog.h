@@ -186,9 +186,10 @@ public slots:
   /**
    * @brief Populate the dialog from a decrypted entry (Pass::finishedShow).
    *
-   * Entries with more than FileContent::kMaxDisplayLines lines, and entries
-   * whose text does not encode back to their bytes (@p lossless false), are
-   * not loaded at all; the status label says so and the editor stays locked.
+   * Entries with more than FileContent::kMaxDisplayLines lines or a line
+   * longer than SecretLineEdit::kMaxLength, and entries whose text does not
+   * encode back to their bytes (@p lossless false), are not loaded at all; the
+   * status label says so and the editor stays locked.
    * @param output Decrypted content of the entry.
    * @param file The entry the output belongs to; output for any other entry
    *        than the one being edited is ignored. Empty means unspecified.

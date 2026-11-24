@@ -8,6 +8,16 @@
   and make sure you can encrypt for someone (e.g. yourself)
 - Are you using Git? If not, make sure it is switched off.
 
+### The edit dialog says "too many to edit" or "too long to edit"
+
+The edit dialog does not open an entry with more than 10,000 lines, or with
+a line longer than 1,048,576 characters (1 MiB, far beyond any real key file
+kept as one line of base64). A password or field that long would have to be
+cut to fit, and the cut value would be saved over the entry. An entry that
+size also costs QtPass a lot of memory and time, and in a shared store
+someone else can make one. QtPass still shows such an entry, but you cannot
+edit it there: use `pass edit` in a terminal instead.
+
 ### I have an issue with GNOME keyring
 
 - Disable GNOME keyring

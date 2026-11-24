@@ -46,6 +46,19 @@ class SecretLineEdit : public QLineEdit {
 
 public:
   /**
+   * @brief Most characters the line edit holds (1 MiB of them): its
+   * maxLength in place of QLineEdit's 32767.
+   *
+   * 32767 cut a key file kept as one line of base64, and the password
+   * dialog saved the cut value. Without a bound, a line of tens of
+   * megabytes (an entry may decrypt to Pass::kMaxPlaintextBytes) costs
+   * gigabytes and seconds on every paint, about 75 bytes and 80 ms per
+   * 1024 characters each. The password dialog does not load an entry with
+   * a longer line, so nothing is cut there.
+   */
+  static constexpr int kMaxLength = 1 << 20;
+
+  /**
    * @brief Constructs the line edit.
    * @param parent Owner.
    */
