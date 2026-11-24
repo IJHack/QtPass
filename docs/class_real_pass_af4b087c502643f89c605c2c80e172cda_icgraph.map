@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="The verifier for signed lists, gpg in the store&#39;s environment." alt="" coords="696,59,845,86"/>
 <area shape="rect" id="Node000002" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),..." alt="" coords="428,32,646,60"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="678,62,647,61,647,56,684,62"/>
-<area shape="rect" id="Node000007" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when the signed list of one of its..." alt="" coords="426,84,648,112"/>
+<area shape="rect" id="Node000007" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h..." alt="" coords="426,84,648,112"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="684,82,649,88,649,83,678,82"/>
 <area shape="rect" id="Node000003" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="215,5,340,33"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,33,340,28,340,23,415,33"/>

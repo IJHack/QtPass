@@ -51,7 +51,7 @@
 <area shape="poly" id="edge26_Node000021_Node000011" title=" " alt="" coords="1090,224,1028,226,1028,221,1096,223"/>
 <area shape="rect" id="Node000023" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),..." alt="" coords="2627,341,2845,369"/>
 <area shape="poly" id="edge29_Node000022_Node000023" title=" " alt="" coords="2892,355,2845,358,2845,353,2897,355"/>
-<area shape="rect" id="Node000028" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when the signed list of one of its..." alt="" coords="2625,393,2847,421"/>
+<area shape="rect" id="Node000028" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h..." alt="" coords="2625,393,2847,421"/>
 <area shape="poly" id="edge34_Node000022_Node000028" title=" " alt="" coords="2904,372,2807,395,2806,390,2898,373"/>
 <area shape="rect" id="Node000024" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="2410,337,2535,365"/>
 <area shape="poly" id="edge30_Node000023_Node000024" title=" " alt="" coords="2609,353,2535,355,2535,349,2614,353"/>

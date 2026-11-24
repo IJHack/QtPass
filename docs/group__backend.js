@@ -325,6 +325,7 @@ var group__backend =
       [ "refuseLinkedList", "class_real_pass.html#ab61e44281306f4a26cb69cdedab0ff68", null ],
       [ "refuseList", "class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80", null ],
       [ "refuseMisreadList", "class_real_pass.html#ae8916f3175e84a15929d9a6c4cca906a", null ],
+      [ "refuseSpecialEntry", "class_real_pass.html#a2d746e1e171b585c6a5c4d2d4c943010", null ],
       [ "refuseUnrecordedChanges", "class_real_pass.html#a133e32f08f41de37b18f3aefa3953846", null ],
       [ "refuseUnverifiedList", "class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629", null ],
       [ "refuseUnverifiedTree", "class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa", null ],

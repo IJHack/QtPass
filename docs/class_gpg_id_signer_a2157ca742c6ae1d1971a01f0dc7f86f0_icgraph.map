@@ -10,7 +10,7 @@
 <area shape="poly" id="edge31_Node000001_Node000023" title=" " alt="" coords="3216,542,3171,574,3117,598,3047,615,2975,628,2830,641,2696,641,2586,635,2586,630,2696,636,2830,635,2974,623,3046,610,3115,593,3168,569,3211,543"/>
 <area shape="rect" id="Node000026" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),..." alt="" coords="2896,659,3114,686"/>
 <area shape="poly" id="edge34_Node000001_Node000026" title=" " alt="" coords="3225,544,3179,596,3150,621,3118,643,3075,661,3074,655,3115,638,3146,617,3175,592,3220,546"/>
-<area shape="rect" id="Node000031" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when the signed list of one of its..." alt="" coords="2894,711,3116,738"/>
+<area shape="rect" id="Node000031" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h..." alt="" coords="2894,711,3116,738"/>
 <area shape="poly" id="edge39_Node000001_Node000031" title=" " alt="" coords="3233,545,3216,583,3190,624,3158,665,3118,700,3093,713,3092,707,3115,696,3154,662,3186,621,3211,580,3229,548"/>
 <area shape="rect" id="Node000033" href="$class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot..." alt="" coords="2678,505,2813,533"/>
 <area shape="poly" id="edge42_Node000001_Node000033" title=" " alt="" coords="3146,519,2814,522,2814,516,3151,519"/>

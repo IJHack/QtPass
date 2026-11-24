@@ -1,5 +1,5 @@
 <map id="RealPass::refuseUnverifiedTree" name="RealPass::refuseUnverifiedTree">
-<area shape="rect" id="Node000001" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when the signed list of one of its..." alt="" coords="426,32,648,60"/>
+<area shape="rect" id="Node000001" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h..." alt="" coords="426,32,648,60"/>
 <area shape="rect" id="Node000002" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="Initialize password store." alt="" coords="223,5,332,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="408,33,332,27,332,22,413,33"/>
 <area shape="rect" id="Node000003" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="177,57,378,85"/>

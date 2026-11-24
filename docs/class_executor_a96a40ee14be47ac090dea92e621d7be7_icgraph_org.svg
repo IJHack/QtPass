@@ -2774,7 +2774,7 @@
 <!-- Node117 -->
 <g id="Node000117" class="node">
 <title>Node117</title>
-<g id="a_Node000117"><a xlink:href="class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" target="_top" xlink:title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when the signed list of one of its...">
+<g id="a_Node000117"><a xlink:href="class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" target="_top" xlink:title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h...">
 <polygon fill="white" stroke="#666666" points="2397.38,-571.12 2230.62,-571.12 2230.62,-550.38 2397.38,-550.38 2397.38,-571.12"/>
 <text xml:space="preserve" text-anchor="middle" x="2314" y="-557.62" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::refuseUnverifiedTree</text>
 </a>

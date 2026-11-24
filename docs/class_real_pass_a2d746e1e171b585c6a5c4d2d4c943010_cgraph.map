@@ -1,0 +1,5 @@
+<map id="RealPass::refuseSpecialEntry" name="RealPass::refuseSpecialEntry">
+<area shape="rect" id="Node000001" title="Refuse, and tell the user, when entry is set: an entry named like a password that is no regular file,..." alt="" coords="5,5,215,33"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="263,5,365,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,17,250,19,245,19,215,22"/>
+</map>
