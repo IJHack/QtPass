@@ -73,11 +73,15 @@ void SecretLineEdit::setStoredText(const QString &text) {
 }
 
 SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {
+  // QLineEdit cuts setText(), a paste and typing to maxLength without a
+  // word; its default of 32767 cut long key lines (see kMaxLength).
+  setMaxLength(kMaxLength);
   setValidator(new SingleLineValidator(this));
 }
 
 SecretLineEdit::SecretLineEdit(const QString &text, QWidget *parent)
     : QLineEdit(text, parent) {
+  setMaxLength(kMaxLength);
   setValidator(new SingleLineValidator(this));
 }
 

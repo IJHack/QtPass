@@ -161,6 +161,8 @@ private Q_SLOTS:
   void pasteIsAnUndoStepOfItsOwn();
   void unicodeLineSeparatorsAreRemoved();
   void storedSeparatorsSurviveAnUneditedSave();
+  void aLineLongerThanQLineEditsDefaultIsKeptWhole();
+  void anEntryWithALineTooLongToHoldIsNotLoaded();
   void ctrlShiftInsertPastesThePrimarySelection();
   void fieldNameDropsLineBreaks();
   void templateFieldsKeepPlainLabels();
@@ -857,6 +859,95 @@ void tst_passworddialog::storedSeparatorsSurviveAnUneditedSave() {
   QCOMPARE(password->text(), QStringLiteral("pa\u2028ss\u0085word"));
   QCOMPARE(login->text(), QStringLiteral("a\u2029b"));
   QCOMPARE(d.getPassword(), entry);
+}
+
+/**
+ * @brief Scan ANT-2026-0OJ00WWX: QLineEdit keeps 32767 characters by
+ *        default and drops the rest without a word. A password or field of
+ *        40000 characters (a key file as one line of base64) loads whole, a
+ *        save without edits writes it back unchanged, a paste of one into
+ *        the password field keeps all of it, and so does a field name
+ *        editor (made with its text) given one.
+ */
+void tst_passworddialog::aLineLongerThanQLineEditsDefaultIsKeptWhole() {
+  const QString longPassword(40000, u'a');
+  const QString longLogin(40000, u'b');
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  const QString entry = longPassword + QStringLiteral("\nlogin: ") + longLogin +
+                        QStringLiteral("\nnotes\n");
+  pass.deliverShow(entry);
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *login = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(password != nullptr && login != nullptr);
+  QCOMPARE(password->text().size(), longPassword.size());
+  QCOMPARE(login->text().size(), longLogin.size());
+  QVERIFY2(d.getPassword() == entry, "an unedited save keeps every character");
+
+  password->clear();
+  QApplication::clipboard()->setText(longLogin);
+  password->paste();
+  QCOMPARE(password->text().size(), longLogin.size());
+
+  SecretLineEdit made(QStringLiteral("login"));
+  made.setText(longLogin);
+  QCOMPARE(made.text().size(), longLogin.size());
+}
+
+/**
+ * @brief A line longer than SecretLineEdit::kMaxLength would be cut in its
+ *        field and the cut value saved, and an unbounded one costs memory
+ *        and time on every paint. Such an entry is not loaded, the dialog
+ *        says why, and nothing can be saved over it from here, also when
+ *        the line is in the notes (a template switch can make it a field).
+ *        A line of exactly that length loads whole, also with a CRLF end.
+ */
+void tst_passworddialog::anEntryWithALineTooLongToHoldIsNotLoaded() {
+  const qsizetype limit = SecretLineEdit::kMaxLength;
+  for (const bool inNotes : {false, true}) {
+    FakePass pass;
+    PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                     false);
+    const QString line(limit + 1, u'a');
+    pass.deliverShow(inNotes ? QStringLiteral("secret\n") + line + u'\n'
+                             : line + QStringLiteral("\nnotes\n"));
+    auto *password =
+        d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+    auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+    auto *ok = d.findChild<QDialogButtonBox *>()->button(QDialogButtonBox::Ok);
+    QVERIFY(password != nullptr && status != nullptr && ok != nullptr);
+    QVERIFY(password->text().isEmpty());
+    QVERIFY2(status->text().contains(QStringLiteral("too long")),
+             qPrintable(status->text()));
+    QVERIFY2(status->text().contains(QString::number(limit + 1)),
+             qPrintable(status->text()));
+    QVERIFY2(!ok->isEnabled(), "nothing can be saved over it");
+  }
+
+  FakePass fits;
+  PasswordDialog e(&fits, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  const QString entry = QString(limit, u'a') + QStringLiteral("\nnotes\n");
+  fits.deliverShow(entry);
+  auto *password = e.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY(password != nullptr);
+  QCOMPARE(password->maxLength(), SecretLineEdit::kMaxLength);
+  QCOMPARE(password->text().size(), limit);
+  QVERIFY2(e.getPassword() == entry, "loaded whole, saved unchanged");
+
+  // The CR of a CRLF line end is no part of the password.
+  FakePass crlf;
+  PasswordDialog f(&crlf, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  const QString windows =
+      QString(limit, u'a') + QStringLiteral("\r\nlogin: alice\r\n");
+  crlf.deliverShow(windows);
+  auto *crlfPassword =
+      f.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY(crlfPassword != nullptr);
+  QCOMPARE(crlfPassword->text().size(), limit);
+  QVERIFY2(f.getPassword() == windows, "loaded whole, saved unchanged");
 }
 
 /**

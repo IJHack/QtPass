@@ -986,6 +986,25 @@ void PasswordDialog::setPass(const QString &output, const QString &file,
     refuse(tr("This entry has %n line(s), too many to edit here.", nullptr, n));
     return;
   }
+  // A password or field longer than its line edit holds would be cut on
+  // load and the cut value saved. Every line counts: a template switch can
+  // make a line of the notes a field. The CR of a CRLF line end is not
+  // part of what a field holds (FileContent::passwordLine()).
+  qsizetype longest = 0;
+  for (QStringView line : QStringView(output).tokenize(u'\n')) {
+    if (line.endsWith(u'\r')) {
+      line.chop(1);
+    }
+    longest = std::max(longest, line.size());
+  }
+  if (longest > SecretLineEdit::kMaxLength) {
+    const int n = static_cast<int>(
+        std::min<qsizetype>(longest, std::numeric_limits<int>::max()));
+    refuse(tr("This entry has a line of %n character(s), too long to edit "
+              "here.",
+              nullptr, n));
+    return;
+  }
   setPassword(output);
   m_contentLoaded = true;
   // Drop the "Decrypting…" note so it cannot be mistaken for a warning.
