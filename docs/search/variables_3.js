@@ -7,8 +7,9 @@ var searchData=
   ['characters_4',['Characters',['../struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0',1,'PasswordConfiguration']]],
   ['checked_5',['checked',['../struct_imitate_pass_1_1_reencrypt_result.html#aa2d55a9aad9499e114e002f106a5328f',1,'ImitatePass::ReencryptResult']]],
   ['clearpaneltimer_6',['clearPanelTimer',['../class_main_window.html#a7428919d42945d4b83863ca4219f38ac',1,'MainWindow']]],
-  ['clickselected_7',['clickSelected',['../class_deselectable_tree_view.html#a72e3ccd9a689aeb6273def627bc40783',1,'DeselectableTreeView']]],
-  ['clipboardtype_8',['clipBoardType',['../struct_app_settings.html#aa601ce5267fa1142a0a5691d5c722c35',1,'AppSettings']]],
-  ['command_9',['command',['../struct_executor_1_1_wsl_command.html#a2b36465b5c5df4f4d870d1a7d10575a3',1,'Executor::WslCommand']]],
-  ['created_10',['created',['../struct_rnp_crypto_1_1_key_info.html#ab97fc32ba4f37998331578f144c268bc',1,'RnpCrypto::KeyInfo::created'],['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo::created']]]
+  ['clearresultstimer_7',['clearResultsTimer',['../class_main_window.html#a5e5f21753fe7657ef9daf2a4f883f879',1,'MainWindow']]],
+  ['clickselected_8',['clickSelected',['../class_deselectable_tree_view.html#a72e3ccd9a689aeb6273def627bc40783',1,'DeselectableTreeView']]],
+  ['clipboardtype_9',['clipBoardType',['../struct_app_settings.html#aa601ce5267fa1142a0a5691d5c722c35',1,'AppSettings']]],
+  ['command_10',['command',['../struct_executor_1_1_wsl_command.html#a2b36465b5c5df4f4d870d1a7d10575a3',1,'Executor::WslCommand']]],
+  ['created_11',['created',['../struct_rnp_crypto_1_1_key_info.html#ab97fc32ba4f37998331578f144c268bc',1,'RnpCrypto::KeyInfo::created'],['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo::created']]]
 ];

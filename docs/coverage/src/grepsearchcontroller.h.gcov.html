@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 20:24:06</td>
+            <td class="headerValue">2026-11-24 20:49:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -94,7 +94,7 @@
 <span id="L21"><span class="lineNum">      21</span>              :  * results). It holds no widgets — MainWindow keeps those and reacts to the</span>
 <span id="L22"><span class="lineNum">      22</span>              :  * returned outcomes.</span>
 <span id="L23"><span class="lineNum">      23</span>              :  */</span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         194 : class GrepSearchController {</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         197 : class GrepSearchController {</span></span>
 <span id="L25"><span class="lineNum">      25</span>              : public:</span>
 <span id="L26"><span class="lineNum">      26</span>              :   /**</span>
 <span id="L27"><span class="lineNum">      27</span>              :    * @brief Outcome of a search-completion transition.</span>
@@ -108,12 +108,12 @@
 <span id="L35"><span class="lineNum">      35</span>              :    * @brief Whether content-search mode is currently active.</span>
 <span id="L36"><span class="lineNum">      36</span>              :    * @return true if in grep mode.</span>
 <span id="L37"><span class="lineNum">      37</span>              :    */</span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         244 :   auto inGrepMode() const -&gt; bool { return m_mode; }</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         248 :   auto inGrepMode() const -&gt; bool { return m_mode; }</span></span>
 <span id="L39"><span class="lineNum">      39</span>              : </span>
 <span id="L40"><span class="lineNum">      40</span>              :   /**</span>
 <span id="L41"><span class="lineNum">      41</span>              :    * @brief Enter content-search mode (search button toggled on).</span>
 <span id="L42"><span class="lineNum">      42</span>              :    */</span>
-<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">          20 :   void enterGrepMode() { m_mode = true; }</span></span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">          22 :   void enterGrepMode() { m_mode = true; }</span></span>
 <span id="L44"><span class="lineNum">      44</span>              : </span>
 <span id="L45"><span class="lineNum">      45</span>              :   /**</span>
 <span id="L46"><span class="lineNum">      46</span>              :    * @brief Leave content-search mode (search button toggled off).</span>
@@ -123,8 +123,8 @@
 <span id="L50"><span class="lineNum">      50</span>              :    * @return true if a busy search was interrupted (restore the wait cursor).</span>
 <span id="L51"><span class="lineNum">      51</span>              :    */</span>
 <span id="L52"><span class="lineNum">      52</span>              :   auto leaveGrepMode() -&gt; bool {</span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          18 :     m_mode = false;</span></span>
-<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">          18 :     if (m_busy) {</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          20 :     m_mode = false;</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">          20 :     if (m_busy) {</span></span>
 <span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">           4 :       m_busy = false;</span></span>
 <span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">           4 :       m_cancelled = true;</span></span>
 <span id="L57"><span class="lineNum">      57</span>              :       return true;</span>
@@ -164,9 +164,9 @@
 <span id="L91"><span class="lineNum">      91</span>              :    * results (because the search was cancelled).</span>
 <span id="L92"><span class="lineNum">      92</span>              :    */</span>
 <span id="L93"><span class="lineNum">      93</span>              :   auto finishSearch() -&gt; FinishOutcome {</span>
-<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">          18 :     FinishOutcome outcome{m_busy, m_cancelled};</span></span>
-<span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">          18 :     m_busy = false;</span></span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          18 :     m_cancelled = false;</span></span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">          20 :     FinishOutcome outcome{m_busy, m_cancelled};</span></span>
+<span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">          20 :     m_busy = false;</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          20 :     m_cancelled = false;</span></span>
 <span id="L97"><span class="lineNum">      97</span>              :     return outcome;</span>
 <span id="L98"><span class="lineNum">      98</span>              :   }</span>
 <span id="L99"><span class="lineNum">      99</span>              : </span>

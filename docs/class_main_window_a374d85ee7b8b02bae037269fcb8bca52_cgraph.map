@@ -1,0 +1,7 @@
+<map id="MainWindow::clearShownEntry" name="MainWindow::clearShownEntry">
+<area shape="rect" id="Node000001" title="Empty the display panel and the text browser and close the QR code: the shown entry only...." alt="" coords="5,44,227,72"/>
+<area shape="rect" id="Node000002" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="275,5,441,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,42,262,40,256,41,228,47"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#aaea72043a726c32e580650d090faba1f" title="Close the QR code popup showTextAsQRCode() has open, if any: the autoclear of the panel takes the cod..." alt="" coords="278,74,438,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,69,265,76,260,76,227,74"/>
+</map>

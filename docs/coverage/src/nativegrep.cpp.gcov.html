@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 20:24:06</td>
+            <td class="headerValue">2026-11-24 20:49:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
@@ -333,13 +333,13 @@
 <span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">          15 :   thread-&gt;start();</span></span>
 <span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">          31 : }</span></span>
 <span id="L262"><span class="lineNum">     262</span>              : </span>
-<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">         598 : void NativeGrep::cancel() {</span></span>
-<span id="L264"><span class="lineNum">     264</span> <span class="tlaGNC">         609 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
+<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">         602 : void NativeGrep::cancel() {</span></span>
+<span id="L264"><span class="lineNum">     264</span> <span class="tlaGNC">         611 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
 <span id="L265"><span class="lineNum">     265</span>              :     w.cancel-&gt;store(true);</span>
-<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">          11 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
+<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">           9 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
 <span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">           8 :       w.thread-&gt;requestInterruption();</span></span>
 <span id="L268"><span class="lineNum">     268</span>              :   }</span>
-<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         598 : }</span></span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         602 : }</span></span>
         </pre>
               </td>
             </tr>

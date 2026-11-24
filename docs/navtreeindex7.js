@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"struct_enums_1_1_process_info.html#af7687e8a1fb2f7883aa00cd3eff9460e":[1,1,2,0],
+"struct_enums_1_1_process_info.html#afa94d5e39597cbf0a887006a8c37d7c7":[1,1,2,1],
+"struct_executor_1_1_exec_queue_item.html":[1,1,1,0],
 "struct_executor_1_1_exec_queue_item.html#a06963eefa82e1b35d4c62a3352fcd60f":[1,1,1,0,5],
 "struct_executor_1_1_exec_queue_item.html#a1f17ba7a8c263325ae0aeb53f679648d":[1,1,1,0,6],
 "struct_executor_1_1_exec_queue_item.html#a476a6bde2037d797a9ad756d35b2a37f":[1,1,1,0,3],
