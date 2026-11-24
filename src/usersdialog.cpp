@@ -252,11 +252,11 @@ auto nameTermOfLine(const QString &recipient) -> QString {
   // A leading 0x, digits only, or groups of four digits split by spaces (a
   // fingerprint as gpg prints it) is a key ID gpg reads in its own way
   // (keyIdOfLine() takes the lengths it accepts); ".", "+", "#", "&", "^",
-  // "/" and "[" start search modes this dialog does not model.
+  // "/", "[" and ":" start search modes this dialog does not model.
   static const QRegularExpression hexish(QStringLiteral(
       "^(?:0[xX]|[0-9A-Fa-f]+!?$|[0-9A-Fa-f]{4}(?:\\s+[0-9A-Fa-f]{4})+!?$)"));
   if (hexish.match(line).hasMatch() ||
-      QStringLiteral(".+#&^/[!\\").contains(line.front())) {
+      QStringLiteral(".+#&^/[:!\\").contains(line.front())) {
     return {};
   }
   QString term = line;
@@ -276,8 +276,8 @@ auto nameTermOfLine(const QString &recipient) -> QString {
 /// fingerprint in a length gpg reads as one, or a name. For those every key
 /// gpg resolves the line to is one answersTo() matches, given the key's full
 /// listing, so a line that matches no listed key names no key in the
-/// keyring. Any other form (a fingerprint written with spaces, a keygrip,
-/// "*" alone) needs gpg's own answer.
+/// keyring. Any other form (a fingerprint written with spaces or between
+/// colons, a keygrip, "*" alone) needs gpg's own answer.
 auto judgedLocally(const QString &recipient) -> bool {
   return !keyIdOfLine(recipient).isEmpty() ||
          !nameTermOfLine(recipient).isEmpty();

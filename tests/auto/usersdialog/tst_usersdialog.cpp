@@ -1626,12 +1626,12 @@ const char kSubkeyListing[] =
 
 /**
  * @brief Scan ANT-2026-G4QELVPH: a .gpg-id line may name a key by its
- *        subkey's fingerprint (also written with spaces, as gpg prints it)
- *        or by a user ID other than the one shown. Such
- *        a line must tick that key and not also be listed as a ticked "Key
- *        not found" row, or unticking the key leaves the line in the list
- *        and the store stays encrypted to it. Ten lines naming no key used to
- *        spend the lookups that recognised such a line.
+ *        subkey's fingerprint, by a fingerprint with spaces (as gpg prints
+ *        it) or between colons, or by a user ID other than the one shown.
+ *        Such a line must tick that key and not also be listed as a ticked
+ *        "Key not found" row, or unticking the key leaves the line in the
+ *        list and the store stays encrypted to it. Ten lines naming no
+ *        key used to spend the lookups that recognised such a line.
  */
 void tst_usersdialog::aLineNamingASubkeyOrAnotherUidTicksItsKey() {
   const QString counter =
@@ -1669,7 +1669,8 @@ void tst_usersdialog::aLineNamingASubkeyOrAnotherUidTicksItsKey() {
   body += "4B9D410DA3140B35BAC7A28EEBBFA1F57F2E64CD\n"
           "0x7F2E64CD!\n"
           "mal-work@example.org\n"
-          "4B9D 410D A314 0B35 BAC7  A28E EBBF A1F5 7F2E 64CD\n";
+          "4B9D 410D A314 0B35 BAC7  A28E EBBF A1F5 7F2E 64CD\n"
+          ":149D30615789F7CD996A6581D3DC2DCEA20CE159:\n";
   QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
   QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
   gpgId.write(body);
@@ -1687,12 +1688,13 @@ void tst_usersdialog::aLineNamingASubkeyOrAnotherUidTicksItsKey() {
   for (const QString &line :
        {QStringLiteral("4B9D410DA3140B35BAC7A28EEBBFA1F57F2E64CD"),
         QStringLiteral("0x7F2E64CD!"), QStringLiteral("mal-work@example.org"),
-        QStringLiteral("4B9D 410D A314 0B35 BAC7  A28E EBBF A1F5 7F2E 64CD")}) {
+        QStringLiteral("4B9D 410D A314 0B35 BAC7  A28E EBBF A1F5 7F2E 64CD"),
+        QStringLiteral(":149D30615789F7CD996A6581D3DC2DCEA20CE159:")}) {
     QVERIFY2(itemWithText(list, line) == nullptr, qPrintable(line));
   }
   // The ten unknown fingerprints are still listed missing, without a gpg
   // call each: one batched call answers for every line. Only the
-  // fingerprint written with spaces gets a call of its own.
+  // fingerprints written with spaces or between colons get a call each.
   for (int i : {1, 10}) {
     QVERIFY2(itemWithText(list, QStringLiteral("FACE%1").arg(
                                     i, 36, 16, QLatin1Char('0'))) != nullptr,
@@ -1700,7 +1702,7 @@ void tst_usersdialog::aLineNamingASubkeyOrAnotherUidTicksItsKey() {
   }
   QFile log(counter);
   QVERIFY(log.open(QIODevice::ReadOnly | QIODevice::Text));
-  QCOMPARE(log.readAll().count('x'), 2);
+  QCOMPARE(log.readAll().count('x'), 3);
 
   // Unticking Mallory leaves no line that still names him.
   QListWidgetItem *row = itemWithText(list, QStringLiteral("Mallory"));
