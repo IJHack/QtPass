@@ -6,7 +6,7 @@ var searchData=
   ['markotpfieldedited_3',['markOtpFieldEdited',['../class_password_dialog.html#acd29a018a14978015d932a052da966cf',1,'PasswordDialog']]],
   ['marksecretkeys_4',['markSecretKeys',['../class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2',1,'UsersDialog']]],
   ['markundoboundary_5',['markUndoBoundary',['../class_secret_line_edit.html#aba684a353cbd69ebd8608ef056b058c6',1,'SecretLineEdit']]],
-  ['matchfile_6',['matchFile',['../class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68',1,'NativeGrep']]],
+  ['matchfile_6',['matchFile',['../class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641',1,'NativeGrep']]],
   ['maxoutputargs_7',['maxOutputArgs',['../class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a',1,'Pass']]],
   ['menubarpeek_8',['MenuBarPeek',['../class_menu_bar_peek.html#a417cdc2f5cdbe788effec7a8785238fd',1,'MenuBarPeek']]],
   ['messageavailable_9',['messageAvailable',['../class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b',1,'MainWindow::messageAvailable()'],['../class_single_application.html#ab893aad585d0cc3ee82659709a6a069b',1,'SingleApplication::messageAvailable()']]],

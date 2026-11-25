@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"class_real_pass.html#a63da21db00da709ae5aa8f7a992e16e1":[1,0,5,38],
 "class_real_pass.html#a65ad5fa1183824c29a219aeca72ae112":[1,0,5,44],
 "class_real_pass.html#a696202ddae3220f4da5f416fdd350d74":[1,0,5,35],
 "class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6":[1,0,5,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "class_users_dialog.html#a0b48f9c3f9f9ab0fd01598c00ab29216":[1,2,8,31],
 "class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906":[1,2,8,17],
 "class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7":[1,2,8,22],
-"class_users_dialog.html#a20609c91440503dc7f84f26a43d01509":[1,2,8,18],
-"class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106":[1,2,8,9]
+"class_users_dialog.html#a20609c91440503dc7f84f26a43d01509":[1,2,8,18]
 };

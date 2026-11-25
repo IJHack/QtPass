@@ -183,7 +183,7 @@ var searchData=
   ['markotpfieldedited_180',['markOtpFieldEdited',['../class_password_dialog.html#acd29a018a14978015d932a052da966cf',1,'PasswordDialog']]],
   ['marksecretkeys_181',['markSecretKeys',['../class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2',1,'UsersDialog']]],
   ['markundoboundary_182',['markUndoBoundary',['../class_secret_line_edit.html#aba684a353cbd69ebd8608ef056b058c6',1,'SecretLineEdit']]],
-  ['matchfile_183',['matchFile',['../class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68',1,'NativeGrep']]],
+  ['matchfile_183',['matchFile',['../class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641',1,'NativeGrep']]],
   ['max_5fconfig_5flength_184',['MAX_CONFIG_LENGTH',['../class_totp.html#a79b5e8d618fa81604df1699b2d4b2e9a',1,'Totp']]],
   ['max_5fdigits_185',['MAX_DIGITS',['../class_totp.html#ae890b9f9d1440b99756ba7c74bd03ae0',1,'Totp']]],
   ['max_5fstep_186',['MAX_STEP',['../class_totp.html#a1ff6b1d22ea9f2cf5da5fedd1e116505',1,'Totp']]],

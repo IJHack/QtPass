@@ -28,7 +28,7 @@
 <area shape="poly" id="edge12_Node000009_Node000002" title=" " alt="" coords="4319,122,4203,91,4203,86,4325,122"/>
 <area shape="rect" id="Node000010" href="$class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4" title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpPasswordLine())." alt="" coords="4027,182,4212,227"/>
 <area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="4315,158,4213,185,4212,180,4310,159"/>
-<area shape="rect" id="Node000011" href="$class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="4036,303,4203,330"/>
+<area shape="rect" id="Node000011" href="$class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="4036,303,4203,330"/>
 <area shape="poly" id="edge15_Node000009_Node000011" title=" " alt="" coords="4351,161,4314,189,4279,218,4264,238,4257,256,4248,274,4230,292,4205,305,4203,300,4227,288,4244,271,4252,254,4260,235,4275,215,4310,184,4346,163"/>
 <area shape="rect" id="Node000028" href="$class_main_window.html#a7d0d5451438004ab31c4d9d48a869378" title="Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPas..." alt="" coords="4016,113,4223,158"/>
 <area shape="poly" id="edge38_Node000009_Node000028" title=" " alt="" coords="4258,138,4224,140,4223,135,4264,138"/>

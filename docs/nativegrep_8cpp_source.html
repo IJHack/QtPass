@@ -155,254 +155,278 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('nativegrep_8cp
 </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">   43</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">NativeGrep::matchFile</a>(<span class="keyword">const</span> QProcessEnvironment &amp;env,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641">   43</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641">NativeGrep::matchFile</a>(<span class="keyword">const</span> QProcessEnvironment &amp;env,</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                           <span class="keyword">const</span> QString &amp;gpgExe, <span class="keyword">const</span> QString &amp;filePath,</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                           <span class="keyword">const</span> QRegularExpression &amp;rx,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                           <span class="keyword">const</span> std::atomic_bool *<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>) -&gt; QStringList {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">const</span> QString translatedPath =</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <a class="code hl_function" href="class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86">Executor::translatePathForWsl</a>(filePath, gpgExe);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  QString plaintext;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// The QProcess overload is the one that takes the cancel flag; it polls</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// the flag while waiting and terminates (then kills) gpg from this thread,</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// the one that owns the process.</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  QProcess gpg;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  gpg.setProcessEnvironment(env);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> rc = <a class="code hl_function" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a>(</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      gpg, gpgExe,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      QStringList{<span class="stringliteral">&quot;-d&quot;</span>, <span class="stringliteral">&quot;--quiet&quot;</span>, <span class="stringliteral">&quot;--yes&quot;</span>, <span class="stringliteral">&quot;--no-encrypt-to&quot;</span>, <span class="stringliteral">&quot;--batch&quot;</span>,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                  <span class="stringliteral">&quot;--use-agent&quot;</span>} +</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>          <a class="code hl_function" href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">Pass::maxOutputArgs</a>() + QStringList{translatedPath},</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      QString(), &amp;plaintext, <span class="keyword">nullptr</span>, <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordflow">if</span> (rc != 0 || plaintext.isEmpty())</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">// Line by line over the text, never a list of every line (a compressed</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">// entry can expand into tens of millions), and a bounded number taken.</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  QStringList matches;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">bool</span> first = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordflow">for</span> (QStringView line : QStringView(plaintext).tokenize(u<span class="charliteral">&#39;\n&#39;</span>)) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// The password is the first line, empty or not.</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> password = std::exchange(first, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (line.endsWith(u<span class="charliteral">&#39;\r&#39;</span>))</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      line.chop(1);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">const</span> QStringView t = line.trimmed();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span> (t.isEmpty())</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">const</span> QRegularExpressionMatch m = rx.matchView(line);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (!m.hasMatch())</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">if</span> (matches.size() == <a class="code hl_variable" href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">kMaxMatchesPerEntry</a>) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      matches &lt;&lt; QString(); <span class="comment">// isMoreMarker(): not a match, not counted</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">// A shared secret is never shown, as in the display panel: only that</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// there was a match (isOtpMarker()).</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">const</span> QString whole = t.toString();</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (password ? <a class="code hl_function" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">FileContent::isOtpPasswordLine</a>(whole)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                 : <a class="code hl_function" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">FileContent::isOtpLine</a>(whole)) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      matches &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// Marked, so the window shows it only where the panel would</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// (isPasswordMatch()).</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">const</span> QString mark = password ? QStringLiteral(<span class="stringliteral">&quot;\n&quot;</span>) : QString();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (t.size() &lt;= <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a>) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      matches &lt;&lt; mark + whole;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// A window of the line that holds the match, a little context before</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// it; &quot;…&quot; marks what was left out on either side.</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">const</span> qsizetype at =</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        qMax&lt;qsizetype&gt;(0, m.capturedStart() - (t.data() - line.data()));</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    qsizetype start = qBound&lt;qsizetype&gt;(0, at - <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> / 4,</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                                        t.size() - <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a>);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    qsizetype end = start + <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">// Never half a surrogate pair (an emoji, CJK Extension B) at either</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// edge: the window takes the whole character.</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (start &gt; 0 &amp;&amp; t[start].isLowSurrogate())</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      --start;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> (end &lt; t.size() &amp;&amp; t[end - 1].isHighSurrogate())</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      ++end;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// A field&#39;s name decides whether its value is hidden, so a window that</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// cuts into a `name: value` line keeps the whole name in front. A name</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">// too long for that is shown cut, and then none of the value is.</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">const</span> qsizetype colon = password ? -1 : t.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    QString preview;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    qsizetype from = start;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span> (colon &gt; 0 &amp;&amp; start &gt; 0) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keywordflow">if</span> (colon &gt;= <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> / 2) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        matches &lt;&lt; t.first(<a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> / 2).toString() + QChar(0x2026) +</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                       QStringLiteral(<span class="stringliteral">&quot;: &quot;</span>) + QChar(0x2026);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      from = std::max(start, colon + 1);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      preview = t.first(colon + 1).toString() + u<span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="keywordflow">if</span> (from &gt; colon + 1)</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        preview += QChar(0x2026);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (start &gt; 0) {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      preview = QChar(0x2026);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    preview += t.sliced(from, end - from).toString();</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">if</span> (end &lt; t.size())</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      preview.append(QChar(0x2026));</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    matches &lt;&lt; mark + preview;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordflow">return</span> matches;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                           <span class="keyword">const</span> std::atomic_bool *<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                           <span class="keyword">const</span> QString &amp;storeDir) -&gt; QStringList {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">// Read here, without following a link, and handed to gpg on stdin: the</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">// name was listed as a regular file when the search began, and a pull</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// since may have put a link there (or on a folder on the way). gpg given</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// the name would follow it and decrypt a file outside the store into the</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// results. With the store given, every folder on the way down is opened</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">// without following a link, so none can be swapped between a check and</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">// the read. The cap is on what decrypts; the ciphertext of an entry just</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">// under it is a little larger.</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">constexpr</span> qint64 kCiphertextMargin = 1024LL * 1024;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">constexpr</span> qint64 kMaxCiphertext =</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <a class="code hl_variable" href="class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72">Pass::kMaxPlaintextBytes</a> + kCiphertextMargin;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> std::optional&lt;QByteArray&gt; ciphertext =</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      storeDir.isEmpty()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          ? <a class="code hl_function" href="class_util.html#a8e427903937505b5e19ebbea7050494e">Util::readRegularFile</a>(filePath, kMaxCiphertext)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>          : <a class="code hl_function" href="class_util.html#ab22e866d6db73831a0414056d34f6027">Util::readRegularFileUnder</a>(storeDir, filePath, kMaxCiphertext);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">if</span> (!ciphertext) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  QByteArray decrypted;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">// The QProcess overload is the one that takes the cancel flag; it polls</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="comment">// the flag while waiting and terminates (then kills) gpg from this thread,</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">// the one that owns the process.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  QProcess gpg;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  gpg.setProcessEnvironment(env);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> rc = <a class="code hl_function" href="class_executor.html#aa85fd530f22dc8d60b4fa696c33da5f1">Executor::executeBlockingRaw</a>(</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      gpg, gpgExe,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      QStringList{<span class="stringliteral">&quot;-d&quot;</span>, <span class="stringliteral">&quot;--quiet&quot;</span>, <span class="stringliteral">&quot;--yes&quot;</span>, <span class="stringliteral">&quot;--no-encrypt-to&quot;</span>, <span class="stringliteral">&quot;--batch&quot;</span>,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                  <span class="stringliteral">&quot;--use-agent&quot;</span>} +</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>          <a class="code hl_function" href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">Pass::maxOutputArgs</a>(),</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      *ciphertext, &amp;decrypted, <span class="keyword">nullptr</span>, <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// Decoded as executeBlocking() decoded it before: UTF-8, else the system</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="comment">// encoding, so an entry in a Windows code page is still searched.</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">const</span> QString plaintext = <a class="code hl_function" href="class_executor.html#ad6d464c18982af003c0c330458860578">Executor::decodeText</a>(decrypted);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordflow">if</span> (rc != 0 || plaintext.isEmpty())</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="comment">// Line by line over the text, never a list of every line (a compressed</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="comment">// entry can expand into tens of millions), and a bounded number taken.</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  QStringList matches;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">bool</span> first = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">for</span> (QStringView line : QStringView(plaintext).tokenize(u<span class="charliteral">&#39;\n&#39;</span>)) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// The password is the first line, empty or not.</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> password = std::exchange(first, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> (line.endsWith(u<span class="charliteral">&#39;\r&#39;</span>))</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      line.chop(1);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">const</span> QStringView t = line.trimmed();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (t.isEmpty())</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">const</span> QRegularExpressionMatch m = rx.matchView(line);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (!m.hasMatch())</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">if</span> (matches.size() == <a class="code hl_variable" href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">kMaxMatchesPerEntry</a>) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      matches &lt;&lt; QString(); <span class="comment">// isMoreMarker(): not a match, not counted</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// A shared secret is never shown, as in the display panel: only that</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// there was a match (isOtpMarker()).</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">const</span> QString whole = t.toString();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (password ? <a class="code hl_function" href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">FileContent::isOtpPasswordLine</a>(whole)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                 : <a class="code hl_function" href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">FileContent::isOtpLine</a>(whole)) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      matches &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// Marked, so the window shows it only where the panel would</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// (isPasswordMatch()).</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">const</span> QString mark = password ? QStringLiteral(<span class="stringliteral">&quot;\n&quot;</span>) : QString();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> (t.size() &lt;= <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a>) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      matches &lt;&lt; mark + whole;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">// A window of the line that holds the match, a little context before</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">// it; &quot;…&quot; marks what was left out on either side.</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">const</span> qsizetype at =</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        qMax&lt;qsizetype&gt;(0, m.capturedStart() - (t.data() - line.data()));</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    qsizetype start = qBound&lt;qsizetype&gt;(0, at - <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> / 4,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                                        t.size() - <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    qsizetype end = start + <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// Never half a surrogate pair (an emoji, CJK Extension B) at either</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">// edge: the window takes the whole character.</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span> (start &gt; 0 &amp;&amp; t[start].isLowSurrogate())</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      --start;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> (end &lt; t.size() &amp;&amp; t[end - 1].isHighSurrogate())</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      ++end;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// A field&#39;s name decides whether its value is hidden, so a window that</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">// cuts into a `name: value` line keeps the whole name in front. A name</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">// too long for that is shown cut, and then none of the value is.</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keyword">const</span> qsizetype colon = password ? -1 : t.indexOf(u<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    QString preview;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    qsizetype from = start;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (colon &gt; 0 &amp;&amp; start &gt; 0) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="keywordflow">if</span> (colon &gt;= <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> / 2) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        matches &lt;&lt; t.first(<a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> / 2).toString() + QChar(0x2026) +</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                       QStringLiteral(<span class="stringliteral">&quot;: &quot;</span>) + QChar(0x2026);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      from = std::max(start, colon + 1);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      preview = t.first(colon + 1).toString() + u<span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      <span class="keywordflow">if</span> (from &gt; colon + 1)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        preview += QChar(0x2026);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (start &gt; 0) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      preview = QChar(0x2026);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    preview += t.sliced(from, end - from).toString();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">if</span> (end &lt; t.size())</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      preview.append(QChar(0x2026));</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    matches &lt;&lt; mark + preview;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordflow">return</span> matches;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
 </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
-<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">  140</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">NativeGrep::scanStore</a>(<span class="keyword">const</span> QProcessEnvironment &amp;env,</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                           <span class="keyword">const</span> QString &amp;gpgExe, <span class="keyword">const</span> QString &amp;storeDir,</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                           <span class="keyword">const</span> QRegularExpression &amp;rx,</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                           <span class="keyword">const</span> std::atomic_bool *<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>)</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    -&gt; QList&lt;QPair&lt;QString, QStringList&gt;&gt; {</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  QList&lt;QPair&lt;QString, QStringList&gt;&gt; results;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordtype">int</span> total = 0; <span class="comment">// matching lines, the markers not counted</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">// Regular files only: a link or junction is not an entry, and searching</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="comment">// through one would decrypt files outside the store.</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keyword">const</span> QStringList files =</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      <a class="code hl_function" href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b">Util::regularFilesUnder</a>(storeDir, QStringList() &lt;&lt; <span class="stringliteral">&quot;*.gpg&quot;</span>);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;filePath : files) {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">if</span> (QThread::currentThread()-&gt;isInterruptionRequested() ||</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        (<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>-&gt;load()))</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">if</span> (total == <a class="code hl_variable" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a>) {</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      <span class="comment">// The budget is spent and entries remain: the search stopped here.</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      results.append({QString(), {}});</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    QStringList matches = <a class="code hl_function" href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">matchFile</a>(env, gpgExe, filePath, rx, <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">if</span> (matches.isEmpty())</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> more = <a class="code hl_function" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">isMoreMarker</a>(matches.constLast());</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">if</span> (more)</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      matches.removeLast();</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">// The store-wide budget: what still fits, and a marker when that cut</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="comment">// the entry short.</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> room = <a class="code hl_variable" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a> - total;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">if</span> (matches.size() &gt; room) {</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      matches = matches.mid(0, room);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      matches &lt;&lt; QString();</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (more) {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      matches &lt;&lt; QString();</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    total += <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(matches.size()) -</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>             (<a class="code hl_function" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">isMoreMarker</a>(matches.constLast()) ? 1 : 0);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    QString entry = QDir(storeDir).relativeFilePath(filePath);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">if</span> (entry.endsWith(QLatin1String(<span class="stringliteral">&quot;.gpg&quot;</span>)))</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      entry.chop(4);</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    results.append({entry, matches});</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordflow">return</span> results;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">  160</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">NativeGrep::scanStore</a>(<span class="keyword">const</span> QProcessEnvironment &amp;env,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                           <span class="keyword">const</span> QString &amp;gpgExe, <span class="keyword">const</span> QString &amp;storeDir,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                           <span class="keyword">const</span> QRegularExpression &amp;rx,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                           <span class="keyword">const</span> std::atomic_bool *<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    -&gt; QList&lt;QPair&lt;QString, QStringList&gt;&gt; {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  QList&lt;QPair&lt;QString, QStringList&gt;&gt; results;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keywordtype">int</span> total = 0; <span class="comment">// matching lines, the markers not counted</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="comment">// Regular files only: a link or junction is not an entry, and searching</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="comment">// through one would decrypt files outside the store.</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keyword">const</span> QStringList files =</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      <a class="code hl_function" href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b">Util::regularFilesUnder</a>(storeDir, QStringList() &lt;&lt; <span class="stringliteral">&quot;*.gpg&quot;</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;filePath : files) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">if</span> (QThread::currentThread()-&gt;isInterruptionRequested() ||</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        (<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>-&gt;load()))</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">if</span> (total == <a class="code hl_variable" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a>) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      <span class="comment">// The budget is spent and entries remain: the search stopped here.</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      results.append({QString(), {}});</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    QStringList matches =</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <a class="code hl_function" href="class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641">matchFile</a>(env, gpgExe, filePath, rx, <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>, storeDir);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">if</span> (matches.isEmpty())</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> more = <a class="code hl_function" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">isMoreMarker</a>(matches.constLast());</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">if</span> (more)</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      matches.removeLast();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="comment">// The store-wide budget: what still fits, and a marker when that cut</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="comment">// the entry short.</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> room = <a class="code hl_variable" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a> - total;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">if</span> (matches.size() &gt; room) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      matches = matches.mid(0, room);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      matches &lt;&lt; QString();</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (more) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      matches &lt;&lt; QString();</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    total += <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(matches.size()) -</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>             (<a class="code hl_function" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">isMoreMarker</a>(matches.constLast()) ? 1 : 0);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    QString entry = QDir(storeDir).relativeFilePath(filePath);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">if</span> (entry.endsWith(QLatin1String(<span class="stringliteral">&quot;.gpg&quot;</span>)))</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      entry.chop(4);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    results.append({entry, matches});</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordflow">return</span> results;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>}</div>
 </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
-<div class="foldopen" id="foldopen00193" data-start="{" data-end="}">
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">  193</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">NativeGrep::search</a>(<span class="keyword">const</span> QString &amp;pattern, <span class="keywordtype">bool</span> caseInsensitive,</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                        <span class="keyword">const</span> QString &amp;gpgExe, <span class="keyword">const</span> QString &amp;storeDir,</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                        <span class="keyword">const</span> QProcessEnvironment &amp;env) {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>();</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="comment">// Advance the sequence before any early return so in-flight workers from the</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="comment">// previous query fail the seq check and cannot publish stale results.</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> seq = ++<a class="code hl_variable" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">m_seq</a>;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="comment">// Use trimmed() rather than isEmpty(): a whitespace-only string is a valid</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="comment">// regex that matches every non-empty line, which is almost never intentional</span></div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="comment">// and would decrypt the entire store.</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="comment">//</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="comment">// Both early returns post finished() via Qt::QueuedConnection so that the</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="comment">// signal is always delivered asynchronously after search() returns, matching</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="comment">// the contract of the threaded path.</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keywordflow">if</span> (pattern.trimmed().isEmpty()) {</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    QMetaObject::invokeMethod(</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keyword">this</span>,</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        [<span class="keyword">this</span>, seq]() {</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">m_seq</a> == seq)</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            emit <a class="code hl_signal" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">finished</a>({});</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        },</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        Qt::QueuedConnection);</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  }</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="keyword">const</span> QRegularExpression rx(</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>      pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                               : QRegularExpression::PatternOptions{});</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordflow">if</span> (!rx.isValid()) {</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    QMetaObject::invokeMethod(</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keyword">this</span>,</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        [<span class="keyword">this</span>, seq]() {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">m_seq</a> == seq)</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            emit <a class="code hl_signal" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">finished</a>({});</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        },</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        Qt::QueuedConnection);</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  }</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  QPointer&lt;NativeGrep&gt; self(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keyword">auto</span> emitResults = [self, seq](QList&lt;QPair&lt;QString, QStringList&gt;&gt; results) {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordflow">if</span> (!self)</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    QMetaObject::invokeMethod(</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        self,</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        [self, seq, results = std::move(results)]() {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>          <span class="keywordflow">if</span> (self &amp;&amp; self-&gt;m_seq == seq)</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            emit self-&gt;finished(results);</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        },</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        Qt::QueuedConnection);</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  };</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  <span class="keyword">auto</span> cancelFlag = std::make_shared&lt;std::atomic_bool&gt;(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  QThread *thread = QThread::create([gpgExe, storeDir, env, rx, cancelFlag,</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                                     emitResults = std::move(emitResults)]() {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    std::move(emitResults)(</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <a class="code hl_function" href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">scanStore</a>(env, gpgExe, storeDir, rx, cancelFlag.get()));</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  });</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <a class="code hl_variable" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a>.append({thread, cancelFlag});</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  connect(thread, &amp;QThread::finished, <span class="keyword">this</span>, [<span class="keyword">this</span>, thread]() {</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <a class="code hl_variable" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a>.removeIf(</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        [thread](<span class="keyword">const</span> <a class="code hl_struct" href="struct_native_grep_1_1_worker.html">Worker</a> &amp;w) { <span class="keywordflow">return</span> w.<a class="code hl_variable" href="struct_native_grep_1_1_worker.html#a5dd658bbb228077a92546358b9437d85">thread</a> == thread; });</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  });</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  thread-&gt;start();</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>}</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span></div>
+<div class="foldopen" id="foldopen00214" data-start="{" data-end="}">
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">  214</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">NativeGrep::search</a>(<span class="keyword">const</span> QString &amp;pattern, <span class="keywordtype">bool</span> caseInsensitive,</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                        <span class="keyword">const</span> QString &amp;gpgExe, <span class="keyword">const</span> QString &amp;storeDir,</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                        <span class="keyword">const</span> QProcessEnvironment &amp;env) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  <span class="comment">// Advance the sequence before any early return so in-flight workers from the</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="comment">// previous query fail the seq check and cannot publish stale results.</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> seq = ++<a class="code hl_variable" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">m_seq</a>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="comment">// Use trimmed() rather than isEmpty(): a whitespace-only string is a valid</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  <span class="comment">// regex that matches every non-empty line, which is almost never intentional</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="comment">// and would decrypt the entire store.</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="comment">//</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="comment">// Both early returns post finished() via Qt::QueuedConnection so that the</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <span class="comment">// signal is always delivered asynchronously after search() returns, matching</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="comment">// the contract of the threaded path.</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordflow">if</span> (pattern.trimmed().isEmpty()) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    QMetaObject::invokeMethod(</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keyword">this</span>,</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        [<span class="keyword">this</span>, seq]() {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">m_seq</a> == seq)</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            emit <a class="code hl_signal" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">finished</a>({});</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        },</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        Qt::QueuedConnection);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keyword">const</span> QRegularExpression rx(</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                               : QRegularExpression::PatternOptions{});</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keywordflow">if</span> (!rx.isValid()) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    QMetaObject::invokeMethod(</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keyword">this</span>,</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        [<span class="keyword">this</span>, seq]() {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">m_seq</a> == seq)</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            emit <a class="code hl_signal" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">finished</a>({});</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        },</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        Qt::QueuedConnection);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  QPointer&lt;NativeGrep&gt; self(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <span class="keyword">auto</span> emitResults = [self, seq](QList&lt;QPair&lt;QString, QStringList&gt;&gt; results) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">if</span> (!self)</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    QMetaObject::invokeMethod(</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        self,</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        [self, seq, results = std::move(results)]() {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>          <span class="keywordflow">if</span> (self &amp;&amp; self-&gt;m_seq == seq)</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            emit self-&gt;finished(results);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        },</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        Qt::QueuedConnection);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  };</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  <span class="keyword">auto</span> cancelFlag = std::make_shared&lt;std::atomic_bool&gt;(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  QThread *thread = QThread::create([gpgExe, storeDir, env, rx, cancelFlag,</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                                     emitResults = std::move(emitResults)]() {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    std::move(emitResults)(</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <a class="code hl_function" href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">scanStore</a>(env, gpgExe, storeDir, rx, cancelFlag.get()));</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  });</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <a class="code hl_variable" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a>.append({thread, cancelFlag});</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  connect(thread, &amp;QThread::finished, <span class="keyword">this</span>, [<span class="keyword">this</span>, thread]() {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <a class="code hl_variable" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a>.removeIf(</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        [thread](<span class="keyword">const</span> <a class="code hl_struct" href="struct_native_grep_1_1_worker.html">Worker</a> &amp;w) { <span class="keywordflow">return</span> w.<a class="code hl_variable" href="struct_native_grep_1_1_worker.html#a5dd658bbb228077a92546358b9437d85">thread</a> == thread; });</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  });</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  thread-&gt;start();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>}</div>
 </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="foldopen" id="foldopen00263" data-start="{" data-end="}">
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">  263</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">NativeGrep::cancel</a>() {</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_struct" href="struct_native_grep_1_1_worker.html">Worker</a> &amp;w : std::as_const(<a class="code hl_variable" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a>)) {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    w.cancel-&gt;store(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordflow">if</span> (w.thread &amp;&amp; w.thread-&gt;isRunning())</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      w.thread-&gt;requestInterruption();</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  }</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="foldopen" id="foldopen00284" data-start="{" data-end="}">
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">  284</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">NativeGrep::cancel</a>() {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_struct" href="struct_native_grep_1_1_worker.html">Worker</a> &amp;w : std::as_const(<a class="code hl_variable" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a>)) {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    w.cancel-&gt;store(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">if</span> (w.thread &amp;&amp; w.thread-&gt;isRunning())</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>      w.thread-&gt;requestInterruption();</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  }</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>}</div>
 </div>
-<div class="ttc" id="aclass_executor_html_a4e210af42a76029683ded3210cf7bce2"><div class="ttname"><a href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Run a command synchronously and return its exit code.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00516">executor.cpp:516</a></div></div>
-<div class="ttc" id="aclass_executor_html_a5440c036f0ef72157c9cd1d6dff43f86"><div class="ttname"><a href="class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86">Executor::translatePathForWsl</a></div><div class="ttdeci">static auto translatePathForWsl(const QString &amp;path, const QString &amp;exe) -&gt; QString</div><div class="ttdoc">Translate a native path for a WSL-routed executable.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00181">executor.cpp:181</a></div></div>
+<div class="ttc" id="aclass_executor_html_aa85fd530f22dc8d60b4fa696c33da5f1"><div class="ttname"><a href="class_executor.html#aa85fd530f22dc8d60b4fa696c33da5f1">Executor::executeBlockingRaw</a></div><div class="ttdeci">static auto executeBlockingRaw(QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QByteArray &amp;input, QByteArray *process_out, QString *process_err=nullptr, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</div><div class="ttdoc">executeBlocking() on bytes, for an entry&#39;s plaintext: input is written to stdin and stdout returned e...</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00510">executor.cpp:510</a></div></div>
+<div class="ttc" id="aclass_executor_html_ad6d464c18982af003c0c330458860578"><div class="ttname"><a href="class_executor.html#ad6d464c18982af003c0c330458860578">Executor::decodeText</a></div><div class="ttdeci">static auto decodeText(const QByteArray &amp;bytes) -&gt; QString</div><div class="ttdoc">Decode process output as executeBlocking() does: UTF-8 first, the system encoding when it is not UTF-...</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00328">executor.cpp:328</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a722f8a24e019518e36039dc423edeffc"><div class="ttname"><a href="class_file_content.html#a722f8a24e019518e36039dc423edeffc">FileContent::isOtpLine</a></div><div class="ttdeci">static auto isOtpLine(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00466">filecontent.cpp:466</a></div></div>
 <div class="ttc" id="aclass_file_content_html_ad4c28b38d683a03cff0dd83ab23afee7"><div class="ttname"><a href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7">FileContent::isOtpPasswordLine</a></div><div class="ttdeci">static auto isOtpPasswordLine(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether an entry&#39;s first line holds a TOTP shared secret rather than a password.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00474">filecontent.cpp:474</a></div></div>
 <div class="ttc" id="aclass_native_grep_html_a195784ff0ea005b58f4f26beed4be27a"><div class="ttname"><a href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">NativeGrep::finished</a></div><div class="ttdeci">void finished(const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</div><div class="ttdoc">The newest search is over.</div></div>
-<div class="ttc" id="aclass_native_grep_html_a393b6a05c39649304a77151702b76ec7"><div class="ttname"><a href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">NativeGrep::search</a></div><div class="ttdeci">void search(const QString &amp;pattern, bool caseInsensitive, const QString &amp;gpgExe, const QString &amp;storeDir, const QProcessEnvironment &amp;env)</div><div class="ttdoc">Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu...</div><div class="ttdef"><b>Definition</b> <a href="#l00193">nativegrep.cpp:193</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_a393b6a05c39649304a77151702b76ec7"><div class="ttname"><a href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">NativeGrep::search</a></div><div class="ttdeci">void search(const QString &amp;pattern, bool caseInsensitive, const QString &amp;gpgExe, const QString &amp;storeDir, const QProcessEnvironment &amp;env)</div><div class="ttdoc">Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu...</div><div class="ttdef"><b>Definition</b> <a href="#l00214">nativegrep.cpp:214</a></div></div>
 <div class="ttc" id="aclass_native_grep_html_a4cce7dcbafd90ea622e9d00b346aba45"><div class="ttname"><a href="class_native_grep.html#a4cce7dcbafd90ea622e9d00b346aba45">NativeGrep::~NativeGrep</a></div><div class="ttdeci">~NativeGrep() override</div><div class="ttdoc">Interrupt running searches and wait up to five seconds for them.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">nativegrep.cpp:25</a></div></div>
 <div class="ttc" id="aclass_native_grep_html_a566acd70ea61876f0290f3b0ea900f78"><div class="ttname"><a href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">NativeGrep::kMaxMatches</a></div><div class="ttdeci">static constexpr int kMaxMatches</div><div class="ttdoc">Most matching lines a search collects over the whole store.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00055">nativegrep.h:55</a></div></div>
 <div class="ttc" id="aclass_native_grep_html_a5923d0185ca5c7739b00ef8159a11681"><div class="ttname"><a href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">NativeGrep::isMoreMarker</a></div><div class="ttdeci">static auto isMoreMarker(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00080">nativegrep.h:80</a></div></div>
 <div class="ttc" id="aclass_native_grep_html_a60260a9fd1bcaffe995b0a52115ebe0d"><div class="ttname"><a href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">NativeGrep::kMaxPreviewLength</a></div><div class="ttdeci">static constexpr qsizetype kMaxPreviewLength</div><div class="ttdoc">Longest preview of a matching line, in UTF-16 code units.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00068">nativegrep.h:68</a></div></div>
 <div class="ttc" id="aclass_native_grep_html_a737ae7b7488d442dc5d2a5ee5dc19482"><div class="ttname"><a href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">NativeGrep::kMaxMatchesPerEntry</a></div><div class="ttdeci">static constexpr int kMaxMatchesPerEntry</div><div class="ttdoc">Most matching lines taken from one entry.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00048">nativegrep.h:48</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_a99b72a4ac50c6c01b24f8376e30a7a68"><div class="ttname"><a href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">NativeGrep::matchFile</a></div><div class="ttdeci">static auto matchFile(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</div><div class="ttdoc">Decrypt one .gpg file and return its trimmed lines matching rx.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">nativegrep.cpp:43</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_a9c2523a0d1d82bc0201c6730bfa13a10"><div class="ttname"><a href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">NativeGrep::scanStore</a></div><div class="ttdeci">static auto scanStore(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</div><div class="ttdoc">Walk storeDir, decrypt every .gpg file and collect the matches.</div><div class="ttdef"><b>Definition</b> <a href="#l00140">nativegrep.cpp:140</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_acce2afcd559c2272585093278ca4643e"><div class="ttname"><a href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">NativeGrep::m_seq</a></div><div class="ttdeci">int m_seq</div><div class="ttdoc">Number of the newest search. A worker reports through finished() only when its own number still equal...</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00220">nativegrep.h:220</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_acf4bbf115d80b421255145c2a4d6ca1d"><div class="ttname"><a href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">NativeGrep::m_workers</a></div><div class="ttdeci">QList&lt; Worker &gt; m_workers</div><div class="ttdoc">Searches still running, superseded ones included.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00222">nativegrep.h:222</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_af640052e8b38885ef565d3c626aa1ce6"><div class="ttname"><a href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">NativeGrep::cancel</a></div><div class="ttdeci">void cancel()</div><div class="ttdoc">Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ...</div><div class="ttdef"><b>Definition</b> <a href="#l00263">nativegrep.cpp:263</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_a9c2523a0d1d82bc0201c6730bfa13a10"><div class="ttname"><a href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">NativeGrep::scanStore</a></div><div class="ttdeci">static auto scanStore(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</div><div class="ttdoc">Walk storeDir, decrypt every .gpg file and collect the matches.</div><div class="ttdef"><b>Definition</b> <a href="#l00160">nativegrep.cpp:160</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_acce2afcd559c2272585093278ca4643e"><div class="ttname"><a href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">NativeGrep::m_seq</a></div><div class="ttdeci">int m_seq</div><div class="ttdoc">Number of the newest search. A worker reports through finished() only when its own number still equal...</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00224">nativegrep.h:224</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_acf4bbf115d80b421255145c2a4d6ca1d"><div class="ttname"><a href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">NativeGrep::m_workers</a></div><div class="ttdeci">QList&lt; Worker &gt; m_workers</div><div class="ttdoc">Searches still running, superseded ones included.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00226">nativegrep.h:226</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_aebc3ffea28a2a5a324a90562c1043641"><div class="ttname"><a href="class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641">NativeGrep::matchFile</a></div><div class="ttdeci">static auto matchFile(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr, const QString &amp;storeDir=QString()) -&gt; QStringList</div><div class="ttdoc">Decrypt one .gpg file and return its trimmed lines matching rx.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">nativegrep.cpp:43</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_af640052e8b38885ef565d3c626aa1ce6"><div class="ttname"><a href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">NativeGrep::cancel</a></div><div class="ttdeci">void cancel()</div><div class="ttdoc">Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ...</div><div class="ttdef"><b>Definition</b> <a href="#l00284">nativegrep.cpp:284</a></div></div>
 <div class="ttc" id="aclass_native_grep_html_afc48e9a61a6587abb5fa3e079e874592"><div class="ttname"><a href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">NativeGrep::NativeGrep</a></div><div class="ttdeci">NativeGrep(QObject *parent=nullptr)</div><div class="ttdoc">Create a searcher.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">nativegrep.cpp:23</a></div></div>
 <div class="ttc" id="aclass_pass_html_a5a0b433814c3701da1bdb0b7bd87052a"><div class="ttname"><a href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">Pass::maxOutputArgs</a></div><div class="ttdeci">static auto maxOutputArgs() -&gt; QStringList</div><div class="ttdoc">The gpg options that enforce kMaxPlaintextBytes.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00715">pass.cpp:715</a></div></div>
-<div class="ttc" id="aclass_util_html_a6416bfebddfbc3dbfee2d66d5204964b"><div class="ttname"><a href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b">Util::regularFilesUnder</a></div><div class="ttdeci">static auto regularFilesUnder(const QString &amp;dir, const QStringList &amp;nameFilters, QStringList *skipped=nullptr, bool hiddenFiles=false, QStringList *unlisted=nullptr) -&gt; QStringList</div><div class="ttdoc">Regular files under dir whose name matches one of nameFilters, found by walking only real directories...</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00990">util.cpp:990</a></div></div>
+<div class="ttc" id="aclass_pass_html_ae6e6a7bafd0f0753db6bae3205c22c72"><div class="ttname"><a href="class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72">Pass::kMaxPlaintextBytes</a></div><div class="ttdeci">static constexpr qint64 kMaxPlaintextBytes</div><div class="ttdoc">Most bytes of plaintext a gpg decryption may produce.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00327">pass.h:327</a></div></div>
+<div class="ttc" id="aclass_util_html_a6416bfebddfbc3dbfee2d66d5204964b"><div class="ttname"><a href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b">Util::regularFilesUnder</a></div><div class="ttdeci">static auto regularFilesUnder(const QString &amp;dir, const QStringList &amp;nameFilters, QStringList *skipped=nullptr, bool hiddenFiles=false, QStringList *unlisted=nullptr) -&gt; QStringList</div><div class="ttdoc">Regular files under dir whose name matches one of nameFilters, found by walking only real directories...</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00991">util.cpp:991</a></div></div>
+<div class="ttc" id="aclass_util_html_a8e427903937505b5e19ebbea7050494e"><div class="ttname"><a href="class_util.html#a8e427903937505b5e19ebbea7050494e">Util::readRegularFile</a></div><div class="ttdeci">static auto readRegularFile(const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</div><div class="ttdoc">Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l01289">util.cpp:1289</a></div></div>
+<div class="ttc" id="aclass_util_html_ab22e866d6db73831a0414056d34f6027"><div class="ttname"><a href="class_util.html#ab22e866d6db73831a0414056d34f6027">Util::readRegularFileUnder</a></div><div class="ttdeci">static auto readRegularFileUnder(const QString &amp;root, const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</div><div class="ttdoc">readRegularFile() for a file under root, with no link followed anywhere on the way down from it.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l01298">util.cpp:1298</a></div></div>
 <div class="ttc" id="aexecutor_8h_html"><div class="ttname"><a href="executor_8h.html">executor.h</a></div><div class="ttdoc">Executor, the FIFO queue every gpg, git and pass child process of QtPass goes through,...</div></div>
 <div class="ttc" id="afilecontent_8h_html"><div class="ttname"><a href="filecontent_8h.html">filecontent.h</a></div><div class="ttdoc">Parser for a decrypted password entry: password line, key: value fields, remaining text and the OTP c...</div></div>
 <div class="ttc" id="anativegrep_8h_html"><div class="ttname"><a href="nativegrep_8h.html">nativegrep.h</a></div><div class="ttdoc">NativeGrep, the content search that decrypts every entry on a worker thread instead of running pass g...</div></div>
 <div class="ttc" id="apass_8h_html"><div class="ttname"><a href="pass_8h.html">pass.h</a></div><div class="ttdoc">Pass, the abstract password-store backend that RealPass and ImitatePass implement,...</div></div>
-<div class="ttc" id="astruct_native_grep_1_1_worker_html"><div class="ttname"><a href="struct_native_grep_1_1_worker.html">NativeGrep::Worker</a></div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00210">nativegrep.h:210</a></div></div>
-<div class="ttc" id="astruct_native_grep_1_1_worker_html_a5dd658bbb228077a92546358b9437d85"><div class="ttname"><a href="struct_native_grep_1_1_worker.html#a5dd658bbb228077a92546358b9437d85">NativeGrep::Worker::thread</a></div><div class="ttdeci">QThread * thread</div><div class="ttdoc">The thread the search runs on.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00212">nativegrep.h:212</a></div></div>
+<div class="ttc" id="astruct_native_grep_1_1_worker_html"><div class="ttname"><a href="struct_native_grep_1_1_worker.html">NativeGrep::Worker</a></div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00214">nativegrep.h:214</a></div></div>
+<div class="ttc" id="astruct_native_grep_1_1_worker_html_a5dd658bbb228077a92546358b9437d85"><div class="ttname"><a href="struct_native_grep_1_1_worker.html#a5dd658bbb228077a92546358b9437d85">NativeGrep::Worker::thread</a></div><div class="ttdeci">QThread * thread</div><div class="ttdoc">The thread the search runs on.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8h_source.html#l00216">nativegrep.h:216</a></div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div><div class="ttdoc">Util: static helpers for the process environment, binary discovery, store paths, URL safety and the l...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

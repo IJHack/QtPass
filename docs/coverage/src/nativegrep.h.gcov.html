@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 00:51:00</td>
+            <td class="headerValue">2026-11-25 09:23:42</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -238,64 +238,68 @@
 <span id="L165"><span class="lineNum">     165</span>              :    * @param rx The pattern.</span>
 <span id="L166"><span class="lineNum">     166</span>              :    * @param cancel When set, gpg is not started, or is terminated while it</span>
 <span id="L167"><span class="lineNum">     167</span>              :    *        runs; nullptr to run to completion.</span>
-<span id="L168"><span class="lineNum">     168</span>              :    * @return Matching lines, at most kMaxMatchesPerEntry and then a marker</span>
-<span id="L169"><span class="lineNum">     169</span>              :    *         (isMoreMarker()) when there are more; empty when gpg fails, is</span>
-<span id="L170"><span class="lineNum">     170</span>              :    *         cancelled or nothing matches. A match in the first line is</span>
-<span id="L171"><span class="lineNum">     171</span>              :    *         marked (isPasswordMatch()), one in a line holding a one-time</span>
-<span id="L172"><span class="lineNum">     172</span>              :    *         password secret is only a marker (isOtpMarker()), and a cut</span>
-<span id="L173"><span class="lineNum">     173</span>              :    *         `name: value` line keeps its whole name, or shows none of its</span>
-<span id="L174"><span class="lineNum">     174</span>              :    *         value when the name is too long to keep.</span>
-<span id="L175"><span class="lineNum">     175</span>              :    */</span>
-<span id="L176"><span class="lineNum">     176</span>              :   static auto matchFile(const QProcessEnvironment &amp;env, const QString &amp;gpgExe,</span>
-<span id="L177"><span class="lineNum">     177</span>              :                         const QString &amp;filePath, const QRegularExpression &amp;rx,</span>
-<span id="L178"><span class="lineNum">     178</span>              :                         const std::atomic_bool *cancel = nullptr)</span>
-<span id="L179"><span class="lineNum">     179</span>              :       -&gt; QStringList;</span>
-<span id="L180"><span class="lineNum">     180</span>              :   /**</span>
-<span id="L181"><span class="lineNum">     181</span>              :    * @brief Walk @p storeDir, decrypt every .gpg file and collect the matches.</span>
-<span id="L182"><span class="lineNum">     182</span>              :    * @param env Environment for gpg.</span>
-<span id="L183"><span class="lineNum">     183</span>              :    * @param gpgExe The gpg executable.</span>
-<span id="L184"><span class="lineNum">     184</span>              :    * @param storeDir The store.</span>
-<span id="L185"><span class="lineNum">     185</span>              :    * @param rx The pattern.</span>
-<span id="L186"><span class="lineNum">     186</span>              :    * @param cancel Stops the walk and the running gpg when set; nullptr to</span>
-<span id="L187"><span class="lineNum">     187</span>              :    *        rely on QThread::isInterruptionRequested() alone.</span>
-<span id="L188"><span class="lineNum">     188</span>              :    * @return (entry name without .gpg, matching lines) per file with matches,</span>
-<span id="L189"><span class="lineNum">     189</span>              :    *         at most kMaxMatches lines in all, an entry cut short ending in a</span>
-<span id="L190"><span class="lineNum">     190</span>              :    *         marker (isMoreMarker()); when the walk stopped at that budget</span>
-<span id="L191"><span class="lineNum">     191</span>              :    *         with entries left, a last result that is a marker</span>
-<span id="L192"><span class="lineNum">     192</span>              :    *         (isStoppedMarker()). Empty when the search is stopped.</span>
-<span id="L193"><span class="lineNum">     193</span>              :    */</span>
-<span id="L194"><span class="lineNum">     194</span>              :   static auto scanStore(const QProcessEnvironment &amp;env, const QString &amp;gpgExe,</span>
-<span id="L195"><span class="lineNum">     195</span>              :                         const QString &amp;storeDir, const QRegularExpression &amp;rx,</span>
-<span id="L196"><span class="lineNum">     196</span>              :                         const std::atomic_bool *cancel = nullptr)</span>
-<span id="L197"><span class="lineNum">     197</span>              :       -&gt; QList&lt;QPair&lt;QString, QStringList&gt;&gt;;</span>
-<span id="L198"><span class="lineNum">     198</span>              : </span>
-<span id="L199"><span class="lineNum">     199</span>              : signals:</span>
-<span id="L200"><span class="lineNum">     200</span>              :   /**</span>
-<span id="L201"><span class="lineNum">     201</span>              :    * @brief The newest search is over.</span>
-<span id="L202"><span class="lineNum">     202</span>              :    * @param results (entry, matching lines) pairs.</span>
-<span id="L203"><span class="lineNum">     203</span>              :    */</span>
-<span id="L204"><span class="lineNum">     204</span>              :   void finished(const QList&lt;QPair&lt;QString, QStringList&gt;&gt; &amp;results);</span>
-<span id="L205"><span class="lineNum">     205</span>              : </span>
-<span id="L206"><span class="lineNum">     206</span>              : private:</span>
-<span id="L207"><span class="lineNum">     207</span>              :   /// A running search: its thread and the flag its gpg runs poll. The flag</span>
-<span id="L208"><span class="lineNum">     208</span>              :   /// is shared with the thread's lambda so it outlives this object if a</span>
-<span id="L209"><span class="lineNum">     209</span>              :   /// search is still winding down when it is destroyed.</span>
-<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">          60 :   struct Worker {</span></span>
-<span id="L211"><span class="lineNum">     211</span>              :     /** @brief The thread the search runs on. */</span>
-<span id="L212"><span class="lineNum">     212</span>              :     QThread *thread;</span>
-<span id="L213"><span class="lineNum">     213</span>              :     /** @brief Set to ask the search to stop; polled by its gpg runs. */</span>
-<span id="L214"><span class="lineNum">     214</span>              :     std::shared_ptr&lt;std::atomic_bool&gt; cancel;</span>
-<span id="L215"><span class="lineNum">     215</span>              :   };</span>
-<span id="L216"><span class="lineNum">     216</span>              :   /**</span>
-<span id="L217"><span class="lineNum">     217</span>              :    * @brief Number of the newest search. A worker reports through finished()</span>
-<span id="L218"><span class="lineNum">     218</span>              :    * only when its own number still equals this.</span>
-<span id="L219"><span class="lineNum">     219</span>              :    */</span>
-<span id="L220"><span class="lineNum">     220</span>              :   int m_seq = 0;</span>
-<span id="L221"><span class="lineNum">     221</span>              :   /** @brief Searches still running, superseded ones included. */</span>
-<span id="L222"><span class="lineNum">     222</span>              :   QList&lt;Worker&gt; m_workers;</span>
-<span id="L223"><span class="lineNum">     223</span>              : };</span>
-<span id="L224"><span class="lineNum">     224</span>              : </span>
-<span id="L225"><span class="lineNum">     225</span>              : #endif // SRC_NATIVEGREP_H_</span>
+<span id="L168"><span class="lineNum">     168</span>              :    * @param storeDir The store @p filePath is in; when given, the entry is</span>
+<span id="L169"><span class="lineNum">     169</span>              :    *        read with Util::readRegularFileUnder(), so no folder on the way</span>
+<span id="L170"><span class="lineNum">     170</span>              :    *        down from it is followed as a link either. The file itself is</span>
+<span id="L171"><span class="lineNum">     171</span>              :    *        always read without following a link and handed to gpg on stdin.</span>
+<span id="L172"><span class="lineNum">     172</span>              :    * @return Matching lines, at most kMaxMatchesPerEntry and then a marker</span>
+<span id="L173"><span class="lineNum">     173</span>              :    *         (isMoreMarker()) when there are more; empty when gpg fails, is</span>
+<span id="L174"><span class="lineNum">     174</span>              :    *         cancelled or nothing matches. A match in the first line is</span>
+<span id="L175"><span class="lineNum">     175</span>              :    *         marked (isPasswordMatch()), one in a line holding a one-time</span>
+<span id="L176"><span class="lineNum">     176</span>              :    *         password secret is only a marker (isOtpMarker()), and a cut</span>
+<span id="L177"><span class="lineNum">     177</span>              :    *         `name: value` line keeps its whole name, or shows none of its</span>
+<span id="L178"><span class="lineNum">     178</span>              :    *         value when the name is too long to keep.</span>
+<span id="L179"><span class="lineNum">     179</span>              :    */</span>
+<span id="L180"><span class="lineNum">     180</span>              :   static auto matchFile(const QProcessEnvironment &amp;env, const QString &amp;gpgExe,</span>
+<span id="L181"><span class="lineNum">     181</span>              :                         const QString &amp;filePath, const QRegularExpression &amp;rx,</span>
+<span id="L182"><span class="lineNum">     182</span>              :                         const std::atomic_bool *cancel = nullptr,</span>
+<span id="L183"><span class="lineNum">     183</span>              :                         const QString &amp;storeDir = QString()) -&gt; QStringList;</span>
+<span id="L184"><span class="lineNum">     184</span>              :   /**</span>
+<span id="L185"><span class="lineNum">     185</span>              :    * @brief Walk @p storeDir, decrypt every .gpg file and collect the matches.</span>
+<span id="L186"><span class="lineNum">     186</span>              :    * @param env Environment for gpg.</span>
+<span id="L187"><span class="lineNum">     187</span>              :    * @param gpgExe The gpg executable.</span>
+<span id="L188"><span class="lineNum">     188</span>              :    * @param storeDir The store.</span>
+<span id="L189"><span class="lineNum">     189</span>              :    * @param rx The pattern.</span>
+<span id="L190"><span class="lineNum">     190</span>              :    * @param cancel Stops the walk and the running gpg when set; nullptr to</span>
+<span id="L191"><span class="lineNum">     191</span>              :    *        rely on QThread::isInterruptionRequested() alone.</span>
+<span id="L192"><span class="lineNum">     192</span>              :    * @return (entry name without .gpg, matching lines) per file with matches,</span>
+<span id="L193"><span class="lineNum">     193</span>              :    *         at most kMaxMatches lines in all, an entry cut short ending in a</span>
+<span id="L194"><span class="lineNum">     194</span>              :    *         marker (isMoreMarker()); when the walk stopped at that budget</span>
+<span id="L195"><span class="lineNum">     195</span>              :    *         with entries left, a last result that is a marker</span>
+<span id="L196"><span class="lineNum">     196</span>              :    *         (isStoppedMarker()). Empty when the search is stopped.</span>
+<span id="L197"><span class="lineNum">     197</span>              :    */</span>
+<span id="L198"><span class="lineNum">     198</span>              :   static auto scanStore(const QProcessEnvironment &amp;env, const QString &amp;gpgExe,</span>
+<span id="L199"><span class="lineNum">     199</span>              :                         const QString &amp;storeDir, const QRegularExpression &amp;rx,</span>
+<span id="L200"><span class="lineNum">     200</span>              :                         const std::atomic_bool *cancel = nullptr)</span>
+<span id="L201"><span class="lineNum">     201</span>              :       -&gt; QList&lt;QPair&lt;QString, QStringList&gt;&gt;;</span>
+<span id="L202"><span class="lineNum">     202</span>              : </span>
+<span id="L203"><span class="lineNum">     203</span>              : signals:</span>
+<span id="L204"><span class="lineNum">     204</span>              :   /**</span>
+<span id="L205"><span class="lineNum">     205</span>              :    * @brief The newest search is over.</span>
+<span id="L206"><span class="lineNum">     206</span>              :    * @param results (entry, matching lines) pairs.</span>
+<span id="L207"><span class="lineNum">     207</span>              :    */</span>
+<span id="L208"><span class="lineNum">     208</span>              :   void finished(const QList&lt;QPair&lt;QString, QStringList&gt;&gt; &amp;results);</span>
+<span id="L209"><span class="lineNum">     209</span>              : </span>
+<span id="L210"><span class="lineNum">     210</span>              : private:</span>
+<span id="L211"><span class="lineNum">     211</span>              :   /// A running search: its thread and the flag its gpg runs poll. The flag</span>
+<span id="L212"><span class="lineNum">     212</span>              :   /// is shared with the thread's lambda so it outlives this object if a</span>
+<span id="L213"><span class="lineNum">     213</span>              :   /// search is still winding down when it is destroyed.</span>
+<span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">          60 :   struct Worker {</span></span>
+<span id="L215"><span class="lineNum">     215</span>              :     /** @brief The thread the search runs on. */</span>
+<span id="L216"><span class="lineNum">     216</span>              :     QThread *thread;</span>
+<span id="L217"><span class="lineNum">     217</span>              :     /** @brief Set to ask the search to stop; polled by its gpg runs. */</span>
+<span id="L218"><span class="lineNum">     218</span>              :     std::shared_ptr&lt;std::atomic_bool&gt; cancel;</span>
+<span id="L219"><span class="lineNum">     219</span>              :   };</span>
+<span id="L220"><span class="lineNum">     220</span>              :   /**</span>
+<span id="L221"><span class="lineNum">     221</span>              :    * @brief Number of the newest search. A worker reports through finished()</span>
+<span id="L222"><span class="lineNum">     222</span>              :    * only when its own number still equals this.</span>
+<span id="L223"><span class="lineNum">     223</span>              :    */</span>
+<span id="L224"><span class="lineNum">     224</span>              :   int m_seq = 0;</span>
+<span id="L225"><span class="lineNum">     225</span>              :   /** @brief Searches still running, superseded ones included. */</span>
+<span id="L226"><span class="lineNum">     226</span>              :   QList&lt;Worker&gt; m_workers;</span>
+<span id="L227"><span class="lineNum">     227</span>              : };</span>
+<span id="L228"><span class="lineNum">     228</span>              : </span>
+<span id="L229"><span class="lineNum">     229</span>              : #endif // SRC_NATIVEGREP_H_</span>
         </pre>
               </td>
             </tr>

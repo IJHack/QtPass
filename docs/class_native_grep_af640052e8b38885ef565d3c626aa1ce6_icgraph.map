@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2524,169,2483,109,2454,76,2420,48,2397,36,2398,31,2423,44,2458,72,2487,106,2529,172"/>
 <area shape="rect" id="Node000003" href="$class_real_pass.html#ae0ccd39e17991ddfc3029dde0be8f8ee" title="Stop the running search (NativeGrep::cancel())." alt="" coords="2244,57,2407,85"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="2513,173,2472,140,2420,106,2380,88,2381,83,2423,101,2475,135,2518,174"/>
-<area shape="rect" id="Node000004" href="$class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="2242,209,2409,237"/>
+<area shape="rect" id="Node000004" href="$class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="2242,209,2409,237"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="2457,208,2410,216,2409,211,2451,208"/>
 <area shape="rect" id="Node000005" href="$class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches." alt="" coords="2014,159,2181,186"/>
 <area shape="poly" id="edge30_Node000001_Node000005" title=" " alt="" coords="2451,193,2182,180,2182,175,2456,193"/>

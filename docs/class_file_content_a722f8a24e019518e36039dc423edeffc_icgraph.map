@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="4441,468,4605,495"/>
 <area shape="rect" id="Node000002" href="$filecontent_8cpp.html#a675927185d9a8c3fb4d0310af8c2198a" title="Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (File..." alt="" coords="4257,441,4362,468"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="4423,469,4362,464,4363,459,4428,469"/>
-<area shape="rect" id="Node000029" href="$class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="4226,493,4393,520"/>
+<area shape="rect" id="Node000029" href="$class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="4226,493,4393,520"/>
 <area shape="poly" id="edge54_Node000001_Node000029" title=" " alt="" coords="4428,493,4394,499,4393,494,4423,493"/>
 <area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="4344,425,4333,422,4309,419,4287,421,4275,426,4272,432,4277,441,4272,439,4267,432,4271,422,4286,416,4309,414,4335,417,4350,426"/>
 <area shape="rect" id="Node000003" href="$class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="4024,441,4164,468"/>

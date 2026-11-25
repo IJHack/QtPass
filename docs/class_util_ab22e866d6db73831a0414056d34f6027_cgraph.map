@@ -1,0 +1,7 @@
+<map id="Util::readRegularFileUnder" name="Util::readRegularFileUnder">
+<area shape="rect" id="Node000001" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="5,5,199,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="247,5,401,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,17,233,19,228,19,199,22"/>
+<area shape="rect" id="Node000003" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="449,5,606,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="401,17,436,19,431,19,401,22"/>
+</map>

@@ -130,7 +130,7 @@
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68" target="_top" xlink:title="Decrypt one .gpg file and return its trimmed lines matching rx.">
+<g id="a_Node000011"><a xlink:href="class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641" target="_top" xlink:title="Decrypt one .gpg file and return its trimmed lines matching rx.">
 <polygon fill="white" stroke="#666666" points="2973,-483.38 2847.5,-483.38 2847.5,-462.62 2973,-462.62 2973,-483.38"/>
 <text xml:space="preserve" text-anchor="middle" x="2910.25" y="-469.88" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::matchFile</text>
 </a>

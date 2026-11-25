@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 00:51:00</td>
+            <td class="headerValue">2026-11-25 09:23:42</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -187,34 +187,34 @@
 <span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">          51 :                                 QRegularExpression::DotMatchesEverythingOption);</span></span>
 <span id="L115"><span class="lineNum">     115</span>              : }</span>
 <span id="L116"><span class="lineNum">     116</span>              : </span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">        2842 : auto StoreModel::isLinkInStore(const QModelIndex &amp;proxyIndex) const -&gt; bool {</span></span>
-<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">        2842 :   if (fs == nullptr || !proxyIndex.isValid()) {</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">        2781 : auto StoreModel::isLinkInStore(const QModelIndex &amp;proxyIndex) const -&gt; bool {</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">        2781 :   if (fs == nullptr || !proxyIndex.isValid()) {</span></span>
 <span id="L119"><span class="lineNum">     119</span>              :     return false;</span>
 <span id="L120"><span class="lineNum">     120</span>              :   }</span>
 <span id="L121"><span class="lineNum">     121</span>              :   // The same path showThis() lists the row by, or a link it lists would</span>
 <span id="L122"><span class="lineNum">     122</span>              :   // still get an expand arrow on Windows.</span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">        2354 :   const QString filePath = pathOf(mapToSource(proxyIndex));</span></span>
-<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">        2354 :   const QString path = QDir(store).relativeFilePath(filePath);</span></span>
-<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">        3493 :   if (path == QLatin1String(&quot;.&quot;) || path == QLatin1String(&quot;..&quot;) ||</span></span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">        4626 :       path.startsWith(QLatin1String(&quot;../&quot;)) || QDir::isAbsolutePath(path)) {</span></span>
-<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">        1221 :     return false;</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">        2293 :   const QString filePath = pathOf(mapToSource(proxyIndex));</span></span>
+<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">        2293 :   const QString path = QDir(store).relativeFilePath(filePath);</span></span>
+<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">        3387 :   if (path == QLatin1String(&quot;.&quot;) || path == QLatin1String(&quot;..&quot;) ||</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">        4475 :       path.startsWith(QLatin1String(&quot;../&quot;)) || QDir::isAbsolutePath(path)) {</span></span>
+<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">        1205 :     return false;</span></span>
 <span id="L128"><span class="lineNum">     128</span>              :   }</span>
-<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">        1133 :   return Util::isLinkedFolder(filePath);</span></span>
+<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">        1088 :   return Util::isLinkedFolder(filePath);</span></span>
 <span id="L130"><span class="lineNum">     130</span>              : }</span>
 <span id="L131"><span class="lineNum">     131</span>              : </span>
-<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">       17155 : auto StoreModel::pathOf(const QModelIndex &amp;sourceIndex) const -&gt; QString {</span></span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">       17094 : auto StoreModel::pathOf(const QModelIndex &amp;sourceIndex) const -&gt; QString {</span></span>
 <span id="L133"><span class="lineNum">     133</span>              :   // filePath() only for a node that has no file information yet.</span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">       17155 :   const QFileInfo info = fs-&gt;fileInfo(sourceIndex);</span></span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">       17155 :   return info.filePath().isEmpty() ? fs-&gt;filePath(sourceIndex)</span></span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">       34310 :                                    : info.absoluteFilePath();</span></span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">       17155 : }</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">       17094 :   const QFileInfo info = fs-&gt;fileInfo(sourceIndex);</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">       17094 :   return info.filePath().isEmpty() ? fs-&gt;filePath(sourceIndex)</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">       34188 :                                    : info.absoluteFilePath();</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">       17094 : }</span></span>
 <span id="L138"><span class="lineNum">     138</span>              : </span>
-<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">        2061 : auto StoreModel::hasChildren(const QModelIndex &amp;parent) const -&gt; bool {</span></span>
-<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">        2061 :   return !isLinkInStore(parent) &amp;&amp; QSortFilterProxyModel::hasChildren(parent);</span></span>
+<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">        2008 : auto StoreModel::hasChildren(const QModelIndex &amp;parent) const -&gt; bool {</span></span>
+<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">        2008 :   return !isLinkInStore(parent) &amp;&amp; QSortFilterProxyModel::hasChildren(parent);</span></span>
 <span id="L141"><span class="lineNum">     141</span>              : }</span>
 <span id="L142"><span class="lineNum">     142</span>              : </span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">         712 : auto StoreModel::canFetchMore(const QModelIndex &amp;parent) const -&gt; bool {</span></span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">         712 :   return !isLinkInStore(parent) &amp;&amp; QSortFilterProxyModel::canFetchMore(parent);</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">         704 : auto StoreModel::canFetchMore(const QModelIndex &amp;parent) const -&gt; bool {</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">         704 :   return !isLinkInStore(parent) &amp;&amp; QSortFilterProxyModel::canFetchMore(parent);</span></span>
 <span id="L145"><span class="lineNum">     145</span>              : }</span>
 <span id="L146"><span class="lineNum">     146</span>              : </span>
 <span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">          69 : void StoreModel::fetchMore(const QModelIndex &amp;parent) {</span></span>
@@ -249,22 +249,22 @@
 <span id="L176"><span class="lineNum">     176</span>              : #endif</span>
 <span id="L177"><span class="lineNum">     177</span> <span class="tlaGNC">          14 : }</span></span>
 <span id="L178"><span class="lineNum">     178</span>              : </span>
-<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">       39503 : auto StoreModel::data(const QModelIndex &amp;index, int role) const -&gt; QVariant {</span></span>
+<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">       39407 : auto StoreModel::data(const QModelIndex &amp;index, int role) const -&gt; QVariant {</span></span>
 <span id="L180"><span class="lineNum">     180</span>              :   if (!index.isValid()) {</span>
 <span id="L181"><span class="lineNum">     181</span>              :     return {};</span>
 <span id="L182"><span class="lineNum">     182</span>              :   }</span>
 <span id="L183"><span class="lineNum">     183</span>              : </span>
 <span id="L184"><span class="lineNum">     184</span>              :   QVariant initial_value;</span>
-<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">       39502 :   initial_value = QSortFilterProxyModel::data(index, role);</span></span>
+<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">       39406 :   initial_value = QSortFilterProxyModel::data(index, role);</span></span>
 <span id="L186"><span class="lineNum">     186</span>              : </span>
-<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">       39502 :   if (role == Qt::DisplayRole) {</span></span>
-<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">        5207 :     QString name = initial_value.toString();</span></span>
-<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">        5207 :     name.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
-<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">        5207 :     initial_value.setValue(name);</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">       39406 :   if (role == Qt::DisplayRole) {</span></span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">        5195 :     QString name = initial_value.toString();</span></span>
+<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">        5195 :     name.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
+<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">        5195 :     initial_value.setValue(name);</span></span>
 <span id="L191"><span class="lineNum">     191</span>              :   }</span>
 <span id="L192"><span class="lineNum">     192</span>              : </span>
 <span id="L193"><span class="lineNum">     193</span>              :   return initial_value;</span>
-<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">       39502 : }</span></span>
+<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">       39406 : }</span></span>
 <span id="L195"><span class="lineNum">     195</span>              : </span>
 <span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">           1 : auto StoreModel::supportedDropActions() const -&gt; Qt::DropActions {</span></span>
 <span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">           1 :   return Qt::CopyAction | Qt::MoveAction;</span></span>
@@ -274,8 +274,8 @@
 <span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">           1 :   return Qt::CopyAction | Qt::MoveAction;</span></span>
 <span id="L202"><span class="lineNum">     202</span>              : }</span>
 <span id="L203"><span class="lineNum">     203</span>              : </span>
-<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">       16085 : auto StoreModel::flags(const QModelIndex &amp;index) const -&gt; Qt::ItemFlags {</span></span>
-<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">       16085 :   Qt::ItemFlags defaultFlags = QSortFilterProxyModel::flags(index);</span></span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">       15683 : auto StoreModel::flags(const QModelIndex &amp;index) const -&gt; Qt::ItemFlags {</span></span>
+<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">       15683 :   Qt::ItemFlags defaultFlags = QSortFilterProxyModel::flags(index);</span></span>
 <span id="L206"><span class="lineNum">     206</span>              : </span>
 <span id="L207"><span class="lineNum">     207</span>              :   if (index.isValid()) {</span>
 <span id="L208"><span class="lineNum">     208</span>              :     return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | defaultFlags;</span>

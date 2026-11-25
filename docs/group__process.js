@@ -23,6 +23,7 @@ var group__process =
       [ "cancelNext", "class_executor.html#aee160ee2ec954bdb58a3a38555536090", null ],
       [ "childUmask", "class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b", null ],
       [ "collectOutput", "class_executor.html#a676362a1d54d7bce3bced4abd3e65944", null ],
+      [ "decodeText", "class_executor.html#ad6d464c18982af003c0c330458860578", null ],
       [ "dequeuing", "class_executor.html#a22b5633f6b06f7f15be77370b5bd2871", null ],
       [ "detachFromTerminal", "class_executor.html#ae6200004e4ffabc8eb35b63f419ef492", null ],
       [ "drained", "class_executor.html#a987e7227ac1932bbb59cea5cbc82d483", null ],

@@ -170,8 +170,8 @@ this entry" rather than a match.  <br /></td></tr>
 <tr class="memitem:aa2bfb9a0d2fcdf94150d325e58e988d7" id="r_aa2bfb9a0d2fcdf94150d325e58e988d7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2bfb9a0d2fcdf94150d325e58e988d7">isStoppedMarker</a> (const QPair&lt; QString, QStringList &gt; &amp;result) -&gt; bool</td></tr>
 <tr class="memdesc:aa2bfb9a0d2fcdf94150d325e58e988d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a result is the marker for "the search stopped at
 kMaxMatches, more entries were not searched".  <br /></td></tr>
-<tr class="memitem:a99b72a4ac50c6c01b24f8376e30a7a68" id="r_a99b72a4ac50c6c01b24f8376e30a7a68"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a99b72a4ac50c6c01b24f8376e30a7a68">matchFile</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</td></tr>
-<tr class="memdesc:a99b72a4ac50c6c01b24f8376e30a7a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt one .gpg file and return its trimmed lines matching <code class="param">rx</code>.  <br /></td></tr>
+<tr class="memitem:aebc3ffea28a2a5a324a90562c1043641" id="r_aebc3ffea28a2a5a324a90562c1043641"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aebc3ffea28a2a5a324a90562c1043641">matchFile</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr, const QString &amp;storeDir=QString()) -&gt; QStringList</td></tr>
+<tr class="memdesc:aebc3ffea28a2a5a324a90562c1043641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt one .gpg file and return its trimmed lines matching <code class="param">rx</code>.  <br /></td></tr>
 <tr class="memitem:a9c2523a0d1d82bc0201c6730bfa13a10" id="r_a9c2523a0d1d82bc0201c6730bfa13a10"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c2523a0d1d82bc0201c6730bfa13a10">scanStore</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td></tr>
 <tr class="memdesc:a9c2523a0d1d82bc0201c6730bfa13a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Walk <code class="param">storeDir</code>, decrypt every .gpg file and collect the matches.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -284,7 +284,7 @@ Private Attributes</h2></td></tr>
 
 <p>Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that is decrypting is terminated by its own worker thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00263">263</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00284">284</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -358,7 +358,7 @@ Private Attributes</h2></td></tr>
 
 <p>Whether a line in a result is the marker for "more matches in
 this entry" rather than a match. </p>
-<p>A match is a trimmed, non-empty line, so an empty one can only be the marker, which <a class="el" href="#a99b72a4ac50c6c01b24f8376e30a7a68" title="Decrypt one .gpg file and return its trimmed lines matching rx.">matchFile()</a> and <a class="el" href="#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches.">scanStore()</a> put last. Not a match: not counted, not content to hide. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>A match is a trimmed, non-empty line, so an empty one can only be the marker, which <a class="el" href="#aebc3ffea28a2a5a324a90562c1043641" title="Decrypt one .gpg file and return its trimmed lines matching rx.">matchFile()</a> and <a class="el" href="#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches.">scanStore()</a> put last. Not a match: not counted, not content to hide. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>A line of a result. </td></tr>
   </table>
@@ -503,8 +503,8 @@ kMaxMatches, more entries were not searched". </p>
 
 </div>
 </div>
-<a id="a99b72a4ac50c6c01b24f8376e30a7a68" name="a99b72a4ac50c6c01b24f8376e30a7a68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99b72a4ac50c6c01b24f8376e30a7a68">&#9670;&#160;</a></span>matchFile()</h2>
+<a id="aebc3ffea28a2a5a324a90562c1043641" name="aebc3ffea28a2a5a324a90562c1043641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc3ffea28a2a5a324a90562c1043641">&#9670;&#160;</a></span>matchFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -535,7 +535,12 @@ kMaxMatches, more entries were not searched". </p>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; QStringList</td>
+          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeDir</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt; QStringList</td>
         </tr>
       </table>
   </td>
@@ -554,6 +559,7 @@ kMaxMatches, more entries were not searched". </p>
     <tr><td class="paramname">filePath</td><td>The encrypted file. </td></tr>
     <tr><td class="paramname">rx</td><td>The pattern. </td></tr>
     <tr><td class="paramname">cancel</td><td>When set, gpg is not started, or is terminated while it runs; nullptr to run to completion. </td></tr>
+    <tr><td class="paramname">storeDir</td><td>The store <code class="param">filePath</code> is in; when given, the entry is read with <a class="el" href="class_util.html#ab22e866d6db73831a0414056d34f6027" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it.">Util::readRegularFileUnder()</a>, so no folder on the way down from it is followed as a link either. The file itself is always read without following a link and handed to gpg on stdin. </td></tr>
   </table>
   </dd>
 </dl>
@@ -564,13 +570,13 @@ kMaxMatches, more entries were not searched". </p>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
 <div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a99b72a4ac50c6c01b24f8376e30a7a68_cgraph.svg" width="100%" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_aebc3ffea28a2a5a324a90562c1043641_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
 <div id="dynsection-10-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a99b72a4ac50c6c01b24f8376e30a7a68_icgraph.svg" width="100%" height="569"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_aebc3ffea28a2a5a324a90562c1043641_icgraph.svg" width="100%" height="569"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -673,12 +679,12 @@ kMaxMatches, more entries were not searched". </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>(entry name without .gpg, matching lines) per file with matches, at most kMaxMatches lines in all, an entry cut short ending in a marker (<a class="el" href="#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">isMoreMarker()</a>); when the walk stopped at that budget with entries left, a last result that is a marker (<a class="el" href="#aa2bfb9a0d2fcdf94150d325e58e988d7" title="Whether a result is the marker for &quot;the search stopped atkMaxMatches, more entries were not searched&quot;...">isStoppedMarker()</a>). Empty when the search is stopped. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00140">140</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00160">160</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
 <div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary">
 </div>
 <div id="dynsection-12-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a9c2523a0d1d82bc0201c6730bfa13a10_cgraph.svg" width="100%" height="596"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a9c2523a0d1d82bc0201c6730bfa13a10_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
@@ -737,7 +743,7 @@ kMaxMatches, more entries were not searched". </p>
 </dl>
 <p>Results are emitted on the owner's thread via QMetaObject::invokeMethod. A sequence counter discards results from superseded searches; the previous search is asked to stop but not waited for, since blocking the UI thread while gpg decrypts would freeze the interface. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00193">193</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00214">214</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
@@ -857,7 +863,7 @@ kMaxMatches, more entries were not searched". </p>
 
 <p>Number of the newest search. A worker reports through <a class="el" href="#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over.">finished()</a> only when its own number still equals this. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00220">220</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00224">224</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>
@@ -883,7 +889,7 @@ kMaxMatches, more entries were not searched". </p>
 
 <p>Searches still running, superseded ones included. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00222">222</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00226">226</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>

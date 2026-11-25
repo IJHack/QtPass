@@ -1,53 +1,51 @@
 <map id="Executor::executeBlocking" name="Executor::executeBlocking">
-<area shape="rect" id="Node000001" title="Run a command synchronously and return its exit code." alt="" coords="4073,2527,4266,2555"/>
+<area shape="rect" id="Node000001" title="Run a command synchronously and return its exit code." alt="" coords="4073,2420,4266,2448"/>
 <area shape="rect" id="Node000002" href="$class_real_pass.html#a2a8695bd55e77964fea9f1d41b62a7e6" title="git check&#45;ignore &#45;&#45;stdin &#45;z on paths through pass git." alt="" coords="3558,22,3724,49"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="4165,2510,4153,2029,4125,1225,4105,813,4082,454,4068,308,4054,192,4039,112,4031,87,4023,73,3989,46,3949,26,3906,15,3861,9,3816,8,3773,12,3699,23,3696,19,3772,6,3816,3,3861,4,3907,9,3951,21,3992,41,4027,70,4036,85,4044,110,4059,191,4074,307,4087,453,4111,812,4130,1224,4158,2029,4170,2513"/>
-<area shape="rect" id="Node000007" href="$class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc" title="Verify that the required configuration is complete." alt="" coords="1928,2451,2062,2479"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="4119,2521,4075,2506,4025,2493,3919,2474,3835,2467,3642,2467,2538,2467,2063,2467,2062,2462,2538,2462,3642,2462,3835,2462,3919,2469,4026,2488,4077,2501,4125,2521"/>
-<area shape="rect" id="Node000014" href="$class_imitate_pass.html#a24c6c475f51730a9e784ce3117e49ee0" title="Executor::executeBlocking() for the re&#45;encryption helpers." alt="" coords="3821,867,4012,895"/>
-<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="4162,2510,4108,2129,4023,1551,3919,897,3922,893,4028,1550,4113,2128,4166,2513"/>
-<area shape="rect" id="Node000049" href="$class_executor.html#a9c01e6e31745874177b21982ce2cd4d1" title="Run a command synchronously capturing stdout and stderr." alt="" coords="3820,2654,4013,2681"/>
-<area shape="poly" id="edge73_Node000001_Node000049" title=" " alt="" coords="4141,2563,4088,2603,4026,2638,3978,2656,3977,2650,4024,2633,4086,2598,4136,2565"/>
-<area shape="rect" id="Node000050" href="$class_main_window.html#aa967da10448f6f65b2d573f5063f5b1e" title="Share menu &quot;Export my public key&quot;: run gpg &#45;&#45;armor &#45;&#45;export for the configured signing key and show t..." alt="" coords="3808,2502,4025,2529"/>
-<area shape="poly" id="edge74_Node000001_Node000050" title=" " alt="" coords="4055,2530,4026,2529,4026,2524,4060,2529"/>
-<area shape="rect" id="Node000052" href="$class_util.html#aee9122a528c60168a0c105bfbed062d5" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="2191,2664,2349,2692"/>
-<area shape="poly" id="edge77_Node000001_Node000052" title=" " alt="" coords="4055,2550,3864,2563,3642,2569,2808,2569,2736,2572,2663,2580,2523,2606,2401,2638,2313,2666,2311,2661,2399,2633,2522,2601,2663,2574,2735,2566,2807,2563,3642,2563,3864,2558,4060,2549"/>
-<area shape="rect" id="Node000059" href="$class_real_pass.html#a014fcc263c7f47c2ee0163d84b7a3dd7" title="Judge a queued linked&#45;folder removal commit by what is left staged in the store it ran in: pass git e..." alt="" coords="3816,547,4017,575"/>
-<area shape="poly" id="edge87_Node000001_Node000059" title=" " alt="" coords="4166,2510,4165,2275,4160,2088,4149,1868,4132,1625,4106,1369,4071,1109,4023,856,3999,771,3971,690,3924,578,3926,573,3976,688,4005,770,4028,855,4076,1108,4112,1368,4137,1624,4155,1868,4165,2088,4170,2275,4171,2513"/>
-<area shape="rect" id="Node000061" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script." alt="" coords="3828,2706,4005,2733"/>
-<area shape="poly" id="edge89_Node000001_Node000061" title=" " alt="" coords="4153,2566,4101,2633,4066,2667,4027,2695,3999,2708,3997,2702,4024,2690,4063,2662,4097,2629,4148,2569"/>
-<area shape="rect" id="Node000064" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="3828,2256,4005,2284"/>
-<area shape="poly" id="edge92_Node000001_Node000064" title=" " alt="" coords="4142,2515,3930,2287,3932,2282,4148,2516"/>
-<area shape="rect" id="Node000084" href="$class_profile_init.html#aad9f0e985b23f16b59893e4c9e7a6c13" title="Whether git has a name and e&#45;mail to commit with, i.e. user.name and user.email resolve (globally or ..." alt="" coords="3838,2757,3996,2802"/>
-<area shape="poly" id="edge134_Node000001_Node000084" title=" " alt="" coords="4158,2567,4138,2609,4109,2657,4072,2705,4027,2747,3997,2763,3995,2758,4024,2743,4068,2702,4105,2654,4133,2607,4154,2570"/>
-<area shape="rect" id="Node000086" href="$class_imitate_pass.html#ad7676bac39423557c1921497f36897e6" title="Run git pull in the store and wait for it, at most timeoutMs." alt="" coords="3835,2826,3998,2853"/>
-<area shape="poly" id="edge136_Node000001_Node000086" title=" " alt="" coords="4164,2568,4148,2623,4121,2690,4081,2758,4056,2789,4027,2816,4000,2831,3998,2826,4024,2812,4052,2786,4077,2755,4117,2688,4143,2622,4160,2571"/>
-<area shape="rect" id="Node000087" href="$class_real_pass.html#ad218ae042cc6d3322ecf10b4b6c45e6d" title="Run pass git pull and wait for it, at most timeoutMs." alt="" coords="3844,2878,3989,2905"/>
-<area shape="poly" id="edge137_Node000001_Node000087" title=" " alt="" coords="4166,2568,4154,2632,4128,2713,4110,2755,4087,2796,4060,2834,4027,2867,4010,2878,3991,2886,3989,2881,4007,2873,4024,2863,4056,2830,4083,2793,4105,2752,4123,2711,4148,2631,4162,2572"/>
-<area shape="rect" id="Node000088" href="$class_gpg_id_signer.html#a4861ba0784a1a7644ca697e3a72cd5b5" title="Create a signer." alt="" coords="3823,2930,4010,2957"/>
-<area shape="poly" id="edge138_Node000001_Node000088" title=" " alt="" coords="4168,2568,4159,2641,4135,2735,4117,2785,4093,2834,4064,2879,4027,2919,4007,2932,4006,2927,4024,2915,4059,2876,4089,2832,4112,2783,4130,2734,4153,2640,4164,2572"/>
-<area shape="rect" id="Node000089" href="$class_pass.html#a57cc7915c4d3f4a795b0ec8ad4056482" title="Check if GPG supports Ed25519 encryption." alt="" coords="3819,2982,4014,3009"/>
-<area shape="poly" id="edge139_Node000001_Node000089" title=" " alt="" coords="4169,2568,4163,2650,4155,2702,4142,2758,4124,2816,4100,2872,4068,2925,4027,2971,4008,2984,4006,2979,4024,2967,4063,2922,4095,2870,4119,2814,4137,2757,4150,2701,4158,2650,4166,2572"/>
-<area shape="rect" id="Node000092" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="3311,1691,3420,1719"/>
-<area shape="poly" id="edge143_Node000001_Node000092" title=" " alt="" coords="4157,2511,4137,2460,4108,2391,4070,2317,4023,2246,3942,2153,3853,2065,3759,1983,3666,1909,3500,1791,3391,1722,3391,1716,3503,1787,3669,1905,3763,1979,3856,2061,3946,2149,4027,2243,4075,2314,4113,2389,4142,2458,4161,2514"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="4165,2403,4152,1940,4123,1171,4103,778,4080,436,4067,297,4053,186,4038,110,4031,86,4023,73,3989,46,3949,26,3906,15,3861,9,3816,8,3773,11,3699,23,3697,18,3772,6,3816,3,3862,4,3907,9,3951,21,3992,41,4027,70,4036,84,4043,109,4058,186,4072,296,4085,435,4109,778,4129,1171,4157,1940,4170,2406"/>
+<area shape="rect" id="Node000007" href="$class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc" title="Verify that the required configuration is complete." alt="" coords="1928,2138,2062,2165"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="4149,2406,4098,2338,4063,2298,4024,2263,3928,2185,3887,2153,3848,2127,3806,2106,3760,2090,3707,2081,3642,2078,3364,2078,3173,2080,2977,2086,2600,2106,2279,2129,2063,2148,2062,2142,2279,2124,2600,2101,2977,2081,3172,2075,3364,2073,3642,2073,3707,2076,3762,2085,3808,2101,3850,2122,3890,2149,3931,2180,4027,2259,4066,2295,4102,2334,4154,2408"/>
+<area shape="rect" id="Node000014" href="$class_imitate_pass.html#a24c6c475f51730a9e784ce3117e49ee0" title="Executor::executeBlocking() for the re&#45;encryption helpers." alt="" coords="3821,979,4012,1007"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="4162,2403,4109,2053,4023,1528,3962,1213,3920,1009,3922,1005,3967,1212,4028,1527,4114,2052,4166,2406"/>
+<area shape="rect" id="Node000049" href="$class_executor.html#a9c01e6e31745874177b21982ce2cd4d1" title="Run a command synchronously capturing stdout and stderr." alt="" coords="3820,2523,4013,2551"/>
+<area shape="poly" id="edge73_Node000001_Node000049" title=" " alt="" coords="4135,2455,4084,2486,4026,2513,3988,2525,3986,2520,4024,2508,4081,2482,4130,2457"/>
+<area shape="rect" id="Node000050" href="$class_main_window.html#aa967da10448f6f65b2d573f5063f5b1e" title="Share menu &quot;Export my public key&quot;: run gpg &#45;&#45;armor &#45;&#45;export for the configured signing key and show t..." alt="" coords="3808,2319,4025,2347"/>
+<area shape="poly" id="edge74_Node000001_Node000050" title=" " alt="" coords="4126,2412,4024,2367,3972,2350,3973,2344,4026,2362,4131,2413"/>
+<area shape="rect" id="Node000052" href="$class_util.html#aee9122a528c60168a0c105bfbed062d5" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="2191,2494,2349,2521"/>
+<area shape="poly" id="edge77_Node000001_Node000052" title=" " alt="" coords="4055,2440,3456,2469,2646,2501,2350,2508,2350,2503,2646,2495,3456,2464,4060,2439"/>
+<area shape="rect" id="Node000059" href="$class_real_pass.html#a014fcc263c7f47c2ee0163d84b7a3dd7" title="Judge a queued linked&#45;folder removal commit by what is left staged in the store it ran in: pass git e..." alt="" coords="3540,366,3742,393"/>
+<area shape="poly" id="edge87_Node000001_Node000059" title=" " alt="" coords="4165,2403,4151,2144,4123,1724,4104,1499,4081,1286,4054,1103,4039,1029,4023,968,3972,822,3947,764,3920,712,3853,611,3758,488,3707,435,3661,396,3662,391,3711,431,3762,484,3857,608,3925,710,3952,762,3977,820,4028,967,4044,1028,4059,1103,4086,1286,4109,1498,4129,1724,4156,2143,4169,2406"/>
+<area shape="rect" id="Node000061" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script." alt="" coords="3828,2575,4005,2603"/>
+<area shape="poly" id="edge89_Node000001_Node000061" title=" " alt="" coords="4149,2459,4097,2514,4063,2541,4027,2564,3996,2577,3995,2572,4024,2560,4060,2537,4093,2510,4144,2461"/>
+<area shape="rect" id="Node000064" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="3828,1950,4005,1977"/>
+<area shape="poly" id="edge92_Node000001_Node000064" title=" " alt="" coords="4160,2404,4144,2340,4116,2250,4076,2152,4051,2103,4023,2058,4004,2034,3981,2013,3940,1980,3941,1975,3985,2009,4008,2031,4028,2055,4056,2101,4081,2149,4121,2249,4149,2338,4165,2407"/>
+<area shape="rect" id="Node000084" href="$class_profile_init.html#aad9f0e985b23f16b59893e4c9e7a6c13" title="Whether git has a name and e&#45;mail to commit with, i.e. user.name and user.email resolve (globally or ..." alt="" coords="3838,2626,3996,2671"/>
+<area shape="poly" id="edge134_Node000001_Node000084" title=" " alt="" coords="4156,2460,4105,2539,4069,2580,4027,2616,3997,2632,3995,2627,4024,2612,4065,2577,4101,2536,4151,2463"/>
+<area shape="rect" id="Node000086" href="$class_imitate_pass.html#ad7676bac39423557c1921497f36897e6" title="Run git pull in the store and wait for it, at most timeoutMs." alt="" coords="3835,2695,3998,2723"/>
+<area shape="poly" id="edge136_Node000001_Node000086" title=" " alt="" coords="4162,2461,4145,2512,4118,2572,4079,2634,4054,2661,4027,2686,3999,2700,3998,2695,4024,2681,4051,2658,4074,2630,4113,2570,4141,2510,4158,2464"/>
+<area shape="rect" id="Node000087" href="$class_real_pass.html#ad218ae042cc6d3322ecf10b4b6c45e6d" title="Run pass git pull and wait for it, at most timeoutMs." alt="" coords="3844,2747,3989,2775"/>
+<area shape="poly" id="edge137_Node000001_Node000087" title=" " alt="" coords="4165,2461,4151,2521,4125,2595,4107,2634,4084,2671,4058,2706,4027,2736,4010,2747,3990,2755,3989,2750,4007,2742,4024,2732,4054,2702,4080,2668,4102,2631,4120,2593,4146,2520,4161,2465"/>
+<area shape="rect" id="Node000088" href="$class_gpg_id_signer.html#a4861ba0784a1a7644ca697e3a72cd5b5" title="Create a signer." alt="" coords="3823,2799,4010,2827"/>
+<area shape="poly" id="edge138_Node000001_Node000088" title=" " alt="" coords="4167,2462,4156,2531,4132,2618,4114,2665,4091,2710,4062,2752,4027,2788,4007,2801,4006,2796,4024,2784,4058,2748,4086,2707,4109,2662,4127,2617,4151,2530,4163,2465"/>
+<area shape="rect" id="Node000089" href="$class_pass.html#a57cc7915c4d3f4a795b0ec8ad4056482" title="Check if GPG supports Ed25519 encryption." alt="" coords="3819,2851,4014,2879"/>
+<area shape="poly" id="edge139_Node000001_Node000089" title=" " alt="" coords="4169,2462,4161,2540,4139,2641,4121,2695,4097,2748,4066,2797,4027,2840,4008,2853,4006,2848,4024,2836,4062,2794,4092,2745,4116,2693,4134,2640,4156,2539,4165,2465"/>
+<area shape="rect" id="Node000092" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="3311,2243,3420,2271"/>
+<area shape="poly" id="edge143_Node000001_Node000092" title=" " alt="" coords="4146,2407,4095,2357,4061,2330,4024,2310,3943,2281,3859,2262,3772,2249,3688,2243,3535,2244,3421,2252,3420,2247,3535,2238,3688,2238,3773,2244,3859,2257,3945,2276,4026,2305,4064,2326,4099,2353,4151,2409"/>
 <area shape="rect" id="Node000100" href="$class_real_pass.html#af4b087c502643f89c605c2c80e172cda" title="The verifier for signed lists, gpg in the store&#39;s environment." alt="" coords="3291,78,3440,105"/>
-<area shape="poly" id="edge153_Node000001_Node000100" title=" " alt="" coords="4165,2510,4151,2049,4122,1285,4102,895,4079,555,4052,306,4038,230,4031,206,4023,193,4006,179,3983,165,3922,143,3846,126,3761,113,3586,99,3441,94,3439,89,3586,93,3762,108,3847,120,3924,138,3985,160,4009,174,4027,190,4035,204,4043,229,4057,306,4084,554,4107,895,4127,1285,4157,2049,4170,2513"/>
-<area shape="rect" id="Node000105" href="$class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="3557,1614,3724,1641"/>
-<area shape="poly" id="edge160_Node000001_Node000105" title=" " alt="" coords="4167,2510,4164,2402,4159,2326,4148,2240,4130,2150,4104,2059,4069,1971,4023,1889,3986,1842,3943,1800,3896,1763,3848,1730,3754,1678,3680,1645,3680,1639,3756,1673,3850,1725,3899,1758,3947,1796,3990,1839,4028,1886,4074,1968,4109,2057,4135,2149,4153,2240,4164,2325,4170,2401,4171,2513"/>
-<area shape="rect" id="Node000110" href="$class_real_pass.html#a0fcac7c5005e6d1a0d09373b5476ca9c" title="Remove an entry or folder with pass rm." alt="" coords="3846,3034,3987,3061"/>
-<area shape="poly" id="edge166_Node000001_Node000110" title=" " alt="" coords="4171,2568,4168,2658,4161,2717,4149,2780,4131,2846,4106,2910,4072,2970,4027,3023,4009,3036,3988,3044,3987,3039,4006,3031,4024,3019,4067,2967,4101,2908,4126,2844,4144,2779,4156,2716,4162,2658,4167,2572"/>
-<area shape="rect" id="Node000111" href="$class_profile_init.html#a9d0e4d0f6fd056a9a16fbbd2e3a51e43" title="Run one set&#45;up git command on git and wait for it: init and add, which read what lies in the folder,..." alt="" coords="3300,2400,3431,2428"/>
-<area shape="poly" id="edge167_Node000001_Node000111" title=" " alt="" coords="4139,2516,4089,2481,4057,2463,4024,2449,3944,2427,3861,2412,3777,2403,3695,2399,3546,2400,3432,2409,3431,2404,3546,2395,3696,2393,3778,2398,3862,2407,3946,2422,4026,2444,4060,2458,4092,2476,4144,2517"/>
-<area shape="rect" id="Node000121" href="$class_import_key_dialog.html#ac0a9ce64df6fbce97680fd8803da9f18" title="Runs gpg with args on input within what is left of m_timeoutMs since timer started." alt="" coords="3824,3086,4009,3113"/>
-<area shape="poly" id="edge179_Node000001_Node000121" title=" " alt="" coords="4166,2569,4150,2682,4120,2833,4101,2909,4079,2979,4054,3036,4027,3075,4009,3088,4007,3083,4023,3071,4050,3033,4074,2977,4095,2908,4115,2832,4144,2681,4162,2572"/>
-<area shape="rect" id="Node000124" href="$class_first_run_wizard.html#a0c84624a1297411114912e7d8ef62f9b" title="The secret keys gpg lists for gpgExecutable." alt="" coords="3818,3139,4016,3167"/>
-<area shape="poly" id="edge182_Node000001_Node000124" title=" " alt="" coords="4167,2568,4152,2690,4123,2857,4104,2942,4082,3020,4056,3083,4042,3108,4027,3127,4008,3141,4006,3136,4023,3123,4038,3105,4051,3081,4077,3018,4099,2941,4118,2856,4147,2690,4163,2572"/>
-<area shape="rect" id="Node000130" href="$class_config_dialog.html#a66b11d5043653178859712ebede770e1" title="One profile&#39;s signing keys as signers: each key as written, plus the primary fingerprint gpg gives fo..." alt="" coords="3549,2615,3732,2643"/>
-<area shape="poly" id="edge188_Node000001_Node000130" title=" " alt="" coords="4117,2559,4026,2587,3872,2612,3733,2626,3733,2620,3871,2607,4025,2582,4112,2561"/>
-<area shape="rect" id="Node000143" href="$class_real_pass.html#a23317f24cad6782794cfc83a355af4fa" title="Run a git command in the store through pass git, blocking." alt="" coords="3847,203,3986,231"/>
-<area shape="poly" id="edge207_Node000001_Node000143" title=" " alt="" coords="4165,2510,4150,2168,4121,1594,4101,1281,4078,984,4052,727,4023,536,3999,444,3970,355,3923,234,3925,228,3975,353,4005,442,4028,535,4057,727,4083,984,4106,1281,4126,1593,4156,2168,4169,2513"/>
-<area shape="rect" id="Node000149" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="3809,1562,4024,1589"/>
-<area shape="poly" id="edge222_Node000001_Node000149" title=" " alt="" coords="4166,2510,4159,2330,4151,2200,4138,2059,4120,1919,4096,1789,4081,1733,4064,1683,4044,1642,4023,1611,3999,1592,4000,1587,4027,1607,4049,1639,4068,1681,4086,1731,4101,1788,4125,1918,4143,2059,4156,2200,4164,2330,4170,2513"/>
+<area shape="poly" id="edge153_Node000001_Node000100" title=" " alt="" coords="4165,2403,4150,1962,4120,1234,4100,862,4077,538,4051,302,4037,230,4023,194,4006,180,3983,167,3922,144,3846,127,3761,114,3586,99,3441,94,3439,89,3586,94,3762,109,3847,121,3924,139,3985,162,4009,175,4028,191,4042,228,4056,301,4082,538,4105,862,4126,1234,4156,1962,4170,2406"/>
+<area shape="rect" id="Node000105" href="$class_real_pass.html#a0fcac7c5005e6d1a0d09373b5476ca9c" title="Remove an entry or folder with pass rm." alt="" coords="3846,2903,3987,2931"/>
+<area shape="poly" id="edge160_Node000001_Node000105" title=" " alt="" coords="4170,2462,4166,2548,4158,2603,4146,2663,4128,2725,4103,2786,4070,2843,4027,2892,4009,2905,3988,2913,3987,2908,4007,2900,4024,2888,4065,2839,4098,2784,4123,2723,4141,2662,4153,2602,4160,2547,4166,2465"/>
+<area shape="rect" id="Node000106" href="$class_profile_init.html#a9d0e4d0f6fd056a9a16fbbd2e3a51e43" title="Run one set&#45;up git command on git and wait for it: init and add, which read what lies in the folder,..." alt="" coords="3300,2370,3431,2397"/>
+<area shape="poly" id="edge161_Node000001_Node000106" title=" " alt="" coords="4055,2419,4025,2418,3857,2405,3691,2397,3432,2387,3431,2382,3691,2391,3858,2400,4026,2413,4061,2419"/>
+<area shape="rect" id="Node000116" href="$class_import_key_dialog.html#ac0a9ce64df6fbce97680fd8803da9f18" title="Runs gpg with args on input within what is left of m_timeoutMs since timer started." alt="" coords="3824,2955,4009,2983"/>
+<area shape="poly" id="edge173_Node000001_Node000116" title=" " alt="" coords="4166,2461,4149,2570,4118,2714,4099,2787,4077,2853,4053,2907,4027,2944,4009,2957,4007,2952,4023,2940,4049,2904,4072,2851,4094,2785,4113,2713,4143,2569,4162,2465"/>
+<area shape="rect" id="Node000119" href="$class_first_run_wizard.html#a0c84624a1297411114912e7d8ef62f9b" title="The secret keys gpg lists for gpgExecutable." alt="" coords="3818,3008,4016,3036"/>
+<area shape="poly" id="edge176_Node000001_Node000119" title=" " alt="" coords="4167,2461,4151,2579,4122,2739,4102,2820,4080,2894,4055,2955,4027,2996,4008,3010,4006,3005,4023,2992,4051,2952,4075,2892,4097,2819,4116,2738,4146,2579,4163,2465"/>
+<area shape="rect" id="Node000125" href="$class_config_dialog.html#a66b11d5043653178859712ebede770e1" title="One profile&#39;s signing keys as signers: each key as written, plus the primary fingerprint gpg gives fo..." alt="" coords="3825,2471,4008,2499"/>
+<area shape="poly" id="edge182_Node000001_Node000125" title=" " alt="" coords="4084,2451,3990,2473,3989,2468,4079,2452"/>
+<area shape="rect" id="Node000138" href="$class_real_pass.html#a23317f24cad6782794cfc83a355af4fa" title="Run a git command in the store through pass git, blocking." alt="" coords="3847,204,3986,232"/>
+<area shape="poly" id="edge201_Node000001_Node000138" title=" " alt="" coords="4165,2403,4156,2162,4132,1741,4114,1488,4090,1221,4059,950,4023,684,3997,545,3967,412,3921,235,3923,230,3972,411,4002,544,4028,683,4065,949,4095,1221,4119,1488,4137,1740,4161,2162,4170,2406"/>
+<area shape="rect" id="Node000144" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="3809,1539,4024,1567"/>
+<area shape="poly" id="edge216_Node000001_Node000144" title=" " alt="" coords="4157,2404,3920,1569,3924,1565,4162,2406"/>
 <area shape="rect" id="Node000003" href="$class_real_pass.html#a2fd6d533c480d182529f809467a050eb" title="Refuse a pass mv or cp of the folder src when a file in it that Git ignores would not be ignored wher..." alt="" coords="3262,9,3469,54"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="3540,35,3470,35,3468,30,3545,33"/>
 <area shape="rect" id="Node000004" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="2708,58,2910,85"/>
@@ -55,375 +53,365 @@
 <area shape="rect" id="Node000005" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="2479,32,2599,60"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="2690,62,2601,54,2599,49,2695,59"/>
 <area shape="rect" id="Node000006" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="2477,84,2601,112"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="2690,84,2603,94,2600,90,2695,82"/>
-<area shape="rect" id="Node000008" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1092,2451,1243,2479"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1910,2466,1244,2467,1243,2462,1915,2464"/>
-<area shape="rect" id="Node000009" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,2340,483,2368"/>
-<area shape="poly" id="edge17_Node000007_Node000009" title=" " alt="" coords="1919,2447,1824,2429,1703,2407,1568,2390,1431,2383,908,2383,679,2377,485,2365,483,2360,680,2372,908,2378,1432,2378,1568,2385,1703,2402,1825,2424,1924,2447"/>
-<area shape="rect" id="Node000013" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="1610,2923,1805,2951"/>
-<area shape="poly" id="edge15_Node000007_Node000013" title=" " alt="" coords="1953,2485,1916,2512,1884,2543,1847,2593,1815,2647,1788,2704,1765,2760,1732,2859,1714,2925,1710,2921,1726,2857,1760,2758,1783,2702,1810,2645,1842,2590,1880,2539,1913,2508,1948,2487"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1073,2468,950,2469,810,2459,730,2449,669,2437,530,2402,429,2371,427,2366,532,2397,670,2432,731,2444,811,2454,950,2463,1078,2466"/>
-<area shape="rect" id="Node000011" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="824,2418,994,2445"/>
-<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="1074,2454,995,2445,994,2440,1079,2452"/>
-<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="428,2326,414,2321,385,2319,357,2321,342,2326,338,2331,345,2339,340,2340,333,2331,339,2322,356,2316,385,2314,415,2316,433,2324"/>
-<area shape="rect" id="Node000010" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,2340,239,2368"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="269,2365,240,2365,237,2361,273,2361"/>
-<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="253,2343,288,2344,284,2347,256,2347"/>
-<area shape="rect" id="Node000012" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,2316,762,2344"/>
-<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="854,2413,685,2347,685,2342,859,2411"/>
-<area shape="poly" id="edge14_Node000012_Node000009" title=" " alt="" coords="513,2344,485,2347,482,2343,518,2341"/>
-<area shape="poly" id="edge16_Node000013_Node000013" title=" " alt="" coords="1754,2907,1739,2904,1707,2902,1678,2904,1662,2908,1658,2914,1665,2923,1660,2922,1653,2914,1659,2904,1677,2898,1708,2896,1740,2899,1759,2908"/>
-<area shape="rect" id="Node000015" href="$class_imitate_pass.html#a4b215c41496b7ab0479878e357bc4dac" title="The start of a git commit for the store: &quot;commit&quot;, and &quot;&#45;S&quot; when git config pass.signcommits is true ..." alt="" coords="3273,668,3458,696"/>
-<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="3874,860,3759,806,3618,753,3473,711,3429,699,3428,694,3474,706,3619,748,3761,801,3879,859"/>
-<area shape="rect" id="Node000016" href="$class_imitate_pass.html#a0057a214bb3597b3da7b56acdaaacb3a" title="Stage and commit a re&#45;encrypted entry, when the store is a Git repository QtPass manages." alt="" coords="2972,860,3209,888"/>
-<area shape="poly" id="edge46_Node000014_Node000016" title=" " alt="" coords="3876,904,3825,932,3761,953,3620,979,3563,986,3509,988,3454,986,3397,979,3257,953,3216,941,3176,924,3115,891,3115,886,3179,919,3218,936,3258,948,3398,974,3455,981,3509,983,3562,981,3620,974,3759,948,3823,927,3881,901"/>
-<area shape="rect" id="Node000031" href="$class_imitate_pass.html#a086365ec85674590afbd883df0b27a80" title="Create git backup commit before re&#45;encryption." alt="" coords="2994,741,3187,786"/>
-<area shape="poly" id="edge47_Node000014_Node000031" title=" " alt="" coords="3825,899,3760,909,3641,918,3588,917,3521,909,3413,885,3308,853,3215,819,3143,789,3143,784,3217,814,3310,848,3415,880,3522,903,3588,912,3640,913,3760,903,3830,897"/>
-<area shape="rect" id="Node000032" href="$class_imitate_pass.html#aae90cebd2128422bd41e32fc292a49a0" title="Stage a .gpg&#45;id and, when given, its .sig, and commit both in one commit, so no commit in the history..." alt="" coords="2998,432,3183,460"/>
-<area shape="poly" id="edge51_Node000014_Node000032" title=" " alt="" coords="3906,851,3888,795,3859,723,3816,647,3789,613,3758,583,3692,537,3619,502,3541,476,3462,458,3384,447,3309,441,3184,441,3183,436,3310,436,3384,442,3463,453,3542,471,3621,497,3695,532,3762,579,3793,609,3820,644,3864,720,3893,794,3911,853"/>
-<area shape="rect" id="Node000034" href="$class_imitate_pass.html#af5d95620396e55814ba9dbf9a6e93fba" title="Overload capturing stdout (and stderr) without stdin input." alt="" coords="3545,867,3736,895"/>
-<area shape="poly" id="edge48_Node000014_Node000034" title=" " alt="" coords="3803,882,3737,883,3736,878,3808,880"/>
-<area shape="rect" id="Node000035" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="2984,1082,3197,1109"/>
-<area shape="poly" id="edge49_Node000014_Node000035" title=" " alt="" coords="3911,908,3895,966,3866,1034,3846,1069,3822,1102,3794,1131,3761,1155,3739,1165,3711,1172,3643,1178,3562,1176,3474,1168,3296,1141,3156,1113,3155,1107,3297,1136,3475,1163,3563,1171,3643,1173,3710,1167,3737,1160,3759,1150,3791,1127,3818,1099,3842,1066,3861,1032,3890,964,3907,912"/>
-<area shape="rect" id="Node000036" href="$class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3" title="Check whether git already tracks a file in the store." alt="" coords="3284,536,3447,564"/>
-<area shape="poly" id="edge52_Node000014_Node000036" title=" " alt="" coords="3888,855,3831,804,3758,747,3661,688,3562,637,3404,567,3404,562,3564,632,3664,684,3762,743,3835,800,3893,856"/>
-<area shape="rect" id="Node000039" href="$class_imitate_pass.html#aff483e62ab4ceede87aa3007c8f55588" title="The signer for this store&#39;s .gpg&#45;id, bound to the configured gpg and signing keys and to execBlocking..." alt="" coords="3550,1114,3732,1141"/>
-<area shape="poly" id="edge56_Node000014_Node000039" title=" " alt="" coords="3906,907,3885,953,3854,1006,3813,1060,3788,1084,3761,1104,3734,1118,3731,1113,3759,1100,3785,1080,3809,1056,3850,1003,3881,951,3902,911"/>
-<area shape="rect" id="Node000047" href="$class_imitate_pass.html#af8271fc09ec9d95b3c47f386087893e7" title="Pull before a run, when the store is a Git repository and automatic pulling is on." alt="" coords="3522,815,3760,843"/>
-<area shape="poly" id="edge70_Node000014_Node000047" title=" " alt="" coords="3822,864,3719,846,3718,841,3827,863"/>
-<area shape="rect" id="Node000048" href="$class_imitate_pass.html#ad2f55fd94626cc4a10b69e9dc76e1b32" title="Run git with &#45;C &lt;store&gt; in the store, blocking." alt="" coords="3012,484,3169,512"/>
-<area shape="poly" id="edge72_Node000014_Node000048" title=" " alt="" coords="3899,853,3877,813,3845,763,3805,711,3758,664,3687,610,3626,575,3560,551,3473,527,3393,511,3312,502,3171,498,3169,493,3313,497,3394,506,3474,522,3562,546,3629,570,3690,605,3762,660,3809,707,3849,760,3881,811,3904,854"/>
-<area shape="poly" id="edge20_Node000015_Node000016" title=" " alt="" coords="3263,705,3259,711,3241,731,3234,752,3227,775,3211,800,3168,836,3124,862,3121,858,3165,832,3207,796,3222,773,3229,751,3237,728,3256,707,3267,702"/>
-<area shape="poly" id="edge41_Node000015_Node000031" title=" " alt="" coords="3283,702,3258,711,3210,731,3175,743,3173,738,3208,726,3256,706,3288,699"/>
-<area shape="poly" id="edge43_Node000015_Node000032" title=" " alt="" coords="3332,658,3294,623,3255,577,3241,547,3235,521,3227,498,3208,475,3184,461,3183,455,3211,471,3232,495,3240,520,3246,546,3260,574,3298,619,3338,658"/>
-<area shape="rect" id="Node000033" href="$class_imitate_pass.html#a1d83da6a864748b645e1beffc03849ce" title="Commit these paths and nothing else: a change someone staged meanwhile stays staged,..." alt="" coords="3004,588,3178,616"/>
-<area shape="poly" id="edge45_Node000015_Node000033" title=" " alt="" coords="3302,664,3209,637,3147,619,3146,614,3210,632,3307,663"/>
-<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a331fdf170bbd5de247d1e5ee7f6bb65c" title="Re&#45;encrypt single file with new recipients." alt="" coords="2694,1131,2924,1159"/>
-<area shape="poly" id="edge21_Node000016_Node000017" title=" " alt="" coords="3048,898,3012,925,2974,959,2959,978,2949,995,2940,1012,2926,1033,2874,1090,2828,1132,2825,1128,2870,1086,2922,1030,2936,1009,2945,992,2954,975,2970,955,3009,921,3052,895"/>
-<area shape="rect" id="Node000018" href="$class_imitate_pass.html#a8117ed7e6ccc1916801d88883ea2819a" title="Worker&#45;thread body: scan dir and re&#45;encrypt stale files." alt="" coords="2440,968,2638,996"/>
-<area shape="poly" id="edge22_Node000017_Node000018" title=" " alt="" coords="2727,1126,2692,1112,2649,1085,2609,1053,2554,999,2554,994,2613,1049,2652,1081,2695,1108,2732,1125"/>
-<area shape="rect" id="Node000019" href="$class_imitate_pass.html#a44b84cc53695ae8e242ca182546234d4" title="Start the worker thread once the Executor queue is idle." alt="" coords="2170,705,2371,750"/>
-<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="2509,958,2295,753,2295,747,2515,957"/>
-<area shape="poly" id="edge40_Node000019_Node000019" title=" " alt="" coords="2313,691,2298,686,2270,684,2245,686,2229,691,2223,697,2224,705,2219,704,2218,695,2226,686,2244,680,2270,678,2299,681,2318,689"/>
-<area shape="rect" id="Node000020" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="1897,714,2092,741"/>
-<area shape="poly" id="edge24_Node000019_Node000020" title=" " alt="" coords="2151,729,2094,730,2092,725,2156,726"/>
-<area shape="rect" id="Node000021" href="$class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a" title="Copy password file." alt="" coords="1638,1056,1777,1084"/>
-<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="1970,755,1723,1057,1719,1054,1974,751"/>
-<area shape="rect" id="Node000024" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="1367,766,1493,793"/>
-<area shape="poly" id="edge30_Node000020_Node000024" title=" " alt="" coords="1917,711,1847,700,1762,692,1671,692,1626,696,1582,705,1545,717,1509,733,1453,767,1450,763,1507,729,1543,712,1581,700,1625,691,1671,686,1763,686,1848,695,1922,709"/>
-<area shape="rect" id="Node000025" href="$class_imitate_pass.html#abf14214692366809c82ad29e8d18c77b" title="Re&#45;encrypt dir under settings, the current profile&#39;s." alt="" coords="1610,714,1805,741"/>
-<area shape="poly" id="edge31_Node000020_Node000025" title=" " alt="" coords="1879,729,1807,730,1805,725,1884,726"/>
-<area shape="rect" id="Node000026" href="$class_imitate_pass.html#aa30ada0a871c60297f6bde37cec9df2e" title="Re&#45;encrypt dir to the .gpg&#45;id Init() wrote although its commit failed, without any Git step (they wou..." alt="" coords="1589,766,1826,793"/>
-<area shape="poly" id="edge32_Node000020_Node000026" title=" " alt="" coords="1897,746,1790,767,1787,763,1901,743"/>
-<area shape="rect" id="Node000027" href="$class_imitate_pass.html#aa7dcabfb22a244f77dd4e4d2e9906576" title="Start the runs in m_movedToReencrypt, one at a time, while none is in flight; then send a deferred pu..." alt="" coords="1581,458,1834,485"/>
-<area shape="poly" id="edge34_Node000020_Node000027" title=" " alt="" coords="1980,699,1959,656,1927,601,1884,546,1859,521,1832,500,1810,488,1809,483,1835,496,1863,517,1888,542,1931,598,1963,653,1985,700"/>
-<area shape="rect" id="Node000022" href="$class_imitate_pass.html#a9332f01d3ce1447fb9eba7ec8f0172af" title="Re&#45;encryption progress: current of total files checked." alt="" coords="1056,1056,1279,1084"/>
-<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="1621,1072,1281,1073,1278,1068,1625,1069"/>
-<area shape="poly" id="edge29_Node000022_Node000018" title=" " alt="" coords="1293,1052,1327,1049,1646,1024,1961,1005,2442,984,2438,987,1961,1011,1646,1030,1327,1054,1296,1057"/>
-<area shape="rect" id="Node000023" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="534,2163,759,2191"/>
-<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="1155,1097,657,2164,652,2161,1151,1100"/>
-<area shape="poly" id="edge28_Node000023_Node000009" title=" " alt="" coords="543,2198,532,2206,488,2238,450,2275,398,2341,393,2338,446,2272,485,2233,530,2201,547,2195"/>
-<area shape="poly" id="edge33_Node000026_Node000024" title=" " alt="" coords="1571,781,1495,782,1492,777,1576,778"/>
-<area shape="rect" id="Node000028" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="1352,459,1508,487"/>
-<area shape="poly" id="edge35_Node000027_Node000028" title=" " alt="" coords="1564,474,1510,475,1507,470,1568,471"/>
-<area shape="rect" id="Node000029" href="$class_imitate_pass.html#a172222519125f9e053e09a505743d15b" title="Report the outcome of a run and emit endReencryptPath()." alt="" coords="1327,407,1533,435"/>
-<area shape="poly" id="edge36_Node000027_Node000029" title=" " alt="" coords="1610,455,1511,438,1509,433,1615,453"/>
-<area shape="rect" id="Node000030" href="$class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1" title="Move password file." alt="" coords="1360,562,1501,589"/>
-<area shape="poly" id="edge38_Node000027_Node000030" title=" " alt="" coords="1607,491,1582,501,1512,532,1456,563,1453,559,1510,527,1580,496,1611,488"/>
-<area shape="poly" id="edge37_Node000029_Node000019" title=" " alt="" coords="1547,410,1615,410,1687,415,1762,425,1834,444,1900,469,1964,500,2025,536,2082,574,2179,646,2246,704,2241,705,2176,650,2079,578,2022,541,1961,505,1898,474,1833,449,1761,430,1687,420,1615,416,1550,415"/>
-<area shape="poly" id="edge39_Node000030_Node000022" title=" " alt="" coords="1411,605,1329,755,1238,933,1178,1057,1173,1055,1234,930,1325,753,1414,600"/>
-<area shape="poly" id="edge42_Node000031_Node000018" title=" " alt="" coords="3002,792,2859,844,2695,909,2568,970,2566,965,2693,904,2857,839,3006,790"/>
-<area shape="poly" id="edge44_Node000032_Node000024" title=" " alt="" coords="3009,465,2574,565,2272,629,1993,629,1876,628,1783,630,1693,644,1582,679,1542,698,1505,722,1449,767,1445,764,1501,718,1539,694,1580,674,1692,639,1783,624,1875,622,1994,623,2271,623,2572,559,3013,462"/>
-<area shape="poly" id="edge50_Node000035_Node000018" title=" " alt="" coords="2966,1081,2835,1063,2693,1034,2580,999,2579,994,2694,1029,2836,1058,2971,1080"/>
-<area shape="rect" id="Node000037" href="$class_imitate_pass.html#a181e512eff4b82f5078af432c369d4ee" title="Remove password." alt="" coords="3011,536,3170,564"/>
-<area shape="poly" id="edge53_Node000036_Node000037" title=" " alt="" coords="3265,551,3172,553,3170,548,3270,549"/>
-<area shape="rect" id="Node000038" href="$class_imitate_pass.html#a86a50ad28d84a9c08a43b1de2621bb55" title="Bring the signature in line with the list just written: a new one when signing is on,..." alt="" coords="2707,707,2911,735"/>
-<area shape="poly" id="edge54_Node000036_Node000038" title=" " alt="" coords="3341,524,3286,470,3249,443,3208,423,3142,401,3087,390,3061,390,3034,395,3005,406,2973,423,2936,452,2904,488,2878,528,2857,571,2829,651,2815,708,2810,705,2823,649,2852,569,2873,526,2900,485,2932,448,2971,419,3003,401,3033,390,3060,385,3088,384,3144,395,3210,418,3252,439,3289,466,3346,524"/>
-<area shape="poly" id="edge55_Node000038_Node000024" title=" " alt="" coords="2727,740,2466,799,2343,823,2272,833,1993,833,1787,828,1581,807,1495,794,1493,789,1582,802,1787,823,1994,827,2271,827,2342,818,2465,793,2732,737"/>
-<area shape="poly" id="edge57_Node000039_Node000024" title=" " alt="" coords="3630,1154,3609,1205,3575,1265,3531,1326,3504,1353,3475,1378,3431,1402,3372,1424,3302,1443,3226,1458,3151,1467,3080,1470,3018,1465,2971,1450,2953,1434,2945,1416,2938,1398,2922,1382,2892,1364,2865,1354,2813,1346,2759,1343,2728,1339,2693,1330,2370,1231,2240,1190,2121,1148,2003,1101,1879,1046,1741,977,1580,891,1504,841,1448,796,1448,791,1507,837,1583,886,1743,972,1881,1041,2005,1096,2123,1143,2242,1185,2372,1226,2694,1325,2729,1334,2760,1338,2814,1341,2866,1348,2894,1359,2926,1377,2942,1395,2950,1414,2957,1431,2973,1445,3019,1459,3080,1465,3150,1462,3226,1453,3301,1438,3370,1419,3429,1397,3472,1373,3501,1350,3527,1322,3571,1262,3604,1203,3627,1158"/>
-<area shape="rect" id="Node000040" href="$class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e" title="Read a .gpg&#45;id, verify its detached signature and parse the recipients from the bytes that were verif..." alt="" coords="3274,1070,3457,1115"/>
-<area shape="poly" id="edge58_Node000039_Node000040" title=" " alt="" coords="3531,1115,3458,1107,3456,1102,3537,1113"/>
-<area shape="rect" id="Node000041" href="$class_imitate_pass.html#a2cd108bdff679ad6d03daf0c7dfd1aa3" title="The recipients to encrypt file to: its folder&#39;s .gpg&#45;id, verified when a signing key is set." alt="" coords="2996,1390,3185,1435"/>
-<area shape="poly" id="edge64_Node000039_Node000041" title=" " alt="" coords="3620,1151,3558,1217,3518,1251,3475,1282,3403,1320,3327,1351,3253,1376,3187,1394,3185,1389,3251,1371,3325,1346,3401,1315,3472,1277,3515,1247,3554,1213,3615,1155"/>
-<area shape="rect" id="Node000043" href="$class_imitate_pass.html#a4b2388a7e250b886534e79c7ca131dbf" title="Recipients for the directory of file, from its verified .gpg&#45;id." alt="" coords="3000,1013,3181,1058"/>
-<area shape="poly" id="edge67_Node000039_Node000043" title=" " alt="" coords="3533,1108,3520,1104,3505,1093,3496,1081,3487,1070,3473,1061,3399,1038,3322,1027,3248,1024,3182,1027,3181,1022,3248,1019,3323,1021,3400,1033,3475,1056,3491,1066,3500,1078,3509,1089,3523,1100,3538,1108"/>
-<area shape="rect" id="Node000045" href="$class_imitate_pass.html#a9055e77fb0300ace61fde6386b50705f" title="Sign a .gpg&#45;id with the configured key and verify the result; failures are reported through critical(..." alt="" coords="2994,1186,3187,1213"/>
-<area shape="poly" id="edge65_Node000039_Node000045" title=" " alt="" coords="3532,1142,3188,1189,3187,1184,3537,1140"/>
-<area shape="rect" id="Node000046" href="$class_imitate_pass.html#a4819b3c68c49968658849aa8535e1f40" title="Write the enabled recipients to a .gpg&#45;id, atomically: a write that fails halfway (full disk,..." alt="" coords="1608,510,1807,537"/>
-<area shape="poly" id="edge68_Node000039_Node000046" title=" " alt="" coords="3533,1114,3520,1104,3506,1082,3496,1055,3486,986,3485,905,3490,817,3495,729,3496,647,3490,577,3482,549,3471,526,3444,490,3418,464,3390,444,3361,430,3293,410,3209,387,3100,359,3012,348,2924,346,2810,347,2269,347,2200,352,2143,363,2094,381,2050,402,1957,452,1902,477,1834,499,1785,511,1782,507,1833,494,1900,472,1955,447,2047,398,2092,376,2141,358,2199,346,2269,342,2810,342,2924,341,3013,343,3101,354,3210,382,3295,405,3363,425,3393,440,3421,459,3449,487,3476,523,3487,547,3495,576,3502,647,3500,729,3495,818,3490,905,3491,986,3501,1053,3510,1080,3524,1100,3538,1114"/>
-<area shape="poly" id="edge59_Node000040_Node000041" title=" " alt="" coords="3334,1125,3296,1175,3260,1230,3250,1252,3246,1272,3242,1309,3236,1344,3227,1362,3211,1380,3187,1397,3184,1392,3208,1376,3222,1359,3231,1342,3237,1308,3240,1271,3245,1250,3255,1228,3291,1172,3330,1128"/>
-<area shape="poly" id="edge61_Node000040_Node000043" title=" " alt="" coords="3256,1071,3182,1057,3181,1052,3262,1070"/>
-<area shape="rect" id="Node000042" href="$class_imitate_pass.html#a4c62fe3ae4f151582f6360599a610dd6" title="Insert new password." alt="" coords="2738,1288,2880,1316"/>
-<area shape="poly" id="edge60_Node000041_Node000042" title=" " alt="" coords="2980,1384,2971,1380,2956,1369,2946,1358,2937,1347,2923,1336,2880,1319,2880,1314,2925,1332,2940,1343,2950,1354,2959,1365,2973,1376,2986,1384"/>
-<area shape="rect" id="Node000044" href="$class_imitate_pass.html#a55e5e5b17e7f57d387944c22921ede3e" title="The verified recipients for the folder fileName sits in." alt="" coords="2705,992,2913,1020"/>
-<area shape="poly" id="edge62_Node000043_Node000044" title=" " alt="" coords="2982,1025,2914,1020,2913,1014,2987,1024"/>
-<area shape="poly" id="edge63_Node000044_Node000018" title=" " alt="" coords="2687,996,2639,993,2637,988,2692,995"/>
-<area shape="poly" id="edge66_Node000045_Node000038" title=" " alt="" coords="2978,1181,2970,1175,2950,1148,2936,1121,2929,1094,2926,1066,2932,1013,2945,960,2959,907,2964,854,2962,828,2955,802,2942,775,2922,749,2909,738,2909,732,2926,746,2946,773,2960,800,2967,827,2970,854,2964,908,2950,961,2937,1014,2931,1067,2934,1093,2941,1119,2954,1145,2974,1171,2983,1181"/>
-<area shape="poly" id="edge69_Node000046_Node000024" title=" " alt="" coords="1592,545,1583,552,1566,568,1547,591,1506,653,1441,767,1437,764,1501,650,1543,588,1562,564,1580,548,1596,541"/>
-<area shape="poly" id="edge71_Node000047_Node000018" title=" " alt="" coords="3540,847,3210,902,2897,943,2639,974,2637,969,2896,938,3209,897,3545,845"/>
-<area shape="rect" id="Node000051" href="$class_main_window.html#a5890dfd116d4da96689e7114dd4e5494" title="Add the Share submenu for the folder under the cursor: the entries are enabled only where a recipient..." alt="" coords="542,2570,751,2597"/>
-<area shape="poly" id="edge75_Node000050_Node000051" title=" " alt="" coords="3790,2516,3367,2518,1706,2518,1436,2524,1169,2539,932,2558,753,2575,751,2570,931,2553,1168,2534,1436,2519,1706,2513,3367,2513,3795,2515"/>
-<area shape="poly" id="edge76_Node000051_Node000010" title=" " alt="" coords="569,2566,530,2554,416,2506,306,2454,150,2371,148,2366,309,2449,418,2501,532,2549,574,2564"/>
-<area shape="poly" id="edge78_Node000052_Node000052" title=" " alt="" coords="2315,2649,2300,2645,2270,2643,2242,2645,2226,2650,2222,2655,2229,2665,2224,2663,2217,2655,2223,2646,2241,2640,2270,2638,2302,2640,2320,2649"/>
-<area shape="rect" id="Node000053" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="1882,2552,2108,2580"/>
-<area shape="poly" id="edge79_Node000052_Node000053" title=" " alt="" coords="2231,2656,2174,2626,2107,2595,2069,2583,2069,2578,2109,2590,2177,2621,2236,2656"/>
-<area shape="rect" id="Node000056" href="$class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449" title="Fill the fields from the settings (autodetection already ran)." alt="" coords="1915,2725,2074,2770"/>
-<area shape="poly" id="edge83_Node000052_Node000056" title=" " alt="" coords="2200,2696,2075,2730,2074,2725,2195,2697"/>
-<area shape="rect" id="Node000057" href="$class_config_dialog.html#ae4d11811206b82326dca209f35910052" title="Whether qrencode can run: configuredPath when it is an executable file, else a qrencode on Util&#39;s PAT..." alt="" coords="1902,2794,2088,2839"/>
-<area shape="poly" id="edge84_Node000052_Node000057" title=" " alt="" coords="2241,2700,2181,2744,2109,2785,2080,2796,2078,2791,2107,2780,2178,2740,2236,2703"/>
-<area shape="rect" id="Node000058" href="$class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="1892,2656,2098,2700"/>
-<area shape="poly" id="edge86_Node000052_Node000058" title=" " alt="" coords="2173,2678,2098,2681,2097,2675,2178,2678"/>
-<area shape="rect" id="Node000054" href="$class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh&#45;in..." alt="" coords="1660,2552,1755,2580"/>
-<area shape="poly" id="edge80_Node000053_Node000054" title=" " alt="" coords="1864,2567,1756,2569,1755,2563,1869,2566"/>
-<area shape="poly" id="edge81_Node000054_Node000009" title=" " alt="" coords="1642,2572,1452,2582,1320,2583,1172,2578,1013,2565,850,2542,687,2508,607,2485,530,2459,490,2440,453,2416,401,2371,400,2366,456,2412,493,2436,532,2454,609,2480,688,2503,851,2537,1014,2559,1172,2572,1320,2577,1452,2577,1647,2571"/>
-<area shape="rect" id="Node000055" href="$class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5" title="Destroy the QtPass instance and clean up signal connections." alt="" coords="1366,2603,1494,2631"/>
-<area shape="poly" id="edge82_Node000054_Node000055" title=" " alt="" coords="1643,2578,1495,2608,1494,2603,1648,2576"/>
-<area shape="poly" id="edge85_Node000057_Node000013" title=" " alt="" coords="1918,2844,1883,2861,1739,2925,1738,2920,1881,2856,1913,2846"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="2690,84,2602,94,2600,90,2695,82"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1092,2138,1243,2165"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1910,2153,1244,2154,1243,2149,1914,2150"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,2020,483,2048"/>
+<area shape="poly" id="edge17_Node000007_Node000009" title=" " alt="" coords="1909,2141,1833,2135,1635,2121,1467,2112,1182,2105,896,2094,728,2082,531,2062,460,2051,458,2046,531,2057,729,2077,896,2089,1182,2100,1468,2107,1636,2115,1834,2130,1914,2140"/>
+<area shape="rect" id="Node000013" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="1610,2656,1805,2684"/>
+<area shape="poly" id="edge15_Node000007_Node000013" title=" " alt="" coords="1975,2176,1931,2238,1884,2310,1829,2412,1780,2513,1716,2658,1713,2654,1775,2511,1824,2409,1879,2307,1927,2235,1971,2179"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1074,2159,1008,2163,872,2167,765,2163,660,2145,530,2106,464,2079,412,2051,411,2046,467,2074,532,2101,661,2139,765,2157,872,2161,1008,2158,1078,2157"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,..." alt="" coords="824,2122,994,2149"/>
+<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="1073,2147,995,2143,993,2138,1078,2145"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="428,2006,414,2001,385,1999,357,2001,342,2006,338,2011,345,2019,340,2020,333,2011,339,2002,356,1996,385,1994,415,1996,433,2004"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,2020,239,2048"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="269,2045,241,2045,237,2041,273,2041"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="253,2023,288,2024,284,2027,256,2027"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,2020,762,2048"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="854,2117,685,2051,684,2046,859,2115"/>
+<area shape="poly" id="edge14_Node000012_Node000009" title=" " alt="" coords="513,2036,485,2036,482,2032,518,2033"/>
+<area shape="poly" id="edge16_Node000013_Node000013" title=" " alt="" coords="1754,2641,1739,2637,1707,2635,1678,2637,1662,2642,1658,2647,1665,2656,1660,2655,1653,2647,1659,2637,1677,2632,1708,2630,1740,2632,1759,2641"/>
+<area shape="rect" id="Node000015" href="$class_imitate_pass.html#a4b215c41496b7ab0479878e357bc4dac" title="The start of a git commit for the store: &quot;commit&quot;, and &quot;&#45;S&quot; when git config pass.signcommits is true ..." alt="" coords="3273,1030,3458,1057"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="3818,1010,3760,1021,3600,1035,3459,1043,3457,1037,3600,1029,3760,1015,3824,1009"/>
+<area shape="rect" id="Node000016" href="$class_imitate_pass.html#a0057a214bb3597b3da7b56acdaaacb3a" title="Stage and commit a re&#45;encrypted entry, when the store is a Git repository QtPass manages." alt="" coords="2972,1150,3209,1177"/>
+<area shape="poly" id="edge46_Node000014_Node000016" title=" " alt="" coords="3887,1014,3829,1053,3761,1085,3689,1106,3615,1123,3467,1147,3327,1160,3210,1166,3209,1161,3327,1155,3466,1142,3614,1118,3688,1101,3759,1080,3827,1049,3882,1017"/>
+<area shape="rect" id="Node000031" href="$class_imitate_pass.html#a086365ec85674590afbd883df0b27a80" title="Create git backup commit before re&#45;encryption." alt="" coords="2994,1081,3187,1126"/>
+<area shape="poly" id="edge47_Node000014_Node000031" title=" " alt="" coords="3861,1013,3814,1031,3761,1045,3604,1070,3448,1088,3304,1098,3188,1104,3187,1099,3304,1093,3447,1083,3604,1065,3759,1039,3813,1026,3866,1011"/>
+<area shape="rect" id="Node000032" href="$class_imitate_pass.html#aae90cebd2128422bd41e32fc292a49a0" title="Stage a .gpg&#45;id and, when given, its .sig, and commit both in one commit, so no commit in the history..." alt="" coords="2998,726,3183,753"/>
+<area shape="poly" id="edge51_Node000014_Node000032" title=" " alt="" coords="3806,971,3791,958,3781,943,3772,930,3758,918,3687,878,3611,844,3532,817,3453,795,3305,764,3184,749,3183,743,3306,759,3455,790,3534,812,3613,839,3689,873,3762,913,3776,926,3785,940,3795,954,3811,971"/>
+<area shape="rect" id="Node000034" href="$class_imitate_pass.html#af5d95620396e55814ba9dbf9a6e93fba" title="Overload capturing stdout (and stderr) without stdin input." alt="" coords="3545,927,3736,955"/>
+<area shape="poly" id="edge48_Node000014_Node000034" title=" " alt="" coords="3822,976,3719,958,3718,953,3827,975"/>
+<area shape="rect" id="Node000035" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="2984,1251,3197,1279"/>
+<area shape="poly" id="edge49_Node000014_Node000035" title=" " alt="" coords="3898,1017,3842,1083,3804,1116,3761,1143,3690,1175,3615,1201,3538,1222,3462,1238,3318,1258,3198,1266,3197,1261,3317,1252,3461,1232,3537,1217,3613,1196,3688,1170,3759,1138,3800,1112,3838,1080,3894,1021"/>
+<area shape="rect" id="Node000036" href="$class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3" title="Check whether git already tracks a file in the store." alt="" coords="3284,622,3447,649"/>
+<area shape="poly" id="edge52_Node000014_Node000036" title=" " alt="" coords="3906,963,3889,909,3860,839,3840,803,3817,768,3790,737,3758,710,3722,687,3683,670,3643,656,3601,646,3519,636,3448,633,3447,628,3520,630,3602,641,3644,651,3685,665,3725,683,3762,705,3793,733,3821,765,3845,800,3864,837,3894,907,3911,965"/>
+<area shape="rect" id="Node000039" href="$class_imitate_pass.html#aff483e62ab4ceede87aa3007c8f55588" title="The signer for this store&#39;s .gpg&#45;id, bound to the configured gpg and signing keys and to execBlocking..." alt="" coords="3550,498,3732,525"/>
+<area shape="poly" id="edge56_Node000014_Node000039" title=" " alt="" coords="3903,963,3849,823,3808,733,3758,645,3704,577,3657,528,3658,523,3708,574,3762,642,3812,730,3854,821,3908,965"/>
+<area shape="rect" id="Node000047" href="$class_imitate_pass.html#af8271fc09ec9d95b3c47f386087893e7" title="Pull before a run, when the store is a Git repository and automatic pulling is on." alt="" coords="3522,979,3760,1007"/>
+<area shape="poly" id="edge70_Node000014_Node000047" title=" " alt="" coords="3803,993,3761,995,3760,990,3808,992"/>
+<area shape="rect" id="Node000048" href="$class_imitate_pass.html#ad2f55fd94626cc4a10b69e9dc76e1b32" title="Run git with &#45;C &lt;store&gt; in the store, blocking." alt="" coords="3012,674,3169,701"/>
+<area shape="poly" id="edge72_Node000014_Node000048" title=" " alt="" coords="3807,971,3795,956,3787,939,3782,906,3777,875,3770,861,3758,847,3726,819,3692,795,3617,756,3537,727,3454,706,3373,694,3297,687,3171,685,3169,680,3297,681,3374,688,3455,701,3538,722,3619,751,3694,791,3729,815,3762,843,3774,858,3782,874,3787,905,3792,937,3799,953,3812,972"/>
+<area shape="poly" id="edge20_Node000015_Node000016" title=" " alt="" coords="3336,1065,3279,1106,3210,1141,3177,1151,3175,1147,3208,1136,3276,1101,3331,1068"/>
+<area shape="poly" id="edge41_Node000015_Node000031" title=" " alt="" coords="3281,1062,3189,1085,3187,1080,3286,1060"/>
+<area shape="poly" id="edge43_Node000015_Node000032" title=" " alt="" coords="3337,1018,3297,974,3255,918,3241,889,3233,865,3225,842,3207,817,3166,781,3124,757,3124,751,3169,777,3211,814,3229,840,3238,864,3246,887,3260,915,3301,971,3342,1019"/>
+<area shape="rect" id="Node000033" href="$class_imitate_pass.html#a1d83da6a864748b645e1beffc03849ce" title="Commit these paths and nothing else: a change someone staged meanwhile stays staged,..." alt="" coords="3004,1030,3178,1057"/>
+<area shape="poly" id="edge45_Node000015_Node000033" title=" " alt="" coords="3255,1044,3179,1046,3177,1041,3260,1043"/>
+<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a331fdf170bbd5de247d1e5ee7f6bb65c" title="Re&#45;encrypt single file with new recipients." alt="" coords="2694,1303,2924,1331"/>
+<area shape="poly" id="edge21_Node000016_Node000017" title=" " alt="" coords="3048,1186,2838,1305,2835,1300,3052,1184"/>
+<area shape="rect" id="Node000018" href="$class_imitate_pass.html#a8117ed7e6ccc1916801d88883ea2819a" title="Worker&#45;thread body: scan dir and re&#45;encrypt stale files." alt="" coords="2440,986,2638,1013"/>
+<area shape="poly" id="edge22_Node000017_Node000018" title=" " alt="" coords="2775,1293,2735,1259,2692,1216,2646,1160,2604,1103,2549,1016,2550,1011,2608,1100,2650,1157,2696,1212,2738,1255,2781,1293"/>
+<area shape="rect" id="Node000019" href="$class_imitate_pass.html#a44b84cc53695ae8e242ca182546234d4" title="Start the worker thread once the Executor queue is idle." alt="" coords="2170,809,2371,854"/>
+<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="2500,978,2308,857,2308,852,2505,977"/>
+<area shape="poly" id="edge40_Node000019_Node000019" title=" " alt="" coords="2313,794,2298,790,2270,788,2245,790,2229,794,2223,800,2224,809,2219,808,2218,799,2226,790,2244,784,2270,782,2299,785,2318,793"/>
+<area shape="rect" id="Node000020" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="1897,755,2092,783"/>
+<area shape="poly" id="edge24_Node000019_Node000020" title=" " alt="" coords="2151,806,2060,786,2058,781,2157,804"/>
+<area shape="rect" id="Node000021" href="$class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a" title="Copy password file." alt="" coords="1638,935,1777,963"/>
+<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="1972,797,1918,861,1879,896,1835,924,1807,936,1779,943,1776,939,1805,931,1832,920,1875,892,1914,858,1976,793"/>
+<area shape="rect" id="Node000024" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="1367,527,1493,555"/>
+<area shape="poly" id="edge30_Node000020_Node000024" title=" " alt="" coords="1936,750,1833,721,1762,708,1704,703,1648,695,1616,685,1580,670,1537,644,1498,613,1444,558,1444,553,1501,609,1540,639,1583,665,1618,680,1649,690,1705,698,1762,702,1834,715,1941,749"/>
+<area shape="rect" id="Node000025" href="$class_imitate_pass.html#abf14214692366809c82ad29e8d18c77b" title="Re&#45;encrypt dir under settings, the current profile&#39;s." alt="" coords="1610,730,1805,757"/>
+<area shape="poly" id="edge31_Node000020_Node000025" title=" " alt="" coords="1879,760,1807,754,1805,750,1884,758"/>
+<area shape="rect" id="Node000026" href="$class_imitate_pass.html#aa30ada0a871c60297f6bde37cec9df2e" title="Re&#45;encrypt dir to the .gpg&#45;id Init() wrote although its commit failed, without any Git step (they wou..." alt="" coords="1589,628,1826,656"/>
+<area shape="poly" id="edge32_Node000020_Node000026" title=" " alt="" coords="1959,746,1902,712,1833,677,1780,659,1779,654,1835,672,1904,707,1964,745"/>
+<area shape="rect" id="Node000027" href="$class_imitate_pass.html#aa7dcabfb22a244f77dd4e4d2e9906576" title="Start the runs in m_movedToReencrypt, one at a time, while none is in flight; then send a deferred pu..." alt="" coords="1581,782,1834,809"/>
+<area shape="poly" id="edge34_Node000020_Node000027" title=" " alt="" coords="1880,780,1835,786,1833,781,1884,778"/>
+<area shape="rect" id="Node000022" href="$class_imitate_pass.html#a9332f01d3ce1447fb9eba7ec8f0172af" title="Re&#45;encryption progress: current of total files checked." alt="" coords="1056,960,1279,988"/>
+<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="1621,954,1281,971,1278,966,1625,951"/>
+<area shape="poly" id="edge29_Node000022_Node000018" title=" " alt="" coords="1293,981,1488,991,1706,997,1996,997,2442,998,2437,1001,1996,1002,1706,1002,1488,997,1295,986"/>
+<area shape="rect" id="Node000023" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="534,1603,759,1631"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="1144,1002,662,1604,657,1601,1147,997"/>
+<area shape="poly" id="edge28_Node000023_Node000009" title=" " alt="" coords="627,1646,397,2021,393,2018,630,1641"/>
+<area shape="poly" id="edge33_Node000026_Node000024" title=" " alt="" coords="1623,625,1580,613,1513,585,1459,558,1458,552,1515,580,1582,608,1628,623"/>
+<area shape="rect" id="Node000028" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="1352,780,1508,808"/>
+<area shape="poly" id="edge35_Node000027_Node000028" title=" " alt="" coords="1564,796,1510,797,1507,792,1568,793"/>
+<area shape="rect" id="Node000029" href="$class_imitate_pass.html#a172222519125f9e053e09a505743d15b" title="Report the outcome of a run and emit endReencryptPath()." alt="" coords="1327,832,1533,860"/>
+<area shape="poly" id="edge36_Node000027_Node000029" title=" " alt="" coords="1611,814,1511,834,1509,829,1615,811"/>
+<area shape="rect" id="Node000030" href="$class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1" title="Move password file." alt="" coords="1360,884,1501,912"/>
+<area shape="poly" id="edge38_Node000027_Node000030" title=" " alt="" coords="1662,818,1604,847,1534,874,1494,886,1491,882,1532,869,1602,842,1666,815"/>
+<area shape="poly" id="edge37_Node000029_Node000019" title=" " alt="" coords="1548,841,2171,832,2167,835,1550,846"/>
+<area shape="poly" id="edge39_Node000030_Node000022" title=" " alt="" coords="1363,918,1220,962,1216,957,1367,915"/>
+<area shape="poly" id="edge42_Node000031_Node000018" title=" " alt="" coords="2976,1083,2617,1016,2616,1011,2981,1082"/>
+<area shape="poly" id="edge44_Node000032_Node000024" title=" " alt="" coords="2982,722,2970,715,2952,690,2945,665,2945,640,2947,615,2950,591,2949,567,2941,545,2922,524,2907,517,2882,510,2808,500,2604,491,2396,491,2272,493,1994,493,1853,497,1714,508,1495,534,1492,529,1714,503,1853,492,1993,487,2271,487,2396,486,2604,486,2809,495,2883,505,2909,512,2926,520,2945,542,2954,566,2955,591,2953,616,2950,640,2950,665,2957,688,2974,711,2987,722"/>
+<area shape="poly" id="edge50_Node000035_Node000018" title=" " alt="" coords="3008,1246,2971,1235,2846,1179,2727,1116,2562,1016,2562,1011,2730,1111,2848,1174,2973,1230,3014,1246"/>
+<area shape="rect" id="Node000037" href="$class_imitate_pass.html#a181e512eff4b82f5078af432c369d4ee" title="Remove password." alt="" coords="3011,622,3170,649"/>
+<area shape="poly" id="edge53_Node000036_Node000037" title=" " alt="" coords="3265,636,3172,638,3170,633,3270,635"/>
+<area shape="rect" id="Node000038" href="$class_imitate_pass.html#a86a50ad28d84a9c08a43b1de2621bb55" title="Bring the signature in line with the list just written: a new one when signing is on,..." alt="" coords="2707,586,2911,613"/>
+<area shape="poly" id="edge54_Node000036_Node000038" title=" " alt="" coords="3271,619,3209,613,3053,603,2912,601,2910,596,3053,598,3210,607,3276,618"/>
+<area shape="poly" id="edge55_Node000038_Node000024" title=" " alt="" coords="2709,583,2509,558,2390,547,2271,543,1994,543,1495,543,1493,538,1994,538,2272,538,2391,542,2510,552,2714,582"/>
+<area shape="poly" id="edge57_Node000039_Node000024" title=" " alt="" coords="3590,492,3536,472,3473,453,3367,426,3284,410,3200,401,3092,398,1994,398,1915,402,1836,413,1758,430,1683,450,1554,493,1465,528,1462,524,1552,488,1682,444,1756,425,1835,408,1914,397,1993,393,3092,393,3201,395,3285,404,3369,421,3474,447,3537,467,3596,491"/>
+<area shape="rect" id="Node000040" href="$class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e" title="Read a .gpg&#45;id, verify its detached signature and parse the recipients from the bytes that were verif..." alt="" coords="3274,489,3457,534"/>
+<area shape="poly" id="edge58_Node000039_Node000040" title=" " alt="" coords="3531,512,3458,514,3456,509,3536,511"/>
+<area shape="rect" id="Node000041" href="$class_imitate_pass.html#a2cd108bdff679ad6d03daf0c7dfd1aa3" title="The recipients to encrypt file to: its folder&#39;s .gpg&#45;id, verified when a signing key is set." alt="" coords="2996,502,3185,547"/>
+<area shape="poly" id="edge64_Node000039_Node000041" title=" " alt="" coords="3567,530,3474,549,3366,555,3257,549,3187,542,3185,536,3258,543,3366,549,3473,543,3572,528"/>
+<area shape="rect" id="Node000043" href="$class_imitate_pass.html#a4b2388a7e250b886534e79c7ca131dbf" title="Recipients for the directory of file, from its verified .gpg&#45;id." alt="" coords="3000,433,3181,478"/>
+<area shape="poly" id="edge67_Node000039_Node000043" title=" " alt="" coords="3564,494,3473,479,3319,465,3182,459,3181,454,3319,460,3474,474,3569,493"/>
+<area shape="rect" id="Node000045" href="$class_imitate_pass.html#a9055e77fb0300ace61fde6386b50705f" title="Sign a .gpg&#45;id with the configured key and verify the result; failures are reported through critical(..." alt="" coords="2994,1355,3187,1383"/>
+<area shape="poly" id="edge65_Node000039_Node000045" title=" " alt="" coords="3633,538,3545,843,3476,1070,3450,1110,3426,1142,3377,1189,3323,1233,3259,1293,3237,1321,3227,1333,3211,1344,3182,1357,3180,1352,3208,1340,3223,1329,3233,1318,3255,1290,3320,1229,3373,1185,3422,1138,3446,1107,3471,1068,3540,841,3630,542"/>
+<area shape="rect" id="Node000046" href="$class_imitate_pass.html#a4819b3c68c49968658849aa8535e1f40" title="Write the enabled recipients to a .gpg&#45;id, atomically: a write that fails halfway (full disk,..." alt="" coords="1608,331,1807,359"/>
+<area shape="poly" id="edge68_Node000039_Node000046" title=" " alt="" coords="3611,487,3539,425,3502,396,3473,379,3418,360,3371,348,3328,341,3287,340,3201,343,3092,347,2269,347,1808,347,1806,342,2269,342,3092,342,3201,338,3287,334,3329,336,3372,342,3420,355,3475,374,3505,392,3543,421,3616,487"/>
+<area shape="poly" id="edge59_Node000040_Node000041" title=" " alt="" coords="3256,518,3187,523,3185,518,3261,516"/>
+<area shape="poly" id="edge61_Node000040_Node000043" title=" " alt="" coords="3256,490,3182,476,3180,471,3262,489"/>
+<area shape="rect" id="Node000042" href="$class_imitate_pass.html#a4c62fe3ae4f151582f6360599a610dd6" title="Insert new password." alt="" coords="2738,534,2880,561"/>
+<area shape="poly" id="edge60_Node000041_Node000042" title=" " alt="" coords="2978,535,2881,544,2879,539,2983,532"/>
+<area shape="rect" id="Node000044" href="$class_imitate_pass.html#a55e5e5b17e7f57d387944c22921ede3e" title="The verified recipients for the folder fileName sits in." alt="" coords="2705,432,2913,460"/>
+<area shape="poly" id="edge62_Node000043_Node000044" title=" " alt="" coords="2982,453,2914,452,2912,447,2987,451"/>
+<area shape="poly" id="edge63_Node000044_Node000018" title=" " alt="" coords="2759,469,2727,493,2696,524,2656,585,2624,652,2598,721,2579,789,2554,909,2544,986,2539,984,2549,908,2573,788,2593,719,2619,650,2652,582,2692,520,2724,489,2764,466"/>
+<area shape="poly" id="edge66_Node000045_Node000038" title=" " alt="" coords="2978,1350,2970,1344,2953,1316,2942,1282,2935,1242,2933,1196,2936,1094,2945,984,2955,874,2958,772,2955,727,2949,687,2938,654,2922,628,2910,617,2910,611,2926,624,2943,652,2954,686,2961,727,2963,772,2960,874,2951,984,2941,1094,2938,1196,2941,1241,2947,1281,2958,1314,2974,1340,2983,1351"/>
+<area shape="poly" id="edge69_Node000046_Node000024" title=" " alt="" coords="1606,366,1583,379,1536,414,1496,456,1443,528,1438,525,1492,453,1533,410,1580,374,1610,362"/>
+<area shape="poly" id="edge71_Node000047_Node000018" title=" " alt="" coords="3504,995,2639,1001,2638,996,3509,992"/>
+<area shape="rect" id="Node000051" href="$class_main_window.html#a5890dfd116d4da96689e7114dd4e5494" title="Add the Share submenu for the folder under the cursor: the entries are enabled only where a recipient..." alt="" coords="542,2274,751,2301"/>
+<area shape="poly" id="edge75_Node000050_Node000051" title=" " alt="" coords="3790,2331,2646,2311,1538,2298,752,2291,752,2286,1538,2293,2646,2306,3795,2329"/>
+<area shape="poly" id="edge76_Node000051_Node000010" title=" " alt="" coords="567,2270,530,2258,413,2204,301,2145,146,2051,145,2046,304,2140,415,2200,532,2253,572,2268"/>
+<area shape="poly" id="edge78_Node000052_Node000052" title=" " alt="" coords="2315,2478,2300,2475,2270,2472,2242,2474,2226,2479,2222,2484,2229,2494,2224,2492,2217,2485,2223,2475,2241,2469,2270,2467,2302,2469,2320,2478"/>
+<area shape="rect" id="Node000053" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="1882,2372,2108,2400"/>
+<area shape="poly" id="edge79_Node000052_Node000053" title=" " alt="" coords="2223,2486,2154,2450,2131,2430,2107,2414,2078,2403,2078,2398,2109,2409,2134,2426,2158,2445,2228,2487"/>
+<area shape="rect" id="Node000056" href="$class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449" title="Fill the fields from the settings (autodetection already ran)." alt="" coords="1915,2424,2074,2468"/>
+<area shape="poly" id="edge83_Node000052_Node000056" title=" " alt="" coords="2187,2490,2075,2466,2075,2461,2193,2490"/>
+<area shape="rect" id="Node000057" href="$class_config_dialog.html#ae4d11811206b82326dca209f35910052" title="Whether qrencode can run: configuredPath when it is an executable file, else a qrencode on Util&#39;s PAT..." alt="" coords="1902,2493,2088,2538"/>
+<area shape="poly" id="edge84_Node000052_Node000057" title=" " alt="" coords="2173,2511,2088,2515,2087,2510,2178,2510"/>
+<area shape="rect" id="Node000058" href="$class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="1892,2562,2098,2607"/>
+<area shape="poly" id="edge86_Node000052_Node000058" title=" " alt="" coords="2186,2525,2157,2535,2109,2553,2072,2564,2071,2559,2107,2548,2155,2530,2181,2526"/>
+<area shape="rect" id="Node000054" href="$class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh&#45;in..." alt="" coords="1660,2350,1755,2377"/>
+<area shape="poly" id="edge80_Node000053_Node000054" title=" " alt="" coords="1864,2376,1756,2370,1755,2364,1869,2376"/>
+<area shape="poly" id="edge81_Node000054_Node000009" title=" " alt="" coords="1654,2344,1566,2315,1446,2279,1309,2251,1239,2243,1169,2239,908,2239,798,2239,712,2232,672,2223,629,2210,530,2167,487,2140,448,2108,398,2051,397,2046,452,2104,490,2136,532,2162,631,2205,673,2218,713,2227,798,2233,908,2234,1169,2234,1239,2237,1310,2246,1448,2274,1568,2309,1660,2343"/>
+<area shape="rect" id="Node000055" href="$class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5" title="Destroy the QtPass instance and clean up signal connections." alt="" coords="1366,2350,1494,2377"/>
+<area shape="poly" id="edge82_Node000054_Node000055" title=" " alt="" coords="1642,2364,1495,2366,1494,2361,1648,2363"/>
+<area shape="poly" id="edge85_Node000057_Node000013" title=" " alt="" coords="1898,2543,1883,2552,1837,2578,1793,2607,1727,2658,1724,2654,1790,2603,1834,2574,1880,2548,1893,2545"/>
 <area shape="rect" id="Node000060" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="2740,270,2878,297"/>
-<area shape="poly" id="edge88_Node000059_Node000060" title=" " alt="" coords="3858,542,3759,509,3606,453,3487,408,3367,368,3209,329,3120,313,3031,301,2880,289,2878,284,3031,296,3121,308,3210,324,3368,363,3489,403,3607,448,3761,504,3863,541"/>
-<area shape="rect" id="Node000062" href="$class_keygen_dialog.html#a90fd7f89ce5f973fd48a4037e5103c74" title="Connects to the backend&#39;s finished/failed signals for this one attempt and calls Pass::GenerateGPGKey..." alt="" coords="3530,2706,3752,2733"/>
-<area shape="poly" id="edge90_Node000061_Node000062" title=" " alt="" coords="3810,2720,3752,2722,3752,2717,3815,2719"/>
-<area shape="rect" id="Node000063" href="$class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a" title="On Accepted, validates the form (passphrase chosen, no line breaks, name of 5+ characters,..." alt="" coords="3290,2706,3441,2733"/>
-<area shape="poly" id="edge91_Node000062_Node000063" title=" " alt="" coords="3512,2720,3442,2722,3441,2717,3517,2719"/>
-<area shape="rect" id="Node000065" href="$class_password_dialog.html#ae3f9bdded8d39dea9081d405fec9e355" title="&quot;Generate&quot; button: asks the backend for a password of the chosen length from the selected character s..." alt="" coords="3554,2146,3728,2208"/>
-<area shape="poly" id="edge93_Node000064_Node000065" title=" " alt="" coords="3856,2251,3728,2209,3728,2203,3862,2251"/>
-<area shape="rect" id="Node000066" href="$class_password_dialog.html#aa09071e9cbd91dddfdaa865ec1b54687" title="Text was copied out of the password, a field or the body, marked as a secret: for ClipboardManager::t..." alt="" coords="3278,1995,3453,2023"/>
-<area shape="poly" id="edge94_Node000065_Node000066" title=" " alt="" coords="3573,2137,3390,2026,3390,2020,3578,2138"/>
-<area shape="rect" id="Node000067" href="$class_password_dialog.html#a591e5449bf04ce02f98c7aceca3c5da5" title="Adds a row for a field outside the template: a FieldLabel that can be renamed or removed,..." alt="" coords="2701,1907,2916,1935"/>
-<area shape="poly" id="edge95_Node000066_Node000067" title=" " alt="" coords="3260,2004,3209,1998,3011,1966,2855,1938,2855,1933,3012,1961,3210,1993,3265,2004"/>
-<area shape="rect" id="Node000070" href="$class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c" title="Construct a PasswordDialog for editing an existing password file." alt="" coords="1611,1970,1804,2015"/>
-<area shape="poly" id="edge125_Node000066_Node000070" title=" " alt="" coords="3286,2027,3150,2058,2965,2090,2754,2115,2646,2123,2540,2126,2269,2126,2158,2124,2072,2117,1988,2100,1881,2071,1811,2046,1752,2018,1752,2013,1813,2041,1882,2066,1989,2095,2073,2111,2159,2119,2269,2121,2540,2121,2646,2118,2754,2110,2964,2084,3149,2053,3291,2026"/>
-<area shape="rect" id="Node000072" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="Construct a PasswordDialog for entering a new password." alt="" coords="1898,1852,2092,1896"/>
-<area shape="poly" id="edge126_Node000066_Node000072" title=" " alt="" coords="3337,1983,3282,1937,3247,1913,3208,1894,3134,1867,3058,1846,2979,1829,2900,1817,2740,1803,2584,1801,2436,1809,2301,1822,2185,1839,2093,1856,2091,1851,2184,1834,2300,1817,2435,1803,2584,1796,2740,1797,2901,1811,2980,1824,3059,1841,3136,1862,3210,1889,3249,1908,3285,1933,3343,1984"/>
-<area shape="rect" id="Node000077" href="$class_main_window.html#a2b0351f339c894215610f1b3557c8630" title="Run PasswordDialog for a new or existing entry. For a new one the dialog gets the store&#39;s real folder..." alt="" coords="1334,2231,1527,2259"/>
-<area shape="poly" id="edge133_Node000066_Node000077" title=" " alt="" coords="3351,2034,3328,2072,3296,2112,3257,2150,3210,2181,3181,2190,3136,2199,3008,2214,2845,2226,2663,2235,2316,2247,2108,2253,1845,2257,1581,2253,1528,2251,1527,2246,1581,2247,1845,2252,2108,2247,2316,2242,2663,2230,2844,2221,3008,2209,3135,2194,3179,2185,3208,2176,3253,2146,3292,2108,3324,2069,3347,2038"/>
-<area shape="rect" id="Node000083" href="$class_password_dialog.html#ac720352c9c25b6b05d48ab29d553dc78" title="Forwards the line edit&#39;s SecretLineEdit::copied to this dialog&#39;s copied(), so every copy out of any f..." alt="" coords="2983,1995,3198,2023"/>
-<area shape="poly" id="edge127_Node000066_Node000083" title=" " alt="" coords="3260,2018,3199,2020,3198,2015,3265,2017"/>
-<area shape="poly" id="edge96_Node000067_Node000066" title=" " alt="" coords="2932,1927,3210,1969,3335,1994,3329,1995,3209,1974,2932,1932"/>
-<area shape="rect" id="Node000068" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Populate the dialog&#39;s password field with the given text." alt="" coords="2432,1907,2646,1935"/>
-<area shape="poly" id="edge97_Node000067_Node000068" title=" " alt="" coords="2683,1921,2647,1923,2645,1918,2688,1920"/>
-<area shape="rect" id="Node000073" href="$class_password_dialog.html#ac157ada38d02eb47d7038b2edb1a2e9e" title="Set the template fields and whether templating is enabled." alt="" coords="2433,2008,2645,2036"/>
-<area shape="poly" id="edge107_Node000067_Node000073" title=" " alt="" coords="2753,1942,2579,2010,2577,2005,2758,1939"/>
-<area shape="rect" id="Node000069" href="$class_password_dialog.html#acddd50947c80336ac71442d186e7c6ff" title="Connected to QDialog::rejected: blanks the password and field widgets so the decrypted secret does no..." alt="" coords="2196,1889,2344,1934"/>
-<area shape="poly" id="edge98_Node000068_Node000069" title=" " alt="" coords="2414,1917,2345,1917,2344,1911,2419,1916"/>
-<area shape="rect" id="Node000071" href="$class_password_dialog.html#aa3ae11c8655a48bfa12621d81b2b6571" title="Populate the dialog from a decrypted entry (Pass::finishedShow)." alt="" coords="2180,1755,2361,1783"/>
-<area shape="poly" id="edge101_Node000068_Node000071" title=" " alt="" coords="2497,1899,2297,1786,2297,1780,2502,1899"/>
-<area shape="poly" id="edge99_Node000069_Node000066" title=" " alt="" coords="2359,1896,2521,1879,2623,1874,2735,1872,2853,1875,2974,1885,3094,1903,3210,1932,3283,1961,3343,1995,3338,1994,3281,1966,3209,1937,3093,1908,2973,1890,2853,1880,2735,1877,2623,1879,2521,1885,2360,1901"/>
-<area shape="poly" id="edge100_Node000069_Node000070" title=" " alt="" coords="2179,1925,1805,1981,1804,1976,2183,1923"/>
-<area shape="poly" id="edge102_Node000071_Node000066" title=" " alt="" coords="2376,1761,2576,1754,2819,1755,2940,1761,3049,1771,3142,1788,3180,1799,3211,1812,3239,1830,3266,1852,3309,1904,3341,1955,3361,1996,3356,1994,3336,1958,3305,1907,3262,1856,3236,1834,3208,1816,3178,1804,3141,1793,3049,1777,2939,1766,2819,1760,2577,1759,2377,1766"/>
-<area shape="poly" id="edge103_Node000071_Node000070" title=" " alt="" coords="2161,1764,2098,1768,2026,1775,1952,1791,1883,1818,1832,1851,1787,1893,1751,1936,1725,1972,1721,1968,1747,1933,1783,1890,1828,1847,1880,1813,1951,1786,2025,1770,2098,1762,2166,1762"/>
-<area shape="poly" id="edge104_Node000071_Node000072" title=" " alt="" coords="2194,1789,2157,1803,2042,1854,2040,1849,2155,1798,2199,1786"/>
-<area shape="poly" id="edge105_Node000072_Node000070" title=" " alt="" coords="1922,1904,1765,1972,1762,1968,1927,1902"/>
-<area shape="poly" id="edge106_Node000072_Node000072" title=" " alt="" coords="2038,1837,2023,1833,1995,1830,1969,1832,1953,1837,1946,1843,1948,1852,1943,1850,1941,1842,1950,1833,1968,1827,1995,1825,2024,1828,2043,1836"/>
-<area shape="poly" id="edge124_Node000073_Node000070" title=" " alt="" coords="2415,2019,1805,1999,1804,1994,2420,2017"/>
-<area shape="rect" id="Node000074" href="$class_password_dialog.html#ae2040e83c9d4ddf49ccdc7ce23388ef3" title="Switch to a named template: records it, selects it in the combo box and rebuilds the field rows throu..." alt="" coords="2156,2160,2384,2188"/>
-<area shape="poly" id="edge108_Node000073_Node000074" title=" " alt="" coords="2502,2043,2298,2162,2295,2157,2497,2045"/>
-<area shape="rect" id="Node000075" href="$class_password_dialog.html#a3be525fe15b6af1939dad714e3244733" title="Cycle to next template (Ctrl+T)." alt="" coords="1882,2211,2108,2239"/>
-<area shape="poly" id="edge109_Node000074_Node000075" title=" " alt="" coords="2174,2192,2075,2213,2073,2208,2179,2190"/>
-<area shape="rect" id="Node000076" href="$class_password_dialog.html#a3bf288e273871a79ae041830fa82ae6a" title="Set available templates from file and select default." alt="" coords="1601,2193,1814,2238"/>
-<area shape="poly" id="edge123_Node000074_Node000076" title=" " alt="" coords="2138,2182,1882,2202,1815,2208,1813,2203,1881,2197,2143,2181"/>
-<area shape="poly" id="edge110_Node000075_Node000066" title=" " alt="" coords="2123,2216,2761,2184,3061,2164,3161,2155,3208,2146,3255,2119,3296,2085,3329,2050,3352,2025,3356,2022,3333,2053,3300,2089,3258,2124,3210,2151,3161,2160,3062,2169,2761,2189,2124,2222"/>
-<area shape="poly" id="edge111_Node000075_Node000076" title=" " alt="" coords="1864,2221,1815,2222,1814,2216,1869,2220"/>
-<area shape="poly" id="edge112_Node000076_Node000077" title=" " alt="" coords="1583,2229,1528,2237,1526,2232,1588,2227"/>
-<area shape="rect" id="Node000078" href="$class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder." alt="" coords="810,2266,1008,2293"/>
-<area shape="poly" id="edge113_Node000077_Node000078" title=" " alt="" coords="1316,2253,1009,2275,1007,2270,1320,2251"/>
-<area shape="rect" id="Node000079" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1068,2190,1266,2217"/>
-<area shape="poly" id="edge116_Node000077_Node000079" title=" " alt="" coords="1320,2229,1260,2220,1259,2215,1325,2227"/>
-<area shape="poly" id="edge115_Node000078_Node000010" title=" " alt="" coords="793,2277,687,2278,560,2281,423,2290,287,2307,220,2323,163,2342,159,2338,219,2318,286,2302,422,2285,560,2276,687,2272,797,2274"/>
-<area shape="poly" id="edge114_Node000078_Node000012" title=" " alt="" coords="817,2298,723,2318,721,2313,821,2295"/>
-<area shape="rect" id="Node000080" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,2215,755,2243"/>
-<area shape="poly" id="edge117_Node000079_Node000080" title=" " alt="" coords="1051,2210,757,2226,755,2221,1055,2207"/>
-<area shape="rect" id="Node000081" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="812,2096,1006,2140"/>
-<area shape="poly" id="edge119_Node000079_Node000081" title=" " alt="" coords="1106,2185,979,2144,979,2138,1111,2183"/>
-<area shape="rect" id="Node000082" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="832,2164,986,2192"/>
-<area shape="poly" id="edge120_Node000079_Node000082" title=" " alt="" coords="1050,2193,987,2188,985,2183,1055,2191"/>
-<area shape="poly" id="edge118_Node000080_Node000009" title=" " alt="" coords="600,2252,418,2342,414,2338,604,2248"/>
-<area shape="poly" id="edge122_Node000082_Node000010" title=" " alt="" coords="834,2162,770,2152,694,2143,612,2143,532,2154,471,2171,412,2194,300,2247,207,2301,146,2341,141,2338,204,2296,297,2242,410,2189,470,2166,530,2149,612,2138,694,2138,771,2146,838,2159"/>
-<area shape="poly" id="edge121_Node000082_Node000012" title=" " alt="" coords="868,2202,674,2318,671,2314,872,2198"/>
-<area shape="poly" id="edge129_Node000083_Node000066" title=" " alt="" coords="3213,1997,3280,2000,3275,2001,3214,2002"/>
-<area shape="poly" id="edge128_Node000083_Node000067" title=" " alt="" coords="3010,1990,2971,1979,2923,1955,2869,1938,2869,1932,2925,1950,2973,1974,3016,1990"/>
-<area shape="poly" id="edge130_Node000083_Node000070" title=" " alt="" coords="2996,2027,2790,2059,2665,2071,2540,2075,2269,2075,2142,2070,2016,2055,1900,2037,1805,2017,1804,2012,1901,2031,2017,2050,2143,2064,2269,2070,2540,2070,2665,2065,2790,2054,3002,2025"/>
-<area shape="poly" id="edge131_Node000083_Node000072" title=" " alt="" coords="2965,2000,2924,1999,2807,1994,2707,1993,2536,1996,2455,1995,2368,1988,2270,1974,2155,1949,2091,1926,2036,1900,2036,1894,2093,1921,2157,1944,2271,1968,2368,1983,2455,1990,2536,1991,2707,1988,2807,1989,2924,1994,2970,1999"/>
-<area shape="poly" id="edge132_Node000083_Node000073" title=" " alt="" coords="2965,2012,2646,2022,2645,2017,2970,2011"/>
-<area shape="rect" id="Node000085" href="$class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8" title="Show the configured store path." alt="" coords="3528,2766,3754,2793"/>
-<area shape="poly" id="edge135_Node000084_Node000085" title=" " alt="" coords="3820,2780,3755,2782,3754,2777,3825,2779"/>
-<area shape="rect" id="Node000090" href="$class_pass.html#a126c484e0780c5ac98a57007a4daa926" title="Get default key template for new GPG keys." alt="" coords="3535,2982,3746,3009"/>
-<area shape="poly" id="edge140_Node000089_Node000090" title=" " alt="" coords="3801,2996,3747,2998,3747,2993,3806,2995"/>
-<area shape="rect" id="Node000091" href="$class_keygen_dialog.html#a2378a741fcb02e1f8ab4debec25c3c4d" title="Construct a KeygenDialog." alt="" coords="3261,2982,3470,3009"/>
-<area shape="poly" id="edge141_Node000090_Node000091" title=" " alt="" coords="3517,2996,3471,2998,3471,2993,3523,2995"/>
-<area shape="poly" id="edge142_Node000091_Node000091" title=" " alt="" coords="3411,2966,3396,2963,3365,2960,3337,2962,3321,2967,3317,2972,3324,2982,3319,2980,3311,2973,3317,2963,3336,2957,3366,2955,3398,2957,3417,2967"/>
-<area shape="rect" id="Node000093" href="$class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6" title="List GPG keys." alt="" coords="3036,1718,3145,1745"/>
-<area shape="poly" id="edge144_Node000092_Node000093" title=" " alt="" coords="3293,1712,3146,1729,3145,1724,3298,1711"/>
-<area shape="rect" id="Node000094" href="$class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2" title="Mark which keys have secret counterparts." alt="" coords="2984,1666,3198,1693"/>
-<area shape="poly" id="edge145_Node000092_Node000094" title=" " alt="" coords="3293,1699,3198,1692,3198,1687,3298,1698"/>
-<area shape="rect" id="Node000098" href="$class_users_dialog.html#a3c3a5d0fdc783f2ad1b52f59a4903d31" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="2983,1614,3198,1641"/>
-<area shape="poly" id="edge149_Node000092_Node000098" title=" " alt="" coords="3307,1686,3209,1657,3161,1645,3160,1639,3210,1652,3312,1685"/>
-<area shape="rect" id="Node000095" href="$class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565" title="Load GPG keys and determine secret key status." alt="" coords="2712,1666,2906,1693"/>
-<area shape="poly" id="edge146_Node000094_Node000095" title=" " alt="" coords="2965,1680,2907,1682,2906,1677,2971,1679"/>
-<area shape="rect" id="Node000096" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="2440,1601,2638,1646"/>
-<area shape="poly" id="edge147_Node000095_Node000096" title=" " alt="" coords="2721,1662,2639,1647,2638,1641,2726,1661"/>
-<area shape="rect" id="Node000097" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="1901,1511,2088,1539"/>
-<area shape="poly" id="edge148_Node000095_Node000097" title=" " alt="" coords="2694,1681,2569,1677,2432,1661,2316,1635,2203,1602,2033,1542,2032,1537,2204,1597,2317,1630,2433,1655,2569,1672,2699,1679"/>
-<area shape="poly" id="edge152_Node000098_Node000096" title=" " alt="" coords="2965,1627,2639,1627,2638,1622,2970,1626"/>
-<area shape="rect" id="Node000099" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="2707,1511,2911,1539"/>
-<area shape="poly" id="edge150_Node000098_Node000099" title=" " alt="" coords="2983,1608,2971,1603,2955,1591,2946,1578,2937,1565,2923,1554,2896,1542,2895,1536,2925,1549,2941,1562,2950,1575,2959,1587,2973,1599,2989,1608"/>
-<area shape="poly" id="edge151_Node000099_Node000097" title=" " alt="" coords="2689,1526,2090,1527,2088,1522,2694,1524"/>
+<area shape="poly" id="edge88_Node000059_Node000060" title=" " alt="" coords="3587,360,3534,344,3473,329,3307,305,3141,291,2992,286,2879,285,2877,280,2992,280,3141,286,3307,299,3474,323,3535,339,3592,359"/>
+<area shape="rect" id="Node000062" href="$class_keygen_dialog.html#a90fd7f89ce5f973fd48a4037e5103c74" title="Connects to the backend&#39;s finished/failed signals for this one attempt and calls Pass::GenerateGPGKey..." alt="" coords="3530,2575,3752,2603"/>
+<area shape="poly" id="edge90_Node000061_Node000062" title=" " alt="" coords="3810,2589,3752,2591,3752,2586,3815,2589"/>
+<area shape="rect" id="Node000063" href="$class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a" title="On Accepted, validates the form (passphrase chosen, no line breaks, name of 5+ characters,..." alt="" coords="3290,2575,3441,2603"/>
+<area shape="poly" id="edge91_Node000062_Node000063" title=" " alt="" coords="3512,2589,3442,2591,3441,2586,3517,2589"/>
+<area shape="rect" id="Node000065" href="$class_password_dialog.html#ae3f9bdded8d39dea9081d405fec9e355" title="&quot;Generate&quot; button: asks the backend for a password of the chosen length from the selected character s..." alt="" coords="3554,1871,3728,1933"/>
+<area shape="poly" id="edge93_Node000064_Node000065" title=" " alt="" coords="3834,1946,3728,1924,3728,1919,3839,1946"/>
+<area shape="rect" id="Node000066" href="$class_password_dialog.html#aa09071e9cbd91dddfdaa865ec1b54687" title="Text was copied out of the password, a field or the body, marked as a secret: for ClipboardManager::t..." alt="" coords="3278,1776,3453,1804"/>
+<area shape="poly" id="edge94_Node000065_Node000066" title=" " alt="" coords="3546,1865,3402,1807,3402,1802,3552,1865"/>
+<area shape="rect" id="Node000067" href="$class_password_dialog.html#a591e5449bf04ce02f98c7aceca3c5da5" title="Adds a row for a field outside the template: a FieldLabel that can be renamed or removed,..." alt="" coords="2701,1764,2916,1792"/>
+<area shape="poly" id="edge95_Node000066_Node000067" title=" " alt="" coords="3260,1796,2917,1790,2917,1785,3265,1794"/>
+<area shape="rect" id="Node000070" href="$class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c" title="Construct a PasswordDialog for editing an existing password file." alt="" coords="1611,1637,1804,1682"/>
+<area shape="poly" id="edge125_Node000066_Node000070" title=" " alt="" coords="3260,1795,2924,1806,2629,1812,2509,1813,2397,1811,2287,1802,2169,1786,2036,1761,1881,1725,1819,1706,1764,1685,1763,1680,1821,1701,1882,1719,2037,1756,2170,1781,2287,1797,2398,1805,2509,1808,2628,1807,2924,1801,3265,1793"/>
+<area shape="rect" id="Node000072" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="Construct a PasswordDialog for entering a new password." alt="" coords="1898,1552,2092,1596"/>
+<area shape="poly" id="edge126_Node000066_Node000072" title=" " alt="" coords="3347,1762,3281,1652,3242,1598,3224,1578,3208,1566,3167,1548,3116,1534,3057,1524,2990,1517,2838,1511,2674,1514,2506,1523,2346,1536,2093,1564,2091,1559,2346,1531,2506,1518,2674,1508,2838,1506,2990,1512,3057,1519,3117,1529,3169,1543,3211,1561,3228,1574,3246,1595,3286,1649,3352,1763"/>
+<area shape="rect" id="Node000077" href="$class_main_window.html#a2b0351f339c894215610f1b3557c8630" title="Run PasswordDialog for a new or existing entry. For a new one the dialog gets the store&#39;s real folder..." alt="" coords="1334,1968,1527,1996"/>
+<area shape="poly" id="edge133_Node000066_Node000077" title=" " alt="" coords="3347,1815,3291,1883,3253,1917,3211,1947,3136,1985,3074,2006,3008,2017,2924,2027,2724,2048,2519,2058,2315,2058,2118,2052,1936,2040,1772,2026,1528,1998,1527,1993,1772,2021,1936,2035,2119,2046,2315,2053,2518,2052,2723,2043,2924,2022,3007,2011,3072,2000,3134,1980,3208,1942,3249,1913,3287,1879,3343,1818"/>
+<area shape="rect" id="Node000083" href="$class_password_dialog.html#ac720352c9c25b6b05d48ab29d553dc78" title="Forwards the line edit&#39;s SecretLineEdit::copied to this dialog&#39;s copied(), so every copy out of any f..." alt="" coords="2983,1611,3198,1639"/>
+<area shape="poly" id="edge127_Node000066_Node000083" title=" " alt="" coords="3333,1765,3279,1715,3245,1688,3208,1666,3170,1651,3132,1642,3132,1636,3171,1646,3211,1661,3248,1684,3283,1711,3338,1766"/>
+<area shape="poly" id="edge96_Node000067_Node000066" title=" " alt="" coords="2932,1770,3280,1781,3275,1782,2933,1776"/>
+<area shape="rect" id="Node000068" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Populate the dialog&#39;s password field with the given text." alt="" coords="2432,1712,2646,1740"/>
+<area shape="poly" id="edge97_Node000067_Node000068" title=" " alt="" coords="2715,1761,2615,1743,2614,1738,2721,1760"/>
+<area shape="rect" id="Node000073" href="$class_password_dialog.html#ac157ada38d02eb47d7038b2edb1a2e9e" title="Set the template fields and whether templating is enabled." alt="" coords="2433,1764,2645,1792"/>
+<area shape="poly" id="edge107_Node000067_Node000073" title=" " alt="" coords="2683,1779,2646,1781,2645,1775,2688,1777"/>
+<area shape="rect" id="Node000069" href="$class_password_dialog.html#acddd50947c80336ac71442d186e7c6ff" title="Connected to QDialog::rejected: blanks the password and field widgets so the decrypted secret does no..." alt="" coords="2196,1662,2344,1707"/>
+<area shape="poly" id="edge98_Node000068_Node000069" title=" " alt="" coords="2427,1710,2345,1699,2344,1693,2432,1709"/>
+<area shape="rect" id="Node000071" href="$class_password_dialog.html#aa3ae11c8655a48bfa12621d81b2b6571" title="Populate the dialog from a decrypted entry (Pass::finishedShow)." alt="" coords="2180,1611,2361,1639"/>
+<area shape="poly" id="edge101_Node000068_Node000071" title=" " alt="" coords="2498,1704,2445,1679,2383,1653,2348,1642,2347,1637,2385,1648,2447,1674,2503,1704"/>
+<area shape="poly" id="edge99_Node000069_Node000066" title=" " alt="" coords="2359,1683,2519,1688,2731,1698,2970,1718,3210,1750,3315,1775,3310,1776,3209,1755,2969,1724,2731,1704,2519,1693,2360,1688"/>
+<area shape="poly" id="edge100_Node000069_Node000070" title=" " alt="" coords="2178,1682,1805,1666,1804,1661,2183,1680"/>
+<area shape="poly" id="edge102_Node000071_Node000066" title=" " alt="" coords="2375,1608,2575,1584,2818,1566,2938,1563,3048,1565,3141,1576,3179,1585,3210,1597,3239,1614,3266,1636,3309,1686,3341,1737,3361,1777,3356,1775,3337,1739,3305,1689,3262,1640,3236,1619,3208,1602,3178,1590,3140,1582,3048,1571,2938,1568,2818,1571,2576,1590,2377,1613"/>
+<area shape="poly" id="edge103_Node000071_Node000070" title=" " alt="" coords="2162,1632,1805,1656,1804,1651,2166,1630"/>
+<area shape="poly" id="edge104_Node000071_Node000072" title=" " alt="" coords="2174,1608,2093,1594,2091,1589,2179,1607"/>
+<area shape="poly" id="edge105_Node000072_Node000070" title=" " alt="" coords="1900,1603,1786,1639,1784,1634,1905,1600"/>
+<area shape="poly" id="edge106_Node000072_Node000072" title=" " alt="" coords="2038,1537,2023,1533,1995,1530,1969,1532,1953,1537,1946,1543,1948,1552,1943,1550,1941,1542,1950,1533,1968,1527,1995,1525,2024,1527,2043,1536"/>
+<area shape="poly" id="edge124_Node000073_Node000070" title=" " alt="" coords="2419,1762,1805,1676,1804,1670,2424,1760"/>
+<area shape="rect" id="Node000074" href="$class_password_dialog.html#ae2040e83c9d4ddf49ccdc7ce23388ef3" title="Switch to a named template: records it, selects it in the combo box and rebuilds the field rows throu..." alt="" coords="2156,1832,2384,1860"/>
+<area shape="poly" id="edge108_Node000073_Node000074" title=" " alt="" coords="2464,1797,2329,1834,2327,1829,2469,1795"/>
+<area shape="rect" id="Node000075" href="$class_password_dialog.html#a3be525fe15b6af1939dad714e3244733" title="Cycle to next template (Ctrl+T)." alt="" coords="1882,1908,2108,1936"/>
+<area shape="poly" id="edge109_Node000074_Node000075" title=" " alt="" coords="2187,1865,2157,1875,2041,1910,2039,1905,2155,1870,2192,1863"/>
+<area shape="rect" id="Node000076" href="$class_password_dialog.html#a3bf288e273871a79ae041830fa82ae6a" title="Set available templates from file and select default." alt="" coords="1601,1900,1814,1944"/>
+<area shape="poly" id="edge123_Node000074_Node000076" title=" " alt="" coords="2138,1863,1882,1899,1815,1909,1813,1904,1881,1894,2143,1861"/>
+<area shape="poly" id="edge110_Node000075_Node000066" title=" " alt="" coords="2123,1929,2319,1940,2538,1946,2810,1946,2925,1942,3013,1930,3100,1906,3208,1869,3282,1836,3340,1805,3344,1803,3285,1841,3210,1874,3101,1911,3014,1935,2925,1948,2810,1951,2538,1951,2319,1946,2124,1935"/>
+<area shape="poly" id="edge111_Node000075_Node000076" title=" " alt="" coords="1864,1923,1815,1925,1814,1919,1869,1921"/>
+<area shape="poly" id="edge112_Node000076_Node000077" title=" " alt="" coords="1584,1949,1499,1970,1496,1965,1589,1947"/>
+<area shape="rect" id="Node000078" href="$class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder." alt="" coords="810,2020,1008,2048"/>
+<area shape="poly" id="edge113_Node000077_Node000078" title=" " alt="" coords="1316,1995,1009,2027,1007,2022,1320,1992"/>
+<area shape="rect" id="Node000079" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1068,1943,1266,1971"/>
+<area shape="poly" id="edge116_Node000077_Node000079" title=" " alt="" coords="1316,1972,1268,1969,1266,1964,1321,1970"/>
+<area shape="poly" id="edge115_Node000078_Node000010" title=" " alt="" coords="821,2015,809,2010,794,1996,785,1982,776,1969,761,1959,720,1944,677,1933,589,1924,500,1927,413,1940,332,1959,260,1981,156,2022,152,2018,258,1976,330,1954,412,1935,499,1922,589,1918,678,1928,721,1939,764,1954,780,1966,789,1979,798,1993,812,2005,826,2014"/>
+<area shape="poly" id="edge114_Node000078_Node000012" title=" " alt="" coords="792,2035,764,2036,762,2032,797,2033"/>
+<area shape="rect" id="Node000080" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,1968,755,1996"/>
+<area shape="poly" id="edge117_Node000079_Node000080" title=" " alt="" coords="1050,1953,936,1954,811,1959,726,1970,723,1965,810,1954,936,1949,1055,1951"/>
+<area shape="rect" id="Node000081" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="812,1849,1006,1894"/>
+<area shape="poly" id="edge119_Node000079_Node000081" title=" " alt="" coords="1106,1938,980,1897,978,1892,1111,1937"/>
+<area shape="rect" id="Node000082" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="832,1968,986,1996"/>
+<area shape="poly" id="edge120_Node000079_Node000082" title=" " alt="" coords="1050,1969,987,1977,985,1972,1055,1967"/>
+<area shape="poly" id="edge118_Node000080_Node000009" title=" " alt="" coords="557,2001,460,2022,457,2017,561,1998"/>
+<area shape="poly" id="edge122_Node000082_Node000010" title=" " alt="" coords="866,1961,818,1941,762,1923,629,1898,574,1891,522,1888,471,1890,417,1898,357,1911,288,1931,243,1950,202,1974,141,2021,137,2018,199,1970,241,1945,286,1926,356,1906,417,1892,471,1885,522,1883,574,1886,629,1893,763,1918,820,1936,872,1960"/>
+<area shape="poly" id="edge121_Node000082_Node000012" title=" " alt="" coords="819,2001,722,2022,719,2017,823,1998"/>
+<area shape="poly" id="edge129_Node000083_Node000066" title=" " alt="" coords="3212,1639,3263,1673,3306,1711,3339,1746,3360,1776,3355,1775,3334,1750,3302,1715,3260,1677,3211,1644"/>
+<area shape="poly" id="edge128_Node000083_Node000067" title=" " alt="" coords="2986,1645,2973,1654,2959,1663,2949,1673,2926,1697,2833,1766,2830,1762,2922,1693,2945,1670,2955,1659,2971,1649,2991,1643"/>
+<area shape="poly" id="edge130_Node000083_Node000070" title=" " alt="" coords="3035,1605,2956,1579,2844,1545,2709,1511,2555,1482,2389,1462,2304,1458,2218,1458,2132,1464,2047,1475,1963,1493,1883,1518,1834,1542,1791,1575,1755,1609,1728,1639,1725,1635,1751,1605,1788,1570,1832,1538,1881,1513,1962,1488,2046,1470,2131,1459,2217,1453,2304,1453,2389,1457,2555,1476,2710,1506,2846,1540,2958,1574,3041,1605"/>
+<area shape="poly" id="edge131_Node000083_Node000072" title=" " alt="" coords="2965,1620,2092,1581,2092,1576,2970,1618"/>
+<area shape="poly" id="edge132_Node000083_Node000073" title=" " alt="" coords="3005,1643,2973,1654,2809,1703,2646,1754,2600,1766,2599,1761,2645,1749,2808,1698,2971,1649,3010,1642"/>
+<area shape="rect" id="Node000085" href="$class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8" title="Show the configured store path." alt="" coords="3528,2635,3754,2663"/>
+<area shape="poly" id="edge135_Node000084_Node000085" title=" " alt="" coords="3820,2649,3755,2651,3754,2646,3825,2649"/>
+<area shape="rect" id="Node000090" href="$class_pass.html#a126c484e0780c5ac98a57007a4daa926" title="Get default key template for new GPG keys." alt="" coords="3535,2851,3746,2879"/>
+<area shape="poly" id="edge140_Node000089_Node000090" title=" " alt="" coords="3801,2865,3747,2867,3747,2862,3806,2865"/>
+<area shape="rect" id="Node000091" href="$class_keygen_dialog.html#a2378a741fcb02e1f8ab4debec25c3c4d" title="Construct a KeygenDialog." alt="" coords="3261,2851,3470,2879"/>
+<area shape="poly" id="edge141_Node000090_Node000091" title=" " alt="" coords="3517,2865,3471,2867,3471,2862,3523,2865"/>
+<area shape="poly" id="edge142_Node000091_Node000091" title=" " alt="" coords="3411,2835,3396,2832,3365,2830,3337,2832,3321,2836,3317,2842,3324,2851,3319,2849,3311,2842,3317,2832,3336,2826,3366,2824,3398,2827,3417,2836"/>
+<area shape="rect" id="Node000093" href="$class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6" title="List GPG keys." alt="" coords="3036,2216,3145,2244"/>
+<area shape="poly" id="edge144_Node000092_Node000093" title=" " alt="" coords="3293,2250,3146,2238,3145,2233,3298,2250"/>
+<area shape="rect" id="Node000094" href="$class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2" title="Mark which keys have secret counterparts." alt="" coords="2984,2268,3198,2296"/>
+<area shape="poly" id="edge145_Node000092_Node000094" title=" " alt="" coords="3293,2264,3198,2275,3198,2270,3298,2263"/>
+<area shape="rect" id="Node000098" href="$class_users_dialog.html#a3c3a5d0fdc783f2ad1b52f59a4903d31" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="2983,2112,3198,2140"/>
+<area shape="poly" id="edge149_Node000092_Node000098" title=" " alt="" coords="3333,2232,3278,2194,3208,2155,3173,2143,3173,2138,3210,2150,3281,2189,3338,2233"/>
+<area shape="rect" id="Node000095" href="$class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565" title="Load GPG keys and determine secret key status." alt="" coords="2712,2207,2906,2235"/>
+<area shape="poly" id="edge146_Node000094_Node000095" title=" " alt="" coords="3006,2265,2876,2238,2876,2233,3012,2264"/>
+<area shape="rect" id="Node000096" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="2440,2138,2638,2183"/>
+<area shape="poly" id="edge147_Node000095_Node000096" title=" " alt="" coords="2726,2203,2639,2185,2638,2180,2731,2203"/>
+<area shape="rect" id="Node000097" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="1901,1986,2088,2013"/>
+<area shape="poly" id="edge148_Node000095_Node000097" title=" " alt="" coords="2694,2224,2568,2220,2499,2211,2432,2198,2369,2180,2306,2157,2187,2106,2087,2055,2020,2017,2020,2011,2089,2050,2189,2101,2308,2152,2370,2175,2433,2193,2500,2206,2569,2215,2699,2223"/>
+<area shape="poly" id="edge152_Node000098_Node000096" title=" " alt="" coords="2965,2134,2639,2157,2638,2152,2971,2133"/>
+<area shape="rect" id="Node000099" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="2707,1986,2911,2013"/>
+<area shape="poly" id="edge150_Node000098_Node000099" title=" " alt="" coords="3041,2105,2842,2016,2842,2011,3047,2105"/>
+<area shape="poly" id="edge151_Node000099_Node000097" title=" " alt="" coords="2689,2000,2090,2002,2089,1997,2694,1999"/>
 <area shape="rect" id="Node000101" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),..." alt="" coords="2982,110,3200,137"/>
 <area shape="poly" id="edge154_Node000100_Node000101" title=" " alt="" coords="3273,103,3201,113,3199,108,3278,101"/>
 <area shape="rect" id="Node000103" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h..." alt="" coords="2980,58,3202,85"/>
 <area shape="poly" id="edge157_Node000100_Node000103" title=" " alt="" coords="3273,86,3203,82,3201,77,3278,84"/>
 <area shape="poly" id="edge156_Node000101_Node000004" title=" " alt="" coords="2994,107,2889,88,2887,83,2999,105"/>
 <area shape="rect" id="Node000102" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="2747,159,2871,187"/>
-<area shape="poly" id="edge155_Node000101_Node000102" title=" " alt="" coords="2990,142,2873,164,2870,160,2995,139"/>
-<area shape="poly" id="edge159_Node000103_Node000004" title=" " alt="" coords="2961,73,2911,74,2909,69,2966,70"/>
+<area shape="poly" id="edge155_Node000101_Node000102" title=" " alt="" coords="2990,142,2873,164,2870,159,2995,139"/>
+<area shape="poly" id="edge159_Node000103_Node000004" title=" " alt="" coords="2961,72,2911,74,2909,69,2966,70"/>
 <area shape="rect" id="Node000104" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="Initialize password store." alt="" coords="2485,210,2593,237"/>
 <area shape="poly" id="edge158_Node000103_Node000104" title=" " alt="" coords="2982,90,2822,120,2694,150,2623,180,2566,211,2562,207,2621,176,2693,145,2821,115,2986,87"/>
-<area shape="rect" id="Node000106" href="$class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches." alt="" coords="3282,1614,3449,1641"/>
-<area shape="poly" id="edge161_Node000105_Node000106" title=" " alt="" coords="3539,1628,3450,1630,3449,1625,3544,1627"/>
-<area shape="rect" id="Node000107" href="$class_native_grep.html#a393b6a05c39649304a77151702b76ec7" title="Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu..." alt="" coords="3018,1562,3164,1589"/>
-<area shape="poly" id="edge162_Node000106_Node000107" title=" " alt="" coords="3271,1611,3164,1592,3164,1587,3276,1610"/>
-<area shape="rect" id="Node000108" href="$class_imitate_pass.html#a4c18253700bd6127c546325448f14829" title="Search all password content by GPG&#45;decrypting each .gpg file." alt="" coords="1362,1283,1498,1311"/>
-<area shape="poly" id="edge163_Node000107_Node000108" title=" " alt="" coords="3000,1562,2971,1551,2955,1538,2946,1525,2938,1512,2923,1502,2869,1480,2822,1468,2779,1463,2738,1463,2651,1471,2540,1477,1993,1477,1911,1471,1829,1457,1748,1436,1672,1411,1542,1357,1457,1314,1456,1308,1544,1352,1674,1406,1750,1431,1830,1452,1912,1466,1994,1471,2540,1471,2650,1465,2738,1457,2780,1457,2823,1463,2871,1475,2925,1497,2941,1509,2951,1522,2959,1535,2973,1547,3005,1562"/>
-<area shape="rect" id="Node000109" href="$class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3" title="Search all password content by GPG&#45;decrypting each real .gpg file, as ImitatePass does." alt="" coords="2750,1563,2868,1591"/>
-<area shape="poly" id="edge165_Node000107_Node000109" title=" " alt="" coords="2999,1577,2869,1579,2868,1574,3005,1575"/>
-<area shape="poly" id="edge164_Node000108_Node000022" title=" " alt="" coords="1399,1273,1185,1087,1185,1082,1404,1272"/>
-<area shape="rect" id="Node000112" href="$class_profile_init.html#a5588f9cb4ba9610c1f1899c10628dffb" title="git init in dir, stage the .gpg&#45;id and its signature, and commit them (signed when pass...." alt="" coords="3001,2328,3180,2356"/>
-<area shape="poly" id="edge168_Node000111_Node000112" title=" " alt="" coords="3293,2396,3147,2359,3147,2354,3298,2396"/>
-<area shape="rect" id="Node000119" href="$class_profile_init.html#a52111b898d794f14ec9d7dbe668dc5a2" title="Put an existing store under Git: git init, stage the .gpg entries and the .gpg&#45;id files (nothing else..." alt="" coords="3025,2400,3156,2428"/>
-<area shape="poly" id="edge176_Node000111_Node000119" title=" " alt="" coords="3282,2414,3157,2417,3157,2411,3287,2414"/>
-<area shape="rect" id="Node000113" href="$class_profile_init.html#ac65b0b3a9265d2bf8f793ad3071f8b24" title="Write the recipients and, if wanted, put the folder under git." alt="" coords="2735,2290,2882,2317"/>
-<area shape="poly" id="edge169_Node000112_Node000113" title=" " alt="" coords="2983,2328,2883,2316,2883,2311,2988,2328"/>
-<area shape="rect" id="Node000114" href="$class_config_dialog.html#a9a6ab8bd9026c852b5f4e3831db0a6a2" title="Ask for a new profile&#39;s recipients and initialise its store with them, keeping the active backend&#39;s s..." alt="" coords="2455,2262,2623,2307"/>
-<area shape="poly" id="edge170_Node000113_Node000114" title=" " alt="" coords="2717,2298,2624,2293,2623,2288,2723,2297"/>
-<area shape="rect" id="Node000117" href="$class_first_run_wizard.html#a165af79e3e899444d7b653ae980084c0" title="Make store a password store for the ticked keys: create the folder when it is missing,..." alt="" coords="2447,2332,2631,2376"/>
-<area shape="poly" id="edge174_Node000113_Node000117" title=" " alt="" coords="2717,2321,2632,2339,2630,2334,2722,2319"/>
-<area shape="rect" id="Node000115" href="$class_config_dialog.html#a885fd334b9fd0a95ee6ce855afea9d8e" title="For every saved profile whose store was not a profile&#39;s store when the dialog opened: offer to create..." alt="" coords="2186,2317,2354,2362"/>
-<area shape="poly" id="edge171_Node000114_Node000115" title=" " alt="" coords="2437,2306,2355,2325,2354,2320,2442,2304"/>
-<area shape="rect" id="Node000116" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="1898,2604,2092,2632"/>
-<area shape="poly" id="edge172_Node000115_Node000116" title=" " alt="" coords="2175,2364,2158,2381,2141,2408,2134,2434,2133,2460,2136,2486,2139,2513,2138,2540,2129,2567,2110,2593,2093,2606,2091,2601,2106,2590,2125,2564,2133,2539,2133,2513,2131,2487,2128,2460,2128,2433,2136,2405,2154,2378,2170,2367"/>
-<area shape="poly" id="edge173_Node000116_Node000013" title=" " alt="" coords="1890,2638,1883,2646,1847,2677,1816,2714,1789,2753,1766,2794,1733,2870,1715,2924,1711,2920,1728,2868,1762,2792,1785,2751,1812,2710,1844,2673,1880,2641,1886,2640"/>
-<area shape="rect" id="Node000118" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="2185,2391,2355,2419"/>
-<area shape="poly" id="edge175_Node000117_Node000118" title=" " alt="" coords="2429,2375,2348,2393,2347,2388,2434,2374"/>
-<area shape="rect" id="Node000120" href="$class_first_run_wizard.html#a4c80ddbd79ef91cd4a0d729f0c535802" title="Give an existing store the Git repository it was chosen to have." alt="" coords="2438,2400,2640,2428"/>
-<area shape="poly" id="edge177_Node000119_Node000120" title=" " alt="" coords="3007,2415,2641,2417,2640,2411,3012,2414"/>
-<area shape="poly" id="edge178_Node000120_Node000118" title=" " alt="" coords="2419,2410,2356,2410,2355,2405,2425,2410"/>
-<area shape="rect" id="Node000122" href="$class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94" title="Lists the keys in input first, with nothing written, and refuses a block that holds a private key or ..." alt="" coords="3534,3074,3748,3119"/>
-<area shape="poly" id="edge180_Node000121_Node000122" title=" " alt="" coords="3806,3098,3748,3100,3748,3095,3811,3098"/>
-<area shape="rect" id="Node000123" href="$class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc" title="&quot;Import&quot; button: runs importFromString() on the trimmed input and closes the dialog with accept() on ..." alt="" coords="3282,3074,3449,3119"/>
-<area shape="poly" id="edge181_Node000122_Node000123" title=" " alt="" coords="3515,3097,3449,3099,3449,3094,3521,3097"/>
-<area shape="rect" id="Node000125" href="$class_key_wizard_page.html#a42f52524e4dae186f78a6ef00b2546b4" title="List the secret keys of the chosen gpg into the wizard and the widget, ticking every usable key and g..." alt="" coords="3556,3143,3726,3171"/>
-<area shape="poly" id="edge183_Node000124_Node000125" title=" " alt="" coords="3799,3154,3726,3158,3726,3153,3805,3154"/>
-<area shape="rect" id="Node000126" href="$class_key_wizard_page.html#a7d7d221d80c65382462761e221b73225" title="Run KeygenDialog on a private ImitatePass built from the wizard&#39;s settings, so the chosen gpg is used..." alt="" coords="3272,3143,3459,3171"/>
-<area shape="poly" id="edge184_Node000125_Node000126" title=" " alt="" coords="3537,3157,3459,3159,3459,3154,3543,3157"/>
-<area shape="rect" id="Node000129" href="$class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd" title="List the secret keys for the gpg chosen on the previous page." alt="" coords="3257,3195,3474,3223"/>
-<area shape="poly" id="edge187_Node000125_Node000129" title=" " alt="" coords="3551,3174,3443,3197,3443,3192,3546,3174"/>
-<area shape="rect" id="Node000127" href="$class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a" title="Build the page." alt="" coords="2976,3143,3205,3171"/>
-<area shape="poly" id="edge185_Node000126_Node000127" title=" " alt="" coords="3254,3157,3206,3159,3206,3154,3259,3157"/>
-<area shape="rect" id="Node000128" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="2719,3134,2899,3179"/>
-<area shape="poly" id="edge186_Node000127_Node000128" title=" " alt="" coords="2958,3157,2899,3159,2899,3154,2963,3157"/>
-<area shape="rect" id="Node000131" href="$class_config_dialog.html#a8a0804534596a8293402575b60bf1fcf" title="Resolve every profile&#39;s store and fingerprints once." alt="" coords="2709,2628,2909,2656"/>
-<area shape="poly" id="edge189_Node000130_Node000131" title=" " alt="" coords="3531,2631,2909,2643,2909,2638,3536,2630"/>
-<area shape="rect" id="Node000132" href="$class_config_dialog.html#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ..." alt="" coords="2456,2948,2622,2976"/>
-<area shape="poly" id="edge190_Node000131_Node000132" title=" " alt="" coords="2789,2667,2554,2950,2551,2946,2784,2669"/>
-<area shape="rect" id="Node000133" href="$class_config_dialog.html#ad6420609a0f70cbc8a065a6fbc21dc94" title="Forget the signing keys gpg did not know while the dialog is in the background, and check them again ..." alt="" coords="2172,2854,2368,2881"/>
-<area shape="poly" id="edge191_Node000132_Node000133" title=" " alt="" coords="2495,2941,2443,2919,2383,2895,2346,2885,2346,2879,2385,2890,2445,2914,2500,2941"/>
-<area shape="rect" id="Node000134" href="$class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd" title="Show row row&#39;s profile in the form (or clear and disable it for &#45;1), with m_loadingForm set so the fi..." alt="" coords="2163,3123,2377,3151"/>
-<area shape="poly" id="edge192_Node000132_Node000134" title=" " alt="" coords="2518,2987,2461,3046,2425,3077,2386,3103,2333,3125,2332,3120,2383,3098,2422,3072,2458,3043,2513,2989"/>
-<area shape="rect" id="Node000137" href="$class_config_dialog.html#a68f58b41ba03c59341759473d95c839e" title="Fill the profile list and m_entries from profiles, dropping the empty&#45;named leftover older versions w..." alt="" coords="1905,3204,2085,3232"/>
-<area shape="poly" id="edge206_Node000132_Node000137" title=" " alt="" coords="2528,2988,2506,3031,2475,3079,2435,3126,2411,3147,2386,3164,2350,3183,2311,3197,2232,3216,2155,3225,2086,3226,2086,3221,2154,3219,2231,3211,2310,3192,2348,3178,2383,3160,2408,3143,2431,3122,2471,3076,2502,3028,2523,2991"/>
-<area shape="rect" id="Node000138" href="$class_config_dialog.html#aecb3ede31edbc31bf9e295289f3cef15" title="Append a &quot;New profile&quot; row pointing at the global store path, select it and put the cursor in the nam..." alt="" coords="2169,2905,2371,2950"/>
-<area shape="poly" id="edge198_Node000132_Node000138" title=" " alt="" coords="2439,2950,2372,2943,2372,2938,2444,2950"/>
-<area shape="rect" id="Node000139" href="$class_config_dialog.html#ae85c1736edfdde38aee8350ebae8201f" title="The name field was typed in: store it in the entry and the list item, then validate (duplicates,..." alt="" coords="2166,3044,2374,3088"/>
-<area shape="poly" id="edge199_Node000132_Node000139" title=" " alt="" coords="2498,2982,2385,3034,2351,3046,2350,3041,2383,3029,2493,2984"/>
-<area shape="rect" id="Node000140" href="$class_config_dialog.html#a7e412007641751f3b162bd5b6a2b80d9" title="The path field was typed in: store it in the entry, validate and refresh the status line." alt="" coords="2172,2974,2369,3019"/>
-<area shape="poly" id="edge201_Node000132_Node000140" title=" " alt="" coords="2444,2974,2370,2987,2369,2981,2438,2975"/>
-<area shape="rect" id="Node000142" href="$class_config_dialog.html#ab31637f94fe25e2179ba916fc50ab9eb" title="The signing&#45;key field was typed in: store it in the entry and validate (fingerprints only,..." alt="" coords="2162,2785,2379,2830"/>
-<area shape="poly" id="edge204_Node000132_Node000142" title=" " alt="" coords="2510,2937,2454,2891,2420,2866,2383,2844,2357,2833,2358,2828,2386,2840,2423,2862,2458,2887,2515,2938"/>
-<area shape="rect" id="Node000135" href="$class_config_dialog.html#a013a0a52437c29cb37ac47d73ed900a6" title="Remove the selected profile row (a message when none is); the list&#39;s currentRowChanged re&#45;points the ..." alt="" coords="1885,3136,2104,3180"/>
-<area shape="poly" id="edge193_Node000134_Node000135" title=" " alt="" coords="2150,3146,2105,3152,2105,3147,2145,3146"/>
-<area shape="rect" id="Node000136" href="$class_config_dialog.html#a88d327d76d34dd8cf2c592d8add6ccd9" title="The profile list&#39;s current row changed: show that profile." alt="" coords="1882,3084,2108,3112"/>
-<area shape="poly" id="edge194_Node000134_Node000136" title=" " alt="" coords="2149,3120,2098,3115,2099,3110,2155,3120"/>
-<area shape="poly" id="edge196_Node000134_Node000137" title=" " alt="" coords="2220,3156,2109,3195,2066,3206,2065,3201,2107,3190,2215,3157"/>
-<area shape="poly" id="edge195_Node000136_Node000013" title=" " alt="" coords="1911,3079,1880,3069,1832,3041,1788,3009,1723,2954,1725,2948,1791,3004,1835,3036,1883,3064,1916,3080"/>
-<area shape="poly" id="edge197_Node000137_Node000013" title=" " alt="" coords="1888,3197,1880,3195,1846,3168,1816,3136,1767,3066,1732,3000,1713,2953,1715,2949,1737,2997,1771,3063,1820,3132,1850,3164,1883,3191,1893,3199"/>
-<area shape="poly" id="edge200_Node000139_Node000013" title=" " alt="" coords="2148,3049,2020,3029,1881,2998,1808,2976,1746,2954,1746,2949,1810,2971,1882,2993,2021,3024,2153,3049"/>
-<area shape="poly" id="edge202_Node000140_Node000013" title=" " alt="" coords="2153,2993,2024,2988,1881,2974,1770,2954,1771,2949,1882,2969,2024,2983,2159,2993"/>
-<area shape="rect" id="Node000141" href="$class_config_dialog.html#a59af9a31c3b09e4aa14f0fff5311ef57" title="Pick the selected profile&#39;s store folder and store it in its entry." alt="" coords="1907,2914,2083,2959"/>
-<area shape="poly" id="edge203_Node000140_Node000141" title=" " alt="" coords="2154,2972,2083,2959,2084,2953,2159,2972"/>
-<area shape="poly" id="edge205_Node000142_Node000013" title=" " alt="" coords="2176,2834,2109,2854,1934,2894,1783,2925,1782,2920,1933,2889,2107,2849,2171,2835"/>
-<area shape="poly" id="edge208_Node000143_Node000003" title=" " alt="" coords="3857,198,3473,69,3439,57,3438,52,3475,64,3862,197"/>
-<area shape="rect" id="Node000144" href="$class_real_pass.html#aa8c33f08cbdeb7d367d1bb9ca3a1435e" title="The Git repository pass commits path in: the store&#39;s own, or one a folder in it holds (pass looks for..." alt="" coords="3557,178,3725,205"/>
-<area shape="poly" id="edge209_Node000143_Node000144" title=" " alt="" coords="3829,210,3726,202,3724,197,3834,208"/>
-<area shape="rect" id="Node000148" href="$class_real_pass.html#ac0f277d51398a8ae8a296a9d0ba97b0b" title="git status &#45;&#45;porcelain &#45;z through pass git, read: one &quot;XY name&quot; per entry, a rename&#39;s old name droppe..." alt="" coords="3555,230,3727,257"/>
-<area shape="poly" id="edge219_Node000143_Node000148" title=" " alt="" coords="3829,226,3728,238,3726,233,3834,224"/>
-<area shape="poly" id="edge210_Node000144_Node000003" title=" " alt="" coords="3540,173,3520,161,3501,138,3495,114,3489,90,3472,68,3456,57,3456,52,3476,64,3493,88,3500,112,3506,136,3523,157,3545,172"/>
-<area shape="rect" id="Node000145" href="$class_real_pass.html#a133e32f08f41de37b18f3aefa3953846" title="Refuse a pass init, mv, cp or insert when paths hold changes git has not recorded,..." alt="" coords="2989,161,3192,206"/>
-<area shape="poly" id="edge211_Node000144_Node000145" title=" " alt="" coords="3539,176,3473,170,3366,166,3257,170,3194,175,3192,170,3257,165,3366,160,3474,165,3544,174"/>
-<area shape="rect" id="Node000146" href="$class_real_pass.html#a1bc6a926665e62752e23f2f46efc2c90" title="What git has not recorded at paths: git status &#45;&#45;porcelain lines, through pass git...." alt="" coords="3285,179,3446,207"/>
-<area shape="poly" id="edge215_Node000144_Node000146" title=" " alt="" coords="3539,193,3447,195,3445,190,3544,191"/>
-<area shape="poly" id="edge214_Node000145_Node000004" title=" " alt="" coords="2989,157,2971,151,2897,119,2838,89,2837,83,2899,114,2973,146,2995,155"/>
-<area shape="poly" id="edge213_Node000145_Node000102" title=" " alt="" coords="2971,180,2872,178,2870,173,2976,178"/>
-<area shape="poly" id="edge212_Node000145_Node000104" title=" " alt="" coords="2971,195,2924,201,2595,223,2593,218,2924,195,2976,193"/>
-<area shape="poly" id="edge216_Node000146_Node000145" title=" " alt="" coords="3267,191,3194,189,3192,184,3272,189"/>
-<area shape="rect" id="Node000147" href="$class_real_pass.html#a696202ddae3220f4da5f416fdd350d74" title="After a pass insert, init, mv or cp that exited 0, say so when git did not record the entries it wrot..." alt="" coords="2990,230,3191,257"/>
-<area shape="poly" id="edge217_Node000146_Node000147" title=" " alt="" coords="3269,211,3171,231,3169,227,3274,209"/>
-<area shape="poly" id="edge218_Node000147_Node000060" title=" " alt="" coords="2972,261,2880,276,2877,271,2977,259"/>
-<area shape="poly" id="edge220_Node000148_Node000145" title=" " alt="" coords="3537,242,3405,236,3257,221,3191,209,3190,204,3258,215,3405,230,3542,240"/>
-<area shape="poly" id="edge221_Node000148_Node000146" title=" " alt="" coords="3544,227,3445,210,3444,205,3549,225"/>
-<area shape="poly" id="edge223_Node000149_Node000105" title=" " alt="" coords="3822,1594,3719,1616,3718,1610,3827,1592"/>
-<area shape="rect" id="Node000150" href="$class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot..." alt="" coords="3298,1562,3433,1589"/>
-<area shape="poly" id="edge224_Node000149_Node000150" title=" " alt="" coords="3791,1576,3434,1578,3433,1573,3796,1575"/>
-<area shape="rect" id="Node000152" href="$class_imitate_pass.html#a9e2ce295e8353748e93fcc7f4776a7b8" title="Translate path for the given exe when WSL&#45;routed: wraps in wslpath substitution, otherwise returns pa..." alt="" coords="3545,1045,3736,1090"/>
-<area shape="poly" id="edge228_Node000149_Node000152" title=" " alt="" coords="3912,1544,3905,1460,3896,1403,3882,1341,3862,1277,3836,1214,3802,1155,3758,1104,3737,1089,3737,1083,3762,1100,3806,1152,3841,1212,3867,1275,3887,1339,3901,1402,3910,1459,3917,1547"/>
-<area shape="rect" id="Node000160" href="$class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary&#45;k..." alt="" coords="3568,1511,3714,1539"/>
-<area shape="poly" id="edge249_Node000149_Node000160" title=" " alt="" coords="3820,1559,3714,1541,3714,1535,3825,1558"/>
-<area shape="poly" id="edge227_Node000150_Node000045" title=" " alt="" coords="3280,1566,3256,1551,3240,1530,3229,1509,3220,1468,3223,1427,3231,1387,3240,1346,3242,1307,3233,1267,3223,1248,3207,1228,3188,1213,3188,1208,3211,1224,3227,1245,3238,1265,3247,1306,3245,1347,3236,1388,3228,1428,3225,1468,3234,1508,3244,1527,3259,1547,3285,1566"/>
-<area shape="rect" id="Node000151" href="$class_profile_init.html#afe19dd50dc653f56630443479959eb9e" title="Sign the list just written as gpgIdFile, over the bytes contents that were written." alt="" coords="3012,2110,3169,2137"/>
-<area shape="poly" id="edge225_Node000150_Node000151" title=" " alt="" coords="3285,1583,3259,1604,3249,1619,3242,1639,3232,1689,3229,1749,3230,1814,3231,1942,3225,1995,3212,2035,3193,2060,3171,2081,3124,2111,3122,2107,3167,2077,3189,2057,3207,2033,3220,1994,3225,1941,3225,1814,3224,1749,3227,1688,3236,1637,3244,1617,3255,1600,3281,1586"/>
-<area shape="poly" id="edge226_Node000151_Node000113" title=" " alt="" coords="3057,2145,2834,2291,2831,2287,3052,2147"/>
-<area shape="rect" id="Node000153" href="$class_imitate_pass.html#af337264de66506f7f949169654aa267d" title="Translate path for git when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="3300,720,3431,748"/>
-<area shape="poly" id="edge229_Node000152_Node000153" title=" " alt="" coords="3609,1033,3378,751,3379,746,3614,1033"/>
-<area shape="rect" id="Node000156" href="$class_imitate_pass.html#ad1536a8c72d90824d55e4f02a2fbd3d9" title="Translate path for gpg when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="3297,1240,3434,1268"/>
-<area shape="poly" id="edge241_Node000152_Node000156" title=" " alt="" coords="3530,1098,3523,1104,3477,1137,3436,1176,3379,1242,3375,1238,3432,1172,3473,1133,3520,1100,3534,1095"/>
-<area shape="poly" id="edge230_Node000153_Node000016" title=" " alt="" coords="3338,756,3281,803,3210,845,3162,862,3159,857,3208,840,3278,799,3334,760"/>
-<area shape="poly" id="edge231_Node000153_Node000021" title=" " alt="" coords="3319,756,3269,780,3210,801,3119,822,2965,852,2544,929,1778,1061,1776,1056,2543,924,2964,847,3118,817,3209,796,3267,775,3323,754"/>
-<area shape="poly" id="edge232_Node000153_Node000031" title=" " alt="" coords="3282,744,3188,756,3187,751,3287,742"/>
-<area shape="poly" id="edge235_Node000153_Node000032" title=" " alt="" coords="3283,726,3255,709,3235,680,3227,649,3227,619,3231,589,3235,560,3235,531,3227,503,3207,475,3184,458,3183,453,3211,471,3232,500,3241,530,3240,560,3236,590,3232,620,3232,649,3240,677,3259,706,3288,725"/>
-<area shape="poly" id="edge236_Node000153_Node000033" title=" " alt="" coords="3283,722,3256,710,3239,691,3231,672,3223,653,3208,636,3175,619,3175,614,3211,632,3228,651,3236,670,3243,688,3259,705,3288,721"/>
-<area shape="poly" id="edge239_Node000153_Node000037" title=" " alt="" coords="3283,724,3256,709,3242,693,3234,676,3231,642,3227,609,3221,594,3208,579,3190,567,3171,559,3170,554,3192,562,3211,575,3225,591,3233,608,3236,642,3240,675,3246,690,3259,705,3288,724"/>
-<area shape="poly" id="edge238_Node000153_Node000042" title=" " alt="" coords="3347,759,3290,830,3253,868,3211,902,3176,922,3144,933,3084,945,3056,951,3029,960,3002,977,2974,1003,2959,1023,2950,1043,2945,1082,2943,1123,2937,1146,2926,1171,2903,1207,2876,1241,2828,1290,2825,1286,2873,1237,2899,1204,2922,1169,2932,1145,2937,1122,2940,1081,2945,1042,2954,1021,2970,999,2998,972,3027,955,3055,946,3083,940,3143,928,3174,917,3208,897,3249,864,3286,827,3343,762"/>
-<area shape="poly" id="edge240_Node000153_Node000048" title=" " alt="" coords="3283,725,3256,709,3238,686,3231,663,3229,639,3231,616,3233,593,3231,570,3224,548,3207,527,3190,514,3170,506,3170,501,3192,509,3211,523,3229,546,3237,569,3238,593,3236,616,3234,639,3236,662,3243,684,3259,705,3288,725"/>
-<area shape="rect" id="Node000154" href="$class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098" title="Execute git move operation." alt="" coords="1602,562,1813,589"/>
-<area shape="poly" id="edge233_Node000153_Node000154" title=" " alt="" coords="3283,718,3256,710,3232,694,3208,681,3153,666,3086,653,2923,630,2731,613,2525,600,2120,584,1815,579,1813,574,2120,579,2525,594,2731,608,2923,625,3087,647,3155,661,3210,676,3235,690,3259,705,3288,717"/>
-<area shape="rect" id="Node000155" href="$class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb" title="Initialize Git repository." alt="" coords="3018,690,3163,717"/>
-<area shape="poly" id="edge237_Node000153_Node000155" title=" " alt="" coords="3282,726,3164,714,3163,709,3287,724"/>
-<area shape="poly" id="edge234_Node000154_Node000030" title=" " alt="" coords="1584,577,1503,578,1500,573,1589,574"/>
-<area shape="poly" id="edge246_Node000156_Node000035" title=" " alt="" coords="3280,1238,3256,1224,3244,1211,3237,1198,3231,1172,3225,1147,3219,1136,3208,1124,3189,1112,3189,1107,3211,1120,3223,1132,3230,1145,3236,1171,3242,1196,3248,1208,3259,1220,3286,1238"/>
-<area shape="poly" id="edge247_Node000156_Node000042" title=" " alt="" coords="3279,1268,3210,1279,3032,1294,2881,1302,2880,1297,3032,1289,3209,1274,3284,1267"/>
-<area shape="rect" id="Node000157" href="$class_imitate_pass.html#ade46d444b618d7d45549265b60462662" title="Decrypt ciphertext again and compare it with plaintext, byte for byte, so nothing replaces an entry u..." alt="" coords="2986,1238,3195,1265"/>
-<area shape="poly" id="edge242_Node000156_Node000157" title=" " alt="" coords="3279,1254,3196,1255,3194,1250,3284,1253"/>
-<area shape="rect" id="Node000158" href="$class_imitate_pass.html#a82d39a641bb54cc1b8cb9b7168d699e8" title="Encrypt plaintext to recipients, into output." alt="" coords="3004,1134,3178,1161"/>
-<area shape="poly" id="edge244_Node000156_Node000158" title=" " alt="" coords="3281,1235,3256,1224,3241,1212,3231,1199,3222,1187,3208,1176,3178,1164,3178,1158,3211,1172,3226,1184,3236,1196,3245,1208,3259,1220,3286,1234"/>
-<area shape="rect" id="Node000159" href="$class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d" title="Show decrypted password." alt="" coords="3020,1339,3161,1367"/>
-<area shape="poly" id="edge248_Node000156_Node000159" title=" " alt="" coords="3318,1276,3210,1323,3152,1341,3150,1336,3208,1318,3323,1274"/>
-<area shape="poly" id="edge243_Node000157_Node000017" title=" " alt="" coords="2996,1234,2971,1227,2895,1194,2835,1162,2834,1156,2897,1189,2973,1222,3002,1233"/>
-<area shape="poly" id="edge245_Node000158_Node000017" title=" " alt="" coords="2986,1147,2925,1148,2924,1143,2991,1146"/>
-<area shape="poly" id="edge250_Node000160_Node000150" title=" " alt="" coords="3550,1542,3434,1566,3433,1561,3555,1540"/>
-<area shape="rect" id="Node000161" href="$class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f" title="Read gpgIdFile and verify it against &lt;file&gt;.sig." alt="" coords="3281,1510,3450,1537"/>
-<area shape="poly" id="edge251_Node000160_Node000161" title=" " alt="" coords="3550,1525,3450,1526,3449,1521,3555,1524"/>
-<area shape="poly" id="edge261_Node000161_Node000045" title=" " alt="" coords="3350,1494,3286,1350,3245,1275,3226,1247,3208,1228,3188,1216,3187,1211,3211,1224,3230,1244,3250,1272,3291,1348,3355,1496"/>
-<area shape="rect" id="Node000162" href="$class_pass.html#a849c5089c91fa9599653d9dad6e4c28c" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="2997,1510,3184,1537"/>
-<area shape="poly" id="edge252_Node000161_Node000162" title=" " alt="" coords="3263,1524,3185,1526,3184,1521,3268,1523"/>
-<area shape="poly" id="edge257_Node000162_Node000099" title=" " alt="" coords="2979,1525,2912,1527,2911,1522,2984,1523"/>
-<area shape="rect" id="Node000163" href="$class_users_dialog.html#a776e02e4e7cb49add8d32654595d2c29" title="Whether the folder&#39;s recipient list reads differently now from when loadRecipients() read it: a pull,..." alt="" coords="2716,1392,2902,1436"/>
-<area shape="poly" id="edge253_Node000162_Node000163" title=" " alt="" coords="3002,1505,2971,1494,2946,1476,2923,1458,2883,1440,2883,1434,2925,1453,2949,1472,2973,1489,3008,1504"/>
-<area shape="rect" id="Node000166" href="$class_pass.html#aa326b1fc7fa60136eac3181a0b983816" title="Refuse an Init() under initIfUnchanged() when the folder&#39;s list no longer reads as the caller read it..." alt="" coords="2719,759,2898,787"/>
-<area shape="poly" id="edge258_Node000162_Node000166" title=" " alt="" coords="3035,1502,3000,1482,2983,1466,2970,1449,2939,1385,2925,1328,2923,1274,2928,1222,2935,1169,2940,1113,2937,1051,2921,982,2898,923,2870,868,2820,790,2821,784,2874,865,2903,921,2927,980,2942,1050,2945,1113,2940,1169,2933,1222,2928,1274,2930,1327,2944,1384,2974,1446,2987,1463,3003,1477,3040,1503"/>
-<area shape="rect" id="Node000164" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="2463,1404,2615,1432"/>
-<area shape="poly" id="edge254_Node000163_Node000164" title=" " alt="" coords="2698,1417,2616,1420,2614,1414,2703,1415"/>
-<area shape="rect" id="Node000165" href="$class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1" title="Connect dialog signals." alt="" coords="2167,1407,2373,1435"/>
-<area shape="poly" id="edge255_Node000164_Node000165" title=" " alt="" coords="2445,1420,2374,1422,2373,1417,2450,1418"/>
-<area shape="poly" id="edge256_Node000165_Node000097" title=" " alt="" coords="2214,1442,2035,1513,2032,1508,2219,1439"/>
-<area shape="poly" id="edge259_Node000166_Node000024" title=" " alt="" coords="2769,796,2714,826,2646,851,2543,875,2461,884,2271,883,1994,883,1785,885,1694,876,1581,851,1511,825,1456,796,1455,791,1513,820,1582,846,1695,871,1785,880,1993,878,2272,878,2461,878,2542,869,2645,846,2712,821,2773,793"/>
-<area shape="poly" id="edge260_Node000166_Node000104" title=" " alt="" coords="2703,755,2692,748,2664,719,2640,686,2602,615,2574,540,2555,463,2544,390,2539,325,2539,240,2541,235,2544,325,2549,389,2561,462,2579,538,2606,613,2645,684,2668,715,2695,744,2708,755"/>
+<area shape="rect" id="Node000107" href="$class_profile_init.html#a5588f9cb4ba9610c1f1899c10628dffb" title="git init in dir, stage the .gpg&#45;id and its signature, and commit them (signed when pass...." alt="" coords="3001,2370,3180,2397"/>
+<area shape="poly" id="edge162_Node000106_Node000107" title=" " alt="" coords="3282,2384,3181,2386,3180,2381,3287,2383"/>
+<area shape="rect" id="Node000114" href="$class_profile_init.html#a52111b898d794f14ec9d7dbe668dc5a2" title="Put an existing store under Git: git init, stage the .gpg entries and the .gpg&#45;id files (nothing else..." alt="" coords="3025,2422,3156,2449"/>
+<area shape="poly" id="edge170_Node000106_Node000114" title=" " alt="" coords="3282,2399,3157,2426,3156,2420,3287,2398"/>
+<area shape="rect" id="Node000108" href="$class_profile_init.html#ac65b0b3a9265d2bf8f793ad3071f8b24" title="Write the recipients and, if wanted, put the folder under git." alt="" coords="2735,2350,2882,2377"/>
+<area shape="poly" id="edge163_Node000107_Node000108" title=" " alt="" coords="2983,2376,2883,2371,2883,2366,2988,2376"/>
+<area shape="rect" id="Node000109" href="$class_config_dialog.html#a9a6ab8bd9026c852b5f4e3831db0a6a2" title="Ask for a new profile&#39;s recipients and initialise its store with them, keeping the active backend&#39;s s..." alt="" coords="2455,2321,2623,2366"/>
+<area shape="poly" id="edge164_Node000108_Node000109" title=" " alt="" coords="2717,2357,2624,2352,2623,2347,2723,2357"/>
+<area shape="rect" id="Node000112" href="$class_first_run_wizard.html#a165af79e3e899444d7b653ae980084c0" title="Make store a password store for the ticked keys: create the folder when it is missing,..." alt="" coords="2447,2390,2631,2435"/>
+<area shape="poly" id="edge168_Node000108_Node000112" title=" " alt="" coords="2717,2380,2632,2399,2631,2393,2722,2379"/>
+<area shape="rect" id="Node000110" href="$class_config_dialog.html#a885fd334b9fd0a95ee6ce855afea9d8e" title="For every saved profile whose store was not a profile&#39;s store when the dialog opened: offer to create..." alt="" coords="2186,2321,2354,2366"/>
+<area shape="poly" id="edge165_Node000109_Node000110" title=" " alt="" coords="2436,2344,2355,2346,2354,2341,2442,2343"/>
+<area shape="rect" id="Node000111" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="1898,2320,2092,2348"/>
+<area shape="poly" id="edge166_Node000110_Node000111" title=" " alt="" coords="2168,2340,2093,2340,2092,2335,2173,2340"/>
+<area shape="poly" id="edge167_Node000111_Node000013" title=" " alt="" coords="1892,2354,1883,2363,1846,2396,1815,2435,1787,2478,1765,2521,1732,2601,1714,2658,1711,2654,1727,2599,1760,2518,1783,2475,1810,2432,1843,2393,1880,2359,1888,2356"/>
+<area shape="rect" id="Node000113" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="2185,2408,2355,2436"/>
+<area shape="poly" id="edge169_Node000112_Node000113" title=" " alt="" coords="2429,2417,2356,2422,2355,2416,2434,2416"/>
+<area shape="rect" id="Node000115" href="$class_first_run_wizard.html#a4c80ddbd79ef91cd4a0d729f0c535802" title="Give an existing store the Git repository it was chosen to have." alt="" coords="2438,2459,2640,2487"/>
+<area shape="poly" id="edge171_Node000114_Node000115" title=" " alt="" coords="3007,2441,2641,2469,2640,2463,3012,2440"/>
+<area shape="poly" id="edge172_Node000115_Node000113" title=" " alt="" coords="2444,2456,2348,2439,2347,2434,2449,2455"/>
+<area shape="rect" id="Node000117" href="$class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94" title="Lists the keys in input first, with nothing written, and refuses a block that holds a private key or ..." alt="" coords="3534,2944,3748,2988"/>
+<area shape="poly" id="edge174_Node000116_Node000117" title=" " alt="" coords="3806,2968,3748,2970,3748,2964,3811,2968"/>
+<area shape="rect" id="Node000118" href="$class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc" title="&quot;Import&quot; button: runs importFromString() on the trimmed input and closes the dialog with accept() on ..." alt="" coords="3282,2944,3449,2988"/>
+<area shape="poly" id="edge175_Node000117_Node000118" title=" " alt="" coords="3515,2966,3449,2969,3449,2963,3521,2966"/>
+<area shape="rect" id="Node000120" href="$class_key_wizard_page.html#a42f52524e4dae186f78a6ef00b2546b4" title="List the secret keys of the chosen gpg into the wizard and the widget, ticking every usable key and g..." alt="" coords="3556,3012,3726,3040"/>
+<area shape="poly" id="edge177_Node000119_Node000120" title=" " alt="" coords="3799,3024,3726,3027,3726,3022,3805,3024"/>
+<area shape="rect" id="Node000121" href="$class_key_wizard_page.html#a7d7d221d80c65382462761e221b73225" title="Run KeygenDialog on a private ImitatePass built from the wizard&#39;s settings, so the chosen gpg is used..." alt="" coords="3272,3012,3459,3040"/>
+<area shape="poly" id="edge178_Node000120_Node000121" title=" " alt="" coords="3537,3026,3459,3029,3459,3023,3543,3026"/>
+<area shape="rect" id="Node000124" href="$class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd" title="List the secret keys for the gpg chosen on the previous page." alt="" coords="3257,3064,3474,3092"/>
+<area shape="poly" id="edge181_Node000120_Node000124" title=" " alt="" coords="3551,3043,3443,3066,3443,3061,3546,3044"/>
+<area shape="rect" id="Node000122" href="$class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a" title="Build the page." alt="" coords="2976,3012,3205,3040"/>
+<area shape="poly" id="edge179_Node000121_Node000122" title=" " alt="" coords="3254,3026,3206,3029,3206,3023,3259,3026"/>
+<area shape="rect" id="Node000123" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="2719,3004,2899,3048"/>
+<area shape="poly" id="edge180_Node000122_Node000123" title=" " alt="" coords="2958,3026,2899,3029,2899,3023,2963,3026"/>
+<area shape="rect" id="Node000126" href="$class_config_dialog.html#a8a0804534596a8293402575b60bf1fcf" title="Resolve every profile&#39;s store and fingerprints once." alt="" coords="3541,2523,3741,2551"/>
+<area shape="poly" id="edge183_Node000125_Node000126" title=" " alt="" coords="3827,2502,3719,2525,3718,2520,3822,2502"/>
+<area shape="rect" id="Node000127" href="$class_config_dialog.html#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ..." alt="" coords="2456,2708,2622,2736"/>
+<area shape="poly" id="edge184_Node000126_Node000127" title=" " alt="" coords="3523,2541,3396,2551,3258,2566,3064,2599,2876,2640,2593,2710,2592,2705,2874,2635,3063,2594,3257,2561,3396,2546,3528,2540"/>
+<area shape="rect" id="Node000128" href="$class_config_dialog.html#ad6420609a0f70cbc8a065a6fbc21dc94" title="Forget the signing keys gpg did not know while the dialog is in the background, and check them again ..." alt="" coords="2172,2614,2368,2641"/>
+<area shape="poly" id="edge185_Node000127_Node000128" title=" " alt="" coords="2495,2701,2443,2679,2383,2655,2346,2645,2346,2639,2385,2650,2445,2674,2500,2701"/>
+<area shape="rect" id="Node000129" href="$class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd" title="Show row row&#39;s profile in the form (or clear and disable it for &#45;1), with m_loadingForm set so the fi..." alt="" coords="2163,2803,2377,2831"/>
+<area shape="poly" id="edge186_Node000127_Node000129" title=" " alt="" coords="2500,2742,2445,2770,2385,2794,2347,2805,2346,2800,2383,2789,2443,2766,2495,2744"/>
+<area shape="rect" id="Node000132" href="$class_config_dialog.html#a68f58b41ba03c59341759473d95c839e" title="Fill the profile list and m_entries from profiles, dropping the empty&#45;named leftover older versions w..." alt="" coords="1905,2854,2085,2881"/>
+<area shape="poly" id="edge200_Node000127_Node000132" title=" " alt="" coords="2517,2746,2461,2800,2425,2825,2385,2845,2309,2866,2229,2877,2153,2881,2086,2879,2086,2874,2153,2875,2229,2872,2307,2861,2383,2840,2422,2820,2458,2796,2513,2748"/>
+<area shape="rect" id="Node000133" href="$class_config_dialog.html#aecb3ede31edbc31bf9e295289f3cef15" title="Append a &quot;New profile&quot; row pointing at the global store path, select it and put the cursor in the nam..." alt="" coords="2169,2665,2371,2710"/>
+<area shape="poly" id="edge192_Node000127_Node000133" title=" " alt="" coords="2439,2710,2372,2703,2372,2698,2444,2709"/>
+<area shape="rect" id="Node000134" href="$class_config_dialog.html#ae85c1736edfdde38aee8350ebae8201f" title="The name field was typed in: store it in the entry and the list item, then validate (duplicates,..." alt="" coords="2166,2545,2374,2590"/>
+<area shape="poly" id="edge193_Node000127_Node000134" title=" " alt="" coords="2510,2697,2454,2651,2420,2626,2383,2604,2358,2593,2358,2588,2386,2600,2423,2622,2458,2647,2515,2698"/>
+<area shape="rect" id="Node000135" href="$class_config_dialog.html#a7e412007641751f3b162bd5b6a2b80d9" title="The path field was typed in: store it in the entry, validate and refresh the status line." alt="" coords="2172,2905,2369,2950"/>
+<area shape="poly" id="edge195_Node000127_Node000135" title=" " alt="" coords="2521,2747,2465,2818,2428,2856,2386,2888,2350,2907,2348,2902,2383,2884,2424,2852,2461,2815,2517,2750"/>
+<area shape="rect" id="Node000137" href="$class_config_dialog.html#ab31637f94fe25e2179ba916fc50ab9eb" title="The signing&#45;key field was typed in: store it in the entry and validate (fingerprints only,..." alt="" coords="2162,2734,2379,2779"/>
+<area shape="poly" id="edge198_Node000127_Node000137" title=" " alt="" coords="2438,2735,2379,2745,2379,2740,2444,2734"/>
+<area shape="rect" id="Node000130" href="$class_config_dialog.html#a013a0a52437c29cb37ac47d73ed900a6" title="Remove the selected profile row (a message when none is); the list&#39;s currentRowChanged re&#45;points the ..." alt="" coords="1885,2733,2104,2778"/>
+<area shape="poly" id="edge187_Node000129_Node000130" title=" " alt="" coords="2187,2799,2155,2794,2098,2781,2098,2776,2157,2789,2192,2799"/>
+<area shape="rect" id="Node000131" href="$class_config_dialog.html#a88d327d76d34dd8cf2c592d8add6ccd9" title="The profile list&#39;s current row changed: show that profile." alt="" coords="1882,2802,2108,2829"/>
+<area shape="poly" id="edge188_Node000129_Node000131" title=" " alt="" coords="2145,2816,2108,2819,2108,2813,2150,2816"/>
+<area shape="poly" id="edge190_Node000129_Node000132" title=" " alt="" coords="2179,2834,2074,2856,2074,2850,2173,2834"/>
+<area shape="poly" id="edge189_Node000131_Node000013" title=" " alt="" coords="1896,2796,1881,2792,1833,2768,1789,2738,1724,2687,1725,2682,1792,2734,1836,2763,1883,2788,1901,2797"/>
+<area shape="poly" id="edge191_Node000132_Node000013" title=" " alt="" coords="1893,2847,1880,2843,1826,2806,1779,2761,1742,2718,1718,2687,1720,2682,1746,2715,1783,2757,1830,2801,1883,2838,1899,2848"/>
+<area shape="poly" id="edge194_Node000134_Node000013" title=" " alt="" coords="2180,2594,2157,2605,2109,2622,2030,2638,1950,2651,1806,2666,1805,2661,1949,2646,2029,2633,2107,2617,2155,2600,2175,2596"/>
+<area shape="poly" id="edge196_Node000135_Node000013" title=" " alt="" coords="2205,2955,2132,2979,2049,2994,2005,2995,1962,2992,1920,2982,1880,2964,1841,2936,1808,2901,1780,2861,1757,2819,1725,2741,1711,2687,1713,2682,1730,2739,1762,2817,1785,2858,1812,2897,1845,2932,1883,2960,1922,2977,1963,2987,2006,2990,2049,2988,2131,2974,2199,2956"/>
+<area shape="rect" id="Node000136" href="$class_config_dialog.html#a59af9a31c3b09e4aa14f0fff5311ef57" title="Pick the selected profile&#39;s store folder and store it in its entry." alt="" coords="1907,2905,2083,2950"/>
+<area shape="poly" id="edge197_Node000135_Node000136" title=" " alt="" coords="2153,2927,2084,2930,2084,2925,2159,2927"/>
+<area shape="poly" id="edge199_Node000137_Node000013" title=" " alt="" coords="2156,2731,2108,2723,1948,2699,1806,2682,1806,2677,1949,2694,2108,2718,2161,2731"/>
+<area shape="poly" id="edge202_Node000138_Node000003" title=" " alt="" coords="3857,199,3473,69,3439,57,3438,52,3475,64,3862,198"/>
+<area shape="rect" id="Node000139" href="$class_real_pass.html#aa8c33f08cbdeb7d367d1bb9ca3a1435e" title="The Git repository pass commits path in: the store&#39;s own, or one a folder in it holds (pass looks for..." alt="" coords="3557,178,3725,205"/>
+<area shape="poly" id="edge203_Node000138_Node000139" title=" " alt="" coords="3829,211,3726,202,3725,197,3834,209"/>
+<area shape="rect" id="Node000143" href="$class_real_pass.html#ac0f277d51398a8ae8a296a9d0ba97b0b" title="git status &#45;&#45;porcelain &#45;z through pass git, read: one &quot;XY name&quot; per entry, a rename&#39;s old name droppe..." alt="" coords="3555,230,3727,257"/>
+<area shape="poly" id="edge213_Node000138_Node000143" title=" " alt="" coords="3829,227,3728,238,3726,233,3834,225"/>
+<area shape="poly" id="edge204_Node000139_Node000003" title=" " alt="" coords="3540,173,3520,161,3501,138,3495,114,3489,90,3472,68,3456,57,3456,51,3476,64,3493,88,3500,112,3506,135,3523,157,3545,172"/>
+<area shape="rect" id="Node000140" href="$class_real_pass.html#a133e32f08f41de37b18f3aefa3953846" title="Refuse a pass init, mv, cp or insert when paths hold changes git has not recorded,..." alt="" coords="2989,161,3192,206"/>
+<area shape="poly" id="edge205_Node000139_Node000140" title=" " alt="" coords="3539,176,3473,170,3366,166,3257,170,3194,175,3192,170,3257,165,3366,160,3474,165,3544,174"/>
+<area shape="rect" id="Node000141" href="$class_real_pass.html#a1bc6a926665e62752e23f2f46efc2c90" title="What git has not recorded at paths: git status &#45;&#45;porcelain lines, through pass git...." alt="" coords="3285,179,3446,207"/>
+<area shape="poly" id="edge209_Node000139_Node000141" title=" " alt="" coords="3539,193,3447,195,3445,190,3544,191"/>
+<area shape="poly" id="edge208_Node000140_Node000004" title=" " alt="" coords="2989,157,2971,151,2897,119,2837,89,2837,83,2899,114,2973,146,2995,155"/>
+<area shape="poly" id="edge207_Node000140_Node000102" title=" " alt="" coords="2971,180,2872,178,2870,173,2976,178"/>
+<area shape="poly" id="edge206_Node000140_Node000104" title=" " alt="" coords="2971,195,2924,201,2595,223,2593,218,2924,195,2976,193"/>
+<area shape="poly" id="edge210_Node000141_Node000140" title=" " alt="" coords="3267,190,3194,189,3192,184,3272,189"/>
+<area shape="rect" id="Node000142" href="$class_real_pass.html#a696202ddae3220f4da5f416fdd350d74" title="After a pass insert, init, mv or cp that exited 0, say so when git did not record the entries it wrot..." alt="" coords="2990,230,3191,257"/>
+<area shape="poly" id="edge211_Node000141_Node000142" title=" " alt="" coords="3269,211,3171,231,3169,227,3274,209"/>
+<area shape="poly" id="edge212_Node000142_Node000060" title=" " alt="" coords="2972,261,2880,276,2877,271,2977,259"/>
+<area shape="poly" id="edge214_Node000143_Node000140" title=" " alt="" coords="3537,241,3405,236,3257,221,3191,209,3190,204,3258,215,3405,230,3542,240"/>
+<area shape="poly" id="edge215_Node000143_Node000141" title=" " alt="" coords="3544,227,3445,210,3444,205,3549,225"/>
+<area shape="rect" id="Node000145" href="$class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot..." alt="" coords="3298,1564,3433,1592"/>
+<area shape="poly" id="edge217_Node000144_Node000145" title=" " alt="" coords="3791,1559,3434,1578,3433,1572,3796,1558"/>
+<area shape="rect" id="Node000147" href="$class_imitate_pass.html#a9e2ce295e8353748e93fcc7f4776a7b8" title="Translate path for the given exe when WSL&#45;routed: wraps in wslpath substitution, otherwise returns pa..." alt="" coords="3545,1294,3736,1339"/>
+<area shape="poly" id="edge221_Node000144_Node000147" title=" " alt="" coords="3884,1528,3668,1342,3669,1337,3890,1529"/>
+<area shape="rect" id="Node000155" href="$class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary&#45;k..." alt="" coords="3568,1514,3714,1541"/>
+<area shape="poly" id="edge242_Node000144_Node000155" title=" " alt="" coords="3791,1542,3714,1537,3714,1531,3796,1541"/>
+<area shape="poly" id="edge220_Node000145_Node000045" title=" " alt="" coords="3280,1567,3256,1553,3240,1534,3232,1513,3231,1473,3229,1434,3222,1416,3208,1397,3188,1384,3188,1379,3211,1393,3227,1413,3234,1433,3236,1473,3238,1512,3245,1531,3259,1549,3286,1568"/>
+<area shape="rect" id="Node000146" href="$class_profile_init.html#afe19dd50dc653f56630443479959eb9e" title="Sign the list just written as gpgIdFile, over the bytes contents that were written." alt="" coords="3012,2164,3169,2192"/>
+<area shape="poly" id="edge218_Node000145_Node000146" title=" " alt="" coords="3347,1603,3302,1676,3279,1720,3260,1765,3252,1803,3249,1851,3248,1965,3245,2023,3240,2076,3229,2121,3211,2153,3192,2168,3170,2177,3168,2172,3190,2163,3207,2150,3224,2119,3235,2075,3240,2022,3242,1965,3244,1851,3247,1802,3255,1764,3274,1717,3297,1673,3343,1606"/>
+<area shape="poly" id="edge219_Node000146_Node000108" title=" " alt="" coords="3000,2193,2973,2207,2906,2269,2825,2352,2822,2347,2903,2265,2971,2202,2995,2194"/>
+<area shape="rect" id="Node000148" href="$class_imitate_pass.html#af337264de66506f7f949169654aa267d" title="Translate path for git when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="3300,878,3431,905"/>
+<area shape="poly" id="edge222_Node000147_Node000148" title=" " alt="" coords="3619,1279,3558,1162,3517,1090,3471,1020,3422,956,3380,908,3381,903,3426,953,3476,1017,3521,1087,3563,1160,3625,1281"/>
+<area shape="rect" id="Node000151" href="$class_imitate_pass.html#ad1536a8c72d90824d55e4f02a2fbd3d9" title="Translate path for gpg when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="3297,1303,3434,1331"/>
+<area shape="poly" id="edge234_Node000147_Node000151" title=" " alt="" coords="3527,1317,3435,1319,3434,1314,3532,1316"/>
+<area shape="poly" id="edge223_Node000148_Node000016" title=" " alt="" coords="3341,915,3300,964,3260,1019,3246,1053,3241,1083,3234,1112,3225,1126,3211,1140,3194,1151,3191,1147,3208,1136,3221,1123,3229,1110,3236,1082,3241,1052,3255,1017,3296,960,3337,918"/>
+<area shape="poly" id="edge224_Node000148_Node000021" title=" " alt="" coords="3282,904,3071,931,2941,941,2810,945,2269,945,1778,950,1776,945,2269,939,2810,939,2941,935,3071,926,3287,902"/>
+<area shape="poly" id="edge225_Node000148_Node000031" title=" " alt="" coords="3345,915,3266,1010,3211,1071,3188,1083,3186,1078,3208,1067,3262,1007,3341,919"/>
+<area shape="poly" id="edge228_Node000148_Node000032" title=" " alt="" coords="3331,868,3256,811,3233,790,3208,774,3163,756,3162,751,3211,769,3236,786,3259,807,3337,868"/>
+<area shape="poly" id="edge229_Node000148_Node000033" title=" " alt="" coords="3323,914,3119,1031,3116,1027,3328,912"/>
+<area shape="poly" id="edge232_Node000148_Node000037" title=" " alt="" coords="3351,863,3331,820,3300,765,3259,710,3234,685,3208,664,3171,647,3170,642,3211,660,3238,681,3263,707,3304,762,3335,817,3356,864"/>
+<area shape="poly" id="edge231_Node000148_Node000042" title=" " alt="" coords="3324,870,3271,844,3208,818,3173,809,3140,806,3082,808,3054,807,3027,802,2999,789,2970,767,2952,743,2944,718,2943,694,2945,669,2947,645,2946,622,2939,599,2922,576,2903,562,2881,554,2880,549,2905,558,2926,572,2944,596,2952,621,2953,645,2950,670,2948,694,2949,717,2957,740,2974,763,3002,785,3028,797,3055,802,3082,802,3140,800,3174,804,3210,813,3273,839,3329,870"/>
+<area shape="poly" id="edge233_Node000148_Node000048" title=" " alt="" coords="3346,864,3323,831,3291,790,3253,750,3208,716,3170,700,3169,695,3211,712,3256,746,3295,787,3327,828,3351,865"/>
+<area shape="rect" id="Node000149" href="$class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098" title="Execute git move operation." alt="" coords="1602,883,1813,911"/>
+<area shape="poly" id="edge226_Node000148_Node000149" title=" " alt="" coords="3282,892,2810,894,2269,894,1814,898,1813,893,2269,889,2810,889,3287,890"/>
+<area shape="rect" id="Node000150" href="$class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb" title="Initialize Git repository." alt="" coords="3018,827,3163,855"/>
+<area shape="poly" id="edge230_Node000148_Node000150" title=" " alt="" coords="3282,877,3164,857,3163,851,3287,876"/>
+<area shape="poly" id="edge227_Node000149_Node000030" title=" " alt="" coords="1584,899,1503,900,1500,895,1589,896"/>
+<area shape="poly" id="edge239_Node000151_Node000035" title=" " alt="" coords="3278,1301,3168,1282,3167,1277,3284,1300"/>
+<area shape="poly" id="edge240_Node000151_Node000042" title=" " alt="" coords="3325,1295,3271,1269,3208,1242,3172,1233,3139,1231,3079,1234,3051,1234,3024,1228,2997,1215,2970,1190,2955,1167,2945,1138,2939,1103,2936,1064,2938,976,2945,882,2952,787,2954,700,2945,627,2936,598,2922,576,2903,561,2881,552,2880,547,2905,556,2926,572,2941,596,2951,626,2959,699,2957,787,2950,882,2943,976,2942,1064,2944,1102,2950,1136,2960,1165,2974,1187,3000,1211,3026,1223,3052,1228,3079,1228,3139,1225,3173,1228,3210,1237,3274,1264,3330,1295"/>
+<area shape="rect" id="Node000152" href="$class_imitate_pass.html#ade46d444b618d7d45549265b60462662" title="Decrypt ciphertext again and compare it with plaintext, byte for byte, so nothing replaces an entry u..." alt="" coords="2986,1407,3195,1435"/>
+<area shape="poly" id="edge235_Node000151_Node000152" title=" " alt="" coords="3324,1340,3273,1370,3210,1397,3169,1409,3167,1404,3208,1392,3271,1365,3329,1337"/>
+<area shape="rect" id="Node000153" href="$class_imitate_pass.html#a82d39a641bb54cc1b8cb9b7168d699e8" title="Encrypt plaintext to recipients, into output." alt="" coords="3004,1303,3178,1331"/>
+<area shape="poly" id="edge237_Node000151_Node000153" title=" " alt="" coords="3279,1317,3179,1319,3178,1314,3284,1316"/>
+<area shape="rect" id="Node000154" href="$class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d" title="Show decrypted password." alt="" coords="3020,1459,3161,1487"/>
+<area shape="poly" id="edge241_Node000151_Node000154" title=" " alt="" coords="3344,1340,3286,1397,3250,1425,3210,1448,3163,1465,3160,1460,3208,1444,3247,1421,3283,1393,3339,1343"/>
+<area shape="poly" id="edge236_Node000152_Node000017" title=" " alt="" coords="2997,1403,2971,1397,2896,1365,2836,1334,2836,1328,2898,1360,2973,1392,3002,1402"/>
+<area shape="poly" id="edge238_Node000153_Node000017" title=" " alt="" coords="2986,1317,2925,1319,2924,1314,2991,1316"/>
+<area shape="poly" id="edge243_Node000155_Node000145" title=" " alt="" coords="3550,1544,3434,1568,3433,1563,3555,1543"/>
+<area shape="rect" id="Node000156" href="$class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f" title="Read gpgIdFile and verify it against &lt;file&gt;.sig." alt="" coords="3281,1512,3450,1540"/>
+<area shape="poly" id="edge244_Node000155_Node000156" title=" " alt="" coords="3550,1528,3450,1529,3449,1524,3555,1526"/>
+<area shape="poly" id="edge254_Node000156_Node000045" title=" " alt="" coords="3339,1500,3283,1449,3247,1421,3208,1398,3178,1386,3177,1380,3211,1393,3250,1417,3287,1445,3344,1501"/>
+<area shape="rect" id="Node000157" href="$class_pass.html#a849c5089c91fa9599653d9dad6e4c28c" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="2997,1663,3184,1691"/>
+<area shape="poly" id="edge245_Node000156_Node000157" title=" " alt="" coords="3270,1544,3259,1555,3248,1566,3242,1577,3236,1602,3230,1627,3223,1640,3211,1652,3186,1666,3183,1662,3208,1648,3219,1637,3225,1626,3231,1601,3237,1576,3244,1563,3256,1551,3265,1547"/>
+<area shape="poly" id="edge250_Node000157_Node000099" title=" " alt="" coords="3078,1702,3019,1807,2975,1868,2926,1925,2882,1961,2839,1987,2836,1983,2879,1957,2922,1921,2971,1865,3014,1805,3074,1706"/>
+<area shape="rect" id="Node000158" href="$class_users_dialog.html#a776e02e4e7cb49add8d32654595d2c29" title="Whether the folder&#39;s recipient list reads differently now from when loadRecipients() read it: a pull,..." alt="" coords="2716,1866,2902,1911"/>
+<area shape="poly" id="edge246_Node000157_Node000158" title=" " alt="" coords="3061,1699,2926,1806,2842,1868,2839,1864,2922,1801,3057,1701"/>
+<area shape="rect" id="Node000161" href="$class_pass.html#aa326b1fc7fa60136eac3181a0b983816" title="Refuse an Init() under initIfUnchanged() when the folder&#39;s list no longer reads as the caller read it..." alt="" coords="2719,638,2898,665"/>
+<area shape="poly" id="edge251_Node000157_Node000161" title=" " alt="" coords="2981,1660,2970,1652,2952,1622,2941,1581,2934,1532,2930,1478,2926,1373,2921,1292,2856,911,2812,668,2814,663,2861,910,2927,1291,2932,1372,2935,1478,2939,1531,2946,1580,2957,1620,2974,1648,2986,1660"/>
+<area shape="rect" id="Node000159" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="2463,1879,2615,1907"/>
+<area shape="poly" id="edge247_Node000158_Node000159" title=" " alt="" coords="2698,1891,2616,1894,2615,1889,2703,1890"/>
+<area shape="rect" id="Node000160" href="$class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1" title="Connect dialog signals." alt="" coords="2167,1884,2373,1912"/>
+<area shape="poly" id="edge248_Node000159_Node000160" title=" " alt="" coords="2445,1895,2374,1899,2373,1893,2450,1894"/>
+<area shape="poly" id="edge249_Node000160_Node000097" title=" " alt="" coords="2214,1919,2036,1987,2034,1983,2219,1917"/>
+<area shape="poly" id="edge252_Node000161_Node000024" title=" " alt="" coords="2711,635,2511,609,2391,598,2271,594,1993,594,1853,590,1714,579,1495,552,1493,548,1714,574,1853,584,1994,589,2272,589,2392,593,2511,604,2716,634"/>
+<area shape="poly" id="edge253_Node000161_Node000104" title=" " alt="" coords="2702,633,2692,627,2650,581,2616,528,2590,471,2570,413,2547,308,2540,240,2542,235,2552,307,2575,412,2594,469,2620,525,2654,578,2695,623,2708,633"/>
 </map>

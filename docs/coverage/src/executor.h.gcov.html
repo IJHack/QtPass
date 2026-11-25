@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 00:51:00</td>
+            <td class="headerValue">2026-11-25 09:23:42</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -520,137 +520,147 @@
 <span id="L447"><span class="lineNum">     447</span>              :       -&gt; QStringList;</span>
 <span id="L448"><span class="lineNum">     448</span>              : </span>
 <span id="L449"><span class="lineNum">     449</span>              :   /**</span>
-<span id="L450"><span class="lineNum">     450</span>              :    * @brief Translate a native path for a WSL-routed executable.</span>
-<span id="L451"><span class="lineNum">     451</span>              :    *</span>
-<span id="L452"><span class="lineNum">     452</span>              :    * When @p exe is a WSL command (parseWslCommand()) the path is converted</span>
-<span id="L453"><span class="lineNum">     453</span>              :    * with `wslpath` in the same distribution (the Linux binary cannot open</span>
-<span id="L454"><span class="lineNum">     454</span>              :    * `C:\...`); otherwise it is only cleaned.</span>
-<span id="L455"><span class="lineNum">     455</span>              :    * @param path Native filesystem path.</span>
-<span id="L456"><span class="lineNum">     456</span>              :    * @param exe Executable the path is meant for.</span>
-<span id="L457"><span class="lineNum">     457</span>              :    * @return Path suitable for @p exe.</span>
-<span id="L458"><span class="lineNum">     458</span>              :    */</span>
-<span id="L459"><span class="lineNum">     459</span>              :   static auto translatePathForWsl(const QString &amp;path, const QString &amp;exe)</span>
-<span id="L460"><span class="lineNum">     460</span>              :       -&gt; QString;</span>
-<span id="L461"><span class="lineNum">     461</span>              : </span>
-<span id="L462"><span class="lineNum">     462</span>              :   /**</span>
-<span id="L463"><span class="lineNum">     463</span>              :    * @brief Set the environment passed to all child processes.</span>
-<span id="L464"><span class="lineNum">     464</span>              :    * @param env Process environment for child processes.</span>
-<span id="L465"><span class="lineNum">     465</span>              :    */</span>
-<span id="L466"><span class="lineNum">     466</span>              :   void setEnvironment(const QProcessEnvironment &amp;env);</span>
-<span id="L467"><span class="lineNum">     467</span>              :   /**</span>
-<span id="L468"><span class="lineNum">     468</span>              :    * @brief Return the environment passed to child processes.</span>
-<span id="L469"><span class="lineNum">     469</span>              :    * @return Process environment.</span>
-<span id="L470"><span class="lineNum">     470</span>              :    */</span>
-<span id="L471"><span class="lineNum">     471</span>              :   auto environment() const -&gt; QProcessEnvironment;</span>
-<span id="L472"><span class="lineNum">     472</span>              : </span>
-<span id="L473"><span class="lineNum">     473</span>              :   /**</span>
-<span id="L474"><span class="lineNum">     474</span>              :    * @brief Cancel the next queued command without executing it.</span>
-<span id="L475"><span class="lineNum">     475</span>              :    * @return The id of the cancelled command, or -1 if the queue was empty.</span>
-<span id="L476"><span class="lineNum">     476</span>              :    */</span>
-<span id="L477"><span class="lineNum">     477</span>              :   auto cancelNext() -&gt; int;</span>
-<span id="L478"><span class="lineNum">     478</span>              :   /**</span>
-<span id="L479"><span class="lineNum">     479</span>              :    * @brief Whether no command is running and nothing is queued.</span>
-<span id="L480"><span class="lineNum">     480</span>              :    * @return true when the executor has nothing in flight.</span>
-<span id="L481"><span class="lineNum">     481</span>              :    */</span>
-<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">        1000 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L450"><span class="lineNum">     450</span>              :    * @brief Decode process output as executeBlocking() does: UTF-8 first, the</span>
+<span id="L451"><span class="lineNum">     451</span>              :    * system encoding when it is not UTF-8 (a Windows code page). For callers</span>
+<span id="L452"><span class="lineNum">     452</span>              :    * that run a process on bytes (executeBlockingRaw()) and then read its</span>
+<span id="L453"><span class="lineNum">     453</span>              :    * output as text.</span>
+<span id="L454"><span class="lineNum">     454</span>              :    * @param bytes What the process wrote.</span>
+<span id="L455"><span class="lineNum">     455</span>              :    * @return The text.</span>
+<span id="L456"><span class="lineNum">     456</span>              :    */</span>
+<span id="L457"><span class="lineNum">     457</span>              :   [[nodiscard]] static auto decodeText(const QByteArray &amp;bytes) -&gt; QString;</span>
+<span id="L458"><span class="lineNum">     458</span>              : </span>
+<span id="L459"><span class="lineNum">     459</span>              :   /**</span>
+<span id="L460"><span class="lineNum">     460</span>              :    * @brief Translate a native path for a WSL-routed executable.</span>
+<span id="L461"><span class="lineNum">     461</span>              :    *</span>
+<span id="L462"><span class="lineNum">     462</span>              :    * When @p exe is a WSL command (parseWslCommand()) the path is converted</span>
+<span id="L463"><span class="lineNum">     463</span>              :    * with `wslpath` in the same distribution (the Linux binary cannot open</span>
+<span id="L464"><span class="lineNum">     464</span>              :    * `C:\...`); otherwise it is only cleaned.</span>
+<span id="L465"><span class="lineNum">     465</span>              :    * @param path Native filesystem path.</span>
+<span id="L466"><span class="lineNum">     466</span>              :    * @param exe Executable the path is meant for.</span>
+<span id="L467"><span class="lineNum">     467</span>              :    * @return Path suitable for @p exe.</span>
+<span id="L468"><span class="lineNum">     468</span>              :    */</span>
+<span id="L469"><span class="lineNum">     469</span>              :   static auto translatePathForWsl(const QString &amp;path, const QString &amp;exe)</span>
+<span id="L470"><span class="lineNum">     470</span>              :       -&gt; QString;</span>
+<span id="L471"><span class="lineNum">     471</span>              : </span>
+<span id="L472"><span class="lineNum">     472</span>              :   /**</span>
+<span id="L473"><span class="lineNum">     473</span>              :    * @brief Set the environment passed to all child processes.</span>
+<span id="L474"><span class="lineNum">     474</span>              :    * @param env Process environment for child processes.</span>
+<span id="L475"><span class="lineNum">     475</span>              :    */</span>
+<span id="L476"><span class="lineNum">     476</span>              :   void setEnvironment(const QProcessEnvironment &amp;env);</span>
+<span id="L477"><span class="lineNum">     477</span>              :   /**</span>
+<span id="L478"><span class="lineNum">     478</span>              :    * @brief Return the environment passed to child processes.</span>
+<span id="L479"><span class="lineNum">     479</span>              :    * @return Process environment.</span>
+<span id="L480"><span class="lineNum">     480</span>              :    */</span>
+<span id="L481"><span class="lineNum">     481</span>              :   auto environment() const -&gt; QProcessEnvironment;</span>
+<span id="L482"><span class="lineNum">     482</span>              : </span>
 <span id="L483"><span class="lineNum">     483</span>              :   /**</span>
-<span id="L484"><span class="lineNum">     484</span>              :    * @brief Whether the stdout of the item whose finished() or error() is</span>
-<span id="L485"><span class="lineNum">     485</span>              :    * being emitted encodes back (toUtf8(), as every writer here does) to</span>
-<span id="L486"><span class="lineNum">     486</span>              :    * exactly the bytes the process wrote. When false, writing that text back</span>
-<span id="L487"><span class="lineNum">     487</span>              :    * changes the bytes whatever else happens to it.</span>
-<span id="L488"><span class="lineNum">     488</span>              :    *</span>
-<span id="L489"><span class="lineNum">     489</span>              :    * Valid only in a slot directly connected to those signals, while the</span>
-<span id="L490"><span class="lineNum">     490</span>              :    * emission runs; at any other time, and when stdout was not read, true.</span>
-<span id="L491"><span class="lineNum">     491</span>              :    * @return false when the output was not UTF-8 or began with a byte order</span>
-<span id="L492"><span class="lineNum">     492</span>              :    *         mark.</span>
-<span id="L493"><span class="lineNum">     493</span>              :    */</span>
-<span id="L494"><span class="lineNum">     494</span>              :   [[nodiscard]] auto lastOutputLossless() const -&gt; bool {</span>
-<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">          52 :     return m_outputLossless;</span></span>
-<span id="L496"><span class="lineNum">     496</span>              :   }</span>
-<span id="L497"><span class="lineNum">     497</span>              : </span>
-<span id="L498"><span class="lineNum">     498</span>              :   /**</span>
-<span id="L499"><span class="lineNum">     499</span>              :    * @brief Whether a command with process id @p id is queued or running.</span>
-<span id="L500"><span class="lineNum">     500</span>              :    *</span>
-<span id="L501"><span class="lineNum">     501</span>              :    * The running command stays at the head of the queue until it finishes, so</span>
-<span id="L502"><span class="lineNum">     502</span>              :    * one scan covers both the queued and the running one. Used to refuse a</span>
-<span id="L503"><span class="lineNum">     503</span>              :    * store change while a Git pull is still in flight, whose conflict a</span>
-<span id="L504"><span class="lineNum">     504</span>              :    * call-time check could not yet see.</span>
-<span id="L505"><span class="lineNum">     505</span>              :    * @param id The process id to look for (an Enums::PROCESS value).</span>
-<span id="L506"><span class="lineNum">     506</span>              :    * @return true when the queue holds a command with that id.</span>
-<span id="L507"><span class="lineNum">     507</span>              :    */</span>
-<span id="L508"><span class="lineNum">     508</span>              :   auto hasQueued(int id) const -&gt; bool {</span>
-<span id="L509"><span class="lineNum">     509</span> <span class="tlaGNC">          77 :     for (const ExecQueueItem &amp;item : m_execQueue) {</span></span>
-<span id="L510"><span class="lineNum">     510</span> <span class="tlaGNC">          24 :       if (item.id == id) {</span></span>
-<span id="L511"><span class="lineNum">     511</span>              :         return true;</span>
-<span id="L512"><span class="lineNum">     512</span>              :       }</span>
-<span id="L513"><span class="lineNum">     513</span>              :     }</span>
-<span id="L514"><span class="lineNum">     514</span>              :     return false;</span>
-<span id="L515"><span class="lineNum">     515</span>              :   }</span>
-<span id="L516"><span class="lineNum">     516</span>              : </span>
-<span id="L517"><span class="lineNum">     517</span>              : private slots:</span>
-<span id="L518"><span class="lineNum">     518</span>              :   /**</span>
-<span id="L519"><span class="lineNum">     519</span>              :    * @brief Finish the running item when its process exits.</span>
-<span id="L520"><span class="lineNum">     520</span>              :    *</span>
-<span id="L521"><span class="lineNum">     521</span>              :    * Dequeues the head, collects its output and emits finished() for a</span>
-<span id="L522"><span class="lineNum">     522</span>              :    * normal exit or error() with exit code -1 for a crash (Qt leaves the</span>
-<span id="L523"><span class="lineNum">     523</span>              :    * code undefined then, and 0 or 1 would be mistaken for success or</span>
-<span id="L524"><span class="lineNum">     524</span>              :    * &quot;no matches&quot;), then starts the next item and posts a drained() check.</span>
-<span id="L525"><span class="lineNum">     525</span>              :    * @param exitCode Exit code reported by QProcess.</span>
-<span id="L526"><span class="lineNum">     526</span>              :    * @param exitStatus Whether the process exited normally or crashed.</span>
-<span id="L527"><span class="lineNum">     527</span>              :    */</span>
-<span id="L528"><span class="lineNum">     528</span>              :   void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);</span>
-<span id="L529"><span class="lineNum">     529</span>              : signals:</span>
-<span id="L530"><span class="lineNum">     530</span>              :   /**</span>
-<span id="L531"><span class="lineNum">     531</span>              :    * @brief Emitted once the last queued item is done and nothing runs or</span>
-<span id="L532"><span class="lineNum">     532</span>              :    * waits any more (isIdle()), after that item's finished() or error().</span>
-<span id="L533"><span class="lineNum">     533</span>              :    */</span>
-<span id="L534"><span class="lineNum">     534</span>              :   void drained();</span>
-<span id="L535"><span class="lineNum">     535</span>              :   /**</span>
-<span id="L536"><span class="lineNum">     536</span>              :    * @brief Emitted when a queued process exits normally, whatever its exit</span>
-<span id="L537"><span class="lineNum">     537</span>              :    * code; a non-zero code is the receiver's to interpret (Pass does).</span>
-<span id="L538"><span class="lineNum">     538</span>              :    * @param id Caller-assigned id the item was queued with.</span>
-<span id="L539"><span class="lineNum">     539</span>              :    * @param exitCode Exit code of the process.</span>
-<span id="L540"><span class="lineNum">     540</span>              :    * @param output stdout, when the item asked for it; empty otherwise.</span>
-<span id="L541"><span class="lineNum">     541</span>              :    * @param errout stderr, when the item asked for it or the exit code is</span>
-<span id="L542"><span class="lineNum">     542</span>              :    *        non-zero.</span>
+<span id="L484"><span class="lineNum">     484</span>              :    * @brief Cancel the next queued command without executing it.</span>
+<span id="L485"><span class="lineNum">     485</span>              :    * @return The id of the cancelled command, or -1 if the queue was empty.</span>
+<span id="L486"><span class="lineNum">     486</span>              :    */</span>
+<span id="L487"><span class="lineNum">     487</span>              :   auto cancelNext() -&gt; int;</span>
+<span id="L488"><span class="lineNum">     488</span>              :   /**</span>
+<span id="L489"><span class="lineNum">     489</span>              :    * @brief Whether no command is running and nothing is queued.</span>
+<span id="L490"><span class="lineNum">     490</span>              :    * @return true when the executor has nothing in flight.</span>
+<span id="L491"><span class="lineNum">     491</span>              :    */</span>
+<span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">        1000 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L493"><span class="lineNum">     493</span>              :   /**</span>
+<span id="L494"><span class="lineNum">     494</span>              :    * @brief Whether the stdout of the item whose finished() or error() is</span>
+<span id="L495"><span class="lineNum">     495</span>              :    * being emitted encodes back (toUtf8(), as every writer here does) to</span>
+<span id="L496"><span class="lineNum">     496</span>              :    * exactly the bytes the process wrote. When false, writing that text back</span>
+<span id="L497"><span class="lineNum">     497</span>              :    * changes the bytes whatever else happens to it.</span>
+<span id="L498"><span class="lineNum">     498</span>              :    *</span>
+<span id="L499"><span class="lineNum">     499</span>              :    * Valid only in a slot directly connected to those signals, while the</span>
+<span id="L500"><span class="lineNum">     500</span>              :    * emission runs; at any other time, and when stdout was not read, true.</span>
+<span id="L501"><span class="lineNum">     501</span>              :    * @return false when the output was not UTF-8 or began with a byte order</span>
+<span id="L502"><span class="lineNum">     502</span>              :    *         mark.</span>
+<span id="L503"><span class="lineNum">     503</span>              :    */</span>
+<span id="L504"><span class="lineNum">     504</span>              :   [[nodiscard]] auto lastOutputLossless() const -&gt; bool {</span>
+<span id="L505"><span class="lineNum">     505</span> <span class="tlaGNC">          51 :     return m_outputLossless;</span></span>
+<span id="L506"><span class="lineNum">     506</span>              :   }</span>
+<span id="L507"><span class="lineNum">     507</span>              : </span>
+<span id="L508"><span class="lineNum">     508</span>              :   /**</span>
+<span id="L509"><span class="lineNum">     509</span>              :    * @brief Whether a command with process id @p id is queued or running.</span>
+<span id="L510"><span class="lineNum">     510</span>              :    *</span>
+<span id="L511"><span class="lineNum">     511</span>              :    * The running command stays at the head of the queue until it finishes, so</span>
+<span id="L512"><span class="lineNum">     512</span>              :    * one scan covers both the queued and the running one. Used to refuse a</span>
+<span id="L513"><span class="lineNum">     513</span>              :    * store change while a Git pull is still in flight, whose conflict a</span>
+<span id="L514"><span class="lineNum">     514</span>              :    * call-time check could not yet see.</span>
+<span id="L515"><span class="lineNum">     515</span>              :    * @param id The process id to look for (an Enums::PROCESS value).</span>
+<span id="L516"><span class="lineNum">     516</span>              :    * @return true when the queue holds a command with that id.</span>
+<span id="L517"><span class="lineNum">     517</span>              :    */</span>
+<span id="L518"><span class="lineNum">     518</span>              :   auto hasQueued(int id) const -&gt; bool {</span>
+<span id="L519"><span class="lineNum">     519</span> <span class="tlaGNC">          77 :     for (const ExecQueueItem &amp;item : m_execQueue) {</span></span>
+<span id="L520"><span class="lineNum">     520</span> <span class="tlaGNC">          24 :       if (item.id == id) {</span></span>
+<span id="L521"><span class="lineNum">     521</span>              :         return true;</span>
+<span id="L522"><span class="lineNum">     522</span>              :       }</span>
+<span id="L523"><span class="lineNum">     523</span>              :     }</span>
+<span id="L524"><span class="lineNum">     524</span>              :     return false;</span>
+<span id="L525"><span class="lineNum">     525</span>              :   }</span>
+<span id="L526"><span class="lineNum">     526</span>              : </span>
+<span id="L527"><span class="lineNum">     527</span>              : private slots:</span>
+<span id="L528"><span class="lineNum">     528</span>              :   /**</span>
+<span id="L529"><span class="lineNum">     529</span>              :    * @brief Finish the running item when its process exits.</span>
+<span id="L530"><span class="lineNum">     530</span>              :    *</span>
+<span id="L531"><span class="lineNum">     531</span>              :    * Dequeues the head, collects its output and emits finished() for a</span>
+<span id="L532"><span class="lineNum">     532</span>              :    * normal exit or error() with exit code -1 for a crash (Qt leaves the</span>
+<span id="L533"><span class="lineNum">     533</span>              :    * code undefined then, and 0 or 1 would be mistaken for success or</span>
+<span id="L534"><span class="lineNum">     534</span>              :    * &quot;no matches&quot;), then starts the next item and posts a drained() check.</span>
+<span id="L535"><span class="lineNum">     535</span>              :    * @param exitCode Exit code reported by QProcess.</span>
+<span id="L536"><span class="lineNum">     536</span>              :    * @param exitStatus Whether the process exited normally or crashed.</span>
+<span id="L537"><span class="lineNum">     537</span>              :    */</span>
+<span id="L538"><span class="lineNum">     538</span>              :   void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);</span>
+<span id="L539"><span class="lineNum">     539</span>              : signals:</span>
+<span id="L540"><span class="lineNum">     540</span>              :   /**</span>
+<span id="L541"><span class="lineNum">     541</span>              :    * @brief Emitted once the last queued item is done and nothing runs or</span>
+<span id="L542"><span class="lineNum">     542</span>              :    * waits any more (isIdle()), after that item's finished() or error().</span>
 <span id="L543"><span class="lineNum">     543</span>              :    */</span>
-<span id="L544"><span class="lineNum">     544</span>              :   void finished(int id, int exitCode, const QString &amp;output,</span>
-<span id="L545"><span class="lineNum">     545</span>              :                 const QString &amp;errout);</span>
-<span id="L546"><span class="lineNum">     546</span>              :   /**</span>
-<span id="L547"><span class="lineNum">     547</span>              :    * @brief Emitted just before a queued process is started; the main</span>
-<span id="L548"><span class="lineNum">     548</span>              :    * window shows the busy indicator on it.</span>
-<span id="L549"><span class="lineNum">     549</span>              :    */</span>
-<span id="L550"><span class="lineNum">     550</span>              :   void starting();</span>
-<span id="L551"><span class="lineNum">     551</span>              :   /**</span>
-<span id="L552"><span class="lineNum">     552</span>              :    * @brief Emitted, synchronously, when the queue's head leaves it: just</span>
-<span id="L553"><span class="lineNum">     553</span>              :    * before it is started, when it cannot be (no executable, a failed</span>
-<span id="L554"><span class="lineNum">     554</span>              :    * start), or when cancelNext() drops it. Lets a caller do per-item work</span>
-<span id="L555"><span class="lineNum">     555</span>              :    * at the moment the item actually runs, not when it was queued.</span>
-<span id="L556"><span class="lineNum">     556</span>              :    * @param id The item's id.</span>
-<span id="L557"><span class="lineNum">     557</span>              :    * @param completes Whether finished() or error() follows for it: for</span>
-<span id="L558"><span class="lineNum">     558</span>              :    *        every item but one cancelNext() dropped. Those that complete</span>
-<span id="L559"><span class="lineNum">     559</span>              :    *        do so in the order they left the queue.</span>
-<span id="L560"><span class="lineNum">     560</span>              :    *</span>
-<span id="L561"><span class="lineNum">     561</span>              :    * A slot may queue more with execute(): that waits behind this item. The</span>
-<span id="L562"><span class="lineNum">     562</span>              :    * executor counts as running while the signal is out, also for an item</span>
-<span id="L563"><span class="lineNum">     563</span>              :    * cancelNext() drops, so cancelNext() drops nothing then (-1) and</span>
-<span id="L564"><span class="lineNum">     564</span>              :    * nothing starts until the signal has returned.</span>
-<span id="L565"><span class="lineNum">     565</span>              :    */</span>
-<span id="L566"><span class="lineNum">     566</span>              :   void dequeuing(int id, bool completes);</span>
-<span id="L567"><span class="lineNum">     567</span>              :   /**</span>
-<span id="L568"><span class="lineNum">     568</span>              :    * @brief Emitted instead of finished() when a queued process could not be</span>
-<span id="L569"><span class="lineNum">     569</span>              :    * started, had no executable configured, or crashed.</span>
-<span id="L570"><span class="lineNum">     570</span>              :    * @param id Caller-assigned id the item was queued with.</span>
-<span id="L571"><span class="lineNum">     571</span>              :    * @param exitCode Always -1; the real code is unknown in these cases.</span>
-<span id="L572"><span class="lineNum">     572</span>              :    * @param output stdout read so far, when the item asked for it.</span>
-<span id="L573"><span class="lineNum">     573</span>              :    * @param errout stderr, or a message saying what went wrong when the</span>
-<span id="L574"><span class="lineNum">     574</span>              :    *        process left none.</span>
+<span id="L544"><span class="lineNum">     544</span>              :   void drained();</span>
+<span id="L545"><span class="lineNum">     545</span>              :   /**</span>
+<span id="L546"><span class="lineNum">     546</span>              :    * @brief Emitted when a queued process exits normally, whatever its exit</span>
+<span id="L547"><span class="lineNum">     547</span>              :    * code; a non-zero code is the receiver's to interpret (Pass does).</span>
+<span id="L548"><span class="lineNum">     548</span>              :    * @param id Caller-assigned id the item was queued with.</span>
+<span id="L549"><span class="lineNum">     549</span>              :    * @param exitCode Exit code of the process.</span>
+<span id="L550"><span class="lineNum">     550</span>              :    * @param output stdout, when the item asked for it; empty otherwise.</span>
+<span id="L551"><span class="lineNum">     551</span>              :    * @param errout stderr, when the item asked for it or the exit code is</span>
+<span id="L552"><span class="lineNum">     552</span>              :    *        non-zero.</span>
+<span id="L553"><span class="lineNum">     553</span>              :    */</span>
+<span id="L554"><span class="lineNum">     554</span>              :   void finished(int id, int exitCode, const QString &amp;output,</span>
+<span id="L555"><span class="lineNum">     555</span>              :                 const QString &amp;errout);</span>
+<span id="L556"><span class="lineNum">     556</span>              :   /**</span>
+<span id="L557"><span class="lineNum">     557</span>              :    * @brief Emitted just before a queued process is started; the main</span>
+<span id="L558"><span class="lineNum">     558</span>              :    * window shows the busy indicator on it.</span>
+<span id="L559"><span class="lineNum">     559</span>              :    */</span>
+<span id="L560"><span class="lineNum">     560</span>              :   void starting();</span>
+<span id="L561"><span class="lineNum">     561</span>              :   /**</span>
+<span id="L562"><span class="lineNum">     562</span>              :    * @brief Emitted, synchronously, when the queue's head leaves it: just</span>
+<span id="L563"><span class="lineNum">     563</span>              :    * before it is started, when it cannot be (no executable, a failed</span>
+<span id="L564"><span class="lineNum">     564</span>              :    * start), or when cancelNext() drops it. Lets a caller do per-item work</span>
+<span id="L565"><span class="lineNum">     565</span>              :    * at the moment the item actually runs, not when it was queued.</span>
+<span id="L566"><span class="lineNum">     566</span>              :    * @param id The item's id.</span>
+<span id="L567"><span class="lineNum">     567</span>              :    * @param completes Whether finished() or error() follows for it: for</span>
+<span id="L568"><span class="lineNum">     568</span>              :    *        every item but one cancelNext() dropped. Those that complete</span>
+<span id="L569"><span class="lineNum">     569</span>              :    *        do so in the order they left the queue.</span>
+<span id="L570"><span class="lineNum">     570</span>              :    *</span>
+<span id="L571"><span class="lineNum">     571</span>              :    * A slot may queue more with execute(): that waits behind this item. The</span>
+<span id="L572"><span class="lineNum">     572</span>              :    * executor counts as running while the signal is out, also for an item</span>
+<span id="L573"><span class="lineNum">     573</span>              :    * cancelNext() drops, so cancelNext() drops nothing then (-1) and</span>
+<span id="L574"><span class="lineNum">     574</span>              :    * nothing starts until the signal has returned.</span>
 <span id="L575"><span class="lineNum">     575</span>              :    */</span>
-<span id="L576"><span class="lineNum">     576</span>              :   void error(int id, int exitCode, const QString &amp;output,</span>
-<span id="L577"><span class="lineNum">     577</span>              :              const QString &amp;errout);</span>
-<span id="L578"><span class="lineNum">     578</span>              : };</span>
-<span id="L579"><span class="lineNum">     579</span>              : </span>
-<span id="L580"><span class="lineNum">     580</span>              : #endif // SRC_EXECUTOR_H_</span>
+<span id="L576"><span class="lineNum">     576</span>              :   void dequeuing(int id, bool completes);</span>
+<span id="L577"><span class="lineNum">     577</span>              :   /**</span>
+<span id="L578"><span class="lineNum">     578</span>              :    * @brief Emitted instead of finished() when a queued process could not be</span>
+<span id="L579"><span class="lineNum">     579</span>              :    * started, had no executable configured, or crashed.</span>
+<span id="L580"><span class="lineNum">     580</span>              :    * @param id Caller-assigned id the item was queued with.</span>
+<span id="L581"><span class="lineNum">     581</span>              :    * @param exitCode Always -1; the real code is unknown in these cases.</span>
+<span id="L582"><span class="lineNum">     582</span>              :    * @param output stdout read so far, when the item asked for it.</span>
+<span id="L583"><span class="lineNum">     583</span>              :    * @param errout stderr, or a message saying what went wrong when the</span>
+<span id="L584"><span class="lineNum">     584</span>              :    *        process left none.</span>
+<span id="L585"><span class="lineNum">     585</span>              :    */</span>
+<span id="L586"><span class="lineNum">     586</span>              :   void error(int id, int exitCode, const QString &amp;output,</span>
+<span id="L587"><span class="lineNum">     587</span>              :              const QString &amp;errout);</span>
+<span id="L588"><span class="lineNum">     588</span>              : };</span>
+<span id="L589"><span class="lineNum">     589</span>              : </span>
+<span id="L590"><span class="lineNum">     590</span>              : #endif // SRC_EXECUTOR_H_</span>
         </pre>
               </td>
             </tr>

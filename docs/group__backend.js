@@ -144,7 +144,7 @@ var group__backend =
       [ "isOtpMarker", "class_native_grep.html#af1a96b33afcc5c919805cc284ad7722b", null ],
       [ "isPasswordMatch", "class_native_grep.html#a54b11323f2f692cdf24ee5fffcd9f92c", null ],
       [ "isStoppedMarker", "class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7", null ],
-      [ "matchFile", "class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68", null ],
+      [ "matchFile", "class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641", null ],
       [ "passwordMatchText", "class_native_grep.html#a9951254ad5d4bd85d22ecb60611a6f32", null ],
       [ "scanStore", "class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10", null ],
       [ "search", "class_native_grep.html#a393b6a05c39649304a77151702b76ec7", null ],

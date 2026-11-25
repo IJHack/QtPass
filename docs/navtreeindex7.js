@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b":[1,4,1,50],
+"struct_app_settings.html#af653095f19fc321bee9e31eb1076616f":[1,4,1,28],
 "struct_config_dialog_1_1_profile_entry.html":[1,5,1,0],
 "struct_config_dialog_1_1_profile_entry.html#a7c1d4007219cbc0903bfbac9da3fb205":[1,5,1,0,0],
 "struct_config_dialog_1_1_profile_entry.html#a8f9700c057f612ec07f302b26bffdfb4":[1,5,1,0,1],
