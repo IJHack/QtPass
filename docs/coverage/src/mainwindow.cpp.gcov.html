@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 09:23:42</td>
+            <td class="headerValue">2026-11-25 09:40:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -453,14 +453,14 @@
 <span id="L380"><span class="lineNum">     380</span> <span class="tlaGNC">          76 :   m_firstShowCompleted = true;</span></span>
 <span id="L381"><span class="lineNum">     381</span>              : }</span>
 <span id="L382"><span class="lineNum">     382</span>              : </span>
-<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">        9079 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">        9079 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">        9077 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">        9077 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L385"><span class="lineNum">     385</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L386"><span class="lineNum">     386</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L387"><span class="lineNum">     387</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L388"><span class="lineNum">     388</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L389"><span class="lineNum">     389</span>              :   }</span>
-<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">        9079 :   return QMainWindow::event(event);</span></span>
+<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">        9077 :   return QMainWindow::event(event);</span></span>
 <span id="L391"><span class="lineNum">     391</span>              : }</span>
 <span id="L392"><span class="lineNum">     392</span>              : </span>
 <span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">         263 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -1454,8 +1454,8 @@
 <span id="L1381"><span class="lineNum">    1381</span>              : </span>
 <span id="L1382"><span class="lineNum">    1382</span>              : // Guards the input dialogs (create, move, rename) against names like</span>
 <span id="L1383"><span class="lineNum">    1383</span>              : // &quot;../../etc/passwd&quot; or absolute paths escaping the store root.</span>
-<span id="L1384"><span class="lineNum">    1384</span> <span class="tlaGNC">          10 : auto MainWindow::confirmPathInStore(const QString &amp;candidate) -&gt; bool {</span></span>
-<span id="L1385"><span class="lineNum">    1385</span> <span class="tlaGNC">          20 :   if (PathValidator::isPathInStore(QtPassSettings::getPassStore(), candidate)) {</span></span>
+<span id="L1384"><span class="lineNum">    1384</span> <span class="tlaGNC">          11 : auto MainWindow::confirmPathInStore(const QString &amp;candidate) -&gt; bool {</span></span>
+<span id="L1385"><span class="lineNum">    1385</span> <span class="tlaGNC">          22 :   if (PathValidator::isPathInStore(QtPassSettings::getPassStore(), candidate)) {</span></span>
 <span id="L1386"><span class="lineNum">    1386</span>              :     return true;</span>
 <span id="L1387"><span class="lineNum">    1387</span>              :   }</span>
 <span id="L1388"><span class="lineNum">    1388</span> <span class="tlaGNC">           9 :   QMessageBox::warning(this, tr(&quot;Invalid name&quot;),</span></span>
@@ -1810,8 +1810,8 @@
 <span id="L1737"><span class="lineNum">    1737</span>              :   }</span>
 <span id="L1738"><span class="lineNum">    1738</span> <span class="tlaGNC">           4 : }</span></span>
 <span id="L1739"><span class="lineNum">    1739</span>              : </span>
-<span id="L1740"><span class="lineNum">    1740</span> <span class="tlaGNC">        8293 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
-<span id="L1741"><span class="lineNum">    1741</span> <span class="tlaGNC">        8293 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
+<span id="L1740"><span class="lineNum">    1740</span> <span class="tlaGNC">        8296 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
+<span id="L1741"><span class="lineNum">    1741</span> <span class="tlaGNC">        8296 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
 <span id="L1742"><span class="lineNum">    1742</span>              :       event-&gt;type() == QEvent::PaletteChange) {</span>
 <span id="L1743"><span class="lineNum">    1743</span>              :     // Breeze gives these bars a &quot;header&quot; palette and, after a runtime</span>
 <span id="L1744"><span class="lineNum">    1744</span>              :     // light/dark switch, stamps the previous theme's colours back from a</span>
@@ -1819,7 +1819,7 @@
 <span id="L1746"><span class="lineNum">    1746</span>              :     // re-enter the style while it is still applying its palette.</span>
 <span id="L1747"><span class="lineNum">    1747</span> <span class="tlaGNC">          36 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L1748"><span class="lineNum">    1748</span>              :   }</span>
-<span id="L1749"><span class="lineNum">    1749</span> <span class="tlaGNC">        8293 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
+<span id="L1749"><span class="lineNum">    1749</span> <span class="tlaGNC">        8296 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
 <span id="L1750"><span class="lineNum">    1750</span> <span class="tlaGNC">           5 :     auto *key = dynamic_cast&lt;QKeyEvent *&gt;(event);</span></span>
 <span id="L1751"><span class="lineNum">    1751</span> <span class="tlaGNC">           5 :     if (key != nullptr &amp;&amp; key-&gt;key() == Qt::Key_Down) {</span></span>
 <span id="L1752"><span class="lineNum">    1752</span>              :       // Into whichever list is in sight: the tree, or content search results.</span>
@@ -1841,7 +1841,7 @@
 <span id="L1768"><span class="lineNum">    1768</span> <span class="tlaGNC">           3 :       return true;</span></span>
 <span id="L1769"><span class="lineNum">    1769</span>              :     }</span>
 <span id="L1770"><span class="lineNum">    1770</span>              :   }</span>
-<span id="L1771"><span class="lineNum">    1771</span> <span class="tlaGNC">        8290 :   return QObject::eventFilter(obj, event);</span></span>
+<span id="L1771"><span class="lineNum">    1771</span> <span class="tlaGNC">        8293 :   return QObject::eventFilter(obj, event);</span></span>
 <span id="L1772"><span class="lineNum">    1772</span>              : }</span>
 <span id="L1773"><span class="lineNum">    1773</span>              : </span>
 <span id="L1774"><span class="lineNum">    1774</span>              : // Only once the application palette changed (see m_themeSwitched): a bar</span>
@@ -2071,22 +2071,22 @@
 <span id="L1998"><span class="lineNum">    1998</span>              :   // readable by them.</span>
 <span id="L1999"><span class="lineNum">    1999</span> <span class="tlaGNC">           7 : }</span></span>
 <span id="L2000"><span class="lineNum">    2000</span>              : </span>
-<span id="L2001"><span class="lineNum">    2001</span> <span class="tlaGNC">           3 : void MainWindow::renameFolder() {</span></span>
+<span id="L2001"><span class="lineNum">    2001</span> <span class="tlaGNC">           4 : void MainWindow::renameFolder() {</span></span>
 <span id="L2002"><span class="lineNum">    2002</span>              :   bool ok;</span>
-<span id="L2003"><span class="lineNum">    2003</span> <span class="tlaGNC">           3 :   QString srcDir = QDir::cleanPath(m_tree-&gt;currentDir(false));</span></span>
-<span id="L2004"><span class="lineNum">    2004</span> <span class="tlaGNC">           3 :   QString srcDirName = QDir(srcDir).dirName();</span></span>
+<span id="L2003"><span class="lineNum">    2003</span> <span class="tlaGNC">           4 :   QString srcDir = QDir::cleanPath(m_tree-&gt;currentDir(false));</span></span>
+<span id="L2004"><span class="lineNum">    2004</span> <span class="tlaGNC">           4 :   QString srcDirName = QDir(srcDir).dirName();</span></span>
 <span id="L2005"><span class="lineNum">    2005</span>              :   QString newName =</span>
-<span id="L2006"><span class="lineNum">    2006</span> <span class="tlaGNC">           3 :       QInputDialog::getText(this, tr(&quot;Rename folder&quot;), tr(&quot;Rename folder to: &quot;),</span></span>
-<span id="L2007"><span class="lineNum">    2007</span> <span class="tlaGNC">           6 :                             QLineEdit::Normal, srcDirName, &amp;ok);</span></span>
-<span id="L2008"><span class="lineNum">    2008</span> <span class="tlaGNC">           3 :   if (!ok || newName.isEmpty()) {</span></span>
+<span id="L2006"><span class="lineNum">    2006</span> <span class="tlaGNC">           4 :       QInputDialog::getText(this, tr(&quot;Rename folder&quot;), tr(&quot;Rename folder to: &quot;),</span></span>
+<span id="L2007"><span class="lineNum">    2007</span> <span class="tlaGNC">           8 :                             QLineEdit::Normal, srcDirName, &amp;ok);</span></span>
+<span id="L2008"><span class="lineNum">    2008</span> <span class="tlaGNC">           4 :   if (!ok || newName.isEmpty()) {</span></span>
 <span id="L2009"><span class="lineNum">    2009</span>              :     return;</span>
 <span id="L2010"><span class="lineNum">    2010</span>              :   }</span>
 <span id="L2011"><span class="lineNum">    2011</span>              :   QString destDir = srcDir;</span>
-<span id="L2012"><span class="lineNum">    2012</span> <span class="tlaGNC">           2 :   destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);</span></span>
-<span id="L2013"><span class="lineNum">    2013</span> <span class="tlaGNC">           2 :   if (!confirmPathInStore(destDir)) {</span></span>
+<span id="L2012"><span class="lineNum">    2012</span> <span class="tlaGNC">           3 :   destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);</span></span>
+<span id="L2013"><span class="lineNum">    2013</span> <span class="tlaGNC">           3 :   if (!confirmPathInStore(destDir)) {</span></span>
 <span id="L2014"><span class="lineNum">    2014</span>              :     return;</span>
 <span id="L2015"><span class="lineNum">    2015</span>              :   }</span>
-<span id="L2016"><span class="lineNum">    2016</span> <span class="tlaGNC">           3 :   QtPassSettings::getPass()-&gt;Move(srcDir, destDir, false);</span></span>
+<span id="L2016"><span class="lineNum">    2016</span> <span class="tlaGNC">           6 :   QtPassSettings::getPass()-&gt;Move(srcDir, destDir, false);</span></span>
 <span id="L2017"><span class="lineNum">    2017</span>              : }</span>
 <span id="L2018"><span class="lineNum">    2018</span>              : </span>
 <span id="L2019"><span class="lineNum">    2019</span> <span class="tlaGNC">           6 : void MainWindow::editPassword(const QString &amp;file) {</span></span>

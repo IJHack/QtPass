@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 09:23:42</td>
+            <td class="headerValue">2026-11-25 09:40:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -101,12 +101,12 @@
 <span id="L28"><span class="lineNum">      28</span>              : constexpr int kBlockingKillGraceMs = 1000;</span>
 <span id="L29"><span class="lineNum">      29</span>              : } // namespace</span>
 <span id="L30"><span class="lineNum">      30</span>              : </span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         475 : Executor::Executor(QObject *parent) : QObject(parent) {</span></span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         475 :   connect(&amp;m_process, &amp;QProcess::finished, this, &amp;Executor::onProcessFinished);</span></span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">         475 :   connect(&amp;m_process, &amp;QProcess::started, this, &amp;Executor::starting);</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         475 : }</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         476 : Executor::Executor(QObject *parent) : QObject(parent) {</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         476 :   connect(&amp;m_process, &amp;QProcess::finished, this, &amp;Executor::onProcessFinished);</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">         476 :   connect(&amp;m_process, &amp;QProcess::started, this, &amp;Executor::starting);</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         476 : }</span></span>
 <span id="L35"><span class="lineNum">      35</span>              : </span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">         951 : Executor::~Executor() { m_process.blockSignals(true); }</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">         953 : Executor::~Executor() { m_process.blockSignals(true); }</span></span>
 <span id="L37"><span class="lineNum">      37</span>              : </span>
 <span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">        2314 : void Executor::detachFromTerminal(QProcess &amp;process) {</span></span>
 <span id="L39"><span class="lineNum">      39</span>              : #if defined(Q_OS_UNIX) &amp;&amp; QT_VERSION &gt;= QT_VERSION_CHECK(6, 7, 0)</span>
@@ -509,14 +509,14 @@
 <span id="L436"><span class="lineNum">     436</span>              :     }</span>
 <span id="L437"><span class="lineNum">     437</span> <span class="tlaGNC">        1205 :     return true;</span></span>
 <span id="L438"><span class="lineNum">     438</span>              :   }</span>
-<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">        1308 :   while (!process.waitForFinished(</span></span>
+<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">        1306 :   while (!process.waitForFinished(</span></span>
 <span id="L440"><span class="lineNum">     440</span>              :       deadline.isForever()</span>
 <span id="L441"><span class="lineNum">     441</span>              :           ? kBlockingCancelPollMs</span>
 <span id="L442"><span class="lineNum">     442</span> <span class="tlaGNC">           3 :           : qMin(kBlockingCancelPollMs, msecsLeft(deadline)))) {</span></span>
-<span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">          47 :     if (process.state() == QProcess::NotRunning) {</span></span>
+<span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">          46 :     if (process.state() == QProcess::NotRunning) {</span></span>
 <span id="L444"><span class="lineNum">     444</span>              :       return true;</span>
 <span id="L445"><span class="lineNum">     445</span>              :     }</span>
-<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">          59 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
+<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">          58 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
 <span id="L447"><span class="lineNum">     447</span> <span class="tlaGNC">          12 :       stopBlocking(process);</span></span>
 <span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">          12 :       return false;</span></span>
 <span id="L449"><span class="lineNum">     449</span>              :     }</span>
@@ -621,9 +621,9 @@
 <span id="L548"><span class="lineNum">     548</span> <span class="tlaGNC">          72 :   return runBlocking(process, app, args, QString(), process_out, process_err);</span></span>
 <span id="L549"><span class="lineNum">     549</span> <span class="tlaGNC">          36 : }</span></span>
 <span id="L550"><span class="lineNum">     550</span>              : </span>
-<span id="L551"><span class="lineNum">     551</span> <span class="tlaGNC">         827 : void Executor::setEnvironment(const QProcessEnvironment &amp;env) {</span></span>
-<span id="L552"><span class="lineNum">     552</span> <span class="tlaGNC">         827 :   m_process.setProcessEnvironment(env);</span></span>
-<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">         827 : }</span></span>
+<span id="L551"><span class="lineNum">     551</span> <span class="tlaGNC">         828 : void Executor::setEnvironment(const QProcessEnvironment &amp;env) {</span></span>
+<span id="L552"><span class="lineNum">     552</span> <span class="tlaGNC">         828 :   m_process.setProcessEnvironment(env);</span></span>
+<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">         828 : }</span></span>
 <span id="L554"><span class="lineNum">     554</span>              : </span>
 <span id="L555"><span class="lineNum">     555</span> <span class="tlaGNC">         131 : auto Executor::environment() const -&gt; QProcessEnvironment {</span></span>
 <span id="L556"><span class="lineNum">     556</span> <span class="tlaGNC">         131 :   return m_process.processEnvironment();</span></span>

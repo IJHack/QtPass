@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 09:23:42</td>
+            <td class="headerValue">2026-11-25 09:40:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
@@ -93,14 +93,14 @@
 <span id="L20"><span class="lineNum">      20</span>              : #include &lt;algorithm&gt;</span>
 <span id="L21"><span class="lineNum">      21</span>              : #include &lt;utility&gt;</span>
 <span id="L22"><span class="lineNum">      22</span>              : </span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         272 : NativeGrep::NativeGrep(QObject *parent) : QObject(parent) {}</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         273 : NativeGrep::NativeGrep(QObject *parent) : QObject(parent) {}</span></span>
 <span id="L24"><span class="lineNum">      24</span>              : </span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         272 : NativeGrep::~NativeGrep() {</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         273 : NativeGrep::~NativeGrep() {</span></span>
 <span id="L26"><span class="lineNum">      26</span>              :   static constexpr int kThreadTimeoutMs = 5000;</span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         272 :   cancel();</span></span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         272 :   QElapsedTimer elapsed;</span></span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         272 :   elapsed.start();</span></span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         273 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         273 :   cancel();</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         273 :   QElapsedTimer elapsed;</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         273 :   elapsed.start();</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         274 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
 <span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           1 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning()) {</span></span>
 <span id="L32"><span class="lineNum">      32</span>              :       const int remaining =</span>
 <span id="L33"><span class="lineNum">      33</span> <span class="tlaUNC">           0 :           kThreadTimeoutMs - static_cast&lt;int&gt;(elapsed.elapsed());</span></span>
@@ -108,7 +108,7 @@
 <span id="L35"><span class="lineNum">      35</span> <span class="tlaUNC">           0 :         w.thread-&gt;wait(remaining);</span></span>
 <span id="L36"><span class="lineNum">      36</span>              :     }</span>
 <span id="L37"><span class="lineNum">      37</span>              :   }</span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         272 : }</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         273 : }</span></span>
 <span id="L39"><span class="lineNum">      39</span>              : </span>
 <span id="L40"><span class="lineNum">      40</span>              : /**</span>
 <span id="L41"><span class="lineNum">      41</span>              :  * @brief Decrypt one .gpg file and return lines matching rx.</span>
@@ -349,18 +349,18 @@
 <span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">          15 :   connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</span></span>
 <span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">          15 :   connect(thread, &amp;QThread::finished, this, [this, thread]() {</span></span>
 <span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">          14 :     m_workers.removeIf(</span></span>
-<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          15 :         [thread](const Worker &amp;w) { return w.thread == thread; });</span></span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          14 :         [thread](const Worker &amp;w) { return w.thread == thread; });</span></span>
 <span id="L280"><span class="lineNum">     280</span>              :   });</span>
 <span id="L281"><span class="lineNum">     281</span> <span class="tlaGNC">          15 :   thread-&gt;start();</span></span>
 <span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">          31 : }</span></span>
 <span id="L283"><span class="lineNum">     283</span>              : </span>
-<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">         616 : void NativeGrep::cancel() {</span></span>
-<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         626 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
+<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">         618 : void NativeGrep::cancel() {</span></span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         627 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
 <span id="L286"><span class="lineNum">     286</span>              :     w.cancel-&gt;store(true);</span>
-<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">          10 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
+<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">           9 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
 <span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">           8 :       w.thread-&gt;requestInterruption();</span></span>
 <span id="L289"><span class="lineNum">     289</span>              :   }</span>
-<span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">         616 : }</span></span>
+<span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">         618 : }</span></span>
         </pre>
               </td>
             </tr>

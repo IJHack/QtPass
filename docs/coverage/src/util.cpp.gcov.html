@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 09:23:42</td>
+            <td class="headerValue">2026-11-25 09:40:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -210,15 +210,15 @@
 <span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">           4 :   return value.toInt(nullptr, 8);</span></span>
 <span id="L138"><span class="lineNum">     138</span>              : }</span>
 <span id="L139"><span class="lineNum">     139</span>              : </span>
-<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">        1890 : auto Util::gitCeiling(const QString &amp;store) -&gt; QString {</span></span>
-<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">        1890 :   if (store.isEmpty()) {</span></span>
+<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">        1892 : auto Util::gitCeiling(const QString &amp;store) -&gt; QString {</span></span>
+<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">        1892 :   if (store.isEmpty()) {</span></span>
 <span id="L142"><span class="lineNum">     142</span> <span class="tlaUNC">           0 :     return {};</span></span>
 <span id="L143"><span class="lineNum">     143</span>              :   }</span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">        1890 :   QString path = QFileInfo(store).canonicalFilePath();</span></span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">        1890 :   if (path.isEmpty()) {</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">        1892 :   QString path = QFileInfo(store).canonicalFilePath();</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">        1892 :   if (path.isEmpty()) {</span></span>
 <span id="L146"><span class="lineNum">     146</span> <span class="tlaUNC">           0 :     path = QDir::cleanPath(QDir(store).absolutePath());</span></span>
 <span id="L147"><span class="lineNum">     147</span>              :   }</span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">        1890 :   return QFileInfo(path).absolutePath();</span></span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">        1892 :   return QFileInfo(path).absolutePath();</span></span>
 <span id="L149"><span class="lineNum">     149</span>              : }</span>
 <span id="L150"><span class="lineNum">     150</span>              : </span>
 <span id="L151"><span class="lineNum">     151</span>              : #ifndef Q_OS_WIN</span>
@@ -500,15 +500,15 @@
 <span id="L427"><span class="lineNum">     427</span>              : } // namespace</span>
 <span id="L428"><span class="lineNum">     428</span>              : #endif</span>
 <span id="L429"><span class="lineNum">     429</span>              : </span>
-<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">        1890 : auto Util::gitStoreVariables(const QString &amp;store, const QString &amp;git,</span></span>
+<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">        1892 : auto Util::gitStoreVariables(const QString &amp;store, const QString &amp;git,</span></span>
 <span id="L431"><span class="lineNum">     431</span>              :                              std::optional&lt;uint&gt; asUser)</span>
 <span id="L432"><span class="lineNum">     432</span>              :     -&gt; QList&lt;std::pair&lt;QString, QString&gt;&gt; {</span>
-<span id="L433"><span class="lineNum">     433</span> <span class="tlaGNC">        1890 :   const QString ceiling = gitCeiling(store);</span></span>
-<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">        1890 :   if (ceiling.isEmpty()) {</span></span>
+<span id="L433"><span class="lineNum">     433</span> <span class="tlaGNC">        1892 :   const QString ceiling = gitCeiling(store);</span></span>
+<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">        1892 :   if (ceiling.isEmpty()) {</span></span>
 <span id="L435"><span class="lineNum">     435</span> <span class="tlaUNC">           0 :     return {};</span></span>
 <span id="L436"><span class="lineNum">     436</span>              :   }</span>
 <span id="L437"><span class="lineNum">     437</span>              :   QList&lt;std::pair&lt;QString, QString&gt;&gt; vars{</span>
-<span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">        5670 :       {QStringLiteral(&quot;GIT_CEILING_DIRECTORIES&quot;), ceiling}};</span></span>
+<span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">        5676 :       {QStringLiteral(&quot;GIT_CEILING_DIRECTORIES&quot;), ceiling}};</span></span>
 <span id="L439"><span class="lineNum">     439</span>              : #ifdef Q_OS_WIN</span>
 <span id="L440"><span class="lineNum">     440</span>              :   const QChar separator = QLatin1Char(';');</span>
 <span id="L441"><span class="lineNum">     441</span>              : #else</span>
@@ -516,7 +516,7 @@
 <span id="L443"><span class="lineNum">     443</span>              : #endif</span>
 <span id="L444"><span class="lineNum">     444</span>              :   // git splits the ceiling list on the separator: &quot;/home/a:b&quot; would be</span>
 <span id="L445"><span class="lineNum">     445</span>              :   // &quot;/home/a&quot; and &quot;b&quot;, neither of them the parent, and git would climb.</span>
-<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">        1890 :   if (ceiling.contains(separator)) {</span></span>
+<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">        1892 :   if (ceiling.contains(separator)) {</span></span>
 <span id="L447"><span class="lineNum">     447</span> <span class="tlaGNC">          28 :     QString root = QFileInfo(store).canonicalFilePath();</span></span>
 <span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">          28 :     if (root.isEmpty()) {</span></span>
 <span id="L449"><span class="lineNum">     449</span> <span class="tlaUNC">           0 :       root = QDir::cleanPath(QDir(store).absolutePath());</span></span>
@@ -560,7 +560,7 @@
 <span id="L487"><span class="lineNum">     487</span> <span class="tlaGNC">          56 :     vars.append({QStringLiteral(&quot;GIT_WORK_TREE&quot;), root});</span></span>
 <span id="L488"><span class="lineNum">     488</span>              :   }</span>
 <span id="L489"><span class="lineNum">     489</span>              :   return vars;</span>
-<span id="L490"><span class="lineNum">     490</span> <span class="tlaGNC">        1890 : }</span></span>
+<span id="L490"><span class="lineNum">     490</span> <span class="tlaGNC">        1892 : }</span></span>
 <span id="L491"><span class="lineNum">     491</span>              : </span>
 <span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">          52 : auto Util::mkpathForStore(const QString &amp;path) -&gt; bool {</span></span>
 <span id="L493"><span class="lineNum">     493</span> <span class="tlaGNC">         104 :   const QString clean = QDir::cleanPath(QDir(path).absolutePath());</span></span>
@@ -706,9 +706,9 @@
 <span id="L633"><span class="lineNum">     633</span> <span class="tlaGNC">         211 :   return QFile(executable).exists();</span></span>
 <span id="L634"><span class="lineNum">     634</span>              : }</span>
 <span id="L635"><span class="lineNum">     635</span>              : </span>
-<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">       17301 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
-<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">       17308 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
-<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">       17301 :   return expr;</span></span>
+<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">       17359 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">       17366 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
+<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">       17359 :   return expr;</span></span>
 <span id="L639"><span class="lineNum">     639</span>              : }</span>
 <span id="L640"><span class="lineNum">     640</span>              : </span>
 <span id="L641"><span class="lineNum">     641</span>              : // Stops at whitespace, quotes and brackets so a URL on its own line keeps no</span>
@@ -988,17 +988,17 @@
 <span id="L915"><span class="lineNum">     915</span>              :  * @param dir An existing directory.</span>
 <span id="L916"><span class="lineNum">     916</span>              :  * @return false when the walk would miss what is in it.</span>
 <span id="L917"><span class="lineNum">     917</span>              :  */</span>
-<span id="L918"><span class="lineNum">     918</span> <span class="tlaGNC">         211 : auto canList(const QString &amp;dir) -&gt; bool {</span></span>
+<span id="L918"><span class="lineNum">     918</span> <span class="tlaGNC">         213 : auto canList(const QString &amp;dir) -&gt; bool {</span></span>
 <span id="L919"><span class="lineNum">     919</span>              : #ifdef Q_OS_WIN</span>
 <span id="L920"><span class="lineNum">     920</span>              :   // Qt answers from the attributes alone unless told to read the ACL.</span>
 <span id="L921"><span class="lineNum">     921</span>              :   QNtfsPermissionCheckGuard aclCheck;</span>
 <span id="L922"><span class="lineNum">     922</span>              :   return QFileInfo(dir).isReadable();</span>
 <span id="L923"><span class="lineNum">     923</span>              : #else</span>
-<span id="L924"><span class="lineNum">     924</span> <span class="tlaGNC">         211 :   const QFileInfo info(dir);</span></span>
-<span id="L925"><span class="lineNum">     925</span> <span class="tlaGNC">         414 :   return info.isReadable() &amp;&amp; info.isExecutable() &amp;&amp;</span></span>
-<span id="L926"><span class="lineNum">     926</span> <span class="tlaGNC">         414 :          !Util::hasUnreadableName(dir);</span></span>
+<span id="L924"><span class="lineNum">     924</span> <span class="tlaGNC">         213 :   const QFileInfo info(dir);</span></span>
+<span id="L925"><span class="lineNum">     925</span> <span class="tlaGNC">         418 :   return info.isReadable() &amp;&amp; info.isExecutable() &amp;&amp;</span></span>
+<span id="L926"><span class="lineNum">     926</span> <span class="tlaGNC">         418 :          !Util::hasUnreadableName(dir);</span></span>
 <span id="L927"><span class="lineNum">     927</span>              : #endif</span>
-<span id="L928"><span class="lineNum">     928</span> <span class="tlaGNC">         211 : }</span></span>
+<span id="L928"><span class="lineNum">     928</span> <span class="tlaGNC">         213 : }</span></span>
 <span id="L929"><span class="lineNum">     929</span>              : </span>
 <span id="L930"><span class="lineNum">     930</span>              : /**</span>
 <span id="L931"><span class="lineNum">     931</span>              :  * @brief Walk @p dir's real, visible directories in sorted pre-order and hand</span>
@@ -1008,14 +1008,14 @@
 <span id="L935"><span class="lineNum">     935</span>              :  * folder's does, and what is in it would be left out without a sign.</span>
 <span id="L936"><span class="lineNum">     936</span>              :  */</span>
 <span id="L937"><span class="lineNum">     937</span>              : template &lt;typename Visit&gt;</span>
-<span id="L938"><span class="lineNum">     938</span> <span class="tlaGNC">         347 : void walkStore(const QString &amp;dir, Visit visit,</span></span>
+<span id="L938"><span class="lineNum">     938</span> <span class="tlaGNC">         349 : void walkStore(const QString &amp;dir, Visit visit,</span></span>
 <span id="L939"><span class="lineNum">     939</span>              :                QStringList *unlisted = nullptr) {</span>
 <span id="L940"><span class="lineNum">     940</span>              :   // Absolute, so the results are whatever the caller's cwd; not canonical,</span>
 <span id="L941"><span class="lineNum">     941</span>              :   // so a linked root keeps the name it was configured under.</span>
-<span id="L942"><span class="lineNum">     942</span> <span class="tlaGNC">        1041 :   QStringList pending{QDir(QDir::cleanPath(dir)).absolutePath()};</span></span>
-<span id="L943"><span class="lineNum">     943</span> <span class="tlaGNC">        2949 :   while (!pending.isEmpty()) {</span></span>
-<span id="L944"><span class="lineNum">     944</span> <span class="tlaGNC">        1306 :     const QDir current(pending.takeLast());</span></span>
-<span id="L945"><span class="lineNum">     945</span> <span class="tlaGNC">        2612 :     if (unlisted != nullptr &amp;&amp; current.exists() &amp;&amp; !canList(current.path())) {</span></span>
+<span id="L942"><span class="lineNum">     942</span> <span class="tlaGNC">        1047 :   QStringList pending{QDir(QDir::cleanPath(dir)).absolutePath()};</span></span>
+<span id="L943"><span class="lineNum">     943</span> <span class="tlaGNC">        2959 :   while (!pending.isEmpty()) {</span></span>
+<span id="L944"><span class="lineNum">     944</span> <span class="tlaGNC">        1310 :     const QDir current(pending.takeLast());</span></span>
+<span id="L945"><span class="lineNum">     945</span> <span class="tlaGNC">        2620 :     if (unlisted != nullptr &amp;&amp; current.exists() &amp;&amp; !canList(current.path())) {</span></span>
 <span id="L946"><span class="lineNum">     946</span> <span class="tlaGNC">          20 :       qCWarning(lcQtPass) &lt;&lt; &quot;Cannot list&quot; &lt;&lt; current.path();</span></span>
 <span id="L947"><span class="lineNum">     947</span> <span class="tlaGNC">          10 :       *unlisted &lt;&lt; current.path();</span></span>
 <span id="L948"><span class="lineNum">     948</span>              :       continue;</span>
@@ -1023,26 +1023,26 @@
 <span id="L950"><span class="lineNum">     950</span>              :     // Every entry once, links and hidden entries included, so the decision</span>
 <span id="L951"><span class="lineNum">     951</span>              :     // what to do with each is taken here, before any recursion. QDir::System</span>
 <span id="L952"><span class="lineNum">     952</span>              :     // keeps dangling links in the listing.</span>
-<span id="L953"><span class="lineNum">     953</span> <span class="tlaGNC">        1296 :     const QFileInfoList entries =</span></span>
+<span id="L953"><span class="lineNum">     953</span> <span class="tlaGNC">        1300 :     const QFileInfoList entries =</span></span>
 <span id="L954"><span class="lineNum">     954</span>              :         current.entryInfoList(QDir::Dirs | QDir::Files | QDir::Hidden |</span>
 <span id="L955"><span class="lineNum">     955</span>              :                                   QDir::System | QDir::NoDotAndDotDot,</span>
 <span id="L956"><span class="lineNum">     956</span>              :                               QDir::Name);</span>
-<span id="L957"><span class="lineNum">     957</span> <span class="tlaGNC">        1296 :     QStringList subdirs;</span></span>
-<span id="L958"><span class="lineNum">     958</span> <span class="tlaGNC">        8051 :     for (const QFileInfo &amp;entry : entries) {</span></span>
-<span id="L959"><span class="lineNum">     959</span> <span class="tlaGNC">        6755 :       if (visit(entry)) {</span></span>
-<span id="L960"><span class="lineNum">     960</span> <span class="tlaGNC">        1918 :         subdirs &lt;&lt; entry.filePath();</span></span>
+<span id="L957"><span class="lineNum">     957</span> <span class="tlaGNC">        1300 :     QStringList subdirs;</span></span>
+<span id="L958"><span class="lineNum">     958</span> <span class="tlaGNC">        8067 :     for (const QFileInfo &amp;entry : entries) {</span></span>
+<span id="L959"><span class="lineNum">     959</span> <span class="tlaGNC">        6767 :       if (visit(entry)) {</span></span>
+<span id="L960"><span class="lineNum">     960</span> <span class="tlaGNC">        1922 :         subdirs &lt;&lt; entry.filePath();</span></span>
 <span id="L961"><span class="lineNum">     961</span>              :       }</span>
 <span id="L962"><span class="lineNum">     962</span>              :     }</span>
 <span id="L963"><span class="lineNum">     963</span>              :     // Pushed last-to-first so the next one taken is the first by name.</span>
-<span id="L964"><span class="lineNum">     964</span> <span class="tlaGNC">        2255 :     for (auto it = subdirs.crbegin(); it != subdirs.crend(); ++it) {</span></span>
+<span id="L964"><span class="lineNum">     964</span> <span class="tlaGNC">        2261 :     for (auto it = subdirs.crbegin(); it != subdirs.crend(); ++it) {</span></span>
 <span id="L965"><span class="lineNum">     965</span>              :       pending &lt;&lt; *it;</span>
 <span id="L966"><span class="lineNum">     966</span>              :     }</span>
 <span id="L967"><span class="lineNum">     967</span>              :   }</span>
-<span id="L968"><span class="lineNum">     968</span> <span class="tlaGNC">         694 : }</span></span>
+<span id="L968"><span class="lineNum">     968</span> <span class="tlaGNC">         698 : }</span></span>
 <span id="L969"><span class="lineNum">     969</span>              : </span>
 <span id="L970"><span class="lineNum">     970</span>              : /// A symlink or an NTFS junction: never entered, never listed.</span>
-<span id="L971"><span class="lineNum">     971</span> <span class="tlaGNC">       28239 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
-<span id="L972"><span class="lineNum">     972</span> <span class="tlaGNC">       28239 :   return entry.isSymLink() || entry.isJunction();</span></span>
+<span id="L971"><span class="lineNum">     971</span> <span class="tlaGNC">       28351 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
+<span id="L972"><span class="lineNum">     972</span> <span class="tlaGNC">       28351 :   return entry.isSymLink() || entry.isJunction();</span></span>
 <span id="L973"><span class="lineNum">     973</span>              : }</span>
 <span id="L974"><span class="lineNum">     974</span>              : </span>
 <span id="L975"><span class="lineNum">     975</span>              : /// Hidden by attribute, or by the dot convention on every platform: Qt 6.11</span>
@@ -1050,46 +1050,46 @@
 <span id="L977"><span class="lineNum">     977</span>              : /// was lstat()ed (qfilesystemengine_unix.cpp marks the attribute known there</span>
 <span id="L978"><span class="lineNum">     978</span>              : /// without the dot check), and Windows does not consider .stversions hidden</span>
 <span id="L979"><span class="lineNum">     979</span>              : /// at all.</span>
-<span id="L980"><span class="lineNum">     980</span> <span class="tlaGNC">        5690 : auto isHiddenEntry(const QFileInfo &amp;entry) -&gt; bool {</span></span>
-<span id="L981"><span class="lineNum">     981</span> <span class="tlaGNC">       11360 :   return entry.isHidden() || entry.fileName().startsWith(QLatin1Char('.'));</span></span>
+<span id="L980"><span class="lineNum">     980</span> <span class="tlaGNC">        5692 : auto isHiddenEntry(const QFileInfo &amp;entry) -&gt; bool {</span></span>
+<span id="L981"><span class="lineNum">     981</span> <span class="tlaGNC">       11364 :   return entry.isHidden() || entry.fileName().startsWith(QLatin1Char('.'));</span></span>
 <span id="L982"><span class="lineNum">     982</span>              : }</span>
 <span id="L983"><span class="lineNum">     983</span>              : </span>
 <span id="L984"><span class="lineNum">     984</span>              : /// A real directory that is part of the store: .git, .stversions,</span>
 <span id="L985"><span class="lineNum">     985</span>              : /// .Trash-1000 are not, as with QDirIterator without QDir::Hidden.</span>
-<span id="L986"><span class="lineNum">     986</span> <span class="tlaGNC">        6755 : auto isStoreDirectory(const QFileInfo &amp;entry) -&gt; bool {</span></span>
-<span id="L987"><span class="lineNum">     987</span> <span class="tlaGNC">        6755 :   return !isLink(entry) &amp;&amp; entry.isDir() &amp;&amp; !isHiddenEntry(entry);</span></span>
+<span id="L986"><span class="lineNum">     986</span> <span class="tlaGNC">        6767 : auto isStoreDirectory(const QFileInfo &amp;entry) -&gt; bool {</span></span>
+<span id="L987"><span class="lineNum">     987</span> <span class="tlaGNC">        6767 :   return !isLink(entry) &amp;&amp; entry.isDir() &amp;&amp; !isHiddenEntry(entry);</span></span>
 <span id="L988"><span class="lineNum">     988</span>              : }</span>
 <span id="L989"><span class="lineNum">     989</span>              : } // namespace</span>
 <span id="L990"><span class="lineNum">     990</span>              : </span>
-<span id="L991"><span class="lineNum">     991</span> <span class="tlaGNC">         344 : auto Util::regularFilesUnder(const QString &amp;dir, const QStringList &amp;nameFilters,</span></span>
+<span id="L991"><span class="lineNum">     991</span> <span class="tlaGNC">         346 : auto Util::regularFilesUnder(const QString &amp;dir, const QStringList &amp;nameFilters,</span></span>
 <span id="L992"><span class="lineNum">     992</span>              :                              QStringList *skipped, bool hiddenFiles,</span>
 <span id="L993"><span class="lineNum">     993</span>              :                              QStringList *unlisted) -&gt; QStringList {</span>
-<span id="L994"><span class="lineNum">     994</span> <span class="tlaGNC">         344 :   QStringList files;</span></span>
-<span id="L995"><span class="lineNum">     995</span> <span class="tlaGNC">         344 :   walkStore(</span></span>
+<span id="L994"><span class="lineNum">     994</span> <span class="tlaGNC">         346 :   QStringList files;</span></span>
+<span id="L995"><span class="lineNum">     995</span> <span class="tlaGNC">         346 :   walkStore(</span></span>
 <span id="L996"><span class="lineNum">     996</span>              :       dir,</span>
-<span id="L997"><span class="lineNum">     997</span> <span class="tlaGNC">        6679 :       [&amp;](const QFileInfo &amp;entry) {</span></span>
-<span id="L998"><span class="lineNum">     998</span> <span class="tlaGNC">        6679 :         if (isStoreDirectory(entry)) {</span></span>
+<span id="L997"><span class="lineNum">     997</span> <span class="tlaGNC">        6691 :       [&amp;](const QFileInfo &amp;entry) {</span></span>
+<span id="L998"><span class="lineNum">     998</span> <span class="tlaGNC">        6691 :         if (isStoreDirectory(entry)) {</span></span>
 <span id="L999"><span class="lineNum">     999</span>              :           return true;</span>
 <span id="L1000"><span class="lineNum">    1000</span>              :         }</span>
-<span id="L1001"><span class="lineNum">    1001</span> <span class="tlaGNC">        5741 :         const bool named = QDir::match(nameFilters, entry.fileName());</span></span>
-<span id="L1002"><span class="lineNum">    1002</span> <span class="tlaGNC">        5741 :         if (isLink(entry) || (!entry.isDir() &amp;&amp; !entry.isFile())) {</span></span>
+<span id="L1001"><span class="lineNum">    1001</span> <span class="tlaGNC">        5751 :         const bool named = QDir::match(nameFilters, entry.fileName());</span></span>
+<span id="L1002"><span class="lineNum">    1002</span> <span class="tlaGNC">        5751 :         if (isLink(entry) || (!entry.isDir() &amp;&amp; !entry.isFile())) {</span></span>
 <span id="L1003"><span class="lineNum">    1003</span>              :           // A linked directory hides everything behind it; a linked file, or a</span>
 <span id="L1004"><span class="lineNum">    1004</span>              :           // FIFO, socket or device, is only of interest under a name the caller</span>
 <span id="L1005"><span class="lineNum">    1005</span>              :           // asked for.</span>
-<span id="L1006"><span class="lineNum">    1006</span> <span class="tlaGNC">          68 :           if (skipped != nullptr &amp;&amp; (entry.isDir() || named)) {</span></span>
-<span id="L1007"><span class="lineNum">    1007</span> <span class="tlaGNC">         104 :             qCWarning(lcQtPass) &lt;&lt; &quot;Skipping&quot; &lt;&lt; entry.filePath()</span></span>
-<span id="L1008"><span class="lineNum">    1008</span> <span class="tlaGNC">          52 :                                 &lt;&lt; &quot;: not a regular file or directory&quot;;</span></span>
-<span id="L1009"><span class="lineNum">    1009</span> <span class="tlaGNC">         104 :             *skipped &lt;&lt; entry.filePath();</span></span>
+<span id="L1006"><span class="lineNum">    1006</span> <span class="tlaGNC">          70 :           if (skipped != nullptr &amp;&amp; (entry.isDir() || named)) {</span></span>
+<span id="L1007"><span class="lineNum">    1007</span> <span class="tlaGNC">         108 :             qCWarning(lcQtPass) &lt;&lt; &quot;Skipping&quot; &lt;&lt; entry.filePath()</span></span>
+<span id="L1008"><span class="lineNum">    1008</span> <span class="tlaGNC">          54 :                                 &lt;&lt; &quot;: not a regular file or directory&quot;;</span></span>
+<span id="L1009"><span class="lineNum">    1009</span> <span class="tlaGNC">         108 :             *skipped &lt;&lt; entry.filePath();</span></span>
 <span id="L1010"><span class="lineNum">    1010</span>              :           }</span>
-<span id="L1011"><span class="lineNum">    1011</span> <span class="tlaGNC">          68 :           return false;</span></span>
+<span id="L1011"><span class="lineNum">    1011</span> <span class="tlaGNC">          70 :           return false;</span></span>
 <span id="L1012"><span class="lineNum">    1012</span>              :         }</span>
-<span id="L1013"><span class="lineNum">    1013</span> <span class="tlaGNC">        5673 :         if (entry.isFile() &amp;&amp; named &amp;&amp; (hiddenFiles || !isHiddenEntry(entry))) {</span></span>
-<span id="L1014"><span class="lineNum">    1014</span> <span class="tlaGNC">        9830 :           files &lt;&lt; entry.filePath();</span></span>
+<span id="L1013"><span class="lineNum">    1013</span> <span class="tlaGNC">        5681 :         if (entry.isFile() &amp;&amp; named &amp;&amp; (hiddenFiles || !isHiddenEntry(entry))) {</span></span>
+<span id="L1014"><span class="lineNum">    1014</span> <span class="tlaGNC">        9836 :           files &lt;&lt; entry.filePath();</span></span>
 <span id="L1015"><span class="lineNum">    1015</span>              :         }</span>
 <span id="L1016"><span class="lineNum">    1016</span>              :         return false;</span>
 <span id="L1017"><span class="lineNum">    1017</span>              :       },</span>
 <span id="L1018"><span class="lineNum">    1018</span>              :       unlisted);</span>
-<span id="L1019"><span class="lineNum">    1019</span> <span class="tlaGNC">         344 :   return files;</span></span>
+<span id="L1019"><span class="lineNum">    1019</span> <span class="tlaGNC">         346 :   return files;</span></span>
 <span id="L1020"><span class="lineNum">    1020</span>              : }</span>
 <span id="L1021"><span class="lineNum">    1021</span>              : </span>
 <span id="L1022"><span class="lineNum">    1022</span> <span class="tlaGNC">           3 : auto Util::directoriesUnder(const QString &amp;dir) -&gt; QStringList {</span></span>
@@ -1104,20 +1104,20 @@
 <span id="L1031"><span class="lineNum">    1031</span> <span class="tlaGNC">           3 :   return dirs;</span></span>
 <span id="L1032"><span class="lineNum">    1032</span>              : }</span>
 <span id="L1033"><span class="lineNum">    1033</span>              : </span>
-<span id="L1034"><span class="lineNum">    1034</span> <span class="tlaGNC">         298 : auto Util::hasUnreadableName(const QString &amp;dir) -&gt; bool {</span></span>
+<span id="L1034"><span class="lineNum">    1034</span> <span class="tlaGNC">         300 : auto Util::hasUnreadableName(const QString &amp;dir) -&gt; bool {</span></span>
 <span id="L1035"><span class="lineNum">    1035</span>              : #ifdef Q_OS_WIN</span>
 <span id="L1036"><span class="lineNum">    1036</span>              :   Q_UNUSED(dir);</span>
 <span id="L1037"><span class="lineNum">    1037</span>              :   return false;</span>
 <span id="L1038"><span class="lineNum">    1038</span>              : #else</span>
 <span id="L1039"><span class="lineNum">    1039</span>              :   // The names as bytes, as readdir() gives them; Qt's own listing has</span>
 <span id="L1040"><span class="lineNum">    1040</span>              :   // already dropped the ones this is looking for.</span>
-<span id="L1041"><span class="lineNum">    1041</span> <span class="tlaGNC">         298 :   DIR *listing = ::opendir(QFile::encodeName(dir).constData());</span></span>
-<span id="L1042"><span class="lineNum">    1042</span> <span class="tlaGNC">         298 :   if (listing == nullptr) {</span></span>
+<span id="L1041"><span class="lineNum">    1041</span> <span class="tlaGNC">         300 :   DIR *listing = ::opendir(QFile::encodeName(dir).constData());</span></span>
+<span id="L1042"><span class="lineNum">    1042</span> <span class="tlaGNC">         300 :   if (listing == nullptr) {</span></span>
 <span id="L1043"><span class="lineNum">    1043</span>              :     return false;</span>
 <span id="L1044"><span class="lineNum">    1044</span>              :   }</span>
-<span id="L1045"><span class="lineNum">    1045</span> <span class="tlaGNC">         295 :   const auto close = qScopeGuard([listing] { ::closedir(listing); });</span></span>
-<span id="L1046"><span class="lineNum">    1046</span> <span class="tlaGNC">        1490 :   while (const dirent *entry = ::readdir(listing)) {</span></span>
-<span id="L1047"><span class="lineNum">    1047</span> <span class="tlaGNC">        1201 :     if (!QByteArrayView(entry-&gt;d_name).isValidUtf8()) {</span></span>
+<span id="L1045"><span class="lineNum">    1045</span> <span class="tlaGNC">         297 :   const auto close = qScopeGuard([listing] { ::closedir(listing); });</span></span>
+<span id="L1046"><span class="lineNum">    1046</span> <span class="tlaGNC">        1502 :   while (const dirent *entry = ::readdir(listing)) {</span></span>
+<span id="L1047"><span class="lineNum">    1047</span> <span class="tlaGNC">        1211 :     if (!QByteArrayView(entry-&gt;d_name).isValidUtf8()) {</span></span>
 <span id="L1048"><span class="lineNum">    1048</span>              :       return true;</span>
 <span id="L1049"><span class="lineNum">    1049</span>              :     }</span>
 <span id="L1050"><span class="lineNum">    1050</span>              :   }</span>
@@ -1125,11 +1125,11 @@
 <span id="L1052"><span class="lineNum">    1052</span>              : #endif</span>
 <span id="L1053"><span class="lineNum">    1053</span>              : }</span>
 <span id="L1054"><span class="lineNum">    1054</span>              : </span>
-<span id="L1055"><span class="lineNum">    1055</span> <span class="tlaGNC">       15700 : auto Util::isLinkedFolder(const QString &amp;path) -&gt; bool {</span></span>
-<span id="L1056"><span class="lineNum">    1056</span> <span class="tlaGNC">       31400 :   return isLink(QFileInfo(QDir::cleanPath(path)));</span></span>
+<span id="L1055"><span class="lineNum">    1055</span> <span class="tlaGNC">       15790 : auto Util::isLinkedFolder(const QString &amp;path) -&gt; bool {</span></span>
+<span id="L1056"><span class="lineNum">    1056</span> <span class="tlaGNC">       31580 :   return isLink(QFileInfo(QDir::cleanPath(path)));</span></span>
 <span id="L1057"><span class="lineNum">    1057</span>              : }</span>
 <span id="L1058"><span class="lineNum">    1058</span>              : </span>
-<span id="L1059"><span class="lineNum">    1059</span> <span class="tlaGNC">       12660 : auto Util::isUnderLink(const QString &amp;path, const QString &amp;storeRoot,</span></span>
+<span id="L1059"><span class="lineNum">    1059</span> <span class="tlaGNC">       12726 : auto Util::isUnderLink(const QString &amp;path, const QString &amp;storeRoot,</span></span>
 <span id="L1060"><span class="lineNum">    1060</span>              :                        bool includeSelf) -&gt; bool {</span>
 <span id="L1061"><span class="lineNum">    1061</span>              :   // &quot;C:/Store&quot; and &quot;c:/store&quot; are one directory on Windows; a path spelled</span>
 <span id="L1062"><span class="lineNum">    1062</span>              :   // the other way must not skip the walk (as in Pass::getGpgIdPath).</span>
@@ -1138,24 +1138,24 @@
 <span id="L1065"><span class="lineNum">    1065</span>              : #else</span>
 <span id="L1066"><span class="lineNum">    1066</span>              :   constexpr auto cs = Qt::CaseSensitive;</span>
 <span id="L1067"><span class="lineNum">    1067</span>              : #endif</span>
-<span id="L1068"><span class="lineNum">    1068</span> <span class="tlaGNC">       12660 :   const QString root = QDir::cleanPath(storeRoot);</span></span>
+<span id="L1068"><span class="lineNum">    1068</span> <span class="tlaGNC">       12726 :   const QString root = QDir::cleanPath(storeRoot);</span></span>
 <span id="L1069"><span class="lineNum">    1069</span>              :   // A root of &quot;/&quot; or &quot;C:/&quot; already ends in the separator.</span>
 <span id="L1070"><span class="lineNum">    1070</span>              :   const QString prefix =</span>
-<span id="L1071"><span class="lineNum">    1071</span> <span class="tlaGNC">       12660 :       root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');</span></span>
+<span id="L1071"><span class="lineNum">    1071</span> <span class="tlaGNC">       12726 :       root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');</span></span>
 <span id="L1072"><span class="lineNum">    1072</span>              :   const auto isRoot = [&amp;](const QString &amp;p) {</span>
-<span id="L1073"><span class="lineNum">    1073</span> <span class="tlaGNC">       15218 :     return p.compare(root, cs) == 0;</span></span>
+<span id="L1073"><span class="lineNum">    1073</span> <span class="tlaGNC">       15293 :     return p.compare(root, cs) == 0;</span></span>
 <span id="L1074"><span class="lineNum">    1074</span>              :   };</span>
-<span id="L1075"><span class="lineNum">    1075</span> <span class="tlaGNC">       12660 :   QString current = QDir::cleanPath(path);</span></span>
-<span id="L1076"><span class="lineNum">    1076</span> <span class="tlaGNC">       12660 :   if (!current.startsWith(prefix, cs)) {</span></span>
+<span id="L1075"><span class="lineNum">    1075</span> <span class="tlaGNC">       12726 :   QString current = QDir::cleanPath(path);</span></span>
+<span id="L1076"><span class="lineNum">    1076</span> <span class="tlaGNC">       12726 :   if (!current.startsWith(prefix, cs)) {</span></span>
 <span id="L1077"><span class="lineNum">    1077</span>              :     // Not under the store as named: only the entry itself can be judged.</span>
-<span id="L1078"><span class="lineNum">    1078</span> <span class="tlaGNC">         520 :     return includeSelf &amp;&amp; !isRoot(current) &amp;&amp; isLinkedFolder(current);</span></span>
+<span id="L1078"><span class="lineNum">    1078</span> <span class="tlaGNC">         524 :     return includeSelf &amp;&amp; !isRoot(current) &amp;&amp; isLinkedFolder(current);</span></span>
 <span id="L1079"><span class="lineNum">    1079</span>              :   }</span>
-<span id="L1080"><span class="lineNum">    1080</span> <span class="tlaGNC">       12400 :   if (!includeSelf) {</span></span>
-<span id="L1081"><span class="lineNum">    1081</span> <span class="tlaGNC">       23014 :     current = QFileInfo(current).path();</span></span>
+<span id="L1080"><span class="lineNum">    1080</span> <span class="tlaGNC">       12464 :   if (!includeSelf) {</span></span>
+<span id="L1081"><span class="lineNum">    1081</span> <span class="tlaGNC">       23124 :     current = QFileInfo(current).path();</span></span>
 <span id="L1082"><span class="lineNum">    1082</span>              :   }</span>
-<span id="L1083"><span class="lineNum">    1083</span> <span class="tlaGNC">       14958 :   for (; !isRoot(current) &amp;&amp; current.startsWith(prefix, cs);</span></span>
-<span id="L1084"><span class="lineNum">    1084</span> <span class="tlaGNC">        5116 :        current = QFileInfo(current).path()) {</span></span>
-<span id="L1085"><span class="lineNum">    1085</span> <span class="tlaGNC">        2607 :     if (isLinkedFolder(current)) {</span></span>
+<span id="L1083"><span class="lineNum">    1083</span> <span class="tlaGNC">       15031 :   for (; !isRoot(current) &amp;&amp; current.startsWith(prefix, cs);</span></span>
+<span id="L1084"><span class="lineNum">    1084</span> <span class="tlaGNC">        5134 :        current = QFileInfo(current).path()) {</span></span>
+<span id="L1085"><span class="lineNum">    1085</span> <span class="tlaGNC">        2616 :     if (isLinkedFolder(current)) {</span></span>
 <span id="L1086"><span class="lineNum">    1086</span>              :       return true;</span>
 <span id="L1087"><span class="lineNum">    1087</span>              :     }</span>
 <span id="L1088"><span class="lineNum">    1088</span>              :   }</span>
@@ -1210,15 +1210,15 @@
 <span id="L1137"><span class="lineNum">    1137</span>              :  * name is checked and then renamed, which leaves a short window for another</span>
 <span id="L1138"><span class="lineNum">    1138</span>              :  * writer to create it in between.</span>
 <span id="L1139"><span class="lineNum">    1139</span>              :  */</span>
-<span id="L1140"><span class="lineNum">    1140</span> <span class="tlaGNC">         110 : auto placeWithoutReplacing(const QByteArray &amp;source, const QByteArray &amp;target)</span></span>
+<span id="L1140"><span class="lineNum">    1140</span> <span class="tlaGNC">         111 : auto placeWithoutReplacing(const QByteArray &amp;source, const QByteArray &amp;target)</span></span>
 <span id="L1141"><span class="lineNum">    1141</span>              :     -&gt; bool {</span>
 <span id="L1142"><span class="lineNum">    1142</span>              :   // linkat() without AT_SYMLINK_FOLLOW follows nothing; link() would, on</span>
 <span id="L1143"><span class="lineNum">    1143</span>              :   // macOS and the BSDs, hard-link whatever a symlink planted under the</span>
 <span id="L1144"><span class="lineNum">    1144</span>              :   // source's name points at.</span>
-<span id="L1145"><span class="lineNum">    1145</span> <span class="tlaGNC">         110 :   if (::linkat(AT_FDCWD, source.constData(), AT_FDCWD, target.constData(), 0) ==</span></span>
+<span id="L1145"><span class="lineNum">    1145</span> <span class="tlaGNC">         111 :   if (::linkat(AT_FDCWD, source.constData(), AT_FDCWD, target.constData(), 0) ==</span></span>
 <span id="L1146"><span class="lineNum">    1146</span>              :       0) {</span>
-<span id="L1147"><span class="lineNum">    1147</span> <span class="tlaGNC">          95 :     ::unlink(source.constData());</span></span>
-<span id="L1148"><span class="lineNum">    1148</span> <span class="tlaGNC">          95 :     return true;</span></span>
+<span id="L1147"><span class="lineNum">    1147</span> <span class="tlaGNC">          96 :     ::unlink(source.constData());</span></span>
+<span id="L1148"><span class="lineNum">    1148</span> <span class="tlaGNC">          96 :     return true;</span></span>
 <span id="L1149"><span class="lineNum">    1149</span>              :   }</span>
 <span id="L1150"><span class="lineNum">    1150</span> <span class="tlaGNC">          15 :   if (!hasNoHardLinks(errno)) {</span></span>
 <span id="L1151"><span class="lineNum">    1151</span>              :     return false;</span>
@@ -1237,7 +1237,7 @@
 <span id="L1164"><span class="lineNum">    1164</span>              : } // namespace</span>
 <span id="L1165"><span class="lineNum">    1165</span>              : #endif</span>
 <span id="L1166"><span class="lineNum">    1166</span>              : </span>
-<span id="L1167"><span class="lineNum">    1167</span> <span class="tlaGNC">         286 : auto Util::replaceFile(const QString &amp;from, const QString &amp;to, bool replace)</span></span>
+<span id="L1167"><span class="lineNum">    1167</span> <span class="tlaGNC">         287 : auto Util::replaceFile(const QString &amp;from, const QString &amp;to, bool replace)</span></span>
 <span id="L1168"><span class="lineNum">    1168</span>              :     -&gt; bool {</span>
 <span id="L1169"><span class="lineNum">    1169</span>              : #ifdef Q_OS_WIN</span>
 <span id="L1170"><span class="lineNum">    1170</span>              :   const std::wstring source =</span>
@@ -1252,32 +1252,32 @@
 <span id="L1179"><span class="lineNum">    1179</span>              : #else</span>
 <span id="L1180"><span class="lineNum">    1180</span>              :   const QByteArray source = QFile::encodeName(from);</span>
 <span id="L1181"><span class="lineNum">    1181</span>              :   const QByteArray target = QFile::encodeName(to);</span>
-<span id="L1182"><span class="lineNum">    1182</span> <span class="tlaGNC">         286 :   if (replace) {</span></span>
+<span id="L1182"><span class="lineNum">    1182</span> <span class="tlaGNC">         287 :   if (replace) {</span></span>
 <span id="L1183"><span class="lineNum">    1183</span> <span class="tlaGNC">         176 :     if (::rename(source.constData(), target.constData()) != 0) {</span></span>
 <span id="L1184"><span class="lineNum">    1184</span>              :       return false;</span>
 <span id="L1185"><span class="lineNum">    1185</span>              :     }</span>
 <span id="L1186"><span class="lineNum">    1186</span>              :   } else {</span>
-<span id="L1187"><span class="lineNum">    1187</span> <span class="tlaGNC">         110 :     if (!placeWithoutReplacing(source, target)) {</span></span>
+<span id="L1187"><span class="lineNum">    1187</span> <span class="tlaGNC">         111 :     if (!placeWithoutReplacing(source, target)) {</span></span>
 <span id="L1188"><span class="lineNum">    1188</span>              :       return false;</span>
 <span id="L1189"><span class="lineNum">    1189</span>              :     }</span>
 <span id="L1190"><span class="lineNum">    1190</span>              :   }</span>
 <span id="L1191"><span class="lineNum">    1191</span>              :   // Sync the directory entry so a crash does not lose the new name. Best</span>
 <span id="L1192"><span class="lineNum">    1192</span>              :   // effort: the bytes are already synced, and some network filesystems</span>
 <span id="L1193"><span class="lineNum">    1193</span>              :   // cannot sync a directory.</span>
-<span id="L1194"><span class="lineNum">    1194</span> <span class="tlaGNC">         544 :   const int dir = ::open(QFile::encodeName(QFileInfo(to).path()).constData(),</span></span>
+<span id="L1194"><span class="lineNum">    1194</span> <span class="tlaGNC">         546 :   const int dir = ::open(QFile::encodeName(QFileInfo(to).path()).constData(),</span></span>
 <span id="L1195"><span class="lineNum">    1195</span>              :                          O_RDONLY | O_DIRECTORY | O_CLOEXEC);</span>
-<span id="L1196"><span class="lineNum">    1196</span> <span class="tlaGNC">         272 :   if (dir &gt;= 0) {</span></span>
+<span id="L1196"><span class="lineNum">    1196</span> <span class="tlaGNC">         273 :   if (dir &gt;= 0) {</span></span>
 <span id="L1197"><span class="lineNum">    1197</span>              :     int rc;</span>
 <span id="L1198"><span class="lineNum">    1198</span>              :     do {</span>
-<span id="L1199"><span class="lineNum">    1199</span> <span class="tlaGNC">         272 :       rc = ::fsync(dir);</span></span>
-<span id="L1200"><span class="lineNum">    1200</span> <span class="tlaGNC">         272 :     } while (rc != 0 &amp;&amp; errno == EINTR);</span></span>
-<span id="L1201"><span class="lineNum">    1201</span> <span class="tlaGNC">         272 :     ::close(dir);</span></span>
+<span id="L1199"><span class="lineNum">    1199</span> <span class="tlaGNC">         273 :       rc = ::fsync(dir);</span></span>
+<span id="L1200"><span class="lineNum">    1200</span> <span class="tlaGNC">         273 :     } while (rc != 0 &amp;&amp; errno == EINTR);</span></span>
+<span id="L1201"><span class="lineNum">    1201</span> <span class="tlaGNC">         273 :     ::close(dir);</span></span>
 <span id="L1202"><span class="lineNum">    1202</span>              :   }</span>
 <span id="L1203"><span class="lineNum">    1203</span>              :   return true;</span>
 <span id="L1204"><span class="lineNum">    1204</span>              : #endif</span>
 <span id="L1205"><span class="lineNum">    1205</span>              : }</span>
 <span id="L1206"><span class="lineNum">    1206</span>              : </span>
-<span id="L1207"><span class="lineNum">    1207</span> <span class="tlaGNC">        1079 : auto Util::openRegularFile(const QString &amp;path, QFile &amp;file) -&gt; bool {</span></span>
+<span id="L1207"><span class="lineNum">    1207</span> <span class="tlaGNC">        1081 : auto Util::openRegularFile(const QString &amp;path, QFile &amp;file) -&gt; bool {</span></span>
 <span id="L1208"><span class="lineNum">    1208</span>              : #ifdef Q_OS_WIN</span>
 <span id="L1209"><span class="lineNum">    1209</span>              :   // FILE_FLAG_OPEN_REPARSE_POINT opens a symbolic link or junction itself</span>
 <span id="L1210"><span class="lineNum">    1210</span>              :   // rather than its target, so the handle's attributes say what the name</span>
@@ -1315,20 +1315,20 @@
 <span id="L1242"><span class="lineNum">    1242</span>              : #else</span>
 <span id="L1243"><span class="lineNum">    1243</span>              :   // O_NOFOLLOW fails with ELOOP on a symbolic link; O_NONBLOCK keeps a FIFO</span>
 <span id="L1244"><span class="lineNum">    1244</span>              :   // from blocking the open until fstat() can refuse it.</span>
-<span id="L1245"><span class="lineNum">    1245</span> <span class="tlaGNC">        1079 :   const int fd = ::open(QFile::encodeName(path).constData(),</span></span>
+<span id="L1245"><span class="lineNum">    1245</span> <span class="tlaGNC">        1081 :   const int fd = ::open(QFile::encodeName(path).constData(),</span></span>
 <span id="L1246"><span class="lineNum">    1246</span>              :                         O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);</span>
-<span id="L1247"><span class="lineNum">    1247</span> <span class="tlaGNC">        1079 :   if (fd &lt; 0) {</span></span>
+<span id="L1247"><span class="lineNum">    1247</span> <span class="tlaGNC">        1081 :   if (fd &lt; 0) {</span></span>
 <span id="L1248"><span class="lineNum">    1248</span>              :     return false;</span>
 <span id="L1249"><span class="lineNum">    1249</span>              :   }</span>
-<span id="L1250"><span class="lineNum">    1250</span> <span class="tlaGNC">         981 :   struct stat st{};</span></span>
-<span id="L1251"><span class="lineNum">    1251</span> <span class="tlaGNC">         981 :   if (::fstat(fd, &amp;st) != 0 || !S_ISREG(st.st_mode)) {</span></span>
+<span id="L1250"><span class="lineNum">    1250</span> <span class="tlaGNC">         983 :   struct stat st{};</span></span>
+<span id="L1251"><span class="lineNum">    1251</span> <span class="tlaGNC">         983 :   if (::fstat(fd, &amp;st) != 0 || !S_ISREG(st.st_mode)) {</span></span>
 <span id="L1252"><span class="lineNum">    1252</span> <span class="tlaGNC">           7 :     ::close(fd);</span></span>
 <span id="L1253"><span class="lineNum">    1253</span> <span class="tlaGNC">           7 :     return false;</span></span>
 <span id="L1254"><span class="lineNum">    1254</span>              :   }</span>
 <span id="L1255"><span class="lineNum">    1255</span>              :   // The descriptor, not the name, is what QFile opens here: the object</span>
 <span id="L1256"><span class="lineNum">    1256</span>              :   // fstat() judged is the object read. CodeQL's check-then-use pattern</span>
 <span id="L1257"><span class="lineNum">    1257</span>              :   // matcher sees an open after a check and cannot tell.</span>
-<span id="L1258"><span class="lineNum">    1258</span> <span class="tlaGNC">         974 :   if (!file.open(fd, QIODevice::ReadOnly, // codeql[cpp/toctou-race-condition]</span></span>
+<span id="L1258"><span class="lineNum">    1258</span> <span class="tlaGNC">         976 :   if (!file.open(fd, QIODevice::ReadOnly, // codeql[cpp/toctou-race-condition]</span></span>
 <span id="L1259"><span class="lineNum">    1259</span>              :                  QFileDevice::AutoCloseHandle)) {</span>
 <span id="L1260"><span class="lineNum">    1260</span> <span class="tlaUNC">           0 :     ::close(fd);</span></span>
 <span id="L1261"><span class="lineNum">    1261</span> <span class="tlaUNC">           0 :     return false;</span></span>
@@ -1470,15 +1470,15 @@
 <span id="L1397"><span class="lineNum">    1397</span>              : #endif</span>
 <span id="L1398"><span class="lineNum">    1398</span> <span class="tlaGNC">         543 : }</span></span>
 <span id="L1399"><span class="lineNum">    1399</span>              : </span>
-<span id="L1400"><span class="lineNum">    1400</span> <span class="tlaGNC">         272 : auto Util::syncToDisk(QFileDevice &amp;file) -&gt; bool {</span></span>
-<span id="L1401"><span class="lineNum">    1401</span> <span class="tlaGNC">         272 :   if (!file.flush()) {</span></span>
+<span id="L1400"><span class="lineNum">    1400</span> <span class="tlaGNC">         273 : auto Util::syncToDisk(QFileDevice &amp;file) -&gt; bool {</span></span>
+<span id="L1401"><span class="lineNum">    1401</span> <span class="tlaGNC">         273 :   if (!file.flush()) {</span></span>
 <span id="L1402"><span class="lineNum">    1402</span>              :     return false;</span>
 <span id="L1403"><span class="lineNum">    1403</span>              :   }</span>
 <span id="L1404"><span class="lineNum">    1404</span>              : #ifdef Q_OS_WIN</span>
 <span id="L1405"><span class="lineNum">    1405</span>              :   const HANDLE handle = reinterpret_cast&lt;HANDLE&gt;(_get_osfhandle(file.handle()));</span>
 <span id="L1406"><span class="lineNum">    1406</span>              :   return handle != INVALID_HANDLE_VALUE &amp;&amp; FlushFileBuffers(handle) != 0;</span>
 <span id="L1407"><span class="lineNum">    1407</span>              : #else</span>
-<span id="L1408"><span class="lineNum">    1408</span> <span class="tlaGNC">         272 :   return ::fsync(file.handle()) == 0;</span></span>
+<span id="L1408"><span class="lineNum">    1408</span> <span class="tlaGNC">         273 :   return ::fsync(file.handle()) == 0;</span></span>
 <span id="L1409"><span class="lineNum">    1409</span>              : #endif</span>
 <span id="L1410"><span class="lineNum">    1410</span>              : }</span>
 <span id="L1411"><span class="lineNum">    1411</span>              : </span>
@@ -1494,12 +1494,12 @@
 <span id="L1421"><span class="lineNum">    1421</span>              :   bool known = false;</span>
 <span id="L1422"><span class="lineNum">    1422</span>              : };</span>
 <span id="L1423"><span class="lineNum">    1423</span>              : </span>
-<span id="L1424"><span class="lineNum">    1424</span> <span class="tlaGNC">         261 : auto operator==(const FileIdentity &amp;a, const FileIdentity &amp;b) -&gt; bool {</span></span>
-<span id="L1425"><span class="lineNum">    1425</span> <span class="tlaGNC">         261 :   return a.known &amp;&amp; b.known &amp;&amp; a.volume == b.volume &amp;&amp; a.index == b.index;</span></span>
+<span id="L1424"><span class="lineNum">    1424</span> <span class="tlaGNC">         262 : auto operator==(const FileIdentity &amp;a, const FileIdentity &amp;b) -&gt; bool {</span></span>
+<span id="L1425"><span class="lineNum">    1425</span> <span class="tlaGNC">         262 :   return a.known &amp;&amp; b.known &amp;&amp; a.volume == b.volume &amp;&amp; a.index == b.index;</span></span>
 <span id="L1426"><span class="lineNum">    1426</span>              : }</span>
 <span id="L1427"><span class="lineNum">    1427</span>              : </span>
 <span id="L1428"><span class="lineNum">    1428</span>              : /// The identity of the object @p file is open on, or an unknown one.</span>
-<span id="L1429"><span class="lineNum">    1429</span> <span class="tlaGNC">         533 : auto identityOf(const QFileDevice &amp;file) -&gt; FileIdentity {</span></span>
+<span id="L1429"><span class="lineNum">    1429</span> <span class="tlaGNC">         535 : auto identityOf(const QFileDevice &amp;file) -&gt; FileIdentity {</span></span>
 <span id="L1430"><span class="lineNum">    1430</span>              : #ifdef Q_OS_WIN</span>
 <span id="L1431"><span class="lineNum">    1431</span>              :   const HANDLE handle = reinterpret_cast&lt;HANDLE&gt;(_get_osfhandle(file.handle()));</span>
 <span id="L1432"><span class="lineNum">    1432</span>              :   BY_HANDLE_FILE_INFORMATION info;</span>
@@ -1521,12 +1521,12 @@
 <span id="L1448"><span class="lineNum">    1448</span>              :               info.nFileIndexLow,</span>
 <span id="L1449"><span class="lineNum">    1449</span>              :           true};</span>
 <span id="L1450"><span class="lineNum">    1450</span>              : #else</span>
-<span id="L1451"><span class="lineNum">    1451</span> <span class="tlaGNC">         533 :   struct stat st{};</span></span>
-<span id="L1452"><span class="lineNum">    1452</span> <span class="tlaGNC">         533 :   if (::fstat(file.handle(), &amp;st) != 0) {</span></span>
+<span id="L1451"><span class="lineNum">    1451</span> <span class="tlaGNC">         535 :   struct stat st{};</span></span>
+<span id="L1452"><span class="lineNum">    1452</span> <span class="tlaGNC">         535 :   if (::fstat(file.handle(), &amp;st) != 0) {</span></span>
 <span id="L1453"><span class="lineNum">    1453</span> <span class="tlaUNC">           0 :     return {};</span></span>
 <span id="L1454"><span class="lineNum">    1454</span>              :   }</span>
-<span id="L1455"><span class="lineNum">    1455</span> <span class="tlaGNC">         533 :   return {static_cast&lt;quint64&gt;(st.st_dev), static_cast&lt;quint64&gt;(st.st_ino),</span></span>
-<span id="L1456"><span class="lineNum">    1456</span> <span class="tlaGNC">         533 :           true};</span></span>
+<span id="L1455"><span class="lineNum">    1455</span> <span class="tlaGNC">         535 :   return {static_cast&lt;quint64&gt;(st.st_dev), static_cast&lt;quint64&gt;(st.st_ino),</span></span>
+<span id="L1456"><span class="lineNum">    1456</span> <span class="tlaGNC">         535 :           true};</span></span>
 <span id="L1457"><span class="lineNum">    1457</span>              : #endif</span>
 <span id="L1458"><span class="lineNum">    1458</span>              : }</span>
 <span id="L1459"><span class="lineNum">    1459</span>              : </span>
@@ -1539,7 +1539,7 @@
 <span id="L1466"><span class="lineNum">    1466</span>              : }</span>
 <span id="L1467"><span class="lineNum">    1467</span>              : </span>
 <span id="L1468"><span class="lineNum">    1468</span>              : /// A filled, synced temporary next to its destination.</span>
-<span id="L1469"><span class="lineNum">    1469</span> <span class="tlaGNC">         272 : struct Staged {</span></span>
+<span id="L1469"><span class="lineNum">    1469</span> <span class="tlaGNC">         273 : struct Staged {</span></span>
 <span id="L1470"><span class="lineNum">    1470</span>              :   QString path;</span>
 <span id="L1471"><span class="lineNum">    1471</span>              :   FileIdentity identity;</span>
 <span id="L1472"><span class="lineNum">    1472</span>              :   /// POSIX: a descriptor kept open on the temporary until the identity</span>
@@ -1553,47 +1553,47 @@
 <span id="L1480"><span class="lineNum">    1480</span>              :  * goes out of scope before the caller renames: it keeps its handle open for</span>
 <span id="L1481"><span class="lineNum">    1481</span>              :  * as long as it lives, and Windows does not rename an open file.</span>
 <span id="L1482"><span class="lineNum">    1482</span>              :  */</span>
-<span id="L1483"><span class="lineNum">    1483</span> <span class="tlaGNC">         280 : auto stageNextTo(const QString &amp;path, const Util::Filler &amp;fill, QString *why)</span></span>
+<span id="L1483"><span class="lineNum">    1483</span> <span class="tlaGNC">         281 : auto stageNextTo(const QString &amp;path, const Util::Filler &amp;fill, QString *why)</span></span>
 <span id="L1484"><span class="lineNum">    1484</span>              :     -&gt; std::optional&lt;Staged&gt; {</span>
-<span id="L1485"><span class="lineNum">    1485</span> <span class="tlaGNC">         280 :   Staged staged;</span></span>
+<span id="L1485"><span class="lineNum">    1485</span> <span class="tlaGNC">         281 :   Staged staged;</span></span>
 <span id="L1486"><span class="lineNum">    1486</span>              :   {</span>
-<span id="L1487"><span class="lineNum">    1487</span> <span class="tlaGNC">         560 :     QTemporaryFile file(QFileInfo(path).path() +</span></span>
-<span id="L1488"><span class="lineNum">    1488</span> <span class="tlaGNC">         560 :                         QStringLiteral(&quot;/.qtpass-XXXXXX.tmp&quot;));</span></span>
-<span id="L1489"><span class="lineNum">    1489</span> <span class="tlaGNC">         280 :     file.setAutoRemove(false);</span></span>
-<span id="L1490"><span class="lineNum">    1490</span> <span class="tlaGNC">         280 :     if (!file.open()) {</span></span>
+<span id="L1487"><span class="lineNum">    1487</span> <span class="tlaGNC">         562 :     QTemporaryFile file(QFileInfo(path).path() +</span></span>
+<span id="L1488"><span class="lineNum">    1488</span> <span class="tlaGNC">         562 :                         QStringLiteral(&quot;/.qtpass-XXXXXX.tmp&quot;));</span></span>
+<span id="L1489"><span class="lineNum">    1489</span> <span class="tlaGNC">         281 :     file.setAutoRemove(false);</span></span>
+<span id="L1490"><span class="lineNum">    1490</span> <span class="tlaGNC">         281 :     if (!file.open()) {</span></span>
 <span id="L1491"><span class="lineNum">    1491</span> <span class="tlaGNC">           8 :       *why = QCoreApplication::translate(</span></span>
 <span id="L1492"><span class="lineNum">    1492</span>              :                  &quot;Util&quot;, &quot;Cannot create a temporary file next to %1: %2&quot;)</span>
 <span id="L1493"><span class="lineNum">    1493</span> <span class="tlaGNC">          16 :                  .arg(path, file.errorString());</span></span>
 <span id="L1494"><span class="lineNum">    1494</span> <span class="tlaGNC">           8 :       return std::nullopt;</span></span>
 <span id="L1495"><span class="lineNum">    1495</span>              :     }</span>
-<span id="L1496"><span class="lineNum">    1496</span> <span class="tlaGNC">         272 :     staged.path = file.fileName();</span></span>
+<span id="L1496"><span class="lineNum">    1496</span> <span class="tlaGNC">         273 :     staged.path = file.fileName();</span></span>
 <span id="L1497"><span class="lineNum">    1497</span>              :     // Owner-only: a .gpg-id names the keys a store is encrypted to, an</span>
 <span id="L1498"><span class="lineNum">    1498</span>              :     // entry is an entry. QTemporaryFile creates 0600 already; say so for</span>
 <span id="L1499"><span class="lineNum">    1499</span>              :     // platforms where it may not.</span>
-<span id="L1500"><span class="lineNum">    1500</span> <span class="tlaGNC">         272 :     file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);</span></span>
-<span id="L1501"><span class="lineNum">    1501</span> <span class="tlaGNC">         544 :     *why = fill(file);</span></span>
-<span id="L1502"><span class="lineNum">    1502</span> <span class="tlaGNC">         272 :     if (why-&gt;isEmpty() &amp;&amp; !Util::syncToDisk(file)) {</span></span>
+<span id="L1500"><span class="lineNum">    1500</span> <span class="tlaGNC">         273 :     file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);</span></span>
+<span id="L1501"><span class="lineNum">    1501</span> <span class="tlaGNC">         546 :     *why = fill(file);</span></span>
+<span id="L1502"><span class="lineNum">    1502</span> <span class="tlaGNC">         273 :     if (why-&gt;isEmpty() &amp;&amp; !Util::syncToDisk(file)) {</span></span>
 <span id="L1503"><span class="lineNum">    1503</span> <span class="tlaUNC">           0 :       *why = QCoreApplication::translate(&quot;Util&quot;, &quot;Cannot write %1: %2&quot;)</span></span>
 <span id="L1504"><span class="lineNum">    1504</span> <span class="tlaUNC">           0 :                  .arg(path, file.errorString());</span></span>
 <span id="L1505"><span class="lineNum">    1505</span>              :     }</span>
-<span id="L1506"><span class="lineNum">    1506</span> <span class="tlaGNC">         272 :     staged.identity = identityOf(file);</span></span>
+<span id="L1506"><span class="lineNum">    1506</span> <span class="tlaGNC">         273 :     staged.identity = identityOf(file);</span></span>
 <span id="L1507"><span class="lineNum">    1507</span>              : #ifndef Q_OS_WIN</span>
 <span id="L1508"><span class="lineNum">    1508</span>              :     // Closed and unlinked by a co-writer before the rename, the temporary's</span>
 <span id="L1509"><span class="lineNum">    1509</span>              :     // inode number would be free, and ext4 hands it to the next file made:</span>
 <span id="L1510"><span class="lineNum">    1510</span>              :     // the very file swapped in would then pass the check below. Windows</span>
 <span id="L1511"><span class="lineNum">    1511</span>              :     // cannot rename an open file, and NTFS does not reuse a file index so.</span>
-<span id="L1512"><span class="lineNum">    1512</span> <span class="tlaGNC">         272 :     if (const int fd = ::dup(file.handle()); fd &gt;= 0) {</span></span>
+<span id="L1512"><span class="lineNum">    1512</span> <span class="tlaGNC">         273 :     if (const int fd = ::dup(file.handle()); fd &gt;= 0) {</span></span>
 <span id="L1513"><span class="lineNum">    1513</span>              :       staged.pin =</span>
-<span id="L1514"><span class="lineNum">    1514</span> <span class="tlaGNC">         816 :           std::shared_ptr&lt;void&gt;(nullptr, [fd](void *) { ::close(fd); });</span></span>
+<span id="L1514"><span class="lineNum">    1514</span> <span class="tlaGNC">         819 :           std::shared_ptr&lt;void&gt;(nullptr, [fd](void *) { ::close(fd); });</span></span>
 <span id="L1515"><span class="lineNum">    1515</span>              :     }</span>
 <span id="L1516"><span class="lineNum">    1516</span>              : #endif</span>
-<span id="L1517"><span class="lineNum">    1517</span> <span class="tlaGNC">         280 :   }</span></span>
-<span id="L1518"><span class="lineNum">    1518</span> <span class="tlaGNC">         272 :   if (!why-&gt;isEmpty()) {</span></span>
+<span id="L1517"><span class="lineNum">    1517</span> <span class="tlaGNC">         281 :   }</span></span>
+<span id="L1518"><span class="lineNum">    1518</span> <span class="tlaGNC">         273 :   if (!why-&gt;isEmpty()) {</span></span>
 <span id="L1519"><span class="lineNum">    1519</span> <span class="tlaUNC">           0 :     QFile::remove(staged.path);</span></span>
 <span id="L1520"><span class="lineNum">    1520</span> <span class="tlaUNC">           0 :     return std::nullopt;</span></span>
 <span id="L1521"><span class="lineNum">    1521</span>              :   }</span>
-<span id="L1522"><span class="lineNum">    1522</span> <span class="tlaGNC">         272 :   return staged;</span></span>
-<span id="L1523"><span class="lineNum">    1523</span> <span class="tlaGNC">         280 : }</span></span>
+<span id="L1522"><span class="lineNum">    1522</span> <span class="tlaGNC">         273 :   return staged;</span></span>
+<span id="L1523"><span class="lineNum">    1523</span> <span class="tlaGNC">         281 : }</span></span>
 <span id="L1524"><span class="lineNum">    1524</span>              : </span>
 <span id="L1525"><span class="lineNum">    1525</span>              : /// Why replaceFile() could not put the temporary under @p path.</span>
 <span id="L1526"><span class="lineNum">    1526</span> <span class="tlaGNC">           9 : auto placementError(const QString &amp;path, bool replace) -&gt; QString {</span></span>
@@ -1616,40 +1616,40 @@
 <span id="L1543"><span class="lineNum">    1543</span>              :  * by identity; only two known identities can prove a swap, otherwise every</span>
 <span id="L1544"><span class="lineNum">    1544</span>              :  * write on such a store would be reported as tampering.</span>
 <span id="L1545"><span class="lineNum">    1545</span>              :  */</span>
-<span id="L1546"><span class="lineNum">    1546</span> <span class="tlaGNC">         263 : auto isTheFileWritten(const QString &amp;path, const FileIdentity &amp;written)</span></span>
+<span id="L1546"><span class="lineNum">    1546</span> <span class="tlaGNC">         264 : auto isTheFileWritten(const QString &amp;path, const FileIdentity &amp;written)</span></span>
 <span id="L1547"><span class="lineNum">    1547</span>              :     -&gt; bool {</span>
-<span id="L1548"><span class="lineNum">    1548</span> <span class="tlaGNC">         263 :   QFile placed;</span></span>
-<span id="L1549"><span class="lineNum">    1549</span> <span class="tlaGNC">         263 :   if (!Util::openRegularFile(path, placed)) {</span></span>
+<span id="L1548"><span class="lineNum">    1548</span> <span class="tlaGNC">         264 :   QFile placed;</span></span>
+<span id="L1549"><span class="lineNum">    1549</span> <span class="tlaGNC">         264 :   if (!Util::openRegularFile(path, placed)) {</span></span>
 <span id="L1550"><span class="lineNum">    1550</span>              :     return false;</span>
 <span id="L1551"><span class="lineNum">    1551</span>              :   }</span>
-<span id="L1552"><span class="lineNum">    1552</span> <span class="tlaGNC">         261 :   const FileIdentity there = identityOf(placed);</span></span>
-<span id="L1553"><span class="lineNum">    1553</span> <span class="tlaGNC">         261 :   if (!written.known || !there.known) {</span></span>
+<span id="L1552"><span class="lineNum">    1552</span> <span class="tlaGNC">         262 :   const FileIdentity there = identityOf(placed);</span></span>
+<span id="L1553"><span class="lineNum">    1553</span> <span class="tlaGNC">         262 :   if (!written.known || !there.known) {</span></span>
 <span id="L1554"><span class="lineNum">    1554</span> <span class="tlaUNC">           0 :     qCWarning(lcQtPass) &lt;&lt; &quot;Cannot tell whether&quot; &lt;&lt; path</span></span>
 <span id="L1555"><span class="lineNum">    1555</span> <span class="tlaUNC">           0 :                         &lt;&lt; &quot;is the file that was written here&quot;;</span></span>
 <span id="L1556"><span class="lineNum">    1556</span> <span class="tlaUNC">           0 :     return true;</span></span>
 <span id="L1557"><span class="lineNum">    1557</span>              :   }</span>
-<span id="L1558"><span class="lineNum">    1558</span> <span class="tlaGNC">         261 :   return there == written;</span></span>
-<span id="L1559"><span class="lineNum">    1559</span> <span class="tlaGNC">         263 : }</span></span>
+<span id="L1558"><span class="lineNum">    1558</span> <span class="tlaGNC">         262 :   return there == written;</span></span>
+<span id="L1559"><span class="lineNum">    1559</span> <span class="tlaGNC">         264 : }</span></span>
 <span id="L1560"><span class="lineNum">    1560</span>              : </span>
 <span id="L1561"><span class="lineNum">    1561</span>              : } // namespace</span>
 <span id="L1562"><span class="lineNum">    1562</span>              : </span>
-<span id="L1563"><span class="lineNum">    1563</span> <span class="tlaGNC">         280 : auto Util::stageFileReplacing(const QString &amp;path, bool replace,</span></span>
+<span id="L1563"><span class="lineNum">    1563</span> <span class="tlaGNC">         281 : auto Util::stageFileReplacing(const QString &amp;path, bool replace,</span></span>
 <span id="L1564"><span class="lineNum">    1564</span>              :                               const Filler &amp;fill, QString *error) -&gt; bool {</span>
-<span id="L1565"><span class="lineNum">    1565</span> <span class="tlaGNC">         280 :   QString why;</span></span>
-<span id="L1566"><span class="lineNum">    1566</span> <span class="tlaGNC">         280 :   const std::optional&lt;Staged&gt; staged = stageNextTo(path, fill, &amp;why);</span></span>
-<span id="L1567"><span class="lineNum">    1567</span> <span class="tlaGNC">         280 :   if (!staged) {</span></span>
+<span id="L1565"><span class="lineNum">    1565</span> <span class="tlaGNC">         281 :   QString why;</span></span>
+<span id="L1566"><span class="lineNum">    1566</span> <span class="tlaGNC">         281 :   const std::optional&lt;Staged&gt; staged = stageNextTo(path, fill, &amp;why);</span></span>
+<span id="L1567"><span class="lineNum">    1567</span> <span class="tlaGNC">         281 :   if (!staged) {</span></span>
 <span id="L1568"><span class="lineNum">    1568</span>              :     return fail(error, why);</span>
 <span id="L1569"><span class="lineNum">    1569</span>              :   }</span>
-<span id="L1570"><span class="lineNum">    1570</span> <span class="tlaGNC">         272 :   if (s_beforePlacingForTests) {</span></span>
+<span id="L1570"><span class="lineNum">    1570</span> <span class="tlaGNC">         273 :   if (s_beforePlacingForTests) {</span></span>
 <span id="L1571"><span class="lineNum">    1571</span> <span class="tlaGNC">           1 :     s_beforePlacingForTests(staged-&gt;path);</span></span>
 <span id="L1572"><span class="lineNum">    1572</span>              :   }</span>
-<span id="L1573"><span class="lineNum">    1573</span> <span class="tlaGNC">         272 :   if (!replaceFile(staged-&gt;path, path, replace)) {</span></span>
+<span id="L1573"><span class="lineNum">    1573</span> <span class="tlaGNC">         273 :   if (!replaceFile(staged-&gt;path, path, replace)) {</span></span>
 <span id="L1574"><span class="lineNum">    1574</span> <span class="tlaGNC">           9 :     QFile::remove(staged-&gt;path);</span></span>
 <span id="L1575"><span class="lineNum">    1575</span> <span class="tlaGNC">          18 :     return fail(error, placementError(path, replace));</span></span>
 <span id="L1576"><span class="lineNum">    1576</span>              :   }</span>
 <span id="L1577"><span class="lineNum">    1577</span>              :   // A mismatch is reported and left: removing by name could take another</span>
 <span id="L1578"><span class="lineNum">    1578</span>              :   // writer's file.</span>
-<span id="L1579"><span class="lineNum">    1579</span> <span class="tlaGNC">         263 :   if (!isTheFileWritten(path, staged-&gt;identity)) {</span></span>
+<span id="L1579"><span class="lineNum">    1579</span> <span class="tlaGNC">         264 :   if (!isTheFileWritten(path, staged-&gt;identity)) {</span></span>
 <span id="L1580"><span class="lineNum">    1580</span>              :     return fail(</span>
 <span id="L1581"><span class="lineNum">    1581</span>              :         error,</span>
 <span id="L1582"><span class="lineNum">    1582</span> <span class="tlaGNC">           5 :         QCoreApplication::translate(</span></span>
@@ -1673,35 +1673,35 @@
 <span id="L1600"><span class="lineNum">    1600</span> <span class="tlaGNC">         110 :       error);</span></span>
 <span id="L1601"><span class="lineNum">    1601</span>              : }</span>
 <span id="L1602"><span class="lineNum">    1602</span>              : </span>
-<span id="L1603"><span class="lineNum">    1603</span> <span class="tlaGNC">         169 : auto Util::copyFileReplacing(const QString &amp;src, const QString &amp;dst,</span></span>
+<span id="L1603"><span class="lineNum">    1603</span> <span class="tlaGNC">         170 : auto Util::copyFileReplacing(const QString &amp;src, const QString &amp;dst,</span></span>
 <span id="L1604"><span class="lineNum">    1604</span>              :                              bool replace, QString *error) -&gt; bool {</span>
-<span id="L1605"><span class="lineNum">    1605</span> <span class="tlaGNC">         169 :   QFile in;</span></span>
-<span id="L1606"><span class="lineNum">    1606</span> <span class="tlaGNC">         169 :   if (!openRegularFile(src, in)) {</span></span>
+<span id="L1605"><span class="lineNum">    1605</span> <span class="tlaGNC">         170 :   QFile in;</span></span>
+<span id="L1606"><span class="lineNum">    1606</span> <span class="tlaGNC">         170 :   if (!openRegularFile(src, in)) {</span></span>
 <span id="L1607"><span class="lineNum">    1607</span> <span class="tlaGNC">           4 :     if (error)</span></span>
 <span id="L1608"><span class="lineNum">    1608</span> <span class="tlaGNC">           8 :       *error = QCoreApplication::translate(&quot;Util&quot;, &quot;Cannot read %1.&quot;).arg(src);</span></span>
 <span id="L1609"><span class="lineNum">    1609</span> <span class="tlaGNC">           4 :     return false;</span></span>
 <span id="L1610"><span class="lineNum">    1610</span>              :   }</span>
-<span id="L1611"><span class="lineNum">    1611</span> <span class="tlaGNC">         165 :   return stageFileReplacing(</span></span>
+<span id="L1611"><span class="lineNum">    1611</span> <span class="tlaGNC">         166 :   return stageFileReplacing(</span></span>
 <span id="L1612"><span class="lineNum">    1612</span>              :       dst, replace,</span>
-<span id="L1613"><span class="lineNum">    1613</span> <span class="tlaGNC">         489 :       [&amp;src, &amp;dst, &amp;in](QFileDevice &amp;staged) -&gt; QString {</span></span>
+<span id="L1613"><span class="lineNum">    1613</span> <span class="tlaGNC">         492 :       [&amp;src, &amp;dst, &amp;in](QFileDevice &amp;staged) -&gt; QString {</span></span>
 <span id="L1614"><span class="lineNum">    1614</span>              :         char buf[64 * 1024];</span>
 <span id="L1615"><span class="lineNum">    1615</span>              :         for (;;) {</span>
-<span id="L1616"><span class="lineNum">    1616</span> <span class="tlaGNC">         330 :           const qint64 n = in.read(buf, sizeof buf);</span></span>
-<span id="L1617"><span class="lineNum">    1617</span> <span class="tlaGNC">         330 :           if (n &lt; 0) {</span></span>
+<span id="L1616"><span class="lineNum">    1616</span> <span class="tlaGNC">         332 :           const qint64 n = in.read(buf, sizeof buf);</span></span>
+<span id="L1617"><span class="lineNum">    1617</span> <span class="tlaGNC">         332 :           if (n &lt; 0) {</span></span>
 <span id="L1618"><span class="lineNum">    1618</span> <span class="tlaUNC">           0 :             return QCoreApplication::translate(&quot;Util&quot;, &quot;Cannot read %1: %2&quot;)</span></span>
 <span id="L1619"><span class="lineNum">    1619</span> <span class="tlaUNC">           0 :                 .arg(src, in.errorString());</span></span>
 <span id="L1620"><span class="lineNum">    1620</span>              :           }</span>
-<span id="L1621"><span class="lineNum">    1621</span> <span class="tlaGNC">         330 :           if (n == 0) {</span></span>
-<span id="L1622"><span class="lineNum">    1622</span> <span class="tlaGNC">         159 :             return {};</span></span>
+<span id="L1621"><span class="lineNum">    1621</span> <span class="tlaGNC">         332 :           if (n == 0) {</span></span>
+<span id="L1622"><span class="lineNum">    1622</span> <span class="tlaGNC">         160 :             return {};</span></span>
 <span id="L1623"><span class="lineNum">    1623</span>              :           }</span>
-<span id="L1624"><span class="lineNum">    1624</span> <span class="tlaGNC">         171 :           if (staged.write(buf, n) != n) {</span></span>
+<span id="L1624"><span class="lineNum">    1624</span> <span class="tlaGNC">         172 :           if (staged.write(buf, n) != n) {</span></span>
 <span id="L1625"><span class="lineNum">    1625</span> <span class="tlaUNC">           0 :             return QCoreApplication::translate(&quot;Util&quot;, &quot;Cannot write %1: %2&quot;)</span></span>
 <span id="L1626"><span class="lineNum">    1626</span> <span class="tlaUNC">           0 :                 .arg(dst, staged.errorString());</span></span>
 <span id="L1627"><span class="lineNum">    1627</span>              :           }</span>
 <span id="L1628"><span class="lineNum">    1628</span>              :         }</span>
 <span id="L1629"><span class="lineNum">    1629</span>              :       },</span>
 <span id="L1630"><span class="lineNum">    1630</span>              :       error);</span>
-<span id="L1631"><span class="lineNum">    1631</span> <span class="tlaGNC">         169 : }</span></span>
+<span id="L1631"><span class="lineNum">    1631</span> <span class="tlaGNC">         170 : }</span></span>
 <span id="L1632"><span class="lineNum">    1632</span>              : </span>
 <span id="L1633"><span class="lineNum">    1633</span>              : namespace {</span>
 <span id="L1634"><span class="lineNum">    1634</span>              : </span>
