@@ -811,6 +811,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   could take it first: a launch then sent its search text there and quit
   without a window. QtPass now checks that the copy it reaches runs as
   you, and otherwise opens its own window.
+- On Windows, entries that a cloud provider such as OneDrive keeps online
+  only are read again. QtPass refused every file marked as a reparse
+  point, so content search skipped such an entry and re-encryption
+  reported it as unreadable. It now lets the provider fetch the content,
+  while a link or junction under the name is still refused.
 - Recipient lists and their signatures are read without following a link
   in any folder on the way down from the store, as entries already were.
   A folder that an update from Git turned into a link between a check and
