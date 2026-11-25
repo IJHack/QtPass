@@ -26,6 +26,10 @@
 #include "../../../src/imitatepass.h"
 #include "../testsettings.h"
 
+#ifdef Q_OS_UNIX
+#include <sys/stat.h>
+#endif
+
 class tst_imitatepass : public QObject {
   Q_OBJECT
 
@@ -128,6 +132,7 @@ private Q_SLOTS:
   void moveWithoutGitReportsAFailedMove();
   void aFailedForcedMoveWithoutGitKeepsTheDestination();
   void moveAndCopyCleanDotDotBeforeTheyLook();
+  void verifyChecksBoundedCopiesWithBatch();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -456,6 +461,92 @@ void tst_imitatepass::moveAndCopyCleanDotDotBeforeTheyLook() {
       "the copy must not land beside the link's target");
   QCOMPARE(contentsOf(root.filePath(QStringLiteral("entry-copy.gpg"))),
            QByteArrayLiteral("not really encrypted"));
+#endif
+}
+
+/**
+ * @brief verifyGpgIdFile() hands gpg copies of a .gpg-id and its .sig read
+ *        here, with --batch: a .sig over 4 KiB, a FIFO or a link under
+ *        either name is refused before gpg runs (ANT-2026-XQUAU1HG).
+ */
+void tst_imitatepass::verifyChecksBoundedCopiesWithBatch() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QDir root(dir.path());
+  const QString fpr =
+      QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
+  const QString log = root.filePath(QStringLiteral("gpg.log"));
+  const QString seen = root.filePath(QStringLiteral("seen.sig"));
+  const QString script = root.filePath(QStringLiteral("gpg.sh"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << log << "'\n"
+        << "while [ \"$1\" != \"--\" ]; do shift; done\n"
+        << "cat \"$2\" > '" << seen << "'\n"
+        << "echo '[GNUPG:] VALIDSIG " << fpr << " 2026-11-25 1 0 4 0 1 10 00 "
+        << fpr << "'\n"
+        << "exit 0\n";
+  }
+  QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                            QFile::ExeOwner));
+  const QString gpgId = root.filePath(QStringLiteral(".gpg-id"));
+  {
+    QFile f(gpgId);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("ALICE\n");
+  }
+  const auto writeSig = [&gpgId](qint64 size) {
+    QFile f(gpgId + QStringLiteral(".sig"));
+    if (f.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+      f.write(QByteArray(size, 'S'));
+    }
+  };
+  AppSettings s = settingsFor(dir.path(), script);
+  s.passSigningKey = fpr;
+  ImitatePass pass;
+  pass.init(s);
+
+  writeSig(3 * 1024);
+  QVERIFY(pass.verifyGpgIdFile(gpgId));
+  QFile logFile(log);
+  QVERIFY(logFile.open(QIODevice::ReadOnly));
+  const QString args = QString::fromUtf8(logFile.readAll());
+  logFile.close();
+  QVERIFY2(
+      args.startsWith(QStringLiteral("--batch --verify --status-fd=1 -- ")),
+      qPrintable(args));
+  QVERIFY2(!args.contains(gpgId), "gpg must get copies, not the store's files");
+  QFile seenFile(seen);
+  QVERIFY(seenFile.open(QIODevice::ReadOnly));
+  QCOMPARE(seenFile.readAll(), QByteArray(3 * 1024, 'S'));
+  QVERIFY(QFile::remove(log));
+
+  // Room for two signatures by a key built to be slow, not dozens.
+  writeSig(8 * 1024);
+  QVERIFY(!pass.verifyGpgIdFile(gpgId));
+  QVERIFY2(!QFileInfo::exists(log), "gpg must not run on an oversized .sig");
+
+  QVERIFY(QFile::remove(gpgId + QStringLiteral(".sig")));
+  QCOMPARE(
+      ::mkfifo(QFile::encodeName(gpgId + QStringLiteral(".sig")).constData(),
+               0600),
+      0);
+  QVERIFY(!pass.verifyGpgIdFile(gpgId));
+  QVERIFY2(!QFileInfo::exists(log), "gpg must not run on a FIFO");
+
+  QVERIFY(QFile::remove(gpgId + QStringLiteral(".sig")));
+  writeSig(64);
+  const QString other = root.filePath(QStringLiteral("other-list"));
+  QVERIFY(QFile::rename(gpgId, other));
+  QVERIFY(QFile::link(other, gpgId));
+  QVERIFY(!pass.verifyGpgIdFile(gpgId));
+  QVERIFY2(!QFileInfo::exists(log), "gpg must not run on a linked list");
 #endif
 }
 

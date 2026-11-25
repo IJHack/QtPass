@@ -27,6 +27,7 @@ class ImitatePass : public Pass, private simpleTransaction {
   Q_OBJECT
 
   friend class tst_util;
+  friend class tst_imitatepass;
 
 protected:
   /**
