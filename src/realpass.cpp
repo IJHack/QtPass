@@ -108,14 +108,17 @@ void RealPass::Show(QString file) {
 }
 
 auto RealPass::listSigner() -> GpgIdSigner {
-  return {m_settings.gpgExecutable,
-          GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
-          [this](const QString &app, const QStringList &args,
-                 const QString &input, QString *out, QString *err) {
-            QProcess gpg;
-            gpg.setProcessEnvironment(exec.environment());
-            return Executor::executeBlocking(gpg, app, args, input, out, err);
-          }};
+  GpgIdSigner signer{m_settings.gpgExecutable,
+                     GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
+                     [this](const QString &app, const QStringList &args,
+                            const QString &input, QString *out, QString *err) {
+                       QProcess gpg;
+                       gpg.setProcessEnvironment(exec.environment());
+                       return Executor::executeBlocking(gpg, app, args, input,
+                                                        out, err);
+                     }};
+  signer.setStoreRoot(m_settings.passStore);
+  return signer;
 }
 
 auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
@@ -187,8 +190,8 @@ auto RealPass::refuseMisreadList(const QString &file, const QString &within,
   // regular file within the limit (too large, a FIFO, a device, unreadable)
   // pass may still read in full, while the Users dialog shows none of it.
   // A link was refused before this.
-  const std::optional<QByteArray> bytes =
-      Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);
+  const std::optional<QByteArray> bytes = Util::readRegularFileInStore(
+      m_settings.passStore, gpgIdFile, Util::kMaxGpgIdBytes);
   if (!bytes && QFileInfo::exists(gpgIdFile)) {
     //: %1 is the list's path, %2 a size such as "1 MiB".
     emit critical(tr("Recipient list cannot be read"),

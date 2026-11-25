@@ -805,6 +805,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Recipient lists and their signatures are read without following a link
+  in any folder on the way down from the store, as entries already were.
+  A folder that an update from Git turned into a link between a check and
+  the read could otherwise lead QtPass to another folder's list, or one
+  outside the store, when it encrypted or checked a signature.
 - The panel that shows command output keeps only its last 64 KiB: older
   output is removed from the front, a paragraph at a time, while the newest
   message is always shown whole. Each message was added to everything

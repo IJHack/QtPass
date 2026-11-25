@@ -117,7 +117,7 @@ auto blocksGit(const QString &dir, const QStringList &files) -> QString {
  * @return The signer.
  */
 auto signerFor(const AppSettings &s) -> GpgIdSigner {
-  return GpgIdSigner(
+  GpgIdSigner signer(
       s.gpgExecutable, GpgIdSigner::keysFromSetting(s.passSigningKey),
       [s](const QString &app, const QStringList &args, const QString &input,
           QString *out, QString *err) {
@@ -126,6 +126,8 @@ auto signerFor(const AppSettings &s) -> GpgIdSigner {
             withGpgHome(QProcessEnvironment::systemEnvironment(), s));
         return Executor::executeBlocking(gpg, app, args, input, out, err);
       });
+  signer.setStoreRoot(s.passStore);
+  return signer;
 }
 
 auto commitArgs(QProcess &git, const AppSettings &s) -> QStringList {

@@ -118,6 +118,7 @@ private slots:
   void verifyFileHandsBackTheBytesItVerified();
   void verifyFileReadsOnlyARegularFileOfBoundedSize();
   void linkedGpgIdOrSignatureIsNotVerified();
+  void withAStoreRootNoFolderLinkIsFollowed();
   void verifyRefusesBytesThatAreNotUtf8();
   void verifyRefusesASignatureThatIsNoRegularFile();
   void verifyRejectsUnknownSignerAndGpgFailure();
@@ -687,6 +688,45 @@ void tst_gpgidsigner::defaultRunnerIsTheExecutor() {
   const GpgIdSigner signer(QStringLiteral("/nonexistent/qtpass-gpg"), {kFpr});
   QVERIFY(!signer.haveSecretKey());
   QVERIFY(!signer.verify(kGpgId, QStringLiteral("/nonexistent/.gpg-id.sig")));
+}
+
+/**
+ * @brief With the store root set, a list and signature behind a folder
+ *        swapped for a link are not read, so gpg is never asked about
+ *        another folder's pair; without it, only the last part of the name
+ *        counts (the old reading).
+ */
+void tst_gpgidsigner::withAStoreRootNoFolderLinkIsFollowed() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString store = tmp.filePath(QStringLiteral("store"));
+  const QString elsewhere = tmp.filePath(QStringLiteral("elsewhere"));
+  QVERIFY(QDir().mkpath(store));
+  QVERIFY(QDir().mkpath(elsewhere));
+  for (const QString &name :
+       {QStringLiteral(".gpg-id"), QStringLiteral(".gpg-id.sig")}) {
+    QFile f(QDir(elsewhere).filePath(name));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(name == QStringLiteral(".gpg-id") ? kGpgId : "SIGNATURE");
+  }
+  QVERIFY(QFile::link(elsewhere, store + QStringLiteral("/team")));
+  const QString gpgId = store + QStringLiteral("/team/.gpg-id");
+
+  FakeGpg gpg;
+  gpg.out = validSig(kFpr, kPrimary);
+  GpgIdSigner signer(QStringLiteral("gpg"), {kFpr}, gpg.exec());
+  QByteArray contents;
+  QVERIFY2(signer.verifyFile(gpgId, &contents), "without a root: read");
+  QCOMPARE(gpg.calls.size(), 1);
+
+  signer.setStoreRoot(store);
+  QVERIFY(!signer.verifyFile(gpgId, &contents));
+  QVERIFY(!signer.verify(kGpgId, gpgId + QStringLiteral(".sig")));
+  QCOMPARE(gpg.calls.size(), 1);
+#endif
 }
 
 QTEST_MAIN(tst_gpgidsigner)

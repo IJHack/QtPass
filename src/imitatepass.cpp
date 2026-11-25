@@ -409,12 +409,14 @@ void ImitatePass::Remove(QString file, bool isDir) {
 }
 
 auto ImitatePass::gpgIdSigner() -> GpgIdSigner {
-  return {m_settings.gpgExecutable,
-          GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
-          [this](const QString &app, const QStringList &args,
-                 const QString &input, QString *out, QString *err) {
-            return execBlocking(app, args, input, out, err);
-          }};
+  GpgIdSigner signer{m_settings.gpgExecutable,
+                     GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
+                     [this](const QString &app, const QStringList &args,
+                            const QString &input, QString *out, QString *err) {
+                       return execBlocking(app, args, input, out, err);
+                     }};
+  signer.setStoreRoot(m_settings.passStore);
+  return signer;
 }
 
 auto ImitatePass::addGenerationHeader(const QString &gpgIdFile,
@@ -778,9 +780,10 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
       // No file is not a bad signature; the empty list says it all.
       return true;
     }
-    // Bounded, and only a regular file: see Util::readRegularFile().
-    std::optional<QByteArray> bytes =
-        Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);
+    // Bounded, only a regular file, and no folder on the way followed:
+    // see Util::readRegularFileInStore().
+    std::optional<QByteArray> bytes = Util::readRegularFileInStore(
+        m_settings.passStore, gpgIdFile, Util::kMaxGpgIdBytes);
     if (!bytes) {
       if (why != nullptr) {
         *why = tr("%1 cannot be read as a recipient list (a regular file "
@@ -993,22 +996,8 @@ auto ImitatePass::decryptEntry(const QString &fileName, QByteArray *plaintext,
   // between a check and the read. The name may be spelled through the
   // target of a linked store root; anything under neither is refused.
   constexpr qint64 kMaxCiphertext = kMaxPlaintextBytes + kCiphertextMargin;
-  const QString store = QDir::cleanPath(m_settings.passStore);
-  const auto under = [&fileName](const QString &root) {
-    const QString relative =
-        QDir(root).relativeFilePath(QDir::cleanPath(fileName));
-    return !root.isEmpty() && !QDir::isAbsolutePath(relative) &&
-           relative != QStringLiteral("..") &&
-           !relative.startsWith(QStringLiteral("../"));
-  };
-  const QString canonicalStore = QFileInfo(store).canonicalFilePath();
-  std::optional<QByteArray> ciphertext;
-  if (under(store)) {
-    ciphertext = Util::readRegularFileUnder(store, fileName, kMaxCiphertext);
-  } else if (under(canonicalStore)) {
-    ciphertext =
-        Util::readRegularFileUnder(canonicalStore, fileName, kMaxCiphertext);
-  }
+  const std::optional<QByteArray> ciphertext = Util::readRegularFileInStore(
+      m_settings.passStore, fileName, kMaxCiphertext);
   if (!ciphertext) {
     qCDebug(lcQtPass) << "Not a regular file any more, or too large:"
                       << fileName;
@@ -1523,8 +1512,8 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   // here, one added there) would have the run encrypt to keys nobody chose
   // in the dialog, and without a signing key nothing else notices.
   if (m_writtenGpgId) {
-    const std::optional<QByteArray> now =
-        Util::readRegularFile(m_writtenGpgId->file, Util::kMaxGpgIdBytes);
+    const std::optional<QByteArray> now = Util::readRegularFileInStore(
+        m_settings.passStore, m_writtenGpgId->file, Util::kMaxGpgIdBytes);
     if (!now || *now != m_writtenGpgId->bytes) {
       if (!m_reencryptCancel.load()) {
         emit critical(

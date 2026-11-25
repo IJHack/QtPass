@@ -1295,6 +1295,26 @@ auto Util::readRegularFile(const QString &path, qint64 maxBytes)
   return readOpenFile(file, maxBytes);
 }
 
+auto Util::readRegularFileInStore(const QString &store, const QString &path,
+                                  qint64 maxBytes)
+    -> std::optional<QByteArray> {
+  const auto under = [&path](const QString &root) {
+    const QString relative = QDir(root).relativeFilePath(QDir::cleanPath(path));
+    return !root.isEmpty() && !QDir::isAbsolutePath(relative) &&
+           relative != QStringLiteral("..") &&
+           !relative.startsWith(QStringLiteral("../"));
+  };
+  const QString root = QDir::cleanPath(store);
+  if (under(root)) {
+    return readRegularFileUnder(root, path, maxBytes);
+  }
+  const QString canonical = QFileInfo(root).canonicalFilePath();
+  if (under(canonical)) {
+    return readRegularFileUnder(canonical, path, maxBytes);
+  }
+  return std::nullopt;
+}
+
 auto Util::readRegularFileUnder(const QString &root, const QString &path,
                                 qint64 maxBytes) -> std::optional<QByteArray> {
   const QString cleanRoot = QDir::cleanPath(root);

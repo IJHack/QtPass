@@ -553,6 +553,20 @@ public:
       -> std::optional<QByteArray>;
 
   /**
+   * @brief readRegularFileUnder() for a file of the store at @p store,
+   *        spelled under the store as configured or under its canonical
+   *        path (the target of a linked store root).
+   * @param store The store root as configured.
+   * @param path The file.
+   * @param maxBytes The most bytes accepted.
+   * @return The contents; nothing when @p path is under neither spelling
+   *         of the store, or readRegularFileUnder() refuses it.
+   */
+  static auto readRegularFileInStore(const QString &store, const QString &path,
+                                     qint64 maxBytes)
+      -> std::optional<QByteArray>;
+
+  /**
    * @brief Fills the temporary of stageFileReplacing() through its open
    * handle; returns why it could not (translated, for the user), or an
    * empty string.
