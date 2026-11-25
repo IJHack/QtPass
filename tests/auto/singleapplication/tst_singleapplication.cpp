@@ -6,10 +6,11 @@
 #include <QFileInfo>
 #include <QLocalServer>
 #include <QLocalSocket>
+#include <QLockFile>
 #include <QProcess>
 #include <QProcessEnvironment>
-#include <QSharedMemory>
 #include <QSignalSpy>
+#include <QTemporaryDir>
 #include <QTextStream>
 #include <QtTest>
 #include <cstdio>
@@ -27,16 +28,18 @@
  * @brief Stand-in for a QtPass instance that dies between the probe in the
  * SingleApplication constructor and the forward in sendMessage().
  *
- * It holds the shared-memory segment and listens on the socket like a live
+ * It holds the lock file and listens on the socket like a live
  * instance would. vanish() then closes the listening end without unlinking
  * the socket file, which is exactly what a crash leaves behind, and lets go
- * of the segment. Raw POSIX calls because the peer has to be up before the
+ * go of the lock. Raw POSIX calls because the peer has to be up before the
  * application object exists and QLocalServer needs one to listen.
  */
 class FakePeer {
 public:
-  explicit FakePeer(const QString &key) : m_path(socketPathFor(key)) {
-    m_segment.setKey(key);
+  explicit FakePeer(const QString &key)
+      : m_path(socketPathFor(key)),
+        m_lock(SingleApplication::lockPathFor(key)) {
+    m_lock.setStaleLockTime(0);
   }
   ~FakePeer() { vanish(); }
   FakePeer(const FakePeer &) = delete;
@@ -51,7 +54,7 @@ public:
 #ifdef Q_OS_WIN
     return false;
 #else
-    if (!m_segment.create(1)) {
+    if (!m_lock.tryLock(0)) {
       return false;
     }
     const QByteArray path = QFile::encodeName(m_path);
@@ -85,14 +88,14 @@ public:
       m_fd = -1;
     }
 #endif
-    if (m_segment.isAttached()) {
-      m_segment.detach();
+    if (m_lock.isLocked()) {
+      m_lock.unlock();
     }
   }
 
 private:
   QString m_path;
-  QSharedMemory m_segment;
+  QLockFile m_lock;
   int m_fd = -1;
 };
 
@@ -100,7 +103,7 @@ private:
  * @brief A second launch of QtPass, played by this very test binary.
  *
  * SingleApplication is the QApplication of its process, so the paths a second
- * instance takes (a stale segment in the constructor, losing the takeover race,
+ * instance takes (a stale lock in the constructor, losing the takeover race,
  * a successful forward, listen() failing) can only run in another process.
  * main() re-executes the test binary with TST_SINGLEAPP_HELPER set and the
  * helper reports what its SingleApplication did over stdout, one line per
@@ -108,7 +111,7 @@ private:
  * with debug enabled so the test can pin the exact branch that was taken and,
  * through waitForLog(), act the moment the helper reaches it.
  *
- * Modes: "hold" claims the segment without listening and blocks until killed
+ * Modes: "hold" takes the lock without listening and blocks until killed
  * (a crashed instance); "probe" constructs a SingleApplication, reports
  * "running=<0|1> server=<0|1>", then for every "send <text>" line on stdin
  * calls sendMessage() and reports "sent=<0|1> running=... server=...".
@@ -209,24 +212,19 @@ private:
 };
 
 /**
- * @brief Removes a segment a killed helper may leave behind, whatever the
- * test's outcome, so a failing run does not litter System V shared memory.
+ * @brief Removes the lock file a killed helper leaves behind, whatever the
+ * test's outcome, so a failing run does not litter the temporary folder.
  */
-class SegmentReaper {
+class LockReaper {
 public:
-  explicit SegmentReaper(const QString &key) : m_key(key) {}
-  ~SegmentReaper() {
-    QSharedMemory segment;
-    segment.setKey(m_key);
-    if (segment.attach()) {
-      segment.detach(); // last one out removes the segment
-    }
-  }
-  SegmentReaper(const SegmentReaper &) = delete;
-  auto operator=(const SegmentReaper &) -> SegmentReaper & = delete;
+  explicit LockReaper(const QString &key)
+      : m_path(SingleApplication::lockPathFor(key)) {}
+  ~LockReaper() { QFile::remove(m_path); }
+  LockReaper(const LockReaper &) = delete;
+  auto operator=(const LockReaper &) -> LockReaper & = delete;
 
 private:
-  QString m_key;
+  QString m_path;
 };
 
 /**
@@ -237,10 +235,10 @@ auto runHelper(int argc, char *argv[], // NOLINT(modernize-avoid-c-arrays)
   QTextStream out(stdout);
   QTextStream in(stdin);
   if (mode == "hold") {
-    QSharedMemory segment;
-    segment.setKey(key);
-    if (!segment.create(1)) {
-      out << "error=" << segment.errorString() << Qt::endl;
+    QLockFile lock(SingleApplication::lockPathFor(key));
+    lock.setStaleLockTime(0);
+    if (!lock.tryLock(0)) {
+      out << "error=" << lock.error() << Qt::endl;
       return 1;
     }
     out << "held" << Qt::endl;
@@ -298,10 +296,13 @@ private Q_SLOTS:
   void oversizedPayloadIsDroppedAndPeerDisconnected();
   void primaryIsNotRunning();
   void secondLaunchForwardsMessage();
-  void staleSegmentIsTakenOver();
+  void staleLockIsTakenOver();
   void takeoverRaceLostToPeerThatStartsListening();
   void takeoverGivesUpWhenNobodyListens();
-  void listenFailureReleasesSegment();
+  void listenFailureReleasesLock();
+  void privateKeyIsAPathInThePrivateFolder();
+  void launchesMeetInThePrivateFolder();
+  void privateKeyWithoutAFolderIsNeverTheSame();
 
 private:
   auto app() -> SingleApplication *;
@@ -366,9 +367,9 @@ auto tst_singleapplication::acceptedSockets() -> int {
 /**
  * The peer answered the probe in the constructor but is gone by the time the
  * arguments are forwarded. Before the fix this instance fell through to a
- * normal start while still attached to the segment and without a server, so
+ * normal start while still holding the instance marker and without a server, so
  * every later launch failed create() and opened yet another window without
- * IPC. Now it releases the segment and becomes the listening instance.
+ * IPC. Now it takes the peer's lock and becomes the listening instance.
  */
 void tst_singleapplication::takesOverWhenPeerVanishesBeforeForward() {
 #ifdef Q_OS_WIN
@@ -560,23 +561,25 @@ void tst_singleapplication::secondLaunchForwardsMessage() {
 }
 
 /**
- * A crashed instance leaves its System V segment behind with nobody on the
- * socket. The next launch must notice (the log names the stale segment),
- * release it and become the reachable, listening instance instead of
- * forwarding into the void. The segment goes away with that instance.
+ * A crashed instance leaves its lock file behind with nobody on the socket.
+ * The next launch must notice (the log names the stale lock), take it and
+ * become the reachable, listening instance instead of forwarding into the
+ * void; it then holds the lock for as long as it runs.
  */
-void tst_singleapplication::staleSegmentIsTakenOver() {
+void tst_singleapplication::staleLockIsTakenOver() {
 #ifdef Q_OS_WIN
-  QSKIP("a killed process releases its shared memory on Windows");
+  QSKIP("the helper protocol blocks on pipes the server must drain");
 #endif
   ensurePrimary();
   const QString key = m_key + QStringLiteral("_stale");
-  SegmentReaper reaper(key);
+  LockReaper reaper(key);
   {
     Helper crashed("hold", key);
     QCOMPARE(crashed.readLine(), QStringLiteral("held"));
     crashed.kill();
   }
+  QVERIFY2(QFileInfo::exists(SingleApplication::lockPathFor(key)),
+           "the killed holder should leave its lock file behind");
 
   Helper next("probe", key);
   QCOMPARE(next.readLine(), QStringLiteral("running=0 server=1"));
@@ -585,20 +588,19 @@ void tst_singleapplication::staleSegmentIsTakenOver() {
   QVERIFY2(client.waitForConnected(1000),
            qPrintable("new instance not reachable: " + client.errorString()));
   client.disconnectFromServer();
+  QLockFile taken(SingleApplication::lockPathFor(key));
+  taken.setStaleLockTime(0);
+  QVERIFY2(!taken.tryLock(0), "the new instance does not hold the lock");
   QVERIFY2(next.finish(), "new instance did not exit cleanly");
-  QVERIFY2(next.log().contains(QStringLiteral("Stale single instance segment")),
-           qPrintable("stale segment was not detected; log:\n" + next.log()));
-
-  QSharedMemory gone;
-  gone.setKey(key);
-  QVERIFY2(!gone.attach(), "segment outlived the instance that took it over");
+  QVERIFY2(next.log().contains(QStringLiteral("Stale single instance lock")),
+           qPrintable("stale lock was not detected; log:\n" + next.log()));
 }
 
 /**
- * Two launches recover from the same crash: this test plays the one that
- * claimed the segment. The helper sees it, probes it, and is told to forward
- * once the winner's socket is gone. create() fails for the helper, and it must
- * keep probing for the winner instead of giving up at once: the winner starts
+ * Two launches start at once: this test plays the one that took the lock.
+ * The helper finds it held, probes, and is told to forward once the winner's
+ * socket is gone. It cannot take the lock, the winner still lives, so it
+ * must keep probing instead of giving up at once: the winner starts
  * listening again after the forward has failed and the helper becomes its
  * secondary (isRunning() true, no server of its own) without a second window.
  */
@@ -608,9 +610,10 @@ void tst_singleapplication::takeoverRaceLostToPeerThatStartsListening() {
 #endif
   ensurePrimary();
   const QString key = m_key + QStringLiteral("_race");
-  QSharedMemory winner;
-  winner.setKey(key);
-  QVERIFY2(winner.create(1), qPrintable(winner.errorString()));
+  LockReaper reaper(key);
+  QLockFile winner(SingleApplication::lockPathFor(key));
+  winner.setStaleLockTime(0);
+  QVERIFY2(winner.tryLock(0), "could not take the lock");
   QLocalServer socket;
   QVERIFY2(socket.listen(key), qPrintable(socket.errorString()));
 
@@ -620,7 +623,7 @@ void tst_singleapplication::takeoverRaceLostToPeerThatStartsListening() {
   socket.close(); // the winner is briefly unreachable
   loser.send(QStringLiteral("send raced"));
   // forwardMessage() logs the connect error the moment it fails; only then is
-  // the helper in becomePrimary() probing for us, with takeoverProbes *
+  // the helper probing for us again, with takeoverProbes *
   // takeoverProbeIntervalMs (500 ms) to spare. Listening any earlier would
   // let the forward succeed instead.
   QVERIFY2(loser.waitForLog(QStringLiteral("QLocalSocket::connectToServer")),
@@ -631,14 +634,15 @@ void tst_singleapplication::takeoverRaceLostToPeerThatStartsListening() {
   QVERIFY2(!loser.log().contains(QStringLiteral("Unable to create")),
            qPrintable("loser gave up on IPC; log:\n" + loser.log()));
   socket.close();
-  winner.detach();
+  winner.unlock();
 }
 
 /**
- * Same race, but the segment's holder never starts listening. After all the
- * probes fail the helper must let go of the segment and run without IPC:
- * neither running nor listening, and only after having actually waited for
- * the holder (the probe interval times the number of probes).
+ * Same race, but the lock's holder never starts listening. After all the
+ * probes fail the helper must run without IPC: neither running nor
+ * listening, and only after having actually waited for the holder (the
+ * probe interval times the number of probes). It does not take the lock
+ * from the live holder.
  */
 void tst_singleapplication::takeoverGivesUpWhenNobodyListens() {
 #ifdef Q_OS_WIN
@@ -646,18 +650,17 @@ void tst_singleapplication::takeoverGivesUpWhenNobodyListens() {
 #endif
   ensurePrimary();
   const QString key = m_key + QStringLiteral("_deaf");
-  SegmentReaper reaper(key);
-  QSharedMemory holder;
-  holder.setKey(key);
-  QVERIFY2(holder.create(1), qPrintable(holder.errorString()));
+  LockReaper reaper(key);
+  QLockFile holder(SingleApplication::lockPathFor(key));
+  holder.setStaleLockTime(0);
+  QVERIFY2(holder.tryLock(0), "could not take the lock");
 
   Helper orphan("probe", key);
-  // The constructor finds our segment with nobody listening and says so right
-  // before becomePrimary(); everything from here to the report is the failed
-  // create(), the probes and the give-up, so the clock excludes process and
-  // QApplication start-up.
-  QVERIFY2(orphan.waitForLog(QStringLiteral("Stale single instance segment")),
-           qPrintable("stale segment not detected; log:\n" + orphan.log()));
+  // The constructor finds our lock and says so right before it probes;
+  // everything from here to the report is the probes and the give-up, so the
+  // clock excludes process and QApplication start-up.
+  QVERIFY2(orphan.waitForLog(QStringLiteral("Single instance lock held")),
+           qPrintable("held lock not detected; log:\n" + orphan.log()));
   QElapsedTimer timer;
   timer.start();
   QCOMPARE(orphan.readLine(), QStringLiteral("running=0 server=0"));
@@ -668,29 +671,24 @@ void tst_singleapplication::takeoverGivesUpWhenNobodyListens() {
   QVERIFY2(orphan.log().contains(QStringLiteral("Unable to create")),
            qPrintable("no give-up in log:\n" + orphan.log()));
 
-  // The helper detached but still lives (its exit alone would release its
-  // attachment, proving nothing). With this process gone too the segment has
-  // no users left and is removed, so attaching to it must fail.
-  holder.detach();
-  QSharedMemory gone;
-  gone.setKey(key);
-  const bool stillHeld = gone.attach();
-  if (stillHeld) {
-    gone.detach();
-  }
-  QVERIFY2(!stillHeld, "orphan is still attached to the segment");
+  // The orphan still lives and must not have taken the lock meanwhile.
+  holder.unlock();
+  QLockFile again(SingleApplication::lockPathFor(key));
+  again.setStaleLockTime(0);
+  QVERIFY2(again.tryLock(0), "orphan took the lock of a live instance");
+  again.unlock();
   QVERIFY2(orphan.finish(), "orphan did not exit cleanly");
 }
 
 /**
- * When listen() fails the instance must not keep the segment: holding it
- * without a server would make every later launch attach, fail the probe, fail
- * create() and give up, so no instance could ever take over. A key that
- * resolves to a socket path in a missing directory makes listen() fail; the
- * instance then reports neither running nor listening, logs the error, and
- * another process can claim the segment while it still lives.
+ * When listen() fails the instance must not keep the lock: holding it
+ * without a server would make every later launch wait for a server that
+ * never comes, so no instance could take over. A key that resolves to a
+ * socket path in a missing directory makes listen() fail; the instance then
+ * reports neither running nor listening, logs the error, and another process
+ * can take the lock while it still lives.
  */
-void tst_singleapplication::listenFailureReleasesSegment() {
+void tst_singleapplication::listenFailureReleasesLock() {
 #ifdef Q_OS_WIN
   QSKIP("named pipe names have no directories to be missing");
 #endif
@@ -698,20 +696,85 @@ void tst_singleapplication::listenFailureReleasesSegment() {
   const QString key = m_key + QStringLiteral("_missing_dir/socket");
   QVERIFY2(!QFileInfo::exists(FakePeer::socketPathFor(key)),
            "the socket path must not exist for listen() to fail");
-  SegmentReaper reaper(key);
+  LockReaper reaper(key);
 
   Helper mute("probe", key);
   QCOMPARE(mute.readLine(), QStringLiteral("running=0 server=0"));
 
-  QSharedMemory claim;
-  claim.setKey(key);
-  QVERIFY2(claim.create(1),
-           qPrintable("segment still held after listen failed: " +
-                      claim.errorString()));
-  claim.detach();
+  QLockFile claim(SingleApplication::lockPathFor(key));
+  claim.setStaleLockTime(0);
+  QVERIFY2(claim.tryLock(0), "lock still held after listen failed");
+  claim.unlock();
   QVERIFY2(mute.finish(), "instance did not exit cleanly");
   QVERIFY2(mute.log().contains(QStringLiteral("cannot listen on")),
            qPrintable("listen failure not logged:\n" + mute.log()));
+}
+
+/**
+ * @brief The key main() constructs with is a socket path in a folder only
+ *        this user can write to, the same for every launch: the socket and
+ *        its lock file sit there, where another local user can neither see
+ *        nor create them, and nothing is named after the login name in the
+ *        shared temporary folder (ANT-2026-1JUBRKLZ).
+ */
+void tst_singleapplication::privateKeyIsAPathInThePrivateFolder() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString base = QStringLiteral("someoneQtPass");
+  const QString key = SingleApplication::privateKeyIn(base, dir.path());
+  QVERIFY2(QDir::isAbsolutePath(key), qPrintable(key));
+  QCOMPARE(QFileInfo(key).absolutePath(),
+           QFileInfo(dir.path()).absoluteFilePath());
+  QVERIFY2(!key.contains(base), qPrintable(key));
+  QCOMPARE(SingleApplication::privateKeyIn(base, dir.path()), key);
+  QVERIFY(SingleApplication::privateKeyIn(QStringLiteral("otherQtPass"),
+                                          dir.path()) != key);
+  QCOMPARE(QFileInfo(SingleApplication::lockPathFor(key)).absolutePath(),
+           QFileInfo(dir.path()).absoluteFilePath());
+  QVERIFY2(QDir(dir.path())
+               .isEmpty(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot),
+           "computing the key must not write anything");
+}
+
+/**
+ * @brief Two launches on a key from privateKey(): the first listens on the
+ *        socket in the private folder, the second finds it and forwards.
+ *        A full path is a valid key for both QLocalServer and the lock.
+ */
+void tst_singleapplication::launchesMeetInThePrivateFolder() {
+#ifdef Q_OS_WIN
+  QSKIP("a pipe name cannot hold a path; privateKey() keeps the bare name");
+#endif
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString key = SingleApplication::privateKeyIn(
+      QStringLiteral("someoneQtPass"), dir.path());
+  Helper first("probe", key);
+  QCOMPARE(first.readLine(), QStringLiteral("running=0 server=1"));
+  QVERIFY2(QFileInfo::exists(key), "socket not in the private folder");
+  QVERIFY2(QFileInfo::exists(SingleApplication::lockPathFor(key)),
+           "lock not in the private folder");
+  Helper second("probe", key);
+  QCOMPARE(second.readLine(), QStringLiteral("running=1 server=0"));
+  second.send(QStringLiteral("send hello"));
+  QCOMPARE(second.readLine(), QStringLiteral("sent=1 running=1 server=0"));
+  QVERIFY2(second.finish(), "second launch did not exit cleanly");
+  QVERIFY2(first.finish(), "first launch did not exit cleanly");
+}
+
+/**
+ * @brief Without a folder of its own the key is still not the guessable
+ *        one: a random suffix each time, so this launch runs as its own
+ *        instance rather than on names another user can take.
+ */
+void tst_singleapplication::privateKeyWithoutAFolderIsNeverTheSame() {
+  const QString base = QStringLiteral("someoneQtPass");
+  const QString first = SingleApplication::privateKeyIn(base, QString());
+  const QString second = SingleApplication::privateKeyIn(
+      base, QStringLiteral("/nonexistent/qtpass-runtime"));
+  QCOMPARE(first.size(), base.size() + 16);
+  QVERIFY(first.startsWith(base));
+  QVERIFY(first != second);
 }
 
 auto main(int argc, char *argv[]) -> int {
