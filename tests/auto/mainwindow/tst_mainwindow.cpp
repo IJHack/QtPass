@@ -903,6 +903,26 @@ void tst_mainwindow::flashTextKeepsOnlyTheLatestOutput() {
   // Cut at a paragraph: the panel starts with a whole message.
   QVERIFY2(shown.startsWith(QStringLiteral("message ")),
            qPrintable(shown.left(40)));
+
+  // A paragraph boundary far past half the cap is still where it cuts: one
+  // older paragraph longer than the cap, a new message after it.
+  m_window->flashText(QStringLiteral("reset"), false);
+  m_window->flashText(QStringLiteral("<p>old %1</p>").arg(QString(80000, 'o')),
+                      false, true);
+  m_window->flashText(QStringLiteral("<p>new %1</p>").arg(QString(10000, 'n')),
+                      false, true);
+  QVERIFY2(browser->toPlainText().startsWith(QStringLiteral("new ")),
+           qPrintable(browser->toPlainText().left(20)));
+
+  // A new message is never cut, however long: an entry shown this way, its
+  // password on the first line, stays whole.
+  const QString entry =
+      QStringLiteral("s3cret-password\n") + QString(70000, QLatin1Char('a'));
+  m_window->flashText(QtPass::formatOutput(entry, QString(), QString(), false),
+                      false, true);
+  QVERIFY(browser->toPlainText().contains(QStringLiteral("s3cret-password")));
+  QVERIFY(browser->toPlainText().contains(QString(70000, QLatin1Char('a'))));
+  QVERIFY(!browser->toPlainText().contains(QStringLiteral("new nnn")));
 }
 
 /**

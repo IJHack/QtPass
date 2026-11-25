@@ -805,10 +805,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
-- The panel that shows command output keeps only its last 64 KiB. Each
-  message was added to everything shown before and the whole was laid out
-  again, so a long session of Git and gpg output grew it, and the time each
-  new message took, without limit (scan ANT-2026-VQGRD45V).
+- The panel that shows command output keeps only its last 64 KiB: older
+  output is removed from the front, a paragraph at a time, while the newest
+  message is always shown whole. Each message was added to everything
+  shown before and the whole was laid out again, so a long session of Git
+  and gpg output grew it, and the time each new message took, without
+  limit (scan ANT-2026-VQGRD45V).
 - A command that writes without end to its error output can no longer use
   up memory. gpg writes a line for every packet it rejects and Git one for
   every ref, so an entry or a repository someone else made could fill

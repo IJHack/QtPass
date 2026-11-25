@@ -99,10 +99,11 @@ public:
    * @brief Display a transient message in the text panel.
    *
    * HTML is appended to what the panel shows (command output, one message
-   * after another); the panel then keeps only its last
-   * kMaxFlashCharacters, so a long session of Git and gpg output cannot
-   * grow it, and the re-parse each message costs, without bound
-   * (scan ANT-2026-VQGRD45V).
+   * after another). What was shown before is then trimmed from the front,
+   * at a paragraph, until the panel holds at most kMaxFlashCharacters, so a
+   * long session of Git and gpg output cannot grow it, and the re-parse
+   * each message costs, without bound (scan ANT-2026-VQGRD45V). The new
+   * message is never cut: an entry shown this way stays whole.
    * @param text Message text to display.
    * @param isError true to style the message as an error.
    * @param isHtml true if text contains HTML markup.
