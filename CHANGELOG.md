@@ -805,6 +805,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Checking a `.gpg-id.sig` can no longer freeze QtPass for minutes. gpg
+  checked every signature in the file, each against the key it names, and
+  someone who can write to the store could fill 64 KiB with signatures by a
+  key built to be slow. A `.gpg-id.sig` larger than 4 KiB is now refused
+  (one by a 16384-bit key, armored, is about 3 KiB), gpg stops at the first
+  bad signature, and it checks a copy of the bytes QtPass read, so nothing
+  put under the name afterwards, such as a pipe that never ends, reaches it
+  (scan ANT-2026-XQUAU1HG).
 - Another user on the same computer can no longer keep QtPass from
   starting. The names QtPass uses to find a running copy of itself were
   built from the login name alone and, on Linux and BSD, sat in the shared
