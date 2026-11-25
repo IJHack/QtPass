@@ -1392,10 +1392,11 @@ auto Util::readRegularFileUnder(const QString &root, const QString &path,
       return std::nullopt;
     }
     held.push_back(handle);
-    // A link is what the walk (isLink(): QFileInfo::isSymLink() or
-    // isJunction()) leaves out: a symbolic link or a junction. A folder with
-    // another reparse tag, such as a cloud provider's placeholder, is listed
-    // by the walk and is read through here too.
+    // A reparse point that names another place (a symbolic link, a
+    // junction: what the walk's isLink() leaves out) is refused, as
+    // openRegularFile() refuses one as the file. A folder with another
+    // reparse tag, such as a cloud provider's placeholder, is listed by the
+    // walk and is read through here too.
     FILE_ATTRIBUTE_TAG_INFO info{};
     if (!GetFileInformationByHandleEx(handle, FileAttributeTagInfo, &info,
                                       sizeof(info)) ||
@@ -1404,13 +1405,13 @@ auto Util::readRegularFileUnder(const QString &root, const QString &path,
     }
     const bool link =
         (info.FileAttributes & FILE_ATTRIBUTE_REPARSE_POINT) != 0 &&
-        (info.ReparseTag == IO_REPARSE_TAG_SYMLINK ||
-         info.ReparseTag == IO_REPARSE_TAG_MOUNT_POINT);
+        IsReparseTagNameSurrogate(info.ReparseTag);
     if (!isRoot && link) {
       return std::nullopt;
     }
   }
-  // openRegularFile() refuses a reparse point as the file itself.
+  // openRegularFile() refuses a link or junction as the file itself, and
+  // reads any other reparse point (a cloud placeholder) through.
   return readRegularFile(path, maxBytes);
 #else
   // The root by name, followed if it is a link (the user's setup); below it
