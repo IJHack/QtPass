@@ -1338,11 +1338,21 @@ auto Util::readRegularFileUnder(const QString &root, const QString &path,
       return std::nullopt;
     }
     held.push_back(handle);
-    BY_HANDLE_FILE_INFORMATION info{};
-    if (!GetFileInformationByHandle(handle, &info) ||
-        (info.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == 0 ||
-        (!isRoot &&
-         (info.dwFileAttributes & FILE_ATTRIBUTE_REPARSE_POINT) != 0)) {
+    // A link is what the walk (isLink(): QFileInfo::isSymLink() or
+    // isJunction()) leaves out: a symbolic link or a junction. A folder with
+    // another reparse tag, such as a cloud provider's placeholder, is listed
+    // by the walk and is read through here too.
+    FILE_ATTRIBUTE_TAG_INFO info{};
+    if (!GetFileInformationByHandleEx(handle, FileAttributeTagInfo, &info,
+                                      sizeof(info)) ||
+        (info.FileAttributes & FILE_ATTRIBUTE_DIRECTORY) == 0) {
+      return std::nullopt;
+    }
+    const bool link =
+        (info.FileAttributes & FILE_ATTRIBUTE_REPARSE_POINT) != 0 &&
+        (info.ReparseTag == IO_REPARSE_TAG_SYMLINK ||
+         info.ReparseTag == IO_REPARSE_TAG_MOUNT_POINT);
+    if (!isRoot && link) {
       return std::nullopt;
     }
   }

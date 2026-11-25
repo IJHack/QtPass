@@ -536,7 +536,9 @@ public:
    * `O_NOFOLLOW | O_DIRECTORY`) and the file relative to the last, so the
    * folders judged are the folders walked. @p root itself may be a link: a
    * linked store root is the user's setup. On Windows each folder is opened
-   * by name, refused when it is a reparse point, and held open without
+   * by name, refused when it is a symbolic link or junction (what the walk
+   * leaves out; another reparse tag, a cloud placeholder, is not), and held
+   * open without
    * FILE_SHARE_DELETE until the file is read, so none can be renamed or
    * replaced meanwhile.
    * @param root The store root.
