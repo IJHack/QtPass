@@ -1400,379 +1400,401 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('util_8cpp_sour
 </div>
 <div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span> </div>
 <div class="foldopen" id="foldopen01298" data-start="{" data-end="}">
-<div class="line"><a id="l01298" name="l01298"></a><span class="lineno"><a class="line" href="class_util.html#ab22e866d6db73831a0414056d34f6027"> 1298</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#ab22e866d6db73831a0414056d34f6027">Util::readRegularFileUnder</a>(<span class="keyword">const</span> QString &amp;root, <span class="keyword">const</span> QString &amp;path,</div>
-<div class="line"><a id="l01299" name="l01299"></a><span class="lineno"> 1299</span>                                qint64 maxBytes) -&gt; std::optional&lt;QByteArray&gt; {</div>
-<div class="line"><a id="l01300" name="l01300"></a><span class="lineno"> 1300</span>  <span class="keyword">const</span> QString cleanRoot = QDir::cleanPath(root);</div>
-<div class="line"><a id="l01301" name="l01301"></a><span class="lineno"> 1301</span>  <span class="keyword">const</span> QString relative =</div>
-<div class="line"><a id="l01302" name="l01302"></a><span class="lineno"> 1302</span>      QDir(cleanRoot).relativeFilePath(QDir::cleanPath(path));</div>
-<div class="line"><a id="l01303" name="l01303"></a><span class="lineno"> 1303</span>  <span class="keyword">const</span> QStringList parts = relative.split(QLatin1Char(<span class="charliteral">&#39;/&#39;</span>));</div>
-<div class="line"><a id="l01304" name="l01304"></a><span class="lineno"> 1304</span>  <span class="keywordflow">if</span> (relative.isEmpty() || QDir::isAbsolutePath(relative) ||</div>
-<div class="line"><a id="l01305" name="l01305"></a><span class="lineno"> 1305</span>      parts.contains(QStringLiteral(<span class="stringliteral">&quot;..&quot;</span>)) ||</div>
-<div class="line"><a id="l01306" name="l01306"></a><span class="lineno"> 1306</span>      parts.contains(QStringLiteral(<span class="stringliteral">&quot;.&quot;</span>)) || parts.contains(QString())) {</div>
-<div class="line"><a id="l01307" name="l01307"></a><span class="lineno"> 1307</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01308" name="l01308"></a><span class="lineno"> 1308</span>  }</div>
-<div class="line"><a id="l01309" name="l01309"></a><span class="lineno"> 1309</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l01310" name="l01310"></a><span class="lineno"> 1310</span>  <span class="comment">// No openat() here: each folder from the root down is opened by name and</span></div>
-<div class="line"><a id="l01311" name="l01311"></a><span class="lineno"> 1311</span>  <span class="comment">// held open, without FILE_SHARE_DELETE, until the file is read. A folder</span></div>
-<div class="line"><a id="l01312" name="l01312"></a><span class="lineno"> 1312</span>  <span class="comment">// held that way cannot be renamed, removed or replaced by a junction</span></div>
-<div class="line"><a id="l01313" name="l01313"></a><span class="lineno"> 1313</span>  <span class="comment">// meanwhile, so the file is opened through exactly the folders judged.</span></div>
-<div class="line"><a id="l01314" name="l01314"></a><span class="lineno"> 1314</span>  <span class="comment">// The root itself is followed (a linked store is the user&#39;s setup).</span></div>
-<div class="line"><a id="l01315" name="l01315"></a><span class="lineno"> 1315</span>  std::vector&lt;HANDLE&gt; held;</div>
-<div class="line"><a id="l01316" name="l01316"></a><span class="lineno"> 1316</span>  <span class="keyword">const</span> <span class="keyword">auto</span> release = qScopeGuard([&amp;held] {</div>
-<div class="line"><a id="l01317" name="l01317"></a><span class="lineno"> 1317</span>    <span class="keywordflow">for</span> (HANDLE handle : held) {</div>
-<div class="line"><a id="l01318" name="l01318"></a><span class="lineno"> 1318</span>      CloseHandle(handle);</div>
-<div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>    }</div>
-<div class="line"><a id="l01320" name="l01320"></a><span class="lineno"> 1320</span>  });</div>
-<div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span>  QString folder = cleanRoot;</div>
-<div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>  <span class="keywordflow">for</span> (qsizetype i = 0; i &lt; parts.size(); ++i) {</div>
-<div class="line"><a id="l01323" name="l01323"></a><span class="lineno"> 1323</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isRoot = i == 0;</div>
-<div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>    <span class="keywordflow">if</span> (!isRoot) {</div>
-<div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>      folder += QLatin1Char(<span class="charliteral">&#39;/&#39;</span>) + parts.at(i - 1);</div>
-<div class="line"><a id="l01326" name="l01326"></a><span class="lineno"> 1326</span>    }</div>
-<div class="line"><a id="l01327" name="l01327"></a><span class="lineno"> 1327</span>    <span class="keyword">const</span> std::wstring native = QDir::toNativeSeparators(folder).toStdWString();</div>
-<div class="line"><a id="l01328" name="l01328"></a><span class="lineno"> 1328</span>    <span class="comment">// GENERIC_READ (listing the folder) is data access, so the share mode</span></div>
-<div class="line"><a id="l01329" name="l01329"></a><span class="lineno"> 1329</span>    <span class="comment">// is enforced against a later open for DELETE; attribute access alone</span></div>
-<div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span>    <span class="comment">// would not be.</span></div>
-<div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span>    HANDLE handle =</div>
-<div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>        CreateFileW(native.c_str(), GENERIC_READ,</div>
-<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>                    FILE_SHARE_READ | FILE_SHARE_WRITE, <span class="keyword">nullptr</span>, OPEN_EXISTING,</div>
-<div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>                    FILE_FLAG_BACKUP_SEMANTICS |</div>
-<div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span>                        (isRoot ? 0 : FILE_FLAG_OPEN_REPARSE_POINT),</div>
-<div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span>                    <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span>    <span class="keywordflow">if</span> (handle == INVALID_HANDLE_VALUE) {</div>
-<div class="line"><a id="l01338" name="l01338"></a><span class="lineno"> 1338</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01298" name="l01298"></a><span class="lineno"><a class="line" href="class_util.html#ad9f5d96dee382e8f0bf1d8f03069f60b"> 1298</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#ad9f5d96dee382e8f0bf1d8f03069f60b">Util::readRegularFileInStore</a>(<span class="keyword">const</span> QString &amp;store, <span class="keyword">const</span> QString &amp;path,</div>
+<div class="line"><a id="l01299" name="l01299"></a><span class="lineno"> 1299</span>                                  qint64 maxBytes)</div>
+<div class="line"><a id="l01300" name="l01300"></a><span class="lineno"> 1300</span>    -&gt; std::optional&lt;QByteArray&gt; {</div>
+<div class="line"><a id="l01301" name="l01301"></a><span class="lineno"> 1301</span>  <span class="keyword">const</span> <span class="keyword">auto</span> under = [&amp;path](<span class="keyword">const</span> QString &amp;root) {</div>
+<div class="line"><a id="l01302" name="l01302"></a><span class="lineno"> 1302</span>    <span class="keyword">const</span> QString relative = QDir(root).relativeFilePath(QDir::cleanPath(path));</div>
+<div class="line"><a id="l01303" name="l01303"></a><span class="lineno"> 1303</span>    <span class="keywordflow">return</span> !root.isEmpty() &amp;&amp; !QDir::isAbsolutePath(relative) &amp;&amp;</div>
+<div class="line"><a id="l01304" name="l01304"></a><span class="lineno"> 1304</span>           relative != QStringLiteral(<span class="stringliteral">&quot;..&quot;</span>) &amp;&amp;</div>
+<div class="line"><a id="l01305" name="l01305"></a><span class="lineno"> 1305</span>           !relative.startsWith(QStringLiteral(<span class="stringliteral">&quot;../&quot;</span>));</div>
+<div class="line"><a id="l01306" name="l01306"></a><span class="lineno"> 1306</span>  };</div>
+<div class="line"><a id="l01307" name="l01307"></a><span class="lineno"> 1307</span>  <span class="keyword">const</span> QString root = QDir::cleanPath(store);</div>
+<div class="line"><a id="l01308" name="l01308"></a><span class="lineno"> 1308</span>  <span class="keywordflow">if</span> (under(root)) {</div>
+<div class="line"><a id="l01309" name="l01309"></a><span class="lineno"> 1309</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#ab22e866d6db73831a0414056d34f6027">readRegularFileUnder</a>(root, path, maxBytes);</div>
+<div class="line"><a id="l01310" name="l01310"></a><span class="lineno"> 1310</span>  }</div>
+<div class="line"><a id="l01311" name="l01311"></a><span class="lineno"> 1311</span>  <span class="keyword">const</span> QString canonical = QFileInfo(root).canonicalFilePath();</div>
+<div class="line"><a id="l01312" name="l01312"></a><span class="lineno"> 1312</span>  <span class="keywordflow">if</span> (under(canonical)) {</div>
+<div class="line"><a id="l01313" name="l01313"></a><span class="lineno"> 1313</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#ab22e866d6db73831a0414056d34f6027">readRegularFileUnder</a>(canonical, path, maxBytes);</div>
+<div class="line"><a id="l01314" name="l01314"></a><span class="lineno"> 1314</span>  }</div>
+<div class="line"><a id="l01315" name="l01315"></a><span class="lineno"> 1315</span>  <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01316" name="l01316"></a><span class="lineno"> 1316</span>}</div>
+</div>
+<div class="line"><a id="l01317" name="l01317"></a><span class="lineno"> 1317</span> </div>
+<div class="foldopen" id="foldopen01318" data-start="{" data-end="}">
+<div class="line"><a id="l01318" name="l01318"></a><span class="lineno"><a class="line" href="class_util.html#ab22e866d6db73831a0414056d34f6027"> 1318</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#ab22e866d6db73831a0414056d34f6027">Util::readRegularFileUnder</a>(<span class="keyword">const</span> QString &amp;root, <span class="keyword">const</span> QString &amp;path,</div>
+<div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>                                qint64 maxBytes) -&gt; std::optional&lt;QByteArray&gt; {</div>
+<div class="line"><a id="l01320" name="l01320"></a><span class="lineno"> 1320</span>  <span class="keyword">const</span> QString cleanRoot = QDir::cleanPath(root);</div>
+<div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span>  <span class="keyword">const</span> QString relative =</div>
+<div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>      QDir(cleanRoot).relativeFilePath(QDir::cleanPath(path));</div>
+<div class="line"><a id="l01323" name="l01323"></a><span class="lineno"> 1323</span>  <span class="keyword">const</span> QStringList parts = relative.split(QLatin1Char(<span class="charliteral">&#39;/&#39;</span>));</div>
+<div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>  <span class="keywordflow">if</span> (relative.isEmpty() || QDir::isAbsolutePath(relative) ||</div>
+<div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>      parts.contains(QStringLiteral(<span class="stringliteral">&quot;..&quot;</span>)) ||</div>
+<div class="line"><a id="l01326" name="l01326"></a><span class="lineno"> 1326</span>      parts.contains(QStringLiteral(<span class="stringliteral">&quot;.&quot;</span>)) || parts.contains(QString())) {</div>
+<div class="line"><a id="l01327" name="l01327"></a><span class="lineno"> 1327</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01328" name="l01328"></a><span class="lineno"> 1328</span>  }</div>
+<div class="line"><a id="l01329" name="l01329"></a><span class="lineno"> 1329</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span>  <span class="comment">// No openat() here: each folder from the root down is opened by name and</span></div>
+<div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span>  <span class="comment">// held open, without FILE_SHARE_DELETE, until the file is read. A folder</span></div>
+<div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>  <span class="comment">// held that way cannot be renamed, removed or replaced by a junction</span></div>
+<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>  <span class="comment">// meanwhile, so the file is opened through exactly the folders judged.</span></div>
+<div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>  <span class="comment">// The root itself is followed (a linked store is the user&#39;s setup).</span></div>
+<div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span>  std::vector&lt;HANDLE&gt; held;</div>
+<div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span>  <span class="keyword">const</span> <span class="keyword">auto</span> release = qScopeGuard([&amp;held] {</div>
+<div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span>    <span class="keywordflow">for</span> (HANDLE handle : held) {</div>
+<div class="line"><a id="l01338" name="l01338"></a><span class="lineno"> 1338</span>      CloseHandle(handle);</div>
 <div class="line"><a id="l01339" name="l01339"></a><span class="lineno"> 1339</span>    }</div>
-<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>    held.push_back(handle);</div>
-<div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span>    <span class="comment">// A link is what the walk (isLink(): QFileInfo::isSymLink() or</span></div>
-<div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>    <span class="comment">// isJunction()) leaves out: a symbolic link or a junction. A folder with</span></div>
-<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>    <span class="comment">// another reparse tag, such as a cloud provider&#39;s placeholder, is listed</span></div>
-<div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span>    <span class="comment">// by the walk and is read through here too.</span></div>
-<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span>    FILE_ATTRIBUTE_TAG_INFO info{};</div>
-<div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>    <span class="keywordflow">if</span> (!GetFileInformationByHandleEx(handle, FileAttributeTagInfo, &amp;info,</div>
-<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>                                      <span class="keyword">sizeof</span>(info)) ||</div>
-<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span>        (info.FileAttributes &amp; FILE_ATTRIBUTE_DIRECTORY) == 0) {</div>
-<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>    }</div>
-<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> link =</div>
-<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span>        (info.FileAttributes &amp; FILE_ATTRIBUTE_REPARSE_POINT) != 0 &amp;&amp;</div>
-<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span>        (info.ReparseTag == IO_REPARSE_TAG_SYMLINK ||</div>
-<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>         info.ReparseTag == IO_REPARSE_TAG_MOUNT_POINT);</div>
-<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>    <span class="keywordflow">if</span> (!isRoot &amp;&amp; link) {</div>
-<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>    }</div>
-<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>  }</div>
-<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span>  <span class="comment">// openRegularFile() refuses a reparse point as the file itself.</span></div>
-<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#a8e427903937505b5e19ebbea7050494e">readRegularFile</a>(path, maxBytes);</div>
-<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span>  <span class="comment">// The root by name, followed if it is a link (the user&#39;s setup); below it</span></div>
-<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span>  <span class="comment">// nothing is.</span></div>
-<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>  <span class="keywordtype">int</span> dir = ::open(QFile::encodeName(cleanRoot).constData(),</div>
-<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>                   O_RDONLY | O_DIRECTORY | O_CLOEXEC);</div>
-<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>  <span class="keywordflow">if</span> (dir &lt; 0) {</div>
-<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>  }</div>
-<div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>  <span class="keywordflow">for</span> (qsizetype i = 0; i + 1 &lt; parts.size(); ++i) {</div>
-<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> next = ::openat(dir, QFile::encodeName(parts.at(i)).constData(),</div>
-<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>                              O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);</div>
-<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>    ::close(dir);</div>
-<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>    <span class="keywordflow">if</span> (next &lt; 0) {</div>
-<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>    }</div>
-<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span>    dir = next;</div>
-<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>  }</div>
-<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>  <span class="comment">// As openRegularFile(): no link, no FIFO left blocking the open.</span></div>
-<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> fd = ::openat(dir, QFile::encodeName(parts.constLast()).constData(),</div>
-<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>                          O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);</div>
-<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span>  ::close(dir);</div>
-<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span>  <span class="keywordflow">if</span> (fd &lt; 0) {</div>
-<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span>  }</div>
-<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>  <span class="keyword">struct </span>stat st{};</div>
-<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>  <span class="keywordflow">if</span> (::fstat(fd, &amp;st) != 0 || !S_ISREG(st.st_mode)) {</div>
-<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>    ::close(fd);</div>
-<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>  }</div>
-<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span>  QFile file;</div>
-<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>  <span class="keywordflow">if</span> (!file.open(fd, QIODevice::ReadOnly, <span class="comment">// codeql[cpp/toctou-race-condition]</span></div>
-<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>                 QFileDevice::AutoCloseHandle)) {</div>
-<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>    ::close(fd);</div>
-<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>  }</div>
-<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>  <span class="keywordflow">return</span> readOpenFile(file, maxBytes);</div>
-<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>}</div>
+<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>  });</div>
+<div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span>  QString folder = cleanRoot;</div>
+<div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>  <span class="keywordflow">for</span> (qsizetype i = 0; i &lt; parts.size(); ++i) {</div>
+<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isRoot = i == 0;</div>
+<div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span>    <span class="keywordflow">if</span> (!isRoot) {</div>
+<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span>      folder += QLatin1Char(<span class="charliteral">&#39;/&#39;</span>) + parts.at(i - 1);</div>
+<div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>    }</div>
+<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>    <span class="keyword">const</span> std::wstring native = QDir::toNativeSeparators(folder).toStdWString();</div>
+<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span>    <span class="comment">// GENERIC_READ (listing the folder) is data access, so the share mode</span></div>
+<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span>    <span class="comment">// is enforced against a later open for DELETE; attribute access alone</span></div>
+<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>    <span class="comment">// would not be.</span></div>
+<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>    HANDLE handle =</div>
+<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span>        CreateFileW(native.c_str(), GENERIC_READ,</div>
+<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span>                    FILE_SHARE_READ | FILE_SHARE_WRITE, <span class="keyword">nullptr</span>, OPEN_EXISTING,</div>
+<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>                    FILE_FLAG_BACKUP_SEMANTICS |</div>
+<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>                        (isRoot ? 0 : FILE_FLAG_OPEN_REPARSE_POINT),</div>
+<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span>                    <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>    <span class="keywordflow">if</span> (handle == INVALID_HANDLE_VALUE) {</div>
+<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span>    }</div>
+<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span>    held.push_back(handle);</div>
+<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>    <span class="comment">// A link is what the walk (isLink(): QFileInfo::isSymLink() or</span></div>
+<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span>    <span class="comment">// isJunction()) leaves out: a symbolic link or a junction. A folder with</span></div>
+<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span>    <span class="comment">// another reparse tag, such as a cloud provider&#39;s placeholder, is listed</span></div>
+<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>    <span class="comment">// by the walk and is read through here too.</span></div>
+<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>    FILE_ATTRIBUTE_TAG_INFO info{};</div>
+<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>    <span class="keywordflow">if</span> (!GetFileInformationByHandleEx(handle, FileAttributeTagInfo, &amp;info,</div>
+<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>                                      <span class="keyword">sizeof</span>(info)) ||</div>
+<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>        (info.FileAttributes &amp; FILE_ATTRIBUTE_DIRECTORY) == 0) {</div>
+<div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span>    }</div>
+<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> link =</div>
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>        (info.FileAttributes &amp; FILE_ATTRIBUTE_REPARSE_POINT) != 0 &amp;&amp;</div>
+<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>        (info.ReparseTag == IO_REPARSE_TAG_SYMLINK ||</div>
+<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>         info.ReparseTag == IO_REPARSE_TAG_MOUNT_POINT);</div>
+<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>    <span class="keywordflow">if</span> (!isRoot &amp;&amp; link) {</div>
+<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>    }</div>
+<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>  }</div>
+<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span>  <span class="comment">// openRegularFile() refuses a reparse point as the file itself.</span></div>
+<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#a8e427903937505b5e19ebbea7050494e">readRegularFile</a>(path, maxBytes);</div>
+<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span>  <span class="comment">// The root by name, followed if it is a link (the user&#39;s setup); below it</span></div>
+<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span>  <span class="comment">// nothing is.</span></div>
+<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span>  <span class="keywordtype">int</span> dir = ::open(QFile::encodeName(cleanRoot).constData(),</div>
+<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>                   O_RDONLY | O_DIRECTORY | O_CLOEXEC);</div>
+<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>  <span class="keywordflow">if</span> (dir &lt; 0) {</div>
+<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span>  }</div>
+<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>  <span class="keywordflow">for</span> (qsizetype i = 0; i + 1 &lt; parts.size(); ++i) {</div>
+<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> next = ::openat(dir, QFile::encodeName(parts.at(i)).constData(),</div>
+<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>                              O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);</div>
+<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>    ::close(dir);</div>
+<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>    <span class="keywordflow">if</span> (next &lt; 0) {</div>
+<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>    }</div>
+<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>    dir = next;</div>
+<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>  }</div>
+<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>  <span class="comment">// As openRegularFile(): no link, no FIFO left blocking the open.</span></div>
+<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> fd = ::openat(dir, QFile::encodeName(parts.constLast()).constData(),</div>
+<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span>                          O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);</div>
+<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>  ::close(dir);</div>
+<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>  <span class="keywordflow">if</span> (fd &lt; 0) {</div>
+<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span>  }</div>
+<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>  <span class="keyword">struct </span>stat st{};</div>
+<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span>  <span class="keywordflow">if</span> (::fstat(fd, &amp;st) != 0 || !S_ISREG(st.st_mode)) {</div>
+<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span>    ::close(fd);</div>
+<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span>  }</div>
+<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span>  QFile file;</div>
+<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span>  <span class="keywordflow">if</span> (!file.open(fd, QIODevice::ReadOnly, <span class="comment">// codeql[cpp/toctou-race-condition]</span></div>
+<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span>                 QFileDevice::AutoCloseHandle)) {</div>
+<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>    ::close(fd);</div>
+<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>  }</div>
+<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>  <span class="keywordflow">return</span> readOpenFile(file, maxBytes);</div>
+<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>}</div>
 </div>
-<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span> </div>
-<div class="foldopen" id="foldopen01400" data-start="{" data-end="}">
-<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"><a class="line" href="class_util.html#aa000e615528288c62c3388bfbad759ee"> 1400</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#aa000e615528288c62c3388bfbad759ee">Util::syncToDisk</a>(QFileDevice &amp;file) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>  <span class="keywordflow">if</span> (!file.flush()) {</div>
-<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>  }</div>
-<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>  <span class="keyword">const</span> HANDLE handle = <span class="keyword">reinterpret_cast&lt;</span>HANDLE<span class="keyword">&gt;</span>(_get_osfhandle(file.handle()));</div>
-<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span>  <span class="keywordflow">return</span> handle != INVALID_HANDLE_VALUE &amp;&amp; FlushFileBuffers(handle) != 0;</div>
-<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>  return ::fsync(file.handle()) == 0;</div>
-<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span>}</div>
+<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span> </div>
+<div class="foldopen" id="foldopen01420" data-start="{" data-end="}">
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"><a class="line" href="class_util.html#aa000e615528288c62c3388bfbad759ee"> 1420</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#aa000e615528288c62c3388bfbad759ee">Util::syncToDisk</a>(QFileDevice &amp;file) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>  <span class="keywordflow">if</span> (!file.flush()) {</div>
+<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>  }</div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>  <span class="keyword">const</span> HANDLE handle = <span class="keyword">reinterpret_cast&lt;</span>HANDLE<span class="keyword">&gt;</span>(_get_osfhandle(file.handle()));</div>
+<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>  <span class="keywordflow">return</span> handle != INVALID_HANDLE_VALUE &amp;&amp; FlushFileBuffers(handle) != 0;</div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>  return ::fsync(file.handle()) == 0;</div>
+<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>}</div>
 </div>
-<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span> </div>
-<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span></div>
-<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span><span class="keyword">struct </span>FileIdentity {</div>
-<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>  quint64 volume = 0;</div>
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>  quint64 index = 0;</div>
-<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>  <span class="keywordtype">bool</span> known = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>};</div>
-<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span> </div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span><span class="keyword">auto</span> <a class="code hl_function" href="filecontent_8h.html#a009ac2ea0587e59974fc7801567deccc">operator==</a>(<span class="keyword">const</span> FileIdentity &amp;a, <span class="keyword">const</span> FileIdentity &amp;b) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>  <span class="keywordflow">return</span> a.known &amp;&amp; b.known &amp;&amp; a.volume == b.volume &amp;&amp; a.index == b.index;</div>
-<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>}</div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span></div>
-<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span><span class="keyword">auto</span> identityOf(<span class="keyword">const</span> QFileDevice &amp;file) -&gt; FileIdentity {</div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>  <span class="keyword">const</span> HANDLE handle = <span class="keyword">reinterpret_cast&lt;</span>HANDLE<span class="keyword">&gt;</span>(_get_osfhandle(file.handle()));</div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>  BY_HANDLE_FILE_INFORMATION info;</div>
-<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>  <span class="keywordflow">if</span> (handle == INVALID_HANDLE_VALUE ||</div>
-<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>      GetFileInformationByHandle(handle, &amp;info) == 0) {</div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>  }</div>
-<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>  <span class="comment">// On FAT/exFAT the file ID is the directory entry&#39;s offset, which a rename</span></div>
-<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>  <span class="comment">// can move. They have no hard links either (the swap this catches needs</span></div>
-<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>  <span class="comment">// one), so the identity is left unknown there.</span></div>
-<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>  DWORD flags = 0;</div>
-<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>  <span class="keywordflow">if</span> (GetVolumeInformationByHandleW(handle, <span class="keyword">nullptr</span>, 0, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>                                    &amp;flags, <span class="keyword">nullptr</span>, 0) == 0 ||</div>
-<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span>      (flags &amp; FILE_SUPPORTS_HARD_LINKS) == 0) {</div>
-<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span>  }</div>
-<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span>  <span class="keywordflow">return</span> {info.dwVolumeSerialNumber,</div>
-<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span>          (<span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(info.nFileIndexHigh) &lt;&lt; 32) |</div>
-<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span>              info.nFileIndexLow,</div>
-<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span>          <span class="keyword">true</span>};</div>
-<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>  <span class="keyword">struct </span>stat st{};</div>
-<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>  <span class="keywordflow">if</span> (::fstat(file.handle(), &amp;st) != 0) {</div>
-<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>  }</div>
-<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>  <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(st.st_dev), <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(st.st_ino),</div>
-<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>          <span class="keyword">true</span>};</div>
-<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>}</div>
-<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span></div>
-<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span><span class="keyword">auto</span> fail(QString *error, <span class="keyword">const</span> QString &amp;text) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>  <span class="keywordflow">if</span> (error != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>    *error = text;</div>
-<div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>  }</div>
-<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span>}</div>
-<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span></div>
-<div class="line"><a id="l01469" name="l01469"></a><span class="lineno"> 1469</span><span class="keyword">struct </span>Staged {</div>
-<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span>  QString path;</div>
-<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span>  FileIdentity identity;</div>
-<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span>  std::shared_ptr&lt;void&gt; pin;</div>
-<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"> 1475</span>};</div>
-<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span></div>
-<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span><span class="keyword">auto</span> stageNextTo(<span class="keyword">const</span> QString &amp;path, <span class="keyword">const</span> <a class="code hl_typedef" href="class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76">Util::Filler</a> &amp;fill, QString *why)</div>
-<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span>    -&gt; std::optional&lt;Staged&gt; {</div>
-<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"> 1485</span>  Staged staged;</div>
-<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"> 1486</span>  {</div>
-<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span>    QTemporaryFile file(QFileInfo(path).path() +</div>
-<div class="line"><a id="l01488" name="l01488"></a><span class="lineno"> 1488</span>                        QStringLiteral(<span class="stringliteral">&quot;/.qtpass-XXXXXX.tmp&quot;</span>));</div>
-<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"> 1489</span>    file.setAutoRemove(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"> 1490</span>    <span class="keywordflow">if</span> (!file.open()) {</div>
-<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span>      *why = QCoreApplication::translate(</div>
-<div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span>                 <span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot create a temporary file next to %1: %2&quot;</span>)</div>
-<div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span>                 .arg(path, file.errorString());</div>
-<div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span>    }</div>
-<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span>    staged.path = file.fileName();</div>
-<div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span>    <span class="comment">// Owner-only: a .gpg-id names the keys a store is encrypted to, an</span></div>
-<div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span>    <span class="comment">// entry is an entry. QTemporaryFile creates 0600 already; say so for</span></div>
-<div class="line"><a id="l01499" name="l01499"></a><span class="lineno"> 1499</span>    <span class="comment">// platforms where it may not.</span></div>
-<div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span>    file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);</div>
-<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span>    *why = fill(file);</div>
-<div class="line"><a id="l01502" name="l01502"></a><span class="lineno"> 1502</span>    <span class="keywordflow">if</span> (why-&gt;isEmpty() &amp;&amp; !<a class="code hl_function" href="class_util.html#aa000e615528288c62c3388bfbad759ee">Util::syncToDisk</a>(file)) {</div>
-<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span>      *why = QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot write %1: %2&quot;</span>)</div>
-<div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span>                 .arg(path, file.errorString());</div>
-<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span>    }</div>
-<div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span>    staged.identity = identityOf(file);</div>
-<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
-<div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span>    <span class="comment">// Closed and unlinked by a co-writer before the rename, the temporary&#39;s</span></div>
-<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>    <span class="comment">// inode number would be free, and ext4 hands it to the next file made:</span></div>
-<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>    <span class="comment">// the very file swapped in would then pass the check below. Windows</span></div>
-<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>    <span class="comment">// cannot rename an open file, and NTFS does not reuse a file index so.</span></div>
-<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>    <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keywordtype">int</span> fd = ::dup(file.handle()); fd &gt;= 0) {</div>
-<div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>      staged.pin =</div>
-<div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>          std::shared_ptr&lt;void&gt;(<span class="keyword">nullptr</span>, [fd](<span class="keywordtype">void</span> *) { ::close(fd); });</div>
+<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span> </div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span></div>
+<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span><span class="keyword">struct </span>FileIdentity {</div>
+<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>  quint64 volume = 0;</div>
+<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>  quint64 index = 0;</div>
+<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>  <span class="keywordtype">bool</span> known = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>};</div>
+<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span> </div>
+<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span><span class="keyword">auto</span> <a class="code hl_function" href="filecontent_8h.html#a009ac2ea0587e59974fc7801567deccc">operator==</a>(<span class="keyword">const</span> FileIdentity &amp;a, <span class="keyword">const</span> FileIdentity &amp;b) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span>  <span class="keywordflow">return</span> a.known &amp;&amp; b.known &amp;&amp; a.volume == b.volume &amp;&amp; a.index == b.index;</div>
+<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span>}</div>
+<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span></div>
+<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span><span class="keyword">auto</span> identityOf(<span class="keyword">const</span> QFileDevice &amp;file) -&gt; FileIdentity {</div>
+<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>  <span class="keyword">const</span> HANDLE handle = <span class="keyword">reinterpret_cast&lt;</span>HANDLE<span class="keyword">&gt;</span>(_get_osfhandle(file.handle()));</div>
+<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>  BY_HANDLE_FILE_INFORMATION info;</div>
+<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>  <span class="keywordflow">if</span> (handle == INVALID_HANDLE_VALUE ||</div>
+<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>      GetFileInformationByHandle(handle, &amp;info) == 0) {</div>
+<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>  }</div>
+<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>  <span class="comment">// On FAT/exFAT the file ID is the directory entry&#39;s offset, which a rename</span></div>
+<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>  <span class="comment">// can move. They have no hard links either (the swap this catches needs</span></div>
+<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span>  <span class="comment">// one), so the identity is left unknown there.</span></div>
+<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>  DWORD flags = 0;</div>
+<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>  <span class="keywordflow">if</span> (GetVolumeInformationByHandleW(handle, <span class="keyword">nullptr</span>, 0, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>                                    &amp;flags, <span class="keyword">nullptr</span>, 0) == 0 ||</div>
+<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>      (flags &amp; FILE_SUPPORTS_HARD_LINKS) == 0) {</div>
+<div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span>  }</div>
+<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span>  <span class="keywordflow">return</span> {info.dwVolumeSerialNumber,</div>
+<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span>          (<span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(info.nFileIndexHigh) &lt;&lt; 32) |</div>
+<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span>              info.nFileIndexLow,</div>
+<div class="line"><a id="l01469" name="l01469"></a><span class="lineno"> 1469</span>          <span class="keyword">true</span>};</div>
+<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span>  <span class="keyword">struct </span>stat st{};</div>
+<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"> 1472</span>  <span class="keywordflow">if</span> (::fstat(file.handle(), &amp;st) != 0) {</div>
+<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"> 1473</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span>  }</div>
+<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"> 1475</span>  <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(st.st_dev), <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(st.st_ino),</div>
+<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span>          <span class="keyword">true</span>};</div>
+<div class="line"><a id="l01477" name="l01477"></a><span class="lineno"> 1477</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span>}</div>
+<div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span></div>
+<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span><span class="keyword">auto</span> fail(QString *error, <span class="keyword">const</span> QString &amp;text) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01482" name="l01482"></a><span class="lineno"> 1482</span>  <span class="keywordflow">if</span> (error != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span>    *error = text;</div>
+<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span>  }</div>
+<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"> 1485</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"> 1486</span>}</div>
+<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span></div>
+<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"> 1489</span><span class="keyword">struct </span>Staged {</div>
+<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"> 1490</span>  QString path;</div>
+<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span>  FileIdentity identity;</div>
+<div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span>  std::shared_ptr&lt;void&gt; pin;</div>
+<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span>};</div>
+<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span></div>
+<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span><span class="keyword">auto</span> stageNextTo(<span class="keyword">const</span> QString &amp;path, <span class="keyword">const</span> <a class="code hl_typedef" href="class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76">Util::Filler</a> &amp;fill, QString *why)</div>
+<div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span>    -&gt; std::optional&lt;Staged&gt; {</div>
+<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span>  Staged staged;</div>
+<div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span>  {</div>
+<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span>    QTemporaryFile file(QFileInfo(path).path() +</div>
+<div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span>                        QStringLiteral(<span class="stringliteral">&quot;/.qtpass-XXXXXX.tmp&quot;</span>));</div>
+<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>    file.setAutoRemove(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>    <span class="keywordflow">if</span> (!file.open()) {</div>
+<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>      *why = QCoreApplication::translate(</div>
+<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>                 <span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot create a temporary file next to %1: %2&quot;</span>)</div>
+<div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>                 .arg(path, file.errorString());</div>
+<div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>      <span class="keywordflow">return</span> std::nullopt;</div>
 <div class="line"><a id="l01515" name="l01515"></a><span class="lineno"> 1515</span>    }</div>
-<div class="line"><a id="l01516" name="l01516"></a><span class="lineno"> 1516</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01517" name="l01517"></a><span class="lineno"> 1517</span>  }</div>
-<div class="line"><a id="l01518" name="l01518"></a><span class="lineno"> 1518</span>  <span class="keywordflow">if</span> (!why-&gt;isEmpty()) {</div>
-<div class="line"><a id="l01519" name="l01519"></a><span class="lineno"> 1519</span>    QFile::remove(staged.path);</div>
-<div class="line"><a id="l01520" name="l01520"></a><span class="lineno"> 1520</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01521" name="l01521"></a><span class="lineno"> 1521</span>  }</div>
-<div class="line"><a id="l01522" name="l01522"></a><span class="lineno"> 1522</span>  <span class="keywordflow">return</span> staged;</div>
-<div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span>}</div>
-<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span></div>
-<div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span><span class="keyword">auto</span> placementError(<span class="keyword">const</span> QString &amp;path, <span class="keywordtype">bool</span> replace) -&gt; QString {</div>
-<div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span>  <span class="keywordflow">if</span> (replace) {</div>
-<div class="line"><a id="l01528" name="l01528"></a><span class="lineno"> 1528</span>    <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Failed to replace %1.&quot;</span>)</div>
-<div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span>        .arg(path);</div>
-<div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span>  }</div>
-<div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>  <span class="keyword">const</span> QFileInfo taken(path);</div>
-<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>  <span class="keywordflow">return</span> taken.exists() || taken.isSymLink()</div>
-<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>             ? QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;%1 already exists.&quot;</span>)</div>
-<div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>                   .arg(path)</div>
-<div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>             : QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Failed to write %1.&quot;</span>)</div>
-<div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>                   .arg(path);</div>
-<div class="line"><a id="l01537" name="l01537"></a><span class="lineno"> 1537</span>}</div>
-<div class="line"><a id="l01538" name="l01538"></a><span class="lineno"> 1538</span></div>
-<div class="line"><a id="l01546" name="l01546"></a><span class="lineno"> 1546</span><span class="keyword">auto</span> isTheFileWritten(<span class="keyword">const</span> QString &amp;path, <span class="keyword">const</span> FileIdentity &amp;written)</div>
-<div class="line"><a id="l01547" name="l01547"></a><span class="lineno"> 1547</span>    -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01548" name="l01548"></a><span class="lineno"> 1548</span>  QFile placed;</div>
-<div class="line"><a id="l01549" name="l01549"></a><span class="lineno"> 1549</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612">Util::openRegularFile</a>(path, placed)) {</div>
-<div class="line"><a id="l01550" name="l01550"></a><span class="lineno"> 1550</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01551" name="l01551"></a><span class="lineno"> 1551</span>  }</div>
-<div class="line"><a id="l01552" name="l01552"></a><span class="lineno"> 1552</span>  <span class="keyword">const</span> FileIdentity there = identityOf(placed);</div>
-<div class="line"><a id="l01553" name="l01553"></a><span class="lineno"> 1553</span>  <span class="keywordflow">if</span> (!written.known || !there.known) {</div>
-<div class="line"><a id="l01554" name="l01554"></a><span class="lineno"> 1554</span>    qCWarning(lcQtPass) &lt;&lt; <span class="stringliteral">&quot;Cannot tell whether&quot;</span> &lt;&lt; path</div>
-<div class="line"><a id="l01555" name="l01555"></a><span class="lineno"> 1555</span>                        &lt;&lt; <span class="stringliteral">&quot;is the file that was written here&quot;</span>;</div>
-<div class="line"><a id="l01556" name="l01556"></a><span class="lineno"> 1556</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01557" name="l01557"></a><span class="lineno"> 1557</span>  }</div>
-<div class="line"><a id="l01558" name="l01558"></a><span class="lineno"> 1558</span>  <span class="keywordflow">return</span> there == written;</div>
-<div class="line"><a id="l01559" name="l01559"></a><span class="lineno"> 1559</span>}</div>
-<div class="line"><a id="l01560" name="l01560"></a><span class="lineno"> 1560</span> </div>
-<div class="line"><a id="l01561" name="l01561"></a><span class="lineno"> 1561</span>} <span class="comment">// namespace</span></div>
-<div class="line"><a id="l01562" name="l01562"></a><span class="lineno"> 1562</span> </div>
-<div class="foldopen" id="foldopen01563" data-start="{" data-end="}">
-<div class="line"><a id="l01563" name="l01563"></a><span class="lineno"><a class="line" href="class_util.html#add1e4f70c6d7630ace5e350b30f78907"> 1563</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#add1e4f70c6d7630ace5e350b30f78907">Util::stageFileReplacing</a>(<span class="keyword">const</span> QString &amp;path, <span class="keywordtype">bool</span> replace,</div>
-<div class="line"><a id="l01564" name="l01564"></a><span class="lineno"> 1564</span>                              <span class="keyword">const</span> <a class="code hl_typedef" href="class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> &amp;fill, QString *error) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01565" name="l01565"></a><span class="lineno"> 1565</span>  QString why;</div>
-<div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span>  <span class="keyword">const</span> std::optional&lt;Staged&gt; staged = stageNextTo(path, fill, &amp;why);</div>
-<div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span>  <span class="keywordflow">if</span> (!staged) {</div>
-<div class="line"><a id="l01568" name="l01568"></a><span class="lineno"> 1568</span>    <span class="keywordflow">return</span> fail(error, why);</div>
-<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span>  }</div>
-<div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="util_8cpp.html#aad0da0cf823d706ca735e7b968c93eeb">s_beforePlacingForTests</a>) {</div>
-<div class="line"><a id="l01571" name="l01571"></a><span class="lineno"> 1571</span>    <a class="code hl_variable" href="util_8cpp.html#aad0da0cf823d706ca735e7b968c93eeb">s_beforePlacingForTests</a>(staged-&gt;path);</div>
-<div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span>  }</div>
-<div class="line"><a id="l01573" name="l01573"></a><span class="lineno"> 1573</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640">replaceFile</a>(staged-&gt;path, path, replace)) {</div>
-<div class="line"><a id="l01574" name="l01574"></a><span class="lineno"> 1574</span>    QFile::remove(staged-&gt;path);</div>
-<div class="line"><a id="l01575" name="l01575"></a><span class="lineno"> 1575</span>    <span class="keywordflow">return</span> fail(error, placementError(path, replace));</div>
-<div class="line"><a id="l01576" name="l01576"></a><span class="lineno"> 1576</span>  }</div>
-<div class="line"><a id="l01577" name="l01577"></a><span class="lineno"> 1577</span>  <span class="comment">// A mismatch is reported and left: removing by name could take another</span></div>
-<div class="line"><a id="l01578" name="l01578"></a><span class="lineno"> 1578</span>  <span class="comment">// writer&#39;s file.</span></div>
-<div class="line"><a id="l01579" name="l01579"></a><span class="lineno"> 1579</span>  <span class="keywordflow">if</span> (!isTheFileWritten(path, staged-&gt;identity)) {</div>
-<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>    <span class="keywordflow">return</span> fail(</div>
-<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>        error,</div>
-<div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span>        QCoreApplication::translate(</div>
-<div class="line"><a id="l01583" name="l01583"></a><span class="lineno"> 1583</span>            <span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;%1 was swapped for another file while it was written.&quot;</span>)</div>
-<div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>            .arg(path));</div>
-<div class="line"><a id="l01585" name="l01585"></a><span class="lineno"> 1585</span>  }</div>
-<div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01587" name="l01587"></a><span class="lineno"> 1587</span>}</div>
+<div class="line"><a id="l01516" name="l01516"></a><span class="lineno"> 1516</span>    staged.path = file.fileName();</div>
+<div class="line"><a id="l01517" name="l01517"></a><span class="lineno"> 1517</span>    <span class="comment">// Owner-only: a .gpg-id names the keys a store is encrypted to, an</span></div>
+<div class="line"><a id="l01518" name="l01518"></a><span class="lineno"> 1518</span>    <span class="comment">// entry is an entry. QTemporaryFile creates 0600 already; say so for</span></div>
+<div class="line"><a id="l01519" name="l01519"></a><span class="lineno"> 1519</span>    <span class="comment">// platforms where it may not.</span></div>
+<div class="line"><a id="l01520" name="l01520"></a><span class="lineno"> 1520</span>    file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);</div>
+<div class="line"><a id="l01521" name="l01521"></a><span class="lineno"> 1521</span>    *why = fill(file);</div>
+<div class="line"><a id="l01522" name="l01522"></a><span class="lineno"> 1522</span>    <span class="keywordflow">if</span> (why-&gt;isEmpty() &amp;&amp; !<a class="code hl_function" href="class_util.html#aa000e615528288c62c3388bfbad759ee">Util::syncToDisk</a>(file)) {</div>
+<div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span>      *why = QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot write %1: %2&quot;</span>)</div>
+<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span>                 .arg(path, file.errorString());</div>
+<div class="line"><a id="l01525" name="l01525"></a><span class="lineno"> 1525</span>    }</div>
+<div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span>    staged.identity = identityOf(file);</div>
+<div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
+<div class="line"><a id="l01528" name="l01528"></a><span class="lineno"> 1528</span>    <span class="comment">// Closed and unlinked by a co-writer before the rename, the temporary&#39;s</span></div>
+<div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span>    <span class="comment">// inode number would be free, and ext4 hands it to the next file made:</span></div>
+<div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span>    <span class="comment">// the very file swapped in would then pass the check below. Windows</span></div>
+<div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>    <span class="comment">// cannot rename an open file, and NTFS does not reuse a file index so.</span></div>
+<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>    <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keywordtype">int</span> fd = ::dup(file.handle()); fd &gt;= 0) {</div>
+<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>      staged.pin =</div>
+<div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>          std::shared_ptr&lt;void&gt;(<span class="keyword">nullptr</span>, [fd](<span class="keywordtype">void</span> *) { ::close(fd); });</div>
+<div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>    }</div>
+<div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01537" name="l01537"></a><span class="lineno"> 1537</span>  }</div>
+<div class="line"><a id="l01538" name="l01538"></a><span class="lineno"> 1538</span>  <span class="keywordflow">if</span> (!why-&gt;isEmpty()) {</div>
+<div class="line"><a id="l01539" name="l01539"></a><span class="lineno"> 1539</span>    QFile::remove(staged.path);</div>
+<div class="line"><a id="l01540" name="l01540"></a><span class="lineno"> 1540</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01541" name="l01541"></a><span class="lineno"> 1541</span>  }</div>
+<div class="line"><a id="l01542" name="l01542"></a><span class="lineno"> 1542</span>  <span class="keywordflow">return</span> staged;</div>
+<div class="line"><a id="l01543" name="l01543"></a><span class="lineno"> 1543</span>}</div>
+<div class="line"><a id="l01544" name="l01544"></a><span class="lineno"> 1544</span></div>
+<div class="line"><a id="l01546" name="l01546"></a><span class="lineno"> 1546</span><span class="keyword">auto</span> placementError(<span class="keyword">const</span> QString &amp;path, <span class="keywordtype">bool</span> replace) -&gt; QString {</div>
+<div class="line"><a id="l01547" name="l01547"></a><span class="lineno"> 1547</span>  <span class="keywordflow">if</span> (replace) {</div>
+<div class="line"><a id="l01548" name="l01548"></a><span class="lineno"> 1548</span>    <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Failed to replace %1.&quot;</span>)</div>
+<div class="line"><a id="l01549" name="l01549"></a><span class="lineno"> 1549</span>        .arg(path);</div>
+<div class="line"><a id="l01550" name="l01550"></a><span class="lineno"> 1550</span>  }</div>
+<div class="line"><a id="l01551" name="l01551"></a><span class="lineno"> 1551</span>  <span class="keyword">const</span> QFileInfo taken(path);</div>
+<div class="line"><a id="l01552" name="l01552"></a><span class="lineno"> 1552</span>  <span class="keywordflow">return</span> taken.exists() || taken.isSymLink()</div>
+<div class="line"><a id="l01553" name="l01553"></a><span class="lineno"> 1553</span>             ? QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;%1 already exists.&quot;</span>)</div>
+<div class="line"><a id="l01554" name="l01554"></a><span class="lineno"> 1554</span>                   .arg(path)</div>
+<div class="line"><a id="l01555" name="l01555"></a><span class="lineno"> 1555</span>             : QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Failed to write %1.&quot;</span>)</div>
+<div class="line"><a id="l01556" name="l01556"></a><span class="lineno"> 1556</span>                   .arg(path);</div>
+<div class="line"><a id="l01557" name="l01557"></a><span class="lineno"> 1557</span>}</div>
+<div class="line"><a id="l01558" name="l01558"></a><span class="lineno"> 1558</span></div>
+<div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span><span class="keyword">auto</span> isTheFileWritten(<span class="keyword">const</span> QString &amp;path, <span class="keyword">const</span> FileIdentity &amp;written)</div>
+<div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span>    -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01568" name="l01568"></a><span class="lineno"> 1568</span>  QFile placed;</div>
+<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612">Util::openRegularFile</a>(path, placed)) {</div>
+<div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01571" name="l01571"></a><span class="lineno"> 1571</span>  }</div>
+<div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span>  <span class="keyword">const</span> FileIdentity there = identityOf(placed);</div>
+<div class="line"><a id="l01573" name="l01573"></a><span class="lineno"> 1573</span>  <span class="keywordflow">if</span> (!written.known || !there.known) {</div>
+<div class="line"><a id="l01574" name="l01574"></a><span class="lineno"> 1574</span>    qCWarning(lcQtPass) &lt;&lt; <span class="stringliteral">&quot;Cannot tell whether&quot;</span> &lt;&lt; path</div>
+<div class="line"><a id="l01575" name="l01575"></a><span class="lineno"> 1575</span>                        &lt;&lt; <span class="stringliteral">&quot;is the file that was written here&quot;</span>;</div>
+<div class="line"><a id="l01576" name="l01576"></a><span class="lineno"> 1576</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01577" name="l01577"></a><span class="lineno"> 1577</span>  }</div>
+<div class="line"><a id="l01578" name="l01578"></a><span class="lineno"> 1578</span>  <span class="keywordflow">return</span> there == written;</div>
+<div class="line"><a id="l01579" name="l01579"></a><span class="lineno"> 1579</span>}</div>
+<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span> </div>
+<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>} <span class="comment">// namespace</span></div>
+<div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span> </div>
+<div class="foldopen" id="foldopen01583" data-start="{" data-end="}">
+<div class="line"><a id="l01583" name="l01583"></a><span class="lineno"><a class="line" href="class_util.html#add1e4f70c6d7630ace5e350b30f78907"> 1583</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#add1e4f70c6d7630ace5e350b30f78907">Util::stageFileReplacing</a>(<span class="keyword">const</span> QString &amp;path, <span class="keywordtype">bool</span> replace,</div>
+<div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>                              <span class="keyword">const</span> <a class="code hl_typedef" href="class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> &amp;fill, QString *error) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01585" name="l01585"></a><span class="lineno"> 1585</span>  QString why;</div>
+<div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>  <span class="keyword">const</span> std::optional&lt;Staged&gt; staged = stageNextTo(path, fill, &amp;why);</div>
+<div class="line"><a id="l01587" name="l01587"></a><span class="lineno"> 1587</span>  <span class="keywordflow">if</span> (!staged) {</div>
+<div class="line"><a id="l01588" name="l01588"></a><span class="lineno"> 1588</span>    <span class="keywordflow">return</span> fail(error, why);</div>
+<div class="line"><a id="l01589" name="l01589"></a><span class="lineno"> 1589</span>  }</div>
+<div class="line"><a id="l01590" name="l01590"></a><span class="lineno"> 1590</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="util_8cpp.html#aad0da0cf823d706ca735e7b968c93eeb">s_beforePlacingForTests</a>) {</div>
+<div class="line"><a id="l01591" name="l01591"></a><span class="lineno"> 1591</span>    <a class="code hl_variable" href="util_8cpp.html#aad0da0cf823d706ca735e7b968c93eeb">s_beforePlacingForTests</a>(staged-&gt;path);</div>
+<div class="line"><a id="l01592" name="l01592"></a><span class="lineno"> 1592</span>  }</div>
+<div class="line"><a id="l01593" name="l01593"></a><span class="lineno"> 1593</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640">replaceFile</a>(staged-&gt;path, path, replace)) {</div>
+<div class="line"><a id="l01594" name="l01594"></a><span class="lineno"> 1594</span>    QFile::remove(staged-&gt;path);</div>
+<div class="line"><a id="l01595" name="l01595"></a><span class="lineno"> 1595</span>    <span class="keywordflow">return</span> fail(error, placementError(path, replace));</div>
+<div class="line"><a id="l01596" name="l01596"></a><span class="lineno"> 1596</span>  }</div>
+<div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span>  <span class="comment">// A mismatch is reported and left: removing by name could take another</span></div>
+<div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span>  <span class="comment">// writer&#39;s file.</span></div>
+<div class="line"><a id="l01599" name="l01599"></a><span class="lineno"> 1599</span>  <span class="keywordflow">if</span> (!isTheFileWritten(path, staged-&gt;identity)) {</div>
+<div class="line"><a id="l01600" name="l01600"></a><span class="lineno"> 1600</span>    <span class="keywordflow">return</span> fail(</div>
+<div class="line"><a id="l01601" name="l01601"></a><span class="lineno"> 1601</span>        error,</div>
+<div class="line"><a id="l01602" name="l01602"></a><span class="lineno"> 1602</span>        QCoreApplication::translate(</div>
+<div class="line"><a id="l01603" name="l01603"></a><span class="lineno"> 1603</span>            <span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;%1 was swapped for another file while it was written.&quot;</span>)</div>
+<div class="line"><a id="l01604" name="l01604"></a><span class="lineno"> 1604</span>            .arg(path));</div>
+<div class="line"><a id="l01605" name="l01605"></a><span class="lineno"> 1605</span>  }</div>
+<div class="line"><a id="l01606" name="l01606"></a><span class="lineno"> 1606</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01607" name="l01607"></a><span class="lineno"> 1607</span>}</div>
 </div>
-<div class="line"><a id="l01588" name="l01588"></a><span class="lineno"> 1588</span> </div>
-<div class="foldopen" id="foldopen01589" data-start="{" data-end="}">
-<div class="line"><a id="l01589" name="l01589"></a><span class="lineno"><a class="line" href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c"> 1589</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c">Util::writeFileReplacing</a>(<span class="keyword">const</span> QString &amp;path, <span class="keyword">const</span> QByteArray &amp;bytes,</div>
-<div class="line"><a id="l01590" name="l01590"></a><span class="lineno"> 1590</span>                              <span class="keywordtype">bool</span> replace, QString *error) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01591" name="l01591"></a><span class="lineno"> 1591</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#add1e4f70c6d7630ace5e350b30f78907">stageFileReplacing</a>(</div>
-<div class="line"><a id="l01592" name="l01592"></a><span class="lineno"> 1592</span>      path, replace,</div>
-<div class="line"><a id="l01593" name="l01593"></a><span class="lineno"> 1593</span>      [&amp;path, &amp;bytes](QFileDevice &amp;staged) -&gt; QString {</div>
-<div class="line"><a id="l01594" name="l01594"></a><span class="lineno"> 1594</span>        <span class="keywordflow">if</span> (staged.write(bytes) != bytes.size()) {</div>
-<div class="line"><a id="l01595" name="l01595"></a><span class="lineno"> 1595</span>          <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot write %1: %2&quot;</span>)</div>
-<div class="line"><a id="l01596" name="l01596"></a><span class="lineno"> 1596</span>              .arg(path, staged.errorString());</div>
-<div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span>        }</div>
-<div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span>        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l01599" name="l01599"></a><span class="lineno"> 1599</span>      },</div>
-<div class="line"><a id="l01600" name="l01600"></a><span class="lineno"> 1600</span>      error);</div>
-<div class="line"><a id="l01601" name="l01601"></a><span class="lineno"> 1601</span>}</div>
-</div>
-<div class="line"><a id="l01602" name="l01602"></a><span class="lineno"> 1602</span> </div>
-<div class="foldopen" id="foldopen01603" data-start="{" data-end="}">
-<div class="line"><a id="l01603" name="l01603"></a><span class="lineno"><a class="line" href="class_util.html#ac134662c3a71ca1cd0ec04642e9a6255"> 1603</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#ac134662c3a71ca1cd0ec04642e9a6255">Util::copyFileReplacing</a>(<span class="keyword">const</span> QString &amp;src, <span class="keyword">const</span> QString &amp;dst,</div>
-<div class="line"><a id="l01604" name="l01604"></a><span class="lineno"> 1604</span>                             <span class="keywordtype">bool</span> replace, QString *error) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01605" name="l01605"></a><span class="lineno"> 1605</span>  QFile in;</div>
-<div class="line"><a id="l01606" name="l01606"></a><span class="lineno"> 1606</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612">openRegularFile</a>(src, in)) {</div>
-<div class="line"><a id="l01607" name="l01607"></a><span class="lineno"> 1607</span>    <span class="keywordflow">if</span> (error)</div>
-<div class="line"><a id="l01608" name="l01608"></a><span class="lineno"> 1608</span>      *error = QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot read %1.&quot;</span>).arg(src);</div>
-<div class="line"><a id="l01609" name="l01609"></a><span class="lineno"> 1609</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01610" name="l01610"></a><span class="lineno"> 1610</span>  }</div>
+<div class="line"><a id="l01608" name="l01608"></a><span class="lineno"> 1608</span> </div>
+<div class="foldopen" id="foldopen01609" data-start="{" data-end="}">
+<div class="line"><a id="l01609" name="l01609"></a><span class="lineno"><a class="line" href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c"> 1609</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c">Util::writeFileReplacing</a>(<span class="keyword">const</span> QString &amp;path, <span class="keyword">const</span> QByteArray &amp;bytes,</div>
+<div class="line"><a id="l01610" name="l01610"></a><span class="lineno"> 1610</span>                              <span class="keywordtype">bool</span> replace, QString *error) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a id="l01611" name="l01611"></a><span class="lineno"> 1611</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#add1e4f70c6d7630ace5e350b30f78907">stageFileReplacing</a>(</div>
-<div class="line"><a id="l01612" name="l01612"></a><span class="lineno"> 1612</span>      dst, replace,</div>
-<div class="line"><a id="l01613" name="l01613"></a><span class="lineno"> 1613</span>      [&amp;src, &amp;dst, &amp;in](QFileDevice &amp;staged) -&gt; QString {</div>
-<div class="line"><a id="l01614" name="l01614"></a><span class="lineno"> 1614</span>        <span class="keywordtype">char</span> buf[64 * 1024];</div>
-<div class="line"><a id="l01615" name="l01615"></a><span class="lineno"> 1615</span>        <span class="keywordflow">for</span> (;;) {</div>
-<div class="line"><a id="l01616" name="l01616"></a><span class="lineno"> 1616</span>          <span class="keyword">const</span> qint64 n = in.read(buf, <span class="keyword">sizeof</span> buf);</div>
-<div class="line"><a id="l01617" name="l01617"></a><span class="lineno"> 1617</span>          <span class="keywordflow">if</span> (n &lt; 0) {</div>
-<div class="line"><a id="l01618" name="l01618"></a><span class="lineno"> 1618</span>            <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot read %1: %2&quot;</span>)</div>
-<div class="line"><a id="l01619" name="l01619"></a><span class="lineno"> 1619</span>                .arg(src, in.errorString());</div>
-<div class="line"><a id="l01620" name="l01620"></a><span class="lineno"> 1620</span>          }</div>
-<div class="line"><a id="l01621" name="l01621"></a><span class="lineno"> 1621</span>          <span class="keywordflow">if</span> (n == 0) {</div>
-<div class="line"><a id="l01622" name="l01622"></a><span class="lineno"> 1622</span>            <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l01623" name="l01623"></a><span class="lineno"> 1623</span>          }</div>
-<div class="line"><a id="l01624" name="l01624"></a><span class="lineno"> 1624</span>          <span class="keywordflow">if</span> (staged.write(buf, n) != n) {</div>
-<div class="line"><a id="l01625" name="l01625"></a><span class="lineno"> 1625</span>            <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot write %1: %2&quot;</span>)</div>
-<div class="line"><a id="l01626" name="l01626"></a><span class="lineno"> 1626</span>                .arg(dst, staged.errorString());</div>
-<div class="line"><a id="l01627" name="l01627"></a><span class="lineno"> 1627</span>          }</div>
-<div class="line"><a id="l01628" name="l01628"></a><span class="lineno"> 1628</span>        }</div>
-<div class="line"><a id="l01629" name="l01629"></a><span class="lineno"> 1629</span>      },</div>
-<div class="line"><a id="l01630" name="l01630"></a><span class="lineno"> 1630</span>      error);</div>
-<div class="line"><a id="l01631" name="l01631"></a><span class="lineno"> 1631</span>}</div>
+<div class="line"><a id="l01612" name="l01612"></a><span class="lineno"> 1612</span>      path, replace,</div>
+<div class="line"><a id="l01613" name="l01613"></a><span class="lineno"> 1613</span>      [&amp;path, &amp;bytes](QFileDevice &amp;staged) -&gt; QString {</div>
+<div class="line"><a id="l01614" name="l01614"></a><span class="lineno"> 1614</span>        <span class="keywordflow">if</span> (staged.write(bytes) != bytes.size()) {</div>
+<div class="line"><a id="l01615" name="l01615"></a><span class="lineno"> 1615</span>          <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot write %1: %2&quot;</span>)</div>
+<div class="line"><a id="l01616" name="l01616"></a><span class="lineno"> 1616</span>              .arg(path, staged.errorString());</div>
+<div class="line"><a id="l01617" name="l01617"></a><span class="lineno"> 1617</span>        }</div>
+<div class="line"><a id="l01618" name="l01618"></a><span class="lineno"> 1618</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l01619" name="l01619"></a><span class="lineno"> 1619</span>      },</div>
+<div class="line"><a id="l01620" name="l01620"></a><span class="lineno"> 1620</span>      error);</div>
+<div class="line"><a id="l01621" name="l01621"></a><span class="lineno"> 1621</span>}</div>
 </div>
-<div class="line"><a id="l01632" name="l01632"></a><span class="lineno"> 1632</span> </div>
-<div class="line"><a id="l01633" name="l01633"></a><span class="lineno"> 1633</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l01634" name="l01634"></a><span class="lineno"> 1634</span></div>
-<div class="line"><a id="l01639" name="l01639"></a><span class="lineno"> 1639</span><span class="keyword">auto</span> removeEntry(<span class="keyword">const</span> QFileInfo &amp;entry) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01640" name="l01640"></a><span class="lineno"> 1640</span>  <span class="keyword">const</span> QString path = entry.filePath();</div>
-<div class="line"><a id="l01641" name="l01641"></a><span class="lineno"> 1641</span>  <span class="keywordflow">if</span> (isLink(entry)) {</div>
-<div class="line"><a id="l01642" name="l01642"></a><span class="lineno"> 1642</span>    <span class="keywordflow">if</span> (QFile::remove(path) || QDir().rmdir(path)) {</div>
-<div class="line"><a id="l01643" name="l01643"></a><span class="lineno"> 1643</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01644" name="l01644"></a><span class="lineno"> 1644</span>    }</div>
-<div class="line"><a id="l01645" name="l01645"></a><span class="lineno"> 1645</span>    qCWarning(lcQtPass) &lt;&lt; <span class="stringliteral">&quot;Could not remove link&quot;</span> &lt;&lt; path;</div>
-<div class="line"><a id="l01646" name="l01646"></a><span class="lineno"> 1646</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01647" name="l01647"></a><span class="lineno"> 1647</span>  }</div>
-<div class="line"><a id="l01648" name="l01648"></a><span class="lineno"> 1648</span>  <span class="keywordflow">if</span> (QFile::remove(path)) {</div>
-<div class="line"><a id="l01649" name="l01649"></a><span class="lineno"> 1649</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01650" name="l01650"></a><span class="lineno"> 1650</span>  }</div>
-<div class="line"><a id="l01651" name="l01651"></a><span class="lineno"> 1651</span>  <span class="keyword">const</span> QFile::Permissions perms = QFile::permissions(path);</div>
-<div class="line"><a id="l01652" name="l01652"></a><span class="lineno"> 1652</span>  <span class="keywordflow">if</span> (!perms.testFlag(QFile::WriteUser) &amp;&amp;</div>
-<div class="line"><a id="l01653" name="l01653"></a><span class="lineno"> 1653</span>      QFile::setPermissions(path, perms | QFile::WriteUser) &amp;&amp;</div>
-<div class="line"><a id="l01654" name="l01654"></a><span class="lineno"> 1654</span>      QFile::remove(path)) {</div>
-<div class="line"><a id="l01655" name="l01655"></a><span class="lineno"> 1655</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01656" name="l01656"></a><span class="lineno"> 1656</span>  }</div>
-<div class="line"><a id="l01657" name="l01657"></a><span class="lineno"> 1657</span>  qCWarning(lcQtPass) &lt;&lt; <span class="stringliteral">&quot;Could not remove&quot;</span> &lt;&lt; path;</div>
-<div class="line"><a id="l01658" name="l01658"></a><span class="lineno"> 1658</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01659" name="l01659"></a><span class="lineno"> 1659</span>}</div>
-<div class="line"><a id="l01660" name="l01660"></a><span class="lineno"> 1660</span> </div>
-<div class="line"><a id="l01661" name="l01661"></a><span class="lineno"> 1661</span>} <span class="comment">// namespace</span></div>
-<div class="line"><a id="l01662" name="l01662"></a><span class="lineno"> 1662</span> </div>
-<div class="foldopen" id="foldopen01663" data-start="{" data-end="}">
-<div class="line"><a id="l01663" name="l01663"></a><span class="lineno"><a class="line" href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c"> 1663</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c">Util::removeTree</a>(<span class="keyword">const</span> QString &amp;dir) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l01664" name="l01664"></a><span class="lineno"> 1664</span>  <span class="comment">// A trailing separator makes lstat follow a link (&quot;link/&quot; is the target</span></div>
-<div class="line"><a id="l01665" name="l01665"></a><span class="lineno"> 1665</span>  <span class="comment">// directory); the link itself is what this is about.</span></div>
-<div class="line"><a id="l01666" name="l01666"></a><span class="lineno"> 1666</span>  <span class="keyword">const</span> QString path = QDir::cleanPath(dir);</div>
-<div class="line"><a id="l01667" name="l01667"></a><span class="lineno"> 1667</span>  <span class="keyword">const</span> QFileInfo top(path);</div>
-<div class="line"><a id="l01668" name="l01668"></a><span class="lineno"> 1668</span>  <span class="keywordflow">if</span> (isLink(top)) {</div>
-<div class="line"><a id="l01669" name="l01669"></a><span class="lineno"> 1669</span>    <span class="comment">// rm -rf on a link removes the link.</span></div>
-<div class="line"><a id="l01670" name="l01670"></a><span class="lineno"> 1670</span>    <span class="keywordflow">return</span> QFile::remove(path) || QDir().rmdir(path);</div>
-<div class="line"><a id="l01671" name="l01671"></a><span class="lineno"> 1671</span>  }</div>
-<div class="line"><a id="l01672" name="l01672"></a><span class="lineno"> 1672</span>  <span class="keywordflow">if</span> (!top.isDir()) {</div>
-<div class="line"><a id="l01673" name="l01673"></a><span class="lineno"> 1673</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01674" name="l01674"></a><span class="lineno"> 1674</span>  }</div>
-<div class="line"><a id="l01675" name="l01675"></a><span class="lineno"> 1675</span>  <span class="keywordtype">bool</span> ok = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01676" name="l01676"></a><span class="lineno"> 1676</span>  <span class="keyword">const</span> QFileInfoList entries =</div>
-<div class="line"><a id="l01677" name="l01677"></a><span class="lineno"> 1677</span>      QDir(path).entryInfoList(QDir::Dirs | QDir::Files | QDir::Hidden |</div>
-<div class="line"><a id="l01678" name="l01678"></a><span class="lineno"> 1678</span>                                   QDir::System | QDir::NoDotAndDotDot,</div>
-<div class="line"><a id="l01679" name="l01679"></a><span class="lineno"> 1679</span>                               QDir::Name);</div>
-<div class="line"><a id="l01680" name="l01680"></a><span class="lineno"> 1680</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QFileInfo &amp;entry : entries) {</div>
-<div class="line"><a id="l01681" name="l01681"></a><span class="lineno"> 1681</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> removed = entry.isDir() &amp;&amp; !isLink(entry)</div>
-<div class="line"><a id="l01682" name="l01682"></a><span class="lineno"> 1682</span>                             ? <a class="code hl_function" href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c">removeTree</a>(entry.filePath())</div>
-<div class="line"><a id="l01683" name="l01683"></a><span class="lineno"> 1683</span>                             : removeEntry(entry);</div>
-<div class="line"><a id="l01684" name="l01684"></a><span class="lineno"> 1684</span>    ok = removed &amp;&amp; ok;</div>
-<div class="line"><a id="l01685" name="l01685"></a><span class="lineno"> 1685</span>  }</div>
-<div class="line"><a id="l01686" name="l01686"></a><span class="lineno"> 1686</span>  <span class="keywordflow">return</span> ok &amp;&amp; QDir().rmdir(path);</div>
-<div class="line"><a id="l01687" name="l01687"></a><span class="lineno"> 1687</span>}</div>
+<div class="line"><a id="l01622" name="l01622"></a><span class="lineno"> 1622</span> </div>
+<div class="foldopen" id="foldopen01623" data-start="{" data-end="}">
+<div class="line"><a id="l01623" name="l01623"></a><span class="lineno"><a class="line" href="class_util.html#ac134662c3a71ca1cd0ec04642e9a6255"> 1623</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#ac134662c3a71ca1cd0ec04642e9a6255">Util::copyFileReplacing</a>(<span class="keyword">const</span> QString &amp;src, <span class="keyword">const</span> QString &amp;dst,</div>
+<div class="line"><a id="l01624" name="l01624"></a><span class="lineno"> 1624</span>                             <span class="keywordtype">bool</span> replace, QString *error) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01625" name="l01625"></a><span class="lineno"> 1625</span>  QFile in;</div>
+<div class="line"><a id="l01626" name="l01626"></a><span class="lineno"> 1626</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612">openRegularFile</a>(src, in)) {</div>
+<div class="line"><a id="l01627" name="l01627"></a><span class="lineno"> 1627</span>    <span class="keywordflow">if</span> (error)</div>
+<div class="line"><a id="l01628" name="l01628"></a><span class="lineno"> 1628</span>      *error = QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot read %1.&quot;</span>).arg(src);</div>
+<div class="line"><a id="l01629" name="l01629"></a><span class="lineno"> 1629</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01630" name="l01630"></a><span class="lineno"> 1630</span>  }</div>
+<div class="line"><a id="l01631" name="l01631"></a><span class="lineno"> 1631</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#add1e4f70c6d7630ace5e350b30f78907">stageFileReplacing</a>(</div>
+<div class="line"><a id="l01632" name="l01632"></a><span class="lineno"> 1632</span>      dst, replace,</div>
+<div class="line"><a id="l01633" name="l01633"></a><span class="lineno"> 1633</span>      [&amp;src, &amp;dst, &amp;in](QFileDevice &amp;staged) -&gt; QString {</div>
+<div class="line"><a id="l01634" name="l01634"></a><span class="lineno"> 1634</span>        <span class="keywordtype">char</span> buf[64 * 1024];</div>
+<div class="line"><a id="l01635" name="l01635"></a><span class="lineno"> 1635</span>        <span class="keywordflow">for</span> (;;) {</div>
+<div class="line"><a id="l01636" name="l01636"></a><span class="lineno"> 1636</span>          <span class="keyword">const</span> qint64 n = in.read(buf, <span class="keyword">sizeof</span> buf);</div>
+<div class="line"><a id="l01637" name="l01637"></a><span class="lineno"> 1637</span>          <span class="keywordflow">if</span> (n &lt; 0) {</div>
+<div class="line"><a id="l01638" name="l01638"></a><span class="lineno"> 1638</span>            <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot read %1: %2&quot;</span>)</div>
+<div class="line"><a id="l01639" name="l01639"></a><span class="lineno"> 1639</span>                .arg(src, in.errorString());</div>
+<div class="line"><a id="l01640" name="l01640"></a><span class="lineno"> 1640</span>          }</div>
+<div class="line"><a id="l01641" name="l01641"></a><span class="lineno"> 1641</span>          <span class="keywordflow">if</span> (n == 0) {</div>
+<div class="line"><a id="l01642" name="l01642"></a><span class="lineno"> 1642</span>            <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l01643" name="l01643"></a><span class="lineno"> 1643</span>          }</div>
+<div class="line"><a id="l01644" name="l01644"></a><span class="lineno"> 1644</span>          <span class="keywordflow">if</span> (staged.write(buf, n) != n) {</div>
+<div class="line"><a id="l01645" name="l01645"></a><span class="lineno"> 1645</span>            <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Util&quot;</span>, <span class="stringliteral">&quot;Cannot write %1: %2&quot;</span>)</div>
+<div class="line"><a id="l01646" name="l01646"></a><span class="lineno"> 1646</span>                .arg(dst, staged.errorString());</div>
+<div class="line"><a id="l01647" name="l01647"></a><span class="lineno"> 1647</span>          }</div>
+<div class="line"><a id="l01648" name="l01648"></a><span class="lineno"> 1648</span>        }</div>
+<div class="line"><a id="l01649" name="l01649"></a><span class="lineno"> 1649</span>      },</div>
+<div class="line"><a id="l01650" name="l01650"></a><span class="lineno"> 1650</span>      error);</div>
+<div class="line"><a id="l01651" name="l01651"></a><span class="lineno"> 1651</span>}</div>
+</div>
+<div class="line"><a id="l01652" name="l01652"></a><span class="lineno"> 1652</span> </div>
+<div class="line"><a id="l01653" name="l01653"></a><span class="lineno"> 1653</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l01654" name="l01654"></a><span class="lineno"> 1654</span></div>
+<div class="line"><a id="l01659" name="l01659"></a><span class="lineno"> 1659</span><span class="keyword">auto</span> removeEntry(<span class="keyword">const</span> QFileInfo &amp;entry) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01660" name="l01660"></a><span class="lineno"> 1660</span>  <span class="keyword">const</span> QString path = entry.filePath();</div>
+<div class="line"><a id="l01661" name="l01661"></a><span class="lineno"> 1661</span>  <span class="keywordflow">if</span> (isLink(entry)) {</div>
+<div class="line"><a id="l01662" name="l01662"></a><span class="lineno"> 1662</span>    <span class="keywordflow">if</span> (QFile::remove(path) || QDir().rmdir(path)) {</div>
+<div class="line"><a id="l01663" name="l01663"></a><span class="lineno"> 1663</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01664" name="l01664"></a><span class="lineno"> 1664</span>    }</div>
+<div class="line"><a id="l01665" name="l01665"></a><span class="lineno"> 1665</span>    qCWarning(lcQtPass) &lt;&lt; <span class="stringliteral">&quot;Could not remove link&quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l01666" name="l01666"></a><span class="lineno"> 1666</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01667" name="l01667"></a><span class="lineno"> 1667</span>  }</div>
+<div class="line"><a id="l01668" name="l01668"></a><span class="lineno"> 1668</span>  <span class="keywordflow">if</span> (QFile::remove(path)) {</div>
+<div class="line"><a id="l01669" name="l01669"></a><span class="lineno"> 1669</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01670" name="l01670"></a><span class="lineno"> 1670</span>  }</div>
+<div class="line"><a id="l01671" name="l01671"></a><span class="lineno"> 1671</span>  <span class="keyword">const</span> QFile::Permissions perms = QFile::permissions(path);</div>
+<div class="line"><a id="l01672" name="l01672"></a><span class="lineno"> 1672</span>  <span class="keywordflow">if</span> (!perms.testFlag(QFile::WriteUser) &amp;&amp;</div>
+<div class="line"><a id="l01673" name="l01673"></a><span class="lineno"> 1673</span>      QFile::setPermissions(path, perms | QFile::WriteUser) &amp;&amp;</div>
+<div class="line"><a id="l01674" name="l01674"></a><span class="lineno"> 1674</span>      QFile::remove(path)) {</div>
+<div class="line"><a id="l01675" name="l01675"></a><span class="lineno"> 1675</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01676" name="l01676"></a><span class="lineno"> 1676</span>  }</div>
+<div class="line"><a id="l01677" name="l01677"></a><span class="lineno"> 1677</span>  qCWarning(lcQtPass) &lt;&lt; <span class="stringliteral">&quot;Could not remove&quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l01678" name="l01678"></a><span class="lineno"> 1678</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01679" name="l01679"></a><span class="lineno"> 1679</span>}</div>
+<div class="line"><a id="l01680" name="l01680"></a><span class="lineno"> 1680</span> </div>
+<div class="line"><a id="l01681" name="l01681"></a><span class="lineno"> 1681</span>} <span class="comment">// namespace</span></div>
+<div class="line"><a id="l01682" name="l01682"></a><span class="lineno"> 1682</span> </div>
+<div class="foldopen" id="foldopen01683" data-start="{" data-end="}">
+<div class="line"><a id="l01683" name="l01683"></a><span class="lineno"><a class="line" href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c"> 1683</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c">Util::removeTree</a>(<span class="keyword">const</span> QString &amp;dir) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l01684" name="l01684"></a><span class="lineno"> 1684</span>  <span class="comment">// A trailing separator makes lstat follow a link (&quot;link/&quot; is the target</span></div>
+<div class="line"><a id="l01685" name="l01685"></a><span class="lineno"> 1685</span>  <span class="comment">// directory); the link itself is what this is about.</span></div>
+<div class="line"><a id="l01686" name="l01686"></a><span class="lineno"> 1686</span>  <span class="keyword">const</span> QString path = QDir::cleanPath(dir);</div>
+<div class="line"><a id="l01687" name="l01687"></a><span class="lineno"> 1687</span>  <span class="keyword">const</span> QFileInfo top(path);</div>
+<div class="line"><a id="l01688" name="l01688"></a><span class="lineno"> 1688</span>  <span class="keywordflow">if</span> (isLink(top)) {</div>
+<div class="line"><a id="l01689" name="l01689"></a><span class="lineno"> 1689</span>    <span class="comment">// rm -rf on a link removes the link.</span></div>
+<div class="line"><a id="l01690" name="l01690"></a><span class="lineno"> 1690</span>    <span class="keywordflow">return</span> QFile::remove(path) || QDir().rmdir(path);</div>
+<div class="line"><a id="l01691" name="l01691"></a><span class="lineno"> 1691</span>  }</div>
+<div class="line"><a id="l01692" name="l01692"></a><span class="lineno"> 1692</span>  <span class="keywordflow">if</span> (!top.isDir()) {</div>
+<div class="line"><a id="l01693" name="l01693"></a><span class="lineno"> 1693</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01694" name="l01694"></a><span class="lineno"> 1694</span>  }</div>
+<div class="line"><a id="l01695" name="l01695"></a><span class="lineno"> 1695</span>  <span class="keywordtype">bool</span> ok = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01696" name="l01696"></a><span class="lineno"> 1696</span>  <span class="keyword">const</span> QFileInfoList entries =</div>
+<div class="line"><a id="l01697" name="l01697"></a><span class="lineno"> 1697</span>      QDir(path).entryInfoList(QDir::Dirs | QDir::Files | QDir::Hidden |</div>
+<div class="line"><a id="l01698" name="l01698"></a><span class="lineno"> 1698</span>                                   QDir::System | QDir::NoDotAndDotDot,</div>
+<div class="line"><a id="l01699" name="l01699"></a><span class="lineno"> 1699</span>                               QDir::Name);</div>
+<div class="line"><a id="l01700" name="l01700"></a><span class="lineno"> 1700</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QFileInfo &amp;entry : entries) {</div>
+<div class="line"><a id="l01701" name="l01701"></a><span class="lineno"> 1701</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> removed = entry.isDir() &amp;&amp; !isLink(entry)</div>
+<div class="line"><a id="l01702" name="l01702"></a><span class="lineno"> 1702</span>                             ? <a class="code hl_function" href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c">removeTree</a>(entry.filePath())</div>
+<div class="line"><a id="l01703" name="l01703"></a><span class="lineno"> 1703</span>                             : removeEntry(entry);</div>
+<div class="line"><a id="l01704" name="l01704"></a><span class="lineno"> 1704</span>    ok = removed &amp;&amp; ok;</div>
+<div class="line"><a id="l01705" name="l01705"></a><span class="lineno"> 1705</span>  }</div>
+<div class="line"><a id="l01706" name="l01706"></a><span class="lineno"> 1706</span>  <span class="keywordflow">return</span> ok &amp;&amp; QDir().rmdir(path);</div>
+<div class="line"><a id="l01707" name="l01707"></a><span class="lineno"> 1707</span>}</div>
 </div>
 <div class="ttc" id="aappsettings_8h_html"><div class="ttname"><a href="appsettings_8h.html">appsettings.h</a></div><div class="ttdoc">AppSettings, the value object holding every flat QtPass setting.</div></div>
 <div class="ttc" id="aclass_executor_html_a3ee0297a7c8875bfc7d93197463fde5b"><div class="ttname"><a href="class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b">Executor::childUmask</a></div><div class="ttdeci">static auto childUmask() -&gt; int</div><div class="ttdoc">The umask setChildUmask() set.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00205">executor.cpp:205</a></div></div>
@@ -1782,7 +1804,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('util_8cpp_sour
 <div class="ttc" id="aclass_util_html_a11eb90b4a067feefd84769d336d79b10"><div class="ttname"><a href="class_util.html#a11eb90b4a067feefd84769d336d79b10">Util::passUmask</a></div><div class="ttdeci">static auto passUmask(const QString &amp;value) -&gt; int</div><div class="ttdoc">The umask pass would use for value of PASSWORD_STORE_UMASK.</div><div class="ttdef"><b>Definition</b> <a href="#l00127">util.cpp:127</a></div></div>
 <div class="ttc" id="aclass_util_html_a133c5da0c8a3f106c09977679bc615c3"><div class="ttname"><a href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a></div><div class="ttdeci">static auto protocolRegex() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match URL protocols.</div><div class="ttdef"><b>Definition</b> <a href="#l00644">util.cpp:644</a></div></div>
 <div class="ttc" id="aclass_util_html_a158b1927cee3cffacaec8d583fbf72ad"><div class="ttname"><a href="class_util.html#a158b1927cee3cffacaec8d583fbf72ad">Util::repositoryPassClimbsTo</a></div><div class="ttdeci">static auto repositoryPassClimbsTo(const QString &amp;store) -&gt; QString</div><div class="ttdoc">The repository above store that pass itself would commit to, if any.</div><div class="ttdef"><b>Definition</b> <a href="#l00180">util.cpp:180</a></div></div>
-<div class="ttc" id="aclass_util_html_a1fb5c7c915c11a832a9d5a338f8d6b8c"><div class="ttname"><a href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c">Util::removeTree</a></div><div class="ttdeci">static auto removeTree(const QString &amp;dir) -&gt; bool</div><div class="ttdoc">Remove dir and everything in it, the way rm -rf does: a symbolic link or NTFS junction,...</div><div class="ttdef"><b>Definition</b> <a href="#l01663">util.cpp:1663</a></div></div>
+<div class="ttc" id="aclass_util_html_a1fb5c7c915c11a832a9d5a338f8d6b8c"><div class="ttname"><a href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c">Util::removeTree</a></div><div class="ttdeci">static auto removeTree(const QString &amp;dir) -&gt; bool</div><div class="ttdoc">Remove dir and everything in it, the way rm -rf does: a symbolic link or NTFS junction,...</div><div class="ttdef"><b>Definition</b> <a href="#l01683">util.cpp:1683</a></div></div>
 <div class="ttc" id="aclass_util_html_a2a7a32586578a9b631bc6b2a821ce616"><div class="ttname"><a href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a></div><div class="ttdeci">static auto endsWithGpg() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match .gpg file extensions.</div><div class="ttdef"><b>Definition</b> <a href="#l00636">util.cpp:636</a></div></div>
 <div class="ttc" id="aclass_util_html_a2c23d8b7193efd20c8ef55c77b0f6542"><div class="ttname"><a href="class_util.html#a2c23d8b7193efd20c8ef55c77b0f6542">Util::hasLongUnbrokenRun</a></div><div class="ttdeci">static auto hasLongUnbrokenRun(QStringView text) -&gt; bool</div><div class="ttdoc">Whether text holds more than kMaxUnbrokenRun characters in a row without white space Qt wraps at (a n...</div><div class="ttdef"><b>Definition</b> <a href="#l00818">util.cpp:818</a></div></div>
 <div class="ttc" id="aclass_util_html_a303cdce7f33f076823a0581defb52ca4"><div class="ttname"><a href="class_util.html#a303cdce7f33f076823a0581defb52ca4">Util::isUnderLink</a></div><div class="ttdeci">static auto isUnderLink(const QString &amp;path, const QString &amp;storeRoot, bool includeSelf=true) -&gt; bool</div><div class="ttdoc">Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its...</div><div class="ttdef"><b>Definition</b> <a href="#l01059">util.cpp:1059</a></div></div>
@@ -1792,37 +1814,38 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('util_8cpp_sour
 <div class="ttc" id="aclass_util_html_a503abb6ccbf2aa18056c220b9b45284e"><div class="ttname"><a href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">Util::findPasswordStore</a></div><div class="ttdeci">static auto findPasswordStore() -&gt; QString</div><div class="ttdoc">Locate the password store directory.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">util.cpp:78</a></div></div>
 <div class="ttc" id="aclass_util_html_a5507d9913a6b54a0a1c12f1dc2704cbc"><div class="ttname"><a href="class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc">Util::configIsValid</a></div><div class="ttdeci">static auto configIsValid(const AppSettings &amp;s) -&gt; bool</div><div class="ttdoc">Verify that the required configuration is complete.</div><div class="ttdef"><b>Definition</b> <a href="#l00610">util.cpp:610</a></div></div>
 <div class="ttc" id="aclass_util_html_a57fa6e612f022589f609d8b463111a48"><div class="ttname"><a href="class_util.html#a57fa6e612f022589f609d8b463111a48">Util::boundSpaceRuns</a></div><div class="ttdeci">static auto boundSpaceRuns(const QString &amp;text) -&gt; QString</div><div class="ttdoc">text with every run of white space other than tabs and line feeds cut to kMaxSpaceRun characters,...</div><div class="ttdef"><b>Definition</b> <a href="#l00871">util.cpp:871</a></div></div>
-<div class="ttc" id="aclass_util_html_a5d33d7a093ab7e104320384f4ec3213c"><div class="ttname"><a href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c">Util::writeFileReplacing</a></div><div class="ttdeci">static auto writeFileReplacing(const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</div><div class="ttdoc">Write bytes as the file path through stageFileReplacing().</div><div class="ttdef"><b>Definition</b> <a href="#l01589">util.cpp:1589</a></div></div>
+<div class="ttc" id="aclass_util_html_a5d33d7a093ab7e104320384f4ec3213c"><div class="ttname"><a href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c">Util::writeFileReplacing</a></div><div class="ttdeci">static auto writeFileReplacing(const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</div><div class="ttdoc">Write bytes as the file path through stageFileReplacing().</div><div class="ttdef"><b>Definition</b> <a href="#l01609">util.cpp:1609</a></div></div>
 <div class="ttc" id="aclass_util_html_a6416bfebddfbc3dbfee2d66d5204964b"><div class="ttname"><a href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b">Util::regularFilesUnder</a></div><div class="ttdeci">static auto regularFilesUnder(const QString &amp;dir, const QStringList &amp;nameFilters, QStringList *skipped=nullptr, bool hiddenFiles=false, QStringList *unlisted=nullptr) -&gt; QStringList</div><div class="ttdoc">Regular files under dir whose name matches one of nameFilters, found by walking only real directories...</div><div class="ttdef"><b>Definition</b> <a href="#l00991">util.cpp:991</a></div></div>
-<div class="ttc" id="aclass_util_html_a6f14f16322c96b174b357bbad4b66b67"><div class="ttname"><a href="class_util.html#a6f14f16322c96b174b357bbad4b66b67">Util::_env</a></div><div class="ttdeci">static QProcessEnvironment _env</div><div class="ttdef"><b>Definition</b> <a href="util_8h_source.html#l00637">util.h:637</a></div></div>
+<div class="ttc" id="aclass_util_html_a6f14f16322c96b174b357bbad4b66b67"><div class="ttname"><a href="class_util.html#a6f14f16322c96b174b357bbad4b66b67">Util::_env</a></div><div class="ttdeci">static QProcessEnvironment _env</div><div class="ttdef"><b>Definition</b> <a href="util_8h_source.html#l00651">util.h:651</a></div></div>
 <div class="ttc" id="aclass_util_html_a7725c5ead1f6ecd7af1c4d85707e35b6"><div class="ttname"><a href="class_util.html#a7725c5ead1f6ecd7af1c4d85707e35b6">Util::setBeforePlacingForTests</a></div><div class="ttdeci">static void setBeforePlacingForTests(std::function&lt; void(const QString &amp;)&gt; hook)</div><div class="ttdoc">For tests: called by stageFileReplacing() with the temporary&#39;s path after it is filled and before it ...</div><div class="ttdef"><b>Definition</b> <a href="#l00338">util.cpp:338</a></div></div>
 <div class="ttc" id="aclass_util_html_a86864a9430f6903425908e76ba6079b5"><div class="ttname"><a href="class_util.html#a86864a9430f6903425908e76ba6079b5">Util::isLaunchableWebUrl</a></div><div class="ttdeci">static auto isLaunchableWebUrl(const QString &amp;value) -&gt; bool</div><div class="ttdoc">Check whether a value is a safe, launchable web URL.</div><div class="ttdef"><b>Definition</b> <a href="#l00698">util.cpp:698</a></div></div>
 <div class="ttc" id="aclass_util_html_a8925bde844b953909be54f7e2f42065e"><div class="ttname"><a href="class_util.html#a8925bde844b953909be54f7e2f42065e">Util::kMaxUnbrokenRun</a></div><div class="ttdeci">static constexpr qsizetype kMaxUnbrokenRun</div><div class="ttdoc">Longest run without white space hasLongUnbrokenRun() allows.</div><div class="ttdef"><b>Definition</b> <a href="util_8h_source.html#l00312">util.h:312</a></div></div>
 <div class="ttc" id="aclass_util_html_a8e427903937505b5e19ebbea7050494e"><div class="ttname"><a href="class_util.html#a8e427903937505b5e19ebbea7050494e">Util::readRegularFile</a></div><div class="ttdeci">static auto readRegularFile(const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</div><div class="ttdoc">Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes.</div><div class="ttdef"><b>Definition</b> <a href="#l01289">util.cpp:1289</a></div></div>
 <div class="ttc" id="aclass_util_html_a98271dbaefe09960e1eaded52fed2694"><div class="ttname"><a href="class_util.html#a98271dbaefe09960e1eaded52fed2694">Util::gitStoreVariables</a></div><div class="ttdeci">static auto gitStoreVariables(const QString &amp;store, const QString &amp;git={}, std::optional&lt; uint &gt; asUser=std::nullopt) -&gt; QList&lt; std::pair&lt; QString, QString &gt; &gt;</div><div class="ttdoc">The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...</div><div class="ttdef"><b>Definition</b> <a href="#l00430">util.cpp:430</a></div></div>
-<div class="ttc" id="aclass_util_html_aa000e615528288c62c3388bfbad759ee"><div class="ttname"><a href="class_util.html#aa000e615528288c62c3388bfbad759ee">Util::syncToDisk</a></div><div class="ttdeci">static auto syncToDisk(QFileDevice &amp;file) -&gt; bool</div><div class="ttdoc">Flush file&#39;s bytes to the device (fsync, FlushFileBuffers) before it is renamed into place,...</div><div class="ttdef"><b>Definition</b> <a href="#l01400">util.cpp:1400</a></div></div>
+<div class="ttc" id="aclass_util_html_aa000e615528288c62c3388bfbad759ee"><div class="ttname"><a href="class_util.html#aa000e615528288c62c3388bfbad759ee">Util::syncToDisk</a></div><div class="ttdeci">static auto syncToDisk(QFileDevice &amp;file) -&gt; bool</div><div class="ttdoc">Flush file&#39;s bytes to the device (fsync, FlushFileBuffers) before it is renamed into place,...</div><div class="ttdef"><b>Definition</b> <a href="#l01420">util.cpp:1420</a></div></div>
 <div class="ttc" id="aclass_util_html_aa1d5ab65c22c21fe556ba0251e035f23"><div class="ttname"><a href="class_util.html#aa1d5ab65c22c21fe556ba0251e035f23">Util::mkpathForStore</a></div><div class="ttdeci">static auto mkpathForStore(const QString &amp;path) -&gt; bool</div><div class="ttdoc">Create path and any missing parents as pass would.</div><div class="ttdef"><b>Definition</b> <a href="#l00492">util.cpp:492</a></div></div>
 <div class="ttc" id="aclass_util_html_aa3f2185f3dc49fda5ec247646da61c6f"><div class="ttname"><a href="class_util.html#aa3f2185f3dc49fda5ec247646da61c6f">Util::expandTilde</a></div><div class="ttdeci">static auto expandTilde(const QString &amp;path) -&gt; QString</div><div class="ttdoc">Expand a leading current-user tilde in a path.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">util.cpp:93</a></div></div>
 <div class="ttc" id="aclass_util_html_aa853f5f3e8e0837eb316a90720bf0b90"><div class="ttname"><a href="class_util.html#aa853f5f3e8e0837eb316a90720bf0b90">Util::displayable</a></div><div class="ttdeci">static auto displayable(const QString &amp;text, bool lineBreaks=true) -&gt; QString</div><div class="ttdoc">text with the characters that change how the text around them reads replaced by U+FFFD,...</div><div class="ttdef"><b>Definition</b> <a href="#l00738">util.cpp:738</a></div></div>
 <div class="ttc" id="aclass_util_html_aa9ae92951eb0e849c1e4f35d10c4192d"><div class="ttname"><a href="class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d">Util::isLinkedFolder</a></div><div class="ttdeci">static auto isLinkedFolder(const QString &amp;path) -&gt; bool</div><div class="ttdoc">Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul...</div><div class="ttdef"><b>Definition</b> <a href="#l01055">util.cpp:1055</a></div></div>
 <div class="ttc" id="aclass_util_html_ab0e1c40d3ccc706e0d74d246361a2640"><div class="ttname"><a href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640">Util::replaceFile</a></div><div class="ttdeci">static auto replaceFile(const QString &amp;from, const QString &amp;to, bool replace) -&gt; bool</div><div class="ttdoc">Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...</div><div class="ttdef"><b>Definition</b> <a href="#l01167">util.cpp:1167</a></div></div>
 <div class="ttc" id="aclass_util_html_ab16f1ac58307067ced38315c49f6fcba"><div class="ttname"><a href="class_util.html#ab16f1ac58307067ced38315c49f6fcba">Util::applyPassProcessDefaults</a></div><div class="ttdeci">static void applyPassProcessDefaults()</div><div class="ttdoc">Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the s...</div><div class="ttdef"><b>Definition</b> <a href="#l00111">util.cpp:111</a></div></div>
-<div class="ttc" id="aclass_util_html_ab22e866d6db73831a0414056d34f6027"><div class="ttname"><a href="class_util.html#ab22e866d6db73831a0414056d34f6027">Util::readRegularFileUnder</a></div><div class="ttdeci">static auto readRegularFileUnder(const QString &amp;root, const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</div><div class="ttdoc">readRegularFile() for a file under root, with no link followed anywhere on the way down from it.</div><div class="ttdef"><b>Definition</b> <a href="#l01298">util.cpp:1298</a></div></div>
+<div class="ttc" id="aclass_util_html_ab22e866d6db73831a0414056d34f6027"><div class="ttname"><a href="class_util.html#ab22e866d6db73831a0414056d34f6027">Util::readRegularFileUnder</a></div><div class="ttdeci">static auto readRegularFileUnder(const QString &amp;root, const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</div><div class="ttdoc">readRegularFile() for a file under root, with no link followed anywhere on the way down from it.</div><div class="ttdef"><b>Definition</b> <a href="#l01318">util.cpp:1318</a></div></div>
 <div class="ttc" id="aclass_util_html_aba7296e41ef990d5d945d5ed8cd99bd5"><div class="ttname"><a href="class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5">Util::isValidKeyId</a></div><div class="ttdeci">static auto isValidKeyId(const QString &amp;keyId) -&gt; bool</div><div class="ttdoc">Check whether a .gpg-id token may be passed to gpg as a key selector. Accepts any non-empty token tha...</div><div class="ttdef"><b>Definition</b> <a href="#l00905">util.cpp:905</a></div></div>
-<div class="ttc" id="aclass_util_html_ac134662c3a71ca1cd0ec04642e9a6255"><div class="ttname"><a href="class_util.html#ac134662c3a71ca1cd0ec04642e9a6255">Util::copyFileReplacing</a></div><div class="ttdeci">static auto copyFileReplacing(const QString &amp;src, const QString &amp;dst, bool replace, QString *error=nullptr) -&gt; bool</div><div class="ttdoc">Copy the regular file src to the name dst through stageFileReplacing(): src is read through a handle ...</div><div class="ttdef"><b>Definition</b> <a href="#l01603">util.cpp:1603</a></div></div>
+<div class="ttc" id="aclass_util_html_ac134662c3a71ca1cd0ec04642e9a6255"><div class="ttname"><a href="class_util.html#ac134662c3a71ca1cd0ec04642e9a6255">Util::copyFileReplacing</a></div><div class="ttdeci">static auto copyFileReplacing(const QString &amp;src, const QString &amp;dst, bool replace, QString *error=nullptr) -&gt; bool</div><div class="ttdoc">Copy the regular file src to the name dst through stageFileReplacing(): src is read through a handle ...</div><div class="ttdef"><b>Definition</b> <a href="#l01623">util.cpp:1623</a></div></div>
 <div class="ttc" id="aclass_util_html_ac44a8c32a9ac0fbb9d471dd115359064"><div class="ttname"><a href="class_util.html#ac44a8c32a9ac0fbb9d471dd115359064">Util::isOtherBlockBreak</a></div><div class="ttdeci">static auto isOtherBlockBreak(QChar c) -&gt; bool</div><div class="ttdoc">Whether Qt&#39;s text document starts a new block at c, besides at a line feed: a carriage return,...</div><div class="ttdef"><b>Definition</b> <a href="#l00804">util.cpp:804</a></div></div>
 <div class="ttc" id="aclass_util_html_ac8e125ea4b7210280d4395c7bac6be6b"><div class="ttname"><a href="class_util.html#ac8e125ea4b7210280d4395c7bac6be6b">Util::plainToolTip</a></div><div class="ttdeci">static auto plainToolTip(const QString &amp;text) -&gt; QString</div><div class="ttdoc">text as a tooltip that shows it as written.</div><div class="ttdef"><b>Definition</b> <a href="#l00834">util.cpp:834</a></div></div>
-<div class="ttc" id="aclass_util_html_acaa1adf59bd6ad4b1bae548134ea7f76"><div class="ttname"><a href="class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76">Util::Filler</a></div><div class="ttdeci">std::function&lt; QString(QFileDevice &amp;)&gt; Filler</div><div class="ttdoc">Fills the temporary of stageFileReplacing() through its open handle; returns why it could not (transl...</div><div class="ttdef"><b>Definition</b> <a href="util_8h_source.html#l00560">util.h:560</a></div></div>
+<div class="ttc" id="aclass_util_html_acaa1adf59bd6ad4b1bae548134ea7f76"><div class="ttname"><a href="class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76">Util::Filler</a></div><div class="ttdeci">std::function&lt; QString(QFileDevice &amp;)&gt; Filler</div><div class="ttdoc">Fills the temporary of stageFileReplacing() through its open handle; returns why it could not (transl...</div><div class="ttdef"><b>Definition</b> <a href="util_8h_source.html#l00574">util.h:574</a></div></div>
 <div class="ttc" id="aclass_util_html_aced819d4368806d046f0dc24a91843f7"><div class="ttname"><a href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a></div><div class="ttdeci">static auto newLinesRegex() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match newline characters.</div><div class="ttdef"><b>Definition</b> <a href="#l00897">util.cpp:897</a></div></div>
 <div class="ttc" id="aclass_util_html_acf5bf60f4f6eb548fb8b3c9bfa760612"><div class="ttname"><a href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612">Util::openRegularFile</a></div><div class="ttdeci">static auto openRegularFile(const QString &amp;path, QFile &amp;file) -&gt; bool</div><div class="ttdoc">Open path for reading as the regular file it is, not as what a link under that name points to: the ob...</div><div class="ttdef"><b>Definition</b> <a href="#l01207">util.cpp:1207</a></div></div>
 <div class="ttc" id="aclass_util_html_acfa7240a7682876cf78d5a44bbbb81de"><div class="ttname"><a href="class_util.html#acfa7240a7682876cf78d5a44bbbb81de">Util::normalizeFolderPath</a></div><div class="ttdeci">static auto normalizeFolderPath(const QString &amp;path) -&gt; QString</div><div class="ttdoc">Ensure a folder path always ends with &#39;/&#39;.</div><div class="ttdef"><b>Definition</b> <a href="#l00103">util.cpp:103</a></div></div>
 <div class="ttc" id="aclass_util_html_acfef9dbc0925b6f3631f19b381a3cabb"><div class="ttname"><a href="class_util.html#acfef9dbc0925b6f3631f19b381a3cabb">Util::kMaxSpaceRun</a></div><div class="ttdeci">static constexpr qsizetype kMaxSpaceRun</div><div class="ttdoc">Longest run of white space boundSpaceRuns() leaves.</div><div class="ttdef"><b>Definition</b> <a href="util_8h_source.html#l00264">util.h:264</a></div></div>
 <div class="ttc" id="aclass_util_html_ad56543fef6f716ae7acb2e201cdf965e"><div class="ttname"><a href="class_util.html#ad56543fef6f716ae7acb2e201cdf965e">Util::shownName</a></div><div class="ttdeci">static auto shownName(const QString &amp;name, qsizetype max=kMaxShownName) -&gt; QString</div><div class="ttdoc">A name or path from the store, as a label or list shows it: one line, at most max characters.</div><div class="ttdef"><b>Definition</b> <a href="#l00842">util.cpp:842</a></div></div>
+<div class="ttc" id="aclass_util_html_ad9f5d96dee382e8f0bf1d8f03069f60b"><div class="ttname"><a href="class_util.html#ad9f5d96dee382e8f0bf1d8f03069f60b">Util::readRegularFileInStore</a></div><div class="ttdeci">static auto readRegularFileInStore(const QString &amp;store, const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</div><div class="ttdoc">readRegularFileUnder() for a file of the store at store, spelled under the store as configured or und...</div><div class="ttdef"><b>Definition</b> <a href="#l01298">util.cpp:1298</a></div></div>
 <div class="ttc" id="aclass_util_html_ada742504985a1e8b2c6adb5e14b24794"><div class="ttname"><a href="class_util.html#ada742504985a1e8b2c6adb5e14b24794">Util::linkifyUrls</a></div><div class="ttdeci">static auto linkifyUrls(const QString &amp;text, bool *linked=nullptr) -&gt; QString</div><div class="ttdoc">Turn plain text into HTML with clickable links for safe web URLs.</div><div class="ttdef"><b>Definition</b> <a href="#l00756">util.cpp:756</a></div></div>
-<div class="ttc" id="aclass_util_html_add1e4f70c6d7630ace5e350b30f78907"><div class="ttname"><a href="class_util.html#add1e4f70c6d7630ace5e350b30f78907">Util::stageFileReplacing</a></div><div class="ttdeci">static auto stageFileReplacing(const QString &amp;path, bool replace, const Filler &amp;fill, QString *error=nullptr) -&gt; bool</div><div class="ttdoc">The staged write every file QtPass puts into a store goes through: a temporary created next to path (...</div><div class="ttdef"><b>Definition</b> <a href="#l01563">util.cpp:1563</a></div></div>
+<div class="ttc" id="aclass_util_html_add1e4f70c6d7630ace5e350b30f78907"><div class="ttname"><a href="class_util.html#add1e4f70c6d7630ace5e350b30f78907">Util::stageFileReplacing</a></div><div class="ttdeci">static auto stageFileReplacing(const QString &amp;path, bool replace, const Filler &amp;fill, QString *error=nullptr) -&gt; bool</div><div class="ttdoc">The staged write every file QtPass puts into a store goes through: a temporary created next to path (...</div><div class="ttdef"><b>Definition</b> <a href="#l01583">util.cpp:1583</a></div></div>
 <div class="ttc" id="aclass_util_html_ae448351f44d5e8f0d03eeff8ef3e54b2"><div class="ttname"><a href="class_util.html#ae448351f44d5e8f0d03eeff8ef3e54b2">Util::initialiseEnvironment</a></div><div class="ttdeci">static void initialiseEnvironment()</div><div class="ttdoc">Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG...</div><div class="ttdef"><b>Definition</b> <a href="#l00051">util.cpp:51</a></div></div>
 <div class="ttc" id="aclass_util_html_aea1468816a5747a7b3421d9966689202"><div class="ttname"><a href="class_util.html#aea1468816a5747a7b3421d9966689202">Util::directoriesUnder</a></div><div class="ttdeci">static auto directoriesUnder(const QString &amp;dir) -&gt; QStringList</div><div class="ttdoc">Every real, visible directory under dir, walked by the same rules as regularFilesUnder(): links,...</div><div class="ttdef"><b>Definition</b> <a href="#l01022">util.cpp:1022</a></div></div>
-<div class="ttc" id="aclass_util_html_aeccb471a23085461c3c79f24f7f82e2c"><div class="ttname"><a href="class_util.html#aeccb471a23085461c3c79f24f7f82e2c">Util::_envInitialised</a></div><div class="ttdeci">static bool _envInitialised</div><div class="ttdoc">Whether initialiseEnvironment() has run.</div><div class="ttdef"><b>Definition</b> <a href="util_8h_source.html#l00639">util.h:639</a></div></div>
+<div class="ttc" id="aclass_util_html_aeccb471a23085461c3c79f24f7f82e2c"><div class="ttname"><a href="class_util.html#aeccb471a23085461c3c79f24f7f82e2c">Util::_envInitialised</a></div><div class="ttdeci">static bool _envInitialised</div><div class="ttdoc">Whether initialiseEnvironment() has run.</div><div class="ttdef"><b>Definition</b> <a href="util_8h_source.html#l00653">util.h:653</a></div></div>
 <div class="ttc" id="aclass_util_html_aee9122a528c60168a0c105bfbed062d5"><div class="ttname"><a href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a></div><div class="ttdeci">static auto findBinaryInPath(const QString &amp;binary) -&gt; QString</div><div class="ttdoc">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.</div><div class="ttdef"><b>Definition</b> <a href="#l00528">util.cpp:528</a></div></div>
 <div class="ttc" id="aclass_util_html_afd0e45a8685dd277e6f3d51c361e0b03"><div class="ttname"><a href="class_util.html#afd0e45a8685dd277e6f3d51c361e0b03">Util::gitCeiling</a></div><div class="ttdeci">static auto gitCeiling(const QString &amp;store) -&gt; QString</div><div class="ttdoc">GIT_CEILING_DIRECTORIES for a store, as pass sets it.</div><div class="ttdef"><b>Definition</b> <a href="#l00140">util.cpp:140</a></div></div>
 <div class="ttc" id="aexecutor_8h_html"><div class="ttname"><a href="executor_8h.html">executor.h</a></div><div class="ttdoc">Executor, the FIFO queue every gpg, git and pass child process of QtPass goes through,...</div></div>

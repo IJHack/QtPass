@@ -1,0 +1,12 @@
+<map id="GpgIdSigner::readOwnFile" name="GpgIdSigner::readOwnFile">
+<area shape="rect" id="Node000001" title="Read a list or signature of the store: under m_storeRoot when set (see setStoreRoot())." alt="" coords="5,5,195,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="732,5,887,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,17,717,17,717,22,195,22"/>
+<area shape="rect" id="Node000004" href="$class_util.html#ad9f5d96dee382e8f0bf1d8f03069f60b" title="readRegularFileUnder() for a file of the store at store, spelled under the store as configured or und..." alt="" coords="243,31,443,58"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,26,230,32,224,33,195,32"/>
+<area shape="rect" id="Node000003" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="935,5,1092,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="887,17,922,19,916,19,887,22"/>
+<area shape="rect" id="Node000005" href="$class_util.html#ab22e866d6db73831a0414056d34f6027" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="491,31,684,58"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="443,42,478,44,473,45,443,47"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="684,31,714,30,720,30,685,36"/>
+</map>

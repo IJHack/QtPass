@@ -42,13 +42,13 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">98.6&nbsp;%</td>
+            <td class="headerCovTableEntryHi">98.7&nbsp;%</td>
             <td class="headerCovTableEntry">638</td>
-            <td class="headerCovTableEntry">629</td>
+            <td class="headerCovTableEntry">630</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 20:32:47</td>
+            <td class="headerValue">2026-11-25 20:57:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -621,22 +621,22 @@
 <span id="L548"><span class="lineNum">     548</span> <span class="tlaGNC">         306 :   const auto reportedOut = qScopeGuard([this] { m_reportedInsert.clear(); });</span></span>
 <span id="L549"><span class="lineNum">     549</span>              : </span>
 <span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         306 :   if (exitCode != 0) {</span></span>
-<span id="L551"><span class="lineNum">     551</span> <span class="tlaGNC">          61 :     handleProcessError(pid, exitCode, out, err);</span></span>
+<span id="L551"><span class="lineNum">     551</span> <span class="tlaGNC">          63 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L552"><span class="lineNum">     552</span>              :     return;</span>
 <span id="L553"><span class="lineNum">     553</span>              :   }</span>
 <span id="L554"><span class="lineNum">     554</span>              : </span>
-<span id="L555"><span class="lineNum">     555</span> <span class="tlaGNC">         245 :   if (pid == PASS_SHOW) {</span></span>
-<span id="L556"><span class="lineNum">     556</span> <span class="tlaGNC">          52 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
+<span id="L555"><span class="lineNum">     555</span> <span class="tlaGNC">         243 :   if (pid == PASS_SHOW) {</span></span>
+<span id="L556"><span class="lineNum">     556</span> <span class="tlaGNC">          50 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
 <span id="L557"><span class="lineNum">     557</span>              :     return;</span>
 <span id="L558"><span class="lineNum">     558</span>              :   }</span>
 <span id="L559"><span class="lineNum">     559</span> <span class="tlaGNC">         193 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L560"><span class="lineNum">     560</span>              : }</span>
 <span id="L561"><span class="lineNum">     561</span>              : </span>
-<span id="L562"><span class="lineNum">     562</span> <span class="tlaGNC">          61 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
+<span id="L562"><span class="lineNum">     562</span> <span class="tlaGNC">          63 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
 <span id="L563"><span class="lineNum">     563</span>              :                               const QString &amp;err) {</span>
 <span id="L564"><span class="lineNum">     564</span>              :   Q_UNUSED(out);</span>
 <span id="L565"><span class="lineNum">     565</span>              : </span>
-<span id="L566"><span class="lineNum">     566</span> <span class="tlaGNC">          61 :   if (pid == PASS_INSERT) {</span></span>
+<span id="L566"><span class="lineNum">     566</span> <span class="tlaGNC">          63 :   if (pid == PASS_INSERT) {</span></span>
 <span id="L567"><span class="lineNum">     567</span> <span class="tlaGNC">          19 :     const QString friendly = gpgErrorMessage(err);</span></span>
 <span id="L568"><span class="lineNum">     568</span>              :     const QString why =</span>
 <span id="L569"><span class="lineNum">     569</span> <span class="tlaGNC">          19 :         friendly.isEmpty() ? err : formatInsertError(friendly, err);</span></span>
@@ -656,10 +656,10 @@
 <span id="L583"><span class="lineNum">     583</span>              :     return;</span>
 <span id="L584"><span class="lineNum">     584</span>              :   }</span>
 <span id="L585"><span class="lineNum">     585</span>              : </span>
-<span id="L586"><span class="lineNum">     586</span> <span class="tlaGNC">          42 :   if (pid == GPG_GENKEYS) {</span></span>
+<span id="L586"><span class="lineNum">     586</span> <span class="tlaGNC">          44 :   if (pid == GPG_GENKEYS) {</span></span>
 <span id="L587"><span class="lineNum">     587</span> <span class="tlaGNC">           1 :     emit generateGPGKeysFailed(err);</span></span>
 <span id="L588"><span class="lineNum">     588</span>              :   }</span>
-<span id="L589"><span class="lineNum">     589</span> <span class="tlaGNC">          42 :   emit processErrorExit(exitCode, err);</span></span>
+<span id="L589"><span class="lineNum">     589</span> <span class="tlaGNC">          44 :   emit processErrorExit(exitCode, err);</span></span>
 <span id="L590"><span class="lineNum">     590</span>              : }</span>
 <span id="L591"><span class="lineNum">     591</span>              : </span>
 <span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">          50 : auto Pass::withoutStatusLines(const QString &amp;err) -&gt; QString {</span></span>
@@ -799,10 +799,10 @@
 <span id="L726"><span class="lineNum">     726</span>              : #endif</span>
 <span id="L727"><span class="lineNum">     727</span>              : </span>
 <span id="L728"><span class="lineNum">     728</span>              : /// Whether @p path is @p dir or lies under it.</span>
-<span id="L729"><span class="lineNum">     729</span> <span class="tlaGNC">        2664 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
+<span id="L729"><span class="lineNum">     729</span> <span class="tlaGNC">        2675 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
 <span id="L730"><span class="lineNum">     730</span>              :                  const QString &amp;dirPrefix) -&gt; bool {</span>
-<span id="L731"><span class="lineNum">     731</span> <span class="tlaGNC">        4642 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
-<span id="L732"><span class="lineNum">     732</span> <span class="tlaGNC">        1978 :          path.startsWith(dirPrefix, kPathCase);</span></span>
+<span id="L731"><span class="lineNum">     731</span> <span class="tlaGNC">        4664 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
+<span id="L732"><span class="lineNum">     732</span> <span class="tlaGNC">        1989 :          path.startsWith(dirPrefix, kPathCase);</span></span>
 <span id="L733"><span class="lineNum">     733</span>              : }</span>
 <span id="L734"><span class="lineNum">     734</span>              : </span>
 <span id="L735"><span class="lineNum">     735</span>              : /// Where the lookup of a .gpg-id starts and the store that bounds it.</span>
@@ -816,68 +816,68 @@
 <span id="L743"><span class="lineNum">     743</span>              : </span>
 <span id="L744"><span class="lineNum">     744</span>              : /// The folder whose list @p for_file wants: its own for a folder, its</span>
 <span id="L745"><span class="lineNum">     745</span>              : /// folder's for an entry.</span>
-<span id="L746"><span class="lineNum">     746</span> <span class="tlaGNC">         944 : auto gpgIdLookup(const QString &amp;for_file, const QString &amp;passStore)</span></span>
+<span id="L746"><span class="lineNum">     746</span> <span class="tlaGNC">         946 : auto gpgIdLookup(const QString &amp;for_file, const QString &amp;passStore)</span></span>
 <span id="L747"><span class="lineNum">     747</span>              :     -&gt; GpgIdLookup {</span>
-<span id="L748"><span class="lineNum">     748</span> <span class="tlaGNC">         944 :   const QString normalizedFile = QDir::fromNativeSeparators(for_file);</span></span>
+<span id="L748"><span class="lineNum">     748</span> <span class="tlaGNC">         946 :   const QString normalizedFile = QDir::fromNativeSeparators(for_file);</span></span>
 <span id="L749"><span class="lineNum">     749</span>              :   // Inside the store means at a path boundary: &quot;/store-other/x&quot; is not</span>
 <span id="L750"><span class="lineNum">     750</span>              :   // under &quot;/store&quot;, however the prefix compares.</span>
 <span id="L751"><span class="lineNum">     751</span>              :   const QString storeDir =</span>
-<span id="L752"><span class="lineNum">     752</span> <span class="tlaGNC">         944 :       QDir::cleanPath(QDir::fromNativeSeparators(passStore));</span></span>
-<span id="L753"><span class="lineNum">     753</span> <span class="tlaGNC">         944 :   const QString storePrefix = storeDir.endsWith(QLatin1Char('/'))</span></span>
-<span id="L754"><span class="lineNum">     754</span> <span class="tlaGNC">         944 :                                   ? storeDir</span></span>
-<span id="L755"><span class="lineNum">     755</span> <span class="tlaGNC">         944 :                                   : storeDir + QLatin1Char('/');</span></span>
-<span id="L756"><span class="lineNum">     756</span> <span class="tlaGNC">         944 :   const QString cleanFile = QDir::cleanPath(normalizedFile);</span></span>
-<span id="L757"><span class="lineNum">     757</span> <span class="tlaGNC">         944 :   const bool insideStore = isAtOrUnder(cleanFile, storeDir, storePrefix);</span></span>
+<span id="L752"><span class="lineNum">     752</span> <span class="tlaGNC">         946 :       QDir::cleanPath(QDir::fromNativeSeparators(passStore));</span></span>
+<span id="L753"><span class="lineNum">     753</span> <span class="tlaGNC">         946 :   const QString storePrefix = storeDir.endsWith(QLatin1Char('/'))</span></span>
+<span id="L754"><span class="lineNum">     754</span> <span class="tlaGNC">         946 :                                   ? storeDir</span></span>
+<span id="L755"><span class="lineNum">     755</span> <span class="tlaGNC">         946 :                                   : storeDir + QLatin1Char('/');</span></span>
+<span id="L756"><span class="lineNum">     756</span> <span class="tlaGNC">         946 :   const QString cleanFile = QDir::cleanPath(normalizedFile);</span></span>
+<span id="L757"><span class="lineNum">     757</span> <span class="tlaGNC">         946 :   const bool insideStore = isAtOrUnder(cleanFile, storeDir, storePrefix);</span></span>
 <span id="L758"><span class="lineNum">     758</span>              :   // A relative name is one inside the store; an absolute path outside it</span>
 <span id="L759"><span class="lineNum">     759</span>              :   // stays what it is and the walk stops at once.</span>
 <span id="L760"><span class="lineNum">     760</span> <span class="tlaGNC">          16 :   const QString fullPath = insideStore || QDir::isAbsolutePath(cleanFile)</span></span>
-<span id="L761"><span class="lineNum">     761</span> <span class="tlaGNC">         944 :                                ? cleanFile</span></span>
+<span id="L761"><span class="lineNum">     761</span> <span class="tlaGNC">         946 :                                ? cleanFile</span></span>
 <span id="L762"><span class="lineNum">     762</span> <span class="tlaGNC">          11 :                                : storePrefix + cleanFile;</span></span>
 <span id="L763"><span class="lineNum">     763</span>              :   // A folder (trailing separator, which cleanPath() dropped, or an existing</span>
 <span id="L764"><span class="lineNum">     764</span>              :   // directory) wants its own list; an entry wants its folder's.</span>
 <span id="L765"><span class="lineNum">     765</span>              :   const bool isFolder =</span>
-<span id="L766"><span class="lineNum">     766</span> <span class="tlaGNC">         944 :       normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();</span></span>
+<span id="L766"><span class="lineNum">     766</span> <span class="tlaGNC">         946 :       normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();</span></span>
 <span id="L767"><span class="lineNum">     767</span>              :   // A folder that does not exist yet (an entry saved into a new folder, a</span>
 <span id="L768"><span class="lineNum">     768</span>              :   // move to one) starts the walk at its nearest existing ancestor in the</span>
 <span id="L769"><span class="lineNum">     769</span>              :   // store, as pass's set_gpg_recipients does: otherwise the walk ended at</span>
 <span id="L770"><span class="lineNum">     770</span>              :   // once and the store root's list was taken over the one in between.</span>
 <span id="L771"><span class="lineNum">     771</span>              :   const QString folder =</span>
-<span id="L772"><span class="lineNum">     772</span> <span class="tlaGNC">        2431 :       QDir::cleanPath(isFolder ? fullPath : QFileInfo(fullPath).absolutePath());</span></span>
+<span id="L772"><span class="lineNum">     772</span> <span class="tlaGNC">        2435 :       QDir::cleanPath(isFolder ? fullPath : QFileInfo(fullPath).absolutePath());</span></span>
 <span id="L773"><span class="lineNum">     773</span>              :   QString start = folder;</span>
-<span id="L774"><span class="lineNum">     774</span> <span class="tlaGNC">         978 :   while (!QFileInfo(start).exists() &amp;&amp;</span></span>
-<span id="L775"><span class="lineNum">     775</span> <span class="tlaGNC">        1939 :          isAtOrUnder(QDir::cleanPath(start), storeDir, storePrefix) &amp;&amp;</span></span>
-<span id="L776"><span class="lineNum">     776</span> <span class="tlaGNC">         978 :          QDir::cleanPath(start) != storeDir) {</span></span>
+<span id="L774"><span class="lineNum">     774</span> <span class="tlaGNC">         980 :   while (!QFileInfo(start).exists() &amp;&amp;</span></span>
+<span id="L775"><span class="lineNum">     775</span> <span class="tlaGNC">        1943 :          isAtOrUnder(QDir::cleanPath(start), storeDir, storePrefix) &amp;&amp;</span></span>
+<span id="L776"><span class="lineNum">     776</span> <span class="tlaGNC">         980 :          QDir::cleanPath(start) != storeDir) {</span></span>
 <span id="L777"><span class="lineNum">     777</span> <span class="tlaGNC">          34 :     start = QFileInfo(start).absolutePath();</span></span>
 <span id="L778"><span class="lineNum">     778</span>              :   }</span>
-<span id="L779"><span class="lineNum">     779</span> <span class="tlaGNC">         944 :   return {QDir(start), folder, storeDir, storePrefix};</span></span>
-<span id="L780"><span class="lineNum">     780</span> <span class="tlaGNC">         944 : }</span></span>
+<span id="L779"><span class="lineNum">     779</span> <span class="tlaGNC">         946 :   return {QDir(start), folder, storeDir, storePrefix};</span></span>
+<span id="L780"><span class="lineNum">     780</span> <span class="tlaGNC">         946 : }</span></span>
 <span id="L781"><span class="lineNum">     781</span>              : </span>
 <span id="L782"><span class="lineNum">     782</span>              : /// Whether @p candidate can be its folder's .gpg-id: a regular file, as</span>
 <span id="L783"><span class="lineNum">     783</span>              : /// pass looks for (test -f), so a folder under the name is passed over as</span>
 <span id="L784"><span class="lineNum">     784</span>              : /// pass passes it. A link under the name is not: whoever planted it chose</span>
 <span id="L785"><span class="lineNum">     785</span>              : /// the recipients elsewhere.</span>
-<span id="L786"><span class="lineNum">     786</span> <span class="tlaGNC">        1382 : auto isOwnGpgId(const QFileInfo &amp;candidate) -&gt; bool {</span></span>
-<span id="L787"><span class="lineNum">     787</span> <span class="tlaGNC">        1860 :   return candidate.isFile() &amp;&amp; !candidate.isSymLink() &amp;&amp;</span></span>
-<span id="L788"><span class="lineNum">     788</span> <span class="tlaGNC">         478 :          !candidate.isJunction();</span></span>
+<span id="L786"><span class="lineNum">     786</span> <span class="tlaGNC">        1384 : auto isOwnGpgId(const QFileInfo &amp;candidate) -&gt; bool {</span></span>
+<span id="L787"><span class="lineNum">     787</span> <span class="tlaGNC">        1864 :   return candidate.isFile() &amp;&amp; !candidate.isSymLink() &amp;&amp;</span></span>
+<span id="L788"><span class="lineNum">     788</span> <span class="tlaGNC">         480 :          !candidate.isJunction();</span></span>
 <span id="L789"><span class="lineNum">     789</span>              : }</span>
 <span id="L790"><span class="lineNum">     790</span>              : </span>
 <span id="L791"><span class="lineNum">     791</span>              : /// Walk up from the lookup's start to the first folder inside the store</span>
 <span id="L792"><span class="lineNum">     792</span>              : /// that has its own .gpg-id; nothing when none does. A link under the name</span>
 <span id="L793"><span class="lineNum">     793</span>              : /// is skipped, so the parent's list applies instead.</span>
-<span id="L794"><span class="lineNum">     794</span> <span class="tlaGNC">         517 : auto nearestGpgId(const GpgIdLookup &amp;lookup) -&gt; std::optional&lt;QString&gt; {</span></span>
-<span id="L795"><span class="lineNum">     795</span> <span class="tlaGNC">         517 :   QDir dir = lookup.start;</span></span>
-<span id="L796"><span class="lineNum">     796</span> <span class="tlaGNC">        3176 :   while (dir.exists() &amp;&amp; isAtOrUnder(QDir::cleanPath(dir.absolutePath()),</span></span>
-<span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">         794 :                                      lookup.storeDir, lookup.storePrefix)) {</span></span>
-<span id="L798"><span class="lineNum">     798</span> <span class="tlaGNC">         686 :     const QFileInfo candidate(dir.absoluteFilePath(&quot;.gpg-id&quot;));</span></span>
-<span id="L799"><span class="lineNum">     799</span> <span class="tlaGNC">         686 :     if (isOwnGpgId(candidate)) {</span></span>
-<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">         409 :       return candidate.absoluteFilePath();</span></span>
+<span id="L794"><span class="lineNum">     794</span> <span class="tlaGNC">         519 : auto nearestGpgId(const GpgIdLookup &amp;lookup) -&gt; std::optional&lt;QString&gt; {</span></span>
+<span id="L795"><span class="lineNum">     795</span> <span class="tlaGNC">         519 :   QDir dir = lookup.start;</span></span>
+<span id="L796"><span class="lineNum">     796</span> <span class="tlaGNC">        3184 :   while (dir.exists() &amp;&amp; isAtOrUnder(QDir::cleanPath(dir.absolutePath()),</span></span>
+<span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">         796 :                                      lookup.storeDir, lookup.storePrefix)) {</span></span>
+<span id="L798"><span class="lineNum">     798</span> <span class="tlaGNC">         688 :     const QFileInfo candidate(dir.absoluteFilePath(&quot;.gpg-id&quot;));</span></span>
+<span id="L799"><span class="lineNum">     799</span> <span class="tlaGNC">         688 :     if (isOwnGpgId(candidate)) {</span></span>
+<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">         411 :       return candidate.absoluteFilePath();</span></span>
 <span id="L801"><span class="lineNum">     801</span>              :     }</span>
 <span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">         277 :     if (!dir.cdUp()) {</span></span>
 <span id="L803"><span class="lineNum">     803</span>              :       break;</span>
 <span id="L804"><span class="lineNum">     804</span>              :     }</span>
-<span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">         686 :   }</span></span>
+<span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">         688 :   }</span></span>
 <span id="L806"><span class="lineNum">     806</span> <span class="tlaGNC">         108 :   return std::nullopt;</span></span>
-<span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">         517 : }</span></span>
+<span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">         519 : }</span></span>
 <span id="L808"><span class="lineNum">     808</span>              : </span>
 <span id="L809"><span class="lineNum">     809</span>              : } // namespace</span>
 <span id="L810"><span class="lineNum">     810</span>              : </span>
@@ -894,8 +894,8 @@
 <span id="L821"><span class="lineNum">     821</span> <span class="tlaGNC">          63 :   const QString store = scopePath(QString());</span></span>
 <span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">          63 :   const QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">          63 :   return std::any_of(scopes.cbegin(), scopes.cend(),</span></span>
-<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">         138 :                      [&amp;store](const QString &amp;s) {</span></span>
-<span id="L825"><span class="lineNum">     825</span> <span class="tlaGNC">         276 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
+<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">         145 :                      [&amp;store](const QString &amp;s) {</span></span>
+<span id="L825"><span class="lineNum">     825</span> <span class="tlaGNC">         290 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
 <span id="L826"><span class="lineNum">     826</span> <span class="tlaGNC">          63 :                      });</span></span>
 <span id="L827"><span class="lineNum">     827</span>              : }</span>
 <span id="L828"><span class="lineNum">     828</span>              : </span>
@@ -1110,11 +1110,11 @@
 <span id="L1037"><span class="lineNum">    1037</span> <span class="tlaGNC">          34 :   emit processErrorExit(1, why);</span></span>
 <span id="L1038"><span class="lineNum">    1038</span> <span class="tlaGNC">          34 : }</span></span>
 <span id="L1039"><span class="lineNum">    1039</span>              : </span>
-<span id="L1040"><span class="lineNum">    1040</span> <span class="tlaGNC">         517 : auto Pass::getGpgIdPath(const QString &amp;for_file, const QString &amp;passStore)</span></span>
+<span id="L1040"><span class="lineNum">    1040</span> <span class="tlaGNC">         519 : auto Pass::getGpgIdPath(const QString &amp;for_file, const QString &amp;passStore)</span></span>
 <span id="L1041"><span class="lineNum">    1041</span>              :     -&gt; QString {</span>
-<span id="L1042"><span class="lineNum">    1042</span> <span class="tlaGNC">        1034 :   return nearestGpgId(gpgIdLookup(for_file, passStore))</span></span>
+<span id="L1042"><span class="lineNum">    1042</span> <span class="tlaGNC">        1038 :   return nearestGpgId(gpgIdLookup(for_file, passStore))</span></span>
 <span id="L1043"><span class="lineNum">    1043</span>              :       .value_or(</span>
-<span id="L1044"><span class="lineNum">    1044</span> <span class="tlaGNC">        2068 :           QDir(QDir::fromNativeSeparators(passStore)).filePath(&quot;.gpg-id&quot;));</span></span>
+<span id="L1044"><span class="lineNum">    1044</span> <span class="tlaGNC">        2076 :           QDir(QDir::fromNativeSeparators(passStore)).filePath(&quot;.gpg-id&quot;));</span></span>
 <span id="L1045"><span class="lineNum">    1045</span>              : }</span>
 <span id="L1046"><span class="lineNum">    1046</span>              : </span>
 <span id="L1047"><span class="lineNum">    1047</span> <span class="tlaGNC">         211 : auto Pass::refuseSkippedGpgId(const QString &amp;file, bool signing,</span></span>
@@ -1312,9 +1312,9 @@
 <span id="L1239"><span class="lineNum">    1239</span> <span class="tlaGNC">          80 :   RecipientsForEditing result;</span></span>
 <span id="L1240"><span class="lineNum">    1240</span> <span class="tlaGNC">          80 :   const QString folder = dir.isEmpty() ? QString() : dir;</span></span>
 <span id="L1241"><span class="lineNum">    1241</span> <span class="tlaGNC">          80 :   const QString gpgIdPath = getGpgIdPath(folder, passStore);</span></span>
-<span id="L1242"><span class="lineNum">    1242</span>              :   const GpgIdSigner signer(</span>
-<span id="L1243"><span class="lineNum">    1243</span>              :       m_settings.gpgExecutable,</span>
-<span id="L1244"><span class="lineNum">    1244</span> <span class="tlaGNC">         240 :       GpgIdSigner::keysFromSetting(m_settings.passSigningKey));</span></span>
+<span id="L1242"><span class="lineNum">    1242</span>              :   GpgIdSigner signer(m_settings.gpgExecutable,</span>
+<span id="L1243"><span class="lineNum">    1243</span> <span class="tlaGNC">         240 :                      GpgIdSigner::keysFromSetting(m_settings.passSigningKey));</span></span>
+<span id="L1244"><span class="lineNum">    1244</span>              :   signer.setStoreRoot(passStore);</span>
 <span id="L1245"><span class="lineNum">    1245</span> <span class="tlaGNC">          80 :   if (!signer.enabled()) {</span></span>
 <span id="L1246"><span class="lineNum">    1246</span>              :     // A list that is there but cannot be read as one (too large, not a</span>
 <span id="L1247"><span class="lineNum">    1247</span>              :     // regular file, unreadable) is not an empty list: preselecting nothing</span>
@@ -1327,8 +1327,8 @@
 <span id="L1254"><span class="lineNum">    1254</span>              :       result.state = RecipientsForEditing::State::Unsigned;</span>
 <span id="L1255"><span class="lineNum">    1255</span> <span class="tlaGNC">          18 :       return result;</span></span>
 <span id="L1256"><span class="lineNum">    1256</span>              :     }</span>
-<span id="L1257"><span class="lineNum">    1257</span>              :     const std::optional&lt;QByteArray&gt; bytes =</span>
-<span id="L1258"><span class="lineNum">    1258</span> <span class="tlaGNC">          52 :         Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes);</span></span>
+<span id="L1257"><span class="lineNum">    1257</span>              :     const std::optional&lt;QByteArray&gt; bytes = Util::readRegularFileInStore(</span>
+<span id="L1258"><span class="lineNum">    1258</span> <span class="tlaGNC">          52 :         passStore, gpgIdPath, Util::kMaxGpgIdBytes);</span></span>
 <span id="L1259"><span class="lineNum">    1259</span> <span class="tlaGNC">          52 :     if (!bytes) {</span></span>
 <span id="L1260"><span class="lineNum">    1260</span> <span class="tlaGNC">           2 :       result.state = RecipientsForEditing::State::Rejected;</span></span>
 <span id="L1261"><span class="lineNum">    1261</span>              :       result.warning =</span>
@@ -1395,31 +1395,31 @@
 <span id="L1322"><span class="lineNum">    1322</span> <span class="tlaGNC">           7 :   return judgedRecipients(verdict, contents, gpgIdPath, why);</span></span>
 <span id="L1323"><span class="lineNum">    1323</span> <span class="tlaGNC">          80 : }</span></span>
 <span id="L1324"><span class="lineNum">    1324</span>              : </span>
-<span id="L1325"><span class="lineNum">    1325</span> <span class="tlaGNC">           8 : auto Pass::getRecipientList(const QString &amp;for_file, const QString &amp;passStore)</span></span>
+<span id="L1325"><span class="lineNum">    1325</span> <span class="tlaGNC">          10 : auto Pass::getRecipientList(const QString &amp;for_file, const QString &amp;passStore)</span></span>
 <span id="L1326"><span class="lineNum">    1326</span>              :     -&gt; QStringList {</span>
-<span id="L1327"><span class="lineNum">    1327</span> <span class="tlaGNC">           8 :   const QString gpgIdPath = getGpgIdPath(for_file, passStore);</span></span>
+<span id="L1327"><span class="lineNum">    1327</span> <span class="tlaGNC">          10 :   const QString gpgIdPath = getGpgIdPath(for_file, passStore);</span></span>
 <span id="L1328"><span class="lineNum">    1328</span>              :   // The root .gpg-id comes back whatever it is; a link is not a list.</span>
-<span id="L1329"><span class="lineNum">    1329</span> <span class="tlaGNC">           8 :   if (Util::isLinkedFolder(gpgIdPath)) {</span></span>
+<span id="L1329"><span class="lineNum">    1329</span> <span class="tlaGNC">          10 :   if (Util::isLinkedFolder(gpgIdPath)) {</span></span>
 <span id="L1330"><span class="lineNum">    1330</span> <span class="tlaGNC">           1 :     return {};</span></span>
 <span id="L1331"><span class="lineNum">    1331</span>              :   }</span>
 <span id="L1332"><span class="lineNum">    1332</span>              :   const std::optional&lt;QByteArray&gt; bytes =</span>
-<span id="L1333"><span class="lineNum">    1333</span> <span class="tlaGNC">           7 :       Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes);</span></span>
-<span id="L1334"><span class="lineNum">    1334</span> <span class="tlaGNC">           7 :   if (!bytes) {</span></span>
-<span id="L1335"><span class="lineNum">    1335</span> <span class="tlaUNC">           0 :     return {};</span></span>
+<span id="L1333"><span class="lineNum">    1333</span> <span class="tlaGNC">           9 :       Util::readRegularFileInStore(passStore, gpgIdPath, Util::kMaxGpgIdBytes);</span></span>
+<span id="L1334"><span class="lineNum">    1334</span> <span class="tlaGNC">           9 :   if (!bytes) {</span></span>
+<span id="L1335"><span class="lineNum">    1335</span> <span class="tlaGNC">           1 :     return {};</span></span>
 <span id="L1336"><span class="lineNum">    1336</span>              :   }</span>
-<span id="L1337"><span class="lineNum">    1337</span> <span class="tlaGNC">           7 :   return parseRecipients(*bytes, gpgIdPath);</span></span>
+<span id="L1337"><span class="lineNum">    1337</span> <span class="tlaGNC">           8 :   return parseRecipients(*bytes, gpgIdPath);</span></span>
 <span id="L1338"><span class="lineNum">    1338</span>              : }</span>
 <span id="L1339"><span class="lineNum">    1339</span>              : </span>
-<span id="L1340"><span class="lineNum">    1340</span> <span class="tlaGNC">         225 : auto Pass::parseRecipients(const QByteArray &amp;contents,</span></span>
+<span id="L1340"><span class="lineNum">    1340</span> <span class="tlaGNC">         226 : auto Pass::parseRecipients(const QByteArray &amp;contents,</span></span>
 <span id="L1341"><span class="lineNum">    1341</span>              :                            const QString &amp;sourceName) -&gt; QStringList {</span>
-<span id="L1342"><span class="lineNum">    1342</span> <span class="tlaGNC">         225 :   QStringList recipients;</span></span>
+<span id="L1342"><span class="lineNum">    1342</span> <span class="tlaGNC">         226 :   QStringList recipients;</span></span>
 <span id="L1343"><span class="lineNum">    1343</span>              :   const QString text = QString::fromUtf8(contents);</span>
-<span id="L1344"><span class="lineNum">    1344</span> <span class="tlaGNC">        6818 :   for (const QString &amp;line : text.split(QLatin1Char('\n'))) {</span></span>
-<span id="L1345"><span class="lineNum">    1345</span> <span class="tlaGNC">       13186 :     QString recipient = line.split(QLatin1Char('#')).first().trimmed();</span></span>
-<span id="L1346"><span class="lineNum">    1346</span> <span class="tlaGNC">        6593 :     if (recipient.isEmpty()) {</span></span>
-<span id="L1347"><span class="lineNum">    1347</span> <span class="tlaGNC">         279 :       continue;</span></span>
+<span id="L1344"><span class="lineNum">    1344</span> <span class="tlaGNC">        6821 :   for (const QString &amp;line : text.split(QLatin1Char('\n'))) {</span></span>
+<span id="L1345"><span class="lineNum">    1345</span> <span class="tlaGNC">       13190 :     QString recipient = line.split(QLatin1Char('#')).first().trimmed();</span></span>
+<span id="L1346"><span class="lineNum">    1346</span> <span class="tlaGNC">        6595 :     if (recipient.isEmpty()) {</span></span>
+<span id="L1347"><span class="lineNum">    1347</span> <span class="tlaGNC">         280 :       continue;</span></span>
 <span id="L1348"><span class="lineNum">    1348</span>              :     }</span>
-<span id="L1349"><span class="lineNum">    1349</span> <span class="tlaGNC">        6314 :     if (!Util::isValidKeyId(recipient)) {</span></span>
+<span id="L1349"><span class="lineNum">    1349</span> <span class="tlaGNC">        6315 :     if (!Util::isValidKeyId(recipient)) {</span></span>
 <span id="L1350"><span class="lineNum">    1350</span>              :       // Never drop a recipient silently: the list is written back verbatim</span>
 <span id="L1351"><span class="lineNum">    1351</span>              :       // by UsersDialog, so a skipped line disappears from .gpg-id.</span>
 <span id="L1352"><span class="lineNum">    1352</span> <span class="tlaGNC">           4 :       qCWarning(lcQtPass) &lt;&lt; &quot;Skipping unusable recipient in&quot; &lt;&lt; sourceName</span></span>
@@ -1428,7 +1428,7 @@
 <span id="L1355"><span class="lineNum">    1355</span> <span class="tlaGNC">           2 :     }</span></span>
 <span id="L1356"><span class="lineNum">    1356</span>              :     recipients += recipient;</span>
 <span id="L1357"><span class="lineNum">    1357</span>              :   }</span>
-<span id="L1358"><span class="lineNum">    1358</span> <span class="tlaGNC">         225 :   return recipients;</span></span>
+<span id="L1358"><span class="lineNum">    1358</span> <span class="tlaGNC">         226 :   return recipients;</span></span>
 <span id="L1359"><span class="lineNum">    1359</span>              : }</span>
 <span id="L1360"><span class="lineNum">    1360</span>              : </span>
 <span id="L1361"><span class="lineNum">    1361</span> <span class="tlaGNC">          98 : auto Pass::passReadsDifferently(const QByteArray &amp;contents) -&gt; QString {</span></span>

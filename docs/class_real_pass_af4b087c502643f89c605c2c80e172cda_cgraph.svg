@@ -54,8 +54,8 @@
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="The verifier for signed lists, gpg in the store&#39;s environment.">
-<polygon fill="#999999" stroke="#666666" points="111.25,-84.75 0,-84.75 0,-64 111.25,-64 111.25,-84.75"/>
-<text xml:space="preserve" text-anchor="middle" x="55.62" y="-71.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::listSigner</text>
+<polygon fill="#999999" stroke="#666666" points="111.25,-65.75 0,-65.75 0,-45 111.25,-45 111.25,-65.75"/>
+<text xml:space="preserve" text-anchor="middle" x="55.62" y="-52.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::listSigner</text>
 </a>
 </g>
 </g>
@@ -72,8 +72,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M111.71,-80.81C122.34,-82.06 133.68,-83.38 144.97,-84.7"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="144.36,-88.15 154.69,-85.84 145.17,-81.2 144.36,-88.15"/>
+<path fill="none" stroke="#63b8ff" d="M104.29,-66.24C124.33,-70.8 147.84,-76.16 168.93,-80.97"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="168.04,-84.36 178.57,-83.17 169.59,-77.53 168.04,-84.36"/>
 </a>
 </g>
 </g>
@@ -90,8 +90,26 @@
 <g id="edge12_Node000001_Node000012" class="edge">
 <title>Node1&#45;&gt;Node12</title>
 <g id="a_edge12_Node000001_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M111.71,-68.26C119.44,-67.4 127.54,-66.5 135.73,-65.59"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="135.85,-69.1 145.41,-64.52 135.08,-62.14 135.85,-69.1"/>
+<path fill="none" stroke="#63b8ff" d="M111.71,-55.38C119.35,-55.38 127.36,-55.38 135.45,-55.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="135.4,-58.88 145.4,-55.38 135.4,-51.88 135.4,-58.88"/>
+</a>
+</g>
+</g>
+<!-- Node14 -->
+<g id="Node000014" class="node">
+<title>Node14</title>
+<g id="a_Node000014"><a xlink:href="class_gpg_id_signer.html#a1d248e69d1932396ff09b5499bd3bd59" target="_top" xlink:title="The store the lists and signatures this signer reads belong to.">
+<polygon fill="white" stroke="#666666" points="300.88,-26.75 156.62,-26.75 156.62,-6 300.88,-6 300.88,-26.75"/>
+<text xml:space="preserve" text-anchor="middle" x="228.75" y="-13.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdSigner::setStoreRoot</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node14 -->
+<g id="edge14_Node000001_Node000014" class="edge">
+<title>Node1&#45;&gt;Node14</title>
+<g id="a_edge14_Node000001_Node000014"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M104.29,-44.51C124.33,-39.95 147.84,-34.59 168.93,-29.78"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="169.59,-33.22 178.57,-27.58 168.04,-26.39 169.59,-33.22"/>
 </a>
 </g>
 </g>

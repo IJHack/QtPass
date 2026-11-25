@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"gpgidsigner_8cpp_source.html":[4,0,1,21],
+"gpgidsigner_8h.html":[4,0,1,22],
+"gpgidsigner_8h_source.html":[4,0,1,22],
+"gpgkeystate_8cpp.html":[4,0,1,23],
 "gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c":[4,0,1,23,3],
 "gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8":[4,0,1,23,5],
 "gpgkeystate_8cpp.html#a1d543e1b773901266ef423cfb0204b68":[4,0,1,23,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX6 =
 "struct_app_settings.html#a457fe600e8bd16cdb5b985754deab231":[1,4,1,40],
 "struct_app_settings.html#a4898b5fbd42cc0b4e6959d1851656673":[1,4,1,23],
 "struct_app_settings.html#a4b414237cc2001c4a07a242f2565cb85":[1,4,1,34],
-"struct_app_settings.html#a50480ce075727936c03f0ad797e5f4ae":[1,4,1,13],
-"struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c":[1,4,1,16],
-"struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05":[1,4,1,0],
-"struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f":[1,4,1,6],
-"struct_app_settings.html#a5a5e02fd0a52d7d4b81422e49fba36cd":[1,4,1,3]
+"struct_app_settings.html#a50480ce075727936c03f0ad797e5f4ae":[1,4,1,13]
 };

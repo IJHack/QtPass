@@ -81,6 +81,7 @@ var group__support =
       [ "plainToolTip", "class_util.html#ac8e125ea4b7210280d4395c7bac6be6b", null ],
       [ "protocolRegex", "class_util.html#a133c5da0c8a3f106c09977679bc615c3", null ],
       [ "readRegularFile", "class_util.html#a8e427903937505b5e19ebbea7050494e", null ],
+      [ "readRegularFileInStore", "class_util.html#ad9f5d96dee382e8f0bf1d8f03069f60b", null ],
       [ "readRegularFileUnder", "class_util.html#ab22e866d6db73831a0414056d34f6027", null ],
       [ "regularFilesUnder", "class_util.html#a6416bfebddfbc3dbfee2d66d5204964b", null ],
       [ "removeTree", "class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c", null ],

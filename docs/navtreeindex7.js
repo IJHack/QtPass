@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c":[1,4,1,16],
+"struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05":[1,4,1,0],
+"struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f":[1,4,1,6],
+"struct_app_settings.html#a5a5e02fd0a52d7d4b81422e49fba36cd":[1,4,1,3],
 "struct_app_settings.html#a5dbc9ec5be7876610b987a0d221c28a8":[1,4,1,4],
 "struct_app_settings.html#a610eb03686814827c70c12e01489ac77":[1,4,1,21],
 "struct_app_settings.html#a61d0d4c9f61852bac9fe3be71a9b1814":[1,4,1,35],

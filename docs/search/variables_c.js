@@ -154,7 +154,7 @@ var searchData=
   ['m_5fstatus_151',['m_status',['../class_executor_1_1_capped_output.html#a918017aa5355a744e7a1f6744b78db26',1,'Executor::CappedOutput::m_status'],['../class_key_wizard_page.html#a9f5bf936eb127ead6f6e20143cfc0aa1',1,'KeyWizardPage::m_status'],['../class_store_wizard_page.html#a35c334a83f1ff63cc39b32564d706947',1,'StoreWizardPage::m_status']]],
   ['m_5fstderr_152',['m_stderr',['../class_executor.html#a6785b67b963065668dc9874def9c72e4',1,'Executor']]],
   ['m_5fstore_153',['m_store',['../class_store_tree.html#a015b7288cf004733d1a55f6de6ffe054',1,'StoreTree']]],
-  ['m_5fstoreroot_154',['m_storeRoot',['../class_password_dialog.html#a9de844765b306cb192ff837677d1c9f0',1,'PasswordDialog']]],
+  ['m_5fstoreroot_154',['m_storeRoot',['../class_gpg_id_signer.html#ac240d00b2ef02842efc31b8e45c98b37',1,'GpgIdSigner::m_storeRoot'],['../class_password_dialog.html#a9de844765b306cb192ff837677d1c9f0',1,'PasswordDialog::m_storeRoot']]],
   ['m_5fsummary_155',['m_summary',['../class_done_wizard_page.html#a102c2dbf3c931b38f38ed49810f485d2',1,'DoneWizardPage']]],
   ['m_5ftail_156',['m_tail',['../class_executor_1_1_capped_output.html#af3775405f7e14c905e7d0c3e8a0db35e',1,'Executor::CappedOutput']]],
   ['m_5ftemplatelines_157',['m_templateLines',['../class_password_dialog.html#ad8d89451f12b86a6733e17b781f52a25',1,'PasswordDialog']]],
