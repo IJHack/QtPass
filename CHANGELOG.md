@@ -85,6 +85,14 @@
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
+- **Rename folder** and **Rename password** no longer move an entry out of
+  the store when the new name goes through a linked folder and back with
+  `..` (for example `handbook/../team-old`, with `handbook` a link another
+  writer put in the store). The check judged the name as text, but the
+  rename followed the link first. Without `pass`, move and copy now clean
+  the name first, so the entry lands where the check said (scan finding
+  ANT-2026-MVI4DGGO, [#2333](https://github.com/IJHack/QtPass/pull/2333) on
+  main).
 - Content search skips links. A link to a file in the store was searched
   like an entry, so a matching line from the file it points to, outside the
   store, showed among the results (scan finding ANT-2026-5W0UHRED,

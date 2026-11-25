@@ -1066,23 +1066,29 @@ static auto moveWithoutGit(const QString &src, const QString &destFile,
  */
 void ImitatePass::Move(const QString src, const QString dest,
                        const bool force) {
+  // Cleaned once, so the store check and the rename see one path: the check
+  // removes ".." as text, while rename(2) follows a link first and applies
+  // ".." after it, so "link/../x" was judged as <store>/x and landed beside
+  // the link's target.
+  const QString from = QDir::cleanPath(src);
+  const QString to = QDir::cleanPath(dest);
   transactionHelper trans(this, PASS_MOVE);
-  QString destFile = resolveMoveDestination(src, dest, force);
+  QString destFile = resolveMoveDestination(from, to, force);
   if (destFile.isEmpty()) {
     return;
   }
 
 #ifdef QT_DEBUG
-  dbg() << "Move Source: " << src;
+  dbg() << "Move Source: " << from;
   dbg() << "Move Destination: " << destFile;
 #endif
 
   if (gitReady()) {
-    executeMoveGit(src, destFile, force);
-  } else if (!moveWithoutGit(src, destFile, force)) {
+    executeMoveGit(from, destFile, force);
+  } else if (!moveWithoutGit(from, destFile, force)) {
     // Without Git nothing else reports a failure: git mv would print its own.
     emit critical(tr("Move failed"),
-                  tr("Could not move %1 to %2.").arg(src, destFile));
+                  tr("Could not move %1 to %2.").arg(from, destFile));
   }
 }
 
@@ -1136,29 +1142,32 @@ static auto copyFileReplacing(const QString &src, const QString &dst) -> bool {
  */
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
+  // Cleaned once, as in Move().
+  const QString from = QDir::cleanPath(src);
+  const QString to = QDir::cleanPath(dest);
   transactionHelper trans(this, PASS_COPY);
   // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands
   // over the folder, not the new file name). Resolve the real target the same
   // way Move does: into the folder, .gpg appended, no clobbering without force.
-  QString destFile = resolveMoveDestination(src, dest, force);
+  QString destFile = resolveMoveDestination(from, to, force);
   if (destFile.isEmpty()) {
     emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, dest));
+                  tr("Could not copy %1 to %2.").arg(from, to));
     return;
   }
   QFileInfo destFileInfo(destFile);
   // A folder destination that is the source's own folder resolves to the
   // source itself; with force that would replace the only copy with itself.
-  if (QFileInfo(src) == destFileInfo) {
+  if (QFileInfo(from) == destFileInfo) {
     emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, destFile));
+                  tr("Could not copy %1 to %2.").arg(from, destFile));
     return;
   }
   // resolveMoveDestination only sees a clash when dest names the file; for a
   // folder destination the resolved <folder>/<entry>.gpg may exist as well.
   if (!force && destFileInfo.exists()) {
     emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, destFile));
+                  tr("Could not copy %1 to %2.").arg(from, destFile));
     return;
   }
   // git has no "cp" subcommand, so copy on the filesystem in both modes and,
@@ -1166,9 +1175,9 @@ void ImitatePass::Copy(const QString src, const QString dest,
   // replaces the destination atomically (see copyFileReplacing), so it exists
   // before the re-encryption below runs and an entry being overwritten with
   // force survives a copy that fails half-way.
-  if (!copyFileReplacing(src, destFile)) {
+  if (!copyFileReplacing(from, destFile)) {
     emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, destFile));
+                  tr("Could not copy %1 to %2.").arg(from, destFile));
     return;
   }
   // QFileInfo caches; the comparison above may have looked at a path that did
@@ -1177,7 +1186,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
   if (gitReady()) {
     executeGit(GIT_COPY, {"add", pgit(destFile)});
     gitCommit("", QString("Copied from %1 to %2 using QtPass.")
-                      .arg(commitName(src), commitName(destFile)));
+                      .arg(commitName(from), commitName(destFile)));
   }
   // reecrypt all files under the new folder
   if (destFileInfo.isDir()) {
