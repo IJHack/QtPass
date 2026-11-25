@@ -10,12 +10,72 @@
 #include <QPointer>
 #include <QRegularExpression>
 #include <QSaveFile>
+#include <QTemporaryDir>
 #include <QThread>
 #include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
 #endif
+
+#ifdef Q_OS_UNIX
+#include <cerrno>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#endif
+
+namespace {
+
+/// Most bytes of a .gpg-id.sig handed to gpg (see readBoundedRegularFile()).
+constexpr qint64 kMaxSignatureBytes = 4 * 1024;
+/// Most bytes of a .gpg-id handed to gpg.
+constexpr qint64 kMaxGpgIdBytes = 1024 * 1024;
+
+/**
+ * @brief Read @p path whole when it is a regular file of at most
+ *        @p maxBytes, without following a link and without blocking.
+ *
+ * A FIFO planted under the name would block gpg, and the GUI thread
+ * waiting for it; a sparse file of gigabytes would be read whole. On Unix
+ * the file is opened with O_NONBLOCK and O_NOFOLLOW and checked with
+ * fstat(), so nothing swapped in after a check of the name is read.
+ * @param path The file.
+ * @param maxBytes The most bytes accepted.
+ * @param bytes Set to the contents on success.
+ * @return true when the file was read.
+ */
+auto readBoundedRegularFile(const QString &path, qint64 maxBytes,
+                            QByteArray *bytes) -> bool {
+  QFile file;
+#ifdef Q_OS_UNIX
+  int fd;
+  do {
+    fd = ::open(QFile::encodeName(path).constData(),
+                O_RDONLY | O_NONBLOCK | O_NOFOLLOW | O_CLOEXEC);
+  } while (fd < 0 && errno == EINTR);
+  if (fd < 0) {
+    return false;
+  }
+  struct stat st{};
+  if (::fstat(fd, &st) != 0 || !S_ISREG(st.st_mode) || st.st_size > maxBytes ||
+      !file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
+    ::close(fd);
+    return false;
+  }
+#else
+  const QFileInfo info(path);
+  file.setFileName(path);
+  if (info.isSymLink() || !info.isFile() || info.size() > maxBytes ||
+      !file.open(QIODevice::ReadOnly)) {
+    return false;
+  }
+#endif
+  *bytes = file.read(maxBytes + 1);
+  return bytes->size() <= maxBytes;
+}
+
+} // namespace
 
 using Enums::CLIPBOARD_ALWAYS;
 using Enums::CLIPBOARD_NEVER;
@@ -551,9 +611,35 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
   if (signingKeys.isEmpty()) {
     return true;
   }
+  // Both files read here, bounded and only as the regular files they are,
+  // and gpg checks copies of those bytes: given the names it would block
+  // on a FIFO planted there, and a co-writer could fill a 64 KiB .sig with
+  // signatures by a key built to be slow, each checked in turn. --batch
+  // stops at the first bad one; 4 KiB holds two slow ones at most
+  // (scan ANT-2026-XQUAU1HG).
+  QByteArray list;
+  QByteArray signature;
+  if (!readBoundedRegularFile(file, kMaxGpgIdBytes, &list) ||
+      !readBoundedRegularFile(file + ".sig", kMaxSignatureBytes, &signature)) {
+    return false;
+  }
+  QTemporaryDir scratch;
+  if (!scratch.isValid()) {
+    return false;
+  }
+  const QString listCopy = scratch.filePath(QStringLiteral("gpg-id"));
+  const QString sigCopy = scratch.filePath(QStringLiteral("gpg-id.sig"));
+  for (const auto &copy :
+       {std::make_pair(listCopy, &list), std::make_pair(sigCopy, &signature)}) {
+    QFile out(copy.first);
+    if (!out.open(QIODevice::WriteOnly) ||
+        out.write(*copy.second) != copy.second->size()) {
+      return false;
+    }
+  }
   QString out;
-  QStringList args =
-      QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
+  QStringList args = QStringList{"--batch", "--verify",    "--status-fd=1",
+                                 "--",      pgpg(sigCopy), pgpg(listCopy)};
   int result = Executor::executeBlocking(m_settings.gpgExecutable, args, &out);
   if (result != 0) {
 #ifdef QT_DEBUG

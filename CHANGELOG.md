@@ -85,6 +85,14 @@
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
+- Checking a `.gpg-id.sig` can no longer freeze QtPass. gpg checked every
+  signature in the file, each against the key it names, and someone who can
+  write to the store could fill it with signatures by a key built to be
+  slow; a pipe under either name blocked it for good. QtPass now reads the
+  list and its signature itself, only as regular files and the signature
+  only up to 4 KiB, and gpg checks copies of those bytes and stops at the
+  first bad signature (scan finding ANT-2026-XQUAU1HG,
+  [#2336](https://github.com/IJHack/QtPass/pull/2336) on main).
 - **Rename folder** and **Rename password** no longer move an entry out of
   the store when the new name goes through a linked folder and back with
   `..` (for example `handbook/../team-old`, with `handbook` a link another
