@@ -3786,9 +3786,12 @@ void tst_util::storeListsAreReadWithoutFollowingAFolderLink() {
   QCOMPARE(Util::readRegularFileInStore(
                store, store + QStringLiteral("/team/.gpg-id"), 100),
            std::optional<QByteArray>("TEAM\n"));
-  // Spelled through the target of the linked store root.
-  QCOMPARE(Util::readRegularFileInStore(
-               store, real + QStringLiteral("/team/.gpg-id"), 100),
+  // Spelled through the target of the linked store root, as
+  // canonicalFilePath() gives it (on macOS /var itself is a link).
+  QCOMPARE(Util::readRegularFileInStore(store,
+                                        QFileInfo(real).canonicalFilePath() +
+                                            QStringLiteral("/team/.gpg-id"),
+                                        100),
            std::optional<QByteArray>("TEAM\n"));
   QVERIFY(!Util::readRegularFileInStore(
       store, outside + QStringLiteral("/.gpg-id"), 100));
