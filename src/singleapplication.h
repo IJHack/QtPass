@@ -11,6 +11,7 @@
 
 #include <QApplication>
 #include <QLocalServer>
+#include <QLocalSocket>
 #include <QLockFile>
 
 /**
@@ -74,6 +75,20 @@ public:
    * @return The lock file's path.
    */
   static auto lockPathFor(const QString &key) -> QString;
+  /**
+   * @brief Whether the server @p socket is connected to runs as this user.
+   *
+   * On Windows a named pipe's name is machine-wide: another user's session
+   * could open the pipe of the key first, and a launch would then forward
+   * its command line there and exit without a window. So the server's
+   * process is looked up (GetNamedPipeServerProcessId()) and its token's
+   * user compared with this process's; anything that cannot be checked
+   * counts as someone else's. Elsewhere the socket sits in a folder only
+   * this user can open (privateKey()), and this is always true.
+   * @param socket A socket connected to the key.
+   * @return true when the server is this user's.
+   */
+  static auto serverRunsAsThisUser(const QLocalSocket &socket) -> bool;
   /**
    * @brief Query whether another instance is already running.
    * @return true if another instance with the same key is running.

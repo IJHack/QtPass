@@ -805,6 +805,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- On Windows, another user on the same computer can no longer catch what
+  a launch of QtPass hands to the copy already open. The name QtPass uses
+  to reach that copy is visible machine-wide there, so another session
+  could take it first: a launch then sent its search text there and quit
+  without a window. QtPass now checks that the copy it reaches runs as
+  you, and otherwise opens its own window.
 - Recipient lists and their signatures are read without following a link
   in any folder on the way down from the store, as entries already were.
   A folder that an update from Git turned into a link between a check and
