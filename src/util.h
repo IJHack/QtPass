@@ -502,7 +502,7 @@ public:
    * On Windows any reparse point that names another file (a symbolic link,
    * a junction) is refused; another one, such as the placeholder of a cloud
    * provider like OneDrive, is opened through so its content is fetched,
-   * when that open reaches the same file (same volume and file index).
+   * when that open reaches the same file (same volume and 128-bit file ID).
    * @param path The file, as the caller names it.
    * @param file Receives the open file on success; untouched otherwise.
    * @return Whether @p file is open on a regular file.

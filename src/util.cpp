@@ -24,6 +24,7 @@
 #include <QUrl>
 
 #include <algorithm>
+#include <cstring>
 #include <memory>
 #include <optional>
 #include <vector>
@@ -1244,15 +1245,24 @@ auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
         CreateFileW(native.c_str(), GENERIC_READ,
                     FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
                     nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    // The 128-bit file ID: the 64-bit index in BY_HANDLE_FILE_INFORMATION
+    // is not unique on ReFS.
+    FILE_ID_INFO firstId{};
+    FILE_ID_INFO throughId{};
     BY_HANDLE_FILE_INFORMATION after{};
-    const bool same = through != INVALID_HANDLE_VALUE &&
-                      GetFileInformationByHandle(through, &after) &&
-                      after.dwVolumeSerialNumber == info.dwVolumeSerialNumber &&
-                      after.nFileIndexHigh == info.nFileIndexHigh &&
-                      after.nFileIndexLow == info.nFileIndexLow &&
-                      (after.dwFileAttributes & (FILE_ATTRIBUTE_DIRECTORY |
-                                                 FILE_ATTRIBUTE_DEVICE)) == 0 &&
-                      GetFileType(through) == FILE_TYPE_DISK;
+    const bool same =
+        through != INVALID_HANDLE_VALUE &&
+        GetFileInformationByHandleEx(handle, FileIdInfo, &firstId,
+                                     sizeof(firstId)) &&
+        GetFileInformationByHandleEx(through, FileIdInfo, &throughId,
+                                     sizeof(throughId)) &&
+        firstId.VolumeSerialNumber == throughId.VolumeSerialNumber &&
+        std::memcmp(&firstId.FileId, &throughId.FileId,
+                    sizeof(firstId.FileId)) == 0 &&
+        GetFileInformationByHandle(through, &after) &&
+        (after.dwFileAttributes &
+         (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_DEVICE)) == 0 &&
+        GetFileType(through) == FILE_TYPE_DISK;
     CloseHandle(handle);
     if (!same) {
       if (through != INVALID_HANDLE_VALUE) {
