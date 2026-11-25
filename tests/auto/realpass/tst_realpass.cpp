@@ -70,6 +70,7 @@ private slots:
   void moveBetweenExistingFilesNeedsForce();
   void reencryptFailedJudgesTheStatusLines_data();
   void reencryptFailedJudgesTheStatusLines();
+  void largeReencryptionIsJudgedByEveryStatusLine();
   void failedReencryptionHoldsAutomaticPushes();
   void reencryptFailureIsReportedNotFinished();
   void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
@@ -1543,6 +1544,48 @@ void tst_realpass::reencryptFailedJudgesTheStatusLines() {
   QFETCH(QString, err);
   QFETCH(bool, failed);
   QCOMPARE(RealPass::reencryptFailed(out, err), failed);
+}
+
+/**
+ * @brief A re-encryption of thousands of entries writes more status lines
+ *        than the Executor keeps of stderr; it is judged by the count of
+ *        all of them, not by the capped text, so a clean run of a large
+ *        store is not reported as failed (ANT-2026-VQGRD45V review).
+ */
+void tst_realpass::largeReencryptionIsJudgedByEveryStatusLine() {
+  const QString script =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-large-reencrypt"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\n"
+            "awk 'BEGIN { for (i = 0; i < 4000; i++) {\n"
+            "  print \"folder/e\" i \": reencrypting to AAAA\"\n"
+            "  print \"[GNUPG:] KEY_CONSIDERED "
+            "0123456789ABCDEF0123456789ABCDEF01234567 0\" > \"/dev/stderr\"\n"
+            "  print \"[GNUPG:] END_ENCRYPTION\" > \"/dev/stderr\" } }'\n"
+            "exit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  AppSettings s = m_settings;
+  s.passExecutable = script;
+  RealPass pass;
+  pass.init(s);
+  pass.updateEnv();
+  QSignalSpy inited(&pass, &Pass::finishedInit);
+  QSignalSpy critical(&pass, &Pass::critical);
+  QSignalSpy errors(&pass, &Pass::processErrorExit);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("AAAA");
+  alice.enabled = true;
+  pass.Init(m_store + QStringLiteral("folder/"), {alice});
+  QTRY_COMPARE_WITH_TIMEOUT(inited.size() + errors.size(), 1, 10000);
+  QVERIFY2(critical.isEmpty(),
+           qPrintable(critical.isEmpty() ? QString()
+                                         : critical.first().at(1).toString()));
+  QCOMPARE(inited.size(), 1);
 }
 
 /**

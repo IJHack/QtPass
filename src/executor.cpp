@@ -5,6 +5,7 @@
 #include <QDeadlineTimer>
 #include <QDir>
 #include <QFileInfo>
+#include <QScopeGuard>
 #include <QStringDecoder>
 #include <QThread>
 #include <algorithm>
@@ -31,6 +32,139 @@ constexpr int kBlockingKillGraceMs = 1000;
 Executor::Executor(QObject *parent) : QObject(parent) {
   connect(&m_process, &QProcess::finished, this, &Executor::onProcessFinished);
   connect(&m_process, &QProcess::started, this, &Executor::starting);
+  // Read as it arrives, so what QProcess buffers stays small: stderr into
+  // the cap, stdout nobody asked for into nothing.
+  connect(&m_process, &QProcess::readyReadStandardError, this,
+          [this]() { m_stderr.append(m_process.readAllStandardError()); });
+  connect(&m_process, &QProcess::readyReadStandardOutput, this, [this]() {
+    if (m_discardStdout) {
+      m_process.readAllStandardOutput();
+    }
+  });
+}
+
+namespace {
+
+/**
+ * @brief Length of a UTF-8 sequence from its lead byte.
+ * @param lead The first byte.
+ * @return 1 to 4, or 0 for a continuation byte.
+ */
+auto utf8SequenceLength(unsigned char lead) -> int {
+  if (lead < 0x80) {
+    return 1;
+  }
+  if ((lead & 0xC0) == 0x80) {
+    return 0;
+  }
+  if ((lead & 0xE0) == 0xC0) {
+    return 2;
+  }
+  if ((lead & 0xF0) == 0xE0) {
+    return 3;
+  }
+  return 4;
+}
+
+} // namespace
+
+void Executor::CappedOutput::countStatus(const QByteArray &line) {
+  static const QByteArray prefix = QByteArrayLiteral("[GNUPG:] ");
+  if (!line.startsWith(prefix)) {
+    return;
+  }
+  QByteArray keyword = line.mid(prefix.size());
+  keyword.truncate(keyword.indexOf(' ') < 0 ? keyword.size()
+                                            : keyword.indexOf(' '));
+  if (keyword.endsWith('\r')) {
+    keyword.chop(1);
+  }
+  const QString key = QString::fromLatin1(keyword);
+  if (m_status.contains(key) || m_status.size() < kMaxStatusKeywords) {
+    ++m_status[key];
+  }
+}
+
+void Executor::CappedOutput::append(const QByteArray &chunk) {
+  // Status records, whole lines at a time, before the text is cut.
+  qsizetype start = 0;
+  for (qsizetype end = chunk.indexOf('\n'); end >= 0;
+       start = end + 1, end = chunk.indexOf('\n', start)) {
+    if (!m_lineTooLong &&
+        m_line.size() + (end - start) <= kMaxStatusLineBytes) {
+      m_line.append(chunk.constData() + start, end - start);
+      countStatus(m_line);
+    }
+    m_line.clear();
+    m_lineTooLong = false;
+  }
+  if (!m_lineTooLong) {
+    if (m_line.size() + (chunk.size() - start) > kMaxStatusLineBytes) {
+      m_line.clear();
+      m_lineTooLong = true;
+    } else {
+      m_line.append(chunk.constData() + start, chunk.size() - start);
+    }
+  }
+
+  constexpr qsizetype half = kMaxStderrBytes / 2;
+  qsizetype from = 0;
+  if (m_head.size() < half) {
+    from = qMin(half - m_head.size(), chunk.size());
+    m_head.append(chunk.constData(), from);
+  }
+  if (from == chunk.size()) {
+    return;
+  }
+  m_tail.append(chunk.constData() + from, chunk.size() - from);
+  if (m_tail.size() > half) {
+    const qsizetype excess = m_tail.size() - half;
+    m_dropped += excess;
+    m_tail.remove(0, excess);
+  }
+}
+
+// When bytes were left out, the head may end and the tail begin in the
+// middle of a character: both are cut back to whole ones, so the text
+// still decodes as UTF-8 rather than falling back to another encoding.
+auto Executor::CappedOutput::take() -> QByteArray {
+  QByteArray all;
+  if (m_dropped == 0) {
+    all = m_head + m_tail;
+  } else {
+    QByteArray head = m_head;
+    qsizetype chopped = 0;
+    for (qsizetype back = 1; back <= qMin<qsizetype>(4, head.size()); ++back) {
+      const int length = utf8SequenceLength(
+          static_cast<unsigned char>(head.at(head.size() - back)));
+      if (length != 0) {
+        if (length > back) {
+          chopped = back;
+          head.chop(back);
+        }
+        break;
+      }
+    }
+    qsizetype start = 0;
+    while (start < m_tail.size() &&
+           utf8SequenceLength(static_cast<unsigned char>(m_tail.at(start))) ==
+               0) {
+      ++start;
+    }
+    all = head + QByteArrayLiteral("\n[... ") +
+          QByteArray::number(m_dropped + chopped + start) +
+          QByteArrayLiteral(" bytes left out ...]\n") + m_tail.mid(start);
+  }
+  m_head.clear();
+  m_tail.clear();
+  m_dropped = 0;
+  // A last line without a line end is a record too.
+  if (!m_lineTooLong && !m_line.isEmpty()) {
+    countStatus(m_line);
+  }
+  m_line.clear();
+  m_lineTooLong = false;
+  return all;
 }
 
 Executor::~Executor() { m_process.blockSignals(true); }
@@ -237,6 +371,8 @@ void Executor::executeNext() {
   // Always set it: an item without a directory runs in the application's
   // cwd, not wherever the previous item happened to run.
   m_process.setWorkingDirectory(i.workingDir);
+  m_stderr.clear();
+  m_discardStdout = !i.readStdout;
   startProcess(m_process, i.app, i.args);
 
   // A failed start never emits finished(), so `running` would stall the queue
@@ -478,6 +614,23 @@ auto Executor::runBlockingRaw(QProcess &process, const QString &app,
   const QDeadlineTimer deadline = timeoutMs < 0
                                       ? QDeadlineTimer(QDeadlineTimer::Forever)
                                       : QDeadlineTimer(timeoutMs);
+  // Read as it arrives (QProcess emits these from inside its waitFor*()
+  // calls too), so neither channel piles up in QProcess's buffers: stderr
+  // into the cap, stdout nobody asked for into nothing. Wanted stdout is
+  // kept whole, as a decrypt must be lossless; gpg's --max-output bounds it.
+  CappedOutput err;
+  const QMetaObject::Connection errReader = QObject::connect(
+      &process, &QProcess::readyReadStandardError,
+      [&process, &err]() { err.append(process.readAllStandardError()); });
+  const QMetaObject::Connection outDropper =
+      process_out != nullptr
+          ? QMetaObject::Connection()
+          : QObject::connect(&process, &QProcess::readyReadStandardOutput,
+                             [&process]() { process.readAllStandardOutput(); });
+  const auto disconnectReaders = qScopeGuard([&errReader, &outDropper]() {
+    QObject::disconnect(errReader);
+    QObject::disconnect(outDropper);
+  });
   startProcess(process, app, args);
   if (!process.waitForStarted(msecsLeft(deadline))) {
     qCDebug(lcQtPass) << "Process failed to start:" << app;
@@ -502,7 +655,8 @@ auto Executor::runBlockingRaw(QProcess &process, const QString &app,
     *process_out = process.readAllStandardOutput();
   }
   if (process_err != nullptr) {
-    *process_err = decodeAssumingUtf8(process.readAllStandardError());
+    err.append(process.readAllStandardError());
+    *process_err = decodeAssumingUtf8(err.take());
   }
   return process.exitStatus() == QProcess::NormalExit ? process.exitCode() : -1;
 }
@@ -584,6 +738,7 @@ void Executor::onProcessFinished(int exitCode,
     }
     emit finished(i.id, exitCode, output, err);
     m_outputLossless = true;
+    m_lastStatus.clear();
   } else {
     // A signal-killed process usually leaves stderr empty; without this the
     // password pane would show nothing at all for the failure.
@@ -595,6 +750,7 @@ void Executor::onProcessFinished(int exitCode,
     // as grep's "no matches". Report -1, like the failed-to-start path.
     emit error(i.id, -1, output, err);
     m_outputLossless = true;
+    m_lastStatus.clear();
   }
   executeNext();
   postDrainedIfIdle();
@@ -628,8 +784,11 @@ auto Executor::collectOutput(const ExecQueueItem &item, int exitCode)
     output = decodeAssumingUtf8(m_process.readAllStandardOutput(),
                                 &m_outputLossless);
   }
+  m_stderr.append(m_process.readAllStandardError());
+  const QByteArray errBytes = m_stderr.take();
+  m_lastStatus = m_stderr.statusCounts();
   if (item.readStderr || exitCode != 0) {
-    err = decodeAssumingUtf8(m_process.readAllStandardError());
+    err = decodeAssumingUtf8(errBytes);
   }
   return {output, err};
 }

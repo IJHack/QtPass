@@ -25,7 +25,13 @@ class tst_executor : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
+  void cappedOutputKeepsHeadAndTail();
+  void cappedOutputCountsStatusRecordsWhole();
 #ifndef Q_OS_WIN
+  void blockingStderrIsCapped();
+  void queuedStderrIsCapped();
+  void queuedRunHandsOnItsStatusCounts();
+  void blockingRunDrainsWhileItRuns();
   void executeBlockingEcho();
   void executeBlockingWithArgs();
   void executeBlockingWithInput();
@@ -1609,6 +1615,200 @@ void tst_executor::resolveExecutableFindsBundledExeOnWindows() {
   QCOMPARE(Executor::resolveExecutable(name), path);
 #endif
 }
+
+/**
+ * @brief CappedOutput keeps what fits whole, and of more the first and the
+ *        last half of the cap with a note of what was left out between,
+ *        cut at whole UTF-8 characters (ANT-2026-VQGRD45V).
+ */
+void tst_executor::cappedOutputKeepsHeadAndTail() {
+  Executor::CappedOutput small;
+  small.append("one ");
+  small.append("two");
+  QCOMPARE(small.take(), QByteArrayLiteral("one two"));
+  QCOMPARE(small.take(), QByteArray());
+
+  constexpr qsizetype half = Executor::kMaxStderrBytes / 2;
+  Executor::CappedOutput big;
+  // Two-byte characters, fed in odd-sized chunks, so both cuts can fall
+  // inside one.
+  const QByteArray e = QStringLiteral("é").toUtf8();
+  QByteArray all = QByteArrayLiteral("FIRST");
+  while (all.size() < 5 * Executor::kMaxStderrBytes) {
+    all += e;
+  }
+  all += QByteArrayLiteral("LAST");
+  for (qsizetype at = 0; at < all.size(); at += 4097) {
+    big.append(all.mid(at, 4097));
+  }
+  const QByteArray kept = big.take();
+  QVERIFY(kept.startsWith("FIRST"));
+  QVERIFY(kept.endsWith("LAST"));
+  QVERIFY2(kept.size() <= Executor::kMaxStderrBytes + 64,
+           qPrintable(QString::number(kept.size())));
+  QVERIFY(kept.size() >= Executor::kMaxStderrBytes - 8);
+  QVERIFY(kept.contains("bytes left out"));
+  const QString text = QString::fromUtf8(kept);
+  QCOMPARE(text.toUtf8(), kept);
+  QVERIFY2(!text.contains(QChar::ReplacementCharacter),
+           "a cut fell inside a character");
+  // The note counts what is missing.
+  const qsizetype from = kept.indexOf("[... ") + 5;
+  const qint64 left =
+      kept.mid(from, kept.indexOf(' ', from) - from).toLongLong();
+  const qsizetype note = kept.indexOf("[... ");
+  const qsizetype tailStart = kept.indexOf("...]\n") + 5;
+  QCOMPARE(left + (note - 1) + (kept.size() - tailStart),
+           static_cast<qint64>(all.size()));
+  QVERIFY(note - 1 <= half);
+}
+
+/**
+ * @brief Status records are counted over the whole stream, also the ones
+ *        the capped text leaves out, whatever the chunks; lines too long to
+ *        be one and keywords past the limit are not.
+ */
+void tst_executor::cappedOutputCountsStatusRecordsWhole() {
+  Executor::CappedOutput out;
+  out.append(QByteArray("[GNUPG:] ") +
+             QByteArray(Executor::CappedOutput::kMaxStatusLineBytes, 'X') +
+             "\n");
+  // The end of an overlong line, arriving in a chunk of its own, is not a
+  // line of its own.
+  out.append(QByteArray(Executor::CappedOutput::kMaxStatusLineBytes + 1, 'Y'));
+  out.append("[GNUPG:] FAKE\n");
+  QByteArray all;
+  for (int i = 0; i < 6000; ++i) {
+    all += "gpg: some human line\n[GNUPG:] END_ENCRYPTION\r\n";
+  }
+  // The last line has no line end and still counts.
+  all += "[GNUPG:] NO_SECKEY 0123";
+  for (qsizetype at = 0; at < all.size(); at += 777) {
+    out.append(all.mid(at, 777));
+  }
+  const QByteArray kept = out.take();
+  QVERIFY(kept.contains("bytes left out"));
+  const QHash<QString, qint64> counts = out.statusCounts();
+  QCOMPARE(counts.value(QStringLiteral("END_ENCRYPTION")), 6000);
+  QCOMPARE(counts.value(QStringLiteral("NO_SECKEY")), 1);
+  QCOMPARE(counts.size(), 2);
+
+  out.clear();
+  QVERIFY(out.statusCounts().isEmpty());
+  for (int i = 0; i < Executor::CappedOutput::kMaxStatusKeywords + 5; ++i) {
+    out.append("[GNUPG:] KEY" + QByteArray::number(i) + "\n");
+  }
+  out.append("[GNUPG:] KEY0\n");
+  out.take();
+  QCOMPARE(out.statusCounts().size(),
+           Executor::CappedOutput::kMaxStatusKeywords);
+  QCOMPARE(out.statusCounts().value(QStringLiteral("KEY0")), 2);
+}
+
+#ifndef Q_OS_WIN
+/**
+ * @brief A blocking run keeps at most the cap of a flood on stderr, with
+ *        its start and its end, where the error is.
+ */
+void tst_executor::blockingStderrIsCapped() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QString err;
+  const int rc = Executor::executeBlocking(
+      sh,
+      {QStringLiteral("-c"),
+       QStringLiteral("echo first-line >&2; awk 'BEGIN { for (i = 0; i < "
+                      "100000; i++) print \"bogus packet \" i }' >&2; "
+                      "echo last-line >&2; exit 2")},
+      QString(), nullptr, &err);
+  QCOMPARE(rc, 2);
+  QVERIFY2(err.size() <= Executor::kMaxStderrBytes + 64,
+           qPrintable(QString::number(err.size())));
+  QVERIFY(err.startsWith(QStringLiteral("first-line")));
+  QVERIFY(err.trimmed().endsWith(QStringLiteral("last-line")));
+  QVERIFY(err.contains(QStringLiteral("bytes left out")));
+}
+
+/**
+ * @brief The queued path keeps the same cap, read while the command runs.
+ */
+void tst_executor::queuedStderrIsCapped() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, &Executor::finished);
+  exec.execute(5, sh,
+               {QStringLiteral("-c"),
+                QStringLiteral("echo first-line >&2; awk 'BEGIN { for (i = 0; "
+                               "i < 100000; i++) print \"bogus packet \" i "
+                               "}' >&2; echo last-line >&2")},
+               false, true);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 10000);
+  const QString err = spy.first().at(3).toString();
+  QVERIFY2(err.size() <= Executor::kMaxStderrBytes + 64,
+           qPrintable(QString::number(err.size())));
+  QVERIFY(err.startsWith(QStringLiteral("first-line")));
+  QVERIFY(err.trimmed().endsWith(QStringLiteral("last-line")));
+  QVERIFY(err.contains(QStringLiteral("bytes left out")));
+}
+
+/**
+ * @brief The queued path hands the status counts of the whole stream to a
+ *        slot on finished(), and has none outside that emission.
+ */
+void tst_executor::queuedRunHandsOnItsStatusCounts() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  qint64 seen = -1;
+  connect(&exec, &Executor::finished, this, [&exec, &seen]() {
+    seen = exec.lastStatusCounts().value(QStringLiteral("END_ENCRYPTION"));
+  });
+  exec.execute(6, sh,
+               {QStringLiteral("-c"),
+                QStringLiteral("awk 'BEGIN { for (i = 0; i < 5000; i++) "
+                               "print \"[GNUPG:] END_ENCRYPTION\" }' >&2")},
+               false, true);
+  QTRY_VERIFY_WITH_TIMEOUT(seen >= 0, 10000);
+  QCOMPARE(seen, 5000);
+  QVERIFY(exec.lastStatusCounts().isEmpty());
+}
+
+/**
+ * @brief A blocking run reads stderr, and stdout nobody asked for, while
+ *        the command runs: when it ends, almost nothing is left in QProcess's
+ *        buffers, rather than all it wrote.
+ */
+void tst_executor::blockingRunDrainsWhileItRuns() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  qint64 errLeft = -1;
+  qint64 outLeft = -1;
+  connect(&process, &QProcess::finished, this, [&]() {
+    process.setReadChannel(QProcess::StandardError);
+    errLeft = process.bytesAvailable();
+    process.setReadChannel(QProcess::StandardOutput);
+    outLeft = process.bytesAvailable();
+  });
+  const QString flood = QStringLiteral(
+      "awk 'BEGIN { for (i = 0; i < 40000; i++) print \"bogus packet \" i }'");
+  QString err;
+  const int rc = Executor::executeBlocking(
+      process, sh,
+      {QStringLiteral("-c"), flood + QStringLiteral(" >&2; ") + flood},
+      QString(), nullptr, &err);
+  QCOMPARE(rc, 0);
+  QVERIFY2(errLeft >= 0 && errLeft < Executor::kMaxStderrBytes,
+           qPrintable(QString::number(errLeft)));
+  QVERIFY2(outLeft >= 0 && outLeft < Executor::kMaxStderrBytes,
+           qPrintable(QString::number(outLeft)));
+}
+#endif
 
 QTEST_MAIN(tst_executor)
 #include "tst_executor.moc"

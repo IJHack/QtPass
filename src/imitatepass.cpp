@@ -944,29 +944,35 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
   return true;
 }
 
+// From gpg's status lines on stdout, one ENC_TO per recipient, rather than
+// its human messages on stderr: stderr is capped (Executor::CappedOutput),
+// and a listing cut short there could match the folder's list while the
+// entry is still encrypted to a recipient it left out, so its
+// re-encryption was skipped. stdout is read whole.
 auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
-  QStringList args = {
-      "-v",          "--no-secmem-warning", "--no-permission-warning",
-      "--list-only", "--keyid-format=long", "--",
-      pgpg(fileName)};
-  QString keys;
+  const QStringList args = {QStringLiteral("--batch"),
+                            QStringLiteral("--no-secmem-warning"),
+                            QStringLiteral("--no-permission-warning"),
+                            QStringLiteral("--list-only"),
+                            QStringLiteral("--status-fd=1"),
+                            QStringLiteral("--keyid-format=long"),
+                            QStringLiteral("--"),
+                            pgpg(fileName)};
+  QString status;
   QString err;
-  const int result = execBlocking(m_settings.gpgExecutable, args, &keys, &err);
+  const int result =
+      execBlocking(m_settings.gpgExecutable, args, &status, &err);
   if (result != 0) {
     return {};
   }
+  static const QRegularExpression encTo(
+      QStringLiteral("^\\[GNUPG:\\] ENC_TO ([0-9A-Fa-f]{16})(?: |$)"));
   QStringList actualKeys;
-  keys += err;
-  QStringList key = keys.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-  QListIterator<QString> itr(key);
-  while (itr.hasNext()) {
-    QString current = itr.next();
-    QStringList cur = current.split(" ");
-    if (cur.length() > 4) {
-      QString actualKey = cur.takeAt(4);
-      if (actualKey.length() == 16) {
-        actualKeys << actualKey;
-      }
+  for (const QString &line :
+       status.split(Util::newLinesRegex(), Qt::SkipEmptyParts)) {
+    const QRegularExpressionMatch match = encTo.match(line);
+    if (match.hasMatch()) {
+      actualKeys << match.captured(1).toUpper();
     }
   }
   actualKeys.sort();

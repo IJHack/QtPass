@@ -714,6 +714,7 @@ private Q_SLOTS:
   void reencryptAbortsWhenTheWorkerPullLeavesARebase();
   void failureDialogListsAtMostFifteenFiles();
   void moveFolderResolvesItsDestination();
+  void recipientListingReadsEveryEncToLine();
   void moveWithForceReplacesTheDestinationWithoutGit();
   void removeWithoutGitReportsWhatItCannotRemove();
   void moveWithoutGitReportsAFailedMove();
@@ -4251,7 +4252,7 @@ void tst_imitatepass::reencryptReportsALinkWhoseTargetHasTheRecipients() {
         << "    [ \"$e\" = \"$last\" ] || ln -sf '" << outside << "' \"$e\"\n"
         << "  done\n"
         << "fi\n"
-        << "echo 'gpg: public key is 0123456789ABCDEF' >&2\n"
+        << "echo '[GNUPG:] ENC_TO 0123456789ABCDEF 1 0'\n"
         << "exit 0\n";
   }
   QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
@@ -4315,7 +4316,7 @@ void tst_imitatepass::reencryptReportsAFolderThatBecameALink() {
         << "  mv '" << team << "' '" << team << ".old' && ln -s '" << elsewhere
         << "' '" << team << "'\n"
         << "fi\n"
-        << "echo 'gpg: public key is 0123456789ABCDEF' >&2\n"
+        << "echo '[GNUPG:] ENC_TO 0123456789ABCDEF 1 0'\n"
         << "exit 0\n";
   }
   QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
@@ -6774,6 +6775,45 @@ void tst_imitatepass::failureDialogListsAtMostFifteenFiles() {
   QVERIFY2(!rec.statusMessages.isEmpty() &&
                rec.statusMessages.last().contains(QStringLiteral("17 failed")),
            qPrintable(rec.statusMessages.last()));
+}
+
+/**
+ * @brief The recipients of an entry come from gpg's ENC_TO status lines on
+ *        stdout, all of them: stderr is capped, and a listing cut short
+ *        there matched a folder's list that left out a recipient the entry
+ *        is still encrypted to, so its re-encryption was skipped.
+ */
+void tst_imitatepass::recipientListingReadsEveryEncToLine() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString script =
+      QDir(storeDir.path()).filePath(QStringLiteral("list-gpg.sh"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\n"
+            "awk 'BEGIN { for (i = 0; i < 3000; i++) {\n"
+            "  printf \"[GNUPG:] ENC_TO %016X 18 0\\n\", i\n"
+            "  printf \"gpg: public key is %016X\\n\", i > \"/dev/stderr\"\n"
+            "} }'\n"
+            "echo 'gpg: [GNUPG:] ENC_TO FFFFFFFFFFFFFFFF in a user ID'\n"
+            "exit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), script));
+  const QStringList keys = pass.getKeysFromFile(
+      QDir(storeDir.path()).filePath(QStringLiteral("entry0.gpg")));
+  QCOMPARE(keys.size(), 3000);
+  QCOMPARE(keys.first(), QStringLiteral("0000000000000000"));
+  QCOMPARE(keys.last(), QStringLiteral("0000000000000BB7"));
+#endif
 }
 
 /**
