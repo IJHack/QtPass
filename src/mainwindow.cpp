@@ -54,7 +54,10 @@
 #include <QPushButton>
 #include <QScrollBar>
 #include <QShortcut>
+#include <QTextBlock>
 #include <QTextCharFormat>
+#include <QTextCursor>
+#include <QTextDocument>
 #include <QTextEdit>
 #include <QTextStream>
 #include <QTimer>
@@ -514,10 +517,31 @@ void MainWindow::flashText(const QString &text, const bool isError,
   ui->textBrowser->setWordWrapMode(QTextOption::WrapAnywhere);
   if (isHtml) {
     QString _text = text;
+    // What was shown before this message: the part the cap may remove.
+    // The message itself is never cut, so an entry shown through here
+    // (passShowHandler()) stays whole however long it is.
+    int older = 0;
     if (!ui->textBrowser->toPlainText().isEmpty()) {
+      older = ui->textBrowser->document()->characterCount() - 1;
       _text = ui->textBrowser->toHtml() + _text;
     }
     ui->textBrowser->setHtml(_text);
+    // Only the latest output: from the front, up to the start of the first
+    // paragraph that ends the excess, within what was shown before (a
+    // message that starts a paragraph starts one past it, after the
+    // separator).
+    QTextDocument *doc = ui->textBrowser->document();
+    int cut = qMin(doc->characterCount() - kMaxFlashCharacters, older);
+    if (cut > 0) {
+      const QTextBlock block = doc->findBlock(cut);
+      if (block.isValid() && cut > block.position() && block.next().isValid() &&
+          block.next().position() <= older + 1) {
+        cut = block.next().position();
+      }
+      QTextCursor trim(doc);
+      trim.setPosition(cut, QTextCursor::KeepAnchor);
+      trim.removeSelectedText();
+    }
   } else {
     ui->textBrowser->setText(text);
   }
