@@ -43,21 +43,36 @@ NativeGrep::~NativeGrep() {
 auto NativeGrep::matchFile(const QProcessEnvironment &env,
                            const QString &gpgExe, const QString &filePath,
                            const QRegularExpression &rx,
-                           const std::atomic_bool *cancel) -> QStringList {
-  const QString translatedPath =
-      Executor::translatePathForWsl(filePath, gpgExe);
-  QString plaintext;
+                           const std::atomic_bool *cancel,
+                           const QString &storeDir) -> QStringList {
+  // Read here, without following a link, and handed to gpg on stdin: the
+  // name was listed as a regular file when the search began, and a pull
+  // since may have put a link there (or on a folder on the way). gpg given
+  // the name would follow it and decrypt a file outside the store into the
+  // results. The cap is on what decrypts; the ciphertext of an entry just
+  // under it is a little larger.
+  constexpr qint64 kCiphertextMargin = 1024LL * 1024;
+  if (!storeDir.isEmpty() && Util::isUnderLink(filePath, storeDir)) {
+    return {};
+  }
+  const std::optional<QByteArray> ciphertext = Util::readRegularFile(
+      filePath, Pass::kMaxPlaintextBytes + kCiphertextMargin);
+  if (!ciphertext) {
+    return {};
+  }
+  QByteArray decrypted;
   // The QProcess overload is the one that takes the cancel flag; it polls
   // the flag while waiting and terminates (then kills) gpg from this thread,
   // the one that owns the process.
   QProcess gpg;
   gpg.setProcessEnvironment(env);
-  const int rc = Executor::executeBlocking(
+  const int rc = Executor::executeBlockingRaw(
       gpg, gpgExe,
       QStringList{"-d", "--quiet", "--yes", "--no-encrypt-to", "--batch",
                   "--use-agent"} +
-          Pass::maxOutputArgs() + QStringList{translatedPath},
-      QString(), &plaintext, nullptr, cancel);
+          Pass::maxOutputArgs(),
+      *ciphertext, &decrypted, nullptr, cancel);
+  const QString plaintext = QString::fromUtf8(decrypted);
   if (rc != 0 || plaintext.isEmpty())
     return {};
   // Line by line over the text, never a list of every line (a compressed
@@ -157,7 +172,8 @@ auto NativeGrep::scanStore(const QProcessEnvironment &env,
       results.append({QString(), {}});
       break;
     }
-    QStringList matches = matchFile(env, gpgExe, filePath, rx, cancel);
+    QStringList matches =
+        matchFile(env, gpgExe, filePath, rx, cancel, storeDir);
     if (matches.isEmpty())
       continue;
     const bool more = isMoreMarker(matches.constLast());

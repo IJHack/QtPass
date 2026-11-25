@@ -340,6 +340,7 @@ private Q_SLOTS:
   void gpgErrorMessageStatusTokenTakesPriorityOverFallback();
   // ImitatePass::Grep / helpers
   void grepMatchFileFailedDecryptReturnsEmpty();
+  void grepDoesNotFollowALinkPulledInMidSearch();
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepCancelEndsARunningGpg();
   void grepTakesABoundedNumberOfMatches();
@@ -3679,6 +3680,80 @@ void tst_util::grepMatchFileFailedDecryptReturnsEmpty() {
   QVERIFY(matches.isEmpty());
 }
 
+/**
+ * @brief An entry the search listed as a regular file and that a pull then
+ *        turned into a link (or put under a linked folder) is not decrypted
+ *        through it: each entry is read without following a link and handed
+ *        to gpg on stdin. Here the stand-in gpg swaps the other entry for a
+ *        link to a file outside the store while it "decrypts" the first.
+ *        Scan ANT-2026-5W0UHRED.
+ */
+void tst_util::grepDoesNotFollowALinkPulledInMidSearch() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in and symlinks");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString store = tmp.filePath(QStringLiteral("store"));
+  QVERIFY(QDir().mkpath(store));
+  const auto write = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(bytes) == bytes.size();
+  };
+  QVERIFY(write(tmp.filePath(QStringLiteral("outside.txt")),
+                "outside secret hit\n"));
+  QVERIFY(write(QDir(store).filePath(QStringLiteral("a.gpg")), "A hit\n"));
+  QVERIFY(write(QDir(store).filePath(QStringLiteral("b.gpg")), "B hit\n"));
+  // "Decrypts" what it is given, the file named last or stdin, and while
+  // doing so replaces the other entry by a link to outside.txt.
+  const QString gpg = tmp.filePath(QStringLiteral("gpg"));
+  QVERIFY(write(gpg,
+                "#!/bin/sh\n"
+                "d=$(dirname \"$0\")\n"
+                "for a in \"$@\"; do last=\"$a\"; done\n"
+                "if [ -f \"$last\" ]; then in=$(cat \"$last\"); "
+                "else in=$(cat); fi\n"
+                "case \"$in\" in\n"
+                "'A hit') other=b ;;\n"
+                "'B hit') other=a ;;\n"
+                "*) other= ;;\n"
+                "esac\n"
+                "if [ -n \"$other\" ] && [ ! -L \"$d/store/$other.gpg\" ]; "
+                "then rm -f \"$d/store/$other.gpg\"; "
+                "ln -s \"$d/outside.txt\" \"$d/store/$other.gpg\"; fi\n"
+                "printf '%s\\n' \"$in\"\n"));
+  QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner));
+  const QRegularExpression rx(QStringLiteral("hit"));
+  const QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  const auto results = NativeGrep::scanStore(env, gpg, store, rx);
+  QStringList lines;
+  for (const auto &[entry, matches] : results) {
+    lines << matches;
+  }
+  QCOMPARE(results.size(), 1);
+  QVERIFY2(!lines.join(u'|').contains(QStringLiteral("outside")),
+           qPrintable(lines.join(u'|')));
+
+  // A folder on the way that is a link: not read with the store given.
+  const QString real = tmp.filePath(QStringLiteral("real"));
+  QVERIFY(QDir().mkpath(real));
+  QVERIFY(write(QDir(real).filePath(QStringLiteral("c.gpg")), "C hit\n"));
+  QVERIFY(QFile::link(real, QDir(store).filePath(QStringLiteral("linked"))));
+  const QString viaLink = QDir(store).filePath(QStringLiteral("linked/c.gpg"));
+  QVERIFY(
+      NativeGrep::matchFile(env, gpg, viaLink, rx, nullptr, store).isEmpty());
+  QCOMPARE(NativeGrep::matchFile(env, gpg, QDir(real).filePath("c.gpg"), rx),
+           QStringList{QStringLiteral("\nC hit")});
+  // The entry itself a link: never read through, store given or not.
+  const QString linkedEntry = QDir(store).filePath(QStringLiteral("d.gpg"));
+  QVERIFY(
+      QFile::link(tmp.filePath(QStringLiteral("outside.txt")), linkedEntry));
+  QVERIFY(NativeGrep::matchFile(env, gpg, linkedEntry, rx).isEmpty());
+#endif
+}
+
 void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
   QTemporaryDir tmp;
   QVERIFY(tmp.isValid());
@@ -3758,6 +3833,12 @@ void tst_util::grepMarksThePasswordAndOtpSecrets() {
            f.write(text.toUtf8()) > 0;
   };
   const QString entry = tmp.filePath(QStringLiteral("e.gpg"));
+  {
+    // Read by matchFile() as the regular file it is; the stand-in prints
+    // body.txt whatever it is given.
+    QFile e(entry);
+    QVERIFY(e.open(QIODevice::WriteOnly) && e.write("ciphertext") > 0);
+  }
   const QRegularExpression rx(QStringLiteral("hit"));
   const QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 
