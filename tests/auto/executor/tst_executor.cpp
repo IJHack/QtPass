@@ -26,9 +26,12 @@ class tst_executor : public QObject {
 
 private Q_SLOTS:
   void cappedOutputKeepsHeadAndTail();
+  void cappedOutputCountsStatusRecordsWhole();
 #ifndef Q_OS_WIN
   void blockingStderrIsCapped();
   void queuedStderrIsCapped();
+  void queuedRunHandsOnItsStatusCounts();
+  void blockingRunDrainsWhileItRuns();
   void executeBlockingEcho();
   void executeBlockingWithArgs();
   void executeBlockingWithInput();
@@ -1660,6 +1663,48 @@ void tst_executor::cappedOutputKeepsHeadAndTail() {
   QVERIFY(note - 1 <= half);
 }
 
+/**
+ * @brief Status records are counted over the whole stream, also the ones
+ *        the capped text leaves out, whatever the chunks; lines too long to
+ *        be one and keywords past the limit are not.
+ */
+void tst_executor::cappedOutputCountsStatusRecordsWhole() {
+  Executor::CappedOutput out;
+  out.append(QByteArray("[GNUPG:] ") +
+             QByteArray(Executor::CappedOutput::kMaxStatusLineBytes, 'X') +
+             "\n");
+  // The end of an overlong line, arriving in a chunk of its own, is not a
+  // line of its own.
+  out.append(QByteArray(Executor::CappedOutput::kMaxStatusLineBytes + 1, 'Y'));
+  out.append("[GNUPG:] FAKE\n");
+  QByteArray all;
+  for (int i = 0; i < 6000; ++i) {
+    all += "gpg: some human line\n[GNUPG:] END_ENCRYPTION\r\n";
+  }
+  // The last line has no line end and still counts.
+  all += "[GNUPG:] NO_SECKEY 0123";
+  for (qsizetype at = 0; at < all.size(); at += 777) {
+    out.append(all.mid(at, 777));
+  }
+  const QByteArray kept = out.take();
+  QVERIFY(kept.contains("bytes left out"));
+  const QHash<QString, qint64> counts = out.statusCounts();
+  QCOMPARE(counts.value(QStringLiteral("END_ENCRYPTION")), 6000);
+  QCOMPARE(counts.value(QStringLiteral("NO_SECKEY")), 1);
+  QCOMPARE(counts.size(), 2);
+
+  out.clear();
+  QVERIFY(out.statusCounts().isEmpty());
+  for (int i = 0; i < Executor::CappedOutput::kMaxStatusKeywords + 5; ++i) {
+    out.append("[GNUPG:] KEY" + QByteArray::number(i) + "\n");
+  }
+  out.append("[GNUPG:] KEY0\n");
+  out.take();
+  QCOMPARE(out.statusCounts().size(),
+           Executor::CappedOutput::kMaxStatusKeywords);
+  QCOMPARE(out.statusCounts().value(QStringLiteral("KEY0")), 2);
+}
+
 #ifndef Q_OS_WIN
 /**
  * @brief A blocking run keeps at most the cap of a flood on stderr, with
@@ -1707,6 +1752,61 @@ void tst_executor::queuedStderrIsCapped() {
   QVERIFY(err.startsWith(QStringLiteral("first-line")));
   QVERIFY(err.trimmed().endsWith(QStringLiteral("last-line")));
   QVERIFY(err.contains(QStringLiteral("bytes left out")));
+}
+
+/**
+ * @brief The queued path hands the status counts of the whole stream to a
+ *        slot on finished(), and has none outside that emission.
+ */
+void tst_executor::queuedRunHandsOnItsStatusCounts() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  qint64 seen = -1;
+  connect(&exec, &Executor::finished, this, [&exec, &seen]() {
+    seen = exec.lastStatusCounts().value(QStringLiteral("END_ENCRYPTION"));
+  });
+  exec.execute(6, sh,
+               {QStringLiteral("-c"),
+                QStringLiteral("awk 'BEGIN { for (i = 0; i < 5000; i++) "
+                               "print \"[GNUPG:] END_ENCRYPTION\" }' >&2")},
+               false, true);
+  QTRY_VERIFY_WITH_TIMEOUT(seen >= 0, 10000);
+  QCOMPARE(seen, 5000);
+  QVERIFY(exec.lastStatusCounts().isEmpty());
+}
+
+/**
+ * @brief A blocking run reads stderr, and stdout nobody asked for, while
+ *        the command runs: when it ends, almost nothing is left in QProcess's
+ *        buffers, rather than all it wrote.
+ */
+void tst_executor::blockingRunDrainsWhileItRuns() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  qint64 errLeft = -1;
+  qint64 outLeft = -1;
+  connect(&process, &QProcess::finished, this, [&]() {
+    process.setReadChannel(QProcess::StandardError);
+    errLeft = process.bytesAvailable();
+    process.setReadChannel(QProcess::StandardOutput);
+    outLeft = process.bytesAvailable();
+  });
+  const QString flood = QStringLiteral(
+      "awk 'BEGIN { for (i = 0; i < 40000; i++) print \"bogus packet \" i }'");
+  QString err;
+  const int rc = Executor::executeBlocking(
+      process, sh,
+      {QStringLiteral("-c"), flood + QStringLiteral(" >&2; ") + flood},
+      QString(), nullptr, &err);
+  QCOMPARE(rc, 0);
+  QVERIFY2(errLeft >= 0 && errLeft < Executor::kMaxStderrBytes,
+           qPrintable(QString::number(errLeft)));
+  QVERIFY2(outLeft >= 0 && outLeft < Executor::kMaxStderrBytes,
+           qPrintable(QString::number(outLeft)));
 }
 #endif
 

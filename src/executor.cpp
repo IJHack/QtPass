@@ -68,7 +68,45 @@ auto utf8SequenceLength(unsigned char lead) -> int {
 
 } // namespace
 
+void Executor::CappedOutput::countStatus(const QByteArray &line) {
+  static const QByteArray prefix = QByteArrayLiteral("[GNUPG:] ");
+  if (!line.startsWith(prefix)) {
+    return;
+  }
+  QByteArray keyword = line.mid(prefix.size());
+  keyword.truncate(keyword.indexOf(' ') < 0 ? keyword.size()
+                                            : keyword.indexOf(' '));
+  if (keyword.endsWith('\r')) {
+    keyword.chop(1);
+  }
+  const QString key = QString::fromLatin1(keyword);
+  if (m_status.contains(key) || m_status.size() < kMaxStatusKeywords) {
+    ++m_status[key];
+  }
+}
+
 void Executor::CappedOutput::append(const QByteArray &chunk) {
+  // Status records, whole lines at a time, before the text is cut.
+  qsizetype start = 0;
+  for (qsizetype end = chunk.indexOf('\n'); end >= 0;
+       start = end + 1, end = chunk.indexOf('\n', start)) {
+    if (!m_lineTooLong &&
+        m_line.size() + (end - start) <= kMaxStatusLineBytes) {
+      m_line.append(chunk.constData() + start, end - start);
+      countStatus(m_line);
+    }
+    m_line.clear();
+    m_lineTooLong = false;
+  }
+  if (!m_lineTooLong) {
+    if (m_line.size() + (chunk.size() - start) > kMaxStatusLineBytes) {
+      m_line.clear();
+      m_lineTooLong = true;
+    } else {
+      m_line.append(chunk.constData() + start, chunk.size() - start);
+    }
+  }
+
   constexpr qsizetype half = kMaxStderrBytes / 2;
   qsizetype from = 0;
   if (m_head.size() < half) {
@@ -120,6 +158,12 @@ auto Executor::CappedOutput::take() -> QByteArray {
   m_head.clear();
   m_tail.clear();
   m_dropped = 0;
+  // A last line without a line end is a record too.
+  if (!m_lineTooLong && !m_line.isEmpty()) {
+    countStatus(m_line);
+  }
+  m_line.clear();
+  m_lineTooLong = false;
   return all;
 }
 
@@ -327,7 +371,7 @@ void Executor::executeNext() {
   // Always set it: an item without a directory runs in the application's
   // cwd, not wherever the previous item happened to run.
   m_process.setWorkingDirectory(i.workingDir);
-  m_stderr.take();
+  m_stderr.clear();
   m_discardStdout = !i.readStdout;
   startProcess(m_process, i.app, i.args);
 
@@ -694,6 +738,7 @@ void Executor::onProcessFinished(int exitCode,
     }
     emit finished(i.id, exitCode, output, err);
     m_outputLossless = true;
+    m_lastStatus.clear();
   } else {
     // A signal-killed process usually leaves stderr empty; without this the
     // password pane would show nothing at all for the failure.
@@ -705,6 +750,7 @@ void Executor::onProcessFinished(int exitCode,
     // as grep's "no matches". Report -1, like the failed-to-start path.
     emit error(i.id, -1, output, err);
     m_outputLossless = true;
+    m_lastStatus.clear();
   }
   executeNext();
   postDrainedIfIdle();
@@ -740,6 +786,7 @@ auto Executor::collectOutput(const ExecQueueItem &item, int exitCode)
   }
   m_stderr.append(m_process.readAllStandardError());
   const QByteArray errBytes = m_stderr.take();
+  m_lastStatus = m_stderr.statusCounts();
   if (item.readStderr || exitCode != 0) {
     err = decodeAssumingUtf8(errBytes);
   }

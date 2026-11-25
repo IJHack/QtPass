@@ -387,6 +387,18 @@ public:
    */
   static auto reencryptFailed(const QString &out, const QString &err) -> bool;
   /**
+   * @brief reencryptFailed() on status records already counted, as the
+   *        Executor counts them over the whole of stderr
+   *        (Executor::lastStatusCounts()): the stderr text it hands on is
+   *        capped, and a large store's END_ENCRYPTION lines would not all
+   *        be in it.
+   * @param out pass's standard output.
+   * @param status gpg status keyword to the number of its lines.
+   * @return As reencryptFailed().
+   */
+  static auto reencryptFailed(const QString &out,
+                              const QHash<QString, qint64> &status) -> bool;
+  /**
    * @brief Destructor; lets the search workers wind down.
    */
   ~RealPass() override;

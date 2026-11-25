@@ -987,7 +987,12 @@ void RealPass::finished(int id, int exitCode, const QString &out,
     // whole store: held as a whole, released by nothing short of it.
     const QString scope =
         m_reencryptPending.isEmpty() ? QString() : m_reencryptPending.dequeue();
-    if (exitCode == 0 && reencryptFailed(out, err)) {
+    // Counted by the Executor over the whole of stderr: err itself is
+    // capped. Outside an emission of its own (a test driving finished())
+    // there is no count, and err is all there is.
+    const QHash<QString, qint64> status = exec.lastStatusCounts();
+    if (exitCode == 0 && (status.isEmpty() ? reencryptFailed(out, err)
+                                           : reencryptFailed(out, status))) {
       holdAutoPush(scope);
       sendDeferredPush();
       reportReencryptFailure(pid, out, err);
@@ -1022,6 +1027,14 @@ void RealPass::finished(int id, int exitCode, const QString &out,
 }
 
 auto RealPass::reencryptFailed(const QString &out, const QString &err) -> bool {
+  Executor::CappedOutput counter;
+  counter.append(err.toUtf8());
+  counter.take();
+  return reencryptFailed(out, counter.statusCounts());
+}
+
+auto RealPass::reencryptFailed(const QString &out,
+                               const QHash<QString, qint64> &status) -> bool {
   // pass's own line for each entry it re-encrypts ("name: reencrypting to
   // KEY..."), which it does not translate; one per line, counted once
   // even when the entry's own name holds the words.
@@ -1030,29 +1043,20 @@ auto RealPass::reencryptFailed(const QString &out, const QString &err) -> bool {
       outLines.cbegin(), outLines.cend(), [](const QString &line) {
         return line.contains(QLatin1String(": reencrypting to "));
       });
-  qsizetype encrypted = 0;
-  bool status = false;
-  for (QString line : err.split(QLatin1Char('\n'))) {
-    line.remove(QLatin1Char('\r'));
-    if (!line.startsWith(QLatin1String("[GNUPG:] "))) {
-      continue;
-    }
-    status = true;
-    // A recipient gpg cannot encrypt to, or a decrypt that failed (no
-    // secret key, pinentry cancelled, no smartcard): that entry was left
-    // as it was. KEYEXPIRED and NO_SECKEY alone are not failures.
-    if (line.startsWith(QLatin1String("[GNUPG:] INV_RECP ")) ||
-        line.startsWith(QLatin1String("[GNUPG:] FAILURE ")) ||
-        line.startsWith(QLatin1String("[GNUPG:] DECRYPTION_FAILED"))) {
+  // A recipient gpg cannot encrypt to, or a decrypt that failed (no
+  // secret key, pinentry cancelled, no smartcard): that entry was left as
+  // it was. KEYEXPIRED and NO_SECKEY alone are not failures.
+  for (const QLatin1String failure :
+       {QLatin1String("INV_RECP"), QLatin1String("FAILURE"),
+        QLatin1String("DECRYPTION_FAILED")}) {
+    if (status.value(failure) > 0) {
       return true;
-    }
-    if (line.startsWith(QLatin1String("[GNUPG:] END_ENCRYPTION"))) {
-      ++encrypted;
     }
   }
   // Without any status line the option did not reach gpg (a pass that does
   // not pass PASSWORD_STORE_GPG_OPTS on): nothing to judge by.
-  return status && encrypted < attempts;
+  return !status.isEmpty() &&
+         status.value(QStringLiteral("END_ENCRYPTION")) < attempts;
 }
 
 void RealPass::reportReencryptFailure(PROCESS pid, const QString &out,

@@ -9,6 +9,7 @@
 #ifndef SRC_EXECUTOR_H_
 #define SRC_EXECUTOR_H_
 
+#include <QHash>
 #include <QObject>
 #include <QProcess>
 #include <QProcessEnvironment>
@@ -175,7 +176,12 @@ public:
   /**
    * @class CappedOutput
    * @brief A stream of bytes held as its first and last
-   *        kMaxStderrBytes / 2 bytes.
+   *        kMaxStderrBytes / 2 bytes, with its gpg status records counted
+   *        whole.
+   *
+   * What is left out of the text is still counted: a caller that judges a
+   * run by its status records (RealPass counting END_ENCRYPTION against the
+   * entries pass re-encrypted) reads statusCounts(), not the capped text.
    */
   class CappedOutput {
   public:
@@ -191,8 +197,41 @@ public:
      *         tail, each cut at a UTF-8 character boundary.
      */
     auto take() -> QByteArray;
+    /**
+     * @brief How many complete lines of each gpg status keyword came by
+     *        since the last take(), the left-out ones included.
+     *
+     * A line counts when it starts with "[GNUPG:] "; its keyword is the
+     * word after that. Lines longer than kMaxStatusLineBytes, and keywords
+     * past the first kMaxStatusKeywords, are not counted: gpg's own status
+     * lines are short and few in kind.
+     * @return Keyword to count.
+     */
+    [[nodiscard]] auto statusCounts() const -> QHash<QString, qint64> {
+      return m_status;
+    }
+    /** @brief Drop everything, counts included, for the next command. */
+    void clear() {
+      take();
+      m_status.clear();
+    }
+    /** @brief Longest line still looked at for a status keyword. */
+    static constexpr qsizetype kMaxStatusLineBytes = 1024;
+    /** @brief Most distinct status keywords counted. */
+    static constexpr int kMaxStatusKeywords = 64;
 
   private:
+    /**
+     * @brief Count @p line if it is a status record.
+     * @param line One line, without its line end.
+     */
+    void countStatus(const QByteArray &line);
+    /** @brief The line not ended yet; empty once it ran too long. */
+    QByteArray m_line;
+    /** @brief The line not ended yet ran past kMaxStatusLineBytes. */
+    bool m_lineTooLong = false;
+    /** @brief Status keyword to count, see statusCounts(). */
+    QHash<QString, qint64> m_status;
     /** @brief The first bytes, up to half the cap. */
     QByteArray m_head;
     /** @brief The latest bytes, up to half the cap. */
@@ -207,6 +246,8 @@ private:
    *        capped.
    */
   CappedOutput m_stderr;
+  /// lastStatusCounts(): set by collectOutput(), cleared after the emit.
+  QHash<QString, qint64> m_lastStatus;
   /// The running queued command's stdout is not wanted: dropped as it comes.
   bool m_discardStdout = false;
 
@@ -553,6 +594,19 @@ public:
    */
   [[nodiscard]] auto lastOutputLossless() const -> bool {
     return m_outputLossless;
+  }
+
+  /**
+   * @brief The gpg status records on the stderr of the command whose
+   *        finished() or error() is being emitted, counted by keyword over
+   *        the whole stream (CappedOutput::statusCounts()).
+   *
+   * Valid only in a slot directly connected to those signals, while the
+   * emission runs; empty at any other time.
+   * @return Keyword to count.
+   */
+  [[nodiscard]] auto lastStatusCounts() const -> QHash<QString, qint64> {
+    return m_lastStatus;
   }
 
   /**
