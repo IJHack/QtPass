@@ -1239,9 +1239,9 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
   RecipientsForEditing result;
   const QString folder = dir.isEmpty() ? QString() : dir;
   const QString gpgIdPath = getGpgIdPath(folder, passStore);
-  const GpgIdSigner signer(
-      m_settings.gpgExecutable,
-      GpgIdSigner::keysFromSetting(m_settings.passSigningKey));
+  GpgIdSigner signer(m_settings.gpgExecutable,
+                     GpgIdSigner::keysFromSetting(m_settings.passSigningKey));
+  signer.setStoreRoot(passStore);
   if (!signer.enabled()) {
     // A list that is there but cannot be read as one (too large, not a
     // regular file, unreadable) is not an empty list: preselecting nothing
@@ -1254,8 +1254,8 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
       result.state = RecipientsForEditing::State::Unsigned;
       return result;
     }
-    const std::optional<QByteArray> bytes =
-        Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes);
+    const std::optional<QByteArray> bytes = Util::readRegularFileInStore(
+        passStore, gpgIdPath, Util::kMaxGpgIdBytes);
     if (!bytes) {
       result.state = RecipientsForEditing::State::Rejected;
       result.warning =
@@ -1330,7 +1330,7 @@ auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
     return {};
   }
   const std::optional<QByteArray> bytes =
-      Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes);
+      Util::readRegularFileInStore(passStore, gpgIdPath, Util::kMaxGpgIdBytes);
   if (!bytes) {
     return {};
   }

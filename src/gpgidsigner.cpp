@@ -177,7 +177,11 @@ auto GpgIdSigner::sign(const QString &gpgIdFile, const QByteArray &contents,
   // Checked before it is placed: a signature by any key but the configured
   // ones (an older gpg, a wrapper, a smartcard picking its own) is not
   // written, and the one there, if any, stays.
-  if (!verify(contents, output)) {
+  // The signature is in this call's own scratch folder, outside the store:
+  // checked by a copy of this signer without the store root.
+  GpgIdSigner scratchSigner = *this;
+  scratchSigner.m_storeRoot.clear();
+  if (!scratchSigner.verify(contents, output)) {
     if (error)
       *error = QCoreApplication::translate(
           "GpgIdSigner",
@@ -223,6 +227,13 @@ auto GpgIdSigner::validSigFingerprints(const QString &statusOutput)
   return {m.captured(1), m.captured(2)};
 }
 
+auto GpgIdSigner::readOwnFile(const QString &path, qint64 maxBytes) const
+    -> std::optional<QByteArray> {
+  return m_storeRoot.isEmpty()
+             ? Util::readRegularFile(path, maxBytes)
+             : Util::readRegularFileInStore(m_storeRoot, path, maxBytes);
+}
+
 auto GpgIdSigner::verify(const QByteArray &contents,
                          const QString &signatureFile) const -> bool {
   if (!enabled()) {
@@ -251,7 +262,7 @@ auto GpgIdSigner::verify(const QByteArray &contents,
   // gigabytes would be read whole, and either could be swapped in between
   // a check of the name and gpg opening it.
   const std::optional<QByteArray> signature =
-      Util::readRegularFile(signatureFile, kMaxSignatureBytes);
+      readOwnFile(signatureFile, kMaxSignatureBytes);
   if (!signature) {
     qCDebug(lcQtPass) << "Refusing to verify" << signatureFile
                       << ": not a regular file of at most" << kMaxSignatureBytes
@@ -303,7 +314,7 @@ auto GpgIdSigner::verifyFile(const QString &gpgIdFile,
   // Read as the regular file it is and bounded: a FIFO would block, a
   // sparse file of gigabytes be read whole, before any signature is checked.
   std::optional<QByteArray> bytes =
-      Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);
+      readOwnFile(gpgIdFile, Util::kMaxGpgIdBytes);
   if (!bytes) {
     contents->clear();
     return false;

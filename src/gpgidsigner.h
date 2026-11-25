@@ -11,6 +11,7 @@
 #include <QString>
 #include <QStringList>
 #include <functional>
+#include <optional>
 
 /**
  * @class GpgIdSigner
@@ -61,6 +62,18 @@ public:
    */
   GpgIdSigner(QString gpgExecutable, QStringList signingKeys,
               Exec exec = Exec());
+
+  /**
+   * @brief The store the lists and signatures this signer reads belong to.
+   *
+   * With a root set, verify() and verifyFile() read their files with
+   * Util::readRegularFileInStore(): no folder on the way down from the
+   * store is followed, so none swapped for a link between a check and the
+   * read leads to another folder's list. Without one, only the last part
+   * of the name is not followed (Util::readRegularFile()).
+   * @param root The store root as configured.
+   */
+  void setStoreRoot(const QString &root) { m_storeRoot = root; }
 
   /**
    * @brief Split the settings value into keys, upper-cased the way gpg
@@ -163,6 +176,17 @@ private:
    * any of them verifies.
    */
   QStringList m_keys;
+  /**
+   * @brief Read a list or signature of the store: under m_storeRoot when
+   *        set (see setStoreRoot()).
+   * @param path The file.
+   * @param maxBytes The most bytes accepted.
+   * @return The contents, or nothing when it cannot be read that way.
+   */
+  [[nodiscard]] auto readOwnFile(const QString &path, qint64 maxBytes) const
+      -> std::optional<QByteArray>;
+  /** @brief See setStoreRoot(); empty when not set. */
+  QString m_storeRoot;
   /** @brief How gpg is run; replaced by a fake in the unit tests. */
   Exec m_exec;
 

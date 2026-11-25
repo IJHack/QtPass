@@ -342,6 +342,7 @@ private Q_SLOTS:
   void grepMatchFileFailedDecryptReturnsEmpty();
   void grepDoesNotFollowALinkPulledInMidSearch();
   void readRegularFileUnderFollowsNoLinkBelowTheRoot();
+  void storeListsAreReadWithoutFollowingAFolderLink();
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepCancelEndsARunningGpg();
   void grepTakesABoundedNumberOfMatches();
@@ -3752,6 +3753,54 @@ void tst_util::grepDoesNotFollowALinkPulledInMidSearch() {
   QVERIFY(
       QFile::link(tmp.filePath(QStringLiteral("outside.txt")), linkedEntry));
   QVERIFY(NativeGrep::matchFile(env, gpg, linkedEntry, rx).isEmpty());
+#endif
+}
+
+/**
+ * @brief readRegularFileInStore() reads a file of the store spelled under
+ *        the store or under the target of a linked store root, refuses
+ *        anything under neither, and follows no folder link on the way, so
+ *        a recipient list behind a folder swapped for a link is not read:
+ *        Pass::getRecipientList() then finds none.
+ */
+void tst_util::storeListsAreReadWithoutFollowingAFolderLink() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString real = tmp.filePath(QStringLiteral("real"));
+  const QString store = tmp.filePath(QStringLiteral("store"));
+  const QString outside = tmp.filePath(QStringLiteral("outside"));
+  QVERIFY(QDir().mkpath(real + QStringLiteral("/team")));
+  QVERIFY(QDir().mkpath(outside));
+  QVERIFY(QFile::link(real, store));
+  const auto write = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(bytes) == bytes.size();
+  };
+  QVERIFY(write(real + QStringLiteral("/team/.gpg-id"), "TEAM\n"));
+  QVERIFY(write(outside + QStringLiteral("/.gpg-id"), "MALLORY\n"));
+
+  QCOMPARE(Util::readRegularFileInStore(
+               store, store + QStringLiteral("/team/.gpg-id"), 100),
+           std::optional<QByteArray>("TEAM\n"));
+  // Spelled through the target of the linked store root.
+  QCOMPARE(Util::readRegularFileInStore(
+               store, real + QStringLiteral("/team/.gpg-id"), 100),
+           std::optional<QByteArray>("TEAM\n"));
+  QVERIFY(!Util::readRegularFileInStore(
+      store, outside + QStringLiteral("/.gpg-id"), 100));
+
+  QVERIFY(QFile::link(outside, real + QStringLiteral("/shared")));
+  const QString behindLink = store + QStringLiteral("/shared/.gpg-id");
+  QVERIFY(Util::readRegularFile(behindLink, 100));
+  QVERIFY(!Util::readRegularFileInStore(store, behindLink, 100));
+  QVERIFY(Pass::getRecipientList(store + QStringLiteral("/shared/x.gpg"), store)
+              .isEmpty());
+  QCOMPARE(Pass::getRecipientList(store + QStringLiteral("/team/x.gpg"), store),
+           QStringList{QStringLiteral("TEAM")});
 #endif
 }
 
