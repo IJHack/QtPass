@@ -477,10 +477,13 @@ public:
    * @param passStore The store root given to recipientsForEditing().
    * @param read What recipientsForEditing() returned then; its warning is
    *        not compared.
+   * @return false when refuseChangedList() or refuseBusyForExpectedList()
+   *         refused, so the caller can keep its selection; true otherwise,
+   *         also when Init() refused for another reason it reported itself.
    */
-  void initIfUnchanged(const QString &path, const QList<UserInfo> &users,
+  auto initIfUnchanged(const QString &path, const QList<UserInfo> &users,
                        const QString &dir, const QString &passStore,
-                       const RecipientsForEditing &read);
+                       const RecipientsForEditing &read) -> bool;
   /**
    * @brief Parse the contents of a .gpg-id: one recipient per line, `#`
    * starts a comment, unusable lines are logged and skipped.
@@ -888,6 +891,9 @@ private:
   };
   /** @brief Set during initIfUnchanged(). */
   std::optional<ExpectedList> m_expectedList;
+  /** @brief Set when refuseChangedList() or refuseBusyForExpectedList()
+   *  refused during initIfUnchanged(). */
+  bool m_expectedListRefused = false;
   /// Files of the Show() calls still in flight, oldest first.
   QQueue<QString> m_pendingShows;
   /// Inserts that have started queueing but not yet reported; see queueInsert.

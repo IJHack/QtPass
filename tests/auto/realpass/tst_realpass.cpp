@@ -1067,7 +1067,7 @@ void tst_realpass::initIfUnchangedRefusesAChangedListOrABusyQueue() {
   {
     QScopedPointer<RealPass> pass(makePass());
     QSignalSpy critical(pass.data(), &Pass::critical);
-    pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read);
+    QVERIFY(pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read));
     QCOMPARE(waitForCall().args,
              (QStringList{QStringLiteral("init"), QStringLiteral("--path="),
                           QStringLiteral("AAAA")}));
@@ -1081,7 +1081,7 @@ void tst_realpass::initIfUnchangedRefusesAChangedListOrABusyQueue() {
     QVERIFY(writeList("BBBB\n"));
     QScopedPointer<RealPass> pass(makePass());
     QSignalSpy critical(pass.data(), &Pass::critical);
-    pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read);
+    QVERIFY(!pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read));
     QCOMPARE(critical.count(), 1);
     QCOMPARE(critical.first().at(0).toString(),
              QStringLiteral("Recipients not changed"));
@@ -1098,7 +1098,7 @@ void tst_realpass::initIfUnchangedRefusesAChangedListOrABusyQueue() {
     QScopedPointer<RealPass> pass(makePass());
     QSignalSpy critical(pass.data(), &Pass::critical);
     pass->Init(m_store + QStringLiteral("folder/"), {alice});
-    pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read);
+    QVERIFY(!pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read));
     QCOMPARE(critical.count(), 1);
     QVERIFY2(critical.first().at(1).toString().contains(
                  QStringLiteral("Another operation is still running")),

@@ -458,7 +458,13 @@ void UsersDialog::accept() {
       Pass::RecipientsForEditing read;
       read.state = static_cast<Pass::RecipientsForEditing::State>(m_readState);
       read.recipients = m_readRecipients;
-      m_pass->initIfUnchanged(m_dir, m_userList, m_dir, m_passStore, read);
+      // Refused there (changed after all, or another operation runs): the
+      // dialog stays open with the selection, as the message asks to save
+      // again.
+      if (!m_pass->initIfUnchanged(m_dir, m_userList, m_dir, m_passStore,
+                                   read)) {
+        return;
+      }
     } else {
       m_pass->Init(m_dir, m_userList);
     }

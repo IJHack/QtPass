@@ -970,12 +970,14 @@ auto Pass::refusePendingPull() -> bool {
   return true;
 }
 
-void Pass::initIfUnchanged(const QString &path, const QList<UserInfo> &users,
+auto Pass::initIfUnchanged(const QString &path, const QList<UserInfo> &users,
                            const QString &dir, const QString &passStore,
-                           const RecipientsForEditing &read) {
+                           const RecipientsForEditing &read) -> bool {
   m_expectedList = ExpectedList{dir, passStore, read.state, read.recipients};
+  m_expectedListRefused = false;
   const auto done = qScopeGuard([this] { m_expectedList.reset(); });
   Init(path, users);
+  return !m_expectedListRefused;
 }
 
 auto Pass::refuseChangedList() -> bool {
@@ -992,6 +994,7 @@ auto Pass::refuseChangedList() -> bool {
       tr("The recipient list of this folder changed after the users dialog "
          "read it, for example through an update from Git. Nothing was "
          "written. Open the dialog again to see the new list.");
+  m_expectedListRefused = true;
   emit startingExecuteWrapper();
   emit critical(tr("Recipients not changed"), why);
   emit processErrorExit(1, why);
@@ -1005,6 +1008,7 @@ auto Pass::refuseBusyForExpectedList() -> bool {
   const QString why =
       tr("Another operation is still running. Wait until it has finished, "
          "then save the recipients again.");
+  m_expectedListRefused = true;
   emit startingExecuteWrapper();
   emit critical(tr("Recipients not changed"), why);
   emit processErrorExit(1, why);

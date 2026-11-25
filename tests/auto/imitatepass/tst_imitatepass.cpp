@@ -2317,7 +2317,7 @@ void tst_imitatepass::initIfUnchangedLeavesAChangedListAlone() {
     f.write("FEDCBA9876543210\n");
   }
   QSignalSpy criticalSpy(&pass, &Pass::critical);
-  pass.initIfUnchanged(store, {carol}, store, store, read);
+  QVERIFY(!pass.initIfUnchanged(store, {carol}, store, store, read));
   QCOMPARE(criticalSpy.count(), 1);
   QCOMPARE(criticalSpy.first().at(0).toString(),
            QStringLiteral("Recipients not changed"));
@@ -2333,7 +2333,7 @@ void tst_imitatepass::initIfUnchangedLeavesAChangedListAlone() {
     f.write("0123456789ABCDEF\n");
   }
   criticalSpy.clear();
-  pass.initIfUnchanged(store, {carol}, store, store, read);
+  QVERIFY(pass.initIfUnchanged(store, {carol}, store, store, read));
   for (const QList<QVariant> &call : std::as_const(criticalSpy)) {
     QVERIFY2(call.at(0).toString() != QStringLiteral("Recipients not changed"),
              qPrintable(call.at(1).toString()));

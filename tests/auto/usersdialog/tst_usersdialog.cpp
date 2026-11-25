@@ -47,6 +47,27 @@ public:
   QList<QPair<QString, QList<UserInfo>>> initCalls;
 };
 
+/**
+ * A Pass whose Init() runs @p beforeWrite (a pull landing late) and then
+ * the point-of-write check, as the backends do.
+ */
+class LateChangePass : public RecordingPass {
+public:
+  using RecordingPass::RecordingPass;
+
+  void Init(QString path, const QList<UserInfo> &users) override {
+    if (beforeWrite) {
+      beforeWrite();
+    }
+    if (refuseChangedList()) {
+      return;
+    }
+    RecordingPass::Init(path, users);
+  }
+
+  std::function<void()> beforeWrite;
+};
+
 } // namespace
 
 class tst_usersdialog : public QObject {
@@ -834,6 +855,21 @@ void tst_usersdialog::acceptRefusesAListChangedMeanwhile() {
   fresh.accept();
   QCOMPARE(pass.initCalls.size(), 1);
   QCOMPARE(texts.size(), 1);
+
+  // The list changes after OK's own check, before the backend writes: the
+  // backend refuses, and the dialog stays open with its selection.
+  LateChangePass late(s);
+  QSignalSpy critical(&late, &Pass::critical);
+  UsersDialog dialog(&late, s, s.passStore);
+  list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Bob")});
+  late.beforeWrite = [&writeList] { writeList("31850CF72D9CDDE9\n"); };
+  dialog.accept();
+  QVERIFY(late.initCalls.isEmpty());
+  QCOMPARE(critical.count(), 1);
+  QVERIFY2(dialog.result() != QDialog::Accepted, "the dialog stays open");
+  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Bob")});
 }
 
 void tst_usersdialog::acceptRunsInitByDefault() {
