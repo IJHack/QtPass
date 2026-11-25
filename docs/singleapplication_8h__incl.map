@@ -1,9 +1,11 @@
 <map id="src/singleapplication.h" name="src/singleapplication.h">
-<area shape="rect" id="Node000001" title="SingleApplication: a QApplication that keeps one QtPass instance per user via a lock file and forward..." alt="" coords="103,5,270,33"/>
+<area shape="rect" id="Node000001" title="SingleApplication: a QApplication that keeps one QtPass instance per user via a lock file and forward..." alt="" coords="168,5,336,33"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,81,110,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,33,95,76,92,71,161,34"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,36,107,78,105,73,216,31"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="133,81,240,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,32,189,67,185,64,185,35"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="265,81,349,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="209,31,275,73,270,73,208,36"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="243,32,210,72,207,67,238,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="265,81,373,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="265,31,300,70,294,69,263,36"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="397,81,481,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="286,31,394,75,389,75,285,36"/>
 </map>

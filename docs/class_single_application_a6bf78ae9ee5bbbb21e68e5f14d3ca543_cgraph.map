@@ -8,12 +8,15 @@
 <area shape="rect" id="Node000004" href="$class_single_application.html#ad35698e2c9ff6462a09df4f8ed9af8b5" title="Take the lock and listen, or become the lock holder&#39;s secondary." alt="" coords="576,5,719,50"/>
 <area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="508,88,580,58,585,56,510,93"/>
 <area shape="rect" id="Node000005" href="$class_single_application.html#ae73f889828d9a64c1423bcb9fe3e81f6" title="Become the secondary of the live instance that holds the lock." alt="" coords="767,56,909,101"/>
-<area shape="poly" id="edge10_Node000003_Node000005" title=" " alt="" coords="528,104,753,86,748,87,529,109"/>
-<area shape="rect" id="Node000006" href="$class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a" title="Probe whether an instance is actually accepting connections." alt="" coords="957,87,1099,131"/>
-<area shape="poly" id="edge9_Node000003_Node000006" title=" " alt="" coords="529,111,909,110,944,112,939,112,909,116,529,116"/>
-<area shape="rect" id="Node000007" href="$class_single_application.html#a1437fc816f04579f7c4af1927b0967ed" title="Deliver a message over the local socket." alt="" coords="576,176,719,221"/>
-<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="509,133,585,169,579,169,508,138"/>
+<area shape="poly" id="edge12_Node000003_Node000005" title=" " alt="" coords="528,104,753,86,748,87,529,109"/>
+<area shape="rect" id="Node000006" href="$class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a" title="Probe whether an instance is actually accepting connections." alt="" coords="957,116,1099,161"/>
+<area shape="poly" id="edge11_Node000003_Node000006" title=" " alt="" coords="529,113,944,133,939,136,529,119"/>
+<area shape="rect" id="Node000008" href="$class_single_application.html#a1437fc816f04579f7c4af1927b0967ed" title="Deliver a message over the local socket." alt="" coords="767,176,909,221"/>
+<area shape="poly" id="edge9_Node000003_Node000008" title=" " alt="" coords="513,133,577,154,667,174,754,189,749,189,666,179,576,160,513,139"/>
 <area shape="poly" id="edge5_Node000004_Node000001" title=" " alt="" coords="573,28,402,34,299,42,196,56,162,63,159,58,195,50,298,37,402,28,578,26"/>
 <area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="719,44,754,55,749,55,719,49"/>
-<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="910,87,944,95,939,95,910,93"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="910,98,945,112,940,111,909,103"/>
+<area shape="rect" id="Node000007" href="$class_single_application.html#ad567b44e39490f25702eb78ed4dc5ba8" title="Whether the server socket is connected to runs as this user." alt="" coords="1147,147,1315,191"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="1100,146,1135,154,1129,154,1099,152"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="909,190,1129,176,1134,176,910,196"/>
 </map>

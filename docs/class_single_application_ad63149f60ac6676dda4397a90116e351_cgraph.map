@@ -2,21 +2,24 @@
 <area shape="rect" id="Node000001" title="Send a message to the running instance." alt="" coords="5,147,148,191"/>
 <area shape="rect" id="Node000002" href="$class_single_application.html#ad35698e2c9ff6462a09df4f8ed9af8b5" title="Take the lock and listen, or become the lock holder&#39;s secondary." alt="" coords="196,91,338,135"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,145,183,137,178,139,149,151"/>
-<area shape="rect" id="Node000006" href="$class_single_application.html#a1437fc816f04579f7c4af1927b0967ed" title="Deliver a message over the local socket." alt="" coords="957,151,1099,195"/>
-<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="148,175,290,189,456,196,649,196,804,190,939,182,944,182,804,196,649,201,456,201,290,194,148,180"/>
+<area shape="rect" id="Node000006" href="$class_single_application.html#a1437fc816f04579f7c4af1927b0967ed" title="Deliver a message over the local socket." alt="" coords="957,125,1099,170"/>
+<area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="148,175,290,189,456,196,649,196,726,193,804,185,939,166,944,165,805,190,727,198,649,201,456,201,290,194,148,180"/>
 <area shape="rect" id="Node000003" href="$class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Listen on the key; this instance holds the lock." alt="" coords="386,65,528,110"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,101,373,99,368,100,339,106"/>
-<area shape="rect" id="Node000008" href="$class_single_application.html#ae73f889828d9a64c1423bcb9fe3e81f6" title="Become the secondary of the live instance that holds the lock." alt="" coords="957,5,1099,50"/>
-<area shape="poly" id="edge11_Node000002_Node000008" title=" " alt="" coords="304,88,342,67,385,50,459,32,536,19,613,10,689,6,829,7,944,17,939,18,829,13,689,12,613,16,537,24,460,37,387,56,344,72,306,92"/>
+<area shape="rect" id="Node000009" href="$class_single_application.html#ae73f889828d9a64c1423bcb9fe3e81f6" title="Become the secondary of the live instance that holds the lock." alt="" coords="957,5,1099,50"/>
+<area shape="poly" id="edge13_Node000002_Node000009" title=" " alt="" coords="304,88,342,67,385,50,459,32,536,19,613,10,689,6,829,7,944,17,939,18,829,13,689,12,613,16,537,24,460,37,387,56,344,72,306,92"/>
 <area shape="rect" id="Node000004" href="$class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="Slot for QLocalServer::newConnection: accept every pending connection and emit messageAvailable() wit..." alt="" coords="576,65,719,110"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="529,85,564,87,558,88,529,90"/>
 <area shape="rect" id="Node000005" href="$class_single_application.html#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline" alt="" coords="767,65,909,110"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="719,85,754,87,749,88,719,90"/>
 <area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="773,110,719,125,621,134,523,135,431,132,354,126,354,120,431,127,523,130,621,129,718,120,768,111"/>
 <area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="768,65,718,56,648,49,577,56,540,63,539,58,576,50,648,44,719,50,773,65"/>
-<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="890,108,965,144,960,143,889,113"/>
-<area shape="rect" id="Node000007" href="$class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a" title="Probe whether an instance is actually accepting connections." alt="" coords="1147,36,1290,81"/>
-<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="909,80,1134,65,1129,65,910,85"/>
-<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="909,63,940,55,945,54,910,68"/>
-<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="1100,37,1135,44,1129,44,1100,42"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="910,108,945,121,940,120,909,113"/>
+<area shape="rect" id="Node000008" href="$class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a" title="Probe whether an instance is actually accepting connections." alt="" coords="1147,65,1290,110"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="909,85,1134,87,1129,88,909,90"/>
+<area shape="poly" id="edge11_Node000005_Node000009" title=" " alt="" coords="909,63,940,55,945,54,910,68"/>
+<area shape="rect" id="Node000007" href="$class_single_application.html#ad567b44e39490f25702eb78ed4dc5ba8" title="Whether the server socket is connected to runs as this user." alt="" coords="1338,96,1505,141"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="1100,140,1319,126,1324,126,1100,145"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="1290,96,1325,103,1320,103,1290,101"/>
+<area shape="poly" id="edge12_Node000009_Node000008" title=" " alt="" coords="1100,48,1135,61,1130,60,1100,53"/>
 </map>

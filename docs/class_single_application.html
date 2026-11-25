@@ -163,6 +163,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:abca78488bca57447c3fed5f62ea17ade"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#aacfe941d4dc4fdfc91b7e68dde8bc9e5" title="The key to construct with: a socket path in a folder only this user can write to (see privateKeyIn())...">privateKey()</a> with the folder given.  <br /></td></tr>
 <tr class="memitem:abc53db6f54951bb6f93ad842625f9b50" id="r_abc53db6f54951bb6f93ad842625f9b50"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abc53db6f54951bb6f93ad842625f9b50">lockPathFor</a> (const QString &amp;key) -&gt; QString</td></tr>
 <tr class="memdesc:abc53db6f54951bb6f93ad842625f9b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lock file that marks the instance listening on <code class="param">key</code>.  <br /></td></tr>
+<tr class="memitem:ad567b44e39490f25702eb78ed4dc5ba8" id="r_ad567b44e39490f25702eb78ed4dc5ba8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad567b44e39490f25702eb78ed4dc5ba8">serverRunsAsThisUser</a> (const QLocalSocket &amp;socket) -&gt; bool</td></tr>
+<tr class="memdesc:ad567b44e39490f25702eb78ed4dc5ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the server <code class="param">socket</code> is connected to runs as this user.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -202,7 +204,7 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>QApplication subclass enforcing single-instance behavior via IPC. Detects whether another instance with the same unique key is running and enables forwarding messages (e.g., command-line arguments) to it. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00023">23</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00024">24</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a55e5986206cf99fe05d33169d9eb71f5" name="a55e5986206cf99fe05d33169d9eb71f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55e5986206cf99fe05d33169d9eb71f5">&#9670;&#160;</a></span>SingleApplication()</h2>
@@ -238,12 +240,12 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00021">21</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00026">26</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
 <div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a55e5986206cf99fe05d33169d9eb71f5_cgraph.svg" width="100%" height="449"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a55e5986206cf99fe05d33169d9eb71f5_cgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -275,7 +277,7 @@ Static Private Attributes</h2></td></tr>
 <p>Listen on the key; this instance holds the lock. </p>
 <p>A socket file left by a crashed instance is removed first. When listen() fails the lock is released and this instance runs without IPC. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00137">137</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00213">213</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -317,12 +319,12 @@ Static Private Attributes</h2></td></tr>
 <p>Take the lock and listen, or become the lock holder's secondary. </p>
 <p>A free lock, or one left by a crashed instance, is taken and this instance listens (<a class="el" href="#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Listen on the key; this instance holds the lock.">becomePrimary()</a>). A lock held by a live instance makes this one wait for that instance's socket (<a class="el" href="#ae73f889828d9a64c1423bcb9fe3e81f6" title="Become the secondary of the live instance that holds the lock.">waitForPeer()</a>). A lock that cannot be taken at all leaves this instance without IPC. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00118">118</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00194">194</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
 <div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad35698e2c9ff6462a09df4f8ed9af8b5_cgraph.svg" width="100%" height="412"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad35698e2c9ff6462a09df4f8ed9af8b5_cgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
@@ -365,11 +367,17 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the peer accepted the whole payload. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00168">168</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00244">244</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
 <div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a1437fc816f04579f7c4af1927b0967ed_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a1437fc816f04579f7c4af1927b0967ed_icgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -393,11 +401,11 @@ Static Private Attributes</h2></td></tr>
 <p>Query whether another instance is already running. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if another instance with the same key is running. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00100">100</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00176">176</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
 </div>
-<div id="dynsection-8-content" class="dyncontent hidden">
+<div id="dynsection-9-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a9408850aec7bca2e43e386f35ed780f4_icgraph.svg" width="256" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -435,11 +443,11 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The lock file's path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00064">64</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00140">140</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
 </div>
-<div id="dynsection-9-content" class="dyncontent hidden">
+<div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_abc53db6f54951bb6f93ad842625f9b50_icgraph.svg" width="344" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -475,16 +483,16 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
-</div>
-<div id="dynsection-10-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ab893aad585d0cc3ee82659709a6a069b_cgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
 <div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ab893aad585d0cc3ee82659709a6a069b_cgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ab893aad585d0cc3ee82659709a6a069b_icgraph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -516,11 +524,17 @@ Static Private Attributes</h2></td></tr>
 <p>Probe whether an instance is actually accepting connections. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if a connection to the unique key succeeded. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00188">188</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00270">270</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_aeed9dcbbb9c7d6c8943f977918d1200a_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_aeed9dcbbb9c7d6c8943f977918d1200a_icgraph.svg" width="100%" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -558,17 +572,17 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The key for the constructor. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00032">32</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00037">37</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_aacfe941d4dc4fdfc91b7e68dde8bc9e5_cgraph.svg" width="344" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_aacfe941d4dc4fdfc91b7e68dde8bc9e5_icgraph.svg" width="256" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -611,11 +625,11 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A path in <code class="param">dir</code> named after a hash of <code class="param">base</code>, or <code class="param">base</code> plus a random suffix. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00047">47</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00052">52</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
 </div>
-<div id="dynsection-15-content" class="dyncontent hidden">
+<div id="dynsection-17-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_abca78488bca57447c3fed5f62ea17ade_icgraph.svg" width="447" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -647,17 +661,17 @@ Static Private Attributes</h2></td></tr>
 <p>Slot for QLocalServer::newConnection: accept every pending connection and emit <a class="el" href="#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline">messageAvailable()</a> with what it sent. </p>
 <p>Each accepted socket is read asynchronously so a peer that connects without sending anything cannot stall the GUI thread; the message is delivered once the peer disconnects and the socket is then deleted. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00076">76</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00152">152</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
 </div>
-<div id="dynsection-16-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_cgraph.svg" width="100%" height="516"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_cgraph.svg" width="100%" height="508"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary">
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
 </div>
-<div id="dynsection-17-content" class="dyncontent hidden">
+<div id="dynsection-19-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -687,18 +701,60 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the message was successfully delivered. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00102">102</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00178">178</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
 </div>
-<div id="dynsection-18-content" class="dyncontent hidden">
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad63149f60ac6676dda4397a90116e351_cgraph.svg" width="100%" height="453"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary">
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
 </div>
-<div id="dynsection-19-content" class="dyncontent hidden">
+<div id="dynsection-21-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad63149f60ac6676dda4397a90116e351_icgraph.svg" width="256" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ad567b44e39490f25702eb78ed4dc5ba8" name="ad567b44e39490f25702eb78ed4dc5ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad567b44e39490f25702eb78ed4dc5ba8">&#9670;&#160;</a></span>serverRunsAsThisUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto SingleApplication::serverRunsAsThisUser </td>
+          <td>(</td>
+          <td class="paramtype">const QLocalSocket &amp;</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the server <code class="param">socket</code> is connected to runs as this user. </p>
+<p>On Windows a named pipe's name is machine-wide: another user's session could open the pipe of the key first, and a launch would then forward its command line there and exit without a window. So the server's process is looked up (GetNamedPipeServerProcessId()) and its token's user compared with this process's; anything that cannot be checked counts as someone else's. Elsewhere the socket sits in a folder only this user can open (<a class="el" href="#aacfe941d4dc4fdfc91b7e68dde8bc9e5" title="The key to construct with: a socket path in a folder only this user can write to (see privateKeyIn())...">privateKey()</a>), and this is always true. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>A socket connected to the key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the server is this user's. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00110">110</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad567b44e39490f25702eb78ed4dc5ba8_icgraph.svg" width="100%" height="517"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -729,17 +785,17 @@ Static Private Attributes</h2></td></tr>
 <p>Become the secondary of the live instance that holds the lock. </p>
 <p>It may still be starting, so it is probed a few times (see takeoverProbes); if it never answers, <a class="el" href="#a9408850aec7bca2e43e386f35ed780f4" title="Query whether another instance is already running.">isRunning()</a> stays false and the caller runs without IPC rather than not at all. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00157">157</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00233">233</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
 </div>
-<div id="dynsection-20-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ae73f889828d9a64c1423bcb9fe3e81f6_cgraph.svg" width="344" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ae73f889828d9a64c1423bcb9fe3e81f6_cgraph.svg" width="559" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary">
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
 </div>
-<div id="dynsection-21-content" class="dyncontent hidden">
+<div id="dynsection-24-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ae73f889828d9a64c1423bcb9fe3e81f6_icgraph.svg" width="100%" height="529"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -768,7 +824,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>true when another instance holds the lock and answers on the socket; this instance should forward and exit. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00155">155</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00170">170</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 
 </div>
 </div>
@@ -794,7 +850,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Held by the listening instance for as long as it runs. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00159">159</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00174">174</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 
 </div>
 </div>
@@ -820,7 +876,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Name of the local socket; also names the lock file. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00157">157</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00172">172</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 
 </div>
 </div>
@@ -846,7 +902,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Server accepting forwarded command lines; only set in the primary instance, null in a secondary or when listening failed. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00164">164</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00179">179</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 
 </div>
 </div>
@@ -873,7 +929,7 @@ Static Private Attributes</h2></td></tr>
 <p>Upper bound for one forwarded message (a command line). </p>
 <p>The socket is user-only, but a peer that keeps a connection open and streams data would otherwise grow the per-connection buffer without limit; anything past this is dropped and the peer disconnected. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00175">175</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00190">190</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 
 </div>
 </div>
@@ -899,7 +955,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Pause between two takeover probes, in milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00179">179</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00194">194</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 
 </div>
 </div>
@@ -925,7 +981,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Probes for the lock's holder to start listening before giving up on IPC. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00177">177</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00192">192</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 
 </div>
 </div>
@@ -951,7 +1007,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Milliseconds to wait for a socket connect or write. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00167">167</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00182">182</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 
 </div>
 </div>

@@ -12,6 +12,7 @@ var class_single_application =
     [ "privateKeyIn", "class_single_application.html#abca78488bca57447c3fed5f62ea17ade", null ],
     [ "receiveMessage", "class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238", null ],
     [ "sendMessage", "class_single_application.html#ad63149f60ac6676dda4397a90116e351", null ],
+    [ "serverRunsAsThisUser", "class_single_application.html#ad567b44e39490f25702eb78ed4dc5ba8", null ],
     [ "waitForPeer", "class_single_application.html#ae73f889828d9a64c1423bcb9fe3e81f6", null ],
     [ "_isRunning", "class_single_application.html#a1101486283e5f1580c02f8e1562f195f", null ],
     [ "_lock", "class_single_application.html#a78768c74535d950c4a55f2518043c7b3", null ],

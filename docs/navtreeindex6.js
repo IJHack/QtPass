@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"gpgidsigner_8cpp.html":[4,0,1,21],
 "gpgidsigner_8cpp_source.html":[4,0,1,21],
 "gpgidsigner_8h.html":[4,0,1,22],
 "gpgidsigner_8h_source.html":[4,0,1,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_app_settings.html#a456348bb05697510a3ee66d82847b047":[1,4,1,20],
 "struct_app_settings.html#a457fe600e8bd16cdb5b985754deab231":[1,4,1,40],
 "struct_app_settings.html#a4898b5fbd42cc0b4e6959d1851656673":[1,4,1,23],
-"struct_app_settings.html#a4b414237cc2001c4a07a242f2565cb85":[1,4,1,34],
-"struct_app_settings.html#a50480ce075727936c03f0ad797e5f4ae":[1,4,1,13]
+"struct_app_settings.html#a4b414237cc2001c4a07a242f2565cb85":[1,4,1,34]
 };
