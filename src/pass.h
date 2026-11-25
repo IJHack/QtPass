@@ -462,6 +462,29 @@ public:
   auto recipientsForEditing(const QString &dir, const QString &passStore)
       -> RecipientsForEditing;
   /**
+   * @brief Init(), but only while the list of @p dir still reads as the
+   *        caller read it with recipientsForEditing().
+   *
+   * The users dialog ticks its selection from the list it read, and writes
+   * the whole selection: a newer list that arrived meanwhile (a pull in a
+   * terminal, a sync) would be replaced by the old one plus the change. The
+   * backend reads the list again at the last point before it writes (or
+   * starts `pass init`) and refuses with refuseChangedList() when it differs.
+   * @param path Folder to initialize, as for Init().
+   * @param users Recipients, as for Init().
+   * @param dir The folder the list was read for, as given to
+   *        recipientsForEditing().
+   * @param passStore The store root given to recipientsForEditing().
+   * @param read What recipientsForEditing() returned then; its warning is
+   *        not compared.
+   * @return false when refuseChangedList() or refuseBusyForExpectedList()
+   *         refused, so the caller can keep its selection; true otherwise,
+   *         also when Init() refused for another reason it reported itself.
+   */
+  auto initIfUnchanged(const QString &path, const QList<UserInfo> &users,
+                       const QString &dir, const QString &passStore,
+                       const RecipientsForEditing &read) -> bool;
+  /**
    * @brief Parse the contents of a .gpg-id: one recipient per line, `#`
    * starts a comment, unusable lines are logged and skipped.
    * @param contents The file's bytes.
@@ -749,6 +772,30 @@ protected:
   auto refusePendingPull() -> bool;
 
   /**
+   * @brief Refuse an Init() under initIfUnchanged() when the folder's list no
+   *        longer reads as the caller read it.
+   *
+   * Called by each backend at the last point before the list is written or
+   * `pass init` is started. Outside initIfUnchanged() nothing is compared.
+   * @return true when critical() and processErrorExit() were emitted and the
+   *         caller must stop.
+   */
+  auto refuseChangedList() -> bool;
+
+  /**
+   * @brief Refuse an Init() under initIfUnchanged() while the executor has
+   *        work queued or running, for a backend whose external tool writes
+   *        the list only when its process runs.
+   *
+   * refuseChangedList() can only compare when the request is made. With
+   * nothing ahead of it, `pass init` starts right away and the gap stays
+   * that of a process start.
+   * @return true when critical() and processErrorExit() were emitted and the
+   *         caller must stop.
+   */
+  auto refuseBusyForExpectedList() -> bool;
+
+  /**
    * @brief Execute external wrapper command.
    * @param id Process identifier.
    * @param app Executable path.
@@ -828,6 +875,25 @@ private:
   [[nodiscard]] auto scopePath(const QString &path) const -> QString;
   /// Set while GitPushAutomatic() runs GitPush().
   bool m_pushIsAutomatic = false;
+  /**
+   * @brief What initIfUnchanged() expects the list to read as, for
+   *        refuseChangedList(); empty outside it.
+   */
+  struct ExpectedList {
+    /** @brief The folder given to recipientsForEditing(). */
+    QString dir;
+    /** @brief The store root given to recipientsForEditing(). */
+    QString passStore;
+    /** @brief The state read then. */
+    RecipientsForEditing::State state = RecipientsForEditing::State::Unsigned;
+    /** @brief The recipients read then. */
+    QStringList recipients;
+  };
+  /** @brief Set during initIfUnchanged(). */
+  std::optional<ExpectedList> m_expectedList;
+  /** @brief Set when refuseChangedList() or refuseBusyForExpectedList()
+   *  refused during initIfUnchanged(). */
+  bool m_expectedListRefused = false;
   /// Files of the Show() calls still in flight, oldest first.
   QQueue<QString> m_pendingShows;
   /// Inserts that have started queueing but not yet reported; see queueInsert.

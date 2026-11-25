@@ -47,6 +47,27 @@ public:
   QList<QPair<QString, QList<UserInfo>>> initCalls;
 };
 
+/**
+ * A Pass whose Init() runs @p beforeWrite (a pull landing late) and then
+ * the point-of-write check, as the backends do.
+ */
+class LateChangePass : public RecordingPass {
+public:
+  using RecordingPass::RecordingPass;
+
+  void Init(QString path, const QList<UserInfo> &users) override {
+    if (beforeWrite) {
+      beforeWrite();
+    }
+    if (refuseChangedList()) {
+      return;
+    }
+    RecordingPass::Init(path, users);
+  }
+
+  std::function<void()> beforeWrite;
+};
+
 } // namespace
 
 class tst_usersdialog : public QObject {
@@ -67,6 +88,7 @@ private slots:
   void withSigningAConflictingListPreselectsNothing();
   void withSigningAnUnreadableRecordPreselectsNothing();
   void folderOutsideTheStoreDoesNotInheritItsRecipients();
+  void acceptRefusesAListChangedMeanwhile();
   void acceptRunsInitByDefault();
   void acceptWithoutSelectionDoesNothing();
   void acceptWithoutInitOnlyCollectsTheSelection();
@@ -768,6 +790,86 @@ void tst_usersdialog::folderOutsideTheStoreDoesNotInheritItsRecipients() {
   QVERIFY2(checkedNames(list).isEmpty(),
            qPrintable("nothing may be preselected for a new profile, got: " +
                       checkedNames(list).join(QLatin1String(", "))));
+}
+
+/**
+ * @brief OK writes nothing when the folder's list changed while the dialog
+ *        was open (a pull landing under it): the selection was ticked from
+ *        the old list, and writing it brought back someone just removed, as
+ *        the next generation. Unchanged, OK goes ahead. Scan
+ *        ANT-2026-W7W7B1M9.
+ */
+void tst_usersdialog::acceptRefusesAListChangedMeanwhile() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString gpgIdFile =
+      QDir(store.path()).filePath(QStringLiteral(".gpg-id"));
+  const auto writeList = [&gpgIdFile](const QByteArray &list) {
+    QFile f(gpgIdFile);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+      return false;
+    }
+    return f.write(list) == list.size();
+  };
+  QVERIFY(writeList("31850CF72D9CDDE9\n"));
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  s.passSigningKey.clear();
+  RecordingPass pass(s);
+
+  QStringList texts;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&texts]() {
+    auto *box = qobject_cast<QMessageBox *>(QApplication::activeModalWidget());
+    if (box == nullptr || box->property("tst_driven").toBool()) {
+      return;
+    }
+    box->setProperty("tst_driven", true);
+    texts << box->text();
+    box->accept();
+  });
+  poker.start();
+
+  {
+    UsersDialog dialog(&pass, s, s.passStore);
+    auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+    QVERIFY(list != nullptr);
+    QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
+    // Alice is replaced by Bob elsewhere, and the pull lands under the
+    // dialog.
+    QVERIFY(writeList("693A0AF3FA364E76\n"));
+    dialog.accept();
+    QVERIFY(pass.initCalls.isEmpty());
+    QVERIFY2(dialog.result() != QDialog::Accepted, "the dialog stays open");
+    QCOMPARE(texts.size(), 1);
+    QVERIFY2(texts.first().contains(QStringLiteral("changed while this "
+                                                   "dialog was open")),
+             qPrintable(texts.first()));
+  }
+
+  UsersDialog fresh(&pass, s, s.passStore);
+  auto *list = fresh.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Bob")});
+  fresh.accept();
+  QCOMPARE(pass.initCalls.size(), 1);
+  QCOMPARE(texts.size(), 1);
+
+  // The list changes after OK's own check, before the backend writes: the
+  // backend refuses, and the dialog stays open with its selection.
+  LateChangePass late(s);
+  QSignalSpy critical(&late, &Pass::critical);
+  UsersDialog dialog(&late, s, s.passStore);
+  list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Bob")});
+  late.beforeWrite = [&writeList] { writeList("31850CF72D9CDDE9\n"); };
+  dialog.accept();
+  QVERIFY(late.initCalls.isEmpty());
+  QCOMPARE(critical.count(), 1);
+  QVERIFY2(dialog.result() != QDialog::Accepted, "the dialog stays open");
+  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Bob")});
 }
 
 void tst_usersdialog::acceptRunsInitByDefault() {

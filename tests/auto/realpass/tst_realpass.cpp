@@ -62,6 +62,7 @@ private slots:
   void signedListIsCheckedAsTheNativeBackendDoes();
   void folderWithAnUnreadableNameIsRefusedBeforePassRuns();
   void removeFileAndFolder();
+  void initIfUnchangedRefusesAChangedListOrABusyQueue();
   void initWritesEnabledKeysRelativeToTheStore();
   void loggedArgvRedactsSecretShapedValues();
   void genericOutputSignalIsAnAllowList();
@@ -1025,6 +1026,86 @@ void tst_realpass::removeFileAndFolder() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("rm"), QStringLiteral("-rf"),
                         QStringLiteral("folder")}));
+}
+
+/**
+ * @brief Under initIfUnchanged() pass init is not started when the folder's
+ *        list changed since the users dialog read it, nor while another
+ *        operation is queued (pass writes the list only when it runs). With
+ *        the list as read and nothing queued, it starts. Scan
+ *        ANT-2026-W7W7B1M9.
+ */
+void tst_realpass::initIfUnchangedRefusesAChangedListOrABusyQueue() {
+  const QString gpgIdFile = m_store + QStringLiteral(".gpg-id");
+  QFile original(gpgIdFile);
+  const bool hadList = original.open(QIODevice::ReadOnly);
+  const QByteArray before = hadList ? original.readAll() : QByteArray();
+  original.close();
+  const auto restore = qScopeGuard([&] {
+    QFile f(gpgIdFile);
+    if (hadList && f.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+      f.write(before);
+    } else if (!hadList) {
+      QFile::remove(gpgIdFile);
+    }
+  });
+  const auto writeList = [&gpgIdFile](const QByteArray &list) {
+    QFile f(gpgIdFile);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(list) == list.size();
+  };
+  QVERIFY(writeList("AAAA\n"));
+  UserInfo alice;
+  alice.key_id = QStringLiteral("AAAA");
+  alice.enabled = true;
+  QScopedPointer<RealPass> reader(makePass());
+  const Pass::RecipientsForEditing read =
+      reader->recipientsForEditing(m_store, m_store);
+  QCOMPARE(read.recipients, QStringList{QStringLiteral("AAAA")});
+
+  // As read, nothing queued: pass init runs.
+  {
+    QScopedPointer<RealPass> pass(makePass());
+    QSignalSpy critical(pass.data(), &Pass::critical);
+    QVERIFY(pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read));
+    QCOMPARE(waitForCall().args,
+             (QStringList{QStringLiteral("init"), QStringLiteral("--path="),
+                          QStringLiteral("AAAA")}));
+    QCOMPARE(critical.count(), 0);
+  }
+  QTest::qWait(200);
+  QFile::remove(m_log);
+
+  // A pull lands after the dialog read the list.
+  {
+    QVERIFY(writeList("BBBB\n"));
+    QScopedPointer<RealPass> pass(makePass());
+    QSignalSpy critical(pass.data(), &Pass::critical);
+    QVERIFY(!pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read));
+    QCOMPARE(critical.count(), 1);
+    QCOMPARE(critical.first().at(0).toString(),
+             QStringLiteral("Recipients not changed"));
+    QVERIFY2(critical.first().at(1).toString().contains(
+                 QStringLiteral("changed after the users dialog read it")),
+             qPrintable(critical.first().at(1).toString()));
+    QTest::qWait(300);
+    QVERIFY2(!QFile::exists(m_log), "pass init must not have run");
+  }
+
+  // Something queued ahead: refused, as pass would run after it.
+  {
+    QVERIFY(writeList("AAAA\n"));
+    QScopedPointer<RealPass> pass(makePass());
+    QSignalSpy critical(pass.data(), &Pass::critical);
+    pass->Init(m_store + QStringLiteral("folder/"), {alice});
+    QVERIFY(!pass->initIfUnchanged(m_store, {alice}, m_store, m_store, read));
+    QCOMPARE(critical.count(), 1);
+    QVERIFY2(critical.first().at(1).toString().contains(
+                 QStringLiteral("Another operation is still running")),
+             qPrintable(critical.first().at(1).toString()));
+    QCOMPARE(waitForCall().args.value(1), QStringLiteral("--path=folder"));
+    QTest::qWait(200);
+  }
 }
 
 void tst_realpass::initWritesEnabledKeysRelativeToTheStore() {

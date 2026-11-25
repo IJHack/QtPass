@@ -970,6 +970,51 @@ auto Pass::refusePendingPull() -> bool {
   return true;
 }
 
+auto Pass::initIfUnchanged(const QString &path, const QList<UserInfo> &users,
+                           const QString &dir, const QString &passStore,
+                           const RecipientsForEditing &read) -> bool {
+  m_expectedList = ExpectedList{dir, passStore, read.state, read.recipients};
+  m_expectedListRefused = false;
+  const auto done = qScopeGuard([this] { m_expectedList.reset(); });
+  Init(path, users);
+  return !m_expectedListRefused;
+}
+
+auto Pass::refuseChangedList() -> bool {
+  if (!m_expectedList) {
+    return false;
+  }
+  const RecipientsForEditing now =
+      recipientsForEditing(m_expectedList->dir, m_expectedList->passStore);
+  if (now.state == m_expectedList->state &&
+      now.recipients == m_expectedList->recipients) {
+    return false;
+  }
+  const QString why =
+      tr("The recipient list of this folder changed after the users dialog "
+         "read it, for example through an update from Git. Nothing was "
+         "written. Open the dialog again to see the new list.");
+  m_expectedListRefused = true;
+  emit startingExecuteWrapper();
+  emit critical(tr("Recipients not changed"), why);
+  emit processErrorExit(1, why);
+  return true;
+}
+
+auto Pass::refuseBusyForExpectedList() -> bool {
+  if (!m_expectedList || exec.isIdle()) {
+    return false;
+  }
+  const QString why =
+      tr("Another operation is still running. Wait until it has finished, "
+         "then save the recipients again.");
+  m_expectedListRefused = true;
+  emit startingExecuteWrapper();
+  emit critical(tr("Recipients not changed"), why);
+  emit processErrorExit(1, why);
+  return true;
+}
+
 auto Pass::refuseUnfinishedGitOperation() -> bool {
   const QString why = unfinishedGitOperationReason();
   if (why.isEmpty()) {

@@ -805,6 +805,15 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- The users dialog no longer writes back an old recipient list. When the
+  folder's list changed while the dialog was open (an update from Git that
+  ran on, a sync), OK wrote the list as it was read plus your change, so
+  someone just removed became a recipient again. OK now says the list
+  changed: close the dialog and open it again to see the new one. The list
+  is compared once more right before it is written, and with `pass` the
+  save waits until no other operation is running. Without `pass`, saving
+  recipients also waits for a running update, as it already did with
+  `pass` (scan ANT-2026-W7W7B1M9).
 - **Import key** refuses a file or clipboard text with a line longer than
   1024 characters or more lines than a 16 MiB key file holds, before it
   shows it. A 2 MiB file of one long line froze QtPass for minutes, and one

@@ -726,6 +726,8 @@ private Q_SLOTS:
   void refusesToInsertDuringASequencerState();
   void refusesASaveWhenAConflictAppearsWhileEncrypting();
   void refusesToRemoveWhileAPullIsInFlight();
+  void refusesToChangeRecipientsWhileAPullIsInFlight();
+  void initIfUnchangedLeavesAChangedListAlone();
   void queuedInsertGpgFailureReportsNotWritten();
   void insertsPendingCountsTheInsertsYetToReport();
   void aLostInsertReportIsHealedWhenTheQueueDrains();
@@ -2244,6 +2246,101 @@ void tst_imitatepass::refusesToRemoveWhileAPullIsInFlight() {
   QVERIFY2(QFileInfo::exists(QDir(storeDir.path()).filePath("entry0.gpg")),
            "the entry must not be removed while a pull is in flight");
 #endif
+}
+
+/**
+ * @brief Saving recipients is refused while a pull is still in flight, as
+ *        pass does: the pull lands after the new list is written, and a
+ *        newer list it brings was overwritten by the old one plus the
+ *        change. Scan ANT-2026-W7W7B1M9.
+ */
+void tst_imitatepass::refusesToChangeRecipientsWhileAPullIsInFlight() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gpgId = QDir(storeDir.path()).filePath(".gpg-id");
+  QFile before(gpgId);
+  const QByteArray listed =
+      before.open(QIODevice::ReadOnly) ? before.readAll() : QByteArray();
+  before.close();
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeScriptedGit(
+      storeDir.path(), gitLog, QStringLiteral("  *' pull') sleep 5;;"));
+  QVERIFY(!fakeGit.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  UserInfo carol;
+  carol.key_id = QStringLiteral("693A0AF3FA364E76");
+  carol.enabled = true;
+  pass.GitPull();
+  pass.Init(storeDir.path() + QLatin1Char('/'), {carol});
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Update in progress"));
+  QFile after(gpgId);
+  QVERIFY(after.open(QIODevice::ReadOnly) || listed.isEmpty());
+  QCOMPARE(after.readAll(), listed);
+#endif
+}
+
+/**
+ * @brief Under initIfUnchanged() the list is compared again right before it
+ *        is written: one that changed since the users dialog read it (a pull
+ *        in a terminal) is left as it is. As read, it is written. Scan
+ *        ANT-2026-W7W7B1M9.
+ */
+void tst_imitatepass::initIfUnchangedLeavesAChangedListAlone() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString store = storeDir.path() + QLatin1Char('/');
+  const QString gpgId = QDir(storeDir.path()).filePath(".gpg-id");
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), unstartableGpg()));
+  const Pass::RecipientsForEditing read =
+      pass.recipientsForEditing(store, store);
+  QCOMPARE(read.recipients, QStringList{QStringLiteral("0123456789ABCDEF")});
+  UserInfo carol;
+  carol.key_id = QStringLiteral("693A0AF3FA364E76");
+  carol.enabled = true;
+
+  {
+    QFile f(gpgId);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write("FEDCBA9876543210\n");
+  }
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QVERIFY(!pass.initIfUnchanged(store, {carol}, store, store, read));
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Recipients not changed"));
+  QFile after(gpgId);
+  QVERIFY(after.open(QIODevice::ReadOnly));
+  QCOMPARE(after.readAll(), QByteArray("FEDCBA9876543210\n"));
+  after.close();
+
+  // As read: written (the re-encryption then fails on the missing gpg).
+  {
+    QFile f(gpgId);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write("0123456789ABCDEF\n");
+  }
+  criticalSpy.clear();
+  QVERIFY(pass.initIfUnchanged(store, {carol}, store, store, read));
+  for (const QList<QVariant> &call : std::as_const(criticalSpy)) {
+    QVERIFY2(call.at(0).toString() != QStringLiteral("Recipients not changed"),
+             qPrintable(call.at(1).toString()));
+  }
+  QVERIFY(after.open(QIODevice::ReadOnly));
+  QVERIFY2(after.readAll().contains("693A0AF3FA364E76"),
+           "the list as read is replaced");
 }
 
 /**
