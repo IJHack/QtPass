@@ -325,6 +325,10 @@ static auto decodeAssumingUtf8(const QByteArray &in, bool *lossless = nullptr)
   return out;
 }
 
+auto Executor::decodeText(const QByteArray &bytes) -> QString {
+  return decodeAssumingUtf8(bytes);
+}
+
 // Returns an error code rather than throwing, matching QtPass's error
 // handling elsewhere.
 namespace {

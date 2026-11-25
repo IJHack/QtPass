@@ -72,7 +72,9 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
                   "--use-agent"} +
           Pass::maxOutputArgs(),
       *ciphertext, &decrypted, nullptr, cancel);
-  const QString plaintext = QString::fromUtf8(decrypted);
+  // Decoded as executeBlocking() decoded it before: UTF-8, else the system
+  // encoding, so an entry in a Windows code page is still searched.
+  const QString plaintext = Executor::decodeText(decrypted);
   if (rc != 0 || plaintext.isEmpty())
     return {};
   // Line by line over the text, never a list of every line (a compressed

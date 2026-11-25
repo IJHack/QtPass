@@ -447,6 +447,16 @@ public:
       -> QStringList;
 
   /**
+   * @brief Decode process output as executeBlocking() does: UTF-8 first, the
+   * system encoding when it is not UTF-8 (a Windows code page). For callers
+   * that run a process on bytes (executeBlockingRaw()) and then read its
+   * output as text.
+   * @param bytes What the process wrote.
+   * @return The text.
+   */
+  [[nodiscard]] static auto decodeText(const QByteArray &bytes) -> QString;
+
+  /**
    * @brief Translate a native path for a WSL-routed executable.
    *
    * When @p exe is a WSL command (parseWslCommand()) the path is converted
