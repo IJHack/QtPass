@@ -3,6 +3,7 @@ var hierarchy =
     [ "AppSettings", "struct_app_settings.html", null ],
     [ "Base32", "class_base32.html", null ],
     [ "ImportKeyDialog::BlockKeys", "struct_import_key_dialog_1_1_block_keys.html", null ],
+    [ "Executor::CappedOutput", "class_executor_1_1_capped_output.html", null ],
     [ "Executor::ExecQueueItem", "struct_executor_1_1_exec_queue_item.html", null ],
     [ "Pass::ExpectedList", "struct_pass_1_1_expected_list.html", null ],
     [ "FileContent", "class_file_content.html", null ],

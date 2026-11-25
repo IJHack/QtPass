@@ -73,21 +73,28 @@
 <area shape="poly" id="edge41_Node000030_Node000031" title=" " alt="" coords="1124,558,1247,583,1242,584,1125,564"/>
 <area shape="rect" id="Node000032" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="1217,480,1432,508"/>
 <area shape="poly" id="edge42_Node000030_Node000032" title=" " alt="" coords="1124,531,1237,511,1232,512,1125,536"/>
-<area shape="rect" id="Node000040" href="$class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="1206,532,1443,560"/>
-<area shape="poly" id="edge51_Node000030_Node000040" title=" " alt="" coords="1124,545,1193,547,1188,547,1125,550"/>
+<area shape="rect" id="Node000043" href="$class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="1206,532,1443,560"/>
+<area shape="poly" id="edge55_Node000030_Node000043" title=" " alt="" coords="1124,545,1193,547,1188,547,1125,550"/>
 <area shape="rect" id="Node000033" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1491,455,1684,483"/>
 <area shape="poly" id="edge43_Node000032_Node000033" title=" " alt="" coords="1432,481,1478,479,1473,480,1433,487"/>
-<area shape="rect" id="Node000038" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="2397,506,2609,534"/>
-<area shape="poly" id="edge50_Node000032_Node000038" title=" " alt="" coords="1433,500,1610,511,1812,517,2038,517,2384,519,2378,520,2038,522,1811,522,1610,517,1433,506"/>
-<area shape="rect" id="Node000034" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1732,455,1894,483"/>
-<area shape="poly" id="edge44_Node000033_Node000034" title=" " alt="" coords="1684,466,1718,469,1713,469,1684,472"/>
-<area shape="rect" id="Node000035" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1942,455,2132,483"/>
-<area shape="poly" id="edge45_Node000034_Node000035" title=" " alt="" coords="1894,466,1929,469,1924,469,1894,472"/>
-<area shape="rect" id="Node000036" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="2180,455,2346,483"/>
-<area shape="poly" id="edge46_Node000035_Node000036" title=" " alt="" coords="2132,466,2167,469,2162,469,2133,472"/>
-<area shape="rect" id="Node000037" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="2394,454,2612,482"/>
-<area shape="poly" id="edge47_Node000036_Node000037" title=" " alt="" coords="2346,466,2381,468,2375,469,2346,471"/>
-<area shape="poly" id="edge48_Node000036_Node000038" title=" " alt="" coords="2332,481,2422,502,2417,502,2332,486"/>
-<area shape="rect" id="Node000039" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="2401,402,2605,430"/>
-<area shape="poly" id="edge49_Node000036_Node000039" title=" " alt="" coords="2328,452,2420,434,2425,433,2329,457"/>
+<area shape="rect" id="Node000040" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="2410,506,2622,534"/>
+<area shape="poly" id="edge54_Node000032_Node000040" title=" " alt="" coords="1433,500,1610,511,1812,517,2038,517,2397,519,2391,520,2038,522,1811,522,1610,517,1433,506"/>
+<area shape="rect" id="Node000034" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1732,440,1894,468"/>
+<area shape="poly" id="edge44_Node000033_Node000034" title=" " alt="" coords="1683,460,1718,460,1713,461,1684,465"/>
+<area shape="rect" id="Node000035" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1942,426,2132,454"/>
+<area shape="poly" id="edge45_Node000034_Node000035" title=" " alt="" coords="1894,446,1929,447,1924,447,1895,452"/>
+<area shape="rect" id="Node000036" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="2180,317,2359,362"/>
+<area shape="poly" id="edge46_Node000035_Node000036" title=" " alt="" coords="2067,423,2179,372,2192,369,2197,367,2181,377,2069,428"/>
+<area shape="rect" id="Node000038" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="2187,455,2352,483"/>
+<area shape="poly" id="edge48_Node000035_Node000038" title=" " alt="" coords="2132,449,2174,457,2169,457,2133,454"/>
+<area shape="rect" id="Node000042" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="2180,387,2359,431"/>
+<area shape="poly" id="edge52_Node000035_Node000042" title=" " alt="" coords="2132,424,2167,422,2162,423,2133,430"/>
+<area shape="rect" id="Node000037" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="2427,325,2605,370"/>
+<area shape="poly" id="edge47_Node000036_Node000037" title=" " alt="" coords="2359,340,2414,344,2408,345,2359,345"/>
+<area shape="rect" id="Node000039" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="2407,402,2625,430"/>
+<area shape="poly" id="edge49_Node000038_Node000039" title=" " alt="" coords="2336,452,2431,434,2437,433,2337,457"/>
+<area shape="poly" id="edge50_Node000038_Node000040" title=" " alt="" coords="2340,481,2433,502,2428,502,2340,486"/>
+<area shape="rect" id="Node000041" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="2414,454,2618,482"/>
+<area shape="poly" id="edge51_Node000038_Node000041" title=" " alt="" coords="2352,466,2401,468,2395,469,2353,471"/>
+<area shape="poly" id="edge53_Node000042_Node000037" title=" " alt="" coords="2359,384,2409,374,2414,373,2360,389"/>
 </map>

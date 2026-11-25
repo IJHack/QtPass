@@ -11,6 +11,21 @@ var group__process =
         [ "readStdout", "struct_executor_1_1_exec_queue_item.html#a06963eefa82e1b35d4c62a3352fcd60f", null ],
         [ "workingDir", "struct_executor_1_1_exec_queue_item.html#a1f17ba7a8c263325ae0aeb53f679648d", null ]
       ] ],
+      [ "CappedOutput", "class_executor_1_1_capped_output.html", [
+        [ "append", "class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813", null ],
+        [ "clear", "class_executor_1_1_capped_output.html#a0640374003c36588ab07cad0a1d70935", null ],
+        [ "countStatus", "class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a", null ],
+        [ "statusCounts", "class_executor_1_1_capped_output.html#aacc1668889e01a2a7a668e104f187c34", null ],
+        [ "take", "class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e", null ],
+        [ "kMaxStatusKeywords", "class_executor_1_1_capped_output.html#a5cea88d3e090cc7af425314a72e7a9c2", null ],
+        [ "kMaxStatusLineBytes", "class_executor_1_1_capped_output.html#a32bf31764d51ca6b025f553a81ed8301", null ],
+        [ "m_dropped", "class_executor_1_1_capped_output.html#a721a32e3d9e3baff5709c176be476791", null ],
+        [ "m_head", "class_executor_1_1_capped_output.html#a0745ec7ecb8babb5755bf21ccf8bcd8b", null ],
+        [ "m_line", "class_executor_1_1_capped_output.html#ab86470d7175b022b4aade849187222b8", null ],
+        [ "m_lineTooLong", "class_executor_1_1_capped_output.html#a568949059d4b9e70301384798539cb03", null ],
+        [ "m_status", "class_executor_1_1_capped_output.html#a918017aa5355a744e7a1f6744b78db26", null ],
+        [ "m_tail", "class_executor_1_1_capped_output.html#af3775405f7e14c905e7d0c3e8a0db35e", null ]
+      ] ],
       [ "WslCommand", "struct_executor_1_1_wsl_command.html", [
         [ "argv", "struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b", null ],
         [ "with", "struct_executor_1_1_wsl_command.html#abb2c0302f92c28f6d88f3802e8f0f398", null ],
@@ -43,6 +58,7 @@ var group__process =
       [ "hasQueued", "class_executor.html#a77fc56acc6ba0d9efd0e50fbbd71b002", null ],
       [ "isIdle", "class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af", null ],
       [ "lastOutputLossless", "class_executor.html#a157a5a1a3a64e3feed5d7a33da53f0c2", null ],
+      [ "lastStatusCounts", "class_executor.html#a5e808b31bbf7e8a514004f4fb072a065", null ],
       [ "onProcessFinished", "class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c", null ],
       [ "parseWslCommand", "class_executor.html#aec74cb83e3072dbf74a5f09681f4716c", null ],
       [ "postDrainedIfIdle", "class_executor.html#a0dc059529757ca423bde0b74fe0129c2", null ],
@@ -55,11 +71,15 @@ var group__process =
       [ "startProcess", "class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10", null ],
       [ "translatePathForWsl", "class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86", null ],
       [ "wslExecArgs", "class_executor.html#a9eb4d0403edeab54a94cba4ba3cc3dfd", null ],
+      [ "kMaxStderrBytes", "class_executor.html#a3f93c8c34e0ed6c0a951e0793ccaf85c", null ],
+      [ "m_discardStdout", "class_executor.html#a56b304ea9654a0a13139f2cba34cd964", null ],
       [ "m_drainCheckPosted", "class_executor.html#a68704b9a35398e88fa70ae00600d70a5", null ],
       [ "m_execQueue", "class_executor.html#a32c4982fc25ba41f0b3ca420807c3e83", null ],
+      [ "m_lastStatus", "class_executor.html#aa6d3ec36da079587d2fa089b7e6c6b44", null ],
       [ "m_outputLossless", "class_executor.html#a8fb276cf46b2059d31040b29eeac9ddc", null ],
       [ "m_pendingErrors", "class_executor.html#a5c333622022bd27ab87b0c581496f66f", null ],
       [ "m_process", "class_executor.html#af165b60b2641b431ca57c506e5c5d9e8", null ],
+      [ "m_stderr", "class_executor.html#a6785b67b963065668dc9874def9c72e4", null ],
       [ "running", "class_executor.html#abd923dfe9e21c7914d3973ef3d4ebefc", null ]
     ] ],
     [ "Enums::ProcessInfo", "struct_enums_1_1_process_info.html", [

@@ -1,14 +1,16 @@
 <map id="PassBackendFactory" name="PassBackendFactory">
-<area shape="rect" id="Node000001" title="Owns the Pass backend lifecycle (RealPass vs ImitatePass)." alt="" coords="20,307,173,335"/>
-<area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="72,207,122,234"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,248,99,307,94,306,95,252"/>
+<area shape="rect" id="Node000001" title="Owns the Pass backend lifecycle (RealPass vs ImitatePass)." alt="" coords="87,307,240,335"/>
+<area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="138,207,188,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,248,166,308,161,306,161,252"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,79,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="39,46,42,89,49,133,67,173,89,206,84,207,62,176,43,134,36,90,39,51"/>
-<area shape="rect" id="Node000006" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="58,106,135,134"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="57,44,92,105,87,106,56,49"/>
-<area shape="rect" id="Node000004" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="159,106,258,134"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="182,146,142,185,115,208,111,204,139,181,185,142"/>
-<area shape="rect" id="Node000005" href="$struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,..." alt="" coords="124,5,293,33"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="210,46,211,106,206,105,208,51"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="98,147,99,207,94,206,96,152"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,44,158,205,153,207,56,49"/>
+<area shape="rect" id="Node000006" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="125,106,202,134"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="69,40,149,104,145,107,69,45"/>
+<area shape="rect" id="Node000004" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="300,106,400,134"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="310,143,190,208,187,204,314,139"/>
+<area shape="rect" id="Node000005" href="$struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,..." alt="" coords="304,5,473,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="380,46,357,107,353,104,376,49"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="165,147,166,207,161,205,162,152"/>
+<area shape="rect" id="Node000007" href="$class_executor_1_1_capped_output.html" title="A stream of bytes held as its first and last kMaxStderrBytes / 2 bytes, with its gpg status records c..." alt="" coords="102,5,280,33"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="185,45,170,106,165,104,182,50"/>
 </map>

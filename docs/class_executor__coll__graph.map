@@ -1,5 +1,7 @@
 <map id="Executor" name="Executor">
-<area shape="rect" id="Node000001" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="5,81,83,109"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="7,5,81,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,47,47,81,41,80,42,51"/>
+<area shape="rect" id="Node000001" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="78,106,155,134"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,79,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,43,109,105,104,106,59,48"/>
+<area shape="rect" id="Node000003" href="$class_executor_1_1_capped_output.html" title="A stream of bytes held as its first and last kMaxStderrBytes / 2 bytes, with its gpg status records c..." alt="" coords="102,5,280,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,45,129,107,125,103,170,46"/>
 </map>

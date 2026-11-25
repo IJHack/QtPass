@@ -1,44 +1,51 @@
 <map id="FirstRunWizard::secretKeys" name="FirstRunWizard::secretKeys">
-<area shape="rect" id="Node000001" title="The secret keys gpg lists for gpgExecutable." alt="" coords="5,133,204,161"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="284,81,412,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,130,271,110,267,114,174,135"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="252,133,444,161"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,145,238,146,234,149,205,150"/>
-<area shape="rect" id="Node000010" href="$gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8" title="Parse a gpg colon listing into one UserInfo per key." alt="" coords="266,285,430,313"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="129,159,314,276,309,278,128,164"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="492,57,654,85"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="405,130,443,118,491,95,514,89,509,92,493,100,445,123,408,135"/>
-<area shape="rect" id="Node000005" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="702,57,893,85"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="654,69,689,70,684,72,655,74"/>
-<area shape="rect" id="Node000006" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="941,57,1106,85"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="892,69,928,71,923,72,893,74"/>
-<area shape="rect" id="Node000007" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1154,5,1372,33"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1090,54,1183,36,1178,38,1091,59"/>
-<area shape="rect" id="Node000008" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1157,57,1369,85"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1106,69,1144,71,1139,72,1107,74"/>
-<area shape="rect" id="Node000009" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1161,109,1365,137"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="1091,83,1183,105,1178,106,1091,88"/>
-<area shape="poly" id="edge23_Node000010_Node000010" title=" " alt="" coords="309,284,303,276,308,267,323,261,348,259,374,261,390,270,385,270,373,266,348,264,324,266,311,271,308,276,314,285"/>
-<area shape="rect" id="Node000011" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a record of a gpg colon listing by its first field." alt="" coords="516,133,631,161"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="360,283,414,229,450,199,491,172,507,166,502,169,493,176,454,203,417,233,364,287"/>
-<area shape="rect" id="Node000012" href="$gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178" title="Replace the key ID of the key being built with its fingerprint." alt="" coords="508,209,639,237"/>
-<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="389,282,491,247,517,241,512,243,493,252,391,287"/>
-<area shape="rect" id="Node000013" href="$gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c" title="Start a key from a pub or sec record: key ID, the user ID the record may carry, validity,..." alt="" coords="494,285,652,313"/>
-<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="430,297,481,299,476,300,431,302"/>
-<area shape="rect" id="Node000014" href="$gpgkeystate_8cpp.html#adb7dc883e7b40a750d4ba9789eb59581" title="Handle a uid record in GPG colon output: its name is the key&#39;s name unless an earlier uid vouches at ..." alt="" coords="507,361,639,389"/>
-<area shape="poly" id="edge16_Node000010_Node000014" title=" " alt="" coords="392,311,518,355,513,356,391,316"/>
-<area shape="rect" id="Node000017" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="496,413,650,441"/>
-<area shape="poly" id="edge22_Node000010_Node000017" title=" " alt="" coords="366,311,421,353,493,398,510,408,505,407,491,403,418,358,365,316"/>
-<area shape="rect" id="Node000018" href="$struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" title="Construct a UserInfo with default (invalid/disabled) state." alt="" coords="504,465,643,493"/>
-<area shape="poly" id="edge24_Node000010_Node000018" title=" " alt="" coords="360,311,412,378,450,417,493,450,505,459,500,458,491,455,447,420,408,381,357,316"/>
-<area shape="poly" id="edge11_Node000011_Node000011" title=" " alt="" coords="534,132,528,124,533,115,549,109,573,107,600,109,615,118,610,118,598,114,573,112,550,114,537,119,534,124,540,133"/>
-<area shape="poly" id="edge13_Node000012_Node000012" title=" " alt="" coords="534,208,528,200,533,191,549,185,573,183,600,185,615,194,610,194,598,190,573,188,550,190,537,195,534,200,540,209"/>
-<area shape="poly" id="edge15_Node000013_Node000013" title=" " alt="" coords="534,284,528,276,533,267,549,261,573,259,600,261,615,270,610,270,598,266,573,264,550,266,537,271,534,276,540,286"/>
-<area shape="poly" id="edge19_Node000014_Node000014" title=" " alt="" coords="535,360,528,352,533,343,549,337,573,335,600,337,615,346,610,346,598,342,573,340,550,342,537,347,534,352,540,362"/>
-<area shape="rect" id="Node000015" href="$gpgkeystate_8cpp.html#a6a934d2eca2c610e4ebb4ceb0bd8eeac" title="Decode a field of GPG colon output: gpg writes a colon, a backslash and control characters in a user ..." alt="" coords="729,324,866,352"/>
-<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="639,362,717,351,711,352,640,367"/>
-<area shape="rect" id="Node000016" href="$gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" title="How far a uid record&#39;s own validity vouches for its name." alt="" coords="741,400,854,428"/>
-<area shape="poly" id="edge20_Node000014_Node000016" title=" " alt="" coords="640,384,728,401,723,402,640,389"/>
-<area shape="poly" id="edge18_Node000015_Node000015" title=" " alt="" coords="759,323,753,315,758,305,773,299,798,297,824,300,840,309,834,308,822,305,797,303,774,305,761,309,758,315,764,324"/>
-<area shape="poly" id="edge21_Node000016_Node000016" title=" " alt="" coords="759,398,753,391,758,381,773,375,798,373,824,376,840,385,834,384,822,381,797,379,774,381,761,385,758,391,764,401"/>
+<area shape="rect" id="Node000001" title="The secret keys gpg lists for gpgExecutable." alt="" coords="5,159,204,187"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="284,107,412,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,156,271,136,267,140,174,161"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="252,159,444,187"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,171,238,172,234,174,205,175"/>
+<area shape="rect" id="Node000013" href="$gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8" title="Parse a gpg colon listing into one UserInfo per key." alt="" coords="266,311,430,339"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="129,185,314,301,309,304,128,190"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="492,83,654,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="405,156,443,144,491,121,514,115,509,118,493,126,445,149,408,161"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="702,83,893,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="654,94,689,96,684,98,655,100"/>
+<area shape="rect" id="Node000006" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="941,5,1119,50"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="845,80,940,54,935,56,847,85"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="947,143,1112,171"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="854,109,961,138,956,139,854,114"/>
+<area shape="rect" id="Node000012" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="941,75,1119,119"/>
+<area shape="poly" id="edge11_Node000005_Node000012" title=" " alt="" coords="892,94,928,96,922,98,893,100"/>
+<area shape="rect" id="Node000007" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="1187,13,1365,58"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1119,28,1174,32,1169,33,1120,33"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1167,91,1385,119"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1098,140,1194,122,1189,123,1100,145"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1170,143,1382,171"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="1113,154,1157,157,1152,157,1113,160"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1174,195,1378,223"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="1099,169,1195,191,1189,191,1099,174"/>
+<area shape="poly" id="edge12_Node000012_Node000007" title=" " alt="" coords="1119,72,1174,61,1169,62,1120,77"/>
+<area shape="poly" id="edge27_Node000013_Node000013" title=" " alt="" coords="309,310,303,302,308,293,323,287,348,285,374,287,390,296,385,296,373,292,348,290,324,292,311,297,308,302,314,311"/>
+<area shape="rect" id="Node000014" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a record of a gpg colon listing by its first field." alt="" coords="516,159,631,187"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="360,308,414,255,450,224,491,197,507,192,502,195,493,202,454,229,417,259,364,313"/>
+<area shape="rect" id="Node000015" href="$gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178" title="Replace the key ID of the key being built with its fingerprint." alt="" coords="508,235,639,263"/>
+<area shape="poly" id="edge16_Node000013_Node000015" title=" " alt="" coords="389,308,491,273,517,267,512,269,493,278,391,313"/>
+<area shape="rect" id="Node000016" href="$gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c" title="Start a key from a pub or sec record: key ID, the user ID the record may carry, validity,..." alt="" coords="494,311,652,339"/>
+<area shape="poly" id="edge18_Node000013_Node000016" title=" " alt="" coords="430,322,481,324,476,326,431,328"/>
+<area shape="rect" id="Node000017" href="$gpgkeystate_8cpp.html#adb7dc883e7b40a750d4ba9789eb59581" title="Handle a uid record in GPG colon output: its name is the key&#39;s name unless an earlier uid vouches at ..." alt="" coords="507,387,639,415"/>
+<area shape="poly" id="edge20_Node000013_Node000017" title=" " alt="" coords="392,337,518,381,513,382,391,342"/>
+<area shape="rect" id="Node000020" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="496,439,650,467"/>
+<area shape="poly" id="edge26_Node000013_Node000020" title=" " alt="" coords="366,337,421,379,493,424,510,434,505,433,491,429,418,384,365,342"/>
+<area shape="rect" id="Node000021" href="$struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" title="Construct a UserInfo with default (invalid/disabled) state." alt="" coords="504,491,643,519"/>
+<area shape="poly" id="edge28_Node000013_Node000021" title=" " alt="" coords="360,337,412,404,450,442,493,476,505,485,500,484,491,481,447,446,408,407,357,341"/>
+<area shape="poly" id="edge15_Node000014_Node000014" title=" " alt="" coords="534,158,528,150,533,141,549,135,573,133,600,135,615,144,610,144,598,140,573,138,550,140,537,145,534,150,540,159"/>
+<area shape="poly" id="edge17_Node000015_Node000015" title=" " alt="" coords="534,234,528,226,533,217,549,211,573,209,600,211,615,220,610,220,598,216,573,214,550,216,537,221,534,226,540,235"/>
+<area shape="poly" id="edge19_Node000016_Node000016" title=" " alt="" coords="534,310,528,302,533,293,549,287,573,285,600,287,615,296,610,296,598,292,573,290,550,292,537,297,534,302,540,311"/>
+<area shape="poly" id="edge23_Node000017_Node000017" title=" " alt="" coords="535,386,528,378,533,369,549,363,573,361,600,363,615,372,610,372,598,368,573,366,550,368,537,373,534,378,540,388"/>
+<area shape="rect" id="Node000018" href="$gpgkeystate_8cpp.html#a6a934d2eca2c610e4ebb4ceb0bd8eeac" title="Decode a field of GPG colon output: gpg writes a colon, a backslash and control characters in a user ..." alt="" coords="729,350,866,378"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="639,387,717,377,711,378,640,393"/>
+<area shape="rect" id="Node000019" href="$gpgkeystate_8cpp.html#a64f383089339f59a6f57485277a7684c" title="How far a uid record&#39;s own validity vouches for its name." alt="" coords="741,426,854,454"/>
+<area shape="poly" id="edge24_Node000017_Node000019" title=" " alt="" coords="640,410,728,427,723,427,640,415"/>
+<area shape="poly" id="edge22_Node000018_Node000018" title=" " alt="" coords="759,348,753,341,758,331,773,325,798,323,824,326,840,335,834,334,822,331,797,328,774,330,761,335,758,341,764,350"/>
+<area shape="poly" id="edge25_Node000019_Node000019" title=" " alt="" coords="759,424,753,417,758,407,773,401,798,399,824,402,840,411,834,410,822,407,797,404,774,406,761,411,758,417,764,426"/>
 </map>

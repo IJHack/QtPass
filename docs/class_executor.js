@@ -1,6 +1,7 @@
 var class_executor =
 [
     [ "ExecQueueItem", "struct_executor_1_1_exec_queue_item.html", "struct_executor_1_1_exec_queue_item" ],
+    [ "CappedOutput", "class_executor_1_1_capped_output.html", "class_executor_1_1_capped_output" ],
     [ "WslCommand", "struct_executor_1_1_wsl_command.html", "struct_executor_1_1_wsl_command" ],
     [ "Executor", "class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d", null ],
     [ "~Executor", "class_executor.html#a9be12004428714d198ca318fe804ea49", null ],
@@ -27,6 +28,7 @@ var class_executor =
     [ "hasQueued", "class_executor.html#a77fc56acc6ba0d9efd0e50fbbd71b002", null ],
     [ "isIdle", "class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af", null ],
     [ "lastOutputLossless", "class_executor.html#a157a5a1a3a64e3feed5d7a33da53f0c2", null ],
+    [ "lastStatusCounts", "class_executor.html#a5e808b31bbf7e8a514004f4fb072a065", null ],
     [ "onProcessFinished", "class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c", null ],
     [ "parseWslCommand", "class_executor.html#aec74cb83e3072dbf74a5f09681f4716c", null ],
     [ "postDrainedIfIdle", "class_executor.html#a0dc059529757ca423bde0b74fe0129c2", null ],
@@ -39,10 +41,14 @@ var class_executor =
     [ "startProcess", "class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10", null ],
     [ "translatePathForWsl", "class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86", null ],
     [ "wslExecArgs", "class_executor.html#a9eb4d0403edeab54a94cba4ba3cc3dfd", null ],
+    [ "kMaxStderrBytes", "class_executor.html#a3f93c8c34e0ed6c0a951e0793ccaf85c", null ],
+    [ "m_discardStdout", "class_executor.html#a56b304ea9654a0a13139f2cba34cd964", null ],
     [ "m_drainCheckPosted", "class_executor.html#a68704b9a35398e88fa70ae00600d70a5", null ],
     [ "m_execQueue", "class_executor.html#a32c4982fc25ba41f0b3ca420807c3e83", null ],
+    [ "m_lastStatus", "class_executor.html#aa6d3ec36da079587d2fa089b7e6c6b44", null ],
     [ "m_outputLossless", "class_executor.html#a8fb276cf46b2059d31040b29eeac9ddc", null ],
     [ "m_pendingErrors", "class_executor.html#a5c333622022bd27ab87b0c581496f66f", null ],
     [ "m_process", "class_executor.html#af165b60b2641b431ca57c506e5c5d9e8", null ],
+    [ "m_stderr", "class_executor.html#a6785b67b963065668dc9874def9c72e4", null ],
     [ "running", "class_executor.html#abd923dfe9e21c7914d3973ef3d4ebefc", null ]
 ];

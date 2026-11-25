@@ -24,6 +24,7 @@ var class_real_pass =
     [ "onDequeuing", "class_real_pass.html#a6d7163b691663d92f31ca20886f9979f", null ],
     [ "passMoveOrCopy", "class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794", null ],
     [ "passName", "class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719", null ],
+    [ "reencryptFailed", "class_real_pass.html#ae82ad79b6a4d5d87548cc14247d22779", null ],
     [ "reencryptFailed", "class_real_pass.html#a5e54561fccd028576a58b17731907880", null ],
     [ "refuseIgnoredThatMoves", "class_real_pass.html#a2fd6d533c480d182529f809467a050eb", null ],
     [ "refuseLinkedList", "class_real_pass.html#ab61e44281306f4a26cb69cdedab0ff68", null ],

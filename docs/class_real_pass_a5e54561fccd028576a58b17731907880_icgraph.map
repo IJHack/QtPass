@@ -1,5 +1,6 @@
 <map id="RealPass::reencryptFailed" name="RealPass::reencryptFailed">
-<area shape="rect" id="Node000001" title="Whether a pass init, mv or cp that exited 0 left entries as they were: pass carries on past an entry ..." alt="" coords="192,5,379,33"/>
-<area shape="rect" id="Node000002" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="5,5,144,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,19,144,22,144,17,179,19"/>
+<area shape="rect" id="Node000001" title="Whether a pass init, mv or cp that exited 0 left entries as they were: pass carries on past an entry ..." alt="" coords="192,29,379,57"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="320,14,309,10,285,8,263,10,251,15,249,20,254,30,249,28,243,20,248,11,262,5,285,3,310,5,325,14"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="5,29,144,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,43,144,46,144,41,179,43"/>
 </map>

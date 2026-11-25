@@ -4,10 +4,10 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,186,343,109,341,114,156,191"/>
 <area shape="rect" id="Node000006" href="$class_profile_init.html#aad9f0e985b23f16b59893e4c9e7a6c13" title="Whether git has a name and e&#45;mail to commit with, i.e. user.name and user.email resolve (globally or ..." alt="" coords="313,150,472,195"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="231,188,300,182,295,184,233,193"/>
-<area shape="rect" id="Node000014" href="$class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848" title="Whether path points at an initialised store." alt="" coords="568,217,741,245"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="232,206,555,224,552,228,232,212"/>
-<area shape="rect" id="Node000015" href="$class_store_wizard_page.html#af948497007b04b2b861b0c9882e8ab2b" title="After an edit: describe the folder (existing store with its entry count, empty folder,..." alt="" coords="280,269,505,297"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="168,215,280,249,329,264,324,265,279,254,167,220"/>
+<area shape="rect" id="Node000017" href="$class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848" title="Whether path points at an initialised store." alt="" coords="568,217,741,245"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="232,206,555,224,552,228,232,212"/>
+<area shape="rect" id="Node000018" href="$class_store_wizard_page.html#af948497007b04b2b861b0c9882e8ab2b" title="After an edit: describe the folder (existing store with its entry count, empty folder,..." alt="" coords="280,269,505,297"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="168,215,280,249,329,264,324,265,279,254,167,220"/>
 <area shape="rect" id="Node000003" href="$class_util.html#aa3f2185f3dc49fda5ec247646da61c6f" title="Expand a leading current&#45;user tilde in a path." alt="" coords="588,5,721,33"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,74,552,43,586,37,581,39,554,48,444,79"/>
 <area shape="rect" id="Node000004" href="$class_util.html#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG..." alt="" coords="559,57,750,85"/>
@@ -20,17 +20,24 @@
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="751,173,792,175,786,175,752,178"/>
 <area shape="rect" id="Node000009" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1015,161,1205,189"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="967,173,1002,175,996,175,967,178"/>
-<area shape="rect" id="Node000010" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1253,161,1418,189"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1205,173,1240,175,1235,175,1205,178"/>
-<area shape="rect" id="Node000011" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1466,109,1685,137"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1403,158,1490,141,1496,140,1404,163"/>
-<area shape="rect" id="Node000012" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1469,161,1682,189"/>
-<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="1418,173,1457,175,1451,175,1419,178"/>
-<area shape="rect" id="Node000013" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1473,213,1678,241"/>
-<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="1403,187,1496,209,1490,209,1403,192"/>
-<area shape="poly" id="edge15_Node000015_Node000014" title=" " alt="" coords="465,266,564,249,569,248,466,271"/>
-<area shape="rect" id="Node000016" href="$class_store_wizard_page.html#a8089e9bf2ad6987d309fcccfde5b2eff" title="How many keys are ticked on the key page." alt="" coords="553,269,756,297"/>
-<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="505,281,540,283,535,283,505,286"/>
-<area shape="rect" id="Node000017" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="571,321,738,349"/>
-<area shape="poly" id="edge17_Node000015_Node000017" title=" " alt="" coords="466,295,569,318,564,318,466,300"/>
+<area shape="rect" id="Node000010" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="1253,84,1431,128"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1158,158,1248,134,1253,133,1159,163"/>
+<area shape="rect" id="Node000012" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1260,221,1425,249"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="1166,187,1274,217,1268,217,1166,192"/>
+<area shape="rect" id="Node000016" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="1253,153,1431,198"/>
+<area shape="poly" id="edge15_Node000009_Node000016" title=" " alt="" coords="1205,173,1240,175,1235,175,1205,178"/>
+<area shape="rect" id="Node000011" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="1499,92,1678,136"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1432,106,1486,110,1481,111,1432,111"/>
+<area shape="rect" id="Node000013" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1479,169,1698,197"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1411,218,1502,201,1507,200,1412,223"/>
+<area shape="rect" id="Node000014" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1482,221,1695,249"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="1425,233,1469,235,1464,235,1425,238"/>
+<area shape="rect" id="Node000015" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1486,273,1691,301"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="1412,247,1507,270,1502,269,1411,252"/>
+<area shape="poly" id="edge16_Node000016_Node000011" title=" " alt="" coords="1431,150,1482,140,1487,139,1432,156"/>
+<area shape="poly" id="edge19_Node000018_Node000017" title=" " alt="" coords="465,266,564,249,569,248,466,271"/>
+<area shape="rect" id="Node000019" href="$class_store_wizard_page.html#a8089e9bf2ad6987d309fcccfde5b2eff" title="How many keys are ticked on the key page." alt="" coords="553,269,756,297"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="505,281,540,283,535,283,505,286"/>
+<area shape="rect" id="Node000020" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="571,321,738,349"/>
+<area shape="poly" id="edge21_Node000018_Node000020" title=" " alt="" coords="466,295,569,318,564,318,466,300"/>
 </map>

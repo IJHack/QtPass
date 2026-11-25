@@ -15,7 +15,7 @@ var searchData=
   ['addsharemenu_12',['addShareMenu',['../class_main_window.html#a5890dfd116d4da96689e7114dd4e5494',1,'MainWindow']]],
   ['addtoggle_13',['addToggle',['../class_tray_icon.html#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f',1,'TrayIcon']]],
   ['afterfirstcolon_14',['afterFirstColon',['../filecontent_8cpp.html#a722ae6894d3573e5dcec1f2568e8cf06',1,'filecontent.cpp']]],
-  ['append_15',['append',['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel']]],
+  ['append_15',['append',['../class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813',1,'Executor::CappedOutput::append()'],['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel::append()']]],
   ['appendwithspaceifsuffixnotempty_16',['appendWithSpaceIfSuffixNotEmpty',['../main_8cpp.html#aef4b6e5a592d917ddf43ca95fc3fc21c',1,'main.cpp']]],
   ['applyframestyle_17',['applyFrameStyle',['../class_password_display_panel.html#af9fbeff3680f3e39dd393d9827c748ee',1,'PasswordDisplayPanel']]],
   ['applypassphrase_18',['applyPassphrase',['../class_keygen_dialog.html#a1286e8e44dcb894081e3e41c9cea21d1',1,'KeygenDialog']]],

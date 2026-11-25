@@ -121,7 +121,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('executor_8h.ht
 
 <p><a class="el" href="class_executor.html" title="Runs non-interactive external commands in FIFO order using a single QProcess.">Executor</a>, the FIFO queue every gpg, git and pass child process of <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> goes through, and the WSL command parsing it shares with the settings code.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;QObject&gt;</code><br />
+<div class="textblock"><code>#include &lt;QHash&gt;</code><br />
+<code>#include &lt;QObject&gt;</code><br />
 <code>#include &lt;QProcess&gt;</code><br />
 <code>#include &lt;QProcessEnvironment&gt;</code><br />
 <code>#include &lt;QQueue&gt;</code><br />
@@ -149,6 +150,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs non-interactive external commands in FIFO order using a single QProcess.  <a href="class_executor.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Executor_3A_3AExecQueueItem" id="r_Executor_3A_3AExecQueueItem"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_executor_1_1_exec_queue_item.html">Executor::ExecQueueItem</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execution queue item for non-interactive ordered execution.  <a href="struct_executor_1_1_exec_queue_item.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Executor_3A_3ACappedOutput" id="r_Executor_3A_3ACappedOutput"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_executor_1_1_capped_output.html">Executor::CappedOutput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A stream of bytes held as its first and last kMaxStderrBytes / 2 bytes, with its gpg status records counted whole.  <a href="class_executor_1_1_capped_output.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Executor_3A_3AWslCommand" id="r_Executor_3A_3AWslCommand"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_executor_1_1_wsl_command.html">Executor::WslCommand</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A configured executable that runs a Linux program through WSL.  <a href="struct_executor_1_1_wsl_command.html#details">More...</a><br /></td></tr>
 </table>

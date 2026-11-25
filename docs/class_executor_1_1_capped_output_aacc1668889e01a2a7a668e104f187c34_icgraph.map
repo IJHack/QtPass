@@ -1,0 +1,14 @@
+<map id="Executor::CappedOutput::statusCounts" name="Executor::CappedOutput::statusCounts">
+<area shape="rect" id="Node000001" title="How many complete lines of each gpg status keyword came by since the last take(), the left&#45;out ones i..." alt="" coords="683,36,862,80"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a676362a1d54d7bce3bced4abd3e65944" title="Read what a finished process produced, according to the queue item&#39;s readStdout/readStderr flags; std..." alt="" coords="456,5,628,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="665,40,628,36,628,31,671,40"/>
+<area shape="rect" id="Node000005" href="$class_real_pass.html#a5e54561fccd028576a58b17731907880" title="Whether a pass init, mv or cp that exited 0 left entries as they were: pass carries on past an entry ..." alt="" coords="448,81,635,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="671,74,632,83,631,78,665,75"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits." alt="" coords="195,5,400,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,19,401,22,400,17,443,19"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d" title="Construct an Executor with an optional parent QObject." alt="" coords="5,5,147,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="177,20,147,22,146,17,182,18"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="580,66,567,62,542,60,518,62,504,67,501,72,507,82,502,80,496,72,501,63,516,57,542,55,569,57,585,66"/>
+<area shape="rect" id="Node000006" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="228,81,366,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="430,95,367,98,367,93,435,95"/>
+</map>

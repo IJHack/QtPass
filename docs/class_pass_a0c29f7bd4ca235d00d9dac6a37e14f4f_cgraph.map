@@ -1,27 +1,34 @@
 <map id="Pass::GenerateGPGKeys" name="Pass::GenerateGPGKeys">
-<area shape="rect" id="Node000001" title="Generate GPG keys using batch script." alt="" coords="5,173,183,201"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="241,45,434,73"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,171,160,128,193,104,230,83,251,77,247,80,232,88,196,108,163,132,112,175"/>
-<area shape="rect" id="Node000009" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="255,121,420,149"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="162,170,256,151,252,154,163,175"/>
-<area shape="rect" id="Node000010" href="$class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393" title="Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial..." alt="" coords="231,173,444,201"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="183,185,218,186,213,188,184,190"/>
-<area shape="rect" id="Node000011" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="255,225,420,253"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="163,199,257,220,252,222,162,204"/>
-<area shape="rect" id="Node000012" href="$class_pass.html#a6a9aa8dc4ff288ce256351b671533a84" title="Resolve the gpgconf command to kill agents." alt="" coords="492,187,719,214"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="114,199,165,233,197,250,231,262,290,275,337,278,384,273,443,262,507,243,561,222,567,221,509,248,445,267,385,278,337,283,289,280,230,267,195,255,163,238,113,204"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="524,48,687,76"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,57,511,60,506,62,434,63"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="767,53,958,81"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="687,61,755,64,750,65,688,66"/>
-<area shape="rect" id="Node000005" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1006,55,1171,82"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="958,65,993,68,987,68,958,70"/>
-<area shape="rect" id="Node000006" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1219,5,1437,33"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1158,51,1240,37,1245,36,1159,57"/>
-<area shape="rect" id="Node000007" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1222,120,1434,148"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1143,80,1263,115,1257,115,1142,86"/>
-<area shape="rect" id="Node000008" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1226,57,1430,85"/>
-<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1171,67,1213,70,1207,70,1171,72"/>
-<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="296,120,289,112,294,103,311,97,337,95,366,97,383,106,377,106,365,102,337,100,312,102,298,107,294,112,301,121"/>
-<area shape="poly" id="edge13_Node000012_Node000007" title=" " alt="" coords="720,187,1209,145,1204,145,720,193"/>
+<area shape="rect" id="Node000001" title="Generate GPG keys using batch script." alt="" coords="5,206,183,234"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="241,78,434,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,203,160,160,193,136,230,116,251,109,247,112,232,121,196,141,163,164,112,207"/>
+<area shape="rect" id="Node000012" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="255,154,420,182"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="162,203,256,184,252,187,163,208"/>
+<area shape="rect" id="Node000013" href="$class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393" title="Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial..." alt="" coords="231,206,444,234"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="183,217,218,219,213,220,184,222"/>
+<area shape="rect" id="Node000014" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="255,258,420,286"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="163,231,257,253,252,255,162,237"/>
+<area shape="rect" id="Node000015" href="$class_pass.html#a6a9aa8dc4ff288ce256351b671533a84" title="Resolve the gpgconf command to kill agents." alt="" coords="492,250,719,278"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="114,231,165,266,197,282,231,294,272,303,314,307,399,305,477,294,540,282,545,282,478,299,399,310,314,312,271,308,230,300,195,287,163,270,113,237"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="524,79,687,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,90,511,92,506,93,434,95"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="767,83,958,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="687,92,755,95,750,96,688,97"/>
+<area shape="rect" id="Node000005" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="1006,5,1184,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="911,80,1000,56,1005,54,912,85"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1012,144,1178,172"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="918,109,1028,140,1022,140,917,114"/>
+<area shape="rect" id="Node000011" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="1006,75,1184,119"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="958,94,993,97,987,97,958,100"/>
+<area shape="rect" id="Node000006" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="1252,17,1430,62"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1184,29,1239,34,1234,35,1185,35"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1232,94,1450,122"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1165,141,1253,126,1258,125,1166,147"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1235,206,1447,234"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1154,170,1271,202,1265,201,1153,175"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1239,146,1443,174"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="1178,156,1226,159,1221,159,1178,161"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="1184,74,1234,64,1240,63,1185,79"/>
+<area shape="poly" id="edge13_Node000012_Node000012" title=" " alt="" coords="296,153,289,145,294,135,311,129,337,127,366,130,383,138,377,139,365,135,337,132,312,134,298,139,294,145,301,154"/>
+<area shape="poly" id="edge17_Node000015_Node000009" title=" " alt="" coords="720,254,1222,227,1217,227,720,260"/>
 </map>

@@ -30,7 +30,7 @@ var searchData=
   ['and_20profiles_27',['Settings and profiles',['../group__settings.html',1,'']]],
   ['and_20recipients_28',['Keys and recipients',['../group__keys.html',1,'']]],
   ['app_29',['app',['../struct_executor_1_1_exec_queue_item.html#ad5f3b9570d82aa7aff0e8ba6a683616a',1,'Executor::ExecQueueItem']]],
-  ['append_30',['append',['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel']]],
+  ['append_30',['append',['../class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813',1,'Executor::CappedOutput::append()'],['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel::append()']]],
   ['appendwithspaceifsuffixnotempty_31',['appendWithSpaceIfSuffixNotEmpty',['../main_8cpp.html#aef4b6e5a592d917ddf43ca95fc3fc21c',1,'main.cpp']]],
   ['application_20support_32',['Application support',['../group__support.html',1,'']]],
   ['applyframestyle_33',['applyFrameStyle',['../class_password_display_panel.html#af9fbeff3680f3e39dd393d9827c748ee',1,'PasswordDisplayPanel']]],

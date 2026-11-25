@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title="Connect dialog signals." alt="" coords="5,647,212,675"/>
 <area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="278,672,429,700"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,669,264,676,260,678,213,674"/>
-<area shape="rect" id="Node000042" href="$class_users_dialog.html#a0a9df57e10de95c375523902b4bbdc5b" title="Handle user selection change." alt="" coords="260,591,447,619"/>
-<area shape="poly" id="edge53_Node000001_Node000042" title=" " alt="" coords="171,644,277,621,273,625,173,649"/>
+<area shape="rect" id="Node000045" href="$class_users_dialog.html#a0a9df57e10de95c375523902b4bbdc5b" title="Handle user selection change." alt="" coords="260,591,447,619"/>
+<area shape="poly" id="edge57_Node000001_Node000045" title=" " alt="" coords="171,644,277,621,273,625,173,649"/>
 <area shape="rect" id="Node000003" href="$class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked." alt="" coords="757,587,949,615"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="407,669,494,649,622,627,744,613,739,615,623,633,496,654,409,674"/>
 <area shape="rect" id="Node000004" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store." alt="" coords="813,758,893,786"/>
@@ -77,24 +77,31 @@
 <area shape="poly" id="edge42_Node000031_Node000032" title=" " alt="" coords="1442,558,1565,584,1559,584,1442,564"/>
 <area shape="rect" id="Node000033" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="1534,480,1750,508"/>
 <area shape="poly" id="edge43_Node000031_Node000033" title=" " alt="" coords="1441,531,1555,511,1550,512,1442,536"/>
-<area shape="rect" id="Node000041" href="$class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="1523,532,1761,560"/>
-<area shape="poly" id="edge52_Node000031_Node000041" title=" " alt="" coords="1442,545,1511,547,1505,547,1442,550"/>
+<area shape="rect" id="Node000044" href="$class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="1523,532,1761,560"/>
+<area shape="poly" id="edge56_Node000031_Node000044" title=" " alt="" coords="1442,545,1511,547,1505,547,1442,550"/>
 <area shape="rect" id="Node000034" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1809,455,2001,483"/>
 <area shape="poly" id="edge44_Node000033_Node000034" title=" " alt="" coords="1750,481,1796,479,1790,480,1751,487"/>
-<area shape="rect" id="Node000039" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="2714,506,2926,534"/>
-<area shape="poly" id="edge51_Node000033_Node000039" title=" " alt="" coords="1750,500,1928,511,2129,517,2356,517,2701,519,2696,520,2356,522,2129,522,1927,517,1750,506"/>
-<area shape="rect" id="Node000035" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="2049,455,2211,483"/>
-<area shape="poly" id="edge45_Node000034_Node000035" title=" " alt="" coords="2001,466,2036,469,2030,469,2002,472"/>
-<area shape="rect" id="Node000036" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="2259,455,2450,483"/>
-<area shape="poly" id="edge46_Node000035_Node000036" title=" " alt="" coords="2211,466,2246,469,2241,469,2212,472"/>
-<area shape="rect" id="Node000037" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="2498,455,2663,483"/>
-<area shape="poly" id="edge47_Node000036_Node000037" title=" " alt="" coords="2450,466,2485,469,2479,469,2450,472"/>
-<area shape="rect" id="Node000038" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="2711,454,2929,482"/>
-<area shape="poly" id="edge48_Node000037_Node000038" title=" " alt="" coords="2663,466,2698,468,2693,469,2664,471"/>
-<area shape="poly" id="edge49_Node000037_Node000039" title=" " alt="" coords="2649,481,2739,502,2734,502,2649,486"/>
-<area shape="rect" id="Node000040" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="2718,402,2922,430"/>
-<area shape="poly" id="edge50_Node000037_Node000040" title=" " alt="" coords="2645,452,2737,434,2743,433,2646,457"/>
-<area shape="rect" id="Node000043" href="$class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" title="Enable OK only while at least one key is ticked (hasSelection())." alt="" coords="495,562,709,590"/>
-<area shape="poly" id="edge54_Node000042_Node000043" title=" " alt="" coords="446,591,482,589,477,591,448,596"/>
-<area shape="poly" id="edge55_Node000043_Node000003" title=" " alt="" coords="709,584,745,589,739,590,710,589"/>
+<area shape="rect" id="Node000041" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="2727,506,2939,534"/>
+<area shape="poly" id="edge55_Node000033_Node000041" title=" " alt="" coords="1750,500,1928,511,2129,517,2356,517,2714,519,2709,520,2356,522,2129,522,1927,517,1750,506"/>
+<area shape="rect" id="Node000035" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="2049,440,2211,468"/>
+<area shape="poly" id="edge45_Node000034_Node000035" title=" " alt="" coords="2001,460,2036,460,2030,461,2002,465"/>
+<area shape="rect" id="Node000036" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="2259,426,2450,454"/>
+<area shape="poly" id="edge46_Node000035_Node000036" title=" " alt="" coords="2211,446,2246,447,2241,447,2212,452"/>
+<area shape="rect" id="Node000037" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="2498,317,2676,362"/>
+<area shape="poly" id="edge47_Node000036_Node000037" title=" " alt="" coords="2385,423,2497,372,2510,369,2515,367,2499,377,2386,428"/>
+<area shape="rect" id="Node000039" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="2504,455,2670,483"/>
+<area shape="poly" id="edge49_Node000036_Node000039" title=" " alt="" coords="2450,449,2491,457,2486,457,2450,454"/>
+<area shape="rect" id="Node000043" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="2498,387,2676,431"/>
+<area shape="poly" id="edge53_Node000036_Node000043" title=" " alt="" coords="2449,424,2485,422,2479,423,2450,430"/>
+<area shape="rect" id="Node000038" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="2744,325,2922,370"/>
+<area shape="poly" id="edge48_Node000037_Node000038" title=" " alt="" coords="2676,340,2731,344,2726,345,2677,345"/>
+<area shape="rect" id="Node000040" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="2724,402,2942,430"/>
+<area shape="poly" id="edge50_Node000039_Node000040" title=" " alt="" coords="2654,452,2749,434,2754,433,2655,457"/>
+<area shape="poly" id="edge51_Node000039_Node000041" title=" " alt="" coords="2657,481,2751,502,2745,502,2657,486"/>
+<area shape="rect" id="Node000042" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="2731,454,2935,482"/>
+<area shape="poly" id="edge52_Node000039_Node000042" title=" " alt="" coords="2670,466,2718,468,2713,469,2670,471"/>
+<area shape="poly" id="edge54_Node000043_Node000038" title=" " alt="" coords="2676,384,2726,374,2732,373,2677,389"/>
+<area shape="rect" id="Node000046" href="$class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" title="Enable OK only while at least one key is ticked (hasSelection())." alt="" coords="495,562,709,590"/>
+<area shape="poly" id="edge58_Node000045_Node000046" title=" " alt="" coords="446,591,482,589,477,591,448,596"/>
+<area shape="poly" id="edge59_Node000046_Node000003" title=" " alt="" coords="709,584,745,589,739,590,710,589"/>
 </map>

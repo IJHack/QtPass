@@ -1,35 +1,48 @@
 <map id="Executor::Executor" name="Executor::Executor">
-<area shape="rect" id="Node000001" title="Construct an Executor with an optional parent QObject." alt="" coords="5,157,147,185"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits." alt="" coords="195,131,400,158"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,160,182,157,177,160,148,165"/>
-<area shape="rect" id="Node000015" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="Emitted just before a queued process is started; the main window shows the busy indicator on it." alt="" coords="230,183,365,210"/>
-<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="147,177,217,186,212,188,147,182"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a676362a1d54d7bce3bced4abd3e65944" title="Read what a finished process produced, according to the queue item&#39;s readStdout/readStderr flags; std..." alt="" coords="448,5,620,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="317,128,374,90,447,49,478,38,474,40,449,54,377,95,320,132"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure..." alt="" coords="709,41,825,69"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="335,128,387,109,447,93,577,70,696,60,691,61,578,75,449,98,389,114,337,133"/>
-<area shape="rect" id="Node000005" href="$class_executor.html#ae71c92047b8337f770294e84211d850f" title="Start the head of the queue unless something runs or the queue is empty." alt="" coords="450,131,618,158"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="400,142,437,144,432,145,401,147"/>
-<area shape="rect" id="Node000007" href="$class_executor.html#a0dc059529757ca423bde0b74fe0129c2" title=" " alt="" coords="668,197,866,225"/>
-<area shape="poly" id="edge17_Node000002_Node000007" title=" " alt="" coords="380,156,448,167,655,197,650,198,448,172,380,162"/>
-<area shape="rect" id="Node000014" href="$class_executor.html#ace810a6d93c74dec7188038210c5a731" title="Emitted when a queued process exits normally, whatever its exit code; a non&#45;zero code is the receiver..." alt="" coords="466,232,602,260"/>
-<area shape="poly" id="edge16_Node000002_Node000014" title=" " alt="" coords="371,156,401,169,416,179,426,190,436,201,449,212,474,226,469,225,447,216,432,205,422,194,413,183,399,174,370,162"/>
-<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="561,128,610,104,667,79,691,74,696,72,669,84,612,108,563,133"/>
-<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="494,129,488,122,493,112,509,106,534,104,561,107,578,115,572,115,560,112,534,109,510,111,497,116,493,121,499,131"/>
-<area shape="rect" id="Node000006" href="$class_executor.html#a22b5633f6b06f7f15be77370b5bd2871" title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,..." alt="" coords="690,93,844,121"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="617,129,678,121,672,122,618,134"/>
-<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="582,156,669,182,700,193,695,193,668,187,582,162"/>
-<area shape="rect" id="Node000010" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="684,145,850,173"/>
-<area shape="poly" id="edge12_Node000005_Node000010" title=" " alt="" coords="618,147,671,153,666,153,618,152"/>
-<area shape="rect" id="Node000008" href="$class_executor.html#a987e7227ac1932bbb59cea5cbc82d483" title="Emitted once the last queued item is done and nothing runs or waits any more (isIdle()),..." alt="" coords="956,197,1090,225"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="866,209,943,211,937,211,866,214"/>
-<area shape="rect" id="Node000009" href="$class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af" title="Whether no command is running and nothing is queued." alt="" coords="963,273,1083,301"/>
-<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="817,223,962,269,956,268,816,228"/>
-<area shape="poly" id="edge11_Node000009_Node000009" title=" " alt="" coords="979,272,972,264,978,255,995,249,1023,247,1053,249,1070,258,1065,258,1052,254,1023,252,996,254,981,259,978,264,984,274"/>
-<area shape="rect" id="Node000011" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="914,145,1132,173"/>
-<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="850,157,901,159,896,159,850,162"/>
-<area shape="rect" id="Node000012" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="917,41,1129,69"/>
-<area shape="poly" id="edge14_Node000010_Node000012" title=" " alt="" coords="838,142,864,130,879,118,887,106,897,92,912,80,924,76,930,74,915,84,901,96,892,109,883,122,867,135,840,147"/>
-<area shape="rect" id="Node000013" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="921,93,1125,121"/>
-<area shape="poly" id="edge15_Node000010_Node000013" title=" " alt="" coords="838,142,934,125,939,124,839,147"/>
+<area shape="rect" id="Node000001" title="Construct an Executor with an optional parent QObject." alt="" coords="5,168,147,196"/>
+<area shape="rect" id="Node000002" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="678,5,856,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,166,267,123,447,77,558,56,665,41,660,43,559,61,449,82,268,128,125,170"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits." alt="" coords="195,168,400,196"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,180,181,181,177,184,148,185"/>
+<area shape="rect" id="Node000020" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="Emitted just before a queued process is started; the main window shows the busy indicator on it." alt="" coords="230,220,365,248"/>
+<area shape="poly" id="edge26_Node000001_Node000020" title=" " alt="" coords="138,194,223,215,218,218,139,199"/>
+<area shape="rect" id="Node000003" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="1180,88,1358,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="856,40,1167,93,1162,94,857,45"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a676362a1d54d7bce3bced4abd3e65944" title="Read what a finished process produced, according to the queue item&#39;s readStdout/readStderr flags; std..." alt="" coords="448,143,620,171"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="399,169,435,167,430,169,401,174"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure..." alt="" coords="709,194,825,222"/>
+<area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="400,185,696,202,691,205,401,191"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#ae71c92047b8337f770294e84211d850f" title="Start the head of the queue unless something runs or the queue is empty." alt="" coords="450,287,618,315"/>
+<area shape="poly" id="edge10_Node000004_Node000009" title=" " alt="" coords="367,194,401,207,459,240,507,277,502,277,456,244,399,211,367,199"/>
+<area shape="rect" id="Node000012" href="$class_executor.html#a0dc059529757ca423bde0b74fe0129c2" title=" " alt="" coords="668,418,866,446"/>
+<area shape="poly" id="edge25_Node000004_Node000012" title=" " alt="" coords="381,194,402,207,415,222,422,237,427,267,432,296,438,310,450,324,495,359,547,385,601,404,656,419,650,419,600,409,545,390,493,364,446,328,434,313,427,298,422,267,417,238,410,225,398,211,381,199"/>
+<area shape="rect" id="Node000019" href="$class_executor.html#ace810a6d93c74dec7188038210c5a731" title="Emitted when a queued process exits normally, whatever its exit code; a non&#45;zero code is the receiver..." alt="" coords="466,91,602,119"/>
+<area shape="poly" id="edge24_Node000004_Node000019" title=" " alt="" coords="339,166,447,129,474,123,470,125,449,134,342,170"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="597,140,619,128,634,112,642,95,650,78,667,60,672,59,677,56,670,64,655,81,647,98,638,115,622,132,599,145"/>
+<area shape="rect" id="Node000006" href="$class_executor_1_1_capped_output.html#aacc1668889e01a2a7a668e104f187c34" title="How many complete lines of each gpg status keyword came by since the last take(), the left&#45;out ones i..." alt="" coords="678,75,856,119"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="590,140,666,123,661,125,592,145"/>
+<area shape="rect" id="Node000007" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="934,135,1112,179"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="620,154,921,156,916,158,621,160"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="1112,138,1167,129,1162,131,1113,143"/>
+<area shape="poly" id="edge14_Node000009_Node000008" title=" " alt="" coords="559,284,608,258,667,232,696,225,691,227,669,237,611,263,561,289"/>
+<area shape="poly" id="edge15_Node000009_Node000009" title=" " alt="" coords="494,286,488,278,493,269,509,263,534,261,561,263,578,272,572,272,560,268,534,266,510,268,497,273,493,278,499,287"/>
+<area shape="rect" id="Node000010" href="$class_executor_1_1_capped_output.html#a0640374003c36588ab07cad0a1d70935" title="Drop everything, counts included, for the next command." alt="" coords="678,297,856,342"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="618,305,665,311,659,312,618,310"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#a22b5633f6b06f7f15be77370b5bd2871" title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,..." alt="" coords="690,246,844,274"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="615,284,678,275,673,277,617,289"/>
+<area shape="poly" id="edge16_Node000009_Node000012" title=" " alt="" coords="556,313,622,362,645,384,670,403,686,412,681,412,667,407,642,388,619,366,555,318"/>
+<area shape="rect" id="Node000015" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="684,366,850,394"/>
+<area shape="poly" id="edge20_Node000009_Node000015" title=" " alt="" coords="568,313,669,352,693,361,688,361,667,357,568,318"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="840,294,864,283,919,242,982,191,987,188,922,247,867,287,842,299"/>
+<area shape="rect" id="Node000013" href="$class_executor.html#a987e7227ac1932bbb59cea5cbc82d483" title="Emitted once the last queued item is done and nothing runs or waits any more (isIdle()),..." alt="" coords="956,418,1090,446"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="866,429,943,432,937,432,866,434"/>
+<area shape="rect" id="Node000014" href="$class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af" title="Whether no command is running and nothing is queued." alt="" coords="963,494,1083,522"/>
+<area shape="poly" id="edge18_Node000012_Node000014" title=" " alt="" coords="817,444,962,489,956,489,816,449"/>
+<area shape="poly" id="edge19_Node000014_Node000014" title=" " alt="" coords="981,492,974,485,979,475,996,469,1023,467,1052,470,1069,479,1064,478,1050,475,1023,472,997,474,983,479,979,485,986,494"/>
+<area shape="rect" id="Node000016" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="914,314,1132,342"/>
+<area shape="poly" id="edge21_Node000015_Node000016" title=" " alt="" coords="838,363,934,346,939,345,839,368"/>
+<area shape="rect" id="Node000017" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="917,366,1129,394"/>
+<area shape="poly" id="edge22_Node000015_Node000017" title=" " alt="" coords="850,377,904,379,899,380,850,382"/>
+<area shape="rect" id="Node000018" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="921,262,1125,290"/>
+<area shape="poly" id="edge23_Node000015_Node000018" title=" " alt="" coords="842,363,864,352,879,340,887,327,897,313,912,300,924,297,929,295,915,305,901,317,892,330,883,343,867,357,843,368"/>
 </map>

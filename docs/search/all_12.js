@@ -23,7 +23,7 @@ var searchData=
   ['recordwritten_20',['recordWritten',['../class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540',1,'GpgIdGeneration']]],
   ['recoverreencryptleftovers_21',['recoverReencryptLeftovers',['../class_imitate_pass.html#ae12b9655fdad620c3f6810aed04191ed',1,'ImitatePass']]],
   ['reencrypted_22',['reencrypted',['../struct_imitate_pass_1_1_reencrypt_result.html#a361f02fa1e8941a21c36ac5c76412774',1,'ImitatePass::ReencryptResult']]],
-  ['reencryptfailed_23',['reencryptFailed',['../class_real_pass.html#a5e54561fccd028576a58b17731907880',1,'RealPass']]],
+  ['reencryptfailed_23',['reencryptFailed',['../class_real_pass.html#a5e54561fccd028576a58b17731907880',1,'RealPass::reencryptFailed(const QString &amp;out, const QString &amp;err) -&gt; bool'],['../class_real_pass.html#ae82ad79b6a4d5d87548cc14247d22779',1,'RealPass::reencryptFailed(const QString &amp;out, const QHash&lt; QString, qint64 &gt; &amp;status) -&gt; bool']]],
   ['reencryptfiles_24',['reencryptFiles',['../class_imitate_pass.html#a8117ed7e6ccc1916801d88883ea2819a',1,'ImitatePass']]],
   ['reencryptmoved_25',['reencryptMoved',['../class_imitate_pass.html#abcf55cabc445b0f7a6bef4ea5961fc92',1,'ImitatePass']]],
   ['reencryptpath_26',['reencryptPath',['../class_imitate_pass.html#af331446d163c31f1fca714646c0f6244',1,'ImitatePass::reencryptPath(const QString &amp;dir)'],['../class_imitate_pass.html#abf14214692366809c82ad29e8d18c77b',1,'ImitatePass::reencryptPath(const QString &amp;dir, const AppSettings &amp;settings)'],['../class_main_window.html#a7cf82cedc4d5f790a8ed0bb4fadbbb16',1,'MainWindow::reencryptPath()']]],

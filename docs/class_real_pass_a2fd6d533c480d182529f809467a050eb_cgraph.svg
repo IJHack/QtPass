@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="1404" data-view-height="222" data-section-id="dynsection-34">
+<svg id="graph" class="graph" data-view-width="1413" data-view-height="222" data-section-id="dynsection-35">
 <g id="viewport">
 <title>RealPass::refuseIgnoredThatMoves</title>
 <!-- Node1 -->
@@ -78,84 +78,30 @@
 </a>
 </g>
 </g>
-<!-- Node14 -->
-<g id="Node000014" class="node">
-<title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" target="_top" xlink:title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">
+<!-- Node17 -->
+<g id="Node000017" class="node">
+<title>Node17</title>
+<g id="a_Node000017"><a xlink:href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" target="_top" xlink:title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">
 <polygon fill="white" stroke="#666666" points="309.5,-174.75 232.75,-174.75 232.75,-154 309.5,-154 309.5,-174.75"/>
 <text xml:space="preserve" text-anchor="middle" x="271.12" y="-161.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::critical</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node14 -->
-<g id="edge13_Node000001_Node000014" class="edge">
-<title>Node1&#45;&gt;Node14</title>
-<g id="a_edge13_Node000001_Node000014"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node17 -->
+<g id="edge17_Node000001_Node000017" class="edge">
+<title>Node1&#45;&gt;Node17</title>
+<g id="a_edge17_Node000001_Node000017"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M125.1,-122.61C145.18,-129.75 168.99,-137.87 190.75,-144.38 200.65,-147.33 211.33,-150.23 221.54,-152.85"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="220.37,-156.16 230.92,-155.21 222.08,-149.37 220.37,-156.16"/>
-</a>
-</g>
-</g>
-<!-- Node15 -->
-<g id="Node000015" class="node">
-<title>Node15</title>
-<g id="a_Node000015"><a xlink:href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" target="_top" xlink:title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,...">
-<polygon fill="white" stroke="#666666" points="332.75,-135.75 209.5,-135.75 209.5,-115 332.75,-115 332.75,-135.75"/>
-<text xml:space="preserve" text-anchor="middle" x="271.12" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::processErrorExit</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node15 -->
-<g id="edge14_Node000001_Node000015" class="edge">
-<title>Node1&#45;&gt;Node15</title>
-<g id="a_edge14_Node000001_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M154.99,-113.37C169.23,-114.85 184.06,-116.4 198.15,-117.87"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="197.46,-121.31 207.77,-118.87 198.19,-114.35 197.46,-121.31"/>
-</a>
-</g>
-</g>
-<!-- Node16 -->
-<g id="Node000016" class="node">
-<title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_real_pass.html#aa8c33f08cbdeb7d367d1bb9ca3a1435e" target="_top" xlink:title="The Git repository pass commits path in: the store&#39;s own, or one a folder in it holds (pass looks for...">
-<polygon fill="white" stroke="#666666" points="334.25,-96.75 208,-96.75 208,-76 334.25,-76 334.25,-96.75"/>
-<text xml:space="preserve" text-anchor="middle" x="271.12" y="-83.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::repositoryOf</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node16 -->
-<g id="edge15_Node000001_Node000016" class="edge">
-<title>Node1&#45;&gt;Node16</title>
-<g id="a_edge15_Node000001_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M154.99,-97.78C168.68,-96.43 182.92,-95.02 196.52,-93.67"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="196.66,-97.17 206.27,-92.7 195.97,-90.21 196.66,-97.17"/>
-</a>
-</g>
-</g>
-<!-- Node17 -->
-<g id="Node000017" class="node">
-<title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_real_pass.html#a23317f24cad6782794cfc83a355af4fa" target="_top" xlink:title="Run a git command in the store through pass git, blocking.">
-<polygon fill="white" stroke="#666666" points="505.12,-96.75 400.62,-96.75 400.62,-76 505.12,-76 505.12,-96.75"/>
-<text xml:space="preserve" text-anchor="middle" x="452.88" y="-83.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::storeGit</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node17 -->
-<g id="edge19_Node000001_Node000017" class="edge">
-<title>Node1&#45;&gt;Node17</title>
-<g id="a_edge19_Node000001_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M118.65,-88.19C139.71,-80.13 166.16,-71.42 190.75,-67.38 261.25,-55.78 280.37,-60.7 351.5,-67.38 365.09,-68.65 379.58,-70.87 393.2,-73.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="392.43,-76.78 402.91,-75.22 393.74,-69.9 392.43,-76.78"/>
 </a>
 </g>
 </g>
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" target="_top" xlink:title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE...">
-<polygon fill="white" stroke="#666666" points="351.5,-20.75 190.75,-20.75 190.75,0 351.5,0 351.5,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="271.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::startingExecuteWrapper</text>
+<g id="a_Node000018"><a xlink:href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" target="_top" xlink:title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,...">
+<polygon fill="white" stroke="#666666" points="332.75,-135.75 209.5,-135.75 209.5,-115 332.75,-115 332.75,-135.75"/>
+<text xml:space="preserve" text-anchor="middle" x="271.12" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::processErrorExit</text>
 </a>
 </g>
 </g>
@@ -163,6 +109,60 @@
 <g id="edge18_Node000001_Node000018" class="edge">
 <title>Node1&#45;&gt;Node18</title>
 <g id="a_edge18_Node000001_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M154.99,-113.37C169.23,-114.85 184.06,-116.4 198.15,-117.87"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="197.46,-121.31 207.77,-118.87 198.19,-114.35 197.46,-121.31"/>
+</a>
+</g>
+</g>
+<!-- Node19 -->
+<g id="Node000019" class="node">
+<title>Node19</title>
+<g id="a_Node000019"><a xlink:href="class_real_pass.html#aa8c33f08cbdeb7d367d1bb9ca3a1435e" target="_top" xlink:title="The Git repository pass commits path in: the store&#39;s own, or one a folder in it holds (pass looks for...">
+<polygon fill="white" stroke="#666666" points="334.25,-96.75 208,-96.75 208,-76 334.25,-76 334.25,-96.75"/>
+<text xml:space="preserve" text-anchor="middle" x="271.12" y="-83.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::repositoryOf</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node19 -->
+<g id="edge19_Node000001_Node000019" class="edge">
+<title>Node1&#45;&gt;Node19</title>
+<g id="a_edge19_Node000001_Node000019"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M154.99,-97.78C168.68,-96.43 182.92,-95.02 196.52,-93.67"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="196.66,-97.17 206.27,-92.7 195.97,-90.21 196.66,-97.17"/>
+</a>
+</g>
+</g>
+<!-- Node20 -->
+<g id="Node000020" class="node">
+<title>Node20</title>
+<g id="a_Node000020"><a xlink:href="class_real_pass.html#a23317f24cad6782794cfc83a355af4fa" target="_top" xlink:title="Run a git command in the store through pass git, blocking.">
+<polygon fill="white" stroke="#666666" points="505.12,-96.75 400.62,-96.75 400.62,-76 505.12,-76 505.12,-96.75"/>
+<text xml:space="preserve" text-anchor="middle" x="452.88" y="-83.25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::storeGit</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node20 -->
+<g id="edge23_Node000001_Node000020" class="edge">
+<title>Node1&#45;&gt;Node20</title>
+<g id="a_edge23_Node000001_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M118.65,-88.19C139.71,-80.13 166.16,-71.42 190.75,-67.38 261.25,-55.78 280.37,-60.7 351.5,-67.38 365.09,-68.65 379.58,-70.87 393.2,-73.36"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="392.43,-76.78 402.91,-75.22 393.74,-69.9 392.43,-76.78"/>
+</a>
+</g>
+</g>
+<!-- Node21 -->
+<g id="Node000021" class="node">
+<title>Node21</title>
+<g id="a_Node000021"><a xlink:href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" target="_top" xlink:title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE...">
+<polygon fill="white" stroke="#666666" points="351.5,-20.75 190.75,-20.75 190.75,0 351.5,0 351.5,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="271.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::startingExecuteWrapper</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node21 -->
+<g id="edge22_Node000001_Node000021" class="edge">
+<title>Node1&#45;&gt;Node21</title>
+<g id="a_edge22_Node000001_Node000021"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M101.43,-88.19C123.44,-72.43 158.01,-49.34 190.75,-34.38 198.76,-30.72 207.47,-27.43 216.1,-24.56"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="216.99,-27.95 225.47,-21.6 214.88,-21.27 216.99,-27.95"/>
 </a>
@@ -186,19 +186,19 @@
 </a>
 </g>
 </g>
-<!-- Node10 -->
-<g id="Node000010" class="node">
-<title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2" target="_top" xlink:title="The environment QtPass runs the store&#39;s processes in.">
+<!-- Node13 -->
+<g id="Node000013" class="node">
+<title>Node13</title>
+<g id="a_Node000013"><a xlink:href="class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2" target="_top" xlink:title="The environment QtPass runs the store&#39;s processes in.">
 <polygon fill="white" stroke="#666666" points="518.25,-213.75 387.5,-213.75 387.5,-193 518.25,-193 518.25,-213.75"/>
 <text xml:space="preserve" text-anchor="middle" x="452.88" y="-200.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::storeEnvironment</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node10 -->
-<g id="edge9_Node000002_Node000010" class="edge">
-<title>Node2&#45;&gt;Node10</title>
-<g id="a_edge9_Node000002_Node000010"><a xlink:title=" ">
+<!-- Node2&#45;&gt;Node13 -->
+<g id="edge13_Node000002_Node000013" class="edge">
+<title>Node2&#45;&gt;Node13</title>
+<g id="a_edge13_Node000002_Node000013"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M333.98,-203.38C347.53,-203.38 362.01,-203.38 376.03,-203.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="375.63,-206.88 385.63,-203.38 375.63,-199.88 375.63,-206.88"/>
 </a>
@@ -243,9 +243,10 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" target="_top" xlink:title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path.">
-<polygon fill="white" stroke="#666666" points="1195.75,-135.75 1071.75,-135.75 1071.75,-115 1195.75,-115 1195.75,-135.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1133.75" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::startProcess</text>
+<g id="a_Node000006"><a xlink:href="class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" target="_top" xlink:title="Add what the process wrote next.">
+<polygon fill="white" stroke="#666666" points="1205.5,-194.12 1071.75,-194.12 1071.75,-160.62 1205.5,-160.62 1205.5,-194.12"/>
+<text xml:space="preserve" text-anchor="start" x="1079.75" y="-180.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::CappedOutput</text>
+<text xml:space="preserve" text-anchor="middle" x="1138.62" y="-167.88" font-family="Helvetica,sans-Serif" font-size="10.00">::append</text>
 </a>
 </g>
 </g>
@@ -253,17 +254,55 @@
 <g id="edge5_Node000005_Node000006" class="edge">
 <title>Node5&#45;&gt;Node6</title>
 <g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1035.87,-125.38C1043.89,-125.38 1052.07,-125.38 1060.11,-125.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1059.84,-128.88 1069.84,-125.38 1059.84,-121.88 1059.84,-128.88"/>
+<path fill="none" stroke="#63b8ff" d="M1001.07,-136.15C1020.89,-142.13 1046.21,-149.78 1069.65,-156.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1068.59,-160.19 1079.17,-159.73 1070.61,-153.49 1068.59,-160.19"/>
+</a>
+</g>
+</g>
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" target="_top" xlink:title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path.">
+<polygon fill="white" stroke="#666666" points="1200.62,-90.75 1076.62,-90.75 1076.62,-70 1200.62,-70 1200.62,-90.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1138.62" y="-77.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::startProcess</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node8 -->
+<g id="edge7_Node000005_Node000008" class="edge">
+<title>Node5&#45;&gt;Node8</title>
+<g id="a_edge7_Node000005_Node000008"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1006.63,-114.6C1030.22,-108.44 1060.02,-100.65 1085.25,-94.06"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1085.85,-97.52 1094.64,-91.6 1084.08,-90.75 1085.85,-97.52"/>
+</a>
+</g>
+</g>
+<!-- Node12 -->
+<g id="Node000012" class="node">
+<title>Node12</title>
+<g id="a_Node000012"><a xlink:href="class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" target="_top" xlink:title="Everything kept, and start over.">
+<polygon fill="white" stroke="#666666" points="1205.5,-142.12 1071.75,-142.12 1071.75,-108.62 1205.5,-108.62 1205.5,-142.12"/>
+<text xml:space="preserve" text-anchor="start" x="1079.75" y="-128.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::CappedOutput</text>
+<text xml:space="preserve" text-anchor="middle" x="1138.62" y="-115.88" font-family="Helvetica,sans-Serif" font-size="10.00">::take</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node12 -->
+<g id="edge11_Node000005_Node000012" class="edge">
+<title>Node5&#45;&gt;Node12</title>
+<g id="a_edge11_Node000005_Node000012"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1035.93,-125.38C1043.89,-125.38 1052.03,-125.38 1060.07,-125.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1059.83,-128.88 1069.82,-125.38 1059.82,-121.88 1059.83,-128.88"/>
 </a>
 </g>
 </g>
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
-<polygon fill="white" stroke="#666666" points="1395.5,-174.75 1231.75,-174.75 1231.75,-154 1395.5,-154 1395.5,-174.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1313.62" y="-161.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
+<g id="a_Node000007"><a xlink:href="class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" target="_top" xlink:title="Count line if it is a status record.">
+<polygon fill="white" stroke="#666666" points="1390.25,-188.12 1256.5,-188.12 1256.5,-154.62 1390.25,-154.62 1390.25,-188.12"/>
+<text xml:space="preserve" text-anchor="start" x="1264.5" y="-174.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::CappedOutput</text>
+<text xml:space="preserve" text-anchor="middle" x="1323.38" y="-161.88" font-family="Helvetica,sans-Serif" font-size="10.00">::countStatus</text>
 </a>
 </g>
 </g>
@@ -271,114 +310,141 @@
 <g id="edge6_Node000006_Node000007" class="edge">
 <title>Node6&#45;&gt;Node7</title>
 <g id="a_edge6_Node000006_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1184.3,-136.24C1205.22,-140.83 1229.79,-146.21 1251.79,-151.04"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1251.04,-154.45 1261.56,-153.18 1252.54,-147.62 1251.04,-154.45"/>
-</a>
-</g>
-</g>
-<!-- Node8 -->
-<g id="Node000008" class="node">
-<title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" target="_top" xlink:title="Parse a configured executable as a WSL command.">
-<polygon fill="white" stroke="#666666" points="1393.25,-135.75 1234,-135.75 1234,-115 1393.25,-115 1393.25,-135.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1313.62" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::parseWslCommand</text>
-</a>
-</g>
-</g>
-<!-- Node6&#45;&gt;Node8 -->
-<g id="edge7_Node000006_Node000008" class="edge">
-<title>Node6&#45;&gt;Node8</title>
-<g id="a_edge7_Node000006_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1195.96,-125.38C1204.51,-125.38 1213.44,-125.38 1222.39,-125.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1222.19,-128.88 1232.19,-125.38 1222.19,-121.88 1222.19,-128.88"/>
+<path fill="none" stroke="#63b8ff" d="M1205.86,-175.2C1218.5,-174.79 1231.84,-174.35 1244.8,-173.92"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1244.67,-177.43 1254.55,-173.6 1244.44,-170.43 1244.67,-177.43"/>
 </a>
 </g>
 </g>
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
-<polygon fill="white" stroke="#666666" points="1390.25,-96.75 1237,-96.75 1237,-76 1390.25,-76 1390.25,-96.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1313.62" y="-83.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
+<g id="a_Node000009"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
+<polygon fill="white" stroke="#666666" points="1405.25,-90.75 1241.5,-90.75 1241.5,-70 1405.25,-70 1405.25,-90.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1323.38" y="-77.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node9 -->
-<g id="edge8_Node000006_Node000009" class="edge">
-<title>Node6&#45;&gt;Node9</title>
-<g id="a_edge8_Node000006_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1184.3,-114.51C1205.22,-109.92 1229.79,-104.54 1251.79,-99.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1252.54,-103.13 1261.56,-97.57 1251.04,-96.3 1252.54,-103.13"/>
+<!-- Node8&#45;&gt;Node9 -->
+<g id="edge8_Node000008_Node000009" class="edge">
+<title>Node8&#45;&gt;Node9</title>
+<g id="a_edge8_Node000008_Node000009"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1200.99,-80.38C1210.23,-80.38 1219.93,-80.38 1229.65,-80.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1229.54,-83.88 1239.54,-80.38 1229.54,-76.88 1229.54,-83.88"/>
+</a>
+</g>
+</g>
+<!-- Node10 -->
+<g id="Node000010" class="node">
+<title>Node10</title>
+<g id="a_Node000010"><a xlink:href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" target="_top" xlink:title="Parse a configured executable as a WSL command.">
+<polygon fill="white" stroke="#666666" points="1403,-51.75 1243.75,-51.75 1243.75,-31 1403,-31 1403,-51.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1323.38" y="-38.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::parseWslCommand</text>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node10 -->
+<g id="edge9_Node000008_Node000010" class="edge">
+<title>Node8&#45;&gt;Node10</title>
+<g id="a_edge9_Node000008_Node000010"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1190.53,-69.51C1212.12,-64.9 1237.5,-59.49 1260.19,-54.65"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1260.9,-58.07 1269.95,-52.56 1259.43,-51.23 1260.9,-58.07"/>
 </a>
 </g>
 </g>
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_pass.html#ab81d7dbed9e18a9368c2be06876c4630" target="_top" xlink:title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),...">
+<g id="a_Node000011"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
+<polygon fill="white" stroke="#666666" points="1400,-129.75 1246.75,-129.75 1246.75,-109 1400,-109 1400,-129.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1323.38" y="-116.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node11 -->
+<g id="edge10_Node000008_Node000011" class="edge">
+<title>Node8&#45;&gt;Node11</title>
+<g id="a_edge10_Node000008_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1190.53,-91.24C1212.12,-95.85 1237.5,-101.26 1260.19,-106.1"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1259.43,-109.52 1269.95,-108.19 1260.9,-102.68 1259.43,-109.52"/>
+</a>
+</g>
+</g>
+<!-- Node12&#45;&gt;Node7 -->
+<g id="edge12_Node000012_Node000007" class="edge">
+<title>Node12&#45;&gt;Node7</title>
+<g id="a_edge12_Node000012_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1205.86,-142.05C1218.63,-145.26 1232.11,-148.65 1245.19,-151.95"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1244.04,-155.27 1254.59,-154.31 1245.75,-148.48 1244.04,-155.27"/>
+</a>
+</g>
+</g>
+<!-- Node14 -->
+<g id="Node000014" class="node">
+<title>Node14</title>
+<g id="a_Node000014"><a xlink:href="class_pass.html#ab81d7dbed9e18a9368c2be06876c4630" target="_top" xlink:title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),...">
 <polygon fill="white" stroke="#666666" points="691.38,-213.75 561.38,-213.75 561.38,-193 691.38,-193 691.38,-213.75"/>
 <text xml:space="preserve" text-anchor="middle" x="626.38" y="-200.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::withCurrentGitPin</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node11 -->
-<g id="edge10_Node000010_Node000011" class="edge">
-<title>Node10&#45;&gt;Node11</title>
-<g id="a_edge10_Node000010_Node000011"><a xlink:title=" ">
+<!-- Node13&#45;&gt;Node14 -->
+<g id="edge14_Node000013_Node000014" class="edge">
+<title>Node13&#45;&gt;Node14</title>
+<g id="a_edge14_Node000013_Node000014"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M518.71,-203.38C528.77,-203.38 539.25,-203.38 549.52,-203.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="549.5,-206.88 559.5,-203.38 549.5,-199.88 549.5,-206.88"/>
 </a>
 </g>
 </g>
-<!-- Node12 -->
-<g id="Node000012" class="node">
-<title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_util.html#a98271dbaefe09960e1eaded52fed2694" target="_top" xlink:title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">
+<!-- Node15 -->
+<g id="Node000015" class="node">
+<title>Node15</title>
+<g id="a_Node000015"><a xlink:href="class_util.html#a98271dbaefe09960e1eaded52fed2694" target="_top" xlink:title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">
 <polygon fill="white" stroke="#666666" points="857,-213.75 734.5,-213.75 734.5,-193 857,-193 857,-213.75"/>
 <text xml:space="preserve" text-anchor="middle" x="795.75" y="-200.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::gitStoreVariables</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node12 -->
-<g id="edge11_Node000011_Node000012" class="edge">
-<title>Node11&#45;&gt;Node12</title>
-<g id="a_edge11_Node000011_Node000012"><a xlink:title=" ">
+<!-- Node14&#45;&gt;Node15 -->
+<g id="edge15_Node000014_Node000015" class="edge">
+<title>Node14&#45;&gt;Node15</title>
+<g id="a_edge15_Node000014_Node000015"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M691.61,-203.38C701.9,-203.38 712.6,-203.38 723.06,-203.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="722.75,-206.88 732.75,-203.38 722.75,-199.88 722.75,-206.88"/>
 </a>
 </g>
 </g>
-<!-- Node13 -->
-<g id="Node000013" class="node">
-<title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" target="_top" xlink:title="GIT_CEILING_DIRECTORIES for a store, as pass sets it.">
+<!-- Node16 -->
+<g id="Node000016" class="node">
+<title>Node16</title>
+<g id="a_Node000016"><a xlink:href="class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" target="_top" xlink:title="GIT_CEILING_DIRECTORIES for a store, as pass sets it.">
 <polygon fill="white" stroke="#666666" points="1007.25,-213.75 921.5,-213.75 921.5,-193 1007.25,-193 1007.25,-213.75"/>
 <text xml:space="preserve" text-anchor="middle" x="964.38" y="-200.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::gitCeiling</text>
 </a>
 </g>
 </g>
-<!-- Node12&#45;&gt;Node13 -->
-<g id="edge12_Node000012_Node000013" class="edge">
-<title>Node12&#45;&gt;Node13</title>
-<g id="a_edge12_Node000012_Node000013"><a xlink:title=" ">
+<!-- Node15&#45;&gt;Node16 -->
+<g id="edge16_Node000015_Node000016" class="edge">
+<title>Node15&#45;&gt;Node16</title>
+<g id="a_edge16_Node000015_Node000016"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M857.38,-203.38C874.54,-203.38 893.09,-203.38 909.81,-203.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="909.53,-206.88 919.53,-203.38 909.53,-199.88 909.53,-206.88"/>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node17 -->
-<g id="edge16_Node000016_Node000017" class="edge">
-<title>Node16&#45;&gt;Node17</title>
-<g id="a_edge16_Node000016_Node000017"><a xlink:title=" ">
+<!-- Node19&#45;&gt;Node20 -->
+<g id="edge20_Node000019_Node000020" class="edge">
+<title>Node19&#45;&gt;Node20</title>
+<g id="a_edge20_Node000019_Node000020"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M334.74,-86.38C352.28,-86.38 371.34,-86.38 388.9,-86.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="388.68,-89.88 398.68,-86.38 388.68,-82.88 388.68,-89.88"/>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node3 -->
-<g id="edge17_Node000017_Node000003" class="edge">
-<title>Node17&#45;&gt;Node3</title>
-<g id="a_edge17_Node000017_Node000003"><a xlink:title=" ">
+<!-- Node20&#45;&gt;Node3 -->
+<g id="edge21_Node000020_Node000003" class="edge">
+<title>Node20&#45;&gt;Node3</title>
+<g id="a_edge21_Node000020_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M501.65,-97.24C521.73,-101.8 545.29,-107.16 566.43,-111.97"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="565.56,-115.36 576.09,-114.17 567.11,-108.54 565.56,-115.36"/>
 </a>

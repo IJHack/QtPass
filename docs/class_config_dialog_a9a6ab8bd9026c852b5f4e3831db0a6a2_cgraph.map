@@ -1,21 +1,21 @@
 <map id="ConfigDialog::initialiseProfileStore" name="ConfigDialog::initialiseProfileStore">
-<area shape="rect" id="Node000001" title="Ask for a new profile&#39;s recipients and initialise its store with them, keeping the active backend&#39;s s..." alt="" coords="5,458,174,503"/>
+<area shape="rect" id="Node000001" title="Ask for a new profile&#39;s recipients and initialise its store with them, keeping the active backend&#39;s s..." alt="" coords="5,416,174,460"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="239,272,416,300"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,456,298,307,296,312,120,460"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,413,220,340,285,305,282,309,223,344,122,417"/>
 <area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="1010,65,1164,93"/>
-<area shape="poly" id="edge76_Node000001_Node000008" title=" " alt="" coords="96,457,112,415,139,362,174,306,196,281,220,258,265,225,312,196,362,171,414,149,521,115,629,91,735,77,833,70,921,68,997,72,992,74,921,74,834,75,735,82,630,97,522,120,416,154,364,176,315,201,268,230,223,263,200,285,179,310,143,364,117,417,101,458"/>
-<area shape="rect" id="Node000024" href="$class_profile_init.html#ac65b0b3a9265d2bf8f793ad3071f8b24" title="Write the recipients and, if wanted, put the folder under git." alt="" coords="496,436,644,464"/>
-<area shape="poly" id="edge27_Node000001_Node000024" title=" " alt="" coords="134,456,176,438,221,426,290,418,360,417,426,422,486,432,482,434,425,428,359,423,290,423,222,431,178,443,138,459"/>
-<area shape="rect" id="Node000059" href="$class_util.html#acfa7240a7682876cf78d5a44bbbb81de" title="Ensure a folder path always ends with &#39;/&#39;." alt="" coords="235,440,420,468"/>
-<area shape="poly" id="edge77_Node000001_Node000059" title=" " alt="" coords="172,469,221,464,217,468,175,473"/>
-<area shape="rect" id="Node000060" href="$class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7" title="The key list with the user&#39;s choice in each entry&#39;s enabled flag." alt="" coords="227,492,428,520"/>
-<area shape="poly" id="edge78_Node000001_Node000060" title=" " alt="" coords="173,487,214,492,209,495,175,492"/>
-<area shape="rect" id="Node000061" href="$class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd" title="Choose whether OK runs Pass::Init on the folder." alt="" coords="222,544,433,572"/>
-<area shape="poly" id="edge79_Node000001_Node000061" title=" " alt="" coords="145,501,223,529,252,538,247,541,221,534,146,506"/>
-<area shape="rect" id="Node000062" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="481,645,659,673"/>
-<area shape="poly" id="edge80_Node000001_Node000062" title=" " alt="" coords="113,501,162,542,192,563,223,581,324,607,482,641,477,643,323,612,221,586,189,568,159,547,114,506"/>
-<area shape="rect" id="Node000064" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="229,645,426,673"/>
-<area shape="poly" id="edge82_Node000001_Node000064" title=" " alt="" coords="105,501,154,563,187,596,223,625,248,639,243,640,220,629,183,600,150,567,105,506"/>
+<area shape="poly" id="edge80_Node000001_Node000008" title=" " alt="" coords="99,414,145,338,179,296,220,258,266,227,315,200,417,155,525,122,633,98,738,83,835,75,997,74,992,76,836,80,738,89,634,104,526,127,419,160,317,205,269,232,223,263,183,299,149,341,104,416"/>
+<area shape="rect" id="Node000024" href="$class_profile_init.html#ac65b0b3a9265d2bf8f793ad3071f8b24" title="Write the recipients and, if wanted, put the folder under git." alt="" coords="496,440,644,468"/>
+<area shape="poly" id="edge27_Node000001_Node000024" title=" " alt="" coords="134,413,176,396,221,383,280,373,328,368,375,372,434,383,489,403,538,431,533,432,487,408,432,388,374,377,328,374,281,378,222,388,178,401,138,417"/>
+<area shape="rect" id="Node000062" href="$class_util.html#acfa7240a7682876cf78d5a44bbbb81de" title="Ensure a folder path always ends with &#39;/&#39;." alt="" coords="235,397,420,425"/>
+<area shape="poly" id="edge81_Node000001_Node000062" title=" " alt="" coords="172,426,221,422,217,425,175,431"/>
+<area shape="rect" id="Node000063" href="$class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7" title="The key list with the user&#39;s choice in each entry&#39;s enabled flag." alt="" coords="227,449,428,477"/>
+<area shape="poly" id="edge82_Node000001_Node000063" title=" " alt="" coords="172,444,214,449,209,452,175,449"/>
+<area shape="rect" id="Node000064" href="$class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd" title="Choose whether OK runs Pass::Init on the folder." alt="" coords="222,501,433,529"/>
+<area shape="poly" id="edge83_Node000001_Node000064" title=" " alt="" coords="145,458,223,486,252,496,247,498,221,491,147,463"/>
+<area shape="rect" id="Node000065" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="481,603,659,630"/>
+<area shape="poly" id="edge84_Node000001_Node000065" title=" " alt="" coords="113,458,162,500,192,521,223,538,324,564,482,598,477,600,323,569,221,543,189,525,159,504,114,463"/>
+<area shape="rect" id="Node000067" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="229,603,426,630"/>
+<area shape="poly" id="edge86_Node000001_Node000067" title=" " alt="" coords="105,458,154,521,187,554,223,582,248,596,243,598,220,587,183,558,150,524,105,463"/>
 <area shape="rect" id="Node000003" href="$class_pass_backend_factory.html#a51cc8fe2ab743a6fa1e81182d83a7843" title="Get the active backend, constructing and initialising it on first use after construction or invalidat..." alt="" coords="494,217,646,262"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="401,269,481,255,476,258,404,274"/>
 <area shape="rect" id="Node000004" href="$class_pass_backend_factory.html#ab2ef5455daf9d9d09008ca95254da91a" title="Get the lazily&#45;constructed ImitatePass backend." alt="" coords="740,148,892,192"/>
@@ -28,10 +28,10 @@
 <area shape="rect" id="Node000005" href="$class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6" title="Construct the backend and connect its content search." alt="" coords="996,156,1178,184"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="892,167,983,169,978,171,894,172"/>
 <area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="884,144,1031,97,1026,100,887,149"/>
-<area shape="rect" id="Node000006" href="$class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over." alt="" coords="1273,177,1427,205"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1177,175,1260,183,1255,184,1178,180"/>
-<area shape="rect" id="Node000007" href="$class_pass.html#a74344f203b81f87b4d42a6281a176db4" title="The newest Grep() is over; an empty list means no entry matched." alt="" coords="1280,125,1420,153"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1177,157,1267,148,1262,150,1179,162"/>
+<area shape="rect" id="Node000006" href="$class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over." alt="" coords="1273,125,1427,153"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1177,157,1260,149,1255,151,1179,162"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#a74344f203b81f87b4d42a6281a176db4" title="The newest Grep() is over; an empty list means no entry matched." alt="" coords="1280,177,1420,205"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1177,175,1267,184,1262,185,1178,180"/>
 <area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1249,5,1451,33"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1150,62,1273,36,1269,38,1152,67"/>
 <area shape="rect" id="Node000011" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="1282,57,1418,102"/>
@@ -44,8 +44,8 @@
 <area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="1418,77,1502,78,1497,80,1419,82"/>
 <area shape="rect" id="Node000015" href="$class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6" title="Construct a RealPass instance." alt="" coords="1014,225,1160,253"/>
 <area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="892,237,1001,238,996,240,894,242"/>
-<area shape="poly" id="edge16_Node000015_Node000006" title=" " alt="" coords="1159,223,1260,207,1255,209,1161,228"/>
-<area shape="poly" id="edge17_Node000015_Node000007" title=" " alt="" coords="1129,222,1200,193,1223,178,1248,163,1272,157,1267,159,1250,168,1226,182,1202,198,1131,227"/>
+<area shape="poly" id="edge16_Node000015_Node000006" title=" " alt="" coords="1129,222,1200,193,1223,178,1248,163,1272,157,1267,159,1250,168,1226,182,1202,198,1131,227"/>
+<area shape="poly" id="edge17_Node000015_Node000007" title=" " alt="" coords="1159,223,1267,206,1262,208,1161,228"/>
 <area shape="rect" id="Node000016" href="$class_executor.html#a22b5633f6b06f7f15be77370b5bd2871" title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,..." alt="" coords="1274,229,1427,257"/>
 <area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="1159,238,1261,241,1256,243,1161,243"/>
 <area shape="rect" id="Node000017" href="$class_real_pass.html#a6d7163b691663d92f31ca20886f9979f" title="The executor is about to run (or drop) its next item: for an insert, take its entry from m_insertQueu..." alt="" coords="1264,281,1437,309"/>
@@ -56,94 +56,101 @@
 <area shape="poly" id="edge21_Node000017_Node000020" title=" " alt="" coords="1413,278,1450,266,1474,253,1498,241,1528,234,1523,236,1500,246,1477,258,1452,271,1415,283"/>
 <area shape="rect" id="Node000021" href="$class_executor.html#ae542d7fba49e96e26fb93c52a9860b22" title="Set the environment passed to all child processes." alt="" coords="1524,255,1712,282"/>
 <area shape="poly" id="edge22_Node000017_Node000021" title=" " alt="" coords="1437,284,1511,279,1506,280,1438,289"/>
-<area shape="rect" id="Node000019" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="1802,332,1960,360"/>
-<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="1714,327,1789,336,1784,337,1714,332"/>
+<area shape="rect" id="Node000019" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="1802,307,1960,334"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="1714,318,1789,320,1784,321,1714,323"/>
 <area shape="poly" id="edge26_Node000022_Node000022" title=" " alt="" coords="774,309,767,300,773,291,789,285,816,283,845,285,862,294,857,294,844,290,816,288,790,290,776,295,773,300,779,309"/>
 <area shape="rect" id="Node000023" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="1006,308,1168,336"/>
 <area shape="poly" id="edge25_Node000022_Node000023" title=" " alt="" coords="894,320,993,321,988,323,895,325"/>
-<area shape="poly" id="edge40_Node000024_Node000022" title=" " alt="" coords="587,433,638,394,706,353,742,341,737,344,709,358,641,398,590,437"/>
+<area shape="poly" id="edge44_Node000024_Node000022" title=" " alt="" coords="586,437,637,396,706,353,741,341,736,344,709,358,640,400,589,441"/>
 <area shape="rect" id="Node000025" href="$class_profile_init.html#a5588f9cb4ba9610c1f1899c10628dffb" title="git init in dir, stage the .gpg&#45;id and its signature, and commit them (signed when pass...." alt="" coords="726,411,906,438"/>
-<area shape="poly" id="edge28_Node000024_Node000025" title=" " alt="" coords="644,440,713,434,708,436,645,445"/>
+<area shape="poly" id="edge28_Node000024_Node000025" title=" " alt="" coords="644,443,714,436,709,438,645,448"/>
 <area shape="rect" id="Node000026" href="$class_profile_init.html#a21a8281b13a960c70a69723d0b46c13b" title="Whether staging files in dir is refused because git could wait on something there for good: a ...." alt="" coords="997,360,1176,388"/>
-<area shape="poly" id="edge41_Node000024_Node000026" title=" " alt="" coords="601,433,650,413,707,397,778,384,850,376,984,372,979,374,850,382,778,390,708,402,652,418,603,438"/>
-<area shape="rect" id="Node000035" href="$class_gpg_id_signer.html#ad3a52326de6aaea36bbb4394576708b6" title="Split the settings value into keys, upper&#45;cased the way gpg prints fingerprints." alt="" coords="707,463,925,490"/>
-<area shape="poly" id="edge38_Node000024_Node000035" title=" " alt="" coords="644,455,694,462,689,464,645,460"/>
-<area shape="rect" id="Node000037" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="732,515,900,542"/>
-<area shape="poly" id="edge42_Node000024_Node000037" title=" " alt="" coords="606,462,708,499,739,510,734,511,707,504,606,467"/>
-<area shape="rect" id="Node000038" href="$class_profile_init.html#afe19dd50dc653f56630443479959eb9e" title="Sign the list just written as gpgIdFile, over the bytes contents that were written." alt="" coords="738,567,894,594"/>
-<area shape="poly" id="edge43_Node000024_Node000038" title=" " alt="" coords="586,462,639,507,672,531,709,551,729,561,723,562,706,556,669,535,635,511,586,467"/>
-<area shape="rect" id="Node000050" href="$class_profile_init.html#ad02510c0e01ce2370690838e17f7a6d5" title="Write the enabled recipients to gpgIdFile, whole or not at all; with signed_ the list carries the gen..." alt="" coords="735,719,897,746"/>
-<area shape="poly" id="edge62_Node000024_Node000050" title=" " alt="" coords="585,462,795,706,790,707,583,467"/>
+<area shape="poly" id="edge45_Node000024_Node000026" title=" " alt="" coords="598,437,648,415,707,397,778,384,850,375,984,371,979,373,850,381,778,389,708,402,650,420,601,442"/>
+<area shape="rect" id="Node000038" href="$class_gpg_id_signer.html#ad3a52326de6aaea36bbb4394576708b6" title="Split the settings value into keys, upper&#45;cased the way gpg prints fingerprints." alt="" coords="707,463,925,490"/>
+<area shape="poly" id="edge42_Node000024_Node000038" title=" " alt="" coords="644,458,694,464,689,466,645,463"/>
+<area shape="rect" id="Node000040" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="732,515,900,542"/>
+<area shape="poly" id="edge46_Node000024_Node000040" title=" " alt="" coords="609,466,708,499,740,510,735,511,707,504,609,471"/>
+<area shape="rect" id="Node000041" href="$class_profile_init.html#afe19dd50dc653f56630443479959eb9e" title="Sign the list just written as gpgIdFile, over the bytes contents that were written." alt="" coords="738,567,894,594"/>
+<area shape="poly" id="edge47_Node000024_Node000041" title=" " alt="" coords="587,465,639,508,673,532,708,551,729,561,724,562,706,556,670,536,636,513,586,471"/>
+<area shape="rect" id="Node000053" href="$class_profile_init.html#ad02510c0e01ce2370690838e17f7a6d5" title="Write the enabled recipients to gpgIdFile, whole or not at all; with signed_ the list carries the gen..." alt="" coords="735,719,897,746"/>
+<area shape="poly" id="edge66_Node000024_Node000053" title=" " alt="" coords="585,466,795,707,790,707,583,470"/>
 <area shape="poly" id="edge29_Node000025_Node000026" title=" " alt="" coords="893,408,997,390,992,392,895,413"/>
-<area shape="rect" id="Node000027" href="$class_profile_init.html#a9d0e4d0f6fd056a9a16fbbd2e3a51e43" title="Run one set&#45;up git command on git and wait for it: init and add, which read what lies in the folder,..." alt="" coords="1284,384,1416,412"/>
-<area shape="poly" id="edge30_Node000025_Node000027" title=" " alt="" coords="906,417,1271,401,1266,403,907,423"/>
-<area shape="rect" id="Node000028" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1785,408,1977,436"/>
-<area shape="poly" id="edge31_Node000027_Node000028" title=" " alt="" coords="1416,391,1563,388,1650,389,1737,394,1800,404,1794,405,1736,399,1650,394,1563,393,1417,397"/>
-<area shape="rect" id="Node000029" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="2025,408,2187,436"/>
-<area shape="poly" id="edge32_Node000028_Node000029" title=" " alt="" coords="1977,419,2012,421,2006,422,1978,424"/>
-<area shape="rect" id="Node000030" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="2235,408,2426,436"/>
-<area shape="poly" id="edge33_Node000029_Node000030" title=" " alt="" coords="2187,419,2222,422,2217,422,2188,424"/>
-<area shape="rect" id="Node000031" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="2474,408,2639,436"/>
-<area shape="poly" id="edge34_Node000030_Node000031" title=" " alt="" coords="2426,419,2461,422,2455,422,2426,424"/>
-<area shape="rect" id="Node000032" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="2687,356,2905,384"/>
-<area shape="poly" id="edge35_Node000031_Node000032" title=" " alt="" coords="2623,405,2711,388,2716,387,2624,410"/>
-<area shape="rect" id="Node000033" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="2690,460,2902,488"/>
-<area shape="poly" id="edge36_Node000031_Node000033" title=" " alt="" coords="2624,434,2716,456,2711,456,2624,439"/>
-<area shape="rect" id="Node000034" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="2694,408,2898,436"/>
-<area shape="poly" id="edge37_Node000031_Node000034" title=" " alt="" coords="2639,419,2681,422,2675,422,2640,424"/>
-<area shape="rect" id="Node000036" href="$class_gpg_id_signer.html#a772cffc3e742e90ae31d253e012494e8" title="The keys this signer was given." alt="" coords="1018,488,1156,516"/>
-<area shape="poly" id="edge39_Node000035_Node000036" title=" " alt="" coords="925,484,1005,493,999,494,926,489"/>
-<area shape="poly" id="edge44_Node000038_Node000036" title=" " alt="" coords="877,564,924,551,1032,520,1027,522,925,556,879,569"/>
-<area shape="rect" id="Node000039" href="$class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot..." alt="" coords="1019,567,1154,594"/>
-<area shape="poly" id="edge45_Node000038_Node000039" title=" " alt="" coords="894,578,1006,580,1001,581,895,583"/>
-<area shape="rect" id="Node000040" href="$class_gpg_id_signer.html#a2157ca742c6ae1d1971a01f0dc7f86f0" title="Whether any signing key is configured at all." alt="" coords="1538,616,1698,644"/>
-<area shape="poly" id="edge46_Node000039_Node000040" title=" " alt="" coords="1155,583,1452,610,1525,619,1520,620,1451,615,1155,589"/>
-<area shape="rect" id="Node000041" href="$class_gpg_id_signer.html#a291af0865f896e7b0f7c2595de6dc3ea" title="Run gpg with args through m_exec." alt="" coords="1553,668,1683,696"/>
-<area shape="poly" id="edge47_Node000039_Node000041" title=" " alt="" coords="1155,591,1250,610,1541,667,1535,668,1248,615,1155,597"/>
-<area shape="rect" id="Node000042" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="1510,460,1726,488"/>
-<area shape="poly" id="edge48_Node000039_Node000042" title=" " alt="" coords="1118,564,1248,502,1311,488,1374,479,1497,473,1492,474,1375,484,1311,493,1250,507,1120,568"/>
-<area shape="rect" id="Node000043" href="$class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary&#45;k..." alt="" coords="1278,516,1423,544"/>
-<area shape="poly" id="edge51_Node000039_Node000043" title=" " alt="" coords="1154,565,1265,546,1260,547,1156,570"/>
-<area shape="rect" id="Node000047" href="$class_util.html#a5d33d7a093ab7e104320384f4ec3213c" title="Write bytes as the file path through stageFileReplacing()." alt="" coords="1264,668,1436,696"/>
-<area shape="poly" id="edge59_Node000039_Node000047" title=" " alt="" coords="1120,592,1250,647,1289,663,1284,663,1248,652,1119,598"/>
-<area shape="poly" id="edge49_Node000042_Node000028" title=" " alt="" coords="1691,457,1795,439,1790,440,1692,462"/>
-<area shape="poly" id="edge50_Node000042_Node000033" title=" " alt="" coords="1726,471,2105,471,2332,471,2677,474,2672,474,2332,476,2105,476,1726,476"/>
-<area shape="poly" id="edge52_Node000043_Node000040" title=" " alt="" coords="1410,542,1453,560,1467,570,1477,581,1486,591,1501,601,1525,613,1520,613,1498,606,1483,595,1473,585,1464,574,1450,564,1410,547"/>
-<area shape="poly" id="edge56_Node000043_Node000041" title=" " alt="" coords="1370,542,1453,611,1476,634,1501,653,1541,670,1536,670,1498,658,1472,638,1450,614,1369,547"/>
-<area shape="poly" id="edge57_Node000043_Node000042" title=" " alt="" coords="1419,513,1536,491,1531,492,1421,518"/>
-<area shape="rect" id="Node000044" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="1545,512,1691,540"/>
-<area shape="poly" id="edge53_Node000043_Node000044" title=" " alt="" coords="1423,526,1533,527,1527,528,1424,531"/>
-<area shape="rect" id="Node000045" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="1541,408,1695,436"/>
-<area shape="poly" id="edge54_Node000043_Node000045" title=" " alt="" coords="1372,513,1428,480,1498,446,1529,439,1524,441,1500,451,1430,484,1374,518"/>
-<area shape="rect" id="Node000046" href="$class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="1499,564,1737,592"/>
-<area shape="poly" id="edge58_Node000043_Node000046" title=" " alt="" coords="1423,540,1525,561,1520,561,1423,545"/>
-<area shape="poly" id="edge55_Node000045_Node000019" title=" " alt="" coords="1668,405,1819,364,1813,365,1670,410"/>
-<area shape="rect" id="Node000048" href="$class_util.html#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="1530,720,1706,748"/>
-<area shape="poly" id="edge60_Node000047_Node000048" title=" " alt="" coords="1425,694,1530,716,1525,716,1425,699"/>
-<area shape="rect" id="Node000049" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="1819,720,1942,748"/>
-<area shape="poly" id="edge61_Node000048_Node000049" title=" " alt="" coords="1706,731,1807,734,1801,734,1706,736"/>
-<area shape="poly" id="edge75_Node000050_Node000047" title=" " alt="" coords="896,715,972,705,1117,691,1251,686,1246,686,1117,697,973,710,897,721"/>
-<area shape="rect" id="Node000051" href="$class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540" title="Record the bytes just written for gpgIdFile, so that this device recognises its own list afterwards a..." alt="" coords="973,819,1201,846"/>
-<area shape="poly" id="edge63_Node000050_Node000051" title=" " alt="" coords="884,744,926,757,989,782,1047,812,1042,811,987,787,924,762,884,750"/>
-<area shape="rect" id="Node000056" href="$class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver..." alt="" coords="977,871,1196,898"/>
-<area shape="poly" id="edge69_Node000050_Node000056" title=" " alt="" coords="898,741,926,757,938,769,945,782,951,808,957,833,963,845,974,856,982,864,977,862,971,860,959,848,952,835,946,809,940,784,934,773,923,761,897,747"/>
-<area shape="rect" id="Node000057" href="$class_gpg_id_generation.html#af7f352375eac190196e889e05cfb67bd" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,..." alt="" coords="985,923,1189,950"/>
-<area shape="poly" id="edge71_Node000050_Node000057" title=" " alt="" coords="898,740,926,757,942,776,949,796,951,834,953,872,960,890,975,908,980,915,975,913,971,912,956,893,948,873,946,835,944,797,937,779,923,761,897,745"/>
-<area shape="rect" id="Node000058" href="$class_gpg_id_generation.html#adf82e57f1cda154b35f36dfde958120f" title="A complete list: the header in front of the recipients." alt="" coords="980,719,1194,746"/>
-<area shape="poly" id="edge73_Node000050_Node000058" title=" " alt="" coords="898,730,967,732,962,733,898,735"/>
-<area shape="rect" id="Node000052" href="$class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1" title="The digest of a list as the record keeps it: SHA&#45;256 of the exact bytes, hexadecimal,..." alt="" coords="1260,769,1440,797"/>
-<area shape="poly" id="edge64_Node000051_Node000052" title=" " alt="" coords="1164,815,1255,801,1260,800,1165,821"/>
-<area shape="rect" id="Node000053" href="$class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" title="The header lines for a list." alt="" coords="1526,820,1710,848"/>
-<area shape="poly" id="edge65_Node000051_Node000053" title=" " alt="" coords="1201,830,1513,833,1508,834,1202,835"/>
-<area shape="rect" id="Node000054" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="1269,923,1431,950"/>
-<area shape="poly" id="edge66_Node000051_Node000054" title=" " alt="" coords="1174,844,1202,857,1218,870,1227,883,1236,896,1250,908,1265,917,1259,916,1248,912,1232,899,1223,886,1214,873,1200,861,1173,850"/>
-<area shape="rect" id="Node000055" href="$class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" title="The header a .gpg&#45;id&#39;s bytes declare." alt="" coords="1262,871,1438,898"/>
-<area shape="poly" id="edge67_Node000051_Node000055" title=" " alt="" coords="1161,844,1264,867,1259,867,1161,850"/>
-<area shape="poly" id="edge68_Node000055_Node000053" title=" " alt="" coords="1427,867,1523,851,1529,851,1427,873"/>
-<area shape="poly" id="edge70_Node000056_Node000054" title=" " alt="" coords="1161,896,1264,919,1259,919,1161,902"/>
-<area shape="poly" id="edge72_Node000057_Node000054" title=" " alt="" coords="1189,934,1256,936,1251,937,1189,939"/>
-<area shape="poly" id="edge74_Node000058_Node000053" title=" " alt="" coords="1195,727,1319,733,1386,742,1452,755,1522,780,1582,813,1577,812,1520,785,1451,760,1385,747,1319,739,1195,733"/>
-<area shape="rect" id="Node000063" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="752,771,880,798"/>
-<area shape="poly" id="edge81_Node000062_Node000063" title=" " alt="" coords="587,671,640,713,673,736,708,755,740,769,735,769,706,760,670,741,636,717,586,676"/>
-<area shape="poly" id="edge83_Node000064_Node000062" title=" " alt="" coords="425,657,468,658,463,660,427,662"/>
+<area shape="rect" id="Node000027" href="$class_profile_init.html#a9d0e4d0f6fd056a9a16fbbd2e3a51e43" title="Run one set&#45;up git command on git and wait for it: init and add, which read what lies in the folder,..." alt="" coords="1284,383,1416,410"/>
+<area shape="poly" id="edge30_Node000025_Node000027" title=" " alt="" coords="906,417,1271,400,1266,402,907,422"/>
+<area shape="rect" id="Node000028" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1785,359,1977,386"/>
+<area shape="poly" id="edge31_Node000027_Node000028" title=" " alt="" coords="1416,391,1772,377,1767,378,1417,396"/>
+<area shape="rect" id="Node000029" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="2025,357,2187,385"/>
+<area shape="poly" id="edge32_Node000028_Node000029" title=" " alt="" coords="1977,369,2012,371,2007,372,1978,375"/>
+<area shape="rect" id="Node000030" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="2235,352,2426,380"/>
+<area shape="poly" id="edge33_Node000029_Node000030" title=" " alt="" coords="2187,367,2222,368,2217,369,2188,372"/>
+<area shape="rect" id="Node000031" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="2474,342,2652,387"/>
+<area shape="poly" id="edge34_Node000030_Node000031" title=" " alt="" coords="2426,363,2461,365,2455,365,2426,368"/>
+<area shape="rect" id="Node000033" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="2480,411,2646,438"/>
+<area shape="poly" id="edge36_Node000030_Node000033" title=" " alt="" coords="2388,378,2493,406,2488,406,2388,383"/>
+<area shape="rect" id="Node000037" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="2474,273,2652,318"/>
+<area shape="poly" id="edge40_Node000030_Node000037" title=" " alt="" coords="2378,349,2470,323,2475,322,2380,354"/>
+<area shape="rect" id="Node000032" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="2720,282,2898,327"/>
+<area shape="poly" id="edge35_Node000031_Node000032" title=" " alt="" coords="2652,340,2702,330,2708,329,2653,345"/>
+<area shape="rect" id="Node000034" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="2700,359,2918,386"/>
+<area shape="poly" id="edge37_Node000033_Node000034" title=" " alt="" coords="2631,407,2722,391,2728,390,2633,413"/>
+<area shape="rect" id="Node000035" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="2703,463,2915,490"/>
+<area shape="poly" id="edge38_Node000033_Node000035" title=" " alt="" coords="2632,436,2728,459,2722,459,2632,442"/>
+<area shape="rect" id="Node000036" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="2707,411,2911,438"/>
+<area shape="poly" id="edge39_Node000033_Node000036" title=" " alt="" coords="2646,422,2694,424,2689,425,2646,427"/>
+<area shape="poly" id="edge41_Node000037_Node000032" title=" " alt="" coords="2652,296,2707,300,2702,301,2653,301"/>
+<area shape="rect" id="Node000039" href="$class_gpg_id_signer.html#a772cffc3e742e90ae31d253e012494e8" title="The keys this signer was given." alt="" coords="1018,488,1156,516"/>
+<area shape="poly" id="edge43_Node000038_Node000039" title=" " alt="" coords="925,484,1005,493,999,494,926,489"/>
+<area shape="poly" id="edge48_Node000041_Node000039" title=" " alt="" coords="877,564,924,551,1032,520,1027,522,925,556,879,569"/>
+<area shape="rect" id="Node000042" href="$class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot..." alt="" coords="1019,567,1154,594"/>
+<area shape="poly" id="edge49_Node000041_Node000042" title=" " alt="" coords="894,578,1006,580,1001,581,895,583"/>
+<area shape="rect" id="Node000043" href="$class_gpg_id_signer.html#a2157ca742c6ae1d1971a01f0dc7f86f0" title="Whether any signing key is configured at all." alt="" coords="1538,616,1698,644"/>
+<area shape="poly" id="edge50_Node000042_Node000043" title=" " alt="" coords="1155,583,1452,610,1525,619,1520,620,1451,615,1155,589"/>
+<area shape="rect" id="Node000044" href="$class_gpg_id_signer.html#a291af0865f896e7b0f7c2595de6dc3ea" title="Run gpg with args through m_exec." alt="" coords="1553,668,1683,696"/>
+<area shape="poly" id="edge51_Node000042_Node000044" title=" " alt="" coords="1155,591,1250,610,1541,667,1535,668,1248,615,1155,597"/>
+<area shape="rect" id="Node000045" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="1510,460,1726,488"/>
+<area shape="poly" id="edge52_Node000042_Node000045" title=" " alt="" coords="1118,564,1248,502,1311,488,1374,479,1497,473,1492,474,1375,484,1311,493,1250,507,1120,568"/>
+<area shape="rect" id="Node000046" href="$class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary&#45;k..." alt="" coords="1278,516,1423,544"/>
+<area shape="poly" id="edge55_Node000042_Node000046" title=" " alt="" coords="1154,565,1265,546,1260,547,1156,570"/>
+<area shape="rect" id="Node000050" href="$class_util.html#a5d33d7a093ab7e104320384f4ec3213c" title="Write bytes as the file path through stageFileReplacing()." alt="" coords="1264,668,1436,696"/>
+<area shape="poly" id="edge63_Node000042_Node000050" title=" " alt="" coords="1120,592,1250,647,1289,663,1284,663,1248,652,1119,598"/>
+<area shape="poly" id="edge53_Node000045_Node000028" title=" " alt="" coords="1695,457,1736,445,1793,419,1841,396,1846,394,1795,424,1738,450,1697,462"/>
+<area shape="poly" id="edge54_Node000045_Node000035" title=" " alt="" coords="1726,472,2105,474,2332,474,2690,476,2685,477,2332,479,2105,479,1726,477"/>
+<area shape="poly" id="edge56_Node000046_Node000043" title=" " alt="" coords="1410,542,1453,560,1467,570,1477,581,1486,591,1501,601,1525,613,1520,613,1498,606,1483,595,1473,585,1464,574,1450,564,1410,547"/>
+<area shape="poly" id="edge60_Node000046_Node000044" title=" " alt="" coords="1370,542,1453,611,1476,634,1501,653,1541,670,1536,670,1498,658,1472,638,1450,614,1369,547"/>
+<area shape="poly" id="edge61_Node000046_Node000045" title=" " alt="" coords="1419,513,1536,491,1531,492,1421,518"/>
+<area shape="rect" id="Node000047" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="1545,512,1691,540"/>
+<area shape="poly" id="edge57_Node000046_Node000047" title=" " alt="" coords="1423,526,1533,527,1527,528,1424,531"/>
+<area shape="rect" id="Node000048" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="1541,408,1695,436"/>
+<area shape="poly" id="edge58_Node000046_Node000048" title=" " alt="" coords="1372,513,1428,480,1498,446,1529,439,1524,441,1500,451,1430,484,1374,518"/>
+<area shape="rect" id="Node000049" href="$class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="1499,564,1737,592"/>
+<area shape="poly" id="edge62_Node000046_Node000049" title=" " alt="" coords="1423,540,1525,561,1520,561,1423,545"/>
+<area shape="poly" id="edge59_Node000048_Node000019" title=" " alt="" coords="1646,405,1709,376,1784,345,1811,338,1806,340,1786,350,1711,381,1648,410"/>
+<area shape="rect" id="Node000051" href="$class_util.html#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="1530,720,1706,748"/>
+<area shape="poly" id="edge64_Node000050_Node000051" title=" " alt="" coords="1425,694,1530,716,1525,716,1425,699"/>
+<area shape="rect" id="Node000052" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="1819,720,1942,748"/>
+<area shape="poly" id="edge65_Node000051_Node000052" title=" " alt="" coords="1706,731,1807,734,1801,734,1706,736"/>
+<area shape="poly" id="edge79_Node000053_Node000050" title=" " alt="" coords="896,715,972,705,1117,691,1251,686,1246,686,1117,697,973,710,897,721"/>
+<area shape="rect" id="Node000054" href="$class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540" title="Record the bytes just written for gpgIdFile, so that this device recognises its own list afterwards a..." alt="" coords="973,819,1201,846"/>
+<area shape="poly" id="edge67_Node000053_Node000054" title=" " alt="" coords="884,744,926,757,989,782,1047,812,1042,811,987,787,924,762,884,750"/>
+<area shape="rect" id="Node000059" href="$class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver..." alt="" coords="977,871,1196,898"/>
+<area shape="poly" id="edge73_Node000053_Node000059" title=" " alt="" coords="898,741,926,757,938,769,945,782,951,808,957,833,963,845,974,856,982,864,977,862,971,860,959,848,952,835,946,809,940,784,934,773,923,761,897,747"/>
+<area shape="rect" id="Node000060" href="$class_gpg_id_generation.html#af7f352375eac190196e889e05cfb67bd" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,..." alt="" coords="985,923,1189,950"/>
+<area shape="poly" id="edge75_Node000053_Node000060" title=" " alt="" coords="898,740,926,757,942,776,949,796,951,834,953,872,960,890,975,908,980,915,975,913,971,912,956,893,948,873,946,835,944,797,937,779,923,761,897,745"/>
+<area shape="rect" id="Node000061" href="$class_gpg_id_generation.html#adf82e57f1cda154b35f36dfde958120f" title="A complete list: the header in front of the recipients." alt="" coords="980,719,1194,746"/>
+<area shape="poly" id="edge77_Node000053_Node000061" title=" " alt="" coords="898,730,967,732,962,733,898,735"/>
+<area shape="rect" id="Node000055" href="$class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1" title="The digest of a list as the record keeps it: SHA&#45;256 of the exact bytes, hexadecimal,..." alt="" coords="1260,769,1440,797"/>
+<area shape="poly" id="edge68_Node000054_Node000055" title=" " alt="" coords="1164,815,1255,801,1260,800,1165,821"/>
+<area shape="rect" id="Node000056" href="$class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" title="The header lines for a list." alt="" coords="1526,820,1710,848"/>
+<area shape="poly" id="edge69_Node000054_Node000056" title=" " alt="" coords="1201,830,1513,833,1508,834,1202,835"/>
+<area shape="rect" id="Node000057" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="1269,923,1431,950"/>
+<area shape="poly" id="edge70_Node000054_Node000057" title=" " alt="" coords="1174,844,1202,857,1218,870,1227,883,1236,896,1250,908,1265,917,1259,916,1248,912,1232,899,1223,886,1214,873,1200,861,1173,850"/>
+<area shape="rect" id="Node000058" href="$class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" title="The header a .gpg&#45;id&#39;s bytes declare." alt="" coords="1262,871,1438,898"/>
+<area shape="poly" id="edge71_Node000054_Node000058" title=" " alt="" coords="1161,844,1264,867,1259,867,1161,850"/>
+<area shape="poly" id="edge72_Node000058_Node000056" title=" " alt="" coords="1427,867,1523,851,1529,851,1427,873"/>
+<area shape="poly" id="edge74_Node000059_Node000057" title=" " alt="" coords="1161,896,1264,919,1259,919,1161,902"/>
+<area shape="poly" id="edge76_Node000060_Node000057" title=" " alt="" coords="1189,934,1256,936,1251,937,1189,939"/>
+<area shape="poly" id="edge78_Node000061_Node000056" title=" " alt="" coords="1195,727,1319,733,1386,742,1452,755,1522,780,1582,813,1577,812,1520,785,1451,760,1385,747,1319,739,1195,733"/>
+<area shape="rect" id="Node000066" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="752,771,880,798"/>
+<area shape="poly" id="edge85_Node000065_Node000066" title=" " alt="" coords="582,628,632,691,668,726,709,756,740,771,735,771,706,760,664,730,628,694,580,633"/>
+<area shape="poly" id="edge87_Node000067_Node000065" title=" " alt="" coords="425,614,468,616,463,617,427,619"/>
 </map>

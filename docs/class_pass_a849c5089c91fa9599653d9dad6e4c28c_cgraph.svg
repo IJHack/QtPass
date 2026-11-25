@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="1634" data-view-height="684" data-section-id="dynsection-79">
+<svg id="graph" class="graph" data-view-width="1644" data-view-height="684" data-section-id="dynsection-79">
 <g id="viewport">
 <title>Pass::recipientsForEditing</title>
 <!-- Node1 -->
@@ -618,19 +618,19 @@
 </a>
 </g>
 </g>
-<!-- Node35 -->
-<g id="Node000035" class="node">
-<title>Node35</title>
-<g id="a_Node000035"><a xlink:href="class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" target="_top" xlink:title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line.">
+<!-- Node38 -->
+<g id="Node000038" class="node">
+<title>Node38</title>
+<g id="a_Node000038"><a xlink:href="class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" target="_top" xlink:title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line.">
 <polygon fill="white" stroke="#666666" points="749.5,-280.75 571.5,-280.75 571.5,-260 749.5,-260 749.5,-280.75"/>
 <text xml:space="preserve" text-anchor="middle" x="660.5" y="-267.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdSigner::validSigFingerprints</text>
 </a>
 </g>
 </g>
-<!-- Node25&#45;&gt;Node35 -->
-<g id="edge45_Node000025_Node000035" class="edge">
-<title>Node25&#45;&gt;Node35</title>
-<g id="a_edge45_Node000025_Node000035"><a xlink:title=" ">
+<!-- Node25&#45;&gt;Node38 -->
+<g id="edge49_Node000025_Node000038" class="edge">
+<title>Node25&#45;&gt;Node38</title>
+<g id="a_edge49_Node000025_Node000038"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M510.37,-269.64C525.69,-269.72 542.88,-269.8 560,-269.88"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="559.68,-273.38 569.7,-269.93 559.72,-266.38 559.68,-273.38"/>
 </a>
@@ -654,21 +654,21 @@
 </a>
 </g>
 </g>
-<!-- Node33 -->
-<g id="Node000033" class="node">
-<title>Node33</title>
-<g id="a_Node000033"><a xlink:href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" target="_top" xlink:title="Parse a configured executable as a WSL command.">
-<polygon fill="white" stroke="#666666" points="1623.75,-300.75 1464.5,-300.75 1464.5,-280 1623.75,-280 1623.75,-300.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1544.12" y="-287.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::parseWslCommand</text>
+<!-- Node35 -->
+<g id="Node000035" class="node">
+<title>Node35</title>
+<g id="a_Node000035"><a xlink:href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" target="_top" xlink:title="Parse a configured executable as a WSL command.">
+<polygon fill="white" stroke="#666666" points="1633.5,-300.75 1474.25,-300.75 1474.25,-280 1633.5,-280 1633.5,-300.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1553.88" y="-287.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::parseWslCommand</text>
 </a>
 </g>
 </g>
-<!-- Node27&#45;&gt;Node33 -->
-<g id="edge44_Node000027_Node000033" class="edge">
-<title>Node27&#45;&gt;Node33</title>
-<g id="a_edge44_Node000027_Node000033"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M741.71,-302.78C815.45,-297.3 927.82,-290.38 1025.62,-290.38 1025.62,-290.38 1025.62,-290.38 1195.88,-290.38 1283.11,-290.38 1382.66,-290.38 1452.75,-290.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1452.66,-293.88 1462.66,-290.38 1452.66,-286.88 1452.66,-293.88"/>
+<!-- Node27&#45;&gt;Node35 -->
+<g id="edge48_Node000027_Node000035" class="edge">
+<title>Node27&#45;&gt;Node35</title>
+<g id="a_edge48_Node000027_Node000035"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M741.71,-302.78C815.45,-297.3 927.82,-290.38 1025.62,-290.38 1025.62,-290.38 1025.62,-290.38 1195.88,-290.38 1286.62,-290.38 1390.35,-290.38 1462.52,-290.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1462.31,-293.88 1472.31,-290.38 1462.31,-286.88 1462.31,-293.88"/>
 </a>
 </g>
 </g>
@@ -676,8 +676,8 @@
 <g id="Node000029" class="node">
 <title>Node29</title>
 <g id="a_Node000029"><a xlink:href="class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" target="_top" xlink:title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr....">
-<polygon fill="white" stroke="#666666" points="1087.5,-338.75 965.75,-338.75 965.75,-318 1087.5,-318 1087.5,-338.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1026.62" y="-325.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlocking</text>
+<polygon fill="white" stroke="#666666" points="1087.5,-349.75 965.75,-349.75 965.75,-329 1087.5,-329 1087.5,-349.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1026.62" y="-336.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlocking</text>
 </a>
 </g>
 </g>
@@ -685,8 +685,8 @@
 <g id="edge38_Node000028_Node000029" class="edge">
 <title>Node28&#45;&gt;Node29</title>
 <g id="a_edge38_Node000028_Node000029"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M929.93,-328.38C937.85,-328.38 945.93,-328.38 953.85,-328.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="953.82,-331.88 963.82,-328.38 953.82,-324.88 953.82,-331.88"/>
+<path fill="none" stroke="#63b8ff" d="M929.93,-333.07C937.85,-333.59 945.93,-334.13 953.85,-334.65"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="953.61,-338.14 963.82,-335.3 954.07,-331.15 953.61,-338.14"/>
 </a>
 </g>
 </g>
@@ -694,8 +694,8 @@
 <g id="Node000030" class="node">
 <title>Node30</title>
 <g id="a_Node000030"><a xlink:href="class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" target="_top" xlink:title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en...">
-<polygon fill="white" stroke="#666666" points="1266.25,-338.75 1123.5,-338.75 1123.5,-318 1266.25,-318 1266.25,-338.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1194.88" y="-325.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlockingRaw</text>
+<polygon fill="white" stroke="#666666" points="1266.25,-360.75 1123.5,-360.75 1123.5,-340 1266.25,-340 1266.25,-360.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1194.88" y="-347.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::runBlockingRaw</text>
 </a>
 </g>
 </g>
@@ -703,17 +703,18 @@
 <g id="edge39_Node000029_Node000030" class="edge">
 <title>Node29&#45;&gt;Node30</title>
 <g id="a_edge39_Node000029_Node000030"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1087.65,-328.38C1095.48,-328.38 1103.62,-328.38 1111.74,-328.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1111.68,-331.88 1121.68,-328.38 1111.68,-324.88 1111.68,-331.88"/>
+<path fill="none" stroke="#63b8ff" d="M1087.65,-343.35C1095.48,-343.86 1103.62,-344.4 1111.74,-344.94"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1111.47,-348.43 1121.68,-345.6 1111.93,-341.45 1111.47,-348.43"/>
 </a>
 </g>
 </g>
 <!-- Node31 -->
 <g id="Node000031" class="node">
 <title>Node31</title>
-<g id="a_Node000031"><a xlink:href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" target="_top" xlink:title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path.">
-<polygon fill="white" stroke="#666666" points="1426.25,-338.75 1302.25,-338.75 1302.25,-318 1426.25,-318 1426.25,-338.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1364.25" y="-325.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::startProcess</text>
+<g id="a_Node000031"><a xlink:href="class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" target="_top" xlink:title="Add what the process wrote next.">
+<polygon fill="white" stroke="#666666" points="1436,-442.12 1302.25,-442.12 1302.25,-408.62 1436,-408.62 1436,-442.12"/>
+<text xml:space="preserve" text-anchor="start" x="1310.25" y="-428.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::CappedOutput</text>
+<text xml:space="preserve" text-anchor="middle" x="1369.12" y="-415.88" font-family="Helvetica,sans-Serif" font-size="10.00">::append</text>
 </a>
 </g>
 </g>
@@ -721,17 +722,55 @@
 <g id="edge40_Node000030_Node000031" class="edge">
 <title>Node30&#45;&gt;Node31</title>
 <g id="a_edge40_Node000030_Node000031"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1266.37,-328.38C1274.39,-328.38 1282.57,-328.38 1290.61,-328.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1290.34,-331.88 1300.34,-328.38 1290.34,-324.88 1290.34,-331.88"/>
+<path fill="none" stroke="#63b8ff" d="M1218.13,-361.06C1239.54,-371.24 1272.89,-386.83 1302.25,-399.38 1305.81,-400.89 1309.48,-402.43 1313.2,-403.96"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1311.71,-407.14 1322.29,-407.66 1314.35,-400.65 1311.71,-407.14"/>
+</a>
+</g>
+</g>
+<!-- Node33 -->
+<g id="Node000033" class="node">
+<title>Node33</title>
+<g id="a_Node000033"><a xlink:href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" target="_top" xlink:title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path.">
+<polygon fill="white" stroke="#666666" points="1431.12,-338.75 1307.12,-338.75 1307.12,-318 1431.12,-318 1431.12,-338.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1369.12" y="-325.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::startProcess</text>
+</a>
+</g>
+</g>
+<!-- Node30&#45;&gt;Node33 -->
+<g id="edge42_Node000030_Node000033" class="edge">
+<title>Node30&#45;&gt;Node33</title>
+<g id="a_edge42_Node000030_Node000033"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1266.43,-341.36C1276.05,-340.14 1285.93,-338.87 1295.58,-337.64"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1295.8,-341.14 1305.27,-336.4 1294.91,-334.2 1295.8,-341.14"/>
+</a>
+</g>
+</g>
+<!-- Node37 -->
+<g id="Node000037" class="node">
+<title>Node37</title>
+<g id="a_Node000037"><a xlink:href="class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" target="_top" xlink:title="Everything kept, and start over.">
+<polygon fill="white" stroke="#666666" points="1436,-390.12 1302.25,-390.12 1302.25,-356.62 1436,-356.62 1436,-390.12"/>
+<text xml:space="preserve" text-anchor="start" x="1310.25" y="-376.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::CappedOutput</text>
+<text xml:space="preserve" text-anchor="middle" x="1369.12" y="-363.88" font-family="Helvetica,sans-Serif" font-size="10.00">::take</text>
+</a>
+</g>
+</g>
+<!-- Node30&#45;&gt;Node37 -->
+<g id="edge46_Node000030_Node000037" class="edge">
+<title>Node30&#45;&gt;Node37</title>
+<g id="a_edge46_Node000030_Node000037"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1266.43,-359.8C1274.39,-360.86 1282.53,-361.95 1290.57,-363.02"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1289.96,-366.47 1300.34,-364.32 1290.89,-359.53 1289.96,-366.47"/>
 </a>
 </g>
 </g>
 <!-- Node32 -->
 <g id="Node000032" class="node">
 <title>Node32</title>
-<g id="a_Node000032"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
-<polygon fill="white" stroke="#666666" points="1626,-339.75 1462.25,-339.75 1462.25,-319 1626,-319 1626,-339.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1544.12" y="-326.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
+<g id="a_Node000032"><a xlink:href="class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" target="_top" xlink:title="Count line if it is a status record.">
+<polygon fill="white" stroke="#666666" points="1620.75,-436.12 1487,-436.12 1487,-402.62 1620.75,-402.62 1620.75,-436.12"/>
+<text xml:space="preserve" text-anchor="start" x="1495" y="-422.62" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::CappedOutput</text>
+<text xml:space="preserve" text-anchor="middle" x="1553.88" y="-409.88" font-family="Helvetica,sans-Serif" font-size="10.00">::countStatus</text>
 </a>
 </g>
 </g>
@@ -739,35 +778,62 @@
 <g id="edge41_Node000031_Node000032" class="edge">
 <title>Node31&#45;&gt;Node32</title>
 <g id="a_edge41_Node000031_Node000032"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1426.46,-328.72C1434.25,-328.76 1442.35,-328.81 1450.5,-328.85"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1450.47,-332.35 1460.49,-328.91 1450.51,-325.35 1450.47,-332.35"/>
-</a>
-</g>
-</g>
-<!-- Node31&#45;&gt;Node33 -->
-<g id="edge42_Node000031_Node000033" class="edge">
-<title>Node31&#45;&gt;Node33</title>
-<g id="a_edge42_Node000031_Node000033"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1415.75,-317.59C1436.21,-313.22 1460.04,-308.12 1481.52,-303.54"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1481.97,-307.02 1491.02,-301.51 1480.51,-300.17 1481.97,-307.02"/>
+<path fill="none" stroke="#63b8ff" d="M1436.36,-423.2C1449,-422.79 1462.34,-422.35 1475.3,-421.92"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1475.17,-425.43 1485.05,-421.6 1474.94,-418.43 1475.17,-425.43"/>
 </a>
 </g>
 </g>
 <!-- Node34 -->
 <g id="Node000034" class="node">
 <title>Node34</title>
-<g id="a_Node000034"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
-<polygon fill="white" stroke="#666666" points="1620.75,-378.75 1467.5,-378.75 1467.5,-358 1620.75,-358 1620.75,-378.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1544.12" y="-365.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
+<g id="a_Node000034"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
+<polygon fill="white" stroke="#666666" points="1635.75,-378.75 1472,-378.75 1472,-358 1635.75,-358 1635.75,-378.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1553.88" y="-365.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node34 -->
-<g id="edge43_Node000031_Node000034" class="edge">
-<title>Node31&#45;&gt;Node34</title>
-<g id="a_edge43_Node000031_Node000034"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1413.39,-339.2C1435.14,-344.09 1461.04,-349.92 1483.97,-355.07"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1482.95,-358.43 1493.47,-357.21 1484.49,-351.6 1482.95,-358.43"/>
+<!-- Node33&#45;&gt;Node34 -->
+<g id="edge43_Node000033_Node000034" class="edge">
+<title>Node33&#45;&gt;Node34</title>
+<g id="a_edge43_Node000033_Node000034"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1419.58,-339.2C1442.03,-344.11 1468.79,-349.97 1492.42,-355.14"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1491.39,-358.5 1501.9,-357.22 1492.88,-351.66 1491.39,-358.5"/>
+</a>
+</g>
+</g>
+<!-- Node33&#45;&gt;Node35 -->
+<g id="edge44_Node000033_Node000035" class="edge">
+<title>Node33&#45;&gt;Node35</title>
+<g id="a_edge44_Node000033_Node000035"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1422,-317.59C1443.13,-313.19 1467.74,-308.08 1489.88,-303.47"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1490.31,-306.96 1499.38,-301.5 1488.88,-300.11 1490.31,-306.96"/>
+</a>
+</g>
+</g>
+<!-- Node36 -->
+<g id="Node000036" class="node">
+<title>Node36</title>
+<g id="a_Node000036"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
+<polygon fill="white" stroke="#666666" points="1630.5,-339.75 1477.25,-339.75 1477.25,-319 1630.5,-319 1630.5,-339.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1553.88" y="-326.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
+</a>
+</g>
+</g>
+<!-- Node33&#45;&gt;Node36 -->
+<g id="edge45_Node000033_Node000036" class="edge">
+<title>Node33&#45;&gt;Node36</title>
+<g id="a_edge45_Node000033_Node000036"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1431.49,-328.71C1442.45,-328.77 1454.07,-328.83 1465.59,-328.9"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1465.53,-332.4 1475.55,-328.95 1465.57,-325.4 1465.53,-332.4"/>
+</a>
+</g>
+</g>
+<!-- Node37&#45;&gt;Node32 -->
+<g id="edge47_Node000037_Node000032" class="edge">
+<title>Node37&#45;&gt;Node32</title>
+<g id="a_edge47_Node000037_Node000032"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1436.36,-390.05C1449.13,-393.26 1462.61,-396.65 1475.69,-399.95"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1474.54,-403.27 1485.09,-402.31 1476.25,-396.48 1474.54,-403.27"/>
 </a>
 </g>
 </g>

@@ -1,0 +1,7 @@
+<map id="Executor::CappedOutput::clear" name="Executor::CappedOutput::clear">
+<area shape="rect" id="Node000001" title="Drop everything, counts included, for the next command." alt="" coords="5,5,184,50"/>
+<area shape="rect" id="Node000002" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="232,5,410,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,25,218,27,213,28,184,30"/>
+<area shape="rect" id="Node000003" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="458,5,636,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="411,25,445,28,439,28,411,30"/>
+</map>

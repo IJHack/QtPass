@@ -34,6 +34,9 @@ var searchData=
   ['kmaxshownname_31',['kMaxShownName',['../class_util.html#a3f6f66ae7d72dbdebda3e086c7ab6998',1,'Util']]],
   ['kmaxsignaturebytes_32',['kMaxSignatureBytes',['../class_gpg_id_signer.html#aa88d2f58405a056d72bba32958fdd77a',1,'GpgIdSigner']]],
   ['kmaxspacerun_33',['kMaxSpaceRun',['../class_util.html#acfef9dbc0925b6f3631f19b381a3cabb',1,'Util']]],
-  ['kmaxunbrokenrun_34',['kMaxUnbrokenRun',['../class_util.html#a8925bde844b953909be54f7e2f42065e',1,'Util']]],
-  ['kstoreprefix_35',['kStorePrefix',['../class_gpg_id_generation.html#ab6b0f551215df432adf31c4ad1e701e9',1,'GpgIdGeneration']]]
+  ['kmaxstatuskeywords_34',['kMaxStatusKeywords',['../class_executor_1_1_capped_output.html#a5cea88d3e090cc7af425314a72e7a9c2',1,'Executor::CappedOutput']]],
+  ['kmaxstatuslinebytes_35',['kMaxStatusLineBytes',['../class_executor_1_1_capped_output.html#a32bf31764d51ca6b025f553a81ed8301',1,'Executor::CappedOutput']]],
+  ['kmaxstderrbytes_36',['kMaxStderrBytes',['../class_executor.html#a3f93c8c34e0ed6c0a951e0793ccaf85c',1,'Executor']]],
+  ['kmaxunbrokenrun_37',['kMaxUnbrokenRun',['../class_util.html#a8925bde844b953909be54f7e2f42065e',1,'Util']]],
+  ['kstoreprefix_38',['kStorePrefix',['../class_gpg_id_generation.html#ab6b0f551215df432adf31c4ad1e701e9',1,'GpgIdGeneration']]]
 ];

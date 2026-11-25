@@ -149,8 +149,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_m.ht
 <li>m_deferredPushByHand&#160;:&#160;<a class="el" href="class_imitate_pass.html#aeb5b53ed31b2046ee809d647fd4ab748">ImitatePass</a>, <a class="el" href="class_real_pass.html#ac7ab6d4da6791ca6ead581498ec492a0">RealPass</a></li>
 <li>m_detectChoices&#160;:&#160;<a class="el" href="class_first_run_wizard.html#ab57a8730577e76172646709d89078895">FirstRunWizard</a></li>
 <li>m_dir&#160;:&#160;<a class="el" href="class_users_dialog.html#a486ab9a602907d6110dceaed9a7b3138">UsersDialog</a></li>
+<li>m_discardStdout&#160;:&#160;<a class="el" href="class_executor.html#a56b304ea9654a0a13139f2cba34cd964">Executor</a></li>
 <li>m_displayPanel&#160;:&#160;<a class="el" href="class_main_window.html#a358125b8efbfbe4b22eecd2716c2dc7c">MainWindow</a></li>
 <li>m_drainCheckPosted&#160;:&#160;<a class="el" href="class_executor.html#a68704b9a35398e88fa70ae00600d70a5">Executor</a></li>
+<li>m_dropped&#160;:&#160;<a class="el" href="class_executor_1_1_capped_output.html#a721a32e3d9e3baff5709c176be476791">Executor::CappedOutput</a></li>
 <li>m_edit&#160;:&#160;<a class="el" href="class_process_output_panel.html#ac65762c3217a8a20d3edc5affe300fcf">ProcessOutputPanel</a></li>
 <li>m_editor&#160;:&#160;<a class="el" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">FieldLabel</a></li>
 <li>m_entries&#160;:&#160;<a class="el" href="class_config_dialog.html#a270dda538d799ca4e79373f31854e75f">ConfigDialog</a></li>
@@ -176,6 +178,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_m.ht
 <li>m_grep&#160;:&#160;<a class="el" href="class_imitate_pass.html#adf06adb6a787c9e7c6c19ed1da9d8b05">ImitatePass</a>, <a class="el" href="class_main_window.html#a00e108f09fd76b84ae1a11525168812e">MainWindow</a>, <a class="el" href="class_real_pass.html#a0016113b00ad8de4b36b33c4b3b1f0cc">RealPass</a></li>
 <li>m_grid&#160;:&#160;<a class="el" href="class_password_display_panel.html#a50268730943ba64e36bc8e13d2fdd2d8">PasswordDisplayPanel</a></li>
 <li>m_hasCode&#160;:&#160;<a class="el" href="class_otp_code_widget.html#aa90134420a39f8623f7f26a001818611">OtpCodeWidget</a></li>
+<li>m_head&#160;:&#160;<a class="el" href="class_executor_1_1_capped_output.html#a0745ec7ecb8babb5755bf21ccf8bcd8b">Executor::CappedOutput</a></li>
 <li>m_hidePassword&#160;:&#160;<a class="el" href="class_done_wizard_page.html#a8379cad4848a90bbca01e9cecebea98b">DoneWizardPage</a></li>
 <li>m_importedKeyId&#160;:&#160;<a class="el" href="class_import_key_dialog.html#a7eacdb5d2d478f846bbe54be938e1538">ImportKeyDialog</a></li>
 <li>m_initOnAccept&#160;:&#160;<a class="el" href="class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6">UsersDialog</a></li>
@@ -194,6 +197,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_m.ht
 <li>m_keys&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a7b3b53062e4879094eb06ae05a77b348">FirstRunWizard</a>, <a class="el" href="class_gpg_id_signer.html#a71d5846abc8be14dcc76600b8ff847db">GpgIdSigner</a></li>
 <li>m_keyTip&#160;:&#160;<a class="el" href="class_config_dialog.html#abcc0cd3904a519549464465a916b11c6">ConfigDialog</a></li>
 <li>m_lastFilter&#160;:&#160;<a class="el" href="class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8">UsersDialog</a></li>
+<li>m_lastStatus&#160;:&#160;<a class="el" href="class_executor.html#aa6d3ec36da079587d2fa089b7e6c6b44">Executor</a></li>
+<li>m_line&#160;:&#160;<a class="el" href="class_executor_1_1_capped_output.html#ab86470d7175b022b4aade849187222b8">Executor::CappedOutput</a></li>
+<li>m_lineTooLong&#160;:&#160;<a class="el" href="class_executor_1_1_capped_output.html#a568949059d4b9e70301384798539cb03">Executor::CappedOutput</a></li>
 <li>m_linkCommits&#160;:&#160;<a class="el" href="class_real_pass.html#ac7c17226af0d3366f2e9388a08475839">RealPass</a></li>
 <li>m_list&#160;:&#160;<a class="el" href="class_key_wizard_page.html#a11a1086c1ece6a1fdeff02bbd06deac2">KeyWizardPage</a></li>
 <li>m_listRead&#160;:&#160;<a class="el" href="class_users_dialog.html#a5dab072f562c9a18ad7c68a25a552e78">UsersDialog</a></li>
@@ -265,10 +271,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_m.ht
 <li>m_sharedKeyWarning&#160;:&#160;<a class="el" href="class_config_dialog.html#a5bcbd3edb7659a10b98fdeefdd706162">ConfigDialog</a></li>
 <li>m_shownByThisPress&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a5a5051065c4343673880b34b27827625">MenuBarPeek</a></li>
 <li>m_shownFile&#160;:&#160;<a class="el" href="class_main_window.html#aaba13f61c81edb811a593818518cf831">MainWindow</a></li>
-<li>m_status&#160;:&#160;<a class="el" href="class_key_wizard_page.html#a9f5bf936eb127ead6f6e20143cfc0aa1">KeyWizardPage</a>, <a class="el" href="class_store_wizard_page.html#a35c334a83f1ff63cc39b32564d706947">StoreWizardPage</a></li>
+<li>m_status&#160;:&#160;<a class="el" href="class_executor_1_1_capped_output.html#a918017aa5355a744e7a1f6744b78db26">Executor::CappedOutput</a>, <a class="el" href="class_key_wizard_page.html#a9f5bf936eb127ead6f6e20143cfc0aa1">KeyWizardPage</a>, <a class="el" href="class_store_wizard_page.html#a35c334a83f1ff63cc39b32564d706947">StoreWizardPage</a></li>
+<li>m_stderr&#160;:&#160;<a class="el" href="class_executor.html#a6785b67b963065668dc9874def9c72e4">Executor</a></li>
 <li>m_store&#160;:&#160;<a class="el" href="class_store_tree.html#a015b7288cf004733d1a55f6de6ffe054">StoreTree</a></li>
 <li>m_storeRoot&#160;:&#160;<a class="el" href="class_password_dialog.html#a9de844765b306cb192ff837677d1c9f0">PasswordDialog</a></li>
 <li>m_summary&#160;:&#160;<a class="el" href="class_done_wizard_page.html#a102c2dbf3c931b38f38ed49810f485d2">DoneWizardPage</a></li>
+<li>m_tail&#160;:&#160;<a class="el" href="class_executor_1_1_capped_output.html#af3775405f7e14c905e7d0c3e8a0db35e">Executor::CappedOutput</a></li>
 <li>m_templateLines&#160;:&#160;<a class="el" href="class_password_dialog.html#ad8d89451f12b86a6733e17b781f52a25">PasswordDialog</a></li>
 <li>m_templateShortcut&#160;:&#160;<a class="el" href="class_password_dialog.html#a78ace54e705a7900dfaa482b8a3abc68">PasswordDialog</a></li>
 <li>m_templating&#160;:&#160;<a class="el" href="class_password_dialog.html#a0babf3db47a8da35da550c991be84f0c">PasswordDialog</a></li>

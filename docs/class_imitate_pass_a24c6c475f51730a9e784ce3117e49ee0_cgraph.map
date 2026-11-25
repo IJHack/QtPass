@@ -1,28 +1,35 @@
 <map id="ImitatePass::execBlocking" name="ImitatePass::execBlocking">
-<area shape="rect" id="Node000001" title="Executor::executeBlocking() for the re&#45;encryption helpers." alt="" coords="5,85,197,113"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="254,59,446,86"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,86,241,84,236,85,198,92"/>
-<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a06038deee0bbe31a75b9580e1d2990ae" title="Give process the environment for the calling thread: the store&#39;s on the owning thread,..." alt="" coords="245,111,456,138"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="197,106,232,112,227,113,197,112"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="510,59,672,86"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,70,497,72,492,73,447,75"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="726,59,917,86"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="673,70,713,72,708,73,673,75"/>
-<area shape="rect" id="Node000005" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="965,59,1130,86"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="917,70,952,72,946,73,917,75"/>
-<area shape="rect" id="Node000006" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1178,5,1396,33"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1112,55,1204,37,1210,36,1113,61"/>
-<area shape="rect" id="Node000007" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1181,57,1393,85"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1130,69,1168,72,1163,72,1130,75"/>
-<area shape="rect" id="Node000008" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1185,109,1389,137"/>
-<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1116,84,1206,106,1201,105,1116,90"/>
-<area shape="rect" id="Node000010" href="$class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2" title="The environment QtPass runs the store&#39;s processes in." alt="" coords="504,111,678,138"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="456,122,491,124,486,125,457,127"/>
-<area shape="rect" id="Node000011" href="$class_pass.html#ab81d7dbed9e18a9368c2be06876c4630" title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),..." alt="" coords="735,161,908,189"/>
-<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="431,136,504,147,722,169,717,169,504,152,431,142"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="657,136,743,158,738,157,657,142"/>
-<area shape="rect" id="Node000012" href="$class_util.html#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g..." alt="" coords="966,161,1129,189"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="908,173,953,175,948,175,908,178"/>
-<area shape="rect" id="Node000013" href="$class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it." alt="" coords="1230,161,1344,189"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1130,173,1217,175,1212,175,1130,178"/>
+<area shape="rect" id="Node000001" title="Executor::executeBlocking() for the re&#45;encryption helpers." alt="" coords="5,166,197,194"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="254,139,446,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,167,241,164,236,166,198,172"/>
+<area shape="rect" id="Node000012" href="$class_imitate_pass.html#a06038deee0bbe31a75b9580e1d2990ae" title="Give process the environment for the calling thread: the store&#39;s on the owning thread,..." alt="" coords="245,191,456,219"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="197,187,232,192,227,193,197,192"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="510,139,672,167"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,150,497,153,492,153,447,156"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="726,139,917,167"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="673,150,713,153,708,153,673,156"/>
+<area shape="rect" id="Node000005" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="965,5,1143,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="842,136,895,100,963,60,974,58,979,56,966,65,898,104,844,141"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="971,143,1136,171"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="917,152,958,155,953,155,917,157"/>
+<area shape="rect" id="Node000011" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="965,75,1143,119"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="881,136,947,123,952,122,883,141"/>
+<area shape="rect" id="Node000006" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="1211,13,1389,58"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1143,28,1198,32,1193,33,1144,33"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1191,86,1409,114"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1116,140,1220,118,1225,117,1117,145"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1194,138,1406,166"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1137,153,1181,154,1176,154,1137,158"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1198,190,1402,218"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="1130,169,1211,186,1206,186,1130,174"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="1143,72,1193,62,1199,61,1144,77"/>
+<area shape="rect" id="Node000013" href="$class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2" title="The environment QtPass runs the store&#39;s processes in." alt="" coords="504,191,678,219"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="456,202,491,205,486,205,457,208"/>
+<area shape="rect" id="Node000014" href="$class_pass.html#ab81d7dbed9e18a9368c2be06876c4630" title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),..." alt="" coords="735,242,908,270"/>
+<area shape="poly" id="edge17_Node000012_Node000014" title=" " alt="" coords="431,217,504,228,722,250,717,250,504,233,431,222"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="657,217,743,238,738,238,657,222"/>
+<area shape="rect" id="Node000015" href="$class_util.html#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g..." alt="" coords="972,242,1136,270"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="908,253,959,256,954,256,908,258"/>
+<area shape="rect" id="Node000016" href="$class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it." alt="" coords="1243,242,1357,270"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1136,253,1230,256,1225,256,1136,258"/>
 </map>
