@@ -47,7 +47,6 @@ constexpr qint64 kMaxGpgIdBytes = 1024 * 1024;
  */
 auto readBoundedRegularFile(const QString &path, qint64 maxBytes,
                             QByteArray *bytes) -> bool {
-  QFile file;
 #ifdef Q_OS_UNIX
   int fd;
   do {
@@ -57,22 +56,40 @@ auto readBoundedRegularFile(const QString &path, qint64 maxBytes,
   if (fd < 0) {
     return false;
   }
+  // Everything below goes through this descriptor: what was checked is
+  // what is read.
   struct stat st{};
-  if (::fstat(fd, &st) != 0 || !S_ISREG(st.st_mode) || st.st_size > maxBytes ||
-      !file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
-    ::close(fd);
-    return false;
+  bool ok =
+      ::fstat(fd, &st) == 0 && S_ISREG(st.st_mode) && st.st_size <= maxBytes;
+  QByteArray data;
+  while (ok) {
+    char buffer[4096];
+    const ssize_t n = ::read(fd, buffer, sizeof buffer);
+    if (n < 0 && errno == EINTR) {
+      continue;
+    }
+    if (n <= 0) {
+      ok = n == 0;
+      break;
+    }
+    data.append(buffer, static_cast<int>(n));
+    ok = data.size() <= maxBytes;
   }
+  ::close(fd);
+  if (ok) {
+    *bytes = data;
+  }
+  return ok;
 #else
   const QFileInfo info(path);
-  file.setFileName(path);
+  QFile file(path);
   if (info.isSymLink() || !info.isFile() || info.size() > maxBytes ||
       !file.open(QIODevice::ReadOnly)) {
     return false;
   }
-#endif
   *bytes = file.read(maxBytes + 1);
   return bytes->size() <= maxBytes;
+#endif
 }
 
 } // namespace
