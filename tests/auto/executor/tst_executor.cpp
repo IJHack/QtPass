@@ -25,8 +25,8 @@ class tst_executor : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
-#ifndef Q_OS_WIN
   void cappedOutputKeepsHeadAndTail();
+#ifndef Q_OS_WIN
   void blockingStderrIsCapped();
   void queuedStderrIsCapped();
   void executeBlockingEcho();
@@ -1660,6 +1660,7 @@ void tst_executor::cappedOutputKeepsHeadAndTail() {
   QVERIFY(note - 1 <= half);
 }
 
+#ifndef Q_OS_WIN
 /**
  * @brief A blocking run keeps at most the cap of a flood on stderr, with
  *        its start and its end, where the error is.
@@ -1672,9 +1673,9 @@ void tst_executor::blockingStderrIsCapped() {
   const int rc = Executor::executeBlocking(
       sh,
       {QStringLiteral("-c"),
-       QStringLiteral("echo first-line >&2; head -c 4000000 /dev/zero | "
-                      "tr '\\000' x >&2; echo >&2; echo last-line >&2; "
-                      "exit 2")},
+       QStringLiteral("echo first-line >&2; awk 'BEGIN { for (i = 0; i < "
+                      "100000; i++) print \"bogus packet \" i }' >&2; "
+                      "echo last-line >&2; exit 2")},
       QString(), nullptr, &err);
   QCOMPARE(rc, 2);
   QVERIFY2(err.size() <= Executor::kMaxStderrBytes + 64,
@@ -1695,9 +1696,9 @@ void tst_executor::queuedStderrIsCapped() {
   QSignalSpy spy(&exec, &Executor::finished);
   exec.execute(5, sh,
                {QStringLiteral("-c"),
-                QStringLiteral("echo first-line >&2; head -c 4000000 "
-                               "/dev/zero | tr '\\000' x >&2; echo >&2; "
-                               "echo last-line >&2")},
+                QStringLiteral("echo first-line >&2; awk 'BEGIN { for (i = 0; "
+                               "i < 100000; i++) print \"bogus packet \" i "
+                               "}' >&2; echo last-line >&2")},
                false, true);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 10000);
   const QString err = spy.first().at(3).toString();
@@ -1705,7 +1706,9 @@ void tst_executor::queuedStderrIsCapped() {
            qPrintable(QString::number(err.size())));
   QVERIFY(err.startsWith(QStringLiteral("first-line")));
   QVERIFY(err.trimmed().endsWith(QStringLiteral("last-line")));
+  QVERIFY(err.contains(QStringLiteral("bytes left out")));
 }
+#endif
 
 QTEST_MAIN(tst_executor)
 #include "tst_executor.moc"

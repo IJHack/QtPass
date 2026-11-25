@@ -806,7 +806,7 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 ### Bugfixes
 
 - A command that writes without end to its error output can no longer use
-  up memory. gpg writes a line for every packet it rejects and git one for
+  up memory. gpg writes a line for every packet it rejects and Git one for
   every ref, so an entry or a repository someone else made could fill
   gigabytes, all of it kept and then shown. QtPass now reads that output
   while the command runs and keeps its first and last 32 KiB, with a note
