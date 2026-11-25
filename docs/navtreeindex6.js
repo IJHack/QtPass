@@ -1,5 +1,14 @@
 var NAVTREEINDEX6 =
 {
+"hierarchy.html":[3,2],
+"imitatepass_8cpp.html":[4,0,1,27],
+"imitatepass_8cpp_source.html":[4,0,1,27],
+"imitatepass_8h.html":[4,0,1,28],
+"imitatepass_8h_source.html":[4,0,1,28],
+"importkeydialog_8cpp.html":[4,0,1,29],
+"importkeydialog_8cpp.html#aaaddd46d37ca0bc4761cd6d67da37ec6":[4,0,1,29,0],
+"importkeydialog_8cpp_source.html":[4,0,1,29],
+"importkeydialog_8h.html":[4,0,1,30],
 "importkeydialog_8h_source.html":[4,0,1,30],
 "index.html":[],
 "index.html":[0],
@@ -76,7 +85,7 @@ var NAVTREEINDEX6 =
 "pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc":[4,0,1,41,0],
 "pass_8cpp_source.html":[4,0,1,41],
 "pass_8h.html":[4,0,1,42],
-"pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa":[4,0,1,42,2],
+"pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa":[4,0,1,42,3],
 "pass_8h_source.html":[4,0,1,42],
 "passbackendfactory_8cpp.html":[4,0,1,43],
 "passbackendfactory_8cpp_source.html":[4,0,1,43],
@@ -240,14 +249,5 @@ var NAVTREEINDEX6 =
 "struct_app_settings.html#ac73a141ef053548af932d5d6cc56e1b9":[1,4,1,47],
 "struct_app_settings.html#acde4fd8eb037e48e5185cf7e31fc6903":[1,4,1,1],
 "struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b":[1,4,1,50],
-"struct_app_settings.html#af653095f19fc321bee9e31eb1076616f":[1,4,1,28],
-"struct_config_dialog_1_1_profile_entry.html":[1,5,1,0],
-"struct_config_dialog_1_1_profile_entry.html#a7c1d4007219cbc0903bfbac9da3fb205":[1,5,1,0,0],
-"struct_config_dialog_1_1_profile_entry.html#a8f9700c057f612ec07f302b26bffdfb4":[1,5,1,0,1],
-"struct_config_dialog_1_1_profile_entry.html#ae5cef2c048f8b398f63b457906286aad":[1,5,1,0,2],
-"struct_config_dialog_1_1_profile_problems.html":[1,5,1,1],
-"struct_config_dialog_1_1_profile_problems.html#a08edf369a2dd715d89d446578d1eed07":[1,5,1,1,3],
-"struct_config_dialog_1_1_profile_problems.html#a2a577212daad2548b5888b385b5ca8d0":[1,5,1,1,1],
-"struct_config_dialog_1_1_profile_problems.html#a608df96ed95830f21aee088400bb5efd":[1,5,1,1,5],
-"struct_config_dialog_1_1_profile_problems.html#a6125c12355bc1a1033f9addc61f0ba68":[1,5,1,1,0]
+"struct_app_settings.html#af653095f19fc321bee9e31eb1076616f":[1,4,1,28]
 };

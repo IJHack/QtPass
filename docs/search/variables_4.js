@@ -5,7 +5,8 @@ var searchData=
   ['deselecttimer_2',['deselectTimer',['../class_deselectable_tree_view.html#a082a7e796636f38d6dafa209a7d7fa29',1,'DeselectableTreeView']]],
   ['destfile_3',['destFile',['../struct_imitate_pass_1_1_pending_move.html#aa0f8e48e4e9dba13a43698c191e232fb',1,'ImitatePass::PendingMove']]],
   ['digits_4',['digits',['../struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d',1,'Totp::Settings']]],
-  ['discard_5',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
-  ['displayasis_6',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
-  ['doubleclickhappened_7',['doubleClickHappened',['../class_deselectable_tree_view.html#a25d7d24dddf49ee15ef1b0870fa293f8',1,'DeselectableTreeView']]]
+  ['dir_5',['dir',['../struct_pass_1_1_expected_list.html#a4ae7fc03ec59aae6898ef92a060063a4',1,'Pass::ExpectedList']]],
+  ['discard_6',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
+  ['displayasis_7',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
+  ['doubleclickhappened_8',['doubleClickHappened',['../class_deselectable_tree_view.html#a25d7d24dddf49ee15ef1b0870fa293f8',1,'DeselectableTreeView']]]
 ];

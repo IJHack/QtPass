@@ -1,0 +1,5 @@
+<map id="Pass::initIfUnchanged" name="Pass::initIfUnchanged">
+<area shape="rect" id="Node000001" title="Init(), but only while the list of dir still reads as the caller read it with recipientsForEditing()." alt="" coords="5,5,167,33"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store." alt="" coords="215,5,294,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,17,202,19,196,19,167,22"/>
+</map>

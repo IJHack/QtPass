@@ -19,7 +19,7 @@ var searchData=
   ['src_16',['src',['../struct_imitate_pass_1_1_pending_move.html#a2d31b186e51a677de5bbb685bc8ed259',1,'ImitatePass::PendingMove']]],
   ['sshauthsockoverride_17',['sshAuthSockOverride',['../struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1',1,'AppSettings']]],
   ['startminimized_18',['startMinimized',['../struct_app_settings.html#a663732cc2174f4adeadc4244bbfbe7e2',1,'AppSettings']]],
-  ['state_19',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing']]],
+  ['state_19',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing::state'],['../struct_pass_1_1_expected_list.html#a7d7e16278de4017b7492031e36b5a082',1,'Pass::ExpectedList::state']]],
   ['steam_5fdigits_20',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
   ['step_21',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]],
   ['store_22',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header::store'],['../class_store_model.html#a98ebce85d60d3372420113fe7e714428',1,'StoreModel::store']]],

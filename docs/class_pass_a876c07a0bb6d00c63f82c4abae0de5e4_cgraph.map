@@ -1,0 +1,9 @@
+<map id="Pass::refuseBusyForExpectedList" name="Pass::refuseBusyForExpectedList">
+<area shape="rect" id="Node000001" title="Refuse an Init() under initIfUnchanged() while the executor has work queued or running,..." alt="" coords="5,57,240,85"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="344,5,446,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,54,331,31,326,33,200,59"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="313,57,477,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,69,300,71,294,72,240,74"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="288,109,502,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="199,83,306,105,301,106,199,88"/>
+</map>

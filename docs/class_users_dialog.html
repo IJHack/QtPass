@@ -195,6 +195,8 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:aae28ed1da1149c4e1d1685a6e4c9d3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark which keys have secret counterparts.  <br /></td></tr>
 <tr class="memitem:aa1508b1fe6dc8fba34257d72a1633a4b" id="r_aa1508b1fe6dc8fba34257d72a1633a4b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa1508b1fe6dc8fba34257d72a1633a4b">loadRecipients</a> ()</td></tr>
 <tr class="memdesc:aa1508b1fe6dc8fba34257d72a1633a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load recipients and handle missing keys.  <br /></td></tr>
+<tr class="memitem:a776e02e4e7cb49add8d32654595d2c29" id="r_a776e02e4e7cb49add8d32654595d2c29"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a776e02e4e7cb49add8d32654595d2c29">listChangedSinceRead</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a776e02e4e7cb49add8d32654595d2c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the folder's recipient list reads differently now from when <a class="el" href="#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys.">loadRecipients()</a> read it: a pull, a sync or another program changed it while the dialog was open.  <br /></td></tr>
 <tr class="memitem:a3af163e9ad85e7f272460ba74c6fccc4" id="r_a3af163e9ad85e7f272460ba74c6fccc4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3af163e9ad85e7f272460ba74c6fccc4">showRecipientWarning</a> (const QString &amp;text, const QString &amp;name=QStringLiteral(&quot;recipientWarning&quot;))</td></tr>
 <tr class="memdesc:a3af163e9ad85e7f272460ba74c6fccc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show <code class="param">text</code> above the key list in bold red, for a recipient list that could not be verified.  <br /></td></tr>
 <tr class="memitem:a9a6a4c61df81a43cf26fc0bfccedae01" id="r_a9a6a4c61df81a43cf26fc0bfccedae01"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9a6a4c61df81a43cf26fc0bfccedae01">showNestedLists</a> ()</td></tr>
@@ -223,6 +225,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a09489f1a683129c5dad8386ae9155bd6" id="r_a09489f1a683129c5dad8386ae9155bd6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a09489f1a683129c5dad8386ae9155bd6">m_initOnAccept</a> {true}</td></tr>
 <tr class="memitem:a486ab9a602907d6110dceaed9a7b3138" id="r_a486ab9a602907d6110dceaed9a7b3138"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a486ab9a602907d6110dceaed9a7b3138">m_dir</a></td></tr>
 <tr class="memitem:aaf2a368116ead1381e833f52f4bb7cf5" id="r_aaf2a368116ead1381e833f52f4bb7cf5"><td class="memItemLeft"><a class="el" href="#a4bc2c40314993e5e06b649bc6c037111">Preselect</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaf2a368116ead1381e833f52f4bb7cf5">m_preselect</a> = <a class="el" href="#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">Preselect::FromList</a></td></tr>
+<tr class="memitem:a5dab072f562c9a18ad7c68a25a552e78" id="r_a5dab072f562c9a18ad7c68a25a552e78"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5dab072f562c9a18ad7c68a25a552e78">m_listRead</a> = false</td></tr>
+<tr class="memitem:a34b725321c8c6e2e1af3945d2a19d368" id="r_a34b725321c8c6e2e1af3945d2a19d368"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a34b725321c8c6e2e1af3945d2a19d368">m_readState</a> = 0</td></tr>
+<tr class="memitem:a90c5f479650fd927e77af9cc11e3129d" id="r_a90c5f479650fd927e77af9cc11e3129d"><td class="memItemLeft">QStringList&#160;</td><td class="memItemRight"><a class="el" href="#a90c5f479650fd927e77af9cc11e3129d">m_readRecipients</a></td></tr>
+<tr class="memdesc:a90c5f479650fd927e77af9cc11e3129d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The recipients the list named when the dialog read it.  <br /></td></tr>
 <tr class="memitem:a50a8ee7a2dbd27672249f0c8d109beb8" id="r_a50a8ee7a2dbd27672249f0c8d109beb8"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a50a8ee7a2dbd27672249f0c8d109beb8">m_lastFilter</a></td></tr>
 <tr class="memitem:ab523762c16cb41558ef59ee40745a210" id="r_ab523762c16cb41558ef59ee40745a210"><td class="memItemLeft">QSet&lt; QString &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab523762c16cb41558ef59ee40745a210">m_notLookedUp</a></td></tr>
 <tr class="memdesc:ab523762c16cb41558ef59ee40745a210"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">.gpg-id</span> lines <a class="el" href="#a3c3a5d0fdc783f2ad1b52f59a4903d31" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,...">selectRecipients()</a> listed unticked without asking gpg. They are shown without "Show unusable keys", so OK does not drop them unseen.  <br /></td></tr>
@@ -416,12 +422,12 @@ Private Attributes</h2></td></tr>
 
 <p>Handle dialog acceptance. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00425">425</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00435">435</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
 <div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1630582c14afcef9ad80398752762a4_cgraph.svg" width="402" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1630582c14afcef9ad80398752762a4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
@@ -468,7 +474,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00592">592</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00630">630</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -516,7 +522,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Formatted text. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00574">574</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00612">612</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -562,7 +568,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
 <div id="dynsection-11-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a56e762c68f4ae6faf7e50c227598e0f1_cgraph.svg" width="100%" height="381"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a56e762c68f4ae6faf7e50c227598e0f1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary">
@@ -599,7 +605,7 @@ Private Attributes</h2></td></tr>
 <p>Whether at least one key is ticked. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if Init would get a recipient. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00438">438</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00476">476</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -641,7 +647,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if key is expired. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00539">539</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00577">577</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary">
 </div>
@@ -682,7 +688,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00459">459</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00497">497</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
 <div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary">
 </div>
@@ -729,7 +735,49 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00449">449</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00487">487</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a776e02e4e7cb49add8d32654595d2c29" name="a776e02e4e7cb49add8d32654595d2c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a776e02e4e7cb49add8d32654595d2c29">&#9670;&#160;</a></span>listChangedSinceRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto UsersDialog::listChangedSinceRead </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the folder's recipient list reads differently now from when <a class="el" href="#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys.">loadRecipients()</a> read it: a pull, a sync or another program changed it while the dialog was open. </p>
+<dl class="section return"><dt>Returns</dt><dd>True when the state or the recipients differ. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00428">428</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a776e02e4e7cb49add8d32654595d2c29_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a776e02e4e7cb49add8d32654595d2c29_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -760,16 +808,16 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if successful, false if keys could not be loaded. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00080">80</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary">
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
 </div>
-<div id="dynsection-17-content" class="dyncontent hidden">
+<div id="dynsection-19-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aeeb98a4267c9aaa8c8087d4fb3774565_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary">
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
 </div>
-<div id="dynsection-18-content" class="dyncontent hidden">
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aeeb98a4267c9aaa8c8087d4fb3774565_icgraph.svg" width="451" height="107"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -801,16 +849,16 @@ Private Attributes</h2></td></tr>
 <p>Load recipients and handle missing keys. </p>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00401">401</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary">
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
 </div>
-<div id="dynsection-19-content" class="dyncontent hidden">
+<div id="dynsection-21-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1508b1fe6dc8fba34257d72a1633a4b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary">
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
 </div>
-<div id="dynsection-20-content" class="dyncontent hidden">
+<div id="dynsection-22-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1508b1fe6dc8fba34257d72a1633a4b_icgraph.svg" width="451" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -848,16 +896,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00095">95</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary">
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
 </div>
-<div id="dynsection-21-content" class="dyncontent hidden">
+<div id="dynsection-23-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aae28ed1da1149c4e1d1685a6e4c9d3a2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary">
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
 </div>
-<div id="dynsection-22-content" class="dyncontent hidden">
+<div id="dynsection-24-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aae28ed1da1149c4e1d1685a6e4c9d3a2_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -888,11 +936,11 @@ Private Attributes</h2></td></tr>
 
 <p>Handle select all checkbox. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00632">632</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00670">670</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
 </div>
-<div id="dynsection-23-content" class="dyncontent hidden">
+<div id="dynsection-25-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_ae4d6d585d09d26213b5c1fe757974544_cgraph.svg" width="100%" height="465"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -923,11 +971,11 @@ Private Attributes</h2></td></tr>
 
 <p>Import a GPG key and refresh the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00649">649</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00687">687</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
 </div>
-<div id="dynsection-24-content" class="dyncontent hidden">
+<div id="dynsection-26-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a0b5cc847c9d780a1a317329a49a52906_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -964,11 +1012,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00628">628</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00666">666</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
 </div>
-<div id="dynsection-25-content" class="dyncontent hidden">
+<div id="dynsection-27-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a20609c91440503dc7f84f26a43d01509_cgraph.svg" width="100%" height="465"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1017,17 +1065,17 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if user passes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00523">523</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00561">561</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
 </div>
-<div id="dynsection-26-content" class="dyncontent hidden">
+<div id="dynsection-28-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_ad8f7dcefe8f44773b5931295c2e35833_cgraph.svg" width="100%" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary">
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
 </div>
-<div id="dynsection-27-content" class="dyncontent hidden">
+<div id="dynsection-29-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_ad8f7dcefe8f44773b5931295c2e35833_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1064,17 +1112,17 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00480">480</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00518">518</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
 </div>
-<div id="dynsection-28-content" class="dyncontent hidden">
+<div id="dynsection-30-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9742afa42c3edaec91f62ddcb116002d_cgraph.svg" width="100%" height="465"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary">
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
 </div>
-<div id="dynsection-29-content" class="dyncontent hidden">
+<div id="dynsection-31-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9742afa42c3edaec91f62ddcb116002d_icgraph.svg" width="446" height="246"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1105,16 +1153,16 @@ Private Attributes</h2></td></tr>
 <p>Attach <a class="el" href="namespace_window_state_store.html" title="Persist and restore a top-level window&#39;s geometry, one way for the main window and every dialog.">WindowStateStore</a>, which restores the dialog's saved geometry now and saves it under "usersDialog" when the dialog closes. </p>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00076">76</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary">
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
 </div>
-<div id="dynsection-30-content" class="dyncontent hidden">
+<div id="dynsection-32-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a72f07ae1b408688108f0855624c789d2_cgraph.svg" width="100%" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary">
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
 </div>
-<div id="dynsection-31-content" class="dyncontent hidden">
+<div id="dynsection-33-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a72f07ae1b408688108f0855624c789d2_icgraph.svg" width="443" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1147,10 +1195,10 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>All listed users; the selected ones have enabled == true. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00084">84</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
-<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary">
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
 </div>
-<div id="dynsection-32-content" class="dyncontent hidden">
+<div id="dynsection-34-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a106ab7fe0698daa57d92a2a6f1a337c7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1187,11 +1235,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00634">634</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00672">672</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary">
 </div>
-<div id="dynsection-33-content" class="dyncontent hidden">
+<div id="dynsection-35-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9a4174d9ae0e84c8742e24f1092a63b9_icgraph.svg" width="488" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1229,16 +1277,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00315">315</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary">
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary">
 </div>
-<div id="dynsection-34-content" class="dyncontent hidden">
+<div id="dynsection-36-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a3c3a5d0fdc783f2ad1b52f59a4903d31_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary">
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
 </div>
-<div id="dynsection-35-content" class="dyncontent hidden">
+<div id="dynsection-37-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a3c3a5d0fdc783f2ad1b52f59a4903d31_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1276,10 +1324,10 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00078">78</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
-<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary">
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
 </div>
-<div id="dynsection-36-content" class="dyncontent hidden">
+<div id="dynsection-38-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_ab30de74144c09f81f4d3324207e911cd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1311,16 +1359,16 @@ Private Attributes</h2></td></tr>
 <p>Name the folders below this one that have a recipient list of their own: saving here does not change theirs, so someone removed here can still read what is in them. Folders below that cannot be read are named too, since whether they have one is unknown. </p>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00142">142</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary">
+<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary">
 </div>
-<div id="dynsection-37-content" class="dyncontent hidden">
+<div id="dynsection-39-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9a6a4c61df81a43cf26fc0bfccedae01_cgraph.svg" width="656" height="107"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary">
+<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary">
 </div>
-<div id="dynsection-38-content" class="dyncontent hidden">
+<div id="dynsection-40-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9a6a4c61df81a43cf26fc0bfccedae01_icgraph.svg" width="464" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1363,16 +1411,16 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00108">108</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary">
+<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary">
 </div>
-<div id="dynsection-39-content" class="dyncontent hidden">
+<div id="dynsection-41-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a3af163e9ad85e7f272460ba74c6fccc4_cgraph.svg" width="390" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-40-summary" class="dynsummary">
+<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary">
 </div>
-<div id="dynsection-40-content" class="dyncontent hidden">
+<div id="dynsection-42-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a3af163e9ad85e7f272460ba74c6fccc4_icgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1403,17 +1451,17 @@ Private Attributes</h2></td></tr>
 
 <p>Enable OK only while at least one key is ticked (<a class="el" href="#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked.">hasSelection()</a>). </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00443">443</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
-<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00481">481</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary">
 </div>
-<div id="dynsection-41-content" class="dyncontent hidden">
+<div id="dynsection-43-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a0506ad62cc53b4e491d4548029511b98_cgraph.svg" width="464" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-42-summary" class="dynsummary">
+<div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary">
 </div>
-<div id="dynsection-42-content" class="dyncontent hidden">
+<div id="dynsection-44-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a0506ad62cc53b4e491d4548029511b98_icgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1441,7 +1489,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Cached current date/time for expiry checks </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00155">155</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00164">164</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1468,7 +1516,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="keyword">false</span></div>
 </div><!-- fragment --><p>Whether cached date/time is valid </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00157">157</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00166">166</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1493,7 +1541,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Cached regex filter </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00154">154</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00163">163</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1518,7 +1566,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Cached pattern string </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00153">153</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00162">162</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1618,7 +1666,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Last filter text for caching </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00146">146</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00155">155</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a5dab072f562c9a18ad7c68a25a552e78" name="a5dab072f562c9a18ad7c68a25a552e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dab072f562c9a18ad7c68a25a552e78">&#9670;&#160;</a></span>m_listRead</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UsersDialog::m_listRead = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether <a class="el" href="#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys.">loadRecipients()</a> read the folder's list, so <a class="el" href="#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance.">accept()</a> has something to compare the list on disk with. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00148">148</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1644,7 +1717,7 @@ Private Attributes</h2></td></tr>
 
 <p><span class="tt">.gpg-id</span> lines <a class="el" href="#a3c3a5d0fdc783f2ad1b52f59a4903d31" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,...">selectRecipients()</a> listed unticked without asking gpg. They are shown without "Show unusable keys", so OK does not drop them unseen. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00152">152</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00161">161</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -1720,6 +1793,57 @@ Private Attributes</h2></td></tr>
 <p>What opens ticked </p>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00145">145</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a90c5f479650fd927e77af9cc11e3129d" name="a90c5f479650fd927e77af9cc11e3129d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c5f479650fd927e77af9cc11e3129d">&#9670;&#160;</a></span>m_readRecipients</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList UsersDialog::m_readRecipients</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The recipients the list named when the dialog read it. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00154">154</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a34b725321c8c6e2e1af3945d2a19d368" name="a34b725321c8c6e2e1af3945d2a19d368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b725321c8c6e2e1af3945d2a19d368">&#9670;&#160;</a></span>m_readState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UsersDialog::m_readState = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>How the list stood up when the dialog read it: a <a class="el" href="struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073" title="How the list on disk stood up.">Pass::RecipientsForEditing::State</a>, kept as its value since <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> is only declared here. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00152">152</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>

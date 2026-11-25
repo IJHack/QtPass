@@ -151,6 +151,7 @@ var group__keys =
       [ "isUserExpired", "class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106", null ],
       [ "itemChange", "class_users_dialog.html#a0a9df57e10de95c375523902b4bbdc5b", null ],
       [ "keyPressEvent", "class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb", null ],
+      [ "listChangedSinceRead", "class_users_dialog.html#a776e02e4e7cb49add8d32654595d2c29", null ],
       [ "loadGpgKeys", "class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565", null ],
       [ "loadRecipients", "class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b", null ],
       [ "markSecretKeys", "class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2", null ],
@@ -175,10 +176,13 @@ var group__keys =
       [ "m_gpgExe", "class_users_dialog.html#aa9efcd78d2b82147dd8667ced397353a", null ],
       [ "m_initOnAccept", "class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6", null ],
       [ "m_lastFilter", "class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8", null ],
+      [ "m_listRead", "class_users_dialog.html#a5dab072f562c9a18ad7c68a25a552e78", null ],
       [ "m_notLookedUp", "class_users_dialog.html#ab523762c16cb41558ef59ee40745a210", null ],
       [ "m_pass", "class_users_dialog.html#af37c4ba124940166decd520d1b1e3428", null ],
       [ "m_passStore", "class_users_dialog.html#a63e446d81e383b7ee8b21cb4ab5a8c8b", null ],
       [ "m_preselect", "class_users_dialog.html#aaf2a368116ead1381e833f52f4bb7cf5", null ],
+      [ "m_readRecipients", "class_users_dialog.html#a90c5f479650fd927e77af9cc11e3129d", null ],
+      [ "m_readState", "class_users_dialog.html#a34b725321c8c6e2e1af3945d2a19d368", null ],
       [ "m_userList", "class_users_dialog.html#a50e207112771a8c69d73a326f8efb0e2", null ],
       [ "ui", "class_users_dialog.html#ae86b7e4f8a990b980dfcc4f394722069", null ]
     ] ]

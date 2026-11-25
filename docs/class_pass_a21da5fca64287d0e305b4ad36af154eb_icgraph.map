@@ -1,26 +1,38 @@
 <map id="Pass::passReadsDifferently" name="Pass::passReadsDifferently">
-<area shape="rect" id="Node000001" title="Why pass would read a .gpg&#45;id differently from parseRecipients(), if it would." alt="" coords="948,32,1145,60"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a849c5089c91fa9599653d9dad6e4c28c" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="704,5,892,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="929,34,892,32,892,27,935,33"/>
-<area shape="rect" id="Node000005" href="$class_real_pass.html#ae8916f3175e84a15929d9a6c4cca906a" title="Refuse to have pass encrypt file when its nearest .gpg&#45;id holds lines pass reads differently from the..." alt="" coords="696,57,900,85"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="930,58,900,63,900,58,935,57"/>
-<area shape="rect" id="Node000003" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="435,5,639,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="686,20,640,22,639,17,691,19"/>
-<area shape="rect" id="Node000004" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="184,5,371,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="417,20,372,22,371,17,422,19"/>
-<area shape="rect" id="Node000006" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),..." alt="" coords="428,57,646,85"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="678,71,647,74,646,69,683,71"/>
-<area shape="rect" id="Node000011" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h..." alt="" coords="426,109,648,137"/>
-<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="712,88,611,111,610,106,707,89"/>
-<area shape="rect" id="Node000007" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="215,57,340,85"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="410,72,340,74,340,69,415,71"/>
-<area shape="rect" id="Node000008" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="177,109,378,137"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="447,89,351,111,350,106,452,88"/>
-<area shape="rect" id="Node000009" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="7,84,127,112"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="159,110,128,108,127,102,164,108"/>
-<area shape="rect" id="Node000010" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="5,136,129,164"/>
-<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="159,139,129,145,128,139,164,137"/>
-<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="408,123,379,126,378,121,413,123"/>
-<area shape="rect" id="Node000012" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="Initialize password store." alt="" coords="223,161,332,189"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="452,140,332,167,332,162,447,141"/>
+<area shape="rect" id="Node000001" title="Why pass would read a .gpg&#45;id differently from parseRecipients(), if it would." alt="" coords="1266,151,1463,179"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a849c5089c91fa9599653d9dad6e4c28c" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="1023,99,1210,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1278,147,1186,130,1186,125,1283,147"/>
+<area shape="rect" id="Node000011" href="$class_real_pass.html#ae8916f3175e84a15929d9a6c4cca906a" title="Refuse to have pass encrypt file when its nearest .gpg&#45;id holds lines pass reads differently from the..." alt="" coords="1015,176,1218,204"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="1248,177,1219,183,1218,177,1253,176"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#a776e02e4e7cb49add8d32654595d2c29" title="Whether the folder&#39;s recipient list reads differently now from when loadRecipients() read it: a pull,..." alt="" coords="763,5,948,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1054,94,926,53,926,48,1060,94"/>
+<area shape="rect" id="Node000007" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="242,72,446,100"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="1006,112,446,93,446,87,1009,107"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#aa326b1fc7fa60136eac3181a0b983816" title="Refuse an Init() under initIfUnchanged() when the folder&#39;s list no longer reads as the caller read it..." alt="" coords="766,124,945,152"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="1005,124,946,132,945,127,1010,123"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="520,15,671,43"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="745,29,672,31,671,26,750,28"/>
+<area shape="rect" id="Node000005" href="$class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1" title="Connect dialog signals." alt="" coords="241,16,447,44"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="502,30,448,32,447,27,507,29"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,44,193,72"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="223,45,194,50,192,45,227,42"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="224,74,194,72,192,67,229,72"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="532,124,659,152"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="748,139,659,141,659,136,753,138"/>
+<area shape="rect" id="Node000010" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="Initialize password store." alt="" coords="542,176,650,204"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="771,155,651,182,650,177,765,156"/>
+<area shape="rect" id="Node000012" href="$class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),..." alt="" coords="746,228,965,256"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1031,207,929,230,928,225,1025,208"/>
+<area shape="rect" id="Node000017" href="$class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re&#45;encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h..." alt="" coords="744,176,967,204"/>
+<area shape="poly" id="edge17_Node000011_Node000017" title=" " alt="" coords="996,191,967,193,967,188,1001,190"/>
+<area shape="rect" id="Node000013" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="534,280,658,308"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="770,260,659,285,658,279,765,260"/>
+<area shape="rect" id="Node000014" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="495,228,696,256"/>
+<area shape="poly" id="edge14_Node000012_Node000014" title=" " alt="" coords="728,242,697,245,697,240,733,242"/>
+<area shape="rect" id="Node000015" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="284,203,404,231"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="477,231,405,226,405,220,482,230"/>
+<area shape="rect" id="Node000016" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="282,255,406,283"/>
+<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="477,255,406,265,406,260,482,254"/>
+<area shape="poly" id="edge18_Node000017_Node000010" title=" " alt="" coords="726,191,651,193,650,188,731,190"/>
+<area shape="poly" id="edge19_Node000017_Node000014" title=" " alt="" coords="770,207,669,230,668,225,765,208"/>
 </map>

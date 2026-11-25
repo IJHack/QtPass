@@ -1,7 +1,20 @@
 <map id="Pass::recipientsForEditing" name="Pass::recipientsForEditing">
-<area shape="rect" id="Node000001" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="493,5,680,33"/>
-<area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="241,5,445,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="474,19,445,22,445,17,480,19"/>
-<area shape="rect" id="Node000003" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,5,193,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,19,193,22,193,17,228,19"/>
+<area shape="rect" id="Node000001" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="928,74,1115,102"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a776e02e4e7cb49add8d32654595d2c29" title="Whether the folder&#39;s recipient list reads differently now from when loadRecipients() read it: a pull,..." alt="" coords="694,5,880,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="947,69,877,53,877,48,953,70"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="242,72,446,100"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="910,90,446,89,446,84,914,85"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#aa326b1fc7fa60136eac3181a0b983816" title="Refuse an Init() under initIfUnchanged() when the folder&#39;s list no longer reads as the caller read it..." alt="" coords="697,124,877,152"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="942,105,855,127,854,121,937,106"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="495,15,646,43"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="676,29,647,31,646,26,681,28"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1" title="Connect dialog signals." alt="" coords="241,16,447,44"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="477,30,448,32,447,27,482,29"/>
+<area shape="rect" id="Node000005" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,47,193,75"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,46,194,52,192,47,227,44"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="224,75,194,73,193,68,229,73"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="508,124,634,152"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="679,138,634,141,634,136,685,138"/>
+<area shape="rect" id="Node000009" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="Initialize password store." alt="" coords="516,176,625,204"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="714,156,626,180,625,175,709,157"/>
 </map>

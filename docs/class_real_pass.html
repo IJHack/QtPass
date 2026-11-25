@@ -192,6 +192,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac679a086b289cdb9245906948ba0458a inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update environment for subprocesses.  <br /></td></tr>
 <tr class="memitem:a849c5089c91fa9599653d9dad6e4c28c inherit pub_methods_class_pass" id="r_a849c5089c91fa9599653d9dad6e4c28c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c">recipientsForEditing</a> (const QString &amp;dir, const QString &amp;passStore) -&gt; <a class="el" href="struct_pass_1_1_recipients_for_editing.html">RecipientsForEditing</a></td></tr>
 <tr class="memdesc:a849c5089c91fa9599653d9dad6e4c28c inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The recipients a dialog may preselect for editing the list of <code class="param">dir</code>.  <br /></td></tr>
+<tr class="memitem:a2749320ef73a7ee973ad2d38ae4acfd9 inherit pub_methods_class_pass" id="r_a2749320ef73a7ee973ad2d38ae4acfd9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a2749320ef73a7ee973ad2d38ae4acfd9">initIfUnchanged</a> (const QString &amp;path, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users, const QString &amp;dir, const QString &amp;passStore, const <a class="el" href="struct_pass_1_1_recipients_for_editing.html">RecipientsForEditing</a> &amp;read) -&gt; bool</td></tr>
+<tr class="memdesc:a2749320ef73a7ee973ad2d38ae4acfd9 inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Init()</a>, but only while the list of <code class="param">dir</code> still reads as the caller read it with <a class="el" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c" title="The recipients a dialog may preselect for editing the list of dir.">recipientsForEditing()</a>.  <br /></td></tr>
 <tr class="memitem:a66d554f693ae3069381483cb229bb193 inherit pub_methods_class_pass" id="r_a66d554f693ae3069381483cb229bb193"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a66d554f693ae3069381483cb229bb193">isIdle</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:a66d554f693ae3069381483cb229bb193 inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether no gpg, git or pass of this backend runs or waits.  <br /></td></tr>
 <tr class="memitem:a1b7d6acd239491873c670576d4891fa3 inherit pub_methods_class_pass" id="r_a1b7d6acd239491873c670576d4891fa3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a1b7d6acd239491873c670576d4891fa3">isPushing</a> () const -&gt; bool</td></tr>
@@ -264,6 +266,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a433f0bf99f1a4fdd8e56944ff234eb2b inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unfinished git operation in progress in the store, if any.  <br /></td></tr>
 <tr class="memitem:a273c43add4c728d419585f642bce24d4 inherit pro_methods_class_pass" id="r_a273c43add4c728d419585f642bce24d4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a273c43add4c728d419585f642bce24d4">refusePendingPull</a> () -&gt; bool</td></tr>
 <tr class="memdesc:a273c43add4c728d419585f642bce24d4 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse a store change while a Git pull is still queued or running.  <br /></td></tr>
+<tr class="memitem:aa326b1fc7fa60136eac3181a0b983816 inherit pro_methods_class_pass" id="r_aa326b1fc7fa60136eac3181a0b983816"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aa326b1fc7fa60136eac3181a0b983816">refuseChangedList</a> () -&gt; bool</td></tr>
+<tr class="memdesc:aa326b1fc7fa60136eac3181a0b983816 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Init()</a> under <a class="el" href="class_pass.html#a2749320ef73a7ee973ad2d38ae4acfd9" title="Init(), but only while the list of dir still reads as the caller read it with recipientsForEditing().">initIfUnchanged()</a> when the folder's list no longer reads as the caller read it.  <br /></td></tr>
+<tr class="memitem:a876c07a0bb6d00c63f82c4abae0de5e4 inherit pro_methods_class_pass" id="r_a876c07a0bb6d00c63f82c4abae0de5e4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a876c07a0bb6d00c63f82c4abae0de5e4">refuseBusyForExpectedList</a> () -&gt; bool</td></tr>
+<tr class="memdesc:a876c07a0bb6d00c63f82c4abae0de5e4 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Init()</a> under <a class="el" href="class_pass.html#a2749320ef73a7ee973ad2d38ae4acfd9" title="Init(), but only while the list of dir still reads as the caller read it with recipientsForEditing().">initIfUnchanged()</a> while the executor has work queued or running, for a backend whose external tool writes the list only when its process runs.  <br /></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
 <tr class="memitem:aff660edce34d33f5a2adfa8c130470f0 inherit pro_methods_class_pass" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
@@ -642,7 +648,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01175">1175</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01181">1181</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -754,7 +760,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01273">1273</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01279">1279</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
@@ -1080,7 +1086,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01262">1262</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01268">1268</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -1322,7 +1328,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01171">1171</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01177">1177</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
@@ -1438,7 +1444,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01189">1189</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01195">1195</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-29-summary" class="dynsummary">
 </div>
@@ -1491,7 +1497,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The store-relative name. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01179">1179</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01185">1185</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary">
 </div>

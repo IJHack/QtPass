@@ -3,7 +3,7 @@ var searchData=
   ['readstderr_0',['readStderr',['../struct_executor_1_1_exec_queue_item.html#a776ad4913f376526ba807a69b9868115',1,'Executor::ExecQueueItem']]],
   ['readstdout_1',['readStdout',['../struct_executor_1_1_exec_queue_item.html#a06963eefa82e1b35d4c62a3352fcd60f',1,'Executor::ExecQueueItem']]],
   ['realpass_2',['realPass',['../class_pass_backend_factory.html#a9014d707f358b3523a23d94f64c3dee2',1,'PassBackendFactory']]],
-  ['recipients_3',['recipients',['../struct_pass_1_1_recipients_for_editing.html#a1d5f75f32ae50b5189f5f9579e4ea2e5',1,'Pass::RecipientsForEditing']]],
+  ['recipients_3',['recipients',['../struct_pass_1_1_recipients_for_editing.html#a1d5f75f32ae50b5189f5f9579e4ea2e5',1,'Pass::RecipientsForEditing::recipients'],['../struct_pass_1_1_expected_list.html#a62814f6d73993cf8e6093c10efa1f2a3',1,'Pass::ExpectedList::recipients']]],
   ['recorderror_4',['recordError',['../struct_pass_1_1_skipped_walk.html#aca19a6cf99efa09ed47299a049a76eda',1,'Pass::SkippedWalk']]],
   ['reencrypted_5',['reencrypted',['../struct_imitate_pass_1_1_reencrypt_result.html#a361f02fa1e8941a21c36ac5c76412774',1,'ImitatePass::ReencryptResult']]],
   ['rel_6',['rel',['../struct_real_pass_1_1_link_commit.html#ae7cbd97a14853c0e5af92617181d3151',1,'RealPass::LinkCommit']]],

@@ -4,6 +4,7 @@ var hierarchy =
     [ "Base32", "class_base32.html", null ],
     [ "ImportKeyDialog::BlockKeys", "struct_import_key_dialog_1_1_block_keys.html", null ],
     [ "Executor::ExecQueueItem", "struct_executor_1_1_exec_queue_item.html", null ],
+    [ "Pass::ExpectedList", "struct_pass_1_1_expected_list.html", null ],
     [ "FileContent", "class_file_content.html", null ],
     [ "GrepSearchController::FinishOutcome", "struct_grep_search_controller_1_1_finish_outcome.html", null ],
     [ "GpgIdGeneration", "class_gpg_id_generation.html", null ],

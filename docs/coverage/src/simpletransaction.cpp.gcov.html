@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-24 23:42:44</td>
+            <td class="headerValue">2026-11-25 00:51:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -91,14 +91,14 @@
 <span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         112 :   transactionDepth++;</span></span>
 <span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         112 : }</span></span>
 <span id="L20"><span class="lineNum">      20</span>              : </span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         287 : void SimpleTransaction::transactionAdd(PROCESS id) {</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         287 :   qCDebug(lcQtPass) &lt;&lt; &quot;ADD&quot; &lt;&lt; transactionDepth &lt;&lt; id;</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         287 :   if (transactionDepth &gt; 0) {</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         288 : void SimpleTransaction::transactionAdd(PROCESS id) {</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         288 :   qCDebug(lcQtPass) &lt;&lt; &quot;ADD&quot; &lt;&lt; transactionDepth &lt;&lt; id;</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         288 :   if (transactionDepth &gt; 0) {</span></span>
 <span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         166 :     lastInTransaction = id;</span></span>
 <span id="L25"><span class="lineNum">      25</span>              :   } else {</span>
 <span id="L26"><span class="lineNum">      26</span>              :     transactionQueue.emplace(id, id);</span>
 <span id="L27"><span class="lineNum">      27</span>              :   }</span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         287 : }</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         288 : }</span></span>
 <span id="L29"><span class="lineNum">      29</span>              : </span>
 <span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         113 : void SimpleTransaction::transactionEnd(PROCESS pid) {</span></span>
 <span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         113 :   qCDebug(lcQtPass) &lt;&lt; &quot;END&quot; &lt;&lt; transactionDepth;</span></span>

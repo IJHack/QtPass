@@ -32,7 +32,7 @@ var searchData=
   ['passreadsdifferently_29',['passReadsDifferently',['../class_pass.html#a21da5fca64287d0e305b4ad36af154eb',1,'Pass']]],
   ['passshowhandler_30',['passShowHandler',['../class_main_window.html#ad8dfb7651169c5fe73440315926d6abc',1,'MainWindow']]],
   ['passsigningkey_31',['passSigningKey',['../struct_app_settings.html#a2dbd96ed7a8f3d7a92474728dd5605a1',1,'AppSettings']]],
-  ['passstore_32',['passStore',['../struct_app_settings.html#a402c261265cc7697d5ca38fc8d784ef4',1,'AppSettings']]],
+  ['passstore_32',['passStore',['../struct_app_settings.html#a402c261265cc7697d5ca38fc8d784ef4',1,'AppSettings::passStore'],['../struct_pass_1_1_expected_list.html#a4316eeffae7fdf735c5daf28c4753482',1,'Pass::ExpectedList::passStore']]],
   ['passstorechanged_33',['passStoreChanged',['../class_qt_pass.html#aa1153ea591126774caa31920020d188e',1,'QtPass']]],
   ['passtemplate_34',['passTemplate',['../struct_app_settings.html#ab55d5b7f9d9314de9d16a315795fc3ca',1,'AppSettings']]],
   ['passumask_35',['passUmask',['../class_util.html#a11eb90b4a067feefd84769d336d79b10',1,'Util']]],

@@ -151,7 +151,7 @@ var searchData=
   ['startreencryptpath_148',['startReencryptPath',['../class_imitate_pass.html#aecffecc95bd1c0281849dbfe11231e36',1,'ImitatePass::startReencryptPath()'],['../class_main_window.html#a02ec9927bda826675653c0af916c8f33',1,'MainWindow::startReencryptPath()']]],
   ['startreencryptworker_149',['startReencryptWorker',['../class_imitate_pass.html#a44b84cc53695ae8e242ca182546234d4',1,'ImitatePass']]],
   ['state_150',['State',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073',1,'Pass::RecipientsForEditing']]],
-  ['state_151',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing']]],
+  ['state_151',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing::state'],['../struct_pass_1_1_expected_list.html#a7d7e16278de4017b7492031e36b5a082',1,'Pass::ExpectedList::state']]],
   ['statusentries_152',['statusEntries',['../class_real_pass.html#ac0f277d51398a8ae8a296a9d0ba97b0b',1,'RealPass']]],
   ['statusmessage_153',['statusMessage',['../class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b',1,'ClipboardManager::statusMessage()'],['../class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a',1,'QtPass::statusMessage()']]],
   ['statusmsg_154',['statusMsg',['../class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb',1,'Pass']]],

@@ -174,6 +174,12 @@ var group__backend =
         [ "state", "struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3", null ],
         [ "warning", "struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc", null ]
       ] ],
+      [ "ExpectedList", "struct_pass_1_1_expected_list.html", [
+        [ "dir", "struct_pass_1_1_expected_list.html#a4ae7fc03ec59aae6898ef92a060063a4", null ],
+        [ "passStore", "struct_pass_1_1_expected_list.html#a4316eeffae7fdf735c5daf28c4753482", null ],
+        [ "recipients", "struct_pass_1_1_expected_list.html#a62814f6d73993cf8e6093c10efa1f2a3", null ],
+        [ "state", "struct_pass_1_1_expected_list.html#a7d7e16278de4017b7492031e36b5a082", null ]
+      ] ],
       [ "PROCESS", "class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772", null ],
       [ "SkippedWalks", "class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294", null ],
       [ "LinkScope", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106", [
@@ -228,6 +234,7 @@ var group__backend =
       [ "idle", "class_pass.html#ad0936452d739b37d9a9e46db356792c2", null ],
       [ "Init", "class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2", null ],
       [ "init", "class_pass.html#aa0971162be08e9090e278b9f0a0aae09", null ],
+      [ "initIfUnchanged", "class_pass.html#a2749320ef73a7ee973ad2d38ae4acfd9", null ],
       [ "Insert", "class_pass.html#a86ad2005a6517f9c304a9e156755778c", null ],
       [ "insertFailed", "class_pass.html#a4f8a565d9693da516f7b10e3d7652ae8", null ],
       [ "insertsPending", "class_pass.html#aa4e8d6d0d817903ae20ddadc3c34657e", null ],
@@ -249,6 +256,8 @@ var group__backend =
       [ "queueShow", "class_pass.html#a36a6f3e2815272e10ff895edc487d388", null ],
       [ "recipientsForEditing", "class_pass.html#a849c5089c91fa9599653d9dad6e4c28c", null ],
       [ "refuseAsNotPartOfStore", "class_pass.html#a587c7c2f547746e11e668cdb769f0f69", null ],
+      [ "refuseBusyForExpectedList", "class_pass.html#a876c07a0bb6d00c63f82c4abae0de5e4", null ],
+      [ "refuseChangedList", "class_pass.html#aa326b1fc7fa60136eac3181a0b983816", null ],
       [ "refuseFolderOutsideStore", "class_pass.html#afea04fa657d65846e2772b0b25c96276", null ],
       [ "refuseLinkedPath", "class_pass.html#a6cca7cd5646a752c16dac59df6e53581", null ],
       [ "refusePendingPull", "class_pass.html#a273c43add4c728d419585f642bce24d4", null ],
@@ -275,6 +284,8 @@ var group__backend =
       [ "exec", "class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af", null ],
       [ "kBlockingPullMs", "class_pass.html#afeaea2f12756a0e114d66c40c0860da0", null ],
       [ "kMaxPlaintextBytes", "class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72", null ],
+      [ "m_expectedList", "class_pass.html#a93a8e6e93ca1d4d4f7dea03064129859", null ],
+      [ "m_expectedListRefused", "class_pass.html#a8013cd33049cae275127c5045e3e50bb", null ],
       [ "m_insertedEntries", "class_pass.html#a73f00b989172a1d9e34d95d154a73be3", null ],
       [ "m_insertsPending", "class_pass.html#ae90247bfa03db35b4e4d4449b0a0065e", null ],
       [ "m_pendingShows", "class_pass.html#af310a136a6d9ec695c490215eef4d937", null ],
