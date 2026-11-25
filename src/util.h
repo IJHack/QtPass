@@ -535,8 +535,10 @@ public:
    * relative to the one above it without following a link (`openat()` with
    * `O_NOFOLLOW | O_DIRECTORY`) and the file relative to the last, so the
    * folders judged are the folders walked. @p root itself may be a link: a
-   * linked store root is the user's setup. On Windows the folders are
-   * checked with isUnderLink() before the read; the window stays there.
+   * linked store root is the user's setup. On Windows each folder is opened
+   * by name, refused when it is a reparse point, and held open without
+   * FILE_SHARE_DELETE until the file is read, so none can be renamed or
+   * replaced meanwhile.
    * @param root The store root.
    * @param path The file, spelled under @p root.
    * @param maxBytes The most bytes accepted.

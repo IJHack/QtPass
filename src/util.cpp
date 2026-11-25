@@ -26,6 +26,7 @@
 #include <algorithm>
 #include <memory>
 #include <optional>
+#include <vector>
 
 #ifdef Q_OS_WIN
 #include <fcntl.h>
@@ -1306,9 +1307,46 @@ auto Util::readRegularFileUnder(const QString &root, const QString &path,
     return std::nullopt;
   }
 #ifdef Q_OS_WIN
-  if (isUnderLink(path, root)) {
-    return std::nullopt;
+  // No openat() here: each folder from the root down is opened by name and
+  // held open, without FILE_SHARE_DELETE, until the file is read. A folder
+  // held that way cannot be renamed, removed or replaced by a junction
+  // meanwhile, so the file is opened through exactly the folders judged.
+  // The root itself is followed (a linked store is the user's setup).
+  std::vector<HANDLE> held;
+  const auto release = qScopeGuard([&held] {
+    for (HANDLE handle : held) {
+      CloseHandle(handle);
+    }
+  });
+  QString folder = cleanRoot;
+  for (qsizetype i = 0; i < parts.size(); ++i) {
+    const bool isRoot = i == 0;
+    if (!isRoot) {
+      folder += QLatin1Char('/') + parts.at(i - 1);
+    }
+    const std::wstring native = QDir::toNativeSeparators(folder).toStdWString();
+    // GENERIC_READ (listing the folder) is data access, so the share mode
+    // is enforced against a later open for DELETE; attribute access alone
+    // would not be.
+    HANDLE handle =
+        CreateFileW(native.c_str(), GENERIC_READ,
+                    FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_EXISTING,
+                    FILE_FLAG_BACKUP_SEMANTICS |
+                        (isRoot ? 0 : FILE_FLAG_OPEN_REPARSE_POINT),
+                    nullptr);
+    if (handle == INVALID_HANDLE_VALUE) {
+      return std::nullopt;
+    }
+    held.push_back(handle);
+    BY_HANDLE_FILE_INFORMATION info{};
+    if (!GetFileInformationByHandle(handle, &info) ||
+        (info.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == 0 ||
+        (!isRoot &&
+         (info.dwFileAttributes & FILE_ATTRIBUTE_REPARSE_POINT) != 0)) {
+      return std::nullopt;
+    }
   }
+  // openRegularFile() refuses a reparse point as the file itself.
   return readRegularFile(path, maxBytes);
 #else
   // The root by name, followed if it is a link (the user's setup); below it
