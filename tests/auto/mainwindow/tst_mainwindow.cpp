@@ -6083,14 +6083,36 @@ void tst_mainwindow::renameFolderMovesIt() {
       QDir::cleanPath(store.filePath(QStringLiteral("../ren-escape")))));
 
   QVERIFY(selectPath(store.filePath(QStringLiteral("ren-src"))));
-  ModalDriver driver(typeIntoInputDialog(QStringLiteral("ren-dst")));
-  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renameFolder",
-                                    Qt::DirectConnection));
-  QVERIFY2(driver.seen == 1,
-           qPrintable(driver.seenClasses.join(QStringLiteral(", ")) +
-                      driver.boxTexts.join(QStringLiteral(" | "))));
+  {
+    ModalDriver driver(typeIntoInputDialog(QStringLiteral("ren-dst")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renameFolder",
+                                      Qt::DirectConnection));
+    QVERIFY2(driver.seen == 1,
+             qPrintable(driver.seenClasses.join(QStringLiteral(", ")) +
+                        driver.boxTexts.join(QStringLiteral(" | "))));
+  }
   QTRY_VERIFY(QFileInfo(store.filePath(QStringLiteral("ren-dst"))).isDir());
   QVERIFY(!QFileInfo::exists(store.filePath(QStringLiteral("ren-src"))));
+
+#ifndef Q_OS_WIN
+  // ".." after a link: rename(2) follows the link first, so the uncleaned
+  // name moved the folder beside the link's target (ANT-2026-MVI4DGGO).
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QDir outside(outsideDir.path());
+  QVERIFY(outside.mkpath(QStringLiteral("handbook")));
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("handbook")),
+                      store.filePath(QStringLiteral("ren-link"))));
+  QVERIFY(selectPath(store.filePath(QStringLiteral("ren-dst"))));
+  ModalDriver linked(
+      typeIntoInputDialog(QStringLiteral("ren-link/../ren-back")));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renameFolder",
+                                    Qt::DirectConnection));
+  QCOMPARE(linked.boxTitles, QStringList());
+  QTRY_VERIFY(QFileInfo(store.filePath(QStringLiteral("ren-back"))).isDir());
+  QVERIFY(!QFileInfo::exists(outside.filePath(QStringLiteral("ren-back"))));
+  QVERIFY(QFile::remove(store.filePath(QStringLiteral("ren-link"))));
+#endif
 }
 
 /**

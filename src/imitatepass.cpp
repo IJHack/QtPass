@@ -1810,7 +1810,13 @@ auto ImitatePass::commitName(const QString &path) const -> QString {
 
 void ImitatePass::Move(const QString src, const QString dest,
                        const bool force) {
-  if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+  // Cleaned once, so the checks and the rename see one path: every check
+  // removes ".." as text, while rename(2) follows a link first and applies
+  // ".." after it, so "link/../x" was judged as <store>/x and landed beside
+  // the link's target.
+  const QString from = QDir::cleanPath(src);
+  const QString to = QDir::cleanPath(dest);
+  if (refuseLinkedPath(from) || refuseLinkedPath(to)) {
     return;
   }
   if (refuseUnfinishedGitOperation() || refusePendingPull()) {
@@ -1821,7 +1827,7 @@ void ImitatePass::Move(const QString src, const QString dest,
   // be booked as a step of the move, and its decrypted output reported as
   // the move's, which is not secret. So every check runs first, and the
   // transaction holds only the Git commands.
-  const QString destFile = resolveMoveDestination(src, dest, force);
+  const QString destFile = resolveMoveDestination(from, to, force);
   if (destFile.isEmpty()) {
     return;
   }
@@ -1829,16 +1835,16 @@ void ImitatePass::Move(const QString src, const QString dest,
     return;
   }
 
-  if (refuseOverlappingMove(src, destFile)) {
+  if (refuseOverlappingMove(from, destFile)) {
     return;
   }
 
-  qCDebug(lcQtPass) << "Move Source: " << src;
+  qCDebug(lcQtPass) << "Move Source: " << from;
   qCDebug(lcQtPass) << "Move Destination: " << destFile;
 
-  const bool folder = QFileInfo(src).isDir();
-  PendingMove move{src, destFile,
-                   QDir::cleanPath(getGpgIdPath(src, m_settings.passStore)),
+  const bool folder = QFileInfo(from).isDir();
+  PendingMove move{from, destFile,
+                   QDir::cleanPath(getGpgIdPath(from, m_settings.passStore)),
                    std::nullopt};
 
   if (gitReady()) {
@@ -1848,18 +1854,18 @@ void ImitatePass::Move(const QString src, const QString dest,
     // folder). Every Move() through Git ends in one PASS_MOVE.
     m_pendingMoves.enqueue(move);
     TransactionHelper trans(&m_transaction, PASS_MOVE);
-    executeMoveGit(src, destFile, force);
+    executeMoveGit(from, destFile, force);
     return;
   }
   // A forced move replaces the destination entry in the one rename, as
   // git mv -f does: removing it first lost it when the rename then failed
   // (and lost the entry itself, moved onto its own name). A folder is never
   // replaced, forced or not. Without Git nothing else reports a failure.
-  const bool moved = force && !folder ? Util::replaceFile(src, destFile, true)
-                                      : QDir().rename(src, destFile);
+  const bool moved = force && !folder ? Util::replaceFile(from, destFile, true)
+                                      : QDir().rename(from, destFile);
   if (!moved) {
     emit critical(tr("Move failed"),
-                  tr("Could not move %1 to %2.").arg(src, destFile));
+                  tr("Could not move %1 to %2.").arg(from, destFile));
     return;
   }
   move.landed = true;
@@ -1961,16 +1967,19 @@ auto ImitatePass::copyDestination(const QString &src, const QString &dest,
 
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
+  // Cleaned once, as in Move().
+  const QString from = QDir::cleanPath(src);
+  const QString to = QDir::cleanPath(dest);
   // QFile::copy reads through a link: the target's bytes would become an
   // entry of the store.
-  if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+  if (refuseLinkedPath(from) || refuseLinkedPath(to)) {
     return;
   }
   if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
   // As in Move(): no message box inside the transaction.
-  const QString destFile = copyDestination(src, dest, force);
+  const QString destFile = copyDestination(from, to, force);
   if (destFile.isEmpty()) {
     return;
   }
@@ -1979,9 +1988,9 @@ void ImitatePass::Copy(const QString src, const QString dest,
   // re-encryption below and a forced overwrite survives a half-way failure;
   // without force nothing is replaced, not even what appeared since the check.
   QString why;
-  if (!Util::copyFileReplacing(src, destFile, force, &why)) {
+  if (!Util::copyFileReplacing(from, destFile, force, &why)) {
     emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, destFile) + "\n" +
+                  tr("Could not copy %1 to %2.").arg(from, destFile) + "\n" +
                       why);
     return;
   }
@@ -1989,7 +1998,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
     TransactionHelper trans(&m_transaction, PASS_COPY);
     executeGit(GIT_COPY, {"add", "--", pgit(destFile)});
     gitCommit(destFile, QString("Copied from %1 to %2 using QtPass.")
-                            .arg(commitName(src), commitName(destFile)));
+                            .arg(commitName(from), commitName(destFile)));
   }
   const QFileInfo written(destFile);
   if (written.isDir()) {
