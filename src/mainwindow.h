@@ -97,12 +97,20 @@ public:
 
   /**
    * @brief Display a transient message in the text panel.
+   *
+   * HTML is appended to what the panel shows (command output, one message
+   * after another); the panel then keeps only its last
+   * kMaxFlashCharacters, so a long session of Git and gpg output cannot
+   * grow it, and the re-parse each message costs, without bound
+   * (scan ANT-2026-VQGRD45V).
    * @param text Message text to display.
    * @param isError true to style the message as an error.
    * @param isHtml true if text contains HTML markup.
    */
   void flashText(const QString &text, const bool isError,
                  const bool isHtml = false);
+  /** @brief Most characters the text panel keeps of appended output. */
+  static constexpr int kMaxFlashCharacters = 64 * 1024;
 
   /**
    * @brief Return the currently selected index in the tree view.

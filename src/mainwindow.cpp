@@ -54,7 +54,10 @@
 #include <QPushButton>
 #include <QScrollBar>
 #include <QShortcut>
+#include <QTextBlock>
 #include <QTextCharFormat>
+#include <QTextCursor>
+#include <QTextDocument>
 #include <QTextEdit>
 #include <QTextStream>
 #include <QTimer>
@@ -518,6 +521,21 @@ void MainWindow::flashText(const QString &text, const bool isError,
       _text = ui->textBrowser->toHtml() + _text;
     }
     ui->textBrowser->setHtml(_text);
+    // Only the latest output: from the front, whole paragraphs where one
+    // ends within the cap, else at the cap itself.
+    QTextDocument *doc = ui->textBrowser->document();
+    const int excess = doc->characterCount() - kMaxFlashCharacters;
+    if (excess > 0) {
+      QTextCursor trim(doc);
+      trim.setPosition(excess, QTextCursor::KeepAnchor);
+      const QTextBlock block = doc->findBlock(excess);
+      if (block.isValid() && excess > block.position() &&
+          block.next().isValid() &&
+          block.next().position() - excess < kMaxFlashCharacters / 2) {
+        trim.setPosition(block.next().position(), QTextCursor::KeepAnchor);
+      }
+      trim.removeSelectedText();
+    }
   } else {
     ui->textBrowser->setText(text);
   }
