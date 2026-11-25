@@ -805,6 +805,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Another user on the same computer can no longer keep QtPass from
+  starting. The names QtPass uses to find a running copy of itself were
+  built from the login name alone and, on Linux and BSD, sit in the shared
+  temporary folder, so another account could create them first: a launch
+  then exited without a window, or hung. The names now end in a random
+  suffix kept in a folder only you can write to (`XDG_RUNTIME_DIR`). If
+  there is no such folder, each launch opens its own window instead of
+  handing over to the one already open (scan ANT-2026-1JUBRKLZ).
 - **Rename folder** and **Rename password** no longer move an entry out of
   the store when the new name goes through a linked folder and back with
   `..` (for example `handbook/../team-old`, with `handbook` a link another

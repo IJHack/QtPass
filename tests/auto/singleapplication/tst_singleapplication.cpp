@@ -10,6 +10,7 @@
 #include <QProcessEnvironment>
 #include <QSharedMemory>
 #include <QSignalSpy>
+#include <QTemporaryDir>
 #include <QTextStream>
 #include <QtTest>
 #include <cstdio>
@@ -302,6 +303,9 @@ private Q_SLOTS:
   void takeoverRaceLostToPeerThatStartsListening();
   void takeoverGivesUpWhenNobodyListens();
   void listenFailureReleasesSegment();
+  void privateKeyIsKeptForThisUserOnly();
+  void privateKeyReplacesAGarbledSuffix();
+  void privateKeyWithoutAFolderIsNeverTheSame();
 
 private:
   auto app() -> SingleApplication *;
@@ -712,6 +716,84 @@ void tst_singleapplication::listenFailureReleasesSegment() {
   QVERIFY2(mute.finish(), "instance did not exit cleanly");
   QVERIFY2(mute.log().contains(QStringLiteral("cannot listen on")),
            qPrintable("listen failure not logged:\n" + mute.log()));
+}
+
+/**
+ * @brief The key main() constructs with is the login-based name plus a
+ *        suffix kept in a folder of this user: every launch computes the
+ *        same key, and another local user, who knows only the login name,
+ *        cannot create the segment, semaphore or socket first
+ *        (ANT-2026-1JUBRKLZ).
+ */
+void tst_singleapplication::privateKeyIsKeptForThisUserOnly() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString base = QStringLiteral("someoneQtPass");
+  const QString key = SingleApplication::privateKeyIn(base, dir.path());
+  QVERIFY2(key.startsWith(base), qPrintable(key));
+  const QString suffix = key.mid(base.size());
+  QCOMPARE(suffix.size(), SingleApplication::privateSuffixLength);
+  QVERIFY2(QRegularExpression(QStringLiteral("^[0-9a-f]+$"))
+               .match(suffix)
+               .hasMatch(),
+           qPrintable(suffix));
+  QCOMPARE(SingleApplication::privateKeyIn(base, dir.path()), key);
+
+  const QStringList files =
+      QDir(dir.path()).entryList(QDir::Files | QDir::Hidden);
+  QCOMPARE(files.size(), 1);
+#ifndef Q_OS_WIN
+  QCOMPARE(QFileInfo(QDir(dir.path()).filePath(files.first())).permissions() &
+               (QFileDevice::ReadGroup | QFileDevice::WriteGroup |
+                QFileDevice::ReadOther | QFileDevice::WriteOther),
+           QFileDevice::Permissions());
+#endif
+
+  // Another login name gets its own suffix; another folder (another
+  // session) a new one.
+  const QString other = SingleApplication::privateKeyIn(
+      QStringLiteral("otherQtPass"), dir.path());
+  QVERIFY(other.startsWith(QStringLiteral("otherQtPass")));
+  QTemporaryDir dir2;
+  QVERIFY(dir2.isValid());
+  QVERIFY(SingleApplication::privateKeyIn(base, dir2.path()) != key);
+}
+
+/**
+ * @brief A suffix file that holds anything but a suffix is replaced, and
+ *        the new suffix is kept from then on.
+ */
+void tst_singleapplication::privateKeyReplacesAGarbledSuffix() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString base = QStringLiteral("someoneQtPass");
+  const QString key = SingleApplication::privateKeyIn(base, dir.path());
+  const QStringList files = QDir(dir.path()).entryList(QDir::Files);
+  QCOMPARE(files.size(), 1);
+  {
+    QFile f(QDir(dir.path()).filePath(files.first()));
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write("not a suffix\n");
+  }
+  const QString fresh = SingleApplication::privateKeyIn(base, dir.path());
+  QVERIFY(fresh != key);
+  QCOMPARE(fresh.size(), key.size());
+  QCOMPARE(SingleApplication::privateKeyIn(base, dir.path()), fresh);
+}
+
+/**
+ * @brief Without a folder of its own the key is still not the guessable
+ *        one: a random suffix each time, so this launch runs as its own
+ *        instance rather than on names another user can take.
+ */
+void tst_singleapplication::privateKeyWithoutAFolderIsNeverTheSame() {
+  const QString base = QStringLiteral("someoneQtPass");
+  const QString first = SingleApplication::privateKeyIn(base, QString());
+  const QString second = SingleApplication::privateKeyIn(
+      base, QStringLiteral("/nonexistent/qtpass-runtime"));
+  QCOMPARE(first.size(), base.size() + SingleApplication::privateSuffixLength);
+  QVERIFY(first.startsWith(base));
+  QVERIFY(first != second);
 }
 
 auto main(int argc, char *argv[]) -> int {

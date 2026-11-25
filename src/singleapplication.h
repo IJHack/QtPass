@@ -39,6 +39,34 @@ public:
   SingleApplication(int &argc, char *argv[], // NOLINT(modernize-avoid-c-arrays)
                     QString uniqueKey);
   /**
+   * @brief The key to construct with: @p base plus a random suffix kept in
+   *        a folder only this user can write to (see privateKeyIn()).
+   *
+   * The segment, its semaphore and the socket are named after the key, and
+   * on Linux and BSD those names sit in the shared temporary folder. Built
+   * from the login name alone, another local user could create them first
+   * and keep QtPass from starting (scan ANT-2026-1JUBRKLZ). The suffix is
+   * kept in QStandardPaths::RuntimeLocation (Qt refuses that folder when
+   * another user owns it); on Windows in the per-user temporary folder.
+   * Call it before the application object exists.
+   * @param base Per-user name, such as the login name plus "QtPass".
+   * @return The key for the constructor.
+   */
+  static auto privateKey(const QString &base) -> QString;
+  /**
+   * @brief privateKey() with the folder for the suffix given.
+   *
+   * The first call writes a random suffix to a file in @p dir, readable by
+   * this user only; later calls read it back, so every launch of this user
+   * computes the same key. Without a usable folder the suffix is random and
+   * not kept: each launch then runs as its own instance, without IPC, rather
+   * than on a name someone else can take.
+   * @param base Per-user name, such as the login name plus "QtPass".
+   * @param dir Folder only this user can write to; empty when there is none.
+   * @return @p base followed by privateSuffixLength lowercase hex digits.
+   */
+  static auto privateKeyIn(const QString &base, const QString &dir) -> QString;
+  /**
    * @brief Query whether another instance is already running.
    * @return true if another instance with the same key is running.
    */
@@ -125,6 +153,13 @@ private:
   static const int takeoverProbes = 5;
   /** @brief Pause between two takeover probes, in milliseconds. */
   static const int takeoverProbeIntervalMs = 100;
+
+public:
+  /**
+   * @brief Hex digits privateKey() appends: 64 random bits, short enough to
+   *        keep a socket path under the 104 bytes macOS allows.
+   */
+  static const int privateSuffixLength = 16;
 };
 
 #endif // SRC_SINGLEAPPLICATION_H_

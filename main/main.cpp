@@ -65,7 +65,8 @@ auto main(int argc, char *argv[]) -> int {
   QString name = qgetenv("USER");
   if (name.isEmpty())
     name = qgetenv("USERNAME");
-  SingleApplication app(argc, argv, name + "QtPass");
+  SingleApplication app(argc, argv,
+                        SingleApplication::privateKey(name + "QtPass"));
 #else
   QApplication app(argc, argv);
 #endif

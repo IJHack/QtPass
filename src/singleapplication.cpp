@@ -7,11 +7,77 @@
  */
 #include "singleapplication.h"
 #include "qtpasslogging.h"
+#include <QCryptographicHash>
 #include <QDebug>
+#include <QDir>
+#include <QFile>
 #include <QLocalSocket>
+#include <QRandomGenerator>
+#include <QRegularExpression>
 #include <QSharedPointer>
+#include <QStandardPaths>
+#include <QTemporaryFile>
 #include <QThread>
 #include <utility>
+
+namespace {
+
+/**
+ * @brief A fresh random suffix for privateKeyIn().
+ * @return SingleApplication::privateSuffixLength lowercase hex digits.
+ */
+auto randomSuffix() -> QString {
+  static_assert(SingleApplication::privateSuffixLength == 16,
+                "one 64-bit number in hex");
+  return QStringLiteral("%1").arg(QRandomGenerator::system()->generate64(),
+                                  SingleApplication::privateSuffixLength, 16,
+                                  QLatin1Char('0'));
+}
+
+/**
+ * @brief Read a suffix privateKeyIn() wrote earlier.
+ * @param path The suffix file.
+ * @return The suffix, or an empty string when the file is missing or does
+ *         not hold exactly one.
+ */
+auto readSuffix(const QString &path) -> QString {
+  QFile file(path);
+  if (!file.open(QIODevice::ReadOnly)) {
+    return {};
+  }
+  const QString text =
+      QString::fromLatin1(file.read(SingleApplication::privateSuffixLength + 2))
+          .trimmed();
+  static const QRegularExpression hex(QRegularExpression::anchoredPattern(
+      QStringLiteral("[0-9a-f]{%1}")
+          .arg(SingleApplication::privateSuffixLength)));
+  return hex.match(text).hasMatch() ? text : QString();
+}
+
+/**
+ * @brief Write @p suffix to @p path unless a file is there already.
+ *
+ * Written to a temporary file next to it (mode 0600) and renamed into place
+ * without replacing: of two launches writing at once, one file wins and the
+ * other launch reads it.
+ * @param path The suffix file.
+ * @param suffix The suffix to keep.
+ * @return true when this call put the file in place.
+ */
+auto writeSuffix(const QString &path, const QString &suffix) -> bool {
+  QTemporaryFile file(path + QStringLiteral(".XXXXXX"));
+  if (!file.open() || file.write(suffix.toLatin1()) != suffix.size() ||
+      !file.flush()) {
+    return false;
+  }
+  if (!file.rename(path)) {
+    return false;
+  }
+  file.setAutoRemove(false);
+  return true;
+}
+
+} // namespace
 
 SingleApplication::SingleApplication(
     int &argc, char *argv[], // NOLINT(modernize-avoid-c-arrays)
@@ -31,6 +97,49 @@ SingleApplication::SingleApplication(
     sharedMemory.detach();
   }
   becomePrimary();
+}
+
+auto SingleApplication::privateKey(const QString &base) -> QString {
+#ifdef Q_OS_WIN
+  const QString dir = QDir::tempPath();
+#else
+  const QString dir =
+      QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation);
+#endif
+  return privateKeyIn(base, dir);
+}
+
+// The suffix file is named after a hash of the base, so any login name
+// makes a valid file name.
+auto SingleApplication::privateKeyIn(const QString &base, const QString &dir)
+    -> QString {
+  if (dir.isEmpty() || !QDir(dir).exists()) {
+    qCWarning(lcQtPass) << "SingleApplication: no private folder for the"
+                           " instance key; running without single instance.";
+    return base + randomSuffix();
+  }
+  const QString path = QDir(dir).filePath(
+      QStringLiteral("qtpass-instance-") +
+      QString::fromLatin1(
+          QCryptographicHash::hash(base.toUtf8(), QCryptographicHash::Sha256)
+              .toHex()
+              .left(16)));
+  QString suffix = readSuffix(path);
+  if (suffix.isEmpty()) {
+    // Not written yet, or not one we wrote: put a new one in place. A file
+    // that holds anything else is replaced, as nothing can use it.
+    if (QFile::exists(path)) {
+      QFile::remove(path);
+    }
+    const QString fresh = randomSuffix();
+    suffix = writeSuffix(path, fresh) ? fresh : readSuffix(path);
+  }
+  if (suffix.isEmpty()) {
+    qCWarning(lcQtPass) << "SingleApplication: cannot keep the instance key in"
+                        << dir << "; running without single instance.";
+    return base + randomSuffix();
+  }
+  return base + suffix;
 }
 
 // public slots.
