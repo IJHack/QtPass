@@ -27,5 +27,6 @@ var searchData=
   ['loadrecipients_24',['loadRecipients',['../class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b',1,'UsersDialog']]],
   ['loadverifiedrecipients_25',['loadVerifiedRecipients',['../class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e',1,'ImitatePass']]],
   ['localserver_26',['localServer',['../class_single_application.html#a4893f9017498cae49ff2bb6db7f777f7',1,'SingleApplication']]],
-  ['loggableargs_27',['loggableArgs',['../class_pass.html#abaa0009c06b9b53f6c5963763532c7d9',1,'Pass']]]
+  ['lockpathfor_27',['lockPathFor',['../class_single_application.html#abc53db6f54951bb6f93ad842625f9b50',1,'SingleApplication']]],
+  ['loggableargs_28',['loggableArgs',['../class_pass.html#abaa0009c06b9b53f6c5963763532c7d9',1,'Pass']]]
 ];

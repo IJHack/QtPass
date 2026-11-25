@@ -28,7 +28,7 @@
 <area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1786,34,2042,82,2037,82,1785,39"/>
 <area shape="rect" id="Node000015" href="$simpletransaction_8cpp.html" title="Implements SimpleTransaction as a queue of (last process, result) pairs." alt="" coords="2190,81,2379,109"/>
 <area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1787,29,2193,82,2187,82,1787,34"/>
-<area shape="rect" id="Node000016" href="$singleapplication_8cpp.html" title="Implements SingleApplication; stale&#45;segment and takeover&#45;race recovery lives in the constructor and b..." alt="" coords="2403,81,2585,109"/>
+<area shape="rect" id="Node000016" href="$singleapplication_8cpp.html" title="Implements SingleApplication; stale&#45;lock and takeover&#45;race recovery lives in claimOrFollow() and send..." alt="" coords="2403,81,2585,109"/>
 <area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1787,25,2058,47,2391,78,2405,82,2399,82,2391,84,2057,52,1787,30"/>
 <area shape="rect" id="Node000017" href="$sshauthsock_8cpp.html" title="Implements SshAuthSock; a probed socket is adopted only after ssh&#45;add &#45;l answers on it (isSshAgentRea..." alt="" coords="2610,81,2762,109"/>
 <area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1787,22,2142,41,2368,58,2597,78,2612,83,2607,82,2596,84,2368,63,2141,47,1787,27"/>

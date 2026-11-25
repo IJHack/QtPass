@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"class_users_dialog.html#a0a9df57e10de95c375523902b4bbdc5b":[1,2,8,10],
+"class_users_dialog.html#a0b48f9c3f9f9ab0fd01598c00ab29216":[1,2,8,31],
+"class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906":[1,2,8,17],
+"class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7":[1,2,8,22],
+"class_users_dialog.html#a20609c91440503dc7f84f26a43d01509":[1,2,8,18],
 "class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106":[1,2,8,9],
 "class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb":[1,2,8,11],
 "class_users_dialog.html#a34b725321c8c6e2e1af3945d2a19d368":[1,2,8,43],
@@ -244,10 +249,5 @@ var NAVTREEINDEX5 =
 "gpgkeystate__p_8h.html":[1,2,1],
 "grepsearchcontroller_8h.html":[4,0,1,26],
 "grepsearchcontroller_8h_source.html":[4,0,1,26],
-"group__backend.html":[1,0],
-"group__keys.html":[1,2],
-"group__process.html":[1,1],
-"group__secrets.html":[1,6],
-"group__settings.html":[1,4],
-"group__store.html":[1,3]
+"group__backend.html":[1,0]
 };

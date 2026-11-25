@@ -272,7 +272,7 @@
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="singleapplication_8cpp.html" target="_top" xlink:title="Implements SingleApplication; stale&#45;segment and takeover&#45;race recovery lives in the constructor and b...">
+<g id="a_Node000016"><a xlink:href="singleapplication_8cpp.html" target="_top" xlink:title="Implements SingleApplication; stale&#45;lock and takeover&#45;race recovery lives in claimOrFollow() and send...">
 <polygon fill="white" stroke="#666666" points="1934.75,-20.75 1798,-20.75 1798,0 1934.75,0 1934.75,-20.75"/>
 <text xml:space="preserve" text-anchor="middle" x="1866.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">src/singleapplication.cpp</text>
 </a>

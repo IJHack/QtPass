@@ -119,16 +119,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('singleapplicat
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="class_single_application.html" title="QApplication subclass enforcing single-instance behavior via IPC.">SingleApplication</a>: a QApplication that keeps one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> instance per user via a shared-memory segment and forwards later command lines over a local socket.  
+<p><a class="el" href="class_single_application.html" title="QApplication subclass enforcing single-instance behavior via IPC. Detects whether another instance wi...">SingleApplication</a>: a QApplication that keeps one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> instance per user via a lock file and forwards later command lines over a local socket.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;QApplication&gt;</code><br />
 <code>#include &lt;QLocalServer&gt;</code><br />
-<code>#include &lt;QSharedMemory&gt;</code><br />
+<code>#include &lt;QLockFile&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Include dependency graph for singleapplication.h:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="singleapplication_8h__incl.svg" width="400" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="singleapplication_8h__incl.svg" width="355" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary">
@@ -142,10 +142,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('singleapplicat
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:SingleApplication" id="r_SingleApplication"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_single_application.html">SingleApplication</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">QApplication subclass enforcing single-instance behavior via IPC.  <a href="class_single_application.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">QApplication subclass enforcing single-instance behavior via IPC. Detects whether another instance with the same unique key is running and enables forwarding messages (e.g., command-line arguments) to it.  <a href="class_single_application.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_single_application.html" title="QApplication subclass enforcing single-instance behavior via IPC.">SingleApplication</a>: a QApplication that keeps one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> instance per user via a shared-memory segment and forwards later command lines over a local socket. </p>
+<div class="textblock"><p><a class="el" href="class_single_application.html" title="QApplication subclass enforcing single-instance behavior via IPC. Detects whether another instance wi...">SingleApplication</a>: a QApplication that keeps one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> instance per user via a lock file and forwards later command lines over a local socket. </p>
 
 <p class="definition">Definition in file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 </div></div><!-- contents -->

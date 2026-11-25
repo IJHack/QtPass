@@ -1,13 +1,19 @@
 <map id="SingleApplication::receiveMessage" name="SingleApplication::receiveMessage">
-<area shape="rect" id="Node000001" title="Slot for QLocalServer::newConnection: accept every pending connection and emit messageAvailable() wit..." alt="" coords="5,36,148,81"/>
-<area shape="rect" id="Node000002" href="$class_single_application.html#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline" alt="" coords="196,65,338,110"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,67,183,74,178,75,149,72"/>
-<area shape="rect" id="Node000003" href="$class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Claim the segment and listen; no&#45;op when another instance holds it." alt="" coords="386,5,528,50"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,63,369,55,374,54,339,68"/>
-<area shape="rect" id="Node000004" href="$class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a" title="Probe whether an instance is actually accepting connections." alt="" coords="576,36,719,81"/>
-<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="338,80,563,64,558,66,339,85"/>
-<area shape="rect" id="Node000005" href="$class_single_application.html#a1437fc816f04579f7c4af1927b0967ed" title="Deliver a message over the local socket." alt="" coords="386,125,528,170"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="339,108,374,121,369,121,338,113"/>
-<area shape="poly" id="edge4_Node000003_Node000001" title=" " alt="" coords="384,36,164,54,163,49,387,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="529,37,564,44,558,45,529,42"/>
+<area shape="rect" id="Node000001" title="Slot for QLocalServer::newConnection: accept every pending connection and emit messageAvailable() wit..." alt="" coords="5,66,148,111"/>
+<area shape="rect" id="Node000002" href="$class_single_application.html#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline" alt="" coords="196,126,338,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,109,184,121,179,123,149,114"/>
+<area shape="rect" id="Node000003" href="$class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Listen on the key; this instance holds the lock." alt="" coords="576,97,719,142"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,141,563,125,558,127,339,146"/>
+<area shape="rect" id="Node000004" href="$class_single_application.html#ad35698e2c9ff6462a09df4f8ed9af8b5" title="Take the lock and listen, or become the lock holder&#39;s secondary." alt="" coords="386,157,528,202"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="338,158,373,165,368,166,339,163"/>
+<area shape="rect" id="Node000005" href="$class_single_application.html#ae73f889828d9a64c1423bcb9fe3e81f6" title="Become the secondary of the live instance that holds the lock." alt="" coords="576,208,719,252"/>
+<area shape="poly" id="edge10_Node000002_Node000005" title=" " alt="" coords="300,169,341,193,387,212,430,222,476,228,564,234,558,234,475,233,430,227,385,217,339,197,299,174"/>
+<area shape="rect" id="Node000006" href="$class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a" title="Probe whether an instance is actually accepting connections." alt="" coords="767,238,909,283"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="291,169,334,206,360,223,387,237,433,253,481,264,578,276,671,277,748,274,754,273,671,282,578,282,480,270,431,258,385,242,357,228,331,210,289,174"/>
+<area shape="rect" id="Node000007" href="$class_single_application.html#a1437fc816f04579f7c4af1927b0967ed" title="Deliver a message over the local socket." alt="" coords="386,37,528,82"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="315,124,397,88,392,90,317,128"/>
+<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="624,96,583,59,556,41,527,27,477,14,426,9,373,9,321,15,224,36,146,63,143,58,223,31,320,10,373,4,426,3,478,9,529,22,559,36,586,55,629,97"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="528,154,559,147,564,146,530,160"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="529,196,564,207,559,207,529,201"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="719,239,754,247,749,247,719,244"/>
 </map>

@@ -1,25 +1,35 @@
 <map id="src/singleapplication.cpp" name="src/singleapplication.cpp">
-<area shape="rect" id="Node000001" title="Implements SingleApplication; stale&#45;segment and takeover&#45;race recovery lives in the constructor and b..." alt="" coords="598,5,781,33"/>
-<area shape="rect" id="Node000002" href="$singleapplication_8h.html" title="SingleApplication: a QApplication that keeps one QtPass instance per user via a shared&#45;memory segment..." alt="" coords="185,81,330,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="609,35,345,81,344,76,614,33"/>
-<area shape="rect" id="Node000006" href="$qtpasslogging_8h.html" title="The &quot;qtpass&quot; logging category." alt="" coords="390,81,514,109"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="650,33,510,79,508,73,644,34"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="538,81,612,109"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="672,33,609,75,607,70,666,34"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="635,81,744,109"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="691,32,692,67,687,64,688,36"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="768,81,891,109"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="715,31,794,74,789,73,714,36"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="915,81,992,109"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="737,31,903,79,897,79,736,36"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="1016,81,1075,109"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="770,31,877,51,1003,80,998,80,876,56,770,36"/>
+<area shape="rect" id="Node000001" title="Implements SingleApplication; stale&#45;lock and takeover&#45;race recovery lives in claimOrFollow() and send..." alt="" coords="864,5,1046,33"/>
+<area shape="rect" id="Node000002" href="$singleapplication_8h.html" title="SingleApplication: a QApplication that keeps one QtPass instance per user via a lock file and forward..." alt="" coords="164,81,308,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="863,32,344,84,324,86,323,81,344,78,863,26"/>
+<area shape="rect" id="Node000006" href="$qtpasslogging_8h.html" title="The &quot;qtpass&quot; logging category." alt="" coords="357,81,481,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="861,32,497,83,496,78,866,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="505,81,660,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="891,33,665,80,664,75,885,34"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="685,81,758,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="916,33,773,80,772,75,911,34"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="782,81,832,109"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="931,33,847,77,845,72,926,34"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="856,81,936,109"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="947,32,917,71,915,66,942,35"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="959,81,1068,109"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="966,31,996,70,991,68,964,36"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1092,81,1242,109"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="993,31,1117,76,1112,75,992,36"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1266,81,1388,109"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1022,31,1253,78,1248,79,1022,36"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="1413,81,1537,109"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1047,29,1400,80,1395,81,1046,35"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="1561,81,1637,109"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1047,23,1270,41,1406,57,1548,81,1543,80,1406,62,1270,47,1047,28"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="1661,81,1720,109"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1046,20,1164,25,1312,35,1478,52,1649,81,1644,81,1477,57,1312,40,1164,30,1046,25"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,157,110,184"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,112,108,154,106,148,221,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,111,104,153,102,148,202,107"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="133,157,240,184"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="247,108,211,148,208,143,242,110"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="264,157,395,184"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="271,107,309,146,304,145,269,112"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="419,157,560,184"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="460,107,478,144,474,142,457,112"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="230,108,206,146,202,142,225,111"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="265,157,349,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="250,107,287,146,281,145,248,112"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="374,157,515,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="425,107,437,143,432,140,422,111"/>
 </map>

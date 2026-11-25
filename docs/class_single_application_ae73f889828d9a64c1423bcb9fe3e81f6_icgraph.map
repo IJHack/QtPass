@@ -1,0 +1,22 @@
+<map id="SingleApplication::waitForPeer" name="SingleApplication::waitForPeer">
+<area shape="rect" id="Node000001" title="Become the secondary of the live instance that holds the lock." alt="" coords="767,105,909,150"/>
+<area shape="rect" id="Node000002" href="$class_single_application.html#ad35698e2c9ff6462a09df4f8ed9af8b5" title="Take the lock and listen, or become the lock holder&#39;s secondary." alt="" coords="576,135,719,179"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="748,142,719,149,719,143,754,141"/>
+<area shape="rect" id="Node000003" href="$class_single_application.html#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline" alt="" coords="386,65,528,110"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="749,119,529,98,529,92,754,118"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="567,129,520,113,521,108,573,129"/>
+<area shape="rect" id="Node000007" href="$class_single_application.html#ad63149f60ac6676dda4397a90116e351" title="Send a message to the running instance." alt="" coords="386,135,528,179"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="558,157,529,160,528,154,563,157"/>
+<area shape="rect" id="Node000008" href="$class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5" title="Construct a SingleApplication with a unique instance key." alt="" coords="386,255,528,299"/>
+<area shape="poly" id="edge11_Node000002_Node000008" title=" " alt="" coords="603,187,530,238,499,257,497,252,527,233,598,189"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="240,148,294,176"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,117,295,154,293,149,387,115"/>
+<area shape="rect" id="Node000005" href="$class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="Slot for QLocalServer::newConnection: accept every pending connection and emit messageAvailable() wit..." alt="" coords="196,5,338,50"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="369,61,339,53,338,47,374,60"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="300,138,292,131,267,127,246,129,236,135,234,141,242,151,237,150,229,142,231,131,244,124,267,122,294,126,305,138"/>
+<area shape="rect" id="Node000006" href="$class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Listen on the key; this instance holds the lock." alt="" coords="5,65,148,110"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="179,56,150,67,147,63,183,53"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="106,119,147,156,171,173,196,185,349,189,528,189,578,181,583,179,529,194,349,194,195,190,168,177,144,160,106,124"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="163,85,387,86,384,90,164,90"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="368,160,295,164,294,159,373,159"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SingleApplication::privateKey" name="SingleApplication::privateKey">
+<area shape="rect" id="Node000001" title="The key to construct with: a socket path in a folder only this user can write to (see privateKeyIn())..." alt="" coords="5,5,148,50"/>
+<area shape="rect" id="Node000002" href="$class_single_application.html#abca78488bca57447c3fed5f62ea17ade" title="privateKey() with the folder given." alt="" coords="196,5,338,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,25,183,27,178,28,148,30"/>
+</map>

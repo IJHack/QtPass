@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 09:40:38</td>
+            <td class="headerValue">2026-11-25 10:40:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -509,14 +509,14 @@
 <span id="L436"><span class="lineNum">     436</span>              :     }</span>
 <span id="L437"><span class="lineNum">     437</span> <span class="tlaGNC">        1205 :     return true;</span></span>
 <span id="L438"><span class="lineNum">     438</span>              :   }</span>
-<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">        1306 :   while (!process.waitForFinished(</span></span>
+<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">        1308 :   while (!process.waitForFinished(</span></span>
 <span id="L440"><span class="lineNum">     440</span>              :       deadline.isForever()</span>
 <span id="L441"><span class="lineNum">     441</span>              :           ? kBlockingCancelPollMs</span>
 <span id="L442"><span class="lineNum">     442</span> <span class="tlaGNC">           3 :           : qMin(kBlockingCancelPollMs, msecsLeft(deadline)))) {</span></span>
-<span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">          46 :     if (process.state() == QProcess::NotRunning) {</span></span>
+<span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">          47 :     if (process.state() == QProcess::NotRunning) {</span></span>
 <span id="L444"><span class="lineNum">     444</span>              :       return true;</span>
 <span id="L445"><span class="lineNum">     445</span>              :     }</span>
-<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">          58 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
+<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">          59 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
 <span id="L447"><span class="lineNum">     447</span> <span class="tlaGNC">          12 :       stopBlocking(process);</span></span>
 <span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">          12 :       return false;</span></span>
 <span id="L449"><span class="lineNum">     449</span>              :     }</span>
@@ -653,7 +653,7 @@
 <span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">         411 :   auto [output, err] = collectOutput(i, exitCode);</span></span>
 <span id="L581"><span class="lineNum">     581</span> <span class="tlaGNC">         411 :   if (exitStatus == QProcess::NormalExit) {</span></span>
 <span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">         410 :     if (exitCode != 0) {</span></span>
-<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">          48 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
+<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">          49 :       qCDebug(lcQtPass) &lt;&lt; i.app &lt;&lt; &quot;exited with&quot; &lt;&lt; exitCode &lt;&lt; err;</span></span>
 <span id="L584"><span class="lineNum">     584</span>              :     }</span>
 <span id="L585"><span class="lineNum">     585</span> <span class="tlaGNC">         410 :     emit finished(i.id, exitCode, output, err);</span></span>
 <span id="L586"><span class="lineNum">     586</span> <span class="tlaGNC">         410 :     m_outputLossless = true;</span></span>

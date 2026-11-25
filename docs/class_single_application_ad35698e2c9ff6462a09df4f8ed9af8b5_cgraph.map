@@ -1,0 +1,19 @@
+<map id="SingleApplication::claimOrFollow" name="SingleApplication::claimOrFollow">
+<area shape="rect" id="Node000001" title="Take the lock and listen, or become the lock holder&#39;s secondary." alt="" coords="5,79,148,123"/>
+<area shape="rect" id="Node000002" href="$class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Listen on the key; this instance holds the lock." alt="" coords="196,79,338,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,98,183,101,178,101,149,104"/>
+<area shape="rect" id="Node000007" href="$class_single_application.html#ae73f889828d9a64c1423bcb9fe3e81f6" title="Become the secondary of the live instance that holds the lock." alt="" coords="767,5,909,50"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="147,76,195,64,347,39,500,26,640,22,754,25,748,25,640,27,500,32,348,45,196,69,149,81"/>
+<area shape="rect" id="Node000003" href="$class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="Slot for QLocalServer::newConnection: accept every pending connection and emit messageAvailable() wit..." alt="" coords="386,53,528,98"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,89,373,87,368,88,339,94"/>
+<area shape="rect" id="Node000004" href="$class_single_application.html#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline" alt="" coords="576,88,719,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="529,86,564,95,558,95,529,91"/>
+<area shape="poly" id="edge5_Node000004_Node000001" title=" " alt="" coords="579,123,498,136,403,144,299,146,195,138,158,131,159,125,196,133,299,141,402,139,497,131,573,123"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="573,112,386,113,354,111,354,106,386,108,579,112"/>
+<area shape="rect" id="Node000005" href="$class_single_application.html#a1437fc816f04579f7c4af1927b0967ed" title="Deliver a message over the local socket." alt="" coords="767,75,909,119"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="719,103,749,103,754,103,719,108"/>
+<area shape="rect" id="Node000006" href="$class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a" title="Probe whether an instance is actually accepting connections." alt="" coords="957,71,1099,115"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="719,123,810,133,860,134,909,129,953,121,958,120,909,134,860,139,810,138,719,128"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="700,85,768,57,774,56,701,90"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="905,48,949,65,944,65,904,53"/>
+</map>

@@ -17,5 +17,6 @@ var searchData=
   ['loadprofileform_14',['loadProfileForm',['../class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd',1,'ConfigDialog']]],
   ['loadrecipients_15',['loadRecipients',['../class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b',1,'UsersDialog']]],
   ['loadverifiedrecipients_16',['loadVerifiedRecipients',['../class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e',1,'ImitatePass']]],
-  ['loggableargs_17',['loggableArgs',['../class_pass.html#abaa0009c06b9b53f6c5963763532c7d9',1,'Pass']]]
+  ['lockpathfor_17',['lockPathFor',['../class_single_application.html#abc53db6f54951bb6f93ad842625f9b50',1,'SingleApplication']]],
+  ['loggableargs_18',['loggableArgs',['../class_pass.html#abaa0009c06b9b53f6c5963763532c7d9',1,'Pass']]]
 ];
