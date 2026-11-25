@@ -1222,11 +1222,45 @@ auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
   BY_HANDLE_FILE_INFORMATION info{};
   if (!GetFileInformationByHandle(handle, &info) ||
       (info.dwFileAttributes &
-       (FILE_ATTRIBUTE_REPARSE_POINT | FILE_ATTRIBUTE_DIRECTORY |
-        FILE_ATTRIBUTE_DEVICE)) != 0 ||
+       (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_DEVICE)) != 0 ||
       GetFileType(handle) != FILE_TYPE_DISK) {
     CloseHandle(handle);
     return false;
+  }
+  if ((info.dwFileAttributes & FILE_ATTRIBUTE_REPARSE_POINT) != 0) {
+    // A link, a junction or anything else that names another file is
+    // refused. Any other reparse point (the placeholder of a cloud
+    // provider such as OneDrive, whose content is not on disk yet) is
+    // opened once more through it, so its filter fetches the content, and
+    // only when that open reaches the very same file.
+    FILE_ATTRIBUTE_TAG_INFO tag{};
+    if (!GetFileInformationByHandleEx(handle, FileAttributeTagInfo, &tag,
+                                      sizeof(tag)) ||
+        IsReparseTagNameSurrogate(tag.ReparseTag)) {
+      CloseHandle(handle);
+      return false;
+    }
+    HANDLE through =
+        CreateFileW(native.c_str(), GENERIC_READ,
+                    FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
+                    nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    BY_HANDLE_FILE_INFORMATION after{};
+    const bool same = through != INVALID_HANDLE_VALUE &&
+                      GetFileInformationByHandle(through, &after) &&
+                      after.dwVolumeSerialNumber == info.dwVolumeSerialNumber &&
+                      after.nFileIndexHigh == info.nFileIndexHigh &&
+                      after.nFileIndexLow == info.nFileIndexLow &&
+                      (after.dwFileAttributes & (FILE_ATTRIBUTE_DIRECTORY |
+                                                 FILE_ATTRIBUTE_DEVICE)) == 0 &&
+                      GetFileType(through) == FILE_TYPE_DISK;
+    CloseHandle(handle);
+    if (!same) {
+      if (through != INVALID_HANDLE_VALUE) {
+        CloseHandle(through);
+      }
+      return false;
+    }
+    handle = through;
   }
   const int fd = _open_osfhandle(reinterpret_cast<intptr_t>(handle),
                                  _O_RDONLY | _O_BINARY);

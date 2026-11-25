@@ -499,6 +499,10 @@ public:
    * co-writer of the store makes the name a link; opening without following
    * (O_NOFOLLOW; on Windows the reparse point itself) and judging the open
    * handle closes it. A directory, a link, a FIFO or a device is refused.
+   * On Windows any reparse point that names another file (a symbolic link,
+   * a junction) is refused; another one, such as the placeholder of a cloud
+   * provider like OneDrive, is opened through so its content is fetched,
+   * when that open reaches the same file (same volume and file index).
    * @param path The file, as the caller names it.
    * @param file Receives the open file on success; untouched otherwise.
    * @return Whether @p file is open on a regular file.
