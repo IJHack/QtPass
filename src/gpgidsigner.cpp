@@ -245,21 +245,33 @@ auto GpgIdSigner::verify(const QByteArray &contents,
                       << ": the signature file is a link";
     return false;
   }
-  // A regular file of bounded size, as the list itself is read: a FIFO
-  // planted under the name would block gpg, and the GUI thread waiting for
-  // it, and a sparse file of gigabytes would be read whole.
+  // Read as a regular file of bounded size, as the list itself is, and
+  // give gpg a copy of those bytes: a FIFO planted under the name would
+  // block gpg, and the GUI thread waiting for it, a sparse file of
+  // gigabytes would be read whole, and either could be swapped in between
+  // a check of the name and gpg opening it.
+  const std::optional<QByteArray> signature =
+      Util::readRegularFile(signatureFile, kMaxSignatureBytes);
+  if (!signature) {
+    qCDebug(lcQtPass) << "Refusing to verify" << signatureFile
+                      << ": not a regular file of at most" << kMaxSignatureBytes
+                      << "bytes";
+    return false;
+  }
+  QTemporaryDir scratch;
+  if (!scratch.isValid()) {
+    return false;
+  }
+  const QString copy = scratch.filePath(QStringLiteral("sig"));
   {
-    QFile probe;
-    if (!Util::openRegularFile(signatureFile, probe) ||
-        probe.size() > kMaxSignatureBytes) {
-      qCDebug(lcQtPass) << "Refusing to verify" << signatureFile
-                        << ": not a regular file of at most"
-                        << kMaxSignatureBytes << "bytes";
+    QFile file(copy);
+    if (!file.open(QIODevice::WriteOnly) ||
+        file.write(*signature) != signature->size()) {
       return false;
     }
   }
   QString out;
-  const QString sig = Executor::translatePathForWsl(signatureFile, m_gpg);
+  const QString sig = Executor::translatePathForWsl(copy, m_gpg);
   // "-" makes gpg read the signed data from stdin: the bytes we hold.
   // --batch stops at the first bad signature; without it gpg checked every
   // packet in the file, each against the key it names, however slow.

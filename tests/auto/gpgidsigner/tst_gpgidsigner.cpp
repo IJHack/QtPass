@@ -36,10 +36,18 @@ class tst_gpgidsigner : public QObject {
     /// When set, what a --verify call prints instead of @c out: sign()
     /// checks the signature it just made, and that check is answered here.
     std::optional<QString> verifyOut;
+    /// What the signature file of the last --verify call held when gpg ran.
+    QByteArray verifiedSig;
     auto exec() -> GpgIdSigner::Exec {
       return [this](const QString &app, const QStringList &args,
                     const QString &input, QString *o, QString *e) {
         calls.append({app, args, input});
+        if (args.contains(QStringLiteral("--verify"))) {
+          const int at = args.indexOf(QStringLiteral("--"));
+          QFile f(args.value(at + 1));
+          verifiedSig =
+              f.open(QIODevice::ReadOnly) ? f.readAll() : QByteArray();
+        }
         if (verifyOut && args.contains(QStringLiteral("--verify"))) {
           if (o)
             *o = *verifyOut;
@@ -265,10 +273,13 @@ void tst_gpgidsigner::signUsesTheFirstKeyOnlyAndReportsStderr() {
   QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
   // Then the new signature is checked, in the scratch, against the same
   // bytes, before it goes next to the list.
-  QCOMPARE(gpg.calls.at(1).args,
-           (QStringList{QStringLiteral("--batch"), QStringLiteral("--verify"),
-                        QStringLiteral("--status-fd=1"), QStringLiteral("--"),
-                        args.at(5), QStringLiteral("-")}));
+  QCOMPARE(
+      gpg.calls.at(1).args.mid(0, 4),
+      (QStringList{QStringLiteral("--batch"), QStringLiteral("--verify"),
+                   QStringLiteral("--status-fd=1"), QStringLiteral("--")}));
+  QVERIFY2(!gpg.calls.at(1).args.at(4).startsWith(store.path()),
+           qPrintable(gpg.calls.at(1).args.at(4)));
+  QCOMPARE(gpg.verifiedSig, gpg.signature);
   QCOMPARE(gpg.calls.at(1).input, QString::fromUtf8(kGpgId));
   QFile sig(gpgId + QStringLiteral(".sig"));
   QVERIFY(sig.open(QIODevice::ReadOnly));
@@ -368,8 +379,10 @@ void tst_gpgidsigner::signPassesTheFilePathThroughTheWslTranslation() {
   gpg.out = validSig(kFpr, kPrimary);
   const QString dir = QFileInfo(sigPath()).absolutePath();
   QVERIFY(signer.verify(kGpgId, dir + QStringLiteral("//.gpg-id.sig")));
-  QCOMPARE(gpg.calls.last().args.mid(3),
-           (QStringList{QStringLiteral("--"), sigPath(), QStringLiteral("-")}));
+  // gpg gets the copy of the bytes read, by its cleaned path.
+  const QString copy = gpg.calls.last().args.at(4);
+  QCOMPARE(copy, QDir::cleanPath(copy));
+  QCOMPARE(gpg.verifiedSig, QByteArrayLiteral("SIGNATURE"));
 }
 
 /**
@@ -415,10 +428,16 @@ void tst_gpgidsigner::verifyPassesArgsAndAcceptsEitherFingerprint() {
     QVERIFY(bySubkey.verify(kGpgId, sigPath()));
     // The signed data goes to gpg on stdin: the very bytes the caller holds,
     // not whatever is in the file by the time gpg opens it.
-    QCOMPARE(gpg.calls.first().args,
-             (QStringList{QStringLiteral("--batch"), QStringLiteral("--verify"),
-                          QStringLiteral("--status-fd=1"), QStringLiteral("--"),
-                          sigPath(), QStringLiteral("-")}));
+    const QStringList args = gpg.calls.first().args;
+    QCOMPARE(
+        args.mid(0, 4),
+        (QStringList{QStringLiteral("--batch"), QStringLiteral("--verify"),
+                     QStringLiteral("--status-fd=1"), QStringLiteral("--")}));
+    QCOMPARE(args.last(), QStringLiteral("-"));
+    // A copy of the bytes read, not the store's file: nothing swapped in
+    // under the name (a FIFO, another signature) reaches gpg.
+    QVERIFY2(args.at(4) != sigPath(), qPrintable(args.at(4)));
+    QCOMPARE(gpg.verifiedSig, QByteArrayLiteral("SIGNATURE"));
     QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
   }
   {
@@ -608,9 +627,8 @@ void tst_gpgidsigner::verifyFileHandsBackTheBytesItVerified() {
   QVERIFY(signer.verifyFile(gpgId, &contents));
   QCOMPARE(contents, kGpgId);
   QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
-  QCOMPARE(gpg.calls.first().args.mid(3),
-           (QStringList{QStringLiteral("--"), gpgId + QStringLiteral(".sig"),
-                        QStringLiteral("-")}));
+  QVERIFY(gpg.calls.first().args.at(4) != gpgId + QStringLiteral(".sig"));
+  QCOMPARE(gpg.verifiedSig, kGpgId);
 
   QByteArray none;
   QVERIFY2(!signer.verifyFile(dir.filePath(QStringLiteral("missing")), &none),
