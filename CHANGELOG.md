@@ -805,6 +805,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- **Rename folder** and **Rename password** no longer move an entry out of
+  the store when the new name goes through a linked folder and back with
+  `..` (for example `handbook/../team-old`, with `handbook` a link another
+  writer put in the store). The check judged the name as text, but the
+  rename followed the link first. Without `pass`, move and copy now clean
+  the name before they check it, so the entry lands where the check said
+  (scan ANT-2026-MVI4DGGO).
 - Content search reads each entry itself, without following a link, and
   hands it to gpg on stdin. It listed the entries once when it began and
   then gave gpg their names, so an entry or folder that an update from Git

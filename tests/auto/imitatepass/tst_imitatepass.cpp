@@ -666,6 +666,7 @@ private Q_SLOTS:
   void removeFolderWithoutGitLeavesLinkTargetsAlone();
   void reencryptRefusesAFolderBehindALink();
   void operationsRefuseLinkedEntriesAndFoldersButRemoveUnlinks();
+  void moveAndCopyCleanDotDotBeforeTheyLook();
   void linkedGpgIdIsNotARecipientList();
   void skippedGpgIdNamesOnlyAListThatWasPassedOver();
   void skippedGpgIdAsksAFolderRemovedWithItsList();
@@ -4468,6 +4469,51 @@ void tst_imitatepass::reencryptRefusesAFolderBehindALink() {
   QFile check(outside.filePath(QStringLiteral("sub/secret.gpg")));
   QVERIFY(check.open(QIODevice::ReadOnly));
   QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
+#endif
+}
+
+/**
+ * @brief Move and Copy clean ".." out of the destination before they check
+ *        it: rename(2) follows a link first and applies ".." after it, so
+ *        "handbook/../team-old" with handbook linked out of the store moved
+ *        the folder next to the link's target (ANT-2026-MVI4DGGO).
+ */
+void tst_imitatepass::moveAndCopyCleanDotDotBeforeTheyLook() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QDir outside(outsideDir.path());
+  QVERIFY(outside.mkpath(QStringLiteral("handbook")));
+  QVERIFY(root.mkpath(QStringLiteral("team")));
+  {
+    QFile f(root.filePath(QStringLiteral("team/db.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("team");
+  }
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("handbook")),
+                      root.filePath(QStringLiteral("handbook"))));
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), unstartableGpg()));
+
+  pass.Move(root.filePath(QStringLiteral("team")),
+            root.filePath(QStringLiteral("handbook/../team-old")), false);
+  QVERIFY2(!QFileInfo::exists(outside.filePath(QStringLiteral("team-old"))),
+           "the folder must not land beside the link's target");
+  QCOMPARE(contentsOf(root.filePath(QStringLiteral("team-old/db.gpg"))),
+           QByteArrayLiteral("team"));
+
+  pass.Copy(root.filePath(QStringLiteral("entry0.gpg")),
+            root.filePath(QStringLiteral("handbook/../entry-copy")), false);
+  QVERIFY2(
+      !QFileInfo::exists(outside.filePath(QStringLiteral("entry-copy.gpg"))),
+      "the copy must not land beside the link's target");
+  QCOMPARE(contentsOf(root.filePath(QStringLiteral("entry-copy.gpg"))),
+           QByteArrayLiteral("not really encrypted"));
 #endif
 }
 
