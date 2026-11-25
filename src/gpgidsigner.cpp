@@ -261,10 +261,12 @@ auto GpgIdSigner::verify(const QByteArray &contents,
   QString out;
   const QString sig = Executor::translatePathForWsl(signatureFile, m_gpg);
   // "-" makes gpg read the signed data from stdin: the bytes we hold.
-  const int rc =
-      run({QStringLiteral("--verify"), QStringLiteral("--status-fd=1"),
-           QStringLiteral("--"), sig, QStringLiteral("-")},
-          &out, nullptr, text);
+  // --batch stops at the first bad signature; without it gpg checked every
+  // packet in the file, each against the key it names, however slow.
+  const int rc = run({QStringLiteral("--batch"), QStringLiteral("--verify"),
+                      QStringLiteral("--status-fd=1"), QStringLiteral("--"),
+                      sig, QStringLiteral("-")},
+                     &out, nullptr, text);
   if (rc != 0) {
     qCDebug(lcQtPass) << "GPG verify failed with code:" << rc;
     return false;

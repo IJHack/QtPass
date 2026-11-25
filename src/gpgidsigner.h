@@ -30,9 +30,14 @@ public:
   /**
    * @brief Most bytes of a .gpg-id.sig verify() hands to gpg.
    *
-   * A detached signature is well under a KiB; far beyond any real one.
+   * A detached signature is well under a KiB; one by a 16384-bit RSA key,
+   * armored, about 3 KiB. The cap also bounds gpg's work: it checks every
+   * signature packet in the file, and one made with a key built to be slow
+   * (a huge public exponent) takes seconds each. 64 KiB held enough of
+   * them to freeze %QtPass for minutes (scan ANT-2026-XQUAU1HG); 4 KiB holds
+   * two.
    */
-  static constexpr qint64 kMaxSignatureBytes = 64 * 1024;
+  static constexpr qint64 kMaxSignatureBytes = 4 * 1024;
 
   /**
    * @brief Blocking process runner: Executor::executeBlocking()'s shape.

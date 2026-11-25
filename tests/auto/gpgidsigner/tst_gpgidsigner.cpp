@@ -265,10 +265,10 @@ void tst_gpgidsigner::signUsesTheFirstKeyOnlyAndReportsStderr() {
   QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
   // Then the new signature is checked, in the scratch, against the same
   // bytes, before it goes next to the list.
-  QCOMPARE(
-      gpg.calls.at(1).args,
-      (QStringList{QStringLiteral("--verify"), QStringLiteral("--status-fd=1"),
-                   QStringLiteral("--"), args.at(5), QStringLiteral("-")}));
+  QCOMPARE(gpg.calls.at(1).args,
+           (QStringList{QStringLiteral("--batch"), QStringLiteral("--verify"),
+                        QStringLiteral("--status-fd=1"), QStringLiteral("--"),
+                        args.at(5), QStringLiteral("-")}));
   QCOMPARE(gpg.calls.at(1).input, QString::fromUtf8(kGpgId));
   QFile sig(gpgId + QStringLiteral(".sig"));
   QVERIFY(sig.open(QIODevice::ReadOnly));
@@ -368,7 +368,7 @@ void tst_gpgidsigner::signPassesTheFilePathThroughTheWslTranslation() {
   gpg.out = validSig(kFpr, kPrimary);
   const QString dir = QFileInfo(sigPath()).absolutePath();
   QVERIFY(signer.verify(kGpgId, dir + QStringLiteral("//.gpg-id.sig")));
-  QCOMPARE(gpg.calls.last().args.mid(2),
+  QCOMPARE(gpg.calls.last().args.mid(3),
            (QStringList{QStringLiteral("--"), sigPath(), QStringLiteral("-")}));
 }
 
@@ -416,7 +416,7 @@ void tst_gpgidsigner::verifyPassesArgsAndAcceptsEitherFingerprint() {
     // The signed data goes to gpg on stdin: the very bytes the caller holds,
     // not whatever is in the file by the time gpg opens it.
     QCOMPARE(gpg.calls.first().args,
-             (QStringList{QStringLiteral("--verify"),
+             (QStringList{QStringLiteral("--batch"), QStringLiteral("--verify"),
                           QStringLiteral("--status-fd=1"), QStringLiteral("--"),
                           sigPath(), QStringLiteral("-")}));
     QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
@@ -527,6 +527,14 @@ void tst_gpgidsigner::verifyRefusesASignatureThatIsNoRegularFile() {
     QVERIFY(f.resize(GpgIdSigner::kMaxSignatureBytes + 1));
   }
   QVERIFY(!signer.verify(kGpgId, big));
+  // Room for two signatures by a key built to be slow, not dozens
+  // (ANT-2026-XQUAU1HG); an armored one by a 16384-bit key still fits.
+  {
+    QFile f(big);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.resize(8 * 1024));
+  }
+  QVERIFY(!signer.verify(kGpgId, big));
 #ifdef Q_OS_UNIX
   const QString fifo = dir.filePath(QStringLiteral("fifo.sig"));
   QCOMPARE(::mkfifo(QFile::encodeName(fifo).constData(), 0600), 0);
@@ -534,6 +542,13 @@ void tst_gpgidsigner::verifyRefusesASignatureThatIsNoRegularFile() {
 #endif
   QVERIFY(!signer.verify(kGpgId, dir.filePath(QStringLiteral("missing.sig"))));
   QVERIFY2(gpg.calls.isEmpty(), "gpg must not be given such a path");
+  {
+    QFile f(big);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.resize(3 * 1024));
+  }
+  QVERIFY(signer.verify(kGpgId, big));
+  QCOMPARE(gpg.calls.size(), 1);
 }
 
 void tst_gpgidsigner::verifyRefusesBytesThatAreNotUtf8() {
@@ -593,7 +608,7 @@ void tst_gpgidsigner::verifyFileHandsBackTheBytesItVerified() {
   QVERIFY(signer.verifyFile(gpgId, &contents));
   QCOMPARE(contents, kGpgId);
   QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
-  QCOMPARE(gpg.calls.first().args.mid(2),
+  QCOMPARE(gpg.calls.first().args.mid(3),
            (QStringList{QStringLiteral("--"), gpgId + QStringLiteral(".sig"),
                         QStringLiteral("-")}));
 
