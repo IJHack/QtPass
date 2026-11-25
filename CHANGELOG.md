@@ -809,7 +809,7 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   starting. The names QtPass uses to find a running copy of itself were
   built from the login name alone and, on Linux and BSD, sat in the shared
   temporary folder, so another account could create them first: a launch
-  then exited without a window, or hung. The socket and a lock file now sit
+  then exited without a window, or hung. The socket and a lockfile now sit
   in a folder only you can open (`XDG_RUNTIME_DIR`), and the shared memory
   is gone. If there is no such folder, each launch opens its own window
   instead of handing over to the one already open
