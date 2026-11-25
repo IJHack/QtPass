@@ -165,10 +165,10 @@ public:
    * @param rx The pattern.
    * @param cancel When set, gpg is not started, or is terminated while it
    *        runs; nullptr to run to completion.
-   * @param storeDir The store @p filePath is in; when given, a link on the
-   *        way down from it (a folder that became one) makes the entry
-   *        unread. The file itself is always read without following a link
-   *        (Util::readRegularFile()) and handed to gpg on stdin.
+   * @param storeDir The store @p filePath is in; when given, the entry is
+   *        read with Util::readRegularFileUnder(), so no folder on the way
+   *        down from it is followed as a link either. The file itself is
+   *        always read without following a link and handed to gpg on stdin.
    * @return Matching lines, at most kMaxMatchesPerEntry and then a marker
    *         (isMoreMarker()) when there are more; empty when gpg fails, is
    *         cancelled or nothing matches. A match in the first line is

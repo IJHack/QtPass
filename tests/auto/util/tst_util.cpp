@@ -341,6 +341,7 @@ private Q_SLOTS:
   // ImitatePass::Grep / helpers
   void grepMatchFileFailedDecryptReturnsEmpty();
   void grepDoesNotFollowALinkPulledInMidSearch();
+  void readRegularFileUnderFollowsNoLinkBelowTheRoot();
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepCancelEndsARunningGpg();
   void grepTakesABoundedNumberOfMatches();
@@ -3751,6 +3752,72 @@ void tst_util::grepDoesNotFollowALinkPulledInMidSearch() {
   QVERIFY(
       QFile::link(tmp.filePath(QStringLiteral("outside.txt")), linkedEntry));
   QVERIFY(NativeGrep::matchFile(env, gpg, linkedEntry, rx).isEmpty());
+#endif
+}
+
+/**
+ * @brief readRegularFileUnder() reads a regular file below the root and
+ *        follows no link on the way down: not the file, not a folder above
+ *        it. A linked root itself is the user's setup and is followed. A
+ *        path outside the root, a FIFO and a file over the limit are
+ *        refused.
+ */
+void tst_util::readRegularFileUnderFollowsNoLinkBelowTheRoot() {
+#ifdef Q_OS_WIN
+  QSKIP("symlinks and FIFOs");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString root = tmp.filePath(QStringLiteral("store"));
+  const QString outside = tmp.filePath(QStringLiteral("outside"));
+  QVERIFY(QDir().mkpath(root + QStringLiteral("/team/sub")));
+  QVERIFY(QDir().mkpath(outside));
+  const auto write = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(bytes) == bytes.size();
+  };
+  QVERIFY(write(root + QStringLiteral("/team/sub/a.gpg"), "inside"));
+  QVERIFY(write(outside + QStringLiteral("/a.gpg"), "outside"));
+
+  QCOMPARE(Util::readRegularFileUnder(
+               root, root + QStringLiteral("/team/sub/a.gpg"), 100),
+           std::optional<QByteArray>("inside"));
+  QCOMPARE(Util::readRegularFileUnder(root + QLatin1Char('/'),
+                                      root + QStringLiteral("/team/sub/a.gpg"),
+                                      100),
+           std::optional<QByteArray>("inside"));
+  QVERIFY(!Util::readRegularFileUnder(
+      root, root + QStringLiteral("/team/sub/a.gpg"), 3));
+
+  // A folder on the way that is a link, at either depth.
+  QVERIFY(QFile::link(outside, root + QStringLiteral("/linked")));
+  QVERIFY(!Util::readRegularFileUnder(
+      root, root + QStringLiteral("/linked/a.gpg"), 100));
+  QVERIFY(QFile::link(outside, root + QStringLiteral("/team/deep")));
+  QVERIFY(!Util::readRegularFileUnder(
+      root, root + QStringLiteral("/team/deep/a.gpg"), 100));
+  // The file itself a link.
+  QVERIFY(QFile::link(outside + QStringLiteral("/a.gpg"),
+                      root + QStringLiteral("/team/b.gpg")));
+  QVERIFY(!Util::readRegularFileUnder(
+      root, root + QStringLiteral("/team/b.gpg"), 100));
+  // Not under the root, or the root itself.
+  QVERIFY(!Util::readRegularFileUnder(root, outside + QStringLiteral("/a.gpg"),
+                                      100));
+  QVERIFY(!Util::readRegularFileUnder(
+      root, root + QStringLiteral("/../outside/a.gpg"), 100));
+  QVERIFY(!Util::readRegularFileUnder(root, root, 100));
+  // A FIFO is refused without blocking.
+  const QString fifo = root + QStringLiteral("/team/f.gpg");
+  QCOMPARE(::mkfifo(QFile::encodeName(fifo).constData(), 0600), 0);
+  QVERIFY(!Util::readRegularFileUnder(root, fifo, 100));
+  // A linked root is followed.
+  const QString linkedRoot = tmp.filePath(QStringLiteral("root-link"));
+  QVERIFY(QFile::link(root, linkedRoot));
+  QCOMPARE(Util::readRegularFileUnder(
+               linkedRoot, linkedRoot + QStringLiteral("/team/sub/a.gpg"), 100),
+           std::optional<QByteArray>("inside"));
 #endif
 }
 

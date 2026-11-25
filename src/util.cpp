@@ -1263,12 +1263,14 @@ auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
 #endif
 }
 
-auto Util::readRegularFile(const QString &path, qint64 maxBytes)
-    -> std::optional<QByteArray> {
-  QFile file;
-  if (!openRegularFile(path, file)) {
-    return std::nullopt;
-  }
+namespace {
+/**
+ * @brief Read an open regular file whole when it holds at most @p maxBytes.
+ * @param file Open on a regular file.
+ * @param maxBytes The most bytes accepted.
+ * @return The contents; nothing when larger or unreadable.
+ */
+auto readOpenFile(QFile &file, qint64 maxBytes) -> std::optional<QByteArray> {
   // A regular file's size is reliable, also when sparse: refuse a large one
   // before reading anything. One byte past the limit still guards a file
   // that grows meanwhile.
@@ -1280,6 +1282,71 @@ auto Util::readRegularFile(const QString &path, qint64 maxBytes)
     return std::nullopt;
   }
   return bytes;
+}
+} // namespace
+
+auto Util::readRegularFile(const QString &path, qint64 maxBytes)
+    -> std::optional<QByteArray> {
+  QFile file;
+  if (!openRegularFile(path, file)) {
+    return std::nullopt;
+  }
+  return readOpenFile(file, maxBytes);
+}
+
+auto Util::readRegularFileUnder(const QString &root, const QString &path,
+                                qint64 maxBytes) -> std::optional<QByteArray> {
+  const QString cleanRoot = QDir::cleanPath(root);
+  const QString relative =
+      QDir(cleanRoot).relativeFilePath(QDir::cleanPath(path));
+  const QStringList parts = relative.split(QLatin1Char('/'));
+  if (relative.isEmpty() || QDir::isAbsolutePath(relative) ||
+      parts.contains(QStringLiteral("..")) ||
+      parts.contains(QStringLiteral(".")) || parts.contains(QString())) {
+    return std::nullopt;
+  }
+#ifdef Q_OS_WIN
+  if (isUnderLink(path, root)) {
+    return std::nullopt;
+  }
+  return readRegularFile(path, maxBytes);
+#else
+  // The root by name, followed if it is a link (the user's setup); below it
+  // nothing is.
+  int dir = ::open(QFile::encodeName(cleanRoot).constData(),
+                   O_RDONLY | O_DIRECTORY | O_CLOEXEC);
+  if (dir < 0) {
+    return std::nullopt;
+  }
+  for (qsizetype i = 0; i + 1 < parts.size(); ++i) {
+    const int next = ::openat(dir, QFile::encodeName(parts.at(i)).constData(),
+                              O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
+    ::close(dir);
+    if (next < 0) {
+      return std::nullopt;
+    }
+    dir = next;
+  }
+  // As openRegularFile(): no link, no FIFO left blocking the open.
+  const int fd = ::openat(dir, QFile::encodeName(parts.constLast()).constData(),
+                          O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);
+  ::close(dir);
+  if (fd < 0) {
+    return std::nullopt;
+  }
+  struct stat st{};
+  if (::fstat(fd, &st) != 0 || !S_ISREG(st.st_mode)) {
+    ::close(fd);
+    return std::nullopt;
+  }
+  QFile file;
+  if (!file.open(fd, QIODevice::ReadOnly, // codeql[cpp/toctou-race-condition]
+                 QFileDevice::AutoCloseHandle)) {
+    ::close(fd);
+    return std::nullopt;
+  }
+  return readOpenFile(file, maxBytes);
+#endif
 }
 
 auto Util::syncToDisk(QFileDevice &file) -> bool {

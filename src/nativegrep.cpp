@@ -49,14 +49,17 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
   // name was listed as a regular file when the search began, and a pull
   // since may have put a link there (or on a folder on the way). gpg given
   // the name would follow it and decrypt a file outside the store into the
-  // results. The cap is on what decrypts; the ciphertext of an entry just
+  // results. With the store given, every folder on the way down is opened
+  // without following a link, so none can be swapped between a check and
+  // the read. The cap is on what decrypts; the ciphertext of an entry just
   // under it is a little larger.
   constexpr qint64 kCiphertextMargin = 1024LL * 1024;
-  if (!storeDir.isEmpty() && Util::isUnderLink(filePath, storeDir)) {
-    return {};
-  }
-  const std::optional<QByteArray> ciphertext = Util::readRegularFile(
-      filePath, Pass::kMaxPlaintextBytes + kCiphertextMargin);
+  constexpr qint64 kMaxCiphertext =
+      Pass::kMaxPlaintextBytes + kCiphertextMargin;
+  const std::optional<QByteArray> ciphertext =
+      storeDir.isEmpty()
+          ? Util::readRegularFile(filePath, kMaxCiphertext)
+          : Util::readRegularFileUnder(storeDir, filePath, kMaxCiphertext);
   if (!ciphertext) {
     return {};
   }
