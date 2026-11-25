@@ -26,6 +26,9 @@ class tst_executor : public QObject {
 
 private Q_SLOTS:
 #ifndef Q_OS_WIN
+  void cappedOutputKeepsHeadAndTail();
+  void blockingStderrIsCapped();
+  void queuedStderrIsCapped();
   void executeBlockingEcho();
   void executeBlockingWithArgs();
   void executeBlockingWithInput();
@@ -1608,6 +1611,100 @@ void tst_executor::resolveExecutableFindsBundledExeOnWindows() {
   } cleanup{path};
   QCOMPARE(Executor::resolveExecutable(name), path);
 #endif
+}
+
+/**
+ * @brief CappedOutput keeps what fits whole, and of more the first and the
+ *        last half of the cap with a note of what was left out between,
+ *        cut at whole UTF-8 characters (ANT-2026-VQGRD45V).
+ */
+void tst_executor::cappedOutputKeepsHeadAndTail() {
+  Executor::CappedOutput small;
+  small.append("one ");
+  small.append("two");
+  QCOMPARE(small.take(), QByteArrayLiteral("one two"));
+  QCOMPARE(small.take(), QByteArray());
+
+  constexpr qsizetype half = Executor::kMaxStderrBytes / 2;
+  Executor::CappedOutput big;
+  // Two-byte characters, fed in odd-sized chunks, so both cuts can fall
+  // inside one.
+  const QByteArray e = QStringLiteral("é").toUtf8();
+  QByteArray all = QByteArrayLiteral("FIRST");
+  while (all.size() < 5 * Executor::kMaxStderrBytes) {
+    all += e;
+  }
+  all += QByteArrayLiteral("LAST");
+  for (qsizetype at = 0; at < all.size(); at += 4097) {
+    big.append(all.mid(at, 4097));
+  }
+  const QByteArray kept = big.take();
+  QVERIFY(kept.startsWith("FIRST"));
+  QVERIFY(kept.endsWith("LAST"));
+  QVERIFY2(kept.size() <= Executor::kMaxStderrBytes + 64,
+           qPrintable(QString::number(kept.size())));
+  QVERIFY(kept.size() >= Executor::kMaxStderrBytes - 8);
+  QVERIFY(kept.contains("bytes left out"));
+  const QString text = QString::fromUtf8(kept);
+  QCOMPARE(text.toUtf8(), kept);
+  QVERIFY2(!text.contains(QChar::ReplacementCharacter),
+           "a cut fell inside a character");
+  // The note counts what is missing.
+  const qsizetype from = kept.indexOf("[... ") + 5;
+  const qint64 left =
+      kept.mid(from, kept.indexOf(' ', from) - from).toLongLong();
+  const qsizetype note = kept.indexOf("[... ");
+  const qsizetype tailStart = kept.indexOf("...]\n") + 5;
+  QCOMPARE(left + (note - 1) + (kept.size() - tailStart),
+           static_cast<qint64>(all.size()));
+  QVERIFY(note - 1 <= half);
+}
+
+/**
+ * @brief A blocking run keeps at most the cap of a flood on stderr, with
+ *        its start and its end, where the error is.
+ */
+void tst_executor::blockingStderrIsCapped() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QString err;
+  const int rc = Executor::executeBlocking(
+      sh,
+      {QStringLiteral("-c"),
+       QStringLiteral("echo first-line >&2; head -c 4000000 /dev/zero | "
+                      "tr '\\000' x >&2; echo >&2; echo last-line >&2; "
+                      "exit 2")},
+      QString(), nullptr, &err);
+  QCOMPARE(rc, 2);
+  QVERIFY2(err.size() <= Executor::kMaxStderrBytes + 64,
+           qPrintable(QString::number(err.size())));
+  QVERIFY(err.startsWith(QStringLiteral("first-line")));
+  QVERIFY(err.trimmed().endsWith(QStringLiteral("last-line")));
+  QVERIFY(err.contains(QStringLiteral("bytes left out")));
+}
+
+/**
+ * @brief The queued path keeps the same cap, read while the command runs.
+ */
+void tst_executor::queuedStderrIsCapped() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, &Executor::finished);
+  exec.execute(5, sh,
+               {QStringLiteral("-c"),
+                QStringLiteral("echo first-line >&2; head -c 4000000 "
+                               "/dev/zero | tr '\\000' x >&2; echo >&2; "
+                               "echo last-line >&2")},
+               false, true);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 10000);
+  const QString err = spy.first().at(3).toString();
+  QVERIFY2(err.size() <= Executor::kMaxStderrBytes + 64,
+           qPrintable(QString::number(err.size())));
+  QVERIFY(err.startsWith(QStringLiteral("first-line")));
+  QVERIFY(err.trimmed().endsWith(QStringLiteral("last-line")));
 }
 
 QTEST_MAIN(tst_executor)

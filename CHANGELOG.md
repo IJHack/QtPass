@@ -805,6 +805,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- A command that writes without end to its error output can no longer use
+  up memory. gpg writes a line for every packet it rejects and git one for
+  every ref, so an entry or a repository someone else made could fill
+  gigabytes, all of it kept and then shown. QtPass now reads that output
+  while the command runs and keeps its first and last 32 KiB, with a note
+  of how much was left out; output nobody uses is not kept at all (scan
+  ANT-2026-VQGRD45V).
 - Checking a `.gpg-id.sig` can no longer freeze QtPass for minutes. gpg
   checked every signature in the file, each against the key it names, and
   someone who can write to the store could fill 64 KiB with signatures by a

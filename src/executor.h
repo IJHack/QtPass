@@ -162,6 +162,56 @@ class Executor : public QObject {
 
 public:
   /**
+   * @brief Most bytes of a command's stderr kept: the first and the last
+   *        half of this, with a note of how much was left out between.
+   *
+   * gpg writes a line per packet it rejects and git one per ref, so an
+   * entry or a repository someone else made could fill gigabytes, all of
+   * it held in memory and then shown (scan ANT-2026-VQGRD45V). The end is
+   * kept because that is where the error is.
+   */
+  static constexpr qsizetype kMaxStderrBytes = 64 * 1024;
+
+  /**
+   * @class CappedOutput
+   * @brief A stream of bytes held as its first and last
+   *        kMaxStderrBytes / 2 bytes.
+   */
+  class CappedOutput {
+  public:
+    /**
+     * @brief Add what the process wrote next.
+     * @param chunk The bytes, in order.
+     */
+    void append(const QByteArray &chunk);
+    /**
+     * @brief Everything kept, and start over.
+     * @return The bytes as written when nothing was left out; otherwise the
+     *         head, a line saying how many bytes were left out, and the
+     *         tail, each cut at a UTF-8 character boundary.
+     */
+    auto take() -> QByteArray;
+
+  private:
+    /** @brief The first bytes, up to half the cap. */
+    QByteArray m_head;
+    /** @brief The latest bytes, up to half the cap. */
+    QByteArray m_tail;
+    /** @brief Bytes that fell out between head and tail. */
+    qint64 m_dropped = 0;
+  };
+
+private:
+  /**
+   * @brief stderr of the running queued command, read as it arrives and
+   *        capped.
+   */
+  CappedOutput m_stderr;
+  /// The running queued command's stdout is not wanted: dropped as it comes.
+  bool m_discardStdout = false;
+
+public:
+  /**
    * @brief Construct an Executor with an optional parent QObject.
    * @param parent Parent QObject, or nullptr for no parent.
    */
