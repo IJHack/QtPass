@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c":[4,0,1,23,3],
 "gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8":[4,0,1,23,5],
 "gpgkeystate_8cpp.html#a1d543e1b773901266ef423cfb0204b68":[4,0,1,23,6],
 "gpgkeystate_8cpp.html#a357bd82fd34f78f3d2b3c6fb5c908507":[4,0,1,23,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c":[1,4,1,16],
 "struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05":[1,4,1,0],
 "struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f":[1,4,1,6],
-"struct_app_settings.html#a5a5e02fd0a52d7d4b81422e49fba36cd":[1,4,1,3],
-"struct_app_settings.html#a5dbc9ec5be7876610b987a0d221c28a8":[1,4,1,4]
+"struct_app_settings.html#a5a5e02fd0a52d7d4b81422e49fba36cd":[1,4,1,3]
 };

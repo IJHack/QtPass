@@ -295,6 +295,7 @@ var group__ui =
       [ "updateProfileBoxEnabled", "class_main_window.html#a86ff9b9b01ed40f6040b68ed2777d824", null ],
       [ "clearPanelTimer", "class_main_window.html#a7428919d42945d4b83863ca4219f38ac", null ],
       [ "clearResultsTimer", "class_main_window.html#a5e5f21753fe7657ef9daf2a4f883f879", null ],
+      [ "kMaxFlashCharacters", "class_main_window.html#a79263215c3742682e59ee14412562d41", null ],
       [ "m_copyRequestFile", "class_main_window.html#a734bea0e0233113bdd6baa6328d9b0d6", null ],
       [ "m_displayPanel", "class_main_window.html#a358125b8efbfbe4b22eecd2716c2dc7c", null ],
       [ "m_firstShowCompleted", "class_main_window.html#a93f01ed6916dd3114676309ab386fe46", null ],

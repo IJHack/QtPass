@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8":[1,5,14,5],
 "class_tray_icon.html#a4b668e37495a62aae4f185f8eba96192":[1,5,14,14],
 "class_tray_icon.html#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f":[1,5,14,1],
 "class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5":[1,5,14,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "gpgidsigner_8cpp_source.html":[4,0,1,21],
 "gpgidsigner_8h.html":[4,0,1,22],
 "gpgidsigner_8h_source.html":[4,0,1,22],
-"gpgkeystate_8cpp.html":[4,0,1,23],
-"gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c":[4,0,1,23,3]
+"gpgkeystate_8cpp.html":[4,0,1,23]
 };
