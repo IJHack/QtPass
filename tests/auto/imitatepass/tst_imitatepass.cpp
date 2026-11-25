@@ -659,6 +659,7 @@ private Q_SLOTS:
   void recoveryReportsManyLeftoversInOneBox();
   void reencryptWaitsForTheOtherBackend();
   void reencryptRefusesAnEntryThatBecameALink();
+  void decryptEntryReadsUnderTheStoreOnly();
   void reencryptReportsALinkWhoseTargetHasTheRecipients();
   void reencryptReportsAFolderThatBecameALink();
   void reencryptSkipsSymlinkedEntries();
@@ -4160,6 +4161,54 @@ void tst_imitatepass::reencryptRefusesAnEntryThatBecameALink() {
   QFile check(outside);
   QVERIFY(check.open(QIODevice::ReadOnly));
   QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
+#endif
+}
+
+/**
+ * @brief Re-encryption reads an entry with no link followed below the
+ *        store, also when the store root is a link and the entry is
+ *        spelled through it or through its target. A name under neither,
+ *        or under a linked folder, is not read.
+ */
+void tst_imitatepass::decryptEntryReadsUnderTheStoreOnly() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks and a shell script as a fake gpg");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString real = tmp.filePath(QStringLiteral("real"));
+  QVERIFY(QDir().mkpath(real + QStringLiteral("/team")));
+  QVERIFY(QDir().mkpath(tmp.filePath(QStringLiteral("outside"))));
+  const auto write = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(bytes) == bytes.size();
+  };
+  QVERIFY(write(real + QStringLiteral("/team/a.gpg"), "inside"));
+  QVERIFY(write(tmp.filePath(QStringLiteral("outside/a.gpg")), "outside"));
+  const QString linkedRoot = tmp.filePath(QStringLiteral("store"));
+  QVERIFY(QFile::link(real, linkedRoot));
+  QVERIFY(QFile::link(tmp.filePath(QStringLiteral("outside")),
+                      real + QStringLiteral("/linked")));
+  // "Decrypts" stdin by printing it.
+  const QString gpg = tmp.filePath(QStringLiteral("gpg"));
+  QVERIFY(write(gpg, "#!/bin/sh\ncat\n"));
+  QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner));
+  ImitatePass pass;
+  pass.init(settingsFor(linkedRoot, gpg));
+  const auto read = [&pass](const QString &name) {
+    QByteArray plaintext;
+    return pass.decryptEntry(name, &plaintext, nullptr) ? plaintext
+                                                        : QByteArray();
+  };
+  QCOMPARE(read(linkedRoot + QStringLiteral("/team/a.gpg")),
+           QByteArray("inside"));
+  QCOMPARE(
+      read(QFileInfo(real).canonicalFilePath() + QStringLiteral("/team/a.gpg")),
+      QByteArray("inside"));
+  QVERIFY(read(linkedRoot + QStringLiteral("/linked/a.gpg")).isEmpty());
+  QVERIFY(read(tmp.filePath(QStringLiteral("outside/a.gpg"))).isEmpty());
 #endif
 }
 

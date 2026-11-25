@@ -526,6 +526,33 @@ public:
       -> std::optional<QByteArray>;
 
   /**
+   * @brief readRegularFile() for a file under @p root, with no link followed
+   * anywhere on the way down from it.
+   *
+   * readRegularFile() refuses a link only as the last part of the name, and
+   * a check of the folders before it (isUnderLink()) leaves a window in
+   * which a pull makes one of them a link. Here each folder is opened
+   * relative to the one above it without following a link (`openat()` with
+   * `O_NOFOLLOW | O_DIRECTORY`) and the file relative to the last, so the
+   * folders judged are the folders walked. @p root itself may be a link: a
+   * linked store root is the user's setup. On Windows each folder is opened
+   * by name, refused when it is a symbolic link or junction (what the walk
+   * leaves out; another reparse tag, a cloud placeholder, is not), and held
+   * open without
+   * FILE_SHARE_DELETE until the file is read, so none can be renamed or
+   * replaced meanwhile.
+   * @param root The store root.
+   * @param path The file, spelled under @p root.
+   * @param maxBytes The most bytes accepted.
+   * @return The contents; nothing when @p path is not under @p root, a part
+   *         of the way is a link or not a folder, or readRegularFile() would
+   *         refuse the file.
+   */
+  static auto readRegularFileUnder(const QString &root, const QString &path,
+                                   qint64 maxBytes)
+      -> std::optional<QByteArray>;
+
+  /**
    * @brief Fills the temporary of stageFileReplacing() through its open
    * handle; returns why it could not (translated, for the user), or an
    * empty string.

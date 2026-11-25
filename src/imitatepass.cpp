@@ -982,13 +982,27 @@ auto ImitatePass::decryptEntry(const QString &fileName, QByteArray *plaintext,
   // The cap is on what decrypts; the ciphertext of an entry just under it
   // is a little larger (packet headers, one session key per recipient).
   constexpr qint64 kCiphertextMargin = 1024LL * 1024;
-  // That read refuses a link only as the last part of the name; a folder
-  // on the way that became a link is checked here.
-  const std::optional<QByteArray> ciphertext =
-      Util::isUnderLink(fileName, m_settings.passStore)
-          ? std::nullopt
-          : Util::readRegularFile(fileName,
-                                  kMaxPlaintextBytes + kCiphertextMargin);
+  // Every folder on the way down from the store is opened without
+  // following a link too (readRegularFileUnder()), so none can become one
+  // between a check and the read. The name may be spelled through the
+  // target of a linked store root; anything under neither is refused.
+  constexpr qint64 kMaxCiphertext = kMaxPlaintextBytes + kCiphertextMargin;
+  const QString store = QDir::cleanPath(m_settings.passStore);
+  const auto under = [&fileName](const QString &root) {
+    const QString relative =
+        QDir(root).relativeFilePath(QDir::cleanPath(fileName));
+    return !root.isEmpty() && !QDir::isAbsolutePath(relative) &&
+           relative != QStringLiteral("..") &&
+           !relative.startsWith(QStringLiteral("../"));
+  };
+  const QString canonicalStore = QFileInfo(store).canonicalFilePath();
+  std::optional<QByteArray> ciphertext;
+  if (under(store)) {
+    ciphertext = Util::readRegularFileUnder(store, fileName, kMaxCiphertext);
+  } else if (under(canonicalStore)) {
+    ciphertext =
+        Util::readRegularFileUnder(canonicalStore, fileName, kMaxCiphertext);
+  }
   if (!ciphertext) {
     qCDebug(lcQtPass) << "Not a regular file any more, or too large:"
                       << fileName;

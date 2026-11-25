@@ -165,6 +165,10 @@ public:
    * @param rx The pattern.
    * @param cancel When set, gpg is not started, or is terminated while it
    *        runs; nullptr to run to completion.
+   * @param storeDir The store @p filePath is in; when given, the entry is
+   *        read with Util::readRegularFileUnder(), so no folder on the way
+   *        down from it is followed as a link either. The file itself is
+   *        always read without following a link and handed to gpg on stdin.
    * @return Matching lines, at most kMaxMatchesPerEntry and then a marker
    *         (isMoreMarker()) when there are more; empty when gpg fails, is
    *         cancelled or nothing matches. A match in the first line is
@@ -175,8 +179,8 @@ public:
    */
   static auto matchFile(const QProcessEnvironment &env, const QString &gpgExe,
                         const QString &filePath, const QRegularExpression &rx,
-                        const std::atomic_bool *cancel = nullptr)
-      -> QStringList;
+                        const std::atomic_bool *cancel = nullptr,
+                        const QString &storeDir = QString()) -> QStringList;
   /**
    * @brief Walk @p storeDir, decrypt every .gpg file and collect the matches.
    * @param env Environment for gpg.

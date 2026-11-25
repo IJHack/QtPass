@@ -251,8 +251,8 @@ public Q_SLOTS:
 /**
  * @brief Write an executable shell script standing in for gpg: it lists one
  * public key, "exports" an armored block (or fails for the key NOKEY) and
- * "decrypts" a file by printing it as is. Nothing reaches a keyring or an
- * agent.
+ * "decrypts" a file by printing it as is (named last, or on stdin). Nothing
+ * reaches a keyring or an agent.
  * @return The script path, or an empty string when it could not be written.
  */
 auto writeFakeGpg(const QString &dir) -> QString {
@@ -281,7 +281,7 @@ auto writeFakeGpg(const QString &dir) -> QString {
       "'-----END PGP PUBLIC KEY BLOCK-----'\n"
       ";;\n"
       "-d\\ *|*\\ -d\\ *)\n"
-      "cat \"$last\"\n"
+      "if [ -f \"$last\" ]; then cat \"$last\"; else cat; fi\n"
       ";;\n"
       "esac\n"
       "exit 0\n");

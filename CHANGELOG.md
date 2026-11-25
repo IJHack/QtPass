@@ -805,6 +805,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Content search reads each entry itself, without following a link, and
+  hands it to gpg on stdin. It listed the entries once when it began and
+  then gave gpg their names, so an entry or folder that an update from Git
+  turned into a link during a long search was decrypted through that link,
+  and a matching line from a file outside the store showed among the
+  results. Every folder on the way down from the store is opened without
+  following a link as well (on Windows, held so it cannot be swapped), and
+  re-encryption reads entries the same way (scan ANT-2026-5W0UHRED).
 - The users dialog no longer writes back an old recipient list. When the
   folder's list changed while the dialog was open (an update from Git that
   ran on, a sync), OK wrote the list as it was read plus your change, so
