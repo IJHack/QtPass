@@ -290,6 +290,7 @@ private Q_SLOTS:
   void takesOverWhenPeerVanishesBeforeForward();
   void listensDespiteStaleSocket();
   void socketIsUserAccessOnly();
+  void ownServerRunsAsThisUser();
   void messageArrives();
   void emptyPayloadArrivesAsEmptyMessage();
   void silentPeerIsIgnoredAndReleased();
@@ -424,6 +425,19 @@ void tst_singleapplication::socketIsUserAccessOnly() {
   QVERIFY2((info.permissions() & others) == 0,
            "socket is reachable by group/other users");
 #endif
+}
+
+/**
+ * @brief This process's own server passes the owner check a launch makes
+ *        before it forwards (on Windows, by the server process's user; a
+ *        pipe another user opened under the name fails it).
+ */
+void tst_singleapplication::ownServerRunsAsThisUser() {
+  ensurePrimary();
+  QLocalSocket client;
+  QVERIFY(connectClient(client));
+  QVERIFY(SingleApplication::serverRunsAsThisUser(client));
+  client.disconnectFromServer();
 }
 
 void tst_singleapplication::messageArrives() {

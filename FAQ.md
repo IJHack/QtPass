@@ -394,6 +394,23 @@ per the KDE, GNOME and macOS guidelines. Closing the _window_ is what "Hide on
 close" applies to: the close button, Alt+F4, and File ▸ Close window (Ctrl+W,
 Cmd+W) hide QtPass to the tray when that setting is on.
 
+### Starting QtPass opens a second window instead of the open one
+
+A second start of QtPass normally hands its search text to the window that is
+already open and quits. It does that only when that window runs as you: the
+names it uses to find it live in a folder only you can open (Linux, BSD and
+macOS), and on Windows, where those names are visible to every user, QtPass
+checks who owns the window it reaches. When it cannot be sure, it opens a
+window of its own instead.
+
+On Windows with several user accounts signed in on one machine, this check is
+**untested**: if you see a second window where you expect the first, or a
+start that does nothing, please
+[open an issue](https://github.com/IJHack/QtPass/issues) and say how many
+accounts were signed in. A second window also opens when the folder for those
+names is missing or its path is too long; that loses only the hand-over, not
+anything else.
+
 ### How do I get a debug log?
 
 Every build, including the installers, can trace what it runs. Start QtPass

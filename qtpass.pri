@@ -100,7 +100,7 @@ win32 {
     }
     gcc:QMAKE_LFLAGS += -Wl,--dynamicbase -Wl,--nxcompat
     msvc:QMAKE_LFLAGS += /DYNAMICBASE /NXCOMPAT
-    LIBS    += -lmpr -lbcrypt
+    LIBS    += -lmpr -lbcrypt -ladvapi32
 } else:macx {
     # $$PWD is the directory of this .pri, i.e. the repository root, whatever
     # sub-project includes it. $$(PWD) was the shell's working directory, which

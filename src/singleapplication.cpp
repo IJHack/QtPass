@@ -18,6 +18,11 @@
 #include <QThread>
 #include <utility>
 
+#ifdef Q_OS_WIN
+#include <vector>
+#include <windows.h>
+#endif
+
 SingleApplication::SingleApplication(
     int &argc, char *argv[], // NOLINT(modernize-avoid-c-arrays)
     QString uniqueKey)
@@ -59,6 +64,77 @@ auto SingleApplication::privateKeyIn(const QString &base, const QString &dir)
           .left(16);
   return QDir(dir).filePath(QStringLiteral("qtpass-") +
                             QString::fromLatin1(hash));
+}
+
+#ifdef Q_OS_WIN
+namespace {
+
+/**
+ * @brief The TOKEN_USER record of @p token, copied out.
+ * @param token A token opened with TOKEN_QUERY.
+ * @return The record's bytes; empty when it cannot be read.
+ */
+auto tokenUser(HANDLE token) -> std::vector<BYTE> {
+  DWORD size = 0;
+  GetTokenInformation(token, TokenUser, nullptr, 0, &size);
+  if (size == 0) {
+    return {};
+  }
+  std::vector<BYTE> record(size);
+  if (!GetTokenInformation(token, TokenUser, record.data(), size, &size)) {
+    return {};
+  }
+  return record;
+}
+
+/**
+ * @brief The user of process @p process, as a TOKEN_USER record.
+ * @param process A process handle with query access.
+ * @return The record's bytes; empty when it cannot be read.
+ */
+auto processUser(HANDLE process) -> std::vector<BYTE> {
+  HANDLE token = nullptr;
+  if (!OpenProcessToken(process, TOKEN_QUERY, &token)) {
+    return {};
+  }
+  std::vector<BYTE> record = tokenUser(token);
+  CloseHandle(token);
+  return record;
+}
+
+} // namespace
+#endif
+
+// Windows only: see the header. A server whose process or token this user
+// may not open is not this user's.
+auto SingleApplication::serverRunsAsThisUser(const QLocalSocket &socket)
+    -> bool {
+#ifdef Q_OS_WIN
+  // NOLINTNEXTLINE(performance-no-int-to-ptr): QLocalSocket gives the HANDLE
+  const auto pipe = reinterpret_cast<HANDLE>(socket.socketDescriptor());
+  ULONG pid = 0;
+  if (pipe == nullptr || pipe == INVALID_HANDLE_VALUE ||
+      !GetNamedPipeServerProcessId(pipe, &pid)) {
+    return false;
+  }
+  HANDLE server = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid);
+  if (server == nullptr) {
+    return false;
+  }
+  const std::vector<BYTE> theirs = processUser(server);
+  CloseHandle(server);
+  const std::vector<BYTE> ours = processUser(GetCurrentProcess());
+  if (theirs.empty() || ours.empty()) {
+    return false;
+  }
+  return EqualSid(
+             reinterpret_cast<const TOKEN_USER *>(theirs.data())->User.Sid,
+             reinterpret_cast<const TOKEN_USER *>(ours.data())->User.Sid) !=
+         FALSE;
+#else
+  Q_UNUSED(socket);
+  return true;
+#endif
 }
 
 auto SingleApplication::lockPathFor(const QString &key) -> QString {
@@ -172,6 +248,12 @@ auto SingleApplication::forwardMessage(const QString &message) -> bool {
     qCDebug(lcQtPass) << localSocket.errorString().toLatin1();
     return false;
   }
+  if (!serverRunsAsThisUser(localSocket)) {
+    qCWarning(lcQtPass) << "SingleApplication: the server on" << _uniqueKey
+                        << "is not this user's; not forwarding.";
+    localSocket.abort();
+    return false;
+  }
   QByteArray payload = message.toUtf8();
   if (payload.isEmpty()) {
     payload = QByteArray(1, '\0');
@@ -189,6 +271,12 @@ auto SingleApplication::peerIsListening() -> bool {
   QLocalSocket probe;
   probe.connectToServer(_uniqueKey, QIODevice::WriteOnly);
   if (!probe.waitForConnected(timeout)) {
+    return false;
+  }
+  if (!serverRunsAsThisUser(probe)) {
+    qCWarning(lcQtPass) << "SingleApplication: the server on" << _uniqueKey
+                        << "is not this user's.";
+    probe.abort();
     return false;
   }
   probe.disconnectFromServer();
