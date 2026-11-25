@@ -1341,6 +1341,12 @@ auto ImitatePass::grepScanStore(const QProcessEnvironment &env,
     if (QThread::currentThread()->isInterruptionRequested())
       return {};
     const QString filePath = it.next();
+    // A link is not an entry: QDir::Files lists links to files too, and gpg
+    // given the name would decrypt whatever it points to, outside the store,
+    // into the results.
+    if (it.fileInfo().isSymLink()) {
+      continue;
+    }
     const QStringList matches = grepMatchFile(env, gpgExe, filePath, rx);
     if (!matches.isEmpty()) {
       QString entry = QDir(storeDir).relativeFilePath(filePath);

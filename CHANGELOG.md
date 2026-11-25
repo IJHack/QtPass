@@ -85,6 +85,12 @@
 
 ### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
+- Content search skips links. A link to a file in the store was searched
+  like an entry, so a matching line from the file it points to, outside the
+  store, showed among the results (scan finding ANT-2026-5W0UHRED,
+  [#2331](https://github.com/IJHack/QtPass/pull/2331) on main, which also
+  reads each entry without following a link that a pull put there during
+  the search).
 - Key generation refuses a pasted name, email or passphrase with a line
   break, also a Unicode line or paragraph separator that the name field
   shows as a space. Pasted text could otherwise add gpg directives such as

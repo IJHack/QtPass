@@ -266,6 +266,7 @@ private Q_SLOTS:
   void passFinishedGrepSuccessEmitsResults();
   // ImitatePass::Grep / helpers
   void grepMatchFileFailedDecryptReturnsEmpty();
+  void grepScanStoreSkipsLinks();
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepImitatePassEmptyStoreEmitsEmpty();
   void wslPathKeepsWhitespaceEndingTheName();
@@ -2397,6 +2398,43 @@ void tst_util::grepMatchFileFailedDecryptReturnsEmpty() {
       ImitatePass::grepMatchFile(env, QStringLiteral("/nonexistent/gpg"),
                                  QStringLiteral("/no/such.gpg"), rx);
   QVERIFY(matches.isEmpty());
+}
+
+/**
+ * @brief Content search skips a link to a file: gpg given its name would
+ *        decrypt what it points to, outside the store, into the results. A
+ *        regular entry next to it is searched.
+ */
+void tst_util::grepScanStoreSkipsLinks() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in and symlinks");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString store = tmp.filePath(QStringLiteral("store"));
+  QVERIFY(QDir().mkpath(store));
+  const auto write = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(bytes) == bytes.size();
+  };
+  QVERIFY(write(tmp.filePath(QStringLiteral("outside.txt")),
+                "outside secret hit\n"));
+  QVERIFY(write(QDir(store).filePath(QStringLiteral("a.gpg")), "A hit\n"));
+  QVERIFY(QFile::link(tmp.filePath(QStringLiteral("outside.txt")),
+                      QDir(store).filePath(QStringLiteral("b.gpg"))));
+  // "Decrypts" the file named last by printing it.
+  const QString gpg = tmp.filePath(QStringLiteral("gpg"));
+  QVERIFY(write(gpg, "#!/bin/sh\nfor a in \"$@\"; do last=\"$a\"; done\n"
+                     "cat \"$last\"\n"));
+  QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner));
+  const auto results = ImitatePass::grepScanStore(
+      QProcessEnvironment::systemEnvironment(), gpg, store,
+      QRegularExpression(QStringLiteral("hit")));
+  QCOMPARE(results.size(), 1);
+  QCOMPARE(results.first().first, QStringLiteral("a"));
+#endif
 }
 
 void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
