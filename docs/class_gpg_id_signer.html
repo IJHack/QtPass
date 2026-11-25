@@ -155,7 +155,7 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:aa88d2f58405a056d72bba32958fdd77a" id="r_aa88d2f58405a056d72bba32958fdd77a"><td class="memItemLeft">static constexpr qint64&#160;</td><td class="memItemRight"><a class="el" href="#aa88d2f58405a056d72bba32958fdd77a">kMaxSignatureBytes</a> = 64 * 1024</td></tr>
+<tr class="memitem:aa88d2f58405a056d72bba32958fdd77a" id="r_aa88d2f58405a056d72bba32958fdd77a"><td class="memItemLeft">static constexpr qint64&#160;</td><td class="memItemRight"><a class="el" href="#aa88d2f58405a056d72bba32958fdd77a">kMaxSignatureBytes</a> = 4 * 1024</td></tr>
 <tr class="memdesc:aa88d2f58405a056d72bba32958fdd77a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most bytes of a .gpg-id.sig <a class="el" href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-k...">verify()</a> hands to gpg.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -196,7 +196,7 @@ Private Attributes</h2></td></tr>
 <p>Blocking process runner: <a class="el" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">Executor::executeBlocking()</a>'s shape. </p>
 <dl class="section return"><dt>Returns</dt><dd>The exit code, or -1 when the process could not run. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00041">41</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00046">46</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>
@@ -272,7 +272,7 @@ Private Attributes</h2></td></tr>
 <p>Whether any signing key is configured at all. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot...">sign()</a> will do something. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00072">72</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00077">77</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
@@ -342,7 +342,7 @@ Private Attributes</h2></td></tr>
 <p>The keys this signer was given. </p>
 <dl class="section return"><dt>Returns</dt><dd>The list from the constructor. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00078">78</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00083">83</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -627,7 +627,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the signature is good, or when no key is configured. false when the file cannot be read. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8cpp_source.html#l00281">281</a> of file <a class="el" href="gpgidsigner_8cpp_source.html">gpgidsigner.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8cpp_source.html#l00295">295</a> of file <a class="el" href="gpgidsigner_8cpp_source.html">gpgidsigner.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -654,7 +654,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">qint64 GpgIdSigner::kMaxSignatureBytes = 64 * 1024</td>
+          <td class="memname">qint64 GpgIdSigner::kMaxSignatureBytes = 4 * 1024</td>
         </tr>
       </table>
   </td>
@@ -665,9 +665,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Most bytes of a .gpg-id.sig <a class="el" href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-k...">verify()</a> hands to gpg. </p>
-<p>A detached signature is well under a KiB; far beyond any real one. </p>
+<p>A detached signature is well under a KiB; one by a 16384-bit RSA key, armored, about 3 KiB. The cap also bounds gpg's work: it checks every signature packet in the file, and one made with a key built to be slow (a huge public exponent) takes seconds each. 64 KiB held enough of them to freeze QtPass for minutes (scan ANT-2026-XQUAU1HG); 4 KiB holds two. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00035">35</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00040">40</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>
@@ -693,7 +693,7 @@ Private Attributes</h2></td></tr>
 
 <p>How gpg is run; replaced by a fake in the unit tests. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00162">162</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00167">167</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>
@@ -719,7 +719,7 @@ Private Attributes</h2></td></tr>
 
 <p>The gpg executable, as configured. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00155">155</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00160">160</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>
@@ -745,7 +745,7 @@ Private Attributes</h2></td></tr>
 
 <p>The configured signing keys. The first one signs; a signature by any of them verifies. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00160">160</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00165">165</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>

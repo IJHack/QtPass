@@ -125,19 +125,19 @@
 </a>
 </g>
 </g>
-<!-- Node29 -->
-<g id="Node000029" class="node">
-<title>Node29</title>
-<g id="a_Node000029"><a xlink:href="class_profile_init.html#ad02510c0e01ce2370690838e17f7a6d5" target="_top" xlink:title="Write the enabled recipients to gpgIdFile, whole or not at all; with signed_ the list carries the gen...">
+<!-- Node30 -->
+<g id="Node000030" class="node">
+<title>Node30</title>
+<g id="a_Node000030"><a xlink:href="class_profile_init.html#ad02510c0e01ce2370690838e17f7a6d5" target="_top" xlink:title="Write the enabled recipients to gpgIdFile, whole or not at all; with signed_ the list carries the gen...">
 <polygon fill="white" stroke="#666666" points="288.88,-117.75 167.12,-117.75 167.12,-97 288.88,-97 288.88,-117.75"/>
 <text xml:space="preserve" text-anchor="middle" x="228" y="-104.25" font-family="Helvetica,sans-Serif" font-size="10.00">ProfileInit::writeGpgId</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node29 -->
-<g id="edge36_Node000001_Node000029" class="edge">
-<title>Node1&#45;&gt;Node29</title>
-<g id="a_edge36_Node000001_Node000029"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node30 -->
+<g id="edge37_Node000001_Node000030" class="edge">
+<title>Node1&#45;&gt;Node30</title>
+<g id="a_edge37_Node000001_Node000030"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M63.59,-346.63C89.75,-308.33 178.74,-178.04 213.21,-127.57"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="216.09,-129.56 218.84,-119.33 210.31,-125.61 216.09,-129.56"/>
 </a>
@@ -156,8 +156,8 @@
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="class_profile_init.html#a9d0e4d0f6fd056a9a16fbbd2e3a51e43" target="_top" xlink:title="Run one set&#45;up git command on git and wait for it: init and add, which read what lies in the folder,...">
-<polygon fill="white" stroke="#666666" points="682.38,-473.75 583.88,-473.75 583.88,-453 682.38,-453 682.38,-473.75"/>
-<text xml:space="preserve" text-anchor="middle" x="633.12" y="-460.25" font-family="Helvetica,sans-Serif" font-size="10.00">ProfileInit::runGit</text>
+<polygon fill="white" stroke="#666666" points="682.38,-472.75 583.88,-472.75 583.88,-452 682.38,-452 682.38,-472.75"/>
+<text xml:space="preserve" text-anchor="middle" x="633.12" y="-459.25" font-family="Helvetica,sans-Serif" font-size="10.00">ProfileInit::runGit</text>
 </a>
 </g>
 </g>
@@ -165,8 +165,8 @@
 <g id="edge3_Node000002_Node000004" class="edge">
 <title>Node2&#45;&gt;Node4</title>
 <g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M295.57,-455.03C372.52,-456.94 498.05,-460.05 572.1,-461.89"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="571.94,-465.38 582.02,-462.13 572.11,-458.39 571.94,-465.38"/>
+<path fill="none" stroke="#63b8ff" d="M295.57,-454.86C372.52,-456.58 498.05,-459.38 572.1,-461.04"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="571.94,-464.53 582.02,-461.26 572.1,-457.53 571.94,-464.53"/>
 </a>
 </g>
 </g>
@@ -183,8 +183,8 @@
 <g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
 <g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M682.83,-464.47C749.73,-465.97 870.97,-468.7 952.15,-470.52"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="951.74,-474.01 961.81,-470.74 951.89,-467.01 951.74,-474.01"/>
+<path fill="none" stroke="#63b8ff" d="M682.83,-463.59C749.73,-465.26 870.97,-468.29 952.15,-470.32"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="951.73,-473.81 961.81,-470.56 951.9,-466.81 951.73,-473.81"/>
 </a>
 </g>
 </g>
@@ -440,19 +440,19 @@
 </a>
 </g>
 </g>
-<!-- Node26 -->
-<g id="Node000026" class="node">
-<title>Node26</title>
-<g id="a_Node000026"><a xlink:href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c" target="_top" xlink:title="Write bytes as the file path through stageFileReplacing().">
+<!-- Node27 -->
+<g id="Node000027" class="node">
+<title>Node27</title>
+<g id="a_Node000027"><a xlink:href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c" target="_top" xlink:title="Write bytes as the file path through stageFileReplacing().">
 <polygon fill="white" stroke="#666666" points="697.75,-213.75 568.5,-213.75 568.5,-193 697.75,-193 697.75,-213.75"/>
 <text xml:space="preserve" text-anchor="middle" x="633.12" y="-200.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::writeFileReplacing</text>
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node26 -->
-<g id="edge33_Node000018_Node000026" class="edge">
-<title>Node18&#45;&gt;Node26</title>
-<g id="a_edge33_Node000018_Node000026"><a xlink:title=" ">
+<!-- Node18&#45;&gt;Node27 -->
+<g id="edge34_Node000018_Node000027" class="edge">
+<title>Node18&#45;&gt;Node27</title>
+<g id="a_edge34_Node000018_Node000027"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M454.94,-268.62C478.96,-257.51 518.05,-240.05 552.75,-227.38 562.18,-223.93 572.37,-220.58 582.19,-217.53"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="583.08,-220.92 591.63,-214.66 581.04,-214.22 583.08,-220.92"/>
 </a>
@@ -486,20 +486,20 @@
 </g>
 </g>
 <!-- Node22&#45;&gt;Node20 -->
-<g id="edge30_Node000022_Node000020" class="edge">
+<g id="edge31_Node000022_Node000020" class="edge">
 <title>Node22&#45;&gt;Node20</title>
-<g id="a_edge30_Node000022_Node000020"><a xlink:title=" ">
+<g id="a_edge31_Node000022_Node000020"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M651.9,-306.72C674.06,-293.85 713.42,-272.33 749.5,-259.38 758.82,-256.03 768.9,-253.12 778.81,-250.63"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="779.47,-254.07 788.38,-248.35 777.84,-247.26 779.47,-254.07"/>
 </a>
 </g>
 </g>
 <!-- Node22&#45;&gt;Node21 -->
-<g id="edge31_Node000022_Node000021" class="edge">
+<g id="edge32_Node000022_Node000021" class="edge">
 <title>Node22&#45;&gt;Node21</title>
-<g id="a_edge31_Node000022_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M652.43,-328.17C669.18,-338.48 694.21,-354.97 713.5,-372.38 731.75,-388.84 728.45,-401.68 749.5,-414.38 752.49,-416.18 755.62,-417.82 758.86,-419.31"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="757.47,-422.53 768.06,-423.03 760.1,-416.04 757.47,-422.53"/>
+<g id="a_edge32_Node000022_Node000021"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M648.47,-328.17C664.6,-340.44 691.43,-361.25 713.5,-380.38 730.13,-394.78 730.08,-404.01 749.5,-414.38 753.17,-416.33 757.03,-418.1 760.99,-419.7"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="759.67,-422.94 770.26,-423.02 762.03,-416.35 759.67,-422.94"/>
 </a>
 </g>
 </g>
@@ -524,9 +524,9 @@
 <!-- Node24 -->
 <g id="Node000024" class="node">
 <title>Node24</title>
-<g id="a_Node000024"><a xlink:href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" target="_top" xlink:title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">
-<polygon fill="white" stroke="#666666" points="897.5,-366.75 779.5,-366.75 779.5,-346 897.5,-346 897.5,-366.75"/>
-<text xml:space="preserve" text-anchor="middle" x="838.5" y="-353.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::openRegularFile</text>
+<g id="a_Node000024"><a xlink:href="class_util.html#a8e427903937505b5e19ebbea7050494e" target="_top" xlink:title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes.">
+<polygon fill="white" stroke="#666666" points="896.38,-366.75 780.62,-366.75 780.62,-346 896.38,-346 896.38,-366.75"/>
+<text xml:space="preserve" text-anchor="middle" x="838.5" y="-353.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::readRegularFile</text>
 </a>
 </g>
 </g>
@@ -539,48 +539,48 @@
 </a>
 </g>
 </g>
-<!-- Node25 -->
-<g id="Node000025" class="node">
-<title>Node25</title>
-<g id="a_Node000025"><a xlink:href="class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" target="_top" xlink:title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line.">
+<!-- Node26 -->
+<g id="Node000026" class="node">
+<title>Node26</title>
+<g id="a_Node000026"><a xlink:href="class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" target="_top" xlink:title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line.">
 <polygon fill="white" stroke="#666666" points="927.5,-327.75 749.5,-327.75 749.5,-307 927.5,-307 927.5,-327.75"/>
 <text xml:space="preserve" text-anchor="middle" x="838.5" y="-314.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdSigner::validSigFingerprints</text>
 </a>
 </g>
 </g>
-<!-- Node22&#45;&gt;Node25 -->
-<g id="edge32_Node000022_Node000025" class="edge">
-<title>Node22&#45;&gt;Node25</title>
-<g id="a_edge32_Node000022_Node000025"><a xlink:title=" ">
+<!-- Node22&#45;&gt;Node26 -->
+<g id="edge33_Node000022_Node000026" class="edge">
+<title>Node22&#45;&gt;Node26</title>
+<g id="a_edge33_Node000022_Node000026"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M688.09,-317.38C703.44,-317.38 720.66,-317.38 737.81,-317.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="737.54,-320.88 747.54,-317.38 737.54,-313.88 737.54,-320.88"/>
 </a>
 </g>
 </g>
-<!-- Node27 -->
-<g id="Node000027" class="node">
-<title>Node27</title>
-<g id="a_Node000027"><a xlink:href="class_util.html#add1e4f70c6d7630ace5e350b30f78907" target="_top" xlink:title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">
-<polygon fill="white" stroke="#666666" points="904.25,-210.75 772.75,-210.75 772.75,-190 904.25,-190 904.25,-210.75"/>
-<text xml:space="preserve" text-anchor="middle" x="838.5" y="-197.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::stageFileReplacing</text>
+<!-- Node25 -->
+<g id="Node000025" class="node">
+<title>Node25</title>
+<g id="a_Node000025"><a xlink:href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" target="_top" xlink:title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">
+<polygon fill="white" stroke="#666666" points="1094.62,-366.75 976.62,-366.75 976.62,-346 1094.62,-346 1094.62,-366.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1035.62" y="-353.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::openRegularFile</text>
 </a>
 </g>
 </g>
-<!-- Node26&#45;&gt;Node27 -->
-<g id="edge34_Node000026_Node000027" class="edge">
-<title>Node26&#45;&gt;Node27</title>
-<g id="a_edge34_Node000026_Node000027"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M698.19,-202.43C718.14,-202.14 740.33,-201.81 761.03,-201.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="760.89,-205.01 770.84,-201.36 760.79,-198.01 760.89,-205.01"/>
+<!-- Node24&#45;&gt;Node25 -->
+<g id="edge30_Node000024_Node000025" class="edge">
+<title>Node24&#45;&gt;Node25</title>
+<g id="a_edge30_Node000024_Node000025"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M896.73,-356.38C918.08,-356.38 942.56,-356.38 964.92,-356.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="964.87,-359.88 974.87,-356.38 964.87,-352.88 964.87,-359.88"/>
 </a>
 </g>
 </g>
 <!-- Node28 -->
 <g id="Node000028" class="node">
 <title>Node28</title>
-<g id="a_Node000028"><a xlink:href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" target="_top" xlink:title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">
-<polygon fill="white" stroke="#666666" points="1081.88,-210.75 989.38,-210.75 989.38,-190 1081.88,-190 1081.88,-210.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1035.62" y="-197.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::replaceFile</text>
+<g id="a_Node000028"><a xlink:href="class_util.html#add1e4f70c6d7630ace5e350b30f78907" target="_top" xlink:title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">
+<polygon fill="white" stroke="#666666" points="904.25,-210.75 772.75,-210.75 772.75,-190 904.25,-190 904.25,-210.75"/>
+<text xml:space="preserve" text-anchor="middle" x="838.5" y="-197.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::stageFileReplacing</text>
 </a>
 </g>
 </g>
@@ -588,98 +588,44 @@
 <g id="edge35_Node000027_Node000028" class="edge">
 <title>Node27&#45;&gt;Node28</title>
 <g id="a_edge35_Node000027_Node000028"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M698.19,-202.43C718.14,-202.14 740.33,-201.81 761.03,-201.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="760.89,-205.01 770.84,-201.36 760.79,-198.01 760.89,-205.01"/>
+</a>
+</g>
+</g>
+<!-- Node29 -->
+<g id="Node000029" class="node">
+<title>Node29</title>
+<g id="a_Node000029"><a xlink:href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" target="_top" xlink:title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">
+<polygon fill="white" stroke="#666666" points="1081.88,-210.75 989.38,-210.75 989.38,-190 1081.88,-190 1081.88,-210.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1035.62" y="-197.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::replaceFile</text>
+</a>
+</g>
+</g>
+<!-- Node28&#45;&gt;Node29 -->
+<g id="edge36_Node000028_Node000029" class="edge">
+<title>Node28&#45;&gt;Node29</title>
+<g id="a_edge36_Node000028_Node000029"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M904.75,-200.38C928.44,-200.38 955,-200.38 977.9,-200.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="977.65,-203.88 987.65,-200.38 977.65,-196.88 977.65,-203.88"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node26 -->
-<g id="edge49_Node000029_Node000026" class="edge">
-<title>Node29&#45;&gt;Node26</title>
-<g id="a_edge49_Node000029_Node000026"><a xlink:title=" ">
+<!-- Node30&#45;&gt;Node27 -->
+<g id="edge50_Node000030_Node000027" class="edge">
+<title>Node30&#45;&gt;Node27</title>
+<g id="a_edge50_Node000030_Node000027"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M254.99,-118.1C278.35,-127.41 313.76,-140.72 345.5,-149.38 416.26,-168.66 498.71,-183.41 556.96,-192.58"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="556.36,-196.03 566.78,-194.11 557.44,-189.12 556.36,-196.03"/>
-</a>
-</g>
-</g>
-<!-- Node30 -->
-<g id="Node000030" class="node">
-<title>Node30</title>
-<g id="a_Node000030"><a xlink:href="class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540" target="_top" xlink:title="Record the bytes just written for gpgIdFile, so that this device recognises its own list afterwards a...">
-<polygon fill="white" stroke="#666666" points="516.75,-98.75 345.5,-98.75 345.5,-78 516.75,-78 516.75,-98.75"/>
-<text xml:space="preserve" text-anchor="middle" x="431.12" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::recordWritten</text>
-</a>
-</g>
-</g>
-<!-- Node29&#45;&gt;Node30 -->
-<g id="edge37_Node000029_Node000030" class="edge">
-<title>Node29&#45;&gt;Node30</title>
-<g id="a_edge37_Node000029_Node000030"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M289.34,-101.67C303.5,-100.34 318.92,-98.88 334.2,-97.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="334.15,-100.96 343.78,-96.53 333.49,-93.99 334.15,-100.96"/>
-</a>
-</g>
-</g>
-<!-- Node35 -->
-<g id="Node000035" class="node">
-<title>Node35</title>
-<g id="a_Node000035"><a xlink:href="class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4" target="_top" xlink:title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">
-<polygon fill="white" stroke="#666666" points="513.38,-20.75 348.88,-20.75 348.88,0 513.38,0 513.38,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="431.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::reserveNext</text>
-</a>
-</g>
-</g>
-<!-- Node29&#45;&gt;Node35 -->
-<g id="edge43_Node000029_Node000035" class="edge">
-<title>Node29&#45;&gt;Node35</title>
-<g id="a_edge43_Node000029_Node000035"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M241.75,-96.73C262.28,-80.11 304.55,-48.08 345.5,-30.38 350.65,-28.15 356.09,-26.15 361.63,-24.35"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="362.31,-27.8 370.89,-21.58 360.3,-21.09 362.31,-27.8"/>
-</a>
-</g>
-</g>
-<!-- Node36 -->
-<g id="Node000036" class="node">
-<title>Node36</title>
-<g id="a_Node000036"><a xlink:href="class_gpg_id_generation.html#af7f352375eac190196e889e05cfb67bd" target="_top" xlink:title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,...">
-<polygon fill="white" stroke="#666666" points="507.75,-59.75 354.5,-59.75 354.5,-39 507.75,-39 507.75,-59.75"/>
-<text xml:space="preserve" text-anchor="middle" x="431.12" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::storeIdFor</text>
-</a>
-</g>
-</g>
-<!-- Node29&#45;&gt;Node36 -->
-<g id="edge45_Node000029_Node000036" class="edge">
-<title>Node29&#45;&gt;Node36</title>
-<g id="a_edge45_Node000029_Node000036"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M259.94,-96.51C283.29,-88.49 316.21,-77.6 345.5,-69.38 353.39,-67.16 361.75,-64.98 370.01,-62.93"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="370.81,-66.34 379.7,-60.57 369.16,-59.54 370.81,-66.34"/>
-</a>
-</g>
-</g>
-<!-- Node37 -->
-<g id="Node000037" class="node">
-<title>Node37</title>
-<g id="a_Node000037"><a xlink:href="class_gpg_id_generation.html#adf82e57f1cda154b35f36dfde958120f" target="_top" xlink:title="A complete list: the header in front of the recipients.">
-<polygon fill="white" stroke="#666666" points="713.5,-174.75 552.75,-174.75 552.75,-154 713.5,-154 713.5,-174.75"/>
-<text xml:space="preserve" text-anchor="middle" x="633.12" y="-161.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::withHeader</text>
-</a>
-</g>
-</g>
-<!-- Node29&#45;&gt;Node37 -->
-<g id="edge47_Node000029_Node000037" class="edge">
-<title>Node29&#45;&gt;Node37</title>
-<g id="a_edge47_Node000029_Node000037"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M289.35,-115.91C356.97,-125.47 467.2,-141.06 544.35,-151.96"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="543.6,-155.39 553.99,-153.33 544.58,-148.46 543.6,-155.39"/>
 </a>
 </g>
 </g>
 <!-- Node31 -->
 <g id="Node000031" class="node">
 <title>Node31</title>
-<g id="a_Node000031"><a xlink:href="class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1" target="_top" xlink:title="The digest of a list as the record keeps it: SHA&#45;256 of the exact bytes, hexadecimal,...">
-<polygon fill="white" stroke="#666666" points="700.38,-135.75 565.88,-135.75 565.88,-115 700.38,-115 700.38,-135.75"/>
-<text xml:space="preserve" text-anchor="middle" x="633.12" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::digest</text>
+<g id="a_Node000031"><a xlink:href="class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540" target="_top" xlink:title="Record the bytes just written for gpgIdFile, so that this device recognises its own list afterwards a...">
+<polygon fill="white" stroke="#666666" points="516.75,-98.75 345.5,-98.75 345.5,-78 516.75,-78 516.75,-98.75"/>
+<text xml:space="preserve" text-anchor="middle" x="431.12" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::recordWritten</text>
 </a>
 </g>
 </g>
@@ -687,96 +633,168 @@
 <g id="edge38_Node000030_Node000031" class="edge">
 <title>Node30&#45;&gt;Node31</title>
 <g id="a_edge38_Node000030_Node000031"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M490.78,-99.23C513.17,-103.37 538.91,-108.13 562.24,-112.45"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="561.51,-115.87 571.98,-114.25 562.79,-108.99 561.51,-115.87"/>
+<path fill="none" stroke="#63b8ff" d="M289.34,-101.67C303.5,-100.34 318.92,-98.88 334.2,-97.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="334.15,-100.96 343.78,-96.53 333.49,-93.99 334.15,-100.96"/>
+</a>
+</g>
+</g>
+<!-- Node36 -->
+<g id="Node000036" class="node">
+<title>Node36</title>
+<g id="a_Node000036"><a xlink:href="class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4" target="_top" xlink:title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">
+<polygon fill="white" stroke="#666666" points="513.38,-20.75 348.88,-20.75 348.88,0 513.38,0 513.38,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="431.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::reserveNext</text>
+</a>
+</g>
+</g>
+<!-- Node30&#45;&gt;Node36 -->
+<g id="edge44_Node000030_Node000036" class="edge">
+<title>Node30&#45;&gt;Node36</title>
+<g id="a_edge44_Node000030_Node000036"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M241.75,-96.73C262.28,-80.11 304.55,-48.08 345.5,-30.38 350.65,-28.15 356.09,-26.15 361.63,-24.35"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="362.31,-27.8 370.89,-21.58 360.3,-21.09 362.31,-27.8"/>
+</a>
+</g>
+</g>
+<!-- Node37 -->
+<g id="Node000037" class="node">
+<title>Node37</title>
+<g id="a_Node000037"><a xlink:href="class_gpg_id_generation.html#af7f352375eac190196e889e05cfb67bd" target="_top" xlink:title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,...">
+<polygon fill="white" stroke="#666666" points="507.75,-59.75 354.5,-59.75 354.5,-39 507.75,-39 507.75,-59.75"/>
+<text xml:space="preserve" text-anchor="middle" x="431.12" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::storeIdFor</text>
+</a>
+</g>
+</g>
+<!-- Node30&#45;&gt;Node37 -->
+<g id="edge46_Node000030_Node000037" class="edge">
+<title>Node30&#45;&gt;Node37</title>
+<g id="a_edge46_Node000030_Node000037"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M259.94,-96.51C283.29,-88.49 316.21,-77.6 345.5,-69.38 353.39,-67.16 361.75,-64.98 370.01,-62.93"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="370.81,-66.34 379.7,-60.57 369.16,-59.54 370.81,-66.34"/>
+</a>
+</g>
+</g>
+<!-- Node38 -->
+<g id="Node000038" class="node">
+<title>Node38</title>
+<g id="a_Node000038"><a xlink:href="class_gpg_id_generation.html#adf82e57f1cda154b35f36dfde958120f" target="_top" xlink:title="A complete list: the header in front of the recipients.">
+<polygon fill="white" stroke="#666666" points="713.5,-174.75 552.75,-174.75 552.75,-154 713.5,-154 713.5,-174.75"/>
+<text xml:space="preserve" text-anchor="middle" x="633.12" y="-161.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::withHeader</text>
+</a>
+</g>
+</g>
+<!-- Node30&#45;&gt;Node38 -->
+<g id="edge48_Node000030_Node000038" class="edge">
+<title>Node30&#45;&gt;Node38</title>
+<g id="a_edge48_Node000030_Node000038"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M289.35,-115.91C356.97,-125.47 467.2,-141.06 544.35,-151.96"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="543.6,-155.39 553.99,-153.33 544.58,-148.46 543.6,-155.39"/>
 </a>
 </g>
 </g>
 <!-- Node32 -->
 <g id="Node000032" class="node">
 <title>Node32</title>
-<g id="a_Node000032"><a xlink:href="class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" target="_top" xlink:title="The header lines for a list.">
-<polygon fill="white" stroke="#666666" points="907.62,-97.75 769.38,-97.75 769.38,-77 907.62,-77 907.62,-97.75"/>
-<text xml:space="preserve" text-anchor="middle" x="838.5" y="-84.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::header</text>
+<g id="a_Node000032"><a xlink:href="class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1" target="_top" xlink:title="The digest of a list as the record keeps it: SHA&#45;256 of the exact bytes, hexadecimal,...">
+<polygon fill="white" stroke="#666666" points="700.38,-135.75 565.88,-135.75 565.88,-115 700.38,-115 700.38,-135.75"/>
+<text xml:space="preserve" text-anchor="middle" x="633.12" y="-122.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::digest</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node32 -->
-<g id="edge39_Node000030_Node000032" class="edge">
-<title>Node30&#45;&gt;Node32</title>
-<g id="a_edge39_Node000030_Node000032"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M517.1,-88.17C588.03,-87.99 688.38,-87.74 757.79,-87.57"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="757.58,-91.07 767.58,-87.55 757.57,-84.07 757.58,-91.07"/>
+<!-- Node31&#45;&gt;Node32 -->
+<g id="edge39_Node000031_Node000032" class="edge">
+<title>Node31&#45;&gt;Node32</title>
+<g id="a_edge39_Node000031_Node000032"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M490.78,-99.23C513.17,-103.37 538.91,-108.13 562.24,-112.45"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="561.51,-115.87 571.98,-114.25 562.79,-108.99 561.51,-115.87"/>
 </a>
 </g>
 </g>
 <!-- Node33 -->
 <g id="Node000033" class="node">
 <title>Node33</title>
-<g id="a_Node000033"><a xlink:href="class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" target="_top" xlink:title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,...">
-<polygon fill="white" stroke="#666666" points="694,-20.75 572.25,-20.75 572.25,0 694,0 694,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="633.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::key</text>
+<g id="a_Node000033"><a xlink:href="class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" target="_top" xlink:title="The header lines for a list.">
+<polygon fill="white" stroke="#666666" points="907.62,-97.75 769.38,-97.75 769.38,-77 907.62,-77 907.62,-97.75"/>
+<text xml:space="preserve" text-anchor="middle" x="838.5" y="-84.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::header</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node33 -->
-<g id="edge40_Node000030_Node000033" class="edge">
-<title>Node30&#45;&gt;Node33</title>
-<g id="a_edge40_Node000030_Node000033"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M496.06,-77.53C503.28,-75.08 510.34,-72.07 516.75,-68.38 536.91,-56.77 532.67,-42.13 552.75,-30.38 555.94,-28.51 559.3,-26.81 562.76,-25.28"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="563.94,-28.57 571.98,-21.67 561.4,-22.05 563.94,-28.57"/>
+<!-- Node31&#45;&gt;Node33 -->
+<g id="edge40_Node000031_Node000033" class="edge">
+<title>Node31&#45;&gt;Node33</title>
+<g id="a_edge40_Node000031_Node000033"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M517.1,-88.17C588.03,-87.99 688.38,-87.74 757.79,-87.57"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="757.58,-91.07 767.58,-87.55 757.57,-84.07 757.58,-91.07"/>
 </a>
 </g>
 </g>
 <!-- Node34 -->
 <g id="Node000034" class="node">
 <title>Node34</title>
-<g id="a_Node000034"><a xlink:href="class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" target="_top" xlink:title="The header a .gpg&#45;id&#39;s bytes declare.">
+<g id="a_Node000034"><a xlink:href="class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" target="_top" xlink:title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,...">
+<polygon fill="white" stroke="#666666" points="694,-20.75 572.25,-20.75 572.25,0 694,0 694,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="633.12" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::key</text>
+</a>
+</g>
+</g>
+<!-- Node31&#45;&gt;Node34 -->
+<g id="edge41_Node000031_Node000034" class="edge">
+<title>Node31&#45;&gt;Node34</title>
+<g id="a_edge41_Node000031_Node000034"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M496.06,-77.53C503.28,-75.08 510.34,-72.07 516.75,-68.38 536.91,-56.77 532.67,-42.13 552.75,-30.38 555.94,-28.51 559.3,-26.81 562.76,-25.28"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="563.94,-28.57 571.98,-21.67 561.4,-22.05 563.94,-28.57"/>
+</a>
+</g>
+</g>
+<!-- Node35 -->
+<g id="Node000035" class="node">
+<title>Node35</title>
+<g id="a_Node000035"><a xlink:href="class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" target="_top" xlink:title="The header a .gpg&#45;id&#39;s bytes declare.">
 <polygon fill="white" stroke="#666666" points="698.88,-59.75 567.38,-59.75 567.38,-39 698.88,-39 698.88,-59.75"/>
 <text xml:space="preserve" text-anchor="middle" x="633.12" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdGeneration::parse</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node34 -->
-<g id="edge41_Node000030_Node000034" class="edge">
-<title>Node30&#45;&gt;Node34</title>
-<g id="a_edge41_Node000030_Node000034"><a xlink:title=" ">
+<!-- Node31&#45;&gt;Node35 -->
+<g id="edge42_Node000031_Node000035" class="edge">
+<title>Node31&#45;&gt;Node35</title>
+<g id="a_edge42_Node000031_Node000035"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M487.84,-77.51C511.79,-72.84 540,-67.34 565.08,-62.45"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="565.74,-65.89 574.88,-60.54 564.4,-59.02 565.74,-65.89"/>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node32 -->
-<g id="edge42_Node000034_Node000032" class="edge">
-<title>Node34&#45;&gt;Node32</title>
-<g id="a_edge42_Node000034_Node000032"><a xlink:title=" ">
+<!-- Node35&#45;&gt;Node33 -->
+<g id="edge43_Node000035_Node000033" class="edge">
+<title>Node35&#45;&gt;Node33</title>
+<g id="a_edge43_Node000035_Node000033"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M692.13,-60.21C715.85,-64.65 743.49,-69.81 768.26,-74.44"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="767.46,-77.85 777.93,-76.24 768.74,-70.97 767.46,-77.85"/>
 </a>
 </g>
 </g>
-<!-- Node35&#45;&gt;Node33 -->
-<g id="edge44_Node000035_Node000033" class="edge">
-<title>Node35&#45;&gt;Node33</title>
-<g id="a_edge44_Node000035_Node000033"><a xlink:title=" ">
+<!-- Node36&#45;&gt;Node34 -->
+<g id="edge45_Node000036_Node000034" class="edge">
+<title>Node36&#45;&gt;Node34</title>
+<g id="a_edge45_Node000036_Node000034"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M513.76,-10.38C529.25,-10.38 545.36,-10.38 560.51,-10.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="560.37,-13.88 570.37,-10.38 560.37,-6.88 560.37,-13.88"/>
 </a>
 </g>
 </g>
-<!-- Node36&#45;&gt;Node33 -->
-<g id="edge46_Node000036_Node000033" class="edge">
-<title>Node36&#45;&gt;Node33</title>
-<g id="a_edge46_Node000036_Node000033"><a xlink:title=" ">
+<!-- Node37&#45;&gt;Node34 -->
+<g id="edge47_Node000037_Node000034" class="edge">
+<title>Node37&#45;&gt;Node34</title>
+<g id="a_edge47_Node000037_Node000034"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M487.84,-38.51C511.79,-33.84 540,-28.34 565.08,-23.45"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="565.74,-26.89 574.88,-21.54 564.4,-20.02 565.74,-26.89"/>
 </a>
 </g>
 </g>
-<!-- Node37&#45;&gt;Node32 -->
-<g id="edge48_Node000037_Node000032" class="edge">
-<title>Node37&#45;&gt;Node32</title>
-<g id="a_edge48_Node000037_Node000032"><a xlink:title=" ">
+<!-- Node38&#45;&gt;Node33 -->
+<g id="edge49_Node000038_Node000033" class="edge">
+<title>Node38&#45;&gt;Node33</title>
+<g id="a_edge49_Node000038_Node000033"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M683.24,-153.5C693.35,-150.85 703.85,-147.78 713.5,-144.38 746.4,-132.78 782.46,-115.67 807.18,-103.22"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="808.69,-106.38 816.01,-98.73 805.51,-100.15 808.69,-106.38"/>
 </a>

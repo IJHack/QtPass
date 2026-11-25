@@ -42,13 +42,13 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">93.0&nbsp;%</td>
-            <td class="headerCovTableEntry">142</td>
-            <td class="headerCovTableEntry">132</td>
+            <td class="headerCovTableEntryHi">93.3&nbsp;%</td>
+            <td class="headerCovTableEntry">150</td>
+            <td class="headerCovTableEntry">140</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 10:40:40</td>
+            <td class="headerValue">2026-11-25 15:10:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -113,9 +113,9 @@
 <span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         662 :   return keys;</span></span>
 <span id="L41"><span class="lineNum">      41</span>              : }</span>
 <span id="L42"><span class="lineNum">      42</span>              : </span>
-<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">         216 : auto GpgIdSigner::run(const QStringList &amp;args, QString *out, QString *err,</span></span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">         217 : auto GpgIdSigner::run(const QStringList &amp;args, QString *out, QString *err,</span></span>
 <span id="L44"><span class="lineNum">      44</span>              :                       const QString &amp;input) const -&gt; int {</span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         216 :   return m_exec(m_gpg, args, input, out, err);</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         217 :   return m_exec(m_gpg, args, input, out, err);</span></span>
 <span id="L46"><span class="lineNum">      46</span>              : }</span>
 <span id="L47"><span class="lineNum">      47</span>              : </span>
 <span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">          52 : auto GpgIdSigner::haveSecretKey() const -&gt; bool {</span></span>
@@ -261,13 +261,13 @@
 <span id="L188"><span class="lineNum">     188</span>              :                                   true, error);</span>
 <span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">         106 : }</span></span>
 <span id="L190"><span class="lineNum">     190</span>              : </span>
-<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         135 : auto GpgIdSigner::validSigFingerprints(const QString &amp;statusOutput)</span></span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         136 : auto GpgIdSigner::validSigFingerprints(const QString &amp;statusOutput)</span></span>
 <span id="L192"><span class="lineNum">     192</span>              :     -&gt; QStringList {</span>
 <span id="L193"><span class="lineNum">     193</span>              :   static const QRegularExpression re(</span>
 <span id="L194"><span class="lineNum">     194</span>              :       // 40 hex for v4 keys, 64 for v5/v6 (gpg 2.5+), either position.</span>
 <span id="L195"><span class="lineNum">     195</span> <span class="tlaGNC">          12 :       R&quot;(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}(?:[A-F0-9]{24})?) .* )&quot;</span></span>
 <span id="L196"><span class="lineNum">     196</span>              :       R&quot;(([A-F0-9]{40}(?:[A-F0-9]{24})?)\r?$)&quot;,</span>
-<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">         153 :       QRegularExpression::MultilineOption);</span></span>
+<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">         154 :       QRegularExpression::MultilineOption);</span></span>
 <span id="L198"><span class="lineNum">     198</span>              :   // gpg reports a signature by a revoked key as REVKEYSIG plus KEYREVOKED,</span>
 <span id="L199"><span class="lineNum">     199</span>              :   // and still prints VALIDSIG and exits 0. A signing key revoked because it</span>
 <span id="L200"><span class="lineNum">     200</span>              :   // was compromised must not vouch for a recipient list, so a signature</span>
@@ -276,29 +276,29 @@
 <span id="L203"><span class="lineNum">     203</span>              :   // compromise, and pass accepts it too.</span>
 <span id="L204"><span class="lineNum">     204</span>              :   static const QRegularExpression revoked(</span>
 <span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">           6 :       QStringLiteral(R&quot;(^\[GNUPG:\] (?:REVKEYSIG|KEYREVOKED)\b)&quot;),</span></span>
-<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         147 :       QRegularExpression::MultilineOption);</span></span>
+<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         148 :       QRegularExpression::MultilineOption);</span></span>
 <span id="L207"><span class="lineNum">     207</span>              :   static const QRegularExpression newSig(</span>
 <span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">           6 :       QStringLiteral(R&quot;(^\[GNUPG:\] NEWSIG\b)&quot;),</span></span>
-<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">         147 :       QRegularExpression::MultilineOption);</span></span>
-<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">         135 :   const QRegularExpressionMatch m = re.match(statusOutput);</span></span>
-<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">         135 :   if (!m.hasMatch()) {</span></span>
+<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">         148 :       QRegularExpression::MultilineOption);</span></span>
+<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">         136 :   const QRegularExpressionMatch m = re.match(statusOutput);</span></span>
+<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">         136 :   if (!m.hasMatch()) {</span></span>
 <span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">           5 :     return {};</span></span>
 <span id="L213"><span class="lineNum">     213</span>              :   }</span>
 <span id="L214"><span class="lineNum">     214</span>              :   const qsizetype from =</span>
-<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">         130 :       statusOutput.lastIndexOf(newSig, m.capturedStart()) &lt; 0</span></span>
-<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">         130 :           ? 0</span></span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">          26 :           : statusOutput.lastIndexOf(newSig, m.capturedStart());</span></span>
-<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">         130 :   const qsizetype to = statusOutput.indexOf(newSig, m.capturedEnd());</span></span>
-<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">         130 :   const QString block = statusOutput.mid(from, to &lt; 0 ? -1 : to - from);</span></span>
-<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">         130 :   if (revoked.match(block).hasMatch()) {</span></span>
+<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">         131 :       statusOutput.lastIndexOf(newSig, m.capturedStart()) &lt; 0</span></span>
+<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">         131 :           ? 0</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">          27 :           : statusOutput.lastIndexOf(newSig, m.capturedStart());</span></span>
+<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">         131 :   const qsizetype to = statusOutput.indexOf(newSig, m.capturedEnd());</span></span>
+<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">         131 :   const QString block = statusOutput.mid(from, to &lt; 0 ? -1 : to - from);</span></span>
+<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">         131 :   if (revoked.match(block).hasMatch()) {</span></span>
 <span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">           3 :     return {};</span></span>
 <span id="L222"><span class="lineNum">     222</span>              :   }</span>
-<span id="L223"><span class="lineNum">     223</span> <span class="tlaGNC">         381 :   return {m.captured(1), m.captured(2)};</span></span>
-<span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">         262 : }</span></span>
+<span id="L223"><span class="lineNum">     223</span> <span class="tlaGNC">         384 :   return {m.captured(1), m.captured(2)};</span></span>
+<span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">         264 : }</span></span>
 <span id="L225"><span class="lineNum">     225</span>              : </span>
-<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">         148 : auto GpgIdSigner::verify(const QByteArray &amp;contents,</span></span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">         150 : auto GpgIdSigner::verify(const QByteArray &amp;contents,</span></span>
 <span id="L227"><span class="lineNum">     227</span>              :                          const QString &amp;signatureFile) const -&gt; bool {</span>
-<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">         148 :   if (!enabled()) {</span></span>
+<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">         150 :   if (!enabled()) {</span></span>
 <span id="L229"><span class="lineNum">     229</span>              :     return true;</span>
 <span id="L230"><span class="lineNum">     230</span>              :   }</span>
 <span id="L231"><span class="lineNum">     231</span>              :   // The executor feeds stdin as UTF-8 text. A .gpg-id is one: key IDs,</span>
@@ -306,70 +306,84 @@
 <span id="L233"><span class="lineNum">     233</span>              :   // the round trip cannot be verified faithfully, so they are not verified</span>
 <span id="L234"><span class="lineNum">     234</span>              :   // at all rather than as something else.</span>
 <span id="L235"><span class="lineNum">     235</span>              :   const QString text = QString::fromUtf8(contents);</span>
-<span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">         147 :   if (text.toUtf8() != contents) {</span></span>
+<span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">         149 :   if (text.toUtf8() != contents) {</span></span>
 <span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">           1 :     qCDebug(lcQtPass) &lt;&lt; &quot;Refusing to verify&quot; &lt;&lt; signatureFile</span></span>
 <span id="L238"><span class="lineNum">     238</span> <span class="tlaUNC">           0 :                       &lt;&lt; &quot;: the signed file is not valid UTF-8&quot;;</span></span>
 <span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">           1 :     return false;</span></span>
 <span id="L240"><span class="lineNum">     240</span>              :   }</span>
 <span id="L241"><span class="lineNum">     241</span>              :   // Same for the signature: a valid pair replayed from elsewhere through two</span>
 <span id="L242"><span class="lineNum">     242</span>              :   // links is not this folder's list.</span>
-<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">         146 :   if (Util::isLinkedFolder(signatureFile)) {</span></span>
+<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">         148 :   if (Util::isLinkedFolder(signatureFile)) {</span></span>
 <span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">           1 :     qCDebug(lcQtPass) &lt;&lt; &quot;Refusing to verify&quot; &lt;&lt; signatureFile</span></span>
 <span id="L245"><span class="lineNum">     245</span> <span class="tlaUNC">           0 :                       &lt;&lt; &quot;: the signature file is a link&quot;;</span></span>
 <span id="L246"><span class="lineNum">     246</span> <span class="tlaGNC">           1 :     return false;</span></span>
 <span id="L247"><span class="lineNum">     247</span>              :   }</span>
-<span id="L248"><span class="lineNum">     248</span>              :   // A regular file of bounded size, as the list itself is read: a FIFO</span>
-<span id="L249"><span class="lineNum">     249</span>              :   // planted under the name would block gpg, and the GUI thread waiting for</span>
-<span id="L250"><span class="lineNum">     250</span>              :   // it, and a sparse file of gigabytes would be read whole.</span>
-<span id="L251"><span class="lineNum">     251</span>              :   {</span>
-<span id="L252"><span class="lineNum">     252</span> <span class="tlaGNC">         145 :     QFile probe;</span></span>
-<span id="L253"><span class="lineNum">     253</span> <span class="tlaGNC">         274 :     if (!Util::openRegularFile(signatureFile, probe) ||</span></span>
-<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">         129 :         probe.size() &gt; kMaxSignatureBytes) {</span></span>
-<span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">          17 :       qCDebug(lcQtPass) &lt;&lt; &quot;Refusing to verify&quot; &lt;&lt; signatureFile</span></span>
-<span id="L256"><span class="lineNum">     256</span> <span class="tlaUNC">           0 :                         &lt;&lt; &quot;: not a regular file of at most&quot;</span></span>
-<span id="L257"><span class="lineNum">     257</span> <span class="tlaUNC">           0 :                         &lt;&lt; kMaxSignatureBytes &lt;&lt; &quot;bytes&quot;;</span></span>
-<span id="L258"><span class="lineNum">     258</span>              :       return false;</span>
-<span id="L259"><span class="lineNum">     259</span>              :     }</span>
-<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">         145 :   }</span></span>
-<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">         128 :   QString out;</span></span>
-<span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">         128 :   const QString sig = Executor::translatePathForWsl(signatureFile, m_gpg);</span></span>
-<span id="L263"><span class="lineNum">     263</span>              :   // &quot;-&quot; makes gpg read the signed data from stdin: the bytes we hold.</span>
-<span id="L264"><span class="lineNum">     264</span>              :   const int rc =</span>
-<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">        1024 :       run({QStringLiteral(&quot;--verify&quot;), QStringLiteral(&quot;--status-fd=1&quot;),</span></span>
-<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">         128 :            QStringLiteral(&quot;--&quot;), sig, QStringLiteral(&quot;-&quot;)},</span></span>
-<span id="L267"><span class="lineNum">     267</span>              :           &amp;out, nullptr, text);</span>
-<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">         128 :   if (rc != 0) {</span></span>
-<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">           3 :     qCDebug(lcQtPass) &lt;&lt; &quot;GPG verify failed with code:&quot; &lt;&lt; rc;</span></span>
-<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">           3 :     return false;</span></span>
-<span id="L271"><span class="lineNum">     271</span>              :   }</span>
-<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">         125 :   const QStringList fingerprints = validSigFingerprints(out);</span></span>
-<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">         133 :   for (const QString &amp;key : m_keys) {</span></span>
-<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">         126 :     if (fingerprints.contains(key)) {</span></span>
-<span id="L275"><span class="lineNum">     275</span>              :       return true;</span>
-<span id="L276"><span class="lineNum">     276</span>              :     }</span>
-<span id="L277"><span class="lineNum">     277</span>              :   }</span>
-<span id="L278"><span class="lineNum">     278</span>              :   return false;</span>
-<span id="L279"><span class="lineNum">     279</span>              : }</span>
-<span id="L280"><span class="lineNum">     280</span>              : </span>
-<span id="L281"><span class="lineNum">     281</span> <span class="tlaGNC">         111 : auto GpgIdSigner::verifyFile(const QString &amp;gpgIdFile,</span></span>
-<span id="L282"><span class="lineNum">     282</span>              :                              QByteArray *contents) const -&gt; bool {</span>
-<span id="L283"><span class="lineNum">     283</span>              :   // A link under the name is not the store's .gpg-id, whatever it points</span>
-<span id="L284"><span class="lineNum">     284</span>              :   // to and however well that is signed.</span>
-<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         111 :   if (Util::isLinkedFolder(gpgIdFile)) {</span></span>
-<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">           1 :     contents-&gt;clear();</span></span>
-<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">           1 :     return false;</span></span>
-<span id="L288"><span class="lineNum">     288</span>              :   }</span>
-<span id="L289"><span class="lineNum">     289</span>              :   // Read as the regular file it is and bounded: a FIFO would block, a</span>
-<span id="L290"><span class="lineNum">     290</span>              :   // sparse file of gigabytes be read whole, before any signature is checked.</span>
-<span id="L291"><span class="lineNum">     291</span>              :   std::optional&lt;QByteArray&gt; bytes =</span>
-<span id="L292"><span class="lineNum">     292</span> <span class="tlaGNC">         110 :       Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);</span></span>
-<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">         110 :   if (!bytes) {</span></span>
-<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">           7 :     contents-&gt;clear();</span></span>
-<span id="L295"><span class="lineNum">     295</span>              :     return false;</span>
-<span id="L296"><span class="lineNum">     296</span>              :   }</span>
-<span id="L297"><span class="lineNum">     297</span>              :   *contents = *std::move(bytes);</span>
-<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">         206 :   return verify(*contents, gpgIdFile + QStringLiteral(&quot;.sig&quot;));</span></span>
-<span id="L299"><span class="lineNum">     299</span>              : }</span>
+<span id="L248"><span class="lineNum">     248</span>              :   // Read as a regular file of bounded size, as the list itself is, and</span>
+<span id="L249"><span class="lineNum">     249</span>              :   // give gpg a copy of those bytes: a FIFO planted under the name would</span>
+<span id="L250"><span class="lineNum">     250</span>              :   // block gpg, and the GUI thread waiting for it, a sparse file of</span>
+<span id="L251"><span class="lineNum">     251</span>              :   // gigabytes would be read whole, and either could be swapped in between</span>
+<span id="L252"><span class="lineNum">     252</span>              :   // a check of the name and gpg opening it.</span>
+<span id="L253"><span class="lineNum">     253</span>              :   const std::optional&lt;QByteArray&gt; signature =</span>
+<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">         147 :       Util::readRegularFile(signatureFile, kMaxSignatureBytes);</span></span>
+<span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">         147 :   if (!signature) {</span></span>
+<span id="L256"><span class="lineNum">     256</span> <span class="tlaGNC">          18 :     qCDebug(lcQtPass) &lt;&lt; &quot;Refusing to verify&quot; &lt;&lt; signatureFile</span></span>
+<span id="L257"><span class="lineNum">     257</span> <span class="tlaUNC">           0 :                       &lt;&lt; &quot;: not a regular file of at most&quot; &lt;&lt; kMaxSignatureBytes</span></span>
+<span id="L258"><span class="lineNum">     258</span> <span class="tlaUNC">           0 :                       &lt;&lt; &quot;bytes&quot;;</span></span>
+<span id="L259"><span class="lineNum">     259</span> <span class="tlaGNC">          18 :     return false;</span></span>
+<span id="L260"><span class="lineNum">     260</span>              :   }</span>
+<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">         129 :   QTemporaryDir scratch;</span></span>
+<span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">         129 :   if (!scratch.isValid()) {</span></span>
+<span id="L263"><span class="lineNum">     263</span>              :     return false;</span>
+<span id="L264"><span class="lineNum">     264</span>              :   }</span>
+<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">         258 :   const QString copy = scratch.filePath(QStringLiteral(&quot;sig&quot;));</span></span>
+<span id="L266"><span class="lineNum">     266</span>              :   {</span>
+<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">         129 :     QFile file(copy);</span></span>
+<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">         258 :     if (!file.open(QIODevice::WriteOnly) ||</span></span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         129 :         file.write(*signature) != signature-&gt;size()) {</span></span>
+<span id="L270"><span class="lineNum">     270</span>              :       return false;</span>
+<span id="L271"><span class="lineNum">     271</span>              :     }</span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">         129 :   }</span></span>
+<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">         129 :   QString out;</span></span>
+<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">         129 :   const QString sig = Executor::translatePathForWsl(copy, m_gpg);</span></span>
+<span id="L275"><span class="lineNum">     275</span>              :   // &quot;-&quot; makes gpg read the signed data from stdin: the bytes we hold.</span>
+<span id="L276"><span class="lineNum">     276</span>              :   // --batch stops at the first bad signature; without it gpg checked every</span>
+<span id="L277"><span class="lineNum">     277</span>              :   // packet in the file, each against the key it names, however slow.</span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">        1161 :   const int rc = run({QStringLiteral(&quot;--batch&quot;), QStringLiteral(&quot;--verify&quot;),</span></span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">         129 :                       QStringLiteral(&quot;--status-fd=1&quot;), QStringLiteral(&quot;--&quot;),</span></span>
+<span id="L280"><span class="lineNum">     280</span> <span class="tlaGNC">         129 :                       sig, QStringLiteral(&quot;-&quot;)},</span></span>
+<span id="L281"><span class="lineNum">     281</span>              :                      &amp;out, nullptr, text);</span>
+<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">         129 :   if (rc != 0) {</span></span>
+<span id="L283"><span class="lineNum">     283</span> <span class="tlaGNC">           3 :     qCDebug(lcQtPass) &lt;&lt; &quot;GPG verify failed with code:&quot; &lt;&lt; rc;</span></span>
+<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">           3 :     return false;</span></span>
+<span id="L285"><span class="lineNum">     285</span>              :   }</span>
+<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">         126 :   const QStringList fingerprints = validSigFingerprints(out);</span></span>
+<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">         134 :   for (const QString &amp;key : m_keys) {</span></span>
+<span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">         127 :     if (fingerprints.contains(key)) {</span></span>
+<span id="L289"><span class="lineNum">     289</span>              :       return true;</span>
+<span id="L290"><span class="lineNum">     290</span>              :     }</span>
+<span id="L291"><span class="lineNum">     291</span>              :   }</span>
+<span id="L292"><span class="lineNum">     292</span>              :   return false;</span>
+<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">         129 : }</span></span>
+<span id="L294"><span class="lineNum">     294</span>              : </span>
+<span id="L295"><span class="lineNum">     295</span> <span class="tlaGNC">         111 : auto GpgIdSigner::verifyFile(const QString &amp;gpgIdFile,</span></span>
+<span id="L296"><span class="lineNum">     296</span>              :                              QByteArray *contents) const -&gt; bool {</span>
+<span id="L297"><span class="lineNum">     297</span>              :   // A link under the name is not the store's .gpg-id, whatever it points</span>
+<span id="L298"><span class="lineNum">     298</span>              :   // to and however well that is signed.</span>
+<span id="L299"><span class="lineNum">     299</span> <span class="tlaGNC">         111 :   if (Util::isLinkedFolder(gpgIdFile)) {</span></span>
+<span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">           1 :     contents-&gt;clear();</span></span>
+<span id="L301"><span class="lineNum">     301</span> <span class="tlaGNC">           1 :     return false;</span></span>
+<span id="L302"><span class="lineNum">     302</span>              :   }</span>
+<span id="L303"><span class="lineNum">     303</span>              :   // Read as the regular file it is and bounded: a FIFO would block, a</span>
+<span id="L304"><span class="lineNum">     304</span>              :   // sparse file of gigabytes be read whole, before any signature is checked.</span>
+<span id="L305"><span class="lineNum">     305</span>              :   std::optional&lt;QByteArray&gt; bytes =</span>
+<span id="L306"><span class="lineNum">     306</span> <span class="tlaGNC">         110 :       Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);</span></span>
+<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">         110 :   if (!bytes) {</span></span>
+<span id="L308"><span class="lineNum">     308</span> <span class="tlaGNC">           7 :     contents-&gt;clear();</span></span>
+<span id="L309"><span class="lineNum">     309</span>              :     return false;</span>
+<span id="L310"><span class="lineNum">     310</span>              :   }</span>
+<span id="L311"><span class="lineNum">     311</span>              :   *contents = *std::move(bytes);</span>
+<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">         206 :   return verify(*contents, gpgIdFile + QStringLiteral(&quot;.sig&quot;));</span></span>
+<span id="L313"><span class="lineNum">     313</span>              : }</span>
         </pre>
               </td>
             </tr>

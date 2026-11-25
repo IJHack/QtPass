@@ -167,19 +167,19 @@
 </a>
 </g>
 </g>
-<!-- Node18 -->
-<g id="Node000018" class="node">
-<title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c" target="_top" xlink:title="Write bytes as the file path through stageFileReplacing().">
+<!-- Node19 -->
+<g id="Node000019" class="node">
+<title>Node19</title>
+<g id="a_Node000019"><a xlink:href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c" target="_top" xlink:title="Write bytes as the file path through stageFileReplacing().">
 <polygon fill="white" stroke="#666666" points="422.25,-36.75 293,-36.75 293,-16 422.25,-16 422.25,-36.75"/>
 <text xml:space="preserve" text-anchor="middle" x="357.62" y="-23.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::writeFileReplacing</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node18 -->
-<g id="edge21_Node000003_Node000018" class="edge">
-<title>Node3&#45;&gt;Node18</title>
-<g id="a_edge21_Node000003_Node000018"><a xlink:title=" ">
+<!-- Node3&#45;&gt;Node19 -->
+<g id="edge22_Node000003_Node000019" class="edge">
+<title>Node3&#45;&gt;Node19</title>
+<g id="a_edge22_Node000003_Node000019"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M221.14,-121.55C238.42,-109.13 267.68,-88.16 293,-70.38 305.71,-61.45 319.91,-51.61 331.67,-43.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="333.39,-46.57 339.64,-38.02 329.42,-40.8 333.39,-46.57"/>
 </a>
@@ -279,8 +279,8 @@
 <g id="Node000011" class="node">
 <title>Node11</title>
 <g id="a_Node000011"><a xlink:href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" target="_top" xlink:title="Make process start its child without a controlling terminal.">
-<polygon fill="white" stroke="#666666" points="1512.75,-20.75 1349,-20.75 1349,0 1512.75,0 1512.75,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1430.88" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
+<polygon fill="white" stroke="#666666" points="1512.75,-59.75 1349,-59.75 1349,-39 1512.75,-39 1512.75,-59.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1430.88" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::detachFromTerminal</text>
 </a>
 </g>
 </g>
@@ -288,8 +288,8 @@
 <g id="edge10_Node000010_Node000011" class="edge">
 <title>Node10&#45;&gt;Node11</title>
 <g id="a_edge10_Node000010_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1301.55,-38.51C1322.47,-33.92 1347.04,-28.54 1369.04,-23.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1369.79,-27.13 1378.81,-21.57 1368.29,-20.3 1369.79,-27.13"/>
+<path fill="none" stroke="#63b8ff" d="M1313.21,-49.38C1321,-49.38 1329.1,-49.38 1337.25,-49.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1337.24,-52.88 1347.24,-49.38 1337.24,-45.88 1337.24,-52.88"/>
 </a>
 </g>
 </g>
@@ -306,8 +306,8 @@
 <g id="Node000013" class="node">
 <title>Node13</title>
 <g id="a_Node000013"><a xlink:href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7" target="_top" xlink:title="The one rule for turning a configured executable into what runs.">
-<polygon fill="white" stroke="#666666" points="1507.5,-59.75 1354.25,-59.75 1354.25,-39 1507.5,-39 1507.5,-59.75"/>
-<text xml:space="preserve" text-anchor="middle" x="1430.88" y="-46.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
+<polygon fill="white" stroke="#666666" points="1507.5,-20.75 1354.25,-20.75 1354.25,0 1507.5,0 1507.5,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="1430.88" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::resolveExecutable</text>
 </a>
 </g>
 </g>
@@ -315,8 +315,8 @@
 <g id="edge12_Node000010_Node000013" class="edge">
 <title>Node10&#45;&gt;Node13</title>
 <g id="a_edge12_Node000010_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1313.21,-49.38C1322.6,-49.38 1332.45,-49.38 1342.28,-49.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1342.26,-52.88 1352.26,-49.38 1342.26,-45.88 1342.26,-52.88"/>
+<path fill="none" stroke="#63b8ff" d="M1301.55,-38.51C1322.47,-33.92 1347.04,-28.54 1369.04,-23.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1369.79,-27.13 1378.81,-21.57 1368.29,-20.3 1369.79,-27.13"/>
 </a>
 </g>
 </g>
@@ -330,18 +330,18 @@
 </g>
 </g>
 <!-- Node14&#45;&gt;Node5 -->
-<g id="edge18_Node000014_Node000005" class="edge">
+<g id="edge19_Node000014_Node000005" class="edge">
 <title>Node14&#45;&gt;Node5</title>
-<g id="a_edge18_Node000014_Node000005"><a xlink:title=" ">
+<g id="a_edge19_Node000014_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M375.61,-143.22C394.93,-155.12 427.77,-174.03 458.25,-185.38 467.53,-188.83 477.6,-191.8 487.49,-194.31"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="486.52,-197.67 497.06,-196.6 488.15,-190.87 486.52,-197.67"/>
 </a>
 </g>
 </g>
 <!-- Node14&#45;&gt;Node6 -->
-<g id="edge19_Node000014_Node000006" class="edge">
+<g id="edge20_Node000014_Node000006" class="edge">
 <title>Node14&#45;&gt;Node6</title>
-<g id="a_edge19_Node000014_Node000006"><a xlink:title=" ">
+<g id="a_edge20_Node000014_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M381.3,-121.56C393.72,-115.32 409.19,-107.01 422.25,-98.38 439.39,-87.04 439.76,-78.33 458.25,-69.38 462.53,-67.3 467.04,-65.44 471.65,-63.77"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="472.71,-67.1 481.13,-60.67 470.54,-60.45 472.71,-67.1"/>
 </a>
@@ -368,9 +368,9 @@
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" target="_top" xlink:title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">
-<polygon fill="white" stroke="#666666" points="606.25,-137.75 488.25,-137.75 488.25,-117 606.25,-117 606.25,-137.75"/>
-<text xml:space="preserve" text-anchor="middle" x="547.25" y="-124.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::openRegularFile</text>
+<g id="a_Node000016"><a xlink:href="class_util.html#a8e427903937505b5e19ebbea7050494e" target="_top" xlink:title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes.">
+<polygon fill="white" stroke="#666666" points="605.12,-137.75 489.38,-137.75 489.38,-117 605.12,-117 605.12,-137.75"/>
+<text xml:space="preserve" text-anchor="middle" x="547.25" y="-124.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::readRegularFile</text>
 </a>
 </g>
 </g>
@@ -378,53 +378,53 @@
 <g id="edge17_Node000014_Node000016" class="edge">
 <title>Node14&#45;&gt;Node16</title>
 <g id="a_edge17_Node000014_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M412.39,-130.94C432.4,-130.41 455.4,-129.8 476.63,-129.23"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="476.46,-132.74 486.37,-128.97 476.28,-125.74 476.46,-132.74"/>
+<path fill="none" stroke="#63b8ff" d="M412.39,-130.94C432.77,-130.4 456.25,-129.77 477.8,-129.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="477.79,-132.7 487.69,-128.94 477.6,-125.7 477.79,-132.7"/>
+</a>
+</g>
+</g>
+<!-- Node18 -->
+<g id="Node000018" class="node">
+<title>Node18</title>
+<g id="a_Node000018"><a xlink:href="class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" target="_top" xlink:title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line.">
+<polygon fill="white" stroke="#666666" points="636.25,-98.75 458.25,-98.75 458.25,-78 636.25,-78 636.25,-98.75"/>
+<text xml:space="preserve" text-anchor="middle" x="547.25" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdSigner::validSigFingerprints</text>
+</a>
+</g>
+</g>
+<!-- Node14&#45;&gt;Node18 -->
+<g id="edge21_Node000014_Node000018" class="edge">
+<title>Node14&#45;&gt;Node18</title>
+<g id="a_edge21_Node000014_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M402.73,-121.62C420.03,-117.44 440.06,-112.63 458.25,-108.38 467.57,-106.19 477.45,-103.91 487.1,-101.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="487.82,-105.13 496.79,-99.5 486.27,-98.31 487.82,-105.13"/>
 </a>
 </g>
 </g>
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0" target="_top" xlink:title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line.">
-<polygon fill="white" stroke="#666666" points="636.25,-98.75 458.25,-98.75 458.25,-78 636.25,-78 636.25,-98.75"/>
-<text xml:space="preserve" text-anchor="middle" x="547.25" y="-85.25" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdSigner::validSigFingerprints</text>
+<g id="a_Node000017"><a xlink:href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" target="_top" xlink:title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">
+<polygon fill="white" stroke="#666666" points="803.38,-137.75 685.38,-137.75 685.38,-117 803.38,-117 803.38,-137.75"/>
+<text xml:space="preserve" text-anchor="middle" x="744.38" y="-124.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::openRegularFile</text>
 </a>
 </g>
 </g>
-<!-- Node14&#45;&gt;Node17 -->
-<g id="edge20_Node000014_Node000017" class="edge">
-<title>Node14&#45;&gt;Node17</title>
-<g id="a_edge20_Node000014_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M402.73,-121.62C420.03,-117.44 440.06,-112.63 458.25,-108.38 467.57,-106.19 477.45,-103.91 487.1,-101.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="487.82,-105.13 496.79,-99.5 486.27,-98.31 487.82,-105.13"/>
-</a>
-</g>
-</g>
-<!-- Node19 -->
-<g id="Node000019" class="node">
-<title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_util.html#add1e4f70c6d7630ace5e350b30f78907" target="_top" xlink:title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">
-<polygon fill="white" stroke="#666666" points="613,-20.75 481.5,-20.75 481.5,0 613,0 613,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="547.25" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::stageFileReplacing</text>
-</a>
-</g>
-</g>
-<!-- Node18&#45;&gt;Node19 -->
-<g id="edge22_Node000018_Node000019" class="edge">
-<title>Node18&#45;&gt;Node19</title>
-<g id="a_edge22_Node000018_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M422.67,-20.91C437.88,-19.62 454.25,-18.22 469.94,-16.88"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="470.04,-20.39 479.71,-16.05 469.45,-13.41 470.04,-20.39"/>
+<!-- Node16&#45;&gt;Node17 -->
+<g id="edge18_Node000016_Node000017" class="edge">
+<title>Node16&#45;&gt;Node17</title>
+<g id="a_edge18_Node000016_Node000017"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M605.48,-127.38C626.83,-127.38 651.31,-127.38 673.67,-127.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="673.62,-130.88 683.62,-127.38 673.62,-123.88 673.62,-130.88"/>
 </a>
 </g>
 </g>
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" target="_top" xlink:title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">
-<polygon fill="white" stroke="#666666" points="790.62,-20.75 698.12,-20.75 698.12,0 790.62,0 790.62,-20.75"/>
-<text xml:space="preserve" text-anchor="middle" x="744.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::replaceFile</text>
+<g id="a_Node000020"><a xlink:href="class_util.html#add1e4f70c6d7630ace5e350b30f78907" target="_top" xlink:title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">
+<polygon fill="white" stroke="#666666" points="613,-20.75 481.5,-20.75 481.5,0 613,0 613,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="547.25" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::stageFileReplacing</text>
 </a>
 </g>
 </g>
@@ -432,6 +432,24 @@
 <g id="edge23_Node000019_Node000020" class="edge">
 <title>Node19&#45;&gt;Node20</title>
 <g id="a_edge23_Node000019_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M422.67,-20.91C437.88,-19.62 454.25,-18.22 469.94,-16.88"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="470.04,-20.39 479.71,-16.05 469.45,-13.41 470.04,-20.39"/>
+</a>
+</g>
+</g>
+<!-- Node21 -->
+<g id="Node000021" class="node">
+<title>Node21</title>
+<g id="a_Node000021"><a xlink:href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" target="_top" xlink:title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">
+<polygon fill="white" stroke="#666666" points="790.62,-20.75 698.12,-20.75 698.12,0 790.62,0 790.62,-20.75"/>
+<text xml:space="preserve" text-anchor="middle" x="744.38" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::replaceFile</text>
+</a>
+</g>
+</g>
+<!-- Node20&#45;&gt;Node21 -->
+<g id="edge24_Node000020_Node000021" class="edge">
+<title>Node20&#45;&gt;Node21</title>
+<g id="a_edge24_Node000020_Node000021"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M613.5,-10.38C637.19,-10.38 663.75,-10.38 686.65,-10.38"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="686.4,-13.88 696.4,-10.38 686.4,-6.88 686.4,-13.88"/>
 </a>
