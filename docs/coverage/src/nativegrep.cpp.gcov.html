@@ -42,13 +42,13 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">96.4&nbsp;%</td>
+            <td class="headerCovTableEntryHi">94.2&nbsp;%</td>
             <td class="headerCovTableEntry">139</td>
-            <td class="headerCovTableEntry">134</td>
+            <td class="headerCovTableEntry">131</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-25 21:41:01</td>
+            <td class="headerValue">2026-11-25 23:02:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
@@ -103,9 +103,9 @@
 <span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         276 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
 <span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           1 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning()) {</span></span>
 <span id="L32"><span class="lineNum">      32</span>              :       const int remaining =</span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           1 :           kThreadTimeoutMs - static_cast&lt;int&gt;(elapsed.elapsed());</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           1 :       if (remaining &gt; 0)</span></span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">           1 :         w.thread-&gt;wait(remaining);</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaUNC">           0 :           kThreadTimeoutMs - static_cast&lt;int&gt;(elapsed.elapsed());</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaUNC">           0 :       if (remaining &gt; 0)</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaUNC">           0 :         w.thread-&gt;wait(remaining);</span></span>
 <span id="L36"><span class="lineNum">      36</span>              :     }</span>
 <span id="L37"><span class="lineNum">      37</span>              :   }</span>
 <span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         275 : }</span></span>
@@ -358,7 +358,7 @@
 <span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         631 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
 <span id="L286"><span class="lineNum">     286</span>              :     w.cancel-&gt;store(true);</span>
 <span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">           9 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
-<span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">           9 :       w.thread-&gt;requestInterruption();</span></span>
+<span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">           8 :       w.thread-&gt;requestInterruption();</span></span>
 <span id="L289"><span class="lineNum">     289</span>              :   }</span>
 <span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">         622 : }</span></span>
         </pre>

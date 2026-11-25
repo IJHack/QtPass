@@ -201,7 +201,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <tr class="memitem:ab0e1c40d3ccc706e0d74d246361a2640" id="r_ab0e1c40d3ccc706e0d74d246361a2640"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab0e1c40d3ccc706e0d74d246361a2640">replaceFile</a> (const QString &amp;from, const QString &amp;to, bool replace) -&gt; bool</td></tr>
 <tr class="memdesc:ab0e1c40d3ccc706e0d74d246361a2640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">linkat(2)</span> without <span class="tt">AT_SYMLINK_FOLLOW</span> and unlink on POSIX, where a no-replace rename is not portable; plain <span class="tt">link(2)</span> follows a symlink at <code class="param">from</code> on macOS and the BSDs).  <br /></td></tr>
 <tr class="memitem:acf5bf60f4f6eb548fb8b3c9bfa760612" id="r_acf5bf60f4f6eb548fb8b3c9bfa760612"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acf5bf60f4f6eb548fb8b3c9bfa760612">openRegularFile</a> (const QString &amp;path, QFile &amp;file) -&gt; bool</td></tr>
-<tr class="memdesc:acf5bf60f4f6eb548fb8b3c9bfa760612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused.  <br /></td></tr>
+<tr class="memdesc:acf5bf60f4f6eb548fb8b3c9bfa760612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused. On Windows any reparse point that names another file (a symbolic link, a junction) is refused; another one, such as the placeholder of a cloud provider like OneDrive, is opened through so its content is fetched, when that open reaches the same file (same volume and 128-bit file ID).  <br /></td></tr>
 <tr class="memitem:a8e427903937505b5e19ebbea7050494e" id="r_a8e427903937505b5e19ebbea7050494e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8e427903937505b5e19ebbea7050494e">readRegularFile</a> (const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</td></tr>
 <tr class="memdesc:a8e427903937505b5e19ebbea7050494e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read <code class="param">path</code> whole, as the regular file it is (<a class="el" href="#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), when it holds at most <code class="param">maxBytes</code>.  <br /></td></tr>
 <tr class="memitem:ab22e866d6db73831a0414056d34f6027" id="r_ab22e866d6db73831a0414056d34f6027"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab22e866d6db73831a0414056d34f6027">readRegularFileUnder</a> (const QString &amp;root, const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</td></tr>
@@ -259,7 +259,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Fills the temporary of <a class="el" href="#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00574">574</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00578">578</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
@@ -290,7 +290,7 @@ Static Private Attributes</h2></td></tr>
 <p>Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the store. </p>
 <p>Clears the variables that point git at another repository (GIT_DIR, GIT_WORK_TREE and the rest pass clears), and on Unix gives the processes <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> starts (git, gpg, pass) the umask from PASSWORD_STORE_UMASK, 077 by default (<a class="el" href="class_executor.html#a9f717e2a6f4b5ed7a0ef6f833a80d880" title="The umask every child QtPass starts gets, as pass sets its own.">Executor::setChildUmask()</a>): what they create in the store is then the user's alone, as with pass. <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own umask stays the session's, so a browser or file manager it opens is not affected. Call it first thing in <a class="el" href="main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window.">main()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00111">111</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00112">112</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
@@ -339,7 +339,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code class="param">text</code>, with each longer run cut. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00871">871</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00872">872</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -381,7 +381,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool <span class="tt">true</span> if the password store's <span class="tt">.gpg-id</span> exists AND the configured executable (pass or gpg, depending on settings) exists or is a WSL wrapper; <span class="tt">false</span> otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00610">610</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00611">611</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
@@ -446,7 +446,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">dst</code> now holds a copy of <code class="param">src</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01623">1623</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01668">1668</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -494,7 +494,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Absolute paths, parents before children. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01022">1022</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01023">1023</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -541,7 +541,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code class="param">text</code> with those characters shown as U+FFFD. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00738">738</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00739">739</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
@@ -577,7 +577,7 @@ Static Private Attributes</h2></td></tr>
 <p>Returns a regex to match .gpg file extensions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00636">636</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00637">637</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary">
 </div>
@@ -620,7 +620,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Path with a leading current-user tilde expanded. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00093">93</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00094">94</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
@@ -662,7 +662,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Absolute path to the executable if found, empty QString otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00528">528</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00529">529</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary">
 </div>
@@ -715,7 +715,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Absolute path to the executable if found, empty QString otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00591">591</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00592">592</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>
@@ -745,7 +745,7 @@ Static Private Attributes</h2></td></tr>
 <p>Locate the password store directory. </p>
 <dl class="section return"><dt>Returns</dt><dd>QString Path to the password store, always ends with '/'. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00078">78</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00079">79</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary">
 </div>
@@ -793,7 +793,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The ceiling, empty for an empty <code class="param">store</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00140">140</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00141">141</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary">
 </div>
@@ -846,7 +846,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Name and value pairs to set; empty for an empty <code class="param">store</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00430">430</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00431">431</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary">
 </div>
@@ -894,7 +894,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when such a run is in it. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00818">818</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00819">819</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary">
 </div>
@@ -936,7 +936,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when a listing of <code class="param">dir</code> is incomplete for that reason. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01034">1034</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01035">1035</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>
@@ -965,7 +965,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacGPG2 and <span class="tt">/usr/local/bin</span> on macOS, WinGPG and GnuPG on Windows) when they exist. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00051">51</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00052">52</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary">
 </div>
@@ -1016,7 +1016,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the value is a launchable http(s) URL, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00698">698</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00699">699</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary">
 </div>
@@ -1058,7 +1058,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true for a link or junction. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01055">1055</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01056">1056</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary">
 </div>
@@ -1100,7 +1100,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true for a block break other than a line feed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00804">804</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00805">805</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary">
 </div>
@@ -1153,7 +1153,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when something on the way is a link. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01059">1059</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01060">1060</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary">
 </div>
@@ -1202,7 +1202,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if gpg may be given the token, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00905">905</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00906">906</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary">
 </div>
@@ -1250,7 +1250,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>HTML-escaped text with anchors for launchable http(s) URLs. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00756">756</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00757">757</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary">
 </div>
@@ -1298,7 +1298,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when <code class="param">path</code> is a folder afterwards. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00492">492</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00493">493</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-28-summary" class="dynsummary">
 </div>
@@ -1340,7 +1340,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Returns a regex to match newline characters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00897">897</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00898">898</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-30-summary" class="dynsummary">
 </div>
@@ -1383,7 +1383,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Path with a trailing '/' added if it was missing. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00103">103</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00104">104</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary">
 </div>
@@ -1420,7 +1420,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </table>
 </div><div class="memdoc">
 
-<p>Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused. </p>
+<p>Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused. On Windows any reparse point that names another file (a symbolic link, a junction) is refused; another one, such as the placeholder of a cloud provider like OneDrive, is opened through so its content is fetched, when that open reaches the same file (same volume and 128-bit file ID). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The file, as the caller names it. </td></tr>
@@ -1430,7 +1430,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">file</code> is open on a regular file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01207">1207</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01208">1208</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-32-summary" class="dynsummary">
 </div>
@@ -1472,7 +1472,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The octal value when it is one (up to four octal digits), else 077, pass's default. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00127">127</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00128">128</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary">
 </div>
@@ -1514,7 +1514,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The tooltip. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00834">834</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00835">835</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-34-summary" class="dynsummary">
 </div>
@@ -1556,7 +1556,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Returns a regex to match URL protocols. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00644">644</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00645">645</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-36-summary" class="dynsummary">
 </div>
@@ -1603,7 +1603,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The contents; nothing when the file is missing, not a regular file (a link, FIFO or device included), unreadable or larger. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01289">1289</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01333">1333</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-37-summary" class="dynsummary">
 </div>
@@ -1662,7 +1662,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The contents; nothing when <code class="param">path</code> is under neither spelling of the store, or <a class="el" href="#ab22e866d6db73831a0414056d34f6027" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it.">readRegularFileUnder()</a> refuses it. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01298">1298</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01342">1342</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-39-summary" class="dynsummary">
 </div>
@@ -1721,7 +1721,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The contents; nothing when <code class="param">path</code> is not under <code class="param">root</code>, a part of the way is a link or not a folder, or <a class="el" href="#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes.">readRegularFile()</a> would refuse the file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01318">1318</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01362">1362</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-41-summary" class="dynsummary">
 </div>
@@ -1794,7 +1794,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Absolute paths, sorted by name within each directory, a directory's files before its subdirectories. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00991">991</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00992">992</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-43-summary" class="dynsummary">
 </div>
@@ -1836,7 +1836,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when <code class="param">dir</code> is gone. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01683">1683</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01728">1728</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-44-summary" class="dynsummary">
 </div>
@@ -1895,7 +1895,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">to</code> is now that file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01167">1167</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01168">1168</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-46-summary" class="dynsummary">
 </div>
@@ -1937,7 +1937,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The folder holding that repository's <span class="tt">.git</span>; empty when pass keeps to the store. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00180">180</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00181">181</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary">
 </div>
@@ -1978,7 +1978,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00338">338</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00339">339</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>
@@ -2013,7 +2013,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00331">331</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00332">332</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>
@@ -2054,7 +2054,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The name as shown. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00842">842</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00843">843</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-48-summary" class="dynsummary">
 </div>
@@ -2119,7 +2119,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">path</code> now holds what <code class="param">fill</code> wrote. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01583">1583</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01628">1628</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-50" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-50-summary" class="dynsummary">
 </div>
@@ -2167,7 +2167,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the data is on the device. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01420">1420</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01465">1465</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>
@@ -2203,7 +2203,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The text with those characters replaced. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00809">809</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00810">810</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-52" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-52-summary" class="dynsummary">
 </div>
@@ -2268,7 +2268,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">path</code> now holds <code class="param">bytes</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01609">1609</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01654">1654</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-54" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-54-summary" class="dynsummary">
 </div>
@@ -2306,7 +2306,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </div><div class="memdoc">
 <p>The environment <a class="el" href="#aee9122a528c60168a0c105bfbed062d5" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL.">findBinaryInPath()</a> and <a class="el" href="#a503abb6ccbf2aa18056c220b9b45284e" title="Locate the password store directory.">findPasswordStore()</a> read, as <a class="el" href="#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG...">initialiseEnvironment()</a> built it. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00651">651</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00655">655</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
@@ -2332,7 +2332,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 
 <p>Whether <a class="el" href="#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG...">initialiseEnvironment()</a> has run. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00653">653</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00657">657</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
@@ -2359,7 +2359,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Most bytes of a .gpg-id <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> reads. </p>
 <p>A recipient list is a few lines; a shared store's other writers could otherwise hand it a sparse file of gigabytes to read before the signature is even checked. Far beyond any real list. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00515">515</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00519">519</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
