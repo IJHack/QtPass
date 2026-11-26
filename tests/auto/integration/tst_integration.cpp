@@ -331,6 +331,7 @@ private Q_SLOTS:
   void imitatePass_reencryptIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptPreservesPerFolderRecipients();
   void imitatePass_reencryptKeyListingWritesNoFile();
+  void imitatePass_removeLinkedFolderKeepsTarget();
   void mainWindow_selectingEntryShowsDecryptedContent();
   void mainWindow_editEntryThroughModalDialogUpdatesContent();
   void mainWindow_failedAutoPushAfterSaveStaysOnScreen();
@@ -345,6 +346,7 @@ private Q_SLOTS:
   // RealPass backend (skipped if `pass` not installed)
   void realPass_insertAndShow();
   void realPass_insertAndGrep();
+  void realPass_removeLinkedFolderRefusedKeepsTarget();
 
   // pass-otp (skipped if extension not installed)
   void imitatePass_otpGenerate();
@@ -838,6 +840,71 @@ void tst_integration::imitatePass_insertAndRemove() {
   // Without git, ImitatePass::Remove removes the file synchronously; no signal.
   pass.Remove(QStringLiteral("deleteme"), false);
   QVERIFY2(!QFile::exists(gpgFile), "file should be gone after remove");
+}
+
+// A symbolic link inside the store that points to a directory outside it (such
+// a link can arrive with a `git pull` from a shared store) must not be followed
+// when the "folder" is deleted: only the link goes, its target stays whole.
+void tst_integration::imitatePass_removeLinkedFolderKeepsTarget() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics; Windows junction handling differs");
+#else
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  // A directory outside the store, with a file in it, standing in for the
+  // victim's own data (for example ~/Documents).
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outsideFile = outsideDir.path() + "/important.txt";
+  {
+    QFile f(outsideFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(f.write("keep me\n") > 0);
+  }
+
+  // The pulled link: a "folder" in the store that is really the outside dir.
+  // Deleted as a folder the way the UI asks for it, with a trailing
+  // separator (Util::getDir()), through which lstat() follows the link, and
+  // without one.
+  const QString linkInStore = storeDir.path() + "/Shared";
+  for (const QString &name :
+       {QStringLiteral("Shared/"), QStringLiteral("Shared")}) {
+    QVERIFY2(QFile::link(outsideDir.path(), linkInStore),
+             "failed to create the symbolic link for the test");
+    QVERIFY(QFileInfo(linkInStore).isSymLink());
+
+    pass.Remove(name, true);
+
+    QVERIFY2(QFile::exists(outsideFile),
+             qPrintable(name + ": the link's target outside the store must "
+                               "not be emptied"));
+    QVERIFY2(!QFileInfo(linkInStore).isSymLink(),
+             qPrintable(name + ": the link itself should be removed"));
+  }
+
+  // What the tree shows under the link lies outside the store as well: a
+  // folder and an entry there are refused, not deleted in the target.
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("sub")));
+  const QString outsideSubFile = outsideDir.path() + "/sub/inner.gpg";
+  const QString outsideEntry = outsideDir.path() + "/x.gpg";
+  for (const QString &f : {outsideSubFile, outsideEntry}) {
+    QFile file(f);
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    QVERIFY(file.write("ciphertext") > 0);
+  }
+  QVERIFY(QFile::link(outsideDir.path(), linkInStore));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  pass.Remove(QStringLiteral("Shared/sub/"), true);
+  pass.Remove(QStringLiteral("Shared/x"), false);
+  QCOMPARE(criticalSpy.count(), 2);
+  QVERIFY2(QFile::exists(outsideSubFile),
+           "a folder under the link must not be emptied in the target");
+  QVERIFY2(QFile::exists(outsideEntry),
+           "an entry under the link must not be deleted in the target");
+  QVERIFY(QFileInfo(linkInStore).isSymLink());
+#endif
 }
 
 void tst_integration::imitatePass_nestedDirectoryInsertAndShow() {
@@ -1941,6 +2008,100 @@ void tst_integration::realPass_insertAndShow() {
            "RealPass show should return inserted content");
 
   QtPassSettings::setUsePass(false);
+}
+
+// With the pass backend, `pass rm -rf <folder>/` follows a symbolic link and
+// empties its target outside the store. A link can arrive with a `git pull`
+// from a shared store, so deleting such a "folder" must be refused, not queued.
+void tst_integration::realPass_removeLinkedFolderRefusedKeepsTarget() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics; Windows junction handling differs");
+#else
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+
+  QProcess initProc;
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert("GNUPGHOME", m_gnupgHome.path());
+  env.insert("PASSWORD_STORE_DIR", storeDir.path());
+  initProc.setProcessEnvironment(env);
+  initProc.start(passExe, {"init", m_keyFingerprint});
+  QVERIFY2(initProc.waitForFinished(15000), "pass init timed out");
+  QVERIFY2(initProc.exitCode() == 0, "pass init should succeed");
+
+  // A directory outside the store standing in for the victim's own data.
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outsideFile = outsideDir.path() + "/important.txt";
+  {
+    QFile f(outsideFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(f.write("keep me\n") > 0);
+  }
+
+  // The pulled link: a "folder" in the store that is really the outside dir.
+  const QString linkInStore = storeDir.path() + "/Shared";
+  QVERIFY2(QFile::link(outsideDir.path(), linkInStore),
+           "failed to create the symbolic link for the test");
+
+  RealPass pass;
+  setupPass(pass);
+
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy removeSpy(&pass, &Pass::finishedRemove);
+  // With a trailing separator, as the UI asks (Util::getDir()), and without.
+  for (const QString &name :
+       {QStringLiteral("Shared/"), QStringLiteral("Shared")}) {
+    criticalSpy.clear();
+    pass.Remove(name, true);
+
+    QVERIFY2(criticalSpy.count() == 1,
+             qPrintable(name + ": deleting a linked folder should raise a "
+                               "refusal, not run pass"));
+    QVERIFY2(QFile::exists(outsideFile),
+             qPrintable(name + ": the link's target outside the store must "
+                               "not be emptied"));
+    QVERIFY2(QFileInfo(linkInStore).isSymLink(),
+             qPrintable(name + ": the refused link should be left in place "
+                               "for the user to remove"));
+  }
+
+  // What the tree shows under the link lies outside the store as well: pass
+  // rm would delete in the target, so a folder and an entry there are
+  // refused.
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("sub")));
+  const QString outsideSubFile = outsideDir.path() + "/sub/inner.gpg";
+  const QString outsideEntry = outsideDir.path() + "/x.gpg";
+  for (const QString &f : {outsideSubFile, outsideEntry}) {
+    QFile file(f);
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    QVERIFY(file.write("ciphertext") > 0);
+  }
+  criticalSpy.clear();
+  pass.Remove(QStringLiteral("Shared/sub/"), true);
+  pass.Remove(QStringLiteral("Shared/x"), false);
+  QCOMPARE(criticalSpy.count(), 2);
+  QTest::qWait(500); // nothing should be queued; give a stray pass a chance
+  QVERIFY2(QFile::exists(outsideSubFile),
+           "a folder under the link must not be emptied in the target");
+  QVERIFY2(QFile::exists(outsideEntry),
+           "an entry under the link must not be deleted in the target");
+
+  QtPassSettings::setUsePass(false);
+#endif
 }
 
 void tst_integration::realPass_insertAndGrep() {

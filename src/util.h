@@ -148,6 +148,20 @@ public:
    * @return true if gpg may be given the token, false otherwise.
    */
   static auto isValidKeyId(const QString &keyId) -> bool;
+  /**
+   * @brief Whether a folder between @p storeRoot and @p path is a symbolic
+   * link (or, on Windows, a junction).
+   *
+   * The tree lists a linked folder's children too, so it can show a place
+   * outside the store as if it were in it. @p path itself and the root are
+   * not checked: removing a link only unlinks it, and a linked store root is
+   * the user's own setup.
+   * @param path File or folder under the store, absolute.
+   * @param storeRoot The configured store.
+   * @return true when the way down passes through a link.
+   */
+  static auto isBehindLink(const QString &path, const QString &storeRoot)
+      -> bool;
 
 private:
   static void initialiseEnvironment();

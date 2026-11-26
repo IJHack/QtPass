@@ -106,6 +106,36 @@ auto RealPass::insertWritten() const -> bool {
  * @brief RealPass::Remove pass remove wrapper
  */
 void RealPass::Remove(QString file, bool isDir) {
+  // A symbolic link found inside the store is not a folder of the store. For a
+  // folder, `pass rm -rf` is handed the name with a trailing slash and follows
+  // the link, emptying whatever it points to outside the store. Such a link can
+  // arrive with a `git pull` from a shared store, so refuse the delete rather
+  // than recurse through it; the link itself can be removed outside QtPass.
+  // A folder comes with a trailing separator, through which lstat() follows
+  // the link: look at the name without it.
+  if (isDir &&
+      QFileInfo(QDir::cleanPath(QDir(m_settings.passStore).filePath(file)))
+          .isSymLink()) {
+    emit critical(
+        tr("Refusing to delete a link"),
+        tr("\"%1\" is a symbolic link, not a folder of the store, so "
+           "it was not deleted. Remove the link outside QtPass if you "
+           "meant to.")
+            .arg(file));
+    emit finishedRemove(QString(), QString());
+    return;
+  }
+  // A folder or entry under a linked folder is outside the store too: pass
+  // would delete in the folder the link points to.
+  if (Util::isBehindLink(QDir(m_settings.passStore).filePath(file),
+                         m_settings.passStore)) {
+    emit critical(tr("Refusing to delete through a link"),
+                  tr("\"%1\" lies under a symbolic link, so it is not in the "
+                     "store and was not deleted.")
+                      .arg(file));
+    emit finishedRemove(QString(), QString());
+    return;
+  }
   executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
 }
 
