@@ -1171,26 +1171,49 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
   return answer(std::nullopt, QString());
 }
 
-auto Pass::linkedGpgId(const QString &forFile, const QString &passStore)
-    -> std::optional<QString> {
+auto Pass::linkedGpgId(const QString &forFile, const QString &passStore,
+                       LinkedWalks *walks) -> std::optional<QString> {
   const GpgIdLookup lookup = gpgIdLookup(forFile, passStore);
+  // As in skippedGpgId(): a folder's answer depends only on it and the
+  // folders above it, so a tree check climbs each folder once instead of
+  // once per folder below it.
+  QStringList climbed;
+  const auto answer = [&climbed, walks](std::optional<QString> linked) {
+    if (walks != nullptr) {
+      for (const QString &folder : std::as_const(climbed)) {
+        walks->insert(folder, linked);
+      }
+    }
+    return linked;
+  };
   // The walk of nearestGpgId(), root included, stopping at the list it
   // finds.
   QDir dir = lookup.start;
-  while (dir.exists() && isAtOrUnder(QDir::cleanPath(dir.absolutePath()),
-                                     lookup.storeDir, lookup.storePrefix)) {
+  while (dir.exists()) {
+    const QString here = QDir::cleanPath(dir.absolutePath());
+    if (!isAtOrUnder(here, lookup.storeDir, lookup.storePrefix)) {
+      break;
+    }
+    if (walks != nullptr) {
+      // By value: the inserts in answer() may rehash walks.
+      if (const auto known = walks->constFind(here);
+          known != walks->constEnd()) {
+        return answer(std::optional<QString>(*known));
+      }
+    }
+    climbed << here;
     const QFileInfo candidate(dir.absoluteFilePath(".gpg-id"));
     if (isOwnGpgId(candidate)) {
-      return std::nullopt;
+      return answer(std::nullopt);
     }
     if (candidate.isSymLink() || candidate.isJunction()) {
-      return candidate.absoluteFilePath();
+      return answer(candidate.absoluteFilePath());
     }
     if (!dir.cdUp()) {
       break;
     }
   }
-  return std::nullopt;
+  return answer(std::nullopt);
 }
 
 namespace {

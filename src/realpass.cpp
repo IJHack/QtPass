@@ -151,9 +151,10 @@ auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
 }
 
 auto RealPass::refuseLinkedList(const QString &file, const QString &within,
-                                const QString &except) -> bool {
+                                const QString &except, LinkedWalks *walks)
+    -> bool {
   const std::optional<QString> linked =
-      Pass::linkedGpgId(file, m_settings.passStore);
+      Pass::linkedGpgId(file, m_settings.passStore, walks);
   if (!linked) {
     return false;
   }
@@ -340,8 +341,12 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   // count (the folder that moves gets the destination's list, the folder
   // pass init writes its own).
   QSet<QString> readAlike;
+  // Each folder's linked-list answer once for the whole tree: climbed again
+  // from every folder, a deep chain cost depth squared stat calls.
+  LinkedWalks linkedWalks;
   for (const QString &folder : folders) {
-    if (refuseLinkedList(folder + QLatin1Char('/'), within, except) ||
+    if (refuseLinkedList(folder + QLatin1Char('/'), within, except,
+                         &linkedWalks) ||
         refuseMisreadList(folder + QLatin1Char('/'), within, except,
                           readAlike)) {
       return true;

@@ -139,10 +139,13 @@ class RealPass : public Pass {
    *        cleaned, with a trailing "/") is refused.
    * @param except A list about to be written (`pass init`'s own), not
    *        refused.
+   * @param walks Passed on to Pass::linkedGpgId(), for a check of many
+   *        folders; null for none.
    * @return Whether it was refused (and the user told).
    */
   auto refuseLinkedList(const QString &file, const QString &within = QString(),
-                        const QString &except = QString()) -> bool;
+                        const QString &except = QString(),
+                        LinkedWalks *walks = nullptr) -> bool;
 
   /**
    * @brief Refuse to have pass encrypt @p file when its nearest `.gpg-id`
