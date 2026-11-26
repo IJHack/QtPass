@@ -722,18 +722,31 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
  * file.
  */
 auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
-  QStringList args = {
-      "-v",          "--no-secmem-warning", "--no-permission-warning",
-      "--list-only", "--keyid-format=long", pgpg(fileName)};
+  // --decrypt, as pass has it: --list-only is an option, not a command, and
+  // without a command gpg guesses one. A file that is OpenPGP data but not
+  // encrypted it then saves under the entry's name without ".gpg": in the
+  // store, and through a link under that name. With --decrypt such data goes
+  // to standard output, which is capped and not read: gpg names the keys on
+  // standard error, and text from the file is not a key list. "--" keeps a
+  // file name that starts with a dash from being read as an option.
+  QStringList args = {"-v",
+                      "--no-secmem-warning",
+                      "--no-permission-warning",
+                      "--batch",
+                      "--decrypt",
+                      "--list-only",
+                      "--max-output",
+                      "1",
+                      "--keyid-format=long",
+                      "--",
+                      pgpg(fileName)};
   QString keys;
-  QString err;
   const int result =
-      Executor::executeBlocking(m_settings.gpgExecutable, args, &keys, &err);
+      Executor::executeBlocking(m_settings.gpgExecutable, args, nullptr, &keys);
   if (result != 0) {
     return {};
   }
   QStringList actualKeys;
-  keys += err;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList key = keys.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
 #else
