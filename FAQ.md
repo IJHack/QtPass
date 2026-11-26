@@ -154,6 +154,8 @@ The dialog takes one public key per import. A block that holds several keys, or 
 
 The dialog ignores `gpg.conf`, so options there such as `import-filter` or `import-options` do not apply to it. Run `gpg --import` yourself when you need them.
 
+That includes `keyring`, `primary-keyring` and `no-default-keyring`: the dialog imports into your default keyring. When `gpg.conf` points gpg at another keyring, the Users list reads that one and may not show the key you just imported. Run `gpg --import` yourself in that case, so the key lands where your configuration says (see [#2312](https://github.com/IJHack/QtPass/pull/2312)).
+
 ### What does the Share submenu do?
 
 Right-click on a **folder** in the password tree to access the **Share** submenu. It bundles the recipient-management actions in one place:
