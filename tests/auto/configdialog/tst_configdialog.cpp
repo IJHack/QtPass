@@ -1491,10 +1491,9 @@ void tst_configdialog::signingKeyMustBeAFullFingerprint() {
  *        unsigned .gpg-id lists.
  */
 void tst_configdialog::activeProfileSigningKeyAppliedOnOk() {
-  struct ProfileRestorer {
-    Profiles saved;
-    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
-  } restorer{QtPassSettings::getProfiles()};
+  // The profiles and the live settings (activeProfile, passSigningKey) both
+  // change here: later tests must not inherit either.
+  const SettingsRestorer restorer;
 
   const QString key =
       QStringLiteral("ABCDEF0123456789ABCDEF0123456789ABCDEF01");
