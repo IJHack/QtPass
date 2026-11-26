@@ -414,6 +414,7 @@ private Q_SLOTS:
   void isUnderLinkChecksEveryFolderOnTheWay();
   void replaceFileRenamesOverALinkAndNeverThroughIt();
   void replaceFileWithoutHardLinksStillRefusesATakenName();
+  void replaceFileWithoutReplaceUndoesALinkItCannotFinish();
   void newEntryIsWrittenOnAFilesystemWithoutHardLinks();
   void openRegularFileDoesNotFollowLinksOrOpenSpecialFiles();
   void writeFileReplacingStagesAndNeverWritesThroughALink();
@@ -6047,6 +6048,42 @@ void tst_util::replaceFileRenamesOverALinkAndNeverThroughIt() {
              "a refused link must leave no name behind");
   }
   QCOMPARE(read(victim), QByteArray("precious"));
+#endif
+}
+
+/**
+ * @brief Without replace, replaceFile links the new name and then removes
+ *        the old one. When the old name cannot be removed (its folder is
+ *        read-only), the call fails and leaves things as they were: no new
+ *        name, the source in place. Reporting success there left both.
+ */
+void tst_util::replaceFileWithoutReplaceUndoesALinkItCannotFinish() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX folder permissions");
+#else
+  if (::geteuid() == 0) {
+    QSKIP("root ignores folder permissions");
+  }
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QDir root(dir.path());
+  QVERIFY(root.mkdir(QStringLiteral("ro")));
+  const QString from = root.filePath(QStringLiteral("ro/entry"));
+  {
+    QFile f(from);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("cipher") == 6);
+  }
+  const QString roDir = root.filePath(QStringLiteral("ro"));
+  const QFileDevice::Permissions before = QFile(roDir).permissions();
+  QVERIFY(QFile(roDir).setPermissions(QFileDevice::ReadOwner |
+                                      QFileDevice::ExeOwner));
+  const QString to = root.filePath(QStringLiteral("entry"));
+  const bool placed = Util::replaceFile(from, to, false);
+  QVERIFY(QFile(roDir).setPermissions(before));
+  QVERIFY2(!placed, "the source could not be removed, so this is no move");
+  QVERIFY2(!QFileInfo::exists(to), "the new name must be taken away again");
+  QVERIFY2(QFileInfo::exists(from), "the source must stay");
 #endif
 }
 
