@@ -94,7 +94,7 @@ When QtPass runs pass, gpg or Git through WSL (an executable set to `wsl pass`, 
 
 QtPass gives up on such a command when it runs out of time: the Git pull before an edit, a key import, or the Git setup of a new profile. The program inside WSL can then keep running, and a pull can still change the store after QtPass said it timed out.
 
-To see whether `git`, `pass` or `gpg` is still running, run `wsl -d <distribution> ps -ef` for the distribution QtPass uses (the one after `-d` in its executable setting, or your default one). To stop such a process, run `wsl -d <distribution> kill <pid>` with each PID from that list.
+To see whether `git`, `pass` or `gpg` is still running, run `wsl -d <distribution> ps -ef` for the distribution QtPass uses (the one after `-d` in its executable setting, or your default one). To stop such a process, run `wsl -d <distribution> kill <pid>` with the PID of that `git`, `pass` or `gpg` process only. Leave the other processes in the list alone.
 
 As a last resort, `wsl --terminate <distribution>` stops the whole distribution, and `wsl --shutdown` stops every distribution. Both also stop everything else running there, so save your work in other WSL sessions first.
 
