@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-26 07:41:26</td>
+            <td class="headerValue">2026-11-26 13:29:22</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">40.0&nbsp;%</td>
@@ -175,8 +175,8 @@
 <span id="L102"><span class="lineNum">     102</span>              :    * their own process.</span>
 <span id="L103"><span class="lineNum">     103</span>              :    * @return A copy of the environment.</span>
 <span id="L104"><span class="lineNum">     104</span>              :    */</span>
-<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">         500 :   [[nodiscard]] auto storeEnvironment() const -&gt; QProcessEnvironment {</span></span>
-<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">         500 :     return withCurrentGitPin(env);</span></span>
+<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">         501 :   [[nodiscard]] auto storeEnvironment() const -&gt; QProcessEnvironment {</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">         501 :     return withCurrentGitPin(env);</span></span>
 <span id="L107"><span class="lineNum">     107</span>              :   }</span>
 <span id="L108"><span class="lineNum">     108</span>              : </span>
 <span id="L109"><span class="lineNum">     109</span>              :   /**</span>
@@ -243,7 +243,7 @@
 <span id="L170"><span class="lineNum">     170</span>              :    */</span>
 <span id="L171"><span class="lineNum">     171</span>              :   static QString getDefaultKeyTemplate(const QString &amp;gpgExecutable = {});</span>
 <span id="L172"><span class="lineNum">     172</span>              : </span>
-<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">         548 :   ~Pass() override = default;</span></span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">         550 :   ~Pass() override = default;</span></span>
 <span id="L174"><span class="lineNum">     174</span>              : </span>
 <span id="L175"><span class="lineNum">     175</span>              :   // Git operations</span>
 <span id="L176"><span class="lineNum">     176</span>              :   /**</span>
@@ -720,9 +720,9 @@
 <span id="L647"><span class="lineNum">     647</span>              :    *        out by reportedInsert() while its report goes out.</span>
 <span id="L648"><span class="lineNum">     648</span>              :    */</span>
 <span id="L649"><span class="lineNum">     649</span>              :   void queueInsert(const QString &amp;entry = QString()) {</span>
-<span id="L650"><span class="lineNum">     650</span> <span class="tlaGNC">         109 :     ++m_insertsPending;</span></span>
+<span id="L650"><span class="lineNum">     650</span> <span class="tlaGNC">         110 :     ++m_insertsPending;</span></span>
 <span id="L651"><span class="lineNum">     651</span>              :     m_insertedEntries.enqueue(entry);</span>
-<span id="L652"><span class="lineNum">     652</span> <span class="tlaGNC">         109 :   }</span></span>
+<span id="L652"><span class="lineNum">     652</span> <span class="tlaGNC">         110 :   }</span></span>
 <span id="L653"><span class="lineNum">     653</span>              :   /** @brief What refuseLinkedPath() judges. */</span>
 <span id="L654"><span class="lineNum">     654</span>              :   enum class LinkScope {</span>
 <span id="L655"><span class="lineNum">     655</span>              :     /** @brief The entry itself and every folder above it in the store. */</span>
