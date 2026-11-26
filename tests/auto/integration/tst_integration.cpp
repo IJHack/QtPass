@@ -1113,6 +1113,8 @@ void tst_integration::imitatePass_gitAttributesPinnedForStore() {
     QFile ga(storeDir.path() + "/.gitattributes");
     QVERIFY(ga.open(QIODevice::WriteOnly | QIODevice::Text));
     QVERIFY(ga.write("*.gpg text\n") > 0);
+    // What `pass git init` writes for decrypted diffs; the pin keeps it.
+    QVERIFY(ga.write("*.gpg diff=gpg\n") > 0);
   }
 
   // updateEnv() runs before every operation and installs the pin once .git
@@ -1136,6 +1138,15 @@ void tst_integration::imitatePass_gitAttributesPinnedForStore() {
   const QString chkOut = QString::fromUtf8(chk.readAll());
   QVERIFY2(chkOut.contains("text: unset"),
            qPrintable("the pushed .gitattributes must not win: " + chkOut));
+
+  // diff only changes what Git shows, so the pin leaves pass's diff=gpg.
+  QProcess diffChk;
+  diffChk.setWorkingDirectory(storeDir.path());
+  diffChk.start(gitExe, {"check-attr", "diff", "--", "anything.gpg"});
+  QVERIFY(diffChk.waitForFinished() && diffChk.exitCode() == 0);
+  const QString diffOut = QString::fromUtf8(diffChk.readAll());
+  QVERIFY2(diffOut.contains("diff: gpg"),
+           qPrintable("pass's decrypted diffs must keep working: " + diffOut));
 }
 
 void tst_integration::imitatePass_gitCopyAndShow() {

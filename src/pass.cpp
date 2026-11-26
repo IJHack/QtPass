@@ -928,16 +928,17 @@ void Pass::pinStoreGitAttributes() {
 
   // The marker lets us recognise and refresh our own block without disturbing
   // anything a user put in info/attributes by hand. Disabling text/eol,
-  // working-tree-encoding, filter, ident and diff keeps Git from rewriting the
-  // bytes gpg produced for these paths.
+  // working-tree-encoding, filter and ident keeps Git from rewriting the
+  // bytes gpg produced for these paths. diff is left alone: it only changes
+  // what Git shows, and pass's own "*.gpg diff=gpg" gives decrypted diffs.
   static const QString marker =
       QStringLiteral("# QtPass: keep encrypted store files byte-for-byte");
   const QString block =
       marker + QStringLiteral("\n") +
       QStringLiteral(
-          "*.gpg -text -diff -filter -ident -working-tree-encoding\n"
-          ".gpg-id -text -diff -filter -ident -working-tree-encoding\n"
-          ".gpg-id.sig -text -diff -filter -ident -working-tree-encoding\n");
+          "*.gpg -text -filter -ident -working-tree-encoding\n"
+          ".gpg-id -text -filter -ident -working-tree-encoding\n"
+          ".gpg-id.sig -text -filter -ident -working-tree-encoding\n");
 
   const QString infoDir = gitDir + QStringLiteral("/info");
   const QString attrPath = infoDir + QStringLiteral("/attributes");
