@@ -107,7 +107,7 @@
 <area shape="poly" id="edge62_Node000041_Node000042" title=" " alt="" coords="643,1061,707,1057,702,1058,645,1066"/>
 <area shape="rect" id="Node000043" href="$class_real_pass.html#af4b087c502643f89c605c2c80e172cda" title="The verifier for signed lists, gpg in the store&#39;s environment." alt="" coords="726,1341,875,1369"/>
 <area shape="poly" id="edge63_Node000041_Node000043" title=" " alt="" coords="550,1086,778,1330,773,1330,548,1091"/>
-<area shape="rect" id="Node000047" href="$class_real_pass.html#ab61e44281306f4a26cb69cdedab0ff68" title="Refuse to have pass encrypt file when the walk to its list meets a .gpg&#45;id that is a link or junction..." alt="" coords="704,1163,897,1190"/>
+<area shape="rect" id="Node000047" href="$class_real_pass.html#a7b9885bfae05f433323d412890b880a9" title="Refuse to have pass encrypt file when the walk to its list meets a .gpg&#45;id that is a link or junction..." alt="" coords="704,1163,897,1190"/>
 <area shape="poly" id="edge68_Node000041_Node000047" title=" " alt="" coords="573,1086,751,1156,746,1157,573,1091"/>
 <area shape="rect" id="Node000049" href="$class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="725,983,876,1010"/>
 <area shape="poly" id="edge71_Node000041_Node000049" title=" " alt="" coords="576,1057,693,1021,727,1014,722,1016,694,1026,579,1062"/>
@@ -121,7 +121,7 @@
 <area shape="rect" id="Node000045" href="$class_gpg_id_signer.html#a772cffc3e742e90ae31d253e012494e8" title="The keys this signer was given." alt="" coords="1248,1444,1387,1472"/>
 <area shape="poly" id="edge66_Node000044_Node000045" title=" " alt="" coords="1173,1455,1236,1458,1230,1458,1173,1460"/>
 <area shape="poly" id="edge69_Node000047_Node000023" title=" " alt="" coords="840,1188,911,1208,953,1216,999,1220,1045,1220,1091,1214,1133,1199,1171,1174,1198,1144,1211,1114,1213,1082,1210,1049,1201,977,1204,937,1219,895,1249,851,1284,819,1288,816,1253,854,1223,898,1209,938,1206,977,1215,1048,1219,1082,1216,1115,1203,1147,1175,1179,1136,1204,1092,1219,1046,1226,999,1226,953,1221,910,1213,840,1194"/>
-<area shape="rect" id="Node000048" href="$class_pass.html#a3e5278aaff6a417a29769b6b98c5c881" title="The link or junction under the name .gpg&#45;id that getGpgIdPath() skips on its way up from forFile,..." alt="" coords="997,1291,1132,1318"/>
+<area shape="rect" id="Node000048" href="$class_pass.html#a8655e3d4568673b5f7fe7d035d8e0d77" title="The link or junction under the name .gpg&#45;id that getGpgIdPath() skips on its way up from forFile,..." alt="" coords="997,1291,1132,1318"/>
 <area shape="poly" id="edge70_Node000047_Node000048" title=" " alt="" coords="820,1188,879,1231,917,1255,957,1275,985,1288,980,1287,955,1280,914,1260,876,1236,819,1193"/>
 <area shape="poly" id="edge72_Node000049_Node000023" title=" " alt="" coords="876,981,906,968,921,956,930,944,939,931,954,918,985,903,1012,893,1061,883,1111,877,1172,861,1227,837,1280,814,1275,816,1229,842,1174,866,1112,882,1062,889,1014,898,987,907,957,923,943,934,934,947,925,960,909,972,878,986"/>
 <area shape="rect" id="Node000050" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="992,1036,1137,1064"/>

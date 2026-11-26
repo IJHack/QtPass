@@ -180,6 +180,7 @@ var group__backend =
         [ "recipients", "struct_pass_1_1_expected_list.html#a62814f6d73993cf8e6093c10efa1f2a3", null ],
         [ "state", "struct_pass_1_1_expected_list.html#a7d7e16278de4017b7492031e36b5a082", null ]
       ] ],
+      [ "LinkedWalks", "class_pass.html#acd15f7bd7829564d51873c7950e180dc", null ],
       [ "PROCESS", "class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772", null ],
       [ "SkippedWalks", "class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294", null ],
       [ "LinkScope", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106", [
@@ -241,7 +242,7 @@ var group__backend =
       [ "insertWritten", "class_pass.html#a6097de48d30068d8a73f7dc80ff01de0", null ],
       [ "isIdle", "class_pass.html#a66d554f693ae3069381483cb229bb193", null ],
       [ "isPushing", "class_pass.html#a1b7d6acd239491873c670576d4891fa3", null ],
-      [ "linkedGpgId", "class_pass.html#a3e5278aaff6a417a29769b6b98c5c881", null ],
+      [ "linkedGpgId", "class_pass.html#a8655e3d4568673b5f7fe7d035d8e0d77", null ],
       [ "listKeys", "class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6", null ],
       [ "listKeys", "class_pass.html#a6ed6c10b07137f62e127b290ebd428a2", null ],
       [ "loggableArgs", "class_pass.html#abaa0009c06b9b53f6c5963763532c7d9", null ],
@@ -340,7 +341,7 @@ var group__backend =
       [ "reencryptFailed", "class_real_pass.html#ae82ad79b6a4d5d87548cc14247d22779", null ],
       [ "reencryptFailed", "class_real_pass.html#a5e54561fccd028576a58b17731907880", null ],
       [ "refuseIgnoredThatMoves", "class_real_pass.html#a2fd6d533c480d182529f809467a050eb", null ],
-      [ "refuseLinkedList", "class_real_pass.html#ab61e44281306f4a26cb69cdedab0ff68", null ],
+      [ "refuseLinkedList", "class_real_pass.html#a7b9885bfae05f433323d412890b880a9", null ],
       [ "refuseList", "class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80", null ],
       [ "refuseMisreadList", "class_real_pass.html#ae8916f3175e84a15929d9a6c4cca906a", null ],
       [ "refuseSpecialEntry", "class_real_pass.html#a2d746e1e171b585c6a5c4d2d4c943010", null ],

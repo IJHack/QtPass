@@ -149,6 +149,7 @@ Classes</h2></td></tr>
 Public Types</h2></td></tr>
 <tr class="memitem:a754fdd2e5663b70b6ac8856aa3ae5294" id="r_a754fdd2e5663b70b6ac8856aa3ae5294"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> = QHash&lt;QString, <a class="el" href="struct_pass_1_1_skipped_walk.html">SkippedWalk</a>&gt;</td></tr>
 <tr class="memdesc:a754fdd2e5663b70b6ac8856aa3ae5294"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_pass_1_1_skipped_walk.html" title="What skippedGpgId() found on its way up from one folder.">SkippedWalk</a> per absolute folder, for one check of many folders.  <br /></td></tr>
+<tr class="memitem:acd15f7bd7829564d51873c7950e180dc" id="r_acd15f7bd7829564d51873c7950e180dc"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#acd15f7bd7829564d51873c7950e180dc">LinkedWalks</a> = QHash&lt;QString, std::optional&lt;QString&gt;&gt;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -264,8 +265,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a229cc680077f9ad2cfa0484a8aa20efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
 <tr class="memitem:a0f50a74f9ba237e4509b47ad1a6bdf6c" id="r_a0f50a74f9ba237e4509b47ad1a6bdf6c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0f50a74f9ba237e4509b47ad1a6bdf6c">skippedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr, <a class="el" href="#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *walks=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
 <tr class="memdesc:a0f50a74f9ba237e4509b47ad1a6bdf6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder list <a class="el" href="#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> passed over on its way up to the one it returns, if it passed one over that a signed store must not.  <br /></td></tr>
-<tr class="memitem:a3e5278aaff6a417a29769b6b98c5c881" id="r_a3e5278aaff6a417a29769b6b98c5c881"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3e5278aaff6a417a29769b6b98c5c881">linkedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore) -&gt; std::optional&lt; QString &gt;</td></tr>
-<tr class="memdesc:a3e5278aaff6a417a29769b6b98c5c881"><td class="mdescLeft">&#160;</td><td class="mdescRight">The link or junction under the name <span class="tt">.gpg-id</span> that <a class="el" href="#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> skips on its way up from <code class="param">forFile</code>, if it skips one before the list it returns.  <br /></td></tr>
+<tr class="memitem:a8655e3d4568673b5f7fe7d035d8e0d77" id="r_a8655e3d4568673b5f7fe7d035d8e0d77"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8655e3d4568673b5f7fe7d035d8e0d77">linkedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore, <a class="el" href="#acd15f7bd7829564d51873c7950e180dc">LinkedWalks</a> *walks=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:a8655e3d4568673b5f7fe7d035d8e0d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The link or junction under the name <span class="tt">.gpg-id</span> that <a class="el" href="#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> skips on its way up from <code class="param">forFile</code>, if it skips one before the list it returns.  <br /></td></tr>
 <tr class="memitem:ae97e7a760b71609933dd3fe3a4629703" id="r_ae97e7a760b71609933dd3fe3a4629703"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae97e7a760b71609933dd3fe3a4629703">getRecipientList</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td></tr>
 <tr class="memdesc:ae97e7a760b71609933dd3fe3a4629703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
 <tr class="memitem:af96d0b4d081c5e1801e84f568ccb8d0f" id="r_af96d0b4d081c5e1801e84f568ccb8d0f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af96d0b4d081c5e1801e84f568ccb8d0f">parseRecipients</a> (const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</td></tr>
@@ -415,6 +416,23 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00077">77</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a id="acd15f7bd7829564d51873c7950e180dc" name="acd15f7bd7829564d51873c7950e180dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd15f7bd7829564d51873c7950e180dc">&#9670;&#160;</a></span>LinkedWalks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#acd15f7bd7829564d51873c7950e180dc">Pass::LinkedWalks</a> = QHash&lt;QString, std::optional&lt;QString&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>What <a class="el" href="#a8655e3d4568673b5f7fe7d035d8e0d77" title="The link or junction under the name .gpg-id that getGpgIdPath() skips on its way up from forFile,...">linkedGpgId()</a> found on its way up, per absolute folder, for one check of many folders. </p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00149">149</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
 <a id="a2e71b5174b4ef25a1e91d8c56177b772" name="a2e71b5174b4ef25a1e91d8c56177b772"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e71b5174b4ef25a1e91d8c56177b772">&#9670;&#160;</a></span>PROCESS</h2>
 
@@ -488,7 +506,7 @@ Private Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00647">647</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00654">654</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -520,7 +538,7 @@ Private Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00657">657</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00664">664</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -676,7 +694,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Random number. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01402">1402</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01425">1425</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
 </div>
@@ -713,7 +731,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a5938fafb40e80ab43db44d7e9a200867">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ae0ccd39e17991ddfc3029dde0be8f8ee">RealPass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00283">283</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00286">286</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1827,7 +1845,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Generated password. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01419">1419</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01442">1442</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-35-summary" class="dynsummary">
 </div>
@@ -1975,7 +1993,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>List of recipient key IDs. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01325">1325</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01348">1348</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-40-summary" class="dynsummary">
 </div>
@@ -2680,7 +2698,7 @@ Private Attributes</h2></td></tr>
 <p>How many inserts have started queueing but not yet reported. </p>
 <p>One <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> still in the command queue, or running, counts here until its PASS_INSERT result goes out. A <a class="el" href="class_password_dialog.html" title="Dialog for creating a password entry or editing an existing one.">PasswordDialog</a> reads this just before its own <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> so it can tell an earlier insert's report (which it is also connected to, once a hanging queue let it open while its save was still pending) from its own. </p><dl class="section return"><dt>Returns</dt><dd>The number of inserts awaiting their report. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00223">223</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00226">226</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-58" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-58-summary" class="dynsummary">
 </div>
@@ -2724,7 +2742,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a54b0d821ced68089162fd3872087e7ec">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ae83239077615fed7e3cd5fccfad9336a">RealPass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00617">617</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00624">624</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-59" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-59-summary" class="dynsummary">
 </div>
@@ -2766,7 +2784,7 @@ Private Attributes</h2></td></tr>
 <p>Whether no gpg, git or pass of this backend runs or waits. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when its executor is idle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00523">523</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00530">530</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-61" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-61-summary" class="dynsummary">
 </div>
@@ -2808,7 +2826,7 @@ Private Attributes</h2></td></tr>
 <p>Whether a Git push of this backend is queued or running. </p>
 <dl class="section return"><dt>Returns</dt><dd>true while one waits or runs. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00529">529</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00536">536</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-63" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-63-summary" class="dynsummary">
 </div>
@@ -2824,8 +2842,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3e5278aaff6a417a29769b6b98c5c881" name="a3e5278aaff6a417a29769b6b98c5c881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e5278aaff6a417a29769b6b98c5c881">&#9670;&#160;</a></span>linkedGpgId()</h2>
+<a id="a8655e3d4568673b5f7fe7d035d8e0d77" name="a8655e3d4568673b5f7fe7d035d8e0d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8655e3d4568673b5f7fe7d035d8e0d77">&#9670;&#160;</a></span>linkedGpgId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2841,7 +2859,12 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>&#160;) -&gt; std::optional&lt; QString &gt;</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#acd15f7bd7829564d51873c7950e180dc">LinkedWalks</a> *</td>          <td class="paramname"><span class="paramname"><em>walks</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; std::optional&lt; QString &gt;</td>
         </tr>
       </table>
   </td>
@@ -2856,6 +2879,7 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">forFile</td><td>Entry or folder, as for <a class="el" href="#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a>. </td></tr>
     <tr><td class="paramname">passStore</td><td>Root directory of the password store. </td></tr>
+    <tr><td class="paramname">walks</td><td>What earlier calls found per folder, for one check of many folders (<a class="el" href="class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa" title="For a folder pass is about to re-encrypt in a move or copy: refuse when an entry pass&#39;s walk takes (h...">RealPass::refuseUnverifiedTree()</a>); read and extended, so each folder is looked at once. Null for none. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2866,7 +2890,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-65-summary" class="dynsummary">
 </div>
 <div id="dynsection-65-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a3e5278aaff6a417a29769b6b98c5c881_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a8655e3d4568673b5f7fe7d035d8e0d77_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -3116,7 +3140,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The recipient key IDs in file order. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01340">1340</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01363">1363</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-71" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-71-summary" class="dynsummary">
 </div>
@@ -3164,7 +3188,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first difference, as a phrase for a message; empty when both read the same recipients. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01361">1361</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01384">1384</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-73" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-73-summary" class="dynsummary">
 </div>
@@ -3252,7 +3276,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The message. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01432">1432</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01455">1455</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-75" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-75-summary" class="dynsummary">
 </div>
@@ -3329,7 +3353,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00642">642</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00649">649</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-77" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-77-summary" class="dynsummary">
 </div>
@@ -3370,7 +3394,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00630">630</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00637">637</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-78" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-78-summary" class="dynsummary">
 </div>
@@ -3409,7 +3433,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The state, the recipients to preselect and the warning to show. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01237">1237</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l01260">1260</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-79" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-79-summary" class="dynsummary">
 </div>
@@ -3930,7 +3954,7 @@ Private Attributes</h2></td></tr>
 <p>The entry whose insert is reporting now: set while <a class="el" href="#a14d258f93b689ff92cea0d11b136eb83" title="An Insert() succeeded: the entry is in the store and, with Git in use, committed.">finishedInsert()</a> or <a class="el" href="#a4f8a565d9693da516f7b10e3d7652ae8" title="Emitted when an Insert() fails through a queued command, before the generic processErrorExit(): the p...">insertFailed()</a> goes out, empty otherwise. </p>
 <p>Inserts report in the order they were queued, so each report is matched to the entry its <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> named. A window refreshing after a save shows only that entry again, not whatever row is selected by then. </p><dl class="section return"><dt>Returns</dt><dd>Absolute path of the entry file (with <span class="tt">.gpg</span>), as the backend wrote it; empty outside a report, or for a report no queued insert accounts for. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00235">235</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00238">238</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-99" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-99-summary" class="dynsummary">
 </div>
@@ -4341,7 +4365,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#ad2f55fd94626cc4a10b69e9dc76e1b32">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a23317f24cad6782794cfc83a355af4fa">RealPass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00721">721</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00728">728</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-111" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-111-summary" class="dynsummary">
 </div>
@@ -4656,7 +4680,7 @@ Private Attributes</h2></td></tr>
 
 <p>How long the pull before an edit may block the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00194">194</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00197">197</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4683,7 +4707,7 @@ Private Attributes</h2></td></tr>
 <p>Most bytes of plaintext a gpg decryption may produce. </p>
 <p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; gpg stops at this many (&ndash;max-output) instead of filling <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s memory. Far above any real entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00327">327</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00330">330</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4709,7 +4733,7 @@ Private Attributes</h2></td></tr>
 
 <p>Set during <a class="el" href="#a2749320ef73a7ee973ad2d38ae4acfd9" title="Init(), but only while the list of dir still reads as the caller read it with recipientsForEditing().">initIfUnchanged()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00893">893</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00900">900</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4735,7 +4759,7 @@ Private Attributes</h2></td></tr>
 
 <p>Set when <a class="el" href="#aa326b1fc7fa60136eac3181a0b983816" title="Refuse an Init() under initIfUnchanged() when the folder&#39;s list no longer reads as the caller read it...">refuseChangedList()</a> or <a class="el" href="#a876c07a0bb6d00c63f82c4abae0de5e4" title="Refuse an Init() under initIfUnchanged() while the executor has work queued or running,...">refuseBusyForExpectedList()</a> refused during <a class="el" href="#a2749320ef73a7ee973ad2d38ae4acfd9" title="Init(), but only while the list of dir still reads as the caller read it with recipientsForEditing().">initIfUnchanged()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00896">896</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00903">903</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4761,7 +4785,7 @@ Private Attributes</h2></td></tr>
 
 <p>The entries of the inserts counted in m_insertsPending, in queue order. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00902">902</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00909">909</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4787,7 +4811,7 @@ Private Attributes</h2></td></tr>
 
 <p>Inserts that have started queueing but not yet reported; see queueInsert. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00900">900</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00907">907</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4813,7 +4837,7 @@ Private Attributes</h2></td></tr>
 
 <p>Files of the <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> calls still in flight, oldest first. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00898">898</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00905">905</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4839,7 +4863,7 @@ Private Attributes</h2></td></tr>
 
 <p>Set while <a class="el" href="#a45818547e0b844bd6f111a67b3e9b249" title="GitPush() for an automatic push, the one after a change. A backend that has to make the push later dr...">GitPushAutomatic()</a> runs <a class="el" href="#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Push changes to remote Git repository.">GitPush()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00877">877</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00884">884</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -4865,7 +4889,7 @@ Private Attributes</h2></td></tr>
 
 <p>The entry of the insert whose report is going out; see <a class="el" href="#a2506edb149c0e13dd8289ad8466c812c" title="The entry whose insert is reporting now: set while finishedInsert() or insertFailed() goes out,...">reportedInsert()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00904">904</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00911">911</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

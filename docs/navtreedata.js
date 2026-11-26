@@ -68,10 +68,10 @@ var NAVTREEINDEX =
 "class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848",
 "class_main_window.html#a3550b28be1344cf5c012af794dce8c64",
 "class_pass.html#abaa0009c06b9b53f6c5963763532c7d9",
-"class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4",
-"class_tray_icon.html",
-"gpgidsigner_8cpp.html",
-"struct_app_settings.html#a50480ce075727936c03f0ad797e5f4ae"
+"class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc",
+"class_totp.html#af5356b79d5e5b93bef2c9713a3ed8ab3",
+"gpgidgeneration_8h_source.html",
+"struct_app_settings.html#a4b414237cc2001c4a07a242f2565cb85"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

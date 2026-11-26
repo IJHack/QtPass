@@ -3,6 +3,7 @@ var class_pass =
     [ "SkippedWalk", "struct_pass_1_1_skipped_walk.html", "struct_pass_1_1_skipped_walk" ],
     [ "RecipientsForEditing", "struct_pass_1_1_recipients_for_editing.html", "struct_pass_1_1_recipients_for_editing" ],
     [ "ExpectedList", "struct_pass_1_1_expected_list.html", "struct_pass_1_1_expected_list" ],
+    [ "LinkedWalks", "class_pass.html#acd15f7bd7829564d51873c7950e180dc", null ],
     [ "PROCESS", "class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772", null ],
     [ "SkippedWalks", "class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294", null ],
     [ "LinkScope", "class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106", [
@@ -64,7 +65,7 @@ var class_pass =
     [ "insertWritten", "class_pass.html#a6097de48d30068d8a73f7dc80ff01de0", null ],
     [ "isIdle", "class_pass.html#a66d554f693ae3069381483cb229bb193", null ],
     [ "isPushing", "class_pass.html#a1b7d6acd239491873c670576d4891fa3", null ],
-    [ "linkedGpgId", "class_pass.html#a3e5278aaff6a417a29769b6b98c5c881", null ],
+    [ "linkedGpgId", "class_pass.html#a8655e3d4568673b5f7fe7d035d8e0d77", null ],
     [ "listKeys", "class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6", null ],
     [ "listKeys", "class_pass.html#a6ed6c10b07137f62e127b290ebd428a2", null ],
     [ "loggableArgs", "class_pass.html#abaa0009c06b9b53f6c5963763532c7d9", null ],

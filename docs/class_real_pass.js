@@ -27,7 +27,7 @@ var class_real_pass =
     [ "reencryptFailed", "class_real_pass.html#ae82ad79b6a4d5d87548cc14247d22779", null ],
     [ "reencryptFailed", "class_real_pass.html#a5e54561fccd028576a58b17731907880", null ],
     [ "refuseIgnoredThatMoves", "class_real_pass.html#a2fd6d533c480d182529f809467a050eb", null ],
-    [ "refuseLinkedList", "class_real_pass.html#ab61e44281306f4a26cb69cdedab0ff68", null ],
+    [ "refuseLinkedList", "class_real_pass.html#a7b9885bfae05f433323d412890b880a9", null ],
     [ "refuseList", "class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80", null ],
     [ "refuseMisreadList", "class_real_pass.html#ae8916f3175e84a15929d9a6c4cca906a", null ],
     [ "refuseSpecialEntry", "class_real_pass.html#a2d746e1e171b585c6a5c4d2d4c943010", null ],
