@@ -144,6 +144,9 @@ public:
   };
   /// SkippedWalk per absolute folder, for one check of many folders.
   using SkippedWalks = QHash<QString, SkippedWalk>;
+  /// What linkedGpgId() found on its way up, per absolute folder, for one
+  /// check of many folders.
+  using LinkedWalks = QHash<QString, std::optional<QString>>;
 
   /**
    * @brief Construct a Pass instance.
@@ -396,9 +399,13 @@ public:
    * store root, so it applies with or without a signing key.
    * @param forFile Entry or folder, as for getGpgIdPath().
    * @param passStore Root directory of the password store.
+   * @param walks What earlier calls found per folder, for one check of many
+   *        folders (RealPass::refuseUnverifiedTree()); read and extended, so
+   *        each folder is looked at once. Null for none.
    * @return The linked `.gpg-id` path, or nothing when the walk meets none.
    */
-  static auto linkedGpgId(const QString &forFile, const QString &passStore)
+  static auto linkedGpgId(const QString &forFile, const QString &passStore,
+                          LinkedWalks *walks = nullptr)
       -> std::optional<QString>;
   /**
    * @brief Get list of recipients for a password file.

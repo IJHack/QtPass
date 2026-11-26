@@ -668,6 +668,7 @@ private Q_SLOTS:
   void operationsRefuseLinkedEntriesAndFoldersButRemoveUnlinks();
   void moveAndCopyCleanDotDotBeforeTheyLook();
   void linkedGpgIdIsNotARecipientList();
+  void linkedGpgIdAsksEachFolderOnceInATreeCheck();
   void skippedGpgIdNamesOnlyAListThatWasPassedOver();
   void skippedGpgIdAsksAFolderRemovedWithItsList();
   void skippedGpgIdAsksEachFolderOnceInATreeCheck();
@@ -4748,6 +4749,83 @@ void tst_imitatepass::linkedGpgIdIsNotARecipientList() {
   QVERIFY(pass.loadVerifiedRecipients(root.filePath(QStringLiteral(".gpg-id")),
                                       &recipients));
   QVERIFY(recipients.isEmpty());
+#endif
+}
+
+/**
+ * @brief Pass::linkedGpgId() with one cache for many folders gives the
+ *        answers it gives without, and keeps one per folder climbed, so a
+ *        tree check looks at each folder once: a folder already in the
+ *        cache is not climbed again.
+ */
+void tst_imitatepass::linkedGpgIdAsksEachFolderOnceInATreeCheck() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString store = root.path() + QLatin1Char('/');
+  constexpr int kDepth = 40;
+  QStringList folders;
+  QString relative;
+  for (int i = 0; i < kDepth; ++i) {
+    relative += (i == 0 ? QString() : QStringLiteral("/")) + QLatin1Char('d');
+    folders << QDir::cleanPath(root.filePath(relative));
+  }
+  QVERIFY(root.mkpath(relative));
+  // A linked list halfway down, and the folder's own list a quarter down:
+  // folders from the link down name it, the ones above it name nothing.
+  const QString outsideList =
+      QDir(outsideDir.path()).filePath(QStringLiteral(".gpg-id"));
+  {
+    QFile f(outsideList);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("EVIL\n");
+  }
+  const QString linked = folders.at(kDepth / 2) + QStringLiteral("/.gpg-id");
+  QVERIFY(QFile::link(outsideList, linked));
+  {
+    QFile f(folders.at(kDepth / 4) + QStringLiteral("/.gpg-id"));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("OWNER\n");
+  }
+
+  // Bottom first, as the folders of a tree check come, and top first.
+  for (const bool bottomFirst : {true, false}) {
+    Pass::LinkedWalks walks;
+    QStringList order = folders;
+    if (bottomFirst) {
+      std::reverse(order.begin(), order.end());
+    }
+    for (const QString &folder : std::as_const(order)) {
+      const std::optional<QString> uncached =
+          Pass::linkedGpgId(folder + QLatin1Char('/'), store);
+      QCOMPARE(Pass::linkedGpgId(folder + QLatin1Char('/'), store, &walks),
+               uncached);
+      const bool belowTheLink = folders.indexOf(folder) >= kDepth / 2;
+      QCOMPARE(uncached.has_value(), belowTheLink);
+      if (belowTheLink) {
+        QCOMPARE(QDir::cleanPath(*uncached), linked);
+      }
+    }
+    // One answer per folder, the store root's included: each was climbed
+    // once, whichever order asked.
+    QCOMPARE(walks.size(), kDepth + 1);
+    QVERIFY(walks.contains(QDir::cleanPath(root.path())));
+  }
+
+  // A cached folder is not climbed again: its answer stands, even when the
+  // tree changed since, and the folders below take it over.
+  Pass::LinkedWalks walks;
+  const QString planted = QStringLiteral("/planted/.gpg-id");
+  walks.insert(folders.at(kDepth - 2), planted);
+  QCOMPARE(Pass::linkedGpgId(folders.last() + QLatin1Char('/'), store, &walks),
+           std::optional<QString>(planted));
+  QCOMPARE(walks.value(folders.last()), std::optional<QString>(planted));
+  QCOMPARE(walks.size(), 2);
 #endif
 }
 
