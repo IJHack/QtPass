@@ -34,6 +34,12 @@
 
 ### Security
 
+- Moving or copying with the `pass` backend no longer goes through a link
+  to a file outside the store. Someone who can push to a shared store could
+  add an entry that is such a link, or put one where the copy lands; pass
+  followed it, carrying an entry out of the store or writing over the file
+  it points to. QtPass now refuses such a move or copy (scan finding
+  ANT-2026-3KTRAFFH).
 - Re-encryption no longer lets a file in a shared store write a file of its
   own choosing. QtPass asked gpg which keys an entry was encrypted to
   without telling it what to do with the data, so gpg guessed: a `.gpg`
