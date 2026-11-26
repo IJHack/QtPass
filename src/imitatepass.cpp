@@ -287,7 +287,11 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   if (!m_settings.useWebDav && gitReady()) {
     // Git is used when enabled - this is the standard pass workflow
     if (!overwrite) {
-      executeGit(GIT_ADD, {"add", pgit(file)});
+      // -f so the store's own .gitignore (a tracked file any co-writer of a
+      // shared store can push) cannot keep a new entry untracked. An ignored,
+      // uncommitted entry is expendable to Git: a later pull that needs its
+      // path deletes it, and the typed secret is then in no file and no commit.
+      executeGit(GIT_ADD, {"add", "-f", pgit(file)});
     }
     QString path = QDir(m_settings.passStore).relativeFilePath(file);
     path.replace(Util::endsWithGpg(), "");
@@ -525,7 +529,7 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
   };
   int rc = 0;
   if (addFile) {
-    rc = run({"add", pgit(gpgIdFile)});
+    rc = run({"add", "-f", pgit(gpgIdFile)});
     if (rc != 0) {
       return rc;
     }
@@ -535,7 +539,7 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
   if (rc != 0 || !addSigFile) {
     return rc;
   }
-  rc = run({"add", pgit(gpgIdSigFile)});
+  rc = run({"add", "-f", pgit(gpgIdSigFile)});
   if (rc != 0) {
     return rc;
   }
@@ -1318,7 +1322,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
   // not exist yet, so re-read it before deciding what to re-encrypt.
   destFileInfo.refresh();
   if (gitReady()) {
-    executeGit(GIT_COPY, {"add", pgit(destFile)});
+    executeGit(GIT_COPY, {"add", "-f", pgit(destFile)});
     gitCommit("", QString("Copied from %1 to %2 using QtPass.")
                       .arg(commitName(from), commitName(destFile)));
   }
