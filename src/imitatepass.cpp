@@ -953,10 +953,20 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
 // entry is still encrypted to a recipient it left out, so its
 // re-encryption was skipped. stdout is read whole.
 auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
+  // --decrypt, as pass has it: --list-only is an option, not a command, and
+  // without a command gpg guesses one. A file that is OpenPGP data but not
+  // encrypted it then saved under the entry's name without ".gpg": in the
+  // store, and through a link under that name, over an existing file. With
+  // --decrypt such data goes to standard output, capped at one byte, which
+  // cannot make a whole status line. "--" keeps a file name that starts with
+  // a dash from being read as an option.
   const QStringList args = {QStringLiteral("--batch"),
                             QStringLiteral("--no-secmem-warning"),
                             QStringLiteral("--no-permission-warning"),
+                            QStringLiteral("--decrypt"),
                             QStringLiteral("--list-only"),
+                            QStringLiteral("--max-output"),
+                            QStringLiteral("1"),
                             QStringLiteral("--status-fd=1"),
                             QStringLiteral("--keyid-format=long"),
                             QStringLiteral("--"),

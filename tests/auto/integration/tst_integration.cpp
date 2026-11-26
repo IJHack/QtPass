@@ -408,6 +408,7 @@ private Q_SLOTS:
   void imitatePass_moveFallsBackWhenGitNotConfigured();
   void imitatePass_usersDialogListsAndFilters();
   void imitatePass_multiRecipientReencryptChangesRecipients();
+  void imitatePass_reencryptKeyListingWritesNoFile();
   void imitatePass_insertIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptPreservesPerFolderRecipients();
@@ -1823,6 +1824,79 @@ void tst_integration::imitatePass_multiRecipientReencryptChangesRecipients() {
            qPrintable(QStringLiteral("re-encrypted entry must drop the removed "
                                      "recipient, got: %1")
                           .arg(after.join(','))));
+}
+
+// getKeysFromFile() asks gpg for an entry's recipients. Run with --list-only
+// but no command, gpg guesses one and saves OpenPGP data that is not encrypted
+// under a name in the store (through a link, over a file outside it). With
+// --decrypt --max-output such data goes to a capped stdout instead and no file
+// is written.
+void tst_integration::imitatePass_reencryptKeyListingWritesNoFile() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics; Windows junction handling differs");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(outsideDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  const QString subkey =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  QVERIFY2(!subkey.isEmpty(), "the test key must have an encryption subkey");
+  {
+    QFile f(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write((subkey + "\n").toUtf8());
+  }
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("keep"), QStringLiteral("secret\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  const QString keepFile = QDir::cleanPath(storeDir.path() + "/keep.gpg");
+  const QByteArray keepBefore = readFileBytes(keepFile);
+  QVERIFY(!keepBefore.isEmpty());
+
+  // OpenPGP data that is not encrypted: a bare literal data packet.
+  const QString plain = QDir::cleanPath(outsideDir.path() + "/plain");
+  {
+    QFile f(plain);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("not a secret\n");
+  }
+  const QString literal = QDir::cleanPath(storeDir.path() + "/odd.gpg");
+  QCOMPARE(runGpg(m_gnupgHome.path(),
+                  {"--batch", "--yes", "--store", "--output", literal, plain}),
+           0);
+  // gpg writes "odd" by way of "odd.part": a file outside the store that a
+  // link under that name points at must keep its content.
+  const QString outside = QDir::cleanPath(outsideDir.path() + "/outside");
+  {
+    QFile f(outside);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("precious\n");
+  }
+  QVERIFY(QFile::link(outside, QDir::cleanPath(storeDir.path() + "/odd.part")));
+
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  }
+
+  const QFileInfo written(QDir::cleanPath(storeDir.path() + "/odd"));
+  QVERIFY2(!written.exists() && !written.isSymLink(),
+           "gpg saved the unencrypted data next to the entry");
+  QCOMPARE(readFileBytes(outside), QByteArray("precious\n"));
+  QCOMPARE(readFileBytes(keepFile), keepBefore);
+#endif
 }
 
 /**
