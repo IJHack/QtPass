@@ -88,6 +88,12 @@ setx GIT_ASKPASS "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass
 
 **Note:** After using `setx`, you'll need to start QtPass in a new session (close and reopen your terminal, or log out and back in) for the environment variables to take effect.
 
+### Git or pass keeps running in WSL after QtPass gave up on it
+
+When QtPass runs pass, gpg or Git through WSL (an executable set to `wsl pass`, `wsl gpg` or `wsl git`), it can stop only `wsl.exe` itself. QtPass gives up on such a command when it runs out of time, for example the Git pull before an edit, a key import or the Git setup of a new profile. The program inside WSL can then keep running, and a pull can still change the store after QtPass said it timed out.
+
+Check with `wsl ps -ef` whether `git` or `pass` is still running. To stop it, run `wsl --terminate <distribution>` for the distribution you use, or `wsl --shutdown` to stop all of them.
+
 ### Git has issues with GPG SSH Authentication
 
 This tutorial might resolve your issues.
