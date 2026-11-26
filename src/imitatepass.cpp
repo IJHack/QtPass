@@ -1872,11 +1872,8 @@ void ImitatePass::Move(const QString src, const QString dest,
   // git mv -f does: removing it first lost it when the rename then failed
   // (and lost the entry itself, moved onto its own name). A folder is never
   // replaced, forced or not. Without Git nothing else reports a failure.
-  // An entry goes through Util::replaceFile, forced or not: Qt's rename
-  // would follow a link that appeared under the destination name after
-  // refuseLinkedPath() and write outside the store.
-  const bool moved = !folder ? Util::replaceFile(from, destFile, force)
-                             : QDir().rename(from, destFile);
+  const bool moved = force && !folder ? Util::replaceFile(from, destFile, true)
+                                      : QDir().rename(from, destFile);
   if (!moved) {
     emit critical(tr("Move failed"),
                   tr("Could not move %1 to %2.").arg(from, destFile));

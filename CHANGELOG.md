@@ -176,8 +176,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the next run put the backup back with Qt's rename, which follows a link
   under that name. Someone who can push to a shared store could push a
   dangling link there and have QtPass create a file outside the store. The
-  backup, and an entry moved without Git, now go back by a rename of the
-  name itself (scan finding ANT-2026-C9L3KHDU).
+  backup now goes back by a rename of the name itself (scan finding
+  ANT-2026-C9L3KHDU).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its
