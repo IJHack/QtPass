@@ -125,6 +125,17 @@ void RealPass::Remove(QString file, bool isDir) {
     emit finishedRemove(QString(), QString());
     return;
   }
+  // A folder or entry under a linked folder is outside the store too: pass
+  // would delete in the folder the link points to.
+  if (Util::isBehindLink(QDir(m_settings.passStore).filePath(file),
+                         m_settings.passStore)) {
+    emit critical(tr("Refusing to delete through a link"),
+                  tr("\"%1\" lies under a symbolic link, so it is not in the "
+                     "store and was not deleted.")
+                      .arg(file));
+    emit finishedRemove(QString(), QString());
+    return;
+  }
   executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
 }
 

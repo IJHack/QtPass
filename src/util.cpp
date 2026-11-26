@@ -459,3 +459,29 @@ auto Util::newLinesRegex() -> const QRegularExpression & {
 auto Util::isValidKeyId(const QString &keyId) -> bool {
   return !keyId.isEmpty() && !keyId.startsWith('-');
 }
+
+auto Util::isBehindLink(const QString &path, const QString &storeRoot) -> bool {
+#ifdef Q_OS_WIN
+  constexpr auto cs = Qt::CaseInsensitive;
+#else
+  constexpr auto cs = Qt::CaseSensitive;
+#endif
+  const QString root = QDir::cleanPath(storeRoot);
+  const QString prefix =
+      root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');
+  // cleanPath() drops a trailing separator, through which lstat() would
+  // follow a link.
+  for (QString current = QFileInfo(QDir::cleanPath(path)).path();
+       current.startsWith(prefix, cs) && current.compare(root, cs) != 0;
+       current = QFileInfo(current).path()) {
+    const QFileInfo info(current);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+    if (info.isSymLink() || info.isJunction()) {
+#else
+    if (info.isSymLink()) {
+#endif
+      return true;
+    }
+  }
+  return false;
+}

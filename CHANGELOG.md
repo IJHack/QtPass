@@ -44,7 +44,8 @@
 - Deleting a folder that is really a link no longer empties the folder it
   points to. Someone who can push to a shared store could add such a link;
   the `pass` backend now refuses to delete it and the native backend removes
-  only the link (scan finding ANT-2026-PME28PZX).
+  only the link. A folder or entry the tree shows under such a link is not
+  deleted either (scan finding ANT-2026-PME28PZX).
 - Decrypting an entry cannot fill QtPass's memory any more: gpg stops at
   64 MiB of plaintext (`--max-output`, also for the `pass` backend through
   `PASSWORD_STORE_GPG_OPTS`). An OpenPGP message is compressed, so a small

@@ -317,6 +317,15 @@ void ImitatePass::gitCommit(const QString &file, const QString &msg) {
 void ImitatePass::Remove(QString file, bool isDir) {
   file = m_settings.passStore + file;
   transactionHelper trans(this, PASS_REMOVE);
+  // A folder or entry under a linked folder is outside the store: deleting
+  // it would delete in the folder the link points to.
+  if (Util::isBehindLink(file, m_settings.passStore)) {
+    emit critical(tr("Refusing to delete through a link"),
+                  tr("\"%1\" lies under a symbolic link, so it is not in the "
+                     "store and was not deleted.")
+                      .arg(QDir(m_settings.passStore).relativeFilePath(file)));
+    return;
+  }
   // A symbolic link found inside the store (one a `git pull` may have brought
   // in) is not a folder of the store. Never recurse through it: that would
   // empty whatever it points to outside the store. Remove the link itself only.

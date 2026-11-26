@@ -883,6 +883,27 @@ void tst_integration::imitatePass_removeLinkedFolderKeepsTarget() {
     QVERIFY2(!QFileInfo(linkInStore).isSymLink(),
              qPrintable(name + ": the link itself should be removed"));
   }
+
+  // What the tree shows under the link lies outside the store as well: a
+  // folder and an entry there are refused, not deleted in the target.
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("sub")));
+  const QString outsideSubFile = outsideDir.path() + "/sub/inner.gpg";
+  const QString outsideEntry = outsideDir.path() + "/x.gpg";
+  for (const QString &f : {outsideSubFile, outsideEntry}) {
+    QFile file(f);
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    QVERIFY(file.write("ciphertext") > 0);
+  }
+  QVERIFY(QFile::link(outsideDir.path(), linkInStore));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  pass.Remove(QStringLiteral("Shared/sub/"), true);
+  pass.Remove(QStringLiteral("Shared/x"), false);
+  QCOMPARE(criticalSpy.count(), 2);
+  QVERIFY2(QFile::exists(outsideSubFile),
+           "a folder under the link must not be emptied in the target");
+  QVERIFY2(QFile::exists(outsideEntry),
+           "an entry under the link must not be deleted in the target");
+  QVERIFY(QFileInfo(linkInStore).isSymLink());
 #endif
 }
 
@@ -2057,6 +2078,27 @@ void tst_integration::realPass_removeLinkedFolderRefusedKeepsTarget() {
              qPrintable(name + ": the refused link should be left in place "
                                "for the user to remove"));
   }
+
+  // What the tree shows under the link lies outside the store as well: pass
+  // rm would delete in the target, so a folder and an entry there are
+  // refused.
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("sub")));
+  const QString outsideSubFile = outsideDir.path() + "/sub/inner.gpg";
+  const QString outsideEntry = outsideDir.path() + "/x.gpg";
+  for (const QString &f : {outsideSubFile, outsideEntry}) {
+    QFile file(f);
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    QVERIFY(file.write("ciphertext") > 0);
+  }
+  criticalSpy.clear();
+  pass.Remove(QStringLiteral("Shared/sub/"), true);
+  pass.Remove(QStringLiteral("Shared/x"), false);
+  QCOMPARE(criticalSpy.count(), 2);
+  QTest::qWait(500); // nothing should be queued; give a stray pass a chance
+  QVERIFY2(QFile::exists(outsideSubFile),
+           "a folder under the link must not be emptied in the target");
+  QVERIFY2(QFile::exists(outsideEntry),
+           "an entry under the link must not be deleted in the target");
 
   QtPassSettings::setUsePass(false);
 #endif
