@@ -88,6 +88,16 @@ setx GIT_ASKPASS "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass
 
 **Note:** After using `setx`, you'll need to start QtPass in a new session (close and reopen your terminal, or log out and back in) for the environment variables to take effect.
 
+### Git or pass keeps running in WSL after QtPass gave up on it
+
+When QtPass runs pass, gpg or Git through WSL (an executable set to `wsl pass`, `wsl gpg` or `wsl git`), it can stop only `wsl.exe` itself.
+
+QtPass gives up on such a command when it runs out of time: the Git pull before an edit, a key import, or the Git setup of a new profile. The program inside WSL can then keep running, and a pull can still change the store after QtPass said it timed out.
+
+To see whether `git`, `pass` or `gpg` is still running, run `wsl -d <distribution> ps -ef` for the distribution QtPass uses (the one after `-d` in its executable setting, or your default one). To stop such a process, run `wsl -d <distribution> kill <pid>` with the PID of that `git`, `pass` or `gpg` process only. Leave the other processes in the list alone.
+
+As a last resort, `wsl --terminate <distribution>` stops the whole distribution, and `wsl --shutdown` stops every distribution. Both also stop everything else running there, so save your work in other WSL sessions first.
+
 ### Git has issues with GPG SSH Authentication
 
 This tutorial might resolve your issues.
@@ -153,6 +163,8 @@ Once imported, QtPass refreshes the user list and selects the new key so you can
 The dialog takes one public key per import. A block that holds several keys, or a private key, is refused and nothing is imported: QtPass names the one key it imported so you can check its fingerprint, and a second key in the same block would enter your keyring unchecked. Import such keys one by one, or run `gpg --import` yourself.
 
 The dialog ignores `gpg.conf`, so options there such as `import-filter` or `import-options` do not apply to it. Run `gpg --import` yourself when you need them.
+
+That includes `keyring`, `primary-keyring` and `no-default-keyring`: the dialog imports into your default keyring. When `gpg.conf` points gpg at another keyring, the Users list reads that one and may not show the key you just imported. Run `gpg --import` yourself in that case, so the key lands where your configuration says (see [#2312](https://github.com/IJHack/QtPass/pull/2312)).
 
 ### What does the Share submenu do?
 
