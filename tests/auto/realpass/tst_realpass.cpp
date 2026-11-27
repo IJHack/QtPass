@@ -53,6 +53,7 @@ private slots:
   void showAndGrep();
   void grepDecryptsRealEntriesOnlyNeverThroughALink();
   void insertPipesTheValue();
+  void insertRefusesALineBreakInTheName();
   void insertWhoseCommitFailsSaysWhetherTheEntryWasWritten();
   void insertThatCannotStartIsNotCreditedWithTheNextWrite();
   void insertsPendingCountsTheInsertsYetToReport();
@@ -301,6 +302,27 @@ void tst_realpass::insertPipesTheValue() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("insert"), QStringLiteral("-m"),
                         QStringLiteral("--"), QStringLiteral("-f")}));
+}
+
+/**
+ * @brief pass finds an entry's folder with $(dirname -- "$path"), which
+ *        drops a trailing line feed: for "Finance\n/payroll" it encrypts to
+ *        Finance/.gpg-id, not the list QtPass checked. Such a name is
+ *        refused before pass runs (ANT-2026-8GVC0RW0).
+ */
+void tst_realpass::insertRefusesALineBreakInTheName() {
+  QScopedPointer<RealPass> pass(makePass());
+  QSignalSpy critical(pass.data(), &Pass::critical);
+  QFile::remove(m_log);
+  for (const QString &name :
+       {QStringLiteral("Finance\n/payroll"), QStringLiteral("a\rb"),
+        QStringLiteral("entry\n")}) {
+    critical.clear();
+    pass->Insert(name, QStringLiteral("x"), false);
+    QCOMPARE(critical.count(), 1);
+  }
+  QTest::qWait(300); // nothing is queued; give a stray pass a chance
+  QVERIFY2(!QFile::exists(m_log), "pass must not run on such a name");
 }
 
 /**

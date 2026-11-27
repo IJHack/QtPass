@@ -309,6 +309,23 @@ auto RealPass::refuseSpecialEntry(const QString &entry) -> bool {
   return true;
 }
 
+auto RealPass::refuseLineBreakName(const QString &path) -> bool {
+  const QString name = passName(path, false);
+  if (!name.contains(QLatin1Char('\n')) && !name.contains(QLatin1Char('\r'))) {
+    return false;
+  }
+  QString shown = name;
+  shown.replace(QLatin1Char('\n'), QStringLiteral("\\n"))
+      .replace(QLatin1Char('\r'), QStringLiteral("\\r"));
+  //: %1 is a name in the password store, line breaks shown as \n and \r.
+  emit critical(tr("Name holds a line break"),
+                tr("\"%1\" holds a line break. pass would read the recipient "
+                   "list of another folder for it, so nothing was changed. "
+                   "Move or rename it first.")
+                    .arg(shown));
+  return true;
+}
+
 auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
                                     const QString &except) -> bool {
   // Every folder pass's walk takes. A name Qt cannot read hides what is
@@ -801,6 +818,9 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
       QDir::cleanPath(QDir::isAbsolutePath(file)
                           ? file + ".gpg"
                           : QDir(m_settings.passStore).filePath(file) + ".gpg");
+  if (refuseLineBreakName(entry)) {
+    return;
+  }
   if (refuseUnverifiedList(entry)) {
     return;
   }

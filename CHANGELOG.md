@@ -195,6 +195,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   proposes (the key's fingerprint) into a store folder; saving there wrote
   the key to the file the link points to, outside the store. QtPass now
   refuses a link at the chosen name (scan finding ANT-2026-T5AWA17S).
+- With the pass backend, saving an entry whose name holds a line break is
+  refused. `pass` finds the folder with `$(dirname ...)`, which drops a
+  trailing line feed, so for a folder named `Finance` plus a line feed it
+  encrypted to the recipients of `Finance`, not of the folder QtPass checked.
+  Someone who can push to a shared store could push such a folder beside a
+  real one (scan finding ANT-2026-8GVC0RW0).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its
