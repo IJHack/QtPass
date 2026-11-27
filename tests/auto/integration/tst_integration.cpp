@@ -350,6 +350,7 @@ private Q_SLOTS:
   void realPass_insertAndGrep();
   void realPass_removeLinkedFolderRefusedKeepsTarget();
   void realPass_copyThroughLinkRefused();
+  void realPass_moveJudgedWherePassWrites();
 
   // pass-otp (skipped if extension not installed)
   void imitatePass_otpGenerate();
@@ -2323,6 +2324,87 @@ void tst_integration::realPass_copyThroughLinkRefused() {
     QTest::qWait(500); // nothing should be queued; give a stray pass a chance
     QCOMPARE(readFileBytes(outsideFile), QByteArray("precious"));
   }
+
+  QtPassSettings::setUsePass(false);
+#endif
+}
+
+// pass resolves the names it is given by its own rules: it moves an entry
+// into a folder (or a link to one) of the destination's name, appends .gpg
+// to a new name, takes an entry beside a folder of the same name unless the
+// name ends in a slash, and cp -r merges a folder into one of its name. Each
+// is judged where pass writes (scan finding ANT-2026-3KTRAFFH).
+void tst_integration::realPass_moveJudgedWherePassWrites() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics; Windows junction handling differs");
+#else
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+  const QDir store(storeDir.path());
+  {
+    QFile gpgId(store.filePath(".gpg-id"));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(gpgId.write((m_keyFingerprint + "\n").toUtf8()) > 0);
+  }
+  QVERIFY(store.mkpath("team/sub"));
+  QVERIFY(store.mkpath("drop/sub"));
+  for (const char *name : {"team/sub/e.gpg", "team.gpg", "x.gpg", "y.gpg",
+                           "keep.gpg", "drop/x.gpg"}) {
+    QFile f(store.filePath(QString::fromLatin1(name)));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("ciphertext") > 0);
+  }
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outsideFile = outsideDir.path() + "/precious.gpg";
+  {
+    QFile f(outsideFile);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("precious") > 0);
+  }
+  // Pushed by a co-writer: a folder link beside y.gpg, and a link inside a
+  // folder a copy would merge into.
+  QVERIFY(QFile::link(outsideDir.path(), store.filePath("y")));
+  QVERIFY(QFile::link(outsideFile, store.filePath("drop/sub/e.gpg")));
+
+  RealPass pass;
+  setupPass(pass);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy copySpy(&pass, &Pass::finishedCopy);
+  // A confirmed drop onto y.gpg: pass would move the entry into y/.
+  pass.Move(store.filePath("x.gpg"), store.filePath("y.gpg"), true);
+  // A folder copied into one holding a folder of its name.
+  pass.Copy(store.filePath("team/sub"), store.filePath("drop"), false);
+  // A drop onto a folder holding an entry of that name.
+  pass.Move(store.filePath("x.gpg"), store.filePath("drop"), false);
+  // A rename to "keep": pass writes keep.gpg.
+  pass.Move(store.filePath("x.gpg"), store.filePath("keep"), false);
+  QCOMPARE(criticalSpy.count(), 4);
+  QTest::qWait(500); // nothing should be queued; give a stray pass a chance
+  QVERIFY(QFile::exists(store.filePath("x.gpg")));
+  QVERIFY(!QFile::exists(outsideDir.path() + "/x.gpg"));
+  QCOMPARE(readFileBytes(outsideFile), QByteArray("precious"));
+  QCOMPARE(readFileBytes(store.filePath("keep.gpg")), QByteArray("ciphertext"));
+
+  // A folder with an entry of its name beside it: the folder is copied.
+  copySpy.clear();
+  pass.Copy(store.filePath("team"), store.filePath("copy"), false);
+  QVERIFY2(waitForSignal(copySpy, 30000), "pass cp did not finish");
+  QCOMPARE(criticalSpy.count(), 4);
+  QVERIFY(QFile::exists(store.filePath("copy/sub/e.gpg")));
+  QVERIFY(!QFile::exists(store.filePath("copy.gpg")));
 
   QtPassSettings::setUsePass(false);
 #endif

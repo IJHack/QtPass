@@ -39,7 +39,13 @@
   add an entry that is such a link, or put one where the copy lands; pass
   followed it, carrying an entry out of the store or writing over the file
   it points to. QtPass now refuses such a move or copy (scan finding
-  ANT-2026-3KTRAFFH).
+  ANT-2026-3KTRAFFH). The check looks where pass puts the item: pass moves
+  an entry into a folder, or a link to one, of the destination's name, and
+  takes an entry beside a folder of the same name. A move or copy onto
+  something already where pass would write is refused too: dropping an
+  entry on a folder that holds one of that name, renaming onto a taken
+  name, or copying a folder into one that holds a folder of its name. That
+  last one used to merge the two folders; rename one first.
 - An entry saved or edited with the native backend and Git is committed
   even when the store's `.gitignore` matches it. Someone who can push to a
   shared store could push a rule such as `*.gpg`; the entry then stayed an
