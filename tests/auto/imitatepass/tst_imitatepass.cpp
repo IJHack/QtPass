@@ -880,6 +880,9 @@ void tst_imitatepass::reencryptFailsForAFolderItCannotRead() {
  *        ANT-2026-SEN4VBBB).
  */
 void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
   QTemporaryDir tmp;
   QVERIFY(tmp.isValid());
   const QString store = tmp.path();
@@ -941,6 +944,7 @@ void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
   QCOMPARE(encrypts.size(), 1);
   QVERIFY2(encrypts.first().join(' ').contains(QStringLiteral("probe.gpg")),
            "the entry must not be re-encrypted to the group unasked");
+#endif
 }
 
 /**
@@ -951,6 +955,9 @@ void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
  *        rather than re-encrypted (scan finding ANT-2026-SEN4VBBB).
  */
 void tst_imitatepass::reencryptAsksAgainWhenTheListChangedSinceTheQuestion() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
   QTemporaryDir tmp;
   QVERIFY(tmp.isValid());
   const QString store = tmp.path();
@@ -1022,6 +1029,7 @@ void tst_imitatepass::reencryptAsksAgainWhenTheListChangedSinceTheQuestion() {
                     return call.join(' ').contains(QStringLiteral("probe.gpg"));
                   }),
       "the entry must not be re-encrypted for keys the user was not shown");
+#endif
 }
 
 void tst_imitatepass::reencryptPathCancelStopsBetweenFiles() {
