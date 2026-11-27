@@ -265,6 +265,22 @@ class RealPass : public Pass {
   void reportUnrecorded(const QStringList &paths);
 
   /**
+   * @brief Refuse a `pass cp` of the folder @p src when anything in it is a
+   * symbolic link or NTFS junction, or a folder in it holds a name Qt cannot
+   * read.
+   *
+   * pass copies with `cp -r`. GNU cp copies a link as a link, but BSD and
+   * macOS cp follow it with `-r`, so what a link pushed into a shared store
+   * points to (a file in the user's home) would be copied into the store and
+   * committed. Refused on every platform, so the result does not depend on
+   * which cp pass finds. Hidden folders are walked too; links are not
+   * followed.
+   * @param src The folder to copy.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseLinkInCopiedFolder(const QString &src) -> bool;
+
+  /**
    * @brief Refuse a `pass mv` or `cp` of the folder @p src when a file in
    * it that Git ignores would not be ignored where it lands: a rule naming
    * the old place (`/team/export.csv`) does not follow the file, and pass

@@ -16,6 +16,7 @@
 #include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QDir>
+#include <QDirIterator>
 #include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
@@ -686,6 +687,49 @@ void RealPass::reportUnrecorded(const QStringList &paths) {
                     .arg(namedChanges(changes)));
 }
 
+auto RealPass::refuseLinkInCopiedFolder(const QString &src) -> bool {
+  QStringList folders{src};
+  QString found;
+  QString unreadable = Util::hasUnreadableName(src) ? src : QString();
+  // Folder by folder, so each can be asked about names Qt leaves out.
+  while (!folders.isEmpty() && found.isEmpty() && unreadable.isEmpty()) {
+    QDirIterator it(folders.takeFirst(), QDir::AllEntries | QDir::Hidden |
+                                             QDir::System |
+                                             QDir::NoDotAndDotDot);
+    while (it.hasNext()) {
+      const QString path = it.next();
+      if (Util::isLinkedFolder(path)) {
+        found = path;
+        break;
+      }
+      if (it.fileInfo().isDir()) {
+        if (Util::hasUnreadableName(path)) {
+          unreadable = path;
+          break;
+        }
+        folders << path;
+      }
+    }
+  }
+  if (found.isEmpty() && unreadable.isEmpty()) {
+    return false;
+  }
+  const QString why =
+      found.isEmpty()
+          ? tr("%1 holds a name QtPass cannot read, so it cannot tell "
+               "whether copying the folder would copy something from outside "
+               "the store. Nothing was copied.")
+                .arg(QDir::toNativeSeparators(QDir::cleanPath(unreadable)))
+          : tr("%1 is a symbolic link or junction. Copying the folder that "
+               "holds it would, on some systems, copy what it points to into "
+               "the store. Nothing was copied; remove the link first.")
+                .arg(QDir::toNativeSeparators(QDir::cleanPath(found)));
+  emit startingExecuteWrapper();
+  emit critical(tr("Not copied"), why);
+  emit processErrorExit(1, why);
+  return true;
+}
+
 auto RealPass::refuseIgnoredThatMoves(const QString &src, const QString &dest)
     -> bool {
   if (!m_settings.useGit || !QFileInfo(src).isDir()) {
@@ -1351,6 +1395,10 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   if (refuseUnverifiedList(target.written) ||
       (srcFileInfo.isDir() && refuseUnverifiedTree(src, true)) ||
       (intoFolder && refuseUnverifiedTree(target.newPath, false))) {
+    return;
+  }
+  // cp -r follows a link inside the folder on BSD and macOS.
+  if (id == PASS_COPY && srcFileInfo.isDir() && refuseLinkInCopiedFolder(src)) {
     return;
   }
   // pass stages what it moved or copied with `git add` on the new path,
