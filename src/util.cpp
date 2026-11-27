@@ -1348,9 +1348,10 @@ auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
   }
   // The descriptor, not the name, is what QFile opens here: the object
   // fstat() judged is the object read. CodeQL's check-then-use pattern
-  // matcher sees an open after a check and cannot tell.
-  if (!file.open(fd, QIODevice::ReadOnly, // codeql[cpp/toctou-race-condition]
-                 QFileDevice::AutoCloseHandle)) {
+  // matcher sees an open after a check and cannot tell (its alert on this
+  // line is dismissed as a false positive; inline suppression comments are
+  // not read by the default setup).
+  if (!file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
     ::close(fd);
     return false;
   }
@@ -1502,9 +1503,11 @@ auto Util::readRegularFileUnder(const QString &root, const QString &path,
     ::close(fd);
     return std::nullopt;
   }
+  // As in openRegularFile(): QFile takes the descriptor fstat() judged, not
+  // the name, so no change between check and read is possible. CodeQL
+  // flags the open anyway; that alert is dismissed as a false positive.
   QFile file;
-  if (!file.open(fd, QIODevice::ReadOnly, // codeql[cpp/toctou-race-condition]
-                 QFileDevice::AutoCloseHandle)) {
+  if (!file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
     ::close(fd);
     return std::nullopt;
   }
