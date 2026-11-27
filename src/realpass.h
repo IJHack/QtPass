@@ -91,11 +91,39 @@ class RealPass : public Pass {
    * @param subcommand The pass subcommand, "mv" or "cp".
    * @param src Source path.
    * @param dest Destination path.
-   * @param force Overwrite an existing destination; without it a
-   *        file-onto-file request is a no-op (pass would otherwise force).
+   * @param force Overwrite an existing entry named as @p dest; without it
+   *        that is refused (pass would otherwise force). Nothing else that
+   *        exists where pass would write is overwritten, with or without it.
    */
   void passMoveOrCopy(PROCESS id, const QString &subcommand, const QString &src,
                       const QString &dest, bool force);
+  /// What `pass mv`/`pass cp` is handed and what it then does with it.
+  struct PassMoveTarget {
+    QString passSrc;  ///< The source name handed to pass.
+    QString passDest; ///< The destination name handed to pass.
+    /// pass's own destination ($new_path): what it re-encrypts and stages,
+    /// absolute.
+    QString newPath;
+    /// What comes out: newPath, or the source's name inside it when newPath
+    /// is a folder (mv and cp put it there), absolute.
+    QString written;
+  };
+  /**
+   * @brief Name @p src and @p dest for `pass mv`/`pass cp`, and work out
+   * where pass 1.7.4 then puts the source.
+   *
+   * pass resolves the names by its own rules: it takes the entry `<name>.gpg`
+   * over a folder of the same name unless the name ends in a slash, appends
+   * `.gpg` to the destination unless a folder is moved or the destination is
+   * a folder (a link to one included), and mv and cp put the source inside
+   * such a folder. The checks run on what this returns, not on the names as
+   * the caller spelled them.
+   * @param src The entry file or folder to move or copy, absolute.
+   * @param dest Where to, absolute, as the caller spelled it.
+   * @return The names for pass and the paths it touches.
+   */
+  auto passMoveTarget(const QString &src, const QString &dest) const
+      -> PassMoveTarget;
   /**
    * @brief @p path as `pass` names it: relative to the store, without the
    * `.gpg` pass appends itself.

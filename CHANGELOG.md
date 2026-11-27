@@ -167,6 +167,19 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- Move, copy and rename with the `pass` backend are now checked where pass
+  puts the item, not under the name as QtPass spelled it. pass moves an
+  entry or folder into a folder of the destination's name (a link to one
+  too), appends `.gpg` to a new name, and takes an entry beside a folder of
+  the same name; QtPass checked a folder renamed to `name.gpg` under that
+  name and handed pass `name`. Someone who can push to a shared store could
+  plant names that made a rename or drag carry entries out of the store
+  through a link. A move or copy onto something that already exists where
+  pass would write is now refused too: dropping an entry on a folder that
+  holds one of that name, renaming onto a taken name, or copying a folder
+  where a folder of its name is already there. That last one used to merge
+  the two, writing through any link in the folder already there; rename one
+  first (scan finding ANT-2026-3KTRAFFH).
 - A signing key set in Settings for the profile in use now takes effect on
   OK. It was saved with the profile but only applied when switching
   profiles, so the `.gpg-id` signature checks stayed off until then (scan

@@ -69,6 +69,7 @@ private slots:
   void genericOutputSignalIsAnAllowList();
   void moveAndCopyUseStoreRelativeNamesWithoutGpg();
   void moveBetweenExistingFilesNeedsForce();
+  void moveAndCopyJudgeWherePassWrites();
   void reencryptFailedJudgesTheStatusLines_data();
   void reencryptFailedJudgesTheStatusLines();
   void largeReencryptionIsJudgedByEveryStatusLine();
@@ -1264,7 +1265,7 @@ void tst_realpass::moveAndCopyUseStoreRelativeNamesWithoutGpg() {
   pass->Copy(m_store + QStringLiteral("folder"),
              m_store + QStringLiteral("copy"), false);
   QCOMPARE(waitForCall().args,
-           (QStringList{QStringLiteral("cp"), QStringLiteral("folder"),
+           (QStringList{QStringLiteral("cp"), QStringLiteral("folder/"),
                         QStringLiteral("copy")}));
 }
 
@@ -1721,6 +1722,104 @@ void tst_realpass::moveBetweenExistingFilesNeedsForce() {
       waitForCall().args,
       (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
                    QStringLiteral("folder/x"), QStringLiteral("folder/y")}));
+}
+
+/**
+ * @brief Move and copy are judged where pass 1.7.4 puts the source, not at
+ *        the destination as QtPass spells it (scan finding
+ *        ANT-2026-3KTRAFFH): pass moves an entry or folder into a folder
+ *        (or a link to one) of the destination's name, appends .gpg to a new
+ *        name, and takes an entry beside a folder of the same name unless
+ *        that name ends in a slash. QtPass hands a folder renamed to
+ *        `name.gpg` over as `name`.
+ */
+void tst_realpass::moveAndCopyJudgeWherePassWrites() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symbolic and hard links");
+#else
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outsideFile =
+      QDir(outsideDir.path()).filePath(QStringLiteral("precious.gpg"));
+  const QString base = m_store + QStringLiteral("resolve/");
+  const auto cleanup = qScopeGuard([&] {
+    for (const char *link :
+         {"out", "y", "drop/sub/e.gpg", "drop/sub/sub/e.gpg"}) {
+      QFile::remove(base + QString::fromLatin1(link));
+    }
+    QDir(base).removeRecursively();
+  });
+  QVERIFY(QDir(base).mkpath(QStringLiteral("team/sub")));
+  QVERIFY(QDir(base).mkpath(QStringLiteral("drop/sub/sub")));
+  for (const char *name : {"team/sub/e.gpg", "team.gpg", "x.gpg", "y.gpg",
+                           "keep.gpg", "drop/x.gpg"}) {
+    QFile f(base + QString::fromLatin1(name));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+  }
+  {
+    QFile f(outsideFile);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("precious") > 0);
+  }
+  // Pushed by a co-writer: links to a folder and a file outside the store.
+  QVERIFY(QFile::link(outsideDir.path(), base + QStringLiteral("out")));
+  QVERIFY(QFile::link(outsideDir.path(), base + QStringLiteral("y")));
+  QVERIFY(QFile::link(outsideFile, base + QStringLiteral("drop/sub/e.gpg")));
+  QVERIFY(
+      QFile::link(outsideFile, base + QStringLiteral("drop/sub/sub/e.gpg")));
+
+  QScopedPointer<RealPass> pass(makePass());
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  // Rename folder to "out.gpg": pass moves it into the linked folder "out".
+  pass->Move(base + QStringLiteral("team"), base + QStringLiteral("out.gpg"),
+             false);
+  // A confirmed drop onto y.gpg: pass moves the entry into the folder link y.
+  pass->Move(base + QStringLiteral("x.gpg"), base + QStringLiteral("y.gpg"),
+             true);
+  // A drop onto a folder that holds an entry of that name: pass replaces it.
+  pass->Move(base + QStringLiteral("x.gpg"), base + QStringLiteral("drop"),
+             false);
+  // A folder dropped on one that holds a folder of its name, as the drop
+  // spells it (drop/sub) and as Copy() also takes it (drop): cp -r merges
+  // into drop/sub, or into drop/sub/sub that pass nests it at, and writes
+  // through the link inside.
+  pass->Copy(base + QStringLiteral("team/sub"),
+             base + QStringLiteral("drop/sub"), false);
+  pass->Copy(base + QStringLiteral("team/sub"), base + QStringLiteral("drop"),
+             false);
+  // Rename to "keep": pass writes keep.gpg, which exists.
+  pass->Move(base + QStringLiteral("x.gpg"), base + QStringLiteral("keep"),
+             false);
+  // The source itself: renamed to its own name, or dropped on its own
+  // folder. Nothing to do, and nothing to report.
+  pass->Move(base + QStringLiteral("x.gpg"), base + QStringLiteral("x"), false);
+  pass->Copy(base + QStringLiteral("x.gpg"), base, false);
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 6);
+  QVERIFY2(!QFile::exists(m_log), "the stand-in pass must not have run");
+
+  // The source respelled, as a case-only rename on a case-insensitive file
+  // system is; a hard link under another name stands in for that here (a
+  // case-insensitive one already has X.gpg). pass renames it.
+  QVERIFY(::link(QFile::encodeName(base + QStringLiteral("x.gpg")).constData(),
+                 QFile::encodeName(base + QStringLiteral("alias.gpg"))
+                     .constData()) == 0);
+  pass->Move(base + QStringLiteral("x.gpg"), base + QStringLiteral("alias"),
+             false);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("mv"), QStringLiteral("resolve/x"),
+                        QStringLiteral("resolve/alias")}));
+  QFile::remove(m_log);
+
+  // A folder with an entry of its name beside it: the trailing slash makes
+  // pass take the folder.
+  pass->Copy(base + QStringLiteral("team"), base + QStringLiteral("copy"),
+             false);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("cp"), QStringLiteral("resolve/team/"),
+                        QStringLiteral("resolve/copy")}));
+  QCOMPARE(criticalSpy.count(), 6);
+#endif
 }
 
 /**
