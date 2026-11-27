@@ -206,7 +206,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   keys, for example after importing a key file they sent; certified, it was
   ticked by default, and every new entry was then encrypted to them too. Other
   valid keys are still listed; tick them by hand, as you now also do for a key
-  of your own imported from another machine (scan finding ANT-2026-SYHZRWC3).
+  of your own imported from another machine unless you gave it ultimate trust
+  (scan finding ANT-2026-SYHZRWC3).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its
