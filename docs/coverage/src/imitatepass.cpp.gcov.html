@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 07:44:53</td>
+            <td class="headerValue">2026-11-27 10:16:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -132,7 +132,7 @@
 <span id="L59"><span class="lineNum">      59</span>              :   // ends its own blocked process on the flag (see execBlocking()).</span>
 <span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         227 :   if (m_reencryptThread &amp;&amp; m_reencryptThread-&gt;isRunning()) {</span></span>
 <span id="L61"><span class="lineNum">      61</span>              :     m_reencryptCancel.store(true);</span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           5 :     m_reencryptThread-&gt;wait();</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           6 :     m_reencryptThread-&gt;wait();</span></span>
 <span id="L63"><span class="lineNum">      63</span>              :   }</span>
 <span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">         461 : }</span></span>
 <span id="L65"><span class="lineNum">      65</span>              : </span>
@@ -1440,8 +1440,8 @@
 <span id="L1367"><span class="lineNum">    1367</span> <span class="tlaGNC">         119 :   });</span></span>
 <span id="L1368"><span class="lineNum">    1368</span> <span class="tlaGNC">         119 :   m_reencryptThread = thread;</span></span>
 <span id="L1369"><span class="lineNum">    1369</span> <span class="tlaGNC">         119 :   connect(thread, &amp;QThread::finished, this, [this, thread]() {</span></span>
-<span id="L1370"><span class="lineNum">    1370</span> <span class="tlaGNC">         113 :     if (m_reencryptThread == thread)</span></span>
-<span id="L1371"><span class="lineNum">    1371</span> <span class="tlaGNC">         111 :       m_reencryptThread = nullptr;</span></span>
+<span id="L1370"><span class="lineNum">    1370</span> <span class="tlaGNC">         112 :     if (m_reencryptThread == thread)</span></span>
+<span id="L1371"><span class="lineNum">    1371</span> <span class="tlaGNC">         110 :       m_reencryptThread = nullptr;</span></span>
 <span id="L1372"><span class="lineNum">    1372</span>              :   });</span>
 <span id="L1373"><span class="lineNum">    1373</span> <span class="tlaGNC">         119 :   connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</span></span>
 <span id="L1374"><span class="lineNum">    1374</span> <span class="tlaGNC">         119 :   thread-&gt;start();</span></span>
@@ -2173,11 +2173,11 @@
 <span id="L2100"><span class="lineNum">    2100</span> <span class="tlaGNC">         260 :   m_transactionOutput.append(out);</span></span>
 <span id="L2101"><span class="lineNum">    2101</span>              : </span>
 <span id="L2102"><span class="lineNum">    2102</span> <span class="tlaGNC">         260 :   if (exitCode == 0) {</span></span>
-<span id="L2103"><span class="lineNum">    2103</span> <span class="tlaGNC">         220 :     if (pid == INVALID) {</span></span>
+<span id="L2103"><span class="lineNum">    2103</span> <span class="tlaGNC">         219 :     if (pid == INVALID) {</span></span>
 <span id="L2104"><span class="lineNum">    2104</span>              :       return;</span>
 <span id="L2105"><span class="lineNum">    2105</span>              :     }</span>
 <span id="L2106"><span class="lineNum">    2106</span>              :   } else {</span>
-<span id="L2107"><span class="lineNum">    2107</span> <span class="tlaGNC">          47 :     while (pid == INVALID) {</span></span>
+<span id="L2107"><span class="lineNum">    2107</span> <span class="tlaGNC">          48 :     while (pid == INVALID) {</span></span>
 <span id="L2108"><span class="lineNum">    2108</span> <span class="tlaGNC">           7 :       id = exec.cancelNext();</span></span>
 <span id="L2109"><span class="lineNum">    2109</span> <span class="tlaGNC">           7 :       if (id == -1) {</span></span>
 <span id="L2110"><span class="lineNum">    2110</span>              :         //  this is probably irrecoverable and shall not happen</span>

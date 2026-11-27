@@ -1,32 +1,49 @@
 <map id="MainWindow::refuseLinkedFolder" name="MainWindow::refuseLinkedFolder">
-<area shape="rect" id="Node000001" title="Refuse, with a message, a tree&#45;picked folder that is or lies behind a symlink or junction: what it po..." alt="" coords="1061,152,1256,197"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#a43847693f774d77737aa23aa4a1ac272" title="Toolbar/context&#45;menu &quot;Add folder&quot;: ask for a name, create the folder under the current one (refusing ..." alt="" coords="823,56,1000,84"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1104,143,1061,122,1012,99,976,87,976,82,1014,94,1063,117,1110,144"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#a93b9f16badab892958d7b5bb28c55aa5" title="Share menu &quot;Add recipient&quot;: open UsersDialog for dir (keys already in the keyring only)." alt="" coords="813,264,1010,292"/>
-<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="1110,204,1063,232,1014,254,976,266,975,261,1012,249,1061,227,1104,205"/>
-<area shape="rect" id="Node000008" href="$class_main_window.html#a3f29a7235acf922406190b6477167a80" title="Toolbar &quot;Delete&quot; or the Delete key: confirm, then remove the current entry or folder...." alt="" coords="826,160,997,188"/>
-<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="1042,174,998,177,998,172,1048,174"/>
-<area shape="rect" id="Node000010" href="$class_main_window.html#ae65d3d151c79c84cedefbe6999ae89f3" title="Toolbar/context&#45;menu &quot;Users&quot;: open UsersDialog for the current folder, unless it lies behind a link." alt="" coords="829,108,994,136"/>
-<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="1043,151,980,139,981,134,1048,151"/>
-<area shape="rect" id="Node000011" href="$class_main_window.html#a7cf82cedc4d5f790a8ed0bb4fadbbb16" title="Share menu &quot;Re&#45;encrypt all passwords&quot;: confirm, lock the UI via startReencryptPath() and have Imitate..." alt="" coords="810,212,1013,240"/>
-<area shape="poly" id="edge18_Node000001_Node000011" title=" " alt="" coords="1048,198,981,214,980,209,1043,198"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,59,762,87"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="805,72,763,74,763,69,810,71"/>
-<area shape="rect" id="Node000005" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,84,239,112"/>
-<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="838,53,733,33,594,14,518,9,440,9,363,14,287,26,247,38,209,54,148,86,144,82,207,49,246,33,286,21,362,9,440,3,518,4,595,9,733,28,843,52"/>
-<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,59,483,87"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="513,74,484,76,483,70,518,72"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="428,44,414,40,385,38,357,40,342,45,338,50,345,59,340,58,333,50,339,40,356,35,385,32,415,35,434,43"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="300,90,240,98,238,93,304,88"/>
-<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="204,79,288,72,284,75,206,84"/>
-<area shape="rect" id="Node000007" href="$class_main_window.html#a5890dfd116d4da96689e7114dd4e5494" title="Add the Share submenu for the folder under the cursor: the entries are enabled only where a recipient..." alt="" coords="542,262,751,289"/>
-<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="795,277,752,279,752,274,800,277"/>
-<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="524,283,469,285,407,278,345,266,286,246,236,217,192,180,156,144,134,115,134,110,160,140,195,176,239,213,288,241,346,261,408,273,469,279,529,283"/>
-<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="833,156,809,150,736,119,675,90,676,85,738,115,811,145,838,156"/>
-<area shape="poly" id="edge14_Node000008_Node000005" title=" " alt="" coords="828,191,763,202,647,210,596,209,531,202,427,185,325,161,166,115,166,110,326,156,428,180,531,197,596,203,646,205,762,197,823,192"/>
-<area shape="rect" id="Node000009" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="543,160,750,188"/>
-<area shape="poly" id="edge13_Node000008_Node000009" title=" " alt="" coords="807,174,751,177,751,172,813,174"/>
-<area shape="poly" id="edge16_Node000010_Node000003" title=" " alt="" coords="816,105,725,90,725,85,821,105"/>
-<area shape="poly" id="edge17_Node000010_Node000005" title=" " alt="" coords="813,122,239,104,239,99,814,117"/>
-<area shape="poly" id="edge19_Node000011_Node000007" title=" " alt="" coords="821,243,725,264,725,258,816,244"/>
+<area shape="rect" id="Node000001" title="Refuse, with a message, a tree&#45;picked folder that is or lies behind a symlink or junction: what it po..." alt="" coords="1563,238,1759,283"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a43847693f774d77737aa23aa4a1ac272" title="Toolbar/context&#45;menu &quot;Add folder&quot;: ask for a name, create the folder under the current one (refusing ..." alt="" coords="821,105,997,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1581,233,1515,215,1374,185,1232,161,997,131,997,125,1233,156,1375,180,1516,210,1587,233"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a93b9f16badab892958d7b5bb28c55aa5" title="Share menu &quot;Add recipient&quot;: open UsersDialog for dir (keys already in the keyring only)." alt="" coords="1316,324,1513,352"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="1586,288,1516,314,1473,326,1472,321,1515,309,1581,289"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a3f29a7235acf922406190b6477167a80" title="Toolbar &quot;Delete&quot; or the Delete key: confirm, then remove the current entry or folder...." alt="" coords="823,53,995,81"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="1614,229,1568,202,1514,176,1446,153,1375,134,1233,104,1101,85,995,75,995,70,1102,80,1234,99,1376,129,1448,148,1516,171,1571,197,1620,230"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#ae65d3d151c79c84cedefbe6999ae89f3" title="Toolbar/context&#45;menu &quot;Users&quot;: open UsersDialog for the current folder, unless it lies behind a link." alt="" coords="826,157,992,185"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="1545,248,992,184,992,178,1551,247"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#a7cf82cedc4d5f790a8ed0bb4fadbbb16" title="Share menu &quot;Re&#45;encrypt all passwords&quot;: confirm, lock the UI via startReencryptPath() and have Imitate..." alt="" coords="1313,376,1515,404"/>
+<area shape="poly" id="edge18_Node000001_Node000011" title=" " alt="" coords="1625,292,1575,332,1516,366,1483,378,1482,373,1514,361,1572,327,1620,294"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#a2b0351f339c894215610f1b3557c8630" title="Run PasswordDialog for a new or existing entry. For a new one the dialog gets the store&#39;s real folder..." alt="" coords="1318,272,1511,300"/>
+<area shape="poly" id="edge20_Node000001_Node000012" title=" " alt="" coords="1545,272,1512,279,1511,273,1550,272"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,208,762,236"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="832,139,811,148,737,180,676,210,674,205,735,175,809,143,837,137"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,247,239,274"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="803,118,697,123,566,132,425,151,355,165,287,182,247,196,209,214,147,248,144,244,206,209,245,191,286,177,354,159,425,146,565,127,696,118,808,117"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,247,483,274"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="531,239,484,249,483,243,536,238"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="428,232,414,228,385,225,357,227,342,232,338,237,345,247,340,246,333,238,339,228,356,222,385,220,415,222,434,231"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="269,270,240,272,238,267,274,269"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="253,249,289,251,284,253,255,254"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a5890dfd116d4da96689e7114dd4e5494" title="Add the Share submenu for the folder under the cursor: the entries are enabled only where a recipient..." alt="" coords="1056,376,1265,404"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="1330,355,1232,378,1231,373,1325,356"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="1083,407,1008,420,803,436,719,438,641,434,564,424,483,407,392,383,286,350,245,334,205,314,144,277,145,272,208,309,247,329,288,345,393,378,484,402,565,419,642,429,719,432,803,431,1007,415,1078,407"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="829,86,812,96,766,123,725,155,663,210,660,205,721,150,763,119,809,91,824,88"/>
+<area shape="poly" id="edge14_Node000008_Node000005" title=" " alt="" coords="805,64,697,67,565,77,495,87,424,101,354,120,288,143,242,166,200,195,139,248,136,244,197,191,239,162,286,138,353,114,423,96,494,82,565,72,697,62,810,62"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="543,5,750,33"/>
+<area shape="poly" id="edge13_Node000008_Node000009" title=" " alt="" coords="812,50,726,36,726,31,817,49"/>
+<area shape="poly" id="edge16_Node000010_Node000003" title=" " alt="" coords="816,189,723,210,722,205,822,188"/>
+<area shape="poly" id="edge17_Node000010_Node000005" title=" " alt="" coords="808,171,703,175,572,181,429,194,287,214,221,230,163,249,160,244,219,225,286,209,428,188,571,176,703,170,813,170"/>
+<area shape="poly" id="edge19_Node000011_Node000007" title=" " alt="" coords="1294,390,1266,392,1266,387,1300,390"/>
+<area shape="rect" id="Node000013" href="$class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder." alt="" coords="810,379,1008,406"/>
+<area shape="poly" id="edge21_Node000012_Node000013" title=" " alt="" coords="1333,303,979,381,978,375,1327,304"/>
+<area shape="rect" id="Node000014" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1061,272,1260,300"/>
+<area shape="poly" id="edge24_Node000012_Node000014" title=" " alt="" coords="1299,286,1260,288,1260,283,1305,286"/>
+<area shape="poly" id="edge22_Node000013_Node000003" title=" " alt="" coords="871,369,840,347,808,318,794,299,786,281,777,266,761,251,738,239,739,234,764,246,781,262,791,279,799,296,812,315,843,343,876,370"/>
+<area shape="poly" id="edge23_Node000013_Node000005" title=" " alt="" coords="792,382,559,356,422,335,286,310,168,278,168,272,287,305,423,330,560,351,798,382"/>
+<area shape="rect" id="Node000015" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,260,755,288"/>
+<area shape="poly" id="edge25_Node000014_Node000015" title=" " alt="" coords="1090,303,1008,319,909,327,810,319,747,307,691,291,691,286,748,302,811,314,909,321,1007,314,1084,304"/>
+<area shape="rect" id="Node000016" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="812,209,1006,253"/>
+<area shape="poly" id="edge27_Node000014_Node000016" title=" " alt="" coords="1076,268,1006,255,1006,250,1081,268"/>
+<area shape="rect" id="Node000017" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="832,277,986,305"/>
+<area shape="poly" id="edge28_Node000014_Node000017" title=" " alt="" coords="1043,289,986,292,986,287,1048,288"/>
+<area shape="poly" id="edge26_Node000015_Node000004" title=" " alt="" coords="520,268,484,268,483,263,525,267"/>
+<area shape="poly" id="edge29_Node000017_Node000003" title=" " alt="" coords="832,273,810,268,762,251,716,239,716,234,763,246,811,263,837,273"/>
+<area shape="poly" id="edge30_Node000017_Node000005" title=" " alt="" coords="814,297,762,302,524,306,420,301,286,288,207,278,206,272,287,283,420,295,524,300,762,297,820,297"/>
 </map>
