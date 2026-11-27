@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 19:23:10</td>
+            <td class="headerValue">2026-11-27 20:09:11</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -629,22 +629,22 @@
 <span id="L556"><span class="lineNum">     556</span> <span class="tlaGNC">         313 :   const auto reportedOut = qScopeGuard([this] { m_reportedInsert.clear(); });</span></span>
 <span id="L557"><span class="lineNum">     557</span>              : </span>
 <span id="L558"><span class="lineNum">     558</span> <span class="tlaGNC">         313 :   if (exitCode != 0) {</span></span>
-<span id="L559"><span class="lineNum">     559</span> <span class="tlaGNC">          61 :     handleProcessError(pid, exitCode, out, err);</span></span>
+<span id="L559"><span class="lineNum">     559</span> <span class="tlaGNC">          62 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L560"><span class="lineNum">     560</span>              :     return;</span>
 <span id="L561"><span class="lineNum">     561</span>              :   }</span>
 <span id="L562"><span class="lineNum">     562</span>              : </span>
-<span id="L563"><span class="lineNum">     563</span> <span class="tlaGNC">         252 :   if (pid == PASS_SHOW) {</span></span>
-<span id="L564"><span class="lineNum">     564</span> <span class="tlaGNC">          52 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
+<span id="L563"><span class="lineNum">     563</span> <span class="tlaGNC">         251 :   if (pid == PASS_SHOW) {</span></span>
+<span id="L564"><span class="lineNum">     564</span> <span class="tlaGNC">          51 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
 <span id="L565"><span class="lineNum">     565</span>              :     return;</span>
 <span id="L566"><span class="lineNum">     566</span>              :   }</span>
 <span id="L567"><span class="lineNum">     567</span> <span class="tlaGNC">         200 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L568"><span class="lineNum">     568</span>              : }</span>
 <span id="L569"><span class="lineNum">     569</span>              : </span>
-<span id="L570"><span class="lineNum">     570</span> <span class="tlaGNC">          61 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
+<span id="L570"><span class="lineNum">     570</span> <span class="tlaGNC">          62 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
 <span id="L571"><span class="lineNum">     571</span>              :                               const QString &amp;err) {</span>
 <span id="L572"><span class="lineNum">     572</span>              :   Q_UNUSED(out);</span>
 <span id="L573"><span class="lineNum">     573</span>              : </span>
-<span id="L574"><span class="lineNum">     574</span> <span class="tlaGNC">          61 :   if (pid == PASS_INSERT) {</span></span>
+<span id="L574"><span class="lineNum">     574</span> <span class="tlaGNC">          62 :   if (pid == PASS_INSERT) {</span></span>
 <span id="L575"><span class="lineNum">     575</span> <span class="tlaGNC">          19 :     const QString friendly = gpgErrorMessage(err);</span></span>
 <span id="L576"><span class="lineNum">     576</span>              :     const QString why =</span>
 <span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          19 :         friendly.isEmpty() ? err : formatInsertError(friendly, err);</span></span>
@@ -664,10 +664,10 @@
 <span id="L591"><span class="lineNum">     591</span>              :     return;</span>
 <span id="L592"><span class="lineNum">     592</span>              :   }</span>
 <span id="L593"><span class="lineNum">     593</span>              : </span>
-<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">          42 :   if (pid == GPG_GENKEYS) {</span></span>
+<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">          43 :   if (pid == GPG_GENKEYS) {</span></span>
 <span id="L595"><span class="lineNum">     595</span> <span class="tlaGNC">           1 :     emit generateGPGKeysFailed(err);</span></span>
 <span id="L596"><span class="lineNum">     596</span>              :   }</span>
-<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">          42 :   emit processErrorExit(exitCode, err);</span></span>
+<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">          43 :   emit processErrorExit(exitCode, err);</span></span>
 <span id="L598"><span class="lineNum">     598</span>              : }</span>
 <span id="L599"><span class="lineNum">     599</span>              : </span>
 <span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">          53 : auto Pass::withoutStatusLines(const QString &amp;err) -&gt; QString {</span></span>
