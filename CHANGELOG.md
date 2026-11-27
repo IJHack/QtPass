@@ -190,6 +190,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   ignored, uncommitted file, which a later pull could delete. QtPass now
   stages the files it writes with `git add -f` (scan finding
   ANT-2026-L2LXMCPM).
+- "Export my public key" no longer saves through a symbolic link. Someone who
+  can push to a shared store could push a link under the name the dialog
+  proposes (the key's fingerprint) into a store folder; saving there wrote
+  the key to the file the link points to, outside the store. QtPass now
+  refuses a link at the chosen name (scan finding ANT-2026-T5AWA17S).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its
