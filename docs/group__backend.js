@@ -312,6 +312,12 @@ var group__backend =
         [ "passExecutable", "struct_real_pass_1_1_link_commit.html#ae0e83454b142149d3ce4971735ae4bbd", null ],
         [ "rel", "struct_real_pass_1_1_link_commit.html#ae7cbd97a14853c0e5af92617181d3151", null ]
       ] ],
+      [ "PassMoveTarget", "struct_real_pass_1_1_pass_move_target.html", [
+        [ "newPath", "struct_real_pass_1_1_pass_move_target.html#a68f9bf3e377c013711ba8553ec9f52aa", null ],
+        [ "passDest", "struct_real_pass_1_1_pass_move_target.html#a2dd27473cbabda49499d5ed48c2dee8c", null ],
+        [ "passSrc", "struct_real_pass_1_1_pass_move_target.html#a4a57993d5c3e435c2382e52cd4741d6a", null ],
+        [ "written", "struct_real_pass_1_1_pass_move_target.html#ad54de709c4561dba831a2292b569c770", null ]
+      ] ],
       [ "InsertRecord", "struct_real_pass_1_1_insert_record.html", [
         [ "before", "struct_real_pass_1_1_insert_record.html#ab2b5fb5da4f4c402e869b9248b200063", null ],
         [ "target", "struct_real_pass_1_1_insert_record.html#aa214efefd2d7737cb6fceef597986cc5", null ]
@@ -337,6 +343,7 @@ var group__backend =
       [ "Move", "class_real_pass.html#acbbb510bd58cdceae53d34985453fc83", null ],
       [ "onDequeuing", "class_real_pass.html#a6d7163b691663d92f31ca20886f9979f", null ],
       [ "passMoveOrCopy", "class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794", null ],
+      [ "passMoveTarget", "class_real_pass.html#a31a3137e7df0e1e3929f0c9e30e18662", null ],
       [ "passName", "class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719", null ],
       [ "reencryptFailed", "class_real_pass.html#ae82ad79b6a4d5d87548cc14247d22779", null ],
       [ "reencryptFailed", "class_real_pass.html#a5e54561fccd028576a58b17731907880", null ],

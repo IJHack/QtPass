@@ -8,8 +8,8 @@
 <area shape="poly" id="edge40_Node000001_Node000028" title=" " alt="" coords="3169,558,3108,560,3108,555,3174,558"/>
 <area shape="rect" id="Node000030" href="$class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="2964,615,3120,642"/>
 <area shape="poly" id="edge42_Node000001_Node000030" title=" " alt="" coords="3200,577,3087,617,3086,611,3195,578"/>
-<area shape="rect" id="Node000036" href="$class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown." alt="" coords="2960,729,3124,757"/>
-<area shape="poly" id="edge49_Node000001_Node000036" title=" " alt="" coords="3230,581,3061,732,3059,727,3225,583"/>
+<area shape="rect" id="Node000037" href="$class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown." alt="" coords="2960,729,3124,757"/>
+<area shape="poly" id="edge50_Node000001_Node000037" title=" " alt="" coords="3230,581,3061,732,3059,727,3225,583"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#a0057a214bb3597b3da7b56acdaaacb3a" title="Stage and commit a re&#45;encrypted entry, when the store is a Git repository QtPass manages." alt="" coords="2660,236,2897,264"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2927,250,2898,252,2897,247,2932,250"/>
 <area shape="rect" id="Node000008" href="$class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a" title="Copy password file." alt="" coords="1387,412,1525,440"/>
@@ -62,29 +62,31 @@
 <area shape="poly" id="edge24_Node000019_Node000009" title=" " alt="" coords="1091,37,992,58,990,53,1095,34"/>
 <area shape="poly" id="edge28_Node000020_Node000019" title=" " alt="" coords="1856,20,1250,22,1249,17,1861,18"/>
 <area shape="poly" id="edge30_Node000021_Node000013" title=" " alt="" coords="1671,323,1583,352,1512,361,1456,362,1330,352,1243,340,1242,335,1330,347,1457,357,1512,356,1582,347,1666,324"/>
-<area shape="rect" id="Node000025" href="$class_store_model.html#accf361cc9145306e3063f7b0be939476" title="Check if drop is possible." alt="" coords="2384,392,2609,420"/>
-<area shape="poly" id="edge34_Node000024_Node000025" title=" " alt="" coords="2991,460,2946,447,2896,434,2823,422,2747,414,2610,408,2609,402,2748,409,2823,417,2898,429,2948,442,2996,461"/>
+<area shape="rect" id="Node000025" href="$class_store_model.html#accf361cc9145306e3063f7b0be939476" title="Check if drop is possible." alt="" coords="2384,493,2609,521"/>
+<area shape="poly" id="edge34_Node000024_Node000025" title=" " alt="" coords="2958,485,2610,504,2610,499,2963,484"/>
 <area shape="rect" id="Node000026" href="$class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" title="Handle dropped MIME data." alt="" coords="2133,443,2333,470"/>
-<area shape="poly" id="edge36_Node000024_Node000026" title=" " alt="" coords="2958,482,2897,484,2778,486,2660,484,2487,477,2334,467,2334,461,2487,471,2660,479,2778,481,2897,479,2964,481"/>
+<area shape="poly" id="edge36_Node000024_Node000026" title=" " alt="" coords="2992,460,2947,446,2897,434,2819,424,2739,419,2581,420,2437,430,2322,445,2321,439,2436,425,2580,414,2739,413,2819,418,2897,429,2949,441,2998,461"/>
 <area shape="rect" id="Node000027" href="$class_store_model.html#a3f12de1e5eb2337e3165aa838655e5a5" title="Decode the drag payload from data." alt="" coords="2678,443,2879,470"/>
 <area shape="poly" id="edge37_Node000024_Node000027" title=" " alt="" coords="2958,473,2880,468,2880,463,2963,473"/>
-<area shape="poly" id="edge35_Node000025_Node000026" title=" " alt="" coords="2409,423,2309,445,2308,439,2403,424"/>
-<area shape="poly" id="edge38_Node000027_Node000025" title=" " alt="" coords="2680,439,2577,423,2578,418,2685,439"/>
+<area shape="poly" id="edge35_Node000025_Node000026" title=" " alt="" coords="2403,490,2309,474,2309,468,2409,490"/>
+<area shape="poly" id="edge38_Node000027_Node000025" title=" " alt="" coords="2685,473,2578,495,2577,490,2680,474"/>
 <area shape="poly" id="edge39_Node000027_Node000026" title=" " alt="" coords="2660,457,2334,459,2334,454,2665,456"/>
 <area shape="rect" id="Node000029" href="$class_store_tree.html#a62c3481cf1a8554c312594e67be27d95" title="fileFor() applied to the view&#39;s current index." alt="" coords="2699,544,2858,572"/>
 <area shape="poly" id="edge41_Node000028_Node000029" title=" " alt="" coords="2959,558,2859,560,2858,555,2964,558"/>
-<area shape="rect" id="Node000031" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="2434,684,2559,712"/>
-<area shape="poly" id="edge43_Node000030_Node000031" title=" " alt="" coords="2951,640,2559,693,2559,687,2946,640"/>
-<area shape="rect" id="Node000032" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="2678,596,2879,624"/>
-<area shape="poly" id="edge44_Node000030_Node000032" title=" " alt="" coords="2946,622,2880,620,2880,614,2951,622"/>
-<area shape="rect" id="Node000035" href="$class_real_pass.html#ad5e65cd9ab22595c77a2dec8e0b8cfb0" title="Refuse, and tell the user, when the store&#45;relative name of path holds a line feed or carriage return." alt="" coords="2662,697,2894,725"/>
-<area shape="poly" id="edge47_Node000030_Node000035" title=" " alt="" coords="2991,648,2898,682,2836,699,2836,694,2896,677,2986,648"/>
-<area shape="rect" id="Node000033" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="2436,620,2557,648"/>
-<area shape="poly" id="edge45_Node000032_Node000033" title=" " alt="" coords="2664,620,2557,631,2557,626,2659,620"/>
-<area shape="rect" id="Node000034" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="2435,568,2558,596"/>
-<area shape="poly" id="edge46_Node000032_Node000034" title=" " alt="" coords="2659,598,2559,591,2559,585,2665,598"/>
-<area shape="poly" id="edge48_Node000035_Node000031" title=" " alt="" coords="2644,705,2559,703,2559,698,2650,705"/>
-<area shape="poly" id="edge51_Node000036_Node000036" title=" " alt="" coords="3077,713,3066,710,3042,708,3020,710,3008,715,3005,720,3010,730,3005,728,2999,720,3004,711,3019,705,3042,703,3067,705,3083,715"/>
-<area shape="rect" id="Node000037" href="$class_store_model.html#a02542fddfeea1874e849c0bb1d94f6c1" title="Filter whether a row should be displayed." alt="" coords="2672,749,2884,777"/>
-<area shape="poly" id="edge50_Node000036_Node000037" title=" " alt="" coords="2947,750,2885,758,2885,752,2942,751"/>
+<area shape="rect" id="Node000031" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="2434,673,2559,701"/>
+<area shape="poly" id="edge43_Node000030_Node000031" title=" " alt="" coords="3004,649,2953,673,2898,690,2806,702,2713,705,2628,702,2559,697,2559,692,2629,697,2713,700,2805,696,2896,685,2951,668,2998,650"/>
+<area shape="rect" id="Node000032" href="$class_real_pass.html#a31a3137e7df0e1e3929f0c9e30e18662" title="Name src and dest for pass mv/pass cp, and work out where pass 1.7.4 then puts the source." alt="" coords="2682,596,2875,624"/>
+<area shape="poly" id="edge44_Node000030_Node000032" title=" " alt="" coords="2946,622,2875,619,2875,614,2951,622"/>
+<area shape="rect" id="Node000036" href="$class_real_pass.html#ad5e65cd9ab22595c77a2dec8e0b8cfb0" title="Refuse, and tell the user, when the store&#45;relative name of path holds a line feed or carriage return." alt="" coords="2662,648,2894,676"/>
+<area shape="poly" id="edge48_Node000030_Node000036" title=" " alt="" coords="2951,640,2893,650,2893,645,2946,640"/>
+<area shape="rect" id="Node000033" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="2396,596,2597,624"/>
+<area shape="poly" id="edge45_Node000032_Node000033" title=" " alt="" coords="2664,610,2598,612,2598,607,2669,610"/>
+<area shape="rect" id="Node000034" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="2173,621,2293,649"/>
+<area shape="poly" id="edge46_Node000033_Node000034" title=" " alt="" coords="2383,621,2294,632,2293,627,2378,621"/>
+<area shape="rect" id="Node000035" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="2172,569,2295,597"/>
+<area shape="poly" id="edge47_Node000033_Node000035" title=" " alt="" coords="2378,598,2295,592,2295,587,2383,598"/>
+<area shape="poly" id="edge49_Node000036_Node000031" title=" " alt="" coords="2650,673,2559,684,2559,679,2644,674"/>
+<area shape="poly" id="edge52_Node000037_Node000037" title=" " alt="" coords="3077,713,3066,710,3042,708,3020,710,3008,715,3005,720,3010,730,3005,728,2999,720,3004,711,3019,705,3042,703,3067,705,3083,715"/>
+<area shape="rect" id="Node000038" href="$class_store_model.html#a02542fddfeea1874e849c0bb1d94f6c1" title="Filter whether a row should be displayed." alt="" coords="2672,749,2884,777"/>
+<area shape="poly" id="edge51_Node000037_Node000038" title=" " alt="" coords="2947,750,2885,758,2885,752,2942,751"/>
 </map>

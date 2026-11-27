@@ -1,14 +1,16 @@
 <map id="RealPass::passName" name="RealPass::passName">
-<area shape="rect" id="Node000001" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="458,44,614,72"/>
-<area shape="rect" id="Node000002" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="5,5,130,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="456,41,410,35,259,24,131,21,130,16,259,19,410,30,461,40"/>
-<area shape="rect" id="Node000003" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="193,96,394,124"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="456,75,363,98,361,93,451,76"/>
-<area shape="rect" id="Node000006" href="$class_real_pass.html#ad5e65cd9ab22595c77a2dec8e0b8cfb0" title="Refuse, and tell the user, when the store&#45;relative name of path holds a line feed or carriage return." alt="" coords="178,44,410,72"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="440,58,411,60,410,55,445,57"/>
-<area shape="rect" id="Node000004" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="7,83,128,110"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="175,104,128,103,128,97,180,102"/>
-<area shape="rect" id="Node000005" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="6,135,129,162"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="192,127,130,141,129,135,197,126"/>
-<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="192,42,130,32,130,27,197,40"/>
+<area shape="rect" id="Node000001" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="706,31,863,58"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="215,5,340,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="707,27,658,22,572,16,485,14,340,18,340,13,485,9,572,11,659,17,712,27"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#a31a3137e7df0e1e3929f0c9e30e18662" title="Name src and dest for pass mv/pass cp, and work out where pass 1.7.4 then puts the source." alt="" coords="446,83,639,110"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="704,62,611,85,610,79,699,63"/>
+<area shape="rect" id="Node000007" href="$class_real_pass.html#ad5e65cd9ab22595c77a2dec8e0b8cfb0" title="Refuse, and tell the user, when the store&#45;relative name of path holds a line feed or carriage return." alt="" coords="426,31,658,58"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="688,45,659,47,659,42,694,44"/>
+<area shape="rect" id="Node000004" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="177,83,378,110"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="428,97,379,99,378,94,433,96"/>
+<area shape="rect" id="Node000005" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="7,56,127,84"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="159,82,128,80,128,75,164,81"/>
+<area shape="rect" id="Node000006" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="5,108,129,136"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="159,111,129,117,129,112,164,110"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="408,32,340,28,340,22,413,31"/>
 </map>

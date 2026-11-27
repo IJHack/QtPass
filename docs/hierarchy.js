@@ -17,6 +17,7 @@ var hierarchy =
     [ "RealPass::LinkCommit", "struct_real_pass_1_1_link_commit.html", null ],
     [ "NamedValue", "struct_named_value.html", null ],
     [ "PassBackendFactory", "class_pass_backend_factory.html", null ],
+    [ "RealPass::PassMoveTarget", "struct_real_pass_1_1_pass_move_target.html", null ],
     [ "PasswordConfiguration", "struct_password_configuration.html", null ],
     [ "PathValidator", "class_path_validator.html", null ],
     [ "ImitatePass::PendingInsert", "struct_imitate_pass_1_1_pending_insert.html", null ],

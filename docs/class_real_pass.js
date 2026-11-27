@@ -1,6 +1,7 @@
 var class_real_pass =
 [
     [ "LinkCommit", "struct_real_pass_1_1_link_commit.html", "struct_real_pass_1_1_link_commit" ],
+    [ "PassMoveTarget", "struct_real_pass_1_1_pass_move_target.html", "struct_real_pass_1_1_pass_move_target" ],
     [ "InsertRecord", "struct_real_pass_1_1_insert_record.html", "struct_real_pass_1_1_insert_record" ],
     [ "RealPass", "class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6", null ],
     [ "~RealPass", "class_real_pass.html#a629d63af70047e502c91d7a3da7c5809", null ],
@@ -23,6 +24,7 @@ var class_real_pass =
     [ "Move", "class_real_pass.html#acbbb510bd58cdceae53d34985453fc83", null ],
     [ "onDequeuing", "class_real_pass.html#a6d7163b691663d92f31ca20886f9979f", null ],
     [ "passMoveOrCopy", "class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794", null ],
+    [ "passMoveTarget", "class_real_pass.html#a31a3137e7df0e1e3929f0c9e30e18662", null ],
     [ "passName", "class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719", null ],
     [ "reencryptFailed", "class_real_pass.html#ae82ad79b6a4d5d87548cc14247d22779", null ],
     [ "reencryptFailed", "class_real_pass.html#a5e54561fccd028576a58b17731907880", null ],
