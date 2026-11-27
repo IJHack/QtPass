@@ -7687,12 +7687,18 @@ void tst_util::requireExplicitBareRepositoryFollowsGitConfigParameters() {
       QStringLiteral("'safe.bareRepository'='all' "
                      "'qtpass.note'='safe.bareRepository=explicit'");
   QCOMPARE(after(spoofed), spoofed + appended);
-  // The last entry for the key already says explicit, or none names it.
-  for (const QString &kept :
-       {QStringLiteral("'safe.bareRepository'='all' "
-                       "'safe.bareRepository'='Explicit'"),
-        QStringLiteral("'core.pager=less'"),
-        QStringLiteral("'qtpass.note'='it'\\''s safe.bareRepository'")}) {
+  // Forms a parser could miss (an implicit boolean after it, blanks around
+  // an old-style key) still get the explicit entry last.
+  for (const QString &unparsed :
+       {QStringLiteral("'safe.bareRepository'='all' 'core.filemode'="),
+        QStringLiteral("' safe.bareRepository =all'")}) {
+    QCOMPARE(after(unparsed), unparsed + appended);
+  }
+  // Already ending in the explicit entry, or not naming the key.
+  for (const QString &kept : {QStringLiteral("'safe.bareRepository=explicit'"),
+                              QStringLiteral("'safe.bareRepository'='all' "
+                                             "'safe.bareRepository=explicit'"),
+                              QStringLiteral("'core.pager=less'")}) {
     QCOMPARE(after(kept), kept);
   }
 }

@@ -126,7 +126,8 @@ public:
    * last entry for the key does not already say `explicit`: the last one
    * wins, so a weaker value from the environment is overridden. git reads
    * `GIT_CONFIG_PARAMETERS` (`git -c`) after those, so when that names the
-   * key, `explicit` is appended there too.
+   * key anywhere, a separate `'safe.bareRepository=explicit'` entry is made
+   * its last one too.
    * @param env The environment to amend.
    */
   static void requireExplicitBareRepository(QProcessEnvironment &env);
