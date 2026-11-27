@@ -7667,20 +7667,34 @@ void tst_util::requireExplicitBareRepository() {
  *        do not name it are left alone.
  */
 void tst_util::requireExplicitBareRepositoryFollowsGitConfigParameters() {
-  QProcessEnvironment env;
-  env.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"),
-             QStringLiteral("'safe.bareRepository'='all'"));
-  Util::requireExplicitBareRepository(env);
-  Util::requireExplicitBareRepository(env); // repeated: nothing piles up
-  QCOMPARE(env.value(QStringLiteral("GIT_CONFIG_PARAMETERS")),
-           QStringLiteral("'safe.bareRepository'='all' "
-                          "'safe.bareRepository=explicit'"));
-  QProcessEnvironment other;
-  other.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"),
-               QStringLiteral("'core.pager=less'"));
-  Util::requireExplicitBareRepository(other);
-  QCOMPARE(other.value(QStringLiteral("GIT_CONFIG_PARAMETERS")),
-           QStringLiteral("'core.pager=less'"));
+  const auto after = [](const QString &parameters) {
+    QProcessEnvironment env;
+    env.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"), parameters);
+    Util::requireExplicitBareRepository(env);
+    Util::requireExplicitBareRepository(env); // repeated: nothing piles up
+    return env.value(QStringLiteral("GIT_CONFIG_PARAMETERS"));
+  };
+  const QString appended = QStringLiteral(" 'safe.bareRepository=explicit'");
+  // Both quoting forms git writes, and the key in another case.
+  for (const QString &weaker :
+       {QStringLiteral("'safe.bareRepository'='all'"),
+        QStringLiteral("'safe.bareRepository=all'"),
+        QStringLiteral("'SAFE.BAREREPOSITORY'='all' 'core.pager'='less'")}) {
+    QCOMPARE(after(weaker), weaker + appended);
+  }
+  // A value that merely ends like the explicit entry is another key's.
+  const QString spoofed =
+      QStringLiteral("'safe.bareRepository'='all' "
+                     "'qtpass.note'='safe.bareRepository=explicit'");
+  QCOMPARE(after(spoofed), spoofed + appended);
+  // The last entry for the key already says explicit, or none names it.
+  for (const QString &kept :
+       {QStringLiteral("'safe.bareRepository'='all' "
+                       "'safe.bareRepository'='Explicit'"),
+        QStringLiteral("'core.pager=less'"),
+        QStringLiteral("'qtpass.note'='it'\\''s safe.bareRepository'")}) {
+    QCOMPARE(after(kept), kept);
+  }
 }
 
 QTEST_MAIN(tst_util)

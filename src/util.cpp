@@ -428,6 +428,78 @@ auto isSafeDirectory(const QString &root, const QString &git) -> bool {
 } // namespace
 #endif
 
+namespace {
+/**
+ * @brief The value of the last entry for @p key in a GIT_CONFIG_PARAMETERS
+ * string, parsed as git parses it.
+ *
+ * Entries are separated by blanks, each `'key=value'` or `'key'='value'`,
+ * quoted as git's sq_quote() quotes (a quote inside written as `'\''`). Keys
+ * compare case-insensitively.
+ * @param parameters The variable's value.
+ * @param key The key to look for.
+ * @return The last value for @p key; nothing when no entry names it or the
+ *         string does not parse (git then refuses to start).
+ */
+auto lastGitConfigParameter(const QString &parameters, const QString &key)
+    -> std::optional<QString> {
+  qsizetype i = 0;
+  const qsizetype n = parameters.size();
+  // One quoted word from parameters[i], which must be a quote.
+  const auto quoted = [&](QString *word) {
+    if (i >= n || parameters.at(i) != QLatin1Char('\'')) {
+      return false;
+    }
+    ++i;
+    while (i < n) {
+      const QChar c = parameters.at(i++);
+      if (c != QLatin1Char('\'')) {
+        word->append(c);
+        continue;
+      }
+      // Closed. git writes a quote inside as '\'' (close, \', reopen).
+      if (i + 2 < n && parameters.at(i) == QLatin1Char('\\') &&
+          parameters.at(i + 2) == QLatin1Char('\'')) {
+        word->append(parameters.at(i + 1));
+        i += 3;
+        continue;
+      }
+      return true;
+    }
+    return false;
+  };
+  std::optional<QString> found;
+  while (true) {
+    while (i < n && parameters.at(i).isSpace()) {
+      ++i;
+    }
+    if (i >= n) {
+      return found;
+    }
+    QString first;
+    if (!quoted(&first)) {
+      return std::nullopt;
+    }
+    QString entryKey;
+    QString entryValue;
+    if (i < n && parameters.at(i) == QLatin1Char('=')) {
+      ++i;
+      entryKey = first;
+      if (!quoted(&entryValue)) {
+        return std::nullopt;
+      }
+    } else {
+      const qsizetype eq = first.indexOf(QLatin1Char('='));
+      entryKey = eq < 0 ? first : first.left(eq);
+      entryValue = eq < 0 ? QString() : first.mid(eq + 1);
+    }
+    if (entryKey.compare(key, Qt::CaseInsensitive) == 0) {
+      found = entryValue;
+    }
+  }
+}
+} // namespace
+
 void Util::requireExplicitBareRepository(QProcessEnvironment &env) {
   const QString key = QStringLiteral("safe.bareRepository");
   const QString value = QStringLiteral("explicit");
@@ -448,17 +520,15 @@ void Util::requireExplicitBareRepository(QProcessEnvironment &env) {
     }
   }
   // git reads GIT_CONFIG_PARAMETERS (`git -c`) after the numbered entries,
-  // so one naming the key there wins over them: follow it with explicit.
+  // so when one there names the key, the last such must say explicit too.
   const QString parameters = env.value(QStringLiteral("GIT_CONFIG_PARAMETERS"));
-  const QString explicitParameter =
-      QStringLiteral("'safe.bareRepository=explicit'");
-  if (parameters.contains(QLatin1String("barerepository"),
-                          Qt::CaseInsensitive) &&
-      !parameters.endsWith(explicitParameter)) {
+  const std::optional<QString> lastParameter =
+      lastGitConfigParameter(parameters, key);
+  if (lastParameter &&
+      lastParameter->compare(value, Qt::CaseInsensitive) != 0) {
     env.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"),
-               parameters + QLatin1Char(' ') + explicitParameter);
+               parameters + QStringLiteral(" 'safe.bareRepository=explicit'"));
   }
-
   if (last.compare(value, Qt::CaseInsensitive) == 0) {
     return;
   }
