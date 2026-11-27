@@ -49,6 +49,7 @@ private Q_SLOTS:
   void filterAcceptsRowHidden();
   void filterExcludesGitDirectory();
   void filterAcceptsRowVisible();
+  void filterAcceptsAColonName();
   void setModelAndStore();
   void showThisWithNullFs();
   void showThisAsksNoParent();
@@ -188,6 +189,29 @@ void tst_storemodel::filterExcludesGitDirectory() {
   QModelIndex gitIndex = fsm.index(tempDir.path() + "/.git");
   bool result = sm.filterAcceptsRow(gitIndex.row(), gitIndex.parent());
   QVERIFY2(!result, ".git directory should be hidden");
+}
+
+/**
+ * @brief An entry whose name starts with ':' is part of the store and shown,
+ *        not taken for a Qt resource path outside it (follow-up to scan
+ *        finding ANT-2026-70DZK0Q9).
+ */
+void tst_storemodel::filterAcceptsAColonName() {
+  QTemporaryDir tempDir;
+  QFile passwordFile(tempDir.path() + "/:colon.gpg");
+  QVERIFY(passwordFile.open(QFile::WriteOnly));
+  passwordFile.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  sm.setFilterRegularExpression("colon");
+  QModelIndex index = fsm.index(tempDir.path() + "/:colon.gpg");
+  QVERIFY(index.isValid());
+  QVERIFY(sm.filterAcceptsRow(index.row(), index.parent()));
 }
 
 void tst_storemodel::filterAcceptsRowVisible() {

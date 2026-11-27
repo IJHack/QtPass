@@ -174,7 +174,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   into its working directory, and could move such an entry out of the store.
   Someone who can push to a shared store could use it to get edits encrypted
   to an old signed list. Every place that puts a name into the store now
-  joins it the same way (scan finding ANT-2026-70DZK0Q9).
+  joins it the same way, and such entries are no longer hidden from the
+  tree and the search or refused as unreadable (scan finding
+  ANT-2026-70DZK0Q9).
 - A save whose gpg could not even be started is reported as failed again,
   with Git on. The commit queued behind it ran before the start failure was
   delivered, so the save was judged by the commit alone: with a pushed

@@ -101,6 +101,10 @@ auto Util::expandTilde(const QString &path) -> QString {
   return path;
 }
 
+auto Util::isAbsoluteFsPath(const QString &path) -> bool {
+  return QDir::isAbsolutePath(path) && !path.startsWith(QLatin1Char(':'));
+}
+
 auto Util::joinPath(const QString &dir, const QString &name) -> QString {
   if (name.startsWith(QLatin1Char(':'))) {
     return dir.endsWith(QLatin1Char('/')) ? dir + name
@@ -1403,7 +1407,7 @@ auto Util::readRegularFileInStore(const QString &store, const QString &path,
     -> std::optional<QByteArray> {
   const auto under = [&path](const QString &root) {
     const QString relative = QDir(root).relativeFilePath(QDir::cleanPath(path));
-    return !root.isEmpty() && !QDir::isAbsolutePath(relative) &&
+    return !root.isEmpty() && !isAbsoluteFsPath(relative) &&
            relative != QStringLiteral("..") &&
            !relative.startsWith(QStringLiteral("../"));
   };
@@ -1424,7 +1428,7 @@ auto Util::readRegularFileUnder(const QString &root, const QString &path,
   const QString relative =
       QDir(cleanRoot).relativeFilePath(QDir::cleanPath(path));
   const QStringList parts = relative.split(QLatin1Char('/'));
-  if (relative.isEmpty() || QDir::isAbsolutePath(relative) ||
+  if (relative.isEmpty() || isAbsoluteFsPath(relative) ||
       parts.contains(QStringLiteral("..")) ||
       parts.contains(QStringLiteral(".")) || parts.contains(QString())) {
     return std::nullopt;

@@ -218,6 +218,7 @@ private Q_SLOTS:
   void findPasswordStoreHonoursPasswordStoreDir();
   void normalizeFolderPath();
   void joinPathTakesAColonNameForAName();
+  void readsAColonNamedFileInTheStore();
   void requireExplicitBareRepository_data();
   void requireExplicitBareRepository();
   void requireExplicitBareRepositoryFollowsGitConfigParameters();
@@ -7718,6 +7719,28 @@ void tst_util::joinPathTakesAColonNameForAName() {
            QStringLiteral("/store/team/db"));
   QCOMPARE(Util::joinPath(QStringLiteral("/store"), QStringLiteral("/abs/x")),
            QStringLiteral("/abs/x"));
+}
+
+/**
+ * @brief A file under a folder whose name starts with ':' is in the store
+ *        and is read, not refused as a resource path (follow-up to scan
+ *        finding ANT-2026-70DZK0Q9).
+ */
+void tst_util::readsAColonNamedFileInTheStore() {
+  QVERIFY(!Util::isAbsoluteFsPath(QStringLiteral(":team/.gpg-id")));
+  QVERIFY(Util::isAbsoluteFsPath(QDir::rootPath()));
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  // Absolute: QDir would take ":team" alone for a resource path.
+  QVERIFY(QDir().mkpath(store.path() + QStringLiteral("/:team")));
+  const QString list = store.path() + QStringLiteral("/:team/.gpg-id");
+  {
+    QFile f(list);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("ALICE\n") > 0);
+  }
+  QCOMPARE(Util::readRegularFileInStore(store.path(), list, 1024),
+           std::optional<QByteArray>(QByteArrayLiteral("ALICE\n")));
 }
 
 QTEST_MAIN(tst_util)

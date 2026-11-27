@@ -227,6 +227,14 @@ public:
    */
   static auto joinPath(const QString &dir, const QString &name) -> QString;
   /**
+   * @brief Whether @p path is absolute to the file system: as
+   * QDir::isAbsolutePath(), except that a name starting with ':' (which Qt
+   * takes for a resource path) is a relative name, as joinPath() joins it.
+   * @param path A path or a name.
+   * @return true for an absolute file system path.
+   */
+  static auto isAbsoluteFsPath(const QString &path) -> bool;
+  /**
    * @brief Ensure a folder path always ends with '/'.
    *
    * Qt normalises paths to forward slashes internally, so this function
