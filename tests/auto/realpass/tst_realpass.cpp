@@ -445,10 +445,11 @@ void tst_realpass::insertWhoseCommitFailsSaysWhetherTheEntryWasWritten() {
 }
 
 /**
- * @brief An insert whose pass cannot start reports that later (the error is
- *        posted), and the next queued insert starts at once. If that one
- *        has written its entry by the time the error is handled, the failed
- *        insert is still judged by its own entry, not credited with it.
+ * @brief An insert whose pass cannot start reports that (the error is posted)
+ *        before the next queued insert starts, as every other failure is:
+ *        when the error is handled the next entry is not written yet, so the
+ *        failed insert cannot be credited with it, and the next insert then
+ *        runs and reports on its own.
  */
 void tst_realpass::insertThatCannotStartIsNotCreditedWithTheNextWrite() {
   const QString script =
@@ -481,23 +482,25 @@ void tst_realpass::insertThatCannotStartIsNotCreditedWithTheNextWrite() {
   pass.Insert(QStringLiteral("folder/never"), QStringLiteral("v"), false);
   QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
                                             QFile::ExeOwner));
+  bool secondWrittenAtError = true;
+  connect(&pass, &Pass::insertFailed, &pass,
+          [&] { secondWrittenAtError = QFile::exists(second); });
   pass.Insert(QStringLiteral("folder/later"), QStringLiteral("v"), false);
-  // The second pass runs on its own; give it time to write before the
-  // event loop delivers the first insert's error.
-  QElapsedTimer timer;
-  timer.start();
-  while (!QFile::exists(second) && timer.elapsed() < 5000) {
-    QThread::msleep(10);
-  }
-  QThread::msleep(50);
-  QVERIFY(QFile::exists(second));
+  // Held off without the event loop: the second must not start before the
+  // first insert's error is out.
+  QThread::msleep(300);
+  QVERIFY2(!QFile::exists(second),
+           "nothing starts while a failed start's error is on its way");
 
   QTRY_COMPARE_WITH_TIMEOUT(failed.count(), 1, 5000);
   QVERIFY2(!failed.first().at(1).toBool(),
            "the insert that never started wrote nothing");
+  QVERIFY2(!secondWrittenAtError,
+           "the error was handled before the next insert ran");
   QCOMPARE(critical.count(), 0);
   QVERIFY(!QFile::exists(first));
   QTRY_COMPARE_WITH_TIMEOUT(inserted.count(), 1, 5000);
+  QVERIFY(QFile::exists(second));
 }
 
 /**

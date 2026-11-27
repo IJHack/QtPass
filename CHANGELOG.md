@@ -167,6 +167,15 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- A save whose gpg could not even be started is reported as failed again,
+  with Git on. The commit queued behind it ran before the start failure was
+  delivered, so the save was judged by the commit alone: with a pushed
+  `.gitattributes` making that commit find a change, QtPass closed the edit
+  dialog as saved and recorded an "Edit for" commit while the entry kept its
+  old password. Someone who can push to a shared store could arrange both (a
+  `.gpg-id` line too long to pass to gpg does it on Linux). A command that
+  cannot start is now reported before the next one starts, as every other
+  failure already was (scan finding ANT-2026-6ZWVCC4I).
 - Copying a folder with the `pass` backend is refused when the folder holds
   a symbolic link. pass copies with `cp -r`, which on macOS and the BSDs
   follows a link inside the folder: someone who can push to a shared store

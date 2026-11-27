@@ -59,6 +59,7 @@ private Q_SLOTS:
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
   void cancelNextFromErrorHandlerDropsQueuedItem();
+  void failedStartIsReportedBeforeTheNextStarts();
   void dequeuingNamesEveryItemThatLeavesTheQueue();
   void drainedComesOnceTheLastItemIsDone();
   void dequeuingSlotMayCallBackIntoTheExecutor();
@@ -820,6 +821,44 @@ void tst_executor::cancelNextFromErrorHandlerDropsQueuedItem() {
   QTest::qWait(200);
   QCOMPARE(finished.count(), 2); // item 2 never ran
   QCOMPARE(errors.count(), 0);
+}
+
+/**
+ * @brief A command that cannot start is reported before the next one starts,
+ *        as every other failure is: a caller dropping the rest of its work
+ *        on that error (ImitatePass's insert, then commit) still finds it
+ *        queued. Queued right behind a failed start, in the same call chain
+ *        as an edit queues its commit, the second item is cancelled from the
+ *        error handler and never runs; one queued later still does (scan
+ *        finding ANT-2026-6ZWVCC4I).
+ */
+void tst_executor::failedStartIsReportedBeforeTheNextStarts() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  for (const QString &app :
+       {QStringLiteral("/nonexistent/definitely-not-a-real-binary"),
+        QString()}) {
+    Executor exec;
+    QSignalSpy finished(&exec, &Executor::finished);
+    int cancelled = -2;
+    connect(&exec, &Executor::error, &exec, [&exec, &cancelled](int id) {
+      if (id == 1) {
+        cancelled = exec.cancelNext();
+      }
+    });
+    exec.execute(1, app, {QStringLiteral("-e")}, QStringLiteral("secret\n"),
+                 false, true);
+    exec.execute(2, sh, {QStringLiteral("-c"), QStringLiteral("echo commit")},
+                 true, false);
+    QTRY_COMPARE_WITH_TIMEOUT(cancelled, 2, 5000);
+    exec.execute(3, sh, {QStringLiteral("-c"), QStringLiteral("echo after")},
+                 true, false);
+    QTRY_COMPARE_WITH_TIMEOUT(finished.count(), 1, 5000);
+    QCOMPARE(finished.first().at(0).toInt(), 3);
+    QTest::qWait(200);
+    QCOMPARE(finished.count(), 1); // item 2 never ran
+  }
 }
 
 /**
