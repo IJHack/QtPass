@@ -108,7 +108,10 @@ void RealPass::Show(QString file) {
     return;
   }
   queueShow(file);
-  executePass(PASS_SHOW, {"show", file}, "", true);
+  // "--" ends the options so an entry named "--" or "-c" (which a co-writer can
+  // push) cannot be read as a pass option and decrypt a file outside the store
+  // or run a clip; it is always a path.
+  executePass(PASS_SHOW, {"show", "--", file}, "", true);
 }
 
 auto RealPass::listSigner() -> GpgIdSigner {
@@ -997,7 +1000,7 @@ void RealPass::Remove(QString file, bool isDir) {
     emit finishedRemove(QString(), QString());
     return;
   }
-  executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
+  executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), "--", file});
 }
 
 void RealPass::finished(int id, int exitCode, const QString &out,
@@ -1367,6 +1370,8 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   if (force) {
     args << "-f";
   }
+  // A source or destination that begins with "-" is a path, not an option.
+  args << "--";
   args << target.passSrc;
   args << target.passDest;
   m_reencryptScopes.enqueue(target.newPath);

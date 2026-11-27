@@ -191,8 +191,9 @@ void tst_realpass::gitCommands() {
 void tst_realpass::showAndGrep() {
   QScopedPointer<RealPass> pass(makePass());
   pass->Show(QStringLiteral("folder/entry"));
-  QCOMPARE(waitForCall().args, (QStringList{QStringLiteral("show"),
-                                            QStringLiteral("folder/entry")}));
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("show"), QStringLiteral("--"),
+                        QStringLiteral("folder/entry")}));
   QFile::remove(m_log);
   // Search does not go through pass any more (its `find -L` follows links);
   // with no GPG executable it answers empty instead.
@@ -1044,12 +1045,12 @@ void tst_realpass::removeFileAndFolder() {
   pass->Remove(QStringLiteral("folder/entry"), false);
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("rm"), QStringLiteral("-f"),
-                        QStringLiteral("folder/entry")}));
+                        QStringLiteral("--"), QStringLiteral("folder/entry")}));
   QFile::remove(m_log);
   pass->Remove(QStringLiteral("folder"), true);
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("rm"), QStringLiteral("-rf"),
-                        QStringLiteral("folder")}));
+                        QStringLiteral("--"), QStringLiteral("folder")}));
 }
 
 /**
@@ -1260,13 +1261,14 @@ void tst_realpass::moveAndCopyUseStoreRelativeNamesWithoutGpg() {
              m_store + QStringLiteral("b.gpg"), true);
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
-                        QStringLiteral("folder/a"), QStringLiteral("b")}));
+                        QStringLiteral("--"), QStringLiteral("folder/a"),
+                        QStringLiteral("b")}));
   QFile::remove(m_log);
   pass->Copy(m_store + QStringLiteral("folder"),
              m_store + QStringLiteral("copy"), false);
   QCOMPARE(waitForCall().args,
-           (QStringList{QStringLiteral("cp"), QStringLiteral("folder/"),
-                        QStringLiteral("copy")}));
+           (QStringList{QStringLiteral("cp"), QStringLiteral("--"),
+                        QStringLiteral("folder/"), QStringLiteral("copy")}));
 }
 
 void tst_realpass::reencryptFailedJudgesTheStatusLines_data() {
@@ -1718,10 +1720,10 @@ void tst_realpass::moveBetweenExistingFilesNeedsForce() {
            "moving onto an existing file without force must not call pass");
   pass->Move(m_store + QStringLiteral("folder/x.gpg"),
              m_store + QStringLiteral("folder/y.gpg"), true);
-  QCOMPARE(
-      waitForCall().args,
-      (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
-                   QStringLiteral("folder/x"), QStringLiteral("folder/y")}));
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
+                        QStringLiteral("--"), QStringLiteral("folder/x"),
+                        QStringLiteral("folder/y")}));
 }
 
 /**
@@ -1807,7 +1809,8 @@ void tst_realpass::moveAndCopyJudgeWherePassWrites() {
   pass->Move(base + QStringLiteral("x.gpg"), base + QStringLiteral("alias"),
              false);
   QCOMPARE(waitForCall().args,
-           (QStringList{QStringLiteral("mv"), QStringLiteral("resolve/x"),
+           (QStringList{QStringLiteral("mv"), QStringLiteral("--"),
+                        QStringLiteral("resolve/x"),
                         QStringLiteral("resolve/alias")}));
   QFile::remove(m_log);
 
@@ -1816,7 +1819,8 @@ void tst_realpass::moveAndCopyJudgeWherePassWrites() {
   pass->Copy(base + QStringLiteral("team"), base + QStringLiteral("copy"),
              false);
   QCOMPARE(waitForCall().args,
-           (QStringList{QStringLiteral("cp"), QStringLiteral("resolve/team/"),
+           (QStringList{QStringLiteral("cp"), QStringLiteral("--"),
+                        QStringLiteral("resolve/team/"),
                         QStringLiteral("resolve/copy")}));
   QCOMPARE(criticalSpy.count(), 6);
 #endif
@@ -2219,7 +2223,7 @@ void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
   pass->Remove(QStringLiteral("Bank"), false);
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("rm"), QStringLiteral("-f"),
-                        QStringLiteral("Bank")}));
+                        QStringLiteral("--"), QStringLiteral("Bank")}));
   QCOMPARE(criticalSpy.count(), 11);
 }
 

@@ -440,6 +440,7 @@ private Q_SLOTS:
   void realPass_fileManagerFilesGetAHint();
   void realPass_refusesStagedAndUnignoredFiles();
   void realPass_checksTheRepositoryPassCommitsIn();
+  void realPass_dashNameDoesNotEscapeStore();
   void realPass_pushedBareRepoDoesNotRunCommand();
 
   // pass-otp (skipped if extension not installed)
@@ -3834,6 +3835,72 @@ void tst_integration::imitatePass_gitInitPinsAttributes() {
            "git init should leave the pin in info/attributes");
   QVERIFY2(QString::fromUtf8(attr.readAll()).contains("*.gpg -text"),
            "info/attributes should pin *.gpg");
+}
+
+void tst_integration::realPass_dashNameDoesNotEscapeStore() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics; Windows junction handling differs");
+#else
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+
+  // .gpg-id with the test recipient; no `pass init` run (not needed to show).
+  {
+    QFile gpgId(storeDir.path() + "/.gpg-id");
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(gpgId.write((m_keyFingerprint + "\n").toUtf8()) > 0);
+  }
+
+  // Encrypt two files to the test key: a decoy inside the store named "--.gpg",
+  // and a secret outside the store that a ".gpg" symlink will point at.
+  auto encryptTo = [&](const QString &plain, const QString &outFile) -> bool {
+    QProcess gpg;
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    env.insert("GNUPGHOME", m_gnupgHome.path());
+    gpg.setProcessEnvironment(env);
+    gpg.start(m_gpgExe, {"--batch", "--yes", "--trust-model", "always", "-e",
+                         "-r", m_keyFingerprint, "-o", outFile, "--"});
+    if (!gpg.waitForStarted(5000))
+      return false;
+    gpg.write(plain.toUtf8());
+    gpg.closeWriteChannel();
+    return gpg.waitForFinished(15000) && gpg.exitCode() == 0;
+  };
+
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outsideSecret = outsideDir.path() + "/bank.gpg";
+  QVERIFY2(encryptTo("BANK-SECRET\n", outsideSecret), "encrypt outside secret");
+  QVERIFY2(encryptTo("DECOY\n", storeDir.path() + "/--.gpg"), "encrypt decoy");
+  QVERIFY2(QFile::link(outsideSecret, storeDir.path() + "/.gpg"),
+           "failed to create the .gpg symlink for the test");
+
+  RealPass pass;
+  setupPass(pass);
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("--"));
+  QVERIFY2(waitForSignal(showSpy, 20000), "RealPass finishedShow not emitted");
+  const QString shown = showSpy[0][0].toString();
+  QVERIFY2(!shown.contains("BANK-SECRET"),
+           "`pass show --` must not decrypt the file the .gpg link points to");
+  QVERIFY2(shown.contains("DECOY"),
+           "the name \"--\" should resolve to the store's own --.gpg entry");
+
+  QtPassSettings::setUsePass(false);
+#endif
 }
 
 QTEST_MAIN(tst_integration)
