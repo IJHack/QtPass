@@ -1005,6 +1005,13 @@ void PasswordDialog::setPass(const QString &output, const QString &file,
               nullptr, n));
     return;
   }
+  // Loaded already: a later decrypt of this entry (Edit run again while the
+  // first was slow, a second `qtpass` launch) must not put the stored text
+  // back over what the user typed, which OK would then save as if it were
+  // the change. A refusal above still takes the load back.
+  if (m_contentLoaded) {
+    return;
+  }
   setPassword(output);
   m_contentLoaded = true;
   // Drop the "Decrypting…" note so it cannot be mistaken for a warning.

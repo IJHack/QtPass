@@ -190,6 +190,8 @@ public slots:
    * longer than SecretLineEdit::kMaxLength, and entries whose text does not
    * encode back to their bytes (@p lossless false), are not loaded at all; the
    * status label says so and the editor stays locked.
+   * Once the entry is loaded, a later decrypt of it does not fill the form
+   * again: it would put the stored text back over what the user typed.
    * @param output Decrypted content of the entry.
    * @param file The entry the output belongs to; output for any other entry
    *        than the one being edited is ignored. Empty means unspecified.
