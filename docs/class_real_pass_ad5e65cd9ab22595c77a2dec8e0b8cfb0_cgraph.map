@@ -1,0 +1,9 @@
+<map id="RealPass::refuseLineBreakName" name="RealPass::refuseLineBreakName">
+<area shape="rect" id="Node000001" title="Refuse, and tell the user, when the store&#45;relative name of path holds a line feed or carriage return." alt="" coords="5,32,238,60"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="313,5,415,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,30,300,26,295,27,238,36"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="286,57,442,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,55,273,61,267,61,238,61"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="490,57,629,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="443,69,477,71,472,71,443,74"/>
+</map>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 12:10:26</td>
+            <td class="headerValue">2026-11-27 13:10:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -256,7 +256,7 @@
 <span id="L183"><span class="lineNum">     183</span>              :    * run by its status records (RealPass counting END_ENCRYPTION against the</span>
 <span id="L184"><span class="lineNum">     184</span>              :    * entries pass re-encrypted) reads statusCounts(), not the capped text.</span>
 <span id="L185"><span class="lineNum">     185</span>              :    */</span>
-<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">         483 :   class CappedOutput {</span></span>
+<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">         484 :   class CappedOutput {</span></span>
 <span id="L187"><span class="lineNum">     187</span>              :   public:</span>
 <span id="L188"><span class="lineNum">     188</span>              :     /**</span>
 <span id="L189"><span class="lineNum">     189</span>              :      * @brief Add what the process wrote next.</span>
@@ -653,7 +653,7 @@
 <span id="L580"><span class="lineNum">     580</span>              :    * @brief Whether no command is running and nothing is queued.</span>
 <span id="L581"><span class="lineNum">     581</span>              :    * @return true when the executor has nothing in flight.</span>
 <span id="L582"><span class="lineNum">     582</span>              :    */</span>
-<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">        1015 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">        1017 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
 <span id="L584"><span class="lineNum">     584</span>              :   /**</span>
 <span id="L585"><span class="lineNum">     585</span>              :    * @brief Whether the stdout of the item whose finished() or error() is</span>
 <span id="L586"><span class="lineNum">     586</span>              :    * being emitted encodes back (toUtf8(), as every writer here does) to</span>
@@ -666,7 +666,7 @@
 <span id="L593"><span class="lineNum">     593</span>              :    *         mark.</span>
 <span id="L594"><span class="lineNum">     594</span>              :    */</span>
 <span id="L595"><span class="lineNum">     595</span>              :   [[nodiscard]] auto lastOutputLossless() const -&gt; bool {</span>
-<span id="L596"><span class="lineNum">     596</span> <span class="tlaGNC">          52 :     return m_outputLossless;</span></span>
+<span id="L596"><span class="lineNum">     596</span> <span class="tlaGNC">          51 :     return m_outputLossless;</span></span>
 <span id="L597"><span class="lineNum">     597</span>              :   }</span>
 <span id="L598"><span class="lineNum">     598</span>              : </span>
 <span id="L599"><span class="lineNum">     599</span>              :   /**</span>

@@ -1,0 +1,5 @@
+<map id="RealPass::refuseLineBreakName" name="RealPass::refuseLineBreakName">
+<area shape="rect" id="Node000001" title="Refuse, and tell the user, when the store&#45;relative name of path holds a line feed or carriage return." alt="" coords="178,5,410,33"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="5,5,130,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,19,130,22,130,17,165,19"/>
+</map>
