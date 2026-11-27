@@ -6,9 +6,14 @@
 #include "util.h"
 
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
 #include <QRegularExpression>
 #include <utility>
+
+#ifndef Q_OS_WIN
+#include <sys/stat.h>
+#endif
 
 using Enums::GIT_INIT;
 using Enums::GIT_PULL;
@@ -190,6 +195,30 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
   passMoveOrCopy(PASS_COPY, QStringLiteral("cp"), src, dest, force);
 }
 
+namespace {
+/**
+ * @brief Whether @p a and @p b name the same file or folder, as a respelling
+ * in case only does on a case-insensitive file system.
+ * @param a One path.
+ * @param b The other.
+ * @return true when both exist and are one object.
+ */
+auto sameObject(const QString &a, const QString &b) -> bool {
+#ifdef Q_OS_WIN
+  const QString canonical = QFileInfo(a).canonicalFilePath();
+  return !canonical.isEmpty() &&
+         canonical.compare(QFileInfo(b).canonicalFilePath(),
+                           Qt::CaseInsensitive) == 0;
+#else
+  struct stat first{};
+  struct stat second{};
+  return ::stat(QFile::encodeName(a).constData(), &first) == 0 &&
+         ::stat(QFile::encodeName(b).constData(), &second) == 0 &&
+         first.st_dev == second.st_dev && first.st_ino == second.st_ino;
+#endif
+}
+} // namespace
+
 /**
  * @brief RealPass::passMoveOrCopy shared `pass mv` / `pass cp` implementation.
  * @param id PASS_MOVE or PASS_COPY.
@@ -215,27 +244,42 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   QString normalizedSrc = QDir::cleanPath(QDir(src).absolutePath());
   QString normalizedDest = QDir::cleanPath(QDir(dest).absolutePath());
 
-  // Refuse a move or copy whose source or destination resolves, after any
-  // symbolic links are followed, to a path outside the store. QtPass checks the
-  // name as given, but pass resolves what is under it; a co-writer can push a
-  // link that pass would follow, moving ciphertext out of the store or over a
-  // file outside it. Guard the resolved paths before handing them to pass.
-  // pass writes an entry to <dest>.gpg, and anything into <dest>/ when that
-  // is a folder; cp follows a link it finds there and writes over the file
-  // it points to. Check that name too.
-  QString written = normalizedDest;
+  // pass resolves the names by its own rules, so judge what it does with
+  // them, not dest as spelled here. It takes the entry <name>.gpg over a
+  // folder of the same name unless the name ends in a slash; it appends
+  // .gpg to the destination unless a folder is moved or the destination is
+  // a folder (a link to one too: -d follows it); and mv and cp put the
+  // source inside such a folder.
   const bool srcIsDir = QFileInfo(normalizedSrc).isDir();
-  if (QFileInfo(normalizedDest).isDir()) {
-    QString name = QFileInfo(normalizedSrc).fileName();
-    if (!srcIsDir && !name.endsWith(QLatin1String(".gpg"))) {
-      name += QLatin1String(".gpg");
-    }
-    written += QLatin1Char('/') + name;
-  } else if (!srcIsDir && !written.endsWith(QLatin1String(".gpg"))) {
-    written += QLatin1String(".gpg");
+  QString passSrc = QDir(normalizedStore).relativeFilePath(normalizedSrc);
+  QString passDest = QDir(normalizedStore).relativeFilePath(normalizedDest);
+  // remove the .gpg because pass will not work
+  if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
+    passSrc.replace(Util::endsWithGpg(), "");
   }
+  if (srcIsDir) {
+    passSrc += QLatin1Char('/');
+  }
+  if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
+    passDest.replace(Util::endsWithGpg(), "");
+  }
+  QString newPath = QDir::cleanPath(QDir(normalizedStore).filePath(passDest));
+  if (!srcIsDir && !QFileInfo(newPath).isDir()) {
+    newPath += QLatin1String(".gpg");
+  }
+  const QString written =
+      QFileInfo(newPath).isDir()
+          ? QDir(newPath).filePath(QFileInfo(normalizedSrc).fileName())
+          : newPath;
+
+  // Refuse a move or copy whose source or destination resolves, after any
+  // symbolic links are followed, to a path outside the store: a co-writer
+  // can push a link that pass would follow, moving ciphertext out of the
+  // store or over a file outside it. cp follows a link at the name it
+  // writes, so that name must not be one either.
   if (!PathValidator::isPathInStore(normalizedStore, normalizedSrc) ||
       !PathValidator::isPathInStore(normalizedStore, normalizedDest) ||
+      !PathValidator::isPathInStore(normalizedStore, newPath) ||
       QFileInfo(written).isSymLink() ||
       !PathValidator::isPathInStore(normalizedStore, written)) {
     emit critical(tr("Refusing to move or copy through a link"),
@@ -248,16 +292,29 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
       emit finishedCopy(QString(), QString());
     return;
   }
-
-  QString passSrc = QDir(normalizedStore).relativeFilePath(normalizedSrc);
-  QString passDest = QDir(normalizedStore).relativeFilePath(normalizedDest);
-
-  // remove the .gpg because pass will not work
-  if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
-    passSrc.replace(Util::endsWithGpg(), "");
+  // Nor anything already where pass writes: the entry of that name in a
+  // folder an entry is dropped on or renamed into, or a folder of the moved
+  // folder's name, which cp -r merges into, writing through a link inside
+  // it. Force is consent for the entry named as dest only.
+  // What is there may be the source itself. Renamed to its own name or
+  // dropped on its own folder: nothing to do. Respelled in case only on a
+  // case-insensitive file system: pass renames it.
+  const bool isSource = sameObject(written, normalizedSrc);
+  if (isSource && written == normalizedSrc) {
+    return;
   }
-  if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
-    passDest.replace(Util::endsWithGpg(), "");
+  if (QFileInfo::exists(written) && !isSource &&
+      !(force && srcFileInfo.isFile() && written == normalizedDest)) {
+    emit critical(subcommand == QStringLiteral("mv") ? tr("Not moved")
+                                                     : tr("Not copied"),
+                  tr("%1 already exists, and pass would replace it. Nothing "
+                     "was changed; rename one of them first.")
+                      .arg(QDir::toNativeSeparators(written)));
+    if (subcommand == QStringLiteral("mv"))
+      emit finishedMove(QString(), QString());
+    else
+      emit finishedCopy(QString(), QString());
+    return;
   }
 
   QStringList args;
