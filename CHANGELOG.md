@@ -40,9 +40,9 @@
   followed it, carrying an entry out of the store or writing over the file
   it points to. QtPass now refuses such a move or copy (scan finding
   ANT-2026-3KTRAFFH).
-- A new entry saved with the native backend and Git is committed even when
-  the store's `.gitignore` matches it. Someone who can push to a shared
-  store could push a rule such as `*.gpg`; the entry then stayed an
+- An entry saved or edited with the native backend and Git is committed
+  even when the store's `.gitignore` matches it. Someone who can push to a
+  shared store could push a rule such as `*.gpg`; the entry then stayed an
   ignored, uncommitted file, which a later pull could delete. QtPass now
   stages the files it writes with `git add -f` (scan finding
   ANT-2026-L2LXMCPM).

@@ -286,13 +286,14 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   executeGpg(PASS_INSERT, args, newValue);
   if (!m_settings.useWebDav && gitReady()) {
     // Git is used when enabled - this is the standard pass workflow
-    if (!overwrite) {
-      // -f so the store's own .gitignore (a tracked file any co-writer of a
-      // shared store can push) cannot keep a new entry untracked. An ignored,
-      // uncommitted entry is expendable to Git: a later pull that needs its
-      // path deletes it, and the typed secret is then in no file and no commit.
-      executeGit(GIT_ADD, {"add", "-f", pgit(file)});
-    }
+    // -f so the store's own .gitignore (a tracked file any co-writer of a
+    // shared store can push) cannot keep an entry untracked. An ignored,
+    // uncommitted entry is expendable to Git: a later pull that needs its
+    // path deletes it, and the typed secret is then in no file and no commit.
+    // Edits are staged too: an entry left ignored and untracked by an older
+    // version would otherwise fail the commit below. On a tracked path the
+    // add is a no-op.
+    executeGit(GIT_ADD, {"add", "-f", pgit(file)});
     QString path = QDir(m_settings.passStore).relativeFilePath(file);
     path.replace(Util::endsWithGpg(), "");
     QString msg =
