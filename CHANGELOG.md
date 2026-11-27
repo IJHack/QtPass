@@ -167,6 +167,15 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- The edit dialog no longer puts the stored text back over what you typed.
+  When an entry was decrypted a second time while its edit dialog was open
+  (Edit pressed again while the first decrypt was slow, or a second
+  `qtpass` launch), the dialog filled its fields again, and OK then saved
+  the old password as if it were the change. Someone who can write to a
+  shared store could slow a decrypt down to make that likely. Once the
+  entry is loaded, a later decrypt of it no longer refills the dialog; a
+  newer version that arrives while you edit is not shown there (scan
+  finding ANT-2026-0RSLK0IT).
 - Move, copy and rename with the `pass` backend are now checked where pass
   puts the item, not under the name as QtPass spelled it. pass moves an
   entry or folder into a folder of the destination's name (a link to one

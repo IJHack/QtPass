@@ -133,6 +133,7 @@ private Q_SLOTS:
   void entryThatWouldNotSaveUnchangedIsNotLoaded();
   void entryWithAReplacementCharacterStaysEditable();
   void anotherEntrysDecryptIsIgnored();
+  void laterDecryptKeepsWhatWasTyped();
   void decryptErrorKeepsDialogOpenWithReason();
   void lateErrorAfterContentLoadIsIgnored();
   void newEntryStartsEditable();
@@ -1180,6 +1181,29 @@ void tst_passworddialog::anotherEntrysDecryptIsIgnored() {
   pass.deliverShow(QStringLiteral("mine\n"));
   QVERIFY(okButton(d)->isEnabled());
   QCOMPARE(pw->text(), QStringLiteral("mine"));
+}
+
+/**
+ * @brief A second decrypt of the same entry, once it is loaded, must not put
+ *        the stored text back over what the user typed; OK would save the old
+ *        password as if it were the change (scan finding ANT-2026-0RSLK0IT).
+ */
+void tst_passworddialog::laterDecryptKeepsWhatWasTyped() {
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  pass.deliverShow(QStringLiteral("old\n"));
+  auto *pw = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QCOMPARE(pw->text(), QStringLiteral("old"));
+
+  pw->setText(QStringLiteral("new"));
+  pass.deliverShow(QStringLiteral("old\n"));
+  QCOMPARE(pw->text(), QStringLiteral("new"));
+  QVERIFY(okButton(d)->isEnabled());
+
+  // A refusal still takes the load back: OK must not write it.
+  pass.deliverShow(QStringLiteral("old\n"), QString(), false);
+  QVERIFY(!okButton(d)->isEnabled());
 }
 
 void tst_passworddialog::decryptErrorKeepsDialogOpenWithReason() {
@@ -2267,7 +2291,7 @@ void tst_passworddialog::unknownDefaultTemplateFallsBackToTheFirst() {
 }
 
 /**
- * @brief Re-populating the dialog (a second decrypt) replaces the previous
+ * @brief Re-populating the dialog (setPassword() again) replaces the previous
  *        entry-defined rows, and switching template keeps each field once:
  *        no duplicates that would be written back twice, and no field lost.
  */
@@ -2276,7 +2300,7 @@ void tst_passworddialog::reloadAndTemplateChangeKeepEachFieldOnce() {
   PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
                    false);
   pass.deliverShow(QStringLiteral("secret\nlogin: bob\n"));
-  pass.deliverShow(QStringLiteral("secret\nlogin: alice\n"));
+  d.setPassword(QStringLiteral("secret\nlogin: alice\n"));
   QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
   const auto logins = d.findChildren<QLineEdit *>(QStringLiteral("login"));
   QCOMPARE(logins.size(), 1);
@@ -2469,7 +2493,7 @@ void tst_passworddialog::otpWarningSurvivesAReloadOnlyOnce() {
   QCOMPARE(otp->toolTip(),
            QStringLiteral("This otpauth:// link cannot be read."));
 
-  pass.deliverShow(QStringLiteral("secret\n"));
+  d.setPassword(QStringLiteral("secret\n"));
   QVERIFY(otp->text().isEmpty());
   QCOMPARE(otp->actions().size(), plainActions);
   QVERIFY(otp->toolTip().isEmpty());
@@ -2958,10 +2982,10 @@ void tst_passworddialog::destroyingAShownDialogWithAnOpenRenameEditorIsSafe() {
 }
 
 /**
- * @brief The entry is shown again (a second decrypt for the same file lands
- *        while the dialog is open): the fields hold the entry's values once
- *        more, so what the user typed before is forgotten and a loaded value
- *        that looks like base32 is not rewritten on save.
+ * @brief The fields are filled again (setPassword(); a second decrypt no
+ *        longer does it once the entry is loaded): they hold the entry's
+ *        values once more, so what the user typed before is forgotten and a
+ *        loaded value that looks like base32 is not rewritten on save.
  */
 void tst_passworddialog::reloadingTheEntryForgetsWhatTheUserTyped() {
   FakePass pass;
@@ -2980,7 +3004,7 @@ void tst_passworddialog::reloadingTheEntryForgetsWhatTheUserTyped() {
   QTRY_VERIFY(otp->hasFocus());
   QTest::keyClicks(otp, QStringLiteral("A"));
 
-  pass.deliverShow(QStringLiteral("secret\nOTP: 12345678\n"));
+  d.setPassword(QStringLiteral("secret\nOTP: 12345678\n"));
   QCOMPARE(otp->text(), QStringLiteral("12345678"));
   okButton(d)->click();
   QVERIFY2(pass.insertedContent.contains(QStringLiteral("OTP: 12345678\n")),
