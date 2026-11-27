@@ -3203,9 +3203,9 @@ void tst_integration::realPass_refusesStagedAndUnignoredFiles() {
   QVERIFY(store.exists("carried/export.csv"));
   QVERIFY(runGit(storeDir.path(), gitExe, {"ls-files"}, &tracked));
   QVERIFY2(!tracked.contains("export.csv"), qPrintable(tracked));
-  // Into a folder already there, a rule waiting deeper in it may undo the
-  // one that comes along: only the lookup there counts, and it does not
-  // see the rule coming. Refused.
+  // Into a folder that already holds one of its name: cp -r would merge
+  // the two, and a rule waiting deeper in it could undo the one that comes
+  // along. Refused before that, as anything already where pass writes is.
   QVERIFY(store.mkpath("into/carry"));
   QFile readme(store.filePath("into/carry/readme"));
   QVERIFY(readme.open(QIODevice::WriteOnly));
@@ -3215,7 +3215,9 @@ void tst_integration::realPass_refusesStagedAndUnignoredFiles() {
   QVERIFY(runGit(storeDir.path(), gitExe, {"commit", "-q", "-m", "into"}));
   pass.Copy(store.filePath("carry"), store.filePath("into"), false);
   QCOMPARE(critical.size(), 1);
-  QVERIFY2(critical.first().at(1).toString().contains("into/carry/export.csv"),
+  QVERIFY2(critical.first().at(1).toString().contains(
+               QDir::toNativeSeparators(store.filePath("into/carry")) +
+               " already exists"),
            qPrintable(critical.first().at(1).toString()));
   QVERIFY2(!store.exists("into/carry/export.csv"), "nothing was copied");
   // Into an existing folder it lands as other/team/export.csv, which no

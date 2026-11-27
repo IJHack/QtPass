@@ -1224,18 +1224,49 @@ auto RealPass::passName(const QString &path, bool stripGpg) const -> QString {
   return name;
 }
 
+auto RealPass::passMoveTarget(const QString &src, const QString &dest) const
+    -> PassMoveTarget {
+  const QFileInfo srcInfo(src);
+  const QFileInfo destInfo(dest);
+  PassMoveTarget target;
+  // A folder's name ends in a slash: without it pass takes an entry of the
+  // same name beside the folder. pass appends .gpg to an entry itself.
+  target.passSrc =
+      srcInfo.isDir()
+          ? passName(src, false) + QLatin1Char('/')
+          : passName(src, srcInfo.isFile() &&
+                              srcInfo.suffix() == QLatin1String("gpg"));
+  // An entry named with .gpg would come out as "name.gpg.gpg"; the
+  // destination usually does not exist yet.
+  target.passDest = passName(
+      dest, !destInfo.isDir() && destInfo.suffix() == QLatin1String("gpg"));
+  target.newPath = QDir::cleanPath(
+      QDir(QDir::cleanPath(m_settings.passStore)).filePath(target.passDest));
+  // `[[ -d $old_path || -d $new_path ]] || new_path="${new_path}.gpg"`;
+  // -d follows a link, as isDir() does.
+  if (!srcInfo.isDir() && !QFileInfo(target.newPath).isDir()) {
+    target.newPath += QLatin1String(".gpg");
+  }
+  target.written = QFileInfo(target.newPath).isDir()
+                       ? QDir(target.newPath).filePath(srcInfo.fileName())
+                       : target.newPath;
+  return target;
+}
+
 void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
                               const QString &src, const QString &dest,
                               const bool force) {
-  if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+  if (refuseLinkedPath(src)) {
     return;
   }
   QFileInfo srcFileInfo = QFileInfo(src);
   QFileInfo destFileInfo = QFileInfo(dest);
-  // A drop hands over the folder; pass then writes <folder>/<name>, and cp
-  // writes through a link planted under that name.
-  if (destFileInfo.isDir() &&
-      refuseLinkedPath(QDir(dest).filePath(srcFileInfo.fileName()))) {
+  // Everything below judges where pass puts the source, not dest as spelled
+  // here: pass appends .gpg, or moves into a folder (or a link to one) of
+  // the destination's name. Its folders count too: mv into a linked folder
+  // moves out of the store, and cp writes through a link at the name.
+  const PassMoveTarget target = passMoveTarget(src, dest);
+  if (refuseLinkedPath(target.written)) {
     return;
   }
 
@@ -1248,8 +1279,25 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
     return;
   }
 
-  // pass always forces when called from QtPass, so refuse file-onto-file.
+  // pass always forces when called from QtPass, so refuse file-onto-file:
+  // the user declined to overwrite it.
   if (!force && srcFileInfo.isFile() && destFileInfo.isFile()) {
+    return;
+  }
+  // Nor anything else already where pass writes: the entry of that name in
+  // a folder an entry is dropped on or renamed into, or a folder of the
+  // moved folder's name, which cp -r merges into, writing through a link
+  // inside it. Force is consent for the entry named as dest only.
+  if (QFileInfo::exists(target.written) &&
+      !(force && srcFileInfo.isFile() &&
+        target.written == QDir::cleanPath(QDir(dest).absolutePath()))) {
+    const QString why =
+        tr("%1 already exists, and pass would replace it. Nothing was "
+           "changed; rename one of them first.")
+            .arg(QDir::toNativeSeparators(target.written));
+    emit startingExecuteWrapper();
+    emit critical(id == PASS_MOVE ? tr("Not moved") : tr("Not copied"), why);
+    emit processErrorExit(1, why);
     return;
   }
 
@@ -1257,41 +1305,32 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   // folder's entries also to the lists that go along with it, and, when it
   // writes into an existing folder, everything already in that folder too
   // (reencrypt_path on the whole destination).
-  if (refuseUnverifiedList(destFileInfo.isDir()
-                               ? QDir(dest).filePath(srcFileInfo.fileName())
-                               : dest) ||
+  const bool intoFolder = QFileInfo(target.newPath).isDir();
+  if (refuseUnverifiedList(target.written) ||
       (srcFileInfo.isDir() && refuseUnverifiedTree(src, true)) ||
-      (destFileInfo.isDir() && refuseUnverifiedTree(dest, false))) {
+      (intoFolder && refuseUnverifiedTree(target.newPath, false))) {
     return;
   }
   // pass stages what it moved or copied with `git add` on the new path,
   // and a folder brings whatever lies in it along. It commits there, and a
   // move commits the removal where the original was as well.
-  const QStringList committing =
-      id == PASS_MOVE ? QStringList{src, dest} : QStringList{dest};
+  const QStringList committing = id == PASS_MOVE
+                                     ? QStringList{src, target.newPath}
+                                     : QStringList{target.newPath};
   if (refuseUnfinishedGitOperation() || refusePendingPull() ||
-      refuseUnrecordedChanges({src, dest}, committing) ||
-      refuseIgnoredThatMoves(src, dest)) {
+      refuseUnrecordedChanges({src, target.newPath}, committing) ||
+      refuseIgnoredThatMoves(src, target.newPath)) {
     return;
   }
-
-  // pass appends .gpg itself, so an entry named with it would come out as
-  // "name.gpg.gpg"; the destination usually does not exist yet.
-  const QString passSrc =
-      passName(src, srcFileInfo.isFile() &&
-                        srcFileInfo.suffix() == QLatin1String("gpg"));
-  const QString passDest =
-      passName(dest, !destFileInfo.isDir() &&
-                         destFileInfo.suffix() == QLatin1String("gpg"));
 
   QStringList args;
   args << subcommand;
   if (force) {
     args << "-f";
   }
-  args << passSrc;
-  args << passDest;
-  m_reencryptScopes.enqueue(QDir::cleanPath(QDir(dest).absolutePath()));
+  args << target.passSrc;
+  args << target.passDest;
+  m_reencryptScopes.enqueue(target.newPath);
   executePass(id, args);
 }
 
