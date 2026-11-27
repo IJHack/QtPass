@@ -50,6 +50,10 @@
 #include "../../../src/usersdialog.h"
 #include "../testsettings.h"
 
+#ifndef Q_OS_WIN
+#include <unistd.h>
+#endif
+
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
 
@@ -2333,7 +2337,8 @@ void tst_integration::realPass_copyThroughLinkRefused() {
 // into a folder (or a link to one) of the destination's name, appends .gpg
 // to a new name, takes an entry beside a folder of the same name unless the
 // name ends in a slash, and cp -r merges a folder into one of its name. Each
-// is judged where pass writes (scan finding ANT-2026-3KTRAFFH).
+// is judged where pass writes (scan finding ANT-2026-3KTRAFFH). The source
+// itself is no clash.
 void tst_integration::realPass_moveJudgedWherePassWrites() {
 #ifdef Q_OS_WIN
   QSKIP("POSIX symlink semantics; Windows junction handling differs");
@@ -2359,7 +2364,7 @@ void tst_integration::realPass_moveJudgedWherePassWrites() {
     QVERIFY(gpgId.write((m_keyFingerprint + "\n").toUtf8()) > 0);
   }
   QVERIFY(store.mkpath("team/sub"));
-  QVERIFY(store.mkpath("drop/sub"));
+  QVERIFY(store.mkpath("drop/sub/sub"));
   for (const char *name : {"team/sub/e.gpg", "team.gpg", "x.gpg", "y.gpg",
                            "keep.gpg", "drop/x.gpg"}) {
     QFile f(store.filePath(QString::fromLatin1(name)));
@@ -2378,6 +2383,7 @@ void tst_integration::realPass_moveJudgedWherePassWrites() {
   // folder a copy would merge into.
   QVERIFY(QFile::link(outsideDir.path(), store.filePath("y")));
   QVERIFY(QFile::link(outsideFile, store.filePath("drop/sub/e.gpg")));
+  QVERIFY(QFile::link(outsideFile, store.filePath("drop/sub/sub/e.gpg")));
 
   RealPass pass;
   setupPass(pass);
@@ -2385,13 +2391,19 @@ void tst_integration::realPass_moveJudgedWherePassWrites() {
   QSignalSpy copySpy(&pass, &Pass::finishedCopy);
   // A confirmed drop onto y.gpg: pass would move the entry into y/.
   pass.Move(store.filePath("x.gpg"), store.filePath("y.gpg"), true);
-  // A folder copied into one holding a folder of its name.
+  // A folder copied into one holding a folder of its name, as the drop
+  // spells it (drop/sub) and as Copy() also takes it (drop).
+  pass.Copy(store.filePath("team/sub"), store.filePath("drop/sub"), false);
   pass.Copy(store.filePath("team/sub"), store.filePath("drop"), false);
   // A drop onto a folder holding an entry of that name.
   pass.Move(store.filePath("x.gpg"), store.filePath("drop"), false);
   // A rename to "keep": pass writes keep.gpg.
   pass.Move(store.filePath("x.gpg"), store.filePath("keep"), false);
-  QCOMPARE(criticalSpy.count(), 4);
+  // The source itself: renamed to its own name, or dropped on its own
+  // folder. Nothing to do, and nothing to report.
+  pass.Move(store.filePath("x.gpg"), store.filePath("x"), false);
+  pass.Copy(store.filePath("x.gpg"), storeDir.path(), false);
+  QCOMPARE(criticalSpy.count(), 5);
   QTest::qWait(500); // nothing should be queued; give a stray pass a chance
   QVERIFY(QFile::exists(store.filePath("x.gpg")));
   QVERIFY(!QFile::exists(outsideDir.path() + "/x.gpg"));
@@ -2402,9 +2414,21 @@ void tst_integration::realPass_moveJudgedWherePassWrites() {
   copySpy.clear();
   pass.Copy(store.filePath("team"), store.filePath("copy"), false);
   QVERIFY2(waitForSignal(copySpy, 30000), "pass cp did not finish");
-  QCOMPARE(criticalSpy.count(), 4);
+  QCOMPARE(criticalSpy.count(), 5);
   QVERIFY(QFile::exists(store.filePath("copy/sub/e.gpg")));
   QVERIFY(!QFile::exists(store.filePath("copy.gpg")));
+
+  // The source respelled, as a case-only rename on a case-insensitive file
+  // system is; a hard link stands in for that here. It is no clash: pass
+  // gets it (and GNU mv, seeing one file, declines).
+  QVERIFY(::link(QFile::encodeName(store.filePath("x.gpg")).constData(),
+                 QFile::encodeName(store.filePath("X.gpg")).constData()) == 0);
+  QSignalSpy moveSpy(&pass, &Pass::finishedMove);
+  QSignalSpy exitSpy(&pass, &Pass::processErrorExit);
+  pass.Move(store.filePath("x.gpg"), store.filePath("X"), false);
+  QVERIFY(QTest::qWaitFor([&] { return moveSpy.count() + exitSpy.count() > 0; },
+                          30000));
+  QCOMPARE(criticalSpy.count(), 5);
 
   QtPassSettings::setUsePass(false);
 #endif

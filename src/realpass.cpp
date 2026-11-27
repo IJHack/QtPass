@@ -6,9 +6,14 @@
 #include "util.h"
 
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
 #include <QRegularExpression>
 #include <utility>
+
+#ifndef Q_OS_WIN
+#include <sys/stat.h>
+#endif
 
 using Enums::GIT_INIT;
 using Enums::GIT_PULL;
@@ -190,6 +195,30 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
   passMoveOrCopy(PASS_COPY, QStringLiteral("cp"), src, dest, force);
 }
 
+namespace {
+/**
+ * @brief Whether @p a and @p b name the same file or folder, as a respelling
+ * in case only does on a case-insensitive file system.
+ * @param a One path.
+ * @param b The other.
+ * @return true when both exist and are one object.
+ */
+auto sameObject(const QString &a, const QString &b) -> bool {
+#ifdef Q_OS_WIN
+  const QString canonical = QFileInfo(a).canonicalFilePath();
+  return !canonical.isEmpty() &&
+         canonical.compare(QFileInfo(b).canonicalFilePath(),
+                           Qt::CaseInsensitive) == 0;
+#else
+  struct stat first{};
+  struct stat second{};
+  return ::stat(QFile::encodeName(a).constData(), &first) == 0 &&
+         ::stat(QFile::encodeName(b).constData(), &second) == 0 &&
+         first.st_dev == second.st_dev && first.st_ino == second.st_ino;
+#endif
+}
+} // namespace
+
 /**
  * @brief RealPass::passMoveOrCopy shared `pass mv` / `pass cp` implementation.
  * @param id PASS_MOVE or PASS_COPY.
@@ -267,7 +296,14 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   // folder an entry is dropped on or renamed into, or a folder of the moved
   // folder's name, which cp -r merges into, writing through a link inside
   // it. Force is consent for the entry named as dest only.
-  if (QFileInfo::exists(written) &&
+  // What is there may be the source itself. Renamed to its own name or
+  // dropped on its own folder: nothing to do. Respelled in case only on a
+  // case-insensitive file system: pass renames it.
+  const bool isSource = sameObject(written, normalizedSrc);
+  if (isSource && written == normalizedSrc) {
+    return;
+  }
+  if (QFileInfo::exists(written) && !isSource &&
       !(force && srcFileInfo.isFile() && written == normalizedDest)) {
     emit critical(subcommand == QStringLiteral("mv") ? tr("Not moved")
                                                      : tr("Not copied"),
