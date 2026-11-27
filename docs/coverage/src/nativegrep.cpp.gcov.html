@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 13:10:08</td>
+            <td class="headerValue">2026-11-27 14:37:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
@@ -355,9 +355,9 @@
 <span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">          31 : }</span></span>
 <span id="L283"><span class="lineNum">     283</span>              : </span>
 <span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">         630 : void NativeGrep::cancel() {</span></span>
-<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         640 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         642 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
 <span id="L286"><span class="lineNum">     286</span>              :     w.cancel-&gt;store(true);</span>
-<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">          10 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
+<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">          12 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
 <span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">           9 :       w.thread-&gt;requestInterruption();</span></span>
 <span id="L289"><span class="lineNum">     289</span>              :   }</span>
 <span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">         630 : }</span></span>
