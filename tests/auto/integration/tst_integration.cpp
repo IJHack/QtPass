@@ -409,6 +409,7 @@ private Q_SLOTS:
   void imitatePass_usersDialogListsAndFilters();
   void imitatePass_multiRecipientReencryptChangesRecipients();
   void imitatePass_reencryptKeyListingWritesNoFile();
+  void imitatePass_ignoredEntryIsStillCommitted();
   void imitatePass_insertIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptPreservesPerFolderRecipients();
@@ -3568,6 +3569,79 @@ void tst_integration::imitatePass_multilineContent() {
                          "expected:\n%1\ngot:\n%2")
                      .arg(multilinePw)
                      .arg(decrypted)));
+}
+
+// A co-writer can push a .gitignore (for example "*.gpg") into a shared store.
+// Plain `git add` would then skip a new entry, leaving it untracked; a later
+// pull that needs its path deletes it. QtPass stages its own entries with
+// `git add -f`, so the ignore rule cannot keep them out of the commit.
+void tst_integration::imitatePass_ignoredEntryIsStillCommitted() {
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping Git integration test");
+
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  QVERIFY2(initGitRepo(storeDir.path(), gitExe), "git repo setup should work");
+
+  // The pushed ignore rule: every encrypted entry is ignored.
+  {
+    QFile ign(storeDir.path() + "/.gitignore");
+    QVERIFY(ign.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(ign.write("*.gpg\n") > 0);
+  }
+  {
+    QProcess add;
+    add.setWorkingDirectory(storeDir.path());
+    add.start(gitExe, {"add", ".gitignore"});
+    QVERIFY(add.waitForFinished() && add.exitCode() == 0);
+    QProcess commit;
+    commit.setWorkingDirectory(storeDir.path());
+    commit.start(gitExe, {"commit", "-m", "add gitignore"});
+    QVERIFY(commit.waitForFinished() && commit.exitCode() == 0);
+  }
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("newsite"), QStringLiteral("typed-secret\n"),
+              false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  // The entry must be a tracked file in git, despite the "*.gpg" ignore rule.
+  QProcess ls;
+  ls.setWorkingDirectory(storeDir.path());
+  ls.start(gitExe, {"ls-files", "--", "newsite.gpg"});
+  QVERIFY(ls.waitForFinished() && ls.exitCode() == 0);
+  QVERIFY2(!QString::fromUtf8(ls.readAll()).trimmed().isEmpty(),
+           "the new entry must be tracked in git, not left ignored");
+
+  // An entry already on disk but ignored and untracked (written before this
+  // fix) must be staged when it is edited too, or the commit names an
+  // untracked path and the edit stays outside git.
+  {
+    QFile old(storeDir.path() + "/oldsite.gpg");
+    QVERIFY(old.open(QIODevice::WriteOnly));
+    QVERIFY(old.write("left untracked") > 0);
+  }
+  QSignalSpy editSpy(&pass, &Pass::finishedInsert);
+  pass.Insert(QStringLiteral("oldsite"), QStringLiteral("edited-secret\n"),
+              true);
+  QVERIFY2(waitForSignal(editSpy), gpgInsertErrorMsg(insertErrorSpy));
+  QProcess lsOld;
+  lsOld.setWorkingDirectory(storeDir.path());
+  lsOld.start(gitExe, {"ls-files", "--", "oldsite.gpg"});
+  QVERIFY(lsOld.waitForFinished() && lsOld.exitCode() == 0);
+  QVERIFY2(!QString::fromUtf8(lsOld.readAll()).trimmed().isEmpty(),
+           "an edited ignored entry must be tracked in git too");
 }
 
 QTEST_MAIN(tst_integration)

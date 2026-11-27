@@ -313,9 +313,14 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   if (!gitReady()) {
     return;
   }
-  if (!overwrite) {
-    executeGit(GIT_ADD, {"add", "--", pgit(file)});
-  }
+  // -f so the store's own .gitignore (a tracked file any co-writer of a
+  // shared store can push) cannot keep an entry untracked. An ignored,
+  // uncommitted entry is expendable to Git: a later pull that needs its path
+  // deletes it, and the typed secret is then in no file and no commit. Edits
+  // are staged too: an entry left ignored and untracked by an older version
+  // would otherwise fail the commit below. On a tracked path the add is a
+  // no-op.
+  executeGit(GIT_ADD, {"add", "-f", "--", pgit(file)});
   gitCommit(file, QString(overwrite ? "Edit" : "Add") + " for " +
                       commitName(file) + " using QtPass.");
 }
@@ -574,7 +579,7 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
     paths << pgit(gpgIdSigFile);
   }
   // add stages new and modified files alike; already-clean ones are a no-op.
-  int rc = run(QStringList{"add", "--"} + paths);
+  int rc = run(QStringList{"add", "-f", "--"} + paths);
   if (rc != 0) {
     return rc;
   }
@@ -2007,7 +2012,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
   }
   if (gitReady()) {
     TransactionHelper trans(&m_transaction, PASS_COPY);
-    executeGit(GIT_COPY, {"add", "--", pgit(destFile)});
+    executeGit(GIT_COPY, {"add", "-f", "--", pgit(destFile)});
     gitCommit(destFile, QString("Copied from %1 to %2 using QtPass.")
                             .arg(commitName(from), commitName(destFile)));
   }
