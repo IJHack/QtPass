@@ -652,6 +652,7 @@ private Q_SLOTS:
   void initRemovesTheOldSignatureWhenSigningIsOff();
   void reencryptWritesThroughItsOwnTemporaryFileOnly();
   void reencryptRestoresABackupWhoseOriginalIsMissing();
+  void restoreBackupDoesNotWriteThroughADanglingLink();
   void reencryptStopsWhenBackupAndOriginalBothExist();
   void reencryptRemovesStaleTemporaries();
   void recoveryDoesNotPromoteASymlinkToAnEntry();
@@ -3872,6 +3873,39 @@ void tst_imitatepass::reencryptRestoresABackupWhoseOriginalIsMissing() {
   QVERIFY2(std::any_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
                        [](const QString &m) { return m.contains("Restored"); }),
            "the user is told what happened");
+#endif
+}
+
+/**
+ * @brief Scan finding ANT-2026-C9L3KHDU: a co-writer pushes a dangling link
+ *        under the name a leftover backup goes back to. The link passes the
+ *        exists() check, and Qt's rename followed it, creating its target
+ *        outside the store with the backup's bytes. The target must never
+ *        appear, and the backup must stay.
+ */
+void tst_imitatepass::restoreBackupDoesNotWriteThroughADanglingLink() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  QVERIFY(QFile::rename(entry, entry + ".reencrypt.bak"));
+  const QString planted = QDir(outsideDir.path()).filePath("planted");
+  QVERIFY(QFile::link(planted, entry));
+  QVERIFY(!QFileInfo::exists(planted));
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = false;
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
+  QVERIFY2(!QFileInfo::exists(planted),
+           "the backup must not be written through the link");
+  QVERIFY2(QFileInfo(entry + ".reencrypt.bak").isFile(),
+           "the backup must stay");
+  QCOMPARE(encrypts, 0);
 #endif
 }
 

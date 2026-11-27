@@ -835,7 +835,13 @@ auto ImitatePass::restoreBackup(const QString &path, QStringList &problems)
                     .arg(path, original);
     return false;
   }
-  if (!QFile::rename(path, original)) {
+  // Qt's rename opens the destination for writing when a plain rename
+  // fails, and follows a symbolic link holding the name, writing the
+  // backup's bytes wherever the link points: outside the store. A co-writer
+  // can push such a dangling link (it passes the exists() check above, since
+  // its target does not exist yet). Util::replaceFile renames at the path
+  // level and refuses the link itself, never following it.
+  if (!Util::replaceFile(path, original, false)) {
     problems << tr("%1 is missing and its backup %2 could not be renamed "
                    "back. Rename it by hand, then re-encrypt again.")
                     .arg(original, path);

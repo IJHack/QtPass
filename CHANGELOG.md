@@ -171,6 +171,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   OK. It was saved with the profile but only applied when switching
   profiles, so the `.gpg-id` signature checks stayed off until then (scan
   finding ANT-2026-9HYDKS8N).
+- Re-encryption no longer writes a leftover backup through a link. When an
+  interrupted run left `<entry>.gpg.reencrypt.bak` and no `<entry>.gpg`,
+  the next run put the backup back with Qt's rename, which follows a link
+  under that name. Someone who can push to a shared store could push a
+  dangling link there and have QtPass create a file outside the store. The
+  backup now goes back by a rename of the name itself (scan finding
+  ANT-2026-C9L3KHDU).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its

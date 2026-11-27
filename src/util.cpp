@@ -1145,8 +1145,16 @@ auto placeWithoutReplacing(const QByteArray &source, const QByteArray &target)
   // source's name points at.
   if (::linkat(AT_FDCWD, source.constData(), AT_FDCWD, target.constData(), 0) ==
       0) {
-    ::unlink(source.constData());
-    return true;
+    if (::unlink(source.constData()) == 0) {
+      return true;
+    }
+    // Both names now hold the file. Take the new one away again so the
+    // caller sees the state it started from, not a success with the source
+    // still there.
+    const int err = errno;
+    ::unlink(target.constData());
+    errno = err;
+    return false;
   }
   if (!hasNoHardLinks(errno)) {
     return false;
