@@ -34,6 +34,12 @@
 
 ### Security
 
+- Copying a folder with the `pass` backend is refused when the folder holds
+  a symbolic link. pass copies with `cp -r`, which on macOS and the BSDs
+  follows a link inside the folder: someone who can push to a shared store
+  could put a link to a file in your home folder there, and copying the
+  folder copied that file into the store. Refused on every system; remove
+  the link first. Moving the folder is unaffected.
 - Moving or copying with the `pass` backend no longer goes through a link
   to a file outside the store. Someone who can push to a shared store could
   add an entry that is such a link, or put one where the copy lands; pass

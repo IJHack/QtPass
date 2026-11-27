@@ -358,6 +358,7 @@ private Q_SLOTS:
   void realPass_misreadListRefused();
   void realPass_pushedBareRepoDoesNotRunCommand();
   void realPass_moveJudgedWherePassWrites();
+  void realPass_copyOfAFolderWithALinkRefused();
 
   // pass-otp (skipped if extension not installed)
   void imitatePass_otpGenerate();
@@ -2434,6 +2435,67 @@ void tst_integration::realPass_moveJudgedWherePassWrites() {
   QVERIFY(QTest::qWaitFor([&] { return moveSpy.count() + exitSpy.count() > 0; },
                           30000));
   QCOMPARE(criticalSpy.count(), 5);
+
+  QtPassSettings::setUsePass(false);
+#endif
+}
+
+// pass copies a folder with `cp -r`, which on BSD and macOS follows a link
+// inside it. A folder copy holding a link, in a hidden folder too, is refused
+// before pass runs; a move (a rename) still goes through.
+void tst_integration::realPass_copyOfAFolderWithALinkRefused() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics; Windows junction handling differs");
+#else
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+  const QDir store(storeDir.path());
+  {
+    QFile gpgId(store.filePath(".gpg-id"));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(gpgId.write((m_keyFingerprint + "\n").toUtf8()) > 0);
+  }
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outside = outsideDir.path() + "/id_rsa";
+  {
+    QFile f(outside);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("private key") > 0);
+  }
+  QVERIFY(store.mkpath("team"));
+  QVERIFY(store.mkpath("deep/.hidden"));
+  QVERIFY(QFile::link(outside, store.filePath("team/home.gpg")));
+  QVERIFY(QFile::link(outside, store.filePath("deep/.hidden/home.gpg")));
+
+  RealPass pass;
+  setupPass(pass);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  pass.Copy(store.filePath("team"), store.filePath("copy"), false);
+  pass.Copy(store.filePath("deep"), store.filePath("copy2"), false);
+  QCOMPARE(criticalSpy.count(), 2);
+  QTest::qWait(500); // nothing should be queued; give a stray pass a chance
+  QVERIFY(!QFileInfo::exists(store.filePath("copy")));
+  QVERIFY(!QFileInfo::exists(store.filePath("copy2")));
+
+  // A move renames: the link stays a link.
+  QSignalSpy moveSpy(&pass, &Pass::finishedMove);
+  pass.Move(store.filePath("team"), store.filePath("moved"), false);
+  QVERIFY2(waitForSignal(moveSpy, 30000), "pass mv did not finish");
+  QCOMPARE(criticalSpy.count(), 2);
+  QVERIFY(QFileInfo(store.filePath("moved/home.gpg")).isSymLink());
 
   QtPassSettings::setUsePass(false);
 #endif
