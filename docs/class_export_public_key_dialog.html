@@ -147,13 +147,15 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab793452fcca2a8c931654ce7a2789008" id="r_ab793452fcca2a8c931654ce7a2789008"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab793452fcca2a8c931654ce7a2789008">sanitizeKeyIdForFilename</a> (const QString &amp;keyId) -&gt; QString</td></tr>
 <tr class="memdesc:ab793452fcca2a8c931654ce7a2789008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce a key identifier to a filesystem-safe token.  <br /></td></tr>
+<tr class="memitem:a26c27a572b01d3196da2cd9aeb417bf6" id="r_a26c27a572b01d3196da2cd9aeb417bf6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a26c27a572b01d3196da2cd9aeb417bf6">saveArmoredKey</a> (const QString &amp;fileName, const QString &amp;text, QString *error) -&gt; bool</td></tr>
+<tr class="memdesc:a26c27a572b01d3196da2cd9aeb417bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the armored key to <code class="param">fileName</code>, refusing a symbolic link there.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr class="memitem:ab038db52faf962bed7773029c4abddff" id="r_ab038db52faf962bed7773029c4abddff"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab038db52faf962bed7773029c4abddff">on_copyButton_clicked</a> ()</td></tr>
 <tr class="memdesc:ab038db52faf962bed7773029c4abddff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the armored key text to the system clipboard; the button reads "Copied!" for 1.5 s as feedback. Public keys are not secrets, so this bypasses <a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a> and its autoclear.  <br /></td></tr>
 <tr class="memitem:a0b8bdb10fc086d039f687909bb314b88" id="r_a0b8bdb10fc086d039f687909bb314b88"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0b8bdb10fc086d039f687909bb314b88">on_saveButton_clicked</a> ()</td></tr>
-<tr class="memdesc:a0b8bdb10fc086d039f687909bb314b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompt for a destination and write the armored key to that file through a QSaveFile. The suggested name is <span class="tt">&lt;sanitizeKeyIdForFilename(keyId)&gt;.asc</span>, or <span class="tt">public_key.asc</span> when nothing of the key id survives. Failures are reported in a warning box.  <br /></td></tr>
+<tr class="memdesc:a0b8bdb10fc086d039f687909bb314b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompt for a destination and write the armored key to that file through <a class="el" href="#a26c27a572b01d3196da2cd9aeb417bf6" title="Write the armored key to fileName, refusing a symbolic link there.">saveArmoredKey()</a>. The suggested name is <span class="tt">&lt;sanitizeKeyIdForFilename(keyId)&gt;.asc</span>, or <span class="tt">public_key.asc</span> when nothing of the key id survives. Failures are reported in a warning box.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -212,7 +214,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00023">23</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00024">24</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -256,7 +258,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
 <div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_a92b83ba5e8bba9df2c8834b219c49e26_cgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_a92b83ba5e8bba9df2c8834b219c49e26_cgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -287,7 +289,7 @@ Private Attributes</h2></td></tr>
 
 <p>Copy the armored key text to the system clipboard; the button reads "Copied!" for 1.5 s as feedback. Public keys are not secrets, so this bypasses <a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a> and its autoclear. </p>
 
-<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00050">50</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00051">51</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -320,14 +322,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Prompt for a destination and write the armored key to that file through a QSaveFile. The suggested name is <span class="tt">&lt;sanitizeKeyIdForFilename(keyId)&gt;.asc</span>, or <span class="tt">public_key.asc</span> when nothing of the key id survives. Failures are reported in a warning box. </p>
+<p>Prompt for a destination and write the armored key to that file through <a class="el" href="#a26c27a572b01d3196da2cd9aeb417bf6" title="Write the armored key to fileName, refusing a symbolic link there.">saveArmoredKey()</a>. The suggested name is <span class="tt">&lt;sanitizeKeyIdForFilename(keyId)&gt;.asc</span>, or <span class="tt">public_key.asc</span> when nothing of the key id survives. Failures are reported in a warning box. </p>
 
-<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00058">58</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00059">59</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
 <div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
 <div id="dynsection-6-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_a0b8bdb10fc086d039f687909bb314b88_cgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_a0b8bdb10fc086d039f687909bb314b88_cgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary">
@@ -370,12 +372,65 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first whitespace-separated token of keyId with anything outside [A-Za-z0-9_-] stripped. Empty if no characters survive. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00037">37</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00038">38</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
 <div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary">
 </div>
 <div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_ab793452fcca2a8c931654ce7a2789008_icgraph.svg" width="100%" height="365"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a26c27a572b01d3196da2cd9aeb417bf6" name="a26c27a572b01d3196da2cd9aeb417bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c27a572b01d3196da2cd9aeb417bf6">&#9670;&#160;</a></span>saveArmoredKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ExportPublicKeyDialog::saveArmoredKey </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write the armored key to <code class="param">fileName</code>, refusing a symbolic link there. </p>
+<p>QSaveFile writes to the target of a link at the chosen name. A folder in a shared store can hold such a link, pushed by a co-writer under the name the dialog proposes (the key's fingerprint), so the key would land outside the store. A dangling link counts too. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>The chosen file. </td></tr>
+    <tr><td class="paramname">text</td><td>The armored key. </td></tr>
+    <tr><td class="paramname">error</td><td>Set to a message for the user when the save fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the key was written. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00076">76</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_a26c27a572b01d3196da2cd9aeb417bf6_icgraph.svg" width="642" height="87"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -403,7 +458,7 @@ Private Attributes</h2></td></tr>
 
 <p>The copy button's label from the form, restored after the "Copied!" flash. </p>
 
-<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00077">77</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00093">93</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
 
 </div>
 </div>
@@ -429,7 +484,7 @@ Private Attributes</h2></td></tr>
 
 <p>Key id as passed to the constructor; the basis of the suggested file name. </p>
 
-<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00074">74</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00090">90</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
 
 </div>
 </div>
@@ -455,7 +510,7 @@ Private Attributes</h2></td></tr>
 
 <p>Generated form (<span class="tt">exportpublickeydialog.ui</span>); owned. </p>
 
-<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00071">71</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00087">87</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
 
 </div>
 </div>

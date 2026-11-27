@@ -6,7 +6,7 @@
 <!-- Title: PlainMessageBox::show Pages: 1 -->
 <svg width="1761pt" height="861pt"
  viewBox="0.00 0.00 1761.00 861.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="page0,1_graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 856.55)">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 856.55)">
 <title>PlainMessageBox::show</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
@@ -946,7 +946,7 @@
 <!-- Node41 -->
 <g id="Node000041" class="node">
 <title>Node41</title>
-<g id="a_Node000041"><a xlink:href="class_export_public_key_dialog.html#a0b8bdb10fc086d039f687909bb314b88" target="_top" xlink:title="Prompt for a destination and write the armored key to that file through a QSaveFile....">
+<g id="a_Node000041"><a xlink:href="class_export_public_key_dialog.html#a0b8bdb10fc086d039f687909bb314b88" target="_top" xlink:title="Prompt for a destination and write the armored key to that file through saveArmoredKey()....">
 <polygon fill="white" stroke="#666666" points="1385.12,-213.5 1251.38,-213.5 1251.38,-180 1385.12,-180 1385.12,-213.5"/>
 <text xml:space="preserve" text-anchor="start" x="1259.38" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">ExportPublicKeyDialog</text>
 <text xml:space="preserve" text-anchor="middle" x="1318.25" y="-187.25" font-family="Helvetica,sans-Serif" font-size="10.00">::on_saveButton_clicked</text>

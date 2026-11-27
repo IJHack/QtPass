@@ -42,13 +42,13 @@
             <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">94.2&nbsp;%</td>
+            <td class="headerCovTableEntryHi">93.5&nbsp;%</td>
             <td class="headerCovTableEntry">139</td>
-            <td class="headerCovTableEntry">131</td>
+            <td class="headerCovTableEntry">130</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 11:31:18</td>
+            <td class="headerValue">2026-11-27 12:10:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
@@ -100,8 +100,8 @@
 <span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         278 :   cancel();</span></span>
 <span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         278 :   QElapsedTimer elapsed;</span></span>
 <span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         278 :   elapsed.start();</span></span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         279 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           1 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning()) {</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         278 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaUNC">           0 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning()) {</span></span>
 <span id="L32"><span class="lineNum">      32</span>              :       const int remaining =</span>
 <span id="L33"><span class="lineNum">      33</span> <span class="tlaUNC">           0 :           kThreadTimeoutMs - static_cast&lt;int&gt;(elapsed.elapsed());</span></span>
 <span id="L34"><span class="lineNum">      34</span> <span class="tlaUNC">           0 :       if (remaining &gt; 0)</span></span>
@@ -348,16 +348,16 @@
 <span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">          30 :   m_workers.append({thread, cancelFlag});</span></span>
 <span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">          15 :   connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</span></span>
 <span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">          15 :   connect(thread, &amp;QThread::finished, this, [this, thread]() {</span></span>
-<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">          14 :     m_workers.removeIf(</span></span>
-<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          15 :         [thread](const Worker &amp;w) { return w.thread == thread; });</span></span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">          15 :     m_workers.removeIf(</span></span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          16 :         [thread](const Worker &amp;w) { return w.thread == thread; });</span></span>
 <span id="L280"><span class="lineNum">     280</span>              :   });</span>
 <span id="L281"><span class="lineNum">     281</span> <span class="tlaGNC">          15 :   thread-&gt;start();</span></span>
 <span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">          31 : }</span></span>
 <span id="L283"><span class="lineNum">     283</span>              : </span>
 <span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">         628 : void NativeGrep::cancel() {</span></span>
-<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         638 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         637 :   for (const Worker &amp;w : std::as_const(m_workers)) {</span></span>
 <span id="L286"><span class="lineNum">     286</span>              :     w.cancel-&gt;store(true);</span>
-<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">          10 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
+<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">           9 :     if (w.thread &amp;&amp; w.thread-&gt;isRunning())</span></span>
 <span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">           8 :       w.thread-&gt;requestInterruption();</span></span>
 <span id="L289"><span class="lineNum">     289</span>              :   }</span>
 <span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">         628 : }</span></span>

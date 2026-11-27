@@ -1,16 +1,19 @@
 <map id="ExportPublicKeyDialog::~ExportPublicKeyDialog" name="ExportPublicKeyDialog::~ExportPublicKeyDialog">
-<area shape="rect" id="Node000001" title="Destroys the dialog and its generated UI." alt="" coords="5,65,193,110"/>
+<area shape="rect" id="Node000001" title="Destroys the dialog and its generated UI." alt="" coords="5,96,193,141"/>
 <area shape="rect" id="Node000002" href="$class_export_public_key_dialog.html#ab038db52faf962bed7773029c4abddff" title="Copy the armored key text to the system clipboard; the button reads &quot;Copied!&quot; for 1...." alt="" coords="241,5,419,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,62,229,53,224,56,188,67"/>
-<area shape="rect" id="Node000003" href="$class_export_public_key_dialog.html#a0b8bdb10fc086d039f687909bb314b88" title="Prompt for a destination and write the armored key to that file through a QSaveFile...." alt="" coords="241,125,419,170"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,108,229,121,224,121,187,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,93,259,54,255,58,159,98"/>
+<area shape="rect" id="Node000003" href="$class_export_public_key_dialog.html#a0b8bdb10fc086d039f687909bb314b88" title="Prompt for a destination and write the armored key to that file through saveArmoredKey()...." alt="" coords="241,125,419,170"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,128,228,134,223,135,193,133"/>
 <area shape="rect" id="Node000004" href="$class_export_public_key_dialog.html#ab793452fcca2a8c931654ce7a2789008" title="Reduce a key identifier to a filesystem&#45;safe token." alt="" coords="467,65,663,110"/>
-<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="193,85,453,85,450,90,193,90"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="419,122,458,115,463,114,420,128"/>
-<area shape="rect" id="Node000005" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="467,134,663,162"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="419,145,454,148,449,148,419,150"/>
-<area shape="rect" id="Node000006" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="711,134,890,162"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="664,145,698,148,693,148,664,150"/>
-<area shape="rect" id="Node000007" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="938,134,1065,162"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="890,145,925,148,919,148,890,150"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="193,110,453,93,450,98,193,115"/>
+<area shape="rect" id="Node000005" href="$class_export_public_key_dialog.html#a26c27a572b01d3196da2cd9aeb417bf6" title="Write the armored key to fileName, refusing a symbolic link there." alt="" coords="481,185,649,230"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="141,139,189,161,241,180,298,192,357,200,468,209,463,209,356,205,297,197,240,185,187,166,140,144"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="418,122,458,115,463,114,420,128"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="419,168,468,182,463,182,419,173"/>
+<area shape="rect" id="Node000006" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="467,134,663,162"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="419,145,454,147,449,148,419,150"/>
+<area shape="rect" id="Node000007" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="711,134,890,162"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="664,145,698,147,693,148,664,150"/>
+<area shape="rect" id="Node000008" href="$class_util.html#aa853f5f3e8e0837eb316a90720bf0b90" title="text with the characters that change how the text around them reads replaced by U+FFFD,..." alt="" coords="938,134,1065,162"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="890,145,925,148,919,148,890,150"/>
 </map>

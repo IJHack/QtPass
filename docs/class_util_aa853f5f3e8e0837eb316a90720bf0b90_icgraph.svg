@@ -1373,7 +1373,7 @@
 <!-- Node57 -->
 <g id="Node000057" class="node">
 <title>Node57</title>
-<g id="a_Node000057"><a xlink:href="class_export_public_key_dialog.html#a0b8bdb10fc086d039f687909bb314b88" target="_top" xlink:title="Prompt for a destination and write the armored key to that file through a QSaveFile....">
+<g id="a_Node000057"><a xlink:href="class_export_public_key_dialog.html#a0b8bdb10fc086d039f687909bb314b88" target="_top" xlink:title="Prompt for a destination and write the armored key to that file through saveArmoredKey()....">
 <polygon fill="white" stroke="#666666" points="1393,-1325.12 1259.25,-1325.12 1259.25,-1291.62 1393,-1291.62 1393,-1325.12"/>
 <text xml:space="preserve" text-anchor="start" x="1267.25" y="-1311.62" font-family="Helvetica,sans-Serif" font-size="10.00">ExportPublicKeyDialog</text>
 <text xml:space="preserve" text-anchor="middle" x="1326.12" y="-1298.88" font-family="Helvetica,sans-Serif" font-size="10.00">::on_saveButton_clicked</text>
