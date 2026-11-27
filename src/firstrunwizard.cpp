@@ -352,14 +352,20 @@ void KeyWizardPage::reload() {
     } else if (!key.isValid()) {
       why = tr("not usable");
     }
-    key.enabled = why.isEmpty();
+    const bool usable = why.isEmpty();
+    // Only a key the user trusts ultimately, which gpg gives the keys made
+    // here, starts ticked. A colleague's key can be in this listing too: a
+    // secret key block imported from them, or a public one bound to the
+    // user's own subkey (gpg lists it as sec#). Certified, it shows as fully
+    // valid, and ticked by default every new entry would be encrypted to them.
+    key.enabled = usable && key.validity == 'u';
     QString label = QStringLiteral("%1\n%2").arg(key.name, key.key_id);
-    if (!why.isEmpty()) {
+    if (!usable) {
       label += QStringLiteral(" (%1)").arg(why);
     }
     auto *item = new QListWidgetItem(label, m_list);
-    item->setFlags(key.enabled ? (item->flags() | Qt::ItemIsUserCheckable)
-                               : (item->flags() & ~Qt::ItemIsEnabled));
+    item->setFlags(usable ? (item->flags() | Qt::ItemIsUserCheckable)
+                          : (item->flags() & ~Qt::ItemIsEnabled));
     item->setCheckState(key.enabled ? Qt::Checked : Qt::Unchecked);
   }
   // gpg's own words when it did not exit cleanly: "no secret key yet" would

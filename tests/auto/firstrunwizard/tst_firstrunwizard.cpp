@@ -83,6 +83,7 @@ private slots:
   void browseButtonFillsTheProgramField();
   void browseButtonPicksTheStoreFolder();
   void keyPageListsUnusableKeysUnticked();
+  void keyPageTicksOnlyUltimatelyTrustedKeys();
   void generateOpensTheKeygenDialogAndReloads();
   void donePageAnnouncesGit();
   void finishReportsAFolderItCannotCreate();
@@ -769,6 +770,56 @@ void tst_firstrunwizard::keyPageListsUnusableKeysUnticked() {
            "unticking the only usable key leaves no recipient");
   QVERIFY(w.currentPage()->findChild<QLabel *>()->text().contains(
       QStringLiteral("tick at least one key")));
+}
+
+/**
+ * @brief A colleague's certified key can be in the secret listing (her
+ *        secret key block imported, or a public one bound to the user's own
+ *        subkey). It is offered, not ticked: only an ultimately trusted key,
+ *        the user's own, starts ticked (ANT-2026-SYHZRWC3).
+ */
+void tst_firstrunwizard::keyPageTicksOnlyUltimatelyTrustedKeys() {
+  const QString keys = script(
+      QStringLiteral("gpg-colleague"),
+      "case \"$*\" in\n"
+      "*--list-secret-keys*)\n"
+      // echo, not printf: PATH is empty and OpenBSD's ksh has no printf
+      // builtin.
+      "echo 'sec:f:4096:1:CCCCCCCCCCCCCCCC:1774947438:::f:::escaESCA:::#:::23"
+      "::0:'\n"
+      "echo 'fpr:::::::::CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC:'\n"
+      "echo 'uid:f::::1774947438::C::Colleague <c@example.org>::::::::::0:'\n"
+      "echo 'sec:m:4096:1:DDDDDDDDDDDDDDDD:1774947438:::m:::escaESCA:::+:::23"
+      "::0:'\n"
+      "echo 'fpr:::::::::DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD:'\n"
+      "echo 'uid:m::::1774947438::D::Marginal <m@example.org>::::::::::0:'\n"
+      "echo 'sec:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA:::+:::23"
+      "::0:'\n"
+      "echo 'fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:'\n"
+      "echo 'uid:u::::1774947438::Z::Anne Jan Brouwer "
+      "<anne@example.org>::::::::::0:'\n"
+      ";;\n"
+      "esac\n"
+      "exit 0\n");
+  QVERIFY(!keys.isEmpty());
+  AppSettings s = QtPassSettings::load();
+  s.gpgExecutable = keys;
+  QtPassSettings::save(s);
+
+  FirstRunWizard w;
+  w.setStartId(FirstRunWizard::KeyPage);
+  w.restart();
+  auto *list = w.currentPage()->findChild<QListWidget *>();
+  QVERIFY(list != nullptr);
+  QCOMPARE(list->count(), 3);
+  for (int i : {0, 1}) {
+    QListWidgetItem *other = list->item(i);
+    QVERIFY2(other->flags() & Qt::ItemIsUserCheckable,
+             "another valid key can still be ticked by hand");
+    QVERIFY2(other->checkState() == Qt::Unchecked,
+             qPrintable(other->text() + " must not start ticked"));
+  }
+  QCOMPARE(list->item(2)->checkState(), Qt::Checked);
 }
 
 /**
