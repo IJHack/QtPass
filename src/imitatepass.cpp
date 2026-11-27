@@ -663,6 +663,19 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
       !readBoundedRegularFile(file + ".sig", kMaxSignatureBytes, &signature)) {
     return false;
   }
+  // git signs a commit or tag the same way a .gpg-id is signed: a detached
+  // signature over the object without its own signature header. With
+  // pass.signcommits (or commit.gpgsign) the signing key signs the store's
+  // commits, so such a commit and its signature could be pushed as .gpg-id
+  // and .gpg-id.sig and would verify here as a signed recipient list, whose
+  // lines (the commit's headers and message) then become recipients. A
+  // commit begins "tree <hash>" and a tag "object <hash>", SHA-1 or SHA-256;
+  // refuse either before gpg is asked.
+  static const QRegularExpression commitOrTag(
+      QStringLiteral(R"(\A(?:tree|object) [0-9a-f]{40}(?:[0-9a-f]{24})?\n)"));
+  if (commitOrTag.match(QString::fromLatin1(list.left(128))).hasMatch()) {
+    return false;
+  }
   QTemporaryDir scratch;
   if (!scratch.isValid()) {
     return false;

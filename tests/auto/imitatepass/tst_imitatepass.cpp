@@ -133,6 +133,7 @@ private Q_SLOTS:
   void aFailedForcedMoveWithoutGitKeepsTheDestination();
   void moveAndCopyCleanDotDotBeforeTheyLook();
   void verifyChecksBoundedCopiesWithBatch();
+  void verifyRefusesACommitOrTagObject();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -547,6 +548,70 @@ void tst_imitatepass::verifyChecksBoundedCopiesWithBatch() {
   QVERIFY(QFile::link(other, gpgId));
   QVERIFY(!pass.verifyGpgIdFile(gpgId));
   QVERIFY2(!QFileInfo::exists(log), "gpg must not run on a linked list");
+#endif
+}
+
+/**
+ * @brief verifyGpgIdFile() refuses a git commit or tag object as the signed
+ *        list: git signs those the same way, so a signed commit and its
+ *        signature could be pushed as .gpg-id and .gpg-id.sig
+ *        (ANT-2026-NOWX23I7).
+ */
+void tst_imitatepass::verifyRefusesACommitOrTagObject() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QDir root(dir.path());
+  const QString fpr =
+      QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
+  const QString log = root.filePath(QStringLiteral("gpg.log"));
+  const QString script = root.filePath(QStringLiteral("gpg.sh"));
+  {
+    // A gpg that vouches for any signature: only the refusal can stop it.
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << log << "'\n"
+        << "echo '[GNUPG:] VALIDSIG " << fpr << " 2026-11-25 1 0 4 0 1 10 00 "
+        << fpr << "'\n"
+        << "exit 0\n";
+  }
+  QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                            QFile::ExeOwner));
+  const QString gpgId = root.filePath(QStringLiteral(".gpg-id"));
+  {
+    QFile f(gpgId + QStringLiteral(".sig"));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("signature");
+  }
+  const auto writeList = [&gpgId](const QByteArray &bytes) {
+    QFile f(gpgId);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(bytes) == bytes.size();
+  };
+  AppSettings s = settingsFor(dir.path(), script);
+  s.passSigningKey = fpr;
+  ImitatePass pass;
+  pass.init(s);
+
+  const QByteArray sha1(40, 'a');
+  const QByteArray sha256(64, 'b');
+  for (const QByteArray &object :
+       {QByteArray("tree " + sha1 + "\nparent " + sha1 +
+                   "\nauthor A <a@example.org> 0 +0000\n\nAdd x\n"),
+        QByteArray("tree " + sha256 + "\nauthor A <a@example.org> 0 +0000\n"),
+        QByteArray("object " + sha1 + "\ntype commit\ntag v1\n\nv1\n")}) {
+    QVERIFY(writeList(object));
+    QVERIFY2(!pass.verifyGpgIdFile(gpgId), object.constData());
+    QVERIFY2(!QFileInfo::exists(log), "gpg must not be asked about an object");
+  }
+
+  QVERIFY(writeList("ALICE\n"));
+  QVERIFY(pass.verifyGpgIdFile(gpgId));
+  QVERIFY(QFileInfo::exists(log));
 #endif
 }
 
