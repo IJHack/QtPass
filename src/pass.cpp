@@ -696,32 +696,11 @@ void Pass::updateEnv() {
     }
   }
 
-  // Refuse a repository pushed into the store. A co-writer can push a folder
-  // laid out as a bare repository (HEAD, objects/, refs/, and a config with
-  // core.worktree=. and a core.fsmonitor command); git started in it runs that
-  // command as the user. With safe.bareRepository=explicit (git 2.38+) git
-  // refuses such a folder, so its pushed config is never read. Appended at the
-  // next free GIT_CONFIG index so a user's own git config is kept, and only
-  // when not already present so repeated calls do not pile up. This reaches the
-  // git that pass runs too, which inherits the environment.
-  const int gitConfigCount =
-      env.value(QStringLiteral("GIT_CONFIG_COUNT")).toInt();
-  bool bareRepoGuarded = false;
-  for (int i = 0; i < gitConfigCount; ++i) {
-    if (env.value(QStringLiteral("GIT_CONFIG_KEY_%1").arg(i)) ==
-        QStringLiteral("safe.bareRepository")) {
-      bareRepoGuarded = true;
-      break;
-    }
-  }
-  if (!bareRepoGuarded) {
-    env.insert(QStringLiteral("GIT_CONFIG_KEY_%1").arg(gitConfigCount),
-               QStringLiteral("safe.bareRepository"));
-    env.insert(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(gitConfigCount),
-               QStringLiteral("explicit"));
-    env.insert(QStringLiteral("GIT_CONFIG_COUNT"),
-               QString::number(gitConfigCount + 1));
-  }
+  // Refuse a repository pushed into the store: git started in a folder laid
+  // out as a bare repository would read its pushed config and run a command
+  // named there. This reaches the git that pass runs too, which inherits the
+  // environment.
+  Util::requireExplicitBareRepository(env);
 
   exec.setEnvironment(env);
 
@@ -764,7 +743,13 @@ void Pass::pinStoreGitAttributes() {
 
   QString existing;
   QFile attr(attrPath);
-  if (attr.exists() && attr.open(QIODevice::ReadOnly | QIODevice::Text)) {
+  if (attr.exists()) {
+    // Unreadable: writing now would drop the user's own lines in it.
+    if (!attr.open(QIODevice::ReadOnly | QIODevice::Text)) {
+      qCWarning(lcQtPass) << "Cannot read" << attrPath
+                          << "to pin attributes:" << attr.errorString();
+      return;
+    }
     existing = QString::fromUtf8(attr.readAll());
     attr.close();
     if (existing.contains(block)) {
@@ -773,6 +758,7 @@ void Pass::pinStoreGitAttributes() {
   }
 
   if (!QDir().mkpath(infoDir)) {
+    qCWarning(lcQtPass) << "Cannot create" << infoDir << "to pin attributes";
     return;
   }
 
@@ -804,12 +790,11 @@ void Pass::pinStoreGitAttributes() {
   }
 
   QSaveFile out(attrPath);
-  if (!out.open(QIODevice::WriteOnly | QIODevice::Text)) {
-    return;
-  }
   const QByteArray payload = (preserved + block).toUtf8();
-  if (out.write(payload) == payload.size()) {
-    out.commit();
+  if (!out.open(QIODevice::WriteOnly | QIODevice::Text) ||
+      out.write(payload) != payload.size() || !out.commit()) {
+    qCWarning(lcQtPass) << "Cannot write" << attrPath
+                        << "to pin attributes:" << out.errorString();
   }
 }
 

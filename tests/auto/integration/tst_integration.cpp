@@ -1136,10 +1136,14 @@ namespace {
 // RAII guard to ensure useGit is restored on any exit path
 struct RestoreUseGit {
   bool orig;
-  RestoreUseGit() : orig(QtPassSettings::isUseGit()) {}
+  QString origGit;
+  RestoreUseGit()
+      : orig(QtPassSettings::isUseGit()),
+        origGit(QtPassSettings::load().gitExecutable) {}
   ~RestoreUseGit() {
     AppSettings s = QtPassSettings::load();
     s.useGit = orig;
+    s.gitExecutable = origGit;
     QtPassSettings::save(s);
   }
 };
@@ -3703,6 +3707,21 @@ void tst_integration::realPass_pushedBareRepoDoesNotRunCommand() {
                                    "false\"\n")
                         .arg(marker)
                         .toUtf8()));
+
+  // Control: without the guard, git in "work" reads the pushed config and
+  // runs the command, so the case below tests the guard and nothing else.
+  {
+    QProcess control;
+    QProcessEnvironment plain = QProcessEnvironment::systemEnvironment();
+    plain.remove("GIT_CONFIG_COUNT");
+    control.setProcessEnvironment(plain);
+    control.setWorkingDirectory(work);
+    control.start(gitExe, {"status"});
+    QVERIFY(control.waitForFinished(15000));
+    QVERIFY2(QFile::exists(marker),
+             "git without the guard must run the pushed command");
+    QVERIFY(QFile::remove(marker));
+  }
 
   RealPass pass;
   setupPass(pass);

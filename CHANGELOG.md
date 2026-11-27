@@ -225,8 +225,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   Someone who can push to a shared store could push a folder laid out as a
   bare repository, with a config that names a command (`core.fsmonitor`);
   saving an entry in that folder ran it. QtPass now sets
-  `safe.bareRepository=explicit` for every Git it runs, and for the Git that
-  `pass` runs (Git 2.38 or newer; scan finding ANT-2026-HJOPH9D4).
+  `safe.bareRepository=explicit` for the Git it runs in a store and while
+  setting one up, and for the Git that `pass` runs. Git older than 2.38
+  ignores the setting (scan finding ANT-2026-HJOPH9D4).
 - A pushed `.gitattributes` can no longer make Git rewrite encrypted
   entries. Someone who can push to a shared store could add a line such as
   `*.gpg text`; Git then changed the ciphertext on commit or checkout, and

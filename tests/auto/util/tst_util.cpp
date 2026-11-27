@@ -217,6 +217,8 @@ private Q_SLOTS:
   // Must stay the first test: Util snapshots the environment once per process.
   void findPasswordStoreHonoursPasswordStoreDir();
   void normalizeFolderPath();
+  void requireExplicitBareRepository_data();
+  void requireExplicitBareRepository();
   void normalizeFolderPathEdgeCases();
   void fileContent();
   void fileContentEdgeCases();
@@ -7576,6 +7578,62 @@ void tst_util::removeTreeReportsWhatItCannotRemove() {
   QVERIFY2(!QFileInfo::exists(folder), "nothing of the tree is left");
   QVERIFY2(QDir(outsideDir.path()).exists(), "the link's target stays");
 #endif
+}
+
+/**
+ * @brief safe.bareRepository=explicit goes in at the next free GIT_CONFIG
+ *        index; a user's entries stay, an explicit last entry is kept, a
+ *        weaker one is overridden, and a malformed count starts afresh (scan
+ *        finding ANT-2026-HJOPH9D4).
+ */
+void tst_util::requireExplicitBareRepository_data() {
+  QTest::addColumn<QStringList>("before"); // count, then key=value pairs
+  QTest::addColumn<QStringList>("after");
+  QTest::newRow("none") << QStringList{}
+                        << QStringList{"1", "safe.bareRepository=explicit"};
+  QTest::newRow("user's own entries kept")
+      << QStringList{"2", "user.name=A", "core.pager=less"}
+      << QStringList{"3", "user.name=A", "core.pager=less",
+                     "safe.bareRepository=explicit"};
+  QTest::newRow("already explicit")
+      << QStringList{"1", "safe.bareRepository=explicit"}
+      << QStringList{"1", "safe.bareRepository=explicit"};
+  QTest::newRow("explicit in another case")
+      << QStringList{"1", "Safe.BareRepository=Explicit"}
+      << QStringList{"1", "Safe.BareRepository=Explicit"};
+  QTest::newRow("weaker value overridden")
+      << QStringList{"1", "safe.bareRepository=all"}
+      << QStringList{"2", "safe.bareRepository=all",
+                     "safe.bareRepository=explicit"};
+  QTest::newRow("explicit, then weaker")
+      << QStringList{"2", "safe.bareRepository=explicit",
+                     "safe.bareRepository=all"}
+      << QStringList{"3", "safe.bareRepository=explicit",
+                     "safe.bareRepository=all", "safe.bareRepository=explicit"};
+  QTest::newRow("malformed count")
+      << QStringList{"two"} << QStringList{"1", "safe.bareRepository=explicit"};
+}
+
+void tst_util::requireExplicitBareRepository() {
+  QFETCH(QStringList, before);
+  QFETCH(QStringList, after);
+  QProcessEnvironment env;
+  if (!before.isEmpty()) {
+    env.insert(QStringLiteral("GIT_CONFIG_COUNT"), before.first());
+    for (int i = 1; i < before.size(); ++i) {
+      const QStringList kv = before.at(i).split(QLatin1Char('='));
+      env.insert(QStringLiteral("GIT_CONFIG_KEY_%1").arg(i - 1), kv.at(0));
+      env.insert(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(i - 1), kv.at(1));
+    }
+  }
+  Util::requireExplicitBareRepository(env);
+  QStringList got{env.value(QStringLiteral("GIT_CONFIG_COUNT"))};
+  for (int i = 0; i < got.first().toInt(); ++i) {
+    got << env.value(QStringLiteral("GIT_CONFIG_KEY_%1").arg(i)) +
+               QLatin1Char('=') +
+               env.value(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(i));
+  }
+  QCOMPARE(got, after);
 }
 
 QTEST_MAIN(tst_util)

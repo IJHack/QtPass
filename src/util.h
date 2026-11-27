@@ -112,6 +112,22 @@ public:
   static auto gitStoreVariables(const QString &store, const QString &git = {},
                                 std::optional<uint> asUser = std::nullopt)
       -> QList<std::pair<QString, QString>>;
+  /**
+   * @brief Make git in @p env refuse a folder that is merely laid out as a
+   * bare repository (`safe.bareRepository=explicit`, Git 2.38 or newer;
+   * older Git ignores it).
+   *
+   * Someone who can push to a shared store can push such a folder with a
+   * config that names a command (`core.fsmonitor`); git started in it would
+   * read that config and run the command. The setting goes in through
+   * `GIT_CONFIG_*`, command-line scope, which git honours for this protected
+   * key and a repository's own config cannot override. It is appended at the
+   * next free index, so a user's own entries are kept, and only when the
+   * last entry for the key does not already say `explicit`: the last one
+   * wins, so a weaker value from the environment is overridden.
+   * @param env The environment to amend.
+   */
+  static void requireExplicitBareRepository(QProcessEnvironment &env);
 
   /**
    * @brief For tests: the user gitStoreVariables() compares owners with
