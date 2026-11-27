@@ -301,10 +301,16 @@ auto GpgIdSigner::verify(const QByteArray &contents,
   // "-" makes gpg read the signed data from stdin: the bytes we hold.
   // --batch stops at the first bad signature; without it gpg checked every
   // packet in the file, each against the key it names, however slow.
-  const int rc = run({QStringLiteral("--batch"), QStringLiteral("--verify"),
-                      QStringLiteral("--status-fd=1"), QStringLiteral("--"),
-                      sig, QStringLiteral("-")},
-                     &out, nullptr, text);
+  // --trust-model pgp, whatever gpg.conf says: under `trust-model always`
+  // gpg skips the trust check that reports KEYREVOKED, so a revoked key that
+  // has also expired came back as merely expired (EXPKEYSIG) and its
+  // signature counted. The model changes no verdict on the signature
+  // itself, only which notes gpg adds to it.
+  const int rc =
+      run({QStringLiteral("--batch"), QStringLiteral("--trust-model=pgp"),
+           QStringLiteral("--verify"), QStringLiteral("--status-fd=1"),
+           QStringLiteral("--"), sig, QStringLiteral("-")},
+          &out, nullptr, text);
   if (rc != 0) {
     qCDebug(lcQtPass) << "GPG verify failed with code:" << rc;
     return false;

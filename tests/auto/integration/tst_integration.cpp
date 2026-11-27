@@ -39,6 +39,8 @@
 #include <QtTest>
 
 #include "../../../src/enums.h"
+#include "../../../src/executor.h"
+#include "../../../src/gpgidsigner.h"
 #include "../../../src/imitatepass.h"
 #include "../../../src/mainwindow.h"
 #include "../../../src/pass.h"
@@ -239,6 +241,9 @@ static QString encryptionSubkeyId(const QString &gnupgHome,
 // ---------------------------------------------------------------------------
 // Test class
 // ---------------------------------------------------------------------------
+
+/// The body the revoked-key test signs; any recipient list would do.
+static const QByteArray kSignedListBody = QByteArrayLiteral("ALICE\n");
 
 class tst_integration : public QObject {
   Q_OBJECT
@@ -442,6 +447,7 @@ private Q_SLOTS:
   void realPass_checksTheRepositoryPassCommitsIn();
   void realPass_dashNameDoesNotEscapeStore();
   void realPass_pushedBareRepoDoesNotRunCommand();
+  void gpgIdSigner_revokedExpiredKeyRefusedUnderTrustModelAlways();
 
   // pass-otp (skipped if extension not installed)
 };
@@ -3900,6 +3906,115 @@ void tst_integration::realPass_dashNameDoesNotEscapeStore() {
            "the name \"--\" should resolve to the store's own --.gpg entry");
 
   QtPassSettings::setUsePass(false);
+#endif
+}
+
+// A signing key that is revoked and has also expired: under `trust-model
+// always` gpg skips the trust check that reports KEYREVOKED and calls the
+// signature merely expired (EXPKEYSIG), which counts. The verify pins the
+// trust model, so the revocation still shows (scan finding
+// ANT-2026-762RKXO4). Real gpg, in a keyring of its own, keys made at a
+// faked time so they have expired by now.
+void tst_integration::
+    gpgIdSigner_revokedExpiredKeyRefusedUnderTrustModelAlways() {
+#ifdef Q_OS_WIN
+  QSKIP("gpg home and faked time handled differently on Windows");
+#else
+  if (m_gpgExe.isEmpty())
+    QSKIP("gpg not installed");
+  QTemporaryDir home;
+  QVERIFY(home.isValid());
+  QVERIFY(QFile::setPermissions(home.path(), QFileDevice::ReadOwner |
+                                                 QFileDevice::WriteOwner |
+                                                 QFileDevice::ExeOwner));
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert(QStringLiteral("GNUPGHOME"), home.path());
+  const auto cleanup = qScopeGuard([&] {
+    QProcess kill;
+    kill.setProcessEnvironment(env);
+    kill.start(QStringLiteral("gpgconf"),
+               {QStringLiteral("--kill"), QStringLiteral("all")});
+    kill.waitForFinished(5000);
+  });
+  const auto gpg = [&](const QStringList &args, QString *out = nullptr) {
+    QProcess p;
+    p.setProcessEnvironment(env);
+    p.start(m_gpgExe, QStringList{QStringLiteral("--batch")} + args);
+    if (!p.waitForFinished(60000)) {
+      return -1;
+    }
+    if (out != nullptr) {
+      *out = QString::fromUtf8(p.readAllStandardOutput());
+    }
+    return p.exitCode();
+  };
+  const QString start = QStringLiteral("--faked-system-time=20260101T000000");
+  const QString later = QStringLiteral("--faked-system-time=20260101T010000");
+  const auto makeKey = [&](const QString &name) {
+    if (gpg({start, QStringLiteral("--passphrase="),
+             QStringLiteral("--quick-gen-key"), name, QStringLiteral("ed25519"),
+             QStringLiteral("sign"), QStringLiteral("1d")}) != 0) {
+      return QString();
+    }
+    QString out;
+    gpg({QStringLiteral("--with-colons"), QStringLiteral("--list-keys"),
+         QStringLiteral("--"), name},
+        &out);
+    static const QRegularExpression fpr(QStringLiteral("^fpr:+([0-9A-F]+):"),
+                                        QRegularExpression::MultilineOption);
+    return fpr.match(out).captured(1);
+  };
+  const QString list = home.filePath(QStringLiteral("list"));
+  {
+    QFile f(list);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write(kSignedListBody) > 0);
+  }
+  const auto signAs = [&](const QString &fpr, const QString &sig) {
+    return gpg({later, QStringLiteral("--yes"), QStringLiteral("--local-user"),
+                fpr, QStringLiteral("--detach-sign"), QStringLiteral("-o"), sig,
+                QStringLiteral("--"), list}) == 0;
+  };
+  const QString kept = makeKey(QStringLiteral("Kept <kept@example.invalid>"));
+  const QString lost = makeKey(QStringLiteral("Lost <lost@example.invalid>"));
+  QVERIFY2(!kept.isEmpty() && !lost.isEmpty(), "gpg could not make the keys");
+  const QString keptSig = home.filePath(QStringLiteral("kept.sig"));
+  const QString lostSig = home.filePath(QStringLiteral("lost.sig"));
+  QVERIFY(signAs(kept, keptSig));
+  QVERIFY(signAs(lost, lostSig));
+  // Revoke the lost key with the certificate gpg made for it.
+  {
+    QFile rev(
+        home.filePath(QStringLiteral("openpgp-revocs.d/%1.rev").arg(lost)));
+    QVERIFY(rev.open(QIODevice::ReadOnly));
+    QByteArray cert = rev.readAll();
+    cert.replace("\n:-----BEGIN", "\n-----BEGIN");
+    QFile out(home.filePath(QStringLiteral("rev.asc")));
+    QVERIFY(out.open(QIODevice::WriteOnly) && out.write(cert) == cert.size());
+  }
+  QCOMPARE(gpg({QStringLiteral("--import"),
+                home.filePath(QStringLiteral("rev.asc"))}),
+           0);
+  {
+    QFile conf(home.filePath(QStringLiteral("gpg.conf")));
+    QVERIFY(conf.open(QIODevice::WriteOnly));
+    QVERIFY(conf.write("trust-model always\n") > 0);
+  }
+
+  const GpgIdSigner::Exec exec =
+      [&env](const QString &app, const QStringList &args, const QString &input,
+             QString *out, QString *err) {
+        QProcess p;
+        p.setProcessEnvironment(env);
+        return Executor::executeBlocking(p, app, args, input, out, err);
+      };
+  // Control: an expired key that is not revoked still vouches, as gpg calls
+  // its signature good.
+  QVERIFY2(GpgIdSigner(m_gpgExe, {kept}, exec).verify(kSignedListBody, keptSig),
+           "an expired, unrevoked signing key still counts");
+  QVERIFY2(
+      !GpgIdSigner(m_gpgExe, {lost}, exec).verify(kSignedListBody, lostSig),
+      "a revoked key that has also expired must not vouch for a list");
 #endif
 }
 
