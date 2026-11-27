@@ -6,6 +6,7 @@
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QScopeGuard>
+#include <QTemporaryDir>
 #include <QtTest>
 
 #include "../../../src/exportpublickeydialog.h"
@@ -19,6 +20,7 @@ private Q_SLOTS:
   void labelShowsKeyIdAsPlainText();
   void plainTextEditShowsArmoredKey();
   void copyButtonCopiesToClipboardAndRelabels();
+  void saveRefusesASymbolicLink();
 };
 
 void tst_exportpublickeydialog::sanitizeKeyId_data() {
@@ -104,6 +106,50 @@ void tst_exportpublickeydialog::copyButtonCopiesToClipboardAndRelabels() {
   // The relabel reverts via QTimer::singleShot(1500, ...). Wait a little
   // longer than that for the timer to fire.
   QTRY_COMPARE_WITH_TIMEOUT(button->text(), originalText, 4000);
+}
+
+/**
+ * @brief A co-writer can push a link under the name the dialog proposes
+ *        (the key's fingerprint) into a store folder. The save must not
+ *        write through it, dangling or not (ANT-2026-T5AWA17S).
+ */
+void tst_exportpublickeydialog::saveRefusesASymbolicLink() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics");
+#else
+  QTemporaryDir store;
+  QTemporaryDir outside;
+  QVERIFY(store.isValid() && outside.isValid());
+  const QString key = QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----\n");
+  QString error;
+
+  // Dangling: following it would create a file outside the store.
+  const QString target = outside.filePath(QStringLiteral("profile"));
+  const QString name = store.filePath(QStringLiteral("ABCDEF.asc"));
+  QVERIFY(QFile::link(target, name));
+  QVERIFY(!ExportPublicKeyDialog::saveArmoredKey(name, key, &error));
+  QVERIFY(error.contains(name));
+  QVERIFY(!QFileInfo::exists(target));
+
+  // Pointing at an existing file: following it would overwrite that file.
+  {
+    QFile f(target);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("keep") == 4);
+  }
+  QVERIFY(!ExportPublicKeyDialog::saveArmoredKey(name, key, &error));
+  QFile kept(target);
+  QVERIFY(kept.open(QIODevice::ReadOnly));
+  QCOMPARE(kept.readAll(), QByteArray("keep"));
+
+  // A plain name is written.
+  const QString plain = store.filePath(QStringLiteral("plain.asc"));
+  QVERIFY2(ExportPublicKeyDialog::saveArmoredKey(plain, key, &error),
+           qPrintable(error));
+  QFile written(plain);
+  QVERIFY(written.open(QIODevice::ReadOnly));
+  QCOMPARE(QString::fromUtf8(written.readAll()), key);
+#endif
 }
 
 QTEST_MAIN(tst_exportpublickeydialog)

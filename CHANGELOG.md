@@ -46,6 +46,11 @@
   ignored, uncommitted file, which a later pull could delete. QtPass now
   stages the files it writes with `git add -f` (scan finding
   ANT-2026-L2LXMCPM).
+- "Export my public key" no longer saves through a symbolic link. Someone who
+  can push to a shared store could push a link under the name the dialog
+  proposes (the key's fingerprint) into a store folder; saving there wrote
+  the key to the file the link points to, outside the store. QtPass now
+  refuses a link at the chosen name (scan finding ANT-2026-T5AWA17S).
 - A pushed `.gitattributes` can no longer make Git rewrite encrypted
   entries. Someone who can push to a shared store could add a line such as
   `*.gpg text`; Git then changed the ciphertext on commit or checkout, and

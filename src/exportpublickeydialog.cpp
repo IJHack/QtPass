@@ -6,6 +6,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QFontDatabase>
 #include <QMessageBox>
 #include <QRegularExpression>
@@ -85,19 +86,34 @@ void ExportPublicKeyDialog::on_saveButton_clicked() {
   if (fileName.isEmpty()) {
     return;
   }
+  QString error;
+  if (!saveArmoredKey(fileName, ui->plainTextEdit->toPlainText(), &error)) {
+    QMessageBox::warning(this, tr("Save Public Key"), error);
+  }
+}
+
+auto ExportPublicKeyDialog::saveArmoredKey(const QString &fileName,
+                                           const QString &text, QString *error)
+    -> bool {
+  // QSaveFile writes to a link's target; a dangling link would create it.
+  if (QFileInfo(fileName).isSymLink()) {
+    *error = tr("%1 is a symbolic link, so the key was not saved there. "
+                "Choose another name.")
+                 .arg(fileName);
+    return false;
+  }
   QSaveFile file(fileName);
   if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-    QMessageBox::warning(this, tr("Save Public Key"),
-                         tr("Could not open %1 for writing: %2")
-                             .arg(fileName, file.errorString()));
-    return;
+    *error = tr("Could not open %1 for writing: %2")
+                 .arg(fileName, file.errorString());
+    return false;
   }
   QTextStream out(&file);
-  out << ui->plainTextEdit->toPlainText();
+  out << text;
   out.flush();
   if (out.status() != QTextStream::Ok || !file.commit()) {
-    QMessageBox::warning(
-        this, tr("Save Public Key"),
-        tr("Could not write to %1: %2").arg(fileName, file.errorString()));
+    *error = tr("Could not write to %1: %2").arg(fileName, file.errorString());
+    return false;
   }
+  return true;
 }
