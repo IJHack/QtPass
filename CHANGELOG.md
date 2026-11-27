@@ -72,6 +72,12 @@
   byte-order mark, a NUL byte, a carriage return, invalid UTF-8, other
   whitespace than blanks and tabs, or a last line without a line end. Saving
   the folder in Users writes the list anew (scan finding ANT-2026-MYROPA32).
+- With a signing key, the native backend no longer takes a signed Git commit
+  or tag as a signed `.gpg-id`. Git signs those the same way, and with
+  signed commits the signing key signs them. Someone who can push to a
+  shared store could push such a commit and its signature as `.gpg-id` and
+  `.gpg-id.sig`; its lines then became the recipients (scan finding
+  ANT-2026-NOWX23I7).
 - A pushed `.gitattributes` can no longer make Git rewrite encrypted
   entries. Someone who can push to a shared store could add a line such as
   `*.gpg text`; Git then changed the ciphertext on commit or checkout, and
