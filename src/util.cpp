@@ -1504,8 +1504,10 @@ auto Util::readRegularFileUnder(const QString &root, const QString &path,
     return std::nullopt;
   }
   // As in openRegularFile(): QFile takes the descriptor fstat() judged, not
-  // the name, so no change between check and read is possible. CodeQL
-  // flags the open anyway; that alert is dismissed as a false positive.
+  // the name, so a name swapped between the check and the read cannot make
+  // it read another file (the file's contents can still change; the check
+  // is on what kind of file it is). CodeQL flags the open anyway; that alert
+  // is dismissed as a false positive.
   QFile file;
   if (!file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
     ::close(fd);
