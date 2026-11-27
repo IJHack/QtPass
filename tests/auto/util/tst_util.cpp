@@ -217,6 +217,7 @@ private Q_SLOTS:
   // Must stay the first test: Util snapshots the environment once per process.
   void findPasswordStoreHonoursPasswordStoreDir();
   void normalizeFolderPath();
+  void joinPathTakesAColonNameForAName();
   void requireExplicitBareRepository_data();
   void requireExplicitBareRepository();
   void requireExplicitBareRepositoryFollowsGitConfigParameters();
@@ -7701,6 +7702,22 @@ void tst_util::requireExplicitBareRepositoryFollowsGitConfigParameters() {
                               QStringLiteral("'core.pager=less'")}) {
     QCOMPARE(after(kept), kept);
   }
+}
+
+/**
+ * @brief A name starting with ':' is a name in the folder, not a Qt resource
+ *        path left unjoined (scan finding ANT-2026-70DZK0Q9); a plain name is
+ *        joined and an absolute path stays as QDir::filePath() leaves it.
+ */
+void tst_util::joinPathTakesAColonNameForAName() {
+  QCOMPARE(Util::joinPath(QStringLiteral("/store"), QStringLiteral(":team/db")),
+           QStringLiteral("/store/:team/db"));
+  QCOMPARE(Util::joinPath(QStringLiteral("/store/"), QStringLiteral(":x")),
+           QStringLiteral("/store/:x"));
+  QCOMPARE(Util::joinPath(QStringLiteral("/store"), QStringLiteral("team/db")),
+           QStringLiteral("/store/team/db"));
+  QCOMPARE(Util::joinPath(QStringLiteral("/store"), QStringLiteral("/abs/x")),
+           QStringLiteral("/abs/x"));
 }
 
 QTEST_MAIN(tst_util)

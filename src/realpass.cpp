@@ -738,7 +738,7 @@ auto RealPass::refuseIgnoredThatMoves(const QString &src, const QString &dest)
   const QDir store(QDir::cleanPath(m_settings.passStore));
   // pass moves a folder into an existing one, as mv does.
   const QString landing = QFileInfo(dest).isDir()
-                              ? QDir(dest).filePath(QFileInfo(src).fileName())
+                              ? Util::joinPath(dest, QFileInfo(src).fileName())
                               : dest;
   // Each side in its own repository: where the files lie now, and the one
   // pass commits them in.
@@ -866,9 +866,7 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
     return;
   }
   const QString entry =
-      QDir::cleanPath(QDir::isAbsolutePath(file)
-                          ? file + ".gpg"
-                          : QDir(m_settings.passStore).filePath(file) + ".gpg");
+      QDir::cleanPath(Util::joinPath(m_settings.passStore, file) + ".gpg");
   if (refuseLineBreakName(entry)) {
     return;
   }
@@ -1204,9 +1202,8 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // A relative path names a folder in the store, as --path does for pass:
   // resolved once, so the checks below look where pass writes, not in the
   // working directory.
-  const QString folder = QDir::cleanPath(
-      QDir::isAbsolutePath(path) ? path
-                                 : QDir(m_settings.passStore).filePath(path));
+  const QString folder =
+      QDir::cleanPath(Util::joinPath(m_settings.passStore, path));
   // pass init writes .gpg-id with a shell redirection and gpg writes the
   // signature with --output; both follow a link planted under those names.
   // --path is store-relative, or pass creates passStore/passStore/dir: the
@@ -1232,7 +1229,7 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // root is not under the store as named, and the lookup of each nearest
   // list would stop at once and miss the deeper ones.
   const QString inStore =
-      QDir::cleanPath(QDir(m_settings.passStore).filePath(dirWithoutPassdir));
+      QDir::cleanPath(Util::joinPath(m_settings.passStore, dirWithoutPassdir));
   if (refuseUnverifiedTree(inStore, true,
                            QDir(inStore).filePath(QStringLiteral(".gpg-id")))) {
     return;
@@ -1316,14 +1313,14 @@ auto RealPass::passMoveTarget(const QString &src, const QString &dest) const
   target.passDest = passName(
       dest, !destInfo.isDir() && destInfo.suffix() == QLatin1String("gpg"));
   target.newPath = QDir::cleanPath(
-      QDir(QDir::cleanPath(m_settings.passStore)).filePath(target.passDest));
+      Util::joinPath(QDir::cleanPath(m_settings.passStore), target.passDest));
   // `[[ -d $old_path || -d $new_path ]] || new_path="${new_path}.gpg"`;
   // -d follows a link, as isDir() does.
   if (!srcInfo.isDir() && !QFileInfo(target.newPath).isDir()) {
     target.newPath += QLatin1String(".gpg");
   }
   target.written = QFileInfo(target.newPath).isDir()
-                       ? QDir(target.newPath).filePath(srcInfo.fileName())
+                       ? Util::joinPath(target.newPath, srcInfo.fileName())
                        : target.newPath;
   return target;
 }

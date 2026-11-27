@@ -101,6 +101,14 @@ auto Util::expandTilde(const QString &path) -> QString {
   return path;
 }
 
+auto Util::joinPath(const QString &dir, const QString &name) -> QString {
+  if (name.startsWith(QLatin1Char(':'))) {
+    return dir.endsWith(QLatin1Char('/')) ? dir + name
+                                          : dir + QLatin1Char('/') + name;
+  }
+  return QDir(dir).filePath(name);
+}
+
 auto Util::normalizeFolderPath(const QString &path) -> QString {
   QString normalizedPath = path;
   if (!normalizedPath.endsWith('/')) {

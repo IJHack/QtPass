@@ -1209,7 +1209,7 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
   if (entry.isEmpty())
     return;
   const QString fullPath =
-      QDir::cleanPath(QDir(s.passStore).filePath(entry + ".gpg"));
+      QDir::cleanPath(Util::joinPath(s.passStore, entry + ".gpg"));
   // Persistent: setCurrentIndex() runs the selection handlers, which can
   // change the model before the click is handled.
   const QPersistentModelIndex proxyIndex(m_tree->indexFor(fullPath));
@@ -1291,7 +1291,8 @@ auto spelledAsStored(const QString &store, const QString &path) -> QString {
       respelled = true;
     }
     if (leaf) {
-      return respelled ? QDir::cleanPath(dir.filePath(name)) : path;
+      return respelled ? QDir::cleanPath(Util::joinPath(dir.path(), name))
+                       : path;
     }
     if (!dir.cd(name)) {
       return path;
@@ -1311,7 +1312,7 @@ auto MainWindow::exactMatchPath() -> QString {
       continue;
     }
     const QString path =
-        QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(".gpg")));
+        QDir::cleanPath(Util::joinPath(store, typed + QStringLiteral(".gpg")));
     if (PathValidator::isPathInStore(store, path) && QFileInfo(path).isFile()) {
       return spelledAsStored(store, path);
     }
@@ -2079,7 +2080,7 @@ void MainWindow::renamePassword() {
   if (!ok || newName.isEmpty()) {
     return;
   }
-  QString newFile = QDir(filePath).filePath(newName);
+  QString newFile = Util::joinPath(filePath, newName);
   if (!confirmPathInStore(newFile)) {
     return;
   }
