@@ -43,6 +43,7 @@ private Q_SLOTS:
   void executeAsyncWithWorkDir();
   void executeAsyncFailedToStartEmitsError();
   void executeAsyncFailedToStartNoInputDoesNotStall();
+  void failedStartIsReportedBeforeTheNextStarts();
   void executeAsyncEmptyExecutableEmitsErrorAndContinues();
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
@@ -430,6 +431,44 @@ void tst_executor::executeAsyncNonZeroExitCode() {
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
   const int exitCode = spy.first().at(1).toInt();
   QVERIFY2(exitCode != 0, "sh -c 'exit 1' must exit with non-zero code");
+}
+
+/**
+ * @brief A command that cannot start is reported before the next one starts,
+ *        as every other failure is: a caller dropping the rest of its work
+ *        on that error (ImitatePass's insert, then commit) still finds it
+ *        queued, and a command queued later still runs (scan finding
+ *        ANT-2026-6ZWVCC4I).
+ */
+void tst_executor::failedStartIsReportedBeforeTheNextStarts() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  for (const QString &app :
+       {QStringLiteral("/nonexistent/definitely-not-a-real-binary"),
+        QString()}) {
+    Executor exec;
+    QSignalSpy finished(&exec,
+                        qOverload<int, int, const QString &, const QString &>(
+                            &Executor::finished));
+    int cancelled = -2;
+    connect(&exec, &Executor::error, &exec, [&exec, &cancelled](int id) {
+      if (id == 1) {
+        cancelled = exec.cancelNext();
+      }
+    });
+    exec.execute(1, app, {QStringLiteral("-e")}, QStringLiteral("secret\n"),
+                 false, true);
+    exec.execute(2, sh, {QStringLiteral("-c"), QStringLiteral("echo commit")},
+                 true, false);
+    QTRY_COMPARE_WITH_TIMEOUT(cancelled, 2, 5000);
+    exec.execute(3, sh, {QStringLiteral("-c"), QStringLiteral("echo after")},
+                 true, false);
+    QTRY_COMPARE_WITH_TIMEOUT(finished.count(), 1, 5000);
+    QCOMPARE(finished.first().at(0).toInt(), 3);
+    QTest::qWait(200);
+    QCOMPARE(finished.count(), 1); // item 2 never ran
+  }
 }
 
 void tst_executor::executeAsyncFailedToStartEmitsError() {
