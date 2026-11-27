@@ -335,6 +335,21 @@ protected:
   void setEnvVar(const QString &key, const QString &value);
 
   /**
+   * @brief Pin byte-for-byte Git attributes for the store's encrypted files.
+   *
+   * Writes override lines for `*.gpg`, `.gpg-id` and `.gpg-id.sig` into the
+   * store repository's private `info/attributes`, which outranks any in-tree
+   * `.gitattributes`. A co-writer of a shared store can push a `.gitattributes`
+   * (`*.gpg text`, `working-tree-encoding=...`, a filter) that makes Git
+   * transform the ciphertext QtPass commits so it no longer decrypts. The
+   * override disables those conversions. It is written only when the store is
+   * its own Git repository (a `.git` directory); the rarer layouts (a worktree
+   * `.git` file, or a store nested in a larger repository) are left untouched.
+   * Idempotent: the block is marked and rewritten only when absent or changed.
+   */
+  void pinStoreGitAttributes();
+
+  /**
    * @brief Execute wrapper with input.
    * @param id Process identifier.
    * @param app Executable path.

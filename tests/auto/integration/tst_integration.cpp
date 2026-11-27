@@ -333,6 +333,7 @@ private Q_SLOTS:
   void imitatePass_reencryptKeyListingWritesNoFile();
   void imitatePass_removeLinkedFolderKeepsTarget();
   void imitatePass_ignoredEntryIsStillCommitted();
+  void imitatePass_gitAttributesPinnedForStore();
   void mainWindow_selectingEntryShowsDecryptedContent();
   void mainWindow_editEntryThroughModalDialogUpdatesContent();
   void mainWindow_failedAutoPushAfterSaveStaysOnScreen();
@@ -1083,6 +1084,69 @@ void tst_integration::imitatePass_ignoredEntryIsStillCommitted() {
   QVERIFY(ls.waitForFinished() && ls.exitCode() == 0);
   QVERIFY2(!QString::fromUtf8(ls.readAll()).trimmed().isEmpty(),
            "the new entry must be tracked in git, not left ignored");
+}
+
+// A co-writer can push a .gitattributes (e.g. "*.gpg text" or a
+// working-tree-encoding) that makes Git rewrite the ciphertext QtPass commits
+// so it no longer decrypts. QtPass pins byte-for-byte attributes for its own
+// files in the repo-private info/attributes, which outranks the in-tree file.
+void tst_integration::imitatePass_gitAttributesPinnedForStore() {
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping Git integration test");
+
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  QVERIFY2(initGitRepo(storeDir.path(), gitExe), "git repo setup should work");
+
+  // The pushed hostile attribute: force text conversion on every entry.
+  {
+    QFile ga(storeDir.path() + "/.gitattributes");
+    QVERIFY(ga.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(ga.write("*.gpg text\n") > 0);
+    // What `pass git init` writes for decrypted diffs; the pin keeps it.
+    QVERIFY(ga.write("*.gpg diff=gpg\n") > 0);
+  }
+
+  // updateEnv() runs before every operation and installs the pin once .git
+  // exists (INIT ran it before initGitRepo, so run it again here).
+  pass.updateEnv();
+
+  // The pin landed in the repo-private info/attributes.
+  QFile attr(storeDir.path() + "/.git/info/attributes");
+  QVERIFY2(attr.open(QIODevice::ReadOnly | QIODevice::Text),
+           "git info/attributes should have been written");
+  const QString attrText = QString::fromUtf8(attr.readAll());
+  QVERIFY2(attrText.contains("*.gpg -text"),
+           qPrintable("info/attributes should pin *.gpg: " + attrText));
+
+  // And Git honours it over the pushed .gitattributes: text is unset for a .gpg
+  // path, so no CR/LF or encoding rewrite happens on commit or checkout.
+  QProcess chk;
+  chk.setWorkingDirectory(storeDir.path());
+  chk.start(gitExe, {"check-attr", "text", "--", "anything.gpg"});
+  QVERIFY(chk.waitForFinished() && chk.exitCode() == 0);
+  const QString chkOut = QString::fromUtf8(chk.readAll());
+  QVERIFY2(chkOut.contains("text: unset"),
+           qPrintable("the pushed .gitattributes must not win: " + chkOut));
+
+  // diff only changes what Git shows, so the pin leaves pass's diff=gpg.
+  QProcess diffChk;
+  diffChk.setWorkingDirectory(storeDir.path());
+  diffChk.start(gitExe, {"check-attr", "diff", "--", "anything.gpg"});
+  QVERIFY(diffChk.waitForFinished() && diffChk.exitCode() == 0);
+  const QString diffOut = QString::fromUtf8(diffChk.readAll());
+  QVERIFY2(diffOut.contains("diff: gpg"),
+           qPrintable("pass's decrypted diffs must keep working: " + diffOut));
 }
 
 void tst_integration::imitatePass_gitCopyAndShow() {
