@@ -410,8 +410,8 @@ class RealPass : public Pass {
   /// The entries of the queued inserts, oldest first.
   QQueue<QString> m_insertQueue;
   /// The inserts that left the queue and have yet to complete, in the
-  /// order their completions come: a failed start's error is posted, and
-  /// the next insert may start before it arrives.
+  /// order their completions come (a failed start's error is posted, and
+  /// the executor starts nothing else until it is out).
   QQueue<InsertRecord> m_insertPending;
   /// The insert whose completion is being handled.
   InsertRecord m_insertDone;

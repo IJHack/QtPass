@@ -83,7 +83,8 @@ class Executor : public QObject {
   /// being emitted now, and fires only when the executor is idle and no
   /// error() of a failed start is still on its way.
   void postDrainedIfIdle();
-  /// error()s of failed starts posted but not delivered yet.
+  /// error()s of failed starts posted but not delivered yet; nothing new
+  /// starts while there is one (executeNext()).
   int m_pendingErrors = 0;
   /// A drained() check is posted and not run yet.
   bool m_drainCheckPosted = false;

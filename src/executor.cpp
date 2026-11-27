@@ -337,7 +337,12 @@ auto Executor::translatePathForWsl(const QString &path, const QString &exe)
 }
 
 void Executor::executeNext() {
-  if (running || m_execQueue.isEmpty()) {
+  // Nothing starts while a failed start's error() is still on its way: every
+  // other failure is emitted before the next item starts (onProcessFinished),
+  // and a caller that drops the rest of its work on a failure (ImitatePass's
+  // insert-then-commit) relies on that order. The posted error continues the
+  // queue once it is out.
+  if (running || m_pendingErrors > 0 || m_execQueue.isEmpty()) {
     return;
   }
   // A copy, and marked running, before anyone hears of it: a slot on
@@ -361,10 +366,10 @@ void Executor::executeNext() {
           emit error(failedId, -1, QString(),
                      tr("No executable configured for this command"));
           --m_pendingErrors;
+          executeNext();
           postDrainedIfIdle();
         },
         Qt::QueuedConnection);
-    executeNext();
     return;
   }
 
@@ -393,10 +398,10 @@ void Executor::executeNext() {
           emit error(failedId, -1, QString(),
                      tr("Failed to start %1").arg(failedApp));
           --m_pendingErrors;
+          executeNext();
           postDrainedIfIdle();
         },
         Qt::QueuedConnection);
-    executeNext();
     return;
   }
 
