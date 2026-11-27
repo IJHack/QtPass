@@ -12,8 +12,8 @@
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu...">
-<polygon fill="#999999" stroke="#666666" points="109.75,-270.75 0,-270.75 0,-250 109.75,-250 109.75,-270.75"/>
-<text xml:space="preserve" text-anchor="middle" x="54.88" y="-257.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::search</text>
+<polygon fill="#999999" stroke="#666666" points="109.75,-274.75 0,-274.75 0,-254 109.75,-254 109.75,-274.75"/>
+<text xml:space="preserve" text-anchor="middle" x="54.88" y="-261.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::search</text>
 </a>
 </g>
 </g>
@@ -21,8 +21,8 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6" target="_top" xlink:title="Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ...">
-<polygon fill="white" stroke="#666666" points="626.5,-309.75 517.5,-309.75 517.5,-289 626.5,-289 626.5,-309.75"/>
-<text xml:space="preserve" text-anchor="middle" x="572" y="-296.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::cancel</text>
+<polygon fill="white" stroke="#666666" points="626.5,-313.75 517.5,-313.75 517.5,-293 626.5,-293 626.5,-313.75"/>
+<text xml:space="preserve" text-anchor="middle" x="572" y="-300.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::cancel</text>
 </a>
 </g>
 </g>
@@ -30,8 +30,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M99.97,-271.18C114.47,-274.33 130.72,-277.45 145.75,-279.38 272.48,-295.64 421.96,-299.06 505.69,-299.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="505.52,-303.06 515.54,-299.61 505.56,-296.06 505.52,-303.06"/>
+<path fill="none" stroke="#63b8ff" d="M99.97,-275.18C114.47,-278.33 130.72,-281.45 145.75,-283.38 272.48,-299.64 421.96,-303.06 505.69,-303.56"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="505.52,-307.06 515.54,-303.61 505.56,-300.06 505.52,-307.06"/>
 </a>
 </g>
 </g>
@@ -39,8 +39,8 @@
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" target="_top" xlink:title="The newest search is over.">
-<polygon fill="white" stroke="#666666" points="266.38,-270.75 150.62,-270.75 150.62,-250 266.38,-250 266.38,-270.75"/>
-<text xml:space="preserve" text-anchor="middle" x="208.5" y="-257.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::finished</text>
+<polygon fill="white" stroke="#666666" points="266.38,-274.75 150.62,-274.75 150.62,-254 266.38,-254 266.38,-274.75"/>
+<text xml:space="preserve" text-anchor="middle" x="208.5" y="-261.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::finished</text>
 </a>
 </g>
 </g>
@@ -48,8 +48,8 @@
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M110.19,-260.38C119.53,-260.38 129.35,-260.38 139.01,-260.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="138.73,-263.88 148.73,-260.38 138.73,-256.88 138.73,-263.88"/>
+<path fill="none" stroke="#63b8ff" d="M110.19,-264.38C119.53,-264.38 129.35,-264.38 139.01,-264.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="138.73,-267.88 148.73,-264.38 138.73,-260.88 138.73,-267.88"/>
 </a>
 </g>
 </g>
@@ -57,8 +57,8 @@
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10" target="_top" xlink:title="Walk storeDir, decrypt every .gpg file and collect the matches.">
-<polygon fill="white" stroke="#666666" points="271.25,-231.75 145.75,-231.75 145.75,-211 271.25,-211 271.25,-231.75"/>
-<text xml:space="preserve" text-anchor="middle" x="208.5" y="-218.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::scanStore</text>
+<polygon fill="white" stroke="#666666" points="271.25,-235.75 145.75,-235.75 145.75,-215 271.25,-215 271.25,-235.75"/>
+<text xml:space="preserve" text-anchor="middle" x="208.5" y="-222.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::scanStore</text>
 </a>
 </g>
 </g>
@@ -66,8 +66,8 @@
 <g id="edge3_Node000001_Node000004" class="edge">
 <title>Node1&#45;&gt;Node4</title>
 <g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M98.11,-249.51C115.45,-245.05 135.74,-239.83 154.09,-235.11"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="154.95,-238.51 163.76,-232.63 153.21,-231.73 154.95,-238.51"/>
+<path fill="none" stroke="#63b8ff" d="M98.11,-253.51C115.45,-249.05 135.74,-243.83 154.09,-239.11"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="154.95,-242.51 163.76,-236.63 153.21,-235.73 154.95,-242.51"/>
 </a>
 </g>
 </g>
@@ -75,8 +75,8 @@
 <g id="edge4_Node000004_Node000002" class="edge">
 <title>Node4&#45;&gt;Node2</title>
 <g id="a_edge4_Node000004_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M259.77,-232.22C325.23,-246.35 439.6,-271.02 509.97,-286.21"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="508.88,-289.55 519.39,-288.24 510.36,-282.71 508.88,-289.55"/>
+<path fill="none" stroke="#63b8ff" d="M259.77,-236.22C325.23,-250.35 439.6,-275.02 509.97,-290.21"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="508.88,-293.55 519.39,-292.24 510.36,-286.71 508.88,-293.55"/>
 </a>
 </g>
 </g>
@@ -84,8 +84,8 @@
 <g id="Node000005" class="node">
 <title>Node5</title>
 <g id="a_Node000005"><a xlink:href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681" target="_top" xlink:title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">
-<polygon fill="white" stroke="#666666" points="451.5,-231.75 307.25,-231.75 307.25,-211 451.5,-211 451.5,-231.75"/>
-<text xml:space="preserve" text-anchor="middle" x="379.38" y="-218.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::isMoreMarker</text>
+<polygon fill="white" stroke="#666666" points="451.5,-235.75 307.25,-235.75 307.25,-215 451.5,-215 451.5,-235.75"/>
+<text xml:space="preserve" text-anchor="middle" x="379.38" y="-222.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::isMoreMarker</text>
 </a>
 </g>
 </g>
@@ -93,8 +93,8 @@
 <g id="edge5_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
 <g id="a_edge5_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M271.42,-221.38C279.29,-221.38 287.44,-221.38 295.58,-221.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="295.51,-224.88 305.51,-221.38 295.51,-217.88 295.51,-224.88"/>
+<path fill="none" stroke="#63b8ff" d="M271.42,-225.38C279.29,-225.38 287.44,-225.38 295.58,-225.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="295.51,-228.88 305.51,-225.38 295.51,-221.88 295.51,-228.88"/>
 </a>
 </g>
 </g>
@@ -102,8 +102,8 @@
 <g id="Node000006" class="node">
 <title>Node6</title>
 <g id="a_Node000006"><a xlink:href="class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641" target="_top" xlink:title="Decrypt one .gpg file and return its trimmed lines matching rx.">
-<polygon fill="white" stroke="#666666" points="442.12,-192.75 316.62,-192.75 316.62,-172 442.12,-172 442.12,-192.75"/>
-<text xml:space="preserve" text-anchor="middle" x="379.38" y="-179.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::matchFile</text>
+<polygon fill="white" stroke="#666666" points="442.12,-196.75 316.62,-196.75 316.62,-176 442.12,-176 442.12,-196.75"/>
+<text xml:space="preserve" text-anchor="middle" x="379.38" y="-183.25" font-family="Helvetica,sans-Serif" font-size="10.00">NativeGrep::matchFile</text>
 </a>
 </g>
 </g>
@@ -111,26 +111,26 @@
 <g id="edge6_Node000004_Node000006" class="edge">
 <title>Node4&#45;&gt;Node6</title>
 <g id="a_edge6_Node000004_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M256.54,-210.51C276.31,-205.95 299.51,-200.59 320.33,-195.78"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="320.86,-199.25 329.82,-193.59 319.29,-192.43 320.86,-199.25"/>
+<path fill="none" stroke="#63b8ff" d="M256.54,-214.51C276.31,-209.95 299.51,-204.59 320.33,-199.78"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="320.86,-203.25 329.82,-197.59 319.29,-196.43 320.86,-203.25"/>
 </a>
 </g>
 </g>
-<!-- Node35 -->
-<g id="Node000035" class="node">
-<title>Node35</title>
-<g id="a_Node000035"><a xlink:href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" target="_top" xlink:title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">
-<polygon fill="white" stroke="#666666" points="442.12,-153.75 316.62,-153.75 316.62,-133 442.12,-133 442.12,-153.75"/>
-<text xml:space="preserve" text-anchor="middle" x="379.38" y="-140.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::regularFilesUnder</text>
+<!-- Node36 -->
+<g id="Node000036" class="node">
+<title>Node36</title>
+<g id="a_Node000036"><a xlink:href="class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" target="_top" xlink:title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">
+<polygon fill="white" stroke="#666666" points="442.12,-157.75 316.62,-157.75 316.62,-137 442.12,-137 442.12,-157.75"/>
+<text xml:space="preserve" text-anchor="middle" x="379.38" y="-144.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::regularFilesUnder</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node35 -->
-<g id="edge45_Node000004_Node000035" class="edge">
-<title>Node4&#45;&gt;Node35</title>
-<g id="a_edge45_Node000004_Node000035"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M224.74,-210.61C243.43,-197.83 276.42,-176.59 307.25,-163.38 312.08,-161.31 317.19,-159.39 322.36,-157.62"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="323.09,-161.06 331.55,-154.68 320.96,-154.39 323.09,-161.06"/>
+<!-- Node4&#45;&gt;Node36 -->
+<g id="edge46_Node000004_Node000036" class="edge">
+<title>Node4&#45;&gt;Node36</title>
+<g id="a_edge46_Node000004_Node000036"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M224.74,-214.61C243.43,-201.83 276.42,-180.59 307.25,-167.38 312.08,-165.31 317.19,-163.39 322.36,-161.62"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="323.09,-165.06 331.55,-158.68 320.96,-158.39 323.09,-165.06"/>
 </a>
 </g>
 </g>
@@ -138,8 +138,8 @@
 <g id="edge7_Node000006_Node000002" class="edge">
 <title>Node6&#45;&gt;Node2</title>
 <g id="a_edge7_Node000006_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M436.71,-193.13C442.05,-195.6 447.1,-198.64 451.5,-202.38 480.3,-226.82 458.23,-255.5 487.5,-279.38 493.24,-284.06 499.9,-287.68 506.91,-290.47"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="505.33,-293.63 515.92,-293.51 507.57,-287 505.33,-293.63"/>
+<path fill="none" stroke="#63b8ff" d="M436.71,-197.13C442.05,-199.6 447.1,-202.64 451.5,-206.38 480.3,-230.82 458.23,-259.5 487.5,-283.38 493.24,-288.06 499.9,-291.68 506.91,-294.47"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="505.33,-297.63 515.92,-297.51 507.57,-291 505.33,-297.63"/>
 </a>
 </g>
 </g>
@@ -147,8 +147,8 @@
 <g id="Node000007" class="node">
 <title>Node7</title>
 <g id="a_Node000007"><a xlink:href="class_executor.html#ad6d464c18982af003c0c330458860578" target="_top" xlink:title="Decode process output as executeBlocking() does: UTF&#45;8 first, the system encoding when it is not UTF&#45;...">
-<polygon fill="white" stroke="#666666" points="631.75,-270.75 512.25,-270.75 512.25,-250 631.75,-250 631.75,-270.75"/>
-<text xml:space="preserve" text-anchor="middle" x="572" y="-257.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::decodeText</text>
+<polygon fill="white" stroke="#666666" points="631.75,-274.75 512.25,-274.75 512.25,-254 631.75,-254 631.75,-274.75"/>
+<text xml:space="preserve" text-anchor="middle" x="572" y="-261.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::decodeText</text>
 </a>
 </g>
 </g>
@@ -156,8 +156,8 @@
 <g id="edge8_Node000006_Node000007" class="edge">
 <title>Node6&#45;&gt;Node7</title>
 <g id="a_edge8_Node000006_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M431.52,-193.12C438.49,-195.62 445.35,-198.66 451.5,-202.38 471.41,-214.4 467.35,-228.74 487.5,-240.38 491.83,-242.87 496.46,-245.06 501.23,-246.98"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="499.83,-250.2 510.43,-250.24 502.17,-243.6 499.83,-250.2"/>
+<path fill="none" stroke="#63b8ff" d="M431.52,-197.12C438.49,-199.62 445.35,-202.66 451.5,-206.38 471.41,-218.4 467.35,-232.74 487.5,-244.38 491.83,-246.87 496.46,-249.06 501.23,-250.98"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="499.83,-254.2 510.43,-254.24 502.17,-247.6 499.83,-254.2"/>
 </a>
 </g>
 </g>
@@ -165,8 +165,8 @@
 <g id="Node000008" class="node">
 <title>Node8</title>
 <g id="a_Node000008"><a xlink:href="class_executor.html#aa85fd530f22dc8d60b4fa696c33da5f1" target="_top" xlink:title="executeBlocking() on bytes, for an entry&#39;s plaintext: input is written to stdin and stdout returned e...">
-<polygon fill="white" stroke="#666666" points="654.62,-231.75 489.38,-231.75 489.38,-211 654.62,-211 654.62,-231.75"/>
-<text xml:space="preserve" text-anchor="middle" x="572" y="-218.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlockingRaw</text>
+<polygon fill="white" stroke="#666666" points="654.62,-235.75 489.38,-235.75 489.38,-215 654.62,-215 654.62,-235.75"/>
+<text xml:space="preserve" text-anchor="middle" x="572" y="-222.25" font-family="Helvetica,sans-Serif" font-size="10.00">Executor::executeBlockingRaw</text>
 </a>
 </g>
 </g>
@@ -174,8 +174,8 @@
 <g id="edge9_Node000006_Node000008" class="edge">
 <title>Node6&#45;&gt;Node8</title>
 <g id="a_edge9_Node000006_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M433.47,-193.24C456.2,-197.89 482.95,-203.36 506.78,-208.24"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="505.87,-211.62 516.37,-210.2 507.28,-204.77 505.87,-211.62"/>
+<path fill="none" stroke="#63b8ff" d="M433.47,-197.24C456.2,-201.89 482.95,-207.36 506.78,-212.24"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="505.87,-215.62 516.37,-214.2 507.28,-208.77 505.87,-215.62"/>
 </a>
 </g>
 </g>
@@ -183,8 +183,8 @@
 <g id="Node000017" class="node">
 <title>Node17</title>
 <g id="a_Node000017"><a xlink:href="class_file_content.html#a722f8a24e019518e36039dc423edeffc" target="_top" xlink:title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,...">
-<polygon fill="white" stroke="#666666" points="633.62,-192.75 510.38,-192.75 510.38,-172 633.62,-172 633.62,-192.75"/>
-<text xml:space="preserve" text-anchor="middle" x="572" y="-179.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpLine</text>
+<polygon fill="white" stroke="#666666" points="633.62,-196.75 510.38,-196.75 510.38,-176 633.62,-176 633.62,-196.75"/>
+<text xml:space="preserve" text-anchor="middle" x="572" y="-183.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpLine</text>
 </a>
 </g>
 </g>
@@ -192,8 +192,8 @@
 <g id="edge19_Node000006_Node000017" class="edge">
 <title>Node6&#45;&gt;Node17</title>
 <g id="a_edge19_Node000006_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M442.53,-182.38C460.43,-182.38 480.12,-182.38 498.59,-182.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="498.39,-185.88 508.39,-182.38 498.39,-178.88 498.39,-185.88"/>
+<path fill="none" stroke="#63b8ff" d="M442.53,-186.38C460.43,-186.38 480.12,-186.38 498.59,-186.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="498.39,-189.88 508.39,-186.38 498.39,-182.88 498.39,-189.88"/>
 </a>
 </g>
 </g>
@@ -201,8 +201,8 @@
 <g id="Node000020" class="node">
 <title>Node20</title>
 <g id="a_Node000020"><a xlink:href="class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" target="_top" xlink:title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password.">
-<polygon fill="white" stroke="#666666" points="656.5,-153.75 487.5,-153.75 487.5,-133 656.5,-133 656.5,-153.75"/>
-<text xml:space="preserve" text-anchor="middle" x="572" y="-140.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpPasswordLine</text>
+<polygon fill="white" stroke="#666666" points="656.5,-157.75 487.5,-157.75 487.5,-137 656.5,-137 656.5,-157.75"/>
+<text xml:space="preserve" text-anchor="middle" x="572" y="-144.25" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::isOtpPasswordLine</text>
 </a>
 </g>
 </g>
@@ -210,8 +210,8 @@
 <g id="edge22_Node000006_Node000020" class="edge">
 <title>Node6&#45;&gt;Node20</title>
 <g id="a_edge22_Node000006_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M433.47,-171.51C456.2,-166.86 482.95,-161.39 506.78,-156.51"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="507.28,-159.98 516.37,-154.55 505.87,-153.13 507.28,-159.98"/>
+<path fill="none" stroke="#63b8ff" d="M433.47,-175.51C456.2,-170.86 482.95,-165.39 506.78,-160.51"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="507.28,-163.98 516.37,-158.55 505.87,-157.13 507.28,-163.98"/>
 </a>
 </g>
 </g>
@@ -219,8 +219,8 @@
 <g id="Node000031" class="node">
 <title>Node31</title>
 <g id="a_Node000031"><a xlink:href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a" target="_top" xlink:title="The gpg options that enforce kMaxPlaintextBytes.">
-<polygon fill="white" stroke="#666666" points="632.12,-114.75 511.88,-114.75 511.88,-94 632.12,-94 632.12,-114.75"/>
-<text xml:space="preserve" text-anchor="middle" x="572" y="-101.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::maxOutputArgs</text>
+<polygon fill="white" stroke="#666666" points="632.12,-118.75 511.88,-118.75 511.88,-98 632.12,-98 632.12,-118.75"/>
+<text xml:space="preserve" text-anchor="middle" x="572" y="-105.25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::maxOutputArgs</text>
 </a>
 </g>
 </g>
@@ -228,8 +228,8 @@
 <g id="edge40_Node000006_Node000031" class="edge">
 <title>Node6&#45;&gt;Node31</title>
 <g id="a_edge40_Node000006_Node000031"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M431.52,-171.63C438.49,-169.13 445.35,-166.09 451.5,-162.38 471.41,-150.35 467.35,-136.01 487.5,-124.38 491.64,-121.98 496.05,-119.88 500.6,-118.03"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="501.76,-121.33 509.99,-114.65 499.39,-114.74 501.76,-121.33"/>
+<path fill="none" stroke="#63b8ff" d="M431.52,-175.63C438.49,-173.13 445.35,-170.09 451.5,-166.38 471.41,-154.35 467.35,-140.01 487.5,-128.38 491.64,-125.98 496.05,-123.88 500.6,-122.03"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="501.76,-125.33 509.99,-118.65 499.39,-118.74 501.76,-125.33"/>
 </a>
 </g>
 </g>
@@ -237,8 +237,8 @@
 <g id="Node000032" class="node">
 <title>Node32</title>
 <g id="a_Node000032"><a xlink:href="class_util.html#a8e427903937505b5e19ebbea7050494e" target="_top" xlink:title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes.">
-<polygon fill="white" stroke="#666666" points="821.75,-38.75 706,-38.75 706,-18 821.75,-18 821.75,-38.75"/>
-<text xml:space="preserve" text-anchor="middle" x="763.88" y="-25.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::readRegularFile</text>
+<polygon fill="white" stroke="#666666" points="821.75,-66.75 706,-66.75 706,-46 821.75,-46 821.75,-66.75"/>
+<text xml:space="preserve" text-anchor="middle" x="763.88" y="-53.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::readRegularFile</text>
 </a>
 </g>
 </g>
@@ -246,8 +246,8 @@
 <g id="edge41_Node000006_Node000032" class="edge">
 <title>Node6&#45;&gt;Node32</title>
 <g id="a_edge41_Node000006_Node000032"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M436.71,-171.62C442.05,-169.15 447.1,-166.11 451.5,-162.38 480.3,-137.93 457.86,-108.8 487.5,-85.38 495.7,-78.9 616.08,-55.59 694.94,-40.86"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="695.1,-44.39 704.29,-39.12 693.82,-37.51 695.1,-44.39"/>
+<path fill="none" stroke="#63b8ff" d="M436.71,-175.62C442.05,-173.15 447.1,-170.11 451.5,-166.38 480.3,-141.93 456.89,-111.52 487.5,-89.38 519.51,-66.21 623.65,-59.19 694.28,-57.13"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="694.33,-60.63 704.24,-56.87 694.15,-53.63 694.33,-60.63"/>
 </a>
 </g>
 </g>
@@ -255,8 +255,8 @@
 <g id="Node000034" class="node">
 <title>Node34</title>
 <g id="a_Node000034"><a xlink:href="class_util.html#ab22e866d6db73831a0414056d34f6027" target="_top" xlink:title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it.">
-<polygon fill="white" stroke="#666666" points="644.5,-38.75 499.5,-38.75 499.5,-18 644.5,-18 644.5,-38.75"/>
-<text xml:space="preserve" text-anchor="middle" x="572" y="-25.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::readRegularFileUnder</text>
+<polygon fill="white" stroke="#666666" points="644.5,-42.75 499.5,-42.75 499.5,-22 644.5,-22 644.5,-42.75"/>
+<text xml:space="preserve" text-anchor="middle" x="572" y="-29.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::readRegularFileUnder</text>
 </a>
 </g>
 </g>
@@ -264,8 +264,8 @@
 <g id="edge43_Node000006_Node000034" class="edge">
 <title>Node6&#45;&gt;Node34</title>
 <g id="a_edge43_Node000006_Node000034"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M438.23,-171.63C443.08,-169.15 447.61,-166.1 451.5,-162.38 488.63,-126.78 450.47,-88.08 487.5,-52.38 490.56,-49.43 493.95,-46.84 497.57,-44.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="499.07,-47.73 506.27,-39.96 495.8,-41.54 499.07,-47.73"/>
+<path fill="none" stroke="#63b8ff" d="M438.23,-175.63C443.08,-173.15 447.61,-170.1 451.5,-166.38 488.63,-130.78 450.47,-92.08 487.5,-56.38 490.56,-53.43 493.95,-50.84 497.57,-48.56"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="499.07,-51.73 506.27,-43.96 495.8,-45.54 499.07,-51.73"/>
 </a>
 </g>
 </g>
@@ -282,8 +282,8 @@
 <g id="edge10_Node000008_Node000009" class="edge">
 <title>Node8&#45;&gt;Node9</title>
 <g id="a_edge10_Node000008_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M624.38,-232.2C647.81,-237.14 675.76,-243.02 700.39,-248.21"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="699.46,-251.59 709.97,-250.23 700.91,-244.74 699.46,-251.59"/>
+<path fill="none" stroke="#63b8ff" d="M630.23,-236.23C650.5,-240.07 673.51,-244.43 694.6,-248.43"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="693.8,-251.84 704.28,-250.27 695.11,-244.96 693.8,-251.84"/>
 </a>
 </g>
 </g>
@@ -438,8 +438,8 @@
 <g id="edge20_Node000017_Node000018" class="edge">
 <title>Node17&#45;&gt;Node18</title>
 <g id="a_edge20_Node000017_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M634.12,-175.94C649.13,-174.36 665.43,-172.64 681.23,-170.98"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="681.54,-174.46 691.11,-169.93 680.8,-167.5 681.54,-174.46"/>
+<path fill="none" stroke="#63b8ff" d="M634.12,-178.65C649.13,-176.75 665.43,-174.69 681.23,-172.7"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="681.64,-176.17 691.12,-171.45 680.76,-169.23 681.64,-176.17"/>
 </a>
 </g>
 </g>
@@ -456,8 +456,8 @@
 <g id="edge21_Node000017_Node000019" class="edge">
 <title>Node17&#45;&gt;Node19</title>
 <g id="a_edge21_Node000017_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M634.08,-185.31C695.32,-188.25 790.24,-192.8 859.68,-196.14"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="859.36,-199.62 869.51,-196.61 859.69,-192.63 859.36,-199.62"/>
+<path fill="none" stroke="#63b8ff" d="M634.08,-188.66C695.32,-190.94 790.24,-194.49 859.68,-197.08"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="859.39,-200.57 869.51,-197.44 859.65,-193.57 859.39,-200.57"/>
 </a>
 </g>
 </g>
@@ -465,8 +465,8 @@
 <g id="edge23_Node000020_Node000018" class="edge">
 <title>Node20&#45;&gt;Node18</title>
 <g id="a_edge23_Node000020_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M656.83,-151.76C664.94,-152.57 673.15,-153.4 681.23,-154.21"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="680.74,-157.67 691.04,-155.19 681.44,-150.71 680.74,-157.67"/>
+<path fill="none" stroke="#63b8ff" d="M656.83,-154C664.94,-154.64 673.15,-155.29 681.23,-155.93"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="680.79,-159.4 691.03,-156.7 681.34,-152.42 680.79,-159.4"/>
 </a>
 </g>
 </g>
@@ -483,8 +483,8 @@
 <g id="edge24_Node000020_Node000021" class="edge">
 <title>Node20&#45;&gt;Node21</title>
 <g id="a_edge24_Node000020_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M627.16,-132.54C652.16,-127.53 681.81,-121.6 707.02,-116.55"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="707.65,-120 716.77,-114.6 706.28,-113.13 707.65,-120"/>
+<path fill="none" stroke="#63b8ff" d="M621.9,-136.56C647.95,-130.8 680.11,-123.68 707.13,-117.7"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="707.88,-121.12 716.89,-115.55 706.37,-114.29 707.88,-121.12"/>
 </a>
 </g>
 </g>
@@ -717,17 +717,35 @@
 <g id="edge42_Node000032_Node000033" class="edge">
 <title>Node32&#45;&gt;Node33</title>
 <g id="a_edge42_Node000032_Node000033"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M822.06,-22.75C839.88,-21 859.73,-19.05 878.3,-17.23"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="878.55,-20.72 888.16,-16.26 877.87,-13.75 878.55,-20.72"/>
+<path fill="none" stroke="#63b8ff" d="M807.81,-45.59C833.55,-39.13 866.51,-30.85 894,-23.94"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="894.7,-27.37 903.55,-21.54 893,-20.58 894.7,-27.37"/>
 </a>
 </g>
 </g>
 <!-- Node34&#45;&gt;Node32 -->
-<g id="edge44_Node000034_Node000032" class="edge">
+<g id="edge45_Node000034_Node000032" class="edge">
 <title>Node34&#45;&gt;Node32</title>
-<g id="a_edge44_Node000034_Node000032"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M644.78,-28.38C661.01,-28.38 678.2,-28.38 694.28,-28.38"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="694.26,-31.88 704.26,-28.38 694.26,-24.88 694.26,-31.88"/>
+<g id="a_edge45_Node000034_Node000032"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M644.78,-41.45C661.17,-43.52 678.53,-45.71 694.75,-47.76"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="693.92,-51.19 704.28,-48.97 694.79,-44.24 693.92,-51.19"/>
+</a>
+</g>
+</g>
+<!-- Node35 -->
+<g id="Node000035" class="node">
+<title>Node35</title>
+<g id="a_Node000035"><a xlink:href="class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" target="_top" xlink:title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w...">
+<polygon fill="white" stroke="#666666" points="825.12,-27.75 702.62,-27.75 702.62,-7 825.12,-7 825.12,-27.75"/>
+<text xml:space="preserve" text-anchor="middle" x="763.88" y="-14.25" font-family="Helvetica,sans-Serif" font-size="10.00">Util::isAbsoluteFsPath</text>
+</a>
+</g>
+</g>
+<!-- Node34&#45;&gt;Node35 -->
+<g id="edge44_Node000034_Node000035" class="edge">
+<title>Node34&#45;&gt;Node35</title>
+<g id="a_edge44_Node000034_Node000035"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M644.78,-26.7C659.85,-25.51 675.74,-24.26 690.81,-23.07"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="690.95,-26.57 700.64,-22.29 690.4,-19.59 690.95,-26.57"/>
 </a>
 </g>
 </g>

@@ -1,19 +1,22 @@
 <map id="Pass::getRecipientList" name="Pass::getRecipientList">
 <area shape="rect" id="Node000001" title="Get list of recipients for a password file." alt="" coords="5,84,169,112"/>
 <area shape="rect" id="Node000002" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="244,5,390,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,81,216,43,245,37,240,39,218,48,122,86"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,81,216,43,245,36,240,39,218,48,122,86"/>
 <area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="244,57,390,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,86,231,80,227,82,170,91"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,86,231,80,227,83,170,91"/>
 <area shape="rect" id="Node000004" href="$class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f" title="Parse the contents of a .gpg&#45;id: one recipient per line, # starts a comment, unusable lines are logge..." alt="" coords="236,109,398,137"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,104,223,112,218,113,169,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,104,223,112,218,114,169,109"/>
 <area shape="rect" id="Node000006" href="$class_util.html#ad9f5d96dee382e8f0bf1d8f03069f60b" title="readRegularFileUnder() for a file of the store at store, spelled under the store as configured or und..." alt="" coords="217,161,417,189"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="122,110,218,146,246,157,241,157,216,151,121,115"/>
 <area shape="rect" id="Node000005" href="$class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5" title="Check whether a .gpg&#45;id token may be passed to gpg as a key selector. Accepts any non&#45;empty token tha..." alt="" coords="496,109,627,137"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="398,121,483,123,478,123,399,126"/>
-<area shape="rect" id="Node000007" href="$class_util.html#ab22e866d6db73831a0414056d34f6027" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="465,161,658,189"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="417,173,452,175,447,175,417,178"/>
-<area shape="rect" id="Node000008" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="706,161,861,189"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="658,173,693,175,688,175,659,178"/>
-<area shape="rect" id="Node000009" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="909,161,1066,189"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="861,173,896,175,890,175,861,178"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="398,121,483,123,478,124,399,126"/>
+<area shape="rect" id="Node000007" href="$class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w..." alt="" coords="706,160,870,188"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="417,172,693,174,688,175,418,178"/>
+<area shape="rect" id="Node000008" href="$class_util.html#ab22e866d6db73831a0414056d34f6027" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="465,211,658,238"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="389,187,477,207,472,207,389,192"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="626,207,705,192,711,191,627,213"/>
+<area shape="rect" id="Node000009" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="711,212,865,240"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="658,222,698,225,693,225,659,228"/>
+<area shape="rect" id="Node000010" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="918,212,1075,240"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="865,223,905,226,899,226,865,228"/>
 </map>

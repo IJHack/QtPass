@@ -1,15 +1,17 @@
 <map id="StoreModel::filterAcceptsRow" name="StoreModel::filterAcceptsRow">
-<area shape="rect" id="Node000001" title="Filter whether a row should be displayed." alt="" coords="5,81,218,109"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown." alt="" coords="266,81,430,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,93,253,95,247,96,218,98"/>
-<area shape="poly" id="edge7_Node000002_Node000002" title=" " alt="" coords="312,80,307,72,312,63,325,57,348,55,372,57,386,66,381,66,370,62,348,60,327,62,315,67,312,72,318,82"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="482,5,621,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,78,495,40,501,38,388,83"/>
-<area shape="rect" id="Node000004" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="673,81,819,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="430,93,661,95,655,96,431,98"/>
-<area shape="rect" id="Node000005" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="487,107,616,134"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="430,103,474,110,469,111,430,108"/>
-<area shape="rect" id="Node000006" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="478,159,625,186"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="386,107,479,143,499,153,494,152,477,148,385,112"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="616,109,655,107,661,106,617,115"/>
+<area shape="rect" id="Node000001" title="Filter whether a row should be displayed." alt="" coords="5,108,218,136"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown." alt="" coords="266,108,430,136"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,119,253,121,248,123,219,124"/>
+<area shape="poly" id="edge8_Node000002_Node000002" title=" " alt="" coords="311,107,305,99,310,89,325,83,348,81,373,84,388,93,382,93,371,89,348,87,326,89,314,93,311,99,316,108"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="490,5,629,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,105,417,75,477,43,492,40,497,38,479,48,420,80,372,110"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w..." alt="" coords="478,57,641,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="408,105,487,88,482,90,409,110"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="689,133,835,161"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="430,124,676,141,671,143,431,130"/>
+<area shape="rect" id="Node000006" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="495,159,624,186"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="409,134,487,154,481,155,408,139"/>
+<area shape="rect" id="Node000007" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="486,211,633,238"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="371,134,420,164,479,195,498,205,492,204,477,200,417,169,370,139"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="624,162,671,159,677,158,625,167"/>
 </map>

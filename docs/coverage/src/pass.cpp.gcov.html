@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 22:22:52</td>
+            <td class="headerValue">2026-11-27 22:52:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -629,22 +629,22 @@
 <span id="L556"><span class="lineNum">     556</span> <span class="tlaGNC">         314 :   const auto reportedOut = qScopeGuard([this] { m_reportedInsert.clear(); });</span></span>
 <span id="L557"><span class="lineNum">     557</span>              : </span>
 <span id="L558"><span class="lineNum">     558</span> <span class="tlaGNC">         314 :   if (exitCode != 0) {</span></span>
-<span id="L559"><span class="lineNum">     559</span> <span class="tlaGNC">          63 :     handleProcessError(pid, exitCode, out, err);</span></span>
+<span id="L559"><span class="lineNum">     559</span> <span class="tlaGNC">          62 :     handleProcessError(pid, exitCode, out, err);</span></span>
 <span id="L560"><span class="lineNum">     560</span>              :     return;</span>
 <span id="L561"><span class="lineNum">     561</span>              :   }</span>
 <span id="L562"><span class="lineNum">     562</span>              : </span>
-<span id="L563"><span class="lineNum">     563</span> <span class="tlaGNC">         251 :   if (pid == PASS_SHOW) {</span></span>
-<span id="L564"><span class="lineNum">     564</span> <span class="tlaGNC">          50 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
+<span id="L563"><span class="lineNum">     563</span> <span class="tlaGNC">         252 :   if (pid == PASS_SHOW) {</span></span>
+<span id="L564"><span class="lineNum">     564</span> <span class="tlaGNC">          51 :     emit finishedShow(out, shownFile, exec.lastOutputLossless());</span></span>
 <span id="L565"><span class="lineNum">     565</span>              :     return;</span>
 <span id="L566"><span class="lineNum">     566</span>              :   }</span>
 <span id="L567"><span class="lineNum">     567</span> <span class="tlaGNC">         201 :   emitProcessFinishedSignal(pid, out, err);</span></span>
 <span id="L568"><span class="lineNum">     568</span>              : }</span>
 <span id="L569"><span class="lineNum">     569</span>              : </span>
-<span id="L570"><span class="lineNum">     570</span> <span class="tlaGNC">          63 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
+<span id="L570"><span class="lineNum">     570</span> <span class="tlaGNC">          62 : void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span></span>
 <span id="L571"><span class="lineNum">     571</span>              :                               const QString &amp;err) {</span>
 <span id="L572"><span class="lineNum">     572</span>              :   Q_UNUSED(out);</span>
 <span id="L573"><span class="lineNum">     573</span>              : </span>
-<span id="L574"><span class="lineNum">     574</span> <span class="tlaGNC">          63 :   if (pid == PASS_INSERT) {</span></span>
+<span id="L574"><span class="lineNum">     574</span> <span class="tlaGNC">          62 :   if (pid == PASS_INSERT) {</span></span>
 <span id="L575"><span class="lineNum">     575</span> <span class="tlaGNC">          19 :     const QString friendly = gpgErrorMessage(err);</span></span>
 <span id="L576"><span class="lineNum">     576</span>              :     const QString why =</span>
 <span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          19 :         friendly.isEmpty() ? err : formatInsertError(friendly, err);</span></span>
@@ -664,10 +664,10 @@
 <span id="L591"><span class="lineNum">     591</span>              :     return;</span>
 <span id="L592"><span class="lineNum">     592</span>              :   }</span>
 <span id="L593"><span class="lineNum">     593</span>              : </span>
-<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">          44 :   if (pid == GPG_GENKEYS) {</span></span>
+<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">          43 :   if (pid == GPG_GENKEYS) {</span></span>
 <span id="L595"><span class="lineNum">     595</span> <span class="tlaGNC">           1 :     emit generateGPGKeysFailed(err);</span></span>
 <span id="L596"><span class="lineNum">     596</span>              :   }</span>
-<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">          44 :   emit processErrorExit(exitCode, err);</span></span>
+<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">          43 :   emit processErrorExit(exitCode, err);</span></span>
 <span id="L598"><span class="lineNum">     598</span>              : }</span>
 <span id="L599"><span class="lineNum">     599</span>              : </span>
 <span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">          53 : auto Pass::withoutStatusLines(const QString &amp;err) -&gt; QString {</span></span>
@@ -923,10 +923,10 @@
 <span id="L850"><span class="lineNum">     850</span>              : #endif</span>
 <span id="L851"><span class="lineNum">     851</span>              : </span>
 <span id="L852"><span class="lineNum">     852</span>              : /// Whether @p path is @p dir or lies under it.</span>
-<span id="L853"><span class="lineNum">     853</span> <span class="tlaGNC">        3692 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
+<span id="L853"><span class="lineNum">     853</span> <span class="tlaGNC">        3701 : auto isAtOrUnder(const QString &amp;path, const QString &amp;dir,</span></span>
 <span id="L854"><span class="lineNum">     854</span>              :                  const QString &amp;dirPrefix) -&gt; bool {</span>
-<span id="L855"><span class="lineNum">     855</span> <span class="tlaGNC">        6667 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
-<span id="L856"><span class="lineNum">     856</span> <span class="tlaGNC">        2975 :          path.startsWith(dirPrefix, kPathCase);</span></span>
+<span id="L855"><span class="lineNum">     855</span> <span class="tlaGNC">        6685 :   return path.compare(dir, kPathCase) == 0 ||</span></span>
+<span id="L856"><span class="lineNum">     856</span> <span class="tlaGNC">        2984 :          path.startsWith(dirPrefix, kPathCase);</span></span>
 <span id="L857"><span class="lineNum">     857</span>              : }</span>
 <span id="L858"><span class="lineNum">     858</span>              : </span>
 <span id="L859"><span class="lineNum">     859</span>              : /// Where the lookup of a .gpg-id starts and the store that bounds it.</span>
@@ -1020,8 +1020,8 @@
 <span id="L947"><span class="lineNum">     947</span> <span class="tlaGNC">          63 :   const QString store = scopePath(QString());</span></span>
 <span id="L948"><span class="lineNum">     948</span> <span class="tlaGNC">          63 :   const QSet&lt;QString&gt; &amp;scopes = heldScopes();</span></span>
 <span id="L949"><span class="lineNum">     949</span> <span class="tlaGNC">          63 :   return std::any_of(scopes.cbegin(), scopes.cend(),</span></span>
-<span id="L950"><span class="lineNum">     950</span> <span class="tlaGNC">         148 :                      [&amp;store](const QString &amp;s) {</span></span>
-<span id="L951"><span class="lineNum">     951</span> <span class="tlaGNC">         296 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
+<span id="L950"><span class="lineNum">     950</span> <span class="tlaGNC">         157 :                      [&amp;store](const QString &amp;s) {</span></span>
+<span id="L951"><span class="lineNum">     951</span> <span class="tlaGNC">         314 :                        return isAtOrUnder(s, store, store + QLatin1Char('/'));</span></span>
 <span id="L952"><span class="lineNum">     952</span> <span class="tlaGNC">          63 :                      });</span></span>
 <span id="L953"><span class="lineNum">     953</span>              : }</span>
 <span id="L954"><span class="lineNum">     954</span>              : </span>
@@ -1578,34 +1578,34 @@
 <span id="L1505"><span class="lineNum">    1505</span> <span class="tlaGNC">         231 :   return recipients;</span></span>
 <span id="L1506"><span class="lineNum">    1506</span>              : }</span>
 <span id="L1507"><span class="lineNum">    1507</span>              : </span>
-<span id="L1508"><span class="lineNum">    1508</span> <span class="tlaGNC">          93 : auto Pass::passReadsDifferently(const QByteArray &amp;contents) -&gt; QString {</span></span>
-<span id="L1509"><span class="lineNum">    1509</span> <span class="tlaGNC">          93 :   if (contents.startsWith(&quot;\xEF\xBB\xBF&quot;)) {</span></span>
+<span id="L1508"><span class="lineNum">    1508</span> <span class="tlaGNC">          94 : auto Pass::passReadsDifferently(const QByteArray &amp;contents) -&gt; QString {</span></span>
+<span id="L1509"><span class="lineNum">    1509</span> <span class="tlaGNC">          94 :   if (contents.startsWith(&quot;\xEF\xBB\xBF&quot;)) {</span></span>
 <span id="L1510"><span class="lineNum">    1510</span>              :     return tr(&quot;it starts with a byte-order mark&quot;);</span>
 <span id="L1511"><span class="lineNum">    1511</span>              :   }</span>
-<span id="L1512"><span class="lineNum">    1512</span> <span class="tlaGNC">          92 :   if (contents.contains('\0')) {</span></span>
+<span id="L1512"><span class="lineNum">    1512</span> <span class="tlaGNC">          93 :   if (contents.contains('\0')) {</span></span>
 <span id="L1513"><span class="lineNum">    1513</span>              :     return tr(&quot;it holds a NUL byte&quot;);</span>
 <span id="L1514"><span class="lineNum">    1514</span>              :   }</span>
-<span id="L1515"><span class="lineNum">    1515</span> <span class="tlaGNC">          90 :   if (contents.contains('\r')) {</span></span>
+<span id="L1515"><span class="lineNum">    1515</span> <span class="tlaGNC">          91 :   if (contents.contains('\r')) {</span></span>
 <span id="L1516"><span class="lineNum">    1516</span>              :     return tr(&quot;it has Windows line ends (a carriage return)&quot;);</span>
 <span id="L1517"><span class="lineNum">    1517</span>              :   }</span>
 <span id="L1518"><span class="lineNum">    1518</span>              :   const QString text = QString::fromUtf8(contents);</span>
-<span id="L1519"><span class="lineNum">    1519</span> <span class="tlaGNC">          89 :   if (text.toUtf8() != contents) {</span></span>
+<span id="L1519"><span class="lineNum">    1519</span> <span class="tlaGNC">          90 :   if (text.toUtf8() != contents) {</span></span>
 <span id="L1520"><span class="lineNum">    1520</span>              :     return tr(&quot;it is not valid UTF-8&quot;);</span>
 <span id="L1521"><span class="lineNum">    1521</span>              :   }</span>
-<span id="L1522"><span class="lineNum">    1522</span> <span class="tlaGNC">          88 :   const QStringList lines = text.split(QLatin1Char('\n'));</span></span>
-<span id="L1523"><span class="lineNum">    1523</span> <span class="tlaGNC">        6380 :   for (qsizetype i = 0; i &lt; lines.size(); ++i) {</span></span>
+<span id="L1522"><span class="lineNum">    1522</span> <span class="tlaGNC">          89 :   const QStringList lines = text.split(QLatin1Char('\n'));</span></span>
+<span id="L1523"><span class="lineNum">    1523</span> <span class="tlaGNC">        6381 :   for (qsizetype i = 0; i &lt; lines.size(); ++i) {</span></span>
 <span id="L1524"><span class="lineNum">    1524</span>              :     const QString &amp;line = lines.at(i);</span>
-<span id="L1525"><span class="lineNum">    1525</span> <span class="tlaGNC">        6301 :     const QString recipient = line.left(line.indexOf(QLatin1Char('#')));</span></span>
-<span id="L1526"><span class="lineNum">    1526</span> <span class="tlaGNC">      131951 :     for (const QChar c : recipient) {</span></span>
+<span id="L1525"><span class="lineNum">    1525</span> <span class="tlaGNC">        6302 :     const QString recipient = line.left(line.indexOf(QLatin1Char('#')));</span></span>
+<span id="L1526"><span class="lineNum">    1526</span> <span class="tlaGNC">      131957 :     for (const QChar c : recipient) {</span></span>
 <span id="L1527"><span class="lineNum">    1527</span>              :       // read strips blanks and tabs; trimmed() strips every space.</span>
-<span id="L1528"><span class="lineNum">    1528</span> <span class="tlaGNC">      125657 :       if (c.isSpace() &amp;&amp; c != QLatin1Char(' ') &amp;&amp; c != QLatin1Char('\t')) {</span></span>
+<span id="L1528"><span class="lineNum">    1528</span> <span class="tlaGNC">      125662 :       if (c.isSpace() &amp;&amp; c != QLatin1Char(' ') &amp;&amp; c != QLatin1Char('\t')) {</span></span>
 <span id="L1529"><span class="lineNum">    1529</span> <span class="tlaGNC">           7 :         return tr(&quot;line %1 holds whitespace other than blanks and tabs&quot;)</span></span>
 <span id="L1530"><span class="lineNum">    1530</span> <span class="tlaGNC">           7 :             .arg(i + 1);</span></span>
 <span id="L1531"><span class="lineNum">    1531</span>              :       }</span>
 <span id="L1532"><span class="lineNum">    1532</span>              :     }</span>
 <span id="L1533"><span class="lineNum">    1533</span>              :     const QString trimmed = recipient.trimmed();</span>
-<span id="L1534"><span class="lineNum">    1534</span> <span class="tlaGNC">        6294 :     if (trimmed.startsWith(QLatin1Char('-'))) {</span></span>
-<span id="L1535"><span class="lineNum">    1535</span> <span class="tlaGNC">           1 :       return tr(&quot;line %1 starts with a dash&quot;).arg(i + 1);</span></span>
+<span id="L1534"><span class="lineNum">    1534</span> <span class="tlaGNC">        6295 :     if (trimmed.startsWith(QLatin1Char('-'))) {</span></span>
+<span id="L1535"><span class="lineNum">    1535</span> <span class="tlaGNC">           2 :       return tr(&quot;line %1 starts with a dash&quot;).arg(i + 1);</span></span>
 <span id="L1536"><span class="lineNum">    1536</span>              :     }</span>
 <span id="L1537"><span class="lineNum">    1537</span>              :     // The text after the last line feed: read hands it over but the loop</span>
 <span id="L1538"><span class="lineNum">    1538</span>              :     // ends without using it.</span>

@@ -1,7 +1,9 @@
 <map id="Util::readRegularFileUnder" name="Util::readRegularFileUnder">
-<area shape="rect" id="Node000001" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="5,5,199,33"/>
-<area shape="rect" id="Node000002" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="247,5,401,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,17,233,19,228,19,199,22"/>
-<area shape="rect" id="Node000003" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="449,5,606,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="401,17,436,19,431,19,401,22"/>
+<area shape="rect" id="Node000001" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="5,32,199,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w..." alt="" coords="247,5,410,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,32,234,30,229,31,199,37"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="251,57,406,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,54,238,61,233,61,199,59"/>
+<area shape="rect" id="Node000004" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="458,57,615,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="406,69,445,71,440,71,406,74"/>
 </map>

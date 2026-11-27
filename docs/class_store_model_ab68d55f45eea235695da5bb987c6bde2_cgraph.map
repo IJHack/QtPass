@@ -1,7 +1,9 @@
 <map id="StoreModel::isLinkInStore" name="StoreModel::isLinkInStore">
-<area shape="rect" id="Node000001" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="5,32,193,60"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="242,5,387,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,32,229,30,223,31,193,37"/>
-<area shape="rect" id="Node000003" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="241,57,388,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,54,228,61,223,61,193,60"/>
+<area shape="rect" id="Node000001" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="5,57,193,85"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w..." alt="" coords="241,5,404,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,54,247,36,242,38,163,59"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="250,57,395,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,69,237,71,232,72,194,74"/>
+<area shape="rect" id="Node000004" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="249,109,396,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,83,247,104,242,106,162,88"/>
 </map>

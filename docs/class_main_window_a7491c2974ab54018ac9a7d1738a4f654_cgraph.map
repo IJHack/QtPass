@@ -3,9 +3,9 @@
 <area shape="rect" id="Node000002" href="$class_main_window.html#a61bfe9c52ccd7316751509e7453f20b3" title="The entry whose name is exactly the search text, if the filtered tree shows it: team/bank for &quot;team/b..." alt="" coords="256,140,444,168"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,220,294,171,291,175,151,225"/>
 <area shape="rect" id="Node000012" href="$class_main_window.html#ae9a674e42e112906d72b37ede211ca4d" title="Depth&#45;first search for the first entry under a folder." alt="" coords="270,223,430,250"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="208,234,257,236,252,237,208,239"/>
-<area shape="rect" id="Node000017" href="$class_store_tree.html#a1e44af30d459550e26502c6733705e9d" title="The proxy&#39;s root index for the current store." alt="" coords="274,275,426,302"/>
-<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="175,248,269,270,264,272,175,254"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="208,234,257,236,252,237,209,239"/>
+<area shape="rect" id="Node000018" href="$class_store_tree.html#a1e44af30d459550e26502c6733705e9d" title="The proxy&#39;s root index for the current store." alt="" coords="274,275,426,302"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="175,248,269,270,264,272,175,254"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#a96848c455f3a2925ffb7250282318162" title="The entry file named exactly as the search text, spaces around the text included; failing that,..." alt="" coords="492,136,708,164"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,150,479,151,474,152,445,155"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="756,81,967,109"/>
@@ -15,7 +15,7 @@
 <area shape="rect" id="Node000011" href="$class_util.html#ab27949f87883dff41623d3407f5e8379" title="name in dir, as the file system means it." alt="" coords="809,185,914,213"/>
 <area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="677,162,797,186,792,187,677,167"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1029,5,1231,33"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="903,78,1014,43,1045,38,1051,36,1015,48,905,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="903,78,1014,43,1051,36,1045,38,1015,48,905,83"/>
 <area shape="rect" id="Node000007" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="1052,81,1208,109"/>
 <area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="967,93,1039,95,1033,95,967,98"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1293,5,1516,33"/>
@@ -30,8 +30,10 @@
 <area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="430,234,497,237,492,238,431,240"/>
 <area shape="rect" id="Node000014" href="$class_store_model.html#ab68d55f45eea235695da5bb987c6bde2" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="768,237,955,265"/>
 <area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="691,240,755,246,750,246,691,245"/>
-<area shape="rect" id="Node000015" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="1057,211,1202,238"/>
-<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="956,239,1039,233,1044,233,956,244"/>
-<area shape="rect" id="Node000016" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="1056,263,1204,290"/>
-<area shape="poly" id="edge17_Node000014_Node000016" title=" " alt="" coords="956,257,1043,268,1038,268,956,263"/>
+<area shape="rect" id="Node000015" href="$class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w..." alt="" coords="1048,185,1212,213"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="936,234,1037,217,1042,216,937,239"/>
+<area shape="rect" id="Node000016" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="1057,237,1202,265"/>
+<area shape="poly" id="edge17_Node000014_Node000016" title=" " alt="" coords="956,249,1044,251,1039,251,956,254"/>
+<area shape="rect" id="Node000017" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="1056,289,1204,317"/>
+<area shape="poly" id="edge18_Node000014_Node000017" title=" " alt="" coords="937,263,1044,286,1038,286,937,268"/>
 </map>

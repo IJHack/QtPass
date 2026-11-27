@@ -68,6 +68,7 @@ var group__support =
       [ "hasLongUnbrokenRun", "class_util.html#a2c23d8b7193efd20c8ef55c77b0f6542", null ],
       [ "hasUnreadableName", "class_util.html#a4313266763fb44f8b3d11df30dab21c7", null ],
       [ "initialiseEnvironment", "class_util.html#ae448351f44d5e8f0d03eeff8ef3e54b2", null ],
+      [ "isAbsoluteFsPath", "class_util.html#a2d4da86961fec8a5a3bbb6fedde00299", null ],
       [ "isLaunchableWebUrl", "class_util.html#a86864a9430f6903425908e76ba6079b5", null ],
       [ "isLinkedFolder", "class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d", null ],
       [ "isOtherBlockBreak", "class_util.html#ac44a8c32a9ac0fbb9d471dd115359064", null ],

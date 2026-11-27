@@ -1,9 +1,11 @@
 <map id="StoreModel::canFetchMore" name="StoreModel::canFetchMore">
-<area shape="rect" id="Node000001" title="Nothing to fetch under a link inside the store, so the file system model never lists what the link po..." alt="" coords="5,32,200,60"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#ab68d55f45eea235695da5bb987c6bde2" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="248,32,435,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,43,235,46,230,46,200,48"/>
-<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="484,5,629,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,32,466,30,471,30,436,37"/>
-<area shape="rect" id="Node000004" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="483,57,630,85"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="435,54,471,61,465,61,435,60"/>
+<area shape="rect" id="Node000001" title="Nothing to fetch under a link inside the store, so the file system model never lists what the link po..." alt="" coords="5,57,200,85"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#ab68d55f45eea235695da5bb987c6bde2" title="Whether a proxy index is a link (or junction) inside the store, the store root excluded." alt="" coords="248,57,435,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,69,235,71,230,72,201,74"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w..." alt="" coords="483,5,646,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,54,485,38,490,37,405,59"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="492,57,637,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="435,69,479,71,474,71,436,74"/>
+<area shape="rect" id="Node000005" href="$class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513" title="The path of a file system model index, as the node keeps it." alt="" coords="491,109,638,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="404,83,490,105,484,105,404,88"/>
 </map>

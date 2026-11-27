@@ -1,39 +1,39 @@
 <map id="ImitatePass::Grep" name="ImitatePass::Grep">
-<area shape="rect" id="Node000001" title="Search all password content by GPG&#45;decrypting each .gpg file." alt="" coords="5,90,142,118"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a554cab50d6449b456ad4e8309ee11a90" title="Return the environment passed to child processes." alt="" coords="190,63,358,91"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,92,176,89,172,92,144,97"/>
-<area shape="rect" id="Node000003" href="$class_native_grep.html#a393b6a05c39649304a77151702b76ec7" title="Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu..." alt="" coords="201,115,347,143"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,110,188,116,183,119,143,115"/>
-<area shape="rect" id="Node000004" href="$class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6" title="Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ..." alt="" coords="902,63,1047,91"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="339,112,406,101,536,88,667,81,888,76,883,78,668,86,537,94,406,106,341,117"/>
-<area shape="rect" id="Node000005" href="$class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over." alt="" coords="412,115,567,143"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="346,126,399,128,394,130,348,132"/>
-<area shape="rect" id="Node000006" href="$class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches." alt="" coords="406,167,573,195"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="334,141,417,162,412,164,335,146"/>
-<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="557,164,894,93,889,96,559,169"/>
-<area shape="rect" id="Node000007" href="$class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match." alt="" coords="621,167,814,195"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="573,178,608,180,603,182,574,184"/>
-<area shape="rect" id="Node000008" href="$class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="634,219,801,247"/>
-<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="554,193,641,215,636,216,554,198"/>
-<area shape="rect" id="Node000037" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="634,271,801,299"/>
-<area shape="poly" id="edge47_Node000006_Node000037" title=" " alt="" coords="512,193,562,224,622,256,644,266,639,266,620,261,559,229,511,198"/>
-<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="793,216,812,204,823,192,829,180,835,154,841,128,848,114,860,102,885,90,890,88,863,106,852,117,846,129,840,155,834,182,827,195,815,208,795,221"/>
-<area shape="rect" id="Node000009" href="$class_executor.html#ad6d464c18982af003c0c330458860578" title="Decode process output as executeBlocking() does: UTF&#45;8 first, the system encoding when it is not UTF&#45;..." alt="" coords="895,115,1054,143"/>
-<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="786,216,812,204,827,192,835,179,845,166,860,153,878,148,882,146,863,158,849,170,840,182,831,196,815,209,788,221"/>
-<area shape="rect" id="Node000010" href="$class_executor.html#aa85fd530f22dc8d60b4fa696c33da5f1" title="executeBlocking() on bytes, for an entry&#39;s plaintext: input is written to stdin and stdout returned e..." alt="" coords="864,167,1084,195"/>
-<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="789,216,890,198,885,199,790,221"/>
-<area shape="rect" id="Node000019" href="$class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="892,219,1056,247"/>
-<area shape="poly" id="edge21_Node000008_Node000019" title=" " alt="" coords="801,230,879,233,874,233,802,236"/>
-<area shape="rect" id="Node000022" href="$class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password." alt="" coords="862,271,1087,299"/>
-<area shape="poly" id="edge24_Node000008_Node000022" title=" " alt="" coords="790,245,890,267,885,268,790,250"/>
-<area shape="rect" id="Node000033" href="$class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a" title="The gpg options that enforce kMaxPlaintextBytes." alt="" coords="894,323,1054,351"/>
-<area shape="poly" id="edge42_Node000008_Node000033" title=" " alt="" coords="787,245,815,257,831,270,840,284,849,296,863,308,882,319,876,318,860,313,845,300,835,287,827,274,812,262,787,250"/>
-<area shape="rect" id="Node000034" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="1153,424,1307,452"/>
-<area shape="poly" id="edge43_Node000008_Node000034" title=" " alt="" coords="794,245,815,258,827,271,834,284,840,311,845,337,852,349,863,360,895,370,965,385,1141,422,1136,422,964,390,894,375,860,365,848,352,840,339,835,312,829,286,823,274,812,262,794,250"/>
-<area shape="rect" id="Node000036" href="$class_util.html#ab22e866d6db73831a0414056d34f6027" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="878,424,1071,452"/>
-<area shape="poly" id="edge45_Node000008_Node000036" title=" " alt="" coords="796,245,815,258,830,276,838,295,840,333,843,369,850,387,864,404,878,417,873,416,860,408,845,390,838,371,835,333,833,297,826,279,812,262,795,250"/>
+<area shape="rect" id="Node000001" title="Search all password content by GPG&#45;decrypting each .gpg file." alt="" coords="5,84,142,112"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a554cab50d6449b456ad4e8309ee11a90" title="Return the environment passed to child processes." alt="" coords="190,58,358,86"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,87,176,83,172,87,144,91"/>
+<area shape="rect" id="Node000003" href="$class_native_grep.html#a393b6a05c39649304a77151702b76ec7" title="Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu..." alt="" coords="201,110,347,138"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,105,188,111,183,114,143,109"/>
+<area shape="rect" id="Node000004" href="$class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6" title="Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ..." alt="" coords="902,58,1047,86"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="339,107,406,96,536,83,667,75,888,71,883,73,668,81,537,88,406,101,341,112"/>
+<area shape="rect" id="Node000005" href="$class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over." alt="" coords="412,110,567,138"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="346,121,399,123,394,125,348,126"/>
+<area shape="rect" id="Node000006" href="$class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches." alt="" coords="406,162,573,190"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="334,136,417,157,412,159,335,141"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="557,159,894,88,889,91,559,164"/>
+<area shape="rect" id="Node000007" href="$class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match." alt="" coords="621,162,814,190"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="573,173,608,175,603,176,574,178"/>
+<area shape="rect" id="Node000008" href="$class_native_grep.html#aebc3ffea28a2a5a324a90562c1043641" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="634,214,801,242"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="554,187,641,209,636,210,554,193"/>
+<area shape="rect" id="Node000038" href="$class_util.html#a6416bfebddfbc3dbfee2d66d5204964b" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="634,266,801,294"/>
+<area shape="poly" id="edge48_Node000006_Node000038" title=" " alt="" coords="512,187,562,219,622,251,644,261,639,261,620,255,559,224,511,193"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="793,211,812,199,823,187,829,175,835,149,841,122,848,109,860,96,885,85,890,82,863,100,852,112,846,124,840,150,834,177,827,190,815,203,795,216"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#ad6d464c18982af003c0c330458860578" title="Decode process output as executeBlocking() does: UTF&#45;8 first, the system encoding when it is not UTF&#45;..." alt="" coords="895,110,1054,138"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="786,211,812,199,827,187,835,174,845,161,860,148,878,143,882,140,863,153,849,164,840,177,831,190,815,203,788,216"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#aa85fd530f22dc8d60b4fa696c33da5f1" title="executeBlocking() on bytes, for an entry&#39;s plaintext: input is written to stdin and stdout returned e..." alt="" coords="864,162,1084,190"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="789,211,890,192,885,194,790,216"/>
+<area shape="rect" id="Node000019" href="$class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="892,214,1056,242"/>
+<area shape="poly" id="edge21_Node000008_Node000019" title=" " alt="" coords="801,225,879,227,874,228,802,230"/>
+<area shape="rect" id="Node000022" href="$class_file_content.html#ad4c28b38d683a03cff0dd83ab23afee7" title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password." alt="" coords="862,266,1087,294"/>
+<area shape="poly" id="edge24_Node000008_Node000022" title=" " alt="" coords="790,239,890,262,885,262,790,245"/>
+<area shape="rect" id="Node000033" href="$class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a" title="The gpg options that enforce kMaxPlaintextBytes." alt="" coords="894,318,1054,346"/>
+<area shape="poly" id="edge42_Node000008_Node000033" title=" " alt="" coords="787,239,815,252,831,265,840,278,849,291,863,303,882,314,876,313,860,307,845,295,835,281,827,269,812,257,787,245"/>
+<area shape="rect" id="Node000034" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="1153,387,1307,415"/>
+<area shape="poly" id="edge43_Node000008_Node000034" title=" " alt="" coords="794,239,815,252,827,265,834,279,839,306,845,332,852,344,863,355,883,365,910,374,981,386,1061,394,1140,400,1135,400,1060,399,980,392,909,379,881,370,860,359,847,347,840,334,834,307,829,281,823,268,812,256,794,245"/>
+<area shape="rect" id="Node000036" href="$class_util.html#ab22e866d6db73831a0414056d34f6027" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="878,419,1071,447"/>
+<area shape="poly" id="edge45_Node000008_Node000036" title=" " alt="" coords="796,239,815,252,830,271,838,290,840,327,843,364,850,382,864,399,878,412,873,411,860,403,845,384,838,365,835,328,833,291,826,274,812,256,795,245"/>
 <area shape="rect" id="Node000011" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="1135,114,1325,142"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1044,164,1148,145,1143,146,1045,169"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1051,159,1140,144,1135,146,1053,164"/>
 <area shape="rect" id="Node000012" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="1388,5,1566,50"/>
 <area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="1259,111,1372,60,1388,56,1393,55,1374,65,1261,116"/>
 <area shape="rect" id="Node000014" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1394,143,1560,171"/>
@@ -50,12 +50,12 @@
 <area shape="poly" id="edge18_Node000014_Node000017" title=" " alt="" coords="1550,169,1652,191,1647,192,1550,174"/>
 <area shape="poly" id="edge20_Node000018_Node000013" title=" " alt="" coords="1566,74,1636,60,1631,62,1567,79"/>
 <area shape="rect" id="Node000020" href="$class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b" title="Whether text holds an otpauth URI anywhere: after a list dash, in quotes, behind other text or a seco..." alt="" coords="1136,246,1325,274"/>
-<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="1057,239,1123,248,1117,248,1057,244"/>
+<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="1057,235,1123,246,1117,246,1057,241"/>
 <area shape="rect" id="Node000021" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="1373,195,1581,223"/>
-<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="1057,226,1361,214,1355,215,1057,232"/>
-<area shape="poly" id="edge25_Node000022_Node000020" title=" " alt="" coords="1087,271,1123,270,1117,271,1088,276"/>
+<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="1057,222,1361,213,1355,214,1057,227"/>
+<area shape="poly" id="edge25_Node000022_Node000020" title=" " alt="" coords="1087,268,1123,268,1117,269,1088,273"/>
 <area shape="rect" id="Node000023" href="$filecontent_8cpp.html#aa1b9dc5b765ebd673293842640c22ac9" title="Whether a first line is written as an OTP configuration that otpConfigOf() can read: a bare otpauth U..." alt="" coords="1170,322,1290,350"/>
-<area shape="poly" id="edge26_Node000022_Node000023" title=" " alt="" coords="1048,297,1157,321,1152,321,1048,302"/>
+<area shape="poly" id="edge26_Node000022_Node000023" title=" " alt="" coords="1041,291,1157,319,1152,319,1041,297"/>
 <area shape="poly" id="edge40_Node000023_Node000021" title=" " alt="" coords="1263,319,1293,303,1324,283,1337,270,1346,258,1356,245,1372,233,1384,230,1389,228,1375,238,1360,249,1351,261,1341,273,1327,287,1296,307,1265,324"/>
 <area shape="poly" id="edge32_Node000023_Node000023" title=" " alt="" coords="1188,320,1181,313,1187,303,1203,297,1230,295,1259,298,1276,307,1271,306,1258,303,1230,300,1204,302,1190,307,1187,313,1193,322"/>
 <area shape="rect" id="Node000024" href="$filecontent_8cpp.html#a5bdca692129830dd78bdf3b23c6a6909" title="The otpauth URI a line is written as: a bare otpauth:// line, or the split otpauth: //...." alt="" coords="1423,271,1531,299"/>
@@ -81,6 +81,8 @@
 <area shape="rect" id="Node000032" href="$class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters." alt="" coords="2345,422,2497,450"/>
 <area shape="poly" id="edge39_Node000031_Node000032" title=" " alt="" coords="2297,433,2332,436,2326,436,2297,438"/>
 <area shape="rect" id="Node000035" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="1398,448,1556,476"/>
-<area shape="poly" id="edge44_Node000034_Node000035" title=" " alt="" coords="1308,443,1385,453,1380,453,1308,448"/>
-<area shape="poly" id="edge46_Node000036_Node000034" title=" " alt="" coords="1071,436,1140,438,1135,438,1071,441"/>
+<area shape="poly" id="edge44_Node000034_Node000035" title=" " alt="" coords="1289,413,1406,444,1401,444,1288,418"/>
+<area shape="poly" id="edge47_Node000036_Node000034" title=" " alt="" coords="1071,418,1135,413,1141,412,1072,424"/>
+<area shape="rect" id="Node000037" href="$class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w..." alt="" coords="1148,439,1312,467"/>
+<area shape="poly" id="edge46_Node000036_Node000037" title=" " alt="" coords="1071,438,1135,445,1130,445,1071,443"/>
 </map>

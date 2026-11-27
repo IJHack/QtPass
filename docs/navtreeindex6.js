@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"functions_w.html":[3,3,0,23],
 "functions_~.html":[3,3,0,24],
 "globals.html":[4,1,0],
 "globals_enum.html":[4,1,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1":[1,4,1,36],
 "struct_app_settings.html#a19adc3d5ab6a7762c885a18599eee430":[1,4,1,22],
 "struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8":[1,4,1,49],
-"struct_app_settings.html#a1fbf2293fb2e2f41ed8eb0277079a168":[1,4,1,19],
-"struct_app_settings.html#a215aceceb20bd8a0851239cea82b48e2":[1,4,1,33]
+"struct_app_settings.html#a1fbf2293fb2e2f41ed8eb0277079a168":[1,4,1,19]
 };
