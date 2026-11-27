@@ -409,6 +409,8 @@ private Q_SLOTS:
   void imitatePass_usersDialogListsAndFilters();
   void imitatePass_multiRecipientReencryptChangesRecipients();
   void imitatePass_reencryptKeyListingWritesNoFile();
+  void imitatePass_gitAttributesPinnedForStore();
+  void imitatePass_gitInitPinsAttributes();
   void imitatePass_ignoredEntryIsStillCommitted();
   void imitatePass_insertIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptIgnoresGpgConfEncryptTo();
@@ -438,6 +440,7 @@ private Q_SLOTS:
   void realPass_fileManagerFilesGetAHint();
   void realPass_refusesStagedAndUnignoredFiles();
   void realPass_checksTheRepositoryPassCommitsIn();
+  void realPass_pushedBareRepoDoesNotRunCommand();
 
   // pass-otp (skipped if extension not installed)
 };
@@ -1134,10 +1137,14 @@ namespace {
 // RAII guard to ensure useGit is restored on any exit path
 struct RestoreUseGit {
   bool orig;
-  RestoreUseGit() : orig(QtPassSettings::isUseGit()) {}
+  QString origGit;
+  RestoreUseGit()
+      : orig(QtPassSettings::isUseGit()),
+        origGit(QtPassSettings::load().gitExecutable) {}
   ~RestoreUseGit() {
     AppSettings s = QtPassSettings::load();
     s.useGit = orig;
+    s.gitExecutable = origGit;
     QtPassSettings::save(s);
   }
 };
@@ -3644,6 +3651,189 @@ void tst_integration::imitatePass_ignoredEntryIsStillCommitted() {
   QVERIFY(lsOld.waitForFinished() && lsOld.exitCode() == 0);
   QVERIFY2(!QString::fromUtf8(lsOld.readAll()).trimmed().isEmpty(),
            "an edited ignored entry must be tracked in git too");
+}
+
+void tst_integration::realPass_pushedBareRepoDoesNotRunCommand() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX / core.fsmonitor shell semantics; Windows differs");
+#else
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping bare-repo test");
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+
+  QProcess initProc;
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert("GNUPGHOME", m_gnupgHome.path());
+  env.insert("PASSWORD_STORE_DIR", storeDir.path());
+  initProc.setProcessEnvironment(env);
+  initProc.start(passExe, {"init", m_keyFingerprint});
+  QVERIFY2(initProc.waitForFinished(15000), "pass init timed out");
+  QVERIFY2(initProc.exitCode() == 0, "pass init should succeed");
+
+  // The marker the pushed core.fsmonitor command would create if it ran.
+  QTemporaryDir markerDir;
+  QVERIFY(markerDir.isValid());
+  const QString marker = markerDir.path() + "/ran";
+
+  // Plant the bare-repo-shaped folder "work" inside the store.
+  const QString work = storeDir.path() + "/work";
+  QVERIFY(QDir().mkpath(work + "/objects"));
+  QVERIFY(QDir().mkpath(work + "/refs"));
+  auto writeFile = [](const QString &path, const QByteArray &data) -> bool {
+    QFile f(path);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    return f.write(data) == data.size();
+  };
+  QVERIFY(writeFile(work + "/HEAD", "ref: refs/heads/master\n"));
+  QVERIFY(writeFile(work + "/objects/keep", ""));
+  QVERIFY(writeFile(work + "/refs/keep", ""));
+  QVERIFY(writeFile(work + "/config",
+                    QStringLiteral("[core]\n\trepositoryformatversion = 0\n\t"
+                                   "worktree = .\n\tfsmonitor = \"id > %1; "
+                                   "false\"\n")
+                        .arg(marker)
+                        .toUtf8()));
+
+  // Control: without the guard, git in "work" reads the pushed config and
+  // runs the command, so the case below tests the guard and nothing else.
+  {
+    QProcess control;
+    QProcessEnvironment plain = QProcessEnvironment::systemEnvironment();
+    plain.remove("GIT_CONFIG_COUNT");
+    control.setProcessEnvironment(plain);
+    control.setWorkingDirectory(work);
+    // A global safe.bareRepository=explicit would refuse it too.
+    control.start(gitExe, {"-c", "safe.bareRepository=all", "status"});
+    QVERIFY(control.waitForFinished(15000));
+    QVERIFY2(QFile::exists(marker),
+             "git without the guard must run the pushed command");
+    QVERIFY(QFile::remove(marker));
+  }
+
+  RealPass pass;
+  setupPass(pass);
+
+  // Saving an entry in the planted folder is what would let git in "work" run
+  // the command; with the guard the pushed repo is refused instead.
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("work/vpn"), QStringLiteral("secret\n"), false);
+  // Either outcome is fine for the entry; the point is the command must not
+  // run.
+  const bool done =
+      waitForSignal(insertSpy, 20000) || insertErrorSpy.count() > 0;
+  QVERIFY2(done, "RealPass insert neither finished nor errored");
+
+  QVERIFY2(!QFile::exists(marker),
+           "a git command from the pushed bare repo must not run");
+
+  QtPassSettings::setUsePass(false);
+#endif
+}
+
+void tst_integration::imitatePass_gitAttributesPinnedForStore() {
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping Git integration test");
+
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  QVERIFY2(initGitRepo(storeDir.path(), gitExe), "git repo setup should work");
+
+  // The pushed hostile attribute: force text conversion on every entry.
+  {
+    QFile ga(storeDir.path() + "/.gitattributes");
+    QVERIFY(ga.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(ga.write("*.gpg text\n") > 0);
+    // What `pass git init` writes for decrypted diffs; the pin keeps it.
+    QVERIFY(ga.write("*.gpg diff=gpg\n") > 0);
+  }
+
+  // updateEnv() runs before every operation and installs the pin once .git
+  // exists (INIT ran it before initGitRepo, so run it again here).
+  pass.updateEnv();
+
+  // The pin landed in the repo-private info/attributes.
+  QFile attr(storeDir.path() + "/.git/info/attributes");
+  QVERIFY2(attr.open(QIODevice::ReadOnly | QIODevice::Text),
+           "git info/attributes should have been written");
+  const QString attrText = QString::fromUtf8(attr.readAll());
+  QVERIFY2(attrText.contains("*.gpg -text"),
+           qPrintable("info/attributes should pin *.gpg: " + attrText));
+
+  // And Git honours it over the pushed .gitattributes: text is unset for a .gpg
+  // path, so no CR/LF or encoding rewrite happens on commit or checkout.
+  QProcess chk;
+  chk.setWorkingDirectory(storeDir.path());
+  chk.start(gitExe, {"check-attr", "text", "--", "anything.gpg"});
+  QVERIFY(chk.waitForFinished() && chk.exitCode() == 0);
+  const QString chkOut = QString::fromUtf8(chk.readAll());
+  QVERIFY2(chkOut.contains("text: unset"),
+           qPrintable("the pushed .gitattributes must not win: " + chkOut));
+
+  // diff only changes what Git shows, so the pin leaves pass's diff=gpg.
+  QProcess diffChk;
+  diffChk.setWorkingDirectory(storeDir.path());
+  diffChk.start(gitExe, {"check-attr", "diff", "--", "anything.gpg"});
+  QVERIFY(diffChk.waitForFinished() && diffChk.exitCode() == 0);
+  const QString diffOut = QString::fromUtf8(diffChk.readAll());
+  QVERIFY2(diffOut.contains("diff: gpg"),
+           qPrintable("pass's decrypted diffs must keep working: " + diffOut));
+}
+
+// A store that becomes a repository after updateEnv() ran (Git ▸ Init) gets
+// the pin when git init finishes, before anything is staged in it.
+void tst_integration::imitatePass_gitInitPinsAttributes() {
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping Git integration test");
+
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  QVERIFY(!QFileInfo::exists(storeDir.path() + "/.git"));
+
+  QSignalSpy initSpy(&pass, &Pass::finishedGitInit);
+  pass.GitInit();
+  QVERIFY2(waitForSignal(initSpy, 20000), "git init did not finish");
+
+  QFile attr(storeDir.path() + "/.git/info/attributes");
+  QVERIFY2(attr.open(QIODevice::ReadOnly | QIODevice::Text),
+           "git init should leave the pin in info/attributes");
+  QVERIFY2(QString::fromUtf8(attr.readAll()).contains("*.gpg -text"),
+           "info/attributes should pin *.gpg");
 }
 
 QTEST_MAIN(tst_integration)

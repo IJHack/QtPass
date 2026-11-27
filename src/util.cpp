@@ -428,6 +428,48 @@ auto isSafeDirectory(const QString &root, const QString &git) -> bool {
 } // namespace
 #endif
 
+void Util::requireExplicitBareRepository(QProcessEnvironment &env) {
+  const QString key = QStringLiteral("safe.bareRepository");
+  const QString value = QStringLiteral("explicit");
+  const QString countText = env.value(QStringLiteral("GIT_CONFIG_COUNT"));
+  bool ok = countText.isEmpty();
+  int count = countText.isEmpty() ? 0 : countText.toInt(&ok);
+  if (!ok || count < 0) {
+    // git refuses to start with a malformed count, so the entries it was
+    // meant to cover never applied: start the list afresh.
+    count = 0;
+  }
+  // Keys and these values are case-insensitive to git; the last entry wins.
+  QString last;
+  for (int i = 0; i < count; ++i) {
+    if (env.value(QStringLiteral("GIT_CONFIG_KEY_%1").arg(i))
+            .compare(key, Qt::CaseInsensitive) == 0) {
+      last = env.value(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(i));
+    }
+  }
+  // git reads GIT_CONFIG_PARAMETERS (`git -c`) after the numbered entries,
+  // so when that names the key at all, explicit must be its last entry. Not
+  // parsed: the string must end in this separate token, which a value
+  // cannot fake (a quote inside one is written '\'', so it never follows a
+  // blank); appending once too often does no harm.
+  const QString parameters = env.value(QStringLiteral("GIT_CONFIG_PARAMETERS"));
+  const QString explicitEntry =
+      QStringLiteral("'safe.bareRepository=explicit'");
+  if (parameters.contains(QLatin1String("barerepository"),
+                          Qt::CaseInsensitive) &&
+      parameters != explicitEntry &&
+      !parameters.endsWith(QLatin1Char(' ') + explicitEntry)) {
+    env.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"),
+               parameters + QLatin1Char(' ') + explicitEntry);
+  }
+  if (last.compare(value, Qt::CaseInsensitive) == 0) {
+    return;
+  }
+  env.insert(QStringLiteral("GIT_CONFIG_KEY_%1").arg(count), key);
+  env.insert(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(count), value);
+  env.insert(QStringLiteral("GIT_CONFIG_COUNT"), QString::number(count + 1));
+}
+
 auto Util::gitStoreVariables(const QString &store, const QString &git,
                              std::optional<uint> asUser)
     -> QList<std::pair<QString, QString>> {

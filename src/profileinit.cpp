@@ -53,6 +53,9 @@ auto gitEnvironment(const QString &dir, const AppSettings &s)
   // As for the active store: the paths handed to git are names, not
   // patterns (see Pass::updateEnv()).
   env.insert(QStringLiteral("GIT_LITERAL_PATHSPECS"), QStringLiteral("1"));
+  // The identity check runs git before `git init` made the folder a
+  // repository, so a pushed bare-repository layout there would be read.
+  Util::requireExplicitBareRepository(env);
   if (!s.gitUseParentRepository) {
     for (const auto &[name, value] :
          Util::gitStoreVariables(dir, s.gitExecutable)) {

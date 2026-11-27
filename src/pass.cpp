@@ -25,6 +25,7 @@
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
+#include <QSaveFile>
 #include <QScopeGuard>
 #include <QTextStream>
 #include <algorithm>
@@ -57,6 +58,23 @@ auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
   return fallbackCharset(
       passConfig.Characters[sel],
       passConfig.Characters[PasswordConfiguration::ALLCHARS]);
+}
+
+/**
+ * @brief Add @p names to WSLENV in @p env, keeping its entries and adding no
+ * duplicate.
+ * @param env The environment to amend.
+ * @param names WSLENV entries, each a variable name with its flags.
+ */
+void mergeIntoWslenv(QProcessEnvironment &env, const QStringList &names) {
+  QStringList parts = env.value(QStringLiteral("WSLENV"))
+                          .split(QLatin1Char(':'), Qt::SkipEmptyParts);
+  for (const QString &name : names) {
+    if (!parts.contains(name)) {
+      parts.append(name);
+    }
+  }
+  env.insert(QStringLiteral("WSLENV"), parts.join(QLatin1Char(':')));
 }
 } // namespace
 
@@ -100,17 +118,7 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_GPG_OPTS/u"),
       QStringLiteral("GIT_CEILING_DIRECTORIES/p"),
       QStringLiteral("GIT_LITERAL_PATHSPECS/u")};
-  const QString existing = env.value(QStringLiteral("WSLENV"));
-  if (existing.isEmpty()) {
-    env.insert(QStringLiteral("WSLENV"), wslenvVars.join(':'));
-  } else {
-    QStringList parts = existing.split(':', Qt::SkipEmptyParts);
-    for (const QString &v : wslenvVars) {
-      if (!parts.contains(v))
-        parts.append(v);
-    }
-    env.insert(QStringLiteral("WSLENV"), parts.join(':'));
-  }
+  mergeIntoWslenv(env, wslenvVars);
 }
 
 void Pass::executeWrapper(PROCESS id, const QString &app,
@@ -630,6 +638,11 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
       {PASS_COPY, &Pass::finishedCopy},
       {GPG_GENKEYS, &Pass::finishedGenerateGPGKeys},
   };
+  // A store that became a repository after updateEnv() gets its pin now,
+  // before anything is staged in it.
+  if (pid == GIT_INIT) {
+    pinStoreGitAttributes();
+  }
   if (const Signal signal = kSignals.value(pid, nullptr)) {
     (this->*signal)(out, err);
   }
@@ -695,7 +708,118 @@ void Pass::updateEnv() {
     }
   }
 
+  // Refuse a repository pushed into the store: git started in a folder laid
+  // out as a bare repository would read its pushed config and run a command
+  // named there. This reaches the git that pass runs too, which inherits the
+  // environment.
+  Util::requireExplicitBareRepository(env);
+  // pass under WSL needs them too: the count and every entry below it.
+  QStringList gitConfig{QStringLiteral("GIT_CONFIG_COUNT/u")};
+  if (env.contains(QStringLiteral("GIT_CONFIG_PARAMETERS"))) {
+    gitConfig << QStringLiteral("GIT_CONFIG_PARAMETERS/u");
+  }
+  const int gitConfigCount =
+      env.value(QStringLiteral("GIT_CONFIG_COUNT")).toInt();
+  for (int i = 0; i < gitConfigCount; ++i) {
+    gitConfig << QStringLiteral("GIT_CONFIG_KEY_%1/u").arg(i)
+              << QStringLiteral("GIT_CONFIG_VALUE_%1/u").arg(i);
+  }
+  mergeIntoWslenv(env, gitConfig);
+
   exec.setEnvironment(env);
+
+  pinStoreGitAttributes();
+}
+
+void Pass::pinStoreGitAttributes() {
+  if (m_settings.passStore.isEmpty()) {
+    return;
+  }
+  // Only the common layout, where the store is its own repository, is handled
+  // by writing directly: a ".git" directory. A worktree ".git" file or a store
+  // nested in a larger repository is left as-is rather than risk touching
+  // another repository's attributes.
+  const QString gitDir =
+      QDir(m_settings.passStore).absoluteFilePath(QStringLiteral(".git"));
+  if (!QFileInfo(gitDir).isDir()) {
+    return;
+  }
+
+  // The marker lets us recognise and refresh our own block without disturbing
+  // anything a user put in info/attributes by hand. Disabling text/eol,
+  // working-tree-encoding, filter and ident keeps Git from rewriting the
+  // bytes gpg produced for these paths - a co-writer can push a .gitattributes
+  // ("*.gpg text", a working-tree-encoding, a filter) that otherwise corrupts
+  // the ciphertext QtPass commits. info/attributes outranks the in-tree file.
+  // diff is left alone: it only changes what Git shows, and pass's own
+  // "*.gpg diff=gpg" gives decrypted diffs.
+  static const QString marker =
+      QStringLiteral("# QtPass: keep encrypted store files byte-for-byte");
+  const QString block =
+      marker + QStringLiteral("\n") +
+      QStringLiteral(
+          "*.gpg -text -filter -ident -working-tree-encoding\n"
+          ".gpg-id -text -filter -ident -working-tree-encoding\n"
+          ".gpg-id.sig -text -filter -ident -working-tree-encoding\n");
+
+  const QString infoDir = gitDir + QStringLiteral("/info");
+  const QString attrPath = infoDir + QStringLiteral("/attributes");
+
+  QString existing;
+  QFile attr(attrPath);
+  if (attr.exists()) {
+    // Unreadable: writing now would drop the user's own lines in it.
+    if (!attr.open(QIODevice::ReadOnly | QIODevice::Text)) {
+      qCWarning(lcQtPass) << "Cannot read" << attrPath
+                          << "to pin attributes:" << attr.errorString();
+      return;
+    }
+    existing = QString::fromUtf8(attr.readAll());
+    attr.close();
+    if (existing.contains(block)) {
+      return; // already pinned and unchanged
+    }
+  }
+
+  if (!QDir().mkpath(infoDir)) {
+    qCWarning(lcQtPass) << "Cannot create" << infoDir << "to pin attributes";
+    return;
+  }
+
+  // Keep any lines the user added themselves (outside our block), then append a
+  // fresh copy of our block. A previous QtPass block is dropped so an updated
+  // set of lines replaces an older one.
+  QString preserved;
+  if (!existing.isEmpty()) {
+    const QStringList lines = existing.split(QLatin1Char('\n'));
+    bool inBlock = false;
+    for (const QString &line : lines) {
+      if (line == marker) {
+        inBlock = true;
+        continue;
+      }
+      if (inBlock) {
+        if (line.startsWith(QStringLiteral("*.gpg ")) ||
+            line.startsWith(QStringLiteral(".gpg-id ")) ||
+            line.startsWith(QStringLiteral(".gpg-id.sig "))) {
+          continue;
+        }
+        inBlock = false;
+      }
+      preserved += line + QLatin1Char('\n');
+    }
+    while (preserved.endsWith(QStringLiteral("\n\n"))) {
+      preserved.chop(1);
+    }
+  }
+
+  QSaveFile out(attrPath);
+  const QByteArray payload = (preserved + block).toUtf8();
+  if (!out.open(QIODevice::WriteOnly | QIODevice::Text) ||
+      out.write(payload) != payload.size() || !out.commit()) {
+    qCWarning(lcQtPass) << "Cannot write" << attrPath
+                        << "to pin attributes:" << out.errorString();
+  }
 }
 
 auto Pass::withCurrentGitPin(QProcessEnvironment base) const

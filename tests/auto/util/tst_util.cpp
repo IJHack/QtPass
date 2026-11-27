@@ -217,6 +217,9 @@ private Q_SLOTS:
   // Must stay the first test: Util snapshots the environment once per process.
   void findPasswordStoreHonoursPasswordStoreDir();
   void normalizeFolderPath();
+  void requireExplicitBareRepository_data();
+  void requireExplicitBareRepository();
+  void requireExplicitBareRepositoryFollowsGitConfigParameters();
   void normalizeFolderPathEdgeCases();
   void fileContent();
   void fileContentEdgeCases();
@@ -2536,6 +2539,20 @@ void tst_util::updateEnvWslenvContainsRequiredVars() {
     const QString entry = QString::fromLatin1(var) + QStringLiteral("/u");
     QVERIFY2(wslenv.split(u':').contains(entry),
              qPrintable(QStringLiteral("WSLENV should include ") + entry));
+  }
+  // The bare-repository guard reaches git under WSL: the count and every
+  // numbered entry below it.
+  const int gitConfigCount =
+      env.value(QStringLiteral("GIT_CONFIG_COUNT")).toInt();
+  QVERIFY(gitConfigCount > 0);
+  QVERIFY(wslenv.split(u':').contains(QStringLiteral("GIT_CONFIG_COUNT/u")));
+  for (int i = 0; i < gitConfigCount; ++i) {
+    for (const QString &entry :
+         {QStringLiteral("GIT_CONFIG_KEY_%1/u").arg(i),
+          QStringLiteral("GIT_CONFIG_VALUE_%1/u").arg(i)}) {
+      QVERIFY2(wslenv.split(u':').contains(entry),
+               qPrintable(QStringLiteral("WSLENV should include ") + entry));
+    }
   }
   // Only QtPass's own entries: a user's inherited MY_VAR/w is valid.
   for (const QString &entry : wslenv.split(u':')) {
@@ -6696,7 +6713,17 @@ void tst_util::wslenvMergesIntoAnInheritedEntry() {
   QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_GPG_OPTS/u")), 1);
   QCOMPARE(parts.count(QStringLiteral("GIT_CEILING_DIRECTORIES/p")), 1);
   QCOMPARE(parts.count(QStringLiteral("GIT_LITERAL_PATHSPECS/u")), 1);
-  QCOMPARE(parts.size(), 8);
+  // The bare-repository guard's entries (the count and each numbered pair;
+  // one pair unless the environment brought its own).
+  const int gitConfigCount =
+      pass.environment().value(QStringLiteral("GIT_CONFIG_COUNT")).toInt();
+  QCOMPARE(parts.count(QStringLiteral("GIT_CONFIG_COUNT/u")), 1);
+  QCOMPARE(parts.count(QStringLiteral("GIT_CONFIG_KEY_0/u")), 1);
+  QCOMPARE(parts.count(QStringLiteral("GIT_CONFIG_VALUE_0/u")), 1);
+  const int parameters =
+      pass.environment().contains(QStringLiteral("GIT_CONFIG_PARAMETERS")) ? 1
+                                                                           : 0;
+  QCOMPARE(parts.size(), 9 + 2 * gitConfigCount + parameters);
 }
 
 /**
@@ -7576,6 +7603,104 @@ void tst_util::removeTreeReportsWhatItCannotRemove() {
   QVERIFY2(!QFileInfo::exists(folder), "nothing of the tree is left");
   QVERIFY2(QDir(outsideDir.path()).exists(), "the link's target stays");
 #endif
+}
+
+/**
+ * @brief safe.bareRepository=explicit goes in at the next free GIT_CONFIG
+ *        index; a user's entries stay, an explicit last entry is kept, a
+ *        weaker one is overridden, and a malformed count starts afresh (scan
+ *        finding ANT-2026-HJOPH9D4).
+ */
+void tst_util::requireExplicitBareRepository_data() {
+  QTest::addColumn<QStringList>("before"); // count, then key=value pairs
+  QTest::addColumn<QStringList>("after");
+  QTest::newRow("none") << QStringList{}
+                        << QStringList{"1", "safe.bareRepository=explicit"};
+  QTest::newRow("user's own entries kept")
+      << QStringList{"2", "user.name=A", "core.pager=less"}
+      << QStringList{"3", "user.name=A", "core.pager=less",
+                     "safe.bareRepository=explicit"};
+  QTest::newRow("already explicit")
+      << QStringList{"1", "safe.bareRepository=explicit"}
+      << QStringList{"1", "safe.bareRepository=explicit"};
+  QTest::newRow("explicit in another case")
+      << QStringList{"1", "Safe.BareRepository=Explicit"}
+      << QStringList{"1", "Safe.BareRepository=Explicit"};
+  QTest::newRow("weaker value overridden")
+      << QStringList{"1", "safe.bareRepository=all"}
+      << QStringList{"2", "safe.bareRepository=all",
+                     "safe.bareRepository=explicit"};
+  QTest::newRow("explicit, then weaker")
+      << QStringList{"2", "safe.bareRepository=explicit",
+                     "safe.bareRepository=all"}
+      << QStringList{"3", "safe.bareRepository=explicit",
+                     "safe.bareRepository=all", "safe.bareRepository=explicit"};
+  QTest::newRow("malformed count")
+      << QStringList{"two"} << QStringList{"1", "safe.bareRepository=explicit"};
+}
+
+void tst_util::requireExplicitBareRepository() {
+  QFETCH(QStringList, before);
+  QFETCH(QStringList, after);
+  QProcessEnvironment env;
+  if (!before.isEmpty()) {
+    env.insert(QStringLiteral("GIT_CONFIG_COUNT"), before.first());
+    for (int i = 1; i < before.size(); ++i) {
+      const QStringList kv = before.at(i).split(QLatin1Char('='));
+      env.insert(QStringLiteral("GIT_CONFIG_KEY_%1").arg(i - 1), kv.at(0));
+      env.insert(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(i - 1), kv.at(1));
+    }
+  }
+  Util::requireExplicitBareRepository(env);
+  QStringList got{env.value(QStringLiteral("GIT_CONFIG_COUNT"))};
+  for (int i = 0; i < got.first().toInt(); ++i) {
+    got << env.value(QStringLiteral("GIT_CONFIG_KEY_%1").arg(i)) +
+               QLatin1Char('=') +
+               env.value(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(i));
+  }
+  QCOMPARE(got, after);
+}
+
+/**
+ * @brief git reads GIT_CONFIG_PARAMETERS after the numbered entries, so a
+ *        safe.bareRepository there is followed by explicit; parameters that
+ *        do not name it are left alone.
+ */
+void tst_util::requireExplicitBareRepositoryFollowsGitConfigParameters() {
+  const auto after = [](const QString &parameters) {
+    QProcessEnvironment env;
+    env.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"), parameters);
+    Util::requireExplicitBareRepository(env);
+    Util::requireExplicitBareRepository(env); // repeated: nothing piles up
+    return env.value(QStringLiteral("GIT_CONFIG_PARAMETERS"));
+  };
+  const QString appended = QStringLiteral(" 'safe.bareRepository=explicit'");
+  // Both quoting forms git writes, and the key in another case.
+  for (const QString &weaker :
+       {QStringLiteral("'safe.bareRepository'='all'"),
+        QStringLiteral("'safe.bareRepository=all'"),
+        QStringLiteral("'SAFE.BAREREPOSITORY'='all' 'core.pager'='less'")}) {
+    QCOMPARE(after(weaker), weaker + appended);
+  }
+  // A value that merely ends like the explicit entry is another key's.
+  const QString spoofed =
+      QStringLiteral("'safe.bareRepository'='all' "
+                     "'qtpass.note'='safe.bareRepository=explicit'");
+  QCOMPARE(after(spoofed), spoofed + appended);
+  // Forms a parser could miss (an implicit boolean after it, blanks around
+  // an old-style key) still get the explicit entry last.
+  for (const QString &unparsed :
+       {QStringLiteral("'safe.bareRepository'='all' 'core.filemode'="),
+        QStringLiteral("' safe.bareRepository =all'")}) {
+    QCOMPARE(after(unparsed), unparsed + appended);
+  }
+  // Already ending in the explicit entry, or not naming the key.
+  for (const QString &kept : {QStringLiteral("'safe.bareRepository=explicit'"),
+                              QStringLiteral("'safe.bareRepository'='all' "
+                                             "'safe.bareRepository=explicit'"),
+                              QStringLiteral("'core.pager=less'")}) {
+    QCOMPARE(after(kept), kept);
+  }
 }
 
 QTEST_MAIN(tst_util)
