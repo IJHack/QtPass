@@ -249,6 +249,21 @@ auto GpgIdSigner::verify(const QByteArray &contents,
                       << ": the signed file is not valid UTF-8";
     return false;
   }
+  // git signs a commit or tag the same way a .gpg-id is signed: a detached
+  // signature over the object without its own signature header. With
+  // pass.signcommits (or commit.gpgsign) the signing key signs QtPass's
+  // commits, so such a commit and its signature could be pushed as .gpg-id and
+  // .gpg-id.sig and would verify here as a signed recipient list - whose lines
+  // (the commit's headers and message, part of which can be a pushed entry
+  // name) then become recipients. A commit begins "tree <hash>" and a tag
+  // "object <hash>"; refuse either before gpg is asked.
+  static const QRegularExpression commitOrTag(
+      QStringLiteral(R"(\A(?:tree|object) [0-9a-f]{40}(?:[0-9a-f]{24})?\n)"));
+  if (commitOrTag.match(text).hasMatch()) {
+    qCDebug(lcQtPass) << "Refusing to verify" << signatureFile
+                      << ": the signed data is a git commit or tag object";
+    return false;
+  }
   // Same for the signature: a valid pair replayed from elsewhere through two
   // links is not this folder's list.
   if (Util::isLinkedFolder(signatureFile)) {
