@@ -270,6 +270,21 @@ class RealPass : public Pass {
   auto refuseSpecialEntry(const QString &entry) -> bool;
 
   /**
+   * @brief Refuse, and tell the user, when the store-relative name of
+   * @p path holds a line feed or carriage return.
+   *
+   * pass finds an entry's folder with `$(dirname -- "$path")`, and command
+   * substitution drops trailing line feeds: for `Finance<LF>/x` pass reads
+   * `Finance/.gpg-id`, not the list QtPass checked. A co-writer can push
+   * such a folder beside a real one. Move and copy are not refused: pass
+   * finds the folder there without a command substitution, and renaming is
+   * how the user gets rid of such a name.
+   * @param path An entry or folder in the store.
+   * @return Whether it was refused.
+   */
+  auto refuseLineBreakName(const QString &path) -> bool;
+
+  /**
    * @brief For a folder pass is about to re-encrypt in a move or copy:
    * refuse when an entry pass's walk takes (hidden ones included) is no
    * regular file (refuseSpecialEntry()), or when the signed list of one of
