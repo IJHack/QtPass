@@ -62,6 +62,9 @@ class Executor : public QObject {
   QQueue<execQueueItem> m_execQueue;
   QProcess m_process;
   bool running{false};
+  /// error()s of failed starts posted but not delivered yet; nothing new
+  /// starts while there is one (executeNext()).
+  int m_pendingErrors = 0;
   void executeNext();
   void startProcess(const QString &app, const QStringList &args);
   static void startProcessBlocking(QProcess &internal, const QString &app,

@@ -115,7 +115,12 @@ auto Executor::wslExecArgs(const QString &command, const QStringList &args)
  * @brief Executor::executeNext consumes executable tasks from the queue
  */
 void Executor::executeNext() {
-  if (running || m_execQueue.isEmpty()) {
+  // Nothing starts while a failed start's error() is still on its way: every
+  // other failure is emitted before the next item starts (onProcessFinished),
+  // and a caller that drops the rest of its work on a failure (ImitatePass's
+  // insert-then-commit) relies on that order. The posted error continues the
+  // queue once it is out.
+  if (running || m_pendingErrors > 0 || m_execQueue.isEmpty()) {
     return;
   }
   const execQueueItem &i = m_execQueue.head();
@@ -132,14 +137,16 @@ void Executor::executeNext() {
     // Capture before dequeue() invalidates the head reference.
     const int failedId = i.id;
     m_execQueue.dequeue();
+    ++m_pendingErrors;
     QMetaObject::invokeMethod(
         this,
         [this, failedId]() {
           emit error(failedId, -1, QString(),
                      tr("No executable configured for this command"));
+          --m_pendingErrors;
+          executeNext();
         },
         Qt::QueuedConnection);
-    executeNext();
     return;
   }
 
@@ -169,14 +176,16 @@ void Executor::executeNext() {
     m_process.closeWriteChannel();
     running = false;
     m_execQueue.dequeue();
+    ++m_pendingErrors;
     QMetaObject::invokeMethod(
         this,
         [this, failedId, failedApp]() {
           emit error(failedId, -1, QString(),
                      tr("Failed to start %1").arg(failedApp));
+          --m_pendingErrors;
+          executeNext();
         },
         Qt::QueuedConnection);
-    executeNext();
     return;
   }
 
