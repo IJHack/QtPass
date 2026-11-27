@@ -183,6 +183,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   entry is loaded, a later decrypt of it no longer refills the dialog; a
   newer version that arrives while you edit is not shown there (scan
   finding ANT-2026-0RSLK0IT).
+- A signing key that was revoked and has also expired no longer vouches for
+  a recipient list when `gpg.conf` sets `trust-model always`. Under that
+  model gpg skipped the check that reports the revocation and called the
+  signature merely expired, which counts. Someone holding such a leaked key
+  who can write to a shared store could sign a list naming their own key.
+  QtPass now verifies `.gpg-id` signatures with `--trust-model=pgp`, which
+  changes no verdict on the signature itself (scan finding
+  ANT-2026-762RKXO4).
 - Move, copy and rename with the `pass` backend are now checked where pass
   puts the item, not under the name as QtPass spelled it. pass moves an
   entry or folder into a folder of the destination's name (a link to one

@@ -276,11 +276,14 @@ void tst_gpgidsigner::signUsesTheFirstKeyOnlyAndReportsStderr() {
   // Then the new signature is checked, in the scratch, against the same
   // bytes, before it goes next to the list.
   QCOMPARE(
-      gpg.calls.at(1).args.mid(0, 4),
-      (QStringList{QStringLiteral("--batch"), QStringLiteral("--verify"),
-                   QStringLiteral("--status-fd=1"), QStringLiteral("--")}));
-  QVERIFY2(!gpg.calls.at(1).args.at(4).startsWith(store.path()),
-           qPrintable(gpg.calls.at(1).args.at(4)));
+      gpg.calls.at(1).args.mid(0, 6),
+      (QStringList{
+          QStringLiteral("--batch"), QStringLiteral("--trust-model=pgp"),
+          QStringLiteral("--no-auto-check-trustdb"), QStringLiteral("--verify"),
+          QStringLiteral("--status-fd=1"), QStringLiteral("--")}));
+  const QStringList checkArgs = gpg.calls.at(1).args;
+  const QString checkedSig = checkArgs.at(checkArgs.size() - 2); // before "-"
+  QVERIFY2(!checkedSig.startsWith(store.path()), qPrintable(checkedSig));
   QCOMPARE(gpg.verifiedSig, gpg.signature);
   QCOMPARE(gpg.calls.at(1).input, QString::fromUtf8(kGpgId));
   QFile sig(gpgId + QStringLiteral(".sig"));
@@ -382,7 +385,8 @@ void tst_gpgidsigner::signPassesTheFilePathThroughTheWslTranslation() {
   const QString dir = QFileInfo(sigPath()).absolutePath();
   QVERIFY(signer.verify(kGpgId, dir + QStringLiteral("//.gpg-id.sig")));
   // gpg gets the copy of the bytes read, by its cleaned path.
-  const QString copy = gpg.calls.last().args.at(4);
+  const QStringList verifyArgs = gpg.calls.last().args;
+  const QString copy = verifyArgs.at(verifyArgs.size() - 2); // before "-"
   QCOMPARE(copy, QDir::cleanPath(copy));
   QCOMPARE(gpg.verifiedSig, QByteArrayLiteral("SIGNATURE"));
 }
@@ -431,14 +435,19 @@ void tst_gpgidsigner::verifyPassesArgsAndAcceptsEitherFingerprint() {
     // The signed data goes to gpg on stdin: the very bytes the caller holds,
     // not whatever is in the file by the time gpg opens it.
     const QStringList args = gpg.calls.first().args;
-    QCOMPARE(
-        args.mid(0, 4),
-        (QStringList{QStringLiteral("--batch"), QStringLiteral("--verify"),
-                     QStringLiteral("--status-fd=1"), QStringLiteral("--")}));
+    // The trust model pinned: `trust-model always` in gpg.conf would hide
+    // that a revoked key has also expired (scan finding ANT-2026-762RKXO4).
+    QCOMPARE(args.mid(0, 6),
+             (QStringList{
+                 QStringLiteral("--batch"), QStringLiteral("--trust-model=pgp"),
+                 QStringLiteral("--no-auto-check-trustdb"),
+                 QStringLiteral("--verify"), QStringLiteral("--status-fd=1"),
+                 QStringLiteral("--")}));
     QCOMPARE(args.last(), QStringLiteral("-"));
     // A copy of the bytes read, not the store's file: nothing swapped in
     // under the name (a FIFO, another signature) reaches gpg.
-    QVERIFY2(args.at(4) != sigPath(), qPrintable(args.at(4)));
+    const QString sigArg = args.at(args.size() - 2); // before "-"
+    QVERIFY2(sigArg != sigPath(), qPrintable(sigArg));
     QCOMPARE(gpg.verifiedSig, QByteArrayLiteral("SIGNATURE"));
     QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
   }
@@ -662,7 +671,9 @@ void tst_gpgidsigner::verifyFileHandsBackTheBytesItVerified() {
   QVERIFY(signer.verifyFile(gpgId, &contents));
   QCOMPARE(contents, kGpgId);
   QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
-  QVERIFY(gpg.calls.first().args.at(4) != gpgId + QStringLiteral(".sig"));
+  const QStringList verifyArgs = gpg.calls.first().args;
+  QVERIFY(verifyArgs.at(verifyArgs.size() - 2) !=
+          gpgId + QStringLiteral(".sig")); // the copy, before "-"
   QCOMPARE(gpg.verifiedSig, kGpgId);
 
   QByteArray none;
