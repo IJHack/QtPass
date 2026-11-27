@@ -70,8 +70,8 @@ var NAVTREEINDEX =
 "class_pass.html#ab81d7dbed9e18a9368c2be06876c4630",
 "class_qt_pass_settings.html#adee7d69291b6dea108ddc7b5e0399103",
 "class_totp.html#acf4966342831a437cd0db45f8f05bf01ab1ee9905cd4c4e35d30601db350f3964",
-"globals_func.html",
-"struct_app_settings.html#a386eab4e60ad6e21c2d860c04d6d687c"
+"functions_~.html",
+"struct_app_settings.html#a2dbd96ed7a8f3d7a92474728dd5605a1"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

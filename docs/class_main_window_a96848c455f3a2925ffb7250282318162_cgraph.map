@@ -1,15 +1,17 @@
 <map id="MainWindow::exactMatchPath" name="MainWindow::exactMatchPath">
-<area shape="rect" id="Node000001" title="The entry file named exactly as the search text, spaces around the text included; failing that,..." alt="" coords="5,108,222,136"/>
+<area shape="rect" id="Node000001" title="The entry file named exactly as the search text, spaces around the text included; failing that,..." alt="" coords="5,133,222,161"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="270,81,480,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,108,257,107,252,108,223,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,130,289,112,284,114,188,135"/>
 <area shape="rect" id="Node000007" href="$class_path_validator.html#ab45fab776e795db0071e4561291ca12d" title="Check that a candidate path resolves inside the password store root, after following symlinks and res..." alt="" coords="275,133,475,161"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="222,130,262,136,257,136,222,135"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="222,145,262,147,256,148,223,150"/>
+<area shape="rect" id="Node000009" href="$class_util.html#ab27949f87883dff41623d3407f5e8379" title="name in dir, as the file system means it." alt="" coords="323,185,427,213"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="187,159,310,185,305,187,187,164"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="542,5,744,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="416,78,527,43,559,38,564,37,529,48,418,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="416,78,527,43,564,36,559,38,529,48,418,83"/>
 <area shape="rect" id="Node000005" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="565,81,721,109"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="480,93,552,95,547,95,481,98"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="480,93,552,95,547,96,481,98"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="806,5,1030,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="744,17,793,19,788,19,745,22"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="744,17,793,19,788,20,745,22"/>
 <area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="597,80,590,72,596,63,614,57,643,55,674,57,693,66,688,66,673,62,643,60,615,62,599,67,596,72,602,82"/>
 <area shape="rect" id="Node000006" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="837,81,999,109"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="722,93,824,95,819,95,722,98"/>

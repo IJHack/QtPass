@@ -605,7 +605,7 @@ Private Attributes</h2></td></tr>
 <p>Whether automatic pushes of the current store are held because its last re-encryption did not finish cleanly. </p>
 <p>The recipients change is committed locally first, so after a failed or cancelled re-encryption the next automatic push (after any later edit) would publish a .gpg-id whose entries are partly still encrypted to the previous recipients. Held while any folder of the store has such a run outstanding, until a clean re-encryption covers it; a push the user asks for is not held. Shared by both backends, so switching between them keeps it; kept for this session only. </p><dl class="section return"><dt>Returns</dt><dd>true when an automatic push of the current store should not run. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00944">944</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00946">946</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -2150,7 +2150,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Push changes to remote Git repository.">GitPush()</a> for an automatic push, the one after a change. A backend that has to make the push later drops it then if the store is held by that time (<a class="el" href="#ac41904b0c2ba9f6bca6ef08b4bdb63e1" title="Whether automatic pushes of the current store are held because its last re-encryption did not finish ...">autoPushHeld()</a>); a push by hand (<a class="el" href="#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Push changes to remote Git repository.">GitPush()</a>) still goes. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00953">953</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00955">955</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-42-summary" class="dynsummary">
 </div>
@@ -2339,7 +2339,7 @@ Private Attributes</h2></td></tr>
 <p>The folders (cleaned absolute paths) whose re-encryption did not finish, for every store and both backends. </p>
 <dl class="section return"><dt>Returns</dt><dd>The shared set, for this session. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00935">935</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00937">937</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary">
 </div>
@@ -2380,7 +2380,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00961">961</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00963">963</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-48-summary" class="dynsummary">
 </div>
@@ -3350,7 +3350,7 @@ Private Attributes</h2></td></tr>
 <p>Whether the <a class="el" href="#a7b5fa97ca6f3795512ac7c10db5c8f09" title="Push changes to remote Git repository.">GitPush()</a> running now is an automatic one. </p>
 <dl class="section return"><dt>Returns</dt><dd>true inside <a class="el" href="#a45818547e0b844bd6f111a67b3e9b249" title="GitPush() for an automatic push, the one after a change. A backend that has to make the push later dr...">GitPushAutomatic()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00959">959</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00961">961</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-77" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-77-summary" class="dynsummary">
 </div>
@@ -3714,12 +3714,12 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00974">974</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00976">976</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-90" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-90-summary" class="dynsummary">
 </div>
 <div id="dynsection-90-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6cca7cd5646a752c16dac59df6e53581_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6cca7cd5646a752c16dac59df6e53581_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-91" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-91-summary" class="dynsummary">
@@ -3910,7 +3910,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00965">965</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00967">967</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-98" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-98-summary" class="dynsummary">
 </div>
@@ -4082,7 +4082,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The cleaned absolute path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00940">940</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00942">942</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-103" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-103-summary" class="dynsummary">
 </div>

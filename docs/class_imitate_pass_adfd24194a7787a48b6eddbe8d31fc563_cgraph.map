@@ -1,0 +1,5 @@
+<map id="ImitatePass::resolveMoveDestination" name="ImitatePass::resolveMoveDestination">
+<area shape="rect" id="Node000001" title="Resolve destination for move operation." alt="" coords="5,5,195,50"/>
+<area shape="rect" id="Node000002" href="$class_util.html#ab27949f87883dff41623d3407f5e8379" title="name in dir, as the file system means it." alt="" coords="243,14,347,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,25,230,27,224,28,195,30"/>
+</map>

@@ -1,11 +1,13 @@
 <map id="MainWindow::renamePassword" name="MainWindow::renamePassword">
-<area shape="rect" id="Node000001" title="Context menu &quot;Rename password&quot;: ask for a new name and Move the current entry within its folder,..." alt="" coords="5,165,229,193"/>
+<area shape="rect" id="Node000001" title="Context menu &quot;Rename password&quot;: ask for a new name and Move the current entry within its folder,..." alt="" coords="5,192,229,220"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#a7dc9b8ab1f814b9920ac2264bc9c0781" title="Guard the input dialogs (create, move, rename) against names like ../../etc/passwd or absolute paths ..." alt="" coords="277,81,478,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,162,286,128,282,132,169,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,189,306,129,303,134,156,194"/>
 <area shape="rect" id="Node000010" href="$class_main_window.html#ad6e6c75194b0990907adf30d9425819c" title="StoreTree::fileFor() on the tree." alt="" coords="299,217,456,245"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="190,191,291,212,287,215,191,196"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="228,214,286,221,281,223,230,219"/>
 <area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="289,165,466,193"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="228,177,276,178,271,180,230,182"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="228,192,276,188,271,191,230,197"/>
+<area shape="rect" id="Node000029" href="$class_util.html#ab27949f87883dff41623d3407f5e8379" title="name in dir, as the file system means it." alt="" coords="325,269,430,297"/>
+<area shape="poly" id="edge34_Node000001_Node000029" title=" " alt="" coords="161,218,277,254,313,265,308,267,276,259,162,223"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="526,89,736,117"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,101,513,102,508,104,479,106"/>
 <area shape="rect" id="Node000008" href="$class_path_validator.html#ab45fab776e795db0071e4561291ca12d" title="Check that a candidate path resolves inside the password store root, after following symlinks and res..." alt="" coords="531,21,731,49"/>

@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 21:17:43</td>
+            <td class="headerValue">2026-11-27 22:22:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">93.3&nbsp;%</td>
@@ -304,12 +304,12 @@
 <span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">           4 : }</span></span>
 <span id="L232"><span class="lineNum">     232</span>              : </span>
 <span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">           6 : void SingleApplication::waitForPeer() {</span></span>
-<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">          11 :   for (int attempt = 0; attempt &lt; takeoverProbes; ++attempt) {</span></span>
-<span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">          10 :     if (peerIsListening()) {</span></span>
+<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">          12 :   for (int attempt = 0; attempt &lt; takeoverProbes; ++attempt) {</span></span>
+<span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">          11 :     if (peerIsListening()) {</span></span>
 <span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">           5 :       _isRunning = true;</span></span>
 <span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">           5 :       return;</span></span>
 <span id="L238"><span class="lineNum">     238</span>              :     }</span>
-<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">           5 :     QThread::msleep(takeoverProbeIntervalMs);</span></span>
+<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">           6 :     QThread::msleep(takeoverProbeIntervalMs);</span></span>
 <span id="L240"><span class="lineNum">     240</span>              :   }</span>
 <span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">           2 :   qCDebug(lcQtPass) &lt;&lt; &quot;Unable to create single instance.&quot;;</span></span>
 <span id="L242"><span class="lineNum">     242</span>              : }</span>
@@ -340,10 +340,10 @@
 <span id="L267"><span class="lineNum">     267</span>              :   return true;</span>
 <span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">           5 : }</span></span>
 <span id="L269"><span class="lineNum">     269</span>              : </span>
-<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">          10 : auto SingleApplication::peerIsListening() -&gt; bool {</span></span>
-<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">          10 :   QLocalSocket probe;</span></span>
-<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">          10 :   probe.connectToServer(_uniqueKey, QIODevice::WriteOnly);</span></span>
-<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">          10 :   if (!probe.waitForConnected(timeout)) {</span></span>
+<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">          11 : auto SingleApplication::peerIsListening() -&gt; bool {</span></span>
+<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">          11 :   QLocalSocket probe;</span></span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">          11 :   probe.connectToServer(_uniqueKey, QIODevice::WriteOnly);</span></span>
+<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">          11 :   if (!probe.waitForConnected(timeout)) {</span></span>
 <span id="L274"><span class="lineNum">     274</span>              :     return false;</span>
 <span id="L275"><span class="lineNum">     275</span>              :   }</span>
 <span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">           5 :   if (!serverRunsAsThisUser(probe)) {</span></span>
@@ -354,7 +354,7 @@
 <span id="L281"><span class="lineNum">     281</span>              :   }</span>
 <span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">           5 :   probe.disconnectFromServer();</span></span>
 <span id="L283"><span class="lineNum">     283</span>              :   return true;</span>
-<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">          10 : }</span></span>
+<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">          11 : }</span></span>
         </pre>
               </td>
             </tr>

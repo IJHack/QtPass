@@ -1,7 +1,9 @@
 <map id="RealPass::passMoveTarget" name="RealPass::passMoveTarget">
-<area shape="rect" id="Node000001" title="Name src and dest for pass mv/pass cp, and work out where pass 1.7.4 then puts the source." alt="" coords="5,5,199,33"/>
-<area shape="rect" id="Node000002" href="$class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="247,5,403,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,17,234,19,228,19,199,22"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="451,5,590,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,17,438,19,433,19,404,22"/>
+<area shape="rect" id="Node000001" title="Name src and dest for pass mv/pass cp, and work out where pass 1.7.4 then puts the source." alt="" coords="5,32,199,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#ab27949f87883dff41623d3407f5e8379" title="name in dir, as the file system means it." alt="" coords="273,5,377,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,32,260,27,255,28,200,37"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#a7f4e533ac300c1a6acbecf7c54642719" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="247,57,403,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,54,234,60,228,61,199,60"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="451,57,590,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="404,69,438,71,433,71,404,74"/>
 </map>

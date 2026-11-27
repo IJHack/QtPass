@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 21:17:43</td>
+            <td class="headerValue">2026-11-27 22:22:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -257,7 +257,7 @@
 <span id="L184"><span class="lineNum">     184</span>              :    * run by its status records (RealPass counting END_ENCRYPTION against the</span>
 <span id="L185"><span class="lineNum">     185</span>              :    * entries pass re-encrypted) reads statusCounts(), not the capped text.</span>
 <span id="L186"><span class="lineNum">     186</span>              :    */</span>
-<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">         491 :   class CappedOutput {</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">         493 :   class CappedOutput {</span></span>
 <span id="L188"><span class="lineNum">     188</span>              :   public:</span>
 <span id="L189"><span class="lineNum">     189</span>              :     /**</span>
 <span id="L190"><span class="lineNum">     190</span>              :      * @brief Add what the process wrote next.</span>
@@ -285,10 +285,10 @@
 <span id="L212"><span class="lineNum">     212</span>              :       return m_status;</span>
 <span id="L213"><span class="lineNum">     213</span>              :     }</span>
 <span id="L214"><span class="lineNum">     214</span>              :     /** @brief Drop everything, counts included, for the next command. */</span>
-<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">         440 :     void clear() {</span></span>
-<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">         440 :       take();</span></span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">         440 :       m_status.clear();</span></span>
-<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">         440 :     }</span></span>
+<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">         441 :     void clear() {</span></span>
+<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">         441 :       take();</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">         441 :       m_status.clear();</span></span>
+<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">         441 :     }</span></span>
 <span id="L219"><span class="lineNum">     219</span>              :     /** @brief Longest line still looked at for a status keyword. */</span>
 <span id="L220"><span class="lineNum">     220</span>              :     static constexpr qsizetype kMaxStatusLineBytes = 1024;</span>
 <span id="L221"><span class="lineNum">     221</span>              :     /** @brief Most distinct status keywords counted. */</span>
@@ -654,7 +654,7 @@
 <span id="L581"><span class="lineNum">     581</span>              :    * @brief Whether no command is running and nothing is queued.</span>
 <span id="L582"><span class="lineNum">     582</span>              :    * @return true when the executor has nothing in flight.</span>
 <span id="L583"><span class="lineNum">     583</span>              :    */</span>
-<span id="L584"><span class="lineNum">     584</span> <span class="tlaGNC">        1024 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L584"><span class="lineNum">     584</span> <span class="tlaGNC">        1022 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
 <span id="L585"><span class="lineNum">     585</span>              :   /**</span>
 <span id="L586"><span class="lineNum">     586</span>              :    * @brief Whether the stdout of the item whose finished() or error() is</span>
 <span id="L587"><span class="lineNum">     587</span>              :    * being emitted encodes back (toUtf8(), as every writer here does) to</span>

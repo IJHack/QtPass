@@ -1,69 +1,71 @@
 <map id="RealPass::Remove" name="RealPass::Remove">
-<area shape="rect" id="Node000001" title="Remove an entry or folder with pass rm." alt="" coords="5,358,147,386"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="753,33,856,61"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,357,87,310,108,242,142,169,165,135,193,105,223,81,255,60,325,30,400,12,477,4,552,4,623,9,741,30,736,32,622,14,552,9,477,9,401,17,327,35,257,65,226,85,197,109,170,138,147,172,113,244,92,311,82,358"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a554cab50d6449b456ad4e8309ee11a90" title="Return the environment passed to child processes." alt="" coords="207,409,375,437"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,384,216,403,212,406,138,389"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="195,461,387,489"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="95,384,141,415,196,446,216,455,211,456,194,451,138,419,96,389"/>
-<area shape="rect" id="Node000014" href="$class_real_pass.html#ae210a8e9148b9ea58e229e770b88f19b" title="Execute pass command with arguments." alt="" coords="207,513,374,541"/>
-<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="87,384,131,440,161,471,196,498,210,506,204,507,193,502,158,475,127,444,86,389"/>
-<area shape="rect" id="Node000016" href="$class_pass.html#af08e80e76ffd6581f35e701e6c8b533e" title="A Remove() succeeded; the entry or folder is gone from the store." alt="" coords="209,565,372,593"/>
-<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="83,384,99,419,123,464,155,510,196,550,206,558,201,558,193,554,151,514,118,467,95,421,82,389"/>
-<area shape="rect" id="Node000017" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="732,308,877,335"/>
-<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="146,367,371,357,649,338,719,332,714,334,650,343,371,362,148,372"/>
-<area shape="rect" id="Node000018" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="722,137,887,165"/>
-<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="130,356,194,342,239,337,297,335,429,334,496,331,558,325,610,313,648,294,661,281,667,267,672,237,675,205,682,189,696,174,706,170,710,167,699,178,687,192,681,207,677,238,673,269,665,284,651,298,612,318,559,330,496,336,429,339,297,341,240,342,195,347,133,360"/>
-<area shape="rect" id="Node000019" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="206,230,376,258"/>
-<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="100,356,254,264,252,269,103,360"/>
-<area shape="rect" id="Node000024" href="$class_pass.html#a273c43add4c728d419585f642bce24d4" title="Refuse a store change while a Git pull is still queued or running." alt="" coords="454,33,630,61"/>
-<area shape="poly" id="edge28_Node000001_Node000024" title=" " alt="" coords="79,357,94,320,117,271,150,217,193,170,250,130,314,99,379,76,442,62,437,65,380,81,316,104,253,134,196,174,155,221,122,273,99,322,85,359"/>
-<area shape="rect" id="Node000025" href="$class_pass.html#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid&#45;rebase, &#45;merge, &#45;cherry&#45;pick or &#45;revert." alt="" coords="448,137,636,181"/>
-<area shape="poly" id="edge32_Node000001_Node000025" title=" " alt="" coords="81,357,97,327,121,288,153,249,193,217,251,189,313,171,375,160,435,156,431,159,376,165,314,176,253,194,196,221,157,253,125,291,102,329,86,359"/>
-<area shape="rect" id="Node000028" href="$class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c" title="Remove dir and everything in it, the way rm &#45;rf does: a symbolic link or NTFS junction,..." alt="" coords="226,641,356,669"/>
-<area shape="poly" id="edge38_Node000001_Node000028" title=" " alt="" coords="81,384,97,427,120,484,153,546,174,576,197,602,216,619,240,634,234,634,213,623,193,606,169,579,149,549,115,486,92,429,81,389"/>
-<area shape="rect" id="Node000005" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="461,449,623,477"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="387,468,448,467,443,468,388,473"/>
-<area shape="rect" id="Node000006" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="709,449,900,477"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="624,460,696,462,691,463,624,465"/>
-<area shape="rect" id="Node000007" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="960,441,1138,485"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="900,460,947,463,941,463,901,466"/>
-<area shape="rect" id="Node000009" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="966,389,1132,417"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="863,446,977,420,972,422,864,451"/>
-<area shape="rect" id="Node000013" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="960,510,1138,555"/>
-<area shape="poly" id="edge12_Node000006_Node000013" title=" " alt="" coords="856,475,956,505,950,505,856,480"/>
-<area shape="rect" id="Node000008" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="1206,501,1384,545"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1139,482,1194,498,1188,497,1138,487"/>
-<area shape="rect" id="Node000010" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1186,389,1404,417"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1132,400,1173,403,1168,403,1132,406"/>
-<area shape="rect" id="Node000011" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1189,441,1401,469"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="1118,415,1214,437,1208,437,1118,420"/>
-<area shape="rect" id="Node000012" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1193,337,1397,365"/>
-<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="1117,386,1214,368,1208,369,1119,391"/>
-<area shape="poly" id="edge13_Node000013_Node000008" title=" " alt="" coords="1138,526,1193,527,1188,527,1139,531"/>
-<area shape="rect" id="Node000015" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="460,525,624,553"/>
-<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="375,528,447,534,442,535,375,533"/>
-<area shape="poly" id="edge16_Node000015_Node000015" title=" " alt="" coords="499,524,492,516,498,506,515,500,542,498,572,501,589,510,584,510,570,506,542,504,516,506,501,510,498,516,504,525"/>
-<area shape="rect" id="Node000020" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="435,205,649,233"/>
-<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="375,233,422,230,417,233,377,238"/>
-<area shape="rect" id="Node000021" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="478,257,607,285"/>
-<area shape="poly" id="edge22_Node000019_Node000021" title=" " alt="" coords="375,251,464,261,459,263,377,256"/>
-<area shape="rect" id="Node000022" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="436,85,648,113"/>
-<area shape="poly" id="edge24_Node000019_Node000022" title=" " alt="" coords="303,228,356,176,393,147,434,122,451,117,446,120,436,127,396,151,360,180,307,232"/>
-<area shape="poly" id="edge23_Node000021_Node000017" title=" " alt="" coords="607,281,719,304,714,305,607,286"/>
-<area shape="poly" id="edge25_Node000022_Node000002" title=" " alt="" coords="615,82,741,59,736,61,617,87"/>
-<area shape="poly" id="edge26_Node000022_Node000018" title=" " alt="" coords="615,111,719,133,714,134,616,116"/>
-<area shape="rect" id="Node000023" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="697,85,912,113"/>
-<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="648,96,684,98,679,100,650,101"/>
-<area shape="poly" id="edge29_Node000024_Node000002" title=" " alt="" coords="629,44,740,46,735,48,631,49"/>
-<area shape="poly" id="edge30_Node000024_Node000018" title=" " alt="" coords="621,59,651,71,666,84,676,97,684,110,699,122,713,131,708,131,696,126,680,114,671,100,662,88,648,76,622,64"/>
-<area shape="poly" id="edge31_Node000024_Node000023" title=" " alt="" coords="615,59,719,81,714,82,616,64"/>
-<area shape="poly" id="edge33_Node000025_Node000002" title=" " alt="" coords="625,134,648,122,662,110,671,97,680,84,696,71,741,56,736,58,699,76,684,88,675,100,666,113,651,126,628,138"/>
-<area shape="poly" id="edge34_Node000025_Node000018" title=" " alt="" coords="635,153,709,153,704,155,637,159"/>
-<area shape="poly" id="edge35_Node000025_Node000023" title=" " alt="" coords="635,135,728,115,724,118,637,140"/>
-<area shape="rect" id="Node000026" href="$class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b" title="The unfinished git operation in progress in the store, if any." alt="" coords="700,189,909,233"/>
-<area shape="poly" id="edge36_Node000025_Node000026" title=" " alt="" coords="636,175,688,187,682,188,637,180"/>
-<area shape="rect" id="Node000027" href="$class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7" title="Run a git command in the store&#39;s repository, blocking." alt="" coords="994,197,1104,225"/>
-<area shape="poly" id="edge37_Node000026_Node000027" title=" " alt="" coords="908,208,981,210,976,212,910,213"/>
-<area shape="poly" id="edge39_Node000028_Node000028" title=" " alt="" coords="254,639,248,632,253,622,267,616,291,614,316,617,331,626,326,625,315,622,291,620,269,622,256,626,253,632,259,642"/>
+<area shape="rect" id="Node000001" title="Remove an entry or folder with pass rm." alt="" coords="5,420,147,448"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="753,69,856,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,419,83,364,102,283,117,239,137,195,162,153,193,116,246,69,298,36,348,16,400,5,455,3,514,8,650,29,707,43,760,63,755,64,705,48,649,34,513,13,455,9,401,10,350,21,300,41,249,73,197,120,166,156,142,197,122,241,107,285,89,365,81,420"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a554cab50d6449b456ad4e8309ee11a90" title="Return the environment passed to child processes." alt="" coords="207,471,375,498"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,446,216,465,212,468,138,451"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="195,523,387,550"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="95,446,141,477,196,508,216,517,211,518,194,512,138,481,96,451"/>
+<area shape="rect" id="Node000014" href="$class_real_pass.html#ae210a8e9148b9ea58e229e770b88f19b" title="Execute pass command with arguments." alt="" coords="207,575,374,602"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="87,446,131,502,161,533,196,560,210,568,204,569,193,564,158,537,127,505,86,451"/>
+<area shape="rect" id="Node000016" href="$class_pass.html#af08e80e76ffd6581f35e701e6c8b533e" title="A Remove() succeeded; the entry or folder is gone from the store." alt="" coords="209,627,372,654"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="83,445,99,481,123,526,155,572,196,612,206,620,201,620,193,616,151,576,118,528,95,483,82,451"/>
+<area shape="rect" id="Node000017" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="732,383,877,410"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="146,428,717,399,716,404,147,433"/>
+<area shape="rect" id="Node000018" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="722,225,887,253"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="127,417,194,402,239,397,296,395,428,394,495,391,557,384,609,373,648,356,659,346,665,335,671,312,677,287,684,274,696,263,710,256,706,259,699,267,688,277,682,289,677,313,670,337,663,349,651,360,611,378,557,390,495,396,428,399,296,401,240,403,195,407,130,422"/>
+<area shape="rect" id="Node000019" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="206,199,376,226"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="84,418,128,356,159,318,193,281,256,233,253,237,196,285,163,321,132,359,89,421"/>
+<area shape="rect" id="Node000025" href="$class_pass.html#a273c43add4c728d419585f642bce24d4" title="Refuse a store change while a Git pull is still queued or running." alt="" coords="454,43,630,70"/>
+<area shape="poly" id="edge29_Node000001_Node000025" title=" " alt="" coords="78,419,90,375,112,313,146,246,167,214,193,185,249,142,312,110,378,86,441,71,437,74,379,91,315,115,252,147,196,189,172,217,150,248,117,315,95,376,83,420"/>
+<area shape="rect" id="Node000026" href="$class_pass.html#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid&#45;rebase, &#45;merge, &#45;cherry&#45;pick or &#45;revert." alt="" coords="448,250,636,295"/>
+<area shape="poly" id="edge33_Node000001_Node000026" title=" " alt="" coords="96,418,140,390,194,362,254,339,316,320,435,292,431,295,318,325,256,344,196,367,142,394,100,421"/>
+<area shape="rect" id="Node000029" href="$class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c" title="Remove dir and everything in it, the way rm &#45;rf does: a symbolic link or NTFS junction,..." alt="" coords="226,703,356,730"/>
+<area shape="poly" id="edge39_Node000001_Node000029" title=" " alt="" coords="81,446,97,489,120,546,153,608,174,637,197,664,216,680,240,696,234,695,213,685,193,668,169,641,149,611,115,548,92,490,81,451"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="461,511,623,538"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="387,529,448,528,443,530,388,535"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="709,511,900,538"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="624,522,696,524,691,525,624,527"/>
+<area shape="rect" id="Node000007" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="960,502,1138,547"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="900,522,947,524,941,525,901,527"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="966,451,1132,478"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="863,508,977,482,972,483,864,513"/>
+<area shape="rect" id="Node000013" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="960,572,1138,616"/>
+<area shape="poly" id="edge12_Node000006_Node000013" title=" " alt="" coords="856,536,956,567,950,567,856,542"/>
+<area shape="rect" id="Node000008" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="1206,562,1384,607"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1139,544,1194,559,1188,559,1138,549"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1186,451,1404,478"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1132,462,1173,464,1168,465,1132,467"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1189,503,1401,530"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="1118,476,1214,499,1208,499,1118,482"/>
+<area shape="rect" id="Node000012" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1193,399,1397,426"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="1117,448,1214,430,1208,431,1119,453"/>
+<area shape="poly" id="edge13_Node000013_Node000008" title=" " alt="" coords="1138,588,1193,588,1188,589,1139,593"/>
+<area shape="rect" id="Node000015" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="460,587,624,614"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="375,590,447,595,442,597,375,595"/>
+<area shape="poly" id="edge16_Node000015_Node000015" title=" " alt="" coords="499,585,492,578,498,568,515,562,542,560,572,563,589,572,584,571,570,568,542,565,516,567,501,572,498,578,504,587"/>
+<area shape="rect" id="Node000020" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="435,95,649,122"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="313,196,367,164,434,133,461,126,456,129,436,138,370,169,316,200"/>
+<area shape="rect" id="Node000021" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="478,319,607,346"/>
+<area shape="poly" id="edge22_Node000019_Node000021" title=" " alt="" coords="309,224,365,265,400,286,436,305,465,316,460,318,434,310,397,291,362,269,310,230"/>
+<area shape="rect" id="Node000022" href="$class_util.html#ab27949f87883dff41623d3407f5e8379" title="name in dir, as the file system means it." alt="" coords="490,147,594,174"/>
+<area shape="poly" id="edge24_Node000019_Node000022" title=" " alt="" coords="360,196,477,173,473,176,363,200"/>
+<area shape="rect" id="Node000023" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="436,199,648,226"/>
+<area shape="poly" id="edge25_Node000019_Node000023" title=" " alt="" coords="375,210,423,211,418,214,377,215"/>
+<area shape="poly" id="edge23_Node000021_Node000017" title=" " alt="" coords="602,344,733,378,728,379,602,350"/>
+<area shape="poly" id="edge26_Node000023_Node000002" title=" " alt="" coords="613,196,648,184,717,145,776,106,772,109,719,150,650,188,616,201"/>
+<area shape="poly" id="edge27_Node000023_Node000018" title=" " alt="" coords="648,221,709,229,704,230,649,226"/>
+<area shape="rect" id="Node000024" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="697,173,912,201"/>
+<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="648,200,684,198,679,200,650,205"/>
+<area shape="poly" id="edge30_Node000025_Node000002" title=" " alt="" coords="630,63,740,76,735,78,631,68"/>
+<area shape="poly" id="edge31_Node000025_Node000018" title=" " alt="" coords="630,68,651,81,665,98,672,114,676,148,680,180,686,196,699,211,711,221,706,221,696,215,682,198,674,182,671,148,667,116,660,100,648,85,631,73"/>
+<area shape="poly" id="edge32_Node000025_Node000024" title=" " alt="" coords="615,68,650,81,720,120,777,163,772,164,717,125,648,86,616,74"/>
+<area shape="poly" id="edge34_Node000026_Node000002" title=" " alt="" coords="629,248,648,236,664,218,673,201,680,181,695,160,730,129,768,104,764,107,733,133,699,164,685,184,677,203,669,221,651,240,632,252"/>
+<area shape="poly" id="edge35_Node000026_Node000018" title=" " alt="" coords="635,258,709,251,704,253,637,263"/>
+<area shape="poly" id="edge36_Node000026_Node000024" title=" " alt="" coords="617,247,648,236,696,211,725,205,720,207,698,216,650,240,619,252"/>
+<area shape="rect" id="Node000027" href="$class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b" title="The unfinished git operation in progress in the store, if any." alt="" coords="700,277,909,322"/>
+<area shape="poly" id="edge37_Node000026_Node000027" title=" " alt="" coords="636,280,688,286,682,288,637,285"/>
+<area shape="rect" id="Node000028" href="$class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7" title="Run a git command in the store&#39;s repository, blocking." alt="" coords="994,285,1104,313"/>
+<area shape="poly" id="edge38_Node000027_Node000028" title=" " alt="" coords="909,297,981,299,976,300,910,302"/>
+<area shape="poly" id="edge40_Node000029_Node000029" title=" " alt="" coords="254,701,248,694,253,684,267,678,291,676,316,679,331,688,326,687,315,684,291,681,269,683,256,688,253,694,259,703"/>
 </map>

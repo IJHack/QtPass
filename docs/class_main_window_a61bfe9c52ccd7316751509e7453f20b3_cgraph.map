@@ -1,11 +1,13 @@
 <map id="MainWindow::exactMatch" name="MainWindow::exactMatch">
-<area shape="rect" id="Node000001" title="The entry whose name is exactly the search text, if the filtered tree shows it: team/bank for &quot;team/b..." alt="" coords="5,108,194,136"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#a96848c455f3a2925ffb7250282318162" title="The entry file named exactly as the search text, spaces around the text included; failing that,..." alt="" coords="242,108,458,136"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,119,229,122,223,122,194,124"/>
+<area shape="rect" id="Node000001" title="The entry whose name is exactly the search text, if the filtered tree shows it: team/bank for &quot;team/b..." alt="" coords="5,133,194,161"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a96848c455f3a2925ffb7250282318162" title="The entry file named exactly as the search text, spaces around the text included; failing that,..." alt="" coords="242,133,458,161"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,145,229,147,223,148,194,150"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="506,81,716,109"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="458,108,493,107,488,108,459,113"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="423,130,520,113,525,112,424,135"/>
 <area shape="rect" id="Node000008" href="$class_path_validator.html#ab45fab776e795db0071e4561291ca12d" title="Check that a candidate path resolves inside the password store root, after following symlinks and res..." alt="" coords="511,133,711,161"/>
-<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="459,130,498,136,493,136,459,135"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="458,145,498,147,493,147,459,150"/>
+<area shape="rect" id="Node000010" href="$class_util.html#ab27949f87883dff41623d3407f5e8379" title="name in dir, as the file system means it." alt="" coords="559,185,663,213"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="423,159,547,186,541,186,423,164"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="778,5,981,33"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="653,78,764,43,795,38,800,37,765,48,654,83"/>
 <area shape="rect" id="Node000006" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="801,81,958,109"/>

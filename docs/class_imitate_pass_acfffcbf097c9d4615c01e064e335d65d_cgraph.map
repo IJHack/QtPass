@@ -1,20 +1,20 @@
 <map id="ImitatePass::Show" name="ImitatePass::Show">
-<area shape="rect" id="Node000001" title="Show decrypted password." alt="" coords="5,171,146,199"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a" title="Execute GPG command." alt="" coords="194,67,376,95"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,169,137,137,192,105,213,99,209,102,195,110,140,142,97,172"/>
-<area shape="rect" id="Node000004" href="$class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a" title="The gpg options that enforce kMaxPlaintextBytes." alt="" coords="205,119,365,147"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="133,168,213,149,209,153,136,173"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#ad1536a8c72d90824d55e4f02a2fbd3d9" title="Translate path for gpg when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="216,171,354,199"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="145,183,203,183,199,187,147,187"/>
-<area shape="rect" id="Node000018" href="$class_pass.html#a36a6f3e2815272e10ff895edc487d388" title="Remember what a Show() asked for, so its completion can say so." alt="" coords="218,223,352,251"/>
-<area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="134,197,213,217,209,220,135,202"/>
-<area shape="rect" id="Node000019" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="200,276,370,304"/>
-<area shape="poly" id="edge21_Node000001_Node000019" title=" " alt="" coords="95,197,140,228,195,260,217,270,211,271,192,265,137,233,95,202"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="449,67,613,95"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="376,78,436,80,431,82,377,84"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="489,66,482,58,488,49,504,43,531,41,560,43,577,52,572,52,559,48,531,46,505,48,491,53,488,58,494,67"/>
+<area shape="rect" id="Node000001" title="Show decrypted password." alt="" coords="5,172,146,200"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a" title="Execute GPG command." alt="" coords="194,68,376,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,170,137,138,192,107,213,100,209,104,195,111,140,143,97,174"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a" title="The gpg options that enforce kMaxPlaintextBytes." alt="" coords="205,120,365,148"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="133,170,213,151,209,154,136,174"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#ad1536a8c72d90824d55e4f02a2fbd3d9" title="Translate path for gpg when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="216,172,354,200"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="145,184,203,185,199,188,147,189"/>
+<area shape="rect" id="Node000018" href="$class_pass.html#a36a6f3e2815272e10ff895edc487d388" title="Remember what a Show() asked for, so its completion can say so." alt="" coords="218,224,352,252"/>
+<area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="134,198,213,219,209,222,135,203"/>
+<area shape="rect" id="Node000019" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="200,280,370,308"/>
+<area shape="poly" id="edge21_Node000001_Node000019" title=" " alt="" coords="95,198,140,230,195,261,222,274,217,276,192,266,138,234,96,203"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="449,68,613,96"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="376,80,436,81,431,83,377,85"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="489,68,482,60,488,50,504,44,531,42,560,44,577,53,572,54,559,50,531,47,505,49,491,54,488,59,494,68"/>
 <area shape="rect" id="Node000006" href="$class_imitate_pass.html#a9e2ce295e8353748e93fcc7f4776a7b8" title="Translate path for the given exe when WSL&#45;routed: wraps in wslpath substitution, otherwise returns pa..." alt="" coords="436,160,627,205"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="353,182,423,183,418,185,355,187"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="353,183,423,183,418,185,355,188"/>
 <area shape="rect" id="Node000007" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="686,168,902,196"/>
 <area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="627,180,673,182,668,183,628,185"/>
 <area shape="rect" id="Node000008" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="950,143,1142,171"/>
@@ -40,17 +40,19 @@
 <area shape="poly" id="edge16_Node000013_Node000016" title=" " alt="" coords="1811,154,1859,156,1854,157,1811,159"/>
 <area shape="poly" id="edge18_Node000017_Node000012" title=" " alt="" coords="1817,72,1867,62,1873,61,1818,77"/>
 <area shape="rect" id="Node000020" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="424,228,638,256"/>
-<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="359,273,444,259,439,261,360,278"/>
+<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="353,277,449,259,444,261,355,282"/>
 <area shape="rect" id="Node000021" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="466,280,596,308"/>
-<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="370,289,453,292,448,294,370,294"/>
-<area shape="rect" id="Node000023" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="425,346,637,374"/>
-<area shape="poly" id="edge25_Node000019_Node000023" title=" " alt="" coords="337,302,467,341,462,342,336,307"/>
-<area shape="rect" id="Node000022" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="721,267,867,295"/>
-<area shape="poly" id="edge24_Node000021_Node000022" title=" " alt="" coords="596,288,708,285,703,286,597,294"/>
-<area shape="rect" id="Node000024" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="743,319,845,347"/>
-<area shape="poly" id="edge26_Node000023_Node000024" title=" " alt="" coords="638,346,730,339,725,340,638,352"/>
-<area shape="rect" id="Node000025" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="712,371,876,399"/>
-<area shape="poly" id="edge27_Node000023_Node000025" title=" " alt="" coords="638,367,699,376,694,376,638,373"/>
-<area shape="rect" id="Node000026" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="687,423,901,451"/>
-<area shape="poly" id="edge28_Node000023_Node000026" title=" " alt="" coords="574,371,687,408,720,419,715,419,686,413,573,377"/>
+<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="370,292,453,294,448,295,370,297"/>
+<area shape="rect" id="Node000023" href="$class_util.html#ab27949f87883dff41623d3407f5e8379" title="name in dir, as the file system means it." alt="" coords="479,332,583,360"/>
+<area shape="poly" id="edge25_Node000019_Node000023" title=" " alt="" coords="354,306,467,332,461,333,354,311"/>
+<area shape="rect" id="Node000024" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="425,384,637,412"/>
+<area shape="poly" id="edge26_Node000019_Node000024" title=" " alt="" coords="308,306,361,338,425,369,450,380,444,380,423,374,358,343,307,311"/>
+<area shape="rect" id="Node000022" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="721,280,867,308"/>
+<area shape="poly" id="edge24_Node000021_Node000022" title=" " alt="" coords="596,292,708,294,703,295,597,297"/>
+<area shape="rect" id="Node000025" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="743,332,845,360"/>
+<area shape="poly" id="edge27_Node000024_Node000025" title=" " alt="" coords="605,381,725,360,730,359,605,386"/>
+<area shape="rect" id="Node000026" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="712,384,876,412"/>
+<area shape="poly" id="edge28_Node000024_Node000026" title=" " alt="" coords="638,396,699,398,694,398,638,401"/>
+<area shape="rect" id="Node000027" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="687,436,901,464"/>
+<area shape="poly" id="edge29_Node000024_Node000027" title=" " alt="" coords="605,410,708,433,703,433,605,415"/>
 </map>

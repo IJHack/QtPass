@@ -73,6 +73,7 @@ var group__support =
       [ "isOtherBlockBreak", "class_util.html#ac44a8c32a9ac0fbb9d471dd115359064", null ],
       [ "isUnderLink", "class_util.html#a303cdce7f33f076823a0581defb52ca4", null ],
       [ "isValidKeyId", "class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5", null ],
+      [ "joinPath", "class_util.html#ab27949f87883dff41623d3407f5e8379", null ],
       [ "linkifyUrls", "class_util.html#ada742504985a1e8b2c6adb5e14b24794", null ],
       [ "mkpathForStore", "class_util.html#aa1d5ab65c22c21fe556ba0251e035f23", null ],
       [ "newLinesRegex", "class_util.html#aced819d4368806d046f0dc24a91843f7", null ],
