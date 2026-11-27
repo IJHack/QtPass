@@ -68,7 +68,7 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   // to this store's recipients. Folders above the store still lead there.
   const bool outside = path == QLatin1String("..") ||
                        path.startsWith(QLatin1String("../")) ||
-                       QDir::isAbsolutePath(path);
+                       Util::isAbsoluteFsPath(path);
   // A link inside the store is neither an entry nor a folder (SECURITY.md):
   // it is listed by its name, so it can be deleted, but never entered. A
   // planted `x -> .` was an endlessly expandable folder, and the search's
@@ -123,7 +123,7 @@ auto StoreModel::isLinkInStore(const QModelIndex &proxyIndex) const -> bool {
   const QString filePath = pathOf(mapToSource(proxyIndex));
   const QString path = QDir(store).relativeFilePath(filePath);
   if (path == QLatin1String(".") || path == QLatin1String("..") ||
-      path.startsWith(QLatin1String("../")) || QDir::isAbsolutePath(path)) {
+      path.startsWith(QLatin1String("../")) || Util::isAbsoluteFsPath(path)) {
     return false;
   }
   return Util::isLinkedFolder(filePath);
