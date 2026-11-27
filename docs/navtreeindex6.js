@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"globals_func.html":[4,1,1],
 "globals_type.html":[4,1,3],
 "globals_vars.html":[4,1,2],
 "gpgidgeneration_8cpp.html":[4,0,1,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "struct_app_settings.html#a215aceceb20bd8a0851239cea82b48e2":[1,4,1,33],
 "struct_app_settings.html#a2dbd96ed7a8f3d7a92474728dd5605a1":[1,4,1,25],
 "struct_app_settings.html#a32643a3ae350c55c2441875d7e5966ad":[1,4,1,45],
-"struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee":[1,4,1,29],
-"struct_app_settings.html#a386eab4e60ad6e21c2d860c04d6d687c":[1,4,1,18]
+"struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee":[1,4,1,29]
 };

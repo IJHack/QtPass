@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"class_totp.html#acf4966342831a437cd0db45f8f05bf01ab1ee9905cd4c4e35d30601db350f3964":[1,3,10,3,7],
 "class_totp.html#acf4966342831a437cd0db45f8f05bf01ace2c8aed9c2fa0cfbed56cbda4d8bf07":[1,3,10,3,1],
 "class_totp.html#ae890b9f9d1440b99756ba7c74bd03ae0":[1,3,10,18],
 "class_totp.html#af023ce3487d15c2e290419ddd1ea0699":[1,3,10,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "functions_w.html":[3,3,0,22],
 "functions_~.html":[3,3,0,23],
 "globals.html":[4,1,0],
-"globals_enum.html":[4,1,4],
-"globals_func.html":[4,1,1]
+"globals_enum.html":[4,1,4]
 };

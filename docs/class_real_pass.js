@@ -31,6 +31,7 @@ var class_real_pass =
     [ "refuseIgnoredThatMoves", "class_real_pass.html#a2fd6d533c480d182529f809467a050eb", null ],
     [ "refuseLineBreakName", "class_real_pass.html#ad5e65cd9ab22595c77a2dec8e0b8cfb0", null ],
     [ "refuseLinkedList", "class_real_pass.html#a7b9885bfae05f433323d412890b880a9", null ],
+    [ "refuseLinkInCopiedFolder", "class_real_pass.html#a77e45780bc8ed540ee5d9b4da9567998", null ],
     [ "refuseList", "class_real_pass.html#aa005a98fabdaca8ffbb3c83798263d80", null ],
     [ "refuseMisreadList", "class_real_pass.html#ae8916f3175e84a15929d9a6c4cca906a", null ],
     [ "refuseSpecialEntry", "class_real_pass.html#a2d746e1e171b585c6a5c4d2d4c943010", null ],

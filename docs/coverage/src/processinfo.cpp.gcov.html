@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 19:01:41</td>
+            <td class="headerValue">2026-11-27 19:23:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -128,11 +128,11 @@
 <span id="L55"><span class="lineNum">      55</span>              : </span>
 <span id="L56"><span class="lineNum">      56</span>              : } // namespace</span>
 <span id="L57"><span class="lineNum">      57</span>              : </span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         249 : auto processInfo(PROCESS pid) -&gt; const ProcessInfo &amp; {</span></span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         249 :   if (pid &lt; 0 || pid &gt;= PROCESS_COUNT) {</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         250 : auto processInfo(PROCESS pid) -&gt; const ProcessInfo &amp; {</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         250 :   if (pid &lt; 0 || pid &gt;= PROCESS_COUNT) {</span></span>
 <span id="L60"><span class="lineNum">      60</span>              :     return kNotAProcess;</span>
 <span id="L61"><span class="lineNum">      61</span>              :   }</span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">         244 :   return kTable.at(static_cast&lt;std::size_t&gt;(pid));</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">         245 :   return kTable.at(static_cast&lt;std::size_t&gt;(pid));</span></span>
 <span id="L63"><span class="lineNum">      63</span>              : }</span>
 <span id="L64"><span class="lineNum">      64</span>              : </span>
 <span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">          31 : auto processLabel(PROCESS pid) -&gt; QString {</span></span>
