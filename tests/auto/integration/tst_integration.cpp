@@ -2419,13 +2419,15 @@ void tst_integration::realPass_moveJudgedWherePassWrites() {
   QVERIFY(!QFile::exists(store.filePath("copy.gpg")));
 
   // The source respelled, as a case-only rename on a case-insensitive file
-  // system is; a hard link stands in for that here. It is no clash: pass
-  // gets it (and GNU mv, seeing one file, declines).
+  // system is; a hard link under another name stands in for that here (a
+  // case-insensitive one already has X.gpg). It is no clash: pass gets it
+  // (and GNU mv, seeing one file, declines).
   QVERIFY(::link(QFile::encodeName(store.filePath("x.gpg")).constData(),
-                 QFile::encodeName(store.filePath("X.gpg")).constData()) == 0);
+                 QFile::encodeName(store.filePath("alias.gpg")).constData()) ==
+          0);
   QSignalSpy moveSpy(&pass, &Pass::finishedMove);
   QSignalSpy exitSpy(&pass, &Pass::processErrorExit);
-  pass.Move(store.filePath("x.gpg"), store.filePath("X"), false);
+  pass.Move(store.filePath("x.gpg"), store.filePath("alias"), false);
   QVERIFY(QTest::qWaitFor([&] { return moveSpy.count() + exitSpy.count() > 0; },
                           30000));
   QCOMPARE(criticalSpy.count(), 5);
