@@ -3623,6 +3623,25 @@ void tst_integration::imitatePass_ignoredEntryIsStillCommitted() {
   QVERIFY(ls.waitForFinished() && ls.exitCode() == 0);
   QVERIFY2(!QString::fromUtf8(ls.readAll()).trimmed().isEmpty(),
            "the new entry must be tracked in git, not left ignored");
+
+  // An entry already on disk but ignored and untracked (written before this
+  // fix) must be staged when it is edited too, or the commit names an
+  // untracked path and the edit stays outside git.
+  {
+    QFile old(storeDir.path() + "/oldsite.gpg");
+    QVERIFY(old.open(QIODevice::WriteOnly));
+    QVERIFY(old.write("left untracked") > 0);
+  }
+  QSignalSpy editSpy(&pass, &Pass::finishedInsert);
+  pass.Insert(QStringLiteral("oldsite"), QStringLiteral("edited-secret\n"),
+              true);
+  QVERIFY2(waitForSignal(editSpy), gpgInsertErrorMsg(insertErrorSpy));
+  QProcess lsOld;
+  lsOld.setWorkingDirectory(storeDir.path());
+  lsOld.start(gitExe, {"ls-files", "--", "oldsite.gpg"});
+  QVERIFY(lsOld.waitForFinished() && lsOld.exitCode() == 0);
+  QVERIFY2(!QString::fromUtf8(lsOld.readAll()).trimmed().isEmpty(),
+           "an edited ignored entry must be tracked in git too");
 }
 
 QTEST_MAIN(tst_integration)
