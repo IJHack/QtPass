@@ -900,9 +900,10 @@ void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
         << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
         << "last=''; for a in \"$@\"; do last=\"$a\"; done\n"
         << "case \"$*\" in\n"
-        << "  *--list-only*probe.gpg*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA "
-           "18 "
-           "0'; echo '[GNUPG:] ENC_TO BBBBBBBBBBBBBBBB 18 0';;\n"
+        << "  *--list-only*probe.gpg*) if [ -e '" << store
+        << "/grp-probe' ]; then echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0'; "
+           "echo '[GNUPG:] ENC_TO BBBBBBBBBBBBBBBB 18 0'; else echo '[GNUPG:] "
+           "ENC_TO AAAAAAAAAAAAAAAA 18 0'; fi;;\n"
         << "  *--list-only*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0';;\n"
         << "  *--list-keys) printf 'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
            "fpr:::::::::"
@@ -910,7 +911,9 @@ void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
         << "pub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\nfpr:::::::::" << fb
         << ":\\nuid:u::::::::Bob <b@example.org>:\\n';;\n"
         << "  *' -d '*|*' -d') printf 'plaintext\\n';;\n"
-        << "  *-eq*) cat >/dev/null;;\n"
+        // The group's members only for an encryption to the group.
+        << "  *-eq*) cat >/dev/null; case \" $* \" in *' -r grp '*) touch '"
+        << store << "/grp-probe';; esac;;\n"
         << "esac\n"
         << "exit 0\n";
     out.flush();

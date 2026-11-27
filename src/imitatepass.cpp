@@ -733,6 +733,13 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       previous = PreviousList{gpgIdFile, before};
     }
   }
+  // A list replaced earlier whose run did not finish stays the one to go
+  // by: it, not the one in between, tells whom the changes removed.
+  const auto keepPrevious = [this, &previous, &gpgIdFile]() {
+    if (!(m_previousList && m_previousList->gpgIdFile == gpgIdFile)) {
+      m_previousList = previous;
+    }
+  };
   QByteArray written;
   QString sigToCommit;
   if (!writeGpgIdFile(gpgIdFile, users, &written)) {
@@ -762,7 +769,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
       // would refuse it as a rollback.
       const QString why = gitErr.trimmed();
       if (!m_reencryptActive) {
-        m_previousList = previous;
+        keepPrevious();
       }
       reencryptWithoutGit(
           path,
@@ -772,13 +779,13 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   }
   m_writtenGpgId = WrittenGpgId{gpgIdFile, written};
   if (!m_reencryptActive) {
-    m_previousList = previous;
+    keepPrevious();
   }
   reencryptPath(path);
   if (!m_reencryptActive) {
-    // Refused before it started; reencryptPath() said why.
+    // Refused before it started; reencryptPath() said why. The list it
+    // replaced still tells whom the change removed.
     m_writtenGpgId.reset();
-    m_previousList.reset();
   }
   // finishedInit once the .gpg-id landed in git, as the async path did.
   if (useGit) {
@@ -1809,8 +1816,12 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
             before =
                 keysEncryptedTo(m_previousList->recipients, primaries, names);
           }
-          // A previous list gpg cannot encrypt to exempts no one, and leaves
-          // unknown who was taken off it.
+          // A previous list gpg cannot encrypt to, or one whose probe names
+          // nobody it can tell, exempts no one, and leaves unknown who was
+          // taken off it.
+          if (before && before->contains(kUnknownReader)) {
+            before.reset();
+          }
           fresh.before = before ? *before : fresh.now.value_or(QSet<QString>());
           fresh.beforeUnknown = !before;
           listKeys.insert(gpgIdPath, fresh);
@@ -2022,7 +2033,12 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                                result.unexpected.isEmpty());
   }
   m_writtenGpgId.reset();
-  m_previousList.reset();
+  // Whom the change removed is known only from the list it replaced: kept
+  // until a full run of the folder has judged every entry, so a cancelled
+  // or stopped one does not forget it.
+  if (!result.cancelled && !result.aborted && !agreedRun) {
+    m_previousList.reset();
+  }
   m_reencryptTrusted.clear();
   m_reencryptAgreed.clear();
   // What was named, with the bytes it was named for: reencryptAlso() holds
