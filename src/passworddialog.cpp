@@ -364,10 +364,13 @@ auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
   // A name typed as a full path is not put under the chosen folder; it
   // stays as it is (filePath() does not join it either), so the store
   // check below covers it.
+  // A name starting with ':' is a name in the store, not a full path: Qt's
+  // isAbsolutePath() takes it for a resource path (Util::joinPath()).
+  const bool fullPath =
+      QDir::isAbsolutePath(name) && !name.startsWith(QLatin1Char(':'));
   const QString typed = QDir::cleanPath(
-      (folder.isEmpty() || QDir::isAbsolutePath(name)) ? name
-                                                       : folder + u'/' + name);
-  const QString absolute = QDir::cleanPath(QDir(m_storeRoot).filePath(typed));
+      (folder.isEmpty() || fullPath) ? name : folder + u'/' + name);
+  const QString absolute = QDir::cleanPath(Util::joinPath(m_storeRoot, typed));
   if (typed.isEmpty() || typed == QStringLiteral(".") ||
       !PathValidator::isPathInStore(m_storeRoot, absolute)) {
     *problem = tr("That name would resolve outside the password store.");
@@ -442,7 +445,7 @@ void PasswordDialog::accept() {
       return;
     }
     // A name like work/vpn may need its folder; gpg does not create it.
-    const QString parent = QFileInfo(QDir(m_storeRoot).filePath(rel)).path();
+    const QString parent = QFileInfo(Util::joinPath(m_storeRoot, rel)).path();
     if (!QDir(parent).exists() && !Util::mkpathForStore(parent)) {
       ui->statusLabel->setText(
           tr("Could not create the folder %1.").arg(parent));

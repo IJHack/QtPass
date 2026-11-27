@@ -348,7 +348,7 @@ auto StoreModel::executeDropAction(const StoreDragItem &info,
       return false;
     }
     const QString destDir =
-        QDir::cleanPath(QDir(cleanedDest).filePath(srcFileInfo.fileName()));
+        QDir::cleanPath(Util::joinPath(cleanedDest, srcFileInfo.fileName()));
     return performDrop(cleanedSrc, destDir, action, false);
   }
   case StoreDragItem::ItemKind::File:

@@ -392,6 +392,7 @@ private Q_SLOTS:
   void imitatePass_insertAndGrep();
   void imitatePass_grepSkipsUndecryptableFiles();
   void imitatePass_insertMoveAndShow();
+  void imitatePass_colonNameIsAnEntryInTheStore();
   void imitatePass_insertCopyAndShow();
   void imitatePass_copyOntoFolderAndShow();
   void imitatePass_copyOntoExistingEntryClash();
@@ -710,6 +711,21 @@ void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
   std::sort(paths.begin(), paths.end());
   QCOMPARE(paths, (QStringList{QStringLiteral("work/github"),
                                QStringLiteral("work/gitlab")}));
+}
+
+// A name starting with ':' is an entry in the store: Qt takes it for a
+// resource path, and the save went to QtPass's working directory while the
+// store kept the old entry (scan finding ANT-2026-70DZK0Q9).
+void tst_integration::imitatePass_colonNameIsAnEntryInTheStore() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral(":top"), QStringLiteral("secret\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(errorSpy));
+  QVERIFY(QFileInfo(storeDir.path() + "/:top.gpg").isFile());
+  QVERIFY(!QFileInfo::exists(QDir::current().filePath(":top.gpg")));
 }
 
 void tst_integration::imitatePass_insertMoveAndShow() {

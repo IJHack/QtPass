@@ -212,6 +212,21 @@ public:
    */
   static auto expandTilde(const QString &path) -> QString;
   /**
+   * @brief @p name in @p dir, as the file system means it.
+   *
+   * QDir::filePath() and QDir::isAbsolutePath() take a name that starts
+   * with ':' for a Qt resource path, absolute, and hand it back unjoined:
+   * `QDir(store).filePath(":team/db")` is ":team/db", which the file system
+   * then reads relative to the working directory while gpg and pass use
+   * `<store>/:team/db`. A store writer can name an entry or folder so.
+   * Here such a name is joined like any other; a name that is absolute to
+   * the file system stays as it is, as with filePath().
+   * @param dir The folder.
+   * @param name A name in it, or a path below it.
+   * @return The joined path.
+   */
+  static auto joinPath(const QString &dir, const QString &name) -> QString;
+  /**
    * @brief Ensure a folder path always ends with '/'.
    *
    * Qt normalises paths to forward slashes internally, so this function

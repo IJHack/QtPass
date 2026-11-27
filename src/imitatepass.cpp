@@ -271,10 +271,7 @@ auto ImitatePass::recipientsForEntry(const QString &file,
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   // The dialog names a new entry relative to the store; gpg used to resolve
   // that in its working directory. Everything below works on the one path.
-  file =
-      QDir::cleanPath(QDir::isAbsolutePath(file)
-                          ? file + ".gpg"
-                          : QDir(m_settings.passStore).filePath(file) + ".gpg");
+  file = QDir::cleanPath(Util::joinPath(m_settings.passStore, file) + ".gpg");
   if (refuseLinkedPath(file)) {
     return;
   }
@@ -655,9 +652,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   // file beside the folder, not the folder's own list. A relative path names
   // a folder in the store, as it does for pass, not one in the working
   // directory.
-  if (!QDir::isAbsolutePath(path)) {
-    path = QDir(m_settings.passStore).filePath(path);
-  }
+  path = Util::joinPath(m_settings.passStore, path);
   // Cleaned before any check: the checks clean what they look at, and the
   // write must go to the same place. Left as /store/link/../team/, the
   // system resolves link first and writes beside wherever it points.
@@ -677,7 +672,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   // named, so each entry's nearest list was looked up past the new one and
   // the entries were encrypted to the store root's.
   path = Util::normalizeFolderPath(
-      QDir::cleanPath(QDir(m_settings.passStore).filePath(inStore)));
+      QDir::cleanPath(Util::joinPath(m_settings.passStore, inStore)));
   // A running re-encryption cannot take a second folder: the new list would
   // be written and its entries left encrypted to the old recipients, which
   // for a removed person means they can still read them. Nothing is written.
@@ -1765,7 +1760,7 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
       }
       destFile = dest;
     } else if (destFileInfo.isDir()) {
-      destFile = QDir(dest).filePath(srcFileBaseName);
+      destFile = Util::joinPath(dest, srcFileBaseName);
     } else {
       destFile = dest;
     }
@@ -1780,7 +1775,7 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
     destFile.append(".gpg");
   } else if (srcFileInfo.isDir()) {
     if (destFileInfo.isDir()) {
-      destFile = QDir(dest).filePath(srcFileBaseName);
+      destFile = Util::joinPath(dest, srcFileBaseName);
     } else if (destFileInfo.isFile()) {
       qCDebug(lcQtPass) << "Destination is a file";
       return {};

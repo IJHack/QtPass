@@ -61,6 +61,7 @@ private slots:
   void refusesToInsertDuringAnUnfinishedMerge();
   void refusesToInsertWhileAPullIsInFlight();
   void signedListIsCheckedAsTheNativeBackendDoes();
+  void aColonNameIsCheckedInTheStore();
   void folderWithAnUnreadableNameIsRefusedBeforePassRuns();
   void removeFileAndFolder();
   void initIfUnchangedRefusesAChangedListOrABusyQueue();
@@ -271,6 +272,31 @@ void tst_realpass::grepDecryptsRealEntriesOnlyNeverThroughALink() {
                !decrypted.contains(outsideSecret),
            qPrintable("gpg was handed: " + decrypted));
   QVERIFY2(!QFile::exists(m_log), "pass itself is not involved in a search");
+}
+
+/**
+ * @brief An entry or folder name starting with ':' is a name in the store:
+ *        Qt takes it for a resource path, and the checks then looked at the
+ *        store root's list while pass writes under `<store>/:team`. Its own
+ *        list (here one pass reads differently: a dash line) is the one
+ *        judged, so the insert is refused before pass runs (scan finding
+ *        ANT-2026-70DZK0Q9).
+ */
+void tst_realpass::aColonNameIsCheckedInTheStore() {
+  const QString folder = m_store + QStringLiteral(":team");
+  const auto cleanup = qScopeGuard([&] { QDir(folder).removeRecursively(); });
+  QVERIFY(QDir().mkpath(folder));
+  {
+    QFile list(folder + QStringLiteral("/.gpg-id"));
+    QVERIFY(list.open(QIODevice::WriteOnly));
+    QVERIFY(list.write("-oops\n") > 0);
+  }
+  QScopedPointer<RealPass> pass(makePass());
+  QSignalSpy critical(pass.data(), &Pass::critical);
+  pass->Insert(QStringLiteral(":team/db"), QStringLiteral("v"), false);
+  QTest::qWait(300);
+  QCOMPARE(critical.count(), 1);
+  QVERIFY2(!QFile::exists(m_log), "the stand-in pass must not have run");
 }
 
 void tst_realpass::insertPipesTheValue() {

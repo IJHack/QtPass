@@ -167,6 +167,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- An entry or folder whose name starts with `:` is now handled as part of
+  the store. Qt takes such a name for a built-in resource path and left it
+  out of the store's path, so QtPass checked the store root's recipient
+  list while `pass` wrote under `<store>/:team`, saved an edit of `:name`
+  into its working directory, and could move such an entry out of the store.
+  Someone who can push to a shared store could use it to get edits encrypted
+  to an old signed list. Every place that puts a name into the store now
+  joins it the same way (scan finding ANT-2026-70DZK0Q9).
 - A save whose gpg could not even be started is reported as failed again,
   with Git on. The commit queued behind it ran before the start failure was
   delivered, so the save was judged by the commit alone: with a pushed

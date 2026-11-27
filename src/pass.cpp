@@ -881,9 +881,11 @@ auto gpgIdLookup(const QString &for_file, const QString &passStore)
   const bool insideStore = isAtOrUnder(cleanFile, storeDir, storePrefix);
   // A relative name is one inside the store; an absolute path outside it
   // stays what it is and the walk stops at once.
-  const QString fullPath = insideStore || QDir::isAbsolutePath(cleanFile)
-                               ? cleanFile
-                               : storePrefix + cleanFile;
+  const QString fullPath =
+      insideStore || (QDir::isAbsolutePath(cleanFile) &&
+                      !cleanFile.startsWith(QLatin1Char(':')))
+          ? cleanFile
+          : storePrefix + cleanFile;
   // A folder (trailing separator, which cleanPath() dropped, or an existing
   // directory) wants its own list; an entry wants its folder's.
   const bool isFolder =
@@ -973,9 +975,7 @@ void Pass::releaseAutoPush(const QString &folder) {
 
 auto Pass::refuseLinkedPath(const QString &path, LinkScope scope,
                             PathSpelling spelling) -> bool {
-  const QString full = QDir::isAbsolutePath(path)
-                           ? path
-                           : QDir(m_settings.passStore).filePath(path);
+  const QString full = Util::joinPath(m_settings.passStore, path);
   // The link check below walks only under the store as configured: a path
   // spelled through the root's link target would get no more than the
   // entry itself judged. No caller makes one; say so if one starts to.
