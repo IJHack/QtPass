@@ -197,6 +197,9 @@ void tst_storemodel::filterExcludesGitDirectory() {
  *        finding ANT-2026-70DZK0Q9).
  */
 void tst_storemodel::filterAcceptsAColonName() {
+#ifdef Q_OS_WIN
+  QSKIP("Windows does not allow ':' in a file or directory name");
+#endif
   QTemporaryDir tempDir;
   QFile passwordFile(tempDir.path() + "/:colon.gpg");
   QVERIFY(passwordFile.open(QFile::WriteOnly));

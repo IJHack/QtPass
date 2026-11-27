@@ -7729,6 +7729,9 @@ void tst_util::joinPathTakesAColonNameForAName() {
 void tst_util::readsAColonNamedFileInTheStore() {
   QVERIFY(!Util::isAbsoluteFsPath(QStringLiteral(":team/.gpg-id")));
   QVERIFY(Util::isAbsoluteFsPath(QDir::rootPath()));
+#ifdef Q_OS_WIN
+  QSKIP("Windows does not allow ':' in a file or directory name");
+#endif
   QTemporaryDir store;
   QVERIFY(store.isValid());
   // Absolute: QDir would take ":team" alone for a resource path.
