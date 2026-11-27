@@ -37,6 +37,7 @@ var class_util =
     [ "removeTree", "class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c", null ],
     [ "replaceFile", "class_util.html#ab0e1c40d3ccc706e0d74d246361a2640", null ],
     [ "repositoryPassClimbsTo", "class_util.html#a158b1927cee3cffacaec8d583fbf72ad", null ],
+    [ "requireExplicitBareRepository", "class_util.html#a72f2810bf02f441a10edbac1dde3fdd2", null ],
     [ "setBeforePlacingForTests", "class_util.html#a7725c5ead1f6ecd7af1c4d85707e35b6", null ],
     [ "setGitOwnerForTests", "class_util.html#a44056a3fca6102be2a1a4f896d6a2208", null ],
     [ "shownName", "class_util.html#ad56543fef6f716ae7acb2e201cdf965e", null ],

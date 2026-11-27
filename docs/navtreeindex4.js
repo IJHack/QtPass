@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"class_qt_pass_settings.html#adee7d69291b6dea108ddc7b5e0399103":[1,4,4,37],
 "class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8":[1,4,4,4],
 "class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc":[1,4,4,20],
 "class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4":[1,4,4,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "class_totp.html#acf4966342831a437cd0db45f8f05bf01a803e1b5921bc8d43066c4cabc6c557e6":[1,3,10,3,3],
 "class_totp.html#acf4966342831a437cd0db45f8f05bf01a8f34b724caf3209f51ac8b2d627d2852":[1,3,10,3,6],
 "class_totp.html#acf4966342831a437cd0db45f8f05bf01aa987954d709016bfeb9a0b168ee30fe4":[1,3,10,3,5],
-"class_totp.html#acf4966342831a437cd0db45f8f05bf01ab1ee9905cd4c4e35d30601db350f3964":[1,3,10,3,7],
-"class_totp.html#acf4966342831a437cd0db45f8f05bf01ace2c8aed9c2fa0cfbed56cbda4d8bf07":[1,3,10,3,1]
+"class_totp.html#acf4966342831a437cd0db45f8f05bf01ab1ee9905cd4c4e35d30601db350f3964":[1,3,10,3,7]
 };

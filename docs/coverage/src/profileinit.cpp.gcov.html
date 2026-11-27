@@ -43,12 +43,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntryHi">94.6&nbsp;%</td>
-            <td class="headerCovTableEntry">259</td>
-            <td class="headerCovTableEntry">245</td>
+            <td class="headerCovTableEntry">260</td>
+            <td class="headerCovTableEntry">246</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 15:59:36</td>
+            <td class="headerValue">2026-11-27 17:44:22</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -126,457 +126,460 @@
 <span id="L53"><span class="lineNum">      53</span>              :   // As for the active store: the paths handed to git are names, not</span>
 <span id="L54"><span class="lineNum">      54</span>              :   // patterns (see Pass::updateEnv()).</span>
 <span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">          66 :   env.insert(QStringLiteral(&quot;GIT_LITERAL_PATHSPECS&quot;), QStringLiteral(&quot;1&quot;));</span></span>
-<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">          33 :   if (!s.gitUseParentRepository) {</span></span>
-<span id="L57"><span class="lineNum">      57</span>              :     for (const auto &amp;[name, value] :</span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">          96 :          Util::gitStoreVariables(dir, s.gitExecutable)) {</span></span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          32 :       env.insert(name, value);</span></span>
-<span id="L60"><span class="lineNum">      60</span>              :     }</span>
-<span id="L61"><span class="lineNum">      61</span>              :   }</span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">          33 :   return env;</span></span>
-<span id="L63"><span class="lineNum">      63</span> <span class="tlaUNC">           0 : }</span></span>
-<span id="L64"><span class="lineNum">      64</span>              : /// &quot;commit&quot;, and &quot;-S&quot; when git config pass.signcommits is true for the</span>
-<span id="L65"><span class="lineNum">      65</span>              : /// repository @p git runs in (a new one: so the user's own git config), as</span>
-<span id="L66"><span class="lineNum">      66</span>              : /// pass signs its commits.</span>
-<span id="L67"><span class="lineNum">      67</span>              : /// Time `git init` and `git add` may take while the window waits: the two</span>
-<span id="L68"><span class="lineNum">      68</span>              : /// that read what lies in the folder. A commit is not bounded: git may sign</span>
-<span id="L69"><span class="lineNum">      69</span>              : /// it (pass.signcommits or commit.gpgSign) and wait for the passphrase.</span>
-<span id="L70"><span class="lineNum">      70</span>              : constexpr int kGitSetupTimeoutMs = 2 * 60 * 1000;</span>
-<span id="L71"><span class="lineNum">      71</span>              : </span>
-<span id="L72"><span class="lineNum">      72</span>              : /**</span>
-<span id="L73"><span class="lineNum">      73</span>              :  * @brief The first thing git would open while staging @p files in @p dir</span>
-<span id="L74"><span class="lineNum">      74</span>              :  * that it could wait on for good, or empty.</span>
-<span id="L75"><span class="lineNum">      75</span>              :  *</span>
-<span id="L76"><span class="lineNum">      76</span>              :  * git add opens the .gitattributes and .gitignore of each folder it stages</span>
-<span id="L77"><span class="lineNum">      77</span>              :  * from, by name: a FIFO there, planted in a shared folder, kept it waiting</span>
-<span id="L78"><span class="lineNum">      78</span>              :  * in open() with the window waiting on it. A link to one counts as one:</span>
-<span id="L79"><span class="lineNum">      79</span>              :  * older git follows it. A sub-folder with a .git of its own is a repository git</span>
-<span id="L80"><span class="lineNum">      80</span>              :  * looks into (its HEAD, say).</span>
-<span id="L81"><span class="lineNum">      81</span>              :  * @param dir The store.</span>
-<span id="L82"><span class="lineNum">      82</span>              :  * @param files Paths relative to @p dir that git is to stage.</span>
-<span id="L83"><span class="lineNum">      83</span>              :  * @return That path, or empty.</span>
-<span id="L84"><span class="lineNum">      84</span>              :  */</span>
-<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">          23 : auto blocksGit(const QString &amp;dir, const QStringList &amp;files) -&gt; QString {</span></span>
-<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">          46 :   QSet&lt;QString&gt; folders{QStringLiteral(&quot;.&quot;)};</span></span>
-<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">          60 :   for (const QString &amp;file : files) {</span></span>
-<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">          37 :     for (QString folder = QFileInfo(file).path();</span></span>
-<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">          48 :          folder != QLatin1String(&quot;.&quot;) &amp;&amp; !folders.contains(folder);</span></span>
-<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">          22 :          folder = QFileInfo(folder).path()) {</span></span>
-<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">          11 :       folders.insert(folder);</span></span>
-<span id="L92"><span class="lineNum">      92</span>              :     }</span>
-<span id="L93"><span class="lineNum">      93</span>              :   }</span>
-<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">          23 :   const QDir base(dir);</span></span>
-<span id="L95"><span class="lineNum">      95</span>              :   for (const QString &amp;folder : std::as_const(folders)) {</span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          30 :     const QDir here(base.filePath(folder));</span></span>
-<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">          85 :     for (const char *name : {&quot;.gitattributes&quot;, &quot;.gitignore&quot;}) {</span></span>
-<span id="L98"><span class="lineNum">      98</span> <span class="tlaGNC">          59 :       const QFileInfo info(here.filePath(QLatin1String(name)));</span></span>
-<span id="L99"><span class="lineNum">      99</span> <span class="tlaGNC">          59 :       if (info.exists() &amp;&amp; !info.isFile()) {</span></span>
-<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">           4 :         return info.filePath();</span></span>
-<span id="L101"><span class="lineNum">     101</span>              :       }</span>
-<span id="L102"><span class="lineNum">     102</span> <span class="tlaGNC">          59 :     }</span></span>
-<span id="L103"><span class="lineNum">     103</span> <span class="tlaGNC">          52 :     const QFileInfo nested(here.filePath(QStringLiteral(&quot;.git&quot;)));</span></span>
-<span id="L104"><span class="lineNum">     104</span> <span class="tlaGNC">          31 :     if (folder != QLatin1String(&quot;.&quot;) &amp;&amp;</span></span>
-<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">           9 :         (nested.exists() || nested.isSymLink())) {</span></span>
-<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">           1 :       return nested.filePath();</span></span>
-<span id="L107"><span class="lineNum">     107</span>              :     }</span>
-<span id="L108"><span class="lineNum">     108</span> <span class="tlaGNC">          30 :   }</span></span>
-<span id="L109"><span class="lineNum">     109</span> <span class="tlaGNC">          18 :   return {};</span></span>
-<span id="L110"><span class="lineNum">     110</span> <span class="tlaGNC">          23 : }</span></span>
-<span id="L111"><span class="lineNum">     111</span>              : </span>
-<span id="L112"><span class="lineNum">     112</span>              : /**</span>
-<span id="L113"><span class="lineNum">     113</span>              :  * @brief The signer for the store set up with @p s: gpg runs in the</span>
-<span id="L114"><span class="lineNum">     114</span>              :  * configured GPG home, as ImitatePass's signer runs in the store's</span>
-<span id="L115"><span class="lineNum">     115</span>              :  * environment.</span>
-<span id="L116"><span class="lineNum">     116</span>              :  * @param s The settings, with the signing key and gpg to use.</span>
-<span id="L117"><span class="lineNum">     117</span>              :  * @return The signer.</span>
-<span id="L118"><span class="lineNum">     118</span>              :  */</span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">          12 : auto signerFor(const AppSettings &amp;s) -&gt; GpgIdSigner {</span></span>
-<span id="L120"><span class="lineNum">     120</span>              :   GpgIdSigner signer(</span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">          24 :       s.gpgExecutable, GpgIdSigner::keysFromSetting(s.passSigningKey),</span></span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          54 :       [s](const QString &amp;app, const QStringList &amp;args, const QString &amp;input,</span></span>
-<span id="L123"><span class="lineNum">     123</span>              :           QString *out, QString *err) {</span>
-<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">          15 :         QProcess gpg;</span></span>
-<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          15 :         gpg.setProcessEnvironment(</span></span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">          30 :             withGpgHome(QProcessEnvironment::systemEnvironment(), s));</span></span>
-<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">          30 :         return Executor::executeBlocking(gpg, app, args, input, out, err);</span></span>
-<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">          39 :       });</span></span>
-<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">          12 :   signer.setStoreRoot(s.passStore);</span></span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">          12 :   return signer;</span></span>
-<span id="L131"><span class="lineNum">     131</span>              : }</span>
-<span id="L132"><span class="lineNum">     132</span>              : </span>
-<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">           9 : auto commitArgs(QProcess &amp;git, const AppSettings &amp;s) -&gt; QStringList {</span></span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">           9 :   QString out;</span></span>
-<span id="L135"><span class="lineNum">     135</span>              :   const bool sign =</span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">          54 :       Executor::executeBlocking(</span></span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">           9 :           git, s.gitExecutable,</span></span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">           9 :           {QStringLiteral(&quot;config&quot;), QStringLiteral(&quot;--bool&quot;),</span></span>
-<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">           9 :            QStringLiteral(&quot;--get&quot;), QStringLiteral(&quot;pass.signcommits&quot;)},</span></span>
-<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">          18 :           QString(), &amp;out, nullptr) == 0 &amp;&amp;</span></span>
-<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          13 :       out.trimmed() == QLatin1String(&quot;true&quot;);</span></span>
-<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">          18 :   return sign ? QStringList{QStringLiteral(&quot;commit&quot;), QStringLiteral(&quot;-S&quot;)}</span></span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          27 :               : QStringList{QStringLiteral(&quot;commit&quot;)};</span></span>
-<span id="L144"><span class="lineNum">     144</span>              : }</span>
-<span id="L145"><span class="lineNum">     145</span>              : } // namespace</span>
-<span id="L146"><span class="lineNum">     146</span>              : </span>
-<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">         240 : auto ProfileInit::gpgEnvironment(const AppSettings &amp;s) -&gt; QProcessEnvironment {</span></span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">         240 :   return withGpgHome(QProcessEnvironment::systemEnvironment(), s);</span></span>
-<span id="L149"><span class="lineNum">     149</span>              : }</span>
-<span id="L150"><span class="lineNum">     150</span>              : </span>
-<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">          11 : auto ProfileInit::needsInit(const QString &amp;path) -&gt; bool {</span></span>
-<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          11 :   if (path.isEmpty()) {</span></span>
-<span id="L153"><span class="lineNum">     153</span>              :     return false;</span>
-<span id="L154"><span class="lineNum">     154</span>              :   }</span>
-<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">          10 :   QDir dir(path);</span></span>
-<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">          10 :   if (!dir.exists()) {</span></span>
-<span id="L157"><span class="lineNum">     157</span>              :     return false;</span>
-<span id="L158"><span class="lineNum">     158</span>              :   }</span>
-<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">           9 :   return !dir.exists(&quot;.gpg-id&quot;);</span></span>
-<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">          10 : }</span></span>
-<span id="L161"><span class="lineNum">     161</span>              : </span>
-<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">          30 : auto ProfileInit::initialise(const QString &amp;dir, const QList&lt;UserInfo&gt; &amp;users,</span></span>
-<span id="L163"><span class="lineNum">     163</span>              :                              const AppSettings &amp;s, bool useGit, QString *note)</span>
-<span id="L164"><span class="lineNum">     164</span>              :     -&gt; bool {</span>
-<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">          30 :   QString scratch;</span></span>
-<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">          30 :   QString &amp;out = note != nullptr ? *note : scratch;</span></span>
-<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">          30 :   out.clear();</span></span>
-<span id="L168"><span class="lineNum">     168</span>              : </span>
-<span id="L169"><span class="lineNum">     169</span> <span class="tlaGNC">          30 :   const QDir folder(dir);</span></span>
-<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          36 :   if (!folder.exists() &amp;&amp; !Util::mkpathForStore(folder.absolutePath())) {</span></span>
-<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">           2 :     out = tr(&quot;Could not create %1.&quot;).arg(folder.absolutePath());</span></span>
-<span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">           1 :     return false;</span></span>
-<span id="L173"><span class="lineNum">     173</span>              :   }</span>
-<span id="L174"><span class="lineNum">     174</span>              :   // Before anything is written: a refusal later would leave a .gpg-id</span>
-<span id="L175"><span class="lineNum">     175</span>              :   // behind, and a store that looks finished.</span>
-<span id="L176"><span class="lineNum">     176</span> <span class="tlaGNC">          29 :   if (useGit &amp;&amp;</span></span>
-<span id="L177"><span class="lineNum">     177</span> <span class="tlaGNC">          53 :       refusedForGit(folder.absolutePath(),</span></span>
-<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">          29 :                     {QStringLiteral(&quot;.gpg-id&quot;), QStringLiteral(&quot;.gpg-id.sig&quot;)},</span></span>
-<span id="L179"><span class="lineNum">     179</span>              :                     &amp;out)) {</span>
-<span id="L180"><span class="lineNum">     180</span>              :     return false;</span>
-<span id="L181"><span class="lineNum">     181</span>              :   }</span>
-<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">          56 :   const QString gpgIdFile = folder.filePath(QStringLiteral(&quot;.gpg-id&quot;));</span></span>
-<span id="L183"><span class="lineNum">     183</span>              :   // Before the list is written, as ImitatePass::Init() does: writing it</span>
-<span id="L184"><span class="lineNum">     184</span>              :   // takes the next generation, and a list that then cannot be signed left</span>
-<span id="L185"><span class="lineNum">     185</span>              :   // this device's record one ahead of the store's own, refused afterwards</span>
-<span id="L186"><span class="lineNum">     186</span>              :   // as a rollback.</span>
-<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">          31 :   if (!s.passSigningKey.trimmed().isEmpty() &amp;&amp; !signerFor(s).haveSecretKey()) {</span></span>
-<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">           3 :     out = tr(&quot;The secret key of the signing key %1 is not available, so no &quot;</span></span>
-<span id="L189"><span class="lineNum">     189</span>              :              &quot;recipient list was written.&quot;)</span>
-<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">           9 :               .arg(GpgIdSigner::keysFromSetting(s.passSigningKey).first());</span></span>
-<span id="L191"><span class="lineNum">     191</span>              :     // withGpgHome() fell back to the inherited home, as for signing below.</span>
-<span id="L192"><span class="lineNum">     192</span> <span class="tlaGNC">           3 :     if (!s.gpgHome.isEmpty()) {</span></span>
-<span id="L193"><span class="lineNum">     193</span> <span class="tlaGNC">           1 :       QDir home(s.gpgHome);</span></span>
-<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">           1 :       home.makeAbsolute();</span></span>
-<span id="L195"><span class="lineNum">     195</span> <span class="tlaGNC">           1 :       if (!home.exists()) {</span></span>
-<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">           1 :         out += QLatin1Char(' ') + tr(&quot;The configured GPG home %1 does not &quot;</span></span>
-<span id="L197"><span class="lineNum">     197</span>              :                                      &quot;exist.&quot;)</span>
-<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">           3 :                                       .arg(home.path());</span></span>
-<span id="L199"><span class="lineNum">     199</span>              :       }</span>
-<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">           1 :     }</span></span>
-<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">           3 :     return false;</span></span>
-<span id="L202"><span class="lineNum">     202</span>              :   }</span>
-<span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">          25 :   QByteArray written;</span></span>
-<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">          50 :   if (!writeGpgId(gpgIdFile, users, !s.passSigningKey.trimmed().isEmpty(), &amp;out,</span></span>
-<span id="L205"><span class="lineNum">     205</span>              :                   &amp;written)) {</span>
-<span id="L206"><span class="lineNum">     206</span>              :     return false;</span>
-<span id="L207"><span class="lineNum">     207</span>              :   }</span>
-<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">          22 :   QString sigFile;</span></span>
-<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">          22 :   if (!s.passSigningKey.trimmed().isEmpty()) {</span></span>
-<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">           4 :     if (!signGpgId(gpgIdFile, written, s, &amp;out)) {</span></span>
-<span id="L211"><span class="lineNum">     211</span>              :       return false;</span>
-<span id="L212"><span class="lineNum">     212</span>              :     }</span>
-<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">           4 :     sigFile = gpgIdFile + QStringLiteral(&quot;.sig&quot;);</span></span>
-<span id="L214"><span class="lineNum">     214</span>              :   }</span>
-<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">          25 :   if (useGit &amp;&amp;</span></span>
-<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">          25 :       !commitGpgId(folder.absolutePath(), gpgIdFile, sigFile, s, &amp;out)) {</span></span>
-<span id="L217"><span class="lineNum">     217</span>              :     return false;</span>
-<span id="L218"><span class="lineNum">     218</span>              :   }</span>
-<span id="L219"><span class="lineNum">     219</span>              : </span>
-<span id="L220"><span class="lineNum">     220</span>              :   // Entries in sub-folders too: a store taken over whole has most of them</span>
-<span id="L221"><span class="lineNum">     221</span>              :   // there. Visible regular files only, not through links, .git not walked.</span>
-<span id="L222"><span class="lineNum">     222</span>              :   // Not those under a sub-folder with a .gpg-id of its own: its recipients</span>
-<span id="L223"><span class="lineNum">     223</span>              :   // did not change here, and Users on the profile's root leaves it alone,</span>
-<span id="L224"><span class="lineNum">     224</span>              :   // as pass does.</span>
-<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">          18 :   const QString root = QDir::cleanPath(folder.absolutePath());</span></span>
-<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">          18 :   const bool viaPass = s.usePass;</span></span>
-<span id="L227"><span class="lineNum">     227</span>              :   const QString rootList =</span>
-<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">          54 :       QFileInfo(QDir(root).filePath(QStringLiteral(&quot;.gpg-id&quot;)))</span></span>
-<span id="L229"><span class="lineNum">     229</span> <span class="tlaGNC">          18 :           .canonicalFilePath();</span></span>
-<span id="L230"><span class="lineNum">     230</span>              :   // What a folder's own .gpg-id decides, if it has one.</span>
-<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">         611 :   const auto ownList = [&amp;rootList,</span></span>
-<span id="L232"><span class="lineNum">     232</span>              :                         viaPass](const QString &amp;dir) -&gt; std::optional&lt;bool&gt; {</span>
-<span id="L233"><span class="lineNum">     233</span>              :     // A list of its own: a regular file. A linked .gpg-id is no list to</span>
-<span id="L234"><span class="lineNum">     234</span>              :     // the native backend, as everywhere in QtPass, so its folder's entries</span>
-<span id="L235"><span class="lineNum">     235</span>              :     // still count; pass follows the link (`-f`) and keeps that folder on</span>
-<span id="L236"><span class="lineNum">     236</span>              :     // the linked list, so with it they do not, unless the link leads to the</span>
-<span id="L237"><span class="lineNum">     237</span>              :     // root's own list: that folder follows the root, and Users on it</span>
-<span id="L238"><span class="lineNum">     238</span>              :     // re-encrypts them.</span>
-<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">        1222 :     const QFileInfo list(QDir(dir).filePath(QStringLiteral(&quot;.gpg-id&quot;)));</span></span>
-<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">         611 :     if (viaPass &amp;&amp; list.isFile() &amp;&amp; !rootList.isEmpty() &amp;&amp;</span></span>
-<span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">         614 :         list.canonicalFilePath() == rootList) {</span></span>
-<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">           1 :       return false;</span></span>
-<span id="L243"><span class="lineNum">     243</span>              :     }</span>
-<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">         610 :     if (list.isFile() &amp;&amp;</span></span>
-<span id="L245"><span class="lineNum">     245</span> <span class="tlaGNC">           5 :         (viaPass || (!list.isSymLink() &amp;&amp; !list.isJunction()))) {</span></span>
-<span id="L246"><span class="lineNum">     246</span> <span class="tlaGNC">           4 :       return true;</span></span>
-<span id="L247"><span class="lineNum">     247</span>              :     }</span>
-<span id="L248"><span class="lineNum">     248</span> <span class="tlaGNC">         606 :     return std::nullopt;</span></span>
-<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">         611 :   };</span></span>
-<span id="L250"><span class="lineNum">     250</span>              :   // Each folder's verdict once: climbing from every entry to the root again</span>
-<span id="L251"><span class="lineNum">     251</span>              :   // cost entries times depth, and a co-writer's deep chain of folders froze</span>
-<span id="L252"><span class="lineNum">     252</span>              :   // Finish for tens of minutes.</span>
-<span id="L253"><span class="lineNum">     253</span> <span class="tlaGNC">          18 :   QHash&lt;QString, bool&gt; verdictOf;</span></span>
-<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">        4019 :   const auto underSubStore = [&amp;root, &amp;ownList,</span></span>
-<span id="L255"><span class="lineNum">     255</span>              :                               &amp;verdictOf](const QString &amp;entry) {</span>
-<span id="L256"><span class="lineNum">     256</span> <span class="tlaGNC">        4019 :     QStringList climbed;</span></span>
-<span id="L257"><span class="lineNum">     257</span> <span class="tlaGNC">        4019 :     QString dir = QFileInfo(entry).absolutePath();</span></span>
-<span id="L258"><span class="lineNum">     258</span> <span class="tlaGNC">        4019 :     bool verdict = false;</span></span>
-<span id="L259"><span class="lineNum">     259</span> <span class="tlaGNC">        9236 :     while (dir != root &amp;&amp; dir.startsWith(root + QLatin1Char('/'))) {</span></span>
-<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">        4611 :       if (const auto known = verdictOf.constFind(dir);</span></span>
-<span id="L261"><span class="lineNum">     261</span>              :           known != verdictOf.constEnd()) {</span>
-<span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">        4000 :         verdict = known.value();</span></span>
-<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">        4000 :         break;</span></span>
-<span id="L264"><span class="lineNum">     264</span>              :       }</span>
-<span id="L265"><span class="lineNum">     265</span>              :       climbed &lt;&lt; dir;</span>
-<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">         611 :       if (const std::optional&lt;bool&gt; own = ownList(dir)) {</span></span>
-<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">           5 :         verdict = *own;</span></span>
-<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">           5 :         break;</span></span>
-<span id="L269"><span class="lineNum">     269</span>              :       }</span>
-<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">        1212 :       dir = QFileInfo(dir).absolutePath();</span></span>
-<span id="L271"><span class="lineNum">     271</span>              :     }</span>
-<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">        4630 :     for (const QString &amp;folder : std::as_const(climbed)) {</span></span>
-<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">         611 :       verdictOf.insert(folder, verdict);</span></span>
+<span id="L56"><span class="lineNum">      56</span>              :   // The identity check runs git before `git init` made the folder a</span>
+<span id="L57"><span class="lineNum">      57</span>              :   // repository, so a pushed bare-repository layout there would be read.</span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">          33 :   Util::requireExplicitBareRepository(env);</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          33 :   if (!s.gitUseParentRepository) {</span></span>
+<span id="L60"><span class="lineNum">      60</span>              :     for (const auto &amp;[name, value] :</span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">          96 :          Util::gitStoreVariables(dir, s.gitExecutable)) {</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">          32 :       env.insert(name, value);</span></span>
+<span id="L63"><span class="lineNum">      63</span>              :     }</span>
+<span id="L64"><span class="lineNum">      64</span>              :   }</span>
+<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">          33 :   return env;</span></span>
+<span id="L66"><span class="lineNum">      66</span> <span class="tlaUNC">           0 : }</span></span>
+<span id="L67"><span class="lineNum">      67</span>              : /// &quot;commit&quot;, and &quot;-S&quot; when git config pass.signcommits is true for the</span>
+<span id="L68"><span class="lineNum">      68</span>              : /// repository @p git runs in (a new one: so the user's own git config), as</span>
+<span id="L69"><span class="lineNum">      69</span>              : /// pass signs its commits.</span>
+<span id="L70"><span class="lineNum">      70</span>              : /// Time `git init` and `git add` may take while the window waits: the two</span>
+<span id="L71"><span class="lineNum">      71</span>              : /// that read what lies in the folder. A commit is not bounded: git may sign</span>
+<span id="L72"><span class="lineNum">      72</span>              : /// it (pass.signcommits or commit.gpgSign) and wait for the passphrase.</span>
+<span id="L73"><span class="lineNum">      73</span>              : constexpr int kGitSetupTimeoutMs = 2 * 60 * 1000;</span>
+<span id="L74"><span class="lineNum">      74</span>              : </span>
+<span id="L75"><span class="lineNum">      75</span>              : /**</span>
+<span id="L76"><span class="lineNum">      76</span>              :  * @brief The first thing git would open while staging @p files in @p dir</span>
+<span id="L77"><span class="lineNum">      77</span>              :  * that it could wait on for good, or empty.</span>
+<span id="L78"><span class="lineNum">      78</span>              :  *</span>
+<span id="L79"><span class="lineNum">      79</span>              :  * git add opens the .gitattributes and .gitignore of each folder it stages</span>
+<span id="L80"><span class="lineNum">      80</span>              :  * from, by name: a FIFO there, planted in a shared folder, kept it waiting</span>
+<span id="L81"><span class="lineNum">      81</span>              :  * in open() with the window waiting on it. A link to one counts as one:</span>
+<span id="L82"><span class="lineNum">      82</span>              :  * older git follows it. A sub-folder with a .git of its own is a repository git</span>
+<span id="L83"><span class="lineNum">      83</span>              :  * looks into (its HEAD, say).</span>
+<span id="L84"><span class="lineNum">      84</span>              :  * @param dir The store.</span>
+<span id="L85"><span class="lineNum">      85</span>              :  * @param files Paths relative to @p dir that git is to stage.</span>
+<span id="L86"><span class="lineNum">      86</span>              :  * @return That path, or empty.</span>
+<span id="L87"><span class="lineNum">      87</span>              :  */</span>
+<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">          23 : auto blocksGit(const QString &amp;dir, const QStringList &amp;files) -&gt; QString {</span></span>
+<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">          46 :   QSet&lt;QString&gt; folders{QStringLiteral(&quot;.&quot;)};</span></span>
+<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">          60 :   for (const QString &amp;file : files) {</span></span>
+<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">          37 :     for (QString folder = QFileInfo(file).path();</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          48 :          folder != QLatin1String(&quot;.&quot;) &amp;&amp; !folders.contains(folder);</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          22 :          folder = QFileInfo(folder).path()) {</span></span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">          11 :       folders.insert(folder);</span></span>
+<span id="L95"><span class="lineNum">      95</span>              :     }</span>
+<span id="L96"><span class="lineNum">      96</span>              :   }</span>
+<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">          23 :   const QDir base(dir);</span></span>
+<span id="L98"><span class="lineNum">      98</span>              :   for (const QString &amp;folder : std::as_const(folders)) {</span>
+<span id="L99"><span class="lineNum">      99</span> <span class="tlaGNC">          30 :     const QDir here(base.filePath(folder));</span></span>
+<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">          85 :     for (const char *name : {&quot;.gitattributes&quot;, &quot;.gitignore&quot;}) {</span></span>
+<span id="L101"><span class="lineNum">     101</span> <span class="tlaGNC">          59 :       const QFileInfo info(here.filePath(QLatin1String(name)));</span></span>
+<span id="L102"><span class="lineNum">     102</span> <span class="tlaGNC">          59 :       if (info.exists() &amp;&amp; !info.isFile()) {</span></span>
+<span id="L103"><span class="lineNum">     103</span> <span class="tlaGNC">           4 :         return info.filePath();</span></span>
+<span id="L104"><span class="lineNum">     104</span>              :       }</span>
+<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">          59 :     }</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">          52 :     const QFileInfo nested(here.filePath(QStringLiteral(&quot;.git&quot;)));</span></span>
+<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">          34 :     if (folder != QLatin1String(&quot;.&quot;) &amp;&amp;</span></span>
+<span id="L108"><span class="lineNum">     108</span> <span class="tlaGNC">          15 :         (nested.exists() || nested.isSymLink())) {</span></span>
+<span id="L109"><span class="lineNum">     109</span> <span class="tlaGNC">           1 :       return nested.filePath();</span></span>
+<span id="L110"><span class="lineNum">     110</span>              :     }</span>
+<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">          30 :   }</span></span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">          18 :   return {};</span></span>
+<span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC">          23 : }</span></span>
+<span id="L114"><span class="lineNum">     114</span>              : </span>
+<span id="L115"><span class="lineNum">     115</span>              : /**</span>
+<span id="L116"><span class="lineNum">     116</span>              :  * @brief The signer for the store set up with @p s: gpg runs in the</span>
+<span id="L117"><span class="lineNum">     117</span>              :  * configured GPG home, as ImitatePass's signer runs in the store's</span>
+<span id="L118"><span class="lineNum">     118</span>              :  * environment.</span>
+<span id="L119"><span class="lineNum">     119</span>              :  * @param s The settings, with the signing key and gpg to use.</span>
+<span id="L120"><span class="lineNum">     120</span>              :  * @return The signer.</span>
+<span id="L121"><span class="lineNum">     121</span>              :  */</span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          12 : auto signerFor(const AppSettings &amp;s) -&gt; GpgIdSigner {</span></span>
+<span id="L123"><span class="lineNum">     123</span>              :   GpgIdSigner signer(</span>
+<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">          24 :       s.gpgExecutable, GpgIdSigner::keysFromSetting(s.passSigningKey),</span></span>
+<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          54 :       [s](const QString &amp;app, const QStringList &amp;args, const QString &amp;input,</span></span>
+<span id="L126"><span class="lineNum">     126</span>              :           QString *out, QString *err) {</span>
+<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">          15 :         QProcess gpg;</span></span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">          15 :         gpg.setProcessEnvironment(</span></span>
+<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">          30 :             withGpgHome(QProcessEnvironment::systemEnvironment(), s));</span></span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">          30 :         return Executor::executeBlocking(gpg, app, args, input, out, err);</span></span>
+<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">          39 :       });</span></span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">          12 :   signer.setStoreRoot(s.passStore);</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">          12 :   return signer;</span></span>
+<span id="L134"><span class="lineNum">     134</span>              : }</span>
+<span id="L135"><span class="lineNum">     135</span>              : </span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">           9 : auto commitArgs(QProcess &amp;git, const AppSettings &amp;s) -&gt; QStringList {</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">           9 :   QString out;</span></span>
+<span id="L138"><span class="lineNum">     138</span>              :   const bool sign =</span>
+<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">          54 :       Executor::executeBlocking(</span></span>
+<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">           9 :           git, s.gitExecutable,</span></span>
+<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">           9 :           {QStringLiteral(&quot;config&quot;), QStringLiteral(&quot;--bool&quot;),</span></span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">           9 :            QStringLiteral(&quot;--get&quot;), QStringLiteral(&quot;pass.signcommits&quot;)},</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          18 :           QString(), &amp;out, nullptr) == 0 &amp;&amp;</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          13 :       out.trimmed() == QLatin1String(&quot;true&quot;);</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          18 :   return sign ? QStringList{QStringLiteral(&quot;commit&quot;), QStringLiteral(&quot;-S&quot;)}</span></span>
+<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">          27 :               : QStringList{QStringLiteral(&quot;commit&quot;)};</span></span>
+<span id="L147"><span class="lineNum">     147</span>              : }</span>
+<span id="L148"><span class="lineNum">     148</span>              : } // namespace</span>
+<span id="L149"><span class="lineNum">     149</span>              : </span>
+<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">         240 : auto ProfileInit::gpgEnvironment(const AppSettings &amp;s) -&gt; QProcessEnvironment {</span></span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         240 :   return withGpgHome(QProcessEnvironment::systemEnvironment(), s);</span></span>
+<span id="L152"><span class="lineNum">     152</span>              : }</span>
+<span id="L153"><span class="lineNum">     153</span>              : </span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">          11 : auto ProfileInit::needsInit(const QString &amp;path) -&gt; bool {</span></span>
+<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">          11 :   if (path.isEmpty()) {</span></span>
+<span id="L156"><span class="lineNum">     156</span>              :     return false;</span>
+<span id="L157"><span class="lineNum">     157</span>              :   }</span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          10 :   QDir dir(path);</span></span>
+<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">          10 :   if (!dir.exists()) {</span></span>
+<span id="L160"><span class="lineNum">     160</span>              :     return false;</span>
+<span id="L161"><span class="lineNum">     161</span>              :   }</span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">           9 :   return !dir.exists(&quot;.gpg-id&quot;);</span></span>
+<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">          10 : }</span></span>
+<span id="L164"><span class="lineNum">     164</span>              : </span>
+<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">          30 : auto ProfileInit::initialise(const QString &amp;dir, const QList&lt;UserInfo&gt; &amp;users,</span></span>
+<span id="L166"><span class="lineNum">     166</span>              :                              const AppSettings &amp;s, bool useGit, QString *note)</span>
+<span id="L167"><span class="lineNum">     167</span>              :     -&gt; bool {</span>
+<span id="L168"><span class="lineNum">     168</span> <span class="tlaGNC">          30 :   QString scratch;</span></span>
+<span id="L169"><span class="lineNum">     169</span> <span class="tlaGNC">          30 :   QString &amp;out = note != nullptr ? *note : scratch;</span></span>
+<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          30 :   out.clear();</span></span>
+<span id="L171"><span class="lineNum">     171</span>              : </span>
+<span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">          30 :   const QDir folder(dir);</span></span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">          36 :   if (!folder.exists() &amp;&amp; !Util::mkpathForStore(folder.absolutePath())) {</span></span>
+<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">           2 :     out = tr(&quot;Could not create %1.&quot;).arg(folder.absolutePath());</span></span>
+<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">           1 :     return false;</span></span>
+<span id="L176"><span class="lineNum">     176</span>              :   }</span>
+<span id="L177"><span class="lineNum">     177</span>              :   // Before anything is written: a refusal later would leave a .gpg-id</span>
+<span id="L178"><span class="lineNum">     178</span>              :   // behind, and a store that looks finished.</span>
+<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">          29 :   if (useGit &amp;&amp;</span></span>
+<span id="L180"><span class="lineNum">     180</span> <span class="tlaGNC">          53 :       refusedForGit(folder.absolutePath(),</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">          29 :                     {QStringLiteral(&quot;.gpg-id&quot;), QStringLiteral(&quot;.gpg-id.sig&quot;)},</span></span>
+<span id="L182"><span class="lineNum">     182</span>              :                     &amp;out)) {</span>
+<span id="L183"><span class="lineNum">     183</span>              :     return false;</span>
+<span id="L184"><span class="lineNum">     184</span>              :   }</span>
+<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">          56 :   const QString gpgIdFile = folder.filePath(QStringLiteral(&quot;.gpg-id&quot;));</span></span>
+<span id="L186"><span class="lineNum">     186</span>              :   // Before the list is written, as ImitatePass::Init() does: writing it</span>
+<span id="L187"><span class="lineNum">     187</span>              :   // takes the next generation, and a list that then cannot be signed left</span>
+<span id="L188"><span class="lineNum">     188</span>              :   // this device's record one ahead of the store's own, refused afterwards</span>
+<span id="L189"><span class="lineNum">     189</span>              :   // as a rollback.</span>
+<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">          31 :   if (!s.passSigningKey.trimmed().isEmpty() &amp;&amp; !signerFor(s).haveSecretKey()) {</span></span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">           3 :     out = tr(&quot;The secret key of the signing key %1 is not available, so no &quot;</span></span>
+<span id="L192"><span class="lineNum">     192</span>              :              &quot;recipient list was written.&quot;)</span>
+<span id="L193"><span class="lineNum">     193</span> <span class="tlaGNC">           9 :               .arg(GpgIdSigner::keysFromSetting(s.passSigningKey).first());</span></span>
+<span id="L194"><span class="lineNum">     194</span>              :     // withGpgHome() fell back to the inherited home, as for signing below.</span>
+<span id="L195"><span class="lineNum">     195</span> <span class="tlaGNC">           3 :     if (!s.gpgHome.isEmpty()) {</span></span>
+<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">           1 :       QDir home(s.gpgHome);</span></span>
+<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">           1 :       home.makeAbsolute();</span></span>
+<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">           1 :       if (!home.exists()) {</span></span>
+<span id="L199"><span class="lineNum">     199</span> <span class="tlaGNC">           1 :         out += QLatin1Char(' ') + tr(&quot;The configured GPG home %1 does not &quot;</span></span>
+<span id="L200"><span class="lineNum">     200</span>              :                                      &quot;exist.&quot;)</span>
+<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">           3 :                                       .arg(home.path());</span></span>
+<span id="L202"><span class="lineNum">     202</span>              :       }</span>
+<span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">           1 :     }</span></span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">           3 :     return false;</span></span>
+<span id="L205"><span class="lineNum">     205</span>              :   }</span>
+<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">          25 :   QByteArray written;</span></span>
+<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">          50 :   if (!writeGpgId(gpgIdFile, users, !s.passSigningKey.trimmed().isEmpty(), &amp;out,</span></span>
+<span id="L208"><span class="lineNum">     208</span>              :                   &amp;written)) {</span>
+<span id="L209"><span class="lineNum">     209</span>              :     return false;</span>
+<span id="L210"><span class="lineNum">     210</span>              :   }</span>
+<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">          22 :   QString sigFile;</span></span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">          22 :   if (!s.passSigningKey.trimmed().isEmpty()) {</span></span>
+<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">           4 :     if (!signGpgId(gpgIdFile, written, s, &amp;out)) {</span></span>
+<span id="L214"><span class="lineNum">     214</span>              :       return false;</span>
+<span id="L215"><span class="lineNum">     215</span>              :     }</span>
+<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">           4 :     sigFile = gpgIdFile + QStringLiteral(&quot;.sig&quot;);</span></span>
+<span id="L217"><span class="lineNum">     217</span>              :   }</span>
+<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">          25 :   if (useGit &amp;&amp;</span></span>
+<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">          25 :       !commitGpgId(folder.absolutePath(), gpgIdFile, sigFile, s, &amp;out)) {</span></span>
+<span id="L220"><span class="lineNum">     220</span>              :     return false;</span>
+<span id="L221"><span class="lineNum">     221</span>              :   }</span>
+<span id="L222"><span class="lineNum">     222</span>              : </span>
+<span id="L223"><span class="lineNum">     223</span>              :   // Entries in sub-folders too: a store taken over whole has most of them</span>
+<span id="L224"><span class="lineNum">     224</span>              :   // there. Visible regular files only, not through links, .git not walked.</span>
+<span id="L225"><span class="lineNum">     225</span>              :   // Not those under a sub-folder with a .gpg-id of its own: its recipients</span>
+<span id="L226"><span class="lineNum">     226</span>              :   // did not change here, and Users on the profile's root leaves it alone,</span>
+<span id="L227"><span class="lineNum">     227</span>              :   // as pass does.</span>
+<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">          18 :   const QString root = QDir::cleanPath(folder.absolutePath());</span></span>
+<span id="L229"><span class="lineNum">     229</span> <span class="tlaGNC">          18 :   const bool viaPass = s.usePass;</span></span>
+<span id="L230"><span class="lineNum">     230</span>              :   const QString rootList =</span>
+<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">          54 :       QFileInfo(QDir(root).filePath(QStringLiteral(&quot;.gpg-id&quot;)))</span></span>
+<span id="L232"><span class="lineNum">     232</span> <span class="tlaGNC">          18 :           .canonicalFilePath();</span></span>
+<span id="L233"><span class="lineNum">     233</span>              :   // What a folder's own .gpg-id decides, if it has one.</span>
+<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">         611 :   const auto ownList = [&amp;rootList,</span></span>
+<span id="L235"><span class="lineNum">     235</span>              :                         viaPass](const QString &amp;dir) -&gt; std::optional&lt;bool&gt; {</span>
+<span id="L236"><span class="lineNum">     236</span>              :     // A list of its own: a regular file. A linked .gpg-id is no list to</span>
+<span id="L237"><span class="lineNum">     237</span>              :     // the native backend, as everywhere in QtPass, so its folder's entries</span>
+<span id="L238"><span class="lineNum">     238</span>              :     // still count; pass follows the link (`-f`) and keeps that folder on</span>
+<span id="L239"><span class="lineNum">     239</span>              :     // the linked list, so with it they do not, unless the link leads to the</span>
+<span id="L240"><span class="lineNum">     240</span>              :     // root's own list: that folder follows the root, and Users on it</span>
+<span id="L241"><span class="lineNum">     241</span>              :     // re-encrypts them.</span>
+<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">        1222 :     const QFileInfo list(QDir(dir).filePath(QStringLiteral(&quot;.gpg-id&quot;)));</span></span>
+<span id="L243"><span class="lineNum">     243</span> <span class="tlaGNC">         611 :     if (viaPass &amp;&amp; list.isFile() &amp;&amp; !rootList.isEmpty() &amp;&amp;</span></span>
+<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">         614 :         list.canonicalFilePath() == rootList) {</span></span>
+<span id="L245"><span class="lineNum">     245</span> <span class="tlaGNC">           1 :       return false;</span></span>
+<span id="L246"><span class="lineNum">     246</span>              :     }</span>
+<span id="L247"><span class="lineNum">     247</span> <span class="tlaGNC">         610 :     if (list.isFile() &amp;&amp;</span></span>
+<span id="L248"><span class="lineNum">     248</span> <span class="tlaGNC">           5 :         (viaPass || (!list.isSymLink() &amp;&amp; !list.isJunction()))) {</span></span>
+<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">           4 :       return true;</span></span>
+<span id="L250"><span class="lineNum">     250</span>              :     }</span>
+<span id="L251"><span class="lineNum">     251</span> <span class="tlaGNC">         606 :     return std::nullopt;</span></span>
+<span id="L252"><span class="lineNum">     252</span> <span class="tlaGNC">         611 :   };</span></span>
+<span id="L253"><span class="lineNum">     253</span>              :   // Each folder's verdict once: climbing from every entry to the root again</span>
+<span id="L254"><span class="lineNum">     254</span>              :   // cost entries times depth, and a co-writer's deep chain of folders froze</span>
+<span id="L255"><span class="lineNum">     255</span>              :   // Finish for tens of minutes.</span>
+<span id="L256"><span class="lineNum">     256</span> <span class="tlaGNC">          18 :   QHash&lt;QString, bool&gt; verdictOf;</span></span>
+<span id="L257"><span class="lineNum">     257</span> <span class="tlaGNC">        4019 :   const auto underSubStore = [&amp;root, &amp;ownList,</span></span>
+<span id="L258"><span class="lineNum">     258</span>              :                               &amp;verdictOf](const QString &amp;entry) {</span>
+<span id="L259"><span class="lineNum">     259</span> <span class="tlaGNC">        4019 :     QStringList climbed;</span></span>
+<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">        4019 :     QString dir = QFileInfo(entry).absolutePath();</span></span>
+<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">        4019 :     bool verdict = false;</span></span>
+<span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">        9236 :     while (dir != root &amp;&amp; dir.startsWith(root + QLatin1Char('/'))) {</span></span>
+<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">        4611 :       if (const auto known = verdictOf.constFind(dir);</span></span>
+<span id="L264"><span class="lineNum">     264</span>              :           known != verdictOf.constEnd()) {</span>
+<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">        4000 :         verdict = known.value();</span></span>
+<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">        4000 :         break;</span></span>
+<span id="L267"><span class="lineNum">     267</span>              :       }</span>
+<span id="L268"><span class="lineNum">     268</span>              :       climbed &lt;&lt; dir;</span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         611 :       if (const std::optional&lt;bool&gt; own = ownList(dir)) {</span></span>
+<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">           5 :         verdict = *own;</span></span>
+<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">           5 :         break;</span></span>
+<span id="L272"><span class="lineNum">     272</span>              :       }</span>
+<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">        1212 :       dir = QFileInfo(dir).absolutePath();</span></span>
 <span id="L274"><span class="lineNum">     274</span>              :     }</span>
-<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">        8038 :     return verdict;</span></span>
-<span id="L276"><span class="lineNum">     276</span>              :   };</span>
-<span id="L277"><span class="lineNum">     277</span>              :   QStringList existing =</span>
-<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">          54 :       Util::regularFilesUnder(root, {QStringLiteral(&quot;*.gpg&quot;)});</span></span>
-<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          18 :   existing.erase(</span></span>
-<span id="L280"><span class="lineNum">     280</span> <span class="tlaGNC">          36 :       std::remove_if(existing.begin(), existing.end(), underSubStore),</span></span>
-<span id="L281"><span class="lineNum">     281</span> <span class="tlaGNC">          18 :       existing.end());</span></span>
-<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">          18 :   if (!existing.isEmpty()) {</span></span>
-<span id="L283"><span class="lineNum">     283</span> <span class="tlaGNC">          11 :     out = tr(&quot;%1 already contains %n encrypted file(s); they were not &quot;</span></span>
-<span id="L284"><span class="lineNum">     284</span>              :              &quot;re-encrypted. Switch to the profile and open Users to do that.&quot;,</span>
-<span id="L285"><span class="lineNum">     285</span>              :              nullptr, static_cast&lt;int&gt;(existing.size()))</span>
-<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">          22 :               .arg(folder.absolutePath());</span></span>
-<span id="L287"><span class="lineNum">     287</span>              :   }</span>
-<span id="L288"><span class="lineNum">     288</span>              :   return true;</span>
-<span id="L289"><span class="lineNum">     289</span> <span class="tlaGNC">          48 : }</span></span>
-<span id="L290"><span class="lineNum">     290</span>              : </span>
-<span id="L291"><span class="lineNum">     291</span> <span class="tlaGNC">          25 : auto ProfileInit::writeGpgId(const QString &amp;gpgIdFile,</span></span>
-<span id="L292"><span class="lineNum">     292</span>              :                              const QList&lt;UserInfo&gt; &amp;users, bool signed_,</span>
-<span id="L293"><span class="lineNum">     293</span>              :                              QString *note, QByteArray *written) -&gt; bool {</span>
-<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">          25 :   QStringList ids;</span></span>
-<span id="L295"><span class="lineNum">     295</span> <span class="tlaGNC">          71 :   for (const UserInfo &amp;user : users) {</span></span>
-<span id="L296"><span class="lineNum">     296</span> <span class="tlaGNC">          46 :     if (user.enabled) {</span></span>
-<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">          24 :       ids &lt;&lt; user.key_id;</span></span>
-<span id="L298"><span class="lineNum">     298</span>              :     }</span>
-<span id="L299"><span class="lineNum">     299</span>              :   }</span>
-<span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">          25 :   if (ids.isEmpty()) {</span></span>
-<span id="L301"><span class="lineNum">     301</span> <span class="tlaGNC">           2 :     *note = tr(&quot;No recipient selected; %1 was not written.&quot;).arg(gpgIdFile);</span></span>
-<span id="L302"><span class="lineNum">     302</span> <span class="tlaGNC">           1 :     return false;</span></span>
-<span id="L303"><span class="lineNum">     303</span>              :   }</span>
-<span id="L304"><span class="lineNum">     304</span>              :   // As ImitatePass::writeGpgIdFile: renamed into place whole, so an</span>
-<span id="L305"><span class="lineNum">     305</span>              :   // interrupted write leaves no half .gpg-id to sign or use. Owner-only: the</span>
-<span id="L306"><span class="lineNum">     306</span>              :   // list leaks which keys the store is encrypted to.</span>
-<span id="L307"><span class="lineNum">     307</span>              :   QByteArray contents =</span>
-<span id="L308"><span class="lineNum">     308</span> <span class="tlaGNC">          24 :       (ids.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8();</span></span>
-<span id="L309"><span class="lineNum">     309</span> <span class="tlaGNC">          24 :   if (signed_) {</span></span>
-<span id="L310"><span class="lineNum">     310</span>              :     // Same rule as ImitatePass::writeGpgIdFile: reserved and recorded</span>
-<span id="L311"><span class="lineNum">     311</span>              :     // before the write, bound to the store root (GpgIdGeneration). A new</span>
-<span id="L312"><span class="lineNum">     312</span>              :     // profile has no list on disk to take a generation from.</span>
-<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">           5 :     QString why;</span></span>
-<span id="L314"><span class="lineNum">     314</span>              :     const std::optional&lt;QString&gt; store = GpgIdGeneration::storeIdFor(</span>
-<span id="L315"><span class="lineNum">     315</span> <span class="tlaGNC">          10 :         QFileInfo(gpgIdFile).absolutePath(), std::nullopt, &amp;why);</span></span>
-<span id="L316"><span class="lineNum">     316</span> <span class="tlaGNC">           5 :     if (!store) {</span></span>
-<span id="L317"><span class="lineNum">     317</span> <span class="tlaUNC">           0 :       *note = why;</span></span>
-<span id="L318"><span class="lineNum">     318</span> <span class="tlaUNC">           0 :       return false;</span></span>
-<span id="L319"><span class="lineNum">     319</span>              :     }</span>
-<span id="L320"><span class="lineNum">     320</span>              :     const std::optional&lt;qint64&gt; generation =</span>
-<span id="L321"><span class="lineNum">     321</span> <span class="tlaGNC">           5 :         GpgIdGeneration::reserveNext(gpgIdFile, std::nullopt, &amp;why);</span></span>
-<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">           5 :     if (!generation) {</span></span>
-<span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">           1 :       *note = why;</span></span>
-<span id="L324"><span class="lineNum">     324</span> <span class="tlaGNC">           1 :       return false;</span></span>
-<span id="L325"><span class="lineNum">     325</span>              :     }</span>
-<span id="L326"><span class="lineNum">     326</span> <span class="tlaGNC">           8 :     contents = GpgIdGeneration::withHeader(*generation, QStringLiteral(&quot;.&quot;),</span></span>
-<span id="L327"><span class="lineNum">     327</span>              :                                            contents, *store);</span>
-<span id="L328"><span class="lineNum">     328</span>              :   }</span>
-<span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">          23 :   QString why;</span></span>
-<span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">          23 :   if (!Util::writeFileReplacing(gpgIdFile, contents, true, &amp;why)) {</span></span>
-<span id="L331"><span class="lineNum">     331</span> <span class="tlaGNC">           1 :     *note = why;</span></span>
-<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">           1 :     return false;</span></span>
-<span id="L333"><span class="lineNum">     333</span>              :   }</span>
-<span id="L334"><span class="lineNum">     334</span> <span class="tlaGNC">          22 :   if (written != nullptr) {</span></span>
-<span id="L335"><span class="lineNum">     335</span> <span class="tlaGNC">          22 :     *written = contents;</span></span>
+<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">        4630 :     for (const QString &amp;folder : std::as_const(climbed)) {</span></span>
+<span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">         611 :       verdictOf.insert(folder, verdict);</span></span>
+<span id="L277"><span class="lineNum">     277</span>              :     }</span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">        8038 :     return verdict;</span></span>
+<span id="L279"><span class="lineNum">     279</span>              :   };</span>
+<span id="L280"><span class="lineNum">     280</span>              :   QStringList existing =</span>
+<span id="L281"><span class="lineNum">     281</span> <span class="tlaGNC">          54 :       Util::regularFilesUnder(root, {QStringLiteral(&quot;*.gpg&quot;)});</span></span>
+<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">          18 :   existing.erase(</span></span>
+<span id="L283"><span class="lineNum">     283</span> <span class="tlaGNC">          36 :       std::remove_if(existing.begin(), existing.end(), underSubStore),</span></span>
+<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">          18 :       existing.end());</span></span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">          18 :   if (!existing.isEmpty()) {</span></span>
+<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">          11 :     out = tr(&quot;%1 already contains %n encrypted file(s); they were not &quot;</span></span>
+<span id="L287"><span class="lineNum">     287</span>              :              &quot;re-encrypted. Switch to the profile and open Users to do that.&quot;,</span>
+<span id="L288"><span class="lineNum">     288</span>              :              nullptr, static_cast&lt;int&gt;(existing.size()))</span>
+<span id="L289"><span class="lineNum">     289</span> <span class="tlaGNC">          22 :               .arg(folder.absolutePath());</span></span>
+<span id="L290"><span class="lineNum">     290</span>              :   }</span>
+<span id="L291"><span class="lineNum">     291</span>              :   return true;</span>
+<span id="L292"><span class="lineNum">     292</span> <span class="tlaGNC">          48 : }</span></span>
+<span id="L293"><span class="lineNum">     293</span>              : </span>
+<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">          25 : auto ProfileInit::writeGpgId(const QString &amp;gpgIdFile,</span></span>
+<span id="L295"><span class="lineNum">     295</span>              :                              const QList&lt;UserInfo&gt; &amp;users, bool signed_,</span>
+<span id="L296"><span class="lineNum">     296</span>              :                              QString *note, QByteArray *written) -&gt; bool {</span>
+<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">          25 :   QStringList ids;</span></span>
+<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">          71 :   for (const UserInfo &amp;user : users) {</span></span>
+<span id="L299"><span class="lineNum">     299</span> <span class="tlaGNC">          46 :     if (user.enabled) {</span></span>
+<span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">          24 :       ids &lt;&lt; user.key_id;</span></span>
+<span id="L301"><span class="lineNum">     301</span>              :     }</span>
+<span id="L302"><span class="lineNum">     302</span>              :   }</span>
+<span id="L303"><span class="lineNum">     303</span> <span class="tlaGNC">          25 :   if (ids.isEmpty()) {</span></span>
+<span id="L304"><span class="lineNum">     304</span> <span class="tlaGNC">           2 :     *note = tr(&quot;No recipient selected; %1 was not written.&quot;).arg(gpgIdFile);</span></span>
+<span id="L305"><span class="lineNum">     305</span> <span class="tlaGNC">           1 :     return false;</span></span>
+<span id="L306"><span class="lineNum">     306</span>              :   }</span>
+<span id="L307"><span class="lineNum">     307</span>              :   // As ImitatePass::writeGpgIdFile: renamed into place whole, so an</span>
+<span id="L308"><span class="lineNum">     308</span>              :   // interrupted write leaves no half .gpg-id to sign or use. Owner-only: the</span>
+<span id="L309"><span class="lineNum">     309</span>              :   // list leaks which keys the store is encrypted to.</span>
+<span id="L310"><span class="lineNum">     310</span>              :   QByteArray contents =</span>
+<span id="L311"><span class="lineNum">     311</span> <span class="tlaGNC">          24 :       (ids.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8();</span></span>
+<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">          24 :   if (signed_) {</span></span>
+<span id="L313"><span class="lineNum">     313</span>              :     // Same rule as ImitatePass::writeGpgIdFile: reserved and recorded</span>
+<span id="L314"><span class="lineNum">     314</span>              :     // before the write, bound to the store root (GpgIdGeneration). A new</span>
+<span id="L315"><span class="lineNum">     315</span>              :     // profile has no list on disk to take a generation from.</span>
+<span id="L316"><span class="lineNum">     316</span> <span class="tlaGNC">           5 :     QString why;</span></span>
+<span id="L317"><span class="lineNum">     317</span>              :     const std::optional&lt;QString&gt; store = GpgIdGeneration::storeIdFor(</span>
+<span id="L318"><span class="lineNum">     318</span> <span class="tlaGNC">          10 :         QFileInfo(gpgIdFile).absolutePath(), std::nullopt, &amp;why);</span></span>
+<span id="L319"><span class="lineNum">     319</span> <span class="tlaGNC">           5 :     if (!store) {</span></span>
+<span id="L320"><span class="lineNum">     320</span> <span class="tlaUNC">           0 :       *note = why;</span></span>
+<span id="L321"><span class="lineNum">     321</span> <span class="tlaUNC">           0 :       return false;</span></span>
+<span id="L322"><span class="lineNum">     322</span>              :     }</span>
+<span id="L323"><span class="lineNum">     323</span>              :     const std::optional&lt;qint64&gt; generation =</span>
+<span id="L324"><span class="lineNum">     324</span> <span class="tlaGNC">           5 :         GpgIdGeneration::reserveNext(gpgIdFile, std::nullopt, &amp;why);</span></span>
+<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">           5 :     if (!generation) {</span></span>
+<span id="L326"><span class="lineNum">     326</span> <span class="tlaGNC">           1 :       *note = why;</span></span>
+<span id="L327"><span class="lineNum">     327</span> <span class="tlaGNC">           1 :       return false;</span></span>
+<span id="L328"><span class="lineNum">     328</span>              :     }</span>
+<span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">           8 :     contents = GpgIdGeneration::withHeader(*generation, QStringLiteral(&quot;.&quot;),</span></span>
+<span id="L330"><span class="lineNum">     330</span>              :                                            contents, *store);</span>
+<span id="L331"><span class="lineNum">     331</span>              :   }</span>
+<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">          23 :   QString why;</span></span>
+<span id="L333"><span class="lineNum">     333</span> <span class="tlaGNC">          23 :   if (!Util::writeFileReplacing(gpgIdFile, contents, true, &amp;why)) {</span></span>
+<span id="L334"><span class="lineNum">     334</span> <span class="tlaGNC">           1 :     *note = why;</span></span>
+<span id="L335"><span class="lineNum">     335</span> <span class="tlaGNC">           1 :     return false;</span></span>
 <span id="L336"><span class="lineNum">     336</span>              :   }</span>
-<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">          22 :   if (signed_) {</span></span>
-<span id="L338"><span class="lineNum">     338</span>              :     // Same as ImitatePass::writeGpgIdFile: the bytes written are the ones</span>
-<span id="L339"><span class="lineNum">     339</span>              :     // recognised; not fatal, the first read digests them otherwise.</span>
-<span id="L340"><span class="lineNum">     340</span> <span class="tlaGNC">           4 :     QString why;</span></span>
-<span id="L341"><span class="lineNum">     341</span> <span class="tlaGNC">           4 :     if (!GpgIdGeneration::recordWritten(gpgIdFile, contents, &amp;why)) {</span></span>
-<span id="L342"><span class="lineNum">     342</span> <span class="tlaUNC">           0 :       qCWarning(lcQtPass) &lt;&lt; &quot;Could not record the written .gpg-id:&quot; &lt;&lt; why;</span></span>
-<span id="L343"><span class="lineNum">     343</span>              :     }</span>
-<span id="L344"><span class="lineNum">     344</span>              :   }</span>
-<span id="L345"><span class="lineNum">     345</span>              :   return true;</span>
-<span id="L346"><span class="lineNum">     346</span>              : }</span>
-<span id="L347"><span class="lineNum">     347</span>              : </span>
-<span id="L348"><span class="lineNum">     348</span> <span class="tlaGNC">           4 : auto ProfileInit::signGpgId(const QString &amp;gpgIdFile,</span></span>
-<span id="L349"><span class="lineNum">     349</span>              :                             const QByteArray &amp;contents, const AppSettings &amp;s,</span>
-<span id="L350"><span class="lineNum">     350</span>              :                             QString *note) -&gt; bool {</span>
-<span id="L351"><span class="lineNum">     351</span> <span class="tlaGNC">           4 :   const GpgIdSigner signer = signerFor(s);</span></span>
-<span id="L352"><span class="lineNum">     352</span> <span class="tlaGNC">           4 :   QString err;</span></span>
-<span id="L353"><span class="lineNum">     353</span> <span class="tlaGNC">           4 :   if (!signer.sign(gpgIdFile, contents, &amp;err)) {</span></span>
-<span id="L354"><span class="lineNum">     354</span> <span class="tlaGNC">           2 :     *note = err.trimmed().isEmpty()</span></span>
-<span id="L355"><span class="lineNum">     355</span> <span class="tlaGNC">           6 :                 ? tr(&quot;Could not sign %1 with %2.&quot;)</span></span>
-<span id="L356"><span class="lineNum">     356</span>              :                       .arg(gpgIdFile, signer.keys().first())</span>
-<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">           2 :                 : tr(&quot;Could not sign %1 with %2: %3&quot;)</span></span>
-<span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">           4 :                       .arg(gpgIdFile, signer.keys().first(), err.trimmed());</span></span>
-<span id="L359"><span class="lineNum">     359</span>              :     // withGpgHome() fell back to the inherited home: gpg's &quot;no secret key&quot;</span>
-<span id="L360"><span class="lineNum">     360</span>              :     // would not say that the configured one is missing.</span>
-<span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">           2 :     if (!s.gpgHome.isEmpty()) {</span></span>
-<span id="L362"><span class="lineNum">     362</span> <span class="tlaUNC">           0 :       QDir home(s.gpgHome);</span></span>
-<span id="L363"><span class="lineNum">     363</span> <span class="tlaUNC">           0 :       home.makeAbsolute();</span></span>
-<span id="L364"><span class="lineNum">     364</span> <span class="tlaUNC">           0 :       if (!home.exists()) {</span></span>
-<span id="L365"><span class="lineNum">     365</span>              :         *note +=</span>
-<span id="L366"><span class="lineNum">     366</span> <span class="tlaUNC">           0 :             QLatin1Char(' ') +</span></span>
-<span id="L367"><span class="lineNum">     367</span> <span class="tlaUNC">           0 :             tr(&quot;The configured GPG home %1 does not exist.&quot;).arg(home.path());</span></span>
-<span id="L368"><span class="lineNum">     368</span>              :       }</span>
-<span id="L369"><span class="lineNum">     369</span> <span class="tlaUNC">           0 :     }</span></span>
-<span id="L370"><span class="lineNum">     370</span> <span class="tlaGNC">           2 :     return false;</span></span>
-<span id="L371"><span class="lineNum">     371</span>              :   }</span>
-<span id="L372"><span class="lineNum">     372</span>              :   return true;</span>
-<span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">           4 : }</span></span>
-<span id="L374"><span class="lineNum">     374</span>              : </span>
-<span id="L375"><span class="lineNum">     375</span> <span class="tlaGNC">          31 : auto ProfileInit::runGit(QProcess &amp;git, const AppSettings &amp;s,</span></span>
-<span id="L376"><span class="lineNum">     376</span>              :                          const QString &amp;dir, const QStringList &amp;args,</span>
-<span id="L377"><span class="lineNum">     377</span>              :                          QString *note) -&gt; bool {</span>
-<span id="L378"><span class="lineNum">     378</span> <span class="tlaGNC">          31 :   const bool bounded = args.first() == QLatin1String(&quot;init&quot;) ||</span></span>
-<span id="L379"><span class="lineNum">     379</span> <span class="tlaGNC">          18 :                        args.first() == QLatin1String(&quot;add&quot;);</span></span>
-<span id="L380"><span class="lineNum">     380</span> <span class="tlaGNC">          31 :   QElapsedTimer clock;</span></span>
-<span id="L381"><span class="lineNum">     381</span> <span class="tlaGNC">          31 :   clock.start();</span></span>
-<span id="L382"><span class="lineNum">     382</span> <span class="tlaGNC">          31 :   QString err;</span></span>
-<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">          31 :   const int rc = Executor::executeBlocking(git, s.gitExecutable, args,</span></span>
-<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">          31 :                                            QString(), nullptr, &amp;err, nullptr,</span></span>
-<span id="L385"><span class="lineNum">     385</span>              :                                            bounded ? kGitSetupTimeoutMs : -1);</span>
-<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">          31 :   if (rc == 0) {</span></span>
-<span id="L387"><span class="lineNum">     387</span>              :     return true;</span>
-<span id="L388"><span class="lineNum">     388</span>              :   }</span>
-<span id="L389"><span class="lineNum">     389</span>              :   // -1 is what a stopped run returns; git's own failures are positive.</span>
-<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">           6 :   if (bounded &amp;&amp; rc == -1 &amp;&amp; clock.elapsed() &gt;= kGitSetupTimeoutMs) {</span></span>
-<span id="L391"><span class="lineNum">     391</span> <span class="tlaUNC">           0 :     *note = tr(&quot;git %1 did not finish within %2 minutes in %3, and was &quot;</span></span>
-<span id="L392"><span class="lineNum">     392</span>              :                &quot;stopped.&quot;)</span>
-<span id="L393"><span class="lineNum">     393</span> <span class="tlaUNC">           0 :                 .arg(args.first())</span></span>
-<span id="L394"><span class="lineNum">     394</span> <span class="tlaUNC">           0 :                 .arg(kGitSetupTimeoutMs / 60000)</span></span>
-<span id="L395"><span class="lineNum">     395</span> <span class="tlaUNC">           0 :                 .arg(dir);</span></span>
-<span id="L396"><span class="lineNum">     396</span>              :   } else {</span>
-<span id="L397"><span class="lineNum">     397</span> <span class="tlaGNC">          12 :     *note = tr(&quot;git %1 failed in %2: %3&quot;).arg(args.first(), dir, err.trimmed());</span></span>
-<span id="L398"><span class="lineNum">     398</span>              :   }</span>
-<span id="L399"><span class="lineNum">     399</span>              :   return false;</span>
-<span id="L400"><span class="lineNum">     400</span>              : }</span>
-<span id="L401"><span class="lineNum">     401</span>              : </span>
-<span id="L402"><span class="lineNum">     402</span> <span class="tlaGNC">          23 : auto ProfileInit::refusedForGit(const QString &amp;dir, const QStringList &amp;files,</span></span>
-<span id="L403"><span class="lineNum">     403</span>              :                                 QString *note) -&gt; bool {</span>
-<span id="L404"><span class="lineNum">     404</span> <span class="tlaGNC">          23 :   const QString path = blocksGit(dir, files);</span></span>
-<span id="L405"><span class="lineNum">     405</span> <span class="tlaGNC">          23 :   if (path.isEmpty()) {</span></span>
-<span id="L406"><span class="lineNum">     406</span>              :     return false;</span>
-<span id="L407"><span class="lineNum">     407</span>              :   }</span>
-<span id="L408"><span class="lineNum">     408</span> <span class="tlaGNC">          10 :   *note = QFileInfo(path).fileName() == QLatin1String(&quot;.git&quot;)</span></span>
-<span id="L409"><span class="lineNum">     409</span> <span class="tlaGNC">          15 :               ? tr(&quot;%1 is a Git repository inside the store. Move it out of &quot;</span></span>
-<span id="L410"><span class="lineNum">     410</span>              :                    &quot;the store, then try again.&quot;)</span>
-<span id="L411"><span class="lineNum">     411</span> <span class="tlaGNC">           7 :                     .arg(QDir::toNativeSeparators(QFileInfo(path).path()))</span></span>
-<span id="L412"><span class="lineNum">     412</span> <span class="tlaGNC">           5 :               : tr(&quot;%1 is not a regular file, and Git could wait on it for &quot;</span></span>
-<span id="L413"><span class="lineNum">     413</span>              :                    &quot;good. Remove it or make it a regular file, then try &quot;</span>
-<span id="L414"><span class="lineNum">     414</span>              :                    &quot;again.&quot;)</span>
-<span id="L415"><span class="lineNum">     415</span> <span class="tlaGNC">          13 :                     .arg(QDir::toNativeSeparators(path));</span></span>
-<span id="L416"><span class="lineNum">     416</span> <span class="tlaGNC">           5 :   return true;</span></span>
-<span id="L417"><span class="lineNum">     417</span>              : }</span>
-<span id="L418"><span class="lineNum">     418</span>              : </span>
-<span id="L419"><span class="lineNum">     419</span> <span class="tlaGNC">           5 : auto ProfileInit::commitGpgId(const QString &amp;dir, const QString &amp;gpgIdFile,</span></span>
-<span id="L420"><span class="lineNum">     420</span>              :                               const QString &amp;sigFile, const AppSettings &amp;s,</span>
-<span id="L421"><span class="lineNum">     421</span>              :                               QString *note) -&gt; bool {</span>
-<span id="L422"><span class="lineNum">     422</span>              :   // A process of our own in the profile directory: nothing here may touch</span>
-<span id="L423"><span class="lineNum">     423</span>              :   // the shared Executor or PASSWORD_STORE_DIR of the active store.</span>
-<span id="L424"><span class="lineNum">     424</span> <span class="tlaGNC">           5 :   QProcess git;</span></span>
-<span id="L425"><span class="lineNum">     425</span> <span class="tlaGNC">           5 :   git.setWorkingDirectory(dir);</span></span>
-<span id="L426"><span class="lineNum">     426</span> <span class="tlaGNC">           5 :   git.setProcessEnvironment(gitEnvironment(dir, s));</span></span>
-<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">          11 :   auto run = [&amp;](const QStringList &amp;args) -&gt; bool {</span></span>
-<span id="L428"><span class="lineNum">     428</span> <span class="tlaGNC">          11 :     return runGit(git, s, dir, args, note);</span></span>
-<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">           5 :   };</span></span>
-<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">          15 :   QStringList files{QFileInfo(gpgIdFile).fileName()};</span></span>
-<span id="L431"><span class="lineNum">     431</span> <span class="tlaGNC">           5 :   if (!sigFile.isEmpty()) {</span></span>
-<span id="L432"><span class="lineNum">     432</span> <span class="tlaGNC">           4 :     files &lt;&lt; QFileInfo(sigFile).fileName();</span></span>
-<span id="L433"><span class="lineNum">     433</span>              :   }</span>
-<span id="L434"><span class="lineNum">     434</span>              :   // initialise() checked before writing these; again here, as signing can</span>
-<span id="L435"><span class="lineNum">     435</span>              :   // take a while and the folder is shared.</span>
-<span id="L436"><span class="lineNum">     436</span> <span class="tlaGNC">           5 :   if (refusedForGit(dir, files, note)) {</span></span>
-<span id="L437"><span class="lineNum">     437</span>              :     return false;</span>
-<span id="L438"><span class="lineNum">     438</span>              :   }</span>
-<span id="L439"><span class="lineNum">     439</span>              :   const QStringList add =</span>
-<span id="L440"><span class="lineNum">     440</span> <span class="tlaGNC">          20 :       QStringList{QStringLiteral(&quot;add&quot;), QStringLiteral(&quot;--&quot;)} + files;</span></span>
-<span id="L441"><span class="lineNum">     441</span> <span class="tlaGNC">          15 :   if (!run({QStringLiteral(&quot;init&quot;)}) || !run(add)) {</span></span>
-<span id="L442"><span class="lineNum">     442</span>              :     return false;</span>
-<span id="L443"><span class="lineNum">     443</span>              :   }</span>
-<span id="L444"><span class="lineNum">     444</span> <span class="tlaGNC">           9 :   return run(commitArgs(git, s) +</span></span>
-<span id="L445"><span class="lineNum">     445</span> <span class="tlaGNC">           6 :              QStringList{QStringLiteral(&quot;-m&quot;),</span></span>
-<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">           3 :                          QStringLiteral(&quot;Added .gpg-id using QtPass.&quot;),</span></span>
-<span id="L447"><span class="lineNum">     447</span> <span class="tlaGNC">          21 :                          QStringLiteral(&quot;--&quot;)} +</span></span>
-<span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">           3 :              files);</span></span>
-<span id="L449"><span class="lineNum">     449</span> <span class="tlaGNC">          10 : }</span></span>
-<span id="L450"><span class="lineNum">     450</span>              : </span>
-<span id="L451"><span class="lineNum">     451</span> <span class="tlaGNC">          12 : auto ProfileInit::initGit(const QString &amp;dir, const AppSettings &amp;s,</span></span>
-<span id="L452"><span class="lineNum">     452</span>              :                           QString *note) -&gt; bool {</span>
-<span id="L453"><span class="lineNum">     453</span> <span class="tlaGNC">          12 :   QProcess git;</span></span>
-<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">          12 :   git.setWorkingDirectory(dir);</span></span>
-<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">          12 :   git.setProcessEnvironment(gitEnvironment(dir, s));</span></span>
-<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">          20 :   auto run = [&amp;](const QStringList &amp;args) -&gt; bool {</span></span>
-<span id="L457"><span class="lineNum">     457</span> <span class="tlaGNC">          20 :     return runGit(git, s, dir, args, note);</span></span>
-<span id="L458"><span class="lineNum">     458</span> <span class="tlaGNC">          12 :   };</span></span>
-<span id="L459"><span class="lineNum">     459</span>              :   // Stage only store files (as the re-encryption backup commit does): an</span>
-<span id="L460"><span class="lineNum">     460</span>              :   // existing folder may hold plaintext exports or swap files. Regular files</span>
-<span id="L461"><span class="lineNum">     461</span>              :   // only: a link or junction must not have its target staged.</span>
-<span id="L462"><span class="lineNum">     462</span> <span class="tlaGNC">          12 :   QStringList files;</span></span>
-<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">          12 :   const QDir base(dir);</span></span>
-<span id="L464"><span class="lineNum">     464</span>              :   // Hidden directories (.git among them) are not walked, hidden files are:</span>
-<span id="L465"><span class="lineNum">     465</span>              :   // .gpg-id is one.</span>
-<span id="L466"><span class="lineNum">     466</span> <span class="tlaGNC">          60 :   const QStringList found = Util::regularFilesUnder(</span></span>
-<span id="L467"><span class="lineNum">     467</span>              :       dir,</span>
-<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">          12 :       {QStringLiteral(&quot;*.gpg&quot;), QStringLiteral(&quot;.gpg-id&quot;),</span></span>
-<span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">          12 :        QStringLiteral(&quot;.gpg-id.sig&quot;)},</span></span>
-<span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">          12 :       nullptr, true);</span></span>
-<span id="L471"><span class="lineNum">     471</span> <span class="tlaGNC">          30 :   for (const QString &amp;path : found) {</span></span>
-<span id="L472"><span class="lineNum">     472</span> <span class="tlaGNC">          36 :     files &lt;&lt; base.relativeFilePath(path);</span></span>
-<span id="L473"><span class="lineNum">     473</span>              :   }</span>
-<span id="L474"><span class="lineNum">     474</span> <span class="tlaGNC">          12 :   if (refusedForGit(dir, files, note)) {</span></span>
-<span id="L475"><span class="lineNum">     475</span>              :     return false;</span>
+<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">          22 :   if (written != nullptr) {</span></span>
+<span id="L338"><span class="lineNum">     338</span> <span class="tlaGNC">          22 :     *written = contents;</span></span>
+<span id="L339"><span class="lineNum">     339</span>              :   }</span>
+<span id="L340"><span class="lineNum">     340</span> <span class="tlaGNC">          22 :   if (signed_) {</span></span>
+<span id="L341"><span class="lineNum">     341</span>              :     // Same as ImitatePass::writeGpgIdFile: the bytes written are the ones</span>
+<span id="L342"><span class="lineNum">     342</span>              :     // recognised; not fatal, the first read digests them otherwise.</span>
+<span id="L343"><span class="lineNum">     343</span> <span class="tlaGNC">           4 :     QString why;</span></span>
+<span id="L344"><span class="lineNum">     344</span> <span class="tlaGNC">           4 :     if (!GpgIdGeneration::recordWritten(gpgIdFile, contents, &amp;why)) {</span></span>
+<span id="L345"><span class="lineNum">     345</span> <span class="tlaUNC">           0 :       qCWarning(lcQtPass) &lt;&lt; &quot;Could not record the written .gpg-id:&quot; &lt;&lt; why;</span></span>
+<span id="L346"><span class="lineNum">     346</span>              :     }</span>
+<span id="L347"><span class="lineNum">     347</span>              :   }</span>
+<span id="L348"><span class="lineNum">     348</span>              :   return true;</span>
+<span id="L349"><span class="lineNum">     349</span>              : }</span>
+<span id="L350"><span class="lineNum">     350</span>              : </span>
+<span id="L351"><span class="lineNum">     351</span> <span class="tlaGNC">           4 : auto ProfileInit::signGpgId(const QString &amp;gpgIdFile,</span></span>
+<span id="L352"><span class="lineNum">     352</span>              :                             const QByteArray &amp;contents, const AppSettings &amp;s,</span>
+<span id="L353"><span class="lineNum">     353</span>              :                             QString *note) -&gt; bool {</span>
+<span id="L354"><span class="lineNum">     354</span> <span class="tlaGNC">           4 :   const GpgIdSigner signer = signerFor(s);</span></span>
+<span id="L355"><span class="lineNum">     355</span> <span class="tlaGNC">           4 :   QString err;</span></span>
+<span id="L356"><span class="lineNum">     356</span> <span class="tlaGNC">           4 :   if (!signer.sign(gpgIdFile, contents, &amp;err)) {</span></span>
+<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">           2 :     *note = err.trimmed().isEmpty()</span></span>
+<span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">           6 :                 ? tr(&quot;Could not sign %1 with %2.&quot;)</span></span>
+<span id="L359"><span class="lineNum">     359</span>              :                       .arg(gpgIdFile, signer.keys().first())</span>
+<span id="L360"><span class="lineNum">     360</span> <span class="tlaGNC">           2 :                 : tr(&quot;Could not sign %1 with %2: %3&quot;)</span></span>
+<span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">           4 :                       .arg(gpgIdFile, signer.keys().first(), err.trimmed());</span></span>
+<span id="L362"><span class="lineNum">     362</span>              :     // withGpgHome() fell back to the inherited home: gpg's &quot;no secret key&quot;</span>
+<span id="L363"><span class="lineNum">     363</span>              :     // would not say that the configured one is missing.</span>
+<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">           2 :     if (!s.gpgHome.isEmpty()) {</span></span>
+<span id="L365"><span class="lineNum">     365</span> <span class="tlaUNC">           0 :       QDir home(s.gpgHome);</span></span>
+<span id="L366"><span class="lineNum">     366</span> <span class="tlaUNC">           0 :       home.makeAbsolute();</span></span>
+<span id="L367"><span class="lineNum">     367</span> <span class="tlaUNC">           0 :       if (!home.exists()) {</span></span>
+<span id="L368"><span class="lineNum">     368</span>              :         *note +=</span>
+<span id="L369"><span class="lineNum">     369</span> <span class="tlaUNC">           0 :             QLatin1Char(' ') +</span></span>
+<span id="L370"><span class="lineNum">     370</span> <span class="tlaUNC">           0 :             tr(&quot;The configured GPG home %1 does not exist.&quot;).arg(home.path());</span></span>
+<span id="L371"><span class="lineNum">     371</span>              :       }</span>
+<span id="L372"><span class="lineNum">     372</span> <span class="tlaUNC">           0 :     }</span></span>
+<span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">           2 :     return false;</span></span>
+<span id="L374"><span class="lineNum">     374</span>              :   }</span>
+<span id="L375"><span class="lineNum">     375</span>              :   return true;</span>
+<span id="L376"><span class="lineNum">     376</span> <span class="tlaGNC">           4 : }</span></span>
+<span id="L377"><span class="lineNum">     377</span>              : </span>
+<span id="L378"><span class="lineNum">     378</span> <span class="tlaGNC">          31 : auto ProfileInit::runGit(QProcess &amp;git, const AppSettings &amp;s,</span></span>
+<span id="L379"><span class="lineNum">     379</span>              :                          const QString &amp;dir, const QStringList &amp;args,</span>
+<span id="L380"><span class="lineNum">     380</span>              :                          QString *note) -&gt; bool {</span>
+<span id="L381"><span class="lineNum">     381</span> <span class="tlaGNC">          31 :   const bool bounded = args.first() == QLatin1String(&quot;init&quot;) ||</span></span>
+<span id="L382"><span class="lineNum">     382</span> <span class="tlaGNC">          18 :                        args.first() == QLatin1String(&quot;add&quot;);</span></span>
+<span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">          31 :   QElapsedTimer clock;</span></span>
+<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">          31 :   clock.start();</span></span>
+<span id="L385"><span class="lineNum">     385</span> <span class="tlaGNC">          31 :   QString err;</span></span>
+<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">          31 :   const int rc = Executor::executeBlocking(git, s.gitExecutable, args,</span></span>
+<span id="L387"><span class="lineNum">     387</span> <span class="tlaGNC">          31 :                                            QString(), nullptr, &amp;err, nullptr,</span></span>
+<span id="L388"><span class="lineNum">     388</span>              :                                            bounded ? kGitSetupTimeoutMs : -1);</span>
+<span id="L389"><span class="lineNum">     389</span> <span class="tlaGNC">          31 :   if (rc == 0) {</span></span>
+<span id="L390"><span class="lineNum">     390</span>              :     return true;</span>
+<span id="L391"><span class="lineNum">     391</span>              :   }</span>
+<span id="L392"><span class="lineNum">     392</span>              :   // -1 is what a stopped run returns; git's own failures are positive.</span>
+<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">           6 :   if (bounded &amp;&amp; rc == -1 &amp;&amp; clock.elapsed() &gt;= kGitSetupTimeoutMs) {</span></span>
+<span id="L394"><span class="lineNum">     394</span> <span class="tlaUNC">           0 :     *note = tr(&quot;git %1 did not finish within %2 minutes in %3, and was &quot;</span></span>
+<span id="L395"><span class="lineNum">     395</span>              :                &quot;stopped.&quot;)</span>
+<span id="L396"><span class="lineNum">     396</span> <span class="tlaUNC">           0 :                 .arg(args.first())</span></span>
+<span id="L397"><span class="lineNum">     397</span> <span class="tlaUNC">           0 :                 .arg(kGitSetupTimeoutMs / 60000)</span></span>
+<span id="L398"><span class="lineNum">     398</span> <span class="tlaUNC">           0 :                 .arg(dir);</span></span>
+<span id="L399"><span class="lineNum">     399</span>              :   } else {</span>
+<span id="L400"><span class="lineNum">     400</span> <span class="tlaGNC">          12 :     *note = tr(&quot;git %1 failed in %2: %3&quot;).arg(args.first(), dir, err.trimmed());</span></span>
+<span id="L401"><span class="lineNum">     401</span>              :   }</span>
+<span id="L402"><span class="lineNum">     402</span>              :   return false;</span>
+<span id="L403"><span class="lineNum">     403</span>              : }</span>
+<span id="L404"><span class="lineNum">     404</span>              : </span>
+<span id="L405"><span class="lineNum">     405</span> <span class="tlaGNC">          23 : auto ProfileInit::refusedForGit(const QString &amp;dir, const QStringList &amp;files,</span></span>
+<span id="L406"><span class="lineNum">     406</span>              :                                 QString *note) -&gt; bool {</span>
+<span id="L407"><span class="lineNum">     407</span> <span class="tlaGNC">          23 :   const QString path = blocksGit(dir, files);</span></span>
+<span id="L408"><span class="lineNum">     408</span> <span class="tlaGNC">          23 :   if (path.isEmpty()) {</span></span>
+<span id="L409"><span class="lineNum">     409</span>              :     return false;</span>
+<span id="L410"><span class="lineNum">     410</span>              :   }</span>
+<span id="L411"><span class="lineNum">     411</span> <span class="tlaGNC">          10 :   *note = QFileInfo(path).fileName() == QLatin1String(&quot;.git&quot;)</span></span>
+<span id="L412"><span class="lineNum">     412</span> <span class="tlaGNC">          15 :               ? tr(&quot;%1 is a Git repository inside the store. Move it out of &quot;</span></span>
+<span id="L413"><span class="lineNum">     413</span>              :                    &quot;the store, then try again.&quot;)</span>
+<span id="L414"><span class="lineNum">     414</span> <span class="tlaGNC">           7 :                     .arg(QDir::toNativeSeparators(QFileInfo(path).path()))</span></span>
+<span id="L415"><span class="lineNum">     415</span> <span class="tlaGNC">           5 :               : tr(&quot;%1 is not a regular file, and Git could wait on it for &quot;</span></span>
+<span id="L416"><span class="lineNum">     416</span>              :                    &quot;good. Remove it or make it a regular file, then try &quot;</span>
+<span id="L417"><span class="lineNum">     417</span>              :                    &quot;again.&quot;)</span>
+<span id="L418"><span class="lineNum">     418</span> <span class="tlaGNC">          13 :                     .arg(QDir::toNativeSeparators(path));</span></span>
+<span id="L419"><span class="lineNum">     419</span> <span class="tlaGNC">           5 :   return true;</span></span>
+<span id="L420"><span class="lineNum">     420</span>              : }</span>
+<span id="L421"><span class="lineNum">     421</span>              : </span>
+<span id="L422"><span class="lineNum">     422</span> <span class="tlaGNC">           5 : auto ProfileInit::commitGpgId(const QString &amp;dir, const QString &amp;gpgIdFile,</span></span>
+<span id="L423"><span class="lineNum">     423</span>              :                               const QString &amp;sigFile, const AppSettings &amp;s,</span>
+<span id="L424"><span class="lineNum">     424</span>              :                               QString *note) -&gt; bool {</span>
+<span id="L425"><span class="lineNum">     425</span>              :   // A process of our own in the profile directory: nothing here may touch</span>
+<span id="L426"><span class="lineNum">     426</span>              :   // the shared Executor or PASSWORD_STORE_DIR of the active store.</span>
+<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">           5 :   QProcess git;</span></span>
+<span id="L428"><span class="lineNum">     428</span> <span class="tlaGNC">           5 :   git.setWorkingDirectory(dir);</span></span>
+<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">           5 :   git.setProcessEnvironment(gitEnvironment(dir, s));</span></span>
+<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">          11 :   auto run = [&amp;](const QStringList &amp;args) -&gt; bool {</span></span>
+<span id="L431"><span class="lineNum">     431</span> <span class="tlaGNC">          11 :     return runGit(git, s, dir, args, note);</span></span>
+<span id="L432"><span class="lineNum">     432</span> <span class="tlaGNC">           5 :   };</span></span>
+<span id="L433"><span class="lineNum">     433</span> <span class="tlaGNC">          15 :   QStringList files{QFileInfo(gpgIdFile).fileName()};</span></span>
+<span id="L434"><span class="lineNum">     434</span> <span class="tlaGNC">           5 :   if (!sigFile.isEmpty()) {</span></span>
+<span id="L435"><span class="lineNum">     435</span> <span class="tlaGNC">           4 :     files &lt;&lt; QFileInfo(sigFile).fileName();</span></span>
+<span id="L436"><span class="lineNum">     436</span>              :   }</span>
+<span id="L437"><span class="lineNum">     437</span>              :   // initialise() checked before writing these; again here, as signing can</span>
+<span id="L438"><span class="lineNum">     438</span>              :   // take a while and the folder is shared.</span>
+<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">           5 :   if (refusedForGit(dir, files, note)) {</span></span>
+<span id="L440"><span class="lineNum">     440</span>              :     return false;</span>
+<span id="L441"><span class="lineNum">     441</span>              :   }</span>
+<span id="L442"><span class="lineNum">     442</span>              :   const QStringList add =</span>
+<span id="L443"><span class="lineNum">     443</span> <span class="tlaGNC">          20 :       QStringList{QStringLiteral(&quot;add&quot;), QStringLiteral(&quot;--&quot;)} + files;</span></span>
+<span id="L444"><span class="lineNum">     444</span> <span class="tlaGNC">          15 :   if (!run({QStringLiteral(&quot;init&quot;)}) || !run(add)) {</span></span>
+<span id="L445"><span class="lineNum">     445</span>              :     return false;</span>
+<span id="L446"><span class="lineNum">     446</span>              :   }</span>
+<span id="L447"><span class="lineNum">     447</span> <span class="tlaGNC">           9 :   return run(commitArgs(git, s) +</span></span>
+<span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">           6 :              QStringList{QStringLiteral(&quot;-m&quot;),</span></span>
+<span id="L449"><span class="lineNum">     449</span> <span class="tlaGNC">           3 :                          QStringLiteral(&quot;Added .gpg-id using QtPass.&quot;),</span></span>
+<span id="L450"><span class="lineNum">     450</span> <span class="tlaGNC">          21 :                          QStringLiteral(&quot;--&quot;)} +</span></span>
+<span id="L451"><span class="lineNum">     451</span> <span class="tlaGNC">           3 :              files);</span></span>
+<span id="L452"><span class="lineNum">     452</span> <span class="tlaGNC">          10 : }</span></span>
+<span id="L453"><span class="lineNum">     453</span>              : </span>
+<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">          12 : auto ProfileInit::initGit(const QString &amp;dir, const AppSettings &amp;s,</span></span>
+<span id="L455"><span class="lineNum">     455</span>              :                           QString *note) -&gt; bool {</span>
+<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">          12 :   QProcess git;</span></span>
+<span id="L457"><span class="lineNum">     457</span> <span class="tlaGNC">          12 :   git.setWorkingDirectory(dir);</span></span>
+<span id="L458"><span class="lineNum">     458</span> <span class="tlaGNC">          12 :   git.setProcessEnvironment(gitEnvironment(dir, s));</span></span>
+<span id="L459"><span class="lineNum">     459</span> <span class="tlaGNC">          20 :   auto run = [&amp;](const QStringList &amp;args) -&gt; bool {</span></span>
+<span id="L460"><span class="lineNum">     460</span> <span class="tlaGNC">          20 :     return runGit(git, s, dir, args, note);</span></span>
+<span id="L461"><span class="lineNum">     461</span> <span class="tlaGNC">          12 :   };</span></span>
+<span id="L462"><span class="lineNum">     462</span>              :   // Stage only store files (as the re-encryption backup commit does): an</span>
+<span id="L463"><span class="lineNum">     463</span>              :   // existing folder may hold plaintext exports or swap files. Regular files</span>
+<span id="L464"><span class="lineNum">     464</span>              :   // only: a link or junction must not have its target staged.</span>
+<span id="L465"><span class="lineNum">     465</span> <span class="tlaGNC">          12 :   QStringList files;</span></span>
+<span id="L466"><span class="lineNum">     466</span> <span class="tlaGNC">          12 :   const QDir base(dir);</span></span>
+<span id="L467"><span class="lineNum">     467</span>              :   // Hidden directories (.git among them) are not walked, hidden files are:</span>
+<span id="L468"><span class="lineNum">     468</span>              :   // .gpg-id is one.</span>
+<span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">          60 :   const QStringList found = Util::regularFilesUnder(</span></span>
+<span id="L470"><span class="lineNum">     470</span>              :       dir,</span>
+<span id="L471"><span class="lineNum">     471</span> <span class="tlaGNC">          12 :       {QStringLiteral(&quot;*.gpg&quot;), QStringLiteral(&quot;.gpg-id&quot;),</span></span>
+<span id="L472"><span class="lineNum">     472</span> <span class="tlaGNC">          12 :        QStringLiteral(&quot;.gpg-id.sig&quot;)},</span></span>
+<span id="L473"><span class="lineNum">     473</span> <span class="tlaGNC">          12 :       nullptr, true);</span></span>
+<span id="L474"><span class="lineNum">     474</span> <span class="tlaGNC">          30 :   for (const QString &amp;path : found) {</span></span>
+<span id="L475"><span class="lineNum">     475</span> <span class="tlaGNC">          36 :     files &lt;&lt; base.relativeFilePath(path);</span></span>
 <span id="L476"><span class="lineNum">     476</span>              :   }</span>
-<span id="L477"><span class="lineNum">     477</span> <span class="tlaGNC">          24 :   if (!run({QStringLiteral(&quot;init&quot;)})) {</span></span>
+<span id="L477"><span class="lineNum">     477</span> <span class="tlaGNC">          12 :   if (refusedForGit(dir, files, note)) {</span></span>
 <span id="L478"><span class="lineNum">     478</span>              :     return false;</span>
 <span id="L479"><span class="lineNum">     479</span>              :   }</span>
-<span id="L480"><span class="lineNum">     480</span> <span class="tlaGNC">          13 :   if (!files.isEmpty() &amp;&amp;</span></span>
-<span id="L481"><span class="lineNum">     481</span> <span class="tlaGNC">          31 :       !run(QStringList{QStringLiteral(&quot;add&quot;), QStringLiteral(&quot;--&quot;)} + files)) {</span></span>
-<span id="L482"><span class="lineNum">     482</span>              :     return false;</span>
-<span id="L483"><span class="lineNum">     483</span>              :   }</span>
-<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">          18 :   return run(commitArgs(git, s) +</span></span>
-<span id="L485"><span class="lineNum">     485</span> <span class="tlaGNC">           6 :              QStringList{QStringLiteral(&quot;--allow-empty&quot;), QStringLiteral(&quot;-m&quot;),</span></span>
-<span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">          42 :                          QStringLiteral(&quot;Added password store using QtPass.&quot;)});</span></span>
-<span id="L487"><span class="lineNum">     487</span> <span class="tlaGNC">          24 : }</span></span>
-<span id="L488"><span class="lineNum">     488</span>              : </span>
-<span id="L489"><span class="lineNum">     489</span> <span class="tlaGNC">          16 : auto ProfileInit::gitIdentityConfigured(const QString &amp;dir,</span></span>
-<span id="L490"><span class="lineNum">     490</span>              :                                         const AppSettings &amp;s) -&gt; bool {</span>
-<span id="L491"><span class="lineNum">     491</span> <span class="tlaGNC">          16 :   QProcess git;</span></span>
-<span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">          16 :   git.setWorkingDirectory(dir);</span></span>
-<span id="L493"><span class="lineNum">     493</span> <span class="tlaGNC">          16 :   git.setProcessEnvironment(gitEnvironment(dir, s));</span></span>
-<span id="L494"><span class="lineNum">     494</span> <span class="tlaGNC">          37 :   for (const char *key : {&quot;user.name&quot;, &quot;user.email&quot;}) {</span></span>
-<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">          27 :     QString out;</span></span>
-<span id="L496"><span class="lineNum">     496</span> <span class="tlaGNC">         135 :     if (Executor::executeBlocking(git, s.gitExecutable,</span></span>
-<span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">          27 :                                   {QStringLiteral(&quot;config&quot;),</span></span>
-<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">          27 :                                    QStringLiteral(&quot;--get&quot;),</span></span>
-<span id="L499"><span class="lineNum">     499</span>              :                                    QString::fromLatin1(key)},</span>
-<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">         102 :                                   QString(), &amp;out, nullptr) != 0 ||</span></span>
-<span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">          27 :         out.trimmed().isEmpty()) {</span></span>
-<span id="L502"><span class="lineNum">     502</span>              :       return false;</span>
-<span id="L503"><span class="lineNum">     503</span>              :     }</span>
-<span id="L504"><span class="lineNum">     504</span>              :   }</span>
-<span id="L505"><span class="lineNum">     505</span>              :   return true;</span>
-<span id="L506"><span class="lineNum">     506</span> <span class="tlaGNC">          70 : }</span></span>
+<span id="L480"><span class="lineNum">     480</span> <span class="tlaGNC">          24 :   if (!run({QStringLiteral(&quot;init&quot;)})) {</span></span>
+<span id="L481"><span class="lineNum">     481</span>              :     return false;</span>
+<span id="L482"><span class="lineNum">     482</span>              :   }</span>
+<span id="L483"><span class="lineNum">     483</span> <span class="tlaGNC">          13 :   if (!files.isEmpty() &amp;&amp;</span></span>
+<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">          31 :       !run(QStringList{QStringLiteral(&quot;add&quot;), QStringLiteral(&quot;--&quot;)} + files)) {</span></span>
+<span id="L485"><span class="lineNum">     485</span>              :     return false;</span>
+<span id="L486"><span class="lineNum">     486</span>              :   }</span>
+<span id="L487"><span class="lineNum">     487</span> <span class="tlaGNC">          18 :   return run(commitArgs(git, s) +</span></span>
+<span id="L488"><span class="lineNum">     488</span> <span class="tlaGNC">           6 :              QStringList{QStringLiteral(&quot;--allow-empty&quot;), QStringLiteral(&quot;-m&quot;),</span></span>
+<span id="L489"><span class="lineNum">     489</span> <span class="tlaGNC">          42 :                          QStringLiteral(&quot;Added password store using QtPass.&quot;)});</span></span>
+<span id="L490"><span class="lineNum">     490</span> <span class="tlaGNC">          24 : }</span></span>
+<span id="L491"><span class="lineNum">     491</span>              : </span>
+<span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">          16 : auto ProfileInit::gitIdentityConfigured(const QString &amp;dir,</span></span>
+<span id="L493"><span class="lineNum">     493</span>              :                                         const AppSettings &amp;s) -&gt; bool {</span>
+<span id="L494"><span class="lineNum">     494</span> <span class="tlaGNC">          16 :   QProcess git;</span></span>
+<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">          16 :   git.setWorkingDirectory(dir);</span></span>
+<span id="L496"><span class="lineNum">     496</span> <span class="tlaGNC">          16 :   git.setProcessEnvironment(gitEnvironment(dir, s));</span></span>
+<span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">          37 :   for (const char *key : {&quot;user.name&quot;, &quot;user.email&quot;}) {</span></span>
+<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">          27 :     QString out;</span></span>
+<span id="L499"><span class="lineNum">     499</span> <span class="tlaGNC">         135 :     if (Executor::executeBlocking(git, s.gitExecutable,</span></span>
+<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">          27 :                                   {QStringLiteral(&quot;config&quot;),</span></span>
+<span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">          27 :                                    QStringLiteral(&quot;--get&quot;),</span></span>
+<span id="L502"><span class="lineNum">     502</span>              :                                    QString::fromLatin1(key)},</span>
+<span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">         102 :                                   QString(), &amp;out, nullptr) != 0 ||</span></span>
+<span id="L504"><span class="lineNum">     504</span> <span class="tlaGNC">          27 :         out.trimmed().isEmpty()) {</span></span>
+<span id="L505"><span class="lineNum">     505</span>              :       return false;</span>
+<span id="L506"><span class="lineNum">     506</span>              :     }</span>
+<span id="L507"><span class="lineNum">     507</span>              :   }</span>
+<span id="L508"><span class="lineNum">     508</span>              :   return true;</span>
+<span id="L509"><span class="lineNum">     509</span> <span class="tlaGNC">          70 : }</span></span>
         </pre>
               </td>
             </tr>

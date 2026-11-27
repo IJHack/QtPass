@@ -73,6 +73,7 @@ var class_pass =
     [ "Move", "class_pass.html#a386cbd930f4feac9275170912d45b3a3", null ],
     [ "parseRecipients", "class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f", null ],
     [ "passReadsDifferently", "class_pass.html#a21da5fca64287d0e305b4ad36af154eb", null ],
+    [ "pinStoreGitAttributes", "class_pass.html#a1526999ab49ca03ff5da126bbab21215", null ],
     [ "processErrorExit", "class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f", null ],
     [ "pullTimedOut", "class_pass.html#ac4f20d4ca8f4069365ce1a74be811be2", null ],
     [ "pushIsAutomatic", "class_pass.html#a507057c5ae685ca61469c4dae27fd2e6", null ],
