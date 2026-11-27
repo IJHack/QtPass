@@ -50,6 +50,22 @@ public:
    */
   static auto sanitizeKeyIdForFilename(const QString &keyId) -> QString;
 
+  /**
+   * @brief Write the armored key to @p fileName, refusing a symbolic link
+   * there.
+   *
+   * QSaveFile writes to the target of a link at the chosen name. A folder in
+   * a shared store can hold such a link, pushed by a co-writer under the name
+   * the dialog proposes (the key's fingerprint), so the key would land
+   * outside the store. A dangling link counts too.
+   * @param fileName The chosen file.
+   * @param text The armored key.
+   * @param error Set to a message for the user when the save fails.
+   * @return Whether the key was written.
+   */
+  static auto saveArmoredKey(const QString &fileName, const QString &text,
+                             QString *error) -> bool;
+
 private slots:
   /**
    * @brief Copy the armored key text to the system clipboard; the button
@@ -60,7 +76,7 @@ private slots:
 
   /**
    * @brief Prompt for a destination and write the armored key to that file
-   * through a QSaveFile. The suggested name is
+   * through saveArmoredKey(). The suggested name is
    * `<sanitizeKeyIdForFilename(keyId)>.asc`, or `public_key.asc` when nothing
    * of the key id survives. Failures are reported in a warning box.
    */
