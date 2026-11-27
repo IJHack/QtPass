@@ -25,6 +25,10 @@
 #include <algorithm>
 #include <utility>
 
+#ifndef Q_OS_WIN
+#include <sys/stat.h>
+#endif
+
 using Enums::GIT_COMMIT;
 using Enums::GIT_INIT;
 using Enums::GIT_PULL;
@@ -1224,6 +1228,30 @@ auto RealPass::passName(const QString &path, bool stripGpg) const -> QString {
   return name;
 }
 
+namespace {
+/**
+ * @brief Whether @p a and @p b name the same file or folder, as a respelling
+ * in case only does on a case-insensitive file system.
+ * @param a One path.
+ * @param b The other.
+ * @return true when both exist and are one object.
+ */
+auto sameObject(const QString &a, const QString &b) -> bool {
+#ifdef Q_OS_WIN
+  const QString canonical = QFileInfo(a).canonicalFilePath();
+  return !canonical.isEmpty() &&
+         canonical.compare(QFileInfo(b).canonicalFilePath(),
+                           Qt::CaseInsensitive) == 0;
+#else
+  struct stat first{};
+  struct stat second{};
+  return ::stat(QFile::encodeName(a).constData(), &first) == 0 &&
+         ::stat(QFile::encodeName(b).constData(), &second) == 0 &&
+         first.st_dev == second.st_dev && first.st_ino == second.st_ino;
+#endif
+}
+} // namespace
+
 auto RealPass::passMoveTarget(const QString &src, const QString &dest) const
     -> PassMoveTarget {
   const QFileInfo srcInfo(src);
@@ -1286,19 +1314,30 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   }
   // Nor anything else already where pass writes: the entry of that name in
   // a folder an entry is dropped on or renamed into, or a folder of the
-  // moved folder's name, which cp -r merges into, writing through a link
-  // inside it. Force is consent for the entry named as dest only.
-  if (QFileInfo::exists(target.written) &&
-      !(force && srcFileInfo.isFile() &&
-        target.written == QDir::cleanPath(QDir(dest).absolutePath()))) {
-    const QString why =
-        tr("%1 already exists, and pass would replace it. Nothing was "
-           "changed; rename one of them first.")
-            .arg(QDir::toNativeSeparators(target.written));
-    emit startingExecuteWrapper();
-    emit critical(id == PASS_MOVE ? tr("Not moved") : tr("Not copied"), why);
-    emit processErrorExit(1, why);
-    return;
+  // moved folder's name inside the one it goes into, which cp -r merges
+  // into, writing through a link inside it. Force is consent for the entry
+  // named as dest only.
+  const QString cleanSrc = QDir::cleanPath(QDir(src).absolutePath());
+  const QString &occupied = target.written;
+  if (QFileInfo::exists(occupied)) {
+    if (sameObject(occupied, src)) {
+      // The source itself. Renamed to its own name or dropped on its own
+      // folder: nothing to do. Respelled in case only on a case-insensitive
+      // file system: pass renames it.
+      if (occupied == cleanSrc) {
+        return;
+      }
+    } else if (!(force && srcFileInfo.isFile() &&
+                 occupied == QDir::cleanPath(QDir(dest).absolutePath()))) {
+      const QString why =
+          tr("%1 already exists, and pass would replace it. Nothing was "
+             "changed; rename one of them first.")
+              .arg(QDir::toNativeSeparators(occupied));
+      emit startingExecuteWrapper();
+      emit critical(id == PASS_MOVE ? tr("Not moved") : tr("Not copied"), why);
+      emit processErrorExit(1, why);
+      return;
+    }
   }
 
   // pass re-encrypts what it moves or copies to the destination's list, a
