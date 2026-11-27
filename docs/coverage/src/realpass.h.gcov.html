@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 20:09:11</td>
+            <td class="headerValue">2026-11-27 20:38:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -483,8 +483,8 @@
 <span id="L410"><span class="lineNum">     410</span>              :   /// The entries of the queued inserts, oldest first.</span>
 <span id="L411"><span class="lineNum">     411</span>              :   QQueue&lt;QString&gt; m_insertQueue;</span>
 <span id="L412"><span class="lineNum">     412</span>              :   /// The inserts that left the queue and have yet to complete, in the</span>
-<span id="L413"><span class="lineNum">     413</span>              :   /// order their completions come: a failed start's error is posted, and</span>
-<span id="L414"><span class="lineNum">     414</span>              :   /// the next insert may start before it arrives.</span>
+<span id="L413"><span class="lineNum">     413</span>              :   /// order their completions come (a failed start's error is posted, and</span>
+<span id="L414"><span class="lineNum">     414</span>              :   /// the executor starts nothing else until it is out).</span>
 <span id="L415"><span class="lineNum">     415</span>              :   QQueue&lt;InsertRecord&gt; m_insertPending;</span>
 <span id="L416"><span class="lineNum">     416</span>              :   /// The insert whose completion is being handled.</span>
 <span id="L417"><span class="lineNum">     417</span>              :   InsertRecord m_insertDone;</span>

@@ -166,7 +166,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>A stream of bytes held as its first and last kMaxStderrBytes / 2 bytes, with its gpg status records counted whole. </p>
 <p>What is left out of the text is still counted: a caller that judges a run by its status records (<a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> counting END_ENCRYPTION against the entries pass re-encrypted) reads <a class="el" href="#aacc1668889e01a2a7a668e104f187c34" title="How many complete lines of each gpg status keyword came by since the last take(), the left-out ones i...">statusCounts()</a>, not the capped text. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00186">186</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00187">187</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a6612def2eb2bb3aad8a91751c86c1813" name="a6612def2eb2bb3aad8a91751c86c1813"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6612def2eb2bb3aad8a91751c86c1813">&#9670;&#160;</a></span>append()</h2>
@@ -232,7 +232,7 @@ Private Attributes</h2></td></tr>
 
 <p>Drop everything, counts included, for the next command. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00214">214</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00215">215</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -315,7 +315,7 @@ Private Attributes</h2></td></tr>
 <p>How many complete lines of each gpg status keyword came by since the last <a class="el" href="#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over.">take()</a>, the left-out ones included. </p>
 <p>A line counts when it starts with "[GNUPG:] "; its keyword is the word after that. Lines longer than kMaxStatusLineBytes, and keywords past the first kMaxStatusKeywords, are not counted: gpg's own status lines are short and few in kind. </p><dl class="section return"><dt>Returns</dt><dd>Keyword to count. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00210">210</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00211">211</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -382,7 +382,7 @@ Private Attributes</h2></td></tr>
 
 <p>Most distinct status keywords counted. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00221">221</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00222">222</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -408,7 +408,7 @@ Private Attributes</h2></td></tr>
 
 <p>Longest line still looked at for a status keyword. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00219">219</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00220">220</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -434,7 +434,7 @@ Private Attributes</h2></td></tr>
 
 <p>Bytes that fell out between head and tail. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00240">240</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00241">241</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -460,7 +460,7 @@ Private Attributes</h2></td></tr>
 
 <p>The first bytes, up to half the cap. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00236">236</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00237">237</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -486,7 +486,7 @@ Private Attributes</h2></td></tr>
 
 <p>The line not ended yet; empty once it ran too long. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00230">230</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00231">231</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -512,7 +512,7 @@ Private Attributes</h2></td></tr>
 
 <p>The line not ended yet ran past kMaxStatusLineBytes. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00232">232</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00233">233</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -538,7 +538,7 @@ Private Attributes</h2></td></tr>
 
 <p>Status keyword to count, see <a class="el" href="#aacc1668889e01a2a7a668e104f187c34" title="How many complete lines of each gpg status keyword came by since the last take(), the left-out ones i...">statusCounts()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00234">234</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00235">235</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -564,7 +564,7 @@ Private Attributes</h2></td></tr>
 
 <p>The latest bytes, up to half the cap. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00238">238</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00239">239</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
