@@ -611,6 +611,7 @@ private Q_SLOTS:
   void reencryptPathAggregatesFailuresIntoOneCritical();
   void reencryptFailsForAFolderItCannotRead();
   void reencryptPathCancelStopsBetweenFiles();
+  void reencryptAsksWhenAGroupWouldGainAnEntry();
   void reencryptPathCancelInterruptsActiveProcess();
   void reencryptPathCancelKillsProcessIgnoringTerminate();
   void destructorInterruptsActiveReencryptProcess();
@@ -870,6 +871,79 @@ void tst_imitatepass::reencryptFailsForAFolderItCannotRead() {
  * the cancel interrupted is not), and a second reencryptPath() during the run
  * is ignored.
  */
+/**
+ * @brief A `.gpg-id` that names a gpg group: GnuPG before 2.3 lists nothing
+ *        for the name, so the group's members come from `--list-config`.
+ *        An entry only key A reads, in a folder whose group is A and B, is
+ *        left for the user rather than handed to B (scan finding
+ *        ANT-2026-SEN4VBBB).
+ */
+void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString store = tmp.path();
+  const QString fa = QStringLiteral("AAAA") + QString(36, QLatin1Char('1'));
+  const QString fb = QStringLiteral("BBBB") + QString(36, QLatin1Char('2'));
+  const QString logPath = QDir(store).filePath("gpg-argv.log");
+  const QString script = QDir(store).filePath("group-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "last=''; for a in \"$@\"; do last=\"$a\"; done\n"
+        << "case \"$*\" in\n"
+        << "  *--list-only*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0';;\n"
+        << "  *--list-config*) echo 'cfg:group:grp:" << fa << ";" << fb
+        << "';;\n"
+        << "  *'--list-keys --') printf "
+           "'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
+           "fpr:::::::::"
+        << fa
+        << ":\\npub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\nfpr:::::::::" << fb
+        << ":\\n';;\n"
+        << "  *--list-keys*) case \"$last\" in\n"
+        << "      " << fa
+        << ") printf 'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
+           "fpr:::::::::"
+        << fa << ":\\n';;\n"
+        << "      " << fb
+        << ") printf 'pub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\n"
+           "fpr:::::::::"
+        << fb << ":\\n';;\n"
+        << "    esac;;\n"
+        << "  *' -d '*|*' -d') printf 'plaintext\\n';;\n"
+        << "  *-eq*) cat >/dev/null;;\n"
+        << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  {
+    QFile list(QDir(store).filePath(".gpg-id"));
+    QVERIFY(list.open(QIODevice::WriteOnly));
+    QVERIFY(list.write("grp\n") > 0);
+    QFile entry(QDir(store).filePath("entry.gpg"));
+    QVERIFY(entry.open(QIODevice::WriteOnly));
+    QVERIFY(entry.write("ciphertext") > 0);
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(store, script));
+  QSignalSpy unexpected(&pass, &ImitatePass::unexpectedRecipients);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(store);
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCoreApplication::processEvents();
+  QCOMPARE(unexpected.count(), 1);
+  QCOMPARE(unexpected.first().at(1).toStringList(),
+           QStringList{QDir(store).filePath("entry.gpg")});
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "the entry must not be re-encrypted to the group unasked");
+}
+
 void tst_imitatepass::reencryptPathCancelStopsBetweenFiles() {
 #ifdef Q_OS_WIN
   QSKIP("uses a shell script as a slow fake gpg");

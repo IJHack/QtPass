@@ -195,9 +195,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   named, and QtPass asks whether to re-encrypt it. Removing a recipient,
   adding one in Users, and what you move or copy in yourself work as
   before; "Re-encrypt all" after editing `.gpg-id` by hand asks for the
-  entries the new names would gain. Native backend; an entry planted before
-  you add someone to a folder still looks like the folder's own, as
-  SECURITY.md now says (scan finding ANT-2026-SEN4VBBB).
+  entries the new names would gain. Native backend. As SECURITY.md now says,
+  this stops a plain copy: an entry planted before you add someone still
+  looks like the folder's own, and one crafted to name a reader it does not
+  have still passes (scan finding ANT-2026-SEN4VBBB).
 - Copying a folder with the `pass` backend is refused when the folder holds
   a symbolic link. pass copies with `cp -r`, which on macOS and the BSDs
   follows a link inside the folder: someone who can push to a shared store

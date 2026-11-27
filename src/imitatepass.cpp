@@ -1078,10 +1078,41 @@ auto ImitatePass::primaryKeysOf(const QStringList &ids, bool fromList,
   };
   QSet<QString> result;
   if (fromList) {
+    // A list line may name a gpg group (gpg.conf), which `-r` expands and a
+    // key listing does not know before GnuPG 2.3: its members count.
+    std::optional<QHash<QString, QStringList>> groups;
     for (const QString &line : ids) {
       QSet<QString> found;
       if (!listKeys({line}, nullptr, &found) || found.isEmpty()) {
-        return std::nullopt;
+        if (!groups) {
+          groups.emplace();
+          QString out;
+          QString err;
+          if (execBlocking(
+                  m_settings.gpgExecutable,
+                  {QStringLiteral("--batch"), QStringLiteral("--with-colons"),
+                   QStringLiteral("--list-config"), QStringLiteral("group")},
+                  &out, &err) == 0) {
+            for (const QString &cfg : out.split(Util::newLinesRegex())) {
+              const QStringList f = cfg.split(QLatin1Char(':'));
+              if (f.size() >= 4 && f.at(0) == QLatin1String("cfg") &&
+                  f.at(1) == QLatin1String("group")) {
+                groups->insert(f.at(2), f.at(3).split(QLatin1Char(';'),
+                                                      Qt::SkipEmptyParts));
+              }
+            }
+          }
+        }
+        const QStringList members = groups->value(line);
+        for (const QString &member : members) {
+          QSet<QString> one;
+          if (listKeys({member}, nullptr, &one)) {
+            found.unite(one);
+          }
+        }
+        if (members.isEmpty() || found.isEmpty()) {
+          return std::nullopt;
+        }
       }
       result.unite(found);
     }
@@ -1728,7 +1759,10 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
         if (m_previousList && m_previousList->gpgIdFile == gpgIdPath) {
           before = primaryKeysOf(m_previousList->recipients, true, primaries);
         }
-        listKeys.insert(gpgIdPath, {now, before.value_or(QSet<QString>())});
+        // A previous list gpg cannot resolve exempts no one: taken as the
+        // current one, nobody counts as added.
+        listKeys.insert(
+            gpgIdPath, {now, before ? *before : now.value_or(QSet<QString>())});
       }
       const auto &[now, before] = listKeys.value(gpgIdPath);
       bool gains = false;
