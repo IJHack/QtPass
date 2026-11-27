@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 10:16:59</td>
+            <td class="headerValue">2026-11-27 11:31:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
@@ -111,7 +111,7 @@
 <span id="L38"><span class="lineNum">      38</span>              :  * This is used as a fallback when RealPass cannot be initialized.</span>
 <span id="L39"><span class="lineNum">      39</span>              :  */</span>
 <span id="L40"><span class="lineNum">      40</span>              : class ImitatePass : public Pass {</span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         654 :   Q_OBJECT</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         656 :   Q_OBJECT</span></span>
 <span id="L42"><span class="lineNum">      42</span>              : </span>
 <span id="L43"><span class="lineNum">      43</span>              :   friend class tst_util;</span>
 <span id="L44"><span class="lineNum">      44</span>              :   friend class tst_imitatepass;</span>
@@ -416,12 +416,12 @@
 <span id="L343"><span class="lineNum">     343</span>              :      */</span>
 <span id="L344"><span class="lineNum">     344</span>              :     TransactionHelper(SimpleTransaction *trans, PROCESS result)</span>
 <span id="L345"><span class="lineNum">     345</span>              :         : m_transaction(trans), m_result(result) {</span>
-<span id="L346"><span class="lineNum">     346</span> <span class="tlaGNC">         108 :       m_transaction-&gt;transactionStart();</span></span>
-<span id="L347"><span class="lineNum">     347</span> <span class="tlaGNC">         108 :     }</span></span>
+<span id="L346"><span class="lineNum">     346</span> <span class="tlaGNC">         110 :       m_transaction-&gt;transactionStart();</span></span>
+<span id="L347"><span class="lineNum">     347</span> <span class="tlaGNC">         110 :     }</span></span>
 <span id="L348"><span class="lineNum">     348</span>              :     /**</span>
 <span id="L349"><span class="lineNum">     349</span>              :      * @brief End transaction on destruction.</span>
 <span id="L350"><span class="lineNum">     350</span>              :      */</span>
-<span id="L351"><span class="lineNum">     351</span> <span class="tlaGNC">         108 :     ~TransactionHelper() { m_transaction-&gt;transactionEnd(m_result); }</span></span>
+<span id="L351"><span class="lineNum">     351</span> <span class="tlaGNC">         110 :     ~TransactionHelper() { m_transaction-&gt;transactionEnd(m_result); }</span></span>
 <span id="L352"><span class="lineNum">     352</span>              :   };</span>
 <span id="L353"><span class="lineNum">     353</span>              : </span>
 <span id="L354"><span class="lineNum">     354</span>              : protected:</span>

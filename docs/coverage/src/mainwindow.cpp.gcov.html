@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 10:16:59</td>
+            <td class="headerValue">2026-11-27 11:31:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -456,14 +456,14 @@
 <span id="L383"><span class="lineNum">     383</span> <span class="tlaGNC">          76 :   m_firstShowCompleted = true;</span></span>
 <span id="L384"><span class="lineNum">     384</span>              : }</span>
 <span id="L385"><span class="lineNum">     385</span>              : </span>
-<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">        9149 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L387"><span class="lineNum">     387</span> <span class="tlaGNC">        9149 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">        9158 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L387"><span class="lineNum">     387</span> <span class="tlaGNC">        9158 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L388"><span class="lineNum">     388</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L389"><span class="lineNum">     389</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L390"><span class="lineNum">     390</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L391"><span class="lineNum">     391</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L392"><span class="lineNum">     392</span>              :   }</span>
-<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">        9149 :   return QMainWindow::event(event);</span></span>
+<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">        9158 :   return QMainWindow::event(event);</span></span>
 <span id="L394"><span class="lineNum">     394</span>              : }</span>
 <span id="L395"><span class="lineNum">     395</span>              : </span>
 <span id="L396"><span class="lineNum">     396</span> <span class="tlaGNC">         265 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -1077,27 +1077,27 @@
 <span id="L1004"><span class="lineNum">    1004</span> <span class="tlaGNC">          37 :   searchTimer.start();</span></span>
 <span id="L1005"><span class="lineNum">    1005</span>              : }</span>
 <span id="L1006"><span class="lineNum">    1006</span>              : </span>
-<span id="L1007"><span class="lineNum">    1007</span> <span class="tlaGNC">          42 : void MainWindow::onTimeoutSearch() {</span></span>
+<span id="L1007"><span class="lineNum">    1007</span> <span class="tlaGNC">          41 : void MainWindow::onTimeoutSearch() {</span></span>
 <span id="L1008"><span class="lineNum">    1008</span>              :   // The tree matches slash-separated paths: on Windows, team\bank typed is</span>
 <span id="L1009"><span class="lineNum">    1009</span>              :   // team/bank, as exactMatchPath() reads it too.</span>
-<span id="L1010"><span class="lineNum">    1010</span> <span class="tlaGNC">          84 :   QString query = QDir::fromNativeSeparators(ui-&gt;lineEdit-&gt;text());</span></span>
+<span id="L1010"><span class="lineNum">    1010</span> <span class="tlaGNC">          82 :   QString query = QDir::fromNativeSeparators(ui-&gt;lineEdit-&gt;text());</span></span>
 <span id="L1011"><span class="lineNum">    1011</span>              : </span>
-<span id="L1012"><span class="lineNum">    1012</span> <span class="tlaGNC">          42 :   if (query.isEmpty()) {</span></span>
+<span id="L1012"><span class="lineNum">    1012</span> <span class="tlaGNC">          41 :   if (query.isEmpty()) {</span></span>
 <span id="L1013"><span class="lineNum">    1013</span> <span class="tlaGNC">           2 :     ui-&gt;treeView-&gt;collapseAll();</span></span>
 <span id="L1014"><span class="lineNum">    1014</span> <span class="tlaGNC">           2 :     deselect();</span></span>
 <span id="L1015"><span class="lineNum">    1015</span>              :   }</span>
 <span id="L1016"><span class="lineNum">    1016</span>              : </span>
 <span id="L1017"><span class="lineNum">    1017</span>              :   // The words are matched literally, in order, with anything in between:</span>
 <span id="L1018"><span class="lineNum">    1018</span>              :   // &quot;work vpn&quot; finds work/acme/vpn.</span>
-<span id="L1019"><span class="lineNum">    1019</span> <span class="tlaGNC">          42 :   m_tree-&gt;setFilter(StoreModel::wordsFilter(query));</span></span>
+<span id="L1019"><span class="lineNum">    1019</span> <span class="tlaGNC">          41 :   m_tree-&gt;setFilter(StoreModel::wordsFilter(query));</span></span>
 <span id="L1020"><span class="lineNum">    1020</span>              : </span>
-<span id="L1021"><span class="lineNum">    1021</span> <span class="tlaGNC">          42 :   if (m_tree-&gt;proxy().rowCount() &gt; 0 &amp;&amp; !query.isEmpty()) {</span></span>
-<span id="L1022"><span class="lineNum">    1022</span> <span class="tlaGNC">          30 :     selectFirstFile();</span></span>
+<span id="L1021"><span class="lineNum">    1021</span> <span class="tlaGNC">          41 :   if (m_tree-&gt;proxy().rowCount() &gt; 0 &amp;&amp; !query.isEmpty()) {</span></span>
+<span id="L1022"><span class="lineNum">    1022</span> <span class="tlaGNC">          29 :     selectFirstFile();</span></span>
 <span id="L1023"><span class="lineNum">    1023</span>              :   } else {</span>
 <span id="L1024"><span class="lineNum">    1024</span> <span class="tlaGNC">          12 :     ui-&gt;actionEdit-&gt;setEnabled(false);</span></span>
 <span id="L1025"><span class="lineNum">    1025</span> <span class="tlaGNC">          12 :     ui-&gt;actionDelete-&gt;setEnabled(false);</span></span>
 <span id="L1026"><span class="lineNum">    1026</span>              :   }</span>
-<span id="L1027"><span class="lineNum">    1027</span> <span class="tlaGNC">          42 : }</span></span>
+<span id="L1027"><span class="lineNum">    1027</span> <span class="tlaGNC">          41 : }</span></span>
 <span id="L1028"><span class="lineNum">    1028</span>              : </span>
 <span id="L1029"><span class="lineNum">    1029</span> <span class="tlaGNC">          17 : void MainWindow::on_lineEdit_returnPressed() {</span></span>
 <span id="L1030"><span class="lineNum">    1030</span> <span class="tlaGNC">          17 :   qCDebug(lcQtPass) &lt;&lt; &quot;on_lineEdit_returnPressed&quot;</span></span>
@@ -1320,15 +1320,15 @@
 <span id="L1247"><span class="lineNum">    1247</span> <span class="tlaGNC">          28 :   QtPassSettings::getImitatePass()-&gt;CancelGrep();</span></span>
 <span id="L1248"><span class="lineNum">    1248</span> <span class="tlaGNC">          28 : }</span></span>
 <span id="L1249"><span class="lineNum">    1249</span>              : </span>
-<span id="L1250"><span class="lineNum">    1250</span> <span class="tlaGNC">          35 : void MainWindow::selectFirstFile() {</span></span>
+<span id="L1250"><span class="lineNum">    1250</span> <span class="tlaGNC">          34 : void MainWindow::selectFirstFile() {</span></span>
 <span id="L1251"><span class="lineNum">    1251</span>              :   // The entry named exactly as typed wins: with folders sorted first, the</span>
 <span id="L1252"><span class="lineNum">    1252</span>              :   // depth-first walk found team/bank before bank.</span>
-<span id="L1253"><span class="lineNum">    1253</span> <span class="tlaGNC">          35 :   QModelIndex index = exactMatch();</span></span>
+<span id="L1253"><span class="lineNum">    1253</span> <span class="tlaGNC">          34 :   QModelIndex index = exactMatch();</span></span>
 <span id="L1254"><span class="lineNum">    1254</span>              :   if (!index.isValid()) {</span>
-<span id="L1255"><span class="lineNum">    1255</span> <span class="tlaGNC">          18 :     index = firstFile(m_tree-&gt;rootIndex());</span></span>
+<span id="L1255"><span class="lineNum">    1255</span> <span class="tlaGNC">          17 :     index = firstFile(m_tree-&gt;rootIndex());</span></span>
 <span id="L1256"><span class="lineNum">    1256</span>              :   }</span>
-<span id="L1257"><span class="lineNum">    1257</span> <span class="tlaGNC">          35 :   ui-&gt;treeView-&gt;setCurrentIndex(index);</span></span>
-<span id="L1258"><span class="lineNum">    1258</span> <span class="tlaGNC">          35 : }</span></span>
+<span id="L1257"><span class="lineNum">    1257</span> <span class="tlaGNC">          34 :   ui-&gt;treeView-&gt;setCurrentIndex(index);</span></span>
+<span id="L1258"><span class="lineNum">    1258</span> <span class="tlaGNC">          34 : }</span></span>
 <span id="L1259"><span class="lineNum">    1259</span>              : </span>
 <span id="L1260"><span class="lineNum">    1260</span>              : namespace {</span>
 <span id="L1261"><span class="lineNum">    1261</span>              : /**</span>
@@ -1374,28 +1374,28 @@
 <span id="L1301"><span class="lineNum">    1301</span> <span class="tlaGNC">          33 : }</span></span>
 <span id="L1302"><span class="lineNum">    1302</span>              : } // namespace</span>
 <span id="L1303"><span class="lineNum">    1303</span>              : </span>
-<span id="L1304"><span class="lineNum">    1304</span> <span class="tlaGNC">          53 : auto MainWindow::exactMatchPath() -&gt; QString {</span></span>
-<span id="L1305"><span class="lineNum">    1305</span> <span class="tlaGNC">         106 :   const QString text = QDir::fromNativeSeparators(ui-&gt;lineEdit-&gt;text());</span></span>
-<span id="L1306"><span class="lineNum">    1306</span> <span class="tlaGNC">         106 :   const QString store = QtPassSettings::getPassStore();</span></span>
+<span id="L1304"><span class="lineNum">    1304</span> <span class="tlaGNC">          52 : auto MainWindow::exactMatchPath() -&gt; QString {</span></span>
+<span id="L1305"><span class="lineNum">    1305</span> <span class="tlaGNC">         104 :   const QString text = QDir::fromNativeSeparators(ui-&gt;lineEdit-&gt;text());</span></span>
+<span id="L1306"><span class="lineNum">    1306</span> <span class="tlaGNC">         104 :   const QString store = QtPassSettings::getPassStore();</span></span>
 <span id="L1307"><span class="lineNum">    1307</span>              :   // A name may begin or end with a space: &quot; bank&quot; is that entry, not bank.</span>
 <span id="L1308"><span class="lineNum">    1308</span>              :   // Only when no entry is named so are spaces around the text dropped.</span>
-<span id="L1309"><span class="lineNum">    1309</span> <span class="tlaGNC">         201 :   for (const QString &amp;typed : {text, text.trimmed()}) {</span></span>
-<span id="L1310"><span class="lineNum">    1310</span> <span class="tlaGNC">          75 :     if (typed.isEmpty()) {</span></span>
+<span id="L1309"><span class="lineNum">    1309</span> <span class="tlaGNC">         196 :   for (const QString &amp;typed : {text, text.trimmed()}) {</span></span>
+<span id="L1310"><span class="lineNum">    1310</span> <span class="tlaGNC">          73 :     if (typed.isEmpty()) {</span></span>
 <span id="L1311"><span class="lineNum">    1311</span> <span class="tlaUNC">           0 :       continue;</span></span>
 <span id="L1312"><span class="lineNum">    1312</span>              :     }</span>
 <span id="L1313"><span class="lineNum">    1313</span>              :     const QString path =</span>
-<span id="L1314"><span class="lineNum">    1314</span> <span class="tlaGNC">         150 :         QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(&quot;.gpg&quot;)));</span></span>
-<span id="L1315"><span class="lineNum">    1315</span> <span class="tlaGNC">          75 :     if (PathValidator::isPathInStore(store, path) &amp;&amp; QFileInfo(path).isFile()) {</span></span>
+<span id="L1314"><span class="lineNum">    1314</span> <span class="tlaGNC">         146 :         QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(&quot;.gpg&quot;)));</span></span>
+<span id="L1315"><span class="lineNum">    1315</span> <span class="tlaGNC">          73 :     if (PathValidator::isPathInStore(store, path) &amp;&amp; QFileInfo(path).isFile()) {</span></span>
 <span id="L1316"><span class="lineNum">    1316</span> <span class="tlaGNC">          33 :       return spelledAsStored(store, path);</span></span>
 <span id="L1317"><span class="lineNum">    1317</span>              :     }</span>
-<span id="L1318"><span class="lineNum">    1318</span> <span class="tlaGNC">         159 :   }</span></span>
-<span id="L1319"><span class="lineNum">    1319</span> <span class="tlaGNC">          20 :   return {};</span></span>
+<span id="L1318"><span class="lineNum">    1318</span> <span class="tlaGNC">         156 :   }</span></span>
+<span id="L1319"><span class="lineNum">    1319</span> <span class="tlaGNC">          19 :   return {};</span></span>
 <span id="L1320"><span class="lineNum">    1320</span>              : }</span>
 <span id="L1321"><span class="lineNum">    1321</span>              : </span>
-<span id="L1322"><span class="lineNum">    1322</span> <span class="tlaGNC">          49 : auto MainWindow::exactMatch() -&gt; QModelIndex {</span></span>
-<span id="L1323"><span class="lineNum">    1323</span> <span class="tlaGNC">          49 :   const QString path = exactMatchPath();</span></span>
-<span id="L1324"><span class="lineNum">    1324</span> <span class="tlaGNC">          49 :   if (path.isEmpty()) {</span></span>
-<span id="L1325"><span class="lineNum">    1325</span> <span class="tlaGNC">          19 :     return {};</span></span>
+<span id="L1322"><span class="lineNum">    1322</span> <span class="tlaGNC">          48 : auto MainWindow::exactMatch() -&gt; QModelIndex {</span></span>
+<span id="L1323"><span class="lineNum">    1323</span> <span class="tlaGNC">          48 :   const QString path = exactMatchPath();</span></span>
+<span id="L1324"><span class="lineNum">    1324</span> <span class="tlaGNC">          48 :   if (path.isEmpty()) {</span></span>
+<span id="L1325"><span class="lineNum">    1325</span> <span class="tlaGNC">          18 :     return {};</span></span>
 <span id="L1326"><span class="lineNum">    1326</span>              :   }</span>
 <span id="L1327"><span class="lineNum">    1327</span>              :   // indexFor() maps through the filter: a row the filter hides is no match.</span>
 <span id="L1328"><span class="lineNum">    1328</span> <span class="tlaGNC">          30 :   const QModelIndex index = m_tree-&gt;indexFor(path);</span></span>
@@ -1459,21 +1459,21 @@
 <span id="L1386"><span class="lineNum">    1386</span> <span class="tlaGNC">           6 :   on_treeView_clicked(index);</span></span>
 <span id="L1387"><span class="lineNum">    1387</span> <span class="tlaGNC">           6 : }</span></span>
 <span id="L1388"><span class="lineNum">    1388</span>              : </span>
-<span id="L1389"><span class="lineNum">    1389</span> <span class="tlaGNC">          28 : auto MainWindow::firstFile(QModelIndex parentIndex) -&gt; QModelIndex {</span></span>
-<span id="L1390"><span class="lineNum">    1390</span> <span class="tlaGNC">          28 :   StoreModel &amp;proxy = m_tree-&gt;proxy();</span></span>
-<span id="L1391"><span class="lineNum">    1391</span> <span class="tlaGNC">          28 :   int numRows = proxy.rowCount(parentIndex);</span></span>
-<span id="L1392"><span class="lineNum">    1392</span> <span class="tlaGNC">          36 :   for (int row = 0; row &lt; numRows; ++row) {</span></span>
-<span id="L1393"><span class="lineNum">    1393</span> <span class="tlaGNC">          25 :     QModelIndex index = proxy.index(row, 0, parentIndex);</span></span>
-<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">          25 :     if (m_tree-&gt;fileInfo(index).isFile()) {</span></span>
+<span id="L1389"><span class="lineNum">    1389</span> <span class="tlaGNC">          26 : auto MainWindow::firstFile(QModelIndex parentIndex) -&gt; QModelIndex {</span></span>
+<span id="L1390"><span class="lineNum">    1390</span> <span class="tlaGNC">          26 :   StoreModel &amp;proxy = m_tree-&gt;proxy();</span></span>
+<span id="L1391"><span class="lineNum">    1391</span> <span class="tlaGNC">          26 :   int numRows = proxy.rowCount(parentIndex);</span></span>
+<span id="L1392"><span class="lineNum">    1392</span> <span class="tlaGNC">          33 :   for (int row = 0; row &lt; numRows; ++row) {</span></span>
+<span id="L1393"><span class="lineNum">    1393</span> <span class="tlaGNC">          24 :     QModelIndex index = proxy.index(row, 0, parentIndex);</span></span>
+<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">          24 :     if (m_tree-&gt;fileInfo(index).isFile()) {</span></span>
 <span id="L1395"><span class="lineNum">    1395</span> <span class="tlaGNC">          17 :       return index;</span></span>
 <span id="L1396"><span class="lineNum">    1396</span>              :     }</span>
-<span id="L1397"><span class="lineNum">    1397</span> <span class="tlaGNC">          15 :     if (proxy.hasChildren(index)) {</span></span>
-<span id="L1398"><span class="lineNum">    1398</span> <span class="tlaGNC">          10 :       QModelIndex childFile = firstFile(index);</span></span>
+<span id="L1397"><span class="lineNum">    1397</span> <span class="tlaGNC">          14 :     if (proxy.hasChildren(index)) {</span></span>
+<span id="L1398"><span class="lineNum">    1398</span> <span class="tlaGNC">           9 :       QModelIndex childFile = firstFile(index);</span></span>
 <span id="L1399"><span class="lineNum">    1399</span>              :       if (childFile.isValid())</span>
 <span id="L1400"><span class="lineNum">    1400</span> <span class="tlaGNC">           7 :         return childFile;</span></span>
 <span id="L1401"><span class="lineNum">    1401</span>              :     }</span>
 <span id="L1402"><span class="lineNum">    1402</span>              :   }</span>
-<span id="L1403"><span class="lineNum">    1403</span> <span class="tlaGNC">          11 :   return QModelIndex();</span></span>
+<span id="L1403"><span class="lineNum">    1403</span> <span class="tlaGNC">           9 :   return QModelIndex();</span></span>
 <span id="L1404"><span class="lineNum">    1404</span>              : }</span>
 <span id="L1405"><span class="lineNum">    1405</span>              : </span>
 <span id="L1406"><span class="lineNum">    1406</span>              : // Guards the input dialogs (create, move, rename) against names like</span>
@@ -1842,8 +1842,8 @@
 <span id="L1769"><span class="lineNum">    1769</span>              :   }</span>
 <span id="L1770"><span class="lineNum">    1770</span> <span class="tlaGNC">           4 : }</span></span>
 <span id="L1771"><span class="lineNum">    1771</span>              : </span>
-<span id="L1772"><span class="lineNum">    1772</span> <span class="tlaGNC">        8351 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
-<span id="L1773"><span class="lineNum">    1773</span> <span class="tlaGNC">        8351 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
+<span id="L1772"><span class="lineNum">    1772</span> <span class="tlaGNC">        8352 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
+<span id="L1773"><span class="lineNum">    1773</span> <span class="tlaGNC">        8352 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
 <span id="L1774"><span class="lineNum">    1774</span>              :       event-&gt;type() == QEvent::PaletteChange) {</span>
 <span id="L1775"><span class="lineNum">    1775</span>              :     // Breeze gives these bars a &quot;header&quot; palette and, after a runtime</span>
 <span id="L1776"><span class="lineNum">    1776</span>              :     // light/dark switch, stamps the previous theme's colours back from a</span>
@@ -1851,7 +1851,7 @@
 <span id="L1778"><span class="lineNum">    1778</span>              :     // re-enter the style while it is still applying its palette.</span>
 <span id="L1779"><span class="lineNum">    1779</span> <span class="tlaGNC">          36 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L1780"><span class="lineNum">    1780</span>              :   }</span>
-<span id="L1781"><span class="lineNum">    1781</span> <span class="tlaGNC">        8351 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
+<span id="L1781"><span class="lineNum">    1781</span> <span class="tlaGNC">        8352 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
 <span id="L1782"><span class="lineNum">    1782</span> <span class="tlaGNC">           5 :     auto *key = dynamic_cast&lt;QKeyEvent *&gt;(event);</span></span>
 <span id="L1783"><span class="lineNum">    1783</span> <span class="tlaGNC">           5 :     if (key != nullptr &amp;&amp; key-&gt;key() == Qt::Key_Down) {</span></span>
 <span id="L1784"><span class="lineNum">    1784</span>              :       // Into whichever list is in sight: the tree, or content search results.</span>
@@ -1873,7 +1873,7 @@
 <span id="L1800"><span class="lineNum">    1800</span> <span class="tlaGNC">           3 :       return true;</span></span>
 <span id="L1801"><span class="lineNum">    1801</span>              :     }</span>
 <span id="L1802"><span class="lineNum">    1802</span>              :   }</span>
-<span id="L1803"><span class="lineNum">    1803</span> <span class="tlaGNC">        8348 :   return QObject::eventFilter(obj, event);</span></span>
+<span id="L1803"><span class="lineNum">    1803</span> <span class="tlaGNC">        8349 :   return QObject::eventFilter(obj, event);</span></span>
 <span id="L1804"><span class="lineNum">    1804</span>              : }</span>
 <span id="L1805"><span class="lineNum">    1805</span>              : </span>
 <span id="L1806"><span class="lineNum">    1806</span>              : // Only once the application palette changed (see m_themeSwitched): a bar</span>
