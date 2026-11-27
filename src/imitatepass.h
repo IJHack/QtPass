@@ -915,8 +915,10 @@ private:
   std::optional<WrittenGpgId> m_writtenGpgId;
   /**
    * @brief The list a folder had before Init() replaced it, for the run it
-   * starts: an entry encrypted to those keys is the folder's own and is
-   * re-encrypted to the new list; any other is left for the user.
+   * starts. It tells whom the change added (who then gains every entry, as
+   * adding someone means) and whom it removed (who may still read an entry
+   * left alone). An entry is not compared with it: the worker asks before
+   * an entry gains anyone on the new list other than those added.
    */
   struct PreviousList {
     QString gpgIdFile;      ///< The list Init() wrote, which now applies.

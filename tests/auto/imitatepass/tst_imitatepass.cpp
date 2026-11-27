@@ -969,18 +969,29 @@ void tst_imitatepass::reencryptAsksAgainWhenTheListChangedSinceTheQuestion() {
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
     QTextStream out(&f);
     // The probe's ENC_TO lines come from probe-ids, so the test can change
-    // what the list encrypts to between the question and the yes.
+    // what the list encrypts to between the question and the yes. As with
+    // throw-keyids in gpg.conf, the IDs are hidden unless the encryption
+    // asks for them (--no-throw-keyids).
     out << "#!/bin/sh\n"
         << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "ids='" << probeIds << "'\n"
         << "case \"$*\" in\n"
-        << "  *--list-only*probe.gpg*) while read -r id; do echo \"[GNUPG:] "
-           "ENC_TO $id 18 0\"; done < '"
-        << probeIds << "';;\n"
+        << "  *--list-only*probe.gpg*) cat \"$ids.out\";;\n"
         << "  *--list-only*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0';;\n"
         << "  *--list-keys) printf 'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
-           "fpr:::::::::AAAA111111111111111111111111111111111111:\\n';;\n"
+           "fpr:::::::::AAAA111111111111111111111111111111111111:\\n"
+           "uid:u::::::::Alice <a@example.org>:\\n"
+           "pub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\n"
+           "fpr:::::::::BBBB222222222222222222222222222222222222:\\n"
+           "uid:u::::::::Bob <b@example.org>:\\n';;\n"
         << "  *' -d '*|*' -d') printf 'plaintext\\n';;\n"
-        << "  *-eq*) cat >/dev/null;;\n"
+        << "  *-eq*) cat >/dev/null\n"
+        << "    case \"$*\" in\n"
+        << "      *--no-throw-keyids*) sed 's/^/[GNUPG:] ENC_TO /; s/$/ 18 0/' "
+           "\"$ids\" > \"$ids.out\";;\n"
+        << "      *) sed 's/^.*$/[GNUPG:] ENC_TO 0000000000000000 18 0/' "
+           "\"$ids\" > \"$ids.out\";;\n"
+        << "    esac;;\n"
         << "esac\n"
         << "exit 0\n";
     out.flush();
@@ -993,8 +1004,8 @@ void tst_imitatepass::reencryptAsksAgainWhenTheListChangedSinceTheQuestion() {
     return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
            f.write(ids) == ids.size();
   };
-  // A and a key whose ID gpg hides.
-  QVERIFY(writeProbe("AAAAAAAAAAAAAAAA\n0000000000000000\n"));
+  // The list encrypts to A and B; the entry only A reads.
+  QVERIFY(writeProbe("AAAAAAAAAAAAAAAA\nBBBBBBBBBBBBBBBB\n"));
   {
     QFile list(QDir(store).filePath(".gpg-id"));
     QVERIFY(list.open(QIODevice::WriteOnly));
@@ -1013,9 +1024,13 @@ void tst_imitatepass::reencryptAsksAgainWhenTheListChangedSinceTheQuestion() {
   QCoreApplication::processEvents();
   QCOMPARE(unexpected.count(), 1);
   QCOMPARE(unexpected.first().at(1).toStringList(), QStringList{entry});
+  // B by name: the probe asked gpg to show the IDs throw-keyids hides.
+  QVERIFY2(unexpected.first().at(2).toStringList().value(0).contains(
+               QStringLiteral("Bob")),
+           qPrintable(unexpected.first().at(2).toStringList().join('|')));
 
   // The list now encrypts to another key too: the yes was for the keys shown.
-  QVERIFY(writeProbe("AAAAAAAAAAAAAAAA\n0000000000000000\nCCCCCCCCCCCCCCCC\n"));
+  QVERIFY(writeProbe("AAAAAAAAAAAAAAAA\nBBBBBBBBBBBBBBBB\nCCCCCCCCCCCCCCCC\n"));
   unexpected.clear();
   endSpy.clear();
   pass.reencryptAlso(store, {entry}, settingsFor(store, script));

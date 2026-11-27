@@ -239,6 +239,10 @@ constexpr int kReencryptMaxListedFailures = 15;
  * text, which a decrypt hands back without its carriage returns: the entry
  * is stored as the bytes given.
  */
+/// Stands for a recipient no key ID names: one gpg encrypted to without
+/// saying whom, or whoever left a list gpg can no longer encrypt to.
+const QString kUnknownReader = QStringLiteral("?");
+
 auto encryptArgs(QStringList leading, const QString &output,
                  const QStringList &recipients) -> QStringList {
   leading << "-eq" << "--compress-algo=none" << "--no-encrypt-to"
@@ -1114,7 +1118,9 @@ auto ImitatePass::keysEncryptedTo(const QStringList &recipients,
   }
   const QStringList ids = getKeysFromFile(probe);
   if (ids.isEmpty()) {
-    return std::nullopt;
+    // gpg encrypted but its recipients could not be read back: someone the
+    // entry does not reach, as far as anyone can tell.
+    return QSet<QString>{kUnknownReader};
   }
   QSet<QString> keys = primaryKeysOf(ids, primaries, names);
   // A key gpg encrypted to but did not list (fetched for the probe, say)
@@ -1730,6 +1736,8 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   struct ListKeys {
     std::optional<QSet<QString>> now;
     QSet<QString> before;
+    bool beforeUnknown = false; ///< Init() replaced a list gpg cannot
+                                ///< encrypt to: who left it is unknown.
   };
   QHash<QString, ListKeys> listKeys;
   // What the user moved or copied in is taken as it is; what they agreed to
@@ -1763,6 +1771,7 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     // place of a folder on the way to it. gpg given the name reads the
     // target, and one already encrypted for these recipients would pass the
     // comparison without a word.
+    bool keepRecord = false;
     const QFileInfo entry(fileName);
     if (entry.isSymLink() || !entry.isFile() ||
         Util::isUnderLink(fileName, m_settings.passStore)) {
@@ -1800,8 +1809,10 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
             before =
                 keysEncryptedTo(m_previousList->recipients, primaries, names);
           }
-          // A previous list gpg cannot encrypt to exempts no one.
+          // A previous list gpg cannot encrypt to exempts no one, and leaves
+          // unknown who was taken off it.
           fresh.before = before ? *before : fresh.now.value_or(QSet<QString>());
+          fresh.beforeUnknown = !before;
           listKeys.insert(gpgIdPath, fresh);
         }
         const ListKeys &lk = listKeys[gpgIdPath];
@@ -1817,21 +1828,40 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
           gaining.subtract(added);
           gains = !gaining.isEmpty();
           // Who was taken off the list and still reads it, if it is skipped:
-          // by this change, or by an earlier one that left it so.
+          // by this change, or by an earlier one that left it so (and is not
+          // back on it now).
           QSet<QString> removed = lk.before;
-          removed.subtract(*lk.now);
           removed.unite(m_removedReaders.value(fileName));
-          losing = readers;
-          losing.intersect(removed);
+          removed.subtract(*lk.now);
+          if (lk.beforeUnknown) {
+            removed.insert(kUnknownReader);
+          }
+          // A recipient ID that names no known key (hidden by throw-keyids,
+          // or not in the keyring) may be anyone removed. When every ID is
+          // known, only those removed who are among them still read it.
+          const bool readersKnown = std::all_of(
+              keys.cbegin(), keys.cend(), [&primaries](const QString &id) {
+                return primaries.contains(id.toUpper());
+              });
+          if (!readersKnown) {
+            losing = removed;
+          } else {
+            losing = readers;
+            losing.intersect(removed);
+          }
         }
       }
       if (m_reencryptCancel.load()) {
         result.cancelled = true;
         break;
       }
-      const auto named = [&names](const QSet<QString> &fprs) {
+      const auto named = [this, &names](const QSet<QString> &fprs) {
         QStringList who;
         for (const QString &fpr : fprs) {
+          if (fpr == kUnknownReader) {
+            who << tr("a recipient gpg does not name");
+            continue;
+          }
           who << names.value(fpr, fpr.right(16));
         }
         who.sort();
@@ -1848,9 +1878,19 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
                          .arg(named(gaining))
                    : tr("would become readable by %1").arg(named(gaining));
         if (!losing.isEmpty()) {
+          // Named only where the entry's recipients say so; otherwise it
+          // may be.
           detail +=
               QStringLiteral("; ") +
-              tr("still readable by %1, who was removed").arg(named(losing));
+              (losing.contains(kUnknownReader) ||
+                       !std::all_of(keys.cbegin(), keys.cend(),
+                                    [&primaries](const QString &id) {
+                                      return primaries.contains(id.toUpper());
+                                    })
+                   ? tr("may still be readable by someone taken off "
+                        "the list")
+                   : tr("still readable by %1, who was removed")
+                         .arg(named(losing)));
           result.stillReadByRemoved.insert(fileName, losing);
         }
         result.unexpectedDetails << detail;
@@ -1863,9 +1903,13 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
       } else {
         // The reason names the entry itself when there is one to give.
         result.failed << (why.isEmpty() ? fileName : why);
+        // Not rewritten: whoever was removed still reads it.
+        keepRecord = true;
       }
     }
-    result.walked << fileName;
+    if (!keepRecord) {
+      result.walked << fileName;
+    }
     result.checked++;
     emit reencryptProgress(result.checked, result.total);
   }
@@ -1974,7 +2018,8 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
     m_uncommittedGpgId.reset();
     reportUncommittedGpgId(uncommitted.folder, uncommitted.gitError,
                            !result.cancelled && !result.aborted &&
-                               result.failed.isEmpty());
+                               result.failed.isEmpty() &&
+                               result.unexpected.isEmpty());
   }
   m_writtenGpgId.reset();
   m_previousList.reset();
