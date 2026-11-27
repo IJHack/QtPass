@@ -167,6 +167,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- Copying a folder with the `pass` backend is refused when the folder holds
+  a symbolic link. pass copies with `cp -r`, which on macOS and the BSDs
+  follows a link inside the folder: someone who can push to a shared store
+  could put a link to a file in your home folder there, and copying the
+  folder copied that file into the store, where the next push shared it.
+  Refused on every system, so it no longer depends on which `cp` pass
+  finds; remove the link first. Moving the folder is unaffected.
 - The edit dialog no longer puts the stored text back over what you typed.
   When an entry was decrypted a second time while its edit dialog was open
   (Edit pressed again while the first decrypt was slow, or a second

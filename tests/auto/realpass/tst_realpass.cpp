@@ -70,6 +70,7 @@ private slots:
   void moveAndCopyUseStoreRelativeNamesWithoutGpg();
   void moveBetweenExistingFilesNeedsForce();
   void moveAndCopyJudgeWherePassWrites();
+  void copyOfAFolderWithALinkIsRefused();
   void reencryptFailedJudgesTheStatusLines_data();
   void reencryptFailedJudgesTheStatusLines();
   void largeReencryptionIsJudgedByEveryStatusLine();
@@ -1823,6 +1824,56 @@ void tst_realpass::moveAndCopyJudgeWherePassWrites() {
                         QStringLiteral("resolve/team/"),
                         QStringLiteral("resolve/copy")}));
   QCOMPARE(criticalSpy.count(), 6);
+#endif
+}
+
+/**
+ * @brief pass copies a folder with `cp -r`, which on BSD and macOS follows a
+ *        link inside it: what a pushed link points to would be copied into
+ *        the store. A folder copy holding a link, in a hidden folder too, is
+ *        refused before pass runs; a move (a rename) is not.
+ */
+void tst_realpass::copyOfAFolderWithALinkIsRefused() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symbolic links");
+#else
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString base = m_store + QStringLiteral("copylink/");
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(base + QStringLiteral("team/home.gpg"));
+    QFile::remove(base + QStringLiteral("deep/.hidden/home.gpg"));
+    QDir(base).removeRecursively();
+  });
+  QVERIFY(QDir(base).mkpath(QStringLiteral("team")));
+  QVERIFY(QDir(base).mkpath(QStringLiteral("deep/.hidden")));
+  const QString outside =
+      QDir(outsideDir.path()).filePath(QStringLiteral("id_rsa"));
+  {
+    QFile f(outside);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+  }
+  QVERIFY(QFile::link(outside, base + QStringLiteral("team/home.gpg")));
+  QVERIFY(QFile::link(outside, base + QStringLiteral("deep/.hidden/home.gpg")));
+
+  QScopedPointer<RealPass> pass(makePass());
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  pass->Copy(base + QStringLiteral("team"), base + QStringLiteral("copy"),
+             false);
+  pass->Copy(base + QStringLiteral("deep"), base + QStringLiteral("copy"),
+             false);
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 2);
+  QVERIFY2(!QFile::exists(m_log), "the stand-in pass must not have run");
+
+  // A move renames: the link stays a link, nothing is followed.
+  pass->Move(base + QStringLiteral("team"), base + QStringLiteral("moved"),
+             false);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("mv"), QStringLiteral("--"),
+                        QStringLiteral("copylink/team/"),
+                        QStringLiteral("copylink/moved")}));
+  QCOMPARE(criticalSpy.count(), 2);
 #endif
 }
 
