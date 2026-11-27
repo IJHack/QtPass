@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-27 17:44:22</td>
+            <td class="headerValue">2026-11-27 18:11:37</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -749,9 +749,9 @@
 <span id="L676"><span class="lineNum">     676</span> <span class="tlaGNC">         213 :   return QFile(executable).exists();</span></span>
 <span id="L677"><span class="lineNum">     677</span>              : }</span>
 <span id="L678"><span class="lineNum">     678</span>              : </span>
-<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">       17564 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
-<span id="L680"><span class="lineNum">     680</span> <span class="tlaGNC">       17571 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
-<span id="L681"><span class="lineNum">     681</span> <span class="tlaGNC">       17564 :   return expr;</span></span>
+<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">       17573 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L680"><span class="lineNum">     680</span> <span class="tlaGNC">       17580 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
+<span id="L681"><span class="lineNum">     681</span> <span class="tlaGNC">       17573 :   return expr;</span></span>
 <span id="L682"><span class="lineNum">     682</span>              : }</span>
 <span id="L683"><span class="lineNum">     683</span>              : </span>
 <span id="L684"><span class="lineNum">     684</span>              : // Stops at whitespace, quotes and brackets so a URL on its own line keeps no</span>
@@ -1084,8 +1084,8 @@
 <span id="L1011"><span class="lineNum">    1011</span> <span class="tlaGNC">         704 : }</span></span>
 <span id="L1012"><span class="lineNum">    1012</span>              : </span>
 <span id="L1013"><span class="lineNum">    1013</span>              : /// A symlink or an NTFS junction: never entered, never listed.</span>
-<span id="L1014"><span class="lineNum">    1014</span> <span class="tlaGNC">       28620 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
-<span id="L1015"><span class="lineNum">    1015</span> <span class="tlaGNC">       28620 :   return entry.isSymLink() || entry.isJunction();</span></span>
+<span id="L1014"><span class="lineNum">    1014</span> <span class="tlaGNC">       28653 : auto isLink(const QFileInfo &amp;entry) -&gt; bool {</span></span>
+<span id="L1015"><span class="lineNum">    1015</span> <span class="tlaGNC">       28653 :   return entry.isSymLink() || entry.isJunction();</span></span>
 <span id="L1016"><span class="lineNum">    1016</span>              : }</span>
 <span id="L1017"><span class="lineNum">    1017</span>              : </span>
 <span id="L1018"><span class="lineNum">    1018</span>              : /// Hidden by attribute, or by the dot convention on every platform: Qt 6.11</span>
@@ -1168,8 +1168,8 @@
 <span id="L1095"><span class="lineNum">    1095</span>              : #endif</span>
 <span id="L1096"><span class="lineNum">    1096</span>              : }</span>
 <span id="L1097"><span class="lineNum">    1097</span>              : </span>
-<span id="L1098"><span class="lineNum">    1098</span> <span class="tlaGNC">       16035 : auto Util::isLinkedFolder(const QString &amp;path) -&gt; bool {</span></span>
-<span id="L1099"><span class="lineNum">    1099</span> <span class="tlaGNC">       32070 :   return isLink(QFileInfo(QDir::cleanPath(path)));</span></span>
+<span id="L1098"><span class="lineNum">    1098</span> <span class="tlaGNC">       16068 : auto Util::isLinkedFolder(const QString &amp;path) -&gt; bool {</span></span>
+<span id="L1099"><span class="lineNum">    1099</span> <span class="tlaGNC">       32136 :   return isLink(QFileInfo(QDir::cleanPath(path)));</span></span>
 <span id="L1100"><span class="lineNum">    1100</span>              : }</span>
 <span id="L1101"><span class="lineNum">    1101</span>              : </span>
 <span id="L1102"><span class="lineNum">    1102</span> <span class="tlaGNC">       12915 : auto Util::isUnderLink(const QString &amp;path, const QString &amp;storeRoot,</span></span>
