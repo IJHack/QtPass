@@ -397,6 +397,7 @@ private Q_SLOTS:
   void imitatePass_copyOntoFolderAndShow();
   void imitatePass_copyOntoExistingEntryClash();
   void imitatePass_copyIntoFolderReencryptsToFolderKey();
+  void imitatePass_reencryptLeavesAForeignEntryForTheUser();
   void imitatePass_moveIntoFolderReencryptsToFolderKey();
   void imitatePass_gitMoveReencryptsOnceItRan();
   void imitatePass_noMessageBoxInsideATransaction();
@@ -946,6 +947,92 @@ void tst_integration::imitatePass_copyIntoFolderReencryptsToFolderKey() {
            qPrintable(QStringLiteral("source must still target key1 only, "
                                      "got: %1")
                           .arg(srcIds.join(','))));
+}
+
+// Re-encrypting a folder hands its entries to the folder's recipients. One
+// encrypted to other keys than the folder had (a byte copy of an entry from a
+// folder only key1 can read, pushed into team/, whose list is key1 and key2)
+// is left alone and named, and re-encrypted only once the user agrees. An
+// entry encrypted to the folder's previous list is re-encrypted to the new
+// one without a question (scan finding ANT-2026-SEN4VBBB).
+void tst_integration::imitatePass_reencryptLeavesAForeignEntryForTheUser() {
+  const auto keyUser = [](const QString &keyId) {
+    UserInfo u;
+    u.key_id = keyId;
+    u.enabled = true;
+    return u;
+  };
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  const auto writeGpgId = [](const QString &dir, const QStringList &fprs) {
+    QDir().mkpath(dir);
+    QFile f(QDir::cleanPath(dir + "/.gpg-id"));
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    const QByteArray payload = (fprs.join('\n') + "\n").toUtf8();
+    return f.write(payload) == payload.size();
+  };
+  const QString team = QDir::cleanPath(storeDir.path() + "/team");
+  const QString grow = QDir::cleanPath(storeDir.path() + "/grow");
+  QVERIFY(writeGpgId(storeDir.path(), {m_keyFingerprint}));
+  QVERIFY(writeGpgId(team, {m_keyFingerprint, m_keyFingerprint2}));
+  QVERIFY(writeGpgId(grow, {m_keyFingerprint}));
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  for (const QString &name :
+       {QStringLiteral("bank"), QStringLiteral("team/own"),
+        QStringLiteral("grow/old")}) {
+    QSignalSpy spy(&pass, &Pass::finishedInsert);
+    pass.Insert(name, QStringLiteral("secret\n"), false);
+    QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
+  }
+  // Pushed by someone on team/'s list: the bytes of an entry only key1 reads.
+  const QString planted = team + "/notes.gpg";
+  QVERIFY(QFile::copy(storeDir.path() + "/bank.gpg", planted));
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+  const auto readers = [&](const QString &file) {
+    return recipientKeyIds(m_gnupgHome.path(), file);
+  };
+
+  QSignalSpy unexpected(&pass, &ImitatePass::unexpectedRecipients);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  // Users > OK on team/ without a change.
+  pass.Init(team, {keyUser(m_keyFingerprint), keyUser(m_keyFingerprint2)});
+  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
+  QCOMPARE(unexpected.count(), 1);
+  QCOMPARE(unexpected.first().at(1).toStringList(), QStringList{planted});
+  QVERIFY2(!readers(planted).contains(sub2),
+           "the planted entry must not be re-encrypted without a question");
+  QVERIFY(readers(team + "/own.gpg").contains(sub2));
+
+  // Users > OK on grow/ adding key2: its entry was encrypted to the list it
+  // had, so it follows the new one without a question.
+  unexpected.clear();
+  endSpy.clear();
+  pass.Init(grow, {keyUser(m_keyFingerprint), keyUser(m_keyFingerprint2)});
+  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
+  QCOMPARE(unexpected.count(), 0);
+  QVERIFY(readers(grow + "/old.gpg").contains(sub2));
+
+  // The user agrees: now it is re-encrypted.
+  endSpy.clear();
+  pass.reencryptAlso(team, {planted}, QtPassSettings::load());
+  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
+  QCOMPARE(unexpected.count(), 0);
+  const QStringList after = readers(planted);
+  QVERIFY2(after.contains(sub1) && after.contains(sub2),
+           qPrintable(after.join(',')));
 }
 
 void tst_integration::imitatePass_moveIntoFolderReencryptsToFolderKey() {
@@ -2215,8 +2302,23 @@ void tst_integration::imitatePass_reencryptIncludesDotNamedEntries() {
 
   QVERIFY(writeGpgId(m_keyFingerprint2));
   {
+    // The list was edited by hand, so key2 would gain entries only key1
+    // reads: the run names them and asks first (ANT-2026-SEN4VBBB), the
+    // dot-named ones among them; the hidden folder is not walked.
+    QSignalSpy unexpected(&pass, &ImitatePass::unexpectedRecipients);
     QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
     pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+    QCOMPARE(unexpected.count(), 1);
+    QStringList named = unexpected.first().at(1).toStringList();
+    named.sort();
+    QStringList expected{store.filePath(".env.gpg"),
+                         store.filePath("plain.gpg"),
+                         store.filePath("team/.secret.gpg")};
+    expected.sort();
+    QCOMPARE(named, expected);
+    endSpy.clear();
+    pass.reencryptAlso(storeDir.path(), named, QtPassSettings::load());
     QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
   }
 

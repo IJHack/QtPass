@@ -13,6 +13,7 @@
 #include "pass.h"
 #include "simpletransaction.h"
 #include <QQueue>
+#include <QSet>
 #include <QTemporaryDir>
 
 #include <atomic>
@@ -205,6 +206,20 @@ protected:
    * @return List of key IDs.
    */
   auto getKeysFromFile(const QString &fileName) -> QStringList;
+  /**
+   * @brief The primary keys a set of recipients amounts to, as gpg resolves
+   * them: for each key ID from an entry (ENC_TO) the fingerprint of its
+   * primary key, or for each line of a list the primary keys gpg finds for
+   * it (as `-r` would).
+   * @param ids Long key IDs of encryption subkeys, or recipient list lines.
+   * @param fromList Whether @p ids are list lines rather than key IDs.
+   * @param primaries Cache of the key listing, filled on first use.
+   * @return The fingerprints. Nothing when a list line resolves to no key;
+   *         a key ID gpg does not know is left out.
+   */
+  auto primaryKeysOf(const QStringList &ids, bool fromList,
+                     QHash<QString, QString> &primaries)
+      -> std::optional<QSet<QString>>;
   /**
    * @brief Re-encrypt single file with new recipients.
    * @param fileName File to re-encrypt.
@@ -554,6 +569,20 @@ public:
    * still emitted when the worker has stopped.
    */
   void cancelReencryptPath();
+  /**
+   * @brief Re-encrypt @p files in @p dir after the user agreed to it.
+   *
+   * A run leaves alone an entry encrypted to other keys than its folder had
+   * (unexpectedRecipients()): someone who can read one folder could have
+   * copied it in from a folder they cannot read, and re-encrypting it would
+   * hand them its plaintext. This runs @p dir again with @p files taken as
+   * they are.
+   * @param dir The folder of the run that found them.
+   * @param files The entries, as unexpectedRecipients() named them.
+   * @param settings The current settings, as for reencryptPath().
+   */
+  void reencryptAlso(const QString &dir, const QStringList &files,
+                     const AppSettings &settings);
 
 signals:
   /**
@@ -580,6 +609,16 @@ signals:
    * @param total Total number of files found by the scan.
    */
   void reencryptProgress(int current, int total);
+  /**
+   * @brief A run left @p files alone: re-encrypting one would let someone
+   * on its folder's list read it who cannot now, and whom the change of the
+   * list did not add. An entry copied in from a folder they cannot read
+   * must not reach them without the user's say. reencryptAlso() takes them
+   * once the user agreed. Emitted after endReencryptPath().
+   * @param dir The folder of the run.
+   * @param files The entries left alone, absolute.
+   */
+  void unexpectedRecipients(const QString &dir, const QStringList &files);
 
   // Pass interface
 public:
@@ -852,6 +891,23 @@ private:
   /// changed the recipients the user chose. Written only on the owning
   /// thread while no worker runs; the worker only reads it.
   std::optional<WrittenGpgId> m_writtenGpgId;
+  /**
+   * @brief The list a folder had before Init() replaced it, for the run it
+   * starts: an entry encrypted to those keys is the folder's own and is
+   * re-encrypted to the new list; any other is left for the user.
+   */
+  struct PreviousList {
+    QString gpgIdFile;      ///< The list Init() wrote, which now applies.
+    QStringList recipients; ///< The lines that applied there before.
+  };
+  /// Set by Init() for the run it starts and cleared by finishReencrypt().
+  /// Written only on the owning thread while no worker runs.
+  std::optional<PreviousList> m_previousList;
+  /// Entries or folders the current run re-encrypts whatever they are
+  /// encrypted to: what the user moved or copied there, or agreed to in
+  /// reencryptAlso(). Cleared by finishReencrypt(); written only on the
+  /// owning thread while no worker runs.
+  QStringList m_reencryptTrusted;
   /**
    * @brief gitConfigured(), unless the current run is one
    * reencryptWithoutGit() started.

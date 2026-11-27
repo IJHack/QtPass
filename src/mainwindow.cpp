@@ -203,6 +203,8 @@ void MainWindow::connectBackends() {
           &MainWindow::reencryptProgress);
   connect(ipass, &ImitatePass::endReencryptPath, this,
           &MainWindow::endReencryptPath);
+  connect(ipass, &ImitatePass::unexpectedRecipients, this,
+          &MainWindow::askReencryptUnexpected);
 }
 
 void MainWindow::initTextBrowser() {
@@ -2251,6 +2253,39 @@ void MainWindow::endReencryptPath() {
     m_reencryptProgress = nullptr;
   }
   setUiElementsEnabled(true);
+}
+
+void MainWindow::askReencryptUnexpected(const QString &dir,
+                                        const QStringList &files) {
+  const AppSettings s = QtPassSettings::load();
+  const QDir store(s.passStore);
+  constexpr int kListed = 15;
+  QStringList names;
+  for (const QString &file : files.mid(0, kListed)) {
+    names << Util::displayable(store.relativeFilePath(file), false);
+  }
+  if (files.size() > kListed) {
+    names << tr("... and %n more", nullptr,
+                static_cast<int>(files.size() - kListed));
+  }
+  const int n = static_cast<int>(files.size());
+  const bool yes = PlainMessageBox::askYes(
+      this, tr("Re-encrypt these too?"),
+      tr("%n entry(s) here are encrypted to other people than this folder's "
+         "recipients were, so they were left as they are. Someone who can "
+         "read this folder may have copied them in from a folder they "
+         "cannot read: re-encrypting them would let everyone on this "
+         "folder's list read them.",
+         nullptr, n) +
+          QStringLiteral("\n\n") + names.join(QLatin1Char('\n')) +
+          QStringLiteral("\n\n") +
+          tr("Re-encrypt them for this folder's recipients? If not, they "
+             "stay readable only by whoever they are encrypted to now."));
+  if (!yes) {
+    return;
+  }
+  startReencryptPath();
+  QtPassSettings::getImitatePass()->reencryptAlso(dir, files, s);
 }
 
 void MainWindow::exportPublicKey() {
