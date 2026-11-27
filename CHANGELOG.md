@@ -63,6 +63,15 @@
   saving an entry in that folder ran it. QtPass now sets
   `safe.bareRepository=explicit` for every Git it runs, and for the Git that
   `pass` runs (Git 2.38 or newer; scan finding ANT-2026-HJOPH9D4).
+- The pass backend refuses a recipient list that `pass` reads differently
+  from QtPass. `pass` 1.7.4 hands the lines of `.gpg-id` to `gpg` without a
+  `--` when it re-encrypts, so a line that starts with a dash is a `gpg`
+  option. Someone who can push to a shared store could push such a line and
+  have the next move, copy or Users save run a program. QtPass now refuses to
+  run `pass` when a list it would use has a line that starts with a dash, a
+  byte-order mark, a NUL byte, a carriage return, invalid UTF-8, other
+  whitespace than blanks and tabs, or a last line without a line end. Saving
+  the folder in Users writes the list anew (scan finding ANT-2026-MYROPA32).
 - A pushed `.gitattributes` can no longer make Git rewrite encrypted
   entries. Someone who can push to a shared store could add a line such as
   `*.gpg text`; Git then changed the ciphertext on commit or checkout, and

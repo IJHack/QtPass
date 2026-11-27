@@ -50,6 +50,22 @@ class RealPass : public Pass {
    */
   [[nodiscard]] auto insertWritten() const -> bool override;
 
+  /**
+   * @brief Refuse to run pass when a recipient list it would read holds
+   * lines pass reads differently from QtPass (Pass::passReadsDifferently()).
+   *
+   * Checks the list nearest to @p entry, when given, and every `.gpg-id`
+   * below @p tree, when given, except @p except. A list that is there but
+   * not a regular file of at most 64 KiB is refused too; a missing one is
+   * left to pass. Emits critical() for the first refused list.
+   * @param entry A path whose nearest list pass uses, or empty.
+   * @param tree A folder whose own lists pass uses, or empty.
+   * @param except A list pass is about to write itself, or empty.
+   * @return Whether pass must not run.
+   */
+  auto refuseMisreadList(const QString &entry, const QString &tree,
+                         const QString &except = QString()) -> bool;
+
   /// The entry the last Insert() writes, and whether it existed beforehand.
   QString m_insertTarget;
   bool m_insertTargetExisted = false;

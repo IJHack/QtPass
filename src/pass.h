@@ -254,6 +254,22 @@ public:
   static auto getGpgIdPath(const QString &for_file, const QString &passStore)
       -> QString;
   /**
+   * @brief Why pass would read a `.gpg-id` differently from QtPass, if it
+   * would.
+   *
+   * pass reads the list with `while read -r`, which keeps NUL-free bytes as
+   * they are, strips only blanks and tabs, and drops a last line without a
+   * line feed. QtPass decodes UTF-8 (losing a byte-order mark and invalid
+   * bytes) and trims every kind of whitespace. A line that starts with a
+   * dash is refused as well: pass 1.7.4 hands the lines to
+   * `gpg --list-keys` without a `--` when it re-encrypts, so gpg takes such a
+   * line as an option.
+   * @param contents The file's bytes.
+   * @return The first difference, as a phrase for a message; empty when
+   *         both read the same recipients.
+   */
+  static auto passReadsDifferently(const QByteArray &contents) -> QString;
+  /**
    * @brief Get list of recipients for a password file.
    * @param for_file Path to password file.
    * @param passStore Root directory of the password store.

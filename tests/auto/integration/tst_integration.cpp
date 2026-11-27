@@ -354,6 +354,7 @@ private Q_SLOTS:
   void realPass_insertAndGrep();
   void realPass_removeLinkedFolderRefusedKeepsTarget();
   void realPass_copyThroughLinkRefused();
+  void realPass_misreadListRefused();
   void realPass_pushedBareRepoDoesNotRunCommand();
   void realPass_moveJudgedWherePassWrites();
 
@@ -2813,6 +2814,90 @@ void tst_integration::realPass_pushedBareRepoDoesNotRunCommand() {
 
   QtPassSettings::setUsePass(false);
 #endif
+}
+
+// pass 1.7.4 re-encrypts with `gpg --list-keys` on the list's lines and no
+// "--", so a pushed .gpg-id line that starts with a dash is a gpg option.
+// QtPass refuses to run pass on a list it reads differently.
+void tst_integration::realPass_misreadListRefused() {
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+  const QByteArray goodList = (m_keyFingerprint + "\n").toUtf8();
+  const QByteArray dashList = "--no-such-gpg-option\n" + goodList;
+  auto writeFile = [](const QString &path, const QByteArray &bytes) {
+    QDir().mkpath(QFileInfo(path).absolutePath());
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly) && f.write(bytes) == bytes.size();
+  };
+  const QString root = storeDir.path();
+  QVERIFY(writeFile(root + "/.gpg-id", goodList));
+  QVERIFY(writeFile(root + "/team/.gpg-id", dashList));
+  QVERIFY(writeFile(root + "/real.gpg", "ciphertext"));
+  QVERIFY(writeFile(root + "/sub/.gpg-id", dashList));
+  QVERIFY(writeFile(root + "/sub/old.gpg", "ciphertext"));
+  // A folder whose own list is fine, with a dash list deeper in it.
+  QVERIFY(writeFile(root + "/drop/inner/.gpg-id", dashList));
+  QVERIFY(writeFile(root + "/drop/inner/e.gpg", "ciphertext"));
+
+  RealPass pass;
+  setupPass(pass);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
+  pass.Insert(QStringLiteral("team/new"), QStringLiteral("secret\n"), false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(failedSpy.count(), 1);
+
+  criticalSpy.clear();
+  pass.Move(root + "/real.gpg", root + "/team", true);
+  QCOMPARE(criticalSpy.count(), 1);
+
+  criticalSpy.clear();
+  pass.Copy(root + "/sub", root + "/copied", true);
+  QCOMPARE(criticalSpy.count(), 1);
+
+  // Into an existing folder pass re-encrypts all of it, the dash list in
+  // its subfolder included.
+  criticalSpy.clear();
+  pass.Move(root + "/real.gpg", root + "/drop", false);
+  QCOMPARE(criticalSpy.count(), 1);
+
+  criticalSpy.clear();
+  UserInfo me;
+  me.key_id = m_keyFingerprint;
+  me.enabled = true;
+  pass.Init(root, {me});
+  QCOMPARE(criticalSpy.count(), 1);
+
+  QTest::qWait(500); // nothing should be queued; give a stray pass a chance
+  QVERIFY(!QFile::exists(root + "/team/new.gpg"));
+  QVERIFY(QFile::exists(root + "/real.gpg"));
+  QVERIFY(!QFile::exists(root + "/team/real.gpg"));
+  QVERIFY(!QFile::exists(root + "/drop/real.gpg"));
+  QVERIFY(!QFile::exists(root + "/copied"));
+  QCOMPARE(readFileBytes(root + "/.gpg-id"), goodList);
+
+  // The list pass init writes itself is exempt: saving in Users fixes it.
+  criticalSpy.clear();
+  QSignalSpy initSpy(&pass, &Pass::finishedInit);
+  pass.Init(root + "/team", {me});
+  QVERIFY2(waitForSignal(initSpy), "finishedInit not emitted");
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(readFileBytes(root + "/team/.gpg-id"), goodList);
+
+  QtPassSettings::setUsePass(false);
 }
 
 QTEST_MAIN(tst_integration)

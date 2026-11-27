@@ -6,6 +6,7 @@
 #include "util.h"
 
 #include <QDir>
+#include <QDirIterator>
 #include <QFile>
 #include <QFileInfo>
 #include <QRegularExpression>
@@ -95,6 +96,12 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
                           ? file + ".gpg"
                           : QDir(m_settings.passStore).filePath(file) + ".gpg");
   m_insertTargetExisted = QFileInfo::exists(m_insertTarget);
+  if (refuseMisreadList(m_insertTarget, QString())) {
+    emit insertFailed(tr("The recipient list for this entry reads differently "
+                         "in pass. Nothing was saved."),
+                      false);
+    return;
+  }
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
@@ -106,6 +113,62 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
 auto RealPass::insertWritten() const -> bool {
   return !m_insertTarget.isEmpty() && !m_insertTargetExisted &&
          QFileInfo::exists(m_insertTarget);
+}
+
+auto RealPass::refuseMisreadList(const QString &entry, const QString &tree,
+                                 const QString &except) -> bool {
+  QStringList lists;
+  if (!entry.isEmpty()) {
+    lists << Pass::getGpgIdPath(entry, m_settings.passStore);
+  }
+  if (!tree.isEmpty() && QFileInfo(tree).isDir()) {
+    // pass re-encrypts every entry below the folder to its own nearest list,
+    // so each list in the tree counts. Links are not followed: pass's find
+    // does not follow them either.
+    QDirIterator it(tree, {QStringLiteral(".gpg-id")},
+                    QDir::Files | QDir::Hidden | QDir::System,
+                    QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+      lists << it.next();
+    }
+  }
+  const QString skip =
+      except.isEmpty() ? QString()
+                       : QDir::cleanPath(QFileInfo(except).absoluteFilePath());
+  constexpr qint64 kMaxGpgIdBytes = 64 * 1024;
+  for (const QString &list : std::as_const(lists)) {
+    const QString absolute =
+        QDir::cleanPath(QFileInfo(list).absoluteFilePath());
+    if (absolute == skip) {
+      continue;
+    }
+    // A link is read through, as pass reads it.
+    const QFileInfo info(list);
+    if (!info.exists()) {
+      continue; // a missing list is pass's to report
+    }
+    QString why;
+    QFile file(list);
+    if (!info.isFile() || info.size() > kMaxGpgIdBytes ||
+        !file.open(QIODevice::ReadOnly)) {
+      why = tr("it is not a regular file of at most 64 KiB");
+    } else {
+      why = Pass::passReadsDifferently(file.read(kMaxGpgIdBytes + 1));
+    }
+    if (why.isEmpty()) {
+      continue;
+    }
+    //: %1 is the list's path, %2 says what is wrong with it.
+    emit critical(tr("Recipient list reads differently"),
+                  tr("pass reads %1 differently from QtPass (%2), so it could "
+                     "encrypt to recipients the Users dialog does not show, "
+                     "or run gpg with an option from the list. Nothing was "
+                     "encrypted. Check the recipients in Users for that "
+                     "folder and press OK to write the list anew.")
+                      .arg(QDir::toNativeSeparators(list), why));
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -165,6 +228,14 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
     }
   } else {
     dirWithoutPassdir = normalizedPath;
+  }
+  // pass init writes this folder's own list, then re-encrypts every entry
+  // below it, each to its nearest list: the lists further down count.
+  const QString folder =
+      QDir::cleanPath(QDir(normalizedStore).filePath(dirWithoutPassdir));
+  if (refuseMisreadList(QString(), folder,
+                        QDir(folder).filePath(QStringLiteral(".gpg-id")))) {
+    return;
   }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   foreach (const UserInfo &user, users) {
@@ -310,6 +381,19 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
                   tr("%1 already exists, and pass would replace it. Nothing "
                      "was changed; rename one of them first.")
                       .arg(QDir::toNativeSeparators(written)));
+    if (subcommand == QStringLiteral("mv"))
+      emit finishedMove(QString(), QString());
+    else
+      emit finishedCopy(QString(), QString());
+    return;
+  }
+
+  // pass re-encrypts what lands at the written path to its nearest list, and
+  // a folder's own lists travel with it. Into an existing folder it
+  // re-encrypts that whole folder (reencrypt_path "$new_path"), so every
+  // list below it counts too.
+  if (refuseMisreadList(written, srcIsDir ? normalizedSrc : QString()) ||
+      (QFileInfo(newPath).isDir() && refuseMisreadList(QString(), newPath))) {
     if (subcommand == QStringLiteral("mv"))
       emit finishedMove(QString(), QString());
     else

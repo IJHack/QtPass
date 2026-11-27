@@ -1060,6 +1060,44 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
                : QDir(normalizedStore).filePath(".gpg-id");
 }
 
+auto Pass::passReadsDifferently(const QByteArray &contents) -> QString {
+  if (contents.startsWith("\xEF\xBB\xBF")) {
+    return tr("it starts with a byte-order mark");
+  }
+  if (contents.contains('\0')) {
+    return tr("it holds a NUL byte");
+  }
+  if (contents.contains('\r')) {
+    return tr("it has Windows line ends (a carriage return)");
+  }
+  const QString text = QString::fromUtf8(contents);
+  if (text.toUtf8() != contents) {
+    return tr("it is not valid UTF-8");
+  }
+  const QStringList lines = text.split(QLatin1Char('\n'));
+  for (qsizetype i = 0; i < lines.size(); ++i) {
+    const QString &line = lines.at(i);
+    const QString recipient = line.left(line.indexOf(QLatin1Char('#')));
+    for (const QChar c : recipient) {
+      // read strips blanks and tabs; trimmed() strips every space.
+      if (c.isSpace() && c != QLatin1Char(' ') && c != QLatin1Char('\t')) {
+        return tr("line %1 holds whitespace other than blanks and tabs")
+            .arg(i + 1);
+      }
+    }
+    const QString trimmed = recipient.trimmed();
+    if (trimmed.startsWith(QLatin1Char('-'))) {
+      return tr("line %1 starts with a dash").arg(i + 1);
+    }
+    // The text after the last line feed: read hands it over but the loop
+    // ends without using it.
+    if (i == lines.size() - 1 && !trimmed.isEmpty()) {
+      return tr("its last line has no line end");
+    }
+  }
+  return {};
+}
+
 /**
  * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
  * @param for_file which file (folder) would you like recipients for
