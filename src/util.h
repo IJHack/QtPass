@@ -124,7 +124,9 @@ public:
    * key and a repository's own config cannot override. It is appended at the
    * next free index, so a user's own entries are kept, and only when the
    * last entry for the key does not already say `explicit`: the last one
-   * wins, so a weaker value from the environment is overridden.
+   * wins, so a weaker value from the environment is overridden. git reads
+   * `GIT_CONFIG_PARAMETERS` (`git -c`) after those, so when that names the
+   * key, `explicit` is appended there too.
    * @param env The environment to amend.
    */
   static void requireExplicitBareRepository(QProcessEnvironment &env);

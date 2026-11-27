@@ -447,6 +447,18 @@ void Util::requireExplicitBareRepository(QProcessEnvironment &env) {
       last = env.value(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(i));
     }
   }
+  // git reads GIT_CONFIG_PARAMETERS (`git -c`) after the numbered entries,
+  // so one naming the key there wins over them: follow it with explicit.
+  const QString parameters = env.value(QStringLiteral("GIT_CONFIG_PARAMETERS"));
+  const QString explicitParameter =
+      QStringLiteral("'safe.bareRepository=explicit'");
+  if (parameters.contains(QLatin1String("barerepository"),
+                          Qt::CaseInsensitive) &&
+      !parameters.endsWith(explicitParameter)) {
+    env.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"),
+               parameters + QLatin1Char(' ') + explicitParameter);
+  }
+
   if (last.compare(value, Qt::CaseInsensitive) == 0) {
     return;
   }

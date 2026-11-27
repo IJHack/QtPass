@@ -59,6 +59,23 @@ auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
       passConfig.Characters[sel],
       passConfig.Characters[PasswordConfiguration::ALLCHARS]);
 }
+
+/**
+ * @brief Add @p names to WSLENV in @p env, keeping its entries and adding no
+ * duplicate.
+ * @param env The environment to amend.
+ * @param names WSLENV entries, each a variable name with its flags.
+ */
+void mergeIntoWslenv(QProcessEnvironment &env, const QStringList &names) {
+  QStringList parts = env.value(QStringLiteral("WSLENV"))
+                          .split(QLatin1Char(':'), Qt::SkipEmptyParts);
+  for (const QString &name : names) {
+    if (!parts.contains(name)) {
+      parts.append(name);
+    }
+  }
+  env.insert(QStringLiteral("WSLENV"), parts.join(QLatin1Char(':')));
+}
 } // namespace
 
 Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
@@ -101,17 +118,7 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_GPG_OPTS/u"),
       QStringLiteral("GIT_CEILING_DIRECTORIES/p"),
       QStringLiteral("GIT_LITERAL_PATHSPECS/u")};
-  const QString existing = env.value(QStringLiteral("WSLENV"));
-  if (existing.isEmpty()) {
-    env.insert(QStringLiteral("WSLENV"), wslenvVars.join(':'));
-  } else {
-    QStringList parts = existing.split(':', Qt::SkipEmptyParts);
-    for (const QString &v : wslenvVars) {
-      if (!parts.contains(v))
-        parts.append(v);
-    }
-    env.insert(QStringLiteral("WSLENV"), parts.join(':'));
-  }
+  mergeIntoWslenv(env, wslenvVars);
 }
 
 void Pass::executeWrapper(PROCESS id, const QString &app,
@@ -631,6 +638,11 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
       {PASS_COPY, &Pass::finishedCopy},
       {GPG_GENKEYS, &Pass::finishedGenerateGPGKeys},
   };
+  // A store that became a repository after updateEnv() gets its pin now,
+  // before anything is staged in it.
+  if (pid == GIT_INIT) {
+    pinStoreGitAttributes();
+  }
   if (const Signal signal = kSignals.value(pid, nullptr)) {
     (this->*signal)(out, err);
   }
@@ -701,6 +713,18 @@ void Pass::updateEnv() {
   // named there. This reaches the git that pass runs too, which inherits the
   // environment.
   Util::requireExplicitBareRepository(env);
+  // pass under WSL needs them too: the count and every entry below it.
+  QStringList gitConfig{QStringLiteral("GIT_CONFIG_COUNT/u")};
+  if (env.contains(QStringLiteral("GIT_CONFIG_PARAMETERS"))) {
+    gitConfig << QStringLiteral("GIT_CONFIG_PARAMETERS/u");
+  }
+  const int gitConfigCount =
+      env.value(QStringLiteral("GIT_CONFIG_COUNT")).toInt();
+  for (int i = 0; i < gitConfigCount; ++i) {
+    gitConfig << QStringLiteral("GIT_CONFIG_KEY_%1/u").arg(i)
+              << QStringLiteral("GIT_CONFIG_VALUE_%1/u").arg(i);
+  }
+  mergeIntoWslenv(env, gitConfig);
 
   exec.setEnvironment(env);
 

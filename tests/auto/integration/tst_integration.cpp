@@ -410,6 +410,7 @@ private Q_SLOTS:
   void imitatePass_multiRecipientReencryptChangesRecipients();
   void imitatePass_reencryptKeyListingWritesNoFile();
   void imitatePass_gitAttributesPinnedForStore();
+  void imitatePass_gitInitPinsAttributes();
   void imitatePass_ignoredEntryIsStillCommitted();
   void imitatePass_insertIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptIgnoresGpgConfEncryptTo();
@@ -3716,7 +3717,8 @@ void tst_integration::realPass_pushedBareRepoDoesNotRunCommand() {
     plain.remove("GIT_CONFIG_COUNT");
     control.setProcessEnvironment(plain);
     control.setWorkingDirectory(work);
-    control.start(gitExe, {"status"});
+    // A global safe.bareRepository=explicit would refuse it too.
+    control.start(gitExe, {"-c", "safe.bareRepository=all", "status"});
     QVERIFY(control.waitForFinished(15000));
     QVERIFY2(QFile::exists(marker),
              "git without the guard must run the pushed command");
@@ -3801,6 +3803,37 @@ void tst_integration::imitatePass_gitAttributesPinnedForStore() {
   const QString diffOut = QString::fromUtf8(diffChk.readAll());
   QVERIFY2(diffOut.contains("diff: gpg"),
            qPrintable("pass's decrypted diffs must keep working: " + diffOut));
+}
+
+// A store that becomes a repository after updateEnv() ran (Git ▸ Init) gets
+// the pin when git init finishes, before anything is staged in it.
+void tst_integration::imitatePass_gitInitPinsAttributes() {
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping Git integration test");
+
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  QVERIFY(!QFileInfo::exists(storeDir.path() + "/.git"));
+
+  QSignalSpy initSpy(&pass, &Pass::finishedGitInit);
+  pass.GitInit();
+  QVERIFY2(waitForSignal(initSpy, 20000), "git init did not finish");
+
+  QFile attr(storeDir.path() + "/.git/info/attributes");
+  QVERIFY2(attr.open(QIODevice::ReadOnly | QIODevice::Text),
+           "git init should leave the pin in info/attributes");
+  QVERIFY2(QString::fromUtf8(attr.readAll()).contains("*.gpg -text"),
+           "info/attributes should pin *.gpg");
 }
 
 QTEST_MAIN(tst_integration)

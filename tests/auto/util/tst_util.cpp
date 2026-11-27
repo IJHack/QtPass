@@ -219,6 +219,7 @@ private Q_SLOTS:
   void normalizeFolderPath();
   void requireExplicitBareRepository_data();
   void requireExplicitBareRepository();
+  void requireExplicitBareRepositoryFollowsGitConfigParameters();
   void normalizeFolderPathEdgeCases();
   void fileContent();
   void fileContentEdgeCases();
@@ -2538,6 +2539,20 @@ void tst_util::updateEnvWslenvContainsRequiredVars() {
     const QString entry = QString::fromLatin1(var) + QStringLiteral("/u");
     QVERIFY2(wslenv.split(u':').contains(entry),
              qPrintable(QStringLiteral("WSLENV should include ") + entry));
+  }
+  // The bare-repository guard reaches git under WSL: the count and every
+  // numbered entry below it.
+  const int gitConfigCount =
+      env.value(QStringLiteral("GIT_CONFIG_COUNT")).toInt();
+  QVERIFY(gitConfigCount > 0);
+  QVERIFY(wslenv.split(u':').contains(QStringLiteral("GIT_CONFIG_COUNT/u")));
+  for (int i = 0; i < gitConfigCount; ++i) {
+    for (const QString &entry :
+         {QStringLiteral("GIT_CONFIG_KEY_%1/u").arg(i),
+          QStringLiteral("GIT_CONFIG_VALUE_%1/u").arg(i)}) {
+      QVERIFY2(wslenv.split(u':').contains(entry),
+               qPrintable(QStringLiteral("WSLENV should include ") + entry));
+    }
   }
   // Only QtPass's own entries: a user's inherited MY_VAR/w is valid.
   for (const QString &entry : wslenv.split(u':')) {
@@ -6698,7 +6713,17 @@ void tst_util::wslenvMergesIntoAnInheritedEntry() {
   QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_GPG_OPTS/u")), 1);
   QCOMPARE(parts.count(QStringLiteral("GIT_CEILING_DIRECTORIES/p")), 1);
   QCOMPARE(parts.count(QStringLiteral("GIT_LITERAL_PATHSPECS/u")), 1);
-  QCOMPARE(parts.size(), 8);
+  // The bare-repository guard's entries (the count and each numbered pair;
+  // one pair unless the environment brought its own).
+  const int gitConfigCount =
+      pass.environment().value(QStringLiteral("GIT_CONFIG_COUNT")).toInt();
+  QCOMPARE(parts.count(QStringLiteral("GIT_CONFIG_COUNT/u")), 1);
+  QCOMPARE(parts.count(QStringLiteral("GIT_CONFIG_KEY_0/u")), 1);
+  QCOMPARE(parts.count(QStringLiteral("GIT_CONFIG_VALUE_0/u")), 1);
+  const int parameters =
+      pass.environment().contains(QStringLiteral("GIT_CONFIG_PARAMETERS")) ? 1
+                                                                           : 0;
+  QCOMPARE(parts.size(), 9 + 2 * gitConfigCount + parameters);
 }
 
 /**
@@ -7634,6 +7659,28 @@ void tst_util::requireExplicitBareRepository() {
                env.value(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(i));
   }
   QCOMPARE(got, after);
+}
+
+/**
+ * @brief git reads GIT_CONFIG_PARAMETERS after the numbered entries, so a
+ *        safe.bareRepository there is followed by explicit; parameters that
+ *        do not name it are left alone.
+ */
+void tst_util::requireExplicitBareRepositoryFollowsGitConfigParameters() {
+  QProcessEnvironment env;
+  env.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"),
+             QStringLiteral("'safe.bareRepository'='all'"));
+  Util::requireExplicitBareRepository(env);
+  Util::requireExplicitBareRepository(env); // repeated: nothing piles up
+  QCOMPARE(env.value(QStringLiteral("GIT_CONFIG_PARAMETERS")),
+           QStringLiteral("'safe.bareRepository'='all' "
+                          "'safe.bareRepository=explicit'"));
+  QProcessEnvironment other;
+  other.insert(QStringLiteral("GIT_CONFIG_PARAMETERS"),
+               QStringLiteral("'core.pager=less'"));
+  Util::requireExplicitBareRepository(other);
+  QCOMPARE(other.value(QStringLiteral("GIT_CONFIG_PARAMETERS")),
+           QStringLiteral("'core.pager=less'"));
 }
 
 QTEST_MAIN(tst_util)
