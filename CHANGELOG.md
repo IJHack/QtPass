@@ -192,7 +192,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the next Users save or "Re-encrypt all" there gave them its plaintext. An
   entry that would become readable by someone on the list who cannot read
   it now, and whom you did not just add in Users, is now left as it is and
-  named, and QtPass asks whether to re-encrypt it. Removing a recipient,
+  named with who would gain it, and QtPass asks whether to re-encrypt it;
+  a yes holds for the entry's bytes as shown. If a recipient you removed
+  still reads such an entry, the automatic push waits. Removing a recipient,
   adding one in Users, and what you move or copy in yourself work as
   before; "Re-encrypt all" after editing `.gpg-id` by hand asks for the
   entries the new names would gain. Native backend. As SECURITY.md now says,

@@ -331,8 +331,10 @@ public slots:
    * from a folder this folder's recipients cannot read.
    * @param dir The folder of the run.
    * @param files The entries, absolute.
+   * @param details For each, who would gain it.
    */
-  void askReencryptUnexpected(const QString &dir, const QStringList &files);
+  void askReencryptUnexpected(const QString &dir, const QStringList &files,
+                              const QStringList &details);
 
 private slots:
   /**

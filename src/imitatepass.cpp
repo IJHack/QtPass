@@ -11,6 +11,7 @@
 #include "gpgidgeneration.h"
 #include "passbackendfactory.h"
 #include "util.h"
+#include <QCryptographicHash>
 #include <QDateTime>
 #include <QDir>
 #include <QElapsedTimer>
@@ -1022,107 +1023,56 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   return actualKeys;
 }
 
-auto ImitatePass::primaryKeysOf(const QStringList &ids, bool fromList,
-                                QHash<QString, QString> &primaries)
-    -> std::optional<QSet<QString>> {
-  // One listing of every public key: the long ID of each key and subkey to
-  // the fingerprint of its primary key.
-  const auto listKeys = [this](const QStringList &which,
-                               QHash<QString, QString> *byId,
-                               QSet<QString> *primary) {
+auto ImitatePass::primaryKeysOf(const QStringList &ids,
+                                QHash<QString, QString> &primaries,
+                                QHash<QString, QString> &names)
+    -> QSet<QString> {
+  // One listing of every public key, on first use: the long ID of each key
+  // and subkey to the fingerprint of its primary key, and that key's first
+  // user ID for the question.
+  if (primaries.isEmpty()) {
     QString out;
     QString err;
     if (execBlocking(m_settings.gpgExecutable,
-                     QStringList{QStringLiteral("--batch"),
-                                 QStringLiteral("--with-colons"),
-                                 QStringLiteral("--fixed-list-mode"),
-                                 QStringLiteral("--list-keys"),
-                                 QStringLiteral("--")} +
-                         which,
-                     &out, &err) != 0) {
-      return false;
-    }
-    QString currentId;
-    bool inPrimary = false;
-    QString primaryFpr;
-    QStringList pendingIds;
-    for (const QString &line : out.split(Util::newLinesRegex())) {
-      const QStringList f = line.split(QLatin1Char(':'));
-      if (f.isEmpty()) {
-        continue;
-      }
-      if (f.first() == QLatin1String("pub")) {
-        inPrimary = true;
-        primaryFpr.clear();
-        pendingIds = {f.value(4).toUpper()};
-      } else if (f.first() == QLatin1String("sub")) {
-        inPrimary = false;
-        pendingIds << f.value(4).toUpper();
-      } else if (f.first() == QLatin1String("fpr") && inPrimary &&
-                 primaryFpr.isEmpty()) {
-        primaryFpr = f.value(9).toUpper();
-        if (primary != nullptr) {
-          primary->insert(primaryFpr);
+                     {QStringLiteral("--batch"),
+                      QStringLiteral("--with-colons"),
+                      QStringLiteral("--fixed-list-mode"),
+                      QStringLiteral("--list-keys")},
+                     &out, &err) == 0) {
+      QString primaryFpr;
+      QStringList pendingIds;
+      bool inPrimary = false;
+      for (const QString &line : out.split(Util::newLinesRegex())) {
+        const QStringList f = line.split(QLatin1Char(':'));
+        const QString type = f.value(0);
+        if (type == QLatin1String("pub")) {
+          inPrimary = true;
+          primaryFpr.clear();
+          pendingIds = {f.value(4).toUpper()};
+        } else if (type == QLatin1String("sub")) {
+          inPrimary = false;
+          pendingIds << f.value(4).toUpper();
+        } else if (type == QLatin1String("fpr") && inPrimary &&
+                   primaryFpr.isEmpty()) {
+          primaryFpr = f.value(9).toUpper();
+        } else if (type == QLatin1String("uid") && !primaryFpr.isEmpty() &&
+                   !names.contains(primaryFpr)) {
+          names.insert(primaryFpr, Util::displayable(f.value(9), false));
         }
-      }
-      if (byId != nullptr && !primaryFpr.isEmpty()) {
-        for (const QString &id : std::as_const(pendingIds)) {
-          if (!id.isEmpty()) {
-            byId->insert(id, primaryFpr);
-          }
-        }
-        pendingIds.clear();
-      }
-    }
-    return true;
-  };
-  QSet<QString> result;
-  if (fromList) {
-    // A list line may name a gpg group (gpg.conf), which `-r` expands and a
-    // key listing does not know before GnuPG 2.3: its members count.
-    std::optional<QHash<QString, QStringList>> groups;
-    for (const QString &line : ids) {
-      QSet<QString> found;
-      if (!listKeys({line}, nullptr, &found) || found.isEmpty()) {
-        if (!groups) {
-          groups.emplace();
-          QString out;
-          QString err;
-          if (execBlocking(
-                  m_settings.gpgExecutable,
-                  {QStringLiteral("--batch"), QStringLiteral("--with-colons"),
-                   QStringLiteral("--list-config"), QStringLiteral("group")},
-                  &out, &err) == 0) {
-            for (const QString &cfg : out.split(Util::newLinesRegex())) {
-              const QStringList f = cfg.split(QLatin1Char(':'));
-              if (f.size() >= 4 && f.at(0) == QLatin1String("cfg") &&
-                  f.at(1) == QLatin1String("group")) {
-                groups->insert(f.at(2), f.at(3).split(QLatin1Char(';'),
-                                                      Qt::SkipEmptyParts));
-              }
+        if (!primaryFpr.isEmpty()) {
+          for (const QString &id : std::as_const(pendingIds)) {
+            if (!id.isEmpty()) {
+              primaries.insert(id, primaryFpr);
             }
           }
-        }
-        const QStringList members = groups->value(line);
-        for (const QString &member : members) {
-          QSet<QString> one;
-          if (listKeys({member}, nullptr, &one)) {
-            found.unite(one);
-          }
-        }
-        if (members.isEmpty() || found.isEmpty()) {
-          return std::nullopt;
+          pendingIds.clear();
         }
       }
-      result.unite(found);
     }
-    return result;
-  }
-  if (primaries.isEmpty() && !listKeys({}, &primaries, nullptr)) {
-    return std::nullopt;
   }
   // A key gpg does not know (a hidden recipient, one not imported) is no
   // one this folder's list can name: left out.
+  QSet<QString> result;
   for (const QString &id : ids) {
     const QString fpr = primaries.value(id.toUpper());
     if (!fpr.isEmpty()) {
@@ -1130,6 +1080,36 @@ auto ImitatePass::primaryKeysOf(const QStringList &ids, bool fromList,
     }
   }
   return result;
+}
+
+auto ImitatePass::entryHash(const QString &file) const -> QByteArray {
+  // Read as decryptEntry() reads it: a regular file, no link followed.
+  const std::optional<QByteArray> bytes = Util::readRegularFileInStore(
+      m_settings.passStore, file, kMaxPlaintextBytes + 1024LL * 1024);
+  return bytes ? QCryptographicHash::hash(*bytes, QCryptographicHash::Sha256)
+               : QByteArray();
+}
+
+auto ImitatePass::keysEncryptedTo(const QStringList &recipients,
+                                  QHash<QString, QString> &primaries,
+                                  QHash<QString, QString> &names)
+    -> std::optional<QSet<QString>> {
+  // What `-r` makes of the list, groups, `!` suffixes and key lookups
+  // included: a throwaway encryption with the same arguments as a real one,
+  // outside the store, read back for its recipients.
+  QTemporaryDir scratch;
+  if (!scratch.isValid()) {
+    return std::nullopt;
+  }
+  const QString probe = scratch.filePath(QStringLiteral("probe.gpg"));
+  if (!encryptFor(probe, recipients, QByteArrayLiteral("probe"))) {
+    return std::nullopt;
+  }
+  const QStringList ids = getKeysFromFile(probe);
+  if (ids.isEmpty()) {
+    return std::nullopt;
+  }
+  return primaryKeysOf(ids, primaries, names);
 }
 
 auto ImitatePass::decryptEntry(const QString &fileName, QByteArray *plaintext,
@@ -1394,8 +1374,15 @@ struct ImitatePass::ReencryptResult {
   bool cancelled = false; ///< Stopped early by cancelReencryptPath(); the
                           ///< interrupted file, if any, is not in `failed`.
   bool aborted = false;   ///< Stopped early on an error already reported.
-  QStringList unexpected; ///< Entries left alone: encrypted to other keys
-                          ///< than their folder had (unexpectedRecipients()).
+  QStringList unexpected; ///< Entries left alone: re-encrypting them
+                          ///< would give them to someone on the list who
+                          ///< cannot read them now (unexpectedRecipients()).
+  QStringList unexpectedDetails;      ///< For each of those, who would gain it
+                                      ///< (and who removed still reads it).
+  QList<QByteArray> unexpectedHashes; ///< Their contents' SHA-256, which
+                                      ///< reencryptAlso() holds them to.
+  bool heldBack = false; ///< One of them is still readable by a recipient
+                         ///< this run took off the list.
 };
 
 namespace {
@@ -1700,26 +1687,45 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     return result;
   }
 
-  const QStringList files = entriesToReencrypt(dir, &result.failed);
+  QStringList files = entriesToReencrypt(dir, &result.failed);
+  // A run the user agreed to takes the entries they were shown, no more.
+  if (!m_reencryptAgreed.isEmpty()) {
+    files.erase(std::remove_if(files.begin(), files.end(),
+                               [this](const QString &file) {
+                                 return !m_reencryptAgreed.contains(file);
+                               }),
+                files.end());
+  }
   result.total = files.size();
   emit reencryptProgress(0, result.total);
 
   QString currentDir;
   QHash<QString, QStringList> gpgIdFilesVerified;
   QStringList gpgId;
-  // What each folder's entries may be encrypted to and still count as its
-  // own: the keys of the list Init() replaced, or of the one that applies.
+  // Who reads what: each key ID's primary key, and a name for the question.
   QHash<QString, QString> primaries;
-  // Per list: its primary keys now (none when gpg cannot resolve it), and
-  // before Init() replaced it (the same when it did not).
-  QHash<QString, std::pair<std::optional<QSet<QString>>, QSet<QString>>>
-      listKeys;
+  QHash<QString, QString> names;
+  // Per list: the primary keys gpg encrypts to now (none when it cannot),
+  // and those it encrypted to before Init() replaced the list (the same
+  // when it did not, or when the old list no longer resolves).
+  struct ListKeys {
+    std::optional<QSet<QString>> now;
+    QSet<QString> before;
+  };
+  QHash<QString, ListKeys> listKeys;
+  // What the user moved or copied in is taken as it is; what they agreed to
+  // in reencryptAlso() only while its bytes are the ones they were shown.
   const auto isTrusted = [this](const QString &fileName) {
-    return std::any_of(m_reencryptTrusted.cbegin(), m_reencryptTrusted.cend(),
-                       [&fileName](const QString &trusted) {
-                         return fileName == trusted ||
-                                fileName.startsWith(trusted + QLatin1Char('/'));
-                       });
+    if (std::any_of(m_reencryptTrusted.cbegin(), m_reencryptTrusted.cend(),
+                    [&fileName](const QString &trusted) {
+                      return fileName == trusted ||
+                             fileName.startsWith(trusted + QLatin1Char('/'));
+                    })) {
+      return true;
+    }
+    const auto agreed = m_reencryptAgreed.constFind(fileName);
+    return agreed != m_reencryptAgreed.constEnd() &&
+           entryHash(fileName) == agreed.value();
   };
   for (const QString &fileName : std::as_const(files)) {
     if (m_reencryptCancel.load()) {
@@ -1749,45 +1755,80 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
       // on the list who cannot read it yet, and whom this change did not
       // add, gains it: an entry copied in from a folder they cannot read
       // is left for the user to agree to. Taking readers away (a removed
-      // recipient, a rotated subkey) needs no question.
+      // recipient, a rotated subkey) needs no question. Who reads it now is
+      // what its recipient IDs say, which a writer can add to: this stops a
+      // copy, not a crafted entry (SECURITY.md).
       const QString gpgIdPath =
           Pass::getGpgIdPath(fileName, m_settings.passStore);
-      if (!listKeys.contains(gpgIdPath)) {
-        const std::optional<QSet<QString>> now =
-            primaryKeysOf(gpgId, true, primaries);
-        std::optional<QSet<QString>> before = now;
-        if (m_previousList && m_previousList->gpgIdFile == gpgIdPath) {
-          before = primaryKeysOf(m_previousList->recipients, true, primaries);
-        }
-        // A previous list gpg cannot resolve exempts no one: taken as the
-        // current one, nobody counts as added.
-        listKeys.insert(
-            gpgIdPath, {now, before ? *before : now.value_or(QSet<QString>())});
-      }
-      const auto &[now, before] = listKeys.value(gpgIdPath);
       bool gains = false;
+      QSet<QString> gaining;
+      QSet<QString> losing;
+      const bool hidden =
+          !keys.isEmpty() &&
+          std::all_of(keys.cbegin(), keys.cend(), [](const QString &id) {
+            return id == QLatin1String("0000000000000000");
+          });
       // No recipients gpg can list: not an entry it can decrypt either, so
       // the attempt below fails without handing anything over.
-      if (now && !keys.isEmpty()) {
-        const std::optional<QSet<QString>> readers =
-            primaryKeysOf(keys, false, primaries);
-        QSet<QString> gaining = *now;
-        gaining.subtract(readers.value_or(QSet<QString>()));
-        // Whom this change added gains every entry of the folder, as it
-        // should; the list may be unreadable to gpg (left to encryption,
-        // which then fails for each entry).
-        QSet<QString> added = *now;
-        added.subtract(before);
-        gaining.subtract(added);
-        gains = !gaining.isEmpty();
+      if (!keys.isEmpty()) {
+        if (!listKeys.contains(gpgIdPath)) {
+          ListKeys fresh;
+          fresh.now = keysEncryptedTo(gpgId, primaries, names);
+          std::optional<QSet<QString>> before = fresh.now;
+          if (m_previousList && m_previousList->gpgIdFile == gpgIdPath) {
+            before =
+                keysEncryptedTo(m_previousList->recipients, primaries, names);
+          }
+          // A previous list gpg cannot encrypt to exempts no one.
+          fresh.before = before ? *before : fresh.now.value_or(QSet<QString>());
+          listKeys.insert(gpgIdPath, fresh);
+        }
+        const ListKeys &lk = listKeys[gpgIdPath];
+        if (lk.now) {
+          const QSet<QString> readers = primaryKeysOf(keys, primaries, names);
+          gaining = *lk.now;
+          gaining.subtract(readers);
+          // Whom this change added gains every entry of the folder, as it
+          // should.
+          QSet<QString> added = *lk.now;
+          added.subtract(lk.before);
+          gaining.subtract(added);
+          gains = !gaining.isEmpty();
+          // Who was taken off the list and still reads it, if it is skipped.
+          QSet<QString> removed = lk.before;
+          removed.subtract(*lk.now);
+          losing = readers;
+          losing.intersect(removed);
+        }
       }
       if (m_reencryptCancel.load()) {
         result.cancelled = true;
         break;
       }
+      const auto named = [&names](const QSet<QString> &fprs) {
+        QStringList who;
+        for (const QString &fpr : fprs) {
+          who << names.value(fpr, fpr.right(16));
+        }
+        who.sort();
+        return who.join(QStringLiteral(", "));
+      };
       QString why;
-      if (!isTrusted(fileName) && gains) {
+      if (gains && !isTrusted(fileName)) {
         result.unexpected << fileName;
+        result.unexpectedHashes << entryHash(fileName);
+        QString detail =
+            hidden ? tr("its recipients cannot be told (hidden key IDs); "
+                        "it would become readable by %1")
+                         .arg(named(gaining))
+                   : tr("would become readable by %1").arg(named(gaining));
+        if (!losing.isEmpty()) {
+          detail +=
+              QStringLiteral("; ") +
+              tr("still readable by %1, who was removed").arg(named(losing));
+          result.heldBack = true;
+        }
+        result.unexpectedDetails << detail;
       } else if (reencryptSingleFile(fileName, gpgId, &why)) {
         result.reencrypted++;
       } else if (m_reencryptCancel.load()) {
@@ -1826,7 +1867,10 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
   // the holds of what it covered. Also without Git: a recipients change
   // left uncommitted now is swept into a later commit (the next run's
   // backup commit) once Git is on, and pushed with it.
-  if (result.cancelled || result.aborted || !result.failed.isEmpty()) {
+  // An entry left alone that a removed recipient still reads keeps the
+  // automatic push waiting, as a failed one does: the change is not done.
+  if (result.cancelled || result.aborted || !result.failed.isEmpty() ||
+      result.heldBack) {
     holdAutoPush(m_reencryptScope);
   } else {
     releaseAutoPush(m_reencryptScope);
@@ -1856,7 +1900,11 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
         (m_settings.autoPush || m_pushAfterReencrypt) && reencryptUsesGit()) {
       m_pushAfterReencrypt = false;
       m_deferredPushByHand = false;
-      if (result.failed.isEmpty() && autoPushHeld()) {
+      if (result.heldBack) {
+        emit statusMsg(tr("Not pushing: an entry left as it is is still "
+                          "readable by a removed recipient"),
+                       5000);
+      } else if (result.failed.isEmpty() && autoPushHeld()) {
         // Clean here, but another folder's run did not finish.
         emit statusMsg(tr("Not pushing: an earlier re-encryption in this "
                           "store did not finish"),
@@ -1883,6 +1931,14 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
   m_writtenGpgId.reset();
   m_previousList.reset();
   m_reencryptTrusted.clear();
+  m_reencryptAgreed.clear();
+  // What was named, with the bytes it was named for: reencryptAlso() holds
+  // the user's yes to those.
+  m_lastUnexpected.clear();
+  for (qsizetype i = 0; i < result.unexpected.size(); ++i) {
+    m_lastUnexpected.insert(result.unexpected.at(i),
+                            result.unexpectedHashes.value(i));
+  }
   // No push after a cancel or abort; otherwise one asked for meanwhile is
   // still to make (by a run to come, or once a pending move settles).
   if (result.cancelled || result.aborted) {
@@ -1895,7 +1951,8 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
   // Asked after the run is over, so the interface is free for the question;
   // the entries were not touched, so nothing waits on the answer.
   if (!result.unexpected.isEmpty() && !result.cancelled && !result.aborted) {
-    emit unexpectedRecipients(scope, result.unexpected);
+    emit unexpectedRecipients(scope, result.unexpected,
+                              result.unexpectedDetails);
   }
   startMovedReencrypts();
 }
@@ -1906,13 +1963,21 @@ void ImitatePass::reencryptAlso(const QString &dir, const QStringList &files,
     emit statusMsg(tr("A re-encryption is already running"), 3000);
     return;
   }
-  m_reencryptTrusted.clear();
+  // Each with the bytes the user was shown it with: one changed since (a
+  // pull, a co-writer) is named again rather than taken.
+  m_reencryptAgreed.clear();
   for (const QString &file : files) {
-    m_reencryptTrusted << QDir::cleanPath(file);
+    const auto shown = m_lastUnexpected.constFind(QDir::cleanPath(file));
+    if (shown != m_lastUnexpected.constEnd()) {
+      m_reencryptAgreed.insert(shown.key(), shown.value());
+    }
+  }
+  if (m_reencryptAgreed.isEmpty()) {
+    return;
   }
   reencryptPath(dir, settings);
   if (!m_reencryptActive) {
-    m_reencryptTrusted.clear();
+    m_reencryptAgreed.clear();
   }
 }
 

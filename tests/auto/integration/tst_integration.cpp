@@ -973,16 +973,21 @@ void tst_integration::imitatePass_reencryptLeavesAForeignEntryForTheUser() {
     const QByteArray payload = (fprs.join('\n') + "\n").toUtf8();
     return f.write(payload) == payload.size();
   };
-  const QString team = QDir::cleanPath(storeDir.path() + "/team");
-  const QString grow = QDir::cleanPath(storeDir.path() + "/grow");
-  QVERIFY(writeGpgId(storeDir.path(), {m_keyFingerprint}));
+  const QString root = storeDir.path();
+  const QString team = root + "/team";
+  const QString grow = root + "/grow";
+  const QString drop = root + "/drop";
+  const QString k2only = root + "/k2only";
+  const QString shrink = root + "/shrink";
+  QVERIFY(writeGpgId(root, {m_keyFingerprint}));
   QVERIFY(writeGpgId(team, {m_keyFingerprint, m_keyFingerprint2}));
   QVERIFY(writeGpgId(grow, {m_keyFingerprint}));
   // A list naming a key this keyring does not have, besides key1 and key2.
-  const QString drop = QDir::cleanPath(storeDir.path() + "/drop");
   QVERIFY(writeGpgId(
       drop, {m_keyFingerprint, m_keyFingerprint2,
              QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567")}));
+  QVERIFY(writeGpgId(k2only, {m_keyFingerprint2}));
+  QVERIFY(writeGpgId(shrink, {m_keyFingerprint, m_keyFingerprint2}));
 
   ImitatePass pass;
   {
@@ -992,17 +997,21 @@ void tst_integration::imitatePass_reencryptLeavesAForeignEntryForTheUser() {
   }
   QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
   for (const QString &name :
-       {QStringLiteral("bank"), QStringLiteral("team/own"),
-        QStringLiteral("grow/old")}) {
+       {QStringLiteral("bank"), QStringLiteral("bank2"),
+        QStringLiteral("team/own"), QStringLiteral("grow/old"),
+        QStringLiteral("k2only/x")}) {
     QSignalSpy spy(&pass, &Pass::finishedInsert);
     pass.Insert(name, QStringLiteral("secret\n"), false);
     QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
   }
-  // Pushed by someone on team/'s list: the bytes of an entry only key1 reads.
+  // Pushed by someone on these lists: bytes of entries only key1 reads.
   const QString planted = team + "/notes.gpg";
-  QVERIFY(QFile::copy(storeDir.path() + "/bank.gpg", planted));
   const QString plantedInDrop = drop + "/notes.gpg";
-  QVERIFY(QFile::copy(storeDir.path() + "/bank.gpg", plantedInDrop));
+  QVERIFY(QFile::copy(root + "/bank.gpg", planted));
+  QVERIFY(QFile::copy(root + "/bank.gpg", plantedInDrop));
+  // One only key2 reads, in a folder about to lose key2.
+  const QString k2entry = shrink + "/x.gpg";
+  QVERIFY(QFile::copy(k2only + "/x.gpg", k2entry));
 
   const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
   const QString sub2 =
@@ -1011,40 +1020,27 @@ void tst_integration::imitatePass_reencryptLeavesAForeignEntryForTheUser() {
   const auto readers = [&](const QString &file) {
     return recipientKeyIds(m_gnupgHome.path(), file);
   };
-
   QSignalSpy unexpected(&pass, &ImitatePass::unexpectedRecipients);
   QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
-  // Users > OK on team/ without a change.
-  pass.Init(team, {keyUser(m_keyFingerprint), keyUser(m_keyFingerprint2)});
-  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
+  const auto runInit = [&](const QString &dir, const QList<UserInfo> &users) {
+    unexpected.clear();
+    endSpy.clear();
+    pass.Init(dir, users);
+    return waitForSignal(endSpy, 60000);
+  };
+
+  // Users > OK on team/ without a change: the planted entry is named and
+  // left alone, the folder's own one is re-encrypted.
+  QVERIFY(
+      runInit(team, {keyUser(m_keyFingerprint), keyUser(m_keyFingerprint2)}));
   QCOMPARE(unexpected.count(), 1);
   QCOMPARE(unexpected.first().at(1).toStringList(), QStringList{planted});
+  QVERIFY(!unexpected.first().at(2).toStringList().value(0).isEmpty());
   QVERIFY2(!readers(planted).contains(sub2),
            "the planted entry must not be re-encrypted without a question");
   QVERIFY(readers(team + "/own.gpg").contains(sub2));
-
-  // Users > OK on grow/ adding key2: its entry was encrypted to the list it
-  // had, so it follows the new one without a question.
+  // The user agrees: now it is re-encrypted, and only it.
   unexpected.clear();
-  endSpy.clear();
-  pass.Init(grow, {keyUser(m_keyFingerprint), keyUser(m_keyFingerprint2)});
-  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
-  QCOMPARE(unexpected.count(), 0);
-  QVERIFY(readers(grow + "/old.gpg").contains(sub2));
-
-  // Users > OK on drop/ removing only the unknown key: the list it had
-  // cannot be resolved, so nobody counts as added and key2 would still
-  // gain the planted entry: asked.
-  unexpected.clear();
-  endSpy.clear();
-  pass.Init(drop, {keyUser(m_keyFingerprint), keyUser(m_keyFingerprint2)});
-  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
-  QCOMPARE(unexpected.count(), 1);
-  QCOMPARE(unexpected.first().at(1).toStringList(), QStringList{plantedInDrop});
-  QVERIFY(!readers(plantedInDrop).contains(sub2));
-  unexpected.clear();
-
-  // The user agrees: now it is re-encrypted.
   endSpy.clear();
   pass.reencryptAlso(team, {planted}, QtPassSettings::load());
   QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
@@ -1052,6 +1048,43 @@ void tst_integration::imitatePass_reencryptLeavesAForeignEntryForTheUser() {
   const QStringList after = readers(planted);
   QVERIFY2(after.contains(sub1) && after.contains(sub2),
            qPrintable(after.join(',')));
+
+  // Users > OK on grow/ adding key2: its entry was encrypted to the list it
+  // had, so it follows the new one without a question.
+  QVERIFY(
+      runInit(grow, {keyUser(m_keyFingerprint), keyUser(m_keyFingerprint2)}));
+  QCOMPARE(unexpected.count(), 0);
+  QVERIFY(readers(grow + "/old.gpg").contains(sub2));
+
+  // Users > OK on drop/ removing only the unknown key: the list it had
+  // cannot be encrypted to, so nobody counts as added and key2 would still
+  // gain the planted entry: asked.
+  QVERIFY(
+      runInit(drop, {keyUser(m_keyFingerprint), keyUser(m_keyFingerprint2)}));
+  QCOMPARE(unexpected.count(), 1);
+  QCOMPARE(unexpected.first().at(1).toStringList(), QStringList{plantedInDrop});
+  // Its bytes change before the user answers: the yes was for the bytes
+  // shown, so it is named again, not taken.
+  QVERIFY(QFile::remove(plantedInDrop));
+  QVERIFY(QFile::copy(root + "/bank2.gpg", plantedInDrop));
+  unexpected.clear();
+  endSpy.clear();
+  pass.reencryptAlso(drop, {plantedInDrop}, QtPassSettings::load());
+  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
+  QCOMPARE(unexpected.count(), 1);
+  QVERIFY(!readers(plantedInDrop).contains(sub2));
+
+  // Users > OK on shrink/ removing key2: an entry only key2 reads would
+  // gain key1, so it is left, and key2 still reads it: the automatic push
+  // waits, and the question says so.
+  QVERIFY(!pass.autoPushHeld());
+  QVERIFY(runInit(shrink, {keyUser(m_keyFingerprint)}));
+  QCOMPARE(unexpected.count(), 1);
+  QCOMPARE(unexpected.first().at(1).toStringList(), QStringList{k2entry});
+  QVERIFY2(unexpected.first().at(2).toStringList().value(0).contains(
+               QStringLiteral("removed")),
+           qPrintable(unexpected.first().at(2).toStringList().join('|')));
+  QVERIFY2(pass.autoPushHeld(), "a removed recipient still reads an entry");
 }
 
 void tst_integration::imitatePass_moveIntoFolderReencryptsToFolderKey() {

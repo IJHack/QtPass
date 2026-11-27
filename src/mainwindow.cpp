@@ -2256,28 +2256,36 @@ void MainWindow::endReencryptPath() {
 }
 
 void MainWindow::askReencryptUnexpected(const QString &dir,
-                                        const QStringList &files) {
+                                        const QStringList &files,
+                                        const QStringList &details) {
   const AppSettings s = QtPassSettings::load();
   const QDir store(s.passStore);
-  constexpr int kListed = 15;
-  QStringList names;
-  for (const QString &file : files.mid(0, kListed)) {
-    names << Util::displayable(store.relativeFilePath(file), false);
+  // Sorted by name, so each folder's entries stand together; who would gain
+  // each one beside it, as the names alone are the writer's choosing.
+  QList<std::pair<QString, QString>> rows;
+  for (qsizetype i = 0; i < files.size(); ++i) {
+    rows.append({Util::displayable(store.relativeFilePath(files.at(i)), false),
+                 details.value(i)});
   }
-  if (files.size() > kListed) {
-    names << tr("... and %n more", nullptr,
-                static_cast<int>(files.size() - kListed));
+  std::sort(rows.begin(), rows.end());
+  constexpr int kListed = 15;
+  QStringList lines;
+  for (qsizetype i = 0; i < rows.size() && i < kListed; ++i) {
+    lines << rows.at(i).first + QStringLiteral(": ") + rows.at(i).second;
+  }
+  if (rows.size() > kListed) {
+    lines << tr("... and %n more", nullptr,
+                static_cast<int>(rows.size() - kListed));
   }
   const int n = static_cast<int>(files.size());
   const bool yes = PlainMessageBox::askYes(
       this, tr("Re-encrypt these too?"),
-      tr("%n entry(s) here are encrypted to other people than this folder's "
-         "recipients were, so they were left as they are. Someone who can "
-         "read this folder may have copied them in from a folder they "
-         "cannot read: re-encrypting them would let everyone on this "
-         "folder's list read them.",
+      tr("%n entry(s) here would become readable by people on this "
+         "folder's list who cannot read them now, and whom you did not just "
+         "add, so they were left as they are. Someone who can read this "
+         "folder may have copied them in from a folder they cannot read.",
          nullptr, n) +
-          QStringLiteral("\n\n") + names.join(QLatin1Char('\n')) +
+          QStringLiteral("\n\n") + lines.join(QLatin1Char('\n')) +
           QStringLiteral("\n\n") +
           tr("Re-encrypt them for this folder's recipients? If not, they "
              "stay readable only by whoever they are encrypted to now."));

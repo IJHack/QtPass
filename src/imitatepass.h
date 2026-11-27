@@ -207,19 +207,35 @@ protected:
    */
   auto getKeysFromFile(const QString &fileName) -> QStringList;
   /**
-   * @brief The primary keys a set of recipients amounts to, as gpg resolves
-   * them: for each key ID from an entry (ENC_TO) the fingerprint of its
-   * primary key, or for each line of a list the primary keys gpg finds for
-   * it (as `-r` would).
-   * @param ids Long key IDs of encryption subkeys, or recipient list lines.
-   * @param fromList Whether @p ids are list lines rather than key IDs.
-   * @param primaries Cache of the key listing, filled on first use.
-   * @return The fingerprints. Nothing when a list line resolves to no key;
-   *         a key ID gpg does not know is left out.
+   * @brief The primary keys behind key IDs from an entry (ENC_TO).
+   * @param ids Long key IDs of encryption subkeys.
+   * @param primaries Key ID to primary fingerprint, filled from one key
+   *        listing on first use.
+   * @param names Primary fingerprint to its first user ID, filled with it.
+   * @return The fingerprints; a key ID gpg does not know is left out.
    */
-  auto primaryKeysOf(const QStringList &ids, bool fromList,
-                     QHash<QString, QString> &primaries)
+  auto primaryKeysOf(const QStringList &ids, QHash<QString, QString> &primaries,
+                     QHash<QString, QString> &names) -> QSet<QString>;
+  /**
+   * @brief The primary keys gpg encrypts to for @p recipients, found by a
+   * throwaway encryption outside the store with the arguments a real one
+   * uses, so groups, `!` suffixes and key lookups count as `-r` makes them.
+   * @param recipients A recipient list.
+   * @param primaries As for primaryKeysOf().
+   * @param names As for primaryKeysOf().
+   * @return The fingerprints; nothing when gpg cannot encrypt to the list.
+   */
+  auto keysEncryptedTo(const QStringList &recipients,
+                       QHash<QString, QString> &primaries,
+                       QHash<QString, QString> &names)
       -> std::optional<QSet<QString>>;
+  /**
+   * @brief SHA-256 of an entry's bytes, read as a regular file without
+   * following a link.
+   * @param file The entry, absolute.
+   * @return The hash; empty when it cannot be read so.
+   */
+  auto entryHash(const QString &file) const -> QByteArray;
   /**
    * @brief Re-encrypt single file with new recipients.
    * @param fileName File to re-encrypt.
@@ -577,6 +593,8 @@ public:
    * copied it in from a folder they cannot read, and re-encrypting it would
    * hand them its plaintext. This runs @p dir again with @p files taken as
    * they are.
+   * Only entries the last run named, each only while its bytes are those it
+   * was named with; the run takes those and nothing else.
    * @param dir The folder of the run that found them.
    * @param files The entries, as unexpectedRecipients() named them.
    * @param settings The current settings, as for reencryptPath().
@@ -617,8 +635,12 @@ signals:
    * once the user agreed. Emitted after endReencryptPath().
    * @param dir The folder of the run.
    * @param files The entries left alone, absolute.
+   * @param details For each, who would gain it, and who was removed from
+   *        the list and still reads it (the run then holds the automatic
+   *        push).
    */
-  void unexpectedRecipients(const QString &dir, const QStringList &files);
+  void unexpectedRecipients(const QString &dir, const QStringList &files,
+                            const QStringList &details);
 
   // Pass interface
 public:
@@ -904,10 +926,17 @@ private:
   /// Written only on the owning thread while no worker runs.
   std::optional<PreviousList> m_previousList;
   /// Entries or folders the current run re-encrypts whatever they are
-  /// encrypted to: what the user moved or copied there, or agreed to in
-  /// reencryptAlso(). Cleared by finishReencrypt(); written only on the
-  /// owning thread while no worker runs.
+  /// encrypted to: what the user moved or copied there. Cleared by
+  /// finishReencrypt(); written only on the owning thread while no worker
+  /// runs.
   QStringList m_reencryptTrusted;
+  /// The entries the user agreed to in reencryptAlso(), with the SHA-256 of
+  /// the bytes they were shown for: the run takes only these, and each only
+  /// while its bytes are unchanged. Same lifetime as m_reencryptTrusted.
+  QHash<QString, QByteArray> m_reencryptAgreed;
+  /// What the last run named (unexpectedRecipients()), with each entry's
+  /// SHA-256 then; reencryptAlso() takes the user's yes from here.
+  QHash<QString, QByteArray> m_lastUnexpected;
   /**
    * @brief gitConfigured(), unless the current run is one
    * reencryptWithoutGit() started.

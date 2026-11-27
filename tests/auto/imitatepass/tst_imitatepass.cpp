@@ -890,29 +890,21 @@ void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
     QFile f(script);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
     QTextStream out(&f);
+    // An entry only A reads; gpg makes the group `grp` A and B, which the
+    // throwaway encryption (probe.gpg) shows.
     out << "#!/bin/sh\n"
         << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
         << "last=''; for a in \"$@\"; do last=\"$a\"; done\n"
         << "case \"$*\" in\n"
+        << "  *--list-only*probe.gpg*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA "
+           "18 "
+           "0'; echo '[GNUPG:] ENC_TO BBBBBBBBBBBBBBBB 18 0';;\n"
         << "  *--list-only*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0';;\n"
-        << "  *--list-config*) echo 'cfg:group:grp:" << fa << ";" << fb
-        << "';;\n"
-        << "  *'--list-keys --') printf "
-           "'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
+        << "  *--list-keys) printf 'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
            "fpr:::::::::"
-        << fa
-        << ":\\npub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\nfpr:::::::::" << fb
-        << ":\\n';;\n"
-        << "  *--list-keys*) case \"$last\" in\n"
-        << "      " << fa
-        << ") printf 'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
-           "fpr:::::::::"
-        << fa << ":\\n';;\n"
-        << "      " << fb
-        << ") printf 'pub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\n"
-           "fpr:::::::::"
-        << fb << ":\\n';;\n"
-        << "    esac;;\n"
+        << fa << ":\\nuid:u::::::::Alice <a@example.org>:\\n"
+        << "pub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\nfpr:::::::::" << fb
+        << ":\\nuid:u::::::::Bob <b@example.org>:\\n';;\n"
         << "  *' -d '*|*' -d') printf 'plaintext\\n';;\n"
         << "  *-eq*) cat >/dev/null;;\n"
         << "esac\n"
@@ -940,7 +932,13 @@ void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
   QCOMPARE(unexpected.count(), 1);
   QCOMPARE(unexpected.first().at(1).toStringList(),
            QStringList{QDir(store).filePath("entry.gpg")});
-  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+  QVERIFY2(unexpected.first().at(2).toStringList().value(0).contains(
+               QStringLiteral("Bob")),
+           "the question names who would gain the entry");
+  // The one encryption is the throwaway one, not the entry.
+  const QList<QStringList> encrypts = encryptCalls(loggedCalls(logPath));
+  QCOMPARE(encrypts.size(), 1);
+  QVERIFY2(encrypts.first().join(' ').contains(QStringLiteral("probe.gpg")),
            "the entry must not be re-encrypted to the group unasked");
 }
 
