@@ -389,8 +389,11 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   }
 
   // pass re-encrypts what lands at the written path to its nearest list, and
-  // a folder's own lists travel with it.
-  if (refuseMisreadList(written, srcIsDir ? normalizedSrc : QString())) {
+  // a folder's own lists travel with it. Into an existing folder it
+  // re-encrypts that whole folder (reencrypt_path "$new_path"), so every
+  // list below it counts too.
+  if (refuseMisreadList(written, srcIsDir ? normalizedSrc : QString()) ||
+      (QFileInfo(newPath).isDir() && refuseMisreadList(QString(), newPath))) {
     if (subcommand == QStringLiteral("mv"))
       emit finishedMove(QString(), QString());
     else

@@ -2847,6 +2847,9 @@ void tst_integration::realPass_misreadListRefused() {
   QVERIFY(writeFile(root + "/real.gpg", "ciphertext"));
   QVERIFY(writeFile(root + "/sub/.gpg-id", dashList));
   QVERIFY(writeFile(root + "/sub/old.gpg", "ciphertext"));
+  // A folder whose own list is fine, with a dash list deeper in it.
+  QVERIFY(writeFile(root + "/drop/inner/.gpg-id", dashList));
+  QVERIFY(writeFile(root + "/drop/inner/e.gpg", "ciphertext"));
 
   RealPass pass;
   setupPass(pass);
@@ -2865,6 +2868,12 @@ void tst_integration::realPass_misreadListRefused() {
   pass.Copy(root + "/sub", root + "/copied", true);
   QCOMPARE(criticalSpy.count(), 1);
 
+  // Into an existing folder pass re-encrypts all of it, the dash list in
+  // its subfolder included.
+  criticalSpy.clear();
+  pass.Move(root + "/real.gpg", root + "/drop", false);
+  QCOMPARE(criticalSpy.count(), 1);
+
   criticalSpy.clear();
   UserInfo me;
   me.key_id = m_keyFingerprint;
@@ -2876,6 +2885,7 @@ void tst_integration::realPass_misreadListRefused() {
   QVERIFY(!QFile::exists(root + "/team/new.gpg"));
   QVERIFY(QFile::exists(root + "/real.gpg"));
   QVERIFY(!QFile::exists(root + "/team/real.gpg"));
+  QVERIFY(!QFile::exists(root + "/drop/real.gpg"));
   QVERIFY(!QFile::exists(root + "/copied"));
   QCOMPARE(readFileBytes(root + "/.gpg-id"), goodList);
 
