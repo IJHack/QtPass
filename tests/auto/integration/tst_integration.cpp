@@ -725,7 +725,9 @@ void tst_integration::imitatePass_colonNameIsAnEntryInTheStore() {
   pass.Insert(QStringLiteral(":top"), QStringLiteral("secret\n"), false);
   QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(errorSpy));
   QVERIFY(QFileInfo(storeDir.path() + "/:top.gpg").isFile());
-  QVERIFY(!QFileInfo::exists(QDir::current().filePath(":top.gpg")));
+  // Joined by hand: QDir::filePath() would hand ":top.gpg" back as a
+  // resource path, and the check would look at nothing.
+  QVERIFY(!QFileInfo::exists(QDir::currentPath() + "/:top.gpg"));
 }
 
 void tst_integration::imitatePass_insertMoveAndShow() {
