@@ -1085,6 +1085,25 @@ void tst_integration::imitatePass_reencryptLeavesAForeignEntryForTheUser() {
                QStringLiteral("removed")),
            qPrintable(unexpected.first().at(2).toStringList().join('|')));
   QVERIFY2(pass.autoPushHeld(), "a removed recipient still reads an entry");
+  // A later "Re-encrypt all" there, with no list change to go by, still
+  // knows key2 reads it: the push keeps waiting.
+  unexpected.clear();
+  endSpy.clear();
+  pass.reencryptPath(shrink);
+  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
+  QCOMPARE(unexpected.count(), 1);
+  QVERIFY2(pass.autoPushHeld(), "the removed recipient still reads it");
+  // The user agrees: it is re-encrypted for key1 only. That run took only
+  // the entry, so it releases nothing of the folder; a full run does.
+  endSpy.clear();
+  pass.reencryptAlso(shrink, {k2entry}, QtPassSettings::load());
+  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
+  QVERIFY(!readers(k2entry).contains(sub2));
+  QVERIFY(pass.autoPushHeld());
+  endSpy.clear();
+  pass.reencryptPath(shrink);
+  QVERIFY2(waitForSignal(endSpy, 60000), "the run did not end");
+  QVERIFY2(!pass.autoPushHeld(), "nothing is left for the removed recipient");
 }
 
 void tst_integration::imitatePass_moveIntoFolderReencryptsToFolderKey() {

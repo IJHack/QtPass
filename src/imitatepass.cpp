@@ -1102,14 +1102,29 @@ auto ImitatePass::keysEncryptedTo(const QStringList &recipients,
     return std::nullopt;
   }
   const QString probe = scratch.filePath(QStringLiteral("probe.gpg"));
-  if (!encryptFor(probe, recipients, QByteArrayLiteral("probe"))) {
+  // --no-throw-keyids for the probe only: with throw-keyids in gpg.conf it
+  // would name no one, and nobody would count as gaining.
+  if (execBlockingRaw(
+          m_settings.gpgExecutable,
+          encryptArgs({QStringLiteral("--yes"), QStringLiteral("--batch"),
+                       QStringLiteral("--no-throw-keyids")},
+                      pgpg(probe), recipients),
+          QByteArrayLiteral("probe"), nullptr) != 0) {
     return std::nullopt;
   }
   const QStringList ids = getKeysFromFile(probe);
   if (ids.isEmpty()) {
     return std::nullopt;
   }
-  return primaryKeysOf(ids, primaries, names);
+  QSet<QString> keys = primaryKeysOf(ids, primaries, names);
+  // A key gpg encrypted to but did not list (fetched for the probe, say)
+  // still counts, under its ID: no entry is taken to be readable by it.
+  for (const QString &id : ids) {
+    if (!primaries.contains(id.toUpper())) {
+      keys.insert(id.toUpper());
+    }
+  }
+  return keys;
 }
 
 auto ImitatePass::decryptEntry(const QString &fileName, QByteArray *plaintext,
@@ -1381,8 +1396,12 @@ struct ImitatePass::ReencryptResult {
                                       ///< (and who removed still reads it).
   QList<QByteArray> unexpectedHashes; ///< Their contents' SHA-256, which
                                       ///< reencryptAlso() holds them to.
-  bool heldBack = false; ///< One of them is still readable by a recipient
-                         ///< this run took off the list.
+  QList<QSet<QString>> unexpectedReaders; ///< The list's keys each was
+                                          ///< named against.
+  QHash<QString, QSet<QString>> stillReadByRemoved; ///< Of those, each one a
+                                                    ///< removed recipient
+                                                    ///< still reads, by whom.
+  QStringList walked; ///< Entries whose recipients the run judged.
 };
 
 namespace {
@@ -1715,7 +1734,8 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   QHash<QString, ListKeys> listKeys;
   // What the user moved or copied in is taken as it is; what they agreed to
   // in reencryptAlso() only while its bytes are the ones they were shown.
-  const auto isTrusted = [this](const QString &fileName) {
+  const auto isTrusted = [this](const QString &fileName,
+                                const QSet<QString> &listNow) {
     if (std::any_of(m_reencryptTrusted.cbegin(), m_reencryptTrusted.cend(),
                     [&fileName](const QString &trusted) {
                       return fileName == trusted ||
@@ -1725,7 +1745,7 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     }
     const auto agreed = m_reencryptAgreed.constFind(fileName);
     return agreed != m_reencryptAgreed.constEnd() &&
-           entryHash(fileName) == agreed.value();
+           agreed->readers == listNow && entryHash(fileName) == agreed->hash;
   };
   for (const QString &fileName : std::as_const(files)) {
     if (m_reencryptCancel.load()) {
@@ -1763,6 +1783,7 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
       bool gains = false;
       QSet<QString> gaining;
       QSet<QString> losing;
+      QSet<QString> listNow;
       const bool hidden =
           !keys.isEmpty() &&
           std::all_of(keys.cbegin(), keys.cend(), [](const QString &id) {
@@ -1785,6 +1806,7 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
         }
         const ListKeys &lk = listKeys[gpgIdPath];
         if (lk.now) {
+          listNow = *lk.now;
           const QSet<QString> readers = primaryKeysOf(keys, primaries, names);
           gaining = *lk.now;
           gaining.subtract(readers);
@@ -1794,9 +1816,11 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
           added.subtract(lk.before);
           gaining.subtract(added);
           gains = !gaining.isEmpty();
-          // Who was taken off the list and still reads it, if it is skipped.
+          // Who was taken off the list and still reads it, if it is skipped:
+          // by this change, or by an earlier one that left it so.
           QSet<QString> removed = lk.before;
           removed.subtract(*lk.now);
+          removed.unite(m_removedReaders.value(fileName));
           losing = readers;
           losing.intersect(removed);
         }
@@ -1814,9 +1838,10 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
         return who.join(QStringLiteral(", "));
       };
       QString why;
-      if (gains && !isTrusted(fileName)) {
+      if (gains && !isTrusted(fileName, listNow)) {
         result.unexpected << fileName;
         result.unexpectedHashes << entryHash(fileName);
+        result.unexpectedReaders << listNow;
         QString detail =
             hidden ? tr("its recipients cannot be told (hidden key IDs); "
                         "it would become readable by %1")
@@ -1826,7 +1851,7 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
           detail +=
               QStringLiteral("; ") +
               tr("still readable by %1, who was removed").arg(named(losing));
-          result.heldBack = true;
+          result.stillReadByRemoved.insert(fileName, losing);
         }
         result.unexpectedDetails << detail;
       } else if (reencryptSingleFile(fileName, gpgId, &why)) {
@@ -1840,6 +1865,7 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
         result.failed << (why.isEmpty() ? fileName : why);
       }
     }
+    result.walked << fileName;
     result.checked++;
     emit reencryptProgress(result.checked, result.total);
   }
@@ -1869,10 +1895,32 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
   // backup commit) once Git is on, and pushed with it.
   // An entry left alone that a removed recipient still reads keeps the
   // automatic push waiting, as a failed one does: the change is not done.
+  // Kept per entry across runs, until one re-encrypts it, finds nobody
+  // removed reading it, or it is gone. A run of only the entries the user
+  // agreed to settles those, not the rest of the folder's holds.
+  const bool agreedRun = !m_reencryptAgreed.isEmpty();
+  for (const QString &file : result.walked) {
+    m_removedReaders.remove(file);
+  }
+  for (auto it = result.stillReadByRemoved.cbegin();
+       it != result.stillReadByRemoved.cend(); ++it) {
+    m_removedReaders.insert(it.key(), it.value());
+  }
+  for (auto it = m_removedReaders.begin(); it != m_removedReaders.end();) {
+    it = QFileInfo::exists(it.key()) ? std::next(it)
+                                     : m_removedReaders.erase(it);
+  }
+  const QString heldScope = QDir::cleanPath(m_reencryptScope);
+  const QString heldPrefix = heldScope + QLatin1Char('/');
+  const bool stillRead =
+      std::any_of(m_removedReaders.keyBegin(), m_removedReaders.keyEnd(),
+                  [&heldScope, &heldPrefix](const QString &file) {
+                    return file == heldScope || file.startsWith(heldPrefix);
+                  });
   if (result.cancelled || result.aborted || !result.failed.isEmpty() ||
-      result.heldBack) {
+      stillRead) {
     holdAutoPush(m_reencryptScope);
-  } else {
+  } else if (!agreedRun) {
     releaseAutoPush(m_reencryptScope);
   }
 
@@ -1900,7 +1948,7 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
         (m_settings.autoPush || m_pushAfterReencrypt) && reencryptUsesGit()) {
       m_pushAfterReencrypt = false;
       m_deferredPushByHand = false;
-      if (result.heldBack) {
+      if (stillRead) {
         emit statusMsg(tr("Not pushing: an entry left as it is is still "
                           "readable by a removed recipient"),
                        5000);
@@ -1937,7 +1985,8 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
   m_lastUnexpected.clear();
   for (qsizetype i = 0; i < result.unexpected.size(); ++i) {
     m_lastUnexpected.insert(result.unexpected.at(i),
-                            result.unexpectedHashes.value(i));
+                            Agreed{result.unexpectedHashes.value(i),
+                                   result.unexpectedReaders.value(i)});
   }
   // No push after a cancel or abort; otherwise one asked for meanwhile is
   // still to make (by a run to come, or once a pending move settles).

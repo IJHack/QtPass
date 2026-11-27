@@ -930,13 +930,24 @@ private:
   /// finishReencrypt(); written only on the owning thread while no worker
   /// runs.
   QStringList m_reencryptTrusted;
-  /// The entries the user agreed to in reencryptAlso(), with the SHA-256 of
-  /// the bytes they were shown for: the run takes only these, and each only
-  /// while its bytes are unchanged. Same lifetime as m_reencryptTrusted.
-  QHash<QString, QByteArray> m_reencryptAgreed;
-  /// What the last run named (unexpectedRecipients()), with each entry's
-  /// SHA-256 then; reencryptAlso() takes the user's yes from here.
-  QHash<QString, QByteArray> m_lastUnexpected;
+  /// What the user was shown for an entry: its bytes and its folder's keys.
+  struct Agreed {
+    QByteArray hash;       ///< SHA-256 of the entry's bytes.
+    QSet<QString> readers; ///< The primary keys its list encrypted to.
+  };
+  /// The entries the user agreed to in reencryptAlso(), with what they were
+  /// shown: the run takes only these, and each only while its bytes and its
+  /// folder's keys are unchanged. Same lifetime as m_reencryptTrusted.
+  QHash<QString, Agreed> m_reencryptAgreed;
+  /// What the last run named (unexpectedRecipients()), with what was shown;
+  /// reencryptAlso() takes the user's yes from here.
+  QHash<QString, Agreed> m_lastUnexpected;
+  /// Entries left alone that a recipient taken off their folder's list
+  /// still reads, by whom: the automatic push for their folder waits until
+  /// a run re-encrypts them, finds nobody removed reading them, or they are
+  /// gone. Kept across runs; written only on the owning thread while no
+  /// worker runs.
+  QHash<QString, QSet<QString>> m_removedReaders;
   /**
    * @brief gitConfigured(), unless the current run is one
    * reencryptWithoutGit() started.
