@@ -1799,15 +1799,16 @@ void tst_realpass::moveAndCopyJudgeWherePassWrites() {
   QVERIFY2(!QFile::exists(m_log), "the stand-in pass must not have run");
 
   // The source respelled, as a case-only rename on a case-insensitive file
-  // system is; a hard link stands in for that here. pass renames it.
-  QVERIFY(
-      ::link(QFile::encodeName(base + QStringLiteral("x.gpg")).constData(),
-             QFile::encodeName(base + QStringLiteral("X.gpg")).constData()) ==
-      0);
-  pass->Move(base + QStringLiteral("x.gpg"), base + QStringLiteral("X"), false);
+  // system is; a hard link under another name stands in for that here (a
+  // case-insensitive one already has X.gpg). pass renames it.
+  QVERIFY(::link(QFile::encodeName(base + QStringLiteral("x.gpg")).constData(),
+                 QFile::encodeName(base + QStringLiteral("alias.gpg"))
+                     .constData()) == 0);
+  pass->Move(base + QStringLiteral("x.gpg"), base + QStringLiteral("alias"),
+             false);
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("mv"), QStringLiteral("resolve/x"),
-                        QStringLiteral("resolve/X")}));
+                        QStringLiteral("resolve/alias")}));
   QFile::remove(m_log);
 
   // A folder with an entry of its name beside it: the trailing slash makes
