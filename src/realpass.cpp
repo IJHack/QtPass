@@ -392,6 +392,31 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
     return;
   }
 
+  // pass copies a folder with `cp -r`, which on BSD and macOS follows a link
+  // inside it: what a link pushed into a shared store points to would be
+  // copied into the store. Refused on every platform, so the result does not
+  // depend on which cp pass finds. Hidden folders count; links are not
+  // followed.
+  if (subcommand == QStringLiteral("cp") && srcIsDir) {
+    QDirIterator it(normalizedSrc,
+                    QDir::AllEntries | QDir::Hidden | QDir::System |
+                        QDir::NoDotAndDotDot,
+                    QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+      const QString path = it.next();
+      if (it.fileInfo().isSymLink()) {
+        emit critical(tr("Not copied"),
+                      tr("%1 is a symbolic link. Copying the folder that "
+                         "holds it would, on some systems, copy what it "
+                         "points to into the store. Nothing was copied; "
+                         "remove the link first.")
+                          .arg(QDir::toNativeSeparators(path)));
+        emit finishedCopy(QString(), QString());
+        return;
+      }
+    }
+  }
+
   // pass re-encrypts what lands at the written path to its nearest list, and
   // a folder's own lists travel with it. Into an existing folder it
   // re-encrypts that whole folder (reencrypt_path "$new_path"), so every
