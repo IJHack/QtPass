@@ -1,6 +1,6 @@
 <map id="ImitatePass::getKeysFromFile" name="ImitatePass::getKeysFromFile">
 <area shape="rect" id="Node000001" title="Read recipients from file." alt="" coords="2607,69,2820,96"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a292b705c5a215c06aa1636a7fe15f885" title="The primary keys gpg encrypts to for recipients, found by a throwaway encryption outside the store wi..." alt="" coords="2344,94,2559,122"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a3a0985e86f0f6f73d04fe3c1f560f0ba" title="The primary keys gpg encrypts to for recipients, found by a throwaway encryption outside the store wi..." alt="" coords="2344,94,2559,122"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2594,94,2559,100,2559,95,2589,95"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#a8117ed7e6ccc1916801d88883ea2819a" title="Worker&#45;thread body: scan dir and re&#45;encrypt stale files." alt="" coords="2099,69,2296,96"/>
 <area shape="poly" id="edge25_Node000001_Node000003" title=" " alt="" coords="2588,83,2297,85,2297,80,2594,83"/>

@@ -10,7 +10,7 @@
 <area shape="poly" id="edge27_Node000002_Node000021" title=" " alt="" coords="2861,252,2822,255,2821,249,2866,252"/>
 <area shape="rect" id="Node000022" href="$class_imitate_pass.html#a82d39a641bb54cc1b8cb9b7168d699e8" title="Encrypt plaintext to recipients, into output." alt="" coords="2640,290,2814,318"/>
 <area shape="poly" id="edge29_Node000002_Node000022" title=" " alt="" coords="2903,269,2801,292,2800,287,2898,270"/>
-<area shape="rect" id="Node000023" href="$class_imitate_pass.html#a292b705c5a215c06aa1636a7fe15f885" title="The primary keys gpg encrypts to for recipients, found by a throwaway encryption outside the store wi..." alt="" coords="2352,150,2567,178"/>
+<area shape="rect" id="Node000023" href="$class_imitate_pass.html#a3a0985e86f0f6f73d04fe3c1f560f0ba" title="The primary keys gpg encrypts to for recipients, found by a throwaway encryption outside the store wi..." alt="" coords="2352,150,2567,178"/>
 <area shape="poly" id="edge31_Node000002_Node000023" title=" " alt="" coords="2950,229,2896,202,2830,177,2763,165,2694,158,2567,158,2567,152,2695,153,2764,159,2832,172,2898,197,2955,230"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#a331fdf170bbd5de247d1e5ee7f6bb65c" title="Re&#45;encrypt single file with new recipients." alt="" coords="2344,226,2575,254"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2618,216,2557,228,2556,223,2612,217"/>

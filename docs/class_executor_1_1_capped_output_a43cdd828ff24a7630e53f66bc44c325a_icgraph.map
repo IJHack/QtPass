@@ -32,7 +32,7 @@
 <area shape="poly" id="edge37_Node000010_Node000029" title=" " alt="" coords="3294,1129,3191,1151,3189,1146,3299,1127"/>
 <area shape="rect" id="Node000030" href="$class_imitate_pass.html#a82d39a641bb54cc1b8cb9b7168d699e8" title="Encrypt plaintext to recipients, into output." alt="" coords="3026,1097,3200,1124"/>
 <area shape="poly" id="edge39_Node000010_Node000030" title=" " alt="" coords="3261,1112,3201,1113,3199,1108,3266,1110"/>
-<area shape="rect" id="Node000031" href="$class_imitate_pass.html#a292b705c5a215c06aa1636a7fe15f885" title="The primary keys gpg encrypts to for recipients, found by a throwaway encryption outside the store wi..." alt="" coords="2724,748,2938,775"/>
+<area shape="rect" id="Node000031" href="$class_imitate_pass.html#a3a0985e86f0f6f73d04fe3c1f560f0ba" title="The primary keys gpg encrypts to for recipients, found by a throwaway encryption outside the store wi..." alt="" coords="2724,748,2938,775"/>
 <area shape="poly" id="edge41_Node000010_Node000031" title=" " alt="" coords="3348,1089,3294,1063,3230,1036,3195,1027,3162,1024,3104,1025,3076,1025,3049,1020,3021,1007,2992,985,2974,961,2966,937,2965,912,2967,888,2969,864,2968,840,2961,817,2944,794,2923,778,2922,773,2948,790,2965,814,2973,839,2974,864,2972,888,2970,912,2971,936,2979,958,2996,981,3024,1003,3050,1015,3077,1020,3104,1020,3162,1018,3196,1021,3232,1031,3296,1058,3353,1089"/>
 <area shape="rect" id="Node000012" href="$class_imitate_pass.html#a331fdf170bbd5de247d1e5ee7f6bb65c" title="Re&#45;encrypt single file with new recipients." alt="" coords="2716,1045,2946,1072"/>
 <area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="2990,1060,2948,1061,2946,1056,2995,1058"/>
