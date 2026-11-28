@@ -134,11 +134,18 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a09ae84d683a38f225f9fe3927a614d08" id="r_a09ae84d683a38f225f9fe3927a614d08"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a09ae84d683a38f225f9fe3927a614d08">cancelled</a> = false</td></tr>
 <tr class="memitem:ae0749007d118e1e9eaa3365dae956b03" id="r_ae0749007d118e1e9eaa3365dae956b03"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae0749007d118e1e9eaa3365dae956b03">aborted</a> = false</td></tr>
 <tr class="memdesc:ae0749007d118e1e9eaa3365dae956b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stopped early on an error already reported.  <br /></td></tr>
+<tr class="memitem:a9b2eda2e11e935fd052285667c8fd9cf" id="r_a9b2eda2e11e935fd052285667c8fd9cf"><td class="memItemLeft">QStringList&#160;</td><td class="memItemRight"><a class="el" href="#a9b2eda2e11e935fd052285667c8fd9cf">unexpected</a></td></tr>
+<tr class="memitem:a40c36ee4d30bb8fc79e7b7de11766bb7" id="r_a40c36ee4d30bb8fc79e7b7de11766bb7"><td class="memItemLeft">QStringList&#160;</td><td class="memItemRight"><a class="el" href="#a40c36ee4d30bb8fc79e7b7de11766bb7">unexpectedDetails</a></td></tr>
+<tr class="memitem:a65eacd0cf04752cc5f90427a25c0794a" id="r_a65eacd0cf04752cc5f90427a25c0794a"><td class="memItemLeft">QList&lt; QByteArray &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a65eacd0cf04752cc5f90427a25c0794a">unexpectedHashes</a></td></tr>
+<tr class="memitem:ab14f9fa669fdebd883fbcd82b0c0260b" id="r_ab14f9fa669fdebd883fbcd82b0c0260b"><td class="memItemLeft">QList&lt; QSet&lt; QString &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab14f9fa669fdebd883fbcd82b0c0260b">unexpectedReaders</a></td></tr>
+<tr class="memitem:ad7dd3b39ff860337c6f6c628ff3107c8" id="r_ad7dd3b39ff860337c6f6c628ff3107c8"><td class="memItemLeft">QHash&lt; QString, QSet&lt; QString &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad7dd3b39ff860337c6f6c628ff3107c8">stillReadByRemoved</a></td></tr>
+<tr class="memitem:ae051387da6490e4d9da3b1d09b65b660" id="r_ae051387da6490e4d9da3b1d09b65b660"><td class="memItemLeft">QStringList&#160;</td><td class="memItemRight"><a class="el" href="#ae051387da6490e4d9da3b1d09b65b660">walked</a></td></tr>
+<tr class="memdesc:ae051387da6490e4d9da3b1d09b65b660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entries whose recipients the run judged.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Outcome of one <a class="el" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re-encrypt entire directory.">reencryptPath()</a> run; filled on the worker thread and consumed by <a class="el" href="class_imitate_pass.html#a172222519125f9e053e09a505743d15b" title="Report the outcome of a run and emit endReencryptPath().">finishReencrypt()</a> on the owning thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01253">1253</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01395">1395</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="ae0749007d118e1e9eaa3365dae956b03" name="ae0749007d118e1e9eaa3365dae956b03"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae0749007d118e1e9eaa3365dae956b03">&#9670;&#160;</a></span>aborted</h2>
@@ -154,7 +161,7 @@ Public Attributes</h2></td></tr>
 
 <p>Stopped early on an error already reported. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01262">1262</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01404">1404</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 
 </div>
 </div>
@@ -171,7 +178,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Stopped early by <a class="el" href="class_imitate_pass.html#a5cbd9d68f47d53b994ec25cecbb27436" title="Ask a running reencryptPath() to stop.">cancelReencryptPath()</a>; the interrupted file, if any, is not in <span class="tt"><a class="el" href="#a61a9845141cf4db0ed17e6ec38ee4330">failed</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01260">1260</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01402">1402</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 
 </div>
 </div>
@@ -189,7 +196,7 @@ Public Attributes</h2></td></tr>
 
 <p>Files whose recipients were inspected. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01255">1255</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01397">1397</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,7 +213,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>One line per file that could not be re-encrypted: its path, or the reason (which names the path) when there is one to give. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01257">1257</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01399">1399</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 
 </div>
 </div>
@@ -224,7 +231,24 @@ Public Attributes</h2></td></tr>
 
 <p>Files rewritten for the current recipients. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01256">1256</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01398">1398</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad7dd3b39ff860337c6f6c628ff3107c8" name="ad7dd3b39ff860337c6f6c628ff3107c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7dd3b39ff860337c6f6c628ff3107c8">&#9670;&#160;</a></span>stillReadByRemoved</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QString, QSet&lt;QString&gt; &gt; ImitatePass::ReencryptResult::stillReadByRemoved</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Of those, each one a removed recipient still reads, by whom. </p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01414">1414</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 
 </div>
 </div>
@@ -242,7 +266,93 @@ Public Attributes</h2></td></tr>
 
 <p><span class="tt">.gpg</span> files found under the directory. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01254">1254</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01396">1396</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9b2eda2e11e935fd052285667c8fd9cf" name="a9b2eda2e11e935fd052285667c8fd9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b2eda2e11e935fd052285667c8fd9cf">&#9670;&#160;</a></span>unexpected</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList ImitatePass::ReencryptResult::unexpected</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Entries left alone: re-encrypting them would give them to someone on the list who cannot read them now (<a class="el" href="class_imitate_pass.html#a8d44f23cf427ac1e3183c857f09f260a" title="A run left files alone: re-encrypting one would let someone on its folder&#39;s list read it who cannot n...">unexpectedRecipients()</a>). </p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01405">1405</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a40c36ee4d30bb8fc79e7b7de11766bb7" name="a40c36ee4d30bb8fc79e7b7de11766bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40c36ee4d30bb8fc79e7b7de11766bb7">&#9670;&#160;</a></span>unexpectedDetails</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList ImitatePass::ReencryptResult::unexpectedDetails</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>For each of those, who would gain it (and who removed still reads it). </p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01408">1408</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a65eacd0cf04752cc5f90427a25c0794a" name="a65eacd0cf04752cc5f90427a25c0794a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65eacd0cf04752cc5f90427a25c0794a">&#9670;&#160;</a></span>unexpectedHashes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QByteArray&gt; ImitatePass::ReencryptResult::unexpectedHashes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Their contents' SHA-256, which <a class="el" href="class_imitate_pass.html#ab69e1c0e2f8eacdaf133b8fecd00fd29" title="Re-encrypt files in dir after the user agreed to it.">reencryptAlso()</a> holds them to. </p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01410">1410</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab14f9fa669fdebd883fbcd82b0c0260b" name="ab14f9fa669fdebd883fbcd82b0c0260b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14f9fa669fdebd883fbcd82b0c0260b">&#9670;&#160;</a></span>unexpectedReaders</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QSet&lt;QString&gt; &gt; ImitatePass::ReencryptResult::unexpectedReaders</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The list's keys each was named against. </p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01412">1412</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae051387da6490e4d9da3b1d09b65b660" name="ae051387da6490e4d9da3b1d09b65b660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae051387da6490e4d9da3b1d09b65b660">&#9670;&#160;</a></span>walked</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList ImitatePass::ReencryptResult::walked</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entries whose recipients the run judged. </p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8cpp_source.html#l01417">1417</a> of file <a class="el" href="imitatepass_8cpp_source.html">imitatepass.cpp</a>.</p>
 
 </div>
 </div>

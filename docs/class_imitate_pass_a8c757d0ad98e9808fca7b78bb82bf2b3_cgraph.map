@@ -1,0 +1,14 @@
+<map id="ImitatePass::entryHash" name="ImitatePass::entryHash">
+<area shape="rect" id="Node000001" title="SHA&#45;256 of an entry&#39;s bytes, read as a regular file without following a link." alt="" coords="5,31,178,58"/>
+<area shape="rect" id="Node000002" href="$class_util.html#ad9f5d96dee382e8f0bf1d8f03069f60b" title="readRegularFileUnder() for a file of the store at store, spelled under the store as configured or und..." alt="" coords="226,31,426,58"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,42,212,44,207,45,178,47"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2d4da86961fec8a5a3bbb6fedde00299" title="Whether path is absolute to the file system: as QDir::isAbsolutePath(), except that a name starting w..." alt="" coords="715,5,879,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,36,702,24,697,25,427,42"/>
+<area shape="rect" id="Node000004" href="$class_util.html#ab22e866d6db73831a0414056d34f6027" title="readRegularFile() for a file under root, with no link followed anywhere on the way down from it." alt="" coords="474,56,667,84"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="426,52,461,58,456,58,426,58"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="635,53,714,37,720,37,636,58"/>
+<area shape="rect" id="Node000005" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="720,57,874,85"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="667,68,707,71,702,71,668,73"/>
+<area shape="rect" id="Node000006" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="927,57,1084,85"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="874,69,914,71,908,71,874,74"/>
+</map>

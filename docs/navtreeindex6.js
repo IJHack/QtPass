@@ -1,5 +1,16 @@
 var NAVTREEINDEX6 =
 {
+"functions_vars_m.html":[3,3,2,12],
+"functions_vars_n.html":[3,3,2,13],
+"functions_vars_o.html":[3,3,2,14],
+"functions_vars_p.html":[3,3,2,15],
+"functions_vars_q.html":[3,3,2,16],
+"functions_vars_r.html":[3,3,2,17],
+"functions_vars_s.html":[3,3,2,18],
+"functions_vars_t.html":[3,3,2,19],
+"functions_vars_u.html":[3,3,2,20],
+"functions_vars_v.html":[3,3,2,21],
+"functions_vars_w.html":[3,3,2,22],
 "functions_w.html":[3,3,0,23],
 "functions_~.html":[3,3,0,24],
 "globals.html":[4,1,0],
@@ -238,16 +249,5 @@ var NAVTREEINDEX6 =
 "storemodel_8h_source.html":[4,0,1,92],
 "storetree_8cpp.html":[4,0,1,93],
 "storetree_8cpp_source.html":[4,0,1,93],
-"storetree_8h.html":[4,0,1,94],
-"storetree_8h_source.html":[4,0,1,94],
-"struct_app_settings.html":[1,4,1],
-"struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d":[1,4,1,11],
-"struct_app_settings.html#a089999182d33c9d008917be239f553a4":[1,4,1,12],
-"struct_app_settings.html#a0cd6f1f365fafe779fbb047bc10453d7":[1,4,1,42],
-"struct_app_settings.html#a0d19db5f33a7d4728142617f99cb55db":[1,4,1,15],
-"struct_app_settings.html#a0fed2d2dfaaaa0835fa767451eff7882":[1,4,1,30],
-"struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1":[1,4,1,36],
-"struct_app_settings.html#a19adc3d5ab6a7762c885a18599eee430":[1,4,1,22],
-"struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8":[1,4,1,49],
-"struct_app_settings.html#a1fbf2293fb2e2f41ed8eb0277079a168":[1,4,1,19]
+"storetree_8h.html":[4,0,1,94]
 };

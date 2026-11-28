@@ -21,8 +21,9 @@ var searchData=
   ['state_18',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing::state'],['../struct_pass_1_1_expected_list.html#a7d7e16278de4017b7492031e36b5a082',1,'Pass::ExpectedList::state']]],
   ['steam_5fdigits_19',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
   ['step_20',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]],
-  ['store_21',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header::store'],['../class_store_model.html#a98ebce85d60d3372420113fe7e714428',1,'StoreModel::store']]],
-  ['stores_22',['stores',['../struct_config_dialog_1_1_signing_stores.html#a05aded4260ca220959acaa60e1bf64a1',1,'ConfigDialog::SigningStores']]],
-  ['subkeys_23',['subkeys',['../struct_user_info.html#a77c6983769010c5c9ad8967f75e14187',1,'UserInfo']]],
-  ['systrayicon_24',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
+  ['stillreadbyremoved_21',['stillReadByRemoved',['../struct_imitate_pass_1_1_reencrypt_result.html#ad7dd3b39ff860337c6f6c628ff3107c8',1,'ImitatePass::ReencryptResult']]],
+  ['store_22',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header::store'],['../class_store_model.html#a98ebce85d60d3372420113fe7e714428',1,'StoreModel::store']]],
+  ['stores_23',['stores',['../struct_config_dialog_1_1_signing_stores.html#a05aded4260ca220959acaa60e1bf64a1',1,'ConfigDialog::SigningStores']]],
+  ['subkeys_24',['subkeys',['../struct_user_info.html#a77c6983769010c5c9ad8967f75e14187',1,'UserInfo']]],
+  ['systrayicon_25',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
 ];

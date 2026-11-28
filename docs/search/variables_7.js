@@ -13,5 +13,6 @@ var searchData=
   ['gpg_5ffield_5fvalidity_10',['GPG_FIELD_VALIDITY',['../gpgkeystate_8cpp.html#a400ec72afc8302fae0ab23a748d4aa6e',1,'gpgkeystate.cpp']]],
   ['gpg_5fmin_5ffields_11',['GPG_MIN_FIELDS',['../gpgkeystate_8cpp.html#a861b1e6e88e396ccb5cb8c9813bb271b',1,'gpgkeystate.cpp']]],
   ['gpgexecutable_12',['gpgExecutable',['../struct_app_settings.html#a0d19db5f33a7d4728142617f99cb55db',1,'AppSettings']]],
-  ['gpghome_13',['gpgHome',['../struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c',1,'AppSettings']]]
+  ['gpghome_13',['gpgHome',['../struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c',1,'AppSettings']]],
+  ['gpgidfile_14',['gpgIdFile',['../struct_imitate_pass_1_1_previous_list.html#a397a7f826ae68d2c87149b85bf126d30',1,'ImitatePass::PreviousList']]]
 ];

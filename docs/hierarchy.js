@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "ImitatePass::Agreed", "struct_imitate_pass_1_1_agreed.html", null ],
     [ "AppSettings", "struct_app_settings.html", null ],
     [ "Base32", "class_base32.html", null ],
     [ "ImportKeyDialog::BlockKeys", "struct_import_key_dialog_1_1_block_keys.html", null ],
@@ -22,6 +23,7 @@ var hierarchy =
     [ "PathValidator", "class_path_validator.html", null ],
     [ "ImitatePass::PendingInsert", "struct_imitate_pass_1_1_pending_insert.html", null ],
     [ "ImitatePass::PendingMove", "struct_imitate_pass_1_1_pending_move.html", null ],
+    [ "ImitatePass::PreviousList", "struct_imitate_pass_1_1_previous_list.html", null ],
     [ "Enums::ProcessInfo", "struct_enums_1_1_process_info.html", null ],
     [ "Profile", "struct_profile.html", null ],
     [ "ConfigDialog::ProfileEntry", "struct_config_dialog_1_1_profile_entry.html", null ],

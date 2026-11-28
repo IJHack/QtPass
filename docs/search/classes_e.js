@@ -9,11 +9,12 @@ var searchData=
   ['pathvalidator_6',['PathValidator',['../class_path_validator.html',1,'']]],
   ['pendinginsert_7',['PendingInsert',['../struct_imitate_pass_1_1_pending_insert.html',1,'ImitatePass']]],
   ['pendingmove_8',['PendingMove',['../struct_imitate_pass_1_1_pending_move.html',1,'ImitatePass']]],
-  ['processinfo_9',['ProcessInfo',['../struct_enums_1_1_process_info.html',1,'Enums']]],
-  ['processoutputpanel_10',['ProcessOutputPanel',['../class_process_output_panel.html',1,'']]],
-  ['profile_11',['Profile',['../struct_profile.html',1,'']]],
-  ['profileentry_12',['ProfileEntry',['../struct_config_dialog_1_1_profile_entry.html',1,'ConfigDialog']]],
-  ['profileinit_13',['ProfileInit',['../class_profile_init.html',1,'']]],
-  ['profileproblems_14',['ProfileProblems',['../struct_config_dialog_1_1_profile_problems.html',1,'ConfigDialog']]],
-  ['programswizardpage_15',['ProgramsWizardPage',['../class_programs_wizard_page.html',1,'']]]
+  ['previouslist_9',['PreviousList',['../struct_imitate_pass_1_1_previous_list.html',1,'ImitatePass']]],
+  ['processinfo_10',['ProcessInfo',['../struct_enums_1_1_process_info.html',1,'Enums']]],
+  ['processoutputpanel_11',['ProcessOutputPanel',['../class_process_output_panel.html',1,'']]],
+  ['profile_12',['Profile',['../struct_profile.html',1,'']]],
+  ['profileentry_13',['ProfileEntry',['../struct_config_dialog_1_1_profile_entry.html',1,'ConfigDialog']]],
+  ['profileinit_14',['ProfileInit',['../class_profile_init.html',1,'']]],
+  ['profileproblems_15',['ProfileProblems',['../struct_config_dialog_1_1_profile_problems.html',1,'ConfigDialog']]],
+  ['programswizardpage_16',['ProgramsWizardPage',['../class_programs_wizard_page.html',1,'']]]
 ];

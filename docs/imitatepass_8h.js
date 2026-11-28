@@ -4,5 +4,7 @@ var imitatepass_8h =
     [ "ImitatePass::PendingMove", "struct_imitate_pass_1_1_pending_move.html", "struct_imitate_pass_1_1_pending_move" ],
     [ "ImitatePass::PendingInsert", "struct_imitate_pass_1_1_pending_insert.html", "struct_imitate_pass_1_1_pending_insert" ],
     [ "ImitatePass::UncommittedGpgId", "struct_imitate_pass_1_1_uncommitted_gpg_id.html", "struct_imitate_pass_1_1_uncommitted_gpg_id" ],
-    [ "ImitatePass::WrittenGpgId", "struct_imitate_pass_1_1_written_gpg_id.html", "struct_imitate_pass_1_1_written_gpg_id" ]
+    [ "ImitatePass::WrittenGpgId", "struct_imitate_pass_1_1_written_gpg_id.html", "struct_imitate_pass_1_1_written_gpg_id" ],
+    [ "ImitatePass::PreviousList", "struct_imitate_pass_1_1_previous_list.html", "struct_imitate_pass_1_1_previous_list" ],
+    [ "ImitatePass::Agreed", "struct_imitate_pass_1_1_agreed.html", "struct_imitate_pass_1_1_agreed" ]
 ];

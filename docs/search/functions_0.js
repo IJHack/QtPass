@@ -27,8 +27,9 @@ var searchData=
   ['applyuserstyling_24',['applyUserStyling',['../class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d',1,'UsersDialog']]],
   ['applywindowflagssettings_25',['applyWindowFlagsSettings',['../class_main_window.html#a8c981247a44bc74f5152c312c15a8a79',1,'MainWindow']]],
   ['argv_26',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
-  ['askyes_27',['askYes',['../namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d',1,'PlainMessageBox']]],
-  ['attach_28',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
-  ['autopushheld_29',['autoPushHeld',['../class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1',1,'Pass']]],
-  ['autoscroll_30',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
+  ['askreencryptunexpected_27',['askReencryptUnexpected',['../class_main_window.html#a160d3f39317769c411799998839f5ab5',1,'MainWindow']]],
+  ['askyes_28',['askYes',['../namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d',1,'PlainMessageBox']]],
+  ['attach_29',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
+  ['autopushheld_30',['autoPushHeld',['../class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1',1,'Pass']]],
+  ['autoscroll_31',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
 ];

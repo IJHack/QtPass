@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('imitatepass_8h
 <code>#include &quot;<a class="el" href="pass_8h_source.html">pass.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="simpletransaction_8h_source.html">simpletransaction.h</a>&quot;</code><br />
 <code>#include &lt;QQueue&gt;</code><br />
+<code>#include &lt;QSet&gt;</code><br />
 <code>#include &lt;QTemporaryDir&gt;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -158,6 +159,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <span class="tt">.gpg-id</span> <a class="el" href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store.">Init()</a> wrote but could not commit.  <a href="struct_imitate_pass_1_1_uncommitted_gpg_id.html#details">More...</a><br /></td></tr>
 <tr class="memitem:ImitatePass_3A_3AWrittenGpgId" id="r_ImitatePass_3A_3AWrittenGpgId"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_imitate_pass_1_1_written_gpg_id.html">ImitatePass::WrittenGpgId</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <span class="tt">.gpg-id</span> <a class="el" href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store.">Init()</a> wrote for the run it starts: the recipients the user ticked, as written.  <a href="struct_imitate_pass_1_1_written_gpg_id.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ImitatePass_3A_3APreviousList" id="r_ImitatePass_3A_3APreviousList"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_imitate_pass_1_1_previous_list.html">ImitatePass::PreviousList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list a folder had before <a class="el" href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store.">Init()</a> replaced it, for the run it starts. It tells whom the change added (who then gains every entry, as adding someone means) and whom it removed (who may still read an entry left alone). An entry is not compared with it: the worker asks before an entry gains anyone on the new list other than those added.  <a href="struct_imitate_pass_1_1_previous_list.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ImitatePass_3A_3AAgreed" id="r_ImitatePass_3A_3AAgreed"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_imitate_pass_1_1_agreed.html">ImitatePass::Agreed</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">What the user was shown for an entry: its bytes and its folder's keys.  <a href="struct_imitate_pass_1_1_agreed.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a>, the backend that does what <span class="tt">pass</span> does by running gpg and git itself. </p>
