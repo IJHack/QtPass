@@ -27,6 +27,7 @@
 #include <QRegularExpression>
 #include <QSaveFile>
 #include <QScopeGuard>
+#include <QTemporaryDir>
 #include <QTextStream>
 #include <algorithm>
 #include <array>
@@ -432,6 +433,61 @@ void Pass::GenerateGPGKeys(QString batch) {
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},
                  std::move(batch), true, true);
+}
+
+auto Pass::encryptionReaches(const QStringList &recipients)
+    -> std::optional<QStringList> {
+  if (recipients.isEmpty()) {
+    return std::nullopt;
+  }
+  QTemporaryDir scratch;
+  if (!scratch.isValid()) {
+    return std::nullopt;
+  }
+  const QString &gpg = m_settings.gpgExecutable;
+  const QString probe = Executor::translatePathForWsl(
+      scratch.filePath(QStringLiteral("probe.gpg")), gpg);
+  // --no-throw-keyids: with throw-keyids in gpg.conf the probe would name
+  // no one.
+  QStringList args{QStringLiteral("--batch"),
+                   QStringLiteral("--no-tty"),
+                   QStringLiteral("--yes"),
+                   QStringLiteral("--quiet"),
+                   QStringLiteral("--no-throw-keyids"),
+                   QStringLiteral("--no-auto-key-locate"),
+                   QStringLiteral("--no-encrypt-to"),
+                   QStringLiteral("--output"),
+                   probe,
+                   QStringLiteral("--encrypt")};
+  for (const QString &recipient : recipients) {
+    args << QStringLiteral("-r") << recipient;
+  }
+  if (Executor::executeBlocking(gpg, args, QStringLiteral("probe")) != 0) {
+    return std::nullopt;
+  }
+  // As ImitatePass::getKeysFromFile(): --decrypt --list-only, capped.
+  QString status;
+  if (Executor::executeBlocking(
+          gpg,
+          {QStringLiteral("--batch"), QStringLiteral("--no-tty"),
+           QStringLiteral("--decrypt"), QStringLiteral("--list-only"),
+           QStringLiteral("--max-output"), QStringLiteral("1"),
+           QStringLiteral("--status-fd=1"),
+           QStringLiteral("--keyid-format=long"), QStringLiteral("--"), probe},
+          QString(), &status) != 0) {
+    return QStringList();
+  }
+  static const QRegularExpression encTo(
+      QStringLiteral("^\\[GNUPG:\\] ENC_TO ([0-9A-Fa-f]{16})(?: |$)"));
+  QStringList ids;
+  for (const QString &line :
+       status.split(Util::newLinesRegex(), Qt::SkipEmptyParts)) {
+    const QRegularExpressionMatch match = encTo.match(line);
+    if (match.hasMatch()) {
+      ids << match.captured(1).toUpper();
+    }
+  }
+  return ids;
 }
 
 auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {

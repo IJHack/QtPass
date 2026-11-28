@@ -105,6 +105,7 @@ private slots:
   void unreadableRecipientLineLeavesTheOthersTicked();
   void unreadableLineStaysMissingWhenAResolvedUidContainsIt();
   void fallbackAsksAgainForTheReadableLinesInOneCall();
+  void preselectsWhatEncryptionReachesNotWhatTheSearchFinds();
   void aLineNamingASubkeyOrAnotherUidTicksItsKey();
   void unusualLinesPastTheLookupCapAreListedUnticked();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
@@ -276,6 +277,54 @@ void tst_usersdialog::existingStorePreselectsItsRecipients() {
   UsersDialog dialog(&pass, s, s.passStore);
   auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
   QVERIFY(list != nullptr);
+  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
+}
+
+/**
+ * @brief The rows ticked for a folder are the keys gpg's -r reaches for its
+ *        list, not every key a keyring search finds for it: a colleague's
+ *        key with a user ID that contains a recipient's address is found by
+ *        the search but not ticked, so OK does not add it (scan finding
+ *        ANT-2026-8Z9SUHAD).
+ */
+void tst_usersdialog::preselectsWhatEncryptionReachesNotWhatTheSearchFinds() {
+  // Mallory's key carries a second user ID "Alice <alice@example.org>": the
+  // search for the line finds both keys; the probe reaches Alice's alone.
+  const QString listing = QStringLiteral(
+      "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:\n"
+      "uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Alice "
+      "<alice@example.org>::::::::::0:\n"
+      "pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:\n"
+      "fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:\n"
+      "uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Mallory "
+      "<mallory@example.org>::::::::::0:\n"
+      "uid:f::::1775005968::9AA011711F27F6E08DF71653718C299A13B323A0::Alice "
+      "<alice@example.org>::::::::::0:\n");
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-lookalike"),
+      QStringLiteral("case \"$*\" in\n"
+                     "  *--list-secret-keys*) exit 0 ;;\n"
+                     "  *--encrypt*) cat >/dev/null; exit 0 ;;\n"
+                     "  *--list-only*) echo '[GNUPG:] ENC_TO 31850CF72D9CDDE9 "
+                     "1 0'; exit 0 ;;\n"
+                     "esac\n"
+                     "cat <<'LISTING'\n") +
+          listing + QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("alice@example.org\n");
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QCOMPARE(list->count(), 2);
   QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
 }
 
@@ -1665,7 +1714,10 @@ void tst_usersdialog::fallbackAsksAgainForTheReadableLinesInOneCall() {
     AppSettings s = m_settings;
     s.gpgExecutable = writeGpg(
         QStringLiteral("gpg-counting-%1").arg(missing),
+        // The encryption probe fails, as gpg's does for a key it lacks,
+        // so the search below is what is counted.
         QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                       "case \"$*\" in *--encrypt*) exit 2 ;; esac\n"
                        "case \"$*\" in *FACE*|*0x*) echo x >> '") +
             counter +
             QStringLiteral(

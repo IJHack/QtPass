@@ -323,6 +323,41 @@ void UsersDialog::selectRecipients(const QStringList &listed) {
     }
   }
 
+  // OK saves what is ticked, so the ticks are the keys gpg's -r reaches for
+  // the list, found by a throwaway encryption. A keyring search would also
+  // find keys that only resemble a recipient: a user ID containing its
+  // address, a subkey bound to its key, which whoever made the key decides.
+  // Every reached key must have a row, or OK would drop it.
+  if (const std::optional<QStringList> reached =
+          m_pass->encryptionReaches(recipients);
+      reached && !reached->isEmpty()) {
+    // A long key ID is a line answersTo() judges as gpg does: the key's or
+    // one of its subkeys'.
+    const auto reachedBy = [&reached](const UserInfo &user) {
+      return std::any_of(
+          reached->cbegin(), reached->cend(),
+          [&user](const QString &id) { return answersTo(user, id); });
+    };
+    const bool everyKeyListed = std::all_of(
+        reached->cbegin(), reached->cend(), [this](const QString &id) {
+          return std::any_of(
+              m_userList.cbegin(), m_userList.cend(),
+              [&id](const UserInfo &user) { return answersTo(user, id); });
+        });
+    if (everyKeyListed) {
+      // Ticks only added: after a key import the rows ticked before stay.
+      for (UserInfo &user : m_userList) {
+        if (reachedBy(user)) {
+          user.enabled = true;
+        }
+      }
+      return;
+    }
+  }
+  // gpg could not encrypt to the list, or did not say whom it encrypted to:
+  // the keyring search below, as before. Such a list cannot be used to save
+  // an entry either.
+
   // One gpg call resolves every recipient, by key ID or by email/UID.
   QList<UserInfo> resolved = m_pass->listKeys(recipients);
   if (resolved.isEmpty() && recipients.size() > 1) {

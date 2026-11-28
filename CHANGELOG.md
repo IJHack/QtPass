@@ -203,6 +203,16 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   this stops a plain copy: an entry planted before you add someone still
   looks like the folder's own, and one crafted to name a reader it does not
   have still passes (scan finding ANT-2026-SEN4VBBB).
+- The Users dialog ticks only the keys a folder's list actually encrypts to.
+  It ticked every key a keyring search found for the list's lines, and that
+  search also finds keys that only resemble a recipient: someone whose key
+  you imported could add a recipient's address as a user ID of their own
+  key, or bind a recipient's key to theirs, and after you imported the
+  update, pressing OK without looking added their key to the folder. The
+  ticks now come from a test encryption to the list, as gpg's `-r` resolves
+  it, without looking keys up over the network; other matches are listed
+  unticked. When gpg cannot encrypt to the list at all, the dialog falls
+  back to the search, as before (scan finding ANT-2026-8Z9SUHAD).
 - Copying a folder with the `pass` backend is refused when the folder holds
   a symbolic link. pass copies with `cp -r`, which on macOS and the BSDs
   follows a link inside the folder: someone who can push to a shared store

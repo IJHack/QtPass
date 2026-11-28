@@ -308,6 +308,21 @@ public:
    */
   auto listKeys(QStringList keystrings, bool secret = false) -> QList<UserInfo>;
   /**
+   * @brief The keys a gpg encryption to @p recipients reaches: a throwaway
+   *        encryption outside the store, read back for whom it went to.
+   *
+   * What `-r` makes of each line, where listKeys() searches: a key that
+   * only resembles a recipient (a user ID that contains its address, a
+   * subkey bound to its key) is not reached. No key lookups over the
+   * network (`--no-auto-key-locate`), so opening a dialog fetches nothing.
+   * @param recipients The lines of a recipient list.
+   * @return The long key IDs (upper case) of the keys and subkeys encrypted
+   *         to, possibly empty when gpg did not say; nothing when gpg could
+   *         not encrypt to the list.
+   */
+  virtual auto encryptionReaches(const QStringList &recipients)
+      -> std::optional<QStringList>;
+  /**
    * @brief List GPG keys.
    * @param keystring Search pattern.
    * @param secret Include secret keys.
