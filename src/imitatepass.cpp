@@ -1883,9 +1883,24 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
         return who.join(QStringLiteral(", "));
       };
       QString why;
-      if (gains && !isTrusted(fileName, listNow)) {
+      const bool ask = gains && !isTrusted(fileName, listNow);
+      const QByteArray shownHash = ask ? entryHash(fileName) : QByteArray();
+      if (ask && shownHash.isEmpty()) {
+        // gpg lists its recipients, but its bytes cannot be held to a yes
+        // (over the read cap, or no longer a regular file): reported as
+        // left, not asked about, or the question would come back after
+        // every yes.
+        result.failed << tr("%1 was not re-encrypted: it would become "
+                            "readable by %2, and it cannot be read to ask "
+                            "about it (too large, or not a regular file).")
+                             .arg(fileName, named(gaining));
+        if (!losing.isEmpty()) {
+          result.stillReadByRemoved.insert(fileName, losing);
+        }
+        keepRecord = true;
+      } else if (ask) {
         result.unexpected << fileName;
-        result.unexpectedHashes << entryHash(fileName);
+        result.unexpectedHashes << shownHash;
         result.unexpectedReaders << listNow;
         QString detail =
             hidden ? tr("its recipients cannot be told (hidden key IDs); "
