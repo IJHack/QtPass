@@ -186,8 +186,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   `.gpg-id` line too long to pass to gpg does it on Linux). A command that
   cannot start is now reported before the next one starts, as every other
   failure already was (scan finding ANT-2026-6ZWVCC4I).
-- Re-encrypting a folder no longer hands an entry that came from elsewhere
-  to the folder's recipients without asking. Re-encryption decrypted every
+- Re-encrypting a folder now asks before it hands an entry copied in from
+  elsewhere to the folder's recipients. Re-encryption decrypted every
   entry in the folder and encrypted it to the folder's list, whoever could
   read it before. Someone on one folder's list who can push to a shared
   store could copy an entry from a folder they cannot read into theirs, and

@@ -613,6 +613,7 @@ private Q_SLOTS:
   void reencryptPathCancelStopsBetweenFiles();
   void reencryptAsksWhenAGroupWouldGainAnEntry();
   void reencryptAsksAgainWhenTheListChangedSinceTheQuestion();
+  void reencryptAlsoOfNothingNamedReleasesTheInterface();
   void reencryptPathCancelInterruptsActiveProcess();
   void reencryptPathCancelKillsProcessIgnoringTerminate();
   void destructorInterruptsActiveReencryptProcess();
@@ -1048,6 +1049,25 @@ void tst_imitatepass::reencryptAsksAgainWhenTheListChangedSinceTheQuestion() {
                   }),
       "the entry must not be re-encrypted for keys the user was not shown");
 #endif
+}
+
+/**
+ * @brief A yes for entries the last run did not name starts no run; the
+ *        interface MainWindow locked for it is released all the same
+ *        (follow-up to scan finding ANT-2026-SEN4VBBB).
+ */
+void tst_imitatepass::reencryptAlsoOfNothingNamedReleasesTheInterface() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  ImitatePass pass;
+  const AppSettings settings = settingsFor(tmp.path(), QStringLiteral("gpg"));
+  pass.init(settings);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+  pass.reencryptAlso(tmp.path(), {QDir(tmp.path()).filePath("x.gpg")},
+                     settings);
+  QCOMPARE(endSpy.count(), 1);
+  QCOMPARE(startSpy.count(), 0);
 }
 
 void tst_imitatepass::reencryptPathCancelStopsBetweenFiles() {

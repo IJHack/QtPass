@@ -223,11 +223,14 @@ protected:
    * @param recipients A recipient list.
    * @param primaries As for primaryKeysOf().
    * @param names As for primaryKeysOf().
+   * @param lookUp Whether gpg may look keys up (auto-key-locate, WKD) as a
+   *        real encryption would; false for a list being replaced, whose
+   *        removed recipients should not be fetched over the network.
    * @return The fingerprints; nothing when gpg cannot encrypt to the list.
    */
   auto keysEncryptedTo(const QStringList &recipients,
                        QHash<QString, QString> &primaries,
-                       QHash<QString, QString> &names)
+                       QHash<QString, QString> &names, bool lookUp = true)
       -> std::optional<QSet<QString>>;
   /**
    * @brief SHA-256 of an entry's bytes, read as a regular file without
