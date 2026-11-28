@@ -13,6 +13,7 @@
 #include "pass.h"
 #include "simpletransaction.h"
 #include <QQueue>
+#include <QSet>
 #include <QTemporaryDir>
 
 #include <atomic>
@@ -205,6 +206,36 @@ protected:
    * @return List of key IDs.
    */
   auto getKeysFromFile(const QString &fileName) -> QStringList;
+  /**
+   * @brief The primary keys behind key IDs from an entry (ENC_TO).
+   * @param ids Long key IDs of encryption subkeys.
+   * @param primaries Key ID to primary fingerprint, filled from one key
+   *        listing on first use.
+   * @param names Primary fingerprint to its first user ID, filled with it.
+   * @return The fingerprints; a key ID gpg does not know is left out.
+   */
+  auto primaryKeysOf(const QStringList &ids, QHash<QString, QString> &primaries,
+                     QHash<QString, QString> &names) -> QSet<QString>;
+  /**
+   * @brief The primary keys gpg encrypts to for @p recipients, found by a
+   * throwaway encryption outside the store with the arguments a real one
+   * uses, so groups, `!` suffixes and key lookups count as `-r` makes them.
+   * @param recipients A recipient list.
+   * @param primaries As for primaryKeysOf().
+   * @param names As for primaryKeysOf().
+   * @return The fingerprints; nothing when gpg cannot encrypt to the list.
+   */
+  auto keysEncryptedTo(const QStringList &recipients,
+                       QHash<QString, QString> &primaries,
+                       QHash<QString, QString> &names)
+      -> std::optional<QSet<QString>>;
+  /**
+   * @brief SHA-256 of an entry's bytes, read as a regular file without
+   * following a link.
+   * @param file The entry, absolute.
+   * @return The hash; empty when it cannot be read so.
+   */
+  auto entryHash(const QString &file) const -> QByteArray;
   /**
    * @brief Re-encrypt single file with new recipients.
    * @param fileName File to re-encrypt.
@@ -554,6 +585,22 @@ public:
    * still emitted when the worker has stopped.
    */
   void cancelReencryptPath();
+  /**
+   * @brief Re-encrypt @p files in @p dir after the user agreed to it.
+   *
+   * A run leaves alone an entry encrypted to other keys than its folder had
+   * (unexpectedRecipients()): someone who can read one folder could have
+   * copied it in from a folder they cannot read, and re-encrypting it would
+   * hand them its plaintext. This runs @p dir again with @p files taken as
+   * they are.
+   * Only entries the last run named, each only while its bytes are those it
+   * was named with; the run takes those and nothing else.
+   * @param dir The folder of the run that found them.
+   * @param files The entries, as unexpectedRecipients() named them.
+   * @param settings The current settings, as for reencryptPath().
+   */
+  void reencryptAlso(const QString &dir, const QStringList &files,
+                     const AppSettings &settings);
 
 signals:
   /**
@@ -580,6 +627,20 @@ signals:
    * @param total Total number of files found by the scan.
    */
   void reencryptProgress(int current, int total);
+  /**
+   * @brief A run left @p files alone: re-encrypting one would let someone
+   * on its folder's list read it who cannot now, and whom the change of the
+   * list did not add. An entry copied in from a folder they cannot read
+   * must not reach them without the user's say. reencryptAlso() takes them
+   * once the user agreed. Emitted after endReencryptPath().
+   * @param dir The folder of the run.
+   * @param files The entries left alone, absolute.
+   * @param details For each, who would gain it, and who was removed from
+   *        the list and still reads it (the run then holds the automatic
+   *        push).
+   */
+  void unexpectedRecipients(const QString &dir, const QStringList &files,
+                            const QStringList &details);
 
   // Pass interface
 public:
@@ -852,6 +913,43 @@ private:
   /// changed the recipients the user chose. Written only on the owning
   /// thread while no worker runs; the worker only reads it.
   std::optional<WrittenGpgId> m_writtenGpgId;
+  /**
+   * @brief The list a folder had before Init() replaced it, for the run it
+   * starts. It tells whom the change added (who then gains every entry, as
+   * adding someone means) and whom it removed (who may still read an entry
+   * left alone). An entry is not compared with it: the worker asks before
+   * an entry gains anyone on the new list other than those added.
+   */
+  struct PreviousList {
+    QString gpgIdFile;      ///< The list Init() wrote, which now applies.
+    QStringList recipients; ///< The lines that applied there before.
+  };
+  /// Set by Init() for the run it starts and cleared by finishReencrypt().
+  /// Written only on the owning thread while no worker runs.
+  std::optional<PreviousList> m_previousList;
+  /// Entries or folders the current run re-encrypts whatever they are
+  /// encrypted to: what the user moved or copied there. Cleared by
+  /// finishReencrypt(); written only on the owning thread while no worker
+  /// runs.
+  QStringList m_reencryptTrusted;
+  /// What the user was shown for an entry: its bytes and its folder's keys.
+  struct Agreed {
+    QByteArray hash;       ///< SHA-256 of the entry's bytes.
+    QSet<QString> readers; ///< The primary keys its list encrypted to.
+  };
+  /// The entries the user agreed to in reencryptAlso(), with what they were
+  /// shown: the run takes only these, and each only while its bytes and its
+  /// folder's keys are unchanged. Same lifetime as m_reencryptTrusted.
+  QHash<QString, Agreed> m_reencryptAgreed;
+  /// What the last run named (unexpectedRecipients()), with what was shown;
+  /// reencryptAlso() takes the user's yes from here.
+  QHash<QString, Agreed> m_lastUnexpected;
+  /// Entries left alone that a recipient taken off their folder's list
+  /// still reads, by whom: the automatic push for their folder waits until
+  /// a run re-encrypts them, finds nobody removed reading them, or they are
+  /// gone. Kept across runs; written only on the owning thread while no
+  /// worker runs.
+  QHash<QString, QSet<QString>> m_removedReaders;
   /**
    * @brief gitConfigured(), unless the current run is one
    * reencryptWithoutGit() started.

@@ -324,6 +324,18 @@ public slots:
    */
   void endReencryptPath();
 
+  /**
+   * @brief Ask whether entries a re-encryption left alone, being encrypted
+   * to other keys than their folder had, are to be re-encrypted after all
+   * (ImitatePass::unexpectedRecipients()). They may have been copied in
+   * from a folder this folder's recipients cannot read.
+   * @param dir The folder of the run.
+   * @param files The entries, absolute.
+   * @param details For each, who would gain it.
+   */
+  void askReencryptUnexpected(const QString &dir, const QStringList &files,
+                              const QStringList &details);
+
 private slots:
   /**
    * @brief Fill the profile box from the settings, the active profile

@@ -611,6 +611,8 @@ private Q_SLOTS:
   void reencryptPathAggregatesFailuresIntoOneCritical();
   void reencryptFailsForAFolderItCannotRead();
   void reencryptPathCancelStopsBetweenFiles();
+  void reencryptAsksWhenAGroupWouldGainAnEntry();
+  void reencryptAsksAgainWhenTheListChangedSinceTheQuestion();
   void reencryptPathCancelInterruptsActiveProcess();
   void reencryptPathCancelKillsProcessIgnoringTerminate();
   void destructorInterruptsActiveReencryptProcess();
@@ -870,6 +872,184 @@ void tst_imitatepass::reencryptFailsForAFolderItCannotRead() {
  * the cancel interrupted is not), and a second reencryptPath() during the run
  * is ignored.
  */
+/**
+ * @brief A `.gpg-id` that names a gpg group: GnuPG before 2.3 lists nothing
+ *        for the name, so the group's members come from `--list-config`.
+ *        An entry only key A reads, in a folder whose group is A and B, is
+ *        left for the user rather than handed to B (scan finding
+ *        ANT-2026-SEN4VBBB).
+ */
+void tst_imitatepass::reencryptAsksWhenAGroupWouldGainAnEntry() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString store = tmp.path();
+  const QString fa = QStringLiteral("AAAA") + QString(36, QLatin1Char('1'));
+  const QString fb = QStringLiteral("BBBB") + QString(36, QLatin1Char('2'));
+  const QString logPath = QDir(store).filePath("gpg-argv.log");
+  const QString script = QDir(store).filePath("group-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    // An entry only A reads; gpg makes the group `grp` A and B, which the
+    // throwaway encryption (probe.gpg) shows.
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "last=''; for a in \"$@\"; do last=\"$a\"; done\n"
+        << "case \"$*\" in\n"
+        << "  *--list-only*probe.gpg*) if [ -e '" << store
+        << "/grp-probe' ]; then echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0'; "
+           "echo '[GNUPG:] ENC_TO BBBBBBBBBBBBBBBB 18 0'; else echo '[GNUPG:] "
+           "ENC_TO AAAAAAAAAAAAAAAA 18 0'; fi;;\n"
+        << "  *--list-only*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0';;\n"
+        << "  *--list-keys) printf 'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
+           "fpr:::::::::"
+        << fa << ":\\nuid:u::::::::Alice <a@example.org>:\\n"
+        << "pub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\nfpr:::::::::" << fb
+        << ":\\nuid:u::::::::Bob <b@example.org>:\\n';;\n"
+        << "  *' -d '*|*' -d') printf 'plaintext\\n';;\n"
+        // The group's members only for an encryption to the group.
+        << "  *-eq*) cat >/dev/null; case \" $* \" in *' -r grp '*) touch '"
+        << store << "/grp-probe';; esac;;\n"
+        << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  {
+    QFile list(QDir(store).filePath(".gpg-id"));
+    QVERIFY(list.open(QIODevice::WriteOnly));
+    QVERIFY(list.write("grp\n") > 0);
+    QFile entry(QDir(store).filePath("entry.gpg"));
+    QVERIFY(entry.open(QIODevice::WriteOnly));
+    QVERIFY(entry.write("ciphertext") > 0);
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(store, script));
+  QSignalSpy unexpected(&pass, &ImitatePass::unexpectedRecipients);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(store);
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCoreApplication::processEvents();
+  QCOMPARE(unexpected.count(), 1);
+  QCOMPARE(unexpected.first().at(1).toStringList(),
+           QStringList{QDir(store).filePath("entry.gpg")});
+  QVERIFY2(unexpected.first().at(2).toStringList().value(0).contains(
+               QStringLiteral("Bob")),
+           "the question names who would gain the entry");
+  // The one encryption is the throwaway one, not the entry.
+  const QList<QStringList> encrypts = encryptCalls(loggedCalls(logPath));
+  QCOMPARE(encrypts.size(), 1);
+  QVERIFY2(encrypts.first().join(' ').contains(QStringLiteral("probe.gpg")),
+           "the entry must not be re-encrypted to the group unasked");
+#endif
+}
+
+/**
+ * @brief A yes holds for what the question showed: the entry's bytes and
+ *        the keys its list encrypts to. A probe whose key IDs are hidden
+ *        (throw-keyids) still counts its keys as gaining, and when the list
+ *        has gained a key since the question, the entry is named again
+ *        rather than re-encrypted (scan finding ANT-2026-SEN4VBBB).
+ */
+void tst_imitatepass::reencryptAsksAgainWhenTheListChangedSinceTheQuestion() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString store = tmp.path();
+  const QString logPath = QDir(store).filePath("gpg-argv.log");
+  const QString probeIds = QDir(store).filePath("probe-ids");
+  const QString script = QDir(store).filePath("state-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    // The probe's ENC_TO lines come from probe-ids, so the test can change
+    // what the list encrypts to between the question and the yes. As with
+    // throw-keyids in gpg.conf, the IDs are hidden unless the encryption
+    // asks for them (--no-throw-keyids).
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "ids='" << probeIds << "'\n"
+        << "case \"$*\" in\n"
+        << "  *--list-only*probe.gpg*) cat \"$ids.out\";;\n"
+        << "  *--list-only*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0';;\n"
+        << "  *--list-keys) printf 'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
+           "fpr:::::::::AAAA111111111111111111111111111111111111:\\n"
+           "uid:u::::::::Alice <a@example.org>:\\n"
+           "pub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\n"
+           "fpr:::::::::BBBB222222222222222222222222222222222222:\\n"
+           "uid:u::::::::Bob <b@example.org>:\\n';;\n"
+        << "  *' -d '*|*' -d') printf 'plaintext\\n';;\n"
+        << "  *-eq*) cat >/dev/null\n"
+        << "    case \"$*\" in\n"
+        << "      *--no-throw-keyids*) sed 's/^/[GNUPG:] ENC_TO /; s/$/ 18 0/' "
+           "\"$ids\" > \"$ids.out\";;\n"
+        << "      *) sed 's/^.*$/[GNUPG:] ENC_TO 0000000000000000 18 0/' "
+           "\"$ids\" > \"$ids.out\";;\n"
+        << "    esac;;\n"
+        << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  const auto writeProbe = [&](const QByteArray &ids) {
+    QFile f(probeIds);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(ids) == ids.size();
+  };
+  // The list encrypts to A and B; the entry only A reads.
+  QVERIFY(writeProbe("AAAAAAAAAAAAAAAA\nBBBBBBBBBBBBBBBB\n"));
+  {
+    QFile list(QDir(store).filePath(".gpg-id"));
+    QVERIFY(list.open(QIODevice::WriteOnly));
+    QVERIFY(list.write("team\n") > 0);
+    QFile entry(QDir(store).filePath("entry.gpg"));
+    QVERIFY(entry.open(QIODevice::WriteOnly));
+    QVERIFY(entry.write("ciphertext") > 0);
+  }
+  const QString entry = QDir(store).filePath("entry.gpg");
+  ImitatePass pass;
+  pass.init(settingsFor(store, script));
+  QSignalSpy unexpected(&pass, &ImitatePass::unexpectedRecipients);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(store);
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCoreApplication::processEvents();
+  QCOMPARE(unexpected.count(), 1);
+  QCOMPARE(unexpected.first().at(1).toStringList(), QStringList{entry});
+  // B by name: the probe asked gpg to show the IDs throw-keyids hides.
+  QVERIFY2(unexpected.first().at(2).toStringList().value(0).contains(
+               QStringLiteral("Bob")),
+           qPrintable(unexpected.first().at(2).toStringList().join('|')));
+
+  // The list now encrypts to another key too: the yes was for the keys shown.
+  QVERIFY(writeProbe("AAAAAAAAAAAAAAAA\nBBBBBBBBBBBBBBBB\nCCCCCCCCCCCCCCCC\n"));
+  unexpected.clear();
+  endSpy.clear();
+  pass.reencryptAlso(store, {entry}, settingsFor(store, script));
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCoreApplication::processEvents();
+  QCOMPARE(unexpected.count(), 1);
+  const QList<QStringList> encrypts = encryptCalls(loggedCalls(logPath));
+  QVERIFY2(
+      std::all_of(encrypts.cbegin(), encrypts.cend(),
+                  [](const QStringList &call) {
+                    return call.join(' ').contains(QStringLiteral("probe.gpg"));
+                  }),
+      "the entry must not be re-encrypted for keys the user was not shown");
+#endif
+}
+
 void tst_imitatepass::reencryptPathCancelStopsBetweenFiles() {
 #ifdef Q_OS_WIN
   QSKIP("uses a shell script as a slow fake gpg");
