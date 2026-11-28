@@ -106,6 +106,7 @@ private slots:
   void unreadableLineStaysMissingWhenAResolvedUidContainsIt();
   void fallbackAsksAgainForTheReadableLinesInOneCall();
   void preselectsWhatEncryptionReachesNotWhatTheSearchFinds();
+  void aSharedSubkeyTicksOnlyTheKeyTheLineNames();
   void aLineNamingASubkeyOrAnotherUidTicksItsKey();
   void unusualLinesPastTheLookupCapAreListedUnticked();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
@@ -326,6 +327,77 @@ void tst_usersdialog::preselectsWhatEncryptionReachesNotWhatTheSearchFinds() {
   QVERIFY(list != nullptr);
   QCOMPARE(list->count(), 2);
   QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
+}
+
+/**
+ * @brief A subkey bound to two keys (Mallory binding Alice's encryption
+ *        subkey to her own key) is reached by the probe, which cannot tell
+ *        which key gpg chose. A line naming Alice's key by fingerprint
+ *        ticks Alice alone; an address line is kept as written, with
+ *        neither key ticked (scan finding ANT-2026-8Z9SUHAD).
+ */
+void tst_usersdialog::aSharedSubkeyTicksOnlyTheKeyTheLineNames() {
+  const QString listing = QStringLiteral(
+      "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:\n"
+      "uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Alice "
+      "<alice@example.org>::::::::::0:\n"
+      "sub:u:4096:1:1111222233334444:1774947438::::::e::::::23:\n"
+      "fpr:::::::::AAAABBBBCCCCDDDDEEEEFFFF1111222233334444:\n"
+      "pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:\n"
+      "fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:\n"
+      "uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Mallory "
+      "<mallory@example.org>::::::::::0:\n"
+      "sub:u:4096:1:1111222233334444:1774947438::::::e::::::23:\n"
+      "fpr:::::::::AAAABBBBCCCCDDDDEEEEFFFF1111222233334444:\n");
+  const auto open = [&](const QByteArray &line, QStringList *checked,
+                        QStringList *enabled) {
+    AppSettings s = m_settings;
+    s.gpgExecutable =
+        writeGpg(QStringLiteral("gpg-shared-subkey"),
+                 QStringLiteral("case \"$*\" in\n"
+                                "  *--list-secret-keys*) exit 0 ;;\n"
+                                "  *--encrypt*) cat >/dev/null; exit 0 ;;\n"
+                                "  *--list-only*) echo '[GNUPG:] ENC_TO "
+                                "1111222233334444 1 0'; exit 0 ;;\n"
+                                "esac\n"
+                                "cat <<'LISTING'\n") +
+                     listing + QStringLiteral("LISTING\nexit 0\n"));
+    QTemporaryDir store;
+    QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+    if (s.gpgExecutable.isEmpty() || !store.isValid() ||
+        !gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
+      return false;
+    }
+    gpgId.write(line + '\n');
+    gpgId.close();
+    s.passStore = store.path() + QLatin1Char('/');
+    RecordingPass pass(s);
+    UsersDialog dialog(&pass, s, s.passStore);
+    auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+    if (list == nullptr) {
+      return false;
+    }
+    *checked = checkedNames(list);
+    enabled->clear();
+    for (const UserInfo &user : dialog.selectedUsers()) {
+      if (user.enabled) {
+        *enabled << user.key_id;
+      }
+    }
+    return true;
+  };
+  QStringList checked;
+  QStringList enabled;
+  QVERIFY(open("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9", &checked, &enabled));
+  QCOMPARE(checked, QStringList{QStringLiteral("Alice")});
+  QCOMPARE(enabled, QStringList{QStringLiteral(
+                        "13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
+  QVERIFY(open("alice@example.org", &checked, &enabled));
+  QVERIFY2(!checked.contains(QStringLiteral("Alice")) &&
+               !checked.contains(QStringLiteral("Mallory")),
+           qPrintable(checked.join(',')));
+  QCOMPARE(enabled, QStringList{QStringLiteral("alice@example.org")});
 }
 
 /**

@@ -332,23 +332,54 @@ void UsersDialog::selectRecipients(const QStringList &listed) {
           m_pass->encryptionReaches(recipients);
       reached && !reached->isEmpty()) {
     // A long key ID is a line answersTo() judges as gpg does: the key's or
-    // one of its subkeys'.
-    const auto reachedBy = [&reached](const UserInfo &user) {
-      return std::any_of(
-          reached->cbegin(), reached->cend(),
-          [&user](const QString &id) { return answersTo(user, id); });
-    };
-    const bool everyKeyListed = std::all_of(
-        reached->cbegin(), reached->cend(), [this](const QString &id) {
-          return std::any_of(
-              m_userList.cbegin(), m_userList.cend(),
-              [&id](const UserInfo &user) { return answersTo(user, id); });
-        });
-    if (everyKeyListed) {
+    // one of its subkeys'. The rows each reached ID belongs to: none means
+    // a key without a row; more than one, a subkey bound to several keys,
+    // where the probe cannot tell which key gpg chose.
+    bool everyKeyListed = true;
+    bool shared = false;
+    QSet<int> reachedRows;
+    for (const QString &id : std::as_const(*reached)) {
+      QList<int> rows;
+      for (int row = 0; row < m_userList.size(); ++row) {
+        if (answersTo(m_userList.at(row), id)) {
+          rows << row;
+        }
+      }
+      everyKeyListed = everyKeyListed && !rows.isEmpty();
+      shared = shared || rows.size() > 1;
+      for (const int row : std::as_const(rows)) {
+        reachedRows.insert(row);
+      }
+    }
+    if (everyKeyListed && !shared) {
       // Ticks only added: after a key import the rows ticked before stay.
-      for (UserInfo &user : m_userList) {
-        if (reachedBy(user)) {
-          user.enabled = true;
+      for (const int row : std::as_const(reachedRows)) {
+        m_userList[row].enabled = true;
+      }
+      return;
+    }
+    if (everyKeyListed) {
+      // A shared subkey: only a line naming a reached key's own primary
+      // key ticks its row. Any other line is kept as written, so OK
+      // neither adds a key that merely shares the subkey nor drops the
+      // recipient the line meant.
+      for (const QString &line : std::as_const(recipients)) {
+        const QString keyId = keyIdOfLine(line);
+        bool ticked = false;
+        if (!keyId.isEmpty()) {
+          for (const int row : std::as_const(reachedRows)) {
+            if (keyIdsMatch(m_userList.at(row).key_id, keyId)) {
+              m_userList[row].enabled = true;
+              ticked = true;
+            }
+          }
+        }
+        if (!ticked) {
+          UserInfo kept;
+          kept.key_id = line;
+          kept.enabled = true;
+          kept.name = " ?? " + tr("Matches more than one key; kept as written");
+          m_userList.append(kept);
         }
       }
       return;
