@@ -108,6 +108,7 @@ private slots:
   void preselectsWhatEncryptionReachesNotWhatTheSearchFinds();
   void aSharedSubkeyTicksOnlyTheKeyTheLineNames();
   void aListWithAGoneKeyStillTicksOnlyWhatEachLineReaches();
+  void perLineProbesTakeAddressesFirstAndKeepTheRest();
   void aLineNamingASubkeyOrAnotherUidTicksItsKey();
   void unusualLinesPastTheLookupCapAreListedUnticked();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
@@ -462,6 +463,75 @@ void tst_usersdialog::aListWithAGoneKeyStillTicksOnlyWhatEachLineReaches() {
       enabled,
       QStringList(
           {QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9"), gone}));
+}
+
+/**
+ * @brief When gpg refuses the whole list, the per-line probes go to
+ *        address and name lines first, where look-alike keys come from, and
+ *        a line past the ten probed is kept as written rather than answered
+ *        by the keyring search (scan finding ANT-2026-8Z9SUHAD, fallback).
+ */
+void tst_usersdialog::perLineProbesTakeAddressesFirstAndKeepTheRest() {
+  const QString listing = QStringLiteral(
+      "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:\n"
+      "uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Alice "
+      "<alice@example.org>::::::::::0:\n"
+      "pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:\n"
+      "fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:\n"
+      "uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Mallory "
+      "<mallory@example.org>::::::::::0:\n"
+      "uid:f::::1775005968::9AA011711F27F6E08DF71653718C299A13B323A0::Alice "
+      "<alice@example.org>::::::::::0:\n");
+  AppSettings s = m_settings;
+  // Eleven keys that are gone, then the address line: gpg encrypts to the
+  // address alone and to nothing that names a gone key; the search finds
+  // both keys for anything.
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-many-gone"),
+      QStringLiteral("case \"$*\" in\n"
+                     "  *--list-secret-keys*) exit 0 ;;\n"
+                     "  *--encrypt*DEAD*) exit 2 ;;\n"
+                     "  *--encrypt*) cat >/dev/null; exit 0 ;;\n"
+                     "  *--list-only*) echo '[GNUPG:] ENC_TO 31850CF72D9CDDE9 "
+                     "1 0'; exit 0 ;;\n"
+                     "esac\n"
+                     "cat <<'LISTING'\n") +
+          listing + QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  QStringList gone;
+  QByteArray body;
+  for (int i = 1; i <= 11; ++i) {
+    gone << QStringLiteral("DEAD%1").arg(i, 36, 16, QLatin1Char('0')).toUpper();
+    body += gone.last().toLatin1() + '\n';
+  }
+  body += "alice@example.org\n";
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write(body);
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  const QStringList checked = checkedNames(list);
+  QVERIFY2(checked.contains(QStringLiteral("Alice")) &&
+               !checked.contains(QStringLiteral("Mallory")),
+           qPrintable(checked.join(',')));
+  QStringList enabled;
+  for (const UserInfo &user : dialog.selectedUsers()) {
+    if (user.enabled) {
+      enabled << user.key_id;
+    }
+  }
+  QStringList expected = gone;
+  expected << QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9");
+  enabled.sort();
+  expected.sort();
+  QCOMPARE(enabled, expected);
 }
 
 /**

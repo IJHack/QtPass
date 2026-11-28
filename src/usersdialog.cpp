@@ -395,18 +395,30 @@ void UsersDialog::selectRecipients(const QStringList &listed) {
     // gpg refused the list as a whole: one line it cannot encrypt to (a
     // key gone, expired or revoked), as in a list edited after someone
     // left. Each line on its own, so the others still tick only what they
-    // reach, and a line gpg cannot encrypt to is kept as written. A line
-    // whose probe names no one, or one past the few probed, goes to the
-    // keyring search below.
+    // reach, and a line gpg cannot encrypt to is kept as written. Address
+    // and name lines first, where look-alike keys come from: a key ID or
+    // fingerprint reaches the same key by probe or search. A line past the
+    // few probed is kept as written too, so OK writes it back and adds no
+    // key; only a line whose probe names no one goes to the search below.
+    QStringList order;
+    std::copy_if(
+        recipients.cbegin(), recipients.cend(), std::back_inserter(order),
+        [](const QString &line) { return keyIdOfLine(line).isEmpty(); });
+    std::copy_if(
+        recipients.cbegin(), recipients.cend(), std::back_inserter(order),
+        [](const QString &line) { return !keyIdOfLine(line).isEmpty(); });
     constexpr int kMaxLineProbes = 10;
     QStringList unsure;
     int probes = 0;
-    for (const QString &line : std::as_const(recipients)) {
+    for (const QString &line : std::as_const(order)) {
       if (probes++ >= kMaxLineProbes) {
-        unsure << line;
+        keepAsWritten(line, tr("Not checked; kept as written"));
         continue;
       }
-      const std::optional<QStringList> one = m_pass->encryptionReaches({line});
+      // A one-line list: the probe that failed was this line's own.
+      const std::optional<QStringList> one =
+          recipients.size() == 1 ? std::nullopt
+                                 : m_pass->encryptionReaches({line});
       if (!one) {
         keepAsWritten(line, tr("Key not found in keyring, or not usable"));
       } else if (one->isEmpty() || !tickReached(*one, {line})) {
