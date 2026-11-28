@@ -328,66 +328,110 @@ void UsersDialog::selectRecipients(const QStringList &listed) {
   // find keys that only resemble a recipient: a user ID containing its
   // address, a subkey bound to its key, which whoever made the key decides.
   // Every reached key must have a row, or OK would drop it.
-  if (const std::optional<QStringList> reached =
-          m_pass->encryptionReaches(recipients);
-      reached && !reached->isEmpty()) {
-    // A long key ID is a line answersTo() judges as gpg does: the key's or
-    // one of its subkeys'. The rows each reached ID belongs to: none means
-    // a key without a row; more than one, a subkey bound to several keys,
-    // where the probe cannot tell which key gpg chose.
-    bool everyKeyListed = true;
+  const auto keepAsWritten = [this](const QString &line, const QString &why) {
+    UserInfo kept;
+    kept.key_id = line;
+    kept.enabled = true;
+    kept.name = " ?? " + why;
+    m_userList.append(kept);
+  };
+  // Ticks the rows @p ids (what a probe of @p lines reached) belong to;
+  // false, ticking nothing, when one has no row. A long key ID is a line
+  // answersTo() judges as gpg does: the key's or one of its subkeys'. An
+  // ID on more than one row is a subkey bound to several keys, where the
+  // probe cannot tell which key gpg chose: only a line naming a reached
+  // key's own primary key ticks its row, and any other line is kept as
+  // written, so OK neither adds the key that shares the subkey nor drops
+  // the recipient the line meant. Ticks are only added: after a key import
+  // the rows ticked before stay.
+  const auto tickReached = [this, &keepAsWritten](const QStringList &ids,
+                                                  const QStringList &lines) {
     bool shared = false;
     QSet<int> reachedRows;
-    for (const QString &id : std::as_const(*reached)) {
+    for (const QString &id : ids) {
       QList<int> rows;
       for (int row = 0; row < m_userList.size(); ++row) {
         if (answersTo(m_userList.at(row), id)) {
           rows << row;
         }
       }
-      everyKeyListed = everyKeyListed && !rows.isEmpty();
+      if (rows.isEmpty()) {
+        return false;
+      }
       shared = shared || rows.size() > 1;
       for (const int row : std::as_const(rows)) {
         reachedRows.insert(row);
       }
     }
-    if (everyKeyListed && !shared) {
-      // Ticks only added: after a key import the rows ticked before stay.
+    if (!shared) {
       for (const int row : std::as_const(reachedRows)) {
         m_userList[row].enabled = true;
       }
-      return;
+      return true;
     }
-    if (everyKeyListed) {
-      // A shared subkey: only a line naming a reached key's own primary
-      // key ticks its row. Any other line is kept as written, so OK
-      // neither adds a key that merely shares the subkey nor drops the
-      // recipient the line meant.
-      for (const QString &line : std::as_const(recipients)) {
-        const QString keyId = keyIdOfLine(line);
-        bool ticked = false;
-        if (!keyId.isEmpty()) {
-          for (const int row : std::as_const(reachedRows)) {
-            if (keyIdsMatch(m_userList.at(row).key_id, keyId)) {
-              m_userList[row].enabled = true;
-              ticked = true;
-            }
+    for (const QString &line : lines) {
+      const QString keyId = keyIdOfLine(line);
+      bool ticked = false;
+      if (!keyId.isEmpty()) {
+        for (const int row : std::as_const(reachedRows)) {
+          if (keyIdsMatch(m_userList.at(row).key_id, keyId)) {
+            m_userList[row].enabled = true;
+            ticked = true;
           }
         }
-        if (!ticked) {
-          UserInfo kept;
-          kept.key_id = line;
-          kept.enabled = true;
-          kept.name = " ?? " + tr("Matches more than one key; kept as written");
-          m_userList.append(kept);
-        }
       }
+      if (!ticked) {
+        keepAsWritten(line, tr("Matches more than one key; kept as written"));
+      }
+    }
+    return true;
+  };
+  const std::optional<QStringList> reached =
+      m_pass->encryptionReaches(recipients);
+  if (reached && !reached->isEmpty() && tickReached(*reached, recipients)) {
+    return;
+  }
+  if (!reached) {
+    // gpg refused the list as a whole: one line it cannot encrypt to (a
+    // key gone, expired or revoked), as in a list edited after someone
+    // left. Each line on its own, so the others still tick only what they
+    // reach, and a line gpg cannot encrypt to is kept as written. Address
+    // and name lines first, where look-alike keys come from: a key ID or
+    // fingerprint reaches the same key by probe or search. A line past the
+    // few probed is kept as written too, so OK writes it back and adds no
+    // key; only a line whose probe names no one goes to the search below.
+    QStringList order;
+    std::copy_if(
+        recipients.cbegin(), recipients.cend(), std::back_inserter(order),
+        [](const QString &line) { return keyIdOfLine(line).isEmpty(); });
+    std::copy_if(
+        recipients.cbegin(), recipients.cend(), std::back_inserter(order),
+        [](const QString &line) { return !keyIdOfLine(line).isEmpty(); });
+    constexpr int kMaxLineProbes = 10;
+    QStringList unsure;
+    int probes = 0;
+    for (const QString &line : std::as_const(order)) {
+      if (probes++ >= kMaxLineProbes) {
+        keepAsWritten(line, tr("Not checked; kept as written"));
+        continue;
+      }
+      // A one-line list: the probe that failed was this line's own.
+      const std::optional<QStringList> one =
+          recipients.size() == 1 ? std::nullopt
+                                 : m_pass->encryptionReaches({line});
+      if (!one) {
+        keepAsWritten(line, tr("Key not found in keyring, or not usable"));
+      } else if (one->isEmpty() || !tickReached(*one, {line})) {
+        unsure << line;
+      }
+    }
+    if (unsure.isEmpty()) {
       return;
     }
+    recipients = unsure;
   }
-  // gpg could not encrypt to the list, or did not say whom it encrypted to:
-  // the keyring search below, as before. Such a list cannot be used to save
-  // an entry either.
+  // What a probe could not settle: gpg encrypted but did not say whom, or
+  // reached a key without a row. The keyring search below, as before.
 
   // One gpg call resolves every recipient, by key ID or by email/UID.
   QList<UserInfo> resolved = m_pass->listKeys(recipients);
