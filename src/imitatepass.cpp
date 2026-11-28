@@ -1103,7 +1103,7 @@ auto ImitatePass::entryHash(const QString &file) const -> QByteArray {
 
 auto ImitatePass::keysEncryptedTo(const QStringList &recipients,
                                   QHash<QString, QString> &primaries,
-                                  QHash<QString, QString> &names)
+                                  QHash<QString, QString> &names, bool lookUp)
     -> std::optional<QSet<QString>> {
   // What `-r` makes of the list, groups, `!` suffixes and key lookups
   // included: a throwaway encryption with the same arguments as a real one,
@@ -1115,12 +1115,14 @@ auto ImitatePass::keysEncryptedTo(const QStringList &recipients,
   const QString probe = scratch.filePath(QStringLiteral("probe.gpg"));
   // --no-throw-keyids for the probe only: with throw-keyids in gpg.conf it
   // would name no one, and nobody would count as gaining.
-  if (execBlockingRaw(
-          m_settings.gpgExecutable,
-          encryptArgs({QStringLiteral("--yes"), QStringLiteral("--batch"),
-                       QStringLiteral("--no-throw-keyids")},
-                      pgpg(probe), recipients),
-          QByteArrayLiteral("probe"), nullptr) != 0) {
+  QStringList leading{QStringLiteral("--yes"), QStringLiteral("--batch"),
+                      QStringLiteral("--no-throw-keyids")};
+  if (!lookUp) {
+    leading << QStringLiteral("--no-auto-key-locate");
+  }
+  if (execBlockingRaw(m_settings.gpgExecutable,
+                      encryptArgs(leading, pgpg(probe), recipients),
+                      QByteArrayLiteral("probe"), nullptr) != 0) {
     return std::nullopt;
   }
   const QStringList ids = getKeysFromFile(probe);
@@ -1759,7 +1761,9 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
       return true;
     }
     const auto agreed = m_reencryptAgreed.constFind(fileName);
-    return agreed != m_reencryptAgreed.constEnd() &&
+    // An entry that cannot be read as a regular file hashes to nothing,
+    // which matches no agreement.
+    return agreed != m_reencryptAgreed.constEnd() && !agreed->hash.isEmpty() &&
            agreed->readers == listNow && entryHash(fileName) == agreed->hash;
   };
   for (const QString &fileName : std::as_const(files)) {
@@ -1813,8 +1817,8 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
           fresh.now = keysEncryptedTo(gpgId, primaries, names);
           std::optional<QSet<QString>> before = fresh.now;
           if (m_previousList && m_previousList->gpgIdFile == gpgIdPath) {
-            before =
-                keysEncryptedTo(m_previousList->recipients, primaries, names);
+            before = keysEncryptedTo(m_previousList->recipients, primaries,
+                                     names, false);
           }
           // A previous list gpg cannot encrypt to, or one whose probe names
           // nobody it can tell, exempts no one, and leaves unknown who was
@@ -1859,6 +1863,14 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
           } else {
             losing = readers;
             losing.intersect(removed);
+            // Who was taken off is not known (an old list gpg could not
+            // encrypt to, or an earlier run that could not tell): any
+            // reader no longer on the list may be one.
+            if (removed.contains(kUnknownReader)) {
+              QSet<QString> off = readers;
+              off.subtract(*lk.now);
+              losing.unite(off);
+            }
           }
         }
       }
@@ -1879,9 +1891,24 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
         return who.join(QStringLiteral(", "));
       };
       QString why;
-      if (gains && !isTrusted(fileName, listNow)) {
+      const bool ask = gains && !isTrusted(fileName, listNow);
+      const QByteArray shownHash = ask ? entryHash(fileName) : QByteArray();
+      if (ask && shownHash.isEmpty()) {
+        // gpg lists its recipients, but its bytes cannot be held to a yes
+        // (over the read cap, or no longer a regular file): reported as
+        // left, not asked about, or the question would come back after
+        // every yes.
+        result.failed << tr("%1 was not re-encrypted: it would become "
+                            "readable by %2, and it cannot be read to ask "
+                            "about it (too large, or not a regular file).")
+                             .arg(fileName, named(gaining));
+        if (!losing.isEmpty()) {
+          result.stillReadByRemoved.insert(fileName, losing);
+        }
+        keepRecord = true;
+      } else if (ask) {
         result.unexpected << fileName;
-        result.unexpectedHashes << entryHash(fileName);
+        result.unexpectedHashes << shownHash;
         result.unexpectedReaders << listNow;
         QString detail =
             hidden ? tr("its recipients cannot be told (hidden key IDs); "
@@ -2083,6 +2110,11 @@ void ImitatePass::reencryptAlso(const QString &dir, const QStringList &files,
     }
   }
   if (m_reencryptAgreed.isEmpty()) {
+    // MainWindow locked the interface for the run that does not start.
+    emit statusMsg(tr("Nothing to re-encrypt: those entries were not named "
+                      "by the last run"),
+                   5000);
+    emit endReencryptPath();
     return;
   }
   reencryptPath(dir, settings);
