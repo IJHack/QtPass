@@ -107,6 +107,7 @@ private slots:
   void fallbackAsksAgainForTheReadableLinesInOneCall();
   void preselectsWhatEncryptionReachesNotWhatTheSearchFinds();
   void aSharedSubkeyTicksOnlyTheKeyTheLineNames();
+  void aListWithAGoneKeyStillTicksOnlyWhatEachLineReaches();
   void aLineNamingASubkeyOrAnotherUidTicksItsKey();
   void unusualLinesPastTheLookupCapAreListedUnticked();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
@@ -398,6 +399,69 @@ void tst_usersdialog::aSharedSubkeyTicksOnlyTheKeyTheLineNames() {
                !checked.contains(QStringLiteral("Mallory")),
            qPrintable(checked.join(',')));
   QCOMPARE(enabled, QStringList{QStringLiteral("alice@example.org")});
+}
+
+/**
+ * @brief A list gpg cannot encrypt to as a whole, because one line names a
+ *        key that is gone (a list edited after someone left), is probed line
+ *        by line: the address line ticks the key it reaches and not
+ *        Mallory's look-alike, and the gone line is kept as written (scan
+ *        finding ANT-2026-8Z9SUHAD, fallback).
+ */
+void tst_usersdialog::aListWithAGoneKeyStillTicksOnlyWhatEachLineReaches() {
+  const QString listing = QStringLiteral(
+      "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:\n"
+      "uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Alice "
+      "<alice@example.org>::::::::::0:\n"
+      "pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:\n"
+      "fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:\n"
+      "uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Mallory "
+      "<mallory@example.org>::::::::::0:\n"
+      "uid:f::::1775005968::9AA011711F27F6E08DF71653718C299A13B323A0::Alice "
+      "<alice@example.org>::::::::::0:\n");
+  const QString gone = QStringLiteral("DEAD") + QString(36, QLatin1Char('0'));
+  AppSettings s = m_settings;
+  // gpg cannot encrypt to the gone key, so neither to the whole list; the
+  // address line alone reaches Alice's key.
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-gone-key"),
+      QStringLiteral("case \"$*\" in\n"
+                     "  *--list-secret-keys*) exit 0 ;;\n"
+                     "  *--encrypt*DEAD*) exit 2 ;;\n"
+                     "  *--encrypt*) cat >/dev/null; exit 0 ;;\n"
+                     "  *--list-only*) echo '[GNUPG:] ENC_TO 31850CF72D9CDDE9 "
+                     "1 0'; exit 0 ;;\n"
+                     "esac\n"
+                     "cat <<'LISTING'\n") +
+          listing + QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("alice@example.org\n" + gone.toLatin1() + '\n');
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  const QStringList checked = checkedNames(list);
+  QVERIFY2(checked.contains(QStringLiteral("Alice")) &&
+               !checked.contains(QStringLiteral("Mallory")),
+           qPrintable(checked.join(',')));
+  QStringList enabled;
+  for (const UserInfo &user : dialog.selectedUsers()) {
+    if (user.enabled) {
+      enabled << user.key_id;
+    }
+  }
+  enabled.sort();
+  QCOMPARE(
+      enabled,
+      QStringList(
+          {QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9"), gone}));
 }
 
 /**
@@ -1786,10 +1850,13 @@ void tst_usersdialog::fallbackAsksAgainForTheReadableLinesInOneCall() {
     AppSettings s = m_settings;
     s.gpgExecutable = writeGpg(
         QStringLiteral("gpg-counting-%1").arg(missing),
-        // The encryption probe fails, as gpg's does for a key it lacks,
-        // so the search below is what is counted.
+        // The probe of the whole list fails, as gpg's does for a key it
+        // lacks; a probe of one line passes without naming anyone, so every
+        // line goes to the search, which is what is counted.
         QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
-                       "case \"$*\" in *--encrypt*) exit 2 ;; esac\n"
+                       "case \"$*\" in *--encrypt*-r*-r*) exit 2 ;; esac\n"
+                       "case \"$*\" in *--encrypt*) exit 0 ;; esac\n"
+                       "case \"$*\" in *--list-only*) exit 0 ;; esac\n"
                        "case \"$*\" in *FACE*|*0x*) echo x >> '") +
             counter +
             QStringLiteral(
