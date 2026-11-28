@@ -211,8 +211,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   fall back to the parent's list looked the folder up by its old path, and
   the next edit of an entry there was encrypted to the top list, them
   included, without a word. Now the tree drops `.gpg` from entry names only,
-  and an edit that would give an entry new readers names them and asks; a
-  new entry is not asked about. Native backend (scan finding
+  and an edit that would give an entry new readers names them and asks.
+  Native backend. As SECURITY.md says, this does not cover a new entry, a
+  rename to another plain name combined with an entry whose recipient IDs
+  were crafted to name the attacker, or the pass backend (scan finding
   ANT-2026-VO6BE4T0).
 - The Users dialog ticks only the keys a folder's list actually encrypts to.
   It ticked every key a keyring search found for the list's lines, and that
