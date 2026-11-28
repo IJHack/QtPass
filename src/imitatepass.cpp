@@ -277,6 +277,50 @@ auto ImitatePass::recipientsForEntry(const QString &file,
   return true;
 }
 
+auto ImitatePass::readersAnEditWouldAdd(const QString &file) -> QStringList {
+  // The path Insert() writes, read as decryptEntry() reads it; anything
+  // that cannot be told is left to Insert() to refuse or carry out.
+  const QString path =
+      QDir::cleanPath(Util::joinPath(m_settings.passStore, file) + ".gpg");
+  const QFileInfo entry(path);
+  if (!entry.isFile() || entry.isSymLink()) {
+    return {};
+  }
+  QStringList recipients;
+  QString why;
+  if (!loadVerifiedRecipients(Pass::getGpgIdPath(path, m_settings.passStore),
+                              &recipients, &why) ||
+      recipients.isEmpty()) {
+    return {};
+  }
+  const QStringList ids = getKeysFromFile(path);
+  if (ids.isEmpty()) {
+    return {};
+  }
+  QHash<QString, QString> primaries;
+  QHash<QString, QString> names;
+  const std::optional<QSet<QString>> now =
+      keysEncryptedTo(recipients, primaries, names);
+  if (!now || now->contains(kUnknownReader)) {
+    return {};
+  }
+  const bool hidden =
+      std::all_of(ids.cbegin(), ids.cend(), [](const QString &id) {
+        return id == QLatin1String("0000000000000000");
+      });
+  if (hidden) {
+    return {tr("anyone on the list: the entry's recipients cannot be told")};
+  }
+  QSet<QString> gaining = *now;
+  gaining.subtract(primaryKeysOf(ids, primaries, names));
+  QStringList who;
+  for (const QString &fpr : std::as_const(gaining)) {
+    who << names.value(fpr, fpr.right(16));
+  }
+  who.sort();
+  return who;
+}
+
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   // The dialog names a new entry relative to the store; gpg used to resolve
   // that in its working directory. Everything below works on the one path.

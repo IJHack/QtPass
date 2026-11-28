@@ -203,6 +203,17 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   this stops a plain copy: an entry planted before you add someone still
   looks like the folder's own, and one crafted to name a reader it does not
   have still passes (scan finding ANT-2026-SEN4VBBB).
+- Saving over an entry now asks first when its folder's recipients include
+  someone who cannot read it yet, and the tree shows a folder's name as it
+  is. With signed recipient lists, someone on the store's top list who can
+  push to a shared store could delete a sub-folder's signed list and rename
+  the folder to `admins.gpg`: the tree showed it as `admins`, the refusal to
+  fall back to the parent's list looked the folder up by its old path, and
+  the next edit of an entry there was encrypted to the top list, them
+  included, without a word. Now the tree drops `.gpg` from entry names only,
+  and an edit that would give an entry new readers names them and asks; a
+  new entry is not asked about. Native backend (scan finding
+  ANT-2026-VO6BE4T0).
 - The Users dialog ticks only the keys a folder's list actually encrypts to.
   It ticked every key a keyring search found for the list's lines, and that
   search also finds keys that only resemble a recipient: someone whose key

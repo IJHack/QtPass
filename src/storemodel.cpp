@@ -184,7 +184,10 @@ auto StoreModel::data(const QModelIndex &index, int role) const -> QVariant {
   QVariant initial_value;
   initial_value = QSortFilterProxyModel::data(index, role);
 
-  if (role == Qt::DisplayRole) {
+  // ".gpg" ends an entry's name, not a folder's: a folder renamed to
+  // "admins.gpg" is shown as that, not as the "admins" it may stand in for.
+  if (role == Qt::DisplayRole &&
+      !(fs != nullptr && fs->isDir(mapToSource(index)))) {
     QString name = initial_value.toString();
     name.replace(Util::endsWithGpg(), "");
     initial_value.setValue(name);

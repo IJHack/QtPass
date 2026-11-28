@@ -172,6 +172,31 @@ void PasswordDialog::save() {
     newValue += "\n";
   }
 
+  // Saving over an entry encrypts it to its folder's list as it is now. A
+  // list that changed under the entry (a folder renamed past its own signed
+  // list falls back to its parent's) would hand it to someone who cannot
+  // read it: asked, and asked again if the answer was given for a list that
+  // changed while the question was open.
+  if (!m_isNew) {
+    QStringList shown;
+    for (QStringList gain = m_pass->readersAnEditWouldAdd(m_file);
+         !gain.isEmpty() && gain != shown;
+         gain = m_pass->readersAnEditWouldAdd(m_file)) {
+      shown = gain;
+      if (QMessageBox::question(
+              this, tr("Give this entry new readers?"),
+              tr("Saving re-encrypts %1 to its folder's recipients, and that "
+                 "now includes someone who cannot read it: %2.\n\nIf you did "
+                 "not change who may read this folder, its recipient list may "
+                 "have been changed or the folder moved. Save anyway?")
+                  .arg(m_file, gain.join(QStringLiteral(", "))),
+              QMessageBox::Save | QMessageBox::Cancel,
+              QMessageBox::Cancel) != QMessageBox::Save) {
+        return;
+      }
+    }
+  }
+
   setSaving(true);
   // A refusal (the name is taken, the .gpg-id is unusable, a linked path)
   // comes through critical() before Insert() returns, with nothing started

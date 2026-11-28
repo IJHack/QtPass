@@ -415,6 +415,7 @@ private Q_SLOTS:
   void imitatePass_moveFallsBackWhenGitNotConfigured();
   void imitatePass_usersDialogListsAndFilters();
   void imitatePass_multiRecipientReencryptChangesRecipients();
+  void imitatePass_editNamesWhoWouldGainTheEntry();
   void imitatePass_reencryptKeyListingWritesNoFile();
   void imitatePass_gitAttributesPinnedForStore();
   void imitatePass_gitInitPinsAttributes();
@@ -1945,6 +1946,45 @@ void tst_integration::imitatePass_usersDialogListsAndFilters() {
 
   filter->setText(QStringLiteral("QtPass"));
   QVERIFY2(list->count() >= 1, "a matching filter should show the key again");
+}
+
+/**
+ * @brief Before saving over an entry, the backend names who its folder's
+ *        list would add as a reader: nobody while the list is the one the
+ *        entry was written for, the second key once the list names it too
+ *        (scan finding ANT-2026-VO6BE4T0).
+ */
+void tst_integration::imitatePass_editNamesWhoWouldGainTheEntry() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  const auto writeList = [&storeDir](const QString &body) {
+    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    return gpgId.open(QIODevice::WriteOnly | QIODevice::Truncate |
+                      QIODevice::Text) &&
+           gpgId.write(body.toUtf8()) == body.toUtf8().size();
+  };
+  QVERIFY(writeList(m_keyFingerprint + "\n"));
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("entry"), QStringLiteral("secret\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  QVERIFY2(pass.readersAnEditWouldAdd(QStringLiteral("entry")).isEmpty(),
+           "the list the entry was written for adds nobody");
+  QVERIFY(writeList(m_keyFingerprint + "\n" + m_keyFingerprint2 + "\n"));
+  const QStringList gain = pass.readersAnEditWouldAdd(QStringLiteral("entry"));
+  QCOMPARE(gain.size(), 1);
+  QVERIFY2(gain.first().contains(QStringLiteral("QtPass Second Key")),
+           qPrintable(gain.join(',')));
+  QVERIFY2(pass.readersAnEditWouldAdd(QStringLiteral("new-one")).isEmpty(),
+           "an entry not there yet is not judged");
 }
 
 void tst_integration::imitatePass_multiRecipientReencryptChangesRecipients() {

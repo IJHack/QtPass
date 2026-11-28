@@ -526,6 +526,7 @@ public:
    * @param overwrite true to overwrite an existing file.
    */
   void Insert(QString file, QString newValue, bool overwrite) override;
+  auto readersAnEditWouldAdd(const QString &file) -> QStringList override;
   /**
    * @brief Remove password.
    * @param file Path to the file or directory to remove.
