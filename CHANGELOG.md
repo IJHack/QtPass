@@ -212,10 +212,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   ticks now come from a test encryption to the list, as gpg's `-r` resolves
   it, without looking keys up over the network; other matches are listed
   unticked. When gpg cannot encrypt to the list as a whole (one line names
-  a key that is gone or no longer valid, as after someone left), each line
-  is tried on its own and a line gpg cannot encrypt to is kept as written;
-  only a line no test can settle goes to the search, as before (scan
-  finding ANT-2026-8Z9SUHAD).
+  a key that is gone or no longer valid, as after someone left), the first
+  ten lines are tried one by one and a line gpg cannot encrypt to is kept
+  as written; later lines, and a line no test can settle, go to the search
+  as before (scan finding ANT-2026-8Z9SUHAD).
 - Copying a folder with the `pass` backend is refused when the folder holds
   a symbolic link. pass copies with `cp -r`, which on macOS and the BSDs
   follows a link inside the folder: someone who can push to a shared store
