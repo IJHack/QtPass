@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"storetree_8h.html":[4,0,1,94],
 "storetree_8h_source.html":[4,0,1,94],
 "struct_app_settings.html":[1,4,1],
 "struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d":[1,4,1,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "trayicon_8cpp_source.html":[4,0,1,99],
 "trayicon_8h.html":[4,0,1,100],
 "trayicon_8h_source.html":[4,0,1,100],
-"userinfo_8h.html":[4,0,1,101],
-"userinfo_8h_source.html":[4,0,1,101]
+"userinfo_8h.html":[4,0,1,101]
 };

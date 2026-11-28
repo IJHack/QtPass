@@ -1,0 +1,30 @@
+<map id="Pass::encryptionReaches" name="Pass::encryptionReaches">
+<area shape="rect" id="Node000001" title="The keys a gpg encryption to recipients reaches: a throwaway encryption outside the store,..." alt="" coords="5,139,188,167"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="499,88,691,116"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,136,235,125,364,112,486,106,481,108,364,117,236,130,169,141"/>
+<area shape="rect" id="Node000012" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="266,139,420,167"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="188,150,253,152,248,154,188,156"/>
+<area shape="rect" id="Node000013" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="236,191,451,219"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="166,165,262,187,257,188,166,170"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="739,87,902,115"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="691,99,726,101,721,102,692,104"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a52751d8f1f7055b5402cdabeb25aa1d2" title="runBlocking() on bytes: input is written and stdout returned as they are, with no text decoding or en..." alt="" coords="950,84,1140,112"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="902,97,937,99,931,100,902,103"/>
+<area shape="rect" id="Node000005" href="$class_executor_1_1_capped_output.html#a6612def2eb2bb3aad8a91751c86c1813" title="Add what the process wrote next." alt="" coords="1188,5,1366,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1093,81,1184,56,1189,55,1094,86"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1194,143,1360,171"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="1103,110,1207,139,1202,139,1102,115"/>
+<area shape="rect" id="Node000011" href="$class_executor_1_1_capped_output.html#a9830dce9e57d517541d74f9293aaf83e" title="Everything kept, and start over." alt="" coords="1188,75,1366,119"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="1140,95,1175,97,1170,98,1140,100"/>
+<area shape="rect" id="Node000006" href="$class_executor_1_1_capped_output.html#a43cdd828ff24a7630e53f66bc44c325a" title="Count line if it is a status record." alt="" coords="1434,15,1613,59"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1367,28,1421,33,1416,33,1367,34"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1414,91,1633,119"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1346,140,1437,123,1442,122,1347,145"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1417,195,1630,223"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1347,169,1442,192,1437,191,1346,174"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1421,143,1626,171"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="1360,154,1408,157,1403,157,1360,160"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="1366,73,1417,63,1422,62,1367,78"/>
+<area shape="poly" id="edge14_Node000013_Node000002" title=" " alt="" coords="412,188,450,176,507,150,556,125,561,124,509,155,452,181,413,193"/>
+<area shape="poly" id="edge15_Node000013_Node000009" title=" " alt="" coords="452,204,819,206,1046,206,1404,209,1399,209,1046,212,819,212,452,209"/>
+</map>

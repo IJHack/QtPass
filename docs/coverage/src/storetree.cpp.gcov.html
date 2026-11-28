@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-28 11:24:54</td>
+            <td class="headerValue">2026-11-28 12:41:01</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">91.7&nbsp;%</td>
@@ -119,11 +119,11 @@
 <span id="L46"><span class="lineNum">      46</span>              : </span>
 <span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">         204 : void StoreTree::setPass(Pass *pass) { m_proxy.setPass(pass); }</span></span>
 <span id="L48"><span class="lineNum">      48</span>              : </span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          80 : void StoreTree::setFilter(const QRegularExpression &amp;pattern) {</span></span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          80 :   m_proxy.setFilterRegularExpression(pattern);</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          82 : void StoreTree::setFilter(const QRegularExpression &amp;pattern) {</span></span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          82 :   m_proxy.setFilterRegularExpression(pattern);</span></span>
 <span id="L51"><span class="lineNum">      51</span>              :   // Filtering re-derives the mapping; the root must be looked up again.</span>
-<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          80 :   m_view-&gt;setRootIndex(m_proxy.rootIndexFor(m_store));</span></span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          80 : }</span></span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          82 :   m_view-&gt;setRootIndex(m_proxy.rootIndexFor(m_store));</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          82 : }</span></span>
 <span id="L54"><span class="lineNum">      54</span>              : </span>
 <span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">          48 : auto StoreTree::dirFor(const QModelIndex &amp;index, bool forPass) const</span></span>
 <span id="L56"><span class="lineNum">      56</span>              :     -&gt; QString {</span>
@@ -162,13 +162,13 @@
 <span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">           1 :   return fileFor(m_view-&gt;currentIndex(), forPass);</span></span>
 <span id="L90"><span class="lineNum">      90</span>              : }</span>
 <span id="L91"><span class="lineNum">      91</span>              : </span>
-<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          81 : auto StoreTree::fileInfo(const QModelIndex &amp;index) const -&gt; QFileInfo {</span></span>
-<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          81 :   return m_fs.fileInfo(m_proxy.mapToSource(index));</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          82 : auto StoreTree::fileInfo(const QModelIndex &amp;index) const -&gt; QFileInfo {</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          82 :   return m_fs.fileInfo(m_proxy.mapToSource(index));</span></span>
 <span id="L94"><span class="lineNum">      94</span>              : }</span>
 <span id="L95"><span class="lineNum">      95</span>              : </span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          78 : auto StoreTree::indexFor(const QString &amp;path) const -&gt; QModelIndex {</span></span>
-<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">          78 :   const QModelIndex src = m_fs.index(path);</span></span>
-<span id="L98"><span class="lineNum">      98</span> <span class="tlaGNC">          78 :   return src.isValid() ? m_proxy.mapFromSource(src) : QModelIndex();</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          81 : auto StoreTree::indexFor(const QString &amp;path) const -&gt; QModelIndex {</span></span>
+<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">          81 :   const QModelIndex src = m_fs.index(path);</span></span>
+<span id="L98"><span class="lineNum">      98</span> <span class="tlaGNC">          81 :   return src.isValid() ? m_proxy.mapFromSource(src) : QModelIndex();</span></span>
 <span id="L99"><span class="lineNum">      99</span>              : }</span>
 <span id="L100"><span class="lineNum">     100</span>              : </span>
 <span id="L101"><span class="lineNum">     101</span> <span class="tlaGNC">          20 : auto StoreTree::rootIndex() -&gt; QModelIndex {</span></span>
