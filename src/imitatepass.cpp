@@ -1863,6 +1863,14 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
           } else {
             losing = readers;
             losing.intersect(removed);
+            // Who was taken off is not known (an old list gpg could not
+            // encrypt to, or an earlier run that could not tell): any
+            // reader no longer on the list may be one.
+            if (removed.contains(kUnknownReader)) {
+              QSet<QString> off = readers;
+              off.subtract(*lk.now);
+              losing.unite(off);
+            }
           }
         }
       }

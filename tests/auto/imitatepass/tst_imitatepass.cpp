@@ -616,6 +616,7 @@ private Q_SLOTS:
   void reencryptAlsoOfNothingNamedReleasesTheInterface();
   void reencryptReportsAGainingEntryItCannotHoldToAYes();
   void oldListProbeLooksNoKeysUp();
+  void anUnknownOldListKeepsAReaderNoLongerListed();
   void reencryptPathCancelInterruptsActiveProcess();
   void reencryptPathCancelKillsProcessIgnoringTerminate();
   void destructorInterruptsActiveReencryptProcess();
@@ -1167,6 +1168,88 @@ void tst_imitatepass::oldListProbeLooksNoKeysUp() {
   QCOMPARE(encrypts.size(), 2);
   QVERIFY(encrypts.at(0).contains(QStringLiteral("--no-auto-key-locate")));
   QVERIFY(!encrypts.at(1).contains(QStringLiteral("--no-auto-key-locate")));
+#endif
+}
+
+/**
+ * @brief When the list a change replaced cannot be probed, whom it removed
+ *        is unknown: an entry read by someone no longer on the list keeps
+ *        that reader recorded, so the automatic push stays held (Carol here,
+ *        on the old list and off the new one). The intersection with the
+ *        unknown marker used to drop it (follow-up to scan finding
+ *        ANT-2026-SEN4VBBB).
+ */
+void tst_imitatepass::anUnknownOldListKeepsAReaderNoLongerListed() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString store = tmp.path();
+  const QString fa = QStringLiteral("AAAA") + QString(36, QLatin1Char('1'));
+  const QString fb = QStringLiteral("BBBB") + QString(36, QLatin1Char('2'));
+  const QString fc = QStringLiteral("CCCC") + QString(36, QLatin1Char('3'));
+  const QString logPath = QDir(store).filePath("gpg-argv.log");
+  const QString script = QDir(store).filePath("group-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    // An entry only A reads; gpg makes the group `grp` A and B, which the
+    // throwaway encryption (probe.gpg) shows.
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "last=''; for a in \"$@\"; do last=\"$a\"; done\n"
+        << "case \"$*\" in\n"
+        << "  *--list-only*probe.gpg*) if [ -e '" << store
+        << "/grp-probe' ]; then echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0'; "
+           "echo '[GNUPG:] ENC_TO BBBBBBBBBBBBBBBB 18 0'; else echo '[GNUPG:] "
+           "ENC_TO AAAAAAAAAAAAAAAA 18 0'; fi;;\n"
+        << "  *--list-only*) echo '[GNUPG:] ENC_TO AAAAAAAAAAAAAAAA 18 0'; "
+           "echo '[GNUPG:] ENC_TO CCCCCCCCCCCCCCCC 18 0';;\n"
+        << "  *--list-keys) printf 'pub:u:255:22:AAAAAAAAAAAAAAAA:::::::::\\n"
+           "fpr:::::::::"
+        << fa << ":\\nuid:u::::::::Alice <a@example.org>:\\n"
+        << "pub:u:255:22:BBBBBBBBBBBBBBBB:::::::::\\nfpr:::::::::" << fb
+        << ":\\nuid:u::::::::Bob <b@example.org>:\\n"
+        << "pub:u:255:22:CCCCCCCCCCCCCCCC:::::::::\\nfpr:::::::::" << fc
+        << ":\\nuid:u::::::::Carol <c@example.org>:\\n';;\n"
+        << "  *' -d '*|*' -d') printf 'plaintext\\n';;\n"
+        // The group's members only for an encryption to the group.
+        // The old list's probe fails (a key only WKD would find).
+        << "  *-eq*' -r old '*) cat >/dev/null; exit 2;;\n"
+        << "  *-eq*) cat >/dev/null; case \" $* \" in *' -r grp '*) touch '"
+        << store << "/grp-probe';; esac;;\n"
+        << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  {
+    QFile list(QDir(store).filePath(".gpg-id"));
+    QVERIFY(list.open(QIODevice::WriteOnly));
+    QVERIFY(list.write("grp\n") > 0);
+    QFile entry(QDir(store).filePath("entry.gpg"));
+    QVERIFY(entry.open(QIODevice::WriteOnly));
+    QVERIFY(entry.write("ciphertext") > 0);
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(store, script));
+  pass.m_previousList = ImitatePass::PreviousList{
+      Pass::getGpgIdPath(QDir(store).filePath("entry.gpg"), store),
+      {QStringLiteral("old")}};
+  QSignalSpy unexpected(&pass, &ImitatePass::unexpectedRecipients);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(store);
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCoreApplication::processEvents();
+  QCOMPARE(unexpected.count(), 1);
+  const QString detail = unexpected.first().at(2).toStringList().value(0);
+  QVERIFY2(detail.contains(QStringLiteral("Carol")), qPrintable(detail));
+  QVERIFY2(!pass.m_removedReaders.isEmpty(),
+           "Carol must stay recorded as a removed reader");
 #endif
 }
 
