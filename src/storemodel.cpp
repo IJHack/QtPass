@@ -93,7 +93,11 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   if (outside || path.startsWith(".git")) {
     return false;
   }
-  path.replace(Util::endsWithGpg(), "");
+  // As data() shows it: ".gpg" is dropped from an entry's name only.
+  // The model knows a row's kind without a stat.
+  if (!(fs != nullptr ? fs->isDir(index) : QFileInfo(filePath).isDir())) {
+    path.replace(Util::endsWithGpg(), "");
+  }
   return path.contains(filterRegularExpression());
 }
 
@@ -184,7 +188,10 @@ auto StoreModel::data(const QModelIndex &index, int role) const -> QVariant {
   QVariant initial_value;
   initial_value = QSortFilterProxyModel::data(index, role);
 
-  if (role == Qt::DisplayRole) {
+  // ".gpg" ends an entry's name, not a folder's: a folder renamed to
+  // "admins.gpg" is shown as that, not as the "admins" it may stand in for.
+  if (role == Qt::DisplayRole &&
+      !(fs != nullptr && fs->isDir(mapToSource(index)))) {
     QString name = initial_value.toString();
     name.replace(Util::endsWithGpg(), "");
     initial_value.setValue(name);

@@ -225,6 +225,22 @@ public:
    */
   [[nodiscard]] auto insertsPending() const -> int { return m_insertsPending; }
   /**
+   * @brief Who saving over an existing entry would let read it who cannot
+   *        now: the keys its folder's list encrypts to, less the entry's
+   *        current readers.
+   *
+   * Asked by the edit dialog before Insert(), so a list that changed under
+   * the entry (a folder renamed past its own signed list, say) does not
+   * widen it unasked. None by default; the native backend tells.
+   * @param file The entry, relative to the store, without ".gpg".
+   * @return The names of those who would gain the entry; empty when nobody
+   *         would, or when it cannot be told (new entry, unreadable list).
+   */
+  virtual auto readersAnEditWouldAdd(const QString &file) -> QStringList {
+    Q_UNUSED(file)
+    return {};
+  }
+  /**
    * @brief The entry whose insert is reporting now: set while
    * finishedInsert() or insertFailed() goes out, empty otherwise.
    *

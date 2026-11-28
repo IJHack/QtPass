@@ -99,6 +99,18 @@ public:
   QString insertedContent;
   bool insertedOverwrite = false;
 
+  /// What readersAnEditWouldAdd() answers, one per call; the last one
+  /// stays once the list is used up.
+  QList<QStringList> wouldAdd;
+  int wouldAddAsked = 0;
+  auto readersAnEditWouldAdd(const QString &) -> QStringList override {
+    ++wouldAddAsked;
+    if (wouldAdd.isEmpty()) {
+      return {};
+    }
+    return wouldAdd.size() > 1 ? wouldAdd.takeFirst() : wouldAdd.first();
+  }
+
   /// Count one insert as already queued and not yet reported, standing in for
   /// an earlier dialog's save that a hanging queue let close while pending.
   void pretendInsertAhead() { queueInsert(); }
@@ -151,6 +163,7 @@ private Q_SLOTS:
   void manyLongFoldersDoNotSizeTheDialog();
   void longFieldAndTemplateNamesAreShownShort();
   void copiesOutOfTheEditorAreReported();
+  void savingOverAnEntryAsksWhenItWouldGainReaders();
   void aFieldRenamedAwayFromOtpStillReportsCopies();
   void aCopyOutOfTheNameEditorIsMarkedAndReported();
   void leavingTheNameEditorKeepsThePassword_data();
@@ -2086,6 +2099,49 @@ void answerNextQuestion(QMessageBox::StandardButton button, int tries = 50) {
   });
 }
 } // namespace
+
+/**
+ * @brief Saving over an entry whose folder's list now includes someone who
+ *        cannot read it asks first: Cancel saves nothing, Save goes ahead,
+ *        and a list that changed while the question was open is asked
+ *        about again. A new entry is not asked about (scan finding
+ *        ANT-2026-VO6BE4T0).
+ */
+void tst_passworddialog::savingOverAnEntryAsksWhenItWouldGainReaders() {
+  FakePass pass;
+  {
+    PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("entry"),
+                     false);
+    d.show();
+    QVERIFY(QTest::qWaitForWindowExposed(&d));
+    pass.deliverShow(QStringLiteral("hunter2\n"));
+    pass.wouldAdd = {{QStringLiteral("Mallory")}};
+    answerNextQuestion(QMessageBox::Cancel);
+    okButton(d)->click();
+    QVERIFY2(pass.inserted.isEmpty(), "Cancel must save nothing");
+
+    // Asked again for a list that gained Eve while the question was open.
+    pass.wouldAdd = {{QStringLiteral("Mallory")},
+                     {QStringLiteral("Eve"), QStringLiteral("Mallory")}};
+    answerNextQuestion(QMessageBox::Save);
+    QTimer::singleShot(300, [] { answerNextQuestion(QMessageBox::Cancel); });
+    okButton(d)->click();
+    QVERIFY2(pass.inserted.isEmpty(), "a changed list is asked about again");
+
+    pass.wouldAdd = {{QStringLiteral("Mallory")}};
+    answerNextQuestion(QMessageBox::Save);
+    okButton(d)->click();
+    QCOMPARE(pass.inserted, QStringLiteral("entry"));
+  }
+  pass.inserted.clear();
+  pass.wouldAddAsked = 0;
+  QTemporaryDir store;
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  okButton(d)->click();
+  QCOMPARE(pass.wouldAddAsked, 0);
+  QVERIFY(!pass.inserted.isEmpty());
+}
 
 /**
  * @brief A save that never reports (an unanswered PIN prompt, a queue held

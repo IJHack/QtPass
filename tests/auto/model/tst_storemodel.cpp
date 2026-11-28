@@ -59,10 +59,45 @@ private Q_SLOTS:
   void filterRegularExpression();
   void setStoreUpdatesPath();
   void dataEditRoleKeepsGpgExtension();
+  void dataKeepsGpgOnAFolderName();
   void filterAcceptsNonGpgFileMatchingRegex();
   void rootIndexForNullFs();
   void rootIndexForMatchesManualMapping();
 };
+
+/**
+ * @brief ".gpg" is dropped from an entry's name, not from a folder's: a
+ *        folder renamed to "admins.gpg" must not pass in the tree for the
+ *        "admins" it may stand in for (scan finding ANT-2026-VO6BE4T0).
+ */
+void tst_storemodel::dataKeepsGpgOnAFolderName() {
+  QTemporaryDir tempDir;
+  QVERIFY(QDir(tempDir.path()).mkdir(QStringLiteral("admins.gpg")));
+  QFile f(tempDir.path() + "/admins.gpg/root-pw.gpg");
+  QVERIFY(f.open(QFile::WriteOnly));
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  const QModelIndex folder =
+      sm.mapFromSource(fsm.index(tempDir.path() + "/admins.gpg"));
+  QCOMPARE(sm.data(folder, Qt::DisplayRole).toString(),
+           QStringLiteral("admins.gpg"));
+  const QModelIndex entry =
+      sm.mapFromSource(fsm.index(tempDir.path() + "/admins.gpg/root-pw.gpg"));
+  QCOMPARE(sm.data(entry, Qt::DisplayRole).toString(),
+           QStringLiteral("root-pw"));
+
+  // The search matches the name shown: an empty folder too.
+  QVERIFY(QDir(tempDir.path()).mkdir(QStringLiteral("empty.gpg")));
+  const QModelIndex empty = fsm.index(tempDir.path() + "/empty.gpg");
+  sm.setFilterRegularExpression(
+      QRegularExpression(QStringLiteral("empty\\.gpg$")));
+  QVERIFY(sm.showThis(empty));
+}
 
 void tst_storemodel::dataRemovesGpgExtension() {
   QTemporaryDir tempDir;
