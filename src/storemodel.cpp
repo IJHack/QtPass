@@ -93,7 +93,11 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   if (outside || path.startsWith(".git")) {
     return false;
   }
-  path.replace(Util::endsWithGpg(), "");
+  // As data() shows it: ".gpg" is dropped from an entry's name only.
+  // The model knows a row's kind without a stat.
+  if (!(fs != nullptr ? fs->isDir(index) : QFileInfo(filePath).isDir())) {
+    path.replace(Util::endsWithGpg(), "");
+  }
   return path.contains(filterRegularExpression());
 }
 

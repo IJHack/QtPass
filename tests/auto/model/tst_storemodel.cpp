@@ -90,6 +90,13 @@ void tst_storemodel::dataKeepsGpgOnAFolderName() {
       sm.mapFromSource(fsm.index(tempDir.path() + "/admins.gpg/root-pw.gpg"));
   QCOMPARE(sm.data(entry, Qt::DisplayRole).toString(),
            QStringLiteral("root-pw"));
+
+  // The search matches the name shown: an empty folder too.
+  QVERIFY(QDir(tempDir.path()).mkdir(QStringLiteral("empty.gpg")));
+  const QModelIndex empty = fsm.index(tempDir.path() + "/empty.gpg");
+  sm.setFilterRegularExpression(
+      QRegularExpression(QStringLiteral("empty\\.gpg$")));
+  QVERIFY(sm.showThis(empty));
 }
 
 void tst_storemodel::dataRemovesGpgExtension() {

@@ -314,8 +314,13 @@ auto ImitatePass::readersAnEditWouldAdd(const QString &file) -> QStringList {
   QSet<QString> gaining = *now;
   gaining.subtract(primaryKeysOf(ids, primaries, names));
   QStringList who;
+  // With each key's ID: two keys can carry the same name, and a list that
+  // swapped one for the other while the question was open must not read
+  // as unchanged.
   for (const QString &fpr : std::as_const(gaining)) {
-    who << names.value(fpr, fpr.right(16));
+    who << (names.contains(fpr)
+                ? QStringLiteral("%1 (%2)").arg(names.value(fpr), fpr.right(16))
+                : fpr.right(16));
   }
   who.sort();
   return who;
